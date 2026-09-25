@@ -50,7 +50,7 @@ POOL_B = [
      ["Bone storage and bone release",
       "That describes calcium handling, not sodium."],
      ["Hepatic synthesis and renal clearance",
-      "Sodium is not synthesised by the liver."]],
+      "Sodium is not synthesized by the liver."]],
    c=0, cite=c(9)),
 
  dict(topic="Sodium", io=IOB1, slot="test finding",
@@ -88,8 +88,8 @@ POOL_B = [
       "Salt is the second question; the concentration moves with water first, so free water is what is assessed at the outset."],
      ["Is kidney function normal?",
       "Renal function shapes the answer but is not the opening question; free water status is, because sodium is reported as a concentration."],
-     ["Is the sample haemolysed?",
-      "Haemolysis is a potassium artefact rather than a sodium one."]],
+     ["Is the sample hemolyzed?",
+      "Hemolysis is a potassium artifact rather than a sodium one."]],
    c=0, cite=cn(9)),
 
  dict(topic="Sodium", io=IOB1, slot="etiology",
@@ -181,7 +181,7 @@ POOL_B = [
    q="Given that potassium is excreted without reabsorption, what follows for the patient?",
    opts=[
      ["It must be replaced by diet or supplementation or the level can drop rapidly",
-      "Correct — ongoing obligatory loss means that a patient who stops eating, or who is on intravenous fluids without potassium, will become hypokalaemic within days."],
+      "Correct — ongoing obligatory loss means that a patient who stops eating, or who is on intravenous fluids without potassium, will become hypokalemic within days."],
      ["It accumulates over time and must be actively removed",
       "The absence of reabsorption means loss, not accumulation."],
      ["It is stored in bone and released as needed",
@@ -221,7 +221,7 @@ POOL_B = [
    opts=[
      ["Both shift potassium across the cell membrane, so the serum value can mislead",
       "Correct — insulin and acidosis shift potassium across cell membranes, so in ketoacidosis the serum potassium may be raised while total-body potassium is depleted."],
-     ["Both raise the measured potassium by causing haemolysis",
+     ["Both raise the measured potassium by causing hemolysis",
       "Hemolysis of the sample is not the mechanism; insulin and acid-base status matter because they shift potassium across cell membranes."],
      ["Both reduce renal potassium excretion to near zero",
       "Excretion does not stop; what misleads is that insulin and acidosis shift potassium across cell membranes, changing the serum value."],
@@ -274,7 +274,7 @@ POOL_B = [
       "Both anions leaving would break electrical neutrality."],
      ["It is excreted by the kidney within minutes",
       "Renal excretion is not involved; the chloride movement is a shift back into the cell that preserves electrical neutrality as bicarbonate moves out."],
-     ["It binds to haemoglobin and is carried to the lungs",
+     ["It binds to hemoglobin and is carried to the lungs",
       "That is how carbon dioxide is carried, not chloride."]],
    c=0, cite=c(11)),
 
@@ -294,14 +294,14 @@ POOL_B = [
  dict(topic="Chloride", io=IOB3, slot="test finding",
    q="Which named acid-base disorder is the example of chloride and bicarbonate moving reciprocally?",
    opts=[
-     ["Hyperchloraemic non-gap metabolic acidosis",
+     ["Hyperchloremic non-gap metabolic acidosis",
       "Correct — as bicarbonate is lost from gut or kidney, chloride is retained in its place, so the gap stays normal and the chloride rises."],
-     ["Hypochloraemic gap metabolic acidosis",
-      "A gap acidosis is caused by added unmeasured anions rather than by chloride replacing bicarbonate; the reciprocal example is the hyperchloraemic non-gap form."],
+     ["Hypochloremic gap metabolic acidosis",
+      "A gap acidosis is caused by added unmeasured anions rather than by chloride replacing bicarbonate; the reciprocal example is the hyperchloremic non-gap form."],
      ["Compensated respiratory alkalosis",
       "A compensated respiratory alkalosis is defined by the carbon dioxide, not by chloride and bicarbonate trading places."],
      ["Mixed respiratory and metabolic acidosis",
-      "A mixed picture obscures the relationship; the clean example is hyperchloraemic non-gap metabolic acidosis."]],
+      "A mixed picture obscures the relationship; the clean example is hyperchloremic non-gap metabolic acidosis."]],
    c=0, cite=cn(11)),
 
  # ---- bicarbonate ----
@@ -315,7 +315,7 @@ POOL_B = [
      ["It is the primary determinant of extracellular osmolality",
       "Sodium salts hold that role."],
      ["It is the primary carrier of oxygen in plasma",
-      "Haemoglobin carries oxygen; bicarbonate helps transport carbon dioxide."]],
+      "Hemoglobin carries oxygen; bicarbonate helps transport carbon dioxide."]],
    c=0, cite=c(12)),
 
  dict(topic="Bicarbonate", io=IOB4, slot="test finding",
@@ -372,7 +372,7 @@ POOL_B = [
      ["Helping transport carbon dioxide in the bloodstream",
       "Correct — bicarbonate is the primary extracellular buffer, maintaining acid-base balance, and it also helps transport carbon dioxide in the bloodstream."],
      ["Helping transport oxygen to the tissues",
-      "Oxygen transport is haemoglobin's role."],
+      "Oxygen transport is hemoglobin's role."],
      ["Maintaining the resting membrane potential",
       "That is attributed to potassium."],
      ["Determining extracellular osmolality",

@@ -15,21 +15,21 @@ files sit in the same directory, so the guide points at
 cms-ophtho-chart-images/ directly.
 
 ATTRIBUTION TRAVELS. Four of these pictures are not from a slide -- they are
-CC BY / public domain images with a named author and licence. The chart carries
+CC BY / public domain images with a named author and license. The chart carries
 that credit in its <span class="picite">, and it is copied through verbatim
 rather than replaced with a slide number, because the repository is public and
 dropping it would republish them unattributed.
 
 LETTERED SLIDES. Jaxon, 2026-08-31: some slides carry several photographs
-labelled A, B, C, and the text underneath explains each letter separately. The
+labeled A, B, C, and the text underneath explains each letter separately. The
 caption for one of those pictures must come from ITS OWN letter, not from the
 slide as a whole. Two captions here were wrong for exactly that reason before
 this note existed:
   L10 slide 18 is "A. Blepharitis" and "B. Meibomitis" -- the shipped picture is
   A, so its caption may not borrow B's toothpaste-like meibomian secretion.
-  L12 slide 45 is a four-stage series: A acute with haemorrhages, B acute with
+  L12 slide 45 is a four-stage series: A acute with hemorrhages, B acute with
   cotton wool spots, C chronic with disc elevation, D atrophic. One picture
-  cannot stand for the condition, so A and C are both shown, each labelled.
+  cannot stand for the condition, so A and C are both shown, each labeled.
 tools/check_lettered_slides.py finds these slides so the next build sees them.
 
 RUN ORDER. After build_cms_e2_guide.py and build_cms_ophtho_chart.py.
@@ -71,7 +71,7 @@ PLACEMENT = [
  ("e2l1-lids", ["Entropion", "Ectropion", "Dermatochalasis", "Xanthelasma",
                 "Blepharitis / Meibomitis", "Chalazion", "Hordeolum (stye)"]),
  ("e2l1-lacrimal", ["Dacryoadenitis", "Dacryocystitis"]),
- ("e2l1-surface", ["Pinguecula", "Pterygium", "Subconjunctival haemorrhage", "Chemosis"]),
+ ("e2l1-surface", ["Pinguecula", "Pterygium", "Subconjunctival hemorrhage", "Chemosis"]),
  ("e2l1-conjunctivitis", [
    "Allergic conjunctivitis", "Viral conjunctivitis", "Bacterial conjunctivitis",
    "Gonococcal conjunctivitis", "Chlamydial conjunctivitis &mdash; adult inclusion",
@@ -124,7 +124,7 @@ LOOK = {
  "Dacryocystitis": "Swelling BELOW the medial canthal tendon, pus from the punctum",
  "Pinguecula": "Yellow nodule on the conjunctiva that STOPS at the limbus",
  "Pterygium": "Wing of tissue that has CROSSED onto the cornea",
- "Subconjunctival haemorrhage": "Flat sheet of blood under the conjunctiva, cornea clear",
+ "Subconjunctival hemorrhage": "Flat sheet of blood under the conjunctiva, cornea clear",
  "Chemosis": "The conjunctiva itself swollen and ballooning",
  "Allergic conjunctivitis": "Cobblestone papillae under the lid, and no node",
  "Viral conjunctivitis": "Follicles plus watery discharge; the node is tender",
@@ -150,17 +150,17 @@ LOOK = {
  "Acute angle-closure glaucoma": "HAZY cornea with a fixed mid-dilated pupil",
  "Chronic open-angle glaucoma": "OPTIC NERVE CUPPING, with the rim thinned",
  "Optic neuritis": "Disc swelling &mdash; but it looks like any swollen disc, so it is not diagnostic",
- "Retinal detachment": "Elevated grey retina thrown into folds",
- "Papilledema": "Acute: blurred disc margins with flame haemorrhages",
+ "Retinal detachment": "Elevated gray retina thrown into folds",
+ "Papilledema": "Acute: blurred disc margins with flame hemorrhages",
  # Lecture 13. Each picture was matched to its slide's own A/B/C/D or ABOVE/BELOW
  # label by geometry -- on the drusen slide the extraction order maps to labels
  # A, D, C, B, so picking by number would caption soft drusen as a scar.
  "Age-related macular degeneration &mdash; dry":
    "Soft drusen &mdash; large, pale, indistinct deposits at the macula",
  "Age-related macular degeneration &mdash; wet":
-   "Haemorrhage from new choroidal vessels bleeding into the retina",
+   "Hemorrhage from new choroidal vessels bleeding into the retina",
  "Amblyopia": "Occlusion objection &mdash; content until the GOOD eye is covered",
- "Cataract &mdash; nuclear": "The lens centre yellowed and dense",
+ "Cataract &mdash; nuclear": "The lens center yellowed and dense",
  "Cataract &mdash; cortical": "Spokes running in from the lens edge",
  "Cataract &mdash; pediatric": "Polar cataract &mdash; a discrete opacity at the lens pole",
  "Retinoblastoma": "Leukocoria &mdash; one pupil red, the other white",
@@ -174,7 +174,7 @@ LOOK = {
 # (filename, citation, caption, label appended to the name)
 EXTRA = {
  "Papilledema": [("l12-s045_3.jpg", "Slide 45",
-                  "Chronic: disc elevation and blurred margins, no haemorrhages",
+                  "Chronic: disc elevation and blurred margins, no hemorrhages",
                   "Papilledema &mdash; chronic")],
  # Slide 23 is labelled ABOVE / MIDDLE / BELOW. The disc photograph is the
  # ophthalmoscopic finding; the FLAIR is the demyelination behind it, and the

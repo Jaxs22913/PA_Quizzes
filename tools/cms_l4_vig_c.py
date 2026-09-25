@@ -71,14 +71,14 @@ POOL_C = [
  dict(topic="Cellulitis", io=IOA,
    q="A 66-year-old man with cellulitis of the calf has an area that is tense, cyanotic and bronzed, and has not improved on antibiotics. Which is the most appropriate next step?",
    opts=[
-     ["Surgical debridement, because devitalised tissue is not perfused so antibiotics cannot reach it",
-      "Correct — devitalised tissue will not respond to antibiotics alone."],
+     ["Surgical debridement, because devitalized tissue is not perfused so antibiotics cannot reach it",
+      "Correct — devitalized tissue will not respond to antibiotics alone."],
      ["Escalation to intravenous vancomycin, because the organism is likely to be resistant",
       "The problem is drug delivery to dead tissue rather than resistance."],
      ["Continued oral antibiotics for a further week, because resolution can take two weeks",
       "Necrotic tissue will not respond to any antibiotic regimen."],
-     ["Compression bandaging and elevation, because venous congestion explains the colour",
-      "The described appearance is of devitalised tissue."]],
+     ["Compression bandaging and elevation, because venous congestion explains the color",
+      "The described appearance is of devitalized tissue."]],
    c=0, cite=c(111)),
 
  dict(topic="Abscess", io=IOC,
@@ -125,7 +125,7 @@ POOL_C = [
    opts=[
      ["Warm water soaks for twenty minutes three times daily",
       "Correct. Incision and drainage is reserved for severe cases with purulent collection."],
-     ["Incision and drainage under digital block anaesthesia",
+     ["Incision and drainage under digital block anesthesia",
       "That is for severe cases where pus has collected."],
      ["A broad-spectrum topical antifungal applied twice daily",
       "That is the treatment of chronic paronychia."],
@@ -160,7 +160,7 @@ POOL_C = [
    c=0, cite=c(118)),
 
  dict(topic="Chronic paronychia", io=IOA,
-   q="A 44-year-old bartender has had swollen, tender nail folds on several fingers for four months, with thickened discoloured nails and cuticles that have separated from the nail plate. Which is the most likely diagnosis?",
+   q="A 44-year-old bartender has had swollen, tender nail folds on several fingers for four months, with thickened discolored nails and cuticles that have separated from the nail plate. Which is the most likely diagnosis?",
    opts=[
      ["Chronic paronychia",
       "Correct — an inflammatory reaction to irritants over at least six weeks, with Candida albicans commonest."],
@@ -215,7 +215,7 @@ POOL_C = [
    q="A 55-year-old man with necrotizing fasciitis of the leg reports that the area, previously exquisitely tender, is now numb. Which explains this change?",
    opts=[
      ["The superficial nerves have been destroyed as the infection advanced",
-      "Correct, alongside skin colour changing to blue-grey, bullae and cutaneous gangrene."],
+      "Correct, alongside skin color changing to blue-gray, bullae and cutaneous gangrene."],
      ["The inflammatory response has begun to resolve with antibiotic therapy",
       "Loss of tenderness here signals progression rather than recovery."],
      ["The infection has been walled off by the fascial plane it is spreading in",
@@ -253,7 +253,7 @@ POOL_C = [
  dict(topic="Necrotizing fasciitis", io=IOA,
    q="A 48-year-old man is admitted with necrotizing fasciitis after dental sepsis. Which referrals should be arranged?",
    opts=[
-     ["A team approach with surgical intensive care, ideally at a burn or trauma centre",
+     ["A team approach with surgical intensive care, ideally at a burn or trauma center",
       "Correct — consultations are described as necessary rather than optional."],
      ["Dermatology alone, since the presenting problem is a skin infection",
       "The disease is deeper than skin and needs surgical management."],
@@ -277,14 +277,14 @@ POOL_C = [
    c=0, cite=c(66)),
 
  dict(topic="Primary vs secondary infection", io=IOC,
-   q="A 9-year-old girl with atopic dermatitis of the flexures develops weeping honey-coloured crusting over the affected eczema. Which best describes the infection?",
+   q="A 9-year-old girl with atopic dermatitis of the flexures develops weeping honey-colored crusting over the affected eczema. Which best describes the infection?",
    opts=[
      ["A secondary bacterial infection of skin already damaged by another condition",
       "Correct — bullous impetigo can secondarily invade pre-existing lesions such as eczema."],
      ["A primary bacterial infection arising in previously normal intact skin",
       "The eczema is the pre-existing lesion that has been invaded."],
      ["A primary fungal infection of skin already damaged by another condition",
-      "The honey-coloured crusting describes a bacterial infection."],
+      "The honey-colored crusting describes a bacterial infection."],
      ["A foreign body reaction within skin already damaged by another condition",
       "That describes pseudofolliculitis barbae."]],
    c=0, cite=c(89)),

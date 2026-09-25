@@ -36,14 +36,14 @@ POOL_B = [
  dict(topic="Beta-lactams", io=IO5,
    q="How is the structural difference of carbapenems and monobactams described?",
    opts=[
-     ["Carbapenems have a single ring; monobactams substitute a carbon for a sulphur",
+     ["Carbapenems have a single ring; monobactams substitute a carbon for a sulfur",
       "This reverses the two descriptions."],
      ["Both add a beta-lactamase inhibitor to the basic penicillin structure",
       "Penicillins plus beta-lactamase inhibitors are listed as their own separate category."],
-     ["Carbapenems substitute a carbon for a sulphur and add a double bond; monobactams have a single ring",
+     ["Carbapenems substitute a carbon for a sulfur and add a double bond; monobactams have a single ring",
       "Correct. Both sit within the beta-lactam family alongside penicillins and penicillinase-resistant penicillins."],
      ["Carbapenems are naturally produced; monobactams are entirely synthetic",
-      "Origin is not the distinction; the difference is structural, with carbapenems substituting carbon for sulphur and adding a double bond, and monobactams having only one ring."]],
+      "Origin is not the distinction; the difference is structural, with carbapenems substituting carbon for sulfur and adding a double bond, and monobactams having only one ring."]],
    c=2, cite=c(21)),
 
  dict(topic="Cephalosporins", io=IO5,

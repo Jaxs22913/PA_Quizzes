@@ -83,7 +83,7 @@ POOL_B = [
      ["Malignant bone tumors of the temporal bone",
       "Exostoses are benign bony growths in the canal; a malignant temporal bone tumor is a different problem entirely."],
      ["Cholesterol deposits in the middle ear",
-      "Cholesterol collections in the middle ear are cholesteatomas. Exostoses are bone, and they sit in the canal."]],
+      "Exostoses are not middle-ear deposits of any kind. They are benign bony growths, and they sit in the canal."]],
    c=0, cite=c(36)),
 
  dict(topic="Hearing loss", io=IO, slot="etiology",

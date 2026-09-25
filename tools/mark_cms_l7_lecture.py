@@ -11,7 +11,7 @@ wins.
 A different profile from Jaquith's Lecture 6, and worth saying so: no factual
 errors turned up here. What did turn up is unusually good exam intelligence --
 he states outright what he will not ask, and once describes the SHAPE of a
-question he intends to set. One characterisation is loose rather than wrong, and
+question he intends to set. One characterization is loose rather than wrong, and
 one memorable aside is not deck content and is historically disputed; both are
 marked as such.
 
@@ -30,7 +30,7 @@ BLOCK = OPEN + '''
   diffed</b> and every factual claim below was checked against the deck. <b>No factual errors were
   found in this lecture</b> &mdash; what it carries instead is unusually direct exam intelligence: he
   says outright what he will <em>not</em> ask, and in one place describes the shape of a question he
-  intends to set. The one loose characterisation and the one non-deck aside are both marked below.</p>
+  intends to set. The one loose characterization and the one non-deck aside are both marked below.</p>
 
   <table>
     <tr><th>He said</th><th>What it means for you</th></tr>
@@ -39,7 +39,7 @@ BLOCK = OPEN + '''
     <mark class="prof-highlight">Am I going to ask you that? No. Do you need to know where things
     are? Yes.</mark>&rdquo;</em> [2:58]</td>
     <td><b>A DE-EMPHASIS, corroborated word-for-word in both transcripts.</b> Do not spend time
-    memorising the strata of the epidermis. <b>Do</b> know <em>where</em> a lesion sits &mdash; which
+    memorizing the strata of the epidermis. <b>Do</b> know <em>where</em> a lesion sits &mdash; which
     layer it involves and how deep it goes. That distinction is doing real work across this whole
     block: it is what separates a wart (epidermis only) from a corn, and what the entire pressure
     injury staging system is built on.</td></tr>
@@ -68,7 +68,7 @@ BLOCK = OPEN + '''
     tables, <b>unstageable</b> and <b>deep tissue injury</b> are their own categories, not a worse
     stage 4: <b>unstageable</b> is full-thickness loss whose extent <b>cannot be determined because
     slough or eschar obscures it</b>, and <b>deep tissue injury</b> is <b>persistent non-blanchable
-    deep red or purple discolouration, with skin either intact or not</b>. Follow his steer on where
+    deep red or purple discoloration, with skin either intact or not</b>. Follow his steer on where
     to spend your effort, but do not carry away the definition &mdash; a question could reasonably ask
     you to tell those two apart.</td></tr>
 
@@ -110,7 +110,7 @@ BLOCK = OPEN + '''
     which is exactly the discriminator against a hypertrophic scar (<b>within four weeks</b>, and
     <b>confined to the wound</b>).</td></tr>
 
-    <tr><td><em>&ldquo;Most common on the trunk&hellip; small, about five millimetres, smooth, firm,
+    <tr><td><em>&ldquo;Most common on the trunk&hellip; small, about five millimeters, smooth, firm,
     deep red&hellip; <mark class="prof-highlight">that blanch with pressure</mark>.&rdquo;</em>
     [1:29:07]</td>
     <td><b>Cherry angioma, and correct</b> &mdash; slide 86 says <b>&ldquo;blanch with pressure (if

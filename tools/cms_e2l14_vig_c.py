@@ -43,7 +43,7 @@ QUESTIONS = [
 
  dict(topic="Corneal foreign body", io=IO_A, lead="management", cite=D % 22,
   q="A conjunctival foreign body is visible on diffuse light examination in a 28-year-old. Which is the most appropriate removal method?",
-  opts=[["A cotton-tipped applicator after topical anaesthetic", "Correct. A conjunctival object lifts off with a swab."],
+  opts=[["A cotton-tipped applicator after topical anesthetic", "Correct. A conjunctival object lifts off with a swab."],
         ["A sterile 27-gauge needle", "That is for a corneal foreign body."],
         ["A battery-operated burr", "That is for a rust ring."],
         ["Referral for operative removal", "That is disproportionate for a conjunctival object."]]),
@@ -57,7 +57,7 @@ QUESTIONS = [
 
  dict(topic="Hyphema", io=IO_A, lead="mechanism", cite=D % 25,
   q="A cycloplegic drop is prescribed for a patient with a hyphema. What is it doing?",
-  opts=[["Temporarily paralysing the ciliary body to rest the eye", "Correct. Atropine, homatropine and scopolamine are used this way."],
+  opts=[["Temporarily paralyzing the ciliary body to rest the eye", "Correct. Atropine, homatropine and scopolamine are used this way."],
         ["Lowering the intraocular pressure directly", "That is the role of other agents."],
         ["Dissolving the clot", "Nothing in the regimen dissolves it; aminocaproic acid slows breakdown."],
         ["Constricting the pupil to trap the blood", "It does the opposite to the pupil."]]),
@@ -66,7 +66,7 @@ QUESTIONS = [
   q="Which of these lid lacerations can reasonably be repaired in the emergency department?",
   opts=[["A superficial cut across the upper lid skin, sparing the margin and tarsal plate",
          "Correct. Partial-thickness lacerations meeting none of the criteria are repaired there."],
-        ["A cut 4 millimetres from the medial canthus", "Within 6 to 8 millimetres of the canthus is a referral criterion."],
+        ["A cut 4 millimeters from the medial canthus", "Within 6 to 8 millimeters of the canthus is a referral criterion."],
         ["A cut associated with new ptosis", "Ptosis is a referral criterion."],
         ["A cut through the tarsal plate", "Tarsal plate involvement is a referral criterion."]]),
 
@@ -114,7 +114,7 @@ QUESTIONS = [
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="diagnosis", cite=D % 44,
   q="Which combination of findings should raise a basilar skull fracture after head trauma?",
-  opts=[["Raccoon eyes, Battle sign and haemotympanum", "Correct. Those are the indirect signs."],
+  opts=[["Raccoon eyes, Battle sign and hemotympanum", "Correct. Those are the indirect signs."],
         ["Ptosis, a dilated pupil and diplopia", "That points to a third nerve palsy."],
         ["A red eye with discharge and lid crusting", "That is an infective surface picture."],
         ["Diplopia on upward gaze with cheek numbness", "That points to an orbital floor fracture."]]),

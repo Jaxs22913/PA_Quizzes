@@ -19,8 +19,8 @@ POOL_B = [
       "Pustules are not what defines the ring here."],
      ["Central ulceration with a rolled edge",
       "Ulceration is not a feature of tinea corporis."],
-     ["Peripheral hyperpigmentation around a pale centre",
-      "The centre clears rather than the edge pigmenting."]],
+     ["Peripheral hyperpigmentation around a pale center",
+      "The center clears rather than the edge pigmenting."]],
    c=0, cite=c(24)),
 
  dict(topic="Tinea corporis", io=IOB, slot="etiology",
@@ -41,8 +41,8 @@ POOL_B = [
    opts=[
      ["From the active border",
       "Correct — the advancing edge is where the organism is. Culture is added for high clinical suspicion with a negative preparation, or for refractory cases."],
-     ["From the cleared centre; culture in every case before treatment",
-      "The centre has cleared, so it is the least useful place to sample."],
+     ["From the cleared center; culture in every case before treatment",
+      "The center has cleared, so it is the least useful place to sample."],
      ["From any part of the lesion; culture only if the patient is immunocompromised",
       "Site matters, and the culture indications are broader than that."],
      ["From unaffected skin adjacent to the lesion; culture is never indicated",
@@ -65,11 +65,11 @@ POOL_B = [
  dict(topic="Tinea corporis", io=IOB, slot="first-line",
    q="How far beyond the lesion border should topical antifungal be applied in tinea corporis?",
    opts=[
-     ["One to two centimetres beyond the border",
+     ["One to two centimeters beyond the border",
       "Correct — with topical terbinafine, butenafine or an azole for localized disease."],
      ["To the lesion only, avoiding normal skin",
       "The advancing edge extends beyond what is visible."],
-     ["Five centimetres beyond the border",
+     ["Five centimeters beyond the border",
       "Wider than needed."],
      ["To the whole affected limb",
       "Whole-limb application is not what is described."]],
@@ -123,7 +123,7 @@ POOL_B = [
       "Those are yeasts and those risks belong to candidal intertrigo."],
      ["Trichophyton tonsurans and Microsporum canis; contact with pets and shared combs",
       "Those organisms and routes belong to tinea capitis."],
-     ["Staphylococcus aureus and Streptococcus pyogenes; skin breaks and lymphoedema",
+     ["Staphylococcus aureus and Streptococcus pyogenes; skin breaks and lymphedema",
       "Staphylococcus aureus and Streptococcus pyogenes are bacteria; tinea cruris is caused by dermatophytes, most often Trichophyton rubrum and Epidermophyton floccosum."]],
    c=0, cite=c(31)),
 
@@ -286,7 +286,7 @@ POOL_B = [
  dict(topic="Tinea manuum", io=IOB, slot="manifestation",
    q="Why do patients with tinea manuum often present late?",
    opts=[
-     ["They blame dry skin or hard physical labour",
+     ["They blame dry skin or hard physical labor",
       "Correct — the patient is often unaware of the infection. The involved palm is thickened, dry and scaly."],
      ["The infection is painless until the nails become involved",
       "Nail involvement is not what drives the delay described."],

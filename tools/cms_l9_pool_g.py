@@ -64,20 +64,20 @@ POOL_G = [
       "Accelerated transformation is not the harm."],
      ["Permanent phototherapy intolerance",
       "Permanent phototherapy intolerance is not the harm."],
-     ["Loss of eligibility for a cutaneous lymphoma centre",
+     ["Loss of eligibility for a cutaneous lymphoma center",
       "Trial eligibility is not the issue."]],
    c=0, cite=c(76)),
 
  dict(topic="Kaposi sarcoma", io=IO, slot="avoid",
-   q="Why must oedema severity not be used to judge Kaposi sarcoma burden?",
+   q="Why must edema severity not be used to judge Kaposi sarcoma burden?",
    opts=[
-     ["Marked oedema may occur with few or no visible skin lesions",
-      "Correct — oedema severity alone does not track disease burden."],
-     ["Oedema in Kaposi sarcoma is always caused by the antiretroviral therapy",
+     ["Marked edema may occur with few or no visible skin lesions",
+      "Correct — edema severity alone does not track disease burden."],
+     ["Edema in Kaposi sarcoma is always caused by the antiretroviral therapy",
       "Lymphatic obstruction is not the only mechanism."],
-     ["Oedema only appears once visceral disease is established",
-      "Oedema is not tied to visceral disease that way."],
-     ["Oedema resolves within days of starting treatment",
+     ["Edema only appears once visceral disease is established",
+      "Edema is not tied to visceral disease that way."],
+     ["Edema resolves within days of starting treatment",
       "Not stated, and it would not make severity a valid gauge."]],
    c=0, cite=c(60)),
 
@@ -126,7 +126,7 @@ POOL_G = [
    opts=[
      ["Local destruction, recurrence, delayed diagnosis and anatomically complex sites",
       "Correct — metastatic disease is rare but serious, and hedgehog inhibitor therapy exists for it."],
-     ["Nodal metastasis in three to seven per cent of cases",
+     ["Nodal metastasis in three to seven percent of cases",
       "That figure belongs to actinically induced squamous cell carcinoma."],
      ["Perineural spread to the skull base in most cases",
       "Not the stated source of morbidity."],
@@ -215,7 +215,7 @@ POOL_G = [
 
  # ---------------- initial test / gold standard ----------------
  dict(topic="Basal cell carcinoma", io=IO, slot="gold standard",
-   q="Which basal cell carcinoma subtype list determines behaviour and treatment?",
+   q="Which basal cell carcinoma subtype list determines behavior and treatment?",
    opts=[
      ["The HISTOLOGIC list: superficial, nodular, micronodular and infiltrative",
       "Correct — and note it differs from the CLINICAL list, which is superficial, nodular, pigmented and morpheaform."],
@@ -245,11 +245,11 @@ POOL_G = [
    opts=[
      ["Thick, indurated, ulcerated, enlarging, painful, bleeding, persistent or recurrent",
       "Correct — these are the features that shift the concern to carcinoma."],
-     ["Rough, flat, flesh-coloured and better felt than seen",
+     ["Rough, flat, flesh-colored and better felt than seen",
       "That is a typical actinic keratosis."],
      ["Pearly, translucent, with telangiectasias",
       "That describes nodular basal cell carcinoma."],
-     ["Scaly, symmetric and under two millimetres",
+     ["Scaly, symmetric and under two millimeters",
       "Nothing in that combination raises the concern."]],
    c=0, cite=c(13)),
 
@@ -261,7 +261,7 @@ POOL_G = [
       "Correct — the three additional categories as listed."],
      ["Tanning beds, fair skin and male sex only",
       "Those fall under the sun-exposure and population description."],
-     ["Chronic lymphocytic leukaemia and human immunodeficiency virus only",
+     ["Chronic lymphocytic leukemia and human immunodeficiency virus only",
       "Those are named under immunosuppression."],
      ["Red tattoo ink, laser treatment and cryotherapy",
       "Red tattoo ink and trauma from lasers or cryotherapy are keratoacanthoma risk factors; the added squamous cell carcinoma factors are scars, genetics and mucosal disease."]],
@@ -272,7 +272,7 @@ POOL_G = [
    opts=[
      ["Non-Hodgkin lymphoma, solid-organ transplant, and allogeneic stem cell transplant",
       "Correct — basal cell carcinoma is more common and more likely to recur after non-Hodgkin lymphoma, solid-organ transplant or allogeneic stem cell transplant."],
-     ["Chronic lymphocytic leukaemia, human immunodeficiency virus, and transplant",
+     ["Chronic lymphocytic leukemia, human immunodeficiency virus, and transplant",
       "That trio is the one given for squamous cell carcinoma."],
      ["Diabetes, chronic kidney disease and cirrhosis",
       "None of these is named."],
@@ -285,7 +285,7 @@ POOL_G = [
    q="What are the four possible fates of an individual actinic keratosis?",
    opts=[
      ["It may persist, involute, recur, or progress",
-      "Correct — including involution, which is why individual lesion behaviour is unpredictable."],
+      "Correct — including involution, which is why individual lesion behavior is unpredictable."],
      ["It may persist, progress, metastasise, or recur",
       "Actinic keratoses do not metastasise; involution is the missing fourth."],
      ["It may only persist or progress",
@@ -297,12 +297,12 @@ POOL_G = [
  dict(topic="Cutaneous T-cell lymphoma", io=IO, slot="prognosis",
    q="Which cutaneous T-cell lymphoma features worsen prognosis, and which carries the best?",
    opts=[
-     ["Tumours, erythroderma and lymphadenopathy worsen it; limited patch disease does not reduce survival",
+     ["Tumors, erythroderma and lymphadenopathy worsen it; limited patch disease does not reduce survival",
       "Correct — survival is not reduced in limited patch-stage disease."],
-     ["Patch and plaque disease worsen it; tumour-stage disease carries the best prognosis",
+     ["Patch and plaque disease worsen it; tumor-stage disease carries the best prognosis",
       "That reverses the prognostic order entirely."],
      ["Only lymphadenopathy worsens it; skin findings do not affect prognosis",
-      "Tumours and erythroderma also worsen it."],
+      "Tumors and erythroderma also worsen it."],
      ["Prognosis is uniformly poor regardless of stage",
       "It is usually slowly progressive over decades."]],
    c=0, cite=c(76)),

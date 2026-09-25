@@ -162,7 +162,7 @@ POOL_A = [
    opts=[
      ["Enterococcus, Listeria, endocarditis prophylaxis, upper respiratory tract infection, and community-acquired pneumonia at high dose",
       "Correct. Aminopenicillins add some Gram-negative aerobic activity to the natural penicillin spectrum but still lack Staphylococcus coverage."],
-     ["Methicillin-resistant Staphylococcus aureus bacteraemia and osteomyelitis",
+     ["Methicillin-resistant Staphylococcus aureus bacteremia and osteomyelitis",
       "Aminopenicillins are destroyed by staphylococcal beta-lactamase and cannot bind the altered penicillin-binding protein of resistant strains; vancomycin is used instead."],
      ["Pseudomonas aeruginosa pneumonia and nosocomial intra-abdominal infection",
       "Those are antipseudomonal penicillin indications, notably piperacillin/tazobactam."],
@@ -187,7 +187,7 @@ POOL_A = [
    q="Which serious dermatologic adverse effects are listed for the aminopenicillins?",
    opts=[
      ["Stevens-Johnson syndrome and toxic epidermal necrolysis",
-      "Correct. These sit alongside hepatic dysfunction, Clostridium difficile infection, interstitial nephritis and haematologic effects."],
+      "Correct. These sit alongside hepatic dysfunction, Clostridium difficile infection, interstitial nephritis and hematologic effects."],
      ["Photosensitivity and permanent discoloration of the teeth",
       "Those are the tetracycline adverse effects, tied to their chelation of calcium."],
      ["Tendonitis and rupture of the Achilles tendon",
@@ -342,7 +342,7 @@ POOL_A = [
  dict(topic="Penicillins", io=IO4A,
    q="Which adverse reactions are listed for the antipseudomonal penicillins?",
    opts=[
-     ["Hypersensitivity reaction, rash, and diarrhoea",
+     ["Hypersensitivity reaction, rash, and diarrhea",
       "Correct, with monitoring for anaphylaxis, renal function, complete blood count and bleeding."],
      ["Ototoxicity, nephrotoxicity, and red man syndrome",
       "Those are the vancomycin concerns."],

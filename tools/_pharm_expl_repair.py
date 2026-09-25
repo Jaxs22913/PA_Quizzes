@@ -29,8 +29,8 @@ REPAIRS = {
  "Correct. Note this sits outside the syllabus objectives, which name only antibacterials, antivirals and antifungals.":
  "Correct. Note this sits outside the stated objectives, which name only antibacterials, antivirals and antifungals.",
 
- "Correct. groups these as defecation, urination, miosis, bradycardia, bronchorrhoea, bronchospasm, emesis, lacrimation and salivation.":
- "Correct. These group as defecation, urination, miosis, bradycardia, bronchorrhoea, bronchospasm, emesis, lacrimation and salivation.",
+ "Correct. groups these as defecation, urination, miosis, bradycardia, bronchorrhea, bronchospasm, emesis, lacrimation and salivation.":
+ "Correct. These group as defecation, urination, miosis, bradycardia, bronchorrhea, bronchospasm, emesis, lacrimation and salivation.",
 
  "Correct. notes the eruption is not seen with hydrocortisone.":
  "Correct. The eruption is not seen with hydrocortisone.",

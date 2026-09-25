@@ -22,7 +22,7 @@ INTRO = ("Sixty questions drawn from every lecture in the Exam 1 block, in exam 
          "than at random &mdash; each of the six lectures contributes ten questions to every form, "
          "so this is a genuine cumulative rehearsal and not a sample of whichever topic had the most "
          "questions written for it. Questions are reused verbatim from the topic quizzes, so nothing "
-         "here can drift from the material it is summarising. <b>No question appears in more than "
+         "here can drift from the material it is summarizing. <b>No question appears in more than "
          "one form</b>, so working through all five gives you 300 distinct questions. "
          "<b>These forms cover the six LECTURES.</b> The exam also covers Lab 1, for which no "
          "material has been handed out; when it is, it gets folded in and these are rebuilt. "

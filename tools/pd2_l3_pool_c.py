@@ -384,7 +384,7 @@ POOL_C = [
  dict(topic="Horner syndrome", io=IO, slot="etiology",
    q="What is interrupted in Horner syndrome?",
    opts=[
-     ["The sympathetic innervation of the pupil and the levator palpebrae superioris",
+     ["The sympathetic supply to the pupil and the levator palpebrae superioris",
       "Correct — interrupting sympathetic supply to the pupil and levator palpebrae superioris explains both the miosis and the ptosis."],
      ["The parasympathetic supply through the ciliary ganglion",
       "Parasympathetic loss at the ciliary ganglion produces Adie's tonic pupil; Horner syndrome is a sympathetic interruption."],

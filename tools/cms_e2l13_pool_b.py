@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """CMS I Exam 2, Lecture 13 -- objective set B.
 
-Strabismus, amblyopia, cataract, and the ocular tumours: retinoblastoma, uveal
+Strabismus, amblyopia, cataract, and the ocular tumors: retinoblastoma, uveal
 melanoma, iris nevus and conjunctival melanoma. Patient stems throughout, and
 self-contained: nothing refers to "the lecture".
 """
@@ -15,7 +15,7 @@ QUESTIONS = [
   q="A 40-year-old man reports double vision that disappears when he covers either eye. What does that indicate?",
   opts=[["Binocular diplopia from ocular misalignment", "Correct. Covering one eye removes the second image."],
         ["A cataract in one eye", "That blurs rather than doubles."],
-        ["Macular degeneration", "That distorts the centre of vision."],
+        ["Macular degeneration", "That distorts the center of vision."],
         ["Amblyopia", "That is reduced acuity, not diplopia."]]),
 
  dict(topic="Strabismus", io=IO_A, lead="exam finding", cite=D % 25,
@@ -37,12 +37,12 @@ QUESTIONS = [
   opts=[["Myasthenia gravis", "Correct. It is variable and mimics any strabismus pattern."],
         ["Thyroid eye disease", "That restricts movement rather than fluctuating."],
         ["Amblyopia", "That is fixed and developmental."],
-        ["Retinoblastoma", "That is a childhood tumour."]]),
+        ["Retinoblastoma", "That is a childhood tumor."]]),
 
  dict(topic="Strabismus", io=IO_A, lead="differential", cite=D % 29,
   q="A 9-year-old boy with Down syndrome is screened for eye problems. Which is he more likely to have?",
   opts=[["Esotropia", "Correct. Down syndrome carries a higher prevalence of it."],
-        ["Uveal melanoma", "That is an adult tumour."],
+        ["Uveal melanoma", "That is an adult tumor."],
         ["Presbyopia", "That comes with middle age."],
         ["Conjunctival melanoma", "That is not the association."]]),
 
@@ -56,7 +56,7 @@ QUESTIONS = [
 
  dict(topic="Amblyopia", io=IO_A, lead="mechanism", cite=D % 33,
   q="A 3-year-old girl has one eye with a much stronger prescription than the other. How does amblyopia arise?",
-  opts=[["The brain favours one eye and the other fails to develop", "Correct. Strabismus, refractive difference or deprivation all do this."],
+  opts=[["The brain favors one eye and the other fails to develop", "Correct. Strabismus, refractive difference or deprivation all do this."],
         ["The optic nerve is compressed", "No compression is involved."],
         ["The lens clouds over", "That is a cataract, which can cause it but is not the mechanism."],
         ["The retina detaches", "That is a separate condition."]]),
@@ -66,18 +66,18 @@ QUESTIONS = [
   opts=[["The left eye is amblyopic", "Correct. Losing the good eye is what distresses him."],
         ["The right eye is amblyopic", "He objects when the RIGHT is covered, so it is the better eye."],
         ["Both eyes see equally", "Equal eyes would give no asymmetry."],
-        ["He has retinoblastoma", "The test does not assess for tumour."]]),
+        ["He has retinoblastoma", "The test does not assess for tumor."]]),
 
  dict(topic="Amblyopia", io=IO_A, lead="diagnosis", cite=D % 30,
   q="A 7-year-old girl reads 20/50 with one eye and 20/30 with the other. What defines unilateral amblyopia?",
   opts=[["Two or more lines of difference", "Correct, on best corrected acuity."],
         ["Any difference at all", "A small difference is not enough."],
         ["Worse than 20/200 in one eye", "That is a blindness threshold, not this."],
-        ["Loss of colour vision", "That points to optic neuropathy."]]),
+        ["Loss of color vision", "That points to optic neuropathy."]]),
 
  dict(topic="Amblyopia", io=IO_B, lead="screening", cite=D % 33,
   q="By what age should every child be screened for amblyopia?",
-  opts=[["Under five years", "Correct, per the preventive task force and the paediatric academy."],
+  opts=[["Under five years", "Correct, per the preventive task force and the pediatric academy."],
         ["Under two years", "Screening is recommended by five, not two."],
         ["Under ten years", "That is too late to treat well."],
         ["At school entry only", "School entry is not the threshold; every child should be screened for amblyopia before age five."]]),
@@ -113,10 +113,10 @@ QUESTIONS = [
 
  dict(topic="Cataract", io=IO_A, lead="exam finding", cite=D % 36,
   q="A 79-year-old woman has a dense cataract. What is seen on ophthalmoscopy?",
-  opts=[["Loss of the red reflex", "Correct, and a dense lens makes the pupil look grey or white."],
+  opts=[["Loss of the red reflex", "Correct, and a dense lens makes the pupil look gray or white."],
         ["Disc cupping", "That is glaucoma."],
         ["A cherry-red spot", "That is arterial occlusion."],
-        ["Flame haemorrhages", "Those are not a cataract sign."]]),
+        ["Flame hemorrhages", "Those are not a cataract sign."]]),
 
  dict(topic="Cataract", io=IO_A, lead="reasoning", cite=D % 36,
   q="A 75-year-old man with a cataract also has a relative afferent pupillary defect. What does that tell you?",
@@ -130,24 +130,24 @@ QUESTIONS = [
   opts=[["Nuclear", "Correct, and the myopic shift is why near vision holds up."],
         ["Cortical", "That gives spoke-like peripheral opacities."],
         ["Posterior subcapsular", "That is a plate-like opacity behind the lens."],
-        ["Zonular", "That is the commonest paediatric type."]]),
+        ["Zonular", "That is the commonest pediatric type."]]),
 
  dict(topic="Cataract", io=IO_A, lead="classification", cite=D % 36,
   q="A 46-year-old man on long-term corticosteroids has glare, trouble reading, and symptoms that ease once dilated. Which cataract is this?",
   opts=[["Posterior subcapsular", "Correct. It comes on faster and classically under fifty, with steroids or diabetes."],
-        ["Nuclear cataract", "That is slower and yellows the lens centre."],
+        ["Nuclear cataract", "That is slower and yellows the lens center."],
         ["Congenital polar", "That is present from birth."],
-        ["Zonular cataract", "That is a paediatric type."]]),
+        ["Zonular cataract", "That is a pediatric type."]]),
 
  dict(topic="Cataract", io=IO_A, lead="classification", cite=D % 37,
-  q="A 70-year-old woman has spoke-like opacities running in from the lens periphery. What is her main complaint once they reach the centre?",
-  opts=[["Glare", "Correct. Cortical cataract is quiet until the centre is involved."],
+  q="A 70-year-old woman has spoke-like opacities running in from the lens periphery. What is her main complaint once they reach the center?",
+  opts=[["Glare", "Correct. Cortical cataract is quiet until the center is involved."],
         ["Sudden painless vision loss", "That suggests a vascular event."],
-        ["Loss of colour vision", "That points to optic neuropathy."],
+        ["Loss of color vision", "That points to optic neuropathy."],
         ["Eye pain on movement", "That suggests optic neuritis."]]),
 
  dict(topic="Cataract", io=IO_B, lead="classification", cite=D % 38,
-  q="A newborn is found to have a cataract. Which paediatric type is commonest?",
+  q="A newborn is found to have a cataract. Which pediatric type is commonest?",
   opts=[["Zonular", "Correct, a white opacity round the nucleus."],
         ["Polar", "Less common, though easier to spot as it is central."],
         ["Posterior lenticonus", "An uncommon posterior form."],
@@ -171,7 +171,7 @@ QUESTIONS = [
   q="A 68-year-old woman's vision clouds again two years after cataract surgery. What has most likely happened?",
   opts=[["Posterior capsule opacification", "Correct. Residual lens epithelial cells cloud the capsule."],
         ["The cataract has regrown", "The lens is gone; it cannot regrow."],
-        ["Macular degeneration has started", "That distorts the centre rather than clouding."],
+        ["Macular degeneration has started", "That distorts the center rather than clouding."],
         ["Glaucoma has developed", "That takes the peripheral field."]]),
 
  # ---------------- retinoblastoma ----------------
@@ -191,9 +191,9 @@ QUESTIONS = [
 
  dict(topic="Retinoblastoma", io=IO_A, lead="reasoning", cite=D % 42,
   q="A 3-year-old has a retinal mass suspicious for retinoblastoma. Why is biopsy avoided?",
-  opts=[["It risks seeding tumour cells", "Correct, so diagnosis rests on examination and imaging."],
+  opts=[["It risks seeding tumor cells", "Correct, so diagnosis rests on examination and imaging."],
         ["The tissue is too small to sample", "Size is not the reason."],
-        ["Anaesthesia is unsafe at that age", "Anaesthesia is not the objection."],
+        ["Anesthesia is unsafe at that age", "Anesthesia is not the objection."],
         ["It would damage the optic nerve", "Optic nerve damage is not the objection; biopsy is avoided because it risks seeding tumor cells."]]),
 
  dict(topic="Retinoblastoma", io=IO_B, lead="next step", cite=D % 42,
@@ -214,28 +214,28 @@ QUESTIONS = [
  dict(topic="Uveal melanoma", io=IO_A, lead="epidemiology", cite=D % 45,
   q="A 61-year-old man is told he has the commonest eye cancer in adults. Which is it?",
   opts=[["Uveal melanoma", "Correct, arising from melanocytes of the choroid, ciliary body or iris."],
-        ["Retinoblastoma", "That is a childhood tumour."],
+        ["Retinoblastoma", "That is a childhood tumor."],
         ["Conjunctival melanoma", "A distinct and less common entity."],
-        ["Choroidal haemangioma", "That is benign."]]),
+        ["Choroidal hemangioma", "That is benign."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="exam finding", cite=D % 45,
   q="A 57-year-old woman has a pigmented iris lesion. Which feature most suggests melanoma over a freckle?",
-  opts=[["A prominent feeder vessel", "Correct. Tumours build their own blood supply; freckles do not."],
-        ["Brown colour", "Both can be brown."],
-        ["Presence since puberty", "Long-standing favours a nevus."],
-        ["A flat surface", "Flatness favours a nevus."]]),
+  opts=[["A prominent feeder vessel", "Correct. Tumors build their own blood supply; freckles do not."],
+        ["Brown color", "Both can be brown."],
+        ["Presence since puberty", "Long-standing favors a nevus."],
+        ["A flat surface", "Flatness favors a nevus."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="exam finding", cite=D % 45,
   q="A 63-year-old man has an iris lesion. Which dimensions raise concern for melanoma?",
   opts=[["Over 3 mm across and over 1 mm deep", "Correct. A nevus is usually smaller and flat."],
         ["Under 1 mm across", "That is reassuring."],
-        ["Any size, if bilateral", "Bilateral multifocal pigment favours freckles."],
+        ["Any size, if bilateral", "Bilateral multifocal pigment favors freckles."],
         ["Only lesions over 10 mm", "The threshold is much lower."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="prognosis", cite=D % 46,
   q="A 59-year-old woman with uveal melanoma asks where it would spread. Which site is commonest?",
   opts=[["The liver", "Correct, and surveillance is directed there."],
-        ["The brain", "Not the commonest site for this tumour."],
+        ["The brain", "Not the commonest site for this tumor."],
         ["The contralateral eye", "Spread is systemic, not to the other eye."],
         ["The lungs", "Less common than the liver here."]]),
 
@@ -243,7 +243,7 @@ QUESTIONS = [
   q="A 66-year-old man needs treatment for choroidal melanoma. Which is used most often now?",
   opts=[["Radiation therapy", "Correct, and it spares the globe where removal once did not."],
         ["Enucleation in every case", "Removal is now less common."],
-        ["Topical chemotherapy drops", "Not a treatment for an intraocular tumour."],
+        ["Topical chemotherapy drops", "Not a treatment for an intraocular tumor."],
         ["Observation alone", "A melanoma is treated."]]),
 
  dict(topic="Iris nevus", io=IO_A, lead="management", cite=D % 49,
@@ -261,9 +261,9 @@ QUESTIONS = [
         ["Melanocytoma", "That is a solitary dark lesion."]]),
 
  dict(topic="Conjunctival melanoma", io=IO_A, lead="differential", cite=D % 52,
-  q="A 60-year-old man has a raised vascular pigmented lesion on the conjunctiva. Which favours melanoma over a nevus?",
+  q="A 60-year-old man has a raised vascular pigmented lesion on the conjunctiva. Which favors melanoma over a nevus?",
   opts=[["It is raised and vascular", "Correct. A conjunctival nevus is flat and often has clear cysts."],
-        ["It contains small clear cysts", "Cysts favour a nevus."],
-        ["It has been present since childhood", "Long standing favours a nevus."],
+        ["It contains small clear cysts", "Cysts favor a nevus."],
+        ["It has been present since childhood", "Long standing favors a nevus."],
         ["It is bilateral", "Bilateral symmetric pigment suggests racial melanosis."]]),
 ]

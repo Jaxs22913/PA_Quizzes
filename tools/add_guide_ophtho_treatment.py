@@ -25,7 +25,7 @@ here. In this chart an arrow almost always means "in this case, do this":
     Inflammatory &rarr; corticosteroids. Viral &rarr; cool compresses.
 
 Cutting those at the arrow would leave "Immunocompetent adult". So escalation is
-recognised by an explicit FAILURE or PERSISTENCE trigger, or by a trailing
+recognized by an explicit FAILURE or PERSISTENCE trigger, or by a trailing
 definitive-surgery clause, and the cut is taken at the EARLIEST such marker --
 not the last, which left the laser step sitting in the glaucoma row.
 

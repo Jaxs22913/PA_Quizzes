@@ -19,7 +19,7 @@ IOB = "b — Identify medical strategies for common benign skin lesions in infan
 
 VIG_A = [
  dict(topic="Clavus (corn)", io=IOA, lead="diagnosis",
-   q="A 34-year-old woman who wears narrow dress shoes has a painful lesion on the dorsal aspect of her fifth toe. It is under a centimetre, sharply demarcated, and the skin lines run through it. Pressing straight down on it reproduces her pain. Which is the most likely diagnosis?",
+   q="A 34-year-old woman who wears narrow dress shoes has a painful lesion on the dorsal aspect of her fifth toe. It is under a centimeter, sharply demarcated, and the skin lines run through it. Pressing straight down on it reproduces her pain. Which is the most likely diagnosis?",
    opts=[
      ["Hard corn",
       "Correct — a well-defined lesion, tender on direct pressure, with skin lines running through."],
@@ -50,18 +50,18 @@ VIG_A = [
      ["Callus",
       "Correct — broad-area pressure, diffuse thickening, no central core, painless."],
      ["Hard corn",
-      "A corn is well defined, under one and a half centimetres, and painful on direct pressure."],
+      "A corn is well defined, under one and a half centimeters, and painful on direct pressure."],
      ["Verruca vulgaris",
-      "A wart interrupts the skin lines and has a blackened centre."],
+      "A wart interrupts the skin lines and has a blackened center."],
      ["Keratoacanthoma",
       "That is a solitary dome-shaped nodule with a central keratin crater."]],
    c=0, cite=c(6)),
 
  dict(topic="Verruca vulgaris", io=IOA, lead="diagnosis",
-   q="A 19-year-old has a rough lesion on the back of his hand with a cauliflower-like surface and small black dots at the centre. The skin lines stop at its edge. Squeezing it from the sides hurts more than pressing on it. Which is the most likely diagnosis?",
+   q="A 19-year-old has a rough lesion on the back of his hand with a cauliflower-like surface and small black dots at the center. The skin lines stop at its edge. Squeezing it from the sides hurts more than pressing on it. Which is the most likely diagnosis?",
    opts=[
      ["Verruca vulgaris",
-      "Correct — interrupted skin lines, blackened centre, and pain on side pressure."],
+      "Correct — interrupted skin lines, blackened center, and pain on side pressure."],
      ["Clavus",
       "A corn preserves the skin lines and hurts on direct downward pressure."],
      ["Callus",
@@ -79,7 +79,7 @@ VIG_A = [
       "Keratolytics are reasonable in general, but the diabetic foot is referred."],
      ["Pare the lesion down in clinic and advise wider footwear",
       "Padding and footwear help, but the diabetic patient needs specialist care."],
-     ["Excise the lesion with a five-millimetre margin",
+     ["Excise the lesion with a five-millimeter margin",
       "Those margins belong to keratoacanthoma."]],
    c=0, cite=c(9)),
 
@@ -89,7 +89,7 @@ VIG_A = [
      ["Well-fitting shoes and socks, and pads inside the shoe",
       "Correct — remove the friction and the lesion stops re-forming. Tight shoes and high heels are named as causes, as is wearing shoes without socks."],
      ["Apply sunscreen daily and examine the skin periodically",
-      "That is the general benign-lesion counselling point."],
+      "That is the general benign-lesion counseling point."],
      ["Avoid ear piercing and other cosmetic procedures",
       "That advice is for the keloid-prone patient."],
      ["Reposition every two hours and keep the skin clean and dry",
@@ -138,9 +138,9 @@ VIG_A = [
  dict(topic="Keloid", io=IOA, lead="treatment",
    q="A 26-year-old with a keloid on the sternum wants it removed. Which is the most appropriate advice about surgical excision alone?",
    opts=[
-     ["Recurrence is fifty to one hundred per cent, so steroid injection follows",
+     ["Recurrence is fifty to one hundred percent, so steroid injection follows",
       "Correct — the recurrent lesion is often larger than the original, which is why excision is never done alone. Combination therapy has the best success rates."],
-     ["Recurrence is under five per cent, so excision alone is usually curative",
+     ["Recurrence is under five percent, so excision alone is usually curative",
       "Recurrence after excision alone runs far higher than that."],
      ["Excision is contraindicated in keloids because it always causes bleeding",
       "Bleeding is not the reason excision alone is avoided."],
@@ -152,7 +152,7 @@ VIG_A = [
    q="A 35-year-old with a keloid asks about the silicone sheets a friend used. Which is the most appropriate description of how they are used?",
    opts=[
      ["Worn twelve to twenty-four hours a day for up to a year",
-      "Correct — theorised to raise scar temperature and increase collagenase activity."],
+      "Correct — theorized to raise scar temperature and increase collagenase activity."],
      ["Applied for twenty minutes twice daily for six weeks",
       "The schedule is near-continuous and lasts far longer than this."],
      ["Worn only at night for the first month after surgery",
@@ -164,13 +164,13 @@ VIG_A = [
  dict(topic="Keloid", io=IOA, lead="treatment",
    q="A patient is offered compression therapy for a keloid. Which regimen is correct?",
    opts=[
-     ["Twenty-five millimetres of mercury, round the clock, six to twelve months",
+     ["Twenty-five millimeters of mercury, round the clock, six to twelve months",
       "Correct — the mechanism is not understood, but it possibly induces tissue hypoxia with fibroblast degeneration and subsequent collagen degradation."],
-     ["Twenty-five millimetres of mercury, twelve hours a day, for six weeks",
+     ["Twenty-five millimeters of mercury, twelve hours a day, for six weeks",
       "The pressure is right but the schedule is far shorter than described."],
-     ["Forty millimetres of mercury, overnight, for three months",
+     ["Forty millimeters of mercury, overnight, for three months",
       "Neither the pressure nor the duration matches."],
-     ["Fifteen millimetres of mercury, continuously, for one month",
+     ["Fifteen millimeters of mercury, continuously, for one month",
       "Both the pressure and the duration are below what is specified."]],
    c=0, cite=c(17)),
 
@@ -182,13 +182,13 @@ VIG_A = [
      ["Biopsy every raised scar, because histology is the only way to be certain",
       "Biopsying a keloid inflicts fresh injury at the site and can provoke a second lesion, so it is reserved for genuine diagnostic doubt rather than done routinely."],
      ["Excise it immediately and send the whole specimen",
-      "Excision alone recurs at fifty to one hundred per cent."],
+      "Excision alone recurs at fifty to one hundred percent."],
      ["Obtain magnetic resonance imaging of the lesion",
       "Imaging plays no part in diagnosing a scar."]],
    c=0, cite=c(14)),
 
  dict(topic="Keloid", io=IOB, lead="education",
-   q="A 15-year-old with moderate acne has a family history of keloids. Which is the most appropriate counselling point?",
+   q="A 15-year-old with moderate acne has a family history of keloids. Which is the most appropriate counseling point?",
    opts=[
      ["Treat the acne early and appropriately",
       "Correct — acne is one of the named keloid triggers, and early appropriate treatment greatly increases the chance of scar-free healing."],
@@ -253,12 +253,12 @@ VIG_A = [
    c=0, cite=c(26)),
 
  dict(topic="Acrochordon", io=IOA, lead="diagnosis",
-   q="A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. They are asymptomatic. Which is the most likely diagnosis?",
+   q="A 58-year-old woman with obesity has several soft, skin-colored, pedunculated papules on a thin stalk in both axillae and on her neck. They are asymptomatic. Which is the most likely diagnosis?",
    opts=[
      ["Acrochordon",
       "Correct — friction sites, obesity, female, and a narrow stalk with a broad tip."],
      ["Cutaneous neurofibroma",
-      "Those begin at puberty and are nerve sheath tumours, not friction-related."],
+      "Those begin at puberty and are nerve sheath tumors, not friction-related."],
      ["Seborrheic keratosis",
       "Those are waxy stuck-on plaques rather than stalked papules."],
      ["Sebaceous hyperplasia",
@@ -266,11 +266,11 @@ VIG_A = [
    c=0, cite=c(29)),
 
  dict(topic="Acrochordon", io=IOA, lead="treatment",
-   q="A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. She wants them removed for cosmetic reasons. Which is the most appropriate approach?",
+   q="A 58-year-old woman with obesity has several soft, skin-colored, pedunculated papules on a thin stalk in both axillae and on her neck. She wants them removed for cosmetic reasons. Which is the most appropriate approach?",
    opts=[
      ["Scissor excision, cryotherapy or electrodesiccation, without anesthesia",
       "Correct — anesthesia is stated not to be necessary."],
-     ["Elliptical excision with five-millimetre margins under local anesthesia",
+     ["Elliptical excision with five-millimeter margins under local anesthesia",
       "Those margins belong to keratoacanthoma."],
      ["Intralesional corticosteroid injection at monthly intervals",
       "That is a scar treatment."],
@@ -283,8 +283,8 @@ VIG_A = [
    opts=[
      ["She should not, because skin tags bleed when they come off",
       "Correct — and a new tag often forms in the same area anyway."],
-     ["She may, provided she sterilises the scissors first",
-      "Sterilising the scissors does not address the real risks of bleeding, incomplete removal and misidentifying a lesion that is not a skin tag."],
+     ["She may, provided she sterilizes the scissors first",
+      "Sterilizing the scissors does not address the real risks of bleeding, incomplete removal and misidentifying a lesion that is not a skin tag."],
      ["She should first apply a keratolytic for two weeks to soften it",
       "Keratolytics are for corns and calluses."],
      ["She should not, because skin tags are premalignant",
@@ -326,7 +326,7 @@ VIG_A = [
       "That is the caution attached to intralesional steroid."],
      ["Permanent loss of sensation at the site",
       "Sensory loss is not a described effect."],
-     ["Recurrence in one hundred per cent of cases",
+     ["Recurrence in one hundred percent of cases",
       "That figure belongs to surgical excision performed alone."]],
    c=0, cite=c(19)),
 ]

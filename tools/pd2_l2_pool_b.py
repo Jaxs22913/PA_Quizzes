@@ -7,7 +7,7 @@ SRC = "PD II Derm - Beck.pptx"
 def c(n): return f"{SRC}, Slide {n}"
 
 IOB = ("Objective b — Terms describing lesion type (primary morphology), configuration "
-       "(secondary morphology), texture, distribution and colour")
+       "(secondary morphology), texture, distribution and color")
 
 POOL_B = [
  dict(topic="Lesion description", io=IOB,
@@ -15,7 +15,7 @@ POOL_B = [
    opts=[
      ["A primary lesion forms first and results directly from the disease",
       "Correct — a primary lesion forms first and results directly from the disease; a secondary lesion is a change in it over time."],
-     ["A primary lesion is larger than one centimetre and a secondary lesion is smaller",
+     ["A primary lesion is larger than one centimeter and a secondary lesion is smaller",
       "Size distinguishes several individual lesions from one another but not the two categories."],
      ["A primary lesion is flat and a secondary lesion is elevated",
       "Flatness does not separate them; a primary lesion forms first from the disease, and a secondary lesion is its change over time."],
@@ -39,9 +39,9 @@ POOL_B = [
  dict(topic="Lesion description", io=IOB,
    q="Which five features should be recorded when describing a skin lesion?",
    opts=[
-     ["Distribution, configuration, morphology, colour and texture",
+     ["Distribution, configuration, morphology, color and texture",
       "Correct — distribution is location, configuration is shape and morphology is form and structure."],
-     ["Size, shape, colour, tenderness and duration",
+     ["Size, shape, color, tenderness and duration",
       "Tenderness and duration come from the history rather than the description of the lesion."],
      ["Onset, progression, symptoms, treatment and response",
       "Those are the history questions, not the descriptive features."],
@@ -89,7 +89,7 @@ POOL_B = [
    c=0, cite=c(25)),
 
  dict(topic="Distribution", io=IOB,
-   q="A generalised or diffuse distribution most commonly suggests which category of disease?",
+   q="A generalized or diffuse distribution most commonly suggests which category of disease?",
    opts=[
      ["An allergic reaction",
       "Correct — a process delivered through the bloodstream reaches the whole skin surface."],
@@ -111,7 +111,7 @@ POOL_B = [
      ["Herpes zoster",
       "Herpes zoster follows a dermatome rather than sun exposure; lesions confined to sun-exposed skin suggest skin cancers."],
      ["Psoriasis",
-      "Psoriasis favours extensor surfaces rather than sun-exposed skin specifically."]],
+      "Psoriasis favors extensor surfaces rather than sun-exposed skin specifically."]],
    c=0, cite=c(25)),
 
  dict(topic="Configuration", io=IOB,
@@ -219,7 +219,7 @@ POOL_B = [
    c=0, cite=c(30)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A circumscribed, flat discoloration measuring less than one centimetre is called what?",
+   q="A circumscribed, flat discoloration measuring less than one centimeter is called what?",
    opts=[
      ["A macule",
       "Correct — a macule is a circumscribed, flat discoloration under one centimeter, such as a freckle."],
@@ -232,7 +232,7 @@ POOL_B = [
    c=0, cite=c(32)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A circumscribed, flat discoloration measuring more than one centimetre is called what?",
+   q="A circumscribed, flat discoloration measuring more than one centimeter is called what?",
    opts=[
      ["A patch",
       "Correct — a patch is a flat discoloration over one centimeter, such as vitiligo or café au lait spots, and may be coalesced macules."],
@@ -245,20 +245,20 @@ POOL_B = [
    c=0, cite=c(33)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A palpable, elevated solid mass measuring less than one centimetre is called what?",
+   q="A palpable, elevated solid mass measuring less than one centimeter is called what?",
    opts=[
      ["A papule",
       "Correct — a papule is a palpable, elevated solid mass under one centimeter, as in nevi, warts and lichen planus."],
      ["A macule",
       "A macule is a flat discoloration; a palpable, elevated solid mass under one centimeter is a papule."],
      ["A nodule",
-      "A nodule lies deeper in the dermis and is one to two centimetres."],
+      "A nodule lies deeper in the dermis and is one to two centimeters."],
      ["A vesicle",
       "A vesicle is a superficial elevation filled with fluid; a solid elevated mass under one centimeter is a papule."]],
    c=0, cite=c(34)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A palpable, elevated, plateau-like solid mass larger than one centimetre that occupies a large area compared with its elevation is called what?",
+   q="A palpable, elevated, plateau-like solid mass larger than one centimeter that occupies a large area compared with its elevation is called what?",
    opts=[
      ["A plaque",
       "Correct — psoriasis is the example, and a plaque may be coalesced papules."],
@@ -273,7 +273,7 @@ POOL_B = [
  dict(topic="Primary morphology", io=IOB,
    q="What distinguishes a nodule from a papule?",
    opts=[
-     ["A nodule is deeper in the dermis and measures one to two centimetres",
+     ["A nodule is deeper in the dermis and measures one to two centimeters",
       "Correct — depth as well as size separates the two; basal cell carcinoma and neurofibromatosis are examples of nodules."],
      ["A nodule is fluid-filled while a papule is solid",
       "Both are solid; a nodule differs from a papule by lying deeper in the dermis and measuring one to two centimeters."],
@@ -297,7 +297,7 @@ POOL_B = [
    c=0, cite=c(37)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A palpable, elevated solid mass greater than two centimetres is called what?",
+   q="A palpable, elevated solid mass greater than two centimeters is called what?",
    opts=[
      ["A tumor",
       "Correct — a tumor is a palpable, elevated solid mass greater than two centimeters, such as a neoplasm."],
@@ -312,7 +312,7 @@ POOL_B = [
  dict(topic="Primary morphology", io=IOB,
    q="What distinguishes a bulla from a vesicle?",
    opts=[
-     ["A bulla is larger than one centimetre and a vesicle is smaller",
+     ["A bulla is larger than one centimeter and a vesicle is smaller",
       "Correct — both are superficial elevations filled with fluid, and only size separates them."],
      ["A bulla contains purulent material and a vesicle contains clear fluid",
       "Purulent content defines a pustule; a bulla and a vesicle both contain fluid and differ only in size."],
@@ -323,7 +323,7 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="Primary morphology", io=IOB,
-   q="A superficial elevation of skin filled with purulent material, usually less than one centimetre, is called what?",
+   q="A superficial elevation of skin filled with purulent material, usually less than one centimeter, is called what?",
    opts=[
      ["A pustule",
       "Correct — a pustule is a superficial elevation filled with purulent material, as in acne or impetigo."],
@@ -479,7 +479,7 @@ POOL_B = [
    c=0, cite=c(52)),
 
  dict(topic="Secondary morphology", io=IOB,
-   q="Fine scale that is attached at the periphery and detached at the centre, seen at the edge of an inflammatory lesion, is called what?",
+   q="Fine scale that is attached at the periphery and detached at the center, seen at the edge of an inflammatory lesion, is called what?",
    opts=[
      ["Collarette scale",
       "Correct — pityriasis rosea is the condition in which it is classically seen."],
@@ -508,7 +508,7 @@ POOL_B = [
    q="Warts are caused by which organism?",
    opts=[
      ["Human papillomavirus",
-      "Correct — verrucae are small harmless tumors of the skin, grey to flesh coloured, sometimes with rough hornlike projections."],
+      "Correct — verrucae are small harmless tumors of the skin, gray to flesh colored, sometimes with rough hornlike projections."],
      ["Herpes simplex virus",
       "Herpes simplex produces grouped vesicles in a herpetiform pattern; warts are caused by human papillomavirus."],
      ["A dermatophyte fungus",

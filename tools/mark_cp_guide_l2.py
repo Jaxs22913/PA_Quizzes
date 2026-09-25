@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Star what Professor Gopal emphasised in the Dermatology lecture (Clin Path I, Lecture 2).
+"""Star what Professor Gopal emphasized in the Dermatology lecture (Clin Path I, Lecture 2).
 
 Source: the 2026-08-18 recording, 8:14–8:50 local. That is the PRE-BREAK portion
 only — the recording ends on "Take a 10 minute break", and at 34:42 she says
@@ -7,7 +7,7 @@ only — the recording ends on "Take a 10 minute break", and at 34:42 she says
 lecture: anatomy, primary lesions, secondary lesions, and wound healing. Skin
 conditions and skin cancers (§2.5, §2.6) are UNMARKED because there is no audio
 for them, not because she skipped over them. That distinction is stated on the
-page so the absence of a star is never read as "not emphasised".
+page so the absence of a star is never read as "not emphasized".
 
 Method. Two instruments, and they disagreed in a way worth recording:
 
@@ -74,15 +74,15 @@ BLOCKS = [
   '  and content.</div>',
   flag("Professor emphasized &mdash; exam scope",
    '<p><strong>She addressed the size cut-offs directly, and told the class how they will be '
-   'tested.</strong> Sources disagree &mdash; many define a macule as up to <em>one centimetre</em> '
-   'rather than five millimetres, and the Physical Diagnosis II deck does exactly that.</p>'
+   'tested.</strong> Sources disagree &mdash; many define a macule as up to <em>one centimeter</em> '
+   'rather than five millimeters, and the Physical Diagnosis II deck does exactly that.</p>'
    '<p><em>&ldquo;For our sake of this lecture and testing, I&rsquo;m going to define it up to five '
-   'millimetres &hellip; if you&rsquo;re reading it in other sources and it goes up to one centimetre, '
+   'millimeters &hellip; if you&rsquo;re reading it in other sources and it goes up to one centimeter, '
    'don&rsquo;t be alarmed.&rdquo;</em> And twice: <em>&ldquo;it&rsquo;s not gonna be a gotcha thing on '
    'the exam, I promise you &hellip; do know the general range. The macules are smaller, the patches '
    'are bigger.&rdquo;</em></p>'
    '<p>So the table above uses <strong>her</strong> numbers, which are the ones this exam will use. '
-   'Know the ordering cold; do not lose sleep over the exact millimetre.</p>')),
+   'Know the ordering cold; do not lose sleep over the exact millimeter.</p>')),
 
  # §2.4 — she called this out, then a student question made it the payoff
  ('<h3 class="sub" id="derm-healing">',

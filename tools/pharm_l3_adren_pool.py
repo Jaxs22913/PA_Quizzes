@@ -146,16 +146,16 @@ POOL = [
    c=0, cite=c(86)),
 
  dict(topic="Epinephrine", io=IO10,
-   q="Why does a local anaesthetic solution often contain epinephrine?",
+   q="Why does a local anesthetic solution often contain epinephrine?",
    opts=[
-     ["It causes vasoconstriction at the injection site, prolonging the anaesthetic",
+     ["It causes vasoconstriction at the injection site, prolonging the anesthetic",
       "Correct, and applied topically it also helps control capillary oozing."],
-     ["It speeds systemic absorption of the anaesthetic",
+     ["It speeds systemic absorption of the anesthetic",
       "Vasoconstriction slows removal from the site rather than speeding absorption."],
      ["It provides additional analgesia of its own",
       "The benefit described is vascular, not analgesic."],
-     ["It prevents an allergic reaction to the anaesthetic",
-      "Epinephrine does not prevent allergy; it constricts local vessels so the anaesthetic is carried away more slowly, prolonging the block and reducing bleeding."]],
+     ["It prevents an allergic reaction to the anesthetic",
+      "Epinephrine does not prevent allergy; it constricts local vessels so the anesthetic is carried away more slowly, prolonging the block and reducing bleeding."]],
    c=0, cite=c(85)),
 
  dict(topic="Epinephrine interactions", io=IO4,
@@ -250,7 +250,7 @@ POOL = [
    c=0, cite=c(94)),
 
  dict(topic="Dobutamine", io=IO10,
-   q="Why is caution counselled with dobutamine in atrial fibrillation?",
+   q="Why is caution counseled with dobutamine in atrial fibrillation?",
    opts=[
      ["It increases atrioventricular conduction",
       "Correct, which can accelerate the ventricular response."],
@@ -291,7 +291,7 @@ POOL = [
  dict(topic="Clonidine", io=IO5,
    q="How does an alpha-two agonist such as clonidine lower blood pressure?",
    opts=[
-     ["It acts centrally to inhibit sympathetic vasomotor centres, reducing outflow to the periphery",
+     ["It acts centrally to inhibit sympathetic vasomotor centers, reducing outflow to the periphery",
       "Correct, so an agonist produces vasodilation by damping sympathetic drive."],
      ["It blocks alpha-one receptors on vascular smooth muscle",
       "That is the prazosin group, which are antagonists."],
@@ -336,7 +336,7 @@ POOL = [
       "Those belong to clonidine and the antimuscarinics."],
      ["Bradycardia and bronchoconstriction",
       "Those are beta blocker effects, the opposite direction."],
-     ["Miosis, salivation and diarrhoea",
+     ["Miosis, salivation and diarrhea",
       "Those are muscarinic agonist effects."]],
    c=0, cite=c(98)),
 
@@ -356,7 +356,7 @@ POOL = [
  dict(topic="Tyramine", io=IO4,
    q="Why is tyramine dangerous in a patient taking a monoamine oxidase inhibitor?",
    opts=[
-     ["It is normally oxidised by monoamine oxidase in the gut, so blocking that enzyme allows serious vasopressor effects",
+     ["It is normally oxidized by monoamine oxidase in the gut, so blocking that enzyme allows serious vasopressor effects",
       "Correct, and it is found in fermented foods such as cheese and wine."],
      ["It blocks reuptake of norepinephrine at the terminal",
       "That is cocaine's mechanism."],
@@ -369,7 +369,7 @@ POOL = [
  dict(topic="Cocaine", io=IO10,
    q="Besides blocking norepinephrine reuptake, what other action does cocaine have?",
    opts=[
-     ["It blocks neuronal sodium channels, acting as a local anaesthetic",
+     ["It blocks neuronal sodium channels, acting as a local anesthetic",
       "Correct, and it also blocks sodium-potassium activated ATPase."],
      ["It inhibits monoamine oxidase",
       "Not an action described for cocaine here."],

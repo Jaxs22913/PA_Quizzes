@@ -16,12 +16,12 @@ POOL_D = [
    opts=[
      ["Recurrent herpes simplex infection, immunosuppression, high-risk medications, recent respiratory infection and a prior episode",
       "Correct — a prior episode itself carries recurrence risk."],
-     ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb oedema",
+     ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb edema",
       "Those predispose to stasis dermatitis through venous hypertension; erythema multiforme is an immune reaction, most often to herpes simplex or a drug."],
      ["Cumulative ultraviolet exposure, fair skin, outdoor work, immunosuppression and older age",
       "Those are the risk factors for actinic damage."],
      ["Nasal staphylococcal carriage, obesity, diabetes, occlusive clothing and humid weather",
-      "Those favour folliculitis by occluding and colonising follicles; erythema multiforme follows infection or drug exposure instead."]],
+      "Those favor folliculitis by occluding and colonizing follicles; erythema multiforme follows infection or drug exposure instead."]],
    c=0, cite=c(9)),
 
  dict(topic="Erythema multiforme", io=IOA, slot="differential",
@@ -64,7 +64,7 @@ POOL_D = [
    c=0, cite=c(12)),
 
  dict(topic="Erythema multiforme", io=IOA, slot="complication",
-   q="When should a patient with erythema multiforme major be hospitalised?",
+   q="When should a patient with erythema multiforme major be hospitalized?",
    opts=[
      ["When oral intake is poor or mucosal disease is extensive",
       "Correct — those are the two stated triggers for admission."],
@@ -93,7 +93,7 @@ POOL_D = [
    q="Which human leukocyte antigen haplotypes are strongly associated with dermatitis herpetiformis?",
    opts=[
      ["HLA-DQ2 and HLA-DQ8",
-      "Correct — the same haplotypes that underlie coeliac disease."],
+      "Correct — the same haplotypes that underlie celiac disease."],
      ["HLA-B*15:02 and HLA-B*58:01",
       "Those are the severe cutaneous drug reaction associations."],
      ["HLA-B27 and HLA-DR4",
@@ -105,7 +105,7 @@ POOL_D = [
  dict(topic="Acanthosis nigricans", io=IOA, slot="etiology",
    q="What drives the commonest, insulin-resistant form of acanthosis nigricans?",
    opts=[
-     ["Hyperinsulinaemia stimulating keratinocyte and fibroblast proliferation through insulin-like growth factor 1 receptor cross-activation",
+     ["Hyperinsulinemia stimulating keratinocyte and fibroblast proliferation through insulin-like growth factor 1 receptor cross-activation",
       "Correct. Malignant, drug-induced and endocrine forms make up the rest."],
      ["Autoimmune destruction of the melanocytes within the affected intertriginous skin",
       "That is vitiligo."],
@@ -194,7 +194,7 @@ POOL_D = [
    c=0, cite=c(45)),
 
  dict(topic="Granuloma annulare", io=IOA, slot="referral",
-   q="Which referral is indicated for generalised granuloma annulare in an older adult?",
+   q="Which referral is indicated for generalized granuloma annulare in an older adult?",
    opts=[
      ["Oncology, if lymphoma is suspected",
       "Correct, alongside dermatology for phototherapy or systemic therapy and endocrine workup for diabetes or thyroid disease."],
@@ -207,12 +207,12 @@ POOL_D = [
    c=0, cite=c(52)),
 
  dict(topic="Granuloma annulare", io=IOA, slot="prognosis",
-   q="What should a patient with localised granuloma annulare be told about the course?",
+   q="What should a patient with localized granuloma annulare be told about the course?",
    opts=[
      ["It is benign and self-limiting, so reassurance is the main intervention",
       "Correct — about half resolve within two years."],
-     ["It is progressive and will generalise without early systemic therapy",
-      "Localised disease is self-limiting."],
+     ["It is progressive and will generalize without early systemic therapy",
+      "Localized disease is self-limiting."],
      ["It is premalignant and each ring should be excised with clear margins",
       "There is no malignant potential."],
      ["It is contagious and close contacts should be examined and treated",
@@ -246,16 +246,16 @@ POOL_D = [
    c=0, cite=c(60)),
 
  dict(topic="Pyoderma gangrenosum", io=IOA, slot="manifestation",
-   q="Which pyoderma gangrenosum variant is most often associated with haematologic malignancy?",
+   q="Which pyoderma gangrenosum variant is most often associated with hematologic malignancy?",
    opts=[
-     ["The bullous variant, with tense superficial bullae and blue-grey overhanging edges on the upper limbs and face",
-      "Correct — acute myeloid leukaemia is the named association."],
+     ["The bullous variant, with tense superficial bullae and blue-gray overhanging edges on the upper limbs and face",
+      "Correct — acute myeloid leukemia is the named association."],
      ["The classic ulcerative variant, with an undermined violaceous border on the lower extremities only",
       "That is the commonest form and associates with inflammatory bowel disease."],
      ["The pustular variant, with painful discrete pustules arising on inflamed skin",
-      "That variant is not the one tied to haematologic malignancy."],
+      "That variant is not the one tied to hematologic malignancy."],
      ["The vegetative variant, with a slowly enlarging superficial verrucous plaque",
-      "That variant is not the one tied to haematologic malignancy."]],
+      "That variant is not the one tied to hematologic malignancy."]],
    c=0, cite=c(58)),
 
  dict(topic="Acne rosacea", io=IOA, slot="referral",
@@ -289,7 +289,7 @@ POOL_D = [
    opts=[
      ["Thoracic surgery, for endoscopic thoracic sympathectomy",
       "Correct — dermatology handles botulinum toxin, microwave thermolysis and glycopyrronium."],
-     ["Dermatology, for a further trial of topical aluminium chloride",
+     ["Dermatology, for a further trial of topical aluminum chloride",
       "That is the first-line therapy that has already failed."],
      ["Endocrinology, for assessment of thyroid and adrenal function",
       "That referral addresses secondary hyperhidrosis."],
@@ -300,7 +300,7 @@ POOL_D = [
  dict(topic="Stevens-Johnson syndrome", io=IOA, slot="referral",
    q="Which long-term follow-up is named for a survivor of Stevens-Johnson syndrome?",
    opts=[
-     ["Ophthalmology for symblepharon and corneal scarring, dermatology for dyspigmentation, urology or gynaecology for strictures, and psychological support for post-traumatic stress",
+     ["Ophthalmology for symblepharon and corneal scarring, dermatology for dyspigmentation, urology or gynecology for strictures, and psychological support for post-traumatic stress",
       "Correct — physical and occupational therapy also feature, for contracture prevention."],
      ["Dermatology alone, since the sequelae are confined to the skin surface",
       "The sequelae span several organ systems."],
@@ -313,7 +313,7 @@ POOL_D = [
  dict(topic="Toxic epidermal necrolysis", io=IOA, slot="complication",
    q="Which systemic complications are named in toxic epidermal necrolysis?",
    opts=[
-     ["Sepsis, acute respiratory distress syndrome, acute kidney injury, electrolyte imbalance, hypovolaemia and gastrointestinal haemorrhage",
+     ["Sepsis, acute respiratory distress syndrome, acute kidney injury, electrolyte imbalance, hypovolemia and gastrointestinal hemorrhage",
       "Correct — survivors also face sicca syndrome, lung disease and psychological trauma."],
      ["Acute post-streptococcal glomerulonephritis, acute rheumatic fever and a post-infectious reactive arthritis of the knee",
       "Those follow streptococcal infection."],
@@ -330,35 +330,35 @@ POOL_D = [
       "Correct — cool rather than cold water is also specified."],
      ["Starting a nonsteroidal anti-inflammatory drug early in the course",
       "Early nonsteroidals are recommended."],
-     ["Applying aloe vera or a soy-based topical moisturiser",
+     ["Applying aloe vera or a soy-based topical moisturizer",
       "Those are soothing, though they do not alter healing."],
      ["Giving oral or intravenous fluids for systemic symptoms",
       "Hydration is part of management."]],
    c=0, cite=c(96)),
 
  dict(topic="Photodermatitis", io=IOA, slot="differential",
-   q="Which feature separates photodermatitis from seborrhoeic dermatitis on the face?",
+   q="Which feature separates photodermatitis from seborrheic dermatitis on the face?",
    opts=[
-     ["Photodermatitis spares the nasolabial folds, which seborrhoeic dermatitis involves",
+     ["Photodermatitis spares the nasolabial folds, which seborrheic dermatitis involves",
       "Correct — shadowed areas are protected from light."],
-     ["Photodermatitis involves the nasolabial folds, which seborrhoeic dermatitis spares",
+     ["Photodermatitis involves the nasolabial folds, which seborrheic dermatitis spares",
       "That reverses the two."],
-     ["Photodermatitis produces greasy yellow scale, which seborrhoeic dermatitis lacks",
-      "Greasy yellow scale is the seborrhoeic finding."],
-     ["Photodermatitis is confined to the scalp, which seborrhoeic dermatitis spares",
+     ["Photodermatitis produces greasy yellow scale, which seborrheic dermatitis lacks",
+      "Greasy yellow scale is the seborrheic finding."],
+     ["Photodermatitis is confined to the scalp, which seborrheic dermatitis spares",
       "Neither statement is correct."]],
    c=0, cite=c(101)),
 
  dict(topic="Polymorphous light eruption", io=IOA, slot="test finding",
    q="What does skin biopsy show in polymorphous light eruption, and how useful is it?",
    opts=[
-     ["A perivascular lymphocytic infiltrate with dermal oedema — supportive but not pathognomonic",
+     ["A perivascular lymphocytic infiltrate with dermal edema — supportive but not pathognomonic",
       "Correct. The diagnosis is largely clinical, from history and morphology."],
      ["Full-thickness epidermal necrosis with dermal-epidermal separation — pathognomonic",
       "That is Stevens-Johnson syndrome and toxic epidermal necrolysis."],
      ["Granular immunoglobulin A at the dermal papillae — diagnostic in every case",
       "That is dermatitis herpetiformis."],
-     ["Solar elastosis with tangled elastin fibres — the defining histological change",
+     ["Solar elastosis with tangled elastin fibers — the defining histological change",
       "That is dermatoheliosis."]],
    c=0, cite=c(106)),
 
@@ -369,10 +369,10 @@ POOL_D = [
       "Correct — a hypertrophic, thickened and verrucous lesion also carries higher malignant potential."],
      ["A sandpaper texture on palpation of the lesion",
       "That is the ordinary description of the lesion."],
-     ["A diameter between two and ten millimetres",
+     ["A diameter between two and ten millimeters",
       "That is the typical size range."],
-     ["A skin-coloured to red-brown appearance overall",
-      "That is the typical colour range."]],
+     ["A skin-colored to red-brown appearance overall",
+      "That is the typical color range."]],
    c=0, cite=c(113)),
 
  dict(topic="Dermatoheliosis", io=IOA, slot="prognosis",
@@ -416,7 +416,7 @@ POOL_D = [
  dict(topic="Hyperhidrosis", io=IOA, slot="risk factors",
    q="Which features should raise suspicion of secondary rather than primary hyperhidrosis?",
    opts=[
-     ["Generalised sweating, nocturnal sweating, or an asymmetric distribution",
+     ["Generalized sweating, nocturnal sweating, or an asymmetric distribution",
       "Correct — primary disease is bilateral, focal and absent during sleep."],
      ["Bilateral palmar sweating that has been present since adolescence",
       "That pattern describes primary focal disease."],

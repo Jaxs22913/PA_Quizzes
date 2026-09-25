@@ -14,7 +14,7 @@ column carries the finding that names it.
 
 SIX SLIDES ARE PICTURES OF CONTENT and extract as bare titles or nothing at
 all. Transcribed into the rows rather than lost, per [[image_only_slides]]:
-  slide 50   normal larynx against papilloma, labelled
+  slide 50   normal larynx against papilloma, labeled
   slide 64   the THUMBPRINT SIGN -- epiglottitis against a normal epiglottis
   slide 71   streptococcal against viral pharyngitis, side by side
   slide 75   the Centor scoring algorithm (the criteria themselves are in the
@@ -41,11 +41,11 @@ D19 = "CMS I Disorders of the Oral Cavity, Salivary Glands"
 
 ROWS_L19 = [
  ("Leukoedema", VAR,
-  "<b>Normal variant</b> &middot; greyish-white buccal mucosa that <b>DISAPPEARS WHEN "
+  "<b>Normal variant</b> &middot; grayish-white buccal mucosa that <b>DISAPPEARS WHEN "
   "STRETCHED</b>",
   "A common, benign mucosal change and a normal variant, caused by accumulation of fluid within the "
-  "epithelial cells. Diffuse greyish-white appearance of the buccal mucosa.",
-  "Clinical. The distinguishing manoeuvre is <b>stretching the mucosa &mdash; the change "
+  "epithelial cells. Diffuse grayish-white appearance of the buccal mucosa.",
+  "Clinical. The distinguishing maneuver is <b>stretching the mucosa &mdash; the change "
   "disappears</b>, which is what separates it from leukoplakia.",
   "None &mdash; reassurance.", "Routine",
   "Naming it as a variant is the whole job; it needs no biopsy and no follow-up.", "9", D19),
@@ -66,10 +66,10 @@ ROWS_L19 = [
   "The reason it matters is the differential it sits in, not the lesion itself.", "11", D19),
 
  ("Aphthous stomatitis (canker sores)", ULC,
-  "<b>Painful round ulcer, YELLOW-GREY fibrinoid centre with a RED HALO</b> &middot; on "
-  "<b>non-keratinised, freely moving</b> mucosa",
+  "<b>Painful round ulcer, YELLOW-GRAY fibrinoid center with a RED HALO</b> &middot; on "
+  "<b>non-keratinized, freely moving</b> mucosa",
   "The commonest cause of acute recurrent oral ulcers in adolescents and young adults. Found on "
-  "<b>freely moving, non-keratinised mucosa</b> &mdash; buccal and labial mucosa, non-attached "
+  "<b>freely moving, non-keratinized mucosa</b> &mdash; buccal and labial mucosa, non-attached "
   "gingiva, palate. Trauma (cheek biting, a dental procedure) and stress are exacerbating factors; "
   "the cause is unknown, though human herpesvirus 6 has been suggested. <b>Minor (&lt;1&nbsp;cm)</b> "
   "are commonest, burn and tingle first, and last 7&ndash;10 days. <b>Major (&gt;1&nbsp;cm)</b> are "
@@ -77,10 +77,10 @@ ROWS_L19 = [
   "ulcers, scar, and last over a month.",
   "Clinical.",
   "Observation &mdash; it is self-limiting. Anti-inflammatories, antibiotics, antivirals, oral and "
-  "topical corticosteroids (triamcinolone, fluocinonide), cauterisation with silver nitrate, "
+  "topical corticosteroids (triamcinolone, fluocinonide), cauterization with silver nitrate, "
   "<i>Lactobacillus</i> capsules, dilute water rinses.",
   "Routine",
-  "<b>Recurrent aphthous stomatitis is called Sutton disease.</b> Non-keratinised mucosa is the "
+  "<b>Recurrent aphthous stomatitis is called Sutton disease.</b> Non-keratinized mucosa is the "
   "location rule that separates it from herpes.", "15&ndash;17", D19),
 
  ("Behcet syndrome", ULC,
@@ -138,7 +138,7 @@ ROWS_L19 = [
   "primary infection</b> in children and young adults, with fever, malaise and cervical "
   "lymphadenopathy. <b>Secondary</b> disease is recurrence of dormant virus from the trigeminal "
   "ganglion, triggered by stress, trauma, immunosuppression or ultraviolet light. Small painful "
-  "lesions that ulcerate, leaving an erythematous base with a grey cover; <b>heals without a "
+  "lesions that ulcerate, leaving an erythematous base with a gray cover; <b>heals without a "
   "scar</b>; resolves in 1&ndash;2 weeks.",
   "Clinical, but confirm with <b>polymerase chain reaction for HSV DNA &mdash; most sensitive and "
   "specific</b>. Serology with IgG and IgM distinguishes HSV 1 from HSV 2. <b>Tzanck smear shows "
@@ -146,7 +146,7 @@ ROWS_L19 = [
   "test.",
   "<b>Oral acyclovir</b> for treatment and prophylaxis.", "Routine",
   "The 24-hour prodrome is the window in which treatment works best, so patients are taught to "
-  "recognise it.", "25&ndash;27", D19),
+  "recognize it.", "25&ndash;27", D19),
 
  ("Acute suppurative sialadenitis", SAL,
   "<b>PAROTID</b> swelling, firm and diffusely tender &middot; <b>PUS EXPRESSED FROM THE DUCT</b> "
@@ -191,7 +191,7 @@ ROWS_L19 = [
  ("Parotitis", SAL,
   "Painful parotid swelling &middot; <b>mumps (paramyxovirus)</b> is the classic viral cause",
   "Painful swelling of the parotid gland. Causes: viral &mdash; <b>mumps (paramyxovirus)</b>, "
-  "herpes, Epstein-Barr virus &mdash; and also bacterial infection, diabetes, tumours, stones and "
+  "herpes, Epstein-Barr virus &mdash; and also bacterial infection, diabetes, tumors, stones and "
   "dental problems.",
   "Clinical; serology where mumps is suspected.",
   "Directed at the cause.", "Routine",
@@ -238,7 +238,7 @@ ROWS_L19 = [
   "<b>No curative measure for the virus</b> &mdash; the aim is removing symptomatic lesions with "
   "minimal morbidity: carbon dioxide laser resection, cold steel dissection, laryngeal "
   "microdebrider. <b>Avoid tracheostomy</b>, which introduces another squamociliary junction the "
-  "papillomas favour. Adjuvant intralaryngeal cidofovir is off-label.",
+  "papillomas favor. Adjuvant intralaryngeal cidofovir is off-label.",
   "Urgent",
   "<b>3&ndash;7% risk of malignant transformation.</b> Gardasil and Gardasil 9 offer eventual "
   "prevention.", "49&ndash;52", D19),
@@ -246,7 +246,7 @@ ROWS_L19 = [
  ("Vocal cord paralysis", VC,
   "<b>Unilateral: hoarse BREATHY voice</b> &middot; <b>bilateral: STRIDOR</b> with a weak cry",
   "One or both folds fail to open or close properly. Causes: injury during surgery to thyroid, "
-  "parathyroid, oesophagus, neck or chest; neck or chest injury; tumours; infections (Lyme disease, "
+  "parathyroid, esophagus, neck or chest; neck or chest injury; tumors; infections (Lyme disease, "
   "Epstein-Barr virus, herpes); neurological disease (stroke, multiple sclerosis, Parkinson "
   "disease). <b>Unilateral</b> gives hoarse breathy dysphonia, aspiration, dysphagia, vocal fatigue "
   "&mdash; and may be asymptomatic. <b>Bilateral</b> gives inspiratory or biphasic stridor, weak "
@@ -257,7 +257,7 @@ ROWS_L19 = [
   "Decide whether it is self-limiting or permanent. Observation with voice therapy; surgical "
   "medialisation of the affected fold, or thyroplasty.",
   "Urgent",
-  "<b>Laryngeal electromyography predicts recovery</b>: a transected or tumour-infiltrated nerve "
+  "<b>Laryngeal electromyography predicts recovery</b>: a transected or tumor-infiltrated nerve "
   "will not recover, while a bruised or stretched one may return over 6 months to a year.",
   "53&ndash;56", D19),
 
@@ -293,9 +293,9 @@ ROWS_L19 = [
   "More correctly supraglottitis: cellulitis involving multiple areas of the supraglottis. Acute "
   "disease presents in children aged 2 to 6, though any age can be affected. <b>Commonest pathogen "
   "is <i>Haemophilus influenzae</i> type B</b> &mdash; incidence has fallen over 90% since the "
-  "vaccine. Others: <i>Streptococcus pneumoniae</i>, <i>Staphylococcus aureus</i>, beta-haemolytic "
+  "vaccine. Others: <i>Streptococcus pneumoniae</i>, <i>Staphylococcus aureus</i>, beta-hemolytic "
   "streptococci. <b>Children: the 4 Ds</b>. Adults: severe sore throat, dysphagia, odynophagia, "
-  "fever, dyspnoea, cough; muffled voice, stridor and drooling in under 10%. Sudden onset "
+  "fever, dyspnea, cough; muffled voice, stridor and drooling in under 10%. Sudden onset "
   "progressing over hours in children, more slowly in adults. Classic picture is an irritable "
   "patient <b>sitting or leaning forward, neck hyperextended, chin thrust forward</b>. "
   "<b>Inspiratory stridor is a LATE finding</b> &mdash; the airway is nearly obstructed.",
@@ -303,15 +303,15 @@ ROWS_L19 = [
   "anxiety they cause may complete the obstruction. Lateral neck X-ray shows the <b>&ldquo;thumb "
   "print&rdquo; sign</b>, but is <b>not necessary for diagnosis</b>. <b>Mirror or fiberoptic "
   "laryngoscopy is the gold standard.</b>",
-  "Airway, antibiotics, prevention. <b>Paediatric: to theatre</b> for rigid bronchoscopy and "
-  "emergency tracheotomy standby; inhalation anaesthesia, confirm the diagnosis, secure the airway "
+  "Airway, antibiotics, prevention. <b>Pediatric: to theater</b> for rigid bronchoscopy and "
+  "emergency tracheotomy standby; inhalation anesthesia, confirm the diagnosis, secure the airway "
   "by intubation; blood cultures and supraglottic swab; parenteral antibiotics &mdash; extubation is "
   "often possible within 48 to 72 hours. <b>Adult:</b> observation, intubation or tracheostomy if "
-  "the airway obstructs, humidification, glucocorticoids, intravenous antibiotics, nebulised "
+  "the airway obstructs, humidification, glucocorticoids, intravenous antibiotics, nebulized "
   "adrenaline. <b>Third-generation cephalosporin plus an antistaphylococcal agent</b> &mdash; "
   "ceftriaxone or cefotaxime with vancomycin for 7&ndash;10 days.",
   "Emergent",
-  "The mortality is what justifies the caution: rare, but high if it is not recognised and treated "
+  "The mortality is what justifies the caution: rare, but high if it is not recognized and treated "
   "promptly.", "60&ndash;67", D19),
 
  ("Viral pharyngitis", PHA,
@@ -328,9 +328,9 @@ ROWS_L19 = [
   "Centor point.", "70, 72", D19),
 
  ("Bacterial pharyngitis (GABHS)", PHA,
-  "<b>Group A beta-haemolytic <i>Streptococcus</i></b> &middot; fever, exudate, tender nodes and "
+  "<b>Group A beta-hemolytic <i>Streptococcus</i></b> &middot; fever, exudate, tender nodes and "
   "<b>NO COUGH</b>",
-  "30% of pharyngitis; the commonest bacterial cause is <b>group A beta-haemolytic "
+  "30% of pharyngitis; the commonest bacterial cause is <b>group A beta-hemolytic "
   "<i>Streptococcus</i></b>. Common in adolescents and children but <b>not under 3 years</b>. Peaks "
   "in winter and spring; droplet spread; incubation 2&ndash;5 days. <b>Fever above 100.4&nbsp;&deg;F, "
   "sore throat, cervical lymphadenopathy, dysphagia, odynophagia, LACK OF COUGH, abdominal "
@@ -350,7 +350,7 @@ ROWS_L19 = [
  ("Rheumatic fever", PHA,
   "<b>Sequela of untreated GABHS</b> &middot; appears <b>2&ndash;3 weeks</b> after &middot; peak "
   "ages <b>5&ndash;15</b>",
-  "A rare complication of untreated group A beta-haemolytic streptococcal infection, from "
+  "A rare complication of untreated group A beta-hemolytic streptococcal infection, from "
   "<b>cross-reactive antibodies</b> produced against the streptococcus that attack heart muscle "
   "&mdash; endocarditis, myocarditis or pericarditis. Signs appear <b>2 to 3 weeks after the "
   "infection</b>, sometimes as early as one week or as late as five. <b>Peak incidence between 5 "
@@ -416,12 +416,12 @@ ROWS_L19 = [
   "treated as strep, a rash, and then the real diagnosis.", "81&ndash;87", D19),
 
  ("Diphtheria", PHA,
-  "<b>Tenacious GREY MEMBRANE</b> over tonsils and pharynx &middot; unimmunised child",
+  "<b>Tenacious GRAY MEMBRANE</b> over tonsils and pharynx &middot; unimmunized child",
   "<i>Corynebacterium diphtheriae</i>, attacking the respiratory tract and sometimes mucous "
   "membrane or skin wounds, spread by respiratory secretions. Nasal, laryngeal, <b>pharyngeal "
-  "(commonest)</b> and cutaneous forms. Common in unimmunised children over 6 years. Nasal: "
-  "discharge. Laryngeal: upper airway and bronchial obstruction. <b>Pharyngeal: a tenacious grey "
-  "membrane covering tonsils and pharynx</b>, with mild sore throat, fever, malaise, toxaemia and "
+  "(commonest)</b> and cutaneous forms. Common in unimmunized children over 6 years. Nasal: "
+  "discharge. Laryngeal: upper airway and bronchial obstruction. <b>Pharyngeal: a tenacious gray "
+  "membrane covering tonsils and pharynx</b>, with mild sore throat, fever, malaise, toxemia and "
   "prostration. Complications: <b>myocarditis</b> (arrhythmia, heart block, failure) and "
   "<b>neuropathy involving cranial nerves first</b> &mdash; diplopia, slurred speech, difficulty "
   "swallowing.",
@@ -432,13 +432,13 @@ ROWS_L19 = [
   "erythromycin 500&nbsp;mg four times daily <b>for 14 days</b>. <b>Isolate until three consecutive "
   "cultures after therapy are negative.</b> Treat contacts with erythromycin for 7 days.",
   "Emergent",
-  "Prevention is immunisation: childhood schedule plus boosters, and <b>Tdap in every pregnancy "
+  "Prevention is immunization: childhood schedule plus boosters, and <b>Tdap in every pregnancy "
   "between 27 and 36 weeks</b>.", "112&ndash;114", D19),
 
  ("Oral candidiasis (thrush)", LES,
   "<b>Creamy white curd-like patches that WIPE OFF</b>, leaving an erythematous base",
   "<i>Candida albicans</i>; <i>Aspergillus</i> may also be cultured. Common in infants and the "
-  "immunosuppressed. Risk factors: dentures, poor oral hygiene, diabetes, anaemia, chemotherapy or "
+  "immunosuppressed. Risk factors: dentures, poor oral hygiene, diabetes, anemia, chemotherapy or "
   "local irradiation, corticosteroids, broad-spectrum antibiotics, age, HIV. Creamy white curd-like "
   "patches on an erythematous base, painful, granular, usually on buccal mucosa and tongue, with "
   "fever, lymphadenopathy, odynophagia and taste change.",
@@ -448,7 +448,7 @@ ROWS_L19 = [
   "itraconazole or voriconazole.",
   "Routine",
   "<b>The patches rub off with a tongue depressor.</b> Leukoplakia and lichen planus do not &mdash; "
-  "that single manoeuvre separates three diagnoses.", "88&ndash;90", D19),
+  "that single maneuver separates three diagnoses.", "88&ndash;90", D19),
 
  ("Cervical adenitis", DEEP,
   "<b>A SIGN, NOT A DIAGNOSIS</b> &middot; typically <b>unilateral, solitary, anterior</b> node",
@@ -456,7 +456,7 @@ ROWS_L19 = [
   "lymphadenopathy is a sign, not a diagnosis.</b> Infectious causes include toxoplasmosis, "
   "tuberculosis, brucellosis, primary herpes simplex, syphilis, cytomegalovirus, HIV, "
   "histoplasmosis and chickenpox; also inflammatory, degenerative and neoplastic causes. The typical "
-  "case is a <b>unilateral, solitary, anterior cervical node</b>: about <b>70% beta-haemolytic "
+  "case is a <b>unilateral, solitary, anterior cervical node</b>: about <b>70% beta-hemolytic "
   "streptococcus, 20% staphylococcus including MRSA, 10% viruses, atypical mycobacteria and "
   "<i>Bartonella henselae</i></b>.",
   "Response to specific antibiotics can help confirm or exclude. <b>Fine needle aspiration if the "
@@ -474,7 +474,7 @@ ROWS_L19 = [
   "Purulence between the capsule of the palatine tonsil and the pharyngeal muscles, beginning as a "
   "complication of untreated strep throat or tonsillitis. <b>The commonest deep infection of the "
   "head and neck</b>, especially in young adults, adolescents and children; commoner in males. "
-  "Aerobes: group A beta-haemolytic streptococcus, <i>Staphylococcus aureus</i>, "
+  "Aerobes: group A beta-hemolytic streptococcus, <i>Staphylococcus aureus</i>, "
   "<i>Haemophilus influenzae</i>. Anaerobes: <i>Prevotella</i>, <i>Porphyromonas</i>, "
   "<i>Fusobacterium</i>, <i>Streptococcus</i>. Severe sore throat, fever, odynophagia, medial "
   "deviation of the soft palate and peritonsillar fold, uvular deviation, hot potato voice, "
@@ -497,7 +497,7 @@ ROWS_L19 = [
   "mediastinum. May spread from a peritonsillar abscess or from a node in that space. <b>Commoner "
   "in children under 5</b> after upper respiratory infection, otitis media or sinusitis; in adults "
   "it follows intraoral procedures, trauma, foreign bodies such as fishbone, immunocompromise or "
-  "odontogenic spread. Group A beta-haemolytic streptococcus, <i>Staphylococcus aureus</i>, "
+  "odontogenic spread. Group A beta-hemolytic streptococcus, <i>Staphylococcus aureus</i>, "
   "<i>Haemophilus influenzae</i>, mixed flora. Early: fever, sore throat, pharyngeal erythema, "
   "dysphagia, odynophagia, neck stiffness, trismus. Late: ill appearance, drooling, <b>leaning "
   "forward with the neck extended</b>, respiratory distress.",
@@ -518,7 +518,7 @@ ROWS_L19 = [
   "A severe infection of the floor of the mouth and the submental, sublingual and submandibular "
   "spaces. <b>Can rapidly compromise the upper airway and force a surgical airway.</b> Streptococci, "
   "staphylococci, <i>Bacteroides</i>, <i>Fusobacterium</i>, <i>Klebsiella</i> &mdash; the last "
-  "usually in patients with diabetes, who have a more aggressive course. Oedema and erythema of the "
+  "usually in patients with diabetes, who have a more aggressive course. Edema and erythema of the "
   "upper neck under the chin and the floor of the mouth; <b>the tongue is displaced upwards and "
   "backwards</b> by posterior spread of cellulitis; pus coalescing at the floor of the mouth.",
   "<b>Computed tomography with contrast</b>, to separate inflammation and phlegmon from abscess and "
@@ -547,16 +547,16 @@ ROWS_L19 = [
   "Ludwig angina is the neck version of that spread.", "116&ndash;117", D19),
 
  ("Gingivitis and periodontitis", DENT,
-  "<b>Gums erythematous, oedematous and BLEED EASILY</b> with little discomfort &middot; "
+  "<b>Gums erythematous, edematous and BLEED EASILY</b> with little discomfort &middot; "
   "<b>gingivitis is REVERSIBLE</b>",
   "Chronic infection of the gingiva beginning with bacterial plaque at the gum line. "
-  "<b>Gingivitis</b> is the mildest form: erythematous, oedematous gums that bleed easily, with "
+  "<b>Gingivitis</b> is the mildest form: erythematous, edematous gums that bleed easily, with "
   "little or no discomfort, caused by inadequate oral hygiene &mdash; and <b>reversible with "
   "professional treatment and good home care</b>. Untreated it becomes <b>periodontitis</b>: plaque "
   "spreads below the gum line, bacterial toxins provoke a chronic inflammatory response in which "
   "the body turns on itself, gums separate from teeth, pockets form and become infected, the "
   "periodontal ligament and bone are destroyed, and teeth loosen and fall out. Risk: diabetes, "
-  "smoking, ageing, genetics, stress, poor nutrition, puberty, pregnancy, substance abuse, HIV and "
+  "smoking, aging, genetics, stress, poor nutrition, puberty, pregnancy, substance abuse, HIV and "
   "certain medications. Gram-negative organisms.",
   "Clinical and dental examination.",
   "Professional cleaning and oral hygiene &mdash; brushing, flossing, mouthwash &mdash; and "
@@ -620,7 +620,7 @@ ROWS_L19 = [
   "Eliminate pain and restore function: self care; non-steroidal anti-inflammatories, muscle "
   "relaxants (cyclobenzaprine), low-dose tricyclics (amitriptyline, desipramine, nortriptyline); "
   "oral steroids if there is synovitis; physical therapy, transcutaneous electrical nerve "
-  "stimulation, acupuncture, local anaesthesia, mouth guards, arthrocentesis, arthroscopy, surgery.",
+  "stimulation, acupuncture, local anesthesia, mouth guards, arthrocentesis, arthroscopy, surgery.",
   "Routine",
   "The ear symptoms are the trap &mdash; tinnitus, fullness and dizziness send these patients to an "
   "ear examination that is normal.", "128&ndash;131", D19),
@@ -667,14 +667,14 @@ ROWS_L19 = [
   "likelier it is malignant",
   "<b>64&ndash;80% arise in the parotid, and 75&ndash;80% of those are benign.</b> 7&ndash;15% "
   "submandibular, 50&ndash;60% benign. 1% sublingual. About 15% are minor salivary gland, and only "
-  "<b>35% of those are benign</b>. Most benign parotid tumours are epithelial; in minor glands the "
+  "<b>35% of those are benign</b>. Most benign parotid tumors are epithelial; in minor glands the "
   "commonest is <b>pleomorphic adenoma</b>, then basal cell adenoma. Malignant disease is 3&ndash;4% "
   "of head and neck malignancy; <b>mucoepidermoid carcinoma is the commonest</b>, and in minor "
   "glands adenoid cystic carcinoma and adenocarcinoma. <b>No specific risk factors are known.</b> "
-  "Benign parotid tumours are slow-growing painless masses often at the tail of the parotid.",
-  "<b>Fine needle aspiration is less specific and sensitive here than for other tumours</b>, though "
+  "Benign parotid tumors are slow-growing painless masses often at the tail of the parotid.",
+  "<b>Fine needle aspiration is less specific and sensitive here than for other tumors</b>, though "
   "it helps separate malignant from benign. Diffusion-weighted magnetic resonance imaging or "
-  "computed tomography helps with deep lobe tumours.",
+  "computed tomography helps with deep lobe tumors.",
   "<b>Benign: complete surgical excision, no radiation.</b> <b>Malignant: surgical removal, "
   "radiotherapy for T1 and T2, palliative chemotherapy.</b> Complications include recurrence with "
   "positive margins and <b>transient or permanent facial paralysis</b>.",
@@ -692,11 +692,11 @@ ROWS_L19 = [
   "cavity and 3&ndash;5 times for oropharyngeal. <b>60&ndash;80% of oropharyngeal cancer is human "
   "papillomavirus related</b>; 90% of oral cavity cases relate to chronic sun exposure. Mean age 62. "
   "Risks: tobacco chewed and smoked, alcohol, betel nut, poor oral hygiene, immunosuppression. "
-  "<b>Squamous cell carcinoma is commonest</b>; lymphoma is the second commonest tumour of the "
+  "<b>Squamous cell carcinoma is commonest</b>; lymphoma is the second commonest tumor of the "
   "tonsillar fossa. Non-healing ulcers, bleeding, pain, ill-fitting dentures; advanced: dysarthria, "
   "dysphagia, neck mass, <b>referred otalgia</b> from cranial nerve involvement; tonsillar lesions "
   "give odynophagia and trismus.",
-  "Labs including <b>high-risk human papillomavirus testing and in situ hybridisation</b>; computed "
+  "Labs including <b>high-risk human papillomavirus testing and in situ hybridization</b>; computed "
   "tomography or magnetic resonance imaging for the primary and nodes; chest X-ray and positron "
   "emission tomography for metastases; flexible fiberoptic endoscopy; <b>biopsy</b>; dental "
   "evaluation.",
@@ -712,7 +712,7 @@ DIFF_L19 = {
  "Leukoedema": ("No", "Buccal mucosa", "<b>Disappears when the mucosa is stretched</b>"),
  "Fordyce granules": ("No", "Vermilion of lip, buccal mucosa", "Yellow-white papules &mdash; ectopic sebaceous glands"),
  "Physiologic pigmentation": ("No", "Gingiva and mucosa", "Symmetrical melanin pigmentation, a normal variant"),
- "Aphthous stomatitis (canker sores)": ("Yes &mdash; painful", "<b>Non-keratinised, freely moving</b> mucosa", "<b>Yellow-grey fibrinoid centre with a red halo</b>"),
+ "Aphthous stomatitis (canker sores)": ("Yes &mdash; painful", "<b>Non-keratinized, freely moving</b> mucosa", "<b>Yellow-gray fibrinoid center with a red halo</b>"),
  "Behcet syndrome": ("Yes", "Oral and <b>genital</b>", "Oral ulcers in up to 100%, genital in 75%"),
  "Oral lichen planus": ("Varies &mdash; erosive types hurt", "Buccal mucosa, tongue, lips", "<b>Wickham striae</b> &mdash; lacy white lines"),
  "Systemic lupus erythematosus &mdash; oral": ("Varies", "Lips, soft and buccal mucosa", "<b>Honeycomb patches</b>; may be the first sign of lupus"),
@@ -732,7 +732,7 @@ DIFF_L19 = {
  "Rheumatic fever": ("Varies", "Heart, joints, skin", "<b>2&ndash;3 weeks after an untreated strep throat</b>"),
  "Chronic pharyngitis": ("Mild", "Pharyngeal wall", "<b>Thickened, granular</b> wall with crusting"),
  "Infectious mononucleosis": ("Yes", "Tonsils and cervical nodes", "<b>Fever, tonsillar pharyngitis, cervical adenopathy</b> plus splenomegaly"),
- "Diphtheria": ("Mild sore throat", "Tonsils and pharynx", "<b>Tenacious grey membrane</b>"),
+ "Diphtheria": ("Mild sore throat", "Tonsils and pharynx", "<b>Tenacious gray membrane</b>"),
  "Oral candidiasis (thrush)": ("Yes", "Buccal mucosa and tongue", "<b>White patches that RUB OFF</b>"),
  "Cervical adenitis": ("Varies &mdash; tender means inflammatory", "Anterior cervical node", "Unilateral solitary node; <b>immobile suggests malignancy</b>"),
  "Peritonsillar abscess (quinsy)": ("Severe", "Between tonsil capsule and pharyngeal muscle", "<b>Trismus, uvular deviation, hot potato voice</b>"),

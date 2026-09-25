@@ -11,8 +11,8 @@ CHIPS = ["Tinea by site", "Nail &amp; fold disease", "Varicella &amp; zoster",
          "Herpes simplex", "Molluscum &amp; warts"]
 INTRO = ("Thirty patient vignettes on cutaneous viral and fungal infections. Each one gives you a "
          "presentation and asks for the diagnosis, the next step, the test, the treatment or the "
-         "counselling point &mdash; and the lead-in decides the answer, so read it before you read "
-         "the choices. The wrong options are the neighbouring condition in the same differential or "
+         "counseling point &mdash; and the lead-in decides the answer, so read it before you read "
+         "the choices. The wrong options are the neighboring condition in the same differential or "
          "the right condition at the wrong phase, not obviously absurd. "
          "<b>Where the lecture audio and the slide disagree on a fact, the slide wins.</b> "
          "This is the vignette set; the objective questions are separate. Every question cites its slide.")

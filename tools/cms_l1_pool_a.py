@@ -54,9 +54,9 @@ POOL_A = [
      ["Fewer true-positives",
       "True-positives are correct results. A test is not valued for producing fewer of them."],
      ["Fewer true-negatives",
-      "True-negatives are correct results, and are maximised by specificity rather than reduced by sensitivity."],
+      "True-negatives are correct results, and are maximized by specificity rather than reduced by sensitivity."],
      ["Fewer false-negatives",
-      "Correct. A sensitive test catches nearly everyone who has the disease, so few diseased patients are wrongly labelled negative; it says nothing about how many healthy people it wrongly flags."]],
+      "Correct. A sensitive test catches nearly everyone who has the disease, so few diseased patients are wrongly labeled negative; it says nothing about how many healthy people it wrongly flags."]],
    c=3, cite=c(6)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
@@ -90,7 +90,7 @@ POOL_A = [
    opts=[
      ["So that treatment can be started without any confirmatory testing",
       "Confirmatory supplemental testing is a separate and highly specific second step; a sensitive screen identifies candidates rather than establishing the diagnosis."],
-     ["So that the cost of the screening programme stays low",
+     ["So that the cost of the screening program stays low",
       "Cost is not the rationale given. The stated reason concerns missed cases."],
      ["So that very few individuals who have the virus are missed",
       "Correct. A missed infection means an untreated, transmissible disease, so screening is deliberately tuned to catch nearly every case even at the cost of some false alarms."],
@@ -102,12 +102,12 @@ POOL_A = [
    q="Confirmatory (supplemental) testing for human immunodeficiency virus (HIV) is highly specific in order to accomplish what?",
    opts=[
      ["Detect as many infected individuals as possible",
-      "Maximising detection is the goal of the highly sensitive screening step that comes first."],
+      "Maximizing detection is the goal of the highly sensitive screening step that comes first."],
      ["Shorten the time needed to obtain a result",
       "Speed is not the property specificity describes."],
      ["Identify the virus before antibodies have developed",
       "Detecting infection before antibodies appear is a question of the test's window period rather than of its specificity."],
-     ["Minimise false-positive diagnoses",
+     ["Minimize false-positive diagnoses",
       "Correct. The sensitive screen has already caught the cases; the specific confirmation exists to ensure nobody is told they carry a lifelong infection that they do not have."]],
    c=3, cite=c(6)),
 
@@ -121,7 +121,7 @@ POOL_A = [
      ["How common is the disease in this population?",
       "Population frequency belongs to pretest probability, not to a test's specificity."],
      ["How likely is the patient to adhere to treatment?",
-      "Adherence is addressed by counselling strategies, not by a test characteristic."]],
+      "Adherence is addressed by counseling strategies, not by a test characteristic."]],
    c=0, cite=c(8)),
 
  dict(topic="Sensitivity and specificity", io="Compare and contrast sensitivity and specificity",
@@ -187,7 +187,7 @@ POOL_A = [
      ["Cost, availability, and turnaround time of the test",
       "Practical test characteristics are not listed as inputs to pretest probability."],
      ["The patient's readiness to change and self-efficacy",
-      "These belong to behaviour-change counselling, not to estimating pretest probability."]],
+      "These belong to behavior-change counseling, not to estimating pretest probability."]],
    c=1, cite=c(9)),
 
  dict(topic="Pretest probability", io="Define pretest probability",
@@ -224,7 +224,7 @@ POOL_A = [
      ["Common manifestations of uncommon conditions",
       "This is the bet to avoid: the rarity of the condition usually outweighs the typicality of the presentation."],
      ["Uncommon manifestations of uncommon conditions",
-      "Neither half of this is favoured; it compounds two low-probability assumptions."],
+      "Neither half of this is favored; it compounds two low-probability assumptions."],
      ["Whichever diagnosis the pattern most quickly suggests",
       "Rapid pattern recognition is described as the lowest level of decision-making and prone to error."]],
    c=0, cite=c(25)),

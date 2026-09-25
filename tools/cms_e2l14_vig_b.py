@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """CMS I Exam 2, Lecture 14 (Ocular Trauma) -- vignette set B.
 
-Lid lacerations, contusion and periorbital haematoma, retinal and vitreous
+Lid lacerations, contusion and periorbital hematoma, retinal and vitreous
 detachment, orbital floor fracture, and basilar skull fracture. Same house
 style: FOUR options (five until 2026-09-13), varied lead-in, per-option refutation, self-contained.
 
@@ -13,7 +13,7 @@ IO_B = "b — Identify medical care strategies for common ophthalmological disor
 
 QUESTIONS = [
  dict(topic="Lid laceration", io=IO_A, lead="referral", cite=D % 26,
-  q="A 33-year-old has a 1 centimetre laceration running through the lower lid margin after a dog bite. Which is the most appropriate disposition?",
+  q="A 33-year-old has a 1 centimeter laceration running through the lower lid margin after a dog bite. Which is the most appropriate disposition?",
   opts=[["Ophthalmology, because the lid margin is involved", "Correct. Margin involvement is one of the explicit referral criteria."],
         ["Close it in the emergency department with fine sutures", "Margin involvement takes it out of emergency department repair."],
         ["Leave it open and review in one week", "A margin laceration needs proper repair."],
@@ -33,7 +33,7 @@ QUESTIONS = [
         ["Patch the eye for 48 hours", "That does not address the globe."],
         ["Prescribe a cycloplegic", "Not the priority here."]]),
 
- dict(topic="Periorbital haematoma", io=IO_A, lead="management", cite=D % 33,
+ dict(topic="Periorbital hematoma", io=IO_A, lead="management", cite=D % 33,
   q="A 60-year-old on warfarin develops a tense, proptotic orbit with rising pressure and no history of injury. Which is the most appropriate management?",
   opts=[["Canthotomy with cantholysis", "Correct. Releasing the lateral canthal tendon and cutting its inferior branch lets the blood drain."],
         ["Pressure patching the eye", "Pressure is the wrong direction entirely."],
@@ -41,28 +41,28 @@ QUESTIONS = [
         ["Immediate enucleation", "Far beyond what is required."]]),
 
  dict(topic="Orbital contusion", io=IO_A, lead="next step", cite=D % 31,
-  q="A 35-year-old has periorbital swelling and ecchymosis after a fall, with a normal globe and no haemorrhage within the orbit. Beyond supportive care, which is the most appropriate step?",
+  q="A 35-year-old has periorbital swelling and ecchymosis after a fall, with a normal globe and no hemorrhage within the orbit. Beyond supportive care, which is the most appropriate step?",
   opts=[["Exclude brain trauma", "Correct. The force that bruised the orbit reaches the brain."],
         ["Start topical antibiotics", "There is no surface infection."],
-        ["Arrange urgent canthotomy", "There is no orbital haemorrhage to decompress."],
+        ["Arrange urgent canthotomy", "There is no orbital hemorrhage to decompress."],
         ["Refer for cataract assessment", "Not relevant acutely."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="diagnosis", cite=D % 36,
   q="A 58-year-old myope describes a shower of floaters, flashes of light, and a curtain moving across the vision of one eye. Which is the most likely diagnosis?",
   opts=[["Rhegmatogenous retinal detachment", "Correct. Flashes, floaters and a curtain, with myopia as the risk factor."],
-        ["Exudative retinal detachment", "That has no break and usually accompanies systemic disease or a tumour."],
+        ["Exudative retinal detachment", "That has no break and usually accompanies systemic disease or a tumor."],
         ["Traction retinal detachment", "That follows proliferative diabetic retinopathy."],
         ["Central retinal vein occlusion", "That gives sudden painless loss without flashes."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 39,
-  q="A 64-year-old with long-standing proliferative diabetic retinopathy has a localised, concave retinal detachment. Which is the most appropriate management?",
+  q="A 64-year-old with long-standing proliferative diabetic retinopathy has a localized, concave retinal detachment. Which is the most appropriate management?",
   opts=[["Surgical repair", "Correct. A traction detachment is managed surgically."],
         ["Treat the underlying systemic disease alone", "That is the approach for an exudative detachment."],
         ["Observation with serial imaging", "Observation is not enough for a traction detachment, which is managed surgically."],
         ["Intravitreal antibiotics", "There is no infection."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 39,
-  q="A 52-year-old has subretinal fluid with no retinal break and no traction, alongside a known intraocular tumour. Which is the most appropriate management?",
+  q="A 52-year-old has subretinal fluid with no retinal break and no traction, alongside a known intraocular tumor. Which is the most appropriate management?",
   opts=[["Treat the underlying condition", "Correct. An exudative detachment is not primarily surgical."],
         ["Scleral buckling", "Surgery is not the primary answer here."],
         ["Pneumatic retinopexy", "Not indicated without a break."],
@@ -98,8 +98,8 @@ QUESTIONS = [
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="diagnosis", cite=D % 44,
   q="A 39-year-old fell from a ladder. She has bruising around both eyes, bruising behind one ear, and blood behind the eardrum. Which is the most likely diagnosis?",
-  opts=[["Basilar skull fracture", "Correct. Raccoon eyes, Battle sign and haemotympanum together."],
-        ["Bilateral orbital floor fractures", "Those do not produce Battle sign or haemotympanum."],
+  opts=[["Basilar skull fracture", "Correct. Raccoon eyes, Battle sign and hemotympanum together."],
+        ["Bilateral orbital floor fractures", "Those do not produce Battle sign or hemotympanum."],
         ["Nasal fracture with periorbital spread", "That does not explain the retroauricular bruising."],
         ["Periorbital cellulitis", "That is infective and unilateral."]]),
 

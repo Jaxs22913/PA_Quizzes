@@ -18,7 +18,7 @@ individual teaching slides:
     platelets             table 150,000-400,000 teaching slide 150,000-450,000
     red cell distribution table 11-15%          teaching slide 12-15%
 
-A fourth set of numbers appears on the labelled smear on slide 15 (neutrophil
+A fourth set of numbers appears on the labeled smear on slide 15 (neutrophil
 60-70%, lymphocyte 20-25%, monocyte 3-8%, eosinophil 2-4%, basophil 0.5-1%),
 which is a borrowed textbook graphic and matches neither.
 
@@ -69,7 +69,7 @@ for (_qi, _oi), _txt in FIXES.items():
 # depends on which slide the examiner was looking at.
 _DISPUTED = [
     ("lymphocyte percentage",       r"\b(?:25\s*(?:to|-)\s*33|24\s*(?:to|-)\s*44)\s*(?:per cent|%)|"
-                                    r"twenty-four to forty-four per cent|twenty-five to thirty-three per cent"),
+                                    r"twenty-four to forty-four percent|twenty-five to thirty-three percent"),
     ("platelet upper limit",        r"\b4[05]0,000\b|four hundred (?:and fifty )?thousand"),
     ("red cell distribution width", r"\b1[12]\s*(?:to|-)\s*15\s*(?:per cent|%)|"
                                     r"(?:eleven|twelve) to fifteen per cent"),
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     print("objectives:", len(ALL_IOS), " topics:", len(ALL_TOPICS),
           " slots:", len(set(q["slot"] for q in POOL)))
     print("pool length-gameable: %.1f%%" % gameable_pct(POOL))
-    print("Shah rule checks: no disputed-value questions OK, %d calculation questions, picture-only slides labelled OK" % len(_CALC))
+    print("Shah rule checks: no disputed-value questions OK, %d calculation questions, picture-only slides labeled OK" % len(_CALC))
     print()
 
     answer_text = {id(q): q["opts"][q["c"]][0] for q in POOL}

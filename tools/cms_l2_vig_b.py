@@ -85,7 +85,7 @@ POOL_B = [
       "Correct. The extensor distribution with silvery scale and the Auspitz sign (bleeding on scale removal) are classic."],
      ["Nummular eczema",
       "This produces coin-shaped plaques on the extremities, light pink and without silvery scale."],
-     ["Seborrhoeic dermatitis",
+     ["Seborrheic dermatitis",
       "This produces greasy yellow scale in sebum-rich areas and is poorly demarcated."],
      ["Lichen simplex chronicus",
       "This produces lichenified plaques with exaggerated skin markings from chronic scratching."]],
@@ -118,9 +118,9 @@ POOL_B = [
    c=0, cite=c(164)),
 
  dict(topic="Psoriasis", io=IOC,
-   q="A 46-year-old with known plaque psoriasis stops a course of oral prednisone prescribed elsewhere. Days later she develops fever for several days, then an abrupt generalised eruption of 2 to 3 mm pustules over the trunk and limbs including the palms and nail beds, some coalescing into lakes of pus. Which is the most appropriate next step?",
+   q="A 46-year-old with known plaque psoriasis stops a course of oral prednisone prescribed elsewhere. Days later she develops fever for several days, then an abrupt generalized eruption of 2 to 3 mm pustules over the trunk and limbs including the palms and nail beds, some coalescing into lakes of pus. Which is the most appropriate next step?",
    opts=[
-     ["Recognise this as pustular psoriasis of the Von Zumbusch type and treat it as a life-threatening emergency",
+     ["Recognize this as pustular psoriasis of the Von Zumbusch type and treat it as a life-threatening emergency",
       "Correct — it is abrupt and life-threatening, may follow systemic steroid withdrawal, and is commonly mistaken for bacterial or viral infection."],
      ["Begin oral antibiotics for a presumed bacterial pustular infection",
       "It is commonly mistaken for infection, which is exactly the error to avoid."],
@@ -146,7 +146,7 @@ POOL_B = [
  dict(topic="Psoriasis", io=IOC,
    q="A 35-year-old woman has limited plaque psoriasis over both elbows. Which first-line topical option acts quickest, and what caution applies?",
    opts=[
-     ["Calcipotriene, a vitamin D analogue — caution with nephrotoxicity",
+     ["Calcipotriene, a vitamin D analog — caution with nephrotoxicity",
       "Correct, alongside emollients, topical steroids and ultraviolet B phototherapy as first-line options."],
      ["Coal tar — caution with photosensitivity",
       "Coal tar is a second-line option."],
@@ -157,7 +157,7 @@ POOL_B = [
    c=0, cite=c(163)),
 
  dict(topic="Pityriasis rosea", io=IOC,
-   q="A 19-year-old woman noticed a single 3 cm oval pink patch on her back ten days ago; the centre has since cleared leaving a fine rim of scale. Now she has many smaller similar oval lesions across her trunk, their long axes running along the skin cleavage lines. Which is the most likely diagnosis?",
+   q="A 19-year-old woman noticed a single 3 cm oval pink patch on her back ten days ago; the center has since cleared leaving a fine rim of scale. Now she has many smaller similar oval lesions across her trunk, their long axes running along the skin cleavage lines. Which is the most likely diagnosis?",
    opts=[
      ["Pityriasis rosea",
       "Correct. The herald patch with a collarette of scale, followed 1 to 2 weeks later by lesions in a Christmas tree pattern, is the picture."],
@@ -170,7 +170,7 @@ POOL_B = [
    c=0, cite=c(169)),
 
  dict(topic="Pityriasis rosea", io=IOC,
-   q="A 21-year-old man with pityriasis rosea asks what to expect. Which is the most appropriate counselling point?",
+   q="A 21-year-old man with pityriasis rosea asks what to expect. Which is the most appropriate counseling point?",
    opts=[
      ["It is self-limited and typically fades over 4 to 6 weeks, though darker skin may show post-inflammatory hyperpigmentation for several months",
       "Correct — reassurance is the mainstay, with antihistamines or topical steroids used cautiously for itch."],
@@ -209,7 +209,7 @@ POOL_B = [
    c=0, cite=c(177)),
 
  dict(topic="Lichen planus", io=IOC,
-   q="A 54-year-old woman has erosive oral and vulvar lichen planus. Which is the most appropriate counselling point?",
+   q="A 54-year-old woman has erosive oral and vulvar lichen planus. Which is the most appropriate counseling point?",
    opts=[
      ["Genital and erosive oral disease carry an increased risk of squamous cell carcinoma, so ongoing surveillance is needed",
       "Correct — this is the reason mucosal involvement must be identified and followed."],
@@ -237,7 +237,7 @@ POOL_B = [
  dict(topic="Lichen simplex chronicus", io=IOC,
    q="A 45-year-old woman has a single intensely itchy, well-demarcated thickened plaque on her lateral ankle with exaggerated skin markings and pigment change. She admits to scratching it most evenings while watching television. Which is the most appropriate management?",
    opts=[
-     ["Break the itch-scratch cycle through education, emollients, behavioural substitution and nail care, with a limited course of a potent topical steroid",
+     ["Break the itch-scratch cycle through education, emollients, behavioral substitution and nail care, with a limited course of a potent topical steroid",
       "Correct — recurrence is common unless the initiating itch is controlled."],
      ["Excise the plaque",
       "Biopsy is reserved for atypical or treatment-resistant lesions; excision is not the treatment."],
@@ -251,7 +251,7 @@ POOL_B = [
    q="A 24-year-old woman notices two smooth, round 3 cm bald patches on her scalp that appeared over a few weeks. The scalp is smooth without scale or erythema, and short hairs tapering toward the root are visible at the margins. Which is the most likely diagnosis?",
    opts=[
      ["Alopecia areata",
-      "Correct. Exclamation point hairs (thinner at the root, normal calibre at the top) are pathognomonic, and the scalp is smooth without scale."],
+      "Correct. Exclamation point hairs (thinner at the root, normal caliber at the top) are pathognomonic, and the scalp is smooth without scale."],
      ["Tinea capitis",
       "This produces scaling patches with hairs broken off close to the scalp."],
      ["Trichotillomania",
@@ -274,7 +274,7 @@ POOL_B = [
    c=0, cite=c(140)),
 
  dict(topic="Alopecia areata", io=IOC,
-   q="A 22-year-old woman with rapidly progressive alopecia areata is distressed and withdrawing socially. Which is the most appropriate counselling point?",
+   q="A 22-year-old woman with rapidly progressive alopecia areata is distressed and withdrawing socially. Which is the most appropriate counseling point?",
    opts=[
      ["Psychological support is one of the most important considerations, and support groups may be offered",
       "Correct — it is named among the most important factors in managing this condition."],
@@ -300,7 +300,7 @@ POOL_B = [
    c=0, cite=c(146)),
 
  dict(topic="Androgenetic alopecia", io=IOC,
-   q="A 36-year-old man wishes to treat male-pattern hair loss and asks about finasteride. Which is the most appropriate counselling point?",
+   q="A 36-year-old man wishes to treat male-pattern hair loss and asks about finasteride. Which is the most appropriate counseling point?",
    opts=[
      ["About 2% of men report reduced libido and erectile function, and these effects reverse when the drug is stopped",
       "Correct. It works best combined with minoxidil, and it is not indicated in women and contraindicated in pregnancy."],
@@ -322,6 +322,6 @@ POOL_B = [
      ["Intralesional corticosteroids",
       "Those treat alopecia areata."],
      ["Antifungal shampoo",
-      "This treats seborrhoeic dermatitis of the scalp."]],
+      "This treats seborrheic dermatitis of the scalp."]],
    c=0, cite=c(148)),
 ]

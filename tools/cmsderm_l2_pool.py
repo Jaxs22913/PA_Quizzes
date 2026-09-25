@@ -100,7 +100,7 @@ Q("Dyshidrotic eczema",
     "and interdigital surfaces with a relapsing weeks-long cycle."],
    ["Nummular eczema",
     "Nummular eczema produces well-demarcated coin-shaped plaques 1 to 10 cm across, most often on the extremities, "
-    "with prominent scale and crusting. Its lesions are plaques rather than grouped millimetre vesicles on the "
+    "with prominent scale and crusting. Its lesions are plaques rather than grouped millimeter vesicles on the "
     "finger margins."],
    ["Atopic dermatitis of the hands",
     "Adult atopic dermatitis does affect the hands, but it produces dry, lichenified plaques at flexures, hands, and "
@@ -111,7 +111,7 @@ Q("Irritant contact dermatitis",
   "A 41-year-old janitorial supervisor reports several weeks of progressively dry, sore hands. She washes her hands "
   "frequently and handles detergents and cleaning solutions throughout her shift. Examination shows a glazed, "
   "well-demarcated erythematous eruption with scaling over the dorsal hands and distal forearms, ending abruptly at "
-  "the wrists. She denies any new jewellery, gloves, cosmetics, or topical products, and patch testing performed "
+  "the wrists. She denies any new jewelry, gloves, cosmetics, or topical products, and patch testing performed "
   "previously was negative. What is the most likely diagnosis?",
   [["Irritant contact dermatitis",
     "Correct. Irritant contact dermatitis is the most common form of contact dermatitis and results from chemicals or "
@@ -120,7 +120,7 @@ Q("Irritant contact dermatitis",
     "weeks. Hands and forearms are the commonest sites."],
    ["Allergic contact dermatitis",
     "Allergic contact dermatitis is a delayed type IV hypersensitivity reaction to a specific allergen, and patch "
-    "testing is the test that diagnoses it. Her patch testing was negative and she denies any new gloves, jewellery, "
+    "testing is the test that diagnoses it. Her patch testing was negative and she denies any new gloves, jewelry, "
     "or topical products, which removes the allergen this diagnosis requires."],
    ["Atopic dermatitis of the hands",
     "Adult atopic dermatitis affects the hands, but it requires a personal or family history of atopy and produces "
@@ -158,14 +158,14 @@ Q("Allergic contact dermatitis",
 Q("Allergic contact dermatitis",
   "A 24-year-old woman presents with an itchy rash on her forearm. She had a laceration dressed with an adhesive "
   "bandage four days ago. Examination shows a sharply demarcated rectangular erythematous plaque with tiny vesicles "
-  "corresponding exactly to the adhesive portions of the dressing, and a rectangle of normal skin in the centre where "
+  "corresponding exactly to the adhesive portions of the dressing, and a rectangle of normal skin in the center where "
   "the cotton pad had lain. The laceration itself is clean and healing. What is the most likely diagnosis?",
   [["Allergic contact dermatitis to the adhesive",
     "Correct. Patients allergic to the adhesive in an adhesive bandage present with a bandage-shaped rash that spares "
     "the middle area where the cotton lay. The eruption reproduces the shape of the contactant, which is the "
     "signature of allergic contact dermatitis."],
    ["Wound infection of the underlying laceration",
-    "A wound infection would centre on the laceration itself with surrounding warmth, tenderness, and purulence. The "
+    "A wound infection would center on the laceration itself with surrounding warmth, tenderness, and purulence. The "
     "laceration here is clean and healing, and the reaction is confined to skin the adhesive touched while sparing "
     "the wound."],
    ["Herpes simplex virus reactivation",
@@ -209,7 +209,7 @@ Q("Perioral dermatitis",
     "be discontinued because continued exposure perpetuates the condition. Patients must be told the eruption may "
     "temporarily worsen after withdrawal, or they will restart the steroid when it does."],
    ["Discontinue the topical corticosteroid and reassure her that no flare should be expected",
-    "Stopping the steroid is right, but the counselling is wrong and the error is consequential. Patients not warned "
+    "Stopping the steroid is right, but the counseling is wrong and the error is consequential. Patients not warned "
     "about the post-withdrawal flare interpret it as treatment failure and resume the corticosteroid, which restarts "
     "the cycle the withdrawal was meant to break."],
    ["Increase the potency of the topical corticosteroid",
@@ -322,7 +322,7 @@ Q("Bullous pemphigoid",
     "in an elderly man."],
    ["Bullous impetigo",
     "Bullous impetigo occurs chiefly in children and produces flaccid, superficial bullae that rupture to leave a "
-    "collarette of scale and honey-coloured crust. It is a superficial bacterial infection rather than a subepithelial "
+    "collarette of scale and honey-colored crust. It is a superficial bacterial infection rather than a subepithelial "
     "autoimmune blistering disease."]],
   0, 123),
 
@@ -332,7 +332,7 @@ Q("Pemphigus",
   "axillae, and groin that bleed easily and are painful. Lateral pressure on normal-appearing skin causes the "
   "superficial layers to slip away. What does the biopsy most likely demonstrate?",
   [["Acantholysis, with intraepithelial blister formation",
-    "Correct. Pemphigus is characterised by loss of keratinocyte-to-keratinocyte adhesion, termed acantholysis, "
+    "Correct. Pemphigus is characterized by loss of keratinocyte-to-keratinocyte adhesion, termed acantholysis, "
     "producing intraepithelial blisters. The oral onset, flaccid easily ruptured bullae, and positive Nikolsky's sign "
     "all identify pemphigus, and biopsy demonstrating acantholysis is the diagnostic finding."],
    ["Neutrophils aligned in a straight narrow row at the dermal-epidermal junction",
@@ -370,11 +370,11 @@ Q("Pemphigus",
 Q("Alopecia areata",
   "A 23-year-old woman presents with the sudden appearance of two smooth, round bald patches on her scalp, each about "
   "3 cm across, that developed over three weeks. The underlying scalp is smooth without scaling, erythema, or "
-  "scarring. Short hairs that are narrow at the root and normal in calibre at the tip are visible at the margins. She "
+  "scarring. Short hairs that are narrow at the root and normal in caliber at the tip are visible at the margins. She "
   "has a history of eczema and her mother has hypothyroidism. What finding is pathognomonic for the diagnosis?",
   [["Exclamation point hairs at the margins of the patches",
     "Correct. Exclamation point hairs are pathognomonic for alopecia areata. Their growth ability is changing in real "
-    "time, which produces a hair that is thinner at the root but normal in calibre at the top — exactly the "
+    "time, which produces a hair that is thinner at the root but normal in caliber at the top — exactly the "
     "description given here."],
    ["The round shape of the areas of hair loss",
     "The areas of hair loss are often round and the scalp is often very smooth, which is typical, but roundness is "
@@ -425,7 +425,7 @@ Q("Androgenetic alopecia",
     "recorded as absent. It is patchy and abrupt rather than diffuse and gradual."],
    ["Lichen planopilaris",
     "Scarring alopecias destroy the follicle and leave loss of follicular openings with scarring. The examination "
-    "specifically records no scarring, and the distribution follows a recognised androgenetic pattern instead."]],
+    "specifically records no scarring, and the distribution follows a recognized androgenetic pattern instead."]],
   0, 146),
 
 Q("Androgenetic alopecia",
@@ -505,7 +505,7 @@ Q("Psoriasis",
     "fever, and is commonly mistaken for bacterial or viral infection."],
    ["A widespread bacterial skin infection",
     "The pustules of this flare are sterile; pre-existing psoriasis with recent systemic steroid withdrawal points to pustular psoriasis, which is commonly mistaken for infection."],
-   ["Acute generalised exanthematous pustulosis from the prednisone",
+   ["Acute generalized exanthematous pustulosis from the prednisone",
     "A drug-induced pustular eruption is a reasonable thought, but the temporal relationship here is to steroid "
     "withdrawal rather than to steroid exposure, and the patient's established psoriasis supplies the substrate "
     "pustular psoriasis requires."],
@@ -524,15 +524,15 @@ Q("Psoriasis",
     "erythematous patches whose margins are studded with subcorneal pustules. Onset is accompanied by fever, chills, "
     "malaise, diarrhea, nausea, and arthralgia."],
    ["Impetigo",
-    "Despite the similar name, impetigo is a superficial bacterial infection producing honey-coloured crusts, most "
+    "Despite the similar name, impetigo is a superficial bacterial infection producing honey-colored crusts, most "
     "often around the nose and mouth in children. It does not produce systemic symptoms of this kind or a "
     "pustule-studded advancing margin in a pregnant woman."],
    ["Pemphigoid gestationis",
     "Pemphigoid gestationis is a pregnancy-associated blistering disease that typically begins periumbilically with "
     "urticarial lesions progressing to tense bullae. Its lesions are bullae rather than margins studded with "
     "subcorneal pustules."],
-   ["Generalised candidiasis",
-    "Cutaneous candidiasis favours warm, moist, occluded sites and produces beefy erythema with satellite pustules. "
+   ["Generalized candidiasis",
+    "Cutaneous candidiasis favors warm, moist, occluded sites and produces beefy erythema with satellite pustules. "
     "It does not produce a systemically unwell pregnant patient with pustules studding the margins of erythematous "
     "patches."]],
   0, 161),
@@ -560,13 +560,13 @@ Q("Psoriasis",
 
 Q("Psoriasis",
   "A couple who both have plaque psoriasis ask about the likelihood their future children will be affected. What is "
-  "the most accurate counselling?",
+  "the most accurate counseling?",
   [["When both parents have psoriasis, about 41 percent of their children develop the condition",
     "Correct. The figures given are 8 percent when one parent has psoriasis and 41 percent when both do, reflecting a "
     "genetic predisposition in which PSORS1 is the major susceptibility locus."],
    ["When both parents have psoriasis, about 8 percent of their children develop the condition",
     "Eight percent is the figure for a single affected parent. Applying it to two affected parents understates the "
-    "risk by roughly fivefold and would misdirect the counselling."],
+    "risk by roughly fivefold and would misdirect the counseling."],
    ["Psoriasis is inherited in an autosomal dominant pattern, so about 50 percent of children are affected",
     "Psoriasis occurs in people with a genetic predisposition involving multiple loci rather than following simple "
     "Mendelian inheritance. Quoting a dominant transmission figure misrepresents how the risk is actually conferred."],
@@ -577,12 +577,12 @@ Q("Psoriasis",
 
 Q("Pityriasis rosea",
   "A 21-year-old woman presents with a rash on her trunk. Ten days before the current eruption she noticed a single "
-  "oval, sharply demarcated salmon-coloured plaque about 4 cm across on her upper back that became scaly and began to "
-  "clear in the centre. Now numerous smaller similar lesions have appeared over the trunk, with their long axes "
+  "oval, sharply demarcated salmon-colored plaque about 4 cm across on her upper back that became scaly and began to "
+  "clear in the center. Now numerous smaller similar lesions have appeared over the trunk, with their long axes "
   "aligned along the lines of the ribs. She feels well. What is the most likely diagnosis?",
   [["Pityriasis rosea",
     "Correct. A herald patch occurs in 50 to 90 percent of cases, preceding the exanthem: a single 2 to 5 cm round or "
-    "oval, sharply demarcated pink or salmon-coloured plaque on the chest, neck, or back that clears centrally, "
+    "oval, sharply demarcated pink or salmon-colored plaque on the chest, neck, or back that clears centrally, "
     "leaving a collarette of scale. The eruption of smaller similar lesions follows 1 to 2 weeks later."],
    ["Tinea corporis",
     "A single annular scaly plaque with central clearing genuinely resembles the herald patch, which is why this is "
@@ -608,7 +608,7 @@ Q("Pityriasis rosea",
     "Reassurance is the correct foundation but this stops one step short. The itch is treatable, and declining to "
     "address a symptom the patient has reported leaves him uncomfortable for the several weeks the eruption lasts."],
    ["Oral acyclovir for all patients",
-    "Acyclovir is reserved for severe cases, consistent with the suspected viral aetiology. Routine antiviral therapy "
+    "Acyclovir is reserved for severe cases, consistent with the suspected viral etiology. Routine antiviral therapy "
     "for a mild self-limited eruption is not indicated."],
    ["Oral terbinafine",
     "Terbinafine treats dermatophyte infection. Tinea corporis is the classic mimic of the herald patch, but the "
@@ -659,14 +659,14 @@ Q("Lichen simplex chronicus",
   "over a year. He describes rubbing it frequently, particularly when stressed or trying to fall asleep. Examination "
   "shows a well-demarcated thickened plaque with exaggerated skin markings, excoriation, scale, and altered "
   "pigmentation. What is the central principle of management?",
-  [["Breaking the itch-scratch cycle through education, behavioural substitution, nail care, and safe occlusion",
-    "Correct. Lichen simplex chronicus results from repeated rubbing and scratching, so management centres on "
-    "breaking the itch-scratch cycle with education, treatment of the trigger, emollients, behavioural substitution, "
+  [["Breaking the itch-scratch cycle through education, behavioral substitution, nail care, and safe occlusion",
+    "Correct. Lichen simplex chronicus results from repeated rubbing and scratching, so management centers on "
+    "breaking the itch-scratch cycle with education, treatment of the trigger, emollients, behavioral substitution, "
     "nail care, and safe physical occlusion, alongside a limited course of an appropriate potent topical "
     "corticosteroid."],
    ["A prolonged course of a potent topical corticosteroid continued indefinitely",
     "A potent topical corticosteroid is used, but for a limited course. Continuing it indefinitely invites atrophy, "
-    "striae, and telangiectasia, and it leaves the scratching behaviour that drives the plaque entirely unaddressed."],
+    "striae, and telangiectasia, and it leaves the scratching behavior that drives the plaque entirely unaddressed."],
    ["An oral antifungal, since chronic thickened plaques are usually dermatophytic",
     "The thickening here is lichenification from chronic rubbing, not a fungal infection. Treating it as tinea "
     "leaves the true driver untouched and delays effective management."],
@@ -676,7 +676,7 @@ Q("Lichen simplex chronicus",
   0, 183),
 
 Q("Xerosis",
-  "An 82-year-old woman living alone reports generalised itching and rough, flaking skin each winter, worse on the "
+  "An 82-year-old woman living alone reports generalized itching and rough, flaking skin each winter, worse on the "
   "lower legs. She takes long hot showers daily using a scented bar soap. Examination shows dry skin with fine scale "
   "and a few superficial fissures on the shins, without erythematous plaques or vesicles. What is the most "
   "appropriate advice?",
@@ -690,7 +690,7 @@ Q("Xerosis",
    ["Begin a high-potency topical corticosteroid to the legs twice daily",
     "There are no inflammatory plaques to treat — the examination records dry skin with scale and fissures only. A "
     "potent steroid on aged skin risks atrophy while doing nothing for the barrier deficit that is causing the itch."],
-   ["Switch to a scented moisturising body wash used generously over the whole body daily",
+   ["Switch to a scented moisturizing body wash used generously over the whole body daily",
     "Fragrance-free products are recommended, and a gentle cleanser should be used only where needed. Extending a "
     "scented cleanser over the whole body daily increases both the detergent and the fragrance exposure."]],
   0, 153),
@@ -808,9 +808,9 @@ Q("Diagnostic tools",
     "Correct. Bullous pemphigoid is diagnosed by biopsying the lesion for histopathology and perilesional tissue for "
     "direct immunofluorescence examination. Serum indirect immunofluorescence or enzyme-linked immunosorbent assay "
     "can identify anti-basement membrane zone antibodies."],
-   ["Biopsy of the centre of an intact bulla for direct immunofluorescence alone",
+   ["Biopsy of the center of an intact bulla for direct immunofluorescence alone",
     "Direct immunofluorescence requires perilesional tissue, because the immune deposits are demonstrated in skin "
-    "adjacent to the blister rather than within the blister roof or base. Sampling the lesion centre alone risks a "
+    "adjacent to the blister rather than within the blister roof or base. Sampling the lesion center alone risks a "
     "falsely negative study."],
    ["A potassium hydroxide preparation of the blister fluid",
     "A potassium hydroxide preparation detects fungal elements and has no role in an autoimmune blistering disease. "
@@ -853,7 +853,7 @@ Q("Topical corticosteroids",
     "Irritation, dryness, and photosensitivity are the important clinical considerations for topical retinoids such "
     "as adapalene, tretinoin, and tazarotene. They belong to a different topical class."],
    ["Permanent loss of hair follicles at the treated site",
-    "Follicular destruction with permanent hair loss characterises scarring alopecias. Topical corticosteroid atrophy "
+    "Follicular destruction with permanent hair loss characterizes scarring alopecias. Topical corticosteroid atrophy "
     "affects epidermal and dermal thickness rather than destroying the follicular stem cell compartment."]],
   0, 41),
 
@@ -875,14 +875,14 @@ Q("Topical antifungals",
   0, 43),
 
 Q("Topical retinoids",
-  "A 22-year-old woman is prescribed topical tretinoin for acne. What counselling is most important before she "
+  "A 22-year-old woman is prescribed topical tretinoin for acne. What counseling is most important before she "
   "starts?",
   [["Begin gradually, expect irritation and dryness, use sun protection, and observe pregnancy precautions",
     "Correct. The important clinical considerations for topical retinoids are irritation, dryness, and "
     "photosensitivity; therapy should begin gradually, and pregnancy precautions apply. Common agents include "
     "adapalene, tretinoin, tazarotene, and trifarotene."],
    ["Begin at full frequency immediately, since gradual introduction delays benefit",
-    "Starting at full frequency maximises the irritation and dryness that cause patients to abandon retinoid therapy "
+    "Starting at full frequency maximizes the irritation and dryness that cause patients to abandon retinoid therapy "
     "altogether. Gradual introduction is specifically advised."],
    ["No pregnancy precautions are needed because the medication is applied topically",
     "Pregnancy precautions apply to topical retinoids despite the route of administration. Dismissing them on the "
@@ -943,7 +943,7 @@ Q("Atopic dermatitis",
     "procedure for a diagnosis that is made clinically."],
    ["A bacterial culture should be obtained in every child at diagnosis",
     "Culture is appropriate when secondary infection is suspected. Routine culture of uninfected atopic skin produces "
-    "colonisation results that invite unnecessary antibiotic treatment."]],
+    "colonization results that invite unnecessary antibiotic treatment."]],
   0, 56),
 ]
 
@@ -1020,7 +1020,7 @@ Q("Irritant contact dermatitis",
     "untreated chemical injury."],
    ["Neither produces symptoms until a delayed hypersensitivity develops after 48 to 72 hours",
     "A delayed hypersensitivity time course belongs to allergic contact dermatitis, which is a type IV reaction. "
-    "Irritant dermatitis is direct barrier damage rather than immunological sensitisation."]],
+    "Irritant dermatitis is direct barrier damage rather than immunological sensitization."]],
   0, 81),
 
 Q("Allergic contact dermatitis",
@@ -1038,7 +1038,7 @@ Q("Allergic contact dermatitis",
     "The mechanism is right and nickel is genuinely the most common metal allergen, but urushiol sap is the most "
     "common cause overall."],
    ["Direct chemical disruption of the skin barrier without immune involvement",
-    "Direct barrier disruption without immunological sensitisation describes irritant contact dermatitis, which is "
+    "Direct barrier disruption without immunological sensitization describes irritant contact dermatitis, which is "
     "the other major type of contact dermatitis and the more common of the two."]],
   0, 85),
 
@@ -1054,7 +1054,7 @@ Q("Seborrheic dermatitis",
    ["Infection with a dermatophyte acquired from an external source",
     "Dermatophytes cause tinea infections and are diagnosed by potassium hydroxide preparation. Malassezia is a "
     "resident organism whose overgrowth, not acquisition, produces the condition."],
-   ["Colonisation with Staphylococcus aureus",
+   ["Colonization with Staphylococcus aureus",
     "Staphylococcus aureus causes bacterial infections such as impetigo, folliculitis, and furuncles. Greasy yellow "
     "scale at sebum-rich sites is not a staphylococcal presentation."]],
   0, 93),
@@ -1100,7 +1100,7 @@ Q("Diagnostic tools",
     "Correct. A Wood's lamp is a handheld diagnostic device emitting long-wave ultraviolet light to highlight subtle "
     "changes in the skin, scalp, and hair, and it evaluates pigment changes in selected fungal or bacterial "
     "infections."],
-   ["A dermoscope, which magnifies surface and subsurface structures under polarised light",
+   ["A dermoscope, which magnifies surface and subsurface structures under polarized light",
     "A dermoscope is a magnifying device used to examine lesion architecture, particularly pigmented lesions. It does "
     "not rely on long-wave ultraviolet light to elicit fluorescence."],
    ["A trichoscope, which magnifies the scalp and hair follicles",
@@ -1124,7 +1124,7 @@ Q("Diagnostic tools",
     "The two tests are swapped. Because allergic contact dermatitis is a delayed cell-mediated reaction, a prick test "
     "read within minutes would miss it entirely."],
    ["Both tests detect delayed type IV hypersensitivity and are interchangeable",
-    "They are not interchangeable: one detects delayed cell-mediated sensitisation and the other detects immediate "
+    "They are not interchangeable: one detects delayed cell-mediated sensitization and the other detects immediate "
     "immunoglobulin E mediated reactivity. Substituting one for the other produces a falsely negative result."],
    ["Patch testing evaluates fungal elements while skin-prick testing evaluates bacterial infection",
     "Fungal elements are detected by potassium hydroxide preparation and bacteria by culture and sensitivity. Neither "
@@ -1136,7 +1136,7 @@ Q("Psoriasis",
   "the most appropriate first-line approach?",
   [["Emollients and topical steroids, with calcipotriene as a further first-line option",
     "Correct. First-line treatment of mild plaque psoriasis is emollients, topical steroids, and calcipotriene, a "
-    "vitamin D analogue with the quickest action, with phototherapy using ultraviolet B best for smaller stubborn "
+    "vitamin D analog with the quickest action, with phototherapy using ultraviolet B best for smaller stubborn "
     "areas. Salicylic acid and coal tar are second line."],
    ["Salicylic acid and coal tar as the initial treatment",
     "Salicylic acid and coal tar are listed as second-line agents for mild disease. Starting with them skips the "
@@ -1152,15 +1152,15 @@ Q("Psoriasis",
 Q("Psoriasis",
   "A patient is prescribed calcipotriene for plaque psoriasis. What is the most important clinical consideration for "
   "this agent?",
-  [["It is a vitamin D analogue with the quickest action, and nephrotoxicity is a caution",
-    "Correct. Calcipotriene is a vitamin D analogue described as having the quickest action among the first-line "
+  [["It is a vitamin D analog with the quickest action, and nephrotoxicity is a caution",
+    "Correct. Calcipotriene is a vitamin D analog described as having the quickest action among the first-line "
     "options, with caution regarding nephrotoxicity."],
-   ["It is a vitamin D analogue whose principal risk is cutaneous atrophy with prolonged use",
+   ["It is a vitamin D analog whose principal risk is cutaneous atrophy with prolonged use",
     "Atrophy, striae, telangiectasia, and hypopigmentation are the risks of prolonged topical corticosteroid use, not "
-    "of the vitamin D analogue. The drug class is right but the adverse effect belongs to its first-line companion."],
+    "of the vitamin D analog. The drug class is right but the adverse effect belongs to its first-line companion."],
    ["It is a retinoid whose principal risks are irritation, dryness, and photosensitivity",
     "Irritation, dryness, and photosensitivity are the considerations for topical retinoids such as adapalene, "
-    "tretinoin, and tazarotene. Calcipotriene is a vitamin D analogue rather than a retinoid."],
+    "tretinoin, and tazarotene. Calcipotriene is a vitamin D analog rather than a retinoid."],
    ["It is a calcineurin inhibitor best reserved for the face and eyelids",
     "Tacrolimus and pimecrolimus are the calcineurin inhibitors used at sensitive sites such as the face and eyelids. "
     "Calcipotriene has a different mechanism and a different role."]],
@@ -1168,11 +1168,11 @@ Q("Psoriasis",
 
 Q("Secondary morphology",
   "A chronic plaque on the ankle shows thickening and hardening of the skin with exaggerated surface markings. "
-  "Adjacent skin shows accumulation of loose grey-white cornified fragments. What are these two secondary changes "
+  "Adjacent skin shows accumulation of loose gray-white cornified fragments. What are these two secondary changes "
   "called?",
   [["Lichenification and scaling, respectively",
     "Correct. Lichenification is thickening and hardening of the skin, and scaling is accumulation of loose or "
-    "adherent cornified fragments of the epidermis, typically grey or white."],
+    "adherent cornified fragments of the epidermis, typically gray or white."],
    ["Scaling and lichenification, respectively",
     "The two terms are correct but assigned to the wrong findings. Reversing them would describe the thickened plaque "
     "as a surface scale and understate the chronicity the lichenification records."],
@@ -1189,8 +1189,8 @@ Q("Demarcation",
   [["The lesion has an irregular or blotchy appearance without well-defined borders",
     "Correct. A poorly demarcated lesion has an irregular or blotchy appearance without well-defined borders, in "
     "contrast to a well-demarcated lesion, which has clearly defined borders."],
-   ["The lesion has clearly defined borders but an irregular internal colour",
-    "Clearly defined borders make a lesion well demarcated regardless of its internal colour variation. Demarcation "
+   ["The lesion has clearly defined borders but an irregular internal color",
+    "Clearly defined borders make a lesion well demarcated regardless of its internal color variation. Demarcation "
     "describes the edge, not the interior."],
    ["The lesion is smaller than 1 cm in its greatest dimension",
     "Size is documented separately from demarcation. A 1 cm threshold separates macules from patches and papules from "

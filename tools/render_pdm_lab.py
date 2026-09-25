@@ -41,7 +41,7 @@ CONF = {
      "first move, the reticulocyte count separates a marrow that is responding from one that is "
      "not, and the smear findings &mdash; stippling, Howell-Jolly bodies, Heinz bodies, "
      "schistocytes, rouleaux &mdash; each name one condition. One question is deliberately "
-     "normal, because recognising a panel with nothing wrong with it is its own skill.")),
+     "normal, because recognizing a panel with nothing wrong with it is its own skill.")),
  "chem": dict(
    fn="lab-interpretation-chemistry-urinalysis-quiz.html",
    title="Lab Interpretation 2: Chemistry &amp; Urinalysis &mdash; PDM I Exam 1",
@@ -52,7 +52,7 @@ CONF = {
    intro=COMMON + (" <b>Chemistry and urinalysis are together because they answer the same "
      "questions from two directions</b> &mdash; the serum sodium and the urine specific gravity "
      "are both about water, the bicarbonate and the urine pH are both about acid, and the "
-     "rhabdomyolysis and haemolysis items only resolve when you read the dipstick and the serum "
+     "rhabdomyolysis and hemolysis items only resolve when you read the dipstick and the serum "
      "at once. <b>There is no arithmetic beyond the anion gap</b>, which is the one calculation "
      "the lecture asks for out loud.")),
 }

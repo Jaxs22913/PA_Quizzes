@@ -35,7 +35,7 @@ VIG_C = [
    q="A 6-week-old former preterm girl has a bright red raised plaque on her scalp. Her mother says the area first looked pale, then developed fine red lines, and now asks whether it will need surgery. Which is the most appropriate answer?",
    opts=[
      ["Most involute on their own over several years",
-      "Correct — complete involution in fifty per cent by age five, seventy per cent by seven and ninety per cent by nine, so serial observation is often all that is needed."],
+      "Correct — complete involution in fifty percent by age five, seventy percent by seven and ninety percent by nine, so serial observation is often all that is needed."],
      ["It will grow with her throughout life and will not involute",
       "That is nevus flammeus."],
      ["It will fade within her first year without any treatment",
@@ -92,7 +92,7 @@ VIG_C = [
       "That is the infantile hemangioma."],
      ["It will fade within his first year of life",
       "That is nevus simplex."],
-     ["It will stay exactly the same size and colour for life",
+     ["It will stay exactly the same size and color for life",
       "It grows with the child and darkens and thickens over time."]],
    c=0, cite=c(78)),
 
@@ -119,7 +119,7 @@ VIG_C = [
      ["Infantile hemangioma",
       "That is raised and bright red once it proliferates."],
      ["Telangiectasia",
-      "That is a permanently dilated capillary under one millimetre, acquired."]],
+      "That is a permanently dilated capillary under one millimeter, acquired."]],
    c=0, cite=c(84)),
 
  dict(topic="Cherry angioma", io=IOA, lead="diagnosis",
@@ -128,7 +128,7 @@ VIG_C = [
      ["Cherry angiomas",
       "Correct — acquired, increasing with age, once called senile angiomas."],
      ["Spider angiomas",
-      "Those are under ten millimetres with a central arteriole, on face, neck and upper trunk."],
+      "Those are under ten millimeters with a central arteriole, on face, neck and upper trunk."],
      ["Pyogenic granulomas",
       "Those are moist exophytic lesions that grow fast and bleed."],
      ["Petechiae",
@@ -182,7 +182,7 @@ VIG_C = [
      ["Cherry angioma",
       "That is a small firm deep red papule on the trunk that does not grow rapidly."],
      ["Telangiectasia",
-      "That is a permanently dilated capillary under one millimetre."],
+      "That is a permanently dilated capillary under one millimeter."],
      ["Syringoma",
       "That is a crop of small papules around the eyes."]],
    c=0, cite=c(92)),
@@ -230,7 +230,7 @@ VIG_C = [
    q="You are counting café au lait macules on that same 9-year-old. How many are described as diagnostic, and what caveat applies?",
    opts=[
      ["Six or more; but the macules alone do not establish the diagnosis",
-      "Correct — over five millimetres prepubertal, over fifteen postpubertal."],
+      "Correct — over five millimeters prepubertal, over fifteen postpubertal."],
      ["Two or more; and the macules alone establish the diagnosis",
       "Neither the count nor the caveat matches."],
      ["Six or more; and the macules alone establish the diagnosis",
@@ -258,7 +258,7 @@ VIG_C = [
      ["Xanthelasma",
       "Correct — collections of lipid-laden macrophages, most commonly on the medial eyelids."],
      ["Syringoma",
-      "Those are skin-coloured, pink or brown papules of one to two millimetres."],
+      "Those are skin-colored, pink or brown papules of one to two millimeters."],
      ["Milia",
       "Those are small white keratin cysts rather than yellow plaques."],
      ["Sebaceous hyperplasia",
@@ -270,7 +270,7 @@ VIG_C = [
    opts=[
      ["Screen for hyperlipidemia",
       "Correct — xanthelasma is associated with lipid disorders, and may signify an increased risk of cardiac disease."],
-     ["Screen for diabetes mellitus and check a haemoglobin A1c",
+     ["Screen for diabetes mellitus and check a hemoglobin A1c",
       "The named association is with lipid disorders."],
      ["Check thyroid function tests",
       "No thyroid association is described."],
@@ -282,7 +282,7 @@ VIG_C = [
    q="A 48-year-old man has a soft, painless, rubbery subcutaneous nodule about 4 cm across on his back. It is mobile and there is no overlying pore. Which is the most likely diagnosis?",
    opts=[
      ["Lipoma",
-      "Correct — the most common soft tissue tumour, soft and rubbery, usually under five centimetres."],
+      "Correct — the most common soft tissue tumor, soft and rubbery, usually under five centimeters."],
      ["Epidermoid cyst",
       "That has a central punctum and expresses pasty material."],
      ["Dermatofibroma",
@@ -305,7 +305,7 @@ VIG_C = [
    c=0, cite=c(106)),
 
  dict(topic="Digital mucous cyst", io=IOA, lead="diagnosis",
-   q="A 66-year-old woman with osteoarthritis has a translucent skin-coloured papule over the distal interphalangeal joint of her index finger. The nail beyond it has a longitudinal groove. Which is the most likely diagnosis?",
+   q="A 66-year-old woman with osteoarthritis has a translucent skin-colored papule over the distal interphalangeal joint of her index finger. The nail beyond it has a longitudinal groove. Which is the most likely diagnosis?",
    opts=[
      ["Digital mucous cyst",
       "Correct — pressure on the nail matrix causes the groove."],
@@ -318,7 +318,7 @@ VIG_C = [
    c=0, cite=c(108)),
 
  dict(topic="Digital mucous cyst", io=IOA, lead="treatment",
-   q="A 66-year-old woman with osteoarthritis has a translucent skin-coloured papule over a distal interphalangeal joint, with a groove in the adjacent nail that she finds troublesome. Which is the most appropriate management?",
+   q="A 66-year-old woman with osteoarthritis has a translucent skin-colored papule over a distal interphalangeal joint, with a groove in the adjacent nail that she finds troublesome. Which is the most appropriate management?",
    opts=[
      ["Excision, since nail dystrophy is an indication",
       "Correct — asymptomatic lesions can simply be observed."],
@@ -338,7 +338,7 @@ VIG_C = [
      ["Basal cell carcinoma",
       "That is the differential, and dermoscopy is what separates them."],
      ["Syringoma",
-      "Those are one to two millimetres, around the eyes, and appear at puberty."],
+      "Those are one to two millimeters, around the eyes, and appear at puberty."],
      ["Xanthelasma",
       "Those are yellow plaques on the medial eyelids."]],
    c=0, cite=c(110)),
@@ -357,7 +357,7 @@ VIG_C = [
    c=0, cite=c(111)),
 
  dict(topic="Benign lesions overall", io=IOB, lead="education",
-   q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counselling should be offered?",
+   q="A 62-year-old attends about a new lesion on his sun-exposed forearm. Beyond addressing the lesion, which counseling should be offered?",
    opts=[
      ["Sunscreen, sun avoidance at peak hours, and skin checks",
       "Correct — any new sun-exposed lesion is an opening for general skin-cancer education."],

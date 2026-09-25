@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Partition the Physical Diagnosis 2 Lecture 2 (Dermatology) pool into two 30s.
 
-Four things are optimised at once, which is why the pool is written oversized at
+Four things are optimized at once, which is why the pool is written oversized at
 114 questions:
   - instructional-objective coverage across both sets
   - TOPIC spread, which matters more here than in most decks: the lecture runs

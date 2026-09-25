@@ -17,14 +17,14 @@ QUESTIONS = [
 
 Q("Otitis externa", IO,
   "An 8-year-old boy has left ear pain. His father says he has been swimming almost daily in a "
-  "neighbour's pool this summer. Examination shows erythema and oedema of the left ear canal and "
-  "pain on manipulation of the pinna. The tympanic membrane is not well visualised but appears "
+  "neighbor's pool this summer. Examination shows erythema and edema of the left ear canal and "
+  "pain on manipulation of the pinna. The tympanic membrane is not well visualized but appears "
   "intact, and the right ear is normal.",
   [["Topical ciprofloxacin with dexamethasone",
-    "Correct. Pain on moving the pinna or tragus localises the disease to the CANAL, not the middle "
+    "Correct. Pain on moving the pinna or tragus localizes the disease to the CANAL, not the middle "
     "ear, and water exposure macerates the canal skin and raises its pH so that Pseudomonas and "
     "Staphylococcus overgrow. Treatment therefore has to reach the canal surface: a topical "
-    "fluoroquinolone covers those organisms, and the added steroid shrinks the oedema so the drops "
+    "fluoroquinolone covers those organisms, and the added steroid shrinks the edema so the drops "
     "can actually get past it."],
    ["Oral amoxicillin suspension",
     "Amoxicillin is the drug for acute otitis MEDIA, where the infection sits behind an intact drum "
@@ -40,7 +40,7 @@ Q("Otitis externa", IO,
     "A steroid alone reduces the swelling and the pain but does nothing to the organisms driving the "
     "infection. Used by itself in an infected canal it can allow the infection to progress while the "
     "patient feels temporarily better, which is precisely the wrong trade in an ear that is already "
-    "occluded by oedema."]],
+    "occluded by edema."]],
   "treatment", D, 40),
 
 Q("Otitis externa", IO,
@@ -71,22 +71,22 @@ Q("Otitis externa", IO,
 Q("Otitis media", IO,
   "A 25-year-old patient has acute otitis media with a serous effusion in the right ear. Audiometry "
   "confirms a marked conductive impairment on that side. Weber and Rinne tests are performed.",
-  [["Weber lateralises to the right; bone conduction exceeds air conduction on the right",
+  [["Weber lateralizes to the right; bone conduction exceeds air conduction on the right",
     "Correct. Fluid in the middle ear blocks air conduction but leaves the cochlea and the skull's "
-    "own transmission untouched. Weber therefore lateralises TOWARD the affected ear, because the "
+    "own transmission untouched. Weber therefore lateralizes TOWARD the affected ear, because the "
     "blocked ear is not competing with ambient room noise and hears the bone-conducted tone better. "
     "In the same ear Rinne reverses: bone now beats air, which never happens in a normal or "
     "sensorineural ear."],
-   ["Weber lateralises to the left; bone conduction exceeds air conduction on the right",
-    "The Rinne half is right but the Weber half is backwards. Lateralising AWAY from the affected "
+   ["Weber lateralizes to the left; bone conduction exceeds air conduction on the right",
+    "The Rinne half is right but the Weber half is backwards. Lateralizing AWAY from the affected "
     "ear is the sensorineural pattern, where the damaged cochlea cannot process the tone from either "
-    "route. Pairing an away-lateralising Weber with a reversed Rinne describes two different kinds of "
+    "route. Pairing an away-lateralizing Weber with a reversed Rinne describes two different kinds of "
     "loss in the same ear."],
    ["Weber is equal in both ears; bone conduction exceeds air conduction on the right",
     "An equal Weber means the two ears are transmitting bone-conducted sound equally, which is the "
     "normal result. That cannot coexist with the marked unilateral conductive impairment the "
     "audiogram has already documented."],
-   ["Weber lateralises to the right; air conduction exceeds bone conduction on the right",
+   ["Weber lateralizes to the right; air conduction exceeds bone conduction on the right",
     "Air beating bone is the NORMAL Rinne, and it is also what a sensorineural ear gives. Reporting "
     "it in an ear with a marked conductive deficit contradicts the audiogram, and it is the reason "
     "Weber has to be interpreted alongside Rinne rather than on its own."]],
@@ -112,8 +112,8 @@ Q("Otosclerosis", IO,
     "not the established picture in someone with years of progressive loss severe enough to warrant "
     "an operation. It also fails to demonstrate the conductive pattern the surgery is being done to "
     "correct."],
-   ["Sound lateralises to the unaffected ear on Weber testing",
-    "Lateralising away from the affected ear is the sensorineural pattern. In conductive loss Weber "
+   ["Sound lateralizes to the unaffected ear on Weber testing",
+    "Lateralizing away from the affected ear is the sensorineural pattern. In conductive loss Weber "
     "goes TOWARD the bad ear, because that ear is shielded from ambient noise and receives the "
     "bone-conducted tone more clearly. Otosclerosis is conductive until the disease reaches the "
     "cochlea."]],
@@ -123,24 +123,24 @@ Q("Cholesteatoma", IO,
   "A 37-year-old man reports constant fullness in the left ear and three months of declining "
   "hearing on that side. He had multiple middle ear infections as a child and four separate "
   "myringotomy tube placements, and he has untreated perennial airborne allergies. Weber "
-  "lateralises to the left. Otoscopy shows a retracted tympanic membrane with a sac of cheesy "
+  "lateralizes to the left. Otoscopy shows a retracted tympanic membrane with a sac of cheesy "
   "white material, and the same debris is visible behind a small suspected perforation.",
   [["Cholesteatoma",
     "Correct. Repeated middle ear infection, tube placements and eustachian tube dysfunction from "
     "untreated allergy all produce chronic negative middle ear pressure, which retracts the drum "
     "into a pocket. Squamous epithelium trapped in that pocket keeps shedding keratin with nowhere "
-    "to go, producing the cheesy white sac described. Weber lateralising to the affected ear "
+    "to go, producing the cheesy white sac described. Weber lateralizing to the affected ear "
     "confirms the loss is conductive, from the mass and ossicular erosion."],
    ["Barotrauma",
     "Barotrauma follows a discrete pressure event such as flying or diving, and produces acute pain, "
-    "haemorrhage into the drum or a middle ear effusion. It does not build a keratin sac, and it "
+    "hemorrhage into the drum or a middle ear effusion. It does not build a keratin sac, and it "
     "does not cause three months of progressive loss in someone with no recent pressure exposure."],
    ["Exostoses",
     "Exostoses are bony overgrowths of the ear canal from repeated cold water exposure, sometimes "
     "called surfer's ear. They sit lateral to the drum, are hard rather than cheesy, and cause loss "
     "only when they occlude the canal or trap debris. Nothing here suggests cold water exposure."],
    ["External otitis",
-    "Otitis externa inflames the canal skin, giving pain on moving the pinna and canal oedema. It "
+    "Otitis externa inflames the canal skin, giving pain on moving the pinna and canal edema. It "
     "does not retract the drum, does not produce keratin debris behind a perforation, and its "
     "hearing effect is from canal swelling rather than three months of progressive decline."]],
   "diagnosis", D, 63),
@@ -205,7 +205,7 @@ Q("Mastoiditis", IO,
     "infection has moved from a mucosal space into bone, which is why it needs admission and "
     "intravenous therapy."],
    ["Otitis externa with periauricular cellulitis",
-    "Canal infection produces pain on moving the pinna and canal oedema, and any surrounding "
+    "Canal infection produces pain on moving the pinna and canal edema, and any surrounding "
     "cellulitis follows the canal skin rather than pushing the auricle forward from behind. It also "
     "would not follow a week of established middle ear infection in this way."],
    ["Preauricular lymphadenitis",
@@ -213,7 +213,7 @@ Q("Mastoiditis", IO,
     "outward. The location described here is postauricular and over the mastoid process itself, "
     "which points to the bone rather than to a node."],
    ["Parotitis",
-    "Parotid swelling lifts the earlobe and is centred over the angle of the jaw in front of and "
+    "Parotid swelling lifts the earlobe and is centered over the angle of the jaw in front of and "
     "below the ear. It is associated with pain on chewing and sometimes pus at Stensen duct, not "
     "with a week of otitis media and postauricular tenderness."]],
   "diagnosis", D, 19),
@@ -273,7 +273,7 @@ Q("Foreign body in the ear", IO,
   [["Removal under direct vision with an instrument passed beyond the object",
     "Correct. A smooth round object cannot be grasped by forceps because they simply push it deeper, "
     "so the technique is to pass a hook or curette past it under direct vision and draw it outward. "
-    "Direct visualisation matters because the risk of the procedure is pushing the object against or "
+    "Direct visualization matters because the risk of the procedure is pushing the object against or "
     "through the drum."],
    ["Irrigation of the canal with warm water",
     "Irrigation is a reasonable technique for some objects but is contraindicated when the object may "
@@ -283,9 +283,9 @@ Q("Foreign body in the ear", IO,
     "Forceps work well on irregular or compressible objects that can be gripped, but on a smooth "
     "sphere the jaws slide off and the force is transmitted inward, advancing the bead toward the "
     "tympanic membrane and making removal harder and more dangerous."],
-   ["Referral for removal under general anaesthesia as the first step",
-    "General anaesthesia is reserved for an uncooperative child, a deeply impacted object, or a "
+   ["Referral for removal under general anesthesia as the first step",
+    "General anesthesia is reserved for an uncooperative child, a deeply impacted object, or a "
     "failed first attempt. This boy is cooperative and the object is in the outer third, so a "
-    "controlled attempt in clinic is appropriate before committing him to theatre."]],
+    "controlled attempt in clinic is appropriate before committing him to theater."]],
   "next step", D, 47),
 ]

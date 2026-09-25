@@ -10,7 +10,7 @@ pool B.
 Adapted from the Lecture 4 driver. Its house guards are unchanged: nothing may
 depend on having the deck open, no course mechanics, and no straying into
 pathophysiology (Clin Path I owns that) or management (CMS I owns that). The
-weighted-block guards are re-aimed at this lecture -- murmurs, the manoeuvres
+weighted-block guards are re-aimed at this lecture -- murmurs, the maneuvers
 and the heart sounds -- in place of Lecture 4's tuning forks and Centor score.
 
 Guard 5 is the one worth keeping in mind while authoring: an explanation must
@@ -70,11 +70,11 @@ _MURMUR = [q for q in POOL if q["topic"] in (
     "Mitral regurgitation", "Diastolic murmurs", "Aortic regurgitation",
     "Mitral stenosis", "Tricuspid stenosis", "Pericardial friction rub", "Thrills")]
 assert len(_MURMUR) >= 20, ("murmurs are the largest block in this lecture and carry the "
-                            "manoeuvres with them -- %d questions is not enough to put ten "
+                            "maneuvers with them -- %d questions is not enough to put ten "
                             "in each set" % len(_MURMUR))
 _MANEUVER = [q for q in POOL if q["topic"] in (
     "Valsalva", "Standing from squatting", "Squatting", "Handgrip")]
-assert len(_MANEUVER) >= 4, ("the manoeuvres distinguish hypertrophic cardiomyopathy from "
+assert len(_MANEUVER) >= 4, ("the maneuvers distinguish hypertrophic cardiomyopathy from "
                              "aortic stenosis, which the deck flags as the one not to get "
                              "wrong on a sports physical -- %d is too few" % len(_MANEUVER))
 _SOUNDS = [q for q in POOL if q["topic"] in (
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     problems = validate(POOL)
     print("schema problems:", problems or "none")
     assert not problems, problems[:6]
-    print("murmur questions available: %d   manoeuvres: %d   heart sounds: %d"
+    print("murmur questions available: %d   maneuvers: %d   heart sounds: %d"
           % (len(_MURMUR), len(_MANEUVER), len(_SOUNDS)))
     print("pool length-gameable: %.1f%%" % gameable_pct(POOL))
     print("house rules: no deck-dependent question, no course mechanics, "
@@ -205,7 +205,7 @@ if __name__ == "__main__":
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         g = gameable_pct(s)
         assert g <= 35.0, "%s: key longest in %.0f%% -- shorten the keys" % (name, g)
-    print("weighting check: both sets carry murmurs, manoeuvres and heart sounds\n")
+    print("weighting check: both sets carry murmurs, maneuvers and heart sounds\n")
 
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         pos = Counter(q["c"] for q in s)

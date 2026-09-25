@@ -89,7 +89,7 @@ dict(q="Which topical class must be avoided in patients with weakened immune sys
 dict(q="Which topical antibiotic has no systemic toxicity and only rarely causes allergic dermatitis?",
      ans="Bacitracin", src=("L2", 46),
      why="Rare allergic dermatitis, no systemic toxicity.",
-     wrong=[("Neomycin", "Frequently sensitises and can accumulate systemically."),
+     wrong=[("Neomycin", "Frequently sensitizes and can accumulate systemically."),
             ("Polymyxin B", "Neurotoxic and nephrotoxic if absorbed."),
             ("Mupirocin", "Well tolerated but this description belongs to bacitracin.")]),
 
@@ -137,7 +137,7 @@ dict(q="Which class treats athlete's foot, ringworm and jock itch — the superf
 
 dict(q="Which topical antibiotic can accumulate systemically if used over a large area?",
      ans="Neomycin", src=("L2", 49),
-     why="Systemic accumulation, on top of frequent sensitisation.",
+     why="Systemic accumulation, on top of frequent sensitization.",
      wrong=[("Bacitracin", "No systemic toxicity."),
             ("Mupirocin", "Not described as accumulating."),
             ("Clindamycin", "Topical use for acne, not this concern.")]),

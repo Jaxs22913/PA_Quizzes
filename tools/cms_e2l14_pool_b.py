@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """CMS I Exam 2, Lecture 14 (Ocular Trauma) -- objective set B.
 
-Lid lacerations, orbital contusion, periorbital haematoma, retinal and vitreous
+Lid lacerations, orbital contusion, periorbital hematoma, retinal and vitreous
 detachment, orbital floor fracture, and basilar skull fracture.
 
 Grounded in the deck (Chand Shah, MPAS, PA-C). SELF-CONTAINED throughout.
@@ -14,7 +14,7 @@ IO_B = "b — Identify medical care strategies for common ophthalmological disor
 QUESTIONS = [
  # ---------------- lid lacerations ----------------
  dict(topic="Lid laceration", io=IO_A, lead="referral", cite=D % 26,
-  q="A laceration sits 5 millimetres from the medial canthus. Why does that location matter?",
+  q="A laceration sits 5 millimeters from the medial canthus. Why does that location matter?",
   opts=[["The canalicular system may be transected, leaving chronic tearing", "Correct. If it is not repaired properly the tearing is permanent."],
         ["The optic nerve runs immediately beneath", "The nerve is not at that site."],
         ["It always indicates a globe rupture", "It raises concern but does not establish rupture."],
@@ -44,12 +44,12 @@ QUESTIONS = [
 
  # ---------------- contusion and haematoma ----------------
  dict(topic="Orbital contusion", io=IO_A, lead="diagnosis", cite=D % 31,
-  q="What distinguishes an orbital contusion from a periorbital haematoma?",
-  opts=[["Contusion is swelling without haemorrhage; the haematoma is bleeding within the orbit",
+  q="What distinguishes an orbital contusion from a periorbital hematoma?",
+  opts=[["Contusion is swelling without hemorrhage; the hematoma is bleeding within the orbit",
          "Correct. The septum is what keeps the contusion in front of the eye."],
-        ["Contusion is bilateral; the haematoma is unilateral", "Laterality does not separate them."],
-        ["Contusion follows sharp trauma; the haematoma follows blunt", "Mechanism does not separate them."],
-        ["Contusion needs surgery; the haematoma does not", "That reverses the usual urgency."]]),
+        ["Contusion is bilateral; the hematoma is unilateral", "Laterality does not separate them."],
+        ["Contusion follows sharp trauma; the hematoma follows blunt", "Mechanism does not separate them."],
+        ["Contusion needs surgery; the hematoma does not", "That reverses the usual urgency."]]),
 
  dict(topic="Orbital contusion", io=IO_A, lead="next step", cite=D % 31,
   q="A patient has an orbital contusion after a blow to the face. What must be excluded?",
@@ -58,15 +58,15 @@ QUESTIONS = [
         ["Chronic open-angle glaucoma", "Not what trauma raises acutely."],
         ["Retinoblastoma", "Not a traumatic consideration."]]),
 
- dict(topic="Periorbital haematoma", io=IO_A, lead="management", cite=D % 33,
-  q="How is a periorbital haematoma decompressed?",
+ dict(topic="Periorbital hematoma", io=IO_A, lead="management", cite=D % 33,
+  q="How is a periorbital hematoma decompressed?",
   opts=[["Canthotomy with cantholysis", "Correct. Release the lateral canthal tendon and cut its inferior branch so blood can drain."],
         ["Pressure patching for 24 hours", "Pressure is the wrong direction entirely."],
         ["Intravenous mannitol alone", "It does not drain orbital blood."],
         ["Observation until it resorbs", "Not the management for a tense orbit."]]),
 
- dict(topic="Periorbital haematoma", io=IO_A, lead="history", cite=D % 33,
-  q="A patient has a periorbital haematoma with no history of injury. Which cause should be sought?",
+ dict(topic="Periorbital hematoma", io=IO_A, lead="history", cite=D % 33,
+  q="A patient has a periorbital hematoma with no history of injury. Which cause should be sought?",
   opts=[["Anticoagulant use, recent eye surgery, orbital varices or a vascular malformation",
          "Correct. It is not always traumatic."],
         ["A corneal abrasion earlier in the week", "That does not bleed into the orbit."],
@@ -78,7 +78,7 @@ QUESTIONS = [
   q="Which type of retinal detachment is the most common?",
   opts=[["Rhegmatogenous", "Correct. Full-thickness retinal breaks let liquefied vitreous behind the retina."],
         ["Traction", "That follows proliferative diabetic retinopathy and is less common."],
-        ["Exudative", "That accompanies systemic disease or a tumour."],
+        ["Exudative", "That accompanies systemic disease or a tumor."],
         ["Congenital", "Not one of the three types described."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="mechanism", cite=D % 35,
@@ -93,7 +93,7 @@ QUESTIONS = [
   opts=[["Myopia, cataract surgery and ocular trauma", "Correct. It is usually age-related, but these accelerate it."],
         ["Diabetes, hypertension and smoking", "Those drive retinopathy rather than a retinal break."],
         ["Contact lens wear, allergy and blepharitis", "Surface conditions, unrelated."],
-        ["Sickle cell disease, burns and transfusion", "Those relate to haemoglobinuria, not detachment."]]),
+        ["Sickle cell disease, burns and transfusion", "Those relate to hemoglobinuria, not detachment."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 39,
   q="Which type of retinal detachment is NOT treated primarily with surgery?",
@@ -106,7 +106,7 @@ QUESTIONS = [
   q="A traction retinal detachment is most commonly caused by what?",
   opts=[["Proliferative diabetic retinopathy", "Correct. Fibrovascular tissue pulls the retina off."],
         ["Age-related macular degeneration", "That damages the macula without traction detachment."],
-        ["Uveal melanoma", "A tumour is associated with the exudative type."],
+        ["Uveal melanoma", "A tumor is associated with the exudative type."],
         ["Blunt ocular trauma alone", "Trauma accelerates the rhegmatogenous type."]]),
 
  dict(topic="Retinal detachment", io=IO_A, lead="management", cite=D % 35,
@@ -140,7 +140,7 @@ QUESTIONS = [
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="diagnosis", cite=D % 41,
   q="A patient has numbness of the cheek after an orbital fracture. Which nerve is injured?",
-  opts=[["The infraorbital nerve", "Correct. Infraorbital numbness is a recognised finding."],
+  opts=[["The infraorbital nerve", "Correct. Infraorbital numbness is a recognized finding."],
         ["The optic nerve", "That would affect vision, not sensation."],
         ["The facial nerve", "That affects movement rather than cheek sensation here."],
         ["The trochlear nerve", "That affects the superior oblique."]]),
@@ -149,7 +149,7 @@ QUESTIONS = [
   q="A child has severe pain, bradycardia and vomiting on attempting to look up, but the eye looks quiet. What is this?",
   opts=[["A white-eyed blowout with muscle entrapment", "Correct. In children entrapment may come with no orbital soft tissue signs at all."],
         ["Simple periorbital contusion", "That does not produce autonomic disturbance on gaze."],
-        ["A retrobulbar haemorrhage", "That produces proptosis and a tense orbit."],
+        ["A retrobulbar hemorrhage", "That produces proptosis and a tense orbit."],
         ["Concussion without orbital injury", "The gaze-provoked symptoms point to entrapment."]]),
 
  dict(topic="Orbital floor fracture", io=IO_A, lead="next step", cite=D % 43,
@@ -187,7 +187,7 @@ QUESTIONS = [
   opts=[["The halo sign of a cerebrospinal fluid leak", "Correct. Inner ring of blood, outer ring of cerebrospinal fluid."],
         ["Simple epistaxis", "Blood alone does not form the double ring."],
         ["Lacrimal duct injury", "Tears do not produce this pattern."],
-        ["Cerebral oedema", "Not a bedside finding of this kind."]]),
+        ["Cerebral edema", "Not a bedside finding of this kind."]]),
 
  dict(topic="Basilar skull fracture", io=IO_A, lead="initial test", cite=D % 44,
   q="Which bedside test may be positive when cerebrospinal fluid is present?",

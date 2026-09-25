@@ -74,7 +74,7 @@ Q("Neck anatomy", IO,
     "penetrating wound there can cause a pneumothorax."],
    ["The thyroid gland",
     "The thyroid sits in the muscular triangle of the anterior group, with the parathyroids, "
-    "larynx, trachea and oesophagus. It is anterior and midline rather than supraclavicular."],
+    "larynx, trachea and esophagus. It is anterior and midline rather than supraclavicular."],
    ["The submandibular gland",
     "The submandibular gland lies in the digastric triangle beneath the mandible, which is at the "
     "opposite end of the neck from the supraclavicular region."],
@@ -90,7 +90,7 @@ Q("Neck anatomy", IO,
     "and vagus nerve. Knowing the boundaries lets you predict what lies beneath before making an "
     "incision."],
    ["The muscular triangle",
-    "The muscular triangle holds the thyroid, parathyroids, larynx, trachea, oesophagus and the "
+    "The muscular triangle holds the thyroid, parathyroids, larynx, trachea, esophagus and the "
     "thyroid and cricoid cartilages. Those are the midline visceral structures rather than the great "
     "vessels."],
    ["The submental triangle",
@@ -157,7 +157,7 @@ Q("Neck mass evaluation", IO,
     "Correct. Under 40 the great majority of neck masses are inflammatory, usually reactive "
     "adenopathy following an upper respiratory infection. Hodgkin lymphoma is named as the specific "
     "exception, which is why a persistent painless node in a young patient still deserves attention "
-    "despite the favourable base rate."],
+    "despite the favorable base rate."],
    ["Neoplastic, with infection as the exception",
     "This inverts the rule. Treating every young patient's neck lump as presumptively malignant "
     "would generate a great deal of unnecessary investigation for what is usually reactive."],
@@ -171,20 +171,20 @@ Q("Neck mass evaluation", IO,
 
 Q("Neck mass evaluation", IO,
   "Which size threshold appears on the list of features suggesting malignancy in a neck mass?",
-  [["Greater than 1.5 centimetres",
+  [["Greater than 1.5 centimeters",
     "Correct. The malignancy features are: no infectious origin, duration over two weeks, size over "
-    "1.5 centimetres, firm and non-cystic and non-tender with little or no mobility, age over 40, "
+    "1.5 centimeters, firm and non-cystic and non-tender with little or no mobility, age over 40, "
     "and tobacco and alcohol use. Size alone is not diagnostic, but it is one of the criteria that "
     "shifts the prior."],
-   ["Greater than 5 centimetres",
-    "Waiting for a mass to reach 5 centimetres would delay diagnosis substantially, and many "
+   ["Greater than 5 centimeters",
+    "Waiting for a mass to reach 5 centimeters would delay diagnosis substantially, and many "
     "malignant nodes present well below that. The threshold is set low deliberately."],
-   ["Greater than 0.5 centimetres",
-    "Half a centimetre is within the range of normal palpable nodes in many people, particularly in "
+   ["Greater than 0.5 centimeters",
+    "Half a centimeter is within the range of normal palpable nodes in many people, particularly in "
     "the submandibular region, so it would flag far too many benign findings."],
-   ["Greater than 3 centimetres",
-    "Three centimetres is comfortably abnormal but is not the stated threshold, and using it would "
-    "miss the 1.5 to 3 centimetre range where many malignant nodes are found."]], C(13)),
+   ["Greater than 3 centimeters",
+    "Three centimeters is comfortably abnormal but is not the stated threshold, and using it would "
+    "miss the 1.5 to 3 centimeter range where many malignant nodes are found."]], C(13)),
 
 Q("Neck mass evaluation", IO,
   "A neck mass that is pulsatile or has a bruit indicates what?",
@@ -228,21 +228,21 @@ Q("Neck mass workup", IO,
     "otherwise reactive node."],
    ["Excisional biopsy",
     "Excision is specifically avoided as the first step in a suspected malignant node, because "
-    "opening it spills tumour into the neck and complicates both the surgical field and the "
+    "opening it spills tumor into the neck and complicates both the surgical field and the "
     "radiotherapy field afterwards."],
    ["Positron emission tomography",
     "Positron emission tomography shows metabolic uptake and is useful for staging or hunting an "
     "occult primary, but it is positive in inflammation as well as cancer and gives no tissue "
     "diagnosis."],
    ["Plain radiography of the neck",
-    "Plain films cannot characterise a soft tissue mass, distinguish solid from cystic, or guide a "
+    "Plain films cannot characterize a soft tissue mass, distinguish solid from cystic, or guide a "
     "biopsy. They would not alter management."]], C(18)),
 
 Q("Neck mass workup", IO,
   "How many separate needle passes are required for an adequate fine needle aspiration?",
   [["A minimum of four",
     "Correct. Sampling error is the main limitation of aspiration cytology, because a node may "
-    "contain a small focus of tumour among otherwise reactive tissue. Four separate passes sample "
+    "contain a small focus of tumor among otherwise reactive tissue. Four separate passes sample "
     "different parts of the node and make a falsely reassuring result much less likely."],
    ["One, provided material is obtained",
     "Obtaining material and obtaining representative material are different. A single pass can draw "
@@ -258,13 +258,13 @@ Q("Neck mass workup", IO,
   "Why is iodine-containing contrast avoided when thyroid cancer is suspected?",
   [["It compromises subsequent radioiodine treatment",
     "Correct. The thyroid takes up iodine avidly, so a contrast load saturates the gland and any "
-    "tumour within it. Radioiodine therapy depends on that same uptake mechanism, so giving contrast "
+    "tumor within it. Radioiodine therapy depends on that same uptake mechanism, so giving contrast "
     "first can delay definitive treatment for weeks until the iodine has cleared."],
    ["It causes an allergic reaction in thyroid disease",
     "Contrast allergy is unrelated to thyroid pathology and occurs at the same rate as in anyone "
     "else. The problem here is pharmacological interference rather than hypersensitivity."],
    ["It obscures the thyroid on imaging",
-    "Contrast improves rather than obscures visualisation of the thyroid and surrounding structures. "
+    "Contrast improves rather than obscures visualization of the thyroid and surrounding structures. "
     "The objection is entirely about what comes afterwards."],
    ["It triggers a thyroid storm in all patients",
     "An iodine load can precipitate thyrotoxicosis in a patient with an autonomous nodule, which is "
@@ -285,7 +285,7 @@ Q("Congenital neck masses", IO,
     "Lymphangiomas commonly occupy the posterior triangle. Branchial cleft cysts follow the "
     "sternocleidomastoid's anterior edge instead."],
    ["Within the sternocleidomastoid muscle itself",
-    "A mass within the muscle belly in an infant is a sternocleidomastoid tumour of infancy, "
+    "A mass within the muscle belly in an infant is a sternocleidomastoid tumor of infancy, "
     "associated with congenital torticollis. A branchial cleft cyst lies alongside the muscle rather "
     "than inside it."]], C(22)),
 
@@ -301,7 +301,7 @@ Q("Congenital neck masses", IO,
     "papillomavirus-associated squamous cell carcinoma must be excluded before accepting a "
     "congenital diagnosis in an adult."],
    ["It always leads to a permanent fistula",
-    "A persistent sinus is a recognised complication of incomplete surgery rather than an inevitable "
+    "A persistent sinus is a recognized complication of incomplete surgery rather than an inevitable "
     "result of drainage, and the stated objection is about the difficulty of the later excision."],
    ["It spreads the infection to the mediastinum",
     "Mediastinal spread is the danger of a retropharyngeal abscess, whose space runs from skull base "
@@ -313,27 +313,27 @@ Q("Congenital neck masses", IO,
     "Correct. Thyroglossal duct cysts account for roughly a third of all congenital neck masses, "
     "which makes them the commonest and gives a midline lump in a child a strong prior probability. "
     "Their location can vary, with some presenting lateral or as low as the thyroid gland."],
-   ["About 5 per cent",
+   ["About 5 percent",
     "This would make them a rarity, which would change how a midline neck mass is approached. They "
     "are in fact the leading congenital cause."],
-   ["About 90 per cent",
+   ["About 90 percent",
     "Nine in ten would leave almost no room for branchial cleft cysts, lymphangiomas, dermoids, "
-    "teratomas and thymic cysts, all of which are recognised entities."],
-   ["About 15 per cent",
+    "teratomas and thymic cysts, all of which are recognized entities."],
+   ["About 15 percent",
     "This understates their share. The figure matters because it is what justifies thinking of them "
     "first when a midline mass appears."]], C(23)),
 
 Q("Congenital neck masses", IO,
   "Which sign is pathognomonic for a thyroglossal duct cyst?",
   [["Vertical movement with swallowing or tongue protrusion",
-    "Correct. The thyroid descends from the foramen caecum at the tongue base through the hyoid "
+    "Correct. The thyroid descends from the foramen cecum at the tongue base through the hyoid "
     "during development, so a persistent tract tethers the cyst to the hyoid. Protruding the tongue "
     "pulls the hyoid and therefore the cyst upward, which no other neck mass does."],
    ["Transillumination",
     "Transillumination is the sign of a lymphangioma, which contains clear lymph that lets light "
     "pass. A thyroglossal duct cyst contains mucoid fluid and does not transmit light in that way."],
    ["Enlargement with crying or straining",
-    "Enlargement on straining indicates a vascular lesion, characteristically a haemangioma, whose "
+    "Enlargement on straining indicates a vascular lesion, characteristically a hemangioma, whose "
     "venous channels engorge when intrathoracic pressure rises."],
    ["Fluctuance with overlying erythema",
     "Those describe an infected or abscessed mass of any origin. They indicate infection rather than "

@@ -13,7 +13,7 @@ education. Restating them here would create two sources that drift, so this
 file carries ONLY the four that are new, and the builder joins them:
 
     says     what the patient actually says, in their words rather than ours
-    exam     the manoeuvres performed to rule the diagnosis in or out
+    exam     the maneuvers performed to rule the diagnosis in or out
     ddx      the top three differentials, each with what separates it
     tests    (rule it IN, rule the differentials OUT) -- a pair, because the
              question "what confirms this" and "what excludes the others" have
@@ -59,7 +59,7 @@ OSCE = {
 
 "Carcinoma of the ear canal": E(
   "&ldquo;It has been discharging for months, now there is blood in it and a deep ache.&rdquo;",
-  "Otoscopy for <b>friable tissue and bloody otorrhoea</b>. Palpate for parotid and cervical "
+  "Otoscopy for <b>friable tissue and bloody otorrhea</b>. Palpate for parotid and cervical "
   "nodes. Cranial nerve examination, particularly VII.",
   [("Malignant otitis externa", "Diabetic or immunocompromised, granulation rather than a friable mass"),
    ("Chronic suppurative otitis media", "Painless discharge through a perforation, no bleeding"),
@@ -71,10 +71,10 @@ OSCE = {
 
 "Sudden sensorineural hearing loss": E(
   "&ldquo;I woke up and one ear just wasn&rsquo;t working.&rdquo;",
-  "<b>Otoscopy must be normal.</b> <b>Weber lateralises AWAY</b> to the good ear and <b>Rinne stays "
+  "<b>Otoscopy must be normal.</b> <b>Weber lateralizes AWAY</b> to the good ear and <b>Rinne stays "
   "normal (air over bone) in both</b> &mdash; that pair is what proves it is sensorineural. Check "
   "cranial nerves and balance.",
-  [("Cerumen impaction", "Wax visible; Weber would lateralise TOWARD the blocked ear"),
+  [("Cerumen impaction", "Wax visible; Weber would lateralize TOWARD the blocked ear"),
    ("Otitis media with effusion", "Amber drum with reduced mobility; conductive pattern"),
    ("Acoustic neuroma", "Gradual rather than sudden, with speech discrimination out of proportion")],
   "<b>Pure tone audiometry</b> &rarr; a sensorineural loss with NO air-bone gap, by definition at "
@@ -132,13 +132,13 @@ OSCE = {
   "posterior. Look in the throat.",
   [("Anterior epistaxis", "90% of cases; a visible spot on Kiesselbach plexus, stops with pressure"),
    ("Nasal foreign body", "Unilateral foul purulent discharge, usually a young child"),
-   ("Nasopharyngeal tumour", "Recurrent bleeding with obstruction, a neck mass or cranial nerve signs")],
+   ("Nasopharyngeal tumor", "Recurrent bleeding with obstruction, a neck mass or cranial nerve signs")],
   "<b>Nasal endoscopy</b> &rarr; a bleeding point posterior to the middle turbinate, with no "
   "anterior source &mdash; often the only way to see it. <b>Full blood count</b> &rarr; the "
-  "haematocrit, and <b>type and crossmatch</b> &rarr; blood ready if it continues. <b>Coagulation "
-  "studies</b> &rarr; a raised international normalised ratio or low platelets driving it.",
+  "hematocrit, and <b>type and crossmatch</b> &rarr; blood ready if it continues. <b>Coagulation "
+  "studies</b> &rarr; a raised international normalized ratio or low platelets driving it.",
   "A visible anterior bleeding point that stops with ten minutes of pressure excludes a posterior "
-  "source; endoscopy excludes a tumour."),
+  "source; endoscopy excludes a tumor."),
 
 "Nasopharyngeal carcinoma": E(
   "&ldquo;I found a lump in my neck, and lately I&rsquo;ve had double vision and my cheek feels "
@@ -157,8 +157,8 @@ OSCE = {
 
 "Neck neoplasm &mdash; general": E(
   "&ldquo;There&rsquo;s a lump in my neck that hasn&rsquo;t gone away.&rdquo;",
-  "Characterise the mass: <b>site, size, consistency, mobility and tenderness</b>. Then the "
-  "complete head and neck examination &mdash; <b>visualise every mucosal surface and palpate the "
+  "Characterize the mass: <b>site, size, consistency, mobility and tenderness</b>. Then the "
+  "complete head and neck examination &mdash; <b>visualize every mucosal surface and palpate the "
   "oral and pharyngeal surfaces</b>. Palpate thyroid, other nodal basins, liver and spleen. "
   "Auscultate for a bruit.",
   [("Reactive lymphadenopathy", "Infective context, tender, regresses within two weeks"),
@@ -176,7 +176,7 @@ OSCE = {
   "<b>stridor and tracheal deviation</b>. Listen to the voice; check for cervical nodes.",
   [("Papillary carcinoma", "Slow-growing in a younger patient with a far better outlook"),
    ("Primary thyroid lymphoma", "Also rapid in an older patient, but on a Hashimoto background"),
-   ("Multinodular goitre", "Long-standing, soft, no hoarseness or compressive symptoms")],
+   ("Multinodular goiter", "Long-standing, soft, no hoarseness or compressive symptoms")],
   "<b>Fine needle aspiration</b> &rarr; undifferentiated small, giant and spindle cells. "
   "<b>Computed tomography</b> &rarr; a large infiltrative mass with tracheal compression.",
   "Cytology separates it from lymphoma, which needs an open biopsy; a long history with a stable "
@@ -195,16 +195,16 @@ OSCE = {
   "epiglottis</b>, performed only where the airway can be secured. <b>Lateral neck radiograph</b> "
   "&rarr; the <b>thumbprint sign</b>, a swollen epiglottis in profile &mdash; supportive, but a "
   "normal film does NOT exclude it, so it is never the reason to stand down.",
-  "Direct visualisation of a normal supraglottis excludes it; a lateral neck film showing a "
+  "Direct visualization of a normal supraglottis excludes it; a lateral neck film showing a "
   "widened prevertebral space redirects to retropharyngeal abscess."),
 
 "Diphtheria": E(
   "&ldquo;My throat is a bit sore but I feel dreadful.&rdquo; &mdash; the malaise is out of "
   "proportion to the sore throat.",
-  "Inspect the pharynx for a <b>tenacious grey membrane that bleeds when disturbed</b>. Palpate "
+  "Inspect the pharynx for a <b>tenacious gray membrane that bleeds when disturbed</b>. Palpate "
   "for a bull neck. <b>Cardiac and cranial nerve examination</b>, since the toxin causes "
-  "myocarditis and neuropathy. Check immunisation status.",
-  [("Streptococcal pharyngitis", "Exudate wipes away and does not bleed; no toxaemia"),
+  "myocarditis and neuropathy. Check immunization status.",
+  [("Streptococcal pharyngitis", "Exudate wipes away and does not bleed; no toxemia"),
    ("Infectious mononucleosis", "Palatal petechiae with splenomegaly and marked fatigue"),
    ("Candidiasis", "Creamy patches that wipe off leaving an erythematous base")],
   "<b>Throat swab and culture on tellurite medium</b> &rarr; <i>Corynebacterium diphtheriae</i>. "
@@ -249,7 +249,7 @@ OSCE = {
   "<b>tongue displacement upward and backward</b>. Assess airway and voice. Examine the dentition "
   "for the offending tooth.",
   [("Submandibular sialadenitis", "Swelling of the gland itself, pus from the duct, no floor elevation"),
-   ("Dental abscess", "Localised to one tooth without spread across the floor of the mouth"),
+   ("Dental abscess", "Localized to one tooth without spread across the floor of the mouth"),
    ("Peritonsillar abscess", "Intraoral and unilateral with trismus and uvular deviation")],
   "<b>Contrast computed tomography of the neck</b> &rarr; diffuse cellulitis and phlegmon of the "
   "submandibular and sublingual spaces, with or without a rim-enhancing collection; airway "
@@ -276,8 +276,8 @@ OSCE = {
   "Assess tongue mobility and trismus. <b>Palpate cervical nodes.</b> Examine the ear &mdash; it "
   "will be normal despite the pain.",
   [("Traumatic ulcer", "Resolves once the denture or sharp tooth is corrected"),
-   ("Aphthous ulcer", "Heals in 7 to 10 days; on non-keratinised mucosa"),
-   ("Erythroplakia or leukoplakia", "A patch rather than an ulcer, though either may harbour carcinoma")],
+   ("Aphthous ulcer", "Heals in 7 to 10 days; on non-keratinized mucosa"),
+   ("Erythroplakia or leukoplakia", "A patch rather than an ulcer, though either may harbor carcinoma")],
   "<b>Biopsy</b> &rarr; squamous cell carcinoma. <b>p16 immunohistochemistry or in situ "
   "hybridisation</b> &rarr; positive in human papillomavirus related oropharyngeal disease, which "
   "carries a better prognosis. <b>Computed tomography or magnetic resonance</b> &rarr; the primary "
@@ -285,11 +285,11 @@ OSCE = {
   "Healing within two weeks after removing an irritant excludes malignancy; a normal ear "
   "examination with persistent otalgia is itself a pointer TOWARD it."),
 
-"Primary neck tumours &mdash; the list": E(
-  "Not a presentation &mdash; a reference list of what a primary neck tumour can be.",
-  "As for any neck mass: characterise the lump, then a complete head and neck examination, and "
+"Primary neck tumors &mdash; the list": E(
+  "Not a presentation &mdash; a reference list of what a primary neck tumor can be.",
+  "As for any neck mass: characterize the lump, then a complete head and neck examination, and "
   "auscultate for a bruit before any needle is used.",
-  [("Metastatic squamous carcinoma", "Far commoner than any primary neck tumour"),
+  [("Metastatic squamous carcinoma", "Far commoner than any primary neck tumor"),
    ("Lymphoma", "Rubbery, multiple, with constitutional symptoms"),
    ("Paraganglioma", "Pulsatile with a bruit &mdash; must not be biopsied blindly")],
   "<b>Fine needle aspiration</b> &rarr; the cell type, for solid masses only. <b>Computed "

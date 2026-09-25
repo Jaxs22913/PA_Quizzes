@@ -17,7 +17,7 @@ no syllabus does:
   2. She confirmed a calculation is examinable. Therapeutic index: "yes,
      calculation, but the math won't be hard."
 
-That weighting is the whole value of this page, so it is the organising
+That weighting is the whole value of this page, so it is the organizing
 principle rather than a decoration -- every item carries the tier she put it in,
 and her actual words are quoted next to it so the tier can be checked rather
 than trusted.
@@ -34,7 +34,7 @@ The one place the page departs from her list is flagged in the text rather than
 silently: she told the class not to spend time on the health implications of
 nucleic acid mutations, but the three mechanisms in that objective
 (transformation, conjugation, transduction) reappear inside the resistance
-objective in Lecture 2, which she emphasised heavily. A student who skips the
+objective in Lecture 2, which she emphasized heavily. A student who skips the
 first will be missing the second. That is called out where it arises.
 
 Scope: Lectures 1, 2 and 5 only. Lectures 3, 4 and 6 are another lecturer's and
@@ -88,17 +88,17 @@ S1.append(item("w-molecular", "1.1", "Molecular mechanisms in health and disease
   """<p>Her one explicit skip in this lecture. The material is real but it is taught again
   elsewhere, so read it once and move on.</p>
   <p>Pathogen surface proteins bind specific host receptors &mdash; influenza uses
-  haemagglutinin to bind sialic acid receptors. <strong>Virulence factors</strong> are pathogen
+  hemagglutinin to bind sialic acid receptors. <strong>Virulence factors</strong> are pathogen
   molecules that enhance the ability to cause disease: toxins, adhesins and invasins, which
-  between them handle colonisation, invasion and evasion of the host immune response.
+  between them handle colonization, invasion and evasion of the host immune response.
   Adhesion is the initial attachment (<em>Escherichia coli</em> type I fimbriae binding mannose
-  receptors, colonising the urinary tract); invasion allows entry into cells
+  receptors, colonizing the urinary tract); invasion allows entry into cells
   (<em>Salmonella enterica</em> injects effector proteins into gut cells to establish a niche
   for replication). Host immune status often determines the outcome, and environmental
   factors &mdash; temperature and humidity, where vectors can flourish, hygiene, vaccination
   rates and travel &mdash; sit on top of all of it. %s</p>
-  <div class="pearl"><p>Worth noticing even on a light read: the signalling example on these
-  slides is PAMPs being recognised by white blood cell PRRs. That is the same recognition
+  <div class="pearl"><p>Worth noticing even on a light read: the signaling example on these
+  slides is PAMPs being recognized by white blood cell PRRs. That is the same recognition
   system Lecture 5 builds on, so this paragraph is not wasted.</p></div>""" % src("Lecture 1, Slides 10&ndash;12.")))
 
 S1.append(item("w-pathogens", "1.2", "Types of infectious pathogens", KNOW,
@@ -185,7 +185,7 @@ S1.append(item("w-structures", "1.3", "Bacterial cell structures, especially tho
   <p><strong>Peptidoglycan itself</strong> &mdash; a polymer of alternating
   <em>N</em>-acetylglucosamine and <em>N</em>-acetylmuramic acid crosslinked by a short peptide
   bridge, between the terminal D-alanine and the penultimate diamino-containing amino acid.
-  The crosslinking is catalysed by <strong>transpeptidases, which are also the target of the
+  The crosslinking is catalyzed by <strong>transpeptidases, which are also the target of the
   beta-lactam antibiotics</strong> &mdash; the single fact that ties this lecture to the next
   one. Crosslinking can be direct or indirect through a pentaglycine spacer, as in
   <em>Staphylococcus aureus</em>. %s</p>"""
@@ -223,7 +223,7 @@ S1.append(item("w-gram", "1.4", "Gram-positive versus Gram-negative", COLD,
         <td>The fatty outer membrane blocks it &mdash; takes little pieces out, <strong>may not kill</strong></td></tr>
   </table>
   <p>%s The lysozyme contrast is the one she worked through live, having just covered lysozyme
-  that morning as a first-line chemical defence.</p>
+  that morning as a first-line chemical defense.</p>
 
   <h4 class="subsub">What is in the outer membrane</h4>
   <p>Lipopolysaccharide has three parts: <strong>Lipid A</strong>, which carries the endotoxin
@@ -235,7 +235,7 @@ S1.append(item("w-gram", "1.4", "Gram-positive versus Gram-negative", COLD,
   <ol>
     <li>Flood with crystal violet, 1 minute; wash.</li>
     <li>Flood with Gram&rsquo;s iodine, 1 minute; wash.</li>
-    <li><strong>Decolorize carefully with acetone alcohol</strong> until the thinnest parts of the smear are colourless, about 10 seconds; wash. The slide calls this <strong>the most critical step</strong> and the one most affected by technical variation in timing and reagents.</li>
+    <li><strong>Decolorize carefully with acetone alcohol</strong> until the thinnest parts of the smear are colorless, about 10 seconds; wash. The slide calls this <strong>the most critical step</strong> and the one most affected by technical variation in timing and reagents.</li>
     <li>Flood with safranin, 1 minute; wash, then air dry or blot.</li>
   </ol>
   <p>%s Morphology sits alongside this &mdash; cocci (spherical), bacilli (rod) and spiral
@@ -246,7 +246,7 @@ S1.append(item("w-gram", "1.4", "Gram-positive versus Gram-negative", COLD,
   % (src("Lecture 1, Slides 33&ndash;34."), src("Lecture 1, Slide 34."),
      src("Lecture 1, Slide 31."), src("Lecture 1, Slide 22."),
      flag("""<p>This is the reasoning chain she built aloud, and the single place she spent the
-     most time in the whole review. She does not want the two walls memorised as pictures. She
+     most time in the whole review. She does not want the two walls memorized as pictures. She
      wants the chain run in one direction: <strong>wall structure &rarr; why it stains that way
      &rarr; which control method it will survive.</strong> Both of her worked examples ran that
      way round, and the lysozyme case is the one that catches people, because the intuitive
@@ -269,14 +269,14 @@ S1.append(item("w-identification", "1.5", "Methods of bacterial identification a
     <tr><td>Synthetic (chemically defined)</td><td>Pure organic and inorganic compounds in an exact chemical formula</td></tr>
     <tr><td>Complex or nonsynthetic</td><td>Contains at least one ingredient that is not chemically definable</td></tr>
     <tr><td>General purpose</td><td>Grows a broad range of microbes; usually nonsynthetic</td></tr>
-    <tr><td>Enriched</td><td>Contains complex organic substances &mdash; blood, serum, haemoglobin, or special growth factors required by fastidious microbes</td></tr>
+    <tr><td>Enriched</td><td>Contains complex organic substances &mdash; blood, serum, hemoglobin, or special growth factors required by fastidious microbes</td></tr>
     <tr><td><strong>Selective</strong></td><td>Contains one or more agents that <strong>inhibit</strong> growth of some microbes and encourage growth of the desired ones</td></tr>
     <tr><td><strong>Differential</strong></td><td>Allows several types to grow and <strong>displays visible differences</strong> among desired and undesired microbes</td></tr>
   </table>
   <p>%s</p>
   <div class="callout"><p>The two examples that are <em>both</em>, which is what the exam can
   hang a question on: <strong>blood agar is enriched and differential</strong> (gamma, beta and
-  alpha haemolysis &mdash; her &ldquo;different degrees of digestion of the haemoglobin&rdquo;),
+  alpha hemolysis &mdash; her &ldquo;different degrees of digestion of the hemoglobin&rdquo;),
   and <strong>mannitol salt agar is selective and differential</strong>. Triple sugar iron is
   the third worked example. %s</p></div>
   <p>Growth requirements sit behind all of this &mdash; chemically: water, energy nutrients
@@ -292,7 +292,7 @@ S1.append(item("w-growth", "1.6", "The bacterial growth curve", KNOW,
   <table>
     <tr><th>Phase</th><th>What is happening</th></tr>
     <tr><td><strong>Lag</strong></td><td>A flat period of adjustment and enlargement; little growth</td></tr>
-    <tr><td><strong>Exponential growth</strong></td><td>Maximum growth, continuing as long as cells have adequate nutrients and a favourable environment. <strong>Most vulnerable to control methods at this time</strong> &mdash; the slide's example is penicillin</td></tr>
+    <tr><td><strong>Exponential growth</strong></td><td>Maximum growth, continuing as long as cells have adequate nutrients and a favorable environment. <strong>Most vulnerable to control methods at this time</strong> &mdash; the slide's example is penicillin</td></tr>
     <tr><td><strong>Stationary</strong></td><td>Rate of cell growth equals rate of cell death, caused by depleted nutrients and oxygen and the excretion of organic acids and pollutants</td></tr>
     <tr><td><strong>Death</strong></td><td>As limiting factors intensify, cells die exponentially in their own wastes</td></tr>
   </table>
@@ -364,7 +364,7 @@ S1.append(item("w-mutations", "1.10", "Health implications of nucleic acid mutat
   by which bacteria acquire new information &mdash; <strong>transformation</strong> (taking up
   naked DNA from the environment), <strong>conjugation</strong> (cell-to-cell transmission of DNA
   from a plasmid) and <strong>transduction</strong> (transmission by viral vector) &mdash; appear
-  again inside the resistance objective in Lecture 2, which she emphasised heavily. Skip the
+  again inside the resistance objective in Lecture 2, which she emphasized heavily. Skip the
   health-implications framing if you like; do not skip the three mechanisms. %s</p></div>
   <p>For completeness: in viruses, high mutation rates change surface antigens, which can weaken
   or eliminate immunity from vaccination or previous exposure, and can let animal viruses cross
@@ -491,7 +491,7 @@ S2.append(item("w-eukaryote", "2.2", "Criteria for drug selection &mdash; prokar
   <ul>
     <li><strong>Selective toxicity</strong> &mdash; achieved by interfering with processes or structures found in the pathogen's cells and not in host cells.</li>
     <li><strong>Bactericidal</strong> (kills organisms directly; <strong>minimal bactericidal concentration</strong> is the minimum level that kills 99.9&nbsp;per&nbsp;cent of test organisms) versus <strong>bacteriostatic</strong> (inhibits growth; <strong>minimal inhibitory concentration</strong> is the minimum level that inhibits growth).</li>
-    <li>Favourable pharmacokinetics &mdash; reaching the target site at an effective concentration, which depends on distribution, crossing barriers, metabolism and excretion.</li>
+    <li>Favorable pharmacokinetics &mdash; reaching the target site at an effective concentration, which depends on distribution, crossing barriers, metabolism and excretion.</li>
     <li>Spectrum of activity &mdash; broad (large range of organisms) or narrow (small range).</li>
     <li>Lack of side effects &mdash; low direct toxicity, low potential for hypersensitivity.</li>
     <li>A good therapeutic index, and little resistance development.</li>
@@ -637,7 +637,7 @@ S2.append(item("w-mechanisms", "2.6", "Basic mechanisms of action, with examples
   <p>The <strong>disk-diffusion (Kirby&ndash;Bauer) method</strong>, where the reading chart
   corrects for concentration, molecular weight and other factors affecting diffusion; and the
   <strong>E test</strong> (epsilometer test, or &ldquo;MIC on a stick&rdquo;), where the minimum
-  inhibitory concentration is read in micrograms per millilitre at the point where the zone of
+  inhibitory concentration is read in micrograms per milliliter at the point where the zone of
   inhibition meets the strip. %s</p>"""
   % (src("Lecture 2, Slides 18&ndash;25."), src("Lecture 2, Slide 32."),
      src("Lecture 2, Slides 27&ndash;31."), src("Lecture 2, Slide 33."),
@@ -696,14 +696,14 @@ S2.append(item("w-resistance", "2.7", "Mechanisms of drug resistance", COLD,
     <li><strong>Using someone else&rsquo;s leftover prescription</strong> &mdash; &ldquo;when you&rsquo;re taking your friend&rsquo;s antibiotic.&rdquo;</li>
     <li><strong>Antibiotics in animal feed</strong> &mdash; she raised this one unprompted and at length: if you eat meat that is not organically grown, you may be exposed to antibiotics that were in the animals&rsquo; feed. %s</li>
   </ul>
-  <p>Beyond individual behaviour, the slides add environmental warming, and possible correlations
+  <p>Beyond individual behavior, the slides add environmental warming, and possible correlations
   with pesticide use in food production and microplastic contamination. Trends are tracked by the
   National Antimicrobial Resistance Monitoring System for Enteric Bacteria, an interagency
   partnership monitoring humans, retail meats and food animals. %s</p>
 
   <h4 class="subsub">What the data show</h4>
   <p>Increased antibiotic use means increased resistance; longer treatment means increased
-  colonisation; resistance is more prevalent in healthcare facilities than in the community; areas
+  colonization; resistance is more prevalent in healthcare facilities than in the community; areas
   of higher antibiotic use have the highest resistance; and antibiotic use correlates with
   infection by resistant strains during outbreaks. %s</p>
 
@@ -714,7 +714,7 @@ S2.append(item("w-resistance", "2.7", "Mechanisms of drug resistance", COLD,
   transfer</strong>. The clinically relevant producers are the <strong>ESKAPE</strong> organisms
   &mdash; <em>Enterococcus faecium</em>, <em>Staphylococcus aureus</em>, <em>Klebsiella
   pneumoniae</em>, <em>Acinetobacter baumannii</em>, <em>Pseudomonas aeruginosa</em> and
-  <em>Enterobacter</em> species &mdash; which colonise urinary catheters, ventilators, prosthetic
+  <em>Enterobacter</em> species &mdash; which colonize urinary catheters, ventilators, prosthetic
   joints and cardiac implants, along with chronic wounds and the lungs of cystic fibrosis
   patients, promoting persistent infection. %s</p>"""
   % (flag("""<p><strong>Resistance is not created by antibiotics. It is selected by them.</strong>
@@ -762,7 +762,7 @@ S2.append(item("w-problems", "2.8", "Other problems with antimicrobial therapy",
     <tr><td>Tetracycline</td><td>Tooth discoloration &mdash; binds with calcium during tooth development</td></tr>
     <tr><td>Chloramphenicol</td><td>Aplastic anemia</td></tr>
     <tr><td>Amphotericin B</td><td>Renal and hepatic toxicity</td></tr>
-    <tr><td>Chloroquine</td><td>Cardiovascular effects and electrolyte derangements with dysrhythmias</td></tr>
+    <tr><td>Chloroquine</td><td>Cardiovascular effects, electrolyte derangements and dysrhythmias</td></tr>
   </table>
 
   <h4 class="subsub">Hypersensitivity</h4>
@@ -830,14 +830,14 @@ S3.append(item("w-firstline", "3.2", "First line &mdash; which are physical, che
   vaginal secretions (lactic acid, beta-defensin, hydrogen peroxide). %s</p>
 
   <h4 class="subsub">Microbiological</h4>
-  <p><strong>Normal flora</strong>, which begins colonisation after birth. On the epidermis,
+  <p><strong>Normal flora</strong>, which begins colonization after birth. On the epidermis,
   <em>Staphylococcus epidermidis</em>, other coagulase-negative staphylococci and coryneform
   bacteria. They work two ways at once: <strong>competing for living space and nutrients</strong>
   (a physical barrier) and <strong>producing antimicrobial substances</strong> that inhibit
   pathogens (a chemical barrier). In atopic dermatitis the balance is altered
   (<strong>dysbiosis</strong>) with fewer antimicrobial peptides &mdash; and when subjects were
-  colonised with coagulase-negative staphylococci, colonisation by <em>Staphylococcus aureus</em>
-  was diminished. Gut commensals prevent colonisation by pathogens, digest substances we cannot
+  colonized with coagulase-negative staphylococci, colonization by <em>Staphylococcus aureus</em>
+  was diminished. Gut commensals prevent colonization by pathogens, digest substances we cannot
   and provide vitamins, and assist in the development of gut-associated lymphoid tissue. %s</p>
 
   <h4 class="subsub">Genetic</h4>
@@ -847,7 +847,7 @@ S3.append(item("w-firstline", "3.2", "First line &mdash; which are physical, che
   slide names this explicitly as a genetic defense. %s</p>
   <p>Defensins themselves are the predominant family of antimicrobial peptides &mdash; 30 to 40
   amino acids, amphipathic, damaging cell membranes, which is how they kill bacteria, fungi and
-  enveloped viruses. They are also the <strong>only innate immune components that can neutralise
+  enveloped viruses. They are also the <strong>only innate immune components that can neutralize
   a broad range of microbial toxins</strong>, by unfolding them and changing their
   three-dimensional configuration &mdash; they are antichaperones. %s</p>"""
   % (src("Lecture 5, Slides 6&ndash;14."), src("Lecture 5, Slides 13, 18."),
@@ -863,29 +863,29 @@ S3.append(item("w-recognition", "3.3", "The recognition system &mdash; PRRs, PAM
   all three in both forms.</p>
   <table>
     <tr><th>Term</th><th>Stands for</th><th>What it is</th></tr>
-    <tr><td><strong>PRR</strong></td><td>Pattern recognition receptor</td><td>The receptor. Recognises structural patterns from different types of pathogens</td></tr>
-    <tr><td><strong>PAMP</strong></td><td>Pathogen associated molecular pattern</td><td>The structural pattern <strong>on a microbe</strong> that a PRR recognises</td></tr>
-    <tr><td><strong>DAMP</strong></td><td>Damage associated molecular pattern</td><td>What other receptors recognise when <strong>cells have been damaged, stressed or invaded</strong> by pathogens such as viruses</td></tr>
+    <tr><td><strong>PRR</strong></td><td>Pattern recognition receptor</td><td>The receptor. Recognizes structural patterns from different types of pathogens</td></tr>
+    <tr><td><strong>PAMP</strong></td><td>Pathogen associated molecular pattern</td><td>The structural pattern <strong>on a microbe</strong> that a PRR recognizes</td></tr>
+    <tr><td><strong>DAMP</strong></td><td>Damage associated molecular pattern</td><td>What other receptors recognize when <strong>cells have been damaged, stressed or invaded</strong> by pathogens such as viruses</td></tr>
   </table>
   <p>%s</p>
   <p>The receptors are expressed by <strong>all white blood cells</strong> and by some epithelial
   and endothelial cells, and they differentiate between healthy <strong>self</strong> tissue,
   <strong>non-self</strong> substances from microbes, and <strong>altered self</strong> &mdash;
-  tissue damaged or altered by viruses or cancer. Each receptor recognises a pattern shared by a
+  tissue damaged or altered by viruses or cancer. Each receptor recognizes a pattern shared by a
   whole pathogen family, so a wide range of pathogens can be detected, and each cell carries a
-  unique combination of receptors, which increases the likelihood of effective defence. Once they
-  recognise non-self or altered self, they activate effector mechanisms. %s</p>
-  <div class="pearl"><p>Two specialisations worth carrying, because they explain the division of
-  labour later in the lecture: <strong>macrophages</strong> are very effective at recognising
+  unique combination of receptors, which increases the likelihood of effective defense. Once they
+  recognize non-self or altered self, they activate effector mechanisms. %s</p>
+  <div class="pearl"><p>Two specializations worth carrying, because they explain the division of
+  labor later in the lecture: <strong>macrophages</strong> are very effective at recognizing
   carbohydrates from bacteria and fungi using lectin receptors, and <strong>natural killer
-  cells</strong> are very effective at recognising changes in cell surface proteins produced when
+  cells</strong> are very effective at recognizing changes in cell surface proteins produced when
   a virus infects a cell. %s</p></div>
 
   <h4 class="subsub">The PRR families</h4>
-  <p>Different families recognise different molecules and can sit on the plasma membrane, in the
+  <p>Different families recognize different molecules and can sit on the plasma membrane, in the
   cytosol or in endosomes: %s</p>
   <ul>
-    <li><strong>Toll-like receptors</strong> &mdash; recognise many pathogens; on the surface they stimulate inflammatory cytokines, in endosomes they stimulate interferon.</li>
+    <li><strong>Toll-like receptors</strong> &mdash; recognize many pathogens; on the surface they stimulate inflammatory cytokines, in endosomes they stimulate interferon.</li>
     <li><strong>Scavenger receptors</strong> &mdash; eliminate microbes, or in the absence of infection clear cellular debris and cells that died by apoptosis.</li>
     <li><strong>Retinoic acid inducible gene</strong> &mdash; detects viral <em>RNA</em>, stimulates interferon.</li>
     <li><strong>Cyclic GMP cyclase</strong> &mdash; detects viral <em>DNA</em>, stimulates interferon.</li>
@@ -915,7 +915,7 @@ S3.append(item("w-leukocytes", "3.4", "The leukocytes &mdash; what each one does
   such as histamine which help expel parasites. %s</p>
   <div class="callout"><p>The pattern underneath the table: the <strong>myeloid innate immune
   cells</strong> &mdash; macrophages, dendritic cells, neutrophils and monocytes &mdash; are
-  effector cells driven by pattern recognition, cytokine signalling and cell-to-cell
+  effector cells driven by pattern recognition, cytokine signaling and cell-to-cell
   communication, and they kill microbes, remove debris and <strong>recruit help from the adaptive
   immune system</strong>. That last clause is what makes them the bridge to the third line. %s</p></div>"""
   % (src("Lecture 5, Slides 66&ndash;70."), src("Lecture 5, Slide 74."),
@@ -941,7 +941,7 @@ S3.append(item("w-macneut", "3.5", "Macrophage versus neutrophil", COLD,
   superoxide</strong>, which picks up hydrogen ions and <strong>raises the pH</strong> so that the
   digestive granules can break the organism down. %s</p>
   <p>Toxic oxygen species produced during the burst can diffuse out and damage host cells, so
-  phagocytes synthesise enzymes to inactivate them &mdash; <strong>catalase</strong> degrades
+  phagocytes synthesize enzymes to inactivate them &mdash; <strong>catalase</strong> degrades
   hydrogen peroxide into water and oxygen. %s</p>
   <div class="pearl"><p>Her question &ldquo;what happens to these neutrophils?&rdquo; has a
   three-part answer worth knowing, because it explains something clinically visible.
@@ -1032,7 +1032,7 @@ S3.append(item("w-fever", "3.8", "Fever &mdash; what causes it, why it is good, 
     <li><strong>Decreases replication of viral and bacterial pathogens</strong> &mdash; in bacteria, by starving them of iron.</li>
     <li>Increases production and activity of <strong>neutrophils</strong>.</li>
     <li>Enhances <strong>T cell proliferation</strong>.</li>
-    <li>Enhances immune signalling.</li>
+    <li>Enhances immune signaling.</li>
     <li>Enhances <strong>tissue resistance to the damaging effects of TNF-&alpha;</strong>.</li>
   </ul>
   <p>%s</p>
@@ -1064,7 +1064,7 @@ S3.append(item("w-interferon", "3.9", "Interferon", COLD,
   <p>Interferons are small proteins produced by certain white blood cells and tissue cells, made
   <strong>in response to viruses, RNA, immune products and various antigens</strong>. They bind to
   cell surfaces and <strong>induce expression of antiviral proteins</strong>, and they also
-  inhibit expression of cancer genes and suppress tumours. %s</p>
+  inhibit expression of cancer genes and suppress tumors. %s</p>
   <div class="pearl"><p><strong>Plasmacytoid dendritic cells</strong> are the professional
   interferon producers &mdash; they use pattern recognition receptors to detect viral infection,
   and within six hours of activation <strong>60&nbsp;per&nbsp;cent of the cell's transcription</strong>
@@ -1073,7 +1073,7 @@ S3.append(item("w-interferon", "3.9", "Interferon", COLD,
      tissue.</strong> That sentence is on the slide almost word for word, and she repeated it in
      the review after supplying the answer to her own question &mdash; which is the pattern she
      uses for things she expects to be got wrong.</p>
-     <p>The mechanism makes the distinction unavoidable: interferon acts on the <em>neighbouring
+     <p>The mechanism makes the distinction unavoidable: interferon acts on the <em>neighboring
      uninfected</em> cells, inducing antiviral proteins in them. It does nothing to the virus and
      nothing to the cell already infected. An answer that has interferon destroying virus is
      describing the wrong target.</p>"""),
@@ -1093,7 +1093,7 @@ S3.append(item("w-complement", "3.10", "Complement", COLD,
   <p>One of the first immune system components to be activated; ubiquitous in blood and lymph;
   <strong>30 or more proteins</strong> working in concert to destroy bacteria, viruses and
   parasites. They circulate as inactive <strong>zymogens</strong> &mdash; soluble proteases
-  &mdash; and are activated by cleavage in a cascade. A molecular defence that can be used
+  &mdash; and are activated by cleavage in a cascade. A molecular defense that can be used
   immediately, deriving its activity from a unique <strong>high-energy thioester bond</strong>.
   %s</p>
 
@@ -1113,7 +1113,7 @@ S3.append(item("w-complement", "3.10", "Complement", COLD,
   <table>
     <tr><th>Order</th><th>Pathway</th><th>Specific?</th><th>Detail</th></tr>
     <tr><td><strong>1st</strong></td><td><strong>Alternative</strong></td><td>Nonspecific</td><td>The quickest of the three. Starts depositing C3b on the pathogen surface at the very beginning of infection</td></tr>
-    <tr><td><strong>2nd</strong></td><td><strong>Lectin</strong></td><td>Nonspecific</td><td>Induced by infection &mdash; can begin as soon as infection is realised, but takes a little time to become effective</td></tr>
+    <tr><td><strong>2nd</strong></td><td><strong>Lectin</strong></td><td>Nonspecific</td><td>Induced by infection &mdash; can begin as soon as infection is realized, but takes a little time to become effective</td></tr>
     <tr><td><strong>3rd</strong></td><td><strong>Classical</strong></td><td>Either</td><td>Part of both innate and adaptive responses. Activated by <strong>C-reactive protein</strong> (innate) or by <strong>antibody</strong> (adaptive) binding to the pathogen. <strong>This is the one that links to the third line of defense</strong></td></tr>
   </table>
   <p>%s</p>
@@ -1150,7 +1150,7 @@ S3.append(item("w-complement", "3.10", "Complement", COLD,
      system is called <em>complement</em> because it was thought to complement the specific
      immune system. So the names encode the discovery sequence and actively mislead about the
      activation sequence. She raised this explicitly &mdash; the naming is the reason the order
-     has to be memorised rather than reasoned out.</p>"""),
+     has to be memorized rather than reasoned out.</p>"""),
      src("Lecture 5, Slides 44&ndash;45."), src("Lecture 5, Slide 48."),
      src("Lecture 5, Slides 49&ndash;50."), src("Lecture 5, Slides 53&ndash;54."),
      src("Lecture 5, Slides 46&ndash;47, 51."), src("Lecture 5, Slide 52."))))
@@ -1172,7 +1172,7 @@ S3.append(item("w-nk", "3.11", "Natural killer cells", KNOW,
   <h4 class="subsub">The balancing act</h4>
   <p>The one requirement of a natural killer cell receptor is that it must <strong>inhibit the
   cell from killing healthy self-cells</strong>. Killing is a balance between activating and
-  inhibitory signals: when a cell is infected, malignant or traumatised, its protein expression
+  inhibitory signals: when a cell is infected, malignant or traumatized, its protein expression
   changes so that <strong>activating signals exceed inhibitory signals</strong> &mdash; and then
   it is killed. %s</p>
   <p>The killing itself is by apoptosis: the natural killer cell contacts the target, releases
@@ -1354,7 +1354,7 @@ EXTRA_CSS = """
   :root[data-theme="dark"] .asked-label{color:#a6d9b5;}
   :root[data-theme="dark"] .asked p{color:#c8d3cb;}
 
-  /* Professor-emphasised content -- same convention as the CMS and Clin Path
+  /* Professor-emphasized content -- same convention as the CMS and Clin Path
      guides so the star means the same thing site-wide. */
   .prof-flag{
     border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;

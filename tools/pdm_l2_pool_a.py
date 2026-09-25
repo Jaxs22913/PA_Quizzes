@@ -128,16 +128,16 @@ POOL_A = [
      ["Calcium, because it is the densest naturally occurring material",
       "Calcium absorbs most x-rays and appears near-white."],
      ["Fat, because it is less dense than the surrounding soft tissue",
-      "Fat is grey and somewhat darker than soft tissue, but not blackest."]],
+      "Fat is gray and somewhat darker than soft tissue, but not blackest."]],
    c=0, cite=c(8)),
 
  dict(topic="Densities", io=IOD, slot="differential",
    q="Which two of the five basic densities cannot be distinguished from one another on a conventional radiograph?",
    opts=[
      ["Fluid and soft tissue, which have the same density",
-      "Correct — that limitation is one reason computed tomography expands the grey scale."],
+      "Correct — that limitation is one reason computed tomography expands the gray scale."],
      ["Fat and air, which both appear black on the image",
-      "Fat is grey and somewhat darker than soft tissue, while air is blackest."],
+      "Fat is gray and somewhat darker than soft tissue, while air is blackest."],
      ["Calcium and metal, which both absorb all of the beam",
       "Metal usually absorbs all x-rays while calcium absorbs most; they are distinguishable."],
      ["Fat and calcium, which occupy adjacent points on the scale",
@@ -214,7 +214,7 @@ POOL_A = [
    opts=[
      ["A matrix of thousands of tiny squares called pixels, each assigned a computed tomography number from −1000 to +1000 in Hounsfield units",
       "Correct — water is assigned a Hounsfield number of zero by convention."],
-     ["A matrix of voxels, each assigned a signal intensity from 0 to 255 in greyscale units",
+     ["A matrix of voxels, each assigned a signal intensity from 0 to 255 in grayscale units",
       "The image is a matrix of tiny squares called pixels, each assigned a computed tomography number from minus 1000 to plus 1000 in Hounsfield units."],
      ["A series of two-dimensional projections, each one assigned its own radiodensity value as measured in millisieverts",
       "Millisieverts measure radiation dose rather than image density."],
@@ -251,7 +251,7 @@ POOL_A = [
  dict(topic="Computed tomography", io=IOD, slot="manifestation",
    q="What is the window in computed tomography?",
    opts=[
-     ["The range of Hounsfield numbers pre-selected for display, spread over the available grey scale",
+     ["The range of Hounsfield numbers pre-selected for display, spread over the available gray scale",
       "Correct — for example only those densities between −100 and +300."],
      ["The physical aperture of the gantry through which the patient passes",
       "That is the bore rather than the window."],
@@ -303,7 +303,7 @@ POOL_A = [
  dict(topic="Computed tomography", io=IOB, slot="first-line",
    q="Which advantages are named for computed tomography?",
    opts=[
-     ["It expands the grey scale beyond the five basic densities, reduces overlapping of structures, works with implantable devices, and allows three-dimensional reconstruction",
+     ["It expands the gray scale beyond the five basic densities, reduces overlapping of structures, works with implantable devices, and allows three-dimensional reconstruction",
       "Correct — it is described as the cornerstone of cross-sectional imaging."],
      ["It uses no ionizing radiation at all and is described as being the safest of all of the imaging modalities that are currently available anywhere",
       "That describes ultrasound."],
@@ -342,7 +342,7 @@ POOL_A = [
  dict(topic="Fluoroscopy", io=IOB, slot="etiology",
    q="What does fluoroscopy allow that a conventional radiograph does not?",
    opts=[
-     ["Real-time visualisation, allowing evaluation of motion and of positional change in bones and joints",
+     ["Real-time visualization, allowing evaluation of motion and of positional change in bones and joints",
       "Correct — images can be viewed live and captured as stills or video."],
      ["Imaging without any ionizing radiation at all, making it entirely safe to use in pregnancy",
       "Fluoroscopy does use ionizing radiation."],

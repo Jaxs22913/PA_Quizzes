@@ -33,7 +33,7 @@ BATCH = {
   "&ldquo;My hearing is muffled and my ear feels full &mdash; but it doesn&rsquo;t hurt.&rdquo; In "
   "a child, &ldquo;he keeps turning the television up.&rdquo;",
   "Otoscopy for an <b>amber or dull drum, an air-fluid level or bubbles</b>. Pneumatic otoscopy. "
-  "<b>Weber lateralises TOWARD the affected ear and Rinne becomes negative</b> on that side &mdash; "
+  "<b>Weber lateralizes TOWARD the affected ear and Rinne becomes negative</b> on that side &mdash; "
   "the conductive pattern. In an adult with a unilateral effusion, <b>examine the nasopharynx</b>.",
   [("Eustachian tube dysfunction", "Retraction without fluid; the earlier point on the same spectrum"),
    ("Acute otitis media", "Pain, fever and bulging, which this lacks"),
@@ -41,7 +41,7 @@ BATCH = {
   "<b>Tympanometry</b> &rarr; a flat type B curve with NORMAL canal volume (a large volume would "
   "mean a perforation instead). <b>Audiometry</b> &rarr; a conductive loss, typically 20 to 30 decibels.",
   "A type A tympanogram excludes it; fever with a bulging drum redirects to acute otitis media; "
-  "nasopharyngoscopy excludes a tumour in the unilateral adult case."),
+  "nasopharyngoscopy excludes a tumor in the unilateral adult case."),
 
 "Chronic otitis media": E(
   "&ldquo;My ear has been draining on and off for years and the hearing on that side is poor.&rdquo;",
@@ -74,29 +74,29 @@ BATCH = {
 
 "Barotrauma": E(
   "&ldquo;My ear has been blocked and painful since the flight landed.&rdquo;",
-  "Otoscopy for a <b>retracted drum, haemorrhage within the drum, or fluid</b>. Check the drum is "
+  "Otoscopy for a <b>retracted drum, hemorrhage within the drum, or fluid</b>. Check the drum is "
   "intact. Tuning forks. Ask about diving depth and about vertigo, which suggests inner ear "
   "involvement.",
-  [("Eustachian tube dysfunction", "Same mechanism without the acute pressure event or haemorrhage"),
+  [("Eustachian tube dysfunction", "Same mechanism without the acute pressure event or hemorrhage"),
    ("Perilymphatic fistula", "Vertigo and sensorineural loss after the same barotrauma &mdash; far more serious"),
    ("Acute otitis media", "Fever and a bulging drum with an infective prodrome")],
-  "<b>Otoscopy</b> &rarr; retraction, a haemotympanum, or a traumatic perforation. "
+  "<b>Otoscopy</b> &rarr; retraction, a hemotympanum, or a traumatic perforation. "
   "<b>Audiometry</b> &rarr; a conductive loss; a SENSORINEURAL loss instead points to a fistula.",
   "A sensorineural pattern on audiometry excludes simple barotrauma; a normal mobile drum excludes "
   "it; fever with bulging redirects to infection."),
 
 "Cerumen impaction": E(
   "&ldquo;My hearing went suddenly on that side &mdash; it started after I used a cotton bud.&rdquo;",
-  "Otoscopy showing <b>wax occluding the canal</b>. <b>Weber lateralises TOWARD the blocked ear, "
+  "Otoscopy showing <b>wax occluding the canal</b>. <b>Weber lateralizes TOWARD the blocked ear, "
   "Rinne is negative on that side</b>. Re-examine the drum AFTER removal &mdash; that is the step "
   "people skip.",
-  [("Otitis externa", "Pain on tragal traction; the canal is oedematous rather than merely full of wax"),
+  [("Otitis externa", "Pain on tragal traction; the canal is edematous rather than merely full of wax"),
    ("Otitis media with effusion", "A conductive loss with a clear canal and fluid behind the drum"),
-   ("Sudden sensorineural hearing loss", "Weber would lateralise AWAY &mdash; the reason tuning forks matter")],
+   ("Sudden sensorineural hearing loss", "Weber would lateralize AWAY &mdash; the reason tuning forks matter")],
   "<b>Otoscopy</b> &rarr; obstructing cerumen, and normal hearing once it is removed. That "
   "resolution IS the confirmation.",
   "If hearing does not return after clearance, the wax was not the cause &mdash; audiometry then, "
-  "and Weber lateralising away means a sensorineural cause."),
+  "and Weber lateralizing away means a sensorineural cause."),
 
 "Cholesteatoma": E(
   "&ldquo;There is a foul smell from my ear, it keeps draining, and my hearing is getting "
@@ -122,7 +122,7 @@ BATCH = {
    ("Relapsing polychondritis", "Recurrent, bilateral, non-traumatic, also sparing the lobule")],
   "<b>Clinical</b> &rarr; a fluctuant swelling obscuring the contours; <b>aspiration or incision</b> "
   "&rarr; blood, which both confirms and treats.",
-  "No fluctuance means contusion, not haematoma; hot, spreading erythema means perichondritis and "
+  "No fluctuance means contusion, not hematoma; hot, spreading erythema means perichondritis and "
   "needs antibiotics; bilateral non-traumatic disease suggests polychondritis."),
 
 "Lacerations and avulsion": E(
@@ -131,7 +131,7 @@ BATCH = {
   "Assess the wound for <b>cartilage exposure</b>. Examine the canal and drum. Check facial nerve "
   "function and look for other injuries. Tetanus status.",
   [("Simple skin laceration", "Cartilage NOT exposed; a far simpler repair"),
-   ("Auricular haematoma", "Closed injury with fluctuance rather than a break in the skin"),
+   ("Auricular hematoma", "Closed injury with fluctuance rather than a break in the skin"),
    ("Avulsion with vascular compromise", "A pale, cold segment needing specialist salvage")],
   "<b>Direct inspection</b> &rarr; whether cartilage is exposed and whether the segment is perfused, "
   "which determines who repairs it.",
@@ -160,9 +160,9 @@ BATCH = {
   "<b>organic (must not be irrigated, it swells)</b> or a <b>button battery (immediate removal)</b>. "
   "Re-examine the canal and drum after removal.",
   [("Cerumen impaction", "Wax rather than an object; irrigation is safe"),
-   ("Otitis externa", "Diffuse canal oedema and tragal tenderness with no object"),
+   ("Otitis externa", "Diffuse canal edema and tragal tenderness with no object"),
    ("Otomycosis", "Fungal debris that can look like material but shows hyphae")],
-  "<b>Otoscopy</b> &rarr; direct visualisation of the object, and an intact drum after removal.",
+  "<b>Otoscopy</b> &rarr; direct visualization of the object, and an intact drum after removal.",
   "Seeing wax only excludes a foreign body; persistent pain and discharge after removal means "
   "secondary otitis externa, not a retained object &mdash; unless the canal cannot be fully seen."),
 
@@ -172,7 +172,7 @@ BATCH = {
   "Inspect for an <b>embedded object and any cartilage involvement</b>. Palpate for fluctuance and "
   "look for spreading erythema. Examine the canal too.",
   [("Perichondritis", "Infection of cartilage, hot and tender, sparing the lobule"),
-   ("Auricular haematoma", "Fluctuant collection without a retained object"),
+   ("Auricular hematoma", "Fluctuant collection without a retained object"),
    ("Keloid", "A firm overgrowth at an old piercing site rather than an acute problem")],
   "<b>Inspection</b> &rarr; the object and whether cartilage is breached; cartilage involvement is "
   "what raises the stakes.",
@@ -182,7 +182,7 @@ BATCH = {
 "Otitis externa": E(
   "&ldquo;My ear is really sore, especially if I touch it &mdash; I&rsquo;ve been swimming a "
   "lot.&rdquo;",
-  "<b>Pain on tragal pressure or pulling the pinna</b> &mdash; the defining manoeuvre. Otoscopy for "
+  "<b>Pain on tragal pressure or pulling the pinna</b> &mdash; the defining maneuver. Otoscopy for "
   "a <b>swollen, erythematous canal with debris</b>; try to see the drum, which should be normal. "
   "<b>Palpate the mastoid and check cranial nerve VII</b> to exclude the malignant form. Check for "
   "diabetes.",
@@ -197,7 +197,7 @@ BATCH = {
 "Otomycosis": E(
   "&ldquo;My ear itches constantly and there&rsquo;s a strange discharge &mdash; the drops the "
   "doctor gave me made it worse.&rdquo;",
-  "Otoscopy for <b>fluffy white hyphae with black or grey spores</b> (<i>Aspergillus</i>) or a "
+  "Otoscopy for <b>fluffy white hyphae with black or gray spores</b> (<i>Aspergillus</i>) or a "
   "<b>curd-like white debris</b> (<i>Candida</i>). Assess tragal tenderness &mdash; usually much "
   "less than bacterial disease. Check the drum is intact before any drops.",
   [("Bacterial otitis externa", "Pain rather than itch; no hyphae; improves on antibiotic drops"),
@@ -212,7 +212,7 @@ BATCH = {
   "&ldquo;My hearing has been slipping for years &mdash; my mother went the same way. Oddly I hear "
   "better in a noisy room.&rdquo;",
   "<b>Otoscopy is NORMAL</b>, which is the point &mdash; occasionally a faint pink blush on the "
-  "promontory. <b>Weber lateralises TOWARD the worse ear; Rinne is negative on that side</b>. Ask "
+  "promontory. <b>Weber lateralizes TOWARD the worse ear; Rinne is negative on that side</b>. Ask "
   "about family history and about worsening in pregnancy.",
   [("Otitis media with effusion", "A conductive loss too, but the drum is abnormal and tympanometry is flat"),
    ("Cerumen impaction", "Same conductive pattern, resolved instantly by clearing the canal"),
@@ -237,11 +237,11 @@ BATCH = {
 
 "Conductive hearing loss": E(
   "&ldquo;Sounds are muffled, like my ear is plugged &mdash; but my own voice sounds loud.&rdquo;",
-  "Otoscopy of canal and drum &mdash; the cause is usually visible. <b>Weber lateralises TOWARD the "
+  "Otoscopy of canal and drum &mdash; the cause is usually visible. <b>Weber lateralizes TOWARD the "
   "affected ear; Rinne is negative (bone better than air) on that side.</b> Pneumatic otoscopy.",
-  [("Sensorineural loss", "Weber lateralises AWAY and Rinne stays positive &mdash; the opposite pattern"),
+  [("Sensorineural loss", "Weber lateralizes AWAY and Rinne stays positive &mdash; the opposite pattern"),
    ("Mixed loss", "Both an air-bone gap AND reduced bone conduction"),
-   ("Functional loss", "Tuning forks and audiometry contradict each other and the behaviour")],
+   ("Functional loss", "Tuning forks and audiometry contradict each other and the behavior")],
   "<b>Audiometry</b> &rarr; an <b>air-bone gap</b> with normal bone conduction &mdash; that gap IS "
   "the definition. <b>Tympanometry</b> &rarr; type B for fluid or perforation, type C for negative "
   "pressure, type As for fixation.",
@@ -251,7 +251,7 @@ BATCH = {
 "Sensorineural hearing loss": E(
   "&ldquo;I can hear that people are talking but I can&rsquo;t make out the words, especially in a "
   "crowd.&rdquo;",
-  "<b>Otoscopy is normal.</b> <b>Weber lateralises AWAY to the better ear; Rinne remains positive "
+  "<b>Otoscopy is normal.</b> <b>Weber lateralizes AWAY to the better ear; Rinne remains positive "
   "bilaterally.</b> Cranial nerves and cerebellar signs. Establish whether onset was sudden &mdash; "
   "that changes it into an emergency.",
   [("Conductive loss", "Weber toward, Rinne negative, and usually a visible cause"),
@@ -261,7 +261,7 @@ BATCH = {
   "<b>Magnetic resonance with gadolinium</b> if asymmetric &rarr; an enhancing internal auditory "
   "canal lesion.",
   "An air-bone gap excludes it; symmetric high-frequency loss in an older patient is presbycusis, "
-  "not a tumour; normal imaging excludes a schwannoma."),
+  "not a tumor; normal imaging excludes a schwannoma."),
 
 "Presbycusis": E(
   "&ldquo;Everyone mumbles these days, and restaurants are impossible.&rdquo; Often the family "
@@ -282,13 +282,13 @@ BATCH = {
   "Establish whether it is <b>pulsatile</b>, which changes everything. <b>Auscultate the ear, neck "
   "and skull</b> for a bruit. Otoscopy &mdash; look for a <b>red mass behind the drum</b>. Tuning "
   "forks. Review medications.",
-  [("Glomus tumour", "Pulsatile, with a red retrotympanic mass and a positive Brown sign"),
+  [("Glomus tumor", "Pulsatile, with a red retrotympanic mass and a positive Brown sign"),
    ("Ototoxicity", "Bilateral, follows a culprit drug, often with hearing loss"),
    ("Noise-induced or age-related loss", "Non-pulsatile tinnitus accompanying the loss itself")],
   "<b>Audiometry</b> &rarr; the accompanying hearing loss that usually drives it. If PULSATILE, "
-  "<b>imaging with vascular study</b> &rarr; a vascular tumour or a dural fistula.",
+  "<b>imaging with vascular study</b> &rarr; a vascular tumor or a dural fistula.",
   "Non-pulsatile bilateral tinnitus with symmetric loss needs no imaging; a normal otoscopy "
-  "excludes a glomus tumour; stopping a culprit drug with improvement points to ototoxicity."),
+  "excludes a glomus tumor; stopping a culprit drug with improvement points to ototoxicity."),
 
 "Exostosis": E(
   "&ldquo;I&rsquo;ve been a cold-water surfer for years and my ears keep getting blocked and "
@@ -303,18 +303,18 @@ BATCH = {
   "A single pedunculated lesion is an osteoma; wax that clears excludes it; friable bleeding "
   "tissue needs biopsy for carcinoma."),
 
-"Glomus tumour": E(
+"Glomus tumor": E(
   "&ldquo;I hear my own heartbeat whooshing in my ear all the time, in time with my pulse &mdash; "
   "and my hearing on that side is going.&rdquo;",
   "Otoscopy for a <b>red or blue pulsatile mass behind the drum</b>. <b>Brown sign &mdash; the mass "
   "blanches on positive pressure with the pneumatic otoscope.</b> <b>Auscultate for a bruit.</b> "
   "Cranial nerves VII and IX to XII. <b>Never biopsy it in clinic.</b>",
-  [("High-riding jugular bulb", "A vascular variant, also blue behind the drum, but not a tumour"),
+  [("High-riding jugular bulb", "A vascular variant, also blue behind the drum, but not a tumor"),
    ("Aberrant internal carotid artery", "Pulsatile too &mdash; and biopsy would be catastrophic"),
    ("Haemotympanum", "Blood behind the drum after trauma; not pulsatile")],
   "<b>Computed tomography and magnetic resonance with angiography</b> &rarr; an intensely enhancing "
   "mass with a <b>salt and pepper</b> pattern of flow voids and bone erosion. <b>Urinary "
   "catecholamines</b> if it is secreting.",
   "Imaging is what excludes the vascular variants &mdash; and it must come BEFORE any instrument "
-  "touches the mass; a trauma history with a non-pulsatile blue drum is haemotympanum."),
+  "touches the mass; a trauma history with a non-pulsatile blue drum is hemotympanum."),
 }

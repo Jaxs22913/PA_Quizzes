@@ -10,7 +10,7 @@ them 1-10 and drops three definite articles; the syllabus is authoritative.
 minutes of the lecture Webster said "This is for the test" and named seven
 topics. They are marked with the existing prof-flag machinery, relabelled --
 this is stronger than the ordinary "professor emphasized" flag, because he was
-not emphasising, he was listing the exam.
+not emphasizing, he was listing the exam.
 
 RECOVERING THAT LIST REQUIRED BOTH TRANSCRIPTS. Notability's ASR dropped
 GLAUCOMA entirely; faster-whisper dropped CATARACTS entirely. Either alone would
@@ -81,7 +81,7 @@ BODY = """
     later &hellip; <b>know these better: optic nerve damage, optic chiasm damage, optic tract
     damage</b>&rdquo;</em> and <em>&ldquo;D and E, you can know that if you want, but know A, B
     and C.&rdquo;</em></p>
-    <p>And he de-emphasised lens correction: <em>&ldquo;not that important, concave and convex
+    <p>And he de-emphasized lens correction: <em>&ldquo;not that important, concave and convex
     for my purposes. <b>More important is knowing the difference between myopia, hyperopia, and
     the globe shape.</b>&rdquo;</em> He then contradicted himself on which lens does what and
     corrected mid-sentence, so trust the slide, not the sentence &mdash; and expect the
@@ -91,9 +91,9 @@ BODY = """
   <h3 class="sub" id="l4-anatomy">4.1 &middot; Objectives a &amp; b &mdash; Anatomy and the physiology of vision</h3>
   <p>Five things make the eye unusual, and each one explains a disease later in this lecture.
   <b>The cornea is avascular</b>, oxygenated by direct contact with air and tears, and about
-  <b>seventy per cent of refraction</b> depends on it &mdash; which is why corneal disease blurs
+  <b>seventy percent of refraction</b> depends on it &mdash; which is why corneal disease blurs
   vision so completely. <b>The retina has the highest oxygen consumption and metabolic rate of any
-  tissue</b>, higher than cerebral cortex, which is why it tolerates ischaemia so badly. And the
+  tissue</b>, higher than cerebral cortex, which is why it tolerates ischemia so badly. And the
   eye is the <b>only place in the body where live neural tissue and native microcirculation can be
   seen directly</b>, without cutting anything.</p>
 
@@ -113,18 +113,18 @@ BODY = """
   cortex).</p>
 
   <p><b>Rods, about 120 million</b>, are high-sensitivity, for dim light and the peripheral retina.
-  <b>Cones, about 6 million</b>, carry colour and sharp acuity and are concentrated in the
+  <b>Cones, about 6 million</b>, carry color and sharp acuity and are concentrated in the
   <b>fovea centralis</b> within the macula. Beneath them the <b>retinal pigment epithelium</b> does
   three jobs &mdash; absorbs scattered light, phagocytoses spent photoreceptor outer segments, and
   maintains the blood-retinal barrier. Signals pass through <b>bipolar, horizontal and amacrine</b>
   interneurons to the ganglion cells, whose axons become the optic nerve. The <b>optic disc is the
   blind spot</b> because it has no rods or cones.</p>
 
-  <p><b>Fluid mechanics.</b> Aqueous humour is made continuously by the non-pigmented epithelium of
+  <p><b>Fluid mechanics.</b> Aqueous humor is made continuously by the non-pigmented epithelium of
   the ciliary body into the posterior chamber, flows through the pupil into the anterior chamber
   nourishing the avascular lens and cornea, and drains <b>trabecular meshwork &rarr; canal of
   Schlemm &rarr; episcleral veins</b>. That drainage route is the whole of glaucoma. Behind the
-  lens, <b>vitreous humour</b> &mdash; water, type two collagen, hyaluronic acid &mdash; acts as a
+  lens, <b>vitreous humor</b> &mdash; water, type two collagen, hyaluronic acid &mdash; acts as a
   shock absorber pressing the retina against the pigment epithelium. Its age-related liquefaction
   is the whole of rhegmatogenous detachment.</p>
 
@@ -170,7 +170,7 @@ BODY = """
     <tr><td><b>Congenital and environmental</b></td><td>Down syndrome; excess ultraviolet radiation and oxidative damage</td></tr>
   </table>
   <p><b>Presentation:</b> gradual, painless, bilateral blurring; <b>glare around headlights at
-  night</b>; monocular diplopia; altered colour perception. <b>On examination:</b> loss of the
+  night</b>; monocular diplopia; altered color perception. <b>On examination:</b> loss of the
   normal <b>red reflex</b>, with a white opacity through the pupil (leukocoria) when severe.
   Usually peripheral in the lens, but a <b>nuclear</b> cataract is often post-traumatic.</p>
 
@@ -223,21 +223,21 @@ BODY = """
   forms.</p>
   <table class="tbl">
     <tr><th></th><th>Dry (atrophic)</th><th>Wet (exudative, neovascular)</th></tr>
-    <tr><td>Process</td><td>Slow bilateral degeneration of photoreceptors, pigment epithelium and choroid</td><td><b>Choroidal neovascularisation</b> &mdash; hypoxia and inflammation drive new vessels beneath the pigment epithelium into the subretinal space</td></tr>
+    <tr><td>Process</td><td>Slow bilateral degeneration of photoreceptors, pigment epithelium and choroid</td><td><b>Choroidal neovascularization</b> &mdash; hypoxia and inflammation drive new vessels beneath the pigment epithelium into the subretinal space</td></tr>
     <tr><td>Hallmark</td><td><b>Drusen</b> &mdash; discrete yellow extracellular debris (lipofuscin, apolipoproteins) beneath the pigment epithelium and Bruch membrane</td><td>Leaking vessels, blood and serous fluid</td></tr>
     <tr><td>Course</td><td>Slow loss of central detail; metamorphopsia and scotoma</td><td><b>Rapid</b> central loss, disciform scarring, detachment</td></tr>
-    <tr><td>Share of severe blindness</td><td>&mdash;</td><td><b>~90 per cent</b></td></tr>
+    <tr><td>Share of severe blindness</td><td>&mdash;</td><td><b>~90 percent</b></td></tr>
   </table>
   @@FUNDUS@@
 
   <p><b>Diabetic retinopathy</b> is the leading cause of new-onset blindness in United States
   adults <b>20 to 74</b> &mdash; a different age band from macular degeneration, and an easy pair
-  to swap. Chronic hyperglycaemia damages capillaries and endothelial basement membranes &rarr;
+  to swap. Chronic hyperglycemia damages capillaries and endothelial basement membranes &rarr;
   capillary occlusion and hypoxia. <b>Non-proliferative:</b> dilated veins, microaneurysms, dot and
-  blot haemorrhages, <b>hard exudates</b> (lipid in the outer plexiform layer), <b>cotton-wool
-  spots</b> (nerve fibre layer ischaemia), macular oedema. <b>Proliferative:</b> severe ischaemia
-  upregulates <b>vascular endothelial growth factor</b> &rarr; neovascularisation on disc and
-  retina &rarr; vitreous haemorrhage, fibrotic traction, tractional detachment.</p>
+  blot hemorrhages, <b>hard exudates</b> (lipid in the outer plexiform layer), <b>cotton-wool
+  spots</b> (nerve fiber layer ischemia), macular edema. <b>Proliferative:</b> severe ischemia
+  upregulates <b>vascular endothelial growth factor</b> &rarr; neovascularization on disc and
+  retina &rarr; vitreous hemorrhage, fibrotic traction, tractional detachment.</p>
   @@OCT@@
 
   <h3 class="sub" id="l4-fields">4.6 &middot; Objective j &mdash; Visual field deficits by lesion site</h3>
@@ -245,23 +245,23 @@ BODY = """
     <p>On his list &mdash; <em>&ldquo;know those areas of changes in your visual pathway, what
     would cause a particular visual change&rdquo;</em> &mdash; but <b>scoped</b>. He said twice to
     know <b>A, B and C</b>. D and E he deferred: <em>&ldquo;this is getting more into neurology,
-    which we&rsquo;ll see later.&rdquo;</em> He also said <em>&ldquo;memorise this: optic nerve,
+    which we&rsquo;ll see later.&rdquo;</em> He also said <em>&ldquo;memorize this: optic nerve,
     optic chiasm, optic tract.&rdquo;</em></p>
   </div>
-  <p><b>The decussation is the key.</b> <b>Nasal</b> retinal fibres &mdash; which carry the
-  <b>temporal</b> visual fields &mdash; cross at the chiasm. <b>Temporal</b> retinal fibres stay
+  <p><b>The decussation is the key.</b> <b>Nasal</b> retinal fibers &mdash; which carry the
+  <b>temporal</b> visual fields &mdash; cross at the chiasm. <b>Temporal</b> retinal fibers stay
   ipsilateral. Everything below follows from that one fact. The pathway runs optic disc &rarr;
   optic nerve &rarr; chiasm &rarr; optic tract &rarr; lateral geniculate nucleus &rarr; optic
   radiation &rarr; occipital cortex.</p>
   <table class="tbl">
     <tr><th>Site</th><th>Lesion</th><th>Cause</th><th>Field defect</th></tr>
-    <tr><td><b>A</b></td><td>Ipsilateral optic nerve</td><td>Trauma, optic neuritis, ischaemic optic neuropathy</td><td><b>Monocular blindness</b></td></tr>
-    <tr><td><b>B</b></td><td>Optic chiasm (centre)</td><td><b>Pituitary adenoma</b> compression</td><td><b>Bitemporal hemianopsia</b> &mdash; only the crossing nasal fibres are cut, so both temporal fields go</td></tr>
-    <tr><td><b>C</b></td><td>Optic tract / lateral geniculate</td><td>Stroke, tumour, demyelination</td><td><b>Contralateral homonymous hemianopsia</b></td></tr>
+    <tr><td><b>A</b></td><td>Ipsilateral optic nerve</td><td>Trauma, optic neuritis, ischemic optic neuropathy</td><td><b>Monocular blindness</b></td></tr>
+    <tr><td><b>B</b></td><td>Optic chiasm (center)</td><td><b>Pituitary adenoma</b> compression</td><td><b>Bitemporal hemianopsia</b> &mdash; only the crossing nasal fibers are cut, so both temporal fields go</td></tr>
+    <tr><td><b>C</b></td><td>Optic tract / lateral geniculate</td><td>Stroke, tumor, demyelination</td><td><b>Contralateral homonymous hemianopsia</b></td></tr>
     <tr><td class="muted">D</td><td class="muted">Temporal optic radiation</td><td class="muted">Temporal lobe lesion or surgery</td><td class="muted">Contralateral superior quadrantanopsia &mdash; &ldquo;pie in the sky&rdquo;</td></tr>
     <tr><td class="muted">E</td><td class="muted">Occipital cortex</td><td class="muted">Posterior cerebral artery occlusion</td><td class="muted">Contralateral homonymous hemianopsia <b>with macular sparing</b> (dual supply)</td></tr>
   </table>
-  <p class="muted">D and E are greyed because he deferred them to neurology. They are on the slide,
+  <p class="muted">D and E are grayed because he deferred them to neurology. They are on the slide,
   so they are here &mdash; but A, B and C carry the weight.</p>
   @@FIELDS@@
   <p>One more consequence he drew out: losing vision in one eye costs the <b>binocular overlap</b>,
@@ -292,15 +292,15 @@ TESTS = """    ophthalmic: [
        why:"In myopia the axial globe is too long, so the focal point falls in front of the retina; a globe too short, with the focal point behind the retina, is hyperopia."},
       {q:"Which three mechanisms cause retinal detachment?",
        o:["Rhegmatogenous (tear), tractional (membranes pull), exudative (fluid, no tear)",
-          "Ischaemic, haemorrhagic and infective","Congenital, traumatic and neoplastic",
+          "Ischemic, hemorrhagic and infective","Congenital, traumatic and neoplastic",
           "Osmotic, oxidative and inflammatory"],a:0,
        why:"Rhegmatogenous detachment follows a full-thickness retinal tear, tractional detachment is fibrovascular membranes pulling the retina off, and exudative detachment is subretinal fluid with no tear or traction."},
       {q:"What is the hallmark of DRY macular degeneration?",
-       o:["Drusen beneath the retinal pigment epithelium","Choroidal neovascularisation",
+       o:["Drusen beneath the retinal pigment epithelium","Choroidal neovascularization",
           "Cotton-wool spots","Optic disc cupping"],a:0,
        why:"Drusen are lipofuscin and apolipoprotein debris under the pigment epithelium."},
       {q:"Which visual field defect does a central optic chiasm lesion produce?",
-       o:["Bitemporal hemianopsia &mdash; only the crossing NASAL fibres are cut, and they carry the TEMPORAL fields",
+       o:["Bitemporal hemianopsia &mdash; only the crossing NASAL fibers are cut, and they carry the TEMPORAL fields",
           "Monocular blindness &mdash; the lesion is before the crossing",
           "Homonymous hemianopsia &mdash; the lesion is after the crossing",
           "Superior quadrantanopsia &mdash; only part of the radiation is involved"],a:0,
@@ -324,7 +324,7 @@ TESTS = """    ophthalmic: [
 
 FIGS = {
     "@@ANATOMY@@": ("anatomy", "png",
-                    "The eye in cross-section, fully labelled &mdash; chambers and their fluids, "
+                    "The eye in cross-section, fully labeled &mdash; chambers and their fluids, "
                     "the canal of Schlemm and the outflow route, the suspensory zonules, and the "
                     "fovea, macula and optic disc at the back.", 5),
     "@@DETACH@@": ("detachment", "png",

@@ -21,7 +21,7 @@ QUESTIONS = [
  dict(topic="Topical principles", io="4 — Describe absorption, distribution, metabolism, and excretion of dermatologic drugs", cite=D % 5,
   q="What is the depot effect in skin?",
   opts=[["Skin acts as a reservoir for the drug", "Correct, which can permit once-daily dosing of short-acting drugs."],
-        ["The drug is metabolised within the epidermis", "Storage rather than metabolism is described."],
+        ["The drug is metabolized within the epidermis", "Storage rather than metabolism is described."],
         ["The vehicle evaporates and concentrates the drug", "That is not what the depot effect means."],
         ["Occlusion drives the drug into the bloodstream", "Occlusion is a separate variable."]]),
 
@@ -55,13 +55,13 @@ QUESTIONS = [
 
  dict(topic="Acne", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 10,
   q="Which four factors drive acne?",
-  opts=[["Sebum, keratinisation, bacteria and inflammation", "Correct, making it a multifactorial disease."],
+  opts=[["Sebum, keratinization, bacteria and inflammation", "Correct, making it a multifactorial disease."],
         ["Sebum, sweating, sunlight and diet alone", "Those are not the four named factors."],
         ["Hormones, genetics, race and environmental heat", "Those are contributing influences rather than the four factors."],
         ["Infection, allergy, trauma and stress", "Those are not the four named factors."]]),
 
  dict(topic="Acne", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 10,
-  q="Which organism colonises the acne follicle?",
+  q="Which organism colonizes the acne follicle?",
   opts=[["Propionibacterium acnes", "Correct, proliferating in the anaerobic conditions that pooled sebum creates."],
         ["Staphylococcus aureus", "That is not the organism named in acne."],
         ["Malassezia furfur", "That is not the organism named in acne."],
@@ -90,7 +90,7 @@ QUESTIONS = [
 
  dict(topic="Acne", io="2 — Describe the molecular mechanism of action of dermatologic drugs", cite=D % 12,
   q="What do bacterial lipases do in acne?",
-  opts=[["Hydrolyse triglycerides into free fatty acids", "Correct, which increases keratinisation and microcomedone formation."],
+  opts=[["Hydrolyze triglycerides into free fatty acids", "Correct, which increases keratinization and microcomedone formation."],
         ["Break down keratin in the follicular wall", "Triglycerides are the substrate named."],
         ["Digest the sebaceous gland membrane", "That is not the described action."],
         ["Convert testosterone to dihydrotestosterone", "That conversion relates to azelaic acid's mechanism."]]),
@@ -114,7 +114,7 @@ QUESTIONS = [
   opts=[["Inflammation increases as the steroid stops", "Correct, so the eruption looks worse before it settles."],
         ["Bacterial counts rebound immediately", "Inflammation is the stated reason."],
         ["Sebum production doubles on withdrawal", "That is not the described mechanism."],
-        ["Keratinisation accelerates sharply", "Inflammation is the mechanism given."]]),
+        ["Keratinization accelerates sharply", "Inflammation is the mechanism given."]]),
 
  dict(topic="Acne", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 15,
   q="Which drugs besides corticosteroids induce acne?",
@@ -169,12 +169,12 @@ QUESTIONS = [
   q="How is azelaic acid thought to work?",
   opts=[["Antimicrobial action and blocking testosterone conversion", "Correct, though the mechanism is not fully understood."],
         ["Conversion to benzoic acid in the skin", "That is benzoyl peroxide."],
-        ["Correcting abnormal follicular keratinisation", "That is the retinoid action."],
+        ["Correcting abnormal follicular keratinization", "That is the retinoid action."],
         ["Inhibiting neutrophil chemotaxis by chelating calcium", "That is the tetracycline action in acne."]]),
 
  dict(topic="Acne", io="9 — List commonly used protocols and patient monitoring for dermatologic drugs", cite=D % 22,
   q="How long does azelaic acid take to show benefit?",
-  opts=[["Six to eight weeks of continuous therapy", "Correct, and hypopigmentation is a recognised effect."],
+  opts=[["Six to eight weeks of continuous therapy", "Correct, and hypopigmentation is a recognized effect."],
         ["Two to three days", "The stated interval is much longer."],
         ["One to three months, like isotretinoin", "That interval belongs to isotretinoin."],
         ["Six months of daily use", "The stated interval is shorter."]]),
@@ -246,7 +246,7 @@ QUESTIONS = [
   q="How do tetracyclines help acne beyond killing bacteria?",
   opts=[["They chelate calcium and block chemotaxis", "Correct, preventing neutrophil and monocyte movement into the lesion."],
         ["They reduce sebum production directly", "That is not the described action."],
-        ["They correct abnormal keratinisation", "That is the retinoid action."],
+        ["They correct abnormal keratinization", "That is the retinoid action."],
         ["They inhibit testosterone conversion", "That relates to azelaic acid and antiandrogens."]]),
 
  dict(topic="Acne", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 28,
@@ -274,7 +274,7 @@ QUESTIONS = [
   q="What makes up the atopic triad with eczema?",
   opts=[["Asthma and allergic rhinoconjunctivitis", "Correct, with skin barrier dysfunction central to the disease."],
         ["Psoriasis and vitiligo", "Neither is part of the triad."],
-        ["Chronic urticaria and angio-oedema", "Neither is part of the triad."],
+        ["Chronic urticaria and angioedema", "Neither is part of the triad."],
         ["Acne and rosacea", "Neither is part of the triad."]]),
 
  dict(topic="Atopic dermatitis", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 34,
@@ -357,14 +357,14 @@ QUESTIONS = [
  dict(topic="Topical antibiotics", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 47,
   q="What is mupirocin used to eliminate?",
   opts=[["Nasal carriage of Staphylococcus aureus", "Correct, and it covers resistant strains particularly."],
-        ["Pseudomonas colonisation of burns", "Polymyxin B covers Gram-negatives."],
+        ["Pseudomonas colonization of burns", "Polymyxin B covers Gram-negatives."],
         ["Candida of the skin folds", "Nystatin is used there."],
         ["Dermatophyte infection of the feet", "An antifungal is needed for that."]]),
 
  dict(topic="Topical antibiotics", io="5 — Summarize side effects and toxic manifestations of dermatologic drugs", cite=D % 49,
-  q="Which topical aminoglycoside frequently causes sensitisation?",
+  q="Which topical aminoglycoside frequently causes sensitization?",
   opts=[["Neomycin", "Correct, and systemic accumulation can occur with this group."],
-        ["Gentamicin", "Neomycin is the one named for sensitisation."],
+        ["Gentamicin", "Neomycin is the one named for sensitization."],
         ["Bacitracin", "Bacitracin rarely causes allergic dermatitis."],
         ["Mupirocin", "Mupirocin causes mucous membrane irritation instead."]]),
 
@@ -391,15 +391,15 @@ QUESTIONS = [
 
  dict(topic="Topical antivirals", io="3 — Identify indications for commonly used dermatologic drugs", cite=D % 56,
   q="What are topical acyclovir and penciclovir used for?",
-  opts=[["Recurrent orolabial herpes simplex", "Correct, as synthetic guanine analogues."],
+  opts=[["Recurrent orolabial herpes simplex", "Correct, as synthetic guanine analogs."],
         ["External and perianal warts", "Imiquimod is used for those."],
         ["Actinic keratoses on sun-exposed skin", "Imiquimod is used there."],
         ["Shingles across a dermatome", "Oral therapy is used for that."]]),
 
  dict(topic="Topical antivirals", io="2 — Describe the molecular mechanism of action of dermatologic drugs", cite=D % 57,
   q="How does imiquimod work?",
-  opts=[["It stimulates interferon and tumour necrosis factor release", "Correct, acting as an immunomodulator rather than a direct antiviral."],
-        ["It is a guanine analogue incorporated into viral DNA", "That describes acyclovir."],
+  opts=[["It stimulates interferon and tumor necrosis factor release", "Correct, acting as an immunomodulator rather than a direct antiviral."],
+        ["It is a guanine analog incorporated into viral DNA", "That describes acyclovir."],
         ["It inhibits viral neuraminidase", "That describes oseltamivir."],
         ["It prevents the virus attaching to the cell", "The described action is immune stimulation."]]),
 

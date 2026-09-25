@@ -19,7 +19,7 @@ SOURCES
 
 Two deck problems handled on purpose:
   * Slide 7 prints the macula densa line without its down-arrow. The direction
-    is given as he stated it in lecture and labelled so; it is not starred.
+    is given as he stated it in lecture and labeled so; it is not starred.
   * Slide 75 calls clonidine an "alpha-2 blocker"; slides 86 and 92 say agonist.
     The guide says agonist throughout and names the slip once.
 Diuretics, heart-failure drugs, MRAs and ARNIs appear on slide 108 only; they

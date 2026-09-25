@@ -15,8 +15,8 @@ of citing the slide. Every picture cell prints its slide number.
 EVERY IMAGE WAS VIEWED BEFORE BEING ASSIGNED. This deck labels several pictures
 "DDX" in its own captions, and two would have been outright factual errors in a
 chart cell:
-  * slide 29 image 1 is a HYPHAEMA, captioned as a differential -- not the
-    subconjunctival haemorrhage that row is about
+  * slide 29 image 1 is a HYPHEMA, captioned as a differential -- not the
+    subconjunctival hemorrhage that row is about
   * slide 27 image 3 is CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA, the fan-shaped
     differential -- not the pterygium
 Both are in REJECTED below and the exclusion is asserted, so a later edit
@@ -68,7 +68,7 @@ from _cms_e2_chart_l14 import ROWS_L14, DIFF_L14, IMGS_L14
 DIFF = dict(DIFF, **DIFF_NEW)
 DIFF = dict(DIFF, **DIFF_L13)
 DIFF = dict(DIFF, **DIFF_L14)
-IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('l10-s020-chalazion.jpg', 20), 'Hordeolum (stye)': ('l10-s020-hordeolum.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('l10-s027-pinguecula.jpg', 27), 'Pterygium': ('l10-s027-pterygium.jpg', 27), 'Subconjunctival haemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('l10-s052_pos2.jpg', 52), 'Keratitis': ('l10-s055-keratitis.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('l10-s060-corneal-ulcer.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
+IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Dermatochalasis': ('s014_1.jpg', 14), 'Xanthelasma': ('s016_1.jpg', 16), 'Blepharitis / Meibomitis': ('s018_1.jpg', 18), 'Chalazion': ('l10-s020-chalazion.jpg', 20), 'Hordeolum (stye)': ('l10-s020-hordeolum.jpg', 20), 'Dacryoadenitis': ('s022_1.jpg', 22), 'Dacryocystitis': ('s024_1.jpg', 24), 'Pinguecula': ('l10-s027-pinguecula.jpg', 27), 'Pterygium': ('l10-s027-pterygium.jpg', 27), 'Subconjunctival hemorrhage': ('s029_2.jpg', 29), 'Chemosis': ('s031_1.jpg', 31), 'Allergic conjunctivitis': ('s034_1.jpg', 34), 'Viral conjunctivitis': ('s036_1.jpg', 36), 'Bacterial conjunctivitis': ('s040_1.jpg', 40), 'Chlamydial conjunctivitis &mdash; adult inclusion': ('s042_1.jpg', 42), 'Episcleritis': ('s047_2.jpg', 47), 'Scleritis': ('s049_1.jpg', 49), 'Pre-septal (periorbital) cellulitis': ('s052_1.jpg', 52), 'Post-septal (orbital) cellulitis': ('l10-s052_pos2.jpg', 52), 'Keratitis': ('l10-s055-keratitis.jpg', 55), 'Herpes simplex keratitis': ('s057_1.jpg', 57), 'Herpes zoster keratitis': ('s057_2.jpg', 57), 'Corneal ulcer': ('l10-s060-corneal-ulcer.jpg', 60), 'Anterior uveitis (iritis, iridocyclitis)': ('s062_4.jpg', 62), 'Posterior uveitis (choroiditis, retinitis)': ('s064_1.jpg', 64)}
 
 # Viewed and REJECTED. These are the deck's OWN differential images -- filing
 # one under the row's condition would be a factual error in the chart, not
@@ -80,8 +80,8 @@ IMGS = {'Entropion': ('s012_1.jpg', 12), 'Ectropion': ('s012_2.jpg', 12), 'Derma
 # tools/check_ophtho_image_identity.py pixel-matches every chart picture against
 # this list so a rejected image cannot creep back in under a new filename.
 REJECTED = {
-  "image39.emf": "HYPHAEMA -- letter C, captioned DDX on slide 29, not a subconjunctival haemorrhage",
-  "image40.emf": "360-degree TRAUMATIC subconjunctival haemorrhage -- letter B DDX on slide 29, "
+  "image39.emf": "HYPHEMA -- letter C, captioned DDX on slide 29, not a subconjunctival hemorrhage",
+  "image40.emf": "360-degree TRAUMATIC subconjunctival hemorrhage -- letter B DDX on slide 29, "
                  "where the row is the atraumatic one",
   "image36.png": "CONJUNCTIVAL INTRAEPITHELIAL NEOPLASIA -- letter D, captioned DDX on slide 27, "
                  "neither a pinguecula nor a pterygium",
@@ -108,10 +108,10 @@ ROWS = [
   "Slit lamp examination for exposure keratopathy.",
   "Same as entropion: tears by day, ointment at night, taping. <b>Surgery is definitive.</b>",
   "Routine",
-  "Ageing, scarring, congenital &mdash; and <b>seventh nerve palsy causes ectropion only</b>.", "12&ndash;13"),
+  "Aging, scarring, congenital &mdash; and <b>seventh nerve palsy causes ectropion only</b>.", "12&ndash;13"),
  ("Dermatochalasis", "Eyelid",
   "&ldquo;Heaviness&rdquo; of the lids &middot; &ldquo;looking through my lashes&rdquo; &middot; friction on blinking",
-  "Excess flaps or folds of skin, bilaterally. From ageing.",
+  "Excess flaps or folds of skin, bilaterally. From aging.",
   "<b>Examine the visual fields</b> &mdash; a demonstrated deficit is what gets surgery covered.",
   "Blepharoplasty.",
   "Routine",
@@ -119,14 +119,14 @@ ROWS = [
  ("Xanthelasma", "Eyelid",
   "Oval <b>yellowish plaques</b> &middot; typically asymptomatic &middot; usually bilateral",
   "Oval yellowish plaques on the lids. Asymptomatic.",
-  "Serum lipid profile, plus fasting glucose and haemoglobin A1C, plus liver function tests.",
+  "Serum lipid profile, plus fasting glucose and hemoglobin A1C, plus liver function tests.",
   "<b>Treat the underlying metabolic issue.</b> Local: cryotherapy, laser ablation, chemical peel, surgical excision.",
   "Routine",
   "<b>Recurrences are common</b> even after effective local treatment. Many patients have normal lipids &mdash; the profile is still reasonable.", "16&ndash;17"),
  ("Blepharitis / Meibomitis", "Eyelid",
   "<b>Crusting and scaling at the LASH BASES</b> &middot; <b>toothpaste-like</b> meibomian secretion &middot; frothy tear film",
-  "Burning, dryness, grittiness, itching, foreign body sensation, tearing, mild redness. Erythematous swollen lid margins; decreased or frothy tear film. Skin findings of rosacea or seborrhoeic dermatitis.",
-  "Clinical. Associations: <b>rosacea, seborrhoeic dermatitis, Staphylococcus aureus</b>.",
+  "Burning, dryness, grittiness, itching, foreign body sensation, tearing, mild redness. Erythematous swollen lid margins; decreased or frothy tear film. Skin findings of rosacea or seborrheic dermatitis.",
+  "Clinical. Associations: <b>rosacea, seborrheic dermatitis, Staphylococcus aureus</b>.",
   "<b>Lid hygiene first.</b> No better after <b>2 weeks</b> &rarr; topical antibiotics &rarr; then oral.",
   "Routine",
   "<b>Chronic &mdash; controlled rather than cured.</b> Refer to ophthalmology if several weeks of treatment fail.", "18&ndash;19"),
@@ -146,7 +146,7 @@ ROWS = [
   "If pre-septal cellulitis develops alongside it, treat on the <b>cellulitis</b> pathway with systemic antibiotics.", "20&ndash;21"),
  ("Dacryoadenitis", "Lacrimal",
   "Swelling over the <b>LATERAL ONE THIRD of the UPPER lid</b> &middot; ipsilateral preauricular node",
-  "Unilateral pain, redness and swelling over the outer upper lid; tearing or discharge. Hyperaemic palpebral lobe of the lacrimal gland. May have preauricular lymphadenopathy, temporal injection, fever, leukocytosis.",
+  "Unilateral pain, redness and swelling over the outer upper lid; tearing or discharge. Hyperemic palpebral lobe of the lacrimal gland. May have preauricular lymphadenopathy, temporal injection, fever, leukocytosis.",
   "Contrast computed tomography of orbits and sinuses <b>when indicated</b> &mdash; not automatic. <b>Inflammatory is most common</b>; bacterial rare; viral usually bilateral.",
   "Inflammatory &rarr; <b>corticosteroids</b>. Viral &rarr; cool compresses. Cause unclear &rarr; empiric oral antibiotics 24 h then reassess. Analgesia as needed.",
   "Urgent",
@@ -157,7 +157,7 @@ ROWS = [
   "From <b>nasolacrimal duct obstruction</b>. Contrast computed tomography reserved for suspected orbital extension, abscess, trauma, mass or atypical disease.",
   "Well, afebrile, reliable &rarr; <b>oral antibiotics 10 days</b>. Febrile, ill or unreliable &rarr; <b>admit, intravenous 48&ndash;72 h</b> then oral to complete 10&ndash;14 days. Warm compresses; consider drainage of an abscess.",
   "Urgent",
-  "Improvement expected in <b>24&ndash;48 hours</b>. Afterwards, <b>probing and irrigation</b> are often needed to check the drainage system; surgery may follow. A mass <b>ABOVE</b> the tendon suggests a lacrimal sac tumour.", "24&ndash;25"),
+  "Improvement expected in <b>24&ndash;48 hours</b>. Afterwards, <b>probing and irrigation</b> are often needed to check the drainage system; surgery may follow. A mass <b>ABOVE</b> the tendon suggests a lacrimal sac tumor.", "24&ndash;25"),
  ("Pinguecula", "Surface",
   "Yellowish nodule at <b>3 or 9 o&rsquo;clock</b> &middot; <b>does NOT touch the cornea</b>",
   "Irritation, redness nasally or temporally, tearing. Classic appearance, almost always at 3 or 9 o&rsquo;clock, <b>not involving the cornea</b>.",
@@ -172,25 +172,25 @@ ROWS = [
   "Sun protection and lubricating drops. <b>Surgery if it grows into the cornea and distorts vision.</b>",
   "Routine &mdash; refer non-urgently if <b>growing</b> or <b>vision affected</b>",
   "Conservative care controls symptoms only. Protect from sun, dust and wind.", "27&ndash;28"),
- ("Subconjunctival haemorrhage", "Surface",
+ ("Subconjunctival hemorrhage", "Surface",
   "<b>Bright red patch, PAINLESS</b> &middot; vision, pupil and cornea all normal &middot; after a cough or strain",
   "Red eye, often asymptomatic unless chemosis is present. Blood underneath the conjunctiva.",
   "<b>History is the workup.</b> <b>Check the blood pressure if there is no explanation.</b> Ocular examination.",
   "Reassurance. Artificial tears if mildly irritated. Treat the underlying bleeding disorder or hypertension.",
   "Routine",
-  "Resolves spontaneously in <b>2&ndash;4 weeks</b>. Recurrent with no culprit medication &rarr; medication review, blood pressure, targeted haematologic evaluation &mdash; not an automatic referral.", "29&ndash;30"),
+  "Resolves spontaneously in <b>2&ndash;4 weeks</b>. Recurrent with no culprit medication &rarr; medication review, blood pressure, targeted hematologic evaluation &mdash; not an automatic referral.", "29&ndash;30"),
  ("Chemosis", "Surface",
   "<b>Swelling of the conjunctiva itself</b> &middot; a sign, not a diagnosis",
-  "Conjunctival oedema. Non-specific sign of irritation: allergy, infection, thyroid eye disease, angioedema, trauma, orbital cellulitis, impaired orbital venous drainage.",
+  "Conjunctival edema. Non-specific sign of irritation: allergy, infection, thyroid eye disease, angioedema, trauma, orbital cellulitis, impaired orbital venous drainage.",
   "Look for what is causing it.",
   "Treat the cause.",
   "<b>URGENT</b> if with proptosis, restricted movement, reduced vision or an afferent pupillary defect",
   "On its own it means irritation. With those four accompaniments it means something is filling the orbit.", "31"),
  ("Allergic conjunctivitis", "Conjunctivitis",
   "<b>ITCH</b> &middot; bilateral &middot; watery or <b>stringy</b> discharge &middot; <b>no preauricular node</b>",
-  "Diffuse hyperaemia, itchy eyes, swollen lids, watery or stringy discharge. Bilateral. <b>Vision preserved.</b> Chemosis, conjunctival <b>papillae</b>, no node.",
+  "Diffuse hyperemia, itchy eyes, swollen lids, watery or stringy discharge. Bilateral. <b>Vision preserved.</b> Chemosis, conjunctival <b>papillae</b>, no node.",
   "Clinical. <b>Papillae</b> (red at surface, paler at base) &rarr; bacterial or allergic.",
-  "Avoid the allergen; cool compresses, artificial tears, topical histamine blocker &plusmn; mast cell stabiliser (<b>olopatadine does both</b>), systemic antihistamine.",
+  "Avoid the allergen; cool compresses, artificial tears, topical histamine blocker &plusmn; mast cell stabilizer (<b>olopatadine does both</b>), systemic antihistamine.",
   "Routine",
   "Symptoms often settle as allergen levels fall. If topical treatment fails, the diagnosis may be wrong &mdash; refer.", "34&ndash;35"),
  ("Viral conjunctivitis", "Conjunctivitis",
@@ -202,8 +202,8 @@ ROWS = [
   "<b>Self-limiting, but often WORSE over the first week</b>, resolving in 2&ndash;3 weeks. Highly contagious.", "36&ndash;37"),
  ("Bacterial conjunctivitis", "Conjunctivitis",
   "<b>Thick yellow or white discharge</b> &middot; often <b>UNILATERAL</b> &middot; lids stuck together &middot; usually no node",
-  "Diffusely red conjunctiva, thick discharge, soreness. Florid hyperaemia and chemosis, <b>papillae</b>, mild to moderate purulent discharge.",
-  "Clinical. Risk: immunocompromised, elderly, paediatric, <b>contact lens wearers</b>.",
+  "Diffusely red conjunctiva, thick discharge, soreness. Florid hyperemia and chemosis, <b>papillae</b>, mild to moderate purulent discharge.",
+  "Clinical. Risk: immunocompromised, elderly, pediatric, <b>contact lens wearers</b>.",
   "Immunocompetent adult &rarr; <b>topical broad-spectrum antibiotic</b> (e.g. fluoroquinolone). Contagious precautions.",
   "Routine &mdash; <b>URGENT</b> if immunocompromised, contact lens wearer, recent surgery, foreign body, corneal opacity, or <b>no improvement in 24 h</b>",
   "Prompt and total response is expected in a normal host. Poor response &rarr; refer.", "40&ndash;41"),
@@ -211,12 +211,12 @@ ROWS = [
   "<b>SEVERE purulent discharge WITH a palpable preauricular node</b> &middot; <b>neonate</b>",
   "The exception to the no-node rule in bacterial disease. In neonates, the major concern.",
   "Cultures and Gram stain; test for chlamydia and disseminated infection.",
-  "<b>Newborn: hospitalise, systemic ceftriaxone once, specialty consultation.</b>",
+  "<b>Newborn: hospitalize, systemic ceftriaxone once, specialty consultation.</b>",
   "<b>EMERGENT</b>",
   "<b>Untreated risk is corneal perforation.</b>", "40&ndash;41"),
  ("Chlamydial conjunctivitis &mdash; adult inclusion", "Conjunctivitis",
   "<b>CHRONIC &mdash; a month or more</b> &middot; stringy mucoid discharge &middot; <b>follicles</b> &middot; <b>has not responded to topical medication</b>",
-  "Chronic hyperaemia of the lower palpebral conjunctiva. Unilateral, sometimes bilateral. Often a concurrent asymptomatic urogenital infection.",
+  "Chronic hyperemia of the lower palpebral conjunctiva. Unilateral, sometimes bilateral. Often a concurrent asymptomatic urogenital infection.",
   "<b>Conjunctival nucleic acid amplification testing</b>, or direct fluorescent antibody stain of a scraping. Serotypes <b>D&ndash;K</b>.",
   "<b>Doxycycline 100 mg orally twice daily for 7 days.</b>",
   "Routine",
@@ -237,28 +237,28 @@ ROWS = [
   "Treatment is usually curative but reinfection is common without better hygiene. Chain: <b>inflammation &rarr; lid scarring &rarr; entropion &rarr; trichiasis &rarr; blindness</b>.", "45&ndash;46"),
  ("Autoimmune conjunctivitis", "Conjunctivitis",
   "Recurrent or chronic redness &middot; <b>minimal pain, NO discharge</b> &middot; systemic complaints",
-  "Diffuse hyperaemia, often recurrent. Malaise, fever, fatigue. Systemic autoimmune disease usually already identified.",
+  "Diffuse hyperemia, often recurrent. Malaise, fever, fatigue. Systemic autoimmune disease usually already identified.",
   "Associated with ocular mucous membrane pemphigoid, Stevens-Johnson syndrome, Sj&ouml;gren disease, graft-versus-host disease.",
   "Managed by ophthalmology alongside the systemic disease.",
   "Routine",
   "Ocular response depends on the underlying disorder.", "38&ndash;39"),
  ("Episcleritis", "Sclera",
   "<b>MILD</b> ache &middot; <b>sectoral</b> redness &middot; <b>no discharge, no photophobia</b> &middot; vessels MOVE",
-  "Acute-onset mild pain and focal redness. Often sectoral. Episcleral vessels can be moved slightly with a cotton-tip applicator after anaesthesia.",
+  "Acute-onset mild pain and focal redness. Often sectoral. Episcleral vessels can be moved slightly with a cotton-tip applicator after anesthesia.",
   "<b>2.5% phenylephrine, wait 15 minutes &mdash; the vessels BLANCH.</b> Often idiopathic, often no systemic association.",
   "Artificial tears and an <b>oral non-steroidal anti-inflammatory taken WITH FOOD</b>.",
   "Routine &mdash; refer if <b>no response in 2 days</b>",
   "Usually self-limited, resolving over 2&ndash;3 weeks. May recur in the same or the other eye.", "47&ndash;48"),
  ("Scleritis", "Sclera",
   "<b>SEVERE BORING pain, WORSE AT NIGHT</b>, radiating to the face &middot; <b>VIOLACEOUS hue</b> &middot; vessels do NOT move",
-  "Severe deep pain radiating to face and periorbital region, often with diffuse hyperaemia. Characteristic violaceous hue &mdash; <b>choroid showing through thinned sclera</b>. Pain with eye movement.",
+  "Severe deep pain radiating to face and periorbital region, often with diffuse hyperemia. Characteristic violaceous hue &mdash; <b>choroid showing through thinned sclera</b>. Pain with eye movement.",
   "Slit lamp and ophthalmoscopy. <b>Work up the underlying systemic condition</b> &mdash; often autoimmune.",
   "Non-infectious anterior disease commonly <b>begins with systemic anti-inflammatories</b>; systemic corticosteroids and immunomodulators for severe, necrotising, posterior or refractory disease.",
   "<b>SAME DAY</b> &mdash; sclera at risk of perforation, may need a surgical patch",
   "<b>Decreased PAIN is the first sign of response</b>, even if the inflammation looks unchanged. Perforation risk is greatest in <b>necrotising</b> disease.", "49&ndash;50"),
  ("Pre-septal (periorbital) cellulitis", "Orbit",
   "Swollen red lid <b>but THE EYE ITSELF IS WHITE</b> &middot; movements full and painless &middot; vision normal",
-  "Periocular pain, fever, chills, warmth. Diffuse balloon-like oedema, erythema and tenderness of lids and periorbital tissue; variable conjunctival injection.",
+  "Periocular pain, fever, chills, warmth. Diffuse balloon-like edema, erythema and tenderness of lids and periorbital tissue; variable conjunctival injection.",
   "Direct extension from bacterial sinus, skin or dental infection. Contrast computed tomography <b>when orbital involvement cannot be excluded</b> &mdash; not automatic in clearly pre-septal disease. Complete blood count, blood cultures, wound Gram stain.",
   "Mild &rarr; <b>outpatient oral antibiotics 10&ndash;14 days</b> against Staphylococcus (including resistant strains) and Streptococcus.",
   "Urgent &mdash; <b>admit</b> if moderate-severe or toxic, poor compliance, <b>child &le;5 years</b>, or no improvement on orals",
@@ -267,7 +267,7 @@ ROWS = [
   "<b>THE EYE ITSELF IS RED</b> &middot; <b>PROPTOSIS</b> &middot; <b>painful restricted eye movement</b> &middot; diplopia &middot; reduced vision",
   "All the pre-septal features plus significant conjunctival injection, proptosis, decreased and painful extraocular movement, possible afferent pupillary defect and decreased vision.",
   "<b>Contrast computed tomography of orbits and paranasal sinuses.</b> Complete ocular examination with fundoscopy, cultures, complete blood count, blood cultures.",
-  "<b>Hospitalise &mdash; broad-spectrum intravenous antibiotics 48&ndash;72 h</b>, then oral for at least a week. May need ear-nose-throat, oral and maxillofacial surgery, or infectious disease consults.",
+  "<b>Hospitalize &mdash; broad-spectrum intravenous antibiotics 48&ndash;72 h</b>, then oral for at least a week. May need ear-nose-throat, oral and maxillofacial surgery, or infectious disease consults.",
   "<b>EMERGENT</b>",
   "<b>Untreated &rarr; intracranial spread &rarr; meningitis or cavernous sinus thrombosis.</b>", "51&ndash;53"),
  ("Keratitis", "Cornea",
@@ -286,7 +286,7 @@ ROWS = [
   "<b>NO TOPICAL GLUCOCORTICOIDS BY THE PRIMARY PROVIDER in active epithelial disease.</b> Benign and self-limited, but recurrences are common under physical or emotional stress.", "57&ndash;59"),
  ("Herpes zoster keratitis", "Cornea",
   "<b>PSEUDOdendrite</b> &mdash; no branch pattern, no elevated edges, <b>no end bulbs</b> &middot; older patient &middot; <b>dermatomal V1 rash respecting the midline</b>",
-  "Pain, paraesthesia or discomfort in the affected skin, possibly preceded by headache, fever, malaise. Vesicles characteristically unilateral, often sparing the lower lid. Rash may precede ocular involvement by days to months.",
+  "Pain, paresthesia or discomfort in the affected skin, possibly preceded by headache, fever, malaise. Vesicles characteristically unilateral, often sparing the lower lid. Rash may precede ocular involvement by days to months.",
   "Fluorescein staining. <b>Hutchinson sign</b> &mdash; vesicle on the tip of the nose &rarr; nasociliary involvement &rarr; higher ocular risk.",
   "<b>Oral antivirals for 10 days</b>, ideally within <b>72 hours</b> of rash onset. Intravenous aciclovir for severe, disseminated, orbital, retinal, central nervous system or significantly immunocompromised disease.",
   "<b>SAME DAY</b>",
@@ -352,12 +352,12 @@ GROUP_COLOUR = {
 EXTERNAL = {
  "Gonococcal conjunctivitis": dict(
    file="ext-gonococcal-conjunctivitis.jpg",
-   alt="Newborn with gonococcal ophthalmia neonatorum: marked bilateral lid oedema and copious purulent discharge",
+   alt="Newborn with gonococcal ophthalmia neonatorum: marked bilateral lid edema and copious purulent discharge",
    by="CDC / J. Pledger", where="Public Health Image Library #3766", lic="public domain",
    url="https://commons.wikimedia.org/wiki/File:Gonococcal_ophthalmia_neonatorum.jpg"),
  "Chlamydial conjunctivitis &mdash; neonatal": dict(
    file="ext-chlamydial-conjunctivitis-neonatal.jpg",
-   alt="Neonate with chlamydial conjunctivitis: lid oedema, erythema and discharge at the lid margin",
+   alt="Neonate with chlamydial conjunctivitis: lid edema, erythema and discharge at the lid margin",
    by="Nwokeji I, Ding K, Ketner S", where="Cureus 2024;16(7):e64463", lic="CC BY 4.0",
    url="https://pmc.ncbi.nlm.nih.gov/articles/PMC11318493/"),
  "Trachoma": dict(
@@ -472,7 +472,7 @@ def main():
 <b>the words a question will use to hand it to you</b>, how it presents and what you find on
 examination, what you order, what you give, <b>how fast the patient has to be seen</b>, and what you
 tell them. Read it top to bottom down one column to compare across conditions.<br><br>
-<b>The three grey columns are Professor Jaquith&rsquo;s own instruction.</b> At the end of the
+<b>The three gray columns are Professor Jaquith&rsquo;s own instruction.</b> At the end of the
 26 August lecture she said: <i>&ldquo;My recommendation to you guys for those is again, use your
 resources, <b>make a chart</b> &mdash; which ones cause pain, which ones don&rsquo;t cause pain?
 Which ones are unilateral, which ones are bilateral? Which ones will cause which physical exam
@@ -508,7 +508,7 @@ retina, the swollen papilledematous disc, the demyelinating lesions on MRI. Noth
 from outside those two decks.<br><br>
 <b>Four Lecture 10 conditions have no picture anywhere in that deck</b> &mdash; gonococcal conjunctivitis,
 neonatal chlamydial conjunctivitis, trachoma and autoimmune conjunctivitis. Each of those carries an
-openly licensed photograph from elsewhere instead, credited by author, source and licence beneath the
+openly licensed photograph from elsewhere instead, credited by author, source and license beneath the
 picture. The classic CDC chlamydial conjunctivitis photograph is <i>not</i> among them: its own library
 page marks it copyright protected, so an open-access case report stands in for it.<br><br>
 <b>Two of the deck&rsquo;s pictures are deliberately NOT used.</b> Slide 29&rsquo;s first image is a
@@ -517,8 +517,8 @@ both are captioned <i>DDX</i> on the slide itself. Putting either in a chart cel
 &ldquo;this is what the condition looks like&rdquo; about a picture of something else.<br><br>
 <b>Where a slide reads as an absolute and its own speaker notes soften it, the hedge is what is
 written here</b> &mdash; imaging is not automatic for the lacrimal infections or for clearly
-pre-septal cellulitis, and a recurrent subconjunctival haemorrhage does not mean an automatic
-haematology referral.</div>
+pre-septal cellulitis, and a recurrent subconjunctival hemorrhage does not mean an automatic
+hematology referral.</div>
 
 <div class="filters"><button class="filt on" data-g="__all__">All</button>__GROUPS__</div>
 <div class="filters filters2">

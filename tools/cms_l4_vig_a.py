@@ -51,16 +51,16 @@ POOL_A = [
      ["Rosacea in its papulopustular form",
       "Rosacea shows no comedones and produces flushing and telangiectasias."],
      ["Anabolic steroid use aggravating acne",
-      "Worth asking about, but it does not explain hirsutism and oligomenorrhoea."],
+      "Worth asking about, but it does not explain hirsutism and oligomenorrhea."],
      ["Bacterial folliculitis of the jawline",
       "Folliculitis produces pustules pierced by a central hair."]],
    c=0, cite=c(17)),
 
  dict(topic="Acne vulgaris", io=IOA,
-   q="A 19-year-old woman is starting oral isotretinoin for nodular acne. Which is the most appropriate counselling point?",
+   q="A 19-year-old woman is starting oral isotretinoin for nodular acne. Which is the most appropriate counseling point?",
    opts=[
      ["Pregnancy testing is required before, monthly during and five weeks after treatment, with two forms of contraception preferred",
-      "Correct, with iPledge enrolment, a one-month supply at a time, and no blood donation."],
+      "Correct, with iPledge enrollment, a one-month supply at a time, and no blood donation."],
      ["Pregnancy testing is required only before starting, after which monthly liver function tests replace it",
       "Testing continues monthly and for five weeks after the course."],
      ["Contraception can be stopped as soon as the treatment course has been completed in full",
@@ -73,17 +73,17 @@ POOL_A = [
    q="A 16-year-old boy reports that his acne is worse across the shoulders where his football pads sit. Which is the most likely explanation?",
    opts=[
      ["Acne mechanica, where pressure occludes the pilosebaceous follicles",
-      "Correct — shoulder pads, orthopaedic casts and helmets are the named examples."],
+      "Correct — shoulder pads, orthopedic casts and helmets are the named examples."],
      ["Acnegenic mineral oil exposure from equipment maintenance products",
       "That is a separate predisposing factor and does not fit the distribution."],
      ["Anabolic steroid use, which should be asked about in any athlete",
-      "Worth asking, but it would not localise to areas under the pads."],
+      "Worth asking, but it would not localize to areas under the pads."],
      ["Bacterial folliculitis from occlusive clothing worn during training",
       "Folliculitis produces pustules pierced by a central hair."]],
    c=0, cite=c(9)),
 
  dict(topic="Acne vulgaris", io=IOA,
-   q="A 20-year-old man has been using topical tretinoin at night and benzoyl peroxide in the morning, but has begun applying them together and now has stinging and peeling. Which is the most appropriate counselling point?",
+   q="A 20-year-old man has been using topical tretinoin at night and benzoyl peroxide in the morning, but has begun applying them together and now has stinging and peeling. Which is the most appropriate counseling point?",
    opts=[
      ["Separate the two by at least three hours, because applying them together irritates the skin",
       "Correct — that interval is specified in the patient education."],
@@ -109,7 +109,7 @@ POOL_A = [
    c=0, cite=c(36)),
 
  dict(topic="Acne vulgaris", io=IOA,
-   q="A 30-year-old woman with acne asks how soon she should expect to see a difference. Which is the most appropriate counselling point?",
+   q="A 30-year-old woman with acne asks how soon she should expect to see a difference. Which is the most appropriate counseling point?",
    opts=[
      ["Improvement takes four to six weeks, and the back and chest may take three to four months",
       "Correct. Clinical improvement is judged by new lesion count at six to eight weeks."],
@@ -131,7 +131,7 @@ POOL_A = [
      ["Miliaria from heat and occlusion",
       "That would not produce follicular pustules pierced by a hair."],
      ["Non-bullous impetigo of the trunk",
-      "That produces honey-coloured adherent crusts over erosions."]],
+      "That produces honey-colored adherent crusts over erosions."]],
    c=0, cite=c(41)),
 
  dict(topic="Folliculitis", io=IOA,
@@ -213,7 +213,7 @@ POOL_A = [
    c=0, cite=c(53)),
 
  dict(topic="Pseudofolliculitis barbae", io=IOA,
-   q="A 27-year-old Black man has tender erythematous papules along the jawline and neck, several with a visible hair shaft at the centre. They appeared after he began shaving daily with a five-blade razor. Which is the most likely diagnosis?",
+   q="A 27-year-old Black man has tender erythematous papules along the jawline and neck, several with a visible hair shaft at the center. They appeared after he began shaving daily with a five-blade razor. Which is the most likely diagnosis?",
    opts=[
      ["Pseudofolliculitis barbae",
       "Correct — a foreign body reaction to cut hair re-entering the skin in a shaved area."],
@@ -242,9 +242,9 @@ POOL_A = [
    q="A 33-year-old man with pseudofolliculitis barbae is prescribed topical tretinoin. Which is the most appropriate explanation of what it does?",
    opts=[
      ["It relieves the hyperkeratosis, removing the epidermis the emerging hair embeds in",
-      "Correct. Mild corticosteroids reduce inflammation and topical antibiotics reduce colonisation."],
-     ["It kills the Staphylococcus aureus colonising the shaved skin of the beard area",
-      "Topical antibiotics are used separately for colonisation."],
+      "Correct. Mild corticosteroids reduce inflammation and topical antibiotics reduce colonization."],
+     ["It kills the Staphylococcus aureus colonizing the shaved skin of the beard area",
+      "Topical antibiotics are used separately for colonization."],
      ["It permanently destroys the follicles so that the hairs will not grow back at all",
       "Permanent removal is achieved by laser-assisted hair removal."],
      ["It softens the hair shaft so that each hair curls away from the skin as it grows",
@@ -291,7 +291,7 @@ POOL_A = [
    c=0, cite=c(67)),
 
  dict(topic="Furuncles and carbuncles", io=IOA,
-   q="A 44-year-old man has had furuncles recur repeatedly over two years. He has a body mass index of 36 and a haemoglobin A1c of 8.4%. Which three factors should be addressed?",
+   q="A 44-year-old man has had furuncles recur repeatedly over two years. He has a body mass index of 36 and a hemoglobin A1c of 8.4%. Which three factors should be addressed?",
    opts=[
      ["Obesity, diabetes and nasal carriage of Staphylococcus aureus",
       "Correct — those are the three predisposing factors named for recurrent furunculosis."],

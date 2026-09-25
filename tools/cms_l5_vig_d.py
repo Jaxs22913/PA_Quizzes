@@ -46,7 +46,7 @@ POOL_D = [
    c=0, cite=c(19)),
 
  dict(topic="Scabies", io=IOA,
-   q="A 45-year-old man treated for scabies has scrubbed his skin with a strong antibacterial soap several times a day and now has widespread irritation. Which is the most appropriate counselling point?",
+   q="A 45-year-old man treated for scabies has scrubbed his skin with a strong antibacterial soap several times a day and now has widespread irritation. Which is the most appropriate counseling point?",
    opts=[
      ["Excessive washing with harsh soap can worsen the skin irritation and should be stopped",
       "Correct — the permethrin course itself is what treats the infestation."],
@@ -74,7 +74,7 @@ POOL_D = [
  dict(topic="Pediculosis", io=IOA,
    q="A 10-year-old boy's parents want to avoid chemical treatment for head lice. Which physical approach can be offered, and with what caveat?",
    opts=[
-     ["Combing nits out after two minutes of hair moisturiser every few days, though it is slow and needs adjuvant therapy",
+     ["Combing nits out after two minutes of hair moisturizer every few days, though it is slow and needs adjuvant therapy",
       "Correct — head shaving is the other physical option named."],
      ["Applying mayonnaise or mineral oil weekly to smother the lice and their attached eggs",
       "Those occlusive agents may not be lethal to lice."],
@@ -98,7 +98,7 @@ POOL_D = [
    c=0, cite=c(35)),
 
  dict(topic="Fleas and tungiasis", io=IOA,
-   q="A 33-year-old man is travelling to Nigeria and asks how to avoid tungiasis. Which is the most appropriate advice?",
+   q="A 33-year-old man is traveling to Nigeria and asks how to avoid tungiasis. Which is the most appropriate advice?",
    opts=[
      ["Do not walk barefoot or in sandals on beaches, and do not sit directly on the sand",
       "Correct — Nigeria, the Caribbean, India and Brazil are the named endemic settings."],
@@ -113,7 +113,7 @@ POOL_D = [
  dict(topic="Fleas and tungiasis", io=IOA,
    q="A 47-year-old man has a nodular lesion on the toe suspected to be tungiasis. Which test confirms it?",
    opts=[
-     ["Dermoscopy, which visualises the ovoid eggs within the lesion",
+     ["Dermoscopy, which visualizes the ovoid eggs within the lesion",
       "Correct — treatment is then surgical excision or cryotherapy."],
      ["Skin scraping with mineral oil examined under the microscope",
       "That is the diagnostic method for scabies."],
@@ -126,13 +126,13 @@ POOL_D = [
  dict(topic="Hymenoptera", io=IOA,
    q="A 34-year-old woman has a mild local reaction to a bee sting with pain and a small area of redness. Which is the most appropriate treatment?",
    opts=[
-     ["Cleaning, ice, and possibly injection of local anaesthetic for pain control",
+     ["Cleaning, ice, and possibly injection of local anesthetic for pain control",
       "Correct — management is graded to the severity of the reaction."],
      ["Intramuscular epinephrine with transfer to an emergency department",
       "That is reserved for anaphylaxis."],
      ["A systemic corticosteroid course tapered over the following week",
       "That is not the described treatment for a mild local reaction."],
-     ["An epinephrine auto-injector prescription and desensitisation referral",
+     ["An epinephrine auto-injector prescription and desensitization referral",
       "Those follow sting-induced anaphylaxis with a positive skin test."]],
    c=0, cite=c(44)),
 
@@ -176,10 +176,10 @@ POOL_D = [
    c=0, cite=c(58)),
 
  dict(topic="Hobo spider", io=IOA,
-   q="A 42-year-old woman bitten by a hobo spider has fatigue, headache and difficulty concentrating a week later. Which is the most appropriate counselling point?",
+   q="A 42-year-old woman bitten by a hobo spider has fatigue, headache and difficulty concentrating a week later. Which is the most appropriate counseling point?",
    opts=[
      ["Headaches may persist for about a week and the symptoms are managed supportively",
-      "Correct — death from severe systemic effects, including aplastic anaemia, is rare."],
+      "Correct — death from severe systemic effects, including aplastic anemia, is rare."],
      ["These symptoms indicate an evolving necrotic wound needing surgical review",
       "Systemic symptoms of this kind are part of the envenomation itself."],
      ["These symptoms indicate a secondary infection requiring an oral antibiotic",
@@ -230,7 +230,7 @@ POOL_D = [
  dict(topic="Rocky Mountain spotted fever", io=IOC,
    q="A 5-year-old girl needs treatment for Rocky Mountain spotted fever but her parents raise the usual concerns about doxycycline in young children. Which is the most appropriate response?",
    opts=[
-     ["Doxycycline is still used here, with a desensitisation protocol available where it is contraindicated",
+     ["Doxycycline is still used here, with a desensitization protocol available where it is contraindicated",
       "Correct — the risk of untreated disease outweighs the concern about tooth staining."],
      ["Doxycycline must be avoided under eight years, so azithromycin is substituted instead",
       "Doxycycline is used in this illness in children."],

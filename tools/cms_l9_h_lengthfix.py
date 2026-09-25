@@ -1,6 +1,6 @@
 """Length-bias remediation for CMS I Lecture 9 pool H (diagnostic testing).
 
-Pool H ran 88 per cent gameable raw, the worst of any pool on this site, and
+Pool H ran 88 percent gameable raw, the worst of any pool on this site, and
 the reason is structural rather than careless. Every correct answer here is a
 TECHNIQUE PLUS ITS CAVEAT -- "shave, punch or excisional, sampling sufficient
 depth to separate in situ from invasive" -- set against distractors naming a
@@ -11,7 +11,7 @@ Keys are (index into POOL_H, index of the WRONG option). The applier asserts a
 fix never lands on the correct answer.
 """
 FIXES = {
- (0 , 1): "Shave biopsy only, since deeper sampling is thought to risk seeding the tumour into the dermis",
+ (0 , 1): "Shave biopsy only, since deeper sampling is thought to risk seeding the tumor into the dermis",
  (1 , 1): "Differentiation grade, Breslow thickness, ulceration, mitotic rate, margin status and lymphovascular invasion",
  (2 , 1): "Routine computed tomography of the chest, abdomen and pelvis in every newly diagnosed case",
  (4 , 2): "Magnetic resonance imaging is required whenever the lesion is anywhere on the face or scalp",

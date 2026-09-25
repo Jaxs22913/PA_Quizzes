@@ -34,7 +34,7 @@ def main():
             '<div class="cgrid">%s</div>'
             '<div class="note"><b>Two of these block nicotinic receptors and three do not.</b> '
             'The antimuscarinics leave the neuromuscular junction and the autonomic ganglia '
-            'alone entirely &mdash; which is why atropine does not paralyse anyone. The '
+            'alone entirely &mdash; which is why atropine does not paralyze anyone. The '
             'ganglionic blockers and the neuromuscular blockers are the nicotinic pair, and they '
             'differ only in <i>which</i> nicotinic receptor they reach.</div></section>' % cells)
 
@@ -104,8 +104,8 @@ def main():
     legend = ('<span>Every cholinergic drug in Lecture 3, read as <b>what it does at the '
               'receptor &rarr; what it is used for &rarr; what to watch for</b>. Slide cited on '
               'every drug.</span>')
-    notes = """    <div class="note"><b>The companion to the receptor chart.</b> That page is organised by
-    receptor; this one is organised by drug. Read them together:
+    notes = """    <div class="note"><b>The companion to the receptor chart.</b> That page is organized by
+    receptor; this one is organized by drug. Read them together:
     <a href="pharm-exam-1-receptor-chart.html">the receptor chart is here</a>, and the muscarinic
     and nicotinic cards on it are what every drug below is acting on.</div>
     <div class="note warn"><b>The pairs section is the one to read first.</b> Almost every hard

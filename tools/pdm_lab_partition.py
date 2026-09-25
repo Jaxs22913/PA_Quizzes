@@ -3,7 +3,7 @@
 """Rotate answer positions and guard the two PDM lab-panel quizzes.
 
 The pools author the correct answer FIRST so no author drifts toward a
-favourite position; everything below moves it. Each 30-question set gets
+favorite position; everything below moves it. Each 30-question set gets
 8/8/7/7 across A-D -- the PD1 bug was a quiz where the answer was always A,
 and [[answer_position_bias_check]] makes a distribution sweep mandatory on
 every build.

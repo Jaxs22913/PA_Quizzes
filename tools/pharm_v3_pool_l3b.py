@@ -30,7 +30,7 @@ QUESTIONS = [
   opts=[["Catechol-O-methyltransferase and monoamine oxidase", "Correct, acting postsynaptically and within the neuron."],
         ["Acetylcholinesterase and pseudocholinesterase", "Those act on acetylcholine and succinylcholine."],
         ["Dihydrofolate reductase and thymidylate synthase", "Those belong to folate metabolism."],
-        ["Cytochrome P450 3A4 and 1A2", "Those are hepatic drug-metabolising enzymes."]]),
+        ["Cytochrome P450 3A4 and 1A2", "Those are hepatic drug-metabolizing enzymes."]]),
 
  dict(topic="Adrenergic agonists", io="6 — Summarize the synthesis, release, and subsequent destiny of ANS neurotransmitters", cite=D % 79,
   q="Why do catecholamines cause anxiety and tremor despite poor brain entry?",
@@ -82,11 +82,11 @@ QUESTIONS = [
         ["It has no adverse effects at all", "Tremor and restlessness still occur."]]),
 
  dict(topic="Adrenergic agonists", io="3 — Identify indications for adrenergic agonists", cite=D % 85,
-  q="Why is epinephrine added to local anaesthetic solutions?",
+  q="Why is epinephrine added to local anesthetic solutions?",
   opts=[["It causes vasoconstriction and prolongs the block", "Correct, at about 1 part in 100,000."],
-        ["It speeds the onset of anaesthesia", "Duration rather than onset is the benefit."],
+        ["It speeds the onset of anesthesia", "Duration rather than onset is the benefit."],
         ["It reduces the pain of injection", "Vasoconstriction and duration are the reasons."],
-        ["It prevents allergic reactions to the anaesthetic", "That is not the stated purpose."]]),
+        ["It prevents allergic reactions to the anesthetic", "That is not the stated purpose."]]),
 
  dict(topic="Adrenergic agonists", io="10 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: adrenergic agonists", cite=D % 86,
   q="Why is epinephrine ineffective by mouth?",
@@ -107,12 +107,12 @@ QUESTIONS = [
   opts=[["It prevents reuptake of the catecholamine", "Correct, so the cardiovascular actions are amplified."],
         ["It increases adrenergic receptor numbers", "That is the hyperthyroidism mechanism."],
         ["It blocks monoamine oxidase in the gut", "That describes the tyramine interaction."],
-        ["It sensitises the heart as an anaesthetic gas would", "That describes inhalation anaesthetics."]]),
+        ["It sensitizes the heart as an anesthetic gas would", "That describes inhalation anesthetics."]]),
 
  dict(topic="Adrenergic agonists", io="8 — Drug interactions of adrenergic agonists", cite=D % 88,
-  q="How do inhalation anaesthetics interact with epinephrine?",
-  opts=[["They sensitise the heart, causing tachycardia", "Correct, which matters during anaesthesia."],
-        ["They block its cardiac effects entirely", "Sensitisation rather than blockade occurs."],
+  q="How do inhalation anesthetics interact with epinephrine?",
+  opts=[["They sensitize the heart, causing tachycardia", "Correct, which matters during anesthesia."],
+        ["They block its cardiac effects entirely", "Sensitization rather than blockade occurs."],
         ["They speed its hepatic metabolism", "That is not the described interaction."],
         ["They convert it to norepinephrine", "No such conversion is described."]]),
 
@@ -163,7 +163,7 @@ QUESTIONS = [
   opts=[["It speeds atrioventricular conduction", "Correct, which risks a faster ventricular response."],
         ["It causes profound bradycardia", "It is a positive chronotrope."],
         ["It lowers blood pressure sharply", "That is not the stated concern."],
-        ["It prolongs the QT interval", "Conduction, not repolarisation, is the concern."]]),
+        ["It prolongs the QT interval", "Conduction, not repolarization, is the concern."]]),
 
  dict(topic="Adrenergic agonists", io="10 — Patient education for adrenergic agonists", cite=D % 95,
   q="Why should oxymetazoline not be used beyond three days?",
@@ -181,14 +181,14 @@ QUESTIONS = [
 
  dict(topic="Adrenergic agonists", io="2 — Mechanism of action of adrenergic agonists", cite=D % 97,
   q="How does clonidine lower blood pressure?",
-  opts=[["It acts centrally to reduce sympathetic outflow", "Correct, as an alpha-2 agonist inhibiting vasomotor centres."],
+  opts=[["It acts centrally to reduce sympathetic outflow", "Correct, as an alpha-2 agonist inhibiting vasomotor centers."],
         ["It blocks peripheral alpha-1 receptors", "That is the prazosin mechanism."],
         ["It blocks beta-1 receptors in the heart", "That is a beta blocker action."],
         ["It dilates arteries directly as a nitrate", "The action is central and receptor-mediated."]]),
 
  dict(topic="Adrenergic agonists", io="3 — Identify indications for adrenergic agonists", cite=D % 97,
   q="Besides hypertension, what is clonidine used for?",
-  opts=[["Withdrawal from opiates, tobacco and benzodiazepines", "Correct, by minimising withdrawal symptoms."],
+  opts=[["Withdrawal from opiates, tobacco and benzodiazepines", "Correct, by minimizing withdrawal symptoms."],
         ["Acute asthma exacerbation", "Albuterol is used there."],
         ["Benign prostatic hyperplasia with poor stream", "Tamsulosin and alfuzosin serve there."],
         ["Open-angle glaucoma", "Timolol is used there."]]),
@@ -216,10 +216,10 @@ QUESTIONS = [
 
  dict(topic="Adrenergic agonists", io="8 — Drug interactions of adrenergic agonists", cite=D % 101,
   q="Why is tyramine dangerous with a monoamine oxidase inhibitor?",
-  opts=[["It is normally oxidised by that enzyme in the gut", "Correct, so a serious vasopressor effect can follow."],
+  opts=[["It is normally oxidized by that enzyme in the gut", "Correct, so a serious vasopressor effect can follow."],
         ["It becomes a direct receptor agonist", "It displaces stored norepinephrine instead."],
         ["It blocks the inhibitor from working", "Its own metabolism is what is blocked."],
-        ["It prevents norepinephrine being synthesised", "It displaces stored transmitter."]]),
+        ["It prevents norepinephrine being synthesized", "It displaces stored transmitter."]]),
 
  dict(topic="Adrenergic agonists", io="8 — Drug interactions of adrenergic agonists", cite=D % 101,
   q="Where is tyramine found?",
@@ -229,11 +229,11 @@ QUESTIONS = [
         ["Green leafy vegetables high in vitamin K", "Those matter for warfarin."]]),
 
  dict(topic="Adrenergic agonists", io="2 — Mechanism of action of adrenergic agonists", cite=D % 102,
-  q="How does cocaine act as a local anaesthetic?",
+  q="How does cocaine act as a local anesthetic?",
   opts=[["It blocks neuronal sodium channels", "Correct, separate from its blockade of norepinephrine reuptake."],
         ["It blocks alpha-1 receptors locally", "It potentiates rather than blocks adrenergic action."],
         ["It depletes local catecholamine stores", "That is reserpine's mechanism."],
-        ["It inhibits monoamine oxidase locally", "Sodium channel blockade is the anaesthetic action."]]),
+        ["It inhibits monoamine oxidase locally", "Sodium channel blockade is the anesthetic action."]]),
 
  dict(topic="Adrenergic agonists", io="10 — Patient education for adrenergic agonists", cite=D % 104,
   q="What happened to ephedra-containing herbal products in 2004?",
@@ -253,7 +253,7 @@ QUESTIONS = [
   q="Why must the body make new receptors after phenoxybenzamine?",
   opts=[["The block is irreversible and non-competitive", "Correct, and that takes at least 24 hours."],
         ["The drug destroys the receptor protein directly", "It binds irreversibly rather than destroying protein."],
-        ["The receptors are internalised permanently", "New synthesis is the stated requirement."],
+        ["The receptors are internalized permanently", "New synthesis is the stated requirement."],
         ["The drug depletes norepinephrine stores", "That is reserpine's action."]]),
 
  dict(topic="Adrenergic antagonists", io="2 — Mechanism of action of adrenergic antagonists", cite=D % 109,
@@ -301,14 +301,14 @@ QUESTIONS = [
  dict(topic="Adrenergic antagonists", io="7 — Contraindications for adrenergic antagonists", cite=D % 115,
   q="Why is propranolol contraindicated in asthma?",
   opts=[["Beta-2 blockade causes bronchoconstriction", "Correct, which is why cardioselective agents exist."],
-        ["It causes pulmonary oedema directly", "Bronchoconstriction is the stated problem."],
+        ["It causes pulmonary edema directly", "Bronchoconstriction is the stated problem."],
         ["It triggers an allergic reaction in the airway", "The effect is receptor-mediated."],
         ["It reduces respiratory drive centrally", "Bronchoconstriction is the mechanism."]]),
 
  dict(topic="Adrenergic antagonists", io="7 — Contraindications for adrenergic antagonists", cite=D % 115,
-  q="Why is propranolol risky in a patient prone to hypoglycaemia?",
+  q="Why is propranolol risky in a patient prone to hypoglycemia?",
   opts=[["It blunts the normal physiological response to it", "Correct, and it reduces glycogenolysis and glucagon secretion."],
-        ["It causes hyperglycaemia that masks the problem", "Fasting hypoglycaemia is the listed effect."],
+        ["It causes hyperglycemia that masks the problem", "Fasting hypoglycemia is the listed effect."],
         ["It increases insulin secretion directly", "That is not the described action."],
         ["It prevents glucose absorption from the gut", "The effect is on glycogenolysis and glucagon."]]),
 
@@ -328,10 +328,10 @@ QUESTIONS = [
 
  dict(topic="Adrenergic antagonists", io="5 — Summarize side effects of adrenergic antagonists", cite=D % 117,
   q="Which metabolic disturbances follow propranolol?",
-  opts=[["Fasting hypoglycaemia and raised lipids", "Correct, with both cholesterol and triglycerides rising."],
-        ["Hyperglycaemia and low triglycerides", "The pattern runs the other way."],
-        ["Hyperkalaemia and metabolic acidosis", "Those are not the listed effects."],
-        ["Hyponatraemia from fluid retention", "Sodium retention is described, not low sodium."]]),
+  opts=[["Fasting hypoglycemia and raised lipids", "Correct, with both cholesterol and triglycerides rising."],
+        ["Hyperglycemia and low triglycerides", "The pattern runs the other way."],
+        ["Hyperkalemia and metabolic acidosis", "Those are not the listed effects."],
+        ["Hyponatremia from fluid retention", "Sodium retention is described, not low sodium."]]),
 
  dict(topic="Adrenergic antagonists", io="8 — Drug interactions of adrenergic antagonists", cite=D % 118,
   q="Which drugs inhibit propranolol metabolism?",
@@ -342,7 +342,7 @@ QUESTIONS = [
 
  dict(topic="Adrenergic antagonists", io="3 — Identify indications for adrenergic antagonists", cite=D % 119,
   q="Why is timolol used in chronic open-angle glaucoma?",
-  opts=[["It reduces production of aqueous humour", "Correct, and it is more potent than propranolol."],
+  opts=[["It reduces production of aqueous humor", "Correct, and it is more potent than propranolol."],
         ["It increases outflow through the trabecular meshwork", "Reduced production is the stated action."],
         ["It constricts the pupil to open the angle", "That is a cholinergic agonist effect."],
         ["It dilates the ciliary body vessels", "Reduced aqueous production is the mechanism."]]),
@@ -356,7 +356,7 @@ QUESTIONS = [
 
  dict(topic="Adrenergic antagonists", io="11 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: adrenergic antagonists", cite=D % 121,
   q="Which agents have intrinsic sympathomimetic activity?",
-  opts=[["Acebutolol and pindolol", "Correct, weakly stimulating while also antagonising."],
+  opts=[["Acebutolol and pindolol", "Correct, weakly stimulating while also antagonizing."],
         ["Atenolol and metoprolol", "Those are selective antagonists without it."],
         ["Timolol and nadolol", "Those are nonselective antagonists without it."],
         ["Labetalol and carvedilol", "Those add alpha-1 blockade instead."]]),

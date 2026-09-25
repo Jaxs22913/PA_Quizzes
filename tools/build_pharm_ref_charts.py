@@ -60,7 +60,7 @@ def section(sid, title, tag, tbl, note=""):
 IND_TIER = {
  "DOC": ("Drug of choice", "#1f5d3a", "The deck literally says <b>&ldquo;drug of choice&rdquo;</b> for that indication &mdash; the most answerable phrase in Lecture 1."),
  "IND": ("Indication", "#5b6472", "A stated indication, use or coverage."),
- "EDU": ("Education-heavy", "#9c5230", "The row where the <b>counselling point</b> matters more than the indication."),
+ "EDU": ("Education-heavy", "#9c5230", "The row where the <b>counseling point</b> matters more than the indication."),
  "MON": ("Monitoring", "#7c1d6f", "A target level or laboratory goal."),
 }
 IND_SECTIONS = [
@@ -192,8 +192,8 @@ def build_sideeffects():
     common systems here: __TOP__. Four patterns repeat across unrelated classes and are the ones most likely to
     be asked: <b>QT prolongation and Torsades</b> (macrolides, fluoroquinolones, posaconazole),
     <b>ototoxicity plus nephrotoxicity</b> (vancomycin, aminoglycosides), <b>Stevens-Johnson and toxic
-    epidermal necrolysis</b> (aminopenicillins, Bactrim, benzimidazoles), and <b>hypokalaemia with
-    hypomagnesaemia</b> (amphotericin, posaconazole, echinocandins).</div>"""
+    epidermal necrolysis</b> (aminopenicillins, Bactrim, benzimidazoles), and <b>hypokalemia with
+    hypomagnesemia</b> (amphotericin, posaconazole, echinocandins).</div>"""
     html = page(
         title="Side Effects &mdash; Pharmacology I Exam 1 (Class of 2028)",
         kicker="Pharmacology I &middot; Exam 1 &middot; Class of 2028",

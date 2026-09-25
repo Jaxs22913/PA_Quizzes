@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Star what Professor Beck emphasised in PD2 Lecture 2 (Dermatology).
+"""Star what Professor Beck emphasized in PD2 Lecture 2 (Dermatology).
 
 Source: the 2026-08-18 recording, 91 minutes across two segments. Ordering was
 confirmed from content, not file times -- part 1 ends inside primary morphology
 and part 2 opens on secondary morphology.
 
 The find worth the whole exercise is a pair of statements about lesion SIZES.
-Beck teaches one centimetre as the macule/patch boundary; Professor Gopal teaches
-five millimetres for the same lesions in Clinical Pathophysiology, three hours
+Beck teaches one centimeter as the macule/patch boundary; Professor Gopal teaches
+five millimeters for the same lesions in Clinical Pathophysiology, three hours
 earlier on the same day. Both then, independently, told their class not to worry
 about borderline cases. Two courses, two conventions, and a student who met both
 in one day would reasonably assume one of them was wrong. The guide now says so
@@ -48,26 +48,26 @@ MARKS = [
 
  ('<h3 class="sub" id="derm-primary">',
   flag("Professor emphasized &mdash; and a cross-course warning",
-   '<p><strong>Beck uses ONE CENTIMETRE as the macule/patch boundary.</strong> <em>&ldquo;A macule is '
+   '<p><strong>Beck uses ONE CENTIMETER as the macule/patch boundary.</strong> <em>&ldquo;A macule is '
    'less than one centimeter, it is a flat discoloration &mdash; that&rsquo;s important. A patch is '
    'going to be a flat discoloration that&rsquo;s more than one centimeter. Okay? That&rsquo;s '
    'important.&rdquo;</em></p>'
-   '<p><strong>Clinical Pathophysiology teaches five millimetres for the same lesions</strong>, and '
+   '<p><strong>Clinical Pathophysiology teaches five millimeters for the same lesions</strong>, and '
    'Professor Gopal said her numbers are the ones her exam uses. Both lectures ran on 2026-08-18, three '
    'hours apart. <u>Neither is wrong &mdash; they are different conventions, and each course examines '
-   'its own.</u> Use one centimetre here and five millimetres there.</p>'
+   'its own.</u> Use one centimeter here and five millimeters there.</p>'
    '<p><strong>Neither of them will ask a borderline case.</strong> Beck: <em>&ldquo;My exam question '
    'is not going to involve this &hellip; I&rsquo;m not going to ask you &lsquo;it&rsquo;s point seven '
-   'five centimetres&rsquo; &hellip; so it&rsquo;s going to be very clear.&rdquo;</em> Gopal, the same '
+   'five centimeters&rsquo; &hellip; so it&rsquo;s going to be very clear.&rdquo;</em> Gopal, the same '
    'day: <em>&ldquo;it&rsquo;s not gonna be a gotcha thing on the exam.&rdquo;</em> Learn the ordering '
-   'cold; do not lose sleep over the millimetre.</p>')),
+   'cold; do not lose sleep over the millimeter.</p>')),
 
  ('<h3 class="sub" id="derm-abnormal">',
   flag("Professor emphasized",
    '<p><strong>The pressure ulcer stages.</strong> <em>&ldquo;These are very important. You&rsquo;re '
    'gonna come across it.&rdquo;</em> She then walked stage one in full &mdash; intact skin, erythema '
    'that fails to blanch, and the four changes: temperature (warmth or coolness), consistency (firm or '
-   'boggy), sensation (pain or itching), and colour.</p>'
+   'boggy), sensation (pain or itching), and color.</p>'
    '<p><strong>The melanoma letters.</strong> <em>&ldquo;Things to look out for and to remember &hellip; '
    'you wanna remember the A, B, C, Ds &hellip; that&rsquo;s really important.&rdquo;</em> She stopped '
    'and taught them from scratch when the class had not met them before.</p>')),

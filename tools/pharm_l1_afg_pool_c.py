@@ -114,7 +114,7 @@ POOL_C = [
       "Correct, and its urinary excretion is part of why a single dose treats vaginal candidiasis."],
      ["Ketoconazole, excreted in the bile",
       "Ketoconazole must be taken with meals and is the most limited of the group."],
-     ["Itraconazole, excreted unchanged in the faeces",
+     ["Itraconazole, excreted unchanged in the feces",
       "Itraconazole is orally active with an active metabolite, but fluconazole is the one noted for best absorption."],
      ["Posaconazole, excreted by the lungs",
       "No such elimination route is described."]],
@@ -149,7 +149,7 @@ POOL_C = [
  dict(topic="Azoles", io=IO9C,
    q="Which adverse effects are listed for posaconazole?",
    opts=[
-     ["QT prolongation, fever, diarrhoea, hypokalaemia, hypomagnesaemia and thrombocytopenia",
+     ["QT prolongation, fever, diarrhea, hypokalemia, hypomagnesemia and thrombocytopenia",
       "Correct. The QT effect places it alongside the macrolides and fluoroquinolones as a drug to watch in combination."],
      ["Visual disturbance in about 30 percent of patients",
       "That is voriconazole's characteristic effect."],
@@ -228,7 +228,7 @@ POOL_C = [
    q="How long does terbinafine treatment take for fingernail and toenail infection?",
    opts=[
      ["Six to twelve weeks for fingernails and up to twelve months for toenails",
-      "Correct. As with griseofulvin, the duration follows nail growth, which is the counselling point that keeps patients on therapy."],
+      "Correct. As with griseofulvin, the duration follows nail growth, which is the counseling point that keeps patients on therapy."],
      ["One week for fingernails and one month for toenails",
       "Both are far too short; treatment must continue while the nail grows out, which takes months rather than weeks."],
      ["Six to nine months for fingernails and up to twelve months for toenails",
@@ -241,7 +241,7 @@ POOL_C = [
    q="A patient with poorly controlled diabetes develops a fungal infection. Which predisposing category does this represent?",
    opts=[
      ["Metabolic abnormality",
-      "Correct — hyperglycaemia both feeds the organism and impairs neutrophil function, which is why diabetes is the standing example of a metabolic predisposition."],
+      "Correct — hyperglycemia both feeds the organism and impairs neutrophil function, which is why diabetes is the standing example of a metabolic predisposition."],
      ["Immunodeficiency",
       "That category is illustrated by cancer, human immunodeficiency virus infection, organ transplant and chemotherapy."],
      ["Loss of barriers",

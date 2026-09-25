@@ -12,7 +12,7 @@ what you expect to see. The chart runs left to right in exactly that order.
 
 MEMORY HOOKS ARE MARKED AS SUCH. "One heart, two lungs" is not on any slide --
 it is a standard mnemonic, included because the request was for something
-memorisable, and flagged so nobody mistakes it for lecture content.
+memorizable, and flagged so nobody mistakes it for lecture content.
 """
 
 # key, label, colour, where it is, hook, actions, agonists, antagonists, slides
@@ -47,7 +47,7 @@ RECEPTORS = [
       where="On <b>presynaptic nerve endings</b> &mdash; the sending end, not the target organ.",
       hook="<b>Alpha-2 is the brake on the system itself.</b> Because it sits presynaptically, "
            "stimulating it turns the sympathetic outflow DOWN.",
-      actions=["<b>Reduces sympathetic outflow</b> from the central vasomotor centres",
+      actions=["<b>Reduces sympathetic outflow</b> from the central vasomotor centers",
                "<b>Vasodilation</b> and a fall in blood pressure follow",
                "This is why an alpha-2 <i>agonist</i> lowers pressure while an alpha-1 agonist "
                "raises it &mdash; the location, not the letter, decides"],
@@ -112,12 +112,12 @@ RECEPTORS = [
  dict(key="m", label="Muscarinic", colour="#5f3a8a", short="Rest and digest",
       where="<b>M1</b> neurons and gastric parietal cells &middot; <b>M2</b> neurons, cardiac "
             "cells and smooth muscle &middot; <b>M3</b> neurons, bladder, exocrine glands and "
-            "smooth muscle. Only these three are functionally characterised.",
+            "smooth muscle. Only these three are functionally characterized.",
       hook="<b>DUMBBELS</b> &mdash; and every one of them is a secretion, a contraction or a "
            "slowing. Blocking them gives you the exact opposite, which is the anticholinergic "
            "toxidrome.",
       actions=["<b>D</b>efecation &middot; <b>U</b>rination &middot; <b>M</b>iosis",
-               "<b>B</b>radycardia &middot; <b>B</b>ronchorrhoea &middot; <b>B</b>ronchospasm",
+               "<b>B</b>radycardia &middot; <b>B</b>ronchorrhea &middot; <b>B</b>ronchospasm",
                "<b>E</b>mesis &middot; <b>L</b>acrimation &middot; <b>S</b>alivation",
                "The lens also <b>accommodates for near vision</b>"],
       agon=[

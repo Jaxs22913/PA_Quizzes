@@ -14,15 +14,15 @@ QUESTIONS = [
 Q("Oral mucosa variants", IO, "What distinguishes leukoedema from leukoplakia at the bedside?",
   [["Leukoedema disappears when the mucosa is stretched",
     "Correct. Leukoedema is a normal variant caused by fluid accumulating within epithelial cells, "
-    "so stretching the mucosa disperses it and the greyish-white change vanishes. Leukoplakia is a "
+    "so stretching the mucosa disperses it and the grayish-white change vanishes. Leukoplakia is a "
     "premalignant lesion that cannot be scraped off or stretched away, which is why this single "
-    "manoeuvre separates a reassurance from a biopsy."],
+    "maneuver separates a reassurance from a biopsy."],
    ["Leukoedema can be scraped off with a tongue depressor",
     "Scraping off is the test for CANDIDIASIS, which forms a removable pseudomembrane. Leukoedema is "
     "a change within the epithelium itself and does not wipe away."],
    ["Leukoedema is painful and leukoplakia is not",
     "Both are painless. Pain is not a discriminator between them, and expecting it would delay "
-    "recognising a premalignant lesion."],
+    "recognizing a premalignant lesion."],
    ["Leukoedema occurs only on the tongue",
     "Leukoedema is characteristically a diffuse change of the BUCCAL mucosa. Site is not the "
     "distinguishing feature in any case."]], C(9)),
@@ -34,10 +34,10 @@ Q("Oral mucosa variants", IO, "What are Fordyce granules?",
     "present as small yellow-white papules and need nothing but recognition and reassurance."],
    ["Premalignant squamous lesions",
     "Premalignant white lesions are leukoplakia, defined as unable to be scraped off, with 5 to 20 "
-    "per cent progressing to squamous cell carcinoma. Fordyce granules carry no such risk."],
+    "percent progressing to squamous cell carcinoma. Fordyce granules carry no such risk."],
    ["Deposits of melanin",
     "Melanin deposition gives physiologic oral pigmentation, another normal variant, but it appears "
-    "as brown-grey colouration rather than yellow-white papules."],
+    "as brown-gray coloration rather than yellow-white papules."],
    ["Fungal colonies within the epithelium",
     "Fungal disease gives creamy white curd-like patches that wipe off, revealing an erythematous "
     "base. Fordyce granules are fixed anatomical structures."]], C(10)),
@@ -52,7 +52,7 @@ Q("Stomatitis", IO, "Which of these is a listed cause of stomatitis?",
     "Fluorosis mottles enamel and is a disorder of the teeth rather than a cause of mucosal "
     "inflammation. It does not appear on the stomatitis list."],
    ["Hypercalcaemia",
-    "Hypercalcaemia produces thirst, constipation, confusion and renal stones. It has no place among "
+    "Hypercalcemia produces thirst, constipation, confusion and renal stones. It has no place among "
     "the causes of oral mucosal inflammation."],
    ["Chronic sinusitis",
     "Chronic sinusitis causes postnasal drip and can irritate the pharynx, contributing to chronic "
@@ -60,30 +60,30 @@ Q("Stomatitis", IO, "Which of these is a listed cause of stomatitis?",
 
 Q("Aphthous stomatitis", IO,
   "On which type of mucosa do aphthous ulcers characteristically occur?",
-  [["Freely moving, non-keratinised mucosa",
+  [["Freely moving, non-keratinized mucosa",
     "Correct. Aphthae are found on buccal and labial mucosa, non-attached gingiva and palate, all of "
-    "which are freely moving and non-keratinised. That location rule is the practical way to "
-    "separate them from herpetic lesions, which favour keratinised surfaces."],
-   ["Keratinised, attached mucosa",
-    "Keratinised attached surfaces such as the hard palate and attached gingiva are where primary "
+    "which are freely moving and non-keratinized. That location rule is the practical way to "
+    "separate them from herpetic lesions, which favor keratinized surfaces."],
+   ["Keratinized, attached mucosa",
+    "Keratinized attached surfaces such as the hard palate and attached gingiva are where primary "
     "HERPETIC lesions appear. Reversing the rule swaps two diagnoses with different treatments."],
    ["The dorsum of the tongue only",
-    "The dorsal tongue is keratinised and is not the characteristic site. Aphthae can involve the "
+    "The dorsal tongue is keratinized and is not the characteristic site. Aphthae can involve the "
     "tongue but the rule concerns mucosal type rather than a single location."],
    ["The tonsillar fossae",
     "Ulcerative vesicles over the tonsils describe herpangina, a feature of viral pharyngitis, "
     "rather than aphthous ulceration."]], C(15)),
 
-Q("Aphthous stomatitis", IO, "How are minor aphthous ulcers characterised?",
-  [["Under 1 centimetre, commonest, healing in 7 to 10 days",
-    "Correct. Minor aphthae are the commonest form, under a centimetre, preceded by burning and "
+Q("Aphthous stomatitis", IO, "How are minor aphthous ulcers characterized?",
+  [["Under 1 centimeter, commonest, healing in 7 to 10 days",
+    "Correct. Minor aphthae are the commonest form, under a centimeter, preceded by burning and "
     "tingling, painful, and healing within 7 to 10 days without scarring. Major ulcers exceed a "
-    "centimetre, are more painful, may scar and last over a month; herpetiform ulcers are numerous "
-    "1 to 3 millimetre lesions that also scar and persist."],
-   ["Over 1 centimetre with a risk of scarring",
+    "centimeter, are more painful, may scar and last over a month; herpetiform ulcers are numerous "
+    "1 to 3 millimeter lesions that also scar and persist."],
+   ["Over 1 centimeter with a risk of scarring",
     "Those are MAJOR aphthae, which are more painful, often multiple, and last over a month. Size is "
     "the dividing line."],
-   ["Numerous 1 to 3 millimetre ulcers",
+   ["Numerous 1 to 3 millimeter ulcers",
     "That describes the HERPETIFORM variant, which carries a scarring risk and lasts over a month "
     "despite the name having nothing to do with herpes."],
    ["Painless lesions healing within 24 hours",
@@ -94,10 +94,10 @@ Q("Aphthous stomatitis", IO, "What is recurrent aphthous stomatitis also called?
   [["Sutton disease",
     "Correct. Recurrent aphthous stomatitis carries the eponym Sutton disease. The condition is "
     "self-limiting and managed with observation, with anti-inflammatories, corticosteroids, silver "
-    "nitrate cauterisation and dilute rinses as options for symptom control."],
+    "nitrate cauterization and dilute rinses as options for symptom control."],
    ["Behcet syndrome",
     "Behcet is a multisystem inflammatory disorder in which oral ulcers are the commonest feature, "
-    "affecting up to 100 per cent, with genital ulcers in about 75 per cent. Recurrent oral ulcers "
+    "affecting up to 100 percent, with genital ulcers in about 75 percent. Recurrent oral ulcers "
     "alone do not make that diagnosis."],
    ["Ludwig angina",
     "Ludwig angina is a severe infection of the floor of the mouth and the submental, sublingual and "
@@ -108,19 +108,19 @@ Q("Aphthous stomatitis", IO, "What is recurrent aphthous stomatitis also called?
 
 Q("Behcet syndrome", IO,
   "What proportion of patients with Behcet syndrome have oral ulcers?",
-  [["Up to 100 per cent",
-    "Correct. Oral ulcers are the commonest feature of Behcet, affecting up to 100 per cent of "
-    "patients, with genital ulcers in about 75 per cent that look identical to oral aphthae. "
+  [["Up to 100 percent",
+    "Correct. Oral ulcers are the commonest feature of Behcet, affecting up to 100 percent of "
+    "patients, with genital ulcers in about 75 percent that look identical to oral aphthae. "
     "Diagnosis is clinical: recurrent aphthous ulceration in the context of the characteristic "
     "systemic manifestations."],
-   ["About 10 per cent",
+   ["About 10 percent",
     "If oral ulcers were uncommon they could not serve as the entry point to the diagnosis, which is "
     "how they are actually used."],
-   ["About 40 per cent",
-    "Forty per cent is the figure for mucous membrane involvement in systemic LUPUS, which is a "
+   ["About 40 percent",
+    "Forty percent is the figure for mucous membrane involvement in systemic LUPUS, which is a "
     "different disorder with different oral findings."],
-   ["About 75 per cent",
-    "Seventy-five per cent is the figure for GENITAL ulcers in Behcet. The two proportions are easy "
+   ["About 75 percent",
+    "Seventy-five percent is the figure for GENITAL ulcers in Behcet. The two proportions are easy "
     "to swap."]], C(19)),
 
 Q("Oral lichen planus", IO, "What are Wickham striae?",
@@ -131,8 +131,8 @@ Q("Oral lichen planus", IO, "What are Wickham striae?",
    ["Creamy patches that wipe off",
     "Removable creamy patches on an erythematous base are oral candidiasis, treated with topical "
     "antifungals rather than with the steroids used for lichen planus."],
-   ["Yellow-grey ulcer centres with a red halo",
-    "That describes aphthous ulceration, which occurs on freely moving non-keratinised mucosa and "
+   ["Yellow-gray ulcer centers with a red halo",
+    "That describes aphthous ulceration, which occurs on freely moving non-keratinized mucosa and "
     "heals within 7 to 10 days in its minor form."],
    ["Ectopic sebaceous glands on the lip",
     "Those are Fordyce granules, a normal variant appearing as small yellow-white papules."]],
@@ -140,35 +140,35 @@ Q("Oral lichen planus", IO, "What are Wickham striae?",
 
 Q("Oral lichen planus", IO,
   "What proportion of oral lichen planus progresses to squamous cell carcinoma?",
-  [["1 to 4 per cent, higher with ulcerative lesions",
+  [["1 to 4 percent, higher with ulcerative lesions",
     "Correct. The malignant potential is modest but real, and it is higher in ulcerative forms. That "
     "is the reason close follow-up is the point of making the diagnosis, alongside pain relief and "
     "removing reversible contributors such as medications, dental restorations, tobacco and "
     "alcohol."],
    ["None; it is entirely benign",
     "Treating it as entirely benign removes the follow-up, which is the main clinical consequence of "
-    "recognising the condition."],
-   ["Around 90 per cent",
-    "Ninety per cent dysplastic or malignant is the figure for ERYTHROPLAKIA, a far more dangerous "
+    "recognizing the condition."],
+   ["Around 90 percent",
+    "Ninety percent dysplastic or malignant is the figure for ERYTHROPLAKIA, a far more dangerous "
     "red lesion."],
-   ["5 to 20 per cent",
+   ["5 to 20 percent",
     "That is the transformation range quoted for LEUKOPLAKIA. Lichen planus carries a lower risk, "
     "which is why the two figures are worth keeping apart."]], C(22)),
 
 Q("Systemic lupus erythematosus", IO,
   "What proportion of patients with systemic lupus have mucous membrane involvement?",
-  [["About 40 per cent",
-    "Correct. Around 40 per cent of lupus patients have mucous membrane involvement, and oral "
+  [["About 40 percent",
+    "Correct. Around 40 percent of lupus patients have mucous membrane involvement, and oral "
     "lesions may be the FIRST sign of the disease. There is no correlation between the oral ulcers "
     "and systemic activity, so they cannot be used to judge control."],
-   ["About 5 per cent",
-    "Five per cent would make oral involvement a rarity, when in fact it is common enough that an "
+   ["About 5 percent",
+    "Five percent would make oral involvement a rarity, when in fact it is common enough that an "
     "oral lesion can be the presenting feature."],
-   ["About 90 per cent",
+   ["About 90 percent",
     "Near-universal involvement would make oral examination almost diagnostic on its own, which is "
     "not the case."],
-   ["About 75 per cent",
-    "Seventy-five per cent is the proportion of Behcet patients with genital ulcers, a different "
+   ["About 75 percent",
+    "Seventy-five percent is the proportion of Behcet patients with genital ulcers, a different "
     "disease and a different figure."]], C(23)),
 
 Q("Herpes simplex", IO,
@@ -197,7 +197,7 @@ Q("Herpes simplex", IO, "Where does herpes simplex virus lie dormant between rec
     "Cytomegalovirus and mumps involve salivary tissue, but herpes simplex latency is neuronal. The "
     "prodrome of burning and tingling is the clinical evidence of that."],
    ["The regional lymph nodes",
-    "Nodes enlarge during primary infection but do not harbour latent virus. Latency is established "
+    "Nodes enlarge during primary infection but do not harbor latent virus. Latency is established "
     "in sensory neurons."],
    ["The oral epithelium itself",
     "If the virus persisted in the epithelium the lesions would not follow a dermatomal or neural "
@@ -225,7 +225,7 @@ Q("Salivary anatomy", IO, "Which duct drains the parotid gland?",
     "from in acute suppurative sialadenitis, which is characteristically a parotid disease."],
    ["Wharton duct",
     "Wharton duct drains the SUBMANDIBULAR gland, and its long upward course carrying alkaline "
-    "mucin-rich saliva is why 80 to 90 per cent of stones form there."],
+    "mucin-rich saliva is why 80 to 90 percent of stones form there."],
    ["The sublingual ducts",
     "The sublingual gland drains through multiple small ducts into the floor of the mouth, and it is "
     "the source of a ranula."],
@@ -234,11 +234,11 @@ Q("Salivary anatomy", IO, "Which duct drains the parotid gland?",
     "salivary glands."]], C(29)),
 
 Q("Salivary anatomy", IO,
-  "Why do 80 to 90 per cent of salivary stones form in the submandibular gland?",
+  "Why do 80 to 90 percent of salivary stones form in the submandibular gland?",
   [["Its duct is long and uphill, and its saliva is alkaline and mucin-rich",
     "Correct. Wharton duct runs a longer course and against gravity, and submandibular saliva has "
     "higher mucin and alkaline content with high concentrations of calcium and phosphate. Those "
-    "conditions favour precipitation of calcium phosphate and carbonate, which is what a stone is."],
+    "conditions favor precipitation of calcium phosphate and carbonate, which is what a stone is."],
    ["It is the largest salivary gland",
     "The parotid is the largest of the major salivary glands, and size is not what determines stone "
     "formation in any case."],
@@ -253,22 +253,22 @@ Q("Acute suppurative sialadenitis", IO,
   [["Staphylococcus aureus",
     "Correct. Staphylococcus aureus is the commonest pathogen, followed by Streptococcus viridans, "
     "Haemophilus influenzae, Streptococcus pyogenes and gram-negatives, with Candida in chronically "
-    "ill hospitalised patients. That is why treatment uses penicillinase-resistant gram-positive "
+    "ill hospitalized patients. That is why treatment uses penicillinase-resistant gram-positive "
     "cover such as nafcillin or cefazolin."],
    ["Pseudomonas aeruginosa",
-    "Pseudomonas is the organism of malignant otitis externa and of swimmer's ear, favoured by a "
+    "Pseudomonas is the organism of malignant otitis externa and of swimmer's ear, favored by a "
     "moist alkaline canal rather than by salivary stasis."],
    ["Streptococcus pneumoniae",
     "Pneumococcus is a middle ear and sinus pathogen rather than the leading salivary one, though "
     "streptococci do feature further down the list."],
    ["Candida albicans",
-    "Candida appears in chronically ill hospitalised patients, so it is on the list, but it is not "
+    "Candida appears in chronically ill hospitalized patients, so it is on the list, but it is not "
     "the usual organism in an otherwise typical case."]], C(35)),
 
 Q("Acute suppurative sialadenitis", IO,
   "Which gland is most commonly affected by acute suppurative sialadenitis?",
   [["The parotid",
-    "Correct. Infection ascends the parotid duct and then spreads haematogenously, and salivary "
+    "Correct. Infection ascends the parotid duct and then spreads hematogenously, and salivary "
     "stasis is the initiating event. The gland becomes firm and diffusely tender with overlying "
     "erythema, trismus, purulent ductal discharge, induration, fever and chills, typically "
     "unilaterally in acute disease."],
@@ -279,7 +279,7 @@ Q("Acute suppurative sialadenitis", IO,
     "The sublingual gland is the source of a ranula and accounts for a very small share of salivary "
     "pathology overall."],
    ["The minor salivary glands",
-    "Minor glands are relevant chiefly for neoplasia, where only about 35 per cent of tumours are "
+    "Minor glands are relevant chiefly for neoplasia, where only about 35 percent of tumors are "
     "benign, rather than for suppurative infection."]], C(36)),
 
 Q("Acute suppurative sialadenitis", IO,
@@ -289,11 +289,11 @@ Q("Acute suppurative sialadenitis", IO,
     "massage and sialogogues means an abscess should be presumed. The gland becomes indurated with a "
     "dough-like consistency, and ultrasound or computed tomography locates the loculation for "
     "drainage or guided aspiration."],
-   ["The diagnosis was wrong and it is a tumour",
+   ["The diagnosis was wrong and it is a tumor",
     "A neoplasm presents as a slow-growing painless mass rather than an acutely tender infected "
-    "gland, so a tumour would not explain the original picture."],
+    "gland, so a tumor would not explain the original picture."],
    ["The organism is fungal",
-    "Candida features in chronically ill hospitalised patients, so it is worth considering in that "
+    "Candida features in chronically ill hospitalized patients, so it is worth considering in that "
     "group, but the stated presumption after 48 hours is a collection rather than a change of "
     "organism."],
    ["Treatment should simply be continued for another week",
@@ -304,14 +304,14 @@ Q("Sialolithiasis", IO,
   "What is the characteristic symptom pattern of sialolithiasis?",
   [["Recurrent swelling and pain that worsens with eating",
     "Correct. Eating stimulates salivary flow, and an obstructing stone traps that saliva behind it, "
-    "distending the gland until pressure equalises. That is salivary colic, and it is why the "
+    "distending the gland until pressure equalizes. That is salivary colic, and it is why the "
     "history alone often makes the diagnosis before any imaging."],
    ["Constant swelling with fever and pus from the duct",
     "That describes acute suppurative sialadenitis, typically in a dehydrated post-operative or "
     "elderly patient, and it does not fluctuate with meals."],
    ["Painless progressive enlargement over months",
     "Painless slow growth suggests a neoplasm, most often at the tail of the parotid, where 75 to 80 "
-    "per cent are benign."],
+    "percent are benign."],
    ["Bilateral swelling with systemic viral symptoms",
     "Bilateral parotid swelling with systemic symptoms suggests mumps, caused by a paramyxovirus."]],
   C(42)),

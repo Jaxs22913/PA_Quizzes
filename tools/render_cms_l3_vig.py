@@ -12,7 +12,7 @@ INTRO = ("Thirty clinical vignettes on Dermatology II. Each case carries a prese
          "that narrow it &mdash; age, drug exposure, timing, light history &mdash; and the defining "
          "feature it turns on. The lead-in varies deliberately: some ask for the diagnosis, others "
          "for the next step, the treatment, the initial or confirmatory test, or what you would tell "
-         "the patient. Read the lead-in carefully; recognising the disease and answering the question "
+         "the patient. Read the lead-in carefully; recognizing the disease and answering the question "
          "are two separate acts. Several cases hinge on discriminations this lecture makes explicitly "
          "&mdash; Stevens-Johnson syndrome against toxic epidermal necrolysis by body surface area, "
          "phototoxicity against photoallergy by mechanism and timing, solar lentigo against lentigo "

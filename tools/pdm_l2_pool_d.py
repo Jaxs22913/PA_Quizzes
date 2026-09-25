@@ -121,7 +121,7 @@ POOL_D = [
       "This reverses them; the neonatal figure is the larger of the two."],
      ["It is the same, since the scanner protocol is identical",
       "The table gives two different numbers for the two studies."],
-     ["It is a tenth as high, since paediatric protocols are dose-reduced",
+     ["It is a tenth as high, since pediatric protocols are dose-reduced",
       "Dose reduction is good practice, but it is not what this table shows."]],
    c=0, cite=c(21)),
 
@@ -158,7 +158,7 @@ POOL_D = [
       "Correct — and equivalent dose is then expressed in sieverts or millisieverts."],
      ["Ionizing energy emitted per unit of time, in grays or milligrays, where one gray is one joule per second",
       "Dose is absorbed energy per mass, not emitted energy per time."],
-     ["Ionizing energy absorbed per unit of volume, in sieverts only, where one sievert is one joule per litre",
+     ["Ionizing energy absorbed per unit of volume, in sieverts only, where one sievert is one joule per liter",
       "The unit of absorbed dose is the gray, and it is defined per kilogram."],
      ["Ionizing energy delivered per exposure, in millisieverts only, where one millisievert is one milliwatt",
       "A millisievert is not a unit of power and dose is not defined per exposure."]],
@@ -178,7 +178,7 @@ POOL_D = [
    c=0, cite=c(21)),
 
  dict(topic="Radiodensity", io=IOD, slot="test finding",
-   q="On a labelled pelvic radiograph, how are bone, gas and a prosthesis described?",
+   q="On a labeled pelvic radiograph, how are bone, gas and a prosthesis described?",
    opts=[
      ["Bone is radiopaque, gas is radiolucent, and the metal prosthesis is very opaque",
       "Correct — one image showing three of the five densities at once."],

@@ -9,7 +9,7 @@ Objectives come from the SYLLABUS, not the slides, per the verbatim-IO rule.
 
 Length-bias remediation runs first. Pool A came out at 57% raw -- the highest of
 any pool built for this exam, above even Lecture 5's 48%. Same cause, more
-concentrated: this entire deck is compare-and-contrast across a catalogue of
+concentrated: this entire deck is compare-and-contrast across a catalog of
 pigmented lesions, so the correct answer is a full compound description and
 every distractor names a different lesion in fewer words. Those seventeen were
 repaired at source; pools B and C were then written with every distractor given

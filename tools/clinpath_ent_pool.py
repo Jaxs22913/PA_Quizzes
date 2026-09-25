@@ -8,7 +8,7 @@ MECHANISM ONLY, NEVER MANAGEMENT. [[clin_path_exam_spec]] draws that line to
 keep this course distinct from CMS I, and this deck tests it: slide 23's
 epistaxis table has a management column -- direct pressure, oxymetazoline,
 balloon packing, embolisation -- and not one question is built on it. The
-vascular source and the aetiology are pathophysiology; what you do about it is
+vascular source and the etiology are pathophysiology; what you do about it is
 the other course's.
 
 NO VIGNETTES, also per the spec.

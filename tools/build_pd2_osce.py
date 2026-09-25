@@ -119,7 +119,7 @@ def background(items):
         ]),
         ("h4", "Close the history"),
         ("items", [
-          say("Summarises the history back to the patient and asks whether anything was missed",
+          say("Summarizes the history back to the patient and asks whether anything was missed",
               script='"Let me make sure I have this right &mdash; [summary]. Is there anything else I should know?"'),
           say("Signals the transition to the examination and obtains permission",
               script='"I would like to examine you now. Is that all right?"'),
@@ -166,7 +166,7 @@ def plan(items):
         ("h4", "Patient education"),
         ("items", [
           say("Explains the diagnosis in plain language, without medical jargon",
-              hint="Adapting style and content to the patient is a graded professional behaviour."),
+              hint="Adapting style and content to the patient is a graded professional behavior."),
           say("Explains what the treatment is and why it is being recommended"),
           say("States return precautions &mdash; what would bring the patient back sooner"),
           say("Confirms understanding and invites questions",
@@ -183,7 +183,7 @@ def plan(items):
 
 def presentation(system):
     return dict(id="s8", title="One-Minute Case Presentation", src=(
-        "Delivered at the end of the station. A well-organised vignette that describes the "
+        "Delivered at the end of the station. A well-organized vignette that describes the "
         "patient and the clinical problem &mdash; not the note read aloud."),
       blocks=[
         ("banner", "<b>The test of a good presentation &mdash;</b> it leads your facilitator to the "
@@ -201,7 +201,7 @@ def presentation(system):
           say("States the studies and the diagnosis"),
           say("States the plan"),
           do("Delivers it without reading from notes",
-             hint="Reading works directly against helping the listener visualise the patient."),
+             hint="Reading works directly against helping the listener visualize the patient."),
           do("Keeps it to about one minute"),
         ]),
       ])
@@ -230,7 +230,7 @@ ENT_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Ear, Nose &
       do("Pulls the auricle upward, outward and back to straighten the canal"),
       say("Verbalizes the structures assessed in the ear canal",
           script='"I am noting the condition of the external canal, the amount of cerumen, and the presence of any inflammation, edema, or foreign bodies."'),
-      say("Notes the colour and contour of the tympanic membrane",
+      say("Notes the color and contour of the tympanic membrane",
           script='"I am noting the color and contour of the tympanic membrane as pearly gray."'),
       say("Identifies the landmarks and the light reflex",
           script='"I am visualizing the malleus, umbo, pars tensa, pars flaccida, and the cone of light."'),
@@ -274,7 +274,7 @@ ENT_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Ear, Nose &
           script='"I am noting the phonation and symmetrical rise and fall of the soft palate and uvula."'),
       say("Verbalizes performance of the gag reflex"),
       say("States the cranial nerve number and name &mdash; <b>XII, Hypoglossal</b>", tag="CN XII"),
-      say("Asks the patient to protrude the tongue and notes colour, texture and whether it is midline",
+      say("Asks the patient to protrude the tongue and notes color, texture and whether it is midline",
           script='"I am noting the color and texture of the tongue and assessing if it is midline."'),
     ]),
     ("h4", "Neck &amp; lymph nodes"),
@@ -370,7 +370,7 @@ CARDIAC_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Cardiov
       do("Performs hand hygiene before touching the patient"),
       do("Places the patient supine with the head elevated thirty degrees"),
       do("Stands on the correct side of the patient for handedness"),
-      say("Performs a general survey &mdash; distress, colour, work of breathing, diaphoresis"),
+      say("Performs a general survey &mdash; distress, color, work of breathing, diaphoresis"),
       say("Inspects the hands and nail beds for cyanosis and clubbing"),
     ]),
     ("h4", "Neck &mdash; jugular and carotid"),
@@ -422,11 +422,11 @@ CARDIAC_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Cardiov
     ("h4", "Peripheral vascular"),
     ("items", [
       say("Inspects the extremities for size, symmetry and edema"),
-      say("Inspects skin colour, venous pattern, hair growth and any ulceration"),
+      say("Inspects skin color, venous pattern, hair growth and any ulceration"),
       do("Palpates peripheral pulses bilaterally &mdash; brachial, radial, femoral, popliteal, posterior tibialis, dorsalis pedis"),
       say("Grades each pulse and comments on symmetry"),
       do("Assesses capillary refill in the upper and lower extremities"),
-      say("Notes that colour typically returns within two to three seconds"),
+      say("Notes that color typically returns within two to three seconds"),
       do("Palpates for pitting edema over the tibia and ankles"),
       say("Grades any edema found and states how far up it extends"),
     ]),
@@ -488,7 +488,7 @@ CARDIAC = dict(
         ]),
         ("h4", "General survey"),
         ("items", [
-          say("Comments on distress, colour, diaphoresis and work of breathing"),
+          say("Comments on distress, color, diaphoresis and work of breathing"),
         ]),
       ]),
     CARDIAC_EXAM,
@@ -546,8 +546,8 @@ PULM_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Thorax &am
       do("Percusses the <b>posterior</b> chest wall, alternating sides"),
       do("Percusses the <b>lateral</b> chest wall, alternating sides"),
       do("Percusses the upper lobes, <b>anterior</b> chest wall, alternating sides"),
-      do("Measures diaphragmatic excursion in centimetres",
-         hint="Four to six centimetres is normal &mdash; the distance between the level of dullness on full expiration and on full inspiration."),
+      do("Measures diaphragmatic excursion in centimeters",
+         hint="Four to six centimeters is normal &mdash; the distance between the level of dullness on full expiration and on full inspiration."),
       say("States what dullness and hyperresonance would each suggest"),
     ]),
     ("h4", "Auscultation"),
@@ -588,7 +588,7 @@ PULMONARY = dict(
         "Shortness of breath and cough are the commonest stems. Pin down the timeline before anything else.",
         [
           say("Cough &mdash; dry or productive, and how long it has been present"),
-          say("Sputum &mdash; colour, amount, and any change"),
+          say("Sputum &mdash; color, amount, and any change"),
           say("Hemoptysis"),
           say("Dyspnea &mdash; at rest or on exertion, and how much exertion it takes"),
           say("Wheeze"),
@@ -626,12 +626,12 @@ PULMONARY = dict(
           say("Tobacco use &mdash; current or past, and pack-years"),
           say("Occupational and environmental exposures"),
           say("Known asthma, chronic obstructive pulmonary disease or other lung disease"),
-          say("Immunisation status"),
+          say("Immunization status"),
           say("Prior tuberculosis exposure or testing"),
         ]),
         ("h4", "General survey"),
         ("items", [
-          say("Comments on distress, ability to speak in full sentences, positioning and colour"),
+          say("Comments on distress, ability to speak in full sentences, positioning and color"),
         ]),
       ]),
     PULM_EXAM,

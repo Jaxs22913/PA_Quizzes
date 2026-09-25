@@ -12,7 +12,7 @@ for its position in the relationship list.
                     the crista/cupula inset, the cochlear duct with the organ of
                     Corti, and a hair cell wired to a spiral ganglion neuron.
                     One figure that answers objectives 1 and 3 together.
-  cochlear-section  slide 5  -- labelled cochlear cross-section. This is the only
+  cochlear-section  slide 5  -- labeled cochlear cross-section. This is the only
                     figure that shows the STRIA VASCULARIS, which is where both
                     cisplatin and furosemide do their damage.
   otosclerosis      slide 10 -- ossicular chain with the fixation point marked at
@@ -25,7 +25,7 @@ for its position in the relationship list.
   bppv              slide 18 -- otoconia shown both in the utricle and displaced
                     into the canals.
   deviated-septum   slide 22 -- normal against deviated, with the CONTRALATERAL
-                    turbinate hypertrophy labelled. The compensation is the part
+                    turbinate hypertrophy labeled. The compensation is the part
                     students miss, and this figure shows it directly.
   nasal-polyp       slide 21 -- endoscopic view of a polyp.
   vocal-cords       slide 25 -- bilateral nodules beside a unilateral polyp. The
@@ -37,7 +37,7 @@ for its position in the relationship list.
 
 Licensing: [[media_asset_licensing]] clears a course-slide image provided the
 slide is cited, and says not to crop vendor marks out. The cochlear section
-carries an Encyclopaedia Britannica notice and it stays visible.
+carries an Encyclopedia Britannica notice and it stays visible.
 """
 import os, zipfile
 

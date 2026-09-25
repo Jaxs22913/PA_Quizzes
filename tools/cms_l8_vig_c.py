@@ -33,7 +33,7 @@ POOL_C = [
    opts=[
      ["A variant of the MCR-1 receptor reduces the melanogenesis pathway and promotes pheomelanin, the yellow-red pigment",
       "Correct — MCR-1 is the receptor for alpha-melanocyte-stimulating hormone, acting through cyclic adenosine monophosphate."],
-     ["A variant of the TP53 tumour suppressor gene drives keratinocytic dysplasia in chronically sun-exposed skin",
+     ["A variant of the TP53 tumor suppressor gene drives keratinocytic dysplasia in chronically sun-exposed skin",
       "That mechanism belongs to actinic keratosis."],
      ["T-cell mediated destruction of the melanocytes removes pigment from discrete areas of the skin",
       "That mechanism belongs to vitiligo."],
@@ -46,7 +46,7 @@ POOL_C = [
    opts=[
      ["Agminated lentigines",
       "Correct — a grouping of small light brown macules, one of the named lentigo types."],
-     ["Generalised lentigo",
+     ["Generalized lentigo",
       "That is widespread rather than grouped in one area."],
      ["Acral lentigo",
       "That refers to lentigines on acral surfaces."],
@@ -74,14 +74,14 @@ POOL_C = [
       "Correct — treatment is not necessary, and removal is for cosmetic reasons."],
      ["Topical fluorouracil, imiquimod or tirbanibulin",
       "Those are field therapies for actinic keratosis."],
-     ["Excision with clear margins under local anaesthetic",
+     ["Excision with clear margins under local anesthetic",
       "That is the management of pigmented spindle cell naevus."],
      ["Narrow band ultraviolet B phototherapy three times weekly",
       "That is used in vitiligo and polymorphous light eruption."]],
    c=0, cite=c(15)),
 
  dict(topic="Seborrheic keratosis", io=IOB,
-   q="A 79-year-old man's family are alarmed by dozens of dark warty growths that appeared on his back over two years. Which is the most appropriate counselling point?",
+   q="A 79-year-old man's family are alarmed by dozens of dark warty growths that appeared on his back over two years. Which is the most appropriate counseling point?",
    opts=[
      ["They are benign, common in older adults, and the diagnosis is clinical without any need for biopsy",
       "Correct — cryotherapy helps if a lesion becomes itchy or inflamed, though it may recur."],
@@ -163,12 +163,12 @@ POOL_C = [
  dict(topic="Congenital melanocytic naevi", io=IOB, lead="education",
    q="The parents of a child with a very large congenital naevus feel isolated and overwhelmed. Which support is appropriate?",
    opts=[
-     ["Counselling and support groups for families and patients with large naevi",
+     ["Counseling and support groups for families and patients with large naevi",
       "Correct — that is named alongside the surgical and observational decision."],
      ["Referral to a genetics service for testing of both parents and the child",
-      "Genetic counselling is not what these families need here."],
+      "Genetic counseling is not what these families need here."],
      ["Referral to psychiatry for management of the parental distress specifically",
-      "Counselling and support groups are what is named."],
+      "Counseling and support groups are what is named."],
      ["Referral to palliative care for early goals-of-care discussion with the family",
       "Palliative care has no role for a benign congenital nevus; families of children with large nevi are pointed to counseling and support groups."]],
    c=0, cite=c(31)),
@@ -180,7 +180,7 @@ POOL_C = [
       "Correct — numbers peak in the thirties then decline."],
      ["Ultraviolet radiation exposure, female sex and a purely environmental cause, with more lesions in darker skin",
       "That reverses the sex and skin-type relationships."],
-     ["Autoimmune disease, immunosuppression and a family history of thyroid or coeliac disease",
+     ["Autoimmune disease, immunosuppression and a family history of thyroid or celiac disease",
       "Those associations belong to vitiligo and dermatitis herpetiformis."],
      ["Older age, cumulative sun damage, tanning and use of hormonal contraception",
       "Those are the associations of solar lentigo."]],
@@ -259,12 +259,12 @@ POOL_C = [
    lead="diagnosis",
    opts=[
      ["Numbers of common acquired naevi peak in the thirties and decline afterwards",
-      "Correct — they develop slowly after birth, enlarge, stabilise and then regress."],
+      "Correct — they develop slowly after birth, enlarge, stabilize and then regress."],
      ["Numbers of naevi continue to rise throughout life, so some have been missed",
       "Numbers peak in the thirties and then decline."],
      ["Sun protection over the years has caused the existing naevi to fade away",
       "Regression is part of the natural history rather than a sun protection effect."],
-     ["Naevi that disappear have usually transformed into an unrecognised melanoma",
+     ["Naevi that disappear have usually transformed into an unrecognized melanoma",
       "Regression is a normal part of the natural history."]],
    c=0, cite=c(35)),
 
@@ -299,7 +299,7 @@ POOL_C = [
    lead="diagnosis",
    opts=[
      ["Lentigines do not fade when sun exposure stops, unlike ephelides",
-      "Correct — that behaviour is the main clinical distinction between the two."],
+      "Correct — that behavior is the main clinical distinction between the two."],
      ["Lentigines fade more slowly, over several years rather than one season",
       "They do not fade at all with cessation of sun exposure."],
      ["Lentigines are raised rather than flat, so they retain their pigment",
@@ -309,7 +309,7 @@ POOL_C = [
    c=0, cite=c(9)),
 
  dict(topic="Dermatosis papulosa nigrans", io=IOB,
-   q="A 50-year-old man of dark-skinned Asian background has facial papules typical of dermatosis papulosa nigrans and asks whether they will worsen. Which is the most appropriate counselling point?",
+   q="A 50-year-old man of dark-skinned Asian background has facial papules typical of dermatosis papulosa nigrans and asks whether they will worsen. Which is the most appropriate counseling point?",
    opts=[
      ["They are benign and best left untreated, with removal available if he wants it for cosmetic reasons",
       "Correct — excision, curettage or laser are the options, avoiding cryotherapy."],
@@ -331,7 +331,7 @@ POOL_C = [
      ["Use cryotherapy in place of excision, since it needs no donor skin for grafting",
       "Cryotherapy is not among the described options for this lesion."],
      ["Defer any decision until the child reaches adolescence and then reassess it",
-      "The decision is individualised rather than automatically deferred."]],
+      "The decision is individualized rather than automatically deferred."]],
    c=0, cite=c(31)),
 
  dict(topic="Dysplastic naevus", io=IOA,

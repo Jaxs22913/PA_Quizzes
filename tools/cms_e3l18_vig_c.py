@@ -27,7 +27,7 @@ Q("Neck mass duration", IO,
     "Age over 40 is one red flag, but the mass has an infectious origin and has been present three "
     "days, which are two flags pointing the other way."],
    ["Excisional biopsy",
-    "Excision is avoided even in suspected malignancy because it spills tumour, and here there is no "
+    "Excision is avoided even in suspected malignancy because it spills tumor, and here there is no "
     "reason to suspect malignancy in the first place."]], C(13)),
 
 Q("Lipoma", IO,
@@ -39,7 +39,7 @@ Q("Lipoma", IO,
     "concerning, and the soft mobile texture supports it."],
    ["Metastatic squamous cell carcinoma",
     "Metastatic nodes are firm, immobile and enlarge over weeks to months. Ten years of stability is "
-    "incompatible with malignant behaviour."],
+    "incompatible with malignant behavior."],
    ["Lymphoma",
     "Lymphoma presents as a rapidly growing mass, often with night sweats and weight loss. A decade "
     "of no change is the opposite pattern."],
@@ -103,18 +103,18 @@ Q("Thyroid nodule risk", IO,
     "independent risk of a new primary."]], C(40)),
 
 Q("Thyroid nodule size", IO,
-  "A 46-year-old man has a 1.4 centimetre thyroid nodule found incidentally on imaging done for "
+  "A 46-year-old man has a 1.4 centimeter thyroid nodule found incidentally on imaging done for "
   "another reason.",
-  [["Nodules over 1 centimetre found incidentally warrant evaluation",
-    "Correct. Incidental nodules greater than 1 centimetre should be evaluated further, and this one "
+  [["Nodules over 1 centimeter found incidentally warrant evaluation",
+    "Correct. Incidental nodules greater than 1 centimeter should be evaluated further, and this one "
     "exceeds that. Evaluation means ultrasound with fine needle aspiration plus thyroid-stimulating "
     "hormone and thyroid hormones, with recent growth, dysphagia or obstruction as the concerning "
     "symptoms to ask about."],
    ["Incidental nodules never require follow-up",
     "That would leave a large number of clinically significant nodules undetected, which is why a "
     "size threshold exists at all."],
-   ["Only nodules over 4 centimetres are evaluated",
-    "Four centimetres is a large nodule that would usually be palpable. Setting the threshold there "
+   ["Only nodules over 4 centimeters are evaluated",
+    "Four centimeters is a large nodule that would usually be palpable. Setting the threshold there "
     "would miss most early disease."],
    ["Evaluation is needed only if the patient is hyperthyroid",
     "Thyroid function guides the ORDER of investigation, determining whether a scan precedes "
@@ -140,7 +140,7 @@ Q("Neck mass evaluation", IO,
 Q("General symptoms", IO,
   "A 58-year-old man with a neck mass reports night sweats, weight loss, hoarseness and dysphagia.",
   [["These are the general symptoms that accompany a concerning neck mass",
-    "Correct. The general clinical presentation listed includes fever, postnasal drip, rhinorrhoea, "
+    "Correct. The general clinical presentation listed includes fever, postnasal drip, rhinorrhea, "
     "sore throat, otalgia, night sweats, weight loss, malaise, dysphagia and hoarseness. Hoarseness "
     "and dysphagia in particular suggest involvement of the upper aerodigestive tract."],
    ["These symptoms indicate a congenital cyst",
@@ -157,7 +157,7 @@ Q("Node description", IO,
   "A clinician documents a cervical node as immobile, firm and non-tender.",
   [["Features that raise concern for malignancy",
     "Correct. The descriptors that matter are size, shape, mobility, consistency and tenderness. "
-    "Immobility suggests fixation to surrounding structures by tumour, firmness suggests solid "
+    "Immobility suggests fixation to surrounding structures by tumor, firmness suggests solid "
     "tissue rather than fluid, and non-tenderness points away from inflammation, which hurts."],
    ["Features typical of an inflammatory node",
     "Inflammatory nodes are tender and usually mobile, because inflammation is painful and does not "
@@ -200,7 +200,7 @@ Q("Neck triangles", IO,
    ["The brachial plexus and subclavian artery",
     "Those are in the supraclavicular triangle of the posterior group, above the middle of the "
     "clavicle, with the pleural cupola deep to them."],
-   ["The thyroid, trachea and oesophagus",
+   ["The thyroid, trachea and esophagus",
     "Those occupy the muscular triangle, between omohyoid above, sternocleidomastoid below and the "
     "midline in front."]], C(6)),
 
@@ -260,12 +260,12 @@ Q("Neck neoplasm presentation", IO,
   "A 66-year-old man has an asymptomatic, slowly progressive, firm neck mass, with hoarseness and "
   "odynophagia.",
   [["A malignant neck neoplasm, most likely metastatic squamous carcinoma",
-    "Correct. Malignant neck tumours are usually metastatic squamous cell carcinoma from skin or "
+    "Correct. Malignant neck tumors are usually metastatic squamous cell carcinoma from skin or "
     "upper aerodigestive tract, and the described pattern is exactly that: asymptomatic lesions that "
     "progress slowly and feel firm, with hoarseness, dysphagia and odynophagia reflecting the "
     "primary site."],
-   ["A benign soft tissue tumour",
-    "Benign tumours arise from fat, salivary tissue, nodes, vessels and nerves and do not produce "
+   ["A benign soft tissue tumor",
+    "Benign tumors arise from fat, salivary tissue, nodes, vessels and nerves and do not produce "
     "hoarseness or odynophagia, which indicate involvement of the aerodigestive tract."],
    ["An infected congenital cyst",
     "An infected cyst is tender and erythematous with systemic features of infection, developing "

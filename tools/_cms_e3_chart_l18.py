@@ -17,13 +17,13 @@ transcribed into the rows rather than lost, per [[image_only_slides]]:
   slide 17  the NECK MASS algorithm -- congenital lateral/midline vs adult
             inflammatory/neoplastic, with the organisms under each
   slide 20  the adult neck-mass evaluation algorithm
-  slide 38  primary neck tumours, malignant against benign, in full
+  slide 38  primary neck tumors, malignant against benign, in full
   slide 43  thyroid cancer staging tables
 
 WHAT IS DELIBERATELY LEFT OUT. Slide 48 is the professor's dog and slide 49 is
 the exit-ticket QR code. Slides 3-10 are anatomy diagrams -- they belong to the
 guide's anatomy section, not to a cell that says "this is what the condition
-looks like". The only clinical photograph in the whole deck is the haemangioma
+looks like". The only clinical photograph in the whole deck is the hemangioma
 on slide 27.
 """
 CONG = "Congenital neck mass"
@@ -61,15 +61,15 @@ ROWS_L18 = [
   "demonstrates its attachment to the hyoid bone. <b>All cysts go for histopathology to exclude "
   "thyroid carcinoma.</b>",
   "Antibiotics if infected. <b>Sistrunk operation</b> is the standard: the cyst is excised with a "
-  "cuff of tissue <b>including the centre of the hyoid bone</b>, taking care not to injure the "
+  "cuff of tissue <b>including the center of the hyoid bone</b>, taking care not to injure the "
   "hypoglossal nerves.",
   "Routine",
   "Taking the middle of the hyoid out is not overtreatment &mdash; leaving it behind is why these "
   "recur.", "23", D18),
 
  ("Laryngocele", CONG,
-  "<b>Hoarseness with dyspnoea</b> &middot; dilation at the level of the <b>false cord</b>",
-  "An abnormal dilation or herniation of the saccule of the larynx. Cough, hoarseness, dyspnoea, "
+  "<b>Hoarseness with dyspnea</b> &middot; dilation at the level of the <b>false cord</b>",
+  "An abnormal dilation or herniation of the saccule of the larynx. Cough, hoarseness, dyspnea, "
   "dysphagia or a foreign body sensation, in any combination. <b>Secondary infection of one is "
   "called a laryngopyocele.</b>",
   "<b>Laryngoscopy</b> shows a smooth dilation at the level of the false cord. <b>Computed "
@@ -95,7 +95,7 @@ ROWS_L18 = [
   "connect to the rest of the lymphatic system. The mass is <b>soft, doughy, smooth, non-tender and "
   "compressible</b>, and <b>transilluminates</b>.",
   "Computed tomography and magnetic resonance imaging confirm the extent and define associated "
-  "abnormalities such as haemangiomas.",
+  "abnormalities such as hemangiomas.",
   "Surgical excision or debulking depending on how far it infiltrates. <b>Sclerotherapy</b> is the "
   "alternative.",
   "Routine",
@@ -145,7 +145,7 @@ ROWS_L18 = [
   "Surgical excision.", "Routine",
   "The histology is the diagnosis; imaging only narrows the list.", "29", D18),
 
- ("Sternocleidomastoid tumour of infancy", CONG,
+ ("Sternocleidomastoid tumor of infancy", CONG,
   "<b>Firm painless mass WITHIN the sternocleidomastoid</b> &middot; related to congenital "
   "<b>torticollis</b>",
   "Related to congenital torticollis. A firm, painless, discrete mass within the sternocleidomastoid "
@@ -173,7 +173,7 @@ ROWS_L18 = [
   "Cervical adenopathy in <b>12&ndash;45%</b> of patients with HIV &middot; the <b>neck is the "
   "commonest site</b>",
   "Cervical adenopathy is present in 12% to 45% of patients with HIV. <b>Idiopathic follicular "
-  "hyperplasia is the commonest cause.</b> Persistent generalised lymphadenopathy &mdash; "
+  "hyperplasia is the commonest cause.</b> Persistent generalized lymphadenopathy &mdash; "
   "lymphadenopathy with no identifiable infectious or neoplastic cause &mdash; is also common, and "
   "the neck is its commonest site.",
   "<b>Rule out <i>Mycobacterium tuberculosis</i>, <i>Pneumocystis carinii</i>, lymphoma and Kaposi "
@@ -184,7 +184,7 @@ ROWS_L18 = [
  ("Suppurative bacterial lymphadenopathy", INFL,
   "<b>Submandibular or jugulodigastric</b> &middot; with sore throat, skin lesions and upper "
   "respiratory symptoms",
-  "Most commonly <b><i>Staphylococcus aureus</i> and group A beta-haemolytic <i>Streptococcus</i></b>. "
+  "Most commonly <b><i>Staphylococcus aureus</i> and group A beta-hemolytic <i>Streptococcus</i></b>. "
   "Masses develop in the submandibular or jugulodigastric regions, with sore throat, skin lesions and "
   "upper respiratory symptoms.",
   "Clinical; culture if aspirated.",
@@ -193,12 +193,12 @@ ROWS_L18 = [
   "Urgent", "Failure of antibiotics is the trigger to drain, not the starting point.", "33", D18),
 
  ("Toxoplasmosis", INFL,
-  "<b>Undercooked meat or cat faeces</b> &middot; fever, malaise, sore throat, myalgias",
+  "<b>Undercooked meat or cat feces</b> &middot; fever, malaise, sore throat, myalgias",
   "<i>Toxoplasma gondii</i>, contracted through poorly cooked meat or ingestion of oocytes in cat "
-  "faeces. Fever, malaise, sore throat and myalgias with the adenopathy.",
+  "feces. Fever, malaise, sore throat and myalgias with the adenopathy.",
   "<b>Serologic testing.</b>",
   "<b>Sulfonamides or pyrimethamine.</b>", "Routine",
-  "One of four exposure histories on the same slide &mdash; cat faeces here, cat scratch for "
+  "One of four exposure histories on the same slide &mdash; cat feces here, cat scratch for "
   "<i>Bartonella</i>.", "33", D18),
 
  ("Tularemia", INFL,
@@ -210,12 +210,12 @@ ROWS_L18 = [
   "The exposure history is the question: rabbits and ticks.", "33", D18),
 
  ("Brucellosis", INFL,
-  "<b>Unpasteurised milk</b> &middot; <b>total body</b> lymphadenopathy",
-  "<i>Brucella</i>, transmitted by ingestion of unpasteurised milk, most commonly in children. "
+  "<b>Unpasteurized milk</b> &middot; <b>total body</b> lymphadenopathy",
+  "<i>Brucella</i>, transmitted by ingestion of unpasteurized milk, most commonly in children. "
   "Total body lymphadenopathy with fever, fatigue and malaise.",
   "Serology and cultures.",
   "<b>Trimethoprim-sulfamethoxazole or tetracycline.</b>", "Routine",
-  "Generalised rather than regional adenopathy is what sets it apart from the others on this slide.",
+  "Generalized rather than regional adenopathy is what sets it apart from the others on this slide.",
   "33", D18),
 
  ("Cat scratch disease", INFL,
@@ -237,11 +237,11 @@ ROWS_L18 = [
  ("Atypical mycobacteria", INFL,
   "<b>Children</b> &middot; <b>UNILATERAL</b> &middot; <b>brawny reddish-brown skin</b> over the "
   "mass",
-  "A paediatric infection. A unilateral neck mass in the anterior triangle or the parotid gland, with "
+  "A pediatric infection. A unilateral neck mass in the anterior triangle or the parotid gland, with "
   "<b>brawny (reddish-brown) skin</b>, induration and pain.",
   "Stain or culture for <b>acid-fast bacilli</b>, plus skin testing.",
   "<b>Surgical excision</b>, or incision and drainage with antibiotics.", "Urgent",
-  "Unilateral and paediatric here; tuberculous adenitis is more diffuse and bilateral.", "34", D18),
+  "Unilateral and pediatric here; tuberculous adenitis is more diffuse and bilateral.", "34", D18),
 
  ("Tuberculous adenitis (scrofula)", INFL,
   "<b>Adults more than children</b> &middot; <b>DIFFUSE and BILATERAL</b>",
@@ -267,12 +267,12 @@ ROWS_L18 = [
  ("Neck neoplasm &mdash; general", NECK,
   "<b>Presume any new neck mass is MALIGNANT until proven otherwise</b> &middot; firm, slowly "
   "progressive, asymptomatic",
-  "Benign tumours arise from the soft tissue of the neck &mdash; fat, salivary tissue, lymph nodes, "
+  "Benign tumors arise from the soft tissue of the neck &mdash; fat, salivary tissue, lymph nodes, "
   "blood vessels, nerves. Malignant ones are usually <b>metastatic squamous cell carcinoma</b> from "
   "skin or the upper aerodigestive tract. Hoarseness, dysphagia and odynophagia are the symptoms; the "
   "lesion itself is asymptomatic, slowly progressive and firm.",
   "Complete head and neck examination, then <b>fine needle aspiration biopsy rather than excisional "
-  "biopsy</b> &mdash; excision spills tumour and complicates definitive treatment. Fiberoptic "
+  "biopsy</b> &mdash; excision spills tumor and complicates definitive treatment. Fiberoptic "
   "laryngoscopy for an occult primary; ultrasound, contrast computed tomography, magnetic resonance "
   "imaging, positron emission tomography.",
   "Directed by the primary once it is found. Once the diagnosis is confirmed, <b>all mucosal "
@@ -283,16 +283,16 @@ ROWS_L18 = [
   "<b>size over 1.5&nbsp;cm</b>, firm and non-tender with little mobility, <b>age over 40</b>, "
   "tobacco and alcohol, and ulceration.", "37, 39", D18),
 
- ("Primary neck tumours &mdash; the list", NECK,
+ ("Primary neck tumors &mdash; the list", NECK,
   "<b>Slide 38 is a picture of a table</b> &middot; malignant against benign, primary in the neck",
   "<b>Malignant:</b> sarcomas (rhabdomyosarcoma, fibrosarcoma, malignant fibrous histiocytoma, "
-  "liposarcoma, leiomyosarcoma); malignant peripheral nerve sheath tumours; lymphoma; and metastasis "
+  "liposarcoma, leiomyosarcoma); malignant peripheral nerve sheath tumors; lymphoma; and metastasis "
   "&mdash; mucosal cancer from head and neck, salivary malignancies, skin malignancies. "
   "<b>Benign:</b> vascular neoplasms, chiefly <b>paragangliomas (carotid body, vagal, "
   "jugulotympanic)</b>; arteriovenous malformations; peripheral nerve neoplasms (schwannomas, "
   "neurofibromas, neuromas); and lipomas.",
   "As for any neck neoplasm &mdash; fine needle aspiration first.",
-  "By tumour type.", "Emergent",
+  "By tumor type.", "Emergent",
   "A pulsatile mass or a bruit means vascular, and paraganglioma heads that list.", "38", D18),
 
  ("Thyroid nodule and mass", THY,
@@ -320,7 +320,7 @@ ROWS_L18 = [
   "Involves thyroid epithelial cells.",
   "Fine needle aspiration.",
   "Lobectomy or thyroidectomy, with or without neck dissection, ablation and surveillance. Almost "
-  "all thyroid cancers need thyroidectomy, except a well-differentiated cancer localised to one lobe "
+  "all thyroid cancers need thyroidectomy, except a well-differentiated cancer localized to one lobe "
   "with no metastasis.",
   "Urgent", "Commonest and kindest &mdash; the pairing is the exam point.", "42, 44", D18),
 
@@ -331,7 +331,7 @@ ROWS_L18 = [
   "a higher risk of metastases and recurrence.",
   "Fine needle aspiration.",
   "As for papillary: lobectomy or thyroidectomy with or without neck dissection and ablation.",
-  "Urgent", "Haematogenous spread is what separates it from papillary.", "42, 44", D18),
+  "Urgent", "Hematogenous spread is what separates it from papillary.", "42, 44", D18),
 
  ("Medullary thyroid carcinoma", THY,
   "<b>About 5%</b> &middot; <b>parafollicular C cells</b> &middot; <b>calcitonin</b> &middot; "
@@ -356,7 +356,7 @@ ROWS_L18 = [
 
  ("Primary thyroid lymphoma", THY,
   "Associated with <b>Hashimoto thyroiditis</b> &middot; non-Hodgkin <b>B cell</b>",
-  "Most commonly non-Hodgkin B cell tumours, associated with Hashimoto thyroiditis.",
+  "Most commonly non-Hodgkin B cell tumors, associated with Hashimoto thyroiditis.",
   "<b>Fine needle aspiration alone cannot separate lymphoma from Hashimoto</b> &mdash; a biopsy is "
   "needed to confirm, along with lymphoma staging.",
   "<b>Chemotherapy and radiation</b> &mdash; not primarily surgical, unlike the carcinomas above.",
@@ -375,20 +375,20 @@ DIFF_L18 = {
  "Teratoma": ("No", "Any; noted at birth", "Firm, with <b>calcifications</b> on imaging"),
  "Dermoid cyst": ("No &mdash; non-tender", "<b>Midline</b> submental", "Mobile midline mass that does NOT move with the tongue"),
  "Thymic cyst": ("Only if infected", "Lower anterior neck", "<b>Hassall corpuscles</b> on biopsy"),
- "Sternocleidomastoid tumour of infancy": ("No &mdash; painless", "<b>Within the sternocleidomastoid</b>", "Firm discrete mass with congenital torticollis"),
+ "Sternocleidomastoid tumor of infancy": ("No &mdash; painless", "<b>Within the sternocleidomastoid</b>", "Firm discrete mass with congenital torticollis"),
  "Reactive viral lymphadenopathy": ("Mild", "Cervical nodes, children", "Regresses in 1&ndash;2 weeks with an upper respiratory infection"),
  "HIV-associated cervical adenopathy": ("No", "Neck is the commonest site", "Follicular hyperplasia after tuberculosis and lymphoma are excluded"),
  "Suppurative bacterial lymphadenopathy": ("Yes", "<b>Submandibular or jugulodigastric</b>", "Sore throat and skin lesions with the node"),
- "Toxoplasmosis": ("Varies", "Cervical nodes", "<b>Undercooked meat or cat faeces</b> in the history"),
+ "Toxoplasmosis": ("Varies", "Cervical nodes", "<b>Undercooked meat or cat feces</b> in the history"),
  "Tularemia": ("Yes &mdash; painful adenopathy", "Cervical nodes", "<b>Rabbits, ticks or contaminated water</b>, with tonsillitis"),
- "Brucellosis": ("No", "<b>Total body</b>, not just neck", "<b>Unpasteurised milk</b>"),
+ "Brucellosis": ("No", "<b>Total body</b>, not just neck", "<b>Unpasteurized milk</b>"),
  "Cat scratch disease": ("Varies", "<b>Preauricular and submandibular</b>", "<b>Cat contact</b>, patient under 20"),
  "Actinomycosis": ("No &mdash; painless", "Submandibular or upper digastric", "Painless and <b>fluctuant</b>"),
  "Atypical mycobacteria": ("Yes", "<b>Unilateral</b>, anterior triangle or parotid", "<b>Brawny reddish-brown skin</b> over it, in a child"),
  "Tuberculous adenitis (scrofula)": ("Varies", "<b>Bilateral and diffuse</b>", "Adults more than children; acid-fast bacilli"),
  "Fungal neck infection": ("Varies", "Cervical nodes", "Immunocompromised host; fungal culture and serology"),
  "Neck neoplasm &mdash; general": ("No &mdash; asymptomatic", "Cervical nodes, often jugulodigastric", "<b>Firm, immobile, over 1.5&nbsp;cm, present over 2 weeks</b>"),
- "Primary neck tumours &mdash; the list": ("Varies", "Neck soft tissue", "Pulsatile or bruit means <b>paraganglioma</b>"),
+ "Primary neck tumors &mdash; the list": ("Varies", "Neck soft tissue", "Pulsatile or bruit means <b>paraganglioma</b>"),
  "Thyroid nodule and mass": ("No", "<b>Midline</b> anterior neck", "<b>Elevates with swallowing</b>; hot nodule needs no biopsy"),
  "Papillary thyroid carcinoma": ("No", "Thyroid", "Commonest at 75%, best prognosis, young women"),
  "Follicular thyroid carcinoma": ("No", "Thyroid", "Spreads <b>by blood to bone and lung</b>"),

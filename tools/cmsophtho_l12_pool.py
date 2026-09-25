@@ -28,7 +28,7 @@ Q("Central retinal artery occlusion", IO,
                                         "'boxcar' columns in the retinal vessels."],
    ["Acute angle-closure glaucoma", "Painful, with nausea and vomiting, a hazy cornea and a "
                                     "markedly raised pressure — none of which is present."],
-   ["Subconjunctival haemorrhage", "A painless red patch on the surface that does not affect "
+   ["Subconjunctival hemorrhage", "A painless red patch on the surface that does not affect "
                                    "vision at all."],
    ["Retinal detachment", "Painless, but preceded by floaters and flashes with a curtain across "
                           "the field rather than instant total loss."]],
@@ -39,7 +39,7 @@ Q("Central retinal artery occlusion", IO,
   "retina with a cherry-red spot at the macula. What does the cherry-red spot represent?",
   [["The intact choroidal circulation showing through the thin fovea",
     "Correct. The surrounding retina is pale from infarction; the fovea has no inner retinal "
-    "layers to become oedematous."],
+    "layers to become edematous."],
    ["A macular hole", "A structural defect, which is not what produces this appearance."],
    ["Retinal pigment epithelium atrophy", "That is a chronic degenerative change."],
    ["Subretinal fluid at the macula", "That would blur rather than sharply define the fovea."]],
@@ -60,7 +60,7 @@ Q("Amaurosis fugax", IO,
   "A 69-year-old man describes a curtain descending over the vision of his right eye, lasting "
   "about five minutes, with complete recovery. He has hypertension and smokes. Examination between "
   "episodes is normal. What is the most appropriate next step?",
-  [["Carotid imaging and urgent stroke workup", "Correct. It is a transient ischaemic attack of "
+  [["Carotid imaging and urgent stroke workup", "Correct. It is a transient ischemic attack of "
                                                 "the eye and carries the same stroke risk."],
    ["Reassurance, as vision has recovered", "Recovery is the feature that makes it a warning "
                                             "rather than an endpoint."],
@@ -120,7 +120,7 @@ Q("Chronic open-angle glaucoma", IO,
 Q("Chronic open-angle glaucoma", IO,
   "A 58-year-old woman with newly diagnosed open-angle glaucoma is started on treatment. Which "
   "class is first line?",
-  [["A prostaglandin analogue", "Correct. Prostaglandins or beta blockers lead; cholinergic agents "
+  [["A prostaglandin analog", "Correct. Prostaglandins or beta blockers lead; cholinergic agents "
                                 "are third or fourth line."],
    ["A cholinergic agonist", "Causes miosis and blocks accommodation, which is why it is reserved "
                              "for later lines."],
@@ -130,7 +130,7 @@ Q("Chronic open-angle glaucoma", IO,
 
 Q("Optic neuritis", IO,
   "A 28-year-old woman has blurring of vision in the right eye over two days with pain on eye "
-  "movement. Colour appears washed out. Examination shows a relative afferent pupillary defect on "
+  "movement. Color appears washed out. Examination shows a relative afferent pupillary defect on "
   "the right and a normal-looking optic disc. What is the most likely diagnosis?",
   [["Optic neuritis", "Correct. Pain on eye movement, dyschromatopsia and a relative afferent "
                       "pupillary defect, and optic neuritis is among the causes of that defect."],
@@ -146,7 +146,7 @@ Q("Optic neuritis", IO,
   "association should be discussed?",
   [["Multiple sclerosis", "Correct. It is a common presenting feature, and imaging looks for "
                           "demyelinating lesions."],
-   ["Giant cell arteritis", "That causes arteritic ischaemic optic neuropathy in older patients."],
+   ["Giant cell arteritis", "That causes arteritic ischemic optic neuropathy in older patients."],
    ["Hypertension", "Associated with retinal vascular disease rather than optic neuritis."],
    ["Thyroid eye disease", "Causes proptosis and restrictive myopathy."]],
   "two-step", D, 23),
@@ -157,10 +157,10 @@ Q("Retinal detachment", IO,
   "no pain. What is the most likely diagnosis?",
   [["Retinal detachment", "Correct. Floaters and flashes followed by a painless curtain across the "
                           "field, in a myopic patient."],
-   ["Central retinal vein occlusion", "Sudden painless loss with widespread haemorrhages, not a "
+   ["Central retinal vein occlusion", "Sudden painless loss with widespread hemorrhages, not a "
                                       "progressive curtain preceded by flashes."],
-   ["Optic neuritis", "Pain on eye movement with colour desaturation."],
-   ["Vitreous haemorrhage", "Can cause floaters, but the advancing curtain with flashes points to "
+   ["Optic neuritis", "Pain on eye movement with color desaturation."],
+   ["Vitreous hemorrhage", "Can cause floaters, but the advancing curtain with flashes points to "
                             "detachment."]],
   "diagnosis", D, 26),
 
@@ -177,24 +177,24 @@ Q("Retinal detachment", IO,
 
 Q("Central retinal vein occlusion", IO,
   "A 67-year-old hypertensive man has sudden painless blurring of the right eye. Fundoscopy shows "
-  "widespread retinal haemorrhages in all four quadrants with dilated tortuous veins and disc "
+  "widespread retinal hemorrhages in all four quadrants with dilated tortuous veins and disc "
   "swelling. What is the most likely diagnosis?",
-  [["Central retinal vein occlusion", "Correct. The 'blood and thunder' fundus — haemorrhages in "
+  [["Central retinal vein occlusion", "Correct. The 'blood and thunder' fundus — hemorrhages in "
                                       "every quadrant with engorged veins."],
    ["Central retinal artery occlusion", "A PALE retina with a cherry-red spot and boxcarring, not "
-                                        "widespread haemorrhage."],
-   ["Branch retinal vein occlusion", "Haemorrhages follow ONE vein's distribution rather than all "
+                                        "widespread hemorrhage."],
+   ["Branch retinal vein occlusion", "Hemorrhages follow ONE vein's distribution rather than all "
                                      "four quadrants."],
-   ["Papilledema", "Bilateral disc swelling without this haemorrhage pattern."]],
+   ["Papilledema", "Bilateral disc swelling without this hemorrhage pattern."]],
   "diagnosis", D, 32),
 
 Q("Branch retinal vein occlusion", IO,
   "A 63-year-old woman has painless loss of part of her upper visual field. Fundoscopy shows "
-  "haemorrhages confined to a wedge of retina below the macula, stopping at the horizontal raphe. "
+  "hemorrhages confined to a wedge of retina below the macula, stopping at the horizontal raphe. "
   "What is the most likely diagnosis?",
   [["Branch retinal vein occlusion", "Correct. The changes respect the territory of a single "
                                      "branch vein."],
-   ["Central retinal vein occlusion", "Haemorrhages would involve all four quadrants."],
+   ["Central retinal vein occlusion", "Hemorrhages would involve all four quadrants."],
    ["Retinal detachment", "Preceded by floaters and flashes, with an elevated retina."],
    ["Optic neuritis", "Painful on movement with an afferent pupillary defect."]],
   "diagnosis", D, 35),
@@ -218,19 +218,19 @@ Q("Arteritic AION", IO,
   [["The fellow eye can be lost within days", "Correct."],
    ["The biopsy becomes negative after treatment starts",
     "Biopsy remains informative for a period after steroids begin."],
-   ["The erythrocyte sedimentation rate will normalise and obscure the diagnosis",
+   ["The erythrocyte sedimentation rate will normalize and obscure the diagnosis",
     "The rate does fall, but the reason for urgency is the second eye."],
    ["The vision in the affected eye will return", "Vision already lost usually does not recover."]],
   "two-step", D, 51),
 
 Q("Non-arteritic AION", IO,
-  "A 59-year-old man with hypertension and sleep apnoea wakes with painless loss of the lower half "
+  "A 59-year-old man with hypertension and sleep apnea wakes with painless loss of the lower half "
   "of the visual field in one eye. There is no scalp tenderness or jaw claudication, and the "
   "inflammatory markers are normal. What is the most likely diagnosis?",
-  [["Non-arteritic anterior ischaemic optic neuropathy",
+  [["Non-arteritic anterior ischemic optic neuropathy",
     "Correct. Altitudinal field loss on waking, with normal inflammatory markers and no arteritic "
     "symptoms."],
-   ["Arteritic anterior ischaemic optic neuropathy",
+   ["Arteritic anterior ischemic optic neuropathy",
     "Would carry scalp tenderness, jaw claudication and a raised sedimentation rate."],
    ["Optic neuritis", "Painful on eye movement and typically in a younger patient."],
    ["Central retinal artery occlusion", "Produces total rather than altitudinal loss, with a pale "

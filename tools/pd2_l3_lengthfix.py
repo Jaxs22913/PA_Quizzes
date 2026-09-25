@@ -63,7 +63,7 @@ FIXES = {
  (96, 2): "Multiple sclerosis, optic neuritis and demyelinating disease",
  (98, 2): "Horner syndrome, myasthenia gravis and Graves disease",
  (99, 3): "A large slow pupil with reduced light reaction and a slow near reaction",
- (100, 1): "The parasympathetic supply travelling through the ciliary ganglion",
+ (100, 1): "The parasympathetic supply traveling through the ciliary ganglion",
  (101, 1): "The involved iris is darker in color than its fellow",
  (102, 1): "A small pupil that reacts briskly, with ptosis and anhidrosis",
  (103, 1): "Corneal clarity — a shadow means an epithelial defect is present",

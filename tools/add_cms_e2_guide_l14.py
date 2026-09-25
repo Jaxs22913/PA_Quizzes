@@ -13,7 +13,7 @@ that a visual subject gets photographs in the guide.
 EVERY PICTURE HERE COMES FROM A SLIDE WHOSE NOTES LABEL IT BY POSITION, and the
 notes in this deck do not map to slides by index. Four assignments were checked
 by eye against the notes' own labels before any caption was written:
-  slide 45 pos1 haemotympanum, pos3 Battle sign, pos6 Battle sign
+  slide 45 pos1 hemotympanum, pos3 Battle sign, pos6 Battle sign
   slide 42 pos2 inferior rectus entrapment limiting upward gaze
 All four matched, which is what licenses trusting the rest of the reading-order
 mapping. Slide 45's notes say "Top right: battle sign" twice; both right-hand
@@ -52,8 +52,8 @@ FIGS = {
    ("l14-s029_pos1.jpg", "Lid laceration",
     "Look underneath &mdash; two thirds of full-thickness cuts have a globe injury with them", 29),
    ("l14-s032_pos1.jpg", "Orbital contusion",
-    "Swelling held in front of the septum, without haemorrhage", 32),
-   ("l14-s034_pos1.jpg", "Periorbital haematoma",
+    "Swelling held in front of the septum, without hemorrhage", 32),
+   ("l14-s034_pos1.jpg", "Periorbital hematoma",
     "Bleeding behind the septum, within the bony orbit", 34)],
  "@@DETACH@@": [
    ("l14-s037_pos2.jpg", "Posterior vitreous detachment",
@@ -62,7 +62,7 @@ FIGS = {
     "The detached retina as a bright membrane tethered in the vitreous cavity", 38)],
  "@@FRACTURE@@": [
    ("l14-s042_pos1.jpg", "Orbital floor fracture",
-    "Periorbital ecchymosis and lid oedema after blunt force", 42),
+    "Periorbital ecchymosis and lid edema after blunt force", 42),
    ("l14-s042_pos2.jpg", "Inferior rectus entrapment",
     "The right eye fails to elevate on upward gaze &mdash; diplopia looking up", 42),
    ("l14-s042_pos4.jpg", "Medial wall fracture",
@@ -75,7 +75,7 @@ FIGS = {
    ("l14-s045_pos3.jpg", "Battle sign",
     "Retroauricular ecchymosis over the mastoid", 45),
    ("l14-s046_pos1.jpg", "Halo (double ring) sign",
-    "Otorrhoea on a bedsheet: inner ring of blood, outer ring of cerebrospinal fluid", 46)],
+    "Otorrhea on a bedsheet: inner ring of blood, outer ring of cerebrospinal fluid", 46)],
 }
 
 

@@ -43,10 +43,10 @@ Q("Adult inclusion conjunctivitis", IO,
 Q("Neonatal chlamydial conjunctivitis", IO,
   "A 9-day-old infant has bilateral lid swelling with a watery-to-mucopurulent discharge. Gonococcal "
   "disease has been excluded. What is the most appropriate treatment?",
-  [["Oral erythromycin", "Correct. Systemic treatment is needed because chlamydia also colonises "
+  [["Oral erythromycin", "Correct. Systemic treatment is needed because chlamydia also colonizes "
                          "the nasopharynx and risks pneumonitis."],
    ["Topical erythromycin ointment alone", "Topical treatment leaves the nasopharyngeal "
-                                           "colonisation untreated."],
+                                           "colonization untreated."],
    ["A single dose of intramuscular ceftriaxone", "That is the gonococcal pathway, already "
                                                   "excluded."],
    ["Observation, as neonatal conjunctivitis is self-limiting",
@@ -70,7 +70,7 @@ Q("Autoimmune conjunctivitis", IO,
   [["Ocular mucous membrane pemphigoid", "Correct. Progressive subconjunctival fibrosis with "
                                          "mucosal involvement elsewhere."],
    ["Bacterial conjunctivitis", "Acute and purulent, and it does not scar the conjunctiva."],
-   ["Allergic conjunctivitis", "Itchy and episodic, without cicatrisation."],
+   ["Allergic conjunctivitis", "Itchy and episodic, without cicatrization."],
    ["Trachoma", "Also cicatricial, but follows chronic chlamydial infection in an endemic area "
                 "rather than accompanying oral erosions."]],
   "diagnosis", D, 38),
@@ -94,7 +94,7 @@ Q("Keratitis", IO,
                                              "from punctate disease, and each is treated "
                                              "differently."],
    ["Dilated fundus examination", "The pathology here is corneal, not retinal."],
-   ["Colour vision testing", "Assesses optic nerve function."],
+   ["Color vision testing", "Assesses optic nerve function."],
    ["Tonometry alone", "Pressure does not identify the corneal lesion."]],
   "two-step", D, 56),
 
@@ -236,7 +236,7 @@ Q("Dacryoadenitis", IO,
     "Correct — empiric oral antibiotics for 24 hours with reassessment is the alternative path."],
    ["Steroids raise intraocular pressure within hours",
     "A real effect over time, but not the reason for the caution here."],
-   ["Steroids would mask a lacrimal sac tumour",
+   ["Steroids would mask a lacrimal sac tumor",
     "The concern is masking or worsening infection."],
    ["Steroids are contraindicated in all lid disease", "They are used for inflammatory disease."]],
   "two-step", D, 23),
@@ -265,12 +265,12 @@ Q("Pterygium", IO,
    ["Reassure, as pterygia never affect vision", "This one already has."]],
   "treatment", D, 28),
 
-Q("Subconjunctival haemorrhage", IO,
-  "A 58-year-old woman has had three subconjunctival haemorrhages in six months. She takes no "
+Q("Subconjunctival hemorrhage", IO,
+  "A 58-year-old woman has had three subconjunctival hemorrhages in six months. She takes no "
   "anticoagulants. What is the appropriate approach?",
-  [["Medication review, blood pressure check and targeted haematologic evaluation",
-    "Correct — targeted rather than an automatic haematology referral."],
-   ["Automatic referral to haematology", "An automatic referral overshoots; the "
+  [["Medication review, blood pressure check and targeted hematologic evaluation",
+    "Correct — targeted rather than an automatic hematology referral."],
+   ["Automatic referral to hematology", "An automatic referral overshoots; the "
                                          "evaluation should be targeted."],
    ["Reassurance with no investigation", "Recurrence without a culprit warrants some evaluation."],
    ["Start topical corticosteroids", "There is no inflammation to treat."]],

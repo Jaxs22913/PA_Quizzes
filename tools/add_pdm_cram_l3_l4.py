@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Add the Lecture 3 and Lecture 4 topics to the PDM I Exam 1 cram sheet.
 
-Same colour-coded topic/table structure as build_pdm_cram.py: the guide carries
+Same color-coded topic/table structure as build_pdm_cram.py: the guide carries
 the explanation, this carries only what has to be recallable cold.
 
 Lecture 4's three disputed reference ranges get their OWN row rather than being
@@ -24,9 +24,9 @@ TOPICS = [
    ("KOH procedure numbers", "20% potassium hydroxide, ONE drop. Survey at 10× with the CONDENSER LOWERED to reduce illumination (that is what makes epithelial cells visible), then 40× for anything suspicious. Blot excess with GAUZE. Sensitivity depends on ADEQUATE SCRAPING."),
    ("Biopsy techniques", "SHAVE: raised epidermal lesions, basal and squamous cell carcinoma, superficial rashes. PUNCH: FULL-THICKNESS, inflammatory rashes and small lesions. EXCISIONAL: entire lesion, PREFERRED FOR SUSPECTED MELANOMA."),
    ("THE MELANOMA RULE — she said it three times", "NARROW EXCISIONAL BIOPSY, 1–3 mm MARGINS, to a depth that AVOIDS TRANSECTING THE BASE so BRESLOW DEPTH can be measured. NOT a shave. NOT a punch. Acceptable excisional methods: fusiform/elliptical, punch, deep shave/saucerization — ALL must go BELOW the lesion."),
-   ("1–3 mm vs 0.5–2 cm — do not mix these up", "1–3 MILLIMETRES is the DIAGNOSTIC biopsy margin here in PDM. 0.5–2 CENTIMETRES is the definitive RE-EXCISION margin in CMS I Lecture 9. Different procedure, different purpose."),
+   ("1–3 mm vs 0.5–2 cm — do not mix these up", "1–3 MILLIMETERS is the DIAGNOSTIC biopsy margin here in PDM. 0.5–2 CENTIMETERS is the definitive RE-EXCISION margin in CMS I Lecture 9. Different procedure, different purpose."),
    ("When a partial shave is allowed", "ONLY WHEN SUSPICION IS LOW — and it MAY UNDERESTIMATE BRESLOW DEPTH. Facial, acral and very large lesions are named here."),
-   ("Breslow / T categories", "Tis = IN SITU. T1 ≤1 mm. T2 >1 to 2 mm. T3 >2 to 4 mm. T4 >4 mm. T is DEPTH IN MILLIMETRES, not width."),
+   ("Breslow / T categories", "Tis = IN SITU. T1 ≤1 mm. T2 >1 to 2 mm. T3 >2 to 4 mm. T4 >4 mm. T is DEPTH IN MILLIMETERS, not width."),
    ("Biopsy limitations", "SAMPLING ERROR, and procedural risks of BLEEDING, SCARRING, INFECTION. She added: THE TECHNIQUE ITSELF DETERMINES HOW EASILY THE SPECIMEN CAN BE EVALUATED."),
  ]),
  ("l3-soft-tissue", "Soft Tissue Infection, Cultures & the Red Flag", "#8a3f2c", "#f4e5df", "#faf2ef", "#6b3020", [
@@ -36,7 +36,7 @@ TOPICS = [
    ("Skin/wound culture indications", "PURULENT LESIONS — pus from abscesses, carbuncles, furuncles. Empiric treatment WITHOUT culture is reasonable in TYPICALLY PRESENTING, UNCOMPLICATED cases. DO NOT CULTURE AN INFLAMED EPIDERMOID CYST."),
    ("Culture a chronic wound when", "IMMUNOCOMPROMISED · MRSA SUSPECTED · TREATMENT FAILURE."),
    ("THE LEVINE METHOD", "Clean with STERILE WATER OR SALINE, NOT AN ANTIMICROBIAL. Identify 1–2 cm of CLEAN wound tissue. ROTATE the applicator FIVE SECONDS with enough pressure to EXPRESS FLUID. DO NOT sample EXUDATE, ESCHAR or NECROTIC MATERIAL."),
-   ("Culture: advantage vs limits", "ADVANTAGE: organism identification PLUS SUSCEPTIBILITIES. LIMITS: superficial swabs prone to CONTAMINATION AND COLONISATION, may NOT correlate with deep infection. Complex wounds (diabetic foot, pressure ulcers) → DEEPER TISSUE BIOPSY OR ASPIRATE gives higher yield."),
+   ("Culture: advantage vs limits", "ADVANTAGE: organism identification PLUS SUSCEPTIBILITIES. LIMITS: superficial swabs prone to CONTAMINATION AND COLONIZATION, may NOT correlate with deep infection. Complex wounds (diabetic foot, pressure ulcers) → DEEPER TISSUE BIOPSY OR ASPIRATE gives higher yield."),
  ]),
  ("l3-eye", "The Four Ophthalmic Tests", "#3a4f8a", "#e1e6f2", "#f0f2f8", "#2c3d6e", [
    ("VVEEPP", "VISUAL ACUITY · VISUAL FIELDS · EXTERNAL EXAM · EXTRAOCULAR MOVEMENTS · PUPILS · PRESSURE."),
@@ -60,9 +60,9 @@ TOPICS = [
    ("_skip_ — she said she will NOT ask this", "The ANIMAL HEARING RANGES figure. Verbatim at 1:00:43: “I’m not going to ask you to be like, what is the range of the killer whale.” It is there to show how wide human hearing is, nothing more."),
  ]),
  ("l3-imaging", "Head & Neck Imaging", "#2e6b78", "#dfeef0", "#eff7f8", "#22525c", [
-   ("CT vs MRI — the two pearls", "THINK CT FOR BONE, TRAUMA AND SPEED. THINK MRI FOR SOFT TISSUE, NERVES, AND TUMOUR OR INTRACRANIAL EXTENSION."),
-   ("Contrast CT strengths", "FIRST-LINE FOR MOST ACUTE HEAD AND NECK INFECTIONS. Shows ABSCESS, OEDEMA, GAS, BONE EROSION. Strengths: calcification/bone, sinuses, ACUTE TRAUMA and ORBITAL FRACTURES, FOREIGN BODIES, and the UNSTABLE OR CLAUSTROPHOBIC patient."),
-   ("MRI strengths", "SUPERIOR SOFT-TISSUE CONTRAST, NO IONIZING RADIATION, INTRACRANIAL/ORBITAL EXTENSION, PERINEURAL SPREAD, SKULL BASE, TUMOURS."),
+   ("CT vs MRI — the two pearls", "THINK CT FOR BONE, TRAUMA AND SPEED. THINK MRI FOR SOFT TISSUE, NERVES, AND TUMOR OR INTRACRANIAL EXTENSION."),
+   ("Contrast CT strengths", "FIRST-LINE FOR MOST ACUTE HEAD AND NECK INFECTIONS. Shows ABSCESS, EDEMA, GAS, BONE EROSION. Strengths: calcification/bone, sinuses, ACUTE TRAUMA and ORBITAL FRACTURES, FOREIGN BODIES, and the UNSTABLE OR CLAUSTROPHOBIC patient."),
+   ("MRI strengths", "SUPERIOR SOFT-TISSUE CONTRAST, NO IONIZING RADIATION, INTRACRANIAL/ORBITAL EXTENSION, PERINEURAL SPREAD, SKULL BASE, TUMORS."),
    ("NO IMAGING NEEDED", "UNCOMPLICATED ACUTE RHINOSINUSITIS · OTITIS · SIMPLE SOFT-TISSUE INFECTIONS."),
    ("Emergency imaging triggers", "FACIAL SWELLING · PROPTOSIS · EYE SIGNS · NEURO SIGNS → contrast CT of SINUSES AND ORBITS. Also complicated sinusitis or orbital cellulitis."),
    ("Neck mass vs deep neck infection", "NECK MASS → ULTRASOUND FIRST (superficial/cystic vs solid, size, VASCULARITY on Doppler). DEEP NECK INFECTION → CONTRAST CT NECK, and the deck says ULTRASOUND IS NOT HELPFUL. Do not swap these."),
@@ -73,7 +73,7 @@ TOPICS = [
    ("Blow-out vs tripod fracture", "BLOW-OUT: air in the orbit (ORBITAL EMPHYSEMA), fracture of the ORBITAL FLOOR, soft tissue extending into the TOP OF THE MAXILLARY SINUS. TRIPOD: DIASTASIS OF THE FRONTOZYGOMATIC SUTURE + orbital floor fracture with emphysema + fracture through the LATERAL WALL of the maxillary sinus (filled with blood)."),
  ]),
  ("l4-cbc-wbc", "CBC Components & the White Cell Lines", "#8a5a1f", "#f2e8d8", "#f9f4ec", "#6b4515", [
-   ("★ THE DECK DISAGREES WITH ITSELF — 3 values", "LYMPHOCYTES: reference table 25–33%, teaching slide 24–44%. PLATELETS: table 150,000–400,000, slide 150,000–450,000. RDW: table 11–15%, slide 12–15%. A FOURTH set is on the labelled smear (slide 15) and matches neither. Everything else agrees across both."),
+   ("★ THE DECK DISAGREES WITH ITSELF — 3 values", "LYMPHOCYTES: reference table 25–33%, teaching slide 24–44%. PLATELETS: table 150,000–400,000, slide 150,000–450,000. RDW: table 11–15%, slide 12–15%. A FOURTH set is on the labeled smear (slide 15) and matches neither. Everything else agrees across both."),
    ("With vs without differential", "WITHOUT: red cell count, red cell indices, TOTAL white count, platelets — for SCREENING/MONITORING anemia, leukocytosis/leukopenia, thrombocytopenia. WITH: adds NEUTROPHILS, LYMPHOCYTES, MONOCYTES, EOSINOPHILS, BASOPHILS — when the SPECIFIC LINE matters."),
    ("Which line for which problem", "BACTERIAL → NEUTROPHILS. VIRAL → LYMPHOCYTES. ALLERGY/PARASITES → EOSINOPHILS."),
    ("White cell count", "NORMAL 4,500–11,000 cells/μL. LEUKOPENIA below, LEUKOCYTOSIS above."),
@@ -113,7 +113,7 @@ TOPICS = [
    ("Basophilic stippling", "BLUE-BLACK dots of RIBOSOMAL RNA, EVENLY DISTRIBUTED through the cytoplasm → LEAD POISONING. The even distribution is the discriminator."),
    ("Howell-Jolly body", "A SINGLE dot-like DARK PURPLE RESIDUAL NUCLEAR FRAGMENT → POST SPLENECTOMY. Normally REMOVED BY THE SPLEEN, so finding one means SPLENIC DYSFUNCTION OR ASPLENIA. Target cells appear in the same field."),
    ("★ HEINZ BODIES — the easiest thing to miss", "DENATURED HEMOGLOBIN at the PERIPHERY of the cell → G6PD DEFICIENCY. THEY REQUIRE A SUPRAVITAL STAIN (NEW METHYLENE BLUE) — INVISIBLE ON THE ROUTINE WRIGHT STAIN, so nobody reports them unless you ask. This fact is ONLY inside the figure."),
-   ("Rouleaux vs agglutination", "ROULEAUX: STACKED IN CHAINS, “ROWS OF COINS” — RAISED SERUM PROTEINS NEUTRALISE the red cells' NEGATIVE SURFACE CHARGE → MULTIPLE MYELOMA, LIVER DISEASE. AGGLUTINATION: DISORDERLY CLUMPING — ANTIBODIES COAT and BRIDGE the cells → TRANSFUSION REACTIONS."),
+   ("Rouleaux vs agglutination", "ROULEAUX: STACKED IN CHAINS, “ROWS OF COINS” — RAISED SERUM PROTEINS NEUTRALIZE the red cells' NEGATIVE SURFACE CHARGE → MULTIPLE MYELOMA, LIVER DISEASE. AGGLUTINATION: DISORDERLY CLUMPING — ANTIBODIES COAT and BRIDGE the cells → TRANSFUSION REACTIONS."),
  ]),
  ("l4-anemia", "Working Up an Anemia", "#2f4f7a", "#e0e7f0", "#eff3f7", "#233c5e", [
    ("The four evaluation steps", "ASSESS CLINICAL PRESENTATION · CHECK CBC AND CHEMISTRY PANEL · DETERMINE THE MCV · CHECK THE RETICULOCYTE COUNT. Do them SIMULTANEOUSLY. Look at the PERIPHERAL SMEAR if you can get one."),
@@ -122,7 +122,7 @@ TOPICS = [
    ("Microcytic causes", "IRON DEFICIENCY (MOST COMMON CAUSE OF ANEMIA — MUST EVALUATE FOR OCCULT BLOOD LOSS, often the FIRST SIGN OF GI BLEEDING) · LEAD POISONING · ANEMIA OF CHRONIC DISEASE · THALASSEMIA · SIDEROBLASTIC ANEMIA."),
    ("★ IRON STUDIES — the two patterns", "IRON DEFICIENCY: FERRITIN ↓, IRON ↓, TIBC ↑. ANEMIA OF CHRONIC DISEASE: FERRITIN ↑, IRON ↓, TIBC ↓. Ferritin is an ACUTE PHASE REACTANT, so it RISES in inflammation even though the iron is unavailable."),
    ("All three normal in a microcytic anemia", "→ Is there BASOPHILIC STIPPLING? YES → obtain SERUM LEAD. NO → THALASSEMIA TRAIT."),
-   ("Iron comparison table (image-only)", "THALASSAEMIA MINOR is the row where the MCV IS LOW AND EVERYTHING ELSE IS NORMAL. INFLAMMATORY ANAEMIA is the one with a NORMAL MCV. THALASSAEMIA MAJOR and SIDEROBLASTIC both have LOW MCV with RAISED FERRITIN."),
+   ("Iron comparison table (image-only)", "THALASSEMIA MINOR is the row where the MCV IS LOW AND EVERYTHING ELSE IS NORMAL. INFLAMMATORY ANEMIA is the one with a NORMAL MCV. THALASSEMIA MAJOR and SIDEROBLASTIC both have LOW MCV with RAISED FERRITIN."),
    ("Iron transport analogy", "BUS = TRANSFERRIN (transports). BUS STOP = FERRITIN (stores; MEASURABLE because it is outside the marrow). HOME = HEMOSIDERIN (CANNOT be measured). % SATURATION = TIBC (how many can sit on the bus). SCHOOL = the RED BLOOD CELL."),
    ("Macrocytic — megaloblastic vs not", "MEGALOBLASTIC: B12, FOLATE, DRUGS IMPAIRING DNA SYNTHESIS (METHOTREXATE, ANTIRETROVIRALS, HYDROXYUREA), COPPER. NON-MEGALOBLASTIC: ALCOHOL, LIVER DISEASE, HYPOTHYROIDISM, RETICULOCYTOSIS, primary marrow disorders, chronic kidney disease."),
    ("The megaloblastic smear finding", "MACROOVALOCYTES + HYPERSEGMENTED NEUTROPHILS. WITHOUT them → CHRONIC LIVER DISEASE or ACUTE HEMATOLOGIC MALIGNANCY."),
@@ -130,7 +130,7 @@ TOPICS = [
    ("Intrinsic vs extrinsic hemolysis", "INTRINSIC = a DEFECT IN THE RED CELL causing PREMATURE SPLENIC REMOVAL. EXTRINSIC = MECHANICAL STRESS, IMMUNOLOGIC DESTRUCTION or INFLAMMATORY INJURY FROM OUTSIDE."),
    ("★ The normocytic reticulocyte split", "HIGH RETICS → HEMOLYSIS, SICKLE CELL, ACUTE HEMORRHAGE. LOW RETICS + LOW WBC/PLATELETS → LEUKEMIA, METASTATIC MALIGNANCY, APLASTIC ANEMIA. LOW RETICS + NORMAL/HIGH WBC/PLATELETS → CHRONIC INFECTION/INFLAMMATION, MALIGNANCY, CHRONIC RENAL DISEASE, ENDOCRINE DYSFUNCTION."),
    ("Two things in the algorithm people walk past", "IRON DEFICIENCY APPEARS IN BOTH THE MICROCYTIC AND THE NORMOCYTIC BRANCH — which is why iron studies are obtained even with a normal MCV. And in the microcytic branch obtain IRON STUDIES IN ALL INDIVIDUALS, because CONCOMITANT IRON DEFICIENCY CAN AFFECT HEMOGLOBIN ANALYSIS and hide a thalassemia."),
-   ("The fishbone", "WBC on the LEFT · HGB ABOVE the centre line · HCT BELOW it · PLATELETS on the RIGHT."),
+   ("The fishbone", "WBC on the LEFT · HGB ABOVE the center line · HCT BELOW it · PLATELETS on the RIGHT."),
  ]),
 ]
 

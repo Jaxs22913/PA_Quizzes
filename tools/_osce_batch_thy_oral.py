@@ -9,7 +9,7 @@ BATCH = {
   "masses rise</b>. Assess size, consistency, mobility and whether it is single or multinodular. "
   "<b>Palpate cervical nodes</b>, listen to the voice, and check for tracheal deviation and "
   "stridor. Look for signs of over- or underactivity.",
-  [("Multinodular goitre", "Several nodules in a diffusely enlarged gland; far lower risk"),
+  [("Multinodular goiter", "Several nodules in a diffusely enlarged gland; far lower risk"),
    ("Thyroid carcinoma", "Hard, fixed, growing, with hoarseness or nodes &mdash; the point of the workup"),
    ("Thyroglossal duct cyst", "Midline, rises with TONGUE protrusion as well as swallowing")],
   "<b>Thyroid stimulating hormone FIRST</b> &rarr; if SUPPRESSED, a radionuclide scan showing a "
@@ -39,11 +39,11 @@ BATCH = {
   "&ldquo;I&rsquo;ve had this lump for a while&rdquo; &mdash; or the presentation is a bone or lung "
   "metastasis in an older patient.",
   "Palpate the nodule with swallowing. <b>Cervical nodes are often NEGATIVE</b>, because spread is "
-  "haematogenous &mdash; a normal neck does not reassure here. Check the voice. Examine for bone "
+  "hematogenous &mdash; a normal neck does not reassure here. Check the voice. Examine for bone "
   "tenderness and take a respiratory history.",
   [("Follicular adenoma", "Cytologically IDENTICAL &mdash; only capsular or vascular invasion separates them"),
    ("Papillary carcinoma", "Nodal spread with diagnostic nuclear features on aspiration"),
-   ("Multinodular goitre", "Multiple nodules, benign cytology, stable over years")],
+   ("Multinodular goiter", "Multiple nodules, benign cytology, stable over years")],
   "<b>Fine needle aspiration</b> &rarr; a <b>follicular neoplasm &mdash; which CANNOT distinguish "
   "carcinoma from adenoma</b>. <b>Surgical excision with histology</b> &rarr; <b>capsular and "
   "vascular invasion</b>, which is the only thing that makes it a carcinoma. Imaging of chest and "
@@ -53,7 +53,7 @@ BATCH = {
   "surgery &mdash; repeat aspiration cannot settle it.</b>"),
 
 "Medullary thyroid carcinoma": E(
-  "&ldquo;There&rsquo;s a lump in my thyroid&rdquo; &mdash; sometimes with diarrhoea or flushing, "
+  "&ldquo;There&rsquo;s a lump in my thyroid&rdquo; &mdash; sometimes with diarrhea or flushing, "
   "and sometimes a known family history.",
   "Palpate the thyroid and the cervical nodes. <b>Take a family history for multiple endocrine "
   "neoplasia</b> &mdash; and examine for its other components: <b>check blood pressure and ask "
@@ -61,8 +61,8 @@ BATCH = {
   "neuromas and a marfanoid habitus.",
   [("Papillary carcinoma", "Commoner, with nodal spread and characteristic cytology"),
    ("Anaplastic carcinoma", "Rapid growth in an older patient with compressive symptoms"),
-   ("Parathyroid adenoma", "Hypercalcaemia rather than raised calcitonin")],
-  "<b>Serum calcitonin</b> &rarr; markedly raised, and it is the tumour marker for follow-up. "
+   ("Parathyroid adenoma", "Hypercalcemia rather than raised calcitonin")],
+  "<b>Serum calcitonin</b> &rarr; markedly raised, and it is the tumor marker for follow-up. "
   "<b>Carcinoembryonic antigen</b> &rarr; also raised. <b>Fine needle aspiration</b> &rarr; "
   "amyloid stroma with spindle cells. <b>RET proto-oncogene testing</b> &rarr; a germline mutation, "
   "which triggers family screening.",
@@ -73,24 +73,24 @@ BATCH = {
 "Primary thyroid lymphoma": E(
   "&ldquo;My thyroid has grown quickly over a few weeks and it feels tight&rdquo; &mdash; often an "
   "older woman with known Hashimoto thyroiditis.",
-  "Palpate a <b>rapidly enlarging, firm, diffuse goitre</b>. Assess for <b>stridor, tracheal "
+  "Palpate a <b>rapidly enlarging, firm, diffuse goiter</b>. Assess for <b>stridor, tracheal "
   "deviation and compressive symptoms</b>. Palpate other nodal basins and the spleen. Check for "
   "hypothyroidism from the underlying thyroiditis.",
   [("Anaplastic carcinoma", "The critical distinction &mdash; same rapid growth, utterly different treatment"),
-   ("Hashimoto thyroiditis", "The background condition; firm goitre but not rapidly growing"),
+   ("Hashimoto thyroiditis", "The background condition; firm goiter but not rapidly growing"),
    ("Riedel thyroiditis", "Woody, fixed, fibrotic gland invading surrounding tissue")],
   "<b>CORE or OPEN biopsy</b> &rarr; lymphoma with immunohistochemistry to type it. <b>Fine needle "
   "aspiration is often insufficient</b>, because architecture matters. <b>Thyroid peroxidase "
   "antibodies</b> &rarr; raised, reflecting the Hashimoto background. <b>Staging imaging.</b>",
   "Anaplastic cytology on aspiration redirects to a very different pathway; <b>this distinction "
   "matters because lymphoma responds to chemotherapy and radiotherapy rather than surgery</b>; a "
-  "stable goitre over years excludes it."),
+  "stable goiter over years excludes it."),
 
 "Leukoedema": E(
-  "&ldquo;The inside of my cheeks looks greyish-white&rdquo; &mdash; usually noticed by a dentist, "
+  "&ldquo;The inside of my cheeks looks grayish-white&rdquo; &mdash; usually noticed by a dentist, "
   "not the patient.",
-  "Inspect the buccal mucosa bilaterally for a <b>diffuse grey-white filmy appearance</b>. "
-  "<b>STRETCH the mucosa &mdash; the whiteness DISAPPEARS.</b> That single manoeuvre makes the "
+  "Inspect the buccal mucosa bilaterally for a <b>diffuse gray-white filmy appearance</b>. "
+  "<b>STRETCH the mucosa &mdash; the whiteness DISAPPEARS.</b> That single maneuver makes the "
   "diagnosis. Note that it is bilateral and symmetric.",
   [("Leukoplakia", "Does NOT disappear on stretching, and cannot be wiped off &mdash; and it is premalignant"),
    ("Oral candidiasis", "Wipes off leaving an erythematous base"),
@@ -98,7 +98,7 @@ BATCH = {
   "<b>Clinical</b> &rarr; the whiteness resolving on stretching, bilateral and symmetric. "
   "<b>No biopsy is required.</b> It is a normal variant, commonest in darker-skinned individuals.",
   "Persistence on stretching means leukoplakia and warrants biopsy; a plaque that wipes off means "
-  "candidiasis; unilateral or localised lesions are not leukoedema."),
+  "candidiasis; unilateral or localized lesions are not leukoedema."),
 
 "Fordyce granules": E(
   "&ldquo;There are little yellow spots inside my lip and cheek &mdash; are they normal?&rdquo;",
@@ -121,29 +121,29 @@ BATCH = {
   "separately.</b>",
   [("Oral melanoma", "A single, irregular, growing pigmented lesion &mdash; rare but the reason to look carefully"),
    ("Smoker's melanosis", "Related to smoking and improves on cessation"),
-   ("Addison disease or drug-induced pigmentation", "New, generalised, with systemic features or a culprit drug")],
+   ("Addison disease or drug-induced pigmentation", "New, generalized, with systemic features or a culprit drug")],
   "<b>Clinical</b> &rarr; symmetric, stable, long-standing pigmentation, commonest in darker-skinned "
   "individuals. <b>Biopsy any lesion that is solitary, asymmetric, growing or newly appeared</b> "
   "&rarr; the histological diagnosis.",
   "<b>Morning cortisol and electrolytes</b> &rarr; excludes Addison disease if pigmentation is new "
-  "and generalised; a medication review explains drug-induced change; benign histology excludes "
+  "and generalized; a medication review explains drug-induced change; benign histology excludes "
   "melanoma."),
 
 "Aphthous stomatitis (canker sores)": E(
   "&ldquo;I keep getting painful ulcers in my mouth &mdash; they come and go and last about a "
   "week.&rdquo;",
-  "Inspect for <b>shallow, round or oval ulcers with a grey-yellow base and an erythematous halo, "
-  "on NON-KERATINISED mucosa</b> &mdash; buccal, labial, floor of mouth, not the hard palate or "
+  "Inspect for <b>shallow, round or oval ulcers with a gray-yellow base and an erythematous halo, "
+  "on NON-KERATINIZED mucosa</b> &mdash; buccal, labial, floor of mouth, not the hard palate or "
   "gingiva. Count and size them. <b>Look for genital ulcers and eye inflammation</b> before calling "
   "them simple.",
-  [("Herpes simplex", "Vesicles first, on KERATINISED mucosa, clustered rather than solitary"),
+  [("Herpes simplex", "Vesicles first, on KERATINIZED mucosa, clustered rather than solitary"),
    ("Behcet syndrome", "Oral ulcers PLUS genital ulcers and uveitis &mdash; the reason to ask"),
    ("Squamous cell carcinoma", "A single ulcer that does NOT heal in two weeks, with induration")],
-  "<b>Clinical</b> &rarr; recurrent painful ulcers on non-keratinised mucosa healing within 7 to 14 "
-  "days without scarring. <b>Full blood count, ferritin, folate, vitamin B12 and coeliac "
-  "serology</b> if severe or frequent &rarr; a treatable deficiency or coeliac disease.",
+  "<b>Clinical</b> &rarr; recurrent painful ulcers on non-keratinized mucosa healing within 7 to 14 "
+  "days without scarring. <b>Full blood count, ferritin, folate, vitamin B12 and celiac "
+  "serology</b> if severe or frequent &rarr; a treatable deficiency or celiac disease.",
   "<b>Any ulcer persisting beyond two weeks is biopsied to exclude carcinoma.</b> Vesicles on "
-  "keratinised mucosa mean herpes; genital ulceration and eye disease redirect to Behcet syndrome."),
+  "keratinized mucosa mean herpes; genital ulceration and eye disease redirect to Behcet syndrome."),
 
 "Behcet syndrome": E(
   "&ldquo;I get mouth ulcers over and over, and I&rsquo;ve had sores on my genitals and trouble "
@@ -183,31 +183,31 @@ BATCH = {
   "Inspect for <b>painless ulcers, characteristically on the HARD PALATE</b> &mdash; the painless "
   "quality and the palatal site are both unusual. Look for a malar rash and photosensitivity. "
   "Examine joints. Check blood pressure and look for signs of renal disease.",
-  [("Aphthous ulcers", "PAINFUL and on non-keratinised mucosa &mdash; the opposite on both counts"),
+  [("Aphthous ulcers", "PAINFUL and on non-keratinized mucosa &mdash; the opposite on both counts"),
    ("Lichen planus", "Lacy striae with a different distribution"),
-   ("Herpes simplex", "Vesicular and painful, on keratinised mucosa")],
+   ("Herpes simplex", "Vesicular and painful, on keratinized mucosa")],
   "<b>Antinuclear antibody</b> &rarr; positive, the screening test. <b>Anti-double-stranded DNA and "
   "anti-Smith</b> &rarr; specific for lupus. <b>Complement C3 and C4</b> &rarr; low in active "
   "disease. <b>Full blood count</b> &rarr; cytopenias. <b>Urinalysis</b> &rarr; protein and casts "
   "in renal involvement.",
-  "A negative antinuclear antibody makes lupus very unlikely; painful ulcers on non-keratinised "
+  "A negative antinuclear antibody makes lupus very unlikely; painful ulcers on non-keratinized "
   "mucosa with no systemic features mean aphthous stomatitis; a positive viral swab means herpes."),
 
 "Herpes simplex ulcers": E(
   "&ldquo;I got a tingle first, then blisters that broke into ulcers &mdash; it happens whenever "
   "I&rsquo;m run down.&rdquo;",
-  "Inspect for <b>clustered vesicles that rupture into shallow ulcers on KERATINISED mucosa</b> "
+  "Inspect for <b>clustered vesicles that rupture into shallow ulcers on KERATINIZED mucosa</b> "
   "&mdash; hard palate, attached gingiva, vermilion border. <b>Primary infection gives a "
-  "gingivostomatitis with fever</b>; recurrences are localised. Palpate for tender nodes. Check "
+  "gingivostomatitis with fever</b>; recurrences are localized. Palpate for tender nodes. Check "
   "immune status if severe.",
-  [("Aphthous ulcers", "NON-keratinised mucosa, no vesicles, no prodrome"),
+  [("Aphthous ulcers", "NON-keratinized mucosa, no vesicles, no prodrome"),
    ("Herpangina or hand-foot-and-mouth", "Posterior oropharynx, in children, with a different pattern"),
    ("Erythema multiforme", "Target lesions on the skin with widespread mucosal erosions")],
   "<b>Clinical</b> &rarr; the prodrome, vesicles and site. <b>Polymerase chain reaction of a swab "
   "from a deroofed vesicle</b> &rarr; herpes simplex virus, and it is the most sensitive test. "
   "<b>Tzanck smear</b> &rarr; multinucleated giant cells, but it does not distinguish herpes "
   "simplex from varicella zoster.",
-  "A negative polymerase chain reaction from a fresh vesicle excludes it; ulcers on non-keratinised "
+  "A negative polymerase chain reaction from a fresh vesicle excludes it; ulcers on non-keratinized "
   "mucosa without vesicles are aphthous; target lesions redirect to erythema multiforme."),
 
 "Acute suppurative sialadenitis": E(
@@ -225,7 +225,7 @@ BATCH = {
   "abscess needing drainage, or a stone. <b>Avoid sialography in acute infection.</b>",
   "Clear saliva on milking with meal-related swelling means a stone; bilateral swelling without pus "
   "suggests mumps &mdash; <b>viral serology or polymerase chain reaction</b> confirms it; a "
-  "painless progressive mass needs imaging and cytology for tumour."),
+  "painless progressive mass needs imaging and cytology for tumor."),
 
 "Sialolithiasis": E(
   "&ldquo;Whenever I start to eat, my gland under the jaw swells up and aches &mdash; then it goes "
@@ -238,7 +238,7 @@ BATCH = {
    ("Duct stricture", "The same obstructive pattern without a palpable stone")],
   "<b>Ultrasound</b> &rarr; an echogenic focus with acoustic shadowing, the first-line test. "
   "<b>Non-contrast computed tomography</b> &rarr; a radiopaque calculus; <b>about 80% of "
-  "submandibular stones are radiopaque</b>. <b>Sialendoscopy</b> &rarr; direct visualisation, and "
+  "submandibular stones are radiopaque</b>. <b>Sialendoscopy</b> &rarr; direct visualization, and "
   "it can treat at the same time.",
   "Pus at the duct redirects to acute infection; a persistent mass with no stone on imaging needs "
   "cytology for neoplasm; a stricture on sialendoscopy explains obstruction without a stone."),
@@ -247,7 +247,7 @@ BATCH = {
   "&ldquo;Both sides of my face are swollen in front of my ears and it hurts to chew.&rdquo;",
   "Inspect for swelling that <b>obscures the angle of the mandible and lifts the earlobe outward "
   "and upward</b> &mdash; that is what makes it parotid rather than nodal. Palpate for tenderness. "
-  "<b>Milk Stensen duct</b>. <b>Check cranial nerve VII.</b> Ask about immunisation and contacts, "
+  "<b>Milk Stensen duct</b>. <b>Check cranial nerve VII.</b> Ask about immunization and contacts, "
   "and examine the testes in a male.",
   [("Suppurative parotitis", "Unilateral with PUS from the duct"),
    ("Cervical lymphadenopathy", "Discrete nodes that do not lift the earlobe or obscure the mandibular angle"),
@@ -257,5 +257,5 @@ BATCH = {
   "mumps. <b>Serum amylase</b> &rarr; raised from salivary origin. <b>Ultrasound</b> &rarr; "
   "distinguishes diffuse gland inflammation from a discrete mass or abscess.",
   "Pus on milking the duct means bacterial infection; a discrete mass on ultrasound needs aspiration "
-  "for tumour; <b>facial nerve weakness is never inflammatory parotitis and points to malignancy</b>."),
+  "for tumor; <b>facial nerve weakness is never inflammatory parotitis and points to malignancy</b>."),
 }

@@ -23,7 +23,7 @@ the same story. The cast is the one drafted for the CMS Lecture 22 guide
 port, LDL = building-material delivery truck, VLDL = fuel tanker, LDL receptor =
 receiving gate, PCSK9 = demolition crew, bile = sewer) so the two guides tell one
 story. Here it is extended with the DRUGS, and every drug role maps to a
-mechanism this deck states (slides in brackets in the box). It is labelled as a
+mechanism this deck states (slides in brackets in the box). It is labeled as a
 memory aid, sits above the detail it explains, and says where it breaks.
 
 Scope conflicts flagged, not resolved: slide 65's ">7.5%" against slide 66's

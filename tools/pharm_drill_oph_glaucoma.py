@@ -105,7 +105,7 @@ dict(q="Which cholinergic agonist is used in the SURGICAL setting?",
      ans="Acetylcholine", src=("OPH", 72),
      why="The surgical agent among the three cholinergic agonists.",
      wrong=[("Pilocarpine", "A topical agent for chronic use, not the surgical one."),
-            ("Carbachol", "Also topical, and also not the agent used in theatre."),
+            ("Carbachol", "Also topical, and also not the agent used in theater."),
             ("Tropicamide", "A cycloplegic antimuscarinic, which does the opposite.")]),
 
 dict(q="A patient's pressure is not controlled on one agent. What is the principle behind adding a second?",
@@ -116,9 +116,9 @@ dict(q="A patient's pressure is not controlled on one agent. What is the princip
             ("Add a topical vasoconstrictor", "It has no role in glaucoma.")]),
 
 dict(q="What is the general goal of glaucoma therapy, in terms of pressure?",
-     ans="A 20 to 30 per cent reduction", src=("OPH", 74),
+     ans="A 20 to 30 percent reduction", src=("OPH", 74),
      why="And therapy can be started in one eye to judge efficacy and tolerability.",
-     wrong=[("A 50 per cent reduction", "Beyond the stated goal."),
+     wrong=[("A 50 percent reduction", "Beyond the stated goal."),
             ("Any reduction at all", "A specific target is given."),
             ("Normalizing to below 10 mmHg", "Below the normal range, which starts at about 10.")]),
 

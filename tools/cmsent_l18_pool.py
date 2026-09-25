@@ -17,7 +17,7 @@ Q("Thyroglossal duct cyst", IO,
   "cold. On examination the mass moves upward when she swallows and again when she protrudes her "
   "tongue.",
   [["Thyroglossal duct cyst",
-    "Correct. The thyroid descends from the foramen caecum at the tongue base through the hyoid "
+    "Correct. The thyroid descends from the foramen cecum at the tongue base through the hyoid "
     "bone during development, and a persistent tract leaves a midline cyst attached to the hyoid. "
     "That attachment is why the mass rises with swallowing AND with tongue protrusion, which is the "
     "pathognomonic sign and the reason the Sistrunk operation removes the central hyoid with it."],
@@ -49,7 +49,7 @@ Q("Branchial cleft cyst", IO,
     "the tissue planes and makes the definitive excision considerably harder. Even when a collection "
     "must be decompressed, needle aspiration is preferred."],
    ["Excise it immediately during the acute infection",
-    "Operating on acutely infected, oedematous tissue makes it difficult to define and follow the "
+    "Operating on acutely infected, edematous tissue makes it difficult to define and follow the "
     "tract, which raises the risk of leaving part of it behind. Controlling the infection first "
     "gives a cleaner and more complete excision."],
    ["Antibiotics alone, since the cyst will resolve once the infection settles",
@@ -59,16 +59,16 @@ Q("Branchial cleft cyst", IO,
 
 Q("Neck mass red flags", IO,
   "A 58-year-old man who smokes and drinks daily has a firm, non-tender neck mass that has been "
-  "present for six weeks and measures 3 centimetres. It is immobile and there is no history of "
+  "present for six weeks and measures 3 centimeters. It is immobile and there is no history of "
   "infection.",
   [["Fine needle aspiration biopsy",
     "Correct. Every red flag is present: no infectious origin, duration "
-    "over two weeks, size over 1.5 centimetres, firm and non-tender with little mobility, age over "
+    "over two weeks, size over 1.5 centimeters, firm and non-tender with little mobility, age over "
     "40, and tobacco with alcohol. Fine needle aspiration is the standard of care because it "
-    "separates neoplasm from inflammation and carcinoma from lymphoma without spilling tumour."],
+    "separates neoplasm from inflammation and carcinoma from lymphoma without spilling tumor."],
    ["Excisional biopsy of the node",
     "Excisional biopsy is specifically avoided as the first step in a suspected malignant neck mass, "
-    "because opening the node spills tumour cells into the neck and complicates definitive surgery "
+    "because opening the node spills tumor cells into the neck and complicates definitive surgery "
     "and radiotherapy fields afterwards."],
    ["A two-week course of antibiotics and reassessment",
     "A trial of antibiotics is common practice for a mass that might be inflammatory, but this one "
@@ -94,7 +94,7 @@ Q("Thyroid nodule", IO,
     "sampling nodules that the scan would have shown to be hot and benign."],
    ["Start antithyroid medication and review in six months",
     "Treating the hyperthyroidism addresses the hormonal problem while leaving the structural "
-    "question unanswered. The nodule still has to be characterised, and six months is a long time "
+    "question unanswered. The nodule still has to be characterized, and six months is a long time "
     "to leave that open."],
    ["Contrast computed tomography of the neck",
     "Iodine-containing contrast is specifically avoided when thyroid cancer is in question, because "
@@ -107,20 +107,20 @@ Q("Thyroid carcinoma", IO,
   "carcinoma of thyroid epithelial cells. She is told this is the commonest type and has the best "
   "outlook.",
   [["Papillary carcinoma",
-    "Correct. Papillary carcinoma accounts for about 75 per cent of thyroid cancers, arises from "
+    "Correct. Papillary carcinoma accounts for about 75 percent of thyroid cancers, arises from "
     "thyroid epithelial cells, is commonest in young women, and has the best prognosis of the four "
-    "types. Its tendency is to spread to local cervical lymph nodes rather than haematogenously, "
-    "which is part of why the outlook is favourable."],
+    "types. Its tendency is to spread to local cervical lymph nodes rather than hematogenously, "
+    "which is part of why the outlook is favorable."],
    ["Follicular carcinoma",
-    "Follicular carcinoma is the second commonest at about 16 per cent and also arises from "
+    "Follicular carcinoma is the second commonest at about 16 percent and also arises from "
     "epithelial cells, but it characteristically spreads by BLOOD to bone and lung, and the Hurthle "
     "cell variant is more aggressive with higher recurrence."],
    ["Medullary carcinoma",
-    "Medullary carcinoma is about 5 per cent and arises from parafollicular C cells rather than "
+    "Medullary carcinoma is about 5 percent and arises from parafollicular C cells rather than "
     "epithelial cells, producing calcitonin. It is more insidious, most likely to metastasise, and "
     "carries a familial association with multiple endocrine neoplasia."],
    ["Anaplastic carcinoma",
-    "Anaplastic carcinoma is about 1 per cent, occurs in elderly patients, is the most aggressive "
+    "Anaplastic carcinoma is about 1 percent, occurs in elderly patients, is the most aggressive "
     "form with death typically in 6 to 36 months, and is resistant to all treatment modalities. It "
     "is neither common nor well-differentiated."]],
   "diagnosis", D, 42),
@@ -142,7 +142,7 @@ Q("Medullary thyroid carcinoma", IO,
     "endocrine syndrome driving management. It is medullary disease that triggers the family "
     "screening pathway."],
    ["No family screening, since thyroid cancer is not heritable",
-    "Most thyroid cancer is sporadic, which makes this a reasonable-sounding generalisation, but "
+    "Most thyroid cancer is sporadic, which makes this a reasonable-sounding generalization, but "
     "medullary carcinoma is the specific exception and the reason the cell of origin matters "
     "clinically."]],
   "next step", D, 44),
@@ -156,7 +156,7 @@ Q("Lymphangioma", IO,
     "to pass through, which is why positive transillumination is its distinguishing bedside sign, "
     "and why the mass feels soft, doughy and compressible."],
    ["Haemangioma",
-    "A haemangioma is filled with blood rather than lymph, so it appears red or bluish and does not "
+    "A hemangioma is filled with blood rather than lymph, so it appears red or bluish and does not "
     "transilluminate. It also enlarges with crying or straining, which a lymphangioma does not."],
    ["Teratoma",
     "A teratoma is firm rather than soft and compressible, often shows calcification on imaging, and "
@@ -171,9 +171,9 @@ Q("Haemangioma", IO,
   "A 6-month-old has a red, soft, compressible mass on the neck that has grown since birth and "
   "becomes larger and more prominent when he cries. He is feeding well, and the airway is not "
   "compromised.",
-  [["Observation, since about 90 per cent involute without treatment",
-    "Correct. Haemangiomas grow rapidly through the first year and then begin to involute at 18 to "
-    "24 months, and roughly 90 per cent resolve without any therapy. Enlargement with crying "
+  [["Observation, since about 90 percent involute without treatment",
+    "Correct. Hemangiomas grow rapidly through the first year and then begin to involute at 18 to "
+    "24 months, and roughly 90 percent resolve without any therapy. Enlargement with crying "
     "reflects venous engorgement in a vascular malformation rather than progression, so observation "
     "is appropriate when there is no functional compromise."],
    ["Start propranolol now",
@@ -194,9 +194,9 @@ Q("Atypical mycobacterial adenitis", IO,
   "A 3-year-old has a unilateral neck mass in the anterior triangle with overlying brawny, "
   "reddish-brown skin, induration and mild tenderness. She is systemically well and afebrile.",
   [["Atypical mycobacterial infection",
-    "Correct. Non-tuberculous mycobacterial adenitis is a paediatric disease that presents as a "
+    "Correct. Non-tuberculous mycobacterial adenitis is a pediatric disease that presents as a "
     "unilateral mass in the anterior triangle or parotid region with characteristic brawny "
-    "reddish-brown skin discolouration over it, in a child who is otherwise well. Diagnosis is by "
+    "reddish-brown skin discoloration over it, in a child who is otherwise well. Diagnosis is by "
     "acid-fast stain or culture with skin testing, and treatment is usually surgical excision."],
    ["Tuberculous adenitis",
     "Cervical tuberculosis, or scrofula, affects adults more than children and produces DIFFUSE and "
@@ -205,11 +205,11 @@ Q("Atypical mycobacterial adenitis", IO,
    ["Suppurative bacterial lymphadenitis",
     "Staphylococcal or streptococcal adenitis produces a hot, acutely tender node with fever and "
     "often a sore throat or skin source, developing over days. The indolent course and the skin "
-    "colour described do not fit."],
+    "color described do not fit."],
    ["Cat scratch disease",
     "Bartonella adenitis is common under 20 and does affect preauricular and submandibular nodes, "
     "but it requires cat contact and gives fever and malaise rather than the brawny skin change "
-    "that characterises atypical mycobacteria."]],
+    "that characterizes atypical mycobacteria."]],
   "diagnosis", D, 34),
 
 Q("Anaplastic thyroid carcinoma", IO,
@@ -217,7 +217,7 @@ Q("Anaplastic thyroid carcinoma", IO,
   "swallowing that has developed over six weeks. Biopsy shows undifferentiated giant and spindle "
   "cells.",
   [["Anaplastic carcinoma, with a prognosis measured in months",
-    "Correct. Anaplastic carcinoma is about 1 per cent of thyroid cancers, occurs in elderly "
+    "Correct. Anaplastic carcinoma is about 1 percent of thyroid cancers, occurs in elderly "
     "patients, and is composed of small cell, giant cell and spindle cell types. It is the most "
     "aggressive form, typically causing death in 6 to 36 months, and is resistant to all treatment "
     "modalities, which is why the rapid growth and compressive symptoms are characteristic."],
@@ -226,7 +226,7 @@ Q("Anaplastic thyroid carcinoma", IO,
     "slowly. Neither the age, the six-week course, nor the undifferentiated histology matches it."],
    ["Primary thyroid lymphoma arising in Hashimoto thyroiditis",
     "Thyroid lymphoma also enlarges quickly in an older patient, so it belongs on the list, but it "
-    "is a non-Hodgkin B cell tumour on a background of Hashimoto and responds to chemotherapy and "
+    "is a non-Hodgkin B cell tumor on a background of Hashimoto and responds to chemotherapy and "
     "radiation rather than being treatment-resistant."],
    ["Medullary carcinoma",
     "Medullary carcinoma arises from calcitonin-producing C cells, is more insidious in its course, "
@@ -239,7 +239,7 @@ Q("Primary thyroid lymphoma", IO,
   "thyroid mass. Fine needle aspiration is reported as showing a lymphoid infiltrate that cannot be "
   "confidently distinguished from her known thyroiditis.",
   [["Proceed to open biopsy, because aspiration cannot separate lymphoma from Hashimoto",
-    "Correct. Primary thyroid lymphoma is most often a non-Hodgkin B cell tumour arising on a "
+    "Correct. Primary thyroid lymphoma is most often a non-Hodgkin B cell tumor arising on a "
     "background of Hashimoto thyroiditis, and both conditions fill the gland with lymphocytes. "
     "Aspiration cytology cannot reliably tell a reactive infiltrate from a monoclonal one, so tissue "
     "architecture is needed, followed by lymphoma staging."],
@@ -315,7 +315,7 @@ Q("Cat scratch disease", IO,
     "explained by cat exposure."],
    ["Toxoplasma serology",
     "Toxoplasmosis is also acquired from cats, which makes it tempting, but the route is ingestion "
-    "of oocysts in faeces or undercooked meat rather than a scratch, and it usually gives more "
-    "generalised lymphadenopathy with sore throat and myalgias."]],
+    "of oocysts in feces or undercooked meat rather than a scratch, and it usually gives more "
+    "generalized lymphadenopathy with sore throat and myalgias."]],
   "testing", D, 34),
 ]

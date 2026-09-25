@@ -12,7 +12,7 @@ QUESTIONS = [
 
 Q("Erythema multiforme",
   "A 26-year-old man presents with a rash that began on the backs of his hands and spread toward the trunk over two "
-  "days. Examination shows numerous lesions with three concentric zones — a dusky centre, a pale ring, and an "
+  "days. Examination shows numerous lesions with three concentric zones — a dusky center, a pale ring, and an "
   "erythematous outer rim — on the dorsal hands, forearms, and knees. Individual lesions have remained fixed in place "
   "for four days. He had a cold sore on his lip ten days ago. Less than 5 percent of his body surface is involved and "
   "there are no mucosal erosions. What is the most likely trigger?",
@@ -25,7 +25,7 @@ Q("Erythema multiforme",
     "stem records no respiratory illness and no mucosal erosions. Herpes simplex virus remains the single most common "
     "precipitant."],
    ["A sulfonamide antibiotic",
-    "Sulfonamides are among the recognised drug triggers along with non-steroidal anti-inflammatory drugs, "
+    "Sulfonamides are among the recognized drug triggers along with non-steroidal anti-inflammatory drugs, "
     "penicillins, and anticonvulsants. No medication exposure is reported, and drug triggers account for a minority "
     "of cases."],
    ["No identifiable trigger",
@@ -42,7 +42,7 @@ Q("Erythema multiforme",
     "target lesions and individual lesions lasting less than 24 hours. Fixity over days is what identifies erythema "
     "multiforme."],
    ["Urticarial wheals are fixed for several days whereas erythema multiforme lesions migrate hourly",
-    "This reverses the behaviour of the two eruptions. A clinician applying it would mark a migratory urticarial "
+    "This reverses the behavior of the two eruptions. A clinician applying it would mark a migratory urticarial "
     "eruption as erythema multiforme and pursue an unnecessary search for a herpetic or mycoplasmal trigger."],
    ["Only erythema multiforme is pruritic",
     "Urticaria is characteristically pruritic, and erythema multiforme is managed in part with oral antihistamines "
@@ -77,20 +77,20 @@ Q("Dermatitis herpetiformis",
 Q("Dermatitis herpetiformis",
   "A patient is diagnosed with dermatitis herpetiformis and dapsone is planned for rapid symptom control. What must "
   "be checked before the drug is started, and what must be monitored afterwards?",
-  [["Check glucose-6-phosphate dehydrogenase status beforehand, and monitor the complete blood count for haemolytic "
-    "anaemia and methaemoglobinaemia",
+  [["Check glucose-6-phosphate dehydrogenase status beforehand, and monitor the complete blood count for hemolytic "
+    "anemia and methemoglobinemia",
     "Correct. Glucose-6-phosphate dehydrogenase deficiency must be checked before initiating dapsone, and the "
-    "complete blood count is monitored for haemolytic anaemia and methaemoglobinaemia. Dapsone at 25 to 200 mg daily "
+    "complete blood count is monitored for hemolytic anemia and methemoglobinemia. Dapsone at 25 to 200 mg daily "
     "gives relief within days."],
    ["Check glucose-6-phosphate dehydrogenase status beforehand, and monitor renal function for nephrotoxicity",
     "The pre-treatment check is right, which makes this the closest wrong answer, but the monitoring target is wrong. "
-    "Dapsone's characteristic toxicities are haematological, and following renal function instead would miss the "
-    "haemolysis it is prescribed to detect."],
-   ["Check thyroid function beforehand, and monitor the complete blood count for haemolytic anaemia",
+    "Dapsone's characteristic toxicities are hematological, and following renal function instead would miss the "
+    "hemolysis it is prescribed to detect."],
+   ["Check thyroid function beforehand, and monitor the complete blood count for hemolytic anemia",
     "Autoimmune thyroid disease is an associated condition worth screening for in its own right, but it is not the "
     "safety check that governs dapsone initiation."],
    ["No pre-treatment testing is required, and no specific monitoring is needed",
-    "Omitting the glucose-6-phosphate dehydrogenase check exposes a deficient patient to severe haemolysis. This is "
+    "Omitting the glucose-6-phosphate dehydrogenase check exposes a deficient patient to severe hemolysis. This is "
     "the most dangerous option in the set."]],
   0, 19),
 
@@ -103,12 +103,12 @@ Q("Dermatitis herpetiformis",
     "consuming dietary gluten. All patients should also be screened for celiac disease."],
    ["Indefinite dapsone monotherapy, since dietary change does not affect the skin disease",
     "This is directly contrary to the mechanism: removing gluten removes the antigenic drive. Committing the patient "
-    "to indefinite dapsone with its haematological toxicity while leaving the cause in place is the wrong trade."],
+    "to indefinite dapsone with its hematological toxicity while leaving the cause in place is the wrong trade."],
    ["A strict gluten-free diet for six weeks, after which gluten may be reintroduced",
     "The dietary restriction is lifelong rather than a time-limited trial. Reintroducing gluten restores the antigen "
     "and with it the eruption and the celiac disease risk."],
    ["High-potency topical steroids as the sole long-term therapy",
-    "Topical high-potency steroids are used for localised flares, not as the long-term strategy. They do nothing "
+    "Topical high-potency steroids are used for localized flares, not as the long-term strategy. They do nothing "
     "about the systemic gluten-driven process or the associated celiac disease."]],
   0, 19),
 
@@ -121,7 +121,7 @@ Q("Acanthosis nigricans",
     "Rapid onset, unusual sites including the palms and mucosa, and the absence of obesity or insulin resistance in "
     "an older patient with weight loss all point away from the common benign form."],
    ["Insulin-resistant benign acanthosis nigricans",
-    "This is the most common form, driven by hyperinsulinaemia stimulating keratinocyte and fibroblast proliferation, "
+    "This is the most common form, driven by hyperinsulinemia stimulating keratinocyte and fibroblast proliferation, "
     "and it is the right answer in most patients. Here the normal glucose, absent obesity, rapid onset, and mucosal "
     "involvement all argue against it."],
    ["Confluent and reticulated papillomatosis",
@@ -138,15 +138,15 @@ Q("Epidermolysis bullosa",
   "surveillance?",
   [["Dystrophic epidermolysis bullosa",
     "Correct. Dystrophic epidermolysis bullosa causes severe scarring, and the multidisciplinary team includes "
-    "haematology and oncology specifically for squamous cell carcinoma surveillance. Scarring subtypes carry the "
+    "hematology and oncology specifically for squamous cell carcinoma surveillance. Scarring subtypes carry the "
     "malignancy risk."],
    ["Epidermolysis bullosa simplex",
-    "Simplex disease results from keratin 5 and 14 mutations with intraepidermal cleavage, is localised to the palms "
+    "Simplex disease results from keratin 5 and 14 mutations with intraepidermal cleavage, is localized to the palms "
     "and soles, and heals without scarring. Absence of scarring is why it does not carry the same malignancy "
     "burden."],
    ["Junctional epidermolysis bullosa",
-    "Junctional disease is generalised with poor wound healing, nail dystrophy, and enamel defects, and it is severe. "
-    "But the scarring that drives squamous cell carcinoma surveillance characterises the dystrophic form."],
+    "Junctional disease is generalized with poor wound healing, nail dystrophy, and enamel defects, and it is severe. "
+    "But the scarring that drives squamous cell carcinoma surveillance characterizes the dystrophic form."],
    ["Acquired epidermolysis bullosa",
     "Epidermolysis bullosa acquisita is an autoimmune rather than inherited disease and falls outside the four "
     "inherited types classified by cleavage level."]],
@@ -157,14 +157,14 @@ Q("Epidermolysis bullosa",
   "bullosa?",
   [["Skin biopsy with transmission electron microscopy",
     "Correct. Skin biopsy with transmission electron microscopy is the gold standard for determining the cleavage "
-    "plane. Immunofluorescence antigen mapping localises missing or reduced proteins, and genetic testing is "
-    "confirmatory and guides prognosis and family counselling."],
+    "plane. Immunofluorescence antigen mapping localizes missing or reduced proteins, and genetic testing is "
+    "confirmatory and guides prognosis and family counseling."],
    ["Immunofluorescence antigen mapping",
-    "Immunofluorescence antigen mapping is genuinely part of the workup and localises missing or reduced proteins, "
+    "Immunofluorescence antigen mapping is genuinely part of the workup and localizes missing or reduced proteins, "
     "which makes it the closest wrong answer. But the gold standard for the cleavage plane itself is electron "
     "microscopy."],
    ["Genetic testing alone",
-    "Genetic testing is confirmatory and guides prognosis and family counselling, but it is not the test that "
+    "Genetic testing is confirmatory and guides prognosis and family counseling, but it is not the test that "
     "establishes where in the skin the split occurs."],
    ["Direct immunofluorescence for immunoglobulin A deposits",
     "Granular immunoglobulin A in the dermal papillae is the finding of dermatitis herpetiformis. Epidermolysis "
@@ -177,7 +177,7 @@ Q("Urticaria",
   "no bruising at resolved sites. What is the most appropriate first-line treatment?",
   [["A second-generation antihistamine such as cetirizine, loratadine, or fexofenadine",
     "Correct. Second-generation antihistamines are first-line for urticaria. Urticaria results from mast cell "
-    "degranulation releasing histamine, prostaglandins, and leukotrienes, causing transient dermal oedema."],
+    "degranulation releasing histamine, prostaglandins, and leukotrienes, causing transient dermal edema."],
    ["Intramuscular epinephrine 0.3 mg",
     "Epinephrine is given immediately for anaphylaxis. There is no airway, respiratory, or circulatory compromise "
     "described here, so this treats a far more severe condition than the patient has."],
@@ -212,12 +212,12 @@ Q("Urticaria",
 Q("Erythema nodosum",
   "A 29-year-old woman presents with painful red lumps on both shins that appeared ten days ago. Examination shows "
   "bilateral tender erythematous nodules 1 to 5 cm on the anterior tibial surfaces. None has ulcerated, and several "
-  "are fading to a bruise-like colour. She had a sore throat three weeks ago. What is the key distinguishing feature "
+  "are fading to a bruise-like color. She had a sore throat three weeks ago. What is the key distinguishing feature "
   "of this condition?",
   [["The nodules do not ulcerate",
     "Correct. That the nodules do not ulcerate is named as the key distinguishing feature. Erythema nodosum is a "
     "septal panniculitis without vasculitis, evolving over 3 to 6 weeks from bright red through the bruise-like "
-    "colours the stem describes."],
+    "colors the stem describes."],
    ["The nodules are located on the anterior shins",
     "The anterior tibial surface is the characteristic location and it supports the diagnosis, but the nodules may "
     "also appear on the thighs, forearms, and trunk. Site is typical rather than distinguishing."],
@@ -235,7 +235,7 @@ Q("Erythema nodosum",
   "with fever and arthralgia. What is the most appropriate referral?",
   [["Pulmonology or rheumatology, for probable Löfgren syndrome",
     "Correct. Löfgren syndrome is the association referred to pulmonology or rheumatology. The combination of "
-    "erythema nodosum, bilateral hilar lymphadenopathy, fever, and arthralgia is its recognised presentation."],
+    "erythema nodosum, bilateral hilar lymphadenopathy, fever, and arthralgia is its recognized presentation."],
    ["Gastroenterology, for probable inflammatory bowel disease",
     "Gastroenterology referral is appropriate when inflammatory bowel disease is suspected, and inflammatory bowel "
     "disease is a genuine systemic association. But it would not explain bilateral hilar lymphadenopathy."],
@@ -248,7 +248,7 @@ Q("Erythema nodosum",
   0, 45),
 
 Q("Granuloma annulare",
-  "A 32-year-old woman has an asymptomatic ring of flesh-coloured to erythematous papules on the dorsum of her hand "
+  "A 32-year-old woman has an asymptomatic ring of flesh-colored to erythematous papules on the dorsum of her hand "
   "that has slowly enlarged over months. There is no scale. A potassium hydroxide preparation is negative. What "
   "finding on punch biopsy would confirm the diagnosis?",
   [["Palisading granulomas with central necrobiosis and mucin deposition",
@@ -267,20 +267,20 @@ Q("Granuloma annulare",
   0, 51),
 
 Q("Granuloma annulare",
-  "A patient is found to have hundreds of small papules over the trunk and extremities consistent with generalised "
+  "A patient is found to have hundreds of small papules over the trunk and extremities consistent with generalized "
   "granuloma annulare. What screening is most appropriate?",
-  [["Fasting glucose and haemoglobin A1c to screen for diabetes",
-    "Correct. Fasting glucose and haemoglobin A1c are used to screen for diabetes in generalised granuloma annulare, "
+  [["Fasting glucose and hemoglobin A1c to screen for diabetes",
+    "Correct. Fasting glucose and hemoglobin A1c are used to screen for diabetes in generalized granuloma annulare, "
     "alongside a lipid panel and thyroid studies for associated systemic disease."],
    ["Chest radiograph to screen for bilateral hilar lymphadenopathy",
     "Bilateral hilar lymphadenopathy belongs to the erythema nodosum workup, where it raises Löfgren syndrome. It is "
-    "not the screening priority for generalised granuloma annulare."],
+    "not the screening priority for generalized granuloma annulare."],
    ["Immunoglobulin A tissue transglutaminase antibodies to screen for celiac disease",
     "Celiac screening is the high-priority association for dermatitis herpetiformis, where all patients should be "
     "screened. Granuloma annulare has a different set of associations."],
    ["No screening is indicated for any variant of the condition",
-    "The localised variant is largely a clinical diagnosis needing little workup, but the generalised form carries "
-    "specific screening recommendations. Applying the localised approach to disseminated disease would miss them."]],
+    "The localized variant is largely a clinical diagnosis needing little workup, but the generalized form carries "
+    "specific screening recommendations. Applying the localized approach to disseminated disease would miss them."]],
   0, 51),
 
 Q("Pyoderma gangrenosum",
@@ -290,7 +290,7 @@ Q("Pyoderma gangrenosum",
   [["Avoid debridement, because pathergy worsens the ulcer",
     "Correct. Debridement must be avoided in pyoderma gangrenosum because pathergy — worsening with trauma — is a "
     "defining feature. Wound care uses moist dressings and non-adherent contact layers instead."],
-   ["Proceed with debridement to remove devitalised tissue and speed healing",
+   ["Proceed with debridement to remove devitalized tissue and speed healing",
     "Pyoderma gangrenosum shows pathergy: any trauma, including debridement, provokes further ulceration, so the operation intended to help is what enlarges the wound."],
    ["Obtain an ankle-brachial index and begin compression therapy",
     "Arterial and venous studies belong to the exclusion of vascular insufficiency ulcers, which is a reasonable part "
@@ -347,7 +347,7 @@ Q("Acne rosacea",
     "pathogenesis."],
    ["Azelaic acid 15 to 20 percent",
     "Azelaic acid is effective for both papulopustular and erythematotelangiectatic rosacea through "
-    "anti-inflammatory and anti-keratinising effects, so it is a legitimate option. But it is not the agent singled "
+    "anti-inflammatory and anti-keratinizing effects, so it is a legitimate option. But it is not the agent singled "
     "out for Demodex-associated disease."],
    ["Brimonidine gel",
     "Brimonidine is a topical vasoconstrictor aimed at the erythema of rosacea rather than at the inflammatory "
@@ -362,15 +362,15 @@ Q("Hyperhidrosis",
   "A 17-year-old girl reports excessive sweating of both palms, soles, and axillae since early adolescence. She "
   "reports no sweating during sleep. Her father had the same problem. Thyroid studies and glucose are normal. What "
   "does this pattern indicate, and what is the appropriate first-line treatment?",
-  [["Primary focal hyperhidrosis, treated first with topical aluminium chloride 20 percent applied nightly",
-    "Correct. Absence of nocturnal sweating and symmetry favour primary hyperhidrosis, which begins in adolescence, "
-    "is bilateral and focal, and often follows an autosomal dominant family pattern. Aluminium chloride 20 percent "
+  [["Primary focal hyperhidrosis, treated first with topical aluminum chloride 20 percent applied nightly",
+    "Correct. Absence of nocturnal sweating and symmetry favor primary hyperhidrosis, which begins in adolescence, "
+    "is bilateral and focal, and often follows an autosomal dominant family pattern. Aluminum chloride 20 percent "
     "applied nightly to dry skin is first-line topical therapy."],
    ["Primary focal hyperhidrosis, treated first with botulinum toxin A injections",
     "The diagnosis is right but the treatment is out of sequence. Botulinum toxin A is a dermatology referral option "
     "for refractory disease rather than the first-line agent, and starting there skips an effective topical."],
    ["Secondary hyperhidrosis, requiring endocrine investigation",
-    "Secondary hyperhidrosis is suggested by generalised sweating including at night and by underlying thyroid "
+    "Secondary hyperhidrosis is suggested by generalized sweating including at night and by underlying thyroid "
     "disease, diabetes, or menopause. Thyroid studies and glucose are normal and there is no nocturnal sweating, "
     "which are the two findings that exclude it."],
    ["Frey syndrome, treated with topical glycopyrronium",
@@ -429,7 +429,7 @@ Q("Toxic epidermal necrolysis",
     "epidermal necrolysis. It guides therapy rather than scoring severity or prognosis."],
    ["The Fitzpatrick scale",
     "The Fitzpatrick scale classifies baseline ultraviolet sensitivity by skin type and guides photoprotection "
-    "counselling. It has no role in grading a drug reaction."],
+    "counseling. It has no role in grading a drug reaction."],
    ["The minimal erythema dose",
     "The minimal erythema dose is determined during phototesting for drug-induced photosensitivity and polymorphous "
     "light eruption. It is a photobiology measurement rather than a severity score."]],
@@ -438,10 +438,10 @@ Q("Toxic epidermal necrolysis",
 Q("Sunburn",
   "A 24-year-old man presents six hours after a day at the beach with painful erythema, warmth, and tenderness across "
   "the shoulders and back. There is no blistering. What is the most appropriate acute management?",
-  [["Cool compresses, early non-steroidal anti-inflammatory drugs, oral hydration, and topical moisturisers",
+  [["Cool compresses, early non-steroidal anti-inflammatory drugs, oral hydration, and topical moisturizers",
     "Correct. Acute management is cool compresses and cool rather than cold water immersion, non-steroidal "
     "anti-inflammatory drugs started early to reduce prostaglandin-mediated inflammation and pain, oral hydration, "
-    "and topical moisturisers. First-degree sunburn resolves in 3 to 5 days with desquamation."],
+    "and topical moisturizers. First-degree sunburn resolves in 3 to 5 days with desquamation."],
    ["Cold water immersion and delayed non-steroidal anti-inflammatory drugs once blistering appears",
     "Both halves are wrong in instructive ways: cool rather than cold water is specified, and the benefit of "
     "non-steroidal anti-inflammatory drugs depends on starting them early, before the prostaglandin cascade is "
@@ -463,10 +463,10 @@ Q("Photosensitivity",
     "Correct. Phototoxicity is non-immunologic and dose-dependent — the drug absorbs ultraviolet energy, generating "
     "reactive oxygen species and direct cellular damage that resembles an exaggerated sunburn. Photopatch testing is "
     "the gold standard for photoallergy, the other mechanism."],
-   ["Photoallergy, which is immunologic and requires prior sensitisation; photopatch testing is the gold standard "
+   ["Photoallergy, which is immunologic and requires prior sensitization; photopatch testing is the gold standard "
     "for phototoxicity",
     "The two mechanisms are swapped. A reaction on first exposure that is dose-dependent cannot be an immunologic "
-    "photoallergy, which requires prior sensitisation, and photopatch testing is aimed at photoallergy rather than "
+    "photoallergy, which requires prior sensitization, and photopatch testing is aimed at photoallergy rather than "
     "phototoxicity."],
    ["Polymorphous light eruption, which appears 30 minutes to hours after exposure; antinuclear antibody testing is "
     "the gold standard",
@@ -501,15 +501,15 @@ Q("Actinic keratosis",
   "A 71-year-old man with a lifetime of outdoor work has multiple rough, scaly erythematous papules on the scalp and "
   "dorsal hands, each 2 to 8 mm, that feel like sandpaper when palpated. What molecular event is the critical step in "
   "their development?",
-  [["Ultraviolet-induced mutation in the TP53 tumour suppressor gene",
+  [["Ultraviolet-induced mutation in the TP53 tumor suppressor gene",
     "Correct. Actinic keratoses are intraepidermal keratinocytic dysplasias induced by cumulative ultraviolet B "
     "exposure, and ultraviolet-induced mutations in TP53 are the critical molecular event. They represent a field "
     "cancerisation process."],
    ["Ultraviolet-induced proliferation of melanocytes within the epidermis",
-    "Localised melanocyte proliferation within the epidermis produces solar lentigines, which are benign pigmented "
+    "Localized melanocyte proliferation within the epidermis produces solar lentigines, which are benign pigmented "
     "macules rather than keratinocytic dysplasias. Both follow chronic ultraviolet exposure, which is why this is the "
     "closest wrong answer."],
-   ["Hyperinsulinaemia stimulating keratinocyte and fibroblast proliferation",
+   ["Hyperinsulinemia stimulating keratinocyte and fibroblast proliferation",
     "That mechanism produces insulin-resistant acanthosis nigricans through insulin-like growth factor 1 receptor "
     "cross-activation. It is unrelated to ultraviolet damage."],
    ["Immunoglobulin A immune complex deposition in the dermal papillae",
@@ -522,11 +522,11 @@ Q("Solar lentigo",
   "gradually over years. One lesion is larger, asymmetric, and has irregular borders with darker areas within it. "
   "What should be done about that lesion?",
   [["Evaluate it with dermoscopy for lentigo maligna",
-    "Correct. Lentigo maligna, which is melanoma in situ, is asymmetric with irregular border and colour and darker "
-    "areas, and dermoscopy is described as essential. A solar lentigo that has diverged from its uniform neighbours "
+    "Correct. Lentigo maligna, which is melanoma in situ, is asymmetric with irregular border and color and darker "
+    "areas, and dermoscopy is described as essential. A solar lentigo that has diverged from its uniform neighbors "
     "requires that evaluation."],
    ["Reassure her that it is a solar lentigo like the others",
-    "Solar lentigines are uniformly pigmented, so the asymmetry, irregular border, and internal colour variation are "
+    "Solar lentigines are uniformly pigmented, so the asymmetry, irregular border, and internal color variation are "
     "precisely the features that separate this lesion from the others. Reassurance here would delay a melanoma in "
     "situ diagnosis."],
    ["Treat it as a seborrheic keratosis and leave it alone",
@@ -590,7 +590,7 @@ Q("Erythema multiforme",
     "Oral antihistamines are used for pruritus during an acute episode. They relieve a symptom without touching the "
     "viral trigger, so the eruptions would continue at the same rate."],
    ["Topical corticosteroids applied continuously to previously affected sites",
-    "Topical corticosteroids are used for localised lesions during an episode. Applying them prophylactically to "
+    "Topical corticosteroids are used for localized lesions during an episode. Applying them prophylactically to "
     "clear skin exposes her to atrophy without preventing anything."],
    ["Avoidance of non-steroidal anti-inflammatory drugs and sulfonamides",
     "Those drugs are genuine triggers in other patients and the history should be reviewed, but this woman's trigger "
@@ -600,8 +600,8 @@ Q("Erythema multiforme",
 Q("Acanthosis nigricans",
   "A 34-year-old woman with obesity, type 2 diabetes, and polycystic ovary syndrome has velvety hyperpigmented "
   "plaques of the neck and axillae. What is the primary management?",
-  [["Treat the underlying cause with weight loss and glycaemic control",
-    "Correct. Primary management is treating the underlying cause through weight loss and glycaemic control, "
+  [["Treat the underlying cause with weight loss and glycemic control",
+    "Correct. Primary management is treating the underlying cause through weight loss and glycemic control, "
     "discontinuing any offending drug. Metformin reduces insulin resistance and may improve the skin findings."],
    ["Topical retinoids as the primary treatment",
     "Topical retinoids, salicylic acid, and ammonium lactate are used for cosmetic improvement. They address the "
@@ -610,7 +610,7 @@ Q("Acanthosis nigricans",
     "Dermabrasion and laser are cosmetic measures listed alongside the topicals. Choosing a procedure over metabolic "
     "management treats the marker rather than the disease it marks."],
    ["Topical corticosteroids twice daily",
-    "Acanthosis nigricans is a proliferative response to hyperinsulinaemia rather than an inflammatory dermatosis, so "
+    "Acanthosis nigricans is a proliferative response to hyperinsulinemia rather than an inflammatory dermatosis, so "
     "there is no inflammation for a corticosteroid to suppress."]],
   0, 25),
 
@@ -619,7 +619,7 @@ Q("Urticaria",
   "reaction, and what class of trigger does it represent?",
   [["Immunoglobulin E mediated mast cell degranulation, an immunologic trigger",
     "Correct. Urticaria results from mast cell degranulation releasing histamine, prostaglandins, and leukotrienes, "
-    "producing transient dermal oedema. Immunologic immunoglobulin E mediated triggers include foods such as "
+    "producing transient dermal edema. Immunologic immunoglobulin E mediated triggers include foods such as "
     "shellfish, nuts, and eggs, drugs including penicillin, and insect stings."],
    ["Immunoglobulin E mediated mast cell degranulation, a non-immunologic trigger",
     "The mechanism is right but the classification contradicts it — an immunoglobulin E mediated reaction is by "
@@ -649,30 +649,30 @@ Q("Erythema nodosum",
   0, 44),
 
 Q("Granuloma annulare",
-  "A patient has a single annular ring of flesh-coloured papules on the dorsum of the foot. It is asymptomatic. What "
+  "A patient has a single annular ring of flesh-colored papules on the dorsum of the foot. It is asymptomatic. What "
   "proportion of cases does this variant represent, and what is the expected course?",
   [["About 75 percent of cases, and the condition is benign and self-limiting",
-    "Correct. The localised variant accounts for about 75 percent of cases, presenting as flesh-coloured to "
+    "Correct. The localized variant accounts for about 75 percent of cases, presenting as flesh-colored to "
     "erythematous papules in an annular ring on the dorsal hands, feet, and ankles, and is asymptomatic. Granuloma "
     "annulare is a benign, self-limiting granulomatous dermatosis."],
    ["About 75 percent of cases, and the condition progresses to malignancy without treatment",
     "The proportion is right, which makes this the closest wrong answer, but granuloma annulare is benign and "
     "self-limiting. An oncology referral is considered only if lymphoma is separately suspected."],
    ["About 25 percent of cases, and the condition is benign and self-limiting",
-    "The course is right but the proportion is reversed — localised disease is the common form at about 75 percent, "
-    "and the generalised or disseminated variant is the minority."],
+    "The course is right but the proportion is reversed — localized disease is the common form at about 75 percent, "
+    "and the generalized or disseminated variant is the minority."],
    ["About 75 percent of cases, and lifelong systemic immunosuppression is required",
-    "Systemic therapy and phototherapy are reserved for generalised or treatment-resistant disease through a "
-    "dermatology referral. Committing localised asymptomatic disease to systemic immunosuppression is far beyond what "
+    "Systemic therapy and phototherapy are reserved for generalized or treatment-resistant disease through a "
+    "dermatology referral. Committing localized asymptomatic disease to systemic immunosuppression is far beyond what "
     "it needs."]],
   0, 50),
 
 Q("Pyoderma gangrenosum",
   "What systemic conditions are most closely associated with pyoderma gangrenosum?",
-  [["Inflammatory bowel disease, inflammatory arthritis, and haematologic disorders",
+  [["Inflammatory bowel disease, inflammatory arthritis, and hematologic disorders",
     "Correct. Pyoderma gangrenosum is a neutrophilic dermatosis with dysregulated innate immune activation, and "
     "inflammatory bowel disease heads the list of key associated conditions alongside inflammatory arthritis and "
-    "haematologic disease."],
+    "hematologic disease."],
    ["Celiac disease and autoimmune thyroid disease",
     "Celiac disease and autoimmune thyroid disease are the high-priority associations of dermatitis herpetiformis, "
     "for which all patients should be screened for celiac disease."],
@@ -692,7 +692,7 @@ Q("Acne rosacea",
     "and stress. Chronic ultraviolet exposure is also a listed risk factor."],
    ["Alcohol, described as the most universal trigger",
     "Alcohol is a genuine and commonly reported trigger, which makes this the closest wrong answer, but sun exposure "
-    "is the one identified as most universal. Focusing counselling on alcohol alone would leave the dominant exposure "
+    "is the one identified as most universal. Focusing counseling on alcohol alone would leave the dominant exposure "
     "unaddressed."],
    ["Dairy products, which drive Demodex overgrowth",
     "Demodex folliculorum overgrowth contributes to the pathogenesis, but dairy is not a listed trigger and does not "
@@ -715,7 +715,7 @@ Q("Acne rosacea",
     "Topical metronidazole is first-line for papulopustular skin disease. It does not treat ocular involvement, and "
     "six weeks of observation with visual symptoms risks permanent corneal damage."],
    ["Reassure the patient that ocular symptoms are unrelated to rosacea",
-    "Ocular rosacea is a recognised subtype with potential corneal complications. Dismissing the connection is the "
+    "Ocular rosacea is a recognized subtype with potential corneal complications. Dismissing the connection is the "
     "error most likely to result in vision loss."]],
   0, 70),
 
@@ -765,8 +765,8 @@ Q("Toxic epidermal necrolysis",
    ["Admission to a surgical ward for debridement of detached epidermis",
     "Wound care uses non-adhesive biological dressings such as biobrane or porcine xenograft. Aggressive surgical "
     "debridement is not the described approach."],
-   ["Observation in the emergency department until the eruption stabilises",
-    "The eruption progresses over days, so waiting for stabilisation in an emergency department delays the "
+   ["Observation in the emergency department until the eruption stabilizes",
+    "The eruption progresses over days, so waiting for stabilization in an emergency department delays the "
     "resuscitative and wound care that determine survival."]],
   0, 90),
 
@@ -799,7 +799,7 @@ Q("Photodermatitis",
     "Sunburn occurs without a chemical contactant history and follows the pattern of exposure rather than the drip "
     "marks of a liquid. The differential lists it precisely on the grounds of that missing contactant."],
    ["Allergic contact dermatitis to citrus",
-    "Allergic contact dermatitis is a delayed hypersensitivity requiring prior sensitisation, and it does not need "
+    "Allergic contact dermatitis is a delayed hypersensitivity requiring prior sensitization, and it does not need "
     "ultraviolet light to appear. The interaction of the chemical with light is what defines this reaction."],
    ["Drug-induced phototoxicity",
     "Drug-induced phototoxicity resembles an exaggerated sunburn across sun-exposed skin in a patient taking a "
@@ -818,7 +818,7 @@ Q("Actinic keratosis",
    ["Koebner phenomenon, in which lesions arise at sites of trauma",
     "Koebner phenomenon occurs in psoriasis and lichen planus, where new lesions develop where the skin has been "
     "injured. It is not what makes actinic keratoses multifocal."],
-   ["Photoallergy, in which sensitisation spreads to unexposed skin",
+   ["Photoallergy, in which sensitization spreads to unexposed skin",
     "Photoallergy is an immunologic drug-induced mechanism confirmed by photopatch testing. It is unrelated to the "
     "distribution of premalignant keratinocytic lesions."]],
   0, 112),
@@ -832,7 +832,7 @@ Q("Dermatoheliosis",
     "therapy is started low and titrated, with initial retinoid dermatitis expected."],
    ["Tretinoin, with results expected within two weeks and no initial irritation",
     "The agent is right but the expectations are wrong in both directions. Promising rapid results without warning "
-    "about retinoid dermatitis is the counselling failure that makes patients stop before the minimum 6 to 12 months "
+    "about retinoid dermatitis is the counseling failure that makes patients stop before the minimum 6 to 12 months "
     "of use required."],
    ["Hydroquinone, which reverses the structural changes of photoaging",
     "Pigment-directed agents address dyspigmentation but do not reverse the dermal structural damage. Tretinoin is "
@@ -843,15 +843,15 @@ Q("Dermatoheliosis",
   0, 119),
 
 Q("Photoprotection",
-  "What does the Fitzpatrick skin type classification predict, and how should it guide counselling?",
-  [["It predicts baseline ultraviolet sensitivity and guides photoprotection counselling, though all types remain "
+  "What does the Fitzpatrick skin type classification predict, and how should it guide counseling?",
+  [["It predicts baseline ultraviolet sensitivity and guides photoprotection counseling, though all types remain "
     "susceptible to cumulative damage",
     "Correct. Fitzpatrick skin type predicts baseline ultraviolet sensitivity and guides photoprotection "
-    "counselling. All types are susceptible to cumulative ultraviolet damage, photoaging, and skin cancer, though "
+    "counseling. All types are susceptible to cumulative ultraviolet damage, photoaging, and skin cancer, though "
     "absolute risk varies."],
-   ["It predicts baseline ultraviolet sensitivity, and types V and VI require no photoprotection counselling",
+   ["It predicts baseline ultraviolet sensitivity, and types V and VI require no photoprotection counseling",
     "The first half is right, which is what makes this the closest wrong answer, but exempting darker skin types "
-    "from counselling contradicts the statement that all types are susceptible. This is the assumption that leads to "
+    "from counseling contradicts the statement that all types are susceptible. This is the assumption that leads to "
     "later diagnosis of skin cancer in darker-skinned patients."],
    ["It grades the severity of a sunburn once it has occurred",
     "Sunburn severity is graded by degree — first degree confined to the epidermis, second degree with blistering "

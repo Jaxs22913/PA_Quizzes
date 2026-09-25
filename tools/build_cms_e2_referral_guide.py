@@ -7,7 +7,7 @@ Jaxon, 2026-09-07: "Can you make a CMS optho guide for all the disease that
 require urgent/immediate ophthomology referral" -- Exam 2 content.
 
 The spine of the page is Lecture 10 slides 66-71, which are a self-contained
-RED EYE TRIAGE section: the first sixty seconds, the danger signs, localising by
+RED EYE TRIAGE section: the first sixty seconds, the danger signs, localizing by
 pattern, and an explicit four-tier disposition. The deck builds to it and then
 never returns, so it is easy to read past. Everything downstream is the same
 tiering applied to all five lectures.
@@ -179,7 +179,7 @@ def build():
            '<a class="top-link" href="#triage">1 &middot; Triage before diagnosis</a>',
            '<a class="sub-link" href="#sixty">1.1 The first 60 seconds</a>',
            '<a class="sub-link" href="#danger">1.2 Danger signs</a>',
-           '<a class="sub-link" href="#pattern">1.3 Localise by pattern</a>',
+           '<a class="sub-link" href="#pattern">1.3 Localize by pattern</a>',
            '<a class="sub-link" href="#ladder">1.4 The disposition ladder</a>',
            '<a class="top-link" href="#emergent">2 &middot; EMERGENT &mdash; now (%d)</a>' % n_em,
            '<a class="top-link" href="#sameday">3 &middot; SAME DAY (%d)</a>' % len(sd),
@@ -230,7 +230,7 @@ def build():
         b.append("<li>%s</li>" % d)
     b.append("</ul>")
 
-    b.append('<h3 class="sub" id="pattern">1.3 &middot; Localise by pattern</h3>'
+    b.append('<h3 class="sub" id="pattern">1.3 &middot; Localize by pattern</h3>'
              '<table class="rtab"><thead><tr><th>Where</th><th>What you see</th></tr></thead><tbody>')
     for where, what in D.PATTERN:
         b.append('<tr><td class="cn">%s</td><td>%s</td></tr>' % (where, what))

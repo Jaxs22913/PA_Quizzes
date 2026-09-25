@@ -28,21 +28,21 @@ SECTION = """
 
   <div class="pearl">Two definitions carry the whole lecture, and they are not the same thing.
   <strong>Infection</strong> is a condition in which pathogenic microbes <em>penetrate host
-  defences, enter tissues and multiply</em> &mdash; best case, the immune system responds
+  defenses, enter tissues and multiply</em> &mdash; best case, the immune system responds
   appropriately and we recover. <strong>Disease</strong> is <em>any deviation from health</em>, a
   disruption of a tissue or organ, which may or may not be caused by microbes. Every question that
   asks you to separate the two is asking about that scope difference.</div>
 
   <h3 class="sub" id="mh-flora">3.1 &middot; Objective 1 &mdash; Resident flora</h3>
   <p><strong>Resident flora includes bacteria, fungi, protozoa, viruses and arthropods.</strong>
-  Most areas of the body in contact with the outside environment harbour resident microbes; the
+  Most areas of the body in contact with the outside environment harbor resident microbes; the
   <strong>large intestine has the highest numbers</strong>, mainly strict or facultative
   anaerobes. Internal organs and tissues are a different matter.</p>
   <table>
     <tr><th>Region</th><th>What lives there</th></tr>
     <tr><td>Skin</td><td>Staphylococci, <em>Corynebacterium</em>, <em>Propionibacterium</em>, yeasts, <em>Mycobacterium smegmatis</em></td></tr>
     <tr><td>Mouth</td><td><strong>Aerobic streptococci are the most common oral residents</strong></td></tr>
-    <tr><td>Large intestine</td><td>The highest bacterial numbers in the body &mdash; <strong>10&ndash;30% of faecal volume is bacteria</strong></td></tr>
+    <tr><td>Large intestine</td><td>The highest bacterial numbers in the body &mdash; <strong>10&ndash;30% of fecal volume is bacteria</strong></td></tr>
     <tr><td>Respiratory tract</td><td><em>Staphylococcus aureus</em>, <em>Neisseria meningitidis</em>. <strong>The LOWER respiratory tract is essentially sterile</strong> &mdash; and if it is not, bad things happen</td></tr>
     <tr><td>Urogenital tract</td><td>In females the flora responds to hormonal change; the urinary tract <em>should</em> be sterile except a short portion of the urethra. Same in males</td></tr>
   </table>
@@ -60,7 +60,7 @@ SECTION = """
   <p>The sequence the deck builds, step by step:</p>
   <table>
     <tr><th>Step</th><th>What it means</th></tr>
-    <tr><td><strong>1. A pathogen with the capacity to cause disease</strong></td><td><strong>True (frank) pathogens</strong> cause disease in healthy people with normal defences &mdash; influenza and rabies viruses, the plague bacterium, the malarial protozoan. <strong>Opportunistic pathogens</strong> cause disease when defences are compromised, or when they grow somewhere unnatural to them &mdash; sometimes it is the patient's own flora doing the attacking</td></tr>
+    <tr><td><strong>1. A pathogen with the capacity to cause disease</strong></td><td><strong>True (frank) pathogens</strong> cause disease in healthy people with normal defenses &mdash; influenza and rabies viruses, the plague bacterium, the malarial protozoan. <strong>Opportunistic pathogens</strong> cause disease when defenses are compromised, or when they grow somewhere unnatural to them &mdash; sometimes it is the patient's own flora doing the attacking</td></tr>
     <tr><td><strong>2. A weakened host</strong></td><td>Age (elderly, young children, premature infants) &middot; genetic or acquired immunological defects &middot; <strong>immunosuppressing drugs and organ transplants</strong> &middot; stress &middot; chronic conditions such as liver disease or diabetes &middot; inflammation &middot; primary infections already present. Many of these are what you would write as <em>comorbidities</em></td></tr>
     <tr><td><strong>3. A portal of entry</strong></td><td>Skin &middot; gastrointestinal tract &middot; respiratory tract &middot; urogenital tract &middot; <strong>conjunctiva</strong> &middot; pregnancy and birth. Agents are <strong>exogenous</strong> (from outside) or <strong>endogenous</strong> (from within)</td></tr>
     <tr><td><strong>4. Enough of them</strong></td><td>The <strong>infectious dose</strong> &mdash; see below</td></tr>
@@ -103,7 +103,7 @@ SECTION = """
   <p><strong>The three virulence factor groups the deck names:</strong></p>
   <table>
     <tr><th>Group</th><th>What it does</th><th>Examples</th></tr>
-    <tr><td><strong>Exoenzymes</strong></td><td>Attack host defences to allow <strong>deeper invasion</strong></td><td>Mucinase, hyaluronidase, coagulase, bacterial kinases</td></tr>
+    <tr><td><strong>Exoenzymes</strong></td><td>Attack host defenses to allow <strong>deeper invasion</strong></td><td>Mucinase, hyaluronidase, coagulase, bacterial kinases</td></tr>
     <tr><td><strong>Toxigenicity</strong></td><td>The capacity to <strong>produce toxins</strong>, grouped by the tissue targeted</td><td><strong>Neurotoxins, enterotoxins, hemotoxins, nephrotoxins</strong></td></tr>
     <tr><td><strong>Antiphagocytic factors</strong></td><td>Kill or avoid phagocytes</td><td><strong>Leukocidins</strong> (&ldquo;-cidin&rdquo; = to kill) destroy leukocytes; <strong>capsules</strong> let the pathogen avoid phagocytosis or resist digestion inside a phagocyte</td></tr>
   </table>
@@ -155,7 +155,7 @@ SECTION = """
     <tr><th>Route</th><th>Examples</th></tr>
     <tr><td><strong>Direct &mdash; horizontal</strong></td><td>Direct personal contact: kissing or sexual</td></tr>
     <tr><td><strong>Direct &mdash; vertical</strong></td><td><strong>Mother to child</strong>, transplacental or during vaginal birth</td></tr>
-    <tr><td><strong>Direct &mdash; droplet</strong></td><td>Close personal contact including saliva, vomit, faeces or blood</td></tr>
+    <tr><td><strong>Direct &mdash; droplet</strong></td><td>Close personal contact including saliva, vomit, feces or blood</td></tr>
     <tr><td><strong>Direct &mdash; biological vectors</strong></td><td>Mosquitoes, fleas, ticks</td></tr>
     <tr><td><strong>Indirect</strong></td><td><strong>Vehicles and fomites</strong> (inanimate objects), and <strong>airborne droplet nuclei</strong></td></tr>
   </table>
@@ -236,11 +236,11 @@ TOC = """  <a class="top-link" href="#microbe-human">3 &middot; Microbe-Human In
 
 TEST = """    microbehuman: [
       {q:"What separates INFECTION from DISEASE?",
-       choices:["Infection is any deviation from health","Infection means microbes penetrated defences, entered tissues and multiplied","Disease requires a microbe","They are synonyms"],correct:1,
-       explain:"Disease is the broader term &mdash; ANY deviation from health, microbial or not. Infection is the specific event of a pathogen breaching defences and multiplying."},
+       choices:["Infection is any deviation from health","Infection means microbes penetrated defenses, entered tissues and multiplied","Disease requires a microbe","They are synonyms"],correct:1,
+       explain:"Disease is the broader term &mdash; ANY deviation from health, microbial or not. Infection is the specific event of a pathogen breaching defenses and multiplying."},
       {q:"Which body site carries the highest bacterial numbers?",
        choices:["Skin","Mouth","Large intestine","Respiratory tract"],correct:2,
-       explain:"Mainly strict or facultative anaerobes. Bacteria make up 10-30% of faecal volume."},
+       explain:"Mainly strict or facultative anaerobes. Bacteria make up 10-30% of fecal volume."},
       {q:"An endotoxin is what, from which bacteria, released how?",
        choices:["A protein, secreted by living gram-positives","Lipid A of LPS, from lysed or damaged gram-NEGATIVES","A protein, from lysed gram-negatives","Lipid A, secreted by living gram-positives"],correct:1,
        explain:"Endotoxin is structural lipid released when the organism dies. Exotoxin is a protein a LIVING organism secretes, and can come from gram-positives or gram-negatives."},

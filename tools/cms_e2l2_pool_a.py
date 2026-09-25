@@ -45,7 +45,7 @@ POOL_A = [
    q="Why does light shone into one eye constrict both pupils?",
    opts=[
      ["Each pretectal nucleus projects to both Edinger-Westphal nuclei", "Correct, which is what makes the response consensual."],
-     ["The optic nerves fuse at the chiasm", "Fibres cross, but that is not the reflex mechanism."],
+     ["The optic nerves fuse at the chiasm", "Fibers cross, but that is not the reflex mechanism."],
      ["The irides are mechanically connected", "There is no mechanical connection."],
      ["Both pupils share one ciliary ganglion", "Each orbit has its own."]],
    c=0, cite=c(11)),
@@ -79,7 +79,7 @@ POOL_A = [
      ["Complete or incomplete, pupil involved or spared", "Correct, and the pupil is what sets the urgency."],
      ["Central or peripheral only", "That distinction exists but is not the classification named."],
      ["Congenital or acquired only", "That framing belongs to the fourth nerve."],
-     ["Traumatic or atraumatic only", "Aetiology is separate from the classification."]],
+     ["Traumatic or atraumatic only", "Etiology is separate from the classification."]],
    c=0, cite=c(41)),
  dict(topic="Cranial nerves", io=IO, lead="recall",
    q="Which statement correctly describes the muscle the abducens nerve supplies and its action?",
@@ -124,7 +124,7 @@ POOL_A = [
  dict(topic="Visual fields", io=IO, lead="recall",
    q="Which visual field defect points to a lesion at the optic chiasm?",
    opts=[
-     ["Bitemporal hemianopsia", "Correct, from interruption of the crossing nasal fibres."],
+     ["Bitemporal hemianopsia", "Correct, from interruption of the crossing nasal fibers."],
      ["Monocular blindness", "That is pre-chiasmal."],
      ["Central scotoma", "That suggests optic nerve or macular disease."],
      ["Superior quadrantanopia", "That is post-chiasmal and partial."]],

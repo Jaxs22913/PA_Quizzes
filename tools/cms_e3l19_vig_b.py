@@ -35,7 +35,7 @@ Q("Viral pharyngitis", IO,
   "days. She is afebrile with no tonsillar exudate.",
   [["Supportive care with no further testing",
     "Correct. Cough, rhinitis, hoarseness and conjunctivitis all point to viral pharyngitis, which "
-    "accounts for about 70 per cent of cases. Her Centor score is minimal, so testing and "
+    "accounts for about 70 percent of cases. Her Centor score is minimal, so testing and "
     "antibiotics are not indicated, and management is hydration, antipyretics and analgesia."],
    ["Rapid antigen test and treat if positive",
     "Testing is reserved for intermediate Centor scores. With cough and coryza and no fever or "
@@ -57,7 +57,7 @@ Q("Rheumatic fever", IO,
     "occasionally as early as one or as late as five, with peak incidence between 5 and 15 years."],
    ["Infective endocarditis from bacterial seeding",
     "Direct bacterial seeding of valves is a different disease with a different tempo and usually "
-    "follows bacteraemia rather than a pharyngitis three weeks earlier."],
+    "follows bacteremia rather than a pharyngitis three weeks earlier."],
    ["Juvenile idiopathic arthritis",
     "Migratory arthritis with a new murmur following a documented sore throat has a much more "
     "specific explanation, and the temporal link is the diagnostic clue."],
@@ -85,16 +85,16 @@ Q("Chronic pharyngitis", IO,
 
 Q("Cervical adenitis", IO,
   "A 6-year-old has a unilateral, solitary, tender anterior cervical node following a sore throat.",
-  [["Beta-haemolytic streptococcus, in about 70 per cent",
-    "Correct. Local ear, nose and throat infections drain to regional nodes, and about 70 per cent of "
-    "these unilateral solitary anterior nodes relate to beta-haemolytic streptococcal infection, "
-    "with 20 per cent staphylococcal including MRSA and 10 per cent viral, atypical mycobacterial or "
+  [["Beta-hemolytic streptococcus, in about 70 percent",
+    "Correct. Local ear, nose and throat infections drain to regional nodes, and about 70 percent of "
+    "these unilateral solitary anterior nodes relate to beta-hemolytic streptococcal infection, "
+    "with 20 percent staphylococcal including MRSA and 10 percent viral, atypical mycobacterial or "
     "Bartonella."],
    ["Staphylococcus aureus, in the majority",
-    "Staphylococcus is second at about 20 per cent, which matters for antibiotic choice because it "
+    "Staphylococcus is second at about 20 percent, which matters for antibiotic choice because it "
     "includes MRSA, but it is not the majority."],
    ["Bartonella henselae",
-    "Cat scratch disease sits in the residual 10 per cent and requires cat contact with preauricular "
+    "Cat scratch disease sits in the residual 10 percent and requires cat contact with preauricular "
     "or submandibular involvement."],
    ["Mycobacterium tuberculosis",
     "Tuberculous adenitis affects adults more than children and gives diffuse bilateral "
@@ -121,7 +121,7 @@ Q("Gingivitis", IO,
   "discomfort. There is no pocketing or tooth mobility.",
   [["Gingivitis, reversible with cleaning and home care",
     "Correct. Gingivitis is the mildest form of periodontal disease: inflammation confined to the "
-    "gingiva from plaque at the gum line, giving erythema, oedema and bleeding with little "
+    "gingiva from plaque at the gum line, giving erythema, edema and bleeding with little "
     "discomfort. The critical point is that it is fully reversible at this stage, before the "
     "periodontal ligament and bone are destroyed."],
    ["Periodontitis with irreversible bone loss",
@@ -129,8 +129,8 @@ Q("Gingivitis", IO,
     "form, and ligament and bone are destroyed so teeth loosen. Absence of pocketing and mobility "
     "means that has not yet happened."],
    ["A dental abscess",
-    "An abscess is a localised collection of pus around a root or in a periodontal pocket, causing "
-    "significant pain and swelling rather than generalised painless bleeding."],
+    "An abscess is a localized collection of pus around a root or in a periodontal pocket, causing "
+    "significant pain and swelling rather than generalized painless bleeding."],
    ["Oral lichen planus",
     "Lichen planus can affect the gingiva as a desquamative gingivitis, so it is worth considering, "
     "but it produces lacy white striae or erosions rather than plaque-related bleeding."]], C(121)),
@@ -180,7 +180,7 @@ Q("Oral cancer", IO,
     "otalgia with a normal ear reflects shared innervation between the oral cavity and the ear, and "
     "indicates more advanced disease."],
    ["Aphthous ulceration",
-    "Aphthae are painful, occur on freely moving non-keratinised mucosa, and heal within 7 to 10 "
+    "Aphthae are painful, occur on freely moving non-keratinized mucosa, and heal within 7 to 10 "
     "days in the minor form. Six weeks without healing excludes them."],
    ["Oral candidiasis",
     "Thrush produces creamy white patches that wipe off leaving an erythematous base, rather than a "
@@ -192,7 +192,7 @@ Q("Oral cancer", IO,
 Q("Oral cancer", IO,
   "A 59-year-old man has a tonsillar squamous cell carcinoma that is human papillomavirus positive.",
   [["Surgical resection with radiotherapy",
-    "Correct. Oropharyngeal tumours are treated with resection plus radiotherapy, which gives better "
+    "Correct. Oropharyngeal tumors are treated with resection plus radiotherapy, which gives better "
     "functional outcomes in a site where speech and swallowing are at stake. Between 60 and 80 per "
     "cent of oropharyngeal cancers are human papillomavirus related, which also affects prognosis."],
    ["Surgical resection alone",
@@ -201,25 +201,25 @@ Q("Oral cancer", IO,
    ["Chemotherapy alone",
     "Chemotherapy has a role in advanced or palliative settings but is not the primary modality for "
     "a resectable head and neck squamous carcinoma."],
-   ["Observation, since virus-related tumours regress",
-    "Human papillomavirus positive tumours have a better prognosis with treatment, which is a real "
+   ["Observation, since virus-related tumors regress",
+    "Human papillomavirus positive tumors have a better prognosis with treatment, which is a real "
     "and important difference, but they do not regress on their own."]], C(148)),
 
 Q("Salivary neoplasm", IO,
   "A 60-year-old man has a slowly enlarging painless mass at the tail of the parotid, with no "
   "facial weakness.",
-  [["A benign parotid tumour",
-    "Correct. Between 64 and 80 per cent of salivary neoplasms arise in the parotid and 75 to 80 per "
-    "cent of those are benign, most commonly epithelial. Benign parotid tumours characteristically "
+  [["A benign parotid tumor",
+    "Correct. Between 64 and 80 percent of salivary neoplasms arise in the parotid and 75 to 80 per "
+    "cent of those are benign, most commonly epithelial. Benign parotid tumors characteristically "
     "present as slow-growing painless masses at the tail of the gland, and the absence of facial "
     "nerve involvement supports it."],
-   ["A malignant parotid tumour",
+   ["A malignant parotid tumor",
     "Mucoepidermoid carcinoma is the commonest salivary malignancy, so it belongs on the "
     "differential, but malignancy is suggested by pain, facial nerve involvement, rapid growth or "
     "skin invasion, none of which is present."],
-   ["A minor salivary gland tumour",
-    "Minor gland tumours occur in buccal, labial and palatal mucosa rather than at the parotid tail, "
-    "and only about 35 per cent of them are benign."],
+   ["A minor salivary gland tumor",
+    "Minor gland tumors occur in buccal, labial and palatal mucosa rather than at the parotid tail, "
+    "and only about 35 percent of them are benign."],
    ["A parotid abscess",
     "An abscess is acutely painful with fever, erythema and often pus from Stensen duct, developing "
     "over days rather than as slow painless enlargement."]], C(141)),
@@ -227,29 +227,29 @@ Q("Salivary neoplasm", IO,
 Q("Salivary neoplasm", IO,
   "A 57-year-old woman has a parotid mass with pain and a partial facial nerve palsy on the same "
   "side.",
-  [["A malignant salivary tumour, with a poor prognosis",
+  [["A malignant salivary tumor, with a poor prognosis",
     "Correct. Prognosis is poor when there is pain, facial or other nerve involvement, high-grade "
     "histology, skin or tissue invasion, or recurrent disease. Facial nerve palsy in particular "
     "indicates invasion rather than compression, and management is surgical removal with "
     "radiotherapy for certain stages."],
    ["A benign pleomorphic adenoma",
-    "Benign tumours are slow-growing and painless and do not invade the facial nerve. Pain and palsy "
+    "Benign tumors are slow-growing and painless and do not invade the facial nerve. Pain and palsy "
     "are what shift the assessment."],
    ["Acute suppurative sialadenitis",
     "Infection gives a firm diffusely tender gland with erythema, fever and pus from the duct over "
-    "days, and it does not paralyse the facial nerve."],
+    "days, and it does not paralyze the facial nerve."],
    ["Sialolithiasis",
     "A stone gives swelling and pain timed to meals with relief between them, and has no effect on "
     "the facial nerve."]], C(143)),
 
 Q("Diphtheria", IO,
-  "A 9-year-old recently arrived from a region with low immunisation coverage has a mild sore "
-  "throat, low fever and marked malaise. A tenacious grey membrane covers the tonsils and pharynx "
+  "A 9-year-old recently arrived from a region with low immunization coverage has a mild sore "
+  "throat, low fever and marked malaise. A tenacious gray membrane covers the tonsils and pharynx "
   "and bleeds when disturbed.",
   [["Antitoxin from the Centers for Disease Control plus antibiotics",
-    "Correct. An adherent grey membrane in an unimmunised child is diphtheria. The damage is caused "
+    "Correct. An adherent gray membrane in an unimmunized child is diphtheria. The damage is caused "
     "by an exotoxin producing myocarditis and cranial neuropathy, so antitoxin is required to "
-    "neutralise circulating toxin, alongside penicillin or erythromycin for 14 days and isolation "
+    "neutralize circulating toxin, alongside penicillin or erythromycin for 14 days and isolation "
     "until three consecutive cultures are negative."],
    ["Penicillin alone for 10 days",
     "Antibiotics eradicate the organism but do nothing about toxin already circulating, and it is "
@@ -258,26 +258,26 @@ Q("Diphtheria", IO,
     "Viral pharyngitis does not produce an adherent membrane that bleeds on removal, and treating "
     "this as viral misses a notifiable disease with a specific antidote."],
    ["Corticosteroids to reduce swelling",
-    "Steroids may be used adjunctively for airway compromise but neither neutralise toxin nor "
+    "Steroids may be used adjunctively for airway compromise but neither neutralize toxin nor "
     "eliminate the organism."]], C(113)),
 
 Q("Aphthous stomatitis", IO,
-  "A 20-year-old student has recurrent painful oral ulcers with yellow-grey centres and red halos, "
-  "each under a centimetre, on the inner cheek and lip. They heal in about a week and recur during "
+  "A 20-year-old student has recurrent painful oral ulcers with yellow-gray centers and red halos, "
+  "each under a centimeter, on the inner cheek and lip. They heal in about a week and recur during "
   "examinations.",
   [["Minor aphthous ulceration",
-    "Correct. Minor aphthae are under a centimetre, are the commonest form, burn and tingle before "
+    "Correct. Minor aphthae are under a centimeter, are the commonest form, burn and tingle before "
     "appearing, and heal in 7 to 10 days without scarring. Their location on freely moving "
-    "non-keratinised mucosa is diagnostic, and stress is a recognised precipitant."],
+    "non-keratinized mucosa is diagnostic, and stress is a recognized precipitant."],
    ["Major aphthous ulceration",
-    "Major aphthae exceed a centimetre, are more painful, often multiple, carry a scarring risk and "
+    "Major aphthae exceed a centimeter, are more painful, often multiple, carry a scarring risk and "
     "last over a month. Size and healing time place these in the minor category."],
    ["Herpetic gingivostomatitis",
-    "Primary herpes affects KERATINISED surfaces such as hard palate and attached gingiva, with "
+    "Primary herpes affects KERATINIZED surfaces such as hard palate and attached gingiva, with "
     "fever and cervical lymphadenopathy, and is a single primary illness rather than a recurrent "
     "stress-related pattern."],
    ["Herpetiform aphthous ulceration",
-    "The herpetiform variant produces numerous 1 to 3 millimetre ulcers, scars, and lasts over a "
+    "The herpetiform variant produces numerous 1 to 3 millimeter ulcers, scars, and lasts over a "
     "month, despite the name having nothing to do with herpes."]], C(16)),
 
 Q("Herpes simplex", IO,
@@ -294,7 +294,7 @@ Q("Herpes simplex", IO,
     "reactivation."],
    ["An autoimmune photosensitive reaction",
     "Photosensitive autoimmune disease exists but does not produce a 24-hour neurological prodrome, "
-    "which is characteristic of a virus travelling along a nerve."],
+    "which is characteristic of a virus traveling along a nerve."],
    ["Bacterial superinfection of chapped lips",
     "Angular cheilitis and impetigo affect the perioral region but have no prodrome, do not recur at "
     "exactly the same site with these triggers, and look different from grouped vesicles."]],

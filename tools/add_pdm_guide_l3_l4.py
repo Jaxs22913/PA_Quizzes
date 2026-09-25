@@ -85,7 +85,7 @@ SEC3 = """
   it off so the microscope view stays clear. On sampling technique (18:44): <b>the technique itself
   determines how easily the specimen can be evaluated</b> &mdash; a punch that misses an edge
   produces a sample the pathologist cannot grade.</p>
-  <p><b>Visual field localisation is deferred.</b> At the visual pathway slide she said the detail
+  <p><b>Visual field localization is deferred.</b> At the visual pathway slide she said the detail
   is coming <i>&ldquo;on Thursday&rdquo;</i>. The four patterns in 3.4 below are still fair game.</p>
   </div>
 
@@ -139,7 +139,7 @@ SEC3 = """
   superficial shave is acceptable <strong>only when suspicion is low</strong>, and it
   <strong>may underestimate Breslow depth</strong>; facial, acral and very large lesions are named
   here too.</p>
-  <p><mark class="prof-highlight">Do not confuse these millimetres with the centimetres in CMS I
+  <p><mark class="prof-highlight">Do not confuse these millimeters with the centimeters in CMS I
   Lecture 9.</mark> <strong>1&ndash;3&nbsp;mm is the DIAGNOSTIC biopsy margin</strong> that
   establishes Breslow depth; <strong>0.5&ndash;2&nbsp;cm is the definitive RE-EXCISION margin</strong>
   that follows once the depth is known.</p>
@@ -176,7 +176,7 @@ SEC3 = """
   <strong>Rotate the applicator for five seconds</strong> with enough pressure to express fluid from
   the tissue. <strong>Do not sample exudate, eschar or necrotic material.</strong></p>
   <p>Culture buys you <strong>organism identification plus susceptibilities</strong>. Its limits:
-  superficial swabs are <strong>prone to contamination and colonisation</strong> and
+  superficial swabs are <strong>prone to contamination and colonization</strong> and
   <strong>may not correlate with deep infection</strong>, so in complex wounds &mdash; diabetic foot
   ulcers, pressure ulcers &mdash; a <strong>deeper tissue biopsy or aspirate gives higher yield</strong>.</p>
 
@@ -243,8 +243,8 @@ SEC3 = """
   <h3 class="sub" id="l3-imaging">3.7 &middot; Objectives h&ndash;l &mdash; Head and neck imaging, and putting it together</h3>
   <table>
     <tr><th>Computed tomography (with contrast)</th><th>Magnetic resonance imaging</th></tr>
-    <tr><td><b>First-line for most acute head and neck infections.</b> Fast, widely available; shows abscess, oedema, gas, bone erosion. Strengths: calcification and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and the <b>unstable or claustrophobic</b> patient.<br><br><b>Think CT for bone, trauma and speed.</b></td>
-      <td>Superior soft-tissue contrast, no ionizing radiation. Strengths: intracranial or orbital extension, <b>perineural spread</b>, skull base, tumours.<br><br><b>Think MRI for soft tissue, nerves, and tumour or intracranial extension.</b></td></tr>
+    <tr><td><b>First-line for most acute head and neck infections.</b> Fast, widely available; shows abscess, edema, gas, bone erosion. Strengths: calcification and bone, sinuses, acute trauma and orbital fractures, foreign bodies, and the <b>unstable or claustrophobic</b> patient.<br><br><b>Think CT for bone, trauma and speed.</b></td>
+      <td>Superior soft-tissue contrast, no ionizing radiation. Strengths: intracranial or orbital extension, <b>perineural spread</b>, skull base, tumors.<br><br><b>Think MRI for soft tissue, nerves, and tumor or intracranial extension.</b></td></tr>
   </table>
   <table>
     <tr><th>Presentation</th><th>Study</th></tr>
@@ -323,7 +323,7 @@ SEC4_HEAD = """
     <tr><td>Platelets</td><td>150,000&ndash;400,000</td><td><b>150,000&ndash;450,000</b> (slide 30)</td></tr>
     <tr><td>Red cell distribution width</td><td>11&ndash;15%</td><td><b>12&ndash;15%</b> (slide 56)</td></tr>
   </table>
-  <p>A fourth set appears on the labelled smear on slide 15 (neutrophil 60&ndash;70%, lymphocyte
+  <p>A fourth set appears on the labeled smear on slide 15 (neutrophil 60&ndash;70%, lymphocyte
   20&ndash;25%, monocyte 3&ndash;8%, eosinophil 2&ndash;4%, basophil 0.5&ndash;1%), which is a
   borrowed textbook graphic and matches neither. <b>No quiz question is built on a disputed
   value.</b> Everything else &mdash; white cells, hemoglobin, hematocrit, all four indices, mean
@@ -470,7 +470,7 @@ SEC4_BODY = """
   smaller than normal &mdash; hereditary spherocytosis. <strong>Target cell (codocyte):</strong> a
   dark circle inside the central pallor, from <strong>redundant cell membrane</strong> &mdash; post
   splenectomy and liver disease. <strong>Teardrop cell (dacrocyte):</strong> formed in marrow
-  infiltrated by scar tissue or tumour &mdash; <strong>bone marrow disease</strong>.</p>
+  infiltrated by scar tissue or tumor &mdash; <strong>bone marrow disease</strong>.</p>
 @@FIG_INCL@@
   <p><strong>Basophilic stippling</strong> is ribosomal RNA in blue-black dots <strong>spread evenly
   through the cytoplasm</strong> &mdash; <strong>lead poisoning</strong>. A <strong>Howell-Jolly
@@ -484,7 +484,7 @@ SEC4_BODY = """
   nobody will report them unless you ask.</p>
 @@FIG_DIST@@
   <p><strong>Rouleaux</strong> is stacking like rows of coins, because <strong>raised serum proteins
-  neutralise the negative surface charge</strong> that normally keeps red cells apart &mdash;
+  neutralize the negative surface charge</strong> that normally keeps red cells apart &mdash;
   multiple myeloma, liver disease. <strong>Agglutination</strong> is disorderly clumping from
   <strong>antibodies bridging</strong> the cells &mdash; transfusion reactions. Different pattern,
   different mechanism, different diagnosis.</p>
@@ -564,7 +564,7 @@ FIGS = {
                   ("howell-jolly", "<b>A single</b> nuclear remnant (blue circle), with target cells (pink box) in the same field &mdash; both mean the spleen is gone.", 46),
                   ("heinz-bodies", "<b>Needs a supravital stain &mdash; invisible on a routine Wright stain.</b> G6PD deficiency.", 47)],
  "@@FIG_DIST@@": [("rouleaux", "<b>Rows of coins.</b> Raised serum proteins cancel the charge that keeps cells apart.", 48)],
- "@@FIG_IRON@@": [("iron-comparison", "<b>The highest-yield table in the lecture, and the slide's only text is its title.</b> Iron deficiency: LOW ferritin, HIGH binding capacity. Inflammatory anaemia: the reverse.", 63)],
+ "@@FIG_IRON@@": [("iron-comparison", "<b>The highest-yield table in the lecture, and the slide's only text is its title.</b> Iron deficiency: LOW ferritin, HIGH binding capacity. Inflammatory anemia: the reverse.", 63)],
  "@@FIG_ALGO@@": [("anemia-algorithm", "<b>Slide 71 extracts as completely blank &mdash; this figure is the entire slide.</b>", 71)],
  "@@FIG_FISH@@": [("fishbone", "<b>White cells left, hemoglobin above the line, hematocrit below, platelets right.</b> You will see this written long before you see it typed.", 72)],
 }
@@ -593,7 +593,7 @@ TY = '''    dermentophtho: [
        expl:"Branching septate hyphae are a dermatophyte; the spaghetti-and-meatballs pattern is tinea versicolor. The COMBINATION of pseudohyphae and budding yeast is Candida."},
       {q:"Melanoma is on your differential. Which biopsy?",
        choices:["Narrow excisional, 1-3 mm margins, below the base","Punch biopsy for a full-thickness sample","Shave biopsy of the raised portion","Incisional biopsy of the darkest quadrant"],correct:0,
-       expl:"The depth matters because a transected base destroys Breslow depth, the single most important prognostic measurement. Note 1-3 MILLIMETRES for the diagnostic biopsy, not the centimetres used for re-excision."},
+       expl:"The depth matters because a transected base destroys Breslow depth, the single most important prognostic measurement. Note 1-3 MILLIMETERS for the diagnostic biopsy, not the centimeters used for re-excision."},
       {q:"Which triad must be screened for necrotizing infection?",
        choices:["Hypotension, white cell count 15,000 or more, violaceous skin","Fever, purulent drainage, spreading erythema","Pain out of proportion, tachycardia, bullae","Hypotension, low white cell count, cobblestoning"],correct:0,
        expl:"Red flag warning: hypotension plus a white blood cell count of 15,000 or more plus violaceous (purple) skin must be screened for necrotizing fasciitis."},

@@ -3,7 +3,7 @@
 """Say where the "Clark level" name came from, because the deck never uses it.
 
 THE PROBLEM. Slide 50 of the CMS Lecture 9 deck has NO TEXT AT ALL -- it is
-purely a figure showing five blocks of skin labelled "Level I" to "Level V"
+purely a figure showing five blocks of skin labeled "Level I" to "Level V"
 against Epidermis / Papillary dermis / Reticular dermis / Subcutaneous tissue.
 The word "Clark" appears NOWHERE in the deck: not on that slide, not in the
 figure itself, not anywhere in the other 100 slides.
@@ -20,7 +20,7 @@ So the name stays, because it is the right name and they will meet it
 everywhere else, but it is now introduced AS an outside name rather than
 presented as the deck's own wording.
 
-This is the third thing this build turned up about slide 50 and its neighbours:
+This is the third thing this build turned up about slide 50 and its neighbors:
 they carry content that exists only as pictures, they extract as blank, and now,
 that even the vocabulary is not in the file.
 """

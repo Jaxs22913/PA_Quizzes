@@ -41,7 +41,7 @@ POOL_D = [
  dict(topic="Ephelides", io=IOA, slot="education",
    q="What is described as the key element of managing ephelides?",
    opts=[
-     ["Sun protection, with proper patient education and counselling",
+     ["Sun protection, with proper patient education and counseling",
       "Correct — topical depigmenting agents and laser follow, and cryotherapy is not used."],
      ["Early cryotherapy to each lesion before it darkens further",
       "Cryotherapy is impractical because the lesions are too small."],
@@ -54,7 +54,7 @@ POOL_D = [
  dict(topic="Lentigines", io=IOA, slot="epidemiology",
    q="Which forms of lentigines are named?",
    opts=[
-     ["Lentigo simplex, acral lentigo, agminated lentigo and generalised lentigo",
+     ["Lentigo simplex, acral lentigo, agminated lentigo and generalized lentigo",
       "Correct — they follow a bimodal age distribution."],
      ["Superficial, nodular, acral lentiginous and lentigo maligna forms",
       "Those are the subtypes of melanoma."],
@@ -69,7 +69,7 @@ POOL_D = [
    opts=[
      ["Atypical features or uncertain morphology on dermoscopy, particularly to exclude lentigo maligna",
       "Correct — reflectance confocal microscopy is an adjunct where biopsy is deferred."],
-     ["Any lesion that measures larger than three millimetres across at its widest diameter",
+     ["Any lesion that measures larger than three millimeters across at its widest diameter",
       "Size alone is not the stated trigger."],
      ["Any lesion on a chronically sun-exposed area of the body",
       "That describes the normal distribution of these lesions."],
@@ -95,9 +95,9 @@ POOL_D = [
    opts=[
      ["Actinic keratosis, squamous cell carcinoma, basal cell carcinoma and melanoma",
       "Correct — the lesion itself is benign but marks cumulative sun damage."],
-     ["Coeliac disease, autoimmune thyroid disease and T-cell lymphoma",
+     ["Celiac disease, autoimmune thyroid disease and T-cell lymphoma",
       "Those are the associations of dermatitis herpetiformis."],
-     ["Inflammatory bowel disease, haematologic malignancy and monoclonal gammopathy",
+     ["Inflammatory bowel disease, hematologic malignancy and monoclonal gammopathy",
       "Those are the associations of pyoderma gangrenosum."],
      ["Sarcoidosis, tuberculosis and streptococcal infection of the throat",
       "Those are the associations of erythema nodosum."]],
@@ -223,7 +223,7 @@ POOL_D = [
  dict(topic="Vitiligo", io=IOA, slot="prognosis",
    q="How is the course of segmental vitiligo described?",
    opts=[
-     ["Cycles of flare and stabilisation that are unpredictable",
+     ["Cycles of flare and stabilization that are unpredictable",
       "Correct — segmental lesions are unilateral and do not cross the midline."],
      ["Steady symmetrical progression over the whole body surface",
       "That is closer to the non-segmental pattern."],
@@ -249,7 +249,7 @@ POOL_D = [
  dict(topic="Congenital melanocytic naevi", io=IOA, slot="referral",
    q="What support is named for families of patients with large congenital naevi?",
    opts=[
-     ["Counselling and support groups",
+     ["Counseling and support groups",
       "Correct — they are named alongside the surgical and observational decision."],
      ["Genetic testing of both parents and the child",
       "That is not what is named in this context."],
@@ -312,9 +312,9 @@ POOL_D = [
    c=0, cite=c(35)),
 
  dict(topic="Common acquired naevus", io=IOB, slot="education",
-   q="Which counselling accompanies management of common acquired melanocytic naevi?",
+   q="Which counseling accompanies management of common acquired melanocytic naevi?",
    opts=[
-     ["Proper counselling on sun protection",
+     ["Proper counseling on sun protection",
       "Correct — management is otherwise observation, with removal for cosmetic or symptomatic reasons."],
      ["Instruction to excise any naevus that becomes visible",
       "Removal is for cosmetic or symptomatic reasons rather than visibility."],
@@ -407,7 +407,7 @@ POOL_D = [
    opts=[
      ["All changing or developing lesions",
       "Correct — excision follows where there is concern for melanoma."],
-     ["Only lesions larger than one centimetre across",
+     ["Only lesions larger than one centimeter across",
       "Size alone is not the stated trigger."],
      ["Only lesions on chronically sun-exposed skin",
       "Site alone is not the stated trigger."],
@@ -463,7 +463,7 @@ POOL_D = [
      ["Ephelides are raised and rough, whereas solar lentigines are flat",
       "Both are macular."],
      ["Ephelides occur only on protected skin, solar lentigines only on exposed",
-      "Ephelides favour sun-exposed skin though are not limited to it."]],
+      "Ephelides favor sun-exposed skin though are not limited to it."]],
    c=0, cite=c(111)),
 
  dict(topic="Lentigines", io=IOA, slot="first-line",
@@ -496,8 +496,8 @@ POOL_D = [
    q="When might observation be preferred over surgery for a large congenital melanocytic naevus?",
    opts=[
      ["When there is little skin available for a graft site",
-      "Correct — surgery is ideal where feasible, but the decision is individualised."],
-     ["When the lesion is larger than ten centimetres across",
+      "Correct — surgery is ideal where feasible, but the decision is individualized."],
+     ["When the lesion is larger than ten centimeters across",
       "Larger lesions carry higher risk, which argues toward intervention."],
      ["When the child is younger than twelve months of age",
       "Age alone is not the stated consideration."],

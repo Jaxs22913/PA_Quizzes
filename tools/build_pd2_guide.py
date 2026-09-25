@@ -80,12 +80,12 @@ BODY = '''<main>
     <tr><th>Component</th><th>What it holds</th></tr>
     <tr><td>Chief complaint</td><td>Why the patient came, in their own words where possible</td></tr>
     <tr><td>History of present illness</td><td>The narrative of the current problem, built from the seven attributes of a symptom</td></tr>
-    <tr><td>Past medical history</td><td>Previous illnesses, hospitalisations, surgery</td></tr>
+    <tr><td>Past medical history</td><td>Previous illnesses, hospitalizations, surgery</td></tr>
     <tr><td>Medications and allergies</td><td>Prescription and over-the-counter, with the reaction for each allergy</td></tr>
     <tr><td>Family history</td><td>Heritable disease in first-degree relatives</td></tr>
     <tr><td>Social history</td><td>Habits, occupation, exposures, living situation</td></tr>
     <tr><td>Review of systems</td><td>System-by-system screening for symptoms not yet volunteered</td></tr>
-    <tr><td>Physical examination</td><td>What you found, described rather than labelled</td></tr>
+    <tr><td>Physical examination</td><td>What you found, described rather than labeled</td></tr>
     <tr><td>Assessment and plan</td><td>Differential, working diagnosis, testing, treatment, education, follow-up</td></tr>
   </table>
   <div class="pearl">The reason the order is fixed is the reason it enhances clinical reasoning: the
@@ -107,9 +107,9 @@ BODY = '''<main>
   Objective Structured Clinical Examination asks for a plan rather than a list of findings.</div>
 
   <h3 class="sub" id="cr-oral">1.3 &middot; Objective c &mdash; The oral case presentation</h3>
-  <p>A presentation is <strong>a well-organised vignette that describes the patient and the clinical
+  <p>A presentation is <strong>a well-organized vignette that describes the patient and the clinical
   problem</strong> &mdash; not the written note read aloud. The provider's goal is to help the
-  listeners visualise the patient and understand the problem.</p>
+  listeners visualize the patient and understand the problem.</p>
   <table>
     <tr><th>Element</th><th>Rule</th></tr>
     <tr><td>Opening statement</td><td>Include the past medical history and the chief complaint</td></tr>
@@ -186,7 +186,7 @@ BODY = '''<main>
   from elsewhere. In the Objective Structured Clinical Examination the &ldquo;patient&rdquo; gives no
   verbal responses beyond identifying data and the facilitator answers for them &mdash; which is
   precisely the situation this rule is built for.</div>
-  <p>A related expectation: <strong>accept constructive feedback and modify behaviour</strong>, and
+  <p>A related expectation: <strong>accept constructive feedback and modify behavior</strong>, and
   expect different facilitators to give different feedback. The variation is anticipated rather than
   a contradiction to be resolved.</p>
   <button type="button" class="test-yourself-btn" style="--acc:#4a5c24" onclick="window.openTestYourself('Test yourself — Clinical Reasoning &amp; Documentation', TEST_YOURSELF.clinicalreasoning)">Test yourself! &rarr;</button>
@@ -240,7 +240,7 @@ BODY = '''<main>
   Distribution is often the fastest route to a diagnosis:</p>
   <table>
     <tr><th>Distribution</th><th>Suggests</th></tr>
-    <tr><td>Generalised or diffuse</td><td>Allergic reactions</td></tr>
+    <tr><td>Generalized or diffuse</td><td>Allergic reactions</td></tr>
     <tr><td>Regional (confined to one body area)</td><td>Tinea capitis</td></tr>
     <tr><td>Sun-exposed (photodistribution)</td><td>Skin cancers</td></tr>
     <tr><td>Dermatome</td><td>Herpes zoster</td></tr>
@@ -272,7 +272,7 @@ BODY = '''<main>
   <p>A <strong>primary lesion</strong> forms first and results directly from the disease. Identifying
   it is the key to interpretation and description &mdash; every later description depends on getting
   this right.</p>
-  <div class="pearl"><strong>One centimetre is the hinge.</strong> Four of the definitions below turn
+  <div class="pearl"><strong>One centimeter is the hinge.</strong> Four of the definitions below turn
   on it, in matched pairs: flat under and over (macule / patch), solid elevated under and over
   (papule / plaque), fluid-filled under and over (vesicle / bulla). Learn the three pairs and you
   have six of the terms. Bring a ruler &mdash; that is why one is on the equipment list.</div>
@@ -324,7 +324,7 @@ BODY = '''<main>
   [[GRID:collarette-scale]]
   <table>
     <tr><th>Also worth knowing</th><th>Detail</th></tr>
-    <tr><td>Verrucae (warts)</td><td>Caused by <strong>human papillomavirus</strong>. Small harmless tumors of the skin; grey to flesh coloured nodules raised from the surface, sometimes with rough hornlike projections</td></tr>
+    <tr><td>Verrucae (warts)</td><td>Caused by <strong>human papillomavirus</strong>. Small harmless tumors of the skin; gray to flesh colored nodules raised from the surface, sometimes with rough hornlike projections</td></tr>
     <tr><td>Corn</td><td>Smaller than a callus; usually over a <strong>non-weight-bearing</strong> area of the foot; conical structure of keratin pointing toward the dermis</td></tr>
     <tr><td>Callus</td><td>Thickening of epidermal keratin; usually on the sole of the foot, at the ball or heel</td></tr>
   </table>
@@ -339,7 +339,7 @@ BODY = '''<main>
   <em>contact</em> &mdash; allergens and irritants from hobbies, occupation and environment.</div>
   <table>
     <tr><th>Area</th><th>What to ask</th></tr>
-    <tr><td>Existing skin abnormalities</td><td>Changes in colour &middot; changes in shape (border, elevation, diameter) &middot; changes in size &middot; pain &middot; bleeds easily &middot; non-healing areas</td></tr>
+    <tr><td>Existing skin abnormalities</td><td>Changes in color &middot; changes in shape (border, elevation, diameter) &middot; changes in size &middot; pain &middot; bleeds easily &middot; non-healing areas</td></tr>
     <tr><td>Onset</td><td>Duration; acute versus chronic</td></tr>
     <tr><td>Relationships</td><td>Season, travel history, heat or cold, previous reactions, drugs, menses</td></tr>
     <tr><td>Skin symptoms</td><td>Pruritus, pain, paresthesia</td></tr>
@@ -348,8 +348,8 @@ BODY = '''<main>
     <tr><td>Psychosocial</td><td>Personal habits, exposures. Psychological stress is <strong>seldom the sole cause</strong> but <strong>can exacerbate many dermatoses</strong></td></tr>
   </table>
   <div class="callout"><strong>Pruritus is not a diagnosis.</strong> It is the sensation that causes
-  the desire to scratch. Generalised itching with no obvious reason has a wide differential &mdash;
-  dry skin, ageing, pregnancy, uremia, jaundice, lymphomas, leukemias, drug reaction and lice. Other
+  the desire to scratch. Generalized itching with no obvious reason has a wide differential &mdash;
+  dry skin, aging, pregnancy, uremia, jaundice, lymphomas, leukemias, drug reaction and lice. Other
   sensations to ask about: burning, pain or tenderness, tingling, a creeping or crawling feeling, and
   whether it is intermittent or continuous.</div>
   <div class="pearl">Patients with cognitive problems may not attend to hygiene. If the hygiene of
@@ -357,9 +357,9 @@ BODY = '''<main>
   social history, cognition, and ability to perform activities of daily living.</div>
 
   <h3 class="sub" id="derm-abnormal">2.6 &middot; Objective d &mdash; Abnormal findings: the skin</h3>
-  <p><strong>Vascular lesions.</strong> The single manoeuvre that sorts them is
+  <p><strong>Vascular lesions.</strong> The single maneuver that sorts them is
   <strong>diascopy</strong>: press a piece of clear glass or plastic against the skin and look at the
-  lesion under pressure. <strong>If the colour fades, there is vascular engorgement; if it does not
+  lesion under pressure. <strong>If the color fades, there is vascular engorgement; if it does not
   fade, it is hemorrhage in the skin.</strong></p>
   [[FIG:diascopy]]
   <table>
@@ -386,7 +386,7 @@ BODY = '''<main>
   <p><strong>Decubitus (pressure) ulcers.</strong> Staged by depth:</p>
   <table>
     <tr><th>Stage</th><th>Finding</th></tr>
-    <tr><td>I</td><td>Alteration of <strong>intact</strong> skin: erythema that fails to blanch with pressure, plus change in temperature (warmth or coolness), consistency (firm or boggy), sensation (pain or itching), and colour</td></tr>
+    <tr><td>I</td><td>Alteration of <strong>intact</strong> skin: erythema that fails to blanch with pressure, plus change in temperature (warmth or coolness), consistency (firm or boggy), sensation (pain or itching), and color</td></tr>
     <tr><td>II</td><td><strong>Partial</strong> thickness skin loss involving epidermis, dermis or both</td></tr>
     <tr><td>III</td><td><strong>Full</strong> thickness skin loss; necrosis of subcutaneous tissue; may extend to but <strong>not through</strong> underlying muscle</td></tr>
     <tr><td>IV</td><td>Full thickness skin loss; destruction of tissue, muscle and/or bone</td></tr>
@@ -409,14 +409,14 @@ BODY = '''<main>
     <tr><th>Malignancy</th><th>Common site</th><th>Appearance</th></tr>
     <tr><td>Basal cell carcinoma</td><td>Face</td><td>Translucent, <strong>pearly</strong> nodule with a depressed center and raised borders; may ulcerate. A <strong>non-healing ulcer</strong> is the other presentation</td></tr>
     <tr><td>Squamous cell carcinoma</td><td>Face and other sun-exposed areas</td><td>Red scaling, crusting nodule or plaque that can ulcerate and bleed</td></tr>
-    <tr><td>Malignant melanoma</td><td>Changing nevi</td><td>Irregularly coloured plaque with <strong>sharp notches</strong> and variation of pigment</td></tr>
-    <tr><td>Kaposi's sarcoma</td><td>Widely disseminated &mdash; legs, trunk, arms, neck, head</td><td>Starts as light coloured lesions that coalesce into darker ones; dark blue-purple macules, papules, nodules and plaques. <strong>The most frequent neoplasm in patients with acquired immunodeficiency syndrome</strong></td></tr>
+    <tr><td>Malignant melanoma</td><td>Changing nevi</td><td>Irregularly colored plaque with <strong>sharp notches</strong> and variation of pigment</td></tr>
+    <tr><td>Kaposi's sarcoma</td><td>Widely disseminated &mdash; legs, trunk, arms, neck, head</td><td>Starts as light colored lesions that coalesce into darker ones; dark blue-purple macules, papules, nodules and plaques. <strong>The most frequent neoplasm in patients with acquired immunodeficiency syndrome</strong></td></tr>
   </table>
   <table>
     <tr><th>Letter</th><th>Melanoma warning sign</th></tr>
     <tr><td>A</td><td>Asymmetry or shape</td></tr>
     <tr><td>B</td><td>Border irregularity</td></tr>
-    <tr><td>C</td><td>Colour variation</td></tr>
+    <tr><td>C</td><td>Color variation</td></tr>
     <tr><td>D</td><td>Diameter larger than 6 mm</td></tr>
     <tr><td>E</td><td>Evolving, elevation</td></tr>
     <tr><td>F</td><td>Family history</td></tr>
@@ -431,7 +431,7 @@ BODY = '''<main>
     <tr><td>Alopecia</td><td>Diffuse, patchy or total hair loss. <strong>Note the distribution on inspection</strong> &mdash; that is what separates the causes</td></tr>
     <tr><td>Androgenic alopecia</td><td>Male pattern baldness</td></tr>
     <tr><td>Alopecia areata</td><td>Chronic inflammatory disease of hair follicles, associated with <strong>autoimmune disorders</strong>. Hair loss in multiple round patches, with <strong>&ldquo;exclamation point&rdquo; hairs</strong></td></tr>
-    <tr><td>Trichotillomania</td><td>Caused by an urge to pull out hair, producing bald patches. Single or multiple; from a few square centimetres to the entire scalp</td></tr>
+    <tr><td>Trichotillomania</td><td>Caused by an urge to pull out hair, producing bald patches. Single or multiple; from a few square centimeters to the entire scalp</td></tr>
     <tr><td>Hirsutism</td><td>Increased hair growth in women, in a <strong>male pattern of distribution</strong></td></tr>
     <tr><td>Lice</td><td>Tiny white ovoid granules &mdash; nits &mdash; adherent to hairs. A magnifying glass aids inspection</td></tr>
   </table>
@@ -440,7 +440,7 @@ BODY = '''<main>
   leaves smooth patches with <em>exclamation point</em> hairs; trichotillomania leaves patches from
   pulling, with neither scale nor exclamation point hairs.</div>
   [[FIG:alopecia-areata]]
-  <p><strong>Nails.</strong> Inspect for shape, size, colour, brittleness, hemorrhages, lines and
+  <p><strong>Nails.</strong> Inspect for shape, size, color, brittleness, hemorrhages, lines and
   grooves, clubbing, and pitting.</p>
   <table>
     <tr><th>Finding</th><th>Description</th><th>Points toward</th></tr>
@@ -481,7 +481,7 @@ BODY = '''<main>
     <tr><td>Temperature</td><td>Warmth &middot; coolness &mdash; <strong>use the dorsal aspect of the hands</strong></td></tr>
     <tr><td>Texture</td><td>Roughness &middot; smoothness</td></tr>
     <tr><td>Mobility and turgor</td><td>See below</td></tr>
-    <tr><td>Lesions</td><td>Distribution, configuration, morphology, colour, texture</td></tr>
+    <tr><td>Lesions</td><td>Distribution, configuration, morphology, color, texture</td></tr>
   </table>
   <table>
     <tr><th></th><th>Normal</th><th>Abnormal</th></tr>
@@ -490,8 +490,8 @@ BODY = '''<main>
   </table>
   <div class="pearl"><strong>Central versus peripheral cyanosis</strong> is a two-organ distinction.
   Central cyanosis is often due to inadequate oxygenation <em>in the lungs</em>; peripheral cyanosis
-  is usually due to inadequate <em>circulation</em>. Same colour, different organ.</div>
-  <p><strong>Hair and scalp.</strong> Inspect colour, distribution and quantity; palpate for texture.
+  is usually due to inadequate <em>circulation</em>. Same color, different organ.</div>
+  <p><strong>Hair and scalp.</strong> Inspect color, distribution and quantity; palpate for texture.
   Separate the hair into sections to observe the scalp, and inspect <strong>behind the ears and the
   occiput</strong>. The scalp should be clean, with no lesions, discolorations, flaking or
   parasites.</p>

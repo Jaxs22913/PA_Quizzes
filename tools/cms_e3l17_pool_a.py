@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """CMS I Exam 3, Lecture 17 (Nose and Paranasal Sinuses) -- objective set A.
 
-Sinusitis in full: definition, epidemiology, aetiology, the viral-versus-
+Sinusitis in full: definition, epidemiology, etiology, the viral-versus-
 bacterial decision, diagnostics, treatment, and the chronic and fungal forms.
 
 Grounded in the deck (Prof. Hugh Griffenkranz, 3 September 2026).
@@ -34,17 +34,17 @@ QUESTIONS = [
 
  dict(topic="Acute sinusitis", io=IO_A, lead="etiology", cite=D % 10,
   q="What proportion of acute rhinosinusitis is viral?",
-  opts=[["Ninety to ninety-eight per cent", "Correct."],
-        ["Ten to twenty per cent", "Far below the true share."],
+  opts=[["Ninety to ninety-eight percent", "Correct."],
+        ["Ten to twenty percent", "Far below the true share."],
         ["About half", "Well below the true share."],
-        ["Under five per cent", "That approximates the bacterial superinfection rate instead."]]),
+        ["Under five percent", "That approximates the bacterial superinfection rate instead."]]),
 
  dict(topic="Acute sinusitis", io=IO_A, lead="epidemiology", cite=D % 10,
   q="What proportion of viral rhinosinusitis episodes develop a bacterial superinfection?",
-  opts=[["Half a per cent to two per cent", "Correct."],
-        ["Around thirty per cent", "Much higher than the accepted figure."],
+  opts=[["Half a percent to two percent", "Correct."],
+        ["Around thirty percent", "Much higher than the accepted figure."],
         ["Around half", "Far higher than the accepted figure."],
-        ["Over ninety per cent", "That is the viral share, not the superinfection rate."]]),
+        ["Over ninety percent", "That is the viral share, not the superinfection rate."]]),
 
  dict(topic="Acute sinusitis", io=IO_A, lead="epidemiology", cite=D % 10,
   q="How many adults does rhinosinusitis affect?",
@@ -75,7 +75,7 @@ QUESTIONS = [
         ["Mycobacteria", "Not among the organisms named for this group."]]),
 
  dict(topic="Acute sinusitis", io=IO_A, lead="etiology", cite=D % 12,
-  q="What characterises nosocomial sinusitis?",
+  q="What characterizes nosocomial sinusitis?",
   opts=[["Polymicrobial, with S. aureus and gram-negative bacilli", "Correct."],
         ["Always fungal", "Fungal disease belongs to the immunocompromised group."],
         ["Always Pseudomonas alone", "It is polymicrobial rather than one organism."],
@@ -118,13 +118,13 @@ QUESTIONS = [
 
  dict(topic="Bacterial sinusitis", io=IO_A, lead="clinical manifestation", cite=D % 18,
   q="How does sinusitis pain behave with position?",
-  opts=[["Worse bending over or lying supine", "Correct, and it localises to the involved sinus."],
+  opts=[["Worse bending over or lying supine", "Correct, and it localizes to the involved sinus."],
         ["Worse standing upright", "Position worsens it in the opposite direction."],
         ["Unaffected by position", "Position makes a characteristic difference."],
         ["Worse only at high altitude", "Altitude is not the described factor."]]),
 
  dict(topic="Bacterial sinusitis", io=IO_A, lead="defining feature", cite=D % 19,
-  q="Which discharge colour is described as least helpful diagnostically?",
+  q="Which discharge color is described as least helpful diagnostically?",
   opts=[["Yellow or green", "Correct."],
         ["Black", "Black suggests fungus and is meaningful."],
         ["Rust-coloured", "That may suggest S. pneumoniae."],
@@ -134,8 +134,8 @@ QUESTIONS = [
   q="What does black nasal discharge suggest?",
   opts=[["A fungal cause", "Correct."],
         ["Simple allergy", "Allergic discharge is typically clear."],
-        ["Streptococcus pneumoniae", "Rust-coloured discharge is the one linked to that organism."],
-        ["Nothing of significance", "It is one of the few colours that means something."]]),
+        ["Streptococcus pneumoniae", "Rust-colored discharge is the one linked to that organism."],
+        ["Nothing of significance", "It is one of the few colors that means something."]]),
 
  dict(topic="Bacterial sinusitis", io=IO_A, lead="next step", cite=D % 19,
   q="What must be confirmed before accepting fever as a sign of bacterial sinusitis?",
@@ -162,7 +162,7 @@ QUESTIONS = [
   q="When is limited coronal computed tomography useful in sinusitis?",
   opts=[["Recurrent infection or failure to respond to treatment", "Correct, and if signs suggest extrasinus involvement."],
         ["Only in children under five", "Age is not the criterion."],
-        ["Only when the discharge is green", "Colour does not drive imaging."],
+        ["Only when the discharge is green", "Color does not drive imaging."],
         ["Never &mdash; imaging has no role", "It has a defined role in selected patients."]]),
 
  dict(topic="Sinusitis treatment", io=IO_A, lead="treatment", cite=D % 22,

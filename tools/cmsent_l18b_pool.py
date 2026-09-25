@@ -49,14 +49,14 @@ Q("Neck mass evaluation", IO,
     "weight loss are not part of it."],
    ["A lipoma",
     "Lipomas are soft, slow-growing over years, and produce no systemic symptoms whatsoever. Three "
-    "weeks of rapid growth is the opposite of a lipoma's behaviour."]],
+    "weeks of rapid growth is the opposite of a lipoma's behavior."]],
   "diagnosis", D, 13),
 
 Q("Thyroid mass imaging", IO,
   "A 49-year-old woman has a firm thyroid nodule with a hoarse voice. The clinician is deciding "
   "which imaging to request, and cancer is suspected.",
   [["Ultrasound, avoiding iodine-containing contrast",
-    "Correct. Ultrasound characterises thyroid nodules well without radiation and guides "
+    "Correct. Ultrasound characterizes thyroid nodules well without radiation and guides "
     "aspiration. The specific trap is contrast computed tomography: an iodine load saturates the "
     "thyroid and compromises subsequent radioiodine treatment, so it is avoided whenever thyroid "
     "cancer is on the differential."],
@@ -66,10 +66,10 @@ Q("Thyroid mass imaging", IO,
     "avoided here, because it delays definitive treatment."],
    ["Positron emission tomography",
     "Positron emission tomography demonstrates metabolic activity and has a role in staging or "
-    "hunting an occult primary. It is not a first-line test for characterising a thyroid nodule and "
+    "hunting an occult primary. It is not a first-line test for characterizing a thyroid nodule and "
     "is positive in inflammation as well as cancer."],
    ["Plain radiography of the neck",
-    "Plain films show gross tracheal deviation or calcification but cannot characterise a thyroid "
+    "Plain films show gross tracheal deviation or calcification but cannot characterize a thyroid "
     "nodule, assess lymph nodes, or guide a biopsy. They would not change management."]],
   "testing", D, 18),
 
@@ -115,17 +115,17 @@ Q("Plunging ranula", IO,
     "unnecessary morbidity."]],
   "treatment", D, 25),
 
-Q("Sternocleidomastoid tumour of infancy", IO,
+Q("Sternocleidomastoid tumor of infancy", IO,
   "A 6-week-old infant has a firm, painless, discrete mass within the right sternocleidomastoid "
   "muscle and holds his head tilted to that side.",
-  [["Physical therapy, since around 80 per cent resolve spontaneously",
+  [["Physical therapy, since around 80 percent resolve spontaneously",
     "Correct. This lesion is associated with congenital torticollis and follows a predictable "
     "course: it enlarges for two to three months, then regresses over four to eight months, and "
-    "about 80 per cent resolve on their own. The purpose of physical therapy is to prevent a fixed "
+    "about 80 percent resolve on their own. The purpose of physical therapy is to prevent a fixed "
     "restrictive torticollis while that natural resolution takes place."],
    ["Immediate surgical excision",
     "Surgery is reserved for persistent cases that fail to regress, and operating on a lesion with "
-    "an 80 per cent spontaneous resolution rate commits an infant to an unnecessary procedure with "
+    "an 80 percent spontaneous resolution rate commits an infant to an unnecessary procedure with "
     "the risk of scarring the muscle further."],
    ["Fine needle aspiration to exclude malignancy",
     "Aspiration is the standard investigation for a suspicious neck mass in an adult, but a firm "
@@ -156,22 +156,22 @@ Q("Laryngocele", IO,
    ["Laryngeal carcinoma",
     "A malignancy would appear as an irregular ulcerated or exophytic mass, usually on the true "
     "cord, in a patient with a smoking history and progressive symptoms. A smooth dilation is not a "
-    "tumour appearance."]],
+    "tumor appearance."]],
   "diagnosis", D, 24),
 
 Q("Teratoma", IO,
   "A newborn has a large firm neck mass noted at delivery. Imaging shows calcifications within it, "
   "and the infant has stridor.",
   [["Teratoma, requiring surgical excision",
-    "Correct. Head and neck teratomas account for about 3.5 per cent of all teratomas, originate "
+    "Correct. Head and neck teratomas account for about 3.5 percent of all teratomas, originate "
     "from pluripotent cells, and are most commonly noted at birth or within the first year. The "
     "calcifications reflect the varied tissue types a teratoma contains, and when large enough these "
     "masses cause respiratory compromise or dysphagia, which is why excision is needed."],
    ["Lymphangioma, managed with sclerotherapy",
     "A lymphangioma is soft, doughy and compressible and transilluminates because it contains clear "
     "lymph. It does not feel firm and does not calcify, which is what the imaging shows here."],
-   ["Haemangioma, which will involute",
-    "A haemangioma is a soft compressible vascular lesion that enlarges with crying and involutes "
+   ["Hemangioma, which will involute",
+    "A hemangioma is a soft compressible vascular lesion that enlarges with crying and involutes "
     "after 18 to 24 months. It is not firm at birth and does not contain calcification."],
    ["Thyroglossal duct cyst",
     "A thyroglossal duct cyst is a midline structure that moves with tongue protrusion and typically "
@@ -189,14 +189,14 @@ Q("Tularemia", IO,
     "the treatment named for it."],
    ["Trimethoprim-sulfamethoxazole",
     "That is the treatment for brucellosis, along with tetracycline. Brucellosis is acquired from "
-    "unpasteurised milk and produces total-body lymphadenopathy rather than the tonsillitis with "
+    "unpasteurized milk and produces total-body lymphadenopathy rather than the tonsillitis with "
     "regional nodes described here."],
    ["Azithromycin",
     "Azithromycin is used for cat scratch disease caused by Bartonella henselae, which follows cat "
     "contact and gives preauricular and submandibular nodes. The exposure and node distribution do "
     "not match."],
    ["Sulfonamides or pyrimethamine",
-    "Those treat toxoplasmosis, acquired from undercooked meat or cat faeces. Toxoplasmosis gives "
+    "Those treat toxoplasmosis, acquired from undercooked meat or cat feces. Toxoplasmosis gives "
     "fever, malaise, sore throat and myalgias rather than the specific tonsillitis and painful "
     "adenopathy of tularemia."]],
   "treatment", D, 33),
@@ -224,7 +224,7 @@ Q("Actinomycosis", IO,
 
 Q("Follicular thyroid carcinoma", IO,
   "A 55-year-old woman with a thyroid carcinoma is found to have a solitary lesion in the femur.",
-  [["Follicular carcinoma, which spreads haematogenously to bone and lung",
+  [["Follicular carcinoma, which spreads hematogenously to bone and lung",
     "Correct. Follicular carcinoma is distinguished from papillary by its route of spread: it "
     "disseminates through the bloodstream to bone and lungs, whereas papillary tends to involve "
     "local cervical lymph nodes. A distant bony metastasis therefore points to the follicular type, "
@@ -266,10 +266,10 @@ Q("Neck anatomy", IO,
   "finding", D, 5),
 
 Q("HIV-associated adenopathy", IO,
-  "A 36-year-old man with newly diagnosed HIV has generalised cervical lymphadenopathy with no "
+  "A 36-year-old man with newly diagnosed HIV has generalized cervical lymphadenopathy with no "
   "identifiable infectious or neoplastic cause after investigation.",
-  [["Persistent generalised lymphadenopathy, treated by treating the HIV",
-    "Correct. Persistent generalised lymphadenopathy is defined by the absence of an identifiable "
+  [["Persistent generalized lymphadenopathy, treated by treating the HIV",
+    "Correct. Persistent generalized lymphadenopathy is defined by the absence of an identifiable "
     "infectious or neoplastic cause, and the neck is its commonest site. It reflects the immune "
     "activation of untreated infection, which is why the treatment is antiretroviral therapy rather "
     "than anything directed at the nodes themselves."],
@@ -279,7 +279,7 @@ Q("HIV-associated adenopathy", IO,
     "alter the underlying immune activation."],
    ["Kaposi sarcoma",
     "Kaposi sarcoma is one of the conditions that must be excluded before accepting persistent "
-    "generalised lymphadenopathy, alongside tuberculosis, Pneumocystis and lymphoma. Investigation "
+    "generalized lymphadenopathy, alongside tuberculosis, Pneumocystis and lymphoma. Investigation "
     "here has already excluded a neoplastic cause."],
    ["Tuberculous adenitis",
     "Mycobacterium tuberculosis is specifically on the list to rule out in an HIV-positive patient "

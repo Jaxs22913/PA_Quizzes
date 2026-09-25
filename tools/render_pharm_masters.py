@@ -24,7 +24,7 @@ INTRO = ("Sixty questions drawn from every topic in the Exam 1 block, in proport
          "random &mdash; all six contribute to every form, so this is a genuine cumulative rehearsal "
          "and not a sample of whichever topic had the most questions written for it. Questions are "
          "reused verbatim from the topic quizzes, so nothing here can drift from the material it is "
-         "summarising. <b>No question appears in more than one form</b>, so working through all five "
+         "summarizing. <b>No question appears in more than one form</b>, so working through all five "
          "gives you 300 distinct questions. Every question cites its slide. "
          "<b>Weighted the way the course asked for</b>: Dr. McInnis told the class that mechanism is "
          "over-studied, so indications, patient education, side effects and contraindications carry "

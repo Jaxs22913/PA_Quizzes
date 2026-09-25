@@ -12,7 +12,7 @@ INTRO = ("Thirty clinical vignettes on cutaneous bacterial infections. Each case
          "the clues that narrow it &mdash; age, exposure, occupation, comorbidity &mdash; and the "
          "defining feature it turns on. The lead-in varies deliberately: some ask for the diagnosis, "
          "others for the next step, the treatment, the test, or what you would tell the patient. Read "
-         "the lead-in carefully; recognising the organism and answering the question are two separate "
+         "the lead-in carefully; recognizing the organism and answering the question are two separate "
          "acts. Several cases hinge on discriminations this lecture makes explicitly &mdash; erysipelas "
          "against cellulitis by the border, furuncle against abscess by origin, acute against chronic "
          "paronychia by timescale, and cellulitis against necrotizing fasciitis by pain out of "

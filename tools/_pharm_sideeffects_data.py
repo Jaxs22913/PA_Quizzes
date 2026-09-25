@@ -18,16 +18,16 @@ ROWS = [
  ("Aminopenicillins<br><span class=g>ampicillin, amoxicillin</span>",
   "<b>Hepatic dysfunction, hepatitis, jaundice</b> with raised AST, ALT, bilirubin and alkaline phosphatase. "
   "<b><i>C. difficile</i> infection.</b> <b>Stevens-Johnson syndrome and toxic epidermal necrolysis.</b> "
-  "<b>Interstitial nephritis, haematuria, crystalluria.</b> Anaemia and thrombocytopenia.",
+  "<b>Interstitial nephritis, hematuria, crystalluria.</b> Anemia and thrombocytopenia.",
   "Monitor <b>liver enzymes and bilirubin</b>; watch for rash progressing to blistering.",
   "Multi-system", L1, 21, ["Hepatic dysfunction", "jaundice", "Clostridium difficile",
                            "Stevens-Johnson", "Interstitial nephritis", "Anemia, thrombocytopenia"]),
  ("Penicillins &mdash; class",
-  "<b>Hypersensitivity reaction</b>, rash and diarrhoea.",
+  "<b>Hypersensitivity reaction</b>, rash and diarrhea.",
   "Monitor <b>renal and hepatic function and platelets</b>; dosing frequency drops with renal impairment.",
   "Allergy", L1, 22, ["Hypersensitivity Reaction", "Rash", "Diarrhea", "Renal and Hepatic function"]),
  ("Piperacillin/tazobactam<br><span class=g>Zosyn</span>",
-  "<b>Hypersensitivity reaction</b>, rash and diarrhoea.",
+  "<b>Hypersensitivity reaction</b>, rash and diarrhea.",
   "Monitor for <b>signs and symptoms of anaphylaxis</b>, renal function and full blood count.",
   "Allergy", L1, 28, ["Hypersensitivity Reaction", "Rash", "Diarrhea",
                       "Signs/symptoms of anaphylaxis"]),
@@ -43,7 +43,7 @@ ROWS = [
   "Gastrointestinal / Hepatic", L1, 41, ["Dosing Considerations", "Renal", "Liver function",
                                          "signs/symptoms of anaphylaxis", "Diarrhea"]),
  ("Cephalosporins &mdash; class",
-  "Signs and symptoms of <b>allergic reaction</b>; nausea, vomiting and diarrhoea.",
+  "Signs and symptoms of <b>allergic reaction</b>; nausea, vomiting and diarrhea.",
   "<b>Penicillin cross-sensitivity is approximately less than 1%.</b> Mostly renally eliminated.",
   "Allergy", L1, 30, ["allergic reaction", "Nausea/Vomiting/Diarrhea", "Penicillin cross-sensitivity"]),
  ("Carbapenems<br><span class=g>imipenem especially</span>",
@@ -59,7 +59,7 @@ ROWS = [
   "Infusion / Renal / Ear", L1, 51, ["Red Man Syndrome", "Fever/chills", "Phlebitis", "Ototoxicity",
                                      "Nephrotoxicity", "Requires TDM"]),
  ("Macrolides<br><span class=g>erythromycin, clarithromycin, azithromycin</span>",
-  "<b>Nausea, diarrhoea, abdominal pain &mdash; more with erythromycin and especially in children and young "
+  "<b>Nausea, diarrhea, abdominal pain &mdash; more with erythromycin and especially in children and young "
   "adults</b>, because it stimulates motility. <b>Cholestatic hepatitis</b> (rare, more with estolate). "
   "<b>Transient hearing loss</b> with large intravenous doses or renal insufficiency. <b>QT prolongation and "
   "Torsades de pointes.</b>",
@@ -76,7 +76,7 @@ ROWS = [
   "Skin / Teeth / Bone", L1, 63, ["Photosensitivity", "Discoloration of teeth", "Doxycycline",
                                   "Depression of skeletal growth", "Must be renally dose adjusted"]),
  ("Tigecycline<br><span class=g>Tygacil</span>",
-  "<b>Vomiting, nausea, diarrhoea and fever.</b>",
+  "<b>Vomiting, nausea, diarrhea and fever.</b>",
   "Dosing consideration is <b>hepatic dysfunction</b>, not renal &mdash; the opposite of most of this lecture.",
   "Gastrointestinal", L1, 66, ["Vomiting", "Nausea", "Diarrhea", "Fever", "Hepatic dysfunction"]),
  ("Aminoglycosides<br><span class=g>gentamicin, tobramycin, amikacin</span>",
@@ -87,7 +87,7 @@ ROWS = [
  ("Linezolid<br><span class=g>Zyvox</span>",
   "<b>Thrombocytopenia.</b> <b>Serotonin syndrome</b> with SSRIs, tyramine-containing foods and pseudoephedrine.",
   "Check the medication list for serotonergic agents before starting; watch the <b>platelet count</b>.",
-  "Haematologic / Neurologic", L1, 71, ["Thrombocytopenia", "SSRI Interactions", "tyramine",
+  "Hematologic / Neurologic", L1, 71, ["Thrombocytopenia", "SSRI Interactions", "tyramine",
                                         "Serotonin Syndrome"]),
  ("Fluoroquinolones<br><span class=g>class</span>",
   "<b>Tendonitis and Achilles tendon rupture.</b> <b>QT prolongation and Torsades de Pointes.</b> "
@@ -101,21 +101,21 @@ ROWS = [
  ("Clindamycin<br><span class=g>Cleocin</span>",
   "<b><i>Clostridium difficile</i> and pseudomembranous colitis</b> &mdash; the reaction this drug is known "
   "for. Also <b>rash, neutropenia and thrombocytopenia</b>.",
-  "New diarrhoea on clindamycin is <i>C. difficile</i> until proven otherwise.",
-  "Gastrointestinal / Haematologic", L1, 81, ["Rash", "Neutropenia", "Thrombocytopenia",
+  "New diarrhea on clindamycin is <i>C. difficile</i> until proven otherwise.",
+  "Gastrointestinal / Hematologic", L1, 81, ["Rash", "Neutropenia", "Thrombocytopenia",
                                               "Clostridium difficile", "Pseudomembranous colitis"]),
  ("Trimethoprim/sulfamethoxazole<br><span class=g>Septra, Bactrim</span>",
   "<b>Hypersensitivity &mdash; rash, Stevens-Johnson syndrome, toxic epidermal necrolysis.</b> <b>Blood "
-  "dyscrasias &mdash; thrombocytopenia, agranulocytosis, megaloblastic anaemia.</b> <b>Hepatotoxicity and "
-  "hyperbilirubinaemia.</b> Nausea, vomiting, diarrhoea, anorexia.",
+  "dyscrasias &mdash; thrombocytopenia, agranulocytosis, megaloblastic anemia.</b> <b>Hepatotoxicity and "
+  "hyperbilirubinaemia.</b> Nausea, vomiting, diarrhea, anorexia.",
   "Interactions matter as much as the toxicity: raises <b>phenytoin, rifampin, digoxin</b>; reduces renal "
-  "clearance of <b>methotrexate (pancytopenia)</b>; <b>hypoglycaemia with sulfonylureas</b>; <b>significantly "
-  "increases INR (international normalised ratio) with warfarin</b>.",
-  "Skin / Haematologic / Hepatic", L1, 85, ["Hypersensitivity-rash", "SJS", "TEN", "Blood dyscrasias",
+  "clearance of <b>methotrexate (pancytopenia)</b>; <b>hypoglycemia with sulfonylureas</b>; <b>significantly "
+  "increases INR (international normalized ratio) with warfarin</b>.",
+  "Skin / Hematologic / Hepatic", L1, 85, ["Hypersensitivity-rash", "SJS", "TEN", "Blood dyscrasias",
                                             "agranulocytosis", "hepatotoxicity"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
   "<b>Disulfiram-like reaction with ethanol.</b> Headache, nausea and vomiting.",
-  "The alcohol counselling is the whole of the patient education for this drug.",
+  "The alcohol counseling is the whole of the patient education for this drug.",
   "Gastrointestinal", L1, 86, ["Disulfiram-like reaction with ethanol", "Headache", "Nausea", "Vomiting"]),
  ("Polymyxin B and E",
   "<b>BLACK BOX WARNINGS for nephrotoxicity, neurotoxicity and neuromuscular blockade.</b>",
@@ -125,11 +125,11 @@ ROWS = [
 
  # ---------------- ANTIFUNGALS ----------------
  ("Amphotericin B",
-  "<b>Fever and chills</b> from interleukin-1 and tumour necrosis factor. <b>Side effects limit treatment.</b>",
+  "<b>Fever and chills</b> from interleukin-1 and tumor necrosis factor. <b>Side effects limit treatment.</b>",
   "<b>Pre-treat with paracetamol, antihistamines and corticosteroids.</b>",
   "Infusion", L1, 98, ["Fever/chills", "IL-1", "TNF", "Pretreat", "Side effects limit treatment"]),
  ("Amphotericin B",
-  "<b>Electrolyte abnormalities &mdash; hypokalaemia and hypomagnesaemia.</b> <b>Hypotension.</b> <b>Uraemia in "
+  "<b>Electrolyte abnormalities &mdash; hypokalemia and hypomagnesemia.</b> <b>Hypotension.</b> <b>Uremia in "
   "80% with decreased filtration.</b> <b>Renal tubule damage.</b>",
   "<b>Hydrate with normal saline</b> for the renal tubule damage. Lipid formulations cost 20&ndash;50 times more "
   "but have <b>reduced toxicity</b>.",
@@ -138,7 +138,7 @@ ROWS = [
  ("Flucytosine<br><span class=g>Ancobon</span>",
   "<b>Bone marrow suppression.</b> <b>Hepatotoxicity.</b> Gastrointestinal disturbance and rash.",
   "Available orally only.",
-  "Haematologic / Hepatic", L1, 101, ["Bone marrow suppression", "Hepatotoxicity", "GI disturbances",
+  "Hematologic / Hepatic", L1, 101, ["Bone marrow suppression", "Hepatotoxicity", "GI disturbances",
                                       "Rash"]),
  ("Ketoconazole",
   "Nausea, vomiting and anorexia.",
@@ -147,7 +147,7 @@ ROWS = [
   "Gastrointestinal", L1, 103, ["Nausea, vomiting, anorexia", "Inhibits CYP3A4",
                                 "significant drug interactions"]),
  ("Posaconazole<br><span class=g>Noxafil</span>",
-  "<b>QT prolongation</b>, fever, diarrhoea, <b>hypokalaemia, hypomagnesaemia</b> and <b>thrombocytopenia</b>.",
+  "<b>QT prolongation</b>, fever, diarrhea, <b>hypokalemia, hypomagnesemia</b> and <b>thrombocytopenia</b>.",
   "Same electrolyte pattern as amphotericin &mdash; check potassium and magnesium.",
   "Cardiac / Electrolyte", L1, 105, ["QT prolongation", "fever", "diarrhea", "Hypokalemia",
                                      "hypomagnesemia", "thrombocytopenia"]),
@@ -157,7 +157,7 @@ ROWS = [
   "Ocular / Hepatic / Renal", L1, 107, ["Effects on vision", "30%", "liver and renal function",
                                         "cyclodextrin", "accumulate in renal failure"]),
  ("Echinocandins<br><span class=g>caspofungin, micafungin, anidulafungin</span>",
-  "<b>Tachycardia, headache, insomnia, hypokalaemia, hypomagnesaemia and blood dyscrasias.</b>",
+  "<b>Tachycardia, headache, insomnia, hypokalemia, hypomagnesemia and blood dyscrasias.</b>",
   "The best-tolerated systemic antifungal class in the deck.",
   "Cardiac / Electrolyte", L1, 109, ["Tachycardia", "headache", "insomnia", "hypokalemia",
                                      "hypomagnesemia", "blood dyscrasias"]),
@@ -171,7 +171,7 @@ ROWS = [
  ("Acyclovir, valacyclovir<br><span class=g>Zovirax, Valtrex</span>",
   "Nausea, vomiting, rash. <b>Central nervous system &mdash; seizures, delirium, tremor.</b> <b>Bone marrow suppression.</b> "
   "<b>Crystallizes in the renal tubule.</b>",
-  "<b>Maintain hydration and renal function</b> &mdash; the counselling point that prevents the renal injury.",
+  "<b>Maintain hydration and renal function</b> &mdash; the counseling point that prevents the renal injury.",
   "Renal / Neurologic", L1, 123, ["nausea, vomiting, rash", "maintain hydration", "seizures",
                                   "delirium", "bone marrow suppression", "crystallizes in renal tubule"]),
  ("Ganciclovir, valganciclovir<br><span class=g>Cytovene, Valcyte</span>",
@@ -180,7 +180,7 @@ ROWS = [
   "seizures, coma.</b>",
   "<b>33% of patients must stop intravenous treatment because of side effects</b> &mdash; the highest "
   "discontinuation rate in the lecture.",
-  "Haematologic / Neurologic", L1, 125, ["neutropenia", "thrombocytopenia", "confusion, ataxia, seizures",
+  "Hematologic / Neurologic", L1, 125, ["neutropenia", "thrombocytopenia", "confusion, ataxia, seizures",
                                          "33%", "stop intravenous treatment"]),
  ("Penciclovir, famciclovir<br><span class=g>Denavir, Famvir</span>",
   "<b>Actions and toxicity similar to acyclovir</b> &mdash; the deck does not list a separate profile.",
@@ -220,7 +220,7 @@ ROWS = [
                                   "Increased serum lipids", "developing depression"]),
  ("Topical corticosteroids",
   "<b>Local: skin atrophy, acne, rosacea, allergic dermatitis</b> (the last related to the vehicle). "
-  "<b>Systemic: adrenal suppression, infections, hyperglycaemia, glaucoma, cataracts, and growth retardation in "
+  "<b>Systemic: adrenal suppression, infections, hyperglycemia, glaucoma, cataracts, and growth retardation in "
   "children.</b>",
   "Risk scales with <b>potency, duration, area covered and occlusiveness &mdash; ointment &gt; cream &gt; "
   "lotion</b>.",
@@ -257,7 +257,7 @@ ROWS = [
   "Skin / Renal", L2, 48, ["Allergic reactions uncommon", "open wounds/denuded skin",
                            "neuro/nephrotoxicity"]),
  ("Imiquimod<br><span class=g>Aldara</span>",
-  "<b>Skin irritation in virtually all patients</b> &mdash; oedema, vesicles, erosions, ulcers.",
+  "<b>Skin irritation in virtually all patients</b> &mdash; edema, vesicles, erosions, ulcers.",
   "<b>The degree of inflammation parallels efficacy</b>, so the reaction is a sign it is working. Say so before "
   "they stop using it.",
   "Skin", L2, 57, ["skin irritation in virtually all patients", "Edema, vesicles, erosions, ulcers",
@@ -265,7 +265,7 @@ ROWS = [
 
  # ---------------- ANS: CHOLINERGIC ----------------
  ("Bethanechol<br><span class=g>Urecholine</span>",
-  "<b>Sweating, salivation, flushing, decreased blood pressure, nausea, abdominal pain, diarrhoea and "
+  "<b>Sweating, salivation, flushing, decreased blood pressure, nausea, abdominal pain, diarrhea and "
   "bronchospasm.</b>",
   "This is the muscarinic excess pattern &mdash; it recurs for every cholinergic agonist in the lecture.",
   "Cholinergic excess", L3, 31, ["Sweating", "Salivation", "Flushing", "Decreased blood pressure",
@@ -278,7 +278,7 @@ ROWS = [
   "Neurologic / Cardiac", L3, 37, ["Convulsions at high doses", "Bradycardia",
                                    "Decreased cardiac output", "Paralysis of skeletal muscle"]),
  ("Neostigmine, pyridostigmine",
-  "<b>Salivation, flushing, decreased blood pressure, nausea, abdominal pain, diarrhoea, bronchospasm.</b>",
+  "<b>Salivation, flushing, decreased blood pressure, nausea, abdominal pain, diarrhea, bronchospasm.</b>",
   "Identical profile for both agents &mdash; the deck repeats the list verbatim.",
   "Cholinergic excess", L3, 39, ["Salivation, flushing, decreased BP", "abdominal pain", "bronchospasm"]),
  ("Donepezil, rivastigmine, galantamine",
@@ -314,8 +314,8 @@ ROWS = [
 
  # ---------------- ANS: ADRENERGIC ----------------
  ("Epinephrine",
-  "<b>Central nervous system &mdash; anxiety, fear, tension, headache, tremor.</b> <b>Cerebral haemorrhage from the rise in blood "
-  "pressure.</b> <b>Cardiac arrhythmias.</b> <b>Pulmonary oedema.</b>",
+  "<b>Central nervous system &mdash; anxiety, fear, tension, headache, tremor.</b> <b>Cerebral hemorrhage from the rise in blood "
+  "pressure.</b> <b>Cardiac arrhythmias.</b> <b>Pulmonary edema.</b>",
   "<b>Oral is ineffective</b> &mdash; inactivated by intestinal enzymes. Rapid onset, brief duration.",
   "Cardiac / Neurologic", L3, 86, ["anxiety, fear, tension, headache, tremor", "cerebral hemorrhage",
                                    "Cardiac arrhythmias", "Pulmonary edema", "Oral ineffective"]),
@@ -366,7 +366,7 @@ ROWS = [
                                     "Increases CNS activity"]),
  ("Tyramine",
   "<b>May cause serious vasopressor effects if the patient is taking a monoamine oxidase inhibitor.</b>",
-  "Normally oxidised by MAO (monoamine oxidase) in the gastrointestinal tract; on an MAOI (monoamine oxidase inhibitor) it <b>enters the nerve "
+  "Normally oxidized by MAO (monoamine oxidase) in the gastrointestinal tract; on an MAOI (monoamine oxidase inhibitor) it <b>enters the nerve "
   "terminal and "
   "displaces stored norepinephrine</b>. Found in <b>fermented foods such as cheese and wine</b>.",
   "Cardiovascular", L3, 101, ["serious vasopressor effects", "MAOI", "displaces stored norepinephrine",
@@ -378,7 +378,7 @@ ROWS = [
                               "Drowsiness", "Orthostatic hypotension"]),
  ("Propranolol",
   "<b>Bronchoconstriction.</b> <b>Arrhythmias if stopped abruptly</b>, from beta receptor up-regulation. "
-  "<b>Sexual impairment.</b> <b>Fasting hypoglycaemia, increased LDL cholesterol, increased triglycerides.</b>",
+  "<b>Sexual impairment.</b> <b>Fasting hypoglycemia, increased LDL cholesterol, increased triglycerides.</b>",
   "The metabolic disturbances are easy to forget and easy to ask about.",
   "Respiratory / Cardiac / Metabolic", L3, 117, ["Bronchoconstriction", "Arrhythmias if stopped abruptly",
                                                  "up-regulation", "Sexual impairment",

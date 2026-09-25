@@ -13,7 +13,7 @@ the first two syllabus objectives are anatomy -- the triangles and the lymph
 nodes -- and no condition row carries them. The KITTENS differential and the
 red-flag list from slide 13 open the clinical half, because they are the
 lecture's own framework for every row that follows. And slide 38 is a PICTURE
-of a table, so the primary-tumour list is transcribed rather than lost.
+of a table, so the primary-tumor list is transcribed rather than lost.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,14 +26,14 @@ ORDER = [
  ("l18-cong", "4.3 &middot; Congenital neck masses",
   ["Branchial cleft cyst", "Thyroglossal duct cyst", "Dermoid cyst", "Plunging ranula",
    "Laryngocele", "Lymphangioma (cystic hygroma)", "Haemangioma", "Teratoma", "Thymic cyst",
-   "Sternocleidomastoid tumour of infancy"]),
+   "Sternocleidomastoid tumor of infancy"]),
  ("l18-infl", "4.4 &middot; Inflammatory neck masses",
   ["Reactive viral lymphadenopathy", "HIV-associated cervical adenopathy",
    "Suppurative bacterial lymphadenopathy", "Cat scratch disease", "Toxoplasmosis", "Tularemia",
    "Brucellosis", "Actinomycosis", "Atypical mycobacteria", "Tuberculous adenitis (scrofula)",
    "Fungal neck infection"]),
  ("l18-neo", "4.5 &middot; Neoplastic neck masses",
-  ["Neck neoplasm &mdash; general", "Primary neck tumours &mdash; the list"]),
+  ["Neck neoplasm &mdash; general", "Primary neck tumors &mdash; the list"]),
  ("l18-thy", "4.6 &middot; The thyroid",
   ["Thyroid nodule and mass", "Papillary thyroid carcinoma", "Follicular thyroid carcinoma",
    "Medullary thyroid carcinoma", "Anaplastic thyroid carcinoma", "Primary thyroid lymphoma"]),
@@ -149,7 +149,7 @@ def build():
       <td><b>Carotid arteries, internal jugular vein, vagus nerve.</b></td></tr>
     <tr><td><b>Muscular</b></td>
       <td>Omohyoid above, sternocleidomastoid below, midline in front</td>
-      <td>Thyroid, parathyroid, larynx, trachea, oesophagus, thyroid and cricoid cartilage.</td></tr>
+      <td>Thyroid, parathyroid, larynx, trachea, esophagus, thyroid and cricoid cartilage.</td></tr>
   </table>
 
   <p><strong>Lymphatic drainage.</strong> Superficial nodes are named for where they sit.
@@ -182,13 +182,13 @@ def build():
   <b>K</b> congenital &mdash; branchial cleft cyst, lymphatic malformation, teratoma, dermoid cyst,
   thyroglossal duct cyst, external laryngocele.
   <b>I</b> infectious and iatrogenic &mdash; bacterial or viral lymphadenitis, tuberculosis,
-  cat-scratch fever, syphilis, atypical mycobacteria, persistent generalised lymphadenopathy,
+  cat-scratch fever, syphilis, atypical mycobacteria, persistent generalized lymphadenopathy,
   mononucleosis, sebaceous cyst, deep inflammation or abscess.
-  <b>T</b> toxins and trauma &mdash; haematoma.
+  <b>T</b> toxins and trauma &mdash; hematoma.
   <b>E</b> endocrine &mdash; thymic cyst, thyroid hyperplasia, aberrant thyroid tissue, parathyroid
   cyst.
   <b>N</b> neoplastic &mdash; metastatic or regional malignancy, thyroid neoplasm, lymphoma,
-  haemangioma, salivary gland tumour, vascular tumour, neurogenic tumour, lipoma.
+  hemangioma, salivary gland tumor, vascular tumor, neurogenic tumor, lipoma.
   <b>S</b> systemic &mdash; granulomatous disease, laryngocele, plunging ranula, Kawasaki
   disease.</p>
 

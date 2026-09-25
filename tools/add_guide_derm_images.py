@@ -122,7 +122,7 @@ LOOK = {
  "Seborrheic dermatitis": "Greasy yellow scale on erythema in a sebum-rich site",
  "Nummular eczema": "Discrete coin-shaped plaques with a clear edge",
  "Dyshidrotic eczema": "Deep-seated tapioca-like vesicles along the sides of the fingers",
- "Stasis dermatitis": "Gaiter-area pigmentation and oedema, bilateral",
+ "Stasis dermatitis": "Gaiter-area pigmentation and edema, bilateral",
  "Diaper dermatitis": "Involves convex surfaces and spares the folds",
  "Perioral dermatitis": "Papules around the mouth that spare the vermilion border",
  "Xeroderma (xerosis)": "Dry cracked plating of the skin, worst on shins",
@@ -137,9 +137,9 @@ LOOK = {
  "Alopecia areata": "Smooth round patch of loss with no scarring or scale",
  "Androgenetic alopecia": "Patterned thinning, temples and vertex in men, part width in women",
  "Erythema multiforme": "Target lesions with three zones, acral first",
- "Urticaria": "Transient oedematous wheals; each one moves within a day",
+ "Urticaria": "Transient edematous wheals; each one moves within a day",
  "Erythema nodosum": "Tender red nodules on the shins that never ulcerate",
- "Granuloma annulare": "Ring of firm papules with an intact, non-scaly centre",
+ "Granuloma annulare": "Ring of firm papules with an intact, non-scaly center",
  "Pyoderma gangrenosum": "Ulcer with a violaceous undermined border",
  "Acne rosacea": "Central facial erythema with telangiectasia, no comedones",
  "Hyperhidrosis": "Visible sweat beyond thermal need, focal and symmetric",
@@ -155,14 +155,14 @@ LOOK = {
  "Actinic keratosis": "Rough sandpaper texture, easier to feel than to see",
  "Solar lentigo also Lecture 8": "Uniform tan macule on chronically exposed skin",
  "Acne vulgaris": "Comedones alongside papules and pustules in sebaceous areas",
- "Folliculitis": "Pustules centred on hair follicles",
+ "Folliculitis": "Pustules centered on hair follicles",
  "Pseudomonas (&ldquo;hot tub&rdquo;) folliculitis": "Follicular pustules under the swimsuit area after a tub",
  "Pseudofolliculitis barbae": "Papules in the beard from hairs re-entering the skin",
  "Furuncle": "One tender nodule around a single follicle",
  "Carbuncle": "Several furuncles coalescing, draining from multiple points",
  "Hidradenitis suppurativa": "Nodules, sinus tracts and scarring in apocrine-bearing skin",
  "Erythrasma": "Well-demarcated brown patch in a fold; coral-red under Wood's lamp",
- "Impetigo &mdash; non-bullous": "Honey-coloured crust on a superficial erosion",
+ "Impetigo &mdash; non-bullous": "Honey-colored crust on a superficial erosion",
  "Impetigo &mdash; bullous": "Flaccid bullae leaving a collarette of scale",
  "Ecthyma": "Punched-out ulcer under the crust, deeper than impetigo",
  "Erysipelas": "Raised, sharply demarcated bright erythema",
@@ -170,7 +170,7 @@ LOOK = {
  "Abscess": "Fluctuant collection, often with a pointing head",
  "Acute paronychia": "Painful erythematous swelling of one nail fold",
  "Chronic paronychia": "Retracted cuticle and nail dystrophy over months",
- "Necrotizing fasciitis": "Skin changes that lag far behind the pain, with dusky discolouration",
+ "Necrotizing fasciitis": "Skin changes that lag far behind the pain, with dusky discoloration",
  "Scabies": "Burrows in web spaces and wrists, itch worst at night",
  "Crusted (hyperkeratotic) scabies": "Thick hyperkeratotic crusting, enormous mite burden",
  "Pediculosis capitis (head lice)": "Nits cemented to hair shafts near the scalp",
@@ -190,15 +190,15 @@ LOOK = {
  "Lentigines": "Uniform brown macules that do not fade in winter",
  "Solar lentigo also Lecture 3": "Larger tan patch on chronically exposed skin",
  "Seborrheic keratosis": "Waxy stuck-on plaque with visible follicular plugging",
- "Dermatosis papulosa nigrans": "Small dark papules on the malar cheeks, skin of colour",
+ "Dermatosis papulosa nigrans": "Small dark papules on the malar cheeks, skin of color",
  "Vitiligo": "Sharply marginated depigmented, not merely hypopigmented, patches",
- "Common acquired melanocytic naevus (mole)": "Small, symmetric, one uniform colour, stable",
+ "Common acquired melanocytic naevus (mole)": "Small, symmetric, one uniform color, stable",
  "Congenital melanocytic naevus": "Present at birth, often large and hair-bearing",
  "Naevus spilus": "Tan patch with darker speckles inside it",
- "Blue naevus": "Blue-grey papule, colour from pigment deep in the dermis",
+ "Blue naevus": "Blue-gray papule, color from pigment deep in the dermis",
  "Spitz naevus": "Pink to red-brown dome, typically in a child, rapid onset",
  "Pigmented spindle cell naevus (Reed)": "Very dark, sharply circumscribed, symmetric",
- "Dysplastic melanocytic naevus": "Larger than 6mm with irregular borders and mixed colours",
+ "Dysplastic melanocytic naevus": "Larger than 6mm with irregular borders and mixed colors",
  "Photodermatitis (phytophotodermatitis)": "Bizarre streaks and drips where plant sap met sun",
 }
 
@@ -227,7 +227,7 @@ CSS = """
   @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
     .figgrid img,.figgrid .fg-nopic{height:112px}}
   /* The GRID must be allowed to break -- a ten-condition strip is taller than a
-     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     page, so `break-inside:avoid` on the grid cannot be honored and Chrome
      splits it through the middle of a figure instead, clipping the photograph
      and orphaning its caption. Let the grid fragment between rows and protect
      the individual figure, which always fits. */

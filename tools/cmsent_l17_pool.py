@@ -18,7 +18,7 @@ Q("Bacterial sinusitis", IO,
   "and thick yellow-green discharge.",
   [["Amoxicillin-clavulanate 875 milligrams orally twice daily",
     "Correct. Symptoms persisting ten days or more without improvement is one of the criteria that "
-    "shifts a rhinosinusitis from the 90 to 98 per cent that are viral into the small bacterial "
+    "shifts a rhinosinusitis from the 90 to 98 percent that are viral into the small bacterial "
     "minority. Amoxicillin-clavulanate is first line because the clavulanate covers the "
     "beta-lactamase producing Haemophilus influenzae and Moraxella catarrhalis alongside "
     "pneumococcus."],
@@ -41,9 +41,9 @@ Q("Acute sinusitis", IO,
   "pressure worse when she bends forward, following a cold. She is afebrile and feels gradually "
   "better than two days ago.",
   [["Symptomatic treatment without antibiotics",
-    "Correct. Between 90 and 98 per cent of acute rhinosinusitis is viral, and the features that "
+    "Correct. Between 90 and 98 percent of acute rhinosinusitis is viral, and the features that "
     "would suggest bacterial infection are absent: it has been under ten days, she is improving "
-    "rather than showing double worsening, and she is afebrile. Discharge colour does not indicate "
+    "rather than showing double worsening, and she is afebrile. Discharge color does not indicate "
     "bacterial infection, so the treatment is decongestants, analgesia and saline."],
    ["Immediate amoxicillin-clavulanate",
     "Antibiotics at day four in an improving afebrile patient treat a virus. Acute rhinosinusitis is "
@@ -85,13 +85,13 @@ Q("Nasal foreign body", IO,
   "A 4-year-old boy has had two weeks of purulent nasal discharge. He has been afebrile with no "
   "respiratory symptoms. His mother says he gets into everything. Examination shows right-sided "
   "purulent discharge that is greenish-brown and extraordinarily foul-smelling.",
-  [["Direct visualisation of the right nasal vestibule",
+  [["Direct visualization of the right nasal vestibule",
     "Correct. Unilateral, foul-smelling purulent discharge in a young child is a retained nasal "
     "foreign body until proven otherwise, because an obstructing object traps secretions that "
     "stagnate and become malodorous. Looking directly into the vestibule both makes the diagnosis "
     "and allows the object to be removed, which is the treatment."],
    ["Culture and sensitivity of the nasal discharge",
-    "Culture will grow the mixed flora that colonises stagnant secretions, which tells you nothing "
+    "Culture will grow the mixed flora that colonizes stagnant secretions, which tells you nothing "
     "you did not already suspect and does not remove the object. The infection will recur as long "
     "as the obstruction remains."],
    ["Sinus radiographs",
@@ -109,16 +109,16 @@ Q("Epistaxis", IO,
   "bleeding from both nostrils and the site cannot be seen. He feels dizzy and appears confused.",
   [["Start an intravenous line and give fluids",
     "Correct. Dizziness and confusion in someone who has bled briskly for two hours are signs of "
-    "haemodynamic compromise, and resuscitation precedes definitive control of the bleeding point. "
+    "hemodynamic compromise, and resuscitation precedes definitive control of the bleeding point. "
     "Bleeding from both nostrils with no visible anterior source suggests a posterior bleed from the "
     "sphenopalatine artery, which is the type that causes significant blood loss."],
    ["Pinch the nose",
     "Direct pressure on the alae compresses Kiesselbach plexus and is the correct first move for an "
     "anterior bleed in a stable patient. It has already failed here, it cannot reach a posterior "
     "source, and it does not address the circulating volume he has lost."],
-   ["Spray a topical anaesthetic and decongestant",
+   ["Spray a topical anesthetic and decongestant",
     "Vasoconstriction is a genuine step in controlling epistaxis and will be needed, but it comes "
-    "after the patient is stabilised. Treating the nose first in someone who is confused from blood "
+    "after the patient is stabilized. Treating the nose first in someone who is confused from blood "
     "loss inverts the priority."],
    ["Burn the bleeding vessels with cautery",
     "Cautery requires a visible bleeding point, and the site explicitly cannot be seen. Blind "
@@ -130,10 +130,10 @@ Q("Epistaxis", IO,
   "minutes with pressure. He has no bruising elsewhere, takes no medication, and picks his nose "
   "frequently. It is winter.",
   [["Anterior epistaxis from Kiesselbach plexus, managed conservatively",
-    "Correct. Ninety per cent of nosebleeds are anterior, arising from Kiesselbach plexus on the "
+    "Correct. Ninety percent of nosebleeds are anterior, arising from Kiesselbach plexus on the "
     "anterior septum where several arteries anastomose in thin mucosa. Digital trauma is the "
     "commonest cause, and dry winter air cracks the mucosa further. Short bleeds stopped by pressure "
-    "in a well child need humidification and behaviour change rather than investigation."],
+    "in a well child need humidification and behavior change rather than investigation."],
    ["Posterior epistaxis requiring packing",
     "Posterior bleeds arise from the sphenopalatine artery, are usually heavier, often bleed from "
     "both nostrils or down the throat, and do not stop reliably with ten minutes of pressure. They "
@@ -143,12 +143,12 @@ Q("Epistaxis", IO,
     "anticoagulants or with other bleeding signs. This child has no bruising, no family history and "
     "no medication, and has an obvious mechanical cause."],
    ["Juvenile nasopharyngeal angiofibroma",
-    "That tumour does cause epistaxis in young males, but it presents with profuse unilateral "
+    "That tumor does cause epistaxis in young males, but it presents with profuse unilateral "
     "bleeding and progressive obstruction from a nasopharyngeal mass, not brief self-limiting bleeds "
     "in a nose-picking child."]],
   "diagnosis", D, 37),
 
-Q("Septal haematoma", IO,
+Q("Septal hematoma", IO,
   "A 16-year-old girl is struck in the nose during a hockey match. She has swelling and tenderness "
   "over the bridge. Examination of the nasal cavity shows bilateral bluish, boggy swelling of the "
   "septum that is soft to touch.",
@@ -174,10 +174,10 @@ Q("Septal haematoma", IO,
 Q("Nasal fracture", IO,
   "A 27-year-old man is punched in the nose. He has tenderness and swelling isolated to the bony "
   "bridge, breathes freely through each nostril, the nose is straight with no septal deviation, and "
-  "there is no septal haematoma.",
+  "there is no septal hematoma.",
   [["Ice and elevation, without radiography",
     "Correct. All four reassuring criteria are met: tenderness confined to the bony bridge, patent "
-    "airflow through each side, a straight nose with no septal deviation, and no septal haematoma. "
+    "airflow through each side, a straight nose with no septal deviation, and no septal hematoma. "
     "A radiograph would not change management in that situation, because the treatment of an "
     "undisplaced nasal fracture is symptomatic in any case."],
    ["Plain radiography of the nasal bones",
@@ -195,24 +195,24 @@ Q("Nasal fracture", IO,
   "next step", D, 46),
 
 Q("Nasal polyps", IO,
-  "A 7-year-old boy is found to have multiple grey, glistening masses in both nasal cavities, with "
+  "A 7-year-old boy is found to have multiple gray, glistening masses in both nasal cavities, with "
   "chronic congestion and reduced sense of smell.",
   [["Test for cystic fibrosis with a sweat chloride test",
-    "Correct. Nasal polyps are distinctly unusual in children, and between 5 and 44 per cent of "
+    "Correct. Nasal polyps are distinctly unusual in children, and between 5 and 44 percent of "
     "children with cystic fibrosis have them. Finding multiple polyps in a child is therefore an "
     "indication to look for the underlying systemic disease rather than simply to treat the polyps, "
     "and asthma should be assessed at the same time."],
    ["Prescribe an intranasal steroid and review in three months",
     "Topical steroid is reasonable symptomatic treatment for polyps, but using it alone in a child "
     "means treating the visible problem while missing the diagnosis it is pointing to. The "
-    "association with cystic fibrosis is the reason paediatric polyps are handled differently."],
+    "association with cystic fibrosis is the reason pediatric polyps are handled differently."],
    ["Refer for polypectomy",
     "Surgery gives only temporary relief because polyps recur, and it does not address the "
     "underlying cause. Operating before investigating leaves a child with an undiagnosed systemic "
     "disease."],
    ["Start antihistamines for presumed allergic rhinitis",
     "Allergy is associated with polyps in adults, but antihistamines do not shrink established "
-    "polyps, and attributing paediatric polyps to allergy without excluding cystic fibrosis misses "
+    "polyps, and attributing pediatric polyps to allergy without excluding cystic fibrosis misses "
     "the association that matters most at this age."]],
   "next step", D, 63),
 
@@ -220,9 +220,9 @@ Q("Allergic rhinitis", IO,
   "A 22-year-old woman has clear discharge from both nostrils, sneezing and itchy eyes each spring. "
   "The nasal mucosa is boggy with a bluish hue and the turbinates are swollen.",
   [["Allergic rhinitis",
-    "Correct. Bilateral clear rhinorrhoea with a bluish, boggy, oedematous mucosa is the "
+    "Correct. Bilateral clear rhinorrhea with a bluish, boggy, edematous mucosa is the "
     "characteristic appearance, and the seasonal pattern with itchy eyes points to an "
-    "immunoglobulin E mediated response to a pollen. The mucosal colour is the discriminating "
+    "immunoglobulin E mediated response to a pollen. The mucosal color is the discriminating "
     "physical finding, since infective rhinitis produces erythema rather than a bluish hue."],
    ["Acute bacterial sinusitis",
     "Bacterial sinusitis produces purulent rather than clear discharge, facial pain and pressure, "
@@ -233,7 +233,7 @@ Q("Allergic rhinitis", IO,
     "bilateral clear discharge described, and it does not recur predictably each spring."],
    ["Vasomotor rhinitis",
     "Vasomotor rhinitis also gives clear bilateral discharge, so it is a fair consideration, but it "
-    "is triggered by temperature change, odours or alcohol rather than by season, and it lacks the "
+    "is triggered by temperature change, odors or alcohol rather than by season, and it lacks the "
     "itch and ocular symptoms of an allergic response."]],
   "diagnosis", D, 66),
 
@@ -243,7 +243,7 @@ Q("Nasopharyngeal carcinoma", IO,
   "nasal discharge.",
   [["Nasopharyngeal carcinoma",
     "Correct. The combination of a neck mass, cranial nerve involvement giving diplopia and facial "
-    "numbness, and unilateral nasal symptoms is the described presentation. The tumour sits in the "
+    "numbness, and unilateral nasal symptoms is the described presentation. The tumor sits in the "
     "nasopharynx where it drains early to cervical nodes and can invade the skull base, and it is "
     "strongly associated with Epstein-Barr virus and endemic in southern China."],
    ["Chronic bacterial sinusitis",
@@ -251,7 +251,7 @@ Q("Nasopharyngeal carcinoma", IO,
     "mass or cranial nerve deficits. Diplopia and facial numbness indicate invasion rather than "
     "mucosal inflammation."],
    ["Nasal polyposis",
-    "Polyps cause bilateral obstruction and anosmia with grey glistening masses visible in the nasal "
+    "Polyps cause bilateral obstruction and anosmia with gray glistening masses visible in the nasal "
     "cavity. They do not metastasise to neck nodes and do not involve cranial nerves."],
    ["Allergic rhinitis",
     "Allergic disease is bilateral, gives clear discharge and itch, and has no mass effect. Nothing "
@@ -262,20 +262,20 @@ Q("Perforated septum", IO,
   "A 39-year-old man has nasal crusting, whistling on inspiration and recurrent minor nosebleeds. "
   "Examination shows a septal perforation. He has used intranasal steroid for years for allergic "
   "rhinitis.",
-  [["Chronic ischaemia of the septal mucosa, from intranasal steroid or cocaine use",
+  [["Chronic ischemia of the septal mucosa, from intranasal steroid or cocaine use",
     "Correct. The anterior septum has a thin mucosa over cartilage with no other blood supply, so "
     "anything that causes sustained vasoconstriction or mucosal injury there can perforate it. "
     "Prolonged intranasal steroid, particularly if sprayed at the septum rather than laterally, and "
     "cocaine are the two named causes, and the history has to ask about both."],
    ["Nasal polyps eroding the septum",
-    "Polyps are soft oedematous mucosal masses that obstruct the airway. They do not erode cartilage "
+    "Polyps are soft edematous mucosal masses that obstruct the airway. They do not erode cartilage "
     "or produce a perforation, and they would be visible on examination."],
    ["Untreated allergic rhinitis itself",
     "Allergy inflames and swells the mucosa but does not destroy septal cartilage. It is the "
     "treatment in this case, rather than the disease, that carries the risk."],
    ["A previous undiagnosed nasal fracture",
-    "A fracture can be associated with a septal haematoma, and an untreated haematoma does perforate "
-    "the septum, but that pathway requires the haematoma. A fracture alone does not perforate the "
+    "A fracture can be associated with a septal hematoma, and an untreated hematoma does perforate "
+    "the septum, but that pathway requires the hematoma. A fracture alone does not perforate the "
     "septum years later without one."]],
   "cause", D, 29),
 ]

@@ -2,7 +2,7 @@
 """Partition the Pharmacology I Lecture 2 dermatology pool into two 30s.
 
 Same machinery as pharm_l1_abx_partition.py: objective coverage and length bias
-are optimised by selection, answer position is guaranteed by ROTATION rather
+are optimized by selection, answer position is guaranteed by ROTATION rather
 than by choosing an index while authoring (which is how the "always A" bug got
 into 960 questions once already).
 

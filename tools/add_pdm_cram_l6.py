@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 """Add the Lecture 6 (Urinalysis) topics to the PDM I Exam 1 cram sheet.
 
-Same colour-coded topic/table structure as the earlier lectures: the guide
+Same color-coded topic/table structure as the earlier lectures: the guide
 carries the explanation, this carries only what has to be recallable cold.
 
 WHAT IS DELIBERATELY NOT HERE: the reference ranges printed on slide 14 --
 the pH range, the specific gravity range, the protein figures. Gopal said on
-1 September that she is not asking anyone to memorise ranges and that any range
+1 September that she is not asking anyone to memorize ranges and that any range
 needed will be supplied. A cram row demanding one back would drill the wrong
 reflex. WHICH PADS READ NEGATIVE is here, because that is exactly what she DID
 say to know cold.
@@ -28,17 +28,17 @@ TOPICS = [
  ("l6-basics", "Urinalysis — The Test and the Eye", "#2f5d50", "#e6f0ec", "#eff6f3", "#22463c", [
    ("WHAT IT COVERS", "PHYSICAL, CHEMICAL and MICROSCOPIC contents of urine. Complements — does not replace — SERUM CREATININE and BLOOD UREA NITROGEN in a renal workup."),
    ("ALWAYS ORDER IT FOR", "ABDOMINAL, PELVIC or BACK PAIN. Also routine on admission."),
-   ("COLOUR — pale/colourless", "DILUTE urine, possibly overhydrated."),
-   ("COLOUR — dark yellow/amber", "CONCENTRATED urine, possibly dehydrated."),
-   ("COLOUR — yellow-brown/green", "BILIRUBIN → hepatitis, cirrhosis, biliary obstruction."),
-   ("COLOUR — bright/dark red", "BLOOD. Or food: BEETS, blueberries, rhubarb."),
-   ("COLOUR — blue/orange/green", "MEDICATIONS. Tell the patient BEFORE they start so it does not alarm them."),
+   ("COLOR — pale/colorless", "DILUTE urine, possibly overhydrated."),
+   ("COLOR — dark yellow/amber", "CONCENTRATED urine, possibly dehydrated."),
+   ("COLOR — yellow-brown/green", "BILIRUBIN → hepatitis, cirrhosis, biliary obstruction."),
+   ("COLOR — bright/dark red", "BLOOD. Or food: BEETS, blueberries, rhubarb."),
+   ("COLOR — blue/orange/green", "MEDICATIONS. Tell the patient BEFORE they start so it does not alarm them."),
    ("TRANSPARENCY scale", "CLEAR → HAZY → CLOUDY → TURBID. Cloudiness = cells, bacteria, yeast, crystals, mucus, contrast or fat."),
    ("FOAM", "PROTEIN. The one inspection finding that points at a specific pad."),
-   ("ODOUR — normal", "AROMATIC."),
-   ("ODOUR — ammonia", "Sample STOOD too long; bacteria decomposed the urea. Refrigerate if not read in 1–2 hours, and add NO preservative."),
-   ("ODOUR — foul", "Bacterial infection. FAECAL odour → enterovesical FISTULA."),
-   ("ODOUR — fruity/sweet", "KETONES → check the blood sugar."),
+   ("ODOR — normal", "AROMATIC."),
+   ("ODOR — ammonia", "Sample STOOD too long; bacteria decomposed the urea. Refrigerate if not read in 1–2 hours, and add NO preservative."),
+   ("ODOR — foul", "Bacterial infection. FECAL odor → enterovesical FISTULA."),
+   ("ODOR — fruity/sweet", "KETONES → check the blood sugar."),
  ]),
  ("l6-strip", "The Reagent Strip", "#3d6f8a", "#e6eef3", "#f0f5f8", "#2b5164", [
    ("SPECIMEN", "FRESH, in a STERILE container. Strips stored DESICCATED."),
@@ -48,7 +48,7 @@ TOPICS = [
    ("SEMI-QUANTITATIVE result", "TRACE / 1+ / 2+ / 3+ — a GRADED ESTIMATE, not a measurement."),
    ("SHOULD READ NEGATIVE", "LEUKOCYTE ESTERASE · NITRITES · KETONES · GLUCOSE · BLOOD · BILIRUBIN. Protein is negative or trace."),
    ("ALWAYS CARRY A VALUE", "SPECIFIC GRAVITY and pH. Neither is ever simply 'negative'."),
-   ("What you are NOT asked", "To memorise reference RANGES. If a range is needed it will be given. Know DIRECTION and MEANING."),
+   ("What you are NOT asked", "To memorize reference RANGES. If a range is needed it will be given. Know DIRECTION and MEANING."),
  ]),
  ("l6-ph", "pH and Stones", "#7a5aa0", "#ede8f4", "#f4f1f8", "#54397a", [
    ("WHAT pH REPORTS", "The RENAL TUBULES' ability to hold the hydrogen ion concentration steady."),
@@ -57,7 +57,7 @@ TOPICS = [
    ("ACIDIC urine", "Ketoacidosis · E. COLI infection · metabolic and respiratory ACIDOSIS · diet high in MEAT or cranberries."),
    ("ALKALINE urine", "UREA-SPLITTING bacteria (PROTEUS, STAPH, KLEBSIELLA, PSEUDOMONAS) · contamination · acute and chronic renal failure · RENAL TUBULAR ACIDOSIS · metabolic and respiratory ALKALOSIS · diet high in FRUIT and VEG."),
    ("THE NAME TRAP", "RENAL TUBULAR ACIDOSIS gives ALKALINE urine — the defect is a failure to EXCRETE acid."),
-   ("ACIDIC urine stones", "CALCIUM OXALATE and URIC ACID. Treat by ALKALINISING the urine (chiefly for uric acid)."),
+   ("ACIDIC urine stones", "CALCIUM OXALATE and URIC ACID. Treat by ALKALINIZING the urine (chiefly for uric acid)."),
    ("ALKALINE urine stones", "TRIPLE PHOSPHATE and STRUVITE. Treat the INFECTION — urease-producing bacteria drive them."),
  ]),
  ("l6-infection", "The Two Infection Pads", "#a0522d", "#f4eae4", "#f9f3ef", "#73391f", [
@@ -69,10 +69,10 @@ TOPICS = [
    ("THE BIG ONE", "E. COLI causes MOST urinary tract infections and is RARELY UREASE-POSITIVE. So a POSITIVE nitrite is helpful; a NEGATIVE one DOES NOT rule out infection."),
    ("NITRITE sensitivity", "About 50% — LESS sensitive than leukocyte esterase."),
    ("EITHER PAD NEGATIVE + symptoms", "STILL SEND URINE CULTURE AND SENSITIVITY."),
-   ("PAEDIATRIC caveat", "Less reliable in young children — they void too often for the conversion."),
+   ("PEDIATRIC caveat", "Less reliable in young children — they void too often for the conversion."),
  ]),
  ("l6-ketones", "Ketones and Glucose", "#b8862f", "#f6efe1", "#faf6ee", "#8a6420", [
-   ("KETONES — meaning", "Cells are burning FATTY ACIDS instead of GLUCOSE. Made in the LIVER, normally fully metabolised."),
+   ("KETONES — meaning", "Cells are burning FATTY ACIDS instead of GLUCOSE. Made in the LIVER, normally fully metabolized."),
    ("KETONES — causes", "Uncontrolled DIABETES / DKA · STARVATION · FASTING · ALCOHOLIC KETOACIDOSIS · HIGH-FAT LOW-CARB diet · LIVER DISEASE · FEBRILE ILLNESS IN INFANTS AND CHILDREN."),
    ("KETONES — next move", "CHECK THE GLUCOSE."),
    ("GLUCOSE — why normally none", "Filtered freely, then WHOLLY REABSORBED in the PROXIMAL tubules."),
@@ -80,12 +80,12 @@ TOPICS = [
    ("GLUCOSE without high blood sugar", "IMPAIRED TUBULAR REABSORPTION · DEXTROSE-containing IV fluids · PREGNANCY (trace is normal, threshold falls)."),
  ]),
  ("l6-blood", "Blood — The Three Meanings", "#9c2b2b", "#f6e6e6", "#faf0f0", "#6f1c1c", [
-   ("WHAT THE PAD DETECTS", "HEME — present in RED CELLS, FREE HAEMOGLOBIN and MYOGLOBIN alike. A positive result DOES NOT SAY WHICH."),
+   ("WHAT THE PAD DETECTS", "HEME — present in RED CELLS, FREE HEMOGLOBIN and MYOGLOBIN alike. A positive result DOES NOT SAY WHICH."),
    ("HAEMATURIA", "INTACT RED CELLS. From bleeding ANYWHERE along the urinary tract."),
-   ("HAEMATURIA — causes", "INFECTION · INFLAMMATION · TRAUMA · TUMOUR · CALCULUS · OVER-AGGRESSIVE ANTICOAGULATION."),
+   ("HEMATURIA — causes", "INFECTION · INFLAMMATION · TRAUMA · TUMOR · CALCULUS · OVER-AGGRESSIVE ANTICOAGULATION."),
    ("GROSS vs MICROSCOPIC", "GROSS is visible to the naked eye. MICROSCOPIC needs analysis — defined as THREE OR MORE red cells."),
-   ("HAEMOGLOBINURIA", "FREE HAEMOGLOBIN, NO intact cells. From INTRAVASCULAR HAEMOLYSIS — sickle cell, transfusion reaction, severe BURNS."),
-   ("HAEMOGLOBINURIA — the confirming test", "RAISED SERUM UNCONJUGATED BILIRUBIN (a direct product of hemoglobin metabolism)."),
+   ("HAEMOGLOBINURIA", "FREE HEMOGLOBIN, NO intact cells. From INTRAVASCULAR HEMOLYSIS — sickle cell, transfusion reaction, severe BURNS."),
+   ("HEMOGLOBINURIA — the confirming test", "RAISED SERUM UNCONJUGATED BILIRUBIN (a direct product of hemoglobin metabolism)."),
    ("MYOGLOBINURIA", "MYOGLOBIN, NO intact cells. From SKELETAL MUSCLE injury — trauma, ELECTRIC SHOCK, RHABDOMYOLYSIS (compression, hyperthermia, STATINS)."),
    ("MYOGLOBINURIA — the confirming test", "RAISED SERUM CREATINE PHOSPHOKINASE."),
    ("TRACE blood, well patient", "Can follow STRENUOUS EXERCISE."),
@@ -107,8 +107,8 @@ TOPICS = [
  ]),
  ("l6-after", "After the Strip", "#5a6b2f", "#eef1e4", "#f5f7ef", "#414d21", [
    ("MICROSCOPIC urinalysis adds", "WHITE CELLS · RED CELLS · SQUAMOUS EPITHELIAL CELLS · CASTS · CRYSTALS."),
-   ("BACTERIA — significant when", "Collected by STRAIGHT CATHETERISATION, or alongside RAISED WHITE CELLS and a POSITIVE LEUKOCYTE ESTERASE."),
-   ("BACTERIA — probably NOT significant when", "More than TWENTY SQUAMOUS EPITHELIAL CELLS per high power field (contamination), or from a LONGSTANDING INDWELLING CATHETER (colonisation, not acute infection)."),
+   ("BACTERIA — significant when", "Collected by STRAIGHT CATHETERIZATION, or alongside RAISED WHITE CELLS and a POSITIVE LEUKOCYTE ESTERASE."),
+   ("BACTERIA — probably NOT significant when", "More than TWENTY SQUAMOUS EPITHELIAL CELLS per high power field (contamination), or from a LONGSTANDING INDWELLING CATHETER (colonization, not acute infection)."),
    ("DEFINITIVE diagnosis", "GRAM STAIN and CULTURE."),
    ("THE WORKED CASE", "Dysuria/frequency/urgency + LEUKOCYTE ESTERASE, NITRITES and BLOOD positive; glucose, bilirubin, ketones, protein NEGATIVE → URINARY TRACT INFECTION → send CULTURE AND SENSITIVITY."),
  ]),

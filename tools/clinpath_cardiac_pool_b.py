@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """Clinical Pathophysiology I, Lecture 6 -- Cardiac Pathophysiology, part B.
 
-Ischaemia and the coronary syndromes, then endocardial and valvular disease,
+Ischemia and the coronary syndromes, then endocardial and valvular disease,
 the myocardial diseases and the pericardium. Scope and exclusions as in
 pharm... no: as in clinpath_cardiac_pool_a.py -- MECHANISM ONLY, no management,
 no vignettes.
 
-The organising idea across the valve section is that stenosis makes the heart
+The organizing idea across the valve section is that stenosis makes the heart
 do PRESSURE work and regurgitation makes it do VOLUME work, and the chamber
 that hypertrophies or dilates follows from which. Everything downstream --
 where the pressure backs up to, which chamber enlarges, what rhythm results --
-can be reasoned from that rather than memorised valve by valve.
+can be reasoned from that rather than memorized valve by valve.
 """
 
 D = "6. Cardiac Pathophysiology for posting.pptx"
@@ -59,7 +59,7 @@ QUESTIONS = [
  "q": "Which determinants of workload increase myocardial oxygen demand?",
  "opts": [
   ["Heart rate, preload, afterload and contractility",
-   "Correct. Raising any one of the four raises demand, which is why ischaemia can appear with the coronary anatomy entirely unchanged."],
+   "Correct. Raising any one of the four raises demand, which is why ischemia can appear with the coronary anatomy entirely unchanged."],
   ["Coronary perfusion pressure and collateral circulation",
    "These are supply-side factors rather than determinants of demand."],
   ["Plaque size and composition",
@@ -90,7 +90,7 @@ QUESTIONS = [
    "Metabolic signals are described as the principal determinant."],
   ["Systemic blood pressure alone",
    "Perfusion pressure matters, but metabolic signals are described as the principal determinant."],
-  ["Haemoglobin concentration alone",
+  ["Hemoglobin concentration alone",
    "Oxygen content contributes, but it is not described as the principal determinant of delivery."]],
  "c": 0, "cite": D + ", Slide 31"},
 
@@ -110,10 +110,10 @@ QUESTIONS = [
 {"topic": "Coronary syndromes", "io": IO_SYND, "slot": "classification",
  "q": "Which are the CHRONIC coronary syndromes?",
  "opts": [
-  ["Stable angina and ischaemic cardiomyopathy",
+  ["Stable angina and ischemic cardiomyopathy",
    "Correct. Both reflect a supply problem the heart has been living with, as against the abrupt change that defines the acute syndromes."],
   ["Unstable angina and myocardial infarction",
-   "These are the acute syndromes. The chronic ones are stable angina and ischaemic cardiomyopathy."],
+   "These are the acute syndromes. The chronic ones are stable angina and ischemic cardiomyopathy."],
   ["Prinzmetal angina and pericarditis",
    "Pericarditis is not a coronary syndrome, and Prinzmetal angina is classified among the angina types rather than here."],
   ["Myocarditis and dilated cardiomyopathy",
@@ -123,12 +123,12 @@ QUESTIONS = [
 {"topic": "Angina pectoris", "io": IO_ANGINA, "slot": "mechanism",
  "q": "What distinguishes angina pectoris from infarction at the cellular level?",
  "opts": [
-  ["The ischaemia is intermittent and insufficient to kill cardiac cells",
+  ["The ischemia is intermittent and insufficient to kill cardiac cells",
    "Correct. Same mechanism, different endpoint: the supply falls short but recovers before the cells are lost."],
-  ["The ischaemia affects only the right ventricle",
-   "Location is not what separates them. Angina is ischaemia intermittent and insufficient to kill cardiac cells."],
-  ["There is no ischaemia, only abnormal conduction",
-   "Angina is defined by ischaemia; what distinguishes it is that the ischaemia stops short of killing cells."],
+  ["The ischemia affects only the right ventricle",
+   "Location is not what separates them. Angina is ischemia intermittent and insufficient to kill cardiac cells."],
+  ["There is no ischemia, only abnormal conduction",
+   "Angina is defined by ischemia; what distinguishes it is that the ischemia stops short of killing cells."],
   ["Cell death occurs but is confined to the endocardium",
    "Cell death is precisely what angina does not produce; that is what separates it from infarction."]],
  "c": 0, "cite": D + ", Slide 34"},
@@ -137,7 +137,7 @@ QUESTIONS = [
  "q": "What may result if angina causes insufficient pumping?",
  "opts": [
   ["Pulmonary congestion",
-   "Correct. Ischaemic muscle pumps poorly while it is ischaemic, and pressure backs up behind it even though no muscle has died."],
+   "Correct. Ischemic muscle pumps poorly while it is ischemic, and pressure backs up behind it even though no muscle has died."],
   ["Immediate atrial fibrillation in every case",
    "Atrial fibrillation is described in relation to atrial enlargement in mitral stenosis rather than here."],
   ["Pericardial effusion",
@@ -160,14 +160,14 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 35"},
 
 {"topic": "Prinzmetal angina", "io": IO_ANGINA, "slot": "mechanism",
- "q": "What characterises Prinzmetal, variant angina?",
+ "q": "What characterizes Prinzmetal, variant angina?",
  "opts": [
   ["Unpredictable attacks with no relation to physical or emotional stress, probably from vasospasm",
    "Correct, and the cause of the vasospasm itself is not known -- which is worth saying rather than glossing over."],
   ["Predictable attacks brought on by exertion",
-   "Predictable, exertion-related attacks characterise stable angina."],
+   "Predictable, exertion-related attacks characterize stable angina."],
   ["Attacks that progressively worsen and lengthen",
-   "Progressive worsening characterises unstable, crescendo angina."],
+   "Progressive worsening characterizes unstable, crescendo angina."],
   ["Attacks occurring only after myocardial infarction",
    "Prinzmetal angina is not defined by prior infarction; it is defined by unpredictable attacks with vasospasm as the probable mechanism."]],
  "c": 0, "cite": D + ", Slide 35"},
@@ -175,14 +175,14 @@ QUESTIONS = [
 {"topic": "Unstable angina", "io": IO_SYND, "slot": "classification",
  "q": "Why is unstable angina included among the acute coronary syndromes?",
  "opts": [
-  ["It may progress to acute ischaemia",
+  ["It may progress to acute ischemia",
    "Correct. It is grouped by where it is heading rather than by where it currently is, which is the point of treating it as acute."],
   ["It always involves complete vessel occlusion",
-   "Complete occlusion is not what defines it. It is grouped with the acute syndromes because it may progress to acute ischaemia."],
+   "Complete occlusion is not what defines it. It is grouped with the acute syndromes because it may progress to acute ischemia."],
   ["It is caused by vasospasm rather than plaque",
    "Vasospasm is the mechanism of Prinzmetal angina. Unstable angina is grouped as acute because it may progress."],
   ["It occurs only in patients with prior infarction",
-   "Prior infarction does not define it; it is included among the acute syndromes because it may progress to acute ischaemia."]],
+   "Prior infarction does not define it; it is included among the acute syndromes because it may progress to acute ischemia."]],
  "c": 0, "cite": D + ", Slide 36"},
 
 {"topic": "Acute coronary syndromes", "io": IO_ACS, "slot": "mechanism",
@@ -194,7 +194,7 @@ QUESTIONS = [
    "Both occur on ruptured atherosclerotic plaque with acute thrombosis, and both produce pain outlasting typical angina."],
   ["Vasospasm as the initiating mechanism",
    "Plaque rupture with thrombosis is the described initiating mechanism."],
-  ["Reversible ischaemia with no cell death in either",
+  ["Reversible ischemia with no cell death in either",
    "Infarction by definition involves cell death. What the two share is prolonged pain and plaque rupture with thrombosis."]],
  "c": 0, "cite": D + ", Slide 37"},
 
@@ -293,26 +293,26 @@ QUESTIONS = [
  "q": "How does valvular stenosis change the work the heart does?",
  "opts": [
   ["It imposes extra PRESSURE work",
-   "Correct. This is the distinction that organises the whole valve section, and it predicts which chamber hypertrophies. Since blood must be forced through a smaller opening."],
+   "Correct. This is the distinction that organizes the whole valve section, and it predicts which chamber hypertrophies. Since blood must be forced through a smaller opening."],
   ["It imposes extra VOLUME work, since blood returns across the valve",
    "Extra volume work is what regurgitation imposes. Stenosis imposes pressure work, forcing blood through a smaller opening."],
   ["It reduces the work of the heart by limiting flow",
    "Restricting the opening increases rather than reduces the work required."],
-  ["It has no haemodynamic effect until the valve is completely closed",
-   "Haemodynamics are affected once about half the opening is lost."]],
+  ["It has no hemodynamic effect until the valve is completely closed",
+   "Hemodynamics are affected once about half the opening is lost."]],
  "c": 0, "cite": D + ", Slide 43"},
 
 {"topic": "Valvular disease", "io": IO_VALVE, "slot": "mechanism",
- "q": "At what degree of closure does stenosis begin to affect haemodynamics?",
+ "q": "At what degree of closure does stenosis begin to affect hemodynamics?",
  "opts": [
-  ["About fifty per cent",
-   "Correct. It is a lower threshold than the seventy-five per cent that compromises coronary flow, and the two figures are easy to swap."],
-  ["About ten per cent",
-   "Haemodynamic effect is described from about fifty per cent closure onwards."],
-  ["About seventy-five per cent",
-   "Seventy-five per cent is the coronary occlusion figure rather than the valvular one."],
+  ["About fifty percent",
+   "Correct. It is a lower threshold than the seventy-five percent that compromises coronary flow, and the two figures are easy to swap."],
+  ["About ten percent",
+   "Hemodynamic effect is described from about fifty percent closure onwards."],
+  ["About seventy-five percent",
+   "Seventy-five percent is the coronary occlusion figure rather than the valvular one."],
   ["Only at complete closure",
-   "Effects appear well before complete closure, from about fifty per cent."]],
+   "Effects appear well before complete closure, from about fifty percent."]],
  "c": 0, "cite": D + ", Slide 43"},
 
 {"topic": "Valvular disease", "io": IO_VALVE, "slot": "mechanism",
@@ -332,9 +332,9 @@ QUESTIONS = [
  "q": "What are the primary causes of valvular stenosis?",
  "opts": [
   ["Post-inflammatory scarring from rheumatic fever",
-   "Correct. One is an immune injury from decades earlier and the other is simple wear, which is why the two produce stenosis in very different age groups. Valvular calcification with ageing."],
+   "Correct. One is an immune injury from decades earlier and the other is simple wear, which is why the two produce stenosis in very different age groups. Valvular calcification with aging."],
   ["Infective endocarditis and papillary muscle rupture",
-   "These cause regurgitation rather than stenosis. Stenosis follows rheumatic scarring or valvular calcification with ageing."],
+   "These cause regurgitation rather than stenosis. Stenosis follows rheumatic scarring or valvular calcification with aging."],
   ["Homocysteine-induced vascular injury",
    "That mechanism relates to atherosclerosis rather than to valves."],
   ["Coxsackievirus infection of the valve leaflets",
@@ -346,7 +346,7 @@ QUESTIONS = [
  "opts": [
   ["Infection, or rupture of a papillary muscle",
    "Correct. Both are sudden structural failures, which is why the heart has had no opportunity to adapt to the volume it is now handling."],
-  ["Ageing calcification of the valve",
+  ["Aging calcification of the valve",
    "Calcification develops slowly and causes stenosis. Acute regurgitation follows infection or papillary muscle rupture."],
   ["Chronic pressure overload of the ventricle",
    "Pressure overload arises from stenosis rather than causing acute regurgitation."],
@@ -355,7 +355,7 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 44"},
 
 {"topic": "Mitral stenosis", "io": IO_VALVE, "slot": "mechanism",
- "q": "What is the central haemodynamic abnormality in mitral stenosis?",
+ "q": "What is the central hemodynamic abnormality in mitral stenosis?",
  "opts": [
   ["An abnormal left atrial to left ventricular pressure gradient during diastole",
    "Correct. The atrium stays at higher pressure than the ventricle through diastole, and the gradient widens as the stenosis worsens."],
@@ -387,8 +387,8 @@ QUESTIONS = [
    "Correct, and the enlarged fibrillating atrium then predisposes to clot within it, which is the next consequence in the chain."],
   ["The ventricle hypertrophies and compresses the conducting system",
    "Ventricular hypertrophy is not the described mechanism here."],
-  ["Coronary ischaemia damages the sinus node",
-   "Ischaemic damage to the node is not the described mechanism."],
+  ["Coronary ischemia damages the sinus node",
+   "Ischemic damage to the node is not the described mechanism."],
   ["Pericardial inflammation spreads to the atrium",
    "Pericardial disease is not the cause. The atrium fibrillates because it enlarges as its volume and pressure rise."]],
  "c": 0, "cite": D + ", Slide 46"},
@@ -452,7 +452,7 @@ QUESTIONS = [
    "Correct, and in most cases it produces no symptoms at all -- only sufficient ballooning causes any regurgitation."],
   ["Failure of the valve to open during diastole",
    "That is mitral stenosis. Prolapse is ballooning of the valve into the atrium during systole."],
-  ["Calcification of the valve annulus with ageing",
+  ["Calcification of the valve annulus with aging",
    "Calcification produces stenosis rather than prolapse, which is a ballooning of the valve into the atrium during systole."],
   ["Rupture of a papillary muscle",
    "Papillary rupture causes acute regurgitation rather than prolapse."]],
@@ -461,18 +461,18 @@ QUESTIONS = [
 {"topic": "Aortic stenosis", "io": IO_VALVE, "slot": "aetiology",
  "q": "What is the most common cause of aortic valve stenosis?",
  "opts": [
-  ["Calcification occurring with ageing",
+  ["Calcification occurring with aging",
    "Correct, and it is commoner still where the valve is bicuspid, so an anatomical variant accelerates an age-related process."],
   ["Rheumatic heart disease",
    "Rheumatic disease does cause it, but it is uncommon and affects children and young adults."],
   ["Infective endocarditis",
    "Endocarditis is described in relation to regurgitation. Aortic stenosis is most often age-related calcification."],
   ["Aortic root dilation",
-   "Root dilation causes regurgitation rather than stenosis. Aortic stenosis is most often calcification with ageing."]],
+   "Root dilation causes regurgitation rather than stenosis. Aortic stenosis is most often calcification with aging."]],
  "c": 0, "cite": D + ", Slide 50"},
 
 {"topic": "Aortic stenosis", "io": IO_VALVE, "slot": "mechanism",
- "q": "What is the haemodynamic consequence of aortic stenosis?",
+ "q": "What is the hemodynamic consequence of aortic stenosis?",
  "opts": [
   ["Obstruction to outflow during systole",
    "Correct. The aortic valve is open during systole, so this is when the obstruction bites. With a pressure gradient across the valve during ejection."],
@@ -485,7 +485,7 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 51"},
 
 {"topic": "Aortic stenosis", "io": IO_VALVE, "slot": "mechanism",
- "q": "Why does aortic stenosis predispose the heart to ischaemia and angina?",
+ "q": "Why does aortic stenosis predispose the heart to ischemia and angina?",
  "opts": [
   ["Hypertrophy and high ventricular pressures raise demand beyond what supply can meet",
    "Correct. Angina can arise with entirely normal coronary arteries, because the problem is on the demand side of the same equation."],
@@ -494,7 +494,7 @@ QUESTIONS = [
   ["The ventricle dilates and thins, reducing perfusion",
    "The ventricle hypertrophies rather than dilating, and that hypertrophy is what raises oxygen demand."],
   ["Calcium emboli lodge in the coronary arteries",
-   "Embolism from the valve is not the mechanism. Hypertrophy and high pressures predispose the heart to ischaemia."]],
+   "Embolism from the valve is not the mechanism. Hypertrophy and high pressures predispose the heart to ischemia."]],
  "c": 0, "cite": D + ", Slide 51"},
 
 {"topic": "Aortic regurgitation", "io": IO_VALVE, "slot": "mechanism",
@@ -514,13 +514,13 @@ QUESTIONS = [
  "q": "What is a common cause of aortic regurgitation?",
  "opts": [
   ["Dilation of the aortic root",
-   "Correct. The valve leaflets may be normal; it is the ring they sit in that has widened so they no longer meet. From ageing or connective tissue disease."],
-  ["Calcification of the valve with ageing",
+   "Correct. The valve leaflets may be normal; it is the ring they sit in that has widened so they no longer meet. From aging or connective tissue disease."],
+  ["Calcification of the valve with aging",
    "Calcification produces stenosis rather than regurgitation, which commonly follows dilation of the aortic root."],
   ["A pressure gradient across the mitral valve",
    "That relates to mitral stenosis. Aortic regurgitation commonly follows aortic root dilation."],
   ["Coxsackievirus infection",
-   "Coxsackievirus relates to myocarditis. Aortic regurgitation commonly follows root dilation from ageing or connective tissue disease."]],
+   "Coxsackievirus relates to myocarditis. Aortic regurgitation commonly follows root dilation from aging or connective tissue disease."]],
  "c": 0, "cite": D + ", Slide 53"},
 
 {"topic": "Rheumatic heart disease", "io": IO_VALVE, "slot": "mechanism",
@@ -532,7 +532,7 @@ QUESTIONS = [
    "Direct invasion describes infective endocarditis rather than rheumatic disease."],
   ["Calcium deposition on the leaflets",
    "Calcification is an age-related process rather than the rheumatic mechanism."],
-  ["Ischaemic necrosis of the papillary muscles",
+  ["Ischemic necrosis of the papillary muscles",
    "Papillary necrosis is a consequence of infarction rather than of rheumatic fever."]],
  "c": 0, "cite": D + ", Slide 54"},
 
@@ -566,7 +566,7 @@ QUESTIONS = [
  "q": "What is a prerequisite for infective endocarditis?",
  "opts": [
   ["Invasion of the bloodstream by the organism",
-   "Correct. The valve is reached through the blood, so bacteraemia has to come first."],
+   "Correct. The valve is reached through the blood, so bacteremia has to come first."],
   ["Pre-existing calcification of the valve",
    "Pre-existing valve pathology matters for the subacute form, but bloodstream invasion is the prerequisite."],
   ["A recent myocardial infarction",
@@ -615,7 +615,7 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 57"},
 
 {"topic": "Myocarditis", "io": IO_MYO, "slot": "mechanism",
- "q": "What characterises myocarditis pathologically?",
+ "q": "What characterizes myocarditis pathologically?",
  "opts": [
   ["Inflammation, leukocyte infiltration and necrosis",
    "Correct, and the endocardial structures are usually normal, which separates it from the endocardial and valvular diseases."],
@@ -634,7 +634,7 @@ QUESTIONS = [
    "Correct. A virus rather than a bacterium, which fits a disease of the muscle rather than of the valve surface."],
   ["Staphylococcus aureus",
    "Staphylococcus aureus is a common cause of infective endocarditis rather than myocarditis."],
-  ["Group A beta-haemolytic streptococcus",
+  ["Group A beta-hemolytic streptococcus",
    "That organism relates to rheumatic heart disease, through immune cross-reactivity."],
   ["Candida",
    "Candida appears among causes of subacute endocarditis rather than myocarditis."]],
@@ -657,7 +657,7 @@ QUESTIONS = [
  "q": "What does the Frank-Starling law state?",
  "opts": [
   ["The more the ventricle fills during diastole",
-   "Correct, and the reason is at the level of the sarcomere: the force a fibre generates is proportional to its initial length. The greater the volume ejected during systole."],
+   "Correct, and the reason is at the level of the sarcomere: the force a fiber generates is proportional to its initial length. The greater the volume ejected during systole."],
   ["The faster the heart beats, the greater the stroke volume",
    "Rate is not what the relationship describes. It relates diastolic filling to the volume ejected in systole."],
   ["The thicker the ventricular wall, the greater the stroke volume",
@@ -669,11 +669,11 @@ QUESTIONS = [
 {"topic": "Frank-Starling law", "io": IO_FUNC, "slot": "mechanism",
  "q": "What is the cellular basis of the Frank-Starling relationship?",
  "opts": [
-  ["The force a muscle fibre generates is proportional to its initial sarcomere length",
+  ["The force a muscle fiber generates is proportional to its initial sarcomere length",
    "Correct. Preload is a length, which is why filling and force are connected at all."],
   ["The number of sarcomeres increases with filling",
    "Sarcomere number does not change beat to beat; their initial length does."],
-  ["Calcium release is independent of fibre length",
+  ["Calcium release is independent of fiber length",
    "The relationship described is between initial length and the force generated."],
   ["Adenosine triphosphate production rises with wall stress",
    "Energy production is not the described basis of the relationship."]],
@@ -724,9 +724,9 @@ QUESTIONS = [
   ["The myocardium becomes fibrotic",
    "Correct. The pump is not weak; it is simply not being filled, which is why the failure is one of filling rather than of contraction. Rigid and non-compliant, restricting diastolic filling and lowering stroke volume."],
   ["The ventricle dilates until it can no longer generate pressure",
-   "Dilation characterises dilated cardiomyopathy. In the restrictive form the myocardium becomes fibrotic and rigid, restricting filling."],
+   "Dilation characterizes dilated cardiomyopathy. In the restrictive form the myocardium becomes fibrotic and rigid, restricting filling."],
   ["The outflow tract becomes obstructed by thickened muscle",
-   "Outflow obstruction characterises hypertrophic cardiomyopathy."],
+   "Outflow obstruction characterizes hypertrophic cardiomyopathy."],
   ["Inflammation and necrosis destroy contractile tissue",
    "That describes myocarditis. In restrictive cardiomyopathy a fibrotic, non-compliant myocardium restricts diastolic filling."]],
  "c": 0, "cite": D + ", Slide 65"},
@@ -740,7 +740,7 @@ QUESTIONS = [
    "These are factors in dilated cardiomyopathy. The restrictive form is usually related to a specific condition such as amyloidosis."],
   ["Coxsackievirus infection",
    "Coxsackievirus relates to myocarditis. Restrictive cardiomyopathy is most often secondary to a condition such as amyloidosis."],
-  ["Ageing valvular calcification",
+  ["Aging valvular calcification",
    "Calcification produces valvular stenosis rather than restrictive cardiomyopathy."]],
  "c": 0, "cite": D + ", Slide 65"},
 
@@ -775,25 +775,25 @@ QUESTIONS = [
  "opts": [
   ["Blunt trauma, cardiac surgery or resuscitation",
    "Correct. All three involve mechanical force on the chest, which is what puts blood into what would otherwise be a serous fluid."],
-  ["Heart failure and hypoproteinaemia together",
+  ["Heart failure and hypoproteinemia together",
    "These produce a serous transudate rather than a serosanguinous effusion."],
   ["Obstruction to lymphatic drainage alone",
    "Lymphatic obstruction produces a chylous effusion. The serosanguinous type follows blunt trauma, surgery or resuscitation."],
   ["Penetrating cardiac trauma only",
-   "Penetrating trauma produces frank blood in the sac, a haemopericardium."]],
+   "Penetrating trauma produces frank blood in the sac, a hemopericardium."]],
  "c": 0, "cite": D + ", Slide 68"},
 
 {"topic": "Pericardial effusion", "io": IO_PERI, "slot": "classification",
- "q": "Which effusion type follows heart failure or hypoproteinaemia?",
+ "q": "Which effusion type follows heart failure or hypoproteinemia?",
  "opts": [
   ["A serous transudate",
    "Correct. Both causes act by altering the forces governing fluid movement rather than by injuring anything."],
   ["A chylous collection",
-   "Chylous fluid follows obstruction to lymphatic drainage. Heart failure and hypoproteinaemia produce a serous transudate."],
-  ["A haemopericardium",
-   "Frank blood follows penetrating cardiac trauma. Heart failure and hypoproteinaemia produce a serous transudate."],
+   "Chylous fluid follows obstruction to lymphatic drainage. Heart failure and hypoproteinemia produce a serous transudate."],
+  ["A hemopericardium",
+   "Frank blood follows penetrating cardiac trauma. Heart failure and hypoproteinemia produce a serous transudate."],
   ["A serosanguinous effusion",
-   "That follows blunt trauma, surgery or resuscitation. Heart failure and hypoproteinaemia produce a serous transudate."]],
+   "That follows blunt trauma, surgery or resuscitation. Heart failure and hypoproteinemia produce a serous transudate."]],
  "c": 0, "cite": D + ", Slide 68"},
 
 {"topic": "Cardiac tamponade", "io": IO_PERI, "slot": "mechanism",

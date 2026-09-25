@@ -20,7 +20,7 @@ IOC = "c — Identify medical care strategies for cutaneous viral and fungal inf
 
 POOL_A = [
  dict(topic="Antifungal classes", io=IOB, slot="agent/regimen",
-   q="How does the allylamine class of antifungals work, and how do you recognise one by name?",
+   q="How does the allylamine class of antifungals work, and how do you recognize one by name?",
    opts=[
      ["It destroys the fungal cell membrane; the names end in -fine",
       "Correct — terbinafine and naftifine. Destroying the membrane prevents growth and ultimately kills the fungus."],
@@ -55,7 +55,7 @@ POOL_A = [
      ["Sebum within the pilosebaceous unit; they cannot survive on glabrous skin",
       "Sebum is relevant to tinea capitis after puberty, but it is not what they live on."],
      ["Mucous membranes and moist epithelium; they cannot survive on dry skin",
-      "This is inverted: dermatophytes digest keratin and so colonise dry keratinised surfaces, and they cannot survive on mucous membranes, which have none."]],
+      "This is inverted: dermatophytes digest keratin and so colonize dry keratinized surfaces, and they cannot survive on mucous membranes, which have none."]],
    c=0, cite=c(6)),
 
  dict(topic="Dermatophytes", io=IOB, slot="etiology",
@@ -68,7 +68,7 @@ POOL_A = [
      ["Microsporum, Malassezia, Epidermophyton",
       "Malassezia causes pityriasis versicolor and is not a dermatophyte."],
      ["Trichophyton, Aspergillus, Epidermophyton",
-      "Aspergillus is a mould and is not among the three named."]],
+      "Aspergillus is a mold and is not among the three named."]],
    c=0, cite=c(6)),
 
  dict(topic="Dermatophytes", io=IOB, slot="manifestation",
@@ -91,7 +91,7 @@ POOL_A = [
       "Correct — changes in the fatty acid content of sebum after puberty are believed to inhibit dermatophyte growth. It is the most common fungal infection in children."],
      ["Older adults; declining sebum production after middle age removes a protective barrier",
       "The relationship runs the other way, and the age group is wrong."],
-     ["Adolescent males; androgen-driven sebum production favours the organism",
+     ["Adolescent males; androgen-driven sebum production favors the organism",
       "Sebum change after puberty is protective rather than permissive."],
      ["Immunocompromised adults; cell-mediated immunity normally clears the organism",
       "The age distribution reflects sebum rather than immunity: puberty changes scalp sebum composition to one that inhibits dermatophyte growth."]],
@@ -111,7 +111,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Tinea capitis", io=IOB, slot="risk factors",
-   q="How is tinea capitis transmitted, and what is emphasised about the fungal particles?",
+   q="How is tinea capitis transmitted, and what is emphasized about the fungal particles?",
    opts=[
      ["From people, pets and fomites; the particles stay viable for MONTHS",
       "Correct — infected persons, pets, fallen hairs, clothing, combs, hats and furniture. Asymptomatic carriers are also a source."],
@@ -132,8 +132,8 @@ POOL_A = [
       "The dots are broken hair shafts rather than plugs."],
      ["Infection with black pigment produced by the dermatophyte itself",
       "The organism does not pigment the scalp."],
-     ["Infection with punctate haemorrhage into the scalp at follicular sites",
-      "Haemorrhage is not what produces the appearance."]],
+     ["Infection with punctate hemorrhage into the scalp at follicular sites",
+      "Hemorrhage is not what produces the appearance."]],
    c=0, cite=c(12)),
 
  dict(topic="Tinea capitis", io=IOB, slot="manifestation",
@@ -189,7 +189,7 @@ POOL_A = [
    c=0, cite=c(15)),
 
  dict(topic="Tinea capitis", io=IOB, slot="agent/regimen",
-   q="Which oral agent is generally favoured for each organism in tinea capitis?",
+   q="Which oral agent is generally favored for each organism in tinea capitis?",
    opts=[
      ["Terbinafine for Trichophyton; griseofulvin for Microsporum",
       "Correct — which is why species identification matters before a prolonged course."],
@@ -208,7 +208,7 @@ POOL_A = [
       "Correct — reassess all five before assuming the drug has failed."],
      ["Dose, duration, drug interaction, hepatic impairment, or malabsorption",
       "Some of these matter clinically, but they are not the five listed."],
-     ["Immunosuppression, diabetes, malnutrition, anaemia, or age",
+     ["Immunosuppression, diabetes, malnutrition, anemia, or age",
       "Host factors are not the list given for nonresponse."],
      ["Secondary bacterial infection, kerion, scarring, id reaction, or contact dermatitis",
       "These are complications rather than reasons for nonresponse."]],
@@ -218,7 +218,7 @@ POOL_A = [
    q="What role does antifungal shampoo play in tinea capitis, and which agents are named?",
    opts=[
      ["It reduces spore shedding but does not replace oral therapy",
-      "Correct — selenium sulfide 1 to 2.5 per cent or ketoconazole 2 per cent, used two to three times weekly during early systemic treatment."],
+      "Correct — selenium sulfide 1 to 2.5 percent or ketoconazole 2 percent, used two to three times weekly during early systemic treatment."],
      ["It is curative on its own if used daily for six weeks; selenium sulfide only",
       "Shampoo never replaces the oral course."],
      ["It prevents reinfection but has no effect on spore shedding; ketoconazole only",
@@ -260,7 +260,7 @@ POOL_A = [
       "Correct — the inflammatory form gives tender, boggy, pustular kerion-like plaques with hairs that are loose and easily removed, and scarring alopecia may follow. The non-inflammatory form gives annular scaly plaques or a folliculitis-like eruption with hairs breaking near the surface."],
      ["Inflammatory is acquired from another person and gives annular scaly plaques; non-inflammatory is acquired from animals and gives boggy pustular plaques",
       "This reverses both the source and the appearance."],
-     ["Inflammatory affects the moustache area only; non-inflammatory affects the chin only",
+     ["Inflammatory affects the mustache area only; non-inflammatory affects the chin only",
       "The distinction is not anatomical."],
      ["Inflammatory occurs in immunocompromised patients; non-inflammatory in the immunocompetent",
       "Immune status is not what separates them here."]],

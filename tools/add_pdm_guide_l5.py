@@ -114,7 +114,7 @@ SEC5 = """
     creatinine, not chromium</strong>, and <strong>BUN is blood urea nitrogen</strong>, not boron,
     uranium and nitrogen. She also drew the line on where shorthand belongs: <em>&ldquo;Do we
     abbreviate in our electronic notes? Absolutely not. We write out sodium &hellip; you&rsquo;ll
-    literally write out millimetres of mercury.&rdquo;</em> Shorthand is for handwritten bedside
+    literally write out millimeters of mercury.&rdquo;</em> Shorthand is for handwritten bedside
     notes and older records.</p>
   </div>
 
@@ -130,7 +130,7 @@ SEC5 = """
     <tr><td>Creatinine</td><td>~0.6&ndash;1.2</td><td>0.6&ndash;1.2</td><td><b>yes</b></td></tr>
   </table>
   <p>Reason to keep in view generally: a normal range is <strong>the mean plus or minus two
-  standard deviations</strong>, so about <strong>2.5 per cent of healthy people fall outside it by
+  standard deviations</strong>, so about <strong>2.5 percent of healthy people fall outside it by
   chance</strong> &mdash; and <strong>a normal value does not exclude disease</strong>. Confirm a
   borderline abnormality before an extensive workup, and read every value against history,
   medications and supplements, alcohol and examination.</p>
@@ -148,7 +148,7 @@ SEC5 = """
 
   <p><strong>Potassium</strong> is the <strong>major intracellular cation</strong> and the key
   determinant of membrane electrical potential, especially in neuromuscular tissue. Small serum
-  fluctuations carry large consequences, and <strong>both hyperkalaemia and hypokalaemia can cause
+  fluctuations carry large consequences, and <strong>both hyperkalemia and hypokalemia can cause
   life-threatening arrhythmias</strong>. It is excreted by the kidneys <strong>with no
   reabsorption</strong>, so it must be replaced by diet or supplementation or the level drops
   rapidly. Regulation is by <strong>aldosterone</strong> at the distal tubule and collecting duct,
@@ -160,7 +160,7 @@ SEC5 = """
   reports acid-base balance and hydration. It is reciprocal with bicarbonate: when carbon dioxide
   and hydrogen ions rise, bicarbonate moves out of the cell and <strong>chloride shifts back
   in</strong>. A <strong>low chloride with a high bicarbonate suggests metabolic alkalosis</strong>,
-  classically from vomiting; the opposite pairing gives hyperchloraemic non-gap acidosis.</p>
+  classically from vomiting; the opposite pairing gives hyperchloremic non-gap acidosis.</p>
 
   <p><strong>Bicarbonate</strong> is the <strong>primary extracellular buffer</strong> and helps
   transport carbon dioxide. It is reported on the panel as <strong>&ldquo;CO<sub>2</sub>&rdquo;</strong>
@@ -173,7 +173,7 @@ SEC5 = """
   <h3 class="sub" id="l5-kidney">5.4 &middot; Objective b(v&ndash;vii) &mdash; Glucose, urea nitrogen and creatinine</h3>
   <p><strong>Glucose</strong> is the body's main fuel, lowered by insulin and raised by glucagon
   and the counter-regulatory hormones, with a gluconeogenic contribution from the kidney. Always
-  interpret it against the <strong>fasting or non-fasting state</strong>. Marked hyperglycaemia
+  interpret it against the <strong>fasting or non-fasting state</strong>. Marked hyperglycemia
   <strong>lowers the measured sodium by dilution</strong> and drives osmolality.</p>
 
   <p><strong>Blood urea nitrogen</strong> is a nitrogenous waste product of protein metabolism,
@@ -209,16 +209,16 @@ SEC5 = """
   <p><strong>Four patterns of hepatic abnormality:</strong></p>
   <table class="tbl">
     <tr><th>Pattern</th><th>Definition</th><th>Causes</th></tr>
-    <tr><td>Hepatocellular</td><td>Transaminases raised out of proportion to alkaline phosphatase</td><td>Viral hepatitis, fatty liver disease, alcohol, drugs, ischaemia</td></tr>
+    <tr><td>Hepatocellular</td><td>Transaminases raised out of proportion to alkaline phosphatase</td><td>Viral hepatitis, fatty liver disease, alcohol, drugs, ischemia</td></tr>
     <tr><td>Cholestatic</td><td>Alkaline phosphatase raised out of proportion to the transaminases</td><td>Bile duct obstruction, gallstones, primary biliary cholangitis</td></tr>
     <tr><td>Mixed</td><td>Both raised</td><td>&mdash;</td></tr>
-    <tr><td>Isolated hyperbilirubinaemia</td><td>Bilirubin up, enzymes normal</td><td>Gilbert syndrome, haemolysis</td></tr>
+    <tr><td>Isolated hyperbilirubinemia</td><td>Bilirubin up, enzymes normal</td><td>Gilbert syndrome, hemolysis</td></tr>
   </table>
   <p><strong>Three shortcuts worth having:</strong> a ratio of aspartate aminotransferase to
   alanine transaminase <strong>above 2 to 1 suggests alcoholic liver disease</strong>; a raised
   aspartate aminotransferase <strong>without</strong> a raised alanine transaminase points to
   cardiac or skeletal muscle rather than liver; and transaminases <strong>in the thousands</strong>
-  narrow to just three causes &mdash; <strong>viral, ischaemia, toxins</strong>. Magnitude bands:
+  narrow to just three causes &mdash; <strong>viral, ischemia, toxins</strong>. Magnitude bands:
   mild under 5&times;, moderate 5&ndash;15&times;, severe over 15&times; the upper limit.</p>
 
   <h3 class="sub" id="l5-patterns">5.6 &middot; Objectives d &amp; e &mdash; Reading a panel, and the three patterns</h3>
@@ -251,10 +251,10 @@ SEC5 = """
     &nbsp; normal <b>8&ndash;12</b> mEq/L</p>
     <p>Extended form, adding potassium: <b>(sodium + potassium) &minus; (chloride + bicarbonate)</b>,
     normal <b>10&ndash;14</b>.</p>
-    <p><b>Raised gap</b> &rarr; unmeasured acids: methanol, uraemia, diabetic ketoacidosis,
+    <p><b>Raised gap</b> &rarr; unmeasured acids: methanol, uremia, diabetic ketoacidosis,
     paraldehyde and propylene glycol, isoniazid and iron, lactic acidosis, ethylene glycol,
     salicylates. <b>Normal gap</b> &rarr; bicarbonate loss from gut or kidney, i.e.
-    hyperchloraemic acidosis.</p>
+    hyperchloremic acidosis.</p>
     <p><b>Correct the gap for a low albumin</b> &mdash; add about 2.5 for every 1 g/dL the
     albumin has fallen, because albumin is itself an unmeasured anion.</p>
   </div>
@@ -262,34 +262,34 @@ SEC5 = """
   <h3 class="sub" id="l5-fluid">5.8 &middot; Objectives g&ndash;i &mdash; Ordering, correlating, and fluid balance</h3>
   <p><strong>Order a panel for:</strong> screening metabolic, liver and renal status; monitoring
   diabetes, chronic kidney disease, hypertension and liver disease; drugs with renal or hepatic
-  toxicity or electrolyte effects; symptoms of fatigue, weakness, oedema, jaundice, confusion,
+  toxicity or electrolyte effects; symptoms of fatigue, weakness, edema, jaundice, confusion,
   nausea and vomiting; acute illness with dehydration or a suspected acid-base disorder; and
   assessment of volume status.</p>
   <p><strong>Chemistry rarely stands alone.</strong> Abnormal liver tests &rarr; ultrasound first.
   A reduced filtration rate or albuminuria &rarr; urine studies and renal ultrasound; chronicity
   needs <strong>at least three months</strong>, and cystatin C confirms the rate when accuracy
   matters. Ketoacidosis &rarr; add ketones with beta-hydroxybutyrate, a venous blood gas,
-  urinalysis, an electrocardiogram (for the potassium) and a complete blood count. Hyponatraemia
+  urinalysis, an electrocardiogram (for the potassium) and a complete blood count. Hyponatremia
   &rarr; add serum osmolality with urine sodium and osmolality.</p>
   <table class="tbl">
     <tr><th>Test</th><th>What it tells you about fluid and electrolyte balance</th></tr>
-    <tr><td>Serum sodium</td><td>The primary indicator of <b>water</b> balance, not salt content. Hyponatraemia usually means water excess</td></tr>
-    <tr><td>Serum osmolality</td><td>Separates true hypotonic hyponatraemia from the pseudo- and hypertonic forms; normal tonicity ~275&ndash;285 mOsm/kg</td></tr>
-    <tr><td>Urine sodium and osmolality</td><td>Localises it: <b>&lt;20</b> suggests hypovolaemia; <b>&gt;40</b> with concentrated urine suggests the syndrome of inappropriate antidiuretic hormone secretion</td></tr>
-    <tr><td>Urea nitrogen : creatinine</td><td>Volume status and perfusion &mdash; a ratio <b>&gt;20</b> suggests prerenal hypovolaemia</td></tr>
+    <tr><td>Serum sodium</td><td>The primary indicator of <b>water</b> balance, not salt content. Hyponatremia usually means water excess</td></tr>
+    <tr><td>Serum osmolality</td><td>Separates true hypotonic hyponatremia from the pseudo- and hypertonic forms; normal tonicity ~275&ndash;285 mOsm/kg</td></tr>
+    <tr><td>Urine sodium and osmolality</td><td>Localizes it: <b>&lt;20</b> suggests hypovolemia; <b>&gt;40</b> with concentrated urine suggests the syndrome of inappropriate antidiuretic hormone secretion</td></tr>
+    <tr><td>Urea nitrogen : creatinine</td><td>Volume status and perfusion &mdash; a ratio <b>&gt;20</b> suggests prerenal hypovolemia</td></tr>
     <tr><td>Potassium</td><td>Links to acid-base and adrenal function</td></tr>
   </table>
   <div class="callout warn">
-    <p><strong>Three pitfalls.</strong> <b>Hyperglycaemia lowers the measured sodium</b> by about
+    <p><strong>Three pitfalls.</strong> <b>Hyperglycemia lowers the measured sodium</b> by about
     1.6&ndash;2 mEq/L per 100 mg/dL of glucose above normal &mdash; use a corrected sodium, from a
-    calculator. <b>Pseudohyponatraemia</b> from severe hyperlipidaemia or hyperproteinaemia gives a
+    calculator. <b>Pseudohyponatraemia</b> from severe hyperlipidemia or hyperproteinemia gives a
     falsely low sodium <em>with a normal osmolality</em>. And <b>the number alone never gives the
     diagnosis</b> &mdash; read sodium alongside volume status.</p>
   </div>
 
   <h3 class="sub" id="l5-case">5.9 &middot; The vomiting case &mdash; why the two cannot be separated</h3>
   <p>A 25-year-old woman, three days of intractable nausea and vomiting. The panel shows
-  <strong>low sodium, low potassium, low chloride, a raised bicarbonate and alkalaemia</strong>.</p>
+  <strong>low sodium, low potassium, low chloride, a raised bicarbonate and alkalemia</strong>.</p>
   <p><strong>Why it persists:</strong> volume, potassium and chloride depletion together force the
   kidney to reabsorb sodium and bicarbonate, which <em>maintains</em> the alkalosis after the
   vomiting has stopped. <strong>What fixes it:</strong> replacing sodium, chloride and potassium
@@ -314,7 +314,7 @@ TOC = """  <a class="top-link" href="#chemistry-panels">5 &middot; Chemistry Pan
 TY = """    "chemistry-panels": [
       {q:"An abnormal sodium should raise which question first?",
        o:["Is there too much or too little free water?","Is there too much or too little salt?",
-          "Is kidney function normal?","Was the sample haemolysed?"],a:0,
+          "Is kidney function normal?","Was the sample hemolyzed?"],a:0,
        why:"Serum sodium reflects water balance, not total-body sodium. Ask the water question first."},
       {q:"Sodium 140, chloride 100, bicarbonate 24. What is the anion gap, and how do you read it?",
        o:["16 &mdash; above the normal range","16 &mdash; within the normal range",
@@ -335,8 +335,8 @@ TY = """    "chemistry-panels": [
           "The extended anion gap with potassium","The urea nitrogen to creatinine ratio"],a:0,
        why:"Creatinine is influenced by muscle mass, so in low-muscle-mass patients a normal value can hide a reduced glomerular filtration rate; always consider the estimated rate."},
       {q:"Transaminases in the thousands narrow the cause to which three?",
-       o:["Viral, ischaemia, toxins","Alcohol, gallstones, fatty liver",
-          "Gilbert syndrome, haemolysis, obstruction","Sepsis, heart failure, pancreatitis"],a:0,
+       o:["Viral, ischemia, toxins","Alcohol, gallstones, fatty liver",
+          "Gilbert syndrome, hemolysis, obstruction","Sepsis, heart failure, pancreatitis"],a:0,
        why:"That magnitude is the discriminator: aspartate and alanine aminotransferase in the thousands narrow the cause to viral, ischemic or toxic injury."},
       {q:"What maintains the alkalosis after the vomiting has stopped?",
        o:["Volume, potassium and chloride depletion drive renal sodium and bicarbonate reabsorption",

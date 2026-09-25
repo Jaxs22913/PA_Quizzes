@@ -75,7 +75,7 @@ BOX = """<!--CMSL9AUDIO-->
 <div class="prof-flag" style="border-width:3px"><span class="prof-flag-label">&#9733;&#9733; How this exam is actually built &mdash; from the 24 August lecture</span>
 <p>She spent the first minute of Lecture 9 describing the exam before she touched the content.
 This is the most useful minute of audio in the block, so it is reproduced here rather than
-summarised away.</p>
+summarized away.</p>
 <table>
   <tr><th>What she said</th><th>What it means for revising</th></tr>
   <tr><td><i>&ldquo;There&rsquo;s gonna be like clinical vignettes or <b>pretty much all clinical
@@ -121,9 +121,9 @@ CRAM_ROWS = [
  ("★★ Where the marks are",
   "“There might be SOME question, what's the most likely diagnosis, but A LOT OF THEM are — what's the NEXT MANAGEMENT PLAN? What's your FIRST LINE TREATMENT plan?… what's the proper PATIENT EDUCATION?” NAMING THE DISEASE IS THE EASY HALF. Do the vignette sets, not just the recall quizzes."),
  ("★★ HOW FAR INTO TNM TO GO",
-  "She capped this herself: “I want you to kind of know this… but I DON'T NECESSARILY WANT YOU TO MEMORIZE IT.” And on the sub-rows: “that's why I didn't put all that, YOU GUYS DON'T NEED TO KNOW THAT. I just want you to know this exists.” WHAT SHE DOES WANT: T = tumour, N = nodes, M = metastasis; and the five stages plainly — 0 epidermal region, I localized and very thin, II localized but thicker, III lymph nodes, IV other organs. “That's the general of what I do want you to know.”"),
+  "She capped this herself: “I want you to kind of know this… but I DON'T NECESSARILY WANT YOU TO MEMORIZE IT.” And on the sub-rows: “that's why I didn't put all that, YOU GUYS DON'T NEED TO KNOW THAT. I just want you to know this exists.” WHAT SHE DOES WANT: T = tumor, N = nodes, M = metastasis; and the five stages plainly — 0 epidermal region, I localized and very thin, II localized but thicker, III lymph nodes, IV other organs. “That's the general of what I do want you to know.”"),
  ("Survival figures said ALOUD only (on no slide)",
-  "Under 1 mm Breslow → “over 95-ish per cent survival”. Distant metastases → “about a 15 PER CENT survival”. NOT ON ANY SLIDE — the deck only says survival drops sharply with thickness and spread. No quiz question is built on them. Her point: that gap is why you catch it early."),
+  "Under 1 mm Breslow → “over 95-ish percent survival”. Distant metastases → “about a 15 Percent survival”. NOT ON ANY SLIDE — the deck only says survival drops sharply with thickness and spread. No quiz question is built on them. Her point: that gap is why you catch it early."),
  ("Referral, verbatim",
   "Anything deeper than 1 mm goes to a specialist. “I AM NOT TREATING FAMILY MEDICINE MELANOMA. NEITHER SHOULD YOU. IT'S TOO DANGEROUS.”"),
  ("★ The question she said she'd write",
@@ -139,19 +139,19 @@ SCOPE_BOX = """<!--CMSL9SCOPE-->
   you&rsquo;re at &hellip; it just might be too much.&rdquo;</i> And on the sub-classifications,
   the N1a and T1a-versus-T1b rows: <i>&ldquo;that&rsquo;s why I didn&rsquo;t put all that,
   <b>you guys don&rsquo;t need to know that</b>. I just want you to know this exists.&rdquo;</i></p>
-  <p><b>What she DOES want, in her words:</b> that T is the tumour, N the nodes and M the
+  <p><b>What she DOES want, in her words:</b> that T is the tumor, N the nodes and M the
   metastases; and the five stages in plain terms &mdash; <b>0</b> confined to the epidermal region,
   <b>I</b> localized and very thin, <b>II</b> localized but thicker, <b>III</b> spread to lymph
   nodes, <b>IV</b> spread to other organs. <i>&ldquo;That&rsquo;s the general of what I do want you
   to know.&rdquo;</i> The quizzes here ask exactly that and no more &mdash; what the letters denote
   and the anchor stages, never a row of the grid.</p>
-  <p><b>Two survival figures she gave out loud that are on NO slide.</b> Under one millimetre
-  Breslow, <i>&ldquo;your prognosis is good &hellip; over 95-ish per cent survival&rdquo;</i>; with
-  distant metastases, <i>&ldquo;about a <b>15 per cent</b> survival&rdquo;</i>. The deck says only
+  <p><b>Two survival figures she gave out loud that are on NO slide.</b> Under one millimeter
+  Breslow, <i>&ldquo;your prognosis is good &hellip; over 95-ish percent survival&rdquo;</i>; with
+  distant metastases, <i>&ldquo;about a <b>15 percent</b> survival&rdquo;</i>. The deck says only
   that survival drops sharply with thickness and spread. <b>No quiz question is built on these</b>,
   because they are not on a slide and she stumbled over the first figure &mdash; but the contrast
   is the reason she gives for catching it early, so it is worth carrying.</p>
-  <p><b>On referral she was blunt.</b> Anything deeper than one millimetre goes to a specialist, and
+  <p><b>On referral she was blunt.</b> Anything deeper than one millimeter goes to a specialist, and
   <i>&ldquo;I am not treating family medicine melanoma. Neither should you. It&rsquo;s
   <b>too dangerous</b>.&rdquo;</i></p>
   </div>

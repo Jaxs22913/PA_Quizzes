@@ -12,7 +12,7 @@ CHIPS = ["Cardiac history", "Heart sounds", "Apical impulse", "Murmurs",
          "Manoeuvres", "Peripheral vascular"]
 INTRO = (
   "Thirty questions on the advanced cardiovascular and peripheral vascular examination. "
-  "<b>The manoeuvres are the block worth getting right, and the deck says why.</b> Valsalva and "
+  "<b>The maneuvers are the block worth getting right, and the deck says why.</b> Valsalva and "
   "standing DROP preload; squatting and leg raise RAISE it. Hypertrophic cardiomyopathy gets "
   "louder when preload falls and softer when it rises; aortic stenosis does the exact opposite. "
   "That one reversal is what separates the two, and the deck flags it in capitals &mdash; "
@@ -26,11 +26,11 @@ INTRO = (
   "applied lightly; S1, S2, rubs and the regurgitant murmurs on the diaphragm, pressed firmly. "
   "<b>One radiation is a discriminator</b>: mitral regurgitation goes to the axilla, tricuspid "
   "regurgitation specifically does NOT, and hypertrophic cardiomyopathy never goes to the neck. "
-  "Covers the cardiac history through chest pain, palpitations, orthopnoea, paroxysmal nocturnal "
-  "dyspnoea, oedema and syncope; the cardiac cycle and what makes each sound; the apical impulse "
+  "Covers the cardiac history through chest pain, palpitations, orthopnea, paroxysmal nocturnal "
+  "dyspnea, edema and syncope; the cardiac cycle and what makes each sound; the apical impulse "
   "and the hyperkinetic, sustained and diffuse patterns; auscultation technique; the extra "
   "systolic and diastolic sounds; the seven characteristics of a murmur and each named murmur in "
-  "turn; the manoeuvres; and the whole peripheral vascular examination from capillary refill and "
+  "turn; the maneuvers; and the whole peripheral vascular examination from capillary refill and "
   "pulse amplitude through the arterial against venous insufficiency comparison, the pulses, "
   "bruits, the Allen test, the ankle brachial index and Homan's sign."
 )

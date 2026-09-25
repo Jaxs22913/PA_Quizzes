@@ -39,8 +39,8 @@ QUESTIONS = [
         ["Use a decongestant spray daily", "Chronic use is cautioned against."],
         ["Sleep flat", "Position does not address dryness."]]),
 
- dict(topic="Septal haematoma", io=IO_B, lead="prognosis", cite=D % 41,
-  q="A 17-year-old rugby player has an undrained septal haematoma. What is the concern?",
+ dict(topic="Septal hematoma", io=IO_B, lead="prognosis", cite=D % 41,
+  q="A 17-year-old rugby player has an undrained septal hematoma. What is the concern?",
   opts=[["Cartilage damage", "Correct &mdash; the collection separates cartilage from its blood supply."],
         ["Hearing loss", "The ear is not involved."],
         ["Malignant change", "Not a described risk."],
@@ -78,7 +78,7 @@ QUESTIONS = [
   q="A 68-year-old man has years of one-sided blockage and loud snoring. Examination shows the septum pushed to the left. What is the diagnosis?",
   opts=[["Deviated septum", "Correct."],
         ["Septal perforation", "That is a hole rather than a displacement."],
-        ["Nasal polyps", "Those are grey glistening masses."],
+        ["Nasal polyps", "Those are gray glistening masses."],
         ["Allergic rhinitis", "That is bilateral with clear discharge."]]),
 
  dict(topic="Nasopharyngeal carcinoma", io=IO_B, lead="epidemiology", cite=D % 69,

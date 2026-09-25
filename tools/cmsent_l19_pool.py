@@ -27,7 +27,7 @@ Q("Peritonsillar abscess", IO,
     "adenopathy, and it would not deviate the soft palate to one side. Its worsening after "
     "penicillin usually takes the form of a rash rather than unilateral swelling."],
    ["Dental abscess",
-    "A dental abscess arises around a tooth root and causes localised gum and facial swelling with "
+    "A dental abscess arises around a tooth root and causes localized gum and facial swelling with "
     "tooth pain. It does not displace the soft palate or produce a hot potato voice unless it has "
     "spread into the deep neck spaces, which would give a different picture."],
    ["Oral candidiasis",
@@ -43,13 +43,13 @@ Q("Laryngeal carcinoma", IO,
   [["Hoarseness",
     "Correct. A mass replacing the true vocal cord prevents that cord vibrating and apposing "
     "normally, and voice production depends on both cords meeting and vibrating together. "
-    "Hoarseness is therefore the expected and usually earliest symptom of a glottic tumour, and the "
+    "Hoarseness is therefore the expected and usually earliest symptom of a glottic tumor, and the "
     "referred ear pain reflects shared vagal innervation between the larynx and the ear."],
    ["Tonsillar exudates",
     "Exudate over the tonsils indicates an infective pharyngitis or tonsillitis developing over days. "
     "It has nothing to do with a four-month history of a cord mass in a heavy smoker and would not "
     "coexist with stridor from a fixed lesion."],
-   ["Fever and retropharyngeal oedema",
+   ["Fever and retropharyngeal edema",
     "Those describe a retropharyngeal abscess, which is an acute infection of children under five or "
     "of adults after instrumentation. The tempo here is months, and the lesion is on the cord rather "
     "than in the retropharyngeal space."],
@@ -67,13 +67,13 @@ Q("Epiglottitis", IO,
     "Correct. The four Ds and the tripod position describe supraglottitis, and the teaching is "
     "explicit that once it is suspected, examinations that increase the child's anxiety, including "
     "intraoral examination and venipuncture, may precipitate complete airway obstruction. The "
-    "priority is a controlled airway in theatre with anaesthetic and surgical teams present."],
+    "priority is a controlled airway in theater with anesthetic and surgical teams present."],
    ["Examine the pharynx with a tongue depressor to confirm the diagnosis",
     "This is the specific action to avoid. Depressing the tongue in a child with an "
     "inflamed supraglottis can trigger laryngospasm or complete obstruction, and the diagnosis does "
     "not depend on seeing the epiglottis in clinic."],
    ["Obtain a lateral neck radiograph before any intervention",
-    "The thumbprint sign is a recognised finding but the film is not "
+    "The thumbprint sign is a recognized finding but the film is not "
     "necessary for diagnosis. Sending an unstable child to radiology, away from the team who can "
     "secure the airway, adds risk without adding information."],
    ["Give oral antibiotics and arrange review in the morning",
@@ -94,7 +94,7 @@ Q("Infectious mononucleosis", IO,
     "streptococcus."],
    ["She has a true penicillin allergy and must avoid the class for life",
     "This is the consequential misreading. The mononucleosis rash is not immunoglobulin E mediated "
-    "and does not indicate a lifelong allergy, so labelling her allergic removes an entire antibiotic "
+    "and does not indicate a lifelong allergy, so labeling her allergic removes an entire antibiotic "
     "class from her future care on the basis of a virus."],
    ["The rash is scarlet fever from her streptococcal infection",
     "Scarlet fever produces a sandpapery erythematous rash with circumoral pallor and a strawberry "
@@ -132,8 +132,8 @@ Q("Sialolithiasis", IO,
   "structure is palpable in the floor of the mouth.",
   [["Sialolithiasis of the submandibular duct",
     "Correct. Eating stimulates salivary flow, and a stone obstructing the duct traps that saliva "
-    "behind it, distending the gland until the pressure equalises. That is why the pain is timed to "
-    "meals and settles afterwards, and why it is called salivary colic. Between 80 and 90 per cent "
+    "behind it, distending the gland until the pressure equalizes. That is why the pain is timed to "
+    "meals and settles afterwards, and why it is called salivary colic. Between 80 and 90 percent "
     "of stones are submandibular because the duct runs a long uphill course carrying alkaline, "
     "mucin-rich saliva."],
    ["Acute suppurative sialadenitis",
@@ -144,7 +144,7 @@ Q("Sialolithiasis", IO,
     "Mumps affects the parotid rather than the submandibular gland, is usually bilateral, occurs "
     "with systemic viral symptoms, and does not produce a palpable stone or meal-related colic."],
    ["A parotid neoplasm",
-    "A salivary tumour presents as a slowly growing painless mass, most often at the tail of the "
+    "A salivary tumor presents as a slowly growing painless mass, most often at the tail of the "
     "parotid. Neither the location, the pain, nor the relationship to eating fits a neoplasm."]],
   "diagnosis", D, 42),
 
@@ -153,20 +153,20 @@ Q("Oral candidiasis", IO,
   "mucosa and tongue. When the clinician wipes one with a tongue depressor it comes away, leaving "
   "an erythematous base.",
   [["Oral candidiasis",
-    "Correct. The single most useful bedside manoeuvre in a white oral lesion is to try to wipe it "
+    "Correct. The single most useful bedside maneuver in a white oral lesion is to try to wipe it "
     "off. Candida forms a pseudomembrane that is removable, revealing inflamed mucosa underneath. "
     "Inhaled corticosteroid deposited in the mouth suppresses local immunity and is a common cause, "
     "which is why patients are told to rinse after using the inhaler."],
    ["Oral leukoplakia",
     "Leukoplakia is defined precisely as a white lesion that CANNOT be scraped off and cannot be "
-    "attributed to another condition. It is premalignant, with 5 to 20 per cent progressing to "
+    "attributed to another condition. It is premalignant, with 5 to 20 percent progressing to "
     "squamous cell carcinoma, so confusing the two matters."],
    ["Oral lichen planus",
     "Lichen planus gives lacy white lines, called Wickham striae, that are part of the mucosa and do "
-    "not wipe away. Its significance is a 1 to 4 per cent risk of malignant transformation, higher "
+    "not wipe away. Its significance is a 1 to 4 percent risk of malignant transformation, higher "
     "in ulcerative forms."],
    ["Leukoedema",
-    "Leukoedema is a normal variant producing a diffuse greyish-white buccal mucosa, and its "
+    "Leukoedema is a normal variant producing a diffuse grayish-white buccal mucosa, and its "
     "distinguishing feature is that it DISAPPEARS WHEN THE MUCOSA IS STRETCHED rather than being "
     "wiped away. It leaves no erythematous base."]],
   "diagnosis", D, 89),
@@ -175,8 +175,8 @@ Q("Oral leukoplakia", IO,
   "A 59-year-old man who has chewed tobacco for thirty years has a white plaque on the lateral "
   "border of the tongue. It cannot be scraped off and has been present for four months.",
   [["Excisional biopsy",
-    "Correct. Leukoplakia is a premalignant lesion by definition, with 5 to 20 per cent progressing "
-    "to squamous cell carcinoma, and clinical appearance cannot tell which lesions harbour dysplasia "
+    "Correct. Leukoplakia is a premalignant lesion by definition, with 5 to 20 percent progressing "
+    "to squamous cell carcinoma, and clinical appearance cannot tell which lesions harbor dysplasia "
     "or invasion. Biopsy is therefore the diagnostic step, alongside eliminating the carcinogenic "
     "irritant and a complete intraoral examination with palpation for lymphadenopathy."],
    ["Topical antifungal therapy and reassessment in two weeks",
@@ -196,13 +196,13 @@ Q("Oral leukoplakia", IO,
 Q("Erythroplakia", IO,
   "A 61-year-old woman who smokes and drinks has a well-demarcated red velvety patch on the floor "
   "of the mouth. It does not scrape off.",
-  [["Erythroplakia, of which about 90 per cent are dysplastic or already carcinoma",
+  [["Erythroplakia, of which about 90 percent are dysplastic or already carcinoma",
     "Correct. Erythroplakia is the red counterpart of leukoplakia and is far more dangerous: around "
-    "90 per cent of these lesions are already dysplastic or frankly malignant, against 5 to 20 per "
+    "90 percent of these lesions are already dysplastic or frankly malignant, against 5 to 20 per "
     "cent for leukoplakia. Alcohol and tobacco are the major risk factors, and it is biopsied "
     "urgently."],
-   ["Leukoplakia, with a 5 to 20 per cent risk of transformation",
-    "Leukoplakia is white rather than red. The colour is not cosmetic detail here: it is the single "
+   ["Leukoplakia, with a 5 to 20 percent risk of transformation",
+    "Leukoplakia is white rather than red. The color is not cosmetic detail here: it is the single "
     "feature that separates a lesion with a modest premalignant risk from one that is usually "
     "already malignant."],
    ["Oral candidiasis with an erythematous pattern",
@@ -247,7 +247,7 @@ Q("Retropharyngeal abscess", IO,
     "Correct. Suppuration of retropharyngeal nodes after an upper respiratory infection is a disease "
     "of children under five, and the widened prevertebral space on a lateral film is the classic "
     "radiographic sign. It is a surgical emergency because the space runs from skull base to "
-    "posterior mediastinum, and mediastinitis carries a 50 per cent mortality."],
+    "posterior mediastinum, and mediastinitis carries a 50 percent mortality."],
    ["Epiglottitis",
     "Epiglottitis shares drooling and the forward-leaning posture, so it is the right differential, "
     "but it comes on over hours rather than two days, produces a thumbprint sign rather than a "
@@ -292,10 +292,10 @@ Q("Vocal cord nodules", IO,
   [["Speech therapy",
     "Correct. Vocal cord nodules are the commonest cause of persistent dysphonia in children, "
     "sometimes called screamers' nodules, and they form where the folds strike each other hardest "
-    "during phonation. Because they are caused by mechanical trauma from vocal behaviour, speech "
-    "therapy that changes that behaviour is first-line treatment in both children and adults."],
+    "during phonation. Because they are caused by mechanical trauma from vocal behavior, speech "
+    "therapy that changes that behavior is first-line treatment in both children and adults."],
    ["Surgical excision of both nodules",
-    "Surgery does not address the vocal behaviour that produced the nodules, so they recur, and "
+    "Surgery does not address the vocal behavior that produced the nodules, so they recur, and "
     "operating on the vibrating margin of a child's cord risks scarring that permanently alters the "
     "voice. It is reserved for lesions that fail conservative management."],
    ["Inhaled corticosteroid",
@@ -318,14 +318,14 @@ Q("Vocal cord polyp", IO,
     "treats it and provides tissue, which matters because a large polyp may hide an occult early "
     "laryngeal squamous cell carcinoma in exactly this risk group."],
    ["Speech therapy alone",
-    "Speech therapy is first line for nodules, where behaviour is the whole cause. A unilateral "
+    "Speech therapy is first line for nodules, where behavior is the whole cause. A unilateral "
     "polyp in a heavy smoker needs to be seen histologically, and voice therapy alone would leave a "
     "possible carcinoma unexamined."],
    ["Observation with repeat laryngoscopy in a year",
     "A year of watching a unilateral lesion in a smoker allows a missed malignancy to progress. "
     "Chronic hoarseness beyond two weeks is already the threshold for scoping rather than watching."],
    ["A course of oral corticosteroids",
-    "Steroids reduce inflammatory oedema but do not resolve an established gelatinous polyp, and "
+    "Steroids reduce inflammatory edema but do not resolve an established gelatinous polyp, and "
     "they leave the diagnostic question about malignancy entirely open."]],
   "treatment", D, 48),
 
@@ -376,13 +376,13 @@ Q("Acute suppurative sialadenitis", IO,
   "treatment", D, 38),
 
 Q("Diphtheria", IO,
-  "An 8-year-old recently arrived from a region with low immunisation coverage has a mild sore "
-  "throat, low-grade fever and marked malaise. Examination shows a tenacious grey membrane covering "
+  "An 8-year-old recently arrived from a region with low immunization coverage has a mild sore "
+  "throat, low-grade fever and marked malaise. Examination shows a tenacious gray membrane covering "
   "the tonsils and pharynx that bleeds when disturbed.",
   [["Diphtheria antitoxin obtained from the Centers for Disease Control, plus antibiotics",
-    "Correct. A tenacious adherent grey membrane in an unimmunised child is diphtheria. The "
+    "Correct. A tenacious adherent gray membrane in an unimmunized child is diphtheria. The "
     "organism's damage is caused by an exotoxin that produces myocarditis and a cranial neuropathy, "
-    "so antitoxin is required to neutralise circulating toxin, alongside penicillin or erythromycin "
+    "so antitoxin is required to neutralize circulating toxin, alongside penicillin or erythromycin "
     "for 14 days and isolation until three consecutive cultures are negative."],
    ["Penicillin alone for 10 days",
     "Antibiotics eradicate the organism but do nothing about toxin already in the circulation, and "
@@ -393,6 +393,6 @@ Q("Diphtheria", IO,
     "as viral misses a notifiable disease with a specific antidote and a public health response."],
    ["Corticosteroids to reduce the pharyngeal swelling",
     "Steroids may occasionally be used adjunctively for airway compromise, but they do not "
-    "neutralise the toxin or eliminate the organism, and using them alone allows both to continue."]],
+    "neutralize the toxin or eliminate the organism, and using them alone allows both to continue."]],
   "treatment", D, 113),
 ]

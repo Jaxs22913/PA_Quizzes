@@ -41,7 +41,7 @@ SPEC = {
    h1="Study Design and Research Methods &mdash; Quiz %d",
    sub="Interpretation of Medical Literature &middot; Session 2",
    chips=["Qualitative vs quantitative", "Cross-sectional", "Case-control",
-          "Cohort", "Randomised trials"]),
+          "Cohort", "Randomized trials"]),
  "s3rates": dict(sets="medlit_s3rates_sets.json",
    files=["rates-disease-measurement-quiz.html",
           "rates-disease-measurement-quiz-version-2.html"],

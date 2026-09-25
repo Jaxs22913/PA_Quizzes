@@ -3,17 +3,17 @@
 """Build the gram-coverage sheet -- Pharmacology I Exam 1.
 
 Every verdict on this page is READ OUT OF THE DECK by
-extract_pharm_gram_coverage.py, which pulls the colour of the traffic-light
+extract_pharm_gram_coverage.py, which pulls the color of the traffic-light
 circle under each heading on the class slide. Nothing is inferred from prose,
-and nothing is a judgement call of mine -- if a cell says a class covers
-gram-negatives, that is because the lecturer coloured that circle green.
+and nothing is a judgment call of mine -- if a cell says a class covers
+gram-negatives, that is because the lecturer colored that circle green.
 
 The "leans" column is the only derived field, and it is derived mechanically
 from the two gram verdicts so it cannot drift from them.
 
-ACCESSIBILITY: never colour alone. Each cell carries its word -- covers,
+ACCESSIBILITY: never color alone. Each cell carries its word -- covers,
 partial, moderate, no -- because a red/green table is unreadable to a
-red-green colour-blind reader, and roughly one man in twelve is.
+red-green color-blind reader, and roughly one man in twelve is.
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -151,20 +151,20 @@ def main():
 </script>"""
 
     legend = ('<span>Every verdict is <b>read out of the lecture deck</b> &mdash; each class '
-              'slide carries a traffic-light table and the colour under each heading is what is '
+              'slide carries a traffic-light table and the color under each heading is what is '
               'printed here. The slide number is on every row.</span>')
-    notes = """    <div class="note"><b>Where these judgements come from.</b> They are not mine and they are
+    notes = """    <div class="note"><b>Where these judgments come from.</b> They are not mine and they are
     not inferred from the prose. Most antibiotic class slides carry a small three-column table
-    &mdash; Gram Positive, Gram Negative, Anaerobes &mdash; with a coloured circle under each
-    heading, and this page prints those colours. Nothing in the slide text states which colour
+    &mdash; Gram Positive, Gram Negative, Anaerobes &mdash; with a colored circle under each
+    heading, and this page prints those colors. Nothing in the slide text states which color
     sits under which heading, so each circle is matched to its column by position.</div>
     <div class="note"><b>Two shades of green, and one odd one.</b> The deck uses two greens
     interchangeably and both are shown here as <b>covers</b>. A third, lighter green appears on
     exactly one class &mdash; the tetracyclines, on all three columns at once &mdash; and is shown
     separately as <b>moderate</b>, because using it once and only across the board reads as
-    deliberate rather than as a colour slip.</div>
-    <div class="note warn"><b>Colour is never the only signal here.</b> Each cell carries its word
-    as well as its colour, because a red-and-green table is unreadable to a red-green colour-blind
+    deliberate rather than as a color slip.</div>
+    <div class="note warn"><b>Color is never the only signal here.</b> Each cell carries its word
+    as well as its color, because a red-and-green table is unreadable to a red-green color-blind
     reader.</div>"""
     toc = ('<a href="#progression">The generation rule</a>'
            '<a href="#why">Why this axis</a><a href="#table">All %d classes</a>' % len(D.ROWS))

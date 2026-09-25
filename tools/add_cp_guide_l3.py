@@ -10,7 +10,7 @@ theme.js now warms them before printing. New figures do not need that crutch.
 
 Slide 43's TNM table is included as an ILLUSTRATION of the deck's own point that
 TNM definitions are cancer-specific. Its caption says so explicitly, so nobody
-tries to memorise lung-cancer cut-offs out of a general pathophysiology lecture.
+tries to memorize lung-cancer cut-offs out of a general pathophysiology lecture.
 
 Idempotent: fenced in <!--CPL3--> and stripped before re-inserting.
 """
@@ -33,20 +33,20 @@ def fig(fn, alt, cap, slide):
 
 
 F_META = fig("020-acg-metaplasia.jpg",
-  "Histology slide labelled Squamous Metaplasia, with arrows marking bladder transitional epithelium on one side changing to squamous epithelium on the other.",
+  "Histology slide labeled Squamous Metaplasia, with arrows marking bladder transitional epithelium on one side changing to squamous epithelium on the other.",
   "<b>Metaplasia, caught in the act.</b> Bladder <b>transitional</b> epithelium becoming <b>squamous</b> epithelium. Nothing here is malignant &mdash; the tissue has swapped one mature, differentiated cell type for another in response to chronic irritation. That is the whole definition: a change in <em>differentiation</em>, not a loss of order.", 5)
 
 F_DYS = fig("021-acg-dysplasia-spectrum.jpg",
-  "Diagram of squamous epithelium across a spectrum, labelled normal, mild, moderate and severe dysplasia, then carcinoma in situ, then invasive cancer, with the basement membrane drawn as a line that only the invasive cancer crosses.",
+  "Diagram of squamous epithelium across a spectrum, labeled normal, mild, moderate and severe dysplasia, then carcinoma in situ, then invasive cancer, with the basement membrane drawn as a line that only the invasive cancer crosses.",
   "<b>The single most important diagram in this lecture.</b> Read it left to right: normal squamous epithelium, then mild, moderate and severe <b>dysplasia</b>, then <b>carcinoma in situ</b>, then <b>invasive cancer</b>. Notice what changes and what does not. Cells get more pleomorphic and lose their orientation the whole way along &mdash; but the <b>basement membrane</b> stays intact until the very last panel. <b>Everything up to and including carcinoma in situ is still above that line</b>, which is exactly what <em>Tis</em> means in the TNM system.", 8)
 
 F_GROWTH = fig("022-acg-tissue-growth.jpg",
-  "Diagram of cell populations labelled normal, hyperplasia, mild dysplasia, carcinoma in situ described as severe dysplasia, and cancer, with the cells becoming progressively more disordered.",
-  "<b>The same progression, counted rather than drawn in section:</b> normal &rarr; <b>hyperplasia</b> (more cells, still orderly) &rarr; <b>mild dysplasia</b> &rarr; <b>carcinoma in situ</b>, labelled here as severe dysplasia &rarr; <b>cancer</b>. Hyperplasia belongs on this line and hypertrophy does not: hyperplasia is more cells, hypertrophy is bigger cells, and only one of them is a step towards neoplasia.", 9)
+  "Diagram of cell populations labeled normal, hyperplasia, mild dysplasia, carcinoma in situ described as severe dysplasia, and cancer, with the cells becoming progressively more disordered.",
+  "<b>The same progression, counted rather than drawn in section:</b> normal &rarr; <b>hyperplasia</b> (more cells, still orderly) &rarr; <b>mild dysplasia</b> &rarr; <b>carcinoma in situ</b>, labeled here as severe dysplasia &rarr; <b>cancer</b>. Hyperplasia belongs on this line and hypertrophy does not: hyperplasia is more cells, hypertrophy is bigger cells, and only one of them is a step towards neoplasia.", 9)
 
 F_TNM = fig("023-acg-tnm-example.jpg",
-  "A detailed TNM staging table for lung cancer, seventh edition, listing T categories by tumour size and invasion, N categories by nodal station, M categories, and the resulting stage groupings.",
-  "<b>Do not memorise this table.</b> It is here to make one point, which the previous slide states outright: <b>TNM definitions are cancer-specific</b>. This is the lung version, and its T categories turn on distances from the carina and involvement of named structures that mean nothing in, say, colon cancer &mdash; where depth of invasion through the bowel wall matters more than size. What transfers is the <em>grammar</em>: T for the primary, N for regional nodes, M for distant metastasis, x for cannot be assessed, 0 for none found.", 43)
+  "A detailed TNM staging table for lung cancer, seventh edition, listing T categories by tumor size and invasion, N categories by nodal station, M categories, and the resulting stage groupings.",
+  "<b>Do not memorize this table.</b> It is here to make one point, which the previous slide states outright: <b>TNM definitions are cancer-specific</b>. This is the lung version, and its T categories turn on distances from the carina and involvement of named structures that mean nothing in, say, colon cancer &mdash; where depth of invasion through the bowel wall matters more than size. What transfers is the <em>grammar</em>: T for the primary, N for regional nodes, M for distant metastasis, x for cannot be assessed, 0 for none found.", 43)
 
 BODY = '''<section class="deck" id="abnormal-cell-growth">
   <h2 class="deck-title">3 &middot; Abnormal Cell Growth and Differentiation</h2>
@@ -96,7 +96,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   <p>A <b>neoplasm</b> is an abnormal mass of tissue growing <b>autonomously</b> &mdash;
   self-perpetuating <em>without physiologic growth stimuli</em>. That single word is what separates
   it from hyperplasia, which stops when the stimulus stops. The entire proliferating population is
-  derived from <b>one cell</b> that underwent a genetic alteration, so a tumour is a clone. It has
+  derived from <b>one cell</b> that underwent a genetic alteration, so a tumor is a clone. It has
   two components: <b>parenchyma</b>, the proliferating neoplastic cells, and <b>stroma</b>, the
   connective tissue and blood vessels supporting them. <em>Neoplasm</em> and <em>tumor</em> are
   interchangeable.</p>
@@ -116,7 +116,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   closely the neoplasm resembles comparable normal cells in appearance and function. <b>Staging</b>
   asks <em>how far has it got</em> &mdash; size, nodes, metastases.</div>
   <table>
-    <tr><th></th><th>Benign tumour</th><th>Malignant tumour</th></tr>
+    <tr><th></th><th>Benign tumor</th><th>Malignant tumor</th></tr>
     <tr><td><b>Border</b></td><td>Well circumscribed</td><td>Ragged, not easily discernable</td></tr>
     <tr><td><b>Relation to tissue</b></td><td><b>Compresses</b> surrounding tissue</td><td><b>Infiltrates and invades</b> it</td></tr>
     <tr><td><b>Capsule</b></td><td>Often has a fibrous capsule</td><td>&mdash;</td></tr>
@@ -124,9 +124,9 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
     <tr><td><b>Metastasis</b></td><td>Does not metastasize</td><td>May metastasize</td></tr>
     <tr><td><b>Growth</b></td><td>Slow</td><td>Rapid</td></tr>
   </table>
-  <p>Histologically, four features move a tumour along that spectrum: <b>pleomorphism</b>,
+  <p>Histologically, four features move a tumor along that spectrum: <b>pleomorphism</b>,
   <b>abnormal nuclei</b>, <b>mitoses</b>, and <b>abnormal differentiation</b>.</p>
-  <p><b>Why does a tumour outgrow normal tissue?</b> The deck answers it from stem cell kinetics. A
+  <p><b>Why does a tumor outgrow normal tissue?</b> The deck answers it from stem cell kinetics. A
   stem cell has unlimited self-renewal and <em>cellular immortality</em> but a relatively
   <b>low</b> rate of proliferation; once a cell commits to differentiation, proliferation can be
   dramatic, but those differentiated cells have a limited life-span. Abnormal differentiation in
@@ -135,24 +135,24 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   of cell loss</b> &mdash; both halves, not just faster division. The deck is careful to call the
   cancer stem cell idea <em>a conceptual framework rather than an absolute explanation</em>.</p>
 
-  <h3 class="sub" id="acg-spread">3.4 &middot; Objective d &mdash; Routes of tumour spread</h3>
+  <h3 class="sub" id="acg-spread">3.4 &middot; Objective d &mdash; Routes of tumor spread</h3>
   <table>
     <tr><th>Route</th><th>Mechanism</th><th>Where it goes</th></tr>
-    <tr><td><b>Haematogenous</b></td><td>Cells <b>separate from each other</b> and degrade intercellular tissue with <b>enzymes</b>; cells invade the vessel; <b>multiple tumour fragments</b> travel</td><td>Typically through <b>veins</b> &mdash; especially the <b>portal vein</b> and the <b>inferior vena cava</b>, so cancers often spread to <b>liver</b> and <b>lungs</b> respectively. One organ may carry several nodules</td></tr>
-    <tr><td><b>Lymphatic</b></td><td>Cancer spreads into lymphatic vessels <b>at the tumour margin</b></td><td>Follows the <b>natural route of lymphatic drainage</b> &mdash; which is why nodal staging is anatomically predictable</td></tr>
-    <tr><td><b>Seeding</b></td><td>Invasion of tumour <b>through an organ surface</b> into a cavity</td><td><b>Pericardial, pleural, peritoneal</b> cavities, joint cavities, and the <b>subarachnoid space</b>. <b>Most commonly the peritoneal cavity</b></td></tr>
+    <tr><td><b>Haematogenous</b></td><td>Cells <b>separate from each other</b> and degrade intercellular tissue with <b>enzymes</b>; cells invade the vessel; <b>multiple tumor fragments</b> travel</td><td>Typically through <b>veins</b> &mdash; especially the <b>portal vein</b> and the <b>inferior vena cava</b>, so cancers often spread to <b>liver</b> and <b>lungs</b> respectively. One organ may carry several nodules</td></tr>
+    <tr><td><b>Lymphatic</b></td><td>Cancer spreads into lymphatic vessels <b>at the tumor margin</b></td><td>Follows the <b>natural route of lymphatic drainage</b> &mdash; which is why nodal staging is anatomically predictable</td></tr>
+    <tr><td><b>Seeding</b></td><td>Invasion of tumor <b>through an organ surface</b> into a cavity</td><td><b>Pericardial, pleural, peritoneal</b> cavities, joint cavities, and the <b>subarachnoid space</b>. <b>Most commonly the peritoneal cavity</b></td></tr>
   </table>
   <p>A cavity here is defined by <b>the membrane covering the organs in it and the membrane covering
   the cavity wall</b> &mdash; pericardium, pleura and peritoneum over heart, lungs and abdominal
   organs respectively.</p>
   <div class="pearl"><b>Metastatic spread is NOT random.</b> The deck says so directly, and gives
-  three determinants: the <b>pattern of venous blood flow</b>, <b>specific receptors on tumour and
+  three determinants: the <b>pattern of venous blood flow</b>, <b>specific receptors on tumor and
   endothelial cells</b>, and <b>metastatic &ldquo;fitness&rdquo;, which is genetically
   determined</b>. Reaching the bloodstream is only the first hurdle &mdash; the cell must then
   achieve <b>survival in the circulation</b> and <b>survival in a new organ</b>.</div>
 
-  <h3 class="sub" id="acg-classification">3.5 &middot; Objectives e &amp; f &mdash; Classifying tumours by origin</h3>
-  <p>This is a naming rule, and once you have it, every tumour name in medicine decodes. <b>Two
+  <h3 class="sub" id="acg-classification">3.5 &middot; Objectives e &amp; f &mdash; Classifying tumors by origin</h3>
+  <p>This is a naming rule, and once you have it, every tumor name in medicine decodes. <b>Two
   origins, and a suffix for each.</b></p>
   <table>
     <tr><th>Origin</th><th>Benign</th><th>Malignant</th></tr>
@@ -163,7 +163,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   </table>
   <div class="pearl"><b>Mesenchymal &rarr; sarcoma. Epithelial &rarr; carcinoma.</b> If you can place
   the tissue of origin in one of those two buckets, you can name the malignancy. Adipose tissue is
-  supportive, so a malignant fat tumour is a sarcoma, never a carcinoma.</div>
+  supportive, so a malignant fat tumor is a sarcoma, never a carcinoma.</div>
 
   <h3 class="sub" id="acg-genes">3.6 &middot; Objectives g &amp; h &mdash; Gene alterations and chemical carcinogenesis</h3>
   <p>Carcinogenesis is a <b>multistep process</b> resulting from damage to <b>multiple</b> normal
@@ -172,7 +172,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   <table>
     <tr><th>Category</th><th>Normal job</th><th>What goes wrong</th><th>Examples</th></tr>
     <tr><td><b>Protooncogenes</b></td><td>Promote <b>regulated</b> cell growth &mdash; growth factors, growth factor receptors, nuclear regulatory proteins, signal transduction proteins</td><td>Mutation converts them to <b>oncogenes</b>, encoding <b>oncoproteins</b> that promote continued <b>uncontrolled</b> growth</td><td>&mdash;</td></tr>
-    <tr><td><b>Tumour suppressor genes</b></td><td><b>Inhibit</b> cell growth</td><td>Loss removes a brake</td><td><b>NF-1, NF-2, RB, APC</b></td></tr>
+    <tr><td><b>Tumor suppressor genes</b></td><td><b>Inhibit</b> cell growth</td><td>Loss removes a brake</td><td><b>NF-1, NF-2, RB, APC</b></td></tr>
     <tr><td><b>Repair genes</b></td><td>Promote repair of damaged deoxyribonucleic acid</td><td>Loss lets mutations accumulate</td><td><b>BRCA-1, BRCA-2</b></td></tr>
     <tr><td><b>Apoptosis genes</b></td><td>Cause cells with damaged deoxyribonucleic acid to <b>self destruct</b></td><td>Loss lets damage be <b>continued in dividing cells and become permanent</b></td><td>&mdash;</td></tr>
   </table>
@@ -183,18 +183,18 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   <table>
     <tr><th>Agent</th><th>Source</th><th>Cancer</th></tr>
     <tr><td><b>Polycyclic aromatic hydrocarbons</b></td><td>Combustion of <b>tobacco</b></td><td>Bladder and lung &mdash; <b>among the most powerful carcinogens known</b></td></tr>
-    <tr><td><b>Aromatic amines</b></td><td>Occupational exposure</td><td>Classically emphasised in <b>occupational bladder cancer</b></td></tr>
+    <tr><td><b>Aromatic amines</b></td><td>Occupational exposure</td><td>Classically emphasized in <b>occupational bladder cancer</b></td></tr>
   </table>
 
   <h3 class="sub" id="acg-microbes">3.7 &middot; Objective i &mdash; Microorganisms and carcinogenesis</h3>
   <p>Five organisms, and they divide into <b>two mechanisms</b>. Either the microbe <b>directly
-  disables a tumour suppressor</b>, or it causes <b>chronic inflammation with repeated regeneration</b>
+  disables a tumor suppressor</b>, or it causes <b>chronic inflammation with repeated regeneration</b>
   and lets mutations accumulate. Sorting them that way turns five facts into two ideas.</p>
   <table>
     <tr><th>Organism</th><th>Cancer</th><th>Mechanism</th></tr>
     <tr><td><b>Human papillomavirus</b><br>types <b>16 and 18</b></td><td><b>Cervical</b> cancer; also anal, vulvar, vaginal, penile, and oropharyngeal squamous cell carcinoma</td><td><b>Direct.</b> Integrates its viral deoxyribonucleic acid into the host genome, causing excessive <b>E6</b> and <b>E7</b>. <b>E6 blocks p53</b> (needed to promote self destruction of mutated cells); <b>E7 blocks RB</b> (needed to inhibit cell growth)</td></tr>
     <tr><td><b>Epstein Barr virus</b></td><td>Certain <b>B cell lymphomas</b> and <b>nasopharyngeal carcinoma</b></td><td><b>Direct.</b> Infects B lymphocytes and <b>&ldquo;immortalizes&rdquo;</b> them; also infects oropharyngeal epithelial cells. In <b>normal immune function</b> this does not happen &mdash; the patient is asymptomatic or has self-limited infectious mononucleosis</td></tr>
-    <tr><td><b>Hepatitis B virus</b></td><td><b>Hepatocellular carcinoma</b></td><td><b>Both.</b> Chronic infection and injury &rarr; continuous regenerative attempts &rarr; cells at risk of mutation. AND it encodes a protein that <b>binds p53</b>. Emphasises: <b>chronic inflammation, regenerative hyperplasia, genomic instability</b></td></tr>
+    <tr><td><b>Hepatitis B virus</b></td><td><b>Hepatocellular carcinoma</b></td><td><b>Both.</b> Chronic infection and injury &rarr; continuous regenerative attempts &rarr; cells at risk of mutation. AND it encodes a protein that <b>binds p53</b>. Emphasizes: <b>chronic inflammation, regenerative hyperplasia, genomic instability</b></td></tr>
     <tr><td><b>Hepatitis C virus</b></td><td><b>Hepatocellular carcinoma</b></td><td><b>Inflammatory.</b> Chronic hepatitis &rarr; repeated cycles of cell death and proliferation. <b>Most arises in cirrhosis, though cancer can occasionally occur without it</b></td></tr>
     <tr><td><b>Helicobacter pylori</b><br>the one <b>bacterium</b></td><td><b>Gastric adenocarcinoma</b> and <b>MALT lymphoma</b> (mucosa-associated lymphoid tissue)</td><td><b>Inflammatory.</b> Gram-negative, colonizes the stomach &rarr; chronic gastritis &rarr; atrophic gastritis and <b>intestinal metaplasia</b>. Chronic inflammation raises epithelial turnover and the chance of mutation</td></tr>
   </table>
@@ -213,8 +213,8 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   <p>Inherited cancer risk comes through the same gene categories, just present from birth.</p>
   <table>
     <tr><th>Category</th><th>Gene</th><th>Disease</th></tr>
-    <tr><td rowspan="4"><b>Tumour suppressor alterations</b></td><td><b>Rb protein</b></td><td><b>Retinoblastoma</b> (rare childhood eye tumour) and <b>osteosarcoma</b></td></tr>
-    <tr><td><b>NF-1 and NF-2</b></td><td><b>Neurofibromatosis</b> types 1 and 2 &mdash; a variety of central and peripheral nervous system tumours</td></tr>
+    <tr><td rowspan="4"><b>Tumor suppressor alterations</b></td><td><b>Rb protein</b></td><td><b>Retinoblastoma</b> (rare childhood eye tumor) and <b>osteosarcoma</b></td></tr>
+    <tr><td><b>NF-1 and NF-2</b></td><td><b>Neurofibromatosis</b> types 1 and 2 &mdash; a variety of central and peripheral nervous system tumors</td></tr>
     <tr><td><b>p16 (INK4a)</b></td><td><b>Malignant melanoma</b></td></tr>
     <tr><td><b>APC</b></td><td><b>Familial adenomatosis polyposis</b> &mdash; <b>500 to 2500</b> premalignant adenomatous polyps in the teens and twenties; <b>colon cancer by age 50</b></td></tr>
     <tr><td rowspan="2"><b>Repair gene alterations</b></td><td><b>BRCA-1, BRCA-2</b></td><td>A <b>minority</b> of breast cancer patients carry an inherited mutation</td></tr>
@@ -238,7 +238,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
     <tr><td><b>M0</b></td><td><b>No</b> distant metastasis</td></tr>
     <tr><td><b>M1</b></td><td><b>Distant metastasis</b> present</td></tr>
   </table>
-  <div class="pearl"><b>The convention generalises: x means cannot be assessed, 0 means none
+  <div class="pearl"><b>The convention generalizes: x means cannot be assessed, 0 means none
   found.</b> And the caveat the deck states outright &mdash; <b>TNM definitions are
   cancer-specific</b>. For some cancers, <b>depth of invasion is more important than size</b>.</div>
 
@@ -254,7 +254,7 @@ TOC = '''%s
   <a href="#acg-nonneoplastic">3.1 Objective b &mdash; Non-neoplastic abnormalities</a>
   <a href="#acg-dysplasia">3.2 Objectives a &amp; b &mdash; Metaplasia vs dysplasia</a>
   <a href="#acg-neoplasia">3.3 Objectives c &amp; k &mdash; Neoplasia &amp; grading</a>
-  <a href="#acg-spread">3.4 Objective d &mdash; Routes of tumour spread</a>
+  <a href="#acg-spread">3.4 Objective d &mdash; Routes of tumor spread</a>
   <a href="#acg-classification">3.5 Objectives e &amp; f &mdash; Classifying by origin</a>
   <a href="#acg-genes">3.6 Objectives g &amp; h &mdash; Gene alterations &amp; chemical carcinogenesis</a>
   <a href="#acg-microbes">3.7 Objective i &mdash; Microorganisms</a>
@@ -271,37 +271,37 @@ TESTS = '''    abnormalgrowth: [
        expl:"Metaplasia is a change in DIFFERENTIATION under chronic irritation. Dysplasia is disordered growth with varied cell size and shape, loss of architectural orientation, and darker larger nuclei \\u2014 and it MAY PROGRESS TO CANCER, which is why it is precancerous."},
       {q:"Which single word in the definition of a neoplasm separates it from hyperplasia?",
        choices:["Autonomously \\u2014 it grows without physiologic growth stimuli","Abnormal \\u2014 the cells look different","Mass \\u2014 it forms a discrete lump","Proliferating \\u2014 the cells divide"],correct:0,
-       expl:"Hyperplasia stops when the stimulus stops; a neoplasm is self-perpetuating. The whole proliferating population is also derived from ONE cell that underwent a genetic alteration, so a tumour is a clone."},
+       expl:"Hyperplasia stops when the stimulus stops; a neoplasm is self-perpetuating. The whole proliferating population is also derived from ONE cell that underwent a genetic alteration, so a tumor is a clone."},
       {q:"What are the two components of a neoplasm?",
        choices:["Parenchyma, the neoplastic cells; and stroma, the connective tissue and vessels","Initiators and promoters","Proliferative pool and maturation pool","Primary lesion and metastatic deposit"],correct:0,
-       expl:"The stroma is host tissue supporting the tumour, not part of the malignant clone."},
+       expl:"The stroma is host tissue supporting the tumor, not part of the malignant clone."},
       {q:"Anaplasia means what?",
        choices:["Lack of differentiation","Close resemblance to the normal cell","Failure of a primordial tissue to mature","Invasion through the basement membrane"],correct:0,
        expl:"The grading scale runs well differentiated, moderately differentiated, poorly differentiated, then anaplasia. Grading asks what it LOOKS like; staging asks how FAR it has got."},
-      {q:"Why does a tumour mass outgrow normal tissue?",
+      {q:"Why does a tumor mass outgrow normal tissue?",
        choices:["A higher proliferative fraction AND a lower rate of cell loss","A higher proliferative fraction alone","A shorter cell cycle alone","Increased apoptosis in surrounding normal cells"],correct:0,
        expl:"Abnormal differentiation puts a greater percentage of cells in the proliferative pool at the expense of the maturation pool. Both halves matter \\u2014 more dividing, and fewer dying."},
-      {q:"Haematogenous spread is typically through which vessels, and where does that send tumour?",
-       choices:["Veins \\u2014 especially the portal vein and inferior vena cava, so liver and lungs","Arteries \\u2014 especially the aorta, so brain and kidney","Lymphatics at the tumour margin, so regional nodes","Capillaries in the tumour stroma, so locally only"],correct:0,
-       expl:"The portal vein delivers to the liver and the inferior vena cava to the right heart and then the lungs. And spread is NOT random: it is determined by venous flow, specific receptors on tumour and endothelial cells, and genetically determined metastatic fitness."},
+      {q:"Hematogenous spread is typically through which vessels, and where does that send tumor?",
+       choices:["Veins \\u2014 especially the portal vein and inferior vena cava, so liver and lungs","Arteries \\u2014 especially the aorta, so brain and kidney","Lymphatics at the tumor margin, so regional nodes","Capillaries in the tumor stroma, so locally only"],correct:0,
+       expl:"The portal vein delivers to the liver and the inferior vena cava to the right heart and then the lungs. And spread is NOT random: it is determined by venous flow, specific receptors on tumor and endothelial cells, and genetically determined metastatic fitness."},
       {q:"Seeding most commonly occurs in which cavity?",
        choices:["The peritoneal cavity","The pleural cavity","The pericardial cavity","The subarachnoid space"],correct:0,
        expl:"Seeding follows tumor invasion through an organ surface into a cavity. It can reach the pleural and pericardial cavities and the subarachnoid space, but it most commonly occurs in the peritoneal cavity."},
-      {q:"A malignant tumour arises from adipose tissue. What is it called?",
+      {q:"A malignant tumor arises from adipose tissue. What is it called?",
        choices:["A sarcoma","A carcinoma","An adenocarcinoma","A papilloma"],correct:0,
-       expl:"Adipose tissue is supportive, so mesenchymal, so sarcoma. Mesenchymal \\u2192 sarcoma; epithelial \\u2192 carcinoma. That one rule decodes most tumour names."},
-      {q:"A benign epithelial tumour with a glandular pattern is called what?",
+       expl:"Adipose tissue is supportive, so mesenchymal, so sarcoma. Mesenchymal \\u2192 sarcoma; epithelial \\u2192 carcinoma. That one rule decodes most tumor names."},
+      {q:"A benign epithelial tumor with a glandular pattern is called what?",
        choices:["An adenoma","An adenocarcinoma","A papilloma","A sarcoma"],correct:0,
-       expl:"And it sometimes secretes the hormone produced by its gland of origin. A papilloma is the benign epithelial tumour with finger-like or warty projections from a surface."},
+       expl:"And it sometimes secretes the hormone produced by its gland of origin. A papilloma is the benign epithelial tumor with finger-like or warty projections from a surface."},
       {q:"What happens when a protooncogene mutates?",
-       choices:["It becomes an oncogene encoding oncoproteins that drive uncontrolled growth","It becomes a tumour suppressor gene","It becomes a repair gene","It is silenced and the cell stops growing"],correct:0,
+       choices:["It becomes an oncogene encoding oncoproteins that drive uncontrolled growth","It becomes a tumor suppressor gene","It becomes a repair gene","It is silenced and the cell stops growing"],correct:0,
        expl:"Protooncogenes normally promote REGULATED growth \\u2014 growth factors, their receptors, nuclear regulatory proteins and signal transduction proteins. Mutation removes the regulation, not the machinery."},
       {q:"Which category do BRCA-1 and BRCA-2 belong to?",
-       choices:["Genes promoting repair of damaged DNA","Tumour suppressor genes","Protooncogenes","Genes promoting apoptosis"],correct:0,
-       expl:"Four categories in total: protooncogenes, tumour suppressor genes (NF-1, NF-2, RB, APC), repair genes (BRCA-1, BRCA-2), and apoptosis genes."},
+       choices:["Genes promoting repair of damaged DNA","Tumor suppressor genes","Protooncogenes","Genes promoting apoptosis"],correct:0,
+       expl:"Four categories in total: protooncogenes, tumor suppressor genes (NF-1, NF-2, RB, APC), repair genes (BRCA-1, BRCA-2), and apoptosis genes."},
       {q:"What is the difference between an initiator and a promoter in chemical carcinogenesis?",
        choices:["Initiators cause permanent DNA damage; promoters drive proliferation of already-damaged cells","Initiators drive proliferation; promoters cause DNA damage","Initiators are chemical; promoters are viral","Initiators act on epithelium; promoters on mesenchyme"],correct:0,
-       expl:"Permanence is what defines initiation. Polycyclic aromatic hydrocarbons from tobacco combustion cause bladder and lung cancer; aromatic amines are classically emphasised in occupational bladder cancer."},
+       expl:"Permanence is what defines initiation. Polycyclic aromatic hydrocarbons from tobacco combustion cause bladder and lung cancer; aromatic amines are classically emphasized in occupational bladder cancer."},
       {q:"Human papillomavirus E6 and E7 block which proteins?",
        choices:["E6 blocks p53; E7 blocks RB","E6 blocks RB; E7 blocks p53","Both block p53","Both block BRCA-1"],correct:0,
        expl:"p53 promotes self destruction of mutated cells; RB inhibits cell growth. So E6 removes apoptosis and E7 removes a growth brake. Hepatitis B also encodes a protein that binds p53 \\u2014 three organisms converging on two proteins."},
@@ -315,11 +315,11 @@ TESTS = '''    abnormalgrowth: [
        choices:["APC \\u2014 familial adenomatosis polyposis","RB \\u2014 retinoblastoma","p16 (INK4a) \\u2014 melanoma","BRCA-1 \\u2014 breast cancer"],correct:0,
        expl:"And those patients develop colon cancer by age 50. RB is associated with retinoblastoma AND osteosarcoma; p16 with malignant melanoma; NF-1 and NF-2 with neurofibromatosis."},
       {q:"What does Tis mean in the TNM system?",
-       choices:["The lesion has not invaded through the basement membrane","The primary tumour cannot be assessed","There is no evidence of primary tumour","The tumour is too small to measure"],correct:0,
+       choices:["The lesion has not invaded through the basement membrane","The primary tumor cannot be assessed","There is no evidence of primary tumor","The tumor is too small to measure"],correct:0,
        expl:"'is' refers to in situ: a Tis lesion has not invaded through the tissue basement membrane, whereas T1 to T3 mark increasing size and depth of invasion of the primary lesion."},
       {q:"What do Nx and N0 mean respectively?",
        choices:["Nodes cannot be assessed; no regional nodal metastasis","No nodal metastasis; nodes cannot be assessed","Nodes not sampled; one node involved","Nodes removed; nodes normal in size"],correct:0,
-       expl:"The convention generalises across the whole system: x means cannot be assessed, 0 means none found. So Mx is distant metastasis cannot be assessed and M0 is no distant metastasis."},
+       expl:"The convention generalizes across the whole system: x means cannot be assessed, 0 means none found. So Mx is distant metastasis cannot be assessed and M0 is no distant metastasis."},
       {q:"Which caveat applies to TNM (tumor, node, metastasis) definitions?",
        choices:["They are cancer-specific; for some cancers depth of invasion matters more than size","They are identical across all cancers","They apply only to carcinomas, not sarcomas","They have replaced histological grading"],correct:0,
        expl:"TNM definitions are cancer-specific, and for some cancers depth of invasion matters more than size. The notation stays constant: x means cannot be assessed and 0 means none found."}

@@ -40,7 +40,7 @@ KILLERS = [
  ("Suicidal ideation and worsening depression", "isotretinoin",
   "<b>His own example of a killer.</b> The deck instructs monitoring for signs of developing "
   "depression, and the drug is also contraindicated in pregnancy and breastfeeding with the "
-  "iPledge programme attached.",
+  "iPledge program attached.",
   L2, 27, True),
  ("Clostridioides difficile infection and pseudomembranous colitis",
   "clindamycin; aminopenicillins; fluoroquinolones",
@@ -63,12 +63,12 @@ KILLERS = [
 
 # group, the effect, note, deck, slide, his
 COMMONS = [
- ("Every antibiotic", "Gastrointestinal upset &mdash; nausea, vomiting, diarrhoea",
+ ("Every antibiotic", "Gastrointestinal upset &mdash; nausea, vomiting, diarrhea",
   "<b>His own example, and the whole point of the bucket.</b> Almost every antibiotic causes "
   "this in somebody. Tell the patient it is expected; it may or may not warrant changing "
   "therapy.", L1, 22, True),
  ("All beta-lactams &mdash; penicillins, cephalosporins, carbapenems",
-  "Hypersensitivity reaction, rash, diarrhoea",
+  "Hypersensitivity reaction, rash, diarrhea",
   "<b>Do not learn these three classes' common effects separately.</b> Asked exactly that, he "
   "said: <i>&ldquo;no, they're all the same&rdquo;</i>. Learn the shared set once and spend the "
   "effort where a class breaks the pattern.", L1, 22, True),
@@ -93,9 +93,9 @@ ZEBRAS = [
   "<b>His own example.</b> An infusion-related reaction, not an allergy, which is why the answer "
   "is to <b>slow the infusion</b> rather than to stop the drug. He specified two hours.",
   L1, 51, True),
- ("Tooth discolouration and depression of skeletal growth", "tetracyclines",
+ ("Tooth discoloration and depression of skeletal growth", "tetracyclines",
   "<b>He pointed at the tetracyclines by name</b> as where a class breaks the common pattern. "
-  "Doxycycline discolours more than the others; avoid under <b>8 years old</b> and in the "
+  "Doxycycline discolors more than the others; avoid under <b>8 years old</b> and in the "
   "<b>second and third trimesters</b>.", L1, 63, True),
  ("Chelation with calcium and iron", "tetracyclines; fluoroquinolones",
   "The interaction he illustrated with a patient on a <b>prenatal vitamin</b> whose calcium and "

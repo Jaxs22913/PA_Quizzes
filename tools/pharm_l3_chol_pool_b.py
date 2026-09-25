@@ -14,7 +14,7 @@ IO8 = "8 — Mechanism, pharmacokinetics, indications, contraindications and adv
 
 POOL_B = [
 
- dict(topic="ANS organisation", io=IO1,
+ dict(topic="ANS organization", io=IO1,
    q="What does the afferent division of the peripheral nervous system do, and what example is given?",
    opts=[
      ["It carries signals to the central nervous system and is important in reflex regulation, with sensing pressure in the carotid sinus and aortic arch as the example",
@@ -27,17 +27,17 @@ POOL_B = [
       "That is the enteric system."]],
    c=0, cite=c(5)),
 
- dict(topic="Chemical signalling", io=IO3,
-   q="Which three general types of signalling between cells are listed?",
+ dict(topic="Chemical signaling", io=IO3,
+   q="Which three general types of signaling between cells are listed?",
    opts=[
      ["Hormones, local mediators and neurotransmitters",
       "Correct, and the neurotransmitters of interest here are acetylcholine, norepinephrine and epinephrine."],
      ["Hormones, enzymes and ion channels",
-      "Enzymes and channels are effectors rather than signalling categories here."],
+      "Enzymes and channels are effectors rather than signaling categories here."],
      ["Neurotransmitters, receptors and second messengers",
       "Receptors and second messengers are parts of the response, not types of signal."],
-     ["Afferent, efferent and enteric signalling",
-      "Those are anatomical divisions rather than signalling types."]],
+     ["Afferent, efferent and enteric signaling",
+      "Those are anatomical divisions rather than signaling types."]],
    c=0, cite=c(13)),
 
  dict(topic="Neurotransmitters", io=IO3,
@@ -54,7 +54,7 @@ POOL_B = [
    c=0, cite=c(15)),
 
  dict(topic="Neurotransmitters", io=IO3,
-   q="How is dopamine characterised?",
+   q="How is dopamine characterized?",
    opts=[
      ["Multiple functions depending on location, producing feelings of pleasure when released by the brain reward system, and usually inhibitory",
       "Correct, which contrasts with acetylcholine being usually excitatory."],
@@ -80,7 +80,7 @@ POOL_B = [
    c=0, cite=c(16)),
 
  dict(topic="Acetylcholine synthesis", io=IO6,
-   q="From what is acetylcholine synthesised?",
+   q="From what is acetylcholine synthesized?",
    opts=[
      ["Acetyl coenzyme A and choline",
       "Correct, and choline is recovered by recycling after the transmitter is degraded."],
@@ -99,10 +99,10 @@ POOL_B = [
       "Correct. Degradation in the cleft, not reuptake of the intact transmitter, is the cholinergic pattern."],
      ["It is taken back into the presynaptic terminal intact and repackaged",
       "That is closer to the adrenergic pattern."],
-     ["It is metabolised by monoamine oxidase within the neuron",
+     ["It is metabolized by monoamine oxidase within the neuron",
       "That enzyme acts on catecholamines."],
      ["It diffuses away without enzymatic breakdown",
-      "Diffusion alone would be far too slow for the millisecond signalling required; acetylcholinesterase destroys it in the cleft and the choline is taken back up."]],
+      "Diffusion alone would be far too slow for the millisecond signaling required; acetylcholinesterase destroys it in the cleft and the choline is taken back up."]],
    c=0, cite=c(20)),
 
  dict(topic="Acetylcholine actions", io=IO4,
@@ -161,7 +161,7 @@ POOL_B = [
    q="Which uses are listed for neostigmine?",
    opts=[
      ["Stimulating the bladder and gastrointestinal tract, acting as an antidote to competitive neuromuscular blockers, and symptomatic treatment of myasthenia gravis",
-      "Correct, and it can stimulate contractility before paralysing."],
+      "Correct, and it can stimulate contractility before paralyzing."],
      ["Diagnosing myasthenia gravis and assessing cholinesterase therapy",
       "Those are edrophonium's roles."],
      ["Slowing the progression of Alzheimer disease",
@@ -189,7 +189,7 @@ POOL_B = [
      ["Glycopyrronium",
       "Correct, approved in 2018 for that indication."],
      ["Dicyclomine",
-      "Dicyclomine is described as a structural analogue of atropine used for gastrointestinal spasm."],
+      "Dicyclomine is described as a structural analog of atropine used for gastrointestinal spasm."],
      ["Tiotropium",
       "Tiotropium is an inhaled bronchodilator."],
      ["Scopolamine",
@@ -240,7 +240,7 @@ POOL_B = [
    opts=[
      ["Dry mouth, blurred vision, sandy eyes, urinary retention, constipation, and central restlessness or confusion",
       "Correct, with bradycardia at lower doses and tachycardia at higher ones."],
-     ["Salivation, lacrimation, diarrhoea and bronchospasm",
+     ["Salivation, lacrimation, diarrhea and bronchospasm",
       "Those are cholinergic agonist effects."],
      ["Fasciculations, weakness and hypertension",
       "Those are nicotinic effects."],
@@ -268,18 +268,18 @@ POOL_B = [
       "Correct, since each organ loses whichever division normally dominates it."],
      ["Vasoconstriction with bradycardia and increased secretions",
       "That is the direction of cholinergic stimulation, not blockade."],
-     ["Bronchodilation with hyperglycaemia and tremor",
+     ["Bronchodilation with hyperglycemia and tremor",
       "Those are beta-adrenergic effects."],
-     ["Miosis with salivation and diarrhoea",
+     ["Miosis with salivation and diarrhea",
       "Those are muscarinic agonist effects."]],
    c=0, cite=c(58)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
    q="How are the neuromuscular blocking drugs structurally described?",
    opts=[
-     ["As structural analogues of acetylcholine that act either as antagonists in the nondepolarizing type or as agonists in the depolarizing type",
+     ["As structural analogs of acetylcholine that act either as antagonists in the nondepolarizing type or as agonists in the depolarizing type",
       "Correct, and both are used during surgery to produce complete muscle relaxation."],
-     ["As structural analogues of norepinephrine acting at adrenergic receptors",
+     ["As structural analogs of norepinephrine acting at adrenergic receptors",
       "They act at the cholinergic neuromuscular junction."],
      ["As enzymes that degrade acetylcholine at the endplate",
       "That is acetylcholinesterase, not a drug class here."],
@@ -288,10 +288,10 @@ POOL_B = [
    c=0, cite=c(61)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="Why did competitive neuromuscular blockers significantly increase the safety of anaesthesia?",
+   q="Why did competitive neuromuscular blockers significantly increase the safety of anesthesia?",
    opts=[
-     ["They allow the use of less anaesthetic agent, since higher doses of anaesthesia may produce respiratory paralysis and cardiac depression",
-      "Correct. The relaxation is achieved without deepening the anaesthetic."],
+     ["They allow the use of less anesthetic agent, since higher doses of anesthesia may produce respiratory paralysis and cardiac depression",
+      "Correct. The relaxation is achieved without deepening the anesthetic."],
      ["They shorten the duration of surgery",
       "Duration of surgery is not the reason given."],
      ["They eliminate the need for intubation",
@@ -329,11 +329,11 @@ POOL_B = [
  dict(topic="Succinylcholine", io=IO4,
    q="How does the sequence of paralysis with succinylcholine differ?",
    opts=[
-     ["The sequence is a little different, but the respiratory muscles are paralysed last",
+     ["The sequence is a little different, but the respiratory muscles are paralyzed last",
       "Correct, which is the safety-relevant part of the sequence either way."],
-     ["The respiratory muscles are paralysed first",
+     ["The respiratory muscles are paralyzed first",
       "The diaphragm is spared until last, which is what makes controlled intubation possible; the order differs only slightly from the nondepolarizing pattern."],
-     ["All muscles are paralysed simultaneously",
+     ["All muscles are paralyzed simultaneously",
       "A sequence is described rather than simultaneous onset."],
      ["Only the muscles of the face and eye are affected",
       "Those are simply first with the nondepolarizing agents."]],

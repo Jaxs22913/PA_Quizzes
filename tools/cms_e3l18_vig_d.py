@@ -16,7 +16,7 @@ Q("Thyroid cancer", IO,
   "with no metastasis.",
   [["Lobectomy",
     "Correct. Almost all thyroid cancers require thyroidectomy, but there is an explicit exception "
-    "for disease localised to one lobe that is well differentiated and without metastasis. That "
+    "for disease localized to one lobe that is well differentiated and without metastasis. That "
     "describes this patient, and lobectomy preserves the other lobe, reducing the risk to the "
     "recurrent laryngeal nerves and parathyroids and often avoiding lifelong replacement."],
    ["Total thyroidectomy",
@@ -34,18 +34,18 @@ Q("Thyroid cancer follow-up", IO,
   "recurrence.",
   [["Calcitonin",
     "Correct. Medullary carcinoma arises from parafollicular C cells, whose normal product is "
-    "calcitonin, so the tumour secretes it and the level tracks disease burden. That makes it a "
+    "calcitonin, so the tumor secretes it and the level tracks disease burden. That makes it a "
     "specific marker for residual or recurrent disease, alongside external beam radiation for nodal "
     "disease and screening the family for multiple endocrine neoplasia."],
    ["Thyroglobulin",
     "Thyroglobulin is the marker for the DIFFERENTIATED cancers, papillary and follicular, which "
-    "arise from epithelial cells that make it. Medullary tumours do not."],
+    "arise from epithelial cells that make it. Medullary tumors do not."],
    ["Thyroid-stimulating hormone",
     "Thyroid-stimulating hormone is monitored to keep replacement adequate and to suppress "
-    "differentiated tumours, but it reflects pituitary feedback rather than tumour presence."],
+    "differentiated tumors, but it reflects pituitary feedback rather than tumor presence."],
    ["Parathyroid hormone",
     "Parathyroid hormone is relevant to a coexisting parathyroid problem in multiple endocrine "
-    "neoplasia, but it is not the marker for the thyroid tumour."]], C(44)),
+    "neoplasia, but it is not the marker for the thyroid tumor."]], C(44)),
 
 Q("Neck mass under 40", IO,
   "A 28-year-old man has a painless firm supraclavicular node that has grown over two months. He "
@@ -74,7 +74,7 @@ Q("Scrofula", IO,
     "Diagnosis is by tuberculin skin testing with acid-fast stain and culture, and treatment is the "
     "RIPE regimen."],
    ["Atypical mycobacterial infection",
-    "Atypical disease is paediatric, unilateral, in the anterior triangle or parotid, with brawny "
+    "Atypical disease is pediatric, unilateral, in the anterior triangle or parotid, with brawny "
     "reddish-brown overlying skin in a well child. Age and laterality both point away."],
    ["Reactive viral lymphadenopathy",
     "Reactive nodes accompany an upper respiratory infection and regress within weeks, without "
@@ -86,7 +86,7 @@ Q("Scrofula", IO,
 Q("Neck abscess", IO,
   "A 5-year-old has a hot, tender, fluctuant submandibular swelling with fever after a sore throat.",
   [["Suppurative lymphadenitis",
-    "Correct. Suppurative adenitis is most often Staphylococcus aureus or group A beta-haemolytic "
+    "Correct. Suppurative adenitis is most often Staphylococcus aureus or group A beta-hemolytic "
     "streptococcus, developing in the submandibular or jugulodigastric regions with sore throat, "
     "skin lesions and upper respiratory symptoms. Empirical antibiotics come first, with aspiration "
     "or drainage if they fail."],
@@ -109,7 +109,7 @@ Q("Paraganglioma", IO,
     "or the jugulotympanic region. Their vascularity produces both the pulsation and the bruit, and "
     "the practical consequence is angiography before anything is put into the mass."],
    ["Schwannoma",
-    "Schwannomas are benign peripheral nerve tumours listed with neurofibromas and neuromas. They "
+    "Schwannomas are benign peripheral nerve tumors listed with neurofibromas and neuromas. They "
     "are not vascular and do not pulsate."],
    ["Lipoma",
     "A lipoma is soft, mobile and avascular, growing imperceptibly over years without any pulse."],
@@ -144,7 +144,7 @@ Q("Congenital neck mass in an adult", IO,
     "label is accepted."],
    ["Proceed directly to excision as for a congenital cyst",
     "Excising it as a congenital lesion without excluding malignancy risks operating on a cancer "
-    "with the wrong plan, and excisional biopsy of a malignant node spills tumour."],
+    "with the wrong plan, and excisional biopsy of a malignant node spills tumor."],
    ["Reassure, as congenital cysts are always benign",
     "Congenital cysts are benign, which is what makes the mimicry dangerous. The point is that this "
     "may not be one."],
@@ -190,9 +190,9 @@ Q("Neck mass workup order", IO,
   "A neck mass has failed to settle after antibiotics, and computed tomography shows a solid mass. "
   "What comes next?",
   [["Fine needle aspiration biopsy",
-    "Correct. Imaging characterises the mass but cannot give a tissue diagnosis. Aspiration is the "
+    "Correct. Imaging characterizes the mass but cannot give a tissue diagnosis. Aspiration is the "
     "standard of care because it separates neoplasm from inflammation and carcinoma from lymphoma, "
-    "and it is preferred over excision because excision spills tumour and complicates definitive "
+    "and it is preferred over excision because excision spills tumor and complicates definitive "
     "treatment."],
    ["Excisional biopsy",
     "Excision gives more tissue but seeds the neck if the mass is malignant, which is why aspiration "
@@ -205,9 +205,9 @@ Q("Neck mass workup order", IO,
     "second course will clear."]], C(18)),
 
 Q("Hemangioma complications", IO,
-  "A 4-month-old has a large neck haemangioma and is now developing stridor and difficulty feeding.",
+  "A 4-month-old has a large neck hemangioma and is now developing stridor and difficulty feeding.",
   [["Start propranolol",
-    "Correct. Observation is the default because about 90 per cent involute, but intervention is "
+    "Correct. Observation is the default because about 90 percent involute, but intervention is "
     "indicated for airway compromise, skin ulceration, dysphagia, thrombocytopenia or cardiac "
     "failure. Stridor and feeding difficulty are two of those, and propranolol is first line for "
     "infants without a contraindication."],
@@ -215,7 +215,7 @@ Q("Hemangioma complications", IO,
     "Observation is right for an asymptomatic lesion, and would have been right for this infant last "
     "month. Functional compromise is precisely what changes the plan."],
    ["Sclerotherapy",
-    "Sclerotherapy is used for lymphangiomas rather than haemangiomas, and it would not act quickly "
+    "Sclerotherapy is used for lymphangiomas rather than hemangiomas, and it would not act quickly "
     "enough for a threatened airway."],
    ["Immediate surgical excision",
     "Surgery is second line after propranolol and systemic steroids, and operating on a "
@@ -226,7 +226,7 @@ Q("Neck mass and pets", IO,
   "an outdoor cat.",
   [["Toxoplasmosis",
     "Correct. Toxoplasma gondii is contracted through poorly cooked meat or ingestion of oocysts in "
-    "cat faeces, and both exposures are present. Patients have fever, malaise, sore throat and "
+    "cat feces, and both exposures are present. Patients have fever, malaise, sore throat and "
     "myalgias with the adenopathy, diagnosis is serologic, and treatment is sulfonamides or "
     "pyrimethamine."],
    ["Cat scratch disease",
@@ -234,7 +234,7 @@ Q("Neck mass and pets", IO,
     "a scratch rather than ingestion, and it produces preauricular and submandibular nodes in "
     "someone usually under 20."],
    ["Brucellosis",
-    "Brucellosis comes from unpasteurised milk and gives total-body lymphadenopathy rather than "
+    "Brucellosis comes from unpasteurized milk and gives total-body lymphadenopathy rather than "
     "regional cervical nodes with myalgias."],
    ["Tularemia",
     "Tularemia follows exposure to rabbits, ticks or contaminated water and presents with "
@@ -255,6 +255,6 @@ Q("Neck mass and travel", IO,
     "Noise exposure belongs to the assessment of hearing loss and has no bearing on cervical "
     "adenopathy."],
    ["No further history is needed once imaging is arranged",
-    "Imaging characterises the mass but cannot supply the exposure history that narrows an "
+    "Imaging characterizes the mass but cannot supply the exposure history that narrows an "
     "infectious differential, and much of that differential is diagnosed serologically."]], C(14)),
 ]

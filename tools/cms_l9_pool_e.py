@@ -25,11 +25,11 @@ POOL_E = [
    opts=[
      ["Classic in older men with a chronic course; endemic, often aggressive in young Black men in equatorial Africa; iatrogenic with immunosuppressive therapy; and epidemic in acquired immunodeficiency",
       "Correct — four forms, each with a different population and course."],
-     ["Superficial, nodular, pigmented and morpheaform disease, each occurring in a different population and each with a different histologic behaviour and course",
+     ["Superficial, nodular, pigmented and morpheaform disease, each occurring in a different population and each with a different histologic behavior and course",
       "Those are basal cell carcinoma subtypes."],
      ["Superficial spreading, lentigo maligna, nodular and acral lentiginous disease, each occurring in a different population and each with a different growth pattern and course",
       "Those are melanoma subtypes."],
-     ["Patch, plaque, tumour and erythrodermic disease, each occurring in a different population and each representing a successive stage of the same underlying process",
+     ["Patch, plaque, tumor and erythrodermic disease, each occurring in a different population and each representing a successive stage of the same underlying process",
       "That is closer to the cutaneous T-cell lymphoma progression."]],
    c=0, cite=c(63)),
 
@@ -47,22 +47,22 @@ POOL_E = [
    c=0, cite=c(64)),
 
  dict(topic="Kaposi sarcoma", io=IOA, slot="test finding",
-   q="What warning is given about oedema in Kaposi sarcoma?",
+   q="What warning is given about edema in Kaposi sarcoma?",
    opts=[
-     ["Marked oedema may occur even with few or no visible skin lesions, so oedema severity must not be used to gauge disease burden",
+     ["Marked edema may occur even with few or no visible skin lesions, so edema severity must not be used to gauge disease burden",
       "Correct — the skin can look almost clear while disease is extensive."],
-     ["Marked oedema occurs only in advanced disease with many visible lesions, so its severity reliably indicates the cutaneous disease burden",
-      "Lymphatic obstruction by tumour can produce marked oedema with almost no visible skin disease, so severity of swelling says nothing about overall burden."],
-     ["Marked oedema is never a feature of Kaposi sarcoma at any stage, and its presence should prompt a search for venous thrombosis instead",
-      "Marked oedema is an explicit feature."],
-     ["Marked oedema occurs only in the classic form of the disease, and its severity can therefore be used to distinguish classic from epidemic Kaposi sarcoma",
+     ["Marked edema occurs only in advanced disease with many visible lesions, so its severity reliably indicates the cutaneous disease burden",
+      "Lymphatic obstruction by tumor can produce marked edema with almost no visible skin disease, so severity of swelling says nothing about overall burden."],
+     ["Marked edema is never a feature of Kaposi sarcoma at any stage, and its presence should prompt a search for venous thrombosis instead",
+      "Marked edema is an explicit feature."],
+     ["Marked edema occurs only in the classic form of the disease, and its severity can therefore be used to distinguish classic from epidemic Kaposi sarcoma",
       "No such form-specific rule is given."]],
    c=0, cite=c(64)),
 
  dict(topic="Kaposi sarcoma", io=IOA, slot="first-line",
    q="What is the first priority in acquired immunodeficiency syndrome-associated Kaposi sarcoma?",
    opts=[
-     ["Begin or optimise antiretroviral therapy — immune restoration is the cornerstone of treatment for epidemic disease",
+     ["Begin or optimize antiretroviral therapy — immune restoration is the cornerstone of treatment for epidemic disease",
       "Correct — antiretroviral therapy comes before local measures."],
      ["Begin liposomal doxorubicin and paclitaxel — systemic chemotherapy is the cornerstone of treatment for epidemic disease",
       "Systemic chemotherapy is added for advanced disease, after antiretroviral therapy."],
@@ -92,7 +92,7 @@ POOL_E = [
       "Correct — skin-limited for a long time in many patients."],
      ["A cutaneous B-cell lymphoma that begins in the bone marrow and seeds the skin within weeks, with malignant B cells forming infiltrates only after systemic spread",
       "It is a T-cell lymphoma that begins in the skin."],
-     ["A vascular tumour caused by human herpesvirus 8 that begins in the skin and spreads to the viscera within months of the first cutaneous lesion appearing",
+     ["A vascular tumor caused by human herpesvirus 8 that begins in the skin and spreads to the viscera within months of the first cutaneous lesion appearing",
       "That describes Kaposi sarcoma."],
      ["A keratinocyte carcinoma that begins as an actinic keratosis in sun-damaged skin and becomes invasive over years before any potential nodal spread",
       "That describes squamous cell carcinoma."]],
@@ -101,9 +101,9 @@ POOL_E = [
  dict(topic="Cutaneous T-cell lymphoma", io=IOA, slot="manifestation",
    q="What is the early morphology of cutaneous T-cell lymphoma, and what is it commonly mistaken for?",
    opts=[
-     ["Localised or generalised erythematous patches or scaly plaques, usually on the trunk and frequently larger than 5 cm; it may resemble psoriasis, eczema or tinea",
+     ["Localized or generalized erythematous patches or scaly plaques, usually on the trunk and frequently larger than 5 cm; it may resemble psoriasis, eczema or tinea",
       "Correct — which is why diagnosis is often delayed."],
-     ["Localised pearly papules with telangiectasias, usually on the face and frequently smaller than 5 mm; it may resemble sebaceous hyperplasia",
+     ["Localized pearly papules with telangiectasias, usually on the face and frequently smaller than 5 mm; it may resemble sebaceous hyperplasia",
       "Those are basal cell carcinoma features."],
      ["Red or purple macules and nodules, usually on the lower limbs and oral mucosa; it may resemble bacillary angiomatosis",
       "Those are Kaposi sarcoma features."],
@@ -164,16 +164,16 @@ POOL_E = [
    c=0, cite=c(79)),
 
  dict(topic="Nail unit neoplasms", io=IOA, slot="epidemiology",
-   q="Which is the MOST COMMON malignant nail tumour, and what is it associated with?",
+   q="Which is the MOST COMMON malignant nail tumor, and what is it associated with?",
    opts=[
      ["Nail unit squamous cell carcinoma or Bowen disease, associated with high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, and older age",
       "Correct — periungual disease may be multifocal."],
      ["Nail unit melanoma, associated with high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, and older age, and often multifocal",
-      "Melanoma is not the commonest malignant nail tumour."],
+      "Melanoma is not the commonest malignant nail tumor."],
      ["Nail unit basal cell carcinoma, associated with cumulative ultraviolet exposure, fair skin, chronic trauma, prior radiation and older age",
       "Nail unit basal cell carcinoma is exceptionally uncommon, since the nail unit receives little ultraviolet exposure; squamous cell carcinoma linked to human papillomavirus is the common one."],
-     ["Glomus tumour, associated with chronic inflammation or trauma, immunosuppression, prior radiation and older age",
-      "The glomus tumour is benign."]],
+     ["Glomus tumor, associated with chronic inflammation or trauma, immunosuppression, prior radiation and older age",
+      "The glomus tumor is benign."]],
    c=0, cite=c(79)),
 
  dict(topic="Nail unit neoplasms", io=IOA, slot="manifestation",
@@ -185,7 +185,7 @@ POOL_E = [
       "The sign is defined by extension ONTO the nail fold."],
      ["Vesicles on the tip or side of the nose — concerning for ocular involvement in herpes zoster, prompting same-day ophthalmology review",
       "That is the Hutchinson sign of zoster ophthalmicus, a different sign of the same name."],
-     ["A small red-blue subungual focus with paroxysmal pain and cold sensitivity — concerning for a glomus tumour, prompting imaging and specialist review",
+     ["A small red-blue subungual focus with paroxysmal pain and cold sensitivity — concerning for a glomus tumor, prompting imaging and specialist review",
       "That is the glomus triad."]],
    c=0, cite=c(84)),
 
@@ -203,7 +203,7 @@ POOL_E = [
    c=0, cite=c(84)),
 
  dict(topic="Nail unit neoplasms", io=IOA, slot="manifestation",
-   q="What is the classic triad of a glomus tumour?",
+   q="What is the classic triad of a glomus tumor?",
    opts=[
      ["A small red-blue subungual focus with severe paroxysmal pain, exquisite point tenderness, and cold sensitivity",
       "Correct — the nail may look nearly normal."],
@@ -224,7 +224,7 @@ POOL_E = [
       "Margins can be assessed in the nail unit using Mohs with immunostaining, so digit-sparing excision is standard and amputation is reserved for deep or bone-involving disease."],
      ["It is never indicated at all, since digit-sparing wide excision clears every nail unit melanoma regardless of depth, extent or bone involvement",
       "It is reserved for deep, extensive or bone-involving disease."],
-     ["It is reserved for benign nail unit tumours such as glomus tumour or onychomatricoma that recur after local removal",
+     ["It is reserved for benign nail unit tumors such as glomus tumor or onychomatricoma that recur after local removal",
       "Amputation is not used for benign disease."]],
    c=0, cite=c(94)),
 
@@ -233,7 +233,7 @@ POOL_E = [
    opts=[
      ["New or changing single-digit longitudinal melanonychia, proximal widening, Hutchinson sign, or nail dystrophy with pigment",
       "Correct — the list also includes an unexplained subungual mass, persistent ulceration or bleeding, and a chronic wart or infection that fails appropriate therapy. That failed-wart history is the one most easily dismissed."],
-     ["Longitudinal pigmented bands present in several nails since childhood, unchanged in width, colour, thickness and spacing over many years, with no nail dystrophy",
+     ["Longitudinal pigmented bands present in several nails since childhood, unchanged in width, color, thickness and spacing over many years, with no nail dystrophy",
       "That pattern is reassuring rather than urgent."],
      ["Any nail change at all in a patient over 65, and any nail that has been abnormal for more than a month, whatever the appearance or the number of digits involved",
       "Age and duration alone are not the triggers."],

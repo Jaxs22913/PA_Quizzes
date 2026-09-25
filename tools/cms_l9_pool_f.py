@@ -9,7 +9,7 @@ in the image alone:
             deck labels these only "Level I" to "Level V" -- the word "Clark"
             appears NOWHERE in the deck, not on the slide and not inside the
             figure. It is the conventional name and is given in parentheses so
-            students recognise it elsewhere, but the questions lead with the
+            students recognize it elsewhere, but the questions lead with the
             deck's own wording, because that is what an exam written from this
             deck will use.
   Slide 53  the "Stages of Melanoma" diagram, stage 0 through stage IV
@@ -20,7 +20,7 @@ of any of it -- "TNM", "Clark", "stage IV", "N0" and "M0" all returned no hits.
 This is the image-only-slides failure exactly: a text extraction reporting a
 slide as empty is not evidence the slide is empty.
 
-SCOPE JUDGEMENT. The TNM table is titled an "Overview" and its lower rows are
+SCOPE JUDGMENT. The TNM table is titled an "Overview" and its lower rows are
 oncology-staging minutiae (IIIB: T0, T1a/b or T2a, N1b or N1c...). Questions here
 cover what the axes MEAN and the anchor stages -- 0 and IV -- rather than asking
 anyone to reproduce the grid. Contrast the Clin Path Lecture 3 build, where a
@@ -64,13 +64,13 @@ POOL_F = [
  dict(topic="Malignant melanoma", io=IOA, slot="test finding",
    q="In the TNM melanoma staging overview, what do the three letters denote?",
    opts=[
-     ["T is primary tumour thickness; N is the number of tumour-involved regional lymph nodes; M is the number of metastases at a distant site",
+     ["T is primary tumor thickness; N is the number of tumor-involved regional lymph nodes; M is the number of metastases at a distant site",
       "Correct — the footnote of the staging table defines all three."],
-     ["T is the tumour's anatomic level; N is the number of naevi present; M is the number of mitoses per high-power field",
+     ["T is the tumor's anatomic level; N is the number of naevi present; M is the number of mitoses per high-power field",
       "None of the three is defined that way."],
-     ["T is the time since onset; N is the number of tumour-involved regional lymph nodes; M is the number of distant metastases",
-      "T is primary tumour thickness, not duration."],
-     ["T is primary tumour thickness; N is the nodal diameter in centimetres; M is the mitotic rate",
+     ["T is the time since onset; N is the number of tumor-involved regional lymph nodes; M is the number of distant metastases",
+      "T is primary tumor thickness, not duration."],
+     ["T is primary tumor thickness; N is the nodal diameter in centimeters; M is the mitotic rate",
       "N counts involved nodes and M counts distant metastases."]],
    c=0, cite=c(54)),
 
@@ -103,22 +103,22 @@ POOL_F = [
       "Correct — nodal against distant spread."],
      ["Stage III is spread to other organs; stage IV is spread to the lymph nodes",
       "The two are the wrong way round."],
-     ["Stage III is localised disease thicker than stage II; stage IV is spread to the lymph nodes",
-      "Localised thicker disease is stage II."],
-     ["Stage III is melanoma confined to the epidermis; stage IV is localised disease in the skin",
+     ["Stage III is localized disease thicker than stage II; stage IV is spread to the lymph nodes",
+      "Localized thicker disease is stage II."],
+     ["Stage III is melanoma confined to the epidermis; stage IV is localized disease in the skin",
       "Epidermis-confined disease is stage 0."]],
    c=0, cite=c(53)),
 
  dict(topic="Malignant melanoma", io=IOA, slot="prognosis",
    q="In the Stages of Melanoma diagram, what are stage 0, stage I and stage II?",
    opts=[
-     ["Stage 0 is melanoma confined to the epidermal region of the skin; stage I is localised disease, only in skin and very thin; stage II is localised disease thicker than stage I",
+     ["Stage 0 is melanoma confined to the epidermal region of the skin; stage I is localized disease, only in skin and very thin; stage II is localized disease thicker than stage I",
       "Correct — 0, I and II are all still local."],
-     ["Stage 0 is localised disease only in the skin and very thin; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to the lymph nodes",
-      "Stage 0 is the epidermis-confined disease and stage II remains localised."],
-     ["Stage 0 is disease that has spread to the lymph nodes; stage I is melanoma confined to the epidermal region; stage II is localised disease that is very thin",
+     ["Stage 0 is localized disease only in the skin and very thin; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to the lymph nodes",
+      "Stage 0 is the epidermis-confined disease and stage II remains localized."],
+     ["Stage 0 is disease that has spread to the lymph nodes; stage I is melanoma confined to the epidermal region; stage II is localized disease that is very thin",
       "Nodal spread is stage III."],
-     ["Stage 0 is localised disease thicker than stage I; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to other organs",
+     ["Stage 0 is localized disease thicker than stage I; stage I is melanoma confined to the epidermal region; stage II is disease that has spread to other organs",
       "Distant spread is stage IV."]],
    c=0, cite=c(53)),
 ]

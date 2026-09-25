@@ -2,8 +2,8 @@
 """Neuro-Ophthalmology (Lecture 11) -- Updated ophthalmology masters.
 
 Eight named conditions, but the lecture is really about PATHWAYS: which pupil
-finding localises where, and which cranial nerve produces which deviation. The
-stems are built so the localisation is derivable rather than recalled.
+finding localizes where, and which cranial nerve produces which deviation. The
+stems are built so the localization is derivable rather than recalled.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -42,8 +42,8 @@ Q("Relative afferent pupillary defect", IO,
 
 Q("Horner syndrome", IO,
   "A 57-year-old smoker has a droopy right upper lid and a small right pupil that reacts to light. The right side of his face is dry. He has had a cough for three months. Which statement about his diagnosis is correct?",
-  [["Horner syndrome, and an apical lung tumour must be excluded",
-    "Correct. Ptosis, miosis and anhidrosis; a Pancoast tumour is the concern with this history."],
+  [["Horner syndrome, and an apical lung tumor must be excluded",
+    "Correct. Ptosis, miosis and anhidrosis; a Pancoast tumor is the concern with this history."],
    ["Third nerve palsy, and an aneurysm must be excluded",
     "That gives a DILATED pupil with the eye down and out, not a small pupil."],
    ["Argyll Robertson pupil, and diabetes must be excluded",
@@ -57,7 +57,7 @@ Q("Horner syndrome", IO,
   "whiplash injury. What must be excluded urgently?",
   [["Carotid artery dissection", "Correct. Painful Horner syndrome of sudden onset is a "
                                  "dissection until proven otherwise."],
-   ["Apical lung tumour", "A cause of Horner syndrome, but not the one signalled by acute neck "
+   ["Apical lung tumor", "A cause of Horner syndrome, but not the one signaled by acute neck "
                           "pain after trauma."],
    ["Multiple sclerosis", "Causes optic neuritis and internuclear ophthalmoplegia rather than "
                           "Horner syndrome."],
@@ -110,8 +110,8 @@ Q("Cranial nerve III palsy", IO,
 Q("Cranial nerve III palsy", IO,
   "A 66-year-old man with diabetes has ptosis and an eye deviated down and out, but the pupil is "
   "normal in size and reactive. What does the pupil finding suggest about the cause?",
-  [["A microvascular ischaemic cause", "Correct. The pupillary fibres run peripherally and are "
-                                       "spared by ischaemia but compressed by an aneurysm."],
+  [["A microvascular ischemic cause", "Correct. The pupillary fibers run peripherally and are "
+                                       "spared by ischemia but compressed by an aneurysm."],
    ["A compressive aneurysm", "Compression involves the pupil, which is spared here."],
    ["Myasthenia gravis", "Causes fatigable ptosis with normal pupils but no fixed deviation."],
    ["Thyroid eye disease", "Causes restrictive myopathy and proptosis rather than a third nerve "
@@ -139,10 +139,10 @@ Q("Cranial nerve VI palsy", IO,
 
 Q("Cranial nerve VI palsy", IO,
   "A 29-year-old woman with headaches and papilledema is found to have a sixth nerve palsy. Why is "
-  "this described as a false localising sign?",
+  "this described as a false localizing sign?",
   [["Its long intracranial course makes it vulnerable to raised pressure anywhere",
     "Correct — the palsy does not indicate where the lesion is."],
-   ["It always indicates a brainstem lesion", "That would make it a true localising sign."],
+   ["It always indicates a brainstem lesion", "That would make it a true localizing sign."],
    ["It is always bilateral", "It may be unilateral or bilateral."],
    ["It resolves within hours", "Resolution follows treatment of the pressure, not hours."]],
   "two-step", D, 46),
@@ -154,7 +154,7 @@ Q("Nystagmus", IO,
     "Correct. Congenital nystagmus often reflects an underlying visual deficit."],
    ["It is a normal finding in newborns and needs no action",
     "Persistent nystagmus is not a normal finding."],
-   ["It always indicates a brain tumour", "A cause to consider, but not the general implication."],
+   ["It always indicates a brain tumor", "A cause to consider, but not the general implication."],
    ["It resolves without evaluation by six months", "Evaluation is indicated rather than "
                                                     "watchful waiting."]],
   "two-step", D, 4),
@@ -181,7 +181,7 @@ Q("Visual fields", IO,
 
 Q("Visual fields", IO,
   "A field defect is found to be MONOCULAR. Where must the lesion be?",
-  [["Anterior to the chiasm", "Correct — a monocular defect localises pre-chiasmal."],
+  [["Anterior to the chiasm", "Correct — a monocular defect localizes pre-chiasmal."],
    ["At the chiasm", "A chiasmal lesion affects both eyes."],
    ["In the occipital cortex", "That is post-chiasmal and produces a binocular defect."],
    ["In the optic radiation", "Also post-chiasmal and binocular."]],

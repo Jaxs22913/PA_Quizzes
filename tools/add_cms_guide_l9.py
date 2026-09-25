@@ -75,8 +75,8 @@ SECTION = """
   </div>
 
   <h3 class="sub" id="mal-approach">9.1 &middot; Objective 1 &mdash; Describe before you name</h3>
-  <p>The deck opens with a discipline rather than a disease: <strong>characterise the lesion
-  systematically before assigning a diagnosis</strong> &mdash; primary lesion type, colour, surface
+  <p>The deck opens with a discipline rather than a disease: <strong>characterize the lesion
+  systematically before assigning a diagnosis</strong> &mdash; primary lesion type, color, surface
   texture, border definition, size, distribution, palpability, ulceration, bleeding, induration, and
   temporal evolution.</p>
   <table>
@@ -100,7 +100,7 @@ SECTION = """
   distinct separate entity.</strong> Chronic ultraviolet injury produces dysplastic keratinocytic
   change across a <em>field</em> of sun-damaged skin, which is the idea the whole management section
   turns on.</p>
-  <p>Small <strong>0.2 to 0.6&nbsp;cm</strong> flesh-coloured, pink or slightly hyperpigmented papules
+  <p>Small <strong>0.2 to 0.6&nbsp;cm</strong> flesh-colored, pink or slightly hyperpigmented papules
   with a <strong>sandpaper texture</strong>; a lesion <strong>may be more apparent by touch than by
   sight</strong>. Sun-exposed face, scalp, ears, forearms and dorsal hands.</p>
   <p><strong>About 1 in 1,000 lesions per year progresses to squamous cell carcinoma</strong> &mdash;
@@ -126,13 +126,13 @@ SECTION = """
   sun exposure &mdash; contrast basal cell carcinoma, which follows <strong>intense intermittent</strong>
   exposure. It may arise from an actinic keratosis.</p>
   <p>Classically a <strong>small red, conical, hard nodule that may ulcerate</strong>; also a
-  <strong>non-healing ulcer</strong>, a warty nodule, or an irregular pink plaque with haemorrhagic
+  <strong>non-healing ulcer</strong>, a warty nodule, or an irregular pink plaque with hemorrhagic
   crust.</p>
   <table>
     <tr><td><b>Red flags</b></td><td>Rapid growth, pain, bleeding, ulceration, induration, fixation, palpable regional nodes</td></tr>
     <tr><td><b>High-risk sites</b></td><td>Mucosal surfaces, lip, ear, scalp, temple, nose, genitalia</td></tr>
-    <tr><td><b>Tumour count</b></td><td><b>More than 10</b> means higher local recurrence and nodal metastasis</td></tr>
-    <tr><td><b>Immunosuppression</b></td><td>Common and often aggressive after transplant, with multiple tumours typically at <b>about 5 years</b>. Chronic lymphocytic leukaemia and human immunodeficiency virus also raise risk and aggressiveness</td></tr>
+    <tr><td><b>Tumor count</b></td><td><b>More than 10</b> means higher local recurrence and nodal metastasis</td></tr>
+    <tr><td><b>Immunosuppression</b></td><td>Common and often aggressive after transplant, with multiple tumors typically at <b>about 5 years</b>. Chronic lymphocytic leukemia and human immunodeficiency virus also raise risk and aggressiveness</td></tr>
     <tr><td><b>Chemoprevention</b></td><td><b>Nicotinamide 500&nbsp;mg orally twice daily</b> reduces new squamous cell carcinoma by <b>about 30%</b> in high-risk patients</td></tr>
   </table>
   <p>Use <strong>time course, firmness or induration, ulceration, site, immune status and
@@ -141,9 +141,9 @@ SECTION = """
   fluorouracil, or curettage and electrodesiccation. Invasive: <strong>surgical excision or Mohs</strong>.
   Advanced or metastatic: <strong>programmed death 1 blockade; cetuximab</strong>.</p>
   <p><strong>Mohs indications</strong> &mdash; high-risk sites (lips, temples, ears, nose, genitalia);
-  recurrent tumours; aggressive histology with perineural or perivascular invasion;
+  recurrent tumors; aggressive histology with perineural or perivascular invasion;
   <strong>lesions over 1&nbsp;cm on the face or over 2&nbsp;cm on trunk or extremities</strong>;
-  immunosuppression; tumours within scars; genetic disease-associated tumours.</p>
+  immunosuppression; tumors within scars; genetic disease-associated tumors.</p>
   <p>Follow-up is <strong>at least annual skin AND lymph-node examination</strong>. Referral is urgent
   for high-risk site, size, recurrence, aggressive histology, immunosuppression,
   <strong>neurologic symptoms</strong> or nodal disease. Metastatic rate for actinically induced
@@ -151,7 +151,7 @@ SECTION = """
 @@FIG_SCC@@
   <h3 class="sub" id="mal-bcc">9.4 &middot; Objective 1 &mdash; Basal cell carcinoma</h3>
   <p><strong>The most common form of cancer.</strong> The <strong>histologic</strong> subtype
-  determines behaviour and dictates treatment &mdash; not the clinical appearance.</p>
+  determines behavior and dictates treatment &mdash; not the clinical appearance.</p>
   <table>
     <tr><th>Subtype</th><th>What you see</th></tr>
     <tr><td><b>Nodular</b></td><td>Papule or nodule with central erosion, slow growth over years to 1&ndash;2&nbsp;cm; <b>pearly or translucent with telangiectasias accentuated by STRETCHING the skin</b></td></tr>
@@ -180,7 +180,7 @@ SECTION = """
   with earlier detection and immunotherapy. 2023 figures: about <strong>97,610</strong> new invasive
   melanomas, about <strong>7,990</strong> deaths, roughly <strong>two-thirds of deaths in men</strong>.
   Lifetime risk about <strong>2% in white individuals</strong> and <strong>0.1 to 0.5% in persons of
-  colour</strong> &mdash; lower, but not zero, which is why acral and nail sites still get checked.</p>
+  color</strong> &mdash; lower, but not zero, which is why acral and nail sites still get checked.</p>
   <table>
     <tr><th>Subtype</th><th>Behaviour</th></tr>
     <tr><td><b>Superficial spreading</b> (~2/3)</td><td>Intermittently sun-exposed skin; evolves radially before vertical growth</td></tr>
@@ -208,12 +208,12 @@ SECTION = """
   <table>
     <tr><th>Stage (slide 53)</th><th>Meaning</th><th>TNM anchor (slide 54)</th></tr>
     <tr><td><b>0</b></td><td>Confined to the epidermal region of skin</td><td>Tis, N0, M0</td></tr>
-    <tr><td><b>I</b></td><td>Localised, only in skin and very thin</td><td>T1&ndash;T2a, N0, M0</td></tr>
-    <tr><td><b>II</b></td><td>Localised, thicker than stage I</td><td>T2b&ndash;T4b, N0, M0</td></tr>
+    <tr><td><b>I</b></td><td>Localized, only in skin and very thin</td><td>T1&ndash;T2a, N0, M0</td></tr>
+    <tr><td><b>II</b></td><td>Localized, thicker than stage I</td><td>T2b&ndash;T4b, N0, M0</td></tr>
     <tr><td><b>III</b></td><td><b>Spread to lymph nodes</b></td><td>Any N&ge;N1, M0</td></tr>
     <tr><td><b>IV</b></td><td><b>Spread to other organs</b></td><td>Any T, any N, <b>M1</b></td></tr>
   </table>
-  <p>In the staging table, <strong>T is primary tumour thickness, N is the number of tumour-involved
+  <p>In the staging table, <strong>T is primary tumor thickness, N is the number of tumor-involved
   regional lymph nodes, and M is the number of metastases at a distant site</strong>.</p>
   <p><strong>Sentinel lymph node biopsy</strong> is offered or discussed at
   <strong>1.0&nbsp;mm or greater</strong> Breslow thickness, or <strong>0.8&nbsp;mm or greater</strong>
@@ -226,7 +226,7 @@ SECTION = """
     <tr><td>1&nbsp;cm</td><td>Less than 1&nbsp;mm</td></tr>
     <tr><td>1 to 2&nbsp;cm</td><td>More than 1&nbsp;mm</td></tr>
   </table>
-  <p><strong>Refer to an expert centre</strong> for melanoma deeper than 1&nbsp;mm, or with lymph-node
+  <p><strong>Refer to an expert center</strong> for melanoma deeper than 1&nbsp;mm, or with lymph-node
   or other-site spread. Patients perform <strong>monthly self-examination</strong> using ABCDE and
   ugly-duckling principles, <strong>including scalp, back, palms, soles and nails</strong>.</p>
 @@FIG_MEL@@
@@ -239,17 +239,17 @@ SECTION = """
     <tr><td><b>Classic</b></td><td>Older men; chronic; rarely fatal</td><td>Palliative local therapy &mdash; intralesional vincristine, vinblastine or bleomycin, or radiation</td></tr>
     <tr><td><b>Endemic</b></td><td>Young Black men in equatorial Africa; often aggressive, can be rapidly fatal</td><td>As clinically indicated</td></tr>
     <tr><td><b>Iatrogenic</b></td><td>With immunosuppressive therapy</td><td><b>Reduce immunosuppressive doses where feasible &mdash; coordinate with the transplant team first</b></td></tr>
-    <tr><td><b>Epidemic</b></td><td>Acquired immunodeficiency</td><td><b>Begin or optimise antiretroviral therapy</b> &mdash; immune restoration is the cornerstone</td></tr>
+    <tr><td><b>Epidemic</b></td><td>Acquired immunodeficiency</td><td><b>Begin or optimize antiretroviral therapy</b> &mdash; immune restoration is the cornerstone</td></tr>
   </table>
   <p>Two examination points carry disproportionate weight. <strong>Oral examination is essential</strong>
   when Kaposi sarcoma is suspected, because hard-palate lesions are common and may be the presenting
-  site. And <strong>marked oedema may occur with few or no visible skin lesions</strong> &mdash; so do
-  not use oedema severity to gauge disease burden.</p>
+  site. And <strong>marked edema may occur with few or no visible skin lesions</strong> &mdash; so do
+  not use edema severity to gauge disease burden.</p>
   <p>Systemic first-line is <strong>liposomal doxorubicin and paclitaxel</strong>, and
   <strong>antiretroviral therapy plus chemotherapy is more effective than antiretroviral therapy
   alone</strong> in advanced disease.</p>
   <p><strong>Cutaneous T-cell lymphoma</strong> (mycosis fungoides) begins in the skin and
-  <strong>may remain confined there for years or decades</strong>. Early: localised or generalised
+  <strong>may remain confined there for years or decades</strong>. Early: localized or generalized
   erythematous patches or scaly plaques, usually on the trunk, frequently larger than 5&nbsp;cm, and
   it <strong>resembles psoriasis, eczema or tinea</strong> &mdash; which is why it is diagnosed
   late.</p>
@@ -267,11 +267,11 @@ SECTION = """
   module, and every item below is arranged around that.</p>
   <table>
     <tr><th>Tumour</th><th>Pattern</th></tr>
-    <tr><td><b>Nail unit melanoma</b></td><td>Rare acral melanoma, most often from the <b>matrix</b>. <b>Not clearly ultraviolet-driven; any skin tone.</b> <b>Thumb and great toe</b>. New or evolving <b>longitudinal melanonychia in ONE digit</b>, increasing width, irregular colour/thickness/spacing, <b>proximal widening or triangular shape</b>, blurred borders, nail splitting, ulceration or subungual mass</td></tr>
-    <tr><td><b>Nail unit squamous cell carcinoma / Bowen</b></td><td><b>The most common malignant nail tumour.</b> Chronic unilateral verrucous periungual papule or plaque, subungual hyperkeratosis, onycholysis, oozing, bleeding, nail-plate destruction, longitudinal erythronychia &mdash; <b>often repeatedly labelled a wart, paronychia or fungal infection</b>. Associations: high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, older age</td></tr>
+    <tr><td><b>Nail unit melanoma</b></td><td>Rare acral melanoma, most often from the <b>matrix</b>. <b>Not clearly ultraviolet-driven; any skin tone.</b> <b>Thumb and great toe</b>. New or evolving <b>longitudinal melanonychia in ONE digit</b>, increasing width, irregular color/thickness/spacing, <b>proximal widening or triangular shape</b>, blurred borders, nail splitting, ulceration or subungual mass</td></tr>
+    <tr><td><b>Nail unit squamous cell carcinoma / Bowen</b></td><td><b>The most common malignant nail tumor.</b> Chronic unilateral verrucous periungual papule or plaque, subungual hyperkeratosis, onycholysis, oozing, bleeding, nail-plate destruction, longitudinal erythronychia &mdash; <b>often repeatedly labeled a wart, paronychia or fungal infection</b>. Associations: high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, older age</td></tr>
     <tr><td><b>Nail unit basal cell carcinoma</b></td><td><b>Exceptionally uncommon</b> &mdash; consider it in a persistent ulcerated or pearly lesion of the nail fold or bed</td></tr>
-    <tr><td><b>Glomus tumour</b></td><td>Small <b>red-blue subungual focus</b> with <b>severe paroxysmal pain, exquisite point tenderness and cold sensitivity</b>; the nail may look nearly normal. The triad suggests it but <b>does not replace imaging or specialist evaluation</b></td></tr>
-    <tr><td><b>Onychopapilloma / onychomatricoma</b></td><td>A single nail with longitudinal <b>erythronychia or leukonychia</b>, distal subungual hyperkeratosis, splinter haemorrhages or localised plate abnormality</td></tr>
+    <tr><td><b>Glomus tumor</b></td><td>Small <b>red-blue subungual focus</b> with <b>severe paroxysmal pain, exquisite point tenderness and cold sensitivity</b>; the nail may look nearly normal. The triad suggests it but <b>does not replace imaging or specialist evaluation</b></td></tr>
+    <tr><td><b>Onychopapilloma / onychomatricoma</b></td><td>A single nail with longitudinal <b>erythronychia or leukonychia</b>, distal subungual hyperkeratosis, splinter hemorrhages or localized plate abnormality</td></tr>
   </table>
   <p><strong>Hutchinson sign</strong> &mdash; periungual pigment extending onto the
   <strong>proximal nail fold</strong> &mdash; is highly concerning for nail unit melanoma and should
@@ -292,7 +292,7 @@ SECTION = """
   <table>
     <tr><th>Population</th><th>What changes</th></tr>
     <tr><td><b>Adult</b></td><td>Cumulative and intermittent ultraviolet exposure both accumulate through working life. <b>Immunosuppression and transplant status</b> dominate risk: squamous cell carcinoma is common and aggressive after transplant, typically multiple at about 5 years, and <b>nicotinamide 500&nbsp;mg twice daily</b> is a real option. Melanoma self-examination is monthly and lifelong. Kaposi sarcoma in this group is usually epidemic or iatrogenic &mdash; treat the immune state first.</td></tr>
-    <tr><td><b>Elderly</b></td><td>Actinic keratosis burden and <b>field cancerization</b> rise with cumulative exposure &mdash; favour field-directed therapy. Lentigo maligna arises on chronically sun-exposed skin of older adults. <b>Classic Kaposi sarcoma</b> is a disease of older men and is managed palliatively rather than aggressively. In cutaneous T-cell lymphoma, the deck's warning that overly aggressive therapy may cause <b>premature death</b> weighs most heavily here. Basal cell carcinoma&rsquo;s <b>up-to-50% second-primary rate</b> makes annual full-skin examination non-negotiable.</td></tr>
+    <tr><td><b>Elderly</b></td><td>Actinic keratosis burden and <b>field cancerization</b> rise with cumulative exposure &mdash; favor field-directed therapy. Lentigo maligna arises on chronically sun-exposed skin of older adults. <b>Classic Kaposi sarcoma</b> is a disease of older men and is managed palliatively rather than aggressively. In cutaneous T-cell lymphoma, the deck's warning that overly aggressive therapy may cause <b>premature death</b> weighs most heavily here. Basal cell carcinoma&rsquo;s <b>up-to-50% second-primary rate</b> makes annual full-skin examination non-negotiable.</td></tr>
   </table>
   <p><strong>Immunosuppression cuts across both</strong> and moves every answer the same way: more
   disease, more aggressive disease, a lower threshold for biopsy and for Mohs, and earlier referral.</p>

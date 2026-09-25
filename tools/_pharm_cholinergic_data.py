@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """Cholinergic drug chart data -- Pharmacology I Exam 1, Lecture 3.
 
-The companion to _pharm_receptor_data.py. That page is organised by RECEPTOR;
-this one is organised by DRUG, across slides 26 to 70.
+The companion to _pharm_receptor_data.py. That page is organized by RECEPTOR;
+this one is organized by DRUG, across slides 26 to 70.
 
 Same principle: everything is from the slides, each row cites the one it came
 from, and anything that is a memory device rather than lecture content is
-labelled where it appears.
+labeled where it appears.
 
 THE PAIRS PANEL IS THE POINT OF THE PAGE. Almost every hard question in this
 half of the lecture is two drugs that look interchangeable and are not --
@@ -30,7 +30,7 @@ GROUPS = [
  ("antimusc", "Antimuscarinics", "#8a5f14",
   "Block muscarinic only",
   "They block the muscarinic receptors of parasympathetic nerves, and the few sympathetic "
-  "cholinergic fibres to salivary and sweat glands. <b>They do NOT block nicotinic receptors</b> "
+  "cholinergic fibers to salivary and sweat glands. <b>They do NOT block nicotinic receptors</b> "
   "&mdash; little or no action at the neuromuscular junction or the autonomic ganglia."),
  ("ganglion", "Ganglionic blockers", "#5f3a8a",
   "Block the entire autonomic output",
@@ -38,14 +38,14 @@ GROUPS = [
   "so they shut off the whole autonomic outflow. <b>Rarely used clinically.</b>"),
  ("nmb", "Neuromuscular blockers", "#8c2f22",
   "Nicotinic, at the muscle end plate",
-  "Structural analogues of acetylcholine acting at the nicotinic receptors of the skeletal "
+  "Structural analogs of acetylcholine acting at the nicotinic receptors of the skeletal "
   "muscle end plate &mdash; as antagonists (non-depolarizing) or as agonists (depolarizing)."),
 ]
 
 # group, drug, acts where, used for, watch for, slide
 DRUGS = [
  ("direct", "Bethanechol",
-  "<b>Muscarinic only &mdash; it lacks nicotinic activity.</b> Not hydrolysed by "
+  "<b>Muscarinic only &mdash; it lacks nicotinic activity.</b> Not hydrolyzed by "
   "acetylcholinesterase, so it lasts.",
   "Bladder and gastrointestinal atony.",
   "Sweating, salivation, flushing.", 30),
@@ -75,7 +75,7 @@ DRUGS = [
   "system.</b>",
   "<b>Antidote for competitive neuromuscular blockers</b>; symptomatic treatment of myasthenia "
   "gravis; stimulating bladder and bowel.",
-  "Salivation, flushing, low blood pressure, nausea, abdominal pain, diarrhoea, bronchospasm.",
+  "Salivation, flushing, low blood pressure, nausea, abdominal pain, diarrhea, bronchospasm.",
   38),
  ("indirect", "Pyridostigmine",
   "Reversible, peripheral.",
@@ -103,7 +103,7 @@ DRUGS = [
   "restlessness through to delirium.", 51),
  ("antimusc", "Scopolamine",
   "Peripheral effects like atropine, but <b>greater central action at therapeutic doses</b>.",
-  "<b>Preventing motion sickness</b>; anaesthetic adjunct; short-term memory blocking; reducing "
+  "<b>Preventing motion sickness</b>; anesthetic adjunct; short-term memory blocking; reducing "
   "secretions.",
   "As atropine. <b>Wash hands after handling the patch</b> &mdash; touching the eye afterwards "
   "blurs vision.", 54),
@@ -143,16 +143,16 @@ DRUGS = [
   "edrophonium and it outcompetes the blocker. Paralysis arrives in order: <b>face and eye "
   "first</b>, then fingers, limbs, neck, trunk, intercostals.", 64),
  ("nmb", "Succinylcholine &mdash; the only depolarizing agent",
-  "An <b>agonist</b>: it binds the receptor and depolarises, then is not cleared by "
+  "An <b>agonist</b>: it binds the receptor and depolarizes, then is not cleared by "
   "acetylcholinesterase, so the stimulation persists. <b>Phase I</b> opens the sodium channel and "
-  "depolarises; <b>Phase II</b> is resistance to further depolarization, and that is where the "
+  "depolarizes; <b>Phase II</b> is resistance to further depolarization, and that is where the "
   "<b>flaccid paralysis</b> appears.",
   "<b>Rapid sequence intubation</b> and intubation at induction &mdash; rapid onset, short "
   "duration.",
   "Broken down by <b>plasma pseudocholinesterase</b>; a genetic deficiency causes "
-  "<b>prolonged paralysis and apnoea</b>. With halothane it can trigger <b>malignant "
+  "<b>prolonged paralysis and apnea</b>. With halothane it can trigger <b>malignant "
   "hyperthermia</b> &mdash; rigidity, metabolic acidosis, tachycardia, hyperpyrexia &mdash; "
-  "treated by cooling and <b>dantrolene</b>. Respiratory muscles are paralysed <b>last</b>.", 70),
+  "treated by cooling and <b>dantrolene</b>. Respiratory muscles are paralyzed <b>last</b>.", 70),
 ]
 
 # The confusable pairs -- title, left, right, the axis that separates them, slides

@@ -23,7 +23,7 @@ FIXES = {
  30: (1, "Excellent Gram-negative activity including Pseudomonas aeruginosa, with limited Gram-positive coverage and reliable activity against Enterococcus"),
  31:  (3, "Complicated intra-abdominal infection with Bacteroides fragilis, anaerobic abscess and biliary sepsis"),
  35: (1, "Community-acquired pneumonia and skin and soft tissue infection in the outpatient setting, together with uncomplicated urinary tract infection"),
- 41:  (1, "Methicillin-resistant Staphylococcus aureus bacteraemia, infective endocarditis, vertebral osteomyelitis, and prosthetic joint infection"),
+ 41:  (1, "Methicillin-resistant Staphylococcus aureus bacteremia, infective endocarditis, vertebral osteomyelitis, and prosthetic joint infection"),
  44: (1, "It inactivates the penicillin-binding protein by forming a covalent bond at its active site, exactly as a penicillin does"),
  45: (1, "Pseudomonal pneumonia, multidrug-resistant Gram-negative infection, extended-spectrum beta-lactamase producing organisms, and nosocomial intra-abdominal sepsis"),
  46: (1, "Oral vancomycin is absorbed too rapidly from the small bowel and produces toxic serum concentrations before reaching the colon"),

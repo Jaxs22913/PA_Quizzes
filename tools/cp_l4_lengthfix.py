@@ -2,8 +2,8 @@
 """Length-bias fixes for the Clinical Pathophysiology I Lecture 4 pool.
 
 A question is gameable when the correct option is the uniquely longest AND is
-at least 8 characters and 18 per cent longer than the runner-up. This pool
-started at 50.4 per cent -- the worst of any on the site -- because a
+at least 8 characters and 18 percent longer than the runner-up. This pool
+started at 50.4 percent -- the worst of any on the site -- because a
 pathophysiology answer is a MECHANISM and a mechanism takes a clause, while a
 wrong answer is usually just the name of a different disease.
 

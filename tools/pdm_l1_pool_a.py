@@ -108,7 +108,7 @@ POOL_A = [
      ["Only whether an interpreter is required",
       "Language access matters but is not the full list."],
      ["Only the urgency of the clinical situation",
-      "Urgency does not replace individualised communication."]],
+      "Urgency does not replace individualized communication."]],
    c=0, cite=c(15)),
 
  dict(topic="Phases", io=IOC,
@@ -146,7 +146,7 @@ POOL_A = [
       "The phase ends when the test itself begins, not at laboratory receipt."],
      ["It begins at the patient's arrival and ends when consent is signed",
       "Consent is one component within the phase rather than its endpoint."],
-     ["It begins when the specimen is collected and ends when it is analysed",
+     ["It begins when the specimen is collected and ends when it is analyzed",
       "That describes the intratest phase."]],
    c=0, cite=c(8)),
 
@@ -258,7 +258,7 @@ POOL_A = [
    q="A significant abnormal result returns. Which posttest responsibility does this trigger?",
    opts=[
      ["Identify and treat critical values, and communicate results clearly and sensitively",
-      "Correct. Behavioural responses to a significant diagnosis may last several weeks or longer."],
+      "Correct. Behavioral responses to a significant diagnosis may last several weeks or longer."],
      ["Repeat the test before informing the patient of anything",
       "Repeating is not the stated posttest responsibility."],
      ["Defer communication until the follow-up appointment",
@@ -328,7 +328,7 @@ POOL_A = [
       "A team approach is what is described."],
      ["Ordering the broadest available panel to avoid missing anything",
       "Appropriateness and cost effectiveness are the stated considerations."],
-     ["Standardising communication so that every patient receives the same script",
+     ["Standardizing communication so that every patient receives the same script",
       "Communication is adapted to ethnicity, culture, gender and age."]],
    c=0, cite=c(15)),
 ]

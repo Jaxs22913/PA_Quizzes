@@ -69,15 +69,15 @@ VIG_A = [
    c=0, cite=c(22)),
 
  dict(topic="Squamous cell carcinoma", io=IOB, lead="next step",
-   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. What does this pattern mean, and what can be offered to reduce new tumours?",
+   q="A 58-year-old kidney transplant recipient, six years post-transplant, has developed his fourth squamous cell carcinoma this year. What does this pattern mean, and what can be offered to reduce new tumors?",
    opts=[
-     ["Multiple tumours typically emerge about five years after transplant and are often aggressive; nicotinamide 500 mg orally twice daily reduces new squamous cell carcinoma by about 30%",
+     ["Multiple tumors typically emerge about five years after transplant and are often aggressive; nicotinamide 500 mg orally twice daily reduces new squamous cell carcinoma by about 30%",
       "Correct — both the timing and the chemoprevention figure."],
-     ["Multiple tumours typically emerge within six weeks of transplant and are usually indolent; nicotinamide 500 mg orally twice daily reduces new tumours by about 30%",
+     ["Multiple tumors typically emerge within six weeks of transplant and are usually indolent; nicotinamide 500 mg orally twice daily reduces new tumors by about 30%",
       "The interval is about five years and the disease is often aggressive."],
-     ["Multiple tumours typically emerge about five years after transplant; oral acitretin reduces new squamous cell carcinoma by about 30%",
+     ["Multiple tumors typically emerge about five years after transplant; oral acitretin reduces new squamous cell carcinoma by about 30%",
       "The agent named is nicotinamide."],
-     ["Multiple tumours typically emerge about five years after transplant; nicotinamide reduces new tumours by about 20%",
+     ["Multiple tumors typically emerge about five years after transplant; nicotinamide reduces new tumors by about 20%",
       "20% is the figure for basal cell carcinoma."]],
    c=0, cite=c(21)),
 
@@ -139,9 +139,9 @@ VIG_A = [
  dict(topic="Basal cell carcinoma", io=IOA, lead="test",
    q="You suspect a basal cell carcinoma on a patient's shoulder. Which is the most appropriate diagnostic step, and why does it matter which subtype comes back?",
    opts=[
-     ["Shave or punch biopsy, because the HISTOLOGIC subtype determines behaviour and dictates treatment selection",
+     ["Shave or punch biopsy, because the HISTOLOGIC subtype determines behavior and dictates treatment selection",
       "Correct — histology, not clinical appearance, drives the plan."],
-     ["Shave or punch biopsy, because the CLINICAL subtype determines behaviour and dictates treatment selection",
+     ["Shave or punch biopsy, because the CLINICAL subtype determines behavior and dictates treatment selection",
       "That role belongs to the histologic subtype, not the clinical one."],
      ["Wide local excision with 1 cm margins, because tissue diagnosis and treatment are achieved together",
       "Biopsy precedes definitive treatment here."],
@@ -178,7 +178,7 @@ VIG_A = [
  dict(topic="Basal cell carcinoma", io=IOA, lead="next step",
    q="A 77-year-old has a recurrent basal cell carcinoma at the inner canthus, and the biopsy reports infiltrative histology. Which is the most appropriate management?",
    opts=[
-     ["Mohs micrographic surgery — the canthus is a high-risk site, the tumour is recurrent, and the histology is aggressive",
+     ["Mohs micrographic surgery — the canthus is a high-risk site, the tumor is recurrent, and the histology is aggressive",
       "Correct — three separate Mohs indications are met."],
      ["Standard excision with 4 mm margins, since infiltrative histology behaves much like ordinary nodular disease",
       "Infiltrative histology is explicitly aggressive."],
@@ -189,15 +189,15 @@ VIG_A = [
    c=0, cite=c(37)),
 
  dict(topic="Basal cell carcinoma", io=IOA, lead="diagnosis",
-   q="Two patients present the same morning. One has had intense blistering sunburns on holidays but works indoors; the other has worked outdoors for forty years with steady daily exposure. Which pattern favours which diagnosis?",
+   q="Two patients present the same morning. One has had intense blistering sunburns on holidays but works indoors; the other has worked outdoors for forty years with steady daily exposure. Which pattern favors which diagnosis?",
    opts=[
-     ["Intense intermittent exposure favours basal cell carcinoma; prolonged cumulative exposure favours squamous cell carcinoma",
+     ["Intense intermittent exposure favors basal cell carcinoma; prolonged cumulative exposure favors squamous cell carcinoma",
       "Correct — the exposure pattern is a genuine discriminator."],
-     ["Intense intermittent exposure favours squamous cell carcinoma; prolonged cumulative exposure favours basal cell carcinoma",
+     ["Intense intermittent exposure favors squamous cell carcinoma; prolonged cumulative exposure favors basal cell carcinoma",
       "The two patterns are the wrong way round."],
-     ["Both patterns favour basal cell carcinoma equally, since ultraviolet exposure is not subdivided in this way",
-      "The two exposure patterns favour different diagnoses."],
-     ["Both patterns favour melanoma, since keratinocyte carcinoma is not ultraviolet-driven",
+     ["Both patterns favor basal cell carcinoma equally, since ultraviolet exposure is not subdivided in this way",
+      "The two exposure patterns favor different diagnoses."],
+     ["Both patterns favor melanoma, since keratinocyte carcinoma is not ultraviolet-driven",
       "Both keratinocyte carcinomas are ultraviolet-driven."]],
    c=0, cite=c(33)),
 ]

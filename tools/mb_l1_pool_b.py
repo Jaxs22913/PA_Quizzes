@@ -175,7 +175,7 @@ POOL_B = [
      ["Synthetic shows visible differences between organisms; complex does not",
       "Displaying visible differences describes differential media."],
      ["Synthetic contains blood or serum; complex does not",
-      "Blood, serum and haemoglobin are features of enriched media."]],
+      "Blood, serum and hemoglobin are features of enriched media."]],
    c=0, cite=c(43)),
 
  dict(topic="Culture media", io=IO6,
@@ -183,7 +183,7 @@ POOL_B = [
    opts=[
      ["Agents that inhibit growth of some microbes",
       "That defines selective media."],
-     ["Complex organic substances such as blood, serum, haemoglobin or special growth factors required by fastidious microbes",
+     ["Complex organic substances such as blood, serum, hemoglobin or special growth factors required by fastidious microbes",
       "Correct. The point is supporting organisms that will not otherwise grow."],
      ["The ability to display visible differences among organisms",
       "That defines differential media."],
@@ -214,7 +214,7 @@ POOL_B = [
      ["Blood agar is selective and differential; mannitol salt agar is enriched and differential",
       "This swaps the two classifications."],
      ["Blood agar is enriched and differential; mannitol salt agar is selective and differential",
-      "Correct. Blood agar's differential property is the gamma, beta and alpha haemolysis patterns."]],
+      "Correct. Blood agar's differential property is the gamma, beta and alpha hemolysis patterns."]],
    c=3, cite=c(45)),
 
  dict(topic="Bacterial growth", io=IO7,
@@ -231,9 +231,9 @@ POOL_B = [
    c=0, cite=c(48)),
 
  dict(topic="Growth curve", io=IO7,
-   q="What characterises the lag phase of the bacterial growth curve?",
+   q="What characterizes the lag phase of the bacterial growth curve?",
    opts=[
-     ["Maximum growth, sustained while nutrients and environment remain favourable",
+     ["Maximum growth, sustained while nutrients and environment remain favorable",
       "That is the exponential growth phase."],
      ["A flat period of adjustment and enlargement, with little growth",
       "Correct. Cells are adapting rather than dividing."],
@@ -261,7 +261,7 @@ POOL_B = [
    opts=[
      ["Cells adjusting and enlarging before division begins",
       "That is the lag phase."],
-     ["Adequate nutrients and a favourable environment",
+     ["Adequate nutrients and a favorable environment",
       "Those conditions sustain the exponential growth phase."],
      ["Intensifying limiting factors killing cells exponentially",
       "That is the death phase."],

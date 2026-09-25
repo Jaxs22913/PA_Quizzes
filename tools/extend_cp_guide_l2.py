@@ -20,7 +20,7 @@ G = "/Users/jaxonluke/Developer/PA_Quizzes/Clinical Pathophysiology I Exam 1/cp-
 I = "cp-exam-1-study-guide-images"
 
 FIG_SKIN = ('<figure class="fig"><img width="800" height="558" loading="lazy" src="%s/010.jpg" '
- 'alt="Labelled three-dimensional block diagram of full-thickness skin showing epidermis, papillary and reticular dermis, '
+ 'alt="Labeled three-dimensional block diagram of full-thickness skin showing epidermis, papillary and reticular dermis, '
  'and hypodermis, with hair shaft and follicle, sebaceous gland, eccrine sweat gland, arrector pili muscle, '
  'Meissner\'s and Pacinian corpuscles, free nerve endings, artery and vein.">'
  '<figcaption>The whole of objective (a) in one block. Read it top to bottom: epidermis, then the dermis split into '
@@ -32,7 +32,7 @@ FIG_SKIN = ('<figure class="fig"><img width="800" height="558" loading="lazy" sr
  'slides (Slide 5).</span></figcaption></figure>\n  ') % I
 
 FIG_EPI = ('<figure class="fig"><img width="332" height="329" loading="lazy" src="%s/011.png" '
- 'alt="Labelled cross-section of the epidermis showing, from deep to superficial, stratum basale, stratum spinosum, '
+ 'alt="Labeled cross-section of the epidermis showing, from deep to superficial, stratum basale, stratum spinosum, '
  'stratum granulosum, stratum lucidum and stratum corneum.">'
  '<figcaption>The five strata in order, and the order is the point: cells are born at the bottom and are dead by the '
  'top. Division happens only in the basale; the spinosum is where desmosomes give the prickle-cell appearance; the '
@@ -66,7 +66,7 @@ SECTION = '''
   <div class="callout"><strong>The line between this course and Clinical Medicine and Surgery I.</strong>
   Dermatology is taught in both this term, and the same diseases appear in each. The split is
   that this course asks <em>what is happening in the tissue and why</em> &mdash; which cell, which
-  pathway, which layer &mdash; while Clinical Medicine and Surgery I asks how you recognise it and
+  pathway, which layer &mdash; while Clinical Medicine and Surgery I asks how you recognize it and
   what you do about it. If a fact would sit equally well in both, it is probably pitched for the
   other one.</div>
 
@@ -97,13 +97,13 @@ SECTION = '''
   <h4 class="subsub">The dermis and the appendages</h4>
   <p>Two connective tissue layers: <strong>papillary</strong> (thin, superficial) and
   <strong>reticular</strong> (dense, deeper). <strong>Collagen</strong> is the primary component,
-  produced by fibroblasts, giving tensile strength; <strong>elastic fibres</strong> of elastin and
+  produced by fibroblasts, giving tensile strength; <strong>elastic fibers</strong> of elastin and
   fibrillin give recoil. Cells include fibroblasts, macrophages, histiocytes, adipocytes and
   <strong>mast cells</strong>, which mediate immunoglobulin E-driven inflammation.</p>
   <table>
     <tr><th>Appendage</th><th>Secretion and function</th></tr>
     <tr><td>Eccrine sweat glands</td><td>Open onto the skin surface; water and electrolytes (sodium, chloride); cooling by evaporation</td></tr>
-    <tr><td>Apocrine sweat glands</td><td>Axilla and anogenital areas; protein and fatty lipids; scent glands. <strong>Apocrine sweat + bacterial degradation = body odour</strong></td></tr>
+    <tr><td>Apocrine sweat glands</td><td>Axilla and anogenital areas; protein and fatty lipids; scent glands. <strong>Apocrine sweat + bacterial degradation = body odor</strong></td></tr>
     <tr><td>Sebaceous glands</td><td>Sebum &mdash; triglycerides, wax esters, squalene &mdash; lubricating skin and hair</td></tr>
   </table>
   <p>Hair comes in three types: <strong>terminal</strong> (thick, androgen-regulated),
@@ -154,7 +154,7 @@ SECTION = '''
   <h3 class="sub" id="derm-healing">2.4 &middot; Objective c &mdash; Wound healing and scar</h3>
   <table>
     <tr><th>Phase</th><th>Days</th><th>What happens</th></tr>
-    <tr><td>Inflammatory</td><td>1&ndash;3</td><td>Fibrin haemostatic plug; neutrophils and macrophages remove dead tissue; growth factors and cytokines signal the next phase to begin</td></tr>
+    <tr><td>Inflammatory</td><td>1&ndash;3</td><td>Fibrin hemostatic plug; neutrophils and macrophages remove dead tissue; growth factors and cytokines signal the next phase to begin</td></tr>
     <tr><td>Proliferative</td><td>4&ndash;21</td><td><strong>Granulation tissue</strong> forms &mdash; macrophages, fibroblasts and endothelial cells</td></tr>
     <tr><td>Remodelling</td><td>21 &ndash; 1 year</td><td>Granulation tissue formation ceases. <strong>Type III collagen is replaced with stronger type I</strong>, oriented in small parallel bundles &mdash; where normal dermis has a basket-weave orientation</td></tr>
   </table>
@@ -177,10 +177,10 @@ SECTION = '''
     <tr><td>Irritant contact dermatitis</td><td>Direct cutaneous interaction with a chemical, biologic or physical agent &mdash; <strong>does not require prior exposure</strong></td></tr>
     <tr><td>Eczema (atopic dermatitis)</td><td>T cell-mediated. Overactive immune system plus <strong>insufficient filaggrin</strong> from a compromised epidermal barrier, with genetic, environmental and psychogenic factors. &ldquo;The itch that rashes&rdquo;</td></tr>
     <tr><td>Neurodermatitis</td><td>Cause unknown; nerve hypersensitivity suspected. Itch-scratch cycle producing thick, leathery, scaly plaques</td></tr>
-    <tr><td>Seborrhoeic dermatitis</td><td>Cause incompletely understood. Microbiome dysbiosis, altered immune response and barrier dysfunction, in sebaceous-rich regions. Dandruff is the non-inflammatory form</td></tr>
-    <tr><td>Seborrhoeic keratosis</td><td><strong>Benign</strong> proliferation of immature keratinocytes; possibly activating mutations in <strong>fibroblast growth factor receptor-3</strong></td></tr>
+    <tr><td>Seborrheic dermatitis</td><td>Cause incompletely understood. Microbiome dysbiosis, altered immune response and barrier dysfunction, in sebaceous-rich regions. Dandruff is the non-inflammatory form</td></tr>
+    <tr><td>Seborrheic keratosis</td><td><strong>Benign</strong> proliferation of immature keratinocytes; possibly activating mutations in <strong>fibroblast growth factor receptor-3</strong></td></tr>
     <tr><td>Actinic keratosis</td><td>Cumulative ultraviolet damage &rarr; intraepidermal proliferation of <strong>dysplastic</strong> keratinocytes. The most common precancer; higher risk for squamous cell carcinoma</td></tr>
-    <tr><td>Psoriasis</td><td>Chronic autoimmune inflammatory dermatosis; cells multiply up to <strong>10&times;</strong> faster. Active T cells infiltrate the epidermis and stimulate keratinocyte proliferation with <strong>tumour necrosis factor alpha, interferon gamma and interleukin-12</strong>. Epidermal hyperplasia, <strong>loss of the stratum granulosum</strong>, and failure to secrete lipids (xeroderma)</td></tr>
+    <tr><td>Psoriasis</td><td>Chronic autoimmune inflammatory dermatosis; cells multiply up to <strong>10&times;</strong> faster. Active T cells infiltrate the epidermis and stimulate keratinocyte proliferation with <strong>tumor necrosis factor alpha, interferon gamma and interleukin-12</strong>. Epidermal hyperplasia, <strong>loss of the stratum granulosum</strong>, and failure to secrete lipids (xeroderma)</td></tr>
     <tr><td>Verrucae vulgaris</td><td>Human papillomavirus invades epidermal <strong>basal</strong> cells through microabrasions, driving epidermal proliferation</td></tr>
     <tr><td>Dermatophyte infection</td><td><em>Trichophyton</em>, <em>Microsporum</em>, <em>Epidermophyton</em>. Spores secrete <strong>keratinases and proteases</strong> to digest keratin, typically in the <strong>stratum corneum</strong> &mdash; hence the annular patch with central clearing</td></tr>
   </table>
@@ -188,7 +188,7 @@ SECTION = '''
   <table>
     <tr><th>Finding</th><th>Mechanism</th></tr>
     <tr><td>Leukonychia (Mee&rsquo;s lines)</td><td>Temporary incomplete keratinization at the nail bed; usually harmless, but also heavy metal poisoning</td></tr>
-    <tr><td>Koilonychia</td><td>Impaired keratin synthesis, associated with deficiency anaemia; thin, concave, ridged</td></tr>
+    <tr><td>Koilonychia</td><td>Impaired keratin synthesis, associated with deficiency anemia; thin, concave, ridged</td></tr>
     <tr><td>Beau&rsquo;s lines</td><td><strong>Halt of keratin production</strong> &mdash; transverse grooves. Illness, stress, injury, malnourishment</td></tr>
     <tr><td>Terry&rsquo;s nails</td><td>Overgrowth of connective tissue in the nail bed. Aging, liver disease, congestive heart failure, diabetes</td></tr>
     <tr><td>Clubbing</td><td><strong>Increased capillary density</strong> with increased release of vascular endothelial growth factor. Lung, inflammatory bowel, cardiovascular and liver disease</td></tr>
@@ -197,13 +197,13 @@ SECTION = '''
 
   <h3 class="sub" id="derm-cancers">2.6 &middot; Objective d &mdash; Skin cancers</h3>
   <table>
-    <tr><th>Cancer</th><th>Mechanism and behaviour</th></tr>
-    <tr><td><strong>Basal cell carcinoma</strong></td><td>Most common skin cancer and <strong>most common malignancy in humans</strong>. Ultraviolet-induced mutation of basal keratinocytes overactivating the <strong>Hedgehog signalling pathway</strong>. Head and neck; slow growing, rarely metastasises. Pearly papules with telangiectasias</td></tr>
-    <tr><td><strong>Squamous cell carcinoma</strong></td><td>Second most common. Ultraviolet DNA damage and mutation in the <strong>tp53</strong> tumour suppressor gene; derived from keratinocytes. <strong>Keratin pearls and epithelial pearls are pathognomonic.</strong> Immunosuppression is a notable risk factor</td></tr>
+    <tr><th>Cancer</th><th>Mechanism and behavior</th></tr>
+    <tr><td><strong>Basal cell carcinoma</strong></td><td>Most common skin cancer and <strong>most common malignancy in humans</strong>. Ultraviolet-induced mutation of basal keratinocytes overactivating the <strong>Hedgehog signaling pathway</strong>. Head and neck; slow growing, rarely metastasises. Pearly papules with telangiectasias</td></tr>
+    <tr><td><strong>Squamous cell carcinoma</strong></td><td>Second most common. Ultraviolet DNA damage and mutation in the <strong>tp53</strong> tumor suppressor gene; derived from keratinocytes. <strong>Keratin pearls and epithelial pearls are pathognomonic.</strong> Immunosuppression is a notable risk factor</td></tr>
     <tr><td><strong>Melanoma</strong></td><td>Arises from melanocytes at the <strong>dermal-epidermal junction</strong>. Ultraviolet light and oxidative stress damage melanocyte DNA. Risk inherited as an <strong>autosomal dominant trait with variable penetrance</strong></td></tr>
   </table>
   <div class="pearl"><strong>Melanoma progresses in a fixed order:</strong> radial growth within the
-  epidermis &rarr; vertical growth penetrating the dermis &rarr; increasing tumour thickness &rarr;
+  epidermis &rarr; vertical growth penetrating the dermis &rarr; increasing tumor thickness &rarr;
   metastatic invasion of lymphatics and blood vessels. The radial-to-vertical shift is the moment
   depth starts to matter.</div>
   <p class="src">Lecture references include Fitzpatrick&rsquo;s Color Atlas and Synopsis of Clinical
@@ -225,7 +225,7 @@ TY = '''    dermAnatomy: [
       {q:"Which cell mediates immunoglobulin E-driven inflammation in the dermis?",
        choices:["Fibroblast","Keratinocyte","Melanocyte","Mast cell"],correct:3,
        explain:"Mast cell degranulation is the mechanism behind both the wheal and urticaria."},
-      {q:"Apocrine sweat itself is odourless. What produces body odour?",
+      {q:"Apocrine sweat itself is odorless. What produces body odor?",
        choices:["Bacterial degradation of apocrine sweat","Evaporation of eccrine sweat","Oxidation of sebum","Keratin breakdown in the corneum"],correct:0,
        explain:"Apocrine glands secrete protein and fatty lipids; the smell comes from bacteria acting on them."}
     ],
@@ -240,8 +240,8 @@ TY = '''    dermAnatomy: [
        choices:["Loss of the stratum granulosum","Thickening of the stratum lucidum","Loss of melanocytes","Separation of epidermis from dermis"],correct:0,
        explain:"Epidermal hyperplasia with loss of the granular layer, plus failure to secrete lipids, produces the dry silvery scale."},
       {q:"Which pathway does basal cell carcinoma overactivate?",
-       choices:["tp53 tumour suppressor","Fibroblast growth factor receptor-3","Hedgehog signalling","Vascular endothelial growth factor"],correct:2,
-       explain:"Ultraviolet-induced mutation of basal keratinocytes overactivates Hedgehog signalling. tp53 belongs to squamous cell carcinoma."},
+       choices:["tp53 tumor suppressor","Fibroblast growth factor receptor-3","Hedgehog signaling","Vascular endothelial growth factor"],correct:2,
+       explain:"Ultraviolet-induced mutation of basal keratinocytes overactivates Hedgehog signaling. tp53 belongs to squamous cell carcinoma."},
       {q:"How do keloids differ from normal scar remodelling?",
        choices:["Collagen bundles develop haphazardly and exceed the original wound boundaries","Type I collagen is replaced by type III","Granulation tissue never forms","Melanocytes proliferate at the wound edge"],correct:0,
        explain:"Fibroblast dysregulation prolongs the proliferative phase and unbalances deposition against degradation, so the scar overruns the wound it came from."}

@@ -10,7 +10,7 @@ their slides independently. The badge is derived from the row's deck field:
             "12. Acute Vision Loss": "L12"}.get(deck, "L10")
 
 Lectures 13 and 14 were added to the chart later and never added to that map,
-so every one of their rows fell through to the DEFAULT and was labelled L10.
+so every one of their rows fell through to the DEFAULT and was labeled L10.
 Thirty rows told the reader to look in the Common Ophthalmological Disorders
 deck for a slide that is in Chronic Vision Loss & Tumors or Ocular Trauma:
 
@@ -21,7 +21,7 @@ deck for a slide that is in Chronic Vision Loss & Tumors or Ocular Trauma:
 
 Found while checking the pictures swapped in by swap_cms_e2_better_photos.py:
 the lid-laceration row cited "Slide 29" under a badge reading L10, and slide 29
-of Lecture 10 is a subconjunctival haemorrhage.
+of Lecture 10 is a subconjunctival hemorrhage.
 
 Fixes the generator's map, the legend paragraph that still said "three decks",
 and the rendered chart, which is not rebuilt from scratch here for the same

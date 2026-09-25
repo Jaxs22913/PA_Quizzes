@@ -28,7 +28,7 @@ NOTE = ("<b>What this lecture does not test.</b> <b>Dosing</b> &mdash; &ldquo;no
         "&ldquo;don&rsquo;t memorize which ones cause eye irritation or hypersensitivity&hellip; "
         "any of these can do that&rdquo; is about the <b>generic</b> irritation, not about the "
         "effects that name one drug &mdash; ciprofloxacin&rsquo;s white precipitate, the bitter "
-        "taste of the carbonic anhydrase inhibitors, the iris colour change of the "
+        "taste of the carbonic anhydrase inhibitors, the iris color change of the "
         "prostaglandins. <b>Indications and agent-specific adverse effects are asked here.</b>")
 
 CONF = [
@@ -40,20 +40,20 @@ CONF = [
   "corneal ulcers and suspected <i>Pseudomonas</i>, erythromycin as the common and soothing one, "
   "and sulfacetamide off the table in sulfonamide allergy."),
  ("inflam", "Allergy, Inflammation &amp; Dry Eye", "allergy-inflammation-quiz",
-  ["Allergy", "Antihistamines", "Mast cell stabilisers", "NSAIDs &amp; steroids", "Dry eye"],
-  "<b>Rebound hyperaemia is the question he promised to ask</b> &mdash; &ldquo;I will tell you, I "
+  ["Allergy", "Antihistamines", "Mast cell stabilizers", "NSAIDs &amp; steroids", "Dry eye"],
+  "<b>Rebound hyperemia is the question he promised to ask</b> &mdash; &ldquo;I will tell you, I "
   "will ask this question&rdquo; &mdash; so it is here three times over, from the mechanism, the "
-  "counselling point and the toddler who swallows the bottle. Beyond it: antihistamines work in "
-  "minutes and mast cell stabilisers take 5 to 14 days, which decides which one an acute "
+  "counseling point and the toddler who swallows the bottle. Beyond it: antihistamines work in "
+  "minutes and mast cell stabilizers take 5 to 14 days, which decides which one an acute "
   "presentation gets; and the steroids sit one step above the nonsteroidals in the same cascade."),
  ("glauc", "Glaucoma &amp; Diagnostic Agents", "glaucoma-diagnostics-quiz",
   ["Definitions", "Prostaglandins", "Beta blockers", "Alpha agonists &amp; inhibitors",
-   "Anaesthetics &amp; cycloplegics"],
+   "Anesthetics &amp; cycloplegics"],
   "Every glaucoma drug sorts by whether it reduces aqueous PRODUCTION or increases OUTFLOW, and "
   "the alpha agonists sit on both sides, which is where most errors come from. Each class then "
   "carries one fact that decides whether a given patient can have it &mdash; asthma for the "
   "non-selective beta blockers, age under two for the alpha agonists, visual blurring for the "
-  "cholinergics. Anaesthetics, cycloplegics and fluorescein close the lecture."),
+  "cholinergics. Anesthetics, cycloplegics and fluorescein close the lecture."),
 ]
 
 for key, label, stem, chips, blurb in CONF:

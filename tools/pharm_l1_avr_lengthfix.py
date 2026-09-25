@@ -13,7 +13,7 @@ FIXES = {
  21: (2, "Herpes simplex and varicella-zoster, circulating year-round"),
  30: (1, "Acyclovir is available only intravenously and cannot safely be given to a transplant recipient on immunosuppression"),
  34: (1, "Acyclovir targets viral neuraminidase directly; oseltamivir depends on thymidine kinase for activation"),
- 36: (1, "Crystallisation within the renal tubule, requiring aggressive hydration throughout treatment"),
+ 36: (1, "Crystallization within the renal tubule, requiring aggressive hydration throughout treatment"),
  37: (1, "They can no longer attach to the receptor on the next host cell"),
  42: (1, "The drug is only manufactured and distributed during those particular months"),
  43: (1, "Both rely on being concentrated inside infected cells by host transporters that healthy cells lack"),

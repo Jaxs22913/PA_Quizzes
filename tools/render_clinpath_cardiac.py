@@ -10,7 +10,7 @@ OUT = os.path.join(os.path.dirname(HERE), "Clinical Pathophysiology I Exam 2")
 SETS = json.load(open(os.path.join(HERE, "clinpath_cardiac_sets.json"), encoding="utf-8"))
 # The Clinical Pathophysiology palette, taken from render_clinpath_ent.py.
 PALETTE = dict(navy="#3b2a5e", indigo="#6a4fa3", gold="#c08a2e", ice="#efeaf8")
-CHIPS = ["Coronary disease", "Plaque", "Ischaemia &amp; infarction", "Valves",
+CHIPS = ["Coronary disease", "Plaque", "Ischemia &amp; infarction", "Valves",
          "Myocardium &amp; pericardium"]
 
 INTRO = (
@@ -18,13 +18,13 @@ INTRO = (
   "how the disease works belongs here, what is done about it belongs there. A cardiac lecture is "
   "the hardest place to hold that line, because every condition in it has an obvious treatment "
   "&mdash; so the build rejects a management term in ANY option, not just in the correct one. "
-  "<b>One idea organises the valve half.</b> Stenosis makes the heart do PRESSURE work and "
+  "<b>One idea organizes the valve half.</b> Stenosis makes the heart do PRESSURE work and "
   "regurgitation makes it do VOLUME work, and which chamber hypertrophies, which dilates, and "
   "where the pressure backs up to all follow from that. It is worth reasoning from rather than "
   "learning valve by valve. "
-  "<b>Three numbers are worth holding, and they are easy to swap.</b> Seventy-five per cent "
-  "occlusion before coronary flow is compromised; about fifty per cent closure before a stenotic "
-  "valve affects haemodynamics; and thirty minutes from complete coronary occlusion to "
+  "<b>Three numbers are worth holding, and they are easy to swap.</b> Seventy-five percent "
+  "occlusion before coronary flow is compromised; about fifty percent closure before a stenotic "
+  "valve affects hemodynamics; and thirty minutes from complete coronary occlusion to "
   "irreversible necrosis, with inability to contract arriving within a few minutes of that clock "
   "starting. "
   "<b>No recording exists for this lecture</b>, so every question comes off the slides and every "

@@ -11,8 +11,8 @@ CHIPS = ["Actinic keratosis", "Squamous cell carcinoma", "Basal cell carcinoma",
          "Melanoma", "Kaposi sarcoma", "Cutaneous T-cell lymphoma", "Nail unit"]
 INTRO = ("Thirty patient vignettes on pre-malignant and malignant cutaneous lesions. Each gives you a "
          "presentation and asks for the diagnosis, the next step, the test, the treatment or the "
-         "counselling point &mdash; and the lead-in decides the answer, so read it before the choices. "
-         "The wrong options are the neighbouring lesion in the same differential or the right lesion at "
+         "counseling point &mdash; and the lead-in decides the answer, so read it before the choices. "
+         "The wrong options are the neighboring lesion in the same differential or the right lesion at "
          "the wrong stage: the pearly border against the conical hard nodule, the intermittent against "
          "the cumulative sun exposure pattern, the Breslow threshold that shifts when the report notes "
          "ulceration. <b>Where the lecture audio and the slide disagree on a fact, the slide wins.</b> "

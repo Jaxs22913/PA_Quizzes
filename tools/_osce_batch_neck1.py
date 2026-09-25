@@ -24,7 +24,7 @@ BATCH = {
   "after a sore throat.",
   "Palpate a <b>MIDLINE mass, usually at or just below the hyoid</b>. <b>Ask the patient to "
   "swallow and then to protrude the tongue &mdash; it rises with both.</b> That elevation is the "
-  "diagnostic manoeuvre. Palpate the thyroid gland itself.",
+  "diagnostic maneuver. Palpate the thyroid gland itself.",
   [("Branchial cleft cyst", "Lateral, anterior to the sternocleidomastoid, and does not elevate"),
    ("Dermoid cyst", "Also midline, but it does NOT move with tongue protrusion"),
    ("Ectopic thyroid tissue", "May be the patient's ONLY thyroid &mdash; excising it would leave them athyreotic")],
@@ -37,7 +37,7 @@ BATCH = {
 "Laryngocele": E(
   "&ldquo;A lump comes up in my neck when I blow hard, and my voice goes husky.&rdquo; Often a wind "
   "player or glassblower.",
-  "<b>Ask the patient to perform a Valsalva manoeuvre &mdash; the mass enlarges.</b> That "
+  "<b>Ask the patient to perform a Valsalva maneuver &mdash; the mass enlarges.</b> That "
   "reducibility is the finding. Palpate for a compressible mass at the thyrohyoid membrane. "
   "Auscultate for a hiss on decompression. Examine the larynx.",
   [("Branchial cleft cyst", "Does not change with Valsalva"),
@@ -45,7 +45,7 @@ BATCH = {
    ("Thyroid nodule", "Moves with swallowing rather than with Valsalva")],
   "<b>Computed tomography</b> &rarr; an <b>air-filled or fluid-filled sac continuous with the "
   "laryngeal ventricle</b>. <b>Laryngoscopy</b> &rarr; the saccular opening, and it excludes a "
-  "tumour at the same time.",
+  "tumor at the same time.",
   "A mass that does not change with Valsalva is not a laryngocele; a normal larynx on endoscopy "
   "excludes an obstructing carcinoma, which is the reason endoscopy is done at all."),
 
@@ -74,14 +74,14 @@ BATCH = {
    ("Teratoma", "Contains solid elements and calcification; does not transilluminate uniformly")],
   "<b>Ultrasound</b> &rarr; a multiloculated cystic mass with thin septa. <b>Magnetic resonance</b> "
   "&rarr; extent and airway relationship, which is what surgery is planned from. Fluid levels "
-  "suggest previous haemorrhage.",
-  "Bright uniform transillumination with multiloculated cysts excludes a solid tumour; a blanching "
-  "vascular lesion is a haemangioma; solid components with calcification mean teratoma."),
+  "suggest previous hemorrhage.",
+  "Bright uniform transillumination with multiloculated cysts excludes a solid tumor; a blanching "
+  "vascular lesion is a hemangioma; solid components with calcification mean teratoma."),
 
 "Haemangioma": E(
   "&ldquo;It wasn&rsquo;t there at birth, then it appeared and grew fast for months &mdash; now "
   "it&rsquo;s fading.&rdquo;",
-  "Inspect colour and depth &mdash; superficial lesions are bright red, deep ones bluish. "
+  "Inspect color and depth &mdash; superficial lesions are bright red, deep ones bluish. "
   "<b>Compress it &mdash; it blanches and refills.</b> Note the growth phase. <b>Check for airway "
   "involvement if it is in a beard distribution</b>, and look for multiple lesions.",
   [("Vascular malformation", "Present AT birth and grows proportionately &mdash; it never involutes"),
@@ -90,7 +90,7 @@ BATCH = {
   "<b>Clinical</b> &rarr; the proliferate-then-involute history with a blanching vascular lesion. "
   "<b>Ultrasound with Doppler</b> &rarr; a high-flow soft tissue mass. <b>Magnetic resonance</b> "
   "&rarr; extent, and airway involvement in segmental lesions.",
-  "A lesion present at birth that grows only with the child is a malformation, not a haemangioma; "
+  "A lesion present at birth that grows only with the child is a malformation, not a hemangioma; "
   "absence of blanching excludes it; low flow on Doppler suggests a venous malformation."),
 
 "Teratoma": E(
@@ -138,7 +138,7 @@ BATCH = {
   "An upper-neck cyst anterior to the sternocleidomastoid is branchial; imaging showing no "
   "mediastinal connection excludes extension; multiloculated cysts suggest lymphangioma."),
 
-"Sternocleidomastoid tumour of infancy": E(
+"Sternocleidomastoid tumor of infancy": E(
   "&ldquo;There&rsquo;s a hard lump in the baby&rsquo;s neck and she always turns her head to one "
   "side.&rdquo;",
   "Palpate a <b>firm, fusiform mass WITHIN the sternocleidomastoid muscle</b> &mdash; it moves with "
@@ -158,20 +158,20 @@ BATCH = {
   "&ldquo;I got some sore lumps in my neck when I had that cold.&rdquo;",
   "Palpate <b>multiple, small, soft, MOBILE, mildly tender nodes</b>. Note size and site. "
   "<b>Examine the pharynx, ears, teeth and scalp for the source.</b> Palpate other nodal basins and "
-  "the spleen &mdash; generalised adenopathy means something different.",
+  "the spleen &mdash; generalized adenopathy means something different.",
   [("Bacterial suppurative adenitis", "A single large, hot, fluctuant, very tender node"),
    ("Infectious mononucleosis", "Posterior cervical nodes, marked fatigue, splenomegaly"),
    ("Lymphoma", "Painless, rubbery, progressive, WITHOUT an infective source and with night sweats")],
   "<b>Clinical</b> &rarr; small mobile tender nodes with an identified infective source, "
   "<b>regressing within 2 to 4 weeks</b>. That regression is the confirmation. Investigate only if "
   "it persists.",
-  "<b>Any node persisting beyond 4 to 6 weeks, over 1.5 centimetres, hard, fixed, or supraclavicular "
+  "<b>Any node persisting beyond 4 to 6 weeks, over 1.5 centimeters, hard, fixed, or supraclavicular "
   "gets fine needle aspiration</b> &rarr; malignant cells would redirect entirely; a positive "
   "monospot means mononucleosis; fluctuance means suppuration."),
 
 "HIV-associated cervical adenopathy": E(
   "&ldquo;I&rsquo;ve had swollen glands for months, along with night sweats and weight loss.&rdquo;",
-  "Palpate <b>persistent, generalised, symmetric adenopathy in two or more sites</b>. Examine the "
+  "Palpate <b>persistent, generalized, symmetric adenopathy in two or more sites</b>. Examine the "
   "mouth for candidiasis, hairy leukoplakia and Kaposi sarcoma. Palpate liver and spleen. Take a "
   "risk history.",
   [("Lymphoma", "Asymmetric, progressive, and much more likely in this same population"),
@@ -233,10 +233,10 @@ BATCH = {
 
 "Brucellosis": E(
   "&ldquo;I&rsquo;ve had fevers that come and go, sweats and aching joints &mdash; I drink "
-  "unpasteurised milk.&rdquo;",
+  "unpasteurized milk.&rdquo;",
   "Palpate cervical nodes, <b>liver and spleen</b>. Take temperature over time to show the "
   "undulant pattern. Examine joints and the spine. <b>Occupational and dietary history: farm work, "
-  "abattoirs, unpasteurised dairy, travel.</b>",
+  "abattoirs, unpasteurized dairy, travel.</b>",
   [("Tuberculosis", "Also chronic with fever and sweats; nodes matt and fistulate"),
    ("Lymphoma", "Fever, sweats and weight loss without an exposure history"),
    ("Infectious mononucleosis", "Acute, self-limiting, with a positive monospot")],
@@ -266,14 +266,14 @@ BATCH = {
   "&ldquo;My jaw has been swollen and lumpy for months and it&rsquo;s started draining through the "
   "skin.&rdquo;",
   "Palpate a <b>firm, indurated, woody mass, usually at the angle of the jaw</b>. Look for "
-  "<b>sinus tracts discharging sulphur granules</b>. Examine the dentition &mdash; poor dental "
+  "<b>sinus tracts discharging sulfur granules</b>. Examine the dentition &mdash; poor dental "
   "hygiene or a recent extraction is the usual portal. <b>Note that it crosses tissue planes</b>, "
   "which infections usually do not.",
-  [("Tuberculous adenitis", "Matted nodes that fistulate too, but without sulphur granules"),
+  [("Tuberculous adenitis", "Matted nodes that fistulate too, but without sulfur granules"),
    ("Osteomyelitis of the mandible", "Bone pain with sequestra on imaging"),
    ("Malignancy", "Hard, fixed, progressive &mdash; and it is why tissue is obtained")],
   "<b>Anaerobic culture, held for prolonged incubation</b> &rarr; <i>Actinomyces israelii</i>. "
-  "<b>Microscopy of pus or granules</b> &rarr; <b>sulphur granules with branching filamentous "
+  "<b>Microscopy of pus or granules</b> &rarr; <b>sulfur granules with branching filamentous "
   "gram-positive rods</b>. <b>Histology</b> &rarr; the same granules in tissue.",
   "Acid-fast bacilli redirect to tuberculosis; malignant cells on histology change the diagnosis; "
   "absence of granules with a routine pyogenic organism means ordinary infection."),
@@ -318,12 +318,12 @@ BATCH = {
   "&mdash; it determines both likelihood and severity. Examine the mouth for candidiasis, the chest, "
   "and the skin. Take a travel and exposure history for endemic fungi.",
   [("Tuberculous adenitis", "The main mimic &mdash; chronic nodes in the same population"),
-   ("Actinomycosis", "Woody induration with sulphur granules"),
+   ("Actinomycosis", "Woody induration with sulfur granules"),
    ("Lymphoma", "Progressive painless nodes with constitutional symptoms")],
   "<b>Fungal culture and staining of aspirate or biopsy</b> &rarr; the organism. <b>Histology with "
   "special stains</b> &rarr; fungal elements in tissue. <b>Serology or antigen testing</b> for "
   "endemic fungi &rarr; positive. Assess the immune deficiency itself.",
-  "Acid-fast bacilli redirect to mycobacterial disease; sulphur granules mean actinomycosis; "
+  "Acid-fast bacilli redirect to mycobacterial disease; sulfur granules mean actinomycosis; "
   "malignant cells mean lymphoma. Failure of antibacterial therapy is the trigger to send fungal "
   "studies, not to escalate antibiotics again."),
 }

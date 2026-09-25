@@ -49,7 +49,7 @@ QUESTIONS = [
  "opts": [
   ["Absorbed orally", "Correct. Liver then kidney, which is why disease in either changes what a given exposure does. Conjugated in the liver, excreted by the kidney."],
   ["Absorbed orally and excreted unchanged in bile", "Biliary excretion of unchanged drug is not the route described."],
-  ["Absorbed through the skin and metabolised in plasma", "Oral absorption is what is described, followed by hepatic conjugation and renal excretion."],
+  ["Absorbed through the skin and metabolized in plasma", "Oral absorption is what is described, followed by hepatic conjugation and renal excretion."],
   ["Absorbed orally and eliminated entirely by the lungs", "The lungs are not an elimination route for aspirin. It is conjugated in the liver and excreted by the kidney."]],
  "c": 0, "cite": D + ", Slide 15"},
 
@@ -59,7 +59,7 @@ QUESTIONS = [
   ["Exposure has reached the anti-inflammatory range",
    "Correct. Tinnitus is the audible marker that the patient has climbed the ladder from analgesia into the anti-inflammatory range, which makes it useful rather than incidental."],
   ["An unrelated sensorineural hearing loss on that side",
-   "Tinnitus is a recognised salicylate effect and should not be dismissed as coincidence."],
+   "Tinnitus is a recognized salicylate effect and should not be dismissed as coincidence."],
   ["An allergic reaction to aspirin", "Hypersensitivity presents differently; tinnitus tracks exposure."],
   ["The dose is too low to be effective", "Tinnitus indicates more exposure rather than less; it appears once salicylate reaches the anti-inflammatory range."]],
  "c": 0, "cite": D + ", Slide 16"},
@@ -108,7 +108,7 @@ QUESTIONS = [
   ["Fatty liver encephalopathy", "Correct. The alternative name is a compact description of the illness: liver and brain together. Naming the two organs involved."],
   ["Salicylate hypersensitivity syndrome", "It is not a hypersensitivity reaction. Reye's syndrome is also called fatty liver encephalopathy, naming the two organs involved."],
   ["Acute hepatic porphyria", "A different condition entirely. Reye's syndrome is also known as fatty liver encephalopathy."],
-  ["Viral haemorrhagic encephalitis", "Neither the name nor the mechanism. Reye's syndrome is called fatty liver encephalopathy, and involves mitochondrial dysfunction."]],
+  ["Viral hemorrhagic encephalitis", "Neither the name nor the mechanism. Reye's syndrome is called fatty liver encephalopathy, and involves mitochondrial dysfunction."]],
  "c": 0, "cite": D + ", Slide 18"},
 
 {"topic": "Reye's syndrome", "io": IO_SE, "slot": "diagnosis",
@@ -121,14 +121,14 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 18"},
 
 {"topic": "Reye's syndrome", "io": IO_SE, "slot": "diagnosis",
- "q": "Which features characterise Reye's syndrome?",
+ "q": "Which features characterize Reye's syndrome?",
  "opts": [
   ["Vomiting, neurological damage, liver injury and low glucose",
-   "Correct. The hypoglycaemia is easy to forget alongside the liver and brain findings, and it is treatable. The neurological damage is progressive, and the glucose is genuinely low rather than borderline."],
+   "Correct. The hypoglycemia is easy to forget alongside the liver and brain findings, and it is treatable. The neurological damage is progressive, and the glucose is genuinely low rather than borderline."],
   ["Fever, a rash and migratory joint pain",
    "Not the described features. Reye's syndrome brings vomiting, progressive central nervous system damage, hepatic injury and low glucose."],
   ["Jaundice with painless distension of the abdomen",
-   "Not how it is described. The picture is vomiting, neurological deterioration, liver injury and hypoglycaemia."],
+   "Not how it is described. The picture is vomiting, neurological deterioration, liver injury and hypoglycemia."],
   ["Isolated hepatic failure without neurological signs", "The central nervous system involvement is central to it; the alternative name pairs the brain with the liver for that reason."]],
  "c": 0, "cite": D + ", Slide 18"},
 
@@ -144,7 +144,7 @@ QUESTIONS = [
 {"topic": "Reye's syndrome", "io": IO_SE, "slot": "diagnosis",
  "q": "A child in the earliest stage of Reye's syndrome would show which of these?",
  "opts": [
-  ["A rash on the hands and feet", "Correct. Stage one looks nonspecific, which is exactly the problem -- it is the stage at which the illness is most treatable and least recognisable. Vomiting, high fever and lethargy."],
+  ["A rash on the hands and feet", "Correct. Stage one looks nonspecific, which is exactly the problem -- it is the stage at which the illness is most treatable and least recognizable. Vomiting, high fever and lethargy."],
   ["Coma with fixed, dilated pupils", "That is a late stage. The first stage is a rash on hands and feet with vomiting, high fever and lethargy."],
   ["Seizures and multiple organ failure", "That is the final stage. The first is a nonspecific febrile illness with vomiting and lethargy."],
   ["Encephalitis with hyperventilation", "That is the second stage rather than the first, which is a rash, vomiting, high fever and lethargy."]],
@@ -155,7 +155,7 @@ QUESTIONS = [
  "opts": [
   ["Seizures and multiple organ failure",
    "Correct. The staging runs from a nonspecific febrile illness to multi-organ failure, which is why the early stage matters so much."],
-  ["Cerebral oedema with coma", "That is an intermediate stage. The most advanced stage brings seizures, multiple organ failure and death."],
+  ["Cerebral edema with coma", "That is an intermediate stage. The most advanced stage brings seizures, multiple organ failure and death."],
   ["Fatty liver with encephalitis", "That appears earlier in the sequence. The final stage is seizures, multiple organ failure and death."],
   ["Vomiting with lethargy", "That is the first stage. The most advanced brings seizures, multiple organ failure and death."]],
  "c": 0, "cite": D + ", Slide 19"},
@@ -166,7 +166,7 @@ QUESTIONS = [
   ["Children, with mortality around half", "Correct. The severity is what justifies a blanket restriction on a cheap and otherwise useful drug."],
   ["Adults over sixty-five, with mortality around a tenth", "It is a disease of children rather than older adults, and the mortality described is far higher than a tenth."],
   ["Children, but it is almost never fatal", "Mortality is substantial, which is the reason for the restriction."],
-  ["Any age, with mortality under one per cent", "Neither the age group nor the mortality matches: it affects children, and around half of those affected die."]],
+  ["Any age, with mortality under one percent", "Neither the age group nor the mortality matches: it affects children, and around half of those affected die."]],
  "c": 0, "cite": D + ", Slide 18"},
 
 {"topic": "Aspirin education", "io": IO_EDU, "slot": "education",
@@ -185,9 +185,9 @@ QUESTIONS = [
 {"topic": "Aspirin education", "io": IO_EDU, "slot": "education",
  "q": "Why is a patient on aspirin told not to take it with an anticoagulant?",
  "opts": [
-  ["Aspirin inhibits platelet function", "Correct. Two different parts of haemostasis are disabled at once, which is more than the sum of either alone. Adding a second bleeding mechanism."],
+  ["Aspirin inhibits platelet function", "Correct. Two different parts of hemostasis are disabled at once, which is more than the sum of either alone. Adding a second bleeding mechanism."],
   ["The anticoagulant blocks aspirin's absorption", "Absorption is not the problem. Aspirin inhibits platelet function, which adds a second bleeding mechanism to the anticoagulant."],
-  ["Aspirin makes the anticoagulant ineffective", "The concern is additive bleeding risk rather than loss of effect: two different parts of haemostasis are disabled at once."],
+  ["Aspirin makes the anticoagulant ineffective", "The concern is additive bleeding risk rather than loss of effect: two different parts of hemostasis are disabled at once."],
   ["The combination causes Reye's syndrome", "Reye's relates to children with viral illness rather than to anticoagulants."]],
  "c": 0, "cite": D + ", Slide 20"},
 
@@ -235,9 +235,9 @@ QUESTIONS = [
  "q": "Which organ systems carry ibuprofen's main adverse effects?",
  "opts": [
   ["The gastrointestinal tract and the kidney",
-   "Correct. Ulceration and bleeding at one end, falling clearance and oedema at the other -- and both come from the same prostaglandin blockade. Fluid retention and oedema come with the renal effects."],
+   "Correct. Ulceration and bleeding at one end, falling clearance and edema at the other -- and both come from the same prostaglandin blockade. Fluid retention and edema come with the renal effects."],
   ["The liver and the bone marrow", "Not the systems described for ibuprofen, whose main harms fall on the gastrointestinal tract and the kidney."],
-  ["The lungs and the thyroid", "Not the systems described. Ibuprofen's adverse effects centre on the gut and the kidney, with fluid retention."],
+  ["The lungs and the thyroid", "Not the systems described. Ibuprofen's adverse effects center on the gut and the kidney, with fluid retention."],
   ["The skin and the joints", "Not the systems described; the gastrointestinal tract and the kidney carry ibuprofen's main adverse effects."]],
  "c": 0, "cite": D + ", Slide 21"},
 

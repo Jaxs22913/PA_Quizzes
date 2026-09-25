@@ -17,7 +17,7 @@ Q("Acne vulgaris",
   "and nose with no papules, pustules, or nodules. What is the most appropriate first-line treatment?",
   [["A topical retinoid",
     "Correct. For comedonal, non-inflammatory acne the guideline is a topical retinoid, which is comedolytic and "
-    "anti-inflammatory and normalises the follicular hyperkeratinisation. If it is not tolerated, azelaic acid or "
+    "anti-inflammatory and normalizes the follicular hyperkeratinization. If it is not tolerated, azelaic acid or "
     "salicylic acid may be substituted."],
    ["A topical retinoid combined with an oral antibiotic",
     "Adding an oral antibiotic is the regimen for moderate papulopustular and mixed acne, and requires inflammatory "
@@ -44,7 +44,7 @@ Q("Acne vulgaris",
     "to reduce resistance. Omitting it is the commonest way a correct-looking regimen goes wrong."],
    ["An oral antibiotic alone continued indefinitely",
     "Oral antibiotics should be prescribed for the shortest time necessary, and monotherapy without benzoyl peroxide "
-    "invites resistance in Cutibacterium acnes. It also leaves the follicular hyperkeratinisation untreated."],
+    "invites resistance in Cutibacterium acnes. It also leaves the follicular hyperkeratinization untreated."],
    ["A topical retinoid alone",
     "A topical retinoid alone is the regimen for comedonal disease. Moderate inflammatory acne that has already "
     "failed topical therapy needs systemic treatment added."]],
@@ -94,8 +94,8 @@ Q("Acne vulgaris",
     "Rosacea is on the differential but is identified by papules and pustules in the middle third of the face with "
     "telangiectasias, flushing, and an absence of comedones. It does not cause hirsutism or menstrual irregularity."],
    ["Acne mechanica",
-    "Acne mechanica follows pressure on the skin from shoulder pads, orthopaedic casts, or helmets occluding the "
-    "pilosebaceous follicle. It is localised to the pressure site and has no endocrine features."],
+    "Acne mechanica follows pressure on the skin from shoulder pads, orthopedic casts, or helmets occluding the "
+    "pilosebaceous follicle. It is localized to the pressure site and has no endocrine features."],
    ["Perioral dermatitis",
     "Perioral dermatitis produces monomorphic papules around the mouth with sparing of the vermilion border and is "
     "associated with topical corticosteroid use. It has no androgenic association."]],
@@ -154,8 +154,8 @@ Q("Pseudofolliculitis barbae",
    ["Occlusion of apocrine glands with secondary inflammation",
     "Apocrine gland involvement describes hidradenitis suppurativa, which affects the axilla, groin, breasts, and "
     "perineum with recurrent nodules and sinus tracts rather than the shaved beard area."],
-   ["Follicular hyperkeratinisation with increased sebum production",
-    "Follicular hyperkeratinisation, increased sebum, and proliferation of Cutibacterium acnes are three of the four factors in acne vulgaris, whose hallmark "
+   ["Follicular hyperkeratinization with increased sebum production",
+    "Follicular hyperkeratinization, increased sebum, and proliferation of Cutibacterium acnes are three of the four factors in acne vulgaris, whose hallmark "
     "lesion is the comedone. There is no comedone in pseudofolliculitis barbae."]],
   0, 55),
 
@@ -257,11 +257,11 @@ Q("Hidradenitis suppurativa",
 Q("Erythrasma",
   "A 58-year-old man with diabetes has an asymptomatic brownish patch in the crural region and scaling between the "
   "fourth and fifth toes. Under a Wood's lamp the affected skin fluoresces coral-red. What is the causative "
-  "organism, and what is first-line treatment for localised disease?",
+  "organism, and what is first-line treatment for localized disease?",
   [["Corynebacterium minutissimum, treated with topical erythromycin or clindamycin",
     "Correct. Erythrasma is a chronic superficial infection of intertriginous skin caused by Corynebacterium "
     "minutissimum invading the upper third of the stratum corneum. Coral-red fluorescence under a Wood's lamp is "
-    "diagnostic, and first-line treatment for localised disease is topical erythromycin or clindamycin."],
+    "diagnostic, and first-line treatment for localized disease is topical erythromycin or clindamycin."],
    ["A dermatophyte, treated with topical terbinafine",
     "Tinea cruris and tinea pedis are on the differential and occupy the same sites, which is what makes this "
     "tempting. But dermatophytes do not fluoresce coral-red, and that finding is what settles the diagnosis."],
@@ -293,12 +293,12 @@ Q("Impetigo",
   0, 94),
 
 Q("Impetigo",
-  "A 6-year-old girl had impetigo three weeks ago. She now presents with facial oedema, tea-coloured urine, and "
+  "A 6-year-old girl had impetigo three weeks ago. She now presents with facial edema, tea-colored urine, and "
   "hypertension. Her mother asks whether the antibiotics failed. What is the most accurate explanation?",
   [["This is acute post-streptococcal glomerulonephritis, and antibiotics do not prevent it because the immune "
     "response usually precedes treatment",
     "Correct. Acute post-streptococcal glomerulonephritis may follow impetigo, especially in 3 to 7 year olds, and "
-    "is characterised by sudden oedema, haematuria, and hypertension. Antibiotics do not prevent it because "
+    "is characterized by sudden edema, hematuria, and hypertension. Antibiotics do not prevent it because "
     "activation of the immune response most often precedes antibiotic treatment."],
    ["This is acute post-streptococcal glomerulonephritis, which would have been prevented by earlier antibiotics",
     "The diagnosis is right but the causal claim is wrong, and it wrongly assigns blame to the treatment. The immune "
@@ -332,14 +332,14 @@ Q("Impetigo",
 
 Q("Impetigo",
   "A patient has a lesion that began as a pustule over inflamed skin and deepened into a dermal ulceration covered by "
-  "a thick grey-yellow crust. He has diabetes and a recent insect bite at the site. What form of impetigo is this?",
+  "a thick gray-yellow crust. He has diabetes and a recent insect bite at the site. What form of impetigo is this?",
   [["Ecthyma",
     "Correct. Ecthyma is uncommon and is predisposed to by pre-existing tissue damage such as bites and by "
     "immunocompromised states such as diabetes. It begins as a vesicle or pustule over inflamed skin that deepens "
-    "into dermal ulceration with a thicker grey-yellow crust."],
+    "into dermal ulceration with a thicker gray-yellow crust."],
    ["Non-bullous impetigo",
-    "Non-bullous impetigo is the more common form and produces a superficial honey-coloured crust over an erosion "
-    "rather than a deeper dermal ulceration with a thick grey-yellow crust."],
+    "Non-bullous impetigo is the more common form and produces a superficial honey-colored crust over an erosion "
+    "rather than a deeper dermal ulceration with a thick gray-yellow crust."],
    ["Erysipelas",
     "Erysipelas involves the upper dermis and superficial lymphatics, producing a raised plaque with a clear line of "
     "demarcation and high fever. It is not a crusted ulcer at a bite site."],
@@ -370,7 +370,7 @@ Q("Erysipelas",
 
 Q("Cellulitis",
   "A 49-year-old man has a warm, tender, erythematous area on the right lower leg with indistinct borders and "
-  "surrounding oedema. What feature most reliably distinguishes cellulitis from erysipelas?",
+  "surrounding edema. What feature most reliably distinguishes cellulitis from erysipelas?",
   [["Cellulitis has indistinct borders that are not raised, whereas erysipelas is raised with a clear line of "
     "demarcation",
     "Correct. Erysipelas involves the upper dermis and superficial lymphatics, producing a plaque raised above the "
@@ -383,7 +383,7 @@ Q("Cellulitis",
     "Fever occurs in both, and erysipelas characteristically produces high fever of 38 to 40 degrees Celsius with "
     "sudden onset within 48 hours of the skin changes."],
    ["Only erysipelas is caused by Streptococcus pyogenes",
-    "Streptococcus pyogenes is the most common erysipelas organism, but group A beta-haemolytic streptococci also "
+    "Streptococcus pyogenes is the most common erysipelas organism, but group A beta-hemolytic streptococci also "
     "cause cellulitis alongside Staphylococcus aureus. The organism does not separate them reliably."]],
   0, 107),
 
@@ -410,16 +410,16 @@ Q("Cellulitis",
 Q("Cellulitis",
   "A patient with cellulitis of the leg has an area that is tense, cyanotic, and bronzed with blanching. What is the "
   "significance of this finding?",
-  [["The tissue is devitalised and will not be perfused, so antibiotics cannot reach it and surgical debridement is "
+  [["The tissue is devitalized and will not be perfused, so antibiotics cannot reach it and surgical debridement is "
     "needed",
-    "Correct. Devitalised tissue that is tense, cyanotic, necrotic, bronzed, and blanched will not be perfused, so "
+    "Correct. Devitalized tissue that is tense, cyanotic, necrotic, bronzed, and blanched will not be perfused, so "
     "antibiotics will not get to the site. Surgical debridement is required."],
    ["This is the expected appearance of resolving cellulitis",
     "Resolving cellulitis fades from erythema without becoming tense, cyanotic, or bronzed. Mistaking necrosis for "
     "improvement is the error that delays the surgery this patient needs."],
    ["This indicates deep vein thrombosis and anticoagulation should be started",
     "Deep vein thrombosis produces swelling and pain but not bronzed necrotic skin, and anticoagulation would not "
-    "address non-perfused devitalised tissue."],
+    "address non-perfused devitalized tissue."],
    ["The antibiotic dose should be increased and the area observed",
     "Increasing the dose does not solve the problem, which is that no blood is reaching the tissue to carry any dose "
     "of any antibiotic there."]],
@@ -427,14 +427,14 @@ Q("Cellulitis",
 
 Q("Necrotizing fasciitis",
   "A 47-year-old man with alcohol use disorder presents with severe leg pain following a minor injury. Over hours the "
-  "skin changes from red-purple to blue-grey, bullae with thick purple fluid appear, and the area that was exquisitely "
+  "skin changes from red-purple to blue-gray, bullae with thick purple fluid appear, and the area that was exquisitely "
   "tender becomes numb. He is febrile and tachycardic. What is the most appropriate immediate action?",
   [["Immediate surgical consultation for aggressive debridement, without waiting for imaging or laboratory results",
     "Correct. Necrotizing fasciitis is a surgical emergency with high mortality, and laboratory tests and imaging "
     "studies should not delay surgical intervention. Loss of tenderness reflects destruction of superficial nerves "
     "and is an ominous sign."],
-   ["Obtain magnetic resonance imaging to localise the site and depth before consulting surgery",
-    "Magnetic resonance imaging and computed tomography do localise the site and depth of infection, which makes this "
+   ["Obtain magnetic resonance imaging to localize the site and depth before consulting surgery",
+    "Magnetic resonance imaging and computed tomography do localize the site and depth of infection, which makes this "
     "sound reasonable. But imaging must not delay surgical intervention, and the time it takes is time the infection "
     "continues to advance."],
    ["Start broad-spectrum antibiotics and reassess in 24 hours",
@@ -442,7 +442,7 @@ Q("Necrotizing fasciitis",
     "adjunct to surgery rather than a substitute. Waiting 24 hours in a rapidly progressive necrotising infection is "
     "not survivable management."],
    ["Perform bedside incision and drainage in the emergency department",
-    "This condition requires aggressive operative debridement of necrotic tissue in theatre with admission to a "
+    "This condition requires aggressive operative debridement of necrotic tissue in theater with admission to a "
     "surgical intensive care unit, not a bedside drainage procedure."]],
   0, 128),
 
@@ -485,7 +485,7 @@ Q("Acute paronychia",
 
 Q("Chronic paronychia",
   "A 45-year-old dishwasher has had swollen, tender nail folds on several fingers for four months, without "
-  "fluctuance. The nail plates are thickened and discoloured and the cuticles have separated from the nail plate. "
+  "fluctuance. The nail plates are thickened and discolored and the cuticles have separated from the nail plate. "
   "What is the most common pathogen, and what is the key patient instruction?",
   [["Candida albicans, and the patient should keep the hands as dry as possible",
     "Correct. Chronic paronychia is an inflammatory reaction of the proximal nail fold to irritants and allergens, "
@@ -526,8 +526,8 @@ Q("MRSA considerations",
    ["Any child under five years of age",
     "Impetigo is common in infants and children and is most often diagnosed by clinical appearance. Age alone does "
     "not create the resistance risk that prompts culture."],
-   ["Any patient with honey-coloured crusting",
-    "Honey-coloured adherent crust is the classic appearance of non-bullous impetigo and is what allows a clinical "
+   ["Any patient with honey-colored crusting",
+    "Honey-colored adherent crust is the classic appearance of non-bullous impetigo and is what allows a clinical "
     "diagnosis. It is a reason not to culture rather than a reason to."],
    ["Any patient being treated with topical mupirocin",
     "Mupirocin is adequate for most cases of limited non-bullous impetigo and as effective as oral therapy. Its use "
@@ -539,8 +539,8 @@ QUESTIONS += [
 
 Q("Acne vulgaris",
   "What are the four factors involved in the pathogenesis of acne vulgaris?",
-  [["Follicular hyperkeratinisation, increased sebum production, Cutibacterium acnes proliferation, and inflammation",
-    "Correct. Acne involves follicular hyperkeratinisation with excess keratin in the follicle, increased sebum "
+  [["Follicular hyperkeratinization, increased sebum production, Cutibacterium acnes proliferation, and inflammation",
+    "Correct. Acne involves follicular hyperkeratinization with excess keratin in the follicle, increased sebum "
     "production providing a growth medium, proliferation of Cutibacterium acnes, and inflammation. The temporal "
     "sequence among them is not fully understood."],
    ["Apocrine gland occlusion, bacterial proliferation, sinus tract formation, and scarring",
@@ -577,13 +577,13 @@ Q("Acne vulgaris",
     "Correct. Benzoyl peroxide is keratolytic and anti-inflammatory and suppresses Cutibacterium acnes. It is "
     "recommended alongside antimicrobials specifically to reduce the risk of bacterial resistance, and combination "
     "products exist for that purpose."],
-   ["It is comedolytic and normalises follicular hyperkeratinisation",
-    "Comedolysis and normalisation of hyperkeratinisation describe topical retinoids. Topical antimicrobials are "
+   ["It is comedolytic and normalizes follicular hyperkeratinization",
+    "Comedolysis and normalization of hyperkeratinization describe topical retinoids. Topical antimicrobials are "
     "explicitly described as not comedolytic."],
    ["It inhibits tyrosinase and improves post-inflammatory hyperpigmentation",
     "Tyrosinase inhibition with improvement of post-inflammatory hyperpigmentation is a property of azelaic acid."],
    ["It decreases sebum excretion",
-    "Decreased sebum excretion is the mechanism of isotretinoin, and oestrogen in combined oral contraceptives also "
+    "Decreased sebum excretion is the mechanism of isotretinoin, and estrogen in combined oral contraceptives also "
     "decreases sebum production."]],
   0, 22),
 
@@ -609,10 +609,10 @@ Q("Acne vulgaris",
   "A 16-year-old football player develops acne confined to the shoulders and upper back under his pads. What "
   "predisposing factor does this represent?",
   [["Acne mechanica, from pressure occluding the pilosebaceous follicle",
-    "Correct. Acne mechanica results from pressure on the skin — shoulder pads, orthopaedic casts, and helmets are "
+    "Correct. Acne mechanica results from pressure on the skin — shoulder pads, orthopedic casts, and helmets are "
     "the named examples — occluding the pilosebaceous follicle."],
    ["Drug-induced acne from an anabolic steroid",
-    "Anabolic steroid use is a recognised cause and belongs in the history of any athlete, but the strictly "
+    "Anabolic steroid use is a recognized cause and belongs in the history of any athlete, but the strictly "
     "pressure-mapped distribution under the pads points to a mechanical cause."],
    ["Endocrine acne from insulin resistance",
     "Insulin resistance is proposed to stimulate androgen production and is listed among endocrine factors, but it "
@@ -626,7 +626,7 @@ Q("Acne vulgaris",
   "For which patient is a combined oral contraceptive most appropriate as acne therapy?",
   [["A woman with hyperandrogenism whose acne has not responded to topical retinoids and antibiotics",
     "Correct. Oral contraceptives are considered for patients with hyperandrogenism and when acne is unresponsive to "
-    "both topical retinoids and topical or oral antibiotics. Oestrogen decreases sebum production and reduces ovarian "
+    "both topical retinoids and topical or oral antibiotics. Estrogen decreases sebum production and reduces ovarian "
     "androgen production."],
    ["A man with moderate papulopustular acne",
     "Combined oral contraceptives are not applicable to male patients, whose moderate disease is treated with a "
@@ -700,7 +700,7 @@ Q("Abscess",
     "That is the management once a lesion has drained spontaneously. An undrained collection will not resolve on "
     "antibiotics, because the drug does not penetrate a walled-off cavity of pus."],
    ["Oral antibiotics selected by culture of the intact skin surface",
-    "A surface culture samples colonising flora rather than the organism inside the abscess, and it delays the "
+    "A surface culture samples colonizing flora rather than the organism inside the abscess, and it delays the "
     "drainage that is the definitive treatment."],
    ["Observation until the lesion drains on its own",
     "Waiting allows the collection to enlarge and risks extension into surrounding tissue. Incision and drainage is "
@@ -783,8 +783,8 @@ Q("Hidradenitis suppurativa",
     "Correct. Spironolactone is an aldosterone antagonist that inhibits ovarian and adrenal production of androgens. "
     "Combination birth control pills are used similarly, reducing luteinising hormone and follicle-stimulating "
     "hormone secretion."],
-   ["It is an immunosuppressant that blocks tumour necrosis factor",
-    "Tumour necrosis factor blockade describes infliximab, which is used for severe disease. Spironolactone works "
+   ["It is an immunosuppressant that blocks tumor necrosis factor",
+    "Tumor necrosis factor blockade describes infliximab, which is used for severe disease. Spironolactone works "
     "through androgen suppression instead."],
    ["It reduces the size of draining sinuses when injected into the lesion",
     "Intralesional triamcinolone acetonide is what decreases the size of draining sinuses. Spironolactone is taken "
@@ -806,7 +806,7 @@ Q("Hidradenitis suppurativa",
     "Intralesional triamcinolone decreases the size of draining sinuses, which is a useful symptomatic measure rather "
     "than a definitive one."],
    ["Topical clindamycin used indefinitely",
-    "Mild topical steroid creams combined with topical antibiotics are favoured for mild disease, but they do not "
+    "Mild topical steroid creams combined with topical antibiotics are favored for mild disease, but they do not "
     "eliminate the affected apocrine-bearing tissue."]],
   0, 79),
 

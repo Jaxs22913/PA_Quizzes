@@ -9,7 +9,7 @@
 CMS follows the exam standard Jaxon set from his own reference items on
 2026-08-26/27. It was FIVE-option until 2026-09-13, when every question moved to
 four; NOPT below is read off the pools, so nothing here hardcodes the count. The
-scoring optimises the things that standard actually measures -- patient stems,
+scoring optimizes the things that standard actually measures -- patient stems,
 share of pure-diagnosis items, length gameability -- rather than only objective
 coverage, so a set does not have to be repaired after the fact.
 

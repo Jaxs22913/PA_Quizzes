@@ -13,7 +13,7 @@ IOC = "c — Medical care strategies across infant, child, adolescent, adult and
 
 POOL_C = [
  dict(topic="Lyme disease", io=IOA,
-   q="A 41-year-old woman in Connecticut removed a tick from her thigh eight days ago. She now has a 9 cm round red patch there with a paler centre and a darker dot in the middle, plus fever and aching. Which is the most likely diagnosis?",
+   q="A 41-year-old woman in Connecticut removed a tick from her thigh eight days ago. She now has a 9 cm round red patch there with a paler center and a darker dot in the middle, plus fever and aching. Which is the most likely diagnosis?",
    opts=[
      ["Stage 1 Lyme disease with erythema migrans",
       "Correct — a lesion over 5 cm with central clearing about a week after the bite, with constitutional symptoms."],
@@ -56,7 +56,7 @@ POOL_C = [
    opts=[
      ["Stage 2, early disseminated infection",
       "Correct — days to weeks later, with cranial nerve palsies, meningitis and radiculopathies."],
-     ["Stage 1, early localised infection",
+     ["Stage 1, early localized infection",
       "That is the erythema migrans lesion about a week after the bite."],
      ["Stage 3, late persistent infection",
       "That occurs months to years later with arthritis and encephalopathy."],
@@ -112,8 +112,8 @@ POOL_C = [
       "That is a single expanding lesion at the bite site."],
      ["A drug eruption from a recently started medication",
       "That would not follow this geography, timing and distribution."],
-     ["Meningococcaemia with an early petechial rash",
-      "Meningococcaemia progresses over hours rather than days and its rash is petechial and non-blanching from early on, whereas this rash is blanching and began on the wrists and ankles after four days."]],
+     ["Meningococcemia with an early petechial rash",
+      "Meningococcemia progresses over hours rather than days and its rash is petechial and non-blanching from early on, whereas this rash is blanching and began on the wrists and ankles after four days."]],
    c=0, cite=c(82)),
 
  dict(topic="Rocky Mountain spotted fever", io=IOA,
@@ -133,7 +133,7 @@ POOL_C = [
    q="A 6-year-old boy has suspected Rocky Mountain spotted fever. Which is the most appropriate treatment?",
    opts=[
      ["Doxycycline at 2.2 mg per kilogram by mouth twice daily for five to ten days",
-      "Correct — it is used in children and pregnancy here, with desensitisation where contraindicated."],
+      "Correct — it is used in children and pregnancy here, with desensitization where contraindicated."],
      ["Amoxicillin at a weight-based dose by mouth for a course of fourteen days",
       "That substitution belongs to Lyme disease in children."],
      ["Azithromycin at a weight-based dose by mouth for a course of five days",
@@ -171,7 +171,7 @@ POOL_C = [
  dict(topic="Rocky Mountain spotted fever", io=IOA,
    q="A 44-year-old man admitted with Rocky Mountain spotted fever has blood tests sent. Which pattern is expected?",
    opts=[
-     ["Thrombocytopenia, anaemia, mild hyponatraemia and mild transaminitis with a normal white count and increased bands",
+     ["Thrombocytopenia, anemia, mild hyponatremia and mild transaminitis with a normal white count and increased bands",
       "Correct — cerebrospinal fluid shows leukocytosis with moderately raised protein and normal glucose."],
      ["Leukocytosis with a left shift, raised inflammatory markers and a normal platelet count throughout",
       "The platelet count is characteristically low in this illness."],
@@ -214,7 +214,7 @@ POOL_C = [
       "Correct — paddy workers and rice farmers of the Far East are specifically named."],
      ["Tungiasis from walking barefoot in contaminated soil",
       "That produces enlarging papules and nodules on the feet."],
-     ["Cutaneous larva migrans from soil contaminated with faeces",
+     ["Cutaneous larva migrans from soil contaminated with feces",
       "That produces a single advancing serpentine track."],
      ["Body louse infestation from prolonged wear of the same clothing",
       "That produces linear excoriations on the back and waist."]],
@@ -234,9 +234,9 @@ POOL_C = [
    c=0, cite=c(3)),
 
  dict(topic="Primary and secondary lesions", io=IOB,
-   q="A 40-year-old man has an eruption whose reaction pattern has been recognised. Which characteristics are used next to narrow the differential?",
+   q="A 40-year-old man has an eruption whose reaction pattern has been recognized. Which characteristics are used next to narrow the differential?",
    opts=[
-     ["Colour, shape, configuration of the lesions relative to one another, and their distribution on the body",
+     ["Color, shape, configuration of the lesions relative to one another, and their distribution on the body",
       "Correct — those tune the differential the reaction pattern has already generated."],
      ["Duration of the eruption, the patient's age, and whether any treatment has been tried so far",
       "Those are clinically useful but are not the named characteristics."],
@@ -257,8 +257,8 @@ POOL_C += [
      ["Scabies",
       "Correct \u2014 infants, the elderly and the immunocompromised can have head and neck involvement, and infants get these nodules."],
      ["Atopic dermatitis of infancy",
-      "That favours the cheeks and extensor surfaces and does not produce these nodules."],
-     ["Seborrhoeic dermatitis, or cradle cap",
+      "That favors the cheeks and extensor surfaces and does not produce these nodules."],
+     ["Seborrheic dermatitis, or cradle cap",
       "That produces greasy scale on the scalp without trunk nodules."],
      ["Bullous impetigo of the trunk and folds",
       "That produces tense bullae leaving collarettes."]],
@@ -267,9 +267,9 @@ POOL_C += [
  dict(topic="Hymenoptera", io=IOA,
    q="A 29-year-old man stung on the forearm three days ago has swelling extending from wrist to elbow with firm induration, but no urticaria elsewhere and no breathing difficulty. Which best describes this reaction?",
    opts=[
-     ["A severe local reaction, with extensive oedema and induration lasting up to one week",
-      "Correct \u2014 a generalised systemic reaction would involve urticaria, angio-oedema and bronchospasm."],
-     ["A generalised systemic reaction, occurring in 0.4% to 3% of stings overall",
+     ["A severe local reaction, with extensive edema and induration lasting up to one week",
+      "Correct \u2014 a generalized systemic reaction would involve urticaria, angioedema and bronchospasm."],
+     ["A generalized systemic reaction, occurring in 0.4% to 3% of stings overall",
       "That requires findings away from the sting site."],
      ["A typical reaction, with immediate burning followed by local erythema and swelling",
       "The typical reaction does not extend the length of a limb for a week."],

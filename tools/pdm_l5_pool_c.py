@@ -60,7 +60,7 @@ POOL_C = [
    c=0, cite=c(13)),
 
  dict(topic="Glucose", io=IOB5, slot="test finding",
-   q="What effect does marked hyperglycaemia have on the measured sodium?",
+   q="What effect does marked hyperglycemia have on the measured sodium?",
    opts=[
      ["It lowers it, by dilution",
       "Correct — marked hyperglycemia lowers the measured sodium by dilution, by about 1.6 to 2 milliequivalents per liter for each 100 milligrams per deciliter of glucose above normal."],
@@ -104,7 +104,7 @@ POOL_C = [
    opts=[
      ["Dehydration, gastrointestinal bleeding, high protein intake, and catabolic states",
       "Correct — dehydration, gastrointestinal bleeding, high protein intake and catabolic states raise urea nitrogen, so it is non-specific and read with creatinine."],
-     ["Dehydration, haemolysis, low protein intake, and pregnancy",
+     ["Dehydration, hemolysis, low protein intake, and pregnancy",
       "Hemolysis, low protein intake and pregnancy are not among them; the non-renal causes are dehydration, gastrointestinal bleeding, high protein intake and catabolic states."],
      ["Liver failure, malnutrition, overhydration, and immobility",
       "These would tend to lower rather than raise it."],
@@ -142,7 +142,7 @@ POOL_C = [
       "Correct — creatinine is a waste product of muscle creatine metabolism, filtered by the kidneys, and a more specific renal marker than urea nitrogen."],
      ["It is a waste product of protein metabolism produced by the liver",
       "That describes blood urea nitrogen."],
-     ["It is filtered from dietary creatine without being metabolised",
+     ["It is filtered from dietary creatine without being metabolized",
       "Creatinine is not filtered dietary creatine; it is a waste product of muscle creatine metabolism that the kidneys then filter."],
      ["It is produced by the kidney tubules during filtration",
       "The kidney filters it rather than producing it."]],
@@ -229,7 +229,7 @@ POOL_C = [
      ["Cholestasis or bile duct obstruction",
       "Correct — the enzyme sits on the canalicular membrane of the biliary epithelium, and obstructed bile flow induces its production and releases it into the blood."],
      ["Hepatocellular injury",
-      "That is signalled by the transaminases."],
+      "That is signaled by the transaminases."],
      ["Impaired hepatic synthetic function",
       "Albumin and the prothrombin time carry that signal."],
      ["Increased red blood cell breakdown",
@@ -274,9 +274,9 @@ POOL_C = [
  dict(topic="Liver studies", io=IOC, slot="test finding",
    q="Total bilirubin is a breakdown product of what?",
    opts=[
-     ["Red blood cells", "Correct — haem from senescent red cells is broken down to unconjugated bilirubin, which the liver conjugates and excretes into bile."],
+     ["Red blood cells", "Correct — hem from senescent red cells is broken down to unconjugated bilirubin, which the liver conjugates and excretes into bile."],
      ["Skeletal muscle protein", "That yields creatinine and urea nitrogen."],
-     ["Dietary protein in the gut", "Dietary protein yields urea rather than bilirubin; bilirubin comes from the haem of broken-down red cells."],
+     ["Dietary protein in the gut", "Dietary protein yields urea rather than bilirubin; bilirubin comes from the hem of broken-down red cells."],
      ["Hepatocyte membranes during injury", "Injury releases enzymes rather than generating bilirubin."]],
    c=0, cite=c(15)),
 

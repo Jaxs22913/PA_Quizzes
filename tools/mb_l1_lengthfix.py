@@ -25,7 +25,7 @@ FIXES = {
  34: (2, "Synthetic contains at least one ingredient that is not chemically definable; complex contains pure organic and inorganic compounds in an exact chemical formula"),
  35: (2, "Agents that inhibit the growth of some microbes while encouraging the growth of the desired ones on the culture plate"),
  36: (0, "Selective allows several types of microbes to grow and displays visible differences between them; differential contains agents that inhibit some microbes and encourage others"),
- 41: (2, "Adequate nutrients and favourable environment, plus removal of organic acids and pollutants, so growth continues unchecked"),
+ 41: (2, "Adequate nutrients and favorable environment, plus removal of organic acids and pollutants, so growth continues unchecked"),
  42: (3, "Envelopes — lipid coats enclosing and protecting the capsid — which may be helical, icosahedral or complex"),
  44: (3, "The departure of completed virions to go on and infect other cells"),
  45: (0, "Integration of viral genes as a prophage, replication alongside the host cell, and immunity to reinfection"),

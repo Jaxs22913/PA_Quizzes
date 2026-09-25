@@ -10,8 +10,8 @@ VIG_D = [
  dict(topic="Clinical approach", io=IOA, lead="next step",
    q="A patient presents with a lesion you have not seen before. What must you do before committing to a diagnosis?",
    opts=[
-     ["Characterise it systematically",
-      "Correct — describe before naming. Lesion type, colour, texture, border, size, distribution, palpability, ulceration, bleeding, induration and evolution."],
+     ["Characterize it systematically",
+      "Correct — describe before naming. Lesion type, color, texture, border, size, distribution, palpability, ulceration, bleeding, induration and evolution."],
      ["Name the most likely diagnosis, then look only for the features that support it",
       "That reverses the required order."],
      ["Photograph it and wait for the dermatology opinion before describing anything",
@@ -66,7 +66,7 @@ VIG_D = [
    q="A 69-year-old man has an ulcer on his ear that has not healed in three months. The base is firm and indurated. Which is the most likely diagnosis?",
    opts=[
      ["Squamous cell carcinoma",
-      "Correct. A non-healing ulcer with an indurated base is a recognised presentation, and induration is a red flag. The ear is also a high-risk site — with mucosal surfaces, lip, scalp, temple, nose and genitalia — all carrying higher recurrence and metastatic risk."],
+      "Correct. A non-healing ulcer with an indurated base is a recognized presentation, and induration is a red flag. The ear is also a high-risk site — with mucosal surfaces, lip, scalp, temple, nose and genitalia — all carrying higher recurrence and metastatic risk."],
      ["Basal cell carcinoma",
       "Basal cell carcinoma is usually a pearly papule with telangiectasias and a rolled border. It can erode "
       "centrally, but a firm, indurated, non-healing ulcer is the squamous pattern."],
@@ -93,9 +93,9 @@ VIG_D = [
  dict(topic="Squamous cell carcinoma", io=IOB, lead="education",
    q="A patient asks how likely his actinically induced squamous cell carcinoma is to spread. What is the figure, and what raises it?",
    opts=[
-     ["An estimated 3 to 7%, raised substantially by high-risk sites or features, immunosuppression, multiple tumours, recurrence, or nodal involvement",
+     ["An estimated 3 to 7%, raised substantially by high-risk sites or features, immunosuppression, multiple tumors, recurrence, or nodal involvement",
       "Correct — the baseline is modest but modifiable."],
-     ["An estimated 30 to 70%, raised further by high-risk sites or features, immunosuppression, multiple tumours, recurrence, or nodal involvement",
+     ["An estimated 30 to 70%, raised further by high-risk sites or features, immunosuppression, multiple tumors, recurrence, or nodal involvement",
       "That is an order of magnitude too high."],
      ["An estimated 3 to 7%, and nothing raises it further, since metastatic risk is fixed at the moment of diagnosis whatever the site or immune status",
       "Several named factors raise it substantially."],
@@ -129,7 +129,7 @@ VIG_D = [
    q="A patient with an advanced basal cell carcinoma is no longer a surgical candidate. Which systemic option applies?",
    opts=[
      ["A hedgehog pathway inhibitor",
-      "Correct — reserved for advanced or metastatic disease or extensive tumour burden. Vismodegib or sonidegib."],
+      "Correct — reserved for advanced or metastatic disease or extensive tumor burden. Vismodegib or sonidegib."],
      ["Programmed death 1 blockade or cetuximab",
       "Those belong to advanced squamous cell carcinoma."],
      ["Liposomal doxorubicin and paclitaxel",
@@ -248,14 +248,14 @@ VIG_D = [
    c=0, cite=c(93)),
 
  dict(topic="Nail unit neoplasms", io=IOA, lead="diagnosis",
-   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter haemorrhages. Which benign tumours produce this pattern?",
+   q="A patient has a single nail with longitudinal erythronychia, distal subungual hyperkeratosis and splinter hemorrhages. Which benign tumors produce this pattern?",
    opts=[
      ["Onychopapilloma or onychomatricoma",
       "Correct — single-nail longitudinal change with distal hyperkeratosis."],
-     ["Glomus tumour or pyogenic granuloma",
+     ["Glomus tumor or pyogenic granuloma",
       "The glomus triad is pain-based; pyogenic granuloma is a friable bleeding papule."],
      ["Digital myxoid cyst or subungual exostosis",
-      "Those are listed benign tumours but not this pattern."],
+      "Those are listed benign tumors but not this pattern."],
      ["Melanocytic naevus or lentigo",
       "Those would present with pigment rather than erythronychia."]],
    c=0, cite=c(86)),
@@ -277,11 +277,11 @@ VIG_D = [
    q="Four patients each have a pigmented band in a nail. Which pattern of longitudinal melanonychia should worry you most?",
    opts=[
      ["A new or evolving band in ONE digit, increasing in width",
-      "Correct — single-digit change with widening is the concerning pattern. The full description also includes irregular colour, thickness or spacing of the lines, and proximal widening or a triangular shape."],
-     ["Uniform narrow bands in SEVERAL nails, present since childhood and unchanged in width or colour",
+      "Correct — single-digit change with widening is the concerning pattern. The full description also includes irregular color, thickness or spacing of the lines, and proximal widening or a triangular shape."],
+     ["Uniform narrow bands in SEVERAL nails, present since childhood and unchanged in width or color",
       "That pattern is reassuring."],
      ["A band that grows out distally over several months after a crush injury",
-      "That behaviour suggests a subungual haematoma."],
+      "That behavior suggests a subungual hematoma."],
      ["A band present in all twenty nails since adolescence, identical in every digit",
       "Symmetrical longstanding bands are not the concerning pattern."]],
    c=0, cite=c(84)),

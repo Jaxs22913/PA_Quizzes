@@ -36,8 +36,8 @@ INTRO_BASE = (
   "exact condition list from the mechanism side; this one asks what it looks like, what to order, "
   "what to give and when to refer. "
   "<b>Where the speaker notes soften a slide, the notes win.</b> Imaging is not automatic for "
-  "dacryoadenitis, dacryocystitis or clearly pre-septal cellulitis, and haematology referral is "
-  "not automatic for a recurrent subconjunctival haemorrhage &mdash; the slides read as though "
+  "dacryoadenitis, dacryocystitis or clearly pre-septal cellulitis, and hematology referral is "
+  "not automatic for a recurrent subconjunctival hemorrhage &mdash; the slides read as though "
   "they are, and the notes on the same slides say otherwise. Every question cites its slide.")
 
 INTRO_1 = ("Thirty questions on the instructional objectives. " + INTRO_BASE)

@@ -19,7 +19,7 @@ POOL_C = [
      ["Subepithelial, from a delayed hypersensitivity reaction, in children",
       "The mechanism is autoimmune damage to the basement membrane, not hypersensitivity."],
      ["Intraepithelial, from Malassezia overgrowth, in middle-aged men",
-      "That organism causes seborrhoeic dermatitis."]],
+      "That organism causes seborrheic dermatitis."]],
    c=0, cite=c(122)),
 
  dict(topic="Bullous pemphigoid", io=IOC,
@@ -158,7 +158,7 @@ POOL_C = [
      ["Erythematous to salmon pink papules and plaques with silvery scale on extensor elbows and knees, trunk, scalp, umbilicus, sacrum, and the tip of the penis and scrotum",
       "Correct, with Koebner's phenomenon and the Auspitz sign."],
      ["Greasy yellow scaling in sebum-rich areas",
-      "That is seborrhoeic dermatitis."],
+      "That is seborrheic dermatitis."],
      ["Coin-shaped plaques on the extremities without central clearing",
       "That is nummular eczema."],
      ["Poorly demarcated plaques in the flexures",
@@ -183,7 +183,7 @@ POOL_C = [
    opts=[
      ["Raindrop-shaped erythematous papules and plaques in children, typically 2 to 3 weeks after a streptococcal infection or upper respiratory infection",
       "Correct. It often needs no treatment, though phototherapy and topical steroids may be used."],
-     ["Sudden generalised pustules with fever over the trunk and extremities",
+     ["Sudden generalized pustules with fever over the trunk and extremities",
       "That is pustular psoriasis, the Von Zumbusch form."],
      ["Silvery plaques on the extensor elbows and knees",
       "That is plaque psoriasis."],
@@ -192,9 +192,9 @@ POOL_C = [
    c=0, cite=c(160)),
 
  dict(topic="Psoriasis", io=IOC,
-   q="What characterises pustular psoriasis of the Von Zumbusch type?",
+   q="What characterizes pustular psoriasis of the Von Zumbusch type?",
    opts=[
-     ["Abrupt, life-threatening onset with several days of fever then a generalised eruption of 2 to 3 mm pustules over trunk and extremities including nail beds, palms and soles, which may form lakes of pus",
+     ["Abrupt, life-threatening onset with several days of fever then a generalized eruption of 2 to 3 mm pustules over trunk and extremities including nail beds, palms and soles, which may form lakes of pus",
       "Correct, and it may follow systemic steroid withdrawal. It is commonly mistaken for bacterial or viral infection."],
      ["A slowly progressive eruption of silvery plaques over months",
       "That describes plaque psoriasis."],
@@ -220,7 +220,7 @@ POOL_C = [
  dict(topic="Psoriasis", io=IOC,
    q="Which nail changes are seen in psoriasis?",
    opts=[
-     ["Onycholysis, pitting, splinter haemorrhages and subungual hyperkeratosis",
+     ["Onycholysis, pitting, splinter hemorrhages and subungual hyperkeratosis",
       "Correct — these can occur with any variant but are common in psoriatic arthritis."],
      ["Koilonychia and Beau's lines",
       "Neither is the psoriatic pattern."],
@@ -233,7 +233,7 @@ POOL_C = [
  dict(topic="Psoriasis", io=IOC,
    q="Which first-line topical agent for mild plaque psoriasis acts quickest, and what is its caution?",
    opts=[
-     ["Calcipotriene, a vitamin D analogue — caution with nephrotoxicity",
+     ["Calcipotriene, a vitamin D analog — caution with nephrotoxicity",
       "Correct, alongside emollients, topical steroids and ultraviolet B phototherapy as first line."],
      ["Salicylic acid — caution with systemic absorption",
       "Salicylic acid is listed second line."],
@@ -290,7 +290,7 @@ POOL_C = [
      ["A tapering course of oral prednisone over three weeks",
       "That is used for severe allergic contact dermatitis."],
      ["Topical ketoconazole",
-      "That treats seborrhoeic dermatitis."],
+      "That treats seborrheic dermatitis."],
      ["Oral doxycycline for six weeks",
       "That is not the treatment for this condition."]],
    c=0, cite=c(171)),
@@ -370,14 +370,14 @@ POOL_C = [
      ["Autoantibodies to adhesion molecules",
       "That is pemphigus."],
      ["Overgrowth of Malassezia",
-      "That is seborrhoeic dermatitis."]],
+      "That is seborrheic dermatitis."]],
    c=0, cite=c(180)),
 
  dict(topic="Lichen simplex chronicus", io=IOC,
    q="What is the central principle of managing lichen simplex chronicus?",
    opts=[
      ["Break the itch-scratch cycle, since recurrence is common unless the initiating itch is controlled",
-      "Correct — through education, trigger treatment, emollients, behavioural substitution, nail care and safe occlusion."],
+      "Correct — through education, trigger treatment, emollients, behavioral substitution, nail care and safe occlusion."],
      ["Long-term high-potency topical steroids alone",
       "A potent steroid is used for a limited course, not indefinitely as monotherapy."],
      ["Systemic antibiotics to prevent secondary infection",
@@ -403,7 +403,7 @@ POOL_C = [
    q="Which finding is pathognomonic for alopecia areata?",
    opts=[
      ["Exclamation point hairs",
-      "Correct — thinner at the root and normal calibre at the top, because growth is changing in real time."],
+      "Correct — thinner at the root and normal caliber at the top, because growth is changing in real time."],
      ["Broken hairs close to the scalp with scaling",
       "That is tinea capitis."],
      ["Diffuse thinning of the central scalp",
@@ -493,10 +493,10 @@ POOL_C = [
  dict(topic="Xerosis", io=IOC,
    q="What underlies xerosis, and who is most affected?",
    opts=[
-     ["Impaired stratum-corneum hydration promoted by ageing, low humidity, hot water, detergents, atopy and systemic disease, commonly affecting older adults especially in winter",
+     ["Impaired stratum-corneum hydration promoted by aging, low humidity, hot water, detergents, atopy and systemic disease, commonly affecting older adults especially in winter",
       "Correct, causing tightness, pruritus, rough scale, fissuring or eczema."],
      ["Overgrowth of Malassezia in sebum-rich areas, in young men",
-      "That is seborrhoeic dermatitis."],
+      "That is seborrheic dermatitis."],
      ["Chronic venous hypertension in the lower legs, in older adults",
       "That is stasis dermatitis."],
      ["An autoimmune process affecting the basement membrane, in the elderly",
@@ -504,7 +504,7 @@ POOL_C = [
    c=0, cite=c(152)),
 
  dict(topic="Xerosis", io=IOC,
-   q="What is the recommended bathing and moisturising routine for xerosis?",
+   q="What is the recommended bathing and moisturizing routine for xerosis?",
    opts=[
      ["Short lukewarm showers with a gentle fragrance-free cleanser only where needed, then a thick ointment or cream within minutes of bathing",
       "Correct. Petrolatum, ceramides and humectants such as urea or lactic acid help, though keratolytics may sting fissured skin."],
@@ -513,6 +513,6 @@ POOL_C = [
      ["Twice-daily antibacterial soap over the whole body",
       "Detergents contribute to the problem."],
      ["Avoiding bathing altogether until the skin recovers",
-      "The recommendation is short lukewarm bathing followed by prompt moisturising."]],
+      "The recommendation is short lukewarm bathing followed by prompt moisturizing."]],
    c=0, cite=c(153)),
 ]

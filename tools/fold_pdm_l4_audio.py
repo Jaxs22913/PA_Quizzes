@@ -31,7 +31,7 @@ WHAT THE RECORDING CHANGED, and it is more than usual:
    confirms the inverse guard in pdm_l4_partition.py was right to demand the
    worked examples exist.
 
-5. SHE DE-EMPHASISED THE DEEP BRANCHES OF THE ANEMIA ALGORITHM, twice. On the
+5. SHE DE-EMPHASIZED THE DEEP BRANCHES OF THE ANEMIA ALGORITHM, twice. On the
    microcytic arm: "for now, I'm happy if you understand genetic versus
    non-genetic; the rest of the stuff will come later." On the normocytic arm:
    "all of this will come [with heme] -- if you can just focus on this first
@@ -201,7 +201,7 @@ def main():
     siblings = re.findall(r'<section class="topic" id="[a-z0-9-]*lecture"[^>]*--acc:(#[0-9a-f]{6})', c)
     assert not siblings or all(x == acc for x in siblings), (
         "lecture-emphasis sections already use %r, not %s -- follow the house "
-        "convention rather than introducing a second colour" % (sorted(set(siblings)), acc))
+        "convention rather than introducing a second color" % (sorted(set(siblings)), acc))
     rows = "\n".join('          <tr><td class="h">%s</td><td>%s</td></tr>'
                      % (H.escape(a), H.escape(b)) for a, b in CRAM_ROWS)
     sec = ('\n  <section class="topic" id="l4-lecture" style="--acc:%s;--acc-bg:%s;--acc-zebra:%s;--acc-ink:%s">\n'

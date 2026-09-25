@@ -21,7 +21,7 @@ ORDER = [
  ("l16-patterns", "2.2 &middot; The two patterns, and presbycusis",
   ["Conductive hearing loss", "Sensorineural hearing loss", "Presbycusis"]),
  ("l16-masses", "2.3 &middot; Tinnitus, and the masses you can see",
-  ["Tinnitus", "Exostosis", "Glomus tumour"]),
+  ["Tinnitus", "Exostosis", "Glomus tumor"]),
  ("l16-acquired", "2.4 &middot; Acquired sensorineural loss",
   ["Ototoxicity", "Noise-induced hearing loss", "Acoustic trauma", "Perilymphatic fistula",
    "Autoimmune sensorineural loss", "Syphilitic sensorineural loss",
@@ -89,7 +89,7 @@ def build():
     <strong>intact</strong> right tympanic membrane, which has <strong>decreased mobility</strong>.
     The left ear is normal. <em>Which Weber and Rinne findings are most likely?</em></blockquote>
     <p>A right middle ear effusion is a <strong>conductive</strong> loss, so <strong>Weber
-    lateralises to the right</strong> and <strong>Rinne becomes abnormal on the right, with bone
+    lateralizes to the right</strong> and <strong>Rinne becomes abnormal on the right, with bone
     conduction at least equal to air</strong>.</p>
     <p><strong>She also described the question the other way round</strong>, and it is worth
     writing down: <em>&ldquo;I can give you these Weber and Rinne results and you&rsquo;ll
@@ -102,7 +102,7 @@ def build():
   <div class="tbl-wrap"><table class="wr">
     <thead><tr><th></th><th>Weber</th><th>Rinne</th><th>Voice</th><th>In noise</th></tr></thead>
     <tbody>
-      <tr><td><b>Normal</b></td><td>No lateralisation</td><td>AC &gt; BC</td>
+      <tr><td><b>Normal</b></td><td>No lateralization</td><td>AC &gt; BC</td>
           <td>Normal</td><td>Normal</td></tr>
       <tr><td><b>Conductive</b></td><td><b>TO the bad ear</b></td><td><b>BC &ge; AC</b></td>
           <td><b>Soft</b></td><td><b>Better</b></td></tr>
@@ -117,8 +117,8 @@ def build():
     <p><strong>Audiometry severity, and she flagged this chart to know outright.</strong> It runs
     <strong>in twenties</strong>: normal 0&ndash;20 dB, mild 20&ndash;40, moderate 40&ndash;60,
     severe 60&ndash;80, <strong>profound above 80</strong>. Her own words for it: <em>&ldquo;it's
-    all by 20s.&rdquo;</em> <strong>The prevalence percentages on the neighbouring slide are
-    explicitly NOT to be memorised</strong> &mdash; <em>&ldquo;you don&rsquo;t have to memorize
+    all by 20s.&rdquo;</em> <strong>The prevalence percentages on the neighboring slide are
+    explicitly NOT to be memorized</strong> &mdash; <em>&ldquo;you don&rsquo;t have to memorize
     these statistics&rdquo;</em>.</p>
     <p><strong>Tympanometry, by shape.</strong> <b>A</b> normal &middot; <b>B</b> flat, meaning
     fluid or a perforation &middot; <b>C</b> peak shifted negative, meaning eustachian tube
@@ -127,8 +127,8 @@ def build():
     a monomeric drum.</p>
     <p><strong>Vestibular testing.</strong> <b>Electronystagmography</b> is the gold standard for
     a disorder affecting one ear at a time; <b>magnetic resonance imaging with gadolinium</b> is
-    the gold standard when retrocochlear disease is suspected; the <b>Dix-Hallpike manoeuvre</b>
-    diagnoses positional vertigo and the <b>Epley manoeuvre</b> treats it.</p>
+    the gold standard when retrocochlear disease is suspected; the <b>Dix-Hallpike maneuver</b>
+    diagnoses positional vertigo and the <b>Epley maneuver</b> treats it.</p>
   </div>"""
 
     return """

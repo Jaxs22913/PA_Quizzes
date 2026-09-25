@@ -21,10 +21,10 @@ POOL_E = [
    opts=[
      ["Personal or family atopy, raised immunoglobulin E, allergen exposure, xerosis, irritants, heat, stress, infection and overbathing",
       "Correct — barrier dysfunction sits underneath most of them."],
-     ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb oedema",
+     ["Chronic venous insufficiency, obesity, immobility, previous deep vein thrombosis and chronic lower-limb edema",
       "Those are the risk factors for stasis dermatitis."],
      ["Occlusive clothing, hot humid weather, obesity, poor hygiene and nasal staphylococcal carriage",
-      "Those predispose to folliculitis by occluding and colonising follicles; atopic dermatitis follows barrier dysfunction and allergic sensitisation."],
+      "Those predispose to folliculitis by occluding and colonizing follicles; atopic dermatitis follows barrier dysfunction and allergic sensitization."],
      ["Cumulative ultraviolet exposure, fair skin, outdoor occupation, immunosuppression and older age",
       "Those are the risk factors for actinic damage and keratinocyte carcinoma, not for an atopic inflammatory dermatosis."]],
    c=0, cite=c(52)),
@@ -37,7 +37,7 @@ POOL_E = [
      ["About 5% of children, and it is more common in females than males",
       "That understates the prevalence and reverses the sex difference."],
      ["About 50% of children, and it affects both sexes equally overall",
-      "Half of all children is a considerable overstatement; the figure is about 20 per cent, with a male predominance."],
+      "Half of all children is a considerable overstatement; the figure is about 20 percent, with a male predominance."],
      ["About 2% of children, and it is confined almost entirely to males",
       "That understates the prevalence substantially."]],
    c=0, cite=c(52)),
@@ -58,7 +58,7 @@ POOL_E = [
  dict(topic="Stasis dermatitis", io=IOC, slot="risk factors",
    q="Which underlying process drives stasis dermatitis?",
    opts=[
-     ["Chronic venous disease with lower-leg oedema",
+     ["Chronic venous disease with lower-leg edema",
       "Correct — the dermatitis is a consequence of venous hypertension."],
      ["Chronic arterial insufficiency with reduced perfusion",
       "Arterial disease matters here, but as a contraindication to compression."],
@@ -99,7 +99,7 @@ POOL_E = [
    q="Which test should be considered before starting substantial compression for stasis dermatitis?",
    opts=[
      ["An ankle-brachial index or toe pressure",
-      "Correct — arterial status has to be clarified first, because compression on an ischaemic limb causes harm."],
+      "Correct — arterial status has to be clarified first, because compression on an ischemic limb causes harm."],
      ["A venous duplex ultrasound of the affected leg",
       "That is ordered when reflux, obstruction or thrombosis is suspected."],
      ["A punch biopsy of the affected gaiter skin",
@@ -117,7 +117,7 @@ POOL_E = [
       "That pattern indicates a dermatophyte rather than Candida."],
      ["Multinucleated giant cells",
       "That is the Tzanck smear finding in herpesvirus infection."],
-     ["Mites, eggs or faecal pellets",
+     ["Mites, eggs or fecal pellets",
       "That is the mineral oil preparation finding in scabies."]],
    c=0, cite=c(108)),
 
@@ -262,7 +262,7 @@ POOL_E = [
      ["Continue the facial topical corticosteroids, warning that improvement takes several months",
       "Continuing the steroid is what sustains the disease."],
      ["Stop all emollients, warning that the skin will feel dry for the first two weeks",
-      "A simplified skincare routine is recommended rather than no moisturiser at all."],
+      "A simplified skincare routine is recommended rather than no moisturizer at all."],
      ["Stop oral antibiotics, warning that the eruption commonly rebounds afterwards",
       "Oral tetracycline or doxycycline is used for extensive or persistent disease."]],
    c=0, cite=c(102)),
@@ -299,10 +299,10 @@ POOL_E = [
    opts=[
      ["Apply emollient after rinsing, avoid irritants, use fragrance-free skincare, demonstrate quantity and application, and give a written flare and infection action plan",
       "Correct — corticosteroid concerns are addressed directly rather than avoided."],
-     ["Bathe as little as possible, avoid all moisturisers, use only prescription cleansers, and stop any topical steroid at the first sign of improvement",
+     ["Bathe as little as possible, avoid all moisturizers, use only prescription cleansers, and stop any topical steroid at the first sign of improvement",
       "Overbathing is a risk factor but emollients are foundational."],
      ["Apply the strongest available steroid at the first sign of a flare, then stop abruptly",
-      "Potency is chosen by site, and application is demonstrated rather than maximised."],
+      "Potency is chosen by site, and application is demonstrated rather than maximized."],
      ["Avoid all sun exposure and apply broad-spectrum sunscreen several times daily",
       "Repeated sunscreen and sun avoidance are photoprotection advice; atopic dermatitis education centers on emollient after rinsing, avoiding irritants and a flare plan."]],
    c=0, cite=c(58)),
@@ -352,7 +352,7 @@ POOL_E = [
    opts=[
      ["Dermatology, vascular surgery or wound care, for refractory disease, venous reflux or ulceration",
       "Correct — compression remains the cornerstone once arterial circulation is established."],
-     ["Rheumatology and nephrology, for the autoimmune and the renal causes of leg oedema",
+     ["Rheumatology and nephrology, for the autoimmune and the renal causes of leg edema",
       "Those are not the referrals named for this condition."],
      ["Infectious diseases, since the condition is usually secondary to cellulitis",
       "Stasis dermatitis is frequently mistaken for cellulitis rather than caused by it."],
@@ -414,16 +414,16 @@ POOL_E = [
    c=0, cite=c(182)),
 
  dict(topic="Lichen simplex chronicus", io=IOC, slot="complication",
-   q="What should generalised or unexplained pruritus prompt?",
+   q="What should generalized or unexplained pruritus prompt?",
    opts=[
      ["A targeted systemic evaluation guided by history, medications, review of systems and examination",
       "Correct — itching everywhere for no local reason has to be worked up."],
      ["Immediate biopsy of the most prominent plaque on the body",
-      "Biopsy addresses an atypical plaque rather than generalised itch."],
+      "Biopsy addresses an atypical plaque rather than generalized itch."],
      ["A trial of a superpotent topical steroid over the whole body surface",
       "That treats the symptom without investigating the cause."],
-     ["Reassurance, since generalised pruritus is a normal and expected feature of ageing",
-      "Unexplained generalised pruritus warrants evaluation."]],
+     ["Reassurance, since generalized pruritus is a normal and expected feature of aging",
+      "Unexplained generalized pruritus warrants evaluation."]],
    c=0, cite=c(182)),
 
  # ---------------- prognosis
@@ -456,7 +456,7 @@ POOL_E = [
  dict(topic="Xerosis", io=IOC, slot="prognosis",
    q="What is the expected course of xerosis with consistent barrier care?",
    opts=[
-     ["Most patients improve, but recurrence is expected while exposure, ageing or systemic risk persists",
+     ["Most patients improve, but recurrence is expected while exposure, aging or systemic risk persists",
       "Correct — the underlying driver has not gone away."],
      ["Most patients are cured permanently once the barrier has been restored",
       "Recurrence is expected when the driver persists."],
@@ -482,7 +482,7 @@ POOL_E = [
  dict(topic="Psoriasis", io=IOC, slot="first-line",
    q="Which first-line topical agent for mild plaque psoriasis acts quickest, and what is the caution?",
    opts=[
-     ["Calcipotriene, a vitamin D analogue, with caution for nephrotoxicity",
+     ["Calcipotriene, a vitamin D analog, with caution for nephrotoxicity",
       "Correct — emollients, topical steroids and ultraviolet B phototherapy make up the rest of first line."],
      ["Coal tar preparation, with caution for staining and photosensitivity",
       "Coal tar is a second-line agent."],
@@ -505,8 +505,8 @@ POOL_E = [
       "Topical steroids may be used."]],
    c=0, cite=c(164)),
 
- dict(topic="Seborrhoeic dermatitis", io=IOC, slot="first-line",
-   q="Which agent class is the mainstay of treatment for seborrhoeic dermatitis?",
+ dict(topic="Seborrheic dermatitis", io=IOC, slot="first-line",
+   q="Which agent class is the mainstay of treatment for seborrheic dermatitis?",
    opts=[
      ["Topical antifungals such as ketoconazole",
       "Correct — steroids are used early to reduce the inflammatory response."],

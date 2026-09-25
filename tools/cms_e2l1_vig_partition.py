@@ -9,7 +9,7 @@ vignettes ... recognize conditions by the vignette", with "SOME diagnosis but
 A LOT are next management plan / first line treatment / patient education", and
 "way more non-pictures than pictures". Hence:
 
-  DX_CAP -- diagnosis lead-ins are capped at 20 per cent of each set. Everything
+  DX_CAP -- diagnosis lead-ins are capped at 20 percent of each set. Everything
   else is next-step, first-line, education, testing or prognosis. Without the
   cap the selector happily fills a set with "what is the most likely diagnosis",
   which is not the exam she described.
@@ -37,7 +37,7 @@ cromolyn sodium), and b44287af stripped the "Objective" prefix from `io`. On
 authoritative) and the pools' stems and options were brought to the page text.
 The pools' EXPLANATIONS still differ from the pages (about 170 of them: the
 pools carry longer ones from the 2026-09-20 pass, some importing facts the deck
-does not state, e.g. doxycycline "oesophageal ulceration"), and the pools' io
+does not state, e.g. doxycycline "esophageal ulceration"), and the pools' io
 still carries the prefix. A re-run would therefore push unaudited text onto
 the site. So the script writes only when the result is identical to what is
 committed; otherwise it prints what would change and exits 1. Pass --force

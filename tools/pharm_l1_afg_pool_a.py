@@ -145,7 +145,7 @@ POOL_A = [
  dict(topic="Polyenes", io=IO9B,
    q="Why are fever and chills expected during an amphotericin B infusion, and how are they managed?",
    opts=[
-     ["They are driven by interleukin-1 and tumour necrosis factor, and patients are pretreated with acetaminophen, antihistamines and corticosteroids",
+     ["They are driven by interleukin-1 and tumor necrosis factor, and patients are pretreated with acetaminophen, antihistamines and corticosteroids",
       "Correct. The reaction is a cytokine response rather than an allergy, which is why premedication works."],
      ["They reflect an immunoglobulin E mediated allergic reaction, and the drug must be stopped permanently",
       "The mechanism given is cytokine-mediated, and the reaction is managed by premedication rather than by discontinuation."],
@@ -158,9 +158,9 @@ POOL_A = [
  dict(topic="Polyenes", io=IO9B,
    q="Which electrolyte and renal effects accompany amphotericin B?",
    opts=[
-     ["Hypokalaemia and hypomagnesaemia, hypotension, uraemia in about 80 percent with decreased filtration, and renal tubule damage mitigated by hydration with normal saline",
+     ["Hypokalemia and hypomagnesemia, hypotension, uremia in about 80 percent with decreased filtration, and renal tubule damage mitigated by hydration with normal saline",
       "Correct. The saline hydration is the practical countermeasure worth remembering."],
-     ["Hyperkalaemia and hypercalcaemia with a rising glomerular filtration rate",
+     ["Hyperkalemia and hypercalcemia with a rising glomerular filtration rate",
       "The disturbances run in the opposite direction, and filtration falls rather than rises."],
      ["Isolated hepatotoxicity with no renal involvement",
       "Renal effects are the prominent ones for this agent."],
@@ -199,7 +199,7 @@ POOL_A = [
    opts=[
      ["With amphotericin B in cryptococcal meningitis, and with itraconazole in chromoblastomycosis",
       "Correct. It is used in combination rather than alone, and its own indications are Cryptococcus neoformans and Candida."],
-     ["With caspofungin in oesophageal candidiasis, and with terbinafine in onychomycosis",
+     ["With caspofungin in esophageal candidiasis, and with terbinafine in onychomycosis",
       "Neither pairing is used; flucytosine is combined with amphotericin B for cryptococcal meningitis and with itraconazole for chromoblastomycosis."],
      ["With griseofulvin in tinea capitis, and with nystatin in oral candidiasis",
       "Those are dermatophyte and topical indications unrelated to flucytosine."],

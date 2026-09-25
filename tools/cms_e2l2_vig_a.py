@@ -31,7 +31,7 @@ POOL_A = [
    q="A 47-year-old man develops left ptosis and miosis hours after a whiplash injury, with neck pain and left arm numbness. Which underlying cause should be excluded first?",
    opts=[
      ["Carotid artery dissection", "Correct. A third-order Horner syndrome, and the reason this presentation is urgent."],
-     ["Pancoast tumour", "That is a second-order cause and would not follow acute trauma this way."],
+     ["Pancoast tumor", "That is a second-order cause and would not follow acute trauma this way."],
      ["Brainstem stroke", "That is a first-order cause, usually with other brainstem signs."],
      ["Cavernous sinus thrombosis", "Possible at third order, but trauma with neck pain points to dissection."]],
    c=0, cite=c(15)),
@@ -39,7 +39,7 @@ POOL_A = [
  dict(topic="Horner syndrome", io=IO, lead="diagnosis",
    q="A 68-year-old smoker has a two-month history of right shoulder pain, and now has right ptosis and miosis. Which lesion location does this combination suggest?",
    opts=[
-     ["Second-order neuron", "Correct. The preganglionic neuron loops over the lung apex, where a Pancoast tumour reaches it."],
+     ["Second-order neuron", "Correct. The preganglionic neuron loops over the lung apex, where a Pancoast tumor reaches it."],
      ["Third-order neuron", "Those are carotid dissection or cavernous sinus thrombosis."],
      ["Ciliary ganglion", "That is the parasympathetic relay, and damage there gives an Adie pupil."],
      ["Edinger-Westphal nucleus", "That is the parasympathetic origin, not the sympathetic pathway."]],
@@ -109,7 +109,7 @@ POOL_A = [
    c=0, cite=c(36)),
 
  dict(topic="Pharmacologic mydriasis", io=IO, lead="diagnosis",
-   q="A 58-year-old woman using nebulised ipratropium has a right pupil of 9 mm that does not constrict to light. Eye movements and lid position are normal. Which is the most likely cause?",
+   q="A 58-year-old woman using nebulized ipratropium has a right pupil of 9 mm that does not constrict to light. Eye movements and lid position are normal. Which is the most likely cause?",
    opts=[
      ["Pharmacologic mydriasis", "Correct. An anticholinergic reaching the eye gives a very large, unreactive pupil with nothing else wrong."],
      ["Adie tonic pupil", "That still constricts slowly to a near target."],
@@ -157,7 +157,7 @@ POOL_A = [
    q="What is anatomically unique about the trochlear nerve?",
    opts=[
      ["It arises dorsally and crosses", "Correct, so the left nucleus supplies the right eye."],
-     ["It carries parasympathetic fibres", "Those travel with the third nerve."],
+     ["It carries parasympathetic fibers", "Those travel with the third nerve."],
      ["It supplies two extraocular muscles", "It supplies superior oblique alone."],
      ["It exits through the optic canal", "The optic canal is not the distinctive feature; the trochlear is the only nerve that arises from the dorsal surface of the brainstem and crosses."]],
    c=0, cite=c(42)),
@@ -165,16 +165,16 @@ POOL_A = [
  dict(topic="Sixth nerve palsy", io=IO, lead="diagnosis",
    q="A 7-year-old boy has new horizontal double vision and cannot abduct the left eye. Which cause is most likely in a child?",
    opts=[
-     ["Intracranial tumour", "Correct — the abducens nerve has a long intracranial course and is compressed early by raised intracranial pressure, so a new sixth nerve palsy in a child raises a brainstem or posterior fossa tumour."],
+     ["Intracranial tumor", "Correct — the abducens nerve has a long intracranial course and is compressed early by raised intracranial pressure, so a new sixth nerve palsy in a child raises a brainstem or posterior fossa tumor."],
      ["Microvascular disease", "That is the commonest cause in adults, not children."],
      ["Skull base fracture", "That requires major trauma, absent here."],
-     ["Congenital palsy", "Congenital origin is characteristic of isolated fourth nerve palsies; a new sixth nerve palsy in a child is investigated for a tumour."]],
+     ["Congenital palsy", "Congenital origin is characteristic of isolated fourth nerve palsies; a new sixth nerve palsy in a child is investigated for a tumor."]],
    c=0, cite=c(45)),
 
  dict(topic="Cranial nerve palsy", io=IO, lead="next step",
    q="A 59-year-old woman has an isolated, atraumatic sixth nerve palsy. Which investigation is indicated?",
    opts=[
-     ["MRI brain with and without contrast", "Correct, and check haemoglobin A1C if there are risk factors and no known diabetes."],
+     ["MRI brain with and without contrast", "Correct, and check hemoglobin A1C if there are risk factors and no known diabetes."],
      ["Stat computed tomography angiography", "That is reserved for a pupil-involved third nerve palsy."],
      ["Lumbar puncture", "That is for suspected raised intracranial pressure."],
      ["Carotid Doppler", "That is used when an embolic source is suspected."]],
@@ -239,7 +239,7 @@ POOL_A = [
    opts=[
      ["For the direction of the fast beat", "Correct, and it increases on gaze in that direction."],
      ["For the eye that is affected", "Laterality is not what names it."],
-     ["For the underlying cause", "Aetiology does not determine the name."],
+     ["For the underlying cause", "Etiology does not determine the name."],
      ["For the amplitude of the movement", "Amplitude is not the naming convention."]],
    c=0, cite=c(4)),
 

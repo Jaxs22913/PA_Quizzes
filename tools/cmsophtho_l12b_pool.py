@@ -42,15 +42,15 @@ Q("Branch retinal artery occlusion", IO,
   [["Branch retinal artery occlusion", "Correct. A pale wedge in one artery's territory, producing "
                                        "loss of the opposite field."],
    ["Central retinal artery occlusion", "Would affect the whole retina with a cherry-red spot."],
-   ["Branch retinal vein occlusion", "Produces haemorrhage in the territory rather than pallor."],
-   ["Non-arteritic ischaemic optic neuropathy", "Causes altitudinal loss with disc swelling rather "
+   ["Branch retinal vein occlusion", "Produces hemorrhage in the territory rather than pallor."],
+   ["Non-arteritic ischemic optic neuropathy", "Causes altitudinal loss with disc swelling rather "
                                                 "than a retinal wedge."]],
   "diagnosis", D, 41),
 
 Q("Central retinal vein occlusion", IO,
-  "A 69-year-old man with a central retinal vein occlusion is being counselled. Which complication "
+  "A 69-year-old man with a central retinal vein occlusion is being counseled. Which complication "
   "is he monitored for?",
-  [["Neovascular glaucoma", "Correct — ischaemia drives new vessel growth at the iris and angle."],
+  [["Neovascular glaucoma", "Correct — ischemia drives new vessel growth at the iris and angle."],
    ["Cataract within weeks", "Not the complication that drives monitoring."],
    ["Optic neuritis", "An inflammatory demyelinating condition."],
    ["Retinal detachment from a break", "Not the mechanism following venous occlusion."]],
@@ -112,7 +112,7 @@ Q("Chronic open-angle glaucoma", IO,
 Q("Optic neuritis", IO,
   "A 32-year-old woman with optic neuritis asks about her vision. What is the expected course?",
   [["Vision usually recovers substantially over weeks",
-    "Correct, though colour desaturation may persist."],
+    "Correct, though color desaturation may persist."],
    ["Vision is permanently lost in most patients", "Most recover substantially."],
    ["The other eye always becomes involved within a month",
     "Fellow eye involvement is not inevitable."],
@@ -133,13 +133,13 @@ Q("Retinal detachment", IO,
 Q("Amaurosis fugax", IO,
   "A 72-year-old woman describes transient monocular vision loss lasting minutes. What is the "
   "underlying mechanism?",
-  [["Transient retinal ischaemia, usually embolic",
+  [["Transient retinal ischemia, usually embolic",
     "Correct — most often from carotid atheroma."],
    ["Acute rise in intraocular pressure", "That is angle closure, which is painful and does not "
                                           "resolve spontaneously."],
    ["Retinal break with subretinal fluid", "That produces a progressive curtain, not a transient "
                                            "episode."],
-   ["Vitreous haemorrhage", "Produces floaters and persistent blur rather than complete transient "
+   ["Vitreous hemorrhage", "Produces floaters and persistent blur rather than complete transient "
                             "loss."]],
   "two-step", D, 5),
 
@@ -149,7 +149,7 @@ Q("Papilledema", IO,
     "Correct — that is the pattern in idiopathic intracranial hypertension."],
    ["A raised white cell count", "That would indicate infection or inflammation."],
    ["A low opening pressure", "The pressure is raised, which is the point."],
-   ["Xanthochromia", "That suggests subarachnoid haemorrhage."]],
+   ["Xanthochromia", "That suggests subarachnoid hemorrhage."]],
   "two-step", D, 46),
 
 Q("Acute vision loss approach", IO,
@@ -162,7 +162,7 @@ Q("Acute vision loss approach", IO,
     "flashes."],
    ["Amaurosis fugax and papilledema",
     "Amaurosis is transient and painless; papilledema causes headache rather than eye pain."],
-   ["Non-arteritic ischaemic optic neuropathy and branch artery occlusion",
+   ["Non-arteritic ischemic optic neuropathy and branch artery occlusion",
     "Both painless, and both produce a field defect rather than pain."]],
   "two-step", D, 4),
 
@@ -171,7 +171,7 @@ Q("Arteritic AION", IO,
   "investigation confirms the diagnosis?",
   [["Temporal artery biopsy", "Correct — but treatment starts before the result."],
    ["Carotid Doppler", "That is the amaurosis fugax pathway."],
-   ["Fluorescein angiography alone", "Characterises retinal perfusion but does not confirm "
+   ["Fluorescein angiography alone", "Characterizes retinal perfusion but does not confirm "
                                      "arteritis."],
    ["Visual field testing", "Documents the deficit rather than the cause."]],
   "two-step", D, 51),

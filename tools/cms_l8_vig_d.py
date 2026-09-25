@@ -30,7 +30,7 @@ VIG_D = [
    opts=[
      ["Sun protection, patient education and topical depigmenting agents; cryotherapy is NOT used",
       "Correct — cryotherapy is difficult because of the size of the lesions, so intense pulsed light or lasers are preferred."],
-     ["Cryotherapy to each individual lesion, with sun protection counselling afterwards",
+     ["Cryotherapy to each individual lesion, with sun protection counseling afterwards",
       "Cryotherapy is not used for these, because of the lesion size."],
      ["Surgical excision of the most prominent lesions",
       "Excision is not offered for freckles."],
@@ -69,7 +69,7 @@ VIG_D = [
    opts=[
      ["Retinoids, cryotherapy or quality-switched laser, since removal here is elective",
       "Correct — treatment is not necessary; removal is for cosmetic or symptomatic reasons."],
-     ["Excision with a two-millimetre margin, because they are premalignant",
+     ["Excision with a two-millimeter margin, because they are premalignant",
       "They are benign and excision with margins is not described."],
      ["Topical imiquimod five nights weekly for six weeks",
       "That regimen belongs to superficial basal cell carcinoma."],
@@ -91,12 +91,12 @@ VIG_D = [
    c=0, cite=c(15)),
 
  dict(topic="Vitiligo", io=IOA, lead="treatment",
-   q="A 29-year-old has depigmented patches over roughly three per cent of her body surface, mostly on her hands and around the mouth. Which first-line approach fits?",
+   q="A 29-year-old has depigmented patches over roughly three percent of her body surface, mostly on her hands and around the mouth. Which first-line approach fits?",
    opts=[
      ["Topical therapy, with calcineurin inhibitors useful where steroids cannot be applied such as face and neck",
-      "Correct — topical therapy suits under five per cent involvement, ideally combined with phototherapy."],
+      "Correct — topical therapy suits under five percent involvement, ideally combined with phototherapy."],
      ["Narrow-band ultraviolet B phototherapy as first line",
-      "Phototherapy is first line above five per cent body surface area."],
+      "Phototherapy is first line above five percent body surface area."],
      ["Tissue or cellular grafting as the definitive treatment",
       "Surgical grafting is only for highly stable disease."],
      ["Psoralen plus ultraviolet A therapy in preference to narrow-band ultraviolet B phototherapy",
@@ -104,10 +104,10 @@ VIG_D = [
    c=0, cite=c(24)),
 
  dict(topic="Vitiligo", io=IOA, lead="next step",
-   q="A 35-year-old man has vitiligo affecting about fifteen per cent of his body surface. He has used topical steroids without benefit. What is the most appropriate next step?",
+   q="A 35-year-old man has vitiligo affecting about fifteen percent of his body surface. He has used topical steroids without benefit. What is the most appropriate next step?",
    opts=[
      ["Narrow-band ultraviolet B phototherapy, ideally combined with topical therapy",
-      "Correct — phototherapy is first line above five per cent, and combination therapy is described as ideal."],
+      "Correct — phototherapy is first line above five percent, and combination therapy is described as ideal."],
      ["Psoralen plus ultraviolet A, since it is more effective than narrow-band ultraviolet B",
       "Psoralen therapy carries increased skin cancer risk and narrow-band ultraviolet B is preferred."],
      ["Tissue grafting to the affected areas",
@@ -145,14 +145,14 @@ VIG_D = [
  dict(topic="Congenital melanocytic naevus", io=IOA, lead="education",
    q="The parents of a child with a very large congenital naevus ask what support exists. Where should they be pointed, and what shapes the plan?",
    opts=[
-     ["Counselling and support groups, with management balancing melanoma risk, cosmetic outcome and preserved function",
+     ["Counseling and support groups, with management balancing melanoma risk, cosmetic outcome and preserved function",
       "Correct — the goal is removing as much as possible while preserving function and improving appearance."],
-     ["Counselling alone, since surgery is contraindicated in large naevi",
+     ["Counseling alone, since surgery is contraindicated in large naevi",
       "Surgery is ideal where there is enough skin for grafting."],
      ["Immediate referral for total surgical excision, regardless of whether a graft site is available",
       "If there is little skin for a graft site, observation may be the better option."],
      ["No specific support is described beyond routine dermatology follow-up",
-      "Counselling and support groups are named explicitly."]],
+      "Counseling and support groups are named explicitly."]],
    c=0, cite=c(31)),
 ]
 

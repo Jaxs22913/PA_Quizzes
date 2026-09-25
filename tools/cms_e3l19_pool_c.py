@@ -14,8 +14,8 @@ QUESTIONS = [
 Q("Infectious mononucleosis", IO, "What is the classic triad of infectious mononucleosis?",
   [["Fever, tonsillar pharyngitis and cervical lymphadenopathy",
     "Correct. That triad defines the presentation, with palatal petechiae, hepatomegaly, "
-    "splenomegaly and a maculopapular rash in about 5 per cent as additional features. About 90 to "
-    "95 per cent of adults are Epstein-Barr seropositive, and the illness commonly affects those "
+    "splenomegaly and a maculopapular rash in about 5 percent as additional features. About 90 to "
+    "95 percent of adults are Epstein-Barr seropositive, and the illness commonly affects those "
     "aged 15 to 24."],
    ["Fever, rash and arthritis",
     "That combination suggests a systemic inflammatory or rheumatological illness rather than "
@@ -35,7 +35,7 @@ Q("Infectious mononucleosis", IO,
     "which is why a negative result in the first week does not exclude the diagnosis and serology "
     "for Epstein-Barr antibodies is used instead."],
    ["In patients over 40",
-    "Age affects the likelihood of the disease rather than the behaviour of the test, since most "
+    "Age affects the likelihood of the disease rather than the behavior of the test, since most "
     "adults are already seropositive from past infection."],
    ["Only if the patient has taken antibiotics",
     "Antibiotics do not interfere with the heterophile response. Giving an aminopenicillin does "
@@ -55,7 +55,7 @@ Q("Infectious mononucleosis", IO,
     "cent of adults are seropositive, IgG alone says very little."],
    ["Immunity from vaccination",
     "There is no Epstein-Barr vaccine in routine use, so serology reflects natural exposure "
-    "rather than immunisation."],
+    "rather than immunization."],
    ["Chronic carriage without infection",
     "Viral load monitoring by polymerase chain reaction is used in transplant patients for that "
     "purpose, rather than IgM."]], C(84)),
@@ -71,7 +71,7 @@ Q("Infectious mononucleosis", IO,
     "Transmission is by saliva rather than by contact during sport, and the restriction is about the "
     "patient's own spleen rather than about spread."],
    ["To avoid triggering the maculopapular rash",
-    "The rash occurs in about 5 per cent spontaneously and is reliably triggered by aminopenicillins, "
+    "The rash occurs in about 5 percent spontaneously and is reliably triggered by aminopenicillins, "
     "not by exercise."],
    ["To prevent airway obstruction from tonsillar swelling",
     "Severe respiratory compromise from tonsillar enlargement is treated with corticosteroids and is "
@@ -82,13 +82,13 @@ Q("Infectious mononucleosis", IO,
   [["A widespread exanthem develops",
     "Correct. Aminopenicillins reliably provoke a widespread maculopapular rash in Epstein-Barr "
     "infection. The classic sequence is a sore throat treated as streptococcal, a rash appearing, "
-    "and then the correct diagnosis being made. Recognising it matters because it is not a true "
+    "and then the correct diagnosis being made. Recognizing it matters because it is not a true "
     "penicillin allergy."],
    ["The illness resolves more quickly",
     "There is no antiviral therapy and no antibiotic shortens the illness, since the cause is "
     "viral. Management is supportive."],
    ["Anaphylaxis occurs",
-    "The rash is not immunoglobulin E mediated and is not anaphylactic. Labelling the patient "
+    "The rash is not immunoglobulin E mediated and is not anaphylactic. Labeling the patient "
     "allergic on the strength of it removes an entire antibiotic class unnecessarily."],
    ["The spleen shrinks more rapidly",
     "Nothing about penicillin affects splenic size, and the restriction on contact sport stands "
@@ -98,7 +98,7 @@ Q("Oral candidiasis", IO, "Which finding distinguishes oral candidiasis from leu
   [["The patches can be rubbed off with a tongue depressor",
     "Correct. Candida forms a removable pseudomembrane, so wiping it leaves an erythematous base. "
     "Leukoplakia is defined as a white lesion that CANNOT be scraped off, and lichen planus produces "
-    "striae that are part of the mucosa. That single manoeuvre separates three diagnoses with very "
+    "striae that are part of the mucosa. That single maneuver separates three diagnoses with very "
     "different implications."],
    ["The patches are painless",
     "Candidiasis is painful, and leukoplakia is typically painless, so this reverses the "
@@ -126,20 +126,20 @@ Q("Oral candidiasis", IO, "What does a potassium hydroxide preparation show in o
     "hydroxide is not a bacterial stain at all."]], C(90)),
 
 Q("Cervical adenitis", IO,
-  "What proportion of unilateral solitary anterior cervical adenitis relates to beta-haemolytic "
+  "What proportion of unilateral solitary anterior cervical adenitis relates to beta-hemolytic "
   "streptococcus?",
-  [["About 70 per cent",
-    "Correct. Local ear, nose and throat infections drain to regional nodes, and about 70 per cent of "
-    "these unilateral solitary anterior nodes relate to beta-haemolytic streptococcal infection, "
-    "with 20 per cent staphylococcal including MRSA and 10 per cent viral, atypical mycobacterial or "
+  [["About 70 percent",
+    "Correct. Local ear, nose and throat infections drain to regional nodes, and about 70 percent of "
+    "these unilateral solitary anterior nodes relate to beta-hemolytic streptococcal infection, "
+    "with 20 percent staphylococcal including MRSA and 10 percent viral, atypical mycobacterial or "
     "Bartonella."],
-   ["About 20 per cent",
-    "Twenty per cent is the STAPHYLOCOCCAL share, which matters for antibiotic choice because it "
+   ["About 20 percent",
+    "Twenty percent is the STAPHYLOCOCCAL share, which matters for antibiotic choice because it "
     "includes MRSA, but it is not the majority."],
-   ["About 10 per cent",
-    "Ten per cent covers the residual group of viruses, atypical mycobacteria and Bartonella "
+   ["About 10 percent",
+    "Ten percent covers the residual group of viruses, atypical mycobacteria and Bartonella "
     "henselae together."],
-   ["Under 5 per cent",
+   ["Under 5 percent",
     "That would make streptococcal infection a rarity in cervical adenitis, which would change "
     "empirical treatment entirely."]], C(92)),
 
@@ -162,11 +162,11 @@ Q("Cervical adenitis", IO, "Why is cervical lymphadenopathy described as a sign 
 Q("Peritonsillar abscess", IO, "What is the classic triad of peritonsillar abscess?",
   [["Trismus, uvular deviation and dysphonia",
     "Correct. Trismus is the most reliable of the three, from irritation of the adjacent medial "
-    "pterygoid; uvular deviation follows oedema and medial displacement of the soft palate and "
+    "pterygoid; uvular deviation follows edema and medial displacement of the soft palate and "
     "peritonsillar fold; and dysphonia arises from vagus nerve involvement failing to elevate the "
     "palate."],
-   ["Fever, cough and rhinorrhoea",
-    "Cough and rhinorrhoea point toward a viral upper respiratory illness and argue against a "
+   ["Fever, cough and rhinorrhea",
+    "Cough and rhinorrhea point toward a viral upper respiratory illness and argue against a "
     "bacterial or suppurative process."],
    ["Stridor, drooling and tripod positioning",
     "Those describe epiglottitis, which is an airway emergency of a different kind and does not "
@@ -237,11 +237,11 @@ Q("Retropharyngeal abscess", IO, "What is the gold standard investigation for re
     "acutely unwell child with a threatened airway."]], C(105)),
 
 Q("Retropharyngeal abscess", IO,
-  "Which complication of retropharyngeal abscess carries a 50 per cent mortality?",
+  "Which complication of retropharyngeal abscess carries a 50 percent mortality?",
   [["Mediastinitis",
     "Correct. The retropharyngeal space extends from the base of the skull to the posterior "
     "mediastinum, so infection has a direct anatomical route into the chest. Mediastinitis carries a "
-    "50 per cent mortality, and other complications include respiratory distress, rupture with "
+    "50 percent mortality, and other complications include respiratory distress, rupture with "
     "aspiration pneumonia, and spread into the danger space."],
    ["Cavernous sinus thrombosis",
     "Cavernous sinus thrombosis is the feared intracranial complication of orbital and facial "
@@ -285,9 +285,9 @@ Q("Ludwig angina", IO, "What antibiotic regimen is used for Ludwig angina?",
     "the airway."]], C(111)),
 
 Q("Diphtheria", IO, "What is the characteristic pharyngeal finding in diphtheria?",
-  [["A tenacious grey membrane over the tonsils and pharynx",
-    "Correct. The pharyngeal form is commonest and produces an adherent grey membrane that bleeds "
-    "when disturbed, with mild sore throat, fever, malaise, toxaemia and prostration. Complications "
+  [["A tenacious gray membrane over the tonsils and pharynx",
+    "Correct. The pharyngeal form is commonest and produces an adherent gray membrane that bleeds "
+    "when disturbed, with mild sore throat, fever, malaise, toxemia and prostration. Complications "
     "come from the exotoxin: myocarditis with arrhythmia and heart block, and neuropathy affecting "
     "cranial nerves first."],
    ["Vesicles on the soft palate and tonsils",
@@ -307,7 +307,7 @@ Q("Diphtheria", IO, "What is the essential treatment for diphtheria beyond antib
     "patients, alongside penicillin or erythromycin for 14 days and isolation until three "
     "consecutive cultures are negative."],
    ["High-dose corticosteroids",
-    "Steroids may be used adjunctively for airway swelling but neither neutralise toxin nor "
+    "Steroids may be used adjunctively for airway swelling but neither neutralize toxin nor "
     "eliminate the organism."],
    ["Intravenous immunoglobulin",
     "Pooled immunoglobulin is used in other conditions such as Behcet syndrome. Diphtheria requires "
@@ -320,13 +320,13 @@ Q("Diphtheria", IO, "How long are contacts of a diphtheria case treated?",
     "Correct. Contacts receive erythromycin 500 milligrams four times daily for seven days to "
     "eradicate carriage, while the case itself is treated for 14 days and isolated until three "
     "consecutive cultures after therapy are negative. Prevention rests on routine childhood "
-    "immunisation with boosters."],
+    "immunization with boosters."],
    ["No treatment is needed for contacts",
     "Untreated carriers continue to transmit the organism, which is why contact treatment is part of "
     "the public health response."],
    ["Antitoxin for all contacts",
     "Antitoxin is reserved for cases with circulating toxin. Contacts need eradication of carriage "
-    "rather than neutralisation of a toxin they do not have."],
+    "rather than neutralization of a toxin they do not have."],
    ["Penicillin for 30 days",
     "A month of treatment is far longer than needed to clear carriage and would not improve on the "
     "stated seven-day course."]], C(113)),

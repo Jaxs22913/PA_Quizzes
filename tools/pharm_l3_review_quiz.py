@@ -12,7 +12,7 @@ to it rather than to the slide order.
      would SEE -- never "which receptor does X bind", which stops one link early.
   2. MECHANISM GIVES YOU THE INDICATION. "What their mechanisms are will inform
      you on what they are used for." Indications are asked as consequences of
-     the mechanism, not as a separate list to memorise.
+     the mechanism, not as a separate list to memorize.
   3. MORE THAN ONE ROUTE TO A GOAL. His own example: slowing a rapid heart rate
      can be a beta blocker, a muscarinic agonist or an acetylcholinesterase
      inhibitor. Three items here have several defensible mechanisms and ask
@@ -35,7 +35,7 @@ ITEMS = [
       why="Blocking muscarinic effects removes secretions, accommodation, and bladder tone &mdash; dry as a bone, blind as a bat, red as a beet.",
       wrong=[("Salivation, tearing and a slow heart rate", "That is what muscarinic ACTIVATION produces, not blockade."),
              ("Fasciculations and muscle weakness", "Those are nicotinic effects, not muscarinic blockade."),
-             ("Bronchospasm and diarrhoea", "Both are muscarinic activation effects, the opposite of blockade.")],
+             ("Bronchospasm and diarrhea", "Both are muscarinic activation effects, the opposite of blockade.")],
       src=(S, 50)),
 
  dict(q="A cholinergic agonist is given. Which effect on the eye should you expect?",
@@ -68,7 +68,7 @@ ITEMS = [
       src=(S, 96)),
  dict(q="Clonidine stimulates alpha-2 receptors centrally. What should you expect as a result?",
       ans="Reduced sympathetic outflow and vasodilation",
-      why="It inhibits the sympathetic vasomotor centres, so less sympathetic traffic reaches the periphery.",
+      why="It inhibits the sympathetic vasomotor centers, so less sympathetic traffic reaches the periphery.",
       wrong=[("Increased sympathetic outflow and vasoconstriction", "That reverses the mechanism."),
              ("Bronchodilation with no vascular effect", "That is a beta-2 agonist effect."),
              ("A direct increase in cardiac contractility", "That is a beta-1 effect.")],
@@ -86,7 +86,7 @@ ITEMS = [
       ans="Bronchodilation", why="The basis of beta-2 agonist use in obstructive airway disease.",
       wrong=[("Bronchoconstriction", "Narrowing the airway is a muscarinic effect."),
              ("Increased bronchial secretions", "Secretion is muscarinic; beta-2 does not drive it."),
-             ("No airway effect", "Beta-2 receptors mediate airway calibre.")],
+             ("No airway effect", "Beta-2 receptors mediate airway caliber.")],
       src=(S, 98)),
 
  dict(q="Which structural description fits the nicotinic receptor?",
@@ -109,23 +109,23 @@ ITEMS = [
  dict(q="Clonidine reduces sympathetic outflow. Besides hypertension, which use follows?",
       ans="Easing withdrawal from opiates, tobacco and benzodiazepines",
       why="Much of withdrawal is sympathetic overactivity, so damping the outflow blunts it.",
-      wrong=[("Treating acute asthma", "Airway calibre is a beta-2 matter."),
+      wrong=[("Treating acute asthma", "Airway caliber is a beta-2 matter."),
              ("Reversing anticholinergic poisoning", "That calls for a centrally acting cholinesterase inhibitor."),
-             ("Inducing anaesthesia for intubation", "That is a neuromuscular blocker's role.")],
+             ("Inducing anesthesia for intubation", "That is a neuromuscular blocker's role.")],
       src=(S, 97)),
 
  dict(q="Scopolamine acts more on the central nervous system than atropine does at usual doses. Which use follows from that?",
       ans="Preventing motion sickness",
       why="Its central action is the point; it also blocks short-term memory and sedates at lower doses.",
       wrong=[("Reversing neuromuscular blockade after surgery", "That needs an acetylcholinesterase inhibitor."),
-             ("Treating asthma", "Airway calibre is not its indication here."),
+             ("Treating asthma", "Airway caliber is not its indication here."),
              ("Managing pheochromocytoma", "That requires alpha blockade.")],
       src=(S, 53)),
 
  dict(q="Phentolamine competitively blocks alpha-1 and alpha-2 receptors. Which use follows?",
       ans="Short-term management of pheochromocytoma",
-      why="The tumour floods the circulation with catecholamines; blocking alpha receptors opposes the vasoconstriction.",
-      wrong=[("Long-term treatment of asthma", "Airway calibre is a beta-2 matter."),
+      why="The tumor floods the circulation with catecholamines; blocking alpha receptors opposes the vasoconstriction.",
+      wrong=[("Long-term treatment of asthma", "Airway caliber is a beta-2 matter."),
              ("Reversing succinylcholine", "There is no pharmacological reversal on that pathway here."),
              ("Raising blood pressure in shock", "Alpha blockade lowers pressure.")],
       src=(S, 110)),
@@ -200,7 +200,7 @@ ITEMS = [
              ("Phenoxybenzamine", "A non-selective alpha antagonist.")],
       src=(S, 97)),
 
- dict(q="Which of these blocks alpha receptors IRREVERSIBLY, so that new receptors must be synthesised?",
+ dict(q="Which of these blocks alpha receptors IRREVERSIBLY, so that new receptors must be synthesized?",
       ans="Phenoxybenzamine", why="Non-selective and non-competitive, which is what makes the blockade irreversible.",
       wrong=[("Phentolamine", "Also non-selective, but competitive and lasting only hours."),
              ("Prazosin", "A selective, competitive alpha-1 blocker."),
@@ -250,10 +250,10 @@ ITEMS = [
 
  dict(q="During which phase of succinylcholine's action does flaccid paralysis appear?",
       ans="Phase two",
-      why="Phase one is the depolarization that produces fasciculations; the receptor then desensitises, and phase two is the paralysis.",
+      why="Phase one is the depolarization that produces fasciculations; the receptor then desensitizes, and phase two is the paralysis.",
       wrong=[("Phase one", "That phase produces fasciculations, not paralysis."),
              ("Before any depolarization occurs", "Depolarization comes first."),
-             ("Only after the drug is metabolised", "The paralysis occurs while the drug is still acting.")],
+             ("Only after the drug is metabolized", "The paralysis occurs while the drug is still acting.")],
       src=(S, 68)),
 
  dict(q="Which adverse effects should a patient starting albuterol be warned about?",

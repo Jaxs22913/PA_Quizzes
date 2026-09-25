@@ -35,7 +35,7 @@ Q("Actinic keratosis",
   "What is the characteristic tactile finding of an actinic keratosis, and what does it imply for examination "
   "technique?",
   [["A sandpaper texture, meaning a lesion may be more apparent by touch than by sight",
-    "Correct. Actinic keratoses are small 0.2 to 0.6 cm flesh-coloured, pink, or slightly hyperpigmented papules with "
+    "Correct. Actinic keratoses are small 0.2 to 0.6 cm flesh-colored, pink, or slightly hyperpigmented papules with "
     "a characteristic sandpaper texture on palpation, and a lesion may be more apparent by touch than by sight. The "
     "skin must therefore be palpated, not only inspected."],
    ["A velvety texture, best appreciated on inspection alone",
@@ -74,7 +74,7 @@ Q("Squamous cell carcinoma",
     "Correct. Cutaneous squamous cell carcinoma is the second most common form of skin cancer, usually following "
     "prolonged cumulative sun exposure, and may arise from an actinic keratosis. The classic presentation is a small "
     "red conical hard nodule that may ulcerate, or a non-healing ulcer, warty nodule, or irregular pink plaque with "
-    "haemorrhagic crust."],
+    "hemorrhagic crust."],
    ["Basal cell carcinoma, the most common skin cancer, arising from intermittent intense exposure",
     "Basal cell carcinoma is the most common form of cancer and is driven by intense intermittent exposure, but its "
     "nodular form is a pearly translucent papule with telangiectasias rather than a hard conical ulcerating nodule."],
@@ -107,7 +107,7 @@ Q("Squamous cell carcinoma",
 Q("Basal cell carcinoma",
   "A 66-year-old woman has a slow-growing 1 cm papule on the nose with a pearly translucent quality and visible "
   "telangiectasias that become more apparent when the skin is stretched. There is central erosion. What subtype is "
-  "this, and what is notable about the tumour overall?",
+  "this, and what is notable about the tumor overall?",
   [["Nodular basal cell carcinoma; basal cell carcinoma is the most common form of cancer",
     "Correct. Nodular basal cell carcinoma is a papule or nodule with central erosion, growing slowly over years to "
     "1 to 2 cm or larger, with a pearly or translucent quality and visible telangiectasias accentuated by stretching "
@@ -127,12 +127,12 @@ Q("Basal cell carcinoma",
 Q("Basal cell carcinoma",
   "When should Mohs micrographic surgery be considered for basal cell carcinoma?",
   [["For high-risk anatomic sites, recurrence, aggressive histology, or where tissue sparing is needed",
-    "Correct. Mohs surgery is indicated for high-risk anatomic sites, recurrent tumours, aggressive histology, or "
+    "Correct. Mohs surgery is indicated for high-risk anatomic sites, recurrent tumors, aggressive histology, or "
     "where tissue-sparing is needed. The overall goal is complete eradication with minimal cosmetic and functional "
     "deformity."],
    ["For every basal cell carcinoma regardless of site or histology",
     "Mohs is resource-intensive and reserved for the situations listed. Using it universally would be neither "
-    "practical nor necessary for low-risk truncal tumours."],
+    "practical nor necessary for low-risk truncal tumors."],
    ["Only after topical therapy has failed twice",
     "Topical imiquimod or fluorouracil is used for selected superficial basal cell carcinoma, with clinical clearance "
     "confirmed afterwards. Mohs selection depends on site and risk rather than on prior topical failure."],
@@ -143,16 +143,16 @@ Q("Basal cell carcinoma",
 
 Q("Malignant melanoma",
   "What do the letters of the ABCDE recognition rule stand for?",
-  [["Asymmetry, border irregularity, colour variegation, diameter, and evolution",
+  [["Asymmetry, border irregularity, color variegation, diameter, and evolution",
     "Correct. Asymmetry means one half does not match the other; border refers to irregular, notched, or poorly "
-    "defined edges; colour describes variegation with brown, red, white, black, or blue within one lesion; diameter "
+    "defined edges; color describes variegation with brown, red, white, black, or blue within one lesion; diameter "
     "and evolution complete the rule."],
    ["Asymmetry, bleeding, crusting, depth, and erosion",
     "Bleeding and ulceration are red flags in their own right, but they are not the letters of this rule, and a "
     "misremembered mnemonic produces systematic blind spots in screening."],
    ["Age, burn history, complexion, dysplasia, and exposure",
     "These resemble risk factors rather than lesion features, and the rule describes the lesion itself."],
-   ["Asymmetry, border, colour, dermoscopy, and excision",
+   ["Asymmetry, border, color, dermoscopy, and excision",
     "Dermoscopy and excision are steps in evaluation and management rather than features of the lesion."]],
   0, 46),
 
@@ -175,11 +175,11 @@ Q("Malignant melanoma",
 Q("Malignant melanoma",
   "What are the recommended re-excision margins for melanoma by thickness?",
   [["0.5 to 1 cm for in situ disease, 1 cm for lesions under 1 mm, and 1 to 2 cm for lesions over 1 mm",
-    "Correct. Definitive local treatment uses a 0.5 to 1 cm margin for in situ disease, 1 cm for tumours under 1 mm, "
-    "and 1 to 2 cm for tumours over 1 mm. Expert-centre referral applies to melanoma deeper than 1 mm or with lymph "
+    "Correct. Definitive local treatment uses a 0.5 to 1 cm margin for in situ disease, 1 cm for tumors under 1 mm, "
+    "and 1 to 2 cm for tumors over 1 mm. Expert-center referral applies to melanoma deeper than 1 mm or with lymph "
     "node involvement."],
    ["1 cm for in situ disease, 2 cm for lesions under 1 mm, and 3 cm for lesions over 1 mm",
-    "Each margin is inflated by roughly a centimetre, which would cause unnecessary tissue loss and reconstruction "
+    "Each margin is inflated by roughly a centimeter, which would cause unnecessary tissue loss and reconstruction "
     "without oncological benefit."],
    ["No re-excision is required after the diagnostic biopsy",
     "Re-excision is the definitive local treatment; the initial biopsy establishes the diagnosis and thickness."],
@@ -231,10 +231,10 @@ Q("Malignant melanoma",
     "Restricting examination to sun-exposed sites would miss acral lentiginous and nail unit melanoma, which occur on "
     "palms, soles, and nail units and are not clearly ultraviolet driven."],
    ["Examination should focus on counting the total number of naevi",
-    "Naevus count contributes to risk assessment, but the self-examination principles are about recognising the "
-    "lesion that differs from its neighbours and that is changing."],
+    "Naevus count contributes to risk assessment, but the self-examination principles are about recognizing the "
+    "lesion that differs from its neighbors and that is changing."],
    ["Only lesions larger than 6 mm need to be reported",
-    "Diameter is one letter of the rule; evolution, asymmetry, border, and colour all warrant assessment regardless "
+    "Diameter is one letter of the rule; evolution, asymmetry, border, and color all warrant assessment regardless "
     "of size."]],
   0, 56),
 
@@ -242,10 +242,10 @@ Q("Kaposi sarcoma",
   "A 34-year-old man with untreated human immunodeficiency virus infection has multiple red-purple macules and "
   "plaques on the trunk. What examination is described as essential, and what is the first management priority?",
   [["Oral examination, because hard palate lesions are common and may be the presenting site; and beginning or "
-    "optimising antiretroviral therapy",
+    "optimizing antiretroviral therapy",
     "Correct. Oral examination is essential when Kaposi sarcoma is suspected, since hard palate lesions are common "
     "and may be the presenting site. For acquired immunodeficiency syndrome-associated disease the first priority is "
-    "to begin or optimise antiretroviral therapy, because immune restoration is the cornerstone of treatment."],
+    "to begin or optimize antiretroviral therapy, because immune restoration is the cornerstone of treatment."],
    ["Oral examination; and beginning systemic chemotherapy before any antiretroviral change",
     "The examination is right but the sequence is wrong. Immune restoration through antiretroviral therapy is the "
     "cornerstone for epidemic disease, with systemic therapy reserved for extensive or visceral involvement."],
@@ -253,7 +253,7 @@ Q("Kaposi sarcoma",
     "Intralesional vincristine or vinblastine is palliative local therapy used in classic disease of older adults "
     "rather than the priority in epidemic disease, and the essential examination is oral."],
    ["Lymph node examination only; and observation",
-    "Observation leaves an immunodeficiency untreated, and the specifically emphasised examination is of the oral "
+    "Observation leaves an immunodeficiency untreated, and the specifically emphasized examination is of the oral "
     "cavity."]],
   0, 66),
 
@@ -280,7 +280,7 @@ Q("Cutaneous T-cell lymphoma",
   "features discriminate this from the inflammatory conditions it resembles?",
   [["Chronicity, treatment resistance, and large or oddly distributed lesions",
     "Correct. Mycosis fungoides may resemble psoriasis, eczema, or tinea, and the discriminators are chronicity, "
-    "treatment resistance, and large or oddly distributed lesions. Early morphology is localised or generalised "
+    "treatment resistance, and large or oddly distributed lesions. Early morphology is localized or generalized "
     "erythematous patches or scaly plaques, usually on the trunk, frequently greater than 5 cm."],
    ["The presence of pruritus",
     "Pruritus is common in cutaneous T-cell lymphoma but is shared with psoriasis, eczema, and tinea, so it separates "
@@ -315,11 +315,11 @@ Q("Nail unit neoplasms",
   "months and is broader proximally than distally. Pigment extends onto the proximal nail fold. What is the concern, "
   "and what is the sign at the nail fold called?",
   [["Nail unit melanoma, with pigment extending onto the periungual skin known as Hutchinson sign",
-    "Correct. New or evolving longitudinal melanonychia in one digit with increasing width, irregular colour or "
+    "Correct. New or evolving longitudinal melanonychia in one digit with increasing width, irregular color or "
     "spacing, and proximal widening or a triangular shape raises nail unit melanoma. Pigment on the periungual skin "
     "is Hutchinson sign, and the thumb and great toe are high-yield sites."],
-   ["Subungual haematoma, which migrates distally with nail growth",
-    "Subungual haematoma is on the melanoma differential and does migrate distally as the nail grows, which is what "
+   ["Subungual hematoma, which migrates distally with nail growth",
+    "Subungual hematoma is on the melanoma differential and does migrate distally as the nail grows, which is what "
     "distinguishes it. A band that is widening proximally over months is behaving in the opposite way."],
    ["Benign longitudinal melanonychia, which typically affects multiple digits",
     "Benign longitudinal melanonychia appears on the differential, and single-digit involvement with proximal "
@@ -330,7 +330,7 @@ Q("Nail unit neoplasms",
   0, 84),
 
 Q("Nail unit neoplasms",
-  "Why is diagnostic delay a recurring theme in nail unit melanoma, and where does the tumour usually arise?",
+  "Why is diagnostic delay a recurring theme in nail unit melanoma, and where does the tumor usually arise?",
   [["It is rare and not clearly ultraviolet driven so may occur in any skin tone, and it arises most often in the "
     "matrix",
     "Correct. Nail unit melanoma is a rare acral melanoma arising most often in the matrix. It is not clearly "
@@ -339,11 +339,11 @@ Q("Nail unit neoplasms",
     "Assuming it is a sun-driven disease of fair skin is exactly the reasoning that produces delay in darker-skinned "
     "patients, and the matrix rather than the bed is the usual origin."],
    ["It always presents with pain, which patients ignore",
-    "Pain and cold sensitivity characterise glomus tumour. Nail unit melanoma commonly presents as painless pigment "
+    "Pain and cold sensitivity characterize glomus tumor. Nail unit melanoma commonly presents as painless pigment "
     "change."],
    ["It arises in the periungual skin and is easily seen",
-    "Matrix tumours cause longitudinal plate changes, and the origin beneath the proximal fold is part of why they "
-    "are recognised late."]],
+    "Matrix tumors cause longitudinal plate changes, and the origin beneath the proximal fold is part of why they "
+    "are recognized late."]],
   0, 79),
 
 Q("Nail unit neoplasms",
@@ -363,15 +363,15 @@ Q("Nail unit neoplasms",
 
 Q("Clinical approach",
   "What is the recommended first step when evaluating any premalignant or malignant cutaneous lesion?",
-  [["Characterise the lesion systematically before assigning a diagnosis",
-    "Correct. The foundational approach is to describe before naming: characterise each lesion systematically by "
-    "primary lesion type, colour, surface texture, border definition, size, distribution, palpability, ulceration, "
+  [["Characterize the lesion systematically before assigning a diagnosis",
+    "Correct. The foundational approach is to describe before naming: characterize each lesion systematically by "
+    "primary lesion type, color, surface texture, border definition, size, distribution, palpability, ulceration, "
     "and bleeding before assigning a diagnosis."],
    ["Assign the most likely diagnosis and then look for supporting features",
     "Naming first and confirming afterwards is the reasoning pattern that produces anchoring, which is why the "
     "sequence is deliberately reversed."],
    ["Photograph the lesion and review it at the next visit",
-    "Serial photography has a role in surveillance but does not substitute for systematic characterisation at the "
+    "Serial photography has a role in surveillance but does not substitute for systematic characterization at the "
     "first encounter."],
    ["Refer every pigmented lesion to dermatology without assessment",
     "Referral criteria exist for specific findings, and describing the lesion is what determines whether they are "
@@ -401,13 +401,13 @@ Q("Basal cell carcinoma",
     "for 6 to 10 weeks or fluorouracil twice daily for up to 12 weeks — and clinical clearance must be confirmed "
     "after treatment."],
    ["All nodular basal cell carcinomas, with no follow-up required",
-    "Nodular tumours are not the selected superficial subset, and confirming clearance is specifically required "
+    "Nodular tumors are not the selected superficial subset, and confirming clearance is specifically required "
     "whatever is treated topically."],
-   ["High-risk facial tumours, as an alternative to Mohs surgery",
+   ["High-risk facial tumors, as an alternative to Mohs surgery",
     "High-risk anatomic sites are exactly where Mohs surgery is indicated, because tissue sparing and margin control "
     "matter most there."],
    ["Any basal cell carcinoma the patient prefers not to have excised",
-    "Patient preference matters but does not make topical therapy appropriate for a tumour whose subtype and site "
+    "Patient preference matters but does not make topical therapy appropriate for a tumor whose subtype and site "
     "call for surgery."]],
   0, 37, IO_11),
 
@@ -439,6 +439,6 @@ Q("Kaposi sarcoma",
     "Human immunodeficiency virus creates the immunodeficiency that permits epidemic disease, but human herpesvirus 8 "
     "is the causative agent, which is why the classic and endemic forms occur without it."],
    ["Ultraviolet radiation damaging dermal fibroblasts",
-    "Ultraviolet damage drives keratinocyte carcinomas and melanoma rather than this vascular tumour."]],
+    "Ultraviolet damage drives keratinocyte carcinomas and melanoma rather than this vascular tumor."]],
   0, 63),
 ]

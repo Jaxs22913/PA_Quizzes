@@ -64,12 +64,12 @@ POOL_C = [
    c=0, cite=c(5)),
 
  dict(topic="Acute angle closure", io=IO, lead="education",
-   q="A 70-year-old woman with a history of anterior uveitis is prescribed a nebulised bronchodilator. Which risk should she be warned about?",
+   q="A 70-year-old woman with a history of anterior uveitis is prescribed a nebulized bronchodilator. Which risk should she be warned about?",
    opts=[
      ["Acute angle-closure glaucoma", "Correct. Nebulized bronchodilators and systemic anticholinergics are risk factors for acute angle-closure glaucoma."],
      ["Retinal detachment", "Its risks are myopia, trauma, cataract surgery and age."],
      ["Optic neuritis", "That is inflammatory and linked to demyelination."],
-     ["Central retinal artery occlusion", "That is embolic and not linked to nebulisers."]],
+     ["Central retinal artery occlusion", "That is embolic and not linked to nebulizers."]],
    c=0, cite="12. Acute Vision Loss current - Jaquith.pptx, Slide 14"),
 
  dict(topic="Pharmacologic mydriasis", io=IO, lead="education",
@@ -95,7 +95,7 @@ POOL_C = [
    opts=[
      ["Tilting compensates for the weak muscle", "Correct. She tilts away from the affected side to reduce the vertical deviation."],
      ["Tilting reduces intraocular pressure", "Head position does not treat pressure here."],
-     ["It is an unrelated habit", "The tilt is a recognised compensation."],
+     ["It is an unrelated habit", "The tilt is a recognized compensation."],
      ["It improves peripheral vision", "The problem is vertical alignment, not field."]],
    c=0, cite=c(43)),
 
@@ -111,7 +111,7 @@ POOL_C = [
  dict(topic="Sixth nerve palsy", io=IO, lead="test",
    q="A 57-year-old man has an isolated atraumatic sixth nerve palsy and no known diabetes. Besides imaging, which test is added?",
    opts=[
-     ["Haemoglobin A1C", "Correct, if he has risk factors and no established diagnosis."],
+     ["Hemoglobin A1C", "Correct, if he has risk factors and no established diagnosis."],
      ["Erythrocyte sedimentation rate", "That is for suspected giant cell arteritis."],
      ["Carotid Doppler", "That is for embolic transient visual loss."],
      ["Lumbar puncture", "That is for suspected raised intracranial pressure."]],
@@ -122,7 +122,7 @@ POOL_C = [
    opts=[
      ["Sensory ataxia", "Correct, from tabes dorsalis with posterior column involvement."],
      ["Jaw claudication", "That belongs to giant cell arteritis."],
-     ["Coloured halos around lights", "That is acute angle-closure glaucoma."],
+     ["Colored halos around lights", "That is acute angle-closure glaucoma."],
      ["Painful eye movement", "That is optic neuritis."]],
    c=0, cite=c(32)),
 

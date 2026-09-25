@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Partition the CMS Lecture 1 pool into two 30-question sets.
 
-Optimises three things at once, which is why the pool is written oversized:
+Optimizes three things at once, which is why the pool is written oversized:
   - answer position balance (each of A-D near 25%)
   - instructional-objective coverage in BOTH sets
   - length bias (picking the longest option must not beat guessing)

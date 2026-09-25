@@ -29,9 +29,9 @@ INTRO = ("A second set of five cumulative forms, <b>written from scratch</b> rat
          "from the dermatology lecture. "
          "Each form draws from all three lectures in proportion, so all five are genuine cumulative "
          "rehearsals. Every question cites its slide, every wrong answer explains what it actually "
-         "belongs to, and <b>no question turns on a drug dose being memorised</b> where the deck "
+         "belongs to, and <b>no question turns on a drug dose being memorized</b> where the deck "
          "does not state one. Answer positions were assigned by rotation after writing, so no "
-         "position is favoured.")
+         "position is favored.")
 
 guard([(os.path.join(OUT, "pharm-exam-1-master-exam-form-%s.html" % n.lower()), S[n])
        for n in "FGHIJ"], force="--force" in sys.argv)

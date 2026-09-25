@@ -35,7 +35,7 @@ POOL_A = [
    opts=[
      ["MCR-1, the receptor for alpha-melanocyte-stimulating hormone, which activates melanogenesis through cyclic adenosine monophosphate",
       "Correct — reduced pathway activity promotes pheomelanin, the yellow-red sulfur-containing pigment."],
-     ["TP53, a tumour suppressor gene whose mutation is the critical molecular event driving keratinocytic dysplasia in the skin",
+     ["TP53, a tumor suppressor gene whose mutation is the critical molecular event driving keratinocytic dysplasia in the skin",
       "TP53 mutation drives the keratinocyte dysplasia of actinic keratosis; freckles are linked to MCR-1, the receptor for alpha-melanocyte-stimulating hormone."],
      ["BRAF, whose activating mutation drives melanocyte proliferation in acquired melanocytic naevi",
       "BRAF mutation drives acquired melanocytic naevi; freckles arise from a receptor variant that shifts melanin production towards the lighter pigment."],
@@ -99,7 +99,7 @@ POOL_A = [
    q="Which topical depigmenting agents are named for ephelides?",
    opts=[
      ["Hydroquinone, retinoids, alpha-hydroxy acids and botanicals",
-      "Correct, though sun protection and counselling remain the priority."],
+      "Correct, though sun protection and counseling remain the priority."],
      ["Tacrolimus, pimecrolimus and a mid-potency topical corticosteroid",
       "Those are the topical therapies for vitiligo."],
      ["Fluorouracil, imiquimod, tirbanibulin and diclofenac gel",
@@ -112,7 +112,7 @@ POOL_A = [
    q="What is the age distribution of lentigines, and how do they behave with sun exposure?",
    opts=[
      ["A bimodal distribution in early childhood or later in life, and they do not fade when sun exposure stops",
-      "Correct — that behaviour is what separates them from ephelides."],
+      "Correct — that behavior is what separates them from ephelides."],
      ["A single peak in early childhood, and they fade completely when sun exposure ceases each winter",
       "Fading with cessation of exposure describes ephelides."],
      ["A single peak in the thirties, after which the number of lesions declines steadily with age",
@@ -130,7 +130,7 @@ POOL_A = [
       "Lentigo simplex specifically lacks those mutations."],
      ["T-cell mediated destruction of melanocytes leading to loss of pigment in the affected area",
       "That is the mechanism of vitiligo."],
-     ["Ultraviolet-induced mutation of a tumour suppressor gene producing keratinocytic dysplasia",
+     ["Ultraviolet-induced mutation of a tumor suppressor gene producing keratinocytic dysplasia",
       "That is the mechanism of actinic keratosis."]],
    c=0, cite=c(9)),
 
@@ -139,7 +139,7 @@ POOL_A = [
    opts=[
      ["Well-circumscribed round to oval uniformly black or brown macules under 5 mm, on skin, conjunctiva and mucocutaneous surfaces",
       "Correct — they occur on both sun-exposed and sun-protected areas."],
-     ["Well-defined macules with irregular borders that coalesce at sites of severe sunburn, from under 1 mm to several centimetres",
+     ["Well-defined macules with irregular borders that coalesce at sites of severe sunburn, from under 1 mm to several centimeters",
       "That describes solar lentigo rather than lentigo simplex."],
      ["Small light brown symmetric macules 3 to 5 mm across, appearing on sun-exposed skin in fair individuals",
       "That describes ephelides."],
@@ -150,7 +150,7 @@ POOL_A = [
  dict(topic="Lentigines", io=IOA,
    q="When should an inherited disorder be considered in a patient with lentigines?",
    opts=[
-     ["When a partial or generalised lentigo is present",
+     ["When a partial or generalized lentigo is present",
       "Correct — LAMB and myxoma syndrome are the named examples of inherited associations."],
      ["When a single lesion is present on a sun-exposed site",
       "A solitary sun-exposed lesion does not raise that question."],
@@ -202,9 +202,9 @@ POOL_A = [
  dict(topic="Solar lentigo", io=IOA,
    q="Describe the appearance and natural history of solar lentigines.",
    opts=[
-     ["Well-defined with irregular borders, coalescing at sites of severe sunburn, from under 1 mm to several centimetres, light to dark brown",
+     ["Well-defined with irregular borders, coalescing at sites of severe sunburn, from under 1 mm to several centimeters, light to dark brown",
       "Correct — over time they enlarge, darken, stay stable, regress, or progress into lichenoid keratoses."],
-     ["Well-circumscribed with regular round or oval borders, uniformly black or brown in colour, and always under 5 mm in diameter",
+     ["Well-circumscribed with regular round or oval borders, uniformly black or brown in color, and always under 5 mm in diameter",
       "That describes lentigo simplex."],
      ["Small light brown symmetric macules that fade in winter and regress in later life",
       "That describes ephelides."],
@@ -319,7 +319,7 @@ POOL_A = [
  dict(topic="Vitiligo", io=IOA,
    q="How does segmental vitiligo differ from non-segmental vitiligo?",
    opts=[
-     ["Segmental lesions are unilateral, do not cross the midline and are organised in block-like patterns",
+     ["Segmental lesions are unilateral, do not cross the midline and are organized in block-like patterns",
       "Correct — non-segmental disease is well defined and symmetrical with a preference for face, genitals and acral areas."],
      ["Segmental lesions are bilateral and symmetrical with a preference for periorificial facial skin",
       "That describes non-segmental disease."],

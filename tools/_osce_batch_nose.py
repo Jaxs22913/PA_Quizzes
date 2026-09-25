@@ -6,7 +6,7 @@ BATCH = {
   "&ldquo;My face aches and my nose is blocked &mdash; it started as a cold about four days "
   "ago.&rdquo;",
   "<b>Palpate and percuss over the frontal and maxillary sinuses.</b> Anterior rhinoscopy for "
-  "mucosal oedema and discharge. Transillumination. <b>Examine the eyes and mental state to exclude "
+  "mucosal edema and discharge. Transillumination. <b>Examine the eyes and mental state to exclude "
   "the complications</b> &mdash; that is the part that changes management.",
   [("Viral upper respiratory infection", "Under 10 days, improving, without the bacterial features"),
    ("Allergic rhinitis", "Itch and sneezing with clear discharge and pale boggy turbinates"),
@@ -33,22 +33,22 @@ BATCH = {
 "Chronic bacterial sinusitis": E(
   "&ldquo;My nose has been blocked and running for months and I&rsquo;ve lost my sense of "
   "smell.&rdquo;",
-  "Anterior rhinoscopy for polyps, oedema and purulence. <b>Assess smell.</b> Palpate the sinuses. "
+  "Anterior rhinoscopy for polyps, edema and purulence. <b>Assess smell.</b> Palpate the sinuses. "
   "Look for the underlying cause: allergy, a deviated septum, dental disease, immune deficiency.",
   [("Nasal polyps", "Pale, insensate, mobile grape-like masses; often coexist"),
    ("Allergic rhinitis", "Itch and sneezing dominate; symptoms fluctuate with exposure"),
    ("Sinonasal neoplasm", "Unilateral obstruction with bleeding or facial numbness")],
   "<b>Symptoms lasting 12 weeks or more</b> PLUS objective evidence: <b>nasal endoscopy</b> &rarr; "
-  "purulence, oedema or polyps in the middle meatus; <b>computed tomography of the sinuses</b> "
+  "purulence, edema or polyps in the middle meatus; <b>computed tomography of the sinuses</b> "
   "&rarr; mucosal thickening and sinus opacification. Symptoms alone are not enough.",
   "A normal endoscopy and normal scan exclude it despite the symptoms; unilateral disease with "
-  "bleeding demands biopsy to exclude tumour; allergy testing identifies a treatable driver."),
+  "bleeding demands biopsy to exclude tumor; allergy testing identifies a treatable driver."),
 
 "Chronic fungal sinusitis": E(
   "&ldquo;One side of my nose has been blocked for ages and the treatments haven&rsquo;t "
   "worked.&rdquo;",
   "Anterior rhinoscopy and endoscopy, particularly for <b>unilateral disease</b>. <b>Assess immune "
-  "status and glycaemic control</b> &mdash; that determines whether this is the indolent form or "
+  "status and glycemic control</b> &mdash; that determines whether this is the indolent form or "
   "the invasive one. In the immunocompromised, <b>look for black necrotic mucosa</b>, which is an "
   "emergency.",
   [("Chronic bacterial sinusitis", "Usually bilateral and responds to antibiotics"),
@@ -89,7 +89,7 @@ BATCH = {
   "Negative vasculitis serology with normal urinalysis excludes granulomatosis; a benign biopsy "
   "excludes malignancy; a clear surgical history explains a stable perforation."),
 
-"Septal haematoma": E(
+"Septal hematoma": E(
   "&ldquo;I broke my nose and now I can&rsquo;t breathe through either side.&rdquo;",
   "<b>Anterior rhinoscopy in EVERY nasal trauma</b> &mdash; this is the reason the examination is "
   "mandatory. Look for a <b>bluish, boggy swelling of the septum, usually bilateral</b>. "
@@ -112,12 +112,12 @@ BATCH = {
   "circulation and look in the throat for a posterior source.",
   [("Posterior epistaxis", "No visible anterior point; blood running down the pharynx"),
    ("Bleeding disorder or anticoagulation", "Recurrent, bilateral, with bruising elsewhere"),
-   ("Sinonasal or nasopharyngeal tumour", "Recurrent unilateral bleeding with obstruction or a neck mass")],
+   ("Sinonasal or nasopharyngeal tumor", "Recurrent unilateral bleeding with obstruction or a neck mass")],
   "<b>Anterior rhinoscopy</b> &rarr; a visible anterior septal bleeding point that stops with "
   "pressure. That IS the confirmation &mdash; 90% of nosebleeds are anterior.",
   "Bleeding continuing with no visible point, and blood in the pharynx, means a posterior source; "
   "<b>full blood count and coagulation studies</b> &rarr; thrombocytopenia or a raised "
-  "international normalised ratio if recurrent; endoscopy excludes a tumour."),
+  "international normalized ratio if recurrent; endoscopy excludes a tumor."),
 
 "Nasal foreign body": E(
   "A parent says &ldquo;she&rsquo;s had a smelly discharge from one side of her nose for a "
@@ -129,7 +129,7 @@ BATCH = {
   [("Unilateral sinusitis", "Discharge without an object; far less common at this age"),
    ("Choanal atresia", "Congenital, present from birth, with clear rather than foul discharge"),
    ("Rhinolith", "A calcified mass around a long-retained object")],
-  "<b>Anterior rhinoscopy</b> &rarr; direct visualisation of the object. <b>Imaging</b> only if a "
+  "<b>Anterior rhinoscopy</b> &rarr; direct visualization of the object. <b>Imaging</b> only if a "
   "battery or magnet is suspected and not seen &rarr; the object with its characteristic outline.",
   "A clear nasal cavity on both sides excludes it; bilateral clear discharge suggests rhinitis; "
   "resolution of the discharge after removal confirms the cause."),
@@ -137,34 +137,34 @@ BATCH = {
 "Nasal fracture": E(
   "&ldquo;I took a blow to the nose, it bled, and now it looks crooked.&rdquo;",
   "Inspect for deformity from the front and from ABOVE. Palpate for crepitus and step-off. "
-  "<b>Anterior rhinoscopy for a septal haematoma &mdash; mandatory.</b> Test airflow each side. "
-  "<b>Check for clear rhinorrhoea, which could be cerebrospinal fluid.</b> Examine eye movements "
+  "<b>Anterior rhinoscopy for a septal hematoma &mdash; mandatory.</b> Test airflow each side. "
+  "<b>Check for clear rhinorrhea, which could be cerebrospinal fluid.</b> Examine eye movements "
   "and vision.",
-  [("Septal haematoma", "The complication that must be found now, not at follow-up"),
+  [("Septal hematoma", "The complication that must be found now, not at follow-up"),
    ("Orbital floor fracture", "Diplopia, restricted upgaze and infraorbital numbness"),
    ("Soft tissue injury alone", "Swelling and bruising with no bony step or deformity")],
   "<b>Clinical</b> &rarr; deformity, crepitus and epistaxis. <b>Plain films are NOT routinely "
   "useful.</b> <b>Computed tomography</b> if other facial fractures are suspected &rarr; the "
   "fracture pattern and orbital involvement.",
-  "Absence of a septal swelling on rhinoscopy excludes haematoma; full painless eye movements "
-  "exclude orbital entrapment; testing clear rhinorrhoea for beta-2 transferrin excludes a "
+  "Absence of a septal swelling on rhinoscopy excludes hematoma; full painless eye movements "
+  "exclude orbital entrapment; testing clear rhinorrhea for beta-2 transferrin excludes a "
   "cerebrospinal fluid leak."),
 
 "Nasal polyps": E(
   "&ldquo;Both sides of my nose are blocked, it&rsquo;s been going on for months, and I "
   "can&rsquo;t smell anything.&rdquo;",
-  "Anterior rhinoscopy for <b>pale, grey, grape-like, MOBILE and INSENSATE masses</b> &mdash; "
+  "Anterior rhinoscopy for <b>pale, gray, grape-like, MOBILE and INSENSATE masses</b> &mdash; "
   "touching them does not hurt, which distinguishes them from turbinates. Assess smell. <b>Ask "
   "about asthma and aspirin sensitivity</b>. <b>In a child, think cystic fibrosis; unilateral "
   "polyps in an adult mean imaging and biopsy.</b>",
   [("Hypertrophied turbinate", "Pink, sensitive to touch, and it shrinks with a decongestant"),
-   ("Inverted papilloma", "Unilateral, may harbour carcinoma &mdash; the reason unilateral is never assumed benign"),
+   ("Inverted papilloma", "Unilateral, may harbor carcinoma &mdash; the reason unilateral is never assumed benign"),
    ("Sinonasal malignancy", "Unilateral with bleeding, pain or facial numbness")],
   "<b>Endoscopy</b> &rarr; polyps in the middle meatus. <b>Computed tomography</b> &rarr; polypoid "
   "soft tissue opacifying the sinuses. <b>Sweat chloride test in a child</b> &rarr; raised in "
   "cystic fibrosis. <b>Biopsy of a unilateral polyp</b> &rarr; excludes papilloma and carcinoma.",
   "A pink tender structure that shrinks with a decongestant is a turbinate; benign histology "
-  "excludes malignancy; bone destruction on imaging redirects to tumour."),
+  "excludes malignancy; bone destruction on imaging redirects to tumor."),
 
 "Allergic rhinitis": E(
   "&ldquo;My nose runs and itches, I sneeze in fits, and my eyes water &mdash; it&rsquo;s worst in "
@@ -173,10 +173,10 @@ BATCH = {
   "<b>allergic salute crease, allergic shiners and Dennie-Morgan lines</b>. Examine the "
   "conjunctivae. Check for polyps and assess for asthma and eczema.",
   [("Viral rhinitis", "Days rather than a season, with sore throat and no itch"),
-   ("Vasomotor rhinitis", "Triggered by temperature, odours and food; no itch or sneezing fits"),
+   ("Vasomotor rhinitis", "Triggered by temperature, odors and food; no itch or sneezing fits"),
    ("Nasal polyps", "Obstruction and anosmia with visible pale masses")],
-  "<b>Clinical</b> &rarr; itch, sneezing, clear rhinorrhoea and boggy pale turbinates with a "
-  "trigger pattern. <b>Skin prick testing or specific immunoglobulin E</b> &rarr; sensitisation to "
+  "<b>Clinical</b> &rarr; itch, sneezing, clear rhinorrhea and boggy pale turbinates with a "
+  "trigger pattern. <b>Skin prick testing or specific immunoglobulin E</b> &rarr; sensitization to "
   "the suspected allergen, which guides avoidance and immunotherapy.",
   "Purulent discharge with facial pain redirects to sinusitis; negative allergy testing with "
   "trigger-related symptoms suggests vasomotor rhinitis; a short self-limiting course is viral."),

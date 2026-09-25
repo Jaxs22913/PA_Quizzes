@@ -21,14 +21,14 @@ that no longer fits the narrowed question.
 SPLIT = {
 
 ("l10",13): {"lead": "What is the first management priority?",
- "opts": ["Start or optimise antiretroviral therapy","Start systemic chemotherapy first",
+ "opts": ["Start or optimize antiretroviral therapy","Start systemic chemotherapy first",
           "Intralesional vincristine","Observation alone","Topical alitretinoin"],
  "expl": {4: "Topical therapy has a role in limited cutaneous disease but does nothing for the immunodeficiency driving it. Immune restoration through antiretroviral therapy is the cornerstone of treatment for epidemic Kaposi sarcoma."}},
 
-("l10",18): {"lead": "Where does the tumour most often arise?",
+("l10",18): {"lead": "Where does the tumor most often arise?",
  "opts": ["The matrix","The nail bed","The periungual skin","The hyponychium","The proximal nail fold"],
- "expl": {3: "The hyponychium lies under the free edge of the nail and is not the usual origin. Matrix tumours are what produce longitudinal plate changes such as melanonychia.",
-          4: "The proximal nail fold overlies the matrix but is not itself the site of origin, which is part of why these tumours are recognised late."}},
+ "expl": {3: "The hyponychium lies under the free edge of the nail and is not the usual origin. Matrix tumors are what produce longitudinal plate changes such as melanonychia.",
+          4: "The proximal nail fold overlies the matrix but is not itself the site of origin, which is part of why these tumors are recognized late."}},
 
 ("l2",57): {"lead": "What is the most important clinical consideration for this agent?",
  "opts": ["Caution over nephrotoxicity","Risk of cutaneous atrophy","Irritation and photosensitivity",
@@ -38,13 +38,13 @@ SPLIT = {
  "opts": ["Urticarial vasculitis","Ordinary chronic urticaria","Hereditary angioedema","Mastocytosis","Anaphylaxis"]},
 
 ("l3",18): {"lead": "What is the appropriate first-line treatment?",
- "opts": ["Topical aluminium chloride","Botulinum toxin A injections","Endocrine investigation",
+ "opts": ["Topical aluminum chloride","Botulinum toxin A injections","Endocrine investigation",
           "Topical glycopyrronium","Psychological therapy alone"]},
 
 ("l3",33): {"lead": "What course should be expected?",
  "opts": ["Benign and self-limiting","Progression to malignancy","Lifelong immunosuppression is required",
           "Invariable recurrence after clearing","Resolution within days"],
- "expl": {4: "Granuloma annulare is self-limiting but resolves over months to years rather than days, and localised disease is often simply observed."}},
+ "expl": {4: "Granuloma annulare is self-limiting but resolves over months to years rather than days, and localized disease is often simply observed."}},
 
 ("l3",40): {"lead": "What course should be expected?",
  "opts": ["Resolution in 3 to 5 days with desquamation","Resolution in 1 to 2 weeks with infection risk",
@@ -55,7 +55,7 @@ SPLIT = {
  "opts": ["A carbuncle","A furuncle","A cutaneous abscess","Hidradenitis suppurativa","Folliculitis"],
  "expl": {4: "Folliculitis is superficial inflammation of the follicle producing small pustules pierced by a central hair, not a deep indurated plaque with several draining openings and systemic symptoms."}},
 
-("l4",13): {"lead": "What is first-line treatment for localised disease?",
+("l4",13): {"lead": "What is first-line treatment for localized disease?",
  "opts": ["Topical erythromycin","Oral erythromycin","Topical terbinafine","Topical miconazole","Topical mupirocin"]},
 
 ("l4",25): {"lead": "What is the most common pathogen?",
@@ -114,7 +114,7 @@ SPLIT = {
  "expl": {4: "The Gulf Coast is not the region associated with this spider. Hobo spiders predominate in the Pacific Northwest, where they are frequently mistaken for brown recluses."}},
 
 ("l8",21): {"lead": "What stage is this?",
- "opts": ["Stage 1, early localised infection","Stage 2, early disseminated infection",
+ "opts": ["Stage 1, early localized infection","Stage 2, early disseminated infection",
           "Stage 3, late persistent infection","Cellulitis at the bite site","A tick-bite hypersensitivity reaction"],
  "expl": {4: "A local hypersensitivity reaction to a bite appears within hours and stays small, whereas erythema migrans expands over days to more than 5 cm with central clearing."}},
 

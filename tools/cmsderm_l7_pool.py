@@ -17,7 +17,7 @@ Q("Callus",
   "reproduces the pain, whereas squeezing it from the sides does not. The skin lines run through the lesion, and "
   "paring it reveals a central cone of hard keratin. What is the diagnosis?",
   [["Clavus, a corn with a central hyperkeratotic core",
-    "Correct. A clavus results from pressure on a localised area, creating a cone-shaped central core of hard "
+    "Correct. A clavus results from pressure on a localized area, creating a cone-shaped central core of hard "
     "keratin. Pain occurs on direct downward pressure, and the skin lines run through the lesion."],
    ["Callus",
     "A callus follows a broad area of pressure, producing diffuse thickening that is larger than a corn, irregular in "
@@ -25,7 +25,7 @@ Q("Callus",
     "tenderness."],
    ["Verruca vulgaris",
     "A wart interrupts the skin lines rather than allowing them to run through, may hurt with side pressure rather "
-    "than downward pressure, and shows a blackened centre from thrombosed capillaries. All three features point away "
+    "than downward pressure, and shows a blackened center from thrombosed capillaries. All three features point away "
     "from it here."],
    ["Epidermoid cyst",
     "An epidermoid cyst is a moveable round protruding mass with a central punctum that may drain foul-smelling "
@@ -51,9 +51,9 @@ Q("Wound healing",
   "What are the four phases of wound healing, and what accounts for the improving tensile strength of a maturing "
   "scar?",
   [["Hemostasis, inflammation, proliferation, and remodeling, with tensile strength improving through progressive "
-    "cross-linking of collagen fibres",
+    "cross-linking of collagen fibers",
     "Correct. The four phases are hemostasis, inflammation, proliferation, and remodeling. As the scar matures its "
-    "tensile strength improves because of progressive cross-linking of collagen fibres."],
+    "tensile strength improves because of progressive cross-linking of collagen fibers."],
    ["Inflammation, proliferation, remodeling, and contracture, with strength from new elastin deposition",
     "Hemostasis is the first phase and contracture is not one of the four, and it is collagen cross-linking rather "
     "than elastin that confers strength."],
@@ -74,7 +74,7 @@ Q("Keloid",
     "years, and shows no regression with a tendency to recur. A hypertrophic scar develops rapidly within four weeks, "
     "remains within the wound margins, and flattens with time."],
    ["It developed rapidly within four weeks of the injury",
-    "Rapid development within four weeks characterises a hypertrophic scar. The keloid develops slowly and keeps "
+    "Rapid development within four weeks characterizes a hypertrophic scar. The keloid develops slowly and keeps "
     "enlarging over months to years."],
    ["It remains confined within the original wound margins",
     "Staying within the wound margins is the hypertrophic scar pattern. Extension beyond them is the defining keloid "
@@ -131,15 +131,15 @@ Q("Cutaneous horn",
     "The horn is composed of keratin. It is the lesion at its base that carries the diagnosis, so sampling only the "
     "projection risks missing an underlying malignancy."],
    ["A conical shape reliably indicates a benign process",
-    "Shape does not indicate behaviour. That is precisely why the underlying lesion must be identified rather than "
+    "Shape does not indicate behavior. That is precisely why the underlying lesion must be identified rather than "
     "inferred."],
    ["Cryotherapy should be applied without histological assessment",
     "Destroying the lesion without knowing what lies beneath forfeits the opportunity to diagnose an underlying "
-    "malignancy, which frequently requires excision according to standard practice for the tumour type."]],
+    "malignancy, which frequently requires excision according to standard practice for the tumor type."]],
   0, 27),
 
 Q("Acrochordon",
-  "A 52-year-old woman with obesity has multiple soft, skin-coloured pedunculated papules on the neck and in the "
+  "A 52-year-old woman with obesity has multiple soft, skin-colored pedunculated papules on the neck and in the "
   "axillae, ranging from 2 to 6 mm. She asks what they are. What education is appropriate?",
   [["They are harmless growths of normal skin that form where skin rubs together, and they are very common with age",
     "Correct. Skin tags are fibroepithelial pedunculated papillomas that are harmless growths of normal skin, forming "
@@ -149,7 +149,7 @@ Q("Acrochordon",
     "Acrochordons are benign. Describing them as premalignant would prompt unnecessary procedures and considerable "
     "avoidable anxiety."],
    ["They are viral warts spread by skin contact",
-    "Verruca vulgaris is caused by human papillomavirus and interrupts the skin lines with a rough greyish surface. "
+    "Verruca vulgaris is caused by human papillomavirus and interrupts the skin lines with a rough grayish surface. "
     "Skin tags are soft pedunculated growths of normal skin."],
    ["They indicate an underlying internal malignancy",
     "It is malignant acanthosis nigricans that carries a paraneoplastic association. Skin tags are a friction-related "
@@ -196,8 +196,8 @@ Q("Pilonidal cyst",
   [["Obesity, local trauma or irritation, sedentary lifestyle, increased hair density in the natal cleft, and family "
     "history, with a male to female ratio of about 3 to 1",
     "Correct. Those are the listed risk factors, and the male to female ratio is 3 to 1."],
-   ["Female sex, pregnancy, and oestrogen excess",
-    "Oestrogen excess states are associated with nevus araneus, the spider angioma, which resolves after delivery or "
+   ["Female sex, pregnancy, and estrogen excess",
+    "Estrogen excess states are associated with nevus araneus, the spider angioma, which resolves after delivery or "
     "cessation of hormonal contraception."],
    ["Prematurity, low birth weight, and multiple gestation",
     "Those are the birth history factors associated with infantile hemangiomas."],
@@ -206,7 +206,7 @@ Q("Pilonidal cyst",
   0, 39),
 
 Q("Dermatofibroma",
-  "A 35-year-old woman has a firm 8 mm nodule on her lower leg with a brown halo and a slightly raised centre. When "
+  "A 35-year-old woman has a firm 8 mm nodule on her lower leg with a brown halo and a slightly raised center. When "
   "the skin on either side is squeezed together, the lesion dimples downward. What is this sign, and what does "
   "dermoscopy typically show?",
   [["The dimple sign, with dermoscopy showing a peripheral pigment network and a central white area",
@@ -225,9 +225,9 @@ Q("Dermatofibroma",
 
 Q("Dermatofibroma",
   "What is notable about the symptom profile of a dermatofibroma?",
-  [["It is usually asymptomatic but is the most common painful skin tumour when it does cause symptoms",
+  [["It is usually asymptomatic but is the most common painful skin tumor when it does cause symptoms",
     "Correct. Dermatofibroma is usually asymptomatic, sometimes with a history of insect bite, and when symptomatic "
-    "may cause slight pruritus or pain — it is described as the most common painful skin tumour."],
+    "may cause slight pruritus or pain — it is described as the most common painful skin tumor."],
    ["It is invariably painful and never asymptomatic",
     "Most are asymptomatic. Requiring pain for the diagnosis would exclude the majority of lesions."],
    ["It is always pruritic and never painful",
@@ -243,10 +243,10 @@ Q("Keratoacanthoma",
   "only reliable way to make the diagnosis, and why does it matter?",
   [["Biopsy, because the lesion cannot reliably be distinguished from squamous cell carcinoma clinically",
     "Correct. Biopsy is the only reliable method to make the diagnosis. Squamous cell carcinoma heads the "
-    "differential, and the standard of care is to excise or destroy the tumour precisely because of possible "
+    "differential, and the standard of care is to excise or destroy the tumor precisely because of possible "
     "malignancy."],
    ["Observation for 3 to 6 months, since spontaneous regression confirms the diagnosis",
-    "Keratoacanthoma does demonstrate a triphasic pattern of rapid growth within 6 to 8 weeks, stabilisation, and "
+    "Keratoacanthoma does demonstrate a triphasic pattern of rapid growth within 6 to 8 weeks, stabilization, and "
     "regression after 3 to 6 months, which is why this is tempting. But waiting for regression risks observing a "
     "squamous cell carcinoma instead."],
    ["Dermoscopy, which distinguishes it from squamous cell carcinoma",
@@ -259,8 +259,8 @@ Q("Keratoacanthoma",
 
 Q("Keratoacanthoma",
   "What is the standard of care for a keratoacanthoma, and what margin is used for elliptical excision?",
-  [["Excision or destruction of the tumour, with elliptical excision using 5 mm margins",
-    "Correct. The standard of care is to excise or destroy the tumour, preferred because of possible malignancy, with "
+  [["Excision or destruction of the tumor, with elliptical excision using 5 mm margins",
+    "Correct. The standard of care is to excise or destroy the tumor, preferred because of possible malignancy, with "
     "elliptical excision using 5 mm margins. Mohs surgery may be indicated for large or recurrent lesions or those in "
     "cosmetically sensitive locations."],
    ["Observation alone, since the lesion regresses spontaneously",
@@ -309,18 +309,18 @@ Q("Epidermoid cyst",
   0, 53),
 
 Q("Syringoma",
-  "A 16-year-old girl has multiple 1 to 2 mm firm skin-coloured papules symmetrically distributed on the lower "
+  "A 16-year-old girl has multiple 1 to 2 mm firm skin-colored papules symmetrically distributed on the lower "
   "eyelids that appeared around puberty. What is the origin of these lesions?",
   [["Benign neoplasms of eccrine ducts",
     "Correct. Syringomas are benign neoplasms of eccrine sweat ducts. They appear at puberty and are more common in "
     "females, presenting as multiple 1 to 2 mm papules and usually asymptomatic."],
    ["Benign neoplasms of apocrine glands",
-    "Apocrine gland inflammation characterises hidradenitis suppurativa. Syringomas arise from the eccrine duct."],
+    "Apocrine gland inflammation characterizes hidradenitis suppurativa. Syringomas arise from the eccrine duct."],
    ["Collections of lipid-laden macrophages",
     "Lipid-laden macrophages form xanthelasma, which appears as soft yellow cholesterol plaques and is on the "
     "syringoma differential — but xanthelasma is yellow and plaque-like rather than small firm papules."],
    ["Hyperplasia of sebaceous glands around a central pore",
-    "Sebaceous hyperplasia produces whitish-yellow or skin-coloured papules with a central dell, typically in older "
+    "Sebaceous hyperplasia produces whitish-yellow or skin-colored papules with a central dell, typically in older "
     "adults rather than at puberty."]],
   0, 58),
 
@@ -336,7 +336,7 @@ Q("Infantile hemangioma",
     "Growth in proportion to the child without involution describes nevus flammeus, which is present at birth, "
     "remains for life, and becomes darker and thicker."],
    ["Rapid growth with a high risk of malignant transformation",
-    "Hemangiomas of infancy are the most common tumours of infancy and most are medically insignificant. Malignant "
+    "Hemangiomas of infancy are the most common tumors of infancy and most are medically insignificant. Malignant "
     "transformation is not a feature."],
    ["No change in size at any point during childhood",
     "The lesion is defined by its biphasic growth pattern, which is what distinguishes it from a capillary "
@@ -418,10 +418,10 @@ Q("Cherry angioma",
 Q("Nevus araneus",
   "A 27-year-old pregnant woman has several lesions on the upper trunk consisting of a central arteriole with "
   "radiating capillaries. What is the mechanism, and what should be asked in the history?",
-  [["Dilation of pre-existing vessels without proliferation, possibly from oestrogen excess; ask about pregnancy, "
+  [["Dilation of pre-existing vessels without proliferation, possibly from estrogen excess; ask about pregnancy, "
     "hormone use, alcohol, and hepatotoxic medications",
     "Correct. Nevus araneus involves no vascular proliferation and is due to dilation of pre-existing vessels. "
-    "Oestrogen excess states may be the cause, and lesions resolve after delivery or cessation of hormonal "
+    "Estrogen excess states may be the cause, and lesions resolve after delivery or cessation of hormonal "
     "contraception. History should cover pregnancies, hormone use, alcohol, and high-risk medications for liver "
     "damage."],
    ["Proliferation of capillaries with age; no specific history is required",
@@ -431,7 +431,7 @@ Q("Nevus araneus",
     "Congenital dilated dermal capillaries describe nevus flammeus, which is present at birth and persists for life."],
    ["Extravasation of blood into the dermis",
     "Deposits of blood in the skin are petechiae and purpura, which are non-blanching. Spider angiomas blanch and "
-    "refill from the centre."]],
+    "refill from the center."]],
   0, 89),
 
 Q("Pyogenic granuloma",
@@ -440,7 +440,7 @@ Q("Pyogenic granuloma",
   "diagnosis, and what is notable about its name?",
   [["Pyogenic granuloma, which is misnamed because it is neither infectious nor granulomatous",
     "Correct. Pyogenic granuloma is an acquired vascular lesion that is misnamed, being neither infectious nor "
-    "granulomatous. It is a benign vascular tumour common in children, young adults, and pregnancy, arising as a "
+    "granulomatous. It is a benign vascular tumor common in children, young adults, and pregnancy, arising as a "
     "response to injury or hormonal factors, most often on the head, neck, and fingers."],
    ["Pyogenic granuloma, so named because it is a granulomatous response to bacterial infection",
     "The name is a misnomer twice over: the lesion is neither infectious nor granulomatous but a benign vascular tumor that grows rapidly, often after injury."],
@@ -474,9 +474,9 @@ Q("Neurofibromatosis",
 Q("Xanthelasma",
   "A 48-year-old man has soft yellow plaques on the medial aspects of both upper eyelids. What do they contain, and "
   "what should be done?",
-  [["Lipid-laden macrophages, and he should be screened for hyperlipidaemia",
+  [["Lipid-laden macrophages, and he should be screened for hyperlipidemia",
     "Correct. Xanthelasma consists of soft yellow cholesterol plaques formed by collections of lipid-laden "
-    "macrophages. They are associated with lipid disorders, so screening for hyperlipidaemia is indicated, and they "
+    "macrophages. They are associated with lipid disorders, so screening for hyperlipidemia is indicated, and they "
     "may signify increased cardiac risk."],
    ["Lipid-laden macrophages, requiring no further investigation since the lesions are cosmetic",
     "The composition is right but stopping at cosmesis discards the reason the lesion matters. The association with "
@@ -486,15 +486,15 @@ Q("Xanthelasma",
     "punctum rather than a soft yellow eyelid plaque."],
    ["Eccrine duct neoplasms appearing at puberty",
     "Syringomas are eccrine duct neoplasms of the lower eyelids appearing at puberty, and they are firm "
-    "skin-coloured papules rather than soft yellow plaques."]],
+    "skin-colored papules rather than soft yellow plaques."]],
   0, 104),
 
 Q("Lipoma",
   "A 50-year-old woman has a soft, mobile, non-tender subcutaneous mass on the upper back that has been slowly "
   "enlarging for years. What is the most likely diagnosis and appropriate management?",
-  [["Lipoma, the most common soft tissue tumour, which can be observed if asymptomatic",
-    "Correct. A lipoma is a benign localised overgrowth of fat cells in subcutaneous tissue and the most common soft "
-    "tissue tumour. Diagnosis is typically clinical, and asymptomatic tumours can be observed, with excision "
+  [["Lipoma, the most common soft tissue tumor, which can be observed if asymptomatic",
+    "Correct. A lipoma is a benign localized overgrowth of fat cells in subcutaneous tissue and the most common soft "
+    "tissue tumor. Diagnosis is typically clinical, and asymptomatic tumors can be observed, with excision "
     "considered for cosmetically deforming or enlarging lesions."],
    ["Epidermoid cyst, which requires excision of the entire capsule",
     "An epidermoid cyst is on the lipoma differential, but it is a firm nodule with a central punctum that may "
@@ -508,7 +508,7 @@ Q("Lipoma",
   0, 106),
 
 Q("Digital mucous cyst",
-  "A 58-year-old woman has a translucent skin-coloured papule over the distal interphalangeal joint of her index "
+  "A 58-year-old woman has a translucent skin-colored papule over the distal interphalangeal joint of her index "
   "finger, with a longitudinal groove in the adjacent nail. What is the nature of this lesion?",
   [["A pseudo-cyst without a true cellular lining, representing extrusion of mucinous joint contents into the dermis",
     "Correct. Digital mucous cysts are pseudo-cysts without a cellular lining or true capsule. They represent "
@@ -550,7 +550,7 @@ Q("Hypertrophic scar",
     "or pulsed dye laser",
     "Correct. Hypertrophic scar management includes intralesional injection of corticosteroid or 5-fluorouracil, "
     "compression therapy and silicone sheeting, surgical excision, and pulsed dye laser, which reduces scar erythema "
-    "by reducing neovascularisation."],
+    "by reducing neovascularization."],
    ["No treatment is ever appropriate because hypertrophic scars always resolve completely",
     "Hypertrophic scars remain stable and regress with time, which is genuinely reassuring, but treatment options "
     "exist for symptoms and appearance and need not be withheld."],
@@ -588,7 +588,7 @@ Q("Infantile hemangioma",
     "strawberry hemangioma. The deep type is the least common."],
    ["Deep, which is the most common, presenting as a pale or blue nodule",
     "The deep type involves dilated vessels in the deep dermis and subcutaneous tissue presenting as a pale, "
-    "skin-coloured, red, or blue nodule, plaque, or tumour, and it is described as the least common."],
+    "skin-colored, red, or blue nodule, plaque, or tumor, and it is described as the least common."],
    ["Capillary, cavernous, and arteriovenous, with capillary the most common",
     "That older terminology is not the classification used here, which divides lesions by depth into superficial, "
     "mixed, and deep."],
@@ -614,7 +614,7 @@ Q("Infantile hemangioma",
   0, 71, IO_B),
 
 Q("Telangiectasia",
-  "How is a telangiectasia defined, and what is its behaviour on pressure?",
+  "How is a telangiectasia defined, and what is its behavior on pressure?",
   [["A permanently dilated capillary under 1 mm that blanches with pressure",
     "Correct. Telangiectasias are acquired vascular lesions consisting of permanently dilated capillaries under 1 mm. "
     "They blanch, may be single or grouped with a central punctum, may be primary or secondary, and are associated "
@@ -648,27 +648,27 @@ Q("Neurofibromatosis",
 
 Q("Neurofibromatosis",
   "What is a plexiform neurofibroma, and what is the concern with it?",
-  [["A tumour in the tissue covering nerves that is large and extensive and may be locally invasive",
-    "Correct. Plexiform neurofibromas are tumours in the tissue covering nerves, occurring anywhere except the brain "
+  [["A tumor in the tissue covering nerves that is large and extensive and may be locally invasive",
+    "Correct. Plexiform neurofibromas are tumors in the tissue covering nerves, occurring anywhere except the brain "
     "and spinal cord. They are large and extensive and may be locally invasive, so clinical evaluation is needed."],
-   ["A discrete benign nerve sheath tumour protruding just above the skin surface",
-    "That describes a cutaneous neurofibroma, which is a well-circumscribed solid tumour arising from peripheral "
+   ["A discrete benign nerve sheath tumor protruding just above the skin surface",
+    "That describes a cutaneous neurofibroma, which is a well-circumscribed solid tumor arising from peripheral "
     "nerves, sessile or pedunculated. Plexiform lesions are the larger, more extensive form."],
    ["A pigmented macule that grows in proportion to the child",
     "Growth in proportion to the child describes café au lait macules."],
-   ["A tumour arising exclusively within the brain and spinal cord",
+   ["A tumor arising exclusively within the brain and spinal cord",
     "Plexiform neurofibromas occur anywhere except the brain and spinal cord."]],
   0, 101),
 
 Q("Acrochordon",
   "How is an acrochordon best described morphologically, and where do they characteristically occur?",
-  [["A soft pedunculated skin-coloured papilloma with a narrow stalk and broad tip, occurring in areas of friction "
+  [["A soft pedunculated skin-colored papilloma with a narrow stalk and broad tip, occurring in areas of friction "
     "such as the neck, axilla, and groin",
     "Correct. An acrochordon is a fibroepithelial pedunculated papilloma with a narrow stalk and broad tip, occurring "
     "in areas of friction — the neck, axilla, and groin. Incidence is increased in women and in obesity, and they "
     "vary from over 1 mm to as large as 10 mm."],
    ["A firm sessile nodule with a central keratin core on weight-bearing surfaces",
-    "A central keratin core on a weight-bearing surface describes a clavus, which results from localised mechanical "
+    "A central keratin core on a weight-bearing surface describes a clavus, which results from localized mechanical "
     "pressure."],
    ["A hard conical keratotic projection on sun-exposed skin",
     "A hard conical keratotic projection is a cutaneous horn, which arises from an underlying benign or malignant "
@@ -702,7 +702,7 @@ Q("Sebaceous hyperplasia",
 
 Q("Benign lesions overall",
   "A patient presents with a new benign lesion on a sun-exposed area. What opportunity does this create?",
-  [["Counselling on sunscreen use, avoiding direct sun during peak hours, and performing periodic skin "
+  [["Counseling on sunscreen use, avoiding direct sun during peak hours, and performing periodic skin "
     "self-examination",
     "Correct. When discussing any new lesion in sun-exposed areas, the clinician should take the opportunity to "
     "counsel on sunscreen use, avoiding direct sun during peak hours, and performing periodic skin "
@@ -714,7 +714,7 @@ Q("Benign lesions overall",
     "Full-body photographic surveillance is a specialist tool for high-risk patients rather than a universal response "
     "to a benign lesion."],
    ["Advising complete avoidance of all outdoor activity",
-    "The counselling is to avoid direct sun during peak hours and use sunscreen, not to avoid the outdoors entirely, "
+    "The counseling is to avoid direct sun during peak hours and use sunscreen, not to avoid the outdoors entirely, "
     "which is neither realistic nor advised."]],
   0, 112),
 ]

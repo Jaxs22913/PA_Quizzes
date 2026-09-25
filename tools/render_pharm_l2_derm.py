@@ -3,7 +3,7 @@
 
 Palette is INHERITED from the Pharmacology I Exam 1 quizzes already on the site
 (navy #6b3524 / indigo #9c5230 / gold #c9a227 / ice #fbf1e6), per the design
-system's rule that a new quiz takes its exam's existing colours rather than
+system's rule that a new quiz takes its exam's existing colors rather than
 inventing new ones -- the exam should read as one thing across all its files.
 
 GUARDED (2026-09-24): the shipped pages were hand-edited after rendering, so this

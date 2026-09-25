@@ -11,13 +11,13 @@ of the chart prints its deck and slide number.
 SIXTEEN OF THIS DECK'S CLINICAL PHOTOGRAPHS ARE STORED AS .emf METAFILES that
 CoreGraphics cannot open. They are decoded through the same EMR_STRETCHDIBITS
 path tools/ocr_deck_images.py uses -- without it the entropion, dermatochalasis,
-xanthelasma, chalazion, subconjunctival haemorrhage, episcleritis, scleritis,
+xanthelasma, chalazion, subconjunctival hemorrhage, episcleritis, scleritis,
 cellulitis, keratitis and uveitis pictures would all be missing.
 
 EVERY IMAGE IS VIEWED BEFORE IT IS ASSIGNED TO A ROW, per [[image_only_slides]].
 This deck in particular labels several pictures "DDX" in the slide caption --
 slide 27 carries conjunctival intraepithelial neoplasia as a differential, and
-slide 29 carries traumatic haemorrhage and hyphaema as differentials. Filing one
+slide 29 carries traumatic hemorrhage and hyphema as differentials. Filing one
 of those under the row's own condition would be a factual error in the chart,
 not merely an ugly picture.
 """

@@ -12,18 +12,18 @@ IO = ("Disorders of the inner ear, balance and hearing loss: etiologies, epidemi
 QUESTIONS = [
 
 Q("Weber test", IO,
-  "A patient's Weber test lateralises to the left ear. Two explanations are possible.",
+  "A patient's Weber test lateralizes to the left ear. Two explanations are possible.",
   [["A left conductive loss or a right sensorineural loss",
-    "Correct. Weber lateralises toward a conductive loss, because that ear is shielded from ambient "
-    "noise and picks up the bone-conducted tone more clearly. It lateralises away from a "
+    "Correct. Weber lateralizes toward a conductive loss, because that ear is shielded from ambient "
+    "noise and picks up the bone-conducted tone more clearly. It lateralizes away from a "
     "sensorineural loss, because that cochlea processes the tone poorly. Both therefore point the "
     "sound to the left, and only Rinne separates them."],
    ["A left sensorineural loss or a right conductive loss",
     "This reverses both halves. A left sensorineural loss would push the sound to the right, and a "
-    "right conductive loss would also pull it right, so this pairing describes lateralisation to the "
+    "right conductive loss would also pull it right, so this pairing describes lateralization to the "
     "opposite ear."],
    ["Only a left conductive loss",
-    "Conductive loss on the side of lateralisation is one valid answer, but stopping there misses "
+    "Conductive loss on the side of lateralization is one valid answer, but stopping there misses "
     "the sensorineural possibility on the other side, which is why Weber alone can never make the "
     "diagnosis."],
    ["Only a right sensorineural loss",
@@ -57,7 +57,7 @@ Q("Ototoxicity", IO,
     "more often reversible. Both appear as named ototoxic classes, and the difference in "
     "reversibility matters for what the patient is told."],
    ["Beta blockers and calcium channel blockers",
-    "Cardiovascular drugs of these classes are not recognised ototoxins. They can cause dizziness "
+    "Cardiovascular drugs of these classes are not recognized ototoxins. They can cause dizziness "
     "through hypotension, which is a different symptom from cochlear damage."],
    ["Proton pump inhibitors and antihistamines",
     "Neither class damages the cochlea. Antihistamines cause sedation and can suppress vestibular "
@@ -72,11 +72,11 @@ Q("Vestibular schwannoma", IO,
   "A 48-year-old man with a unilateral sensorineural loss is found to have a vestibular "
   "schwannoma. He asks why his balance has been only mildly affected.",
   [["Central compensation adjusts to a slowly growing lesion",
-    "Correct. The tumour enlarges over years, so the vestibular input on that side declines "
+    "Correct. The tumor enlarges over years, so the vestibular input on that side declines "
     "gradually and the brainstem and cerebellum recalibrate continuously. That is why patients "
     "describe unsteadiness rather than vertigo, unlike a sudden vestibular loss such as neuronitis, "
     "which produces dramatic spinning because there is no time to compensate."],
-   ["The tumour does not involve the vestibular nerve",
+   ["The tumor does not involve the vestibular nerve",
     "It arises from the vestibular division of the eighth nerve, which is where its name comes from. "
     "The nerve is involved from the outset; it is the rate of change that determines the symptom."],
    ["Vestibular symptoms only occur once hearing is completely lost",
@@ -112,7 +112,7 @@ Q("Vestibular neuronitis", IO,
   [["It settles over days to weeks; move about rather than lie still",
     "Correct. The condition is benign and self-limiting, and recovery depends on central "
     "compensation, which is driven by vestibular activity. Prolonged bed rest and continued "
-    "vestibular suppressants both delay that process, so early mobilisation is what shortens the "
+    "vestibular suppressants both delay that process, so early mobilization is what shortens the "
     "illness."],
    ["It is permanent and requires surgical treatment",
     "There is nothing to operate on and the natural history is recovery. Framing a self-limiting "
@@ -129,7 +129,7 @@ Q("Noise-induced hearing loss", IO,
   "An audiogram of a 45-year-old factory worker shows a notch at 4000 hertz with recovery at 8000 "
   "hertz.",
   [["Noise-induced hearing loss",
-    "Correct. Cumulative noise exposure classically produces a notch centred around 4000 hertz with "
+    "Correct. Cumulative noise exposure classically produces a notch centered around 4000 hertz with "
     "some recovery at higher frequencies, which is what distinguishes it from presbycusis. "
     "Presbycusis declines progressively as frequency rises and does not recover, so the shape of the "
     "curve rather than its depth makes the diagnosis."],
@@ -150,7 +150,7 @@ Q("Sudden sensorineural hearing loss", IO,
   [["To exclude a retrocochlear lesion such as a schwannoma",
     "Correct. A proportion of patients presenting with sudden loss turn out to have a vestibular "
     "schwannoma, and the presentation gives no reliable way to identify them clinically. Because a "
-    "tumour's size at diagnosis determines the treatment options and the chance of preserving "
+    "tumor's size at diagnosis determines the treatment options and the chance of preserving "
     "hearing and facial nerve function, imaging is done rather than assumed unnecessary."],
    ["To confirm the loss is genuinely sensorineural",
     "That distinction is made by tuning forks and audiometry, which are quicker and cheaper. Imaging "
@@ -169,7 +169,7 @@ Q("Tinnitus red flags", IO,
     "Correct. Most tinnitus is a bilateral non-pulsatile ringing accompanying symmetrical hearing "
     "loss and needs no imaging. Unilaterality raises the possibility of an asymmetric lesion such as "
     "a schwannoma, and pulsatility suggests turbulent blood flow or a vascular middle ear mass such "
-    "as a glomus tumour."],
+    "as a glomus tumor."],
    ["High-pitched or low-pitched quality",
     "Patients describe the pitch in many ways and it carries little diagnostic weight, beyond the "
     "low roaring quality often reported in Meniere disease. It is not a red flag on its own."],
@@ -232,19 +232,19 @@ Q("Presbycusis", IO,
     "Amplification improves audibility but cannot restore the cochlea's ability to discriminate "
     "speech from noise, so overpromising leads to disappointment and abandoned devices."],
    ["Without aids the loss will progress more quickly",
-    "The rate of cochlear ageing is not altered by whether a hearing aid is worn. Overstating this "
+    "The rate of cochlear aging is not altered by whether a hearing aid is worn. Overstating this "
     "misrepresents the mechanism and risks the patient losing trust in the advice."],
    ["The loss will eventually become painful",
     "Sensorineural loss is painless throughout, and suggesting otherwise is simply inaccurate. Pain "
     "in the ear points to a different pathology altogether."]],
   "treatment", D, 27),
 
-Q("Glomus tumour", IO,
-  "A student asks what cranial nerve deficits might accompany a glomus tumour of the jugular "
+Q("Glomus tumor", IO,
+  "A student asks what cranial nerve deficits might accompany a glomus tumor of the jugular "
   "foramen.",
   [["Cranial nerves nine, ten and eleven",
     "Correct. The glossopharyngeal, vagus and spinal accessory nerves all pass through the jugular "
-    "foramen, so a tumour arising there compresses them together. That produces difficulty "
+    "foramen, so a tumor arising there compresses them together. That produces difficulty "
     "swallowing, hoarseness and shoulder weakness alongside the pulsatile tinnitus and conductive "
     "loss from the middle ear component."],
    ["Cranial nerves three, four and six",
@@ -288,7 +288,7 @@ Q("Functional hearing loss", IO,
     "having to report anything. That makes it the way to resolve a discrepancy between claimed and "
     "demonstrated hearing."],
    ["Repeat pure tone audiometry",
-    "Pure tone testing is behavioural and requires the patient to indicate when they hear a tone, "
+    "Pure tone testing is behavioral and requires the patient to indicate when they hear a tone, "
     "which is precisely the step in question. Repeating it produced the inconsistency in the first "
     "place."],
    ["Tympanometry",
@@ -296,7 +296,7 @@ Q("Functional hearing loss", IO,
     "normal in both genuine sensorineural loss and non-organic loss, so it cannot distinguish them."],
    ["Weber and Rinne testing",
     "Tuning fork tests are quick and useful but still depend on the patient reporting what they "
-    "hear, so they carry the same limitation as behavioural audiometry."]],
+    "hear, so they carry the same limitation as behavioral audiometry."]],
   "testing", D, 118),
 
 Q("Vertigo triage", IO,
@@ -308,10 +308,10 @@ Q("Vertigo triage", IO,
     "numbness point to the brainstem or cerebellum and require urgent imaging."],
    ["Severity of the vertigo itself",
     "Peripheral causes such as vestibular neuronitis produce some of the most dramatic vertigo seen, "
-    "so intensity is a poor discriminator. It is the accompanying signs that localise the lesion."],
+    "so intensity is a poor discriminator. It is the accompanying signs that localize the lesion."],
    ["Presence of nausea and vomiting",
     "Vomiting accompanies vertigo of any cause because of vestibular connections to the emetic "
-    "centre. Its presence says nothing about where the problem is."],
+    "center. Its presence says nothing about where the problem is."],
    ["Whether the vertigo is worse on head movement",
     "Almost all vertigo worsens with head movement, peripheral or central, because movement "
     "stimulates a system that is already mismatched. That is different from vertigo TRIGGERED by "

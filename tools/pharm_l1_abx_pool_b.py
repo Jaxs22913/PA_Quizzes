@@ -33,11 +33,11 @@ POOL_B = [
      ["Less than 1 percent",
       "Correct. The figure matters clinically because a reported penicillin allergy does not automatically exclude a cephalosporin."],
      ["Approximately 10 percent",
-      "Ten per cent is a widely repeated older figure derived from contaminated preparations; the true rate is under one per cent."],
+      "Ten percent is a widely repeated older figure derived from contaminated preparations; the true rate is under one percent."],
      ["Approximately 25 percent",
       "That would make cephalosporins largely unusable after a penicillin reaction, which is not the case."],
      ["Cross-sensitivity does not occur at all between the two classes",
-      "Cross-sensitivity does occur, since both classes share the beta-lactam ring, but at well under one per cent."]],
+      "Cross-sensitivity does occur, since both classes share the beta-lactam ring, but at well under one percent."]],
    c=0, cite=c(30)),
 
  dict(topic="Cephalosporins", io=IO4B,
@@ -88,7 +88,7 @@ POOL_B = [
       "The opposite is stated — no adjustment is needed."],
      ["It is contraindicated at any degree of renal impairment",
       "No such contraindication is given; the caution attached to ceftriaxone concerns the first 30 days of life."],
-     ["It must be dialysed off before each subsequent dose",
+     ["It must be dialyzed off before each subsequent dose",
       "No dialysis step is involved; ceftriaxone has substantial biliary elimination, so renal impairment does not require a dose change."]],
    c=0, cite=c(34)),
 
@@ -201,7 +201,7 @@ POOL_B = [
    opts=[
      ["Multidrug-resistant Gram-negative infections, extended-spectrum beta-lactamase producing bacteria, nosocomial infections, and meningitis",
       "Correct. Their resistance to hydrolysis by beta-lactamases is what makes them the answer to extended-spectrum producers."],
-     ["Methicillin-resistant Staphylococcus aureus bacteraemia and endocarditis",
+     ["Methicillin-resistant Staphylococcus aureus bacteremia and endocarditis",
       "Carbapenem Gram-positive coverage explicitly excludes methicillin-resistant Staphylococcus aureus."],
      ["Uncomplicated urinary tract infection and outpatient sinusitis",
       "Uncomplicated urinary and sinus infections respond to narrow agents, and spending a carbapenem on them drives resistance against the organisms that genuinely need it."],
@@ -314,7 +314,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Vancomycin", io=IO4J,
-   q="For an organism with a vancomycin minimal inhibitory concentration of 2 milligrams per litre or greater, what is advised?",
+   q="For an organism with a vancomycin minimal inhibitory concentration of 2 milligrams per liter or greater, what is advised?",
    opts=[
      ["The target ratio of area under the curve to minimal inhibitory concentration is difficult to achieve, so alternative therapy such as linezolid may be needed",
       "Correct. Above that threshold, pushing the dose stops being a reliable answer."],

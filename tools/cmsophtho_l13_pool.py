@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Chronic Vision Loss and Tumors (Lecture 13) -- Updated ophthalmology masters.
 
-The tumour rows carry the highest stakes in the block: retinoblastoma and uveal
+The tumor rows carry the highest stakes in the block: retinoblastoma and uveal
 melanoma are the two where getting it wrong costs an eye or a life, so they are
 weighted accordingly rather than proportionally to slide count.
 """
@@ -19,20 +19,20 @@ QUESTIONS = [
 Q("Dry macular degeneration", IO,
   "A 76-year-old woman has noticed over two years that straight lines look wavy and she needs more "
   "light to read. Vision is 6/12 bilaterally. Fundoscopy shows yellowish deposits at the macula "
-  "with pigmentary change but no haemorrhage. What is the most likely diagnosis?",
+  "with pigmentary change but no hemorrhage. What is the most likely diagnosis?",
   [["Dry age-related macular degeneration", "Correct. Drusen and pigment change with gradual "
                                             "central loss over years."],
    ["Wet age-related macular degeneration", "Presents with RAPID distortion and subretinal "
-                                            "haemorrhage or fluid."],
+                                            "hemorrhage or fluid."],
    ["Open-angle glaucoma", "Takes the peripheral field first and spares central acuity until "
                            "late."],
-   ["Cataract", "Causes generalised blur and glare rather than distortion of straight lines."]],
+   ["Cataract", "Causes generalized blur and glare rather than distortion of straight lines."]],
   "diagnosis", D, 14),
 
 Q("Wet macular degeneration", IO,
   "An 80-year-old man reports that over the past week straight lines have become sharply distorted "
-  "in the right eye and a grey patch has appeared in the centre of his vision. Fundoscopy shows "
-  "subretinal fluid and haemorrhage at the macula. What is the most appropriate next step?",
+  "in the right eye and a gray patch has appeared in the center of his vision. Fundoscopy shows "
+  "subretinal fluid and hemorrhage at the macula. What is the most appropriate next step?",
   [["Urgent referral for intravitreal anti-VEGF therapy",
     "Correct. The wet form is treatable and the window matters."],
    ["Reassure and review in six months", "Delay costs central vision that treatment could save."],
@@ -78,7 +78,7 @@ Q("Pediatric cataract", IO,
   "What is the most appropriate next step?",
   [["Urgent ophthalmology referral", "Correct. An absent red reflex demands urgent assessment — "
                                      "cataract and retinoblastoma both present this way."],
-   ["Review at the six-month check", "Delay risks irreversible amblyopia and, if it is a tumour, "
+   ["Review at the six-month check", "Delay risks irreversible amblyopia and, if it is a tumor, "
                                      "far worse."],
    ["Reassure, as red reflex varies in newborns", "An absent reflex is never a normal variant."],
    ["Arrange a hearing test", "Does not address the ocular finding."]],
@@ -101,7 +101,7 @@ Q("Retinoblastoma", IO,
                                      "for siblings and for second malignancies."],
    ["A better prognosis than unilateral disease", "Bilateral disease is germline and carries added "
                                                   "risk, not a better outlook."],
-   ["That the tumour is benign", "Retinoblastoma is malignant."],
+   ["That the tumor is benign", "Retinoblastoma is malignant."],
    ["That it was caused by an infection", "It is a genetic malignancy."]],
   "two-step", D, 42),
 
@@ -119,7 +119,7 @@ Q("Uveal melanoma", IO,
 Q("Uveal melanoma", IO,
   "A 58-year-old woman with a choroidal melanoma asks where it would spread if it did. Which organ "
   "is the classic site?",
-  [["The liver", "Correct — uveal melanoma spreads haematogenously, and the liver is the classic "
+  [["The liver", "Correct — uveal melanoma spreads hematogenously, and the liver is the classic "
                  "site."],
    ["The brain", "A site for cutaneous melanoma spread, but not the classic one here."],
    ["The lung", "Involved in many malignancies but not the classic site for this one."],
@@ -225,7 +225,7 @@ Q("Idiopathic intracranial hypertension", IO,
   "not treated. What should she be told?",
   [["Permanent visual loss from optic nerve damage",
     "Correct — the vision, not the headache, is what drives treatment."],
-   ["Progression to a brain tumour", "It is not a neoplastic process."],
+   ["Progression to a brain tumor", "It is not a neoplastic process."],
    ["Permanent hearing loss", "The tinnitus is pulsatile and resolves with the pressure."],
    ["Retinal detachment", "Not a consequence of raised intracranial pressure."]],
   "two-step", D, 5),

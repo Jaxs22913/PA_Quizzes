@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """CMS I Exam 3, Lecture 17 -- vignette set B.
 
-Foreign bodies, polyps, rhinitis, neoplasms, and the paediatric and elderly
+Foreign bodies, polyps, rhinitis, neoplasms, and the pediatric and elderly
 presentations. Weighted toward next-step and education lead-ins to balance the
 draw.
 
@@ -24,7 +24,7 @@ QUESTIONS = [
 
  dict(topic="Nasal foreign body", io=IO_B, lead="next step", cite=D % 54,
   q="A 4-year-old boy is suspected of having a bead in his nose. What establishes the diagnosis?",
-  opts=[["Direct visualisation", "Correct &mdash; imaging is rarely needed."],
+  opts=[["Direct visualization", "Correct &mdash; imaging is rarely needed."],
         ["Plain radiography", "Many objects are radiolucent, and imaging is rarely needed."],
         ["Culture of the discharge", "That identifies organisms, not an object."],
         ["A trial of antibiotics", "That delays the diagnosis."]]),
@@ -34,10 +34,10 @@ QUESTIONS = [
   opts=[["A wire loop, right-angle hook or suction", "Correct &mdash; those handle nongraspable round or smooth objects."],
         ["Tobey or bayonet forceps", "Forceps suit graspable objects such as paper or foam."],
         ["An ear curette only", "Not the instrument matched to a round nasal object."],
-        ["A nasal speculum alone", "That aids visualisation rather than removal."]]),
+        ["A nasal speculum alone", "That aids visualization rather than removal."]]),
 
  dict(topic="Nasal polyps", io=IO_A, lead="diagnosis", cite=D % 59,
-  q="A 42-year-old man with asthma has months of nasal blockage, thick discharge and complete loss of smell. Speculum examination shows grey, glistening masses in both nasal cavities. What is the most likely diagnosis?",
+  q="A 42-year-old man with asthma has months of nasal blockage, thick discharge and complete loss of smell. Speculum examination shows gray, glistening masses in both nasal cavities. What is the most likely diagnosis?",
   opts=[["Nasal polyps", "Correct."],
         ["Nasopharyngeal carcinoma", "That presents with a neck mass and cranial nerve signs."],
         ["Nasal foreign body", "That is unilateral, in a young child, with foul discharge."],
@@ -48,7 +48,7 @@ QUESTIONS = [
   opts=[["Aspirin-exacerbated respiratory disease", "Correct &mdash; polyps, asthma and aspirin sensitivity."],
         ["Anaphylaxis to aspirin", "The described syndrome is a specific triad rather than anaphylaxis."],
         ["Allergic fungal sinusitis", "That is defined by its mucus and pansinusitis."],
-        ["Cystic fibrosis", "That is the paediatric association to exclude."]]),
+        ["Cystic fibrosis", "That is the pediatric association to exclude."]]),
 
  dict(topic="Nasal polyps", io=IO_B, lead="next step", cite=D % 61,
   q="A 7-year-old boy is found to have multiple benign nasal polyps. What must be arranged?",
@@ -81,14 +81,14 @@ QUESTIONS = [
 
  dict(topic="Allergic rhinitis", io=IO_A, lead="diagnosis", cite=D % 67,
   q="A 26-year-old woman has sneezing and a runny nose every spring. Both nostrils show clear discharge and the mucosa looks bluish and swollen. What is the most likely diagnosis?",
-  opts=[["Allergic rhinitis", "Correct &mdash; the bluish, oedematous mucosa with bilateral clear discharge."],
+  opts=[["Allergic rhinitis", "Correct &mdash; the bluish, edematous mucosa with bilateral clear discharge."],
         ["Acute bacterial sinusitis", "That gives purulent discharge and reproducible facial pain."],
         ["Nasal foreign body", "That is unilateral and foul-smelling."],
         ["Septal perforation", "That is a structural defect, not a mucosal one."]]),
 
  dict(topic="Allergic rhinitis", io=IO_A, lead="patient education", cite=D % 68,
   q="A 33-year-old man with allergic rhinitis is frustrated that one medicine has not fixed it. What should he be told?",
-  opts=[["About eighty per cent of patients need two or more medicines", "Correct &mdash; there are multiple pathways involved."],
+  opts=[["About eighty percent of patients need two or more medicines", "Correct &mdash; there are multiple pathways involved."],
         ["One medicine should always be enough", "Most patients need more than one."],
         ["Surgery is the usual answer", "Medical management comes first."],
         ["He should stop all treatment for a month", "That does not address the disease."]]),
@@ -145,7 +145,7 @@ QUESTIONS = [
 
  dict(topic="Nasal fracture", io=IO_A, lead="next step", cite=D % 56,
   q="A 22-year-old man has a nasal fracture after an assault. Which associated injury must be actively excluded before he goes home?",
-  opts=[["A septal haematoma", "Correct &mdash; nasal fractures are associated with them, and it needs draining."],
+  opts=[["A septal hematoma", "Correct &mdash; nasal fractures are associated with them, and it needs draining."],
         ["A perforated septum", "Not the acute association."],
         ["Nasal polyps", "A chronic inflammatory process, not a traumatic one."],
         ["Allergic rhinitis", "An allergic process unconnected to injury."]]),
@@ -162,7 +162,7 @@ QUESTIONS = [
   opts=[["Trauma from his own finger", "Correct, with chronic dry nose as a risk factor."],
         ["An underlying bleeding disorder", "Possible, but not the commonest cause."],
         ["Hypertension", "Uncommon at this age and not the leading cause."],
-        ["A nasal tumour", "Rare."]]),
+        ["A nasal tumor", "Rare."]]),
 
  dict(topic="Epistaxis", io=IO_A, lead="treatment", cite=D % 51,
   q="A 58-year-old woman continues bleeding after ten minutes of correct pressure and oxymetazoline. What comes next?",
@@ -172,11 +172,11 @@ QUESTIONS = [
         ["Discharge with reassurance", "The bleeding is not controlled."]]),
 
  dict(topic="Deviated septum", io=IO_A, lead="next step", cite=D % 32,
-  q="A 35-year-old man with a deviated septum has obstructive sleep apnoea and recurrent nosebleeds. What is the definitive treatment?",
+  q="A 35-year-old man with a deviated septum has obstructive sleep apnea and recurrent nosebleeds. What is the definitive treatment?",
   opts=[["Septoplasty", "Correct, performed by an otorhinolaryngologist."],
         ["Long-term intranasal steroids", "They reduce mucosal swelling but leave the septum displaced."],
         ["Antihistamines", "Useful in allergy, not in a structural deviation."],
-        ["Continuous positive airway pressure alone", "It manages the apnoea without addressing the septum."]]),
+        ["Continuous positive airway pressure alone", "It manages the apnea without addressing the septum."]]),
 
  dict(topic="Perforated septum", io=IO_A, lead="treatment", cite=D % 40,
   q="A 40-year-old woman with a septal perforation from prolonged intranasal steroid use asks whether it can heal. What should she be told?",

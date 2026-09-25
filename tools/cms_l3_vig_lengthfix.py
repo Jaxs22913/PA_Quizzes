@@ -27,7 +27,7 @@ SLOT_FIXES = {
  (24, 1): "A prolonged course of oral antibiotics directed at streptococcal infection",
  (26, 3): "Begin oral terbinafine on the assumption of a widespread dermatophyte infection of the trunk and limbs",
  (27, 3): "It will persist unchanged for life unless systemic immunosuppressive therapy is started early in the course",
- (29, 1): "Take a punch biopsy from the centre of the ulcer for direct immunofluorescence",
+ (29, 1): "Take a punch biopsy from the center of the ulcer for direct immunofluorescence",
  (35, 1): "A twelve-week course of oral antibiotics usually produces a permanent remission with no need for any further treatment",
  (44, 1): "Avoid the causative drug for six months, after which a cautious supervised rechallenge in hospital is reasonable to consider",
 }

@@ -27,7 +27,7 @@ POOL_B = [
  "q": "At which stages of a study can bias occur?",
  "opts": [
   ["Conception and design, collection, analysis and interpretation",
-   "Correct, which is why appraising a study means reading the whole of it: a sound design can still be undone by how the data were gathered, analysed or read."],
+   "Correct, which is why appraising a study means reading the whole of it: a sound design can still be undone by how the data were gathered, analyzed or read."],
   ["Data collection only",
    "Collection is one stage among four; bias can equally enter at design, analysis or interpretation."],
   ["Only after the results have been published",
@@ -92,7 +92,7 @@ POOL_B = [
  "q": "What is measurement bias?",
  "opts": [
   ["The method of measurement leads to incorrect results",
-   "Correct, and the example given is blood pressure: if standardised procedures are not followed for every measurement taken during a study, the resulting values cannot be trusted."],
+   "Correct, and the example given is blood pressure: if standardized procedures are not followed for every measurement taken during a study, the resulting values cannot be trusted."],
   ["The groups compared differ in more ways than the study's focus",
    "That is selection bias, which concerns who is in each group rather than how they were measured."],
   ["The effect of a covariate cannot be separated from the effect under study",
@@ -144,7 +144,7 @@ POOL_B = [
  "q": "What is procedural bias?",
  "opts": [
   ["Interview or questionnaire results are affected by the method of delivery",
-   "Correct, and the example is pointed: administering a questionnaire after an operation while the patient is still under the after-effects of anaesthesia."],
+   "Correct, and the example is pointed: administering a questionnaire after an operation while the patient is still under the after-effects of anesthesia."],
   ["Participants drop out before the study is complete",
    "That is the attrition effect, which reduces sample size rather than distorting how responses were elicited."],
   ["Respondents differ systematically from non-respondents",
@@ -170,7 +170,7 @@ POOL_B = [
  "q": "Why does non-response bias matter?",
  "opts": [
   ["Responders may differ from non-respondents",
-   "Correct, and the consequence is about generalisation: a survey answered by an unrepresentative subset describes that subset rather than the whole population."],
+   "Correct, and the consequence is about generalization: a survey answered by an unrepresentative subset describes that subset rather than the whole population."],
   ["The sample size falls below the level needed for analysis",
    "A falling sample size describes the attrition effect. Non-response bias concerns who answers rather than how many."],
   ["The questionnaire was delivered at an inappropriate moment",
@@ -188,7 +188,7 @@ POOL_B = [
    "That is measurement bias, which concerns how outcomes are recorded rather than what care participants actually received."],
   ["Groups differ at baseline in ways that affect the outcome",
    "That is selection bias, arising from how the groups were assembled rather than from what happened to them during the study."],
-  ["Only favourable results are made available",
+  ["Only favorable results are made available",
    "That is reporting bias, concerning disclosure of data rather than differences in care delivered."]],
  "c": 0, "cite": c(45)},
 
@@ -202,7 +202,7 @@ POOL_B = [
   ["Disclosing conflicts of interest",
    "Disclosure addresses threats to objectivity from financial or personal considerations rather than differences in care between groups."],
   ["Publishing the study protocol in advance",
-   "Blinding of participants is what is named as the protection here, because it removes the knowledge that drives the behaviour."]],
+   "Blinding of participants is what is named as the protection here, because it removes the knowledge that drives the behavior."]],
  "c": 0, "cite": c(45)},
 
 {"topic": "Reporting bias", "io": IOE, "slot": "definition",
@@ -222,26 +222,26 @@ POOL_B = [
  "q": "What drives publication bias?",
  "opts": [
   ["Research without significant results is less likely to be published",
-   "Correct, and two forces sustain it: journal editor preference, and sponsors being less likely to support research unfavourable to them or to their product."],
+   "Correct, and two forces sustain it: journal editor preference, and sponsors being less likely to support research unfavorable to them or to their product."],
   ["Investigators disclose only a subset of the data they collected",
    "That is reporting bias, operating within a published study rather than determining which studies are published."],
   ["Participants drop out before the study is complete",
    "That is the attrition effect, a problem inside a study rather than a filter on what reaches the literature."],
   ["Journals publish only research funded by government agencies",
-   "The named drivers are editor preference and sponsor reluctance regarding unfavourable results, not the source of funding as such."]],
+   "The named drivers are editor preference and sponsor reluctance regarding unfavorable results, not the source of funding as such."]],
  "c": 0, "cite": c(46)},
 
 {"topic": "Publication bias", "io": IOE, "slot": "principle",
  "q": "Why might a sponsoring company contribute to publication bias?",
  "opts": [
-  ["It is less likely to support research unfavourable to its product",
+  ["It is less likely to support research unfavorable to its product",
    "Correct, and it sits alongside journal editor preference as the second force keeping results that show nothing out of the literature."],
   ["It insists that all its funded studies be published in full",
    "Publishing everything would counteract publication bias rather than contribute to it."],
   ["It requires investigators to disclose conflicts of interest",
    "Disclosure is a protection against threats to objectivity rather than a driver of publication bias."],
   ["It selects participants who are most likely to benefit",
-   "Choosing favourable participants would produce selection bias within a study rather than bias in what gets published."]],
+   "Choosing favorable participants would produce selection bias within a study rather than bias in what gets published."]],
  "c": 0, "cite": c(46)},
 
 {"topic": "Conflict of interest", "io": IOE, "slot": "definition",
@@ -249,7 +249,7 @@ POOL_B = [
  "opts": [
   ["Financial or personal considerations affect objectivity",
    "Correct, and the reason disclosure rather than exclusion is the remedy is that the impact may be unconscious as well as conscious, so the reader is left to weigh it. Authors should disclose it."],
-  ["A disagreement between investigators about how to analyse the data",
+  ["A disagreement between investigators about how to analyze the data",
    "The term concerns financial or personal considerations bearing on objectivity rather than a methodological dispute."],
   ["An imbalance between the intervention and control groups",
    "A baseline imbalance is selection bias or confounding rather than a conflict of interest."],
@@ -264,7 +264,7 @@ POOL_B = [
    "Correct, and the crucial property is that it is random: it is equally likely to produce a result higher or lower than the truth, unlike bias, which pushes one way."],
   ["Systematic error producing conclusions that differ from the true results",
    "That is bias. Chance is random rather than systematic, which is what makes the two behave differently."],
-  ["A deliberate decision to report only favourable findings",
+  ["A deliberate decision to report only favorable findings",
    "That is reporting bias, a choice rather than random variation."],
   ["The probability that a patient will develop a given disease",
    "That is a statement of risk about patients rather than a source of error in a study's conclusions."]],
@@ -358,6 +358,6 @@ POOL_B = [
   ["It is established by the size of the sample alone",
    "A large sample improves precision but does not by itself show that findings transfer to other settings."],
   ["It is determined by the journal in which the study appears",
-   "Where a study is published says nothing about whether its findings generalise to other populations."]],
+   "Where a study is published says nothing about whether its findings generalize to other populations."]],
  "c": 0, "cite": c(51)},
 ]

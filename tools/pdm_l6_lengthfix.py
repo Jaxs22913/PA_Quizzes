@@ -41,7 +41,7 @@ KEYS = {
   71:  "Its particles are large",
   75:  "Red cells, white cells, epithelial cells, casts, and crystals",
   80:  "Which source is responsible",
-  84:  "Infection, trauma, tumour, or a stone",
+  84:  "Infection, trauma, tumor, or a stone",
   85:  "Over-aggressive anticoagulation",
   92:  "Compression, hyperthermia, or a statin",
   101: "As unhelpful for excluding infection",
@@ -49,7 +49,7 @@ KEYS = {
   109: "Send urine protein electrophoresis",
   111: "Radiographic contrast material",
   113: "Treat it as likely contaminated",
-  114: "Catheter colonisation",
+  114: "Catheter colonization",
 }
 
 # --- distractors made more SPECIFIC, where the key is an irreducible list ---

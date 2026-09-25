@@ -59,7 +59,7 @@ LEADINS = {
 ("cmsent_l15c_pool", 9):  "Which investigation is most appropriate?",
 ("cmsent_l15c_pool", 10): "What is the most appropriate management?",
 ("cmsent_l15c_pool", 11): "What is the most appropriate next step?",
-("cmsent_l15c_pool", 12): "Which manoeuvre is it?",
+("cmsent_l15c_pool", 12): "Which maneuver is it?",
 
 # ---- Lecture 16: inner ear, hearing and balance ------------------------
 ("cmsent_l16_pool", 0):  "What is the most likely cause?",
@@ -69,7 +69,7 @@ LEADINS = {
 ("cmsent_l16_pool", 4):  "What is the most appropriate next step?",
 ("cmsent_l16_pool", 5):  "Which investigation is most appropriate?",
 ("cmsent_l16_pool", 6):  "What is the most likely diagnosis?",
-("cmsent_l16_pool", 7):  "How should this symptom be characterised?",
+("cmsent_l16_pool", 7):  "How should this symptom be characterized?",
 ("cmsent_l16_pool", 8):  "What is the most likely diagnosis?",
 ("cmsent_l16_pool", 9):  "What does this represent?",
 ("cmsent_l16_pool", 10): "What do these findings indicate?",
@@ -272,7 +272,7 @@ LEADINS = {
 ("cmsent_topup_pool", 17): "Why does it matter?",
 ("cmsent_topup_pool", 18): "What does this indicate?",
 ("cmsent_topup_pool", 19): "What does this indicate?",
-("cmsent_topup_pool", 20): "What should the programme involve?",
+("cmsent_topup_pool", 20): "What should the program involve?",
 ("cmsent_topup_pool", 21): "What is the correct explanation?",
 
 ("cmsent_topup2_pool", 0):  "What is the correct explanation?",

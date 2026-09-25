@@ -5,7 +5,7 @@
 WHY THESE SEVEN. Building "Guess that Disease" meant looking at all 225
 pictures in the five Exam 2 decks, not just the 60 the comparison chart had
 already picked. That audit turned up photographs the chart had passed over in
-favour of a diagram, a table or a CT -- fine for a reference chart, useless for
+favor of a diagram, a table or a CT -- fine for a reference chart, useless for
 an image the student is asked to name, and in three cases simply a worse
 picture of the finding:
 

@@ -8,7 +8,7 @@ Additive and fenced everywhere, with a SEPARATE fence pair per insertion point
 
 ELEVEN OBJECTIVES, 93 SLIDES. The cram sheet is split by objective group rather
 than by slide range, so the small objectives -- the differential count, the
-genetic defence, the effects of fever -- get their own rows instead of being
+genetic defense, the effects of fever -- get their own rows instead of being
 swallowed by complement.
 """
 import io, os, re, sys
@@ -70,7 +70,7 @@ CRAM_ROWS = [
  ]),
  ("L6 · The Two Receptors", "#3f8a55", [
    ("B-CELL RECEPTOR", "= IMMUNOGLOBULIN. <b>FOUR</b> chains: 2 identical HEAVY + 2 identical LIGHT. Y-shaped. Variable + constant regions. SECRETED as antibody."),
-   ("T-CELL RECEPTOR", "<b>TWO</b> parallel chains. Small — “one fork” of the Y. <b>NEVER SECRETED.</b> Recognises antigen ONLY with MHC."),
+   ("T-CELL RECEPTOR", "<b>TWO</b> parallel chains. Small — “one fork” of the Y. <b>NEVER SECRETED.</b> Recognizes antigen ONLY with MHC."),
    ("Young vs mature B cell", "YOUNG carries a small <b>IgM</b>; MATURE carries <b>IgD</b>."),
    ("Variable region genes", "LOCKED IN for the life of the cell AND its progeny, including memory cells."),
    ("B-cell maturation", "BONE MARROW STROMAL CELLS → migrate to lymph nodes, spleen, GALT."),
@@ -78,7 +78,7 @@ CRAM_ROWS = [
    ("★ CD MARKERS", "CD = CLUSTER OF DIFFERENTIATION. <b>CD4 = T HELPER. CD8 = T CYTOTOXIC.</b>"),
  ]),
  ("L6 · Antigens", "#3f8a55", [
-   ("EPITOPE", "= ANTIGENIC DETERMINANT. The small molecular group actually recognised. One antigen may carry MANY."),
+   ("EPITOPE", "= ANTIGENIC DETERMINANT. The small molecular group actually recognized. One antigen may carry MANY."),
    ("★ SIZE DECIDES", "Most antigenic: foreign cells and molecules <b>OVER 100,000 MW</b>, usually large proteins."),
    ("★ HAPTEN", "<b>UNDER 1,000 MW</b> — NOT antigenic unless attached to a LARGER CARRIER. Drugs, metals, industrial chemicals. This is how occupational LATEX allergy arises."),
    ("AUTOANTIGEN", "Self tissue for which TOLERANCE IS INADEQUATE → some autoimmune disorders."),
@@ -119,10 +119,10 @@ CRAM_ROWS = [
    ("Does titre reach zero?", "In a healthy person with robust responses, <b>NO</b>."),
    ("T cells need", "Activation by <b>SOME TYPE OF MHC MOLECULE</b>. All T cells produce CYTOKINES."),
    ("★ THE FOUR T CELLS", "<b>TH (CD4)</b> conducts · <b>TC (CD8)</b> lyses virally infected, cancer and foreign cells · <b>TD</b> delayed hypersensitivity (allergy HOURS to DAYS later) · <b>TS</b> suppressor, limits other T and B cells."),
-   ("Sensitised T cells become", "LONG-LASTING <b>MEMORY T CELLS</b>."),
+   ("Sensitized T cells become", "LONG-LASTING <b>MEMORY T CELLS</b>."),
  ]),
  ("L6 · Applications", "#3f8a55", [
-   ("PASSIVE immunisation lasts", "<b>TWO TO THREE MONTHS.</b>"),
+   ("PASSIVE immunization lasts", "<b>TWO TO THREE MONTHS.</b>"),
    ("HORSE SERUM", "Early antitoxins for tetanus and diphtheria. STILL used for diphtheria, botulism, spider/snake bites. Risks: <b>SERUM SICKNESS, ANAPHYLAXIS</b>."),
    ("POOLED GAMMA GLOBULIN", "Hepatitis A, hepatitis B, HIV, measles, generally immunodeficient patients."),
    ("★ -mab", "MONOCLONAL ANTIBODY (a protein)."),
@@ -136,7 +136,7 @@ CRAM_ROWS = [
    ("★ AN EFFECTIVE VACCINE", "Low toxicity · protects on exposure · stimulates <b>BOTH AMI AND CMI</b> · produces MEMORY B and T cells · generally NOT many doses · cheap, easy, long shelf-life."),
    ("STERILIZING vaccine", "The best option — the target is rendered NON-FUNCTIONING and UNABLE TO MUTATE."),
    ("Vaccine contents", "Killed whole cells / inactivated virus · LIVE ATTENUATED · acellular or subunit antigens · <b>TOXOIDS</b> · genetically engineered."),
-   ("★ MARROW DONATION", "Requires a close <b>CLASS I MHC</b> match plus DNA testing. Harvested from <b>STERNUM, FEMUR or ILIAC CREST</b>. Peripheral stem cells by <b>APHERESIS</b> after a mobilising drug. The RECIPIENT gets drug and radiation therapy first, TO REDUCE REJECTION RISK."),
+   ("★ MARROW DONATION", "Requires a close <b>CLASS I MHC</b> match plus DNA testing. Harvested from <b>STERNUM, FEMUR or ILIAC CREST</b>. Peripheral stem cells by <b>APHERESIS</b> after a mobilizing drug. The RECIPIENT gets drug and radiation therapy first, TO REDUCE REJECTION RISK."),
  ]),
 ]
 
@@ -163,7 +163,7 @@ CARDS = [
   ["Maternal antibody across the placenta is which immunity?", "Natural passive."],
   ["Vaccination gives which immunity?", "Artificial active."],
   ["Pooled gamma globulin gives which immunity?", "Artificial passive."],
-  ["What proportion of natural passive immunity is acquired in utero?", "About 99 per cent."],
+  ["What proportion of natural passive immunity is acquired in utero?", "About 99 percent."],
   ["What tells you whether a vaccine on your record is still effective?", "Antibody titres."],
   ["Give the leukocyte mnemonic, highest to lowest.", "Never let monkeys eat bananas: neutrophils, lymphocytes, monocytes, eosinophils, basophils."],
   ["Where do all leukocytes originate?", "The bone marrow."],
@@ -184,9 +184,9 @@ CARDS = [
   ["How does the T-cell receptor differ structurally?", "Two parallel chains, small — one fork of the Y — and never secreted."],
   ["What directs B-cell maturation?", "Bone marrow stromal cells."],
   ["What directs T-cell maturation?", "The thymus and its hormones."],
-  ["What does CD stand for, and what is the condition on recognition?", "Cluster of differentiation, and they recognise antigen only when presented with MHC."],
+  ["What does CD stand for, and what is the condition on recognition?", "Cluster of differentiation, and they recognize antigen only when presented with MHC."],
   ["Which CD marker is on helper cells, and which on cytotoxic?", "CD4 on helper, CD8 on cytotoxic."],
-  ["What is an epitope?", "The antigenic determinant — the small molecular group recognised by lymphocytes."],
+  ["What is an epitope?", "The antigenic determinant — the small molecular group recognized by lymphocytes."],
   ["What size of molecule is most antigenic?", "Over 100,000 molecular weight, usually a large protein."],
   ["What is a hapten, and how does it become antigenic?", "Under 1,000 molecular weight, antigenic only when attached to a larger carrier."],
   ["What is an autoantigen?", "Self tissue for which tolerance is inadequate."],
@@ -217,7 +217,7 @@ CARDS = [
   ["Which two immunoglobulins bind B cells?", "IgM and IgD."],
   ["Name the four antibody-antigen reactions.", "Agglutination, opsonization, complement fixation and neutralization."],
   ["What is opsonization, and when does it matter most?", "Coating so phagocytes can engulf — especially for slippery envelopes, waxy capsules and slime layers."],
-  ["How does antibody neutralise a virus?", "By blocking its attachment spike proteins."],
+  ["How does antibody neutralize a virus?", "By blocking its attachment spike proteins."],
   ["Which immunoglobulin agglutinates best, and why?", "IgM — its pentamer carries ten binding sites."],
   ["How does antibody lead to complement lysis?", "It binds, leaving sites for complement proteins, which use perforins."],
   ["Which antibodies appear in the primary response?", "IgM and IgG, with a gradual rise in titre."],
@@ -229,12 +229,12 @@ CARDS = [
   ["Which T cell lyses virally infected and cancer cells?", "The cytotoxic T cell, CD8."],
   ["Which T cell causes allergy hours or days after contact?", "The delayed hypersensitivity cell."],
   ["Which T cell limits other T and B cells?", "The T suppressor cell."],
-  ["How long does passive immunisation protect?", "Two to three months."],
+  ["How long does passive immunization protect?", "Two to three months."],
   ["What are the risks of horse serum immunotherapy?", "Serum sickness or anaphylaxis."],
   ["What is pooled gamma globulin used for?", "Hepatitis A, hepatitis B, HIV, measles and generally immunodeficient patients."],
   ["What does -omab signify?", "Mouse-derived protein."],
   ["What does -ximab signify?", "Chimeric protein."],
-  ["What does -zumab signify?", "Humanised protein."],
+  ["What does -zumab signify?", "Humanized protein."],
   ["What does -umab signify?", "Entirely human protein."],
   ["What does adalimumab treat?", "Rheumatoid and psoriatic arthritis, Crohn disease, plaque psoriasis."],
   ["What does pembrolizumab treat?", "Melanoma, lung cancer and others."],
@@ -245,7 +245,7 @@ CARDS = [
   ["Name the vaccine compositions.", "Killed whole cells, live attenuated, acellular or subunit antigens, toxoids, and genetically engineered organisms."],
   ["What match does marrow donation require?", "A close class I MHC match, plus DNA compatibility testing."],
   ["From where is marrow harvested?", "The sternum, femur or iliac crest."],
-  ["How are peripheral stem cells collected?", "By apheresis, after a mobilising drug."],
+  ["How are peripheral stem cells collected?", "By apheresis, after a mobilizing drug."],
   ["Why does the marrow recipient get drug and radiation therapy first?", "To reduce the risk of rejecting the donor cells."],
 ]
 

@@ -18,7 +18,7 @@ FIXES = {
  16:  (75, "A dermatoscope, a Wood's lamp, and sterile swabs for any open lesion"),
  18:  (134, "It prevents contamination of the patient's clothing and keeps the examination table clean between successive patients"),
  # pool B
- 30:  (129, "A primary lesion is larger than one centimetre in diameter, while a secondary lesion is anything smaller than that"),
+ 30:  (129, "A primary lesion is larger than one centimeter in diameter, while a secondary lesion is anything smaller than that"),
  39:  (24, "Annular (a single ring)"),
  50:  (68, "A nodule is filled with fluid, whereas a papule is a solid elevation"),
  57:  (27, "A macule, patch or freckle"),
@@ -30,7 +30,7 @@ FIXES = {
  92:  (68, "E for erythema, F for friability, and G for a granular surface"),
  94:  (59, "Confined to the sun-exposed areas of the face and neck"),
  95:  (146, "Terminal hair is the short, fine hair that covers the body, while vellus hair is the coarse hair of the scalp, axillae and beard"),
- 96:  (69, "Texture by inspection; colour, distribution and quantity by palpation"),
+ 96:  (69, "Texture by inspection; color, distribution and quantity by palpation"),
  100: (71, "Diffuse thinning of the scalp hair in women following the menopause"),
  109: (121, "A splinter hemorrhage is painful to the touch, whereas a subungual hematoma causes the patient no discomfort"),
  113: (86, "Capillary refill time, nail bed temperature and the presence of peripheral cyanosis"),

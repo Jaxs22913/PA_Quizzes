@@ -58,7 +58,7 @@ Q("Macular degeneration", IO,
   [["The peripheral field", "Correct — central vision is lost while navigational vision "
                             "remains."],
    ["The central field", "That is precisely what is lost."],
-   ["Colour vision only", "Colour perception is largely central and is affected."],
+   ["Color vision only", "Color perception is largely central and is affected."],
    ["Fine detail at distance", "Also macular and affected."]],
   "two-step", D, 11),
 
@@ -78,7 +78,7 @@ Q("Retinoblastoma", IO,
   [["It is a life-threatening malignancy, not only a threat to sight",
     "Correct — delay risks metastatic spread."],
    ["The squint will become permanent", "The squint is a sign, not the reason for urgency."],
-   ["The cataract will mature", "The white pupil is tumour, not cataract."],
+   ["The cataract will mature", "The white pupil is tumor, not cataract."],
    ["The other eye will be affected within a week", "Bilaterality reflects germline status rather "
                                                     "than rapid spread."]],
   "two-step", D, 42),
@@ -86,7 +86,7 @@ Q("Retinoblastoma", IO,
 Q("Uveal melanoma", IO,
   "A 60-year-old man has a small, flat, uniformly pigmented choroidal lesion with drusen on its "
   "surface and no subretinal fluid. What is the most appropriate management?",
-  [["Photographic surveillance", "Correct. Flatness, drusen and absent fluid all favour a benign "
+  [["Photographic surveillance", "Correct. Flatness, drusen and absent fluid all favor a benign "
                                  "nevus."],
    ["Urgent enucleation", "Grossly disproportionate for a lesion with benign features."],
    ["Immediate treatment as a melanoma", "Reserved for lesions with malignant features."],
@@ -116,7 +116,7 @@ Q("Strabismus", IO,
   "two-step", D, 29),
 
 Q("Myopia", IO,
-  "A 19-year-old man with high myopia is counselled about long-term risks. Which is he at "
+  "A 19-year-old man with high myopia is counseled about long-term risks. Which is he at "
   "increased risk of?",
   [["Retinal detachment", "Correct — the longer eye has a thinner, more vulnerable peripheral "
                           "retina."],
@@ -161,7 +161,7 @@ Q("Chronic vision loss approach", IO,
     "All three are ACUTE presentations."],
    ["Conjunctivitis, blepharitis and dry eye", "Surface conditions that do not cause progressive "
                                                "loss."],
-   ["Retinoblastoma, uveal melanoma and iris nevus", "Tumours, and far less common than the "
+   ["Retinoblastoma, uveal melanoma and iris nevus", "Tumors, and far less common than the "
                                                       "three leading causes."]],
   "two-step", D, 11),
 ]

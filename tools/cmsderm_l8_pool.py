@@ -37,7 +37,7 @@ Q("Scabies",
     "bedding or underclothing of an infested individual. Pruritus appears 4 to 6 weeks after initial infestation, and "
     "many patients do not develop symptoms for up to 3 months."],
    ["Brief casual contact, with pruritus appearing within 24 hours",
-    "Both halves fail. Transmission requires sustained contact, and the long sensitisation delay is why contacts are "
+    "Both halves fail. Transmission requires sustained contact, and the long sensitization delay is why contacts are "
     "treated even when asymptomatic."],
    ["Airborne spread, with pruritus appearing after 1 week",
     "Scabies is not airborne. It requires direct skin contact or contact with contaminated bedding or clothing."],
@@ -64,7 +64,7 @@ Q("Scabies",
   0, 14),
 
 Q("Scabies",
-  "A patient is prescribed topical permethrin for scabies. What counselling should be given about the response to "
+  "A patient is prescribed topical permethrin for scabies. What counseling should be given about the response to "
   "treatment?",
   [["Apply overnight to the entire skin surface with attention to creases; relief usually comes in about 3 days, but "
     "rash and pruritus may persist for weeks",
@@ -122,7 +122,7 @@ Q("Pediculosis",
   "A 7-year-old girl has an itchy scalp, low-grade fever, occipital lymphadenopathy, and irritability. What is the "
   "best method of confirming an active infestation?",
   [["Finding live lice, best detected by combing and wet combing with water and conditioner",
-    "Correct. Visualising live lice indicates active infestation and is best achieved by combing with a nit comb and "
+    "Correct. Visualizing live lice indicates active infestation and is best achieved by combing with a nit comb and "
     "by wet combing using water and conditioner. Nits are visible to the naked eye but indicate past or present "
     "infestation."],
    ["Finding nits alone, which confirms active infestation",
@@ -170,7 +170,7 @@ Q("Pediculosis",
 
 Q("Bedbugs",
   "A 33-year-old man returns from a hotel stay with several itchy welts on exposed skin. Examination shows wheals and "
-  "papules with a haemorrhagic punctum, arranged in rows of three. He did not feel the bites occur. What organism is "
+  "papules with a hemorrhagic punctum, arranged in rows of three. He did not feel the bites occur. What organism is "
   "responsible, and what is the classic descriptive term?",
   [["Cimex lectularius, with rows of three bites known as breakfast, lunch, and dinner",
     "Correct. Bedbugs are nocturnal feeders that hide in cracks and crevices of headboards, picture frames, and "
@@ -205,19 +205,19 @@ Q("Bedbugs",
   0, 35),
 
 Q("Fleas and tungiasis",
-  "A traveller returns from a rural area having walked barefoot on sandy soil. He has several erythematous papules on "
+  "A traveler returns from a rural area having walked barefoot on sandy soil. He has several erythematous papules on "
   "the feet that have enlarged over weeks into firm, somewhat translucent yellow nodules 4 to 10 mm across, some "
   "painful. What is the diagnosis and how is it confirmed?",
-  [["Tungiasis, confirmed by dermoscopy visualising ovoid eggs",
+  [["Tungiasis, confirmed by dermoscopy visualizing ovoid eggs",
     "Correct. Tungiasis is infestation by penetration of the adult female flea into human skin to lay eggs. Solitary "
     "or multiple erythematous papules enlarge over weeks to 4 to 10 mm, sometimes forming a firm translucent nodule, "
-    "and dermoscopy is used to visualise the ovoid eggs."],
+    "and dermoscopy is used to visualize the ovoid eggs."],
    ["Cutaneous larva migrans, confirmed by the serpentine trail",
     "Cutaneous larva migrans also follows contact with contaminated soil, which makes it a genuine consideration. But "
     "it produces an erythematous, raised, serpentine trail advancing 2 to 3 cm per day rather than discrete enlarging "
     "nodules."],
    ["Scabies, confirmed by skin scraping",
-    "Scabies favours the finger webs, wrists, axillae, and genitals with burrows and intense nocturnal itch rather "
+    "Scabies favors the finger webs, wrists, axillae, and genitals with burrows and intense nocturnal itch rather "
     "than nodules on the feet after soil exposure."],
    ["Cercarial dermatitis, confirmed by history of freshwater exposure",
     "Cercarial dermatitis follows swimming in cercaria-infested water and produces urticaria-like lesions and papules "
@@ -229,7 +229,7 @@ Q("Fleas and tungiasis",
   [["Surgical excision or cryotherapy with topical agents, tetanus prophylaxis, and systemic antibiotics, with "
     "prevention by not walking barefoot",
     "Correct. Management includes surgical excision or cryotherapy and topical agents, tetanus prophylaxis, and "
-    "systemic antibiotics. Prevention centres on avoiding walking barefoot in endemic areas."],
+    "systemic antibiotics. Prevention centers on avoiding walking barefoot in endemic areas."],
    ["Oral albendazole for 3 days",
     "Albendazole 400 mg daily for 3 days is the treatment for cutaneous larva migrans, a different soil-acquired "
     "parasitic condition."],
@@ -247,19 +247,19 @@ Q("Hymenoptera",
   [["Epinephrine given intramuscularly or subcutaneously, with emergency transfer and supportive measures",
     "Correct. For an anaphylactic reaction to a hymenoptera sting the treatment is subcutaneous or intramuscular "
     "epinephrine with emergency department transfer and supportive measures."],
-   ["Cleaning the site, ice, and possibly local anaesthetic injection for pain",
+   ["Cleaning the site, ice, and possibly local anesthetic injection for pain",
     "That is the management of a mild local cutaneous reaction. Applying it to anaphylaxis would leave a patient with "
     "airway and circulatory compromise untreated."],
    ["An oral antihistamine and observation at home",
     "Oral antihistamines address urticaria but do nothing for the airway and circulatory collapse of anaphylaxis."],
    ["Extensive local wound debridement",
-    "Debridement has no role. Extensive oedema at the sting site with induration describes a severe local reaction "
+    "Debridement has no role. Extensive edema at the sting site with induration describes a severe local reaction "
     "rather than a wound requiring surgery."]],
   0, 44),
 
 Q("Cutaneous larva migrans",
   "A 19-year-old returns from a tropical beach holiday with an intensely itchy, raised, serpentine track on the foot "
-  "that has advanced a few centimetres over the past two days. What is the diagnosis and treatment?",
+  "that has advanced a few centimeters over the past two days. What is the diagnosis and treatment?",
   [["Cutaneous larva migrans, treated with oral albendazole or ivermectin",
     "Correct. Cutaneous larva migrans results from larvae of animal nematodes, mostly dog and cat hookworms, in which "
     "the human is a dead-end host. The classic lesion is an erythematous, raised, vesicular, linear or serpentine "
@@ -285,7 +285,7 @@ Q("Brown recluse spider",
     "underside of the abdomen and produces crampy abdominal pain and muscle spasms rather than a necrotic lesion."],
    ["Hutchinson sign, from a hobo spider bite",
     "Hutchinson sign is lesions on the tip of the nose in herpes zoster ophthalmicus. Hobo spider bites are painless "
-    "with induration and paraesthesia and are the predominant cause of necrotic arachnidism in the Pacific "
+    "with induration and paresthesia and are the predominant cause of necrotic arachnidism in the Pacific "
     "Northwest."],
    ["Crowe's sign, from a caterpillar reaction",
     "Crowe's sign is intertriginous freckling in neurofibromatosis type 1."]],
@@ -305,22 +305,22 @@ Q("Brown recluse spider",
     "Most bites cause mild local reactions, which makes this partly true, but a small percentage progress to "
     "ulcerative necrosis requiring prolonged management."],
    ["Systemic symptoms appearing within 30 minutes with crampy abdominal pain",
-    "Localised erythema, piloerection, and sweating within 30 minutes followed by agonising crampy abdominal pain and "
+    "Localized erythema, piloerection, and sweating within 30 minutes followed by agonizing crampy abdominal pain and "
     "muscle spasms describes black widow envenomation."]],
   0, 62),
 
 Q("Black widow spider",
-  "A patient bitten by a spider with a red hourglass on the underside of its abdomen develops localised erythema, "
+  "A patient bitten by a spider with a red hourglass on the underside of its abdomen develops localized erythema, "
   "piloerection, and sweating around the bite within 30 minutes, followed by severe crampy abdominal pain and muscle "
   "spasms. What treatments are used for envenomation?",
   [["Calcium gluconate 10 percent, narcotic analgesics, muscle relaxants, and antivenom in selected cases",
     "Correct. Latrodectus mactans, the southern black widow, has a characteristic red hourglass. Envenomation "
-    "treatment includes calcium gluconate 10 percent, narcotic analgesics, and muscle relaxants, with hospitalisation "
+    "treatment includes calcium gluconate 10 percent, narcotic analgesics, and muscle relaxants, with hospitalization "
     "depending on symptoms and increased risk in the very old, very young, and those with cardiovascular disease."],
    ["Albendazole and ivermectin",
     "Those are anthelmintics used for cutaneous larva migrans. They have no role in envenomation."],
    ["Surgical debridement of the bite site",
-    "Progressive necrosis requiring delayed surgical intervention characterises the brown recluse bite rather than "
+    "Progressive necrosis requiring delayed surgical intervention characterizes the brown recluse bite rather than "
     "the black widow, whose effects are largely neurotoxic and systemic."],
    ["Doxycycline for 5 to 10 days",
     "Doxycycline is the treatment for Rocky Mountain spotted fever and first-line for Lyme disease."]],
@@ -329,10 +329,10 @@ Q("Black widow spider",
 Q("Hobo spider",
   "In which region of the United States is the hobo spider the predominant cause of necrotic arachnidism, and what is "
   "the early course of its bite?",
-  [["The Pacific Northwest, with a painless bite followed by induration and paraesthesia within 30 minutes and "
+  [["The Pacific Northwest, with a painless bite followed by induration and paresthesia within 30 minutes and "
     "vesicle formation in the first 36 hours",
     "Correct. The hobo spider, also called the aggressive house spider, is the predominant cause of necrotic "
-    "arachnidism in the Pacific Northwest. The bite is painless, with induration and paraesthesia of the bite site "
+    "arachnidism in the Pacific Northwest. The bite is painless, with induration and paresthesia of the bite site "
     "within 30 minutes, a large erythematous area, and vesicle formation during the first 36 hours."],
    ["The American Midwest and Southeast, with a painful bite and the red, white, and blue sign",
     "The Midwest and Southeast is brown recluse territory, and the red, white, and blue sign is its hallmark. Hobo "
@@ -340,7 +340,7 @@ Q("Hobo spider",
    ["The Northeast, with erythema migrans developing at the bite site",
     "Erythema migrans is the stage 1 lesion of Lyme disease, a tick-borne spirochaetal infection."],
    ["The Pacific Northwest, with immediate severe pain at the bite site",
-    "The region is right but the bite is specifically painless, which is part of why it is not recognised at the "
+    "The region is right but the bite is specifically painless, which is part of why it is not recognized at the "
     "time."]],
   0, 64),
 
@@ -380,15 +380,15 @@ Q("Caterpillars",
 
 Q("Lyme disease",
   "A 40-year-old man in Connecticut develops an expanding erythematous oval lesion 8 cm across with central clearing "
-  "and a darker punctate centre at the site of a recent tick bite. What stage is this, what is the lesion called, and "
+  "and a darker punctate center at the site of a recent tick bite. What stage is this, what is the lesion called, and "
   "what should be done about testing?",
-  [["Stage 1 early localised infection with erythema migrans; a patient with this lesion should be diagnosed and "
+  [["Stage 1 early localized infection with erythema migrans; a patient with this lesion should be diagnosed and "
     "treated clinically rather than waiting for serology",
-    "Correct. Stage 1 early localised infection is characterised by erythema migrans, a lesion greater than 5 cm that "
-    "expands with central clearing and often a darker punctate centre, also called a bull's-eye. A patient with this "
+    "Correct. Stage 1 early localized infection is characterized by erythema migrans, a lesion greater than 5 cm that "
+    "expands with central clearing and often a darker punctate center, also called a bull's-eye. A patient with this "
     "lesion should be diagnosed and treated on that basis, and testing is most helpful in patients from non-endemic "
     "regions with non-diagnostic symptoms."],
-   ["Stage 1 early localised infection; treatment should be withheld until two-tier serology returns positive",
+   ["Stage 1 early localized infection; treatment should be withheld until two-tier serology returns positive",
     "The staging is right but withholding treatment is wrong and consequential. Serology may be negative early, and "
     "delay permits progression to disseminated disease."],
    ["Stage 2 early disseminated infection; intravenous ceftriaxone should be started",
@@ -428,7 +428,7 @@ Q("Lyme disease",
    ["A rash beginning on the ankles and wrists and spreading centrally",
     "A rash starting on the ankles and wrists is characteristic of Rocky Mountain spotted fever."],
    ["Symmetric polyarthritis of the small joints of the hands",
-    "The arthritis of late Lyme disease is monoarticular or oligoarticular and favours large weight-bearing joints "
+    "The arthritis of late Lyme disease is monoarticular or oligoarticular and favors large weight-bearing joints "
     "rather than a symmetric small-joint pattern."]],
   0, 75),
 
@@ -441,7 +441,7 @@ Q("Rocky Mountain spotted fever",
     "10 days, the same in pregnant women, and in children at 2.2 mg per kilogram every 12 hours. The illness is life "
     "threatening if untreated."],
    ["Amoxicillin, because doxycycline is contraindicated under the age of 8",
-    "The usual paediatric caution about tetracyclines does not override treatment here — doxycycline dosing for "
+    "The usual pediatric caution about tetracyclines does not override treatment here — doxycycline dosing for "
     "children is specified, and delayed or inadequate treatment leads to severe and life-threatening complications."],
    ["Supportive care only, since the illness is self-limited",
     "The disease is life threatening if not treated, with severe cardiac, gastrointestinal, hepatic, neurological, "
@@ -468,15 +468,15 @@ Q("Rocky Mountain spotted fever",
 Q("Rocky Mountain spotted fever",
   "What laboratory abnormalities are characteristic of Rocky Mountain spotted fever, and what is the gold standard "
   "diagnostic test?",
-  [["Thrombocytopenia, anaemia, mild hyponatraemia, mild transaminitis, and a normal white cell count with increased "
+  [["Thrombocytopenia, anemia, mild hyponatremia, mild transaminitis, and a normal white cell count with increased "
     "bands, with indirect immunofluorescence assay as the gold standard",
     "Correct. Those are the characteristic laboratory findings, and the indirect immunofluorescence assay is the gold "
     "standard. Cerebrospinal fluid may show leukocytosis, moderately elevated protein, and normal glucose."],
    ["Marked leukocytosis with neutrophilia and thrombocytosis",
     "The white cell count is characteristically normal with an increase in bands, and the platelet count falls rather "
     "than rises. Expecting a raised white count would argue against the diagnosis wrongly."],
-   ["Hypernatraemia and marked hyperglycaemia",
-    "The sodium abnormality is a mild hyponatraemia, and glucose is not a described feature."],
+   ["Hypernatremia and marked hyperglycemia",
+    "The sodium abnormality is a mild hyponatremia, and glucose is not a described feature."],
    ["Eosinophilia with raised immunoglobulin E",
     "Eosinophilia with raised immunoglobulin E suggests parasitic or atopic disease rather than a rickettsial "
     "infection."]],
@@ -519,7 +519,7 @@ Q("Cercarial dermatitis",
   0, 91),
 
 Q("Ticks",
-  "What single action is emphasised first in the management of a tick-borne illness such as Lyme disease?",
+  "What single action is emphasized first in the management of a tick-borne illness such as Lyme disease?",
   [["Remove the tick immediately",
     "Correct. The management sequence begins with removing the tick immediately, followed by antibiotics, which are "
     "indicated in all stages."],

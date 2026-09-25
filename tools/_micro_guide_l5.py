@@ -9,9 +9,9 @@ ELEVEN objectives, where Lectures 1 to 4 carry three or four each. Complement
 alone runs slides 41 to 54. The subsections follow the objectives rather than
 the slide order, so the eleven are each findable.
 
-THE ORGANISING IDEA, and the one worth holding: the first two lines of defence
+THE ORGANIZING IDEA, and the one worth holding: the first two lines of defense
 are NONSPECIFIC and the third is specific -- and the innate system achieves its
-breadth not by having a receptor per organism but by recognising PATTERNS shared
+breadth not by having a receptor per organism but by recognizing PATTERNS shared
 across whole pathogen families.
 """
 
@@ -42,9 +42,9 @@ SECTION = """
     block.</strong> Lectures 1 to 4 carry three or four objectives each. Complement alone runs
     fourteen slides. The temptation is to revise complement and natural killer cells and let the
     rest slide, which is exactly how the small objectives &mdash; the differential white count,
-    the genetic defence, the effects of fever &mdash; get lost.</p>
+    the genetic defense, the effects of fever &mdash; get lost.</p>
     <p><strong>One idea ties it together.</strong> The innate system covers an enormous range of
-    organisms without having a receptor for each one. It manages that by recognising
+    organisms without having a receptor for each one. It manages that by recognizing
     <strong>patterns shared across pathogen families</strong>, not individual organisms. Every
     receptor, plasma protein and cell below is an instance of that trick.</p>
   </div>
@@ -73,7 +73,7 @@ SECTION = """
       lectin. And then finally, the classical. And the classical is the one which can be associated
       with the third line of defense.&rdquo;</em></li>
     </ol>
-    <p><strong>Five things he told the room NOT to memorise</strong>, which is just as useful the
+    <p><strong>Five things he told the room NOT to memorize</strong>, which is just as useful the
     night before:</p>
     <ul>
       <li>The <strong>types of mucins</strong> &mdash; <em>&ldquo;I am not asking you to
@@ -125,18 +125,18 @@ SECTION = """
     <tr><td><strong>Saliva and sweat</strong></td><td>Mechanical flush plus antimicrobial secretions</td></tr>
   </table>
   <p><strong>Normal flora is both barriers at once</strong>, and that is the point of it.
-  Colonisation begins <strong>after birth</strong>. On the epidermis it is <em>Staphylococcus
+  Colonization begins <strong>after birth</strong>. On the epidermis it is <em>Staphylococcus
   epidermidis</em>, other coagulase-negative staphylococci, and coryneform bacteria. They
   <strong>compete for living space and nutrients</strong> &mdash; a physical barrier &mdash; and
   they <strong>produce antimicrobial substances</strong> &mdash; a chemical one.</p>
   <div class="callout">
     <p><strong>The atopic dermatitis finding is the cleanest evidence for this.</strong> Atopic
     skin shows <strong>dysbiosis</strong> with <em>less</em> antimicrobial peptide. When subjects
-    were deliberately colonised with coagulase-negative staphylococci, colonisation by
+    were deliberately colonized with coagulase-negative staphylococci, colonization by
     <strong><em>Staphylococcus aureus</em> was diminished</strong>. Restoring the residents
     suppressed the pathogen.</p>
   </div>
-  <p><strong>Gut commensals</strong> do three things beyond blocking colonisation: they digest
+  <p><strong>Gut commensals</strong> do three things beyond blocking colonization: they digest
   substances we cannot, they provide vitamins, and they help develop <strong>gut-associated
   lymphoid tissue</strong>.</p>
   <p><strong>The chemical list:</strong> sebum, the <strong>acid mantle</strong> of skin,
@@ -161,12 +161,12 @@ SECTION = """
   <strong>30 to 40 amino acids</strong>, <strong>amphipathic</strong> &mdash; hydrophobic and
   hydrophilic regions &mdash; which is how they damage membranes. That mechanism sets their range:
   <strong>bacteria, fungi, and ENVELOPED viruses</strong>, because an envelope is a membrane.</p>
-  <p>They are also the only innate components that can <strong>neutralise a broad range of
+  <p>They are also the only innate components that can <strong>neutralize a broad range of
   microbial toxins by unfolding them</strong>, changing their three-dimensional configuration.
   The deck calls them <strong>antichaperones</strong> &mdash; chaperones fold proteins, these do
   the reverse.</p>
   <div class="callout">
-    <p><strong>This is where the &ldquo;genetic&rdquo; defence of objective 2 becomes
+    <p><strong>This is where the &ldquo;genetic&rdquo; defense of objective 2 becomes
     concrete.</strong> Individuals carry <strong>2 to 14 copies</strong> of the alpha defensin
     genes and <strong>2 to 12</strong> of the beta. <strong>Copy number determines how much
     protein is made</strong> &mdash; so how well defended you are is partly inherited. Four of the
@@ -191,11 +191,11 @@ SECTION = """
   by viruses or cancer.</p>
   <table class="tbl">
     <tr><th>Term</th><th>Meaning</th></tr>
-    <tr><td><strong>PRR</strong></td><td><strong>Pattern Recognition Receptor</strong> &mdash; recognises structural patterns from types of pathogen</td></tr>
-    <tr><td><strong>PAMP</strong></td><td><strong>Pathogen Associated Molecular Pattern</strong> &mdash; the structure on the microbe that a PRR recognises. Marks <strong>non-self</strong></td></tr>
+    <tr><td><strong>PRR</strong></td><td><strong>Pattern Recognition Receptor</strong> &mdash; recognizes structural patterns from types of pathogen</td></tr>
+    <tr><td><strong>PAMP</strong></td><td><strong>Pathogen Associated Molecular Pattern</strong> &mdash; the structure on the microbe that a PRR recognizes. Marks <strong>non-self</strong></td></tr>
     <tr><td><strong>DAMP</strong></td><td><strong>Damage Associated Molecular Pattern</strong> &mdash; signals cells that are damaged, stressed or virus-invaded. Marks <strong>altered self</strong></td></tr>
   </table>
-  <p><strong>Each receptor recognises a pattern shared by a pathogen FAMILY</strong>, which is how
+  <p><strong>Each receptor recognizes a pattern shared by a pathogen FAMILY</strong>, which is how
   a limited set of receptors covers a wide range of organisms. Each cell carries a unique
   combination, which broadens the coverage further. <strong>Macrophages</strong> are very
   effective at bacterial and fungal carbohydrates using <strong>lectin receptors</strong>;
@@ -228,7 +228,7 @@ SECTION = """
   <table class="tbl">
     <tr><th>Cytokine</th><th>Effect</th></tr>
     <tr><td><strong>Interleukin 1 beta</strong></td><td>Initiates the cytokine release</td></tr>
-    <tr><td><strong>Tumour necrosis factor alpha</strong></td><td><strong>Dilates vessels</strong>, raising blood volume &mdash; producing heat, swelling, redness and pain</td></tr>
+    <tr><td><strong>Tumor necrosis factor alpha</strong></td><td><strong>Dilates vessels</strong>, raising blood volume &mdash; producing heat, swelling, redness and pain</td></tr>
     <tr><td><strong>Interleukin 6</strong></td><td>Increases temperature</td></tr>
     <tr><td><strong>CXCL8, CCL2, interleukin 12</strong></td><td><strong>Chemokines</strong> &mdash; attract other white cells</td></tr>
   </table>
@@ -247,20 +247,20 @@ SECTION = """
   junctions</strong>.</p>
   <div class="callout">
     <p><strong>Fever &mdash; objectives 8 and 9 together.</strong> <strong>Interleukin 1 beta,
-    interleukin 6 and tumour necrosis factor alpha</strong> act both locally and systemically, and
+    interleukin 6 and tumor necrosis factor alpha</strong> act both locally and systemically, and
     the systemic effect is fever. Its <strong>benefits</strong> are specific and worth
-    memorising as a list:</p>
+    memorizing as a list:</p>
     <ul>
       <li>Decreases replication of viral and bacterial pathogens &mdash; <strong>in bacteria, by
       starving them of iron</strong></li>
       <li>Increases production and activity of <strong>neutrophils</strong></li>
       <li>Enhances <strong>T cell proliferation</strong></li>
       <li>Enhances immune <strong>signalling</strong></li>
-      <li>Enhances <strong>tissue resistance to the damaging effects of tumour necrosis factor
+      <li>Enhances <strong>tissue resistance to the damaging effects of tumor necrosis factor
       alpha</strong> &mdash; protection against the body's own mediator</li>
     </ul>
   </div>
-  <p><strong>Tumour necrosis factor alpha is the same molecule doing opposite things at different
+  <p><strong>Tumor necrosis factor alpha is the same molecule doing opposite things at different
   scales</strong>, and this contrast is exam-shaped:</p>
   <table class="tbl">
     <tr><th>Released LOCALLY</th><th>Released SYSTEMICALLY</th></tr>
@@ -326,11 +326,11 @@ SECTION = """
   </table>
   <p>All are produced in response to viruses, RNA, immune products and various antigens; they
   bind cell surfaces and <strong>induce expression of antiviral proteins</strong>, and they
-  inhibit expression of cancer genes and suppress tumours.</p>
+  inhibit expression of cancer genes and suppress tumors.</p>
   <div class="callout">
     <p><strong>The single most misunderstood point in this section, and the deck states it
     outright:</strong> <strong>interferon does not kill viruses.</strong> It stops spread to
-    surrounding tissue. It protects the neighbours rather than clearing the infection.</p>
+    surrounding tissue. It protects the neighbors rather than clearing the infection.</p>
   </div>
 
   <h3 class="sub" id="hd-leukocytes">5.8 &middot; Objectives 5 and 6 &mdash; Leukocytes and the differential</h3>
@@ -350,9 +350,9 @@ SECTION = """
   <p><strong>The differential white count</strong> totals the number of each type and determines
   whether they are in <strong>normal proportion</strong> &mdash; proportion, not just total. It is
   used in diagnosing <strong>infection types, inflammation, allergies, immune disorders,
-  leukaemia and myelodysplastic syndrome</strong>.</p>
+  leukemia and myelodysplastic syndrome</strong>.</p>
   <p><strong>Phagocytosis</strong> is done principally by <strong>macrophages and
-  neutrophils</strong>, and the division of labour matters:</p>
+  neutrophils</strong>, and the division of labor matters:</p>
   <table class="tbl">
     <tr><th>Macrophage</th><th>Neutrophil</th></tr>
     <tr><td><strong>Long-lived</strong>, resides in tissue, has other functions, <strong>works as infection begins and raises the alarm</strong></td><td><strong>Short-lived dedicated killer</strong>, circulates in blood, <strong>waits for the macrophage alarm</strong> to enter tissue</td></tr>
@@ -389,12 +389,12 @@ SECTION = """
   is postulated to involve abnormal killer-cell immunoglobulin-like receptor activity, more
   inhibitory than activating.</p>
   <p>Their cytotoxicity rises <strong>20 to 100 fold</strong> on exposure to interferons alpha and
-  beta. Four cytokines activate them early; <strong>interferons favour the cytotoxic
-  function</strong> while <strong>interleukin 12 favours cytokine production</strong>.</p>
+  beta. Four cytokines activate them early; <strong>interferons favor the cytotoxic
+  function</strong> while <strong>interleukin 12 favors cytokine production</strong>.</p>
   <div class="callout">
     <p><strong>The one requirement of a natural killer receptor</strong> is that it must
     <strong>inhibit the cell from killing healthy self-cells</strong>. Killing is a balance: when
-    a cell is infected, malignant or traumatised its protein expression changes, activating
+    a cell is infected, malignant or traumatized its protein expression changes, activating
     signals outweigh inhibitory ones, and it dies. The cell releases cytotoxic granules inducing
     <strong>apoptosis</strong> &mdash; the target shrinks, chromatin condenses &mdash; and a
     macrophage clears up.</p>
@@ -473,13 +473,13 @@ TEST = """    hostdefenses: [
        o:["Pyroptosis, after pores form in its membrane","Apoptosis induced by natural killer cells",
           "Netosis","Nothing — it survives"],a:0,
        why:"A second cascade opens the pores that let the interleukin out, and that costs the cell its life."},
-      {q:"Tumour necrosis factor alpha released LOCALLY does what that is protective?",
+      {q:"Tumor necrosis factor alpha released LOCALLY does what that is protective?",
        o:["Clots the blood in venules, preventing spread of infection to the blood",
           "Dissolves clots to improve flow","Reduces vessel permeability","Stops leukocytes adhering"],a:0,
        why:"Containment. Released systemically the same molecule causes shock, organ failure and death."},
       {q:"Fever helps against bacteria by which specific mechanism?",
        o:["Starving them of iron","Denaturing their ribosomes","Lysing their cell walls","Blocking their adhesion"],a:0,
-       why:"One of five listed benefits, alongside more neutrophils, more T cell proliferation, better signalling, and resistance to TNF-alpha damage."},
+       why:"One of five listed benefits, alongside more neutrophils, more T cell proliferation, better signaling, and resistance to TNF-alpha damage."},
       {q:"Which complement pathway activates FIRST, and which is part of BOTH innate and adaptive immunity?",
        o:["Alternative first; the CLASSICAL belongs to both","Classical first; the lectin belongs to both",
           "Lectin first; the alternative belongs to both","Alternative first; the lectin belongs to both"],a:0,
@@ -498,16 +498,16 @@ TEST = """    hostdefenses: [
        o:["No — it stops spread to surrounding tissue","Yes, by lysing the envelope",
           "Yes, by digesting viral nucleic acid","Only alpha interferon does"],a:0,
        why:"Interferon does not kill viruses: it binds cell surfaces and induces antiviral proteins, which simply stops spread to surrounding tissue."},
-      {q:"Which leukocyte is 55 to 90 per cent of the white count, and which is 0.5 per cent?",
+      {q:"Which leukocyte is 55 to 90 percent of the white count, and which is 0.5 percent?",
        o:["Neutrophils 55–90; basophils 0.5","Lymphocytes 55–90; eosinophils 0.5",
           "Neutrophils 55–90; eosinophils 0.5","Monocytes 55–90; basophils 0.5"],a:0,
-       why:"Eosinophils are 1 to 3 per cent, monocytes 3 to 7, lymphocytes 20 to 35."},
+       why:"Eosinophils are 1 to 3 percent, monocytes 3 to 7, lymphocytes 20 to 35."},
       {q:"Why do neutrophils die after phagocytosing?",
        o:["They cannot replenish their granule contents","Complement lyses them",
           "The pathogen consumes them","They differentiate into macrophages"],a:0,
        why:"Dead organisms, dead neutrophils and dead tissue are what pus is."},
       {q:"What is the ONE requirement of a natural killer cell receptor?",
-       o:["It must inhibit the cell from killing healthy self-cells","It must recognise a specific antigen",
+       o:["It must inhibit the cell from killing healthy self-cells","It must recognize a specific antigen",
           "It must bind complement","It must be identical on every natural killer cell"],a:0,
        why:"Killing is a balance of activating against inhibitory signals, and the inhibitory side is the safety catch."},
       {q:"What happens to infection in someone lacking INNATE immunity, versus lacking ADAPTIVE immunity?",

@@ -24,7 +24,7 @@ E = 115
 
 FIXES = {
  # Which five strengths does the deck give computed tomography? correct=125
- (E + 2, 1): "Superior soft-tissue contrast, no ionizing radiation, orbital extension, perineural spread, and skull base tumours",
+ (E + 2, 1): "Superior soft-tissue contrast, no ionizing radiation, orbital extension, perineural spread, and skull base tumors",
  # Which five strengths does the deck give magnetic resonance? correct=130
  (E + 3, 3): "No ionizing radiation, cystic versus solid character, vascularity, size and the depth of a neck mass on ultrasound",
  # The two clinical pearls. correct=139

@@ -32,7 +32,7 @@ CONF = [
   "costs hearing</b>, and the two antifungals, which differ by whether they are absorbed at all."),
  ("inflam", "Analgesics &amp; Anti-inflammatories", "ent-analgesics-quiz",
   ["Salicylates", "Reye&rsquo;s syndrome", "Ibuprofen", "Interactions", "Acetaminophen"],
-  "Aspirin against ibuprofen is the pairing that organises this: <b>irreversible against "
+  "Aspirin against ibuprofen is the pairing that organizes this: <b>irreversible against "
   "reversible</b> at cyclooxygenase, which is why one disables a platelet for its lifetime and "
   "the other wears off. Aspirin then stacks three different jobs by exposure, with tinnitus as "
   "the audible marker of the top of that ladder. <b>Reye&rsquo;s syndrome gets its own run of "
@@ -50,7 +50,7 @@ CONF = [
   "The topical decongestant has a hard time limit and a specific consequence for exceeding it: "
   "<b>rebound congestion sends the patient back to the same bottle</b>. The two antitussives then "
   "work at opposite ends of one reflex &mdash; benzonatate numbs the receptors where a cough "
-  "starts, dextromethorphan suppresses the centre in the medulla that organises it &mdash; and "
+  "starts, dextromethorphan suppresses the center in the medulla that organizes it &mdash; and "
   "that difference decides which one a patient on an antidepressant can safely have."),
 ]
 

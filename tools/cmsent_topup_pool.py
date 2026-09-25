@@ -57,7 +57,7 @@ Q("Cerumen removal", I15,
 Q("Otitis externa organisms", I15,
   "A clinician is asked which organisms otitis externa treatment must cover.",
   [["Pseudomonas and Staphylococcus",
-    "Correct. Water exposure raises the canal pH and macerates the skin, which favours Pseudomonas "
+    "Correct. Water exposure raises the canal pH and macerates the skin, which favors Pseudomonas "
     "in particular, alongside Staphylococcus from the skin flora. Topical fluoroquinolones are "
     "chosen because they cover both, and that Pseudomonas coverage is why an oral antibiotic like "
     "amoxicillin would be inadequate."],
@@ -104,7 +104,7 @@ Q("Chronic otitis media", I15,
    ["The organisms involved do not produce inflammation",
     "The middle ear mucosa is visibly inflamed and productive of discharge, so inflammation is "
     "clearly present. What is absent is confinement of that inflammation under pressure."],
-   ["The discharge contains anaesthetic breakdown products",
+   ["The discharge contains anesthetic breakdown products",
     "There is no such mechanism. Discharge is inflammatory exudate and does not have analgesic "
     "properties."]],
   "mechanism", D15, 31),
@@ -113,7 +113,7 @@ Q("Otosclerosis inheritance", I15,
   "A 28-year-old woman with otosclerosis asks about the risk to her children.",
   [["It often runs in families and may worsen during pregnancy",
     "Correct. Otosclerosis has a strong familial tendency, which is why a family history supports the "
-    "diagnosis. Progression during pregnancy is also recognised, which is relevant counselling for a "
+    "diagnosis. Progression during pregnancy is also recognized, which is relevant counseling for a "
     "woman of childbearing age who is deciding when to have surgery."],
    ["It is purely acquired from noise exposure",
     "Noise causes a sensorineural loss with a characteristic notch, not a conductive loss from "
@@ -151,7 +151,7 @@ Q("Sinus anatomy", I17,
   [["The maxillary and ethmoid sinuses",
     "Correct. The maxillary and ethmoid sinuses are present at birth, which is why sinusitis in "
     "infants and young children involves those and why ethmoid disease is the classic source of "
-    "paediatric orbital cellulitis. The frontal and sphenoid sinuses develop later in childhood and "
+    "pediatric orbital cellulitis. The frontal and sphenoid sinuses develop later in childhood and "
     "adolescence."],
    ["The frontal and sphenoid sinuses",
     "These pneumatise later, the frontal typically not until school age and beyond, which is why "
@@ -160,17 +160,17 @@ Q("Sinus anatomy", I17,
     "If that were so, frontal sinusitis would be seen in infants, and it is not. Development is "
     "staggered through childhood."],
    ["None are present until age five",
-    "The maxillary and ethmoid sinuses are present from birth and are the reason paediatric "
+    "The maxillary and ethmoid sinuses are present from birth and are the reason pediatric "
     "sinusitis exists at all in the first years of life."]],
   "finding", D17, 6),
 
 Q("Epistaxis in the elderly", I17,
   "A 78-year-old woman on warfarin has a nosebleed that has stopped with pressure. Her "
-  "international normalised ratio is 6.2.",
+  "international normalized ratio is 6.2.",
   [["Correct the anticoagulation as well as treating the nose",
     "Correct. Clotting studies are not routine in epistaxis but are indicated in anticoagulated "
     "patients, and this result is well above range. Treating only the local bleeding point leaves "
-    "the systemic reason it bled and the risk of rebleeding or of haemorrhage elsewhere entirely "
+    "the systemic reason it bled and the risk of rebleeding or of hemorrhage elsewhere entirely "
     "unaddressed."],
    ["Treat the nose locally and continue warfarin unchanged",
     "Local measures deal with this episode but ignore a supratherapeutic result that is itself "
@@ -201,7 +201,7 @@ Q("Rhinitis medicamentosa", I17,
     "Chronic sinusitis brings facial pressure, purulent discharge and reduced smell over twelve "
     "weeks or more. Six weeks of pure congestion tied to spray use is a different problem."],
    ["A nasal polyp obstructing the airway",
-    "A polyp would be visible on examination as a grey glistening mass and would cause steady "
+    "A polyp would be visible on examination as a gray glistening mass and would cause steady "
     "obstruction with anosmia rather than congestion that fluctuates with each dose."]],
   "diagnosis", D17, 66),
 
@@ -248,7 +248,7 @@ Q("Septoplasty indications", I17,
   "A 33-year-old woman has a mildly deviated septum found incidentally. She has no symptoms.",
   [["No treatment, as an asymptomatic deviation needs none",
     "Correct. Septal deviation is extremely common and is only treated when it causes symptoms: "
-    "obstruction, recurrent epistaxis from the drier open side, obstructive sleep apnoea, snoring or "
+    "obstruction, recurrent epistaxis from the drier open side, obstructive sleep apnea, snoring or "
     "facial pain. Operating on an incidental finding in an asymptomatic patient offers only the "
     "risks of surgery."],
    ["Septoplasty to prevent future problems",
@@ -267,7 +267,7 @@ Q("Neck mass duration", I18,
   "A clinician is asked what duration of a neck mass should prompt concern about malignancy.",
   [["More than two weeks",
     "Correct. Duration over two weeks appears on the malignancy red-flag list alongside size over "
-    "1.5 centimetres, firmness with immobility, absence of an infectious origin, age over 40, "
+    "1.5 centimeters, firmness with immobility, absence of an infectious origin, age over 40, "
     "tobacco and alcohol use, and ulceration. Reactive nodes regress within one to two weeks, so "
     "persistence beyond that is the point at which the prior probability shifts."],
    ["More than 48 hours",
@@ -286,25 +286,25 @@ Q("Thyroid cancer prognosis", I18,
   "A clinician ranks the four thyroid carcinomas by prognosis for a teaching session.",
   [["Papillary best, then follicular, then medullary, with anaplastic worst",
     "Correct. Papillary is commonest and has the best outlook; follicular is second commonest and "
-    "spreads haematogenously; medullary is more insidious and most likely to metastasise, often "
+    "spreads hematogenously; medullary is more insidious and most likely to metastasise, often "
     "presenting once a metastasis is found; and anaplastic is the most aggressive, causing death in "
     "6 to 36 months and resistant to all treatment."],
    ["Anaplastic best, then medullary, then follicular, with papillary worst",
     "This reverses the order entirely and would lead to reassuring the patient with the most "
-    "dangerous tumour while alarming the one with the best outlook."],
+    "dangerous tumor while alarming the one with the best outlook."],
    ["All four carry a similar prognosis",
     "The range runs from an excellent long-term outlook to death within three years, which is about "
-    "as wide a spread as any organ's tumours show. Treating them as equivalent would misdirect both "
-    "counselling and treatment intensity."],
+    "as wide a spread as any organ's tumors show. Treating them as equivalent would misdirect both "
+    "counseling and treatment intensity."],
    ["Medullary best because it produces calcitonin",
-    "Calcitonin is a useful tumour marker for follow-up, but producing a measurable hormone does not "
-    "make a tumour less dangerous. Medullary carcinoma is the most likely of the four to have "
+    "Calcitonin is a useful tumor marker for follow-up, but producing a measurable hormone does not "
+    "make a tumor less dangerous. Medullary carcinoma is the most likely of the four to have "
     "metastasised at diagnosis."]],
   "finding", D18, 42),
 
 Q("Neck mass in the immunocompromised", I18,
   "A 42-year-old man with untreated HIV has a rapidly enlarging cervical mass with purple "
-  "discolouration of the overlying skin.",
+  "discoloration of the overlying skin.",
   [["Kaposi sarcoma",
     "Correct. Kaposi sarcoma is one of the conditions that must be excluded in an HIV-positive "
     "patient with lymphadenopathy, alongside tuberculosis, Pneumocystis and lymphoma. Its vascular "
@@ -312,18 +312,18 @@ Q("Neck mass in the immunocompromised", I18,
     "follicular hyperplasia that causes most adenopathy in this group."],
    ["Idiopathic follicular hyperplasia",
     "Follicular hyperplasia is the commonest cause of adenopathy in HIV, so it is the right base "
-    "rate, but it produces ordinary-looking nodes without skin discolouration and is a diagnosis of "
+    "rate, but it produces ordinary-looking nodes without skin discoloration and is a diagnosis of "
     "exclusion."],
-   ["Persistent generalised lymphadenopathy",
+   ["Persistent generalized lymphadenopathy",
     "That diagnosis requires the absence of an identifiable infectious or neoplastic cause and is "
-    "generalised rather than a single rapidly enlarging mass with skin change."],
+    "generalized rather than a single rapidly enlarging mass with skin change."],
    ["Reactive viral lymphadenopathy",
     "Reactive nodes follow an upper respiratory infection and regress in one to two weeks without "
-    "changing the overlying skin. Rapid growth with purple discolouration is not reactive."]],
+    "changing the overlying skin. Rapid growth with purple discoloration is not reactive."]],
   "diagnosis", D18, 32),
 
 Q("Neck dissection", I18,
-  "A clinician explains why the primary tumour must be found before treating metastatic cervical "
+  "A clinician explains why the primary tumor must be found before treating metastatic cervical "
   "squamous cell carcinoma.",
   [["Treatment fields and surgery both depend on where it came from",
     "Correct. The neck disease is a metastasis, so treating it alone leaves the source in place to "
@@ -337,7 +337,7 @@ Q("Neck dissection", I18,
     "The cell type is already known from the nodal aspirate. What remains unknown is the site of "
     "origin, which is a different question."],
    ["The primary determines the patient's blood group compatibility",
-    "Transfusion planning is unrelated to tumour site. This confuses perioperative preparation with "
+    "Transfusion planning is unrelated to tumor site. This confuses perioperative preparation with "
     "oncological staging."]],
   "mechanism", D18, 39),
 
@@ -346,7 +346,7 @@ Q("Sialadenitis versus neck mass", I18,
   [["A salivary rather than a nodal cause",
     "Correct. Swelling that varies with eating implicates a salivary gland, because eating stimulates "
     "salivary flow and an obstructed gland distends. Lymph nodes and neoplasms do not change size "
-    "over minutes, so the timing of the swelling localises the problem before any imaging is "
+    "over minutes, so the timing of the swelling localizes the problem before any imaging is "
     "arranged."],
    ["A metastatic lymph node",
     "A malignant node is firm, immobile and steadily enlarging over weeks. It has no mechanism by "
@@ -366,7 +366,7 @@ Q("Lymph node levels", I18,
     "the involved node narrows the search for the primary. That is the practical application of the "
     "drainage map: jugulodigastric nodes point to the tonsil, juguloomohyoid to the tongue, and "
     "submandibular nodes to the face, sinuses and mouth."],
-   ["The level determines the histological type of the tumour",
+   ["The level determines the histological type of the tumor",
     "Histology comes from the aspirate and reflects the tissue of origin, not the anatomical "
     "position of the node. Squamous carcinoma can appear at any level."],
    ["The level determines whether antibiotics are needed",
@@ -379,7 +379,7 @@ Q("Lymph node levels", I18,
 
 # ---------------- Lecture 16 ----------------
 Q("Dix-Hallpike", I16,
-  "A clinician performs the Dix-Hallpike manoeuvre and observes nystagmus that begins after a brief "
+  "A clinician performs the Dix-Hallpike maneuver and observes nystagmus that begins after a brief "
   "delay, lasts under a minute and diminishes on repetition.",
   [["A peripheral cause, consistent with positional vertigo",
     "Correct. Latency before onset, a short duration and fatigability on repeat testing are the "
@@ -394,7 +394,7 @@ Q("Dix-Hallpike", I16,
     "characteristic nystagmus is a positive test."],
    ["An inconclusive result requiring electronystagmography",
     "The findings are characteristic enough to make the diagnosis and to proceed to an Epley "
-    "manoeuvre. Electronystagmography assesses overall vestibular function rather than confirming "
+    "maneuver. Electronystagmography assesses overall vestibular function rather than confirming "
     "this."]],
   "finding", D16, 88),
 
@@ -417,7 +417,7 @@ Q("Hearing loss classification", I16,
   "finding", D16, 19),
 
 Q("Ototoxicity monitoring", I16,
-  "A patient starting a prolonged aminoglycoside course is enrolled in a monitoring programme.",
+  "A patient starting a prolonged aminoglycoside course is enrolled in a monitoring program.",
   [["Baseline and serial audiometry, watching the high frequencies first",
     "Correct. Aminoglycosides damage the outer hair cells at the cochlear base, which encode the "
     "highest frequencies, so loss appears there before it reaches the speech range. Detecting it "
@@ -436,9 +436,9 @@ Q("Ototoxicity monitoring", I16,
 
 # ---------------- Lecture 19 ----------------
 Q("Oral examination", I19,
-  "A clinician is asked why oral examination is emphasised so strongly.",
+  "A clinician is asked why oral examination is emphasized so strongly.",
   [["Most clinicians agree it matters but far fewer actually do it",
-    "Correct. Over 80 per cent of surveyed clinicians believe oral "
+    "Correct. Over 80 percent of surveyed clinicians believe oral "
     "examination is important, while the proportion who perform one routinely is much lower. That "
     "gap matters because oral cancer presents as a visible non-healing ulcer that a thirty-second "
     "look would find at a curable stage."],

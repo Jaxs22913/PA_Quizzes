@@ -33,7 +33,7 @@ POOL_B = [
  dict(topic="Optic neuritis", io=IOA, lead="test",
    q="A 28-year-old woman with optic neuritis is referred. Which components are listed in the ophthalmic examination?",
    opts=[
-     ["Slit lamp, dilated fundoscopy and colour vision", "Correct, with a neurological examination."],
+     ["Slit lamp, dilated fundoscopy and color vision", "Correct, with a neurological examination."],
      ["Carotid Doppler and echocardiography of the heart", "Those look for an embolic source."],
      ["Lumbar puncture and CT", "Those belong to the papilledema workup."],
      ["Fluorescein angiography", "That assesses retinal perfusion."]],
@@ -51,7 +51,7 @@ POOL_B = [
  dict(topic="Vascular occlusion", io=IOA, lead="test",
    q="A 66-year-old man has a retinal vascular occlusion. Which two studies confirm it?",
    opts=[
-     ["Colour fundus photography and fluorescein angiography", "Correct, used for both the arterial and venous occlusions."],
+     ["Color fundus photography and fluorescein angiography", "Correct, used for both the arterial and venous occlusions."],
      ["MRI and lumbar puncture", "Those belong to the papilledema workup."],
      ["Ocular ultrasound", "That types a retinal detachment."],
      ["Temporal artery biopsy", "That investigates giant cell arteritis."]],
@@ -81,7 +81,7 @@ POOL_B = [
      ["An increased opening pressure", "Correct, confirming raised intracranial pressure."],
      ["A raised white cell count", "That would indicate infection, not the pressure itself."],
      ["A low glucose level", "That would suggest bacterial meningitis, not the mechanism here."],
-     ["Xanthochromia", "That suggests subarachnoid haemorrhage."]],
+     ["Xanthochromia", "That suggests subarachnoid hemorrhage."]],
    c=0, cite=c(46)),
 
  # ---------------- Management ----------------
@@ -190,7 +190,7 @@ POOL_B = [
    opts=[
      ["Some patients stay on drops for life", "Correct, when the surgical risk outweighs the benefit."],
      ["Surgery is never used in this form", "Laser and incisional surgery are both used."],
-     ["Drops are stopped once pressure normalises", "Treatment continues to hold the pressure down."],
+     ["Drops are stopped once pressure normalizes", "Treatment continues to hold the pressure down."],
      ["Surgery restores lost vision", "Field loss already sustained does not return."]],
    c=0, cite=c(21)),
 
@@ -213,7 +213,7 @@ POOL_B = [
    c=0, cite=c(51)),
 
  dict(topic="Acute vision loss", io=IOB, lead="education",
-   q="A 61-year-old man is counselled after an episode of transient monocular vision loss. Which point is made central?",
+   q="A 61-year-old man is counseled after an episode of transient monocular vision loss. Which point is made central?",
    opts=[
      ["A transient ischemic attack warns of a stroke", "Correct; it is a major warning sign."],
      ["Only bilateral loss is concerning", "Monocular loss is the presentation described."],
@@ -244,7 +244,7 @@ POOL_B = [
    q="A 71-year-old woman with a central retinal artery occlusion asks about her wider risk. What is stated?",
    opts=[
      ["Stroke risk rises at the onset of the occlusion", "Correct; plaque reaching the retina implies more upstream."],
-     ["Risk is limited to the affected eye", "The systemic risk is emphasised."],
+     ["Risk is limited to the affected eye", "The systemic risk is emphasized."],
      ["Risk falls once vision is lost", "It does not."],
      ["Risk depends only on the intraocular pressure", "Pressure is not the driver."]],
    c=0, cite=c(37)),
@@ -345,14 +345,14 @@ POOL_B = [
    opts=[
      ["Retinal ischemia", "Correct, when the loss descends over the field of one eye."],
      ["Raised intracranial pressure", "That gives non-specific bilateral change."],
-     ["Optic nerve demyelination", "That gives central loss and colour desaturation."],
+     ["Optic nerve demyelination", "That gives central loss and color desaturation."],
      ["Vitreous traction", "That gives flashes and floaters."]],
    c=0, cite=c(6)),
 
  dict(topic="Papilledema", io=IOA, lead="finding",
    q="A 41-year-old woman has acute papilledema. Which findings distinguish it from the chronic phase?",
    opts=[
-     ["Haemorrhages and cotton wool spots", "Correct; the chronic phase lacks both."],
+     ["Hemorrhages and cotton wool spots", "Correct; the chronic phase lacks both."],
      ["Disc elevation alone", "That is the chronic phase."],
      ["Loss of the optic nerve axons", "That is the atrophic phase."],
      ["A cherry-red spot", "That is arterial occlusion."]],

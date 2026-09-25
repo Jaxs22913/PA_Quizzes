@@ -9,7 +9,7 @@ second set drawn from the same pool would have repeated most of them.
 
 Three things are enforced here rather than trusted:
   ROTATION. Every question is authored with its correct answer at index 0 so the
-  author cannot drift towards a favourite position. The key is then moved to a
+  author cannot drift towards a favorite position. The key is then moved to a
   rotating slot, giving a flat distribution by construction.
   NO REPEATS. Stems are checked against all 400 existing questions and against
   each other; a collision is a hard error, not a silent drop.

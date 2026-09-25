@@ -5,7 +5,7 @@
 Same defect as the ophthalmology build it is adapted from: the correct answer
 carried the full compound fact while the distractors stayed terse, so the
 longest option was the answer and a student could score without reading. The
-ENT pools came out of the first draft with the key longest in 63 per cent of
+ENT pools came out of the first draft with the key longest in 63 percent of
 one set, against a bar of 35. [[distractor_style_matching]]
 says shorten the KEY, never pad the distractors.
 

@@ -55,10 +55,10 @@ POOL_C = [
    c=0, cite=c(83)),
 
  dict(topic="Stevens-Johnson syndrome", io=IOA,
-   q="A 28-year-old woman is recovering from carbamazepine-induced Stevens-Johnson syndrome and is being discharged. Which is the most appropriate counselling point?",
+   q="A 28-year-old woman is recovering from carbamazepine-induced Stevens-Johnson syndrome and is being discharged. Which is the most appropriate counseling point?",
    opts=[
-     ["Avoid the causative drug class for life, wear a medical alert bracelet, and have first-degree relatives counselled on shared genetic risk",
-      "Correct — the human leukocyte antigen association makes family counselling part of the discharge advice."],
+     ["Avoid the causative drug class for life, wear a medical alert bracelet, and have first-degree relatives counseled on shared genetic risk",
+      "Correct — the human leukocyte antigen association makes family counseling part of the discharge advice."],
      ["Avoid the causative drug for six months, after which cautious rechallenge under supervision is reasonable",
       "Rechallenge is never appropriate; avoidance is lifelong."],
      ["Expect complete recovery within weeks, with no need for any specialist follow-up after discharge",
@@ -72,7 +72,7 @@ POOL_C = [
    opts=[
      ["Urgent ophthalmology consultation with slit-lamp examination",
       "Correct — ocular involvement drives the blinding sequelae of symblepharon and corneal scarring."],
-     ["Reassure and reassess the eyes once the skin has re-epithelialised",
+     ["Reassure and reassess the eyes once the skin has re-epithelialized",
       "Delay is what permits permanent ocular scarring."],
      ["Begin topical antibiotic eye drops and review in seventy-two hours",
       "Empirical drops without examination miss the extent of corneal involvement."],
@@ -87,7 +87,7 @@ POOL_C = [
       "Correct — detachment above 30% with allopurinol exposure. Allopurinol is the commonest cause IN ASIA, alongside aromatic anticonvulsants, sulfonamides, oxicam non-steroidals and nevirapine."],
      ["Stevens-Johnson and toxic epidermal necrolysis overlap",
       "Overlap is defined by detachment between 10 and 30%."],
-     ["Generalised bullous fixed drug eruption of the trunk",
+     ["Generalized bullous fixed drug eruption of the trunk",
       "That produces discrete round plaques recurring at the same sites."],
      ["Autoimmune pemphigus vulgaris with widespread erosions",
       "That evolves over weeks with intercellular immunoglobulin G on immunofluorescence."]],
@@ -149,7 +149,7 @@ POOL_C = [
    q="A 19-year-old man has extensive blistering sunburn over his back and chest with fever, nausea and tachycardia after a day on the water. Which is the most appropriate next step?",
    opts=[
      ["Admit for intravenous fluids and wound care given the systemic toxicity",
-      "Correct — severe blistering above 20% of the body surface with systemic symptoms warrants hospitalisation."],
+      "Correct — severe blistering above 20% of the body surface with systemic symptoms warrants hospitalization."],
      ["Deroof the blisters in clinic and dress the base with a non-adherent layer",
       "Intact blisters are protective and should not be popped."],
      ["Discharge with oral ibuprofen and aloe vera gel, reviewing in one week",
@@ -159,7 +159,7 @@ POOL_C = [
    c=0, cite=c(96)),
 
  dict(topic="Sunburn", io=IOA,
-   q="A 17-year-old asks whether using a tanning bed before a holiday will protect her from burning. Which is the most appropriate counselling point?",
+   q="A 17-year-old asks whether using a tanning bed before a holiday will protect her from burning. Which is the most appropriate counseling point?",
    opts=[
      ["Tanning beds are classified as Group 1 carcinogens and are not safer than natural sun",
       "Correct — the International Agency for Research on Cancer classification is the specific point to make."],
@@ -177,7 +177,7 @@ POOL_C = [
      ["Phototoxicity, a non-immunologic dose-dependent reaction",
       "Correct — it occurs on first exposure, within hours, and doxycycline is the classic agent."],
      ["Photoallergy, an immunologic delayed hypersensitivity reaction",
-      "That requires prior sensitisation and produces an eczematous eruption."],
+      "That requires prior sensitization and produces an eczematous eruption."],
      ["Photoaggravation of an underlying connective tissue disease",
       "That would come with systemic features and positive autoantibodies."],
      ["Phytophotodermatitis from a furanocoumarin-containing plant",
@@ -224,7 +224,7 @@ POOL_C = [
    c=0, cite=c(100)),
 
  dict(topic="Photodermatitis", io=IOA,
-   q="A 33-year-old woman with resolved phytophotodermatitis is distressed by persistent brown streaks on her arms. Which is the most appropriate counselling point?",
+   q="A 33-year-old woman with resolved phytophotodermatitis is distressed by persistent brown streaks on her arms. Which is the most appropriate counseling point?",
    opts=[
      ["The pigmentation fades over months, and daily sunscreen prevents it darkening further",
       "Correct — reassurance is first line, with hydroquinone or azelaic acid if it persists."],
@@ -298,7 +298,7 @@ POOL_C = [
      ["Begin topical hydroquinone 4% and review in three months",
       "Bleaching an atypical pigmented lesion delays a melanoma diagnosis."],
      ["Reassure and arrange routine review in twelve months",
-      "The asymmetry and colour variation warrant assessment now."]],
+      "The asymmetry and color variation warrant assessment now."]],
    c=0, cite=c(111)),
 
  dict(topic="Actinic keratosis", io=IOA,
@@ -341,7 +341,7 @@ POOL_C = [
    c=0, cite=c(113)),
 
  dict(topic="Actinic keratosis", io=IOA,
-   q="A 55-year-old kidney transplant recipient asks why she is being seen so often for skin checks. Which is the most appropriate counselling point?",
+   q="A 55-year-old kidney transplant recipient asks why she is being seen so often for skin checks. Which is the most appropriate counseling point?",
    opts=[
      ["Immunosuppression raises the risk of actinic keratosis and skin cancer about sixty-fold",
       "Correct — transplant recipients need aggressive photoprotection and biannual skin surveillance."],
@@ -372,7 +372,7 @@ POOL_C = [
      ["Tretinoin at 0.025 to 0.1%",
       "Correct — it stimulates collagen and inhibits matrix metalloproteinases, over six to twelve months."],
      ["Vitamin C at 10 to 20%",
-      "It neutralises reactive oxygen species but is not approved for photoaging."],
+      "It neutralizes reactive oxygen species but is not approved for photoaging."],
      ["Hydroquinone at 2 to 4%",
       "That treats hyperpigmentation rather than photoaging as a whole."],
      ["Niacinamide applied twice daily",
@@ -380,7 +380,7 @@ POOL_C = [
    c=0, cite=c(119)),
 
  dict(topic="Dermatoheliosis", io=IOA,
-   q="A 47-year-old man with early photoaging asks what single measure will most reduce further damage. Which is the most appropriate counselling point?",
+   q="A 47-year-old man with early photoaging asks what single measure will most reduce further damage. Which is the most appropriate counseling point?",
    opts=[
      ["Daily broad-spectrum sunscreen of SPF 30 or higher, applied as the last skincare step",
       "Correct — it is the single most evidence-supported intervention, at about one teaspoon for face and neck."],

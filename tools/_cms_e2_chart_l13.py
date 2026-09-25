@@ -14,7 +14,7 @@ none. Lecture 13's extra detail on it lives in the guide instead.
 Every image here was resolved against its slide's own A/B/C/D or ABOVE/BELOW
 label by geometry, not by extraction order -- see _cms_e2_l13_figures.py. On
 slide 11 the extraction order maps to labels A, D, C, B, so soft drusen is _1
-and the neovascular haemorrhage is _3.
+and the neovascular hemorrhage is _3.
 """
 CVL = "Chronic vision loss"
 REF = "Refractive"
@@ -26,7 +26,7 @@ ROWS_L13 = [
   "<b>Overweight woman of childbearing age</b> &middot; <b>pulsatile tinnitus</b> &middot; transient greyouts",
   "Intractable headache of variable character, <b>transient visual obscuration</b>, intracranial noises, pain behind the eyes, mild pain on eye movement.",
   "<b>MRI brain with MR venography FIRST</b> to exclude a mass and a venous sinus thrombosis, <b>then lumbar puncture: elevated opening pressure</b>. Ophthalmology for formal perimetry and optic nerve photography.",
-  "<b>Acetazolamide promptly</b>, plus a supervised <b>weight reduction</b> programme. Surgical CSF diversion (optic nerve sheath fenestration or shunt) only if medical therapy fails.",
+  "<b>Acetazolamide promptly</b>, plus a supervised <b>weight reduction</b> program. Surgical CSF diversion (optic nerve sheath fenestration or shunt) only if medical therapy fails.",
   "Urgent",
   "<b>Weight loss is the only durable fix</b>; medication covers the patient while that happens. Followed jointly by ophthalmology and neurology.",
   "4&ndash;5", D13),
@@ -42,7 +42,7 @@ ROWS_L13 = [
 
  ("Age-related macular degeneration &mdash; wet", CVL,
   "<b>Sudden</b> worsening of a <b>central</b> blur &middot; <b>neovascular</b>",
-  "<b>20% of cases.</b> Exudative: <b>choroidal neovascularisation bleeds into the retina</b> and organises into a disciform scar. Rapid change on a background of dry disease.",
+  "<b>20% of cases.</b> Exudative: <b>choroidal neovascularization bleeds into the retina</b> and organizes into a disciform scar. Rapid change on a background of dry disease.",
   "As for dry, plus <b>fluorescein angiography</b> and <b>optical coherence tomography</b>.",
   "<b>Intravitreal anti-VEGF injection</b>, thermal laser photocoagulation, photodynamic therapy.",
   "Same day",
@@ -60,7 +60,7 @@ ROWS_L13 = [
 
  ("Cataract &mdash; cortical", CVL,
   "<b>Spoke-like</b> peripheral opacities &middot; <b>GLARE</b> once central",
-  "Radial spoke-like opacities from the lens periphery inward. <b>Asymptomatic until the opacity reaches the centre</b>, at which point <b>glare is the commonest complaint</b>.",
+  "Radial spoke-like opacities from the lens periphery inward. <b>Asymptomatic until the opacity reaches the center</b>, at which point <b>glare is the commonest complaint</b>.",
   "Slit lamp examination; red reflex dulled when advanced.",
   "Lens extraction when it interferes with function.",
   "Routine",
@@ -78,7 +78,7 @@ ROWS_L13 = [
 
  ("Cataract &mdash; pediatric", CVL,
   "<b>Zonular is commonest</b> &middot; <b>leukocoria</b> &middot; may have nystagmus",
-  "<b>Zonular</b>: white opacity round the nucleus, the commonest paediatric type. <b>Polar</b>: less common but central, so caught earlier. Infants may be visually inattentive if bilateral; the affected eye may be smaller.",
+  "<b>Zonular</b>: white opacity round the nucleus, the commonest pediatric type. <b>Polar</b>: less common but central, so caught earlier. Infants may be visually inattentive if bilateral; the affected eye may be smaller.",
   "<b>Red reflex screening</b> in every infant. Dim, disrupted or absent reflex, or frank <b>leukocoria</b>.",
   "<b>Surgery is NOT deferred in a neonate</b> &mdash; it is done early to prevent amblyopia.",
   "Emergent",
@@ -123,7 +123,7 @@ ROWS_L13 = [
 
  ("Amblyopia", CVL,
   "<b>Commonest cause of vision loss in children</b> &middot; unequal eyes",
-  "The brain favours one eye and the other fails to develop. Three routes: <b>strabismus</b>, <b>anisometropia</b> (unequal refraction), and <b>deprivation</b> (cataract, ptosis, corneal opacity). Affects 3&ndash;5% of children.",
+  "The brain favors one eye and the other fails to develop. Three routes: <b>strabismus</b>, <b>anisometropia</b> (unequal refraction), and <b>deprivation</b> (cataract, ptosis, corneal opacity). Affects 3&ndash;5% of children.",
   "<b>Occlusion objection test</b> &mdash; the child objects when the GOOD eye is covered. Unilateral amblyopia is a <b>2-line or greater</b> difference in best corrected acuity. <b>Screen all children under 5.</b>",
   "<b>Patch or atropinise the GOOD eye</b> to force the weaker one to work. Treat the underlying cause.",
   "Urgent",
@@ -133,8 +133,8 @@ ROWS_L13 = [
  ("Retinoblastoma", TUM,
   "<b>LEUKOCORIA</b> in a young child &middot; white pupil in photographs",
   "Rare, almost exclusively young children, from a genetic mutation that is often recessive and so easily missed on family history. May present with poor vision or a turned eye.",
-  "<b>Dilated examination plus imaging. NO BIOPSY &mdash; it risks seeding the tumour.</b> Primary care contribution is the <b>red reflex</b> at every well-child check.",
-  "Multimodal therapy under ocular oncology, with genetic counselling. Enucleation for large tumours.",
+  "<b>Dilated examination plus imaging. NO BIOPSY &mdash; it risks seeding the tumor.</b> Primary care contribution is the <b>red reflex</b> at every well-child check.",
+  "Multimodal therapy under ocular oncology, with genetic counseling. Enucleation for large tumors.",
   "Emergent",
   "<b>Untreated it is close to 100% fatal; treated, five-year survival is over 95%.</b> No recurrence at five years counts as <b>cured</b>. Known family history: seen by an experienced ophthalmologist <b>within the first 8 weeks of life</b>.",
   "41&ndash;42", D13),
@@ -173,7 +173,7 @@ DIFF_L13 = {
  "Age-related macular degeneration &mdash; dry": ("<b>NO</b>", "Often bilateral",
    "<b>Drusen</b>, pigmentary change and atrophy; <b>central scotoma</b>"),
  "Age-related macular degeneration &mdash; wet": ("<b>NO</b>", "May start unilateral",
-   "<b>Choroidal neovascularisation</b> with haemorrhage, then a disciform scar"),
+   "<b>Choroidal neovascularization</b> with hemorrhage, then a disciform scar"),
  "Cataract &mdash; nuclear": ("<b>NO</b>", "Usually bilateral",
    "<b>Brown central lens</b>; <b>myopic shift</b>, distance worse than near"),
  "Cataract &mdash; cortical": ("<b>NO</b>", "Usually bilateral",

@@ -118,7 +118,7 @@ TOC = '''<nav class="toc">
   <a href="#cr-decision">1.4 Objective d &mdash; Clinical principles &amp; decision-making</a>
   <a href="#cr-naturalistic">1.5 Objective e &mdash; The naturalistic approach</a>
   <a href="#cr-treatment">1.6 Objective g &mdash; Implications for treatment</a>
-  <a href="#cr-counselling">1.7 Objective h &mdash; Counselling &amp; adherence</a>
+  <a href="#cr-counselling">1.7 Objective h &mdash; Counseling &amp; adherence</a>
   <a class="top-link" href="#how-course-works" style="color:#8a6508">2 &middot; How this course is built</a>
 </nav>'''
 
@@ -155,13 +155,13 @@ BODY = '''<main>
     <tr><td>Best used for</td><td>Screening</td><td>Confirming a diagnosis</td></tr>
   </table>
   ''' + SVG_2x2 + '''
-  <div class="callout"><strong>The paired questions to memorise.</strong> Sensitivity answers
+  <div class="callout"><strong>The paired questions to memorize.</strong> Sensitivity answers
   &ldquo;how good is the test at finding disease?&rdquo; Specificity answers &ldquo;how good is the test at
   excluding people without disease?&rdquo;</div>
   <p><strong>The worked example.</strong> Screening for human immunodeficiency virus (HIV) uses a highly
   sensitive test so that very few infected individuals are missed; confirmatory (supplemental) testing is
-  highly specific, which minimises false-positive diagnoses. The lecture's justification is worth keeping,
-  because it is a judgement rather than a rule: it is better to accept a few false-positives that a
+  highly specific, which minimizes false-positive diagnoses. The lecture's justification is worth keeping,
+  because it is a judgment rather than a rule: it is better to accept a few false-positives that a
   confirmatory test can later correct than to fail to identify people who might unknowingly infect others.
   <em>That trade flips</em> for a disease that is serious and not curable &mdash; in cancer diagnosis a
   false-positive is catastrophic for the patient.</p>
@@ -205,19 +205,19 @@ BODY = '''<main>
   what management the patient needs.</p>
 
   <p><strong>Building a differential.</strong> Start from the signs and symptoms and ask which organ or
-  system is involved &mdash; for shortness of breath, is this cardiac, pulmonary or haematologic? Then
+  system is involved &mdash; for shortness of breath, is this cardiac, pulmonary or hematologic? Then
   consider the anatomy of those systems. When stuck, run a checklist mnemonic.</p>
   <table>
     <tr><th>VINDICATE</th><th>Worked example &mdash; chief complaint of &ldquo;confusion&rdquo;</th></tr>
-    <tr><td><strong>V</strong>ascular</td><td>Stroke, transient ischaemic attack, subarachnoid haemorrhage</td></tr>
+    <tr><td><strong>V</strong>ascular</td><td>Stroke, transient ischemic attack, subarachnoid hemorrhage</td></tr>
     <tr><td><strong>I</strong>nfectious</td><td>Meningitis, encephalitis, sepsis</td></tr>
-    <tr><td><strong>N</strong>eoplastic</td><td>Primary brain tumour or metastasis</td></tr>
+    <tr><td><strong>N</strong>eoplastic</td><td>Primary brain tumor or metastasis</td></tr>
     <tr><td><strong>D</strong>egenerative</td><td>Alzheimer's disease, Huntington's disease, other dementias</td></tr>
     <tr><td><strong>I</strong>atrogenic / intoxication</td><td>Narcotics, alcohol intoxication or withdrawal</td></tr>
     <tr><td><strong>C</strong>ongenital</td><td>Epilepsy (post-ictal state)</td></tr>
     <tr><td><strong>A</strong>utoimmune</td><td>Central nervous system lupus, neurosarcoidosis, anti-NMD encephalitis</td></tr>
-    <tr><td><strong>T</strong>rauma</td><td>Traumatic brain injury, traumatic epidural or subdural haematoma</td></tr>
-    <tr><td><strong>E</strong>ndocrine (metabolic)</td><td>Hypoglycaemia, hypo- or hyperthyroidism, hypo- or hypernatraemia, hypercalcaemia, hepatic or uraemic encephalopathy</td></tr>
+    <tr><td><strong>T</strong>rauma</td><td>Traumatic brain injury, traumatic epidural or subdural hematoma</td></tr>
+    <tr><td><strong>E</strong>ndocrine (metabolic)</td><td>Hypoglycemia, hypo- or hyperthyroidism, hypo- or hypernatremia, hypercalcemia, hepatic or uremic encephalopathy</td></tr>
   </table>
   <p>The alternative organ-system checklist is <strong>&ldquo;Tom G. Prince, MD, Psychiatrist, General
   Hospital&rdquo;</strong>: Toxin/Trauma (including medications), Oncologic, Musculoskeletal/rheumatologic,
@@ -290,11 +290,11 @@ BODY = '''<main>
     <tr><td><strong>Five As</strong></td><td>Ask &middot; Advise &middot; Assess &middot; Assist &middot; Arrange</td></tr>
     <tr><td><strong>FRAMES</strong></td><td><strong>F</strong>eedback about personal risk &middot; <strong>R</strong>esponsibility of the patient &middot; <strong>A</strong>dvice to change &middot; <strong>M</strong>enu of options &middot; <strong>E</strong>mpathetic style &middot; promote <strong>S</strong>elf-efficacy</td></tr>
   </table>
-  <p>Specific counselling guidelines for adults on unhealthy alcohol use, tobacco smoking cessation and
+  <p>Specific counseling guidelines for adults on unhealthy alcohol use, tobacco smoking cessation and
   sexually transmitted infections are in Bates' Chapter 7.</p>
-  <p><strong>Behaviour modification.</strong> Changing behaviours is difficult, and behavioural counselling
+  <p><strong>Behavior modification.</strong> Changing behaviors is difficult, and behavioral counseling
   is one of the most important skills for helping patients make those changes. Identify where your patient
-  sits on the continuum of behaviour change, and tailor interventions to their readiness and self-efficacy.</p>
+  sits on the continuum of behavior change, and tailor interventions to their readiness and self-efficacy.</p>
   <table>
     <tr><th colspan="2">Barriers to treatment and medication adherence</th></tr>
     <tr><td>Cost and affordability of medications or services</td><td>Low health literacy or lack of understanding</td></tr>
@@ -309,8 +309,8 @@ BODY = '''<main>
 <section class="deck" id="how-course-works">
   <h2 class="deck-title">2 &middot; How this course is built</h2>
   <p>Clinical Medicine and Surgery I covers six areas &mdash; <strong>dermatology, ophthalmology,
-  otorhinolaryngology (ear, nose and throat), cardiology, pulmonology, and haematology-oncology</strong> &mdash;
-  emphasising etiology, clinical manifestations, appropriate diagnostic evaluation, and management.</p>
+  otorhinolaryngology (ear, nose and throat), cardiology, pulmonology, and hematology-oncology</strong> &mdash;
+  emphasizing etiology, clinical manifestations, appropriate diagnostic evaluation, and management.</p>
   <p>For every condition, the course compares and contrasts the same nine things. Worth learning as a
   checklist now, because it is the shape every later lecture and every vignette question takes:</p>
   <table>

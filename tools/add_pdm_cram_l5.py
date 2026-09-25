@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Add the Lecture 5 topics to the PDM I Exam 1 cram sheet.
 
-Same colour-coded topic/table structure as the earlier lectures: the guide
+Same color-coded topic/table structure as the earlier lectures: the guide
 carries the explanation, this carries only what has to be recallable cold.
 
 WHAT IS DELIBERATELY NOT HERE: the three reference ranges this deck states two
@@ -28,7 +28,7 @@ TOPICS = [
    ("Which panel when", "BASIC is enough for ELECTROLYTES, GLUCOSE and RENAL SCREENING. Step up to COMPREHENSIVE when you need LIVER and NUTRITIONAL PROTEIN status."),
    ("The functional groups", "FUEL: glucose. ELECTROLYTES/ACID-BASE: sodium, potassium, chloride, bicarbonate. KIDNEY: BUN, creatinine. MINERAL: calcium. LIVER/PROTEIN (comprehensive only): the six."),
    ("Two abbreviation traps she called out", "Cr = CREATININE, not chromium. BUN = BLOOD UREA NITROGEN, not boron-uranium-nitrogen. And DO NOT ABBREVIATE IN THE ELECTRONIC NOTE — write sodium out."),
-   ("THE RANGES YOU DO NOT HAVE TO MEMORISE", "Her words: “we ALWAYS give you reference ranges.” Learn DIRECTION of abnormality and the rough figure. Sodium “around 140” is the level of detail she asked for."),
+   ("THE RANGES YOU DO NOT HAVE TO MEMORIZE", "Her words: “we ALWAYS give you reference ranges.” Learn DIRECTION of abnormality and the rough figure. Sodium “around 140” is the level of detail she asked for."),
    ("Where this deck contradicts itself", "BICARBONATE text 22–29 vs fishbone 22–28 (22–26 in the gas column). GLUCOSE text 70–99 fasting vs fishbone 70–120. BUN text 7–20 vs fishbone 7–18. CREATININE 0.6–1.2 agrees. Nothing is graded on which is right."),
    ("Why a normal result does not exclude disease", "A normal range is the MEAN ± 2 STANDARD DEVIATIONS, so ~2.5% OF HEALTHY PEOPLE fall outside it by chance."),
  ]),
@@ -39,15 +39,15 @@ TOPICS = [
    ("Potassium handling", "EXCRETED BY THE KIDNEY WITH NO REABSORPTION → must be replaced by DIET or SUPPLEMENT or it drops fast. Driven by ALDOSTERONE at the DISTAL TUBULE and COLLECTING DUCT."),
    ("What shifts potassium across the membrane", "INSULIN · ACID-BASE STATUS · CATECHOLAMINES. This is why the potassium in DKA misleads — serum can be HIGH while TOTAL BODY IS DEPLETED."),
    ("Potassium ↔ pH — both directions", "ACIDOSIS drives K OUT of cells (serum rises). ALKALOSIS drives K IN (serum falls). And K DEPLETION INCREASES RENAL ACID SECRETION."),
-   ("Potassium danger", "BOTH hyper- and hypokalaemia cause LIFE-THREATENING ARRHYTHMIAS. Small serum changes = large physiological effect."),
+   ("Potassium danger", "BOTH hyper- and hypokalemia cause LIFE-THREATENING ARRHYTHMIAS. Small serum changes = large physiological effect."),
    ("Chloride", "Follows SODIUM to preserve ELECTRICAL NEUTRALITY. Useless alone. RECIPROCAL WITH BICARBONATE. LOW Cl + HIGH HCO3 = METABOLIC ALKALOSIS (vomiting). Losing Cl raises the strong ion difference."),
    ("Bicarbonate", "Reported as “CO2” = TOTAL carbon dioxide, mostly bicarbonate. LOW = METABOLIC ACIDOSIS → CALCULATE THE ANION GAP. HIGH = METABOLIC ALKALOSIS."),
  ]),
  ("l5-gap", "The Anion Gap — She Wants This Calculated", "#7a2f5f", "#f3e2ee", "#f9f0f6", "#5c2247", [
    ("THE FORMULA", "ANION GAP = SODIUM − (CHLORIDE + BICARBONATE). NORMAL 8–12 mEq/L. She said this aloud: “quick and dirty, calculate your anion gap, and our normal range is 8 to 12.”"),
    ("Extended formula", "(SODIUM + POTASSIUM) − (CHLORIDE + BICARBONATE). NORMAL 10–14. Potassium is added to the CATIONS."),
-   ("RAISED gap", "Unmeasured ACIDS. MUDPILES: Methanol · Uraemia · Diabetic ketoacidosis · Paraldehyde/propylene glycol · Isoniazid/iron · Lactic acidosis · Ethylene glycol · Salicylates."),
-   ("NORMAL gap", "BICARBONATE LOSS from GUT or KIDNEY = HYPERCHLORAEMIC metabolic acidosis."),
+   ("RAISED gap", "Unmeasured ACIDS. MUDPILES: Methanol · Uremia · Diabetic ketoacidosis · Paraldehyde/propylene glycol · Isoniazid/iron · Lactic acidosis · Ethylene glycol · Salicylates."),
+   ("NORMAL gap", "BICARBONATE LOSS from GUT or KIDNEY = HYPERCHLOREMIC metabolic acidosis."),
    ("Albumin correction", "ADD ~2.5 to the gap for every 1 g/dL the ALBUMIN HAS FALLEN — albumin is itself an unmeasured anion."),
    ("WHAT SHE DOES NOT WANT CALCULATED", "GLOMERULAR FILTRATION RATE — “I don’t need you to calculate that or know that just yet, but know OF it.” CORRECTED SODIUM — she uses UpToDate/MedCalc. Know WHAT it is for and WHICH WAY it moves."),
  ]),
@@ -61,8 +61,8 @@ TOPICS = [
    ("Alkaline phosphatase", "CHOLESTASIS / BILE DUCT OBSTRUCTION. Also in BONE, PLACENTA, INTESTINE. CONFIRM HEPATIC ORIGIN WITH GGT."),
    ("Albumin", "Made ONLY by the liver, HALF-LIFE ~3 WEEKS → a LOW albumin means CHRONIC disease (>3 weeks). May also drop in severe illness."),
    ("Prothrombin time / INR", "MOST SENSITIVE FUNCTIONAL MARKER. Can prolong WITHIN 24 HOURS. Factors II, VII, IX, X."),
-   ("The four hepatic patterns", "HEPATOCELLULAR: AST/ALT out of proportion to ALP. CHOLESTATIC: ALP out of proportion to AST/ALT. MIXED: both. ISOLATED HYPERBILIRUBINAEMIA: bilirubin up, enzymes normal (Gilbert, haemolysis)."),
-   ("Three liver shortcuts", "AST:ALT > 2:1 = ALCOHOL. AST/ALT IN THE THOUSANDS = only 3 causes — VIRAL, ISCHAEMIA, TOXINS. Magnitude: mild <5×, moderate 5–15×, severe >15×."),
+   ("The four hepatic patterns", "HEPATOCELLULAR: AST/ALT out of proportion to ALP. CHOLESTATIC: ALP out of proportion to AST/ALT. MIXED: both. ISOLATED HYPERBILIRUBINEMIA: bilirubin up, enzymes normal (Gilbert, hemolysis)."),
+   ("Three liver shortcuts", "AST:ALT > 2:1 = ALCOHOL. AST/ALT IN THE THOUSANDS = only 3 causes — VIRAL, ISCHEMIA, TOXINS. Magnitude: mild <5×, moderate 5–15×, severe >15×."),
  ]),
  ("l5-fluid", "Patterns, Fluid Balance & The Vomiting Case", "#5a3a5e", "#ece3ee", "#f6f1f6", "#432c46", [
    ("RENAL pattern", "↑ BUN · ↑ CREATININE · ↓ FILTRATION RATE · ± ↑ POTASSIUM, ↑ PHOSPHATE, ↓ CALCIUM · METABOLIC ACIDOSIS · ALBUMINURIA."),
@@ -70,10 +70,10 @@ TOPICS = [
    ("METABOLIC pattern (DKA)", "↑ GLUCOSE · ↓ BICARBONATE · ↑ ANION GAP · LOW pH · ± ↑ POTASSIUM DESPITE TOTAL-BODY DEPLETION."),
    ("Two overlaps by name", "HEPATORENAL SYNDROME = liver AND kidney failure together. CARDIORENAL SYNDROME = the cardiac equivalent. DKA hits electrolytes and kidney at once."),
    ("Reading order for an abnormal panel", "ELECTROLYTES/ACID-BASE (then the gap) → RENAL (BUN, creatinine, ratio) → GLUCOSE → LIVER → MINERALS."),
-   ("Fluid balance core tests", "SERUM SODIUM = water balance. SERUM OSMOLALITY (~275–285) separates TRUE hypotonic from PSEUDO/HYPERTONIC. URINE SODIUM <20 = HYPOVOLAEMIA; >40 with concentrated urine = SIADH. BUN:Cr >20 = PRERENAL."),
-   ("THREE PITFALLS", "HYPERGLYCAEMIA lowers measured sodium ~1.6–2 per 100 mg/dL glucose → CORRECTED SODIUM. PSEUDOHYPONATRAEMIA from HYPERLIPIDAEMIA/HYPERPROTEINAEMIA — low sodium with a NORMAL OSMOLALITY. And THE NUMBER ALONE NEVER GIVES THE DIAGNOSIS."),
-   ("Correlating with other tests", "ABNORMAL LFTs → ULTRASOUND first. LOW eGFR/ALBUMINURIA → urine studies + renal ultrasound; CHRONIC needs ≥3 MONTHS; CYSTATIN C confirms. DKA → ketones/beta-hydroxybutyrate, venous gas, urinalysis, ECG (for potassium), CBC. HYPONATRAEMIA → serum osm + urine sodium/osm."),
-   ("THE VOMITING CASE", "↓ Na · ↓ K · ↓ Cl · ↑ HCO3 · ALKALAEMIA. WHY IT PERSISTS: volume + K + Cl depletion force the kidney to reabsorb sodium AND bicarbonate. WHAT FIXES IT: SALINE + POTASSIUM CHLORIDE — replacing all three. NOT bicarbonate."),
+   ("Fluid balance core tests", "SERUM SODIUM = water balance. SERUM OSMOLALITY (~275–285) separates TRUE hypotonic from PSEUDO/HYPERTONIC. URINE SODIUM <20 = HYPOVOLEMIA; >40 with concentrated urine = SIADH. BUN:Cr >20 = PRERENAL."),
+   ("THREE PITFALLS", "HYPERGLYCEMIA lowers measured sodium ~1.6–2 per 100 mg/dL glucose → CORRECTED SODIUM. PSEUDOHYPONATREMIA from HYPERLIPIDEMIA/HYPERPROTEINEMIA — low sodium with a NORMAL OSMOLALITY. And THE NUMBER ALONE NEVER GIVES THE DIAGNOSIS."),
+   ("Correlating with other tests", "ABNORMAL LFTs → ULTRASOUND first. LOW eGFR/ALBUMINURIA → urine studies + renal ultrasound; CHRONIC needs ≥3 MONTHS; CYSTATIN C confirms. DKA → ketones/beta-hydroxybutyrate, venous gas, urinalysis, ECG (for potassium), CBC. HYPONATREMIA → serum osm + urine sodium/osm."),
+   ("THE VOMITING CASE", "↓ Na · ↓ K · ↓ Cl · ↑ HCO3 · ALKALEMIA. WHY IT PERSISTS: volume + K + Cl depletion force the kidney to reabsorb sodium AND bicarbonate. WHAT FIXES IT: SALINE + POTASSIUM CHLORIDE — replacing all three. NOT bicarbonate."),
  ]),
 ]
 

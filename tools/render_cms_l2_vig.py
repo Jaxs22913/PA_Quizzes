@@ -12,7 +12,7 @@ INTRO = ("Thirty clinical vignettes on General Dermatology I. Each case carries 
          "the clues that narrow it &mdash; age, exposures, risk factors &mdash; and the defining "
          "feature it turns on. The lead-in varies deliberately: some ask for the diagnosis, others "
          "for the next step, the first-line treatment, the initial or confirmatory test, or what "
-         "you would tell the patient. Read the lead-in carefully; recognising the disease and "
+         "you would tell the patient. Read the lead-in carefully; recognizing the disease and "
          "answering the question are two separate acts. Every question cites its slide.")
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "general-dermatology-i-vignettes.html" if n == 1 else "general-dermatology-i-vignettes-version-2.html"

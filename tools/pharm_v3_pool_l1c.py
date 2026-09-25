@@ -49,7 +49,7 @@ QUESTIONS = [
  dict(topic="Polyenes", io="2 — Common modes of action of antimicrobial agents", cite=D % 96,
   q="Where does amphotericin B come from?",
   opts=[["A soil Streptomycetaceae organism", "Correct, and it forms channels in ergosterol-containing membranes."],
-        ["A Penicillium mould", "That is the source of griseofulvin."],
+        ["A Penicillium mold", "That is the source of griseofulvin."],
         ["A synthetic triazole scaffold", "Amphotericin B is not a triazole."],
         ["Bacillus polymyxa fermentation", "That is the polymyxin source."]]),
 
@@ -69,15 +69,15 @@ QUESTIONS = [
 
  dict(topic="Polyenes", io="2 — Common modes of action of antimicrobial agents", cite=D % 98,
   q="Why are fever and chills pre-treated during amphotericin B infusion?",
-  opts=[["They are driven by interleukin-1 and tumour necrosis factor", "Correct, so paracetamol, antihistamines and steroids are given first."],
+  opts=[["They are driven by interleukin-1 and tumor necrosis factor", "Correct, so paracetamol, antihistamines and steroids are given first."],
         ["They represent an immunoglobulin E allergy", "The mechanism given is cytokine release."],
         ["They signal an infusion running too slowly", "The infusion already runs over about 4 hours."],
         ["They indicate the electrolyte disturbance beginning early", "Electrolyte loss is a separate adverse effect."]]),
 
  dict(topic="Polyenes", io="2 — Common modes of action of antimicrobial agents", cite=D % 99,
   q="How is amphotericin B renal tubule damage limited?",
-  opts=[["Hydration with normal saline", "Correct, alongside monitoring for uraemia and low filtration."],
-        ["Alkalinising the urine with bicarbonate", "Saline hydration is the stated measure."],
+  opts=[["Hydration with normal saline", "Correct, alongside monitoring for uremia and low filtration."],
+        ["Alkalinizing the urine with bicarbonate", "Saline hydration is the stated measure."],
         ["Giving the drug as a rapid bolus", "The infusion is deliberately slow."],
         ["Adding a loop diuretic to force output", "That is not the stated countermeasure."]]),
 
@@ -120,7 +120,7 @@ QUESTIONS = [
   q="Why is a single dose of fluconazole enough for vaginal candidiasis?",
   opts=[["It is excreted in the urine", "Correct, and it also has the best oral absorption of the azoles."],
         ["It binds irreversibly to fungal enzymes", "The stated reason is urinary excretion."],
-        ["It is stored in keratin precursor cells", "That is griseofulvin's behaviour."],
+        ["It is stored in keratin precursor cells", "That is griseofulvin's behavior."],
         ["It has an extremely long plasma half-life", "Urinary excretion is what is described."]]),
 
  dict(topic="Azoles", io="2 — Common modes of action of antimicrobial agents", cite=D % 107,
@@ -139,17 +139,17 @@ QUESTIONS = [
 
  dict(topic="Echinocandins", io="2 — Common modes of action of antimicrobial agents", cite=D % 109,
   q="When are the echinocandins used?",
-  opts=[["Oesophageal candidiasis and refractory aspergillosis", "Correct, including febrile neutropenia not responding to antibiotics."],
+  opts=[["Esophageal candidiasis and refractory aspergillosis", "Correct, including febrile neutropenia not responding to antibiotics."],
         ["First-line therapy for all systemic fungal disease", "Their role is largely salvage."],
         ["Superficial dermatophyte infection of the nails", "Terbinafine and griseofulvin serve there."],
         ["Cryptococcal meningitis requiring brain entry", "Fluconazole and amphotericin B cover that."]]),
 
  dict(topic="Echinocandins", io="2 — Common modes of action of antimicrobial agents", cite=D % 109,
   q="Which electrolyte disturbances follow the echinocandins?",
-  opts=[["Hypokalaemia and hypomagnesaemia", "Correct, alongside tachycardia, headache and blood dyscrasias."],
-        ["Hyperkalaemia and hypercalcaemia", "The pattern runs towards low levels."],
-        ["Hypernatraemia and hyperchloraemia", "Those are not the named disturbances."],
-        ["Hypophosphataemia alone", "Potassium and magnesium are the ones named."]]),
+  opts=[["Hypokalemia and hypomagnesemia", "Correct, alongside tachycardia, headache and blood dyscrasias."],
+        ["Hyperkalemia and hypercalcemia", "The pattern runs towards low levels."],
+        ["Hypernatremia and hyperchloremia", "Those are not the named disturbances."],
+        ["Hypophosphatemia alone", "Potassium and magnesium are the ones named."]]),
 
  dict(topic="Griseofulvin", io="2 — Common modes of action of antimicrobial agents", cite=D % 110,
   q="Where does griseofulvin accumulate?",
@@ -201,22 +201,22 @@ QUESTIONS = [
         ["They break parasite DNA strands directly", "That is closer to metronidazole's action."]]),
 
  dict(topic="Anthelmintics", io="2 — Common modes of action of antimicrobial agents", cite=D % 116,
-  q="How does pyrantel pamoate paralyse a worm?",
-  opts=[["It acts as a depolarising neuromuscular blocker", "Correct, by releasing acetylcholine and inhibiting cholinesterase."],
+  q="How does pyrantel pamoate paralyze a worm?",
+  opts=[["It acts as a depolarizing neuromuscular blocker", "Correct, by releasing acetylcholine and inhibiting cholinesterase."],
         ["It blocks microtubule assembly", "That is the benzimidazole mechanism."],
-        ["It competitively blocks nicotinic receptors", "The block described is depolarising, not competitive."],
+        ["It competitively blocks nicotinic receptors", "The block described is depolarizing, not competitive."],
         ["It starves the parasite of glucose", "That is the benzimidazole effect."]]),
 
  dict(topic="Antivirals", io="5 — Antivirals", cite=D % 119,
   q="Which herpes simplex type is associated with the genitals and rectum?",
   opts=[["Type 2", "Correct, while type 1 involves mouth, face, skin and brain."],
-        ["Type 1", "Type 1 covers mouth, face, skin, oesophagus and brain."],
+        ["Type 1", "Type 1 covers mouth, face, skin, esophagus and brain."],
         ["Varicella-zoster", "That causes chickenpox and shingles."],
-        ["Cytomegalovirus", "That causes retinitis, oesophagitis and colitis."]]),
+        ["Cytomegalovirus", "That causes retinitis, esophagitis and colitis."]]),
 
  dict(topic="Antivirals", io="5 — Antivirals", cite=D % 119,
   q="Which conditions does cytomegalovirus cause?",
-  opts=[["Retinitis, oesophagitis and colitis", "Correct, particularly in immunocompromised patients."],
+  opts=[["Retinitis, esophagitis and colitis", "Correct, particularly in immunocompromised patients."],
         ["Chickenpox and shingles", "Those are varicella-zoster."],
         ["Cold sores around the mouth", "That is herpes simplex type 1."],
         ["Influenza-like illness each winter", "That is influenza."]]),
@@ -244,8 +244,8 @@ QUESTIONS = [
 
  dict(topic="Antivirals", io="6 — Anti-herpes agents", cite=D % 123,
   q="Which renal problem follows acyclovir?",
-  opts=[["It crystallises in the renal tubule", "Correct, which is why hydration is maintained."],
-        ["It causes interstitial nephritis from allergy", "Crystallisation is the described problem."],
+  opts=[["It crystallizes in the renal tubule", "Correct, which is why hydration is maintained."],
+        ["It causes interstitial nephritis from allergy", "Crystallization is the described problem."],
         ["It damages tubules by oxidative injury", "That is closer to amphotericin B."],
         ["It reduces renal blood flow directly", "That is not the stated mechanism."]]),
 
@@ -271,10 +271,10 @@ QUESTIONS = [
         ["Patients with influenza A or B", "Oseltamivir is the influenza agent."]]),
 
  dict(topic="Antivirals", io="7 — Anti-cytomegalovirus agents", cite=D % 125,
-  q="Which haematological effect limits ganciclovir?",
+  q="Which hematological effect limits ganciclovir?",
   opts=[["Neutropenia in 15 to 40 percent", "Correct, with thrombocytopenia also common."],
-        ["Haemolytic anaemia in most patients", "That is not the named effect."],
-        ["Polycythaemia requiring venesection", "The effects run towards suppression."],
+        ["Hemolytic anemia in most patients", "That is not the named effect."],
+        ["Polycythemia requiring venesection", "The effects run towards suppression."],
         ["Disseminated intravascular coagulation", "That is not among the listed effects."]]),
 
  dict(topic="Antivirals", io="7 — Anti-cytomegalovirus agents", cite=D % 125,
@@ -294,7 +294,7 @@ QUESTIONS = [
  dict(topic="Antivirals", io="8 — Anti-influenza agents", cite=D % 126,
   q="What form of drug is oseltamivir given as?",
   opts=[["A prodrug converted to the carboxylate", "Correct, and resistance is becoming a problem over time."],
-        ["An already active guanine analogue", "That describes acyclovir."],
+        ["An already active guanine analog", "That describes acyclovir."],
         ["A live attenuated preparation", "It is a drug rather than a vaccine."],
         ["An irreversible enzyme inhibitor", "It is described as a prodrug."]]),
 
@@ -322,7 +322,7 @@ QUESTIONS = [
  dict(topic="Antivirals", io="5 — Antivirals", cite=D % 118,
   q="Which of these is a stated approach to antiviral therapy?",
   opts=[["Blocking viral attachment to cells", "Correct, one of several points in the viral life cycle."],
-        ["Neutralising circulating bacterial toxin", "That is not an antiviral approach."],
+        ["Neutralizing circulating bacterial toxin", "That is not an antiviral approach."],
         ["Blocking fungal ergosterol synthesis", "That is an antifungal mechanism."],
         ["Chelating metal ions the virus needs", "That is not among the listed approaches."]]),
 ]

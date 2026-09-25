@@ -43,7 +43,7 @@ SECTION = """
     <em>which pupil is the abnormal one</em> and <em>what it does in the dark</em>. Get the four
     pathways straight first &mdash; afferent light, parasympathetic efferent, sympathetic, and
     near/accommodation &mdash; and the named pupils fall out of them rather than needing to be
-    memorised as a list.</p>
+    memorized as a list.</p>
   </div>
 
   <h3 class="sub" id="e2l2-nystagmus">2.1 &middot; Nystagmus <span class="cite">Objective a</span></h3>
@@ -70,7 +70,7 @@ SECTION = """
     nystagmus; nystagmus <b>acquired</b> during adolescence or adulthood; and concerning or
     non-physiologic nystagmus in adults. The pathway is <b>ophthalmology for a complete ophthalmic
     exam &rarr; initial imaging &rarr; labs if relevant</b>, and in every case <b>the underlying
-    aetiology must be addressed</b>. <span class="cite">Slide 5</span></p>
+    etiology must be addressed</b>. <span class="cite">Slide 5</span></p>
   </div>
 
   <h3 class="sub" id="e2l2-pathways">2.2 &middot; The three pupillary pathways <span class="cite">Objectives b, c, d</span></h3>
@@ -81,13 +81,13 @@ SECTION = """
   <table class="tbl">
     <tr><th>Pathway</th><th>Route</th><th>Effect</th></tr>
     <tr><td><b>Afferent light</b><br>(objective b)</td><td>Retinal ganglion cells &rarr; <b>CN II</b> &rarr; optic tracts &rarr; synapse in the <b>pretectal nuclei</b>. Each pretectal nucleus sends axons to <b>BOTH Edinger-Westphal nuclei</b>.</td><td>This bilateral crossing is why light in one eye constricts <b>both</b> pupils.</td></tr>
-    <tr><td><b>Parasympathetic efferent</b><br>(objective c)</td><td>Preganglionic fibres from the <b>Edinger-Westphal nucleus</b> travel along <b>CN III</b> to the ciliary ganglion, then short ciliary nerves to the <b>iris sphincter</b>.</td><td><b>MIOSIS</b></td></tr>
-    <tr><td><b>Sympathetic (oculo-sympathetic)</b><br>(objective d)</td><td><b>First order</b> hypothalamus &rarr; brainstem and cervical cord, synapsing at the <b>ciliospinal centre of Budge, C8&ndash;T2</b>. <b>Second order</b> exits the cord, loops up through the brachial plexus over the lung apex to the superior cervical ganglion. <b>Third order</b> follows the carotid to the <b>radial muscle of the iris</b>.</td><td><b>MYDRIASIS</b></td></tr>
+    <tr><td><b>Parasympathetic efferent</b><br>(objective c)</td><td>Preganglionic fibers from the <b>Edinger-Westphal nucleus</b> travel along <b>CN III</b> to the ciliary ganglion, then short ciliary nerves to the <b>iris sphincter</b>.</td><td><b>MIOSIS</b></td></tr>
+    <tr><td><b>Sympathetic (oculo-sympathetic)</b><br>(objective d)</td><td><b>First order</b> hypothalamus &rarr; brainstem and cervical cord, synapsing at the <b>ciliospinal center of Budge, C8&ndash;T2</b>. <b>Second order</b> exits the cord, loops up through the brachial plexus over the lung apex to the superior cervical ganglion. <b>Third order</b> follows the carotid to the <b>radial muscle of the iris</b>.</td><td><b>MYDRIASIS</b></td></tr>
   </table>
   <div class="callout">
     <p><strong>Why the three-neuron sympathetic chain is worth the effort.</strong> The whole of
-    Horner syndrome localisation below is just <em>which of those three neurons is damaged</em>.
-    The second-order neuron's detour over the lung apex is why a Pancoast tumour causes it, and
+    Horner syndrome localization below is just <em>which of those three neurons is damaged</em>.
+    The second-order neuron's detour over the lung apex is why a Pancoast tumor causes it, and
     the third-order neuron's ride along the carotid is why a dissection does.</p>
     <p><strong>Opioids are parasympathomimetics.</strong> Overdose gives <b>reduced mental status,
     respiratory depression under 12 per minute, reduced tidal volume, and pupillary
@@ -116,7 +116,7 @@ SECTION = """
   <p><strong>The governing principle.</strong> The efferent limb of the pupillary reflex is
   <b>bilateral</b>, so both pupils receive the same command and should always be the same size.
   They should only be unequal <b>when the efferent pathways are not working properly</b>.</p>
-  <figure class="fig"><img src="%(IMG)ss020_1.jpg" loading="lazy" alt="Four panels showing pupil behaviour in dark, light and near gaze."><figcaption><b>A</b> normal &mdash; symmetric in light and dark. <b>B</b> the <b>small</b> pupil is abnormal &mdash; the right pupil does not dilate well <em>in the dark</em>. <b>C</b> the <b>large</b> pupil is abnormal &mdash; the right pupil does not react well <em>to light</em>. <b>D</b> physiologic anisocoria. <span class="cite">Slide 20</span></figcaption></figure>
+  <figure class="fig"><img src="%(IMG)ss020_1.jpg" loading="lazy" alt="Four panels showing pupil behavior in dark, light and near gaze."><figcaption><b>A</b> normal &mdash; symmetric in light and dark. <b>B</b> the <b>small</b> pupil is abnormal &mdash; the right pupil does not dilate well <em>in the dark</em>. <b>C</b> the <b>large</b> pupil is abnormal &mdash; the right pupil does not react well <em>to light</em>. <b>D</b> physiologic anisocoria. <span class="cite">Slide 20</span></figcaption></figure>
   <table class="tbl">
     <tr><th>Ask</th><th>If yes</th><th>Then the abnormal pupil is</th></tr>
     <tr><td>Is the difference <b>greater in the DARK</b>?</td><td>The smaller pupil is failing to dilate</td><td>The <b>SMALL</b> one &mdash; think Horner, opioids, Argyll Robertson</td></tr>
@@ -145,7 +145,7 @@ SECTION = """
   the average illumination the brain is working from has just dropped.</p>
 
   <div class="prof-flag">
-    <span class="prof-flag-label">&#9733; Emphasised</span>
+    <span class="prof-flag-label">&#9733; Emphasized</span>
     <p><strong>Horner syndrome &mdash; dilation lag is the hallmark.</strong> The anisocoria is
     <b>most evident in the first 4&ndash;5 seconds after dimming the lights</b>, which is exactly
     when a normal sympathetic pathway would be actively dilating. <b>After 10&ndash;15 seconds the
@@ -159,8 +159,8 @@ SECTION = """
 
   <table class="tbl">
     <tr><th>Horner &mdash; neuron order</th><th>Causes</th></tr>
-    <tr><td><b>First order</b></td><td>Brainstem strokes and tumours; spinal cord lesions <b>above T1</b></td></tr>
-    <tr><td><b>Second order</b></td><td><b>Pancoast tumour</b> (superior pulmonary sulcus), thyroid cancer</td></tr>
+    <tr><td><b>First order</b></td><td>Brainstem strokes and tumors; spinal cord lesions <b>above T1</b></td></tr>
+    <tr><td><b>Second order</b></td><td><b>Pancoast tumor</b> (superior pulmonary sulcus), thyroid cancer</td></tr>
     <tr><td><b>Third order</b></td><td><b>Carotid dissection</b>, cavernous sinus pathology</td></tr>
     <tr><td colspan="2"><b>Often idiopathic</b> &mdash; emphatically so, and a negative workup is a real outcome rather than a failure.</td></tr>
   </table>
@@ -191,7 +191,7 @@ SECTION = """
     <tr><th></th><th>CN III (oculomotor)</th><th>CN IV (trochlear)</th><th>CN VI (abducens)</th></tr>
     <tr><td><b>Muscle</b></td><td><b>Superior division:</b> levator palpebrae, superior rectus. <b>Inferior division:</b> inferior rectus, medial rectus, inferior oblique, and parasympathetics to the ciliary ganglion</td><td><b>Superior oblique</b> &mdash; intorts and depresses</td><td><b>Lateral rectus</b> &mdash; abducts</td></tr>
     <tr><td><b>Diplopia</b></td><td>With ptosis and mydriasis</td><td><b>VERTICAL</b>, binocular, worse with postural head change</td><td><b>HORIZONTAL</b>, binocular</td></tr>
-    <tr><td><b>Most common cause</b></td><td><b>Microvascular</b> &mdash; diabetes, hypertension</td><td><b>Congenital</b> when isolated, even in adults. Acquired &rarr; trauma, even mild, or microvascular</td><td><b>Children:</b> intracranial tumours, especially brainstem and posterior fossa. <b>Adults:</b> microvascular; also major trauma or skull base fracture</td></tr>
+    <tr><td><b>Most common cause</b></td><td><b>Microvascular</b> &mdash; diabetes, hypertension</td><td><b>Congenital</b> when isolated, even in adults. Acquired &rarr; trauma, even mild, or microvascular</td><td><b>Children:</b> intracranial tumors, especially brainstem and posterior fossa. <b>Adults:</b> microvascular; also major trauma or skull base fracture</td></tr>
     <tr><td><b>The dreaded cause</b></td><td><b>Compression by an enlarging intracranial aneurysm</b>, most commonly of the <b>posterior communicating artery</b> &mdash; threat of rupture <b>within hours to days</b></td><td>&mdash;</td><td>&mdash;</td></tr>
   </table>
   <div class="prof-flag">
@@ -202,18 +202,18 @@ SECTION = """
       <tr><th>Pupil involved</th><th>Pupil spared</th></tr>
       <tr><td><b>STAT CTA head or MRA brain</b> &mdash; this is the vascular pathway, and the aneurysm is what you are ruling out</td><td>Reassurance and imaging, but <b>it does not need to be STAT</b></td></tr>
     </table>
-    <p>The anatomical reason: the parasympathetic fibres run on the <em>outside</em> of the nerve,
+    <p>The anatomical reason: the parasympathetic fibers run on the <em>outside</em> of the nerve,
     so an external compression reaches them first, while microvascular disease infarcts the core
     and spares them. <span class="cite">Slide 41</span></p>
   </div>
   <figure class="fig"><img src="%(IMG)ss039_2.jpg" loading="lazy" alt="Diagram of the third cranial nerve's course from midbrain to orbit, with six numbered lesion sites."><figcaption>The course of CN III and where it can be struck: <b>1</b> nuclear, <b>2</b> fascicle, <b>3</b> uncal herniation, <b>4</b> <b>posterior communicating artery aneurysm</b>, <b>5</b> cavernous sinus, <b>6</b> orbital. Site 4 is the one the pupil-involved rule is built around. <span class="cite">Slide 39</span></figcaption></figure>
   <p><strong>CN IV is the odd one out anatomically:</strong> it is the <b>only nerve arising from
   the dorsal surface of the brainstem</b>, and it <b>crosses</b> &mdash; the <b>left trochlear
-  nucleus sends fibres to the RIGHT eye</b>. Clinically the patient <b>tilts the head to the
+  nucleus sends fibers to the RIGHT eye</b>. Clinically the patient <b>tilts the head to the
   opposite side of the problem eye</b> to compensate.</p>
   <table class="tbl">
     <tr><th>Situation</th><th>Management</th></tr>
-    <tr><td>Isolated, atraumatic <b>CN IV or CN VI</b> palsy</td><td><b>MRI brain with and without contrast</b>. Check <b>haemoglobin A1C</b> if there are risk factors and no known diabetes.</td></tr>
+    <tr><td>Isolated, atraumatic <b>CN IV or CN VI</b> palsy</td><td><b>MRI brain with and without contrast</b>. Check <b>hemoglobin A1C</b> if there are risk factors and no known diabetes.</td></tr>
     <tr><td><b>Traumatic</b></td><td><b>Observe roughly 6 months</b> before considering corrective treatment. In the interim, <b>patch one eye</b> to relieve binocular diplopia.</td></tr>
     <tr><td><b>Congenital</b></td><td>Patching.</td></tr>
   </table>
@@ -221,7 +221,7 @@ SECTION = """
   <h3 class="sub" id="e2l2-ptosis">2.7 &middot; Ptosis <span class="cite">Objective f6</span></h3>
   <p><strong>Definition:</strong> drooping of the upper eyelid from a congenital or acquired
   abnormality of the muscles that elevate it. Three structures hold the lid up, and knowing which
-  is which is how you localise the cause:</p>
+  is which is how you localize the cause:</p>
   <table class="tbl">
     <tr><th>Structure</th><th>Innervation</th><th>Role</th></tr>
     <tr><td><b>Levator palpebrae superioris</b></td><td><b>CN III</b></td><td>Elevates the upper lid</td></tr>
@@ -245,15 +245,15 @@ SECTION = """
   <figure class="fig"><img src="%(IMG)ss052_1.jpg" loading="lazy" alt="Visual pathway from retina to striate cortex with the field defect produced by a lesion at each point."><figcaption>Lesion site <b>A</b> optic nerve, <b>B</b> chiasm, <b>C</b> optic tract, <b>D</b> optic radiation, <b>E</b> striate cortex &mdash; with the monocular field defect each produces. <span class="cite">Slides 51&ndash;52</span></figcaption></figure>
   <table class="tbl">
     <tr><th>Lesion site</th><th>Field defect</th><th>Pre- or post-chiasm</th></tr>
-    <tr><td><b>Optic nerve</b></td><td><b>Total blindness of that eye</b></td><td><b>PRE</b> &mdash; monocular, because the fibres have not crossed yet</td></tr>
-    <tr><td><b>Optic chiasm</b></td><td><b>Bitemporal (heteronymous) hemianopsia</b></td><td>At the chiasm &mdash; the crossing nasal fibres are hit</td></tr>
+    <tr><td><b>Optic nerve</b></td><td><b>Total blindness of that eye</b></td><td><b>PRE</b> &mdash; monocular, because the fibers have not crossed yet</td></tr>
+    <tr><td><b>Optic chiasm</b></td><td><b>Bitemporal (heteronymous) hemianopsia</b></td><td>At the chiasm &mdash; the crossing nasal fibers are hit</td></tr>
     <tr><td><b>Optic tract</b></td><td><b>Left homonymous hemianopsia</b> (for a right tract lesion)</td><td><b>POST</b></td></tr>
     <tr><td><b>Optic radiation</b></td><td><b>Left superior quadrantanopia</b></td><td><b>POST</b></td></tr>
     <tr><td><b>Striate cortex</b></td><td><b>Left homonymous hemianopsia WITH MACULAR SPARING</b></td><td><b>POST</b></td></tr>
   </table>
   <div class="callout">
     <p><strong>The rule that generates all five rows.</strong> A <b>monocular</b> defect is
-    <b>pre-chiasmal</b> &mdash; one eye's fibres, before any crossing. A <b>bitemporal</b> defect
+    <b>pre-chiasmal</b> &mdash; one eye's fibers, before any crossing. A <b>bitemporal</b> defect
     is <b>at</b> the chiasm. Anything <b>homonymous</b> &mdash; the same side of the field in both
     eyes &mdash; is <b>post-chiasmal</b>, and the further back the lesion, the more congruent and
     the more likely to spare the macula.</p>
@@ -296,7 +296,7 @@ TEST = """    neuro: [
        choices:["Failure to constrict to light","DILATION LAG in the first 4-5 seconds after the lights dim","A brisk near response with no light response","Sector paralysis of the iris"],correct:1,
        explain:"Dilation lag. After 10-15 seconds the pupil does dilate a little, but that is passive relaxation of the sphincter rather than sympathetic function."},
       {q:"A third nerve palsy WITH pupil involvement requires what?",
-       choices:["Reassurance and routine imaging","STAT CTA head or MRA brain","Haemoglobin A1C and observation","Patching for six months"],correct:1,
+       choices:["Reassurance and routine imaging","STAT CTA head or MRA brain","Hemoglobin A1C and observation","Patching for six months"],correct:1,
        explain:"Pupil involvement points at external compression &mdash; most commonly a posterior communicating artery aneurysm, which threatens rupture within hours to days."},
       {q:"Which pupil does NOT react to light but constricts briskly to near?",
        choices:["Marcus Gunn","Adie tonic","Argyll Robertson","Horner"],correct:2,
@@ -307,9 +307,9 @@ TEST = """    neuro: [
       {q:"Which cranial nerve arises from the DORSAL brainstem and crosses?",
        choices:["CN III","CN IV","CN VI","CN II"],correct:1,
        explain:"CN IV. The left trochlear nucleus supplies the right eye. Patients tilt the head AWAY from the affected eye to compensate."},
-      {q:"A bitemporal hemianopsia localises the lesion where?",
+      {q:"A bitemporal hemianopsia localizes the lesion where?",
        choices:["Optic nerve","Optic chiasm","Optic tract","Striate cortex"],correct:1,
-       explain:"The crossing nasal fibres are hit at the chiasm. Monocular loss is pre-chiasmal; anything homonymous is post-chiasmal."},
+       explain:"The crossing nasal fibers are hit at the chiasm. Monocular loss is pre-chiasmal; anything homonymous is post-chiasmal."},
       {q:"What is the most common form of jerk nystagmus?",
        choices:["Vertical","Torsional","Horizontal","Rotary"],correct:2,
        explain:"Horizontal jerk nystagmus &mdash; eyes drift slowly to one side and snap quickly back. It is named for the direction of the FAST beat."},

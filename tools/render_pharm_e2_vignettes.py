@@ -18,7 +18,7 @@ INTRO = ("Twenty-one questions that open with a patient rather than a fact. The 
          "<b>No doses</b>, which Dr. Wood does not ask for, and nothing is built on the four "
          "things he took off the table &mdash; individual antibiotic indications, formulations, "
          "which agent causes irritation, and the specific combination products. "
-         "The one item he promised to ask is here: <b>rebound hyperaemia</b>, the two-week "
+         "The one item he promised to ask is here: <b>rebound hyperemia</b>, the two-week "
          "limit, and the 72-hour review point. Every question cites its slide.")
 
 for n, key in ((1, "set1"), (2, "set2")):

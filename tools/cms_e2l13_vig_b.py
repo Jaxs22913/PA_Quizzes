@@ -40,8 +40,8 @@ QUESTIONS = [
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="treatment", cite=D % 9,
   q="A 67-year-old woman needs her intraocular pressure lowered. Which class works by reducing aqueous production?",
-  opts=[["Beta blockers such as timolol", "Correct, as do carbonic anhydrase inhibitors."],
-        ["Prostaglandin analogues", "Those increase outflow instead."],
+  opts=[["Beta blockers (timolol)", "Correct, as do carbonic anhydrase inhibitors."],
+        ["Prostaglandin analogs", "Those increase outflow instead."],
         ["Anti-VEGF injections", "Those treat wet macular degeneration."],
         ["Atropine drops", "Those are used to blur an eye in amblyopia."]]),
 
@@ -50,7 +50,7 @@ QUESTIONS = [
   opts=[["An Amsler grid", "Correct. Distortion of the grid signals change."],
         ["A near vision card", "That measures acuity, not distortion."],
         ["A pinhole occluder", "That separates refractive causes."],
-        ["A colour vision plate", "That screens optic nerve disease."]]),
+        ["A color vision plate", "That screens optic nerve disease."]]),
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="confirmatory test", cite=D % 14,
   q="An 80-year-old woman's central vision has worsened suddenly and wet disease is suspected. Which test confirms it?",
@@ -62,9 +62,9 @@ QUESTIONS = [
  dict(topic="Age-related macular degeneration", io=IO_A, lead="reasoning", cite=D % 11,
   q="An 86-year-old man has a dense scar at the macula from previous bleeding. Which form of macular degeneration is this?",
   opts=[["Wet, because it began with neovascular bleeding", "Correct. The scar is the end stage of the wet process."],
-        ["Neither; scarring is unrelated", "It is the recognised end point."],
+        ["Neither; scarring is unrelated", "It is the recognized end point."],
         ["Dry, because it is now stable", "Stability does not reclassify it."],
-        ["Wet only if it is still bleeding", "It stays wet disease after the bleed organises."]]),
+        ["Wet only if it is still bleeding", "It stays wet disease after the bleed organizes."]]),
 
  dict(topic="Refractive errors", io=IO_A, lead="diagnosis", cite=D % 20,
   q="A 22-year-old man has blur at all distances that improves fully with a toric lens. Which error does he have?",
@@ -78,7 +78,7 @@ QUESTIONS = [
   opts=[["Distance blurred, near clear", "Correct. Myopia focuses distant objects in front of the retina."],
         ["Near blurred, distance clear", "That is hyperopia."],
         ["Blur at every distance", "That is astigmatism."],
-        ["Loss of colour vision", "Refraction does not affect colour."]]),
+        ["Loss of color vision", "Refraction does not affect color."]]),
 
  dict(topic="Strabismus", io=IO_A, lead="next step", cite=D % 25,
   q="A 50-year-old woman develops horizontal double vision that resolves when either eye is covered. What is the next step?",
@@ -98,11 +98,11 @@ QUESTIONS = [
   q="A 5-year-old girl has a congenital ptosis that has covered her pupil since birth. What is the visual risk?",
   opts=[["Deprivation amblyopia", "Correct. An obstructed view stops the eye developing."],
         ["Glaucoma", "Pressure is not affected."],
-        ["Retinoblastoma", "A tumour is not caused by ptosis."],
-        ["Macular degeneration", "That is a disease of ageing."]]),
+        ["Retinoblastoma", "A tumor is not caused by ptosis."],
+        ["Macular degeneration", "That is a disease of aging."]]),
 
  dict(topic="Amblyopia", io=IO_B, lead="next step", cite=D % 33,
-  q="A 2-year-old boy has an eyelid haemangioma covering the visual axis. What is the priority?",
+  q="A 2-year-old boy has an eyelid hemangioma covering the visual axis. What is the priority?",
   opts=[["Prompt referral to prevent amblyopia", "Correct. The obstruction has to be cleared while vision can still develop."],
         ["Observe until school age", "The critical window closes long before that."],
         ["Treat only if it bleeds", "Vision is the concern, not bleeding."],
@@ -120,7 +120,7 @@ QUESTIONS = [
   opts=[["Posterior subcapsular", "Correct. Steroid-associated, faster, and classically under fifty."],
         ["Nuclear", "That is slower and shifts vision myopic."],
         ["Cortical cataract", "That begins peripherally and is quiet."],
-        ["Zonular cataract", "That is a paediatric type."]]),
+        ["Zonular cataract", "That is a pediatric type."]]),
 
  dict(topic="Cataract", io=IO_A, lead="reasoning", cite=D % 37,
   q="A 69-year-old man with a nuclear cataract finds he can suddenly read without glasses. Why?",
@@ -153,7 +153,7 @@ QUESTIONS = [
  dict(topic="Retinoblastoma", io=IO_B, lead="diagnosis", cite=D % 41,
   q="A 3-year-old has a white pupillary reflex in one eye and an eye that has begun to turn. Which diagnosis leads?",
   opts=[["Retinoblastoma", "Correct. Leukocoria with strabismus is the classic presentation."],
-        ["Congenital cataract", "It can look identical, but the tumour must be excluded first."],
+        ["Congenital cataract", "It can look identical, but the tumor must be excluded first."],
         ["Amblyopia", "That does not whiten the reflex."],
         ["Toxocariasis", "Also a differential, and less urgent."]]),
 
@@ -175,8 +175,8 @@ QUESTIONS = [
   q="A 62-year-old man has a dome-shaped pigmented mass under the retina found on routine fundoscopy, and no symptoms. Which diagnosis fits?",
   opts=[["Choroidal melanoma", "Correct. Most are found incidentally and are asymptomatic."],
         ["Choroidal nevus", "That is smaller, flat and stable."],
-        ["Choroidal haemangioma", "That is red-orange, not pigmented."],
-        ["Retinoblastoma", "That is a childhood tumour."]]),
+        ["Choroidal hemangioma", "That is red-orange, not pigmented."],
+        ["Retinoblastoma", "That is a childhood tumor."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="confirmatory test", cite=D % 46,
   q="A 58-year-old woman has a suspected uveal melanoma. What is fine needle aspiration used for here?",
@@ -197,7 +197,7 @@ QUESTIONS = [
   opts=[["The risk of transformation is low", "Correct, but surveillance continues because it is not zero."],
         ["It will certainly become melanoma", "Transformation is uncommon."],
         ["There is no risk at all", "The risk is low rather than absent."],
-        ["Risk depends on her eye colour", "That is not the determinant."]]),
+        ["Risk depends on her eye color", "That is not the determinant."]]),
 
  dict(topic="Iris nevus", io=IO_A, lead="diagnosis", cite=D % 48,
   q="A 45-year-old man has flat, multifocal, bilateral surface pigment on both irides. What is this?",
@@ -218,5 +218,5 @@ QUESTIONS = [
   opts=[["Functional visual loss", "Correct, once organic causes have been excluded."],
         ["Early cataract", "The lens is clear."],
         ["Open-angle glaucoma", "Pressure and discs are normal."],
-        ["Optic neuritis", "That would show a pupillary defect and colour loss."]]),
+        ["Optic neuritis", "That would show a pupillary defect and color loss."]]),
 ]

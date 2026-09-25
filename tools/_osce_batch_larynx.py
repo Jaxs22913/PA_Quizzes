@@ -7,35 +7,35 @@ BATCH = {
   "been months.&rdquo;",
   "Listen to voice quality and how it changes with use. <b>Ask about vocal demand and abuse: "
   "shouting, singing, professional voice use, smoking, reflux.</b> Palpate the neck. <b>Any "
-  "hoarseness beyond two to three weeks gets the larynx VISUALISED</b> &mdash; that rule is what "
+  "hoarseness beyond two to three weeks gets the larynx VISUALIZED</b> &mdash; that rule is what "
   "the station is testing.",
   [("Vocal cord polyp", "Usually UNILATERAL and often follows a single vocal injury"),
    ("Laryngeal carcinoma", "The reason hoarseness is never watched indefinitely &mdash; smoker, weight loss, otalgia"),
-   ("Reflux laryngitis", "Diffuse posterior erythema and oedema without discrete lesions")],
+   ("Reflux laryngitis", "Diffuse posterior erythema and edema without discrete lesions")],
   "<b>Laryngoscopy, flexible or with videostroboscopy</b> &rarr; <b>BILATERAL, symmetric lesions "
   "at the junction of the anterior and middle thirds</b> of the cords &mdash; that symmetry and "
   "site name them. Stroboscopy shows the mucosal wave impairment.",
-  "A unilateral lesion is a polyp or a tumour, not a nodule; <b>an irregular, ulcerated or fixed "
+  "A unilateral lesion is a polyp or a tumor, not a nodule; <b>an irregular, ulcerated or fixed "
   "cord goes to biopsy</b>; improvement with voice therapy alone supports the diagnosis."),
 
 "Vocal cord polyps": E(
   "&ldquo;My voice went hoarse after I screamed at a match and it hasn&rsquo;t come back.&rdquo;",
   "Assess voice quality &mdash; often breathy and rough. Take the history of a single vocal event, "
-  "smoking and reflux. <b>Visualise the larynx.</b> Palpate the neck for nodes.",
+  "smoking and reflux. <b>Visualize the larynx.</b> Palpate the neck for nodes.",
   [("Vocal cord nodules", "Bilateral and symmetric, from chronic rather than single abuse"),
    ("Laryngeal carcinoma", "Irregular, ulcerated, may fix the cord &mdash; must be excluded"),
-   ("Reinke oedema", "Diffuse fusiform swelling of both cords in a smoker, not a discrete polyp")],
+   ("Reinke edema", "Diffuse fusiform swelling of both cords in a smoker, not a discrete polyp")],
   "<b>Laryngoscopy with stroboscopy</b> &rarr; a <b>UNILATERAL, often pedunculated lesion</b> on "
   "the free edge of the cord. <b>Histology after excision</b> &rarr; benign, and it excludes "
   "carcinoma at the same time.",
-  "Bilateral symmetric lesions mean nodules; diffuse cord swelling in a smoker means Reinke oedema; "
+  "Bilateral symmetric lesions mean nodules; diffuse cord swelling in a smoker means Reinke edema; "
   "<b>benign histology is what formally excludes malignancy</b>, which clinical appearance alone "
   "cannot do."),
 
 "Vocal cord papillomatosis": E(
   "A parent says &ldquo;his voice has been hoarse for months and now he makes a noise when he "
   "breathes.&rdquo; In adults, persistent hoarseness.",
-  "Assess voice and <b>listen for STRIDOR &mdash; airway obstruction is the danger</b>. Visualise "
+  "Assess voice and <b>listen for STRIDOR &mdash; airway obstruction is the danger</b>. Visualize "
   "the larynx. Note that it <b>recurs after removal</b>. Ask about maternal history in a child.",
   [("Vocal cord nodules", "Smooth and symmetric; no airway compromise or recurrence"),
    ("Laryngeal carcinoma", "In adults, and papillomatosis can undergo malignant transformation"),
@@ -69,7 +69,7 @@ BATCH = {
   "Assess voice and listen for <b>stridor, which would mean something more serious</b>. Examine the "
   "pharynx. Check for fever and lower respiratory signs. <b>Note the duration &mdash; under three "
   "weeks is the point.</b>",
-  [("Chronic laryngitis", "Beyond three weeks, and it requires visualisation"),
+  [("Chronic laryngitis", "Beyond three weeks, and it requires visualization"),
    ("Epiglottitis", "Severe odynophagia, drooling, toxicity &mdash; the emergency to exclude"),
    ("Laryngeal carcinoma", "Persistent hoarseness with risk factors; excluded by time course here")],
   "<b>Clinical</b> &rarr; hoarseness with an upper respiratory infection, resolving within one to "
@@ -83,11 +83,11 @@ BATCH = {
   "heartburn.&rdquo;",
   "Assess voice quality. <b>Take the risk factor history: smoking, alcohol, reflux, vocal abuse, "
   "inhaled corticosteroids.</b> <b>Palpate the neck for nodes</b> and ask about otalgia, weight "
-  "loss and dysphagia. <b>Visualise the larynx &mdash; this is not optional at this duration.</b>",
+  "loss and dysphagia. <b>Visualize the larynx &mdash; this is not optional at this duration.</b>",
   [("Laryngeal carcinoma", "The diagnosis this workup exists to exclude, in exactly this patient"),
-   ("Reflux laryngitis", "Posterior erythema, oedema and granuloma with reflux symptoms"),
+   ("Reflux laryngitis", "Posterior erythema, edema and granuloma with reflux symptoms"),
    ("Vocal cord lesions", "Discrete nodules or polyps rather than diffuse inflammation")],
-  "<b>Laryngoscopy</b> &rarr; diffuse erythema and oedema WITHOUT a discrete mass, ulceration or "
+  "<b>Laryngoscopy</b> &rarr; diffuse erythema and edema WITHOUT a discrete mass, ulceration or "
   "cord fixation. <b>Biopsy of any suspicious area</b> &rarr; the histology, which is what settles "
   "it. Consider reflux testing.",
   "<b>A mass, ulcer or immobile cord means carcinoma until biopsy says otherwise</b>; discrete "
@@ -97,7 +97,7 @@ BATCH = {
 "Viral pharyngitis": E(
   "&ldquo;My throat is sore, I&rsquo;ve got a cough and a runny nose.&rdquo;",
   "Inspect the pharynx for diffuse erythema, usually WITHOUT exudate. <b>Palpate anterior cervical "
-  "nodes.</b> Check for fever. <b>Note the presence of cough, rhinorrhoea and hoarseness &mdash; "
+  "nodes.</b> Check for fever. <b>Note the presence of cough, rhinorrhea and hoarseness &mdash; "
   "these point AWAY from streptococcal infection.</b> Palpate the spleen if fatigue is prominent.",
   [("Streptococcal pharyngitis", "Exudate, tender anterior nodes, fever, and NO cough"),
    ("Infectious mononucleosis", "Posterior nodes, marked fatigue, splenomegaly, palatal petechiae"),
@@ -149,12 +149,12 @@ BATCH = {
   "wall</b>. <b>Look for the driver: postnasal drip, reflux, smoking, mouth breathing, dry "
   "environment.</b> Examine the nose. Palpate the neck. <b>Ask about the red flags &mdash; weight "
   "loss, otalgia, dysphagia, a neck mass.</b>",
-  [("Laryngopharyngeal reflux", "Posterior laryngeal erythema and oedema with throat clearing"),
+  [("Laryngopharyngeal reflux", "Posterior laryngeal erythema and edema with throat clearing"),
    ("Allergic rhinitis with postnasal drip", "Nasal itch, sneezing, boggy turbinates"),
    ("Oropharyngeal carcinoma", "The red-flag diagnosis &mdash; a persistent unilateral lesion or ulcer")],
   "<b>Clinical</b> &rarr; persistent symptoms with a diffusely irritated pharynx and an "
   "identifiable irritant. <b>Nasal endoscopy or laryngoscopy</b> if it persists or red flags "
-  "appear &rarr; the underlying source, and it excludes a tumour.",
+  "appear &rarr; the underlying source, and it excludes a tumor.",
   "<b>Any persistent unilateral lesion or ulcer goes to biopsy</b>; response to antireflux measures "
   "supports reflux; treating rhinitis and seeing the throat settle confirms postnasal drip."),
 
@@ -181,7 +181,7 @@ BATCH = {
   "antibiotics or in an inhaler user.",
   "Inspect for <b>creamy white plaques</b>. <b>SCRAPE one with a tongue depressor &mdash; it "
   "comes off, leaving an erythematous, sometimes bleeding base.</b> That is the diagnostic "
-  "manoeuvre. Examine denture-bearing areas and the angles of the mouth. <b>Ask why: inhaled "
+  "maneuver. Examine denture-bearing areas and the angles of the mouth. <b>Ask why: inhaled "
   "steroids, antibiotics, diabetes, immunosuppression.</b>",
   [("Leukoplakia", "Does NOT scrape off &mdash; and it is premalignant"),
    ("Lichen planus", "Lacy striae that do not wipe away"),
@@ -211,13 +211,13 @@ BATCH = {
 
 "Dental abscess": E(
   "&ldquo;This tooth has been killing me and now my face is swollen.&rdquo;",
-  "<b>Percuss the suspect tooth &mdash; exquisite tenderness localises it.</b> Inspect for gingival "
+  "<b>Percuss the suspect tooth &mdash; exquisite tenderness localizes it.</b> Inspect for gingival "
   "swelling, a sinus tract, and caries. <b>Assess the floor of mouth, trismus, and the airway</b> "
   "&mdash; spread is the danger. Palpate cervical nodes. Check temperature.",
   [("Ludwig angina", "Bilateral firm floor-of-mouth elevation with tongue displacement &mdash; the emergency"),
    ("Periodontal abscess", "Arises from the periodontal pocket, tooth usually still vital"),
    ("Sialadenitis", "Gland swelling with pus at the duct, not tooth-related")],
-  "<b>Clinical</b> &rarr; a percussion-tender tooth with localised swelling. <b>Periapical or "
+  "<b>Clinical</b> &rarr; a percussion-tender tooth with localized swelling. <b>Periapical or "
   "panoramic radiograph</b> &rarr; a <b>radiolucency at the tooth apex</b>. <b>Contrast computed "
   "tomography</b> if there is facial swelling or trismus &rarr; the extent of spread and any deep "
   "space collection.",
@@ -228,25 +228,25 @@ BATCH = {
 "Gingivitis and periodontitis": E(
   "&ldquo;My gums bleed when I brush and my breath is bad.&rdquo; Later, &ldquo;my teeth feel "
   "loose.&rdquo;",
-  "Inspect gingivae for erythema, oedema and <b>bleeding on gentle probing</b>. <b>Assess tooth "
+  "Inspect gingivae for erythema, edema and <b>bleeding on gentle probing</b>. <b>Assess tooth "
   "MOBILITY and look for gingival recession</b> &mdash; those separate periodontitis from "
   "gingivitis. Note plaque and calculus. <b>Ask about diabetes, smoking and medications</b> such as "
   "phenytoin and calcium channel blockers.",
   [("Necrotising ulcerative gingivitis", "Punched-out interdental papillae with severe pain and fetor"),
-   ("Leukaemic gingival infiltration", "Boggy hypertrophied gums with bruising and systemic illness"),
+   ("Leukemic gingival infiltration", "Boggy hypertrophied gums with bruising and systemic illness"),
    ("Drug-induced gingival hyperplasia", "Overgrowth linked to a specific medication")],
   "<b>Clinical with periodontal probing</b> &rarr; <b>gingivitis is inflammation with NO attachment "
-  "loss and is REVERSIBLE; periodontitis shows pocket depths over 3 millimetres with attachment "
+  "loss and is REVERSIBLE; periodontitis shows pocket depths over 3 millimeters with attachment "
   "loss and is NOT</b>. <b>Dental radiographs</b> &rarr; alveolar bone loss confirming "
   "periodontitis. <b>Blood glucose and HbA1c.</b>",
   "Absence of pocketing and bone loss means gingivitis alone; <b>full blood count</b> &rarr; "
-  "excludes leukaemia if the gums are boggy and the patient is unwell; a medication review "
+  "excludes leukemia if the gums are boggy and the patient is unwell; a medication review "
   "explains drug-induced overgrowth."),
 
 "Dental caries, pulpitis and periapical abscess": E(
   "Early: &ldquo;it&rsquo;s sensitive to cold but it settles quickly.&rdquo; Later: &ldquo;it "
   "throbs at night and keeps me awake.&rdquo;",
-  "Inspect teeth for cavitation and discolouration. <b>Percussion tenderness</b> and <b>thermal "
+  "Inspect teeth for cavitation and discoloration. <b>Percussion tenderness</b> and <b>thermal "
   "testing</b> &mdash; <b>reversible pulpitis settles within seconds of removing the stimulus; "
   "irreversible pulpitis lingers and throbs</b>. Assess mobility, swelling and any sinus tract. "
   "Check trismus and the airway.",
@@ -273,7 +273,7 @@ BATCH = {
   "the inferior alveolar canal</b> &mdash; that relation is what the surgeon plans around. It also "
   "shows any associated cyst.",
   "An apical radiolucency on a carious tooth means a periapical abscess instead; a well-defined "
-  "pericoronal radiolucency over 3 millimetres suggests a dentigerous cyst; trismus with a raised "
+  "pericoronal radiolucency over 3 millimeters suggests a dentigerous cyst; trismus with a raised "
   "floor of mouth means spread and changes urgency."),
 
 "Malocclusion": E(
@@ -298,11 +298,11 @@ BATCH = {
   "&ldquo;My jaw clicks and aches, especially in the morning, and sometimes it locks.&rdquo;",
   "<b>Palpate the joint just anterior to the tragus while the patient opens and closes</b>, and "
   "palpate the masseter and temporalis for tenderness. <b>Measure maximal opening &mdash; under "
-  "about 40 millimetres is restricted.</b> <b>Note clicking, crepitus and deviation of the jaw on "
+  "about 40 millimeters is restricted.</b> <b>Note clicking, crepitus and deviation of the jaw on "
   "opening.</b> Examine the bite and check for bruxism wear facets. <b>Examine the ear, which is "
   "normal &mdash; this is a common cause of referred otalgia.</b>",
   [("Otitis media or externa", "Ear pain with an ABNORMAL ear examination; here the ear is normal"),
-   ("Dental pathology", "A percussion-tender tooth localises the pain"),
+   ("Dental pathology", "A percussion-tender tooth localizes the pain"),
    ("Giant cell arteritis", "Jaw CLAUDICATION on chewing in an older patient, with scalp tenderness")],
   "<b>Clinical</b> &rarr; joint or muscle tenderness with clicking, deviation and restricted "
   "opening. <b>Imaging is not routine</b>; <b>magnetic resonance</b> if it persists &rarr; disc "
@@ -351,15 +351,15 @@ BATCH = {
   "&mdash; facial weakness means malignancy until proven otherwise.</b> <b>Palpate cervical "
   "nodes.</b> Examine the mouth and the parapharyngeal space bimanually. Note pain, which also "
   "suggests malignancy. <b>Remember the rule: the SMALLER the gland, the HIGHER the chance the "
-  "tumour is malignant.</b>",
+  "tumor is malignant.</b>",
   [("Pleomorphic adenoma", "The commonest, benign, mobile and painless &mdash; but it can transform"),
-   ("Warthin tumour", "Benign, often bilateral, in older male smokers"),
+   ("Warthin tumor", "Benign, often bilateral, in older male smokers"),
    ("Mucoepidermoid or adenoid cystic carcinoma", "Fixed, painful, with facial weakness or nodes")],
   "<b>Ultrasound</b> &rarr; a solid mass and its position relative to the facial nerve plane. "
   "<b>Fine needle aspiration</b> &rarr; the cell type. <b>Magnetic resonance</b> &rarr; deep lobe "
   "extension and perineural spread &mdash; <b>adenoid cystic carcinoma spreads along nerves</b>. "
   "<b>Definitive histology comes from excision.</b>",
-  "<b>Incisional biopsy is avoided in the parotid &mdash; it seeds tumour and risks the facial "
+  "<b>Incisional biopsy is avoided in the parotid &mdash; it seeds tumor and risks the facial "
   "nerve</b>; benign cytology with a mobile painless mass and normal facial nerve function supports "
   "an adenoma; facial weakness, fixation or nodes mean malignancy regardless of what cytology says."),
 }

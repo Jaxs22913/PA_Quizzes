@@ -7,7 +7,7 @@ purple this exam's own quizzes already use, so the game looks like the block it
 belongs to rather than like the other two games.
 
 Grouping is by REGION rather than by instructional objective, which the engine
-supports via the ioLabel pass-through: the ENT block is organised
+supports via the ioLabel pass-through: the ENT block is organized
 anatomically -- ear, nose, neck, oral cavity, pharynx and larynx -- and a
 results breakdown along those lines is the one a student can act on.
 """

@@ -100,8 +100,8 @@ POOL_B = [
       "Correct — the concern is the vehicle rather than the drug itself, which is an unusual reason to avoid a formulation."],
      ["The drug itself is cleared entirely by glomerular filtration and reaches toxic levels",
       "The stated problem is accumulation of the vehicle."],
-     ["It crystallises in the renal tubule as acyclovir does",
-      "Tubular crystallisation is an acyclovir effect."],
+     ["It crystallizes in the renal tubule as acyclovir does",
+      "Tubular crystallization is an acyclovir effect."],
      ["It causes direct renal tubule damage requiring saline hydration",
       "That is amphotericin B's toxicity."]],
    c=0, cite=c(107)),
@@ -161,7 +161,7 @@ POOL_B = [
  dict(topic="Echinocandins", io=IO9A,
    q="Which indications are given for the echinocandins?",
    opts=[
-     ["Oesophageal candidiasis, systemic aspergillosis not responding to itraconazole or amphotericin B, and febrile neutropenic patients not responding to antibiotics",
+     ["Esophageal candidiasis, systemic aspergillosis not responding to itraconazole or amphotericin B, and febrile neutropenic patients not responding to antibiotics",
       "Correct — largely a salvage and neutropenic-fever role rather than first-line therapy."],
      ["Cryptococcal meningitis and prophylaxis in advanced human immunodeficiency virus infection",
       "Those are fluconazole indications."],
@@ -174,7 +174,7 @@ POOL_B = [
  dict(topic="Echinocandins", io=IO9A,
    q="Which adverse reactions are listed for the echinocandins?",
    opts=[
-     ["Tachycardia, headache, insomnia, hypokalaemia, hypomagnesaemia and blood dyscrasias",
+     ["Tachycardia, headache, insomnia, hypokalemia, hypomagnesemia and blood dyscrasias",
       "Correct. Note the electrolyte disturbances overlap with amphotericin B's, despite a completely different mechanism."],
      ["Visual disturbance and hepatic dysfunction",
       "Those belong to voriconazole."],
@@ -201,7 +201,7 @@ POOL_B = [
    q="How long does griseofulvin treatment take for scalp, fingernail and toenail infection?",
    opts=[
      ["About one month for the scalp, six to nine months for fingernails, and up to twelve months for toenails",
-      "Correct. The gradient follows how slowly each keratin structure grows out, and it is the counselling point that keeps patients adherent."],
+      "Correct. The gradient follows how slowly each keratin structure grows out, and it is the counseling point that keeps patients adherent."],
      ["About one week for the scalp, one month for fingernails, and three months for toenails",
       "These are far shorter than the durations given."],
      ["Three months for all three sites",

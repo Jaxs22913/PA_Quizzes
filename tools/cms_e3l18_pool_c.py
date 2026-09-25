@@ -19,7 +19,7 @@ Q("Thyroid nodule", IO, "What does a HOT nodule on radionuclide scanning imply?"
     "can safely be omitted."],
    ["A high risk of malignancy requiring urgent surgery",
     "Hot nodules carry a LOW malignant risk. Cold or warm nodules are the ones that require "
-    "aspiration, so this reverses the rule and would send the wrong patients to theatre."],
+    "aspiration, so this reverses the rule and would send the wrong patients to theater."],
    ["That the patient is hypothyroid",
     "A hot nodule produces excess hormone, which suppresses thyroid-stimulating hormone and makes "
     "the patient hyperthyroid rather than hypothyroid."],
@@ -29,25 +29,25 @@ Q("Thyroid nodule", IO, "What does a HOT nodule on radionuclide scanning imply?"
 
 Q("Thyroid cancer", IO, "Which thyroid carcinoma is commonest and has the best prognosis?",
   [["Papillary carcinoma",
-    "Correct. Papillary carcinoma accounts for about 75 per cent of thyroid cancers, arises from "
+    "Correct. Papillary carcinoma accounts for about 75 percent of thyroid cancers, arises from "
     "thyroid epithelial cells, is commonest in young women and has the best outlook of the four "
     "types. It tends to spread to local cervical lymph nodes rather than distantly, which is part of "
-    "why the prognosis is favourable."],
+    "why the prognosis is favorable."],
    ["Follicular carcinoma",
-    "Follicular carcinoma is the second commonest at about 16 per cent and also arises from "
+    "Follicular carcinoma is the second commonest at about 16 percent and also arises from "
     "epithelial cells, but it spreads by blood to bone and lung, and the Hurthle cell variant is "
     "more aggressive still."],
    ["Medullary carcinoma",
-    "Medullary carcinoma is about 5 per cent, arises from calcitonin-producing parafollicular C "
+    "Medullary carcinoma is about 5 percent, arises from calcitonin-producing parafollicular C "
     "cells, and is the most likely of the four to have metastasised by the time it is found."],
    ["Anaplastic carcinoma",
-    "Anaplastic carcinoma is about 1 per cent, occurs in elderly patients, and is the most aggressive "
+    "Anaplastic carcinoma is about 1 percent, occurs in elderly patients, and is the most aggressive "
     "form, causing death in 6 to 36 months and resistant to all treatment."]], C(42)),
 
 Q("Thyroid cancer", IO, "Which thyroid carcinoma spreads by blood to bone and lung?",
   [["Follicular carcinoma",
     "Correct. The route of spread is what distinguishes follicular from papillary disease. Papillary "
-    "tends to involve local cervical nodes, whereas follicular disseminates haematogenously to bone "
+    "tends to involve local cervical nodes, whereas follicular disseminates hematogenously to bone "
     "and lungs. A distant bony deposit in a thyroid cancer therefore points to the follicular "
     "type."],
    ["Papillary carcinoma",
@@ -58,12 +58,12 @@ Q("Thyroid cancer", IO, "Which thyroid carcinoma spreads by blood to bone and lu
     "an elderly patient, and its course is measured in months rather than by a route of spread."],
    ["Primary thyroid lymphoma",
     "Thyroid lymphoma arises on a background of Hashimoto thyroiditis and is staged as a lymphoma, "
-    "treated with chemotherapy and radiation rather than by pattern of haematogenous spread."]],
+    "treated with chemotherapy and radiation rather than by pattern of hematogenous spread."]],
   C(42)),
 
 Q("Thyroid cancer", IO, "From which cells does medullary thyroid carcinoma arise?",
   [["Parafollicular C cells",
-    "Correct. C cells produce calcitonin, which is why calcitonin serves as a tumour marker for "
+    "Correct. C cells produce calcitonin, which is why calcitonin serves as a tumor marker for "
     "detecting residual or recurrent disease. Their neuroendocrine origin also explains the familial "
     "association with multiple endocrine neoplasia, which is why family members are screened."],
    ["Thyroid follicular epithelial cells",
@@ -78,7 +78,7 @@ Q("Thyroid cancer", IO, "From which cells does medullary thyroid carcinoma arise
 
 Q("Thyroid cancer", IO, "Which thyroid carcinoma has a prognosis measured in months?",
   [["Anaplastic carcinoma",
-    "Correct. Anaplastic carcinoma represents about 1 per cent of thyroid cancers, occurs in elderly "
+    "Correct. Anaplastic carcinoma represents about 1 percent of thyroid cancers, occurs in elderly "
     "patients, and comprises small cell, giant cell and spindle cell types. It results in death "
     "within 6 to 36 months and is resistant to all treatment modalities, which is why the surgical "
     "option is isthmectomy rather than curative resection."],
@@ -96,7 +96,7 @@ Q("Thyroid cancer", IO,
   "Which operation is specified for anaplastic thyroid carcinoma?",
   [["Isthmectomy",
     "Correct. Almost all thyroid cancers require thyroidectomy, with two exceptions. One is disease "
-    "localised to a single lobe that is well differentiated with no metastasis; the other is "
+    "localized to a single lobe that is well differentiated with no metastasis; the other is "
     "anaplastic carcinoma, where isthmectomy is what is specified, because the disease is not "
     "curable by resection and the operation serves a different purpose."],
    ["Total thyroidectomy with neck dissection",
@@ -112,7 +112,7 @@ Q("Thyroid cancer", IO,
 Q("Thyroid lymphoma", IO,
   "Primary thyroid lymphoma is associated with which underlying condition?",
   [["Hashimoto thyroiditis",
-    "Correct. Most primary thyroid lymphomas are non-Hodgkin B cell tumours arising in a gland "
+    "Correct. Most primary thyroid lymphomas are non-Hodgkin B cell tumors arising in a gland "
     "already infiltrated by lymphocytes from Hashimoto thyroiditis. That shared lymphoid population "
     "is exactly why fine needle aspiration alone cannot separate the two, and why an open biopsy "
     "with lymphoma staging is needed."],
@@ -146,7 +146,7 @@ Q("Thyroid lymphoma", IO,
 
 Q("Neck neoplasm", IO,
   "Why is fine needle aspiration preferred to excisional biopsy for a suspected malignant neck node?",
-  [["Excision spills tumour and complicates definitive treatment",
+  [["Excision spills tumor and complicates definitive treatment",
     "Correct. Opening a malignant node breaches its capsule and releases cells into the surrounding "
     "tissue planes, seeding the neck beyond the original nodal compartment. That makes both the "
     "surgical field and the radiotherapy field harder to define afterwards, whereas aspiration "
@@ -154,8 +154,8 @@ Q("Neck neoplasm", IO,
    ["Aspiration is more accurate than excision",
     "Excision actually yields more tissue and preserves architecture, which is why it is used when "
     "lymphoma is suspected. Aspiration is preferred here in spite of giving less."],
-   ["Excision requires a general anaesthetic",
-    "Anaesthetic requirements are a practical consideration but not the stated reason. The argument "
+   ["Excision requires a general anesthetic",
+    "Anesthetic requirements are a practical consideration but not the stated reason. The argument "
     "is oncological."],
    ["Aspiration allows immunohistochemistry that excision does not",
     "Immunohistochemistry is more readily performed on a tissue block from an excision. The "
@@ -173,14 +173,14 @@ Q("Neck neoplasm", IO,
     "Positron emission tomography helps when the primary remains occult after examination and "
     "cross-sectional imaging, but starting with it skips the step that most often succeeds."],
    ["Repeating the fine needle aspiration",
-    "The aspirate has already answered what the tumour is. The outstanding question is where it came "
+    "The aspirate has already answered what the tumor is. The outstanding question is where it came "
     "from, which cytology cannot address."],
    ["Empirical radiotherapy to the whole neck",
-    "Irradiating without knowing the primary leaves an untreated tumour and commits the patient to a "
+    "Irradiating without knowing the primary leaves an untreated tumor and commits the patient to a "
     "field that may be wrong."]], C(39)),
 
-Q("Primary neck tumours", IO,
-  "Which benign neck tumour is a vascular neoplasm arising at the carotid body?",
+Q("Primary neck tumors", IO,
+  "Which benign neck tumor is a vascular neoplasm arising at the carotid body?",
   [["Paraganglioma",
     "Correct. Paragangliomas head the benign vascular list, arising at the carotid body, the vagus "
     "or the jugulotympanic region. Their vascularity is what produces a pulsatile mass with a bruit, "
@@ -189,22 +189,22 @@ Q("Primary neck tumours", IO,
     "Schwannomas are benign peripheral nerve neoplasms, listed alongside neurofibromas and neuromas. "
     "They are not vascular and do not pulsate."],
    ["Lipoma",
-    "A lipoma is a benign fatty tumour that is soft, mobile and slow-growing over years. It has no "
+    "A lipoma is a benign fatty tumor that is soft, mobile and slow-growing over years. It has no "
     "significant blood supply of its own."],
    ["Rhabdomyosarcoma",
     "Rhabdomyosarcoma is on the MALIGNANT list among the sarcomas, alongside fibrosarcoma, malignant "
     "fibrous histiocytoma, liposarcoma and leiomyosarcoma."]], C(38)),
 
-Q("Primary neck tumours", IO,
-  "Which of these appears on the list of MALIGNANT primary neck tumours?",
-  [["Malignant peripheral nerve sheath tumour",
-    "Correct. The malignant list comprises the sarcomas, malignant peripheral nerve sheath tumours, "
+Q("Primary neck tumors", IO,
+  "Which of these appears on the list of MALIGNANT primary neck tumors?",
+  [["Malignant peripheral nerve sheath tumor",
+    "Correct. The malignant list comprises the sarcomas, malignant peripheral nerve sheath tumors, "
     "lymphoma, and metastasis from mucosal head and neck cancer, salivary malignancy or skin "
     "malignancy. The benign list is the vascular neoplasms, arteriovenous malformations, benign "
-    "nerve tumours and lipomas."],
+    "nerve tumors and lipomas."],
    ["Schwannoma",
     "Schwannomas sit on the BENIGN side of the same table, with neurofibromas and neuromas. The "
-    "malignant counterpart is the malignant peripheral nerve sheath tumour."],
+    "malignant counterpart is the malignant peripheral nerve sheath tumor."],
    ["Carotid body paraganglioma",
     "Paragangliomas are listed as benign vascular neoplasms. They can be locally troublesome because "
     "of their position and vascularity, but they are not on the malignant list."],
@@ -214,7 +214,7 @@ Q("Primary neck tumours", IO,
 
 Q("Neck mass evaluation", IO,
   "Which examination step does the evaluation of a neck mass specifically require?",
-  [["Visualising all mucosal surfaces and palpating the oral and pharyngeal surfaces",
+  [["Visualizing all mucosal surfaces and palpating the oral and pharyngeal surfaces",
     "Correct. A complete head and neck examination means looking everywhere, because the primary for "
     "a metastatic node is frequently a small mucosal lesion that is easily missed. Palpation adds "
     "what inspection cannot, since submucosal disease may be felt before it is seen."],
@@ -231,7 +231,7 @@ Q("Neck mass evaluation", IO,
 Q("Neck mass evaluation", IO,
   "Which additional lymph node areas should be palpated when assessing a cervical mass?",
   [["Inguinal, axillary and supraclavicular",
-    "Correct. Palpating other nodal basins distinguishes localised regional disease from generalised "
+    "Correct. Palpating other nodal basins distinguishes localized regional disease from generalized "
     "lymphadenopathy, which points toward a systemic cause such as lymphoma, mononucleosis or HIV. "
     "The thyroid, liver and spleen are examined for the same reason, and any vascular abnormality is "
     "auscultated."],
@@ -240,26 +240,26 @@ Q("Neck mass evaluation", IO,
     "systemic disease, which requires nodes well away from the head and neck."],
    ["Popliteal and antecubital only",
     "These are not part of the routine assessment of a neck mass and would not answer the question "
-    "of whether lymphadenopathy is generalised."],
+    "of whether lymphadenopathy is generalized."],
    ["No other areas, as cervical nodes drain only the head",
     "Cervical nodes do drain the head and neck, but the point of examining elsewhere is to detect a "
     "systemic process, not to trace drainage."]], C(15)),
 
 Q("Neck mass evaluation", IO,
   "Above what size are normal hyperplastic lymph nodes rarely found?",
-  [["2 centimetres",
-    "Correct. Reactive hyperplastic nodes are rarely larger than 2 centimetres, so exceeding that "
-    "adds weight to the concern raised by the other features. It sits alongside the 1.5 centimetre "
+  [["2 centimeters",
+    "Correct. Reactive hyperplastic nodes are rarely larger than 2 centimeters, so exceeding that "
+    "adds weight to the concern raised by the other features. It sits alongside the 1.5 centimeter "
     "threshold on the malignancy list, and both are reasons to keep measuring rather than "
     "estimating."],
-   ["5 centimetres",
-    "Five centimetres is a large mass by any standard and using it as the threshold would allow a "
+   ["5 centimeters",
+    "Five centimeters is a large mass by any standard and using it as the threshold would allow a "
     "great deal of significant disease to pass as normal."],
-   ["0.5 centimetres",
-    "Half a centimetre is well within the size of nodes palpable in healthy people, particularly "
+   ["0.5 centimeters",
+    "Half a centimeter is well within the size of nodes palpable in healthy people, particularly "
     "submandibular ones, so it would flag almost everyone."],
-   ["10 centimetres",
-    "A ten centimetre neck mass would be visible across a room. No useful threshold sits there."]],
+   ["10 centimeters",
+    "A ten centimeter neck mass would be visible across a room. No useful threshold sits there."]],
   C(15)),
 
 Q("Neck mass workup", IO,
@@ -290,7 +290,7 @@ Q("Neck mass workup", IO,
    ["The presence of calcification",
     "Calcification is best shown by computed tomography, and it is the finding that suggests a "
     "teratoma. Positron emission tomography does not resolve it usefully."],
-   ["The cell type of a tumour",
+   ["The cell type of a tumor",
     "Cell type comes only from tissue, by aspiration or biopsy. Imaging can suggest a diagnosis but "
     "cannot report histology."]], C(19)),
 
@@ -302,7 +302,7 @@ Q("Neck mass workup", IO,
     "C-reactive protein, an autoimmune panel, thyroid and parathyroid hormones, and tuberculin skin "
     "testing with cat scratch and toxoplasmosis titres."],
    ["Clotting studies alone",
-    "Coagulation testing has no role in characterising a neck mass. It belongs to the assessment of "
+    "Coagulation testing has no role in characterizing a neck mass. It belongs to the assessment of "
     "bleeding, such as in epistaxis in an anticoagulated patient."],
    ["Arterial blood gases",
     "Blood gases assess ventilation and acid-base status, which are relevant to airway compromise "
@@ -312,7 +312,7 @@ Q("Neck mass workup", IO,
     "diagnosis is made, rather than as a screening test for any neck mass."]], C(19)),
 
 Q("Referral", IO,
-  "What does the assessment of a suspicious neck nodule emphasise about specialist referral?",
+  "What does the assessment of a suspicious neck nodule emphasize about specialist referral?",
   [["Refer early, especially if it persists after treatment",
     "Correct. A trial of antibiotics is common practice, and the point at which that trial fails is "
     "exactly the point at which referral should happen rather than another course being prescribed. "
@@ -338,7 +338,7 @@ Q("Congenital neck masses", IO,
     "hyoid and therefore does not rise with the tongue."],
    ["Thyroglossal duct cyst",
     "The thyroglossal duct cyst is the one that DOES move with tongue protrusion, because its tract "
-    "runs through the hyoid to the foramen caecum. That movement is pathognomonic."],
+    "runs through the hyoid to the foramen cecum. That movement is pathognomonic."],
    ["Branchial cleft cyst",
     "A branchial cleft cyst is lateral, at the anterior border of the sternocleidomastoid, and "
     "usually presents when it becomes infected after an upper respiratory infection."],
@@ -364,16 +364,16 @@ Q("Congenital neck masses", IO,
     "mass and treated with penicillin."]], C(29)),
 
 Q("Toxoplasmosis", IO, "How is toxoplasmosis contracted?",
-  [["Poorly cooked meat or ingestion of oocytes in cat faeces",
+  [["Poorly cooked meat or ingestion of oocytes in cat feces",
     "Correct. Toxoplasma gondii reaches humans through undercooked meat or through oocysts shed in "
-    "cat faeces. Patients present with fever, malaise, sore throat and myalgias alongside the "
+    "cat feces. Patients present with fever, malaise, sore throat and myalgias alongside the "
     "adenopathy, diagnosis is serologic, and treatment is sulfonamides or pyrimethamine."],
    ["A cat scratch",
     "A scratch transmits Bartonella henselae, causing cat scratch disease with preauricular and "
     "submandibular nodes. Both involve cats, which is what makes them easy to confuse, but the route "
     "and the organism differ."],
-   ["Unpasteurised milk",
-    "Unpasteurised milk transmits Brucella, which causes total-body lymphadenopathy with fever, "
+   ["Unpasteurized milk",
+    "Unpasteurized milk transmits Brucella, which causes total-body lymphadenopathy with fever, "
     "fatigue and malaise, treated with trimethoprim-sulfamethoxazole or tetracycline."],
    ["Tick bites and contact with rabbits",
     "Those transmit Francisella tularensis, producing tonsillitis with painful adenopathy and "
@@ -383,7 +383,7 @@ Q("Non-infectious inflammation", IO,
   "Which conditions are listed as non-infectious inflammatory causes of neck masses?",
   [["Sjogren syndrome, sarcoidosis, IgG4-related sialadenitis and Kawasaki disease",
     "Correct. These are generally autoimmune in origin, and most patients have other symptoms that "
-    "point toward the underlying disorder. Recognising them matters because the workup and treatment "
+    "point toward the underlying disorder. Recognizing them matters because the workup and treatment "
     "differ entirely from an infective or neoplastic mass."],
    ["Tuberculosis, actinomycosis and cat scratch disease",
     "Those are all granulomatous INFECTIONS, each with its own organism and exposure history. They "

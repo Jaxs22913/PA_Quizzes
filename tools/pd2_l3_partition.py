@@ -16,8 +16,8 @@ SIX THINGS ARE OUT, each with her words:
      and this guard must not be copied there.
   2. THE EXOPHTHALMOMETER, technique and its 20-22 mm figure. "I am not going to
      test you on the minutia of how to do that test ... don't sit there and
-     [think] I have so much to memorize, it was 20 to 22 millimetres -- don't
-     worry about it." Recognising exophthalmos, and the stand-behind-and-look-
+     [think] I have so much to memorize, it was 20 to 22 millimeters -- don't
+     worry about it." Recognizing exophthalmos, and the stand-behind-and-look-
      down technique, are still IN.
   3. THE STRABISMUS DIAGRAM. "This is just a visual ... that you don't have to
      memorize." Eso/exo/hypertropia as concepts remain in.
@@ -35,7 +35,7 @@ AND ONE THING IS IN BOTH SETS BY ASSERTION: the RED-EYE COMPARISON CHART on
 slide 48. It extracts as completely blank -- it is a picture of the Bates table
 -- and was recovered with tools/ocr_deck_images.py. Beck then said "I genuinely
 think it's important that you are very familiar with that chart." A build that
-dropped it would miss the slide she emphasised most.
+dropped it would miss the slide she emphasized most.
 
 House rules for this course also apply: no question may depend on having the
 deck open, and none may be about course mechanics.
@@ -102,7 +102,7 @@ _diag = [q["q"][:55] for q in POOL
          if re.search(r"which (?:image|picture|figure|diagram)|on the diagram|"
                       r"in the illustration", q["q"], re.I)]
 assert not _diag, ("asks about a diagram rather than a concept -- she said the "
-                   "strabismus visual does not have to be memorised: %r" % _diag[:3])
+                   "strabismus visual does not have to be memorized: %r" % _diag[:3])
 
 # ---- Guard 2: PD2 house rules ---------------------------------------------
 _CTX = re.compile(r"on (?:this|the) slide|the slide (?:shows|says)|as shown (?:above|below)|"
@@ -224,7 +224,7 @@ if __name__ == "__main__":
 
     for name, s in (("SET 1", s1), ("SET 2", s2)):
         nc = sum(1 for q in s if q.get("chart"))
-        assert nc >= 2, "%s has only %d red-eye chart questions -- she emphasised it" % (name, nc)
+        assert nc >= 2, "%s has only %d red-eye chart questions -- she emphasized it" % (name, nc)
     print("chart check: both sets carry the red-eye comparison chart\n")
 
     for name, s in (("SET 1", s1), ("SET 2", s2)):

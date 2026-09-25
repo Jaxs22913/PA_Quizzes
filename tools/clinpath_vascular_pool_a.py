@@ -2,7 +2,7 @@
 """Clinical Pathophysiology I, Lecture 7 -- Vascular Pathophysiology, part A.
 
 Anatomy and function of the vascular system, the three wall layers, the
-molecular behaviour of endothelium and smooth muscle, intimal thickening, and
+molecular behavior of endothelium and smooth muscle, intimal thickening, and
 blood pressure regulation. Part B carries arteriosclerosis through venous
 disease.
 
@@ -55,7 +55,7 @@ QUESTIONS = [
  "c": 0, "cite": c(6)},
 
 {"topic": "Functional components", "io": IO_FUNC, "slot": "function",
- "q": "What characterises the arteries?",
+ "q": "What characterizes the arteries?",
  "opts": [
   ["High pressure, strong walls, high flow velocity",
    "Correct, and the contrast with veins is instructive: veins are low pressure with thin walls and serve as the major reservoir of extra blood."],
@@ -98,9 +98,9 @@ QUESTIONS = [
  "opts": [
   ["A single layer of endothelial cells on a basement membrane",
    "Correct, with a thin underlying layer of extracellular matrix beneath it. Everything that goes wrong in intimal thickening begins in this one cell layer."],
-  ["Lamellar units of elastin fibres and smooth muscle cells",
+  ["Lamellar units of elastin fibers and smooth muscle cells",
    "That describes the media of an elastic artery, arranged in layers like tree rings."],
-  ["Loose connective tissue with nerve fibres",
+  ["Loose connective tissue with nerve fibers",
    "That describes the adventitia, which provides support rather than lining the lumen."],
   ["Several layers of stratified squamous epithelium",
    "The endothelial lining is a SINGLE layer of simple squamous epithelium rather than a stratified one."]],
@@ -122,7 +122,7 @@ QUESTIONS = [
 {"topic": "Blood vessel layers", "io": IO_ANAT, "slot": "anatomy",
  "q": "What does the adventitia contain?",
  "opts": [
-  ["Loose connective tissue, sometimes with nerve fibres",
+  ["Loose connective tissue, sometimes with nerve fibers",
    "Correct, and in large vessels it carries its own small arterioles, which perfuse the adventitia and part of the media &mdash; the wall is too thick to be fed from the lumen alone."],
   ["A single layer of endothelium on a basement membrane",
    "A single endothelial layer on a basement membrane is the intima, the innermost of the three layers."],
@@ -159,7 +159,7 @@ QUESTIONS = [
  "c": 0, "cite": c(11)},
 
 {"topic": "Capillaries", "io": IO_FUNC, "slot": "mechanism",
- "q": "Why does the capillary bed favour exchange?",
+ "q": "Why does the capillary bed favor exchange?",
  "opts": [
   ["Thin walls combined with slow flow",
    "Correct, and the slow flow follows from the large cross-sectional area of the bed: the same volume spread across far more vessels moves more slowly through each."],
@@ -179,7 +179,7 @@ QUESTIONS = [
   ["Skin and subcutaneous fat",
    "Both have comparatively low metabolic rates and correspondingly lower capillary density."],
   ["Tendon and ligament",
-   "Dense connective tissue such as tendon and ligament is relatively poorly vascularised and has a low metabolic rate."],
+   "Dense connective tissue such as tendon and ligament is relatively poorly vascularized and has a low metabolic rate."],
   ["Cartilage",
    "Cartilage is avascular, at the opposite extreme from the tissues named."]],
  "c": 0, "cite": c(11)},
@@ -187,10 +187,10 @@ QUESTIONS = [
 {"topic": "Endothelial cells", "io": IO_MOL, "slot": "mechanism",
  "q": "What kind of epithelium lines the vessel lumen?",
  "opts": [
-  ["Specialised simple squamous epithelium",
-   "Correct. The endothelium is a single flat layer, which is what allows it to be both a barrier and a rapid signalling interface with the blood."],
+  ["Specialized simple squamous epithelium",
+   "Correct. The endothelium is a single flat layer, which is what allows it to be both a barrier and a rapid signaling interface with the blood."],
   ["Stratified squamous epithelium",
-   "A stratified lining would be too thick for the metabolic and signalling roles the endothelium performs."],
+   "A stratified lining would be too thick for the metabolic and signaling roles the endothelium performs."],
   ["Pseudostratified columnar epithelium",
    "That lining belongs to the airway rather than the vascular lumen."],
   ["Transitional epithelium",
@@ -213,10 +213,10 @@ QUESTIONS = [
 {"topic": "Endothelial cells", "io": IO_MOL, "slot": "mechanism",
  "q": "Which of these is a named synthetic or metabolic property of endothelium?",
  "opts": [
-  ["Metabolising hormones such as angiotensin",
+  ["Metabolizing hormones such as angiotensin",
    "Correct, alongside modulating medial smooth muscle tone, regulating inflammation, and affecting the growth of other cell types, particularly smooth muscle cells."],
-  ["Synthesising haemoglobin",
-   "Haemoglobin is produced in developing red cells rather than by endothelium."],
+  ["Synthesizing hemoglobin",
+   "Hemoglobin is produced in developing red cells rather than by endothelium."],
   ["Producing bile salts",
    "Bile salt synthesis is hepatic and has nothing to do with the vessel lining."],
   ["Generating action potentials for conduction",
@@ -250,14 +250,14 @@ QUESTIONS = [
  "c": 0, "cite": c(12)},
 
 {"topic": "Smooth muscle cells", "io": IO_MOL, "slot": "mechanism",
- "q": "What do vascular smooth muscle cells synthesise?",
+ "q": "What do vascular smooth muscle cells synthesize?",
  "opts": [
   ["Collagen, elastin, proteoglycans and cytokines",
    "Correct, which is why they are central to both repair and disease: the same synthetic capacity that rebuilds a wall also builds an atherosclerotic plaque. Growth factors too."],
   ["Immunoglobulins",
    "Antibody production belongs to plasma cells rather than to vascular smooth muscle."],
   ["Clotting factors for the plasma",
-   "Most clotting factors are hepatic in origin rather than being synthesised by vascular smooth muscle."],
+   "Most clotting factors are hepatic in origin rather than being synthesized by vascular smooth muscle."],
   ["Surfactant",
    "Surfactant is produced by type II pneumocytes in the lung and has no vascular smooth muscle origin."]],
  "c": 0, "cite": c(12)},
@@ -266,9 +266,9 @@ QUESTIONS = [
  "q": "What are smooth muscle cells responsible for in response to stimuli?",
  "opts": [
   ["Vasoconstriction or vasodilation",
-   "Correct, and they also proliferate when appropriately stimulated, which is the behaviour that turns a repair response into a stenotic lesion."],
+   "Correct, and they also proliferate when appropriately stimulated, which is the behavior that turns a repair response into a stenotic lesion."],
   ["Phagocytosis of lipid",
-   "Lipid uptake is a macrophage behaviour in the plaque rather than the named smooth muscle role."],
+   "Lipid uptake is a macrophage behavior in the plaque rather than the named smooth muscle role."],
   ["Production of nitric oxide to relax the vessel",
    "Nitric oxide production is an endothelial function, and its loss is a feature of endothelial dysfunction."],
   ["Maintaining the nonthrombogenic surface",
@@ -310,7 +310,7 @@ QUESTIONS = [
    "The change described runs the other way, toward decreased production."],
   ["It is unchanged by injury",
    "Decreased nitric oxide production is specifically named as a consequence."],
-  ["It is replaced by carbon monoxide signalling",
+  ["It is replaced by carbon monoxide signaling",
    "No such substitution is described; the named consequence is simply decreased nitric oxide production."]],
  "c": 0, "cite": c(13)},
 
@@ -319,12 +319,12 @@ QUESTIONS = [
  "opts": [
   ["Platelet activation and leukocyte recruitment",
    "Correct: a thrombus forms and the inflammatory cascade begins at the injury site, so the response is simultaneously thrombotic and inflammatory."],
-  ["Red cell aggregation and haemolysis",
-   "Red cell aggregation and haemolysis are not among the named components of the neointimal response."],
+  ["Red cell aggregation and hemolysis",
+   "Red cell aggregation and hemolysis are not among the named components of the neointimal response."],
   ["Eosinophil degranulation and mast cell activation",
    "The cells named are platelets and leukocytes generally rather than these allergic effectors."],
   ["Plasma cell infiltration with antibody deposition",
-   "Immune complex deposition characterises certain vasculitides rather than the general neointimal response."]],
+   "Immune complex deposition characterizes certain vasculitides rather than the general neointimal response."]],
  "c": 0, "cite": c(13)},
 
 {"topic": "Intimal thickening", "io": IO_MOL, "slot": "consequence",
@@ -358,7 +358,7 @@ QUESTIONS = [
  "opts": [
   ["Weakening, narrowing, dilation and rupture",
    "Correct, and narrowing itself can be progressive, as in atherosclerosis, or precipitous, as in thrombosis or embolism."],
-  ["Inflammation, infection, infarction and ischaemia",
+  ["Inflammation, infection, infarction and ischemia",
    "These are processes that occur in vessels, but they are not the four structural mechanisms named."],
   ["Hypertrophy, atrophy, metaplasia and dysplasia",
    "Those are general cellular adaptations rather than the vascular mechanisms listed."],
@@ -422,7 +422,7 @@ QUESTIONS = [
  "q": "What does hypertension do to small arteries and arterioles?",
  "opts": [
   ["Mechanical stress and endothelial dysfunction",
-   "Correct: decreased elasticity and weakening of the vessel while the lumen stiffens and narrows. Arterioles run 20 to 100 micrometres, small arteries 2 mm or less. The lumen stiffens and narrows."],
+   "Correct: decreased elasticity and weakening of the vessel while the lumen stiffens and narrows. Arterioles run 20 to 100 micrometers, small arteries 2 mm or less. The lumen stiffens and narrows."],
   ["Dilation of the lumen with thinning of the wall",
    "The lumen stiffens and narrows under hypertension rather than dilating, and the wall weakens rather than thinning."],
   ["Formation of lipid-laden plaques projecting into the lumen",
@@ -440,8 +440,8 @@ QUESTIONS = [
    "Both influence flow in principle, but the two determinants named are resistance and cardiac output."],
   ["Heart rate and respiratory rate",
    "Heart rate contributes through cardiac output, but respiratory rate is not one of the determinants."],
-  ["Haemoglobin concentration and oxygen saturation",
-   "Haemoglobin concentration and oxygen saturation determine oxygen carriage rather than arterial pressure."]],
+  ["Hemoglobin concentration and oxygen saturation",
+   "Hemoglobin concentration and oxygen saturation determine oxygen carriage rather than arterial pressure."]],
  "c": 0, "cite": c(19)},
 
 {"topic": "Blood pressure regulation", "io": IO_MOL, "slot": "mechanism",
@@ -461,7 +461,7 @@ QUESTIONS = [
  "q": "What determines stroke volume, and therefore part of cardiac output?",
  "opts": [
   ["Blood volume",
-   "Correct &mdash; sodium excretion or resorption sets the volume, which is why renal sodium handling sits at the centre of blood pressure regulation. It is regulated by sodium excretion or resorption."],
+   "Correct &mdash; sodium excretion or resorption sets the volume, which is why renal sodium handling sits at the center of blood pressure regulation. It is regulated by sodium excretion or resorption."],
   ["The diameter of the arterioles",
    "Arteriolar diameter sets resistance rather than stroke volume."],
   ["The number of capillaries in the tissue",

@@ -40,8 +40,8 @@ RULES = [
       lec=L1, at="1:13:45 and 1:16:26",
       body="It spans three classes on this exam: <b>macrolides</b> (worse with class Ia and III "
            "antiarrhythmics and with electrolyte abnormalities), <b>fluoroquinolones</b>, and "
-           "<b>posaconazole</b> (whose QT risk runs mostly through the hypokalaemia and "
-           "hypomagnesaemia it causes). He flagged it the first time it appeared and again three "
+           "<b>posaconazole</b> (whose QT risk runs mostly through the hypokalemia and "
+           "hypomagnesemia it causes). He flagged it the first time it appeared and again three "
            "minutes later.<br><br>What he actually taught around it: the QT interval is how long "
            "the ventricle takes to <b>repolarise</b>, and it lengthens because the drug blocks the "
            "potassium channel that lets K<sup>+</sup> out of the cell &mdash; the slide names it the "
@@ -132,7 +132,7 @@ PATTERNS = [
             "can actually bind to the toxin. So if you ever hear of toxic shock syndrome &mdash; or "
             "the classic sort of presentation is, a girl left in a tampon for too long and then all "
             "of a sudden gets septic shock from that, due to toxins being released by bacteria "
-            "&mdash; clindamycin can be utilised for that.",
+            "&mdash; clindamycin can be utilized for that.",
       lec=L1, at="1:41:19",
       body="He calls it <b>&ldquo;a unique sort of point&rdquo;</b> for clindamycin. The mechanism "
            "is the thing to carry: it <b>binds the toxin</b>, which is why it beats an agent that "

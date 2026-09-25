@@ -29,13 +29,13 @@ def fig(n, w, h, alt, cap, src):
 
 
 FIG_TARGETS = fig("001.jpg", 500, 328,
-  "Diagram of a bacterial cell with each antibiotic target labelled: cell wall synthesis, DNA gyrase, RNA elongation, DNA-directed RNA polymerase, protein synthesis at the 50S and 30S subunits, folic acid metabolism, and cytoplasmic membrane structure, each with its drug classes.",
+  "Diagram of a bacterial cell with each antibiotic target labeled: cell wall synthesis, DNA gyrase, RNA elongation, DNA-directed RNA polymerase, protein synthesis at the 50S and 30S subunits, folic acid metabolism, and cytoplasmic membrane structure, each with its drug classes.",
   "The single most useful figure in the antibacterial half, because it answers objective 2 in one picture. Every class in this lecture is somewhere on this cell. Read it as a map: the cell wall agents sit on the outside, the two ribosomal groups sit in the middle with 50S and 30S separated, and folate metabolism sits below as a supply line rather than a structure. Holding this image is worth more than holding fifteen separate mechanisms, because it tells you what a drug does from where it acts.",
   "Figure 20-14, Brock Biology of Microorganisms 11th edition, &copy; 2006 Pearson Prentice Hall. Reproduced from the lecture slides (Slide 11).")
 
 FIG_CELLWALL = fig("002.png", 595, 346,
   "Classification chart headed Agents Affecting the Cell Wall, branching into beta-lactam antibiotics and other antibiotics, with penicillins, cephalosporins by generation, carbapenems and monobactams listed, and a separate box for beta-lactamase inhibitors.",
-  "Class before agent, drawn out. The top split is the one that matters: beta-lactams on one side, and bacitracin, vancomycin and daptomycin on the other as cell wall agents that are not beta-lactams. Notice that the beta-lactamase inhibitors sit in their own box off to the side, which is exactly right &mdash; they have no antibacterial activity of their own and only exist to protect a partner drug. The cephalosporin generations run left to right, and the agents beneath each are worth reading as examples of a generation rather than as a list to memorise.",
+  "Class before agent, drawn out. The top split is the one that matters: beta-lactams on one side, and bacitracin, vancomycin and daptomycin on the other as cell wall agents that are not beta-lactams. Notice that the beta-lactamase inhibitors sit in their own box off to the side, which is exactly right &mdash; they have no antibacterial activity of their own and only exist to protect a partner drug. The cephalosporin generations run left to right, and the agents beneath each are worth reading as examples of a generation rather than as a list to memorize.",
   "Reproduced from the lecture slides (Slide 12).")
 
 FIG_PENICILLIN = fig("003.png", 380, 262,
@@ -49,8 +49,8 @@ FIG_VANCOMYCIN = fig("004.png", 800, 274,
   "Reproduced from the lecture slides (Slide 46).")
 
 FIG_FUNGALWALL = fig("005.jpg", 688, 457,
-  "Labelled cross-section of the fungal cell envelope showing mannoproteins, beta-1,3 and beta-1,6 glucans, beta-1,3 glucan synthase spanning the membrane, chitin, and ergosterol within the cell membrane.",
-  "Both antifungal targets on one image, which is why this figure carries the whole of objective 9. The green mesh is glucan, and the orange enzyme spanning the membrane is beta-1,3 glucan synthase &mdash; the echinocandin target, and the only one here with no mammalian counterpart at all, since human cells have no cell wall. Below it, threaded through the membrane, is ergosterol: bound directly by the polyenes, and depleted upstream by the azoles and allylamines. Sort any antifungal by which of those two structures it attacks and the class list stops needing memorisation.",
+  "Labeled cross-section of the fungal cell envelope showing mannoproteins, beta-1,3 and beta-1,6 glucans, beta-1,3 glucan synthase spanning the membrane, chitin, and ergosterol within the cell membrane.",
+  "Both antifungal targets on one image, which is why this figure carries the whole of objective 9. The green mesh is glucan, and the orange enzyme spanning the membrane is beta-1,3 glucan synthase &mdash; the echinocandin target, and the only one here with no mammalian counterpart at all, since human cells have no cell wall. Below it, threaded through the membrane, is ergosterol: bound directly by the polyenes, and depleted upstream by the azoles and allylamines. Sort any antifungal by which of those two structures it attacks and the class list stops needing memorization.",
   "Reproduced from the lecture slides (Slide 90).")
 
 FIG_POLYENE = fig("006.png", 414, 276,
@@ -100,7 +100,7 @@ BODY = '''<main>
   antivirals are one objective with three parts, not four separate ones. Do not let the miscount
   make the antivirals look like half the lecture.
   <br><br>
-  Second: <mark class="prof-highlight">Dr. Wood told the class there is no need to memorise or
+  Second: <mark class="prof-highlight">Dr. Wood told the class there is no need to memorize or
   know drug dosages.</mark> The deck is full of regimens and this guide reproduces almost none of
   them. Where a number does appear it is because it is a monitoring target or a treatment
   duration you would counsel a patient about, not a dose.</div>
@@ -310,19 +310,19 @@ BODY = '''<main>
   <div class="callout"><strong>QT prolongation &mdash; the one property that crosses classes.</strong>
   It turns up three times on this exam, in three unrelated groups: <strong>macrolides</strong> here,
   <strong>fluoroquinolones</strong> under Objective 4, and <strong>posaconazole</strong> among the
-  antifungals. Worth understanding once rather than memorising three times.
+  antifungals. Worth understanding once rather than memorizing three times.
   <br><br>
-  The QT interval measures how long the ventricle takes to <strong>repolarise</strong>. Repolarisation
+  The QT interval measures how long the ventricle takes to <strong>repolarise</strong>. Repolarization
   depends on potassium leaving the cell, and these drugs block the potassium channel that lets it out
   &mdash; the <strong>hERG</strong> channel, named in the figure on the drug-induced QT slide. Block it,
-  repolarisation takes longer, and the QT stretches. Stretch it far enough and the rhythm degenerates
+  repolarization takes longer, and the QT stretches. Stretch it far enough and the rhythm degenerates
   into <mark class="prof-highlight">torsades de pointes</mark> &mdash; French for &ldquo;twisting of the
   points&rdquo;, which is exactly what the tracing does, the amplitude waxing and waning around the
   baseline.
   <br><br>
   <strong>What raises the risk</strong> is stacking, not any single dose: a congenital long QT, several
   QT-prolonging drugs at once, or an electrolyte disturbance. This is why posaconazole is on the list at
-  all &mdash; its own hypokalaemia and hypomagnesaemia are what push the QT out. A single course of
+  all &mdash; its own hypokalemia and hypomagnesemia are what push the QT out. A single course of
   azithromycin in a healthy patient is a different proposition from the same drug added to an
   antiarrhythmic in someone whose potassium is low. <strong>The treatment of choice for torsades is
   magnesium sulfate, two grams</strong> &mdash; described in lecture as the &ldquo;two gram slam&rdquo;
@@ -336,7 +336,7 @@ BODY = '''<main>
   <table>
     <tr><th>Class</th><th>Mechanism</th><th>Key points</th></tr>
     <tr><td>Fluoroquinolones (4k)<br>ciprofloxacin, levofloxacin, moxifloxacin</td><td><strong>Dual</strong> &mdash; inhibits DNA gyrase (topoisomerase II) forming a quinolone-DNA-gyrase complex with induced DNA cleavage, and inhibits topoisomerase IV</td><td>Levofloxacin has <em>Pseudomonas</em> coverage; moxifloxacin does not and <strong>must not be used for urinary tract infection</strong>. Chelated by iron, antacids, multivitamins, calcium and dairy. QT prolongation. <strong>Tendonitis and Achilles rupture, peripheral neuropathy, central nervous system toxicity</strong>; caution under 18. Overuse drives resistance, with <em>Clostridium difficile</em> as collateral damage</td></tr>
-    <tr><td>Folate synthesis inhibitors (4n)<br>sulfamethoxazole/trimethoprim</td><td>Two sequential steps: sulfamethoxazole blocks para-aminobenzoic acid &rarr; dihydrofolic acid via tetrahydropteroic acid synthetase; trimethoprim blocks dihydrofolic acid &rarr; tetrahydrofolic acid via dihydrofolate reductase</td><td>Covers methicillin-resistant <em>Staphylococcus aureus</em>, <strong>not enterococci</strong>. <em>Pneumocystis jirovecii</em> treatment and prophylaxis, urinary tract infection, prostatitis. Stevens-Johnson syndrome and toxic epidermal necrolysis, blood dyscrasias. Raises the international normalised ratio significantly with warfarin via cytochrome P450 2C9 inhibition</td></tr>
+    <tr><td>Folate synthesis inhibitors (4n)<br>sulfamethoxazole/trimethoprim</td><td>Two sequential steps: sulfamethoxazole blocks para-aminobenzoic acid &rarr; dihydrofolic acid via tetrahydropteroic acid synthetase; trimethoprim blocks dihydrofolic acid &rarr; tetrahydrofolic acid via dihydrofolate reductase</td><td>Covers methicillin-resistant <em>Staphylococcus aureus</em>, <strong>not enterococci</strong>. <em>Pneumocystis jirovecii</em> treatment and prophylaxis, urinary tract infection, prostatitis. Stevens-Johnson syndrome and toxic epidermal necrolysis, blood dyscrasias. Raises the international normalized ratio significantly with warfarin via cytochrome P450 2C9 inhibition</td></tr>
     <tr><td>Nitroimidazoles (4o)<br>metronidazole</td><td>Interacts with bacterial DNA causing loss of helical structure and strand breakage</td><td>Gram-positive and Gram-negative anaerobes and parasites. Drug of choice for <em>Clostridium difficile</em>, intra-abdominal combination therapy, sexually transmitted infections. <strong>Disulfiram-like reaction with ethanol</strong></td></tr>
     <tr><td>Polypeptides (4m)<br>polymyxin B, polymyxin E</td><td>Detergent-like interaction with the lipopolysaccharide of the Gram-negative outer membrane, displacing magnesium and calcium</td><td>Broad Gram-negative coverage. Resistance uncommon because the class went largely unused for 50 years, and use is expected to rise with multidrug resistance</td></tr>
   </table>
@@ -376,7 +376,7 @@ BODY = '''<main>
   given in the first 24 hours of chickenpox <strong>shortens the acute illness but does not cure
   the infection</strong>.</p>
   <p><strong>Adverse effects.</strong> Acyclovir: nausea, vomiting, rash, bone marrow suppression,
-  central nervous system effects (seizures, delirium, tremor), and <strong>crystallisation in the
+  central nervous system effects (seizures, delirium, tremor), and <strong>crystallization in the
   renal tubule</strong> &mdash; maintain hydration and renal function. Ganciclovir is the harder
   drug: neutropenia and thrombocytopenia, central nervous system effects including confusion,
   ataxia, seizures and coma, and <strong>about a third of patients must stop intravenous treatment
@@ -403,7 +403,7 @@ BODY = '''<main>
   squalene epoxidase, and are used for the superficial dermatophytes.
   <strong>Griseofulvin</strong> binds microtubules and is a cytochrome <em>inducer</em> &mdash; the
   exact opposite of ketoconazole, which is an inhibitor. <strong>Flucytosine</strong> is a
-  pyrimidine analogue, and resistance appears so fast on its own that it is given
+  pyrimidine analog, and resistance appears so fast on its own that it is given
   <strong>with amphotericin B</strong> rather than alone.</div>
   <div class="callout"><strong>The individual azoles are then just quirks on a shared spine.</strong>
   Fluconazole crosses into the central nervous system; voriconazole disturbs vision in about a
@@ -429,9 +429,9 @@ BODY = '''<main>
   </table>
   <table>
     <tr><th>Class</th><th>Target &amp; mechanism</th><th>Agents and key points</th></tr>
-    <tr><td>Polyenes (9b)</td><td><strong>Membrane</strong> &mdash; bind ergosterol already present, forming channels; oxidative damage</td><td>Amphotericin B, nystatin, natamycin. Lipid formulations cost 20&ndash;50&times; more with reduced toxicity. Fever and chills from interleukin-1 and tumour necrosis factor &mdash; pretreat. Hypokalaemia, hypomagnesaemia, hypotension, renal tubule damage &mdash; hydrate with normal saline. Nystatin is poorly absorbed, so topical and oral only</td></tr>
+    <tr><td>Polyenes (9b)</td><td><strong>Membrane</strong> &mdash; bind ergosterol already present, forming channels; oxidative damage</td><td>Amphotericin B, nystatin, natamycin. Lipid formulations cost 20&ndash;50&times; more with reduced toxicity. Fever and chills from interleukin-1 and tumor necrosis factor &mdash; pretreat. Hypokalemia, hypomagnesemia, hypotension, renal tubule damage &mdash; hydrate with normal saline. Nystatin is poorly absorbed, so topical and oral only</td></tr>
     <tr><td>Azoles (9c)</td><td><strong>Membrane</strong> &mdash; inhibit fungal cytochrome P450 14-alpha-demethylase, blocking lanosterol &rarr; ergosterol</td><td>Fluconazole: best oral absorption, penetrates the central nervous system, cryptococcal meningitis and candidiasis, <strong>teratogenic in animals</strong>. Voriconazole: systemic aspergillosis, <strong>vision effects in ~30%</strong>, cyclodextrin vehicle accumulates in renal failure, <strong>teratogenic in animals</strong>. Posaconazole: the <strong>only azole effective against the Zygomycetes</strong>, QT prolongation. Itraconazole: blastomycosis, histoplasmosis, onychomycosis, <strong>teratogenic</strong>. Ketoconazole: rarely used &mdash; no central nervous system entry, strong cytochrome P450 3A4 inhibition</td></tr>
-    <tr><td>Echinocandins (9a)</td><td><strong>Cell wall</strong> &mdash; inhibit 1,3-beta-D-glucan synthase</td><td>Caspofungin, micafungin, anidulafungin. Oesophageal candidiasis, refractory aspergillosis, febrile neutropenia. Tachycardia, headache, insomnia, hypokalaemia, hypomagnesaemia</td></tr>
+    <tr><td>Echinocandins (9a)</td><td><strong>Cell wall</strong> &mdash; inhibit 1,3-beta-D-glucan synthase</td><td>Caspofungin, micafungin, anidulafungin. Esophageal candidiasis, refractory aspergillosis, febrile neutropenia. Tachycardia, headache, insomnia, hypokalemia, hypomagnesemia</td></tr>
     <tr><td>Allylamines (9d)</td><td><strong>Membrane</strong> &mdash; inhibit squalene epoxidase</td><td>Naftifine (topical), terbinafine (oral and topical). Superficial dermatophytes. Fingernails 6&ndash;12 weeks, toenails up to 12 months</td></tr>
     <tr><td>Mitotic inhibitors (9e)</td><td><strong>Cell division</strong> &mdash; interrupts mitotic spindles</td><td>Griseofulvin, from <em>Penicillium griseofulvum</em>. Deposited in keratin precursor cells. Scalp ~1 month, fingernails 6&ndash;9 months, toenails up to 12 months. Absorption increased by a high-fat meal. Not effective against <em>Candida</em>; fungistatic. Induces cytochrome P450 1A2 and 2C9</td></tr>
   </table>
@@ -454,7 +454,7 @@ BODY = '''<main>
   &mdash; albendazole and mebendazole, which inhibit helminth microtubule formation and block
   glucose uptake, used for hookworm, roundworm, pinworm and whipworm &mdash; and
   <strong>pyrantel pamoate</strong>, which releases acetylcholine and inhibits cholinesterase,
-  acting as a depolarizing neuromuscular blocker to paralyse the parasite, used for pinworm and
+  acting as a depolarizing neuromuscular blocker to paralyze the parasite, used for pinworm and
   hookworm.
   <br><br>
   They are included here and in the antifungal quizzes because he taught them, but they appear in
@@ -515,7 +515,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
       {q:"Sulfamethoxazole and trimethoprim block which pathway, and at how many steps?",
        choices:["Folate synthesis, at two sequential steps","Cell wall cross-linking, at one step","Protein synthesis, at two subunits","DNA gyrase, at two sites"],correct:0,
        explain:"Sulfamethoxazole blocks para-aminobenzoic acid to dihydrofolic acid; trimethoprim blocks dihydrofolic acid to tetrahydrofolic acid. Two steps in one pathway is what makes the pair synergistic."},
-      {q:"A patient on metronidazole must be counselled to avoid what?",
+      {q:"A patient on metronidazole must be counseled to avoid what?",
        choices:["Dairy products","Sun exposure","Ethanol","Tyramine-containing foods"],correct:2,
        explain:"A disulfiram-like reaction. Dairy chelates tetracyclines and fluoroquinolones; tyramine is the linezolid caution."}
     ],
@@ -525,12 +525,12 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"The virus supplies the enzyme that switches the drug on, so it is only activated where replication is happening."},
       {q:"Which agent treats cytomegalovirus?",
        choices:["Acyclovir","Famciclovir","Ganciclovir","Oseltamivir"],correct:2,
-       explain:"All are guanine analogues except oseltamivir, but the indications split by virus: acyclovir and famciclovir cover herpes simplex and varicella-zoster, ganciclovir covers cytomegalovirus."},
+       explain:"All are guanine analogs except oseltamivir, but the indications split by virus: acyclovir and famciclovir cover herpes simplex and varicella-zoster, ganciclovir covers cytomegalovirus."},
       {q:"What does inhibiting neuraminidase actually prevent?",
        choices:["Viral attachment to the host cell","Uncoating after entry","Replication of viral nucleic acid","Budding progeny being cleaved free of the host cell"],correct:3,
        explain:"Oseltamivir blocks release, not entry or replication — which is exactly why it must be started within 48 hours, while there is still spread left to prevent."},
       {q:"Which renal problem is characteristic of acyclovir?",
-       choices:["Direct tubular necrosis","Crystallisation in the renal tubule","Interstitial nephritis","Accumulation of its intravenous vehicle"],correct:1,
+       choices:["Direct tubular necrosis","Crystallization in the renal tubule","Interstitial nephritis","Accumulation of its intravenous vehicle"],correct:1,
        explain:"A physical rather than a toxic mechanism, which is why hydration is the countermeasure. Direct tubular damage is amphotericin B, and vehicle accumulation is voriconazole."},
       {q:"Roughly what proportion of patients must stop intravenous ganciclovir for side effects?",
        choices:["About 1 in 20","About a third","Almost none","Essentially all"],correct:1,
@@ -539,7 +539,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
     antifungals: [
       {q:"Which antifungal target has NO mammalian counterpart at all?",
        choices:["Ergosterol","1,3-beta-D-glucan in the cell wall","Lanosterol demethylase","Microtubules"],correct:1,
-       explain:"Mammalian cells have no cell wall, so the echinocandins have the cleanest selective target. Ergosterol has the analogue cholesterol, and demethylase is a cytochrome P450 enzyme with human counterparts."},
+       explain:"Mammalian cells have no cell wall, so the echinocandins have the cleanest selective target. Ergosterol has the analog cholesterol, and demethylase is a cytochrome P450 enzyme with human counterparts."},
       {q:"Azoles and allylamines both reduce ergosterol. Where does each act?",
        choices:["Azoles at squalene epoxidase, allylamines at lanosterol demethylase","Both at lanosterol demethylase","Both at squalene epoxidase","Azoles at lanosterol demethylase, allylamines at squalene epoxidase"],correct:3,
        explain:"Same pathway, different steps — which is why both end in decreased ergosterol by different routes."},

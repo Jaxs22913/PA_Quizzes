@@ -55,7 +55,7 @@ LEAD = {
  "next step": r"next step",
  "treatment": r"initial treatment|first-line|most appropriate treatment|appropriate management|treatment consideration|initial management|first-line option",
  "test": r"diagnostic test|test confirms|which test|diagnostic approach|establish the diagnosis|would settle|diagnostic approach",
- "education": r"counselling point",
+ "education": r"counseling point",
 }
 def lead_of(q):
     for k, p in LEAD.items():

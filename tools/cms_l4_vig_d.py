@@ -33,8 +33,8 @@ POOL_D = [
  dict(topic="Acne vulgaris", io=IOA,
    q="A 18-year-old man with severe nodular acne has failed a topical retinoid with an oral antibiotic and benzoyl peroxide. Which test is required before the next treatment is started?",
    opts=[
-     ["A pregnancy test is not needed for him, but iPledge enrolment of the prescriber is required",
-      "Correct — isotretinoin requires prescriber enrolment and a one-month supply at a time."],
+     ["A pregnancy test is not needed for him, but iPledge enrollment of the prescriber is required",
+      "Correct — isotretinoin requires prescriber enrollment and a one-month supply at a time."],
      ["A bacterial culture of a nodule, to confirm that Cutibacterium acnes is still present",
       "Culture is considered when acne fails to respond, not before isotretinoin."],
      ["A fasting insulin and lipid panel, to identify the insulin resistance driving the acne",
@@ -122,7 +122,7 @@ POOL_D = [
    c=0, cite=c(109)),
 
  dict(topic="Necrotizing fasciitis", io=IOA,
-   q="A 52-year-old man with suspected necrotizing fasciitis is being prepared for theatre. Which laboratory studies should be sent?",
+   q="A 52-year-old man with suspected necrotizing fasciitis is being prepared for theater. Which laboratory studies should be sent?",
    opts=[
      ["Complete blood count with differential, chemistry, arterial blood gas, urinalysis, and blood and tissue cultures",
       "Correct — they are sent, but they must not delay the surgical intervention itself."],

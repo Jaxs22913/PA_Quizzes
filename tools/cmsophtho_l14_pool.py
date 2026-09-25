@@ -29,7 +29,7 @@ Q("Trauma first principles", IO,
   "Which imaging must be AVOIDED?",
   [["Magnetic resonance imaging", "Correct. A magnetic field can drag a metallic fragment through "
                                   "the eye."],
-   ["Computed tomography of the orbit", "The study of choice — it localises the fragment without "
+   ["Computed tomography of the orbit", "The study of choice — it localizes the fragment without "
                                         "moving it."],
    ["Plain orbital radiograph", "Less useful than computed tomography but not dangerous."],
    ["Ocular ultrasound without pressure", "Pressure is the hazard; a careful scan is not "
@@ -42,7 +42,7 @@ Q("Open globe injury", IO,
   [["Leave it in place", "Correct. It may be tamponading the wound, and removal risks extruding "
                          "intraocular contents."],
    ["Remove it and irrigate the tract", "Removal in the emergency department risks extrusion."],
-   ["Remove it under topical anaesthetic", "Anaesthesia does not make removal safe."],
+   ["Remove it under topical anesthetic", "Anesthesia does not make removal safe."],
    ["Remove it only once the patient is stable", "Stability does not change the risk to the eye."]],
   "treatment", D, 6),
 
@@ -81,8 +81,8 @@ Q("Corneal abrasion", IO,
   "fingernail scratch. Fluorescein shows a well-defined epithelial defect with no infiltrate. What "
   "is the most appropriate treatment?",
   [["Topical antibiotic ointment and analgesia", "Correct, with follow-up to confirm healing."],
-   ["Topical anaesthetic drops to take home",
-    "Repeated topical anaesthetic is toxic to the epithelium and delays healing."],
+   ["Topical anesthetic drops to take home",
+    "Repeated topical anesthetic is toxic to the epithelium and delays healing."],
    ["A tight pressure patch for a week", "Patching is no longer routine and is avoided in contact "
                                          "lens wearers."],
    ["Oral acyclovir", "Reserved for herpetic disease, and there is no dendrite here."]],
@@ -93,10 +93,10 @@ Q("Corneal abrasion", IO,
   "in the emergency department. Why should he not be given them?",
   [["Repeated use is toxic to the epithelium and delays healing",
     "Correct — and it masks worsening infection."],
-   ["They cause permanent pupil dilation", "Not an effect of topical anaesthetic."],
+   ["They cause permanent pupil dilation", "Not an effect of topical anesthetic."],
    ["They cause an allergic reaction in most patients",
     "Allergy is not the reason for the restriction."],
-   ["They stain the cornea permanently", "Fluorescein stains temporarily; anaesthetic does not "
+   ["They stain the cornea permanently", "Fluorescein stains temporarily; anesthetic does not "
                                          "stain."]],
   "two-step", D, 18),
 
@@ -124,7 +124,7 @@ Q("Hyphema", IO,
   "treatment", D, 24),
 
 Q("Hyphema", IO,
-  "A 17-year-old boy with a traumatic hyphema is being counselled. Which complication is he being "
+  "A 17-year-old boy with a traumatic hyphema is being counseled. Which complication is he being "
   "monitored for over the next few days?",
   [["Rebleeding with a rise in intraocular pressure",
     "Correct — the rebleed risk peaks in the first three to five days."],
@@ -172,16 +172,16 @@ Q("Orbital floor fracture", IO,
   [["Entrapment of the inferior rectus in an orbital floor fracture",
     "Correct. Restricted upgaze with severe pain and AUTONOMIC DISTURBANCE "
     "— bradycardia and vomiting on attempted movement — is the entrapment picture."],
-   ["Periorbital haematoma", "Bruising and swelling, without restricted upgaze or bradycardia."],
+   ["Periorbital hematoma", "Bruising and swelling, without restricted upgaze or bradycardia."],
    ["Anterior uveitis", "Photophobia and cells, without the autonomic disturbance."],
-   ["Concussion without ocular injury", "The restricted upgaze localises the problem to the "
+   ["Concussion without ocular injury", "The restricted upgaze localizes the problem to the "
                                         "orbit."]],
   "diagnosis", D, 42),
 
 Q("Orbital floor fracture", IO,
   "A 10-year-old girl has a white-eyed blowout fracture with entrapment. Why is urgent surgical "
   "referral required rather than routine review?",
-  [["Entrapped muscle becomes ischaemic and fibroses",
+  [["Entrapped muscle becomes ischemic and fibroses",
     "Correct — delay risks permanent restriction of eye movement."],
    ["The eye will become infected", "Infection is not the driver of urgency here."],
    ["Vision will be lost immediately", "Acuity is often preserved; the muscle is what is at risk."],
@@ -193,7 +193,7 @@ Q("Retinal detachment", IO,
   "ocular trauma. Which type of detachment is most likely?",
   [["Rhegmatogenous", "Correct — a retinal break allows fluid beneath the retina, and trauma is a "
                       "common cause."],
-   ["Exudative", "Fluid accumulates without a break, usually from inflammation or tumour."],
+   ["Exudative", "Fluid accumulates without a break, usually from inflammation or tumor."],
    ["Traction", "Fibrovascular membranes pull the retina off, classically in diabetes."],
    ["Combined traction and exudative", "Not the mechanism following a discrete injury."]],
   "diagnosis", D, 35),
@@ -214,25 +214,25 @@ Q("Basilar skull fracture", IO,
     "Correct — the halo or double ring sign. Neurosurgical referral and admission."],
    ["Simple epistaxis", "Blood alone does not separate into two rings."],
    ["Lacrimal duct injury", "Tears drain into the nose but do not produce this sign."],
-   ["Allergic rhinorrhoea", "Clear, but it does not carry blood or form a ring."]],
+   ["Allergic rhinorrhea", "Clear, but it does not carry blood or form a ring."]],
   "diagnosis", D, 44),
 
 Q("Basilar skull fracture", IO,
   "A 51-year-old woman has bruising over both mastoid processes two days after a fall. Which statement correctly identifies this sign?",
   [["Battle sign, indicating a basilar skull fracture", "Correct."],
-   ["Periorbital haematoma from direct trauma",
+   ["Periorbital hematoma from direct trauma",
     "That is bruising around the eyes rather than behind the ears."],
-   ["Subconjunctival haemorrhage", "That is blood under the conjunctiva of the eye."],
+   ["Subconjunctival hemorrhage", "That is blood under the conjunctiva of the eye."],
    ["Periorbital subcutaneous emphysema", "Air in the tissues, which crackles on palpation."]],
   "two-step", D, 47),
 
-Q("Periorbital haematoma", IO,
+Q("Periorbital hematoma", IO,
   "A 38-year-old man has a black eye after being punched. Which finding would make this more than "
   "a simple contusion?",
   [["A relative afferent pupillary defect", "Correct — that indicates optic nerve involvement and "
                                             "changes the urgency entirely."],
-   ["Bruising extending to the cheek", "Common with a periorbital haematoma."],
+   ["Bruising extending to the cheek", "Common with a periorbital hematoma."],
    ["Lid swelling that limits opening", "Expected with significant soft tissue injury."],
-   ["Subconjunctival haemorrhage", "Frequently accompanies blunt periorbital trauma."]],
+   ["Subconjunctival hemorrhage", "Frequently accompanies blunt periorbital trauma."]],
   "two-step", D, 33),
 ]

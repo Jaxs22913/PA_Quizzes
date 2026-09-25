@@ -38,8 +38,8 @@ ANATOMY = """
         <td><b>Cornea</b></td><td>Transparent front surface; provides <b>most of the eye's focusing power</b></td></tr>
     <tr><td><b>Sclera</b></td><td>Tough white coat; maintains shape and gives the muscles their attachment</td></tr>
     <tr><td rowspan="3"><b>Vascular (uvea)</b><br><span class="muted">middle</span></td>
-        <td><b>Iris</b></td><td>The coloured part; controls pupil size and so regulates light entry</td></tr>
-    <tr><td><b>Ciliary body</b></td><td><b>Produces aqueous humour</b> and controls lens accommodation</td></tr>
+        <td><b>Iris</b></td><td>The colored part; controls pupil size and so regulates light entry</td></tr>
+    <tr><td><b>Ciliary body</b></td><td><b>Produces aqueous humor</b> and controls lens accommodation</td></tr>
     <tr><td><b>Choroid</b></td><td>Highly vascular; <b>nourishes the retina</b></td></tr>
     <tr><td rowspan="4"><b>Neural</b><br><span class="muted">inner</span></td>
         <td><b>Retina</b></td><td>Rods and cones convert light into neural signals</td></tr>
@@ -73,14 +73,14 @@ NYSTAGMUS = """
 
 TUMOUR_DDX = """
   <h3 class="sub" id="e2l4-ddx">4.11 &middot; The differentials &mdash; what else looks like this</h3>
-  <p>Each tumour and each macular disease comes with a list of mimics, and a vignette is far more
+  <p>Each tumor and each macular disease comes with a list of mimics, and a vignette is far more
   likely to ask you to separate them than to name the obvious one.</p>
 
   <h4>Macular dystrophies that mimic age-related macular degeneration</h4>
   <table class="tbl">
     <tr><th>Condition</th><th>What gives it away</th></tr>
     <tr><td><b>Stargardt disease</b> (late-onset)</td><td>Inherited macular dystrophy with <b>yellow-white flecks</b> and central vision loss</td></tr>
-    <tr><td><b>Sorsby fundus dystrophy</b></td><td><b>Autosomal dominant</b>; choroidal neovascularisation that looks like <b>wet</b> degeneration</td></tr>
+    <tr><td><b>Sorsby fundus dystrophy</b></td><td><b>Autosomal dominant</b>; choroidal neovascularization that looks like <b>wet</b> degeneration</td></tr>
     <tr><td><b>North Carolina macular dystrophy</b></td><td><b>Congenital and non-progressive</b> macular changes resembling degeneration</td></tr>
     <tr><td><b>Best disease</b> (vitelliform)</td><td><b>Lipofuscin accumulation mimics drusen</b>, but presents <b>earlier in life</b></td></tr>
   </table>
@@ -93,9 +93,9 @@ TUMOUR_DDX = """
     <tr><td><b>Coats' disease</b></td><td>Idiopathic <b>retinal telangiectasia with exudation</b>, often unilateral</td></tr>
     <tr><td><b>Persistent fetal vasculature</b></td><td>Congenital anomaly with <b>remnants of fetal vasculature</b>, typically unilateral</td></tr>
     <tr><td><b>Toxocariasis</b></td><td>Parasitic infection causing <b>granulomatous</b> retinal inflammation</td></tr>
-    <tr><td><b>Retinal astrocytoma</b></td><td>Benign <b>glial</b> tumour, often with <b>tuberous sclerosis</b></td></tr>
-    <tr><td><b>Medulloepithelioma</b></td><td>Rare tumour of the <b>nonpigmented ciliary epithelium</b></td></tr>
-    <tr><td><b>Congenital cataract</b></td><td>Produces a white pupillary reflex without any tumour</td></tr>
+    <tr><td><b>Retinal astrocytoma</b></td><td>Benign <b>glial</b> tumor, often with <b>tuberous sclerosis</b></td></tr>
+    <tr><td><b>Medulloepithelioma</b></td><td>Rare tumor of the <b>nonpigmented ciliary epithelium</b></td></tr>
+    <tr><td><b>Congenital cataract</b></td><td>Produces a white pupillary reflex without any tumor</td></tr>
     <tr><td><b>Ocular toxoplasmosis</b></td><td>Retinal <b>scarring and inflammation</b></td></tr>
   </table>
 
@@ -103,7 +103,7 @@ TUMOUR_DDX = """
   <p>Uveal melanoma is named for where in the uvea it sits &mdash; <b>iris</b>, <b>ciliary body</b>
   or <b>choroid</b> &mdash; and an iris melanoma may be <b>melanotic or partly amelanotic</b>, so
   pigment is not required. Two signs point to a ciliary body lesion in particular: a
-  <strong>sentinel vessel</strong> (a dilated episcleral vessel overlying the tumour) and
+  <strong>sentinel vessel</strong> (a dilated episcleral vessel overlying the tumor) and
   <strong>extrascleral extension</strong>.</p>
 
   <h4>Iris nevus, and the pigmented iris differential</h4>

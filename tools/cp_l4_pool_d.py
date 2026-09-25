@@ -100,7 +100,7 @@ POOL_D = [
  dict(topic="Angle-closure glaucoma", io=IO6, slot="test finding", kfe=True,
    q="How high does the pressure spike in acute angle-closure glaucoma?",
    opts=[
-     ["Above 50 mmHg", "Correct — with outflow abruptly blocked and production continuing, pressure exceeds 50 mmHg, which is high enough to oedematise the cornea and compromise the optic nerve within hours."],
+     ["Above 50 mmHg", "Correct — with outflow abruptly blocked and production continuing, pressure exceeds 50 mmHg, which is high enough to edematize the cornea and compromise the optic nerve within hours."],
      ["Above 25 mmHg", "25 mmHg is a chronically raised pressure rather than an acute closure; sudden angle closure drives it above 50."],
      ["Above 30 mmHg", "30 mmHg is well short of an acute attack, in which pressure exceeds 50 mmHg."],
      ["Above 80 mmHg", "80 mmHg overstates it; the acute spike is above 50 mmHg."]],
@@ -289,10 +289,10 @@ POOL_D = [
  dict(topic="Wet macular degeneration", io=IO9, slot="prognosis", kfe=True,
    q="What proportion of severe blindness from macular degeneration does the wet form account for?",
    opts=[
-     ["About ninety per cent", "Correct — the wet form progresses rapidly, because leaking new vessels cause rapid central vision loss, so it accounts for about ninety percent of severe blindness."],
-     ["About fifty per cent", "Half understates it; the rapidly progressive wet form accounts for about ninety percent of severe blindness from macular degeneration."],
-     ["About twenty-five per cent", "A quarter is far too low; the wet form accounts for about ninety percent of severe blindness, while the dry form progresses slowly."],
-     ["About ten per cent", "Ten percent inverts the figure: the rapidly progressive wet form accounts for about ninety percent of severe blindness from macular degeneration."]],
+     ["About ninety percent", "Correct — the wet form progresses rapidly, because leaking new vessels cause rapid central vision loss, so it accounts for about ninety percent of severe blindness."],
+     ["About fifty percent", "Half understates it; the rapidly progressive wet form accounts for about ninety percent of severe blindness from macular degeneration."],
+     ["About twenty-five percent", "A quarter is far too low; the wet form accounts for about ninety percent of severe blindness, while the dry form progresses slowly."],
+     ["About ten percent", "Ten percent inverts the figure: the rapidly progressive wet form accounts for about ninety percent of severe blindness from macular degeneration."]],
    c=0, cite=c(40)),
 
  dict(topic="Wet macular degeneration", io=IO9, slot="complication", kfe=True,

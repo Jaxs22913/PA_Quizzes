@@ -31,8 +31,8 @@ Copied from pharm_ent_partition.py, with four additions this lecture needed:
 Each pool is split in half rather than padded to the house 30, as in the ENT
 and ophthalmology builds: the pool is as large as the slides support.
 
-The length guard FAILS a set over 35 per cent gameable (the house bar) and
-WARNS over 10 per cent (Jaxon's own target, 2026-08-16).
+The length guard FAILS a set over 35 percent gameable (the house bar) and
+WARNS over 10 percent (Jaxon's own target, 2026-08-16).
 """
 import json, os, random, re, sys
 from collections import OrderedDict

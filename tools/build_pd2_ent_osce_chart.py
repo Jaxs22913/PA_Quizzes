@@ -31,7 +31,7 @@ would normally be ordered, and deliberate: the OSCE will nearly always be a
 routine complaint, and the emergent block reads better as the "and here is what
 must never be missed" tail than as a wall to scroll past first.
 
-COLOUR. Petrol #1b4965, which is the PD2 OSCE run-sheets' own accent and is
+COLOR. Petrol #1b4965, which is the PD2 OSCE run-sheets' own accent and is
 already in the site palette -- not a new hex. The supporting shades are the
 Exam 2 chart's shades rotated to that hue with saturation and lightness
 untouched, which is the same recipe the three CMS charts were built on. See
@@ -128,7 +128,7 @@ HEADCOLS = """<colgroup>
   <th>Condition</th>
   <th class="d-h">How the patient describes it<br><span class="sub">the words they actually use</span></th>
   <th>What you see on inspection</th>
-  <th class="d-h">Physical exams to rule it in or out<br><span class="sub">the manoeuvres, not the findings</span></th>
+  <th class="d-h">Physical exams to rule it in or out<br><span class="sub">the maneuvers, not the findings</span></th>
   <th>Top 3 differentials<br><span class="sub">and what separates each one</span></th>
   <th>Tests &mdash; and what a positive looks like</th>
   <th>Treatment &amp; referral</th>

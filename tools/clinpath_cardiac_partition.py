@@ -3,7 +3,7 @@
 """Split and guard the Clinical Pathophysiology Lecture 6 pool into 2 x 30.
 
 Cardiac Pathophysiology. 94 questions written across two files -- coronary
-disease and plaque in part A, ischaemia through pericardium in part B -- and
+disease and plaque in part A, ischemia through pericardium in part B -- and
 split in half here, so each set is drawn from the whole lecture rather than
 from one half of it.
 

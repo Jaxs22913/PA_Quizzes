@@ -57,10 +57,10 @@ Q("Retropharyngeal abscess", IO,
   [["The space extends to the posterior mediastinum",
     "Correct. The retropharyngeal space runs from the base of the skull to the posterior "
     "mediastinum, so an abscess there has a direct anatomical route into the chest. Mediastinitis "
-    "carries a 50 per cent mortality, and the danger space beyond it is continuous left to right, "
+    "carries a 50 percent mortality, and the danger space beyond it is continuous left to right, "
     "which lets infection cross to either side."],
    ["The abscess compresses the carotid artery",
-    "Carotid involvement is a recognised complication of deep neck infection generally, but the "
+    "Carotid involvement is a recognized complication of deep neck infection generally, but the "
     "specific reason this abscess is so dangerous is its continuity with the mediastinum rather "
     "than a vascular effect."],
    ["It always progresses to Ludwig angina",
@@ -102,13 +102,13 @@ Q("Oral cavity anatomy", IO,
    ["The lip marks the anterior boundary of the oral cavity",
     "The lip was part of the oral cavity historically but has been excluded since the eighth staging "
     "system, which is a specific point worth holding. Using the older definition would misstage "
-    "a lip tumour."],
+    "a lip tumor."],
    ["The soft palate belongs to the oral cavity",
     "The soft palate is an oropharyngeal subsite. Placing it in the oral cavity matters because "
-    "oropharyngeal tumours are far more often human papillomavirus related and are treated with "
+    "oropharyngeal tumors are far more often human papillomavirus related and are treated with "
     "surgery plus radiotherapy."],
    ["The two are treated as a single site for staging",
-    "They are staged and treated separately, precisely because the aetiology, the prognosis and the "
+    "They are staged and treated separately, precisely because the etiology, the prognosis and the "
     "treatment differ. Oral cavity disease has surgical resection alone as its mainstay."]],
   "finding", D, 144),
 
@@ -116,9 +116,9 @@ Q("Oral cancer treatment", IO,
   "A 64-year-old man has a squamous cell carcinoma of the tonsil that is human papillomavirus "
   "positive.",
   [["Surgical resection with radiotherapy, which gives better functional outcomes",
-    "Correct. Oropharyngeal tumours are treated with resection plus radiotherapy, and "
+    "Correct. Oropharyngeal tumors are treated with resection plus radiotherapy, and "
     "radiotherapy gives better functional outcomes in this site, where speech and "
-    "swallowing are at stake. Between 60 and 80 per cent of oropharyngeal cancers are human "
+    "swallowing are at stake. Between 60 and 80 percent of oropharyngeal cancers are human "
     "papillomavirus related, which is also relevant to prognosis."],
    ["Surgical resection alone",
     "Resection alone is the stated approach for ORAL CAVITY cancer. Applying it to an oropharyngeal "
@@ -126,7 +126,7 @@ Q("Oral cancer treatment", IO,
    ["Chemotherapy alone as first-line treatment",
     "Chemotherapy has a role in advanced or palliative settings but is not the primary modality for "
     "a resectable head and neck squamous carcinoma."],
-   ["Observation, since human papillomavirus related tumours regress",
+   ["Observation, since human papillomavirus related tumors regress",
     "Human papillomavirus positive oropharyngeal cancers have a better prognosis with treatment, "
     "which is a genuine and important difference, but they do not regress spontaneously and require "
     "definitive therapy."]],
@@ -135,15 +135,15 @@ Q("Oral cancer treatment", IO,
 Q("Oral cancer", IO,
   "A 58-year-old woman with a tongue lesion reports pain in her right ear, though examination of "
   "the ear is entirely normal.",
-  [["Referred otalgia from cranial nerve involvement by the tumour",
+  [["Referred otalgia from cranial nerve involvement by the tumor",
     "Correct. The tongue and oropharynx share sensory innervation with the ear through branches of "
-    "the trigeminal, glossopharyngeal and vagus nerves, so a tumour irritating those nerves is "
+    "the trigeminal, glossopharyngeal and vagus nerves, so a tumor irritating those nerves is "
     "perceived as ear pain. A normal ear examination in a patient with an oral lesion should raise "
     "this rather than reassure, because it signals advanced disease."],
    ["Coincidental otitis media",
     "Otitis media would show a bulging or dull drum on examination, and the ear here is explicitly "
     "normal. Attributing the pain to a second condition that the examination excludes leaves the "
-    "real cause unrecognised."],
+    "real cause unrecognized."],
    ["Temporomandibular joint dysfunction",
     "Temporomandibular disorders do refer pain to the ear with a normal examination, so they are a "
     "reasonable differential in isolation, but they come with jaw clicking and limited opening rather "
@@ -162,7 +162,7 @@ Q("Oral candidiasis", IO,
     "acts locally with negligible systemic absorption, which is the right profile for a well infant "
     "with a superficial infection."],
    ["Oral fluconazole",
-    "Systemic azole therapy is reserved for extensive, refractory or oesophageal disease, or for "
+    "Systemic azole therapy is reserved for extensive, refractory or esophageal disease, or for "
     "immunocompromised patients such as those with HIV who may need a longer course. It is "
     "disproportionate for uncomplicated infant thrush."],
    ["Investigate urgently for immunodeficiency",
@@ -219,16 +219,16 @@ Q("Epiglottitis in adults", IO,
   "febrile but not drooling and has no stridor. Fiberoptic laryngoscopy shows a swollen "
   "epiglottis.",
   [["Admit for observation, intravenous antibiotics and airway monitoring",
-    "Correct. Adult supraglottitis progresses more slowly than the paediatric form and often does "
+    "Correct. Adult supraglottitis progresses more slowly than the pediatric form and often does "
     "not require immediate intubation, so observation with humidification, glucocorticoids, "
-    "intravenous antibiotics and nebulised adrenaline is appropriate. The airway is monitored because "
+    "intravenous antibiotics and nebulized adrenaline is appropriate. The airway is monitored because "
     "intubation or tracheostomy becomes necessary if it obstructs."],
    ["Immediate tracheostomy",
     "Tracheostomy is reserved for an airway that has obstructed or is about to. Performing it in an "
     "adult who is not drooling and has no stridor imposes a major intervention ahead of need."],
    ["Discharge on oral antibiotics with review in 24 hours",
     "The slower adult course does not make it safe to send home. The disease carries high mortality "
-    "when it is not recognised and treated promptly, and deterioration can be rapid once it starts."],
+    "when it is not recognized and treated promptly, and deterioration can be rapid once it starts."],
    ["Lateral neck radiography before any treatment",
     "The thumbprint sign is not necessary for diagnosis, which has already been made by "
     "laryngoscopy, the gold standard. Ordering a film now delays treatment without adding "
@@ -297,8 +297,8 @@ Q("Diphtheria prevention", IO,
   "A clinician is asked when a pregnant woman should receive Tdap.",
   [["Between 27 and 36 weeks of every pregnancy",
     "Correct. The recommendation is Tdap in each pregnancy between 27 and 36 weeks. Vaccinating in "
-    "that window maximises transplacental antibody transfer, protecting the newborn during the "
-    "months before the infant's own immunisation schedule has taken effect."],
+    "that window maximizes transplacental antibody transfer, protecting the newborn during the "
+    "months before the infant's own immunization schedule has taken effect."],
    ["Once only, before the first pregnancy",
     "A single lifetime dose does not maintain the high maternal antibody levels needed for transfer, "
     "which is why the recommendation is repeated with each pregnancy rather than given once."],

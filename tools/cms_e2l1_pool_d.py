@@ -28,7 +28,7 @@ POOL_D = [
    opts=[
      ["Direct extension from a bacterial sinus, skin or dental infection",
       "Correct — the orbit is separated from the ethmoid sinus by paper-thin bone and shares venous drainage with the face and teeth, so infection spreads directly from those sites."],
-     ["Haematogenous spread from a distant focus",
+     ["Hematogenous spread from a distant focus",
       "Bloodborne seeding is possible but uncommon; the usual route is direct extension from an adjacent sinus, skin or dental infection."],
      ["Nasolacrimal duct obstruction",
       "That underlies dacryocystitis."],
@@ -58,7 +58,7 @@ POOL_D = [
       "Those occur in both."],
      ["Warmth of the tissue around the eye",
       "That occurs in both."],
-     ["Lid erythema and oedema",
+     ["Lid erythema and edema",
       "That occurs in both."]],
    c=0, cite=c(52)),
 
@@ -80,7 +80,7 @@ POOL_D = [
    opts=[
      ["Significant conjunctival injection, proptosis, decreased and painful extraocular movement, possible afferent pupillary defect and decreased vision",
       "Correct — infection behind the septum fills the orbit, pushing the globe forward, inflaming the muscles so movement hurts, and compressing the optic nerve to give an afferent defect and reduced vision."],
-     ["Balloon-like lid oedema with a white globe and full painless movements",
+     ["Balloon-like lid edema with a white globe and full painless movements",
       "That is pre-septal disease."],
      ["Follicles with a tender preauricular node",
       "That is viral conjunctivitis."],
@@ -106,7 +106,7 @@ POOL_D = [
    opts=[
      ["Outpatient oral antibiotics for 10 to 14 days aimed at Staphylococcus, including resistant strains, and Streptococcus",
       "Correct — cover must include methicillin-resistant Staphylococcus aureus as well as Streptococcus, and a 10 to 14 day oral course suffices while the globe remains uninvolved."],
-     ["Hospitalisation with broad-spectrum intravenous antibiotics for 48 to 72 hours",
+     ["Hospitalization with broad-spectrum intravenous antibiotics for 48 to 72 hours",
       "That is for moderate-severe, non-compliant, young children, or any post-septal disease."],
      ["Topical antibiotic drops for seven days",
       "Insufficient for a tissue infection."],
@@ -115,7 +115,7 @@ POOL_D = [
    c=0, cite=c(53)),
 
  dict(topic="Cellulitis", io=IOB, slot="escalation",
-   q="Which patients with PRE-septal cellulitis are hospitalised?",
+   q="Which patients with PRE-septal cellulitis are hospitalized?",
    opts=[
      ["Moderate to severe or toxic disease, concern for poor compliance, a child of five years or younger, or no improvement after oral antibiotics were started",
       "Correct — each marks either a patient who cannot be safely observed at home or disease already failing oral therapy, and children of five or under are admitted because post-septal spread is quicker and harder to detect."],
@@ -145,8 +145,8 @@ POOL_D = [
    opts=[
      ["Ear, nose and throat; oral and maxillofacial surgery; and infectious disease",
       "Correct — the sinuses and teeth are the usual source, so drainage may need ear, nose and throat or maxillofacial surgery, with infectious disease guiding antimicrobial choice in resistant or fungal disease."],
-     ["Haematology and rheumatology",
-      "Haematology and rheumatology address blood and autoimmune disease; here the source is sinus or dental, and the specialties that follow are surgical and infectious disease."],
+     ["Hematology and rheumatology",
+      "Hematology and rheumatology address blood and autoimmune disease; here the source is sinus or dental, and the specialties that follow are surgical and infectious disease."],
      ["Endocrinology and nephrology",
       "Endocrinology and nephrology are not the relevant teams; the infection arises from sinus or dental sources and may need surgical drainage."],
      ["Dermatology alone",
@@ -202,7 +202,7 @@ POOL_D = [
       "That is fluorescein ANGIOGRAPHY, a different test."],
      ["A drop of phenylephrine is instilled and the vessels observed for blanching",
       "That is the episcleritis test."],
-     ["A pen tonometer is applied to the anaesthetised cornea",
+     ["A pen tonometer is applied to the anesthetized cornea",
       "That measures pressure."]],
    c=0, cite=c(9)),
 
@@ -223,19 +223,19 @@ POOL_D = [
    q="How safe is the dye used in fluorescein angiography?",
    opts=[
      ["It is relatively safe and has no iodine",
-      "Correct — fluorescein contains no iodine, so the iodinated-contrast precautions do not apply; reactions are usually limited to transient nausea and yellow discolouration of skin and urine."],
+      "Correct — fluorescein contains no iodine, so the iodinated-contrast precautions do not apply; reactions are usually limited to transient nausea and yellow discoloration of skin and urine."],
      ["It contains iodine and is contraindicated in renal impairment",
       "Fluorescein contains no iodine at all, which is precisely what separates it from iodinated radiographic contrast."],
      ["It is radioactive and requires shielding",
       "It is not radioactive."],
      ["It commonly causes anaphylaxis",
-      "Anaphylaxis is rare; the usual effects are transient nausea and temporary yellow discolouration of skin and urine."]],
+      "Anaphylaxis is rare; the usual effects are transient nausea and temporary yellow discoloration of skin and urine."]],
    c=0, cite=c(10)),
 
  dict(topic="Fluorescein angiography", io=IOA, slot="initial test",
    q="Which conditions can fluorescein angiography detect?",
    opts=[
-     ["Diabetic retinopathy, macular degeneration, macular oedema, ocular melanoma, retinal detachment and retinitis pigmentosa",
+     ["Diabetic retinopathy, macular degeneration, macular edema, ocular melanoma, retinal detachment and retinitis pigmentosa",
       "Correct — the dye fills the retinal and choroidal circulation, so leakage, non-perfusion and abnormal vessels show up, which is what each of these conditions produces."],
      ["Corneal abrasions, ulcers and foreign bodies",
       "Those are found by the surface fluorescein examination."],
@@ -288,8 +288,8 @@ POOL_D = [
  dict(topic="Red eye triage", io=IOA, slot="initial test",
    q="Which is the ONE exception to the normal red-eye sequence?",
    opts=[
-     ["Chemical exposure — begin copious irrigation before the history or examination, then verify the surface pH has normalised",
-      "Correct — alkali in particular keeps penetrating while the history is taken, so irrigation starts immediately and pH is rechecked until it normalises."],
+     ["Chemical exposure — begin copious irrigation before the history or examination, then verify the surface pH has normalized",
+      "Correct — alkali in particular keeps penetrating while the history is taken, so irrigation starts immediately and pH is rechecked until it normalizes."],
      ["Contact lens wear — remove the lens before any history",
       "Removing the lens matters, but it does not displace the examination sequence the way ongoing chemical injury does."],
      ["Trauma — obtain imaging before examining",
@@ -328,7 +328,7 @@ POOL_D = [
    q="What must be done for a suspected OPEN GLOBE?",
    opts=[
      ["Place a rigid eye shield, avoid pressure, manipulation and tonometry, keep the patient nil by mouth, and obtain emergency ophthalmology consultation",
-      "Correct — any pressure on a perforated globe can extrude intraocular contents, so the eye is shielded rather than patched, tonometry is avoided, and the patient is kept fasted for theatre."],
+      "Correct — any pressure on a perforated globe can extrude intraocular contents, so the eye is shielded rather than patched, tonometry is avoided, and the patient is kept fasted for theater."],
      ["Irrigate copiously before doing anything else",
       "That is the chemical injury protocol."],
      ["Measure the intraocular pressure to assess the damage",
@@ -337,21 +337,21 @@ POOL_D = [
       "Pressure on the globe is exactly what must be avoided."]],
    c=0, cite=cn(68)),
 
- dict(topic="Red eye localisation", io=IOA, slot="differential",
-   q="Which pattern localises the problem to the CONJUNCTIVA?",
+ dict(topic="Red eye localization", io=IOA, slot="differential",
+   q="Which pattern localizes the problem to the CONJUNCTIVA?",
    opts=[
      ["Itch or discharge with diffuse injection and preserved vision",
       "Correct — the conjunctiva has no role in focusing light, so vision is preserved, and its inflammation produces itch and discharge with redness spread evenly rather than concentrated at the limbus."],
      ["Pain and photophobia with a fluorescein defect or infiltrate",
-      "That localises to the cornea."],
+      "That localizes to the cornea."],
      ["Consensual photophobia with ciliary flush and an irregular pupil",
-      "That localises to the anterior chamber."],
+      "That localizes to the anterior chamber."],
      ["Deep pain or painful eye movement with a violaceous sclera",
-      "That localises to sclera or orbit."]],
+      "That localizes to sclera or orbit."]],
    c=0, cite=c(69)),
 
- dict(topic="Red eye localisation", io=IOA, slot="differential",
-   q="Which pattern localises the problem to the ANTERIOR CHAMBER?",
+ dict(topic="Red eye localization", io=IOA, slot="differential",
+   q="Which pattern localizes the problem to the ANTERIOR CHAMBER?",
    opts=[
      ["Consensual photophobia, ciliary flush and an irregular pupil",
       "Correct — inflammation of the iris and ciliary body makes pupil movement painful, engorges the perilimbal vessels, and forms adhesions that distort the pupil."],
@@ -363,11 +363,11 @@ POOL_D = [
       "That is orbital."]],
    c=0, cite=c(69)),
 
- dict(topic="Red eye localisation", io=IOA, slot="differential",
-   q="Which pattern localises the problem to ANGLE CLOSURE?",
+ dict(topic="Red eye localization", io=IOA, slot="differential",
+   q="Which pattern localizes the problem to ANGLE CLOSURE?",
    opts=[
      ["Pain or headache with halos and nausea, a cloudy cornea and a mid-dilated pupil",
-      "Correct — the sudden pressure rise oedematises the cornea, producing halos and a cloudy appearance, while the pupil is fixed mid-dilated and the systemic response brings headache and nausea."],
+      "Correct — the sudden pressure rise edematizes the cornea, producing halos and a cloudy appearance, while the pupil is fixed mid-dilated and the systemic response brings headache and nausea."],
      ["Itch with stringy discharge and preserved vision",
       "That is allergic conjunctivitis."],
      ["Foreign body sensation with a fluorescein-staining defect",
@@ -433,10 +433,10 @@ POOL_D = [
  dict(topic="Contact lens keratitis", io=IOA, slot="first-line",
    q="A contact lens wearer has severe unilateral pain, photophobia and blurred vision after sleeping in lenses, with a central epithelial defect and a white infiltrate. What are the immediate next steps?",
    opts=[
-     ["Remove the lenses without patching, give no take-home topical anaesthetic or corticosteroid, arrange same-day ophthalmology evaluation, and preserve the lenses and case if culture is wanted",
-      "Correct — this is microbial keratitis until proven otherwise; patching incubates the organism, take-home anaesthetic masks progression, steroids suppress local immunity, and the lens and case often grow the organism."],
-     ["Patch the eye, give a topical anaesthetic for comfort, and review in two days",
-      "Patching and take-home anaesthetic are both specifically prohibited."],
+     ["Remove the lenses without patching, give no take-home topical anesthetic or corticosteroid, arrange same-day ophthalmology evaluation, and preserve the lenses and case if culture is wanted",
+      "Correct — this is microbial keratitis until proven otherwise; patching incubates the organism, take-home anesthetic masks progression, steroids suppress local immunity, and the lens and case often grow the organism."],
+     ["Patch the eye, give a topical anesthetic for comfort, and review in two days",
+      "Patching and take-home anesthetic are both specifically prohibited."],
      ["Start a topical corticosteroid and review next week",
       "Steroids can worsen uncontrolled infection."],
      ["Reassure and treat as viral conjunctivitis",
@@ -444,10 +444,10 @@ POOL_D = [
    c=0, cite=c(71)),
 
  dict(topic="Contact lens keratitis", io=IOA, slot="avoid",
-   q="Why must a topical anaesthetic never be dispensed for home use?",
+   q="Why must a topical anesthetic never be dispensed for home use?",
    opts=[
      ["It delays healing and masks progression",
-      "Correct — repeated anaesthetic is directly toxic to the corneal epithelium and slows healing, and by abolishing pain it removes the one warning that the ulcer is worsening."],
+      "Correct — repeated anesthetic is directly toxic to the corneal epithelium and slows healing, and by abolishing pain it removes the one warning that the ulcer is worsening."],
      ["It causes an allergic reaction in most patients",
       "Allergy is not the issue; repeated use is toxic to the corneal epithelium and abolishes the pain that signals deterioration."],
      ["It raises intraocular pressure",

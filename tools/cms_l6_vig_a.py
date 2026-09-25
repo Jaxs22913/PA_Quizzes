@@ -21,7 +21,7 @@ IOC = "c — Identify medical care strategies for cutaneous viral and fungal inf
 
 VIG_A = [
  dict(topic="Tinea capitis", io=IOC, lead="diagnosis",
-   q="A 7-year-old boy is brought in with an itchy scalp and a patch of hair loss. On examination there is a scaly grey ring-shaped patch with visible black dots where hairs have broken off at the surface, and there is tender posterior cervical lymphadenopathy. Which is the most likely diagnosis?",
+   q="A 7-year-old boy is brought in with an itchy scalp and a patch of hair loss. On examination there is a scaly gray ring-shaped patch with visible black dots where hairs have broken off at the surface, and there is tender posterior cervical lymphadenopathy. Which is the most likely diagnosis?",
    opts=[
      ["Tinea capitis",
       "Correct — broken hairs, scale and lymphadenopathy in a preadolescent child."],
@@ -43,7 +43,7 @@ VIG_A = [
      ["It is predominantly a disease of preadolescent children, because school-age immunity to dermatophytes has not yet developed at that age",
       "Acquired immunity does not explain the pattern; the protective change at puberty is in sebum composition."],
      ["It is equally common at all ages, and the difference here is simply exposure at school rather than anything about the child",
-      "The predominance in preadolescents is real rather than an artefact of exposure, and it reverses at puberty when sebum changes."]],
+      "The predominance in preadolescents is real rather than an artifact of exposure, and it reverses at puberty when sebum changes."]],
    c=0, cite=c(9)),
 
  dict(topic="Tinea capitis", io=IOB, lead="education",
@@ -54,7 +54,7 @@ VIG_A = [
      ["Fungal particles remain viable for a few hours, so normal washing of the brush between uses is enough",
       "Viability lasts months, not hours."],
      ["Fungal particles cannot survive off the scalp at all, so shared items carry no risk of transmission",
-      "Fomite transmission is well recognised."],
+      "Fomite transmission is well recognized."],
      ["Fungal particles remain viable for months, but only on furniture and clothing rather than on combs",
       "Combs and hairbrushes are named specifically as fomites."]],
    c=0, cite=c(10)),
@@ -216,7 +216,7 @@ VIG_A = [
    c=0, cite=c(22)),
 
  dict(topic="Tinea corporis", io=IOB, lead="diagnosis",
-   q="A 22-year-old wrestler has a single round, sharply circumscribed, slightly erythematous dry scaly plaque on his forearm. The centre has begun to clear, leaving a ring. Which is the most likely diagnosis?",
+   q="A 22-year-old wrestler has a single round, sharply circumscribed, slightly erythematous dry scaly plaque on his forearm. The center has begun to clear, leaving a ring. Which is the most likely diagnosis?",
    opts=[
      ["Tinea corporis",
       "Correct — progressive central clearing gives the annular \"ringworm\" outline."],
@@ -233,9 +233,9 @@ VIG_A = [
    opts=[
      ["From the active border of the lesion",
       "Correct — the advancing edge carries the organism."],
-     ["From the cleared centre of the lesion",
-      "The centre is where the infection has receded."],
-     ["From normal skin two centimetres beyond the lesion",
+     ["From the cleared center of the lesion",
+      "The center is where the infection has receded."],
+     ["From normal skin two centimeters beyond the lesion",
       "Uninvolved skin will not yield fungal elements."],
      ["From a blood sample taken during the acute phase",
       "Potassium hydroxide microscopy is performed on skin, not blood."]],
@@ -247,7 +247,7 @@ VIG_A = [
      ["Obtain a fungal culture, since high clinical suspicion with a negative preparation is an indication for it",
       "Correct — culture is for exactly this situation, and for refractory cases."],
      ["Accept the negative result and treat the lesion as nummular eczema with a topical corticosteroid",
-      "A steroid on an unrecognised tinea produces tinea incognito."],
+      "A steroid on an unrecognized tinea produces tinea incognito."],
      ["Repeat the identical potassium hydroxide preparation weekly until it eventually turns positive",
       "Culture is the next test, not a repeat of the same preparation."],
      ["Start an oral antifungal without further testing, since the clinical picture alone is sufficient",
@@ -255,11 +255,11 @@ VIG_A = [
    c=0, cite=c(26)),
 
  dict(topic="Tinea corporis", io=IOB, lead="treatment",
-   q="A patient has a single 3-centimetre annular plaque on the trunk. Which is the most appropriate treatment, and how should it be applied?",
+   q="A patient has a single 3-centimeter annular plaque on the trunk. Which is the most appropriate treatment, and how should it be applied?",
    opts=[
-     ["Topical terbinafine, butenafine, or an azole, applied to the lesion and 1 to 2 centimetres beyond its border",
+     ["Topical terbinafine, butenafine, or an azole, applied to the lesion and 1 to 2 centimeters beyond its border",
       "Correct — treating beyond the border covers the advancing edge."],
-     ["Topical terbinafine, butenafine, or an azole, applied only to the cleared centre of the lesion",
+     ["Topical terbinafine, butenafine, or an azole, applied only to the cleared center of the lesion",
       "The active edge is what needs treating."],
      ["An oral antifungal from the outset, applied in every patient with a single localized plaque",
       "Oral therapy is reserved for extensive or refractory disease."],
@@ -328,7 +328,7 @@ VIG_A = [
       "These are the opposite of the named risks."],
      ["Advancing age, occlusive footwear, nail trauma, and peripheral vascular disease in the lower limb",
       "Those are onychomycosis risk factors."],
-     ["Recent antibiotics, incontinence, immobility, and immunosuppression in a hospitalised patient",
+     ["Recent antibiotics, incontinence, immobility, and immunosuppression in a hospitalized patient",
       "Those are the intertrigo risk factors."]],
    c=0, cite=c(31)),
 
@@ -424,7 +424,7 @@ VIG_A = [
    c=0, cite=c(44)),
 
  dict(topic="Tinea pedis", io=IOB, lead="next step",
-   q="A patient has recurrent tinea pedis despite repeated topical courses, and also has thickened discoloured toenails. Which is the most appropriate next step?",
+   q="A patient has recurrent tinea pedis despite repeated topical courses, and also has thickened discolored toenails. Which is the most appropriate next step?",
    opts=[
      ["Consider oral therapy, treat the coexisting onychomycosis, and reinforce moisture control",
       "Correct — an untreated nail reservoir drives recurrence."],
@@ -450,10 +450,10 @@ VIG_A = [
    c=0, cite=c(45)),
 
  dict(topic="Tinea manuum", io=IOB, lead="diagnosis",
-   q="A 55-year-old labourer has a thickened, dry, scaly right palm. He assumed it was from hard work. His left foot has interdigital scaling. Which term describes this pattern?",
+   q="A 55-year-old laborer has a thickened, dry, scaly right palm. He assumed it was from hard work. His left foot has interdigital scaling. Which term describes this pattern?",
    opts=[
      ["Two feet–one hand syndrome, in which the hand used to scratch the foot becomes affected",
-      "Correct — and patients often blame dry skin or manual labour."],
+      "Correct — and patients often blame dry skin or manual labor."],
      ["Id reaction, in which a dermatitis appears at a site distant from the primary infection",
       "An id reaction site is potassium-hydroxide negative and intensely pruritic."],
      ["Tinea incognito, in which topical steroids alter the clinical appearance",
@@ -466,7 +466,7 @@ VIG_A = [
    q="A patient is diagnosed with tinea manuum affecting one palm. Which is the most appropriate treatment approach?",
    opts=[
      ["The same as for tinea pedis: topical for localized disease, oral for extensive, recurrent, refractory or immunocompromised disease",
-      "Correct — it is the same organism in the same keratinised tissue, so extent and host factors rather than site determine topical against oral therapy."],
+      "Correct — it is the same organism in the same keratinized tissue, so extent and host factors rather than site determine topical against oral therapy."],
      ["The same as for tinea capitis: oral therapy in every patient with hand disease, because topical agents cannot penetrate the affected skin",
       "Penetration of the hair shaft is the capitis problem, not this one."],
      ["The same as for candidal intertrigo: topical nystatin with correction of the local environment",

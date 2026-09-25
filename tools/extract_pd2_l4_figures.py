@@ -22,15 +22,15 @@ position in the relationship list, per [[lettered_slide_images]].
                   the AGE adjustment, and the score bands -- lives only inside
                   this image. A text-only reading of the deck loses it.
   septum          slide 56 -- basal view of a caudal septal deviation.
-  polyp           slide 59 -- endoscopic view labelled P for polyp, S for
+  polyp           slide 59 -- endoscopic view labeled P for polyp, S for
                   septum, T for an allergic-looking inferior turbinate. Shows
                   the polyp AGAINST the turbinate, which is the usual confusion.
   strep           slide 72 -- erythematous tonsils in group A streptococcal
                   pharyngitis.
-  nodes           slide 79 -- the neck node chains labelled, with external and
+  nodes           slide 79 -- the neck node chains labeled, with external and
                   internal drainage arrows. Supports the practical, where the
                   chain has to be NAMED while it is being palpated.
-  ludwig          slide 83 -- anterior neck oedema and early cellulitis in
+  ludwig          slide 83 -- anterior neck edema and early cellulitis in
                   Ludwig's angina.
 
 Licensing: [[media_asset_licensing]] clears a course-slide image provided the

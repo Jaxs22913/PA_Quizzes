@@ -5,7 +5,7 @@ One deck for one topic. Cards are single atomic facts for Sprint's eight-second
 clock; matchCards are recognition pairs with compressed identity tags.
 
 Two constraints carried over from how Professor Reynolds said she examines: no
-card asks for a memorised reference range, and no card asks for a calculated
+card asks for a memorized reference range, and no card asks for a calculated
 predictive value. Nothing here reaches into the deck's exhaustive additive table
 either -- the tube cards stay on the order of draw and the four pairings she
 actually called out.
@@ -37,7 +37,7 @@ DECKS = [
   ["What is the clear tube used for?", "As a discard tube, filling the collection set before the coagulation tube."],
   ["How should a stool specimen for ova and parasites be stored?", "Not refrigerated. Warm stool is best."],
   ["How many stool specimens are recommended for ova and parasites?", "Three separate random specimens, because of the parasite life cycle."],
-  ["What colour indicates a positive guaiac test?", "Blue."],
+  ["What color indicates a positive guaiac test?", "Blue."],
   ["Why should a guaiac sample be small?", "A large sample obscures the result."],
   ["How are blood cultures collected?", "Two separate samples from opposite arms, aerobic drawn first."],
   ["Why are blood cultures both diagnostic and therapeutic?", "They identify the pathogen and provide sensitivities that direct treatment."],

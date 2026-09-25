@@ -6,11 +6,11 @@ Jaxon, 2026-09-02: "make the Pharm questions really simple and drill, like
 simple sets to really drill the need to know stuff that are particular for each
 drug and class and stuff that stands out."
 
-WHAT COUNTS AS "STANDS OUT" IS NOT A JUDGEMENT CALL HERE. The three reference
+WHAT COUNTS AS "STANDS OUT" IS NOT A JUDGMENT CALL HERE. The three reference
 sheets (indications, side effects, contraindications) already carry the
 lecture's own emphasis as <b> markup, and a phrase was only made into a
 question if it belongs to EXACTLY ONE drug or class across all 255 rows. That
-is what keeps "hypersensitivity, rash and diarrhoea" -- true of half the
+is what keeps "hypersensitivity, rash and diarrhea" -- true of half the
 penicillins -- out, and keeps Red Man Syndrome, Achilles tendon rupture and
 the imipenem seizure in.
 
@@ -33,7 +33,7 @@ dict(q="Which antibiotic class causes tendonitis and Achilles tendon rupture?",
      ans="Fluoroquinolones", src=("L1", 79),
      why="Tendonitis and Achilles rupture, with caution under 18 years old. Peripheral neuropathy belongs to the same class.",
      wrong=[("Macrolides", "Known for QT prolongation and cholestatic hepatitis."),
-            ("Tetracyclines", "Known for tooth discolouration and depressed skeletal growth."),
+            ("Tetracyclines", "Known for tooth discoloration and depressed skeletal growth."),
             ("Aminoglycosides", "Known for renal toxicity and ototoxicity.")]),
 
 dict(q="Which antibiotic causes a disulfiram-like reaction if the patient drinks alcohol?",
@@ -48,7 +48,7 @@ dict(q="Which antibiotic can cause serotonin syndrome with selective serotonin r
      why="Serotonin syndrome with SSRIs, and it also interacts with tyramine-containing foods and pseudoephedrine.",
      wrong=[("Vancomycin", "No serotonergic activity."),
             ("Metronidazole", "Its interaction is with ethanol."),
-            ("Tigecycline", "Its problems are nausea, vomiting and diarrhoea.")]),
+            ("Tigecycline", "Its problems are nausea, vomiting and diarrhea.")]),
 
 dict(q="Seizures are the warning attached to which antibiotic class, and to imipenem in particular?",
      ans="Carbapenems", src=("L1", 44),
@@ -57,9 +57,9 @@ dict(q="Seizures are the warning attached to which antibiotic class, and to imip
             ("Monobactams", "Aztreonam is notable for the opposite — no cross-reactivity and few warnings."),
             ("Penicillins", "The class warning is hypersensitivity, not seizures.")]),
 
-dict(q="Which class discolours the teeth and depresses skeletal growth?",
+dict(q="Which class discolors the teeth and depresses skeletal growth?",
      ans="Tetracyclines", src=("L1", 63),
-     why="Tooth discolouration, doxycycline more than the others, and depression of skeletal growth.",
+     why="Tooth discoloration, doxycycline more than the others, and depression of skeletal growth.",
      wrong=[("Macrolides", "Cause gastrointestinal upset and cholestatic hepatitis."),
             ("Fluoroquinolones", "Affect tendons and peripheral nerves, not teeth."),
             ("Aminoglycosides", "Affect the kidney and the ear.")]),
@@ -73,7 +73,7 @@ dict(q="Which antibiotic is most classically blamed for CAUSING Clostridium diff
      why="It causes them. Clostridium difficile and pseudomembranous colitis are its signature adverse effects, alongside rash, neutropenia and thrombocytopenia.",
      wrong=[("Vancomycin", "The other way round — oral vancomycin TREATS Clostridium difficile."),
             ("Metronidazole", "The other way round — it is the drug of choice FOR Clostridium difficile."),
-            ("Aztreonam", "Causes diarrhoea, but carries no such association.")]),
+            ("Aztreonam", "Causes diarrhea, but carries no such association.")]),
 
 dict(q="Which class prolongs the QT interval and risks Torsades de pointes, worse with class Ia and III antiarrhythmics?",
      ans="Macrolides", src=("L1", 57),
@@ -92,7 +92,7 @@ dict(q="Renal toxicity and ototoxicity together point to which class?",
 dict(q="Stevens-Johnson syndrome with thrombocytopenia and agranulocytosis is the warning on which agent?",
      ans="Trimethoprim / sulfamethoxazole", src=("L1", 85),
      why="Hypersensitivity through to Stevens-Johnson syndrome and toxic epidermal necrolysis, plus blood dyscrasias.",
-     wrong=[("Amoxicillin / clavulanate", "Causes rash and diarrhoea, but not this hypersensitivity spectrum."),
+     wrong=[("Amoxicillin / clavulanate", "Causes rash and diarrhea, but not this hypersensitivity spectrum."),
             ("Piperacillin / tazobactam", "Hypersensitivity is possible, but the blood dyscrasias belong elsewhere."),
             ("Nitrofurantoin", "Not the agent this warning is attached to.")]),
 
@@ -122,7 +122,7 @@ dict(q="Which is the drug of choice for syphilis, gas gangrene and meningococcus
      why="Drug of choice for all three. Good against gram-positives, with no staphylococcal cover.",
      wrong=[("Doxycycline", "An alternative in penicillin allergy, but not the drug of choice."),
             ("Azithromycin", "A macrolide, used for atypicals."),
-            ("Ceftriaxone", "The drug of choice for gonorrhoea, not syphilis.")]),
+            ("Ceftriaxone", "The drug of choice for gonorrhea, not syphilis.")]),
 
 dict(q="Which is the drug of choice for neutropenic fever?",
      ans="Cefepime", src=("L1", 36),
@@ -138,14 +138,14 @@ dict(q="Which cephalosporin cannot be used during the first thirty days of life?
             ("Cefazolin", "Not the agent carrying this restriction."),
             ("Cefepime", "Reserved for neutropenic fever.")]),
 
-dict(q="Penicillin cross-sensitivity of roughly less than one per cent belongs to which class?",
+dict(q="Penicillin cross-sensitivity of roughly less than one percent belongs to which class?",
      ans="Cephalosporins", src=("L1", 30),
      why="Cross-sensitivity of approximately less than 1%, and mostly renally eliminated.",
      wrong=[("Carbapenems", "Beta-lactams too, but the figure quoted is for the cephalosporins."),
             ("Monobactams", "Aztreonam has NO cross-reactivity at all."),
             ("Macrolides", "Not beta-lactams, so the question does not arise.")]),
 
-dict(q="Which agent significantly raises the international normalised ratio in a patient on warfarin, and causes hypoglycaemia with sulfonylureas?",
+dict(q="Which agent significantly raises the international normalized ratio in a patient on warfarin, and causes hypoglycemia with sulfonylureas?",
      ans="Trimethoprim / sulfamethoxazole", src=("L1", 85),
      why="Both interactions belong to it, which is why the warfarin patient needs closer monitoring.",
      wrong=[("Amoxicillin / clavulanate", "No clinically important warfarin or sulfonylurea interaction."),
@@ -154,7 +154,7 @@ dict(q="Which agent significantly raises the international normalised ratio in a
 
 dict(q="Which class must be avoided in the second and third trimesters of pregnancy?",
      ans="Tetracyclines", src=("L1", 63),
-     why="Avoided in the second and third trimesters, and in children, because of tooth discolouration and skeletal effects.",
+     why="Avoided in the second and third trimesters, and in children, because of tooth discoloration and skeletal effects.",
      wrong=[("Penicillins", "Generally regarded as safe in pregnancy."),
             ("Cephalosporins", "Generally regarded as safe in pregnancy."),
             ("Macrolides", "Not the class carrying this restriction.")]),
@@ -190,7 +190,7 @@ dict(q="Which is the drug of choice for skin and soft tissue infection, diabetic
 dict(q="Which class is the drug of choice for multidrug-resistant gram-negative and extended-spectrum beta-lactamase infections?",
      ans="Carbapenems", src=("L1", 43),
      why="Drug of choice for MDR gram-negatives and ESBL producers.",
-     wrong=[("Aminopenicillins", "Hydrolysed by those beta-lactamases."),
+     wrong=[("Aminopenicillins", "Hydrolyzed by those beta-lactamases."),
             ("First-generation cephalosporins", "Far too narrow."),
             ("Macrolides", "Wrong spectrum entirely.")]),
 

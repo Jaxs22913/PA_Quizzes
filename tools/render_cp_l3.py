@@ -31,7 +31,7 @@ INTRO = ("Thirty questions on abnormal cell growth and differentiation, drawn fr
          "instructional objectives. Covers the non-neoplastic abnormalities &mdash; agenesis, "
          "aplasia, hypoplasia, atrophy, hypertrophy, metaplasia and dysplasia &mdash; then what a "
          "neoplasm is, histological grading by differentiation, benign against malignant, the three "
-         "routes of tumour spread, the naming rule that turns tissue of origin into sarcoma or "
+         "routes of tumor spread, the naming rule that turns tissue of origin into sarcoma or "
          "carcinoma, the four categories of gene alteration, chemical carcinogenesis, the "
          "microbial causes with their exact mechanisms, heredity, and the TNM system. "
          "<b>Pathophysiology only</b> &mdash; every question asks what is happening in the tissue "

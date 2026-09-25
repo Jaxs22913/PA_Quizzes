@@ -205,11 +205,11 @@ __CSSBLOCK__
 
   <section id="age">
     <div class="shead"><span class="dot" style="background:#a4502a"></span>
-      <h2>Age-specific warnings <span class="tag">the numbers to memorise</span></h2></div>
+      <h2>Age-specific warnings <span class="tag">the numbers to memorize</span></h2></div>
     <div class="note"><b>Three numbers carry this section:</b> <b>30 days</b> (ceftriaxone in the newborn),
     <b>8 years</b> (tetracyclines &mdash; teeth and skeletal growth) and <b>18 years</b> (fluoroquinolones
     &mdash; tendon). If a stem gives you a child&rsquo;s age, it is usually testing one of those three. The
-    last row is not an age limit but a paediatric-only consequence: topical steroids can retard growth.</div>
+    last row is not an age limit but a pediatric-only consequence: topical steroids can retard growth.</div>
     __AGETBL__
   </section>
 

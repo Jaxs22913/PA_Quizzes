@@ -43,14 +43,14 @@ SECTION = """
     </ol>
   </div>
 
-  <div class="callout"><strong>How this section is organised, and the one line that
+  <div class="callout"><strong>How this section is organized, and the one line that
   carries it.</strong> Everything here is <em>slow</em> &mdash; the opposite of section 3.
   Beck came back to the same question repeatedly: <mark class="prof-highlight">what is the
   most common cause?</mark> She said it outright &mdash; &ldquo;it&rsquo;s always important
   to know the most common causes of things, because you&rsquo;ll see them most commonly.&rdquo;
   That list is the spine of the section: <strong>amblyopia</strong> for childhood vision loss,
   <strong>uveal melanoma</strong> for adult eye cancer, <strong>primary open-angle</strong>
-  for glaucoma, <strong>zonular</strong> for paediatric cataract, and the <strong>liver</strong>
+  for glaucoma, <strong>zonular</strong> for pediatric cataract, and the <strong>liver</strong>
   for where ocular melanoma goes.</div>
 
   <h3 class="sub" id="e2l4-iih">4.1 &middot; Idiopathic intracranial hypertension</h3>
@@ -72,7 +72,7 @@ SECTION = """
       pressure.</strong> That is the diagnosis. Note this is <em>intracranial</em>, not
       systemic, hypertension: the blood pressure may be perfectly normal.</td></tr>
     <tr><th>Management</th><td><strong>Acetazolamide promptly</strong>, plus a weight
-      reduction programme with a dietitian. Surgical CSF diversion &mdash; optic nerve sheath
+      reduction program with a dietitian. Surgical CSF diversion &mdash; optic nerve sheath
       fenestration or a shunt &mdash; only for those who fail or cannot tolerate medical
       therapy.</td></tr>
     <tr><th>Prognosis</th><td>Followed jointly by ophthalmology and neurology.
@@ -98,7 +98,7 @@ SECTION = """
       race &middot; family history.</td></tr>
     <tr><th>Treatment</th><td>Drops that either <strong>make less aqueous</strong> (beta
       blockers such as timolol, carbonic anhydrase inhibitors, alpha-2 agonists) or
-      <strong>drain more</strong> (prostaglandin analogues), then laser or surgery.</td></tr>
+      <strong>drain more</strong> (prostaglandin analogs), then laser or surgery.</td></tr>
     <tr><th>Prognosis</th><td><strong>Damage already done cannot be reversed.</strong>
       Treatment preserves what is left. That is the entire argument for screening someone
       who feels fine.</td></tr>
@@ -114,8 +114,8 @@ SECTION = """
   <table>
     <tr><th>Dry (non-exudative)</th><td><strong>Drusen</strong>, pigmentary change and
       atrophy. Blurred central vision with a <strong>central scotoma</strong>.</td></tr>
-    <tr><th>Wet (exudative)</th><td><strong>Choroidal neovascularisation bleeds into the
-      retina</strong>, and the blood organises into a <strong>disciform scar</strong>. That
+    <tr><th>Wet (exudative)</th><td><strong>Choroidal neovascularization bleeds into the
+      retina</strong>, and the blood organizes into a <strong>disciform scar</strong>. That
       scar is why the central vision goes. Once it has bled it stays classified as wet.</td></tr>
     <tr><th>How dry turns wet</th><td>Waste products accumulate under the macula and disrupt
       the retina; new vessels grow behind it, causing swelling, bleeding and scarring &mdash;
@@ -185,7 +185,7 @@ SECTION = """
     <tr><th>Three routes in</th><td><strong>Strabismus</strong> &mdash; misalignment, so the
       brain suppresses one image. <strong>Anisometropia</strong> &mdash; a large difference in
       prescription between eyes. <strong>Deprivation</strong> &mdash; anything blocking the
-      view: cataract, ptosis, corneal opacity, an eyelid haemangioma.</td></tr>
+      view: cataract, ptosis, corneal opacity, an eyelid hemangioma.</td></tr>
     <tr><th>Occlusion objection test</th><td>The child is <strong>unbothered when the
       amblyopic eye is covered</strong> and <strong>becomes fussy when the good eye is
       covered</strong>. Losing the eye they actually use is what upsets them.</td></tr>
@@ -208,8 +208,8 @@ SECTION = """
 
   <h3 class="sub" id="e2l4-cataract">4.7 &middot; Cataract</h3>
   <p>Lens proteins break down and clump, clouding the lens. Beck's image: like looking through
-  a foggy window. <strong>Ageing is the commonest cause overall</strong>; the commonest
-  paediatric cause is idiopathic. Add diabetes, <strong>corticosteroid use</strong>, smoking
+  a foggy window. <strong>Aging is the commonest cause overall</strong>; the commonest
+  pediatric cause is idiopathic. Add diabetes, <strong>corticosteroid use</strong>, smoking
   and ultraviolet exposure.</p>
   <table>
     <tr><th>Acquired &mdash; nuclear</th><td><strong>Brown discoloration of the central
@@ -222,13 +222,13 @@ SECTION = """
       <mark class="prof-highlight">More rapid onset, classically under 50</mark>, and
       typically on corticosteroids or diabetic.</td></tr>
     <tr><th>Acquired &mdash; cortical</th><td><strong>Radial, spoke-like</strong> opacities in
-      the periphery. <strong>Asymptomatic until it reaches the centre</strong>, at which point
+      the periphery. <strong>Asymptomatic until it reaches the center</strong>, at which point
       <strong>glare is the most common complaint</strong>.</td></tr>
     <tr><th>Paediatric</th><td><mark class="prof-highlight">Zonular is the commonest</mark>
       &mdash; white opacity surrounding the nucleus. <strong>Polar</strong> is less common but
       central, so it is caught more easily. Also nuclear, and posterior lenticonus.</td></tr>
     <tr><th>Signs</th><td>Early: slit lamp. Advanced: <strong>loss of the red reflex</strong>,
-      leukocoria, a pupil that looks grey or white. <mark class="prof-highlight">A cataract
+      leukocoria, a pupil that looks gray or white. <mark class="prof-highlight">A cataract
       alone does NOT cause a relative afferent pupillary defect</mark> &mdash; if there is one,
       look further.</td></tr>
     <tr><th>Management</th><td>Non-urgent referral <em>unless</em> secondary to uveitis or
@@ -255,12 +255,12 @@ SECTION = """
     <tr><th>Macular degeneration</th><td><strong>Central</strong> loss with distortion; the
       lens stays clear.</td></tr>
     <tr><th>Glaucoma</th><td><strong>Peripheral</strong> loss; may coexist with cataract.</td></tr>
-    <tr><th>Diabetic retinopathy</th><td>Retinal <strong>haemorrhages and exudates</strong>
+    <tr><th>Diabetic retinopathy</th><td>Retinal <strong>hemorrhages and exudates</strong>
       &mdash; retinal, not lenticular.</td></tr>
     <tr><th>Uveitis</th><td>Pain, redness, photophobia; can cause a secondary cataract.</td></tr>
-    <tr><th>Optic neuropathy</th><td>Reduced acuity <strong>and colour vision</strong>, with a
-      normal lens. <mark class="prof-highlight">The only one here that takes colour</mark>
-      &mdash; think of it first when a patient reports colours washing out.</td></tr>
+    <tr><th>Optic neuropathy</th><td>Reduced acuity <strong>and color vision</strong>, with a
+      normal lens. <mark class="prof-highlight">The only one here that takes color</mark>
+      &mdash; think of it first when a patient reports colors washing out.</td></tr>
     <tr><th>Functional visual loss</th><td>Normal examination, normal pressure, clear lens, and
       symptoms that do not fit anatomy.</td></tr>
   </table>
@@ -273,7 +273,7 @@ SECTION = """
       <mark class="prof-highlight">leukocoria</mark> &mdash; and the classic story is a parent
       noticing <strong>one white pupil and one red one in a photograph</strong>.</td></tr>
     <tr><th>Diagnosis</th><td>Dilated examination plus imaging. <strong>No biopsy</strong>
-      &mdash; pathology is not needed and sampling <strong>risks seeding the tumour</strong>
+      &mdash; pathology is not needed and sampling <strong>risks seeding the tumor</strong>
       through the local tissue.</td></tr>
     <tr><th>Primary care role</th><td><strong>Check a red reflex</strong> in every infant and
       young child, and screen for subnormal vision. Refer suspicious cases within
@@ -354,17 +354,17 @@ TEST = """    cvl: [
       {q:"Which cataract classically appears under 50 in a patient on corticosteroids?",
        choices:["Posterior subcapsular","Nuclear","Cortical","Zonular"],correct:0,
        explain:"Faster onset, glare and reading difficulty, and symptoms that improve after dilation."},
-      {q:"Which paediatric cataract type is most common?",
+      {q:"Which pediatric cataract type is most common?",
        choices:["Zonular","Polar","Nuclear","Posterior lenticonus"],correct:0,
        explain:"A white opacity surrounding the nucleus. Polar is less common but central, so easier to spot."},
       {q:"Where does ocular melanoma most often metastasise?",
        choices:["Liver","Brain","Bone","Lung"],correct:0,
        explain:"Which is what surveillance after treatment is aimed at."},
       {q:"What separates an iris melanoma from an iris freckle?",
-       choices:["A feeder vessel, plus growth and size","Colour","Which eye it is in","Whether it is painful"],correct:0,
+       choices:["A feeder vessel, plus growth and size","Color","Which eye it is in","Whether it is painful"],correct:0,
        explain:"A cancer builds its own blood supply. A nevus stays flat, under 3 mm and avascular."},
       {q:"Why is a suspected retinoblastoma not biopsied?",
-       choices:["It risks seeding the tumour","Pathology cannot identify it","The lesion is inaccessible","Anaesthesia is unsafe"],correct:0,
+       choices:["It risks seeding the tumor","Pathology cannot identify it","The lesion is inaccessible","Anesthesia is unsafe"],correct:0,
        explain:"Diagnosis rests on dilated examination plus imaging."},
       {q:"In amblyopia, which eye is patched?",
        choices:["The good eye","The amblyopic eye","Both alternately","Neither"],correct:0,
@@ -376,7 +376,7 @@ TEST = """    cvl: [
        choices:["Elevated opening pressure on lumbar puncture","Elevated intraocular pressure","Raised blood pressure","A mass on MRI"],correct:0,
        explain:"Imaging with venography comes first to exclude a mass and a venous sinus thrombosis; the puncture confirms."},
       {q:"Which vision is lost first in primary open-angle glaucoma?",
-       choices:["Peripheral","Central","Colour","Night vision"],correct:0,
+       choices:["Peripheral","Central","Color","Night vision"],correct:0,
        explain:"Central acuity is spared until late, which is why it goes unnoticed and has to be screened for."},
       {q:"What proportion of age-related macular degeneration is dry?",
        choices:["About 80 percent","About 50 percent","About 20 percent","About 95 percent"],correct:0,

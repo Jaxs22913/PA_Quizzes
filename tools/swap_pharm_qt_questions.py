@@ -20,7 +20,7 @@ NEW = {
    "q": "What makes macrolide QT prolongation more dangerous?",
    "opts": [
      ["Class Ia and III antiarrhythmics, electrolyte abnormalities",
-      "Correct. Each pushes repolarisation further, so the effects stack."],
+      "Correct. Each pushes repolarization further, so the effects stack."],
      ["Iron, antacids, calcium or dairy taken at the same time",
       "Those chelate tetracyclines and fluoroquinolones, reducing absorption instead."],
      ["Large intravenous doses given in renal insufficiency",
@@ -35,7 +35,7 @@ NEW = {
    "q": "Which cardiac risk do the fluoroquinolones carry?",
    "opts": [
      ["Bradycardia and atrioventricular block",
-      "Not a listed effect; the cardiac entry is a repolarisation problem."],
+      "Not a listed effect; the cardiac entry is a repolarization problem."],
      ["QT prolongation and torsades de pointes",
       "Correct. The same cardiac risk macrolides and posaconazole carry."],
      ["Cardiomyopathy after prolonged therapy",

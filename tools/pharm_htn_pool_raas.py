@@ -4,7 +4,7 @@ inhibitors and the first-line choice.
 
 KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation. A key that
 carries the whole fact while the distractors stay terse is guessable by length
-([[distractor_style_matching]]); the target is under 10 per cent per file.
+([[distractor_style_matching]]); the target is under 10 percent per file.
 
 SOURCE. Antihypertensives.pptx only (slides 3-30 and the algorithm on 108). The
 recording set the weighting, never a keyed fact:

@@ -7,7 +7,7 @@ another lipid-lowering agent.
 From the statin pharmacokinetic table only the CYP row is asked (the scope cap
 said aloud). High intensity is asked only as drug identity (atorvastatin,
 rosuvastatin), never as a patient scenario. Nothing depends on the 7.5 versus
-10 per cent risk threshold, and ezetimibe is never keyed to NPC1L1.
+10 percent risk threshold, and ezetimibe is never keyed to NPC1L1.
 """
 ITEMS = [
 dict(q="Which statin has MINIMAL CYP metabolism, so CYP3A4 inhibitors affect it least?",

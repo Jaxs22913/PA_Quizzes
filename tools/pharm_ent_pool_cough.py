@@ -10,8 +10,8 @@ Two things carry most of this section. The topical decongestant has a hard time
 limit and a specific consequence for exceeding it -- rebound congestion, which
 sends the patient back to the same bottle. And the two antitussives work at
 opposite ends of the same reflex: benzonatate numbs the receptors where the
-cough starts, dextromethorphan suppresses the centre in the medulla where it is
-organised.
+cough starts, dextromethorphan suppresses the center in the medulla where it is
+organized.
 """
 
 D = "ENT Jax Pharmacology.pptx"
@@ -111,7 +111,7 @@ QUESTIONS = [
  "opts": [
   ["Fast heart rate", "Correct. All three follow from stimulating alpha receptors throughout the body rather than only in the nose. Raised blood pressure and headache."],
   ["Sedation and dry mouth", "These belong to first generation antihistamines. Pseudoephedrine causes tachycardia, raised blood pressure and headache."],
-  ["Diarrhoea and abdominal pain", "These are described with oral nystatin. Pseudoephedrine's effects are cardiovascular, with headache."],
+  ["Diarrhea and abdominal pain", "These are described with oral nystatin. Pseudoephedrine's effects are cardiovascular, with headache."],
   ["Nosebleed and bitter taste", "These belong to nasal sprays. Pseudoephedrine is taken orally and causes tachycardia, hypertension and headache."]],
  "c": 0, "cite": D + ", Slide 52"},
 
@@ -125,13 +125,13 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 52"},
 
 {"topic": "Cough reflex", "io": IO_MOA, "slot": "mechanism",
- "q": "Where is the cough reflex organised?",
+ "q": "Where is the cough reflex organized?",
  "opts": [
-  ["In a cough centre in the medulla oblongata", "Correct. Receptors in the airway start it, but the medulla organises it, which is why one drug class works at each end."],
+  ["In a cough center in the medulla oblongata", "Correct. Receptors in the airway start it, but the medulla organizes it, which is why one drug class works at each end."],
   ["In the cerebral cortex, under voluntary control",
-   "The reflex pathway described ends in a cough centre in the medulla oblongata rather than in the cortex."],
+   "The reflex pathway described ends in a cough center in the medulla oblongata rather than in the cortex."],
   ["In the cervical spinal cord", "Not where the reflex is described as terminating. Impulses run through the brainstem to the medulla oblongata."],
-  ["In the vagal ganglia alone", "The pathway runs through the brainstem to a cough centre in the medulla oblongata."]],
+  ["In the vagal ganglia alone", "The pathway runs through the brainstem to a cough center in the medulla oblongata."]],
  "c": 0, "cite": D + ", Slide 55"},
 
 {"topic": "Cough reflex", "io": IO_MOA, "slot": "mechanism",
@@ -162,7 +162,7 @@ QUESTIONS = [
    "Correct. Unglamorous but genuinely disabling, and together they are the reason cough is treated at all. The pain is musculoskeletal, from the effort of coughing."],
   ["Stroke, syncope and rib fracture",
    "These are described as the less common complications. The common ones are insomnia, exhaustion, musculoskeletal pain and hoarseness."],
-  ["Pneumothorax, haemoptysis and chest pain",
+  ["Pneumothorax, hemoptysis and chest pain",
    "Not among the complications listed. The common ones are insomnia, exhaustion, musculoskeletal pain and hoarseness."],
   ["Hearing loss, tinnitus and vertigo",
    "Not among the complications listed; insomnia, exhaustion, musculoskeletal pain and hoarseness are the common ones."]],
@@ -196,10 +196,10 @@ QUESTIONS = [
 {"topic": "Benzonatate", "io": IO_MOA, "slot": "mechanism",
  "q": "How does benzonatate suppress cough?",
  "opts": [
-  ["It anaesthetises stretch receptors in the lungs", "Correct. It works at the start of the reflex rather than in the brain, which is the whole contrast with dextromethorphan."],
-  ["It suppresses the medullary cough centre", "That is dextromethorphan's mechanism. Benzonatate anaesthetises stretch receptors in the lungs instead."],
+  ["It anesthetizes stretch receptors in the lungs", "Correct. It works at the start of the reflex rather than in the brain, which is the whole contrast with dextromethorphan."],
+  ["It suppresses the medullary cough center", "That is dextromethorphan's mechanism. Benzonatate anesthetizes stretch receptors in the lungs instead."],
   ["It thins mucus so there is less to clear", "That is an expectorant's action. Benzonatate numbs the receptors where the cough reflex begins."],
-  ["It blocks histamine receptors in the airway", "Not its mechanism. Benzonatate anaesthetises the stretch receptors in the lungs that start the cough reflex."]],
+  ["It blocks histamine receptors in the airway", "Not its mechanism. Benzonatate anesthetizes the stretch receptors in the lungs that start the cough reflex."]],
  "c": 0, "cite": D + ", Slide 57"},
 
 {"topic": "Benzonatate", "io": IO_IND, "slot": "drug choice",
@@ -214,36 +214,36 @@ QUESTIONS = [
 {"topic": "Benzonatate", "io": IO_EDU, "slot": "education",
  "q": "Why must a benzonatate capsule be swallowed whole?",
  "opts": [
-  ["It releases local anaesthetic into the mouth",
+  ["It releases local anesthetic into the mouth",
    "Correct. It numbs whatever it touches, so releasing it in the mouth numbs the airway a patient needs to protect. And into the throat, which is the airway the patient needs to protect."],
   ["Chewing destroys the active drug before it works",
-   "The problem is where the drug acts rather than loss of activity: chewing releases local anaesthetic into the mouth and throat."],
+   "The problem is where the drug acts rather than loss of activity: chewing releases local anesthetic into the mouth and throat."],
   ["Chewing causes irritation of the stomach lining",
-   "Gastric irritation is not the stated reason. Chewing releases anaesthetic where it will numb the airway."],
+   "Gastric irritation is not the stated reason. Chewing releases anesthetic where it will numb the airway."],
   ["Chewing gives the medicine a bitter taste",
-   "The concern is anaesthesia rather than taste: released in the mouth, it numbs whatever it touches."]],
+   "The concern is anesthesia rather than taste: released in the mouth, it numbs whatever it touches."]],
  "c": 0, "cite": D + ", Slide 57"},
 
 {"topic": "Benzonatate", "io": IO_CONTRA, "slot": "contraindication",
  "q": "Which allergy history is a contraindication to benzonatate?",
  "opts": [
-  ["Allergy to tetracaine or related anaesthetics", "Correct. Benzonatate is chemically related to the ester local anaesthetics, so a reaction to one predicts a reaction to the other."],
+  ["Allergy to tetracaine or related anesthetics", "Correct. Benzonatate is chemically related to the ester local anesthetics, so a reaction to one predicts a reaction to the other."],
   ["Allergy to penicillin or a cephalosporin",
-   "Unrelated to benzonatate. The relevant allergy is to tetracaine and related ester anaesthetics."],
+   "Unrelated to benzonatate. The relevant allergy is to tetracaine and related ester anesthetics."],
   ["Allergy to aspirin or other salicylates",
-   "Unrelated to benzonatate, which is chemically related to the ester local anaesthetics such as tetracaine."],
+   "Unrelated to benzonatate, which is chemically related to the ester local anesthetics such as tetracaine."],
   ["Allergy to iodine or contrast media",
-   "Unrelated to benzonatate. Allergy to tetracaine or a related anaesthetic is the contraindication."]],
+   "Unrelated to benzonatate. Allergy to tetracaine or a related anesthetic is the contraindication."]],
  "c": 0, "cite": D + ", Slide 57"},
 
 {"topic": "Dextromethorphan", "io": IO_MOA, "slot": "mechanism",
  "q": "How does dextromethorphan suppress cough?",
  "opts": [
-  ["It suppresses the medullary cough centre",
+  ["It suppresses the medullary cough center",
    "Correct. It is related to codeine and acts centrally, which is the origin of both its confusion as a side effect and its misuse. It does so through sigma receptor activation, and it is related to codeine."],
-  ["It anaesthetises airway stretch receptors", "That is benzonatate's mechanism. Dextromethorphan suppresses the medullary cough centre through sigma receptors."],
-  ["It constricts bronchial vessels", "Not its mechanism. Dextromethorphan acts centrally, suppressing the cough centre in the medulla."],
-  ["It breaks disulfide bonds in mucus", "That is N-acetylcysteine's mechanism. Dextromethorphan suppresses the medullary cough centre."]],
+  ["It anesthetizes airway stretch receptors", "That is benzonatate's mechanism. Dextromethorphan suppresses the medullary cough center through sigma receptors."],
+  ["It constricts bronchial vessels", "Not its mechanism. Dextromethorphan acts centrally, suppressing the cough center in the medulla."],
+  ["It breaks disulfide bonds in mucus", "That is N-acetylcysteine's mechanism. Dextromethorphan suppresses the medullary cough center."]],
  "c": 0, "cite": D + ", Slide 58"},
 
 {"topic": "Dextromethorphan", "io": IO_SE, "slot": "adverse effect",

@@ -13,10 +13,10 @@ IO_B = "b — Identify medical care strategies for common ophthalmological disor
 
 QUESTIONS = [
  dict(topic="Open globe injury", io=IO_A, lead="next step", cite=D % 17,
-  q="A 34-year-old man was struck in the right eye by a baseball. The lid is swollen, the conjunctiva is deeply haemorrhagic and the globe feels soft. Which is the most appropriate next step?",
-  opts=[["Tape a rigid shield over the eye and call ophthalmology", "Correct. A soft eye with massive haemorrhagic chemosis after blunt force is a globe rupture until proven otherwise."],
+  q="A 34-year-old man was struck in the right eye by a baseball. The lid is swollen, the conjunctiva is deeply hemorrhagic and the globe feels soft. Which is the most appropriate next step?",
+  opts=[["Tape a rigid shield over the eye and call ophthalmology", "Correct. A soft eye with massive hemorrhagic chemosis after blunt force is a globe rupture until proven otherwise."],
         ["Measure the intraocular pressure", "Pressing on a possibly open globe risks extruding its contents."],
-        ["Instil a mydriatic and examine the fundus", "The eye is never dilated when trauma is suspected."],
+        ["Instill a mydriatic and examine the fundus", "The eye is never dilated when trauma is suspected."],
         ["Irrigate the eye with copious saline", "Irrigation does nothing for a ruptured globe and adds pressure."]]),
 
  dict(topic="Open globe injury", io=IO_A, lead="initial and confirmatory test", cite=D % 6,
@@ -31,12 +31,12 @@ QUESTIONS = [
   opts=[["Leave it in place and arrange surgical repair", "Correct. It may be tamponading the wound, and removing it can extrude intraocular contents."],
         ["Withdraw it along its entry path", "Withdrawal risks extrusion of intraocular contents."],
         ["Cut it flush with the cornea and cover it", "Manipulation carries the same risk."],
-        ["Remove it after topical anaesthetic", "Anaesthesia does not make removal safe."]]),
+        ["Remove it after topical anesthetic", "Anesthesia does not make removal safe."]]),
 
  dict(topic="Corneal abrasion", io=IO_A, lead="patient education", cite=D % 18,
   q="A 27-year-old woman scratched her cornea removing a contact lens. Fluorescein confirms an abrasion. She asks for something for the pain to use at home. Which is the most appropriate response?",
-  opts=[["Analgesia and a topical antibiotic, but not anaesthetic drops", "Correct. Take-home anaesthetic delays healing, masks worsening symptoms and can cause a corneal ulcer."],
-        ["Topical anaesthetic drops four times daily", "That is the one thing that must not be sent home."],
+  opts=[["Analgesia and a topical antibiotic, but not anesthetic drops", "Correct. Take-home anesthetic delays healing, masks worsening symptoms and can cause a corneal ulcer."],
+        ["Topical anesthetic drops four times daily", "That is the one thing that must not be sent home."],
         ["Topical corticosteroid drops for comfort", "Steroids are not the treatment for an abrasion."],
         ["No treatment, since abrasions heal regardless", "An antibiotic and review are part of care."]]),
 
@@ -57,8 +57,8 @@ QUESTIONS = [
  dict(topic="Hyphema", io=IO_A, lead="diagnosis", cite=D % 24,
   q="A 16-year-old was hit in the eye by a paintball. There is a layer of blood across the lower anterior chamber with a visible fluid level. Which statement about the most likely diagnosis is correct?",
   opts=[["Hyphema, and it can itself indicate an open globe", "Correct. It is not always an isolated injury."],
-        ["Subconjunctival haemorrhage overlying the iris", "That sits on the surface, outside the chamber."],
-        ["Vitreous haemorrhage seen through the pupil", "That lies behind the lens."],
+        ["Subconjunctival hemorrhage overlying the iris", "That sits on the surface, outside the chamber."],
+        ["Vitreous hemorrhage seen through the pupil", "That lies behind the lens."],
         ["Traumatic iritis with cells in the chamber", "Cells are not a layered blood level."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="management", cite=D % 25,
@@ -66,12 +66,12 @@ QUESTIONS = [
   opts=[["Bed rest head-up, antiemetics, cycloplegic and aminocaproic acid, to prevent a rebleed",
          "Correct. Every element serves that one goal."],
         ["Ambulation and warm compresses, to clear the blood faster", "Speed of clearance is not the aim, and activity risks a rebleed."],
-        ["Aspirin, to prevent clot organisation", "Aspirin raises the risk of a secondary haemorrhage."],
-        ["Topical anaesthetic and discharge, with review in a week", "This needs monitoring, not discharge."]]),
+        ["Aspirin, to prevent clot organization", "Aspirin raises the risk of a secondary hemorrhage."],
+        ["Topical anesthetic and discharge, with review in a week", "This needs monitoring, not discharge."]]),
 
  dict(topic="Hyphema", io=IO_A, lead="prognosis", cite=D % 25,
   q="A 30-year-old with a hyphema asks how long the dangerous period lasts. Which is the most accurate response?",
-  opts=[["The first 72 hours, when most rebleeding happens", "Correct. A secondary haemorrhage is what costs vision permanently."],
+  opts=[["The first 72 hours, when most rebleeding happens", "Correct. A secondary hemorrhage is what costs vision permanently."],
         ["The first 24 hours only", "The window is longer than a day."],
         ["There is no dangerous period once bleeding stops", "Rebleeding is the whole concern."],
         ["The first month, evenly throughout", "The risk is concentrated much earlier."]]),
@@ -85,9 +85,9 @@ QUESTIONS = [
 
  dict(topic="Trauma first principles", io=IO_A, lead="next step", cite=D % 3,
   q="A 52-year-old is brought in after a road traffic collision with an obviously injured left eye, confusion and shallow breathing. Which is the most appropriate first action?",
-  opts=[["Assess airway, breathing and circulation", "Correct. The eye is assessed after the patient is stabilised."],
+  opts=[["Assess airway, breathing and circulation", "Correct. The eye is assessed after the patient is stabilized."],
         ["Measure visual acuity in both eyes", "Acuity waits until the primary survey is done."],
-        ["Instil fluorescein and examine the cornea", "The surface examination is not the first action."],
+        ["Instill fluorescein and examine the cornea", "The surface examination is not the first action."],
         ["Order computed tomography of the orbits", "Imaging follows resuscitation."]]),
 
  dict(topic="Trauma first principles", io=IO_A, lead="management", cite=D % 6,

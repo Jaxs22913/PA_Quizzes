@@ -41,7 +41,7 @@ ABOVE/BELOW/LEFT/RIGHT captions found five more of the same kind:
                  Corneal ulcer in contact lens wearer appears as white spot"
 
 Verified correct and left alone: entropion/ectropion (slide 12 ABOVE/BELOW),
-dermatochalasis (one combined before/after picture), subconjunctival haemorrhage
+dermatochalasis (one combined before/after picture), subconjunctival hemorrhage
 (letter A), herpes simplex vs zoster keratitis (slide 57 -- the dendrite with
 terminal end bulbs is on the left, the pseudodendrites on the right, and the
 chart has them that way round), pre-septal cellulitis (white eye), scleritis

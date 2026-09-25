@@ -11,7 +11,7 @@ common infectious agents, microbial physiology, mechanisms of disease,
 epidemiology, antimicrobial action and resistance, treatment strategies,
 prevention -- none of which is what the lecture actually teaches. The lecture is
 a survey of DIAGNOSTIC METHODS, so 58 of the 62 questions tag to objective 1 by
-default. The objective count is still printed, but the real organising axis is
+default. The objective count is still printed, but the real organizing axis is
 the phenotypic / genotypic / immunological split carried in each question's
 topic field, and the selection is spread across that instead.
 

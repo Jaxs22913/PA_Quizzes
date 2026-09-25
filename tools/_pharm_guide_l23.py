@@ -130,10 +130,10 @@ BODY_ADD = '''
   covered and occlusiveness</strong> &mdash; ointment &gt; cream &gt; lotion.</div>
   <p>Local effects are skin atrophy, acne, rosacea and allergic dermatitis to the vehicle. Systemic
   effects &mdash; from a topical drug &mdash; are <strong>adrenal suppression, infections,
-  hyperglycaemia, glaucoma, cataracts and growth retardation in children</strong>.</p>
+  hyperglycemia, glaucoma, cataracts and growth retardation in children</strong>.</p>
   <p><strong>Topical immunomodulators</strong> (tacrolimus, pimecrolimus) inhibit activation of T cells,
   mast cells and keratinocytes. They are <strong>second line after topical steroids</strong>, carry a
-  possible cancer risk, should be avoided in the immunosuppressed, and need counselling on
+  possible cancer risk, should be avoided in the immunosuppressed, and need counseling on
   <strong>burning</strong> and <strong>high SPF sunscreen</strong>.</p>
 
   <h3 class="sub" id="dm-anti">2.5 &middot; Objectives 1&ndash;3 &mdash; Topical antibiotics, antifungals, antivirals</h3>
@@ -142,13 +142,13 @@ BODY_ADD = '''
     <tr><td><strong>Bacitracin</strong></td><td>Peptide; prevents cell wall synthesis</td><td>Gram positives; <strong>no systemic toxicity</strong></td></tr>
     <tr><td><strong>Mupirocin</strong></td><td>Binds bacterial transfer RNA, stopping protein synthesis</td><td>Gram positive aerobes esp. MRSA; <strong>eliminates nasal carriage of <em>S. aureus</em></strong></td></tr>
     <tr><td><strong>Polymyxin B</strong></td><td>Interrupts the cytoplasmic membrane</td><td>Gram negatives; <strong>avoid on open or denuded skin in high doses &mdash; neuro- and nephrotoxicity</strong></td></tr>
-    <tr><td><strong>Aminoglycosides</strong></td><td>Inhibit protein synthesis</td><td>Gram negatives; <strong>neomycin frequently sensitises</strong></td></tr>
+    <tr><td><strong>Aminoglycosides</strong></td><td>Inhibit protein synthesis</td><td>Gram negatives; <strong>neomycin frequently sensitizes</strong></td></tr>
     <tr><td><strong>Azoles</strong></td><td>Inhibit fungal cytochrome P450, preventing cell wall formation</td><td>Topical and vaginal; treatment is <strong>prolonged, two to three weeks</strong></td></tr>
     <tr><td><strong>Ciclopirox</strong></td><td>Blocks uptake of precursors at the fungal cell wall</td><td>Nail lacquer for onychomycosis &mdash; <strong>less than 12% effective</strong></td></tr>
     <tr><td><strong>Allylamines</strong></td><td>Inhibit ergosterol production</td><td>Naftifine, terbinafine</td></tr>
     <tr><td><strong>Tolnaftate / nystatin</strong></td><td>&mdash;</td><td>Tolnaftate has <strong>no Candida activity</strong>; nystatin is the candidal agent, <strong>no oral absorption</strong></td></tr>
-    <tr><td><strong>Acyclovir, penciclovir</strong></td><td>Synthetic guanine analogues</td><td>Recurrent orolabial herpes simplex</td></tr>
-    <tr><td><strong>Imiquimod</strong></td><td>Immunomodulator &mdash; interferon alpha, tumour necrosis factor alpha, interleukins</td><td>Warts, actinic keratoses, basal cell carcinoma</td></tr>
+    <tr><td><strong>Acyclovir, penciclovir</strong></td><td>Synthetic guanine analogs</td><td>Recurrent orolabial herpes simplex</td></tr>
+    <tr><td><strong>Imiquimod</strong></td><td>Immunomodulator &mdash; interferon alpha, tumor necrosis factor alpha, interleukins</td><td>Warts, actinic keratoses, basal cell carcinoma</td></tr>
   </table>
   <div class="pearl"><strong>Imiquimod's adverse effect is the point, not a complication.</strong>
   Skin irritation occurs in virtually all patients, and <strong>the degree of inflammation parallels
@@ -188,9 +188,9 @@ BODY_ADD = '''
   any single agent.</div>
 
   <h3 class="sub" id="ans-wiring">3.1 &middot; Objectives 1&ndash;2 &mdash; How the system is wired</h3>
-  <figure class="fig"><img width="600" height="417" loading="lazy" src="pharm-exam-1-study-guide-images/009.png" alt="Whole-body diagram with each organ labelled twice: sympathetic actions in red and parasympathetic actions in blue, covering eye, lacrimal and salivary glands, trachea and bronchioles, heart, adrenal medulla, kidney, gastrointestinal tract, ureters and bladder, genitalia and blood vessels."><figcaption><strong>Both divisions, organ by organ, on one body.</strong> Red is sympathetic, blue is parasympathetic. Two things are worth reading off it rather than memorising: the eye gets opposing instructions (radial muscle contracts to dilate, sphincter contracts to constrict), and the <strong>blood vessels carry only red</strong> &mdash; there is no parasympathetic supply to most of them, which is why vascular tone is an adrenergic story throughout. (Slide 11.)</figcaption></figure>
+  <figure class="fig"><img width="600" height="417" loading="lazy" src="pharm-exam-1-study-guide-images/009.png" alt="Whole-body diagram with each organ labeled twice: sympathetic actions in red and parasympathetic actions in blue, covering eye, lacrimal and salivary glands, trachea and bronchioles, heart, adrenal medulla, kidney, gastrointestinal tract, ureters and bladder, genitalia and blood vessels."><figcaption><strong>Both divisions, organ by organ, on one body.</strong> Red is sympathetic, blue is parasympathetic. Two things are worth reading off it rather than memorizing: the eye gets opposing instructions (radial muscle contracts to dilate, sphincter contracts to constrict), and the <strong>blood vessels carry only red</strong> &mdash; there is no parasympathetic supply to most of them, which is why vascular tone is an adrenergic story throughout. (Slide 11.)</figcaption></figure>
   <p>Nervous system &rarr; <strong>central</strong> (brain, spinal cord) and <strong>peripheral</strong>.
-  Peripheral &rarr; <strong>afferent</strong> (to the centre; the example is sensing pressure in the
+  Peripheral &rarr; <strong>afferent</strong> (to the center; the example is sensing pressure in the
   carotid sinus and aortic arch) and <strong>efferent</strong> (away). Efferent &rarr;
   <strong>somatic</strong> (voluntary, muscle) and <strong>autonomic</strong> (involuntary). Autonomic
   &rarr; <strong>enteric, parasympathetic, sympathetic</strong>.</p>
@@ -206,7 +206,7 @@ BODY_ADD = '''
   <figure class="fig"><img width="560" height="454" loading="lazy" src="pharm-exam-1-study-guide-images/007.png" alt="Diagram of the autonomic and somatic outflow: preganglionic neuron, ganglionic transmitter acetylcholine acting at nicotinic receptors, then postganglionic neurons releasing norepinephrine onto adrenergic receptors for the sympathetic branch and acetylcholine onto muscarinic receptors for the parasympathetic branch, with the adrenal medulla releasing epinephrine into the blood and the somatic nerve running direct to skeletal muscle."><figcaption><strong>The map the whole chapter hangs off.</strong> Every autonomic pathway is two neurons with <strong>acetylcholine at a nicotinic receptor in the ganglion</strong> &mdash; sympathetic and parasympathetic alike. They only diverge at the second synapse: norepinephrine onto adrenergic receptors, or acetylcholine onto muscarinic ones. Two exceptions are drawn in: the <strong>adrenal medulla has no postganglionic neuron</strong> and dumps epinephrine straight into the blood, and the <strong>somatic nerve has no ganglion at all</strong>. Knowing where a drug acts on this picture tells you how broad its effects will be. (Slide 14.)</figcaption></figure>
   <table>
     <tr><th>Receptor</th><th>Where</th><th>Note</th></tr>
-    <tr><td><strong>M1</strong></td><td>Neurons, gastric parietal cells</td><td rowspan="3">Five subclasses; <strong>only M1, M2 and M3 are functionally characterised</strong></td></tr>
+    <tr><td><strong>M1</strong></td><td>Neurons, gastric parietal cells</td><td rowspan="3">Five subclasses; <strong>only M1, M2 and M3 are functionally characterized</strong></td></tr>
     <tr><td><strong>M2</strong></td><td>Neurons, cardiac cells, smooth muscle</td></tr>
     <tr><td><strong>M3</strong></td><td>Neurons, bladder, exocrine glands, smooth muscle</td></tr>
     <tr><td><strong>Nicotinic</strong></td><td>CNS, adrenal medulla, autonomic ganglia, neuromuscular junction</td><td>Five subunits, <strong>ligand-gated ion channel</strong>; two acetylcholine molecules open it to sodium</td></tr>
@@ -225,9 +225,9 @@ BODY_ADD = '''
     <tr><td><strong>Alpha-1</strong> (vessels, bladder neck, pupil dilator)</td><td><strong>Vasoconstriction</strong>, so blood pressure rises; bladder neck and prostate contract; <strong>mydriasis</strong></td><td>Vasodilation &rarr; <strong>orthostatic hypotension</strong> and <strong>nasal congestion</strong>; easier flow in benign prostatic hyperplasia</td></tr>
     <tr><td><strong>Alpha-2</strong> (presynaptic)</td><td>Negative feedback &mdash; <strong>less noradrenaline released</strong>. Centrally this lowers sympathetic outflow, so blood pressure <strong>falls</strong></td><td>More released</td></tr>
     <tr><td><strong>Beta-1</strong> (heart, kidney)</td><td><strong>Faster</strong> rate, <strong>harder</strong> contraction, quicker atrioventricular conduction; <strong>renin</strong> release</td><td>Slower, weaker heart; less renin</td></tr>
-    <tr><td><strong>Beta-2</strong> (airway, skeletal-muscle vessels, liver)</td><td><strong>Bronchodilation</strong>, vasodilation, <strong>tremor</strong>, glycogenolysis</td><td><strong>Bronchospasm</strong>; blunted warning signs of hypoglycaemia</td></tr>
+    <tr><td><strong>Beta-2</strong> (airway, skeletal-muscle vessels, liver)</td><td><strong>Bronchodilation</strong>, vasodilation, <strong>tremor</strong>, glycogenolysis</td><td><strong>Bronchospasm</strong>; blunted warning signs of hypoglycemia</td></tr>
   </table>
-  <figure class="fig"><img width="600" height="205" loading="lazy" src="pharm-exam-1-study-guide-images/008.png" alt="Table of the adrenoceptors: alpha-1 causing vasoconstriction, increased peripheral resistance, increased blood pressure, mydriasis and closure of the internal bladder sphincter; alpha-2 inhibiting norepinephrine, acetylcholine and insulin release; beta-1 causing tachycardia, lipolysis, increased myocardial contractility and renin release; beta-2 causing vasodilation, decreased peripheral resistance, bronchodilation, glycogenolysis, glucagon release and uterine relaxation."><figcaption><strong>The same table in the lecturer's own words.</strong> Worth comparing against the one above rather than skipping: it adds the metabolic effects &mdash; beta-1 lipolysis and renin, beta-2 glycogenolysis and glucagon &mdash; which is where propranolol's fasting hypoglycaemia and raised lipids come from, and it names the alpha-2 inhibition of insulin release. (Slide 78.)</figcaption></figure>
+  <figure class="fig"><img width="600" height="205" loading="lazy" src="pharm-exam-1-study-guide-images/008.png" alt="Table of the adrenoceptors: alpha-1 causing vasoconstriction, increased peripheral resistance, increased blood pressure, mydriasis and closure of the internal bladder sphincter; alpha-2 inhibiting norepinephrine, acetylcholine and insulin release; beta-1 causing tachycardia, lipolysis, increased myocardial contractility and renin release; beta-2 causing vasodilation, decreased peripheral resistance, bronchodilation, glycogenolysis, glucagon release and uterine relaxation."><figcaption><strong>The same table in the lecturer's own words.</strong> Worth comparing against the one above rather than skipping: it adds the metabolic effects &mdash; beta-1 lipolysis and renin, beta-2 glycogenolysis and glucagon &mdash; which is where propranolol's fasting hypoglycemia and raised lipids come from, and it names the alpha-2 inhibition of insulin release. (Slide 78.)</figcaption></figure>
   <div class="pearl"><strong>One heart, two lungs.</strong> Beta-<strong>one</strong> receptors are
   the ones on the heart &mdash; you have one heart. Beta-<strong>two</strong> are the ones on the
   airway &mdash; you have two lungs. It is the shortest route into the table above, and it is also
@@ -239,7 +239,7 @@ BODY_ADD = '''
   answer with <strong>reflex bradycardia</strong>. Albuterol is beta-2 &rarr; airway opens, and the
   same receptor in skeletal muscle gives the <strong>tremor</strong> patients complain about.
   Propranolol blocks beta-2 as well as beta-1 &rarr; <strong>bronchospasm</strong> in the asthmatic
-  and <strong>fasting hypoglycaemia</strong> with the warning signs blunted. Oxybutynin blocks M3
+  and <strong>fasting hypoglycemia</strong> with the warning signs blunted. Oxybutynin blocks M3
   &rarr; the bladder stops squeezing, and the dry mouth comes free with it. None of those four are
   separate things to learn.</div>
 
@@ -254,7 +254,7 @@ BODY_ADD = '''
   <h3 class="sub" id="ans-predict">3.3 &middot; Objective 4 &mdash; Predicting effects: the two pictures</h3>
   <table>
     <tr><th>Muscarinic (DUMBBELS)</th><th>Nicotinic (MTWHF)</th><th>Anticholinergic</th></tr>
-    <tr><td>Defecation, urination, miosis, bradycardia, bronchorrhoea, bronchospasm, emesis, lacrimation, salivation</td><td>Mydriasis, tachycardia, weakness, hypertension, fasciculations</td><td>Mad as a hatter, blind as a bat, red as a beet, dry as a bone, hot as Hades &mdash; plus constipation, urinary retention, tachycardia</td></tr>
+    <tr><td>Defecation, urination, miosis, bradycardia, bronchorrhea, bronchospasm, emesis, lacrimation, salivation</td><td>Mydriasis, tachycardia, weakness, hypertension, fasciculations</td><td>Mad as a hatter, blind as a bat, red as a beet, dry as a bone, hot as Hades &mdash; plus constipation, urinary retention, tachycardia</td></tr>
   </table>
   <div class="callout"><strong>You will meet the muscarinic picture under two names.</strong>
   DUMBBELS above, and <strong>SLUDGE</strong> elsewhere &mdash; <strong>S</strong>alivation,
@@ -337,7 +337,7 @@ BODY_ADD = '''
   <figure class="fig"><img width="380" height="1007" loading="lazy" src="pharm-exam-1-study-guide-images/012.png" alt="Three stacked tracings against time during a norepinephrine infusion: pulse rate falls, systolic and diastolic blood pressure both rise, and peripheral resistance rises."><figcaption><strong>Reflex bradycardia, actually visible.</strong> Norepinephrine constricts every vessel, so peripheral resistance and both pressures climb &mdash; and the pulse rate <em>falls</em>, even though norepinephrine stimulates the heart directly. The baroreceptors win. This is the same mechanism behind phenylephrine's reflex bradycardia, and it is why a pressor can slow a heart. (Slide 89.)</figcaption></figure>
   <table>
     <tr><th>Agent</th><th>Receptors</th><th>Use / note</th></tr>
-    <tr><td><strong>Epinephrine</strong></td><td>Alpha and beta &mdash; <strong>beta at low dose, alpha at high</strong></td><td>Anaphylaxis, cardiac arrest, acute bronchospasm; raises systolic, lowers diastolic; in local anaesthetic to <strong>prolong the block</strong></td></tr>
+    <tr><td><strong>Epinephrine</strong></td><td>Alpha and beta &mdash; <strong>beta at low dose, alpha at high</strong></td><td>Anaphylaxis, cardiac arrest, acute bronchospasm; raises systolic, lowers diastolic; in local anesthetic to <strong>prolong the block</strong></td></tr>
     <tr><td><strong>Norepinephrine</strong></td><td>Mostly alpha</td><td>Shock. <strong>Reflex bradycardia</strong> via baroreceptor; extravasation treated with <strong>phentolamine</strong></td></tr>
     <tr><td><strong>Isoproterenol</strong></td><td>Beta-one and beta-two</td><td>Stimulate the heart in an emergency</td></tr>
     <tr><td><strong>Dopamine</strong></td><td>Beta-one; alpha-one at very high dose; dopaminergic</td><td>Cardiogenic and septic shock; <strong>dilates renal and splanchnic arteries</strong></td></tr>
@@ -364,11 +364,11 @@ BODY_ADD = '''
   for benign prostatic hyperplasia &mdash; with <strong>first-dose syncope</strong> as the signature.</p>
   <div class="pearl"><strong>Propranolol is the one to know in detail.</strong> Nonselective, so
   beta-two blockade brings <strong>bronchoconstriction &mdash; contraindicated in asthma and chronic
-  obstructive pulmonary disease</strong>. It <strong>masks the response to hypoglycaemia</strong>.
+  obstructive pulmonary disease</strong>. It <strong>masks the response to hypoglycemia</strong>.
   Stopping it abruptly risks arrhythmia because <strong>beta receptors up-regulate</strong>. Uses run
   well beyond blood pressure: <strong>migraine prevention, hyperthyroidism, angina, and after
   myocardial infarction</strong>.</div>
-  <p><strong>The rest of the class by property:</strong> <strong>timolol</strong> reduces aqueous humour
+  <p><strong>The rest of the class by property:</strong> <strong>timolol</strong> reduces aqueous humor
   for glaucoma; the <strong>selective beta-one</strong> agents suit impaired lungs but
   <strong>lose selectivity at higher doses</strong>; <strong>acebutolol and pindolol</strong> have
   intrinsic sympathomimetic activity; <strong>labetalol and carvedilol</strong> add alpha-one blockade,
@@ -414,7 +414,7 @@ TY_ADD = '''    acne: [
        explain:"Worth saying up front before committing a patient to months of treatment."}
     ],
     cholinergic: [
-      {q:"A patient has diarrhoea, urination, miosis, bradycardia, bronchorrhoea and salivation. Which picture?",
+      {q:"A patient has diarrhea, urination, miosis, bradycardia, bronchorrhea and salivation. Which picture?",
        choices:["Muscarinic stimulation","Nicotinic stimulation","Anticholinergic toxicity","Ganglionic blockade"],correct:0,
        explain:"DUMBBELS. Small pupils and a slow heart, and wet throughout."},
       {q:"Which agent is used to DIAGNOSE myasthenia gravis?",

@@ -68,7 +68,7 @@ SECTION = """
         <td>Any penetration with metal or organic material &mdash; wood, leaf, dirt &mdash; carries the risk.</td></tr>
   </table>
   <p><strong>When is imaging automatic?</strong> Any loss of consciousness from trauma or alcohol,
-  confusion, tachypnoea, apnoeic breathing, anticoagulant use, or eye penetration &rarr;
+  confusion, tachypnea, apneic breathing, anticoagulant use, or eye penetration &rarr;
   <strong>CT without contrast</strong>.</p>
   <p class="muted">Epidemiology worth carrying: ocular trauma is the <b>leading cause of monocular
   blindness in young adult men in the United States</b>.</p>
@@ -92,16 +92,16 @@ SECTION = """
   <p>A <strong>full-thickness defect in cornea and/or sclera</strong>, so the intraocular
   compartments are open to the outside. It splits into <strong>full-thickness eye wall
   laceration</strong> and <strong>globe rupture</strong>.</p>
-  <p><strong>The signs to recognise:</strong> pupillary distortion, usually <em>toward</em> the
-  wound; a flat anterior chamber; extraocular protrusion of uveal tissue; massive haemorrhagic
+  <p><strong>The signs to recognize:</strong> pupillary distortion, usually <em>toward</em> the
+  wound; a flat anterior chamber; extraocular protrusion of uveal tissue; massive hemorrhagic
   chemosis; a <strong>soft eye</strong>; deep eyelid laceration; and intraocular blood as hyphema
-  or vitreous haemorrhage.</p>
+  or vitreous hemorrhage.</p>
   @@GLOBE@@
   <table class="tbl">
     <tr><th></th><th>Full-thickness eye wall laceration</th><th>Globe rupture</th></tr>
     <tr><td><b>Mechanism</b></td><td><b>Sharp object or high-velocity projectile</b> &mdash; fishing hook, knife</td><td><b>Severe blunt force</b> &mdash; airbag, fist, baseball</td></tr>
     <tr><td><b>What happens</b></td><td>Cuts clean through cornea, sclera or both. The object may have been withdrawn, may be retained, or may have passed through with entry and exit wounds</td><td>Splits or tears at a <b>weak point</b>: posterior to the extraocular muscle insertions (especially superonasal), old surgical incisions, the lamina cribrosa</td></tr>
-    <tr><td><b>Extra</b></td><td>A cut lens capsule leaves the lens <b>hydrated, oedematous and opaque</b>; a fragment can extrude forward and inflame the anterior chamber. <b>Lensectomy is required but often deferred</b>. Posterior foreign bodies are <b>left alone</b> initially</td><td>Suspect it whenever blunt trauma gives massive haemorrhagic chemosis or a soft eye</td></tr>
+    <tr><td><b>Extra</b></td><td>A cut lens capsule leaves the lens <b>hydrated, edematous and opaque</b>; a fragment can extrude forward and inflame the anterior chamber. <b>Lensectomy is required but often deferred</b>. Posterior foreign bodies are <b>left alone</b> initially</td><td>Suspect it whenever blunt trauma gives massive hemorrhagic chemosis or a soft eye</td></tr>
   </table>
   <p><strong>The moment an open globe is suspected:</strong> a <strong>rigid protective shield taped
   over the eye</strong>, ophthalmology called immediately, <strong>antiemetics and analgesia</strong>
@@ -116,7 +116,7 @@ SECTION = """
   stains the exposed basement membrane and shows the extent. Treat with a <strong>topical
   broad-spectrum antibacterial</strong>; patching may ease pain; re-examine to confirm healing.</p>
   <div class="callout">
-    <p><strong>Never give a patient topical anaesthetic drops to take home.</strong> They delay
+    <p><strong>Never give a patient topical anesthetic drops to take home.</strong> They delay
     healing, mask worsening symptoms, and can cause a corneal ulcer. This is the single most
     testable instruction in the section.</p>
   </div>
@@ -124,7 +124,7 @@ SECTION = """
   eye wall lodges in cornea or conjunctiva. The history is <strong>grinding or striking
   metal</strong>. <strong>Linear vertical corneal epithelial defects mean the object is in the
   tarsal conjunctiva of the UPPER lid</strong>, so evert the lid and look. Removal: topical
-  anaesthetic, slit lamp, <strong>sterile 27-gauge needle</strong>; a <strong>rust ring</strong>
+  anesthetic, slit lamp, <strong>sterile 27-gauge needle</strong>; a <strong>rust ring</strong>
   from iron or copper comes out with a battery-operated burr. Then broad-spectrum antibiotic and
   abrasion care. Refer if the object may have passed <em>through</em> the cornea &mdash; that is an
   open globe.</p>
@@ -142,12 +142,12 @@ SECTION = """
   <strong>cycloplegic drops</strong> (atropine, homatropine, scopolamine) to rest the ciliary body,
   and <strong>oral aminocaproic acid</strong>, an antifibrinolytic that slows clot breakdown.</p>
   <div class="callout">
-    <p><strong>Most rebleeding happens in the first 72 hours</strong>, and a secondary haemorrhage
+    <p><strong>Most rebleeding happens in the first 72 hours</strong>, and a secondary hemorrhage
     is what costs the vision permanently. <strong>Avoid aspirin and antiplatelet drugs.</strong>
     Risk is increased in <strong>sickle cell disease</strong>.</p>
   </div>
 
-  <h3 class="sub" id="e2l5-lids">5.6 &middot; Lid lacerations, contusion and periorbital haematoma</h3>
+  <h3 class="sub" id="e2l5-lids">5.6 &middot; Lid lacerations, contusion and periorbital hematoma</h3>
   @@LIDS@@
   <p><strong>Lid lacerations.</strong> Consult ophthalmology for any laceration that involves the
   <strong>lid margin</strong>, sits <strong>within 6 to 8 mm of the medial canthus</strong>, involves
@@ -162,12 +162,12 @@ SECTION = """
   <p>A deep laceration to the <strong>medial third</strong> may transect the canalicular system, and
   if that is not repaired properly the patient has <strong>chronic tearing</strong> for good. Facial
   lacerations may be left open for 24 hours before closure, because the face is so well
-  vascularised.</p>
-  <p><strong>Orbital contusion</strong> is soft tissue swelling <em>without</em> haemorrhage. The
+  vascularized.</p>
+  <p><strong>Orbital contusion</strong> is soft tissue swelling <em>without</em> hemorrhage. The
   tarsal plate and septal margin act as a wall holding blood in the anterior tissues, so it presents
-  as preseptal ecchymosis or haematoma. Management is supportive through to surgery depending on the
+  as preseptal ecchymosis or hematoma. Management is supportive through to surgery depending on the
   patient &mdash; and <strong>rule out brain trauma</strong>.</p>
-  <p><strong>Periorbital haematoma</strong> is bleeding <em>within</em> the bony orbit. It is
+  <p><strong>Periorbital hematoma</strong> is bleeding <em>within</em> the bony orbit. It is
   <strong>not always traumatic</strong>: orbit and eyelid surgery, peribulbar injections, orbital
   varices, lymphangiomas and arteriovenous malformations, anticoagulants, sickle cell disease,
   orbital pseudotumour and idiopathic causes all produce it. Management is <strong>canthotomy with
@@ -188,10 +188,10 @@ SECTION = """
         <td>One or more <b>full-thickness breaks</b> in the sensory retina, vitreous traction, and liquefied vitreous passing into the subretinal space. Usually preceded by <b>posterior vitreous detachment</b>. Mostly a spontaneous age-related event, brought forward by <b>myopia, cataract surgery or trauma</b></td>
         <td><b>Surgical.</b> Ophthalmology STAT, pain control, antiemetics, head of bed at 30&ndash;40 degrees</td></tr>
     <tr><td><b>Traction</b></td>
-        <td>Most commonly <b>proliferative diabetic retinopathy</b>. More localised and <b>concave</b>; begins along the vasculature then spreads to retina and macula</td>
+        <td>Most commonly <b>proliferative diabetic retinopathy</b>. More localized and <b>concave</b>; begins along the vasculature then spreads to retina and macula</td>
         <td><b>Surgical</b></td></tr>
     <tr><td><b>Exudative (serous)</b></td>
-        <td><b>Neither a retinal break nor traction.</b> Associated with systemic vascular or inflammatory disease, or an intraocular tumour</td>
+        <td><b>Neither a retinal break nor traction.</b> Associated with systemic vascular or inflammatory disease, or an intraocular tumor</td>
         <td><b>Manage the underlying condition</b></td></tr>
   </table>
 
@@ -201,8 +201,8 @@ SECTION = """
   &mdash; transmits energy to the globe, raising orbital pressure until the <strong>floor</strong>
   (most often) or medial wall gives way. Or force transmitted to the <strong>infraorbital rim</strong>,
   buckling the floor.</p>
-  <p><strong>Findings:</strong> periorbital ecchymosis and lid oedema; chemosis, subconjunctival
-  haemorrhage, and <strong>infraorbital numbness</strong> from injury to the infraorbital nerve;
+  <p><strong>Findings:</strong> periorbital ecchymosis and lid edema; chemosis, subconjunctival
+  hemorrhage, and <strong>infraorbital numbness</strong> from injury to the infraorbital nerve;
   corneal abrasion, hyphema, enophthalmos, proptosis, iridoplegia, dislocated lens, retinal tear or
   detachment, ruptured globe; and <strong>periorbital subcutaneous emphysema</strong>.</p>
   <div class="callout">
@@ -243,7 +243,7 @@ SECTION = """
     <li>Visible bleeding from the fracture into the soft tissue at the base of the head</li>
     <li><b>Raccoon eyes</b> (periorbital ecchymosis) and <b>Battle sign</b> (retroauricular ecchymosis)</li>
     <li>Bleeding into the middle ear or sphenoid sinus; <b>haemotympanum</b></li>
-    <li><b>Cerebrospinal fluid leak</b> &mdash; clear or pink rhinorrhoea</li>
+    <li><b>Cerebrospinal fluid leak</b> &mdash; clear or pink rhinorrhea</li>
   </ul>
   <div class="callout">
     <p><strong>Two bedside tests for cerebrospinal fluid.</strong> A <strong>dextrose stick</strong>
@@ -271,7 +271,7 @@ TOC = """  <a class="top-link" href="#ocular-trauma">5 &middot; Ocular Trauma</a
   <a class="sub-link" href="#e2l5-globe">5.3 Open globe injury</a>
   <a class="sub-link" href="#e2l5-surface">5.4 Abrasion &amp; foreign body</a>
   <a class="sub-link" href="#e2l5-hyphema">5.5 Hyphema</a>
-  <a class="sub-link" href="#e2l5-lids">5.6 Lids, contusion &amp; haematoma</a>
+  <a class="sub-link" href="#e2l5-lids">5.6 Lids, contusion &amp; hematoma</a>
   <a class="sub-link" href="#e2l5-detach">5.7 Retinal &amp; vitreous detachment</a>
   <a class="sub-link" href="#e2l5-fracture">5.8 Blowout fracture</a>
   <a class="sub-link" href="#e2l5-basilar">5.9 Basilar skull fracture</a>
@@ -281,12 +281,12 @@ TEST = """    trauma: [
       {q:"A patient has a metal fragment embedded in the eye after grinding. Which imaging?",
        o:["CT orbit","MRI orbit","Ocular ultrasound","Plain orbital radiograph"],a:0,
        why:"CT orbit, never MRI &mdash; a magnetic field will move a metallic fragment through the eye."},
-      {q:"Blunt trauma has left a soft eye with massive haemorrhagic chemosis. What is the first action?",
+      {q:"Blunt trauma has left a soft eye with massive hemorrhagic chemosis. What is the first action?",
        o:["Rigid shield over the eye and call ophthalmology","Measure the intraocular pressure",
           "Dilate and examine the fundus","Irrigate the eye copiously"],a:0,
        why:"That picture is a globe rupture. Do not press, do not dilate, do not measure pressure &mdash; shield it."},
       {q:"Which instruction must a patient with a corneal abrasion NOT be given?",
-       o:["Take home topical anaesthetic drops","Use a topical antibiotic",
+       o:["Take home topical anesthetic drops","Use a topical antibiotic",
           "Return if symptoms worsen","Consider patching for pain"],a:0,
        why:"They delay healing, mask worsening symptoms and can cause a corneal ulcer."},
       {q:"Vertical linear corneal scratches point to a foreign body where?",
@@ -295,14 +295,14 @@ TEST = """    trauma: [
       {q:"Why is aminocaproic acid used in hyphema?",
        o:["It slows clot breakdown, reducing rebleeding","It lowers intraocular pressure",
           "It reverses anticoagulation","It prevents infection"],a:0,
-       why:"Most rebleeding happens in the first 72 hours, and a secondary haemorrhage is what costs the vision."},
+       why:"Most rebleeding happens in the first 72 hours, and a secondary hemorrhage is what costs the vision."},
       {q:"Diplopia on UPWARD gaze after blunt orbital trauma means what?",
        o:["Inferior rectus entrapment","Medial rectus entrapment",
           "Superior oblique palsy","Optic nerve injury"],a:0,
        why:"Lateral gaze diplopia would point to the medial rectus instead."},
       {q:"A child has severe pain, bradycardia and vomiting on eye movement, but a quiet-looking eye. What is this?",
        o:["White-eyed blowout with muscle entrapment","Simple periorbital contusion",
-          "Retrobulbar haemorrhage","Traumatic iritis"],a:0,
+          "Retrobulbar hemorrhage","Traumatic iritis"],a:0,
        why:"In children an entrapped muscle may show no orbital soft tissue signs at all."},
       {q:"Clear fluid from the nose after head trauma leaves a double ring on the bedsheet. What does that indicate?",
        o:["Cerebrospinal fluid leak from a basilar skull fracture","Simple epistaxis",

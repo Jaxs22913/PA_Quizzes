@@ -18,7 +18,7 @@ Pools are APPENDED, never prepended, so these indices stay valid.
 """
 FIXES = {
  # [14] "What is a computed tomography image composed of..." -- correct is 135.
- (14, 1): "A matrix of thousands of tiny cubes called voxels, each assigned a greyscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
+ (14, 1): "A matrix of thousands of tiny cubes called voxels, each assigned a grayscale signal intensity on a fixed scale running from zero to two hundred and fifty five",
  (14, 3): "A hydrogen map, each point assigned a relaxation time in milliseconds reflecting the local chemical environment of that tissue",
 
  # [25] "What equipment does fluoroscopy require?" -- correct is 114.
@@ -26,7 +26,7 @@ FIXES = {
  (25, 3): "A handheld transducer connected to a portable processing unit, needing neither a tilting table nor a shielded examination room",
 
  # [84] "What are technetium-99's stated indications..." -- correct is 175.
- (84, 1): "Cancer staging, brain disorders and cardiac blood flow, together with tumour delineation and lesion characterisation; it concentrates wherever the glucose consumption of the tissue is highest",
+ (84, 1): "Cancer staging, brain disorders and cardiac blood flow, together with tumor delineation and lesion characterization; it concentrates wherever the glucose consumption of the tissue is highest",
  (84, 2): "Vasculopathy, emboli, thrombi, stenosis and aneurysm assessment, along with graft surveillance; it fills the vascular lumen and is imaged during the first pass through it",
 
  # [89] "What practical ordering point..." -- correct is 122.

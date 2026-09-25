@@ -15,7 +15,7 @@ IO_B = "b — Identify medical care strategies for common ophthalmological disor
 QUESTIONS = [
  # ---------------- idiopathic intracranial hypertension ----------------
  dict(topic="Idiopathic intracranial hypertension", io=IO_A, lead="diagnosis", cite=D % 4,
-  q="A 28-year-old woman with obesity has months of intractable headache, pulsatile tinnitus and brief greying of vision. Which diagnosis fits?",
+  q="A 28-year-old woman with obesity has months of intractable headache, pulsatile tinnitus and brief graying of vision. Which diagnosis fits?",
   opts=[["Idiopathic intracranial hypertension", "Correct. The demographic and the triad of headache, pulsatile tinnitus and transient visual loss are characteristic."],
         ["Acute angle-closure glaucoma", "That presents acutely with a painful red eye and a hazy cornea."],
         ["Chronic open-angle glaucoma", "That is painless and takes the peripheral field first."],
@@ -37,7 +37,7 @@ QUESTIONS = [
 
  dict(topic="Idiopathic intracranial hypertension", io=IO_A, lead="cranial nerve", cite=D % 4,
   q="A 26-year-old woman with raised intracranial pressure develops horizontal diplopia. Which nerve is affected?",
-  opts=[["Abducens, the sixth", "Correct. It is the classic false localising sign here."],
+  opts=[["Abducens, the sixth", "Correct. It is the classic false localizing sign here."],
         ["Trochlear, the fourth", "That gives vertical diplopia worse on downgaze."],
         ["Facial, the seventh", "That is not an ocular motility nerve."],
         ["Optic, the second", "That is compressed but is not a palsy of gaze."]]),
@@ -58,7 +58,7 @@ QUESTIONS = [
 
  dict(topic="Idiopathic intracranial hypertension", io=IO_A, lead="treatment", cite=D % 5,
   q="A 30-year-old woman is diagnosed with idiopathic intracranial hypertension. Which drug is started promptly?",
-  opts=[["Acetazolamide", "Correct, alongside a supervised weight reduction programme."],
+  opts=[["Acetazolamide", "Correct, alongside a supervised weight reduction program."],
         ["Timolol drops", "That lowers intraocular, not intracranial, pressure."],
         ["High-dose oral steroids", "Steroids are not the treatment; acetazolamide is started promptly, with a supervised weight reduction program."],
         ["Intravitreal anti-VEGF injection", "That treats wet macular degeneration."]]),
@@ -83,13 +83,13 @@ QUESTIONS = [
   opts=[["Primary open-angle", "Correct, and it is characteristically painless and slow."],
         ["Acute angle-closure", "That is the dramatic emergency, not the common form."],
         ["Congenital", "That is rare."],
-        ["Neovascular", "That is secondary to retinal ischaemia."]]),
+        ["Neovascular", "That is secondary to retinal ischemia."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="field loss", cite=D % 9,
   q="A 68-year-old man is found to have open-angle glaucoma. Which vision is lost first?",
   opts=[["Peripheral, with central acuity spared early", "Correct. Central vision going first would point elsewhere."],
         ["Central, with a scotoma", "That pattern belongs to macular degeneration."],
-        ["Colour vision before anything else", "That points to optic neuropathy."],
+        ["Color vision before anything else", "That points to optic neuropathy."],
         ["One entire hemifield", "That suggests a chiasmal or tract lesion."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="exam finding", cite=D % 9,
@@ -111,7 +111,7 @@ QUESTIONS = [
   opts=[["Damage already done cannot be reversed", "Correct, though treatment preserves what remains."],
         ["Drops restore the lost field over months", "Lost field does not return."],
         ["Surgery reverses optic nerve cupping", "Cupping is not reversed."],
-        ["Vision returns once pressure is normal", "Normalising pressure halts rather than reverses."]]),
+        ["Vision returns once pressure is normal", "Normalizing pressure halts rather than reverses."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="mechanism", cite=D % 9,
   q="A 71-year-old woman starts drops for glaucoma. How do they lower the pressure?",
@@ -128,17 +128,17 @@ QUESTIONS = [
         ["A patient with a stye that has settled", "That has resolved and needs no specialist."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="differential", cite=D % 10,
-  q="A patient has optic nerve pallor rather than cupping. Which diagnosis does that favour?",
-  opts=[["Ocular ischaemic syndrome", "Correct, and carotid stenosis underlies it."],
+  q="A patient has optic nerve pallor rather than cupping. Which diagnosis does that favor?",
+  opts=[["Ocular ischemic syndrome", "Correct, and carotid stenosis underlies it."],
         ["Primary open-angle glaucoma", "Glaucoma cups the disc rather than blanching it."],
         ["Cataract", "The lens, not the nerve, is affected."],
         ["Astigmatism", "A refractive error leaves the disc normal."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="differential", cite=D % 10,
-  q="A young adult has painful vision loss with impaired colour vision. What must be excluded?",
+  q="A young adult has painful vision loss with impaired color vision. What must be excluded?",
   opts=[["Multiple sclerosis", "Correct. Optic neuritis is a red flag for it."],
-        ["Glaucoma", "Glaucoma is painless and spares colour early."],
-        ["Retinoblastoma", "That is a tumour of young children."],
+        ["Glaucoma", "Glaucoma is painless and spares color early."],
+        ["Retinoblastoma", "That is a tumor of young children."],
         ["Presbyopia", "That is an age-related focusing change."]]),
 
  # ---------------- age-related macular degeneration ----------------
@@ -150,9 +150,9 @@ QUESTIONS = [
         ["It varies with no usual split", "There is a usual split: about 80 percent of macular degeneration is dry and about 20 percent is wet."]]),
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="symptom", cite=D % 11,
-  q="An 80-year-old woman reports a blur in the centre of her vision. Which condition fits?",
+  q="An 80-year-old woman reports a blur in the center of her vision. Which condition fits?",
   opts=[["Macular degeneration, a central scotoma", "Correct. The macula serves central vision."],
-        ["Cataract", "That blurs everything rather than the centre alone."],
+        ["Cataract", "That blurs everything rather than the center alone."],
         ["Retinal detachment", "That gives flashes, floaters and a curtain."],
         ["Amblyopia", "That is established in childhood."]]),
 
@@ -165,8 +165,8 @@ QUESTIONS = [
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="mechanism", cite=D % 11,
   q="An 84-year-old man's dry macular degeneration turns wet. What has changed?",
-  opts=[["New vessels from the choroid bleed into retina", "Correct, and the blood organises into a scar."],
-        ["Aqueous humour leaks into the lens", "That is not the mechanism."],
+  opts=[["New vessels from the choroid bleed into retina", "Correct, and the blood organizes into a scar."],
+        ["Aqueous humor leaks into the lens", "That is not the mechanism."],
         ["Vitreous separates from the retina", "That describes posterior vitreous detachment."],
         ["The lens proteins clump", "That is a cataract."]]),
 
@@ -185,7 +185,7 @@ QUESTIONS = [
         ["A pinhole occluder", "That separates refractive from other causes."]]),
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="treatment", cite=D % 14,
-  q="An 81-year-old woman develops choroidal neovascularisation. Which treatment is reserved for the wet form?",
+  q="An 81-year-old woman develops choroidal neovascularization. Which treatment is reserved for the wet form?",
   opts=[["Intravitreal anti-VEGF injection", "Correct, along with photodynamic therapy and laser."],
         ["The AREDS2 supplement", "That is used for the dry form."],
         ["Acetazolamide", "That is for raised intracranial pressure."],

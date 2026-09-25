@@ -17,7 +17,7 @@ Q("Audiometry", IO,
     "Correct. The severity bands run in twenties: normal is 0 to 20 decibels, mild 20 to 40, "
     "moderate 40 to 60, severe 60 to 80, and profound above 80. Seventy decibels therefore falls in "
     "the severe band, and remembering that the boundaries are all multiples of twenty makes the "
-    "whole scale recoverable without memorising each one."],
+    "whole scale recoverable without memorizing each one."],
    ["Moderate hearing loss",
     "Moderate covers 40 to 60 decibels, so 70 sits a full band above it. Placing a patient a "
     "category too low understates how much amplification or intervention they are likely to need."],
@@ -57,11 +57,11 @@ Q("Vestibular testing", IO,
     "each labyrinth to be stimulated on its own. That is what makes it the gold standard for "
     "vestibular assessment: most bedside tests examine the system as a whole, whereas this one can "
     "say which side is underperforming."],
-   ["Dix-Hallpike manoeuvre",
+   ["Dix-Hallpike maneuver",
     "Dix-Hallpike is a provocation test for positional vertigo, diagnosing displaced otoconia in a "
     "particular canal. It answers a narrow question and does not quantify overall vestibular "
     "function on each side."],
-   ["Epley manoeuvre",
+   ["Epley maneuver",
     "The Epley is a treatment rather than a test: it repositions otoconia out of the affected "
     "semicircular canal. Performing it gives no measurement of vestibular function at all."],
    ["Pure tone audiometry",
@@ -79,7 +79,7 @@ Q("Exostosis", IO,
     "The clinical consequence is a narrowed canal that traps water and debris, producing the "
     "recurrent otitis externa he describes."],
    ["Osteoma",
-    "An osteoma is a solitary benign bony tumour of the canal, typically unilateral and pedunculated "
+    "An osteoma is a solitary benign bony tumor of the canal, typically unilateral and pedunculated "
     "rather than broad-based. The bilateral symmetry here, with a clear cold-water history, points "
     "away from a single neoplastic lesion."],
    ["Cerumen impaction",
@@ -152,7 +152,7 @@ Q("Acoustic trauma", IO,
     "notch around 4000 hertz, over years of exposure. A single shot with immediate unilateral loss "
     "is a different mechanism."],
    ["Barotrauma",
-    "Barotrauma results from a pressure differential the eustachian tube cannot equalise, typically "
+    "Barotrauma results from a pressure differential the eustachian tube cannot equalize, typically "
     "during flying or diving. A gunshot generates an acoustic pressure wave rather than the "
     "sustained ambient pressure change that causes barotrauma."]],
   "diagnosis", D, 45),
@@ -163,12 +163,12 @@ Q("Meniere disease", IO,
   [["Restrict dietary salt, caffeine and alcohol",
     "Correct. The underlying abnormality is endolymphatic hydrops, an excess of endolymph distending "
     "the membranous labyrinth. Reducing sodium load lowers fluid retention and therefore endolymph "
-    "volume, and caffeine and alcohol are recognised triggers. These are the measures a patient can "
+    "volume, and caffeine and alcohol are recognized triggers. These are the measures a patient can "
     "act on before any drug is added."],
-   ["Perform Epley manoeuvres at home",
+   ["Perform Epley maneuvers at home",
     "The Epley repositions displaced otoconia and treats benign paroxysmal positional vertigo. "
     "Meniere is a fluid disorder of the labyrinth rather than a mechanical problem of loose "
-    "crystals, so the manoeuvre has nothing to reposition."],
+    "crystals, so the maneuver has nothing to reposition."],
    ["Increase fluid and salt intake to maintain blood pressure",
     "This is the advice for orthostatic hypotension or vasovagal syncope, and it is precisely "
     "backwards here: raising sodium increases fluid retention and therefore endolymphatic pressure."],
@@ -248,7 +248,7 @@ Q("Autoimmune sensorineural loss", IO,
   "rheumatoid arthritis.",
   [["Autoimmune inner ear disease",
     "Correct. The characteristic course is bilateral, progressive loss advancing in alternating "
-    "periods of deterioration and stabilisation over months, which is faster than presbycusis and "
+    "periods of deterioration and stabilization over months, which is faster than presbycusis and "
     "slower than a sudden loss. An existing autoimmune condition supports it, and it matters because "
     "it is one of the few sensorineural losses that responds to immunosuppression."],
    ["Presbycusis",
@@ -295,7 +295,7 @@ Q("Sudden sensorineural hearing loss", IO,
     "importance is that the differential includes treatable and dangerous entries, which is why it "
     "prompts urgent referral and imaging rather than a wait to see what happens."],
    ["It is always caused by a viral infection of the cochlea",
-    "A viral aetiology is one hypothesis among several, alongside vascular, autoimmune and "
+    "A viral etiology is one hypothesis among several, alongside vascular, autoimmune and "
     "retrocochlear causes. Asserting a single cause overstates what is known and could stop the "
     "search for a schwannoma."],
    ["It reliably resolves completely without treatment",
@@ -311,7 +311,7 @@ Q("Sudden sensorineural hearing loss", IO,
 Q("Benign paroxysmal positional vertigo", IO,
   "A 58-year-old woman with a positive right Dix-Hallpike test asks how her vertigo will be "
   "treated.",
-  [["The Epley manoeuvre",
+  [["The Epley maneuver",
     "Correct. The vertigo is caused by otoconia that have escaped the utricle into a semicircular "
     "canal, where they move with gravity and stimulate the canal inappropriately. The Epley is a "
     "sequence of head positions that rolls those particles back out of the canal into the vestibule, "
@@ -326,7 +326,7 @@ Q("Benign paroxysmal positional vertigo", IO,
     "intake."],
    ["Surgical labyrinthectomy",
     "Destroying the labyrinth is a last resort for intractable vertigo with no useful hearing in "
-    "that ear. Applying it to a condition that a bedside manoeuvre resolves would be grossly "
+    "that ear. Applying it to a condition that a bedside maneuver resolves would be grossly "
     "disproportionate."]],
   "treatment", D, 89),
 
@@ -345,7 +345,7 @@ Q("Tinnitus", IO,
     "suggests a nerve lesion."],
    ["Angiography to look for a vascular cause",
     "Vascular investigation follows PULSATILE tinnitus, where the sound is synchronous with the "
-    "pulse and suggests turbulent flow or a glomus tumour. This sound has no pulsatile quality."],
+    "pulse and suggests turbulent flow or a glomus tumor. This sound has no pulsatile quality."],
    ["A trial of vestibular suppressants",
     "Vestibular suppressants treat vertigo, and this patient has none. They do nothing for tinnitus "
     "and carry sedation and fall risk in an older patient."]],

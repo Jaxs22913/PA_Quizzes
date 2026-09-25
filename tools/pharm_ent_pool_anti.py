@@ -112,10 +112,10 @@ QUESTIONS = [
 {"topic": "Acute otitis media", "io": IO_CLASS, "slot": "mechanism",
  "q": "What is changing the organisms that cause acute otitis media?",
  "opts": [
-  ["Vaccination", "Correct. The aetiology is shifting on the back of vaccination, which is why the proportions attached to each organism are not fixed and why they keep being revised."],
+  ["Vaccination", "Correct. The etiology is shifting on the back of vaccination, which is why the proportions attached to each organism are not fixed and why they keep being revised."],
   ["Rising antibiotic resistance alone", "Resistance changes which drug works, not which organism turns up."],
-  ["Increasing use of tympanostomy tubes", "Tubes change management rather than which organisms appear. Vaccination is what is shifting the aetiology."],
-  ["Climate and seasonal variation", "Seasonality is not offered as the reason the aetiology is moving."]],
+  ["Increasing use of tympanostomy tubes", "Tubes change management rather than which organisms appear. Vaccination is what is shifting the etiology."],
+  ["Climate and seasonal variation", "Seasonality is not offered as the reason the etiology is moving."]],
  "c": 0, "cite": D + ", Slide 4"},
 
 {"topic": "Acute bacterial rhinosinusitis", "io": IO_IND, "slot": "drug choice",
@@ -141,7 +141,7 @@ QUESTIONS = [
  "q": "What separates viral from bacterial rhinosinusitis, and so decides whether an antibiotic is given?",
  "opts": [
   ["Symptoms beyond ten days", "Correct. The timeline does the work, because nothing on examination reliably separates the two. Or worsening after five to six days."],
-  ["The colour of the nasal discharge", "Discharge colour does not distinguish viral from bacterial. The timeline does: ten days, or worsening after an initial improvement."],
+  ["The color of the nasal discharge", "Discharge color does not distinguish viral from bacterial. The timeline does: ten days, or worsening after an initial improvement."],
   ["The presence of fever at any point", "Fever appears in both, so it cannot separate them. What separates them is the duration and the pattern of worsening."],
   ["Tenderness over the maxillary sinuses", "Tenderness is common to both. The distinguishing feature is the time course rather than anything found on examination."]],
  "c": 0, "cite": D + ", Slide 7"},
@@ -256,9 +256,9 @@ QUESTIONS = [
  "q": "Which otic ingredient is singled out for causing hypersensitivity?",
  "opts": [
   ["Neomycin", "Correct. A patient whose ear gets worse rather than better on drops may be reacting to the neomycin rather than failing treatment."],
-  ["Hydrocortisone", "The steroid is not the sensitising component. Neomycin is the ingredient singled out for causing hypersensitivity."],
+  ["Hydrocortisone", "The steroid is not the sensitizing component. Neomycin is the ingredient singled out for causing hypersensitivity."],
   ["Ciprofloxacin", "Not flagged for hypersensitivity here; the fluoroquinolone drops are the ones considered safe. Neomycin carries that warning."],
-  ["Ofloxacin", "Not flagged for hypersensitivity here. Ofloxacin is offered as an alternative, while neomycin is the sensitising ingredient."]],
+  ["Ofloxacin", "Not flagged for hypersensitivity here. Ofloxacin is offered as an alternative, while neomycin is the sensitizing ingredient."]],
  "c": 0, "cite": D + ", Slide 10"},
 
 {"topic": "Otic antibiotics", "io": IO_IND, "slot": "drug choice",
@@ -290,7 +290,7 @@ QUESTIONS = [
 {"topic": "Ketoconazole", "io": IO_MOA, "slot": "mechanism",
  "q": "How does ketoconazole work?",
  "opts": [
-  ["It alters fungal cell wall permeability by inhibiting cytochrome P450", "Correct. The same enzyme family it acts on in the fungus explains its behaviour in the patient, which is where its interactions come from."],
+  ["It alters fungal cell wall permeability by inhibiting cytochrome P450", "Correct. The same enzyme family it acts on in the fungus explains its behavior in the patient, which is where its interactions come from."],
   ["It binds to the sterols already present in the fungal cell membrane",
    "That is nystatin's mechanism: it binds sterols already in the membrane. Ketoconazole acts on the machinery instead, by inhibiting cytochrome P450."],
   ["It inhibits fungal DNA synthesis", "Not the stated mechanism. Ketoconazole alters fungal cell wall permeability by inhibiting cytochrome P450."],
@@ -376,17 +376,17 @@ QUESTIONS = [
 {"topic": "Ketoconazole", "io": IO_SE, "slot": "adverse effect",
  "q": "Besides liver and cardiac effects, what else is described with ketoconazole?",
  "opts": [
-  ["Hyperlipidaemia and orthostatic hypotension", "Correct. Neither is obvious for an antifungal, and the orthostatic drop is the one a patient will actually notice."],
-  ["Hyperkalaemia and hypertension", "Not among the described effects. Ketoconazole is associated with hyperlipidaemia and orthostatic hypotension."],
+  ["Hyperlipidemia and orthostatic hypotension", "Correct. Neither is obvious for an antifungal, and the orthostatic drop is the one a patient will actually notice."],
+  ["Hyperkalemia and hypertension", "Not among the described effects. Ketoconazole is associated with hyperlipidemia and orthostatic hypotension."],
   ["Neutropenia and thrombocytopenia together",
-   "Not among the described effects; the further effects listed are hyperlipidaemia and orthostatic hypotension."],
-  ["Peripheral neuropathy", "Not among the described effects. The additional effects described are hyperlipidaemia and orthostatic hypotension."]],
+   "Not among the described effects; the further effects listed are hyperlipidemia and orthostatic hypotension."],
+  ["Peripheral neuropathy", "Not among the described effects. The additional effects described are hyperlipidemia and orthostatic hypotension."]],
  "c": 0, "cite": D + ", Slide 12"},
 
 {"topic": "Nystatin", "io": IO_SE, "slot": "adverse effect",
  "q": "What adverse effects are described with oral nystatin?",
  "opts": [
-  ["Diarrhoea, nausea, stomach pain and vomiting", "Correct. All gastrointestinal, which is exactly what you would predict for a drug that stays in the gut and is never absorbed."],
+  ["Diarrhea, nausea, stomach pain and vomiting", "Correct. All gastrointestinal, which is exactly what you would predict for a drug that stays in the gut and is never absorbed."],
   ["QTc prolongation and hepatitis", "Those belong to ketoconazole, which is absorbed. Nystatin stays in the gut, so its effects are gastrointestinal."],
   ["Sedation and dry mouth", "These belong to first generation antihistamines. Nystatin's effects are gastrointestinal, as befits a drug that is never absorbed."],
   ["Nosebleed and perforation of the septum",

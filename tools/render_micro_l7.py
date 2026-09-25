@@ -14,7 +14,7 @@ CHIPS = ["Immunopathologies", "The four types", "Type I mechanism",
          "Anaphylaxis", "Diagnosis &amp; management", "Transfusion reactions"]
 INTRO = ("Lecture 7 of Microbiology &mdash; Disorders in Immunity. Thirty questions, every one "
          "cited to the slide it came from. "
-         "<b>One table organises most of this lecture.</b> The four hypersensitivities differ by "
+         "<b>One table organizes most of this lecture.</b> The four hypersensitivities differ by "
          "effector mechanism, and everything else follows from it: I is IgE on mast cells and is "
          "<i>immediate</i>; II is IgG or IgM against <i>cell surface</i> antigen with complement "
          "lysis; III is IgG or IgM against <i>soluble</i> antigen forming complexes that lodge in "
@@ -27,11 +27,11 @@ INTRO = ("Lecture 7 of Microbiology &mdash; Disorders in Immunity. Thirty questi
          "&mdash; helminth infection produces exactly the allergic profile (TH2, high IgE, "
          "eosinophils, mast cells) and yet no allergic disease, because nonspecific IgE crowds "
          "the Fc receptors and regulatory T cells suppress the response. "
-         "Covers the four immunopathologies; the cells shared by defence and allergy; the four "
+         "Covers the four immunopathologies; the cells shared by defense and allergy; the four "
          "hypersensitivity types with their examples; allergens and portals of entry; "
-         "sensitising and provocative doses; the skin, nasal, gut and airway manifestations; "
+         "sensitizing and provocative doses; the skin, nasal, gut and airway manifestations; "
          "anaphylaxis and how epinephrine reverses it; the late phase reaction; allergy "
-         "diagnosis and the three management strategies including desensitisation; and "
+         "diagnosis and the three management strategies including desensitization; and "
          "transfusion reactions through ABO, cross-matching, Rh factor and Rhogam.")
 
 sets = json.load(io.open(os.path.join(HERE, "micro_l7_sets.json"), encoding="utf-8"))

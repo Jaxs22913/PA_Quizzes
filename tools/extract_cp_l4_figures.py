@@ -8,13 +8,13 @@ size before being chosen, per [[image_only_slides]].
   visual-fields   slide 34 -- lesion sites A to E against the resulting monocular
                   fields. This is the figure Webster scoped in the lecture:
                   know A, B and C; D and E go to neurology.
-  detachment      slide 35 -- labelled cross-section showing fluid passing through
+  detachment      slide 35 -- labeled cross-section showing fluid passing through
                   a retinal tear and peeling the retina off.
   normal-fundus   slide 29 -- a normal fundus for comparison.
   oct             slide 30 -- optical coherence tomography showing the retinal
                   layers in section.
 
-  anatomy       slide 5 -- the fully labelled eye in cross-section: chambers,
+  anatomy       slide 5 -- the fully labeled eye in cross-section: chambers,
                 canal of Schlemm, zonules, fovea, macula, optic disc. This was
                 left out of the first version on licensing grounds, which was
                 wrong: [[media_asset_licensing]] clears any course-slide image

@@ -2,7 +2,7 @@
 
 The raw pool came out 66% gameable, the highest of any build on this site, and
 the cause is structural rather than careless. This lecture's correct answers are
-enumerations -- "erythema, oedema, papules, vesicles, oozing and crusting" --
+enumerations -- "erythema, edema, papules, vesicles, oozing and crusting" --
 because that is how the material is actually taught, while the natural wrong
 answer is a single clause. Truncating the correct options would throw away the
 content the question exists to test, so instead every distractor is given the
@@ -18,14 +18,14 @@ construction. Keys index the concatenated pool (A + B + C).
 """
 FIXES = {
  # ---- pool A: terminology, tools, pharmacology
- 1:   (71,  "A flat elevated plateau lesion measuring greater than one centimetre across"),
+ 1:   (71,  "A flat elevated plateau lesion measuring greater than one centimeter across"),
  2:   (72,  "A plaque is always poorly demarcated while a patch is always well demarcated"),
- 4:   (74,  "A deposit of blood in the skin measuring one to two millimetres across"),
+ 4:   (74,  "A deposit of blood in the skin measuring one to two millimeters across"),
  7:   (70,  "Petechiae are 4 mm or greater and purpura are 1 to 2 mm, the reverse of the usual"),
  9:  (107, "An ulceration involves only the epidermis and always heals without scarring, while an erosion reaches the dermis or deeper"),
  11:  (95, "A scratch or abrasion in which the top layer of the skin is worn away by repeated rubbing or friction"),
- 12:  (64,  "Smaller than one centimetre in every dimension measured"),
- 15:  (104, "Short-wave ultraviolet light, used to sterilise the skin surface before a procedure is performed"),
+ 12:  (64,  "Smaller than one centimeter in every dimension measured"),
+ 15:  (104, "Short-wave ultraviolet light, used to sterilize the skin surface before a procedure is performed"),
  17:  (130, "Rapid detection of fungal elements in skin, hair or nail, with fungal culture preferred for confirmation of the species"),
  21:  (90,  "A magnified imaging method for viewing the scalp and hair follicles without touching them"),
  23:  (52,  "Photosensitivity, dryness and marked irritation"),
@@ -35,7 +35,7 @@ FIXES = {
  29:  (81,  "Because most drug eruptions occur only after six months of continuous therapy"),
  # ---- pool B: eczemas and dermatitides
  30:  (155, "Eczema is the broad category for inflammatory skin disorders and dermatitis is one pruritic subtype within it, so the two should never be used interchangeably"),
- 31:  (142, "Acute disease shows lichenification and pigment alteration; chronic disease shows erythema, oedema, vesicles, oozing and crusting"),
+ 31:  (142, "Acute disease shows lichenification and pigment alteration; chronic disease shows erythema, edema, vesicles, oozing and crusting"),
  34:  (156, "Infants: flexures and popliteal fossae. Children: extensor surfaces and scalp. Adults: cheeks, scalp and the extensor surfaces of the limbs"),
  36:  (152, "By serum immunoglobulin E level, which is measured routinely in every patient and establishes the diagnosis on its own without any clinical assessment"),
  37:  (61, "High-potency topical corticosteroids applied to the face"),

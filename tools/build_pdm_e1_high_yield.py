@@ -28,7 +28,7 @@ lightly taught -- know it exists, do not sink an evening into it).
 THE STRIP LIST IS THE OTHER HALF OF THE ASK and comes FIRST on the page,
 because a page that only adds things does not save anyone any time. Everything
 on it is there because a lecturer said so in as many words, or because the
-syllabus never asks for it. Nothing is dropped on my judgement alone.
+syllabus never asks for it. Nothing is dropped on my judgment alone.
 
 Facts are reused from the audited cram sheet and study guide rather than
 re-derived from the decks, so this page cannot drift away from them.
@@ -65,7 +65,7 @@ TOPICS = [
               "scans stay comparable &mdash; the multiple sclerosis follow-up example.",
    why("SAID", "Lecture 2 at 1:02:11: &ldquo;don&rsquo;t stress about this. This is not gonna be on "
                "the test. This is just like a life thing.&rdquo;")),
-  ("&mdash;", "<b>Memorising normal reference ranges.</b> Any of them.",
+  ("&mdash;", "<b>Memorizing normal reference ranges.</b> Any of them.",
    why("SAID", "Lecture 5 at 36:14: &ldquo;there&rsquo;s not anything I need you to memorize number "
                "wise&hellip; you don&rsquo;t have to memorize the normal ranges.&rdquo; Ranges are "
                "supplied on the exam. Learn DIRECTION and rough magnitude &mdash; sodium about 140, "
@@ -85,7 +85,7 @@ TOPICS = [
    why("SAID", "Lecture 4, twice: &ldquo;for now, I&rsquo;m happy if you understand genetic versus "
                "non-genetic; the rest will come later.&rdquo;")),
   {"group": "NOT ASKED FOR BY ANY OBJECTIVE — low return on your time"},
-  ("&mdash;", "<b>Hounsfield numbers as a memorised list</b> (air &minus;1000, fat &minus;40, and so on).",
+  ("&mdash;", "<b>Hounsfield numbers as a memorized list</b> (air &minus;1000, fat &minus;40, and so on).",
    why("IO", "The objective asks you to <i>compare and contrast radiographic density and contrast</i>. "
              "Know the five-density ladder and that water is 0 by convention; the rest of the table is "
              "on an image slide and no objective asks you to recall it.")),
@@ -98,7 +98,7 @@ TOPICS = [
              "which are objective-backed and near-certain.")),
   ("&mdash;", "<b>Accreditation bodies as an org chart.</b>",
    why("IO", "One objective mentions <i>accreditation and regulatory considerations</i>. Who does "
-             "what in one line is enough: CMS certifies and enforces, FDA categorises, CDC sets "
+             "what in one line is enough: CMS certifies and enforces, FDA categorizes, CDC sets "
              "standards. The load-bearing fact is that regulation only ever gets STRICTER.")),
 ]},
 
@@ -116,7 +116,7 @@ TOPICS = [
   (N, "<b>The named trap.</b> &ldquo;My patient&rsquo;s test is positive &mdash; do they have it?&rdquo; "
       "feels like sensitivity. It is POSITIVE PREDICTIVE VALUE.",
    why("SAID", "Called out as a trap in the lecture and written into the deck as one.")),
-  (N, "<b>Most errors are PRETEST.</b> Communication, medication administration, labelling.",
+  (N, "<b>Most errors are PRETEST.</b> Communication, medication administration, labeling.",
    why("IO", "Two objectives cover the phases and their components; this is the fact they converge on.")),
   (N, "<b>Get cultures BEFORE antibiotics</b> &mdash; blood, sputum and throat alike.",
    why("TIME", "Culture is said 33&times;, the most of any term in the lecture. One rule spanning "
@@ -140,10 +140,10 @@ TOPICS = [
       "quantitative.",
    why("IO", "Its own objective, and the semi-quantitative middle term is the one people drop.")),
   (P, "<b>CLIA is a MINIMUM and cannot be downgraded</b> &mdash; state and city rules are always "
-      "stricter. CMS certifies and enforces, FDA categorises by complexity, CDC sets standards.",
+      "stricter. CMS certifies and enforces, FDA categorizes by complexity, CDC sets standards.",
    why("IO", "Objective-backed but thinly taught &mdash; quality assurance is mentioned once. Know "
              "the one-way direction of regulation and move on.")),
-  (P, "<b>Ova and parasites: do NOT refrigerate, THREE separate specimens.</b> Guaiac: heme oxidises "
+  (P, "<b>Ova and parasites: do NOT refrigerate, THREE separate specimens.</b> Guaiac: heme oxidizes "
       "the reagent, BLUE = POSITIVE, use a small sample.",
    why("IO", "Under the stool-studies objective, but a small share of lecture time.")),
 ]},
@@ -151,7 +151,7 @@ TOPICS = [
 # ---------------------------------------------------------------- L2
 {"id": "l2", "label": "L2 &middot; Medical Imaging", "color": "#7a4a9c", "cols": COLS, "rows": [
   (N, "<b>Iodinated contrast is NEPHROTOXIC.</b> Check blood urea nitrogen and creatinine, give one "
-      "litre of normal saline. GADOLINIUM is a CLEARANCE problem instead &mdash; poor function lets "
+      "liter of normal saline. GADOLINIUM is a CLEARANCE problem instead &mdash; poor function lets "
       "it build up in tissue.",
    why("SAID", "Contrast is said 60&times;, more than any term in any lecture, and Lecture 5 adds "
                "&ldquo;you still need to know before you give that person contrast &mdash; you will "
@@ -160,7 +160,7 @@ TOPICS = [
   (N, "<b>Shellfish allergy is NOT an iodine allergy.</b> No cross-reactivity. A genuine iodine "
       "allergy is a real concern; a prior contrast reaction is the actual high-risk history.",
    why("SAID", "Made explicitly in lecture and flagged in the deck. A classic single-best-answer trap.")),
-  (N, "<b>T1 vs T2.</b> T2: water is WHITE (oedema, infection, cerebrospinal fluid). T1: water is "
+  (N, "<b>T1 vs T2.</b> T2: water is WHITE (edema, infection, cerebrospinal fluid). T1: water is "
       "DARK. Check yourself on the ventricles &mdash; bright cerebrospinal fluid means T2.",
    why("TIME", "The deck itself labels this &ldquo;the always-asked one&rdquo;, and 27 mentions of "
                "Tesla and weighting back it up.")),
@@ -175,7 +175,7 @@ TOPICS = [
                "can decide, is this actually cardiomegaly or not?&rdquo; View said 30&times;.")),
   (N, "<b>The five densities, whitest to blackest: METAL, CALCIUM, FLUID/SOFT TISSUE, FAT, AIR.</b> "
       "Fluid and soft tissue are the SAME density on a plain film &mdash; which is why computed "
-      "tomography, which expands the grey scale, exists.",
+      "tomography, which expands the gray scale, exists.",
    why("IO", "Directly under the density-and-contrast objective, and the foundation for reading "
              "anything.")),
   (L, "<b>Barium is CONTRAINDICATED if perforation is suspected</b> &mdash; use Gastrografin. Barium "
@@ -191,7 +191,7 @@ TOPICS = [
   (L, "<b>Ultrasound indicator side.</b> Cardiac imaging: indicator on the RIGHT of the screen. "
       "Every other ultrasound: on the LEFT.",
    why("SAID", "Called &ldquo;crucial&rdquo; in the deck; getting it wrong mirrors left and right.")),
-  (L, "<b>Reason from the TISSUE, not a memorised protocol.</b> Bone &rarr; x-ray or computed "
+  (L, "<b>Reason from the TISSUE, not a memorized protocol.</b> Bone &rarr; x-ray or computed "
       "tomography. Soft tissue &rarr; often ultrasound first. Nerves, cord, marrow &rarr; magnetic "
       "resonance.",
    why("SAID", "Her stated method for choosing when you are unsure, and it answers the "
@@ -231,7 +231,7 @@ TOPICS = [
    why("TIME", "Strep said 20&times;, culture 22&times;. The child-versus-adult split is the "
                "testable half.")),
   (N, "<b>Fluorescein patterns.</b> LINEAR &rarr; abrasion. BRANCHING or DENDRITIC &rarr; HERPETIC "
-      "keratitis. Cobalt-blue light, after topical anaesthetic.",
+      "keratitis. Cobalt-blue light, after topical anesthetic.",
    why("TIME", "Fluorescein said 10&times; and it is named in the objective. Dendritic is the "
                "pattern that changes management.")),
   (N, "<b>Always choose the LEAST INVASIVE test that answers the question.</b> The four factors: "
@@ -275,13 +275,13 @@ TOPICS = [
    why("SAID", "Lecture 4 at 15:37: apps and the record will compute it, &ldquo;HOWEVER, EVERYONE "
                "NEEDS TO KNOW HOW TO CALCULATE THAT.&rdquo; The one calculation this exam wants.")),
   (N, "<b>The three MCV bands.</b> MICROCYTIC &lt;80 fL, NORMOCYTIC 80&ndash;100, MACROCYTIC &gt;100. "
-      "Haemoglobin says there IS an anaemia; the mean corpuscular volume says WHICH KIND.",
+      "Hemoglobin says there IS an anemia; the mean corpuscular volume says WHICH KIND.",
    why("IO", "Its own objective comparing the three patterns; the whole workup hangs off it.")),
   (N, "<b>Iron studies, the two patterns.</b> IRON DEFICIENCY: ferritin DOWN, iron DOWN, total "
-      "iron-binding capacity UP. ANAEMIA OF CHRONIC DISEASE: ferritin UP, iron DOWN, capacity DOWN.",
+      "iron-binding capacity UP. ANEMIA OF CHRONIC DISEASE: ferritin UP, iron DOWN, capacity DOWN.",
    why("TIME", "Iron said 30&times;. The reciprocal ferritin/capacity movement is the discriminator, "
-               "and it is an objective on evaluating anaemia.")),
-  (N, "<b>Iron deficiency is the MOST COMMON cause of anaemia</b> &mdash; and demands evaluation for "
+               "and it is an objective on evaluating anemia.")),
+  (N, "<b>Iron deficiency is the MOST COMMON cause of anemia</b> &mdash; and demands evaluation for "
       "occult blood loss, often the first sign of gastrointestinal bleeding.",
    why("SAID", "Flagged &ldquo;most common&rdquo; three times between 49:07 and 52:56.")),
   (N, "<b>Which line for which problem.</b> BACTERIAL &rarr; neutrophils. VIRAL &rarr; lymphocytes. "
@@ -292,9 +292,9 @@ TOPICS = [
       "rising means the marrow is pushing out immature cells &mdash; acute bacterial infection.",
    why("IO", "Under white cell significance, and it is the reason bands are in the absolute count "
              "formula above.")),
-  (L, "<b>Haemoglobin vs haematocrit.</b> Haemoglobin is the AMOUNT in a volume; haematocrit is the "
-      "PERCENTAGE of blood that is red cells. Her habit: read the haemoglobin, multiply by three, "
-      "check the haematocrit lands nearby.",
+  (L, "<b>Hemoglobin vs hematocrit.</b> Hemoglobin is the AMOUNT in a volume; hematocrit is the "
+      "PERCENTAGE of blood that is red cells. Her habit: read the hemoglobin, multiply by three, "
+      "check the hematocrit lands nearby.",
    why("IO", "Its own objective &mdash; &ldquo;explain the difference between hemoglobin and "
              "hematocrit&rdquo; &mdash; and the &times;3 rule is a fast sanity check.")),
   (L, "<b>The morphology&ndash;disease pairs.</b> HOWELL-JOLLY &rarr; post-splenectomy. "
@@ -303,10 +303,10 @@ TOPICS = [
       "fragmentation. TEARDROP &rarr; marrow infiltration.",
    why("IO", "Under red cell significance. Pairs like these are the easiest thing on the exam to "
              "write a question about.")),
-  (L, "<b>The reticulocyte split in a NORMOCYTIC anaemia.</b> HIGH retics &rarr; haemolysis, sickle "
-      "cell, acute haemorrhage. LOW retics with low white cells and platelets &rarr; marrow failure.",
+  (L, "<b>The reticulocyte split in a NORMOCYTIC anemia.</b> HIGH retics &rarr; hemolysis, sickle "
+      "cell, acute hemorrhage. LOW retics with low white cells and platelets &rarr; marrow failure.",
    why("IO", "The reticulocyte count is step four of the stated workup; this split is what it is for.")),
-  (L, "<b>The four indices.</b> MCV = average volume (80&ndash;100 fL, measured). MCH = haemoglobin "
+  (L, "<b>The four indices.</b> MCV = average volume (80&ndash;100 fL, measured). MCH = hemoglobin "
       "per cell. MCHC = concentration. RDW = variation in size.",
    why("IO", "&ldquo;Discuss red blood cell indices&rdquo; is an objective by itself.")),
   (L, "<b>Neutrophils UP</b> in bacterial infection, myocardial infarction, burns, STEROIDS "
@@ -327,7 +327,7 @@ TOPICS = [
 
 # ---------------------------------------------------------------- L5
 {"id": "l5", "label": "L5 &middot; Chemistry Panels", "color": "#1b4965", "cols": COLS, "rows": [
-  (N, "<b>POTASSIUM is the centre of this lecture.</b> Excreted by the kidney with NO reabsorption, "
+  (N, "<b>POTASSIUM is the center of this lecture.</b> Excreted by the kidney with NO reabsorption, "
       "so it must be replaced. What SHIFTS it across the membrane: INSULIN, ACID-BASE STATUS, "
       "CATECHOLAMINES. Both high and low cause LIFE-THREATENING ARRHYTHMIAS.",
    why("SAID", "Said 112 times &mdash; more than twice any other term in any lecture &mdash; and at "
@@ -366,7 +366,7 @@ TOPICS = [
       "also cardiac and skeletal muscle.",
    why("TIME", "Liver said 57&times;, third highest in the lecture, and it has its own objective.")),
   (L, "<b>Three liver shortcuts.</b> AST:ALT above 2:1 &rarr; ALCOHOL. Transaminases in the "
-      "THOUSANDS &rarr; only three causes: viral, ischaemia, toxins. Alkaline phosphatase out of "
+      "THOUSANDS &rarr; only three causes: viral, ischemia, toxins. Alkaline phosphatase out of "
       "proportion &rarr; CHOLESTATIC; confirm hepatic origin with GGT.",
    why("IO", "Under the hepatic-pattern objective. Compact, high-signal, easy to write questions on.")),
   (L, "<b>Bicarbonate is reported as &ldquo;CO2&rdquo;.</b> LOW means metabolic acidosis &mdash; and "
@@ -378,14 +378,14 @@ TOPICS = [
       "glucose up, bicarbonate down, gap up, pH low.",
    why("IO", "&ldquo;Compare and contrast laboratory patterns seen in renal, hepatic and metabolic "
              "disorders&rdquo; &mdash; the objective asks for exactly these three side by side.")),
-  (L, "<b>The vomiting case.</b> Sodium, potassium and chloride all DOWN, bicarbonate UP, alkalaemia. "
+  (L, "<b>The vomiting case.</b> Sodium, potassium and chloride all DOWN, bicarbonate UP, alkalemia. "
       "It persists because volume, potassium and chloride depletion force the kidney to keep "
       "reabsorbing bicarbonate.",
    why("IO", "The worked example for the fluid-and-electrolyte objective; a ready-made vignette.")),
   (P, "<b>Albumin correction of the gap</b> (add about 2.5 per 1 g/dL fall) and <b>serum osmolality</b> "
-      "(about 275&ndash;285) separating true from pseudo-hyponatraemia.",
+      "(about 275&ndash;285) separating true from pseudo-hyponatremia.",
    why("IO", "Real content under the homeostasis objective, but she does not ask for calculations "
-             "&mdash; recognise the concepts.")),
+             "&mdash; recognize the concepts.")),
   (P, "<b>Hepatorenal and cardiorenal syndrome</b> as names for combined failure.",
    why("IO", "Mentioned once. Know the words.")),
 ]},
@@ -408,8 +408,8 @@ TOPICS = [
    why("SAID", "&ldquo;That&rsquo;s the take-home point&rdquo; at 23:17, and it is named in the "
                "parameters objective.")),
   (N, "<b>Blood on the pad has THREE meanings, and the pad cannot tell them apart.</b> "
-      "HAEMATURIA = intact red cells. HAEMOGLOBINURIA = free haemoglobin, from intravascular "
-      "haemolysis &mdash; confirm with raised UNCONJUGATED BILIRUBIN. MYOGLOBINURIA = muscle injury "
+      "HEMATURIA = intact red cells. HEMOGLOBINURIA = free hemoglobin, from intravascular "
+      "hemolysis &mdash; confirm with raised UNCONJUGATED BILIRUBIN. MYOGLOBINURIA = muscle injury "
       "&mdash; confirm with raised CREATINE PHOSPHOKINASE.",
    why("IO", "An entire objective is &ldquo;differentiate between hematuria, hemoglobinuria and "
              "myoglobinuria&rdquo;. One of only three objectives in the lecture &mdash; and the two "
@@ -436,7 +436,7 @@ TOPICS = [
   (L, "<b>Specific gravity.</b> LOW (dilute): overhydration, diuresis, chronic kidney disease, "
       "DIABETES INSIPIDUS. HIGH (concentrated): dehydration, reduced renal blood flow, SIADH. "
       "Radiographic CONTRAST has large particles and pushes it above 1.040.",
-   why("TIME", "Said 11&times; and named first in the parameters objective. The contrast artefact is "
+   why("TIME", "Said 11&times; and named first in the parameters objective. The contrast artifact is "
                "the memorable bit.")),
   (L, "<b>Reading time DIFFERS by analyte</b> &mdash; glucose 30 seconds, leukocytes 2 minutes &mdash; "
       "so a strip cannot be read all at once, and pads sit in different orders on different brands.",
@@ -447,10 +447,10 @@ TOPICS = [
       "INFECTION. Name trap: RENAL TUBULAR ACIDOSIS gives ALKALINE urine.",
    why("IO", "pH is in the objective list; the stone pairings are a step beyond it. The name trap is "
              "the part worth holding.")),
-  (P, "<b>Colour and odour lists.</b> Yellow-brown or green &rarr; bilirubin. Fruity &rarr; ketones. "
-      "Ammonia &rarr; the sample stood too long. Faecal odour &rarr; enterovesical fistula.",
+  (P, "<b>Color and odor lists.</b> Yellow-brown or green &rarr; bilirubin. Fruity &rarr; ketones. "
+      "Ammonia &rarr; the sample stood too long. Fecal odor &rarr; enterovesical fistula.",
    why("IO", "Physical characteristics are covered, but these are recall lists and the objectives "
-             "emphasise the chemical pads.")),
+             "emphasize the chemical pads.")),
   (P, "<b>After the strip:</b> microscopy adds white cells, red cells, squamous epithelial cells, "
       "casts and crystals. More than twenty squamous cells per field means CONTAMINATION.",
    why("IO", "Correlation objective, lightly taught &mdash; the contamination number is the one fact "

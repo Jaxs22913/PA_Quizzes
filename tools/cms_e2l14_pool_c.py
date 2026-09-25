@@ -38,7 +38,7 @@ QUESTIONS = [
   opts=[["A curtain or shadow, floaters, momentary flashes, and a monocular field defect",
          "Correct. Cloudy or smoky vision belongs there too."],
         ["Gradual painless loss of the peripheral field over years", "That is chronic open-angle glaucoma."],
-        ["Pain on eye movement with loss of colour vision", "That is optic neuritis."],
+        ["Pain on eye movement with loss of color vision", "That is optic neuritis."],
         ["Bilateral disc swelling with transient obscurations", "That is papilledema."]]),
 
  dict(topic="Open globe injury", io=IO_A, lead="management", cite=D % 17,
@@ -47,5 +47,5 @@ QUESTIONS = [
          "Correct. Keeping the patient from straining protects the eye."],
         ["A mydriatic, tonometry and fundoscopy", "None of those is safe in a possibly open globe."],
         ["Copious irrigation and a pressure patch", "Pressure risks extruding contents."],
-        ["Topical anaesthetic drops to take home", "Never sent home, in any eye injury."]]),
+        ["Topical anesthetic drops to take home", "Never sent home, in any eye injury."]]),
 ]

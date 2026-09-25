@@ -12,7 +12,7 @@ very complicated, I totally went into the weeds trying to read about that
 preparing for today's lecture, and it's beyond what we need to know — so you
 just know that it's associated with that, but we don't need to know all the ins
 and outs." A guide that treats every mechanism as equally weighted would have
-you memorise exactly the thing she told the class to skip.
+you memorize exactly the thing she told the class to skip.
 
 She also restated the course's scope line while introducing psoriasis: "today
 the focus is really just the underlying pathophysiology" — which is the same
@@ -84,7 +84,7 @@ def main():
       '<p>Basal cell carcinoma is the <strong>most common</strong> skin cancer; squamous cell carcinoma '
       'is the <strong>second most common</strong>. For squamous cell she did name a histological feature '
       'as pathognomonic &mdash; <strong>keratin pearls</strong>, also called epithelial pearls: '
-      'millimetre-sized concentric deposits of keratin and dead skin cells. That one is worth knowing.</p>') + s[j:]
+      'millimeter-sized concentric deposits of keratin and dead skin cells. That one is worth knowing.</p>') + s[j:]
     added += 1
 
     io.open(G, "w", encoding="utf-8").write(s)

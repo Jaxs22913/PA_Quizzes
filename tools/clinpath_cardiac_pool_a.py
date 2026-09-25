@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """Clinical Pathophysiology I, Lecture 6 -- Cardiac Pathophysiology, part A.
 
-Coronary heart disease, atherosclerosis and plaque, then ischaemia and the
+Coronary heart disease, atherosclerosis and plaque, then ischemia and the
 coronary syndromes. Part B carries valves, myocardium and pericardium.
 
 MECHANISM ONLY, per [[clin_path_exam_spec]]: the line between this course and
 Clinical Medicine and Surgery is drawn at pathophysiology against management,
 so nothing here asks what is given or done. The deck cooperates -- it is a
 mechanism lecture throughout -- but the temptation is the numbers, and the
-numbers that survive are the ones that mean something: 75 per cent occlusion
+numbers that survive are the ones that mean something: 75 percent occlusion
 before flow is compromised, 30 minutes to irreversible necrosis, and the
 distribution of infarcts across the three coronary arteries.
 
@@ -44,29 +44,29 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 4"},
 
 {"topic": "Coronary heart disease", "io": IO_CHD, "slot": "mechanism",
- "q": "At what point does myocardium become ischaemic?",
+ "q": "At what point does myocardium become ischemic?",
  "opts": [
   ["When metabolic demand for oxygen exceeds supply",
-   "Correct. It is a relationship rather than a threshold, which is why ischaemia can arise either from supply falling or from demand rising with the supply unchanged."],
+   "Correct. It is a relationship rather than a threshold, which is why ischemia can arise either from supply falling or from demand rising with the supply unchanged."],
   ["When coronary blood flow falls below a fixed absolute value",
    "No absolute flow figure defines it; what matters is flow relative to what the muscle is demanding at that moment."],
   ["Only once a coronary artery is completely occluded",
-   "Complete occlusion is one route to it, but ischaemia begins well before that whenever demand outruns supply."],
+   "Complete occlusion is one route to it, but ischemia begins well before that whenever demand outruns supply."],
   ["Only when the patient experiences chest pain",
-   "Pain is a symptom that may or may not appear; ischaemia is defined by the supply and demand mismatch itself."]],
+   "Pain is a symptom that may or may not appear; ischemia is defined by the supply and demand mismatch itself."]],
  "c": 0, "cite": D + ", Slide 4"},
 
 {"topic": "Coronary heart disease", "io": IO_CHD, "slot": "mechanism",
- "q": "What are the consequences of myocardial ischaemia?",
+ "q": "What are the consequences of myocardial ischemia?",
  "opts": [
   ["Abnormal heart function and abnormal rhythm",
    "Correct. Two immediate consequences and one that depends on duration, which is why time is the variable that decides how much muscle is lost. With irreversible damage if prolonged."],
   ["Abnormal rhythm only, with function preserved throughout",
-   "Function is affected as well; the ischaemic myocardium cannot contract normally."],
+   "Function is affected as well; the ischemic myocardium cannot contract normally."],
   ["Immediate irreversible damage in every case",
-   "Damage becomes irreversible only if the ischaemia is prolonged; brief ischaemia does not kill the cell."],
+   "Damage becomes irreversible only if the ischemia is prolonged; brief ischemia does not kill the cell."],
   ["Valvular incompetence as the first consequence",
-   "Valve function is not the described consequence of myocardial ischaemia."]],
+   "Valve function is not the described consequence of myocardial ischemia."]],
  "c": 0, "cite": D + ", Slide 4"},
 
 {"topic": "Coronary heart disease", "io": IO_CHD, "slot": "aetiology",
@@ -89,22 +89,22 @@ QUESTIONS = [
    "Correct. Both reach the same endpoint from outside the coronary artery: the vessel may be open, but what flows through it either carries too little oxygen or arrives at too low a pressure."],
   ["Coronary vasospasm and thrombosis",
    "These are common mechanisms acting on a narrowed vessel rather than the uncommon causes."],
-  ["Familial hypercholesterolaemia and high fat diet",
+  ["Familial hypercholesterolemia and high fat diet",
    "These are mechanisms of abnormal lipid metabolism contributing to atherosclerosis, not the uncommon causes listed."],
   ["Rheumatic fever and infective endocarditis",
    "These damage valves rather than causing coronary heart disease."]],
  "c": 0, "cite": D + ", Slide 8"},
 
 {"topic": "Microcirculation", "io": IO_CHD, "slot": "mechanism",
- "q": "How can abnormalities of the microcirculation produce cardiac ischaemia?",
+ "q": "How can abnormalities of the microcirculation produce cardiac ischemia?",
  "opts": [
   ["Endothelial cells in small vessels regulate the vasculature abnormally",
-   "Correct. The large arteries may look adequate while control of flow at the small vessel level has failed, which is why ischaemia is possible without a major stenosis. So blood supply is controlled abnormally."],
+   "Correct. The large arteries may look adequate while control of flow at the small vessel level has failed, which is why ischemia is possible without a major stenosis. So blood supply is controlled abnormally."],
   ["Small vessels become mechanically obstructed by calcification",
    "Abnormal regulation by endothelial cells is the described mechanism rather than calcification."],
   ["The microcirculation carries blood away from the myocardium",
    "The microcirculation supplies the myocardium; abnormal regulation of that supply is the problem."],
-  ["Small vessels rupture, producing intramyocardial haemorrhage",
+  ["Small vessels rupture, producing intramyocardial hemorrhage",
    "Rupture is not the described mechanism in the microcirculation."]],
  "c": 0, "cite": D + ", Slide 9"},
 
@@ -195,8 +195,8 @@ QUESTIONS = [
    "It clears cholesterol rather than blocking production of another lipoprotein."],
   ["It binds triglycerides in the circulation and inactivates them",
    "Triglyceride carriage belongs to very low density lipoprotein, and this is not the described protective mechanism."],
-  ["It stabilises the fibrous cap of existing plaques",
-   "Cap stabilisation comes from collagen and fibrin over time rather than from high density lipoprotein."]],
+  ["It stabilizes the fibrous cap of existing plaques",
+   "Cap stabilization comes from collagen and fibrin over time rather than from high density lipoprotein."]],
  "c": 0, "cite": D + ", Slide 12"},
 
 {"topic": "Lipoproteins", "io": IO_LIPO, "slot": "mechanism",
@@ -212,8 +212,8 @@ QUESTIONS = [
    "It is described as increasing risk, through the triglycerides it carries rather than through cholesterol."]],
  "c": 0, "cite": D + ", Slide 12"},
 
-{"topic": "Familial hypercholesterolaemia", "io": IO_MOLEC, "slot": "mechanism",
- "q": "What is the molecular defect in familial hypercholesterolaemia?",
+{"topic": "Familial hypercholesterolemia", "io": IO_MOLEC, "slot": "mechanism",
+ "q": "What is the molecular defect in familial hypercholesterolemia?",
  "opts": [
   ["A defective low density lipoprotein receptor on liver cells",
    "Correct. The liver cannot take cholesterol out of the circulation, so the problem is one of removal rather than of overproduction or of diet."],
@@ -225,15 +225,15 @@ QUESTIONS = [
    "That relates to homocysteine metabolism, a separate mechanism."]],
  "c": 0, "cite": D + ", Slide 13"},
 
-{"topic": "Familial hypercholesterolaemia", "io": IO_MOLEC, "slot": "classification",
- "q": "How is familial hypercholesterolaemia characterised among the genetic hyperlipidaemias?",
+{"topic": "Familial hypercholesterolemia", "io": IO_MOLEC, "slot": "classification",
+ "q": "How is familial hypercholesterolemia characterized among the genetic hyperlipidemias?",
  "opts": [
   ["It is the most common form",
-   "Correct, which matters because a defect in a single receptor accounts for more inherited hyperlipidaemia than any other mechanism."],
+   "Correct, which matters because a defect in a single receptor accounts for more inherited hyperlipidemia than any other mechanism."],
   ["It is the rarest form",
-   "It is described as the most common form of genetic hyperlipidaemia."],
+   "It is described as the most common form of genetic hyperlipidemia."],
   ["It is acquired rather than genetic",
-   "It is genetic, and it is described among the genetic hyperlipidaemias."],
+   "It is genetic, and it is described among the genetic hyperlipidemias."],
   ["It affects triglyceride handling rather than cholesterol",
    "The defect concerns removal of cholesterol from the bloodstream."]],
  "c": 0, "cite": D + ", Slide 13"},
@@ -242,11 +242,11 @@ QUESTIONS = [
  "q": "What initiates atherosclerotic plaque formation?",
  "opts": [
   ["Injury to the endothelial cells of the vessel",
-   "Correct. Everything that follows -- permeability, leukocytes, oxidised lipid, foam cells -- is downstream of that first injury."],
+   "Correct. Everything that follows -- permeability, leukocytes, oxidized lipid, foam cells -- is downstream of that first injury."],
   ["Deposition of calcium on the intimal surface",
    "Calcification is a feature of established disease rather than the initiating event."],
   ["Rupture of the vasa vasorum within the arterial wall",
-   "Haemorrhage from those capillaries contributes to plaque rupture later, not to initiation."],
+   "Hemorrhage from those capillaries contributes to plaque rupture later, not to initiation."],
   ["Platelet aggregation on an intact endothelium",
    "Platelet aggregation follows exposure of subendothelial proteins, which requires the endothelium to be damaged first."]],
  "c": 0, "cite": D + ", Slide 14"},
@@ -254,7 +254,7 @@ QUESTIONS = [
 {"topic": "Plaque formation", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "Which are given as causes of the initiating endothelial injury?",
  "opts": [
-  ["Wall stress, toxins, inflammation, hyperlipidaemia",
+  ["Wall stress, toxins, inflammation, hyperlipidemia",
    "Correct. Mechanical, chemical, inflammatory and metabolic insults all converge on the same first step, which is why so many different risk factors end in the same lesion."],
   ["Valvular calcification and rheumatic scarring",
    "These damage valves rather than injuring coronary endothelium."],
@@ -267,7 +267,7 @@ QUESTIONS = [
 {"topic": "Plaque formation", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "What happens once the injured endothelium becomes more permeable?",
  "opts": [
-  ["Leukocytes are recruited and low density lipoprotein leaks through to be oxidised",
+  ["Leukocytes are recruited and low density lipoprotein leaks through to be oxidized",
    "Correct. The lipid has to get into the wall before it can do harm, and the increased permeability is what lets it."],
   ["Calcium is deposited directly into the media",
    "Calcification is not the step that follows increased permeability."],
@@ -280,12 +280,12 @@ QUESTIONS = [
 {"topic": "Plaque formation", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "Why is oxidation of the trapped lipid important?",
  "opts": [
-  ["Oxidised lipids damage both the vessel wall and smooth muscle cells",
-   "Correct. Lipid in the wall is not inert: oxidising it is what turns a deposit into an actively injurious lesion."],
+  ["Oxidized lipids damage both the vessel wall and smooth muscle cells",
+   "Correct. Lipid in the wall is not inert: oxidizing it is what turns a deposit into an actively injurious lesion."],
   ["Oxidation allows the lipid to be cleared back into the circulation",
-   "Oxidation makes the lipid damaging rather than removable: oxidised lipid injures both the wall and the smooth muscle cells."],
+   "Oxidation makes the lipid damaging rather than removable: oxidized lipid injures both the wall and the smooth muscle cells."],
   ["Oxidation converts the lipid into high density lipoprotein",
-   "Oxidised lipid is not converted into a protective lipoprotein."],
+   "Oxidized lipid is not converted into a protective lipoprotein."],
   ["Oxidation prevents macrophages from engulfing the lipid",
    "Macrophages continue to engulf lipid, which is how foam cells form."]],
  "c": 0, "cite": D + ", Slide 14"},
@@ -300,7 +300,7 @@ QUESTIONS = [
   ["A platelet aggregate within the plaque core",
    "Platelet aggregation is a separate step and does not form foam cells."],
   ["An endothelial cell that has detached from the wall",
-   "Foam cells derive from macrophages that have taken up so much oxidised lipid they change character."]],
+   "Foam cells derive from macrophages that have taken up so much oxidized lipid they change character."]],
  "c": 0, "cite": D + ", Slide 15"},
 
 {"topic": "Foam cells", "io": IO_PLAQUE, "slot": "mechanism",
@@ -308,8 +308,8 @@ QUESTIONS = [
  "opts": [
   ["Inflammatory mediators and growth factor",
    "Correct. This is the step that makes the lesion self-sustaining: the cells that arrived to deal with the lipid recruit more cells and more wall growth. Attracting more leukocytes and stimulating smooth muscle proliferation."],
-  ["Collagen and fibrin, which stabilise the plaque",
-   "Collagen and fibrin form the stabilising cap later, and are not what the macrophages release here."],
+  ["Collagen and fibrin, which stabilize the plaque",
+   "Collagen and fibrin form the stabilizing cap later, and are not what the macrophages release here."],
   ["Enzymes that clear the lipid core entirely",
    "The lipid accumulates rather than being cleared; the macrophages release inflammatory mediators and growth factor instead."],
   ["Vasodilators that increase flow through the vessel",
@@ -346,26 +346,26 @@ QUESTIONS = [
  "q": "What makes a plaque more stable over time?",
  "opts": [
   ["Collagen and fibrin forming a cap",
-   "Correct. Stability is acquired rather than original, and the same process that stabilises the plaque does nothing about the lumen it is narrowing."],
+   "Correct. Stability is acquired rather than original, and the same process that stabilizes the plaque does nothing about the lumen it is narrowing."],
   ["Enlargement of the lipid core",
    "A larger lipid core makes the plaque more fragile, not more stable."],
   ["Continued recruitment of macrophages",
-   "More macrophages sustain the inflammatory process rather than stabilising the plaque."],
-  ["Haemorrhage from the capillaries within the wall",
+   "More macrophages sustain the inflammatory process rather than stabilizing the plaque."],
+  ["Hemorrhage from the capillaries within the wall",
    "That raises pressure within the plaque and contributes to disruption."]],
  "c": 0, "cite": D + ", Slide 16"},
 
 {"topic": "Plaque stability", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "At what degree of occlusion is blood flow described as compromised?",
  "opts": [
-  ["Seventy-five per cent",
+  ["Seventy-five percent",
    "Correct. It takes a great deal of narrowing before flow suffers, which is why plaques grow silently for years."],
-  ["Twenty-five per cent",
+  ["Twenty-five percent",
    "Flow is not described as compromised at this degree of narrowing."],
-  ["Fifty per cent",
-   "Fifty per cent is the figure given for haemodynamic effect in valvular stenosis, not for coronary occlusion."],
-  ["Ninety-five per cent",
-   "Flow is described as compromised well before this, at about seventy-five per cent occlusion."]],
+  ["Fifty percent",
+   "Fifty percent is the figure given for hemodynamic effect in valvular stenosis, not for coronary occlusion."],
+  ["Ninety-five percent",
+   "Flow is described as compromised well before this, at about seventy-five percent occlusion."]],
  "c": 0, "cite": D + ", Slide 16"},
 
 {"topic": "Plaque rupture", "io": IO_PLAQUE, "slot": "mechanism",
@@ -399,15 +399,15 @@ QUESTIONS = [
  "opts": [
   ["Blood flowing at high velocity through it exerts shear forces on the plaque",
    "Correct. The narrowing accelerates the blood, and the accelerated blood works on the narrowing -- the lesion generates the force that breaks it."],
-  ["It reduces flow so much that the plaque becomes ischaemic",
-   "Plaque ischaemia is not the described mechanism of disruption."],
+  ["It reduces flow so much that the plaque becomes ischemic",
+   "Plaque ischemia is not the described mechanism of disruption."],
   ["It causes the vessel to dilate proximally",
    "Proximal dilation is not described as contributing to disruption."],
   ["It prevents collateral circulation from forming",
    "Collateral circulation develops in response to slowly progressive disease and is not the disruption mechanism."]],
  "c": 0, "cite": D + ", Slide 27"},
 
-{"topic": "Plaque haemorrhage", "io": IO_PLAQUE, "slot": "mechanism",
+{"topic": "Plaque hemorrhage", "io": IO_PLAQUE, "slot": "mechanism",
  "q": "How do the capillaries within the atherosclerotic arterial wall contribute to disruption?",
  "opts": [
   ["Their thin walls bleed",
@@ -416,7 +416,7 @@ QUESTIONS = [
    "Bleeding and pressure build-up is the described mechanism rather than cap dissolution."],
   ["They drain lipid out of the core, collapsing the plaque",
    "The described consequence is deposition and pressure rather than drainage."],
-  ["They constrict, producing local ischaemia within the wall",
+  ["They constrict, producing local ischemia within the wall",
    "Constriction of these capillaries is not the described mechanism."]],
  "c": 0, "cite": D + ", Slide 28"},
 

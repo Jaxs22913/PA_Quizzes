@@ -26,7 +26,7 @@ INTRO = ("Sixty questions drawn from every lecture in the Exam 1 block, in exam 
          "than at random &mdash; <b>each of the five lectures contributes twelve questions to "
          "every form</b>, so this is a genuine cumulative rehearsal and not a sample of whichever "
          "topic had the most questions written for it. Questions are reused verbatim from the "
-         "topic quizzes, so nothing here can drift from the material it is summarising. "
+         "topic quizzes, so nothing here can drift from the material it is summarizing. "
          "<b>No question appears in more than one form</b>, so working through all five gives you "
          "300 distinct questions. "
          "<b>Mechanism only.</b> This course draws its line against Clinical Medicine and Surgery "

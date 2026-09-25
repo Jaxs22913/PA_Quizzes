@@ -45,7 +45,7 @@ INTRO = ("Thirty questions on ophthalmic pathophysiology, drawn from the ten num
          "<b>presbyopia</b>. Both of these quizzes cover all seven. "
          "He also cut scope out loud: of the visual-field lesion sites, <b>know the optic nerve, "
          "the chiasm and the optic tract</b> &mdash; the optic radiation and occipital cortex he "
-         "deferred to neurology. And he de-emphasised which lens corrects which error, so no "
+         "deferred to neurology. And he de-emphasized which lens corrects which error, so no "
          "question asks it. "
          "<b>Two figures in this deck disagree with each other</b> on the normal intraocular "
          "pressure &mdash; slide 24 says 10&ndash;21 mmHg and slide 25 says about 6&ndash;19 "

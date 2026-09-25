@@ -13,7 +13,7 @@ pharm_ent_partition.py); the four additions, restated for this lecture:
      and "an albumin-to-creatinine ratio of 450 mg/g" are thresholds a question
      must be able to state; "10 mg" is a dose and is still refused.
   3. A DESCOPED guard for the caps said aloud and the deck's own conflict: no
-     item may state the 7.5 per cent risk threshold (slide 65 and the slide 66
+     item may state the 7.5 percent risk threshold (slide 65 and the slide 66
      algorithm disagree, so no key may depend on it), ask for a 10-year risk
      CALCULATION, name orlistat (never on a slide), key ezetimibe to NPC1L1
      (the deck never links them), or reach past the CYP row of the statin
@@ -32,8 +32,8 @@ pharm_ent_partition.py); the four additions, restated for this lecture:
 Each pool is split in half rather than padded to the house 30, as in the ENT
 and ophthalmology builds: the pool is as large as the slides support.
 
-The length guard FAILS a set over 35 per cent gameable (the house bar) and
-WARNS over 10 per cent (Jaxon's own target, 2026-08-16).
+The length guard FAILS a set over 35 percent gameable (the house bar) and
+WARNS over 10 percent (Jaxon's own target, 2026-08-16).
 """
 import json, os, random, re, sys
 from collections import OrderedDict

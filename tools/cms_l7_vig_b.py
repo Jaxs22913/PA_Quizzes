@@ -25,7 +25,7 @@ VIG_B = [
      ["Stage 2",
       "Stage 2 has partial-thickness loss with the dermis exposed."],
      ["Deep tissue pressure injury",
-      "That is a deep red or purple discolouration rather than erythema."],
+      "That is a deep red or purple discoloration rather than erythema."],
      ["Unstageable",
       "Unstageable requires slough or eschar obscuring the wound bed."]],
    c=0, cite=c(33)),
@@ -64,18 +64,18 @@ VIG_B = [
      ["Stage 4",
       "Stage 4 requires that deeper structures actually be visible."],
      ["Deep tissue pressure injury",
-      "That is discolouration of skin rather than an eschar-covered wound."],
+      "That is discoloration of skin rather than an eschar-covered wound."],
      ["Stage 3",
       "Stage 3 requires adipose tissue to be visible in the bed."]],
    c=0, cite=c(34)),
 
  dict(topic="Pressure injury", io=IOB, lead="diagnosis",
-   q="A patient has a persistent deep purple discolouration over the heel. The skin over it is intact and the colour does not blanch. Which is the most likely classification?",
+   q="A patient has a persistent deep purple discoloration over the heel. The skin over it is intact and the color does not blanch. Which is the most likely classification?",
    opts=[
      ["Deep tissue injury",
-      "Correct — a persistent non-blanchable deep red or purple discolouration, with the skin either intact or non-intact."],
+      "Correct — a persistent non-blanchable deep red or purple discoloration, with the skin either intact or non-intact."],
      ["Stage 1",
-      "Stage 1 is erythema rather than deep red or purple discolouration."],
+      "Stage 1 is erythema rather than deep red or purple discoloration."],
      ["Unstageable",
       "Unstageable requires slough or eschar over an open wound."],
      ["Stage 2",
@@ -190,7 +190,7 @@ VIG_B = [
    q="A 34-year-old woman has a firm brown nodule on her lower leg that appeared after an insect bite. Dermoscopy is performed. Which finding would support a diagnosis of dermatofibroma?",
    opts=[
      ["A peripheral pigment network with a central white mass",
-      "Correct — the white centre corresponds to the fibrous core."],
+      "Correct — the white center corresponds to the fibrous core."],
      ["A moth-eaten border with uniform pigment throughout",
       "That is the solar lentigo pattern."],
      ["An epithelial collarette at the base of the lesion",
@@ -241,13 +241,13 @@ VIG_B = [
  dict(topic="Keratoacanthoma", io=IOA, lead="treatment",
    q="A 58-year-old woman is to have a keratoacanthoma excised from her forearm. Which margin is required?",
    opts=[
-     ["Five millimetres",
+     ["Five millimeters",
       "Correct — with Mohs surgery for large, recurrent or cosmetically sensitive lesions."],
-     ["One millimetre",
+     ["One millimeter",
       "That margin is not what is specified for this lesion."],
-     ["Ten millimetres",
+     ["Ten millimeters",
       "The stated margin is smaller than this."],
-     ["Two centimetres",
+     ["Two centimeters",
       "That is far wider than the margin given."]],
    c=0, cite=c(52)),
 
@@ -256,7 +256,7 @@ VIG_B = [
    opts=[
      ["Mohs surgery",
       "Correct — it is indicated for large or recurrent lesions, and for lesions in anatomic areas with cosmetic or functional considerations. This lesion is both."],
-     ["Standard elliptical excision with five-millimetre margins regardless of site",
+     ["Standard elliptical excision with five-millimeter margins regardless of site",
       "The site is precisely why Mohs is preferred here."],
      ["Cryotherapy, which spares the nasal cartilage",
       "Cryotherapy is not offered for this lesion."],
@@ -265,10 +265,10 @@ VIG_B = [
    c=0, cite=c(52)),
 
  dict(topic="Epidermoid cyst", io=IOA, lead="diagnosis",
-   q="A 45-year-old man has a firm, movable, round nodule on his upper back. There is a small central pore, and pressing it expresses cream-coloured pasty material with an unpleasant smell. Which is the most likely diagnosis?",
+   q="A 45-year-old man has a firm, movable, round nodule on his upper back. There is a small central pore, and pressing it expresses cream-colored pasty material with an unpleasant smell. Which is the most likely diagnosis?",
    opts=[
      ["Epidermoid cyst",
-      "Correct — the central punctum and the odour of the keratin contents."],
+      "Correct — the central punctum and the odor of the keratin contents."],
      ["Lipoma",
       "A lipoma is soft and rubbery with no overlying pore."],
      ["Dermatofibroma",
@@ -278,7 +278,7 @@ VIG_B = [
    c=0, cite=c(54)),
 
  dict(topic="Epidermoid cyst", io=IOA, lead="education",
-   q="A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?",
+   q="A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-colored pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?",
    opts=[
      ["The contents are keratin, not sebum",
       "Correct — it is often called a sebaceous cyst because the material looks like sebum, but the contents are keratin."],
@@ -307,7 +307,7 @@ VIG_B = [
    q="Six weeks later the cyst is quiet and the patient wants it gone permanently. Which is the most appropriate management?",
    opts=[
      ["Surgical removal of the entire capsule",
-      "Correct — a small cyst of one to three centimetres can instead be punched and emptied."],
+      "Correct — a small cyst of one to three centimeters can instead be punched and emptied."],
      ["Aspiration of the contents with a wide-bore needle",
       "Aspiration leaves the capsule behind."],
      ["Repeated intralesional steroid until it disappears",
@@ -317,7 +317,7 @@ VIG_B = [
    c=0, cite=c(57)),
 
  dict(topic="Syringoma", io=IOA, lead="diagnosis",
-   q="A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. They are asymptomatic and appeared around puberty. Which is the most likely diagnosis?",
+   q="A 17-year-old girl has multiple 1 to 2 mm skin-colored papules symmetrically distributed on both lower eyelids and upper cheeks. They are asymptomatic and appeared around puberty. Which is the most likely diagnosis?",
    opts=[
      ["Syringoma",
       "Correct — benign eccrine duct neoplasms, appearing at puberty, females more than males."],
@@ -330,7 +330,7 @@ VIG_B = [
    c=0, cite=c(58)),
 
  dict(topic="Syringoma", io=IOA, lead="education",
-   q="A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counselling point?",
+   q="A 17-year-old girl has multiple 1 to 2 mm skin-colored papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counseling point?",
    opts=[
      ["Treatment is for cosmesis only, and every option has a trade-off",
       "Correct — drugs such as oral isotretinoin carry an increased risk of recurrence, and removal procedures carry a risk of poor cosmetic results."],
@@ -339,6 +339,6 @@ VIG_B = [
      ["The lesions will resolve on their own within a year",
       "They do not spontaneously resolve."],
      ["Removal is curative and recurrence does not occur",
-      "Recurrence risk is explicitly part of the counselling."]],
+      "Recurrence risk is explicitly part of the counseling."]],
    c=0, cite=c(59)),
 ]

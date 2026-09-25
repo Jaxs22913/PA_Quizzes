@@ -14,7 +14,7 @@ INTRO = ("Sixty questions drawn from every lecture in the Exam 1 dermatology blo
          "proportions rather than at random &mdash; each of the nine lectures contributes to every "
          "form, so this is a genuine cumulative rehearsal and not a sample of whichever topic had the "
          "most questions written for it. Questions are reused verbatim from the topic quizzes, so "
-         "nothing here can drift from the material it is summarising. <b>No question appears in more "
+         "nothing here can drift from the material it is summarizing. <b>No question appears in more "
          "than one form</b>, so working through all five gives you 300 distinct questions. Every "
          "question cites its slide.")
 for name in ("A", "B", "C", "D", "E"):

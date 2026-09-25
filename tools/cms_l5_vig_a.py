@@ -16,7 +16,7 @@ IOC = "c — Medical care strategies across infant, child, adolescent, adult and
 
 POOL_A = [
  dict(topic="Scabies", io=IOA,
-   q="A 32-year-old man has six weeks of severe itching that is worst at night. Examination shows excoriations in the finger webs, on the volar wrists and in the axillae, with fine thread-like lines a few millimetres long between two fingers. His head and neck are clear. Which is the most likely diagnosis?",
+   q="A 32-year-old man has six weeks of severe itching that is worst at night. Examination shows excoriations in the finger webs, on the volar wrists and in the axillae, with fine thread-like lines a few millimeters long between two fingers. His head and neck are clear. Which is the most likely diagnosis?",
    opts=[
      ["Scabies",
       "Correct — nocturnal itch at six weeks with burrows in the interdigital webs and head and neck spared."],
@@ -32,7 +32,7 @@ POOL_A = [
    q="A 34-year-old woman treated for scabies two months ago has itching again, and this time it began three days after her partner was diagnosed. Which best explains the timing?",
    opts=[
      ["Reinfestation, in which symptoms develop within two to three days rather than weeks",
-      "Correct — the first infestation takes four to six weeks because sensitisation must occur."],
+      "Correct — the first infestation takes four to six weeks because sensitization must occur."],
      ["Treatment failure, in which symptoms never resolved from the original infestation",
       "The symptoms had resolved and returned after a new exposure."],
      ["Post-scabietic pruritus, which persists for up to four weeks after successful therapy",
@@ -42,7 +42,7 @@ POOL_A = [
    c=0, cite=c(6)),
 
  dict(topic="Scabies", io=IOC,
-   q="A 78-year-old nursing home resident has widespread thick flaking scale on the hands, feet and trunk with thickened discoloured nails. He does not complain of itch. Which is the most likely diagnosis?",
+   q="A 78-year-old nursing home resident has widespread thick flaking scale on the hands, feet and trunk with thickened discolored nails. He does not complain of itch. Which is the most likely diagnosis?",
    opts=[
      ["Crusted scabies",
       "Correct — a massive mite burden, poorly defined patches, often no pruritus, and highly infectious."],
@@ -71,7 +71,7 @@ POOL_A = [
    q="A 29-year-old woman has suspected scabies with several unexcoriated papules on the wrist. Which is the most appropriate next step?",
    opts=[
      ["Skin scraping of an unexcoriated burrow with mineral oil on a number 15 blade",
-      "Correct — microscopic identification of the organism, ova or faeces is the definitive diagnosis."],
+      "Correct — microscopic identification of the organism, ova or feces is the definitive diagnosis."],
      ["Serological testing for immunoglobulin M and immunoglobulin G against the mite",
       "Serology belongs to Lyme disease rather than scabies."],
      ["Punch biopsy of an active lesion sent for direct immunofluorescence studies",
@@ -81,7 +81,7 @@ POOL_A = [
    c=0, cite=c(13)),
 
  dict(topic="Scabies", io=IOA,
-   q="A 40-year-old man has been prescribed permethrin for scabies. Which is the most appropriate counselling point?",
+   q="A 40-year-old man has been prescribed permethrin for scabies. Which is the most appropriate counseling point?",
    opts=[
      ["Apply it overnight to the entire skin surface with attention to creases, and repeat the application one week later",
       "Correct — the second application is the point most often missed."],
@@ -97,7 +97,7 @@ POOL_A = [
    q="A 35-year-old woman treated for scabies three weeks ago still has itchy papules, though no new burrows are seen and her household has been treated. Which is the most appropriate treatment?",
    opts=[
      ["A mid to high potency topical corticosteroid, or intralesional triamcinolone acetonide",
-      "Correct — persistent post-scabietic papules are a recognised complication."],
+      "Correct — persistent post-scabietic papules are a recognized complication."],
      ["A second full course of permethrin applied overnight to the whole skin surface",
       "There is no evidence of ongoing infestation to re-treat."],
      ["Oral ivermectin every two weeks for two to three doses alongside topical therapy",
@@ -137,7 +137,7 @@ POOL_A = [
    opts=[
      ["Head louse infestation",
       "Correct — nits cannot be removed from the hair shaft, which separates them from dandruff."],
-     ["Seborrhoeic dermatitis of the scalp",
+     ["Seborrheic dermatitis of the scalp",
       "That produces greasy scale that brushes off the hair."],
      ["Tinea capitis with scaling and breakage",
       "That produces broken hairs and scaly patches rather than attached nits."],
@@ -150,7 +150,7 @@ POOL_A = [
    opts=[
      ["Resistance is increasing, so a multimodal approach combining physical and chemical methods is warranted",
       "Correct — pediculicidal effect is read twenty-four hours after application."],
-     ["Failure means the diagnosis is wrong, so the itching is more likely to be seborrhoeic dermatitis",
+     ["Failure means the diagnosis is wrong, so the itching is more likely to be seborrheic dermatitis",
       "Live lice on wet combing would settle that question directly."],
      ["Occlusive home remedies such as mayonnaise or mineral oil are the recommended next step",
       "Those alternatives may not be lethal to lice."],
@@ -181,7 +181,7 @@ POOL_A = [
      ["Pubic louse infestation",
       "That produces maculae caerulae and periumbilical papular urticaria."],
      ["Scabies of the trunk and back",
-      "Scabies favours the finger webs, wrists, axillae and genitalia."]],
+      "Scabies favors the finger webs, wrists, axillae and genitalia."]],
    c=0, cite=c(26)),
 
  dict(topic="Pediculosis", io=IOA,
@@ -198,15 +198,15 @@ POOL_A = [
    c=0, cite=c(28)),
 
  dict(topic="Pediculosis", io=IOA,
-   q="A 26-year-old man has mild pubic itching, slate-grey to bluish irregular macules about 1 cm across on the lower abdomen, and papules around the umbilicus. Which additional step is most appropriate?",
+   q="A 26-year-old man has mild pubic itching, slate-gray to bluish irregular macules about 1 cm across on the lower abdomen, and papules around the umbilicus. Which additional step is most appropriate?",
    opts=[
      ["Screen for concurrent sexually transmitted infection, since pubic lice often coexist with one",
-      "Correct — the macules are maculae caerulae, representing haemorrhage at feeding sites."],
+      "Correct — the macules are maculae caerulae, representing hemorrhage at feeding sites."],
      ["Screen for diabetes, since the intertriginous distribution suggests an underlying metabolic cause",
       "Diabetes screening belongs to erythrasma, a Corynebacterium infection of the body folds; pubic lice call for screening for a concurrent sexually transmitted infection."],
      ["Screen for immunosuppression, since the massive mite burden indicates impaired immunity",
       "That reasoning applies to crusted scabies."],
-     ["Screen for coeliac disease, since the eruption is associated with gluten sensitivity",
+     ["Screen for celiac disease, since the eruption is associated with gluten sensitivity",
       "That association belongs to dermatitis herpetiformis."]],
    c=0, cite=c(24)),
 
@@ -215,7 +215,7 @@ POOL_A = [
    opts=[
      ["Phthiriasis palpebrarum, infestation of the eyelashes with pubic lice",
       "Correct — pubic lice can infest the eyelashes as well as pubic skin."],
-     ["Anterior blepharitis from staphylococcal colonisation of the lid margin",
+     ["Anterior blepharitis from staphylococcal colonization of the lid margin",
       "That would not show visible organisms at the lash base."],
      ["Demodex infestation contributing to a papulopustular facial eruption",
       "Demodex mite overgrowth contributes to papulopustular rosacea; organisms at the base of the lashes here are crab lice infesting the eyelashes."],
@@ -252,13 +252,13 @@ POOL_A = [
  dict(topic="Bedbugs", io=IOA,
    q="A 38-year-old man asks how bedbugs got into his flat when he keeps it clean. Which is the most appropriate explanation?",
    opts=[
-     ["They spread in the clothing and baggage of travellers and visitors, and in second-hand mattresses and laundry",
+     ["They spread in the clothing and baggage of travelers and visitors, and in second-hand mattresses and laundry",
       "Correct — the infestation is not a marker of poor hygiene."],
      ["They spread by direct skin-to-skin contact lasting fifteen to twenty minutes with an infested person",
       "That is how scabies is transmitted."],
      ["They spread through contaminated clothing that cannot be washed or changed regularly",
       "That is how body lice persist."],
-     ["They spread from soil or sand contaminated with the faeces of dogs and cats",
+     ["They spread from soil or sand contaminated with the feces of dogs and cats",
       "That is how cutaneous larva migrans is acquired."]],
    c=0, cite=c(32)),
 
@@ -266,9 +266,9 @@ POOL_A = [
    q="A 28-year-old man returned from a month in Brazil, where he walked barefoot on beaches. He has several painful papules on the plantar surface of one foot, one of which is a firm yellow translucent nodule about 8 mm across. Which is the most likely diagnosis?",
    opts=[
      ["Tungiasis",
-      "Correct — the female flea burrows into the skin to lay eggs, favouring feet, web spaces and periungual skin."],
+      "Correct — the female flea burrows into the skin to lay eggs, favoring feet, web spaces and periungual skin."],
      ["Cutaneous larva migrans",
-      "That produces a serpentine trail advancing two to three centimetres a day."],
+      "That produces a serpentine trail advancing two to three centimeters a day."],
      ["A plantar wart with surrounding inflammation",
       "That would not follow this travel history or enlarge over weeks."],
      ["Cercarial dermatitis after sea bathing",
@@ -296,7 +296,7 @@ POOL_A = [
      ["Tungiasis from the family Tungidae",
       "That produces enlarging papules and nodules on the feet after travel to endemic areas."],
      ["Bedbug bites acquired from furniture",
-      "Those come in linear rows of three with a haemorrhagic punctum."],
+      "Those come in linear rows of three with a hemorrhagic punctum."],
      ["Scabies acquired from the new animal",
       "Human scabies is caused by the human variety of the mite."]],
    c=0, cite=c(38)),

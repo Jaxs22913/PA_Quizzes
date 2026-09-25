@@ -12,7 +12,7 @@ patient education, side effects and contraindications come before mechanism,
 because mechanism is the part that is already over-weighted.
 
 THE TOP SECTION IS WHAT HE SAID HE WOULD ASK. The recording contains one
-explicit promise -- rebound hyperaemia from topical vasoconstrictors -- and
+explicit promise -- rebound hyperemia from topical vasoconstrictors -- and
 several explicit de-scopings. Both are more useful the night before than any
 individual row.
 
@@ -60,7 +60,7 @@ ROWS = [
   "Bacterial conjunctivitis and other superficial ocular infection",
   "Ask about sulfa allergy before prescribing.",
   "Ocular irritation, allergic reactions",
-  "AVOID in sulfonamide allergy", "Antagonises PABA to block folic acid synthesis", 19),
+  "AVOID in sulfonamide allergy", "Antagonizes PABA to block folic acid synthesis", 19),
  ("Antibacterial", "Bacitracin (ointment)",
   "Bacterial conjunctivitis, blepharitis, keratitis, corneal ulcers, meibomianitis",
   "Inexpensive ointment for lid and surface disease.",
@@ -85,7 +85,7 @@ ROWS = [
  ("Antiviral", "Acyclovir, valacyclovir, famciclovir",
   "Herpes zoster ophthalmicus; herpes simplex keratitis and iridocyclitis",
   "Oral or intravenous rather than topical.",
-  "Systemic", "Renal dosing considerations", "Nucleoside analogues", 26),
+  "Systemic", "Renal dosing considerations", "Nucleoside analogs", 26),
  ("Antiviral", "Foscarnet, ganciclovir, valganciclovir, cidofovir",
   "Cytomegalovirus retinitis",
   "Intravenous, oral or intravitreal &mdash; specialty use cases.",
@@ -97,7 +97,7 @@ ROWS = [
   "Binds sterol, increasing fungal cell membrane permeability", 32),
  ("Allergy", "Ketotifen (Zaditor, OTC), olopatadine, azelastine, alcaftadine, bepotastine, emedastine, epinastine",
   "Ocular allergy",
-  "Onset within MINUTES; allow two weeks to judge full efficacy. Typically PREFERRED over mast cell stabilisers.",
+  "Onset within MINUTES; allow two weeks to judge full efficacy. Typically PREFERRED over mast cell stabilizers.",
   "Ocular irritation, headache, INCREASED ocular dryness",
   "No significant interactions",
   "H1 INVERSE AGONISTS &mdash; they inactivate the receptor rather than simply blocking it, and remain competitive with histamine", 42),
@@ -107,9 +107,9 @@ ROWS = [
   "Ocular irritation, unpleasant taste, headache", "None specific",
   "Inhibit mast cell degranulation, limiting histamine, tryptase and prostaglandin D2", 45),
  ("Allergy", "Tetrahydrozoline (Opti-Clear), naphazoline (VasoClear), naphazoline with pheniramine (Visine-A)",
-  "Short-term relief of conjunctival redness and oedema",
-  "&#9733; NO MORE THAN TWO WEEKS &mdash; prolonged use causes REBOUND HYPERAEMIA on stopping. If no improvement within 72 HOURS, stop and see a provider. The same trap appears with nasal sprays.",
-  "REBOUND HYPERAEMIA after discontinuation",
+  "Short-term relief of conjunctival redness and edema",
+  "&#9733; NO MORE THAN TWO WEEKS &mdash; prolonged use causes REBOUND HYPEREMIA on stopping. If no improvement within 72 HOURS, stop and see a provider. The same trap appears with nasal sprays.",
+  "REBOUND HYPEREMIA after discontinuation",
   "Prolonged use; accidental ingestion in children",
   "Alpha-1 agonist LOCALLY; these imidazolines target alpha-2 SYSTEMICALLY, which is what makes an ingestion dangerous", 48),
  ("Inflammation", "Bromfenac, diclofenac, flurbiprofen, ketorolac, nepafenac",
@@ -138,9 +138,9 @@ ROWS = [
  ("Glaucoma", "Latanoprost (Xalatan), travoprost, bimatoprost (Lumigan), tafluprost",
   "Open-angle glaucoma &mdash; FIRST LINE and the most commonly used",
   "ONCE DAILY and do not exceed it &mdash; more frequent dosing INHIBITS the pressure-lowering effect. Warn about lash and iris changes.",
-  "Conjunctival hyperaemia, ocular irritation, CHANGES IN EYELASH LENGTH AND IRIS COLOUR",
+  "Conjunctival hyperemia, ocular irritation, CHANGES IN EYELASH LENGTH AND IRIS COLOR",
   "Limited systemic side effects",
-  "Prostaglandin F2 alpha analogues; increase aqueous OUTFLOW", 65),
+  "Prostaglandin F2 alpha analogs; increase aqueous OUTFLOW", 65),
  ("Glaucoma", "Timolol (Timoptic), carteolol, levobunolol &mdash; nonselective",
   "Open-angle glaucoma &mdash; second line",
   "Nonselective is MORE efficacious in the eye because beta-2 receptors predominate there &mdash; but that is also why it is worse tolerated.",
@@ -155,9 +155,9 @@ ROWS = [
   "Selective beta-1 blockade; reduces aqueous production", 68),
  ("Glaucoma", "Brimonidine (Alphagan P), apraclonidine (Iopidine)",
   "Open-angle glaucoma &mdash; the only class doing BOTH jobs",
-  "Brimonidine is more lipophilic; apraclonidine is highly ionised at physiological pH. Allergic conjunctivitis is LESS common with brimonidine.",
-  "Ocular irritation, hyperaemia (rebound effect), pruritus, allergic conjunctivitis",
-  "CONTRAINDICATED IN CHILDREN UNDER TWO &mdash; central nervous system depression and apnoea",
+  "Brimonidine is more lipophilic; apraclonidine is highly ionized at physiological pH. Allergic conjunctivitis is LESS common with brimonidine.",
+  "Ocular irritation, hyperemia (rebound effect), pruritus, allergic conjunctivitis",
+  "CONTRAINDICATED IN CHILDREN UNDER TWO &mdash; central nervous system depression and apnea",
   "Alpha-2 agonists; decrease production AND increase outflow", 69),
  ("Glaucoma", "Dorzolamide (Trusopt), brinzolamide (Azopt)",
   "Open-angle glaucoma",
@@ -186,7 +186,7 @@ ROWS = [
  ("Diagnostic", "Phenylephrine (Neo-Synephrine)",
   "Mydriasis for examination",
   "The dilated pupil stays MORE REACTIVE TO LIGHT than with an antimuscarinic.",
-  "Photosensitivity, conjunctival hyperaemia",
+  "Photosensitivity, conjunctival hyperemia",
   "Caution in cardiovascular disease",
   "Adrenergic receptor agonist", 77),
  ("Diagnostic", "Fluorescein",
@@ -217,12 +217,12 @@ def main():
         'of people still get it wrong every test. I don&rsquo;t know why because I tell you '
         'explicitly, that&rsquo;s what I&rsquo;m going to be asking about.&rdquo;</em></p>'
         '<p>So: <strong>no more than two weeks</strong>, because prolonged use causes rebound '
-        'hyperaemia on stopping; and <strong>if no improvement in 72 hours</strong>, stop and see '
+        'hyperemia on stopping; and <strong>if no improvement in 72 hours</strong>, stop and see '
         'a provider. He noted the same trap returns with nasal sprays in ENT.</p></div>'
         '<div class="note"><h3>What he took OFF the table</h3><ul>'
         '<li><strong>Indications for the individual antibiotics</strong> &mdash; <em>&ldquo;don&rsquo;t '
         'worry so much about indications for use &hellip; a lot of them have a lot of '
-        'crossover.&rdquo;</em> They are listed below for reference, not for memorising.</li>'
+        'crossover.&rdquo;</em> They are listed below for reference, not for memorizing.</li>'
         '<li><strong>Formulations</strong> &mdash; <em>&ldquo;I don&rsquo;t care that you memorize '
         'that necessarily, with some exceptions.&rdquo;</em></li>'
         '<li><strong>Which agent causes irritation or hypersensitivity</strong> &mdash; '
@@ -276,7 +276,7 @@ def main():
 
     # Guards: the promised item and every de-scoping must survive into the page.
     for needle, what in (("I will ask this question", "the explicit exam promise"),
-                         ("rebound hyperaemia", "the rebound hyperaemia rule"),
+                         ("rebound hyperemia", "the rebound hyperemia rule"),
                          ("72 hours", "the 72-hour review point"),
                          ("ANY of these can do that", "the adverse-effect de-scoping")):
         assert needle.lower() in html.lower(), "%s was dropped" % what

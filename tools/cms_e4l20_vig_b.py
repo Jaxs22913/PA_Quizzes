@@ -46,7 +46,7 @@ Q("Initial agent selection", IO,
     "Correct. One first-line agent is reasonable in stage 1, and the first-line classes are thiazide-type diuretics, renin-angiotensin blockers and dihydropyridine calcium channel blockers. Chlorthalidone is the preferred one."],
    ["A beta blocker",
     "Beta blockers are specifically NOT first-line for uncomplicated hypertension; they are chosen "
-    "when a comorbidity such as reduced ejection fraction or ischaemic disease selects them."],
+    "when a comorbidity such as reduced ejection fraction or ischemic disease selects them."],
    ["Spironolactone",
     "Spironolactone is the evidence-supported fourth agent in confirmed resistant hypertension "
     "rather than an initial choice."],
@@ -73,7 +73,7 @@ Q("Preferred combinations", IO,
     "dihydropyridine or a thiazide-type diuretic, because the classes act by complementary "
     "mechanisms."],
    ["An ACE inhibitor with an angiotensin receptor blocker",
-    "This combination must NEVER be used: dual blockade raises hyperkalaemia and acute kidney injury "
+    "This combination must NEVER be used: dual blockade raises hyperkalemia and acute kidney injury "
     "risk without additional benefit."],
    ["A beta blocker with verapamil",
     "Both slow the sinus and atrioventricular nodes, so combining them risks severe bradycardia and "
@@ -85,15 +85,15 @@ Q("Preferred combinations", IO,
 Q("Dual RAAS blockade", IO,
   "A 63-year-old man on lisinopril remains above goal. A colleague suggests adding losartan. What "
   "is the problem?",
-  [["Dual blockade raises hyperkalaemia and kidney injury risk",
+  [["Dual blockade raises hyperkalemia and kidney injury risk",
     "Correct, and the instruction is absolute rather than cautionary: one is used INSTEAD of the other. The two look complementary if the mechanism is read loosely, which is why the rule is stated so plainly. It adds no benefit in exchange."],
    ["The combination is acceptable if potassium is monitored",
     "The instruction is never to combine them rather than to combine them with monitoring."],
    ["The two cancel each other out pharmacologically",
-    "They act at different points on the same pathway rather than cancelling; the problem is "
+    "They act at different points on the same pathway rather than canceling; the problem is "
     "additive harm."],
    ["Angioedema occurs in most patients on the combination",
-    "Angioedema is a recognised risk of ACE inhibition specifically; the reason to avoid the "
+    "Angioedema is a recognized risk of ACE inhibition specifically; the reason to avoid the "
     "combination is renal and potassium harm."]], C(65)),
 
 Q("ACE inhibitor cough", IO,
@@ -107,7 +107,7 @@ Q("ACE inhibitor cough", IO,
     "Switching class removes the mechanism rather than masking the symptom, and an equally effective "
     "alternative exists."],
    ["Add losartan to the lisinopril",
-    "Dual renin-angiotensin blockade is specifically prohibited because of hyperkalaemia and kidney "
+    "Dual renin-angiotensin blockade is specifically prohibited because of hyperkalemia and kidney "
     "injury risk."],
    ["Stop all antihypertensive therapy",
     "A tolerability problem with one agent is managed by substitution rather than by abandoning "
@@ -130,16 +130,16 @@ Q("Angioedema", IO,
 
 Q("Calcium channel blockers", IO,
   "A 66-year-old woman on amlodipine reports swollen ankles that are worse by evening. Her jugular venous pressure is normal and her lungs are clear. What is the most likely explanation?",
-  [["Dependent ankle oedema",
+  [["Dependent ankle edema",
     "Correct. It follows from arterial vasodilation rather than fluid overload, which is why a diuretic does not fix it. Flushing, headache and gingival enlargement belong to the same class. It is the commonest effect of a dihydropyridine."],
    ["Heart failure requiring a loop diuretic",
-    "A normal jugular venous pressure and clear lungs argue against fluid overload, and the oedema "
+    "A normal jugular venous pressure and clear lungs argue against fluid overload, and the edema "
     "here is vasodilatory."],
    ["An adverse effect of renin-angiotensin blockade",
-    "Ankle oedema is a dihydropyridine effect; renin-angiotensin blockers cause cough, "
-    "hyperkalaemia, a creatinine rise and angioedema."],
-   ["Hypoalbuminaemia from thiazide therapy",
-    "Thiazide concerns are hyponatraemia, hypokalaemia, hyperuricaemia and volume depletion."]],
+    "Ankle edema is a dihydropyridine effect; renin-angiotensin blockers cause cough, "
+    "hyperkalemia, a creatinine rise and angioedema."],
+   ["Hypoalbuminemia from thiazide therapy",
+    "Thiazide concerns are hyponatremia, hypokalemia, hyperuricemia and volume depletion."]],
   C(57)),
 
 Q("Non-dihydropyridines", IO,
@@ -148,10 +148,10 @@ Q("Non-dihydropyridines", IO,
   [["Severe bradycardia and heart block",
     "Correct. Both agents slow the sinus and atrioventricular nodes, so combining them stacks the "
     "same effect. Both are also avoided where the ejection fraction is already reduced."],
-   ["Hyperkalaemia and acute kidney injury",
-    "Hyperkalaemia and kidney injury follow dual renin-angiotensin blockade rather than this combination."],
-   ["Dependent ankle oedema",
-    "Ankle oedema is the commonest effect of the DIHYDROPYRIDINE calcium channel blockers rather "
+   ["Hyperkalemia and acute kidney injury",
+    "Hyperkalemia and kidney injury follow dual renin-angiotensin blockade rather than this combination."],
+   ["Dependent ankle edema",
+    "Ankle edema is the commonest effect of the DIHYDROPYRIDINE calcium channel blockers rather "
     "than a hazard of this pairing."],
    ["Rebound hypertension on withdrawal",
     "Rebound on abrupt withdrawal is a limitation of the central alpha-2 agonists such as clonidine."]],
@@ -162,7 +162,7 @@ Q("Beta blockers", IO,
   "myocardial infarction six months ago. Which class is preferred for him?",
   [["A beta blocker",
     "Correct. Beta blockers are not first-line for uncomplicated hypertension, but reduced ejection "
-    "fraction heart failure, recent infarction and ischaemic disease are exactly the comorbidities "
+    "fraction heart failure, recent infarction and ischemic disease are exactly the comorbidities "
     "that select them."],
    ["A non-dihydropyridine calcium channel blocker",
     "Verapamil and diltiazem are avoided where the ejection fraction is already reduced, as it is here."],
@@ -175,7 +175,7 @@ Q("Beta blockers", IO,
 
 Q("Thiazide monitoring", IO,
   "A 78-year-old woman is started on chlorthalidone. Which monitoring matters most for her?",
-  [["Sodium, given the risk of thiazide hyponatraemia",
+  [["Sodium, given the risk of thiazide hyponatremia",
     "Correct, particularly where sodium is already low-normal, and volume status matters in older "
     "adults too. Electrolytes and uric acid are the standing monitoring for the class."],
    ["Liver enzymes every three months",
@@ -190,15 +190,15 @@ Q("Thiazide monitoring", IO,
 Q("Thiazide adverse effects", IO,
   "A 62-year-old man on chlorthalidone presents with an acutely painful, swollen first "
   "metatarsophalangeal joint. What connects this to his medication?",
-  [["Hyperuricaemia may precipitate gout",
+  [["Hyperuricemia may precipitate gout",
     "Correct, which is why uric acid is monitored alongside electrolytes and volume status in "
     "patients on a thiazide-type diuretic."],
-   ["Thiazide-induced hyperkalaemia",
-    "Thiazides cause hypokalaemia rather than hyperkalaemia, and neither precipitates gout."],
+   ["Thiazide-induced hyperkalemia",
+    "Thiazides cause hypokalemia rather than hyperkalemia, and neither precipitates gout."],
    ["Thiazide-induced angioedema",
     "Angioedema is an ACE inhibitor class effect mediated by bradykinin rather than a thiazide effect."],
-   ["Thiazide-induced ankle oedema",
-    "Dependent ankle oedema is a dihydropyridine effect and would not present as an acutely "
+   ["Thiazide-induced ankle edema",
+    "Dependent ankle edema is a dihydropyridine effect and would not present as an acutely "
     "inflamed single joint."]], C(55)),
 
 Q("Treatment goal", IO,
@@ -219,7 +219,7 @@ Q("Resistant hypertension", IO,
   "commonest explanation to exclude first?",
   [["Medication nonadherence",
     "Correct, and it heads a list that also includes measurement error, white coat effect, high "
-    "sodium or alcohol intake, interfering drugs, and undiagnosed sleep apnoea or secondary "
+    "sodium or alcohol intake, interfering drugs, and undiagnosed sleep apnea or secondary "
     "hypertension."],
    ["Undiagnosed primary aldosteronism",
     "Secondary hypertension is on the list to rule out, but nonadherence is the commonest single "
@@ -233,24 +233,24 @@ Q("Resistant hypertension", IO,
 Q("Resistant hypertension", IO,
   "A 61-year-old woman has confirmed resistant hypertension: adherent, correctly measured, above "
   "goal on three complementary agents. What is the first step in management?",
-  [["Optimise the diuretic, with chlorthalidone preferred",
+  [["Optimize the diuretic, with chlorthalidone preferred",
     "Correct, and it comes before adding anything. An inadequate or inappropriate diuretic is a common reason the other two agents appear to be failing. The diuretic class is matched to renal function."],
    ["Add spironolactone immediately",
-    "Spironolactone is the fourth agent, added after the diuretic is optimised and the foundational "
+    "Spironolactone is the fourth agent, added after the diuretic is optimized and the foundational "
     "three are titrated."],
    ["Refer to a hypertension specialist",
     "Referral is for truly difficult cases after the described sequence rather than as the first "
     "step."],
    ["Stop all agents and restart from the beginning",
-    "The approach is to optimise and titrate what is in place rather than to begin again."]], C(67)),
+    "The approach is to optimize and titrate what is in place rather than to begin again."]], C(67)),
 
 Q("Resistant hypertension", IO,
-  "A 57-year-old man with confirmed resistant hypertension has had his diuretic optimised and his "
+  "A 57-year-old man with confirmed resistant hypertension has had his diuretic optimized and his "
   "other two agents titrated to maximally tolerated doses. His filtration rate and potassium are "
   "normal. Which fourth agent has the most evidence?",
   [["Spironolactone",
     "Correct, provided the filtration rate and potassium allow. It is added after the foundational "
-    "three are optimised rather than instead of doing so."],
+    "three are optimized rather than instead of doing so."],
    ["A beta blocker",
     "Beta blockade appears among the later escalation options chosen by physiology and comorbidity "
     "rather than as the evidence-supported fourth agent."],
@@ -262,11 +262,11 @@ Q("Resistant hypertension", IO,
 
 Q("Left ventricular hypertrophy", IO,
   "A 67-year-old man with long-standing hypertension has echocardiography showing left ventricular hypertrophy with impaired diastolic relaxation and a normal ejection fraction. He is breathless on exertion. What does this mean for his prognosis?",
-  [["Preserved ejection fraction failure is a recognised endpoint",
+  [["Preserved ejection fraction failure is a recognized endpoint",
     "Correct. A normal ejection fraction does not reassure, because preserved-fraction failure is "
     "one of the two routes hypertensive heart disease can take."],
    ["A normal ejection fraction excludes heart failure",
-    "Both preserved and reduced ejection fraction failure are recognised endpoints, which is why "
+    "Both preserved and reduced ejection fraction failure are recognized endpoints, which is why "
     "diastolic parameters matter as much as the ejection fraction."],
    ["The hypertrophy carries no risk of its own",
     "Hypertrophy independently raises cardiovascular risk beyond the pressure that caused it."],
@@ -280,8 +280,8 @@ Q("Hypertensive kidney disease", IO,
   [["The earliest measurable markers of hypertensive kidney damage",
     "Correct, and both are watched as trends rather than single values, because the direction of "
     "travel is what identifies progression early enough to act on."],
-   ["An expected consequence of ageing requiring no action",
-    "A consistent trend in both markers indicates ongoing damage rather than the expected change of ageing."],
+   ["An expected consequence of aging requiring no action",
+    "A consistent trend in both markers indicates ongoing damage rather than the expected change of aging."],
    ["Evidence that her blood pressure is adequately controlled",
     "Rising albuminuria with falling filtration indicates ongoing injury rather than control."],
    ["A finding specific to diabetic rather than hypertensive disease",
@@ -290,16 +290,16 @@ Q("Hypertensive kidney disease", IO,
 
 Q("Cerebrovascular disease", IO,
   "A 69-year-old man with poorly controlled hypertension asks which strokes he is at risk of. What should he be told?",
-  [["Both ischaemic and haemorrhagic stroke",
+  [["Both ischemic and hemorrhagic stroke",
     "Correct. Hypertension raises the risk of both mechanisms, and chronic small-vessel injury "
     "separately contributes to white matter change, lacunar infarcts and cognitive decline."],
-   ["Ischaemic stroke only",
-    "Intracerebral haemorrhage is also described, which is part of why sustained systolic burden "
+   ["Ischemic stroke only",
+    "Intracerebral hemorrhage is also described, which is part of why sustained systolic burden "
     "matters so much."],
-   ["Intracerebral haemorrhage only",
-    "Ischaemic stroke is described alongside haemorrhage and chronic small-vessel injury."],
-   ["Subarachnoid haemorrhage specifically",
-    "The described events are ischaemic stroke and intracerebral haemorrhage rather than "
+   ["Intracerebral hemorrhage only",
+    "Ischemic stroke is described alongside hemorrhage and chronic small-vessel injury."],
+   ["Subarachnoid hemorrhage specifically",
+    "The described events are ischemic stroke and intracerebral hemorrhage rather than "
     "subarachnoid bleeding."]], C(27)),
 
 Q("Emergency symptoms", IO,
@@ -308,10 +308,10 @@ Q("Emergency symptoms", IO,
     "Correct. Confusion or seizures, visual disturbance or focal deficit, abrupt severe headache, "
     "chest or severe back pain, and oliguria each map to an organ under acute injury."],
    ["Mild ankle swelling after starting amlodipine",
-    "Dependent ankle oedema is the commonest adverse effect of a dihydropyridine rather than a "
+    "Dependent ankle edema is the commonest adverse effect of a dihydropyridine rather than a "
     "feature of emergency."],
    ["A dry cough three weeks after starting lisinopril",
-    "Cough is a recognised bradykinin-mediated class effect prompting a switch to an angiotensin "
+    "Cough is a recognized bradykinin-mediated class effect prompting a switch to an angiotensin "
     "receptor blocker."],
    ["A mild headache in a patient with known hypertension",
     "Headache is common but nonspecific; it is the ABRUPT SEVERE headache that warrants immediate "
@@ -362,8 +362,8 @@ Q("Retinopathy", IO,
 Q("Chest radiography", IO,
   "A 59-year-old hypertensive man is breathless with bibasal crackles and raised jugular venous "
   "pressure. Is chest radiography appropriate?",
-  [["Yes, because findings suggest pulmonary oedema",
-    "Correct. Radiography is appropriate when dyspnoea or findings suggest pulmonary oedema, when "
+  [["Yes, because findings suggest pulmonary edema",
+    "Correct. Radiography is appropriate when dyspnea or findings suggest pulmonary edema, when "
     "cardiomegaly is suspected, or when a widened mediastinum is a concern."],
    ["No, because chest radiography is never indicated in hypertension",
     "It is not indicated ROUTINELY for uncomplicated hypertension, which is different from never "
@@ -377,7 +377,7 @@ Q("Chest radiography", IO,
 Q("Echocardiography", IO,
   "Which hypertensive patient warrants echocardiography?",
   [["One with suspected heart failure and a significant murmur",
-    "Correct, alongside hypertrophy on the electrocardiogram or unexplained dyspnoea. It is not "
+    "Correct, alongside hypertrophy on the electrocardiogram or unexplained dyspnea. It is not "
     "required for every new hypertensive patient."],
    ["Every newly diagnosed hypertensive patient",
     "It is targeted rather than routine, reserved for the specific indications listed."],
@@ -420,12 +420,12 @@ Q("Hypertensive emergency", IO,
   [["Autoregulation had adapted to the higher pressure",
     "Correct. Her organs had reset the range over which they protect their own perfusion, so a value that would be safe in anyone else left her brain underperfused. Reducing it that fast left her brain underperfused."],
    ["The reduction was appropriate and the deficit is unrelated",
-    "Reducing to a chronic goal within the first hour is specifically capable of causing ischaemic "
+    "Reducing to a chronic goal within the first hour is specifically capable of causing ischemic "
     "stroke, myocardial injury or renal failure."],
    ["She developed rebound hypertension",
     "Rebound on abrupt withdrawal is a limitation of central alpha-2 agonists and does not explain a "
     "deficit after an over-rapid reduction."],
-   ["Hyperkalaemia precipitated the event",
+   ["Hyperkalemia precipitated the event",
     "Potassium disturbance relates to renin-angiotensin blockade rather than to the rate of pressure "
     "reduction."]], C(69)),
 
@@ -435,9 +435,9 @@ Q("Escalation", IO,
   [["Add a thiazide-type diuretic",
     "Correct. The foundational three are a renin-angiotensin blocker, a dihydropyridine and a thiazide-type diuretic, all titrated before resistance can be considered confirmed. It is the third of the foundational agents."],
    ["Add an ACE inhibitor",
-    "Dual renin-angiotensin blockade is prohibited because of hyperkalaemia and kidney injury risk."],
+    "Dual renin-angiotensin blockade is prohibited because of hyperkalemia and kidney injury risk."],
    ["Add spironolactone now",
-    "Spironolactone is the fourth agent, added only after the foundational three have been optimised."],
+    "Spironolactone is the fourth agent, added only after the foundational three have been optimized."],
    ["Add a second dihydropyridine",
     "Duplicating a class adds adverse effects without the complementary mechanism a third class gives."]], C(65)),
 
@@ -456,7 +456,7 @@ Q("Patient education", IO,
 
 Q("Referral", IO,
   "A 55-year-old man remains above goal despite the described sequence: adherence confirmed, "
-  "diuretic optimised, three agents titrated, spironolactone added and tolerated. What now?",
+  "diuretic optimized, three agents titrated, spironolactone added and tolerated. What now?",
   [["Refer to a hypertension specialist",
     "Correct. Referral is reserved for truly difficult cases after the full sequence has been worked "
     "through rather than being an early substitute for it."],

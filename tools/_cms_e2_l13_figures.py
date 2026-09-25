@@ -39,9 +39,9 @@ POSITIONS = {
 LOOK = {
     ("s011", "A"): "Soft drusen &mdash; large, pale, indistinct deposits at the macula",
     ("s011", "B"): "Hard drusen &mdash; small, discrete, sharply defined yellow dots",
-    ("s011", "C"): "Haemorrhage from choroidal neovascularisation bleeding into retina",
-    ("s011", "D"): "The disciform scar that haemorrhage leaves behind",
-    ("s037", "ABOVE"): "Acquired nuclear cataract &mdash; the lens centre yellowed and dense",
+    ("s011", "C"): "Hemorrhage from choroidal neovascularization bleeding into retina",
+    ("s011", "D"): "The disciform scar that hemorrhage leaves behind",
+    ("s037", "ABOVE"): "Acquired nuclear cataract &mdash; the lens center yellowed and dense",
     ("s037", "BELOW"): "Acquired cortical cataract &mdash; spokes running in from the edge",
     ("s038", "ABOVE"): "Pediatric polar cataract &mdash; a discrete opacity at the lens pole",
     ("s038", "BELOW"): "Pediatric nuclear cataract &mdash; central clouding in an infant lens",

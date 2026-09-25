@@ -23,7 +23,7 @@ ORDER = [
   ["Acute sinusitis (rhinosinusitis)", "Bacterial sinusitis &mdash; the features that suggest it",
    "Sinusitis with urgent features", "Chronic bacterial sinusitis", "Chronic fungal sinusitis"]),
  ("l17-septum", "3.2 &middot; The septum",
-  ["Deviated septum", "Perforated septum", "Septal haematoma"]),
+  ["Deviated septum", "Perforated septum", "Septal hematoma"]),
  ("l17-bleed", "3.3 &middot; Epistaxis",
   ["Epistaxis &mdash; anterior", "Epistaxis &mdash; posterior"]),
  ("l17-trauma", "3.4 &middot; Trauma and foreign bodies",
@@ -143,10 +143,10 @@ def build():
   </div>
 
   <div class="callout">
-    <p><strong>Discharge colour is the thing patients trust most and the thing that helps
+    <p><strong>Discharge color is the thing patients trust most and the thing that helps
     least.</strong> Yellow or green is explicitly the <em>least</em> useful. Clear may be viral or
     allergic. Yellow <em>and</em> putrid suggests bacterial. <strong>Black suggests
-    fungus.</strong> Rust-coloured may be <em>S. pneumoniae</em>.</p>
+    fungus.</strong> Rust-colored may be <em>S. pneumoniae</em>.</p>
     <p><strong>Allergy does not cause an &ldquo;-itis&rdquo;.</strong> It creates the perfect
     environment for infection. Many patients who believe they have sinusitis have allergic
     disease.</p>

@@ -106,8 +106,8 @@ def main():
               'he named himself</b>; the rest are the decks&rsquo; adverse effects sorted by his '
               'criteria, each citing its slide.</span>')
     notes = """    <div class="note"><b>Why a framework beats a list.</b> The side-effects reference on this
-    site is organised by drug, which is the right shape for looking something up and the wrong
-    shape for revising. This one is organised the way he said he thinks about them, which is the
+    site is organized by drug, which is the right shape for looking something up and the wrong
+    shape for revising. This one is organized the way he said he thinks about them, which is the
     shape the question comes in. Use both:
     <a href="pharm-exam-1-side-effects.html">the full side-effects chart is here</a>.</div>"""
     toc = ('<a href="#how">How to use this</a><a href="#killers">Killers</a>'

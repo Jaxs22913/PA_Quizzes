@@ -12,7 +12,7 @@ FIXES = {
  4:  (2, "Primary, opportunistic and reactivated, according to the host's immune status and whether the organism was previously encountered"),
  8:  (3, "It is converted to a fluorinated nucleotide by a fungal enzyme and then blocks thymidylate synthase, halting deoxyribonucleic acid synthesis"),
  10: (2, "They are caused by rapid fungal lysis releasing endotoxin into the circulation, and are prevented by slowing the rate of the infusion alone"),
- 11: (1, "Hyperkalaemia and hypercalcaemia with a rising glomerular filtration rate, hypertension, and tubular hypertrophy that resolves without any need for hydration"),
+ 11: (1, "Hyperkalemia and hypercalcemia with a rising glomerular filtration rate, hypertension, and tubular hypertrophy that resolves without any need for hydration"),
  12: (1, "It is rapidly metabolized by hepatic cytochrome P450 enzymes before it can reach the systemic circulation"),
  13: (3, "It is actively pumped into fungal cells by a membrane transporter that is entirely absent from human cells and tissues"),
  15: (1, "Nephrotoxicity and electrolyte wasting requiring hydration with normal saline"),

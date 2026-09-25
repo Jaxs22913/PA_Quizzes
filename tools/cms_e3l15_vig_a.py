@@ -29,15 +29,15 @@ QUESTIONS = [
  dict(topic="Eustachian tube dysfunction", io=IO_A, lead="patient education", cite=D % 10,
   q="A 34-year-old man with ear fullness two days after a cold is due to fly in the morning. What should he be told?",
   opts=[["Postpone the flight until symptoms resolve", "Correct. Pressure change across a blocked tube is what causes the injury."],
-        ["Fly, but avoid swallowing on descent", "Swallowing helps equalise; avoiding it makes matters worse."],
+        ["Fly, but avoid swallowing on descent", "Swallowing helps equalize; avoiding it makes matters worse."],
         ["Fly, and use antibiotic ear drops during the flight", "Drops do not reach the middle ear and there is no infection."],
-        ["Fly, but sleep through the descent", "Sleeping through descent removes the chance to equalise."]]),
+        ["Fly, but sleep through the descent", "Sleeping through descent removes the chance to equalize."]]),
 
  dict(topic="Eustachian tube dysfunction", io=IO_A, lead="next step", cite=D % 10,
   q="A 41-year-old woman with ear fullness is told to exhale forcibly against a pinched nose. She also has thick purulent nasal discharge. What is the concern?",
   opts=[["It can force infected material into the middle ear", "Correct, which risks acute otitis media."],
         ["It can rupture the tympanic membrane immediately", "Rupture is not the stated concern here."],
-        ["It can cause permanent sensorineural loss", "The inner ear is not threatened by the manoeuvre."],
+        ["It can cause permanent sensorineural loss", "The inner ear is not threatened by the maneuver."],
         ["It can trigger vertigo lasting weeks", "Prolonged vertigo is not a described consequence."]]),
 
  dict(topic="Acute otitis media", io=IO_B, lead="treatment", cite=D % 18,
@@ -112,10 +112,10 @@ QUESTIONS = [
 
  dict(topic="Barotrauma", io=IO_A, lead="diagnosis", cite=D % 23,
   q="A 29-year-old man has severe right ear pain and muffled hearing that began during the descent of a flight. The right drum is dark blue-black and barely moves on insufflation. What is the most likely diagnosis?",
-  opts=[["Barotrauma with haemotympanum (blood behind the eardrum)",
+  opts=[["Barotrauma with hemotympanum (blood behind the eardrum)",
          "Correct — the appearance and the pressure history together."],
         ["Cholesteatoma", "That shows keratin debris rather than blood."],
-        ["Glomus tumour", "That is a vascular mass, and it presents with pulsatile noise."],
+        ["Glomus tumor", "That is a vascular mass, and it presents with pulsatile noise."],
         ["Otitis externa", "The canal skin would be inflamed and tender."]]),
 
  dict(topic="Barotrauma", io=IO_A, lead="next step", cite=D % 24,
@@ -176,7 +176,7 @@ QUESTIONS = [
 
  dict(topic="Ear anatomy", io=IO_A, lead="defining feature", cite=D % 8,
   q="A 22-year-old man has a normal ear examination. Which description matches his tympanic membrane?",
-  opts=[["Pearly grey and mobile", "Correct."],
+  opts=[["Pearly gray and mobile", "Correct."],
         ["Red and bulging", "That indicates acute infection."],
         ["Retracted and immobile", "That indicates eustachian tube dysfunction."],
         ["Blue-black and immobile", "That indicates blood in the middle ear."]]),
@@ -211,10 +211,10 @@ QUESTIONS = [
 
  dict(topic="Barotrauma", io=IO_A, lead="patient education", cite=D % 25,
   q="A 26-year-old woman must fly tomorrow and has mild nasal congestion from a cold. She asks how to reduce her risk of ear pain. What should she be advised?",
-  opts=[["Take a decongestant beforehand and equalise on descent",
+  opts=[["Take a decongestant beforehand and equalize on descent",
          "Correct — swallowing, yawning and gentle exhalation against resistance all help."],
         ["Avoid drinking anything during the flight", "Swallowing helps rather than harms."],
-        ["Sleep for the whole descent", "Sleeping through descent removes the chance to equalise."],
+        ["Sleep for the whole descent", "Sleeping through descent removes the chance to equalize."],
         ["Use antibiotic drops before boarding", "There is no infection and drops do not reach the middle ear."]]),
 
  dict(topic="Chronic otitis media", io=IO_A, lead="defining feature", cite=D % 20,

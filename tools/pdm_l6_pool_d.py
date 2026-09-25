@@ -91,7 +91,7 @@ POOL_D = [
  dict(topic="Hematuria", io=IOB, slot="interpretation",
    q="Which of these causes bleeding into the urinary tract?",
    opts=[
-     ["Infection, inflammation, trauma, tumour, or a stone",
+     ["Infection, inflammation, trauma, tumor, or a stone",
       "Correct — any of these can produce hematuria."],
      ["Intravascular destruction of red cells",
       "That gives hemoglobinuria, with no intact cells."],
@@ -105,7 +105,7 @@ POOL_D = [
    q="A patient on anticoagulation reports blood in the urine. What should that raise?",
    opts=[
      ["The possibility that the anticoagulation is over-aggressive",
-      "Correct — excessive anticoagulation is a recognised cause."],
+      "Correct — excessive anticoagulation is a recognized cause."],
      ["The possibility of rhabdomyolysis",
       "Muscle injury gives myoglobinuria rather than frank blood."],
      ["The possibility of intravascular hemolysis",
@@ -147,14 +147,14 @@ POOL_D = [
       "Correct — rapid intravascular destruction of red cells."],
      ["A crush injury to the thigh",
       "That releases myoglobin."],
-     ["A bladder tumour",
+     ["A bladder tumor",
       "That bleeds, giving intact red cells."],
      ["A ureteric stone",
       "That also bleeds, giving intact cells."]],
    c=0, cite=c(25)),
 
  dict(topic="Hemoglobinuria", io=IOB, slot="interpretation",
-   q="Which of these is a recognised cause of hemoglobinuria?",
+   q="Which of these is a recognized cause of hemoglobinuria?",
    opts=[
      ["Severe burns",
       "Correct — extensive burns destroy red cells intravascularly."],
@@ -196,7 +196,7 @@ POOL_D = [
    q="Which of these causes rhabdomyolysis?",
    opts=[
      ["A compression injury, hyperthermia, or a statin",
-      "Correct — all three are recognised causes."],
+      "Correct — all three are recognized causes."],
      ["A hemolytic transfusion reaction",
       "That destroys red cells rather than muscle."],
      ["Sickle cell disease",

@@ -11,7 +11,7 @@ than in any earlier PDM lecture, because THIS DECK HAS NO SPEAKER NOTES -- all
 notes. Three things exist only in the audio:
 
   1. Her testing rule, at 15:08. Know which pads read NEGATIVE; ranges are
-     supplied rather than memorised.
+     supplied rather than memorized.
   2. Bence Jones proteins are found with urine protein ELECTROPHORESIS, not a
      dipstick, at 40:09.
   3. The worked case, at 48:38. Slide 36 is an unfinished answer slide -- a
@@ -44,8 +44,8 @@ def fig(slug, ext, caption, slide):
 
 
 FIGS = {
- "@@COLOUR@@": [("urine-colour", ".jpeg",
-   "Urine colour against what it suggests. Note the food causes of red urine &mdash; "
+ "@@COLOR@@": [("urine-colour", ".jpeg",
+   "Urine color against what it suggests. Note the food causes of red urine &mdash; "
    "<b>beets</b>, blueberries and rhubarb &mdash; and that fizzing points to protein.", 7)],
  "@@STRIP@@": [("reagent-strip-chart", ".png",
    "The reagent strip chart. The <b>reading time differs by analyte</b> &mdash; thirty seconds "
@@ -88,27 +88,27 @@ SEC6 = """
   <h3 class="sub" id="l6-what">6.1 &middot; What the test is, and when to order it</h3>
   <p>Urinalysis examines the <strong>physical, chemical and microscopic</strong> contents of urine.
   It is inexpensive, non-invasive and fast, which is why it is done routinely on admission and in
-  primary care, obstetrics and paediatrics alike. In a renal evaluation it <strong>complements the
+  primary care, obstetrics and pediatrics alike. In a renal evaluation it <strong>complements the
   serum creatinine and blood urea nitrogen</strong> rather than replacing them.</p>
   <p>It reaches well beyond the urinary tract: it speaks to hepatic and biliary disease, hydration
   status and infection. <strong>Any patient with abdominal, pelvic or back pain needs one.</strong></p>
 
   @@NEPHRON@@
 
-  <h3 class="sub" id="l6-inspection">6.2 &middot; Inspection &mdash; colour, transparency, odour</h3>
+  <h3 class="sub" id="l6-inspection">6.2 &middot; Inspection &mdash; color, transparency, odor</h3>
   <p>The examination starts the way a physical examination does, by looking.</p>
   <table class="tbl">
     <tr><th>Colour</th><th>Suggests</th></tr>
-    <tr><td>Pale yellow to colourless</td><td>Dilute urine &mdash; possibly overhydrated</td></tr>
+    <tr><td>Pale yellow to colorless</td><td>Dilute urine &mdash; possibly overhydrated</td></tr>
     <tr><td>Dark yellow or amber</td><td>Concentrated urine &mdash; possibly dehydrated</td></tr>
     <tr><td>Yellow-brown or green</td><td><b>Bilirubin</b> &mdash; hepatitis, cirrhosis, biliary obstruction</td></tr>
-    <tr><td>Bright or dark red</td><td><b>Blood</b> &mdash; infection, stone, tumour, or menstrual contamination</td></tr>
-    <tr><td>Blue, orange or green</td><td><b>Medications</b> &mdash; phenazopyridine, rifampicin, urinary anaesthetics</td></tr>
+    <tr><td>Bright or dark red</td><td><b>Blood</b> &mdash; infection, stone, tumor, or menstrual contamination</td></tr>
+    <tr><td>Blue, orange or green</td><td><b>Medications</b> &mdash; phenazopyridine, rifampicin, urinary anesthetics</td></tr>
   </table>
-  <p>The medication colours are a <strong>patient education point</strong>: tell the patient before
-  they start, so a startling colour does not alarm them.</p>
+  <p>The medication colors are a <strong>patient education point</strong>: tell the patient before
+  they start, so a startling color does not alarm them.</p>
 
-  @@COLOUR@@
+  @@COLOR@@
 
   <p><strong>Transparency</strong> runs clear &rarr; hazy &rarr; cloudy &rarr; turbid. Cloudiness
   comes from red cells, white cells, epithelial cells, bacteria, yeast, crystals, mucus, contrast
@@ -116,8 +116,8 @@ SEC6 = """
   <p><strong>Odour.</strong> Normal is called <em>aromatic</em>. An <b>ammonia</b> smell means the
   sample has stood long enough for bacteria to decompose its urea &mdash; refrigerate a specimen
   that will not be read within one to two hours, and <strong>add no preservative</strong>. A
-  <b>foul</b> odour suggests bacterial infection; a <b>faecal</b> odour suggests an enterovesical
-  fistula; a <b>fruity or sweet</b> odour means ketones, and sends you to the blood sugar.</p>
+  <b>foul</b> odor suggests bacterial infection; a <b>faecal</b> odor suggests an enterovesical
+  fistula; a <b>fruity or sweet</b> odor means ketones, and sends you to the blood sugar.</p>
 
   <h3 class="sub" id="l6-strip">6.3 &middot; The reagent strip</h3>
   <p>A fresh specimen in a sterile container. Strips are kept desiccated. Results come in two
@@ -151,7 +151,7 @@ SEC6 = """
         <td>Calcium oxalate and uric acid</td>
         <td>Triple phosphate and struvite</td></tr>
     <tr><td><b>Treatment aim</b></td>
-        <td>Alkalinise the urine &mdash; chiefly for uric acid stones</td>
+        <td>Alkalinize the urine &mdash; chiefly for uric acid stones</td>
         <td>Treat the infection, since urease-producing bacteria are driving them</td></tr>
   </table>
   <p class="muted">Note the trap in the left column: <b>renal tubular acidosis produces ALKALINE
@@ -167,7 +167,7 @@ SEC6 = """
   organism, and <strong>more than four hours of urine sitting in the bladder</strong> for the
   conversion. Sensitivity is about 50%, lower than leukocyte esterase.</p>
   <div class="callout prof">
-    <p><strong>The single most emphasised idea in the lecture.</strong>
+    <p><strong>The single most emphasized idea in the lecture.</strong>
     <em>&ldquo;Remember which one did I say was most common? <strong>E. coli. E. coli is not
     urease-positive.</strong> If nitrites is positive, it&rsquo;s very helpful &hellip; but if
     nitrites is negative, it does not rule out a urinary tract infection, because the majority of
@@ -180,14 +180,14 @@ SEC6 = """
   </div>
 
   <h3 class="sub" id="l6-ketones">6.6 &middot; Ketones and glucose</h3>
-  <p><strong>Ketones</strong> are made in the liver from fatty acids and normally metabolised
+  <p><strong>Ketones</strong> are made in the liver from fatty acids and normally metabolized
   completely, so almost none reaches the urine. Ketonuria means <strong>cells are burning fatty
   acids rather than glucose</strong> &mdash; uncontrolled diabetes and ketoacidosis, starvation,
   fasting, alcoholic ketoacidosis, a high-fat low-carbohydrate diet, liver disease, and febrile
   illness in infants and children. <strong>Ketones on a strip should send you to the glucose.</strong></p>
   <p><strong>Glucose</strong> is filtered freely and then wholly reabsorbed in the proximal tubules,
   so none should appear. It spills once the blood level exceeds the <strong>tubular threshold</strong>
-  &mdash; around 180 milligrams per decilitre. Glucosuria is <em>not</em> diagnostic, because the
+  &mdash; around 180 milligrams per deciliter. Glucosuria is <em>not</em> diagnostic, because the
   threshold differs between people, but it always means further workup.</p>
   <p>Three ways glucose appears without uncontrolled diabetes: <strong>impaired tubular
   reabsorption</strong>, so it spills at a normal blood level; <strong>dextrose-containing
@@ -202,7 +202,7 @@ SEC6 = """
     <tr><th></th><th>Hematuria</th><th>Hemoglobinuria</th><th>Myoglobinuria</th></tr>
     <tr><td><b>What is in the urine</b></td><td>Intact red cells</td><td>Free hemoglobin, no intact cells</td><td>Myoglobin, no intact cells</td></tr>
     <tr><td><b>Where it comes from</b></td><td>Bleeding anywhere along the urinary tract</td><td>Intravascular destruction of red cells</td><td>Skeletal muscle injury</td></tr>
-    <tr><td><b>Causes</b></td><td>Infection, inflammation, trauma, tumour, calculus, over-aggressive anticoagulation</td><td>Hemolysis, hemolytic anemia (sickle cell), transfusion reaction, severe burns</td><td>Trauma, electric shock, rhabdomyolysis from compression injury, hyperthermia or statins</td></tr>
+    <tr><td><b>Causes</b></td><td>Infection, inflammation, trauma, tumor, calculus, over-aggressive anticoagulation</td><td>Hemolysis, hemolytic anemia (sickle cell), transfusion reaction, severe burns</td><td>Trauma, electric shock, rhabdomyolysis from compression injury, hyperthermia or statins</td></tr>
     <tr><td><b>The confirming serum test</b></td><td>&mdash; (red cells seen on microscopy)</td><td><b>Raised unconjugated bilirubin</b></td><td><b>Raised creatine phosphokinase</b></td></tr>
   </table>
   <p><strong>Gross</strong> hematuria is visible to the naked eye; <strong>microscopic</strong>
@@ -259,11 +259,11 @@ SEC6 = """
   <p>A <strong>microscopic urinalysis</strong> adds white cells, red cells, squamous epithelial
   cells, casts and crystals, and the specimen can go on for <strong>culture and sensitivity</strong>
   to name the organism and the agent that will treat it.</p>
-  <p><strong>Bacteria are significant</strong> when the specimen came by straight catheterisation,
+  <p><strong>Bacteria are significant</strong> when the specimen came by straight catheterization,
   or when they sit alongside raised white cells and a positive leukocyte esterase. They are
   <strong>probably not significant</strong> when there are more than twenty squamous epithelial
   cells per high power field (contamination), or when they come from a longstanding indwelling
-  catheter, which is colonised rather than acutely infected. Gram stain and culture are what make
+  catheter, which is colonized rather than acutely infected. Gram stain and culture are what make
   the diagnosis definitive.</p>
 
   <h3 class="sub" id="l6-case">6.11 &middot; The worked case</h3>
@@ -288,7 +288,7 @@ SEC6 = """
 
 TOC = """  <a class="top-link" href="#urinalysis">6 &middot; Urinalysis</a>
   <a class="sub-link" href="#l6-what">6.1 What the test is</a>
-  <a class="sub-link" href="#l6-inspection">6.2 Colour, transparency, odour</a>
+  <a class="sub-link" href="#l6-inspection">6.2 Color, transparency, odor</a>
   <a class="sub-link" href="#l6-strip">6.3 The reagent strip</a>
   <a class="sub-link" href="#l6-ph">6.4 pH &amp; stones</a>
   <a class="sub-link" href="#l6-infection">6.5 The two infection pads</a>
@@ -321,7 +321,7 @@ TY = """    "urinalysis": [
        why:"Less antidiuretic hormone leaves more water in the urine. The other three concentrate it."},
       {q:"Urine is alkaline and the patient has recurrent stones and infections. Which stone type?",
        o:["Struvite","Uric acid","Calcium oxalate","Cystine"],a:0,
-       why:"Urease-producing organisms alkalinise the urine, and treatment targets the infection."},
+       why:"Urease-producing organisms alkalinize the urine, and treatment targets the infection."},
       {q:"Bilirubin appears in the urine. Which form, and what does it mean?",
        o:["Conjugated &mdash; disease after conjugation, or biliary obstruction",
           "Unconjugated &mdash; hemolysis","Either form &mdash; any liver disease",

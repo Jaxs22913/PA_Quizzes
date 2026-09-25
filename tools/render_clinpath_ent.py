@@ -14,7 +14,7 @@ CHIPS = ["Hearing loss", "Ototoxicity", "Vertigo &amp; balance", "Rhinology", "L
 INTRO = ("Mechanism only. This course draws its line against Clinical Medicine and Surgery at "
          "pathophysiology against management, and this lecture tests that line &mdash; the "
          "epistaxis table has a management column sitting right beside the pathophysiology, and "
-         "not one question here is built on it. The vascular source and the aetiology are "
+         "not one question here is built on it. The vascular source and the etiology are "
          "pathophysiology; what you do about it belongs to the other course. "
          "<b>Vertigo carries extra weight.</b> The lecturer put it plainly: <i>&ldquo;on my board "
          "exams, a third of my neurology questions were vertigo related. So know this, know these "

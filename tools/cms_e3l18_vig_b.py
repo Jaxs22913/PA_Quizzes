@@ -17,13 +17,13 @@ Q("Vascular neck mass", IO,
   [["Computed tomography angiography, and do not biopsy it blindly",
     "Correct. Pulsatility or a bruit means vascular, which puts paraganglioma at the head of the "
     "list. Angiography defines the blood supply and the relationship to the carotid, and it must "
-    "come before any needle, because puncturing a highly vascular tumour risks significant "
+    "come before any needle, because puncturing a highly vascular tumor risks significant "
     "haemorrhage."],
    ["Immediate fine needle aspiration",
     "Aspiration is the standard of care for most neck masses, which is exactly why this trap works. "
     "It is the one thing not to do first into a pulsatile lesion."],
    ["A trial of antibiotics",
-    "There are no infective features, and no antibiotic influences a vascular tumour. This would "
+    "There are no infective features, and no antibiotic influences a vascular tumor. This would "
     "waste weeks."],
    ["Reassurance, as pulsation indicates a benign lesion",
     "Paragangliomas are usually benign, so the reassurance is half right, but their position and "
@@ -58,10 +58,10 @@ Q("Metastatic neck disease", IO,
     "Operating without the primary means the field cannot be planned and the source goes untreated, "
     "so the disease recurs."],
    ["Repeat the aspiration",
-    "Cytology has already given a clear answer. The outstanding question is where the tumour came "
+    "Cytology has already given a clear answer. The outstanding question is where the tumor came "
     "from, which repeating the same test cannot address."],
    ["Empirical radiotherapy to the neck",
-    "Irradiating without knowing the primary leaves an untreated tumour and commits the patient to a "
+    "Irradiating without knowing the primary leaves an untreated tumor and commits the patient to a "
     "field that may be wrong."]], C(39)),
 
 Q("Plunging ranula", IO,
@@ -137,10 +137,10 @@ Q("Thymic cyst", IO,
     "histological picture, and sits midline and submental."]], C(29)),
 
 Q("HIV adenopathy", IO,
-  "A 34-year-old man with untreated HIV has generalised cervical lymphadenopathy. Investigation "
+  "A 34-year-old man with untreated HIV has generalized cervical lymphadenopathy. Investigation "
   "finds no infectious or neoplastic cause.",
-  [["Persistent generalised lymphadenopathy, treated by treating the HIV",
-    "Correct. Persistent generalised lymphadenopathy is defined by the absence of an identifiable "
+  [["Persistent generalized lymphadenopathy, treated by treating the HIV",
+    "Correct. Persistent generalized lymphadenopathy is defined by the absence of an identifiable "
     "infectious or neoplastic cause, and the neck is its commonest site. It reflects the immune "
     "activation of untreated infection, so the treatment is antiretroviral therapy rather than "
     "anything aimed at the nodes."],
@@ -163,20 +163,20 @@ Q("Tularemia", IO,
     "with painful adenopathy and systemic symptoms is the oropharyngeal form. Diagnosis is by "
     "serology and culture, and streptomycin is the named treatment."],
    ["Trimethoprim-sulfamethoxazole",
-    "That treats brucellosis, acquired from unpasteurised milk, which produces total-body "
+    "That treats brucellosis, acquired from unpasteurized milk, which produces total-body "
     "lymphadenopathy rather than tonsillitis with regional nodes."],
    ["Azithromycin",
     "Azithromycin is used for cat scratch disease from Bartonella henselae, following cat contact "
     "with preauricular and submandibular nodes."],
    ["Sulfonamides or pyrimethamine",
-    "Those treat toxoplasmosis from undercooked meat or cat faeces, which gives fever, malaise, sore "
+    "Those treat toxoplasmosis from undercooked meat or cat feces, which gives fever, malaise, sore "
     "throat and myalgias rather than the specific tonsillitis of tularemia."]], C(33)),
 
 Q("Brucellosis", IO,
-  "A 39-year-old dairy worker who drinks unpasteurised milk has fever, fatigue, malaise and "
+  "A 39-year-old dairy worker who drinks unpasteurized milk has fever, fatigue, malaise and "
   "lymphadenopathy involving the neck, axillae and groins.",
   [["Trimethoprim-sulfamethoxazole or tetracycline",
-    "Correct. Unpasteurised milk points to Brucella, and the distinguishing clinical feature is that "
+    "Correct. Unpasteurized milk points to Brucella, and the distinguishing clinical feature is that "
     "the lymphadenopathy is total-body rather than confined to one region, which separates it from "
     "the regional adenopathies. Diagnosis is by serology and culture."],
    ["Streptomycin",
@@ -217,7 +217,7 @@ Q("Fungal neck infection", IO,
     "exactly the setting to look."],
    ["Broaden the antibiotic spectrum",
     "Broadening antibacterial cover repeats a failed strategy and further suppresses the flora, "
-    "which favours the fungal overgrowth that is the likelier problem."],
+    "which favors the fungal overgrowth that is the likelier problem."],
    ["Reduce the immunosuppression and observe",
     "Reducing immunosuppression may form part of management but risks graft rejection and does not "
     "identify the organism."],
@@ -231,7 +231,7 @@ Q("Kawasaki disease", IO,
   [["Kawasaki disease",
     "Correct. Kawasaki sits among the non-infectious inflammatory causes of neck masses alongside "
     "Sjogren syndrome, sarcoidosis and IgG4-related disease. The cervical node is one criterion "
-    "among several, and recognising the constellation matters because untreated Kawasaki causes "
+    "among several, and recognizing the constellation matters because untreated Kawasaki causes "
     "coronary artery aneurysms."],
    ["Suppurative bacterial lymphadenitis",
     "Bacterial adenitis gives a hot tender node with fever but not conjunctival injection, a "
@@ -248,7 +248,7 @@ Q("Follicular carcinoma", IO,
   "A 57-year-old woman with a thyroid carcinoma is found to have a solitary lesion in the femur.",
   [["Follicular carcinoma",
     "Correct. Route of spread is what separates follicular from papillary disease. Follicular "
-    "carcinoma disseminates haematogenously to bone and lung, whereas papillary tends to involve "
+    "carcinoma disseminates hematogenously to bone and lung, whereas papillary tends to involve "
     "local cervical nodes. A distant bony metastasis therefore points to the follicular type, and "
     "the Hurthle cell variant is more aggressive still."],
    ["Papillary carcinoma",
@@ -264,7 +264,7 @@ Q("Follicular carcinoma", IO,
 
 Q("Neck mass in the immunocompromised", IO,
   "A 40-year-old man with untreated HIV has a rapidly enlarging cervical mass with purple "
-  "discolouration of the overlying skin.",
+  "discoloration of the overlying skin.",
   [["Kaposi sarcoma",
     "Correct. Kaposi sarcoma is one of the conditions that must be excluded in an HIV-positive "
     "patient with lymphadenopathy, alongside tuberculosis, Pneumocystis and lymphoma. Its vascular "
@@ -273,9 +273,9 @@ Q("Neck mass in the immunocompromised", IO,
    ["Idiopathic follicular hyperplasia",
     "Hyperplasia is the commonest cause of adenopathy in HIV and the right base rate, but it "
     "produces ordinary-looking nodes without skin change and is a diagnosis of exclusion."],
-   ["Persistent generalised lymphadenopathy",
-    "That diagnosis requires no identifiable infectious or neoplastic cause and is generalised, not "
-    "a single rapidly enlarging mass with skin discolouration."],
+   ["Persistent generalized lymphadenopathy",
+    "That diagnosis requires no identifiable infectious or neoplastic cause and is generalized, not "
+    "a single rapidly enlarging mass with skin discoloration."],
    ["Reactive viral lymphadenopathy",
     "Reactive nodes follow an upper respiratory infection and regress in one to two weeks without "
     "changing the overlying skin."]], C(32)),

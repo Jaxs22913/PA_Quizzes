@@ -11,7 +11,7 @@ CHIPS = ["Phenotypic", "Genotypic", "Immunological", "Culture media",
          "Sensitivity testing", "Blots &amp; immunoassays"]
 INTRO = ("Lecture 8 of Microbiology &mdash; Diagnosing Infections. Thirty questions, every one "
          "cited to the slide it came from. "
-         "<b>One split organises the whole lecture.</b> Every identification method is "
+         "<b>One split organizes the whole lecture.</b> Every identification method is "
          "phenotypic (what you can observe), genotypic (the genetic makeup) or immunological "
          "(antibody against antigen) &mdash; and most questions here can be answered by asking "
          "which of the three a technique belongs to. Phenotypic methods need the organism grown "
@@ -20,7 +20,7 @@ INTRO = ("Lecture 8 of Microbiology &mdash; Diagnosing Infections. Thirty questi
          "awkward ones like <i>Legionella</i>; immunological methods may or may not need culture. "
          "<b>Two things are easy to get backwards.</b> Larger zones of inhibition mean a MORE "
          "effective drug. And in complement fixation, lysed red cells are a NEGATIVE result "
-         "&mdash; fixed complement cannot lyse them, so no haemolysis means the serum is "
+         "&mdash; fixed complement cannot lyse them, so no hemolysis means the serum is "
          "positive. "
          "<b>The blots are worth learning as a set</b>: Southern for DNA (the original, Edwin "
          "Southern, ~1975), Northern for RNA and gene expression (~1977), Western for proteins "

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Repair the urgency badge colour on the ophthalmology comparison chart.
+"""Repair the urgency badge color on the ophthalmology comparison chart.
 
-The badge that says how fast a condition must be seen is coloured by class:
+The badge that says how fast a condition must be seen is colored by class:
 .u.emerg dark red, .u.sameday orange, .u.urg amber, .u.rout green. The builder
 picks the class with
 
@@ -21,7 +21,7 @@ rupture, hyphema and the rest. One row went the other way, showing a "Routine"
 badge in the urgent amber.
 
 The comparison is now case-insensitive, so a lecture written in any case lands
-in the right colour.
+in the right color.
 """
 import os, re
 
@@ -41,7 +41,7 @@ def fix_builder():
            '                   "urg" if urg.startswith("Urgent") or "URGENT" in urg else "rout")')
     new = ('        # CASE-INSENSITIVE. The uppercase-only test this replaces sent every\n'
            '        # Lecture 13 and 14 row -- which write "Emergent" and "Same day" in\n'
-           '        # title case -- to the "rout" default, colouring twenty-one\n'
+           '        # title case -- to the "rout" default, coloring twenty-one\n'
            '        # emergencies in the routine green.\n'
            '        _u = urg.upper()\n'
            '        urg_cls = ("emerg" if "EMERGENT" in _u else\n'
@@ -72,7 +72,7 @@ def fix_chart():
 
     s = re.sub(r'<span class="u ([a-z]+)">(.*?)</span>', repl, s, flags=re.S)
     open(CHART, "w", encoding="utf-8").write(s)
-    print("  cms-ophtho-comparison-chart.html: %d badge colours corrected" % n[0])
+    print("  cms-ophtho-comparison-chart.html: %d badge colors corrected" % n[0])
     return n[0]
 
 
@@ -85,7 +85,7 @@ def verify():
             if plain.startswith(key) and c != m.group(1):
                 bad.append((plain[:24], m.group(1), c))
     assert not bad, bad
-    print("  verified: every badge's colour now matches its word")
+    print("  verified: every badge's color now matches its word")
 
 
 if __name__ == "__main__":

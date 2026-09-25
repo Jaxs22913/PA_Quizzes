@@ -40,8 +40,8 @@ POOL_A = [
    q="A 4-month-old infant has weeping inflammatory patches and crusted plaques on the cheeks, scalp and extensor surfaces of the arms. The mother reports the baby rubs against bedding rather than scratching. Which is the most likely diagnosis?",
    opts=[
      ["Atopic dermatitis",
-      "Correct. The infantile pattern favours cheeks, scalp and extensor surfaces, and rubbing replaces scratching at this age."],
-     ["Seborrhoeic dermatitis",
+      "Correct. The infantile pattern favors cheeks, scalp and extensor surfaces, and rubbing replaces scratching at this age."],
+     ["Seborrheic dermatitis",
       "This produces greasy yellow scaling in sebum-rich areas and is most common in men aged 20 to 50."],
      ["Nummular eczema",
       "This produces coin-shaped plaques on the extremities, typically in men over 50."],
@@ -63,7 +63,7 @@ POOL_A = [
    c=0, cite=c(56)),
 
  dict(topic="Atopic dermatitis", io=IOC,
-   q="A mother of a child newly diagnosed with atopic dermatitis is anxious about using topical steroids at all. Which is the most appropriate counselling point?",
+   q="A mother of a child newly diagnosed with atopic dermatitis is anxious about using topical steroids at all. Which is the most appropriate counseling point?",
    opts=[
      ["Address the concern directly, review the side effects, demonstrate how much to apply, and provide a written flare and infection action plan",
       "Correct. Addressing steroid concerns directly and demonstrating quantity and application are named education points."],
@@ -96,7 +96,7 @@ POOL_A = [
      ["A low-potency topical corticosteroid",
       "Low potency is chosen for the face and sensitive sites, not for palmar disease."],
      ["A topical antifungal",
-      "The condition is not fungal; its aetiology is unknown."],
+      "The condition is not fungal; its etiology is unknown."],
      ["Oral prednisone tapered over three weeks",
       "Systemic therapy is reserved for severe disease rather than used first line."]],
    c=0, cite=c(66)),
@@ -122,9 +122,9 @@ POOL_A = [
      ["Oral terbinafine",
       "The potassium hydroxide preparation was negative, so this is not tinea."],
      ["Compression therapy",
-      "Compression treats stasis dermatitis, which presents in the gaiter region with oedema and venous change."],
+      "Compression treats stasis dermatitis, which presents in the gaiter region with edema and venous change."],
      ["Ketoconazole shampoo",
-      "Antifungal shampoo treats seborrhoeic dermatitis of the scalp."]],
+      "Antifungal shampoo treats seborrheic dermatitis of the scalp."]],
    c=0, cite=c(74)),
 
  dict(topic="Irritant contact dermatitis", io=IOC,
@@ -180,19 +180,19 @@ POOL_A = [
    c=0, cite=c(89)),
 
  dict(topic="Allergic contact dermatitis", io=IOC,
-   q="A 26-year-old developed an itchy rash confined to a rectangle on her forearm, sparing a small central area, three days after a minor injury. Which is the most appropriate counselling point?",
+   q="A 26-year-old developed an itchy rash confined to a rectangle on her forearm, sparing a small central area, three days after a minor injury. Which is the most appropriate counseling point?",
    opts=[
-     ["The reaction is to the adhesive in the dressing, and the spared centre corresponds to the cotton pad",
+     ["The reaction is to the adhesive in the dressing, and the spared center corresponds to the cotton pad",
       "Correct — the shape reproducing the object is the hallmark of allergic contact dermatitis to adhesives."],
      ["The rash is contagious and she should avoid close contact until it clears",
       "Allergic contact dermatitis is not contagious."],
      ["The reaction indicates the wound is infected and needs antibiotics",
       "The shape and sparing point to an adhesive allergy, not infection."],
      ["Future exposure to the same adhesive will not cause a reaction once this settles",
-      "Sensitisation persists, so re-exposure will provoke it again."]],
+      "Sensitization persists, so re-exposure will provoke it again."]],
    c=0, cite=c(86)),
 
- dict(topic="Seborrhoeic dermatitis", io=IOC,
+ dict(topic="Seborrheic dermatitis", io=IOC,
    q="A 34-year-old man has recurrent scaling of the scalp, eyebrows, nasolabial folds and external ears. Examination shows greasy, yellow-white scale over mildly erythematous poorly demarcated patches. Which is the most appropriate initial treatment?",
    opts=[
      ["Ketoconazole shampoo and topical ketoconazole cream",
@@ -205,8 +205,8 @@ POOL_A = [
       "A topical antibiotic treats bacterial infection, which this is not."]],
    c=0, cite=c(95)),
 
- dict(topic="Seborrhoeic dermatitis", io=IOC,
-   q="A 40-year-old man with recurrent greasy scaling of the scalp and nasolabial folds asks how long treatment will be needed. Which is the most appropriate counselling point?",
+ dict(topic="Seborrheic dermatitis", io=IOC,
+   q="A 40-year-old man with recurrent greasy scaling of the scalp and nasolabial folds asks how long treatment will be needed. Which is the most appropriate counseling point?",
    opts=[
      ["The condition is chronic and relapsing, so repeated and long-term use of medication is often required",
       "Correct — that expectation is stated explicitly for this condition."],
@@ -227,12 +227,12 @@ POOL_A = [
       "This worsens the condition; the steroid is the driver."],
      ["Begin topical adapalene",
       "A retinoid treats acne, which would show comedones rather than this monomorphic sparing pattern."],
-     ["Apply an occlusive moisturiser several times daily",
-      "Occlusive moisturisers are among the listed triggers."]],
+     ["Apply an occlusive moisturizer several times daily",
+      "Occlusive moisturizers are among the listed triggers."]],
    c=0, cite=c(102)),
 
  dict(topic="Perioral dermatitis", io=IOC,
-   q="A 31-year-old woman with perioral dermatitis has stopped her topical corticosteroid. Which is the most appropriate counselling point about what happens next?",
+   q="A 31-year-old woman with perioral dermatitis has stopped her topical corticosteroid. Which is the most appropriate counseling point about what happens next?",
    opts=[
      ["The eruption may temporarily worsen after corticosteroid withdrawal before it improves",
       "Correct — telling her in advance is what stops her restarting the steroid."],
@@ -266,8 +266,8 @@ POOL_A = [
       "This affects convex surfaces and generally spares the inguinal folds."],
      ["Bacterial diaper dermatitis",
       "This would show bullae, crusting, purulent drainage or sharply demarcated perianal erythema."],
-     ["Seborrhoeic dermatitis",
-      "This favours sebum-rich areas with greasy yellow scale."]],
+     ["Seborrheic dermatitis",
+      "This favors sebum-rich areas with greasy yellow scale."]],
    c=0, cite=c(107)),
 
  dict(topic="Diaper dermatitis", io=IOC,
@@ -284,7 +284,7 @@ POOL_A = [
    c=0, cite=c(109)),
 
  dict(topic="Stasis dermatitis", io=IOC,
-   q="A 68-year-old woman has chronic bilateral lower-leg swelling, itching and skin discoloration. Examination shows poorly demarcated erythematous plaques, pitting oedema and brown hyperpigmentation around both medial ankles. Pedal pulses are diminished. Which is the most appropriate next step before prescribing compression therapy?",
+   q="A 68-year-old woman has chronic bilateral lower-leg swelling, itching and skin discoloration. Examination shows poorly demarcated erythematous plaques, pitting edema and brown hyperpigmentation around both medial ankles. Pedal pulses are diminished. Which is the most appropriate next step before prescribing compression therapy?",
    opts=[
      ["Perform an ankle-brachial index",
       "Correct. Compression is the cornerstone of management, but only once adequate arterial circulation is established, and the diminished pulses demand that check first."],
@@ -323,12 +323,12 @@ POOL_A = [
    c=0, cite=c(115)),
 
  dict(topic="Xerosis", io=IOC,
-   q="An 80-year-old man reports generalised itching and rough, tight skin each winter, worst on the shins. Examination shows fine scale with a few shallow fissures and scratch marks, without erythematous plaques. Which is the most appropriate counselling point?",
+   q="An 80-year-old man reports generalized itching and rough, tight skin each winter, worst on the shins. Examination shows fine scale with a few shallow fissures and scratch marks, without erythematous plaques. Which is the most appropriate counseling point?",
    opts=[
      ["Take short lukewarm showers with a gentle fragrance-free cleanser only where needed, and apply a thick ointment or cream within minutes of bathing",
-      "Correct — hot water and detergents are among the causes, and prompt moisturising after bathing is the key manoeuvre."],
-     ["Take long hot showers to hydrate the skin, then moisturise once fully dry",
-      "Hot water is a listed cause of xerosis, and the moisturiser must go on within minutes."],
+      "Correct — hot water and detergents are among the causes, and prompt moisturizing after bathing is the key maneuver."],
+     ["Take long hot showers to hydrate the skin, then moisturize once fully dry",
+      "Hot water is a listed cause of xerosis, and the moisturizer must go on within minutes."],
      ["Use an antibacterial soap over the whole body twice daily",
       "Detergents contribute to the barrier impairment."],
      ["Apply a keratolytic containing urea to the fissured areas first",

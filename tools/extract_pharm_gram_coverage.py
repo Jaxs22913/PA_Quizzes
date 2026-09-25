@@ -4,7 +4,7 @@
 
 THE DECK ALREADY ANSWERS THIS QUESTION, in a form nobody reads as data. Most
 antibiotic class slides carry a small three-column table -- Gram Positive,
-Gram Negative, Anaerobes -- with a coloured circle under each heading:
+Gram Negative, Anaerobes -- with a colored circle under each heading:
 
     008000 dark green    = covers it        (39 circles)
     00B050 medium green  = covers it        (3 -- macrolides, polymyxins)
@@ -15,14 +15,14 @@ Gram Negative, Anaerobes -- with a coloured circle under each heading:
 THE DECK USES TWO INTERCHANGEABLE GREENS and one distinctly lighter one. The
 two full greens are treated as the same verdict here; the light green is kept
 separate because it appears on exactly one class -- tetracyclines, on all three
-columns at once -- which reads as deliberate rather than as a colour slip.
+columns at once -- which reads as deliberate rather than as a color slip.
 
-Nothing in the slide TEXT says which colour sits under which heading; the
+Nothing in the slide TEXT says which color sits under which heading; the
 association is purely positional. So each circle is matched to a heading by
 comparing x-coordinates, which is the same reading-order problem recorded in
 [[lettered_slide_images]] and solved the same way.
 
-This is the lecturer's own judgement of coverage, not an inference from prose,
+This is the lecturer's own judgment of coverage, not an inference from prose,
 which is what makes it worth building a page on.
 """
 import json, os, re, zipfile

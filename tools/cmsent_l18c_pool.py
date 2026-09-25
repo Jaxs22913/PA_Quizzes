@@ -19,7 +19,7 @@ QUESTIONS = [
 
 Q("Metastatic neck disease", IO,
   "A 62-year-old smoker has a firm cervical node. Fine needle aspiration shows squamous cell "
-  "carcinoma, but no primary tumour is apparent on initial examination.",
+  "carcinoma, but no primary tumor is apparent on initial examination.",
   [["Examine all mucosal surfaces of the head and neck",
     "Correct. Squamous cell carcinoma is the commonest metastatic lesion to the neck, and it arrives "
     "from the skin or the upper aerodigestive tract. A systematic office "
@@ -31,16 +31,16 @@ Q("Metastatic neck disease", IO,
     "radiotherapy."],
    ["Repeat the aspiration to confirm the cell type",
     "The cytology has already given a clear answer. Repeating it adds nothing, and the outstanding "
-    "question is where the tumour came from rather than what it is."],
+    "question is where the tumor came from rather than what it is."],
    ["Treat empirically with radiotherapy to the neck",
-    "Irradiating the neck without knowing the primary site leaves an untreated tumour and commits "
+    "Irradiating the neck without knowing the primary site leaves an untreated tumor and commits "
     "the patient to a field that may be wrong. Radiotherapy planning depends on the primary."]],
   "next step", D, 39),
 
 Q("Metastatic neck disease", IO,
   "A clinician explains why fine needle aspiration rather than excisional biopsy is used for a "
   "suspected malignant neck node.",
-  [["Excision spills tumour and complicates definitive treatment",
+  [["Excision spills tumor and complicates definitive treatment",
     "Correct. Opening a malignant node releases cells into the surrounding tissue planes, which "
     "seeds the neck outside the original nodal compartment and makes both the surgical field and "
     "the radiotherapy field harder to define. Aspiration samples the node without breaching its "
@@ -49,7 +49,7 @@ Q("Metastatic neck disease", IO,
     "Excisional biopsy actually gives more tissue and better architecture, which is why it is used "
     "for suspected lymphoma. Aspiration is preferred here despite giving less, because of what "
     "excision does to the neck."],
-   ["Excision requires general anaesthesia and aspiration does not",
+   ["Excision requires general anesthesia and aspiration does not",
     "Convenience is a genuine advantage of aspiration but not the stated reason. The argument is "
     "oncological rather than logistical."],
    ["Aspiration can be repeated whereas excision cannot",
@@ -58,10 +58,10 @@ Q("Metastatic neck disease", IO,
   "mechanism", D, 39),
 
 Q("Reactive lymphadenopathy", IO,
-  "A 6-year-old has a 2 centimetre cervical node that appeared with a cold five weeks ago and has "
+  "A 6-year-old has a 2 centimeter cervical node that appeared with a cold five weeks ago and has "
   "not changed in size.",
   [["Investigate further, as it exceeds the size and duration thresholds",
-    "Correct. A node larger than 1 centimetre is abnormal, and reactive nodes should regress within "
+    "Correct. A node larger than 1 centimeter is abnormal, and reactive nodes should regress within "
     "one to two weeks. Persistence beyond four to six weeks, or continued enlargement, is the stated "
     "trigger for investigation, with biopsy looking for fungal, granulomatous or neoplastic "
     "causes."],
@@ -104,7 +104,7 @@ Q("Papillary thyroid carcinoma", IO,
   "with no evidence of metastasis.",
   [["Lobectomy may be sufficient rather than total thyroidectomy",
     "Correct. Almost all thyroid cancers require thyroidectomy, with one "
-    "explicit exception: disease localised to one lobe, well differentiated and without metastasis. "
+    "explicit exception: disease localized to one lobe, well differentiated and without metastasis. "
     "That is exactly this patient, and lobectomy preserves the contralateral gland and reduces the "
     "risk to the recurrent laryngeal nerves and parathyroids."],
    ["Total thyroidectomy is mandatory in all thyroid cancer",
@@ -121,8 +121,8 @@ Q("Papillary thyroid carcinoma", IO,
   "treatment", D, 44),
 
 Q("Brucellosis", IO,
-  "A 38-year-old man who drinks unpasteurised milk from a local farm has fever, fatigue, malaise "
-  "and generalised lymphadenopathy including the neck.",
+  "A 38-year-old man who drinks unpasteurized milk from a local farm has fever, fatigue, malaise "
+  "and generalized lymphadenopathy including the neck.",
   [["Trimethoprim-sulfamethoxazole or tetracycline",
     "Correct. Brucellosis is transmitted by ingestion of unpasteurized milk and presents "
     "with total body lymphadenopathy, fever, fatigue and malaise, unlike the submandibular, "
@@ -131,11 +131,11 @@ Q("Brucellosis", IO,
     "trimethoprim-sulfamethoxazole or tetracycline."],
    ["Streptomycin",
     "Streptomycin is the treatment for tularemia, acquired from rabbits, ticks or contaminated "
-    "water, which presents with tonsillitis and painful regional adenopathy rather than generalised "
+    "water, which presents with tonsillitis and painful regional adenopathy rather than generalized "
     "nodes."],
    ["Penicillin",
     "Penicillin treats actinomycosis, which presents as a painless fluctuant submandibular mass with "
-    "filamentous organisms on biopsy. There is no such localised mass here."],
+    "filamentous organisms on biopsy. There is no such localized mass here."],
    ["Azithromycin",
     "Azithromycin is used for cat scratch disease from Bartonella henselae, which requires cat "
     "contact and produces preauricular and submandibular nodes in a patient usually under 20."]],
@@ -151,7 +151,7 @@ Q("Fungal neck infection", IO,
     "failure in this host is precisely the setting in which to look."],
    ["Increase the antibiotic spectrum",
     "Broadening antibacterial cover repeats a strategy that has already failed and further "
-    "suppresses the flora, which favours the fungal overgrowth that is the likelier problem."],
+    "suppresses the flora, which favors the fungal overgrowth that is the likelier problem."],
    ["Reduce the immunosuppression and observe",
     "Reducing immunosuppression may form part of management, but it risks graft rejection and does "
     "not identify the organism. The diagnosis has to be established first."],
@@ -167,7 +167,7 @@ Q("Kawasaki disease", IO,
   [["Kawasaki disease",
     "Correct. Kawasaki is one of the non-infectious inflammatory causes of neck "
     "masses, alongside Sjogren syndrome, sarcoidosis and IgG4-related disease. The cervical node is "
-    "one criterion among several, and recognising the constellation matters because untreated "
+    "one criterion among several, and recognizing the constellation matters because untreated "
     "Kawasaki causes coronary artery aneurysms."],
    ["Suppurative bacterial lymphadenitis",
     "Bacterial adenitis produces a hot tender node with fever, but not conjunctivitis, a strawberry "
@@ -191,10 +191,10 @@ Q("Neck mass workup", IO,
     "as a substitute that is generally less preferred."],
    ["Fine needle aspiration",
     "Aspiration is the standard of care for most neck masses but is exactly what must not be done "
-    "blindly into a pulsatile lesion, because puncturing a vascular tumour risks significant "
+    "blindly into a pulsatile lesion, because puncturing a vascular tumor risks significant "
     "haemorrhage."],
    ["Plain radiography of the neck",
-    "Plain films cannot demonstrate vascularity or define a vascular tumour's supply. They would not "
+    "Plain films cannot demonstrate vascularity or define a vascular tumor's supply. They would not "
     "influence management at all."],
    ["Positron emission tomography",
     "Positron emission tomography shows metabolic activity and is used for staging or hunting an "
@@ -226,20 +226,20 @@ Q("Thyroid cancer follow-up", IO,
   "blood test.",
   [["Calcitonin",
     "Correct. Medullary carcinoma arises from the parafollicular C cells, whose normal product is "
-    "calcitonin, so the tumour secretes it and the level tracks tumour burden. That makes calcitonin "
+    "calcitonin, so the tumor secretes it and the level tracks tumor burden. That makes calcitonin "
     "a specific marker for detecting residual or recurrent disease, which is why screening labs form "
     "part of follow-up alongside thyroidectomy."],
    ["Thyroglobulin",
     "Thyroglobulin is the marker for the DIFFERENTIATED cancers, papillary and follicular, because "
-    "those arise from thyroid epithelial cells that make it. Medullary tumours do not, so the level "
+    "those arise from thyroid epithelial cells that make it. Medullary tumors do not, so the level "
     "would be uninformative."],
    ["Thyroid-stimulating hormone",
     "Thyroid-stimulating hormone is monitored to keep replacement therapy adequate and to suppress "
-    "differentiated tumours, but it reflects pituitary feedback rather than the presence of "
-    "medullary tumour."],
+    "differentiated tumors, but it reflects pituitary feedback rather than the presence of "
+    "medullary tumor."],
    ["Parathyroid hormone",
     "Parathyroid hormone would be relevant to a parathyroid problem, which can coexist in multiple "
-    "endocrine neoplasia, but it is not the marker for the thyroid tumour itself."]],
+    "endocrine neoplasia, but it is not the marker for the thyroid tumor itself."]],
   "testing", D, 44),
 
 Q("Neck triangles", IO,
@@ -258,7 +258,7 @@ Q("Neck triangles", IO,
     "The vagus runs in the carotid sheath within the carotid triangle, again in the anterior group, "
     "with the carotid arteries and internal jugular vein. It is not a posterior triangle structure."],
    ["The recurrent laryngeal nerve",
-    "The recurrent laryngeal nerve runs in the tracheo-oesophageal groove deep in the anterior neck "
+    "The recurrent laryngeal nerve runs in the tracheoesophageal groove deep in the anterior neck "
     "and is at risk during thyroid surgery, not in the posterior triangle."]],
   "finding", D, 5),
 

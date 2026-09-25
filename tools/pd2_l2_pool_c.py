@@ -11,12 +11,12 @@ IOE = "e — Clinical skills for a complete and focused skin examination"
 
 POOL_C = [
  dict(topic="Vascular lesions", io=IOE,
-   q="You press a piece of clear glass against a red lesion and the colour fades. What does this indicate?",
+   q="You press a piece of clear glass against a red lesion and the color fades. What does this indicate?",
    opts=[
      ["Vascular engorgement",
       "Correct. In diascopy, blood that can be pressed out of vessels blanches; blood outside vessels cannot."],
      ["Hemorrhage into the skin",
-      "Hemorrhage is indicated when the colour does not fade under pressure."],
+      "Hemorrhage is indicated when the color does not fade under pressure."],
      ["Increased melanin pigmentation",
       "Diascopy separates vascular engorgement from hemorrhage; color that fades under pressure means vascular engorgement."],
      ["Deposition of bilirubin in the skin",
@@ -33,11 +33,11 @@ POOL_C = [
      ["An allergic reaction",
       "Diascopy distinguishes hemorrhage from engorgement rather than identifying allergy."],
      ["Inadequate peripheral circulation",
-      "Cyanosis from poor circulation is not what the manoeuvre assesses."]],
+      "Cyanosis from poor circulation is not what the maneuver assesses."]],
    c=0, cite=c(55)),
 
  dict(topic="Vascular lesions", io=IOD,
-   q="A reddish-purple, non-blanching macule measuring two millimetres is called what?",
+   q="A reddish-purple, non-blanching macule measuring two millimeters is called what?",
    opts=[
      ["A petechia",
       "Correct — petechiae are reddish-purple, non-blanching macules under three millimeters."],
@@ -50,10 +50,10 @@ POOL_C = [
    c=0, cite=c(56)),
 
  dict(topic="Vascular lesions", io=IOD,
-   q="A non-blanching reddish-purple macule measuring six millimetres is called what?",
+   q="A non-blanching reddish-purple macule measuring six millimeters is called what?",
    opts=[
      ["Purpura",
-      "Correct — the three millimetre to one centimetre range defines purpura."],
+      "Correct — the three millimeter to one centimeter range defines purpura."],
      ["A petechia",
       "A petechia is smaller than three millimeters; a six-millimeter non-blanching macule is purpura."],
      ["An ecchymosis",
@@ -63,10 +63,10 @@ POOL_C = [
    c=0, cite=c(56)),
 
  dict(topic="Vascular lesions", io=IOD,
-   q="A purplish-blue non-blanching macule larger than one centimetre that fades over time is called what?",
+   q="A purplish-blue non-blanching macule larger than one centimeter that fades over time is called what?",
    opts=[
      ["An ecchymosis",
-      "Correct — the change in colour over time reflects breakdown of extravasated blood."],
+      "Correct — the change in color over time reflects breakdown of extravasated blood."],
      ["Purpura",
       "Purpura measures three millimeters to one centimeter; a non-blanching macule over one centimeter is an ecchymosis."],
      ["A petechia",
@@ -154,7 +154,7 @@ POOL_C = [
    c=0, cite=c(59)),
 
  dict(topic="Pressure ulcers", io=IOD,
-   q="Besides non-blanching erythema, which changes characterise a stage I pressure ulcer?",
+   q="Besides non-blanching erythema, which changes characterize a stage I pressure ulcer?",
    opts=[
      ["Temperature, consistency, sensation and color",
       "Correct — the area may be warm or cool, firm or boggy, and painful or itchy."],
@@ -235,7 +235,7 @@ POOL_C = [
    q="Scaling, sharply demarcated round plaques with central clearing describe which infection?",
    opts=[
      ["Tinea corporis",
-      "Correct — the ring with a clear centre is what gives ringworm its common name."],
+      "Correct — the ring with a clear center is what gives ringworm its common name."],
      ["Tinea pedis",
       "Tinea pedis produces dry scaling or macerated fissuring of the interdigital spaces."],
      ["Tinea capitis",
@@ -271,14 +271,14 @@ POOL_C = [
    c=0, cite=c(64)),
 
  dict(topic="Malignancy", io=IOD,
-   q="A translucent, pearly nodule with a depressed centre and raised borders on the face is characteristic of which malignancy?",
+   q="A translucent, pearly nodule with a depressed center and raised borders on the face is characteristic of which malignancy?",
    opts=[
      ["Basal cell carcinoma",
       "Correct — it may ulcerate, and a non-healing ulcer on the face should raise the same suspicion."],
      ["Squamous cell carcinoma",
       "Squamous cell carcinoma appears as a red scaling, crusting nodule or plaque."],
      ["Malignant melanoma",
-      "Melanoma appears as an irregularly coloured plaque with sharp notches and variation of pigment."],
+      "Melanoma appears as an irregularly colored plaque with sharp notches and variation of pigment."],
      ["Kaposi's sarcoma",
       "Kaposi's sarcoma produces dark blue-purple lesions, most often in patients with acquired immunodeficiency syndrome."]],
    c=0, cite=c(66)),
@@ -291,7 +291,7 @@ POOL_C = [
      ["Basal cell carcinoma",
       "Basal cell carcinoma is translucent and pearly with raised borders rather than red and scaling."],
      ["Malignant melanoma",
-      "Melanoma is pigmented with irregular colour and notched borders."],
+      "Melanoma is pigmented with irregular color and notched borders."],
      ["Kaposi's sarcoma",
       "Kaposi's sarcoma produces dark blue-purple macules, papules, nodules and plaques."]],
    c=0, cite=c(68)),
@@ -299,14 +299,14 @@ POOL_C = [
  dict(topic="Malignancy", io=IOD,
    q="In the melanoma warning signs, what does D stand for?",
    opts=[
-     ["Diameter larger than six millimetres",
-      "Correct — six millimetres is roughly the diameter of a pencil eraser."],
+     ["Diameter larger than six millimeters",
+      "Correct — six millimeters is roughly the diameter of a pencil eraser."],
      ["Depth of invasion into the dermis",
       "Depth of invasion is not one of the warning signs; D stands for a diameter larger than six millimeters."],
      ["Duration of more than six months",
       "The letters describe appearance, not how long the lesion has been present."],
      ["Darkening of the surrounding skin",
-      "Colour variation within the lesion is what the letter C covers."]],
+      "Color variation within the lesion is what the letter C covers."]],
    c=0, cite=c(71)),
 
  dict(topic="Malignancy", io=IOD,
@@ -326,7 +326,7 @@ POOL_C = [
    q="Which malignancy is the most frequent neoplasm occurring in patients with acquired immunodeficiency syndrome?",
    opts=[
      ["Kaposi's sarcoma",
-      "Correct — the lesions start light coloured and coalesce into darker blue-purple macules, papules, nodules and plaques."],
+      "Correct — the lesions start light colored and coalesce into darker blue-purple macules, papules, nodules and plaques."],
      ["Basal cell carcinoma",
       "Basal cell carcinoma is common in the general population but is not the neoplasm associated with this condition."],
      ["Malignant melanoma",
@@ -364,9 +364,9 @@ POOL_C = [
  dict(topic="Hair", io=IOE,
    q="Which hair characteristics are assessed by inspection rather than palpation?",
    opts=[
-     ["Colour, distribution and quantity by inspection",
+     ["Color, distribution and quantity by inspection",
       "Correct — color, distribution and quantity are inspected, leaving texture as the one hair characteristic assessed by palpation."],
-     ["Texture by inspection; colour and quantity by palpation",
+     ["Texture by inspection; color and quantity by palpation",
       "The assignments are reversed: texture is palpated, while color, distribution and quantity are inspected."],
      ["All four characteristics by inspection alone",
       "Not all four are seen; texture is assessed by palpation, while color, distribution and quantity are inspected."],
@@ -378,7 +378,7 @@ POOL_C = [
    q="A patient has hair loss in multiple round patches with hairs that taper toward the scalp. What is the likely diagnosis?",
    opts=[
      ["Alopecia areata",
-      "Correct — these exclamation point hairs, along with round patches, characterise this chronic inflammatory disease of hair follicles."],
+      "Correct — these exclamation point hairs, along with round patches, characterize this chronic inflammatory disease of hair follicles."],
      ["Androgenic alopecia",
       "Androgenic alopecia follows a male pattern rather than producing discrete round patches."],
      ["Tinea capitis",
@@ -404,7 +404,7 @@ POOL_C = [
    q="Hair loss caused by an urge to pull out one's own hair is called what?",
    opts=[
      ["Trichotillomania",
-      "Correct — patches may be single or multiple and range from a few square centimetres to the entire scalp."],
+      "Correct — patches may be single or multiple and range from a few square centimeters to the entire scalp."],
      ["Alopecia areata",
       "Alopecia areata is an inflammatory disease of hair follicles associated with autoimmune disorders."],
      ["Androgenic alopecia",
@@ -466,7 +466,7 @@ POOL_C = [
    c=0, cite=c(86)),
 
  dict(topic="Nails", io=IOD,
-   q="Which of the following is a recognised cause of onycholysis?",
+   q="Which of the following is a recognized cause of onycholysis?",
    opts=[
      ["Prolonged immersion of the hands in water",
       "Correct — local irritation from chemical exposure or prolonged immersion is one cause, alongside fungal infection, psoriasis, medications such as tetracycline, and trauma."],
@@ -499,7 +499,7 @@ POOL_C = [
      ["Mee's lines",
       "Mee's lines are transverse lines across the nail; a white proximal and dark distal nail is Terry's nails."],
      ["Beau's lines",
-      "Beau's lines are transverse depressions rather than a colour change."],
+      "Beau's lines are transverse depressions rather than a color change."],
      ["Splinter hemorrhages",
       "Splinter hemorrhages come from the distal capillary loop; a white proximal, dark distal nail is Terry's nails."]],
    c=0, cite=c(88)),
@@ -508,7 +508,7 @@ POOL_C = [
    q="A green discoloration of the nail suggests infection with which organism?",
    opts=[
      ["Pseudomonas",
-      "Correct — the pigment it produces gives the nail its green colour."],
+      "Correct — the pigment it produces gives the nail its green color."],
      ["A dermatophyte fungus",
       "Fungal nail infection is tinea unguium and does not produce green discoloration."],
      ["Staphylococcus aureus",
@@ -585,9 +585,9 @@ POOL_C = [
  dict(topic="Nails", io=IOE,
    q="Which features should be inspected in the nail beds?",
    opts=[
-     ["Shape, size, colour, brittleness, hemorrhages, lines and grooves, clubbing and pitting",
+     ["Shape, size, color, brittleness, hemorrhages, lines and grooves, clubbing and pitting",
       "Correct — eight features, each of which can point toward a systemic diagnosis."],
-     ["Shape and colour only, since the remainder require specialist assessment",
+     ["Shape and color only, since the remainder require specialist assessment",
       "Shape and color are only two; also inspect size, brittleness, hemorrhages, lines and grooves, clubbing and pitting."],
      ["Capillary refill time and nail bed temperature",
       "Capillary refill and temperature are not inspected; the nail beds are checked for shape, size, color, brittleness, hemorrhages, lines, clubbing and pitting."],

@@ -29,14 +29,14 @@ POOL_C = [
      ["Establishing base rates, setting guidelines, and appraising evidence",
       "These belong to epidemiology and evidence-based practice rather than to an individual diagnostic test."],
      ["Detecting occult disease, confirming adherence, and arranging follow-up",
-      "Detecting occult disease is screening's role, and the other two concern counselling."]],
+      "Detecting occult disease is screening's role, and the other two concern counseling."]],
    c=1, cite=c(10)),
 
  dict(topic="Screening and diagnostic testing", io="Compare and contrast screening and diagnostic testing",
    q="Which test property is best suited to screening, and which to confirming a diagnosis?",
    opts=[
      ["Specificity for screening; sensitivity for confirming",
-      "This reverses them: screening needs sensitivity so nobody with the disease is missed, and confirmation needs specificity so nobody healthy is wrongly labelled."],
+      "This reverses them: screening needs sensitivity so nobody with the disease is missed, and confirmation needs specificity so nobody healthy is wrongly labeled."],
      ["Sensitivity for both purposes",
       "The two purposes need different properties: screening must miss nobody, which is sensitivity, and confirmation must not mislabel the well, which is specificity."],
      ["Sensitivity for screening; specificity for confirming",
@@ -82,7 +82,7 @@ POOL_C = [
      ["Base rate of disease and the availability of a guideline",
       "Base rate informs pretest probability, and guidelines are an analytic tool rather than a treatment factor here."],
      ["Health literacy and transportation",
-      "These are barriers to adherence, discussed under counselling."]],
+      "These are barriers to adherence, discussed under counseling."]],
    c=1, cite=c(27)),
 
  dict(topic="Implications for treatment", io="Discuss the implications for treatment",
@@ -125,8 +125,8 @@ POOL_C = [
    c=0, cite=c(27)),
 
  # ---------------- Counselling and adherence (Slides 28-29) ----------------
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="What do the Five As stand for in the counselling strategies?",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+   q="What do the Five As stand for in the counseling strategies?",
    opts=[
      ["Assess, adhere, arrange, advise, and act",
       "Adhere and act are not among the five; assist is one of the terms omitted here."],
@@ -135,23 +135,23 @@ POOL_C = [
      ["Ask, assess, agree, assist, and arrange",
       "Agree belongs to a different version of the framework; the five here are Ask, Advise, Assess, Assist and Arrange."],
      ["Advise, appraise, assess, assist, and arrange",
-      "Appraise belongs to evaluating evidence rather than to this counselling framework."]],
+      "Appraise belongs to evaluating evidence rather than to this counseling framework."]],
    c=1, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="In the FRAMES counselling strategy, what does the letter M represent?",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+   q="In the FRAMES counseling strategy, what does the letter M represent?",
    opts=[
      ["Motivation of the clinician",
-      "The framework centres on the patient rather than the clinician's motivation."],
+      "The framework centers on the patient rather than the clinician's motivation."],
      ["Medication review",
       "Medication review is not one of the elements listed."],
-     ["Monitoring of behaviour change",
+     ["Monitoring of behavior change",
       "Monitoring is not the element named by M here."],
      ["Menu of options",
       "Correct. FRAMES is feedback about personal risk, responsibility of the patient, advice to change, menu of options, empathetic style, and promote self-efficacy."]],
    c=3, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="Which element of FRAMES places the decision to change with the patient?",
    opts=[
      ["Responsibility of the patient",
@@ -164,7 +164,7 @@ POOL_C = [
       "Self-efficacy is the patient's belief in their ability to change, which supports but does not assign responsibility."]],
    c=0, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="What must health care providers be able to communicate effectively?",
    opts=[
      ["Only the dosing schedule of any medication prescribed",
@@ -177,33 +177,33 @@ POOL_C = [
       "The stated aim is helping patients understand their risks and options, not presenting a single preference."]],
    c=1, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="What is advised regarding where a patient sits on the continuum of behaviour change?",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+   q="What is advised regarding where a patient sits on the continuum of behavior change?",
    opts=[
      ["Apply the same intervention regardless of where they are",
-      "The advice is explicitly to tailor rather than standardise."],
-     ["Delay counselling until the patient is ready to change",
-      "Waiting for readiness forfeits the chance to build it; counselling is tailored to the patient's current stage rather than postponed until they reach the last one."],
+      "The advice is explicitly to tailor rather than standardize."],
+     ["Delay counseling until the patient is ready to change",
+      "Waiting for readiness forfeits the chance to build it; counseling is tailored to the patient's current stage rather than postponed until they reach the last one."],
      ["Identify where they are and tailor interventions to their readiness and self-efficacy",
       "Correct. Advice aimed at someone ready to act is wasted on someone not yet contemplating change, so the intervention is matched to the stage the patient is actually at."],
-     ["Refer every patient for specialist behavioural therapy",
+     ["Refer every patient for specialist behavioral therapy",
       "Referral is not presented as the default response."]],
    c=2, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
-   q="How is behavioural counselling characterised?",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+   q="How is behavioral counseling characterized?",
    opts=[
      ["As a task best delegated to non-clinical staff",
       "No delegation is suggested; it is framed as a core provider skill."],
      ["As unnecessary when a guideline exists",
       "Guidelines address management decisions, not the patient's capacity to follow them."],
      ["As effective only for tobacco cessation",
-      "Counselling guidelines cover alcohol use and sexual health as well as tobacco, so its value is not confined to smoking cessation."],
-     ["As one of the most important skills for helping patients make behavioural changes",
-      "Correct. Most of the conditions that shorten life are driven by behaviour, so the ability to help a patient change one is as consequential as any prescription."]],
+      "Counseling guidelines cover alcohol use and sexual health as well as tobacco, so its value is not confined to smoking cessation."],
+     ["As one of the most important skills for helping patients make behavioral changes",
+      "Correct. Most of the conditions that shorten life are driven by behavior, so the ability to help a patient change one is as consequential as any prescription."]],
    c=3, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="Which of the following is a barrier to treatment and medication adherence?",
    opts=[
      ["Cost and affordability of medications or services",
@@ -216,7 +216,7 @@ POOL_C = [
       "Ready access to transportation supports adherence; it is transportation or time constraints that act as a barrier to treatment."]],
    c=0, cite=c(29)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="Which pair of barriers to adherence is listed?",
    opts=[
      ["Excess follow-up appointments and over-explanation of side effects",
@@ -229,7 +229,7 @@ POOL_C = [
       "Transportation or time constraints are the barrier, so these describe their absence."]],
    c=1, cite=c(29)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="Mental health challenges or cognitive impairment appear under which heading?",
    opts=[
      ["Elements of the FRAMES strategy",
@@ -242,7 +242,7 @@ POOL_C = [
       "The naturalistic approach is indicated by instability and atypical presentation."]],
    c=2, cite=c(29)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="For which three behaviors do specific counseling guidelines for adults exist?",
    opts=[
      ["Diet, exercise, and sleep hygiene",
@@ -255,7 +255,7 @@ POOL_C = [
       "Correct — specific counseling guidelines for adults exist for unhealthy alcohol use, tobacco smoking cessation and sexually transmitted infections."]],
    c=3, cite=c(28)),
 
- dict(topic="Counselling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
+ dict(topic="Counseling and adherence", io="Recall counseling strategies to help patients adhere to treatment plans",
    q="A patient understands their diagnosis and wants treatment but repeatedly misses doses because of the cost of the medication. Which barrier does this represent?",
    opts=[
      ["Cost and affordability of medications or services",

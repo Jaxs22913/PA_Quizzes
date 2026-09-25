@@ -9,8 +9,8 @@ cumulative exam rather than padded into the sets.
 
 THIS COURSE DOES HAVE AN EXAM. The posted schedule lists no exam session, which
 is easy to read as there being none, but the session 1 deck is explicit: a
-computerised exam worth 40 per cent of the grade, covering the assigned readings
-and the lecture material. The remaining 60 per cent is participation and the
+computerised exam worth 40 percent of the grade, covering the assigned readings
+and the lecture material. The remaining 60 percent is participation and the
 group project, neither of which is examinable content.
 
 COURSE MECHANICS ARE NOT CONTENT, so the grading weights, the required text and

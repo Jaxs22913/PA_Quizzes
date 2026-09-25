@@ -22,9 +22,9 @@ Q("Bacterial sinusitis", IO,
    ["A normal viral course that needs no intervention",
     "A normal viral course does not improve and then relapse with fever and unilateral purulence. "
     "The pattern of deterioration is precisely what distinguishes the small bacterial minority from "
-    "the 90 to 98 per cent that are viral."],
+    "the 90 to 98 percent that are viral."],
    ["Allergic rhinitis triggered by the viral illness",
-    "Allergic disease gives bilateral clear rhinorrhoea with itch and a bluish boggy mucosa, and it "
+    "Allergic disease gives bilateral clear rhinorrhea with itch and a bluish boggy mucosa, and it "
     "does not cause fever or unilateral facial pain. The discharge described is purulent."],
    ["A nasal foreign body",
     "A foreign body causes unilateral foul purulent discharge, usually in a young child, and it does "
@@ -49,9 +49,9 @@ Q("Chronic sinusitis", IO,
     "itch and a bluish mucosa rather than facial pressure with purulent flares, and it typically "
     "follows a seasonal or exposure pattern."],
    ["Nasopharyngeal carcinoma",
-    "A nasopharyngeal tumour would be expected to give unilateral obstruction, blood-stained "
+    "A nasopharyngeal tumor would be expected to give unilateral obstruction, blood-stained "
     "discharge, a neck mass or cranial nerve signs. Bilateral congestion with facial pressure over "
-    "months lacks those localising features."]],
+    "months lacks those localizing features."]],
   "diagnosis", D, 25),
 
 Q("Fungal sinusitis", IO,
@@ -79,7 +79,7 @@ Q("Fungal sinusitis", IO,
 Q("Epistaxis", IO,
   "A patient with a nosebleed is being instructed in first aid.",
   [["Pinch the soft part of the nose continuously for ten minutes, sitting up and leaning forward",
-    "Correct. The bleeding point in 90 per cent of cases is Kiesselbach plexus on the anterior "
+    "Correct. The bleeding point in 90 percent of cases is Kiesselbach plexus on the anterior "
     "septum, which is compressed by pinching the alae rather than the bony bridge. Continuous "
     "pressure matters because releasing to check disrupts the forming clot, and leaning forward "
     "stops blood tracking backward into the pharynx where it is swallowed or aspirated."],
@@ -160,7 +160,7 @@ Q("Allergic rhinitis", IO,
   "A 26-year-old man with perennial allergic rhinitis has persistent symptoms on a single "
   "antihistamine. He asks what usually happens next.",
   [["Most patients end up on more than one medicine",
-    "Correct. About 80 per cent of patients with allergic rhinitis require two or more agents, "
+    "Correct. About 80 percent of patients with allergic rhinitis require two or more agents, "
     "because the different symptoms are driven by different mediators. A typical combination is an "
     "antihistamine with an intranasal corticosteroid, adding a leukotriene inhibitor at night, and "
     "immunotherapy if drug treatment is insufficient."],
@@ -170,7 +170,7 @@ Q("Allergic rhinitis", IO,
     "severity."],
    ["Antibiotics are usually required at some point",
     "Allergy creates the environment in which infection can occur, but it is not itself an "
-    "infection. Routinely expecting antibiotics medicalises an inflammatory condition and drives "
+    "infection. Routinely expecting antibiotics medicalizes an inflammatory condition and drives "
     "unnecessary prescribing."],
    ["Surgery is the usual next step after antihistamine failure",
     "Surgery has a role for structural obstruction or polyps, not for allergic inflammation itself. "
@@ -183,7 +183,7 @@ Q("Nasal polyps", IO,
   [["Aspirin-exacerbated respiratory disease",
     "Correct. The triad of asthma, nasal polyposis and aspirin sensitivity reflects abnormal "
     "arachidonic acid handling: blocking cyclo-oxygenase shunts the pathway toward leukotriene "
-    "production, which drives both the bronchospasm and the polyp formation. Recognising it matters "
+    "production, which drives both the bronchospasm and the polyp formation. Recognizing it matters "
     "because all non-steroidal anti-inflammatories must be avoided."],
    ["Cystic fibrosis presenting in adulthood",
     "Cystic fibrosis is strongly associated with polyps in CHILDREN, and finding polyps in a child "
@@ -191,7 +191,7 @@ Q("Nasal polyps", IO,
     "reaction, the triad is the better explanation."],
    ["Allergic fungal sinusitis",
     "Allergic fungal disease is associated with polyps in a very high proportion of cases and "
-    "belongs on the list, but it is characterised by thick eosinophilic mucin and fungal elements "
+    "belongs on the list, but it is characterized by thick eosinophilic mucin and fungal elements "
     "rather than by a specific drug reaction."],
    ["Churg-Strauss syndrome",
     "Eosinophilic granulomatosis with polyangiitis is associated with polyps and asthma in about "
@@ -205,14 +205,14 @@ Q("Nasal fracture", IO,
   [["Radiography is indicated, because she fails the clinical criteria",
     "Correct. Imaging can be omitted only when all four reassuring criteria are met: tenderness "
     "confined to the bony bridge, patent airflow through each nostril, a straight nose with no "
-    "septal deviation, and no septal haematoma. She fails two of them, so the criteria no longer "
+    "septal deviation, and no septal hematoma. She fails two of them, so the criteria no longer "
     "permit a clinical-only approach and the nose has to be imaged and assessed for reduction."],
    ["No imaging is needed, as nasal fractures are managed clinically",
     "That is true only for the subgroup meeting all four criteria. Applying the rule to a patient "
     "with visible deviation and unilateral obstruction misuses a decision aid designed to exclude "
     "exactly those features."],
    ["Immediate closed reduction without assessment",
-    "Reduction may well be needed, but manipulating a nose before excluding a septal haematoma risks "
+    "Reduction may well be needed, but manipulating a nose before excluding a septal hematoma risks "
     "leaving a collection that will destroy the cartilage regardless of how well the bones are "
     "aligned."],
    ["Computed tomography of the facial skeleton as first line",
@@ -225,30 +225,30 @@ Q("Epistaxis workup", IO,
   "A 55-year-old man on no medication has a single anterior nosebleed that stops with pressure. He "
   "asks whether he needs blood tests.",
   [["No clotting studies, because they are not routine for epistaxis",
-    "Correct. Prothrombin time and international normalised ratio are not part of the routine "
+    "Correct. Prothrombin time and international normalized ratio are not part of the routine "
     "workup and are reserved for patients who are anticoagulated or who have other evidence of a "
     "bleeding tendency. Ordering them reflexively generates incidental abnormalities without "
     "changing the management of a nosebleed that has already stopped."],
    ["Clotting studies for every patient with epistaxis",
-    "Universal testing treats a common local mucosal problem as though it were a haematological one. "
+    "Universal testing treats a common local mucosal problem as though it were a hematological one. "
     "The overwhelming majority of nosebleeds arise from trauma or dryness at Kiesselbach plexus in "
     "people with entirely normal clotting."],
    ["A full blood count and crossmatch",
-    "Haematocrit with type and crossmatch is appropriate for massive haemorrhage, alongside two "
+    "Hematocrit with type and crossmatch is appropriate for massive hemorrhage, alongside two "
     "large-bore intravenous lines. A single self-limiting anterior bleed does not approach that "
     "threshold."],
    ["Platelet function testing",
-    "Specialised platelet studies are for investigating a suspected inherited or acquired platelet "
+    "Specialized platelet studies are for investigating a suspected inherited or acquired platelet "
     "disorder, which requires a suggestive history such as easy bruising or bleeding after surgery. "
     "None of that is present."]],
   "testing", D, 44),
 
-Q("Septal haematoma", IO,
-  "A patient with an undrained septal haematoma returns three weeks later with a depression of the "
+Q("Septal hematoma", IO,
+  "A patient with an undrained septal hematoma returns three weeks later with a depression of the "
   "nasal dorsum.",
   [["Saddle nose deformity from necrosis of the septal cartilage",
     "Correct. The septal cartilage has no blood supply of its own and depends entirely on the "
-    "overlying perichondrium. A haematoma strips the perichondrium away, the cartilage undergoes "
+    "overlying perichondrium. A hematoma strips the perichondrium away, the cartilage undergoes "
     "avascular necrosis, and the dorsum loses its structural support and collapses. That is why "
     "drainage is urgent rather than elective."],
    ["A displaced nasal fracture that was missed",
@@ -260,7 +260,7 @@ Q("Septal haematoma", IO,
     "of weeks. A depression appearing at three weeks reflects lost structure, not residual "
     "oedema."],
    ["A septal abscess requiring drainage",
-    "An untreated haematoma can indeed become infected and abscess, which would present with fever "
+    "An untreated hematoma can indeed become infected and abscess, which would present with fever "
     "and pain rather than a painless collapse. The deformity here is the end result of the "
     "necrosis."]],
   "mechanism", D, 32),

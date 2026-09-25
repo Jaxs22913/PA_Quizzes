@@ -21,7 +21,7 @@ SHORTEN = {
    "Renal clearance, against hepatic metabolism",
  "In concentration-dependent killing, the drug is bacteriostatic; in time-dependent killing the drug is bactericidal":
    "Static, against cidal",
- "They show a post-antibiotic effect, so killing persists after the level falls, and concentration-dependent killing favours a large single dose":
+ "They show a post-antibiotic effect, so killing persists after the level falls, and concentration-dependent killing favors a large single dose":
    "Post-antibiotic effect and concentration-dependent killing",
  "They show time-dependent killing, so a longer interval keeps the level above the minimal inhibitory concentration for a greater share of the dosing period":
    "Time-dependent killing over a longer interval",
@@ -46,14 +46,14 @@ SHORTEN = {
    "Meningitis, cerebral abscess and neurosurgical prophylaxis",
  "Toxin-mediated disease, skin and soft tissue infection, osteomyelitis, surgical prophylaxis in penicillin allergy, and as part of intra-abdominal combination therapy":
    "Toxin-mediated disease, skin, bone, penicillin allergy",
- "Oesophageal candidiasis, systemic aspergillosis not responding to itraconazole or amphotericin B, and febrile neutropenic patients not responding to antibiotics":
-   "Oesophageal candidiasis and refractory aspergillosis",
+ "Esophageal candidiasis, systemic aspergillosis not responding to itraconazole or amphotericin B, and febrile neutropenic patients not responding to antibiotics":
+   "Esophageal candidiasis and refractory aspergillosis",
  "Cryptococcal meningitis, oral and vaginal candidiasis, and prophylaxis in advanced human immunodeficiency virus infection, together with urinary candidiasis":
    "Cryptococcal meningitis and oral or vaginal candidiasis",
  "Community-acquired pneumonia and skin and soft tissue infection in the outpatient setting, together with uncomplicated urinary tract infection":
    "Community-acquired pneumonia and skin infection",
- "Methicillin-resistant Staphylococcus aureus bacteraemia, infective endocarditis, vertebral osteomyelitis, and prosthetic joint infection":
-   "MRSA bacteraemia, endocarditis and osteomyelitis",
+ "Methicillin-resistant Staphylococcus aureus bacteremia, infective endocarditis, vertebral osteomyelitis, and prosthetic joint infection":
+   "MRSA bacteremia, endocarditis and osteomyelitis",
  "Multidrug-resistant Gram-negative infections, extended-spectrum beta-lactamase producing bacteria, nosocomial infections, and meningitis":
    "Resistant Gram-negatives, ESBL producers, meningitis",
  "Neutropenic fever, nosocomial infections including hospital-acquired and ventilator-associated pneumonia, and pseudomonal infections":
@@ -110,8 +110,8 @@ SHORTEN = {
    "Inhibits neuraminidase so progeny cannot be released",
  "It inhibits a viral protease, preventing cleavage of polypeptide precursors into mature viral proteins":
    "Inhibits a viral protease",
- "It stimulates peripheral mononuclear cells to release interferon alpha and macrophages to produce tumour necrosis factor alpha and interleukins":
-   "Drives interferon alpha and tumour necrosis factor release",
+ "It stimulates peripheral mononuclear cells to release interferon alpha and macrophages to produce tumor necrosis factor alpha and interleukins":
+   "Drives interferon alpha and tumor necrosis factor release",
  "It causes bacterial depolarization inhibiting DNA, RNA and protein synthesis, and it cannot be used in pneumonia":
    "Depolarizes the membrane; cannot be used in pneumonia",
  "It releases acetylcholine and inhibits cholinesterase, acting as a depolarizing neuromuscular blocker that causes paralysis and death":
@@ -139,12 +139,12 @@ SHORTEN = {
  "Nystatin and tolnaftate, which bind fungal membrane sterols directly and cause leakage of cell contents":
    "Nystatin and tolnaftate, binding membrane sterols",
  # --- adverse effects ---
- "Hypokalaemia and hypomagnesaemia, hypotension, uraemia in about 80 percent with decreased filtration, and renal tubule damage mitigated by hydration with normal saline":
+ "Hypokalemia and hypomagnesemia, hypotension, uremia in about 80 percent with decreased filtration, and renal tubule damage mitigated by hydration with normal saline":
    "Low potassium and magnesium, hypotension, renal tubule damage",
- "Hyperkalaemia and hypercalcaemia with a rising glomerular filtration rate, hypertension, and tubular hypertrophy that resolves without any need for hydration":
+ "Hyperkalemia and hypercalcemia with a rising glomerular filtration rate, hypertension, and tubular hypertrophy that resolves without any need for hydration":
    "High potassium and calcium with a rising filtration rate",
- "They are driven by interleukin-1 and tumour necrosis factor, and patients are pretreated with acetaminophen, antihistamines and corticosteroids":
-   "Interleukin-1 and tumour necrosis factor; pre-medicate",
+ "They are driven by interleukin-1 and tumor necrosis factor, and patients are pretreated with acetaminophen, antihistamines and corticosteroids":
+   "Interleukin-1 and tumor necrosis factor; pre-medicate",
  "They are caused by rapid fungal lysis releasing endotoxin into the circulation, and are prevented by slowing the rate of the infusion alone":
    "Fungal lysis releasing endotoxin, fixed by slowing the rate",
  "They reflect an immunoglobulin E mediated allergic reaction, and the drug must be stopped permanently":
@@ -153,8 +153,8 @@ SHORTEN = {
    "Headache, confusion, fatigue and blurred vision",
  "Marked neutropenia and thrombocytopenia, with about a third of patients stopping intravenous treatment":
    "Neutropenia and thrombocytopenia; a third stop treatment",
- "Adrenal suppression, infections, hyperglycaemia, glaucoma, cataracts and growth retardation in children":
-   "Adrenal suppression, hyperglycaemia, glaucoma, cataracts",
+ "Adrenal suppression, infections, hyperglycemia, glaucoma, cataracts and growth retardation in children":
+   "Adrenal suppression, hyperglycemia, glaucoma, cataracts",
  "Photosensitivity, severe sunburn, desquamation, burning and stinging that decrease with continued use":
    "Photosensitivity, sunburn, desquamation and stinging",
  "Edema, vesicles, erosions and ulcers at sites where a topical immunomodulator was applied":
@@ -196,7 +196,7 @@ SHORTEN = {
    "Bacteria cannot circumvent it and the toxicity is gone",
  "The class went largely unused for the last 50 years, and rising multidrug resistance is bringing it back despite optimal regimens not being well studied":
    "Unused for 50 years; resistance is bringing it back",
- "Into the afferent system, carrying signals to the centre, and the enteric system, acting independently":
+ "Into the afferent system, carrying signals to the center, and the enteric system, acting independently":
    "Into the afferent and enteric systems",
  # --- duration / practical ---
  "About one month for the scalp, six to nine months for fingernails, and up to twelve months for toenails":
@@ -301,7 +301,7 @@ SHORTEN = {
    "Binds 50S and blocks transpeptidation",
  "With amphotericin B in cryptococcal meningitis, and with itraconazole in chromoblastomycosis":
    "With amphotericin in cryptococcal meningitis",
- "Crystallisation within the renal tubule, requiring aggressive hydration throughout treatment":
+ "Crystallization within the renal tubule, requiring aggressive hydration throughout treatment":
    "Crystals in the renal tubule; hydrate throughout",
  "Do not wash too frequently; twice a day, balancing cleanliness against drying and irritation":
    "Twice a day only, balancing cleanliness against drying",

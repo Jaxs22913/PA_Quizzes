@@ -1,45 +1,45 @@
 # -*- coding: utf-8 -*-
-"""New Pharmacology Exam 1 questions, Lecture 3 part A: ANS organisation and
+"""New Pharmacology Exam 1 questions, Lecture 3 part A: ANS organization and
 the cholinergic system. Correct answer at index 0; rotated later."""
 D = "03. ANS Pharmacology(1).pptx, Slide %d"
 
 QUESTIONS = [
- dict(topic="ANS organisation", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 5,
+ dict(topic="ANS organization", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 5,
   q="What does the afferent division of the peripheral nervous system do?",
   opts=[["Carries signals towards the central nervous system", "Correct, and it drives reflex regulation such as carotid sinus sensing."],
         ["Carries signals away from the central nervous system", "That is the efferent division."],
         ["Controls voluntary movement of skeletal muscle", "That is the somatic efferent system."],
         ["Operates independently of the central nervous system", "That describes the enteric division."]]),
 
- dict(topic="ANS organisation", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 8,
+ dict(topic="ANS organization", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 8,
   q="Which efferent neuron originates in a ganglion?",
   opts=[["The postganglionic neuron", "Correct, and it is generally unmyelinated."],
         ["The preganglionic neuron", "That one is located within the central nervous system."],
         ["The afferent neuron", "Afferent neurons carry signals inward."],
         ["The somatic motor neuron", "That runs directly to skeletal muscle."]]),
 
- dict(topic="ANS organisation", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 9,
+ dict(topic="ANS organization", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 9,
   q="Into how many systems is the autonomic efferent division split?",
   opts=[["Three: enteric, parasympathetic and sympathetic", "Correct, with the enteric division as the third."],
         ["Two: sympathetic and parasympathetic only", "The enteric division is counted as a third."],
         ["Two: somatic and autonomic", "That split sits one level higher."],
         ["Four, including the somatic system", "The somatic system is not autonomic."]]),
 
- dict(topic="ANS organisation", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 12,
+ dict(topic="ANS organization", io="1 — Recall the gross organization of the nervous system, sympathetic and parasympathetic divisions", cite=D % 12,
   q="Why is the enteric division called the brain of the gut?",
   opts=[["It works independently of the central nervous system", "Correct, though both other divisions still modulate it."],
         ["It contains more neurons than the spinal cord", "Independence is the stated reason."],
         ["It uses neurotransmitters found nowhere else", "That is not the stated reason."],
         ["It has no connection to the other divisions", "It is modulated by both other divisions."]]),
 
- dict(topic="ANS organisation", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 15,
+ dict(topic="ANS organization", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 15,
   q="Which neurotransmitter is the major inhibitory one in the brain?",
   opts=[["Gamma-aminobutyric acid", "Correct, while glutamate is the most common excitatory one."],
         ["Glutamate", "Glutamate is the most common excitatory transmitter."],
         ["Glycine", "Glycine is inhibitory but acts in the spinal cord."],
         ["Dopamine in the basal ganglia", "Dopamine is usually inhibitory but is not the major one."]]),
 
- dict(topic="ANS organisation", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 16,
+ dict(topic="ANS organization", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 16,
   q="Where does glycine act as an inhibitory neurotransmitter?",
   opts=[["Neurons of the spinal cord", "Correct, as distinct from gamma-aminobutyric acid in the brain."],
         ["Neurons of the cerebral cortex", "Gamma-aminobutyric acid is the brain's inhibitory transmitter."],
@@ -68,11 +68,11 @@ QUESTIONS = [
         ["Storage in vesicles", "Storage is an early step."]]),
 
  dict(topic="Cholinergic agonists", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 23,
-  q="Which muscarinic receptors are functionally characterised?",
+  q="Which muscarinic receptors are functionally characterized?",
   opts=[["M1, M2 and M3", "Correct, while M4 and M5 are described only on neurons."],
-        ["M1 and M2 only", "M3 is also characterised."],
-        ["All five subclasses equally", "Only three are functionally characterised."],
-        ["M4 and M5", "Those are the ones not functionally characterised."]]),
+        ["M1 and M2 only", "M3 is also characterized."],
+        ["All five subclasses equally", "Only three are functionally characterized."],
+        ["M4 and M5", "Those are the ones not functionally characterized."]]),
 
  dict(topic="Cholinergic agonists", io="3 — Classify the neurotransmitters released and the types of receptors found within the ANS", cite=D % 23,
   q="Where are M1 receptors found?",
@@ -128,7 +128,7 @@ QUESTIONS = [
   opts=[["Mydriasis, tachycardia, weakness, hypertension", "Correct, with fasciculations completing the group."],
         ["Miosis, bradycardia, bronchospasm, salivation", "Those are the muscarinic effects."],
         ["Defecation, urination, emesis, lacrimation", "Those are muscarinic effects."],
-        ["Bronchorrhoea and diarrhoea", "Both are muscarinic effects."]]),
+        ["Bronchorrhea and diarrhea", "Both are muscarinic effects."]]),
 
  dict(topic="Cholinergic agonists", io="7 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: cholinergic agonists", cite=D % 30,
   q="What is distinctive about bethanechol's receptor activity?",
@@ -257,11 +257,11 @@ QUESTIONS = [
         ["Alpha, beta and mixed blockers", "That classification is adrenergic."]]),
 
  dict(topic="Cholinergic antagonists", io="8 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: cholinergic antagonists", cite=D % 46,
-  q="Which sympathetic fibres do the antimuscarinics also block?",
-  opts=[["Cholinergic fibres to salivary and sweat glands", "Correct, leaving other sympathetic stimulation unopposed."],
-        ["All sympathetic fibres to blood vessels", "Only the cholinergic sympathetic fibres are affected."],
-        ["Fibres to the adrenal medulla", "Those are nicotinic and are not blocked."],
-        ["None; they act only on parasympathetic nerves", "The few sympathetic cholinergic fibres are also blocked."]]),
+  q="Which sympathetic fibers do the antimuscarinics also block?",
+  opts=[["Cholinergic fibers to salivary and sweat glands", "Correct, leaving other sympathetic stimulation unopposed."],
+        ["All sympathetic fibers to blood vessels", "Only the cholinergic sympathetic fibers are affected."],
+        ["Fibers to the adrenal medulla", "Those are nicotinic and are not blocked."],
+        ["None; they act only on parasympathetic nerves", "The few sympathetic cholinergic fibers are also blocked."]]),
 
  dict(topic="Cholinergic antagonists", io="8 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: cholinergic antagonists", cite=D % 48,
   q="From which plant does atropine come?",
@@ -281,7 +281,7 @@ QUESTIONS = [
   q="What does atropine do to the eye?",
   opts=[["Persistent mydriasis with cycloplegia", "Correct, so near focus is lost."],
         ["Miosis with spasm of accommodation", "Those are cholinergic agonist effects."],
-        ["Reduced production of aqueous humour", "That is timolol's effect."],
+        ["Reduced production of aqueous humor", "That is timolol's effect."],
         ["Increased tear production", "Secretions are reduced."]]),
 
  dict(topic="Cholinergic antagonists", io="5 — Summarize side effects of cholinergic antagonists", cite=D % 50,
@@ -294,7 +294,7 @@ QUESTIONS = [
  dict(topic="Cholinergic antagonists", io="5 — Summarize side effects of cholinergic antagonists", cite=D % 50,
   q="What do the gut and bladder do in anticholinergic toxicity?",
   opts=[["Lose tone, causing constipation and retention", "Correct, while the heart runs alone with tachycardia."],
-        ["Increase tone, causing diarrhoea and urgency", "Those are cholinergic effects."],
+        ["Increase tone, causing diarrhea and urgency", "Those are cholinergic effects."],
         ["Are unaffected by these drugs", "Both lose tone."],
         ["Empty rapidly and completely", "Retention rather than emptying occurs."]]),
 
@@ -303,7 +303,7 @@ QUESTIONS = [
   opts=[["Hyoscyamine", "Correct, used for its antispasmodic action."],
         ["Hyoscine", "That is scopolamine."],
         ["Glycopyrronium", "That is a separate synthetic agent."],
-        ["Dicyclomine", "That is a structural analogue rather than an isomer."]]),
+        ["Dicyclomine", "That is a structural analog rather than an isomer."]]),
 
  dict(topic="Cholinergic antagonists", io="3 — Identify indications for cholinergic antagonists", cite=D % 51,
   q="Atropine is the antidote for which poisonings?",
@@ -371,7 +371,7 @@ QUESTIONS = [
  dict(topic="Neuromuscular blockers", io="8 — Mechanism, pharmacokinetics, indications, contraindications and adverse effects: cholinergic antagonists", cite=D % 62,
   q="Which agent was the first known competitive neuromuscular blocker?",
   opts=[["Curare", "Correct, purified as tubocurarine for clinical use in the 1940s."],
-        ["Succinylcholine", "That is the depolarising agent."],
+        ["Succinylcholine", "That is the depolarizing agent."],
         ["Pancuronium", "That is a later synthetic agent."],
         ["Rocuronium", "That is a later synthetic agent."]]),
 
@@ -390,7 +390,7 @@ QUESTIONS = [
         ["With atropine alone", "Atropine does not reverse the neuromuscular block."]]),
 
  dict(topic="Neuromuscular blockers", io="4 — Predict the effects of adrenergic and cholinergic stimulation and inhibition on effector organs", cite=D % 65,
-  q="Which muscles are paralysed first by a nondepolarising blocker?",
+  q="Which muscles are paralyzed first by a nondepolarising blocker?",
   opts=[["Small fast muscles of the face and eye", "Correct, with the diaphragm last and recovery in reverse."],
         ["The diaphragm and intercostal muscles", "Those are affected last."],
         ["The muscles of the trunk and neck", "Those come later in the sequence."],
@@ -411,7 +411,7 @@ QUESTIONS = [
         ["It has no cardiovascular effects at all", "A ganglionic block occurs initially."]]),
 
  dict(topic="Neuromuscular blockers", io="2 — Mechanism of action of neuromuscular blockers", cite=D % 67,
-  q="Why does succinylcholine cause sustained depolarisation?",
+  q="Why does succinylcholine cause sustained depolarization?",
   opts=[["Acetylcholinesterase does not destroy it", "Correct, so it stays in the cleft stimulating the receptor."],
         ["It binds the receptor irreversibly", "It remains bound but not irreversibly."],
         ["It blocks the sodium channel directly", "It opens the channel initially."],
@@ -422,13 +422,13 @@ QUESTIONS = [
   opts=[["To reduce the fasciculations that cause muscle soreness", "Correct, since succinylcholine first produces brief fasciculations."],
         ["To speed the onset of paralysis", "Onset is already rapid."],
         ["To prevent malignant hyperthermia developing later", "Dantrolene treats that if it occurs."],
-        ["To protect against hyperkalaemia", "That is not the stated purpose."]]),
+        ["To protect against hyperkalemia", "That is not the stated purpose."]]),
 
  dict(topic="Neuromuscular blockers", io="5 — Summarize side effects of cholinergic antagonists", cite=D % 69,
   q="Why does paralysis last unusually long in some patients given succinylcholine?",
   opts=[["Genetic pseudocholinesterase deficiency", "Correct, since plasma pseudocholinesterase normally clears it fast."],
         ["Antibodies to the nicotinic receptor", "That describes myasthenia gravis."],
-        ["Accumulation of the drug in keratin", "That is griseofulvin's behaviour."],
+        ["Accumulation of the drug in keratin", "That is griseofulvin's behavior."],
         ["Slow renal clearance of the drug", "Plasma enzyme activity is the stated factor."]]),
 
  dict(topic="Neuromuscular blockers", io="5 — Summarize side effects of cholinergic antagonists", cite=D % 70,

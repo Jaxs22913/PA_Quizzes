@@ -15,7 +15,7 @@ INTRO = ("Thirty clinical vignettes on pigmented skin lesions. Each case carries
          "patient. Several cases hinge on the pairs this deck most invites confusion between: ephelides "
          "against lentigines by whether they fade when the sun goes, lentigo simplex against solar "
          "lentigo by border and size, dermatosis papulosa nigrans against small seborrheic keratoses, "
-         "and blue against pigmented spindle cell and Spitz naevi by colour, site and age. Every "
+         "and blue against pigmented spindle cell and Spitz naevi by color, site and age. Every "
          "question cites its slide.")
 for n, key in ((1, "set1"), (2, "set2")):
     fn = "pigmented-skin-lesions-vignettes.html" if n == 1 else "pigmented-skin-lesions-vignettes-version-2.html"

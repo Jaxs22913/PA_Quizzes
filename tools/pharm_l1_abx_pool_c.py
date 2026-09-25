@@ -163,7 +163,7 @@ POOL_C = [
       "That caution belongs to the fluoroquinolones."],
      ["Kernicterus — avoid in the first 30 days of life",
       "Kernicterus is the concern with ceftriaxone in neonates; tetracyclines stain developing teeth and slow bone growth."],
-     ["Grey baby syndrome — avoid in all trimesters",
+     ["Gray baby syndrome — avoid in all trimesters",
       "That is a chloramphenicol effect and is not the caution given here."]],
    c=0, cite=c(63)),
 
@@ -196,8 +196,8 @@ POOL_C = [
  dict(topic="Aminoglycosides", io=IO4I,
    q="Why did aminoglycoside dosing move from every 8 hours to every 24 hours?",
    opts=[
-     ["They show a post-antibiotic effect, so killing persists after the level falls, and concentration-dependent killing favours a large single dose",
-      "Correct. A single large dose maximises the peak, which is what drives killing, while the long trough lets the kidney and inner ear recover, so efficacy rises as toxicity falls."],
+     ["They show a post-antibiotic effect, so killing persists after the level falls, and concentration-dependent killing favors a large single dose",
+      "Correct. A single large dose maximizes the peak, which is what drives killing, while the long trough lets the kidney and inner ear recover, so efficacy rises as toxicity falls."],
      ["They show time-dependent killing, so a longer interval keeps levels above the minimal inhibitory concentration",
       "Time-dependent killing argues for frequent or continuous dosing, which is the opposite."],
      ["Once-daily dosing eliminates the need for therapeutic drug monitoring",
@@ -311,7 +311,7 @@ POOL_C = [
    c=0, cite=c(79)),
 
  dict(topic="Fluoroquinolones", io=IO4K,
-   q="What collateral consequence of fluoroquinolone overuse is emphasised?",
+   q="What collateral consequence of fluoroquinolone overuse is emphasized?",
    opts=[
      ["High rates of resistance, and Clostridium difficile as collateral damage",
       "Correct. Broad coverage makes these agents easy to reach for, and the same breadth devastates colonic flora, opening the way for Clostridium difficile while selecting for resistance."],
@@ -391,8 +391,8 @@ POOL_C = [
  dict(topic="Folate inhibitors", io=IO4N,
    q="Which drug interaction of sulfamethoxazole/trimethoprim involves cytochrome P450 2C9 inhibition?",
    opts=[
-     ["A significant increase in the international normalised ratio in patients on warfarin",
-      "Correct. Other interactions include raised phenytoin, rifampin and digoxin levels, reduced methotrexate clearance, and hypoglycaemia with sulfonylureas."],
+     ["A significant increase in the international normalized ratio in patients on warfarin",
+      "Correct. Other interactions include raised phenytoin, rifampin and digoxin levels, reduced methotrexate clearance, and hypoglycemia with sulfonylureas."],
      ["Reduced effectiveness of oral contraceptives through gut flora disruption",
       "That is the aminopenicillin interaction."],
      ["Serotonin syndrome with selective serotonin reuptake inhibitors",
@@ -415,10 +415,10 @@ POOL_C = [
    c=0, cite=c(86)),
 
  dict(topic="Nitroimidazoles", io=IO4O,
-   q="What must a patient starting metronidazole be counselled to avoid, and why?",
+   q="What must a patient starting metronidazole be counseled to avoid, and why?",
    opts=[
      ["Ethanol, because of a disulfiram-like reaction",
-      "Correct. This is the class's signature counselling point, alongside headache, nausea and vomiting."],
+      "Correct. This is the class's signature counseling point, alongside headache, nausea and vomiting."],
      ["Dairy products, because of chelation reducing absorption",
       "Chelation applies to tetracyclines and fluoroquinolones."],
      ["Tyramine-containing foods, because of hypertensive crisis",

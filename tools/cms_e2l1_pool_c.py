@@ -31,7 +31,7 @@ POOL_C = [
  dict(topic="Episcleritis", io=IOA, slot="gold standard",
    q="Which bedside test is given to confirm episcleritis, and what is the expected result?",
    opts=[
-     ["A drop of 2.5 per cent phenylephrine, waiting 15 minutes — the episcleral vessels should blanch",
+     ["A drop of 2.5 percent phenylephrine, waiting 15 minutes — the episcleral vessels should blanch",
       "Correct — phenylephrine constricts the superficial episcleral vessels but not the deeper scleral ones, so blanching after 15 minutes places the inflammation in the episclera."],
      ["A drop of fluorescein under cobalt blue light — a dendrite should appear",
       "That is herpes simplex keratitis."],
@@ -42,12 +42,12 @@ POOL_C = [
    c=0, cite=c(48)),
 
  dict(topic="Episcleritis", io=IOA, slot="test finding",
-   q="What happens when the vessels are touched with a cotton-tip applicator after anaesthesia in episcleritis?",
+   q="What happens when the vessels are touched with a cotton-tip applicator after anesthesia in episcleritis?",
    opts=[
      ["They can be moved slightly", "Correct — mobile vessels mean episcleral, not scleral."],
      ["They cannot be moved at all", "That is the scleritis finding."],
      ["They blanch permanently", "Blanching is the phenylephrine test, and it is temporary."],
-     ["They bleed immediately", "Bleeding is not a feature; the point of the manoeuvre is that episcleral vessels slide over the sclera while scleral vessels do not."]],
+     ["They bleed immediately", "Bleeding is not a feature; the point of the maneuver is that episcleral vessels slide over the sclera while scleral vessels do not."]],
    c=0, cite=c(47)),
 
  dict(topic="Episcleritis", io=IOA, slot="first-line",
@@ -77,12 +77,12 @@ POOL_C = [
    c=0, cite=c(49)),
 
  dict(topic="Scleritis", io=IOA, slot="test finding",
-   q="What is the characteristic colour change in scleritis, and what causes it?",
+   q="What is the characteristic color change in scleritis, and what causes it?",
    opts=[
      ["A violaceous hue, which is the choroid showing through an area of scleral thinning",
       "Correct — inflammation thins the sclera, and the pigmented choroid beneath shows through as a violaceous hue rather than the bright red of superficial vessels."],
      ["A bright red patch with sharp borders",
-      "That is a subconjunctival haemorrhage."],
+      "That is a subconjunctival hemorrhage."],
      ["A yellow plaque on the lid",
       "That is xanthelasma."],
      ["A white corneal infiltrate",
@@ -150,8 +150,8 @@ POOL_C = [
      ["Diffuse redness of the whole conjunctiva, sparing the limbus",
       "That pattern suggests conjunctivitis instead."],
      ["Blood pooling beneath the conjunctiva",
-      "That is a subconjunctival haemorrhage."],
-     ["A violaceous discolouration of the sclera",
+      "That is a subconjunctival hemorrhage."],
+     ["A violaceous discoloration of the sclera",
       "That is scleritis."]],
    c=0, cite=c(54)),
 
@@ -178,7 +178,7 @@ POOL_C = [
       "Those drive pterygium."],
      ["Nasolacrimal duct obstruction",
       "That underlies dacryocystitis."],
-     ["Rosacea and seborrhoeic dermatitis",
+     ["Rosacea and seborrheic dermatitis",
       "Those are blepharitis associations."]],
    c=0, cite=c(55)),
 
@@ -192,7 +192,7 @@ POOL_C = [
      ["A violaceous scleral hue with scleral thinning",
       "That is scleritis."],
      ["Blood beneath the conjunctiva with a clear cornea",
-      "That is a subconjunctival haemorrhage."]],
+      "That is a subconjunctival hemorrhage."]],
    c=0, cite=c(55)),
 
  dict(topic="Keratitis", io=IOA, slot="etiology",
@@ -237,14 +237,14 @@ POOL_C = [
  dict(topic="Keratitis", io=IOA, slot="avoid",
    q="Which three things must NOT be done in suspected microbial keratitis?",
    opts=[
-     ["Do not patch, do not send home a topical anaesthetic, and do not start empiric corticosteroids",
-      "Correct — patching incubates the organism, a take-home anaesthetic masks pain while the cornea melts, and empiric corticosteroids suppress local immunity; contact lenses stop immediately."],
+     ["Do not patch, do not send home a topical anesthetic, and do not start empiric corticosteroids",
+      "Correct — patching incubates the organism, a take-home anesthetic masks pain while the cornea melts, and empiric corticosteroids suppress local immunity; contact lenses stop immediately."],
      ["Do not use fluorescein, do not measure pressure, and do not evert the lid",
-      "Fluorescein, tonometry and lid eversion are all part of the assessment; what is forbidden is patching, take-home anaesthetic and empiric corticosteroids."],
+      "Fluorescein, tonometry and lid eversion are all part of the assessment; what is forbidden is patching, take-home anesthetic and empiric corticosteroids."],
      ["Do not refer, do not culture, and do not stop lenses",
       "The opposite holds: referral and culture are needed, and contact lens wear must stop at once."],
      ["Do not give oral antivirals, antibiotics or analgesia",
-      "Antivirals, antibiotics and analgesia all have a place; the prohibitions are patching, take-home anaesthetic and empiric corticosteroids."]],
+      "Antivirals, antibiotics and analgesia all have a place; the prohibitions are patching, take-home anesthetic and empiric corticosteroids."]],
    c=0, cite=cn(56)),
 
  dict(topic="Keratitis", io=IOA, slot="prognosis",
@@ -297,7 +297,7 @@ POOL_C = [
      ["Both are dermatomal and neither respects the midline",
       "Only zoster is dermatomal and respects the midline; that pattern is precisely what separates the two."],
      ["Simplex is always bilateral and zoster always unilateral",
-      "Laterality does not separate them cleanly; only about ten per cent of primary simplex dermatitis is bilateral."]],
+      "Laterality does not separate them cleanly; only about ten percent of primary simplex dermatitis is bilateral."]],
    c=0, cite=c(58)),
 
  dict(topic="Herpetic keratitis", io=IOA, slot="test finding",
@@ -397,12 +397,12 @@ POOL_C = [
    opts=[
      ["Contact lens use", "Correct — a contact lens abrades the epithelium and holds organisms against the cornea, which is why lens wear dominates the risk for ulceration."],
      ["Sunlight exposure", "That drives pterygium."],
-     ["Hypertension", "That is a subconjunctival haemorrhage risk."],
+     ["Hypertension", "That is a subconjunctival hemorrhage risk."],
      ["Rosacea", "That is a blepharitis and chalazion association."]],
    c=0, cite=c(60)),
 
  dict(topic="Corneal ulcer", io=IOA, slot="manifestation",
-   q="Which examination behaviour is characteristic of a corneal ulcer?",
+   q="Which examination behavior is characteristic of a corneal ulcer?",
    opts=[
      ["The patient resists opening the affected eye",
       "Correct — photophobia and foreign body sensation make opening the eye painful, so blepharospasm and resistance to examination are themselves a clue."],
@@ -543,7 +543,7 @@ POOL_C = [
      ["Posterior disease needs no treatment at all",
       "Posterior uveitis threatens the retina and is treated, often by intraocular corticosteroid injection."],
      ["Posterior disease is treated with oral antivirals in every case",
-      "Treatment depends on aetiology."]],
+      "Treatment depends on etiology."]],
    c=0, cite=c(65)),
 
  dict(topic="Posterior uveitis", io=IOA, slot="initial test",
@@ -577,7 +577,7 @@ POOL_C = [
    opts=[
      ["Infection must be excluded", "Correct — toxoplasmosis and cytomegalovirus are among the causes, and immunosuppressing an untreated intraocular infection allows it to destroy the retina."],
      ["A lipid profile must be obtained", "Unrelated to this decision."],
-     ["Intraocular pressure must be normalised", "Pressure control is not the precondition; excluding an infectious cause before suppressing immunity is."],
+     ["Intraocular pressure must be normalized", "Pressure control is not the precondition; excluding an infectious cause before suppressing immunity is."],
      ["The patient must have failed topical therapy", "Topical therapy does not reach the posterior segment, so failing it is not a meaningful step; excluding infection is what must come first."]],
    c=0, cite=cn(65)),
 ]

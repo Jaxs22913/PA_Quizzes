@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Length-bias fixes for the CMS I Exam 2 Lecture 1 Set-1 pool.
 
-The starting figure was 67.5 per cent gameable -- the highest of any pool on
+The starting figure was 67.5 percent gameable -- the highest of any pool on
 the site. The cause is structural: the correct answer to a management question
 is usually the deck's FULL list ("the four risk factors", "the whole workup"),
 while a wrong answer is the name of a different condition. Length then tracks
@@ -40,7 +40,7 @@ FIXES = {
  (46, 1): "Contact lens wear and prolonged topical corticosteroid use",
  (47, 1): "Computed tomography of the orbits and sinuses with contrast",
  (48, 2): "It usually leaves a permanent pigmented mark on the sclera",
- (49, 1): "Automatic referral to haematology for a full coagulation workup",
+ (49, 1): "Automatic referral to hematology for a full coagulation workup",
  (50, 2): "A ring of red vessels spreading around the edge of the cornea",
  (51, 3): "A yellow raised nodule sitting at the limbus",
  (53, 2): "Autoimmune, toxic and chemical",
@@ -58,7 +58,7 @@ FIXES = {
  (72, 3): "Serial computed tomography of the orbits every six months",
  (73, 1): "Doxycycline 100 milligrams twice daily for seven days, monitoring for photosensitivity",
  (74, 3): "It concentrates in gastric smooth muscle and causes progressive fibrosis",
- (78, 3): "Neovascularisation, then vitreous haemorrhage, then tractional detachment",
+ (78, 3): "Neovascularization, then vitreous hemorrhage, then tractional detachment",
  (79, 1): "Doxycycline 100 milligrams twice daily for seven days, whatever the local prevalence",
  (81, 3): "Unilateral severe pain with photophobia and a white corneal infiltrate",
  (82, 2): "Rheumatoid arthritis, granulomatosis with polyangiitis and systemic vasculitis",
@@ -73,7 +73,7 @@ FIXES = {
  (92, 2): "Only patients who also have an identified systemic autoimmune disease",
  (93, 1): "Diffuse redness across the whole conjunctiva that spares the limbus",
  (94, 1): "Conjunctiva and lids — as seen in blepharitis, chalazion and hordeolum",
- (95, 3): "Rosacea, seborrhoeic dermatitis and staphylococcal colonisation",
+ (95, 3): "Rosacea, seborrheic dermatitis and staphylococcal colonization",
  (96, 1): "Conjunctival follicles together with a tender preauricular node",
  (97, 1): "Pseudomonas, in contact lens wearers who sleep in their lenses",
  (98, 1): "Emergently, within the hour, for immediate surgical repair",
@@ -100,11 +100,11 @@ FIXES = {
  (124, 3): "Posterior disease is treated with oral antivirals in every case regardless of cause",
  (125, 1): "Computed tomography of the orbits with contrast, to exclude an abscess",
  (126, 3): "It always resolves completely within two to three weeks",
- (128, 1): "Haematogenous spread from a distant infective focus",
- (129, 3): "Patients with rosacea or seborrhoeic dermatitis",
+ (128, 1): "Hematogenous spread from a distant infective focus",
+ (129, 3): "Patients with rosacea or seborrheic dermatitis",
  (130, 2): "Warmth of the tissue immediately surrounding the eye",
  (131, 1): "The eye itself is red and the patient cannot look downward",
- (132, 1): "Balloon-like lid oedema with a white globe and full painless eye movements",
+ (132, 1): "Balloon-like lid edema with a white globe and full painless eye movements",
  (133, 3): "Serum lipid profile, liver function tests and a fasting plasma glucose",
  (134, 1): "Hospital admission with broad-spectrum intravenous antibiotics for 48 to 72 hours",
  (135, 1): "Every patient with pre-septal disease, whatever the severity",
@@ -126,7 +126,7 @@ FIXES = {
  (156, 1): "Chemical injury, open globe injury and acute angle closure",
  (157, 1): "Whenever the patient has no discharge from the affected eye",
  (158, 2): "An appointment with ophthalmology booked within the next 24 hours",
- (159, 1): "Patch the eye, dispense a topical anaesthetic for comfort, and review in two days",
+ (159, 1): "Patch the eye, dispense a topical anesthetic for comfort, and review in two days",
  (161, 1): "Wait for the culture result to return before starting any treatment",
  (162, 3): "No specific advice is needed once the referral has been arranged",
 }

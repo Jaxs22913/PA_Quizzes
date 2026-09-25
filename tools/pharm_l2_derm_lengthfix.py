@@ -21,7 +21,7 @@ FIXES = {
  11: (3, "Acute disease as nodular and pustular lesions; chronic disease as open and closed comedones alone"),
  17: (2, "Wash with a high pH soap several times daily, since a raised pH increases the activity of other topical agents"),
  19: (2, "It requires an immediate switch to systemic therapy, because irritation means the topical agent has failed"),
- 20: (3, "It remains unchanged in the skin and works purely by oxidising sebum within the follicle"),
+ 20: (3, "It remains unchanged in the skin and works purely by oxidizing sebum within the follicle"),
  22: (2, "Conversion to benzoic acid within the stratum corneum together with a direct comedolytic peeling effect"),
  26: (2, "Converts to benzoic acid after penetration, bleaches surface pigment, and suppresses sebum production"),
  32: (2, "Mupirocin is the preferred agent for acne; bacitracin is losing efficacy to Propionibacterium acnes resistance"),

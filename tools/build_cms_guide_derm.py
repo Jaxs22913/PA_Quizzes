@@ -74,7 +74,7 @@ SECTIONS.append(dict(
   four conditions that otherwise all present as a red, warm leg.</div>
   <p><strong>Physiology.</strong> The skin provides a barrier against water loss, chemicals and
   microorganisms; regulates temperature through vasodilation, vasoconstriction and sweating; carries
-  the sensory apparatus for touch, pressure, temperature and pain; synthesises vitamin D under
+  the sensory apparatus for touch, pressure, temperature and pain; synthesizes vitamin D under
   ultraviolet B; and performs immune surveillance through Langerhans cells.</p>
 
   <h3 class="sub" id="gd1-eczema">2.2 &middot; Objective c &mdash; The eczema and dermatitis family</h3>
@@ -88,7 +88,7 @@ SECTIONS.append(dict(
     <tr><td>Seborrheic dermatitis</td><td>Scalp, eyebrows, nasolabial folds, ears, central chest</td><td>Greasy yellow scale on erythema in sebum-rich sites</td></tr>
     <tr><td>Nummular eczema</td><td>Extremities, often older adults</td><td>Discrete coin-shaped plaques</td></tr>
     <tr><td>Dyshidrotic eczema</td><td>Palms, soles, sides of fingers</td><td>Deep-seated tapioca-like vesicles, intensely itchy</td></tr>
-    <tr><td>Stasis dermatitis</td><td>Lower legs, gaiter area, bilateral</td><td>Venous insufficiency with oedema and haemosiderin pigmentation</td></tr>
+    <tr><td>Stasis dermatitis</td><td>Lower legs, gaiter area, bilateral</td><td>Venous insufficiency with edema and hemosiderin pigmentation</td></tr>
     <tr><td>Diaper dermatitis</td><td>Convex surfaces of the napkin area</td><td>Spares the skin folds; candidal overgrowth involves them with satellite lesions</td></tr>
     <tr><td>Perioral dermatitis</td><td>Around the mouth, sparing the vermilion border</td><td>Often follows topical corticosteroid use on the face</td></tr>
     <tr><td>Periorbital dermatitis</td><td>Eyelids and around the eyes</td><td>Thin skin, so potent steroids are avoided</td></tr>
@@ -124,7 +124,7 @@ SECTIONS.append(dict(
     <tr><td>Lichen simplex chronicus</td><td>Thickened lichenified plaque with accentuated skin markings</td><td>Wherever the patient can reach to scratch; the itch-scratch cycle sustains it</td></tr>
   </table>
   <p>The <strong>six Ps</strong> for lichen planus &mdash; purple, polygonal, pruritic, planar, papules
-  and plaques &mdash; is worth memorising because the description alone is close to diagnostic.</p>
+  and plaques &mdash; is worth memorizing because the description alone is close to diagnostic.</p>
 
   <h3 class="sub" id="gd1-alopecia">2.5 &middot; Objective c &mdash; Alopecia</h3>
   <table>
@@ -161,7 +161,7 @@ SECTIONS.append(dict(
     <tr><td>Granuloma annulare</td><td>Annular ring of papules with <em>no scale</em> on the border</td><td>Absent scale is what separates it from tinea</td></tr>
     <tr><td>Pyoderma gangrenosum</td><td>Rapidly enlarging ulcer with an undermined violaceous border</td><td>Pathergy &mdash; debridement makes it worse, so do not debride</td></tr>
     <tr><td>Acne rosacea</td><td>Central facial erythema with flushing and telangiectasias, no comedones</td><td>Absence of comedones separates it from acne vulgaris</td></tr>
-    <tr><td>Hyperhidrosis</td><td>Primary is bilateral, focal, adolescent onset, absent in sleep</td><td>Generalised or nocturnal sweating means look for a secondary cause</td></tr>
+    <tr><td>Hyperhidrosis</td><td>Primary is bilateral, focal, adolescent onset, absent in sleep</td><td>Generalized or nocturnal sweating means look for a secondary cause</td></tr>
   </table>
   <div class="pearl"><strong>Pyoderma gangrenosum is the one that punishes the reflex.</strong> Every
   instinct with a necrotic ulcer says debride. Here debridement enlarges it. The bowel disease history
@@ -170,11 +170,11 @@ SECTIONS.append(dict(
   <h3 class="sub" id="gd2-systemic">3.2 &middot; Objective a &mdash; Lesions that signal systemic disease</h3>
   <table>
     <tr><th>Skin finding</th><th>What to screen for</th></tr>
-    <tr><td>Dermatitis herpetiformis</td><td>Coeliac disease in all patients; autoimmune thyroid disease; T-cell lymphoma</td></tr>
+    <tr><td>Dermatitis herpetiformis</td><td>Celiac disease in all patients; autoimmune thyroid disease; T-cell lymphoma</td></tr>
     <tr><td>Acanthosis nigricans</td><td>Type 2 diabetes, polycystic ovarian syndrome, metabolic syndrome; gastrointestinal malignancy where onset is sudden in an adult</td></tr>
     <tr><td>Erythema nodosum</td><td>Chest radiograph, antistreptolysin O titre, tuberculin or interferon gamma testing, colonoscopy</td></tr>
-    <tr><td>Pyoderma gangrenosum</td><td>Inflammatory bowel disease in 25 to 50%; haematologic malignancy; monoclonal gammopathy; rheumatoid arthritis</td></tr>
-    <tr><td>Generalised granuloma annulare</td><td>Diabetes, thyroid disease, dyslipidaemia; lymphoma in adults over fifty</td></tr>
+    <tr><td>Pyoderma gangrenosum</td><td>Inflammatory bowel disease in 25 to 50%; hematologic malignancy; monoclonal gammopathy; rheumatoid arthritis</td></tr>
+    <tr><td>Generalized granuloma annulare</td><td>Diabetes, thyroid disease, dyslipidemia; lymphoma in adults over fifty</td></tr>
     <tr><td>Secondary hyperhidrosis</td><td>Phaeochromocytoma, hyperthyroidism, lymphoma, menopause</td></tr>
   </table>
   <p><strong>Dermatitis herpetiformis</strong> is diagnosed by perilesional direct immunofluorescence
@@ -209,13 +209,13 @@ SECTIONS.append(dict(
   cross-reaction. Antibiotic prophylaxis is <em>not</em> recommended.</div>
   <p>Human leukocyte antigen associations matter for prescribing: <strong>HLA-B*15:02</strong> with
   carbamazepine, <strong>HLA-B*58:01</strong> with allopurinol. Survivors need lifelong avoidance of the
-  drug class, a medical alert bracelet, and first-degree relatives counselled about shared genetic risk.</p>
+  drug class, a medical alert bracelet, and first-degree relatives counseled about shared genetic risk.</p>
 
   <h3 class="sub" id="gd2-photo">3.4 &middot; Objective a &mdash; Photoreactions and photodermatology</h3>
   <table>
     <tr><th></th><th>Phototoxicity</th><th>Photoallergy</th></tr>
     <tr><td>Mechanism</td><td>Non-immunologic, dose-dependent</td><td>Immunologic type IV, dose-independent</td></tr>
-    <tr><td>First exposure</td><td>Reacts on it</td><td>Sensitises; reaction on re-exposure</td></tr>
+    <tr><td>First exposure</td><td>Reacts on it</td><td>Sensitizes; reaction on re-exposure</td></tr>
     <tr><td>Timing</td><td>Within hours</td><td>Delayed</td></tr>
     <tr><td>Appearance</td><td>Exaggerated sunburn, confined to exposed skin</td><td>Eczematous and itchy, extending beyond exposed skin</td></tr>
     <tr><td>Drugs</td><td>Tetracyclines (doxycycline), fluoroquinolones, amiodarone, thiazides, furosemide, voriconazole</td><td>Sunscreen chemicals (oxybenzone), sulfonamides, topical antihistamines, phenothiazines</td></tr>
@@ -232,7 +232,7 @@ SECTIONS.append(dict(
     <tr><td>Actinic keratosis</td><td>Sandpaper texture; TP53 mutation; field cancerization, so field-directed therapy for confluent disease</td></tr>
     <tr><td>Dermatoheliosis</td><td>Solar elastosis is the histological hallmark; tretinoin is the only agent approved for photoaging</td></tr>
   </table>
-  <div class="pearl"><strong>Know the millimetres.</strong> This lecture and the CMS block use a
+  <div class="pearl"><strong>Know the millimeters.</strong> This lecture and the CMS block use a
   <strong>1 cm</strong> threshold for macule versus patch and papule versus plaque, while Clinical
   Pathophysiology uses <strong>5 mm</strong>. Both are correct in their own course &mdash; answer with
   the number the course in front of you uses.</div>
@@ -258,7 +258,7 @@ SECTIONS.append(dict(
     body="""
   <h3 class="sub" id="cbi-acne">4.1 &middot; Objective a &mdash; Acne vulgaris</h3>
   <p>Four factors, temporal sequence not fully understood: <strong>follicular
-  hyperkeratinisation</strong>, <strong>increased sebum</strong>, <strong>Cutibacterium acnes</strong>
+  hyperkeratinization</strong>, <strong>increased sebum</strong>, <strong>Cutibacterium acnes</strong>
   (an anaerobic Gram-positive rod, formerly Propionibacterium acnes) and <strong>inflammation</strong>
   from the immune response to it. The hallmark lesion is the <strong>comedone</strong>; its absence is
   what rules acne out and rosacea in.</p>
@@ -272,7 +272,7 @@ SECTIONS.append(dict(
   <p><strong>Benzoyl peroxide goes with every antibiotic</strong>, topical or oral, to reduce resistance.
   Oral tetracyclines are kept to three to four months for the same reason.</p>
   <div class="callout"><strong>Isotretinoin safety is examinable in detail.</strong> Negative pregnancy
-  tests before starting, monthly during, and five weeks after. iPledge enrolment. One month dispensed at
+  tests before starting, monthly during, and five weeks after. iPledge enrollment. One month dispensed at
   a time. Two forms of contraception preferred, one a barrier method. No blood donation while taking it.</div>
   <p><strong>Patient education:</strong> separate tretinoin and benzoyl peroxide by at least three hours;
   wash no more than twice daily with a gentle cleanser and warm water; use non-comedogenic products;
@@ -306,17 +306,17 @@ SECTIONS.append(dict(
     <tr><td>Border</td><td>Crusted erosion</td><td><strong>Raised, sharply demarcated</strong></td><td><strong>Not raised, not demarcated</strong></td></tr>
     <tr><td>Treatment</td><td>Mupirocin topically; cephalexin orally, the drug of choice in children</td><td>Penicillin V; clindamycin if penicillin allergic</td><td>Dicloxacillin or cephalexin; cover MRSA if purulent</td></tr>
   </table>
-  <p>Impetigo comes in three forms: <strong>non-bullous</strong> (commonest, honey-coloured adherent
+  <p>Impetigo comes in three forms: <strong>non-bullous</strong> (commonest, honey-colored adherent
   crust, lymphadenopathy common), <strong>bullous</strong> (exclusively Staphylococcus aureus through
   epidermolytic toxins, tense bullae leaving collarettes, lymphadenopathy uncommon) and
-  <strong>ecthyma</strong> (ulcerates into the dermis, thick grey-yellow crust, heals slowly with a scar).</p>
+  <strong>ecthyma</strong> (ulcerates into the dermis, thick gray-yellow crust, heals slowly with a scar).</p>
   <div class="callout"><strong>Acute post-streptococcal glomerulonephritis can follow impetigo, and
   antibiotics do not prevent it</strong> &mdash; the immune activation usually precedes treatment.
-  Especially in three to seven year olds: sudden oedema, tea-coloured urine, proteinuria, hypertension.</div>
+  Especially in three to seven year olds: sudden edema, tea-colored urine, proteinuria, hypertension.</div>
   <p>An <strong>abscess</strong> follows traumatic inoculation, whereas a furuncle arises from an
   infected follicle. If it does not drain spontaneously, incise and drain it.</p>
   <p><strong>The cellulitis pitfall:</strong> tense, cyanotic, bronzed or blanched tissue is
-  devitalised. It is not perfused, so antibiotics never reach it, and it needs surgical debridement.
+  devitalized. It is not perfused, so antibiotics never reach it, and it needs surgical debridement.
   Expect the leg to look worse on day one, fever gone by 24 hours, inflammation settling over one to two
   weeks. Fever beyond 48 hours means change the antibiotic, guided by culture.</p>
 
@@ -381,15 +381,15 @@ SECTIONS.append(dict(
     <tr><th></th><th>First infestation</th><th>Reinfestation</th></tr>
     <tr><td>Pruritus appears</td><td>4 to 6 weeks &mdash; many not for 3 months</td><td>2 to 3 days</td></tr>
   </table>
-  <p>Distribution favours interdigital webs, sides of fingers, volar wrists, elbows, axillae, scrotum,
+  <p>Distribution favors interdigital webs, sides of fingers, volar wrists, elbows, axillae, scrotum,
   penis, labia and areolae, with <strong>head and neck spared in healthy adults</strong>. In
   <strong>infants, the elderly and the immunocompromised</strong>, head and neck may be involved, and
   infants also get indurated crusted nodules on the trunk and intertriginous areas.</p>
   <div class="callout"><strong>Crusted (hyperkeratotic) scabies is the outbreak risk.</strong> Thick
-  flaking scale containing millions of mites, thickened discoloured nails, and often <em>no itch at
+  flaking scale containing millions of mites, thickened discolored nails, and often <em>no itch at
   all</em>. These patients are highly infectious. Facility-associated scabies in long-term care is hard
   to eradicate once healthcare workers are infested.</div>
-  <p><strong>Diagnosis</strong> is by microscopic identification of the organism, ova or faeces: skin
+  <p><strong>Diagnosis</strong> is by microscopic identification of the organism, ova or feces: skin
   scraping of an unexcoriated burrow with a number 15 blade and mineral oil, dermoscopy showing the
   <strong>delta-wing jet</strong> sign, or the burrow ink test (a zigzag line running away from the
   lesion).</p>
@@ -403,7 +403,7 @@ SECTIONS.append(dict(
     <tr><th></th><th>Head lice</th><th>Body lice</th><th>Pubic lice</th></tr>
     <tr><td>Organism</td><td>Pediculus humanus capitis</td><td>Pediculus humanus humanus</td><td>Phthirus pubis</td></tr>
     <tr><td>Who</td><td>Children 3 to 12</td><td>Homeless, refugees, crowded conditions</td><td>All social levels; often a concurrent sexually transmitted infection</td></tr>
-    <tr><td>Signs</td><td>Nits fixed to the hair shaft; excoriations, scaling</td><td>Linear excoriations on back, neck, shoulders, waist</td><td>Maculae caerulae &mdash; slate-grey macules about 1 cm; periumbilical papular urticaria</td></tr>
+    <tr><td>Signs</td><td>Nits fixed to the hair shaft; excoriations, scaling</td><td>Linear excoriations on back, neck, shoulders, waist</td><td>Maculae caerulae &mdash; slate-gray macules about 1 cm; periumbilical papular urticaria</td></tr>
     <tr><td>Diagnosis</td><td>Wet combing for live lice</td><td>Examine clothing seams; shake over white paper</td><td>Nits at the base of hairs; microscopy of a plucked hair</td></tr>
   </table>
   <p><strong>Nits cannot be pulled off the hair shaft</strong> &mdash; that is what separates them from
@@ -417,7 +417,7 @@ SECTIONS.append(dict(
     <tr><td>Bedbugs (Cimex)</td><td>Painless bites in a linear row of three &mdash; &ldquo;breakfast, lunch and dinner&rdquo;; blood flecks on linen</td><td>Symptomatic; a <strong>professional exterminator is necessary</strong>. They survive a year without a meal</td></tr>
     <tr><td>Tungiasis (Tungidae)</td><td>Papules enlarging to a firm yellow translucent nodule on the feet, after barefoot beach exposure in endemic areas</td><td>Dermoscopy shows ovoid eggs; excision or cryotherapy, tetanus prophylaxis, systemic antibiotics</td></tr>
     <tr><td>Fleas (Pulicidae)</td><td>Clustered urticarial papules on the lower legs</td><td>Symptomatic. Rat fleas carry bubonic plague; cat fleas carry plague and endemic typhus</td></tr>
-    <tr><td>Hymenoptera</td><td>Burning and local urticaria; severe local reaction lasts a week; systemic reaction in 0.4 to 3%</td><td><strong>Scrape</strong> a honeybee stinger off with a card edge. Epinephrine for anaphylaxis; auto-injector and desensitisation afterwards</td></tr>
+    <tr><td>Hymenoptera</td><td>Burning and local urticaria; severe local reaction lasts a week; systemic reaction in 0.4 to 3%</td><td><strong>Scrape</strong> a honeybee stinger off with a card edge. Epinephrine for anaphylaxis; auto-injector and desensitization afterwards</td></tr>
     <tr><td>Caterpillars</td><td>Gypsy moth &rarr; papules in linear streaks. Asp or puss caterpillar (most poisonous) &rarr; intense pain, train-track purpura</td><td>Strip the hairs off with adhesive tape; antihistamines, steroids, narcotic analgesia, antivenom for some</td></tr>
   </table>
 
@@ -425,7 +425,7 @@ SECTIONS.append(dict(
   <table>
     <tr><th></th><th>Cutaneous larva migrans</th><th>Cercarial dermatitis</th></tr>
     <tr><td>Organism</td><td>Animal hookworm larvae, mostly dog and cat</td><td>Cercarial form of parasitic flatworms, via snails</td></tr>
-    <tr><td>Exposure</td><td>Sand or soil with animal faeces, tropical and subtropical</td><td>Fresh water &mdash; Great Lakes, rice paddies</td></tr>
+    <tr><td>Exposure</td><td>Sand or soil with animal feces, tropical and subtropical</td><td>Fresh water &mdash; Great Lakes, rice paddies</td></tr>
     <tr><td>Lesion</td><td>Raised serpentine trail advancing <strong>2 to 3 cm a day</strong>, lasting 2 to 8 weeks</td><td>Prickling 30 minutes, itch at 10 to 12 hours, papules by 24 hours, peak at 48 to 72 hours</td></tr>
     <tr><td>Treatment</td><td>Albendazole 400 mg daily for 3 days, or ivermectin. <strong>No excision, no cryotherapy</strong></td><td>Symptomatic &mdash; antihistamines, oatmeal baths, aspirin, glucocorticoids</td></tr>
   </table>
@@ -433,9 +433,9 @@ SECTIONS.append(dict(
   <h3 class="sub" id="di-spiders">5.4 &middot; Objective a &mdash; Spider bites</h3>
   <table>
     <tr><th></th><th>Black widow</th><th>Brown recluse</th><th>Hobo</th></tr>
-    <tr><td>Identification</td><td>Red hourglass under the abdomen</td><td>Dark fiddle on the cephalothorax</td><td>Grey herringbone on the abdomen</td></tr>
+    <tr><td>Identification</td><td>Red hourglass under the abdomen</td><td>Dark fiddle on the cephalothorax</td><td>Gray herringbone on the abdomen</td></tr>
     <tr><td>Range</td><td>All but the far north</td><td>Midwest and Southeast</td><td>Pacific Northwest</td></tr>
-    <tr><td>Bite</td><td>Painful; sweating and piloerection within 30 minutes, then cramping abdominal pain and spasm</td><td>Red, white and blue sign; necrosis at 2 to 3 days, eschar at 5 to 7</td><td>Painless; induration and paraesthesia within 30 minutes, vesicles by 36 hours</td></tr>
+    <tr><td>Bite</td><td>Painful; sweating and piloerection within 30 minutes, then cramping abdominal pain and spasm</td><td>Red, white and blue sign; necrosis at 2 to 3 days, eschar at 5 to 7</td><td>Painless; induration and paresthesia within 30 minutes, vesicles by 36 hours</td></tr>
     <tr><td>Venom</td><td>Alpha-latrotoxin, a neurotoxin</td><td>Local cytotoxic effect</td><td>Local, with systemic symptoms</td></tr>
     <tr><td>Treatment</td><td>Calcium gluconate, narcotics, muscle relaxants, benzodiazepines; check tetanus</td><td>Pain control, warm compresses; <strong>delay surgery until the wound is stable</strong></td><td>Supportive; heals over weeks, headache up to a week</td></tr>
   </table>
@@ -449,13 +449,13 @@ SECTIONS.append(dict(
     <tr><td>Geography</td><td>Northeast and upper Midwest</td><td>Southeastern and south central states, spring and early summer</td></tr>
     <tr><td>Rash</td><td>Erythema migrans &mdash; over 5 cm, central clearing, about a week after the bite</td><td>Starts ankles and wrists, spreads <strong>centripetally</strong> over 6 to 18 hours, involves palms and soles, spares the face</td></tr>
     <tr><td>Diagnosis</td><td>Clinical if erythema migrans present. Otherwise enzyme-linked immunosorbent assay, C6 peptide, Western blot</td><td>Indirect immunofluorescence assay is the gold standard but rarely diagnostic before day 7</td></tr>
-    <tr><td>Treatment</td><td>Doxycycline first line; <strong>amoxicillin</strong> in children and pregnancy; macrolide second line; 10 to 14 days</td><td><strong>Doxycycline for everyone</strong>, including pregnancy and children, with desensitisation where contraindicated; 5 to 10 days</td></tr>
+    <tr><td>Treatment</td><td>Doxycycline first line; <strong>amoxicillin</strong> in children and pregnancy; macrolide second line; 10 to 14 days</td><td><strong>Doxycycline for everyone</strong>, including pregnancy and children, with desensitization where contraindicated; 5 to 10 days</td></tr>
   </table>
-  <div class="pearl"><strong>The two tick illnesses diverge on the paediatric antibiotic.</strong> Lyme
+  <div class="pearl"><strong>The two tick illnesses diverge on the pediatric antibiotic.</strong> Lyme
   disease in a child gets amoxicillin. Rocky Mountain spotted fever in a child gets doxycycline anyway,
   because the risk of untreated disease outweighs tooth staining. <strong>Start by day 5</strong> &mdash;
   before the serology can help.</div>
-  <p>Lyme stages: <strong>1</strong> early localised (erythema migrans, about a week);
+  <p>Lyme stages: <strong>1</strong> early localized (erythema migrans, about a week);
   <strong>2</strong> early disseminated (days to weeks &mdash; cranial nerve palsies, meningitis,
   radiculopathy, arthralgia); <strong>3</strong> late persistent (months to years &mdash; monoarticular
   arthritis of a weight-bearing joint, subacute encephalopathy, acrodermatitis chronica atrophicans).
@@ -468,7 +468,7 @@ SECTIONS.append(dict(
   <p><strong>Primary lesions</strong> affect the epidermis and superficial dermis; <strong>secondary
   lesions</strong> infiltrate the dermis or subcutaneous tissue. Their combination determines the
   diagnostic category, also called the <em>reaction pattern</em>. Crusting or scaling tells you the
-  epidermis has been affected. Once the reaction pattern is recognised, colour, shape, configuration
+  epidermis has been affected. Once the reaction pattern is recognized, color, shape, configuration
   and distribution narrow the differential further.</p>
   <table>
     <tr><th>Population</th><th>What changes</th></tr>
@@ -504,8 +504,8 @@ SECTIONS.append(dict(
     <tr><th></th><th>Ephelides (freckles)</th><th>Lentigo simplex</th><th>Solar lentigo</th></tr>
     <tr><td>Inheritance or cause</td><td>Autosomal dominant; MCR-1 variant</td><td>Increased melanocyte density; melanin macroglobules</td><td>Chronic ultraviolet exposure; basal melanocyte proliferation</td></tr>
     <tr><td>Age</td><td>Young children, regress later in life</td><td>Bimodal &mdash; early childhood or later life</td><td>90% of people by age 50</td></tr>
-    <tr><td>Appearance</td><td>Light brown symmetric macules 3 to 5 mm</td><td>Uniformly black or brown, well circumscribed, under 5 mm</td><td>Irregular borders, coalescing at sunburn sites, under 1 mm to several centimetres</td></tr>
-    <tr><td>Sun behaviour</td><td><strong>Fade when exposure stops</strong>; darker in summer</td><td><strong>Do not fade</strong>; occur on protected skin too</td><td>Do not fade; associated with actinic keratosis and skin cancers</td></tr>
+    <tr><td>Appearance</td><td>Light brown symmetric macules 3 to 5 mm</td><td>Uniformly black or brown, well circumscribed, under 5 mm</td><td>Irregular borders, coalescing at sunburn sites, under 1 mm to several centimeters</td></tr>
+    <tr><td>Sun behavior</td><td><strong>Fade when exposure stops</strong>; darker in summer</td><td><strong>Do not fade</strong>; occur on protected skin too</td><td>Do not fade; associated with actinic keratosis and skin cancers</td></tr>
     <tr><td>Treatment</td><td>Sun protection, depigmenting agents, laser. <strong>Not cryotherapy</strong> &mdash; lesions too small</td><td>None needed; cryotherapy or quality-switched laser for cosmesis</td><td>None needed; retinoids, cryotherapy or laser for cosmesis</td></tr>
   </table>
   <div class="pearl"><strong>The whole ephelides-versus-lentigines question is one clinical fact:
@@ -516,7 +516,7 @@ SECTIONS.append(dict(
   freckling phenotype travels with red hair and fair skin.</p>
   <p><strong>Photochemotherapy (PUVA) lentigines</strong> relate to the total number of treatments, male
   sex, fair skin and older age, and appear on <em>sun-protected</em> sites such as buttocks and
-  genitalia as well as exposed skin. A partial or generalised lentigo raises the question of an
+  genitalia as well as exposed skin. A partial or generalized lentigo raises the question of an
   inherited disorder such as LAMB or myxoma syndrome.</p>
 
   <h3 class="sub" id="psl-keratoses">6.2 &middot; Objective a &mdash; Seborrheic keratosis and dermatosis papulosa nigrans</h3>
@@ -539,7 +539,7 @@ SECTIONS.append(dict(
   <table>
     <tr><th></th><th>Non-segmental</th><th>Segmental</th></tr>
     <tr><td>Distribution</td><td>Well defined, <strong>symmetrical</strong>; prefers face (periorificial), genitals, acral areas</td><td><strong>Unilateral</strong>, does not cross the midline, block-like patterns</td></tr>
-    <tr><td>Course</td><td>Progressive</td><td>Unpredictable cycles of flare and stabilisation</td></tr>
+    <tr><td>Course</td><td>Progressive</td><td>Unpredictable cycles of flare and stabilization</td></tr>
   </table>
   <table>
     <tr><th>Extent</th><th>Treatment</th></tr>

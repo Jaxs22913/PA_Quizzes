@@ -17,7 +17,7 @@ POOL_B = [
      ["Erythema nodosum",
       "Correct — bilateral tender anterior shin nodules that do not ulcerate, after a prodrome of fever and arthralgia."],
      ["Nodular vasculitis, also called erythema induratum",
-      "That favours the posterior legs, ulcerates, and shows lobular panniculitis on biopsy."],
+      "That favors the posterior legs, ulcerates, and shows lobular panniculitis on biopsy."],
      ["Cellulitis of both lower legs",
       "Cellulitis is unilateral, warm and expanding, with positive cultures and antibiotic response."],
      ["Superficial thrombophlebitis of the long saphenous vein",
@@ -45,8 +45,8 @@ POOL_B = [
      ["Serum protein electrophoresis, antinuclear and antineutrophil cytoplasmic antibodies",
       "That panel investigates pyoderma gangrenosum."],
      ["Complement C4, C1-esterase inhibitor function and serum tryptase",
-      "That panel investigates urticaria and angio-oedema."],
-     ["Fasting insulin, haemoglobin A1c and a full lipid profile",
+      "That panel investigates urticaria and angioedema."],
+     ["Fasting insulin, hemoglobin A1c and a full lipid profile",
       "That panel investigates acanthosis nigricans."]],
    c=0, cite=c(44)),
 
@@ -64,14 +64,14 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Granuloma annulare", io=IOA,
-   q="A 9-year-old girl has a ring of small flesh-coloured bumps on the back of her hand, present for four months and not itchy. There is no scale on the border. Which is the most likely diagnosis?",
+   q="A 9-year-old girl has a ring of small flesh-colored bumps on the back of her hand, present for four months and not itchy. There is no scale on the border. Which is the most likely diagnosis?",
    opts=[
-     ["Localised granuloma annulare",
-      "Correct — the absent scale is what separates it from tinea, and localised disease predominates in children."],
+     ["Localized granuloma annulare",
+      "Correct — the absent scale is what separates it from tinea, and localized disease predominates in children."],
      ["Tinea corporis of the dorsal hand",
       "That has a scaling border and is potassium hydroxide positive."],
      ["Necrobiosis lipoidica of early onset",
-      "That produces shin plaques with a yellow-waxy atrophic centre."],
+      "That produces shin plaques with a yellow-waxy atrophic center."],
      ["Subacute cutaneous lupus erythematosus",
       "That is photodistributed with positive antinuclear and anti-Ro antibodies."]],
    c=0, cite=c(50)),
@@ -79,18 +79,18 @@ POOL_B = [
  dict(topic="Granuloma annulare", io=IOA,
    q="A 58-year-old man has hundreds of small papules over the trunk and limbs, present for a year and mildly itchy. Biopsy confirms granuloma annulare. Which is the most appropriate next step?",
    opts=[
-     ["Screen for diabetes, thyroid disease and dyslipidaemia, with age-appropriate malignancy screening",
-      "Correct — generalised disease in an adult over fifty carries these associations, including lymphoma."],
+     ["Screen for diabetes, thyroid disease and dyslipidemia, with age-appropriate malignancy screening",
+      "Correct — generalized disease in an adult over fifty carries these associations, including lymphoma."],
      ["Reassure that the condition is benign and arrange review in two years",
-      "That is appropriate for localised disease but generalised disease warrants systemic workup."],
+      "That is appropriate for localized disease but generalized disease warrants systemic workup."],
      ["Begin intralesional triamcinolone to each of the affected lesions",
-      "Intralesional therapy suits symptomatic localised lesions, not hundreds of papules."],
+      "Intralesional therapy suits symptomatic localized lesions, not hundreds of papules."],
      ["Begin oral terbinafine on the assumption of widespread dermatophyte infection",
       "The biopsy has confirmed granuloma annulare, which is not fungal."]],
    c=0, cite=c(51)),
 
  dict(topic="Granuloma annulare", io=IOA,
-   q="The parent of a child with a single asymptomatic granuloma annulare ring asks whether treatment is needed. Which is the most appropriate counselling point?",
+   q="The parent of a child with a single asymptomatic granuloma annulare ring asks whether treatment is needed. Which is the most appropriate counseling point?",
    opts=[
      ["It is benign and self-limiting, with about half resolving within two years, so treatment is for cosmesis or discomfort",
       "Correct, and there is no malignant potential."],
@@ -120,7 +120,7 @@ POOL_B = [
    opts=[
      ["Biopsy the ulcer edge and take wound cultures, since the diagnosis is one of exclusion",
       "Correct — there is no gold standard test, so malignancy and infection must be excluded first."],
-     ["Take a punch biopsy from the ulcer centre for direct immunofluorescence",
+     ["Take a punch biopsy from the ulcer center for direct immunofluorescence",
       "Immunofluorescence addresses autoimmune blistering disease rather than this."],
      ["Order an ankle-brachial index and venous duplex ultrasound only",
       "Vascular studies help exclude a differential but cannot establish the diagnosis."],
@@ -194,7 +194,7 @@ POOL_B = [
    c=0, cite=c(70)),
 
  dict(topic="Acne rosacea", io=IOA,
-   q="A 41-year-old woman newly diagnosed with rosacea asks whether treatment will cure it. Which is the most appropriate counselling point?",
+   q="A 41-year-old woman newly diagnosed with rosacea asks whether treatment will cure it. Which is the most appropriate counseling point?",
    opts=[
      ["It is a chronic condition that therapy controls rather than eliminates, so long-term management and daily sun protection are expected",
       "Correct, alongside a trigger diary and gentle non-irritating skincare."],
@@ -211,8 +211,8 @@ POOL_B = [
    opts=[
      ["Primary focal hyperhidrosis",
       "Correct — bilateral, focal, adolescent onset and absent during sleep are the defining features."],
-     ["Secondary generalised hyperhidrosis",
-      "That is generalised, may be asymmetric, and can occur at night."],
+     ["Secondary generalized hyperhidrosis",
+      "That is generalized, may be asymmetric, and can occur at night."],
      ["Frey syndrome producing gustatory sweating",
       "That causes unilateral facial sweating triggered by eating."],
      ["Autonomic neuropathy from undiagnosed diabetes",
@@ -220,7 +220,7 @@ POOL_B = [
    c=0, cite=c(73)),
 
  dict(topic="Hyperhidrosis", io=IOA,
-   q="A 54-year-old man reports new generalised sweating including at night, with episodes of headache and palpitations, and his blood pressure is 178/104. Which is the most appropriate initial testing?",
+   q="A 54-year-old man reports new generalized sweating including at night, with episodes of headache and palpitations, and his blood pressure is 178/104. Which is the most appropriate initial testing?",
    opts=[
      ["Twenty-four hour urine metanephrines and catecholamines",
       "Correct — episodic sweating with headache, palpitations and hypertension points to phaeochromocytoma."],
@@ -233,7 +233,7 @@ POOL_B = [
    c=0, cite=c(74)),
 
  dict(topic="Hyperhidrosis", io=IOA,
-   q="A 22-year-old woman with primary axillary hyperhidrosis has not improved with nightly aluminium chloride. Which is the most appropriate next step?",
+   q="A 22-year-old woman with primary axillary hyperhidrosis has not improved with nightly aluminum chloride. Which is the most appropriate next step?",
    opts=[
      ["Glycopyrronium 2.4% cloth applied once daily, or an oral anticholinergic",
       "Correct — topical glycopyrronium is approved for axillary disease, with oral anticholinergics as second line."],
@@ -246,7 +246,7 @@ POOL_B = [
    c=0, cite=c(75)),
 
  dict(topic="Hyperhidrosis", io=IOA,
-   q="A 27-year-old man is considering botulinum toxin for axillary hyperhidrosis. Which is the most appropriate counselling point?",
+   q="A 27-year-old man is considering botulinum toxin for axillary hyperhidrosis. Which is the most appropriate counseling point?",
    opts=[
      ["It is effective for three to six months, so retreatment will be needed",
       "Correct — setting that expectation is specifically named in the patient education."],
@@ -259,7 +259,7 @@ POOL_B = [
    c=0, cite=c(76)),
 
  dict(topic="Hyperhidrosis", io=IOA,
-   q="A 24-year-old woman with primary hyperhidrosis says she has been told repeatedly that she just needs to wash more and relax. Which is the most appropriate counselling point?",
+   q="A 24-year-old woman with primary hyperhidrosis says she has been told repeatedly that she just needs to wash more and relax. Which is the most appropriate counseling point?",
    opts=[
      ["Primary hyperhidrosis is a medical condition rather than a problem of hygiene or anxiety",
       "Correct — primary hyperhidrosis is not caused by poor hygiene or anxiety; it is a medical condition, with quality-of-life impairment comparable to severe psoriasis."],

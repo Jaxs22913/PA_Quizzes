@@ -21,12 +21,12 @@ IO8 = "8 — Mechanism, pharmacokinetics, indications, contraindications and adv
 
 POOL = [
 
- dict(topic="ANS organisation", io=IO1,
+ dict(topic="ANS organization", io=IO1,
    q="How is the efferent division of the peripheral nervous system divided?",
    opts=[
      ["Into the somatic system, under voluntary control of muscles, and the autonomic system, under involuntary control of body functions",
       "Correct. Afferent carries signals to the central nervous system; efferent carries them away and splits this way."],
-     ["Into the afferent system, carrying signals to the centre, and the enteric system, acting independently",
+     ["Into the afferent system, carrying signals to the center, and the enteric system, acting independently",
       "Afferent is the other division of the peripheral nervous system entirely, not a branch of efferent."],
      ["Into the sympathetic and parasympathetic systems only, with no somatic component",
       "Those two are subdivisions of the autonomic branch, and the somatic branch also exists."],
@@ -34,7 +34,7 @@ POOL = [
       "Brain and spinal cord are the central nervous system, not the efferent division."]],
    c=0, cite=c(7)),
 
- dict(topic="ANS organisation", io=IO1,
+ dict(topic="ANS organization", io=IO1,
    q="Which three systems make up the autonomic division?",
    opts=[
      ["Enteric, parasympathetic and sympathetic",
@@ -47,7 +47,7 @@ POOL = [
       "Central and peripheral are the two anatomical divisions of the nervous system overall."]],
    c=0, cite=c(9)),
 
- dict(topic="ANS organisation", io=IO2,
+ dict(topic="ANS organization", io=IO2,
    q="How are the two sections of an autonomic efferent pathway described?",
    opts=[
      ["A preganglionic neuron located within the central nervous system, and a postganglionic neuron originating in a ganglion and terminating on the effector organ",
@@ -87,14 +87,14 @@ POOL = [
    c=0, cite=c(20)),
 
  dict(topic="Cholinergic receptors", io=IO3,
-   q="Which muscarinic receptor subtypes are functionally characterised?",
+   q="Which muscarinic receptor subtypes are functionally characterized?",
    opts=[
      ["M1, M2 and M3 only, of five subclasses",
-      "Correct. M4 and M5 are listed as neuronal without further characterisation."],
+      "Correct. M4 and M5 are listed as neuronal without further characterization."],
      ["All five subclasses, M1 through M5",
       "All five have been cloned, but only M1, M2 and M3 have well-defined physiological roles, which is why drugs are described against those three."],
      ["M1 and M2 only",
-      "M3 is also functionally characterised, on bladder, exocrine glands and smooth muscle."],
+      "M3 is also functionally characterized, on bladder, exocrine glands and smooth muscle."],
      ["M2 and M4 only, the cardiac subtypes",
       "M2 is the cardiac one, but M4 is listed only as neuronal."]],
    c=0, cite=c(23)),
@@ -120,7 +120,7 @@ POOL = [
      ["A seven-transmembrane receptor coupled to a G protein and a second messenger",
       "That is the muscarinic receptor family's arrangement rather than the nicotinic one."],
      ["An enzyme-linked receptor that phosphorylates intracellular targets on binding",
-      "It is an ion channel rather than an enzyme: two acetylcholine molecules binding open a central pore for sodium, which depolarises the cell directly and fast."],
+      "It is an ion channel rather than an enzyme: two acetylcholine molecules binding open a central pore for sodium, which depolarizes the cell directly and fast."],
      ["An intracellular receptor that binds acetylcholine after it crosses the membrane",
       "The receptor sits in the membrane as a channel."]],
    c=0, cite=c(24)),
@@ -139,10 +139,10 @@ POOL = [
    c=0, cite=c(24)),
 
  dict(topic="Muscarinic effects", io=IO4,
-   q="A patient has diarrhoea, urination, small pupils, a slow heart, wet lungs, vomiting, watering eyes and drooling. Which picture is this?",
+   q="A patient has diarrhea, urination, small pupils, a slow heart, wet lungs, vomiting, watering eyes and drooling. Which picture is this?",
    opts=[
      ["Muscarinic stimulation",
-      "Correct. Every feature is a parasympathetic effect amplified: defecation, urination, miosis, bradycardia, bronchorrhoea and bronchospasm, emesis, lacrimation and salivation."],
+      "Correct. Every feature is a parasympathetic effect amplified: defecation, urination, miosis, bradycardia, bronchorrhea and bronchospasm, emesis, lacrimation and salivation."],
      ["Nicotinic stimulation",
       "The nicotinic picture is mydriasis, tachycardia, weakness, hypertension and fasciculations."],
      ["Antimuscarinic toxicity",
@@ -180,9 +180,9 @@ POOL = [
  dict(topic="Bethanechol", io=IO7,
    q="What distinguishes bethanechol from acetylcholine?",
    opts=[
-     ["It is not hydrolysed by acetylcholinesterase, and it lacks nicotinic activity while having strong muscarinic activity",
+     ["It is not hydrolyzed by acetylcholinesterase, and it lacks nicotinic activity while having strong muscarinic activity",
       "Correct, which is what makes it usable clinically where acetylcholine is not."],
-     ["It is hydrolysed faster than acetylcholine and has only nicotinic activity",
+     ["It is hydrolyzed faster than acetylcholine and has only nicotinic activity",
       "Both halves are reversed; it resists that enzyme and is muscarinic."],
      ["It acts by inhibiting acetylcholinesterase rather than binding the receptor",
       "That would make it an indirect agent; bethanechol binds directly."],
@@ -223,7 +223,7 @@ POOL = [
       "Correct, with onset within minutes and a duration of several hours."],
      ["Causes mydriasis and cycloplegia, raising intraocular pressure",
       "That is the atropine picture."],
-     ["Reduces production of aqueous humour without changing pupil size",
+     ["Reduces production of aqueous humor without changing pupil size",
       "That is timolol's action in glaucoma."],
      ["Has no ocular effect and is used only for dry mouth",
       "Its ocular use is one of its principal indications."]],
@@ -369,7 +369,7 @@ POOL = [
      ["They act mainly at the skeletal neuromuscular junction",
       "That is the neuromuscular blocking agents."],
      ["They block sympathetic adrenergic receptors as well as muscarinic ones",
-      "They block muscarinic receptors, including the few sympathetic cholinergic fibres to sweat and salivary glands."]],
+      "They block muscarinic receptors, including the few sympathetic cholinergic fibers to sweat and salivary glands."]],
    c=0, cite=c(46)),
 
  dict(topic="Atropine", io=IO4,
@@ -379,7 +379,7 @@ POOL = [
       "Correct, which is the opposite of the miosis and accommodation spasm the agonists cause."],
      ["Miosis with spasm of accommodation",
       "That is the cholinergic agonist picture, carbachol and pilocarpine."],
-     ["Reduced aqueous humour production with no change in pupil size",
+     ["Reduced aqueous humor production with no change in pupil size",
       "That is timolol."],
      ["No ocular effect at any dose",
       "Ophthalmic dilation is one of its listed therapeutic uses."]],
@@ -481,7 +481,7 @@ POOL = [
    opts=[
      ["Dry mouth, constipation and blurred vision",
       "Correct, which are the predictable antimuscarinic effects."],
-     ["Bradycardia, bronchospasm and diarrhoea",
+     ["Bradycardia, bronchospasm and diarrhea",
       "Those are cholinergic agonist effects, the opposite direction."],
      ["Fasciculations and muscle weakness",
       "Those are nicotinic effects."],
@@ -505,18 +505,18 @@ POOL = [
  dict(topic="Nicotine", io=IO4,
    q="What happens with nicotine at autonomic ganglia?",
    opts=[
-     ["It depolarizes the ganglia, first stimulating and then paralysing them",
+     ["It depolarizes the ganglia, first stimulating and then paralyzing them",
       "Correct, and the stimulation raises blood pressure, heart rate, peristalsis and secretions before the fall."],
      ["It competitively and reversibly blocks them from the outset",
       "All the ganglionic blockers except nicotine are nondepolarizing competitive antagonists."],
      ["It has no ganglionic action and acts only in the central nervous system",
-      "Nicotine acts precisely at the ganglia, depolarising them so that an initial burst of stimulation is followed by depolarising blockade."],
+      "Nicotine acts precisely at the ganglia, depolarizing them so that an initial burst of stimulation is followed by depolarizing blockade."],
      ["It permanently destroys ganglionic receptors",
       "The effect is depolarizing blockade rather than destruction."]],
    c=0, cite=c(59)),
 
  dict(topic="Neuromuscular blockers", io=IO8,
-   q="Which muscles are paralysed first by a nondepolarizing blocker?",
+   q="Which muscles are paralyzed first by a nondepolarizing blocker?",
    opts=[
      ["The small, rapidly contracting muscles of the face and eye",
       "Correct, and the diaphragm goes last, with recovery in reverse order."],
@@ -576,8 +576,8 @@ POOL = [
       "That is not the stated purpose."],
      ["To prevent malignant hyperthermia",
       "That risk is managed by avoiding the trigger and treating with dantrolene."],
-     ["To allow a lower dose of anaesthetic agent",
-      "Reduced anaesthetic requirement is attributed to neuromuscular blockade generally."]],
+     ["To allow a lower dose of anesthetic agent",
+      "Reduced anesthetic requirement is attributed to neuromuscular blockade generally."]],
    c=0, cite=c(69)),
 
  dict(topic="Malignant hyperthermia", io=IO4,

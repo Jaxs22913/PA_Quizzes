@@ -4,7 +4,7 @@
 
 BUILT FROM THE 26 AUGUST RECORDING, NOT THE DECK ALONE. Prof. Beck removes
 slides from scope out loud and keeps to it; the deck cannot say which ones, so
-this section was held until the audio existed. Six exclusions are honoured and
+this section was held until the audio existed. Six exclusions are honored and
 her emphases are flagged with the existing prof-flag machinery.
 
 THE RED-EYE COMPARISON TABLE IS REPRODUCED IN TEXT. Slide 48 is a picture of
@@ -50,8 +50,8 @@ BODY = """
       it, but adenovirus &hellip;&rdquo;</em> &mdash; she uses it for the great-mimicker story.</li>
       <li><b>The exophthalmometer</b>, its technique and its 20&ndash;22 mm figure.
       <em>&ldquo;I am not going to test you on the minutia of how to do that test &hellip; don't
-      worry about it.&rdquo;</em> <b>Recognising exophthalmos IS in</b> &mdash; her words were
-      &ldquo;about exophthalmos and how to recognise it&rdquo;.</li>
+      worry about it.&rdquo;</em> <b>Recognizing exophthalmos IS in</b> &mdash; her words were
+      &ldquo;about exophthalmos and how to recognize it&rdquo;.</li>
       <li><b>The strabismus diagram.</b> <em>&ldquo;This is just a visual &hellip; that you don't
       have to memorize.&rdquo;</em> Eso-, exo- and hypertropia as concepts stay in.</li>
       <li><b>The corneal reflection test.</b> <em>&ldquo;We've already done this, so I'm not gonna
@@ -72,27 +72,27 @@ BODY = """
   <table class="tbl">
     <tr><th>Finding</th><th>What it points to</th></tr>
     <tr><td><b>Bilateral</b> visual loss</td><td>A primary <b>neurologic</b> cause, not an ophthalmologic one</td></tr>
-    <tr><td><b>Multiple new</b> flashes or floaters</td><td>Retinal tear or vitreous haemorrhage</td></tr>
+    <tr><td><b>Multiple new</b> flashes or floaters</td><td>Retinal tear or vitreous hemorrhage</td></tr>
     <tr><td>A <b>single</b> floater</td><td>Probably benign</td></tr>
     <tr><td><b>Rapid</b> deterioration</td><td>Vascular causes</td></tr>
     <tr><td><b>Gradual</b> loss</td><td>Cataract and the like</td></tr>
     <tr><td>Itching + excessive tearing</td><td>Allergic</td></tr>
     <tr><td><b>Deep</b> pain</td><td>Acute narrow angle glaucoma</td></tr>
-    <tr><td>Pain <b>relieved</b> by topical anaesthetic</td><td>A surface problem &mdash; corneal injury feels better</td></tr>
-    <tr><td>Pain <b>not relieved</b> by topical anaesthetic</td><td>A deeper source</td></tr>
+    <tr><td>Pain <b>relieved</b> by topical anesthetic</td><td>A surface problem &mdash; corneal injury feels better</td></tr>
+    <tr><td>Pain <b>not relieved</b> by topical anesthetic</td><td>A deeper source</td></tr>
   </table>
   <p><b>Also ask:</b> corrective lenses; acute or chronic eye problems such as glaucoma; eye
   medications such as antiglaucoma drops or topical antibiotics; and eye surgery history.
   <b>Tetanus status matters in eye trauma</b>, and after a chemical splash you must establish
   <b>whether the fluid was acid or alkali</b>. Beck singled out three systemic diseases:
   <b>diabetes, hypertension and human immunodeficiency virus</b> &mdash; the last because it will
-  affect basically any aetiology.</p>
+  affect basically any etiology.</p>
 
   <h3 class="sub" id="l3-symptoms">3.2 &middot; The symptom patterns</h3>
   <table class="tbl">
     <tr><th>Pattern</th><th>Think</th></tr>
-    <tr><td>Acute, unilateral, <b>painless</b></td><td>Retinal vascular occlusion, retinal detachment, vitreous haemorrhage, macular degeneration</td></tr>
-    <tr><td>Acute, unilateral, <b>painful</b></td><td>Usually cornea and anterior chamber: corneal abrasion or ulcer, uveitis, traumatic hyphaema, acute narrow angle glaucoma</td></tr>
+    <tr><td>Acute, unilateral, <b>painless</b></td><td>Retinal vascular occlusion, retinal detachment, vitreous hemorrhage, macular degeneration</td></tr>
+    <tr><td>Acute, unilateral, <b>painful</b></td><td>Usually cornea and anterior chamber: corneal abrasion or ulcer, uveitis, traumatic hyphema, acute narrow angle glaucoma</td></tr>
     <tr><td>Acute, <b>bilateral</b>, painful</td><td>Thermal, radiation or chemical exposure</td></tr>
     <tr><td>Gradual, painless</td><td>Simple glaucoma or cataract</td></tr>
   </table>
@@ -124,15 +124,15 @@ BODY = """
   <div class="callout warn">
     <p><b>In trauma, do not palpate the globe.</b> And from the common-mistakes list: failing to
     look in both eyes, to examine the cornea and lens, to test acuity adequately, to identify a
-    field defect, to evaluate all fundal structures, to recognise a ruptured globe (or placing too
+    field defect, to evaluate all fundal structures, to recognize a ruptured globe (or placing too
     much pressure on one), to treat multiple floaters or new flashes as a possible detachment, to
-    document adequately, to recognise an infectious red eye before prescribing a topical steroid,
+    document adequately, to recognize an infectious red eye before prescribing a topical steroid,
     and <b>to differentiate preseptal from orbital cellulitis &mdash; because the latter can lead
     to death</b>.</p>
   </div>
   <table class="tbl">
     <tr><th>Finding</th><th>Meaning</th></tr>
-    <tr><td>Scaly eyebrows</td><td>Seborrhoeic dermatitis</td></tr>
+    <tr><td>Scaly eyebrows</td><td>Seborrheic dermatitis</td></tr>
     <tr><td><b>Lateral sparseness</b> of the eyebrows</td><td>Hypothyroidism</td></tr>
     <tr><td>Ptosis</td><td>Myasthenia gravis, oculomotor nerve damage, sympathetic damage (Horner). Senile ptosis is weakened muscle, relaxed tissue and the weight of herniated fat. May be congenital</td></tr>
     <tr><td>Hordeolum</td><td>Painful infection <b>at the lid's edge</b></td></tr>
@@ -143,8 +143,8 @@ BODY = """
     <tr><td><b>Blue</b> sclera</td><td>Osteogenesis imperfecta</td></tr>
   </table>
   <p><b>Proptosis:</b> stand behind the seated patient and look down from above, drawing the lid
-  slightly upward to compare the corneas against the lower lids. Causes: retrobulbar haemorrhage,
-  orbital cellulitis, orbital tumour, <b>Graves disease</b>.</p>
+  slightly upward to compare the corneas against the lower lids. Causes: retrobulbar hemorrhage,
+  orbital cellulitis, orbital tumor, <b>Graves disease</b>.</p>
   <p><b>Nasolacrimal duct obstruction test:</b> patient looks up; press on the lower lid near the
   medial canthus, just inside the bony rim, to compress the sac; look for fluid regurgitating from
   the puncta. <b>Mucopurulent fluid means obstruction.</b> Avoid the test if the area is
@@ -160,7 +160,7 @@ BODY = """
     eye conditions.&rdquo;</em> On the slide it is a <b>picture</b> of the table, so it does not
     appear in any text copy of the deck &mdash; it is written out here.</p>
     <table class="tbl">
-      <tr><th></th><th>Conjunctivitis</th><th>Corneal injury / infection</th><th>Acute iritis</th><th>Glaucoma</th><th>Subconjunctival haemorrhage</th></tr>
+      <tr><th></th><th>Conjunctivitis</th><th>Corneal injury / infection</th><th>Acute iritis</th><th>Glaucoma</th><th>Subconjunctival hemorrhage</th></tr>
       <tr><td><b>Pattern of redness</b></td><td>Conjunctival injection: diffuse dilation, redness <b>maximal peripherally</b></td><td colspan="3"><b>Ciliary injection</b> &mdash; deeper vessels visible as radiating vessels or a reddish-violet flush around the limbus. An important sign of these three, but the eye may be diffusely red instead</td><td>Leakage of blood outside the vessels &mdash; a homogeneous, <b>sharply demarcated</b> red area that fades to yellow then disappears</td></tr>
       <tr><td><b>Pain</b></td><td>Mild discomfort rather than pain</td><td>Moderate to severe, superficial</td><td>Moderate, aching, deep</td><td><b>Severe, aching, deep</b></td><td><b>Absent</b></td></tr>
       <tr><td><b>Vision</b></td><td>Not affected except temporary mild blurring from discharge</td><td>Usually decreased</td><td>Decreased</td><td>Decreased</td><td><b>Not affected</b></td></tr>
@@ -190,7 +190,7 @@ BODY = """
   inward from beyond each quadrant, asking when it <b>first appears RED</b>). A temporal defect in
   one eye should prompt testing for a nasal defect in the other. The normal <b>blind spot sits 15
   degrees temporal</b> to the line of gaze and is <b>enlarged in glaucoma, optic neuritis and
-  papilloedema</b>.</p>
+  papilledema</b>.</p>
   <p><b>Nystagmus:</b> fine rhythmic oscillation. A few beats on lateral gaze is normal &mdash;
   bring the finger back into binocular vision, and if it persists there, consider a neurologic
   condition. <b>Lid lag</b> &mdash; sclera visible above the iris on downgaze &mdash; is most often
@@ -198,7 +198,7 @@ BODY = """
   otherwise seen.</p>
 
   <h3 class="sub" id="l3-pupils">3.5 &middot; The pupils</h3>
-  <p>A difference of <b>half to one millimetre is common</b>, and anisocoria is benign <b>if the
+  <p>A difference of <b>half to one millimeter is common</b>, and anisocoria is benign <b>if the
   reactions are normal</b>. Abnormal: a difference <b>greater than 1 mm</b>, or a poorly reactive
   pupil.</p>
   <div class="callout warn">
@@ -215,7 +215,7 @@ BODY = """
   net dilation results.</p>
   <table class="tbl">
     <tr><th></th><th>Pupil</th><th>Light</th><th>Near</th><th>Other</th></tr>
-    <tr><td><b>Adie's tonic</b></td><td>Large, regular, usually unilateral</td><td>Severely reduced and slowed, or absent</td><td><b>Present but very slow</b></td><td>Degeneration of the ciliary ganglia and postganglionic parasympathetic fibres; slow accommodation blurs near vision</td></tr>
+    <tr><td><b>Adie's tonic</b></td><td>Large, regular, usually unilateral</td><td>Severely reduced and slowed, or absent</td><td><b>Present but very slow</b></td><td>Degeneration of the ciliary ganglia and postganglionic parasympathetic fibers; slow accommodation blurs near vision</td></tr>
     <tr><td><b>Argyll Robertson</b></td><td>Small, unequal, irregular</td><td><b>No reaction</b></td><td><b>Constricts</b></td><td>&ldquo;Accommodates but doesn't react.&rdquo; Classically tertiary syphilis, today more often diabetes; also Lyme. Mydriatics dilate it only <b>incompletely</b></td></tr>
     <tr><td><b>Horner syndrome</b></td><td>Small (miosis)</td><td colspan="2"><b>Reacts briskly to both</b></td><td>Ptosis, anhidrosis of the ipsilateral face. Sympathetic supply to the pupil and levator interrupted. Congenital form: the involved iris is <b>lighter</b> (heterochromia)</td></tr>
     <tr><td><b>Oculomotor palsy</b></td><td>Dilated</td><td colspan="2"><b>Fixed to both</b></td><td>Ptosis and lateral deviation almost always present</td></tr>
@@ -226,7 +226,7 @@ BODY = """
   <p><b>Oblique lighting and the crescent shadow:</b> shine from the temporal side and look for a
   shadow on the medial iris. No shadow is normal &mdash; the iris is flat, the angle open. A shadow
   means the iris is <b>bowed forward, a narrow angle</b>, and a raised risk of narrow-angle
-  glaucoma. A <b>corneal scar</b> is a superficial greyish-white opacity; do not confuse it with a
+  glaucoma. A <b>corneal scar</b> is a superficial grayish-white opacity; do not confuse it with a
   cataract, which lies deeper and is seen only through the pupil.</p>
 
   <h3 class="sub" id="l3-fundus">3.6 &middot; Fundoscopy</h3>
@@ -246,11 +246,11 @@ BODY = """
   most of their energy to the orbital rim, while smaller ones may strike the globe directly.</p>
   <table class="tbl">
     <tr><th>Injury</th><th>Findings</th></tr>
-    <tr><td><b>Orbital (blow-out) fracture</b></td><td>Sunken eye, <b>hypoaesthesia of the infraorbital area</b> (infraorbital nerve), <b>diplopia particularly on UPWARD gaze</b>, decreased motility, sometimes an ipsilateral nosebleed. Refer to ophthalmology or oral and maxillofacial surgery</td></tr>
+    <tr><td><b>Orbital (blow-out) fracture</b></td><td>Sunken eye, <b>hypoesthesia of the infraorbital area</b> (infraorbital nerve), <b>diplopia particularly on UPWARD gaze</b>, decreased motility, sometimes an ipsilateral nosebleed. Refer to ophthalmology or oral and maxillofacial surgery</td></tr>
     <tr><td><b>Enophthalmos</b></td><td>Sunken eye with ecchymosis, point tenderness and a <b>palpable step-off</b> at the orbital rim. Observe from above the head looking down</td></tr>
-    <tr><td><b>Zygomatic fracture</b></td><td><b>Flattening of the malar eminence</b>, best seen from behind the seated patient. Oedema and ecchymosis of temple or infraorbital area, palpable step-off, infraorbital hypoaesthesia. <b>Pain on opening the mouth</b>, because temporalis passes medial to the arch and inserts on the mandible</td></tr>
+    <tr><td><b>Zygomatic fracture</b></td><td><b>Flattening of the malar eminence</b>, best seen from behind the seated patient. Edema and ecchymosis of temple or infraorbital area, palpable step-off, infraorbital hypoesthesia. <b>Pain on opening the mouth</b>, because temporalis passes medial to the arch and inserts on the mandible</td></tr>
     <tr><td><b>Hyphaema</b></td><td>Blood in the anterior chamber, usually blunt trauma. Check acuity, pupils (a crescent-like iris defect if torn; reduced reactions if the sphincter is damaged), the <b>red reflex</b>, the <b>intraocular pressure</b>, and slit lamp</td></tr>
-    <tr><td><b>Corneal abrasion</b></td><td>Blunt trauma &mdash; fingernail, contact lens. Significant pain and photophobia, blepharospasm, foreign body sensation, tearing. <b>Evert the upper lid</b>: a foreign body in the upper tarsal conjunctiva scratches the cornea with every blink. <b>A hazy cornea suggests bacterial infection.</b> Topical anaesthetic gives immediate relief but is <b>for diagnosis, not treatment</b></td></tr>
+    <tr><td><b>Corneal abrasion</b></td><td>Blunt trauma &mdash; fingernail, contact lens. Significant pain and photophobia, blepharospasm, foreign body sensation, tearing. <b>Evert the upper lid</b>: a foreign body in the upper tarsal conjunctiva scratches the cornea with every blink. <b>A hazy cornea suggests bacterial infection.</b> Topical anesthetic gives immediate relief but is <b>for diagnosis, not treatment</b></td></tr>
     <tr><td><b>Corneal ulcer</b></td><td>Pain, photophobia, tearing, reduced vision. Red eye, circumcorneal injection, purulent or watery discharge. <b>Herpes simplex ulcers are not very painful.</b> An ophthalmoscope at <b>+40 dioptres</b> may reveal it, but <b>fluorescein is more sensitive</b> for early ulcers</td></tr>
   </table>
   <p><b>Fluorescein</b>: orange dye instilled, blue light &mdash; taken up by areas of cornea
@@ -259,7 +259,7 @@ BODY = """
     <p>Her reason: <em>&ldquo;because you're going to be making those dispos.&rdquo;</em></p>
     <table class="tbl">
       <tr><th><b>EMERGENT</b> &mdash; ophthalmology or the emergency department immediately</th><th><b>URGENT</b> &mdash; ophthalmology follow-up in a day or less</th></tr>
-      <tr><td>Sudden vision loss &middot; retinal artery occlusion &middot; chemical burns &middot; rupture &middot; acute angle-closure glaucoma &middot; vitreous haemorrhage</td><td>Acute glaucoma &middot; orbital cellulitis &middot; corneal ulcer or abrasion &middot; retinal detachment &middot; macular oedema or haemorrhage &middot; hyphaema</td></tr>
+      <tr><td>Sudden vision loss &middot; retinal artery occlusion &middot; chemical burns &middot; rupture &middot; acute angle-closure glaucoma &middot; vitreous hemorrhage</td><td>Acute glaucoma &middot; orbital cellulitis &middot; corneal ulcer or abrasion &middot; retinal detachment &middot; macular edema or hemorrhage &middot; hyphema</td></tr>
     </table>
   </div>
   <button type="button" class="test-yourself-btn" style="--acc:#4a5c24" onclick="window.openTestYourself('Test yourself &mdash; Advanced Ocular Examination', TEST_YOURSELF.ocular)">Test yourself! &rarr;</button>

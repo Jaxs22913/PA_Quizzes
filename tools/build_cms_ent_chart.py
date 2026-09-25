@@ -13,7 +13,7 @@ page says so plainly rather than implying the block is complete, and the
 remaining lectures drop in as ROWS_L17/18/19 modules without touching this
 file's structure.
 
-THE THREE GREY COLUMNS ARE THE BLOCK'S OWN DISCRIMINATORS, NOT THE LAST
+THE THREE GRAY COLUMNS ARE THE BLOCK'S OWN DISCRIMINATORS, NOT THE LAST
 EXAM'S. Ophthalmology used pain / laterality / pupil, because that is what
 Professor Jaquith told the class to chart. Ear disease does not separate on
 laterality -- almost everything here is unilateral -- so the middle column
@@ -30,7 +30,7 @@ purpose, as part of citing the slide.
 EVERY PICTURE CITES ITS LECTURE AS WELL AS ITS SLIDE, because two decks number
 their slides independently and one row legitimately borrows the other
 lecture's photograph: barotrauma is taught in Lecture 15, but the only
-haemotympanum in either deck is Lecture 16 slide 59. The citation is derived
+hemotympanum in either deck is Lecture 16 slide 59. The citation is derived
 from the filename prefix so it cannot drift from the file.
 """
 import os, re, sys, html as H
@@ -219,7 +219,7 @@ slide. That is a difference in sourcing, not in coverage.<br><br>
 to hand it to you</b>, how it presents and what you find on examination, what you order, what you
 give, <b>how fast the patient has to be seen</b>, and what you tell them. Read it top to bottom
 down one column to compare across conditions.<br><br>
-<b>The three grey columns are this block&rsquo;s discriminators.</b> On the ophthalmology chart they
+<b>The three gray columns are this block&rsquo;s discriminators.</b> On the ophthalmology chart they
 were pain, laterality and the pupil. Ear disease does not separate on laterality &mdash; nearly
 everything here is one-sided &mdash; so the middle column is <b>the type of hearing loss</b>, and
 for the nasal rows it carries <b>the discharge</b>, which is that half's most useful sign.
@@ -239,8 +239,8 @@ wouldn&rsquo;t be conductive.&rdquo;</i> <b>That is exactly why the hearing-loss
 to read down</b>: in that question the wrong answers are eliminated by loss type before you think
 about anything else.<br><br>
 <b>Weber and Rinne, once, so the middle column reads quickly.</b>
-<b>Conductive:</b> Weber lateralises <b>to the bad ear</b>, and bone conduction is <b>equal to or
-better than</b> air conduction. <b>Sensorineural:</b> Weber lateralises <b>away, to the good
+<b>Conductive:</b> Weber lateralizes <b>to the bad ear</b>, and bone conduction is <b>equal to or
+better than</b> air conduction. <b>Sensorineural:</b> Weber lateralizes <b>away, to the good
 ear</b>, and air conduction still beats bone &mdash; the same Rinne as a normal ear, which is why
 <b>Weber is the one that makes the call</b>.<br><br>
 <b>The gold &ldquo;Vignette giveaway&rdquo; column</b> is the one to scan when a stem is in front
@@ -256,7 +256,7 @@ something routine.<br><br>
 <b>Every picture cites its lecture as well as its slide.</b> The two decks number their slides
 independently, so &ldquo;slide 49&rdquo; alone means nothing &mdash; and one row deliberately
 borrows the other lecture&rsquo;s photograph, because barotrauma is taught in Lecture 15 but the
-only haemotympanum in either deck is on Lecture 16&rsquo;s slide 59. Several pictures carry their
+only hemotympanum in either deck is on Lecture 16&rsquo;s slide 59. Several pictures carry their
 source stamped into the image; those marks are left visible on purpose, as part of the
 citation.<br><br>
 <b>Three of the pictures come from slides with no words on them at all</b> &mdash; Lecture 16
@@ -264,7 +264,7 @@ slides 49, 51 and 59 are bare photographs. Each was resolved against the slide <
 (Exostosis, Glomus Tumors, Barotrauma) rather than guessed at, which is the only reason the
 exostosis and glomus cells are the right way round.<br><br>
 <b>Sixty-six rows have no picture, and that is not an oversight.</b> Lecture 18 is the extreme
-case: it contains exactly <b>one</b> clinical photograph, the haemangioma on slide 27. Everything
+case: it contains exactly <b>one</b> clinical photograph, the hemangioma on slide 27. Everything
 else in that deck is an anatomy diagram, a flowchart or a table &mdash; four of which are pictures
 of content with no text at all, and are transcribed into the rows rather than shown as though they
 were photographs of a disease. Lecture 16 teaches most of its
@@ -392,7 +392,7 @@ __ROWS__
     # substituted head: the group-chip palette below is an independent set of
     # hues and may legitimately reuse a colour the donor also used.
     for old, _new in PALETTE:
-        assert old not in head, "Exam 2 colour %s survived substitution" % old
+        assert old not in head, "Exam 2 color %s survived substitution" % old
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)

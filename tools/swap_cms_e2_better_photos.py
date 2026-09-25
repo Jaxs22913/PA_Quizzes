@@ -16,7 +16,7 @@ anatomy diagram or a screenshot of a table. Three were worse than merely dull
                          the nerve's anatomical course.
   Adie tonic pupil       caption "The LARGER pupil, reacting poorly to light",
                          picture: a generic normal-pupil response grid.
-  Periorbital haematoma  a head CT; the photograph is on the same slide.
+  Periorbital hematoma  a head CT; the photograph is on the same slide.
   Lid laceration         the eyelid cross-section, i.e. anatomy, not an injury.
   Post-septal cellulitis a swollen lid -- which is what PRE-septal looks like.
 
@@ -25,7 +25,7 @@ this script did `s.replace(old, new)` and quietly broke two OTHER figures that
 use the same two files ON PURPOSE: the guide explains the third nerve with the
 anatomical-course diagram ("Diagram of the third cranial nerve's course from
 midbrain to orbit") and explains pupil testing with the response grid ("Four
-panels showing pupil behaviour in dark, light and near gaze"). Those want the
+panels showing pupil behavior in dark, light and near gaze"). Those want the
 diagram. Only the figure whose alt text NAMES THE CONDITION is a row picture,
 so that is what is matched here.
 
@@ -46,7 +46,7 @@ DIR = "cms-ophtho-chart-images"
 
 # chart row name, guide figure name, old image, old slide, new image, new slide
 SWAPS = [
-    ("Periorbital haematoma", "Periorbital haematoma",
+    ("Periorbital hematoma", "Periorbital hematoma",
      "l14-s034_pos2.jpg", 34, "l14-s034_pos1.jpg", 34),
     ("Lid laceration", "Lid laceration",
      "l14-s027_pos1.jpg", 27, "l14-s029_pos1.jpg", 29),

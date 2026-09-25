@@ -45,7 +45,7 @@ POOL_B = [
    c=2, cite=c(15)),
 
  dict(topic="Agranulocytes", io=IO_C,
-   q="Which cells are the agranulocytes (mononuclear leucocytes)?",
+   q="Which cells are the agranulocytes (mononuclear leukocytes)?",
    opts=[
      ["Neutrophils, eosinophils and basophils",
       "Neutrophils, eosinophils and basophils are the three granulocytes, the opposite grouping from the mononuclear leukocytes."],
@@ -54,7 +54,7 @@ POOL_B = [
      ["Basophils, mast cells and macrophages",
       "Basophils are granulocytes and mast cells are neither group; the agranulocytes are lymphocytes, monocytes and macrophages."],
      ["Lymphocytes (B cells and T cells), monocytes and macrophages",
-      "Correct. These three are grouped as the agranulocytes or mononuclear leucocytes."]],
+      "Correct. These three are grouped as the agranulocytes or mononuclear leukocytes."]],
    c=3, cite=c(15)),
 
  dict(topic="Neutrophils", io=IO_C,
@@ -272,8 +272,8 @@ POOL_B = [
       "Correct. Polymorphonuclear leukocyte, abbreviated PMN, is used to refer to all granulocytes rather than to neutrophils alone."],
      ["Neutrophils only",
       "Neutrophils are only one of the three granulocytes; PMN (polymorphonuclear leukocyte) covers neutrophils, basophils and eosinophils."],
-     ["All mononuclear leucocytes",
-      "Mononuclear leucocyte is the alternative name for the agranulocytes, the opposite grouping."],
+     ["All mononuclear leukocytes",
+      "Mononuclear leukocyte is the alternative name for the agranulocytes, the opposite grouping."],
      ["Plasma cells and memory B cells",
       "Plasma cells and memory B cells are mononuclear cells, not granulocytes; PMN (polymorphonuclear leukocyte) refers to all granulocytes."]],
    c=0, cite=c(14)),

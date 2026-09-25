@@ -360,7 +360,7 @@ BODY = '''<main>
   <mark class="prof-highlight">do not write prescriptions for these</mark> &mdash; repeated use is
   toxic to the epithelium and delays healing.</p>
 
-  <p><strong>Cycloplegics</strong> come in two flavours with the same endpoint.
+  <p><strong>Cycloplegics</strong> come in two flavors with the same endpoint.
   <strong>Antimuscarinics</strong> (atropine, cyclopentolate, tropicamide) competitively block
   muscarinic receptors &mdash; the exact opposite of pilocarpine &mdash; giving mydriasis.
   <strong>Sympathomimetics</strong> (phenylephrine) stimulate the dilator instead, and leave the

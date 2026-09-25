@@ -15,7 +15,7 @@ POOL_B = [
 
  # ---------------- Central retinal vein occlusion ----------------
  dict(topic="CRVO", io=IOA, lead="diagnosis",
-   q="A 63-year-old man with hypertension and diabetes has sudden painless loss of vision in one eye. Fundoscopy shows a swollen disc, dilated veins, cotton wool spots and haemorrhages across all four quadrants. Which is the most likely diagnosis?",
+   q="A 63-year-old man with hypertension and diabetes has sudden painless loss of vision in one eye. Fundoscopy shows a swollen disc, dilated veins, cotton wool spots and hemorrhages across all four quadrants. Which is the most likely diagnosis?",
    opts=[
      ["Central retinal vein occlusion", "Correct. The blood and thunder fundus with disc swelling."],
      ["Central retinal artery occlusion", "That gives a pale retina with a cherry-red spot."],
@@ -26,7 +26,7 @@ POOL_B = [
  dict(topic="CRVO", io=IOA, lead="finding",
    q="A 67-year-old woman has a retinal vein occlusion. Which term is the classic fundus description?",
    opts=[
-     ["Blood and thunder", "Correct, blotches of haemorrhage across the fundus."],
+     ["Blood and thunder", "Correct, blotches of hemorrhage across the fundus."],
      ["Cherry-red spot", "That belongs to arterial occlusion."],
      ["Billowy folds", "That belongs to retinal detachment."],
      ["Optic nerve cupping", "That belongs to chronic glaucoma."]],
@@ -53,7 +53,7 @@ POOL_B = [
  dict(topic="CRVO", io=IOB, lead="test",
    q="A 65-year-old man has a suspected central retinal vein occlusion. Which is named as confirmatory testing?",
    opts=[
-     ["Fluorescein angiography", "Correct, with colour fundus photography."],
+     ["Fluorescein angiography", "Correct, with color fundus photography."],
      ["Ocular ultrasound", "That is used for retinal detachment."],
      ["Lumbar puncture", "That assesses intracranial pressure."],
      ["Temporal artery biopsy", "That investigates giant cell arteritis."]],
@@ -65,16 +65,16 @@ POOL_B = [
      ["Neovascularization after the occlusion", "Correct, appearing weeks to months later."],
      ["A second thrombus", "New vessel growth is the described sequel."],
      ["Optic nerve cupping", "That is a glaucomatous change."],
-     ["Disc oedema from raised pressure", "That is papilledema."]],
+     ["Disc edema from raised pressure", "That is papilledema."]],
    c=0, cite=c(34)),
 
  dict(topic="BRVO", io=IOA, lead="reasoning",
-   q="A 62-year-old man has painless loss of only the lower half of the vision in one eye, with haemorrhages confined to the upper retina. How does this differ from a central retinal vein occlusion?",
+   q="A 62-year-old man has painless loss of only the lower half of the vision in one eye, with hemorrhages confined to the upper retina. How does this differ from a central retinal vein occlusion?",
    opts=[
      ["A smaller branch vein is blocked", "Correct, so only part of the retina is affected."],
      ["The artery rather than the vein is blocked", "The findings described are venous."],
      ["Intracranial pressure is raised", "That is papilledema."],
-     ["The macula is detached", "Detachment gives an elevated grey retina."]],
+     ["The macula is detached", "Detachment gives an elevated gray retina."]],
    c=0, cite=c(35)),
 
  dict(topic="BRVO", io=IOB, lead="next step",
@@ -91,7 +91,7 @@ POOL_B = [
    q="A 72-year-old man with atrial fibrillation has profound painless loss of vision in the right eye that came on over a few seconds. He can only count fingers. The retina is pale and swollen with a cherry-red spot at the fovea. Which is the most likely diagnosis?",
    opts=[
      ["Central retinal artery occlusion", "Correct. Sudden profound loss with the cherry-red fovea."],
-     ["Central retinal vein occlusion", "That shows haemorrhages and a swollen disc."],
+     ["Central retinal vein occlusion", "That shows hemorrhages and a swollen disc."],
      ["Amaurosis fugax", "That resolves within minutes."],
      ["Retinal detachment", "That advances over days with flashes and floaters."]],
    c=0, cite=c(39)),
@@ -108,7 +108,7 @@ POOL_B = [
  dict(topic="CRAO", io=IOA, lead="finding",
    q="A 69-year-old man has a central retinal artery occlusion. His affected pupil is sluggish to direct light but constricts briskly when the other eye is illuminated. What is true of this finding?",
    opts=[
-     ["It is a major clinical clue", "Correct — this is a relative afferent pupillary defect: the signal into that eye is impaired while the motor response remains intact, which localises the problem to the retina or optic nerve."],
+     ["It is a major clinical clue", "Correct — this is a relative afferent pupillary defect: the signal into that eye is impaired while the motor response remains intact, which localizes the problem to the retina or optic nerve."],
      ["It excludes an arterial cause", "It is characteristic of one."],
      ["It indicates raised intracranial pressure", "That gives disc swelling, not this pupil pattern."],
      ["It is a normal finding", "It reflects an afferent defect."]],
@@ -155,8 +155,8 @@ POOL_B = [
    opts=[
      ["Branch retinal artery occlusion", "Correct; a branch is blocked rather than the main trunk."],
      ["Central retinal artery occlusion", "That causes widespread, severe loss."],
-     ["Branch retinal vein occlusion", "That would show haemorrhage, not pallor."],
-     ["Retinal detachment", "That gives an elevated grey retina."]],
+     ["Branch retinal vein occlusion", "That would show hemorrhage, not pallor."],
+     ["Retinal detachment", "That gives an elevated gray retina."]],
    c=0, cite=c(41)),
 
  # ---------------- Papilledema ----------------
@@ -165,7 +165,7 @@ POOL_B = [
    opts=[
      ["Papilledema", "Correct. Bilateral disc swelling with signs of raised intracranial pressure."],
      ["Optic neuritis", "That is unilateral and painful on eye movement."],
-     ["Central retinal vein occlusion", "That is monocular with haemorrhages."],
+     ["Central retinal vein occlusion", "That is monocular with hemorrhages."],
      ["Anterior ischemic optic neuropathy", "That causes sudden monocular loss with a pale disc."]],
    c=0, cite=c(44)),
 
@@ -206,10 +206,10 @@ POOL_B = [
    c=0, cite=c(46)),
 
  dict(topic="Papilledema", io=IOA, lead="finding",
-   q="A 39-year-old man has papilledema and later develops disc elevation with blurred margins but no haemorrhages or cotton wool spots. Which phase does this describe?",
+   q="A 39-year-old man has papilledema and later develops disc elevation with blurred margins but no hemorrhages or cotton wool spots. Which phase does this describe?",
    opts=[
-     ["Chronic papilledema", "Correct; haemorrhages and cotton wool spots mark the acute phase."],
-     ["Acute papilledema", "That phase carries haemorrhages and cotton wool spots."],
+     ["Chronic papilledema", "Correct; hemorrhages and cotton wool spots mark the acute phase."],
+     ["Acute papilledema", "That phase carries hemorrhages and cotton wool spots."],
      ["The atrophic phase", "There the optic nerve axons have died."],
      ["Optic nerve cupping", "That is a glaucomatous change."]],
    c=0, cite=c(45)),
@@ -275,7 +275,7 @@ POOL_B = [
      ["Non-arteritic anterior ischemic optic neuropathy", "Correct. The disc at risk with vascular comorbidity and no arteritic features."],
      ["Arteritic anterior ischemic optic neuropathy", "That carries systemic symptoms in an older patient."],
      ["Optic neuritis", "That hurts on eye movement and builds over days."],
-     ["Central retinal vein occlusion", "That shows widespread haemorrhage."]],
+     ["Central retinal vein occlusion", "That shows widespread hemorrhage."]],
    c=0, cite=c(48)),
 
  dict(topic="NAION", io=IOA, lead="epidemiology",
@@ -363,19 +363,19 @@ POOL_B = [
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
    q="A 73-year-old man loses vision in one eye. Which finding separates arterial from venous retinal occlusion on fundoscopy?",
    opts=[
-     ["A cherry-red spot rather than haemorrhages", "Correct; the artery gives pallor with a cherry-red fovea."],
+     ["A cherry-red spot rather than hemorrhages", "Correct; the artery gives pallor with a cherry-red fovea."],
      ["Disc cupping rather than swelling", "Cupping belongs to chronic glaucoma."],
-     ["An elevated grey retina", "That is detachment."],
+     ["An elevated gray retina", "That is detachment."],
      ["Blurred disc margins in both eyes", "That is papilledema."]],
    c=0, cite=c(39)),
 
  dict(topic="Differential diagnosis", io=IOA, lead="comparison",
-   q="A 47-year-old woman and a 74-year-old man both have monocular vision loss with an abnormal optic nerve. Which feature most favours optic neuritis over ischemic optic neuropathy?",
+   q="A 47-year-old woman and a 74-year-old man both have monocular vision loss with an abnormal optic nerve. Which feature most favors optic neuritis over ischemic optic neuropathy?",
    opts=[
      ["Pain on eye movement", "Correct; the ischemic neuropathies are painless."],
-     ["A pale, swollen disc", "That favours the ischemic neuropathy."],
-     ["Onset over seconds", "That favours arterial occlusion."],
-     ["Scalp tenderness", "That favours the arteritic form."]],
+     ["A pale, swollen disc", "That favors the ischemic neuropathy."],
+     ["Onset over seconds", "That favors arterial occlusion."],
+     ["Scalp tenderness", "That favors the arteritic form."]],
    c=0, cite=c(23)),
 
  dict(topic="Differential diagnosis", io=IOB, lead="next step",
@@ -408,7 +408,7 @@ POOL_B = [
    c=0, cite=c(14)),
 
  dict(topic="CRVO", io=IOA, lead="diagnosis",
-   q="A 58-year-old man with obesity and poorly controlled hypertension notices his vision in one eye has blurred progressively over about a week, without pain. The fundus is filled with haemorrhage. Which is the most likely diagnosis?",
+   q="A 58-year-old man with obesity and poorly controlled hypertension notices his vision in one eye has blurred progressively over about a week, without pain. The fundus is filled with hemorrhage. Which is the most likely diagnosis?",
    opts=[
      ["Central retinal vein occlusion", "Correct; loss may be gradual over days to weeks in some patients."],
      ["Amaurosis fugax", "That lasts seconds to minutes."],
@@ -429,7 +429,7 @@ POOL_B = [
    q="A 76-year-old man with carotid disease describes vision in one eye going dark instantly two hours ago and not returning. He has no pain. The retina is pale. Which is the most likely diagnosis?",
    opts=[
      ["Central retinal artery occlusion", "Correct; profound painless loss over seconds that does not recover."],
-     ["Central retinal vein occlusion", "That gives a haemorrhagic fundus, not a pale one."],
+     ["Central retinal vein occlusion", "That gives a hemorrhagic fundus, not a pale one."],
      ["Optic neuritis", "That is painful and develops over days."],
      ["Angle-closure glaucoma", "That is painful with a hazy cornea."]],
    c=0, cite=c(38)),
@@ -439,7 +439,7 @@ POOL_B = [
    opts=[
      ["Optic neuritis", "Correct; the prior neurological episode points to a demyelinating cause."],
      ["Angle-closure glaucoma", "That is acutely painful at rest with halos."],
-     ["Central retinal vein occlusion", "That is painless with widespread haemorrhage."],
+     ["Central retinal vein occlusion", "That is painless with widespread hemorrhage."],
      ["Papilledema", "That is bilateral with headache and vomiting."]],
    c=0, cite=c(23)),
 
@@ -453,12 +453,12 @@ POOL_B = [
    c=0, cite=c(16)),
 
  dict(topic="Papilledema", io=IOA, lead="diagnosis",
-   q="A 28-year-old woman has had a headache worst on waking for six weeks, with brief greying of vision when she stands. Both discs are elevated with engorged veins. Which is the most likely diagnosis?",
+   q="A 28-year-old woman has had a headache worst on waking for six weeks, with brief graying of vision when she stands. Both discs are elevated with engorged veins. Which is the most likely diagnosis?",
    opts=[
      ["Papilledema", "Correct; bilateral disc swelling with the symptoms of raised intracranial pressure."],
      ["Optic neuritis", "That is unilateral and painful on eye movement."],
      ["Chronic open-angle glaucoma", "That cups the disc and is asymptomatic early."],
-     ["Central retinal vein occlusion", "That is monocular with haemorrhage."]],
+     ["Central retinal vein occlusion", "That is monocular with hemorrhage."]],
    c=0, cite=c(44)),
 
  dict(topic="AAION", io=IOA, lead="diagnosis",
@@ -476,6 +476,6 @@ POOL_B = [
      ["Non-arteritic anterior ischemic optic neuropathy", "Correct; painless altitudinal loss with normal markers."],
      ["Arteritic anterior ischemic optic neuropathy", "Markers would be raised and symptoms present."],
      ["Optic neuritis", "That is painful on eye movement."],
-     ["Branch retinal vein occlusion", "That shows sectoral haemorrhage."]],
+     ["Branch retinal vein occlusion", "That shows sectoral hemorrhage."]],
    c=0, cite=c(48)),
 ]

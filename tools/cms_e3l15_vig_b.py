@@ -50,7 +50,7 @@ QUESTIONS = [
   opts=[["Permanent deformity, known as cauliflower ear", "Correct."],
         ["Long-term dizziness", "Balance is not affected."],
         ["Weakness of the face", "The facial nerve is not involved."],
-        ["Development of a middle ear tumour", "There is no such risk."]]),
+        ["Development of a middle ear tumor", "There is no such risk."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="next step", cite=D % 40,
   q="A 20-year-old rugby player took a blow to the ear this afternoon. The auricle looks bruised but not swollen and the landmarks are preserved. What should be arranged?",
@@ -60,8 +60,8 @@ QUESTIONS = [
         ["Splinting of the ear now", "Splinting follows drainage of an actual collection."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="treatment", cite=D % 41,
-  q="A 23-year-old man has just had an auricular haematoma drained. Which measure prevents it re-accumulating?",
-  opts=[["Ear splinting", "Correct — bolsters, moulds, putty or thermoplastic splints."],
+  q="A 23-year-old man has just had an auricular hematoma drained. Which measure prevents it re-accumulating?",
+  opts=[["Ear splinting", "Correct — bolsters, molds, putty or thermoplastic splints."],
         ["A week of bed rest", "Rest does not prevent re-accumulation."],
         ["Twice-daily antifungal drops", "Fungal infection is not the issue."],
         ["A hearing aid", "Hearing is not affected."]]),
@@ -90,7 +90,7 @@ QUESTIONS = [
  dict(topic="Tympanic membrane perforation", io=IO_A, lead="patient education", cite=D % 47,
   q="A 35-year-old man has a traumatic perforation that is expected to heal on its own. What should he be told to watch for?",
   opts=[["Worsening hearing or dizziness", "Correct — trauma can disrupt the ossicles or the inner ear as well."],
-        ["A change in the colour of his wax", "Wax colour varies normally."],
+        ["A change in the color of his wax", "Wax color varies normally."],
         ["Mild fullness for a day", "Expected rather than alarming."],
         ["A single episode of sneezing", "Sneezing has no bearing on the healing drum."]]),
 
@@ -103,14 +103,14 @@ QUESTIONS = [
 
  dict(topic="Foreign body in the ear", io=IO_A, lead="next step", cite=D % 50,
   q="A 26-year-old man has a live insect in the ear canal and is distressed by the movement. His drum is intact. What should be done first?",
-  opts=[["Fill the canal with lidocaine", "Correct — immobilise it before attempting removal."],
-        ["Grasp it immediately with forceps", "A moving insect should be immobilised first."],
+  opts=[["Fill the canal with lidocaine", "Correct — immobilize it before attempting removal."],
+        ["Grasp it immediately with forceps", "A moving insect should be immobilized first."],
         ["Wait for it to crawl out", "That is not the approach taken."],
-        ["Instil antibiotic drops", "Antibiotics do not immobilise it."]]),
+        ["Instill antibiotic drops", "Antibiotics do not immobilize it."]]),
 
  dict(topic="Foreign body in the ear", io=IO_B, lead="treatment", cite=D % 52,
   q="A 12-year-old girl has an earring back embedded in her lobule, which is red and tender with a little pus. What is the appropriate management?",
-  opts=[["Removal under local anaesthetic", "Correct; sedation is used if the child cannot cooperate."],
+  opts=[["Removal under local anesthetic", "Correct; sedation is used if the child cannot cooperate."],
         ["Oral antibiotics alone for two weeks", "The object must come out."],
         ["Observation for a month", "Infection is the main concern and it needs removal."],
         ["Irrigation of the ear canal", "The canal is not involved."]]),
@@ -165,9 +165,9 @@ QUESTIONS = [
         ["A corticosteroid alone", "Steroid does not treat the infection."]]),
 
  dict(topic="Otomycosis", io=IO_A, lead="diagnosis", cite=D % 63,
-  q="A 45-year-old woman has two weeks of intense itching and mild discomfort in the right ear after using antibiotic drops. The canal contains grey-black specks and filaments described as looking like wet newspaper. What is the most likely diagnosis?",
+  q="A 45-year-old woman has two weeks of intense itching and mild discomfort in the right ear after using antibiotic drops. The canal contains gray-black specks and filaments described as looking like wet newspaper. What is the most likely diagnosis?",
   opts=[["Otomycosis", "Correct — the appearance and the itch-dominant history."],
-        ["Bacterial otitis externa", "That is more painful and shows erythema and oedema."],
+        ["Bacterial otitis externa", "That is more painful and shows erythema and edema."],
         ["Cholesteatoma", "That lies behind the drum as keratin debris."],
         ["Necrotizing external otitis", "That produces severe pain out of proportion."]]),
 

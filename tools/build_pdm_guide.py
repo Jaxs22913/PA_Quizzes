@@ -16,7 +16,7 @@ Throughout, the guide reflects how Professor Reynolds said this course is
 examined, taken from the 2026-08-18 recording and confirmed against Notability's
 independent transcript: reference ranges are always supplied, predictive values
 are never calculated, and the tube objective means the order of draw and the
-common colour-to-test pairings rather than the deck's exhaustive additive table.
+common color-to-test pairings rather than the deck's exhaustive additive table.
 """
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -73,7 +73,7 @@ BODY = '''<main>
   minutes of Lecture 1. Four things follow from it, and they shape this whole guide:</p>
   <table>
     <tr><th>She said</th><th>What it means for you</th></tr>
-    <tr><td><em>&ldquo;We always also give you the normal ranges &hellip; I&rsquo;m not going to just throw a random number at you and not give you context of whether that&rsquo;s high or low.&rdquo;</em></td><td><strong>Do not memorise reference values.</strong> If a lab value appears in a stem, its range appears with it &mdash; on this exam and, she said, in every class. Spend the effort on what the value <em>means</em>.</td></tr>
+    <tr><td><em>&ldquo;We always also give you the normal ranges &hellip; I&rsquo;m not going to just throw a random number at you and not give you context of whether that&rsquo;s high or low.&rdquo;</em></td><td><strong>Do not memorize reference values.</strong> If a lab value appears in a stem, its range appears with it &mdash; on this exam and, she said, in every class. Spend the effort on what the value <em>means</em>.</td></tr>
     <tr><td><em>&ldquo;It will be based on the instructional objectives &hellip; more related to the tests themselves rather than maybe the specific diagnosis.&rdquo;</em></td><td>Study <strong>the test</strong>: what to order, why, its limits, how to read it. The objectives above are the blueprint.</td></tr>
     <tr><td><em>&ldquo;Although a heart rhythm can be a diagnosis, you also need to be able to interpret an EKG by naming the rhythm.&rdquo;</em></td><td>The one stated exception. It lands on Lectures 7 and 11&ndash;16, so Exams 2 and 3.</td></tr>
     <tr><td><em>&ldquo;There could be pictures &hellip; images of x-rays or CT scans &hellip; in addition to the vignette.&rdquo;</em></td><td>Expect image-based vignettes, not only text.</td></tr>
@@ -127,14 +127,14 @@ BODY = '''<main>
   <div class="callout"><strong>Integration and follow-up</strong> is the second half of the posttest phase:
   diagnosis, acceptance, healing and health-promoting behavior. It includes patient education,
   ordering appropriate follow-up labs, scheduling follow-up, making referrals, and considering
-  emotional well-being. Behavioural responses to a significant diagnosis <em>may last several weeks
+  emotional well-being. Behavioral responses to a significant diagnosis <em>may last several weeks
   or longer</em>. And on documentation: <em>&ldquo;if it wasn&rsquo;t documented, it wasn&rsquo;t
   done&rdquo;</em>.</div>
 
   <h3 class="sub" id="ld-tubes">1.3 &middot; Objective e &mdash; Collection tubes and the order of draw</h3>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor narrowed this objective</span>
-  <p>The deck carries a two-dozen-row table pairing every additive to every stopper colour. She does
-  not want it memorised. <em>&ldquo;The thing I want you to know better, have a better handle on, is
+  <p>The deck carries a two-dozen-row table pairing every additive to every stopper color. She does
+  not want it memorized. <em>&ldquo;The thing I want you to know better, have a better handle on, is
   kind of the <strong>order</strong> and sort of the <strong>broad category</strong> &mdash; so light
   blue, think coags; lavender, we&rsquo;re gonna be using this for like our CBC.&rdquo;</em> Then:
   <em>&ldquo;the order is important. I kind of want you to have an idea of the order.&rdquo;</em></p>
@@ -162,9 +162,9 @@ BODY = '''<main>
   starting antibiotics. Stated for blood, sputum and throat cultures alike.</div>
   <table>
     <tr><th>Study</th><th>Purpose and use</th><th>The detail that gets tested</th></tr>
-    <tr><td><strong>Stool studies</strong></td><td>Non-invasive; diagnostic or screening. Indications: diarrhea, excessive flatus, abdominal discomfort, change in stool colour, recent travel, well water, prolonged antibiotics. Identifies overgrowth of normal flora, toxins, acquired bacteria, parasites</td><td>Specimen must be <strong>uncontaminated with urine or other secretions</strong>, in a dry clean container</td></tr>
+    <tr><td><strong>Stool studies</strong></td><td>Non-invasive; diagnostic or screening. Indications: diarrhea, excessive flatus, abdominal discomfort, change in stool color, recent travel, well water, prolonged antibiotics. Identifies overgrowth of normal flora, toxins, acquired bacteria, parasites</td><td>Specimen must be <strong>uncontaminated with urine or other secretions</strong>, in a dry clean container</td></tr>
     <tr><td><strong>Ova &amp; parasites</strong></td><td>Part of stool studies</td><td><strong>Do NOT refrigerate</strong> &mdash; warm stool is best. <strong>Three separate random specimens</strong>, because of the parasite life cycle</td></tr>
-    <tr><td><strong>Guaiac</strong></td><td>Detects fecal occult blood; from a specimen or from the gloved finger after digital rectal examination</td><td>Heme oxidises the hydrogen peroxide in the guaiac &rarr; <strong>blue = positive</strong>. Use a <strong>small</strong> sample; a large one obscures the result</td></tr>
+    <tr><td><strong>Guaiac</strong></td><td>Detects fecal occult blood; from a specimen or from the gloved finger after digital rectal examination</td><td>Heme oxidizes the hydrogen peroxide in the guaiac &rarr; <strong>blue = positive</strong>. Use a <strong>small</strong> sample; a large one obscures the result</td></tr>
     <tr><td><strong>Blood cultures</strong></td><td>Acute febrile illness with suspicion of septicemia. <strong>Both diagnostic and therapeutic</strong> &mdash; identifies the pathogen <em>and</em> gives sensitivities</td><td><strong>Two separate samples from opposite arms</strong>, ideally before antibiotics. <strong>Aerobic first.</strong> Scrub and let dry; <strong>do not palpate after disinfection</strong> unless wearing sterile gloves</td></tr>
     <tr><td><strong>Sputum culture</strong></td><td>Identifies respiratory pathogens and directs treatment</td><td>Two steps: <strong>Gram stain first</strong> (positive versus negative), then culture for identification and sensitivities. Sit upright, rinse mouth with water, three deep breaths, deep cough. Aerosols may assist. Acid-fast bacilli can be done from the same specimen</td></tr>
     <tr><td><strong>Throat culture</strong></td><td>Isolates the pathogen, often streptococci, because of beta-hemolytic streptococcal pharyngitis. Most common ages <strong>3&ndash;15</strong>; in adults, severe or recurrent sore throat, fever, palpable lymphadenopathy</td><td>Tongue blade improves visualization, relaxes the throat and reduces gag. Rotate the swab over the <strong>posterior throat, both tonsils</strong>, and any inflammation, exudate or ulceration. <strong>Avoid the tongue and lips.</strong> Rapid immunologic tests are highly accurate</td></tr>
@@ -185,7 +185,7 @@ BODY = '''<main>
   </table>
   <table>
     <tr><th>Advantages</th><th>Limitations</th></tr>
-    <tr><td>Convenience &middot; rapid, less manpower &middot; reduced visits &middot; fingerstick rather than needle stick &middot; <strong>better care where resources are limited</strong> &mdash; rural, disaster zone</td><td>Expensive &middot; quality assurance difficult to control &middot; <strong>operator and manufacturer variability</strong> &middot; vocabulary not always standardised &middot; <strong>results may be less precise</strong> &middot; supply needs</td></tr>
+    <tr><td>Convenience &middot; rapid, less manpower &middot; reduced visits &middot; fingerstick rather than needle stick &middot; <strong>better care where resources are limited</strong> &mdash; rural, disaster zone</td><td>Expensive &middot; quality assurance difficult to control &middot; <strong>operator and manufacturer variability</strong> &middot; vocabulary not always standardized &middot; <strong>results may be less precise</strong> &middot; supply needs</td></tr>
   </table>
   <div class="pearl">The advantage and the limitation are the same coin. It is fast and close to the
   patient <em>because</em> it is not the central laboratory &mdash; which is also why it is less
@@ -201,7 +201,7 @@ BODY = '''<main>
   </table>
   ''' + F["urinalysis-dipstick"] + '''
   <table>
-    <tr><th>Analyser type</th><th>Examples</th></tr>
+    <tr><th>Analyzer type</th><th>Examples</th></tr>
     <tr><td>Qualitative or semi-quantitative cartridge</td><td>Rapid strep (qualitative), influenza (qualitative), <strong>urinalysis dipstick (semi-quantitative)</strong>, pregnancy (qualitative)</td></tr>
     <tr><td>Single-use quantitative cartridge or strip with a reader</td><td><strong>Glucose &mdash; the highest-volume point-of-care test</strong>, blood chemistries, coagulation, cardiac markers, C-reactive protein, hemoglobin A1c, arterial blood gases, electrolytes</td></tr>
     <tr><td>Multiple-use quantitative cartridge / benchtop</td><td>Hemoglobin species with arterial blood gas, bilirubin, electrolytes, cardiac markers, drugs</td></tr>
@@ -214,7 +214,7 @@ BODY = '''<main>
   <h3 class="sub" id="ld-quality">1.7 &middot; Objectives k &amp; l &mdash; Quality assurance and regulation</h3>
   <table>
     <tr><th>Quality measures for point-of-care testing</th></tr>
-    <tr><td>Supervising testing and delivery of results &middot; operators trained and competent &middot; collection per the device instructions &middot; <strong>accurate patient identification</strong> throughout testing and reporting &middot; quality control &middot; <strong>active enrollment in an External Quality Assurance program</strong> &middot; devices connected to electronic information systems to minimise post-testing errors &middot; a safe, secure working environment</td></tr>
+    <tr><td>Supervising testing and delivery of results &middot; operators trained and competent &middot; collection per the device instructions &middot; <strong>accurate patient identification</strong> throughout testing and reporting &middot; quality control &middot; <strong>active enrollment in an External Quality Assurance program</strong> &middot; devices connected to electronic information systems to minimize post-testing errors &middot; a safe, secure working environment</td></tr>
   </table>
   <p><strong>Clinical Laboratory Improvement Amendments (CLIA)</strong> &mdash; federal guidelines setting
   <em>minimum</em> quality standards for testing human samples at all types of sites. It began in the
@@ -233,7 +233,7 @@ BODY = '''<main>
     <tr><td>Centers for Disease Control and Prevention</td><td>Analysis, research and technical assistance &middot; technical standards and practice guidelines &middot; quality improvement studies &middot; manages the advisory committee</td></tr>
   </table>
   <div class="pearl"><strong>The direction of regulation only goes one way.</strong> Every testing site must
-  be licensed to perform <em>any</em> test, the licence must match the complexity performed, and sites
+  be licensed to perform <em>any</em> test, the license must match the complexity performed, and sites
   reapply <strong>every two years</strong>. States and cities may add requirements but may never
   downgrade them &mdash; so local regulation is always <em>stricter</em> than the federal floor, never
   looser.</div>
@@ -265,7 +265,7 @@ BODY = '''<main>
     <tr><td>Fewer</td><td>False negatives <span class="tag">does not address false positives</span></td><td>False positives <span class="tag">does not address false negatives</span></td></tr>
     <tr><td>Mnemonic</td><td><strong>SnNout</strong> &mdash; high Sensitivity + Negative rules <em>out</em></td><td><strong>SpPin</strong> &mdash; high Specificity + Positive rules <em>in</em></td></tr>
     <tr><td>Best for</td><td><strong>Screening</strong></td><td><strong>Confirming</strong></td></tr>
-    <tr><td>Example</td><td>Human immunodeficiency virus screening &mdash; very few infected individuals are missed</td><td>Human immunodeficiency virus confirmatory testing &mdash; minimises false-positive diagnoses</td></tr>
+    <tr><td>Example</td><td>Human immunodeficiency virus screening &mdash; very few infected individuals are missed</td><td>Human immunodeficiency virus confirmatory testing &mdash; minimizes false-positive diagnoses</td></tr>
   </table>
   ''' + F["threshold-sensitivity"] + F["threshold-specificity"] + '''
   <div class="pearl"><strong>The two figures above are one dataset and one dial.</strong> Move the
@@ -338,7 +338,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        explain:"Screening may become diagnostic if an abnormality is found during testing. Screening and diagnostic are roles rather than fixed labels — the same procedure changed role mid-way."},
       {q:"How does state laboratory regulation relate to the federal Clinical Laboratory Improvement Amendments?",
        choices:["States may relax the federal standard","States may only match it exactly","State rules always end up stricter","Federal rules apply only where no state rule exists"],correct:2,
-       explain:"The federal standard is a MINIMUM and cannot be downgraded, so state and city regulation is always stricter, never looser. Sites must also reapply every two years, with a licence matching the complexity performed."}
+       explain:"The federal standard is a MINIMUM and cannot be downgraded, so state and city regulation is always stricter, never looser. Sites must also reapply every two years, with a license matching the complexity performed."}
     ],'''
 
 donor = open(DONOR, encoding="utf-8").read()

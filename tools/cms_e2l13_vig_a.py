@@ -30,13 +30,13 @@ QUESTIONS = [
   opts=[["To exclude venous sinus thrombosis", "Correct. A clot raises pressure and mimics the idiopathic form."],
         ["To measure the opening pressure", "That needs a lumbar puncture."],
         ["To look for multiple sclerosis", "That needs contrast imaging of the brain."],
-        ["To assess the carotid arteries", "Those relate to ocular ischaemic syndrome."]]),
+        ["To assess the carotid arteries", "Those relate to ocular ischemic syndrome."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="diagnosis", cite=D % 9,
   q="A 69-year-old man has painless loss of peripheral vision over years, cupped discs and a raised pressure. Which diagnosis fits?",
   opts=[["Primary open-angle glaucoma", "Correct, with central acuity spared until late."],
         ["Acute angle-closure glaucoma", "That is sudden and painful."],
-        ["Macular degeneration", "That takes the centre first."],
+        ["Macular degeneration", "That takes the center first."],
         ["Cataract", "That clouds rather than constricts the field."]]),
 
  dict(topic="Primary open-angle glaucoma", io=IO_A, lead="next step", cite=D % 9,
@@ -50,11 +50,11 @@ QUESTIONS = [
   q="A 74-year-old man with glaucoma asks why he must keep using drops when he sees no better. What do you say?",
   opts=[["They protect the vision he still has", "Correct. Damage already done cannot be reversed."],
         ["They will restore the lost field", "Lost field does not return."],
-        ["They can be stopped once pressure normalises", "Stopping lets pressure rise again."],
+        ["They can be stopped once pressure normalizes", "Stopping lets pressure rise again."],
         ["They treat the cataract as well", "They do not act on the lens."]]),
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="diagnosis", cite=D % 11,
-  q="An 81-year-old woman reports straight lines looking bent and a blur at the centre of her reading. Which diagnosis fits?",
+  q="An 81-year-old woman reports straight lines looking bent and a blur at the center of her reading. Which diagnosis fits?",
   opts=[["Age-related macular degeneration", "Correct. Central distortion is the hallmark."],
         ["Nuclear cataract", "That clouds vision generally."],
         ["Retinal detachment", "That gives a curtain and flashes."],
@@ -65,7 +65,7 @@ QUESTIONS = [
   opts=[["Conversion to the wet form", "Correct. New vessels bleeding cause a rapid change."],
         ["A new cataract", "That would not change over a week."],
         ["Glaucoma developing", "That is peripheral and slow."],
-        ["Refractive change", "That does not distort the centre."]]),
+        ["Refractive change", "That does not distort the center."]]),
 
  dict(topic="Age-related macular degeneration", io=IO_A, lead="treatment", cite=D % 14,
   q="An 83-year-old woman is confirmed to have wet macular degeneration. Which treatment is offered?",
@@ -133,7 +133,7 @@ QUESTIONS = [
  dict(topic="Cataract", io=IO_A, lead="diagnosis", cite=D % 36,
   q="A 74-year-old woman has two years of gradual blurring, glare at night and a dimmed red reflex. Which diagnosis fits?",
   opts=[["Cataract", "Correct. Slow blurring, glare and a dulled reflex."],
-        ["Macular degeneration", "That distorts the centre, and the reflex stays normal."],
+        ["Macular degeneration", "That distorts the center, and the reflex stays normal."],
         ["Optic neuritis", "That is rapid and painful."],
         ["Retinal detachment", "That is sudden with flashes and floaters."]]),
 
@@ -167,9 +167,9 @@ QUESTIONS = [
 
  dict(topic="Retinoblastoma", io=IO_A, lead="reasoning", cite=D % 42,
   q="A child has a retinal mass typical of retinoblastoma. Why is the diagnosis made without tissue?",
-  opts=[["Biopsy risks seeding the tumour", "Correct. Examination and imaging suffice."],
+  opts=[["Biopsy risks seeding the tumor", "Correct. Examination and imaging suffice."],
         ["Pathology cannot distinguish it", "Pathology could; the risk is the objection."],
-        ["Imaging is definitive for all eye tumours", "It is the seeding risk that decides it."],
+        ["Imaging is definitive for all eye tumors", "It is the seeding risk that decides it."],
         ["Parents usually decline biopsy", "The reason is clinical, not preference."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="next step", cite=D % 46,
@@ -177,7 +177,7 @@ QUESTIONS = [
   opts=[["Refer to ophthalmology, likely ocular oncology", "Correct. Growth and vascularity raise real concern."],
         ["Reassure and review in a year", "A growing vascular lesion is not observed casually."],
         ["Biopsy it in clinic", "Iris lesions are not sampled in primary care."],
-        ["Start topical steroid", "That treats inflammation, not tumour."]]),
+        ["Start topical steroid", "That treats inflammation, not tumor."]]),
 
  dict(topic="Uveal melanoma", io=IO_A, lead="education", cite=D % 46,
   q="A 64-year-old man treated for choroidal melanoma asks what follow-up he needs. What do you tell him?",
@@ -188,8 +188,8 @@ QUESTIONS = [
 
  dict(topic="Uveal melanoma", io=IO_A, lead="prognosis", cite=D % 46,
   q="Two patients have uveal melanoma, one of the iris and one of the ciliary body. What do you expect?",
-  opts=[["The iris tumour carries the better outlook", "Correct, roughly 4 to 10 percent mortality against far worse."],
-        ["The ciliary body tumour does better", "It is found later and does worse."],
+  opts=[["The iris tumor carries the better outlook", "Correct, roughly 4 to 10 percent mortality against far worse."],
+        ["The ciliary body tumor does better", "It is found later and does worse."],
         ["The outlook is identical", "Site changes prognosis considerably."],
         ["Both are almost always fatal", "The iris form in particular is not."]]),
 
@@ -215,9 +215,9 @@ QUESTIONS = [
         ["Pinguecula", "That is a yellow non-pigmented nodule."]]),
 
  dict(topic="Chronic vision loss", io=IO_A, lead="reasoning", cite=D % 22,
-  q="A 55-year-old man has reduced acuity and says colours look washed out. Which cause does that point to?",
-  opts=[["Optic neuropathy", "Correct. It is the one that takes colour vision."],
-        ["Cataract", "That clouds without stripping colour."],
+  q="A 55-year-old man has reduced acuity and says colors look washed out. Which cause does that point to?",
+  opts=[["Optic neuropathy", "Correct. It is the one that takes color vision."],
+        ["Cataract", "That clouds without stripping color."],
         ["Open-angle glaucoma", "That takes peripheral field."],
         ["Refractive error", "That blurs and corrects with lenses."]]),
 ]

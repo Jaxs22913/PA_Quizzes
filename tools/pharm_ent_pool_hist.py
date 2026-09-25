@@ -3,8 +3,8 @@
 
 Scope as in pharm_ent_pool_anti.py: indications and agent-specific adverse
 effects ARE asked, corrected 2026-09-18. The steroid slides therefore carry
-both the class behaviour the agents share and the effects attached to each,
-rather than the class behaviour alone.
+both the class behavior the agents share and the effects attached to each,
+rather than the class behavior alone.
 
 The spine of the antihistamine half is that one distinction explains most of
 the rest: first generation agents enter the central nervous system and hit
@@ -89,8 +89,8 @@ QUESTIONS = [
 {"topic": "H1 antagonists", "io": IO_MOA, "slot": "mechanism",
  "q": "What do H1 antagonists do peripherally?",
  "opts": [
-  ["Reduce secretions, oedema, hives and itching", "Correct. Each of these is the mirror image of an H1 action, which is why the antagonist's effects can be read straight off the receptor. Block smooth muscle contraction."],
-  ["Reduce gastric acid secretion", "That would be an H2 blocker. H1 antagonists reduce secretions, oedema, hives and itching, and block smooth muscle contraction."],
+  ["Reduce secretions, edema, hives and itching", "Correct. Each of these is the mirror image of an H1 action, which is why the antagonist's effects can be read straight off the receptor. Block smooth muscle contraction."],
+  ["Reduce gastric acid secretion", "That would be an H2 blocker. H1 antagonists reduce secretions, edema, hives and itching, and block smooth muscle contraction."],
   ["Increase mucus secretion to clear allergens", "They reduce secretion rather than increasing it, mirroring histamine's own effect at the H1 receptor."],
   ["Cause bronchoconstriction", "They block the bronchoconstriction histamine produces, since bronchoconstriction is itself an H1 effect."]],
  "c": 0, "cite": D + ", Slide 31"},
@@ -107,10 +107,10 @@ QUESTIONS = [
 {"topic": "H1 antagonists", "io": IO_SE, "slot": "adverse effect",
  "q": "A child given a first generation antihistamine becomes restless and agitated rather than sleepy. How is that explained?",
  "opts": [
-  ["Excitation occurs at higher exposure, and particularly in children", "Correct. The paradox is recognised rather than unusual, and it means an agitated child may have had more of the drug rather than less."],
+  ["Excitation occurs at higher exposure, and particularly in children", "Correct. The paradox is recognized rather than unusual, and it means an agitated child may have had more of the drug rather than less."],
   ["The child has developed tolerance to the sedating effect", "Tolerance is not the described explanation. Excitation occurs at higher exposure and is seen particularly in children."],
   ["The drug was a second generation agent", "Second generation agents do not enter the central nervous system enough to produce either effect."],
-  ["It indicates an allergic reaction to the antihistamine", "Excitation is a recognised central effect rather than an allergic one."]],
+  ["It indicates an allergic reaction to the antihistamine", "Excitation is a recognized central effect rather than an allergic one."]],
  "c": 0, "cite": D + ", Slide 32"},
 
 {"topic": "H1 antagonists", "io": IO_MOA, "slot": "mechanism",
@@ -338,7 +338,7 @@ QUESTIONS = [
   ["Macrolides reduce dexamethasone clearance", "Correct. The steroid is not changed; it simply stays around longer, which is enough to turn a tolerable course into a problematic one. So its effect is amplified."],
   ["Macrolides inactivate dexamethasone", "The interaction increases exposure rather than reducing it: macrolides decrease dexamethasone clearance, so it lingers."],
   ["Dexamethasone blocks macrolide absorption", "The interaction is described in the other direction: the macrolide reduces clearance of the steroid."],
-  ["The two combine to cause hyperkalaemia", "Corticosteroids are associated with potassium loss rather than retention."]],
+  ["The two combine to cause hyperkalemia", "Corticosteroids are associated with potassium loss rather than retention."]],
  "c": 0, "cite": D + ", Slide 45"},
 
 {"topic": "Systemic corticosteroids", "io": IO_INTERACT, "slot": "next step",
@@ -353,8 +353,8 @@ QUESTIONS = [
 {"topic": "Systemic corticosteroids", "io": IO_SE, "slot": "adverse effect",
  "q": "Which eye findings are associated with systemic corticosteroids?",
  "opts": [
-  ["Raised intraocular pressure, glaucoma and cataract", "Correct. Worth holding onto because a course given for the nose can end up costing sight if it runs long enough."],
-  ["Retinal detachment and vitreous haemorrhage", "Not among the described effects. The ocular effects are raised intraocular pressure, glaucoma, cataract and exophthalmos."],
+  ["High intraocular pressure, glaucoma and cataract", "Correct. Worth holding onto because a course given for the nose can end up costing sight if it runs long enough."],
+  ["Retinal detachment and vitreous hemorrhage", "Not among the described effects. The ocular effects are raised intraocular pressure, glaucoma, cataract and exophthalmos."],
   ["Optic neuritis", "Not among the described effects; the ocular harms listed are raised pressure, glaucoma, cataract and exophthalmos."],
   ["Corneal ulceration", "Not among the described effects. The eye findings are raised intraocular pressure, glaucoma and cataract."]],
  "c": 0, "cite": D + ", Slide 47"},

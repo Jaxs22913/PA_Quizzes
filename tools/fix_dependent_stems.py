@@ -40,7 +40,7 @@ REWRITE = {
   ("The same patient asks what will happen to his scar over the next year. Which is the most appropriate answer?",
    "A 30-year-old man had an appendicectomy five weeks ago. The scar is raised, firm and red but stops exactly at the edges of the original incision. He asks what will happen to it over the next year. Which is the most appropriate answer?"),
   ("The same patient wants the lesions removed for cosmetic reasons. Which is the most appropriate approach?",
-   "A 58-year-old woman with obesity has several soft, skin-coloured, pedunculated papules on a thin stalk in both axillae and on her neck. She wants them removed for cosmetic reasons. Which is the most appropriate approach?"),
+   "A 58-year-old woman with obesity has several soft, skin-colored, pedunculated papules on a thin stalk in both axillae and on her neck. She wants them removed for cosmetic reasons. Which is the most appropriate approach?"),
  ],
  "tools/cms_l7_vig_b.py": [
   ("The same patient's abscess is tense and fluctuant. Which is the most appropriate immediate management?",
@@ -50,9 +50,9 @@ REWRITE = {
   ("The same patient is not bothered by her lesion but wants to know her options. Which is the most appropriate answer?",
    "A 34-year-old woman has a firm 8 mm brown nodule on her lower leg that retracts beneath the skin when compressed from the sides. She is not bothered by it but wants to know her options. Which is the most appropriate answer?"),
   ("The patient asks whether his lesion is a sebaceous cyst full of oil. Which is the most appropriate response?",
-   "A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-coloured pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?"),
-  ("The same patient asks about having them removed. Which is the most appropriate counselling point?",
-   "A 17-year-old girl has multiple 1 to 2 mm skin-coloured papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counselling point?"),
+   "A 45-year-old man has a firm, movable, round nodule on his upper back with a small central pore that expresses cream-colored pasty material. He asks whether it is a sebaceous cyst full of oil. Which is the most appropriate response?"),
+  ("The same patient asks about having them removed. Which is the most appropriate counseling point?",
+   "A 17-year-old girl has multiple 1 to 2 mm skin-colored papules symmetrically distributed on both lower eyelids and upper cheeks. She asks about having them removed. Which is the most appropriate counseling point?"),
  ],
  "tools/cms_l7_vig_c.py": [
   ("The same mother asks whether the lesion will need surgery. Which is the most appropriate answer?",

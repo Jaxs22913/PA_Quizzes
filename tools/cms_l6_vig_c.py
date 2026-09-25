@@ -469,7 +469,7 @@ VIG_C = [
    c=0, cite=c(128)),
 
  dict(topic="Molluscum contagiosum", io=IOC, lead="diagnosis",
-   q="A 4-year-old has about fifteen discrete, smooth, firm, flesh-coloured dome-shaped pearly papules on the trunk, each 3 to 5 millimetres with a dimple in the centre. They are asymptomatic. Which is the most likely diagnosis?",
+   q="A 4-year-old has about fifteen discrete, smooth, firm, flesh-colored dome-shaped pearly papules on the trunk, each 3 to 5 millimeters with a dimple in the center. They are asymptomatic. Which is the most likely diagnosis?",
    opts=[
      ["Molluscum contagiosum",
       "Correct — central umbilication is characteristic."],
@@ -514,8 +514,8 @@ VIG_C = [
       "Correct — extensive or atypical disease raises this question."],
      ["Reassure him that facial lesions resolve within weeks and arrange no follow-up",
       "Extensive facial disease warrants evaluation."],
-     ["Excise every lesion surgically under general anaesthesia at the first visit",
-      "Excising every lesion under general anaesthesia is out of proportion."],
+     ["Excise every lesion surgically under general anesthesia at the first visit",
+      "Excising every lesion under general anesthesia is out of proportion."],
      ["Start an oral antifungal, since extensive facial lesions suggest a dermatophyte",
       "Molluscum is a poxvirus infection."]],
    c=0, cite=c(133)),
@@ -534,7 +534,7 @@ VIG_C = [
    c=0, cite=c(133)),
 
  dict(topic="Warts", io=IOC, lead="diagnosis",
-   q="A 12-year-old has several elevated, round, less than 1-centimetre papules with a rough greyish surface on his fingers. Trimming the surface reveals tiny red-black dots. Which is the most likely diagnosis, and what are the dots?",
+   q="A 12-year-old has several elevated, round, less than 1-centimeter papules with a rough grayish surface on his fingers. Trimming the surface reveals tiny red-black dots. Which is the most likely diagnosis, and what are the dots?",
    opts=[
      ["Verruca vulgaris, and the dots are thrombosed dilated capillaries",
       "Correct — trimming makes the capillaries more prominent."],
@@ -552,7 +552,7 @@ VIG_C = [
      ["Verruca plana, spread by autoinoculation during shaving",
       "Correct — shaving spreads flat warts."],
      ["Verruca vulgaris, spread by autoinoculation during shaving",
-      "Common warts are rough, elevated and greyish."],
+      "Common warts are rough, elevated and grayish."],
      ["Molluscum contagiosum, spread by autoinoculation during shaving",
       "Molluscum papules are umbilicated and pearly."],
      ["Verruca plantaris, spread by walking barefoot in communal areas",

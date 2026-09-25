@@ -18,9 +18,9 @@ POOL D IS FROM THE 2026-08-20 RECORDING. This lecture SIGNPOSTS NOTHING -- 84
 minutes across two independent transcriptions with no statement about what is or
 is not on the exam. So pool D is not a re-weighting; it is the teaching that
 never reaches a slide. Professor Rappa explains almost every term through a
-clinical example (Barrett's oesophagus for metaplasia, cervical dysplasia for
+clinical example (Barrett's esophagus for metaplasia, cervical dysplasia for
 dysplasia, weight training for hypertrophy) and states one link the deck does
-not make at all: falling differentiation means a MORE AGGRESSIVE tumour.
+not make at all: falling differentiation means a MORE AGGRESSIVE tumor.
 
 SLIDE 43 IS AN IMAGE and is deliberately not asked from. It is a lung-cancer-
 specific 7th-edition TNM table, and the deck's own point on slide 42 is that TNM
@@ -34,7 +34,7 @@ index by hand while writing is how the "always A" bug was introduced.
 LONGER OVERWRITES THE SHIPPED SELECTION BY DEFAULT. Site rule (CLAUDE.md sec. 7,
 slides-only grounding): a lecturer's aside does not add content the deck lacks,
 and no question is built on a lecture's worked example. Six shipped pool-D items
-rested on the recording alone (Barrett's oesophagus as THE metaplasia example,
+rested on the recording alone (Barrett's esophagus as THE metaplasia example,
 columnar cells meaning "secondary to reflux", the pathologist as sole
 diagnostician, lung-to-brain via the carotids, the plural "carcinomata", the
 leio-/rhabdo- prefixes). cp_l3_sets.json and both pages now carry unshipped

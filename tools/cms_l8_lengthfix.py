@@ -7,7 +7,7 @@ overwrite the correct option.
 
 Pool A came out at 57% raw -- the highest of any pool built for this exam, and
 higher even than Lecture 5's 48%. Same cause, more concentrated: this entire
-deck is compare-and-contrast across a catalogue of pigmented lesions, so the
+deck is compare-and-contrast across a catalog of pigmented lesions, so the
 correct answer is a full compound description and every distractor names a
 different lesion in fewer words. Those seventeen were repaired at source in
 cms_l8_pool_a.py, and pools B and C were written with the distractors given the
@@ -18,7 +18,7 @@ SLOT_FIXES = {
  (35, 1): "Lesion size alone, with every lesion over 5 mm excised regardless of its site or of graft availability at all",
  (39, 1): "They are present at birth, enlarge in proportion to the child's own growth, and never regress at any stage of life",
  (50, 3): "Beige to black papules and plaques 2 to 20 mm across that feel velvety and appear stuck onto the surface of the skin",
- (52, 1): "Diagnosis is made clinically; management is observation alone with sun protection counselling, since these lesions never progress to melanoma at all",
+ (52, 1): "Diagnosis is made clinically; management is observation alone with sun protection counseling, since these lesions never progress to melanoma at all",
 }
 
 if __name__ == "__main__":

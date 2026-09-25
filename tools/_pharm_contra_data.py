@@ -31,7 +31,7 @@ ROWS = [
   "time with anticoagulants.",
   "CAUT", L1, 20, ["oral contraceptives", "backup birth control", "prothrombin time"]),
  ("Penicillins &mdash; class",
-  "Adverse reactions are <b>hypersensitivity reaction</b>, rash and diarrhoea. Dosing is adjusted for "
+  "Adverse reactions are <b>hypersensitivity reaction</b>, rash and diarrhea. Dosing is adjusted for "
   "<b>renal function</b>. Monitor renal and hepatic function and platelets.",
   "CAUT", L1, 22, ["Hypersensitivity", "Renal Function", "Platelets"]),
  ("Cephalosporins &mdash; class",
@@ -48,13 +48,13 @@ ROWS = [
   "asked.",
   "NAMED", L1, 44, ["Monitoring", "Renal", "hepatic function", "Seizures", "Imipenem"]),
  ("Echinocandins<br><span class=g>caspofungin, micafungin, anidulafungin</span>",
-  "Adverse reactions: <b>tachycardia, headache, insomnia, hypokalaemia, hypomagnesaemia and blood dyscrasias</b>.",
+  "Adverse reactions: <b>tachycardia, headache, insomnia, hypokalemia, hypomagnesemia and blood dyscrasias</b>.",
   "CAUT", L1, 109, ["Tachycardia", "headache", "insomnia", "hypokalemia", "hypomagnesemia", "blood dyscrasias"]),
  ("Allylamines<br><span class=g>naftifine, terbinafine (Lamisil)</span>",
   "The deck records only <b>local irritation</b> &mdash; no systemic contraindication is given for this class.",
   "CAUT", L2, 53, ["Adverse reactions", "local irritation"]),
  ("Aztreonam<br><span class=g>monobactam</span>",
-  "The exception worth memorising: <b>NO cross-reactivity with beta-lactams</b>, so it <b>can be used in truly "
+  "The exception worth memorizing: <b>NO cross-reactivity with beta-lactams</b>, so it <b>can be used in truly "
   "penicillin-allergic patients</b>.",
   "EXCEPT", L1, 41, ["NO cross-reactivity", "true PCN allergic"]),
 
@@ -118,11 +118,11 @@ ROWS = [
   "CAUT", L1, 81, ["Clostridium difficile", "Pseudomembranous colitis", "Neutropenia"]),
  ("Trimethoprim / sulfamethoxazole<br><span class=g>Septra, Bactrim</span>",
   "<u><b>Stevens-Johnson syndrome and toxic epidermal necrolysis.</b></u> Blood dyscrasias &mdash; "
-  "thrombocytopenia, agranulocytosis, megaloblastic anaemia. Hepatotoxicity and hyperbilirubinaemia.",
+  "thrombocytopenia, agranulocytosis, megaloblastic anemia. Hepatotoxicity and hyperbilirubinemia.",
   "NAMED", L1, 85, ["SJS", "TEN", "agranulocytosis", "megaloblastic anemia"]),
  ("Trimethoprim / sulfamethoxazole<br><span class=g>Septra, Bactrim</span>",
-  "Raises phenytoin, rifampin and digoxin levels; causes <b>hypoglycaemia with sulfonylureas</b>; and "
-  "<b>significantly increases INR (international normalised ratio) with warfarin</b> by inhibiting CYP2C9.",
+  "Raises phenytoin, rifampin and digoxin levels; causes <b>hypoglycemia with sulfonylureas</b>; and "
+  "<b>significantly increases INR (international normalized ratio) with warfarin</b> by inhibiting CYP2C9.",
   "CAUT", L1, 85, ["phenytoin", "Hypoglycemia with sulfonylureas", "INR", "warfarin"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
   "<u><b>Disulfiram-like reaction with ethanol.</b></u> The single most testable fact about this drug &mdash; "
@@ -142,11 +142,11 @@ ROWS = [
 
  # ---------------- ANTIFUNGALS ----------------
  ("Amphotericin B",
-  "<b>Fever and chills</b> from interleukin-1 and tumour necrosis factor &mdash; <b>pre-treat with paracetamol, "
+  "<b>Fever and chills</b> from interleukin-1 and tumor necrosis factor &mdash; <b>pre-treat with paracetamol, "
   "antihistamines and corticosteroids</b>. Infused over 4 hours; <b>side effects limit treatment</b>.",
   "CAUT", L1, 98, ["Fever/chills", "IL-1", "TNF", "Pretreat"]),
  ("Amphotericin B",
-  "<b>Electrolyte abnormalities &mdash; hypokalaemia and hypomagnesaemia</b>, hypotension, uraemia in 80% with "
+  "<b>Electrolyte abnormalities &mdash; hypokalemia and hypomagnesemia</b>, hypotension, uremia in 80% with "
   "decreased filtration, and <b>renal tubule damage &mdash; hydrate with normal saline</b>.",
   "CAUT", L1, 99, ["hypokalemia", "hypomagnesemia", "Renal tubule damage", "normal saline"]),
  ("Itraconazole<br><span class=g>Sporanox</span>",
@@ -160,7 +160,7 @@ ROWS = [
   "vehicle <b>cyclodextrin accumulates in renal failure</b>.",
   "AVOID", L1, 107, ["teratogenic in animals", "vision", "cyclodextrin", "renal failure"]),
  ("Posaconazole<br><span class=g>Noxafil</span>",
-  "<b>QT prolongation</b>, fever, diarrhoea, hypokalaemia, hypomagnesaemia and thrombocytopenia.",
+  "<b>QT prolongation</b>, fever, diarrhea, hypokalemia, hypomagnesemia and thrombocytopenia.",
   "CAUT", L1, 105, ["QT prolongation", "Hypokalemia", "thrombocytopenia"]),
  ("Ketoconazole",
   "<b>Inhibits CYP3A4 &mdash; significant drug interactions.</b> Does not enter the central nervous system, and "
@@ -193,7 +193,7 @@ ROWS = [
 
  # ---------------- DERMATOLOGY ----------------
  ("Isotretinoin<br><span class=g>Accutane</span>",
-  "<b>CONTRAINDICATED in pregnancy and breastfeeding &mdash; men should avoid as well.</b> Enrolment in "
+  "<b>CONTRAINDICATED in pregnancy and breastfeeding &mdash; men should avoid as well.</b> Enrollment in "
   "<u><b>iPledge</b></u> is required. <b>Monitor for signs of developing depression</b> and for raised serum lipids.",
   "ABS", L2, 27, ["CONTRAINDICATED in pregnancy", "breastfeeding", "Men should avoid", "iPledge", "depression"]),
  ("Topical retinoids<br><span class=g>tretinoin, adapalene, tazarotene</span>",
@@ -203,7 +203,7 @@ ROWS = [
                     "Benzoyl peroxide inactivates tretinoin"]),
  ("Topical corticosteroids",
   "Local: <b>skin atrophy, acne, rosacea, allergic dermatitis</b>. Systemic: <b>adrenal suppression, infections, "
-  "hyperglycaemia, glaucoma, cataracts, and growth retardation in children</b>. Risk rises with potency, duration, "
+  "hyperglycemia, glaucoma, cataracts, and growth retardation in children</b>. Risk rises with potency, duration, "
   "area covered and occlusiveness &mdash; <b>ointment &gt; cream &gt; lotion</b>.",
   "CAUT", L2, 38, ["skin atrophy", "adrenal suppression", "glaucoma", "cataracts",
                    "growth retardation", "ointment"]),
@@ -229,11 +229,11 @@ ROWS = [
  # ---------------- ANS: CHOLINERGIC ----------------
  ("Cholinergic agonists &mdash; class<br><span class=g>bethanechol, carbachol, pilocarpine</span>",
   "Muscarinic excess causes <b>bronchospasm</b>, decreased blood pressure, salivation, sweating, flushing, nausea, "
-  "abdominal pain and diarrhoea &mdash; which is why these are a problem in <b>reactive airway disease</b>.",
+  "abdominal pain and diarrhea &mdash; which is why these are a problem in <b>reactive airway disease</b>.",
   "CAUT", L3, 31, ["Bronchospasm", "Decreased blood pressure", "Salivation", "Diarrhea"]),
  ("Acetylcholinesterase inhibitors<br><span class=g>neostigmine, pyridostigmine</span>",
   "Same muscarinic burden &mdash; <b>salivation, flushing, decreased blood pressure, nausea, abdominal pain, "
-  "diarrhoea and bronchospasm</b>.",
+  "diarrhea and bronchospasm</b>.",
   "CAUT", L3, 38, ["Salivation", "flushing", "decreased BP", "bronchospasm"]),
  ("Physostigmine<br><span class=g>Antilirium</span>",
   "<b>Convulsions at high doses</b>, bradycardia, decreased cardiac output, and <b>paralysis of skeletal muscle</b> "
@@ -264,7 +264,7 @@ ROWS = [
   "metabolic acidosis, tachycardia and hyperpyrexia. <b>Treat by rapid cooling and dantrolene (Dantrium)</b>.",
   "NAMED", L3, 70, ["Malignant Hyperthermia", "halothane", "dantrolene", "rigidity"]),
  ("Succinylcholine",
-  "<b>Hyperkalaemia</b>, and <b>prolonged paralysis (apnoea)</b> in patients <b>genetically deficient in plasma "
+  "<b>Hyperkalaemia</b>, and <b>prolonged paralysis (apnea)</b> in patients <b>genetically deficient in plasma "
   "cholinesterase</b> or with electrolyte imbalance.",
   "CAUT", L3, 70, ["Apnea", "genetically deficient in plasma cholinesterase", "Hyperkalemia"]),
  ("Atracurium<br><span class=g>nondepolarizing blocker</span>",
@@ -278,8 +278,8 @@ ROWS = [
   "glucose stores.",
   "CAUT", L3, 87, ["Hyperthyroidism", "Cocaine", "exaggerated cardiovascular", "Diabetes"]),
  ("Epinephrine",
-  "Adverse effects: anxiety, fear, tension, headache, tremor; <b>cerebral haemorrhage from the rise in blood "
-  "pressure</b>; <b>cardiac arrhythmias</b>; and pulmonary oedema.",
+  "Adverse effects: anxiety, fear, tension, headache, tremor; <b>cerebral hemorrhage from the rise in blood "
+  "pressure</b>; <b>cardiac arrhythmias</b>; and pulmonary edema.",
   "CAUT", L3, 86, ["cerebral hemorrhage", "Cardiac arrhythmias", "Pulmonary edema"]),
  ("Norepinephrine",
   "<b>Extravasation causes blanching and sloughing of skin</b> from extreme vasoconstriction &mdash; "
@@ -299,7 +299,7 @@ ROWS = [
   "NAMED", L3, 111, ["first-dose", "syncope"]),
  ("Phenoxybenzamine",
   "<u><b>Epinephrine reversal</b></u> &mdash; it blocks the alpha vasoconstriction of epinephrine but not its beta "
-  "vasodilation, so blood pressure falls. Block is <b>irreversible</b>; the body must synthesise new receptors, "
+  "vasodilation, so blood pressure falls. Block is <b>irreversible</b>; the body must synthesize new receptors, "
   "taking <b>at least 24 hours</b>.",
   "NAMED", L3, 109, ["Epinephrine reversal", "Blocks vasoconstriction", "but not vasodilation"]),
  ("Propranolol<br><span class=g>non-selective beta blocker</span>",
@@ -308,7 +308,7 @@ ROWS = [
   "ABS", L3, 115, ["Contraindicated in patients with chronic obstructive pulmonary disease",
                    "Bronchoconstriction"]),
  ("Propranolol<br><span class=g>non-selective beta blocker</span>",
-  "<b>Attenuates the normal physiologic response to hypoglycaemia</b> and causes <b>fasting hypoglycaemia</b> "
+  "<b>Attenuates the normal physiologic response to hypoglycemia</b> and causes <b>fasting hypoglycemia</b> "
   "&mdash; the reason for care in diabetics. Decreases glycogenolysis and glucagon secretion; raises LDL "
   "cholesterol and triglycerides.",
   "CAUT", L3, 115, ["Attenuate normal physiologic response to hypoglycemia", "glycogenolysis", "glucagon"]),

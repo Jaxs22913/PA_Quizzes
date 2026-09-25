@@ -19,7 +19,7 @@ IMGS = "cp-exam-1-study-guide-images"
 
 FIG1 = ('<figure class="fig"><img width="1100" height="819" loading="lazy" src="%s/001.jpg" '
         'alt="Diagram of the sequence of events in inflammation, running left to right from a '
-        'pre-capillary arteriole through a capillary to a post-capillary venule, labelled with '
+        'pre-capillary arteriole through a capillary to a post-capillary venule, labeled with '
         'neurologic, acute vascular, acute cellular, chronic cellular and healing phases.">'
         '<figcaption>The single most useful figure in this lecture, because it puts every objective '
         'on one timeline. Read it left to right: immediate vasoconstriction at the arteriole, then '
@@ -78,7 +78,7 @@ BODY = '''<main>
     <tr><td>II</td><td>Increased permeability</td></tr>
     <tr><td>III</td><td>Migration of neutrophils</td></tr>
     <tr><td>IV</td><td>Chemotaxis</td></tr>
-    <tr><td>V</td><td>Leucocyte recruitment &amp; activation</td></tr>
+    <tr><td>V</td><td>Leukocyte recruitment &amp; activation</td></tr>
   </table>
   <div class="pearl">The three vascular mechanisms are a causal chain, not a list:
   <strong>vasodilation</strong> of the arterioles raises blood flow &rarr; <strong>endothelial
@@ -135,7 +135,7 @@ BODY = '''<main>
   <table>
     <tr><th>Cell</th><th>Nucleus &amp; granules</th><th>Role</th></tr>
     <tr><td>Neutrophil</td><td>Multilobed nucleus that may look like multiple nuclei; cytoplasm appears transparent from fine pale lilac granules</td>
-        <td>First responder to microbial infection; bacterial and fungal defence; very active phagocyte. <strong>Cannot renew its lysosomes</strong>, so dies after a few pathogens &mdash; their death in large numbers forms pus</td></tr>
+        <td>First responder to microbial infection; bacterial and fungal defense; very active phagocyte. <strong>Cannot renew its lysosomes</strong>, so dies after a few pathogens &mdash; their death in large numbers forms pus</td></tr>
     <tr><td>Basophil</td><td>Bi- or tri-lobed nucleus; coarse granules</td>
         <td>Allergic and antigen response via <strong>histamine</strong></td></tr>
     <tr><td>Eosinophil</td><td>Bi-lobed nucleus; granules a characteristic pink-orange</td>
@@ -154,9 +154,9 @@ BODY = '''<main>
   <table>
     <tr><th>T cell subset</th><th>Function</th></tr>
     <tr><td>T helper cells</td><td>Activate and regulate T and B cells</td></tr>
-    <tr><td>CD8+ cytotoxic T cells</td><td>Virus-infected and tumour cells</td></tr>
+    <tr><td>CD8+ cytotoxic T cells</td><td>Virus-infected and tumor cells</td></tr>
     <tr><td>Regulatory (suppressor) T cells</td><td>Return immune function to normal after infection; prevent autoimmunity</td></tr>
-    <tr><td>Natural killer cells</td><td>Virus-infected and tumour cells</td></tr>
+    <tr><td>Natural killer cells</td><td>Virus-infected and tumor cells</td></tr>
   </table>
 
   <h3 class="sub" id="inf-vascular">1.5 &middot; Objective d &mdash; Vascular changes in acute inflammation</h3>
@@ -165,7 +165,7 @@ BODY = '''<main>
     <tr><td>1</td><td>Vasoconstriction</td></tr>
     <tr><td>2</td><td>Vasodilation</td></tr>
     <tr><td>3</td><td>Increased vascular permeability</td></tr>
-    <tr><td>4</td><td>Haemoconcentration and stasis</td></tr>
+    <tr><td>4</td><td>Hemoconcentration and stasis</td></tr>
   </table>
   <div class="pearl">Vasoconstriction coming <em>first</em> catches people out, since the visible
   signs of inflammation are all dilation. Note also why stasis matters mechanistically: slowed flow
@@ -186,7 +186,7 @@ BODY = '''<main>
   Activated neutrophils and macrophages digest foreign material through four steps &mdash;
   <strong>recognition, attachment, engulfment, degradation</strong> &mdash; and recognition and
   attachment are enhanced when serum factors (opsonins) are present.</p>
-  <p><strong>Chronic inflammation in review:</strong> long term (at least days), characterised by
+  <p><strong>Chronic inflammation in review:</strong> long term (at least days), characterized by
   macrophages, monocytes and mononuclear cells including lymphocytes and plasma cells, accompanied
   by proliferation of blood vessels and connective tissue. Lymphocytes and plasma cells mediate
   antibody production; macrophages process and deliver antigen to immunocompetent cells.</p>
@@ -205,17 +205,17 @@ BODY = '''<main>
   bradykinin causes pain</strong> &mdash; that is the discriminating feature if a question gives you
   the effects and asks for the mediator.</div>
   <p><strong>Opsonins</strong> are proteins that adhere to foreign material and make it easier for
-  immune cells to recognise and attach to it.</p>
+  immune cells to recognize and attach to it.</p>
   <table>
-    <tr><th>Opsonin</th><th>What it is</th><th>Recognised by</th></tr>
-    <tr><td>Immunoglobulin G (IgG)</td><td>An antibody</td><td><strong>Fc receptors</strong> on macrophages and neutrophils, which recognise the Fc portion</td></tr>
+    <tr><th>Opsonin</th><th>What it is</th><th>Recognized by</th></tr>
+    <tr><td>Immunoglobulin G (IgG)</td><td>An antibody</td><td><strong>Fc receptors</strong> on macrophages and neutrophils, which recognize the Fc portion</td></tr>
     <tr><td>Complement fragment C3b</td><td>Produced when the complement system is activated; binds microorganisms or foreign material</td><td><strong>Complement receptors</strong> on immune cells</td></tr>
   </table>
   <div class="callout"><strong>Clinical application worth remembering.</strong> A biomaterial &mdash;
   anything not human put into a human &mdash; becomes coated with immunoglobulin G and C3b. Immune
-  cells recognise that coating and attach to the material, which is why <em>an implanted medical
+  cells recognize that coating and attach to the material, which is why <em>an implanted medical
   device can provoke an inflammatory response even when it is completely sterile</em>. The response
-  is to the opsonised surface, not to infection.</div>
+  is to the opsonized surface, not to infection.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#6a4fa3" onclick="window.openTestYourself('Test yourself — Inflammation', TEST_YOURSELF.inflammation)">Test yourself! &rarr;</button>
   <p class="src">Source: <em>1. Inflammation.pptx</em> (Professor Lauren Reynolds), Slides 1&ndash;35, and the
   PAJ 5101 syllabus instructional objectives. Course text: Robbins &amp; Cotran <em>Pathologic Basis of
@@ -227,17 +227,17 @@ BODY = '''<main>
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
     inflammation: [
       {q:"Which vascular event comes FIRST in the sequence of acute inflammation?",
-       choices:["Vasodilation","Vasoconstriction","Increased vascular permeability","Haemoconcentration and stasis"],correct:1,
-       explain:"The sequence opens with vasoconstriction, then vasodilation, then increased permeability, then haemoconcentration and stasis. Vasoconstriction first is the part most often missed, since every visible sign of inflammation is a dilation sign."},
+       choices:["Vasodilation","Vasoconstriction","Increased vascular permeability","Hemoconcentration and stasis"],correct:1,
+       explain:"The sequence opens with vasoconstriction, then vasodilation, then increased permeability, then hemoconcentration and stasis. Vasoconstriction first is the part most often missed, since every visible sign of inflammation is a dilation sign."},
       {q:"Why does a neutrophil die after phagocytosing only a few pathogens?",
-       choices:["It lacks digestive enzymes","It cannot renew its lysosomes","It is consumed during opsonisation","It converts into a macrophage"],correct:1,
+       choices:["It lacks digestive enzymes","It cannot renew its lysosomes","It is consumed during opsonization","It converts into a macrophage"],correct:1,
        explain:"The neutrophil cannot renew its lysosomes. The monocyte can replace its lysosomal contents, which is exactly why it is the cell of the sustained chronic phase."},
       {q:"Which mediator raises capillary permeability AND causes pain?",
        choices:["Histamine","Serotonin","Bradykinin","Complement C3b"],correct:2,
        explain:"Histamine, serotonin and bradykinin all raise vascular permeability, but only bradykinin also causes pain, and it may increase leukocyte chemotaxis as well."},
       {q:"An implanted device provokes inflammation despite being sterile. Why?",
-       choices:["Residual endotoxin from sterilisation","It is coated with immunoglobulin G and C3b, which immune cells recognise","It obstructs lymphatic drainage","Sterilisation is never complete"],correct:1,
-       explain:"Biomaterials become coated with the opsonins immunoglobulin G and C3b. Immune cells recognise that coating and attach — the response is to the opsonised surface, not to infection."},
+       choices:["Residual endotoxin from sterilization","It is coated with immunoglobulin G and C3b, which immune cells recognize","It obstructs lymphatic drainage","Sterilization is never complete"],correct:1,
+       explain:"Biomaterials become coated with the opsonins immunoglobulin G and C3b. Immune cells recognize that coating and attach — the response is to the opsonized surface, not to infection."},
       {q:"Which pattern of inflammation ADDS a layer over the mucosa rather than removing one?",
        choices:["Ulcerative","Pseudomembranous","Catarrhal","Serous"],correct:1,
        explain:"Pseudomembranous inflammation forms a superficial necrotic layer of fibrin, inflammatory cells and debris over the mucosa. Ulcerative is the opposite — necrosis and sloughing that exposes the connective tissue beneath."}

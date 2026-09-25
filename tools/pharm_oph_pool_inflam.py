@@ -3,9 +3,9 @@
 
 Sizing and exclusions are explained in pharm_oph_pool_anti.py.
 
-REBOUND HYPERAEMIA IS THE ONE HE PROMISED. At 50:27 of the recording: "I will
+REBOUND HYPEREMIA IS THE ONE HE PROMISED. At 50:27 of the recording: "I will
 tell you, I will ask this question, it'll come up in ENT as well, but there's
-rebound hyperaemia." He then gives the mechanism in full -- alpha-1 agonists
+rebound hyperemia." He then gives the mechanism in full -- alpha-1 agonists
 vasoconstrict, constant activation downregulates the receptors, and on
 withdrawal there are fewer left for endogenous catecholamines, so the vessels
 open. The deck calls it "a great counseling point" on slide 48. It is quizzed
@@ -18,8 +18,8 @@ QUESTIONS = [
  "slot": "mechanism",
  "q": "A patient has used an over-the-counter redness-relieving eye drop daily for a month. On stopping it, the eye becomes redder than before. What has happened?",
  "opts": [
-  ["Rebound hyperaemia, from downregulation of alpha-1 receptors",
-   "Correct. These are alpha-adrenergic agonists that vasoconstrict to reduce redness and conjunctival oedema. Constant activation downregulates the receptors, so when the drug stops there are fewer left for endogenous noradrenaline and adrenaline to act on, and the vessels dilate."],
+  ["Rebound hyperemia, from downregulation of alpha-1 receptors",
+   "Correct. These are alpha-adrenergic agonists that vasoconstrict to reduce redness and conjunctival edema. Constant activation downregulates the receptors, so when the drug stops there are fewer left for endogenous noradrenaline and adrenaline to act on, and the vessels dilate."],
   ["A new allergic conjunctivitis unmasked by stopping the drop",
    "The timing points at withdrawal of the vasoconstrictor itself. Allergy would not wait for the drug to be stopped to appear."],
   ["Tachyphylaxis, meaning the drug no longer works while it is being taken",
@@ -33,11 +33,11 @@ QUESTIONS = [
  "q": "How long may an over-the-counter ocular vasoconstrictor be used, and what should the patient be told if there is no improvement?",
  "opts": [
   ["Under two weeks; see a provider if no better in 72 hours",
-   "Correct. Short-term use only, because of rebound hyperaemia. And the 72-hour rule exists because a red eye that is not improving may be something more serious than allergy."],
+   "Correct. Short-term use only, because of rebound hyperemia. And the 72-hour rule exists because a red eye that is not improving may be something more serious than allergy."],
   ["Up to three months, with review if symptoms persist",
    "Far too long — prolonged use is exactly what produces the rebound."],
   ["Indefinitely, as they are available without prescription",
-   "Being over the counter says nothing about safe duration; this is the misconception the counselling point exists to correct."],
+   "Being over the counter says nothing about safe duration; this is the misconception the counseling point exists to correct."],
   ["Less than two weeks, but no review is needed if symptoms persist",
    "The duration is right and the advice is wrong: failure to improve in 72 hours is a reason to be seen."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 48"},
@@ -50,7 +50,7 @@ QUESTIONS = [
    "Correct. That split is the whole reason the question is asked. Alpha-1 activation in the conjunctival vessels gives the local vasoconstriction; absorbed systemically the drug acts at alpha-2 receptors, and central alpha-2 agonism produces sedation, bradycardia and depressed respiration."],
   ["It acts on alpha-1 receptors both locally and systemically",
    "If that were true an overdose would cause hypertension and vasoconstriction, not the depressed picture that actually occurs."],
-  ["It is metabolised to an opioid-like compound in the gut",
+  ["It is metabolized to an opioid-like compound in the gut",
    "No such conversion; the toxicity follows from the receptor it reaches systemically."],
   ["It blocks rather than stimulates adrenergic receptors when absorbed",
    "It is an agonist by either route; what changes is which receptor subtype dominates."]],
@@ -66,8 +66,8 @@ QUESTIONS = [
    "They compete with histamine, which is the opposite of non-competitive."],
   ["Partial agonists producing a submaximal histamine response",
    "A partial agonist would still produce some histamine effect; these drive the receptor the other way."],
-  ["Mast cell stabilisers that prevent histamine release",
-   "That is a different class, though several ocular antihistamines have some stabilising activity as well."]],
+  ["Mast cell stabilizers that prevent histamine release",
+   "That is a different class, though several ocular antihistamines have some stabilizing activity as well."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 42"},
 
 {"topic": "Ocular antihistamines", "io": "Identify indications and contraindications of ophthalmic drugs",
@@ -75,18 +75,18 @@ QUESTIONS = [
  "q": "A patient has acute itchy, watery eyes from a sudden pollen exposure and wants relief today. Which class is appropriate, and why?",
  "opts": [
   ["An antihistamine, because the onset is within minutes",
-   "Correct. Antihistamines work within minutes, which is what an acute presentation needs. They are also typically preferred over mast cell stabilisers, though two weeks of therapy is needed to judge full efficacy."],
-  ["A mast cell stabiliser, because it prevents histamine release",
-   "Prevention is the point, and that is exactly why it fails here: mast cell stabilisers take 5 to 14 days for full efficacy and are NOT useful for acute symptoms."],
+   "Correct. Antihistamines work within minutes, which is what an acute presentation needs. They are also typically preferred over mast cell stabilizers, though two weeks of therapy is needed to judge full efficacy."],
+  ["A mast cell stabilizer, because it prevents histamine release",
+   "Prevention is the point, and that is exactly why it fails here: mast cell stabilizers take 5 to 14 days for full efficacy and are NOT useful for acute symptoms."],
   ["A topical glucocorticoid, because it suppresses the allergic response",
    "Reserved for refractory or severe disease, and limited to short pulses because of cataract, pressure rise and infection risk."],
   ["An ocular nonsteroidal anti-inflammatory, because it blocks prostaglandins",
    "Not routinely recommended for conjunctivitis; its ocular indications are postoperative inflammation and pain."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slides 44 and 47"},
 
-{"topic": "Mast cell stabilisers", "io": "Describe the mechanism of action of ophthalmic drugs",
+{"topic": "Mast cell stabilizers", "io": "Describe the mechanism of action of ophthalmic drugs",
  "slot": "mechanism",
- "q": "How do ocular mast cell stabilisers work?",
+ "q": "How do ocular mast cell stabilizers work?",
  "opts": [
   ["They inhibit mast cell degranulation",
    "Correct. They stop the mediators being released at all, and also dampen release from basophils, eosinophils and neutrophils. That is prevention rather than blockade — and it is why they cannot rescue an acute attack."],
@@ -98,18 +98,18 @@ QUESTIONS = [
    "That is the nonsteroidal anti-inflammatory mechanism, which blocks prostaglandin formation after arachidonic acid has already been released."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 45"},
 
-{"topic": "Mast cell stabilisers", "io": "Identify indications and contraindications of ophthalmic drugs",
+{"topic": "Mast cell stabilizers", "io": "Identify indications and contraindications of ophthalmic drugs",
  "slot": "drug choice",
- "q": "For which patient are mast cell stabilisers described as most useful?",
+ "q": "For which patient are mast cell stabilizers described as most useful?",
  "opts": [
   ["Predictable seasonal allergy, intolerant of alternatives",
    "Correct. Their weaknesses — 5 to 14 days to full effect and often four times daily dosing — are tolerable if the season is predictable and can be pre-empted, and if the alternatives are not an option."],
   ["Someone needing relief from an acute allergic flare",
    "This is the one situation they are explicitly not useful for: full efficacy takes 5 to 14 days, so they cannot rescue symptoms that are already present."],
   ["Someone with postoperative ocular inflammation",
-   "Postoperative inflammation is where the nonsteroidals and the steroids are used; a mast cell stabiliser has no role in it."],
+   "Postoperative inflammation is where the nonsteroidals and the steroids are used; a mast cell stabilizer has no role in it."],
   ["Someone with bacterial conjunctivitis and marked itching",
-   "Itch suggests allergy, but a bacterial infection needs an antibiotic, not a stabiliser."]],
+   "Itch suggests allergy, but a bacterial infection needs an antibiotic, not a stabilizer."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 47"},
 
 {"topic": "Ocular NSAIDs", "io": "Describe the mechanism of action of ophthalmic drugs",
@@ -120,7 +120,7 @@ QUESTIONS = [
    "Correct. They act one step below the steroids: the steroids stop arachidonic acid being liberated at all, while the nonsteroidals stop what is already liberated becoming prostaglandin."],
   ["They inhibit phospholipase A2, preventing arachidonic acid formation",
    "That is the glucocorticoid mechanism, and the distinction between the two levels is the point."],
-  ["They stabilise mast cells against degranulation",
+  ["They stabilize mast cells against degranulation",
    "That is the antihistamines, which act on the receptor after histamine has been released rather than preventing its release."],
   ["They inactivate the H1 receptor",
    "That is the antihistamines, which are inverse agonists at the H1 receptor rather than agents that prevent mediator release."]],
@@ -150,8 +150,8 @@ QUESTIONS = [
    "That is the nonsteroidals, and it leaves the leukotriene arm untouched — which is precisely the difference."],
   ["They inhibit interleukin-2 production",
    "Interleukin-2 inhibition is cyclosporine's mechanism in dry eye, and it works on T cells rather than on the arachidonic acid cascade."],
-  ["They stabilise mast cell membranes",
-   "Mast cell stabilisation acts earlier in the sequence, preventing mediator release rather than suppressing the cascade those mediators trigger."]],
+  ["They stabilize mast cell membranes",
+   "Mast cell stabilization acts earlier in the sequence, preventing mediator release rather than suppressing the cascade those mediators trigger."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 52"},
 
 {"topic": "Ocular glucocorticoids", "io": "Identify indications and contraindications of ophthalmic drugs",
@@ -162,9 +162,9 @@ QUESTIONS = [
    "Correct. The pressure rise is greater with a family history. Because steroids suppress local immune function they also enable infection, which is why topical steroid use appears on the fungal keratitis risk list."],
   ["Only transient burning, so courses may run for months",
    "Burning is trivial next to the real risks, and prolonged courses are what produce them."],
-  ["Rebound hyperaemia on withdrawal, limited to under two weeks",
-   "Rebound hyperaemia belongs to the vasoconstrictors; the duration limit is right for the wrong reason."],
-  ["Permanent iris colour change, limited to a single dose",
+  ["Rebound hyperemia on withdrawal, limited to under two weeks",
+   "Rebound hyperemia belongs to the vasoconstrictors; the duration limit is right for the wrong reason."],
+  ["Permanent iris color change, limited to a single dose",
    "Iris pigmentation is a prostaglandin effect in the glaucoma section."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 54"},
 
@@ -215,13 +215,13 @@ QUESTIONS = [
  "q": "What should a patient starting cyclosporine drops be warned about?",
  "opts": [
   ["Ocular burning, which affects about one in six",
-   "Correct. Burning occurs in roughly seventeen per cent, along with foreign body sensation and blurred vision. Warning about it up front is what keeps a patient on a drug that takes time to work."],
+   "Correct. Burning occurs in roughly seventeen percent, along with foreign body sensation and blurred vision. Warning about it up front is what keeps a patient on a drug that takes time to work."],
   ["Permanent darkening of the iris",
    "A prostaglandin effect in the glaucoma section, not a cyclosporine one."],
   ["An increased risk of cataract",
    "Cataract formation is a glucocorticoid risk, and one of the reasons steroid courses are held to under two weeks."],
   ["Rebound redness if the drops are stopped suddenly",
-   "Rebound hyperaemia belongs to the ocular vasoconstrictors and follows receptor downregulation, which has nothing to do with cyclosporine."]],
+   "Rebound hyperemia belongs to the ocular vasoconstrictors and follows receptor downregulation, which has nothing to do with cyclosporine."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 58"},
 
 {"topic": "Allergy", "io": "Describe the mechanism of action of ophthalmic drugs",
@@ -239,7 +239,7 @@ QUESTIONS = [
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 40"},
 
 {"topic": "Administration", "io": "Identify indications and contraindications of ophthalmic drugs", "slot": "education",
- "q": "A patient is being taught to instil an eye drop. What is named as the single most important step?",
+ "q": "A patient is being taught to instill an eye drop. What is named as the single most important step?",
  "opts": [
   ["Washing the hands thoroughly with soap and water",
    "Correct. It is marked as the most important step, and it comes before anything else. The dropper must then not touch anything, so it stays sterile."],
@@ -308,18 +308,18 @@ QUESTIONS = [
  "opts": [
   ["Ketotifen",
    "Correct. It is the one marked over the counter in the antihistamine list, which matters because it is what a patient may already have tried before they reach you."],
-  ["Cromolyn", "Cromolyn is a mast cell stabiliser. It prevents mediator release rather than blocking the receptor, and it is not the over-the-counter antihistamine."],
+  ["Cromolyn", "Cromolyn is a mast cell stabilizer. It prevents mediator release rather than blocking the receptor, and it is not the over-the-counter antihistamine."],
   ["Bromfenac", "Bromfenac is a nonsteroidal anti-inflammatory, indicated for postoperative inflammation rather than as an over-the-counter allergy drop."],
   ["Loteprednol", "Loteprednol is one of the soft glucocorticoids, prescription-only and reserved for refractory inflammation rather than routine allergy."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 43"},
 
-{"topic": "Mast cell stabilisers", "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs", "slot": "drug choice",
- "q": "Which three agents are listed as mast cell stabilisers?",
+{"topic": "Mast cell stabilizers", "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs", "slot": "drug choice",
+ "q": "Which three agents are listed as mast cell stabilizers?",
  "opts": [
   ["Cromolyn, lodoxamide and nedocromil",
    "Correct. A short list worth holding because everything else in the allergy section is an antihistamine, a vasoconstrictor or an anti-inflammatory."],
-  ["Olopatadine, epinastine and azelastine", "All antihistamines, though several antihistamines do have some stabilising activity."],
-  ["Ketorolac, nepafenac and diclofenac", "Ketorolac, nepafenac and diclofenac are nonsteroidal anti-inflammatories, which block cyclooxygenase rather than stabilising mast cells."],
+  ["Olopatadine, epinastine and azelastine", "All antihistamines, though several antihistamines do have some stabilizing activity."],
+  ["Ketorolac, nepafenac and diclofenac", "Ketorolac, nepafenac and diclofenac are nonsteroidal anti-inflammatories, which block cyclooxygenase rather than stabilizing mast cells."],
   ["Naphazoline, tetrahydrozoline and pheniramine", "The first two are vasoconstrictors and the third an antihistamine found in combination products."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 46"},
 
@@ -327,9 +327,9 @@ QUESTIONS = [
  "q": "A patient starts an ocular antihistamine. How long before they feel relief, and how long before its full effect can be judged?",
  "opts": [
   ["Minutes for relief, two weeks for full efficacy",
-   "Correct. Both halves matter in counselling — the drug does something immediately, so it will not feel useless, but the final verdict takes a fortnight."],
+   "Correct. Both halves matter in counseling — the drug does something immediately, so it will not feel useless, but the final verdict takes a fortnight."],
   ["Five to fourteen days before any effect at all",
-   "That is the mast cell stabiliser timeline, and it is why they cannot treat acute symptoms."],
+   "That is the mast cell stabilizer timeline, and it is why they cannot treat acute symptoms."],
   ["Full effect immediately, with no further change",
    "Onset really is within minutes, but the effect continues to build, which is why two weeks are needed before judging whether it is working."],
   ["Six weeks, as with most topical ocular therapy",
@@ -342,7 +342,7 @@ QUESTIONS = [
   ["Increased ocular dryness",
    "Correct. Along with irritation and headache, antihistamines can worsen dryness — which matters when dry eye is the background problem, since the treatment can aggravate the complaint."],
   ["Raised intraocular pressure", "Raised intraocular pressure belongs with the nonsteroidals and the steroids; the antihistamines do not carry that concern."],
-  ["Permanent iris colour change", "Iris colour change is a prostaglandin analogue effect from the glaucoma section, not something an ocular antihistamine causes."],
+  ["Permanent iris color change", "Iris color change is a prostaglandin analog effect from the glaucoma section, not something an ocular antihistamine causes."],
   ["Corneal ulceration", "Corneal ulceration is an aminoglycoside concern after several days of use, and belongs with the antibiotics rather than the allergy drugs."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 44"},
 
@@ -352,7 +352,7 @@ QUESTIONS = [
   ["A rise in intraocular pressure",
    "Correct. Lacrimation, keratitis and irritation are the nuisance effects; the pressure rise is the one that interacts with an existing diagnosis and could undo glaucoma control."],
   ["Increased tear production", "Lacrimation is listed, but it is a nuisance rather than a hazard in glaucoma."],
-  ["Rebound hyperaemia", "Rebound hyperaemia follows alpha receptor downregulation from a vasoconstrictor; a nonsteroidal does not act on those receptors."],
+  ["Rebound hyperemia", "Rebound hyperemia follows alpha receptor downregulation from a vasoconstrictor; a nonsteroidal does not act on those receptors."],
   ["Cataract formation", "Cataract is a glucocorticoid risk rather than a nonsteroidal one, and it is one reason steroid courses are kept short."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 51"},
 
@@ -390,7 +390,7 @@ QUESTIONS = [
  "q": "Which mediators are released in the ocular allergic response, and what do they produce?",
  "opts": [
   ["Histamine, platelet-activating factor and leukotrienes",
-   "Correct. Those four signs are what every drug in this section is aimed at, and knowing which mediator each class addresses is what sorts antihistamines from stabilisers from steroids."],
+   "Correct. Those four signs are what every drug in this section is aimed at, and knowing which mediator each class addresses is what sorts antihistamines from stabilizers from steroids."],
   ["Interleukin-2 and interferon gamma, producing scarring", "Interleukin-2 belongs to the T cell pathway that cyclosporine targets in dry eye."],
   ["Prostaglandins only, producing pain", "Prostaglandin D2 is among the mediators, but it is not the whole list and pain is not the dominant feature."],
   ["Immunoglobulin E itself, producing direct vasodilation", "Immunoglobulin E triggers the release; it is not the mediator that acts on the vessels."]],
@@ -400,9 +400,9 @@ QUESTIONS = [
  "q": "How does the vasoconstrictor component of an over-the-counter allergy drop reduce redness?",
  "opts": [
   ["It activates alpha-adrenergic receptors on vessels",
-   "Correct. Constricting those vessels reduces conjunctival oedema and the visible redness. It treats the appearance rather than the allergy, which is why it is paired with an antihistamine in products such as Naphcon-A."],
+   "Correct. Constricting those vessels reduces conjunctival edema and the visible redness. It treats the appearance rather than the allergy, which is why it is paired with an antihistamine in products such as Naphcon-A."],
   ["It blocks histamine at the H1 receptor", "That is the antihistamine component, not the vasoconstrictor."],
-  ["It stabilises mast cells to prevent degranulation", "Mast cell stabilisation prevents mediator release; it does not constrict blood vessels, which is what reduces the visible redness."],
+  ["It stabilizes mast cells to prevent degranulation", "Mast cell stabilization prevents mediator release; it does not constrict blood vessels, which is what reduces the visible redness."],
   ["It inhibits cyclooxygenase in the conjunctiva", "Cyclooxygenase inhibition is a nonsteroidal mechanism. The vasoconstrictor component works through adrenergic receptors on the vessels."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 48"},
 
@@ -427,7 +427,7 @@ QUESTIONS = [
   ["Reduced tear production",
    "Increased lacrimation rather than reduced tearing is described, alongside keratitis and a rise in intraocular pressure."],
   ["Changes in eyelash length",
-   "That belongs to the prostaglandin analogues used in glaucoma, alongside iris colour change."],
+   "That belongs to the prostaglandin analogs used in glaucoma, alongside iris color change."],
   ["Bradycardia",
    "Slowing of the heart is a systemic effect of the topical beta blockers, reaching the circulation by the nasolacrimal route."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 51"},

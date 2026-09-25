@@ -313,7 +313,7 @@ POOL_B = [
       "Correct — the cell's relationship with its own supporting matrix changes."],
      ["Abnormal cell-cycle checkpoint control",
       "Checkpoint loss is a gene alteration, as when the viral protein E7 inhibits the retinoblastoma protein; the step alongside invasion is abnormal cell-substratum interaction."],
-     ["Abnormal apoptosis of neighbouring stromal cells",
+     ["Abnormal apoptosis of neighboring stromal cells",
       "Stromal cell apoptosis is not a step; invasion involves abnormal cell-substratum interaction and invasion into adjacent structures."],
      ["Abnormal lymphatic valve function",
       "Lymphatic valves play no part; the step alongside invasion into adjacent structures is abnormal cell-substratum interaction."]],

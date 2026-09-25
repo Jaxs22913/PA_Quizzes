@@ -10,7 +10,7 @@ deck; no lecture audio content is admitted without checking it against a slide.
 LEAD-INS STAY SPREAD, and every question carries an explicit lead= rather than
 relying on the regexes below, because a stem reading "which is the most
 appropriate response?" does not say on its face whether it is testing
-management, mechanism or counselling. The raw pool came in at 30% diagnosis,
+management, mechanism or counseling. The raw pool came in at 30% diagnosis,
 inside the guard, because the deck covers thirteen separate conditions and the
 lead-ins were varied deliberately while drafting rather than repaired after.
 
@@ -59,7 +59,7 @@ LEAD = {
  "next step": r"next step|most appropriate approach|why can it not simply be observed",
  "treatment": r"most appropriate treatment|first-line|appropriate management|which topical option|which options are appropriate|most appropriate plan|most appropriate first-line",
  "test": r"which test|establishes the diagnosis|which investigations|which risks should be checked",
- "education": r"counselling point|most appropriate response|most appropriate advice|most appropriate explanation|which support does the lecture name|most important consequence|which additional consideration",
+ "education": r"counseling point|most appropriate response|most appropriate advice|most appropriate explanation|which support does the lecture name|most important consequence|which additional consideration",
 }
 def lead_of(q):
     # An explicit lead= on the question wins. The regexes below classify the

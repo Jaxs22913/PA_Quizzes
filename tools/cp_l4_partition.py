@@ -32,7 +32,7 @@ sites A-E:
 So A/B/C carry the weight and D/E are deferred. Guard 5 keeps the D/E questions
 to a token presence rather than letting the partitioner load up on them.
 
-AND HE DE-EMPHASISED LENS CORRECTION: "not that important, concave and convex
+AND HE DE-EMPHASIZED LENS CORRECTION: "not that important, concave and convex
 for my purposes; MORE IMPORTANT is knowing the difference between myopia,
 hyperopia, and the globe shape." He also contradicted himself while saying it,
 correcting mid-sentence -- both transcripts catch the "sorry, other way around".
@@ -94,7 +94,7 @@ assert not _bad, ("turns on the normal intraocular pressure, which this deck sta
 _LENS = re.compile(r"which lens|concave or convex|convex or concave|"
                    r"corrected with (?:a )?(?:concave|convex)", re.I)
 _lens = [q["q"][:60] for q in POOL if _LENS.search(q["q"])]
-assert not _lens, ("asks which lens corrects which error -- he de-emphasised it AND "
+assert not _lens, ("asks which lens corrects which error -- he de-emphasized it AND "
                    "contradicted himself saying it: %r" % _lens[:3])
 
 # ---- Guard 4: his seven stated exam topics, in BOTH sets ------------------

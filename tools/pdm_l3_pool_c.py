@@ -21,8 +21,8 @@ POOL_C = [
       "Vessels and eyelids are not the second and third items."],
      ["Visual acuity, visual fields, eyelids, external exam, pupils, photophobia",
       "Photophobia is a symptom, not an examination step."],
-     ["Visual acuity, vitreous, external exam, extraocular movements, papilloedema, pressure",
-      "Vitreous and papilloedema are findings rather than steps."]],
+     ["Visual acuity, vitreous, external exam, extraocular movements, papilledema, pressure",
+      "Vitreous and papilledema are findings rather than steps."]],
    c=0, cite=c(16)),
 
  dict(topic="Visual acuity", io=IOF, slot="first-line",
@@ -48,7 +48,7 @@ POOL_C = [
      ["Snellen for distance, Amsler for near",
       "The Amsler grid tests the central visual field, not near acuity."],
      ["Ishihara for distance, Rosenbaum for near",
-      "Ishihara tests colour vision and is not mentioned here."]],
+      "Ishihara tests color vision and is not mentioned here."]],
    c=0, cite=c(17)),
 
  dict(topic="Visual acuity", io=IOF, slot="first-line",
@@ -60,7 +60,7 @@ POOL_C = [
       "The instruction is to test best-corrected acuity."],
      ["Best-corrected acuity, using a cycloplegic drop if acuity is reduced",
       "Cycloplegia is not part of this step."],
-     ["Uncorrected acuity, repeating at one metre if acuity is reduced",
+     ["Uncorrected acuity, repeating at one meter if acuity is reduced",
       "Neither half matches the instruction given."]],
    c=0, cite=c(17)),
 
@@ -87,7 +87,7 @@ POOL_C = [
      ["The optic nerve is likely involved",
       "Nerve involvement would not correct with a pinhole."],
      ["The result is uninterpretable without formal refraction",
-      "A pinhole correction is directly interpretable: by admitting only central rays it removes refractive blur, so improvement localises the problem to refraction."]],
+      "A pinhole correction is directly interpretable: by admitting only central rays it removes refractive blur, so improvement localizes the problem to refraction."]],
    c=0, cite=c(17)),
 
  dict(topic="Pinhole testing", io=IOF, slot="test finding",
@@ -104,7 +104,7 @@ POOL_C = [
    c=0, cite=c(17)),
 
  dict(topic="Visual acuity", io=IOF, slot="differential",
-   q="A patient has unilateral visual loss. Where does that localise?",
+   q="A patient has unilateral visual loss. Where does that localize?",
    opts=[
      ["To the optic nerve or the eye itself",
       "Correct — unilateral loss is ocular or optic nerve."],
@@ -156,7 +156,7 @@ POOL_C = [
    c=0, cite=c(18)),
 
  dict(topic="Visual field testing", io=IOF, slot="test finding",
-   q="A central scotoma is found. Where is it localised?",
+   q="A central scotoma is found. Where is it localized?",
    opts=[
      ["To the macula or the optic nerve",
       "Correct — central scotoma is a macular or optic nerve pattern."],
@@ -172,7 +172,7 @@ POOL_C = [
    q="Which visual field pattern is attached to glaucoma?",
    opts=[
      ["Peripheral loss",
-      "Correct — glaucoma destroys the arcuate nerve fibres serving peripheral vision first, so the field constricts from the outside in while central acuity is preserved until late."],
+      "Correct — glaucoma destroys the arcuate nerve fibers serving peripheral vision first, so the field constricts from the outside in while central acuity is preserved until late."],
      ["Central scotoma",
       "That is macular or optic nerve disease."],
      ["Bitemporal hemianopia",
@@ -185,7 +185,7 @@ POOL_C = [
    q="A patient has bitemporal hemianopia. What does this indicate?",
    opts=[
      ["A chiasmal lesion, such as a pituitary lesion",
-      "Correct — the nasal retinal fibres, which carry the temporal field of each eye, cross at the chiasm, so a pituitary lesion pressing from below knocks out both temporal fields."],
+      "Correct — the nasal retinal fibers, which carry the temporal field of each eye, cross at the chiasm, so a pituitary lesion pressing from below knocks out both temporal fields."],
      ["A retrochiasmal lesion, possibly a stroke",
       "That gives homonymous hemianopia."],
      ["Macular or optic nerve disease",
@@ -199,7 +199,7 @@ POOL_C = [
    opts=[
      ["Retrochiasmal, and it queries a stroke",
       "Correct — homonymous hemianopia localizes to a retrochiasmal lesion, and stroke is the cause to consider; a bitemporal pattern is chiasmal instead."],
-     ["Chiasmal, and it queries a pituitary tumour",
+     ["Chiasmal, and it queries a pituitary tumor",
       "The pituitary lesion is the bitemporal pattern."],
      ["Prechiasmal, and it queries optic neuritis",
       "A prechiasmal lesion causes monocular loss."],
@@ -269,7 +269,7 @@ POOL_C = [
      ["Branching staining, representing herpetic keratitis",
       "The urgent flag is attached to the ulcer, not the dendrite."],
      ["Absent staining with a painful eye, representing acute glaucoma",
-      "Acute glaucoma produces a cloudy cornea from oedema rather than a fluorescein pattern; the urgent stain is dense fixed uptake with an opacity."]],
+      "Acute glaucoma produces a cloudy cornea from edema rather than a fluorescein pattern; the urgent stain is dense fixed uptake with an opacity."]],
    c=0, cite=c(20)),
 
  dict(topic="Tonometry", io=IOF, slot="first-line",
@@ -314,13 +314,13 @@ POOL_C = [
  dict(topic="Tonometry", io=IOF, slot="test finding",
    q="What is the normal range of intraocular pressure?",
    opts=[
-     ["Ten to twenty-one millimetres of mercury",
-      "Correct — ten to twenty-one millimetres of mercury is the range at which aqueous production and drainage are balanced in most eyes."],
-     ["Five to fifteen millimetres of mercury",
+     ["Ten to twenty-one millimeters of mercury",
+      "Correct — ten to twenty-one millimeters of mercury is the range at which aqueous production and drainage are balanced in most eyes."],
+     ["Five to fifteen millimeters of mercury",
       "Below the range given."],
-     ["Twenty to thirty-five millimetres of mercury",
+     ["Twenty to thirty-five millimeters of mercury",
       "Above the range given."],
-     ["Fifteen to thirty millimetres of mercury",
+     ["Fifteen to thirty millimeters of mercury",
       "Not the range given."]],
    c=0, cite=c(22)),
 
@@ -354,7 +354,7 @@ POOL_C = [
    q="What is the normal cup-to-disc ratio, and what ratio indicates glaucomatous injury?",
    opts=[
      ["About zero point three normally, against greater than zero point seven in glaucomatous injury",
-      "Correct — the cup is the axon-free centre of the disc, so as ganglion cell axons die the rim thins and the cup widens, and a ratio beyond zero point seven means most of the rim has gone."],
+      "Correct — the cup is the axon-free center of the disc, so as ganglion cell axons die the rim thins and the cup widens, and a ratio beyond zero point seven means most of the rim has gone."],
      ["About zero point seven normally, against greater than zero point three in glaucomatous injury",
       "The two numbers are the wrong way round."],
      ["About zero point one normally, against greater than zero point five in glaucomatous injury",
@@ -394,12 +394,12 @@ POOL_C = [
    opts=[
      ["Lamina cribrosa collapse",
       "Correct — the schematic panel shows collapse of the lamina cribrosa."],
-     ["Thickening of the retinal nerve fibre layer",
+     ["Thickening of the retinal nerve fiber layer",
       "The change is loss and collapse rather than thickening."],
      ["Detachment of the neurosensory retina",
       "Retinal detachment is not what these panels show."],
      ["Swelling of the optic nerve head",
-      "Swelling describes papilloedema, not glaucomatous cupping."]],
+      "Swelling describes papilledema, not glaucomatous cupping."]],
    c=0, cite=c(23)),
 
  dict(topic="Glaucoma", io=IOF, slot="manifestation",

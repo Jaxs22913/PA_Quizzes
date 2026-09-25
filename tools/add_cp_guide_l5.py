@@ -81,10 +81,10 @@ BODY = """
   <h3 class="sub" id="l5-anatomy">5.1 &middot; Objectives 1 &amp; 3 &mdash; Anatomy and auditory transduction</h3>
   <p>The ear is three compartments with three different jobs, and almost every disease in this
   lecture is a failure of one of them. The <b>external ear</b> &mdash; auricle and canal &mdash;
-  captures and concentrates acoustic waves and localises sound; ceruminous glands line it and the
+  captures and concentrates acoustic waves and localizes sound; ceruminous glands line it and the
   outer third carries protective hair follicles. The <b>middle ear is air-filled</b>, which is the
   single fact that makes otitis media and Eustachian tube dysfunction make sense: the tympanic
-  membrane vibrates, the malleus, incus and stapes amplify, and the Eustachian tube equalises
+  membrane vibrates, the malleus, incus and stapes amplify, and the Eustachian tube equalizes
   pressure. The <b>inner ear</b> holds the cochlea, which converts fluid displacement into neural
   signal at the organ of Corti, and the vestibule and semicircular canals, which hold dynamic
   rotational equilibrium.</p>
@@ -99,10 +99,10 @@ BODY = """
     <li><b>Shearing force.</b> Basilar membrane displacement bends the stereocilia against the
     <b>rigid tectorial membrane</b>. The rigidity is the point &mdash; the cilia are bent because
     one end moves and the other does not.</li>
-    <li><b>Ion depolarisation.</b> That mechanical deflection <b>opens tip-link channels</b>,
+    <li><b>Ion depolarization.</b> That mechanical deflection <b>opens tip-link channels</b>,
     permitting rapid influx from endolymph into the hair cells.</li>
-    <li><b>Neurotransmission.</b> Depolarisation triggers voltage-gated channels, releasing
-    <b>glutamate onto cranial nerve VIII</b> fibres.</li>
+    <li><b>Neurotransmission.</b> Depolarization triggers voltage-gated channels, releasing
+    <b>glutamate onto cranial nerve VIII</b> fibers.</li>
   </ol>
   <p>Read that chain backwards and you have the map of hearing loss. Break step 1 and you get
   <b>conductive</b> loss. Break steps 2 to 4 and you get <b>sensorineural</b> loss. Nothing else
@@ -114,8 +114,8 @@ BODY = """
   <table class="tbl">
     <tr><th>Parameter</th><th>Conductive hearing loss</th><th>Sensorineural hearing loss</th></tr>
     <tr><td>Primary anatomic site</td><td>External or middle ear</td><td>Inner ear (cochlea), or cranial nerve VIII and central pathways</td></tr>
-    <tr><td>Pathophysiology</td><td>Defective sound wave transmission to the oval window</td><td>Destruction of hair cells or auditory nerve fibres</td></tr>
-    <tr><td><b>Weber</b> tuning fork</td><td>Lateralises to the <b>AFFECTED</b> ear</td><td>Lateralises to the <b>UNAFFECTED</b> ear</td></tr>
+    <tr><td>Pathophysiology</td><td>Defective sound wave transmission to the oval window</td><td>Destruction of hair cells or auditory nerve fibers</td></tr>
+    <tr><td><b>Weber</b> tuning fork</td><td>Lateralizes to the <b>AFFECTED</b> ear</td><td>Lateralizes to the <b>UNAFFECTED</b> ear</td></tr>
     <tr><td><b>Rinne</b> tuning fork</td><td><b>Bone &gt; air</b> conduction (abnormal)</td><td><b>Air &gt; bone</b> conduction (normal ratio)</td></tr>
     <tr><td>Common causes</td><td>Cerumen impaction, otosclerosis, otitis media, tympanic membrane perforation</td><td>Presbycusis, ototoxic drugs, noise trauma, acoustic neuroma</td></tr>
   </table>
@@ -137,10 +137,12 @@ BODY = """
   </table>
   <p>Two and three are the pair that get confused. <b>Mass loading adds weight to a chain that can
   still move; stiffness stops the chain moving at all.</b> Effusion damps; otosclerosis fixes.</p>
-  <p><b>Cholesteatoma is not in the deck and he told the class to know it anyway</b> [12:17]:
-  <em>&ldquo;that&rsquo;s not in this presentation, but you should know about it &hellip; a
-  cholesterol collection that forms like a small mass in the ear. Usually it needs to be
-  surgically removed.&rdquo;</em> It sits under mass loading.</p>
+  <p><b>Cholesteatoma is on the slide as a mass-loading example</b>: added <b>tissue</b> weight
+  that damps tympanic membrane and ossicular movement, the same way an effusion adds fluid
+  weight. He flagged it at [12:17] as one to know (&ldquo;you should know about it&rdquo;) and
+  said it usually needs surgical removal. Despite the name it is not a cholesterol mass: the CMS
+  External and Middle Ear deck defines it as a collection of <b>keratinized squamous
+  epithelium</b> in the middle ear or mastoid, with no cholesterol components and not a neoplasm.</p>
 
   <h3 class="sub" id="l5-otosclerosis">5.3 &middot; Otosclerosis</h3>
   <p><b>Pathogenesis:</b> abnormal <b>osteoclastic bone resorption</b> followed by
@@ -157,7 +159,7 @@ BODY = """
   @@OTOSCLEROSIS@@
 
   <h3 class="sub" id="l5-ototoxic">5.4 &middot; Ototoxicity and noise</h3>
-  <p>He gave the organising rule before the detail [16:34]: <em>&ldquo;Ototoxic medications,
+  <p>He gave the organizing rule before the detail [16:34]: <em>&ldquo;Ototoxic medications,
   almost always reversible, <b>except for some like platinum chemotherapy</b>.&rdquo;</em> Sort
   the four drug groups by whether the damage stays.</p>
   <table class="tbl">
@@ -238,7 +240,7 @@ BODY = """
     <tr><td>Onset</td><td><b>Sudden</b></td><td><b>Gradual</b></td></tr>
     <tr><td>Nystagmus</td><td>Prominent <b>horizontal or rotational</b>; <b>fatigable</b>; <b>suppressed by visual fixation</b></td><td><b>Vertical</b> or <b>non-suppressible</b></td></tr>
     <tr><td>Other signs</td><td>&mdash;</td><td><b>Neurological deficits present</b></td></tr>
-    <tr><td>Causes</td><td>Benign paroxysmal positional vertigo, M&eacute;ni&egrave;re, labyrinthitis, vestibular neuritis</td><td><b>Brainstem stroke, multiple sclerosis, cerebellar tumour</b></td></tr>
+    <tr><td>Causes</td><td>Benign paroxysmal positional vertigo, M&eacute;ni&egrave;re, labyrinthitis, vestibular neuritis</td><td><b>Brainstem stroke, multiple sclerosis, cerebellar tumor</b></td></tr>
   </table>
   <p><b>Visual fixation is the bedside test and he explained why it works</b> [29:38]:
   <em>&ldquo;by fixing view &hellip; you&rsquo;re overriding the vestibular function telling you
@@ -255,12 +257,12 @@ BODY = """
     <tr><td><b>Benign paroxysmal positional vertigo</b></td><td><b>Canalithiasis</b> &mdash; dislodged otoconia in the semicircular canals</td><td><b>Under 1 minute</b></td><td><b>NONE</b></td><td>Triggered by <b>positional change of the head</b></td></tr>
     <tr><td><b>M&eacute;ni&egrave;re disease</b></td><td><b>Endolymphatic hydrops</b> &mdash; defective endolymph resorption</td><td><b>Hours</b></td><td>Progressive, <b>low-tone</b></td><td><b>Aural fullness</b> and fluctuating low-frequency tinnitus</td></tr>
     <tr><td><b>Labyrinthitis</b></td><td>Inflammation of canals <b>and</b> cochlea</td><td><b>Days</b>, improving over weeks</td><td><b>Unilateral</b> sensorineural</td><td><b>Recent viral upper respiratory infection</b></td></tr>
-    <tr><td><b>Vestibular neuritis</b></td><td>Inflammation of the <b>nerve fibres only</b></td><td>Days</td><td><b>None</b> &mdash; the cochlea is not involved</td><td>Labyrinthitis without the hearing loss</td></tr>
+    <tr><td><b>Vestibular neuritis</b></td><td>Inflammation of the <b>nerve fibers only</b></td><td>Days</td><td><b>None</b> &mdash; the cochlea is not involved</td><td>Labyrinthitis without the hearing loss</td></tr>
   </table>
   <p><b>Vestibular neuritis is not on a slide of its own and he explained why</b> [32:32]:
   <em>&ldquo;Labyrinthitis &hellip; is just an inflammation of the entire inner ear. Remember I
   said there&rsquo;s another thing called vestibular neuritis? That&rsquo;s just the same thing,
-  but just inflammation of the nerve fibres. <b>That&rsquo;s the only difference.</b>&rdquo;</em>
+  but just inflammation of the nerve fibers. <b>That&rsquo;s the only difference.</b>&rdquo;</em>
   One lesion in two places: hit the whole labyrinth and hearing goes with balance; hit the nerve
   alone and only balance goes.</p>
 
@@ -269,7 +271,7 @@ BODY = """
   scala media until micro-ruptures occur</b>. Production is normal; drainage is not. The episodic
   pattern follows directly from the micro-ruptures &mdash; pressure builds, the membrane gives
   way, symptoms fire, pressure re-equilibrates, and the cycle restarts.</p>
-  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasised</span>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p>He called the tetrad out by name at [31:36] &mdash; <em>&ldquo;Classic symptom,
     tetrad&rdquo;</em> &mdash; and said of the disease at [32:26] that it is
     <em>&ldquo;something you&rsquo;ll be tested on &hellip; for sure.&rdquo;</em></p>
@@ -312,7 +314,7 @@ BODY = """
 
   <p><b>Benign paroxysmal positional vertigo &mdash; canalithiasis.</b> Otoconia, the crystals
   that normally sit in the utricle, become <b>dislodged into the semicircular canals</b>. Asked in
-  the room how that happens, he scoped the answer for this course [36:43&ndash;37:16]: ageing,
+  the room how that happens, he scoped the answer for this course [36:43&ndash;37:16]: aging,
   <em>&ldquo;no one really knows exactly &hellip; but <b>what you need to know for
   pathophysiology is that they can become loose</b>. And when they come loose and they&rsquo;re
   floating around in the endolymph, they can hit structures and cause the sensation of movement,
@@ -330,13 +332,13 @@ BODY = """
   then splits it:</p>
   <table class="tbl">
     <tr><th></th><th>Definition</th><th>Cause</th><th>Presentation</th></tr>
-    <tr><td><b>Acute rhinosinusitis</b></td><td><b>Under 4 weeks</b></td><td>Usually <b>viral</b> (rhinovirus, influenza); or secondary bacterial &mdash; <b>Streptococcus pneumoniae</b>, <b>Haemophilus influenzae</b></td><td><b>Purulent</b> rhinorrhoea, facial pain, nasal congestion</td></tr>
+    <tr><td><b>Acute rhinosinusitis</b></td><td><b>Under 4 weeks</b></td><td>Usually <b>viral</b> (rhinovirus, influenza); or secondary bacterial &mdash; <b>Streptococcus pneumoniae</b>, <b>Haemophilus influenzae</b></td><td><b>Purulent</b> rhinorrhea, facial pain, nasal congestion</td></tr>
     <tr><td><b>Chronic rhinosinusitis</b></td><td><b>Beyond 12 weeks despite therapy</b></td><td>Often a secondary infection layered on an allergic process</td><td>Often with <b>nasal polyps</b></td></tr>
-    <tr><td><b>Allergic rhinitis</b></td><td>Not classified by duration</td><td><b>IgE-mediated type 1 hypersensitivity</b> of nasal mucosa to inhaled allergens</td><td><b>CLEAR</b> rhinorrhoea, nasal itching, sneezing, <b>boggy turbinates</b>, allergic &ldquo;shiners&rdquo;</td></tr>
+    <tr><td><b>Allergic rhinitis</b></td><td>Not classified by duration</td><td><b>IgE-mediated type 1 hypersensitivity</b> of nasal mucosa to inhaled allergens</td><td><b>CLEAR</b> rhinorrhea, nasal itching, sneezing, <b>boggy turbinates</b>, allergic &ldquo;shiners&rdquo;</td></tr>
   </table>
-  <p><b>Discharge colour is the fastest discriminator</b> and he opened the section with it
+  <p><b>Discharge color is the fastest discriminator</b> and he opened the section with it
   [37:26]: allergic rhinitis gives <b>clear</b> discharge, acute bacterial sinusitis gives
-  <b>purulent</b> discharge. Facial pain localises to the sinuses, which is why it belongs to
+  <b>purulent</b> discharge. Facial pain localizes to the sinuses, which is why it belongs to
   rhinosinusitis and not to rhinitis.</p>
   <p>He was also honest about the gap in the definitions [37:54]: <em>&ldquo;I always wonder, so
   what&rsquo;s the in-between? &hellip; What if it&rsquo;s seven weeks?&rdquo;</em> Four to twelve
@@ -361,8 +363,8 @@ BODY = """
   @@POLYP@@
 
   <p><b>Turbinate hypertrophy</b> is enlargement of the <b>inferior</b> nasal turbinates from
-  <b>venous sinusoid engorgement</b>, <b>mucosal oedema</b>, or <b>bony hypertrophy</b>. Triggers:
-  allergic rhinitis, vasomotor instability, and <b>rebound hyperaemia from topical decongestants
+  <b>venous sinusoid engorgement</b>, <b>mucosal edema</b>, or <b>bony hypertrophy</b>. Triggers:
+  allergic rhinitis, vasomotor instability, and <b>rebound hyperemia from topical decongestants
   &mdash; rhinitis medicamentosa</b>. Overuse of a decongestant spray produces the congestion it
   was bought to relieve [42:44].</p>
 
@@ -372,8 +374,8 @@ BODY = """
   <table class="tbl">
     <tr><th>Consequence</th><th>Mechanism</th></tr>
     <tr><td><b>Unilateral resistance</b></td><td><b>Poiseuille&rsquo;s law</b> &mdash; even small airway narrowing dramatically increases resistance</td></tr>
-    <tr><td><b>Chronic nasal obstruction</b></td><td>Persistent mouth-breathing; <b>aggravates sleep apnoea</b></td></tr>
-    <tr><td><b>Mucosal drying and epistaxis</b></td><td><b>Turbulent</b> air currents cause localised crusting and fragile vessel breakdown</td></tr>
+    <tr><td><b>Chronic nasal obstruction</b></td><td>Persistent mouth-breathing; <b>aggravates sleep apnea</b></td></tr>
+    <tr><td><b>Mucosal drying and epistaxis</b></td><td><b>Turbulent</b> air currents cause localized crusting and fragile vessel breakdown</td></tr>
     <tr><td><b>Olfactory dysfunction</b></td><td>Airflow <b>fails to reach the superior nasal vault and cribriform plate</b></td></tr>
     <tr><td><b>Compensatory hypertrophy</b></td><td>The <b>contralateral wide cavity</b> undergoes inferior turbinate enlargement to humidify the increased air volume</td></tr>
     <tr><td><b>Sinus ostia blockage</b></td><td>Mucus stasis, hypoxia, secondary bacterial rhinosinusitis</td></tr>
@@ -390,14 +392,14 @@ BODY = """
 
   <p><b>Epistaxis.</b> Two bleeds, two vessels, two risk profiles. The management column on the
   slide belongs to Clinical Medicine and Surgery; what this course asks for is the vascular source
-  and the aetiology.</p>
+  and the etiology.</p>
   <table class="tbl">
     <tr><th>Feature</th><th>Anterior epistaxis (<b>90%</b>)</th><th>Posterior epistaxis (<b>10%</b>)</th></tr>
     <tr><td><b>Primary vascular source</b></td><td><b>Kiesselbach&rsquo;s plexus</b> (anterior septum)</td><td><b>Woodruff&rsquo;s plexus</b> (posterolateral wall)</td></tr>
-    <tr><td><b>Predominant aetiology</b></td><td>Digital trauma, <b>low humidity</b>, localised mucosal erosion, mild rhinitis</td><td><b>Hypertension</b>, atherosclerosis, <b>anticoagulant therapy</b>, coagulopathy</td></tr>
+    <tr><td><b>Predominant etiology</b></td><td>Digital trauma, <b>low humidity</b>, localized mucosal erosion, mild rhinitis</td><td><b>Hypertension</b>, atherosclerosis, <b>anticoagulant therapy</b>, coagulopathy</td></tr>
     <tr><td><b>Presentation</b></td><td>Unilateral anterior bleeding, easily compressed directly</td><td><b>Profuse bleeding down the posterior pharynx</b>, <b>airway risk</b></td></tr>
   </table>
-  <p><b>The aetiology columns are the tell.</b> Anterior causes are all <b>local</b> &mdash;
+  <p><b>The etiology columns are the tell.</b> Anterior causes are all <b>local</b> &mdash;
   something hit or dried the mucosa. Posterior causes are all <b>systemic</b> &mdash; vessel
   pressure and clotting. That is also why posterior bleeds are dangerous: he explained at [44:49]
   that <b>Woodruff&rsquo;s plexus carries far more arterial supply than Kiesselbach&rsquo;s</b>,
@@ -413,7 +415,7 @@ BODY = """
     <tr><td><b>Laterality</b></td><td><b>Bilateral, symmetrical</b></td><td><b>Unilateral</b></td></tr>
     <tr><td><b>Site</b></td><td>Junction of the <b>anterior one third and posterior two thirds</b></td><td><b>Middle third</b> of the true cord</td></tr>
     <tr><td><b>Character</b></td><td>Fibrous <b>calluses</b></td><td>Soft, fluid-filled or vascular, <b>pedunculated</b></td></tr>
-    <tr><td><b>Pathogenesis</b></td><td><b>Chronic</b> mechanical phonotrauma &mdash; cords slamming together from yelling, cheering &mdash; causing <b>basement membrane hyalinisation</b></td><td><b>Acute severe</b> voice strain or <b>vocal cord haemorrhage</b>, causing a localised inflammatory healing response</td></tr>
+    <tr><td><b>Pathogenesis</b></td><td><b>Chronic</b> mechanical phonotrauma &mdash; cords slamming together from yelling, cheering &mdash; causing <b>basement membrane hyalinisation</b></td><td><b>Acute severe</b> voice strain or <b>vocal cord hemorrhage</b>, causing a localized inflammatory healing response</td></tr>
   </table>
   <p><b>Chronic and bilateral against acute and unilateral.</b> Repeated impact damages both cords
   at the same point, because both cords take the same blow; a single violent strain or a bleed
@@ -447,7 +449,7 @@ BODY = """
   regional head and neck infection &mdash; viral upper respiratory infection, otitis media, dental
   disease &mdash; or to systemic inflammatory conditions. The reactive node is <b>palpable and
   tender</b>.</p>
-  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasised</span>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p><b>The red flags are a specific combination, not any large node:</b> <b>persistent</b>,
     <b>rubbery or matted</b>, <b>supraclavicular or cervical</b>, in an <b>older adult</b>. That
     requires immediate assessment to rule out <b>lymphoma</b>.</p>
@@ -478,7 +480,7 @@ TOC = """  <a class="top-link" href="#ent-pathophys">5 &middot; ENT Pathophysiol
 """
 
 TESTS = """    ent: [
-      {q:"Weber lateralises to the RIGHT ear and Rinne shows bone greater than air on the right. What is the lesion?",
+      {q:"Weber lateralizes to the RIGHT ear and Rinne shows bone greater than air on the right. What is the lesion?",
        o:["Conductive loss in the right ear","Sensorineural loss in the right ear",
           "Conductive loss in the left ear","Sensorineural loss in the left ear"],a:0,
        why:"Weber goes to the AFFECTED ear in conductive loss, and bone greater than air is the abnormal Rinne. Both point to the same side, which is what conductive loss does."},
@@ -523,11 +525,11 @@ TESTS = """    ent: [
        why:"Woodruff\\u2019s plexus on the posterolateral wall. Its causes are systemic too — hypertension, anticoagulation — where anterior causes are all local."},
       {q:"Bilateral symmetrical lesions at the junction of the anterior third of both vocal cords. What are they and what caused them?",
        o:["Nodules, from chronic phonotrauma","Polyps, from a single severe strain",
-          "Nodules, from vocal cord haemorrhage","Polyps, from chronic phonotrauma"],a:0,
+          "Nodules, from vocal cord hemorrhage","Polyps, from chronic phonotrauma"],a:0,
        why:"Bilateral and symmetrical means repeated impact damaging both cords at the same point. Polyps are unilateral, mid-cord, and follow one acute event."},
       {q:"Which cervical node findings demand assessment for lymphoma?",
        o:["Persistent, rubbery or matted, supraclavicular or cervical, in an older adult",
-          "Tender and mobile after a sore throat","Any node over one centimetre",
+          "Tender and mobile after a sore throat","Any node over one centimeter",
           "Bilateral tender nodes with fever"],a:0,
        why:"Tender and soft is reactive. Matted means the nodes have lost their separate capsules and move as one mass."}
     ],
@@ -559,10 +561,10 @@ FIGS = {
         "gravity and fire a false signal of rotation &mdash; hence positional, brief, and no "
         "hearing loss.", 18),
     "@@POLYP@@": ("nasal-polyp", "png",
-        "A nasal polyp on endoscopy: pale and oedematous, not vascular. Non-neoplastic &mdash; "
+        "A nasal polyp on endoscopy: pale and edematous, not vascular. Non-neoplastic &mdash; "
         "waterlogged existing mucosa, not new tissue.", 21),
     "@@SEPTUM@@": ("deviated-septum", "png",
-        "Normal septum against a deviated one. Note the labelled <b>hypertrophied turbinate on "
+        "Normal septum against a deviated one. Note the labeled <b>hypertrophied turbinate on "
         "the wide side</b> &mdash; the compensation is contralateral to the obstruction.", 22),
     "@@VOCALCORDS@@": ("vocal-cords", "png",
         "Nodules are bilateral and symmetrical at the anterior third; the polyp is a single "

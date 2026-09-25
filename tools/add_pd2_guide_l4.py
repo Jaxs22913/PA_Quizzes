@@ -83,7 +83,7 @@ BODY = """
     you&rsquo;re pressing preauricular &hellip; when you&rsquo;re telling me I&rsquo;m doing
     preauricular I need to see that. I need to see the cervical nodes. <b>I need to know where
     you&rsquo;re putting your finger.</b>&rdquo;</em> And on the inspect-and-palpate sequence
-    [27:42]: <em>&ldquo;tenderness, deformity, any masses &mdash; learn those, memorise those,
+    [27:42]: <em>&ldquo;tenderness, deformity, any masses &mdash; learn those, memorize those,
     <b>you need to know them, because that&rsquo;s going to be part of your test</b>.&rdquo;</em></p>
     <p>Earlier, on pointing generally [25:40]: <em>&ldquo;make sure that you point to what it is
     &hellip; because that&rsquo;s how I&rsquo;m going to grade you. If you&rsquo;re just putting
@@ -107,7 +107,7 @@ BODY = """
   respiratory infection &mdash; and keep <b>otitis media</b>, <b>otitis externa</b> and
   <b>Eustachian tube dysfunction</b> in mind as the local causes. The history structure is
   <b>OPPQRST</b>: onset, palliative, provoking, quality, radiation, site, timing.</p>
-  <p><b>Discharge</b> is characterised by <b>colour, consistency and quantity</b>, and the
+  <p><b>Discharge</b> is characterized by <b>color, consistency and quantity</b>, and the
   possibilities are <b>cerumen, blood, water or purulent fluid</b>. It points to otitis externa,
   otitis media with perforation, or trauma and foreign bodies.</p>
 
@@ -121,7 +121,7 @@ BODY = """
     <tr><td><b>Worse</b> in noisy environments</td><td><b>Sensorineural</b></td></tr>
     <tr><td>Noisy environments <b>may help</b></td><td><b>Conductive</b></td></tr>
   </table>
-  <p><b>Why noise helps in conductive loss</b> is worth understanding rather than memorising: the
+  <p><b>Why noise helps in conductive loss</b> is worth understanding rather than memorizing: the
   block attenuates the background along with everything else, while everyone around the patient
   raises their voice over that background. The speech-to-noise ratio actually improves.</p>
   <p><b>Ask about medications</b>: <b>aminoglycosides, aspirin, non-steroidal
@@ -131,7 +131,7 @@ BODY = """
   <b>with hearing loss and vertigo</b> is <b>M&eacute;ni&egrave;re disease</b>. <b>Vertigo</b> is
   the perception of rotation, spinning or tilting, and points to inner ear problems &mdash;
   labyrinthitis, cranial nerve VIII, benign positional vertigo, M&eacute;ni&egrave;re.</p>
-  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasised</span>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p><b>&ldquo;Dizziness&rdquo; means nothing until the patient explains it.</b> The deck calls
     it <em>very important to have the patient explain this term</em>, and it splits four ways:</p>
     <ol>
@@ -154,7 +154,7 @@ BODY = """
     <tr><td><b>M&eacute;ni&egrave;re disease</b><br><span class="muted">peripheral</span></td><td>Sudden</td><td><b>Several hours to a day or more.</b> Recurrent</td><td><b>Sensorineural</b> &mdash; recurs, eventually progresses</td><td><b>Present, fluctuating</b></td><td><b>Pressure or fullness</b> in the affected ear; nausea, vomiting, nystagmus</td></tr>
     <tr><td><b>Drug toxicity</b><br><span class="muted">peripheral</span></td><td>Insidious or acute &mdash; <b>loop diuretics, aminoglycosides, salicylates, alcohol</b></td><td>May or may not be reversible; partial adaptation occurs</td><td><b>May be impaired</b></td><td>May be present</td><td>Nausea, vomiting</td></tr>
     <tr><td><b>Acoustic neuroma</b><br><span class="muted">peripheral</span></td><td>Insidious, from <b>cranial nerve VIII</b> compression</td><td>Variable</td><td><b>Impaired, ONE side</b></td><td><b>Present</b></td><td>May involve <b>cranial nerves V and VII</b></td></tr>
-    <tr><td><b>Central vertigo</b></td><td>Often sudden &mdash; <b>brainstem lesion, atherosclerosis, multiple sclerosis, vertebrobasilar migraine, transient ischaemic attack</b></td><td>Variable but <b>rarely continuous</b></td><td><b>Not affected</b></td><td><b>Absent</b></td><td><b>Other brainstem deficits</b> &mdash; dysarthria, ataxia, crossed motor and sensory deficits</td></tr>
+    <tr><td><b>Central vertigo</b></td><td>Often sudden &mdash; <b>brainstem lesion, atherosclerosis, multiple sclerosis, vertebrobasilar migraine, transient ischemic attack</b></td><td>Variable but <b>rarely continuous</b></td><td><b>Not affected</b></td><td><b>Absent</b></td><td><b>Other brainstem deficits</b> &mdash; dysarthria, ataxia, crossed motor and sensory deficits</td></tr>
   </table>
   <p><b>Three things to take from the table.</b> First, <b>hearing is the great divider</b>: of the
   six, only M&eacute;ni&egrave;re, drug toxicity and acoustic neuroma touch it. Second,
@@ -165,7 +165,7 @@ BODY = """
 
   <h3 class="sub" id="l4-ear-exam">4.4 &middot; The ear examination</h3>
   <p><b>Inspect and palpate before the otoscope:</b> the <b>auricles</b>, the <b>mastoid</b>, and
-  the <b>tragus</b>. Tenderness localises disease before anything enters the canal.</p>
+  the <b>tragus</b>. Tenderness localizes disease before anything enters the canal.</p>
   <p><b>Otoscopy technique</b>, and every element earns its place:</p>
   <table class="tbl">
     <tr><th>Step</th><th>Why</th></tr>
@@ -199,7 +199,7 @@ BODY = """
     <tr><td><b>Tympanosclerosis</b></td><td><b>Hyaline deposit</b> in the membrane, after severe otitis media or a healed perforation, including grommet sites. <b>Usually not clinically significant</b></td></tr>
     <tr><td><b>Serous effusion</b></td><td><b>Amber</b> fluid, sometimes with <b>bubbles</b>. Follows an upper respiratory infection or a change in atmospheric pressure</td></tr>
     <tr><td><b>Otitis media</b></td><td><b>Red, landmarks LOST, BULGING</b>, with purulent effusion. <b>Streptococcus pneumoniae</b> and <b>Haemophilus influenzae</b></td></tr>
-    <tr><td><b>Bullous myringitis</b></td><td><b>Painful haemorrhagic vesicles</b> on the membrane or canal. May be viral or bacterial</td></tr>
+    <tr><td><b>Bullous myringitis</b></td><td><b>Painful hemorrhagic vesicles</b> on the membrane or canal. May be viral or bacterial</td></tr>
   </table>
   <p><b>Acute against chronic otitis externa is pain against itch</b>, and swelling against
   thickening. The distinction is easier from the history than from the picture.</p>
@@ -220,7 +220,7 @@ BODY = """
     <tr><td><b>Usual age of onset</b></td><td>Childhood and young adulthood, <b>up to about 40</b></td><td><b>Middle or later years</b></td></tr>
     <tr><td><b>Canal and drum</b></td><td>Abnormality usually <b>VISIBLE</b> &mdash; <b>except in otosclerosis</b></td><td>Problem <b>not visible</b></td></tr>
     <tr><td><b>Effect on sound</b></td><td>Little effect. Hearing <b>seems to improve in a noisy environment</b>. <b>Voice remains SOFT</b>, because the inner ear and cochlear nerve are intact</td><td><b>Higher registers lost</b>, so sound may be distorted. Hearing <b>worsens in noise</b>. <b>Voice may be LOUD</b>, because hearing is difficult</td></tr>
-    <tr><td><b>WEBER</b> (fork at vertex)</td><td>Lateralises to the <b>IMPAIRED</b> ear &mdash; room noise is not well heard, so detection of vibration improves</td><td>Lateralises to the <b>GOOD</b> ear &mdash; damage impairs transmission on the affected side</td></tr>
+    <tr><td><b>WEBER</b> (fork at vertex)</td><td>Lateralizes to the <b>IMPAIRED</b> ear &mdash; room noise is not well heard, so detection of vibration improves</td><td>Lateralizes to the <b>GOOD</b> ear &mdash; damage impairs transmission on the affected side</td></tr>
     <tr><td><b>RINNE</b> (meatus, then mastoid)</td><td><b>Bone &ge; air.</b> Vibration through bone <b>bypasses</b> the blocked external or middle ear to reach the cochlea</td><td><b>Air &gt; bone.</b> The damaged cochlea or nerve transmits poorly <b>however the vibration arrives</b>, so <b>the normal pattern prevails</b></td></tr>
   </table>
   <p><b>Voice volume is a feedback loop</b>, and it is the bedside sign people forget. A patient
@@ -237,7 +237,7 @@ BODY = """
     <p>Rinne on the right: heard <b>better in the air</b> &mdash; normal. Weber: heard <b>better
     in the right ear</b>. <b>Which ear has sensorineural loss?</b></p>
     <p><b>The LEFT.</b> The normal Rinne rules out a conductive problem on the right, and Weber
-    lateralises <b>away</b> from a sensorineural lesion &mdash; so hearing it on the right puts
+    lateralizes <b>away</b> from a sensorineural lesion &mdash; so hearing it on the right puts
     the damage on the left.</p>
     <p><b>What the tuning forks CANNOT do</b>, which is on the slide and easy to skip: they do not
     distinguish <b>normal from bilateral sensorineural loss</b>, and they do not distinguish
@@ -262,15 +262,15 @@ BODY = """
   <b>medications</b>: duration, efficacy, and specifically <b>rhinitis medicamentosa</b> and
   <b>cocaine</b>. Ask whether the <b>sense of smell</b> is affected.</p>
   <p><b>Epistaxis</b> is caused by digital trauma or other trauma, inflammation, dry mucosa,
-  foreign body, or tumour. <b>Recurrent bleeding, or bleeding and bruising elsewhere, suggests a
+  foreign body, or tumor. <b>Recurrent bleeding, or bleeding and bruising elsewhere, suggests a
   systemic problem</b> &mdash; one nosebleed is local until a pattern says otherwise.</p>
   <table class="tbl">
     <tr><th>Examination step</th><th>What you are looking for</th></tr>
-    <tr><td><b>Patency</b></td><td>Occlude one nostril and breathe in. <b>UNILATERAL</b> obstruction &rarr; <b>foreign body, tumour, deviated septum</b></td></tr>
-    <tr><td><b>Masses</b></td><td><b>Polyps</b> &mdash; associated with allergic rhinitis, <b>aspirin sensitivity</b>, asthma, chronic sinus infection, <b>cystic fibrosis</b>. Also cysts and tumours</td></tr>
+    <tr><td><b>Patency</b></td><td>Occlude one nostril and breathe in. <b>UNILATERAL</b> obstruction &rarr; <b>foreign body, tumor, deviated septum</b></td></tr>
+    <tr><td><b>Masses</b></td><td><b>Polyps</b> &mdash; associated with allergic rhinitis, <b>aspirin sensitivity</b>, asthma, chronic sinus infection, <b>cystic fibrosis</b>. Also cysts and tumors</td></tr>
     <tr><td><b>Symmetry and deformity</b></td><td>Deviated septum, perforated septum, trauma</td></tr>
     <tr><td><b>Discharge</b></td><td>Thick and purulent, thin and watery, or bloody. Note <b>odour</b></td></tr>
-    <tr><td><b>Mucosa</b></td><td>Colour, swelling, bleeding, ulceration. <b>Red and swollen &rarr; VIRAL.</b> <b>Pale, bluish or red &rarr; ALLERGIC</b></td></tr>
+    <tr><td><b>Mucosa</b></td><td>Color, swelling, bleeding, ulceration. <b>Red and swollen &rarr; VIRAL.</b> <b>Pale, bluish or red &rarr; ALLERGIC</b></td></tr>
     <tr><td><b>Septum</b></td><td>Perforation &mdash; from <b>trauma, surgery or drug use</b></td></tr>
     <tr><td><b>Palpation</b></td><td>Press <b>UP</b> on the frontal sinuses <b>avoiding the eyes</b>; press <b>UP</b> on the maxillary sinuses</td></tr>
     <tr><td><b>Transillumination</b></td><td>Dark room. <b>Frontal</b>: light up under the brow close to the nose. <b>Maxillary</b>: light down just below the inner corner of the eye, <b>mouth open</b>. Absence of glow &rarr; thickened mucosa or secretions. <b>NOT sensitive or specific</b></td></tr>
@@ -283,12 +283,12 @@ BODY = """
 
   @@POLYP@@
 
-  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasised</span>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p><b>Acute sinusitis &mdash; three statements, and the second is the one people get wrong.</b></p>
     <ol>
       <li><b>Local tenderness, pain, fever and nasal discharge are suggestive</b>, and purulent
       discharge is suggestive.</li>
-      <li><b>The COLOUR of the discharge is NOT diagnostic.</b> He went further aloud
+      <li><b>The COLOR of the discharge is NOT diagnostic.</b> He went further aloud
       [10:33]: purulent discharge <em>&ldquo;doesn&rsquo;t need to be there &hellip; it&rsquo;s
       not diagnostic&rdquo;</em>.</li>
       <li><b>Acute BACTERIAL sinusitis is unlikely with symptoms under seven days</b> &mdash;
@@ -298,12 +298,12 @@ BODY = """
 
   @@SEPTUM@@
 
-  <p><b>Septal haematoma</b> is the nose finding that cannot wait. <b>Injury disrupts the vessels
+  <p><b>Septal hematoma</b> is the nose finding that cannot wait. <b>Injury disrupts the vessels
   and pulls the lining away from the cartilage</b>, so blood collects between the two. It
   <b>requires urgent drainage to prevent necrosis of the septal cartilage</b> &mdash; the
   cartilage has no blood supply of its own and depends entirely on the lining that has just been
   stripped off it. His rule was broader than the nose [11:36]: <em>&ldquo;any time you have a
-  septal haematoma &mdash; anywhere, in an ear, in the nose, whatever &mdash; <b>that blood has to
+  septal hematoma &mdash; anywhere, in an ear, in the nose, whatever &mdash; <b>that blood has to
   come out</b>.&rdquo;</em></p>
   <p><b>A deviated septum</b> may be entirely asymptomatic; he demonstrated pressing on an obvious
   external deviation with no obstruction behind it. What matters is airflow, not appearance.</p>
@@ -338,7 +338,7 @@ BODY = """
       <tr><td>15 to 44 years</td><td>0</td></tr>
       <tr><td>45 years and older</td><td><b>&minus;1</b></td></tr>
     </table>
-    <p><b>The score maps to a risk of group A beta-haemolytic streptococcal pharyngitis:</b>
+    <p><b>The score maps to a risk of group A beta-hemolytic streptococcal pharyngitis:</b>
     score <b>&le;0 &rarr; 1&ndash;2.5%</b>; <b>1 &rarr; 5&ndash;10%</b>;
     <b>2 &rarr; 11&ndash;17%</b>; <b>3 &rarr; 28&ndash;35%</b>; <b>&ge;4 &rarr; 51&ndash;53%</b>.
     A score of 0 or less needs <b>no further testing or antibiotics</b>; the middle of the range
@@ -350,11 +350,11 @@ BODY = """
 
   <table class="tbl">
     <tr><th>Structure</th><th>What to inspect, and what it means</th></tr>
-    <tr><td><b>Lips</b></td><td>Colour, texture, cracks, sores. <b>Angular cheilitis</b> at the corners; <b>angioedema</b>; <b>herpes simplex</b></td></tr>
+    <tr><td><b>Lips</b></td><td>Color, texture, cracks, sores. <b>Angular cheilitis</b> at the corners; <b>angioedema</b>; <b>herpes simplex</b></td></tr>
     <tr><td><b>Mucosa, tonsils, pharynx</b></td><td><b>Erythema, exudates, ulcerations, lesions.</b> The posterior pharynx may need a <b>tongue blade</b></td></tr>
     <tr><td><b>Uvula and soft palate</b></td><td><b>Failure to rise with deviation of the uvula to the OPPOSITE side &rarr; cranial nerve X paralysis</b></td></tr>
     <tr><td><b>Dentition</b></td><td>Caries, erosions. <b>Look UNDER dentures</b> for ulcers and lesions</td></tr>
-    <tr><td><b>Tongue</b></td><td>Texture, colour, lesions. <b>Smooth, beefy red &rarr; vitamin B12 deficiency.</b> <b>Cancers: lateral border or undersurface</b>, indurated red or white, <b>males over 50</b>. <b>Geographic tongue is benign.</b> <b>Asymmetric protrusion &rarr; cranial nerve XII lesion</b></td></tr>
+    <tr><td><b>Tongue</b></td><td>Texture, color, lesions. <b>Smooth, beefy red &rarr; vitamin B12 deficiency.</b> <b>Cancers: lateral border or undersurface</b>, indurated red or white, <b>males over 50</b>. <b>Geographic tongue is benign.</b> <b>Asymmetric protrusion &rarr; cranial nerve XII lesion</b></td></tr>
     <tr><td><b>Palpation</b></td><td>Floor of mouth; then the tongue &mdash; <b>hold it with gauze in one hand and palpate with the other, then SWITCH HANDS</b> for the opposite side</td></tr>
   </table>
   <p><b>Switching hands is not fussiness</b>, it is the only way to reach both lateral borders
@@ -385,7 +385,7 @@ BODY = """
     <tr><td><b>Tender</b></td><td><b>Inflammation</b></td></tr>
     <tr><td><b>Hard or fixed</b></td><td><b>Malignancy</b></td></tr>
     <tr><td><b>Enlarged supraclavicular node on the LEFT</b></td><td><b>Metastasis from an abdominal or thoracic malignancy</b></td></tr>
-    <tr><td><b>Generalised</b></td><td>Human immunodeficiency virus, Epstein-Barr virus, <b>lymphoma, leukaemia, sarcoidosis</b></td></tr>
+    <tr><td><b>Generalised</b></td><td>Human immunodeficiency virus, Epstein-Barr virus, <b>lymphoma, leukemia, sarcoidosis</b></td></tr>
   </table>
   <p>The left supraclavicular node is the one worth knowing cold: it drains territory a long way
   from the neck, so finding one there redirects the entire search.</p>
@@ -412,19 +412,19 @@ BODY = """
     <tr><td>Diffuse and <b>SOFT</b></td><td><b>Graves disease</b></td></tr>
     <tr><td>Diffuse and <b>FIRM</b></td><td><b>Hashimoto thyroiditis</b></td></tr>
     <tr><td>Diffuse and <b>TENDER</b></td><td><b>Thyroiditis</b></td></tr>
-    <tr><td><b>Endemic</b> goitre</td><td><b>Iodine deficiency</b></td></tr>
-    <tr><td><b>Single</b> nodule</td><td>Cyst or tumour</td></tr>
+    <tr><td><b>Endemic</b> goiter</td><td><b>Iodine deficiency</b></td></tr>
+    <tr><td><b>Single</b> nodule</td><td>Cyst or tumor</td></tr>
     <tr><td><b>Multinodular</b> enlargement</td><td>Metabolic process; <b>risk of malignancy with a family history</b></td></tr>
   </table>
   <p><b>The head.</b> History is <b>OPPQRST</b> again, and the headache patterns matter:
   <b>migraine and tension are EPISODIC</b>; <b>migraine and cluster are UNILATERAL</b> &mdash;
   migraine is in both lists, so the two features have to be read together. <b>Sudden and severe
-  &rarr; subarachnoid haemorrhage.</b> <b>New, progressive and persistent &rarr; mass.</b> Also
+  &rarr; subarachnoid hemorrhage.</b> <b>New, progressive and persistent &rarr; mass.</b> Also
   consider <b>meningitis</b>.</p>
   <p><b>On examination:</b> facial swelling or characteristic facies; lumps, rashes, hair loss,
   lesions, scars; <b>lice</b>; <b>fine hair &rarr; hyperthyroidism, coarse hair &rarr;
-  hypothyroidism</b>; <b>seborrhoeic dermatitis, psoriasis, atypical naevi, actinic keratosis</b>;
-  symmetry, involuntary movements, oedema; tenderness and integrity; and <b>size</b> &mdash;
+  hypothyroidism</b>; <b>seborrheic dermatitis, psoriasis, atypical naevi, actinic keratosis</b>;
+  symmetry, involuntary movements, edema; tenderness and integrity; and <b>size</b> &mdash;
   <b>enlarged in hydrocephalus and Paget disease</b>, <b>small in microcephaly</b>.</p>
 
   <div class="note">
@@ -566,7 +566,7 @@ FIGS = {
         "The neck node chains, with external (red) and internal (blue) drainage. Learn the route, "
         "because on the practical each chain has to be <b>named as it is palpated</b>.", 79),
     "@@LUDWIG@@": ("ludwig", "png",
-        "Ludwig&rsquo;s angina &mdash; anterior neck oedema and early cellulitis. It spreads fast "
+        "Ludwig&rsquo;s angina &mdash; anterior neck edema and early cellulitis. It spreads fast "
         "and downward, and the airway is the reason it is an emergency.", 83),
 }
 

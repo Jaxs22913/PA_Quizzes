@@ -24,8 +24,8 @@ Q("Acute sinusitis", IO,
     "this way and does not explain the relationship to a sinus filled with fluid."],
    ["Bending reduces venous drainage from the head",
     "Venous congestion on bending forward contributes to a general sense of pressure, but the "
-    "localised sinus pain of this condition tracks the fluid within the obstructed cavity rather "
-    "than generalised venous return."],
+    "localized sinus pain of this condition tracks the fluid within the obstructed cavity rather "
+    "than generalized venous return."],
    ["Bending triggers a trigeminal neuralgia",
     "Trigeminal neuralgia produces brief lancinating shocks triggered by touch or chewing, not a "
     "sustained pressure pain that varies with head position, and it is not associated with purulent "
@@ -37,18 +37,18 @@ Q("Bacterial sinusitis", IO,
   [["Symptoms for ten days or more, double worsening, or unilateral facial or tooth pain",
     "Correct. These are the named criteria, and each captures something a virus does not usually do: "
     "viral illness improves within about ten days, follows a single curve rather than relapsing, and "
-    "produces bilateral symptoms rather than pain localised to one sinus or the upper teeth beneath "
+    "produces bilateral symptoms rather than pain localized to one sinus or the upper teeth beneath "
     "it."],
    ["Purulent green or yellow discharge",
-    "Discharge colour is the commonest reason antibiotics get prescribed and is the least useful "
-    "sign. Colour comes from neutrophil myeloperoxidase and appears in ordinary viral infection as "
+    "Discharge color is the commonest reason antibiotics get prescribed and is the least useful "
+    "sign. Color comes from neutrophil myeloperoxidase and appears in ordinary viral infection as "
     "the illness evolves."],
    ["Fever at any point during the illness",
     "Fever is common early in viral rhinosinusitis and is not by itself discriminating. It carries "
     "weight when it appears as part of a second deterioration rather than at onset."],
    ["Facial pressure and nasal congestion",
     "Those are the defining symptoms of rhinosinusitis of any cause, so they establish the diagnosis "
-    "rather than its aetiology. Every patient with the condition has them."]],
+    "rather than its etiology. Every patient with the condition has them."]],
   "finding", D, 15),
 
 Q("Chronic sinusitis", IO,
@@ -79,14 +79,14 @@ Q("Epistaxis", IO,
     "bleeds are heavier and carry a specific additional danger, which is aspiration of blood into "
     "the airway and subsequent infection."],
    ["An anterior bleed from Kiesselbach plexus",
-    "Anterior bleeds account for 90 per cent of cases, so this is the base rate, but they arise from "
+    "Anterior bleeds account for 90 percent of cases, so this is the base rate, but they arise from "
     "a visible spot on the anterior septum and usually bleed from one nostril. Failure to see any "
     "source anteriorly argues against it."],
    ["Bleeding from a nasal polyp",
-    "Polyps are avascular grey glistening masses that cause obstruction and anosmia rather than "
-    "haemorrhage. They are not a recognised source of brisk arterial bleeding."],
-   ["A ruptured septal haematoma",
-    "A septal haematoma is a collection between cartilage and perichondrium after trauma, presenting "
+    "Polyps are avascular gray glistening masses that cause obstruction and anosmia rather than "
+    "hemorrhage. They are not a recognized source of brisk arterial bleeding."],
+   ["A ruptured septal hematoma",
+    "A septal hematoma is a collection between cartilage and perichondrium after trauma, presenting "
     "as a boggy septal swelling. It does not produce brisk bleeding from both nostrils and there is "
     "no trauma described."]],
   "diagnosis", D, 39),
@@ -105,10 +105,10 @@ Q("Nasal foreign body", IO,
    ["Grasp the bead with forceps",
     "Forceps slide off a smooth round object and transmit the force inward, advancing it. That is "
     "the same problem as in the ear canal, and it converts an easy removal into a difficult one."],
-   ["Refer immediately for removal under general anaesthesia",
-    "General anaesthesia is reserved for a failed attempt, an uncooperative child or a posteriorly "
-    "impacted object. Committing a calm child with an anteriorly visible object straight to theatre "
-    "skips a simple manoeuvre."]],
+   ["Refer immediately for removal under general anesthesia",
+    "General anesthesia is reserved for a failed attempt, an uncooperative child or a posteriorly "
+    "impacted object. Committing a calm child with an anteriorly visible object straight to theater "
+    "skips a simple maneuver."]],
   "treatment", D, 51),
 
 Q("Perforated septum", IO,
@@ -118,7 +118,7 @@ Q("Perforated septum", IO,
     "Correct. When the two common local causes, intranasal corticosteroid and cocaine, are excluded, "
     "granulomatosis with polyangiitis and secondary syphilis as the rarer systemic "
     "causes. Both destroy the septal mucosa and cartilage through inflammation rather than local "
-    "ischaemia, and both need systemic treatment."],
+    "ischemia, and both need systemic treatment."],
    ["Allergic rhinitis",
     "Allergic inflammation swells the mucosa and causes clear discharge but does not destroy "
     "cartilage. It is a risk factor mainly because it leads to prolonged topical steroid use, which "
@@ -127,7 +127,7 @@ Q("Perforated septum", IO,
     "Chronic sinus inflammation affects the sinus mucosa and drainage pathways rather than the "
     "septal cartilage, and it is not among the causes of perforation."],
    ["Nasal polyposis",
-    "Polyps are soft oedematous mucosal masses obstructing the airway. They occupy space rather than "
+    "Polyps are soft edematous mucosal masses obstructing the airway. They occupy space rather than "
     "eroding structures and do not perforate the septum."]],
   "cause", D, 29),
 
@@ -196,21 +196,21 @@ Q("Nasal trauma", IO,
   "A 30-year-old man is assaulted and has clear fluid dripping from one nostril. He also has "
   "periorbital bruising on both sides.",
   [["Suspect a cerebrospinal fluid leak from a skull base fracture",
-    "Correct. Clear rhinorrhoea after significant facial or head trauma, particularly with bilateral "
+    "Correct. Clear rhinorrhea after significant facial or head trauma, particularly with bilateral "
     "periorbital bruising, raises the possibility that the cribriform plate has fractured and "
     "cerebrospinal fluid is draining through the nose. That converts a nasal injury into a "
     "neurosurgical problem and carries a risk of meningitis."],
    ["Allergic rhinitis unmasked by the injury",
-    "Allergic rhinorrhoea is bilateral, accompanied by sneezing and itch, and is not precipitated by "
+    "Allergic rhinorrhea is bilateral, accompanied by sneezing and itch, and is not precipitated by "
     "a single traumatic event. Unilateral clear fluid after trauma has a specific and dangerous "
     "explanation."],
    ["Normal nasal secretions from mucosal irritation",
-    "Traumatised mucosa does produce secretions, which is why the distinction matters and why the "
+    "Traumatized mucosa does produce secretions, which is why the distinction matters and why the "
     "fluid is tested. Assuming it is normal mucus in the presence of bilateral periorbital bruising "
     "risks missing a basal skull fracture."],
-   ["A septal haematoma draining spontaneously",
-    "A haematoma contains blood, so any spontaneous drainage would be bloody rather than clear, and "
-    "a haematoma presents as a boggy septal swelling that requires drainage rather than leaking on "
+   ["A septal hematoma draining spontaneously",
+    "A hematoma contains blood, so any spontaneous drainage would be bloody rather than clear, and "
+    "a hematoma presents as a boggy septal swelling that requires drainage rather than leaking on "
     "its own."]],
   "diagnosis", D, 46),
 
@@ -223,11 +223,11 @@ Q("Nasopharyngeal carcinoma", IO,
     "in situ testing contribute to diagnosis and surveillance."],
    ["Human papillomavirus type 16",
     "Human papillomavirus is listed as a risk factor and dominates OROPHARYNGEAL cancer, where 60 to "
-    "80 per cent of cases are virus-related. For the nasopharynx specifically, Epstein-Barr virus is "
+    "80 percent of cases are virus-related. For the nasopharynx specifically, Epstein-Barr virus is "
     "the stronger association."],
    ["Cytomegalovirus",
     "Cytomegalovirus causes a mononucleosis-like illness and disease in the immunocompromised, but "
-    "it is not among the recognised aetiological agents for nasopharyngeal carcinoma."],
+    "it is not among the recognized etiological agents for nasopharyngeal carcinoma."],
    ["Herpes simplex virus type 1",
     "Herpes simplex causes oral and perioral ulceration through latency in the trigeminal ganglion. "
     "It has no established role in nasopharyngeal malignancy."]],

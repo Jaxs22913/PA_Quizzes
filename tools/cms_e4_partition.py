@@ -43,8 +43,8 @@ TWO PATHS (2026-09-24).
                  their description in parentheses (scope module NAMED); every
                  question carries an explicit lead= from the vocabulary, the
                  stem ends on a question, and a diagnosis lead can only be
-                 labelled diagnosis -- a stem asking "most likely diagnosis"
-                 labelled anything else fails, so the cap cannot be dodged
+                 labeled diagnosis -- a stem asking "most likely diagnosis"
+                 labeled anything else fails, so the cap cannot be dodged
       dx cap     at most 6 diagnosis lead-ins per 30, BY CONSTRUCTION: the
                  search never makes a swap that breaks it, and the build fails
                  if the pool cannot supply enough non-diagnosis vignettes
@@ -254,7 +254,7 @@ _ACRO_OK = re.compile(r"^(?:I{1,3}|IV|VI{0,3}|IX|X|S[1-4]|mmHg|QRS)$")
 _UK = re.compile(r"\b\w*(?:aemi|oedem|oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
                  r"anaesth|foet)\w*\b|\b(?:tumour|colour|behaviour|favour|centre|litre|fibre|"
                  r"counsell\w*|labell\w*|modell\w*|travell\w*|ageing|programme|manoeuvres?|grey|"
-                 r"whilst|amongst|analyse[ds]?|paralyse[ds]?|licence|defence|practise[ds]?|"
+                 r"whilst|amongst|analyze[ds]?|paralyze[ds]?|license|defense|practice[ds]?|"
                  r"recognis\w*|characteris\w*|organis\w*|summaris\w*|emphasis(?:e|ed|es|ing)|"
                  r"minimis\w*|maximis\w*|normalis\w*|stabilis\w*|prioritis\w*|optimis\w*|mobilis\w*|"
                  r"utilis\w*|sensitis\w*|hospitalis\w*|specialis\w*|visualis\w*|categoris\w*|"
@@ -354,7 +354,7 @@ def guard_all(scope, pool, origin, vig):
             lead = q.get("lead")
             if lead not in LEADS: errs.append((where(i), "missing or unknown lead %r" % lead))
             elif _ASKS_DX.search(q["q"]) and lead != "diagnosis":
-                errs.append((where(i), "asks for the diagnosis but is labelled %r" % lead))
+                errs.append((where(i), "asks for the diagnosis but is labeled %r" % lead))
             low = q["q"].lower()
             for name, gloss in named.items():
                 if name.lower() in low and gloss.lower() not in low:
@@ -380,7 +380,7 @@ def guarded_main():
         print("pool lead-in mix:", dict(Counter(q["lead"] for q in POOL).most_common()))
     print("guards passed: schema, citation, slot, io, excluded slides, dosing, brand names, "
           "mechanism stems, acronyms, US spelling, no cross-question dependency%s"
-          % (", vignette opening, lead vocabulary, diagnosis labelling, named-finding glosses" if vig else ""))
+          % (", vignette opening, lead vocabulary, diagnosis labeling, named-finding glosses" if vig else ""))
 
     dx_idx = [i for i, q in enumerate(POOL) if vig and q["lead"] == "diagnosis"]
     if vig:

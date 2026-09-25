@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Add the Lecture 2 and Lecture 3 topics to the Pharmacology I Exam 1 cram sheet.
 
-Same colour-coded topic/table structure as the Lecture 1 sections: the guide
+Same color-coded topic/table structure as the Lecture 1 sections: the guide
 carries the explanation, this carries only what has to be recallable cold.
 
 WEIGHTED TO WHAT THE COURSE ASKED FOR. Dr. McInnis told the class on 28 August
@@ -12,7 +12,7 @@ mechanism rows that survive are the ones that DISCRIMINATE between two agents
 rather than the ones that merely describe one.
 
 NO DOSES, per Dr. Wood. Concentrations and milligram figures are left out
-entirely; where a number appears it is a duration, a threshold or a counselling
+entirely; where a number appears it is a duration, a threshold or a counseling
 point ("no longer than three days"), never a dose to recall.
 
 Idempotent -- existing sections with these ids are stripped before re-adding.
@@ -56,7 +56,7 @@ TOPICS = [
    ("Gold standard", "TOPICAL CORTICOSTEROIDS, chosen by severity and SITE."),
    ("Potency by site", "LOW for face, intertriginous areas, infants — and better long term. MEDIUM for body. Exacerbation: MEDIUM–HIGH for one to two weeks then STEP DOWN."),
    ("What drives adverse effects", "POTENCY · DURATION · AREA COVERED · OCCLUSIVENESS (ointment > cream > lotion)."),
-   ("Local vs systemic", "LOCAL: skin atrophy, acne, rosacea, allergic dermatitis to the vehicle. SYSTEMIC: adrenal suppression, infections, hyperglycaemia, GLAUCOMA, CATARACTS, growth retardation in children."),
+   ("Local vs systemic", "LOCAL: skin atrophy, acne, rosacea, allergic dermatitis to the vehicle. SYSTEMIC: adrenal suppression, infections, hyperglycemia, GLAUCOMA, CATARACTS, growth retardation in children."),
    ("Immunomodulators", "TACROLIMUS, PIMECROLIMUS inhibit T cell, mast cell and keratinocyte activation. SECOND LINE. Possible cancer risk; avoid if immunosuppressed. Counsel BURNING and HIGH SPF."),
    ("Oral steroid course", "Needs a TAPER to prevent a flare-up."),
  ]),
@@ -64,12 +64,12 @@ TOPICS = [
    ("Bacitracin", "Prevents CELL WALL synthesis. Gram positives. NO SYSTEMIC TOXICITY."),
    ("Mupirocin", "Binds bacterial TRANSFER RNA. MRSA. Eliminates NASAL CARRIAGE of S. aureus."),
    ("Polymyxin B", "Interrupts CYTOPLASMIC MEMBRANE. Gram negatives. AVOID high dose on OPEN or DENUDED skin — neuro- and nephrotoxicity."),
-   ("Neomycin", "Frequently causes SENSITISATION. Class can accumulate systemically."),
+   ("Neomycin", "Frequently causes SENSITIZATION. Class can accumulate systemically."),
    ("Azoles", "Inhibit FUNGAL P450, preventing cell wall formation. Treatment is PROLONGED, two to three weeks."),
    ("Ciclopirox nail lacquer", "LESS THAN 12% EFFECTIVE for onychomycosis. Say so before starting."),
    ("Allylamines", "NAFTIFINE, TERBINAFINE — inhibit ERGOSTEROL production."),
    ("Coverage gaps", "TOLNAFTATE has NO CANDIDA activity. NYSTATIN is the candidal agent, NO ORAL ABSORPTION."),
-   ("Topical antivirals", "ACYCLOVIR, PENCICLOVIR — guanine analogues, recurrent OROLABIAL herpes simplex."),
+   ("Topical antivirals", "ACYCLOVIR, PENCICLOVIR — guanine analogs, recurrent OROLABIAL herpes simplex."),
    ("Imiquimod", "Immunomodulator — warts, ACTINIC KERATOSES, BASAL CELL CARCINOMA. Irritation in VIRTUALLY ALL patients, and the DEGREE OF INFLAMMATION PARALLELS EFFICACY."),
  ]),
  ("l3-wiring", "L3 · ANS Wiring & Receptors", RUST, "#eae3e0", "#f5f1f0", "#53291c", [
@@ -77,7 +77,7 @@ TOPICS = [
    ("Autonomic vs somatic", "Autonomic is TWO NEURONS — PREGANGLIONIC within the CNS, POSTGANGLIONIC from a ganglion, generally NONMYELINATED. The somatic route does not relay that way."),
    ("Enteric", "The BRAIN OF THE GUT — gut, pancreas, gallbladder. FUNCTIONS INDEPENDENTLY of the CNS, modulated by the other two."),
    ("Cholinergic steps", "SIX: synthesis · storage · release · receptor binding · DEGRADATION by acetylcholinesterase · RECYCLING of choline. (Adrenergic has FIVE.)"),
-   ("Muscarinic subtypes", "Five subclasses, ONLY M1, M2, M3 functionally characterised. M1 neurons + gastric parietal · M2 neurons + CARDIAC + smooth muscle · M3 neurons + BLADDER + exocrine glands."),
+   ("Muscarinic subtypes", "Five subclasses, ONLY M1, M2, M3 functionally characterized. M1 neurons + gastric parietal · M2 neurons + CARDIAC + smooth muscle · M3 neurons + BLADDER + exocrine glands."),
    ("Nicotinic receptor", "FIVE SUBUNITS, LIGAND-GATED ION CHANNEL. TWO acetylcholine molecules open it to sodium. CNS, adrenal medulla, ganglia, neuromuscular junction."),
    ("Nicotine's twist", "STIMULATES at low concentration, BLOCKS at high."),
    ("Alpha vs beta location", "ALPHA-1 POSTSYNAPTIC on the effector organ. ALPHA-2 PRESYNAPTIC on nerve endings."),
@@ -85,7 +85,7 @@ TOPICS = [
    ("Catecholamine breakdown", "COMT postsynaptically, MAO within the neuron. Noncatecholamines escape both — longer acting, more CNS penetration."),
  ]),
  ("l3-effects", "L3 · Predicting Effects", GOLD, "#f2ecd9", "#faf7ec", "#6b5410", [
-   ("Muscarinic — DUMBBELS", "Defecation · Urination · Miosis · Bradycardia · Bronchorrhoea · Bronchospasm · Emesis · Lacrimation · Salivation."),
+   ("Muscarinic — DUMBBELS", "Defecation · Urination · Miosis · Bradycardia · Bronchorrhea · Bronchospasm · Emesis · Lacrimation · Salivation."),
    ("Nicotinic — MTWHF", "Mydriasis · Tachycardia · Weakness · Hypertension · Fasciculations."),
    ("Anticholinergic", "Mad as a hatter · Blind as a bat · Red as a beet · Dry as a bone · Hot as Hades. Plus constipation, urinary retention, TACHYCARDIA."),
    ("How to tell them apart", "PUPIL AND HEART FIRST: muscarinic is SMALL pupil, SLOW heart. Nicotinic and anticholinergic are both BIG pupil, FAST heart. Then WET vs DRY separates those two."),
@@ -109,7 +109,7 @@ TOPICS = [
  ]),
  ("l3-adren", "L3 · Adrenergic Drugs", RUST, "#eae3e0", "#f5f1f0", "#53291c", [
    ("Epinephrine by dose", "BETA effects at LOW dose, ALPHA at HIGH. Raises SYSTOLIC, lowers DIASTOLIC."),
-   ("Epinephrine uses", "ANAPHYLAXIS · CARDIAC ARREST · acute bronchospasm. In local anaesthetic to PROLONG the block by vasoconstriction."),
+   ("Epinephrine uses", "ANAPHYLAXIS · CARDIAC ARREST · acute bronchospasm. In local anesthetic to PROLONG the block by vasoconstriction."),
    ("Epinephrine + beta blocker", "ALPHA EFFECTS LEFT UNOPPOSED → peripheral resistance and blood pressure RISE."),
    ("Norepinephrine", "Mostly ALPHA. REFLEX BRADYCARDIA via baroreceptor. EXTRAVASATION → PHENTOLAMINE."),
    ("Dopamine", "Beta-1 cardiac · dopaminergic dilates RENAL and SPLANCHNIC · alpha-1 vasoconstriction only at VERY HIGH dose. Cardiogenic and septic shock."),
@@ -120,7 +120,7 @@ TOPICS = [
    ("Tyramine trap", "Normally destroyed by MAO IN THE GUT. On an MAO INHIBITOR it reaches the terminal — serious vasopressor effect. Fermented cheese and wine."),
    ("Phenoxybenzamine", "IRREVERSIBLE, noncompetitive — needs NEW RECEPTORS, at least a day. EPINEPHRINE REVERSAL: vasoconstriction blocked, vasodilation left."),
    ("Alpha-1 blockers split", "PRAZOSIN, TERAZOSIN, DOXAZOSIN for hypertension. TAMSULOSIN, ALFUZOSIN for BPH. Signature: FIRST-DOSE SYNCOPE."),
-   ("Propranolol", "Nonselective → BRONCHOCONSTRICTION, CONTRAINDICATED in asthma and COPD. MASKS HYPOGLYCAEMIA. Abrupt stop → arrhythmia from RECEPTOR UP-REGULATION."),
+   ("Propranolol", "Nonselective → BRONCHOCONSTRICTION, CONTRAINDICATED in asthma and COPD. MASKS HYPOGLYCEMIA. Abrupt stop → arrhythmia from RECEPTOR UP-REGULATION."),
    ("Propranolol beyond BP", "MIGRAINE PREVENTION · HYPERTHYROIDISM · ANGINA · after MYOCARDIAL INFARCTION."),
    ("The rest by property", "TIMOLOL glaucoma · SELECTIVE BETA-1 lose selectivity at higher doses · ACEBUTOLOL and PINDOLOL have ISA · LABETALOL IV for hypertensive emergency · CARVEDILOL mortality in heart failure."),
    ("Storage agents", "RESERPINE blocks uptake INTO vesicles. GUANETHIDINE blocks release FROM them."),

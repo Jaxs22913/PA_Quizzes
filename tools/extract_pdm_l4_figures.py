@@ -16,7 +16,7 @@ The six that carry content found nowhere else:
   s072_1  the fishbone diagram's layout
 
 What is left out: the decorative stock photo of blood tubes (slide 8), the
-"Questions?" forest photograph (slide 75), the section-divider art, the labelled
+"Questions?" forest photograph (slide 75), the section-divider art, the labeled
 smear on slide 15 whose percentages match neither of the deck's own reference
 sets, and the duplicate reference table on slide 31 (identical to slide 7's).
 
@@ -42,15 +42,15 @@ FIGURES = [
   "<b>The whole reference table, which is on the slide only as a picture.</b> Note the three rows that DISAGREE with the individual teaching slides later in the deck &mdash; lymphocytes are 25&ndash;33% here and 24&ndash;44% there, platelets are 150,000&ndash;400,000 here and 150,000&ndash;450,000 there, and red cell distribution width is 11&ndash;15% here and 12&ndash;15% there. Section 4.2 sets all of them side by side."),
 
  ("s010_1.png", "wbc-morphology", 10,
-  "Five panels of stained white blood cells labelled neutrophil, eosinophil, basophil, lymphocyte and monocyte, each captioned with its nucleus and cytoplasm description.",
+  "Five panels of stained white blood cells labeled neutrophil, eosinophil, basophil, lymphocyte and monocyte, each captioned with its nucleus and cytoplasm description.",
   "<b>The five lines, and how to tell them apart down a microscope.</b> Read the nucleus first: the neutrophil is multilobed, the eosinophil and basophil are bilobed, the lymphocyte is a single large sphere and the monocyte is kidney-shaped. Then the granules &mdash; the eosinophil's are red, the basophil's purplish-black, and the two agranulocytes have none."),
 
  ("s020_1.png", "anc-formula", 20,
-  "Formula reading absolute neutrophil count equals white blood cell count per microlitre multiplied by the sum of the percentage of neutrophils and the percentage of bands, divided by one hundred.",
+  "Formula reading absolute neutrophil count equals white blood cell count per microliter multiplied by the sum of the percentage of neutrophils and the percentage of bands, divided by one hundred.",
   "<b>The formula, which exists only as this image.</b> The thing that catches people is that <b>bands are counted WITH the neutrophils</b>. Note also that the worked example on the next slide is mis-bracketed &mdash; it prints 6,000 &times; (40 + 5/100), which evaluates to 240,300, not the 2,700 it then gives. The printed answer is right; the brackets are a typo."),
 
  ("s021_1.png", "neutropenia-grades", 21,
-  "Table headed Categorizing Neutropenia, Berlinger 2020, with three rows: mild 1,000 to less than 1,500 cells per microlitre, moderate 500 to less than 1,000, severe less than 500.",
+  "Table headed Categorizing Neutropenia, Berlinger 2020, with three rows: mild 1,000 to less than 1,500 cells per microliter, moderate 500 to less than 1,000, severe less than 500.",
   "<b>This table is not in the slide text at all.</b> It is what makes the absolute neutrophil count worth calculating &mdash; the number only means something once you can place it in a band. <b>Severe is under 500</b>, and that is the figure that changes management."),
 
  ("s016_1.png", "granulocyte-lifespans", 16,
@@ -62,7 +62,7 @@ FIGURES = [
   "<b>The agranulocytes, with their functions.</b> The contrast with the figure above is the point &mdash; hours to days for the granulocytes against <b>years</b> for lymphocyte memory cells."),
 
  ("s034_1.png", "mcv-sizes", 34,
-  "Three red circles of increasing size on a green background labelled microcytic with mean corpuscular volume under 80, normocytic 80 to 100, and macrocytic over 100.",
+  "Three red circles of increasing size on a green background labeled microcytic with mean corpuscular volume under 80, normocytic 80 to 100, and macrocytic over 100.",
   "<b>The three bands the entire anemia workup turns on.</b> Hemoglobin tells you there is an anemia; <b>mean corpuscular volume tells you which algorithm to run</b>."),
 
  ("s036_1.png", "acanthocytes", 36,
@@ -74,7 +74,7 @@ FIGURES = [
   "<b>Echinocytes, or burr cells &mdash; renal disease.</b> Echino means sea urchin. The projections run right around the cell, are <b>evenly spaced with blunter tips</b>, and <b>central pallor is preserved</b>. Two features and two different diseases separate this from the acanthocyte."),
 
  ("s039_1.png", "schistocyte-types", 39,
-  "Four panels labelled triangular cell, horn cell, helmet cell and microspherocyte, each showing the fragment type on a blood smear.",
+  "Four panels labeled triangular cell, horn cell, helmet cell and microspherocyte, each showing the fragment type on a blood smear.",
   "<b>Four named schistocyte forms &mdash; and the slide text names only two of them.</b> Triangular cell and microspherocyte exist only in this picture. All four are fragments, so all four mean the same thing: something is shearing red cells apart."),
 
  ("s039_2.png", "schistocytes-smear", 39,
@@ -90,7 +90,7 @@ FIGURES = [
   "<b>Spherocytes &mdash; hereditary spherocytosis.</b> Perfectly round, <b>central pallor completely lost</b>, and often smaller than normal. These are the cells behind the mean corpuscular hemoglobin concentration screening flag: dense rather than large."),
 
  ("s043_1.png", "target-cells", 43,
-  "Blood smear with a red arrow labelled target cell pointing to a red cell with a dark central spot inside its pale centre.",
+  "Blood smear with a red arrow labeled target cell pointing to a red cell with a dark central spot inside its pale center.",
   "<b>Target cells, or codocytes &mdash; post splenectomy and liver disease.</b> A dark circle sitting inside the central pallor gives the bullseye. The cause is <b>redundant cell membrane</b> &mdash; too much membrane for the volume of cell."),
 
  ("s044_1.png", "teardrop-cells", 44,
@@ -111,18 +111,18 @@ FIGURES = [
 
  ("s048_1.png", "rouleaux", 48,
   "Blood smear annotated note the red cells in a coin-stacking formation, with arrows to several stacks of red cells lying face to face in chains.",
-  "<b>Rouleaux &mdash; multiple myeloma and liver disease.</b> Rows of coins. Red cells normally repel each other because they carry a negative surface charge; <b>raised serum proteins neutralise that charge</b> and let them stack. Contrast agglutination, which is disorderly clumping from antibody bridging."),
+  "<b>Rouleaux &mdash; multiple myeloma and liver disease.</b> Rows of coins. Red cells normally repel each other because they carry a negative surface charge; <b>raised serum proteins neutralize that charge</b> and let them stack. Contrast agglutination, which is disorderly clumping from antibody bridging."),
 
  ("s063_1.png", "iron-comparison", 63,
-  "Table of condition against mean corpuscular volume, iron, ferritin, total iron binding capacity, transferrin and transferrin saturation, with arrows for six conditions: iron deficiency, inflammatory anaemia, thalassaemia minor and major, sideroblastic anaemia and iron overload.",
-  "<b>The single highest-yield table in the lecture, and the slide's only text is its title.</b> Read the first two rows against each other: <b>iron deficiency has LOW ferritin with HIGH binding capacity</b>, inflammatory anaemia has <b>HIGH ferritin with LOW binding capacity</b>. Ferritin is an acute phase reactant, so it rises in inflammation even while the iron is unavailable. <b>Thalassaemia minor is the row where everything except the cell size is normal.</b>"),
+  "Table of condition against mean corpuscular volume, iron, ferritin, total iron binding capacity, transferrin and transferrin saturation, with arrows for six conditions: iron deficiency, inflammatory anemia, thalassemia minor and major, sideroblastic anemia and iron overload.",
+  "<b>The single highest-yield table in the lecture, and the slide's only text is its title.</b> Read the first two rows against each other: <b>iron deficiency has LOW ferritin with HIGH binding capacity</b>, inflammatory anemia has <b>HIGH ferritin with LOW binding capacity</b>. Ferritin is an acute phase reactant, so it rises in inflammation even while the iron is unavailable. <b>Thalassemia minor is the row where everything except the cell size is normal.</b>"),
 
  ("s071_1.png", "anemia-algorithm", 71,
   "Flowchart beginning review the history, complete blood count, mean corpuscular volume and reticulocyte count, branching on mean corpuscular volume under 80, 80 to 100, and over 100, each branch listing common causes and next steps.",
-  "<b>The full anemia algorithm. Slide 71 extracts as completely empty &mdash; this figure is the entire slide.</b> Two things worth noticing: <b>iron deficiency appears in BOTH the under-80 and the 80-to-100 branches</b>, which is why iron studies are obtained even when the cell size is normal; and in the microcytic branch you obtain iron studies <b>in all individuals</b>, because a coexisting iron deficiency can mask thalassaemia on hemoglobin analysis."),
+  "<b>The full anemia algorithm. Slide 71 extracts as completely empty &mdash; this figure is the entire slide.</b> Two things worth noticing: <b>iron deficiency appears in BOTH the under-80 and the 80-to-100 branches</b>, which is why iron studies are obtained even when the cell size is normal; and in the microcytic branch you obtain iron studies <b>in all individuals</b>, because a coexisting iron deficiency can mask thalassemia on hemoglobin analysis."),
 
  ("s072_1.png", "fishbone", 72,
-  "The CBC fishbone shorthand: a horizontal line with white cell count at the left end, hemoglobin above the centre, hematocrit below the centre, and platelets at the right end.",
+  "The CBC fishbone shorthand: a horizontal line with white cell count at the left end, hemoglobin above the center, hematocrit below the center, and platelets at the right end.",
   "<b>The fishbone, which is how a complete blood count gets written on a whiteboard or a progress note.</b> <b>White cells left, hemoglobin above the line, hematocrit below it, platelets right.</b> Worth knowing cold &mdash; you will see it written this way long before you see it typed out."),
 ]
 

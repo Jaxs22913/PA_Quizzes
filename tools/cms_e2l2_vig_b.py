@@ -42,7 +42,7 @@ POOL_B = [
    c=0, cite=c(11)),
 
  dict(topic="Pupillary pathway", io=IO, lead="diagnosis",
-   q="Parasympathetic preganglionic fibres leave the Edinger-Westphal nucleus and travel along which nerve?",
+   q="Parasympathetic preganglionic fibers leave the Edinger-Westphal nucleus and travel along which nerve?",
    opts=[
      ["Cranial nerve three", "Correct, synapsing in the ipsilateral ciliary ganglion within the orbit."],
      ["Cranial nerve two", "That is the afferent limb."],
@@ -53,19 +53,19 @@ POOL_B = [
  dict(topic="Sympathetic pathway", io=IO, lead="diagnosis",
    q="Where do the first-order sympathetic neurons synapse on their way to the pupil?",
    opts=[
-     ["Ciliospinal centre of Budge", "Correct, at C8 to T2."],
+     ["Ciliospinal center of Budge", "Correct, at C8 to T2."],
      ["Superior cervical ganglion", "That is where second-order neurons synapse with third-order."],
      ["Pretectal nucleus", "That belongs to the afferent light reflex."],
      ["Edinger-Westphal nucleus", "That is the parasympathetic origin."]],
    c=0, cite=c(13)),
 
  dict(topic="Sympathetic pathway", io=IO, lead="diagnosis",
-   q="Which anatomical relationship explains why an apical lung tumour can cause Horner syndrome?",
+   q="Which anatomical relationship explains why an apical lung tumor can cause Horner syndrome?",
    opts=[
-     ["Second-order fibres loop over the lung apex", "Correct, passing under the subclavian artery."],
-     ["First-order fibres run through the lung", "First-order neurons run from hypothalamus to cord."],
-     ["Third-order fibres cross the pleura", "Third-order fibres travel with the carotid."],
-     ["The vagus carries sympathetic fibres", "It does not carry this pathway."]],
+     ["Second-order fibers loop over the lung apex", "Correct, passing under the subclavian artery."],
+     ["First-order fibers run through the lung", "First-order neurons run from hypothalamus to cord."],
+     ["Third-order fibers cross the pleura", "Third-order fibers travel with the carotid."],
+     ["The vagus carries sympathetic fibers", "It does not carry this pathway."]],
    c=0, cite=c(13)),
 
  dict(topic="Pupil size", io=IO, lead="diagnosis",
@@ -87,16 +87,16 @@ POOL_B = [
    c=0, cite=c(39)),
 
  dict(topic="Third nerve anatomy", io=IO, lead="diagnosis",
-   q="Which fibres travel with the inferior division of the oculomotor nerve to the ciliary ganglion?",
+   q="Which fibers travel with the inferior division of the oculomotor nerve to the ciliary ganglion?",
    opts=[
-     ["Parasympathetic fibres", "Correct, and they innervate the iris sphincter for pupillary constriction."],
-     ["Sympathetic fibres", "Those travel with the carotid, not the third nerve."],
-     ["Afferent visual fibres", "Those run in the optic nerve."],
-     ["Motor fibres to superior oblique", "That muscle is supplied by the fourth nerve."]],
+     ["Parasympathetic fibers", "Correct, and they innervate the iris sphincter for pupillary constriction."],
+     ["Sympathetic fibers", "Those travel with the carotid, not the third nerve."],
+     ["Afferent visual fibers", "Those run in the optic nerve."],
+     ["Motor fibers to superior oblique", "That muscle is supplied by the fourth nerve."]],
    c=0, cite=c(39)),
 
  dict(topic="Ptosis anatomy", io=IO, lead="diagnosis",
-   q="Which structure gives the extra one to two millimetres of lid elevation when a patient is startled?",
+   q="Which structure gives the extra one to two millimeters of lid elevation when a patient is startled?",
    opts=[
      ["Muller's muscle", "Correct, and it is sympathetically innervated, which is why Horner syndrome causes mild ptosis."],
      ["Levator palpebrae superioris", "That is the main elevator, supplied by the third nerve."],
@@ -144,9 +144,9 @@ POOL_B = [
    q="Why may anhidrosis be absent in a patient with confirmed Horner syndrome?",
    opts=[
      ["It depends where the lesion sits", "Correct. The triad may be incomplete depending on the level along the pathway."],
-     ["Sweating is parasympathetic", "The sudomotor fibres involved are sympathetic."],
+     ["Sweating is parasympathetic", "The sudomotor fibers involved are sympathetic."],
      ["It requires bilateral lesions", "Horner syndrome is typically unilateral."],
-     ["It is only seen with tumours", "Aetiology does not determine its presence."]],
+     ["It is only seen with tumors", "Etiology does not determine its presence."]],
    c=0, cite=c(28)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
@@ -173,7 +173,7 @@ POOL_B = [
      ["The larger pupil", "Correct. If it fails to constrict in light, the large one is at fault."],
      ["The smaller pupil", "That is abnormal when the difference is greater in darkness."],
      ["Neither, this is physiologic", "Physiologic anisocoria is equal in light and dark."],
-     ["Both are equally abnormal", "The asymmetry localises the problem to one side."]],
+     ["Both are equally abnormal", "The asymmetry localizes the problem to one side."]],
    c=0, cite=c(20)),
 
  dict(topic="Anisocoria", io=IO, lead="diagnosis",
@@ -217,7 +217,7 @@ POOL_B = [
    opts=[
      ["Congenital", "Correct. Isolated fourth nerve palsy is most commonly congenital, even in adults."],
      ["Microvascular disease", "That is an acquired cause, alongside trauma."],
-     ["Intracranial tumour", "That is the leading cause of sixth nerve palsy in children."],
+     ["Intracranial tumor", "That is the leading cause of sixth nerve palsy in children."],
      ["Aneurysm", "That is the dreaded cause of a third nerve palsy."]],
    c=0, cite=c(43)),
 
@@ -245,7 +245,7 @@ POOL_B = [
      ["Alpha-two greater than alpha-one activity", "Correct, acting on a denervated, supersensitive pupil."],
      ["Pure beta blockade", "Beta blockade is used to lower intraocular pressure, not to test this."],
      ["Anticholinesterase activity", "That raises acetylcholine and constricts the pupil."],
-     ["Prostaglandin analogue activity", "Those are used in glaucoma."]],
+     ["Prostaglandin analog activity", "Those are used in glaucoma."]],
    c=0, cite=c(28)),
 
  dict(topic="Nystagmus", io=IO, lead="diagnosis",
@@ -270,7 +270,7 @@ POOL_B = [
    q="A 61-year-old man with hypertension and diabetes cannot abduct his right eye. Which cause is most likely?",
    opts=[
      ["Microvascular disease", "Correct. In adults that is the commonest cause of a sixth nerve palsy."],
-     ["Intracranial tumour", "That leads in children rather than adults."],
+     ["Intracranial tumor", "That leads in children rather than adults."],
      ["Congenital palsy", "New onset in an adult is not congenital."],
      ["Aneurysm", "That is associated with third nerve palsy."]],
    c=0, cite=c(45)),

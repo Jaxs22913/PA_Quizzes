@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Partition the Pharmacology I Lecture 1 antibacterial pool into two 30s.
 
-Three things are optimised at once, which is why the pool is written oversized:
+Three things are optimized at once, which is why the pool is written oversized:
   - instructional-objective coverage across both sets
   - length bias (picking the longest option must not beat guessing)
   - answer position, handled by ROTATION rather than by selection

@@ -58,11 +58,11 @@ QUESTIONS = [
  "slot": "mechanism",
  "q": "Latanoprost and dipivefrin are both given in an inactive form. What does the eye do with them?",
  "opts": [
-  ["It metabolises them — they are prodrugs activated in the eye",
-   "Correct. Some drugs are metabolised within the eye itself, which is exploited deliberately: dipivefrin becomes epinephrine and latanoprost becomes prostaglandin F2-alpha once inside."],
+  ["It metabolizes them — they are prodrugs activated in the eye",
+   "Correct. Some drugs are metabolized within the eye itself, which is exploited deliberately: dipivefrin becomes epinephrine and latanoprost becomes prostaglandin F2-alpha once inside."],
   ["It concentrates them in the ciliary body without altering them",
    "Accumulation happens with some drugs — chloroquine's bull's eye lesion is the example — but that is storage, not activation."],
-  ["It excretes them unchanged into the aqueous humour",
+  ["It excretes them unchanged into the aqueous humor",
    "That would deliver no active drug at all, which defeats the purpose of the prodrug design."],
   ["It binds them to tear proteins until they are displaced",
    "Tear protein binding limits absorption; it does not convert an inactive compound into an active one."]],
@@ -115,7 +115,7 @@ QUESTIONS = [
  "q": "Which ophthalmic antibiotic must be avoided outright in a patient with a sulfonamide allergy?",
  "opts": [
   ["Sulfacetamide",
-   "Correct. It is a sulfonamide, and it works by antagonising p-aminobenzoic acid to block folic acid synthesis. A documented sulfonamide allergy rules it out — one of the few genuine contraindications in the whole ophthalmic antibiotic list."],
+   "Correct. It is a sulfonamide, and it works by antagonizing p-aminobenzoic acid to block folic acid synthesis. A documented sulfonamide allergy rules it out — one of the few genuine contraindications in the whole ophthalmic antibiotic list."],
   ["Trimethoprim with polymyxin B",
    "Trimethoprim blocks the next step down, the reduction of folic acid to tetrahydrofolate, and is not a sulfonamide."],
   ["Bacitracin",
@@ -143,7 +143,7 @@ QUESTIONS = [
  "opts": [
   ["Trimethoprim blocks folate reduction; polymyxin B disrupts the bacterial membrane",
    "Correct. Trimethoprim stops folic acid becoming tetrahydrofolate, so nucleic acid and protein production fail. Polymyxin B binds membrane phospholipids and lets intracellular contents leak out. Two unrelated mechanisms in one bottle."],
-  ["Trimethoprim antagonises p-aminobenzoic acid; polymyxin B blocks the 50S ribosome",
+  ["Trimethoprim antagonizes p-aminobenzoic acid; polymyxin B blocks the 50S ribosome",
    "The first half describes sulfacetamide, which acts a step earlier in the same folate pathway, and polymyxin B is a membrane agent rather than a ribosomal one."],
   ["Both inhibit bacterial cell wall synthesis",
    "Neither agent touches the cell wall. Bacitracin is the only wall-active ophthalmic antibiotic, and it is not in this combination."],
@@ -154,9 +154,9 @@ QUESTIONS = [
 {"topic": "Ocular antibiotics", "io": "Describe the mechanism of action of ophthalmic drugs", "slot": "mechanism",
  "q": "Sulfacetamide and trimethoprim both interfere with folate, but at different points. What is the difference?",
  "opts": [
-  ["Sulfacetamide antagonises p-aminobenzoic acid; trimethoprim blocks reduction to tetrahydrofolate",
+  ["Sulfacetamide antagonizes p-aminobenzoic acid; trimethoprim blocks reduction to tetrahydrofolate",
    "Correct. Sulfacetamide acts at the synthesis end by competing with p-aminobenzoic acid; trimethoprim acts one step later, stopping folic acid being reduced. Sequential blockade of the same pathway."],
-  ["Sulfacetamide blocks reduction to tetrahydrofolate; trimethoprim antagonises p-aminobenzoic acid",
+  ["Sulfacetamide blocks reduction to tetrahydrofolate; trimethoprim antagonizes p-aminobenzoic acid",
    "The two steps are the right ones but assigned to the wrong drugs."],
   ["Sulfacetamide inhibits the 30S ribosome; trimethoprim inhibits the 50S",
    "Neither acts on the ribosome. Both interfere with folate, which is what makes them a sequential pair rather than alternatives."],
@@ -189,7 +189,7 @@ QUESTIONS = [
  "opts": [
   ["Corneal ulceration from an aminoglycoside",
    "Correct. Ocular irritation is common to essentially every agent here and so distinguishes nothing — but aminoglycosides used for several days can produce corneal ulceration and a reactive keratoconjunctivitis, which changes how long you continue them."],
-  ["Ocular irritation with erythromycin", "Shared by nearly every ophthalmic antibiotic, which is why it is not worth memorising which ones cause it."],
+  ["Ocular irritation with erythromycin", "Shared by nearly every ophthalmic antibiotic, which is why it is not worth memorizing which ones cause it."],
   ["Hypersensitivity with bacitracin", "Also non-specific — any of these agents can produce hypersensitivity, so it names no particular drug."],
   ["Unpleasant taste after a macrolide", "The taste complaint belongs with the fluoroquinolones, and reflects nasolacrimal drainage rather than a class toxicity."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 23"},
@@ -198,7 +198,7 @@ QUESTIONS = [
  "q": "Roughly one in six patients given a particular ophthalmic fluoroquinolone develops a visible finding on the eye. Which drug, and what is seen?",
  "opts": [
   ["Ciprofloxacin, and a white precipitate forms",
-   "Correct. It occurs in about seventeen per cent, and it is worth recognising so it is not mistaken for a worsening infiltrate or a new ulcer."],
+   "Correct. It occurs in about seventeen percent, and it is worth recognizing so it is not mistaken for a worsening infiltrate or a new ulcer."],
   ["Moxifloxacin, and a white precipitate forms", "The finding is right but the agent is not; this is described for ciprofloxacin."],
   ["Gatifloxacin, and corneal deposits form", "Gatifloxacin carries no such described finding. The visible precipitate is specific to ciprofloxacin, in roughly one patient in six."],
   ["Ofloxacin, and conjunctival pigmentation develops", "Pigment change belongs with the prostaglandins in the glaucoma section, not with a fluoroquinolone."]],
@@ -265,12 +265,12 @@ QUESTIONS = [
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 30"},
 
 {"topic": "Precautions", "io": "Identify indications and contraindications of ophthalmic drugs", "slot": "next step",
- "q": "A patient presents with an eye complaint and you are about to instil a medication. What must be done first?",
+ "q": "A patient presents with an eye complaint and you are about to instill a medication. What must be done first?",
  "opts": [
   ["Measure visual acuity",
    "Correct. Acuity is measured before anything goes in the eye, and again at every follow-up. If it worsens, that is an immediate ophthalmology consult — which is the whole reason a baseline has to exist."],
   ["Measure intraocular pressure", "Tonometry has its own indications and needs an anesthetic first; it is not the universal precondition."],
-  ["Instil fluorescein to exclude an epithelial defect", "Useful when corneal injury is suspected, but not required before every ophthalmic medication."],
+  ["Instill fluorescein to exclude an epithelial defect", "Useful when corneal injury is suspected, but not required before every ophthalmic medication."],
   ["Confirm the patient is not wearing contact lenses", "Relevant to management, but the stated precaution that comes first is the acuity measurement."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 33"},
 
@@ -278,7 +278,7 @@ QUESTIONS = [
  "q": "Which delivery route carries the risk of globe perforation, optic nerve trauma and central retinal artery occlusion?",
  "opts": [
   ["Periocular injection",
-   "Correct. These periocular injections reach the anterior segment, posterior uveitis and cystoid macular oedema, but the needle is the hazard — perforation, optic nerve trauma, vascular occlusion and direct retinal drug toxicity if the globe is entered."],
+   "Correct. These periocular injections reach the anterior segment, posterior uveitis and cystoid macular edema, but the needle is the hazard — perforation, optic nerve trauma, vascular occlusion and direct retinal drug toxicity if the globe is entered."],
   ["Topical instillation", "Its limitations are compliance, corneal and conjunctival toxicity, nasal mucosal toxicity and systemic effects from nasolacrimal absorption — no needle, no perforation."],
   ["Oral administration", "Systemic exposure is the trade-off there, not mechanical injury to the globe."],
   ["Intravenous administration", "Again a systemic route; it carries no risk of perforating the eye."]],
@@ -299,7 +299,7 @@ QUESTIONS = [
  "opts": [
   ["The concentration gradient, governed by Fick's law",
    "Correct. Transcorneal movement is passive diffusion, so the steeper the gradient the faster the transfer. That is also why raising concentration, rather than volume, is the lever that matters."],
-  ["The tear film pH, governed by the Henderson-Hasselbalch equation", "Ionisation matters for some drugs, but the rate-determining variable stated here is the gradient."],
+  ["The tear film pH, governed by the Henderson-Hasselbalch equation", "Ionization matters for some drugs, but the rate-determining variable stated here is the gradient."],
   ["The corneal blood flow, governed by Fick's principle", "The cornea is avascular, which is part of why diffusion rather than perfusion governs delivery."],
   ["The drug's molecular weight, governed by Graham's law", "Molecular weight is not the variable named. Transcorneal movement is passive diffusion, so it is the concentration gradient that governs the rate."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 8"},
@@ -319,7 +319,7 @@ QUESTIONS = [
  "opts": [
   ["Some drugs accumulate in ocular tissue after systemic absorption",
    "Correct. Distribution into the eye happens normally after systemic absorption, and a few drugs concentrate there over time. The bull's eye maculopathy is the named consequence."],
-  ["Chloroquine is metabolised in the eye to a toxic product", "Ocular metabolism is exploited for prodrugs such as dipivefrin and latanoprost, not offered as the explanation here."],
+  ["Chloroquine is metabolized in the eye to a toxic product", "Ocular metabolism is exploited for prodrugs such as dipivefrin and latanoprost, not offered as the explanation here."],
   ["Nasolacrimal drainage delivers a high local dose", "That route carries drug away from the eye toward the systemic circulation, not into the retina."],
   ["Chloroquine binds tear proteins and is retained on the surface", "Tear protein binding acts on the ocular surface and limits absorption; it cannot deposit anything in the retina, where the bull\u2019s eye lesion sits."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 10"},
@@ -381,7 +381,7 @@ QUESTIONS = [
    "Correct. The dosing advantage is real and helps compliance, but cost keeps it from being used as often clinically. Erythromycin remains the common one."],
   ["It is less effective against the usual conjunctivitis organisms", "Azithromycin is not described as less effective. The reason it is used less often is expense, despite its more convenient dosing."],
   ["It cannot be used in contact lens wearers", "No such restriction is given; the contact lens concern drives you toward a fluoroquinolone for Pseudomonas cover."],
-  ["It causes a white precipitate on the eye", "That is ciprofloxacin, in about seventeen per cent of patients."]],
+  ["It causes a white precipitate on the eye", "That is ciprofloxacin, in about seventeen percent of patients."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 17"},
 
 {"topic": "Ocular antibiotics", "io": "Identify indications and contraindications of ophthalmic drugs", "slot": "drug choice",
@@ -430,7 +430,7 @@ QUESTIONS = [
   ["Intracameral injection",
    "Correct. Prompt onset, used in anterior segment surgery and infection, but its effect is relatively short-lived and it carries corneal and intraocular toxicity."],
   ["Topical instillation", "Prompt depending on formulation, but it is the convenient everyday route rather than a surgical one."],
-  ["Retrobulbar injection", "A periocular route whose utility is posterior uveitis and cystoid macular oedema."],
+  ["Retrobulbar injection", "A periocular route whose utility is posterior uveitis and cystoid macular edema."],
   ["Oral administration", "Oral and parenteral agents exist for infections topical therapy cannot reach, which is not the situation described here."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 5"},
 
@@ -438,9 +438,9 @@ QUESTIONS = [
  "q": "Which non-infectious causes of conjunctivitis are commoner than the bacterial ones?",
  "opts": [
   ["Viruses, allergy, irritants and contact lenses",
-   "Correct. These are given as the common causes, with immune-mediated reactions, systemic disease and tumours as less common. Bacterial pathogens come after — a reminder that most red eyes are not bacterial."],
+   "Correct. These are given as the common causes, with immune-mediated reactions, systemic disease and tumors as less common. Bacterial pathogens come after — a reminder that most red eyes are not bacterial."],
   ["Only bacterial pathogens are listed as common", "The non-infectious causes come FIRST precisely because most red eyes are not bacterial; the pathogens are the smaller group."],
-  ["Tumours and systemic disease", "Tumours and systemic disease do appear, but in the less common group alongside immune-mediated reactions rather than among the common causes."],
+  ["Tumors and systemic disease", "Tumors and systemic disease do appear, but in the less common group alongside immune-mediated reactions rather than among the common causes."],
   ["Fungal keratitis and herpes zoster", "Fungal keratitis and herpes zoster are separate entities, and neither is a common cause of conjunctivitis."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 13"},
 
@@ -479,8 +479,8 @@ QUESTIONS = [
    "That is described with ciprofloxacin, in about one in six patients, rather than with trifluridine."],
   ["Raised intraocular pressure",
    "Pressure elevation is described with the nonsteroidals and with steroids rather than with an antiviral agent."],
-  ["Changes in iris colour",
-   "Iris colour change belongs to the prostaglandin analogues used in glaucoma."]],
+  ["Changes in iris color",
+   "Iris color change belongs to the prostaglandin analogs used in glaucoma."]],
  "c": 0, "cite": "Ophthalmology-2.pptx, Slide 27"},
 
 ]

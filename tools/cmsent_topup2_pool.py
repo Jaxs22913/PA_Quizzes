@@ -20,7 +20,7 @@ Q("Acute otitis media risk factors", I15,
   "adults.",
   [["The child's eustachian tube is shorter, wider and more horizontal",
     "Correct. The adult tube runs downward at an angle, so gravity assists drainage and its narrower "
-    "calibre resists reflux from the nasopharynx. In a young child it is short, wide and nearly "
+    "caliber resists reflux from the nasopharynx. In a young child it is short, wide and nearly "
     "horizontal, which lets nasopharyngeal secretions and organisms reach the middle ear easily and "
     "drain from it poorly."],
    ["Children have larger middle ear cavities",
@@ -64,17 +64,17 @@ Q("Perichondritis", I15,
     "cartilage necroses and the ear deforms."],
    ["Cellulitis of the auricle",
     "Simple cellulitis would involve the lobule too, because it spreads through skin and soft tissue "
-    "without regard to the cartilage boundary. The sparing is what localises this."],
-   ["Auricular haematoma",
-    "A haematoma follows blunt trauma and produces a tense swelling that obliterates the normal "
+    "without regard to the cartilage boundary. The sparing is what localizes this."],
+   ["Auricular hematoma",
+    "A hematoma follows blunt trauma and produces a tense swelling that obliterates the normal "
     "contours. It is not hot and erythematous, and there is no history of a blow."],
-   ["Contact dermatitis from the jewellery",
+   ["Contact dermatitis from the jewelry",
     "Nickel allergy is common and would give itch with an eczematous rash, often extending to the "
     "lobule if that is pierced too. Severe tenderness with heat indicates infection rather than "
     "allergy."]],
   "diagnosis", D15, 35),
 
-Q("Hearing aid counselling", I15,
+Q("Hearing aid counseling", I15,
   "A 68-year-old man with a conductive loss from otosclerosis is choosing between stapedectomy and "
   "a hearing aid.",
   [["Both are reasonable; surgery addresses the mechanism, an aid amplifies",
@@ -116,20 +116,20 @@ Q("Barotrauma in divers", I15,
   "diagnosis", D15, 37),
 
 Q("Ear discharge", I15,
-  "A clinician is asked how the character of ear discharge helps localise the problem.",
+  "A clinician is asked how the character of ear discharge helps localize the problem.",
   [["Scanty and itchy suggests the canal; profuse and mucoid suggests the middle ear",
     "Correct. The canal has no mucous glands, so discharge arising there is scanty, often itchy, and "
     "made of desquamated skin and exudate. Mucoid discharge implies mucous membrane, which exists in "
-    "the middle ear, so profuse mucoid otorrhoea indicates it is coming through a perforation rather "
+    "the middle ear, so profuse mucoid otorrhea indicates it is coming through a perforation rather "
     "than from the canal itself."],
    ["Bloody discharge always indicates malignancy",
-    "Bloody otorrhoea is a red flag that should prompt examination for carcinoma of the canal, "
+    "Bloody otorrhea is a red flag that should prompt examination for carcinoma of the canal, "
     "particularly with treatment-resistant symptoms, but it also occurs with granulation tissue, "
     "trauma and acute perforation."],
    ["Foul-smelling discharge always indicates cholesteatoma",
     "Cholesteatoma classically produces foul discharge, so the association is worth knowing, but a "
     "retained foreign body and chronic suppurative otitis media both do the same thing."],
-   ["Discharge character carries no localising information",
+   ["Discharge character carries no localizing information",
     "It carries a good deal, which is why it is described rather than merely noted. The presence of "
     "mucus in particular tells you which side of the drum the problem is on."]],
   "finding", D15, 31),
@@ -158,13 +158,13 @@ Q("Ear examination in children", I15,
   [["Pull the pinna downward and backward",
     "Correct. The infant and toddler canal runs upward from the drum, so the pinna is pulled down "
     "and back to align it. In older children and adults the canal takes the opposite course and the "
-    "pinna is pulled up and back. Using the adult manoeuvre in a toddler leaves the drum "
+    "pinna is pulled up and back. Using the adult maneuver in a toddler leaves the drum "
     "obscured."],
    ["Pull the pinna upward and backward",
     "That is the correct technique for an older child or adult, whose canal curves differently. "
     "Applying it to a toddler works against the canal's natural direction."],
    ["Pull the tragus forward",
-    "Pulling the tragus is the manoeuvre that ELICITS PAIN in otitis externa; it is a diagnostic "
+    "Pulling the tragus is the maneuver that ELICITS PAIN in otitis externa; it is a diagnostic "
     "test rather than a way to straighten the canal for viewing."],
    ["Push the pinna directly downward",
     "Downward force alone does not straighten the canal's curve, which requires a backward component "
@@ -183,7 +183,7 @@ Q("Sinusitis symptom duration", I17,
     "and using it would classify ordinary prolonged viral illness as chronic disease."],
    ["Acute under twelve weeks, chronic beyond six months",
     "These are too long, and would leave a patient with three months of continuous symptoms still "
-    "labelled acute, delaying the change in management that chronic disease requires."],
+    "labeled acute, delaying the change in management that chronic disease requires."],
    ["Duration is not used to classify rhinosinusitis",
     "Duration is the primary axis of classification, and it is also one of the criteria that "
     "distinguishes bacterial from viral disease within the acute category."]],
@@ -208,7 +208,7 @@ Q("Epistaxis first aid", I17,
   "treatment", D17, 41),
 
 Q("Vasomotor rhinitis", I17,
-  "A 48-year-old man has clear bilateral rhinorrhoea triggered by cold air, strong smells and "
+  "A 48-year-old man has clear bilateral rhinorrhea triggered by cold air, strong smells and "
   "alcohol. He has no itch, no sneezing paroxysms and negative allergy testing.",
   [["Vasomotor rhinitis",
     "Correct. Vasomotor rhinitis produces clear bilateral discharge like allergic rhinitis, which is "
@@ -221,8 +221,8 @@ Q("Vasomotor rhinitis", I17,
     "absent here."],
    ["Chronic bacterial sinusitis",
     "Chronic sinusitis produces purulent discharge with facial pressure and reduced smell over "
-    "twelve weeks or more, rather than clear discharge triggered by cold air and odours."],
-   ["Cerebrospinal fluid rhinorrhoea",
+    "twelve weeks or more, rather than clear discharge triggered by cold air and odors."],
+   ["Cerebrospinal fluid rhinorrhea",
     "Clear fluid from the nose does raise this possibility, but it follows head trauma or surgery, "
     "is typically unilateral, and is not provoked by smells or alcohol."]],
   "diagnosis", D17, 66),
@@ -240,7 +240,7 @@ Q("Nasal polyps and asthma", I17,
     "The association is real and clinically decisive in children, but the figure is far lower. "
     "Overstating it would imply almost every polyp patient has cystic fibrosis."],
    ["Asthma is associated in under 5% of cases",
-    "This understates a well-recognised association of 20 to 50 per cent, and it would remove the "
+    "This understates a well-recognized association of 20 to 50 percent, and it would remove the "
     "prompt to ask every polyp patient about wheeze."],
    ["No systemic conditions are associated with nasal polyps",
     "Multiple benign polyps have a long list of associations, including asthma, cystic "
@@ -283,7 +283,7 @@ Q("Anosmia", I17,
    ["A normal age-related change",
     "Smell does decline with age, but not over a few months and not alongside obstruction and "
     "discharge, which point to a treatable mechanical cause."],
-   ["An early sign of a nasopharyngeal tumour",
+   ["An early sign of a nasopharyngeal tumor",
     "A nasopharyngeal carcinoma presents with unilateral obstruction, blood-stained discharge, a "
     "neck mass or cranial nerve signs. Bilateral obstruction with anosmia more often reflects polyps "
     "or chronic inflammation."]],
@@ -294,7 +294,7 @@ Q("Nasal fracture timing", I17,
   "swelling. He asks when it can be straightened.",
   [["Once the swelling settles, generally within about two weeks of injury",
     "Correct. Marked swelling obscures the underlying bony position, so reduction attempted "
-    "immediately risks an inaccurate result. Waiting a few days lets the oedema settle, but the "
+    "immediately risks an inaccurate result. Waiting a few days lets the edema settle, but the "
     "bones begin to unite after roughly two weeks, so there is a window in which reduction is both "
     "accurate and still possible."],
    ["Immediately, before any swelling develops",
@@ -308,10 +308,10 @@ Q("Nasal fracture timing", I17,
     "displacement. Leaving every one untreated would accept avoidable deformity."]],
   "next step", D17, 46),
 
-Q("Septal haematoma examination", I17,
+Q("Septal hematoma examination", I17,
   "A clinician is taught what to look for after any nasal injury, however minor it seems.",
   [["Inspect the septum for a boggy swelling",
-    "Correct. A septal haematoma is easy to miss because attention goes to the bridge and to whether "
+    "Correct. A septal hematoma is easy to miss because attention goes to the bridge and to whether "
     "the nose looks straight, yet it is the one finding that destroys cartilage within days if not "
     "drained. Looking specifically at the septum, and feeling it, is what the four-criteria rule "
     "makes explicit."],
@@ -320,7 +320,7 @@ Q("Septal haematoma examination", I17,
     "the perichondrium, which can be present in an entirely straight nose."],
    ["Obtain a radiograph in every case",
     "Films are omitted when all four reassuring criteria are met, and one of those criteria is the "
-    "absence of a septal haematoma, which is established by looking rather than by imaging."],
+    "absence of a septal hematoma, which is established by looking rather than by imaging."],
    ["Check only for external bruising",
     "Bruising indicates that force was applied but has no relationship to whether blood has "
     "collected under the septal perichondrium."]],

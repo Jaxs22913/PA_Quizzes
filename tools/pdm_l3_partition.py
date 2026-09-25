@@ -8,7 +8,7 @@ PROFESSOR REYNOLDS' RULES, asserted rather than trusted. Both carry over from he
 2026-08-18 Lecture 1 recording:
 
   1. "I'm not going to just throw a random number at you and not give you context
-     of whether that's high or low." -> A decibel level, a pressure, a millimetre
+     of whether that's high or low." -> A decibel level, a pressure, a millimeter
      measurement or a percentage may not appear without the scale that reads it.
   2. "We're not gonna do math, I'm not gonna make you do math." -> No question
      asks the student to calculate.

@@ -68,7 +68,7 @@ SECTION = """
 
   <h3 class="sub" id="si-leukocytes">6.2 &middot; Objective 2 &mdash; The leukocytes, in order</h3>
   <p>All five originate in the <strong>bone marrow</strong>, and are counted by manual examination
-  of a stained blood smear or by automated haematology.</p>
+  of a stained blood smear or by automated hematology.</p>
   <div class="callout">
     <p><strong>&ldquo;Never let monkeys eat bananas&rdquo;</strong> &mdash; highest to lowest
     percentage: <strong>N</strong>eutrophils, <strong>l</strong>ymphocytes,
@@ -105,7 +105,7 @@ SECTION = """
   </ol>
   <div class="callout">
     <p><strong>The point to hold: specificity exists BEFORE the antigen does.</strong> It is
-    pre-programmed in the genome. Antigen entry does not instruct a lymphocyte what to recognise
+    pre-programmed in the genome. Antigen entry does not instruct a lymphocyte what to recognize
     &mdash; it <strong>selects</strong> the clone that already carries the matching receptor. That
     is what &ldquo;clonal selection&rdquo; names, and getting it backwards is the classic error.</p>
   </div>
@@ -132,7 +132,7 @@ SECTION = """
   <p>An <strong>antigen</strong> is anything provoking a response in specific lymphocytes &mdash;
   it must be perceived as foreign <em>and</em> be big enough to attract attention. The
   <strong>antigenic determinant</strong> or <strong>epitope</strong> is the small molecular group
-  actually recognised, and one antigen may carry many.</p>
+  actually recognized, and one antigen may carry many.</p>
   <p><strong>Size decides antigenicity.</strong> Foreign cells and complex molecules
   <strong>over 100,000 molecular weight</strong> are the most antigenic, and usually large
   proteins. Molecules <strong>under 1,000</strong> &mdash; <strong>haptens</strong> &mdash; are
@@ -205,7 +205,7 @@ SECTION = """
   responses it <strong>does not fall to zero</strong> between exposures.</p>
   <p><strong>T cells and cell-mediated immunity.</strong> T cells act directly against antigen and
   foreign cells but <strong>require MHC activation</strong>. All of them produce cytokines;
-  sensitised T cells become long-lasting <strong>memory T cells</strong>. Four types:</p>
+  sensitized T cells become long-lasting <strong>memory T cells</strong>. Four types:</p>
   <table class="tbl">
     <tr><th>Type</th><th>Marker</th><th>Role</th></tr>
     <tr><td><strong>T helper (TH)</strong></td><td>CD4</td><td>Assists other T and B cells &mdash; the <strong>conductor</strong> of the response</td></tr>
@@ -215,7 +215,7 @@ SECTION = """
   </table>
 
   <h3 class="sub" id="si-applications">6.9 &middot; The applications</h3>
-  <p><strong>Passive immunisation (immunotherapy)</strong> gives short-term protection &mdash; on
+  <p><strong>Passive immunization (immunotherapy)</strong> gives short-term protection &mdash; on
   the order of <strong>two to three months</strong>. Early use transfused <strong>horse
   serum</strong> antitoxins for tetanus and diphtheria; horse sera are still sometimes used for
   diphtheria, botulism and spider or snake bites, with <strong>serum sickness or
@@ -250,7 +250,7 @@ SECTION = """
   <p><strong>Marrow and stem cell donation</strong> requires a close <strong>class I MHC
   match</strong> plus further DNA compatibility testing. Marrow is harvested from the
   <strong>sternum, femur or iliac crest</strong>; circulating peripheral stem cells are collected
-  by <strong>apheresis</strong> after a mobilising drug. The recipient receives drug and radiation
+  by <strong>apheresis</strong> after a mobilizing drug. The recipient receives drug and radiation
   therapy beforehand <strong>to reduce the risk of rejecting the donor cells</strong>.</p>
 
   <button type="button" class="test-yourself-btn" onclick="window.openTestYourself('Test yourself &mdash; The Acquisition of Specific Immunity', TEST_YOURSELF.specificimmunity)">Test yourself! &rarr;</button>
@@ -274,7 +274,7 @@ TEST = """    specificimmunity: [
        o:["Natural active","Natural passive","Artificial active","Artificial passive"],a:0,
        why:"Active means they made it themselves; natural means it came from infection rather than a needle."},
       {q:"What proportion of natural passive immunity is acquired IN UTERO?",
-       o:["About 99 per cent","About half","About 10 per cent","None — it all comes from milk"],a:0,
+       o:["About 99 percent","About half","About 10 percent","None — it all comes from milk"],a:0,
        why:"Nursing adds beneficial microbes and antibody the placenta cannot pass, but the bulk arrives before birth."},
       {q:"Which cells lack MHC receptors?",
        o:["Red blood cells","Macrophages","B lymphocytes","Neutrophils"],a:0,
@@ -322,12 +322,12 @@ TEST = """    specificimmunity: [
        o:["The T suppressor cell","The cytotoxic T cell","The T helper cell","The delayed hypersensitivity cell"],a:0,
        why:"Four types: helper (CD4) conducts, cytotoxic (CD8) lyses, delayed hypersensitivity causes late allergy, suppressor limits."},
       {q:"What does the ending -zumab signify?",
-       o:["Humanised protein","Mouse protein","Chimeric protein","Entirely human protein"],a:0,
-       why:"-omab is mouse, -ximab chimeric, -zumab humanised, -umab entirely human."},
+       o:["Humanized protein","Mouse protein","Chimeric protein","Entirely human protein"],a:0,
+       why:"-omab is mouse, -ximab chimeric, -zumab humanized, -umab entirely human."},
       {q:"What match is required for marrow donation?",
        o:["A close class I MHC match, plus DNA compatibility testing","A class II MHC match only",
           "ABO compatibility alone","No match is needed"],a:0,
-       why:"Marrow comes from the sternum, femur or iliac crest; peripheral stem cells by apheresis after a mobilising drug."},
+       why:"Marrow comes from the sternum, femur or iliac crest; peripheral stem cells by apheresis after a mobilizing drug."},
       {q:"Which responses should an effective vaccine stimulate?",
        o:["BOTH antibody-mediated and cell-mediated","Antibody-mediated only",
           "Cell-mediated only","Innate only"],a:0,

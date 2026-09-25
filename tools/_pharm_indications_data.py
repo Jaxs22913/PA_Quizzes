@@ -90,7 +90,7 @@ ROWS = [
   "<b>DRUG OF CHOICE for penicillin-allergy infections, MRSA, <i>C. difficile</i> (oral), endocarditis, "
   "osteomyelitis, and surgical prophylaxis in allergy.</b> <b>Gram-positive coverage ONLY.</b>",
   "<b>Oral for <i>C. difficile</i>, intravenous for everything else</b> &mdash; the route changes with the "
-  "indication, which is a favourite question.",
+  "indication, which is a favorite question.",
   "DOC", L1, 47, ["Drug of Choice", "Pen-allergy", "MRSA", "C. Diff (PO)", "Endocarditis", "Osteomyelitis"]),
  ("Vancomycin",
   "Target trough <b>10&ndash;15 or 15&ndash;20 mcg/mL depending on the indication</b>. A loading dose of "
@@ -144,7 +144,7 @@ ROWS = [
  # ---------------- FLUOROQUINOLONES ----------------
  ("Fluoroquinolones<br><span class=g>class</span>",
   "<b>DRUG OF CHOICE for community-acquired pneumonia, sinusitis and otitis, hospital-acquired pneumonia (higher "
-  "dose), urinary tract infection, infectious diarrhoeas, skin infection and osteomyelitis.</b>",
+  "dose), urinary tract infection, infectious diarrheas, skin infection and osteomyelitis.</b>",
   "<b>Separate from iron, antacids, multivitamins, calcium and dairy.</b> The deck flags <b>OVERUSE = "
   "RESISTANCE</b> and collateral damage with <i>C. difficile</i>. Watch the <b>QTc</b> and central nervous "
   "system effects <b>in the elderly</b>.",
@@ -161,9 +161,9 @@ ROWS = [
  ("Trimethoprim/sulfamethoxazole<br><span class=g>Septra, Bactrim</span>",
   "<b><i>Pneumocystis jirovecii</i> pneumonia &mdash; treatment AND prophylaxis.</b> Urinary tract infection, "
   "bacterial prostatitis, orchitis and epididymitis; respiratory tract infection; and gastrointestinal infection "
-  "including <b>traveller's diarrhoea</b> and <i>Shigella</i> enteritis.",
-  "The PJP (<i>Pneumocystis jirovecii</i> pneumonia) indication is the flagship one. Check for <b>warfarin (raises the INR, the international normalised ratio), phenytoin, digoxin and "
-  "sulfonylureas (hypoglycaemia)</b>.",
+  "including <b>traveler's diarrhea</b> and <i>Shigella</i> enteritis.",
+  "The PJP (<i>Pneumocystis jirovecii</i> pneumonia) indication is the flagship one. Check for <b>warfarin (raises the INR, the international normalized ratio), phenytoin, digoxin and "
+  "sulfonylureas (hypoglycemia)</b>.",
   "IND", L1, 84, ["PJP", "Pneumocystic jiroveci", "prophylaxis", "prostatitis", "Traveler’s diarrhea"]),
  ("Metronidazole<br><span class=g>Flagyl</span>",
   "<b>DRUG OF CHOICE for <i>Clostridium difficile</i> (intravenous or oral)</b>, intra-abdominal combination "
@@ -218,7 +218,7 @@ ROWS = [
   "Warn about <b>visual effects, which occur in 30%</b>.",
   "IND", L1, 107, ["systemic aspergillus", "replacing Amphotericin"]),
  ("Echinocandins<br><span class=g>caspofungin, micafungin, anidulafungin</span>",
-  "<b>Oesophageal candidiasis</b>, <b>systemic aspergillus not responding to itraconazole or amphotericin</b>, "
+  "<b>Esophageal candidiasis</b>, <b>systemic aspergillus not responding to itraconazole or amphotericin</b>, "
   "and <b>febrile neutropenic patients not responding to antibiotics</b>.",
   "Positioned as the salvage option after the azoles and amphotericin fail.",
   "IND", L1, 109, ["Esophageal candidiasis", "not responding to itraconazole", "febrile neutropenic"]),
@@ -275,7 +275,7 @@ ROWS = [
   "EDU", L2, 25, ["Adapalene", "Stable in sunlight", "stable with benzoyl peroxide", "less irritating"]),
  ("Isotretinoin<br><span class=g>Accutane</span>",
   "<b>Severe acne when topical treatment is not enough &mdash; effective in 1 to 3 months.</b>",
-  "<b>iPledge enrolment.</b> Contraindicated in pregnancy and breastfeeding, and <b>men should avoid as well</b>. "
+  "<b>iPledge enrollment.</b> Contraindicated in pregnancy and breastfeeding, and <b>men should avoid as well</b>. "
   "<b>Monitor for signs of developing depression</b> and for raised serum lipids.",
   "EDU", L2, 27, ["effective in 1-3 months", "iPledge", "Monitor for signs of developing depression"]),
  ("Topical antibiotics for acne<br><span class=g>clindamycin, erythromycin</span>",
@@ -314,7 +314,7 @@ ROWS = [
   "IND", L2, 47, ["esp. MRSA", "eliminate nasal carriage", "Not absorbed"]),
  ("Imiquimod<br><span class=g>Aldara</span>",
   "<b>External and perianal warts, actinic keratoses, and basal cell carcinoma.</b> An immunomodulator that "
-  "drives interferon-alpha, tumour necrosis factor and interleukins.",
+  "drives interferon-alpha, tumor necrosis factor and interleukins.",
   "Applied <b>two to five times per week</b>. <b>Skin irritation occurs in virtually all patients &mdash; and "
   "the degree of inflammation parallels efficacy</b>, so warn them it is expected.",
   "EDU", L2, 57, ["external and perianal warts", "actinic keratoses", "basal cell carcinoma",
@@ -384,7 +384,7 @@ ROWS = [
   "IND", L3, 51, ["Antisecretory", "Antidote for cholinergic agonists", "mushroom poisoning",
                   "Antispasmodic"]),
  ("Scopolamine<br><span class=g>Transderm Scop</span>",
-  "<b>Prevention of motion sickness</b>, adjunct in anaesthesia, short-term memory blocking, and reducing "
+  "<b>Prevention of motion sickness</b>, adjunct in anesthesia, short-term memory blocking, and reducing "
   "secretions.",
   "<b>Wash hands thoroughly after placing the patch</b> &mdash; touching an eye afterwards causes blurred vision.",
   "EDU", L3, 54, ["Prevention of motion sickness", "Transderm Scop", "wash hands thoroughly"]),
@@ -403,23 +403,23 @@ ROWS = [
   "EDU", L3, 56, ["Lower intravesicular pressure", "Increase bladder capacity",
                   "not to cross blood-brain barrier"]),
  ("Succinylcholine",
-  "<b>Endotracheal intubation during induction of anaesthesia</b>, and <b>rapid sequence intubation in the "
+  "<b>Endotracheal intubation during induction of anesthesia</b>, and <b>rapid sequence intubation in the "
   "emergency department</b> &mdash; because of its rapid onset and short duration.",
   "<b>Give a small dose of a nondepolarizing blocker first</b> to reduce the fasciculations that cause muscle "
-  "soreness. <b>Respiratory muscles are paralysed LAST.</b>",
+  "soreness. <b>Respiratory muscles are paralyzed LAST.</b>",
   "EDU", L3, 66, ["endotracheal intubation", "rapid sequence intubation", "rapid onset",
                   "short duration"]),
 
  # ---------------- ANS: ADRENERGIC ----------------
  ("Epinephrine",
-  "<b>ANAPHYLACTIC SHOCK. CARDIAC ARREST.</b> And as an additive to <b>local anaesthetic solutions &mdash; "
+  "<b>ANAPHYLACTIC SHOCK. CARDIAC ARREST.</b> And as an additive to <b>local anesthetic solutions &mdash; "
   "usually 1:100,000 parts</b>.",
-  "In local anaesthesia it <b>greatly increases the duration</b> by producing <b>vasoconstriction at the "
+  "In local anesthesia it <b>greatly increases the duration</b> by producing <b>vasoconstriction at the "
   "injection site</b>, and applied topically it <b>helps control oozing of capillary blood</b>.",
   "IND", L3, 85, ["Anaphylactic shock", "Cardiac arrest", "1:100,000", "Greatly increases duration",
                   "control oozing of capillary blood"]),
  ("Epinephrine<br><span class=g>respiratory and metabolic</span>",
-  "<b>Bronchospasm &mdash; ACUTE reversal.</b> Also drives hyperglycaemia: increases hepatic glycogenolysis and "
+  "<b>Bronchospasm &mdash; ACUTE reversal.</b> Also drives hyperglycemia: increases hepatic glycogenolysis and "
   "glucagon release (beta-2) and decreases insulin release (alpha-1).",
   "<b>Selective beta-2 agonists such as albuterol are used for CHRONIC treatment instead</b>, because of their "
   "longer duration and less cardiac stimulation. Acute versus chronic is the whole distinction.",
@@ -441,7 +441,7 @@ ROWS = [
   "<b>Nasal decongestant</b> and <b>relief of redness in the eyes</b>. An alpha-1 and alpha-2 agonist producing "
   "vasoconstriction.",
   "<b>DO NOT USE LONGER THAN THREE DAYS &mdash; rhinitis medicamentosa (rebound congestion) may occur.</b> The "
-  "single most useful counselling point on any over-the-counter product in this lecture.",
+  "single most useful counseling point on any over-the-counter product in this lecture.",
   "EDU", L3, 95, ["Nasal decongestant", "Rhinitis", "rebound congestion", "longer than three days"]),
  ("Phenylephrine<br><span class=g>Neo-Synephrine</span>",
   "<b>Nasal decongestant, relief of redness in the eyes, and septic shock.</b> A selective alpha-1 agonist.",
@@ -458,19 +458,19 @@ ROWS = [
   "<b>NO therapeutic use.</b> A normal by-product of tyrosine metabolism, <b>found in fermented foods such as "
   "cheese and wine</b>.",
   "<b>May cause serious vasopressor effects if the patient is taking a monoamine oxidase inhibitor</b> &mdash; "
-  "normally it is oxidised by MAO (monoamine oxidase) in the gut. This is the food-interaction counselling point.",
+  "normally it is oxidized by MAO (monoamine oxidase) in the gut. This is the food-interaction counseling point.",
   "EDU", L3, 101, ["Normal by-product of tyrosine metabolism", "serious vasopressor effects",
                    "MAOI", "fermented foods", "cheese and wine"]),
  ("Cocaine",
-  "<b>Local anaesthetic</b> &mdash; it blocks neuronal sodium channels. It also blocks norepinephrine reuptake, "
+  "<b>Local anesthetic</b> &mdash; it blocks neuronal sodium channels. It also blocks norepinephrine reuptake, "
   "potentiating norepinephrine and epinephrine.",
   "Raises blood pressure, stimulates the heart and increases central nervous system activity &mdash; which is "
   "why it exaggerates the cardiovascular actions of epinephrine.",
   "IND", L3, 102, ["Blocks reuptake of norepinephrine", "Anesthetic", "Blocks neuronal sodium channels",
                    "Local anesthetic"]),
  ("Nondepolarizing blockers<br><span class=g>pancuronium, vecuronium, rocuronium, cisatracurium</span>",
-  "<b>Adjuvant drugs in anaesthesia to relax skeletal muscle</b>, to <b>facilitate intubation</b>, and <b>during "
-  "orthopaedic surgery for fracture alignment and dislocation correction</b>.",
+  "<b>Adjuvant drugs in anesthesia to relax skeletal muscle</b>, to <b>facilitate intubation</b>, and <b>during "
+  "orthopedic surgery for fracture alignment and dislocation correction</b>.",
   "<b>Atracurium was replaced by its isomer cisatracurium (Nimbex) because of fewer adverse effects.</b>",
   "IND", L3, 63, ["adjuvant drugs in anesthesia", "Facilitate intubation", "orthopedic surgery",
                   "cisatracurium", "fewer adverse effects"]),
@@ -503,7 +503,7 @@ ROWS = [
   "inhaler is harming them.",
   "IND", L3, 98, ["Asthma/COPD", "Bronchodilation", "Tremor, restlessness"]),
  ("Clonidine<br><span class=g>Catapres</span>",
-  "<b>Hypertension</b>, and <b>minimising withdrawal symptoms from opiates, tobacco and benzodiazepines</b>.",
+  "<b>Hypertension</b>, and <b>minimizing withdrawal symptoms from opiates, tobacco and benzodiazepines</b>.",
   "<b>Never stop it abruptly &mdash; rebound hypertension.</b> Expect lethargy, sedation, constipation and dry "
   "mouth.",
   "EDU", L3, 97, ["Hypertension", "Minimize symptoms of withdrawal", "opiates, tobacco",
@@ -516,9 +516,9 @@ ROWS = [
   "EDU", L3, 104, ["Pseudoephedrine used to relieve nasal", "banned by FDA in 2004",
                    "converted to methamphetamine", "behind pharmacy counter"]),
  ("Phenoxybenzamine",
-  "<b>Pheochromocytoma</b> (a catecholamine-secreting tumour of adrenal medulla origin) and <b>autonomic "
+  "<b>Pheochromocytoma</b> (a catecholamine-secreting tumor of adrenal medulla origin) and <b>autonomic "
   "hyperreflexia in paraplegic patients</b>.",
-  "The block is <b>irreversible</b> &mdash; the body must synthesise new receptors, which takes <b>at least 24 "
+  "The block is <b>irreversible</b> &mdash; the body must synthesize new receptors, which takes <b>at least 24 "
   "hours</b>.",
   "IND", L3, 109, ["pheochromocytoma", "catecholamine-secreting tumor", "hyperreflexia", "paraplegic"]),
  ("Phentolamine",
@@ -542,7 +542,7 @@ ROWS = [
   "IND", L3, 116, ["Antihypertensive", "Migraine prevention", "Hyperthyroidism", "Angina pectoris",
                    "prevent second MI"]),
  ("Timolol, nadolol",
-  "<b>Timolol reduces production of aqueous humour &mdash; used in chronic open-angle glaucoma.</b> "
+  "<b>Timolol reduces production of aqueous humor &mdash; used in chronic open-angle glaucoma.</b> "
   "Occasionally used for hypertension.",
   "<b>More potent than propranolol</b>, and nonselective.",
   "IND", L3, 119, ["reduces production of aqueous humor", "chronic open-angle glaucoma",

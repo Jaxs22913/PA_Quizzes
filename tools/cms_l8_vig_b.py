@@ -81,7 +81,7 @@ POOL_B = [
  dict(topic="Naevus spilus", io=IOA,
    q="The parents of a child with naevus spilus ask about follow-up. Which is the most appropriate plan?",
    opts=[
-     ["Observation with periodic clinical evaluation, plus sun protection counselling",
+     ["Observation with periodic clinical evaluation, plus sun protection counseling",
       "Correct — the lesion rarely progresses to melanoma."],
      ["Excision of the whole patch before adolescence to eliminate the melanoma risk",
       "It rarely progresses to melanoma, so excision is not required."],
@@ -92,7 +92,7 @@ POOL_B = [
    c=0, cite=c(34)),
 
  dict(topic="Common acquired naevus", io=IOB,
-   q="A 34-year-old man has about forty moles, most 3 to 5 mm, evenly coloured, round and sharply demarcated. He asks whether he has too many. Which is the most appropriate response?",
+   q="A 34-year-old man has about forty moles, most 3 to 5 mm, evenly colored, round and sharply demarcated. He asks whether he has too many. Which is the most appropriate response?",
    opts=[
      ["Numbers peak in the thirties and then decline, but melanoma risk rises with the number, so sun protection and monitoring matter",
       "Correct — light skin tone and a tendency to sunburn increase the number."],
@@ -108,12 +108,12 @@ POOL_B = [
    q="A 29-year-old fair-skinned woman has a 4 mm naevus on the shoulder that is very dark brown, almost black, unlike her other moles. Which is the most appropriate interpretation?",
    opts=[
      ["Very dark brown or black on light skin is suspicious and warrants further assessment",
-      "Correct — common acquired naevi are usually skin coloured, brown or pink with homogenous colour."],
-     ["Dark colour is expected in a common acquired naevus and needs no further attention",
-      "That colour on light skin is specifically flagged as suspicious."],
-     ["Dark colour indicates a blue naevus, which is benign and needs only observation",
+      "Correct — common acquired naevi are usually skin colored, brown or pink with homogenous color."],
+     ["Dark color is expected in a common acquired naevus and needs no further attention",
+      "That color on light skin is specifically flagged as suspicious."],
+     ["Dark color indicates a blue naevus, which is benign and needs only observation",
       "Blue naevi are blue to blue-black and sit on characteristic sites."],
-     ["Dark colour indicates a seborrheic keratosis, which is benign and needs no action",
+     ["Dark color indicates a seborrheic keratosis, which is benign and needs no action",
       "That is a velvety stuck-on papule rather than a flat naevus."]],
    c=0, cite=c(36)),
 
@@ -121,7 +121,7 @@ POOL_B = [
    q="A 38-year-old woman wants a mole on her back removed because her bra strap catches it. Which is the most appropriate response?",
    lead="treatment",
    opts=[
-     ["Removal for symptomatic or cosmetic reasons is reasonable, alongside sun protection counselling",
+     ["Removal for symptomatic or cosmetic reasons is reasonable, alongside sun protection counseling",
       "Correct — the diagnosis is clinical and management is otherwise observation."],
      ["Removal is not offered for symptoms, since a benign naevus should always be left alone",
       "Symptomatic relief is a named indication for removal."],
@@ -145,7 +145,7 @@ POOL_B = [
    c=0, cite=c(39)),
 
  dict(topic="Blue naevus", io=IOA,
-   q="A 36-year-old man has a 2 cm blue-grey nodule on the sacral region suspected to be a cellular blue naevus. Which is the most appropriate next step?",
+   q="A 36-year-old man has a 2 cm blue-gray nodule on the sacral region suspected to be a cellular blue naevus. Which is the most appropriate next step?",
    opts=[
      ["Biopsy, since diagnosis is clinical for small lesions but by biopsy for larger ones",
       "Correct — observation follows, with biopsy or excision if changes are noted."],
@@ -158,12 +158,12 @@ POOL_B = [
    c=0, cite=c(40)),
 
  dict(topic="Pigmented spindle cell naevus", io=IOA,
-   q="A 32-year-old woman has a sharply circumscribed jet-black papule 5 mm across on the thigh, with faint blue-grey shading at one edge. Which is the most likely diagnosis?",
+   q="A 32-year-old woman has a sharply circumscribed jet-black papule 5 mm across on the thigh, with faint blue-gray shading at one edge. Which is the most likely diagnosis?",
    opts=[
      ["Pigmented spindle cell naevus, also called Reed naevus",
       "Correct — commonest in the thirties, females more than males, on the lower extremities and mainly the thigh."],
      ["Blue naevus of the lower extremity",
-      "Those favour dorsal hands and feet, scalp, buttocks or sacral region."],
+      "Those favor dorsal hands and feet, scalp, buttocks or sacral region."],
      ["Spitz naevus of the lower extremity",
       "Those are pink or red, hairless, firm and dome-shaped."],
      ["Dysplastic naevus of the lower extremity",
@@ -179,7 +179,7 @@ POOL_B = [
       "Excision is the described management."],
      ["Cryotherapy for cosmetic improvement",
       "Cryotherapy is not among the described options."],
-     ["Sun protection counselling alone",
+     ["Sun protection counseling alone",
       "That is the management of naevus spilus."]],
    c=0, cite=c(41)),
 
@@ -191,9 +191,9 @@ POOL_B = [
      ["Pyogenic granuloma",
       "That bleeds readily and grows rapidly without a stable phase."],
      ["Common acquired naevus",
-      "Those are usually flat, under 6 mm, skin coloured to brown, and develop slowly."],
+      "Those are usually flat, under 6 mm, skin colored to brown, and develop slowly."],
      ["Blue naevus of the face",
-      "Those are blue to blue-black and favour hands, scalp, buttocks or sacrum."]],
+      "Those are blue to blue-black and favor hands, scalp, buttocks or sacrum."]],
    c=0, cite=c(42)),
 
  dict(topic="Spitz naevus", io=IOA,
@@ -217,20 +217,20 @@ POOL_B = [
       "Correct — management is then by excision."],
      ["It always transforms into melanoma if it is left in place beyond adolescence",
       "The lesion is usually benign."],
-     ["It grows continuously and will reach several centimetres if left untreated",
+     ["It grows continuously and will reach several centimeters if left untreated",
       "Growth is followed by a stable period."],
      ["It is contagious and can spread to other family members through contact",
       "It is a naevus rather than an infection."]],
    c=0, cite=c(42)),
 
  dict(topic="Dysplastic naevus", io=IOA,
-   q="A 27-year-old white man whose father had melanoma has over one hundred naevi, many at least 5 mm with irregular indistinct borders and variable tan to brown colour. Which is the most likely diagnosis?",
+   q="A 27-year-old white man whose father had melanoma has over one hundred naevi, many at least 5 mm with irregular indistinct borders and variable tan to brown color. Which is the most likely diagnosis?",
    opts=[
      ["Dysplastic naevus syndrome",
       "Correct — over one hundred naevi by adolescence, with family history as a risk factor."],
      ["Multiple common acquired naevi",
-      "Those are under 6 mm with sharp demarcation and homogenous colour."],
-     ["Generalised lentigines with an inherited association",
+      "Those are under 6 mm with sharp demarcation and homogenous color."],
+     ["Generalized lentigines with an inherited association",
       "Those are macules under 5 mm, uniformly black or brown."],
      ["Multiple naevus spilus lesions across the trunk",
       "Those carry darker macules on a tan background patch."]],
@@ -250,7 +250,7 @@ POOL_B = [
    c=0, cite=c(44)),
 
  dict(topic="Dysplastic naevus", io=IOB,
-   q="A 52-year-old man with numerous dysplastic naevi asks what he should do between clinic visits. Which is the most appropriate counselling point?",
+   q="A 52-year-old man with numerous dysplastic naevi asks what he should do between clinic visits. Which is the most appropriate counseling point?",
    opts=[
      ["Use sun protection and report any lesion that changes or is newly developing",
       "Correct — management is observation, biopsy of changing lesions and excision where melanoma is a concern."],

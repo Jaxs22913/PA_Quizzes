@@ -12,14 +12,14 @@ C = lambda n: "CMS I Disorders of the Oral Cavity, Salivary Glands, Slide %d" % 
 QUESTIONS = [
 
 Q("Peritonsillar abscess", IO,
-  "A 24-year-old with a peritonsillar abscess can barely open his mouth two centimetres.",
+  "A 24-year-old with a peritonsillar abscess can barely open his mouth two centimeters.",
   [["Trismus",
     "Correct. Pus tracking beside the medial pterygoid irritates it into spasm, limiting mouth "
     "opening. Of the classic triad of trismus, uvular deviation and dysphonia, trismus is singled "
     "out as the most reliable, and it is also what makes examination and drainage difficult."],
    ["Mediastinal spread",
     "Mediastinitis is the feared complication of a RETROPHARYNGEAL abscess, whose space runs to the "
-    "posterior mediastinum with 50 per cent mortality. It is not what limits jaw opening here."],
+    "posterior mediastinum with 50 percent mortality. It is not what limits jaw opening here."],
    ["Vagal involvement",
     "Vagus nerve involvement explains the DYSPHONIA, because the palate fails to elevate. Jaw "
     "opening is a trigeminal motor function through the muscles of mastication."],
@@ -69,7 +69,7 @@ Q("Oral candidiasis", IO,
     "topical antifungal therapy is the appropriate first step. Nystatin acts locally with negligible "
     "systemic absorption, which is the right profile for a well infant with superficial infection."],
    ["Oral fluconazole",
-    "Systemic azole therapy is reserved for extensive, refractory or oesophageal disease, or for "
+    "Systemic azole therapy is reserved for extensive, refractory or esophageal disease, or for "
     "immunocompromised patients such as those with HIV who may need longer courses."],
    ["Urgent immunodeficiency workup",
     "Persistent or unusually severe candidiasis warrants that thought, but thrush in a thriving "
@@ -100,16 +100,16 @@ Q("Epiglottitis in adults", IO,
   "A 48-year-old man has severe sore throat, odynophagia and a muffled voice for a day. He is "
   "febrile but not drooling and has no stridor. Laryngoscopy shows a swollen epiglottis.",
   [["Admit for observation and intravenous antibiotics",
-    "Correct. Adult supraglottitis progresses more slowly than the paediatric form and often does "
+    "Correct. Adult supraglottitis progresses more slowly than the pediatric form and often does "
     "not need immediate intubation, so observation with humidification, glucocorticoids, intravenous "
-    "antibiotics and nebulised adrenaline is appropriate, with the airway monitored in case it "
+    "antibiotics and nebulized adrenaline is appropriate, with the airway monitored in case it "
     "obstructs."],
    ["Immediate tracheostomy",
     "Tracheostomy is for an airway that has obstructed or is about to. Performing it in an adult who "
     "is not drooling and has no stridor imposes a major intervention ahead of need."],
    ["Discharge on oral antibiotics",
     "The slower adult course does not make discharge safe. The disease carries high mortality when "
-    "unrecognised, and deterioration can be rapid once it begins."],
+    "unrecognized, and deterioration can be rapid once it begins."],
    ["Lateral neck X-ray before treatment",
     "The thumbprint sign is not necessary for diagnosis, which laryngoscopy has already made, and "
     "ordering a film now delays treatment."]], C(66)),
@@ -118,7 +118,7 @@ Q("Vocal cord papillomatosis", IO,
   "A 4-year-old with recurrent respiratory papillomatosis is deteriorating, and tracheostomy is "
   "suggested.",
   [["Avoid tracheostomy",
-    "Correct. Papillomas favour squamociliary junctions, the boundaries where ciliated respiratory "
+    "Correct. Papillomas favor squamociliary junctions, the boundaries where ciliated respiratory "
     "epithelium meets squamous epithelium. A tracheostomy creates a new one, giving the disease a "
     "fresh site to seed and spreading it distally into the trachea, which is why it is specifically "
     "avoided."],
@@ -141,7 +141,7 @@ Q("Chronic laryngitis", IO,
     "laryngoscopy."],
    ["Trial a proton pump inhibitor",
     "Reflux contributes to chronic laryngeal irritation and may be part of the picture, but treating "
-    "empirically for seven weeks in a smoker without visualising the cords risks missing a "
+    "empirically for seven weeks in a smoker without visualizing the cords risks missing a "
     "carcinoma."],
    ["Voice rest and reassurance",
     "Voice rest suits ACUTE laryngitis, which settles about a week after an upper respiratory "
@@ -171,7 +171,7 @@ Q("Diphtheria prevention", IO,
   "A pregnant woman at 30 weeks asks about vaccination.",
   [["Tdap now, between 27 and 36 weeks",
     "Correct. Tdap is recommended in each pregnancy between 27 and 36 weeks. Vaccinating in that "
-    "window maximises transplacental antibody transfer, protecting the newborn during the months "
+    "window maximizes transplacental antibody transfer, protecting the newborn during the months "
     "before the infant's own schedule takes effect."],
    ["Only before the first pregnancy",
     "A single lifetime dose does not maintain the high maternal antibody levels needed for transfer, "
@@ -184,11 +184,11 @@ Q("Diphtheria prevention", IO,
     "transplacental transfer entirely."]], C(114)),
 
 Q("Oral leukoedema", IO,
-  "A 44-year-old man has a diffuse greyish-white change of both buccal mucosae. Stretching the "
+  "A 44-year-old man has a diffuse grayish-white change of both buccal mucosae. Stretching the "
   "mucosa makes it disappear.",
   [["Leukoedema",
     "Correct. Leukoedema is a normal variant caused by fluid accumulating within epithelial cells, "
-    "and stretching disperses it so the change vanishes. That single manoeuvre separates a "
+    "and stretching disperses it so the change vanishes. That single maneuver separates a "
     "reassurance from the biopsy that leukoplakia would need."],
    ["Leukoplakia",
     "Leukoplakia cannot be scraped off OR stretched away, and it is premalignant with 5 to 20 per "
@@ -212,7 +212,7 @@ Q("Fordyce granules", IO,
     "Thrush gives creamy white curd-like patches on an erythematous base that wipe off, and it is "
     "painful rather than asymptomatic."],
    ["Leukoplakia",
-    "Leukoplakia is a white plaque that cannot be scraped off, carrying a 5 to 20 per cent risk of "
+    "Leukoplakia is a white plaque that cannot be scraped off, carrying a 5 to 20 percent risk of "
     "malignant transformation. Discrete yellow papules are a different appearance entirely."],
    ["Herpes labialis",
     "Recurrent herpes gives grouped painful vesicles at the vermilion border, preceded by a burning "
@@ -222,14 +222,14 @@ Q("Systemic lupus", IO,
   "A 34-year-old woman has painless oral erosions with surrounding erythema and honeycomb patches "
   "on the buccal mucosa. She has photosensitivity and joint pains.",
   [["Oral involvement of systemic lupus",
-    "Correct. About 40 per cent of lupus patients have mucous membrane involvement, and oral lesions "
+    "Correct. About 40 percent of lupus patients have mucous membrane involvement, and oral lesions "
     "may be the FIRST sign of the disease. Lesions include cheilitis, erythematous patches, "
     "honeycomb patches and discoid ulcers, and there is no correlation with systemic activity."],
    ["Aphthous stomatitis",
-    "Aphthae are notably painful with yellow-grey centres and red halos on freely moving "
-    "non-keratinised mucosa, and they carry no systemic features."],
+    "Aphthae are notably painful with yellow-gray centers and red halos on freely moving "
+    "non-keratinized mucosa, and they carry no systemic features."],
    ["Behcet syndrome",
-    "Behcet gives painful oral ulcers in up to 100 per cent with genital ulcers in about 75 per "
+    "Behcet gives painful oral ulcers in up to 100 percent with genital ulcers in about 75 per "
     "cent, and it is the genital and ocular involvement that defines it rather than "
     "photosensitivity."],
    ["Oral lichen planus",
@@ -240,7 +240,7 @@ Q("Cervical adenitis", IO,
   "A clinician is describing a cervical node and notes it is immobile and non-tender.",
   [["Features suggesting malignancy",
     "Correct. The descriptors that matter are size, shape, mobility, consistency and tenderness. "
-    "Immobility suggests fixation to surrounding structures by tumour, and non-tenderness points "
+    "Immobility suggests fixation to surrounding structures by tumor, and non-tenderness points "
     "away from inflammation, which hurts. Persistence or continued enlargement is what triggers fine "
     "needle aspiration."],
    ["Features suggesting inflammation",
@@ -254,25 +254,25 @@ Q("Cervical adenitis", IO,
     "immobility suggests arterial flow."]], C(93)),
 
 Q("Parotitis", IO,
-  "A 7-year-old unimmunised boy has bilateral painful parotid swelling with fever and malaise.",
+  "A 7-year-old unimmunized boy has bilateral painful parotid swelling with fever and malaise.",
   [["Mumps",
     "Correct. Mumps is caused by a paramyxovirus and is the classic viral cause of parotitis, "
-    "typically bilateral with systemic symptoms in an unimmunised child. Other causes of parotitis "
-    "include herpes and Epstein-Barr virus, bacterial infection, diabetes, tumours, stones and "
+    "typically bilateral with systemic symptoms in an unimmunized child. Other causes of parotitis "
+    "include herpes and Epstein-Barr virus, bacterial infection, diabetes, tumors, stones and "
     "dental problems."],
    ["Acute suppurative sialadenitis",
     "Bacterial parotitis is usually unilateral, occurs in dehydrated post-operative or elderly "
     "patients, and produces pus expressible from Stensen duct."],
    ["Sialolithiasis",
-    "A stone gives unilateral swelling and pain timed to meals, and 80 to 90 per cent of stones are "
+    "A stone gives unilateral swelling and pain timed to meals, and 80 to 90 percent of stones are "
     "submandibular rather than parotid."],
    ["Salivary gland neoplasm",
-    "A tumour presents as a slow-growing painless mass, usually unilateral at the parotid tail, "
+    "A tumor presents as a slow-growing painless mass, usually unilateral at the parotid tail, "
     "without fever or systemic symptoms."]], C(44)),
 
 Q("Oral cancer risk", IO,
   "A 55-year-old man who chews betel nut and smokes asks about his risk of oral cancer.",
-  [["Both are recognised risk factors",
+  [["Both are recognized risk factors",
     "Correct. The risk factors are tobacco chewed and smoked, alcohol, betel nut chewing, poor oral "
     "hygiene and immunosuppression. Squamous cell carcinoma is the commonest malignancy of the oral "
     "cavity and oropharynx, and prevention rests on tobacco and alcohol cessation."],
@@ -341,9 +341,9 @@ Q("Deep neck infection spread", IO,
   [["Its space extends to the posterior mediastinum",
     "Correct. The retropharyngeal space runs from the base of the skull to the posterior "
     "mediastinum, giving infection a direct anatomical route into the chest. Mediastinitis carries "
-    "50 per cent mortality, and the danger space beyond is continuous left to right."],
+    "50 percent mortality, and the danger space beyond is continuous left to right."],
    ["It always involves the carotid artery",
-    "Vascular involvement is a recognised complication of deep neck infection generally but is not "
+    "Vascular involvement is a recognized complication of deep neck infection generally but is not "
     "what makes this space specifically dangerous."],
    ["It causes trismus that prevents intubation",
     "Trismus is the hallmark of a PERITONSILLAR abscess, from irritation of the medial pterygoid. It "
@@ -353,15 +353,15 @@ Q("Deep neck infection spread", IO,
     "usually odontogenic, in a different anatomical compartment."]], C(107)),
 
 Q("Salivary gland site", IO,
-  "A 61-year-old woman has a tumour of a minor salivary gland of the palate. She asks how likely it "
+  "A 61-year-old woman has a tumor of a minor salivary gland of the palate. She asks how likely it "
   "is to be benign.",
-  [["Only about 35 per cent are benign",
-    "Correct. The smaller the gland, the higher the malignant proportion: parotid tumours are 75 to "
-    "80 per cent benign, submandibular 50 to 60 per cent, and minor salivary glands only about 35 "
-    "per cent. That inverse relationship changes how aggressively a small-gland lesion is "
+  [["Only about 35 percent are benign",
+    "Correct. The smaller the gland, the higher the malignant proportion: parotid tumors are 75 to "
+    "80 percent benign, submandibular 50 to 60 percent, and minor salivary glands only about 35 "
+    "percent. That inverse relationship changes how aggressively a small-gland lesion is "
     "investigated."],
-   ["About 80 per cent are benign",
-    "Seventy-five to eighty per cent is the PAROTID figure. Applying it to a minor gland would "
+   ["About 80 percent are benign",
+    "Seventy-five to eighty percent is the PAROTID figure. Applying it to a minor gland would "
     "substantially understate the risk."],
    ["Essentially all are benign",
     "That would remove the reason for prompt biopsy of a minor gland lesion, when it is the group "
@@ -382,8 +382,8 @@ Q("Herpangina", IO,
     "Streptococcal disease gives tonsillar and pharyngeal erythema with purulent exudate, fever, "
     "tender nodes and characteristically NO cough. Vesicles are not part of it."],
    ["Diphtheria",
-    "Diphtheria produces a tenacious adherent grey membrane over tonsils and pharynx that bleeds "
-    "when disturbed, in an unimmunised child, rather than discrete vesicles."],
+    "Diphtheria produces a tenacious adherent gray membrane over tonsils and pharynx that bleeds "
+    "when disturbed, in an unimmunized child, rather than discrete vesicles."],
    ["Oral candidiasis",
     "Thrush gives creamy white patches that wipe off leaving an erythematous base, not ulcerative "
     "vesicles with fever and coryza."]], C(72)),
@@ -392,7 +392,7 @@ Q("Salivary stone management", IO,
   "A 44-year-old man has a stone palpable in the anterior portion of the submandibular duct.",
   [["Intraoral extraction",
     "Correct. Management depends on the location and size of the stone. One that can be palpated or "
-    "visualised in the anterior portion of the submandibular duct can be extracted intraorally, "
+    "visualized in the anterior portion of the submandibular duct can be extracted intraorally, "
     "whereas larger stones in the hilum or body of the gland require excision of the gland itself."],
    ["Excision of the submandibular gland",
     "Gland excision is reserved for larger stones in the hilum or body. Removing a gland for a stone "
@@ -460,7 +460,7 @@ Q("Oral cancer investigation", IO,
   "A 63-year-old man with a suspicious oral lesion is being worked up.",
   [["Biopsy, with imaging and dental evaluation",
     "Correct. The workup includes labs with high-risk human papillomavirus testing and in situ "
-    "hybridisation, computed tomography or magnetic resonance for the primary and nodes, chest X-ray "
+    "hybridization, computed tomography or magnetic resonance for the primary and nodes, chest X-ray "
     "and positron emission tomography for metastases, flexible fiberoptic endoscopy, biopsy and "
     "dental evaluation before treatment."],
    ["Biopsy alone",

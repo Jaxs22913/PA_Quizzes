@@ -75,7 +75,7 @@ BOX = """<!--CMSL8AUDIO-->
   <div class="prof-flag"><span class="prof-flag-label">&#9733; From the 24 August lecture</span>
   <p><b><mark class="prof-highlight">She teaches this whole topic to one repeating pattern.</mark></b>
   For lesion after lesion the management is the same three steps &mdash; <b>diagnose clinically,
-  observe, and biopsy if it changes in size, colour or shape</b>. Partway through she says it out
+  observe, and biopsy if it changes in size, color or shape</b>. Partway through she says it out
   loud: <i>&ldquo;I hope everyone&rsquo;s still <b>remembering the pattern</b> here &hellip; it&rsquo;s
   very similar, very much the same. There&rsquo;s like <b>two things that it&rsquo;s not like that
   for</b>.&rdquo;</i></p>
@@ -98,7 +98,7 @@ BOX = """<!--CMSL8AUDIO-->
   <i>&ldquo;that will be one way that you will be able to differentiate lentigines, sunspots, from
   ephelides, freckles.&rdquo;</i> Same fact as the cram sheet, but it is the one she chose to spell
   out.</p>
-  <p><b>A counselling point she framed as self-protection.</b> On cryotherapy for a seborrhoeic
+  <p><b>A counseling point she framed as self-protection.</b> On cryotherapy for a seborrheic
   keratosis: it can come back, so tell them beforehand &mdash; <i>&ldquo;otherwise they&rsquo;ll be
   <b>pretty upset at you</b>&rdquo;</i>.</p>
   <p><b><mark class="prof-highlight">What the recording actually misses.</mark></b> Less than it
@@ -113,11 +113,11 @@ BOX = """<!--CMSL8AUDIO-->
 
 CRAM_ROWS = [
  ("★ THE PATTERN — and its two exceptions",
-  "She teaches nearly every pigmented lesion the same way: DIAGNOSE CLINICALLY → OBSERVE → BIOPSY IF IT CHANGES in size, colour or shape. Verbatim: “I hope everyone's still REMEMBERING THE PATTERN here… there's like TWO THINGS THAT IT'S NOT LIKE THAT FOR.” The two are the ones that IMITATE MELANOMA and need tissue out WITH MARGINS: REED NAEVUS (excision with negative margins) and SPITZ (biopsy vs WIDE EXCISION — “not just removing part of the lesion but the ENTIRE AREA SURROUNDING it”). One frame for the whole lecture: WATCH THEM ALL, CUT OUT THE TWO THAT LOOK LIKE MELANOMA."),
+  "She teaches nearly every pigmented lesion the same way: DIAGNOSE CLINICALLY → OBSERVE → BIOPSY IF IT CHANGES in size, color or shape. Verbatim: “I hope everyone's still REMEMBERING THE PATTERN here… there's like TWO THINGS THAT IT'S NOT LIKE THAT FOR.” The two are the ones that IMITATE MELANOMA and need tissue out WITH MARGINS: REED NAEVUS (excision with negative margins) and SPITZ (biopsy vs WIDE EXCISION — “not just removing part of the lesion but the ENTIRE AREA SURROUNDING it”). One frame for the whole lecture: WATCH THEM ALL, CUT OUT THE TWO THAT LOOK LIKE MELANOMA."),
  ("Ephelides vs lentigines, her wording",
   "On lentigines: “THESE DO NOT GO AWAY as sun exposure gets less and less” — “that will be one way that you will be able to DIFFERENTIATE LENTIGINES, SUNSPOTS, FROM EPHELIDES, FRECKLES.”"),
- ("Counselling — cryotherapy recurrence",
-  "Warn BEFORE you freeze a seborrhoeic keratosis that it can come back, “OTHERWISE THEY'LL BE PRETTY UPSET AT YOU.”"),
+ ("Counseling — cryotherapy recurrence",
+  "Warn BEFORE you freeze a seborrheic keratosis that it can come back, “OTHERWISE THEY'LL BE PRETTY UPSET AT YOU.”"),
  ("⚠ What the recording misses",
   "Starts at about SLIDE 3 OF 47 (only title + objectives lost), stops MID-SENTENCE in the practice cases, and has a TWELVE-MINUTE HOLE between its two segments, 13:44 to 13:56. That hole is exactly where SPITZ was named — which is why neither transcript contains the word. NO emphasis note on a topic does NOT mean she skipped it; the deck content is covered in full regardless."),
 ]

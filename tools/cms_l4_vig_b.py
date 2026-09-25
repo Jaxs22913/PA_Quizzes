@@ -27,7 +27,7 @@ POOL_B = [
    c=0, cite=c(74)),
 
  dict(topic="Hidradenitis suppurativa", io=IOA,
-   q="A 31-year-old man with hidradenitis suppurativa asks what he can do himself to reduce flares. Which is the most appropriate counselling point?",
+   q="A 31-year-old man with hidradenitis suppurativa asks what he can do himself to reduce flares. Which is the most appropriate counseling point?",
    opts=[
      ["Stop smoking, lose weight, avoid heat and constrictive clothing, and cleanse with an antibacterial wash",
       "Correct — smoking cessation is described as essential, and laser hair removal is also offered."],
@@ -84,7 +84,7 @@ POOL_B = [
      ["Topical erythromycin or clindamycin",
       "Correct. Oral erythromycin or clarithromycin is used for widespread disease."],
      ["Oral erythromycin or clarithromycin",
-      "Oral therapy is for widespread rather than localised disease."],
+      "Oral therapy is for widespread rather than localized disease."],
      ["Topical miconazole cream applied twice daily",
       "An antifungal is added only if yeast is also present."],
      ["Topical mupirocin ointment applied three times daily",
@@ -92,7 +92,7 @@ POOL_B = [
    c=0, cite=c(84)),
 
  dict(topic="Erythrasma", io=IOA,
-   q="A 60-year-old man treated for erythrasma asks how to stop it returning. Which is the most appropriate counselling point?",
+   q="A 60-year-old man treated for erythrasma asks how to stop it returning. Which is the most appropriate counseling point?",
    opts=[
      ["Keep the area clean and dry, avoid excessive heat and moisture, and maintain a healthy body weight",
       "Correct, alongside good general hygiene."],
@@ -105,14 +105,14 @@ POOL_B = [
    c=0, cite=c(84)),
 
  dict(topic="Impetigo", io=IOD,
-   q="A 5-year-old boy has honey-coloured crusted lesions around the nose and mouth that appeared four days after a scratch, and tender submandibular nodes. Which is the most likely diagnosis?",
+   q="A 5-year-old boy has honey-colored crusted lesions around the nose and mouth that appeared four days after a scratch, and tender submandibular nodes. Which is the most likely diagnosis?",
    opts=[
      ["Non-bullous impetigo",
-      "Correct — a honey-coloured adherent crust on the face with regional lymphadenopathy."],
+      "Correct — a honey-colored adherent crust on the face with regional lymphadenopathy."],
      ["Bullous impetigo",
       "That produces tense bullae leaving collarettes, with lymphadenopathy uncommon."],
      ["Herpes simplex of the perioral skin",
-      "That produces grouped vesicles rather than a honey-coloured crust."],
+      "That produces grouped vesicles rather than a honey-colored crust."],
      ["Ecthyma of the face and perioral area",
       "Ecthyma ulcerates into the dermis and usually affects the lower legs."]],
    c=0, cite=c(87)),
@@ -144,10 +144,10 @@ POOL_B = [
    c=0, cite=c(96)),
 
  dict(topic="Impetigo", io=IOA,
-   q="A 6-year-old boy had impetigo three weeks ago. He now has puffy eyelids, tea-coloured urine and a blood pressure of 138/88. Which is the most likely diagnosis?",
+   q="A 6-year-old boy had impetigo three weeks ago. He now has puffy eyelids, tea-colored urine and a blood pressure of 138/88. Which is the most likely diagnosis?",
    opts=[
      ["Acute post-streptococcal glomerulonephritis",
-      "Correct — sudden oedema, haematuria, proteinuria and hypertension, especially at three to seven years."],
+      "Correct — sudden edema, hematuria, proteinuria and hypertension, especially at three to seven years."],
      ["Acute rheumatic fever after streptococcal infection",
       "That produces carditis, arthritis and nodules rather than this renal picture."],
      ["Secondary bacterial infection of the healing lesions",
@@ -183,7 +183,7 @@ POOL_B = [
    c=0, cite=c(93)),
 
  dict(topic="Impetigo", io=IOA,
-   q="A 45-year-old man with poorly controlled diabetes has a punched-out ulcer on the shin with a thick grey-yellow crust that has been present for two weeks and is healing slowly. Which is the most likely diagnosis?",
+   q="A 45-year-old man with poorly controlled diabetes has a punched-out ulcer on the shin with a thick gray-yellow crust that has been present for two weeks and is healing slowly. Which is the most likely diagnosis?",
    opts=[
      ["Ecthyma",
       "Correct — a deeper impetigo that ulcerates into the dermis, heals slowly and leaves a scar."],
@@ -192,7 +192,7 @@ POOL_B = [
      ["Pyoderma gangrenosum",
       "That has an undermined violaceous border and worsens with debridement."],
      ["Venous ulceration of the shin",
-      "That would not present with a thick grey-yellow crust of this kind."]],
+      "That would not present with a thick gray-yellow crust of this kind."]],
    c=0, cite=c(91)),
 
  dict(topic="Erysipelas", io=IOA,
@@ -253,7 +253,7 @@ POOL_B = [
      ["Treat the tinea pedis, since it is the portal of entry and predicts recurrence",
       "Correct — it is named among the risk factors for erysipelas."],
      ["Begin nasal mupirocin, since staphylococcal carriage drives recurrent disease",
-      "Nasal decolonisation applies to recurrent folliculitis."],
+      "Nasal decolonization applies to recurrent folliculitis."],
      ["Begin oral fluconazole, since the causative organism here is a yeast",
       "The causative organism in erysipelas is Group A streptococcus."],
      ["Take no additional step, since the two conditions are entirely unrelated",

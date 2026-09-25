@@ -104,7 +104,7 @@ FIRST = {
  "Lid laceration": "Ophthalmology for margin involvement, within 6&ndash;8&nbsp;mm of the medial "
                    "canthus, the lacrimal system, the inner lid surface, ptosis, tarsal plate or "
                    "levator.",
- "Periorbital haematoma": "<b>Canthotomy with cantholysis</b> &mdash; release the lateral canthal "
+ "Periorbital hematoma": "<b>Canthotomy with cantholysis</b> &mdash; release the lateral canthal "
                    "tendon and cut its inferior branch to let the blood out.",
  "Orbital floor (blowout) fracture": "True blowout &rarr; ophthalmology, because <b>30% have a "
                    "significant globe injury</b>. Entrapment &rarr; facial trauma surgeon.",
@@ -113,7 +113,7 @@ FIRST = {
                    "consultation. Untreated risk is corneal perforation.",
  "Cataract &mdash; pediatric": "Surgery is <b>not</b> deferred in a neonate &mdash; it is done "
                    "early to prevent amblyopia.",
- "Retinoblastoma": "Ocular oncology, multimodal therapy, genetic counselling. An absent red reflex "
+ "Retinoblastoma": "Ocular oncology, multimodal therapy, genetic counseling. An absent red reflex "
                    "in a newborn is this or congenital cataract until proven otherwise.",
  # SAME DAY
  "Scleritis": "Systemic anti-inflammatories to begin; corticosteroids and immunomodulators for "
@@ -141,7 +141,7 @@ FIRST = {
              "if moderate-severe or toxic, unreliable, a child of 5 or under, or not improving.",
  "Posterior uveitis (choroiditis, retinitis)": "Does <b>not</b> respond to topical treatment "
              "&mdash; may need an intraocular corticosteroid injection.",
- "Amaurosis fugax": "Treat it as a transient ischaemic attack of the eye: stroke workup, carotid "
+ "Amaurosis fugax": "Treat it as a transient ischemic attack of the eye: stroke workup, carotid "
              "imaging, cardiac assessment, antiplatelets.",
  "Optic neuritis": "Corticosteroids if a demyelinating cause is found; two or more lesions &rarr; "
              "neurology or neuro-ophthalmology.",
@@ -157,10 +157,10 @@ FIRST = {
  "Cranial nerve IV palsy": "Traumatic: observe about 6 months before corrective treatment, "
              "patching one eye meanwhile.",
  "Cranial nerve VI palsy": "Traumatic: observe about 6 months, patching one eye in the interim.",
- "Nystagmus": "Complete ophthalmic examination, then imaging, then labs. The aetiology must be "
+ "Nystagmus": "Complete ophthalmic examination, then imaging, then labs. The etiology must be "
              "addressed.",
  "Idiopathic intracranial hypertension": "Acetazolamide promptly, with a supervised weight "
-             "reduction programme. Surgery only if medical therapy fails.",
+             "reduction program. Surgery only if medical therapy fails.",
  "Strabismus": "Ophthalmology, and treat the cause &mdash; untreated in a child it causes "
              "amblyopia.",
  "Amblyopia": "Patch or atropinise the <b>good</b> eye to force the weaker one to work. Treatment "
@@ -170,7 +170,7 @@ FIRST = {
  "Conjunctival melanoma": "Specialist management under ocular oncology.",
  "Corneal abrasion": "Topical broad-spectrum antibacterial, and periodic re-examination to confirm "
              "healing and exclude infection.",
- "Corneal or conjunctival foreign body": "Topical anaesthetic, then a sterile 27-gauge needle. A "
+ "Corneal or conjunctival foreign body": "Topical anesthetic, then a sterile 27-gauge needle. A "
              "rust ring comes out with a burr.",
  "Orbital contusion": "Supportive, through to surgery depending on the patient's condition.",
  "Retinal detachment &mdash; exudative": "Treat the underlying condition &mdash; this one is not "
@@ -279,14 +279,14 @@ NEVER = [
  ("Do not patch the contact lens wearer with a corneal defect.",
   "Remove the lenses, keep them if a culture is wanted, and arrange same-day review.",
   "Common Ophthalmological Disorders, slide 71"),
- ("No take-home topical anaesthetic, and no take-home corticosteroid.",
-  "Repeated anaesthetic is toxic to the epithelium and delays healing; steroids can worsen an "
+ ("No take-home topical anesthetic, and no take-home corticosteroid.",
+  "Repeated anesthetic is toxic to the epithelium and delays healing; steroids can worsen an "
   "infection that has not been identified yet.",
   "Common Ophthalmological Disorders, slide 71; Ocular Trauma, slide 18"),
  ("Leave posterior-segment foreign bodies alone at the first evaluation.",
   "Going after one early risks more damage than the object itself.", "Ocular Trauma, slide 16"),
  ("Do not wait for the temporal artery biopsy before starting steroids.",
-  "In arteritic anterior ischaemic optic neuropathy the delay costs the second eye.",
+  "In arteritic anterior ischemic optic neuropathy the delay costs the second eye.",
   "Acute Vision Loss, slides 49&ndash;51"),
 ]
 
@@ -295,7 +295,7 @@ QUIZ = [
  ("A contact lens wearer has severe pain, photophobia and blurred vision after sleeping in the "
   "lenses. Fluorescein shows a central epithelial defect with a white infiltrate. What are the "
   "next steps?",
-  "Remove the lenses and <b>do not patch</b>. No take-home topical anaesthetic or corticosteroid. "
+  "Remove the lenses and <b>do not patch</b>. No take-home topical anesthetic or corticosteroid. "
   "Same-day ophthalmology for microbial keratitis. Preserve the lenses and case in case a culture "
   "is requested."),
  ("Which conditions sit in the EMERGENT &mdash; now tier?",

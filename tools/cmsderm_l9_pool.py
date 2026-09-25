@@ -24,7 +24,7 @@ Q("Ephelides",
     "far more conspicuous than the lesions."],
    ["Autosomal dominant inheritance, and permanent removal is expected with a single treatment",
     "The inheritance is right but no single treatment removes them permanently, and they regress later in life "
-    "anyway. Sun protection and counselling are the key measures."],
+    "anyway. Sun protection and counseling are the key measures."],
    ["X-linked inheritance, with equal treatment response in all skin types",
     "The pattern is autosomal dominant with equal frequency in males and females, which an X-linked pattern would not "
     "produce."]],
@@ -95,10 +95,10 @@ Q("Dermatosis papulosa nigrans",
     "The lesion is identified correctly but it is not premalignant. Framing a benign genetic condition as "
     "premalignant would prompt unnecessary destructive treatment on facial skin prone to dyspigmentation."],
    ["Syringomas, which are eccrine duct neoplasms",
-    "Syringomas are skin-coloured 1 to 2 mm papules of the lower eyelids appearing at puberty rather than dark brown "
+    "Syringomas are skin-colored 1 to 2 mm papules of the lower eyelids appearing at puberty rather than dark brown "
     "papules of the face and neck."],
    ["Melanocytic naevi, which peak in number in the third decade",
-    "Common acquired naevi are usually under 6 mm with homogeneous surface and colour and peak in the thirties. "
+    "Common acquired naevi are usually under 6 mm with homogeneous surface and color and peak in the thirties. "
     "Dermatosis papulosa nigrans lesions are keratinocytic rather than melanocytic."]],
   0, 19),
 
@@ -121,7 +121,7 @@ Q("Vitiligo",
   0, 21),
 
 Q("Vitiligo",
-  "A patient with vitiligo affecting more than 5 percent of the body surface area is being counselled on treatment. "
+  "A patient with vitiligo affecting more than 5 percent of the body surface area is being counseled on treatment. "
   "What is first-line, and why is one phototherapy option preferred over another?",
   [["Phototherapy is first line above 5 percent body surface area, with narrow band ultraviolet B preferred over "
     "psoralen with ultraviolet A because the latter increases skin cancer risk",
@@ -155,14 +155,14 @@ Q("Congenital melanocytic naevi",
     "considerations. The goal is to remove as much as possible while preserving function, decided per patient rather "
     "than mandated."],
    ["The lesion always regresses spontaneously, so observation alone suffices",
-    "Congenital naevi persist. It is the common acquired naevus that enlarges, stabilises, and eventually regresses."]],
+    "Congenital naevi persist. It is the common acquired naevus that enlarges, stabilizes, and eventually regresses."]],
   0, 30),
 
 Q("Nevus spilus",
   "A child has a circumscribed light brown patch on the trunk resembling a café au lait spot, within which several "
   "darker pigmented macules and papules are visible. What is this lesion and how is it managed?",
   [["Nevus spilus, a variant of congenital naevus, managed with observation, periodic clinical evaluation, and sun "
-    "protection counselling",
+    "protection counseling",
     "Correct. Nevus spilus, the spotted nevus, is a variant of congenital naevus present at birth or in the first "
     "years of life, most commonly on the trunk and extremities. Darkly pigmented macules or papules sit within a "
     "background that is circumscribed and similar in appearance to a café au lait spot, and it rarely progresses to "
@@ -174,22 +174,22 @@ Q("Nevus spilus",
     "A dysplastic naevus is at least 5 mm with irregular indistinct borders and is diagnosed by biopsy. Its "
     "appearance does not include discrete darker spots on a café au lait background."],
    ["A blue nevus arising in adolescence",
-    "Blue naevi are blue, blue-grey, or blue-black lesions of the dorsal hands and feet, scalp, buttocks, or sacral "
+    "Blue naevi are blue, blue-gray, or blue-black lesions of the dorsal hands and feet, scalp, buttocks, or sacral "
     "region."]],
   0, 34),
 
 Q("Melanocytic naevi",
-  "A 32-year-old fair-skinned woman has numerous moles under 6 mm with homogeneous surface and colour. One lesion is "
+  "A 32-year-old fair-skinned woman has numerous moles under 6 mm with homogeneous surface and color. One lesion is "
   "very dark brown to black. What is the significance of that lesion?",
   [["A very dark brown or black naevus on a light-skinned individual is suspicious and warrants further evaluation",
-    "Correct. Common acquired melanocytic naevi are usually less than 6 mm with homogeneous surface and colour, round "
+    "Correct. Common acquired melanocytic naevi are usually less than 6 mm with homogeneous surface and color, round "
     "to oval with sharp demarcation. A very dark brown or black lesion on a light-skinned individual is specifically "
     "flagged as suspicious."],
    ["A very dark naevus is expected in patients with numerous moles and requires no action",
     "Increased numbers of moles do raise melanoma risk, which makes this superficially reassuring reasoning. But a "
-    "single lesion diverging in colour from its neighbours is the specific finding singled out as suspicious."],
+    "single lesion diverging in color from its neighbors is the specific finding singled out as suspicious."],
    ["It represents a blue nevus and requires no evaluation",
-    "Blue naevi are blue, blue-grey, or blue-black and occur at characteristic sites including the dorsal hands and "
+    "Blue naevi are blue, blue-gray, or blue-black and occur at characteristic sites including the dorsal hands and "
     "feet, scalp, and sacral region, and larger lesions are biopsied."],
    ["It indicates a Spitz nevus, which is always benign",
     "Spitz naevi are solitary, pink or red, hairless, firm, and dome-shaped, usually benign but sometimes resembling "
@@ -204,10 +204,10 @@ Q("Blue nevus",
     "is clinical for small lesions and by biopsy for larger ones, with observation and biopsy or excision if changes "
     "are noted."],
    ["Deeply pigmented melanocytes in the epidermis, always diagnosed clinically",
-    "The melanocytes lie in the dermis, which is what gives the lesion its blue colour, and larger lesions require "
+    "The melanocytes lie in the dermis, which is what gives the lesion its blue color, and larger lesions require "
     "biopsy rather than clinical diagnosis alone."],
    ["Lipid-laden macrophages, requiring lipid screening",
-    "Lipid-laden macrophages form xanthelasma, which warrants hyperlipidaemia screening."],
+    "Lipid-laden macrophages form xanthelasma, which warrants hyperlipidemia screening."],
    ["Dilated dermal capillaries, blanching with pressure",
     "Dilated dermal vessels produce vascular lesions that blanch. Blue naevi are pigmented and do not blanch."]],
   0, 40),
@@ -234,7 +234,7 @@ Q("Spitz naevus",
   "several weeks and has since been stable. What is the diagnosis, and what is the diagnostic concern?",
   [["Spitz nevus, which is usually benign but sometimes resembles melanoma",
     "Correct. A Spitz nevus is usually benign with a phase of growth, fast or slow, followed by a stable period. It "
-    "is solitary, asymptomatic, pink or red, hairless, firm, and dome-shaped, several millimetres to centimetres, "
+    "is solitary, asymptomatic, pink or red, hairless, firm, and dome-shaped, several millimeters to centimeters, "
     "usually on the face, neck, or extremities, and it sometimes resembles melanoma."],
    ["Pigmented spindle cell nevus, which is darkly pigmented",
     "The Reed nevus is a sharply circumscribed darkly pigmented papule on the extremities of adults in their "
@@ -243,7 +243,7 @@ Q("Spitz naevus",
     "Molluscum lesions are pearly dome-shaped papules with characteristic central umbilication, and they are usually "
     "multiple."],
    ["Common acquired melanocytic nevus, which is uniformly brown",
-    "Common acquired naevi are skin-coloured, brown, or pink with homogeneous colour and are usually under 6 mm, and "
+    "Common acquired naevi are skin-colored, brown, or pink with homogeneous color and are usually under 6 mm, and "
     "they develop slowly rather than growing over weeks."]],
   0, 42),
 
@@ -269,16 +269,16 @@ Q("Dysplastic naevus",
 
 Q("Ephelides",
   "What is the cornerstone of management for ephelides?",
-  [["Sun protection, with patient education and counselling as the key element",
+  [["Sun protection, with patient education and counseling as the key element",
     "Correct. Sun protection is the cornerstone of management for ephelides, with proper patient education and "
-    "counselling described as key. Topical depigmenting agents such as hydroquinone, retinoids, alpha-hydroxy acids, "
+    "counseling described as key. Topical depigmenting agents such as hydroquinone, retinoids, alpha-hydroxy acids, "
     "and botanicals may be used, and intense pulsed light is an option."],
    ["Cryotherapy applied to each lesion",
     "Cryotherapy is specifically excluded because it is difficult given the small size of the lesions."],
    ["Surgical excision of each macule",
     "Excising freckles would leave scars more conspicuous than the pigment, and the lesions regress later in life."],
    ["No management is possible or appropriate",
-    "Sun protection, counselling, and topical depigmenting agents are all available, so the condition is not simply "
+    "Sun protection, counseling, and topical depigmenting agents are all available, so the condition is not simply "
     "untreatable."]],
   0, 7),
 ]

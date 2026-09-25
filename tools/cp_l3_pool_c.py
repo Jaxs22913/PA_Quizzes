@@ -114,7 +114,7 @@ POOL_C = [
       "Correct — apoptosis prevents a mutation being carried on into the daughter cells."],
      ["To limit the total number of cells an organ can contain",
       "Limiting organ size is not the purpose; apoptosis genes stop damage from becoming permanent in dividing cells."],
-     ["To supply nutrients to neighbouring cells as they proliferate",
+     ["To supply nutrients to neighboring cells as they proliferate",
       "Apoptosis genes have no nutrient role; their job is to make damaged cells self destruct before the damage becomes permanent."],
      ["To slow the rate at which stem cells commit to differentiation",
       "Commitment to differentiation belongs to stem cell kinetics; apoptosis genes make damaged cells self destruct so the damage is not continued in dividing cells."]],

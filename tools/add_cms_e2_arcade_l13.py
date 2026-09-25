@@ -3,7 +3,7 @@
 """Add the CMS I Exam 2 Lecture 13 Arcade decks.
 
 Three decks, split by how the material is actually revised: the chronic
-disorders, the cataract types, and the tumours. One deck per topic per the
+disorders, the cataract types, and the tumors. One deck per topic per the
 arcade content policy, and every card is a SINGLE ATOMIC FACT -- Match and
 Sprint are unplayable when the answer is a paragraph.
 
@@ -42,7 +42,7 @@ DECKS = [
   ["What share of macular degeneration is dry?", "About 80 percent."],
   ["Which vision does macular degeneration take?", "Central, with distortion."],
   ["Findings that define dry macular degeneration?", "Drusen, pigmentary change, atrophy."],
-  ["What makes macular degeneration wet?", "Choroidal neovascularisation bleeding into the retina."],
+  ["What makes macular degeneration wet?", "Choroidal neovascularization bleeding into the retina."],
   ["Home monitoring tool for macular degeneration?", "An Amsler grid."],
   ["Single most useful advice in macular degeneration?", "Stop smoking."],
   ["Treatment reserved for wet macular degeneration?", "Intravitreal anti-VEGF injection."],
@@ -58,7 +58,7 @@ DECKS = [
   ["Which lens corrects myopia?", "A concave, negative dioptre lens."],
   ["Which lens corrects hyperopia?", "A convex, positive dioptre lens."],
   ["Which lens corrects astigmatism?", "A toric lens."],
-  ["Which cause of blurry vision takes colour vision?", "Optic neuropathy."],
+  ["Which cause of blurry vision takes color vision?", "Optic neuropathy."],
  ]),
 
  dict(id="cms-cataract", name="Cataract", color="accent2", icon=LENS, cards=[
@@ -67,13 +67,13 @@ DECKS = [
   ["Which vision does a nuclear cataract blur more?", "Distance, more than near."],
   ["What is the refractive shift in nuclear cataract?", "A myopic shift."],
   ["Which cataract gives spoke-like peripheral opacities?", "Cortical."],
-  ["Main complaint once a cortical cataract reaches the centre?", "Glare."],
+  ["Main complaint once a cortical cataract reaches the center?", "Glare."],
   ["Which cataract is plate-like behind the lens?", "Posterior subcapsular."],
   ["Posterior subcapsular cataract is classically under what age?", "Fifty."],
   ["Two associations with posterior subcapsular cataract?", "Corticosteroids and diabetes."],
   ["Posterior subcapsular symptoms get better after what?", "Dilation."],
-  ["Most common paediatric cataract type?", "Zonular."],
-  ["Which paediatric cataract is central and so caught earlier?", "Polar."],
+  ["Most common pediatric cataract type?", "Zonular."],
+  ["Which pediatric cataract is central and so caught earlier?", "Polar."],
   ["Does a cataract alone cause a relative afferent pupillary defect?", "No. Never."],
   ["Advanced cataract sign on ophthalmoscopy?", "Loss of the red reflex."],
   ["White pupillary reflex is called what?", "Leukocoria."],
@@ -89,7 +89,7 @@ DECKS = [
  dict(id="cms-ocular-tumors", name="Ocular Tumors", color="accent4", icon=TUMOR, cards=[
   ["Sign of retinoblastoma noticed in photographs?", "Leukocoria, a white pupil."],
   ["Who gets retinoblastoma?", "Young children, almost exclusively."],
-  ["Why is retinoblastoma not biopsied?", "It risks seeding the tumour."],
+  ["Why is retinoblastoma not biopsied?", "It risks seeding the tumor."],
   ["How is retinoblastoma diagnosed then?", "Dilated examination plus imaging."],
   ["Screening every primary care clinician should do in infants?", "The red reflex."],
   ["Retinoblastoma with a family history: seen by when?", "Within the first eight weeks of life."],
@@ -101,8 +101,8 @@ DECKS = [
   ["Typical symptom of uveal melanoma?", "None. Usually found incidentally."],
   ["Feature that separates iris melanoma from a freckle?", "A prominent feeder vessel."],
   ["Size that raises concern in an iris lesion?", "Over 3 mm across and over 1 mm deep."],
-  ["Which half of the iris do these lesions favour?", "The inferior half."],
-  ["A tumour pulling the pupil out of shape is called what?", "Corectopia."],
+  ["Which half of the iris do these lesions favor?", "The inferior half."],
+  ["A tumor pulling the pupil out of shape is called what?", "Corectopia."],
   ["What is fine needle aspiration used for in uveal melanoma?", "Molecular prognostic testing."],
   ["Most common treatment for uveal melanoma now?", "Radiation therapy."],
   ["Most common site of metastasis for ocular melanoma?", "The liver."],

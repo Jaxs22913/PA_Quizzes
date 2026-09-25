@@ -53,7 +53,7 @@ LEAD = {
  "next step": r"next step|most appropriate next action|single most important initial action",
  "treatment": r"most appropriate treatment|first-line|appropriate management|initial treatment|next treatment|preventive strategy|treatment approach|strongest current evidence|which pharmacologic therapy|only one approved|long-term management|immediate treatment",
  "test": r"diagnostic test|which test|diagnostic approach|initial testing|initial investigations|which result|which investigation|which score|which surveillance|establishes the diagnosis|confirm the diagnosis|considered pathognomonic",
- "education": r"counselling point|counsel|most appropriate response|most appropriate explanation|which referral",
+ "education": r"counseling point|counsel|most appropriate response|most appropriate explanation|which referral",
 }
 def lead_of(q):
     for k, p in LEAD.items():

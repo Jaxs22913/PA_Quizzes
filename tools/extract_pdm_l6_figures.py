@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Pull the Lecture 6 (Urinalysis) figures worth carrying into the guide.
 
-Three earn their place. The colour wheel and the reagent strip chart are the
+Three earn their place. The color wheel and the reagent strip chart are the
 lecture's two reference images -- the strip chart in particular carries the
 per-analyte READING TIMES, which appear nowhere in the slide text and are the
 whole reason slide 11 says the timing "differs among analytes". The nephron
 supports the anatomy review.
 
-The colour figure also settles a transcription artifact: the recording renders
+The color figure also settles a transcription artifact: the recording renders
 the red-urine food as "beans"; the figure says BEETS, along with blueberries
 and rhubarb. The picture wins.
 """

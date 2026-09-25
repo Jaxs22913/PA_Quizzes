@@ -21,7 +21,7 @@ QUESTIONS = [
  # -------------------------- cholesteatoma --------------------------
  dict(topic="Cholesteatoma", io=IO_A, lead="defining feature", cite=D % 31,
   q="What is a cholesteatoma composed of?",
-  opts=[["Keratinised squamous epithelium", "Correct. Despite the name it contains no cholesterol and is not a neoplasm."],
+  opts=[["Keratinized squamous epithelium", "Correct. Despite the name it contains no cholesterol and is not a neoplasm."],
         ["Cholesterol crystals", "The name is misleading; there is no cholesterol in it."],
         ["Inspissated cerumen", "Wax collects in the canal, not behind the drum."],
         ["Granulation tissue only", "Granulation may accompany it but does not compose it."]]),
@@ -77,21 +77,21 @@ QUESTIONS = [
 
  # ---------------------- haematoma of the auricle ----------------------
  dict(topic="Hematoma of external ear", io=IO_A, lead="defining feature", cite=D % 39,
-  q="In which space does blood collect in an auricular haematoma?",
+  q="In which space does blood collect in an auricular hematoma?",
   opts=[["The sub-perichondrial space", "Correct, which is what separates cartilage from its blood supply."],
         ["The middle ear", "That lies beyond the drum."],
         ["The external canal", "The collection is in the auricle itself."],
         ["The mastoid air cells", "Those are air spaces in bone."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="mechanism", cite=D % 39,
-  q="Why does an untreated auricular haematoma threaten the cartilage?",
+  q="Why does an untreated auricular hematoma threaten the cartilage?",
   opts=[["It separates cartilage from its oxygen and nutrient supply", "Correct, which risks necrosis."],
         ["It directly infects the cartilage", "Infection is a separate risk."],
         ["It blocks the ear canal", "Canal obstruction is not the mechanism."],
         ["It erodes the mastoid bone", "Bone erosion is not involved."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="clinical manifestation", cite=D % 40,
-  q="Which examination finding indicates an auricular haematoma?",
+  q="Which examination finding indicates an auricular hematoma?",
   opts=[["Loss of the cartilaginous landmarks", "Correct, with swelling and bruising of the auricle."],
         ["A perforated tympanic membrane", "The drum is not involved."],
         ["Tenderness on moving the tragus", "That indicates canal infection."],
@@ -99,13 +99,13 @@ QUESTIONS = [
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="next step", cite=D % 40,
   q="Why is a patient with blunt auricular trauma re-examined at twelve to twenty-four hours?",
-  opts=[["The haematoma may develop hours after the injury", "Correct — an initially normal ear can still collect blood."],
+  opts=[["The hematoma may develop hours after the injury", "Correct — an initially normal ear can still collect blood."],
         ["Hearing loss takes a day to appear", "Hearing is not the concern here."],
         ["The cartilage needs time to heal first", "Waiting does not help the cartilage."],
         ["Imaging can only be done after a day", "Imaging is not part of the assessment."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="treatment", cite=D % 41,
-  q="Within what period should an auricular haematoma be drained?",
+  q="Within what period should an auricular hematoma be drained?",
   opts=[["Within seven days", "Correct. After that, granulation tissue makes drainage much harder."],
         ["Within one hour", "Earlier is better, but this is not the stated limit."],
         ["Within thirty days", "Far beyond the point where drainage remains straightforward."],
@@ -113,13 +113,13 @@ QUESTIONS = [
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="treatment", cite=D % 41,
   q="Which measure follows drainage to prevent re-accumulation?",
-  opts=[["Ear splinting", "Correct — bolsters, plaster moulds, silicone putty or thermoplastic splints."],
+  opts=[["Ear splinting", "Correct — bolsters, plaster molds, silicone putty or thermoplastic splints."],
         ["A course of antifungal drops", "Fungal infection is not the issue."],
         ["Weekly audiometry", "Hearing is not the concern."],
         ["Tympanostomy tube placement", "The middle ear is not involved."]]),
 
  dict(topic="Hematoma of external ear", io=IO_A, lead="prognosis", cite=D % 42,
-  q="What is the consequence of failing to drain an auricular haematoma early?",
+  q="What is the consequence of failing to drain an auricular hematoma early?",
   opts=[["Cauliflower ear", "Correct — permanent cartilage deformity."],
         ["Chronic vertigo", "Balance is not affected."],
         ["Facial paralysis", "The facial nerve is not involved."],
@@ -135,7 +135,7 @@ QUESTIONS = [
 
  dict(topic="Ear trauma", io=IO_A, lead="treatment", cite=D % 43,
   q="Why is a pressure dressing applied after repairing an ear laceration?",
-  opts=[["To prevent a haematoma forming under the repair", "Correct."],
+  opts=[["To prevent a hematoma forming under the repair", "Correct."],
         ["To reduce hearing loss", "Hearing is not the concern."],
         ["To hold antibiotic ointment in place", "That is not its purpose."],
         ["To prevent water entering the canal", "Water precaution is not its function."]]),
@@ -145,7 +145,7 @@ QUESTIONS = [
   opts=[["Infection prevention", "Correct — the two are named together."],
         ["Immediate audiometry", "Hearing testing is not the priority."],
         ["Computed tomography of the head", "Imaging is not automatic."],
-        ["Long-term splinting", "Splinting belongs to haematoma management."]]),
+        ["Long-term splinting", "Splinting belongs to hematoma management."]]),
 
  # ------------------ tympanic membrane perforation ------------------
  dict(topic="Tympanic membrane perforation", io=IO_A, lead="defining feature", cite=D % 45,
@@ -193,16 +193,16 @@ QUESTIONS = [
 
  dict(topic="Foreign body in the ear", io=IO_A, lead="management", cite=D % 50,
   q="How is a live insect in the ear canal managed before removal?",
-  opts=[["Fill the canal with lidocaine to immobilise it", "Correct, and only if the drum is intact."],
-        ["Use suction without preparation", "The insect must be immobilised first."],
+  opts=[["Fill the canal with lidocaine to immobilize it", "Correct, and only if the drum is intact."],
+        ["Use suction without preparation", "The insect must be immobilized first."],
         ["Wait for it to leave on its own", "That is not the approach taken."],
-        ["Instil antibiotic drops first", "Antibiotics do not immobilise it."]]),
+        ["Instill antibiotic drops first", "Antibiotics do not immobilize it."]]),
 
  dict(topic="Foreign body in the ear", io=IO_A, lead="management", cite=D % 49,
   q="What is the overriding caution when removing an ear canal foreign body?",
   opts=[["Do not push the object deeper", "Correct."],
         ["Do not use any light source", "Illumination is required."],
-        ["Do not use local anaesthetic", "Anaesthesia may be appropriate."],
+        ["Do not use local anesthetic", "Anesthesia may be appropriate."],
         ["Do not document the object", "Documentation is routine."]]),
 
  dict(topic="Foreign body in the ear", io=IO_B, lead="epidemiology", cite=D % 51,
@@ -222,15 +222,15 @@ QUESTIONS = [
  # -------------------------- otitis externa --------------------------
  dict(topic="Otitis externa", io=IO_A, lead="epidemiology", cite=D % 54,
   q="What proportion of people experience otitis externa in their lifetime?",
-  opts=[["About ten per cent", "Correct."],
-        ["About thirty per cent", "Higher than the accepted figure."],
+  opts=[["About ten percent", "Correct."],
+        ["About thirty percent", "Higher than the accepted figure."],
         ["About half", "Five times the accepted figure."],
-        ["Over ninety per cent", "That would make it near-universal, which it is not."]]),
+        ["Over ninety percent", "That would make it near-universal, which it is not."]]),
 
  dict(topic="Otitis externa", io=IO_A, lead="etiology", cite=D % 55,
   q="Which organism causes the largest share of otitis externa?",
-  opts=[["Pseudomonas aeruginosa", "Correct, at around thirty-eight per cent."],
-        ["Staphylococcus aureus", "A smaller share, around eight per cent."],
+  opts=[["Pseudomonas aeruginosa", "Correct, at around thirty-eight percent."],
+        ["Staphylococcus aureus", "A smaller share, around eight percent."],
         ["Streptococcus pneumoniae", "That organism belongs to middle ear infection."],
         ["Aspergillus niger", "That causes fungal canal infection."]]),
 
@@ -288,8 +288,8 @@ QUESTIONS = [
   q="Which patients are at greatest risk of necrotizing external otitis?",
   opts=[["Elderly diabetics and the immunocompromised", "Correct."],
         ["Healthy competitive swimmers", "Swimmers are at risk of ordinary canal infection."],
-        ["Children under five", "This is not a paediatric disease."],
-        ["Frequent air travellers", "Travel predisposes to barotrauma."]]),
+        ["Children under five", "This is not a pediatric disease."],
+        ["Frequent air travelers", "Travel predisposes to barotrauma."]]),
 
  dict(topic="Malignant otitis externa", io=IO_A, lead="defining feature", cite=D % 61,
   q="Which symptom most strongly suggests necrotizing external otitis rather than ordinary canal infection?",
@@ -338,7 +338,7 @@ QUESTIONS = [
   q="Which otoscopic appearance is described as resembling wet newspaper?",
   opts=[["Aspergillus infection", "Correct — visible spores and filaments."],
         ["Candida infection", "Candida appears as white, fluffy, curd-like material."],
-        ["Pseudomonas infection", "Bacterial infection shows erythema and oedema."],
+        ["Pseudomonas infection", "Bacterial infection shows erythema and edema."],
         ["Cholesteatoma", "That appears as keratin debris behind the drum."]]),
 
  dict(topic="Otomycosis", io=IO_A, lead="treatment", cite=D % 63,
@@ -365,17 +365,17 @@ QUESTIONS = [
 
  dict(topic="Otosclerosis", io=IO_A, lead="epidemiology", cite=D % 65,
   q="What proportion of otosclerosis is bilateral and asymmetric?",
-  opts=[["About seventy per cent", "Correct; the remaining thirty per cent is unilateral."],
-        ["About thirty per cent", "That is the unilateral share."],
-        ["About ninety-five per cent", "Higher than the accepted figure."],
-        ["All cases", "Thirty per cent are unilateral."]]),
+  opts=[["About seventy percent", "Correct; the remaining thirty percent is unilateral."],
+        ["About thirty percent", "That is the unilateral share."],
+        ["About ninety-five percent", "Higher than the accepted figure."],
+        ["All cases", "Thirty percent are unilateral."]]),
 
  dict(topic="Otosclerosis", io=IO_A, lead="diagnostic technique", cite=D % 66,
   q="What is the purpose of otoscopy in suspected otosclerosis?",
   opts=[["To exclude other causes of conductive loss", "Correct — the examination itself is normal."],
         ["To measure the degree of loss", "That requires audiometry."],
         ["To assess the mastoid", "The mastoid is not the issue."],
-        ["To visualise the stapes", "The stapes cannot be seen through an intact drum."]]),
+        ["To visualize the stapes", "The stapes cannot be seen through an intact drum."]]),
 
  dict(topic="Otosclerosis", io=IO_A, lead="diagnostic technique", cite=D % 66,
   q="Which imaging study is the initial choice in otosclerosis?",

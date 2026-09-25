@@ -46,7 +46,7 @@ def check(pool):
         assert not CITES.search(q["q"]), "%s: stem cites the course" % w
     # The promised item must survive into the pool.
     blob = " ".join(q["q"] + " ".join(o[0] + o[1] for o in q["opts"]) for q in pool)
-    assert "rebound hyperaemia" in blob.lower(), "the item he promised to ask is missing"
+    assert "rebound hyperemia" in blob.lower(), "the item he promised to ask is missing"
 
 
 def rotate(qs, rng):

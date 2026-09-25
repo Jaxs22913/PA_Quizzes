@@ -12,7 +12,7 @@ def Q(topic, io, q, opts, c, slide):
 QUESTIONS = [
 
 Q("Sensitivity and specificity", "1 — Compare and contrast sensitivity and specificity",
-  "A clinician wants a test that will correctly identify patients who do have a condition, minimising the number of "
+  "A clinician wants a test that will correctly identify patients who do have a condition, minimizing the number of "
   "affected patients missed. What property is she describing?",
   [["Sensitivity, the probability that the test is positive when the person does have the condition",
     "Correct. Sensitivity is the probability that the test shows a person has the condition when they do have it — "
@@ -82,12 +82,12 @@ Q("Diagnostic tools", "4 — Discuss clinical principles and decision-making",
 
 Q("Clinical approach", "4 — Discuss clinical principles and decision-making",
   "What are the first three steps of the clinical reasoning process?",
-  [["Gather initial patient information, organise and interpret clinical information, then synthesise it into a "
+  [["Gather initial patient information, organize and interpret clinical information, then synthesize it into a "
     "problem representation",
-    "Correct. The process begins with gathering initial patient information, then organising and interpreting it, "
-    "then synthesising the information into a problem representation, before hypotheses are generated and tested."],
+    "Correct. The process begins with gathering initial patient information, then organizing and interpreting it, "
+    "then synthesizing the information into a problem representation, before hypotheses are generated and tested."],
    ["Generate hypotheses, gather information, then test the hypotheses",
-    "Generating hypotheses before gathering and organising information inverts the sequence and invites premature "
+    "Generating hypotheses before gathering and organizing information inverts the sequence and invites premature "
     "anchoring on a diagnosis."],
    ["Treat the presenting symptoms, observe the response, then diagnose",
     "Treating signs and symptoms before a definitive diagnosis describes the naturalistic or event-driven approach, "
@@ -103,12 +103,12 @@ Q("Differential diagnosis", "4 — Discuss clinical principles and decision-maki
     "metabolic",
     "Correct. VINDICATE is a category-based framework: vascular, infectious, neoplastic, degenerative, iatrogenic, "
     "congenital, autoimmune, trauma, and endocrine or metabolic. Applied to confusion it yields stroke, meningitis, "
-    "brain tumour, Alzheimer disease, and so on."],
+    "brain tumor, Alzheimer disease, and so on."],
    ["Vascular, inflammatory, neurological, drug-related, idiopathic, cardiac, allergic, toxic, and environmental",
     "Several of these categories are plausible in isolation but they are not the letters of this mnemonic, and a "
     "misremembered framework produces a differential with systematic gaps."],
    ["A sequence of steps for physical examination",
-    "VINDICATE is a differential diagnosis framework organised by disease category rather than an examination "
+    "VINDICATE is a differential diagnosis framework organized by disease category rather than an examination "
     "sequence."],
    ["A checklist for evaluating the quality of published evidence",
     "Evaluating the quality and validity of evidence is a step in evidence-based practice, separate from this "
@@ -124,7 +124,7 @@ Q("Hypothetico-deductive method", "4 — Discuss clinical principles and decisio
    ["Treating signs and symptoms before a definitive diagnosis is reached",
     "Treating before a definitive diagnosis describes the naturalistic or event-driven approach, used mostly in "
     "emergency medicine."],
-   ["Recognising disease patterns automatically without deliberate analysis",
+   ["Recognizing disease patterns automatically without deliberate analysis",
     "Fast, automatic pattern recognition is the intuitive system used in straightforward or common situations, "
     "contrasted with the more deliberate, controlled process."],
    ["Ranking diagnoses purely by how common they are in the population",
@@ -144,7 +144,7 @@ Q("Naturalistic approach", "5 — Discuss the naturalistic approach",
    ["A research setting where evidence quality is being appraised",
     "Appraising evidence quality and validity belongs to evidence-based practice rather than to bedside management of "
     "an unstable patient."],
-   ["A screening programme in an asymptomatic population",
+   ["A screening program in an asymptomatic population",
     "Screening identifies the likelihood of occult disease in people without symptoms, which is the opposite of an "
     "event-driven response to an acute presentation."]],
   0, 24),
@@ -193,14 +193,14 @@ Q("Implications for treatment", "6 — Discuss the implications for treatment",
     "Probability is one input, but the likelihood of success, tolerability, and the risk-benefit balance all bear on "
     "whether treating is worthwhile."],
    ["Only the cost of the treatment",
-    "Cost and affordability are recognised barriers to adherence rather than the framework for deciding whether "
+    "Cost and affordability are recognized barriers to adherence rather than the framework for deciding whether "
     "treatment is indicated."],
    ["Treatment should always be withheld until the diagnosis is certain",
     "Certainty is often unattainable, and the naturalistic approach treats before a definitive diagnosis in unstable "
     "patients specifically because waiting can be harmful."]],
   0, 27),
 
-Q("Counselling and adherence", "7 — Recall counseling strategies to help patients adhere to treatment plans",
+Q("Counseling and adherence", "7 — Recall counseling strategies to help patients adhere to treatment plans",
   "Why must clinicians be able to communicate evidence on prognosis, treatment, testing, and prevention effectively?",
   [["To help patients understand their risks and options",
     "Correct. Healthcare providers must be able to effectively communicate evidence on prognosis, treatments, "
@@ -216,7 +216,7 @@ Q("Counselling and adherence", "7 — Recall counseling strategies to help patie
     "responsibility."]],
   0, 28),
 
-Q("Counselling and adherence", "7 — Recall counseling strategies to help patients adhere to treatment plans",
+Q("Counseling and adherence", "7 — Recall counseling strategies to help patients adhere to treatment plans",
   "Which barriers to treatment and medication adherence should be considered?",
   [["Cost and affordability, low health literacy or lack of understanding, and cultural or religious factors",
     "Correct. Barriers to treatment and medication adherence include the cost and affordability of medications or "
@@ -228,7 +228,7 @@ Q("Counselling and adherence", "7 — Recall counseling strategies to help patie
     "Framing non-adherence as a motivational failing overlooks the structural and educational barriers explicitly "
     "listed."],
    ["Barriers are unpredictable and cannot be anticipated",
-    "The named barriers are precisely those a clinician can anticipate and address during counselling."]],
+    "The named barriers are precisely those a clinician can anticipate and address during counseling."]],
   0, 29),
 
 Q("Clinical decision making", "4 — Discuss clinical principles and decision-making",
@@ -244,7 +244,7 @@ Q("Clinical decision making", "4 — Discuss clinical principles and decision-ma
     "with it."],
    ["It applies only to surgical decisions",
     "The framework applies across clinical questions, with the worked example being whether a chest radiograph or "
-    "computed tomography better evaluates a smoker with chest pain and haemoptysis."]],
+    "computed tomography better evaluates a smoker with chest pain and hemoptysis."]],
   0, 22),
 
 Q("Clinical decision making", "4 — Discuss clinical principles and decision-making",
@@ -254,7 +254,7 @@ Q("Clinical decision making", "4 — Discuss clinical principles and decision-ma
     "done, and whether this patient should be treated — alongside deciding what information to gather and how to "
     "integrate it."],
    ["What disease does the patient have, what is the prognosis, and what is the cost",
-    "Prognosis and cost are relevant to counselling and adherence, but the three decision questions concern "
+    "Prognosis and cost are relevant to counseling and adherence, but the three decision questions concern "
     "diagnosis, testing, and treatment."],
    ["Is the patient stable, is the diagnosis certain, and is the family informed",
     "Stability drives the naturalistic approach in emergency settings but is not one of the three stated questions."],

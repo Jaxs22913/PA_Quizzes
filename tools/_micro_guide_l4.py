@@ -126,7 +126,7 @@ SECTION = """
   <p><strong>A fomite is a non-living surface or object</strong> that may transmit pathogens.
   <strong>Hospital-acquired infection (HAI)</strong> costs longer stays, long-term disability,
   preventable deaths, expense, and risk to both safety and quality of care. It is most threatening
-  to the <strong>immunocompromised, paediatric, geriatric and HIV patients, and those with open
+  to the <strong>immunocompromised, pediatric, geriatric and HIV patients, and those with open
   wounds, burns or recent surgery</strong>.</p>
   <p><strong>Clinical fomites named:</strong> scalpels and syringes; <strong>catheters</strong>
   &mdash; a particular problem with biofilm-forming <em>Staphylococcus aureus</em> and
@@ -154,28 +154,28 @@ SECTION = """
   </div>
   <div class="study">
     <h4>Viral fomites &mdash; Boone and Gerba, 2007</h4>
-    <p>Pre-2007 figures: <strong>1.7 million deaths a year from diarrhoeal disease and 1.5 million
+    <p>Pre-2007 figures: <strong>1.7 million deaths a year from diarrheal disease and 1.5 million
     from respiratory infection</strong>. <strong>Viruses cause about 60% of human
     infections</strong> &mdash; and <strong>viral disease cannot be cured with antibiotics</strong>,
     so prevention rests on vaccines and antivirals. <strong>Crowded indoor environments
     consistently increase morbidity and mortality</strong>: schools, daycare, nursing homes,
-    offices, hotels, cruise ships and hospitals, especially paediatric wards.</p>
+    offices, hotels, cruise ships and hospitals, especially pediatric wards.</p>
   </div>
   <div class="study">
     <h4>Patient-care items &mdash; Kanamori and colleagues, 2017</h4>
-    <p>Soap and sanitiser dispensers, humidifiers, nebulisers, pressure transducers, stethoscopes,
+    <p>Soap and sanitizer dispensers, humidifiers, nebulizers, pressure transducers, stethoscopes,
     suction apparatus, thermometers, <strong>ultrasound probes and gel</strong>, blood pressure
     monitors, intravenous pumps and poles, telemetry boxes and wires.</p>
   </div>
   <div class="callout micro-audio">
     <p><strong>From the recording:</strong> results are reported as <strong>CFU &mdash;
     colony-forming units</strong> &mdash; because you cannot know whether a visible colony grew
-    from one cell, a hundred or a thousand. The unit is <strong>CFU per gram or per millilitre</strong>,
-    and serial dilution works for clinical specimens, urine, faeces, food, water and milk alike.</p>
+    from one cell, a hundred or a thousand. The unit is <strong>CFU per gram or per milliliter</strong>,
+    and serial dilution works for clinical specimens, urine, feces, food, water and milk alike.</p>
   </div>
 
   <h3 class="sub" id="tx-disinfect">4.8 &middot; Disinfection, coatings and the history</h3>
-  <p><strong>Five best practices</strong> for non-critical surfaces, in order: standardise cleaning
+  <p><strong>Five best practices</strong> for non-critical surfaces, in order: standardize cleaning
   policy; select <strong>EPA-registered</strong> hospital disinfectants; educate
   <strong>ALL</strong> staff <em>including environmental services</em>; monitor compliance with
   feedback; implement <strong>no-touch</strong> decontamination technology.</p>
@@ -190,7 +190,7 @@ SECTION = """
   arsenic, mercury and tin compounds since the 1960s. <strong>Anti-fouling prevents attachment;
   antimicrobial kills.</strong> A hospital coating should be <strong>nontoxic, cost effective,
   commercially available, stable and durable</strong>: plastics, copper or silver alloys,
-  photocatalytic coatings, specialised textiles, micro-patterned hydrophobic surfaces.</p>
+  photocatalytic coatings, specialized textiles, micro-patterned hydrophobic surfaces.</p>
 
   <h3 class="sub" id="tx-resistance">4.9 &middot; Fomites and antibiotic resistance</h3>
   <p><strong>Extensive antibiotic use has driven multi-drug resistance</strong>, and
@@ -245,7 +245,7 @@ TEST = """    transmission: [
        o:["Passive","Active","Asymptomatic","Symptomatic"],a:0,
        why:"An active carrier is genuinely infected; a passive carrier merely carries it on them."},
       {q:"What is the difference between a reservoir and a vector?",
-       o:["The reservoir harbours; the vector delivers","They are the same thing",
+       o:["The reservoir harbors; the vector delivers","They are the same thing",
           "The reservoir is always non-living","The vector is always non-living"],a:0,
        why:"Birds may be a malaria reservoir while mosquitoes are the vector."},
       {q:"Which zoonosis spreads from a mammal reservoir by bite or saliva, and only rarely from human to human, through organ transplantation?",

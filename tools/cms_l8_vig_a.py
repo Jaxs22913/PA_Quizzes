@@ -35,7 +35,7 @@ POOL_A = [
  dict(topic="Ephelides", io=IOA,
    q="A 24-year-old woman with freckles across her cheeks asks what will reduce them. Which is the most appropriate treatment plan?",
    opts=[
-     ["Sun protection and counselling first, then topical depigmenting agents, with intense pulsed light or laser if needed",
+     ["Sun protection and counseling first, then topical depigmenting agents, with intense pulsed light or laser if needed",
       "Correct — hydroquinone, retinoids, alpha-hydroxy acids and botanicals are the topical options."],
      ["Cryotherapy to each lesion with five to ten second freezes, repeated over several sessions as needed",
       "Cryotherapy is impractical because of the size of the lesions."],
@@ -46,7 +46,7 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="Ephelides", io=IOA,
-   q="A 21-year-old man with freckles asks whether laser treatment will get rid of them permanently. Which is the most appropriate counselling point?",
+   q="A 21-year-old man with freckles asks whether laser treatment will get rid of them permanently. Which is the most appropriate counseling point?",
    opts=[
      ["Laser and intense pulsed light are preferred over cryotherapy, but the lesions can relapse",
       "Correct — sun protection and education remain the foundation of management."],
@@ -86,11 +86,11 @@ POOL_A = [
    c=0, cite=c(12)),
 
  dict(topic="Lentigines", io=IOA,
-   q="A 34-year-old man has generalised darkly pigmented lentigines over much of his body. Which additional consideration does this raise?",
+   q="A 34-year-old man has generalized darkly pigmented lentigines over much of his body. Which additional consideration does this raise?",
    lead="next step",
    opts=[
      ["An inherited disorder should be considered, as with LAMB and myxoma syndrome",
-      "Correct — a partial or generalised lentigo is what prompts that question."],
+      "Correct — a partial or generalized lentigo is what prompts that question."],
      ["Neurocutaneous melanosis should be considered, and brain imaging arranged",
       "That concern belongs to congenital naevi of the head and midline."],
      ["Dysplastic naevus syndrome should be considered, and every lesion biopsied",
@@ -113,7 +113,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Solar lentigo", io=IOB,
-   q="A 70-year-old woman with numerous solar lentigines asks what her lesions mean for her health. Which is the most appropriate counselling point?",
+   q="A 70-year-old woman with numerous solar lentigines asks what her lesions mean for her health. Which is the most appropriate counseling point?",
    opts=[
      ["The lesions themselves are benign, but they mark sun damage that is also associated with actinic keratosis and skin cancers",
       "Correct — the association includes squamous cell carcinoma, basal cell carcinoma and melanoma."],
@@ -222,7 +222,7 @@ POOL_A = [
    lead="diagnosis",
    opts=[
      ["It is the segmental variant, which differs in both diagnostic tools and treatment",
-      "Correct — segmental disease is characterised by unpredictable cycles of flare and stabilisation."],
+      "Correct — segmental disease is characterized by unpredictable cycles of flare and stabilization."],
      ["It is non-segmental disease, which is treated with phototherapy from the outset",
       "Non-segmental disease is symmetrical and does not respect the midline."],
      ["It is a post-inflammatory change, which resolves on its own within several months",

@@ -52,28 +52,28 @@ SYSTEMS = [
 
 ("Pressure injury staging", L7, "33&ndash;34",
  "The deck presents this as the National Pressure Injury Advisory Panel table, shown for both lightly and darkly pigmented skin. <b>Both slides are images &mdash; the text does not extract</b>, so this is transcribed from the pictures. Stage 1 is the one to know cold: the erythema is <b>non-blanchable</b> and the skin is <b>intact</b>.",
- [("Stage 1", "Localised area of <b>non-blanchable erythema</b> of <b>intact</b> skin."),
+ [("Stage 1", "Localized area of <b>non-blanchable erythema</b> of <b>intact</b> skin."),
   ("Stage 2", "<b>Partial-thickness</b> skin loss with exposed dermis. Wound bed is viable, pink or red, and can be moist, shiny or dry."),
   ("Stage 3", "<b>Full thickness</b> skin loss. <b>Adipose (fat) tissue is visible.</b>"),
   ("Stage 4", "Full thickness skin <b>and tissue</b> loss. <b>Exposed fascia, muscle, tendon, ligament, cartilage or bone.</b>"),
   ("Unstageable", "Obscured full thickness skin and tissue loss. Extent <b>cannot be determined because it is obscured by slough or eschar</b>."),
-  ("Deep Tissue", "Persistent <b>non-blanchable deep red / purple discolouration</b>. Skin can be <b>intact or non-intact</b>.")],
+  ("Deep Tissue", "Persistent <b>non-blanchable deep red / purple discoloration</b>. Skin can be <b>intact or non-intact</b>.")],
  [("npiap-stages-1-3.jpg", "Stages 1&ndash;3, each shown in lightly and darkly pigmented skin. Slide 33 &mdash; this table is the entire slide, as an image."),
   ("npiap-stage4-unstageable-dti.jpg", "Stage 4, Unstageable and Deep Tissue Injury. Slide 34, likewise an image with no extractable text.")]),
 
 ("Sunburn &mdash; degree", L3, "91&ndash;95",
  "Only first and second degree are taught for sunburn. <b>Blistering is the line between them.</b> Systemic features are graded separately rather than as a third degree.",
  [("First degree", "Erythema, warmth, tenderness. <b>Confined to the epidermis. No blistering.</b> Resolves in <b>3&ndash;5 days</b> with desquamation."),
-  ("Second degree", "<b>Blistering</b>, intense pain, oedema. <b>Partial dermal</b> involvement. Takes <b>1&ndash;2 weeks</b>; risk of secondary infection."),
+  ("Second degree", "<b>Blistering</b>, intense pain, edema. <b>Partial dermal</b> involvement. Takes <b>1&ndash;2 weeks</b>; risk of secondary infection."),
   ("Systemic (&ldquo;sun poisoning&rdquo;)", "Fever, chills, nausea and vomiting, dehydration, headache, tachycardia &mdash; particularly with large body surface area involvement.")],
  [("sunburn-acute-and-48h.jpg", "The deck's own before-and-after: <b>A</b> acute sunburn, sharply demarcated at the clothing line; <b>B</b> the same back 48 hours later, now blistered and desquamating. Slide 92.")]),
 
 ("Stevens-Johnson syndrome &rarr; toxic epidermal necrolysis", L3, "82, 88, 126",
  "One disease spectrum split by <b>body surface area of epidermal detachment</b>. This percentage is the whole distinction &mdash; mucosal involvement, drug trigger and prodrome occur in both and separate nothing.",
- [("Stevens-Johnson syndrome", "<b>Less than 10%</b> body surface area detachment, with mucosal erosions. Hospitalise; stop the drug."),
+ [("Stevens-Johnson syndrome", "<b>Less than 10%</b> body surface area detachment, with mucosal erosions. Hospitalize; stop the drug."),
   ("Overlap", "<b>10&ndash;30%</b> &mdash; the decks define SJS and TEN by their thresholds and treat the middle as the overlap band."),
   ("Toxic epidermal necrolysis", "<b>More than 30%</b> body surface area. Positive Nikolsky sign, &ldquo;wet parchment&rdquo; appearance, severe mucosal erosion. <b>Mortality up to 30&ndash;35%.</b> Burn unit or intensive care is mandatory.")],
- [("sjs-mucosal-erosions.jpg", "Mucosal erosions and haemorrhagic crusting of the lips &mdash; present across the spectrum, so it does <i>not</i> tell you which end you are at. Slide 80."),
+ [("sjs-mucosal-erosions.jpg", "Mucosal erosions and hemorrhagic crusting of the lips &mdash; present across the spectrum, so it does <i>not</i> tell you which end you are at. Slide 80."),
   ("ten-epidermal-detachment.jpg", "Sheets of detaching epidermis, the &ldquo;wet parchment&rdquo; appearance. Extent of this is what sets the diagnosis. Slide 86.")]),
 
 ("SCORTEN &mdash; severity of illness score for toxic epidermal necrolysis", L3, "89",
@@ -87,7 +87,7 @@ SYSTEMS = [
  []),
 
 ("Fitzpatrick skin type", L3, "122",
- "Predicts <b>baseline ultraviolet sensitivity</b> and guides photoprotection counselling. <span class=warn>It grades how skin <i>responds</i> to ultraviolet light &mdash; burning and tanning history &mdash; not what colour it is.</span> The deck is emphatic that <b>all six types are susceptible</b> to cumulative ultraviolet damage, photoaging and skin cancer &mdash; risk varies, it does not disappear. <span class=warn>Types IV&ndash;VI are not immune; delayed diagnosis is common because the index of suspicion is lower, and melanoma in darker-skinned people is frequently diagnosed at an advanced stage.</span>",
+ "Predicts <b>baseline ultraviolet sensitivity</b> and guides photoprotection counseling. <span class=warn>It grades how skin <i>responds</i> to ultraviolet light &mdash; burning and tanning history &mdash; not what color it is.</span> The deck is emphatic that <b>all six types are susceptible</b> to cumulative ultraviolet damage, photoaging and skin cancer &mdash; risk varies, it does not disappear. <span class=warn>Types IV&ndash;VI are not immune; delayed diagnosis is common because the index of suspicion is lower, and melanoma in darker-skinned people is frequently diagnosed at an advanced stage.</span>",
  [("Type I", "Very fair, red or blonde hair, freckles, blue or green eyes. <b>Always burns, never tans.</b> Skin cancer risk: <b>highest</b>."),
   ("Type II", "Fair skin, light hair, blue or hazel eyes. <b>Usually burns, sometimes tans.</b> Risk: <b>very high</b>."),
   ("Type III", "Medium skin, brown hair, hazel or brown eyes. <b>Sometimes burns, always tans.</b> Risk: <b>high</b>."),
@@ -106,7 +106,7 @@ SYSTEMS = [
 
 ("Lyme disease &mdash; stage", L8, "71&ndash;76",
  "Three stages defined by <b>how long after the tick bite</b>, not by severity.",
- [("Stage 1 &mdash; early localised", "<b>Erythema migrans</b>: expanding erythematous round or oval lesion <b>&gt;5&nbsp;cm</b> with central clearing and often a darker punctate centre at the bite. <b>About 1 week after the bite.</b> Fever, myalgia, arthralgia, fatigue, lymphadenopathy."),
+ [("Stage 1 &mdash; early localized", "<b>Erythema migrans</b>: expanding erythematous round or oval lesion <b>&gt;5&nbsp;cm</b> with central clearing and often a darker punctate center at the bite. <b>About 1 week after the bite.</b> Fever, myalgia, arthralgia, fatigue, lymphadenopathy."),
   ("Stage 2 &mdash; early disseminated", "<b>Days to weeks later.</b> Skin, central nervous system, cardiac, musculoskeletal, eyes. Cranial nerve palsies, meningitis, radiculopathies; arthralgias and arthritis; headache, stiff neck, fatigue, malaise."),
   ("Stage 3 &mdash; late persistent", "<b>Months to years later.</b> Classic manifestation is <b>monoarticular or oligoarticular arthritis of the knee or weight-bearing joints</b>. Subacute encephalopathy with memory loss, mood change, sleep disturbance. Acrodermatitis chronica atrophicans.")],
  [("lyme-erythema-migrans.jpg", "Stage 1: erythema migrans, with the expanding ring and central clearing. Slide 73."),
@@ -122,7 +122,7 @@ SYSTEMS = [
 ("Varicella &mdash; lesions in several stages at once", L6, "84, 89",
  "Every individual lesion walks the same sequence, but the diagnostic point is that <b>they do not walk it in step</b>. Seeing several stages side by side at one moment is the finding.",
  [("The sequence", "<b>Macule &rarr; papule &rarr; vesicle &rarr; crust.</b>"),
-  ("The hallmark", "<b>Several stages appear simultaneously</b> in the same patient &mdash; a generalised pruritic eruption &ldquo;in multiple stages of healing&rdquo;."),
+  ("The hallmark", "<b>Several stages appear simultaneously</b> in the same patient &mdash; a generalized pruritic eruption &ldquo;in multiple stages of healing&rdquo;."),
   ("Distribution", "Concentrated on the <b>trunk, scalp and face</b>."),
   ("Infectious period", "From <b>1&ndash;2 days before the rash until all lesions crust</b>. In breakthrough disease without crusts, <b>until no new lesions appear for 24 hours</b>. <span class=warn>The lesions define this, not the fever.</span>"),
   ("Higher complication risk", "Adults, pregnancy, newborn age, and immunocompromise.")],
@@ -133,7 +133,7 @@ SYSTEMS = [
  [("1. Hemostasis", "The first phase."),
   ("2. Inflammation", ""),
   ("3. Proliferation", ""),
-  ("4. Remodeling", "As the scar matures, <b>tensile strength improves through progressive cross-linking of collagen fibres</b> &mdash; it is not fixed at closure.")],
+  ("4. Remodeling", "As the scar matures, <b>tensile strength improves through progressive cross-linking of collagen fibers</b> &mdash; it is not fixed at closure.")],
  [("wound-healing-four-phases.jpg", "The four phases with the deck's own time bands: seconds to hours, hours to days, days to weeks, weeks to months. Slide 11.")]),
 
 ("Infantile hemangioma &mdash; growth phases", L7, "65&ndash;66",
@@ -141,18 +141,18 @@ SYSTEMS = [
  [("Earliest sign", "<b>Blanching</b> of the involved skin, then fine <b>telangiectasias</b>, then a red or crimson macule."),
   ("Proliferative", "Rapid growth during the neonatal period (birth to 4 weeks); <b>most growth in the first 4&ndash;6 months</b>."),
   ("Involution", "A subsequent <b>slower involution phase</b>.")],
- [("hemangioma-growth-3days-5months.jpg", "The proliferative phase in one infant from 3 days to 5 months &mdash; the growth curve the parents are being counselled about. Slide 68.")]),
+ [("hemangioma-growth-3days-5months.jpg", "The proliferative phase in one infant from 3 days to 5 months &mdash; the growth curve the parents are being counseled about. Slide 68.")]),
 
 ("Keratoacanthoma &mdash; triphasic pattern", L7, "50",
  "The deck calls this triphasic, and it is why the lesion is mistaken for benign.",
  [("1. Rapid growth", "Within <b>6&ndash;8 weeks</b>."),
-  ("2. Stabilisation", ""),
+  ("2. Stabilization", ""),
   ("3. Regression", "After <b>3&ndash;6 months</b>. <span class=warn>It may instead continue growing or rarely metastasise, and it cannot be told from squamous cell carcinoma clinically &mdash; biopsy is the only reliable method.</span>")],
  [("keratoacanthoma-crateriform.jpg", "The crateriform nodule with its central keratin plug. Slide 49.")]),
 
 ("Eczema &mdash; stage of the reaction", L2, "46",
  "Eczema changes appearance over time, so the same condition looks different depending on when it is seen.",
- [("Acute", "Erythema, oedema, papules, vesicles, oozing and crusting."),
+ [("Acute", "Erythema, edema, papules, vesicles, oozing and crusting."),
   ("Subacute", "Scaling, erythema, papules and excoriations."),
   ("Chronic", "Xerosis, fissuring, <b>lichenification</b> and pigment alteration.")],
  [("eczema-chronic-lichenification.jpg", "Chronic-stage hands: thickened, fissured, lichenified skin with accentuated skin markings. Slide 46.")]),
@@ -172,11 +172,11 @@ SYSTEMS = [
   ("Moderate papulopustular / mixed", "<b>Topical retinoid AND oral antibiotic AND topical benzoyl peroxide.</b>"),
   ("Severe (e.g. nodular)", "<b>Topical retinoid AND oral antibiotic AND topical benzoyl peroxide &mdash; OR oral isotretinoin monotherapy.</b>")],
  [("acne-comedonal-whiteheads-blackheads.jpg", "Comedonal: closed comedones (whiteheads) and open comedones (blackheads). Non-inflammatory. Slide 13."),
-  ("acne-papule-pustule.jpg", "The deck's labelled papule and pustule &mdash; the inflammatory lesions that move a patient off the comedonal rung. Slide 11."),
+  ("acne-papule-pustule.jpg", "The deck's labeled papule and pustule &mdash; the inflammatory lesions that move a patient off the comedonal rung. Slide 11."),
   ("acne-severe-nodular.jpg", "Severe inflammatory and nodular disease, the band where isotretinoin monotherapy becomes an option. Slide 13.")]),
 
 ("Melanoma &mdash; Clark level (anatomic depth)", L10, "50",
- "<b>This slide is a figure with no text at all</b>, so the levels below are read off the diagram's own anatomy. The level of invasion, conventionally called the Clark level, grades melanoma by <b>which layer of skin it has reached</b>. <span class=warn>It has largely been superseded by Breslow thickness, which is the deck's stated dominant prognostic variable</span> &mdash; but Clark levels still appear on pathology reports, so the ladder is worth recognising.",
+ "<b>This slide is a figure with no text at all</b>, so the levels below are read off the diagram's own anatomy. The level of invasion, conventionally called the Clark level, grades melanoma by <b>which layer of skin it has reached</b>. <span class=warn>It has largely been superseded by Breslow thickness, which is the deck's stated dominant prognostic variable</span> &mdash; but Clark levels still appear on pathology reports, so the ladder is worth recognizing.",
  [("Level I", "Confined to the <b>epidermis</b>, above the basement membrane &mdash; melanoma in situ."),
   ("Level II", "Invades into the <b>papillary dermis</b>."),
   ("Level III", "<b>Fills and expands the papillary dermis</b>, down to the papillary&ndash;reticular interface."),
@@ -190,7 +190,7 @@ SYSTEMS = [
   ("Re-excision &mdash; under 1&nbsp;mm", "<b>1&nbsp;cm</b> margin"),
   ("Re-excision &mdash; over 1&nbsp;mm", "<b>1&ndash;2&nbsp;cm</b> margin"),
   ("Sentinel lymph node biopsy", "Offered or discussed at <b>&ge;1.0&nbsp;mm</b> Breslow thickness, <b>or &ge;0.8&nbsp;mm with additional histologic risk factors</b> (ulceration, high mitotic rate, lymphovascular invasion). It is a <b>staging</b> procedure."),
-  ("Expert-centre referral", "Melanoma <b>deeper than 1&nbsp;mm</b>, or with lymph-node or other-site spread.")],
+  ("Expert-center referral", "Melanoma <b>deeper than 1&nbsp;mm</b>, or with lymph-node or other-site spread.")],
  [("melanoma-survival-by-breslow.jpg", "Five-year survival falling across the same thickness bands, then again with nodal and disseminated disease. Slide 55.")]),
 
 ("Melanoma &mdash; overall stage 0 to IV", L10, "53",
@@ -203,7 +203,7 @@ SYSTEMS = [
  [("melanoma-stages-0-4.jpg", "Stages 0 through IV drawn against epidermis, dermis and subcutaneous tissue. Slide 53, image-only. The stage captions above are quoted from this figure.")]),
 
 ("Melanoma &mdash; TNM staging table", L10, "54",
- "<b>Image-only slide, transcribed.</b> In this table <b>T</b> is primary tumour thickness, <b>N</b> the number of tumour-involved regional lymph nodes, and <b>M</b> the number of metastases at a distant site. Note the shape of it: <b>every stage from 0 to IIC is N0 M0</b> &mdash; node-negative &mdash; and <b>every stage III subgroup is M0 with positive nodes</b>. Anything M1 is stage IV regardless of the tumour.",
+ "<b>Image-only slide, transcribed.</b> In this table <b>T</b> is primary tumor thickness, <b>N</b> the number of tumor-involved regional lymph nodes, and <b>M</b> the number of metastases at a distant site. Note the shape of it: <b>every stage from 0 to IIC is N0 M0</b> &mdash; node-negative &mdash; and <b>every stage III subgroup is M0 with positive nodes</b>. Anything M1 is stage IV regardless of the tumor.",
  [("0", "Tis &middot; N0 &middot; M0"),
   ("IA", "T1a or T1b &middot; N0 &middot; M0"),
   ("IB", "T2a &middot; N0 &middot; M0"),
@@ -224,7 +224,7 @@ SYSTEMS = [
   ("Vesicle &rarr; bulla", "Fluid filled. <b>Vesicle up to &lt;1&nbsp;cm; bulla &gt;1&nbsp;cm.</b>"),
   ("Petechiae &rarr; purpura", "Deposits of blood. <b>Petechiae 1&ndash;2&nbsp;mm; purpura &ge;4&nbsp;mm.</b> <span class=warn>Purpura is a medical emergency until proven otherwise.</span>")],
  [("primary-lesion-morphology.jpg", "The six primary lesions the size rules are applied to. Slide 9."),
-  ("petechiae-purpura.jpg", "Blood deposits &mdash; the pair separated by millimetres rather than by a centimetre. Slide 15.")]),
+  ("petechiae-purpura.jpg", "Blood deposits &mdash; the pair separated by millimeters rather than by a centimeter. Slide 15.")]),
 ]
 
 FITZ = [("I", "#f6e0d2"), ("II", "#f0cba7"), ("III", "#e0ac7e"),
@@ -258,7 +258,7 @@ def figures(figs):
             for num, hexv in FITZ)
         return ('<figure class="fig swatchfig"><div class="swatch">%s</div>'
                 '<figcaption>Representative tones only. <b>Fitzpatrick type is decided by '
-                'burning and tanning history, not by matching a colour</b> &mdash; the deck '
+                'burning and tanning history, not by matching a color</b> &mdash; the deck '
                 'frames it as ultraviolet sensitivity. Slide 122 carries no figure.'
                 '</figcaption></figure>' % chips)
     out = []

@@ -15,7 +15,7 @@ transcript before being encoded here:
   2. "We're not gonna do math, I'm not gonna make you do math." -> No question
      may ask the student to compute a predictive value.
   3. "The thing I want you to know better is kind of the order and sort of the
-     broad category." -> Tube questions test order of draw and common colour-to-
+     broad category." -> Tube questions test order of draw and common color-to-
      test pairings, not the deck's exhaustive additive-by-stopper table.
 
 Every question is authored with its correct answer first, because choosing the

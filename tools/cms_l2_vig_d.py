@@ -18,7 +18,7 @@ POOL_D = [
    q="A 68-year-old woman with deeply pigmented skin has months of itching and swelling of both lower legs. The gaiter regions show poorly demarcated violaceous-to-deep-brown patches, and on palpation both areas are warm and boggy. Which is the most likely diagnosis?",
    opts=[
      ["Stasis dermatitis",
-      "Correct — on darker skin the erythema reads as violaceous, grey or brown, so palpation for warmth and oedema carries the diagnosis."],
+      "Correct — on darker skin the erythema reads as violaceous, gray or brown, so palpation for warmth and edema carries the diagnosis."],
      ["Bilateral cellulitis of the lower legs",
       "Cellulitis is essentially never bilateral, and it is acute and febrile."],
      ["Allergic contact dermatitis to a topical product",
@@ -33,7 +33,7 @@ POOL_D = [
      ["Atopic dermatitis",
       "Correct — flexural distribution with a family history of atopy; on darker skin the plaques can appear almost silvery instead of inflamed."],
      ["Plaque psoriasis of the flexures",
-      "Psoriasis favours extensor surfaces and produces thick silvery scale on well-demarcated plaques."],
+      "Psoriasis favors extensor surfaces and produces thick silvery scale on well-demarcated plaques."],
      ["Tinea corporis of both flexures",
       "That would have an advancing scaly border and be potassium hydroxide positive."],
      ["Lichen simplex chronicus at both sites",
@@ -44,17 +44,17 @@ POOL_D = [
    q="A 34-year-old man with deeply pigmented skin has a warm, tender, swollen forearm. The examiner cannot appreciate any erythema. Which is the most appropriate approach?",
    opts=[
      ["Rely on palpation, distribution and secondary change, since erythema is an unreliable signal on darker skin",
-      "Correct — the finding is present but the colour cue is not."],
+      "Correct — the finding is present but the color cue is not."],
      ["Conclude that inflammation is absent, since visible erythema is required in order to diagnose it",
       "Absence of visible erythema does not mean absence of inflammation."],
      ["Perform a Wood's lamp examination to bring out the erythema in a dark room",
       "A Wood's lamp evaluates pigment change and selected infections, not erythema."],
      ["Take a punch biopsy immediately, since clinical assessment cannot be relied on",
-      "The clinical assessment is still valid; it just cannot lean on colour."]],
+      "The clinical assessment is still valid; it just cannot lean on color."]],
    c=0, cite=c(114)),
 
  dict(topic="Pityriasis rosea", io=IOC,
-   q="A 24-year-old woman with darker skin had a single large oval patch on the trunk two weeks ago, followed by smaller oval lesions along the skin lines. The eruption is now fading but leaving brown marks. Which is the most appropriate counselling point?",
+   q="A 24-year-old woman with darker skin had a single large oval patch on the trunk two weeks ago, followed by smaller oval lesions along the skin lines. The eruption is now fading but leaving brown marks. Which is the most appropriate counseling point?",
    opts=[
      ["Post-inflammatory hyperpigmentation is common here and can last several months, but it does resolve",
       "Correct — the eruption itself is self-limiting and leaves no scar."],
@@ -115,6 +115,6 @@ POOL_D = [
      ["Diascopy with a Wood's lamp",
       "A Wood's lamp evaluates pigment change and selected infections."],
      ["Mineral oil preparation",
-      "That identifies the scabies mite, its eggs or its faecal pellets."]],
+      "That identifies the scabies mite, its eggs or its fecal pellets."]],
    c=0, cite=c(25)),
 ]

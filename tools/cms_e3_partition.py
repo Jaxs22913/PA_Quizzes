@@ -12,7 +12,7 @@ scoring in the units the exam standard is written in.
 ONE DELIBERATE CHANGE FROM THE EXAM 2 DRIVER. The patient-stem term is applied
 only to VIGNETTE sets. Set 1 is recall by design and carries no ages, so on an
 objective pool that term was a flat penalty on every candidate set -- and where
-a pool held a handful of incidental ages it actively pulled the optimiser
+a pool held a handful of incidental ages it actively pulled the optimizer
 toward them for no reason. The shipped Exam 2 objective quizzes sit at 7%
 patient stems and that is the accepted state for Set 1; see [[cms_exam_spec]],
 "the recall quizzes do not match the exam's FORM".

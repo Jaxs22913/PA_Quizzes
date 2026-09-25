@@ -118,7 +118,7 @@ def build():
     not: <em>&ldquo;far and away the most common cause for otitis media is a viral
     infection&rdquo;</em>. And the three-organism sequence is no longer in order of prevalence
     &mdash; <strong>Moraxella catarrhalis has overtaken Haemophilus influenzae because of
-    vaccination</strong>, which is why immunisation status is worth asking. An unimmunised child
+    vaccination</strong>, which is why immunization status is worth asking. An unimmunized child
     puts <em>H. influenzae</em> back on the list.</p>
     <p><strong>His emphasis marker is repetition.</strong> He said <em>&ldquo;it's important, it's
     important, it's important to remember the three most common bacterial causes&rdquo;</em>

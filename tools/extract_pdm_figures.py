@@ -25,19 +25,19 @@ MAXW = 900
 
 FIGURES = [
  ("s17_1.jpg", "order-of-draw", 17,
-  "Chart titled Memory Jogger for the order of draw, showing eight coloured tube stoppers left to right, each captioned with a word forming the phrase Stop Light Red Stay Put Green Light Go, and labelled beneath as sterile, light blue, red, serum separator tube, plasma separator tube, green, lavender and gray.",
+  "Chart titled Memory Jogger for the order of draw, showing eight colored tube stoppers left to right, each captioned with a word forming the phrase Stop Light Red Stay Put Green Light Go, and labeled beneath as sterile, light blue, red, serum separator tube, plasma separator tube, green, lavender and gray.",
   "<b>Stop &middot; Light &middot; Red &middot; Stay &middot; Put &middot; Green &middot; Light &middot; Go.</b> This is the figure to learn from this lecture. Professor Reynolds narrowed the tube objective to exactly this: <em>&ldquo;the thing I want you to know better is kind of the order and sort of the broad category.&rdquo;</em> Sterile (blood culture) first, coagulation second, non-additive next, then the additive tubes. The reason the sequence exists is to stop additive from one tube carrying into the next and corrupting the result."),
 
  ("s43_1.png", "threshold-sensitivity", 43,
-  "Scatter plot with test results on the vertical axis and two groups on the horizontal axis, no disease and disease. A dashed horizontal threshold line is drawn low; a circled cluster of no-disease points sitting above it is labelled false-positives. Annotation states the line is drawn to maximize sensitivity, identifying all those with disease correctly.",
+  "Scatter plot with test results on the vertical axis and two groups on the horizontal axis, no disease and disease. A dashed horizontal threshold line is drawn low; a circled cluster of no-disease points sitting above it is labeled false-positives. Annotation states the line is drawn to maximize sensitivity, identifying all those with disease correctly.",
   "<b>A threshold drawn to maximize sensitivity.</b> Push the line down until every diseased patient falls above it and you catch them all &mdash; at the cost of sweeping in the healthy people circled here as <b>false positives</b>. This is SnNout made visual: a negative result now genuinely rules out."),
 
  ("s43_2.png", "threshold-specificity", 43,
-  "The same scatter plot of test results for no disease and disease groups, with the dashed threshold line drawn higher. A circled cluster of disease points sitting below the line is labelled false-negatives. Annotation states the line is drawn to maximize specificity, identifying all those without disease correctly.",
+  "The same scatter plot of test results for no disease and disease groups, with the dashed threshold line drawn higher. A circled cluster of disease points sitting below the line is labeled false-negatives. Annotation states the line is drawn to maximize specificity, identifying all those without disease correctly.",
   "<b>The same data, the threshold moved up.</b> Now no healthy patient is above the line, so a positive genuinely rules in &mdash; SpPin &mdash; but the circled diseased patients below it are missed as <b>false negatives</b>. Read this against the figure above: it is one dataset and one dial. You cannot maximize both, which is why a sensitive test screens and a specific test confirms."),
 
  ("s30_1.png", "urinalysis-dipstick", 30,
-  "Gloved hands holding a urinalysis reagent strip beside a specimen cup of urine, comparing the strip's coloured pads against the printed colour chart on the reagent bottle.",
+  "Gloved hands holding a urinalysis reagent strip beside a specimen cup of urine, comparing the strip's colored pads against the printed color chart on the reagent bottle.",
   "A <b>semi-quantitative</b> point-of-care result. The pads are matched against the chart on the bottle rather than read by a machine, which puts urinalysis between the purely qualitative tests (rapid strep, pregnancy &mdash; positive or negative) and the quantitative ones that need a reader (glucose, cardiac markers)."),
 ]
 

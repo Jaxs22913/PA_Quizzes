@@ -117,8 +117,8 @@ BODY = """<main class="content">
     you are actually being asked for.</p>
     <p><strong>A standing warning.</strong> Several of these rules are stated as absolutes but
     are softened in practice. Imaging is <em>not</em> automatic for dacryoadenitis,
-    dacryocystitis or clearly pre-septal disease; haematology referral is <em>not</em> automatic
-    for a recurrent subconjunctival haemorrhage; and perforation risk in scleritis is greatest in
+    dacryocystitis or clearly pre-septal disease; hematology referral is <em>not</em> automatic
+    for a recurrent subconjunctival hemorrhage; and perforation risk in scleritis is greatest in
     <em>necrotising</em> disease rather than uniformly. Those hedges are folded in below.</p>
   </div>
 
@@ -154,9 +154,9 @@ BODY = """<main class="content">
     with pain or photophobia</b>.</p>
   </div>
 
-  <p><strong>Use the pattern to localise before you name:</strong></p>
+  <p><strong>Use the pattern to localize before you name:</strong></p>
   <table class="tbl">
-    <tr><th>Localises to</th><th>Pattern</th></tr>
+    <tr><th>Localizes to</th><th>Pattern</th></tr>
     <tr><td>Conjunctiva</td><td>Itch or discharge; diffuse injection; <b>vision preserved</b></td></tr>
     <tr><td>Cornea</td><td>Pain and photophobia; fluorescein defect, infiltrate or opacity</td></tr>
     <tr><td>Anterior chamber</td><td><b>Consensual</b> photophobia; ciliary flush; irregular pupil</td></tr>
@@ -167,7 +167,7 @@ BODY = """<main class="content">
   <div class="callout warn">
     <p><strong>Two exceptions to the sequence.</strong> <b>Chemical exposure</b> &mdash; irrigate
     copiously <em>first</em>, before history or examination, then confirm the surface pH has
-    normalised. <b>Suspected open globe</b> &mdash; rigid shield, no pressure, <em>no
+    normalized. <b>Suspected open globe</b> &mdash; rigid shield, no pressure, <em>no
     tonometry</em>, keep nil by mouth, emergency consultation.</p>
   </div>
 
@@ -177,7 +177,7 @@ BODY = """<main class="content">
     <tr><td><b>Slit lamp</b></td><td>Low-power microscope with a high-intensity slit beam</td><td>Anterior structures: lids, cornea, conjunctiva, sclera, iris</td></tr>
     <tr><td><b>Ophthalmoscopy</b></td><td>Direct (hand-held), indirect (lens + head-worn), or slit-lamp &mdash; the last is <b>most common</b> because the patient is already seated there</td><td>Vitreous, retina, retinal vessels, macula, optic disc</td></tr>
     <tr><td><b>Fluorescein examination</b></td><td>Yellow dye <b>instilled</b>, viewed under a Wood's lamp (ultraviolet)</td><td>Corneal abrasions, ulcers, foreign bodies</td></tr>
-    <tr><td><b>Fluorescein angiography</b></td><td>Dye <b>injected</b> into hand or arm, reaches the eye in 10&ndash;15 seconds, blue-flash camera. <b>No iodine</b>, relatively safe</td><td>Blood flow in retina and choroid: diabetic retinopathy, macular degeneration and oedema, ocular melanoma, detachment, retinitis pigmentosa</td></tr>
+    <tr><td><b>Fluorescein angiography</b></td><td>Dye <b>injected</b> into hand or arm, reaches the eye in 10&ndash;15 seconds, blue-flash camera. <b>No iodine</b>, relatively safe</td><td>Blood flow in retina and choroid: diabetic retinopathy, macular degeneration and edema, ocular melanoma, detachment, retinitis pigmentosa</td></tr>
   </table>
 
   <h3 class="sub" id="e2l1-lids">1.3 &middot; Eyelid disorders</h3>
@@ -186,23 +186,23 @@ BODY = """<main class="content">
     <tr><td>Lid margin</td><td>Turns <b>IN</b></td><td>Turns <b>OUT</b></td></tr>
     <tr><td>Symptom</td><td>Foreign body sensation</td><td>Tearing</td></tr>
     <tr><td>Complication</td><td>Lashes onto the globe (<b>trichiasis</b>) &rarr; corneal abrasion</td><td><b>Exposure keratopathy</b></td></tr>
-    <tr><td>Causes</td><td colspan="2">Ageing, cicatricial (burn, surgery, trauma, chronic inflammation, scar), congenital &mdash; plus <b>seventh nerve palsy for ectropion only</b></td></tr>
+    <tr><td>Causes</td><td colspan="2">Aging, cicatricial (burn, surgery, trauma, chronic inflammation, scar), congenital &mdash; plus <b>seventh nerve palsy for ectropion only</b></td></tr>
     <tr><td>Management</td><td colspan="2">Slit lamp for corneal involvement. Preservative-free tears by day, ointment at night, tape the exposed lid. <b>Surgery is definitive.</b></td></tr>
   </table>
 
   <p><strong>Dermatochalasis</strong> &mdash; excess loose skin with orbital fat prolapse, from
-  ageing. Patients say the lids feel <em>heavy</em> and they are <em>looking through their
+  aging. Patients say the lids feel <em>heavy</em> and they are <em>looking through their
   lashes</em>. <strong>Examine the visual fields</strong>: a demonstrated deficit is what gets
   <b>blepharoplasty</b> covered by insurance.</p>
 
   <p><strong>Xanthelasma</strong> &mdash; oval yellowish plaques, typically asymptomatic, from
   metabolic disorders with raised serum lipids. <strong>Work up the metabolism</strong>: lipid
-  profile, plus fasting glucose and haemoglobin A1C for diabetes, plus liver function. Treat the
+  profile, plus fasting glucose and hemoglobin A1C for diabetes, plus liver function. Treat the
   underlying issue; local options are cryotherapy, laser ablation, chemical peel or excision.
   <strong>Recurrence is common even after effective local treatment.</strong> One caveat: many patients have entirely normal lipids, and the profile is still reasonable.</p>
 
-  <p><strong>Blepharitis and meibomitis</strong> &mdash; associated with <b>rosacea, seborrhoeic
-  dermatitis, and Staphylococcus aureus colonisation</b>. Burning, dryness, grittiness, itching,
+  <p><strong>Blepharitis and meibomitis</strong> &mdash; associated with <b>rosacea, seborrheic
+  dermatitis, and Staphylococcus aureus colonization</b>. Burning, dryness, grittiness, itching,
   foreign body sensation, tearing. Signs: crusting and scaling at the lash bases, erythematous
   swollen lid margins, and <b>thick, sometimes toothpaste-like lipid secretion</b> from the
   meibomian glands, with a decreased or frothy tear film.
@@ -232,7 +232,7 @@ BODY = """<main class="content">
   <div class="callout warn">
     <p><strong>Do not start corticosteroids for dacryoadenitis until bacterial and other
     infectious causes have been reasonably excluded.</strong> And a mass <b>ABOVE</b> the medial
-    canthal tendon is not dacryocystitis &mdash; suspect a lacrimal sac tumour, rare as it is.</p>
+    canthal tendon is not dacryocystitis &mdash; suspect a lacrimal sac tumor, rare as it is.</p>
     <p>Once dacryocystitis settles, <strong>probing and irrigation are often needed</strong> to
     assess whether the drainage system is patent; surgery may follow. Expect improvement
     <b>24&ndash;48 hours</b> after antibiotics start.</p>
@@ -248,7 +248,7 @@ BODY = """<main class="content">
   it resolve.</strong> Non-urgent referral if it grows or vision is affected; surgery if it
   distorts vision.</p>
 
-  <p><strong>Subconjunctival haemorrhage (atraumatic)</strong> &mdash; Valsalva, bleeding disorder,
+  <p><strong>Subconjunctival hemorrhage (atraumatic)</strong> &mdash; Valsalva, bleeding disorder,
   antiplatelet or anticoagulant medication, hypertension. Blood under the conjunctiva, no pain,
   normal vision and pupil, clear cornea. <strong>History is the whole workup</strong>, and
   <strong>check the blood pressure if there is no explanation.</strong> Reassurance; resolves in
@@ -264,7 +264,7 @@ BODY = """<main class="content">
     is whether it has <em>changed</em>.</p>
   </div>
   <p> For recurrence, what is wanted is medication review, blood pressure and
-  targeted evaluation &mdash; <em>not</em> automatic haematology referral.</p>
+  targeted evaluation &mdash; <em>not</em> automatic hematology referral.</p>
 
   <p><strong>Chemosis</strong> is conjunctival swelling &mdash; a <em>sign</em>, not a diagnosis.
   Non-specific for irritation: allergy, infection, thyroid eye disease, angioedema, trauma, orbital
@@ -282,19 +282,19 @@ BODY = """<main class="content">
   </table>
   <table class="tbl">
     <tr><th>Type</th><th>Giveaway</th><th>Treatment</th></tr>
-    <tr><td><b>Allergic</b></td><td><b>ITCH</b>, bilateral, watery/stringy discharge, chemosis, papillae, <b>no node</b></td><td>Avoid the allergen; cool compresses, artificial tears, topical histamine blocker &plusmn; mast cell stabiliser (<b>olopatadine does both</b>), systemic antihistamine</td></tr>
+    <tr><td><b>Allergic</b></td><td><b>ITCH</b>, bilateral, watery/stringy discharge, chemosis, papillae, <b>no node</b></td><td>Avoid the allergen; cool compresses, artificial tears, topical histamine blocker &plusmn; mast cell stabilizer (<b>olopatadine does both</b>), systemic antihistamine</td></tr>
     <tr><td><b>Viral</b></td><td>Adenovirus. Profuse watery discharge, <b>follicles</b>, <b>tender preauricular node</b>. Starts one eye, spreads to the other. Recent upper respiratory infection</td><td>Cool compresses, artificial tears, <b>contagious precautions</b>. Self-limiting: often worse over week one, resolving in 2&ndash;3 weeks. Refer if &gt;3 weeks, or photophobia or vision loss after onset</td></tr>
     <tr><td><b>Bacterial</b></td><td>Thick yellow/white discharge, often <b>unilateral</b>, papillae, usually <b>no node</b></td><td>Immunocompetent adult: <b>topical broad-spectrum antibiotic</b> (e.g. fluoroquinolone) + contagious precautions</td></tr>
-    <tr><td><b>Gonococcal</b></td><td><b>Severe purulent discharge WITH a palpable preauricular node</b> &mdash; the exception to the no-node rule</td><td><b>Newborn = emergency.</b> Hospitalise, systemic ceftriaxone, cultures and Gram stain, test for chlamydia and dissemination. Untreated risk: <b>corneal perforation</b></td></tr>
+    <tr><td><b>Gonococcal</b></td><td><b>Severe purulent discharge WITH a palpable preauricular node</b> &mdash; the exception to the no-node rule</td><td><b>Newborn = emergency.</b> Hospitalize, systemic ceftriaxone, cultures and Gram stain, test for chlamydia and dissemination. Untreated risk: <b>corneal perforation</b></td></tr>
     <tr><td><b>Chlamydial (adult inclusion)</b></td><td><b>Serotypes D&ndash;K.</b> Chronic (a month or more), stringy mucoid discharge, follicles, <b>unresponsive to topical medication</b>. Often concurrent asymptomatic urogenital infection</td><td>Confirm with conjunctival nucleic acid amplification or direct fluorescent antibody. <b>Doxycycline 100 mg twice daily for 7 days.</b> Evaluate for other sexually transmitted infections; notify partners</td></tr>
     <tr><td><b>Chlamydial (neonatal)</b></td><td>Serotypes D&ndash;K from maternal secretions; may have <b>pneumonia</b></td><td><b>Erythromycin 50 mg/kg/day divided four times daily for 14 days.</b> Monitor infants under 6 weeks for <b>infantile hypertrophic pyloric stenosis</b> &mdash; erythromycin is a motilin receptor agonist</td></tr>
-    <tr><td><b>Autoimmune</b></td><td>Recurrent/chronic hyperaemia, <b>minimal pain, NO discharge</b>, systemic complaints. Pemphigoid, Stevens-Johnson, Sjögren, graft-versus-host</td><td>Routine ophthalmology referral</td></tr>
+    <tr><td><b>Autoimmune</b></td><td>Recurrent/chronic hyperemia, <b>minimal pain, NO discharge</b>, systemic complaints. Pemphigoid, Stevens-Johnson, Sjögren, graft-versus-host</td><td>Routine ophthalmology referral</td></tr>
   </table>
   <div class="callout">
     <p><strong>Trachoma</strong> &mdash; <b>serotypes A, B, C</b>, and the <b>leading infectious
     cause of blindness worldwide</b>. Most active cases are asymptomatic. Mass drug administration
-    with <b>azithromycin 1 g orally as a single dose</b> where prevalence is <b>&ge;5 per cent</b>.
-    The chain to blindness is worth memorising:
+    with <b>azithromycin 1 g orally as a single dose</b> where prevalence is <b>&ge;5 percent</b>.
+    The chain to blindness is worth memorizing:
     <b>conjunctival inflammation &rarr; eyelid scarring &rarr; entropion &rarr; trichiasis &rarr;
     blindness</b>. Trichiasis needs <strong>surgery</strong>.</p>
   </div>
@@ -381,8 +381,8 @@ BODY = """<main class="content">
     <tr><td>The giveaway</td><td><b>The eye itself is WHITE</b></td><td><b>The eye itself is RED</b> and cannot move fully</td></tr>
     <tr><td>Symptoms</td><td colspan="2">Both: periocular pain, fever and chills, warmth around the eye</td></tr>
     <tr><td>Post-septal only</td><td>&mdash;</td><td><b>Pain and difficulty with eye movement, reduced vision, diplopia</b></td></tr>
-    <tr><td>Signs</td><td>Diffuse balloon-like lid oedema, erythema, tenderness; variable conjunctival injection</td><td>Significant injection, <b>proptosis</b>, decreased and painful movement, possible <b>afferent pupillary defect</b>, decreased vision</td></tr>
-    <tr><td>Management</td><td><b>Mild</b> &rarr; outpatient oral antibiotics <b>10&ndash;14 days</b> against Staphylococcus (including resistant strains) and Streptococcus</td><td><b>ALL post-septal</b> &rarr; hospitalise, broad-spectrum IV <b>48&ndash;72 h</b>, then oral at least a week</td></tr>
+    <tr><td>Signs</td><td>Diffuse balloon-like lid edema, erythema, tenderness; variable conjunctival injection</td><td>Significant injection, <b>proptosis</b>, decreased and painful movement, possible <b>afferent pupillary defect</b>, decreased vision</td></tr>
+    <tr><td>Management</td><td><b>Mild</b> &rarr; outpatient oral antibiotics <b>10&ndash;14 days</b> against Staphylococcus (including resistant strains) and Streptococcus</td><td><b>ALL post-septal</b> &rarr; hospitalize, broad-spectrum IV <b>48&ndash;72 h</b>, then oral at least a week</td></tr>
   </table>
   <p><strong>Also admit a pre-septal patient if:</strong> moderate-severe or toxic, poor compliance
   expected, <b>a child of 5 years or younger</b>, or no improvement after oral antibiotics started.</p>
@@ -417,7 +417,7 @@ BODY = """<main class="content">
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
     ophthalmology: [
       {q:"Which single examination finding separates a chalazion from a hordeolum?",
-       choices:["Size","Tenderness","Colour","Laterality"],correct:1,
+       choices:["Size","Tenderness","Color","Laterality"],correct:1,
        explain:"The hordeolum is tender and the chalazion is not. A chalazion is a STERILE meibomian obstruction; a hordeolum is an acute infection."},
       {q:"A pterygium differs from a pinguecula how?",
        choices:["It is yellow rather than fleshy","It extends onto the CORNEA","It is always bilateral","It is painful"],correct:1,
@@ -432,8 +432,8 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        choices:["The violaceous hue fades","Decreased PAIN, even if the eye looks unchanged","Vision returns to normal","The discharge stops"],correct:1,
        explain:"Decreased pain is the first sign of response to treatment, even when the inflammation still looks unchanged."},
       {q:"A contact lens wearer has a central epithelial defect with a white infiltrate. What is the next step?",
-       choices:["Patch the eye and review in two days","Remove the lenses without patching and arrange SAME-DAY ophthalmology","Give a take-home topical anaesthetic","Start a topical corticosteroid"],correct:1,
-       explain:"Microbial keratitis until proven otherwise. Never patch, never send home an anaesthetic, never start steroids."},
+       choices:["Patch the eye and review in two days","Remove the lenses without patching and arrange SAME-DAY ophthalmology","Give a take-home topical anesthetic","Start a topical corticosteroid"],correct:1,
+       explain:"Microbial keratitis until proven otherwise. Never patch, never send home an anesthetic, never start steroids."},
       {q:"Which corneal finding is PATHOGNOMONIC for herpes simplex?",
        choices:["A pseudodendrite","A true dendrite with terminal end bulbs","A ring infiltrate","A hypopyon"],correct:1,
        explain:"The true dendrite branches like a tree, has elevated edges and terminal end bulbs. The zoster pseudodendrite lacks all three."},
@@ -444,7 +444,7 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
        choices:["Anterior uveitis","Orbital cellulitis","Scleritis","Corneal ulcer"],correct:1,
        explain:"Emergent: chemical injury, open globe, angle closure, orbital cellulitis, endophthalmitis. The others are same-day."},
       {q:"Untreated trachoma causes blindness by which chain?",
-       choices:["Ulceration then perforation","Inflammation, lid scarring, entropion, trichiasis","Raised pressure then optic nerve damage","Neovascularisation then haemorrhage"],correct:1,
+       choices:["Ulceration then perforation","Inflammation, lid scarring, entropion, trichiasis","Raised pressure then optic nerve damage","Neovascularization then hemorrhage"],correct:1,
        explain:"Repeated chlamydial infection scars the lid, which turns it inward, which drives the lashes onto the cornea."}
     ],
   };'''

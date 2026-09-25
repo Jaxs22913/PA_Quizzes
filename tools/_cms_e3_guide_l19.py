@@ -152,8 +152,8 @@ def build():
     <tr><td><b>Sublingual</b></td><td>Sublingual ducts</td>
       <td>Floor of the mouth. The source of a <b>ranula</b>.</td></tr>
     <tr><td><b>Minor</b></td><td>&mdash;</td>
-      <td>Exocrine tissue in buccal, labial and palatal mucosa. Only <b>35% of minor gland tumours
-      are benign</b> &mdash; the smaller the gland, the likelier a tumour is malignant.</td></tr>
+      <td>Exocrine tissue in buccal, labial and palatal mucosa. Only <b>35% of minor gland tumors
+      are benign</b> &mdash; the smaller the gland, the likelier a tumor is malignant.</td></tr>
   </table>
 
   <div class="callout warn">
@@ -161,7 +161,7 @@ def build():
     a tongue depressor. <b>It comes off &rarr; oral candidiasis.</b> <b>It does not come off and it
     is white &rarr; leukoplakia</b> (premalignant, 5&ndash;20% become squamous cell carcinoma).
     <b>It does not come off and it is lacy &rarr; lichen planus</b> (Wickham striae). And a fourth:
-    a greyish-white change that <b>disappears when you stretch the mucosa</b> is
+    a grayish-white change that <b>disappears when you stretch the mucosa</b> is
     <b>leukoedema</b>, a normal variant.</p>
   </div>
 
@@ -203,7 +203,7 @@ def build():
   its absence precisely because its presence argues so strongly against strep.</p>
 
   <p><strong>The thumbprint sign</strong> (slide 64) is the swollen epiglottis seen on a lateral
-  neck X-ray, set against the thin, curved normal epiglottis. It is worth recognising and worth
+  neck X-ray, set against the thin, curved normal epiglottis. It is worth recognizing and worth
   <em>not</em> ordering: the lecture is explicit that it is <b>not necessary for diagnosis</b>, and
   that once epiglottitis is suspected, examinations that agitate the patient can complete the
   obstruction.</p>

@@ -92,13 +92,13 @@ POOL_C = [
    c=0, cite=c(27)),
 
  dict(topic="Common acquired naevus", io=IOB,
-   q="A dark brown or black naevus on light skin is described as suspicious. What is the expected colour of a common acquired naevus?",
+   q="A dark brown or black naevus on light skin is described as suspicious. What is the expected color of a common acquired naevus?",
    opts=[
-     ["Skin coloured, brown or pink, with a homogenous surface and colour",
+     ["Skin colored, brown or pink, with a homogenous surface and color",
       "Correct — they are usually under 6 mm, round to oval, and sharply demarcated."],
-     ["Blue, blue-grey or blue-black, with pigment sitting deep in the dermis",
+     ["Blue, blue-gray or blue-black, with pigment sitting deep in the dermis",
       "That describes blue naevus."],
-     ["Jet-black with shades of blue, grey or brown, sharply circumscribed",
+     ["Jet-black with shades of blue, gray or brown, sharply circumscribed",
       "That describes pigmented spindle cell naevus."],
      ["Pink or red, hairless, firm and dome-shaped on the face or trunk",
       "That describes Spitz naevus."]],
@@ -134,7 +134,7 @@ POOL_C = [
    q="Where do blue naevi most commonly occur?",
    opts=[
      ["The dorsal hands and feet, scalp, buttocks or sacral region",
-      "Correct — the lesions are blue, blue-grey or blue-black."],
+      "Correct — the lesions are blue, blue-gray or blue-black."],
      ["The trunk and extremities, with the scalp and face also affected",
       "That is the distribution of congenital melanocytic naevi."],
      ["The lower extremities and mainly the thigh in women in their thirties",
@@ -178,7 +178,7 @@ POOL_C = [
       "That describes solar lentigo itself."],
      ["A vitiligo patch, white and non-scaly with distinct margins",
       "That describes vitiligo, which is depigmented rather than tan."],
-     ["A blue naevus, deeply pigmented and blue-grey to blue-black",
+     ["A blue naevus, deeply pigmented and blue-gray to blue-black",
       "That describes blue naevus."]],
    c=0, cite=c(33)),
 
@@ -199,8 +199,8 @@ POOL_C = [
    q="Which non-pharmacologic elements are named in the management of vitiligo?",
    opts=[
      ["Psychological intervention, cosmetic therapies and non-traditional approaches",
-      "Correct — the psychological and social impact is emphasised."],
-     ["Sun protection counselling with a broad-spectrum sunscreen used daily",
+      "Correct — the psychological and social impact is emphasized."],
+     ["Sun protection counseling with a broad-spectrum sunscreen used daily",
       "That is the education named for naevi and pigmented lesions."],
      ["Weight loss, smoking cessation and avoidance of constrictive clothing",
       "Those belong to hidradenitis suppurativa."],

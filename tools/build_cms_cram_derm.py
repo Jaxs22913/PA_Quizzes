@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Add the dermatology block topics to the CMS I Exam 1 cram sheet.
 
-One section per lecture-sized chunk, following the existing colour-coded
+One section per lecture-sized chunk, following the existing color-coded
 topic/table structure. Condensed from the study guide; the guide carries the
 explanation and this carries only what has to be recallable cold.
 """
@@ -17,7 +17,7 @@ TOPICS = [
    ("Epidermis", "Keratinocytes in five strata, melanocytes, Langerhans, Merkel. Avascular. Loss of this layer alone = no scar."),
    ("Dermis", "Collagen, elastin, vessels, nerves, follicles, glands. Damage here scars."),
    ("Subcutaneous", "Fat, larger vessels, base of follicles."),
-   ("Depth ladder (memorise)", "Impetigo = epidermis. Erysipelas = upper dermis + lymphatics. Cellulitis = deeper dermis + subcutaneous. Necrotizing fasciitis = below all of it."),
+   ("Depth ladder (memorize)", "Impetigo = epidermis. Erysipelas = upper dermis + lymphatics. Cellulitis = deeper dermis + subcutaneous. Necrotizing fasciitis = below all of it."),
    ("Skin functions", "Barrier · thermoregulation · sensation · vitamin D synthesis under ultraviolet B · immune surveillance."),
  ]),
  ("eczema-family", "Eczema, Bullous & Papulosquamous", "#2c7b76", "#e1edec", "#f0f6f5", "#22605c", [
@@ -40,8 +40,8 @@ TOPICS = [
    ("Granuloma annulare", "Annular papules with NO SCALE — that is what separates it from tinea."),
    ("Pyoderma gangrenosum", "Undermined violaceous border. PATHERGY — debridement makes it worse. Do not debride."),
    ("Acne rosacea", "Central facial erythema, flushing, telangiectasias, NO comedones. Ivermectin cream if Demodex."),
-   ("Hyperhidrosis", "Primary = bilateral, focal, adolescent onset, ABSENT IN SLEEP. Generalised or nocturnal → secondary cause."),
-   ("Dermatitis herpetiformis", "Perilesional direct immunofluorescence: GRANULAR immunoglobulin A. Dapsone + lifelong gluten-free diet. Screen all for coeliac."),
+   ("Hyperhidrosis", "Primary = bilateral, focal, adolescent onset, ABSENT IN SLEEP. Generalized or nocturnal → secondary cause."),
+   ("Dermatitis herpetiformis", "Perilesional direct immunofluorescence: GRANULAR immunoglobulin A. Dapsone + lifelong gluten-free diet. Screen all for celiac."),
    ("Acanthosis nigricans", "Screen HbA1c, lipids. Sudden onset in an adult → gastrointestinal malignancy."),
    ("Epidermolysis bullosa", "Transmission electron microscopy + immunofluorescence antigen mapping."),
  ]),
@@ -52,7 +52,7 @@ TOPICS = [
    ("SCORTEN (1 point each)", "Age over 40 · malignancy · heart rate over 120 · detachment over 10% · urea over 28 mg/dL · bicarbonate under 20 · glucose over 252. Score 5+ → 90% mortality."),
    ("The single action", "STOP THE DRUG. Earlier withdrawal = better survival; each day of delay worsens it."),
    ("Also", "Burn unit/ICU · cyclosporine 3–5 mg/kg has the strongest evidence in TEN · AVOID silver sulfadiazine · antibiotic prophylaxis NOT recommended · daily ophthalmology."),
-   ("Phototoxic vs photoallergic", "Phototoxic = non-immunologic, dose-dependent, FIRST exposure, within hours, exaggerated sunburn. Photoallergic = type IV, needs sensitisation, eczematous, extends BEYOND exposed skin."),
+   ("Phototoxic vs photoallergic", "Phototoxic = non-immunologic, dose-dependent, FIRST exposure, within hours, exaggerated sunburn. Photoallergic = type IV, needs sensitization, eczematous, extends BEYOND exposed skin."),
    ("Photopatch reading", "Irradiated patch ONLY = photoallergy. BOTH patches = contact allergy."),
    ("Polymorphous light eruption", "Commonest idiopathic photodermatosis. Spring onset, spares chronically exposed skin, hardens by late summer. Antinuclear antibody is MANDATORY to exclude lupus. Prophylactic narrow band ultraviolet B in spring is the most effective prevention."),
    ("Actinic keratosis", "Sandpaper texture · TP53 · field cancerization → field therapy (5-fluorouracil, imiquimod, photodynamic therapy) for confluent disease."),
@@ -60,7 +60,7 @@ TOPICS = [
    ("Millimetres", "CMS uses 1 cm for macule/patch and papule/plaque. Clinical Pathophysiology uses 5 mm. Answer with the course in front of you."),
  ]),
  ("bacterial-acne", "Acne Vulgaris & Follicular Infection", "#3b5aa0", "#e4e8f2", "#f1f3f8", "#2e467d", [
-   ("Four factors", "Follicular hyperkeratinisation · increased sebum · Cutibacterium acnes (anaerobic Gram-positive rod) · inflammation."),
+   ("Four factors", "Follicular hyperkeratinization · increased sebum · Cutibacterium acnes (anaerobic Gram-positive rod) · inflammation."),
    ("Hallmark", "The COMEDONE. Its absence rules acne out and rosacea in."),
    ("Guideline ladder", "Comedonal → topical retinoid. Mild papulopustular → topical antimicrobial + retinoid. Moderate → retinoid + oral antibiotic + benzoyl peroxide. Severe nodular → same, or isotretinoin monotherapy."),
    ("Benzoyl peroxide", "Add to EVERY antibiotic, topical or oral, to cut resistance. Oral tetracyclines 3–4 months only."),
@@ -76,12 +76,12 @@ TOPICS = [
  ]),
  ("bacterial-spreading", "Impetigo, Cellulitis & Necrotizing Fasciitis", "#8a4a9c", "#efe6f1", "#f7f2f8", "#6c3a7a", [
    ("Impetigo", "Superficial EPIDERMAL. Staphylococcus aureus or Streptococcus pyogenes. Mupirocin topically; CEPHALEXIN is the drug of choice in children."),
-   ("Three types", "Non-bullous = honey crust, lymphadenopathy common. Bullous = EXCLUSIVELY staph, epidermolytic toxins, collarettes, nodes uncommon. Ecthyma = ulcerates into dermis, grey-yellow crust, scars."),
-   ("Post-streptococcal glomerulonephritis", "Follows impetigo, esp. 3–7 year olds. ANTIBIOTICS DO NOT PREVENT IT. Oedema, tea-coloured urine, proteinuria, hypertension."),
+   ("Three types", "Non-bullous = honey crust, lymphadenopathy common. Bullous = EXCLUSIVELY staph, epidermolytic toxins, collarettes, nodes uncommon. Ecthyma = ulcerates into dermis, gray-yellow crust, scars."),
+   ("Post-streptococcal glomerulonephritis", "Follows impetigo, esp. 3–7 year olds. ANTIBIOTICS DO NOT PREVENT IT. Edema, tea-colored urine, proteinuria, hypertension."),
    ("Erysipelas", "Upper dermis + superficial lymphatics. Group A strep. RAISED, SHARPLY DEMARCATED plaque. Penicillin V; clindamycin if allergic. No routine cultures — yield is extremely low."),
    ("Cellulitis", "Deeper dermis + subcutaneous. Borders NOT raised, NOT demarcated. Almost never bilateral. Dicloxacillin/cephalexin; cover MRSA if PURULENT."),
    ("Cellulitis course", "Worse on day 1 is expected. Fever gone by 24 h. Inflammation settles over 1–2 weeks. Fever past 48 h → change antibiotic."),
-   ("The cellulitis pitfall", "Tense, cyanotic, bronzed, blanched = devitalised, NOT PERFUSED, antibiotics never reach it. Needs surgical debridement."),
+   ("The cellulitis pitfall", "Tense, cyanotic, bronzed, blanched = devitalized, NOT PERFUSED, antibiotics never reach it. Needs surgical debridement."),
    ("Abscess vs furuncle", "Abscess = traumatic inoculation. Furuncle = infected follicle. Abscess that won't drain → incision and drainage."),
    ("Acute paronychia", "2–5 days after manicure/hangnail/nail biting. Warm soaks; incision and drainage if purulent. CLINDAMYCIN if nail biting (oral flora)."),
    ("Chronic paronychia", "At least 6 weeks. Irritant/allergen reaction, CANDIDA commonest. Keep hands dry + topical antifungal; fluconazole if severe."),
@@ -103,21 +103,21 @@ TOPICS = [
    ("School policy", "A NO-NIT POLICY IS NOT RECOMMENDED (American Academy of Pediatrics) — nits persist for months. Fumigation not recommended."),
    ("Bedbugs", "PAINLESS bites in a linear ROW OF THREE (breakfast, lunch, dinner). Blood flecks on linen. Survive a year without a meal. PROFESSIONAL EXTERMINATOR required."),
    ("Tungiasis", "Female flea burrows into the skin. Feet/web spaces after barefoot beach exposure. Dermoscopy shows ovoid eggs. Excision or cryotherapy + tetanus + antibiotics."),
-   ("Hymenoptera", "SCRAPE the honeybee stinger off with a card edge. Systemic reaction in 0.4–3%. Severe LOCAL = oedema and induration up to a week. Auto-injector + desensitisation after anaphylaxis."),
+   ("Hymenoptera", "SCRAPE the honeybee stinger off with a card edge. Systemic reaction in 0.4–3%. Severe LOCAL = edema and induration up to a week. Auto-injector + desensitization after anaphylaxis."),
    ("Caterpillars", "Gypsy moth → papules in linear streaks. Asp/puss (most poisonous) → intense pain, TRAIN-TRACK PURPURA. Strip hairs with ADHESIVE TAPE."),
  ]),
  ("infestations-2", "Spiders, Ticks & Water Exposure", "#8f3f52", "#f2e2e6", "#f9f0f2", "#71313f", [
    ("Black widow", "Red HOURGLASS. Alpha-latrotoxin. Painful bite; sweating and piloerection in 30 min, then CRAMPING ABDOMINAL PAIN and spasm. Calcium gluconate, narcotics, muscle relaxants, benzodiazepines, tetanus."),
    ("Brown recluse", "Dark FIDDLE on cephalothorax. Midwest and Southeast. RED, WHITE AND BLUE SIGN. Necrosis 2–3 days, eschar 5–7 days. DELAY SURGERY until the wound is stable."),
-   ("Hobo spider", "Grey HERRINGBONE. Pacific Northwest, July–September. PAINLESS bite, induration and paraesthesia in 30 min, vesicles by 36 h. Supportive; heals over weeks."),
+   ("Hobo spider", "Gray HERRINGBONE. Pacific Northwest, July–September. PAINLESS bite, induration and paresthesia in 30 min, vesicles by 36 h. Supportive; heals over weeks."),
    ("Tarantula", "Shed hairs embed in skin and EYES. Topical steroid; OPHTHALMOLOGY for the eye."),
-   ("Cutaneous larva migrans", "Animal hookworm from sand/soil with dog or cat faeces. Serpentine trail advancing 2–3 cm A DAY. Albendazole 400 mg × 3 days or ivermectin. NO excision, NO cryotherapy."),
+   ("Cutaneous larva migrans", "Animal hookworm from sand/soil with dog or cat feces. Serpentine trail advancing 2–3 cm A DAY. Albendazole 400 mg × 3 days or ivermectin. NO excision, NO cryotherapy."),
    ("Cercarial dermatitis", "Swimmer's itch. Flatworm cercariae via snails. Prickling 30 min → itch 10–12 h → papules 24 h → peak 48–72 h. Symptomatic only."),
    ("Lyme disease", "Borrelia burgdorferi. ERYTHEMA MIGRANS over 5 cm with central clearing, about 1 week after the bite. Diagnose and TREAT CLINICALLY if the lesion is present."),
-   ("Lyme stages", "1 early localised (erythema migrans) · 2 early disseminated days-to-weeks (cranial nerve palsy, meningitis, radiculopathy) · 3 late persistent months-to-years (MONOARTICULAR ARTHRITIS of a weight-bearing joint, encephalopathy, acrodermatitis chronica atrophicans)."),
+   ("Lyme stages", "1 early localized (erythema migrans) · 2 early disseminated days-to-weeks (cranial nerve palsy, meningitis, radiculopathy) · 3 late persistent months-to-years (MONOARTICULAR ARTHRITIS of a weight-bearing joint, encephalopathy, acrodermatitis chronica atrophicans)."),
    ("Lyme treatment", "DOXYCYCLINE first line; AMOXICILLIN in children and pregnancy; macrolide second line; 10–14 days. Intravenous ceftriaxone for arthritis and acrodermatitis. NO human vaccine (one for dogs)."),
    ("Rocky Mountain spotted fever", "Rickettsia rickettsii. Triad fever/headache/rash in only ~60%. Rash starts ANKLES AND WRISTS, spreads CENTRIPETALLY over 6–18 h, involves PALMS AND SOLES, SPARES THE FACE."),
-   ("RMSF labs & treatment", "Thrombocytopenia, anaemia, mild hyponatraemia, transaminitis, normal white count with bands. Indirect immunofluorescence is the gold standard but rarely diagnostic before day 7 — TREAT BY DAY 5. DOXYCYCLINE FOR EVERYONE including children and pregnancy. Prophylaxis after a bite NOT recommended."),
+   ("RMSF labs & treatment", "Thrombocytopenia, anemia, mild hyponatremia, transaminitis, normal white count with bands. Indirect immunofluorescence is the gold standard but rarely diagnostic before day 7 — TREAT BY DAY 5. DOXYCYCLINE FOR EVERYONE including children and pregnancy. Prophylaxis after a bite NOT recommended."),
    ("Primary vs secondary lesions", "Primary = epidermis and superficial dermis. Secondary = infiltrated into dermis or subcutaneous. Crust or scale means the EPIDERMIS is affected."),
  ]),
  ("pigmented", "Pigmented Skin Lesions", "#6b4f9e", "#e7e2f2", "#f2f0f8", "#543d7d", [
@@ -161,7 +161,7 @@ def main():
 
     # jump links
     anchor = ('      <a href="#counselling" style="color:#175341"><span class="dot" '
-              'style="background:#1d6b53"></span>Counselling & Adherence</a>\n')
+              'style="background:#1d6b53"></span>Counseling & Adherence</a>\n')
     assert s.count(anchor) == 1, "jump-link anchor not found"
     links = anchor + "".join(
         '      <a href="#%s" style="color:%s"><span class="dot" style="background:%s"></span>%s</a>\n'

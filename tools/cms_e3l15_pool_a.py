@@ -43,8 +43,8 @@ QUESTIONS = [
         ["The mastoid air cells", "Those are air spaces, not glandular."]]),
 
  dict(topic="Ear anatomy", io=IO_A, lead="defining feature", cite=D % 8,
-  q="What colour is a normal tympanic membrane?",
-  opts=[["Pearly grey", "Correct. Loss of that appearance is the first sign something lies behind it."],
+  q="What color is a normal tympanic membrane?",
+  opts=[["Pearly gray", "Correct. Loss of that appearance is the first sign something lies behind it."],
         ["Bright red", "Redness suggests inflammation."],
         ["Chalky white", "That suggests scarring or a mass behind the drum."],
         ["Deep blue", "A blue drum suggests blood in the middle ear."]]),
@@ -52,14 +52,14 @@ QUESTIONS = [
  dict(topic="Ear anatomy", io=IO_A, lead="diagnostic technique", cite=D % 10,
   q="What does insufflation during otoscopy assess?",
   opts=[["Mobility of the tympanic membrane", "Correct. A drum that will not move signals pressure or fluid behind it."],
-        ["Colour of the tympanic membrane", "Colour is judged on inspection alone."],
+        ["Color of the tympanic membrane", "Color is judged on inspection alone."],
         ["Hearing threshold", "That requires audiometry."],
         ["Facial nerve function", "That is tested by examining facial movement."]]),
 
  # ------------------- eustachian tube dysfunction -------------------
  dict(topic="Eustachian tube dysfunction", io=IO_A, lead="defining feature", cite=D % 7,
   q="What is the function of the eustachian tube?",
-  opts=[["Equalising middle ear pressure", "Correct. It allows air to pass and keeps pressure balanced across the drum."],
+  opts=[["Equalizing middle ear pressure", "Correct. It allows air to pass and keeps pressure balanced across the drum."],
         ["Transmitting sound to the cochlea", "That is the job of the ossicles."],
         ["Sensing head position", "That is the vestibular apparatus."],
         ["Draining tears", "Tear drainage is the nasolacrimal system."]]),
@@ -80,7 +80,7 @@ QUESTIONS = [
 
  dict(topic="Eustachian tube dysfunction", io=IO_A, lead="treatment", cite=D % 10,
   q="Which pair of medications is used for eustachian tube dysfunction?",
-  opts=[["Decongestants and intranasal corticosteroids", "Correct. Both reduce the mucosal oedema obstructing the tube."],
+  opts=[["Decongestants and intranasal corticosteroids", "Correct. Both reduce the mucosal edema obstructing the tube."],
         ["Topical antifungals and debridement", "Those treat fungal canal infection."],
         ["Antihistamines and oral corticosteroids", "Systemic steroids are not the route used here."],
         ["Diuretics and a low-salt diet", "That approach belongs to inner ear disease."]]),
@@ -102,17 +102,17 @@ QUESTIONS = [
  # --------------------------- otitis media ---------------------------
  dict(topic="Acute otitis media", io=IO_B, lead="epidemiology", cite=D % 12,
   q="At what age does acute otitis media peak?",
-  opts=[["Around two years", "Correct. It is the commonest paediatric ear disease at that age."],
+  opts=[["Around two years", "Correct. It is the commonest pediatric ear disease at that age."],
         ["Around six months", "Incidence is rising then but has not peaked."],
         ["Around twelve years", "Adolescents are affected far less often."],
         ["Around forty years", "Adults account for a small minority of cases."]]),
 
  dict(topic="Acute otitis media", io=IO_B, lead="epidemiology", cite=D % 12,
   q="Roughly what share of acute otitis media diagnoses are made in adults?",
-  opts=[["Three to fifteen per cent", "Correct. It is overwhelmingly a childhood disease."],
-        ["Under one per cent", "Adults are affected more often than that."],
-        ["Around fifty per cent", "That would make it evenly split, which it is not."],
-        ["Over seventy per cent", "That reverses the true distribution."]]),
+  opts=[["Three to fifteen percent", "Correct. It is overwhelmingly a childhood disease."],
+        ["Under one percent", "Adults are affected more often than that."],
+        ["Around fifty percent", "That would make it evenly split, which it is not."],
+        ["Over seventy percent", "That reverses the true distribution."]]),
 
  dict(topic="Acute otitis media", io=IO_A, lead="etiology", cite=D % 17,
   q="What is by far the commonest cause of acute otitis media overall?",
@@ -141,13 +141,13 @@ QUESTIONS = [
 
  dict(topic="Acute otitis media", io=IO_B, lead="next step", cite=D % 17,
   q="Which history point most changes the organisms to worry about in a child with acute otitis media?",
-  opts=[["Immunisation status", "Correct. An unimmunised child puts Haemophilus influenzae back on the list."],
+  opts=[["Immunization status", "Correct. An unimmunized child puts Haemophilus influenzae back on the list."],
         ["Number of siblings", "Exposure matters for frequency, not for organism choice."],
         ["Season of the year", "Season does not redirect the organism list."],
         ["Whether the child was breastfed", "It does not change which organism is likely."]]),
 
  dict(topic="Acute otitis media", io=IO_A, lead="clinical manifestation", cite=D % 15,
-  q="Which triad of symptoms characterises acute otitis media?",
+  q="Which triad of symptoms characterizes acute otitis media?",
   opts=[["Otalgia, fever and hearing loss", "Correct."],
         ["Vertigo, tinnitus and hearing loss", "That combination points to inner ear disease."],
         ["Itching, discharge and canal tenderness", "That describes external canal infection."],
@@ -163,7 +163,7 @@ QUESTIONS = [
  dict(topic="Acute otitis media", io=IO_A, lead="clinical manifestation", cite=D % 16,
   q="Which otoscopic appearance fits acute otitis media?",
   opts=[["Erythematous and bulging", "Correct, with reduced mobility on insufflation."],
-        ["Retracted with normal colour", "That fits eustachian tube dysfunction."],
+        ["Retracted with normal color", "That fits eustachian tube dysfunction."],
         ["Dull with an air and fluid level", "That fits otitis media with effusion."],
         ["Normal in every respect", "A normal drum with hearing loss suggests otosclerosis."]]),
 
@@ -215,7 +215,7 @@ QUESTIONS = [
   q="Which otoscopic finding fits otitis media with effusion?",
   opts=[["A dull drum with an air and fluid level", "Correct, with reduced mobility on insufflation."],
         ["A bright red bulging drum", "That fits acute infection."],
-        ["A normal pearly grey drum", "That would not explain the hearing loss."],
+        ["A normal pearly gray drum", "That would not explain the hearing loss."],
         ["Fungal filaments across the canal", "That describes fungal canal infection."]]),
 
  dict(topic="Otitis media with effusion", io=IO_B, lead="next step", cite=D % 14,
@@ -224,7 +224,7 @@ QUESTIONS = [
          "Correct. Those three drive the decision, not the appearance of the drum."],
         ["Fever, pain score, and white cell count", "There is no acute infection to measure."],
         ["Season, school attendance, and travel plans", "None bears on the decision."],
-        ["Ear canal size, wax volume, and drum colour", "These do not decide treatment."]]),
+        ["Ear canal size, wax volume, and drum color", "These do not decide treatment."]]),
 
  dict(topic="Otitis media with effusion", io=IO_B, lead="patient education", cite=D % 14,
   q="What is the principal concern when a child has a long-standing middle ear effusion?",
@@ -268,10 +268,10 @@ QUESTIONS = [
   opts=[["Infection spreading into the mastoid air cells", "Correct, as a complication of acute otitis media."],
         ["Infection of the external canal skin", "That is external otitis."],
         ["A keratin collection in the middle ear", "That is cholesteatoma."],
-        ["A vascular tumour of the middle ear", "That is a glomus tumour."]]),
+        ["A vascular tumor of the middle ear", "That is a glomus tumor."]]),
 
  dict(topic="Mastoiditis", io=IO_A, lead="prognosis", cite=D % 19,
-  q="Alongside mastoiditis, which of the following is a recognised complication of acute otitis media?",
+  q="Alongside mastoiditis, which of the following is a recognized complication of acute otitis media?",
   opts=[["Tympanic membrane perforation", "Correct. Labyrinthitis and rarely meningitis also appear on that list."],
         ["Otosclerosis", "That is a separate bony disease of the stapes."],
         ["Presbycusis", "That is age-related sensorineural loss."],
@@ -280,7 +280,7 @@ QUESTIONS = [
  # -------------------------- barotrauma --------------------------
  dict(topic="Barotrauma", io=IO_A, lead="etiology", cite=D % 22,
   q="Barotrauma of the ear results from which underlying failure?",
-  opts=[["Inability to equalise middle ear pressure", "Correct."],
+  opts=[["Inability to equalize middle ear pressure", "Correct."],
         ["Fixation of the stapes", "That is otosclerosis."],
         ["Loss of cochlear hair cells", "That produces sensorineural loss instead."],
         ["Infection of the mastoid", "That is mastoiditis."]]),
@@ -339,7 +339,7 @@ QUESTIONS = [
  dict(topic="Cerumen impaction", io=IO_A, lead="treatment", cite=D % 29,
   q="Under which condition may the ear canal be irrigated?",
   opts=[["Only if the tympanic membrane is intact", "Correct, and using body-temperature water."],
-        ["Only if the wax is dark in colour", "Colour does not decide it."],
+        ["Only if the wax is dark in color", "Color does not decide it."],
         ["Only after antibiotic drops", "Antibiotics are not a prerequisite."],
         ["Only in the presence of tympanostomy tubes", "Tubes are a contraindication, not an indication."]]),
 
@@ -361,6 +361,6 @@ QUESTIONS = [
   q="Which symptom pattern fits cerumen impaction?",
   opts=[["Itching, fullness and hearing loss", "Correct — or it may be entirely asymptomatic."],
         ["Vertigo and vomiting", "Those indicate inner ear involvement."],
-        ["Facial weakness", "That suggests a serious infection or tumour."],
+        ["Facial weakness", "That suggests a serious infection or tumor."],
         ["Bloody discharge", "Blood suggests trauma or malignancy."]]),
 ]

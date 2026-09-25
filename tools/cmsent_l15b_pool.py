@@ -11,7 +11,7 @@ IO = ("Disorders of the external and middle ear: etiologies, epidemiology, risk 
 
 QUESTIONS = [
 
-Q("Auricular haematoma", IO,
+Q("Auricular hematoma", IO,
   "A 19-year-old wrestler is seen four hours after a match with a swollen, tense, purple left "
   "auricle. The normal folds and hollows of the ear are no longer visible. He has no hearing "
   "complaint and the canal and drum are normal.",
@@ -26,7 +26,7 @@ Q("Auricular haematoma", IO,
     "lifted off the cartilage, the more cartilage dies. Ice may help a contusion, but this is a "
     "collection that has to be evacuated rather than an area of bruising."],
    ["Oral antibiotics alone",
-    "There is no infection here, only blood under pressure. Antibiotics do not evacuate a haematoma "
+    "There is no infection here, only blood under pressure. Antibiotics do not evacuate a hematoma "
     "and do not restore the cartilage's blood supply, so the deformity develops on schedule while "
     "the patient takes them."],
    ["Needle aspiration without a dressing",
@@ -42,10 +42,10 @@ Q("Cerumen impaction", IO,
   [["A conductive loss that resolves when the wax is removed",
     "Correct. Wax occluding the canal blocks air-conducted sound before it reaches the drum, while "
     "the drum, ossicles and cochlea are all normal. That is a purely mechanical conductive loss, so "
-    "Weber lateralises to the blocked ear and hearing returns to baseline as soon as the obstruction "
+    "Weber lateralizes to the blocked ear and hearing returns to baseline as soon as the obstruction "
     "is cleared."],
    ["A sensorineural loss from age-related cochlear change",
-    "Presbycusis is real in this age group but is bilateral, gradual over years, and characterised "
+    "Presbycusis is real in this age group but is bilateral, gradual over years, and characterized "
     "by difficulty making out words rather than a two-week sensation of blockage. It also would not "
     "be relieved by clearing the canal, and it does not fill the canal with wax."],
    ["A mixed loss requiring urgent audiology referral",
@@ -74,7 +74,7 @@ Q("Otomycosis", IO,
    ["Contact dermatitis from the drops, treated with topical steroid",
     "Sensitivity to a drop component is a genuine cause of an itchy canal and would be reasonable "
     "without the debris. But the visible fungal elements point to organisms, and a steroid alone "
-    "would further favour their growth."],
+    "would further favor their growth."],
    ["Chronic suppurative otitis media",
     "Chronic middle ear infection produces persistent discharge through a perforation and conductive "
     "loss, with the pathology behind the drum rather than lining the canal. It does not present as "
@@ -110,13 +110,13 @@ Q("Carcinoma of the ear canal", IO,
   "aching pain. Otoscopy shows friable tissue in the canal.",
   [["Biopsy of the canal lesion",
     "Correct. Otitis externa that will not respond to appropriate treatment, together with bloody "
-    "otorrhoea and friable tissue, is the described presentation of canal carcinoma. Only "
+    "otorrhea and friable tissue, is the described presentation of canal carcinoma. Only "
     "histology distinguishes malignancy from chronic inflammation or granulation, and the treatment "
     "pathway is entirely different, so tissue has to be obtained rather than another drop tried."],
    ["A fourth course of topical antibiotics with a different agent",
     "Three failures already establish that this is not responding to antimicrobial therapy, which "
     "is precisely the signal to reconsider the diagnosis. Another course delays a cancer diagnosis "
-    "while the tumour continues to grow."],
+    "while the tumor continues to grow."],
    ["Aural toilet and observation for six weeks",
     "Cleaning the canal is a sensible adjunct but is not a diagnosis, and six more weeks of watching "
     "friable bleeding tissue in an elderly patient is the wrong direction when malignancy is already "
@@ -137,7 +137,7 @@ Q("Chronic otitis media", IO,
     "pain distinguishes it from an acute infection, and the absence of keratin debris or a retraction "
     "pocket is what separates it from cholesteatoma."],
    ["Cholesteatoma",
-    "Cholesteatoma also gives chronic painless otorrhoea and conductive loss, so it is the right "
+    "Cholesteatoma also gives chronic painless otorrhea and conductive loss, so it is the right "
     "thing to consider, but it requires the keratin sac or the retraction pocket that this "
     "examination explicitly does not show. The distinction matters because cholesteatoma erodes bone "
     "and needs surgery."],
@@ -145,26 +145,26 @@ Q("Chronic otitis media", IO,
     "Acute disease presents over days with pain, fever and a bulging intact drum, not with two years "
     "of painless discharge through an established perforation. The tempo alone rules it out."],
    ["Otitis externa",
-    "Canal infection causes pain on moving the tragus with canal oedema and no perforation. Here the "
+    "Canal infection causes pain on moving the tragus with canal edema and no perforation. Here the "
     "pathology is behind a perforated drum in the middle ear, and the canal findings that define "
     "external otitis are absent."]],
   "diagnosis", D, 31),
 
 Q("Barotrauma", IO,
   "A 41-year-old man descends on a flight with a heavy cold. He develops severe right ear pain "
-  "during descent, followed by muffled hearing. Otoscopy shows a dark blue-black discolouration "
+  "during descent, followed by muffled hearing. Otoscopy shows a dark blue-black discoloration "
   "behind an intact tympanic membrane.",
-  [["Haemotympanum from middle ear barotrauma",
-    "Correct. A blocked eustachian tube cannot equalise the rising ambient pressure during descent, "
+  [["Hemotympanum from middle ear barotrauma",
+    "Correct. A blocked eustachian tube cannot equalize the rising ambient pressure during descent, "
     "so relative negative pressure in the middle ear pulls fluid and then blood out of the mucosal "
     "vessels. The blood behind an intact drum gives the blue-black appearance, and the conductive "
     "loss follows from fluid rather than from any damage to the cochlea."],
    ["Acute otitis media",
     "Infection would give a bulging erythematous drum with fever over days, not an immediate "
-    "pressure-related event during a single descent. The colour described is blood rather than the "
+    "pressure-related event during a single descent. The color described is blood rather than the "
     "opacity of pus."],
-   ["Glomus tumour",
-    "A glomus tumour is a vascular middle ear mass giving pulsatile tinnitus and a red mass behind "
+   ["Glomus tumor",
+    "A glomus tumor is a vascular middle ear mass giving pulsatile tinnitus and a red mass behind "
     "the drum that develops over months. It is not precipitated by a flight and does not appear "
     "acutely during descent."],
    ["Cholesteatoma",
@@ -206,7 +206,7 @@ Q("Acute otitis media", IO,
     "restore hearing and reduce the recurrence rate rather than treating each episode after it "
     "starts."],
    ["Long-term prophylactic antibiotics",
-    "Continuous antibiotics have fallen out of favour because the benefit is small and the cost in "
+    "Continuous antibiotics have fallen out of favor because the benefit is small and the cost in "
     "resistance and side effects is real. They also do nothing for the effusion that is currently "
     "impairing his hearing, which is the more pressing problem."],
    ["Reassurance, since most children outgrow ear infections",
@@ -235,7 +235,7 @@ Q("Malignant otitis externa", IO,
     "first."],
    ["A stroke affecting the facial motor cortex",
     "A central lesion spares the forehead, because the upper face receives input from both "
-    "hemispheres. Forehead involvement localises the lesion to the nerve itself rather than the "
+    "hemispheres. Forehead involvement localizes the lesion to the nerve itself rather than the "
     "brain, which points back to the temporal bone."],
    ["Ramsay Hunt syndrome from herpes zoster",
     "Zoster of the geniculate ganglion does cause a facial palsy with ear pain, so it belongs on the "
@@ -260,14 +260,14 @@ Q("Tympanic membrane perforation", IO,
     "Cholesteatoma produces chronic painless discharge developing over months to years, with keratin "
     "debris. It does not explain two days of fever and severe pain ending in sudden rupture."],
    ["She has developed otitis externa on top of the middle ear infection",
-    "Canal infection would give pain on moving the tragus and canal oedema, and it would not relieve "
+    "Canal infection would give pain on moving the tragus and canal edema, and it would not relieve "
     "the deep pain of a middle ear under pressure. The discharge here is coming through the "
     "perforation from behind the drum."]],
   "mechanism", D, 61),
 
 Q("Otitis externa", IO,
   "A 55-year-old man has had otitis externa treated with drops for five days. The canal is so "
-  "oedematous that the drops appear not to be reaching beyond the outer third, and his pain is "
+  "edematous that the drops appear not to be reaching beyond the outer third, and his pain is "
   "unchanged.",
   [["Place an ear wick to carry the drops along the swollen canal",
     "Correct. Topical therapy only works where the drug physically reaches, and a canal swollen shut "
@@ -283,7 +283,7 @@ Q("Otitis externa", IO,
     "occluded canal to progress. The problem here is that the drug is not arriving, not that it is "
     "the wrong drug."],
    ["Irrigate the canal to reduce the swelling",
-    "Irrigation does not reduce oedema and risks driving infected material deeper or into the middle "
+    "Irrigation does not reduce edema and risks driving infected material deeper or into the middle "
     "ear if the drum is not clearly intact. It is also poorly tolerated in an ear that is already "
     "acutely painful."]],
   "next step", D, 41),

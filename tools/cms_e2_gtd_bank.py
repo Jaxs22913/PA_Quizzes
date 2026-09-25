@@ -17,7 +17,7 @@ That threw out three whole categories:
     "Macular Degeneration with Disciform Scarring", Exotropia/Hypertropia.
   * Diagrams and scans standing in for a finding: the third-nerve anatomical
     course, the eyelid cross-section, the head CT filed under periorbital
-    haematoma. Where a real photograph of the same thing existed elsewhere in
+    hematoma. Where a real photograph of the same thing existed elsewhere in
     the deck it was pulled instead -- see tools/extract_cms_e2_gtd_images.py.
   * Pairs whose discriminator is not visible in a photograph at all:
       - chalazion vs hordeolum -- the difference is TENDERNESS.
@@ -27,7 +27,7 @@ That threw out three whole categories:
       - papilledema vs optic neuritis -- both are a swollen disc; laterality
         and acuity separate them, not the fundus photograph. Neither is
         offered as a distractor for the other.
-      - retinoblastoma vs paediatric cataract -- both leukocoria. Cataract is
+      - retinoblastoma vs pediatric cataract -- both leukocoria. Cataract is
         deliberately NOT a distractor; the explanation names it instead.
       - pterygium -- the deck's pictures never clearly show it crossing the
         limbus, so it is a distractor only, never an answer.
@@ -45,7 +45,7 @@ SCLERA = "Region — Sclera and orbit"
 CORNEA = "Region — Cornea and anterior chamber"
 FUNDUS = "Region — Retina and optic nerve"
 PUPIL = "Region — Pupil and eye movements"
-TUMOUR = "Region — Ocular tumours"
+TUMOUR = "Region — Ocular tumors"
 TRAUMA = "Region — Ocular trauma"
 
 D10 = "CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx"
@@ -86,7 +86,7 @@ dict(cond="Blepharitis", img="s018_1.jpg", slide=18, deck=D10, io=EYELID,
 
 dict(cond="Dacryoadenitis", img="s022_1.jpg", slide=22, deck=D10, io=EYELID,
      alt="Swelling and redness over the outer part of the upper eyelids",
-     why="Swelling centred over the OUTER third of the UPPER lid, where the lacrimal gland sits.",
+     why="Swelling centered over the OUTER third of the UPPER lid, where the lacrimal gland sits.",
      wrong=[("Dacryocystitis", "That swells BELOW the medial canthal tendon, over the lacrimal sac at the inner corner."),
             ("Chalazion", "That is a discrete nodule you can feel in the lid, not diffuse gland swelling."),
             ("Xanthelasma", "Those are painless yellow plaques at the inner corner of the lids.")]),
@@ -99,7 +99,7 @@ dict(cond="Dacryocystitis", img="s024_1.jpg", slide=24, deck=D10, io=EYELID,
             ("Pre-septal cellulitis", "That spreads diffusely through the lid, rather than pointing at one sac.")]),
 
 # --------------------------------------------------------------- surface ----
-dict(cond="Subconjunctival haemorrhage", img="s029_2.jpg", slide=29, deck=D10, io=SURFACE,
+dict(cond="Subconjunctival hemorrhage", img="s029_2.jpg", slide=29, deck=D10, io=SURFACE,
      alt="Sharply bounded sheet of bright red blood under the conjunctiva",
      why="A sharply bounded sheet of blood under the conjunctiva, with a clear cornea and a normal pupil.",
      wrong=[("Hyphema", "That blood layers INSIDE the anterior chamber, in front of the iris, with a fluid level."),
@@ -109,8 +109,8 @@ dict(cond="Subconjunctival haemorrhage", img="s029_2.jpg", slide=29, deck=D10, i
 dict(cond="Chemosis", img="s031_1.jpg", slide=31, deck=D10, io=SURFACE,
      alt="Conjunctiva swollen and ballooning forward over the limbus",
      why="The conjunctiva itself is swollen with fluid and balloons forward over the limbus.",
-     wrong=[("Subconjunctival haemorrhage", "That is blood under a conjunctiva that is otherwise flat."),
-            ("Pterygium", "That is a fixed wedge of fibrous tissue, not generalised fluid swelling."),
+     wrong=[("Subconjunctival hemorrhage", "That is blood under a conjunctiva that is otherwise flat."),
+            ("Pterygium", "That is a fixed wedge of fibrous tissue, not generalized fluid swelling."),
             ("Episcleritis", "That is sectoral redness of the vessels; the conjunctiva is not raised like this.")]),
 
 dict(cond="Pinguecula", img="l10-s027-pinguecula.jpg", slide=27, deck=D10, io=SURFACE,
@@ -151,24 +151,24 @@ dict(cond="Trachoma", img="ext-trachoma-stages.jpg", slide=44, deck=D10, io=SURF
 # ------------------------------------------------------- sclera and orbit ----
 dict(cond="Episcleritis", img="s047_2.jpg", slide=47, deck=D10, io=SCLERA,
      alt="Sector of bright superficial redness on the globe with white sclera beneath",
-     why="A sector of bright, SUPERFICIAL redness; the sclera underneath keeps its white colour and the eye is only mildly sore.",
+     why="A sector of bright, SUPERFICIAL redness; the sclera underneath keeps its white color and the eye is only mildly sore.",
      wrong=[("Scleritis", "That redness is deeper and violaceous, and the pain is severe enough to wake the patient at night."),
             ("Bacterial conjunctivitis", "That is diffuse injection with discharge, not one quiet sector."),
-            ("Subconjunctival haemorrhage", "That is a solid block of blood, not dilated vessels.")]),
+            ("Subconjunctival hemorrhage", "That is a solid block of blood, not dilated vessels.")]),
 
 dict(cond="Scleritis", img="s049_1.jpg", slide=49, deck=D10, io=SCLERA,
      alt="Globe with a deep violaceous sector of scleral inflammation",
      why="A deep VIOLACEOUS hue from inflamed sclera, with boring pain that is worse at night and worse on eye movement.",
      wrong=[("Episcleritis", "That is bright and superficial, blanches with phenylephrine, and hurts only mildly."),
             ("Anterior uveitis", "That flushes the limbus in a ring and distorts the pupil; the sclera itself is not violaceous."),
-            ("Chemosis", "That is clear fluid swelling of the conjunctiva, not deep scleral colour change.")]),
+            ("Chemosis", "That is clear fluid swelling of the conjunctiva, not deep scleral color change.")]),
 
 dict(cond="Pre-septal cellulitis", img="s052_1.jpg", slide=52, deck=D10, io=SCLERA,
      alt="Child with a red swollen eyelid and a white, normally positioned eye",
      why="The lid is red and swollen but THE EYE ITSELF IS WHITE and sits normally — the infection is in front of the orbital septum.",
      wrong=[("Post-septal cellulitis", "That pushes the globe forward and makes eye movement painful and restricted."),
-            ("Periorbital haematoma", "That is bruising after blunt injury, not erythema and warmth."),
-            ("Dacryoadenitis", "That is localised to the outer third of the upper lid, not the whole lid.")]),
+            ("Periorbital hematoma", "That is bruising after blunt injury, not erythema and warmth."),
+            ("Dacryoadenitis", "That is localized to the outer third of the upper lid, not the whole lid.")]),
 
 dict(cond="Post-septal cellulitis", img="l10-s052_pos2.jpg", slide=52, deck=D10, io=SCLERA,
      alt="Eye pushed forward and displaced out of the orbit with the lid held open",
@@ -204,12 +204,12 @@ dict(cond="Anterior uveitis", img="s062_4.jpg", slide=62, deck=D10, io=CORNEA,
      why="CILIARY FLUSH hugging the limbus with an IRREGULAR pupil, where inflammation has stuck the iris to the lens.",
      wrong=[("Bacterial conjunctivitis", "That reddens the fornices most and leaves the pupil round and reactive."),
             ("Episcleritis", "That is one sector of superficial vessels with a normal pupil."),
-            ("Subconjunctival haemorrhage", "That is free blood with no injection and no pupil change.")]),
+            ("Subconjunctival hemorrhage", "That is free blood with no injection and no pupil change.")]),
 
 dict(cond="Hyphema", img="l14-s024_pos1.jpg", slide=24, deck=D14, io=CORNEA,
      alt="Blood layered with a flat fluid level in the anterior chamber",
      why="Blood LAYERING inside the anterior chamber with a flat fluid level in front of the iris.",
-     wrong=[("Subconjunctival haemorrhage", "That blood sits on the surface, under the conjunctiva, and never forms a level."),
+     wrong=[("Subconjunctival hemorrhage", "That blood sits on the surface, under the conjunctiva, and never forms a level."),
             ("Corneal ulcer", "That is a white infiltrate in the cornea, not free blood behind it."),
             ("Anterior uveitis", "Cells there are too fine to see; a visible layer of blood means a hyphema.")]),
 
@@ -243,30 +243,30 @@ dict(cond="Papilledema", img="l12-s045_3.jpg", slide=45, deck=D12, io=FUNDUS,
             ("Uveal melanoma", "That is a discrete pigmented mass, not diffuse swelling of the nerve head.")]),
 
 dict(cond="Age-related macular degeneration — dry", img="l13-s011_1.jpg", slide=11, deck=D13, io=FUNDUS,
-     alt="Fundus with yellow drusen clustered at the macula and no haemorrhage",
+     alt="Fundus with yellow drusen clustered at the macula and no hemorrhage",
      why="Yellow DRUSEN clustered at the macula, with no blood and no fluid.",
-     wrong=[("Age-related macular degeneration — wet", "Wet disease adds subretinal haemorrhage or fluid; there is none here."),
+     wrong=[("Age-related macular degeneration — wet", "Wet disease adds subretinal hemorrhage or fluid; there is none here."),
             ("Papilledema", "That swells the optic disc; here the disc is sharp and the change is at the macula."),
             ("Retinal detachment", "The retina here is flat and attached.")]),
 
 dict(cond="Age-related macular degeneration — wet", img="l13-s011_3.jpg", slide=11, deck=D13, io=FUNDUS,
-     alt="Fundus with a large dark subretinal haemorrhage across the macula",
-     why="A large dark SUBRETINAL HAEMORRHAGE across the macula from new vessels growing under the retina.",
+     alt="Fundus with a large dark subretinal hemorrhage across the macula",
+     why="A large dark SUBRETINAL HEMORRHAGE across the macula from new vessels growing under the retina.",
      wrong=[("Age-related macular degeneration — dry", "Dry disease shows drusen and atrophy, never this volume of blood."),
             ("Retinal detachment", "That is a translucent sheet lifted into folds, not blood pooled under a flat retina."),
-            ("Papilledema", "That change is centred on the disc, not the macula.")]),
+            ("Papilledema", "That change is centered on the disc, not the macula.")]),
 
 dict(cond="Cataract — nuclear", img="l13-s037_1.jpg", slide=37, deck=D13, io=FUNDUS,
      alt="Lens with a uniformly yellow-brown, hardened nucleus seen through the pupil",
      why="The lens NUCLEUS has yellowed and hardened to a uniform brown-amber, filling the pupil.",
-     wrong=[("Cataract — cortical", "That makes white radial spokes running in from the lens edge, not a uniform brown centre."),
+     wrong=[("Cataract — cortical", "That makes white radial spokes running in from the lens edge, not a uniform brown center."),
             ("Corneal ulcer", "That opacity is in the cornea in front of the iris, not behind the pupil."),
             ("Retinoblastoma", "That reflects white from behind the lens, in a child.")]),
 
 dict(cond="Cataract — cortical", img="l13-s037_2.jpg", slide=37, deck=D13, io=FUNDUS,
      alt="Lens with white radial cortical spokes running inward from the periphery",
-     why="White radial SPOKES running inward from the edge of the lens, leaving the centre relatively clear.",
-     wrong=[("Cataract — nuclear", "That yellows and browns the centre of the lens uniformly."),
+     why="White radial SPOKES running inward from the edge of the lens, leaving the center relatively clear.",
+     wrong=[("Cataract — nuclear", "That yellows and browns the center of the lens uniformly."),
             ("Corneal ulcer", "That white patch would sit in the cornea, in front of the iris."),
             ("Anterior uveitis", "That gives ciliary flush and an irregular pupil, not spokes in the lens.")]),
 
@@ -281,7 +281,7 @@ dict(cond="Horner syndrome", img="l11-s015_pos1.jpg", slide=15, deck=D11, io=PUP
 dict(cond="Cranial nerve III palsy", img="l11-s040_pos1.jpg", slide=40, deck=D11, io=PUPIL,
      alt="Marked drooping of one upper eyelid, shown before and after the lid is lifted",
      why="A heavy PTOSIS; lift the lid and the eye sits down and out, because only the lateral rectus and superior oblique still work.",
-     wrong=[("Horner syndrome", "That ptosis is slight, only a millimetre or two, and comes with a SMALL pupil."),
+     wrong=[("Horner syndrome", "That ptosis is slight, only a millimeter or two, and comes with a SMALL pupil."),
             ("Dermatochalasis", "That is loose skin resting on the lashes; the lid itself still elevates."),
             ("Cranial nerve VI palsy", "That leaves the lid alone and only stops the eye turning outward.")]),
 
@@ -296,7 +296,7 @@ dict(cond="Retinoblastoma", img="l13-s041_1.jpg", slide=41, deck=D13, io=TUMOUR,
 dict(cond="Uveal melanoma", img="l13-s044_4.jpg", slide=44, deck=D13, io=TUMOUR,
      alt="Fundus montage with a raised pigmented dome-shaped choroidal mass",
      why="A raised, pigmented, DOME-SHAPED mass sitting in the choroid beneath the retina.",
-     wrong=[("Age-related macular degeneration — wet", "That blood is flat and centred on the macula, not a raised solid dome."),
+     wrong=[("Age-related macular degeneration — wet", "That blood is flat and centered on the macula, not a raised solid dome."),
             ("Retinal detachment", "That sheet is pale and translucent, and moves; this mass is solid and fixed."),
             ("Iris nevus", "That pigment is on the iris at the front of the eye, visible without a fundus view.")]),
 
@@ -312,7 +312,7 @@ dict(cond="Conjunctival melanoma", img="l13-s052_1.jpg", slide=52, deck=D13, io=
      why="A raised, pigmented lesion growing ON the conjunctiva over the white of the eye, with feeder vessels.",
      wrong=[("Iris nevus", "That pigment lies on the iris, behind the cornea, inside the eye."),
             ("Pinguecula", "That is a pale yellow-white deposit, not brown pigment."),
-            ("Subconjunctival haemorrhage", "That is red and flat and clears on its own within weeks.")]),
+            ("Subconjunctival hemorrhage", "That is red and flat and clears on its own within weeks.")]),
 
 # ----------------------------------------------------------------- trauma ----
 dict(cond="Globe rupture", img="l14-s017_pos1.jpg", slide=17, deck=D14, io=TRAUMA,
@@ -325,18 +325,18 @@ dict(cond="Globe rupture", img="l14-s017_pos1.jpg", slide=17, deck=D14, io=TRAUM
 dict(cond="Lid laceration", img="l14-s029_pos1.jpg", slide=29, deck=D14, io=TRAUMA,
      alt="Deep bleeding wound through the upper eyelid, shown before and after suture repair",
      why="A full-thickness wound through the eyelid, shown open and then repaired.",
-     wrong=[("Periorbital haematoma", "That is closed bruising; the skin is not breached."),
+     wrong=[("Periorbital hematoma", "That is closed bruising; the skin is not breached."),
             ("Pre-septal cellulitis", "That is infection and swelling of an intact lid."),
             ("Orbital contusion", "That is blunt injury to the orbital contents without an open wound.")]),
 
 dict(cond="Orbital contusion", img="l14-s032_pos1.jpg", slide=32, deck=D14, io=TRAUMA,
-     alt="Eye after blunt injury with extensive bright subconjunctival haemorrhage and lid swelling",
-     why="Blunt injury has filled the surface with haemorrhage and swollen the lids, with no open wound.",
+     alt="Eye after blunt injury with extensive bright subconjunctival hemorrhage and lid swelling",
+     why="Blunt injury has filled the surface with hemorrhage and swollen the lids, with no open wound.",
      wrong=[("Pre-septal cellulitis", "That is red, warm and infected, and follows no injury."),
             ("Post-septal cellulitis", "That pushes the globe forward and makes movement painful; this is bruising."),
             ("Dacryoadenitis", "That is gland inflammation at the outer upper lid, unrelated to trauma.")]),
 
-dict(cond="Periorbital haematoma", img="l14-s034_pos1.jpg", slide=34, deck=D14, io=TRAUMA,
+dict(cond="Periorbital hematoma", img="l14-s034_pos1.jpg", slide=34, deck=D14, io=TRAUMA,
      alt="Extensive dark bruising filling the eyelids and periorbital skin on one side",
      why="Dark bruising filling the lids and the skin around the orbit after blunt injury, with the globe itself quiet.",
      wrong=[("Pre-septal cellulitis", "That is erythema and warmth from infection, not the deep purple of extravasated blood."),
@@ -346,14 +346,14 @@ dict(cond="Periorbital haematoma", img="l14-s034_pos1.jpg", slide=34, deck=D14, 
 dict(cond="Orbital floor fracture", img="l14-s042_pos2.jpg", slide=42, deck=D14, io=TRAUMA,
      alt="Periorbital bruising with one eye failing to elevate on upward gaze",
      why="Periorbital bruising with the eye unable to look UP — the inferior rectus is caught in the fractured floor.",
-     wrong=[("Periorbital haematoma", "Bruising alone does not restrict the eye from moving."),
+     wrong=[("Periorbital hematoma", "Bruising alone does not restrict the eye from moving."),
             ("Cranial nerve III palsy", "That drops the lid and turns the eye down and out; here the lid works and only elevation fails."),
             ("Post-septal cellulitis", "That is infection with proptosis, not a mechanical block after injury.")]),
 
 dict(cond="Basilar skull fracture", img="l14-s045_pos6.jpg", slide=45, deck=D14, io=TRAUMA,
      alt="Bruising over the mastoid process behind the ear",
      why="Bruising over the MASTOID behind the ear — Battle sign, which tracks blood from a fracture of the skull base.",
-     wrong=[("Periorbital haematoma", "That bruising is around the eye; this sits behind the ear."),
+     wrong=[("Periorbital hematoma", "That bruising is around the eye; this sits behind the ear."),
             ("Orbital contusion", "That involves the globe and lids, not the mastoid."),
             ("Pre-septal cellulitis", "That is infection of the eyelid, in a different place entirely.")]),
 ]

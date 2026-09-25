@@ -19,7 +19,7 @@ SLOT_FIXES = {
  (11, 2): "A five-day course of oral prednisone without any taper",
  (12, 3): "Future exposure to the same adhesive will not provoke a reaction once this episode has settled",
  (14, 1): "A single two-week course of antifungal shampoo is usually curative and needs no repeating",
- (15, 3): "Apply an occlusive moisturiser several times each day instead",
+ (15, 3): "Apply an occlusive moisturizer several times each day instead",
  (16, 3): "The condition will not recur once the corticosteroid has been stopped once",
  (19, 3): "A high-potency topical corticosteroid applied at every change until the rash has completely cleared",
  (21, 2): "High-potency topical corticosteroids as the sole long-term therapy",

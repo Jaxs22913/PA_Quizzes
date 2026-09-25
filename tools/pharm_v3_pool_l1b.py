@@ -27,7 +27,7 @@ QUESTIONS = [
         ["Aminoglycosides", "Aminoglycosides are listed as bactericidal."]]),
 
  dict(topic="Principles", io="3 — Bacteriostatic versus bactericidal", cite=D % 9,
-  q="What characterises concentration-dependent killing?",
+  q="What characterizes concentration-dependent killing?",
   opts=[["Higher concentration gives greater killing", "Correct, and it comes with a post-antibiotic effect."],
         ["Killing plateaus once a concentration is reached", "That describes time-dependent killing."],
         ["Time above the inhibitory concentration matters most", "That is the time-dependent pattern."],
@@ -70,7 +70,7 @@ QUESTIONS = [
 
  dict(topic="Macrolides", io="4e — Macrolides/ketolides", cite=D % 57,
   q="Which macrolide gastrointestinal effect is worst in children and young adults?",
-  opts=[["Nausea, diarrhoea and abdominal pain", "Correct, because the drug stimulates gut motility."],
+  opts=[["Nausea, diarrhea and abdominal pain", "Correct, because the drug stimulates gut motility."],
         ["Constipation and abdominal distension", "Motility is stimulated rather than slowed."],
         ["Pseudomembranous colitis from overgrowth", "That is the clindamycin association."],
         ["Disulfiram-like reaction with alcohol", "That belongs to metronidazole."]]),
@@ -134,7 +134,7 @@ QUESTIONS = [
  dict(topic="Tetracyclines", io="4h — Tetracyclines", cite=D % 63,
   q="Which tick-borne illnesses do the tetracyclines treat?",
   opts=[["Rocky Mountain spotted fever and Lyme disease", "Correct, alongside acne and atypical pneumonia."],
-        ["Malaria and babesiosis in returning travellers", "Neither is listed among these uses."],
+        ["Malaria and babesiosis in returning travelers", "Neither is listed among these uses."],
         ["Typhoid fever and paratyphoid infection", "Neither is listed among these uses."],
         ["Leptospirosis and brucellosis only", "Brucella is covered but the pairing given is different."]]),
 
@@ -163,7 +163,7 @@ QUESTIONS = [
   q="Aminoglycosides are the drug of choice in which settings?",
   opts=[["Febrile neutropenia, sepsis, enterococcal synergy", "Correct, with enterococcal use restricted to synergy dosing."],
         ["Community-acquired pneumonia and bronchitis", "Those are not aminoglycoside indications."],
-        ["Clostridium difficile colitis and diarrhoea", "Oral vancomycin and metronidazole cover that."],
+        ["Clostridium difficile colitis and diarrhea", "Oral vancomycin and metronidazole cover that."],
         ["Skin and soft tissue infection in the community", "That is not an aminoglycoside indication."]]),
 
  dict(topic="Aminoglycosides", io="4i — Aminoglycosides", cite=D % 68,
@@ -213,7 +213,7 @@ QUESTIONS = [
   opts=[["Platelets", "Correct, because thrombocytopenia is the characteristic toxicity."],
         ["Creatine phosphokinase", "That is daptomycin monitoring."],
         ["Serum troughs before the fourth dose", "That is vancomycin monitoring."],
-        ["Visual fields and colour vision", "That is not a linezolid concern."]]),
+        ["Visual fields and color vision", "That is not a linezolid concern."]]),
 
  dict(topic="Oxazolidinones", io="4l — Oxazolidinones", cite=D % 72,
   q="Why can daptomycin not be used for pneumonia?",
@@ -224,7 +224,7 @@ QUESTIONS = [
 
  dict(topic="Oxazolidinones", io="4l — Oxazolidinones", cite=D % 72,
   q="How does daptomycin kill bacteria?",
-  opts=[["By causing bacterial depolarisation", "Correct, halting DNA, RNA and protein synthesis at once."],
+  opts=[["By causing bacterial depolarization", "Correct, halting DNA, RNA and protein synthesis at once."],
         ["By binding the 50S ribosomal subunit", "That is the linezolid mechanism."],
         ["By blocking cell wall cross-linking", "That is a beta-lactam or glycopeptide action."],
         ["By inhibiting DNA gyrase", "That is the fluoroquinolone mechanism."]]),
@@ -269,7 +269,7 @@ QUESTIONS = [
   opts=[["Tendonitis and Achilles tendon rupture", "Correct, with caution advised below 18 years of age."],
         ["Rhabdomyolysis with a raised creatine kinase", "That is the daptomycin concern."],
         ["Depression of skeletal growth in children", "That is a tetracycline effect."],
-        ["Malignant hyperthermia under anaesthesia", "That is a succinylcholine effect."]]),
+        ["Malignant hyperthermia under anesthesia", "That is a succinylcholine effect."]]),
 
  dict(topic="Fluoroquinolones", io="4k — Fluoroquinolones", cite=D % 79,
   q="Which central nervous system effects do the fluoroquinolones cause?",
@@ -293,10 +293,10 @@ QUESTIONS = [
         ["Meningitis requiring central nervous system entry", "That is not a clindamycin indication."]]),
 
  dict(topic="Lincosamides", io="4f — Lincosamides", cite=D % 81,
-  q="Which haematological effects are listed for clindamycin?",
+  q="Which hematological effects are listed for clindamycin?",
   opts=[["Neutropenia and thrombocytopenia", "Correct, alongside rash and Clostridium difficile colitis."],
-        ["Megaloblastic anaemia and agranulocytosis", "Those belong to sulfamethoxazole/trimethoprim."],
-        ["Haemolysis in glucose-6-phosphate deficiency", "That is not among the listed effects."],
+        ["Megaloblastic anemia and agranulocytosis", "Those belong to sulfamethoxazole/trimethoprim."],
+        ["Hemolysis in glucose-6-phosphate deficiency", "That is not among the listed effects."],
         ["Bone marrow suppression as the limiting toxicity", "That is the flucytosine concern."]]),
 
  dict(topic="Folate inhibitors", io="4n — Folate synthesis inhibitors", cite=D % 82,
@@ -329,9 +329,9 @@ QUESTIONS = [
 
  dict(topic="Folate inhibitors", io="4n — Folate synthesis inhibitors", cite=D % 85,
   q="Which blood disorders follow sulfamethoxazole/trimethoprim?",
-  opts=[["Thrombocytopenia, agranulocytosis, megaloblastic anaemia", "Correct, grouped together as blood dyscrasias."],
-        ["Polycythaemia and reactive thrombocytosis", "The effects run towards suppression, not excess."],
-        ["Haemophilia and other inherited clotting factor loss", "No factor deficiency is described."],
+  opts=[["Thrombocytopenia, agranulocytosis, megaloblastic anemia", "Correct, grouped together as blood dyscrasias."],
+        ["Polycythemia and reactive thrombocytosis", "The effects run towards suppression, not excess."],
+        ["Hemophilia and other inherited clotting factor loss", "No factor deficiency is described."],
         ["Iron deficiency from impaired absorption", "That is not among the listed effects."]]),
 
  dict(topic="Nitroimidazoles", io="4o — Nitroimidazoles", cite=D % 86,
@@ -342,7 +342,7 @@ QUESTIONS = [
         ["It prevents cell wall cross-linking", "It does not act on the cell wall."]]),
 
  dict(topic="Nitroimidazoles", io="4o — Nitroimidazoles", cite=D % 86,
-  q="Which metronidazole side effect requires alcohol counselling?",
+  q="Which metronidazole side effect requires alcohol counseling?",
   opts=[["A disulfiram-like reaction", "Correct, alongside headache, nausea and vomiting."],
         ["Serotonin syndrome with tyramine foods", "That belongs to linezolid."],
         ["Chelation reducing drug absorption", "That belongs to tetracyclines and fluoroquinolones."],

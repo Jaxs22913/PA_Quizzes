@@ -89,17 +89,17 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   <table>
     <tr><th>Modality</th><th>How the image is made</th><th>Advantages</th><th>Disadvantages</th></tr>
     <tr><td><b>Radiography</b></td><td>Ionizing radiation through the body onto a detector, viewed in two dimensions</td><td>Quick, inexpensive, available anywhere, portable</td><td>Only five densities; ionizing radiation; structures overlap</td></tr>
-    <tr><td><b>Computed tomography</b></td><td>Powerful x-ray beams through a rotating fan beam, measuring transmission at thousands of points</td><td>Expands the grey scale beyond five densities, reduces overlap, works with implanted devices, three-dimensional reconstruction; the cornerstone of cross-sectional imaging</td><td>Not truly portable, a lot of ionizing radiation, needs space and heavy processing</td></tr>
-    <tr><td><b>Ultrasonography</b></td><td>High-frequency sound from a transducer, bounced off tissue and back to it</td><td>Inexpensive, portable, no radiation, real time, colour Doppler for flow direction and velocity</td><td>Cannot penetrate bone, gas disrupts the signal, deep structures are hard, operator-dependent</td></tr>
+    <tr><td><b>Computed tomography</b></td><td>Powerful x-ray beams through a rotating fan beam, measuring transmission at thousands of points</td><td>Expands the gray scale beyond five densities, reduces overlap, works with implanted devices, three-dimensional reconstruction; the cornerstone of cross-sectional imaging</td><td>Not truly portable, a lot of ionizing radiation, needs space and heavy processing</td></tr>
+    <tr><td><b>Ultrasonography</b></td><td>High-frequency sound from a transducer, bounced off tissue and back to it</td><td>Inexpensive, portable, no radiation, real time, color Doppler for flow direction and velocity</td><td>Cannot penetrate bone, gas disrupts the signal, deep structures are hard, operator-dependent</td></tr>
     <tr><td><b>Magnetic resonance</b></td><td>A varying magnetic field aligns hydrogen; releasing it emits radio waves &mdash; essentially a hydrogen map</td><td>No radiation, superior to computed tomography for soft tissue, calcium is silent so tissue inside bone is visible, diffusion-weighted imaging for stroke</td><td>Not widely available, expensive, slow, magnetic implants and ferromagnetic projectiles</td></tr>
     <tr><td><b>Positron emission tomography</b></td><td>Gamma camera reading an injected tracer, usually fluorodeoxyglucose-18; two-dimensional</td><td>Shows which tissues consume more glucose &mdash; cancer staging, brain disorders, cardiac blood flow</td><td>Among the highest-emitting devices in existence</td></tr>
     <tr><td><b>Single photon emission tomography</b></td><td>Gamma cameras on a rotating gantry reading single photons; three-dimensional</td><td>Shows where blood flows &mdash; heart disease, bone scans, brain evaluation</td><td>Among the highest-emitting devices in existence</td></tr>
-    <tr><td><b>Angiographic studies</b></td><td>Not one test: x-ray angiogram, colour Doppler, computed tomography angiography, magnetic resonance angiography</td><td>Images vessels by whichever modality suits; magnetic resonance angiography and venography need no dye at all</td><td>Inherits the risks of whichever modality is used</td></tr>
+    <tr><td><b>Angiographic studies</b></td><td>Not one test: x-ray angiogram, color Doppler, computed tomography angiography, magnetic resonance angiography</td><td>Images vessels by whichever modality suits; magnetic resonance angiography and venography need no dye at all</td><td>Inherits the risks of whichever modality is used</td></tr>
     <tr><td><b>Fluoroscopy</b></td><td>Ionizing radiation giving real-time video of the body</td><td>Evaluates motion and positioning; watches barium or iodine move through the gut, urinary tract and vessels</td><td>Needs a specially fitted unit with a tilting table; continuous radiation</td></tr>
   </table>
   %(t1_t2_tesla)s
   <div class="pearl"><b>The one magnetic resonance fact that is always asked.</b> On <b>T2</b>, high
-  water content is <b>bright</b>; on <b>T1</b>, high water content is <b>dark</b>. Fat, oedema,
+  water content is <b>bright</b>; on <b>T1</b>, high water content is <b>dark</b>. Fat, edema,
   infection, blood and cerebrospinal fluid all follow water. Two mnemonics, pick one: <em>T2 = H2O
   is white</em>, or just look at the ventricles in the figure above.</div>
   %(ultrasound_indicator)s
@@ -108,16 +108,16 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   <table>
     <tr><th>What you want to see</th><th>What the deck says to use</th></tr>
     <tr><td>Moving structures &mdash; heart, vasculature, obstetrics</td><td>Ultrasound, which records in real time</td></tr>
-    <tr><td>Female pelvis, and paediatric patients</td><td>Ultrasound, often the first study of choice; also for image-guided procedures</td></tr>
+    <tr><td>Female pelvis, and pediatric patients</td><td>Ultrasound, often the first study of choice; also for image-guided procedures</td></tr>
     <tr><td>Soft tissue &mdash; essentially anything other than bone</td><td>Magnetic resonance, with extremely high anatomical detail</td></tr>
-    <tr><td>Brain, and the soft tissues of orthopaedics &mdash; muscle, ligament, tendon</td><td>Magnetic resonance; it is the cornerstone of neuroimaging</td></tr>
+    <tr><td>Brain, and the soft tissues of orthopedics &mdash; muscle, ligament, tendon</td><td>Magnetic resonance; it is the cornerstone of neuroimaging</td></tr>
     <tr><td>Tissue surrounded by bone</td><td>Magnetic resonance &mdash; calcium emits no signal, so the bone does not obscure it</td></tr>
     <tr><td>Anything cross-sectional</td><td>Computed tomography, the foundation of cross-sectional imaging</td></tr>
     <tr><td>Pleural effusion</td><td>Chest radiograph in the <b>decubitus</b> position, so the fluid layers out</td></tr>
     <tr><td>Genitourinary tract</td><td>Kidney-ureter-bladder film &mdash; supine, anterior-posterior</td></tr>
     <tr><td>Gastrointestinal tract, free air, air-fluid levels</td><td>Abdominal series &mdash; standing, anterior-posterior; for obstruction, perforation, volvulus</td></tr>
     <tr><td>Which organs are consuming glucose</td><td>Positron emission tomography</td></tr>
-    <tr><td>Where blood is flowing</td><td>Single photon emission tomography, or colour Doppler</td></tr>
+    <tr><td>Where blood is flowing</td><td>Single photon emission tomography, or color Doppler</td></tr>
   </table>
   <div class="callout"><b>A note on slide 34.</b> &ldquo;Anatomical Structures Best Visualized
   by&hellip;&rdquo; is a two-column layout that pairs seventeen modality entries against six
@@ -146,7 +146,7 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   </table>
   <div class="pearl"><b>The window is a display choice, not an acquisition choice.</b> A window is a
   pre-selected range of Hounsfield numbers &mdash; say &minus;100 to +300 &mdash; spread across the
-  available grey scale so the tissue of interest is separable. Because it is only a display range,
+  available gray scale so the tissue of interest is separable. Because it is only a display range,
   the same scan can be re-windowed afterwards to bring out different pathology. That is
   <b>post-processing</b>, and its clinical value is that it demonstrates the abnormality
   <em>without repeating the study and without re-exposing the patient</em>.</div>
@@ -193,7 +193,7 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   expose other people. That is the one radiation fact unique to these studies.</p>
 
   <h3 class="sub" id="mi-contrast">2.7 &middot; Objectives g &amp; h &mdash; Contrast media, contraindications &amp; safety</h3>
-  <p>Contrast is used most often to image arteries or veins, and to delineate and characterise
+  <p>Contrast is used most often to image arteries or veins, and to delineate and characterize
   masses &mdash; neoplastic against benign, infectious abscess against cyst. It also shows
   inflammation, increased blood flow and increased cellular or metabolic activity, and outlines
   luminal structures when given by mouth or as an enema. It can be injected into joints
@@ -202,12 +202,12 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   factor for all contrast material</b>. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</p>
   <table>
     <tr><th>Study</th><th>Agent</th><th>Before you give it</th><th>Watch for</th></tr>
-    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; a radioactive form of iodine. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</td><td><b>Check blood urea nitrogen and creatinine</b>; give one litre of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumour delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
+    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; a radioactive form of iodine. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</td><td><b>Check blood urea nitrogen and creatinine</b>; give one liter of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumor delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
     <tr><td>Angiography</td><td>Iohexol arterially, lower concentration than for intravenous computed tomography; iso-osmolal iodixanol (Visipaque) believed safer</td><td>Same renal checks</td><td>Same iodinated risks</td></tr>
     <tr><td>Computed tomography, oral</td><td>Barium, or Gastrografin</td><td><b>Barium is contraindicated if perforation is suspected</b> &mdash; use Gastrografin</td><td>Barium is toxic to extra-intestinal tissue and causes alkaline burns. Unpleasant taste</td></tr>
     <tr><td>Fluoroscopy swallow study</td><td>Oral barium, with sequential films</td><td>Same perforation caveat</td><td>Same</td></tr>
-    <tr><td>Magnetic resonance</td><td>Gadolinium</td><td>Assess blood urea nitrogen and creatinine regardless &mdash; renal function matters mainly for clearance</td><td>Can damage kidneys, but <em>not as harmful</em> as computed tomography contrast. For central nervous system tumours, metastases, soft tissue masses, arthrograms. Magnetic resonance angiography and venography need <b>no</b> contrast</td></tr>
-    <tr><td>Positron emission tomography</td><td>Fluorodeoxyglucose-18</td><td>Nothing specific</td><td>No contraindications, not known to be nephrotoxic; may cause hyperglycaemia; renally cleared, so the genitourinary tract is always contrast positive</td></tr>
+    <tr><td>Magnetic resonance</td><td>Gadolinium</td><td>Assess blood urea nitrogen and creatinine regardless &mdash; renal function matters mainly for clearance</td><td>Can damage kidneys, but <em>not as harmful</em> as computed tomography contrast. For central nervous system tumors, metastases, soft tissue masses, arthrograms. Magnetic resonance angiography and venography need <b>no</b> contrast</td></tr>
+    <tr><td>Positron emission tomography</td><td>Fluorodeoxyglucose-18</td><td>Nothing specific</td><td>No contraindications, not known to be nephrotoxic; may cause hyperglycemia; renally cleared, so the genitourinary tract is always contrast positive</td></tr>
     <tr><td>Single photon emission tomography</td><td>Technetium-99</td><td>Nothing specific</td><td>Allergic reactions rare, no organ damage documented. Bone scans, myocardial perfusion, functional brain imaging, immunoscintigraphy, sentinel node identification, white cell uptake</td></tr>
   </table>
   <div class="pearl"><b>Shellfish allergy is not iodine allergy.</b> The deck is explicit: there
@@ -245,8 +245,8 @@ TESTS = '''    medicalimaging: [
        choices:["It reduces magnification of the heart, so cardiomegaly is not misread","It uses a shorter exposure, so there is less motion blur","It removes the need for a lateral view","It is the only view that shows the costophrenic angles"],correct:0,
        expl:"The heart is anterior, so on a posterior-anterior film it sits close to the detector and is not magnified. The view also lowers dose to radiation-sensitive organs and shows the lung fields, apices and posterior ribs better. It is still combined with a lateral."},
       {q:"On a T2-weighted magnetic resonance image, how does cerebrospinal fluid appear?",
-       choices:["Bright","Dark","Grey, the same as white matter","It emits no signal"],correct:0,
-       expl:"On T2 high water content is bright; on T1 it is dark. Fat, oedema, infection and blood follow water. Calcium is the one that emits no signal at all."},
+       choices:["Bright","Dark","Gray, the same as white matter","It emits no signal"],correct:0,
+       expl:"On T2 high water content is bright; on T1 it is dark. Fat, edema, infection and blood follow water. Calcium is the one that emits no signal at all."},
       {q:"Perforation is suspected. Which oral contrast agent must NOT be used?",
        choices:["Barium","Gastrografin","Iohexol","Gadolinium"],correct:0,
        expl:"Barium is toxic to extra-intestinal tissue and causes alkaline burns, so Gastrografin is used instead when there may be a perforation."},

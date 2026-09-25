@@ -74,7 +74,7 @@ BLOCK = OPEN + '''
     [1:05:57]</td>
     <td>Slides 48&ndash;50. The point he draws out is that <b>the curve&rsquo;s shape is the balance
     between growth and death</b>, not growth alone &mdash; which is what makes the stationary and
-    decline phases make sense rather than being memorised. <b>Growth means an increase in NUMBER, not
+    decline phases make sense rather than being memorized. <b>Growth means an increase in NUMBER, not
     in cell size.</b></td></tr>
 
     <tr><td><em>&ldquo;It was an animal virus, which then mutated to be able to infect humans. We have

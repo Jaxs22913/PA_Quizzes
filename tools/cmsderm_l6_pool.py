@@ -15,20 +15,20 @@ QUESTIONS = [
 
 Q("Antifungal classes",
   "A clinician wants an antifungal that works by destroying the fungal cell membrane rather than by blocking "
-  "ergosterol synthesis. Which agent belongs to that class, and how is the class recognised by name?",
-  [["Terbinafine, an allylamine, recognisable by the ending -fine",
+  "ergosterol synthesis. Which agent belongs to that class, and how is the class recognized by name?",
+  [["Terbinafine, an allylamine, recognizable by the ending -fine",
     "Correct. The allylamine class works by destroying the cell membranes of fungi, preventing growth and ultimately "
     "killing them, and its members end in -fine: terbinafine and naftifine. Imidazoles instead block synthesis of "
     "ergosterol, a vital component of the fungal cell membrane."],
-   ["Ketoconazole, an imidazole, recognisable by the ending -fine",
+   ["Ketoconazole, an imidazole, recognizable by the ending -fine",
     "Ketoconazole is an imidazole, and imidazoles block ergosterol synthesis rather than destroying the membrane "
     "directly. The naming clue also belongs to the allylamines."],
    ["Nystatin, a polyene that treats both Candida and dermatophytes",
     "Topical nystatin treats Candida only, which is precisely why topical azoles are preferred when a dermatophyte "
     "may also be present."],
-   ["Griseofulvin, an allylamine favoured for Trichophyton infection",
-    "Griseofulvin is often favoured for Microsporum infection in tinea capitis, whereas terbinafine is generally "
-    "favoured for Trichophyton. Griseofulvin is not an allylamine."]],
+   ["Griseofulvin, an allylamine favored for Trichophyton infection",
+    "Griseofulvin is often favored for Microsporum infection in tinea capitis, whereas terbinafine is generally "
+    "favored for Trichophyton. Griseofulvin is not an allylamine."]],
   0, 5),
 
 Q("Dermatophytes",
@@ -38,7 +38,7 @@ Q("Dermatophytes",
     "the stratum corneum, plus hair and nails. They cannot survive on mucous membranes."],
    ["Dermatophytes are killed by salivary enzymes but survive elsewhere",
     "The limitation is the absence of dead keratin rather than an antimicrobial property of saliva. Candida, which is "
-    "not a dermatophyte, colonises mucosa freely."],
+    "not a dermatophyte, colonizes mucosa freely."],
    ["Dermatophytes require sebum, which mucous membranes do not produce",
     "Sebum matters in tinea capitis, where post-pubertal changes in sebum fatty acid content are believed to inhibit "
     "dermatophyte growth. But the organisms depend on keratin rather than requiring sebum."],
@@ -55,7 +55,7 @@ Q("Tinea capitis",
     "Correct. Tinea capitis requires oral therapy; topical agents alone do not penetrate the infected hair shaft. "
     "Antifungal shampoo reduces viable spore shedding but does not replace oral treatment."],
    ["A topical antifungal cream applied to the lesion and 1 to 2 cm beyond will clear it",
-    "That instruction belongs to localised tinea corporis. The scalp differs because the organism resides within the "
+    "That instruction belongs to localized tinea corporis. The scalp differs because the organism resides within the "
     "hair shaft, where topical agents cannot reach."],
    ["An antifungal shampoo used two to three times weekly is sufficient on its own",
     "Selenium sulfide or ketoconazole shampoo reduces viable spore shedding and is a useful adjunct during early "
@@ -66,16 +66,16 @@ Q("Tinea capitis",
   0, 15),
 
 Q("Tinea capitis",
-  "In tinea capitis, which oral agent is generally favoured for Trichophyton infection, and which for Microsporum?",
+  "In tinea capitis, which oral agent is generally favored for Trichophyton infection, and which for Microsporum?",
   [["Terbinafine for Trichophyton and griseofulvin for Microsporum",
-    "Correct. Terbinafine is generally favoured for Trichophyton infection and griseofulvin is often favoured for "
+    "Correct. Terbinafine is generally favored for Trichophyton infection and griseofulvin is often favored for "
     "Microsporum infection, which is why identifying the organism by culture matters before prolonged systemic "
     "therapy."],
    ["Griseofulvin for Trichophyton and terbinafine for Microsporum",
     "The two are reversed. Because the pairing determines the drug choice, getting it backwards means selecting the "
     "less effective agent for the organism actually present."],
    ["Terbinafine for both organisms",
-    "Terbinafine is favoured for Trichophyton but griseofulvin is often preferred for Microsporum, so a single agent "
+    "Terbinafine is favored for Trichophyton but griseofulvin is often preferred for Microsporum, so a single agent "
     "for both discards the species-specific preference."],
    ["Fluconazole for both organisms",
     "Fluconazole and itraconazole appear as alternatives in other dermatophyte infections, but they are not the two "
@@ -102,14 +102,14 @@ Q("Tinea capitis",
 
 Q("Tinea corporis",
   "A 26-year-old woman has two round, sharply circumscribed, slightly erythematous scaly plaques on the forearm, each "
-  "with an advancing scaly border and a clearer centre. Where should the specimen for potassium hydroxide microscopy "
+  "with an advancing scaly border and a clearer center. Where should the specimen for potassium hydroxide microscopy "
   "be taken from?",
   [["The active advancing border of the lesion",
     "Correct. The potassium hydroxide specimen is taken from the active border, where the viable organism is "
     "concentrated. Culture is added for high clinical suspicion when the potassium hydroxide preparation is "
     "negative."],
-   ["The centre of the lesion, where the change began",
-    "The centre has cleared, which means the organism has moved outward. Sampling there yields the lowest density of "
+   ["The center of the lesion, where the change began",
+    "The center has cleared, which means the organism has moved outward. Sampling there yields the lowest density of "
     "fungal elements and produces false negatives."],
    ["Normal skin adjacent to the lesion",
     "Uninvolved skin contains no organism. Perilesional sampling belongs to direct immunofluorescence in autoimmune "
@@ -148,7 +148,7 @@ Q("Tinea cruris",
     "Scrotal involvement is typical of erythrasma rather than excluded by it."],
    ["It indicates inverse psoriasis",
     "Inverse psoriasis affects flexural sites but is not distinguished by scrotal sparing, and psoriasis is "
-    "characterised by well-demarcated plaques with silver scale rather than an advancing fungal border."],
+    "characterized by well-demarcated plaques with silver scale rather than an advancing fungal border."],
    ["It has no diagnostic significance",
     "The distribution is precisely what separates the two commonest groin diagnoses, so discarding it removes the "
     "most useful bedside discriminator."]],
@@ -190,7 +190,7 @@ Q("Tinea pedis",
   0, 45),
 
 Q("Onychomycosis",
-  "A 60-year-old man with diabetes has three thickened, discoloured, crumbling toenails with distal onycholysis. He "
+  "A 60-year-old man with diabetes has three thickened, discolored, crumbling toenails with distal onycholysis. He "
   "asks for oral terbinafine. What must be done first?",
   [["Confirm fungal infection before oral therapy, because many dystrophic nails are not fungal",
     "Correct. Fungus must be confirmed before oral therapy, since many dystrophic nails are not fungal. Testing "
@@ -211,10 +211,10 @@ Q("Onychomycosis",
   "What is the usual duration of first-line oral terbinafine for fingernail and toenail onychomycosis, and what "
   "safety review is required?",
   [["Six weeks for fingernails and twelve weeks for toenails, with review of hepatic disease and interactions and "
-    "baseline liver tests per labelling and patient risk",
+    "baseline liver tests per labeling and patient risk",
     "Correct. Oral terbinafine is first-line for most dermatophyte nail disease, usually 6 weeks for fingernails and "
     "12 weeks for toenails, with hepatic disease and interactions reviewed and baseline liver tests obtained per "
-    "labelling and patient risk."],
+    "labeling and patient risk."],
    ["Twelve weeks for fingernails and six weeks for toenails, with baseline liver tests",
     "The two durations are swapped. Toenails grow more slowly and require the longer course, so reversing them "
     "under-treats the site that needs more time."],
@@ -337,10 +337,10 @@ Q("Pityriasis versicolor",
   0, 77),
 
 Q("Varicella",
-  "A 6-year-old unvaccinated child has a generalised pruritic eruption concentrated on the trunk, scalp, and face. "
+  "A 6-year-old unvaccinated child has a generalized pruritic eruption concentrated on the trunk, scalp, and face. "
   "Macules, papules, vesicles, and crusts are all present at the same time. What feature is most characteristic?",
   [["Lesions in multiple stages of healing appearing simultaneously",
-    "Correct. Primary varicella-zoster virus infection causes a generalised pruritic eruption in multiple stages of "
+    "Correct. Primary varicella-zoster virus infection causes a generalized pruritic eruption in multiple stages of "
     "healing — macules progress to papules, vesicles, and crusts, with several stages appearing simultaneously."],
    ["Lesions all at the same stage of evolution",
     "Uniform staging is what distinguishes other vesicular eruptions from varicella. Simultaneous multiple stages is "
@@ -358,7 +358,7 @@ Q("Varicella",
     "Correct. Patients are contagious from 1 to 2 days before the rash appears until all lesions crust. In "
     "breakthrough disease without crusts, the period runs until no new lesions have appeared for 24 hours."],
    ["From the appearance of the rash until all lesions have crusted",
-    "This omits the 1 to 2 days of contagiousness before the rash, which is exactly the window in which unrecognised "
+    "This omits the 1 to 2 days of contagiousness before the rash, which is exactly the window in which unrecognized "
     "transmission occurs."],
    ["Only while vesicles are present, ending once any crusting begins",
     "Contagion continues until all lesions have crusted rather than until crusting begins in some."],
@@ -373,18 +373,18 @@ Q("Herpes zoster",
   "midline. What are the three clinical phases of this condition?",
   [["A pre-eruptive phase with dermatomal dysesthesia or pain, an acute eruptive phase, and a chronic phase of "
     "postherpetic neuralgia",
-    "Correct. The pre-eruptive phase is characterised by dysesthesia or pain within the affected dermatome with "
+    "Correct. The pre-eruptive phase is characterized by dysesthesia or pain within the affected dermatome with "
     "lesion onset by 48 to 72 hours; the acute eruptive phase produces grouped herpetiform vesicles on an "
     "erythematous base with new lesions forming over 3 to 5 days; and postherpetic neuralgia is the chronic phase."],
-   ["A prodromal fever, a generalised eruptive phase, and a desquamative phase",
-    "Generalised eruption and desquamation describe other conditions. Herpes zoster is characteristically "
+   ["A prodromal fever, a generalized eruptive phase, and a desquamative phase",
+    "Generalized eruption and desquamation describe other conditions. Herpes zoster is characteristically "
     "dermatomal, and its hallmark is that it does not cross the midline."],
    ["An incubation phase, a contagious phase, and a latency phase",
     "Latency is part of the pathophysiology — the virus remains latent in cranial nerve or dorsal root ganglia — but "
     "it is not one of the three clinical phases of the disease episode."],
    ["A pre-eruptive phase, an eruptive phase, and a scarring phase",
     "Vesicles may eventually scar if inflammation is intense, but scarring is a possible outcome rather than a named "
-    "clinical phase. The recognised third phase is postherpetic neuralgia."]],
+    "clinical phase. The recognized third phase is postherpetic neuralgia."]],
   0, 97),
 
 Q("Herpes zoster",
@@ -397,7 +397,7 @@ Q("Herpes zoster",
    ["It crosses the midline symmetrically in a bilateral band",
     "This is the direct inversion of the defining feature. A bilateral symmetric eruption should prompt a different "
     "diagnosis entirely."],
-   ["It is generalised over the trunk, scalp, and face",
+   ["It is generalized over the trunk, scalp, and face",
     "That distribution describes primary varicella rather than reactivation, and varicella shows multiple stages "
     "simultaneously."],
    ["It is confined to intertriginous folds",
@@ -513,7 +513,7 @@ Q("Herpes simplex virus",
     "Grouped vesicles on an erythematous base breaking down to shallow painful ulcers is the appearance of both "
     "types. Morphology does not distinguish them."],
    ["Type can be determined by whether a prodrome occurred",
-    "Tenderness, pain, mild paraesthesia, or burning before the lesions appear is characteristic of herpes simplex "
+    "Tenderness, pain, mild paresthesia, or burning before the lesions appear is characteristic of herpes simplex "
     "virus generally rather than of one type."]],
   0, 112),
 
@@ -571,7 +571,7 @@ Q("Herpetic whitlow",
   0, 128),
 
 Q("Molluscum contagiosum",
-  "A 6-year-old has fifteen discrete, smooth, firm, flesh-coloured dome-shaped papules averaging 4 mm on the trunk "
+  "A 6-year-old has fifteen discrete, smooth, firm, flesh-colored dome-shaped papules averaging 4 mm on the trunk "
   "and arms, each with a central dimple. His parents ask about treatment. What is a reasonable approach?",
   [["Observation is appropriate for many patients, since procedures may blister, pigment, or scar",
     "Correct. Molluscum contagiosum is a benign poxvirus infection, and observation is appropriate for many patients "
@@ -590,10 +590,10 @@ Q("Molluscum contagiosum",
 Q("Molluscum contagiosum",
   "What is the characteristic morphological feature of a molluscum contagiosum lesion?",
   [["Central umbilication of a smooth, firm, dome-shaped pearly papule",
-    "Correct. Lesions are discrete, smooth-surfaced, firm, flesh-coloured, dome-shaped pearly papules averaging 3 to "
+    "Correct. Lesions are discrete, smooth-surfaced, firm, flesh-colored, dome-shaped pearly papules averaging 3 to "
     "5 mm, and central umbilication is characteristic."],
-   ["A rough greyish surface with tiny thrombosed capillaries visible",
-    "A rough greyish surface with visible red or black dots representing thrombosed dilated capillaries describes "
+   ["A rough grayish surface with tiny thrombosed capillaries visible",
+    "A rough grayish surface with visible red or black dots representing thrombosed dilated capillaries describes "
     "verruca vulgaris. Trimming the surface makes those capillaries more prominent."],
    ["A stuck-on appearance with comedone-like openings",
     "A stuck-on appearance with comedone-like openings on dermoscopy describes seborrheic keratosis."],
@@ -602,13 +602,13 @@ Q("Molluscum contagiosum",
   0, 134),
 
 Q("Warts",
-  "A 12-year-old has several elevated, round papules under 1 cm with a rough greyish surface on the fingers. Trimming "
+  "A 12-year-old has several elevated, round papules under 1 cm with a rough grayish surface on the fingers. Trimming "
   "one reveals tiny red-black dots. What do those dots represent, and what does their presence help exclude?",
   [["Thrombosed dilated capillaries, which help distinguish a wart from a callus",
     "Correct. Tiny red or black dots represent thrombosed dilated capillaries, and trimming the surface makes them "
-    "more prominent. A callus lacks them, which is why paring the lesion is a useful bedside manoeuvre."],
+    "more prominent. A callus lacks them, which is why paring the lesion is a useful bedside maneuver."],
    ["Retained keratin plugs, which help distinguish a wart from a seborrheic keratosis",
-    "Comedone-like openings on dermoscopy characterise seborrheic keratosis, which is on the wart differential. But "
+    "Comedone-like openings on dermoscopy characterize seborrheic keratosis, which is on the wart differential. But "
     "the dots in a wart are vascular rather than keratin-filled."],
    ["Melanocytic nests, which help exclude melanoma",
     "The dots are thrombosed capillaries rather than pigment. Melanoma is not what paring a verruca is designed to "
@@ -624,11 +624,11 @@ Q("Warts",
   "and what advice follows?",
   [["Flat warts, which spread by autoinoculation through shaving; observation is reasonable since spontaneous "
     "resolution occurs",
-    "Correct. Flat warts are multiple smooth, slightly elevated, flat-topped, skin-coloured to light-brown papules "
+    "Correct. Flat warts are multiple smooth, slightly elevated, flat-topped, skin-colored to light-brown papules "
     "common on the face, forehead, dorsal hands, and shins, and shaving can spread lesions through autoinoculation. "
     "Observation is reasonable because spontaneous resolution is likely."],
    ["Verruca vulgaris, which requires salicylic acid to every lesion",
-    "Common warts are elevated round papules with a rough greyish surface, typically on the fingers and palms, rather "
+    "Common warts are elevated round papules with a rough grayish surface, typically on the fingers and palms, rather "
     "than smooth flat-topped papules on the face and shins."],
    ["Molluscum contagiosum, which requires cantharidin",
     "Molluscum lesions are dome-shaped pearly papules with central umbilication rather than flat-topped papules, and "
@@ -656,14 +656,14 @@ Q("Warts",
 Q("Tinea barbae",
   "A 38-year-old farmer has tender, boggy, pustular plaques in the beard area. Hairs in the affected area are easily "
   "removed. What does the ease of hair removal indicate, and what therapy is required?",
-  [["It favours tinea barbae over bacterial folliculitis, and oral antifungal therapy is required",
+  [["It favors tinea barbae over bacterial folliculitis, and oral antifungal therapy is required",
     "Correct. Hair is easily removed in tinea barbae unlike in bacterial folliculitis, and a bacterial culture can be "
     "done to rule the latter out. Topical antifungals do not penetrate the hair follicle, so oral therapy with "
     "griseofulvin or terbinafine is required."],
-   ["It favours bacterial folliculitis, and oral cephalexin is required",
+   ["It favors bacterial folliculitis, and oral cephalexin is required",
     "The finding points the other way. Easy hair removal distinguishes tinea barbae from bacterial folliculitis, "
     "which is the comparison the differential draws."],
-   ["It favours tinea barbae, and topical antifungal cream alone is sufficient",
+   ["It favors tinea barbae, and topical antifungal cream alone is sufficient",
     "The diagnosis is right but the treatment is not. Topical antifungals can be applied but do not penetrate the "
     "hair follicle, so oral therapy is required."],
    ["It indicates pseudofolliculitis barbae, and shaving technique should be modified",
@@ -672,14 +672,14 @@ Q("Tinea barbae",
   0, 22),
 
 Q("Tinea manuum",
-  "A 50-year-old labourer has a thickened, dry, scaly right palm that he has attributed to hard physical work. He "
+  "A 50-year-old laborer has a thickened, dry, scaly right palm that he has attributed to hard physical work. He "
   "also has scaling on both soles. What is the likely diagnosis, and how does it typically present?",
   [["Tinea manuum, often with one palm and both soles involved, and patients frequently unaware it is an infection",
     "Correct. Tinea manuum is associated with tinea pedis, and both palms and soles can be infected at the same time. "
-    "Patients are often unaware of the infection, believing the changes are due to dry skin or hard physical labour, "
+    "Patients are often unaware of the infection, believing the changes are due to dry skin or hard physical labor, "
     "and the involved palm is thickened, dry, and scaly."],
    ["Irritant contact dermatitis from occupational exposure",
-    "Occupational irritant dermatitis is a genuine consideration in a labourer, which is what makes his own "
+    "Occupational irritant dermatitis is a genuine consideration in a laborer, which is what makes his own "
     "explanation plausible. But the coexisting plantar scaling points to a dermatophyte infection spreading between "
     "sites."],
    ["Dyshidrotic eczema",
@@ -687,7 +687,7 @@ Q("Tinea manuum",
     "that desquamate. There are no vesicles described here."],
    ["Chronic paronychia",
     "Chronic paronychia is inflammation of the proximal nail folds from prolonged wet work, producing swollen tender "
-    "folds and thickened discoloured nail plates rather than a diffusely scaly palm."]],
+    "folds and thickened discolored nail plates rather than a diffusely scaly palm."]],
   0, 56),
 
 Q("Pityriasis versicolor",
@@ -735,7 +735,7 @@ Q("Herpes zoster",
     "occurring in its absence."],
    ["The pre-eruptive phase, which will always be followed by lesions within 72 hours",
     "The pre-eruptive phase does feature dermatomal dysesthesia or pain with lesion onset by 48 to 72 hours, which "
-    "makes this the closest wrong answer. But there is a recognised presentation in which no lesions ever appear."],
+    "makes this the closest wrong answer. But there is a recognized presentation in which no lesions ever appear."],
    ["Ramsay Hunt syndrome",
     "Ramsay Hunt syndrome is peripheral facial palsy with painful vesicles of the ear canal, auricle, or oropharynx. "
     "It is defined in part by the presence of vesicles."]],
@@ -773,7 +773,7 @@ Q("Herpes simplex virus",
     "Candidiasis is on the differential and produces burning and pruritus with well-demarcated erythema and satellite "
     "lesions rather than a painless eroded papule."],
    ["Herpes simplex virus recurrence",
-    "Herpes simplex virus produces grouped vesicles that break down into shallow painful ulcers, with localised pain "
+    "Herpes simplex virus produces grouped vesicles that break down into shallow painful ulcers, with localized pain "
     "and prodromal burning."]],
   0, 121),
 
@@ -828,7 +828,7 @@ Q("Herpes zoster",
   0, 100),
 
 Q("Tinea corporis",
-  "When treating localised tinea corporis with a topical agent, how far should the medication be applied?",
+  "When treating localized tinea corporis with a topical agent, how far should the medication be applied?",
   [["To the lesion and 1 to 2 cm beyond its border, continuing through the recommended course after visible "
     "improvement",
     "Correct. Topical terbinafine, butenafine, or an azole is applied to the lesion and 1 to 2 cm beyond its border, "
@@ -837,12 +837,12 @@ Q("Tinea corporis",
    ["To the visible lesion only, stopping as soon as it clears",
     "Both halves fail. The advancing edge extends beyond what is visible, and stopping at visible clearance leaves "
     "viable organism behind, which is the commonest cause of apparent relapse."],
-   ["To the centre of the lesion only, where the infection began",
-    "The centre has typically cleared as the organism advances outward. Treating there misses where the fungus "
+   ["To the center of the lesion only, where the infection began",
+    "The center has typically cleared as the organism advances outward. Treating there misses where the fungus "
     "actually is."],
    ["Application distance does not matter provided oral therapy is also given",
     "Oral therapy is reserved for extensive, follicular, immunocompromised, refractory, or recurrent disease rather "
-    "than added routinely to localised disease."]],
+    "than added routinely to localized disease."]],
   0, 28),
 
 Q("Onychomycosis",

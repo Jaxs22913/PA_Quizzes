@@ -3,8 +3,8 @@
 
 The three verdicts in every row are READ OUT OF THE DECK, not written by hand:
 each class slide carries a small traffic-light table and
-extract_pharm_gram_coverage.py pulls the colour under each heading. That is the
-lecturer's own judgement of coverage, which is the whole point of the page.
+extract_pharm_gram_coverage.py pulls the color under each heading. That is the
+lecturer's own judgment of coverage, which is the whole point of the page.
 
 `drugs` and `note` are transcribed from the same slide. `slide` is cited on
 every row so any cell can be checked in seconds.

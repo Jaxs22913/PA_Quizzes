@@ -7,7 +7,7 @@ objectives, Set 2 is a separate 2 x 30 of vignettes. This builds Set 2.
 LEAD-INS STAY SPREAD, and every question carries an explicit lead= rather than
 relying on the regexes below, because a stem reading "which is the most
 appropriate response?" does not say on its face whether it is testing
-management, mechanism or counselling. Lecture 5's build failed this guard at 15
+management, mechanism or counseling. Lecture 5's build failed this guard at 15
 of 30 diagnosis lead-ins; the raw pool here came in at 30%.
 
 LENGTH BIAS. Raw rates by pool: A 25%, B 32%, C 39% -- the vascular section is
@@ -59,7 +59,7 @@ LEAD = {
  "next step": r"next step|most appropriate approach|why can it not simply be observed",
  "treatment": r"most appropriate treatment|first-line|appropriate management|which topical option|which options are appropriate|most appropriate plan|most appropriate first-line",
  "test": r"which test|establishes the diagnosis|which investigations|which risks should be checked",
- "education": r"counselling point|most appropriate response|most appropriate advice|most appropriate explanation|which support does the lecture name|most important consequence|which additional consideration",
+ "education": r"counseling point|most appropriate response|most appropriate advice|most appropriate explanation|which support does the lecture name|most important consequence|which additional consideration",
 }
 def lead_of(q):
     # An explicit lead= on the question wins. The regexes below classify the

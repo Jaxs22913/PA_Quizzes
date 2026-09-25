@@ -67,12 +67,12 @@ LOOK = {
  "Dermatofibroma": "Firm brown-haloed nodule; dimples when squeezed from the sides",
  "Keratoacanthoma": "Dome with a central keratin crater, grown in six to eight weeks",
  "Epidermoid (epidermal) cyst": "Movable nodule with a central punctum",
- "Syringoma": "Crops of one to two millimetre papules around the eyes",
+ "Syringoma": "Crops of one to two millimeter papules around the eyes",
  "Infantile hemangioma": "Bright red papule that proliferates then involutes",
  "Nevus flammeus (port-wine stain)": "Unilateral, sharp midline cutoff, never involutes",
  "Nevus simplex (stork bite)": "Pink blanchable patch on the nape; usually fades within a year",
  "Cherry angioma": "Small firm deep red papules on the trunk, more with age",
- "Telangiectasia": "Permanently dilated capillary under a millimetre, blanchable",
+ "Telangiectasia": "Permanently dilated capillary under a millimeter, blanchable",
  "Nevus araneus (spider angioma)": "Central arteriole with radiating vessels; think estrogen or liver",
  "Pyogenic granuloma": "Moist bright red exophytic nodule that bleeds; grew fast after injury",
  "Neurofibromatosis type 1": "Cutaneous neurofibromas, appearing at puberty and multiplying",
@@ -144,13 +144,13 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   <table>
     <tr><th></th><th>Clavus (corn)</th><th>Callus</th><th>Verruca vulgaris (wart)</th></tr>
     <tr><td><b>Cause</b></td><td>Focal pressure, e.g. ill-fitting shoes</td><td>Broad-area pressure and friction</td><td>Human papillomavirus</td></tr>
-    <tr><td><b>Structure</b></td><td>Cone-shaped <b>central core</b> of hard keratin pointing in</td><td>Diffuse thickening, <b>no core</b></td><td>Cauliflower surface, <b>blackened centre</b></td></tr>
+    <tr><td><b>Structure</b></td><td>Cone-shaped <b>central core</b> of hard keratin pointing in</td><td>Diffuse thickening, <b>no core</b></td><td>Cauliflower surface, <b>blackened center</b></td></tr>
     <tr><td><b>Size &amp; shape</b></td><td>Well defined, &lt;1.5&nbsp;cm</td><td>Larger, irregular, poorly defined</td><td>Variable</td></tr>
     <tr><td><b>Skin lines</b></td><td>Run <b>through</b></td><td>Run <b>through</b></td><td><b>Interrupted</b></td></tr>
     <tr><td><b>Pain</b></td><td>On <b>direct downward</b> pressure</td><td>Usually painless</td><td>May hurt on <b>side</b> pressure</td></tr>
     <tr><td><b>Pressure areas?</b></td><td>Yes</td><td>Yes</td><td><b>Not specific to them</b></td></tr>
   </table>
-  <p><b>Hard corn</b> (clavus durum) favours the dorsal and lateral fifth toe. <b>Soft corn</b>
+  <p><b>Hard corn</b> (clavus durum) favors the dorsal and lateral fifth toe. <b>Soft corn</b>
   (clavus mollum) sits in the fourth-to-fifth web space and is soft because moisture between the
   toes macerates it. A callus that forms acutely and severely produces a <b>blister</b> instead.</p>
   <div class="pearl"><b>Management is the same idea for both: take the pressure off, then thin the
@@ -173,7 +173,7 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
     <tr><td><b>Where</b></td><td>Where scars cross <b>joints or skin creases at a right angle</b></td><td><b>Ear lobe, shoulders, sternal notch</b>; rarely across joints</td></tr>
     <tr><td><b>Surgery</b></td><td><b>Improves</b> with appropriate surgery</td><td>Often <b>worsened</b> by surgery</td></tr>
     <tr><td><b>Incidence</b></td><td>Frequent</td><td>Rare</td></tr>
-    <tr><td><b>Skin colour</b></td><td><b>No association</b></td><td><b>Associated with dark skin colour</b></td></tr>
+    <tr><td><b>Skin color</b></td><td><b>No association</b></td><td><b>Associated with dark skin color</b></td></tr>
   </table>
   <p class="tag">The last four rows come from slide 24, which is an image of a table and appears
   nowhere in the deck&rsquo;s text.</p>
@@ -207,11 +207,11 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   <p>Epidemiology: Caucasians <b>over 50</b>, males equal to females, on head, neck and upper
   extremities &mdash; commonly the sun-exposed face, ears and hands.</p>
   <p><b>Acrochordon</b> is a <b>fibroepithelial pedunculated papilloma</b>: a narrow stalk with a
-  broad tip, 1&nbsp;mm to 10&nbsp;mm, soft and skin-coloured. Increased in <b>females and obese
+  broad tip, 1&nbsp;mm to 10&nbsp;mm, soft and skin-colored. Increased in <b>females and obese
   patients</b>, in <b>friction sites</b> &mdash; neck, axilla, groin. Present in <b>60% of people by
   age 70</b>. Treatment is for cosmesis: scissor excision, cryotherapy or electrodesiccation, and
   <b>anesthesia is not necessary</b>.</p>
-  <div class="pearl"><b>The skin tag counselling point patients actually need:</b> never cut or
+  <div class="pearl"><b>The skin tag counseling point patients actually need:</b> never cut or
   pull one off at home, because they bleed. And a new tag often forms in the same area after one is
   removed, so removal is not prevention.</div>
 
@@ -221,18 +221,18 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   The staging system below is transcribed from slides 33 and 34, which are images.</p>
   <table>
     <tr><th>Stage</th><th>Definition</th></tr>
-    <tr><td><b>1</b></td><td>Localised area of <b>non-blanchable erythema of intact skin</b></td></tr>
+    <tr><td><b>1</b></td><td>Localized area of <b>non-blanchable erythema of intact skin</b></td></tr>
     <tr><td><b>2</b></td><td><b>Partial-thickness</b> skin loss with <b>exposed dermis</b>; wound bed viable, pink or red, may be moist, shiny or dry</td></tr>
     <tr><td><b>3</b></td><td><b>Full thickness</b> skin loss; <b>adipose tissue is visible</b></td></tr>
     <tr><td><b>4</b></td><td>Full thickness skin <b>and tissue</b> loss; <b>exposed fascia, muscle, tendon, ligament, cartilage or bone</b></td></tr>
     <tr><td><b>Unstageable</b></td><td>Obscured full thickness loss; extent <b>cannot be determined because of slough or eschar</b></td></tr>
-    <tr><td><b>Deep tissue</b></td><td>Persistent <b>non-blanchable deep red or purple discolouration</b>; skin can be intact or non-intact</td></tr>
+    <tr><td><b>Deep tissue</b></td><td>Persistent <b>non-blanchable deep red or purple discoloration</b>; skin can be intact or non-intact</td></tr>
   </table>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Worth noticing about the staging tables</span>
   <p>Both slides illustrate <mark class="prof-highlight">every stage in lightly pigmented AND darkly
   pigmented skin</mark>. That is not decoration. Stage 1 is defined by non-blanchable erythema, and
   erythema is exactly the finding that is hardest to see and easiest to miss on darker skin &mdash;
-  which is the same point Professor Jaquith made about recognising dermatological disease across
+  which is the same point Professor Jaquith made about recognizing dermatological disease across
   skin types.</p></div>
   <p><b>The best measure is prevention:</b> frequent skin assessment, nutrition assessment, moisture
   control and skin care (clean and dry, manage incontinence, barrier creams), <b>reposition every
@@ -261,10 +261,10 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   examinable rather than trivia.</p>
   <table>
     <tr><th>Lesion</th><th>What it is</th><th>Key feature</th><th>Diagnosis &amp; management</th></tr>
-    <tr><td><b>Dermatofibroma</b></td><td>Dermal fibroblasts in dense clusters; 0.5&ndash;1&nbsp;cm; legs then arms; F:M 2:1; may follow trauma, viral infection or insect bite</td><td><b>Dimple sign</b> &mdash; retracts beneath the skin on lateral compression. Brown halo, pink hue, raised scaly centre. <b>Most common painful skin tumour</b></td><td>Dermoscopy: <b>peripheral pigment network with central white mass</b>. Often no treatment; small lesions take a <b>shave or punch biopsy that is both diagnostic and therapeutic</b>. Differential includes <b>melanoma</b> and basal cell carcinoma</td></tr>
+    <tr><td><b>Dermatofibroma</b></td><td>Dermal fibroblasts in dense clusters; 0.5&ndash;1&nbsp;cm; legs then arms; F:M 2:1; may follow trauma, viral infection or insect bite</td><td><b>Dimple sign</b> &mdash; retracts beneath the skin on lateral compression. Brown halo, pink hue, raised scaly center. <b>Most common painful skin tumor</b></td><td>Dermoscopy: <b>peripheral pigment network with central white mass</b>. Often no treatment; small lesions take a <b>shave or punch biopsy that is both diagnostic and therapeutic</b>. Differential includes <b>melanoma</b> and basal cell carcinoma</td></tr>
     <tr><td><b>Keratoacanthoma</b></td><td>From the pilosebaceous unit. <b>Argued to be a variant of invasive squamous cell carcinoma</b></td><td><b>Triphasic</b>: rapid growth in <b>6&ndash;8 weeks</b>, stabilization, regression after 3&ndash;6 months. Dome with a <b>central keratin-filled crater</b>. Risks: age &gt;40, sun, very fair skin, male, <b>red tattoo ink</b>, <b>skin trauma including lasers, surgery and cryotherapy</b>, human papillomavirus</td><td><b>Biopsy is the only reliable diagnosis.</b> <b>Excise or destroy</b> &mdash; standard of care because of possible malignancy. <b>5&nbsp;mm margins</b>; <b>Mohs</b> for large, recurrent or cosmetically sensitive lesions. Intralesional <b>methotrexate</b> before excision to shrink it</td></tr>
-    <tr><td><b>Epidermoid cyst</b></td><td>Epithelium enclosed in the dermis filling with <b>KERATIN</b>. <b>Not a sebaceous cyst</b>, despite the name. M:F 2:1; face, scalp, neck, trunk</td><td>Firm, movable, round, with a <b>central pore or punctum</b>; expresses cream-coloured pasty material with the <b>odour of rancid cheese</b></td><td>Lab tests usually unnecessary. <b>If inflamed, POSTPONE excision</b>, settle it with intralesional triamcinolone, antibiotics if needed. <b>Standard of care: remove the entire capsule when it is not inflamed</b>; 1&ndash;3&nbsp;cm cysts can be punched and emptied</td></tr>
-    <tr><td><b>Syringoma</b></td><td>Benign neoplasms of <b>eccrine ducts</b>. Appear at <b>puberty</b>; females &gt; males</td><td>Multiple <b>1&ndash;2&nbsp;mm</b> skin-coloured, pink or brown papules on the <b>eyelids and upper cheeks</b></td><td>Usually clinical; biopsy if malignancy is a concern. <b>Cosmesis only</b> &mdash; drugs (oral isotretinoin) risk <b>recurrence</b>, procedures risk <b>poor cosmetic results</b>. Differential: milia, xanthelasma, basal cell carcinoma</td></tr>
+    <tr><td><b>Epidermoid cyst</b></td><td>Epithelium enclosed in the dermis filling with <b>KERATIN</b>. <b>Not a sebaceous cyst</b>, despite the name. M:F 2:1; face, scalp, neck, trunk</td><td>Firm, movable, round, with a <b>central pore or punctum</b>; expresses cream-colored pasty material with the <b>odor of rancid cheese</b></td><td>Lab tests usually unnecessary. <b>If inflamed, POSTPONE excision</b>, settle it with intralesional triamcinolone, antibiotics if needed. <b>Standard of care: remove the entire capsule when it is not inflamed</b>; 1&ndash;3&nbsp;cm cysts can be punched and emptied</td></tr>
+    <tr><td><b>Syringoma</b></td><td>Benign neoplasms of <b>eccrine ducts</b>. Appear at <b>puberty</b>; females &gt; males</td><td>Multiple <b>1&ndash;2&nbsp;mm</b> skin-colored, pink or brown papules on the <b>eyelids and upper cheeks</b></td><td>Usually clinical; biopsy if malignancy is a concern. <b>Cosmesis only</b> &mdash; drugs (oral isotretinoin) risk <b>recurrence</b>, procedures risk <b>poor cosmetic results</b>. Differential: milia, xanthelasma, basal cell carcinoma</td></tr>
   </table>
 
   <h3 class="sub" id="bsl-vascular">6.6 &middot; Objective a &mdash; The vascular lesions</h3>
@@ -284,11 +284,11 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   flammeus.</b> The answer is <em>present at birth; involution does not occur</em> &mdash; that is
   nevus flammeus. Hemangioma appears in the first days to weeks, proliferates hardest in the first
   4&ndash;6 months, and then goes away. Nevus flammeus is there from day one and never leaves.</div>
-  <p><b>Infantile hemangioma</b> is the most common tumour of infancy: preterm, <b>female 3:1</b>,
+  <p><b>Infantile hemangioma</b> is the most common tumor of infancy: preterm, <b>female 3:1</b>,
   Caucasian; head and neck 60%, trunk 25%, extremities 15%. Earliest sign is <b>blanching, then fine
   telangiectasias, then a red or crimson macule</b>. <b>Superficial</b> is commonest (dermal vessels,
   bright red, once &ldquo;strawberry&rdquo;); <b>deep</b> is least common (deep dermis and subcutis,
-  pale, skin-coloured, red or blue). Complications are <b>compression of vital structures</b> &mdash;
+  pale, skin-colored, red or blue). Complications are <b>compression of vital structures</b> &mdash;
   vision, feeding, respiration, external auditory canal &mdash; plus extracutaneous lesions in liver,
   gastrointestinal tract, central nervous system and elsewhere.</p>
   <p><b>Treatment indications:</b> cosmetic, functional involvement, deep ulceration, infection.
@@ -311,8 +311,8 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   <table>
     <tr><th>Sign</th><th>Detail</th></tr>
     <tr><td><b>Caf&eacute; au lait spots</b></td><td>Light tan to brown macules, <b>&gt;5&nbsp;mm prepubertal, &gt;15&nbsp;mm postpubertal</b>. Often the <b>first manifestation</b>; usually at birth or in the first year; grow in proportion with the child. <b>Six or more are diagnostic &mdash; but the macules alone do not establish the diagnosis</b></td></tr>
-    <tr><td><b>Cutaneous neurofibromas</b></td><td>Benign nerve sheath tumours from peripheral nerves; sessile or pedunculated; <b>begin at puberty</b> and increase in number and size with age; a few to hundreds</td></tr>
-    <tr><td><b>Plexiform neurofibromas</b></td><td>Tumour in the tissue covering nerves; anywhere <b>except brain and spinal cord</b>; large, extensive, and <b>may be locally invasive</b></td></tr>
+    <tr><td><b>Cutaneous neurofibromas</b></td><td>Benign nerve sheath tumors from peripheral nerves; sessile or pedunculated; <b>begin at puberty</b> and increase in number and size with age; a few to hundreds</td></tr>
+    <tr><td><b>Plexiform neurofibromas</b></td><td>Tumor in the tissue covering nerves; anywhere <b>except brain and spinal cord</b>; large, extensive, and <b>may be locally invasive</b></td></tr>
     <tr><td><b>Intertriginous freckling (Crowe&rsquo;s sign)</b></td><td>Freckles <b>&lt;5&nbsp;mm</b>, <b>smaller</b> than caf&eacute; au lait spots, grouped, more prominent with sun. <b>Axillary and inguinal</b> &mdash; under the breasts is <em>not</em> a diagnostic site</td></tr>
   </table>
   <p>Management is <b>surveillance</b>: a cutaneous examination at every visit for new or progressing
@@ -320,7 +320,7 @@ BODY = '''<section class="deck" id="benign-skin-lesions">
   <table>
     <tr><th>Lesion</th><th>What to know</th></tr>
     <tr><td><b>Xanthelasma</b></td><td>Soft yellow cholesterol plaques &mdash; <b>lipid-laden macrophages</b> &mdash; on the <b>medial eyelids</b>. <b>Screen for hyperlipidemia; may signify increased cardiac risk.</b> Laser or excision; <b>recurrence common</b></td></tr>
-    <tr><td><b>Lipoma</b></td><td><b>The most common soft tissue tumour.</b> Benign overgrowth of subcutaneous fat; soft, painless, rubbery, usually &lt;5&nbsp;cm. Observe if asymptomatic; excise if deforming or the diagnosis is uncertain. Differential: epidermal cyst, dermatofibroma, abscess</td></tr>
+    <tr><td><b>Lipoma</b></td><td><b>The most common soft tissue tumor.</b> Benign overgrowth of subcutaneous fat; soft, painless, rubbery, usually &lt;5&nbsp;cm. Observe if asymptomatic; excise if deforming or the diagnosis is uncertain. Differential: epidermal cyst, dermatofibroma, abscess</td></tr>
     <tr><td><b>Digital mucous cyst</b></td><td>A <b>pseudo-cyst</b> &mdash; no cellular lining. Mucin extruded from a joint space compacts the dermal cells into something that only <b>mimics</b> a capsule. Females &gt; males, <b>associated with osteoarthritis</b>, over the <b>distal interphalangeal joint</b>; may groove the nail. Observe, or excise if symptomatic or causing nail dystrophy</td></tr>
     <tr><td><b>Sebaceous hyperplasia</b></td><td><b>Sebocyte turnover slows with age</b>, crowding cells and enlarging the gland. <b>No known potential for malignant transformation</b>; <b>immunosuppression is high risk</b>. Whitish-yellow soft papules 2&ndash;9&nbsp;mm with <b>central umbilication</b>, on the face. Differential is <b>basal cell carcinoma</b>, and <b>dermoscopy can distinguish them</b>. No treatment needed &mdash; lesions recur and treatment risks scarring; light electrocautery if wanted</td></tr>
   </table>
@@ -364,13 +364,13 @@ TESTS = '''    benignskin: [
        expl:"Visible fat means stage 3. Stage 4 requires exposed fascia, muscle, tendon, ligament, cartilage or bone. Stage 2 is partial thickness with exposed dermis and no fat visible."},
       {q:"A pressure wound's base is covered entirely by thick eschar. Which stage?",
        choices:["Unstageable","Stage 4","Deep tissue pressure injury","Stage 3"],correct:0,
-       expl:"Unstageable means full-thickness loss whose extent CANNOT be determined because slough or eschar obscures it. Deep tissue injury is a persistent non-blanchable deep red or purple discolouration, with skin intact or not."},
+       expl:"Unstageable means full-thickness loss whose extent CANNOT be determined because slough or eschar obscures it. Deep tissue injury is a persistent non-blanchable deep red or purple discoloration, with skin intact or not."},
       {q:"What is the difference between a sinus and a fistula?",
        choices:["A sinus is a blind track; a fistula connects two epithelium-lined surfaces","A sinus connects two surfaces; a fistula is blind-ending","A sinus is lined by keratin; a fistula by granulation tissue","A sinus is congenital; a fistula is acquired"],correct:0,
        expl:"A sinus is a blind track, while a fistula is a track connecting two epithelium-lined surfaces; both usually arise from a preceding abscess."},
       {q:"Which sign is associated with dermatofibroma?",
        choices:["The dimple sign","Fluctuance","A positive Nikolsky sign","The collarette sign"],correct:0,
-       expl:"The lesion retracts beneath the skin surface with lateral compression. Dermatofibroma is also described as the most common PAINFUL skin tumour."},
+       expl:"The lesion retracts beneath the skin surface with lateral compression. Dermatofibroma is also described as the most common PAINFUL skin tumor."},
       {q:"Why is a keratoacanthoma excised rather than observed, given that most regress?",
        choices:["It is argued to be a variant of invasive squamous cell carcinoma","It always metastasises if left","Regression leaves an unacceptable scar","It is contagious"],correct:0,
        expl:"It is histopathologically similar to squamous cell carcinoma and strong arguments support classifying it as a variant of the invasive form. Biopsy is the only reliable diagnosis; excise with 5 mm margins, or Mohs for large, recurrent or cosmetically sensitive lesions."},
@@ -382,9 +382,9 @@ TESTS = '''    benignskin: [
        expl:"Nevus flammeus is dilated dermal capillaries with NO endothelial proliferation, which is exactly why it never involutes \\u2014 unlike an infantile hemangioma, which proliferates and then goes away."},
       {q:"A 16-year-old has a moist, vascular, dome-shaped lesion on a finger pad that came up rapidly after injury and bleeds easily. Diagnosis?",
        choices:["Pyogenic granuloma","Cherry angioma","Telangiectasia","Syringoma"],correct:0,
-       expl:"Neither pyogenic nor granulomatous \\u2014 a benign vascular tumour responding to irritation, trauma or hormonal change, common in children, young adults and pregnancy."},
+       expl:"Neither pyogenic nor granulomatous \\u2014 a benign vascular tumor responding to irritation, trauma or hormonal change, common in children, young adults and pregnancy."},
       {q:"Which benign lesion should prompt a blood test, and which one?",
-       choices:["Xanthelasma \\u2014 screen for hyperlipidemia","Lipoma \\u2014 check thyroid function","Skin tags \\u2014 check haemoglobin A1c","Sebaceous hyperplasia \\u2014 check immunoglobulins"],correct:0,
+       choices:["Xanthelasma \\u2014 screen for hyperlipidemia","Lipoma \\u2014 check thyroid function","Skin tags \\u2014 check hemoglobin A1c","Sebaceous hyperplasia \\u2014 check immunoglobulins"],correct:0,
        expl:"Xanthelasma is a collection of lipid-laden macrophages associated with lipid disorders, and may signify increased risk of cardiac disease. Among these benign lesions, it is the one where the blood work is the point."},
       {q:"How many caf\\u00e9 au lait macules are diagnostic in neurofibromatosis type 1, and what is the caveat?",
        choices:["Six or more \\u2014 but the macules alone do not establish the diagnosis","Two or more \\u2014 and they establish it","Six or more \\u2014 and they establish it","Three or more, only after puberty"],correct:0,

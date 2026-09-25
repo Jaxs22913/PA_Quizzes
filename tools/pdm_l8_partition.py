@@ -8,7 +8,7 @@ exams, which cover Lectures 7-10 and Lab 2.
 
 THE COURSE NUMBER RULE. A figure never appears in a stem without the scale that
 reads it, and nothing is calculated. This deck has two figures that matter --
-the cardiothoracic ratio threshold and the 85 per cent of predicted maximum
+the cardiothoracic ratio threshold and the 85 percent of predicted maximum
 heart rate that makes a stress test valid. Both are handled by SUPPLYING the
 figure in the stem and asking what follows from it, which satisfies the rule and
 asks the better question anyway: a threshold a student can recite but not apply

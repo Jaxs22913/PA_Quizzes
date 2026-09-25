@@ -14,7 +14,7 @@ the asserts below make sure none of them can ever be selected again.
 DO NOT RE-RUN THIS TO "REFRESH" THE QUIZ. The shipped set was chosen from the
 18-question pool with the seed below; with 15 left in the pool the same seed
 draws a different twelve, so a re-run would silently replace shipped questions
-and desynchronise pd2_l1_sets.json from the page and the master forms (which
+and desynchronize pd2_l1_sets.json from the page and the master forms (which
 pair to it by stem). The committed pd2_l1_sets.json is the page's twelve with
 the three removed, edited in place. The script therefore refuses to overwrite a
 sets file whose selection would change; pass --force only when a NEW selection

@@ -28,12 +28,12 @@ Q("Vocal cord nodules", IO, "Where do vocal cord nodules form?",
 
 Q("Vocal cord nodules", IO, "What is first-line treatment for vocal cord nodules?",
   [["Speech therapy",
-    "Correct. Nodules result from vocal abuse, so changing the vocal behaviour treats the cause "
+    "Correct. Nodules result from vocal abuse, so changing the vocal behavior treats the cause "
     "rather than the lesion. Speech therapy is first line in both adults and children, with "
     "photodocumentation in the voice clinic tracking progress and microlaryngoscopy reserved for "
     "failure."],
    ["Surgical excision of both nodules",
-    "Surgery does not address the behaviour that produced them, so they recur, and operating on the "
+    "Surgery does not address the behavior that produced them, so they recur, and operating on the "
     "vibrating margin risks scarring that permanently alters the voice."],
    ["Inhaled corticosteroid",
     "Inhaled steroid treats airway inflammation and can itself cause dysphonia and candidiasis. "
@@ -52,7 +52,7 @@ Q("Vocal cord polyps", IO, "How do vocal cord polyps differ from nodules?",
     "Bilateral symmetry is the defining feature of NODULES. Reversing it swaps two lesions with "
     "different treatments, since nodules get speech therapy and polyps get excised."],
    ["Polyps occur only in children",
-    "Screamers' nodules are the paediatric lesion. Polyps are commoner in adult men who smoke and "
+    "Screamers' nodules are the pediatric lesion. Polyps are commoner in adult men who smoke and "
     "abuse the voice."],
    ["Polyps are caused by human papillomavirus",
     "Human papillomavirus subtypes 6 and 11 cause recurrent respiratory PAPILLOMATOSIS, which "
@@ -63,7 +63,7 @@ Q("Vocal cord papillomatosis", IO,
   [["Subtypes 6 and 11, rarely 16",
     "Correct. Recurrent respiratory papillomatosis is caused by low-risk human papillomavirus "
     "subtypes 6 and 11, with 16 rarely implicated. The distribution is bimodal, juvenile between 2 "
-    "and 4 years and adult peaking in the 30s, and there is a 3 to 7 per cent risk of malignant "
+    "and 4 years and adult peaking in the 30s, and there is a 3 to 7 percent risk of malignant "
     "transformation."],
    ["Subtypes 16 and 18 only",
     "Sixteen and eighteen are the high-risk oncogenic types driving cervical and oropharyngeal "
@@ -76,7 +76,7 @@ Q("Vocal cord papillomatosis", IO,
     "nasopharyngeal carcinoma."]], C(49)),
 
 Q("Vocal cord papillomatosis", IO, "Why is tracheostomy avoided in papillomatosis?",
-  [["It creates another squamociliary junction the papillomas favour",
+  [["It creates another squamociliary junction the papillomas favor",
     "Correct. Papillomas have an affinity for the boundaries where ciliated respiratory epithelium "
     "meets squamous epithelium. A tracheostomy creates a new such junction, giving the disease a "
     "fresh site to seed and spreading it distally into the trachea, which makes an already difficult "
@@ -88,7 +88,7 @@ Q("Vocal cord papillomatosis", IO, "Why is tracheostomy avoided in papillomatosi
     "Carbon dioxide laser, cold steel dissection and microdebrider remain available. The objection "
     "concerns disease spread rather than closing off treatment options."],
    ["It converts the disease to a malignant form",
-    "There is a 3 to 7 per cent risk of malignant transformation in the disease itself, but a "
+    "There is a 3 to 7 percent risk of malignant transformation in the disease itself, but a "
     "tracheostomy is not what causes it."]], C(52)),
 
 Q("Vocal cord paralysis", IO,
@@ -100,7 +100,7 @@ Q("Vocal cord paralysis", IO,
     "cry."],
    ["Unilateral gives stridor; bilateral gives a breathy voice",
     "This reverses the two, and the consequence matters: stridor signals a threatened airway, so "
-    "misassigning it could delay recognising bilateral disease."],
+    "misassigning it could delay recognizing bilateral disease."],
    ["Both present identically",
     "They differ in the way that determines urgency. Treating them as equivalent misses that "
     "bilateral paralysis is an airway problem."],
@@ -115,10 +115,10 @@ Q("Vocal cord paralysis", IO,
     "bruised or stretched nerve may recover over 6 months to a year, whereas a transected nerve or "
     "one infiltrated by malignancy will not, and that determines whether to wait or proceed to "
     "medialisation or thyroplasty."],
-   ["It identifies which cord is paralysed",
+   ["It identifies which cord is paralyzed",
     "Laryngoscopy already establishes which cord is immobile by direct observation. Electromyography "
     "answers a different question about the state of the nerve."],
-   ["It measures airway calibre",
+   ["It measures airway caliber",
     "Airway compromise is assessed clinically and by observing the cords. Electromyography records "
     "muscle electrical activity."],
    ["It distinguishes vagal from recurrent laryngeal injury",
@@ -135,7 +135,7 @@ Q("Acute laryngitis", IO, "What is the commonest cause of hoarseness?",
     "Laryngeal carcinoma is a critical cause to exclude in persistent hoarseness, particularly in a "
     "smoker, but it is far less common than a post-viral laryngitis."],
    ["Vocal cord paralysis",
-    "Paralysis causes a characteristically breathy hoarse voice but follows surgery, trauma, tumour "
+    "Paralysis causes a characteristically breathy hoarse voice but follows surgery, trauma, tumor "
     "or neurological disease rather than being the everyday cause."],
    ["Reflux laryngitis",
     "Acid reflux contributes to chronic laryngeal irritation and appears among the causes, but it is "
@@ -172,34 +172,34 @@ Q("Chronic laryngitis", IO,
     "Smoking raises the concern but does not define the term, and antibiotics have no role in a "
     "chronic non-infective hoarseness."]], C(58)),
 
-Q("Epiglottitis", IO, "What is the commonest pathogen in paediatric epiglottitis?",
+Q("Epiglottitis", IO, "What is the commonest pathogen in pediatric epiglottitis?",
   [["Haemophilus influenzae type B",
     "Correct. Haemophilus influenzae type B is the commonest pathogen in children, and routine "
-    "immunisation has reduced the incidence of supraglottitis by over 90 per cent. Other organisms "
-    "include Streptococcus pneumoniae, Staphylococcus aureus and beta-haemolytic streptococci, which "
+    "immunization has reduced the incidence of supraglottitis by over 90 percent. Other organisms "
+    "include Streptococcus pneumoniae, Staphylococcus aureus and beta-hemolytic streptococci, which "
     "is why the disease still occurs."],
    ["Streptococcus pyogenes",
-    "Beta-haemolytic streptococci are among the other pathogens listed, so this is close, but the "
+    "Beta-hemolytic streptococci are among the other pathogens listed, so this is close, but the "
     "organism whose vaccine transformed the epidemiology is Haemophilus."],
    ["Pseudomonas aeruginosa",
     "Pseudomonas causes malignant otitis externa and swimmer's ear rather than supraglottic "
     "cellulitis."],
    ["Corynebacterium diphtheriae",
-    "Diphtheria produces a tenacious grey pharyngeal membrane in an unimmunised child and is treated "
+    "Diphtheria produces a tenacious gray pharyngeal membrane in an unimmunized child and is treated "
     "with antitoxin, a different disease with a different appearance."]], C(60)),
 
-Q("Epiglottitis", IO, "What are the four Ds of paediatric epiglottitis?",
+Q("Epiglottitis", IO, "What are the four Ds of pediatric epiglottitis?",
   [["Drooling, dysphagia, dysphonia and distress",
-    "Correct. Those four summarise the paediatric presentation, alongside the classic posture of an "
+    "Correct. Those four summarize the pediatric presentation, alongside the classic posture of an "
     "irritable child sitting or leaning forward with the neck hyperextended and chin thrust out. "
     "Symptoms come on suddenly and progress over hours in children, more slowly in adults."],
-   ["Dyspnoea, diplopia, dysarthria and dizziness",
+   ["Dyspnea, diplopia, dysarthria and dizziness",
     "Those are neurological symptoms suggesting a brainstem or posterior circulation problem, not an "
     "airway infection."],
-   ["Drooling, diarrhoea, dehydration and drowsiness",
-    "Diarrhoea and dehydration are not features of supraglottitis, and drowsiness would be a very "
+   ["Drooling, diarrhea, dehydration and drowsiness",
+    "Diarrhea and dehydration are not features of supraglottitis, and drowsiness would be a very "
     "late and ominous sign rather than one of the defining four."],
-   ["Dysphagia, dysuria, dyspnoea and delirium",
+   ["Dysphagia, dysuria, dyspnea and delirium",
     "Dysuria has no relationship to the airway, and delirium is not part of the described "
     "presentation."]], C(61)),
 
@@ -221,11 +221,11 @@ Q("Epiglottitis", IO, "Why should intraoral examination be avoided once epiglott
 
 Q("Epiglottitis", IO, "What is the gold standard for diagnosing epiglottitis?",
   [["Mirror or fiberoptic laryngoscopy",
-    "Correct. Direct visualisation of the supraglottis is the gold standard, performed where the "
-    "airway can be secured. The lateral neck X-ray thumbprint sign is recognised but explicitly not "
+    "Correct. Direct visualization of the supraglottis is the gold standard, performed where the "
+    "airway can be secured. The lateral neck X-ray thumbprint sign is recognized but explicitly not "
     "necessary for diagnosis, and computed tomography shows the same thing without adding safety."],
    ["The thumbprint sign on lateral neck X-ray",
-    "The thumbprint sign is well known and worth recognising, but it is stated to be unnecessary for "
+    "The thumbprint sign is well known and worth recognizing, but it is stated to be unnecessary for "
     "diagnosis, and sending an unstable child to radiology carries its own risk."],
    ["Computed tomography of the neck",
     "Computed tomography demonstrates the swollen epiglottis but takes the patient away from the "
@@ -250,16 +250,16 @@ Q("Epiglottitis", IO, "What antibiotic combination is used in epiglottitis?",
     "infection with a different flora."]], C(67)),
 
 Q("Pharyngitis", IO, "What proportion of pharyngitis is viral?",
-  [["About 70 per cent",
-    "Correct. Roughly 70 per cent of pharyngitis is viral, caused by adenovirus, Epstein-Barr virus, "
+  [["About 70 percent",
+    "Correct. Roughly 70 percent of pharyngitis is viral, caused by adenovirus, Epstein-Barr virus, "
     "herpes simplex, HIV, influenza, parainfluenza, rhinovirus, coronavirus, echovirus, "
-    "enteroviruses and coxsackievirus. The remaining 30 per cent is bacterial, chiefly group A "
-    "beta-haemolytic streptococcus."],
-   ["About 30 per cent",
-    "Thirty per cent is the BACTERIAL share. Swapping the two would justify treating most sore "
+    "enteroviruses and coxsackievirus. The remaining 30 percent is bacterial, chiefly group A "
+    "beta-hemolytic streptococcus."],
+   ["About 30 percent",
+    "Thirty percent is the BACTERIAL share. Swapping the two would justify treating most sore "
     "throats with antibiotics, which is the practice the figures argue against."],
-   ["About 10 per cent",
-    "Ten per cent viral would make pharyngitis a predominantly bacterial disease, which does not "
+   ["About 10 percent",
+    "Ten percent viral would make pharyngitis a predominantly bacterial disease, which does not "
     "match either the microbiology or the clinical course."],
    ["Nearly all",
     "Bacterial pharyngitis is common enough to matter, and it is the reason Centor scoring and "
@@ -276,7 +276,7 @@ Q("Bacterial pharyngitis", IO,
     "Exudate is a Centor criterion FOR streptococcal infection, though it also occurs in "
     "mononucleosis, which is why it is scored rather than treated as diagnostic."],
    ["Tender anterior cervical nodes",
-    "Tender anterior cervical adenopathy is another Centor point in favour of streptococcal "
+    "Tender anterior cervical adenopathy is another Centor point in favor of streptococcal "
     "disease."],
    ["Fever above 100.4 degrees Fahrenheit",
     "Fever is also a Centor criterion supporting bacterial infection rather than arguing against "

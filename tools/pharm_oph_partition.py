@@ -13,7 +13,7 @@ crossover" is about one table of OVERLAPPING antibiotic indications, not about
 what an agent is for; and "don't memorize which ones cause eye irritation or
 hypersensitivity... any of these can do that" is about the GENERIC irritation,
 not about the effects that name one drug -- ciprofloxacin's white precipitate,
-the bitter taste of the carbonic anhydrase inhibitors, the iris colour change
+the bitter taste of the carbonic anhydrase inhibitors, the iris color change
 of the prostaglandins. An audit against the deck found the pools already
 covered 25 of 29 such facts; the four that were missing have been added, so the
 defect was mostly in how the scope was DESCRIBED rather than in what was asked.

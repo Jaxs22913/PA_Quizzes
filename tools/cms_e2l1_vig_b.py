@@ -24,7 +24,7 @@ IOB = ("Objective b — Identify medical care strategies for ophthalmological di
 VIG_B = [
  # ---- diagnosis lead-ins ----
  dict(topic="Episcleritis vs scleritis", io=IOA, lead="diagnosis", slot="differential",
-   q="A 33-year-old woman has a sectoral patch of redness in one eye with mild ache, no discharge and no photophobia. After topical anaesthesia the redness moves slightly when nudged with a cotton-tip applicator. Which is the most likely diagnosis?",
+   q="A 33-year-old woman has a sectoral patch of redness in one eye with mild ache, no discharge and no photophobia. After topical anesthesia the redness moves slightly when nudged with a cotton-tip applicator. Which is the most likely diagnosis?",
    opts=[
      ["Episcleritis", "Correct — mobile vessels, mild pain and no photophobia point to the superficial layer."],
      ["Scleritis", "Scleral vessels cannot be moved, and the pain would be severe and boring."],
@@ -37,17 +37,17 @@ VIG_B = [
    opts=[
      ["Scleritis", "Correct — night pain, violaceous hue and immobile vessels, on an autoimmune background."],
      ["Episcleritis", "The pain would be mild and the vessels would move."],
-     ["Subconjunctival haemorrhage", "That is a painless flat red patch."],
+     ["Subconjunctival hemorrhage", "That is a painless flat red patch."],
      ["Viral conjunctivitis", "That has watery discharge, follicles and a preauricular node."]],
    c=0, cite=c(49)),
 
- dict(topic="Subconjunctival haemorrhage", io=IOA, lead="diagnosis", slot="differential",
+ dict(topic="Subconjunctival hemorrhage", io=IOA, lead="diagnosis", slot="differential",
    q="A 66-year-old man on warfarin notices a bright red patch on the white of one eye after a coughing fit. There is no pain, vision is normal, the pupil is normal and the cornea is clear. Which is the most likely diagnosis?",
    opts=[
-     ["Subconjunctival haemorrhage",
+     ["Subconjunctival hemorrhage",
       "Correct — Valsalva plus anticoagulation, and the eye is otherwise entirely normal."],
      ["Bacterial conjunctivitis",
-      "That has discharge and diffuse hyperaemia rather than a discrete blood patch."],
+      "That has discharge and diffuse hyperemia rather than a discrete blood patch."],
      ["Anterior uveitis",
       "That is painful, with ciliary flush and photophobia."],
      ["Scleritis",
@@ -86,7 +86,7 @@ VIG_B = [
    opts=[
      ["Dacryoadenitis", "Correct. Swelling over the lateral third of the upper lid, with ipsilateral preauricular lymphadenopathy, fits dacryoadenitis."],
      ["Dacryocystitis", "That produces swelling over the lacrimal sac, at the inner lower lid."],
-     ["Pre-septal cellulitis", "That produces diffuse balloon-like lid swelling, not a localised outer-third mass."],
+     ["Pre-septal cellulitis", "That produces diffuse balloon-like lid swelling, not a localized outer-third mass."],
      ["Hordeolum", "That is a small tender nodule at the lash line."]],
    c=0, cite=c(22)),
 
@@ -94,7 +94,7 @@ VIG_B = [
    q="A 71-year-old woman has a tender, tense, erythematous swelling over the nasal aspect of her lower eyelid, below the medial canthal tendon, with mucoid material expressible from the lower punctum. Which is the most likely diagnosis?",
    opts=[
      ["Dacryocystitis", "Correct — the location below the tendon and the expressible discharge are both characteristic."],
-     ["A lacrimal sac tumour", "That would be suspected if the mass were ABOVE the medial canthal tendon."],
+     ["A lacrimal sac tumor", "That would be suspected if the mass were ABOVE the medial canthal tendon."],
      ["Dacryoadenitis", "That affects the gland at the outer upper lid."],
      ["Chalazion", "That is a painless nodule within the lid itself."]],
    c=0, cite=c(24)),
@@ -107,7 +107,7 @@ VIG_B = [
      ["Post-septal (orbital) cellulitis",
       "That would show proptosis, painful restricted movement, and often reduced vision."],
      ["Dacryocystitis",
-      "That is localised to the lacrimal sac at the inner lower lid."],
+      "That is localized to the lacrimal sac at the inner lower lid."],
      ["Allergic conjunctivitis",
       "That itches, is bilateral, and does not cause fever."]],
    c=0, cite=c(52)),
@@ -130,7 +130,7 @@ VIG_B = [
    opts=[
      ["Bacterial keratitis", "Correct — corneal haze with ciliary flush in a lens overwearer."],
      ["Viral conjunctivitis", "That gives watery discharge and follicles with a clear cornea."],
-     ["Subconjunctival haemorrhage", "That is painless with a clear cornea and normal vision."],
+     ["Subconjunctival hemorrhage", "That is painless with a clear cornea and normal vision."],
      ["Episcleritis", "That gives mild sectoral redness with a clear cornea and no photophobia."]],
    c=0, cite=c(55)),
 
@@ -196,7 +196,7 @@ VIG_B = [
      ["Lubricating ointment used consistently will correct the lid position",
       "Lubrication protects but does not reposition the lid."],
      ["It will resolve on its own within two to four weeks",
-      "That timescale belongs to a subconjunctival haemorrhage."],
+      "That timescale belongs to a subconjunctival hemorrhage."],
      ["A course of oral antibiotics will resolve it",
       "There is no infection."]],
    c=0, cite=c(13)),
@@ -240,11 +240,11 @@ VIG_B = [
       "They are benign deposits."]],
    c=0, cite=c(17)),
 
- dict(topic="Subconjunctival haemorrhage", io=IOA, lead="next step", slot="initial test",
+ dict(topic="Subconjunctival hemorrhage", io=IOA, lead="next step", slot="initial test",
    q="A 59-year-old man has a painless bright red patch on the white of one eye with no obvious precipitant and no medication history to explain it. Vision, pupil and cornea are all normal. Which is the most appropriate next step?",
    opts=[
      ["Take a careful history and check his blood pressure",
-      "Correct — the eye itself needs little assessment; the value lies in finding a cause, and an unexplained haemorrhage should prompt a blood pressure check."],
+      "Correct — the eye itself needs little assessment; the value lies in finding a cause, and an unexplained hemorrhage should prompt a blood pressure check."],
      ["Refer urgently to ophthalmology",
       "The eye findings are benign."],
      ["Start a topical antibiotic",
@@ -253,11 +253,11 @@ VIG_B = [
       "Not indicated."]],
    c=0, cite=c(30)),
 
- dict(topic="Subconjunctival haemorrhage", io=IOA, lead="education", slot="prognosis",
-   q="A 64-year-old woman with an atraumatic subconjunctival haemorrhage wants to know when the redness will go. What should she be told?",
+ dict(topic="Subconjunctival hemorrhage", io=IOA, lead="education", slot="prognosis",
+   q="A 64-year-old woman with an atraumatic subconjunctival hemorrhage wants to know when the redness will go. What should she be told?",
    opts=[
      ["It usually resolves spontaneously within two to four weeks; reassurance is the treatment",
-      "Correct — the blood is reabsorbed like any bruise over two to four weeks, changing colour as it goes."],
+      "Correct — the blood is reabsorbed like any bruise over two to four weeks, changing color as it goes."],
      ["It should clear within 24 to 48 hours",
       "A day or two is far too quick; the extravasated blood must be broken down and reabsorbed, which takes two to four weeks."],
      ["It will leave a permanent mark on the eye",
@@ -334,7 +334,7 @@ VIG_B = [
  dict(topic="Red eye triage", io=IOA, lead="next step", slot="escalation",
    q="A 27-year-old man has splashed drain cleaner into one eye and arrives in distress. Which is the most appropriate immediate action?",
    opts=[
-     ["Begin copious irrigation immediately, before completing the history or examination, then check that the surface pH has normalised",
+     ["Begin copious irrigation immediately, before completing the history or examination, then check that the surface pH has normalized",
       "Correct — chemical exposure is the single stated exception to the normal red-eye sequence."],
      ["Measure visual acuity in both eyes first, then irrigate",
       "Irrigation must not wait for acuity in a chemical injury."],
@@ -348,7 +348,7 @@ VIG_B = [
    q="A 44-year-old man has a penetrating eye injury from a metal fragment and a suspected open globe. Which action should be taken?",
    opts=[
      ["Place a rigid eye shield, avoid any pressure or tonometry, keep him nil by mouth, and obtain emergency ophthalmology consultation",
-      "Correct — any pressure on a perforated globe can extrude intraocular contents, so the eye is shielded rather than patched, tonometry avoided, and the patient kept fasted for theatre."],
+      "Correct — any pressure on a perforated globe can extrude intraocular contents, so the eye is shielded rather than patched, tonometry avoided, and the patient kept fasted for theater."],
      ["Measure the intraocular pressure to assess the damage",
       "Tonometry is specifically contraindicated with a suspected open globe."],
      ["Patch the eye firmly and arrange next-day review",
@@ -404,11 +404,11 @@ VIG_B = [
  dict(topic="Fluorescein", io=IOA, lead="initial test", slot="initial test",
    q="A 35-year-old man may have a corneal abrasion after a fingernail injury. Which examination will best demonstrate it?",
    opts=[
-     ["Instil fluorescein and examine under a Wood's lamp with ultraviolet light",
+     ["Instill fluorescein and examine under a Wood's lamp with ultraviolet light",
       "Correct — the surface fluorescein examination detects abrasions, ulcers and foreign bodies."],
      ["Inject fluorescein intravenously and photograph the retina with a blue flash",
       "That is fluorescein ANGIOGRAPHY, which images the posterior circulation."],
-     ["Instil phenylephrine and observe for blanching",
+     ["Instill phenylephrine and observe for blanching",
       "That is the episcleritis test."],
      ["Measure intraocular pressure",
       "That does not show a surface defect."]],
@@ -476,14 +476,14 @@ VIG_B = [
    c=0, cite=c(56)),
 
  dict(topic="Trachoma", io=IOA, lead="treatment" if False else "first-line", slot="agent/regimen",
-   q="A public health team is treating an area where trachoma prevalence is eight per cent. Which regimen applies?",
+   q="A public health team is treating an area where trachoma prevalence is eight percent. Which regimen applies?",
    opts=[
      ["Azithromycin one gram orally as a single dose, given to all eligible members of the evaluation unit",
-      "Correct — mass drug administration, at or above the five per cent threshold."],
+      "Correct — mass drug administration, at or above the five percent threshold."],
      ["Doxycycline 100 milligrams twice daily for seven days, to symptomatic individuals only",
       "That is adult inclusion conjunctivitis, and treats individuals rather than the population."],
      ["Topical erythromycin ointment to symptomatic individuals only",
-      "Treating only symptomatic individuals leaves the reservoir intact; whole districts are treated once prevalence reaches five per cent."],
+      "Treating only symptomatic individuals leaves the reservoir intact; whole districts are treated once prevalence reaches five percent."],
      ["Azithromycin one gram weekly for four weeks",
       "A single one-gram dose suffices, because azithromycin's long tissue half-life keeps levels up for weeks."]],
    c=0, cite=c(46)),
@@ -505,7 +505,7 @@ VIG_B = [
    q="A 49-year-old woman has completed a two-week lid hygiene regimen for blepharitis with no improvement. Which is the most appropriate next step?",
    opts=[
      ["Try a topical antibiotic",
-      "Correct — topical antibiotics target the staphylococcal colonisation of the lid margin that hygiene alone has not cleared."],
+      "Correct — topical antibiotics target the staphylococcal colonization of the lid margin that hygiene alone has not cleared."],
      ["Go straight to oral antibiotics",
       "Oral antibiotics come after topical treatment has failed, not instead of it."],
      ["Refer urgently to ophthalmology today",

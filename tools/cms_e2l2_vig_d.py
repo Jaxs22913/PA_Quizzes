@@ -10,7 +10,7 @@ POOL_D = [
  dict(topic="Horner syndrome", io=IO, lead="diagnosis",
    q="A 59-year-old woman with a long smoking history has a six-week history of right arm pain and now a right ptosis with a small right pupil. Which is the most likely underlying cause?",
    opts=[
-     ["Pancoast tumour", "Correct. A superior sulcus tumour reaches the second-order neurons over the lung apex."],
+     ["Pancoast tumor", "Correct. A superior sulcus tumor reaches the second-order neurons over the lung apex."],
      ["Carotid dissection", "That is third-order and presents acutely, often with neck pain."],
      ["Brainstem stroke", "That is first-order and would usually bring other brainstem signs."],
      ["Cluster headache", "Cluster headache does not explain arm pain in a smoker; second-order neurons pass through the brachial plexus over the lung apex, where a Pancoast tumor causes Horner syndrome."]],
@@ -26,7 +26,7 @@ POOL_D = [
  dict(topic="Visual fields", io=IO, lead="diagnosis",
    q="A 48-year-old woman with headaches has lost the temporal half of the field in each eye. Which lesion location is most likely?",
    opts=[
-     ["Optic chiasm", "Correct. Crossing nasal fibres are affected, giving a bitemporal defect."],
+     ["Optic chiasm", "Correct. Crossing nasal fibers are affected, giving a bitemporal defect."],
      ["Left optic nerve", "That blinds one eye."],
      ["Occipital cortex", "That gives a homonymous defect, often macula-sparing."],
      ["Both retinas", "Bilateral retinal disease rarely respects the vertical midline."]],
@@ -56,7 +56,7 @@ POOL_D = [
      ["Bell palsy", "That weakens lid closure, not elevation."]],
    c=0, cite=c(49)),
  dict(topic="Marcus Gunn pupil", io=IO, lead="test",
-   q="A 26-year-old man has reduced vision in one eye. Which bedside manoeuvre detects a relative afferent pupillary defect?",
+   q="A 26-year-old man has reduced vision in one eye. Which bedside maneuver detects a relative afferent pupillary defect?",
    opts=[
      ["Swinging flashlight test", "Correct. Moving the light to the affected eye makes both pupils dilate."],
      ["Cover-uncover test", "That assesses ocular alignment."],
@@ -67,7 +67,7 @@ POOL_D = [
    q="A 34-year-old woman has binocular horizontal diplopia that worsens on looking to the left, and the left eye under-abducts. Which nerve is affected?",
    opts=[
      ["Left sixth", "Correct. Lateral rectus abducts, and the deficit is on the side of gaze."],
-     ["Right sixth", "The under-abducting eye localises the lesion to that side."],
+     ["Right sixth", "The under-abducting eye localizes the lesion to that side."],
      ["Left third", "That gives ptosis and a down-and-out eye."],
      ["Left seventh", "That affects lid closure."]],
    c=0, cite=c(44)),
@@ -85,7 +85,7 @@ POOL_D = [
      ["No, it depends on lesion level", "Correct. The triad may be incomplete depending where along the pathway the lesion sits."],
      ["Yes, all three are required", "Not all three are required: the triad is ptosis, miosis and anhidrosis, but anhidrosis may be absent depending on the lesion's location along the sympathetic pathway."],
      ["Yes, unless the pupil is fixed", "Pupil fixity is not part of the definition."],
-     ["No, because anhidrosis is parasympathetic", "The sudomotor fibres involved are sympathetic."]],
+     ["No, because anhidrosis is parasympathetic", "The sudomotor fibers involved are sympathetic."]],
    c=0, cite=c(28)),
  dict(topic="Third nerve palsy", io=IO, lead="next step",
    q="A 69-year-old woman with diabetes has a third nerve palsy with a reactive, normal-sized pupil. What is the most appropriate approach?",
@@ -109,7 +109,7 @@ POOL_D = [
      ["Test posterior column function", "Correct. Tabes dorsalis with sensory ataxia accompanies it in tertiary syphilis."],
      ["Palpate the temporal arteries", "That relates to giant cell arteritis."],
      ["Auscultate the carotids", "That relates to embolic visual loss."],
-     ["Check haemoglobin A1C only", "Diabetes can cause these pupils, but the classic association is tertiary syphilis, with tabes dorsalis."]],
+     ["Check hemoglobin A1C only", "Diabetes can cause these pupils, but the classic association is tertiary syphilis, with tabes dorsalis."]],
    c=0, cite=c(32)),
  dict(topic="Fourth nerve palsy", io=IO, lead="diagnosis",
    q="A 52-year-old woman has vertical diplopia that worsens when she looks down and to the left, and tilting her head right helps. Which nerve is affected?",

@@ -29,7 +29,7 @@ POOL_C = [
    q="Which question does a qualitative test answer?",
    opts=[
      ["A “why” question, producing observation and description",
-      "Correct — qualitative data is observed and interpreted, and analysed by grouping common data."],
+      "Correct — qualitative data is observed and interpreted, and analyzed by grouping common data."],
      ["A “how much” question, producing a numerical result",
       "That describes a quantitative test."],
      ["A “how often” question, producing an incidence rate",
@@ -41,7 +41,7 @@ POOL_C = [
  dict(topic="Qualitative vs quantitative", io=IOI,
    q="Which characteristic belongs to quantitative testing?",
    opts=[
-     ["Data are numbers or statistical results, analysed statistically",
+     ["Data are numbers or statistical results, analyzed statistically",
       "Correct — quantitative testing measures and tests, answering how many or how much."],
      ["Data are descriptions requiring non-statistical grouping",
       "That describes qualitative testing."],
@@ -52,7 +52,7 @@ POOL_C = [
    c=0, cite=c(41)),
 
  dict(topic="Qualitative vs quantitative", io=IOI,
-   q="A urine pregnancy test returns simply positive or negative. How is this analyser type classified?",
+   q="A urine pregnancy test returns simply positive or negative. How is this analyzer type classified?",
    opts=[
      ["Qualitative",
       "Correct — rapid strep and influenza tests are likewise qualitative; a urinalysis dipstick is semi-quantitative."],
@@ -112,15 +112,15 @@ POOL_C = [
       "Results may be less precise, which is listed as a limitation."],
      ["Lower cost than central laboratory testing",
       "Expense is listed among the limitations."],
-     ["Standardised vocabulary across manufacturers",
-      "Vocabulary is described as not always standardised, which is a limitation."]],
+     ["Standardized vocabulary across manufacturers",
+      "Vocabulary is described as not always standardized, which is a limitation."]],
    c=0, cite=c(35)),
 
  dict(topic="POCT logistics", io=IOJ,
    q="Which is listed as a limitation of point-of-care testing?",
    opts=[
      ["Operator and manufacturer variability",
-      "Correct, alongside expense, difficulty controlling quality assurance, non-standardised vocabulary, imprecision and supply needs."],
+      "Correct, alongside expense, difficulty controlling quality assurance, non-standardized vocabulary, imprecision and supply needs."],
      ["Longer turnaround than central laboratory testing",
       "Speed is an advantage of point-of-care testing."],
      ["The need for venipuncture rather than fingerstick",
@@ -354,7 +354,7 @@ POOL_C = [
    q="Screening for human immunodeficiency virus uses a highly sensitive test first. Why is this the right order?",
    opts=[
      ["It is better to have a few false positives, later corrected by a confirmatory test, than to miss infected individuals who might unknowingly infect others",
-      "Correct — the confirmatory supplemental test is highly specific and minimises false-positive diagnoses."],
+      "Correct — the confirmatory supplemental test is highly specific and minimizes false-positive diagnoses."],
      ["A highly sensitive test is cheaper than a highly specific one in every case",
       "Cost is not the stated reason for the sequence."],
      ["A highly sensitive test provides a definitive diagnosis on its own",
@@ -455,7 +455,7 @@ POOL_C = [
    c=0, cite=c(47)),
 
  dict(topic="Pre and post-test probability", io=IOO,
-   q="Which statement best summarises the relationship between a test and the population it is used in?",
+   q="Which statement best summarizes the relationship between a test and the population it is used in?",
    opts=[
      ["Sensitivity and specificity belong to the test; predictive value belongs to the population being tested",
       "Correct — the test stays the same, and prevalence changes the meaning of the result."],
@@ -471,7 +471,7 @@ POOL_C = [
    q="Why does knowing the pre-test probability help before a test is ordered?",
    opts=[
      ["It indicates the chance the condition is present beforehand, which helps decide whether the test is worth ordering at all",
-      "Correct — that judgement comes from the patient's presentation and risk factors."],
+      "Correct — that judgment comes from the patient's presentation and risk factors."],
      ["It allows the sensitivity of the test to be adjusted for that patient",
       "Sensitivity is a fixed property of the test."],
      ["It determines which collection tube should be used",

@@ -64,7 +64,7 @@ POOL_A = [
    q="Which of the following is NOT one of the five main processes of the inflammatory response?",
    opts=[
      ["Fibroblast proliferation",
-      "Correct. The five listed are increased blood flow, increased permeability, migration of neutrophils, chemotaxis, and leucocyte recruitment and activation. Fibroblastic scar tissue is a healing outcome, not one of the five."],
+      "Correct. The five listed are increased blood flow, increased permeability, migration of neutrophils, chemotaxis, and leukocyte recruitment and activation. Fibroblastic scar tissue is a healing outcome, not one of the five."],
      ["Increased permeability",
       "This is the second of the five main processes."],
      ["Chemotaxis",
@@ -79,7 +79,7 @@ POOL_A = [
      ["Increased blood flow",
       "Increased blood flow is the first of the five processes, well before neutrophil migration; chemotaxis is the process that immediately follows migration."],
      ["Chemotaxis",
-      "Correct. The order runs increased blood flow, increased permeability, migration of neutrophils, chemotaxis, then leucocyte recruitment and activation."],
+      "Correct. The order runs increased blood flow, increased permeability, migration of neutrophils, chemotaxis, then leukocyte recruitment and activation."],
      ["Increased permeability",
       "Increased permeability is the second process and precedes neutrophil migration; chemotaxis is the process that immediately follows migration."],
      ["Exudation of plasma proteins",

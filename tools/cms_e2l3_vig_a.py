@@ -34,7 +34,7 @@ POOL_A = [
      ["A carotid or cardiac embolus", "Correct. Most commonly a transient ischemic attack of retinal origin."],
      ["Optic nerve demyelination", "That produces optic neuritis, which is not transient in this way."],
      ["Raised intracranial pressure", "That gives papilledema with non-specific, persistent changes."],
-     ["Vitreous haemorrhage", "That causes floaters and haze that do not clear in seconds."]],
+     ["Vitreous hemorrhage", "That causes floaters and haze that do not clear in seconds."]],
    c=0, cite=c(5)),
 
  dict(topic="Amaurosis fugax", io=IOA, lead="reasoning",
@@ -60,7 +60,7 @@ POOL_A = [
    opts=[
      ["Magnetic resonance angiography", "Correct. Every patient is evaluated for emboli across all the arteries."],
      ["Plain skull radiographs", "These have no role in this evaluation."],
-     ["Orbital ultrasound", "That characterises a detachment, not the arterial supply."],
+     ["Orbital ultrasound", "That characterizes a detachment, not the arterial supply."],
      ["No imaging, since symptoms resolved", "Resolution does not remove the need to find the source."]],
    c=0, cite=c(7)),
 
@@ -102,7 +102,7 @@ POOL_A = [
 
  # ---------------- Acute angle-closure glaucoma ----------------
  dict(topic="Angle-closure glaucoma", io=IOA, lead="diagnosis",
-   q="A 62-year-old woman has sudden severe right eye pain, a headache, nausea and vomiting. She sees coloured halos around lights and her cornea looks hazy. Which is the most likely diagnosis?",
+   q="A 62-year-old woman has sudden severe right eye pain, a headache, nausea and vomiting. She sees colored halos around lights and her cornea looks hazy. Which is the most likely diagnosis?",
    opts=[
      ["Acute angle-closure glaucoma", "Correct. Pain, halos and systemic upset with a hazy cornea."],
      ["Chronic open-angle glaucoma", "That is painless and gradual in most patients."],
@@ -125,7 +125,7 @@ POOL_A = [
      ["Intraocular pressure", "Correct, by tonometry or gonioscopy; expect 40 to 80 mmHg."],
      ["Erythrocyte sedimentation rate", "That is for suspected arteritic optic neuropathy."],
      ["Cerebrospinal fluid opening pressure", "That is for papilledema."],
-     ["Colour vision testing", "That is part of the optic neuritis workup."]],
+     ["Color vision testing", "That is part of the optic neuritis workup."]],
    c=0, cite=c(17)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="finding",
@@ -160,12 +160,12 @@ POOL_A = [
    opts=[
      ["Nebulized bronchodilators", "Correct. Nebulized bronchodilators and systemic anticholinergics such as atropine are risk factors for acute angle closure."],
      ["Beta-blocker eye drops", "Those are used to treat glaucoma, not to precipitate it."],
-     ["Prostaglandin analogues", "Those lower intraocular pressure."],
+     ["Prostaglandin analogs", "Those lower intraocular pressure."],
      ["Calcium channel blockers", "Those are used for vascular spasm."]],
    c=0, cite=c(14)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="education",
-   q="A 63-year-old man with angle-closure glaucoma is about to start a medication for overactive bladder. Which counselling point applies?",
+   q="A 63-year-old man with angle-closure glaucoma is about to start a medication for overactive bladder. Which counseling point applies?",
    opts=[
      ["Anticholinergic drugs can worsen his glaucoma", "Correct — systemic anticholinergic medications such as atropine are a risk factor for acute angle closure, in which the iris blocks the drainage circuit and pressure rises."],
      ["Anticholinergic drugs will lower his pressure", "They act in the opposite direction."],
@@ -174,7 +174,7 @@ POOL_A = [
    c=0, cite=c(14)),
 
  dict(topic="Angle-closure glaucoma", io=IOA, lead="diagnosis",
-   q="A 64-year-old man is admitted with an intractable headache localised behind one eye. Multiple clinicians have treated him for migraine. On examination his eye is red and his vision is reduced. Which diagnosis should be excluded?",
+   q="A 64-year-old man is admitted with an intractable headache localized behind one eye. Multiple clinicians have treated him for migraine. On examination his eye is red and his vision is reduced. Which diagnosis should be excluded?",
    opts=[
      ["Angle-closure glaucoma", "Correct — acute angle-closure glaucoma causes severe, sudden eye pain with headache, nausea and vomiting, and decreased vision, which fits this presentation."],
      ["Papilledema", "That gives non-specific visual change without a red eye."],
@@ -184,7 +184,7 @@ POOL_A = [
 
  # ---------------- Chronic open-angle glaucoma ----------------
  dict(topic="Open-angle glaucoma", io=IOA, lead="diagnosis",
-   q="A 58-year-old African American man has no eye symptoms. Routine screening shows an increased cup-to-disc ratio, splinter haemorrhages at the rim and a bilateral pressure of 26 mmHg. Which is the most likely diagnosis?",
+   q="A 58-year-old African American man has no eye symptoms. Routine screening shows an increased cup-to-disc ratio, splinter hemorrhages at the rim and a bilateral pressure of 26 mmHg. Which is the most likely diagnosis?",
    opts=[
      ["Chronic open-angle glaucoma", "Correct. Asymptomatic, with optic nerve changes on an open angle."],
      ["Acute angle-closure glaucoma", "That is painful with a hazy cornea and a closed angle."],
@@ -206,7 +206,7 @@ POOL_A = [
    opts=[
      ["Loss of peripheral vision first", "Correct; patients call it tunnel vision, and central sight is preserved longest."],
      ["Loss of central vision first", "Peripheral field is lost before central."],
-     ["Loss of colour vision", "That belongs to optic neuritis."],
+     ["Loss of color vision", "That belongs to optic neuritis."],
      ["Transient blackout", "That is amaurosis fugax."]],
    c=0, cite=c(16)),
 
@@ -241,7 +241,7 @@ POOL_A = [
    q="A 72-year-old man has chronic open-angle glaucoma that continues to progress on maximal drops. What comes next?",
    opts=[
      ["Laser trabeculoplasty", "Correct, used when the disease is refractory or advanced."],
-     ["A stronger prostaglandin analogue", "Prostaglandin analogues such as latanoprost are already first-line drops; disease that is refractory or advanced moves to surgery, such as laser trabeculoplasty."],
+     ["A stronger prostaglandin analog", "Prostaglandin analogs such as latanoprost are already first-line drops; disease that is refractory or advanced moves to surgery, such as laser trabeculoplasty."],
      ["Observation alone", "Progression on treatment calls for escalation."],
      ["Systemic corticosteroids", "Those are not used for this."]],
    c=0, cite=c(21)),
@@ -257,9 +257,9 @@ POOL_A = [
 
  # ---------------- Optic neuritis ----------------
  dict(topic="Optic neuritis", io=IOA, lead="diagnosis",
-   q="A 29-year-old woman has had blurred vision in her left eye worsening over three days, and it hurts when she moves the eye. Colours look washed out. The disc appears normal. Which is the most likely diagnosis?",
+   q="A 29-year-old woman has had blurred vision in her left eye worsening over three days, and it hurts when she moves the eye. Colors look washed out. The disc appears normal. Which is the most likely diagnosis?",
    opts=[
-     ["Optic neuritis", "Correct. Painful eye movement, colour desaturation and an often normal disc."],
+     ["Optic neuritis", "Correct. Painful eye movement, color desaturation and an often normal disc."],
      ["Angle-closure glaucoma", "That is acutely painful at rest with a hazy cornea."],
      ["Papilledema", "That is bilateral disc swelling from raised intracranial pressure."],
      ["Retinal detachment", "That is painless with flashes, floaters and a field defect."]],
@@ -314,7 +314,7 @@ POOL_A = [
    q="A 30-year-old woman has had a second episode of optic neuritis in two years. Which point should you raise with her?",
    opts=[
      ["Recurrence raises her risk of multiple sclerosis", "Correct, which is why the underlying cause is pursued."],
-     ["Recurrence means the first episode was misdiagnosed", "Recurrence is a recognised pattern."],
+     ["Recurrence means the first episode was misdiagnosed", "Recurrence is a recognized pattern."],
      ["Recurrence indicates glaucoma", "That is a different disease entirely."],
      ["Recurrence requires no further workup", "It is precisely what prompts further workup."]],
    c=0, cite=c(24)),
@@ -325,7 +325,7 @@ POOL_A = [
    opts=[
      ["Retinal detachment", "Correct. Flashes and floaters from the tear, then an advancing field defect."],
      ["Amaurosis fugax", "That lasts seconds to minutes and clears completely."],
-     ["Optic neuritis", "That is painful on eye movement with colour loss."],
+     ["Optic neuritis", "That is painful on eye movement with color loss."],
      ["Angle-closure glaucoma", "That is acutely painful with halos and vomiting."]],
    c=0, cite=c(27)),
 
@@ -334,7 +334,7 @@ POOL_A = [
    opts=[
      ["A retinal tear", "Correct; the detachment commonly follows a tear or hole."],
      ["Raised intracranial pressure", "That gives flickering vision with headache and vomiting."],
-     ["Optic nerve inflammation", "That causes painful movement and colour loss."],
+     ["Optic nerve inflammation", "That causes painful movement and color loss."],
      ["Venous thrombosis", "That produces sudden painless loss."]],
    c=0, cite=c(27)),
 
@@ -386,7 +386,7 @@ POOL_A = [
  dict(topic="Retinal detachment", io=IOA, lead="finding",
    q="A 65-year-old woman undergoes dilated ophthalmoscopy for suspected detachment. What does a detached retina look like?",
    opts=[
-     ["An elevated grey area with folds", "Correct, well demarcated and pigmented, with orange crescent-shaped tears."],
+     ["An elevated gray area with folds", "Correct, well demarcated and pigmented, with orange crescent-shaped tears."],
      ["A cherry-red spot at the fovea", "That is arterial occlusion."],
      ["A deeply cupped disc", "That is chronic glaucoma."],
      ["An elevated disc with blurred margins", "That is papilledema."]],

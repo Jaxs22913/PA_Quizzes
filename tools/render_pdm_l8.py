@@ -21,7 +21,7 @@ INTRO = (
   "&mdash; and magnetic resonance avoids both radiation and iodinated contrast. Angiography is "
   "the gold standard, and the only one that can treat what it finds. "
   "<b>You are not asked to recall a threshold or to calculate anything.</b> The two figures that "
-  "matter &mdash; the cardiothoracic ratio and the 85 per cent of predicted maximum heart rate "
+  "matter &mdash; the cardiothoracic ratio and the 85 percent of predicted maximum heart rate "
   "that makes a stress test valid &mdash; are supplied in the stem, and the question is what "
   "follows from them. A ratio you can recite but not apply to a film is worth nothing. "
   "<b>Built from the slides.</b> The recording for this lecture is queued behind the exams that "

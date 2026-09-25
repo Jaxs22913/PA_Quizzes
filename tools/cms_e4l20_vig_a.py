@@ -24,7 +24,7 @@ QUESTIONS = [
 Q("Measurement technique", IO,
   "A 54-year-old arrives late for a routine visit, is taken straight to the room and has her blood pressure measured immediately while she describes her morning. The cuff is placed over her sleeve and her legs are crossed. The reading is 152/94. What is the most appropriate next step?",
   [["Repeat it after five minutes of quiet rest",
-    "Correct. Every departure here inflates the reading: no rest period, talking during the measurement, a sleeved arm and crossed legs. A diagnosis rests on readings taken to standard, and acting on this one would start treatment on an artefact. Correct technique matters as much as the rest period."],
+    "Correct. Every departure here inflates the reading: no rest period, talking during the measurement, a sleeved arm and crossed legs. A diagnosis rests on readings taken to standard, and acting on this one would start treatment on an artifact. Correct technique matters as much as the rest period."],
    ["Diagnose stage 2 hypertension and start two agents",
     "Two complementary agents are reasonable when pressure is substantially above goal, but not on "
     "a single reading taken outside standard conditions."],
@@ -79,30 +79,30 @@ Q("Coarctation of the aorta", IO,
    ["A morning aldosterone to renin ratio",
     "That screens for primary aldosteronism, which does not produce an arm-to-leg pressure gradient."],
    ["Polysomnography",
-    "Sleep study investigates obstructive sleep apnoea, suggested by snoring and witnessed apnoeas."]],
+    "Sleep study investigates obstructive sleep apnea, suggested by snoring and witnessed apneas."]],
   C(34)),
 
 Q("Renovascular disease", IO,
-  "A 68-year-old smoker with peripheral arterial disease has blood pressure of 168/94 despite three agents. An abdominal bruit is audible, ultrasound shows a right kidney 2 cm smaller than the left, and he has had two episodes of sudden pulmonary oedema. What is the most likely underlying cause?",
+  "A 68-year-old smoker with peripheral arterial disease has blood pressure of 168/94 despite three agents. An abdominal bruit is audible, ultrasound shows a right kidney 2 cm smaller than the left, and he has had two episodes of sudden pulmonary edema. What is the most likely underlying cause?",
   [["Renovascular disease",
     "Correct. The cluster is characteristic: resistant pressure, an abdominal bruit, asymmetric "
-    "kidneys and recurrent flash pulmonary oedema. In an older patient with established vascular "
+    "kidneys and recurrent flash pulmonary edema. In an older patient with established vascular "
     "disease the mechanism is atherosclerotic stenosis, often bilateral and progressive."],
    ["Primary aldosteronism",
-    "Aldosteronism also presents with resistant hypertension, but with unexplained hypokalaemia "
+    "Aldosteronism also presents with resistant hypertension, but with unexplained hypokalemia "
     "rather than asymmetric kidneys and an abdominal bruit."],
    ["Chronic kidney disease from diabetes",
     "Diabetic kidney disease reduces both kidneys' function together rather than producing a 2 cm "
     "size discrepancy with a bruit."],
-   ["Obstructive sleep apnoea",
-    "Sleep apnoea contributes to resistant hypertension, but through nocturnal sympathetic "
+   ["Obstructive sleep apnea",
+    "Sleep apnea contributes to resistant hypertension, but through nocturnal sympathetic "
     "activation, without bruits or asymmetric kidneys."]], C(15)),
 
 Q("Renovascular disease", IO,
   "A 71-year-old woman with resistant hypertension is started on lisinopril. Her creatinine rises "
   "markedly within a week. What does this suggest?",
   [["Bilateral renal artery stenosis",
-    "Correct. Where perfusion depends on angiotensin-mediated efferent arteriolar tone, blocking it drops the filtration pressure sharply. This is one of the recognised clues to renovascular disease, and it is why the agent is contraindicated in bilateral stenosis. A haemodynamically significant unilateral stenosis does the same."],
+    "Correct. Where perfusion depends on angiotensin-mediated efferent arteriolar tone, blocking it drops the filtration pressure sharply. This is one of the recognized clues to renovascular disease, and it is why the agent is contraindicated in bilateral stenosis. A hemodynamically significant unilateral stenosis does the same."],
    ["Expected drug effect requiring no change in approach",
     "A small early creatinine rise can be acceptable, but a MARKED rise specifically points toward "
     "renovascular disease rather than being dismissed."],
@@ -114,13 +114,13 @@ Q("Renovascular disease", IO,
     "renin-angiotensin blockade points to renal artery stenosis."]], C(14)),
 
 Q("Renovascular disease", IO,
-  "A 66-year-old with confirmed renal artery stenosis has recurrent flash pulmonary oedema and "
+  "A 66-year-old with confirmed renal artery stenosis has recurrent flash pulmonary edema and "
   "progressive renal decline despite optimal medical therapy. What is the appropriate step?",
-  [["Early referral for revascularisation assessment",
-    "Correct. Recurrent flash pulmonary oedema, progressive renal decline despite optimal therapy, "
+  [["Early referral for revascularization assessment",
+    "Correct. Recurrent flash pulmonary edema, progressive renal decline despite optimal therapy, "
     "and truly refractory control are the three features that trigger early referral, rather than "
     "the mere presence of narrowing on imaging."],
-   ["Continue medical therapy; revascularisation is never indicated",
+   ["Continue medical therapy; revascularization is never indicated",
     "Those three specific features are exactly the situations in which referral is indicated."],
    ["Refer any patient in whom screening finds renal artery narrowing",
     "Narrowing found on screening does not by itself warrant intervention; the clinical features "
@@ -133,12 +133,12 @@ Q("Primary aldosteronism", IO,
   "A 47-year-old man has blood pressure of 162/98 on three agents. His potassium is 3.1 mmol/L "
   "without diuretic use. Which screening test is appropriate?",
   [["A morning aldosterone to renin ratio",
-    "Correct. Resistant hypertension with unexplained hypokalaemia is a classic trigger to screen, "
+    "Correct. Resistant hypertension with unexplained hypokalemia is a classic trigger to screen, "
     "and the ratio is positive above roughly 20:1 provided the aldosterone concentration itself is "
     "adequate."],
    ["Plasma free metanephrines",
     "Metanephrines screen for pheochromocytoma, suggested by episodic headache, sweating and "
-    "palpitations rather than by hypokalaemia."],
+    "palpitations rather than by hypokalemia."],
    ["A low-dose dexamethasone suppression test",
     "That screens for Cushing syndrome, suggested by proximal muscle weakness, easy bruising, thin "
     "skin and broad purple striae."],
@@ -158,7 +158,7 @@ Q("Primary aldosteronism", IO,
    ["Glucocorticoid excess promoting sodium retention",
     "That is Cushing syndrome, which carries proximal weakness, bruising, thin skin and purple "
     "striae."],
-   ["Catecholamine excess from an adrenal medullary tumour",
+   ["Catecholamine excess from an adrenal medullary tumor",
     "That is pheochromocytoma, which produces the paroxysmal five Ps rather than sustained "
     "aldosterone-driven sodium retention."]], C(18)),
 
@@ -168,10 +168,10 @@ Q("Pheochromocytoma", IO,
     "Correct. The five Ps are pressure, perspiration, palpitations, pallor and tremor, and the "
     "paroxysmal pattern with well intervals is what distinguishes it from sustained hypertension."],
    ["Primary aldosteronism",
-    "Aldosteronism raises pressure steadily with hypokalaemia rather than producing discrete "
+    "Aldosteronism raises pressure steadily with hypokalemia rather than producing discrete "
     "symptomatic paroxysms."],
-   ["Obstructive sleep apnoea",
-    "Sleep apnoea drives sustained sympathetic activation through nocturnal hypoxaemia, presenting "
+   ["Obstructive sleep apnea",
+    "Sleep apnea drives sustained sympathetic activation through nocturnal hypoxemia, presenting "
     "with snoring and daytime sleepiness rather than daytime paroxysms."],
    ["Hyperthyroidism",
     "Thyroid excess raises cardiac output with predominantly systolic elevation and persistent "
@@ -189,7 +189,7 @@ Q("Pheochromocytoma", IO,
     "vasoconstriction unopposed."],
    ["Either order, provided both are established before surgery",
     "The sequence itself matters, which is why alpha blockade is specified first and beta blockade only afterwards."],
-   ["Neither, provided the tumour is resected promptly",
+   ["Neither, provided the tumor is resected promptly",
     "Blockade is required before resection to prevent catecholamine surge during manipulation."]],
   C(32)),
 
@@ -202,32 +202,32 @@ Q("Cushing syndrome", IO,
     "Pheochromocytoma produces episodic headache, sweating, palpitations and pallor rather than the "
     "skin and muscle changes described."],
    ["Primary aldosteronism",
-    "Aldosteronism presents with resistant hypertension and unexplained hypokalaemia rather than "
+    "Aldosteronism presents with resistant hypertension and unexplained hypokalemia rather than "
     "striae and proximal weakness."],
-   ["Obstructive sleep apnoea",
-    "Sleep apnoea is suggested by loud snoring, witnessed apnoeas and daytime sleepiness."]], C(28)),
+   ["Obstructive sleep apnea",
+    "Sleep apnea is suggested by loud snoring, witnessed apneas and daytime sleepiness."]], C(28)),
 
-Q("Obstructive sleep apnoea", IO,
+Q("Obstructive sleep apnea", IO,
   "A 55-year-old man with obesity has blood pressure of 158/96 on three agents. His partner reports "
   "loud snoring and witnessed pauses in breathing, and he is sleepy during the day. What confirms "
   "the suspected cause?",
-  [["Polysomnography or validated home sleep apnoea testing",
+  [["Polysomnography or validated home sleep apnea testing",
     "Correct. The history raises the suspicion and the sleep study establishes it. Undiagnosed sleep "
-    "apnoea is one of the causes to exclude before labelling hypertension as resistant."],
+    "apnea is one of the causes to exclude before labeling hypertension as resistant."],
    ["The STOP-BANG questionnaire alone",
     "A questionnaire identifies who should be tested rather than confirming the diagnosis."],
    ["Overnight ambulatory blood pressure monitoring",
-    "Ambulatory monitoring characterises the pressure pattern but does not establish apnoea."],
+    "Ambulatory monitoring characterizes the pressure pattern but does not establish apnea."],
    ["A morning aldosterone to renin ratio",
-    "That screens for primary aldosteronism, which is suggested by resistant pressure with unexplained hypokalaemia."]], C(23)),
+    "That screens for primary aldosteronism, which is suggested by resistant pressure with unexplained hypokalemia."]], C(23)),
 
-Q("Obstructive sleep apnoea", IO,
-  "By what mechanism does obstructive sleep apnoea raise blood pressure?",
-  [["Intermittent hypoxaemia drives sympathetic activation",
-    "Correct. Recurrent airway obstruction produces repeated hypoxaemia and arousal, and the "
+Q("Obstructive sleep apnea", IO,
+  "By what mechanism does obstructive sleep apnea raise blood pressure?",
+  [["Intermittent hypoxemia drives sympathetic activation",
+    "Correct. Recurrent airway obstruction produces repeated hypoxemia and arousal, and the "
     "resulting sympathetic drive persists into waking hours rather than resolving with the night."],
    ["Impaired sodium excretion expands extracellular volume",
-    "Impaired sodium excretion is the mechanism in chronic kidney disease rather than in obstructive sleep apnoea."],
+    "Impaired sodium excretion is the mechanism in chronic kidney disease rather than in obstructive sleep apnea."],
    ["Autonomous aldosterone secretion",
     "Autonomous aldosterone secretion is primary aldosteronism, a separate secondary cause with its own screening test."],
    ["Mechanical compression of the renal arteries",
@@ -245,7 +245,7 @@ Q("Chronic kidney disease", IO,
    ["Attribute it all to diabetes and stop antihypertensives",
     "Hypertension injures renal vessels, glomeruli and interstitium, and withdrawing therapy would "
     "accelerate the decline."],
-   ["Conclude the albuminuria is a laboratory artefact",
+   ["Conclude the albuminuria is a laboratory artifact",
     "Rising albuminuria and falling filtration are the earliest measurable markers of renal damage "
     "and are tracked as trends rather than dismissed."]], C(28)),
 
@@ -300,11 +300,11 @@ Q("Thyroid disease", IO,
    ["Hyperthyroidism raising cardiac output",
     "That produces a predominantly SYSTOLIC elevation with tachycardia, and her symptoms point the "
     "other way."],
-   ["Catecholamine excess from an adrenal tumour",
+   ["Catecholamine excess from an adrenal tumor",
     "Pheochromocytoma causes paroxysmal symptoms rather than the sustained hypothyroid picture "
     "described."],
    ["Autonomous aldosterone secretion",
-    "Aldosteronism produces resistant hypertension with hypokalaemia rather than cold intolerance "
+    "Aldosteronism produces resistant hypertension with hypokalemia rather than cold intolerance "
     "and constipation."]], C(27)),
 
 Q("Secondary hypertension", IO,
@@ -318,13 +318,13 @@ Q("Secondary hypertension", IO,
    ["Blood pressure that responds well to a single first-line agent",
     "A good response to one agent is reassuring rather than a trigger for further investigation."],
    ["Elevated readings confined to the clinic setting",
-    "That describes white coat hypertension, which is characterised by out-of-office monitoring "
+    "That describes white coat hypertension, which is characterized by out-of-office monitoring "
     "rather than by a secondary workup."]], C(8)),
 
 Q("White coat hypertension", IO,
   "A 46-year-old woman consistently reads 150/92 in clinic but her seven-day home average is 118/74 with a validated upper-arm device and correct technique. Which pattern does this represent?",
   [["White coat hypertension",
-    "Correct: raised office readings with normal out-of-office readings. Recognising it avoids "
+    "Correct: raised office readings with normal out-of-office readings. Recognizing it avoids "
     "treating a patient whose true pressure is normal."],
    ["Masked hypertension",
     "Masked hypertension is the reverse pattern, with normal office readings and raised out-of-office "
@@ -383,34 +383,34 @@ Q("Baseline evaluation", IO,
 Q("Electrocardiography", IO,
   "A 60-year-old hypertensive man has an electrocardiogram that does not meet voltage criteria for left ventricular hypertrophy, but he is breathless on exertion and has a significant murmur. What is the most appropriate next step?",
   [["Proceed to echocardiography",
-    "Correct. The voltage criteria are specific but NOT sensitive, so false negatives are common. Unexplained dyspnoea and a significant murmur are both indications for echocardiography in their own right. A normal tracing does not exclude hypertrophy."],
+    "Correct. The voltage criteria are specific but NOT sensitive, so false negatives are common. Unexplained dyspnea and a significant murmur are both indications for echocardiography in their own right. A normal tracing does not exclude hypertrophy."],
    ["Conclude that hypertensive heart disease is excluded",
     "A normal electrocardiogram specifically does not exclude hypertensive heart disease, which is "
     "the practical consequence of poor sensitivity."],
    ["Repeat the electrocardiogram in six months",
     "Repeating an insensitive test does not answer the question that echocardiography would."],
    ["Order a chest radiograph to measure the cardiac size",
-    "Radiography is appropriate when pulmonary oedema or cardiomegaly is suspected, but it does not "
+    "Radiography is appropriate when pulmonary edema or cardiomegaly is suspected, but it does not "
     "assess ventricular mass, geometry or function."]], C(43)),
 
 Q("Fundoscopy", IO,
-  "A 49-year-old newly diagnosed hypertensive patient has fundoscopy showing generalised arteriolar "
-  "narrowing and arteriovenous nicking, with no haemorrhages or exudates. What does this tell you?",
+  "A 49-year-old newly diagnosed hypertensive patient has fundoscopy showing generalized arteriolar "
+  "narrowing and arteriovenous nicking, with no hemorrhages or exudates. What does this tell you?",
   [["They reflect current and previous pressure",
-    "Correct. Generalised narrowing and nicking record the accumulated burden, whereas focal "
-    "narrowing, haemorrhages and exudates relate to CURRENT pressure only."],
+    "Correct. Generalized narrowing and nicking record the accumulated burden, whereas focal "
+    "narrowing, hemorrhages and exudates relate to CURRENT pressure only."],
    ["These changes reflect current blood pressure only",
-    "Focal narrowing, haemorrhages and exudates are the findings tied to current pressure; these two "
+    "Focal narrowing, hemorrhages and exudates are the findings tied to current pressure; these two "
     "relate to current and previous."],
    ["These findings indicate a hypertensive emergency",
-    "Optic disc oedema marks acute hypertensive injury; chronic arteriolar changes do not."],
+    "Optic disc edema marks acute hypertensive injury; chronic arteriolar changes do not."],
    ["These findings carry no prognostic weight",
     "Hypertensive retinopathy predicts long-term stroke risk independently of the blood pressure "
     "level."]], C(31)),
 
 Q("Fundoscopy", IO,
   "Why is fundoscopy performed in every newly diagnosed hypertensive patient?",
-  [["It allows direct visualisation of the microvasculature",
+  [["It allows direct visualization of the microvasculature",
     "Correct, and the findings carry prognostic weight beyond the reading itself: retinopathy "
     "predicts long-term stroke risk, retinal arterial narrowing predicts future hypertension, and "
     "control can produce regression."],
@@ -440,25 +440,25 @@ Q("Definitions", IO,
 Q("Hypertensive emergency", IO,
   "A 62-year-old man arrives with blood pressure 232/128, confusion and blurred vision. Over the "
   "first hour, how far should his mean arterial pressure be reduced?",
-  [["By no more than about twenty to twenty-five per cent",
-    "Correct, targeting around 160/100 to 110 over two to six hours and gradual normalisation over a "
+  [["By no more than about twenty to twenty-five percent",
+    "Correct, targeting around 160/100 to 110 over two to six hours and gradual normalization over a "
     "day or two. Autoregulation has adapted to the higher pressure, so dropping it to a chronic goal "
-    "acutely can cause ischaemic stroke, myocardial injury or renal failure."],
+    "acutely can cause ischemic stroke, myocardial injury or renal failure."],
    ["To below 130/80 within the first hour",
-    "Reducing to the chronic goal within an hour risks precisely the ischaemic injury the controlled "
+    "Reducing to the chronic goal within an hour risks precisely the ischemic injury the controlled "
     "approach exists to avoid."],
    ["By at least half, to remove the immediate danger",
     "Overly rapid reduction is specifically harmful; the first-hour limit is about a fifth to a "
     "quarter of the mean arterial pressure."],
    ["No reduction until imaging is complete",
-    "Stabilisation and controlled reduction begin promptly alongside the focused assessment."]],
+    "Stabilization and controlled reduction begin promptly alongside the focused assessment."]],
   C(69)),
 
 Q("Acute stroke", IO,
   "A 74-year-old woman presents with acute right hemiparesis and aphasia of two hours' duration. Her blood pressure is 196/104. How should her blood pressure be managed?",
   [["Follow the acute stroke protocol, not chronic targets",
     "Correct. Acute stroke is specifically excepted from the general emergency reduction approach, "
-    "because driving the pressure to a chronic target can extend the ischaemic injury."],
+    "because driving the pressure to a chronic target can extend the ischemic injury."],
    ["Reduce the pressure to below 130/80 immediately",
     "Applying a chronic prevention target acutely is exactly what the caution warns against."],
    ["Reduce the mean arterial pressure by a quarter in an hour",

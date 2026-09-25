@@ -13,7 +13,7 @@ QUESTIONS = [
 
 Q("Thyroglossal duct cyst", IO, "What is the standard operation for a thyroglossal duct cyst?",
   [["The Sistrunk operation",
-    "Correct. The cyst is excised along with a cuff of tissue INCLUDING the centre of the hyoid "
+    "Correct. The cyst is excised along with a cuff of tissue INCLUDING the center of the hyoid "
     "bone, because the tract runs through the hyoid on its way to the tongue base. Leaving the "
     "central hyoid behind leaves tract with it, which is why simple cyst excision recurs. Care is "
     "taken not to injure the hypoglossal nerves."],
@@ -31,7 +31,7 @@ Q("Thyroglossal duct cyst", IO,
   "Why does every excised thyroglossal duct cyst go for histopathology?",
   [["To rule out thyroid carcinoma",
     "Correct. The tract follows the thyroid's embryological descent, so it can contain ectopic "
-    "thyroid tissue, and that tissue can harbour carcinoma. Because the cyst is otherwise a benign "
+    "thyroid tissue, and that tissue can harbor carcinoma. Because the cyst is otherwise a benign "
     "congenital lesion, the malignancy would go undetected unless every specimen is examined."],
    ["To confirm the diagnosis, which is otherwise impossible",
     "The diagnosis is usually clear clinically from the midline position and movement with tongue "
@@ -40,13 +40,13 @@ Q("Thyroglossal duct cyst", IO,
     "Organisms are identified by culture rather than histology, and the specimen is usually removed "
     "once infection has settled rather than during it."],
    ["To determine whether the hyoid was completely removed",
-    "Completeness of the hyoid resection is a surgical judgement made in theatre. Histology of the "
+    "Completeness of the hyoid resection is a surgical judgment made in theater. Histology of the "
     "cyst does not report on the bone margin."]], C(23)),
 
 Q("Laryngocele", IO, "What is a laryngocele?",
   [["An abnormal dilation or herniation of the laryngeal saccule",
     "Correct. The saccule is a small outpouching of the laryngeal ventricle, and sustained raised "
-    "intraluminal pressure can dilate or herniate it. Symptoms are cough, hoarseness, dyspnoea, "
+    "intraluminal pressure can dilate or herniate it. Symptoms are cough, hoarseness, dyspnea, "
     "dysphagia or a foreign body sensation, and secondary infection of one is called a "
     "laryngopyocele."],
    ["A keratin-filled sac behind the tympanic membrane",
@@ -92,7 +92,7 @@ Q("Plunging ranula", IO, "From which gland does a ranula arise?",
     "small mucoceles, but the specific floor-of-mouth lesion that plunges is sublingual in origin."]],
   C(25)),
 
-Q("Lymphangioma", IO, "Which physical finding characterises a lymphangioma?",
+Q("Lymphangioma", IO, "Which physical finding characterizes a lymphangioma?",
   [["Positive transillumination",
     "Correct. A lymphangioma is a congenital malformation in which lymph spaces fail to connect to "
     "the rest of the lymphatic system, so it fills with clear lymph. Clear fluid transmits light, "
@@ -105,13 +105,13 @@ Q("Lymphangioma", IO, "Which physical finding characterises a lymphangioma?",
     "That is pathognomonic for a thyroglossal duct cyst, whose tract tethers it to the hyoid bone. "
     "A lymphangioma has no such attachment."],
    ["Enlargement on crying or straining",
-    "Enlargement with raised venous pressure is a haemangioma feature, reflecting engorgement of "
+    "Enlargement with raised venous pressure is a hemangioma feature, reflecting engorgement of "
     "blood-filled channels rather than lymph-filled ones."]], C(26)),
 
-Q("Haemangioma", IO, "What is the natural history of a head and neck haemangioma?",
+Q("Haemangioma", IO, "What is the natural history of a head and neck hemangioma?",
   [["Rapid growth in the first year, then involution from 18 to 24 months",
-    "Correct. Haemangiomas appear in the first few months of life, grow rapidly through the first "
-    "year, and then begin to involute at 18 to 24 months. About 90 per cent resolve without therapy, "
+    "Correct. Hemangiomas appear in the first few months of life, grow rapidly through the first "
+    "year, and then begin to involute at 18 to 24 months. About 90 percent resolve without therapy, "
     "which is why observation is the default and why parents need the growth-then-shrink curve "
     "explained in advance."],
    ["Steady growth throughout childhood with no involution",
@@ -119,12 +119,12 @@ Q("Haemangioma", IO, "What is the natural history of a head and neck haemangioma
     "feature of these lesions is precisely that they regress."],
    ["Present at birth at full size, then static",
     "A mass at full size from birth that does not change is more characteristic of a teratoma or a "
-    "lymphangioma. Haemangiomas typically appear after birth and then proliferate."],
+    "lymphangioma. Hemangiomas typically appear after birth and then proliferate."],
    ["Spontaneous resolution within the first month",
     "Resolution takes years rather than weeks, and the proliferative phase comes first. Expecting "
     "clearance in a month would lead to premature alarm when it enlarges instead."]], C(27)),
 
-Q("Haemangioma", IO, "What is first-line drug treatment when a haemangioma requires intervention?",
+Q("Haemangioma", IO, "What is first-line drug treatment when a hemangioma requires intervention?",
   [["Propranolol",
     "Correct. Intervention is reserved for airway compromise, skin ulceration, dysphagia, "
     "thrombocytopenia or cardiac failure, since most lesions resolve untreated. When treatment is "
@@ -135,7 +135,7 @@ Q("Haemangioma", IO, "What is first-line drug treatment when a haemangioma requi
     "systemic effects in an infant make them a poorer first choice."],
    ["Sclerotherapy",
     "Sclerotherapy is used for lymphangiomas, where the target is a network of lymphatic spaces. It "
-    "is not the first approach to a proliferating haemangioma."],
+    "is not the first approach to a proliferating hemangioma."],
    ["Surgical excision",
     "Surgery is reserved for complications or for residual deformity after involution has finished. "
     "Operating during the proliferative phase on a highly vascular lesion is difficult and usually "
@@ -146,7 +146,7 @@ Q("Teratoma", IO, "What imaging feature suggests a teratoma?",
     "Correct. Teratomas originate from pluripotent cells and therefore contain a mixture of tissue "
     "types, including elements that calcify. Computed tomography and magnetic resonance imaging show "
     "those calcifications, and they help distinguish a firm neonatal neck mass from the soft "
-    "lymphangioma or the vascular haemangioma."],
+    "lymphangioma or the vascular hemangioma."],
    ["Transillumination on ultrasound",
     "Transillumination is a bedside finding with a light source, not an imaging feature, and it "
     "belongs to lymphangioma rather than teratoma."],
@@ -157,11 +157,11 @@ Q("Teratoma", IO, "What imaging feature suggests a teratoma?",
     "A teratoma is a solid mass with varied tissue, so it has a substantial soft tissue component. "
     "Its distinguishing feature is the calcification WITHIN that tissue."]], C(28)),
 
-Q("Sternocleidomastoid tumour of infancy", IO,
-  "What is the natural history of a sternocleidomastoid tumour of infancy?",
+Q("Sternocleidomastoid tumor of infancy", IO,
+  "What is the natural history of a sternocleidomastoid tumor of infancy?",
   [["Enlarges for 2 to 3 months, then regresses over 4 to 8",
     "Correct. The mass grows for a couple of months and then shrinks over the following four to "
-    "eight, with about 80 per cent resolving spontaneously. Physical therapy is given during that "
+    "eight, with about 80 percent resolving spontaneously. Physical therapy is given during that "
     "time to prevent a fixed restrictive torticollis, and surgery is reserved for the minority that "
     "persist."],
    ["Grows continuously and always requires excision",
@@ -172,14 +172,14 @@ Q("Sternocleidomastoid tumour of infancy", IO,
     "which is why anticipatory guidance matters."],
    ["Transforms into a rhabdomyosarcoma if untreated",
     "There is no malignant transformation. Rhabdomyosarcoma is a separate primary malignancy that "
-    "appears on the list of malignant neck tumours."]], C(29)),
+    "appears on the list of malignant neck tumors."]], C(29)),
 
 Q("Inflammatory neck masses", IO,
   "What is the commonest cause of cervical lymphadenopathy in children?",
   [["Reactive viral lymphadenopathy",
     "Correct. Reactive nodes accompany an upper respiratory infection, with adenovirus, rhinovirus "
     "and enterovirus the usual pathogens, and they regress within one to two weeks. Management is "
-    "observation, with investigation reserved for nodes over 1 centimetre that persist beyond four "
+    "observation, with investigation reserved for nodes over 1 centimeter that persist beyond four "
     "to six weeks or continue to enlarge."],
    ["Tuberculous adenitis",
     "Cervical tuberculosis, or scrofula, affects adults more than children and produces diffuse "
@@ -211,7 +211,7 @@ Q("Inflammatory neck masses", IO,
 Q("Inflammatory neck masses", IO,
   "What is the commonest cause of cervical adenopathy in patients with HIV?",
   [["Idiopathic follicular hyperplasia",
-    "Correct. Cervical adenopathy is present in 12 to 45 per cent of patients with HIV, and "
+    "Correct. Cervical adenopathy is present in 12 to 45 percent of patients with HIV, and "
     "follicular hyperplasia accounts for most of it. It is a diagnosis of exclusion, though: "
     "tuberculosis, Pneumocystis, lymphoma and Kaposi sarcoma all have to be ruled out first, and "
     "treatment is treating the HIV."],
@@ -227,17 +227,17 @@ Q("Inflammatory neck masses", IO,
 
 Q("Bacterial lymphadenopathy", IO,
   "Which organisms most commonly cause suppurative cervical lymphadenopathy?",
-  [["Staphylococcus aureus and group A beta-haemolytic Streptococcus",
+  [["Staphylococcus aureus and group A beta-hemolytic Streptococcus",
     "Correct. These two account for most suppurative adenitis, producing masses in the submandibular "
     "or jugulodigastric regions with sore throat, skin lesions and upper respiratory symptoms. "
     "Treatment is empirical cover against anaerobes and gram-positive organisms, with aspiration or "
     "drainage if antibiotics fail."],
    ["Bartonella henselae and Toxoplasma gondii",
     "Those are the granulomatous and parasitic causes, requiring cat contact and undercooked meat or "
-    "cat faeces respectively. They cause a more indolent adenopathy than a suppurative one."],
+    "cat feces respectively. They cause a more indolent adenopathy than a suppurative one."],
    ["Francisella tularensis and Brucella",
     "Tularemia and brucellosis are the exposure-driven infections from rabbits and ticks, and from "
-    "unpasteurised milk. Both are uncommon and neither is a routine suppurative organism."],
+    "unpasteurized milk. Both are uncommon and neither is a routine suppurative organism."],
    ["Candida and Aspergillus",
     "Those are fungal pathogens affecting immunocompromised patients, requiring fungal cultures and "
     "serology and treated with amphotericin B."]], C(33)),
@@ -246,7 +246,7 @@ Q("Granulomatous disease", IO,
   "Which infection produces a unilateral neck mass with brawny reddish-brown overlying skin in a "
   "child?",
   [["Atypical mycobacterial infection",
-    "Correct. Non-tuberculous mycobacterial adenitis is a paediatric disease presenting as a "
+    "Correct. Non-tuberculous mycobacterial adenitis is a pediatric disease presenting as a "
     "unilateral mass in the anterior triangle or parotid region, with characteristically brawny, "
     "reddish-brown skin, induration and pain, in a child who is otherwise well. Diagnosis is by "
     "acid-fast stain, culture and skin testing, and treatment is usually surgical excision."],
@@ -259,7 +259,7 @@ Q("Granulomatous disease", IO,
     "filamentous organisms on biopsy, treated with penicillin. The skin is not brawny."],
    ["Cat scratch disease",
     "Cat scratch disease affects preauricular and submandibular nodes after cat contact, with fever "
-    "and malaise, and is diagnosed serologically. It does not discolour the overlying skin in this "
+    "and malaise, and is diagnosed serologically. It does not discolor the overlying skin in this "
     "way."]], C(34)),
 
 Q("Granulomatous disease", IO,
@@ -282,8 +282,8 @@ Q("Granulomatous disease", IO,
 Q("Neck neoplasm", IO,
   "What is the commonest metastatic lesion to the neck?",
   [["Squamous cell carcinoma",
-    "Correct. Malignant neck tumours are usually metastatic squamous cell carcinoma from the skin or "
-    "the upper aerodigestive tract, rather than primary neck tumours. That is why finding a "
+    "Correct. Malignant neck tumors are usually metastatic squamous cell carcinoma from the skin or "
+    "the upper aerodigestive tract, rather than primary neck tumors. That is why finding a "
     "squamous deposit in a node triggers a systematic examination of every mucosal surface, the "
     "thyroid, the salivary glands and the skin."],
    ["Adenocarcinoma",
@@ -328,6 +328,6 @@ Q("Thyroid masses", IO,
     "the scan may show is unnecessary, and to lifelong hormone replacement."],
    ["A course of antithyroid medication for six months",
     "Treating the hyperthyroidism addresses the hormonal problem while leaving the structural "
-    "question unanswered, and six months is a long time to leave a nodule uncharacterised."]],
+    "question unanswered, and six months is a long time to leave a nodule uncharacterized."]],
   C(41)),
 ]

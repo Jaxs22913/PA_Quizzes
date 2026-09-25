@@ -95,7 +95,7 @@ POOL_D = [
    q="An immunocompromised patient has systemic aspergillosis that has not responded to itraconazole or amphotericin B. Which class is positioned for this?",
    opts=[
      ["Echinocandins",
-      "Correct — their listed role is largely salvage, in refractory aspergillosis, oesophageal candidiasis, and febrile neutropenia not responding to antibiotics."],
+      "Correct — their listed role is largely salvage, in refractory aspergillosis, esophageal candidiasis, and febrile neutropenia not responding to antibiotics."],
      ["Polyenes",
       "Amphotericin B is a polyene, and the question specifies it has already failed."],
      ["Allylamines",
@@ -140,14 +140,14 @@ POOL_D = [
      ["Natamycin",
       "Natamycin is named among the polyenes but the oral candidiasis agent specified is nystatin."],
      ["Caspofungin",
-      "Caspofungin is an echinocandin used for oesophageal candidiasis intravenously."]],
+      "Caspofungin is an echinocandin used for esophageal candidiasis intravenously."]],
    c=0, cite=c(99)),
 
  dict(topic="Griseofulvin", io=IO9E,
    q="From which organism is griseofulvin derived?",
    opts=[
      ["Penicillium griseofulvum",
-      "Correct — like several antibacterials, it is a mould product, isolated from a Penicillium species rather than synthesised."],
+      "Correct — like several antibacterials, it is a mold product, isolated from a Penicillium species rather than synthesized."],
      ["Streptomycetaceae in soil",
       "That is amphotericin B's source."],
      ["Bacillus polymyxa",

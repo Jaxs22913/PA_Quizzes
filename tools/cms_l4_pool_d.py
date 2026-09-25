@@ -84,7 +84,7 @@ POOL_D = [
    opts=[
      ["Leukocytosis with raised erythrocyte sedimentation rate and C-reactive protein — common but not diagnostic",
       "Correct. The diagnosis remains clinical in a classic presentation."],
-     ["Thrombocytopenia with mild hyponatraemia and transaminitis — and diagnostic in almost every case",
+     ["Thrombocytopenia with mild hyponatremia and transaminitis — and diagnostic in almost every case",
       "That is the Rocky Mountain spotted fever pattern."],
      ["Eosinophilia with a raised immunoglobulin E — diagnostic when combined with the rash",
       "That pattern is not described for erysipelas."],
@@ -216,20 +216,20 @@ POOL_D = [
       "Correct — it is a surgical emergency with high mortality."],
      ["Broad-spectrum antibiotics must not be started before cultures return",
       "Antibiotics are given broadly and early."],
-     ["The patient must not be admitted to a burn or trauma centre",
+     ["The patient must not be admitted to a burn or trauma center",
       "That is exactly where they should be admitted."],
      ["A team approach must not delay the primary surgeon's decision",
       "Consultations are described as needed rather than as a delay."]],
    c=0, cite=c(128)),
 
  dict(topic="Cellulitis", io=IOB, slot="avoid",
-   q="Why will antibiotics not work on the devitalised area in a cellulitic limb?",
+   q="Why will antibiotics not work on the devitalized area in a cellulitic limb?",
    opts=[
      ["It is not perfused, so the drug never reaches the site",
       "Correct — tense, cyanotic, necrotic, bronzed or blanched tissue needs debridement."],
-     ["The organism in devitalised tissue is always methicillin resistant",
+     ["The organism in devitalized tissue is always methicillin resistant",
       "The problem is delivery rather than resistance."],
-     ["Devitalised tissue destroys antibiotic molecules on contact",
+     ["Devitalized tissue destroys antibiotic molecules on contact",
       "That is not the described mechanism."],
      ["Oral antibiotics never reach the subcutaneous tissue at all",
       "They do, where the tissue is perfused."]],
@@ -264,7 +264,7 @@ POOL_D = [
  dict(topic="Necrotizing fasciitis", io=IOA, slot="referral",
    q="Where should a patient with necrotizing fasciitis be admitted?",
    opts=[
-     ["A surgical intensive care unit, ideally a burn or trauma centre",
+     ["A surgical intensive care unit, ideally a burn or trauma center",
       "Correct — a team approach with consultations is required."],
      ["A general medical ward with hourly observations",
       "That level of care is inadequate for this condition."],
@@ -279,7 +279,7 @@ POOL_D = [
    opts=[
      ["Surgical incision and drainage",
       "Correct — the aim is to eradicate infection and prevent recurrence."],
-     ["Wide excision of the affected area under general anaesthesia",
+     ["Wide excision of the affected area under general anesthesia",
       "That belongs to hidradenitis suppurativa."],
      ["Aspiration with a fine needle under ultrasound guidance",
       "That is not the described procedure."],
@@ -291,7 +291,7 @@ POOL_D = [
    q="Which complications of cellulitis are named, and in whom?",
    opts=[
      ["Gangrene and sepsis, particularly in the immunocompromised",
-      "Correct — septicaemia may occur, and lymphadenopathy and tachycardia mark severe cases."],
+      "Correct — septicemia may occur, and lymphadenopathy and tachycardia mark severe cases."],
      ["Post-streptococcal glomerulonephritis, particularly in young children",
       "That complication follows impetigo."],
      ["Endocarditis, particularly in patients with a prosthetic valve",
@@ -303,7 +303,7 @@ POOL_D = [
  dict(topic="Impetigo", io=IOA, slot="complication",
    q="How does acute post-streptococcal glomerulonephritis present after impetigo?",
    opts=[
-     ["Sudden oedema, haematuria with smoky or tea-coloured urine, proteinuria and hypertension",
+     ["Sudden edema, hematuria with smoky or tea-colored urine, proteinuria and hypertension",
       "Correct — especially in three to seven year olds."],
      ["Migratory arthritis, a new heart murmur and subcutaneous nodules over the elbows",
       "That describes acute rheumatic fever."],
@@ -322,7 +322,7 @@ POOL_D = [
       "Those follow streptococcal skin and throat infection."],
      ["Symblepharon, dry eye and progressive corneal scarring",
       "Those follow severe cutaneous drug reactions."],
-     ["Chronic lymphoedema with recurrent episodes of erysipelas",
+     ["Chronic lymphedema with recurrent episodes of erysipelas",
       "That is a consequence of recurrent erysipelas rather than this."]],
    c=0, cite=c(127)),
 
@@ -335,7 +335,7 @@ POOL_D = [
       "Tissue levels are reached within hours; the early worsening comes from inflammatory mediators released as organisms are killed."],
      ["The organism is resistant and the antibiotic needs changing at once",
       "A change is considered if fever persists beyond forty-eight hours."],
-     ["Devitalised tissue has begun to separate from the surrounding skin",
+     ["Devitalized tissue has begun to separate from the surrounding skin",
       "That is a separate pitfall requiring debridement."]],
    c=0, cite=c(112)),
 
@@ -349,7 +349,7 @@ POOL_D = [
      ["Over three to four months in most patients",
       "That is far longer than described."],
      ["Only after surgical debridement is performed",
-      "Debridement is needed only for devitalised tissue."]],
+      "Debridement is needed only for devitalized tissue."]],
    c=0, cite=c(112)),
 
  dict(topic="Impetigo", io=IOA, slot="prognosis",
@@ -359,7 +359,7 @@ POOL_D = [
       "Correct — which is why treatment shortens a long nuisance illness."],
      ["Progressive, with systemic spread within days in most cases",
       "The course is self-limiting."],
-     ["Chronic and lifelong once the organism has colonised the skin",
+     ["Chronic and lifelong once the organism has colonized the skin",
       "The condition resolves."],
      ["Resolving completely within forty-eight hours in every case",
       "That is far faster than described."]],
@@ -382,7 +382,7 @@ POOL_D = [
    q="Which patient education is given for erythrasma?",
    opts=[
      ["Keep the area clean and dry, avoid excessive heat or moisture, and maintain a healthy body weight",
-      "Correct — heat and humidity are the favourable conditions for the organism."],
+      "Correct — heat and humidity are the favorable conditions for the organism."],
      ["Avoid sharing towels, clothing, bath water, washcloths and razors",
       "That is the education for impetigo, which is contagious."],
      ["Stop smoking and avoid any constrictive clothing over the affected area at all times",
@@ -401,6 +401,6 @@ POOL_D = [
      ["Waxing of the beard area every two weeks under supervision",
       "That is not among the described alternatives."],
      ["Weekly application of a topical antibiotic instead of shaving",
-      "Topical antibiotics reduce colonisation rather than replace shaving."]],
+      "Topical antibiotics reduce colonization rather than replace shaving."]],
    c=0, cite=c(57)),
 ]

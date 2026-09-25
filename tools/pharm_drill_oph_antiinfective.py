@@ -13,7 +13,7 @@ them is drilled here:
     exceptions" (the exceptions he named ARE drilled)
   - which agent causes irritation or hypersensitivity -- "don't memorize which
     ones cause eye irritation or hypersensitivity. Any of these can do that."
-What IS drilled is what separates one agent from its neighbours.
+What IS drilled is what separates one agent from its neighbors.
 """
 ITEMS = [
 dict(q="Which ophthalmic antibiotic is soothing on an inflamed eye, so it may be used even when bacterial infection is not confirmed?",

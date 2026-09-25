@@ -24,7 +24,7 @@ SCOPE_BLOCK = """
   <table>
     <tr><th>She said</th><th>What it means for the exam</th></tr>
     <tr><td>&ldquo;I am going to expect you to know names from my class &mdash; I'm gonna be very clear which names &mdash; but I'm not expecting necessarily to know all the doses.&rdquo;</td>
-        <td>Learn the agents she names. Do not memorise dosing.</td></tr>
+        <td>Learn the agents she names. Do not memorize dosing.</td></tr>
     <tr><td>&ldquo;I would not make you guys memorize hundreds of brands of steroids.&rdquo;</td>
         <td>Only the seven agents on the potency table below are in scope.</td></tr>
     <tr><td>On the NAAT and polymerase chain reaction hierarchy: &ldquo;<mark class="prof-highlight">This is not going to be on your exam.</mark> This is just to help you for the future.&rdquo;</td>
@@ -34,7 +34,7 @@ SCOPE_BLOCK = """
     <tr><td>On the Tzanck smear and mineral oil preparation: &ldquo;I've never seen this used clinically, however <mark class="prof-highlight">you need to know it because it could be on your board.</mark>&rdquo;</td>
         <td>Both are in scope despite being clinically obsolete.</td></tr>
     <tr><td>&ldquo;Make sure when you go over the PowerPoints, <mark class="prof-highlight">read headers</mark> &mdash; that's really important, because I'm separating here.&rdquo;</td>
-        <td>The slide headers carry the organising structure of the material.</td></tr>
+        <td>The slide headers carry the organizing structure of the material.</td></tr>
     <tr><td>&ldquo;These are like how your PANCE-style questions will be, so I want to make sure you guys understand what the expectation is.&rdquo;</td>
         <td>The four Knowledge Check vignettes at the end of the deck are the format of her exam questions. She worked all four in class.</td></tr>
   </table>
@@ -71,7 +71,7 @@ STEROID_BLOCK = """
 """
 
 SKIN_TYPE_BLOCK = """
-  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; recognising these across skin types</span>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; recognizing these across skin types</span>
   <p>She spent real time on this and was direct about why. &ldquo;All the descriptions, all the
   textbooks, and <mark class="prof-highlight">what you're gonna be tested on, is gonna describe the
   rash on Caucasian skin</mark>. This is not a Dr Jaquith thing, this is a medicine thing, this is a
@@ -81,9 +81,9 @@ SKIN_TYPE_BLOCK = """
   <table>
     <tr><th>Condition</th><th>On lighter skin</th><th>On darker skin</th></tr>
     <tr><td>Atopic dermatitis</td><td>Angry, inflamed, clearly erythematous</td><td>Can appear almost <strong>silvery</strong>; erythema is far less obvious</td></tr>
-    <tr><td>Stasis dermatitis</td><td>Erythematous patches in the gaiter region</td><td>Erythema appears <strong>violaceous, grey or deep brown</strong>; palpate for warmth and oedema rather than relying on colour</td></tr>
-    <tr><td>Pityriasis rosea</td><td>Salmon-coloured lesions, resolving without mark</td><td><strong>Post-inflammatory hyperpigmentation</strong> that can persist for months</td></tr>
-    <tr><td>Lichen planus</td><td>Pink to violaceous flat-topped papules</td><td>Violaceous shades read as darker; the <em>flat-topped, shiny</em> quality and Wickham striae carry more weight than colour</td></tr>
+    <tr><td>Stasis dermatitis</td><td>Erythematous patches in the gaiter region</td><td>Erythema appears <strong>violaceous, gray or deep brown</strong>; palpate for warmth and edema rather than relying on color</td></tr>
+    <tr><td>Pityriasis rosea</td><td>Salmon-colored lesions, resolving without mark</td><td><strong>Post-inflammatory hyperpigmentation</strong> that can persist for months</td></tr>
+    <tr><td>Lichen planus</td><td>Pink to violaceous flat-topped papules</td><td>Violaceous shades read as darker; the <em>flat-topped, shiny</em> quality and Wickham striae carry more weight than color</td></tr>
   </table>
   <p>The practical consequence: on darker skin, stop using erythema as the primary signal and rely on
   <strong>palpation, distribution, lesion shape and secondary change</strong> instead. She also raised

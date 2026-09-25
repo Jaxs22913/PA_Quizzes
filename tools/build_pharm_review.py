@@ -82,7 +82,7 @@ def main():
               'timestamp. Nothing here is inferred from the slides &mdash; the slides do not say '
               'what is being asked, and a review session does.</span>')
     notes = """    <div class="note"><b>What this page is.</b> On the evening before the paper the class
-    put questions to Dr. Wood and he answered them. This is what he said, organised into the
+    put questions to Dr. Wood and he answered them. This is what he said, organized into the
     standing scope rules first and then the individual answers. It is a companion to
     <a href="pharm-exam-1-what-to-star.html">What Dr. Wood Told You to Star</a>, which is drawn
     from the three content lectures instead.</div>

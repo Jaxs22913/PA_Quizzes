@@ -104,7 +104,7 @@ BATCH = {
   "&ldquo;It runs in my family &mdash; my father and my brother both went deaf young.&rdquo; Or a "
   "newborn fails the hearing screen.",
   "Otoscopy is normal. Audiometry. <b>Draw a three-generation family tree.</b> Look for syndromic "
-  "features: <b>white forelock and different-coloured eyes (Waardenburg), goitre (Pendred), "
+  "features: <b>white forelock and different-colored eyes (Waardenburg), goiter (Pendred), "
   "retinitis pigmentosa (Usher), renal disease (Alport)</b>.",
   [("Congenital infection", "Cytomegalovirus or rubella &mdash; acquired, not inherited"),
    ("Presbycusis", "Late onset without a family pattern"),
@@ -118,7 +118,7 @@ BATCH = {
 "M&eacute;ni&egrave;re's disease": E(
   "&ldquo;It comes in attacks &mdash; the room spins for hours, my ear feels full and roars, and my "
   "hearing goes down and then comes back.&rdquo;",
-  "Otoscopy is normal. <b>Weber lateralises AWAY, Rinne positive</b>. <b>Dix-Hallpike, which should "
+  "Otoscopy is normal. <b>Weber lateralizes AWAY, Rinne positive</b>. <b>Dix-Hallpike, which should "
   "be negative</b> &mdash; that is how positional vertigo is excluded. Head impulse test, "
   "nystagmus, gait, cerebellar signs and cranial nerves.",
   [("Benign paroxysmal positional vertigo", "SECONDS, positional, no hearing loss or fullness"),
@@ -134,7 +134,7 @@ BATCH = {
 "Benign paroxysmal positional vertigo": E(
   "&ldquo;When I roll over in bed or look up, the room spins for about half a minute, then "
   "stops.&rdquo;",
-  "<b>Dix-Hallpike manoeuvre</b> &mdash; the diagnostic test. Look for <b>upbeating torsional "
+  "<b>Dix-Hallpike maneuver</b> &mdash; the diagnostic test. Look for <b>upbeating torsional "
   "nystagmus after a latency of a few seconds, lasting under a minute and fatiguing on "
   "repetition</b>. Supine roll test for the horizontal canal. Otoscopy and hearing are normal; "
   "check cerebellar signs.",
@@ -179,7 +179,7 @@ BATCH = {
 "Acoustic neuroma": E(
   "&ldquo;My hearing has slowly gone in one ear, it rings, and I feel unsteady &mdash; lately my "
   "face feels a bit numb.&rdquo;",
-  "Otoscopy is normal. <b>Weber lateralises AWAY, Rinne positive.</b> <b>Cranial nerves V and VII "
+  "Otoscopy is normal. <b>Weber lateralizes AWAY, Rinne positive.</b> <b>Cranial nerves V and VII "
   "&mdash; corneal reflex is an early loss.</b> Gait and cerebellar testing. Note that <b>facial "
   "weakness is a LATE sign</b>, so its absence proves nothing.",
   [("Presbycusis", "Bilateral and symmetric; asymmetry is what triggers imaging"),
@@ -197,14 +197,14 @@ BATCH = {
   "conversation from that side.",
   "Otoscopy is normal. <b>Watch for internal inconsistency</b>: responding to speech at levels the "
   "claimed threshold would not permit. <b>Weber and Rinne that do not fit the claimed loss</b> "
-  "&mdash; a total unilateral loss should lateralise away, and often does not. Stenger test.",
-  [("True sensorineural loss", "Tuning forks, audiometry and behaviour all agree"),
+  "&mdash; a total unilateral loss should lateralize away, and often does not. Stenger test.",
+  [("True sensorineural loss", "Tuning forks, audiometry and behavior all agree"),
    ("Conductive loss", "A visible cause with a matching air-bone gap"),
    ("Auditory processing disorder", "Consistent thresholds with difficulty only in noise")],
   "<b>Objective testing</b> &mdash; <b>otoacoustic emissions</b> &rarr; present, proving cochlear "
   "function; <b>auditory brainstem response</b> &rarr; normal thresholds. Both contradict the "
   "claimed loss. <b>Stenger test</b> &rarr; positive in a feigned unilateral loss.",
   "Absent emissions with an abnormal brainstem response mean the loss is REAL; consistent "
-  "behavioural results across sessions argue against it. Approach without accusation &mdash; there "
+  "behavioral results across sessions argue against it. Approach without accusation &mdash; there "
   "may be a genuine psychological cause."),
 }

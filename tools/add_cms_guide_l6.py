@@ -74,17 +74,17 @@ SECTION = """
   depends on which organism you are chasing:</p>
   <table>
     <tr><th>Organism</th><th>What you see</th><th>Where to take the sample from</th></tr>
-    <tr><td><b>Dermatophyte</b> (tinea)</td><td>Branching <b>hyphae</b></td><td>The <b>ACTIVE BORDER</b> of the lesion &mdash; not the cleared centre</td></tr>
+    <tr><td><b>Dermatophyte</b> (tinea)</td><td>Branching <b>hyphae</b></td><td>The <b>ACTIVE BORDER</b> of the lesion &mdash; not the cleared center</td></tr>
     <tr><td><b><i>Malassezia</i></b> (pityriasis versicolor)</td><td><b>Short hyphae with clusters of yeast &mdash; &ldquo;spaghetti and meatballs&rdquo;</b></td><td>Fine scale, revealed by scraping or stretching the lesion</td></tr>
     <tr><td><b><i>Candida</i></b></td><td><b>Budding yeast and pseudohyphae</b></td><td>The affected fold, including a satellite lesion</td></tr>
     <tr><td><b>Onychomycosis</b></td><td>Fungal elements in nail material</td><td>The <b>most PROXIMAL accessible</b> diseased nail bed or subungual debris, after trimming the onycholytic nail</td></tr>
   </table>
   <p><strong>Three sampling rules carry most of the exam value here.</strong> Take dermatophyte samples
-  from the <strong>advancing edge</strong>, because that is where the organism is and the centre is where
+  from the <strong>advancing edge</strong>, because that is where the organism is and the center is where
   it has already gone. Take nail samples <strong>proximally</strong>, not from the crumbling free edge.
   And in a suspected <strong>id reaction</strong>, sample <em>both</em> sites &mdash; the diagnosis is made
   by the <strong>pattern</strong>: positive at the primary infection, <strong>negative at the reaction</strong>.</p>
-  <p>Two adjuncts, each with a limitation worth memorising. The <strong>Wood lamp</strong> may rapidly
+  <p>Two adjuncts, each with a limitation worth memorizing. The <strong>Wood lamp</strong> may rapidly
   support <i>Microsporum</i> in tinea capitis, but <strong><i>Trichophyton tonsurans</i> &mdash; the
   commonest species in the United States &mdash; usually does not fluoresce</strong>, so a negative lamp
   excludes nothing. In pityriasis versicolor it may show <strong>yellow-gold</strong> fluorescence, but
@@ -137,7 +137,7 @@ SECTION = """
   <p><strong>Oral terbinafine is first-line</strong> for most dermatophyte nail disease: usually
   <strong>6 weeks for fingernails, 12 weeks for toenails</strong>. Itraconazole is the alternative;
   <strong>fluconazole is off label in the United States</strong>. Limited disease can use topical
-  efinaconazole, tavaborole or ciclopirox, at <strong>lower cure rates</strong>. Two counselling points
+  efinaconazole, tavaborole or ciclopirox, at <strong>lower cure rates</strong>. Two counseling points
   follow directly: <strong>improvement requires nail growth</strong>, so appearance lags well behind
   treatment, and <strong>coexisting tinea pedis must be treated</strong> or the nail simply gets
   reinfected.</p>
@@ -154,7 +154,7 @@ SECTION = """
   is to look for an <strong>asymptomatic fissure or maceration in the toe webs</strong> that the patient
   does not know about.</p>
   <p><strong>Tinea incognito</strong> is tinea whose appearance has been altered by inappropriate treatment,
-  <strong>usually topical steroids</strong>. The cycle is recognisable: the steroid settles it, stopping the
+  <strong>usually topical steroids</strong>. The cycle is recognizable: the steroid settles it, stopping the
   steroid flares it, and more steroid follows. Management is to <strong>stop the corticosteroid or
   calcineurin inhibitor</strong>, take potassium hydroxide and culture <strong>from an active edge</strong>,
   and <strong>warn that inflammation may rebound after withdrawal</strong> so the patient does not read the
@@ -179,11 +179,11 @@ SECTION = """
   it, and towards candidal intertrigo.</p>
   <p><strong>Pityriasis versicolor</strong> is an <strong>overgrowth of lipid-dependent <i>Malassezia</i>
   that normally lives on the skin</strong> &mdash; which is why it is <strong>NOT considered
-  contagious</strong>, a counselling point patients need. It favours heat, humidity, oily skin, sweating,
+  contagious</strong>, a counseling point patients need. It favors heat, humidity, oily skin, sweating,
   immunosuppression and corticosteroid exposure, and it recurs, especially in warm climates.</p>
   <p><strong>The pigment point.</strong> Lesions may be lighter, darker or pink.
   <strong>Hypopigmentation reflects altered melanocyte function and reduced tanning, and recovery can lag
-  months behind clearance of the yeast.</strong> So <strong>colour change alone does not prove treatment
+  months behind clearance of the yeast.</strong> So <strong>color change alone does not prove treatment
   failure</strong> &mdash; look for scale, or confirm with microscopy, before re-treating.</p>
   <p><strong>Treatment is topical first-line</strong> &mdash; ketoconazole, selenium sulfide, zinc
   pyrithione, ciclopirox or topical terbinafine; one common selenium sulfide approach is
@@ -206,7 +206,7 @@ SECTION = """
   <strong>standard, airborne AND contact</strong> precautions. Primary prevention is
   <strong>two-dose varicella vaccination</strong>.</p>
   <p><strong>Herpes zoster</strong> is <strong>reactivation</strong> of virus that stayed latent in
-  <strong>cranial-nerve or dorsal-root ganglia</strong>, travelling along a sensory nerve to the skin as
+  <strong>cranial-nerve or dorsal-root ganglia</strong>, traveling along a sensory nerve to the skin as
   cell-mediated immunity wanes. The eruption is confined to <strong>one or two adjacent dermatomes and
   STOPS ABRUPTLY AT THE MIDLINE</strong>. Distribution: <strong>thoracic 55%, cranial 20%, lumbar 15%,
   sacral 5%</strong>.</p>
@@ -248,7 +248,7 @@ SECTION = """
 @@FIG_VZV@@
   <h3 class="sub" id="vf-hsv">6.6 &middot; Objective b &mdash; Herpes simplex and herpetic whitlow</h3>
   <p>Start with the fact that undoes the usual assumption: <strong>either type can cause oral or genital
-  infection, so lesion location does NOT reliably determine type</strong>. What does differ is behaviour
+  infection, so lesion location does NOT reliably determine type</strong>. What does differ is behavior
   over time &mdash; <strong>HSV-1 genital infection generally recurs and sheds less often than HSV-2
   genital infection</strong>.</p>
   <p>Transmission occurs through contact with infected oral or genital secretions or lesions, and
@@ -276,7 +276,7 @@ SECTION = """
   <p><strong>Treat every first clinical episode</strong> with oral acyclovir, valacyclovir or famciclovir.
   For recurrent genital disease, choose between <strong>patient-initiated episodic</strong> and
   <strong>daily suppressive</strong> therapy. <strong>Topical antivirals provide minimal benefit.</strong></p>
-  <p>Counselling is where the honest wording matters: <strong>suppressive valacyclovir LOWERS HSV-2
+  <p>Counseling is where the honest wording matters: <strong>suppressive valacyclovir LOWERS HSV-2
   transmission, and condoms REDUCE but do not eliminate risk</strong> &mdash; neither abolishes it. Avoid
   sexual or direct lesion contact <strong>during the prodrome</strong> as well as while lesions are active.</p>
   <p><strong>Herpetic whitlow</strong> is HSV of the <strong>distal finger</strong>, often inoculated
@@ -289,7 +289,7 @@ SECTION = """
 @@FIG_HSV@@
   <h3 class="sub" id="vf-warts">6.7 &middot; Objective b &mdash; Molluscum contagiosum and warts</h3>
   <p><strong>Molluscum contagiosum</strong> is a benign <strong>poxvirus</strong> infection producing
-  <strong>smooth, dome-shaped, centrally umbilicated papules</strong> &mdash; discrete, firm, flesh-coloured
+  <strong>smooth, dome-shaped, centrally umbilicated papules</strong> &mdash; discrete, firm, flesh-colored
   and pearly, averaging <strong>3 to 5 mm</strong>, with <strong>central umbilication characteristic</strong>.
   It spreads by direct skin contact, shared contaminated objects and <strong>autoinoculation</strong>.</p>
   <p><strong>Most immunocompetent patients clear spontaneously, though it may take months to several
@@ -309,14 +309,14 @@ SECTION = """
   immunosuppression</strong>, including HIV where appropriate.</p>
   <p><strong>Warts</strong> are benign proliferations caused by <strong>human papillomavirus</strong>
   infecting <strong>keratinocytes</strong>, transmitted by skin-to-skin contact, autoinoculation and
-  contaminated surfaces. The anatomy is a favourite point: a wart is
+  contaminated surfaces. The anatomy is a favorite point: a wart is
   <strong>confined to the EPIDERMIS</strong>, but it <strong>expands and displaces the dermis</strong>,
   giving the impression that it extends deeper. Turn one over and the underside is
   <strong>round and smooth &mdash; there are NO ROOTS</strong>.</p>
   <table>
     <tr><th>Type</th><th>Appearance</th><th>Where</th></tr>
-    <tr><td><b>Verruca vulgaris</b></td><td>Under 1 cm, elevated round papules, <b>rough greyish surface</b>. <b>Tiny red or black dots are thrombosed dilated capillaries</b>; trimming the surface makes them more prominent.</td><td>Hands, favouring fingers and palms. <b>Periungual, lip and tongue in nail biters.</b> Ages <b>5&ndash;20</b>.</td></tr>
-    <tr><td><b>Verruca plana</b> (flat)</td><td>Multiple smooth, slightly elevated, <b>flat-topped</b>, skin-coloured to light-brown papules</td><td>Face, forehead, dorsal hands, shins. <b>Shaving spreads them by autoinoculation.</b></td></tr>
+    <tr><td><b>Verruca vulgaris</b></td><td>Under 1 cm, elevated round papules, <b>rough grayish surface</b>. <b>Tiny red or black dots are thrombosed dilated capillaries</b>; trimming the surface makes them more prominent.</td><td>Hands, favoring fingers and palms. <b>Periungual, lip and tongue in nail biters.</b> Ages <b>5&ndash;20</b>.</td></tr>
+    <tr><td><b>Verruca plana</b> (flat)</td><td>Multiple smooth, slightly elevated, <b>flat-topped</b>, skin-colored to light-brown papules</td><td>Face, forehead, dorsal hands, shins. <b>Shaving spreads them by autoinoculation.</b></td></tr>
     <tr><td><b>Verruca plantaris</b></td><td>On the <b>weight-bearing surface</b>; clustering produces a <b>mosaic wart</b></td><td>Soles. <b>Therapy only if PAINFUL.</b> Salicylic acid 40% or cryotherapy.</td></tr>
   </table>
   <p>Diagnosis is clinical; <strong>biopsy is generally unnecessary</strong> but may suit immunocompromised
@@ -340,7 +340,7 @@ SECTION = """
     <tr><td><b>Infant</b></td><td><b>Newborn age increases varicella complication risk</b>, and neonatal exposure warrants prompt consultation. Molluscum: <b>berdazimer is approved from age 1</b>. Intertrigo in the diaper area and folds.</td></tr>
     <tr><td><b>Child</b></td><td><b>Tinea capitis is predominantly a disease of preadolescent children</b> and the commonest fungal infection in children &mdash; oral therapy, adjunctive shampoo, contact and pet evaluation, and generally <b>no school exclusion once treated</b>. <b>Avoid aspirin</b> in varicella. Molluscum is common and usually self-limiting; <b>cantharidin from age 2</b>. <b>Genital molluscum requires context-sensitive assessment.</b> Common warts peak at <b>5&ndash;20</b>.</td></tr>
     <tr><td><b>Adolescent</b></td><td>After puberty, <b>sebum fatty acid changes inhibit scalp dermatophyte growth</b>, so tinea capitis falls away. Tinea cruris and tinea pedis rise with sport, occlusive footwear and communal showers. <b>Genital molluscum may be sexually transmitted</b> &mdash; assess accordingly. Flat warts spread by <b>shaving</b>. Zoster vaccine from <b>19</b> if immunosuppressed or about to be.</td></tr>
-    <tr><td><b>Adult</b></td><td><b>Tinea pedis is the commonest dermatophyte infection in adults</b>; tinea cruris is commoner in men. <b>Adults and pregnancy increase varicella complication risk.</b> Herpes simplex counselling and suppressive therapy. <b>Shingrix two doses from 50</b> in the immunocompetent. Check <b>pregnancy status</b> before choosing a wart treatment.</td></tr>
+    <tr><td><b>Adult</b></td><td><b>Tinea pedis is the commonest dermatophyte infection in adults</b>; tinea cruris is commoner in men. <b>Adults and pregnancy increase varicella complication risk.</b> Herpes simplex counseling and suppressive therapy. <b>Shingrix two doses from 50</b> in the immunocompetent. Check <b>pregnancy status</b> before choosing a wart treatment.</td></tr>
     <tr><td><b>Elderly</b></td><td><b>Zoster risk rises with age</b>, and so does <b>postherpetic neuralgia</b> risk. Individualize neuropathic agents for <b>kidney function, falls, anticholinergic burden and interactions</b>. Onychomycosis risk rises with <b>age, diabetes and vascular disease</b>; check hepatic disease and interactions before oral terbinafine. Intertrigo risk rises with <b>immobility and incontinence</b>.</td></tr>
   </table>
   <p><strong>Immunocompromise cuts across every age</strong> and changes the answer in the same direction
@@ -365,14 +365,14 @@ TOC = """  <a class="top-link" href="#viral-fungal">6 &middot; Cutaneous Viral a
 
 FIGS = {
  "@@FIG_TINEA@@": grid([
-   ("l6_s009_1", "Tinea capitis", "Scaly grey patches with broken hairs; preadolescent children", 9),
+   ("l6_s009_1", "Tinea capitis", "Scaly gray patches with broken hairs; preadolescent children", 9),
    ("l6_s011_1", "Black dot tinea capitis", "Hair fractured at the surface leaves visible black dots", 11),
    ("l6_s020_1", "Tinea barbae &mdash; inflammatory", "Boggy pustular kerion-like plaque; hairs pull out easily", 20),
    ("l6_s024_2", "Tinea corporis", "Sharply circumscribed plaque clearing centrally into a ring", 24),
    ("l6_s032_1", "Tinea cruris", "Crural fold plaque on the medial thigh; scrotum spared", 32),
    ("l6_s038_2", "Tinea pedis &mdash; interdigital", "Maceration and erosion in the toe web spaces", 38),
    ("l6_s040_2", "Tinea pedis &mdash; hyperkeratotic", "Diffuse plantar thickening in a shoe distribution", 40),
-   ("l6_s054_1", "Tinea manuum", "Thickened dry scaly palm; often mistaken for manual labour", 54),
+   ("l6_s054_1", "Tinea manuum", "Thickened dry scaly palm; often mistaken for manual labor", 54),
  ]),
  "@@FIG_NAILS@@": grid([
    ("l6_s048_1", "Onychomycosis", "Thickening, discoloration, onycholysis and crumbling", 48),
@@ -395,7 +395,7 @@ FIGS = {
  ]),
  "@@FIG_WARTS@@": grid([
    ("l6_s131_1", "Molluscum contagiosum", "Pearly dome-shaped papules with central umbilication", 131),
-   ("l6_s142_1", "Verruca vulgaris", "Rough greyish papule; black dots are thrombosed capillaries", 142),
+   ("l6_s142_1", "Verruca vulgaris", "Rough grayish papule; black dots are thrombosed capillaries", 142),
    ("l6_s144_2", "Verruca plana", "Multiple smooth flat-topped papules; shaving spreads them", 144),
    ("l6_s146_1", "Verruca plantaris", "Weight-bearing surface; clusters form a mosaic wart", 146),
  ]),

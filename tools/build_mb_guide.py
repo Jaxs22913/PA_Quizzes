@@ -4,7 +4,7 @@
 Same skeleton-lift as the CMS and Clin Path builders. Retheme is the forest
 green identity used by this class's quizzes.
 
-Thirteen objectives — the guide is organised by them in order, which is what
+Thirteen objectives — the guide is organized by them in order, which is what
 makes a lecture this broad navigable at all.
 """
 import os, re
@@ -19,18 +19,18 @@ def fig(n, w, h, alt, cap, src):
             '<figcaption>%s <span class="src">%s</span></figcaption></figure>\n  ') % (w, h, I, n, alt, cap, src)
 
 FIG_WALL = fig("002.jpg", 1100, 649,
-  "Labelled three-dimensional comparison of Gram-positive and Gram-negative cell envelopes, showing peptidoglycan thickness, teichoic acids, outer membrane, lipopolysaccharide, porins and periplasmic space.",
+  "Labeled three-dimensional comparison of Gram-positive and Gram-negative cell envelopes, showing peptidoglycan thickness, teichoic acids, outer membrane, lipopolysaccharide, porins and periplasmic space.",
   "The figure that makes the whole Gram stain make sense. On the left, one thick slab of peptidoglycan with teichoic and lipoteichoic acid threaded through it — that bulk is what traps crystal violet, and why the cell stains purple. On the right, a thin peptidoglycan shell sitting under an outer membrane studded with lipopolysaccharide and porins, with a periplasmic space between. The thin layer cannot hold the dye through decolorization, so the cell takes up safranin instead. Everything else follows from this picture: Lipid A sits in that outer membrane, which is why only Gram-negatives carry endotoxin, and the outer membrane is the barrier that makes them chemically resistant.",
   "Copyright &copy; The McGraw-Hill Companies. Reproduced from the lecture slides (Slide 35).")
 
 FIG_GROWTH = fig("001.jpg", 800, 353,
-  "Bacterial growth curve plotted as logarithm of viable cells against hours, with lag, exponential growth, stationary and death phases labelled, and tubes below showing few cells, live cells, and dead cells at each stage.",
-  "Note the vertical axis is a logarithm of viable cells — which is why exponential growth appears as a straight line rather than a curve. The tubes underneath are the part worth studying: they show the population composition at each phase, so the stationary plateau is visibly not a pause but a balance, with cells dividing and dying at the same rate. The dashed tail is worth noticing too, since some cells remain viable after the death phase — which is exactly why sterilisation is defined by probability rather than by a moment when the last organism dies.",
+  "Bacterial growth curve plotted as logarithm of viable cells against hours, with lag, exponential growth, stationary and death phases labeled, and tubes below showing few cells, live cells, and dead cells at each stage.",
+  "Note the vertical axis is a logarithm of viable cells — which is why exponential growth appears as a straight line rather than a curve. The tubes underneath are the part worth studying: they show the population composition at each phase, so the stationary plateau is visibly not a pause but a balance, with cells dividing and dying at the same rate. The dashed tail is worth noticing too, since some cells remain viable after the death phase — which is exactly why sterilization is defined by probability rather than by a moment when the last organism dies.",
   "Copyright &copy; The McGraw-Hill Companies. Reproduced from the lecture slides (Slide 49).")
 
 FIG_PHAGE = fig("003.jpg", 900, 704,
   "Diagram of the bacteriophage replication cycle around an Escherichia coli host, showing adsorption, penetration, duplication of phage components, assembly, maturation and lysis, with a central loop where viral DNA becomes latent as a prophage.",
-  "Both cycles on one diagram, which is the clearest way to see that they share a beginning and diverge afterwards. Adsorption and penetration happen either way. The outer ring is the lytic route — duplication, assembly, maturation, then lysis of the weakened cell. The blue loop through the centre is lysogeny: the viral genome goes latent as a prophage and is copied along with the host, which is how a bacterium can inherit a phage-encoded toxin gene without ever appearing infected.",
+  "Both cycles on one diagram, which is the clearest way to see that they share a beginning and diverge afterwards. Adsorption and penetration happen either way. The outer ring is the lytic route — duplication, assembly, maturation, then lysis of the weakened cell. The blue loop through the center is lysogeny: the viral genome goes latent as a prophage and is copied along with the host, which is how a bacterium can inherit a phage-encoded toxin gene without ever appearing infected.",
   "Reproduced from the lecture slides (Slide 56).")
 
 TOC = '''<nav class="toc">
@@ -80,17 +80,17 @@ BODY = '''<main>
     <tr><td>Receptor binding</td><td>Specific interaction between a pathogen surface protein and a host cell receptor</td>
         <td>Influenza uses <strong>hemagglutinin</strong> to bind <strong>sialic acid</strong> receptors</td></tr>
     <tr><td>Adhesion</td><td>Initial attachment via proteins, carbohydrates or lipids to specific host receptors</td>
-        <td><em>Escherichia coli</em> uses <strong>type I fimbriae</strong> on <strong>mannose</strong> receptors, colonising the urinary tract</td></tr>
+        <td><em>Escherichia coli</em> uses <strong>type I fimbriae</strong> on <strong>mannose</strong> receptors, colonizing the urinary tract</td></tr>
     <tr><td>Invasion</td><td>Entry into host cells</td>
         <td><em>Salmonella enterica</em> injects effector proteins via a secretion system to build a replication niche</td></tr>
     <tr><td>Virulence factors</td><td>Pathogen molecules enhancing the ability to cause disease &mdash; toxins, adhesins, invasins</td>
-        <td><em>Staphylococcus aureus</em> adhesins, plus Panton-Valentine leucocidin, which lyses neutrophils, monocytes and macrophages</td></tr>
-    <tr><td>Molecular signalling</td><td>Host pattern recognition receptors read pathogen associated molecular patterns</td>
+        <td><em>Staphylococcus aureus</em> adhesins, plus Panton-Valentine leukocidin, which lyses neutrophils, monocytes and macrophages</td></tr>
+    <tr><td>Molecular signaling</td><td>Host pattern recognition receptors read pathogen associated molecular patterns</td>
         <td>Triggers immune cell activation, cytokine production and regulation of inflammation</td></tr>
   </table>
   <p><strong>Environmental factors</strong> also shape transmission: temperature and humidity (influenza is more
   stable and transmissible at <em>low</em> temperature and <em>high</em> humidity), where vectors can flourish,
-  and human behaviour &mdash; hygiene, vaccination rates and travel patterns.</p>
+  and human behavior &mdash; hygiene, vaccination rates and travel patterns.</p>
 
   <h3 class="sub" id="gm-pathogens">1.2 &middot; Objective 2 &mdash; Types of infectious pathogens</h3>
   <table>
@@ -175,12 +175,12 @@ BODY = '''<main>
     <tr><td>Synthetic (chemically defined)</td><td>Pure organic and inorganic compounds in an exact chemical formula</td></tr>
     <tr><td>Complex / nonsynthetic</td><td>At least one ingredient that is not chemically definable</td></tr>
     <tr><td>General purpose</td><td>Grows a broad range of microbes; usually nonsynthetic</td></tr>
-    <tr><td>Enriched</td><td>Complex organic substances &mdash; blood, serum, haemoglobin, or special growth factors for fastidious microbes</td></tr>
+    <tr><td>Enriched</td><td>Complex organic substances &mdash; blood, serum, hemoglobin, or special growth factors for fastidious microbes</td></tr>
     <tr><td>Selective</td><td>Contains agents that <strong>inhibit</strong> some microbes and encourage the desired ones</td></tr>
     <tr><td>Differential</td><td>Allows several types to grow and <strong>displays visible differences</strong> between them</td></tr>
   </table>
   <p>The categories combine: <strong>blood agar</strong> is enriched <em>and</em> differential (gamma, beta and
-  alpha haemolysis); <strong>mannitol salt agar</strong> is selective <em>and</em> differential.</p>
+  alpha hemolysis); <strong>mannitol salt agar</strong> is selective <em>and</em> differential.</p>
 
   <h3 class="sub" id="gm-growth">1.6 &middot; Objective 7 &mdash; The bacterial growth curve</h3>
   <p>Growth means an increase in <strong>number</strong>, not size, by <strong>binary fission</strong> &mdash;
@@ -272,7 +272,7 @@ BODY = '''<main>
   <strong>constant</strong>. <strong>Decimal reduction time</strong> is the time taken to kill 90% of the
   organisms. So from roughly 4.9 million organisms with a decimal reduction time of 10 minutes, each interval
   leaves a tenth: ~486,000 &rarr; ~48,600 &rarr; ~4,860. The count never formally reaches zero, which is why
-  sterilisation is defined by probability rather than by a moment when the last organism dies.</div>
+  sterilization is defined by probability rather than by a moment when the last organism dies.</div>
   <button type="button" class="test-yourself-btn" style="--acc:#3f8a55" onclick="window.openTestYourself('Test yourself — General Microbiology', TEST_YOURSELF.generalMicro)">Test yourself! &rarr;</button>
   <p class="src">Source: <em>Lecture 1 &mdash; Review of General Microbiology</em> (Dr. Webster), Slides 1&ndash;70,
   and the PAJ 5200 syllabus instructional objectives.</p>

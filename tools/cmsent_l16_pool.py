@@ -14,13 +14,13 @@ QUESTIONS = [
 Q("Ototoxicity", IO,
   "A 67-year-old woman is brought by her husband, who says she never listens to him. She admits "
   "she sometimes asks people on her right to repeat themselves. She denies dizziness, headache and "
-  "visual change. Her only medication is furosemide. Weber lateralises to the left. On the left, "
+  "visual change. Her only medication is furosemide. Weber lateralizes to the left. On the left, "
   "air conduction lasts 15 seconds and bone conduction 10 seconds; on the right, air conduction "
   "lasts 22 seconds and bone conduction 10 seconds.",
   [["Ototoxicity from the loop diuretic",
     "Correct. Both ears have air conduction longer than bone conduction, which is the normal Rinne "
     "pattern and is also what a sensorineural ear gives, so the loss must be sensorineural rather "
-    "than conductive. Weber lateralising to the left means the RIGHT is the worse ear, matching her "
+    "than conductive. Weber lateralizing to the left means the RIGHT is the worse ear, matching her "
     "symptom. Loop diuretics are ototoxic, and that is the only exposure in the history."],
    ["Cerumen impaction",
     "Wax occluding a canal produces a conductive loss, which would reverse Rinne in that ear so bone "
@@ -109,10 +109,10 @@ Q("Vestibular neuronitis", IO,
 
 Q("Sudden sensorineural hearing loss", IO,
   "A 52-year-old man wakes to find he cannot hear from his right ear. There is no pain, discharge "
-  "or trauma. Otoscopy is normal. Weber lateralises to the left and Rinne shows air conduction "
+  "or trauma. Otoscopy is normal. Weber lateralizes to the left and Rinne shows air conduction "
   "greater than bone conduction bilaterally.",
   [["Urgent ear, nose and throat referral for sudden sensorineural hearing loss",
-    "Correct. A normal otoscopy with Weber lateralising AWAY from the affected ear and a normal "
+    "Correct. A normal otoscopy with Weber lateralizing AWAY from the affected ear and a normal "
     "Rinne pattern in both ears establishes the loss is sensorineural rather than conductive. Sudden "
     "sensorineural loss is a syndrome rather than a diagnosis, and it is time-critical: the chance "
     "of recovery falls the longer treatment is delayed, so referral is prompt rather than routine."],
@@ -122,7 +122,7 @@ Q("Sudden sensorineural hearing loss", IO,
     "referral is designed to prevent."],
    ["Microsuction of the canal for presumed wax",
     "The otoscopy is explicitly normal, so there is no obstruction to remove, and wax would in any "
-    "case give a conductive picture with Weber lateralising toward the blocked ear rather than away "
+    "case give a conductive picture with Weber lateralizing toward the blocked ear rather than away "
     "from it."],
    ["A course of oral antibiotics for presumed otitis media",
     "There is no pain, fever, discharge or drum abnormality, so there is no infection to treat. "
@@ -145,11 +145,11 @@ Q("Acoustic neuroma", IO,
     "not mechanical. It cannot detect a lesion on the eighth nerve and would give false reassurance."],
    ["Computed tomography of the temporal bones without contrast",
     "Non-contrast computed tomography shows bone well and is useful for cholesteatoma or fractures, "
-    "but it is poor at demonstrating a small soft-tissue tumour within the internal auditory canal. "
+    "but it is poor at demonstrating a small soft-tissue tumor within the internal auditory canal. "
     "A schwannoma can be missed entirely."],
    ["Repeat audiometry in twelve months",
     "Waiting a year in a patient whose findings already point to a retrocochlear lesion allows a "
-    "tumour to grow toward the brainstem, and the size at diagnosis determines both the treatment "
+    "tumor to grow toward the brainstem, and the size at diagnosis determines both the treatment "
     "options and the chance of preserving hearing and facial nerve function."]],
   "testing", D, 105),
 
@@ -184,7 +184,7 @@ Q("Tinnitus", IO,
     "Correct. Most tinnitus is a non-pulsatile bilateral ringing that accompanies sensorineural loss "
     "and needs no imaging. Tinnitus that is unilateral or synchronous with the pulse is the red flag "
     "combination, because it suggests turbulent blood flow or a vascular middle ear lesion such as a "
-    "glomus tumour, and those need to be found."],
+    "glomus tumor, and those need to be found."],
    ["Ordinary subjective tinnitus requiring only reassurance and sound therapy",
     "Reassurance is right for the common bilateral ringing with no red flags. Applying it here means "
     "dismissing the two features, unilaterality and pulsatility, that specifically distinguish "
@@ -199,12 +199,12 @@ Q("Tinnitus", IO,
     "ageing."]],
   "diagnosis", D, 40),
 
-Q("Glomus tumour", IO,
+Q("Glomus tumor", IO,
   "A 54-year-old woman has pulsatile tinnitus and progressive conductive hearing loss in the left "
   "ear over a year. Otoscopy shows a reddish-blue mass behind the lower part of the tympanic "
   "membrane that blanches with pneumatic pressure.",
-  [["Glomus tumour",
-    "Correct. A glomus tumour is a highly vascular paraganglioma arising in the middle ear or jugular "
+  [["Glomus tumor",
+    "Correct. A glomus tumor is a highly vascular paraganglioma arising in the middle ear or jugular "
     "bulb. Its blood flow is what produces pulsatile tinnitus, its mass effect on the ossicular chain "
     "produces the conductive loss, and its vascularity is what makes it appear red-blue behind the "
     "drum and blanch when pressure is applied."],
@@ -244,10 +244,10 @@ Q("Noise-induced hearing loss", IO,
   "mechanism", D, 44),
 
 Q("Conductive versus sensorineural", IO,
-  "A patient's tuning fork examination shows Weber lateralising to the right ear, and on the right "
+  "A patient's tuning fork examination shows Weber lateralizing to the right ear, and on the right "
   "bone conduction is heard longer than air conduction.",
   [["A conductive loss in the right ear",
-    "Correct. Two findings agree. Weber lateralising toward an ear means that ear hears "
+    "Correct. Two findings agree. Weber lateralizing toward an ear means that ear hears "
     "bone-conducted sound better, which happens when a conductive block shields it from competing "
     "ambient noise. A reversed Rinne in the same ear, with bone beating air, means sound is being "
     "obstructed before it reaches a working cochlea. Both point to the conducting mechanism."],
@@ -256,12 +256,12 @@ Q("Conductive versus sensorineural", IO,
     "processes the tone poorly whichever route it arrives by. It would also leave Rinne normal, with "
     "air still beating bone, so both findings here contradict it."],
    ["A conductive loss in the left ear",
-    "A left-sided conductive loss would lateralise Weber to the LEFT and reverse Rinne on the left. "
+    "A left-sided conductive loss would lateralize Weber to the LEFT and reverse Rinne on the left. "
     "The findings described are both on the right, so the side is wrong even though the type is "
     "right."],
    ["Normal hearing in both ears",
-    "Normal ears give a midline Weber with no lateralisation, and air conduction longer than bone in "
-    "both. A lateralising Weber together with a reversed Rinne is by definition abnormal."]],
+    "Normal ears give a midline Weber with no lateralization, and air conduction longer than bone in "
+    "both. A lateralizing Weber together with a reversed Rinne is by definition abnormal."]],
   "finding", D, 19),
 
 Q("Labyrinthitis", IO,
@@ -336,7 +336,7 @@ Q("Syphilitic sensorineural loss", IO,
     "infection could have been eradicated."],
    ["Autoimmune inner ear disease",
     "Autoimmune sensorineural loss is bilateral and progressive in alternating periods of "
-    "deterioration and stabilisation, rather than the discrete attacks with recovery described "
+    "deterioration and stabilization, rather than the discrete attacks with recovery described "
     "here, and it is not diagnosed by the serology being ordered."],
    ["Acoustic neuroma",
     "A schwannoma gives progressive unilateral loss with poor speech discrimination, not fluctuating "

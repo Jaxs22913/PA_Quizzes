@@ -27,7 +27,7 @@ Q("Chalazion", IO,
   "drainage, no change in vision and no itching. She has been well otherwise. Vital signs are "
   "normal, extraocular movements are intact and the pupils are equal and reactive. The left upper "
   "lid carries a 1.5 cm round, non-tender, mildly erythematous mass with no drainage. The "
-  "underside of the lid is greyish-red. What is the most likely diagnosis?",
+  "underside of the lid is grayish-red. What is the most likely diagnosis?",
   [["Chalazion", "Correct. A sterile obstruction of a meibomian gland: it builds over days to "
                  "weeks and the mature lesion is NON-tender, which is what the painless second "
                  "week tells you."],
@@ -45,7 +45,7 @@ Q("Hordeolum", IO,
   "surrounding erythema. Vision and pupils are normal. What is the most likely diagnosis?",
   [["Hordeolum", "Correct. Acute, usually staphylococcal, and the two features that separate it "
                  "from a chalazion are that it is TENDER and that it appeared within 24 hours."],
-   ["Dermatochalasis", "Painless excess lid skin from ageing, not an acute tender nodule."],
+   ["Dermatochalasis", "Painless excess lid skin from aging, not an acute tender nodule."],
    ["Xanthelasma", "Painless yellowish plaques, typically bilateral and asymptomatic."],
    ["Pre-septal cellulitis", "Diffuse lid swelling and erythema rather than a discrete nodule at "
                              "the margin."]],
@@ -156,10 +156,10 @@ Q("Blepharitis", IO,
   "A 52-year-old patient has a burning sensation in both eyes. There has been no trauma and no "
   "contact with anyone with similar symptoms. Examination shows red, inflamed lid margins with "
   "greasy, matted lashes and dandruff-like debris at their bases. The conjunctivae are clear and "
-  "there is no corneal involvement. Colonisation with which organism is found in a significant "
+  "there is no corneal involvement. Colonization with which organism is found in a significant "
   "fraction of patients with this condition?",
   [["Staphylococcus aureus", "Correct. Blepharitis is associated with S. aureus, and with rosacea "
-                             "and seborrhoeic dermatitis."],
+                             "and seborrheic dermatitis."],
    ["Chlamydia trachomatis", "Causes adult inclusion conjunctivitis and trachoma, with follicles "
                              "and a preauricular node rather than lid-margin scurf."],
    ["Haemophilus influenzae", "A cause of bacterial conjunctivitis rather than chronic lid margin "
@@ -200,7 +200,7 @@ Q("Dacryoadenitis", IO,
    ["Dacryocystitis", "Involves the lacrimal SAC at the NASAL aspect of the LOWER lid, below the "
                       "medial canthal tendon."],
    ["Hordeolum", "A discrete tender nodule at the lid margin, without a preauricular node or fever."],
-   ["Pre-septal cellulitis", "Diffuse lid swelling rather than localisation to the outer third."]],
+   ["Pre-septal cellulitis", "Diffuse lid swelling rather than localization to the outer third."]],
   "diagnosis", D, 22),
 
 Q("Dacryocystitis", IO,
@@ -220,7 +220,7 @@ Q("Dacryocystitis", IO,
 Q("Dacryocystitis", IO,
   "A 61-year-old woman is being treated for dacryocystitis. A mass is noted ABOVE the medial "
   "canthal tendon rather than below it. What does that suggest?",
-  [["A lacrimal sac tumour", "Correct. A mass above the tendon rather than below it raises that "
+  [["A lacrimal sac tumor", "Correct. A mass above the tendon rather than below it raises that "
                              "possibility."],
    ["Dacryoadenitis", "That involves the gland under the lateral upper lid."],
    ["Pre-septal cellulitis", "Diffuse rather than a discrete mass in that location."],
@@ -252,7 +252,7 @@ Q("Pinguecula", IO,
    ["Surgery is required in all cases", "Surgery is for a pterygium growing onto the cornea."]],
   "two-step", D, 28),
 
-Q("Subconjunctival haemorrhage", IO,
+Q("Subconjunctival hemorrhage", IO,
   "A 66-year-old man noticed a bright red patch on the white of his right eye this morning after "
   "a bout of coughing. There is no pain, vision is normal, the pupil is reactive and the cornea is "
   "clear. What is the most appropriate next step?",
@@ -261,7 +261,7 @@ Q("Subconjunctival haemorrhage", IO,
    ["Urgent ophthalmology referral", "It resolves spontaneously in two to four weeks."],
    ["Computed tomography of the orbits", "Imaging has no role in a painless bleed with normal "
                                          "vision."],
-   ["Immediate haematology referral", "Recurrence without a culprit medication prompts a targeted "
+   ["Immediate hematology referral", "Recurrence without a culprit medication prompts a targeted "
                                       "evaluation, not an automatic referral."]],
   "treatment", D, 30),
 
@@ -281,7 +281,7 @@ Q("Allergic conjunctivitis", IO,
   "A 21-year-old man has itchy, watery, red eyes every spring. Both eyes are affected. Examination "
   "shows diffuse injection, chemosis and conjunctival papillae, with no preauricular node. Vision "
   "is normal. What is the most appropriate initial treatment?",
-  [["A topical antihistamine with a mast cell stabiliser",
+  [["A topical antihistamine with a mast cell stabilizer",
     "Correct — olopatadine does both. With allergen avoidance, cool compresses and artificial "
     "tears."],
    ["Topical antibiotic drops", "There is no bacterial infection."],
@@ -326,9 +326,9 @@ Q("Bacterial conjunctivitis", IO,
   "two-step", D, 41),
 
 Q("Gonococcal conjunctivitis", IO,
-  "A 3-day-old neonate has marked bilateral lid oedema and copious purulent discharge. A palpable "
+  "A 3-day-old neonate has marked bilateral lid edema and copious purulent discharge. A palpable "
   "preauricular node is present. What is the most appropriate management?",
-  [["Hospitalise and give a single dose of systemic ceftriaxone",
+  [["Hospitalize and give a single dose of systemic ceftriaxone",
     "Correct, with specialty consultation — the untreated risk is corneal perforation."],
    ["Topical antibiotic drops as an outpatient", "Insufficient for gonococcal disease in a "
                                                  "newborn."],
@@ -393,7 +393,7 @@ Q("Pre-septal cellulitis", IO,
                              "is the single most useful discrimination in this block."],
    ["Post-septal (orbital) cellulitis", "The globe would be red with proptosis, painful restricted "
                                         "movement, and possibly an afferent pupillary defect."],
-   ["Dacryocystitis", "Localises to the lacrimal sac below the medial canthal tendon."],
+   ["Dacryocystitis", "Localizes to the lacrimal sac below the medial canthal tendon."],
    ["Hordeolum", "A discrete tender nodule at the lid margin rather than diffuse lid swelling."]],
   "diagnosis", D, 52),
 
@@ -477,7 +477,7 @@ Q("Anterior uveitis", IO,
     "Correct — the ankylosing spondylitis association, which is why the systemic history matters."],
    ["Contact lens overwear", "That association is with corneal ulcer."],
    ["Chronic sun and wind exposure", "That is the pinguecula and pterygium association."],
-   ["Seborrhoeic dermatitis", "That is associated with blepharitis."]],
+   ["Seborrheic dermatitis", "That is associated with blepharitis."]],
   "two-step", D, 62),
 
 Q("Posterior uveitis", IO,

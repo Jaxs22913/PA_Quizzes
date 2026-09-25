@@ -25,7 +25,7 @@ INTRO = ("Sixty questions drawn from every lecture in the Exam 1 block, in exam 
          "rather than at random &mdash; <b>each of the six lectures contributes ten questions to "
          "every form</b>, so this is a genuine cumulative rehearsal and not a sample of whichever "
          "topic had the most questions written for it. Questions are reused verbatim from the "
-         "topic quizzes, so nothing here can drift from the material it is summarising. "
+         "topic quizzes, so nothing here can drift from the material it is summarizing. "
          "<b>No question appears in more than one form</b>, so working through all five gives you "
          "300 distinct questions. "
          "The two immunity lectures are the heaviest in the block &mdash; Lecture 5 alone runs 93 "

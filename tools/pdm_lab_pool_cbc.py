@@ -20,7 +20,7 @@ would not render and neither would an entity; panels are written inline with
 literal middots and en-dashes.
 
 The correct answer is authored FIRST in every item. pdm_lab_partition.py
-rotates it, so no position can drift toward a favourite.
+rotates it, so no position can drift toward a favorite.
 """
 
 def panel(intro, rows, lead):
@@ -270,13 +270,13 @@ QUESTIONS = [
    [("white blood cell count", "1,200/µL", "4,500–11,000"), ("neutrophils", "22%", "54–62"),
     ("bands", "6%", "0–5")], "Calculate the absolute neutrophil count and grade it."),
  "opts": [
-   ["336 per microlitre — severe neutropenia",
+   ["336 per microliter — severe neutropenia",
     "Correct. Bands count WITH the neutrophils: 1,200 × (22 + 6) ÷ 100 = 336. Below 500 is severe, which is the threshold that changes precautions and antibiotic decisions."],
-   ["264 per microlitre — severe neutropenia",
+   ["264 per microliter — severe neutropenia",
     "This leaves the bands out. They are immature neutrophils and belong in the numerator — that omission is the classic error."],
-   ["336 per microlitre — moderate neutropenia",
+   ["336 per microliter — moderate neutropenia",
     "The arithmetic is right but the grade is not: moderate is 500 to under 1,000, and 336 is below 500."],
-   ["1,200 per microlitre — mild neutropenia",
+   ["1,200 per microliter — mild neutropenia",
     "That is the total white count, not the neutrophil count. A percentage means nothing until it is applied to the total."]],
  "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, absolute neutrophil count"},
 
@@ -328,7 +328,7 @@ QUESTIONS = [
 {"topic": "Red cell morphology", "io": "g — Compare and contrast laboratory patterns associated with microcytic, normocytic and macrocytic anemia", "slot": "diagnosis",
  "q": panel("A 47-year-old man with cirrhosis has a routine panel. His results are",
    [("hemoglobin", "11.6 g/dL", "13.5–17.5"), ("mean corpuscular volume", "103 fL", "80–100"),
-    ("smear", "cells with a dark centre inside the pale area", "—"),
+    ("smear", "cells with a dark center inside the pale area", "—"),
     ("vitamin B12 and folate", "normal", "—")], CAUSE),
  "opts": [
    ["Liver disease has added redundant membrane to the red cells",
@@ -347,7 +347,7 @@ QUESTIONS = [
     ("platelets", "96,000/µL", "150,000–400,000"), ("white blood cell count", "3,800/µL", "4,500–11,000")], CAUSE),
  "opts": [
    ["The marrow is being infiltrated and replaced",
-    "Correct. Teardrop cells are made when red cells squeeze out of a marrow packed with scar tissue or tumour. With cytopenias in all three lines and splenomegaly, infiltration is the mechanism."],
+    "Correct. Teardrop cells are made when red cells squeeze out of a marrow packed with scar tissue or tumor. With cytopenias in all three lines and splenomegaly, infiltration is the mechanism."],
    ["The spleen has been removed",
     "The spleen is present and enlarged, and asplenia gives Howell-Jolly bodies and target cells rather than teardrops."],
    ["Oxidant stress is denaturing hemoglobin",
@@ -361,7 +361,7 @@ QUESTIONS = [
    [("hemoglobin", "9.0 g/dL", "13.5–17.5"), ("hematocrit", "48%", "41–53")], "Why is this pair implausible?"),
  "opts": [
    ["The hematocrit should be roughly three times the hemoglobin",
-    "Correct. Multiply the hemoglobin by three and the hematocrit should land nearby — 9 predicts about 27, not 48. A pair that far apart means a sampling or analyser problem worth repeating."],
+    "Correct. Multiply the hemoglobin by three and the hematocrit should land nearby — 9 predicts about 27, not 48. A pair that far apart means a sampling or analyzer problem worth repeating."],
    ["The hematocrit should equal the hemoglobin",
     "They measure different things — an amount in a volume against a percentage of packed cells — so they are never equal."],
    ["The hemoglobin should be roughly three times the hematocrit",
@@ -382,7 +382,7 @@ QUESTIONS = [
    ["Normocytic and hyperchromic",
     "The volume is not normal, and hyperchromic would need the concentration ABOVE 36 rather than below 32."],
    ["Microcytic and hyperchromic",
-    "The size is right but the colour is not — a concentration of 29 is below the range, so the cells are pale, not dense."]],
+    "The size is right but the color is not — a concentration of 29 is below the range, so the cells are pale, not dense."]],
  "c": 0, "cite": "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx, red cell indices"},
 
 {"topic": "Anemia workup", "io": "h — Compare and contrast laboratory tests used in the evaluation of anemia", "slot": "next step",
@@ -426,7 +426,7 @@ QUESTIONS = [
     "Correct. Iron deficiency is one of the listed causes of a raised platelet count, alongside trauma, acute hemorrhage and polycythemia vera. It needs no separate workup — treat the iron deficiency and it settles."],
    ["Evidence of a second, independent bone marrow disorder",
     "Unnecessary. The anemia already explains it, and invoking two diagnoses where one accounts for both findings is the error being tested."],
-   ["A laboratory artefact requiring a repeat sample",
+   ["A laboratory artifact requiring a repeat sample",
     "There is nothing inconsistent here — the value fits the clinical picture rather than contradicting it."],
    ["A sign of impending bleeding",
     "A high platelet count is not a bleeding risk in this setting; her bleeding is menstrual and is the cause, not the consequence."]],
@@ -437,7 +437,7 @@ QUESTIONS = [
    [("hemoglobin", "9.7 g/dL", "13.5–17.5"), ("smear", "red cells stacked in chains like rows of coins", "—"),
     ("total protein", "10.8 g/dL", "6.0–8.3"), ("erythrocyte sedimentation rate", "112 mm/hr", "0–20")], CAUSE),
  "opts": [
-   ["Raised serum proteins have neutralised the cells' surface charge",
+   ["Raised serum proteins have neutralized the cells' surface charge",
     "Correct. That stacking is rouleaux: red cells normally repel each other with a negative surface charge, and excess protein cancels it so they clump in chains. The very high total protein and sedimentation rate fit a paraprotein."],
    ["Antibodies are agglutinating the red cells",
     "Agglutination clumps cells irregularly rather than stacking them in neat chains, and it is temperature-dependent."],
@@ -454,7 +454,7 @@ QUESTIONS = [
    "How should this panel be reported?"),
  "opts": [
    ["Normal, with no further testing indicated",
-    "Correct. Every value sits inside its range. Recognising a normal panel is a real skill — a reference range is the mean plus or minus two standard deviations, so chasing values that are merely near an edge generates work rather than answers."],
+    "Correct. Every value sits inside its range. Recognizing a normal panel is a real skill — a reference range is the mean plus or minus two standard deviations, so chasing values that are merely near an edge generates work rather than answers."],
    ["Early iron deficiency, because the volume is below the midpoint",
     "Being below the middle of a range is not being outside it. 91 fL is unambiguously normal."],
    ["Mild anemia, because the hemoglobin is not at the top of the range",

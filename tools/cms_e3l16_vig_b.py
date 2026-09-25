@@ -45,14 +45,14 @@ QUESTIONS = [
  # ------------------------------ BPPV ------------------------------
  dict(topic="Benign paroxysmal positional vertigo", io=IO_A, lead="next step", cite=D % 93,
   q="A 58-year-old woman has brief spinning attacks whenever she rolls over in bed, each lasting under a minute, with normal hearing. Which test should be performed?",
-  opts=[["The Dix-Hallpike manoeuvre", "Correct — it provokes the classic eye movements."],
-        ["The Epley manoeuvre", "That is the treatment, applied once the diagnosis is made."],
+  opts=[["The Dix-Hallpike maneuver", "Correct — it provokes the classic eye movements."],
+        ["The Epley maneuver", "That is the treatment, applied once the diagnosis is made."],
         ["Tympanometry", "That assesses the middle ear."],
         ["The Weber test", "That is a hearing test."]]),
 
  dict(topic="Benign paroxysmal positional vertigo", io=IO_A, lead="treatment", cite=D % 93,
   q="A 60-year-old man has a positive Dix-Hallpike test on the right. What treatment follows?",
-  opts=[["The Epley manoeuvre", "Correct — it repositions the debris in the canal."],
+  opts=[["The Epley maneuver", "Correct — it repositions the debris in the canal."],
         ["A course of oral antibiotics", "There is no infection."],
         ["Bed rest for two weeks", "Rest does not reposition the debris."],
         ["A hearing aid", "Hearing is not affected."]]),
@@ -69,14 +69,14 @@ QUESTIONS = [
   opts=[["Imbalance can persist for hours after an episode", "Correct, and chronic balance complaints are common."],
         ["This means the treatment failed", "Lingering imbalance is expected."],
         ["This indicates a stroke", "There are no focal features described."],
-        ["This is a side effect of the manoeuvre", "It reflects the condition rather than the treatment."]]),
+        ["This is a side effect of the maneuver", "It reflects the condition rather than the treatment."]]),
 
  # --------------- labyrinthitis and vestibular neuronitis ---------------
  dict(topic="Labyrinthitis", io=IO_A, lead="treatment", cite=D % 95,
   q="A 38-year-old woman has sudden vertigo and reduced hearing on one side, lasting four days. She is afebrile. What treatment is appropriate?",
   opts=[["Symptomatic treatment with meclizine", "Correct — antibiotics are added only if bacterial features appear."],
         ["Immediate antibiotics", "There are no bacterial features such as fever."],
-        ["The Epley manoeuvre", "That treats positional vertigo."],
+        ["The Epley maneuver", "That treats positional vertigo."],
         ["A hearing aid immediately", "That does not address the acute illness."]]),
 
  dict(topic="Labyrinthitis", io=IO_A, lead="next step", cite=D % 95,
@@ -90,7 +90,7 @@ QUESTIONS = [
   q="A 36-year-old man has dramatic sudden vertigo with nausea and unsteadiness. His hearing is normal and there are no focal neurological findings. What should he be told about the outlook?",
   opts=[["It is benign and self-limiting", "Correct, though balance symptoms may last months."],
         ["It requires urgent surgery", "Surgery is not indicated."],
-        ["It indicates a brain tumour", "There are no features suggesting that."],
+        ["It indicates a brain tumor", "There are no features suggesting that."],
         ["It will recur every week indefinitely", "That is not the described course."]]),
 
  dict(topic="Vestibular neuronitis", io=IO_A, lead="defining feature", cite=D % 96,
@@ -113,20 +113,20 @@ QUESTIONS = [
   opts=[["Magnetic resonance imaging with gadolinium", "Correct — the gold standard for retrocochlear disease."],
         ["Tympanometry", "That assesses the middle ear."],
         ["Plain radiography", "It lacks the necessary detail."],
-        ["The Dix-Hallpike manoeuvre", "That provokes positional vertigo."]]),
+        ["The Dix-Hallpike maneuver", "That provokes positional vertigo."]]),
 
  dict(topic="Acoustic neuroma", io=IO_A, lead="treatment", cite=D % 75,
   q="A 60-year-old man has a small acoustic neuroma with mild symptoms. Which options should be discussed?",
   opts=[["Observation with annual imaging, surgery or radiation", "Correct."],
-        ["Antibiotics alone", "It is a tumour, not an infection."],
+        ["Antibiotics alone", "It is a tumor, not an infection."],
         ["Ear drops alone", "Drops do not reach it."],
         ["Tympanostomy tubes", "Tubes address middle ear ventilation."]]),
 
  dict(topic="Acoustic neuroma", io=IO_A, lead="clinical manifestation", cite=D % 73,
-  q="A 57-year-old woman with a known acoustic neuroma develops facial numbness and weakness. Which cranial nerves has the tumour involved?",
+  q="A 57-year-old woman with a known acoustic neuroma develops facial numbness and weakness. Which cranial nerves has the tumor involved?",
   opts=[["The fifth and seventh", "Correct."],
         ["The third and fourth", "Those control eye movement."],
-        ["The ninth and tenth", "Those are involved in glomus tumours."],
+        ["The ninth and tenth", "Those are involved in glomus tumors."],
         ["The first and second", "Smell and vision are not involved."]]),
 
  # -------------------- sudden sensorineural loss --------------------
@@ -141,7 +141,7 @@ QUESTIONS = [
   q="A 51-year-old woman with sudden one-sided hearing loss asks why she must be seen the same day. What should she be told?",
   opts=[["Treatment works only if started early", "Correct."],
         ["Surgery must be done within hours", "Surgery is not the treatment."],
-        ["It always signals a tumour", "Retrocochlear pathology is rare here."],
+        ["It always signals a tumor", "Retrocochlear pathology is rare here."],
         ["The other ear will be affected by tomorrow", "That is not the concern."]]),
 
  # ------------------------ perilymphatic fistula ------------------------
@@ -156,15 +156,15 @@ QUESTIONS = [
   q="A 40-year-old diver has sudden hearing loss and vertigo after a dive, with a popping sensation at onset. What is appropriate management?",
   opts=[["Symptomatic treatment and specialist referral", "Correct."],
         ["Reassurance alone", "It requires specialist assessment."],
-        ["The Epley manoeuvre", "That treats positional vertigo."],
+        ["The Epley maneuver", "That treats positional vertigo."],
         ["Antibiotic drops", "Drops do not reach the inner ear."]]),
 
  # ------------------- autoimmune, syphilis, AIDS -------------------
  dict(topic="Autoimmune sensorineural loss", io=IO_A, lead="defining feature", cite=D % 65,
   q="A 43-year-old woman has bilateral hearing loss that has worsened in steps over two years, with periods of stability between. What does this pattern suggest?",
-  opts=[["An autoimmune cause", "Correct — deterioration alternating with stabilisation is characteristic."],
+  opts=[["An autoimmune cause", "Correct — deterioration alternating with stabilization is characteristic."],
         ["Presbycusis", "That declines steadily rather than in steps."],
-        ["Noise-induced loss", "That follows exposure and does not stabilise in this way."],
+        ["Noise-induced loss", "That follows exposure and does not stabilize in this way."],
         ["Otosclerosis", "That is conductive and gradual."]]),
 
  dict(topic="Autoimmune sensorineural loss", io=IO_A, lead="next step", cite=D % 66,
@@ -185,7 +185,7 @@ QUESTIONS = [
   q="A 44-year-old man has fluctuating hearing loss, tinnitus and vertigo. Syphilis is suspected. Which test should NOT be relied on?",
   opts=[["The Venereal Disease Research Laboratory test", "Correct — it is specifically described as not helpful here."],
         ["Fluorescent treponemal antibody testing", "That is one of the two recommended tests."],
-        ["Audiometry", "That characterises the loss."],
+        ["Audiometry", "That characterizes the loss."],
         ["Otoscopy", "That excludes conductive causes."]]),
 
  dict(topic="Syphilitic sensorineural loss", io=IO_A, lead="treatment", cite=D % 68,
@@ -197,7 +197,7 @@ QUESTIONS = [
 
  # ----------------------- hereditary -----------------------
  dict(topic="Hereditary sensorineural loss", io=IO_G, lead="next step", cite=D % 71,
-  q="A 4-year-old girl has bilateral sensorineural hearing loss, a white forelock and eyes of different colours. Which condition does this suggest?",
+  q="A 4-year-old girl has bilateral sensorineural hearing loss, a white forelock and eyes of different colors. Which condition does this suggest?",
   opts=[["Waardenburg syndrome", "Correct — one of the named hereditary causes."],
         ["Alport syndrome", "That is associated with kidney disease."],
         ["Meniere disease", "That presents with episodic vertigo in adults."],
@@ -214,7 +214,7 @@ QUESTIONS = [
  dict(topic="Vertebrobasilar occlusion", io=IO_A, lead="next step", cite=D % 77,
   q="A 76-year-old man has acute vertigo with facial weakness, loss of pain sensation on one side of his face and the opposite side of his body, and a drooping eyelid. What does this require?",
   opts=[["Emergency evaluation for stroke", "Correct — crossed sensory findings mean a brainstem problem."],
-        ["The Epley manoeuvre", "That treats positional vertigo."],
+        ["The Epley maneuver", "That treats positional vertigo."],
         ["Reassurance and meclizine", "These findings are not benign."],
         ["Routine audiometry", "Hearing testing does not address this."]]),
 
@@ -227,7 +227,7 @@ QUESTIONS = [
 
  dict(topic="Vertebrobasilar occlusion", io=IO_A, lead="epidemiology", cite=D % 85,
   q="An 81-year-old man has months of unsteadiness and lightheadedness with no ear symptoms. What is the commonest non-vestibular explanation at his age?",
-  opts=[["Small vessel ischaemic disease", "Correct."],
+  opts=[["Small vessel ischemic disease", "Correct."],
         ["Positional vertigo", "That is a vestibular cause with brief positional attacks."],
         ["Meniere disease", "That is a vestibular cause with hearing loss."],
         ["Labyrinthitis", "That is a vestibular cause with sudden onset."]]),

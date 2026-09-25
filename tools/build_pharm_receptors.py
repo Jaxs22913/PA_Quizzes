@@ -4,7 +4,7 @@
 
 Reads left to right in the order Dr. Wood said to think in: WHERE the receptor
 is, WHAT it does, then WHICH drugs turn it on and off. The summary grid at the
-top is the thing to actually memorise; the cards below are what it expands to.
+top is the thing to actually memorize; the cards below are what it expands to.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +48,7 @@ def main():
 
     body = ('<section id="grid"><div class="shead">'
             '<span class="dot" style="background:#c9a227"></span>'
-            '<h2>The whole thing in six lines <span class="tag">memorise this</span></h2></div>'
+            '<h2>The whole thing in six lines <span class="tag">memorize this</span></h2></div>'
             '<div class="rgrid">%s</div>'
             '<div class="note"><b>The two that catch people.</b> <b>Alpha-1 and alpha-2 pull in '
             'opposite directions</b>, and it is not the number that decides &mdash; it is '
@@ -125,7 +125,7 @@ def main():
     slides 22 to 24 and 76 to 78, the organ actions as a figure on slide 11, and then the drugs
     one at a time across nearly a hundred slides. Everything here is from those slides; putting
     it in one place is what the page is for.</div>
-    <div class="note warn"><b>Two memory hooks are NOT from the lecture</b> and are labelled where
+    <div class="note warn"><b>Two memory hooks are NOT from the lecture</b> and are labeled where
     they appear: <i>one heart, two lungs</i> for beta-1 against beta-2. They are standard
     mnemonics, included because the point of this page is to be memorable, and flagged so they
     are not mistaken for something the deck said.</div>"""

@@ -61,7 +61,7 @@ POOL_A = [
  dict(topic="Papilledema", io=IOA, lead="etiology",
    q="A 37-year-old man has papilledema. Which causes are listed?",
    opts=[
-     ["Tumour, trauma, infection, haemorrhage and vitamin A toxicity", "Correct, all raising intracranial pressure."],
+     ["Tumor, trauma, infection, hemorrhage and vitamin A toxicity", "Correct, all raising intracranial pressure."],
      ["Carotid emboli, cardiac emboli and retinal vascular spasm", "Those cause amaurosis fugax and arterial occlusion."],
      ["Trabecular meshwork aging", "That causes chronic glaucoma."],
      ["Vitreous shrinkage", "That precedes retinal detachment."]],
@@ -77,7 +77,7 @@ POOL_A = [
    c=0, cite=c(49)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="etiology",
-   q="A 63-year-old man has chronic open-angle glaucoma. How is its cause characterised?",
+   q="A 63-year-old man has chronic open-angle glaucoma. How is its cause characterized?",
    opts=[
      ["Idiopathic optic nerve damage", "Correct, from trabecular meshwork change with aging."],
      ["Mechanical closure by the iris", "That is the acute angle-closure mechanism."],
@@ -88,7 +88,7 @@ POOL_A = [
  dict(topic="Angle-closure glaucoma", io=IOA, lead="etiology",
    q="A 61-year-old woman has secondary angle-closure glaucoma. What can obstruct the drainage in this form?",
    opts=[
-     ["Tumour, scarring or other mechanical causes", "Correct."],
+     ["Tumor, scarring or other mechanical causes", "Correct."],
      ["Embolism and thrombosis", "Those are vascular, not mechanical."],
      ["Demyelination and inflammation", "Those cause optic neuritis."],
      ["Vitreous shrinkage and traction on the retina", "Those precede detachment."]],
@@ -160,9 +160,9 @@ POOL_A = [
    c=0, cite=c(5)),
 
  dict(topic="Retinal detachment", io=IOA, lead="risk factor",
-   q="A 57-year-old woman is counselled about retinal detachment risk. Which set of risk factors applies to retinal detachment?",
+   q="A 57-year-old woman is counseled about retinal detachment risk. Which set of risk factors applies to retinal detachment?",
    opts=[
-     ["Myopia, trauma, cataract extraction and diabetes", "Correct, with tumour, connective tissue disease and family history."],
+     ["Myopia, trauma, cataract extraction and diabetes", "Correct, with tumor, connective tissue disease and family history."],
      ["Anticholinergics and nebulized bronchodilators", "Those are angle-closure risks."],
      ["Sleep apnea and high cholesterol", "Those are non-arteritic optic neuropathy risks."],
      ["Scalp tenderness and jaw claudication", "Those are arteritic symptoms, not detachment risks."]],
@@ -183,13 +183,13 @@ POOL_A = [
      ["Systemic anticholinergics and prior uveitis", "Correct, with nebulized bronchodilators and lens dislocation."],
      ["Myopia and cataract extraction", "Those are detachment risks."],
      ["Sickle cell and coagulation disorder", "Those are amaurosis fugax risks."],
-     ["Sleep apnea and hyperlipidaemia", "Those are non-arteritic optic neuropathy risks."]],
+     ["Sleep apnea and hyperlipidemia", "Those are non-arteritic optic neuropathy risks."]],
    c=0, cite=c(14)),
 
  dict(topic="CRVO", io=IOA, lead="risk factor",
    q="A 66-year-old man with a central retinal vein occlusion is assessed. Which risk factors apply?",
    opts=[
-     ["Hypertension, diabetes and hyperlipidaemia", "Correct, with age over 50, hypercoagulable states, obesity and endocarditis."],
+     ["Hypertension, diabetes and hyperlipidemia", "Correct, with age over 50, hypercoagulable states, obesity and endocarditis."],
      ["Myopia, trauma and vitreous shrinkage", "Those are detachment risks."],
      ["Anticholinergic drugs", "That is an angle-closure risk."],
      ["Postviral illness", "That is an optic neuritis association."]],
@@ -209,7 +209,7 @@ POOL_A = [
    opts=[
      ["A small structural optic disc", "Correct, the anatomical association with the non-arteritic form."],
      ["A swollen disc from raised intracranial pressure", "That is papilledema."],
-     ["A disc with splinter haemorrhages", "That is a glaucomatous rim change."],
+     ["A disc with splinter hemorrhages", "That is a glaucomatous rim change."],
      ["A pale, atrophic disc", "That is a late finding, not the structural predisposition."]],
    c=0, cite=c(48)),
 
@@ -235,9 +235,9 @@ POOL_A = [
  dict(topic="Angle-closure glaucoma", io=IOA, lead="manifestation",
    q="A 62-year-old man has acute angle-closure glaucoma. Which symptoms is he most likely to report?",
    opts=[
-     ["Severe eye pain, headache, nausea and vomiting", "Correct, with coloured halos around lights and decreased vision."],
+     ["Severe eye pain, headache, nausea and vomiting", "Correct, with colored halos around lights and decreased vision."],
      ["Painless gradual peripheral field loss", "That is the chronic open-angle form."],
-     ["Painful eye movement with colour loss", "That is optic neuritis."],
+     ["Painful eye movement with color loss", "That is optic neuritis."],
      ["Flashes, floaters and a curtain", "That is retinal detachment."]],
    c=0, cite=c(16)),
 
@@ -262,7 +262,7 @@ POOL_A = [
  dict(topic="Optic neuritis", io=IOA, lead="manifestation",
    q="A 29-year-old man has optic neuritis. Which visual finding besides reduced acuity is named?",
    opts=[
-     ["Loss of colour vision", "Correct, with central vision loss and a relative afferent pupillary defect."],
+     ["Loss of color vision", "Correct, with central vision loss and a relative afferent pupillary defect."],
      ["Tunnel vision", "That belongs to chronic glaucoma."],
      ["An island of temporal vision", "That belongs to arterial occlusion."],
      ["Double vision", "That is a papilledema symptom."]],
@@ -283,7 +283,7 @@ POOL_A = [
      ["Counting fingers to light perception", "Correct, describing profound loss."],
      ["20/40 to 20/60", "Far better than the loss described."],
      ["Normal acuity with a field defect", "Acuity is profoundly reduced."],
-     ["Loss of colour vision only", "That is optic neuritis."]],
+     ["Loss of color vision only", "That is optic neuritis."]],
    c=0, cite=c(38)),
 
  dict(topic="CRVO", io=IOA, lead="manifestation",
@@ -300,7 +300,7 @@ POOL_A = [
    opts=[
      ["Flickering, blurry and double vision", "Correct, all non-specific."],
      ["A curtain across the field", "That belongs to detachment or amaurosis fugax."],
-     ["Loss of colour vision", "That belongs to optic neuritis."],
+     ["Loss of color vision", "That belongs to optic neuritis."],
      ["Tunnel vision", "That belongs to chronic glaucoma."]],
    c=0, cite=c(44)),
 
@@ -317,7 +317,7 @@ POOL_A = [
    q="A 77-year-old woman has arteritic anterior ischemic optic neuropathy. Which systemic symptoms may accompany it?",
    opts=[
      ["Malaise, weight loss, headache, fever and scalp tenderness", "Correct, with jaw claudication on chewing."],
-     ["Severe eye pain, nausea, vomiting and coloured halos", "Those belong to angle-closure glaucoma."],
+     ["Severe eye pain, nausea, vomiting and colored halos", "Those belong to angle-closure glaucoma."],
      ["Flashes and floaters", "Those belong to a retinal tear."],
      ["Painful eye movement", "That belongs to optic neuritis."]],
    c=0, cite=c(49)),
@@ -335,18 +335,18 @@ POOL_A = [
    q="A 58-year-old woman has acute angle-closure glaucoma. Which examination findings are expected?",
    opts=[
      ["Pupillary dilation, hazy cornea and a narrow angle", "Correct, with markedly elevated intraocular pressure."],
-     ["Optic nerve cupping with splinter haemorrhages", "Those belong to the chronic form."],
+     ["Optic nerve cupping with splinter hemorrhages", "Those belong to the chronic form."],
      ["Disc elevation with blurred margins", "That is papilledema."],
-     ["Cotton wool spots and haemorrhages", "Those are vein occlusion findings."]],
+     ["Cotton wool spots and hemorrhages", "Those are vein occlusion findings."]],
    c=0, cite=c(17)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="finding",
    q="A 65-year-old man has chronic open-angle glaucoma. Besides an increased cup-to-disc ratio, which optic nerve findings are expected?",
    opts=[
-     ["Rim pitting, bayoneting and splinter haemorrhages", "Correct, with rim thinning and visual field defects."],
-     ["Cotton wool spots, venous dilation and haemorrhage", "Those are vein occlusion findings."],
+     ["Rim pitting, bayoneting and splinter hemorrhages", "Correct, with rim thinning and visual field defects."],
+     ["Cotton wool spots, venous dilation and hemorrhage", "Those are vein occlusion findings."],
      ["Engorged veins with disc elevation", "That is papilledema."],
-     ["An elevated grey retina with folds", "That is detachment."]],
+     ["An elevated gray retina with folds", "That is detachment."]],
    c=0, cite=c(18)),
 
  dict(topic="Open-angle glaucoma", io=IOA, lead="finding",
@@ -354,7 +354,7 @@ POOL_A = [
    opts=[
      ["Blood vessels with narrow angulations", "Correct, one of the glaucomatous rim changes."],
      ["Widening of the central cup", "That is cupping itself."],
-     ["Haemorrhage in all four quadrants", "That is vein occlusion."],
+     ["Hemorrhage in all four quadrants", "That is vein occlusion."],
      ["Pallor of the whole disc", "That is ischemic optic neuropathy."]],
    c=0, cite=c(18)),
 
@@ -362,7 +362,7 @@ POOL_A = [
    q="A 75-year-old man has a central retinal artery occlusion. Which fundus findings are expected?",
    opts=[
      ["Pale retinal swelling with a cherry-red fovea", "Correct, with emboli visible in the central artery."],
-     ["Disc swelling with cotton wool spots and haemorrhage", "That is vein occlusion."],
+     ["Disc swelling with cotton wool spots and hemorrhage", "That is vein occlusion."],
      ["A deeply cupped disc", "That is chronic glaucoma."],
      ["Bilateral disc elevation", "That is papilledema."]],
    c=0, cite=c(39)),
@@ -370,27 +370,27 @@ POOL_A = [
  dict(topic="CRVO", io=IOA, lead="finding",
    q="A 67-year-old woman has a central retinal vein occlusion. Which findings are expected on examination?",
    opts=[
-     ["Disc swelling, venous dilation and cotton wool spots", "Correct, with retinal haemorrhages."],
+     ["Disc swelling, venous dilation and cotton wool spots", "Correct, with retinal hemorrhages."],
      ["Pale retinal swelling with a cherry-red spot at the fovea", "That is arterial occlusion."],
      ["A hazy cornea and narrow angle", "That is angle-closure glaucoma."],
-     ["A normal disc with colour loss", "That is optic neuritis."]],
+     ["A normal disc with color loss", "That is optic neuritis."]],
    c=0, cite=c(34)),
 
  dict(topic="Retinal detachment", io=IOA, lead="finding",
    q="A 64-year-old man has a retinal detachment. How is a retinal tear described on examination?",
    opts=[
-     ["Orange and crescent shaped", "Correct, against the elevated grey detached retina."],
+     ["Orange and crescent shaped", "Correct, against the elevated gray detached retina."],
      ["Pale and wedge shaped", "That describes branch arterial occlusion."],
-     ["Red and flame shaped", "That describes retinal haemorrhage."],
+     ["Red and flame shaped", "That describes retinal hemorrhage."],
      ["Dark and pigmented centrally", "The detachment is pigmented, not the tear."]],
    c=0, cite=c(29)),
 
  dict(topic="Papilledema", io=IOA, lead="finding",
    q="A 42-year-old woman has papilledema. Which fundus findings are expected?",
    opts=[
-     ["Engorged retinal veins and a swollen optic disc", "Correct, with or without retinal haemorrhages."],
+     ["Engorged retinal veins and a swollen optic disc", "Correct, with or without retinal hemorrhages."],
      ["A cherry-red spot at the fovea with retinal pallor", "That is arterial occlusion."],
-     ["An elevated grey retina", "That is detachment."],
+     ["An elevated gray retina", "That is detachment."],
      ["A hazy cornea", "That is angle-closure glaucoma."]],
    c=0, cite=c(46)),
 ]

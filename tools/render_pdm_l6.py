@@ -12,7 +12,7 @@ CHIPS = ["Inspection &amp; the dipstick", "pH &amp; stones", "Infection pads",
          "Ketones &amp; glucose", "Blood, bilirubin &amp; protein",
          "Specific gravity", "Clinical correlation"]
 INTRO = ("Thirty questions on urinalysis: what the test covers and when to order it, the "
-         "physical examination of urine &mdash; colour, transparency and odour &mdash; reagent "
+         "physical examination of urine &mdash; color, transparency and odor &mdash; reagent "
          "strip technique, and each of the nine parameters in turn. Specific gravity, pH, "
          "protein, glucose, ketones, leukocyte esterase, nitrites, blood and bilirubin. Then the "
          "differentiation objective: telling hematuria, hemoglobinuria and myoglobinuria apart "
@@ -22,7 +22,7 @@ INTRO = ("Thirty questions on urinalysis: what the test covers and when to order
          "know if there should just be none present at all. If there&rsquo;s a range involved, "
          "it&rsquo;ll be provided for you.&rdquo;</i> So knowing which pads read negative in a "
          "healthy person is fair game, and no question here turns on a number you have to have "
-         "memorised. Nothing asks you to calculate. "
+         "memorized. Nothing asks you to calculate. "
          "<b>The blood pad detects heme</b>, which sits in red cells, free hemoglobin and "
          "myoglobin alike, so a positive result never tells you which. What separates them is "
          "what else is true &mdash; intact cells on microscopy, a raised unconjugated bilirubin, "

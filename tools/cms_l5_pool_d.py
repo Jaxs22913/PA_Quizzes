@@ -23,7 +23,7 @@ POOL_D = [
       "That is the risk group for head lice."],
      ["Homeless people and refugees living in crowded conditions",
       "That is the risk group for body lice."],
-     ["Travellers staying in hotels and using second-hand furniture",
+     ["Travelers staying in hotels and using second-hand furniture",
       "That is the risk pattern for bedbugs."]],
    c=0, cite=c(5)),
 
@@ -106,16 +106,16 @@ POOL_D = [
    c=0, cite=c(28)),
 
  dict(topic="Pediculosis", io=IOA, slot="test finding",
-   q="What does the colour of a nit indicate?",
+   q="What does the color of a nit indicate?",
    opts=[
      ["Tan to brown means a newly laid viable egg; clear, white or light means a hatched remnant",
       "Correct — and nits cannot be removed from the hair shaft at all."],
      ["Tan to brown means a hatched remnant; clear, white or light means a viable egg",
       "That reverses the two."],
-     ["Colour has no meaning, since all nits look identical to the naked eye",
-      "Colour distinguishes viable from hatched."],
+     ["Color has no meaning, since all nits look identical to the naked eye",
+      "Color distinguishes viable from hatched."],
      ["Dark nits indicate resistance to the pediculicide that was used",
-      "Colour does not indicate resistance."]],
+      "Color does not indicate resistance."]],
    c=0, cite=c(28)),
 
  dict(topic="Pediculosis", io=IOA, slot="agent/regimen",
@@ -158,10 +158,10 @@ POOL_D = [
    c=0, cite=c(30)),
 
  dict(topic="Bedbugs", io=IOA, slot="complication",
-   q="Which reaction to bedbug bites occurs particularly in sensitised patients?",
+   q="Which reaction to bedbug bites occurs particularly in sensitized patients?",
    opts=[
      ["A bullous reaction",
-      "Correct — the usual reaction is wheals and papules with a haemorrhagic punctum."],
+      "Correct — the usual reaction is wheals and papules with a hemorrhagic punctum."],
      ["A necrotic ulcer with an eschar",
       "That describes a brown recluse spider bite."],
      ["A serpentine advancing trail",
@@ -187,7 +187,7 @@ POOL_D = [
    q="Which two flea families are named, and what does each cause?",
    opts=[
      ["Tungidae causes tungiasis; Pulicidae includes the rat and cat fleas that transmit plague and typhus",
-      "Correct — fleas jump to a height of about 18 centimetres."],
+      "Correct — fleas jump to a height of about 18 centimeters."],
      ["Pulicidae causes tungiasis; Tungidae includes the rat and cat fleas that transmit plague",
       "That reverses the two families."],
      ["Cimicidae causes tungiasis; Pediculidae includes the fleas transmitting endemic typhus",
@@ -205,7 +205,7 @@ POOL_D = [
       "That complication belongs to necrotizing fasciitis."],
      ["Permanent depigmentation of the sole",
       "That is not a described complication."],
-     ["Chronic lymphoedema of the whole leg",
+     ["Chronic lymphedema of the whole leg",
       "That is not a described complication."]],
    c=0, cite=c(38)),
 
@@ -231,15 +231,15 @@ POOL_D = [
       "Migration is not the described mechanism."],
      ["The stinger introduces bacteria that cause a secondary cellulitis",
       "Infection is not the described reason."],
-     ["The stinger triggers the immune sensitisation that leads to anaphylaxis",
-      "Sensitisation is not the reason given for speed."]],
+     ["The stinger triggers the immune sensitization that leads to anaphylaxis",
+      "Sensitization is not the reason given for speed."]],
    c=0, cite=c(42)),
 
  dict(topic="Hymenoptera", io=IOA, slot="escalation",
    q="Which long-term therapy is offered specifically for fire ant hypersensitivity?",
    opts=[
      ["Immunotherapy",
-      "Correct — desensitisation is offered for patients with a positive skin test and sting-induced anaphylaxis."],
+      "Correct — desensitization is offered for patients with a positive skin test and sting-induced anaphylaxis."],
      ["Daily oral antihistamine through the summer",
       "That is not the described long-term therapy."],
      ["A maintenance corticosteroid taken at low dose",
@@ -309,7 +309,7 @@ POOL_D = [
       "That substantially overstates the risk."],
      ["Death occurs in the majority without antivenom",
       "That substantially overstates the risk."],
-     ["Death is essentially universal without hospitalisation",
+     ["Death is essentially universal without hospitalization",
       "That substantially overstates the risk."]],
    c=0, cite=c(57)),
 
@@ -319,7 +319,7 @@ POOL_D = [
      ["Surgical intervention or reconstruction to close the defect, delayed until the wound is stable",
       "Correct — necrotic wounds heal very slowly."],
      ["Immediate wide surgical excision carried out on the very day of first presentation",
-      "Surgery is delayed until the wound has stabilised."],
+      "Surgery is delayed until the wound has stabilized."],
      ["Skin grafting within the first forty-eight hours",
       "That is far earlier than described."],
      ["No surgical input at any stage of the healing",
@@ -329,7 +329,7 @@ POOL_D = [
  dict(topic="Hobo spider", io=IOA, slot="complication",
    q="Which rare severe systemic effect of a hobo spider bite is named?",
    opts=[
-     ["Aplastic anaemia",
+     ["Aplastic anemia",
       "Correct — death from severe systemic effects is rare."],
      ["Acute kidney injury",
       "That is named for the black widow spider."],
@@ -382,7 +382,7 @@ POOL_D = [
    q="What does cerebrospinal fluid show in Rocky Mountain spotted fever?",
    opts=[
      ["Leukocytosis with moderately raised protein and normal glucose",
-      "Correct — blood shows thrombocytopenia, anaemia, mild hyponatraemia and transaminitis."],
+      "Correct — blood shows thrombocytopenia, anemia, mild hyponatremia and transaminitis."],
      ["Leukocytosis with markedly low glucose and very high protein",
       "That pattern would suggest bacterial meningitis."],
      ["Entirely normal cell count, protein and glucose in every case",
@@ -396,7 +396,7 @@ POOL_D = [
    opts=[
      ["Waterfowl, marsh birds, finches, muskrats, mice and deer",
       "Correct — the eggs hatch and infect a snail within twelve hours."],
-     ["Dogs and cats, whose faeces contaminate the sand",
+     ["Dogs and cats, whose feces contaminate the sand",
       "That is the source for cutaneous larva migrans."],
      ["Rats and their fleas, which carry the organism in water",
       "Rat fleas transmit plague rather than this."],
@@ -413,7 +413,7 @@ POOL_D = [
       "Those belong to a black widow spider bite."],
      ["Cranial nerve palsy and meningitis",
       "Those belong to disseminated Lyme disease."],
-     ["Aplastic anaemia and memory impairment",
+     ["Aplastic anemia and memory impairment",
       "Those belong to a hobo spider bite."]],
    c=0, cite=c(90)),
  dict(topic="Pediculosis", io=IOA, slot="risk factors",

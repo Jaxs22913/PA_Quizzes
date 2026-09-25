@@ -58,7 +58,7 @@ SECTIONS = "".join([
   ("The tell for all four", "INHERITED, and they present YOUNGER than age-related degeneration."),
   ("LEUKOCORIA besides retinoblastoma", "COATS' (retinal TELANGIECTASIA with exudation) &middot; PERSISTENT FETAL VASCULATURE &middot; TOXOCARIASIS (granulomatous) &middot; RETINAL ASTROCYTOMA (glial, TUBEROUS SCLEROSIS) &middot; MEDULLOEPITHELIOMA (nonpigmented ciliary epithelium) &middot; CONGENITAL CATARACT &middot; OCULAR TOXOPLASMOSIS."),
   ("UVEAL MELANOMA by site", "IRIS (melanotic OR partly AMELANOTIC) &middot; CILIARY BODY &middot; CHOROID."),
-  ("Two ciliary body signs", "SENTINEL VESSEL (dilated episcleral vessel over the tumour) and EXTRASCLERAL EXTENSION."),
+  ("Two ciliary body signs", "SENTINEL VESSEL (dilated episcleral vessel over the tumor) and EXTRASCLERAL EXTENSION."),
   ("IRIS NEVUS", "INFERIOR half &middot; does NOT typically grow &middot; FLAT / under 1 mm &middot; not vascular &middot; may cause CORECTOPIA. Apparent around PUBERTY, ASYMPTOMATIC."),
   ("PIGMENTED IRIS differential", "FRECKLE (flat, no stromal involvement) &middot; LISCH NODULES (NF1) &middot; MELANOCYTOMA (granular; secondary glaucoma from PIGMENT DISPERSION) &middot; MELANOCYTOSIS (congenital, RAISES melanoma risk) &middot; COGAN-REESE / ICE (corneal ENDOTHELIAL abnormality) &middot; IRIS MELANOMA &middot; METASTATIC CARCINOMA."),
   ("Pushes an iris lesion toward MELANOMA", "INFERIOR location &middot; DIFFUSE configuration &middot; BLOOD in the anterior chamber."),

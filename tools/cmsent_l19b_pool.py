@@ -12,24 +12,24 @@ IO = ("Disorders of the oral cavity, salivary glands, and neck: etiologies, epid
 QUESTIONS = [
 
 Q("Aphthous stomatitis", IO,
-  "A 19-year-old student has recurrent painful oral ulcers with yellow-grey centres and red halos, "
-  "each under a centimetre, appearing on the inner cheek and inner lip and healing in about a week. "
+  "A 19-year-old student has recurrent painful oral ulcers with yellow-gray centers and red halos, "
+  "each under a centimeter, appearing on the inner cheek and inner lip and healing in about a week. "
   "They recur during examination periods.",
   [["Minor aphthous ulceration",
-    "Correct. Minor aphthae are under a centimetre, are the commonest form, burn and tingle before "
+    "Correct. Minor aphthae are under a centimeter, are the commonest form, burn and tingle before "
     "they appear, and heal in 7 to 10 days without scarring. Their location is diagnostic: they "
-    "occur on freely moving, NON-keratinised mucosa such as buccal and labial mucosa, and stress is "
-    "a recognised precipitant."],
+    "occur on freely moving, NON-keratinized mucosa such as buccal and labial mucosa, and stress is "
+    "a recognized precipitant."],
    ["Major aphthous ulceration",
-    "Major aphthae are larger than a centimetre, more painful, often multiple, carry a risk of "
+    "Major aphthae are larger than a centimeter, more painful, often multiple, carry a risk of "
     "scarring and last over a month. The size and the one-week healing time here place these firmly "
     "in the minor category."],
    ["Herpetic gingivostomatitis",
-    "Primary herpes affects KERATINISED surfaces such as the hard palate and attached gingiva, "
+    "Primary herpes affects KERATINIZED surfaces such as the hard palate and attached gingiva, "
     "typically with fever and cervical lymphadenopathy in a child or young adult, and it is a single "
     "primary illness rather than a stress-related recurrent pattern on the buccal mucosa."],
    ["Herpetiform aphthous ulceration",
-    "The herpetiform variant produces numerous tiny ulcers of 1 to 3 millimetres, carries a scarring "
+    "The herpetiform variant produces numerous tiny ulcers of 1 to 3 millimeters, carries a scarring "
     "risk and lasts over a month, despite the name having nothing to do with herpes. The lesions "
     "here are fewer and larger."]],
   "diagnosis", D, 16),
@@ -37,17 +37,17 @@ Q("Aphthous stomatitis", IO,
 Q("Oral lichen planus", IO,
   "A 54-year-old woman has lacy white lines on both buccal mucosae that cannot be wiped away. She "
   "asks whether it is dangerous.",
-  [["It carries a 1 to 4 per cent risk of squamous cell carcinoma, higher if ulcerative",
+  [["It carries a 1 to 4 percent risk of squamous cell carcinoma, higher if ulcerative",
     "Correct. Oral lichen planus is a chronic autoimmune condition in which activated lymphocytes "
-    "destroy the basal layer, and between 1 and 4 per cent progress to squamous cell carcinoma. The "
+    "destroy the basal layer, and between 1 and 4 percent progress to squamous cell carcinoma. The "
     "risk is higher with ulcerative lesions, which is why close follow-up rather than simple "
     "reassurance is the point of making the diagnosis."],
    ["It is entirely benign and needs no follow-up",
-    "This is the reassuring answer and the reason the malignant potential is emphasised. Discharging "
+    "This is the reassuring answer and the reason the malignant potential is emphasized. Discharging "
     "the patient means nobody is watching a premalignant lesion in a site that is easy to examine."],
    ["It transforms to malignancy in the majority of cases",
     "Overstating the risk causes unnecessary alarm and can lead to overtreatment. The figure is a "
-    "few per cent, which justifies surveillance rather than aggressive intervention."],
+    "few percent, which justifies surveillance rather than aggressive intervention."],
    ["It is an infection that will clear with antifungal treatment",
     "Candidiasis is the white lesion that responds to antifungals, and it is distinguished by wiping "
     "off. Lichen planus is immune-mediated and its striae are part of the mucosa."]],
@@ -57,8 +57,8 @@ Q("Behcet syndrome", IO,
   "A 29-year-old man has recurrent painful oral ulcers. Further questioning reveals similar ulcers "
   "on the scrotum, and he has had episodes of eye inflammation and joint pain.",
   [["Behcet syndrome",
-    "Correct. Oral ulcers are the commonest feature of Behcet, affecting up to 100 per cent of "
-    "patients, and genital ulcers occur in about 75 per cent and look identical to oral aphthae. The "
+    "Correct. Oral ulcers are the commonest feature of Behcet, affecting up to 100 percent of "
+    "patients, and genital ulcers occur in about 75 percent and look identical to oral aphthae. The "
     "diagnosis is clinical: recurrent aphthous ulceration IN THE CONTEXT of the characteristic "
     "systemic manifestations, which here include ocular and articular involvement."],
    ["Simple recurrent aphthous stomatitis",
@@ -66,11 +66,11 @@ Q("Behcet syndrome", IO,
     "It is precisely the genital, ocular and joint involvement that lifts this out of that "
     "category."],
    ["Herpes simplex infection",
-    "Recurrent herpes produces grouped vesicles that ulcerate on keratinised surfaces with a burning "
+    "Recurrent herpes produces grouped vesicles that ulcerate on keratinized surfaces with a burning "
     "prodrome, and it does not cause the multisystem inflammation described. Genital herpes is "
     "possible but would not explain the eye and joint disease."],
    ["Systemic lupus erythematosus",
-    "Lupus does cause oral ulcers in around 40 per cent of patients and can affect joints and eyes, "
+    "Lupus does cause oral ulcers in around 40 percent of patients and can affect joints and eyes, "
     "so it is a fair differential, but the ulcers are typically painless or variable and the "
     "characteristic genital aphthae of Behcet are not a lupus feature."]],
   "diagnosis", D, 19),
@@ -89,7 +89,7 @@ Q("Herpes simplex", IO,
     "site are reactivation of established latent virus."],
    ["An autoimmune reaction to sunlight",
     "Photosensitive autoimmune disease exists, but it does not produce a 24-hour neurological "
-    "prodrome of burning and tingling, which is characteristic of a virus travelling along a nerve."],
+    "prodrome of burning and tingling, which is characteristic of a virus traveling along a nerve."],
    ["Bacterial superinfection of chapped lips",
     "Angular cheilitis and impetigo can affect the perioral region, but neither has a prodrome, "
     "neither recurs at exactly the same site with these triggers, and both look different from "
@@ -121,18 +121,18 @@ Q("Sialolithiasis", IO,
 Q("Salivary gland neoplasm", IO,
   "A 58-year-old man has a slowly enlarging painless mass at the tail of the parotid gland with no "
   "facial weakness.",
-  [["A benign parotid tumour, most likely a pleomorphic adenoma",
-    "Correct. Between 64 and 80 per cent of salivary neoplasms arise in the parotid, and 75 to 80 "
-    "per cent of parotid tumours are benign. Benign parotid tumours characteristically present as "
+  [["A benign parotid tumor, most likely a pleomorphic adenoma",
+    "Correct. Between 64 and 80 percent of salivary neoplasms arise in the parotid, and 75 to 80 "
+    "percent of parotid tumors are benign. Benign parotid tumors characteristically present as "
     "slow-growing painless masses at the tail of the gland, and the absence of facial nerve "
     "involvement supports a benign process."],
-   ["A malignant parotid tumour, most likely mucoepidermoid carcinoma",
+   ["A malignant parotid tumor, most likely mucoepidermoid carcinoma",
     "Mucoepidermoid carcinoma is the commonest salivary malignancy, so it is the right answer to a "
     "different question. Malignancy is suggested by pain, facial nerve involvement, rapid growth or "
     "skin invasion, none of which is present."],
-   ["A minor salivary gland tumour",
-    "Minor gland tumours occur in the buccal, labial and palatal mucosa rather than at the parotid "
-    "tail, and only about 35 per cent of them are benign, so the probability runs the other way in "
+   ["A minor salivary gland tumor",
+    "Minor gland tumors occur in the buccal, labial and palatal mucosa rather than at the parotid "
+    "tail, and only about 35 percent of them are benign, so the probability runs the other way in "
     "that site."],
    ["A parotid abscess",
     "An abscess is acutely painful with fever, erythema and often pus expressible from Stensen duct, "
@@ -140,10 +140,10 @@ Q("Salivary gland neoplasm", IO,
   "diagnosis", D, 141),
 
 Q("Salivary gland neoplasm", IO,
-  "A student asks how the site of a salivary tumour relates to the chance that it is malignant.",
+  "A student asks how the site of a salivary tumor relates to the chance that it is malignant.",
   [["The smaller the gland, the higher the proportion that are malignant",
-    "Correct. Parotid tumours are 75 to 80 per cent benign, submandibular 50 to 60 per cent, and "
-    "minor salivary glands only about 35 per cent benign. The relationship runs inversely with gland "
+    "Correct. Parotid tumors are 75 to 80 percent benign, submandibular 50 to 60 percent, and "
+    "minor salivary glands only about 35 percent benign. The relationship runs inversely with gland "
     "size, which is a memorable rule and changes how aggressively a small-gland lesion is "
     "investigated."],
    ["The larger the gland, the higher the proportion that are malignant",
@@ -152,9 +152,9 @@ Q("Salivary gland neoplasm", IO,
    ["Site has no bearing on the likelihood of malignancy",
     "Site is one of the most useful pieces of information available before any test, because the "
     "benign proportion differs by more than twofold between parotid and minor glands."],
-   ["Only the parotid gives rise to malignant tumours",
+   ["Only the parotid gives rise to malignant tumors",
     "The parotid is the commonest site of salivary malignancy in absolute numbers because it is the "
-    "commonest site of tumours generally, but submandibular and minor glands also produce cancers "
+    "commonest site of tumors generally, but submandibular and minor glands also produce cancers "
     "and do so at higher proportions."]],
   "mechanism", D, 139),
 
@@ -172,10 +172,10 @@ Q("Vocal cord paralysis", IO,
     "is absent."],
    ["Vocal cord nodules from postoperative voice strain",
     "Nodules are bilateral, symmetric and appear at the junction of the anterior third and posterior "
-    "two thirds after prolonged vocal abuse. They do not immobilise a cord and would not cause "
+    "two thirds after prolonged vocal abuse. They do not immobilize a cord and would not cause "
     "aspiration."],
-   ["Laryngeal oedema from intubation",
-    "Post-intubation oedema causes hoarseness and sometimes stridor but resolves within days, not "
+   ["Laryngeal edema from intubation",
+    "Post-intubation edema causes hoarseness and sometimes stridor but resolves within days, not "
     "six weeks, and it does not fix a cord in position on laryngoscopy."]],
   "diagnosis", D, 53),
 
@@ -187,7 +187,7 @@ Q("Vocal cord paralysis", IO,
     "not. A bruised or stretched nerve may recover function over six months to a year, whereas a "
     "transected nerve or one infiltrated by malignancy will not, which is what determines whether to "
     "wait or to proceed to medialisation."],
-   ["It confirms which cord is paralysed",
+   ["It confirms which cord is paralyzed",
     "Laryngoscopy already establishes which cord is immobile by direct observation. "
     "Electromyography is asked a different question, about the state of the nerve rather than the "
     "position of the fold."],
@@ -204,7 +204,7 @@ Q("Vocal cord paralysis", IO,
 Q("Vocal cord papillomatosis", IO,
   "A 3-year-old with recurrent respiratory papillomatosis is deteriorating. A clinician suggests "
   "tracheostomy to secure the airway.",
-  [["Avoid tracheostomy, because it creates another site the papillomas favour",
+  [["Avoid tracheostomy, because it creates another site the papillomas favor",
     "Correct. Papillomas have an affinity for squamociliary junctions, the boundaries where "
     "ciliated respiratory epithelium meets squamous epithelium. A tracheostomy creates a new such "
     "junction, giving the disease a fresh site to seed and spreading it distally into the trachea, "
@@ -223,13 +223,13 @@ Q("Vocal cord papillomatosis", IO,
   "treatment", D, 52),
 
 Q("Epiglottitis", IO,
-  "A 6-year-old with suspected epiglottitis is transferred to theatre. A student asks why the "
+  "A 6-year-old with suspected epiglottitis is transferred to theater. A student asks why the "
   "incidence of this disease has fallen so sharply.",
   [["Haemophilus influenzae type B vaccination",
-    "Correct. The commonest pathogen in the paediatric population is Haemophilus influenzae type B, "
-    "and routine immunisation has reduced the incidence of supraglottitis by over 90 per cent. It "
-    "still occurs, from Streptococcus pneumoniae, Staphylococcus aureus and beta-haemolytic "
-    "streptococci and in unimmunised children, which is why awareness still matters."],
+    "Correct. The commonest pathogen in the pediatric population is Haemophilus influenzae type B, "
+    "and routine immunization has reduced the incidence of supraglottitis by over 90 percent. It "
+    "still occurs, from Streptococcus pneumoniae, Staphylococcus aureus and beta-hemolytic "
+    "streptococci and in unimmunized children, which is why awareness still matters."],
    ["Widespread use of antibiotics for sore throat",
     "Antibiotic prescribing for pharyngitis targets group A streptococcus and has not been the "
     "driver of this change. The fall is specific and dates from the introduction of a particular "
@@ -251,8 +251,8 @@ Q("Pharyngitis", IO,
     "because tonsillar involvement raises the possibility of complications such as peritonsillar "
     "abscess."],
    ["Pharyngitis is always viral and tonsillitis always bacterial",
-    "Both structures can be affected by either. Around 70 per cent of pharyngitis is viral and 30 "
-    "per cent bacterial regardless of which structure is inflamed, so the anatomical name carries no "
+    "Both structures can be affected by either. Around 70 percent of pharyngitis is viral and 30 "
+    "percent bacterial regardless of which structure is inflamed, so the anatomical name carries no "
     "microbiological information."],
    ["Tonsillitis refers to the adenoids and pharyngitis to the palatine tonsils",
     "This confuses the structures. The adenoid is the nasopharyngeal tonsil, and tonsillitis "
@@ -267,7 +267,7 @@ Q("Gingivitis", IO,
   "discomfort. There is no pocketing or tooth mobility.",
   [["Gingivitis, which is reversible with professional cleaning and good home care",
     "Correct. Gingivitis is the mildest form of periodontal disease: inflammation confined to the "
-    "gingiva from bacterial plaque at the gum line, producing erythema, oedema and bleeding with "
+    "gingiva from bacterial plaque at the gum line, producing erythema, edema and bleeding with "
     "little discomfort. The critical point is that it is entirely reversible at this stage, before "
     "the periodontal ligament and bone are destroyed."],
    ["Periodontitis, which causes irreversible bone loss",
@@ -275,8 +275,8 @@ Q("Gingivitis", IO,
     "form, and the periodontal ligament and bone are destroyed so that teeth loosen. The absence of "
     "pocketing and mobility here means that has not yet happened."],
    ["A dental abscess",
-    "An abscess is a localised collection of pus around a tooth root or in a periodontal pocket, "
-    "causing significant pain and swelling. Generalised painless bleeding gums are a different "
+    "An abscess is a localized collection of pus around a tooth root or in a periodontal pocket, "
+    "causing significant pain and swelling. Generalized painless bleeding gums are a different "
     "process."],
    ["Oral lichen planus",
     "Lichen planus can affect the gingiva as a desquamative gingivitis, so it is worth considering, "
@@ -306,16 +306,16 @@ Q("Dental abscess", IO,
 
 Q("Cervical adenitis", IO,
   "A 7-year-old has a unilateral, solitary, tender anterior cervical node following a sore throat.",
-  [["Beta-haemolytic streptococcus, which accounts for about 70 per cent",
+  [["Beta-hemolytic streptococcus, which accounts for about 70 percent",
     "Correct. Local infections of the ear, nose and throat drain to regional nodes, and about 70 per "
-    "cent of these unilateral solitary anterior cervical nodes relate to beta-haemolytic "
-    "streptococcal infection. Around 20 per cent are staphylococcal including MRSA, and 10 per cent "
+    "cent of these unilateral solitary anterior cervical nodes relate to beta-hemolytic "
+    "streptococcal infection. Around 20 percent are staphylococcal including MRSA, and 10 percent "
     "are viral, atypical mycobacterial or Bartonella."],
    ["Staphylococcus aureus, which accounts for the majority",
-    "Staphylococcus, including MRSA, is the second commonest at around 20 per cent, so it is a "
+    "Staphylococcus, including MRSA, is the second commonest at around 20 percent, so it is a "
     "genuine consideration and matters for antibiotic choice, but it is not the majority."],
    ["Bartonella henselae",
-    "Cat scratch disease sits in the residual 10 per cent alongside viruses and atypical "
+    "Cat scratch disease sits in the residual 10 percent alongside viruses and atypical "
     "mycobacteria, and it requires a history of cat contact with preauricular or submandibular node "
     "involvement."],
    ["Mycobacterium tuberculosis",
@@ -327,7 +327,7 @@ Q("Cervical lymphadenopathy", IO,
   "A clinician is describing a cervical node and considers which features suggest malignancy.",
   [["Immobility and non-tenderness",
     "Correct. The descriptors that matter are: size, shape, mobility, consistency "
-    "and tenderness. An immobile node suggests fixation to surrounding structures by tumour, and "
+    "and tenderness. An immobile node suggests fixation to surrounding structures by tumor, and "
     "non-tenderness points away from an inflammatory cause, since inflamed nodes hurt. Persistence "
     "or continued enlargement is what triggers fine needle aspiration."],
    ["Tenderness and rapid enlargement",
@@ -336,7 +336,7 @@ Q("Cervical lymphadenopathy", IO,
     "combination that suggests lymphoma."],
    ["Softness and fluctuance",
     "Fluctuance indicates a fluid-filled or cystic structure, which points to an abscess or a "
-    "congenital cyst rather than a solid tumour. Malignant nodes are characteristically firm or "
+    "congenital cyst rather than a solid tumor. Malignant nodes are characteristically firm or "
     "hard."],
    ["Bilateral distribution",
     "Bilateral symmetrical lymphadenopathy more often reflects a systemic or viral process such as "
@@ -352,7 +352,7 @@ Q("Chronic laryngitis", IO,
     "must be excluded, particularly in a smoker."],
    ["A trial of proton pump inhibitor for reflux laryngitis",
     "Reflux is a genuine contributor to chronic laryngeal irritation and may well be part of the "
-    "picture, but treating empirically for seven weeks of hoarseness in a smoker without visualising "
+    "picture, but treating empirically for seven weeks of hoarseness in a smoker without visualizing "
     "the cords risks missing a carcinoma."],
    ["Voice rest and reassurance",
     "Voice rest is appropriate for ACUTE laryngitis, which settles within about a week of an upper "

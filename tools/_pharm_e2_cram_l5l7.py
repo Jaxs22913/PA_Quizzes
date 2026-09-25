@@ -5,7 +5,7 @@ Imported by build_pharm_e2_cram.py and appended after the Lecture 4 topics.
 Same sources and rules as the guide sections (_pharm_e2_guide_l5/l6/l7.py):
 slide facts only, no doses, the star rows follow the audio emphasis reports'
 section 4.2 for Lectures 6 and 7, and Lecture 5 (ENT) carries NO stars because
-its recording has not been analysed for emphasis.
+its recording has not been analyzed for emphasis.
 """
 
 T = [

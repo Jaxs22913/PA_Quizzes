@@ -15,7 +15,7 @@ Q("Otitis externa prevention", IO,
   "A 15-year-old competitive swimmer has had three episodes of otitis externa this season and asks "
   "how to prevent recurrence.",
   [["Dry the ears after swimming and avoid cotton buds",
-    "Correct. The canal's defences are its acidic pH and its intact skin barrier with a wax coating. "
+    "Correct. The canal's defenses are its acidic pH and its intact skin barrier with a wax coating. "
     "Retained water raises the pH and macerates the skin, while cotton buds strip the protective wax "
     "and abrade the epithelium. Removing both insults addresses the two mechanisms that let "
     "Pseudomonas and Staphylococcus overgrow."],
@@ -86,7 +86,7 @@ Q("Otitis media complications", IO,
    ["The eustachian tube drains into the mastoid",
     "The eustachian tube connects the middle ear to the NASOPHARYNX, which is how organisms reach "
     "the middle ear in the first place. It has no connection to the mastoid air cells."],
-   ["Infection spreads haematogenously to the mastoid",
+   ["Infection spreads hematogenously to the mastoid",
     "Bloodborne spread does occur in some infections, but the mastoid is involved by direct "
     "extension through an anatomical connection, which is far more efficient and explains why it is "
     "the commonest complication rather than a rare one."],
@@ -122,18 +122,18 @@ Q("Auricular laceration", IO,
   [["Prompt repair with coverage of the cartilage, and a pressure dressing",
     "Correct. Exposed auricular cartilage has no blood supply of its own and depends on the "
     "perichondrium, so leaving it uncovered leads to desiccation, infection and chondritis. Prompt "
-    "repair restores that coverage, and the pressure dressing prevents a haematoma forming under the "
+    "repair restores that coverage, and the pressure dressing prevents a hematoma forming under the "
     "repaired perichondrium."],
    ["Leave the wound open to heal by secondary intention",
     "Secondary intention is acceptable for some wounds elsewhere, but on the ear it leaves cartilage "
-    "exposed to drying and bacterial colonisation, which risks losing the cartilage and with it the "
+    "exposed to drying and bacterial colonization, which risks losing the cartilage and with it the "
     "shape of the ear."],
    ["Debride and excise the exposed cartilage",
     "Removing cartilage sacrifices the structural framework that gives the auricle its form, and it "
     "is unnecessary when the cartilage is viable. Coverage rather than excision is the aim."],
    ["Repair the skin only and omit the dressing",
     "Closing the skin without a pressure dressing leaves the potential space in which blood can "
-    "collect, and a subperichondrial haematoma produces exactly the cauliflower deformity the repair "
+    "collect, and a subperichondrial hematoma produces exactly the cauliflower deformity the repair "
     "is meant to prevent."]],
   "treatment", D, 36),
 
@@ -161,7 +161,7 @@ Q("Otitis media with effusion", IO,
 Q("Eustachian tube dysfunction", IO,
   "A 41-year-old man with allergic rhinitis has recurrent ear fullness and popping. A student asks "
   "why allergy affects the ear.",
-  [["Mucosal oedema obstructs the eustachian tube, preventing middle ear ventilation",
+  [["Mucosal edema obstructs the eustachian tube, preventing middle ear ventilation",
     "Correct. The eustachian tube is lined by the same respiratory mucosa as the nose, so allergic "
     "inflammation swells it and closes the lumen. Once the tube cannot open, the trapped middle ear "
     "air is absorbed, pressure falls below atmospheric, the drum retracts and the patient feels "
@@ -181,9 +181,9 @@ Q("Eustachian tube dysfunction", IO,
 Q("Barotrauma prevention", IO,
   "A 34-year-old woman with a heavy cold is due to fly and asks how to reduce the risk of ear pain.",
   [["Use a topical decongestant before descent and swallow or yawn frequently",
-    "Correct. The problem is a eustachian tube too swollen to equalise the rising ambient pressure "
+    "Correct. The problem is a eustachian tube too swollen to equalize the rising ambient pressure "
     "during descent. A topical decongestant shrinks the mucosa around the tube opening so it can "
-    "open, and swallowing, yawning or the Valsalva manoeuvre actively opens it, letting middle ear "
+    "open, and swallowing, yawning or the Valsalva maneuver actively opens it, letting middle ear "
     "pressure track the cabin."],
    ["Wear earplugs throughout the flight",
     "Plugs occlude the canal lateral to the drum, but the pressure differential is between the "
@@ -195,7 +195,7 @@ Q("Barotrauma prevention", IO,
     "swelling directly."],
    ["Avoid swallowing during descent to prevent pressure changes",
     "This reverses the advice. Swallowing is one of the actions that OPENS the eustachian tube, and "
-    "avoiding it guarantees the middle ear cannot equalise."]],
+    "avoiding it guarantees the middle ear cannot equalize."]],
   "treatment", D, 37),
 
 Q("Malignant otitis externa", IO,
@@ -258,23 +258,23 @@ Q("Tympanic membrane perforation", IO,
   "next step", D, 61),
 
 Q("Otitis externa versus otitis media", IO,
-  "A clinician is teaching the single most useful bedside manoeuvre for distinguishing otitis "
+  "A clinician is teaching the single most useful bedside maneuver for distinguishing otitis "
   "externa from acute otitis media.",
   [["Move the tragus or pinna and see whether it hurts",
-    "Correct. Pain on manipulating the pinna or tragus localises the disease to the canal, because "
+    "Correct. Pain on manipulating the pinna or tragus localizes the disease to the canal, because "
     "moving those structures moves the inflamed canal skin. Middle ear infection sits behind an "
-    "intact drum and is unaffected by moving the external ear, so the manoeuvre separates the two "
+    "intact drum and is unaffected by moving the external ear, so the maneuver separates the two "
     "before the otoscope is even used."],
    ["Check for fever",
     "Fever is commoner in acute otitis media, particularly in children, but it is neither sensitive "
     "nor specific: an inflamed canal can raise the temperature and a mild middle ear infection may "
-    "not. It does not localise the disease anatomically."],
+    "not. It does not localize the disease anatomically."],
    ["Perform a Weber test",
-    "Both conditions produce a conductive loss, so Weber would lateralise to the affected ear in "
+    "Both conditions produce a conductive loss, so Weber would lateralize to the affected ear in "
     "either case. It confirms the type of loss without saying where along the conducting pathway the "
     "problem lies."],
    ["Look for discharge in the canal",
     "Discharge occurs in otitis externa and also in otitis media once the drum perforates, so its "
-    "presence does not distinguish them. It is the tenderness on movement that localises."]],
+    "presence does not distinguish them. It is the tenderness on movement that localizes."]],
   "finding", D, 40),
 ]

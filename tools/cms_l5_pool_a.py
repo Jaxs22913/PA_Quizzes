@@ -27,9 +27,9 @@ POOL_A = [
    c=0, cite=c(3)),
 
  dict(topic="Primary and secondary lesions", io=IOB,
-   q="Once a reaction pattern has been recognised, how is the differential narrowed further?",
+   q="Once a reaction pattern has been recognized, how is the differential narrowed further?",
    opts=[
-     ["By colour, shape, configuration of lesions relative to one another, and distribution on the body",
+     ["By color, shape, configuration of lesions relative to one another, and distribution on the body",
       "Correct. Those characteristics tune the differential the reaction pattern generated."],
      ["By the duration of the eruption, the patient's age, and whether treatment has been tried",
       "Those are useful clinically but are not the characteristics named here."],
@@ -59,7 +59,7 @@ POOL_A = [
       "Correct. It may also be acquired from the bedding or underclothing of an infested person."],
      ["Pediculus humanus capitis, by direct head-to-head contact between two individuals",
       "That organism and route belong to head lice."],
-     ["Cimex lectularius, by spread in the clothing and baggage of travellers and visitors",
+     ["Cimex lectularius, by spread in the clothing and baggage of travelers and visitors",
       "That organism and route belong to bedbugs."],
      ["Borrelia burgdorferi, by the blood meal of a tick that has fed on a reservoir animal",
       "That organism and route belong to Lyme disease."]],
@@ -122,7 +122,7 @@ POOL_A = [
    opts=[
      ["A thin thread-like linear or J-shaped burrow, 1 to 10 mm long, in the stratum corneum",
       "Correct — the tunnel is made by the mite and is best seen in interdigital webs and wrists."],
-     ["A large expanding round lesion over 5 cm with central clearing and a punctate centre",
+     ["A large expanding round lesion over 5 cm with central clearing and a punctate center",
       "That is erythema migrans in Lyme disease."],
      ["A raised serpentine cutaneous trail that advances 2 to 3 cm each day and is intensely itchy",
       "That is cutaneous larva migrans."],
@@ -131,7 +131,7 @@ POOL_A = [
    c=0, cite=c(9)),
 
  dict(topic="Scabies", io=IOA,
-   q="What characterises crusted, also called hyperkeratotic, scabies?",
+   q="What characterizes crusted, also called hyperkeratotic, scabies?",
    opts=[
      ["Thick flaking scale containing millions of mites, with thickened nails and often no pruritus",
       "Correct. These patients are highly infectious despite the absence of itch."],
@@ -146,7 +146,7 @@ POOL_A = [
  dict(topic="Scabies", io=IOA,
    q="How is a definitive diagnosis of scabies made?",
    opts=[
-     ["Microscopic identification of the organism, ova or faeces, by scraping, dermoscopy or burrow ink test",
+     ["Microscopic identification of the organism, ova or feces, by scraping, dermoscopy or burrow ink test",
       "Correct — a number 15 blade with mineral oil is used for the scraping."],
      ["Serological testing for immunoglobulin M and immunoglobulin G against the responsible mite",
       "Serology is used for Lyme disease rather than scabies."],
@@ -212,7 +212,7 @@ POOL_A = [
    q="How should topical permethrin be applied for scabies, and what follow-up is essential?",
    opts=[
      ["Overnight to the entire skin surface with attention to creases, with a second application one week later",
-      "Correct — the second application is emphasised heavily."],
+      "Correct — the second application is emphasized heavily."],
      ["Overnight to the affected areas only, with a single application sufficient to clear the infestation",
       "The whole skin surface is treated and a second application is required."],
      ["Twice daily to the affected areas for two weeks, with no repeat application afterwards",
@@ -251,7 +251,7 @@ POOL_A = [
    q="Which complications of scabies are named, and how are the persistent papules treated?",
    opts=[
      ["Staphylococcal superinfection, post-scabietic papules treated with potent or intralesional steroid, and psychological effects",
-      "Correct — intralesional triamcinolone acetonide is given at 2.5 to 5 mg per millilitre."],
+      "Correct — intralesional triamcinolone acetonide is given at 2.5 to 5 mg per milliliter."],
      ["Post-streptococcal glomerulonephritis, treated with supportive care while the renal function recovers",
       "Post-streptococcal glomerulonephritis complicates impetigo; the scabies complications are staphylococcal superinfection, post-scabietic papules and psychological effects."],
      ["Acrodermatitis chronica atrophicans, treated with intravenous ceftriaxone over several weeks",
@@ -302,11 +302,11 @@ POOL_A = [
  dict(topic="Pediculosis", io=IOA,
    q="What are maculae caerulae and which infestation produces them?",
    opts=[
-     ["Slate-grey to bluish irregular macules about 1 cm across representing haemorrhage, seen in pubic lice",
+     ["Slate-gray to bluish irregular macules about 1 cm across representing hemorrhage, seen in pubic lice",
       "Correct, alongside papular urticaria at the feeding sites, commonly periumbilical."],
      ["Linear excoriations on the back, neck, shoulders and waist with post-inflammatory pigmentation, in body lice",
       "Those are the signs of body lice rather than this finding."],
-     ["Two millimetre erythematous macules or papules with scaling and excoriation, seen in head lice",
+     ["Two millimeter erythematous macules or papules with scaling and excoriation, seen in head lice",
       "Those are the lesions of head lice."],
      ["A central violaceous area ringed by blanched skin and then by asymmetric erythema, in spider bites",
       "That is the red, white and blue sign of the brown recluse."]],
@@ -352,7 +352,7 @@ POOL_A = [
    c=0, cite=c(30)),
 
  dict(topic="Pediculosis", io=IOA,
-   q="What counselling is given about clothing and household measures after treating head lice?",
+   q="What counseling is given about clothing and household measures after treating head lice?",
    opts=[
      ["Wear clean clothing, dry or bag for two weeks anything used in the prior week, wash combs and vacuum",
       "Correct — fumigation is specifically not recommended."],
@@ -393,7 +393,7 @@ POOL_A = [
  dict(topic="Pediculosis", io=IOA,
    q="Which physical methods are described for head lice, and what is their limitation?",
    opts=[
-     ["Head shaving, or combing nits out after two minutes of hair moisturiser every few days; effective but slow and painful",
+     ["Head shaving, or combing nits out after two minutes of hair moisturizer every few days; effective but slow and painful",
       "Correct — they need adjuvant therapy alongside them."],
      ["Head shaving alone, which is completely curative and requires no further treatment at all",
       "Physical methods need adjuvant therapy."],

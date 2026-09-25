@@ -32,9 +32,9 @@ QUESTIONS = [
  dict(topic="Conductive hearing loss", io=IO_A, lead="mechanism", cite=D % 10,
   q="Which four mechanisms produce conductive hearing loss?",
   opts=[["Obstruction, mass loading, stiffness and discontinuity", "Correct."],
-        ["Hair cell loss, nerve damage, ageing and noise", "Those produce sensorineural loss."],
-        ["Infection, allergy, trauma and tumour", "These are causes rather than the four mechanisms."],
-        ["Genetic, autoimmune, vascular and metabolic", "These are aetiological categories, not the mechanisms."]]),
+        ["Hair cell loss, nerve damage, aging and noise", "Those produce sensorineural loss."],
+        ["Infection, allergy, trauma and tumor", "These are causes rather than the four mechanisms."],
+        ["Genetic, autoimmune, vascular and metabolic", "These are etiological categories, not the mechanisms."]]),
 
  dict(topic="Conductive hearing loss", io=IO_A, lead="defining feature", cite=D % 11,
   q="Which conductive cause is characteristically NOT visible on otoscopy?",
@@ -101,17 +101,17 @@ QUESTIONS = [
         ["Vestibular response to head turning", "That is vestibular testing."]]),
 
  dict(topic="Weber and Rinne", io=IO_C, lead="defining feature", cite=D % 42,
-  q="In a unilateral conductive hearing loss, where does the Weber test lateralise?",
+  q="In a unilateral conductive hearing loss, where does the Weber test lateralize?",
   opts=[["To the affected ear", "Correct."],
-        ["To neither ear", "It lateralises in a unilateral loss."],
+        ["To neither ear", "It lateralizes in a unilateral loss."],
         ["To both ears equally", "That is the normal result."],
-        ["It varies with frequency", "Lateralisation does not vary that way."]]),
+        ["It varies with frequency", "Lateralization does not vary that way."]]),
 
  dict(topic="Weber and Rinne", io=IO_C, lead="defining feature", cite=D % 42,
-  q="In a unilateral sensorineural hearing loss, where does the Weber test lateralise?",
+  q="In a unilateral sensorineural hearing loss, where does the Weber test lateralize?",
   opts=[["To the unaffected ear", "Correct — away from the bad side."],
         ["To the affected ear", "That happens in conductive loss."],
-        ["To neither ear", "It lateralises in a unilateral loss."],
+        ["To neither ear", "It lateralizes in a unilateral loss."],
         ["To both ears equally", "That is the normal result."]]),
 
  dict(topic="Weber and Rinne", io=IO_C, lead="defining feature", cite=D % 42,
@@ -131,16 +131,16 @@ QUESTIONS = [
  dict(topic="Weber and Rinne", io=IO_C, lead="diagnosis", cite=D % 42,
   q="A tuning fork placed on the forehead is heard loudest in the right ear, and in that ear bone conduction exceeds air conduction. What does this indicate?",
   opts=[["A right conductive hearing loss", "Correct."],
-        ["A left conductive hearing loss", "Weber lateralises toward the conductive side, which is the right."],
+        ["A left conductive hearing loss", "Weber lateralizes toward the conductive side, which is the right."],
         ["A left sensorineural hearing loss", "A sensorineural loss leaves air conduction beating bone; here bone beats air, so the loss is conductive."],
-        ["Normal hearing in both ears", "Normal ears give no lateralisation and air conduction greater than bone."]]),
+        ["Normal hearing in both ears", "Normal ears give no lateralization and air conduction greater than bone."]]),
 
  dict(topic="Weber and Rinne", io=IO_C, lead="diagnosis", cite=D % 42,
   q="A tuning fork on the forehead is heard loudest in the left ear, and in the right ear air conduction exceeds bone conduction. What does this indicate?",
-  opts=[["A right sensorineural hearing loss", "Correct — Weber lateralises away from the affected side, and Rinne stays normal."],
-        ["A right conductive hearing loss", "Weber would lateralise toward the right and bone would beat air."],
-        ["A left conductive hearing loss", "Weber lateralising to the left with a conductive cause would show bone beating air on the left."],
-        ["Bilateral wax impaction", "That would be conductive and would not lateralise this way."]]),
+  opts=[["A right sensorineural hearing loss", "Correct — Weber lateralizes away from the affected side, and Rinne stays normal."],
+        ["A right conductive hearing loss", "Weber would lateralize toward the right and bone would beat air."],
+        ["A left conductive hearing loss", "Weber lateralizing to the left with a conductive cause would show bone beating air on the left."],
+        ["Bilateral wax impaction", "That would be conductive and would not lateralize this way."]]),
 
  # ------------------- audiometry -------------------
  dict(topic="Audiometry", io=IO_D, lead="defining feature", cite=D % 19,
@@ -176,7 +176,7 @@ QUESTIONS = [
   opts=[["Pure tone audiometry", "Correct."],
         ["Tympanometry", "That measures middle ear compliance."],
         ["Otoacoustic emissions", "A different measure of cochlear function."],
-        ["The Dix-Hallpike manoeuvre", "That provokes positional vertigo."]]),
+        ["The Dix-Hallpike maneuver", "That provokes positional vertigo."]]),
 
  # ------------------- tympanometry -------------------
  dict(topic="Tympanometry", io=IO_D, lead="defining feature", cite=D % 25,
@@ -223,9 +223,9 @@ QUESTIONS = [
         ["Computed tomography", "Imaging does not test vestibular function."]]),
 
  dict(topic="Vestibular testing", io=IO_F, lead="diagnostic technique", cite=D % 93,
-  q="Which manoeuvre provokes and identifies benign paroxysmal positional vertigo?",
-  opts=[["The Dix-Hallpike manoeuvre", "Correct — it is diagnosed by the classic eye movements it produces."],
-        ["The Epley manoeuvre", "That is the treatment, not the diagnostic test."],
+  q="Which maneuver provokes and identifies benign paroxysmal positional vertigo?",
+  opts=[["The Dix-Hallpike maneuver", "Correct — it is diagnosed by the classic eye movements it produces."],
+        ["The Epley maneuver", "That is the treatment, not the diagnostic test."],
         ["The Rinne test", "That compares air with bone conduction in one ear."],
         ["Insufflation", "That assesses drum mobility."]]),
 

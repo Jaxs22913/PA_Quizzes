@@ -35,9 +35,9 @@ POOL_C = [
  dict(topic="Dopamine", io=IO10,
    q="Which forms of shock are paired with dopamine?",
    opts=[["Cardiogenic and septic","Correct."],
-         ["Anaphylactic and haemorrhagic","Anaphylaxis is epinephrine's indication."],
+         ["Anaphylactic and hemorrhagic","Anaphylaxis is epinephrine's indication."],
          ["Neurogenic only","Not the indication given."],
-         ["Hypovolaemic only","Not the indication given."]],
+         ["Hypovolemic only","Not the indication given."]],
    c=0, cite=c(93)),
 
  dict(topic="Dobutamine", io=IO5,
@@ -82,7 +82,7 @@ POOL_C = [
 
  dict(topic="Alpha blockers", io=IO11,
    q="How long does phenoxybenzamine's blockade take to wear off?",
-   opts=[["At least twenty-four hours","Correct, because new receptors must be synthesised."],
+   opts=[["At least twenty-four hours","Correct, because new receptors must be synthesized."],
          ["About four hours","That is phentolamine's duration."],
          ["A few minutes","Far shorter than described."],
          ["About one week","A week is longer than stated; the blockade is covalent and irreversible, so recovery waits on synthesis of new receptors over about 24 to 48 hours."]],
@@ -100,7 +100,7 @@ POOL_C = [
    q="Which adverse effects are listed for the alpha-one blockers?",
    opts=[["Dizziness, nasal congestion and orthostatic hypotension","Correct, with headache and drowsiness."],
          ["Bronchoconstriction and bradycardia","Those are beta blocker effects."],
-         ["Hyperglycaemia and raised lipids","Those belong to propranolol."],
+         ["Hyperglycemia and raised lipids","Those belong to propranolol."],
          ["Miosis and salivation","Those are muscarinic effects."]],
    c=0, cite=c(112)),
 

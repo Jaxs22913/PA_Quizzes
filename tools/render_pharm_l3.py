@@ -31,7 +31,7 @@ SPEC = {
    files=["ans-cholinergic-quiz.html", "ans-cholinergic-quiz-version-2.html"],
    title="ANS and Cholinergic Drugs Quiz %d — Pharmacology I Exam 1",
    h1="ANS and Cholinergic Drugs &mdash; Quiz %d",
-   chips=["ANS organisation", "Cholinergic receptors", "Cholinergic agonists",
+   chips=["ANS organization", "Cholinergic receptors", "Cholinergic agonists",
           "Antimuscarinics", "Neuromuscular blockers"]),
  "adren": dict(
    sets="pharm_l3_adren_sets.json",

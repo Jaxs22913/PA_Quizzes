@@ -114,7 +114,7 @@ RULES = [
   body="<p><b>Both halves of this matter, and they pull in opposite directions.</b></p>"
        "<p>Learn the material <b>by category</b>. His example: every cell-wall-active drug is "
        "bactericidal &mdash; penicillins, cephalosporins, carbapenems, vancomycin, the "
-       "polymyxins &mdash; so there is no point memorising that fact drug by drug. Do the same "
+       "polymyxins &mdash; so there is no point memorizing that fact drug by drug. Do the same "
        "for mechanism of action and the common contraindications. <i>&ldquo;Do big bins instead "
        "of individual agents.&rdquo;</i></p>"
        "<p><b>But the answer choices are individual drug names.</b> He said most of his "
@@ -125,7 +125,7 @@ RULES = [
        "<p>That is exactly the drill the <a href=\"pharm-drill-classes.html\">Drug Classes "
        "Drill</a> and the other drills on this site are built to rehearse.</p>"),
  dict(id="no-numbers", at="29:40",
-  title="Do not memorise numerical values &mdash; he gives them to you",
+  title="Do not memorize numerical values &mdash; he gives them to you",
   quote="don't know specific values. If I'm using any values, I will tell you what those are "
         "in the question itself",
   verify=["if i'm using any values, i will tell you what those are in the question itself",
@@ -149,7 +149,7 @@ RULES = [
   verify=["pharmacology is not a what class, it's a why class",
           "i can read a drug reference if i wanted to know all the facts"],
   body="<p>He drew the contrast with anatomy, which he called closer to brute-force "
-       "memorisation, and with physiology, which is a why class &mdash; how the body normally "
+       "memorization, and with physiology, which is a why class &mdash; how the body normally "
        "works, how it goes wrong, how you then treat it. Pharmacology sits with physiology.</p>"
        "<p><i>&ldquo;I can read a drug reference if I wanted to know all the facts. I want you "
        "to know: why am I selecting this drug? What are the things I need to look for? How do I "
@@ -163,7 +163,7 @@ RULES = [
           "do not change your answers"],
   body="<p><b>Reading the stem.</b> His shortcut is to <b>read the last sentence first</b> to "
        "see what is being asked, then go back through the stem for the context you need. He "
-       "does <b>not</b> pad questions &mdash; there is no patient's favourite colour in there, "
+       "does <b>not</b> pad questions &mdash; there is no patient's favorite color in there, "
        "so every detail present is there for a reason. <i>&ldquo;Keep it simple, "
        "students.&rdquo;</i></p>"
        "<p><b>And the one he repeated hardest, twice, including as his closing line: do not "
@@ -212,11 +212,11 @@ ANSWERS = [
        "<p><b>His example question:</b> <i>which of these would be most likely to slow a rapid "
        "heart rate?</i> There is more than one right road &mdash; a <b>beta blocker</b>, or a "
        "<b>muscarinic agonist</b>, or an <b>acetylcholinesterase inhibitor</b> raising "
-       "acetylcholine. Recognise the category and what it does, and the answer follows.</p>"
+       "acetylcholine. Recognize the category and what it does, and the answer follows.</p>"
        "<p><b>The reasoning chain he wants you running:</b> this drug is an antimuscarinic "
        "&rarr; what do muscarinic effects look like &rarr; I am blocking those &rarr; so what "
        "should I see? That is where the <i>mad as a hatter, dry as a bone</i> picture comes "
-       "from, rather than being memorised as a list.</p>"),
+       "from, rather than being memorized as a list.</p>"),
 
  dict(id="bradycardia", at="34:40",
   title="The bradycardia question, and how he builds the wrong answers",
@@ -247,7 +247,7 @@ ANSWERS = [
           "they don't have nice broad"],
   body="<p><b>No.</b> He said the fungi do not sort into clean categories the way bacteria do "
        "with gram-positive and gram-negative, and that the organism lists were there to give a "
-       "sense of what is being treated, not to be memorised.</p>"
+       "sense of what is being treated, not to be memorized.</p>"
        "<p><b>What he wants instead</b> is that you can identify the <b>type</b> of antifungal, "
        "and above all <b>tell an antifungal from an antiviral</b>. His example item: a patient "
        "is <b>influenza A positive</b>, which of these is the best treatment &mdash; with an "
@@ -312,7 +312,7 @@ ANSWERS = [
        "is no longer practical, or disease that is more <b>severe or inflammatory</b>.</li>"
        "<li><b>Isotretinoin</b> &mdash; the most effective and the <b>last line</b>. He called "
        "it the nuclear option.</li></ol>"
-       "<p><b>Maximise the dose before you add or switch.</b> If a product is partly working, "
+       "<p><b>Maximize the dose before you add or switch.</b> If a product is partly working, "
        "go up in strength first.</p>"
        "<p><b>Why going systemic costs you something.</b> A topical works only where you put "
        "it, so the side effects stay local. Systemic antibiotics bring "
@@ -362,7 +362,7 @@ ANSWERS = [
        "normal side effect.</li>"
        "<li><b>Commons</b> &mdash; what actually happens often. His example: <b>gastrointestinal "
        "upset with antibiotics</b>. Almost every antibiotic causes nausea, vomiting or "
-       "diarrhoea in somebody. The patient is told these are expected; they may or may not "
+       "diarrhea in somebody. The patient is told these are expected; they may or may not "
        "warrant a change of therapy.</li>"
        "<li><b>Zebras</b> &mdash; the rare ones.</li></ul>"),
 
@@ -375,7 +375,7 @@ ANSWERS = [
           "that's what causes the little fasciculations"],
   body="<p>Succinylcholine is <b>two acetylcholine molecules joined together</b>. In "
        "<b>phase one</b> it activates the nicotinic receptor at the neuromuscular end plate "
-       "and depolarises it &mdash; which is what produces the <b>fasciculations</b>, and what "
+       "and depolarizes it &mdash; which is what produces the <b>fasciculations</b>, and what "
        "makes it a <i>depolarizing</i> agent. It then keeps sitting on the receptor until the "
        "receptor <b>desensitises</b> from being over-activated, and that is <b>phase two</b>, "
        "when the <b>flaccid paralysis</b> appears.</p>"
