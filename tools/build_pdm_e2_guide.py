@@ -1,0 +1,621 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Build the Principles of Diagnostic Medicine I, Exam 2 study guide.
+
+Exam 2 covers Lectures 7-10 and Lab 2. Built here: Lecture 7 (Principles of
+Electrocardiography, Ayelet Elwaya), Lecture 8 (Cardiac Imaging and Vascular
+Studies, Ayelet Elwaya) and Lecture 9 (Cardiac Biomarkers and Lipid Testing,
+Lauren Reynolds). Lecture 10 (Coagulation) has no deck yet. Lab content is
+deliberately absent -- how labs are folded in is a joint decision with Jaxon.
+
+Chrome and CSS are lifted from the Exam 1 guide (the site's guide template), with
+a fresh per-exam palette: cardiac red, vascular teal, amber brown.
+
+Instructional Objectives are VERBATIM from the syllabus (PDM.pdf, topics 7-9)
+and each is answered in order. Emphasis boxes quote the 15 and 17 September
+recordings (Elwaya); the Lecture 9 recording was still being transcribed when
+this was built, so that section is slides-only and says so.
+
+Figures come from the course decks and cite their slide (standing licensing
+rule). Every image was viewed at full size before being placed; the nuclear
+perfusion panel (Lecture 8, slide 52) was left out because its six pictures and
+three labels cannot be paired reliably.
+"""
+import os, re, sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+DONOR = os.path.join(ROOT, "Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-study-guide.html")
+OUTDIR = os.path.join(ROOT, "Principles of Diagnostic Medicine I Exam 2")
+OUT = os.path.join(OUTDIR, "pdm-exam-2-study-guide.html")
+IMG = "pdm-exam-2-study-guide-images"
+L7 = "Principles of Electrocardiography.pptx"
+L8 = "Cardiac Imaging and Vascular Studies - Elwaya.pptx"
+L9 = "svCardiac Biomarkers and Lipids.pptx"
+
+RECOLOR = {
+    "#69406c": "#a1363a", "#b8862f": "#2b6f86", "#5f3a63": "#7a4d1f",
+    "#452a48": "#5a1c20", "#8f5f92": "#c0605a", "#faf6f7": "#fbf7f6",
+    "#e5dade": "#eadcd9", "#665b62": "#665a58", "#f5e6ec": "#fbe7e5",
+    "#f2e9eb": "#f4ecea", "#f3e8ec": "#f5ebe9", "#efeaf4": "#e8f1f4",
+    "#f3ecee": "#f6efed", "#eadfe0": "#eee2df", "#d3b0d6": "#e6a9a5",
+    "#221c22": "#221c1c",
+}
+
+
+def fig(name, w, h, alt, cap, deck, slide):
+    for p in (alt, cap):
+        assert "  " not in p
+    assert os.path.exists(os.path.join(OUTDIR, IMG, name)), name
+    return ('<figure class="fig"><img width="%d" height="%d" loading="lazy" src="%s/%s" alt="%s">'
+            '<figcaption>%s <span class="tag">Source: %s, Slide %d.</span></figcaption></figure>'
+            % (w, h, IMG, name, alt, cap, deck, slide))
+
+
+TOC = '''<nav class="toc">
+  <h2>Contents</h2>
+  <a class="top-link" href="#electrocardiography">7 &middot; Principles of Electrocardiography</a>
+  <a href="#ecg-ap">7.1 Objective a &mdash; Action potential &amp; conduction system</a>
+  <a href="#ecg-depol">7.2 Objective b &mdash; Depolarization &amp; repolarization</a>
+  <a href="#ecg-refractory">7.3 Objective c &mdash; Refractory periods</a>
+  <a href="#ecg-principles">7.4 Objective d &mdash; Time, voltage, vectors &amp; leads</a>
+  <a href="#ecg-leads">7.5 Objective e &mdash; Limb &amp; precordial leads</a>
+  <a href="#ecg-rate">7.6 Objective f &mdash; Heart rate</a>
+  <a href="#ecg-intervals">7.7 Objectives g &amp; h &mdash; Waves &amp; intervals</a>
+  <a class="top-link" href="#cardiac-imaging">8 &middot; Cardiac Imaging &amp; Vascular Studies</a>
+  <a href="#ci-anatomy">8.1 Objectives a &amp; b &mdash; Anatomy &amp; the silhouette</a>
+  <a href="#ci-abnormal">8.2 Objective c &mdash; Abnormal findings</a>
+  <a href="#ci-ctr">8.3 Objective d &mdash; Cardiothoracic ratio</a>
+  <a href="#ci-compare">8.4 Objective e &mdash; Comparing modalities</a>
+  <a href="#ci-echo">8.5 Objective f.i &mdash; Echocardiography</a>
+  <a href="#ci-stress">8.6 Objective f.ii &mdash; Stress testing</a>
+  <a href="#ci-nuclear">8.7 Objective f.iii &mdash; Nuclear cardiology</a>
+  <a href="#ci-ct">8.8 Objective f.iv &mdash; Cardiac computed tomography</a>
+  <a href="#ci-mri">8.9 Objective f.v &mdash; Cardiac magnetic resonance</a>
+  <a href="#ci-angio">8.10 Objective f.vi &mdash; Coronary angiography</a>
+  <a href="#ci-vascular">8.11 Objective f.vii &mdash; Vascular ultrasound</a>
+  <a class="top-link" href="#biomarkers-lipids">9 &middot; Cardiac Biomarkers &amp; Lipid Testing</a>
+  <a href="#bl-compare">9.1 Objective a &mdash; The four biomarkers</a>
+  <a href="#bl-indications">9.2 Objective b &mdash; When to order which</a>
+  <a href="#bl-lipid-ind">9.3 Objective c &mdash; Ordering a lipid profile</a>
+  <a href="#bl-analyze">9.4 Objective d &mdash; Analyzing a lipid profile</a>
+  <a href="#bl-risk">9.5 Objective e &mdash; Risk assessment</a>
+  <a href="#bl-lipoproteins">9.6 Objective f &mdash; Lipids &amp; lipoproteins</a>
+  <a href="#bl-measured">9.7 Objective g &mdash; Measured versus calculated</a>
+</nav>'''
+
+HOW = '''<div class="prof-flag"><span class="prof-flag-label">&#9733; How this exam is written</span>
+  <p>Three lecturers' rules carry into Exam 2. None of them is new; all of them change how you study.</p>
+  <table>
+    <tr><th>The rule</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;I&rsquo;m not going to just throw a random number at you and not give you context of whether that&rsquo;s high or low.&rdquo;</em> (Professor Reynolds, Lecture 1)</td><td><strong>Reference ranges are supplied.</strong> A troponin, a triglyceride or a C-reactive protein in a stem will come with the limit that reads it. Learn what a value <em>means</em>.</td></tr>
+    <tr><td><em>&ldquo;Although a heart rhythm can be a diagnosis, you also need to be able to interpret an EKG (electrocardiogram) by naming the rhythm.&rdquo;</em> (Lecture 1)</td><td>Electrocardiography is the one place where naming the finding is fair game. Lecture 7 is the foundation for that: paper, leads, rate, intervals.</td></tr>
+    <tr><td>Questions are vignette and next-best-test: <em>&ldquo;what would be the next test that you would order?&rdquo;</em></td><td>Lecture 8 is built for exactly this. Know what each modality can and cannot show, and what you do when a study is equivocal.</td></tr>
+  </table>
+</div>'''
+
+S7 = f'''<section class="deck" id="electrocardiography">
+  <h2 class="deck-title">7 &middot; Principles of Electrocardiography</h2>
+  <p class="lecturer">Ayelet Elwaya, MSHS, PA-C, CAQ-EM &middot; 15 September 2026</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">Topic Outline 7: Principles of Electrocardiography</p>
+    <ol type="a">
+      <li>Describe action potentials and impulse conduction through the cardiac conduction system.</li>
+      <li>Define depolarization and repolarization.</li>
+      <li>Define absolute and relative refractory periods.</li>
+      <li>Describe the fundamental principles of electrocardiography, including: i. Time &middot; ii. Voltage &middot; iii. Vectors &middot; iv. Bipolar leads &middot; v. Unipolar leads</li>
+      <li>Identify the standard limb and precordial leads and their proper anatomical placement.</li>
+      <li>Determine heart rate using an electrocardiogram.</li>
+      <li>Measure and interpret: i. PR interval &middot; ii. QRS duration &middot; iii. QT interval &middot; iv. QTc interval</li>
+      <li>Identify normal electrocardiographic intervals and waveforms.</li>
+    </ol>
+  </div>
+
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; 15 September recording</span>
+  <table>
+    <tr><th>She said</th><th>So</th></tr>
+    <tr><td><em>&ldquo;I will not be testing you on calcium channels and funny sodium channels and all that good stuff because you&rsquo;ve done that in physiology.&rdquo;</em> But an electrolyte she uses on a slide <em>&ldquo;is&rdquo;</em> fair game.</td><td>Know which ion moves in each phase, not the channel subtypes.</td></tr>
+    <tr><td><em>&ldquo;Yes, you need to know what happens in each phase.&rdquo;</em></td><td>The five-phase table in 7.1 is examinable as written.</td></tr>
+    <tr><td>The refractory periods are <em>&ldquo;very important from now until forever.&rdquo;</em></td><td>They explain R-on-T, P-on-T and why a prolonged QTc is dangerous.</td></tr>
+    <tr><td>Lead placement: <em>&ldquo;I am sorry, you do have to memorize this.&rdquo;</em> And bipolar versus unipolar, precordial versus limb: <em>&ldquo;you have to know the distinction.&rdquo;</em></td><td>7.4 and 7.5 are memorization, not reasoning.</td></tr>
+    <tr><td><em>&ldquo;It&rsquo;s very important that you know how to identify the J point.&rdquo;</em></td><td>ST elevation is measured from it (see 7.7).</td></tr>
+    <tr><td>Bazett&rsquo;s formula: <em>&ldquo;please do not memorize. I will never ask you about the formula.&rdquo;</em> The bifascicular-block aside: <em>&ldquo;I will not ask you this on the test.&rdquo;</em></td><td>Know that the QTc is the rate-corrected QT and its thresholds, not how it is computed.</td></tr>
+  </table></div>
+
+  <h3 class="sub" id="ecg-ap">7.1 &middot; Objective a &mdash; The action potential and the conduction system</h3>
+  <p>Four properties make a cardiac cell a cardiac cell: <strong>automaticity</strong> (it produces its own impulse), <strong>excitability</strong> (it responds to an impulse or stimulus), <strong>contractility</strong> (it contracts) and <strong>conductivity</strong> (it passes the impulse from myocyte to myocyte).</p>
+  <p>The <strong>action potential</strong> is a rapid change in voltage across the cell caused by ion movement. It has five phases, and the sequence starts at phase 4: <strong>4 &rarr; 0 &rarr; 1 &rarr; 2 &rarr; 3</strong>.</p>
+  <table>
+    <tr><th>Phase</th><th>Name</th><th>What happens</th></tr>
+    <tr><td><strong>4</strong></td><td>Resting state (diastole)</td><td>Cell is ready to respond. More potassium inside; sodium and calcium outside. Inside voltage <strong>&minus;90 mV</strong>.</td></tr>
+    <tr><td><strong>0</strong></td><td>Upstroke (depolarization)</td><td><strong>Fast sodium channels open</strong>; rapid sodium influx makes the inside positive.</td></tr>
+    <tr><td><strong>1</strong></td><td>Early repolarization</td><td>Sodium channels close and potassium channels reopen; a slight negative shift.</td></tr>
+    <tr><td><strong>2</strong></td><td>Plateau</td><td><strong>Calcium enters, causing contraction</strong>, balanced by potassium moving the other way, so the voltage holds level.</td></tr>
+    <tr><td><strong>3</strong></td><td>Rapid repolarization</td><td>Calcium channels close; potassium channels stay open; the inside returns to &minus;90 mV.</td></tr>
+  </table>
+  <div class="callout warn"><p><strong>A slide and its own figure disagree on direction.</strong> The text of slides 9 and 10 describes potassium as moving <em>into</em> the cell during phases 2 and 3. The figure on the same slides (below) labels it <strong>potassium efflux</strong>, which is the physiology: potassium leaves the cell to repolarize it. Learn it as potassium out, calcium in, during the plateau.</p></div>
+  {fig("7-action-potential.png", 1024, 848, "Graph of membrane potential against time for a cardiac muscle action potential. Phase 4 is flat at minus 90 millivolts, phase 0 rises steeply with sodium influx, phase 1 is a small notch, phase 2 is a plateau with calcium influx balanced by potassium efflux, and phase 3 falls back to minus 90 as calcium channels close and potassium channels remain open.", "<b>The five phases on one trace.</b> Read the ion arrows along the top: sodium in at phase 0, calcium in and potassium out during the phase 2 plateau, potassium out through phase 3. The flat line at &minus;90 mV is phase 4, both the end of one cycle and the start of the next.", L7, 4)}
+  <h4 class="subsub">The conduction system</h4>
+  <p>A network of specialized muscle cells that generate and spread the signal so the heart beats in a coordinated rhythm. Each level can take over pacing if the one above fails, at a slower intrinsic rate.</p>
+  <table>
+    <tr><th>Structure</th><th>Where</th><th>Key facts</th><th>Intrinsic rate</th></tr>
+    <tr><td><strong>Sinoatrial node</strong></td><td>Upper wall of the right atrium, just below the vena cava opening</td><td>Main pacemaker. Three internodal pathways to the atrioventricular node: superior anterior (<strong>fast</strong>, used by the majority), middle, and inferior posterior (slow). The other two usually terminate before reaching the atrioventricular node.</td><td>60&ndash;100 per minute</td></tr>
+    <tr><td><strong>Atrioventricular node</strong></td><td>Junction of atria and ventricles, near the coronary sinus</td><td>Introduces a <strong>short pause</strong> and <strong>amplifies</strong> the signal. Back-up pacemaker if the sinoatrial node fails.</td><td>40&ndash;60 per minute</td></tr>
+    <tr><td><strong>Bundle of His</strong></td><td>Crosses the nonconductive atrioventricular septum</td><td>In a normal heart, the <strong>only electrical pathway</strong> from atria to ventricles.</td><td>&mdash;</td></tr>
+    <tr><td><strong>Left bundle branch</strong></td><td>Into the left ventricle</td><td>Splits into <strong>three fascicles</strong>: left posterior, intraventricular septal, and left anterior (which becomes the Purkinje network).</td><td>&mdash;</td></tr>
+    <tr><td><strong>Right bundle branch</strong></td><td>Into the right ventricle</td><td><strong>Much longer</strong> than the left despite the smaller ventricle; terminates in the Purkinje network.</td><td>&mdash;</td></tr>
+    <tr><td><strong>Purkinje network</strong></td><td>Ventricular walls</td><td>Third pacemaker if both nodes fail. Conducts faster and more efficiently than any other part of the system.</td><td>20&ndash;40 per minute</td></tr>
+  </table>
+  {fig("7-atrial-conduction.png", 474, 318, "Illustration of the atria showing the sinoatrial node in the right atrium, Bachmann's bundle running to the left atrium, the anterior, middle and posterior internodal tracts converging on the atrioventricular node, and the coronary sinus beside it.", "<b>The atrial half of the system.</b> The sinoatrial node sits high in the right atrium; the internodal tracts carry the impulse down to the atrioventricular node beside the coronary sinus, where it pauses before the bundle of His.", L7, 13)}
+  <p>A <strong>bifascicular block is not the same as a left bundle branch block</strong> (slide 16). She said this will not be tested beyond that distinction.</p>
+  <p>The <strong>cardiac vector</strong> is the arrow showing the direction and strength of current at any moment. The true pathway of conduction is <strong>left and down, toward the anterior chest</strong>.</p>
+
+  <h3 class="sub" id="ecg-depol">7.2 &middot; Objective b &mdash; Depolarization and repolarization</h3>
+  <table>
+    <tr><th></th><th>Depolarization</th><th>Repolarization</th></tr>
+    <tr><td>Membrane</td><td>Becomes <strong>less negative</strong></td><td>Returns <strong>toward its resting state</strong></td></tr>
+    <tr><td>Represents</td><td><strong>Activation</strong> (excitation) of cardiac tissue</td><td><strong>Recovery</strong> of the cells</td></tr>
+    <tr><td>Timing</td><td><strong>Precedes contraction</strong></td><td>Follows it</td></tr>
+    <tr><td>On the tracing</td><td>P wave (atria), QRS complex (ventricles)</td><td>T wave (ventricles)</td></tr>
+  </table>
+  <div class="pearl">Depolarization is electrical, contraction is mechanical, and the electrical event comes first. This is also why an electrocardiogram <strong>cannot tell you whether the patient has a pulse</strong> (7.4).</div>
+
+  <h3 class="sub" id="ecg-refractory">7.3 &middot; Objective c &mdash; Absolute and relative refractory periods</h3>
+  <table>
+    <tr><th></th><th>Absolute refractory period</th><th>Relative refractory period</th></tr>
+    <tr><td>Definition</td><td>The cell <strong>will not respond</strong> to another stimulus</td><td>The cell <strong>will respond</strong> to a second stimulus, but it is very fragile</td></tr>
+    <tr><td>Span</td><td>Phase 0 to <strong>mid phase 3</strong></td><td>Mid phase 3 to the <strong>end of phase 3</strong></td></tr>
+    <tr><td>Duration</td><td>Typically about 180 ms</td><td>&mdash;</td></tr>
+    <tr><td>On the tracing</td><td colspan="2">The <strong>peak of the T wave</strong> is the dividing line between the two.</td></tr>
+  </table>
+  <div class="callout"><p><strong>Why it matters.</strong> A beat that lands in the relative refractory period, before the previous one has finished, is the mechanism behind the dangerous patterns you will meet later: R on T, P on T and a prolonged QTc are all risk factors for a beat hitting before the last one ended.</p></div>
+
+  <h3 class="sub" id="ecg-principles">7.4 &middot; Objective d &mdash; Time, voltage, vectors, bipolar and unipolar leads</h3>
+  <p>An electrocardiogram is a <strong>visual representation of cardiac electrical activity over time</strong>. The direction of current is compared with a stationary electrode: a positive overall vector gives an <strong>upward deflection</strong>, a negative one a <strong>downward deflection</strong>, and a net zero traces only the <strong>isoelectric line</strong>.</p>
+  <table>
+    <tr><th>Axis</th><th>Small box</th><th>Large box (5 small)</th><th>Other</th></tr>
+    <tr><td><strong>Time</strong> (left to right)</td><td>0.04 seconds</td><td>0.2 seconds</td><td>5 large boxes = 1 second. Strips are usually 3 or 6 seconds.</td></tr>
+    <tr><td><strong>Voltage</strong> (up and down)</td><td>1 mm = 0.1 mV</td><td>5 mm</td><td>Standard calibration: 10 mm (two large boxes) = 1 mV.</td></tr>
+  </table>
+  {fig("7-ekg-paper.png", 664, 589, "Enlarged electrocardiogram graph paper showing 3-second and 6-second marker lines along the top, one large box magnified to show 1 millimeter small boxes of 0.04 seconds and 5 millimeter large boxes of 0.2 seconds, and a red 10 millimeter calibration pulse labeled as a standard 1 millivolt signal.", "<b>Paper is the ruler for every measurement in this lecture.</b> Small box 0.04 seconds, large box 0.2 seconds, and the 3-second markers along the top are what make the 6-second rate method possible.", L7, 27)}
+  <table>
+    <tr><th>Lead type</th><th>What it measures</th><th>Which leads</th></tr>
+    <tr><td><strong>Bipolar</strong></td><td>Voltage difference between <strong>two</strong> body points, one positive and one negative electrode</td><td>Leads <strong>I, II, III</strong> (Einthoven&rsquo;s triangle: both shoulders and the left lower extremity)</td></tr>
+    <tr><td><strong>Unipolar</strong></td><td>Activity from <strong>one</strong> electrode reference point</td><td><strong>aVR, aVL, aVF</strong> (augmented: one physical lead plus a theoretical negative pole created by the machine) and <strong>V1&ndash;V6</strong></td></tr>
+  </table>
+  <table>
+    <tr><th>An electrocardiogram CAN tell you</th><th>It CANNOT tell you</th></tr>
+    <tr><td>Whether there is electrical activity &middot; conduction problems &middot; rate &middot; rhythm &middot; where the impulse originates &middot; how much electricity is conducted</td><td><strong>Hemodynamic status &middot; cardiac output &middot; whether the patient has a pulse</strong></td></tr>
+  </table>
+
+  <h3 class="sub" id="ecg-leads">7.5 &middot; Objective e &mdash; Limb and precordial leads and their placement</h3>
+  <p>Every lead is a <strong>different point of view</strong>. A standard 12-lead uses <strong>10 physical electrodes</strong>: four limb electrodes (right arm, left arm, left leg, plus right leg) and six chest electrodes. The four limb electrodes produce <strong>six</strong> leads &mdash; I, II, III, aVR, aVL, aVF &mdash; the <strong>hexaxial leads</strong>, used to determine the axis. Add V1&ndash;V6 and you have twelve views from ten wires.</p>
+  {fig("7-einthoven-triangle.png", 931, 562, "Diagram of a figure with arms outstretched showing Einthoven's triangle: lead I across the shoulders from right arm to left arm, lead II from right arm to left leg, and lead III from left arm to left leg, with positive and negative poles marked.", "<b>Einthoven&rsquo;s triangle: the three bipolar leads.</b> Each side of the triangle compares two limb electrodes. Lead II runs from right arm to left leg, along the heart&rsquo;s own vector, which is why it is the rhythm strip.", L7, 21)}
+  {fig("7-augmented-leads.jpg", 450, 338, "Torso diagram with electrodes at right arm, left arm and left leg, showing the augmented leads aVR, aVL and aVF each drawn from one limb electrode toward a central negative pole.", "<b>The augmented leads are unipolar.</b> One physical electrode against a negative pole the machine creates in the middle of the chest.", L7, 21)}
+  <p>The <strong>precordial (chest) leads</strong> give a <strong>horizontal</strong> view of the heart, with very specific placement:</p>
+  {fig("7-precordial-placement.png", 662, 581, "Diagram of the rib cage showing the six chest electrodes V1 to V6 placed from the right of the sternum across to the left side of the chest.", "<b>V1 to V6.</b> Placement is one of the things she said must be memorized. V1 and V2 sit either side of the sternum, V4 lower on the left, V3 midway between them, and V5 and V6 continue laterally at the level of V4.", L7, 23)}
+  <p><strong>Lead II</strong> has the best view of the heart&rsquo;s vector, so it is the lead used for <strong>rhythm interpretation</strong>. The cardiac cycle looks different in other leads.</p>
+  <p><strong>Contiguous leads</strong> look at the same area of the heart: <strong>V1, V2, V3, V4</strong> &middot; <strong>II, III, aVF</strong> &middot; <strong>I, aVL, V5, V6</strong>.</p>
+  {fig("7-which-leads-look-where.jpg", 600, 450, "Chart titled Which Leads Look Where, showing a heart with the inferior wall, septum, anterior wall and lateral wall colored, a legend listing inferior wall II, III and aVF, septum V1 and V2, anterior wall V3 and V4, lateral wall I, aVL, V5 and V6, and a 12-lead layout with each lead shaded by the wall it views.", "<b>Slide 24 is text-empty; this picture is its content.</b> Inferior II, III, aVF &middot; septum V1&ndash;V2 &middot; anterior V3&ndash;V4 &middot; lateral I and aVL (high) and V5&ndash;V6 (low). The anterior wall and septum often infarct together because both are supplied by the left anterior descending artery, so an anteroseptal infarction shows in V1&ndash;V4.", L7, 24)}
+
+  <h3 class="sub" id="ecg-rate">7.6 &middot; Objective f &mdash; Determining heart rate</h3>
+  <p>Both methods <strong>only work if the rhythm is regular</strong>, so check regularity first: compare consecutive R to R intervals, with calipers or a marked sheet of paper if in doubt.</p>
+  <table>
+    <tr><th>Method</th><th>How</th></tr>
+    <tr><td><strong>6-second method</strong></td><td>Take a 6-second strip (two 3-second markers, or 30 large boxes). Count QRS complexes and multiply by 10 for the <strong>ventricular</strong> rate; count P waves and multiply by 10 for the <strong>atrial</strong> rate.</td></tr>
+    <tr><td><strong>300 method</strong></td><td>Start at an R wave on a heavy line. Each following heavy line counts down: <strong>300, 150, 100, 75, 60, 50</strong>. The next R wave&rsquo;s position gives the rate.</td></tr>
+  </table>
+  {fig("7-300-method.png", 963, 515, "Electrocardiogram strip with an R wave marked START on a heavy line, and each following heavy line labeled 300, 150, 100, 75, 60 and 50.", "<b>Slide 53 is only this picture.</b> Count down the heavy lines from an R wave on a line: 300, 150, 100, 75, 60, 50. An R wave landing on the third line means a rate of about 100.", L7, 53)}
+
+  <h3 class="sub" id="ecg-intervals">7.7 &middot; Objectives g &amp; h &mdash; Waves, segments, intervals and their normal values</h3>
+  <p>A <strong>wave</strong> is a deflection from baseline; a <strong>segment</strong> is the flat line between two waves; an <strong>interval</strong> spans at least one wave plus one segment. The QRS is the one <strong>complex</strong>.</p>
+  <table>
+    <tr><th>Component</th><th>Represents</th><th>Normal</th></tr>
+    <tr><td><strong>P wave</strong></td><td>Atrial depolarization</td><td>Under 0.12 s (3 small boxes); upright in lead II</td></tr>
+    <tr><td><strong>PR interval</strong></td><td>Start of P to start of QRS: atrial depolarization, the atrioventricular node delay and His-Purkinje conduction</td><td>0.12&ndash;0.20 s (3&ndash;5 small boxes)</td></tr>
+    <tr><td><strong>QRS complex</strong></td><td>Ventricular depolarization</td><td>Under 0.12 s; narrow with sharp points. Not every wave appears in every lead.</td></tr>
+    <tr><td>Q wave</td><td>Septal depolarization (first negative deflection after the PR)</td><td>Under 0.04 s, low amplitude; not always visible</td></tr>
+    <tr><td>R wave</td><td>Anterior left ventricle (first positive deflection)</td><td>&mdash;</td></tr>
+    <tr><td>S wave</td><td>Lateral left ventricle (first negative deflection after R)</td><td>Must go below baseline to be a true S wave</td></tr>
+    <tr><td><strong>J point</strong></td><td>Junction where the QRS ends and the ST segment begins</td><td>At baseline; 1 mm variance allowed</td></tr>
+    <tr><td><strong>ST segment</strong></td><td>Between ventricular depolarization and repolarization; ventricles hold contraction</td><td>At baseline</td></tr>
+    <tr><td><strong>T wave</strong></td><td>Ventricular repolarization</td><td>0.16&ndash;0.25 s; its peak divides absolute from relative refractory period</td></tr>
+    <tr><td><strong>QT interval</strong></td><td>All ventricular activity: start of QRS to end of T</td><td>350&ndash;450 ms in males, 360&ndash;460 ms in females</td></tr>
+    <tr><td><strong>QTc</strong></td><td>QT corrected for heart rate (Bazett&rsquo;s formula, computed by the machine)</td><td>Same values as the QT. Above 450 (460 in women) to 500 ms = borderline or prolonged; <strong>above 500 ms = high-risk prolongation</strong></td></tr>
+    <tr><td>U wave</td><td>Unclear; possibly Purkinje repolarization. Follows T in the same direction; best in V2&ndash;V3</td><td>Prominent in hypokalemia, hypercalcemia, prolonged QT, post-infarction</td></tr>
+    <tr><td><strong>TP segment</strong></td><td>Resting state between T and the next P</td><td>The best place to judge the isoelectric line</td></tr>
+    <tr><td>R to R interval</td><td>Distance between consecutive R waves</td><td>Used for rate, regularity and heart blocks</td></tr>
+  </table>
+  <div class="pearl"><strong>Be systematic and consistent.</strong> Rhythm &rarr; rate &rarr; P waves (present, alike?) &rarr; a P for every QRS and a QRS for every P &rarr; QRS width &rarr; PR interval &rarr; ST segment &rarr; T wave &rarr; QTc &rarr; any extra waves or beats (fibrillation, sawtooth, U waves, delta waves, premature ventricular contractions) &rarr; any voltage concerns.</div>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#a1363a" onclick="window.openTestYourself('Test yourself &mdash; Electrocardiography', TEST_YOURSELF.electrocardiography)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>{L7}</em> (Ayelet Elwaya). Emphasis quoted from the 15 September 2026 recording (two segments, about 95 minutes). Slides 24 and 53 carry their content only as pictures and are reproduced above. The practice strips on slides 55&ndash;64 are worked examples and are not restated here.</footer>
+</section>'''
+
+S8 = f'''<section class="deck" id="cardiac-imaging">
+  <h2 class="deck-title">8 &middot; Cardiac Imaging and Vascular Studies</h2>
+  <p class="lecturer">Ayelet Elwaya, MSHS, PA-C, CAQ-EM &middot; 17 September 2026</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">Topic Outline 8: Cardiac Imaging and Vascular Studies</p>
+    <ol type="a">
+      <li>Identify cardiovascular anatomy on radiographic studies.</li>
+      <li>Identify structures comprising the cardiac silhouette.</li>
+      <li>Identify common abnormal cardiovascular imaging findings.</li>
+      <li>Measure the cardiothoracic ratio to evaluate cardiac enlargement.</li>
+      <li>Compare and contrast cardiovascular imaging modalities.</li>
+      <li>Discuss indications, advantages, and limitations of: i. Echocardiography &middot; ii. Stress testing &middot; iii. Nuclear cardiology studies &middot; iv. Cardiac CT &middot; v. Cardiac MRI &middot; vi. Coronary angiography &middot; vii. Vascular ultrasound</li>
+    </ol>
+  </div>
+
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; 17 September recording</span>
+  <table>
+    <tr><th>She said</th><th>So</th></tr>
+    <tr><td>The gold standard to diagnose coronary artery disease &mdash; <em>&ldquo;that was a high-miss last year&rdquo;</em> &mdash; is <em>&ldquo;to put a catheter in the coronary artery.&rdquo;</em></td><td><strong>Coronary angiography is the gold standard</strong>, even though a computed tomography angiogram can show the calcification.</td></tr>
+    <tr><td><em>&ldquo;If I give you a test question about someone who needs an echo to see their left atrial appendage&rdquo;</em> and they have a history of esophageal stricture, <em>&ldquo;scratch that answer out.&rdquo;</em></td><td>Know the transesophageal echocardiogram contraindications, and what the transthoracic study cannot see.</td></tr>
+    <tr><td><em>&ldquo;I do want you to remember that your predicted heart rate is 220 minus your age.&rdquo;</em></td><td>And that a valid test reaches 85% of it. How the numbers were derived is not needed.</td></tr>
+    <tr><td>A patient who <em>&ldquo;couldn&rsquo;t hit&rdquo;</em> their target heart rate and stopped early without chest pain: <em>&ldquo;What is the next best step &hellip; A cardiac CTA (computed tomography angiogram)!&rdquo;</em></td><td>An equivocal or non-diagnostic stress test is an indication for coronary computed tomography angiography.</td></tr>
+    <tr><td><em>&ldquo;The main indication for a left heart cath is to visualize your coronary arteries &mdash; take a highlighter, circle it &mdash; the main reason you would want to do a right heart cath is for people you are assessing for pulmonary hypertension.&rdquo;</em></td><td>One indication each, circled.</td></tr>
+    <tr><td>After a positive computed tomography angiogram with left anterior descending disease, the next step is the catheter, <em>&ldquo;because intervention is done according to percentage.&rdquo;</em></td><td>Noninvasive tests say whether disease is there; angiography says how much.</td></tr>
+    <tr><td>On the exercise endpoint chart: <em>&ldquo;Do not memorize&rdquo;</em> the order, <em>&ldquo;but understand what this chart is saying &hellip; these are indications to stop the test.&rdquo;</em> The treadmill protocol tables are not for memorizing.</td><td>Know why a test is stopped, not the table layout.</td></tr>
+  </table></div>
+
+  <h3 class="sub" id="ci-anatomy">8.1 &middot; Objectives a &amp; b &mdash; Cardiovascular anatomy and the cardiac silhouette</h3>
+  <p>The chest radiograph is <strong>not the primary modality</strong> for cardiac function or detailed anatomy, but when one is obtained it gives important clues. Partially visible: the <strong>cardiac silhouette, great vessels, pulmonary vasculature, and lungs and pleura</strong>.</p>
+  {fig("8-cxr-cardiac-anatomy.jpg", 554, 554, "Posteroanterior chest radiograph with the cardiac silhouette shaded and labeled: superior vena cava and right atrium forming the right border, and the aortic knuckle, main pulmonary artery segment, left atrial appendage and left ventricle forming the left border down to the apex, with the trachea, inferior vena cava region and gastric bubble also marked.", "<b>Slide 5 has no text; the labels are in the pictures.</b> Right border: superior vena cava above, right atrium below. Left border, top to bottom: <b>aortic knuckle &rarr; main pulmonary artery segment &rarr; left atrial appendage &rarr; left ventricle</b>, with the apex formed by the left ventricle.", L8, 5)}
+  <table>
+    <tr><th>Border</th><th>Structures, top to bottom</th></tr>
+    <tr><td>Right heart border</td><td>Superior vena cava &rarr; right atrium (inferior vena cava region at the base)</td></tr>
+    <tr><td>Left heart border</td><td>Aortic knuckle (arch) &rarr; main pulmonary artery &rarr; left atrial appendage &rarr; left ventricle &rarr; apex</td></tr>
+  </table>
+
+  <h3 class="sub" id="ci-abnormal">8.2 &middot; Objective c &mdash; Common abnormal findings</h3>
+  <p>Chest radiograph abnormalities that can indicate cardiac pathology:</p>
+  <table>
+    <tr><th>Finding</th><th>Note</th></tr>
+    <tr><td>Pulmonary edema &middot; pleural effusion</td><td>The heart shows itself through the lungs</td></tr>
+    <tr><td><strong>Cardiomegaly</strong></td><td>Judged by the cardiothoracic ratio (8.3)</td></tr>
+    <tr><td><strong>Cephalization</strong></td><td>Upper-lobe vessels become larger and more prominent than the lower ones. Seen in <strong>heart failure and pulmonary hypertension</strong>.</td></tr>
+    <tr><td>Calcification</td><td>Great vessel, valvular, or pericardial</td></tr>
+    <tr><td>Tension physiology</td><td>Pneumothorax causing tamponade</td></tr>
+  </table>
+  {fig("8-cephalization.jpg", 442, 424, "Posteroanterior chest radiograph with prominent, enlarged vascular markings in the upper zones of both lungs.", "<b>Cephalization.</b> The upper-zone vessels are as prominent as, or more prominent than, the lower ones &mdash; the reverse of normal. Think heart failure or pulmonary hypertension.", L8, 9)}
+
+  <h3 class="sub" id="ci-ctr">8.3 &middot; Objective d &mdash; The cardiothoracic ratio</h3>
+  <p>Widest cardiac diameter divided by the widest <strong>internal</strong> thoracic diameter. <strong>Normal 0.42&ndash;0.5.</strong> A ratio <strong>above 0.50</strong> on a <strong>properly performed posteroanterior</strong> film suggests cardiomegaly &mdash; the silhouette should occupy no more than about half the thoracic width.</p>
+  {fig("8-cardiothoracic-ratio.jpg", 630, 622, "Posteroanterior chest radiograph with an orange line across the widest part of the cardiac silhouette and a longer blue line across the widest internal diameter of the thorax.", "<b>How the ratio is measured.</b> Orange: the widest cardiac diameter. Blue: the widest internal thoracic diameter. Orange over blue above 0.5 on a proper posteroanterior film suggests cardiomegaly. Why posteroanterior matters comes from Lecture 2: an anteroposterior film magnifies the heart.", L8, 8)}
+
+  <h3 class="sub" id="ci-compare">8.4 &middot; Objective e &mdash; Comparing the modalities</h3>
+  <table>
+    <tr><th>Modality</th><th>Best at</th><th>Cannot / against</th></tr>
+    <tr><td>Chest radiograph</td><td>Clues when already obtained: silhouette, vessels, lungs</td><td>Not for function or detailed anatomy</td></tr>
+    <tr><td>Vascular ultrasound</td><td>Vessels and flow, no radiation, portable, repeatable</td><td>Operator dependent; habitus, bone and air limit it; deep vessels hard</td></tr>
+    <tr><td>Echocardiography</td><td><strong>Structure and function</strong> together, bedside</td><td>Transthoracic view poor for the posterior heart; transesophageal is invasive</td></tr>
+    <tr><td>Stress testing</td><td>Inducible ischemia and functional capacity</td><td>Invalid if 85% of predicted maximum is not reached</td></tr>
+    <tr><td>Nuclear perfusion</td><td>Ischemia versus <strong>viability</strong>; more accurate than standard or echo stress</td><td>Radiotracer</td></tr>
+    <tr><td>Cardiac computed tomography and angiography</td><td>Anatomy, calcium, noninvasive coronary assessment; superior resolution to echo</td><td><strong>Anatomy only, not function</strong>; radiation, contrast, rate dependent, blooming</td></tr>
+    <tr><td>Cardiac magnetic resonance</td><td>Detailed anatomy and function, viability, inflammation; <strong>no ionizing radiation or iodinated contrast</strong></td><td>Implants, long acquisition, claustrophobia</td></tr>
+    <tr><td>Coronary angiography</td><td><strong>Gold standard</strong> for coronary anatomy; can treat during the study</td><td>Invasive: hematoma, pseudoaneurysm</td></tr>
+  </table>
+
+  <h3 class="sub" id="ci-echo">8.5 &middot; Objective f.i &mdash; Echocardiography</h3>
+  <p>Noninvasive evaluation of chamber size, atrial and ventricular function and wall thickness, ejection fraction, blood flow and velocity with Doppler, valve structure and function, and intracardiac shunts, hemodynamics and pressures.</p>
+  <table>
+    <tr><th></th><th>TTE (transthoracic echocardiogram)</th><th>TEE (transesophageal echocardiogram)</th></tr>
+    <tr><td>Transducer</td><td><strong>Outside</strong> the body, on the chest wall</td><td><strong>Inside</strong>, on a modified endoscope in the esophagus</td></tr>
+    <tr><td>Use</td><td><strong>Most common</strong>; bedside and noninvasive</td><td>When more structural detail is needed, particularly the <strong>inferior and posterior</strong> heart</td></tr>
+    <tr><td>Procedure</td><td>Left lateral decubitus, gel, probe over several windows</td><td>Left lateral decubitus; topical anesthetic to the throat; intravenous sedative; electrocardiogram and vital-sign monitoring; patient may swallow to pass the probe</td></tr>
+  </table>
+  <p><strong>The transesophageal study sees in more detail:</strong> left atrium, mitral valve, pulmonary artery, aorta, coronary arteries. <strong>When to use it:</strong> aortic and great-vessel disease (dissection, dilation, arteritis), cardiac tumor (myxoma), prosthetic valve function, <strong>valve vegetations</strong>, cerebral ischemia, and <strong>left atrial appendage thrombus</strong>.</p>
+  <div class="callout warn"><p><strong>TEE (transesophageal echocardiogram) contraindications &mdash; anything the probe could injure or an airway you cannot protect:</strong> altered mental status or an uncooperative patient &middot; esophageal stricture, malignancy, or varices with recent bleeding &middot; odynophagia or dysphagia history &middot; <strong>Zenker&rsquo;s diverticulum</strong> (identify with a swallowing study first) &middot; cervical spine arthritis with reduced range of motion &middot; obstructive sleep apnea or airway risk.</p></div>
+
+  <h3 class="sub" id="ci-stress">8.6 &middot; Objective f.ii &mdash; Stress testing</h3>
+  <p>Four types: <strong>standard exercise</strong>, <strong>echocardiography</strong>, <strong>nuclear</strong>, and <strong>pharmacologic</strong>.</p>
+  <p>The <strong>exercise tolerance test</strong> assesses functional capacity and indirectly detects ischemia through continuous electrocardiogram monitoring &mdash; <strong>ST depression</strong> or new premature ventricular contractions. Treadmill or stationary cycle (bicycle preferred; arm ergometry exists), run to a protocol, usually <strong>Bruce</strong>. Complications: arrhythmia, angina, infarction, death.</p>
+  <div class="callout"><p><strong>Validity.</strong> The patient must reach <strong>at least 85% of predicted maximal heart rate</strong>, where predicted maximum = <strong>220 minus age</strong>. Below 85%, an otherwise negative test is <strong>inadequate to exclude ischemic heart disease</strong>.</p></div>
+  <table>
+    <tr><th>Indications</th><th>Procedure</th></tr>
+    <tr><td>Symptoms suggesting ischemia (exertional chest pain) &middot; acute chest pain once acute coronary syndrome and infarction are excluded &middot; known ischemic disease with a change in status &middot; prior revascularization &middot; new heart failure or cardiomyopathy &middot; certain arrhythmias &middot; preoperative assessment of a high-risk patient before non-cardiac surgery</td><td>Resting electrocardiogram and blood pressure (supine and standing) &rarr; exercise increased by metabolic equivalents &rarr; blood pressure in the last minute of each stage &rarr; watch face, color, tracing and pressure &rarr; stop at maximum performance, ischemic signs or symptoms, or a predetermined endpoint</td></tr>
+  </table>
+  {fig("8-exercise-endpoints.png", 549, 798, "Table titled Exercise test endpoints, divided into patient-determined endpoints such as wanting to stop, chest discomfort and severe dyspnea; provider-determined endpoints including looking unwell, exertional hypotension, systolic pressure above 250 or diastolic above 120 millimeters of mercury, and electrocardiogram endpoints such as marked ST depression, new bundle branch block, high-grade atrioventricular block, ventricular tachycardia or fibrillation, increasing ectopy and supraventricular tachyarrhythmia; equipment failure; and protocol-determined endpoints.", "<b>Why a test is stopped.</b> Understand the categories rather than the order: the patient stops it (chest pain, dyspnea), the provider stops it (looks unwell, exertional hypotension, extreme pressures, dangerous rhythms, marked ST depression), or the protocol stops it.", L8, 36)}
+  <table>
+    <tr><th>Variant</th><th>For whom</th><th>Key point</th></tr>
+    <tr><td><strong>Echocardiography stress</strong></td><td>Can exercise, but baseline electrocardiogram abnormalities (ST-T changes) would confuse interpretation</td><td>Echo immediately after exercise, while the heart is still fast, looking for <strong>new wall-motion abnormality</strong></td></tr>
+    <tr><td><strong>Pharmacologic stress</strong></td><td><strong>Cannot exercise</strong> (for example wheelchair dependent)</td><td><strong>Adenosine or dipyridamole</strong> vasodilate the coronaries; <strong>dobutamine</strong> increases cardiac workload</td></tr>
+  </table>
+
+  <h3 class="sub" id="ci-nuclear">8.7 &middot; Objective f.iii &mdash; Nuclear cardiology</h3>
+  <p>A small amount of radioactive perfusion tracer is injected and taken up by the heart. It assesses <strong>ischemia, myocardial blood flow, pumping function, and the size and location of an infarction</strong>.</p>
+  <p><strong>Myocardial perfusion imaging</strong> pairs rest images with images after exercise or pharmacologic stress (adenosine, dobutamine), read by a gamma camera (single-photon emission computed tomography) or positron emission tomography. Diseased myocardium receives less flow under stress, so less tracer uptake after stress means a blockage or vasospasm. Tissue that does not light up at all is <strong>dead</strong> &mdash; which is how it shows <strong>viability</strong>.</p>
+  <div class="pearl"><strong>More accurate than standard and echocardiography stress testing</strong> for detecting ischemia; its sensitivity and specificity are superior. Indications: diagnosing coronary disease in acute or stable chest pain, locating and grading known disease, and prognosis.</div>
+
+  <h3 class="sub" id="ci-ct">8.8 &middot; Objective f.iv &mdash; Cardiac CT (computed tomography) and CT angiography</h3>
+  <p>Computed tomography optimized for the heart, coronaries, chambers, valves, pericardium and great vessels. <strong>Coronary computed tomography angiography</strong> evaluates the coronary arteries; <strong>non-contrast cardiac computed tomography</strong> is used for <strong>coronary artery calcium scoring</strong>. Because the heart moves, <strong>metoprolol</strong> slows it and <strong>nitroglycerin</strong> dilates the coronaries, and the scan is gated to the electrocardiogram.</p>
+  <table>
+    <tr><th>Computed tomography angiography indications</th><th>Cardiac computed tomography indications</th></tr>
+    <tr><td>Chest pain: presence and distribution of coronary disease &middot; detect or exclude stenosis or plaque &middot; <strong>equivocal or non-diagnostic stress test</strong></td><td>Coronary calcium &middot; coronary anatomy anomalies &middot; congenital heart disease &middot; preoperative planning (valves, great vessels); usually done right before a computed tomography angiogram</td></tr>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Superior resolution to echocardiography &middot; internal structures &middot; noninvasive coronary assessment &middot; fast</td><td>Radiation &middot; contrast (kidney disease) &middot; rhythm and rate dependent &middot; <strong>blooming artifact</strong> overstates calcification &middot; <strong>anatomy only, not function</strong></td></tr>
+  </table>
+
+  <h3 class="sub" id="ci-mri">8.9 &middot; Objective f.v &mdash; Cardiac MRI (magnetic resonance imaging), now cardiovascular magnetic resonance</h3>
+  <p>Magnetic fields and radiofrequency map hydrogen into three-dimensional images of the heart and great vessels, with very detailed anatomy. It assesses anatomy (mainly muscle), ventricular function, great vessels, coronary anatomy, flow, <strong>viability, perfusion and inflammation</strong> &mdash; <strong>without ionizing radiation or iodinated contrast</strong>.</p>
+  <p><strong>An echocardiogram is done before it is ordered.</strong> Indications: thoracic aorta (aneurysm, dissection, intramural hematoma, coarctation) &middot; congenital heart disease (coronary anomalies, shunt quantification) &middot; cardiomyopathies (hypertrophic, ischemic versus nonischemic, acute myocarditis, sarcoidosis) &middot; left ventricular viability.</p>
+  {fig("8-cmr-advantages.png", 497, 490, "Table titled Advantages and disadvantages of cardiac magnetic resonance imaging. Advantages: three-dimensional, high spatial and temporal resolution, intrinsic high contrast with no need for iodinated contrast, no ionizing radiation, no interference from lung or bone, multiple techniques in one system. Disadvantages: contraindicated with certain implants such as aneurysm clips, nerve stimulator units and certain pacemakers, lengthy acquisition, distorted electrocardiogram, requires electrocardiogram and respiratory gating, claustrophobia.", "<b>Slide 58 is text-empty; this table is its content.</b> The trade is clean: no radiation, no iodine, no interference from lung or bone &mdash; against implants, time and claustrophobia. Titanium is acceptable.", L8, 58)}
+
+  <h3 class="sub" id="ci-angio">8.10 &middot; Objective f.vi &mdash; Coronary angiography and the invasive studies</h3>
+  <p><strong>Coronary angiography</strong> gives detailed images of the coronary vessels and is the <strong>gold standard</strong> for coronary anatomy, usually done with cardiac catheterization and before percutaneous or surgical intervention. Under local anesthesia and sedation, a catheter is guided by fluoroscopy, pressures are measured, contrast is injected into each coronary artery, and <strong>treatment can be done in the same procedure</strong> (balloon angioplasty or stent).</p>
+  <table>
+    <tr><th>Left heart catheterization</th><th>Right heart catheterization</th></tr>
+    <tr><td>Via an <strong>artery</strong>. <strong>Main use: the coronary arteries.</strong> Also aortic pressure, systemic vascular resistance, aortic and mitral valves, left ventricular pressure and function.</td><td>Via a <strong>vein</strong>. <strong>Main use: pulmonary hypertension.</strong> Right atrial, right ventricular, pulmonary artery and occlusion pressures, pulmonary vascular resistance, tricuspid and pulmonic valves, shunts.</td></tr>
+  </table>
+  <p><strong>Indications:</strong> to define a suspected problem when intervention is anticipated &middot; to exclude significant disease when other studies are equivocal or symptoms are severe &middot; high risk on noninvasive testing &middot; angina despite therapy &middot; unstable angina &middot; acute infarction &middot; high-risk non-cardiac surgery &middot; arrhythmia suspected to be vascular.</p>
+  <div class="callout warn"><p><strong>Complications at the access site &mdash; always check it:</strong> hematoma, and <strong>pseudoaneurysm</strong> (continuous communication with the artery; pulsatile).</p></div>
+  <p><strong>Electrophysiology testing</strong> investigates and treats rhythm disorders: 3&ndash;4 catheters via the internal jugular, subclavian or femoral vein into the right heart record and provoke the arrhythmia to find its exact origin, and <strong>catheter ablation</strong> can treat it. Indications: syncope with structural heart disease or sick sinus syndrome, unexplained sudden cardiac arrest, ectopic beats, aberrant pathways.</p>
+
+  <h3 class="sub" id="ci-vascular">8.11 &middot; Objective f.vii &mdash; Vascular ultrasound</h3>
+  <p>Quartz crystals in the transducer send high-frequency sound; reflections become a grayscale image, superficial structures at the top. Denser is lighter (air black, bone white). Vessels appear as well-circumscribed hypoechoic or anechoic structures. <strong>On compression, veins collapse and arteries pulsate</strong> &mdash; a vein that will not collapse is the positive deep vein thrombosis study.</p>
+  <table>
+    <tr><th>Indications</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Vascular access &middot; venous flow with Doppler; <strong>deep vein thrombosis</strong> &middot; arterial: claudication and peripheral arterial disease &middot; <strong>carotid</strong>: atherosclerosis, after stroke, transient ischemic attack or infarction &middot; abdominal aortic aneurysm &middot; venous insufficiency and varicose veins</td><td>Fast &middot; cost effective &middot; no ionizing radiation &middot; noninvasive &middot; real time &middot; anatomy and flow &middot; portable &middot; repeatable</td><td><strong>Highly operator dependent</strong> &middot; body habitus &middot; bone and air interfere &middot; better for superficial vessels &middot; probe angle affects measurements &middot; calcification causes acoustic shadowing</td></tr>
+  </table>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#a1363a" onclick="window.openTestYourself('Test yourself &mdash; Cardiac Imaging', TEST_YOURSELF.cardiacimaging)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>{L8}</em> (Ayelet Elwaya). Emphasis quoted from the 17 September 2026 recording (two segments). Slides 5, 36 and 58 carry their content only as pictures and are reproduced above. The nuclear perfusion panel on slide 52 is not reproduced: its six scans and three labels cannot be paired reliably from the file.</footer>
+</section>'''
+
+S9 = f'''<section class="deck" id="biomarkers-lipids">
+  <h2 class="deck-title">9 &middot; Cardiac Biomarkers and Lipid Testing</h2>
+  <p class="lecturer">Lauren Reynolds, MSPA, PA-C &middot; 21 September 2026</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <p class="tag">Topic Outline 9: Cardiac Biomarkers and Lipid Testing</p>
+    <ol type="a">
+      <li>Compare and contrast cardiac biomarkers: i. Creatine kinase &middot; ii. Cardiac troponins &middot; iii. BNP &middot; iv. hs-CRP</li>
+      <li>Discuss indications for ordering cardiac biomarkers.</li>
+      <li>Discuss indications for ordering a lipid profile.</li>
+      <li>Analyze a lipid profile.</li>
+      <li>Discuss the use of lipid testing for cardiovascular risk assessment.</li>
+      <li>Compare and contrast lipids and lipoproteins involved in atherosclerotic disease.</li>
+      <li>Describe measured and calculated lipid profile components.</li>
+    </ol>
+  </div>
+
+  <div class="callout"><p><strong>The one-line frame for the whole lecture.</strong> Cardiac biomarkers ask <em>&ldquo;is there acute cardiac injury or stress?&rdquo;</em> Lipids ask <em>&ldquo;what is the patient&rsquo;s long-term atherosclerotic risk?&rdquo;</em> A 58-year-old with exertional chest pain gets biomarkers; a 58-year-old at a routine physical with abnormal cholesterol gets a lipid workup.</p>
+  <p><strong>Numbers:</strong> every threshold below is here so you can read a result, not to memorize &mdash; reference ranges are supplied on her exams. The recording of this lecture was still being transcribed when this section was written, so it is built from the slides alone.</p></div>
+
+  <h3 class="sub" id="bl-compare">9.1 &middot; Objective a &mdash; Creatine kinase, troponins, BNP (B-type natriuretic peptide) and hs-CRP (high-sensitivity C-reactive protein)</h3>
+  <table>
+    <tr><th>Biomarker</th><th>Reflects</th><th>Source</th><th>Key use</th><th>Watch for</th></tr>
+    <tr><td><strong>Creatine kinase</strong> (and its MB fraction)</td><td>Muscle injury; MB more cardiac</td><td>Cytosolic enzyme of skeletal and cardiac muscle</td><td>Largely historical for infarction; still used for <strong>rhabdomyolysis and statin myopathy</strong></td><td>Low cardiac specificity; no longer useful for infarction when troponin is available</td></tr>
+    <tr><td><strong>Cardiac troponin</strong> (I, T, high-sensitivity)</td><td>Myocardial <strong>injury/necrosis</strong></td><td>Contractile regulatory proteins released with myocyte injury</td><td><strong>Preferred marker for infarction</strong>; risk stratification</td><td>Most sensitive and specific cardiac marker, but rises in many non-infarction states (heart failure, pulmonary embolism, myocarditis, chronic kidney disease, sepsis)</td></tr>
+    <tr><td><strong>BNP (B-type natriuretic peptide) / NT-proBNP (N-terminal pro B-type natriuretic peptide)</strong></td><td>Wall <strong>stretch</strong>/stress</td><td>Ventricles, with volume or pressure overload</td><td>Diagnose and triage <strong>heart failure</strong>; prognosis in acute coronary syndrome</td><td>Raised by age, atrial fibrillation, renal impairment; <strong>suppressed by obesity</strong></td></tr>
+    <tr><td><strong>hs-CRP (high-sensitivity C-reactive protein)</strong></td><td>Vascular/systemic <strong>inflammation</strong></td><td>Acute-phase reactant from the liver</td><td>Adjunct risk marker for atherosclerotic disease</td><td>Non-specific; confounded by any inflammatory or infectious state</td></tr>
+  </table>
+  <h4 class="subsub">Troponin</h4>
+  <p><strong>Definition of acute infarction</strong> (Fourth Universal Definition): evidence of myocardial injury with troponin I or T <strong>above the 99th percentile upper reference limit</strong>, in the appropriate setting of <strong>ischemic symptoms</strong>. That limit is a value higher than 99% of a healthy population; exceeding it signals cardiac muscle damage and the need for further testing. Defining &ldquo;healthy&rdquo; is debated, but <strong>sex-specific limits</strong> are generally agreed.</p>
+  <table>
+    <tr><th>Subunit</th><th>Role</th><th>As a biomarker</th></tr>
+    <tr><td><strong>Troponin T</strong></td><td>Tropomyosin-binding</td><td>Primarily cardiac; trace amounts in skeletal muscle</td></tr>
+    <tr><td><strong>Troponin I</strong></td><td>Inhibitory</td><td><strong>Cardiac specific</strong></td></tr>
+    <tr><td>Troponin C</td><td>Calcium-binding</td><td><strong>Not useful</strong> &mdash; not specific to cardiac muscle</td></tr>
+  </table>
+  <p><strong>High-sensitivity troponin</strong> describes the <em>assay</em>, not a new subunit. It detects troponin at lower concentrations, allows serial testing at <strong>presentation and 1&ndash;2 hours</strong>, detects infarction up to <strong>90 minutes earlier</strong>, and gives faster rule-in and rule-out. <strong>Pitfall:</strong> so sensitive that healthy people can have measurable levels &mdash; interpret with the whole clinical picture.</p>
+  {fig("9-hs-troponin.png", 300, 311, "Graph of troponin concentration on a logarithmic scale against hours after acute coronary syndrome onset, with horizontal cutoff lines for 1995, 2003 and 2007 assays and a shaded low region marked high-sensitivity assays; a table beneath lists each assay's diagnostic cutoff and year.", "<b>Slide 8 is only this picture.</b> Each generation of assay lowered the diagnostic cutoff, and the lower the cutoff, the earlier the rising curve crosses it. That is the whole advantage of the high-sensitivity assay in one image.", L9, 8)}
+  <h4 class="subsub">Injury versus infarction</h4>
+  <p><strong>Myocardial injury</strong> = any troponin elevation. <strong>Myocardial infarction</strong> = injury <strong>plus ischemia plus a rising or falling pattern</strong>. Troponin can be <strong>chronically elevated</strong> in chronic kidney disease, heart failure and structural heart disease &mdash; never interpret a single value out of context.</p>
+  {fig("9-troponin-patterns.png", 520, 396, "Graph of troponin in multiples of the upper reference limit against hours from symptom onset. A type 1 infarction curve rises steeply to about 160 times the limit, a type 2 infarction curve rises to about 50, a chronic myocardial injury line stays flat just above the 99th percentile, and vertical markers divide early presentation with values still rising, typical presentation with values rising through the limit, and late presentation with values near peak or slowly declining.", "<b>Slide 11 has no text; the graph is the teaching.</b> Early presenters have values still below the limit and rising; typical presenters rise through it; late presenters sit near the peak, where the change between two draws may be small. The flat green line is chronic injury &mdash; above the limit but not moving.", L9, 11)}
+  <p><strong>Advantages over creatine kinase-MB:</strong> very high specificity for myocardial injury, <strong>earlier rise and longer elevation</strong> (a wider window for diagnosis and treatment), useful early risk stratification in unstable angina. <strong>No longer used for cardiac evaluation:</strong> creatine kinase-MB, myoglobin, lactate dehydrogenase.</p>
+  <h4 class="subsub">The natriuretic peptides</h4>
+  <p>Cardiomyocytes secrete pro-BNP in response to <strong>stretch</strong>; it is cleaved into active <strong>BNP (B-type natriuretic peptide)</strong> and inert <strong>NT-proBNP (N-terminal pro B-type natriuretic peptide)</strong>. Neither is 100% specific for heart failure; neither is a stand-alone test &mdash; use with clinical assessment and an echocardiogram if indicated.</p>
+  <table>
+    <tr><th>Factor</th><th>Effect on natriuretic peptide</th></tr>
+    <tr><td>Age</td><td>Rises by decade</td></tr>
+    <tr><td>Sex</td><td>Women higher</td></tr>
+    <tr><td><strong>Obesity</strong></td><td><strong>Falsely low</strong></td></tr>
+    <tr><td>Renal function</td><td>Inverse with filtration rate: worse kidneys, higher level</td></tr>
+  </table>
+  <p>Reference ranges vary by assay (BNP cutoff is given as under 100 ng/L; NT-proBNP is age-stratified and based on renal function). Levels rise <strong>linearly with heart failure severity</strong>.</p>
+  <h4 class="subsub">C-reactive protein</h4>
+  <p>Rises quickly with inflammation and falls rapidly once it resolves. Raised by acute processes (plaque rupture, trauma), chronic ones (atherosclerosis, heart failure, acute coronary syndrome, autoimmune disease, diabetes, insomnia, obesity, cancer), mildly in women, older adults and smokers, and <strong>highest in bacterial infection</strong>. Lowered by NSAIDs (nonsteroidal anti-inflammatory drugs), <strong>statins</strong>, interleukin-6 receptor antagonists, GLP-1 (glucagon-like peptide-1) agonists and lifestyle change. Benefits: cheap, non-invasive, widely available including point of care, well researched, predictive. Pitfall: <strong>not cardiac specific</strong>.</p>
+  <table>
+    <tr><th>C-reactive protein (general)</th><th>Typical meaning</th></tr>
+    <tr><td>Under 0.3 mg/dL</td><td>Normal</td></tr>
+    <tr><td>0.3&ndash;1.0 mg/dL</td><td>Normal or minor: obesity, pregnancy, diabetes, common cold, sedentary life, smoking</td></tr>
+    <tr><td>1.0&ndash;10.0 mg/dL</td><td>Moderate: rheumatoid arthritis, lupus, autoimmune disease, malignancy, infarction, pancreatitis, bronchitis</td></tr>
+    <tr><td>Above 10.0 mg/dL</td><td>Marked: acute bacterial or viral infection, vasculitis, major trauma</td></tr>
+    <tr><td>Above 50.0 mg/dL</td><td>Severe: generally acute bacterial infection</td></tr>
+  </table>
+  <p><strong>High-sensitivity C-reactive protein</strong> is a technique, not a different test: more precision at low levels, designed for healthy people, used for <strong>cardiovascular risk stratification</strong>. Level is directly proportional to risk; high levels are an independent risk factor for heart failure and cardiac mortality. Risk tiers (note the unit is <strong>mg/L</strong>): <strong>under 1 low &middot; 1&ndash;3 moderate &middot; above 3 high</strong>. It feeds the <strong>Reynolds Risk Score</strong>, a 10-year cardiovascular risk estimate for women over 45 (slide 21).</p>
+
+  <h3 class="sub" id="bl-indications">9.2 &middot; Objective b &mdash; Indications for ordering cardiac biomarkers</h3>
+  <table>
+    <tr><th>Situation</th><th>Order</th></tr>
+    <tr><td>Suspected acute coronary syndrome / acute chest pain</td><td><strong>Serial high-sensitivity troponin</strong>, first-line; look for a rising or falling pattern. The first value also carries prognostic weight.</td></tr>
+    <tr><td>Suspected heart failure / dyspnea triage</td><td><strong>BNP (B-type natriuretic peptide) or NT-proBNP</strong>; also prognostic after acute coronary syndrome</td></tr>
+    <tr><td>Skeletal muscle injury, statin myopathy, rhabdomyolysis</td><td><strong>Creatine kinase</strong> (not troponin)</td></tr>
+    <tr><td>Refining atherosclerotic risk in select primary-prevention patients</td><td><strong>hs-CRP (high-sensitivity C-reactive protein)</strong> &mdash; never for acute diagnosis</td></tr>
+    <tr><td><strong>When NOT to order</strong></td><td>Routine natriuretic peptides in healthy people; creatine kinase-MB or myoglobin for infarction</td></tr>
+  </table>
+  <p><strong>Troponin applications:</strong> unstable angina (normal = no injury; raised = injury, so stratify and consider revascularization) &middot; early rule-out and early rule-in, including small infarctions &middot; risk stratification in acute coronary syndrome &middot; infarct size (late elevation at 4 weeks is <strong>inversely related</strong> to left ventricular ejection fraction) &middot; reocclusion and reinfarction &middot; procedural infarction.</p>
+  <table>
+    <tr><th>Procedural infarction</th><th>Troponin criterion</th></tr>
+    <tr><td>Type 4a (percutaneous coronary intervention)</td><td>More than 5 times the 99th percentile limit</td></tr>
+    <tr><td>Type 4b</td><td>At least one value above the 99th percentile limit</td></tr>
+    <tr><td>Type 5 (coronary artery bypass grafting)</td><td>More than 10 times the 99th percentile limit</td></tr>
+  </table>
+  <p><strong>Natriuretic peptide applications:</strong> rule-out of new heart failure &middot; guiding therapy &middot; monitoring the course &middot; risk stratification (cardiovascular mortality, readmission).</p>
+  <div class="pearl"><strong>Key points from the deck, in one breath.</strong> Troponin is the marker of choice for necrosis. Injury is not infarction. Creatine kinase-MB and myoglobin add nothing once troponin is available. Troponin can be chronically raised. BNP reflects stretch, not injury &mdash; complementary to troponin. hs-CRP is a risk enhancer, not an acute test.</div>
+
+  <h3 class="sub" id="bl-lipid-ind">9.3 &middot; Objective c &mdash; Indications for ordering a lipid profile</h3>
+  <p><strong>Why:</strong> baseline documentation, atherosclerotic risk estimation, and guiding or monitoring lipid-lowering therapy &mdash; in <strong>nearly all adults</strong>.</p>
+  <table>
+    <tr><th>Question</th><th>Answer</th></tr>
+    <tr><td>Fasting or not?</td><td><strong>Nonfasting is acceptable for most.</strong> Fasting when triglycerides are 400 mg/dL or above, a triglyceride disorder is known or suspected, or there is a <strong>family history of premature atherosclerotic disease or genetic dyslipidemia</strong>.</td></tr>
+    <tr><td>Children</td><td>Screen at <strong>ages 9&ndash;11</strong>; from <strong>age 2</strong> with a family history of premature disease, severe hypercholesterolemia or familial hypercholesterolemia</td></tr>
+    <tr><td>Adults</td><td>Again at <strong>19</strong>, then roughly <strong>every 5 years</strong>, more often with risk factors</td></tr>
+    <tr><td>On therapy</td><td>Recheck <strong>4&ndash;12 weeks</strong> after starting or changing a dose, then every 6&ndash;12 months</td></tr>
+    <tr><td>Lipoprotein(a)</td><td>Measure <strong>at least once in all adults</strong></td></tr>
+  </table>
+
+  <h3 class="sub" id="bl-analyze">9.4 &middot; Objective d &mdash; Analyzing a lipid profile</h3>
+  <table>
+    <tr><th>Component</th><th>Measured or calculated</th><th>Desirable / lower risk</th><th>Actionable</th></tr>
+    <tr><td>Total cholesterol</td><td>Measured</td><td>Under 200 mg/dL</td><td>Very high values raise familial hypercholesterolemia scoring</td></tr>
+    <tr><td>LDL-C (low-density lipoprotein cholesterol)</td><td>Calculated</td><td><strong>Risk-based goal</strong>: under 100, 70 or 55 mg/dL</td><td>190 mg/dL or above: statin regardless of risk; evaluate for familial hypercholesterolemia</td></tr>
+    <tr><td>Non-HDL-C (non-high-density lipoprotein cholesterol)</td><td>Calculated</td><td>Risk-based goal: under 130, 100 or 85 mg/dL</td><td>Tracks with the LDL-C goals</td></tr>
+    <tr><td>HDL-C (high-density lipoprotein cholesterol)</td><td>Measured</td><td>Higher generally favorable</td><td><strong>A marker, not a treatment target</strong></td></tr>
+    <tr><td>Triglycerides</td><td>Measured</td><td>Under 150 mg/dL</td><td>150+ risk enhancer &middot; <strong>500+ severe, pancreatitis risk</strong> &middot; 1000+ extreme</td></tr>
+    <tr><td>ApoB (apolipoprotein B)</td><td>Measured</td><td>Under 90 (goal under 70 or 55 by tier)</td><td>Use with triglycerides 150+, diabetes, or LDL-C under 70 to find residual risk</td></tr>
+    <tr><td>Lipoprotein(a)</td><td>Measured once</td><td>Under 125 nmol/L (about 50 mg/dL)</td><td>125+ risk enhancer &middot; 250+ about double risk &middot; 430+ comparable to heterozygous familial hypercholesterolemia</td></tr>
+  </table>
+  <div class="callout"><p><strong>The teaching point on this table:</strong> adult LDL-C and non-HDL-C have <strong>no single normal value</strong> &mdash; the goal depends on the patient&rsquo;s risk tier &mdash; whereas triglyceride, apoB and lipoprotein(a) thresholds are more fixed. An elevated lipoprotein(a) is found in about <strong>20% of people</strong>, with about 40% higher relative risk. Lipoprotein(a) and apoB share a panel because each lipoprotein(a) particle adds to the apoB count.</p></div>
+  <div class="callout warn"><p><strong>The deck states the lipoprotein(a) doubling point two ways.</strong> Slide 40: 250 nmol/L (about 100 mg/dL) or above is 2 or more times the risk. Slide 44: about 80&ndash;100 mg/dL roughly doubles risk. Neither is worth memorizing, and no question here turns on which is right.</p></div>
+  <table>
+    <tr><th>Pediatric (mg/dL)</th><th>Acceptable</th><th>Borderline</th><th>Abnormal</th></tr>
+    <tr><td>Total cholesterol</td><td>Under 170</td><td>170&ndash;199</td><td>200 or above</td></tr>
+    <tr><td>Triglycerides, 0&ndash;9 years</td><td>Under 75</td><td>75&ndash;99</td><td>100 or above</td></tr>
+    <tr><td>Triglycerides, 10&ndash;19 years</td><td>Under 90</td><td>90&ndash;129</td><td>130 or above</td></tr>
+    <tr><td>HDL-C</td><td>Above 45</td><td>40&ndash;45</td><td>Under 40</td></tr>
+    <tr><td>LDL-C</td><td>Under 110</td><td>110&ndash;129</td><td>130 or above</td></tr>
+    <tr><td>Non-HDL-C</td><td>Under 120</td><td>120&ndash;144</td><td>145 or above</td></tr>
+  </table>
+
+  <h3 class="sub" id="bl-risk">9.5 &middot; Objective e &mdash; Lipid testing in cardiovascular risk assessment</h3>
+  <p>Lipid values feed a <strong>10-year atherosclerotic risk estimate</strong> &mdash; the <strong>PREVENT (Predicting Risk of cardiovascular disease EVENTs)</strong> equations in the 2026 guideline &mdash; and the estimate drives treatment intensity. The framework is <strong>Calculate &rarr; Personalize &rarr; Reclassify</strong>.</p>
+  {fig("9-cpr-framework.jpg", 1100, 898, "Flowchart titled CPR Framework for Risk Evaluation. Estimating 10-year risk with PREVENT splits into low risk under 3 percent, borderline 3 to under 5 percent, intermediate 5 to under 10 percent and high risk 10 percent or above. Every tier discusses the risk estimate and therapy options with the patient; borderline also evaluates risk enhancers. Borderline and intermediate may consider a coronary artery calcium score if there is uncertainty. Low risk ends in lifestyle modification, borderline in lifestyle plus potential lipid-lowering therapy, and intermediate and high in lifestyle and lipid-lowering therapy.", "<b>The four tiers and what each adds.</b> Low under 3% &middot; borderline 3 to under 5% (add <b>risk enhancers</b>) &middot; intermediate 5 to under 10% &middot; high 10% or above. When the clinician or patient is uncertain at borderline or intermediate risk, a <b>coronary artery calcium score</b> reclassifies.", L9, 50)}
+  {fig("9-guideline-at-a-glance.jpg", 1100, 1046, "Guideline summary graphic with four columns: screen earlier, check regularly, aim for lower LDL cholesterol, and treat longer, listing screening ages, rechecking every 5 years with PREVENT, LDL cholesterol goals of under 100, under 70 and under 55 milligrams per deciliter by risk, rechecking lipids 4 to 12 weeks after starting therapy, and longer therapy increasing benefit.", "<b>Screen earlier, check regularly, aim lower, treat longer.</b> The LDL-C goals: under 100 mg/dL if PREVENT risk is under 10% &middot; under 70 if 10% or above, familial hypercholesterolemia, diabetes with risk factors, or coronary calcium 100 or above &middot; under 55 for clinical atherosclerotic disease at very high risk.", L9, 49)}
+  <p><strong>Lipoprotein(a) in risk assessment:</strong> a largely fixed genetic factor measured once. Elevation prompts <strong>earlier and more intensive management of every other modifiable risk factor</strong> &mdash; statins do not lower it. <strong>ApoB</strong>, by contrast, is modifiable and used repeatedly to guide and monitor therapy.</p>
+
+  <h3 class="sub" id="bl-lipoproteins">9.6 &middot; Objective f &mdash; Lipids and lipoproteins in atherosclerosis</h3>
+  <p>Cholesterol and triglycerides are the major lipids; they are <strong>insoluble</strong> and travel inside lipoproteins. A lipoprotein = <strong>lipid core</strong> (cholesterol esters + triglycerides) + <strong>phospholipid shell</strong> + <strong>apolipoproteins</strong>.</p>
+  <table>
+    <tr><th>Lipoprotein</th><th>Main cargo</th><th>Apolipoprotein</th><th>Atherogenic?</th></tr>
+    <tr><td>Chylomicron</td><td>Dietary triglyceride</td><td>apoB-48</td><td>Remnants are</td></tr>
+    <tr><td>VLDL (very low-density lipoprotein)</td><td>Triglyceride</td><td>apoB-100</td><td>Yes (remnants)</td></tr>
+    <tr><td>IDL (intermediate-density lipoprotein) / remnants</td><td>Cholesterol + triglyceride</td><td>apoB-100</td><td>Yes</td></tr>
+    <tr><td><strong>LDL (low-density lipoprotein)</strong></td><td>Cholesterol</td><td>apoB-100</td><td><strong>Yes &mdash; principal driver</strong></td></tr>
+    <tr><td><strong>Lipoprotein(a)</strong></td><td>Cholesterol + apo(a)</td><td>apoB-100 + apo(a)</td><td><strong>Highly atherogenic; genetic</strong></td></tr>
+    <tr><td>HDL (high-density lipoprotein)</td><td>Cholesterol</td><td>apoA-I</td><td>No &mdash; <strong>reverse cholesterol transport</strong> (protective)</td></tr>
+  </table>
+  {fig("9-apob-lifecycle.jpg", 1100, 679, "Illustration of the lifecycle of one apolipoprotein B-100 particle: the liver secretes very low-density lipoprotein, lipoprotein lipase on the endothelium strips triglycerides to leave a remnant, and the dense particle becomes LDL, which is cleared by hepatic LDL receptors. Particles under 70 nanometers cross the endothelium; most return via the lymphatics, but some are trapped in the artery wall, where macrophages take them up and plaque grows.", "<b>One particle, three names.</b> VLDL (very low-density lipoprotein), remnant and LDL (low-density lipoprotein) are the same apoB particle at different stages. Any apoB particle under about 70 nm can enter the artery wall and be trapped there, which is why the goal of therapy is fewer circulating apoB particles.", L9, 33)}
+  <table>
+    <tr><th>Apolipoprotein</th><th>Made by</th><th>Found on / role</th></tr>
+    <tr><td><strong>ApoB-48</strong></td><td>Intestine</td><td>Chylomicrons</td></tr>
+    <tr><td><strong>ApoB-100</strong></td><td>Liver</td><td>VLDL (very low-density), IDL (intermediate-density) and LDL (low-density lipoprotein), and lipoprotein(a) &mdash; one per particle; <strong>not in HDL</strong></td></tr>
+    <tr><td><strong>ApoA-I</strong></td><td>Liver and intestine</td><td>Major structural protein of <strong>all HDL</strong></td></tr>
+    <tr><td>ApoA-II</td><td>&mdash;</td><td>Second most abundant HDL protein; on about two-thirds of HDL</td></tr>
+    <tr><td>ApoC, apoC-III, apoA-V</td><td>&mdash;</td><td>Regulate triglyceride metabolism</td></tr>
+    <tr><td><strong>ApoE</strong></td><td>&mdash;</td><td>Critical in <strong>triglyceride clearance</strong></td></tr>
+    <tr><td>Apo(a)</td><td>&mdash;</td><td>Forms lipoprotein(a)</td></tr>
+  </table>
+  <p><strong>Lipoprotein(a)</strong> is an LDL-like particle with apo(a) bound to apoB-100: <strong>more than 90% genetic</strong>, stable over life, <strong>no fasting</strong>, one lifetime measurement generally enough. Repeat is reasonable in women <strong>after menopause</strong> if the earlier level was borderline. Test anyone with a personal or family history of atherosclerotic disease, with <strong>cascade testing</strong> through appropriate families. It is statin-resistant and more atherogenic than LDL.</p>
+  <p>LDL is the major cholesterol carrier and the primary prevention target; LDL-C and risk have a <strong>log-linear</strong> relationship. Remnant cholesterol and triglyceride-rich lipoproteins carry <strong>residual risk</strong>.</p>
+
+  <h3 class="sub" id="bl-measured">9.7 &middot; Objective g &mdash; Measured and calculated components</h3>
+  <table>
+    <tr><th>Measured directly</th><th>Calculated</th></tr>
+    <tr><td><strong>Total cholesterol, HDL-C, triglycerides</strong> (and apoB, lipoprotein(a) when ordered)</td><td><strong>LDL-C</strong> &mdash; an estimate, not a measurement, on a standard panel &middot; <strong>non-HDL-C</strong></td></tr>
+  </table>
+  <table>
+    <tr><th>Estimate</th><th>How</th><th>Note</th></tr>
+    <tr><td>Friedewald LDL-C</td><td>Total cholesterol &minus; HDL-C &minus; (triglycerides &divide; 5)</td><td><strong>Cannot be used when triglycerides are 400 mg/dL or above</strong></td></tr>
+    <tr><td>Martin/Hopkins or Sampson/NIH (National Institutes of Health)</td><td>Newer equations</td><td><strong>Preferred</strong>, especially with triglycerides 150+ or low LDL-C</td></tr>
+    <tr><td><strong>Non-HDL-C</strong></td><td>Total cholesterol &minus; HDL-C</td><td>Captures every atherogenic apoB lipoprotein; <strong>no added cost</strong>; a <strong>better predictor than LDL-C</strong>; recommended for routine reporting</td></tr>
+  </table>
+  <div class="callout"><p><strong>Worked the way the deck&rsquo;s own practice slide asks.</strong> A panel with total cholesterol 200 mg/dL, HDL-C 50 mg/dL and triglycerides 100 mg/dL: non-HDL-C = 200 &minus; 50 = <strong>150 mg/dL</strong>; Friedewald LDL-C = 200 &minus; 50 &minus; 20 = <strong>130 mg/dL</strong>. Whether this arithmetic is examinable is not yet confirmed from the recording &mdash; she ruled some calculations in (the anion gap) and some out (filtration rate) in earlier lectures.</p></div>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#a1363a" onclick="window.openTestYourself('Test yourself &mdash; Biomarkers &amp; Lipids', TEST_YOURSELF.biomarkerslipids)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>{L9}</em> (Professor Lauren Reynolds). Slides 8 and 11 carry their content only as pictures and are reproduced above; slide 21 (the Reynolds Risk Score) is a screenshot of a calculator whose inputs are listed in 9.1. The worked cases on slides 24&ndash;31 and 47&ndash;48 are teaching scaffolds and are not restated. The 21 September recording was being transcribed when this section was written, so it carries no spoken emphasis yet.</footer>
+</section>'''
+
+TY = '''<script>
+  // High-yield "Test yourself" question sets, one per lecture, fed to
+  // window.openTestYourself (theme.js) by each section's button.
+  var TEST_YOURSELF = {
+    "electrocardiography": [
+      {q:"Which phase of the cardiac action potential is the plateau, where calcium entry causes contraction?", choices:["Phase 2","Phase 0","Phase 3","Phase 4"], correct:0,
+       explain:"Phase 2 is the plateau: calcium enters and is balanced by potassium leaving. Phase 0 is the sodium upstroke, phase 3 rapid repolarization, phase 4 rest at -90 mV."},
+      {q:"Where on the tracing does the absolute refractory period end and the relative one begin?", choices:["The peak of the T wave","The J point","The end of the P wave","The start of the QRS"], correct:0,
+       explain:"The T-wave peak divides them. A stimulus after it, in the relative refractory period, can fire a fragile cell - the basis of R on T."},
+      {q:"Which leads are bipolar?", choices:["I, II and III","aVR, aVL and aVF","V1 to V6","II, III and aVF only"], correct:0,
+       explain:"Leads I, II and III compare two electrodes (Einthoven's triangle). The augmented and precordial leads are unipolar."},
+      {q:"A regular rhythm has its next R wave on the third heavy line after the starting R. What is the rate by the 300 method?", choices:["About 100 per minute","About 150 per minute","About 75 per minute","About 60 per minute"], correct:0,
+       explain:"Count 300, 150, 100 across the heavy lines. The method only works when the rhythm is regular."},
+      {q:"A QTc of 520 ms is reported. How is it classed?", choices:["High-risk prolongation","Normal for a female","Borderline prolongation","Too short"], correct:0,
+       explain:"Above 500 ms is high-risk prolongation; 450 (460 in women) to 500 ms is borderline."}
+    ],
+    "cardiacimaging": [
+      {q:"What is the gold standard for diagnosing coronary artery disease?", choices:["Coronary angiography","Coronary computed tomography angiography","Nuclear perfusion imaging","Exercise stress test"], correct:0,
+       explain:"A catheter in the coronary artery. Computed tomography angiography can show disease, but angiography defines how much and can treat it in the same procedure."},
+      {q:"A patient on the treadmill stops at 72% of predicted maximal heart rate because of knee pain, with no chest pain or ST change. What is the next best step?", choices:["Coronary computed tomography angiography","Declare the test negative","Right heart catheterization","Repeat chest radiograph"], correct:0,
+       explain:"Under 85% of predicted maximum the test cannot exclude ischemia; an equivocal or non-diagnostic stress test is an indication for coronary computed tomography angiography."},
+      {q:"Which finding suggests cardiomegaly on a proper posteroanterior film?", choices:["Cardiothoracic ratio above 0.5","Cardiothoracic ratio of 0.45","Cephalization alone","A visible aortic knuckle"], correct:0,
+       explain:"Normal is 0.42 to 0.5; above 0.5 on a properly performed posteroanterior film suggests cardiomegaly."},
+      {q:"A patient needs the left atrial appendage examined but has an esophageal stricture. What is true?", choices:["Transesophageal echo is contraindicated","Transthoracic echo sees it best","A stress test answers it","Chest radiograph is adequate"], correct:0,
+       explain:"The appendage is a transesophageal view, but an esophageal stricture is a contraindication, so that answer is out."},
+      {q:"What is the main indication for a right heart catheterization?", choices:["Assessing pulmonary hypertension","Imaging the coronary arteries","Measuring aortic pressure","Ablating an arrhythmia"], correct:0,
+       explain:"Right heart cath assesses pulmonary pressures (pulmonary hypertension); left heart cath is for the coronary arteries."}
+    ],
+    "biomarkerslipids": [
+      {q:"Which biomarker is first-line for suspected acute coronary syndrome?", choices:["Serial high-sensitivity troponin","Creatine kinase-MB","Myoglobin","High-sensitivity C-reactive protein"], correct:0,
+       explain:"Serial high-sensitivity troponin, looking for a rising or falling pattern. Creatine kinase-MB and myoglobin add nothing once troponin is available."},
+      {q:"A dyspneic patient with severe obesity has a B-type natriuretic peptide below the cutoff. Why be cautious?", choices:["Obesity falsely lowers natriuretic peptides","Obesity falsely raises them","The assay fails in obesity","It reflects necrosis, not stretch"], correct:0,
+       explain:"A high body mass index is associated with falsely low natriuretic peptide levels."},
+      {q:"Which lipid panel components are measured directly?", choices:["Total cholesterol, high-density lipoprotein cholesterol, triglycerides","low-density lipoprotein cholesterol and non-high-density lipoprotein cholesterol","low-density lipoprotein cholesterol and triglycerides","Non-high-density lipoprotein cholesterol only"], correct:0,
+       explain:"low-density lipoprotein cholesterol and non-high-density lipoprotein cholesterol are calculated; on a standard panel low-density lipoprotein cholesterol is an estimate."},
+      {q:"How often does lipoprotein(a) generally need to be measured?", choices:["Once in a lifetime","Every year","Every 5 years","After each statin change"], correct:0,
+       explain:"It is more than 90% genetic, stable over life and needs no fasting; statins do not lower it."},
+      {q:"Triglycerides are 460 mg/dL (desirable below 150). What is true of the Friedewald low-density lipoprotein cholesterol?", choices:["It cannot be used","It is the most accurate","It needs doubling","It becomes a measurement"], correct:0,
+       explain:"Friedewald cannot be used with triglycerides of 400 mg/dL or above; Martin/Hopkins or Sampson/NIH (National Institutes of Health) equations are preferred."}
+    ],
+  };
+</script>'''
+
+
+def main():
+    donor = open(DONOR, encoding="utf-8").read()
+    head_end = donor.index('<div class="layout wrap" data-readable>')
+    head = donor[:head_end]
+    tail = donor[donor.index("</script>", donor.index("var TEST_YOURSELF")) + len("</script>"):]
+    head = head.replace("Principles of Diagnostic Medicine I &middot; Exam 1 &mdash; Study Guide",
+                        "Principles of Diagnostic Medicine I &middot; Exam 2 &mdash; Study Guide")
+    head = re.sub(r'\s*<link rel="alternate"[^>]*>\n', "\n", head)
+    head = re.sub(r"<header class=\"top\">.*?</header>", '''<header class="top">
+  <h1>Principles of Diagnostic Medicine I &middot; Exam 2 &mdash; Study Guide</h1>
+  <p>PAJ 5600 Principles of Diagnostic Medicine I &middot; Class of 2028 &middot; Exam Friday 9 October 2026</p>
+  <p>Covers Lectures 7, 8 and 9 &middot; Lecture 10 (Coagulation and Hemostasis Testing) is added when its deck is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>
+</header>''', head, flags=re.S)
+    for a, b in RECOLOR.items():
+        head = head.replace(a, b).replace(a.upper(), b)
+    body = ('<div class="layout wrap" data-readable>\n' + TOC + "\n\n<main>\n" + HOW + "\n\n" +
+            S7 + "\n\n" + S8 + "\n\n" + S9 + '''
+
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from your PAJ 5600 lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+''' + TY)
+    html = head + body + tail
+    # guards
+    assert "guide-back-bar" in html and "window.reportMistake()" in html
+    assert "data-audio-dir" not in html
+    assert ("<" + "details") not in html  # no accordions on this page at all
+    for m in re.finditer(r'href="#([a-z0-9-]+)"', html):
+        assert 'id="%s"' % m.group(1) in html, "dangling TOC link " + m.group(1)
+    for m in re.finditer(r'src="(%s/[^"]+)"' % IMG, html):
+        assert os.path.exists(os.path.join(OUTDIR, m.group(1))), m.group(1)
+    brit = re.findall(r"(?i)\b\w*(?:haem|oedem|tumour|colour|centre|anaem|oesoph|isation|oris[ei]|ognis[ei]|emphasis[ei]|analys[ei]|optimis|visualis|characteris|memoris|summaris)\w*\b", body)
+    brit = [w for w in brit if w.lower() not in ("haemophilus",)]
+    assert not brit, "British spelling: %r" % sorted(set(brit))
+    open(OUT, "w", encoding="utf-8").write(html)
+    print("wrote %s (%d KB, %d figures, %d sections)" % (os.path.relpath(OUT, ROOT), len(html) // 1024,
+          html.count('<figure class="fig">'), html.count('<section class="deck"')))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Principles of Diagnostic Medicine I Exam 2</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#a1363a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Principles of Diagnostic Medicine I Exam 2 · Class of 2028</div>
+    <h1>Principles of Diagnostic Medicine I Exam 2 Cram Sheet</h1>
+    <p class="sub">Lectures 7, 8 and 9. Electrocardiography — the action potential, the conduction system, paper, leads, rate and the normal intervals. Cardiac imaging — the chest radiograph, echocardiography, stress testing, nuclear, computed tomography, magnetic resonance, angiography and vascular ultrasound. Cardiac biomarkers and lipid testing. Opens with how the exam is written.</p>
+    <div class="toc">
+      <a href="#scope" style="color:#7e2a2d"><span class="dot" style="background:#a1363a"></span>How This Exam Is Written</a>
+      <a href="#action-potential" style="color:#5f2124"><span class="dot" style="background:#7a2a2e"></span>Action Potential & Refractory Periods</a>
+      <a href="#conduction" style="color:#703a2d"><span class="dot" style="background:#8f4a3a"></span>Conduction System</a>
+      <a href="#paper-leads" style="color:#225769"><span class="dot" style="background:#2b6f86"></span>Paper, Leads & Rate</a>
+      <a href="#intervals" style="color:#184250"><span class="dot" style="background:#1f5566"></span>Waves & Intervals</a>
+      <a href="#cxr" style="color:#5f3c18"><span class="dot" style="background:#7a4d1f"></span>Chest Radiograph & Cardiothoracic Ratio</a>
+      <a href="#echo-stress" style="color:#6c461c"><span class="dot" style="background:#8a5a24"></span>Echocardiography & Stress Testing</a>
+      <a href="#ct-mri-nuclear" style="color:#225769"><span class="dot" style="background:#2b6f86"></span>Nuclear, CT (Computed Tomography) & MRI (Magnetic Resonance Imaging)</a>
+      <a href="#invasive" style="color:#184250"><span class="dot" style="background:#1f5566"></span>Angiography, Catheterization & Vascular Ultrasound</a>
+      <a href="#biomarkers" style="color:#7e2a2d"><span class="dot" style="background:#a1363a"></span>The Four Cardiac Biomarkers</a>
+      <a href="#order-biomarkers" style="color:#5f2124"><span class="dot" style="background:#7a2a2e"></span>When to Order Which</a>
+      <a href="#lipoproteins" style="color:#5f3c18"><span class="dot" style="background:#7a4d1f"></span>Lipoproteins & Apolipoproteins</a>
+      <a href="#lipid-panel" style="color:#6c461c"><span class="dot" style="background:#8a5a24"></span>Ordering & Reading a Lipid Panel</a>
+      <a href="#risk" style="color:#225769"><span class="dot" style="background:#2b6f86"></span>Risk Assessment</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pdm-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="scope" style="--acc:#a1363a;--acc-bg:#f2e3e3;--acc-zebra:#f8f1f1;--acc-ink:#7e2a2d">
+    <div class="shead"><span class="dot" style="background:#a1363a"></span><h2>How This Exam Is Written</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Reference ranges are GIVEN</td><td>“I'm not going to just throw a random number at you” — a troponin, triglyceride or C-reactive protein in a stem comes with the limit that reads it. Learn what a value MEANS.</td></tr>
+          <tr><td class="h">Name the rhythm</td><td>Electrocardiography is the one place where naming the finding is fair game. Lecture 7 is the toolkit: paper, leads, rate, intervals.</td></tr>
+          <tr><td class="h">Next-best-test</td><td>“What would be the next test that you would order?” Know what each imaging study can and cannot show, and what to do when one is equivocal.</td></tr>
+          <tr><td class="h">Not examined (said out loud)</td><td>Ion-channel subtypes (but which ion moves in each phase IS). Bazett's formula (“I will never ask you about the formula”). The bifascicular-block aside. The order of the exercise-endpoint chart and the treadmill protocol tables.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="action-potential" style="--acc:#7a2a2e;--acc-bg:#ece1e2;--acc-zebra:#f6f0f0;--acc-ink:#5f2124">
+    <div class="shead"><span class="dot" style="background:#7a2a2e"></span><h2>Action Potential & Refractory Periods</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Four cell properties</td><td>AUTOMATICITY (makes its own impulse) · EXCITABILITY (responds to one) · CONTRACTILITY · CONDUCTIVITY (passes it on).</td></tr>
+          <tr><td class="h">Phase order</td><td>4 → 0 → 1 → 2 → 3. “You need to know what happens in each phase.”</td></tr>
+          <tr><td class="h">Phase 4 / 0</td><td>4 = rest (diastole), −90 mV, potassium inside. 0 = upstroke: FAST SODIUM CHANNELS open, sodium rushes in.</td></tr>
+          <tr><td class="h">Phase 1 / 2 / 3</td><td>1 = early repolarization (sodium closes). 2 = PLATEAU: CALCIUM IN causes contraction, balanced by potassium OUT. 3 = rapid repolarization: calcium closes, potassium out, back to −90 mV. (Slide text says potassium “in”; its own figure shows efflux.)</td></tr>
+          <tr><td class="h">Depolarization vs repolarization</td><td>Depolarization = membrane LESS negative, ACTIVATION, PRECEDES contraction. Repolarization = return toward rest, RECOVERY.</td></tr>
+          <tr><td class="h">Absolute refractory</td><td>Will NOT respond. Phase 0 to MID phase 3, about 180 ms.</td></tr>
+          <tr><td class="h">Relative refractory</td><td>WILL respond but fragile. Mid phase 3 to END of phase 3. The T-WAVE PEAK divides the two. Basis of R on T, P on T and the danger of a long QTc.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="conduction" style="--acc:#8f4a3a;--acc-bg:#efe6e3;--acc-zebra:#f7f2f1;--acc-ink:#703a2d">
+    <div class="shead"><span class="dot" style="background:#8f4a3a"></span><h2>Conduction System</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sinoatrial node</td><td>Main pacemaker, upper right atrium below the vena cava. 60–100 per minute. Three internodal tracts; most people use the superior anterior (FAST) tract.</td></tr>
+          <tr><td class="h">Atrioventricular node</td><td>Near the coronary sinus. PAUSES and AMPLIFIES the signal; back-up pacemaker. 40–60 per minute.</td></tr>
+          <tr><td class="h">Bundle of His</td><td>The ONLY electrical path from atria to ventricles in a normal heart, through the nonconductive atrioventricular septum.</td></tr>
+          <tr><td class="h">Bundle branches</td><td>Left splits into THREE fascicles (posterior, septal, anterior). Right is MUCH LONGER than the left. Bifascicular block is NOT a left bundle branch block.</td></tr>
+          <tr><td class="h">Purkinje network</td><td>Third pacemaker, 20–40 per minute; fastest conduction of all.</td></tr>
+          <tr><td class="h">Cardiac vector</td><td>Direction and strength of current; true pathway is LEFT AND DOWN toward the anterior chest.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="paper-leads" style="--acc:#2b6f86;--acc-bg:#e1ebee;--acc-zebra:#f0f5f7;--acc-ink:#225769">
+    <div class="shead"><span class="dot" style="background:#2b6f86"></span><h2>Paper, Leads & Rate</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Time</td><td>Small box 0.04 s · large box 0.2 s · 5 large boxes = 1 s. Strips are 3 or 6 seconds.</td></tr>
+          <tr><td class="h">Voltage</td><td>Small box 1 mm = 0.1 mV; 10 mm (two large boxes) = 1 mV.</td></tr>
+          <tr><td class="h">Bipolar vs unipolar</td><td>BIPOLAR = two electrodes: I, II, III (Einthoven's triangle). UNIPOLAR = one electrode: aVR, aVL, aVF (augmented) and V1–V6.</td></tr>
+          <tr><td class="h">10 wires, 12 leads</td><td>Four limb electrodes make SIX hexaxial leads (I, II, III, aVR, aVL, aVF, used for axis); plus six chest leads. Placement must be MEMORIZED.</td></tr>
+          <tr><td class="h">Lead II</td><td>Best view of the heart's vector, so it is the RHYTHM lead.</td></tr>
+          <tr><td class="h">Which leads look where</td><td>Inferior II, III, aVF · septum V1–V2 · anterior V3–V4 · lateral I, aVL, V5–V6. Anteroseptal infarction shows in V1–V4 (both supplied by the left anterior descending artery).</td></tr>
+          <tr><td class="h">Cannot tell you</td><td>Hemodynamic status, cardiac output, or WHETHER THERE IS A PULSE.</td></tr>
+          <tr><td class="h">Rate methods</td><td>REGULAR rhythms only. 6-second: QRS count × 10 (P count × 10 for atrial). 300 method: heavy lines count 300, 150, 100, 75, 60, 50.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="intervals" style="--acc:#1f5566;--acc-bg:#e0e7ea;--acc-zebra:#eff3f4;--acc-ink:#184250">
+    <div class="shead"><span class="dot" style="background:#1f5566"></span><h2>Waves & Intervals</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">P wave</td><td>Atrial depolarization; under 0.12 s; upright in lead II.</td></tr>
+          <tr><td class="h">PR interval</td><td>0.12–0.20 s (3–5 small boxes): atria, atrioventricular node delay, His-Purkinje.</td></tr>
+          <tr><td class="h">QRS</td><td>Ventricular depolarization; under 0.12 s, narrow and sharp. Q = septum, R = anterior left ventricle, S = lateral left ventricle.</td></tr>
+          <tr><td class="h">J point & ST</td><td>J point = end of QRS, start of ST; at baseline (1 mm variance). “Very important that you know how to identify the J point.” ST = ventricles holding contraction; at baseline.</td></tr>
+          <tr><td class="h">T wave</td><td>Ventricular repolarization, 0.16–0.25 s.</td></tr>
+          <tr><td class="h">QT / QTc</td><td>Start of QRS to end of T. 350–450 ms males, 360–460 ms females. QTc = rate-corrected; above 450 (460) to 500 = borderline; ABOVE 500 ms = HIGH-RISK.</td></tr>
+          <tr><td class="h">U wave & TP</td><td>U: after T, same direction, best V2–V3; prominent in hypokalemia, hypercalcemia, long QT, post-infarction. TP segment = best place to judge the isoelectric line.</td></tr>
+          <tr><td class="h">The system</td><td>Rhythm → rate → P waves → P for every QRS → QRS width → PR → ST → T → QTc → extra waves or beats → voltage.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="cxr" style="--acc:#7a4d1f;--acc-bg:#ece6e0;--acc-zebra:#f6f3ef;--acc-ink:#5f3c18">
+    <div class="shead"><span class="dot" style="background:#7a4d1f"></span><h2>Chest Radiograph & Cardiothoracic Ratio</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Its standing</td><td>NOT the primary modality for function or detailed anatomy, but gives clues when obtained: silhouette, great vessels, pulmonary vasculature, lungs and pleura.</td></tr>
+          <tr><td class="h">Right border</td><td>Superior vena cava → right atrium.</td></tr>
+          <tr><td class="h">Left border</td><td>Aortic knuckle → main pulmonary artery → left atrial appendage → left ventricle (forms the apex).</td></tr>
+          <tr><td class="h">Cardiac findings</td><td>Pulmonary edema · pleural effusion · cardiomegaly · CEPHALIZATION · great vessel, valve or pericardial calcification · tension physiology.</td></tr>
+          <tr><td class="h">Cephalization</td><td>Upper-lobe vessels bigger than lower. Heart failure or pulmonary hypertension.</td></tr>
+          <tr><td class="h">Cardiothoracic ratio</td><td>Widest heart ÷ widest INTERNAL thorax. Normal 0.42–0.5; ABOVE 0.5 on a PROPER POSTEROANTERIOR film suggests cardiomegaly.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="echo-stress" style="--acc:#8a5a24;--acc-bg:#efe8e0;--acc-zebra:#f7f3f0;--acc-ink:#6c461c">
+    <div class="shead"><span class="dot" style="background:#8a5a24"></span><h2>Echocardiography & Stress Testing</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Echo shows</td><td>STRUCTURE AND FUNCTION: chambers, walls, ejection fraction, Doppler flow, valves, shunts, pressures.</td></tr>
+          <tr><td class="h">TTE (transthoracic echocardiogram)</td><td>Most common, bedside, noninvasive. Poor for the POSTERIOR heart.</td></tr>
+          <tr><td class="h">TEE (transesophageal echocardiogram)</td><td>Probe in the esophagus. Aorta and great vessels, myxoma, prosthetic valves, VEGETATIONS, cerebral ischemia, LEFT ATRIAL APPENDAGE THROMBUS.</td></tr>
+          <tr><td class="h">TEE contraindications</td><td>Anything the probe can injure or an airway you cannot protect: esophageal stricture, malignancy, bleeding varices; dysphagia; ZENKER'S DIVERTICULUM; cervical arthritis; sleep apnea; uncooperative patient.</td></tr>
+          <tr><td class="h">Valid exercise test</td><td>At least 85% of predicted maximum; predicted maximum = 220 − AGE. Under 85% cannot exclude ischemia.</td></tr>
+          <tr><td class="h">Exercise test reads</td><td>Ischemia indirectly: ST DEPRESSION or new premature ventricular contractions. Bruce protocol; bicycle preferred.</td></tr>
+          <tr><td class="h">Echo stress</td><td>Can exercise but baseline ST-T changes. Look for NEW WALL-MOTION abnormality right after exercise.</td></tr>
+          <tr><td class="h">Pharmacologic stress</td><td>Cannot exercise. ADENOSINE or DIPYRIDAMOLE vasodilate; DOBUTAMINE raises workload.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="ct-mri-nuclear" style="--acc:#2b6f86;--acc-bg:#e1ebee;--acc-zebra:#f0f5f7;--acc-ink:#225769">
+    <div class="shead"><span class="dot" style="background:#2b6f86"></span><h2>Nuclear, CT (Computed Tomography) & MRI (Magnetic Resonance Imaging)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Nuclear perfusion</td><td>Tracer at rest and after stress. Less uptake after stress = ischemia; NO uptake = dead tissue (VIABILITY). More accurate than standard or echo stress.</td></tr>
+          <tr><td class="h">Coronary CT angiography</td><td>Presence and distribution of coronary disease; detect or exclude stenosis or plaque; EQUIVOCAL OR NON-DIAGNOSTIC STRESS TEST → next best step.</td></tr>
+          <tr><td class="h">Cardiac CT</td><td>Non-contrast = CALCIUM SCORING. Metoprolol slows the heart, nitroglycerin dilates, electrocardiogram gating.</td></tr>
+          <tr><td class="h">CT limits</td><td>ANATOMY ONLY, NOT FUNCTION. Radiation, contrast, rate dependent, BLOOMING artifact overstates calcium.</td></tr>
+          <tr><td class="h">Cardiac magnetic resonance</td><td>Anatomy, function, viability, perfusion, INFLAMMATION — no ionizing radiation or iodinated contrast. ECHO FIRST. Aorta, congenital disease, cardiomyopathies, myocarditis, sarcoid.</td></tr>
+          <tr><td class="h">Magnetic resonance limits</td><td>Implants (aneurysm clips, some pacemakers), long acquisition, claustrophobia. Titanium is acceptable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="invasive" style="--acc:#1f5566;--acc-bg:#e0e7ea;--acc-zebra:#eff3f4;--acc-ink:#184250">
+    <div class="shead"><span class="dot" style="background:#1f5566"></span><h2>Angiography, Catheterization & Vascular Ultrasound</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">GOLD STANDARD</td><td>Coronary angiography for coronary disease — “a high-miss last year.” Can treat in the same sitting (balloon, stent).</td></tr>
+          <tr><td class="h">Why go to the catheter</td><td>Noninvasive tests say IF disease is there; angiography says HOW MUCH, and intervention is by percentage. Positive CT angiogram with left anterior descending disease → catheter.</td></tr>
+          <tr><td class="h">Left vs right heart cath</td><td>LEFT (artery) = CORONARY ARTERIES. RIGHT (vein) = PULMONARY HYPERTENSION.</td></tr>
+          <tr><td class="h">Complications</td><td>Access-site HEMATOMA and PSEUDOANEURYSM (pulsatile, communicates with the artery). Always check the site.</td></tr>
+          <tr><td class="h">Electrophysiology testing</td><td>Catheters via a vein into the right heart provoke and locate an arrhythmia; ablation can treat it.</td></tr>
+          <tr><td class="h">Vascular ultrasound</td><td>Veins COLLAPSE, arteries PULSATE on compression. Deep vein thrombosis, carotid, peripheral arterial disease, aneurysm, venous insufficiency. No radiation; HIGHLY OPERATOR DEPENDENT.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="biomarkers" style="--acc:#a1363a;--acc-bg:#f2e3e3;--acc-zebra:#f8f1f1;--acc-ink:#7e2a2d">
+    <div class="shead"><span class="dot" style="background:#a1363a"></span><h2>The Four Cardiac Biomarkers</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">The frame</td><td>Biomarkers: “is there ACUTE cardiac injury or stress?” Lipids: “what is the LONG-TERM atherosclerotic risk?”</td></tr>
+          <tr><td class="h">Troponin</td><td>Myocyte INJURY. Marker of choice. Infarction = above the 99th PERCENTILE upper reference limit + ischemic symptoms. Sex-specific limits.</td></tr>
+          <tr><td class="h">Troponin subunits</td><td>I = CARDIAC SPECIFIC. T = mostly cardiac, trace skeletal. C = NOT useful.</td></tr>
+          <tr><td class="h">High-sensitivity troponin</td><td>The ASSAY, not a subunit. Draw at 0 and 1–2 HOURS; up to 90 minutes earlier. Pitfall: measurable in healthy people.</td></tr>
+          <tr><td class="h">Injury vs infarction</td><td>Injury = any elevation. Infarction = injury + ISCHEMIA + RISING/FALLING pattern. Chronically raised in kidney disease, heart failure, structural disease — never read one value alone.</td></tr>
+          <tr><td class="h">Creatine kinase</td><td>Skeletal muscle: RHABDOMYOLYSIS, STATIN MYOPATHY. Low cardiac specificity. Creatine kinase-MB, myoglobin, lactate dehydrogenase are RETIRED for infarction.</td></tr>
+          <tr><td class="h">BNP (B-type natriuretic peptide)</td><td>STRETCH, not injury. Rule-out of new heart failure; monitor, guide, prognosis. Rises with age, female sex, kidney disease; FALSELY LOW IN OBESITY. Not stand-alone.</td></tr>
+          <tr><td class="h">hs-CRP (high-sensitivity C-reactive protein)</td><td>Inflammation; a RISK ENHANCER, never an acute test. Non-specific. Highest in bacterial infection. Lowered by statins, NSAIDs (nonsteroidal anti-inflammatory drugs), GLP-1 (glucagon-like peptide-1) agonists, lifestyle. In the Reynolds Risk Score.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="order-biomarkers" style="--acc:#7a2a2e;--acc-bg:#ece1e2;--acc-zebra:#f6f0f0;--acc-ink:#5f2124">
+    <div class="shead"><span class="dot" style="background:#7a2a2e"></span><h2>When to Order Which</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Chest pain</td><td>SERIAL HIGH-SENSITIVITY TROPONIN, first-line; first value is also prognostic.</td></tr>
+          <tr><td class="h">Dyspnea / heart failure</td><td>BNP (B-type natriuretic peptide) or NT-proBNP (N-terminal pro B-type natriuretic peptide); also prognostic after acute coronary syndrome.</td></tr>
+          <tr><td class="h">Muscle pain on a statin</td><td>CREATINE KINASE, not troponin.</td></tr>
+          <tr><td class="h">Risk refinement</td><td>hs-CRP (high-sensitivity C-reactive protein) in select primary prevention.</td></tr>
+          <tr><td class="h">Do NOT order</td><td>Routine natriuretic peptides in healthy people; creatine kinase-MB or myoglobin for infarction.</td></tr>
+          <tr><td class="h">Troponin, other uses</td><td>Unstable angina (normal = no injury) · reinfarction · infarct size (late 4-week value INVERSELY related to ejection fraction) · procedural: type 4a more than 5×, type 5 (bypass) more than 10× the 99th percentile limit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="lipoproteins" style="--acc:#7a4d1f;--acc-bg:#ece6e0;--acc-zebra:#f6f3ef;--acc-ink:#5f3c18">
+    <div class="shead"><span class="dot" style="background:#7a4d1f"></span><h2>Lipoproteins & Apolipoproteins</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why particles</td><td>Cholesterol and triglycerides are INSOLUBLE. Lipoprotein = lipid core + phospholipid shell + apolipoproteins.</td></tr>
+          <tr><td class="h">One apoB particle</td><td>Liver VLDL (very low-density lipoprotein) → lipoprotein lipase strips triglyceride → remnant → LDL (low-density lipoprotein). Under ~70 nm can be TRAPPED in the artery wall.</td></tr>
+          <tr><td class="h">ApoB-48 / ApoB-100</td><td>B-48 = intestine, CHYLOMICRONS. B-100 = liver: very low-, intermediate-, low-density lipoprotein and lipoprotein(a). NOT in HDL (high-density lipoprotein).</td></tr>
+          <tr><td class="h">ApoA-I / ApoE</td><td>A-I = ALL HDL (high-density lipoprotein). E = triglyceride CLEARANCE. C-III and A-V regulate triglyceride metabolism.</td></tr>
+          <tr><td class="h">LDL vs HDL</td><td>LDL (low-density lipoprotein) = PRINCIPAL DRIVER, log-linear with risk. HDL = REVERSE CHOLESTEROL TRANSPORT. Remnants carry RESIDUAL risk.</td></tr>
+          <tr><td class="h">Lipoprotein(a)</td><td>LDL-like + apo(a) on apoB-100. Over 90% GENETIC, stable, NO FASTING, measure ONCE in all adults; repeat after menopause if borderline; CASCADE test families. STATINS DO NOT LOWER IT. About 20% of people elevated.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="lipid-panel" style="--acc:#8a5a24;--acc-bg:#efe8e0;--acc-zebra:#f7f3f0;--acc-ink:#6c461c">
+    <div class="shead"><span class="dot" style="background:#8a5a24"></span><h2>Ordering & Reading a Lipid Panel</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Measured</td><td>Total cholesterol, HDL-C (high-density lipoprotein cholesterol), triglycerides.</td></tr>
+          <tr><td class="h">Calculated</td><td>LDL-C (low-density lipoprotein cholesterol) — an ESTIMATE — and non-HDL-C = total cholesterol − HDL-C.</td></tr>
+          <tr><td class="h">Friedewald</td><td>LDL-C = total − HDL-C − triglycerides ÷ 5. INVALID when triglycerides are 400 mg/dL or above; Martin/Hopkins or Sampson/NIH (National Institutes of Health) preferred.</td></tr>
+          <tr><td class="h">Non-HDL-C</td><td>Every atherogenic apoB lipoprotein, NO added cost, BETTER predictor than LDL-C.</td></tr>
+          <tr><td class="h">No single normal</td><td>LDL-C and non-HDL-C goals depend on RISK TIER; triglyceride, apoB and lipoprotein(a) thresholds are fixed. HDL-C is a MARKER, not a target.</td></tr>
+          <tr><td class="h">Triglycerides</td><td>150+ = risk enhancer · 500+ = SEVERE, PANCREATITIS risk · 1000+ = extreme.</td></tr>
+          <tr><td class="h">ApoB</td><td>Modifiable, repeated to monitor therapy; use with triglycerides 150+, diabetes or low LDL-C to find residual risk.</td></tr>
+          <tr><td class="h">Fasting?</td><td>NONFASTING for most. Fasting with triglycerides 400+, a triglyceride disorder, or FAMILY HISTORY OF PREMATURE DISEASE or genetic dyslipidemia.</td></tr>
+          <tr><td class="h">Screening</td><td>Children 9–11 (from age 2 with family history or familial hypercholesterolemia) · again at 19 · adults about EVERY 5 YEARS · on therapy recheck 4–12 WEEKS, then every 6–12 months.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="risk" style="--acc:#2b6f86;--acc-bg:#e1ebee;--acc-zebra:#f0f5f7;--acc-ink:#225769">
+    <div class="shead"><span class="dot" style="background:#2b6f86"></span><h2>Risk Assessment</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">PREVENT (Predicting Risk of cardiovascular disease EVENTs)</td><td>Lipids feed a 10-YEAR risk estimate, which sets treatment intensity.</td></tr>
+          <tr><td class="h">Calculate → Personalize → Reclassify</td><td>Low under 3% · borderline 3 to under 5% (add RISK ENHANCERS) · intermediate 5 to under 10% · high 10% or above.</td></tr>
+          <tr><td class="h">Uncertain?</td><td>At borderline or intermediate risk, a CORONARY ARTERY CALCIUM SCORE reclassifies.</td></tr>
+          <tr><td class="h">LDL-C goals</td><td>Under 100 if risk under 10% · under 70 if 10%+, familial hypercholesterolemia, diabetes with risk factors, or calcium 100+ · under 55 for very-high-risk clinical disease. 190+ = statin regardless of risk.</td></tr>
+          <tr><td class="h">Elevated lipoprotein(a)</td><td>Earlier, more intensive control of EVERY OTHER risk factor.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Principles of Diagnostic Medicine I Exam 2 Study Guide (Class of 2028). Covers Lectures 7–9; Lecture 10 (Coagulation and Hemostasis Testing) is added when its deck is posted. Emphasis rows quote the 15 and 17 September 2026 recordings; the Lecture 9 rows are from the slides alone.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

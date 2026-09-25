@@ -1,0 +1,593 @@
+# -*- coding: utf-8 -*-
+# PDM I Lecture 9 (Cardiac Biomarkers and Lipid Testing, Lauren Reynolds) -- pool B.
+# Lipids and lipoproteins in atherosclerosis, the apolipoproteins,
+# lipoprotein(a), measured versus calculated panel components, reading a panel,
+# indications, and the use of lipid testing in cardiovascular risk assessment.
+#
+# KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
+#
+# NUMBERS. Every stem value carries the scale that reads it (a desirable limit,
+# a named tier, or "above/below"). No question turns on recalling a cutoff.
+#
+# CALCULATION. The deck's own "Quick Practice" slide (43) asks the student to
+# calculate LDL-C and non-HDL-C. Her no-math rule is per-quantity (she expected
+# the anion gap to be calculated in Lecture 5), and this slide asks for these two
+# by name, so two worked calculations are included, tagged slot="calculation".
+# The recording was still being transcribed when this was written. If it turns
+# out she ruled the arithmetic out, set ALLOW_CALC = False in pdm_l9_partition.py
+# and re-run: those two drop out and everything else stands.
+#
+# US spelling throughout. Abbreviations appear only as ABBREVIATION (full term).
+#
+# Correct answer is ALWAYS written first (c=0); the partition script rotates.
+SRC = "svCardiac Biomarkers and Lipids.pptx"
+def c(n):  return f"{SRC}, Slide {n}"
+
+IOC = "Discuss indications for ordering a lipid profile"
+IOD = "Analyze a lipid profile"
+IOE = "Discuss the use of lipid testing for cardiovascular risk assessment"
+IOF = "Compare and contrast lipids and lipoproteins involved in atherosclerotic disease"
+IOG = "Describe measured and calculated lipid profile components"
+
+POOL_B = [
+
+{"topic": "Lipids and lipoproteins", "io": IOF, "slot": "transport",
+ "q": "A 48-year-old asks why cholesterol travels in the blood inside particles. What is the reason?",
+ "opts": [
+  ["Cholesterol and triglycerides are insoluble",
+   "Correct. The major lipids, cholesterol and triglycerides, are insoluble in plasma, so they travel packaged inside lipoproteins."],
+  ["Cholesterol is broken down by plasma enzymes",
+   "The reason is solubility, not protection from enzymes; lipoprotein lipase acts on triglycerides carried in the particles."],
+  ["Particles let the kidney filter cholesterol",
+   "Lipoproteins are not a route for renal filtration; LDL (low-density lipoprotein) is cleared by receptors on hepatocytes."],
+  ["Free cholesterol would raise the troponin",
+   "Troponin is a myocyte injury marker and has nothing to do with how lipids are carried."]],
+ "c": 0, "cite": c(32)},
+
+{"topic": "Lipids and lipoproteins", "io": IOF, "slot": "structure",
+ "q": "A 50-year-old's lipid report mentions lipoproteins. What makes up a lipoprotein?",
+ "opts": [
+  ["A lipid core, phospholipid shell and apolipoproteins",
+   "Correct. The core holds cholesterol esters and triglycerides; the shell is phospholipid; the apolipoproteins are the structural and regulatory proteins on its surface."],
+  ["A protein core wrapped in a triglyceride shell",
+   "The arrangement is the reverse: the lipids form the core, and the surface is phospholipid with apolipoproteins."],
+  ["Free fatty acids bound to albumin alone",
+   "Albumin-bound fatty acids are not lipoproteins; a lipoprotein has a lipid core, a phospholipid shell and apolipoproteins."],
+  ["Cholesterol crystals coated with fibrin",
+   "Fibrin is a clotting protein. A lipoprotein's coat is phospholipid carrying apolipoproteins."]],
+ "c": 0, "cite": c(32)},
+
+{"topic": "The apoB particle", "io": IOF, "slot": "lifecycle",
+ "q": "A 55-year-old asks how LDL (low-density lipoprotein) forms in the circulation. What is the sequence?",
+ "opts": [
+  ["VLDL loses triglyceride, becoming a remnant, then LDL",
+   "Correct. The liver secretes triglyceride-rich VLDL (very low-density lipoprotein); lipoprotein lipase strips triglyceride to give a remnant (IDL, intermediate-density lipoprotein) and then cholesterol-rich LDL. It is the same apolipoprotein B particle at different stages."],
+  ["HDL gains triglyceride, becoming a remnant, then LDL",
+   "HDL (high-density lipoprotein) carries apolipoprotein A-I and has no apolipoprotein B; it is not the precursor of LDL."],
+  ["Chylomicrons gain cholesterol in the liver, then LDL",
+   "Chylomicrons carry dietary triglyceride on apolipoprotein B-48; LDL comes from hepatic VLDL (very low-density lipoprotein) on apolipoprotein B-100."],
+  ["LDL loses cholesterol, becoming a remnant, then VLDL",
+   "The direction is reversed: VLDL (very low-density lipoprotein) comes first and loses triglyceride to become LDL."]],
+ "c": 0, "cite": c(33)},
+
+{"topic": "The apoB particle", "io": IOF, "slot": "atherogenesis",
+ "q": "A 60-year-old asks why VLDL (very low-density lipoprotein) remnants and LDL (low-density lipoprotein) all count toward plaque. What do they share?",
+ "opts": [
+  ["Each is an apoB particle small enough to enter the artery wall",
+   "Correct. Each apoB (apolipoprotein B) particle under about 70 nm can cross the endothelium and become trapped in the artery wall, initiating plaque. That is why therapy aims to reduce the number of circulating apoB particles."],
+  ["Each carries apoA-I and removes cholesterol from the wall",
+   "Carrying apoA-I (apolipoprotein A-I) and removing cholesterol describes HDL (high-density lipoprotein), which performs reverse cholesterol transport."],
+  ["Each is made in the intestine from dietary fat after meals",
+   "Intestinal particles from dietary fat are chylomicrons, on apoB-48 (apolipoprotein B-48); VLDL and LDL come from the liver."],
+  ["Each is too large to cross the endothelium into the wall",
+   "The opposite: particles under about 70 nm can cross the endothelial barrier, and that is how plaque begins."]],
+ "c": 0, "cite": c(33)},
+
+{"topic": "Apolipoproteins", "io": IOF, "slot": "apoB-48",
+ "q": "A 42-year-old eats a fatty meal and chylomicrons appear in her plasma. Which apolipoprotein do they carry?",
+ "opts": [
+  ["ApoB-48 (apolipoprotein B-48), made by the intestine",
+   "Correct. ApoB-48 is synthesized by the intestines and found in chylomicrons, which carry dietary triglyceride."],
+  ["ApoB-100 (apolipoprotein B-100), made by the liver",
+   "ApoB-100 is the hepatic form found in VLDL (very low-density lipoprotein), IDL (intermediate-density lipoprotein), LDL (low-density lipoprotein) and lipoprotein(a)."],
+  ["ApoA-I (apolipoprotein A-I), made by the liver",
+   "ApoA-I is the major structural protein of HDL (high-density lipoprotein), not of chylomicrons."],
+  ["Apo(a) (apolipoprotein(a)), made by the liver",
+   "Apo(a) bound to apoB-100 forms lipoprotein(a); it is not a chylomicron protein."]],
+ "c": 0, "cite": c(34)},
+
+{"topic": "Apolipoproteins", "io": IOF, "slot": "apoB-100",
+ "q": "A 57-year-old has an apoB (apolipoprotein B) level measured. Which particles carry apoB-100 (apolipoprotein B-100)?",
+ "opts": [
+  ["VLDL, IDL, LDL and lipoprotein(a)",
+   "Correct. ApoB-100 is synthesized by the liver and found on very low-density, intermediate-density and low-density lipoprotein and on lipoprotein(a), one per particle."],
+  ["Chylomicrons and HDL only",
+   "Chylomicrons carry apoB-48 (apolipoprotein B-48), and HDL (high-density lipoprotein) carries no apoB at all."],
+  ["HDL, VLDL and chylomicrons",
+   "HDL (high-density lipoprotein) has no apoB, and chylomicrons carry the intestinal apoB-48 form."],
+  ["Lipoprotein(a) and HDL only",
+   "Lipoprotein(a) does carry apoB-100, but HDL (high-density lipoprotein) does not; it is built on apoA-I (apolipoprotein A-I)."]],
+ "c": 0, "cite": c(34)},
+
+{"topic": "Apolipoproteins", "io": IOF, "slot": "apoA-I",
+ "q": "A 45-year-old with a high HDL-C (high-density lipoprotein cholesterol) asks what protein defines that particle. Which is it?",
+ "opts": [
+  ["ApoA-I (apolipoprotein A-I)",
+   "Correct. ApoA-I is the major structural protein of HDL, synthesized by the liver and intestines and found on all HDL particles. ApoA-II is second, on about two-thirds of them."],
+  ["ApoB-100 (apolipoprotein B-100)",
+   "ApoB is not present in HDL. ApoB-100 defines VLDL (very low-density lipoprotein), IDL, LDL and lipoprotein(a)."],
+  ["ApoB-48 (apolipoprotein B-48)",
+   "ApoB-48 is the intestinal form found in chylomicrons, which carry dietary triglyceride rather than defining HDL."],
+  ["Apo(a) (apolipoprotein(a))",
+   "Apo(a) forms lipoprotein(a) by binding apoB-100; it is not the HDL protein."]],
+ "c": 0, "cite": c(35)},
+
+{"topic": "Apolipoproteins", "io": IOF, "slot": "apoE",
+ "q": "A 39-year-old is found to have a variant of an apolipoprotein that is critical in triglyceride clearance. Which apolipoprotein is that?",
+ "opts": [
+  ["ApoE (apolipoprotein E)",
+   "Correct. ApoE is important in triglyceride metabolism and critical in triglyceride clearance. ApoC, apoC-III and apoA-V regulate triglyceride metabolism."],
+  ["ApoA-II (apolipoprotein A-II)",
+   "ApoA-II is the second most abundant HDL (high-density lipoprotein) apolipoprotein, not the triglyceride-clearance protein."],
+  ["ApoB-48 (apolipoprotein B-48)",
+   "ApoB-48 is the structural protein of chylomicrons, made by the intestine."],
+  ["Apo(a) (apolipoprotein(a))",
+   "Apo(a) forms lipoprotein(a); its significance is atherogenic and genetic risk rather than triglyceride clearance."]],
+ "c": 0, "cite": c(36)},
+
+{"topic": "Lipoprotein(a)", "io": IOF, "slot": "structure",
+ "q": "A 44-year-old with a strong family history has lipoprotein(a) measured. What is lipoprotein(a)?",
+ "opts": [
+  ["An LDL-like particle with apo(a) bound to apoB-100",
+   "Correct. Lipoprotein(a) is an LDL (low-density lipoprotein)-like particle in which apo(a) (apolipoprotein(a)) is bound to apoB-100 (apolipoprotein B-100). It is more atherogenic than LDL."],
+  ["An HDL-like particle with apo(a) bound to apoA-I",
+   "Lipoprotein(a) is built on the LDL (low-density lipoprotein) particle and apoB-100 (apolipoprotein B-100), not on HDL (high-density lipoprotein)."],
+  ["A chylomicron remnant that carries apoB-48",
+   "Chylomicron remnants carry apoB-48 (apolipoprotein B-48); lipoprotein(a) carries apoB-100 plus apo(a)."],
+  ["A free apolipoprotein that circulates alone",
+   "It is a whole lipoprotein particle carrying cholesterol, not a free protein."]],
+ "c": 0, "cite": c(38)},
+
+{"topic": "Lipoprotein(a)", "io": IOC, "slot": "testing",
+ "q": "A 35-year-old has lipoprotein(a) measured for the first time. How often does it generally need measuring?",
+ "opts": [
+  ["Once in a lifetime",
+   "Correct. It is more than 90% genetically determined and stable over life, and needs no fasting, so a single measurement generally suffices."],
+  ["Every year",
+   "Annual repetition adds nothing for a value that is largely genetic and stable across life."],
+  ["Every 5 years",
+   "Five-yearly repetition is the adult screening interval for the standard lipid panel, not for lipoprotein(a)."],
+  ["After every statin change",
+   "Statins do not lower lipoprotein(a), so rechecking it with each statin change would not guide therapy."]],
+ "c": 0, "cite": c(38)},
+
+{"topic": "Lipoprotein(a)", "io": IOC, "slot": "repeat",
+ "q": "A 54-year-old woman had a borderline lipoprotein(a) before menopause. When is repeating it reasonable?",
+ "opts": [
+  ["After menopause",
+   "Correct. Although a single lifetime measurement generally suffices, repeat measurement is reasonable in women after menopause, particularly if the premenopausal level was borderline."],
+  ["After starting a statin",
+   "Statins do not lower lipoprotein(a), so starting one is no reason to repeat it."],
+  ["After fasting overnight",
+   "Lipoprotein(a) does not require fasting, so fasting is no reason to repeat it."],
+  ["After a viral illness",
+   "Acute illness disturbs C-reactive protein, which is an acute-phase reactant; lipoprotein(a) is largely genetic."]],
+ "c": 0, "cite": c(38)},
+
+{"topic": "Lipoprotein(a)", "io": IOC, "slot": "cascade",
+ "q": "A 41-year-old man is found to have a markedly elevated lipoprotein(a) after a premature myocardial infarction. Whom should testing be extended to?",
+ "opts": [
+  ["His first-degree relatives",
+   "Correct. Testing is indicated in those with a personal or family history of atherosclerotic disease, with cascade testing in appropriate families, because the level is more than 90% genetically determined."],
+  ["No one; it is not inherited",
+   "It is more than 90% genetically determined, which is exactly why family testing makes sense."],
+  ["Only his spouse",
+   "A spouse shares no genes with him. Cascade testing moves through blood relatives."],
+  ["Only relatives over 65",
+   "Nothing restricts cascade testing by age; the level is stable over life and can be measured at any adult age."]],
+ "c": 0, "cite": c(38)},
+
+{"topic": "Lipoprotein(a)", "io": IOE, "slot": "management",
+ "q": "A 50-year-old has an elevated lipoprotein(a) and an LDL-C (low-density lipoprotein cholesterol) at goal on a statin. What does the elevated lipoprotein(a) prompt?",
+ "opts": [
+  ["Earlier, more intensive control of other risk factors",
+   "Correct. Lipoprotein(a) is a largely fixed genetic risk factor measured once; elevation prompts earlier and more intensive management of every other modifiable risk factor, since statins do not lower it."],
+  ["Doubling the statin to lower the lipoprotein(a)",
+   "Statins do not lower lipoprotein(a); it is described as statin-resistant."],
+  ["Repeating lipoprotein(a) every 3 months",
+   "It is stable and measured once, so frequent repetition would not change anything."],
+  ["No change, since it is not a risk factor",
+   "It is highly atherogenic, more so than LDL (low-density lipoprotein), and its elevation is a risk enhancer."]],
+ "c": 0, "cite": c(45)},
+
+{"topic": "Lipoprotein(a)", "io": IOD, "slot": "prevalence",
+ "q": "A 46-year-old has a lipoprotein(a) above the 50 mg/dL level considered elevated. Roughly how common is an elevated level?",
+ "opts": [
+  ["About 1 in 5 people",
+   "Correct. An elevated lipoprotein(a) is found in about 20% of the population and carries about 40% higher relative atherosclerotic risk."],
+  ["About 1 in 100 people",
+   "It is far commoner than that; roughly a fifth of the population has an elevated level."],
+  ["About 1 in 2 people",
+   "Half the population would make an elevated level the norm; the figure is about 20%."],
+  ["About 1 in 1,000 people",
+   "It is not a rare finding. About 20% of the population is affected, which is why everyone is measured once."]],
+ "c": 0, "cite": c(44)},
+
+{"topic": "ApoB", "io": IOE, "slot": "monitoring",
+ "q": "A 62-year-old on lipid-lowering therapy is followed with repeated apoB (apolipoprotein B) levels. Why is apoB suited to that role?",
+ "opts": [
+  ["It is modifiable and responds to treatment",
+   "Correct. ApoB is a modifiable, treatment-responsive marker used repeatedly to guide and monitor lipid-lowering therapy, unlike lipoprotein(a), which is fixed and measured once."],
+  ["It is genetic and fixed over life",
+   "A fixed, genetic value measured once describes lipoprotein(a), not apoB."],
+  ["It is a marker of acute inflammation",
+   "Acute inflammation is reflected by C-reactive protein. ApoB counts atherogenic particles."],
+  ["It measures HDL particles only",
+   "ApoB is not present in HDL (high-density lipoprotein); it counts the atherogenic VLDL, IDL, LDL and lipoprotein(a) particles."]],
+ "c": 0, "cite": c(45)},
+
+{"topic": "ApoB", "io": IOD, "slot": "residual risk",
+ "q": "A 58-year-old with diabetes has an LDL-C (low-density lipoprotein cholesterol) already below 70 mg/dL on therapy. Which test helps find remaining risk?",
+ "opts": [
+  ["ApoB (apolipoprotein B)",
+   "Correct. ApoB is used when triglycerides are 150 mg/dL or above, in diabetes, or when LDL-C is below 70 mg/dL, to find residual risk carried by atherogenic particles."],
+  ["HDL-C (high-density lipoprotein cholesterol)",
+   "Low HDL-C is a marker, not a therapeutic target, and it does not count atherogenic particles."],
+  ["Creatine kinase",
+   "Creatine kinase evaluates skeletal muscle injury such as statin myopathy, not residual atherosclerotic risk."],
+  ["Troponin",
+   "Troponin is an acute myocardial injury marker, not a lipid risk marker."]],
+ "c": 0, "cite": c(40)},
+
+{"topic": "ApoB", "io": IOD, "slot": "panel",
+ "q": "A 53-year-old's report shows lipoprotein(a) and apoB (apolipoprotein B) on the same panel. Why are they reported together?",
+ "opts": [
+  ["Lipoprotein(a) adds to the apoB count",
+   "Correct. Each lipoprotein(a) particle carries one apoB-100 (apolipoprotein B-100), so it contributes to the total apoB particle count."],
+  ["ApoB is made from lipoprotein(a)",
+   "ApoB is a structural protein made by the liver; it is not derived from lipoprotein(a)."],
+  ["Both are acute-phase reactants",
+   "Neither is an acute-phase reactant; C-reactive protein is, and it is made by the liver in response to inflammation."],
+  ["Both are fixed genetic values",
+   "Lipoprotein(a) is largely fixed, but apoB is modifiable and followed repeatedly on therapy."]],
+ "c": 0, "cite": c(44)},
+
+{"topic": "Lipoproteins", "io": IOF, "slot": "principal driver",
+ "q": "A 49-year-old asks which lipoprotein is the principal driver of atherosclerotic disease. Which is it?",
+ "opts": [
+  ["LDL (low-density lipoprotein)",
+   "Correct. LDL is the major cholesterol carrier and the primary target for prevention; LDL cholesterol and cardiovascular risk have a log-linear relationship."],
+  ["HDL (high-density lipoprotein)",
+   "HDL performs reverse cholesterol transport, a protective role that contrasts with the apoB particles."],
+  ["Chylomicrons",
+   "Chylomicrons carry dietary triglyceride; their remnants are atherogenic, but LDL is the principal driver."],
+  ["Albumin",
+   "Albumin is not a lipoprotein and plays no role in the atherogenic particle list."]],
+ "c": 0, "cite": c(45)},
+
+{"topic": "Lipoproteins", "io": IOF, "slot": "HDL role",
+ "q": "A 51-year-old has a high HDL-C (high-density lipoprotein cholesterol). What is HDL's role in contrast to the apoB particles?",
+ "opts": [
+  ["Reverse cholesterol transport",
+   "Correct. HDL performs reverse cholesterol transport, carrying cholesterol on apoA-I (apolipoprotein A-I), a protective role that contrasts with the atherogenic apoB (apolipoprotein B) particles."],
+  ["Delivering dietary triglyceride",
+   "Carrying dietary triglyceride is the chylomicron's job, on apoB-48 (apolipoprotein B-48)."],
+  ["Entering and seeding the artery wall",
+   "Entering the artery wall and initiating plaque is what apoB (apolipoprotein B) particles under about 70 nm do."],
+  ["Carrying apo(a) to the endothelium",
+   "Apo(a) (apolipoprotein(a)) belongs to lipoprotein(a), which is highly atherogenic, not protective."]],
+ "c": 0, "cite": c(39)},
+
+{"topic": "Lipoproteins", "io": IOF, "slot": "remnants",
+ "q": "A 56-year-old's LDL-C (low-density lipoprotein cholesterol) is at goal, but his triglycerides stay above the desirable level of 150 mg/dL. What do his triglyceride-rich lipoproteins contribute?",
+ "opts": [
+  ["Residual atherosclerotic risk",
+   "Correct. Remnant cholesterol and triglyceride-rich lipoproteins contribute residual risk; VLDL (very low-density lipoprotein) remnants and IDL (intermediate-density lipoprotein) are atherogenic."],
+  ["Protection from atherosclerosis",
+   "Protection is HDL's (high-density lipoprotein) role. Triglyceride-rich remnants are atherogenic."],
+  ["No risk once LDL-C is at goal",
+   "Reaching the LDL-C goal does not remove the risk carried by remnant and triglyceride-rich particles."],
+  ["A falsely low apoB level",
+   "Triglyceride-rich particles carry apoB (apolipoprotein B) and add to the count; they do not falsely lower it."]],
+ "c": 0, "cite": c(45)},
+
+{"topic": "Measured versus calculated", "io": IOG, "slot": "measured",
+ "q": "A 50-year-old man gets a standard lipid panel. Which components are measured directly?",
+ "opts": [
+  ["Total cholesterol, HDL-C and triglycerides",
+   "Correct. Those three are measured. LDL-C (low-density lipoprotein cholesterol) and non-HDL-C are calculated, so the LDL-C on a standard report is an estimate. HDL-C is high-density lipoprotein cholesterol."],
+  ["LDL-C, non-HDL-C and triglycerides",
+   "LDL-C and non-HDL-C are both calculated from the measured values, not measured directly on a standard panel."],
+  ["Total cholesterol, LDL-C and non-HDL-C",
+   "Total cholesterol is measured, but LDL-C and non-HDL-C are calculated."],
+  ["LDL-C, HDL-C and total cholesterol",
+   "LDL-C is the classic calculated value; on a standard panel it is an estimate rather than a measurement."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Measured versus calculated", "io": IOG, "slot": "Friedewald limit",
+ "q": "A 47-year-old's panel shows triglycerides of 480 mg/dL (desirable below 150 mg/dL). What is true of a Friedewald LDL-C (low-density lipoprotein cholesterol) on this sample?",
+ "opts": [
+  ["It cannot be used",
+   "Correct. The Friedewald equation cannot be used when triglycerides are 400 mg/dL or above. The Martin/Hopkins and Sampson/NIH (National Institutes of Health) equations are now preferred."],
+  ["It is the most accurate estimate",
+   "At this triglyceride level Friedewald is invalid, and newer equations are preferred for greater accuracy even below it."],
+  ["It is falsely high but usable",
+   "The equation is not merely biased at this level; it cannot be used at all once triglycerides reach 400 mg/dL."],
+  ["It becomes a direct measurement",
+   "Friedewald is always a calculation; it never becomes a measurement."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Measured versus calculated", "io": IOG, "slot": "preferred equations",
+ "q": "A 59-year-old on high-intensity therapy has triglycerides of 190 mg/dL (desirable below 150 mg/dL) and a low LDL-C (low-density lipoprotein cholesterol). Which LDL-C estimate is preferred?",
+ "opts": [
+  ["Martin/Hopkins or Sampson/NIH equation",
+   "Correct. They are preferred for greater accuracy, especially when triglycerides are 150 mg/dL or above or LDL-C is low, which is this patient. NIH is the National Institutes of Health."],
+  ["The Friedewald equation alone",
+   "Friedewald is the historical equation; it loses accuracy when triglycerides are raised or LDL-C is low."],
+  ["Total cholesterol minus triglycerides",
+   "That is not a recognized estimate of LDL-C; the Friedewald form subtracts HDL-C and triglyceride divided by 5."],
+  ["HDL-C (high-density lipoprotein cholesterol) doubled",
+   "No estimate of LDL-C doubles HDL-C; LDL-C comes from total cholesterol, HDL-C and triglycerides."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Non-HDL cholesterol", "io": IOG, "slot": "definition",
+ "q": "A 63-year-old's report lists non-HDL-C (non-high-density lipoprotein cholesterol). How is it derived?",
+ "opts": [
+  ["Total cholesterol minus HDL-C",
+   "Correct. It captures the cholesterol in all atherogenic apoB (apolipoprotein B) lipoproteins, costs nothing extra, and is a better predictor of risk than LDL-C (low-density lipoprotein cholesterol)."],
+  ["Total cholesterol minus triglycerides",
+   "Triglycerides are not subtracted; non-HDL-C removes only the HDL-C (high-density lipoprotein cholesterol) portion."],
+  ["LDL-C minus HDL-C",
+   "Non-HDL-C starts from total cholesterol, so it includes LDL-C plus the other atherogenic particles."],
+  ["HDL-C plus triglycerides divided by 5",
+   "That mixes pieces of the Friedewald equation; non-HDL-C is simply total cholesterol minus HDL-C."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Non-HDL cholesterol", "io": IOD, "slot": "value",
+ "q": "A 57-year-old's clinician chooses to follow non-HDL-C (non-high-density lipoprotein cholesterol) rather than LDL-C (low-density lipoprotein cholesterol). Why?",
+ "opts": [
+  ["It predicts risk better, at no cost",
+   "Correct. It captures cholesterol in every atherogenic apoB (apolipoprotein B) lipoprotein, adds no cost, predicts atherosclerotic risk better than LDL-C, and is recommended for routine reporting."],
+  ["It is measured directly by the lab",
+   "It is calculated, total cholesterol minus HDL-C (high-density lipoprotein cholesterol), not measured directly."],
+  ["It excludes remnant particles",
+   "It includes remnants; that is part of why it predicts better than LDL-C alone."],
+  ["It has a single normal value",
+   "Like LDL-C, it has no single normal value; its goal depends on the patient's risk tier."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Reading a panel", "io": IOD, "slot": "risk-tier goals",
+ "q": "A 44-year-old asks what the normal LDL-C (low-density lipoprotein cholesterol) is. What is the accurate answer?",
+ "opts": [
+  ["The goal depends on her risk tier",
+   "Correct. Adult LDL-C and non-HDL-C have no single normal value; the goal depends on the patient's atherosclerotic risk tier, whereas triglyceride, apoB (apolipoprotein B) and lipoprotein(a) thresholds are more fixed."],
+  ["Below 200 mg/dL for everyone",
+   "Below 200 mg/dL is the desirable total cholesterol, not an LDL-C goal, and LDL-C goals vary by risk."],
+  ["Below 150 mg/dL for everyone",
+   "Below 150 mg/dL is the desirable triglyceride level; LDL-C has risk-based goals instead."],
+  ["Any value while HDL-C is high",
+   "A high HDL-C (high-density lipoprotein cholesterol) does not cancel LDL-C; HDL-C is not even a treatment target."]],
+ "c": 0, "cite": c(40)},
+
+{"topic": "Reading a panel", "io": IOD, "slot": "HDL-C",
+ "q": "A 61-year-old has a low HDL-C (high-density lipoprotein cholesterol), below her lab's reference limit. How is that value used?",
+ "opts": [
+  ["As a marker, not a target",
+   "Correct. Higher HDL-C is generally favorable, but low HDL-C is a marker, not a therapeutic goal; treatment is aimed at the apoB (apolipoprotein B) particles."],
+  ["As the main target of therapy",
+   "Therapy targets LDL-C (low-density lipoprotein cholesterol) and the atherogenic particles, not HDL-C."],
+  ["As proof of familial disease",
+   "Familial hypercholesterolemia is suggested by a very high LDL-C or total cholesterol, not by a low HDL-C."],
+  ["As a value to ignore",
+   "It still carries risk information; it is simply not the target of treatment."]],
+ "c": 0, "cite": c(40)},
+
+{"topic": "Reading a panel", "io": IOD, "slot": "severe hypertriglyceridemia",
+ "q": "A 48-year-old has triglycerides of 900 mg/dL (desirable below 150 mg/dL). Which acute risk does this level carry?",
+ "opts": [
+  ["Pancreatitis",
+   "Correct. Triglycerides of 500 mg/dL or above are severe hypertriglyceridemia with pancreatitis risk, and 1000 mg/dL or above is extreme."],
+  ["Rhabdomyolysis",
+   "Rhabdomyolysis is skeletal muscle breakdown, evaluated with creatine kinase, and is not a recognized risk of high triglycerides."],
+  ["Aortic dissection",
+   "Aortic dissection is not linked to triglyceride level; the acute risk is pancreatitis."],
+  ["Pulmonary embolism",
+   "Pulmonary embolism is not the risk attached to severe hypertriglyceridemia."]],
+ "c": 0, "cite": c(40)},
+
+{"topic": "Reading a panel", "io": IOD, "slot": "risk enhancer",
+ "q": "A 49-year-old has triglycerides of 180 mg/dL (desirable below 150 mg/dL) and no other lipid abnormality. How is this triglyceride level classed?",
+ "opts": [
+  ["A risk enhancer for atherosclerotic disease",
+   "Correct. Triglycerides of 150 mg/dL or above mean increased atherosclerotic risk and act as a risk enhancer; severe hypertriglyceridemia begins at 500 mg/dL."],
+  ["Severe hypertriglyceridemia",
+   "Severe hypertriglyceridemia starts at 500 mg/dL, with pancreatitis risk; this level is well below that."],
+  ["Normal, with no significance",
+   "It is above the desirable limit, so it is not insignificant; it raises atherosclerotic risk."],
+  ["Diagnostic of familial hypercholesterolemia",
+   "Familial hypercholesterolemia is a cholesterol disorder flagged by very high LDL-C (low-density lipoprotein cholesterol), not by a modest triglyceride rise."]],
+ "c": 0, "cite": c(40)},
+
+{"topic": "Reading a panel", "io": IOD, "slot": "normal screen",
+ "q": "A 24-year-old woman's screening panel shows total cholesterol 178 mg/dL (desirable below 200), triglycerides 90 mg/dL (desirable below 150) and HDL-C (high-density lipoprotein cholesterol) 62 mg/dL (higher is favorable). How is it interpreted?",
+ "opts": [
+  ["A favorable profile",
+   "Correct. Total cholesterol and triglycerides are below their desirable limits and HDL-C is high, which is generally favorable."],
+  ["Severe hypertriglyceridemia",
+   "Severe hypertriglyceridemia begins at 500 mg/dL; hers is 90 mg/dL."],
+  ["Low HDL-C needing treatment",
+   "Her HDL-C is high, and HDL-C is not a treatment target in any case."],
+  ["Suspected familial hypercholesterolemia",
+   "Familial hypercholesterolemia is suggested by very high cholesterol; hers is below the desirable limit."]],
+ "c": 0, "cite": c(43)},
+
+{"topic": "Calculating", "io": IOG, "slot": "calculation",
+ "q": "A 50-year-old's panel shows total cholesterol 210 mg/dL and HDL-C (high-density lipoprotein cholesterol) 50 mg/dL. What is the non-HDL-C, the value followed against a risk-based goal?",
+ "opts": [
+  ["160 mg/dL",
+   "Correct. Non-HDL-C is total cholesterol minus HDL-C: 210 minus 50 is 160 mg/dL. It needs no triglyceride value and costs nothing extra."],
+  ["260 mg/dL",
+   "That adds HDL-C to total cholesterol. Non-HDL-C subtracts it: 210 minus 50 is 160 mg/dL."],
+  ["110 mg/dL",
+   "That subtracts HDL-C twice. Non-HDL-C is total cholesterol minus HDL-C once: 210 minus 50 is 160 mg/dL."],
+  ["210 mg/dL",
+   "That is the total cholesterol itself. Non-HDL-C removes the HDL-C portion: 210 minus 50 is 160 mg/dL."]],
+ "c": 0, "cite": c(43)},
+
+{"topic": "Calculating", "io": IOG, "slot": "calculation",
+ "q": "A 46-year-old has total cholesterol 200 mg/dL, HDL-C (high-density lipoprotein cholesterol) 50 mg/dL and triglycerides 100 mg/dL, well below the 400 mg/dL limit for the Friedewald equation. What is the Friedewald LDL-C (low-density lipoprotein cholesterol)?",
+ "opts": [
+  ["130 mg/dL",
+   "Correct. Friedewald: total cholesterol minus HDL-C minus triglycerides divided by 5, so 200 minus 50 minus 20 is 130 mg/dL. It is an estimate, not a measurement."],
+  ["150 mg/dL",
+   "That omits the triglyceride term. The equation also subtracts triglycerides divided by 5, which is 20 here, giving 130 mg/dL."],
+  ["50 mg/dL",
+   "That subtracts the whole triglyceride value instead of triglycerides divided by 5. The correct result is 130 mg/dL."],
+  ["170 mg/dL",
+   "That subtracts triglycerides divided by 5 but not HDL-C. Both come off total cholesterol: 200 minus 50 minus 20 is 130 mg/dL."]],
+ "c": 0, "cite": c(42)},
+
+{"topic": "Indications", "io": IOC, "slot": "indications",
+ "q": "A healthy 30-year-old asks why a lipid profile is being ordered at his first visit. Which is an indication?",
+ "opts": [
+  ["Baseline and risk estimation",
+   "Correct. A lipid profile is indicated for baseline documentation, atherosclerotic risk estimation, and guiding and monitoring lipid-lowering therapy in nearly all adults."],
+  ["Ruling out an acute infarction",
+   "Acute infarction is ruled out with serial troponin; lipids answer the long-term risk question."],
+  ["Triage of acute dyspnea",
+   "Acute dyspnea triage for suspected heart failure uses a natriuretic peptide."],
+  ["Screening for muscle injury",
+   "Muscle injury is evaluated with creatine kinase; a lipid profile answers long-term atherosclerotic risk instead."]],
+ "c": 0, "cite": c(46)},
+
+{"topic": "Indications", "io": IOC, "slot": "fasting",
+ "q": "An asymptomatic 52-year-old has a family history of premature coronary artery disease. What kind of lipid profile should be obtained?",
+ "opts": [
+  ["A fasting profile",
+   "Correct. Nonfasting is acceptable for most people, but a fasting profile is obtained with triglycerides of 400 mg/dL or above, a known or suspected triglyceride disorder, or a family history of premature atherosclerotic disease or genetic dyslipidemia."],
+  ["A nonfasting profile only",
+   "Nonfasting is fine for most, but a family history of premature disease is one of the reasons to obtain a fasting profile."],
+  ["No profile until age 65",
+   "Adults are screened from age 19, and his family history makes testing more pressing, not less."],
+  ["Only a lipoprotein(a) level",
+   "Lipoprotein(a) is measured once in all adults, but it does not replace the standard profile."]],
+ "c": 0, "cite": c(46)},
+
+{"topic": "Indications", "io": IOC, "slot": "fasting",
+ "q": "A 40-year-old with no risk factors is due a routine lipid profile and has eaten breakfast. Is the sample acceptable?",
+ "opts": [
+  ["Yes, nonfasting is acceptable for most",
+   "Correct. Nonfasting is acceptable for most people. Fasting is reserved for triglycerides of 400 mg/dL or above, triglyceride disorders, or a family history of premature disease or genetic dyslipidemia."],
+  ["No, every lipid profile must be fasting",
+   "Fasting is no longer required for most patients; it is reserved for specific situations."],
+  ["No, lipids can only be drawn at night",
+   "No time-of-day rule applies to the lipid profile; the question is only whether fasting is needed."],
+  ["Yes, but only lipoprotein(a) is valid",
+   "Lipoprotein(a) needs no fasting, but the standard nonfasting profile is also acceptable for most."]],
+ "c": 0, "cite": c(46)},
+
+{"topic": "Indications", "io": IOC, "slot": "screening interval",
+ "q": "A 25-year-old with no risk factors had a normal lipid profile. When is the next routine screen?",
+ "opts": [
+  ["In about 5 years",
+   "Correct. Adults are screened roughly every 5 years starting at age 19, more often with risk factors."],
+  ["In 1 year",
+   "Yearly screening is not the default for an adult with no risk factors; roughly 5-yearly is."],
+  ["Only after age 40",
+   "Adult screening begins at age 19, not 40, and repeats roughly every 5 years."],
+  ["Never again",
+   "Screening continues through adult life, roughly every 5 years."]],
+ "c": 0, "cite": c(46)},
+
+{"topic": "Indications", "io": IOC, "slot": "childhood screening",
+ "q": "A 10-year-old with no family history comes for a well-child visit. Is a lipid screen indicated?",
+ "opts": [
+  ["Yes, at ages 9 to 11",
+   "Correct. Childhood screening at ages 9 to 11 identifies familial hypercholesterolemia and other lipid disorders; lipids are screened again at 19."],
+  ["No, screening starts at age 19",
+   "Adult screening starts at 19, but a childhood screen at 9 to 11 comes first."],
+  ["No, children are never screened",
+   "Children are screened at 9 to 11, and from age 2 if there is a family history of premature disease or familial hypercholesterolemia."],
+  ["Only if she is already obese",
+   "Childhood screening at 9 to 11 is universal, not limited to obesity."]],
+ "c": 0, "cite": c(49)},
+
+{"topic": "Indications", "io": IOC, "slot": "early screening",
+ "q": "A 3-year-old's father had a myocardial infarction at 38 and has familial hypercholesterolemia. When may the child be screened?",
+ "opts": [
+  ["Now, from age 2",
+   "Correct. Screening at age 2 or older is recommended with a family history of premature atherosclerotic disease, severe hypercholesterolemia or familial hypercholesterolemia."],
+  ["At age 9 to 11",
+   "That is universal childhood screening. This family history moves screening earlier, to age 2 or older."],
+  ["At age 19",
+   "Nineteen is when lipids are screened again in young adults; this child qualifies far earlier."],
+  ["Only if symptoms appear",
+   "Lipid disorders are screened for before symptoms; that is the point of screening early in this family."]],
+ "c": 0, "cite": c(49)},
+
+{"topic": "Monitoring therapy", "io": IOE, "slot": "recheck timing",
+ "q": "A 56-year-old has just started a statin. When should the lipid panel be rechecked?",
+ "opts": [
+  ["In 4 to 12 weeks",
+   "Correct. Check lipids 4 to 12 weeks after starting or changing the dose of lipid-lowering therapy, then every 6 to 12 months."],
+  ["In 5 years",
+   "Five-yearly is the routine adult screening interval, not the recheck after starting therapy."],
+  ["In 1 week",
+   "One week is too early to judge the response; the recheck comes at 4 to 12 weeks after starting."],
+  ["Only if he has symptoms",
+   "Monitoring is scheduled, not symptom-driven: 4 to 12 weeks, then every 6 to 12 months."]],
+ "c": 0, "cite": c(49)},
+
+{"topic": "Risk assessment", "io": IOE, "slot": "risk estimation",
+ "q": "A 55-year-old's lipid values are entered into a cardiovascular risk equation. What does that step produce?",
+ "opts": [
+  ["A 10-year risk estimate",
+   "Correct. Lipid values feed 10-year risk estimation, with the PREVENT (Predicting Risk of cardiovascular disease EVENTs) equations in the current guideline, and the estimate then drives treatment intensity."],
+  ["A diagnosis of acute infarction",
+   "A risk equation estimates future risk; acute infarction is diagnosed with troponin and the clinical picture."],
+  ["A measured LDL-C value",
+   "LDL-C (low-density lipoprotein cholesterol) is an input, usually calculated; the equation's output is risk."],
+  ["A lifetime lipoprotein(a) level",
+   "Lipoprotein(a) is measured once in the lab; it is not produced by a risk equation."]],
+ "c": 0, "cite": c(46)},
+
+{"topic": "Risk assessment", "io": IOE, "slot": "CPR framework",
+ "q": "A 58-year-old's 10-year PREVENT (Predicting Risk of cardiovascular disease EVENTs) estimate is 7%, in the intermediate tier of 5% to under 10%, and she is unsure about starting therapy. What may be considered to reclassify her risk?",
+ "opts": [
+  ["A coronary artery calcium score",
+   "Correct. In the Calculate, Personalize, Reclassify framework, when there is clinical or patient uncertainty at borderline or intermediate risk, a coronary artery calcium score is considered to revise the estimate."],
+  ["A high-sensitivity troponin",
+   "Troponin addresses acute injury, not long-term risk reclassification."],
+  ["A B-type natriuretic peptide",
+   "The natriuretic peptides are for heart failure; they are not the reclassification tool in this framework."],
+  ["A creatine kinase",
+   "Creatine kinase evaluates muscle injury and has no role in cardiovascular risk reclassification."]],
+ "c": 0, "cite": c(50)},
+
+{"topic": "Risk assessment", "io": IOE, "slot": "CPR framework",
+ "q": "A 54-year-old's 10-year PREVENT (Predicting Risk of cardiovascular disease EVENTs) estimate is 4%, in the borderline tier of 3% to under 5%. Besides discussing the estimate, what does the framework add for her?",
+ "opts": [
+  ["Evaluating risk enhancers",
+   "Correct. At borderline risk the framework pairs the risk discussion with an evaluation of risk enhancers, such as an elevated lipoprotein(a) or triglycerides of 150 mg/dL or above."],
+  ["Immediate cardiac catheterization",
+   "No invasive testing is prompted by a risk estimate; the framework works through discussion, enhancers and a calcium score."],
+  ["Serial troponin measurement",
+   "Serial troponin is for suspected acute coronary syndrome, not risk stratification in an asymptomatic person."],
+  ["Stopping all lipid testing",
+   "Borderline risk calls for more information, not less; lipid testing continues."]],
+ "c": 0, "cite": c(50)},
+
+{"topic": "Risk assessment", "io": IOE, "slot": "lipoprotein(a) screening",
+ "q": "A 37-year-old with no symptoms asks whether she needs a lipoprotein(a) level. What does the current guidance say?",
+ "opts": [
+  ["Measure it at least once in all adults",
+   "Correct. Current multisociety guidance recommends measuring lipoprotein(a) at least once in all adults for atherosclerotic risk assessment."],
+  ["Measure it only after a heart attack",
+   "Testing is not limited to people with established disease; all adults are measured at least once."],
+  ["Measure it every year from age 40",
+   "It is stable and largely genetic, so a single lifetime measurement generally suffices."],
+  ["Never measure it; it is untreatable",
+   "Its value lies in risk assessment, and elevation prompts more intensive management of other risk factors."]],
+ "c": 0, "cite": c(45)},
+
+]
