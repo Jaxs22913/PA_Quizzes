@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Medicine and Surgery I &middot; Exam 2 &mdash; Clin Med Pro Guide</title>
+<style>
+  :root{
+    --ink:#1e2233;
+    --paper:#faf6f7;
+    --accent:#2d3f7a;      /* rose plum */
+    --accent2:#c1873a;      /* warm gold */
+    --accent3:#5566b5;      /* muted violet */
+    --line:#e5dade;
+    --soft:#665b62;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  header.top{
+    background:linear-gradient(120deg,#1b2450,var(--accent) 55%,#7b8ad0);
+    color:#fff;
+    padding:34px 26px 30px;
+  }
+  header.top h1{
+    margin:0 0 6px;
+    font-size:2rem;
+    letter-spacing:.2px;
+    font-weight:800;
+  }
+  header.top p{margin:2px 0;color:#f5e6ec;font-size:.95rem;}
+  header.top .hdr-note{margin-top:12px;font-size:.86rem;background:rgba(255,255,255,.14);
+    display:inline-block;padding:7px 13px;border-radius:9px;}
+  header.top .hdr-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  header.top .hdr-links a{font-size:.83rem;font-weight:700;color:#fff;text-decoration:none;
+    border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;}
+  header.top .hdr-links a:hover{background:rgba(255,255,255,.16);}
+  header.top .hdr-save{margin-top:12px;font-size:.8rem;opacity:.85;}
+  @media print{ header.top .hdr-links, header.top .hdr-save{display:none !important;} }
+
+  .layout{display:flex;max-width:1180px;margin:0 auto;}
+  nav.toc{
+    position:sticky;top:38px;align-self:flex-start;
+    width:280px;min-width:280px;max-height:calc(100vh - 38px);max-height:calc(100dvh - 38px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:24px 18px;border-right:1px solid var(--line);
+    background:#f2e9eb;
+    font-size:.85rem;
+  }
+  nav.toc h2{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:14px 0 6px;}
+  nav.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 0;border-bottom:1px solid transparent;}
+  nav.toc a.top-link{font-weight:700;color:var(--accent2);margin-top:10px;}
+  nav.toc a:hover{color:var(--accent);}
+  main{flex:1;padding:30px 40px 90px;min-width:0;}
+  section.deck{margin-bottom:56px;scroll-margin-top:18px;}
+  h2.deck-title{
+    font-size:1.55rem;color:var(--accent);
+    border-bottom:3px solid var(--accent2);
+    padding-bottom:8px;margin:0 0 6px;
+    font-weight:800;
+  }
+  .lecturer{color:var(--soft);font-style:italic;font-size:.9rem;margin-bottom:14px;}
+  .io-box{
+    background:#f3e8ec;border:1px solid var(--line);
+    border-radius:10px;padding:14px 18px;margin:14px 0 20px;
+  }
+  .io-box h3{
+    margin:0 0 8px;font-size:.8rem;text-transform:uppercase;
+    letter-spacing:1px;color:var(--accent3);
+  }
+  .io-box ol{margin:0;padding-left:20px;}
+  .io-box li{margin-bottom:5px;font-size:.92rem;}
+  h3.sub{
+    color:var(--accent3);font-size:1.14rem;margin:26px 0 6px;font-weight:800;
+  }
+  h4.subsub{
+    color:var(--accent2);font-size:.98rem;margin:16px 0 4px;
+    font-weight:700;
+  }
+  ul,ol{margin:6px 0 12px;}
+  li{margin-bottom:3px;}
+  p{margin:8px 0;}
+  .callout{
+    border-left:4px solid var(--accent3);
+    background:#efeaf4;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  .pearl{
+    border-left:4px solid var(--accent2);
+    background:#f8f0e2;padding:10px 16px;margin:14px 0;border-radius:0 8px 8px 0;
+  }
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+  th{background:var(--accent);color:#fff;font-weight:700;}
+  tr:nth-child(even) td{background:#f3ecee;}
+  code{background:#eadfe0;padding:1px 5px;border-radius:4px;font-size:.85rem;}
+  .tag{
+    display:inline-block;background:var(--accent2);color:#fff;
+    font-size:.68rem;
+    padding:2px 8px;border-radius:10px;letter-spacing:.5px;
+    vertical-align:middle;margin-left:8px;
+  }
+  figure.fig{
+    margin:18px 0;padding:12px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line);text-align:center;
+  }
+  figure.fig img{
+    max-width:100%;height:auto;border-radius:6px;background:#fff;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+  }
+  figure.fig figcaption{
+    margin-top:8px;font-size:13.5px;color:var(--soft);font-style:italic;line-height:1.45;
+  }
+  .test-yourself-btn{
+    display:inline-block;margin-top:18px;padding:10px 18px;border:none;border-radius:999px;
+    background:var(--acc,var(--accent));color:#fff;font-weight:700;font-size:.92rem;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+  .test-yourself-btn:hover{filter:brightness(1.08);}
+  footer.guide-foot{margin:34px 40px 0;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);}
+  @media(max-width:820px){
+    nav.toc{display:none;}
+    main{padding:22px 18px 60px;}
+    footer.guide-foot{margin:34px 18px 0;}
+  }
+
+  /* header.top sits outside .wrap (full-bleed banner) so it needs its own
+     dark-mode invert -- everything else lives inside .layout.wrap and gets
+     the site-wide body > .wrap invert from theme.css for free. */
+  :root[data-theme="dark"] header.top { filter: invert(1) hue-rotate(180deg); }
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2d3f7a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+
+
+  /* Disease photograph strips (added 2026-08-20). Images are shared with the
+     dermatology comparison chart -- same directory, same files, no duplicates.
+     Images here are eager, never lazy: an image that never scrolled into view
+     is absent from Download as PDF, which cost 74 of 84 photographs on the
+     chart before it was caught. */
+  .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));
+    gap:12px;margin:16px 0;padding:14px;background:#f2e9eb;border-radius:10px;
+    border:1px solid var(--line)}
+  .figgrid figure{margin:0;text-align:center;display:flex;flex-direction:column}
+  .figgrid img{width:100%;height:132px;object-fit:contain;border-radius:6px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .figgrid .fg-nopic{width:100%;height:132px;border-radius:6px;background:#fff;
+    border:1px dashed var(--line);display:flex;align-items:center;
+    justify-content:center;font-size:11.5px;color:var(--soft);padding:8px;
+    line-height:1.35;box-sizing:border-box}
+  .figgrid figcaption{margin-top:7px;font-size:12px;line-height:1.35;color:var(--soft)}
+  .figgrid .fg-name{display:block;font-weight:700;color:var(--ink);font-size:12.5px;
+    margin-bottom:2px}
+  .figgrid .fg-cite{display:block;font-size:10.5px;margin-top:3px;opacity:1;color:var(--soft)}
+  .figgrid-h{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--soft);margin:0 0 4px}
+  @media (max-width:520px){.figgrid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+    .figgrid img,.figgrid .fg-nopic{height:112px}}
+  /* The GRID must be allowed to break -- a ten-condition strip is taller than a
+     page, so `break-inside:avoid` on the grid cannot be honoured and Chrome
+     splits it through the middle of a figure instead, clipping the photograph
+     and orphaning its caption. Let the grid fragment between rows and protect
+     the individual figure, which always fits. */
+  @media print{.figgrid{break-inside:auto;background:#f7f2f3}
+    .figgrid figure{break-inside:avoid;page-break-inside:avoid}
+    .figgrid img,.figgrid .fg-nopic{break-inside:avoid}}
+
+  /* First-line treatment tables (add_guide_ophtho_treatment.py). The condition
+     column is held narrow so the treatment text gets the width; the urgency
+     column is narrower still and never wraps mid-word. */
+  .txnote{font-size:13px;line-height:1.5;color:var(--soft);margin:0 0 10px}
+  table.txtab td.txc{width:200px;font-weight:700;vertical-align:top}
+  table.txtab td{vertical-align:top;font-size:14px;line-height:1.5}
+  table.txtab .txu{width:120px;font-size:12.5px;line-height:1.4}
+  table.txtab td.txu{font-weight:700}
+  @media(max-width:700px){
+    table.txtab td.txc{width:auto;display:block;border-bottom:none;padding-bottom:0}
+    table.txtab td:not(.txc){display:block;border-top:none;padding-top:3px}
+    table.txtab .txu{width:auto}
+  }
+</style>
+</head>
+<body>
+<style>
+  /* Professor-emphasised content. Star + highlight, per the convention set by
+     the CAM/Nutrition guide. Here the marks are derived from the 2026-08-17
+     lecture recording: prosodic weight, time spent, and repetition. */
+  .prof-flag{
+    border:2px solid #d4a017;border-radius:10px;padding:16px 14px 6px;
+    margin:22px 0 14px;position:relative;background:#fffdf5;
+  }
+  .prof-flag-label{
+    position:absolute;top:-13px;left:14px;background:#fef3d4;color:#8a6205;
+    font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:8px;
+    border:1px solid #d4a017;letter-spacing:.3px;
+  }
+  .prof-flag table{margin:6px 0 8px;}
+  mark.prof-highlight{
+    background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766;
+  }
+  :root[data-theme="dark"] .prof-flag{background:#241f10;border-color:#a8801a;}
+  :root[data-theme="dark"] .prof-flag-label{
+    background:#3a2f12;color:#f0d98a;border-color:#a8801a;
+  }
+  :root[data-theme="dark"] mark.prof-highlight{
+    background:#4a3a12;color:#f7ecc8;box-shadow:inset 0 0 0 1px #7a6220;
+  }
+  .footer-mark-ink { stroke: #1e2233; }
+  .footer-mark-accent { stroke: #2d3f7a; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #b9c2ee; }
+  }
+</style>
+<div id="quiz-footer-logo" style="position:fixed;bottom:14px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;z-index:500;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="pointer-events:auto;cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:100px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<header class="top" id="top">
+  <h1>Clinical Medicine and Surgery I &middot; Exam 2 &mdash; Clin Med Pro Guide</h1>
+  <p>PAJ 5500 Clinical Medicine and Surgery I &middot; Class of 2028</p>
+  <p>Ophthalmology block &middot; <b>84 conditions</b> across 5 lectures &middot; Dr. Carter&rsquo;s Clin Med Pro Study Tip, ten fields per condition</p>
+  <div class="hdr-links"><a href="../Clinical Medicine and Surgery I Exam 1/cms-exam-1-clin-med-pro-guide.html">Exam 1 &middot; Dermatology</a><a href="#top" aria-current="page" style="background:rgba(255,255,255,.22)">Exam 2 &middot; Ophthalmology</a><a href="../Clinical Medicine and Surgery I Exam 3/cms-exam-3-clin-med-pro-guide.html">Exam 3 &middot; Ear, nose and throat</a><a href="../Clinical Medicine and Surgery I Exam 4/cms-exam-4-clin-med-pro-guide.html">Exam 4 &middot; Cardiology I</a><a href="cms-exam-2-study-guide.html">Exam 2 study guide</a></div>
+</header>
+
+<style>
+  /* Clin Med Pro cards (tools/build_cms_clinmedpro.py) */
+  .cmp-intro ol{columns:2;column-gap:28px;margin:6px 0 4px;padding-left:22px;font-size:.9rem}
+  .cmp-tools{position:sticky;top:38px;z-index:5;background:var(--paper);padding:10px 0 8px;
+    display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line);margin-bottom:10px}
+  .cmp-tools input{flex:1 1 220px;min-width:0;font:inherit;font-size:16px;padding:8px 12px;
+    border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--ink)}
+  .cmp-tools input:focus{outline:none;border-color:var(--accent)}
+  .cmp-tools button{font:inherit;font-size:.8rem;font-weight:700;padding:7px 12px;border-radius:999px;
+    border:1.5px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+  .cmp-tools .cmp-count{font-size:.8rem;color:var(--soft);min-width:6em}
+  .cmp-note{border-left:4px solid #b4541a;background:#fbeee4;padding:10px 16px;margin:12px 0 16px;
+    border-radius:0 8px 8px 0;font-size:.92rem}
+  .cmp-note b{color:#8a3a0c}
+  details.cmp-card{border:1px solid var(--line);border-radius:10px;margin:10px 0;background:#fff;
+    scroll-margin-top:100px}
+  details.cmp-card>summary{cursor:pointer;list-style:none;padding:11px 14px;display:flex;
+    align-items:center;gap:8px;flex-wrap:wrap;font-weight:700;color:var(--ink)}
+  details.cmp-card>summary::-webkit-details-marker{display:none}
+  details.cmp-card>summary::before{content:"\25B8";color:var(--accent);transition:transform .15s;
+    display:inline-block;width:1em}
+  details.cmp-card[open]>summary::before{transform:rotate(90deg)}
+  details.cmp-card[open]>summary{border-bottom:1px solid var(--line)}
+  .cmp-name{flex:1 1 auto;min-width:0}
+  .cmp-star{font-size:.7rem;font-weight:700;background:#fef3d4;color:#8a6205;border:1px solid #d4a017;
+    border-radius:8px;padding:1px 8px}
+  .cmp-nc{font-size:.68rem;font-weight:700;color:var(--soft);border:1px solid var(--line);
+    border-radius:999px;padding:1px 8px;white-space:nowrap}
+  dl.cmp-fields{display:grid;grid-template-columns:190px 1fr;gap:0;margin:0}
+  dl.cmp-fields dt,dl.cmp-fields dd{padding:8px 14px;border-top:1px solid var(--line);margin:0}
+  dl.cmp-fields dt:first-of-type,dl.cmp-fields dd:first-of-type{border-top:none}
+  dl.cmp-fields dt{font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--accent);background:#f7f1f3}
+  dl.cmp-fields dd{font-size:.92rem;line-height:1.55;overflow-wrap:anywhere}
+  dl.cmp-fields dd.nc{color:var(--soft);font-style:italic}
+  dl.cmp-fields dd.contested{background:#fbeee4}
+  .cmp-src{display:inline-block;margin-left:6px;font-size:.7rem;color:var(--soft);white-space:nowrap}
+  .cmp-prof{margin:0;padding:8px 14px;font-size:.84rem;background:#fffdf5;border-bottom:1px solid var(--line)}
+  .cmp-hidden{display:none !important}
+  dl.cmp-fields mark.prof-highlight{background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766}
+  @media(max-width:820px){.cmp-tools{position:static}}
+  @media(max-width:640px){
+    .cmp-intro ol{columns:1}
+    dl.cmp-fields{grid-template-columns:1fr}
+    dl.cmp-fields dt{border-top:1px solid var(--line);padding:6px 12px 2px;background:transparent}
+    dl.cmp-fields dd{border-top:none;padding:0 12px 9px}
+    details.cmp-card>summary{padding:10px 12px}
+  }
+  @media print{.cmp-tools{display:none}}
+</style>
+<div class="layout wrap" data-readable>
+<nav class="toc">
+  <a class="top-link" href="#how">How to use this guide</a>
+  <a class="top-link" href="#l10">Lecture 10 &middot; Common Ophthalmological Disorders</a>
+  <a class="sub-link" href="#l10-entropion">Entropion</a>
+  <a class="sub-link" href="#l10-ectropion">Ectropion</a>
+  <a class="sub-link" href="#l10-dermatochalasis">Dermatochalasis</a>
+  <a class="sub-link" href="#l10-xanthelasma">Xanthelasma</a>
+  <a class="sub-link" href="#l10-blepharitis-meibomitis">Blepharitis / meibomitis</a>
+  <a class="sub-link" href="#l10-chalazion">Chalazion</a>
+  <a class="sub-link" href="#l10-hordeolum">Hordeolum</a>
+  <a class="sub-link" href="#l10-dacryoadenitis">Dacryoadenitis</a>
+  <a class="sub-link" href="#l10-dacryocystitis">Dacryocystitis</a>
+  <a class="sub-link" href="#l10-pinguecula">Pinguecula</a>
+  <a class="sub-link" href="#l10-pterygium">Pterygium</a>
+  <a class="sub-link" href="#l10-subconjunctival-hemorrhage">Subconjunctival hemorrhage (atraumatic)</a>
+  <a class="sub-link" href="#l10-chemosis">Chemosis</a>
+  <a class="sub-link" href="#l10-allergic-conjunctivitis">Acute allergic conjunctivitis</a>
+  <a class="sub-link" href="#l10-viral-conjunctivitis">Acute viral conjunctivitis</a>
+  <a class="sub-link" href="#l10-autoimmune-conjunctivitis">Autoimmune conjunctivitis</a>
+  <a class="sub-link" href="#l10-bacterial-conjunctivitis">Acute bacterial conjunctivitis</a>
+  <a class="sub-link" href="#l10-gonococcal-conjunctivitis">Gonococcal conjunctivitis (neonatal)</a>
+  <a class="sub-link" href="#l10-adult-inclusion-conjunctivitis">Adult chlamydial conjunctivitis</a>
+  <a class="sub-link" href="#l10-neonatal-chlamydial-conjunctivitis">Neonatal chlamydial conjunctivitis</a>
+  <a class="sub-link" href="#l10-trachoma">Trachoma</a>
+  <a class="sub-link" href="#l10-episcleritis">Episcleritis</a>
+  <a class="sub-link" href="#l10-scleritis">Scleritis</a>
+  <a class="sub-link" href="#l10-preseptal-cellulitis">Pre-septal (periorbital) cellulitis</a>
+  <a class="sub-link" href="#l10-postseptal-cellulitis">Post-septal (orbital) cellulitis</a>
+  <a class="sub-link" href="#l10-keratitis">Keratitis</a>
+  <a class="sub-link" href="#l10-herpes-simplex-keratitis">Herpes simplex keratitis</a>
+  <a class="sub-link" href="#l10-herpes-zoster-keratitis">Herpes zoster keratitis</a>
+  <a class="sub-link" href="#l10-corneal-ulcer">Corneal ulcer</a>
+  <a class="sub-link" href="#l10-anterior-uveitis">Anterior uveitis</a>
+  <a class="sub-link" href="#l10-posterior-uveitis">Posterior uveitis</a>
+  <a class="top-link" href="#l11">Lecture 11 &middot; Neuro-Ophthalmology</a>
+  <a class="sub-link" href="#l11-nystagmus">Nystagmus</a>
+  <a class="sub-link" href="#l11-opioid-overdose-miosis">Opioid overdose (pupillary constriction)</a>
+  <a class="sub-link" href="#l11-anisocoria">Anisocoria</a>
+  <a class="sub-link" href="#l11-relative-afferent-pupillary-defect">Relative afferent pupillary defect</a>
+  <a class="sub-link" href="#l11-horner-syndrome">Horner syndrome</a>
+  <a class="sub-link" href="#l11-argyll-robertson-pupil">Argyll Robertson pupil</a>
+  <a class="sub-link" href="#l11-adie-tonic-pupil">Adie tonic pupil</a>
+  <a class="sub-link" href="#l11-cranial-nerve-iii-palsy">Cranial nerve III (oculomotor) palsy</a>
+  <a class="sub-link" href="#l11-cranial-nerve-iv-palsy">Cranial nerve IV (trochlear) palsy</a>
+  <a class="sub-link" href="#l11-cranial-nerve-vi-palsy">Cranial nerve VI (abducens) palsy</a>
+  <a class="sub-link" href="#l11-ptosis">Ptosis</a>
+  <a class="sub-link" href="#l11-pre-post-chiasmal-lesions">Pre- and post-chiasmal lesions (visual field defects)</a>
+  <a class="top-link" href="#l12">Lecture 12 &middot; Acute Vision Loss</a>
+  <a class="sub-link" href="#l12-amaurosis-fugax">Amaurosis fugax</a>
+  <a class="sub-link" href="#l12-acute-angle-closure-glaucoma">Acute angle-closure glaucoma</a>
+  <a class="sub-link" href="#l12-chronic-openangle-glaucoma">Chronic open-angle glaucoma</a>
+  <a class="sub-link" href="#l12-optic-neuritis">Optic neuritis</a>
+  <a class="sub-link" href="#l12-retinal-detachment">Retinal detachment</a>
+  <a class="sub-link" href="#l12-central-retinal-vein-occlusion">Central retinal vein occlusion</a>
+  <a class="sub-link" href="#l12-branch-retinal-vein-occlusion">Branch retinal vein occlusion</a>
+  <a class="sub-link" href="#l12-central-retinal-artery-occlusion">Central retinal artery occlusion</a>
+  <a class="sub-link" href="#l12-branch-retinal-artery-occlusion">Branch retinal artery occlusion</a>
+  <a class="sub-link" href="#l12-papilledema">Papilledema</a>
+  <a class="sub-link" href="#l12-non-arteritic-anterior-ischemic-optic-neuropathy">Non-arteritic anterior ischemic optic neuropathy</a>
+  <a class="sub-link" href="#l12-arteritic-anterior-ischemic-optic-neuropathy">Arteritic anterior ischemic optic neuropathy</a>
+  <a class="top-link" href="#l13">Lecture 13 &middot; Chronic Vision Loss and Tumors of the Eye</a>
+  <a class="sub-link" href="#l13-idiopathic-intracranial-hypertension">Idiopathic intracranial hypertension</a>
+  <a class="sub-link" href="#l13-primary-openangle-glaucoma">Primary open-angle glaucoma</a>
+  <a class="sub-link" href="#l13-age-related-macular-degeneration">Age-related macular degeneration</a>
+  <a class="sub-link" href="#l13-myopia">Myopia</a>
+  <a class="sub-link" href="#l13-hyperopia">Hyperopia</a>
+  <a class="sub-link" href="#l13-astigmatism">Astigmatism</a>
+  <a class="sub-link" href="#l13-presbyopia">Presbyopia</a>
+  <a class="sub-link" href="#l13-strabismus">Strabismus</a>
+  <a class="sub-link" href="#l13-amblyopia">Amblyopia</a>
+  <a class="sub-link" href="#l13-cataract">Cataract</a>
+  <a class="sub-link" href="#l13-retinoblastoma">Retinoblastoma</a>
+  <a class="sub-link" href="#l13-uveal-melanoma">Primary uveal melanoma</a>
+  <a class="sub-link" href="#l13-iris-nevus">Iris nevus</a>
+  <a class="sub-link" href="#l13-conjunctival-melanoma">Conjunctival melanoma</a>
+  <a class="sub-link" href="#l13-squamous-cell-carcinoma">Squamous cell carcinoma</a>
+  <a class="top-link" href="#l14">Lecture 14 &middot; Ocular Trauma</a>
+  <a class="sub-link" href="#l14-openglobe-injury">Open globe injury</a>
+  <a class="sub-link" href="#l14-full-thickness-eye-wall-laceration">Full-thickness eye wall laceration</a>
+  <a class="sub-link" href="#l14-globe-rupture">Globe rupture</a>
+  <a class="sub-link" href="#l14-corneal-abrasion">Corneal abrasion</a>
+  <a class="sub-link" href="#l14-corneal-conjunctival-foreign-body">Corneal/conjunctival foreign body</a>
+  <a class="sub-link" href="#l14-hyphema">Hyphema</a>
+  <a class="sub-link" href="#l14-lid-laceration">Lid laceration</a>
+  <a class="sub-link" href="#l14-orbital-contusion">Orbital and lid contusion</a>
+  <a class="sub-link" href="#l14-periorbital-hematoma">Periorbital hematoma</a>
+  <a class="sub-link" href="#l14-rhegmatogenous-retinal-detachment">Rhegmatogenous retinal detachment</a>
+  <a class="sub-link" href="#l14-traction-retinal-detachment">Traction retinal detachment</a>
+  <a class="sub-link" href="#l14-exudative-retinal-detachment">Exudative (serous) retinal detachment</a>
+  <a class="sub-link" href="#l14-orbital-floor-blowout-fracture">Orbital floor (blowout) fracture</a>
+  <a class="sub-link" href="#l14-basilar-skull-fracture">Basilar skull fracture</a>
+</nav>
+
+<main>
+<section class="deck" id="how">
+<h2 class="deck-title">How to use this guide</h2>
+<div class="callout cmp-intro"><p>Dr. Carter&rsquo;s <b>Clin Med Pro Study Tip</b> (Hypotension deck, slide 7) lists what to learn for every condition. Each card below answers those ten fields:</p><ol><li>Name of Condition</li><li>Definition</li><li>Etiology (cause)</li><li>Epidemiology (who)</li><li>Risk Factors</li><li>Pathology</li><li>Clinical Manifestation</li><li>Diagnosis</li><li>Treatment/Therapy</li><li>Mortality &#9733;</li></ol><p>Every field comes from the lecture slides only. Where a deck is silent the card says <i>Not covered in the lecture</i> rather than filling the gap from elsewhere (209 of 840 fields in this exam; Mortality alone: 79 of 84). Slide numbers follow each field. Cards open closed; tap one to read it.</p><p>The &#9733; on <b>Mortality</b> is on the original study-tip slide: fill it when a figure exists. A <mark class="prof-highlight" style="background:#fef3d4;padding:0 3px;border-radius:3px">&#9733; highlighted phrase</mark> inside a field is a fact the professor emphasized in the lecture recording, carried over from this exam&rsquo;s study guide.</p></div>
+</section>
+<div class="cmp-tools"><input type="search" id="cmp-filter" placeholder="Filter conditions (e.g. vertigo, murmur, statin)" aria-label="Filter conditions" autocomplete="off"><span class="cmp-count" id="cmp-count" aria-live="polite"></span><button type="button" id="cmp-expand">Expand all</button><button type="button" id="cmp-collapse">Collapse all</button></div>
+<section class="deck" id="l10">
+<h2 class="deck-title">Lecture 10 &middot; Common Ophthalmological Disorders</h2>
+<p class="lecturer">Monique Jaquith, DMSc, PA-C &middot; 31 conditions &middot; source: CMS I Common Ophthalmological Disorders 2026 - Jaquith.pptx</p>
+<details class="cmp-card" id="l10-entropion"><summary><span class="cmp-name">Entropion</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Entropion <span class="cmp-src">Slide 12</span></dd>
+<dt>Definition</dt><dd>Eyelid margin turns <b>inward</b>, so lashes and skin rub against the surface of the eye. <span class="cmp-src">Slide 12</span></dd>
+<dt>Etiology (cause)</dt><dd>Aging; cicatricial (burn, surgery, trauma, chronic inflammation, scar); congenital. <span class="cmp-src">Slide 12</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Aging; scarring from burn, surgery, trauma or chronic inflammation; congenital. <span class="cmp-src">Slide 12</span></dd>
+<dt>Pathology</dt><dd>Lashes pushed onto the globe (<b>trichiasis</b>) cause irritation and <b>corneal abrasion</b>/potential corneal damage. <span class="cmp-src">Slide 12</span></dd>
+<dt>Clinical Manifestation</dt><dd>Foreign body sensation, irritation, pain; conjunctival injection; inward-turned lid margin with lashes on the globe. <span class="cmp-src">Slide 12</span></dd>
+<dt>Diagnosis</dt><dd>Clinical; <b>slit lamp exam</b> to check for corneal involvement. <span class="cmp-src">Slide 13</span></dd>
+<dt>Treatment/Therapy</dt><dd>Preservative-free artificial tears by day, lubricating ointment at night; tape lid into place; <b>surgery is definitive</b>. <span class="cmp-src">Slide 13</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-ectropion"><summary><span class="cmp-name">Ectropion</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Ectropion <span class="cmp-src">Slide 12</span></dd>
+<dt>Definition</dt><dd>Lower eyelid sags and turns <b>outward</b>, exposing the inner surface of the lid. <span class="cmp-src">Slide 12</span></dd>
+<dt>Etiology (cause)</dt><dd>Aging; cicatricial (burn, surgery, trauma, chronic inflammation, scar); congenital; <b>facial nerve (cranial nerve VII) palsy</b> (ectropion only). <span class="cmp-src">Slide 12</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Aging; scarring; congenital; facial nerve (cranial nerve VII) palsy. <span class="cmp-src">Slide 12</span></dd>
+<dt>Pathology</dt><dd>Everted lid margin leaves the eye exposed, causing <b>exposure keratopathy</b>. <span class="cmp-src">Slide 12</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Tearing</b>; conjunctival injection; outward-turned lid margin. <span class="cmp-src">Slide 12</span></dd>
+<dt>Diagnosis</dt><dd>Clinical; <b>slit lamp exam</b> to check for corneal involvement. <span class="cmp-src">Slide 13</span></dd>
+<dt>Treatment/Therapy</dt><dd>Preservative-free artificial tears by day, lubricating ointment at night; tape exposed lid into place; <b>surgery is definitive</b>. <span class="cmp-src">Slide 13</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-dermatochalasis"><summary><span class="cmp-name">Dermatochalasis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Dermatochalasis <span class="cmp-src">Slide 14</span></dd>
+<dt>Definition</dt><dd>Excess, loose, sagging skin of the upper or lower eyelids. <span class="cmp-src">Slide 14</span></dd>
+<dt>Etiology (cause)</dt><dd>Aging. <span class="cmp-src">Slide 14</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Aging. <span class="cmp-src">Slide 14</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Lid &quot;heaviness&quot;, &quot;looking through lashes&quot;, lid friction with blinking; bilateral excess flaps/folds of lid skin. <span class="cmp-src">Slide 14</span></dd>
+<dt>Diagnosis</dt><dd>Examine <b>visual fields</b> for deficits. <span class="cmp-src">Slide 15</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Blepharoplasty</b>; often covered by insurance if a visual field defect is present. <span class="cmp-src">Slides 14–15</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-xanthelasma"><summary><span class="cmp-name">Xanthelasma</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Xanthelasma <span class="cmp-src">Slide 16</span></dd>
+<dt>Definition</dt><dd>Harmless, soft, yellowish <b>cholesterol deposit</b> under the skin on or around the eyelids. <span class="cmp-src">Slide 16</span></dd>
+<dt>Etiology (cause)</dt><dd>Metabolic disorders with increased serum lipids. <span class="cmp-src">Slide 16</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Elevated serum lipids (dyslipidemia), though many patients have normal lipid levels. <span class="cmp-src">Slides 16–17</span></dd>
+<dt>Pathology</dt><dd>Cholesterol deposit under the eyelid skin. <span class="cmp-src">Slide 16</span></dd>
+<dt>Clinical Manifestation</dt><dd>Typically asymptomatic; <b>oval yellowish plaques</b> on the eyelids. <span class="cmp-src">Slide 16</span></dd>
+<dt>Diagnosis</dt><dd><b>Serum lipid profile</b> and cardiovascular risk assessment; diabetes labs (fasting plasma glucose, hemoglobin A1C); liver function labs. <span class="cmp-src">Slide 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Treat the underlying metabolic issue; local cryotherapy (liquid nitrogen), laser ablation, chemical peel or surgical excision; <b>recurrences common</b> despite effective local treatment. <span class="cmp-src">Slide 17</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-blepharitis-meibomitis"><summary><span class="cmp-name">Blepharitis / meibomitis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Blepharitis / meibomitis <span class="cmp-src">Slide 18</span></dd>
+<dt>Definition</dt><dd>Blepharitis: common, non-contagious inflammation of the eyelid margins. Meibomitis: inflammation of the meibomian (lid-margin oil) glands. <span class="cmp-src">Slide 18</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Rosacea</b>, <b>seborrheic dermatitis</b>, colonization with <i>Staphylococcus aureus</i>. <span class="cmp-src">Slide 18</span></dd>
+<dt>Epidemiology (who)</dt><dd>Common; non-contagious. <span class="cmp-src">Slide 18</span></dd>
+<dt>Risk Factors</dt><dd>Rosacea; seborrheic dermatitis; <i>Staphylococcus aureus</i> colonization. <span class="cmp-src">Slide 18</span></dd>
+<dt>Pathology</dt><dd>Chronic lid-margin and meibomian gland inflammation with thickened lipid secretion; controlled rather than cured. <span class="cmp-src">Slides 18–19</span></dd>
+<dt>Clinical Manifestation</dt><dd>Burning, dryness, grittiness, itching, foreign body sensation, tearing; <b>crusting/scaling at lash bases</b> (collarettes), red swollen lid margins, thick toothpaste-like meibomian secretion, frothy tear film; rosacea or seborrheic skin findings. <span class="cmp-src">Slide 18</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Lid hygiene</b> (over-the-counter lid scrub); no improvement after 2 weeks: topical, then oral antibiotics; refer to ophthalmology if not improved after several weeks. <span class="cmp-src">Slide 19</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-chalazion"><summary><span class="cmp-name">Chalazion</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Chalazion <span class="cmp-src">Slide 20</span></dd>
+<dt>Definition</dt><dd><b>Sterile obstruction</b> of a meibomian gland producing a nontender eyelid nodule. <span class="cmp-src">Slide 20</span></dd>
+<dt>Etiology (cause)</dt><dd>Sterile meibomian gland obstruction. <span class="cmp-src">Slide 20</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Blepharitis/meibomitis; rosacea. <span class="cmp-src">Slide 20</span></dd>
+<dt>Pathology</dt><dd>Sterile obstruction of a meibomian gland. <span class="cmp-src">Slide 20</span></dd>
+<dt>Clinical Manifestation</dt><dd>Focal eyelid swelling over days to weeks; visible/palpable subcutaneous lid nodule that is <b>nontender</b>. <span class="cmp-src">Slide 20</span></dd>
+<dt>Diagnosis</dt><dd>Refer recurrent chalazia or those persisting more than 2 to 3 months to rule out <b>sebaceous carcinoma</b>. <span class="cmp-src">Slide 21</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Warm compresses</b>, gentle massage (improvement may take months); refer to ophthalmology for steroid injection or curettage if no spontaneous resolution; recurrent with rosacea needs ophthalmology. <span class="cmp-src">Slide 21</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-hordeolum"><summary><span class="cmp-name">Hordeolum</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Hordeolum (also: stye) <span class="cmp-src">Slide 20</span></dd>
+<dt>Definition</dt><dd><b>Acute inflammation</b> of a meibomian gland (internal hordeolum) or of the glands of Zeis or Moll (external hordeolum). <span class="cmp-src">Slide 20</span></dd>
+<dt>Etiology (cause)</dt><dd>Usually <b>staphylococcal infection</b>. <span class="cmp-src">Slide 20</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Blepharitis/meibomitis; rosacea. <span class="cmp-src">Slide 20</span></dd>
+<dt>Pathology</dt><dd>Acute, usually staphylococcal, inflammation of a meibomian gland (internal) or Zeis/Moll gland (external). <span class="cmp-src">Slide 20</span></dd>
+<dt>Clinical Manifestation</dt><dd>Eyelid pain, redness and swelling developing over 24 hours/overnight; visible/palpable subcutaneous lid nodule that is <b>tender</b>. <span class="cmp-src">Slide 20</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Warm compresses</b>, gentle massage; refer to ophthalmology for incision and drainage if persistent (no improvement in 2 weeks); with associated pre-septal cellulitis, systemic antibiotics as for pre-septal cellulitis. <span class="cmp-src">Slide 21</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-dacryoadenitis"><summary><span class="cmp-name">Dacryoadenitis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Dacryoadenitis <span class="cmp-src">Slide 22</span></dd>
+<dt>Definition</dt><dd>Inflammation of the <b>lacrimal gland</b> (the tear-producing gland above the eye). <span class="cmp-src">Slide 22</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Inflammatory</b> (most common); bacterial (rare); viral (usually bilateral). <span class="cmp-src">Slide 22</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Inflamed, hyperemic palpebral lobe of the lacrimal gland. <span class="cmp-src">Slide 22</span></dd>
+<dt>Clinical Manifestation</dt><dd>Unilateral pain, redness, swelling over the <b>lateral one-third of the upper lid</b>; tearing or discharge; possible ipsilateral preauricular lymphadenopathy, temporal conjunctival injection, fever, leukocytosis. <span class="cmp-src">Slide 22</span></dd>
+<dt>Diagnosis</dt><dd>CT (computed tomography) of orbits and paranasal sinuses with contrast, especially if severe, orbital findings, chronic, atypical, suspected abscess/mass or not improving. <span class="cmp-src">Slide 23</span></dd>
+<dt>Treatment/Therapy</dt><dd>As-needed acetaminophen; unclear cause: empiric oral antibiotics for 24 hours then reassess; inflammatory: <b>oral corticosteroids</b> (after excluding infection; respond within 48 hours); viral: cool compresses; monitor for orbital involvement. <span class="cmp-src">Slide 23</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-dacryocystitis"><summary><span class="cmp-name">Dacryocystitis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Dacryocystitis <span class="cmp-src">Slide 24</span></dd>
+<dt>Definition</dt><dd>Infection or inflammation of the <b>lacrimal (tear) sac</b>, usually from a blocked tear duct. <span class="cmp-src">Slide 24</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Nasolacrimal duct obstruction</b>. <span class="cmp-src">Slide 24</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Obstructed nasolacrimal duct leads to infection/inflammation of the lacrimal sac. <span class="cmp-src">Slide 24</span></dd>
+<dt>Clinical Manifestation</dt><dd>Red, painful, tense swelling over the lacrimal sac at the <b>medial lower lid</b> (below the medial canthal tendon); tearing, fever; mucoid/purulent discharge expressible from the lower punctum. Mass above the tendon: suspect lacrimal sac tumor. <span class="cmp-src">Slide 24</span></dd>
+<dt>Diagnosis</dt><dd>Mainly clinical; CT (computed tomography) of orbits and sinuses with contrast if orbital extension, abscess, trauma, mass or atypical disease. <span class="cmp-src">Slide 25</span></dd>
+<dt>Treatment/Therapy</dt><dd>Mild, afebrile: oral antibiotics for 10 days; febrile/ill: admit, <b>intravenous antibiotics</b> 48 to 72 hours then oral to 10 to 14 days with prompt ophthalmology consult; warm compresses; consider abscess drainage; later probing/irrigation or surgery. <span class="cmp-src">Slide 25</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-pinguecula"><summary><span class="cmp-name">Pinguecula</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Pinguecula <span class="cmp-src">Slide 27</span></dd>
+<dt>Definition</dt><dd>Non-cancerous yellowish or white deposit on the conjunctiva that does <b>not involve the cornea</b>. <span class="cmp-src">Slide 27</span></dd>
+<dt>Etiology (cause)</dt><dd>Chronic exposure to sunlight and wind. <span class="cmp-src">Slide 27</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Chronic <b>sunlight</b> and wind exposure. <span class="cmp-src">Slide 27</span></dd>
+<dt>Pathology</dt><dd>Conjunctival deposit confined to the conjunctiva, not crossing the limbus onto the cornea (&quot;penguins can&#x27;t fly&quot;). <span class="cmp-src">Slide 27</span></dd>
+<dt>Clinical Manifestation</dt><dd>Irritation, redness nasally and/or temporally, tearing; classic appearance almost always at <b>3 or 9 o&#x27;clock</b>. <span class="cmp-src">Slide 27</span></dd>
+<dt>Diagnosis</dt><dd>Clinical appearance; slit lamp exam of the adjacent cornea if referred. <span class="cmp-src">Slides 27–28</span></dd>
+<dt>Treatment/Therapy</dt><dd>Protect eyes from sun, dust, wind; artificial tears; <b>non-urgent referral</b> to ophthalmology if growth or vision impairment. Conservative care will not make it resolve. <span class="cmp-src">Slide 28</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-pterygium"><summary><span class="cmp-name">Pterygium</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Pterygium (also: surfer&#x27;s eye) <span class="cmp-src">Slide 27</span></dd>
+<dt>Definition</dt><dd>Non-cancerous, raised, <b>wedge-shaped</b> fleshy conjunctival growth that <b>extends onto the cornea</b>. <span class="cmp-src">Slide 27</span></dd>
+<dt>Etiology (cause)</dt><dd>Chronic exposure to sunlight and wind. <span class="cmp-src">Slide 27</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Chronic <b>sunlight</b> and wind exposure. <span class="cmp-src">Slide 27</span></dd>
+<dt>Pathology</dt><dd>Triangular, insect-wing-shaped fleshy conjunctival growth invading the cornea (&quot;pterodactyls fly into the cornea&quot;). <span class="cmp-src">Slide 27</span></dd>
+<dt>Clinical Manifestation</dt><dd>Irritation, redness nasally and/or temporally, tearing; sometimes decreased vision; almost always at <b>3 or 9 o&#x27;clock</b>. <span class="cmp-src">Slide 27</span></dd>
+<dt>Diagnosis</dt><dd>Clinical appearance; slit lamp exam to evaluate integrity of the adjacent cornea; differential: conjunctival intraepithelial neoplasia (more fan-like). <span class="cmp-src">Slides 27–28</span></dd>
+<dt>Treatment/Therapy</dt><dd>Protect eyes from sun, dust, wind; artificial tears; <b>non-urgent referral</b> if growth or vision impairment; <b>surgery</b> if growing into the cornea and distorting vision. <span class="cmp-src">Slide 28</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-subconjunctival-hemorrhage"><summary><span class="cmp-name">Subconjunctival hemorrhage (atraumatic)</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Subconjunctival hemorrhage (atraumatic) <span class="cmp-src">Slide 29</span></dd>
+<dt>Definition</dt><dd>Harmless broken blood vessel producing a bright red patch of <b>blood underneath the conjunctiva</b>. <span class="cmp-src">Slide 29</span></dd>
+<dt>Etiology (cause)</dt><dd>Valsalva, bleeding disorder, antiplatelet/anticoagulant medications, hypertension. <span class="cmp-src">Slide 29</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd><b>Valsalva</b>; bleeding disorder; antiplatelet/anticoagulant medications; <b>hypertension</b>. <span class="cmp-src">Slide 29</span></dd>
+<dt>Pathology</dt><dd>Bleeding beneath the conjunctiva. <span class="cmp-src">Slide 29</span></dd>
+<dt>Clinical Manifestation</dt><dd>Red eye, often <b>asymptomatic</b> unless chemosis is present; blood under the conjunctiva. Differential: 360-degree traumatic hemorrhage, hyphema. <span class="cmp-src">Slide 29</span></dd>
+<dt>Diagnosis</dt><dd><b>History</b> is key; ocular exam; check blood pressure if no explanation; recurrent: medication review, blood pressure, targeted hematologic evaluation (may need hematology if no culprit medication). <span class="cmp-src">Slide 30</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Reassurance</b>; usually resolves spontaneously within 2 to 4 weeks (uncomplicated often about 1 to 2 weeks, larger ones longer); artificial tears for mild irritation; treat underlying bleeding disorder or hypertension. <span class="cmp-src">Slide 30</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-chemosis"><summary><span class="cmp-name">Chemosis</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Chemosis <span class="cmp-src">Slide 31</span></dd>
+<dt>Definition</dt><dd><b>Swelling (edema) of the conjunctiva</b>; more a sign/presentation than a diagnosis. <span class="cmp-src">Slide 31</span></dd>
+<dt>Etiology (cause)</dt><dd>Allergy, infection, thyroid eye disease, angioedema, trauma, orbital cellulitis, impaired orbital venous drainage. <span class="cmp-src">Slide 31</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Nonspecific conjunctival edema from eye irritation. <span class="cmp-src">Slide 31</span></dd>
+<dt>Clinical Manifestation</dt><dd>Swollen conjunctiva; nonspecific sign of eye irritation. <span class="cmp-src">Slide 31</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Urgent</b> when accompanied by proptosis, restricted eye movement, reduced vision or an afferent pupillary defect. <span class="cmp-src">Slide 31</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-allergic-conjunctivitis"><summary><span class="cmp-name">Acute allergic conjunctivitis</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Acute allergic conjunctivitis <span class="cmp-src">Slides 32, 34</span></dd>
+<dt>Definition</dt><dd>Non-infectious conjunctivitis: allergic inflammation of the conjunctiva (&quot;pink eye&quot;). <span class="cmp-src">Slides 32, 34</span></dd>
+<dt>Etiology (cause)</dt><dd>Reaction to a systemic <b>allergen</b>. <span class="cmp-src">Slide 34</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Allergic conjunctival inflammation forming <b>papillae</b> (red at surface, paler at base). <span class="cmp-src">Slides 33–34</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Itchy</b>, bilateral red eyes; swollen lids; watery/stringy discharge; preserved vision; chemosis, papillae, <b>no preauricular node</b>. <span class="cmp-src">Slide 34</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Avoid allergen</b>; cool compresses, artificial tears, topical H1 (histamine-1) blocker with or without mast cell stabilizer (olopatadine does both), systemic H1 blocker; refer to ophthalmology if not relieved. Uncomplicated conjunctivitis: routine disposition. <span class="cmp-src">Slides 35, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-viral-conjunctivitis"><summary><span class="cmp-name">Acute viral conjunctivitis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Acute viral conjunctivitis <span class="cmp-src">Slides 32, 36</span></dd>
+<dt>Definition</dt><dd>Infectious inflammation of the conjunctiva caused by a virus. <span class="cmp-src">Slides 32, 36</span></dd>
+<dt>Etiology (cause)</dt><dd>Most common: <b>adenovirus</b>; isolated ocular vs systemic infection; may follow or accompany an upper respiratory infection. <span class="cmp-src">Slide 36</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Concomitant or preceding upper respiratory infection. <span class="cmp-src">Slide 36</span></dd>
+<dt>Pathology</dt><dd>Viral conjunctival inflammation forming <b>follicles</b> (pale at surface, redder at base). <span class="cmp-src">Slides 33, 36</span></dd>
+<dt>Clinical Manifestation</dt><dd>Diffusely red eye, <b>profuse watery discharge</b>, swollen tight lids but no pain; bilateral (often starts in one eye); inferior follicles; <b>tender preauricular nodes</b>. <span class="cmp-src">Slide 36</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd>Cool compresses, artificial tears; contagious precautions, <b>hand hygiene</b>; refer to ophthalmology if lasting more than 3 weeks or photophobia/decreased vision (uncomplicated: routine disposition). Self-limiting; worse over first week, resolves in 2 to 3 weeks. <span class="cmp-src">Slides 37, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-autoimmune-conjunctivitis"><summary><span class="cmp-name">Autoimmune conjunctivitis</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Autoimmune conjunctivitis <span class="cmp-src">Slide 38</span></dd>
+<dt>Definition</dt><dd>Conjunctival inflammation associated with systemic autoimmune disease. <span class="cmp-src">Slide 38</span></dd>
+<dt>Etiology (cause)</dt><dd>Many autoimmune disorders, often already identified: ocular mucous membrane pemphigoid, Stevens-Johnson syndrome, Sjögren disease, graft-versus-host disease. <span class="cmp-src">Slide 38</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Known <b>systemic autoimmune disease</b>. <span class="cmp-src">Slide 38</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Diffuse, often <b>recurrent/chronic</b> conjunctival hyperemia; minimal/no pain, <b>no discharge</b>; systemic complaints (malaise, fever, fatigue). <span class="cmp-src">Slide 38</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Routine referral</b> to ophthalmology; ocular response depends on the underlying autoimmune disorder. <span class="cmp-src">Slide 39</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-bacterial-conjunctivitis"><summary><span class="cmp-name">Acute bacterial conjunctivitis</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Acute bacterial conjunctivitis <span class="cmp-src">Slides 32, 40</span></dd>
+<dt>Definition</dt><dd>Infectious inflammation of the conjunctiva caused by bacteria. <span class="cmp-src">Slides 32, 40</span></dd>
+<dt>Etiology (cause)</dt><dd>Bacterial infection. <span class="cmp-src">Slide 40</span></dd>
+<dt>Epidemiology (who)</dt><dd>Seen in immunocompromised, elderly and pediatric populations and contact lens wearers. <span class="cmp-src">Slide 40</span></dd>
+<dt>Risk Factors</dt><dd>Immunocompromise; elderly; pediatric; <b>contact lens wear</b>. <span class="cmp-src">Slide 40</span></dd>
+<dt>Pathology</dt><dd>Bacterial conjunctival inflammation forming <b>papillae</b>. <span class="cmp-src">Slides 33, 40</span></dd>
+<dt>Clinical Manifestation</dt><dd>Diffuse red eye, <b>thick yellow or white purulent discharge</b>, possible soreness; often unilateral; florid hyperemia, chemosis, papillae; usually <b>no preauricular node</b>. <span class="cmp-src">Slide 40</span></dd>
+<dt>Diagnosis</dt><dd>Clinical; contact lens wearers need corneal assessment for microbial keratitis. <span class="cmp-src">Slide 41</span></dd>
+<dt>Treatment/Therapy</dt><dd>Immunocompetent adult: <b>topical broad-spectrum antibiotic</b> (fluoroquinolone); hand hygiene. Referral: uncomplicated = routine; <b>urgent</b> (&quot;immediate ophthalmology involvement&quot;) if immunocompromised, contact lens wearer, recent surgery, foreign body, corneal opacity/keratitis or no improvement in 24 hours. <span class="cmp-src">Slides 41, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-gonococcal-conjunctivitis"><summary><span class="cmp-name">Gonococcal conjunctivitis (neonatal)</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Gonococcal conjunctivitis (neonatal) <span class="cmp-src">Slides 40–41</span></dd>
+<dt>Definition</dt><dd>Bacterial conjunctivitis from gonococcus; the <b>major concern in neonates</b>. <span class="cmp-src">Slides 40–41</span></dd>
+<dt>Etiology (cause)</dt><dd>Gonococcal bacterial infection. <span class="cmp-src">Slide 40</span></dd>
+<dt>Epidemiology (who)</dt><dd>Newborns. <span class="cmp-src">Slides 40–41</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Risk if untreated: <b>corneal perforation</b>. <span class="cmp-src">Slide 41</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Severe purulent discharge</b> with a <b>palpable preauricular node</b>. <span class="cmp-src">Slides 33, 40</span></dd>
+<dt>Diagnosis</dt><dd>Cultures/Gram stain; testing for chlamydia and disseminated infection. <span class="cmp-src">Slide 41</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Emergent</b> referral and hospitalization; immediate systemic <b>ceftriaxone</b> (intravenous/intramuscular, single dose); specialty consultation. <span class="cmp-src">Slide 41</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-adult-inclusion-conjunctivitis"><summary><span class="cmp-name">Adult chlamydial conjunctivitis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Adult chlamydial conjunctivitis (also: adult inclusion conjunctivitis) <span class="cmp-src">Slides 32, 42</span></dd>
+<dt>Definition</dt><dd><b>Chronic</b> (more than 4 weeks) conjunctivitis from <i>Chlamydia trachomatis</i> in adults. <span class="cmp-src">Slides 32, 42</span></dd>
+<dt>Etiology (cause)</dt><dd><i>Chlamydia trachomatis</i> <b>serotypes D to K</b> by direct inoculation with infected genital secretions. <span class="cmp-src">Slide 42</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Often concurrent asymptomatic urogenital infection. <span class="cmp-src">Slide 42</span></dd>
+<dt>Pathology</dt><dd>Chlamydial conjunctival inflammation forming <b>follicles</b>; preauricular node enlargement. <span class="cmp-src">Slides 33, 42</span></dd>
+<dt>Clinical Manifestation</dt><dd>Chronic hyperemia of the lower palpebral conjunctiva, <b>stringy mucoid discharge</b>, unilateral (sometimes bilateral), lasting a month or more and <b>unresponsive to topical medications</b>; follicles. <span class="cmp-src">Slide 42</span></dd>
+<dt>Diagnosis</dt><dd>Conjunctival NAAT (nucleic acid amplification test) or DFA (direct fluorescent antibody) stain of conjunctival scraping confirms; diagnosis often delayed. <span class="cmp-src">Slide 43</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Oral doxycycline</b> for 7 days (avoid sun, full glass of water, stay upright, separate from antacids/minerals); evaluate for other sexually transmitted infections; notify partners. Resolves in weeks without permanent damage. <span class="cmp-src">Slide 43</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-neonatal-chlamydial-conjunctivitis"><summary><span class="cmp-name">Neonatal chlamydial conjunctivitis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Neonatal chlamydial conjunctivitis <span class="cmp-src">Slide 44</span></dd>
+<dt>Definition</dt><dd>Chlamydial conjunctivitis in newborns. <span class="cmp-src">Slide 44</span></dd>
+<dt>Etiology (cause)</dt><dd><i>Chlamydia trachomatis</i> <b>serotypes D to K</b> by direct inoculation with infected genital secretions. <span class="cmp-src">Slide 44</span></dd>
+<dt>Epidemiology (who)</dt><dd>Neonates; those born to mothers with cervical infection may also have or develop pneumonia. <span class="cmp-src">Slide 44</span></dd>
+<dt>Risk Factors</dt><dd>Direct inoculation with infected genital secretions (maternal cervical infection). <span class="cmp-src">Slide 44</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Conjunctivitis; may also have or develop <b>pneumonia</b>/pneumonitis. <span class="cmp-src">Slide 44</span></dd>
+<dt>Diagnosis</dt><dd>Assess for pneumonia. <span class="cmp-src">Slide 44</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Erythromycin</b> for 14 days (monitor infants under 6 weeks for hypertrophic pyloric stenosis); azithromycin alternative; often treated in hospital because of concomitant pneumonia. <span class="cmp-src">Slide 44</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-trachoma"><summary><span class="cmp-name">Trachoma</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Trachoma <span class="cmp-src">Slide 45</span></dd>
+<dt>Definition</dt><dd>Chlamydial eye infection; <b>leading infectious cause of blindness worldwide</b>. <span class="cmp-src">Slide 45</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Recurrent</b> infection with <i>Chlamydia trachomatis</i> <b>serotypes A, B, C</b>; highly infectious. <span class="cmp-src">Slide 45</span></dd>
+<dt>Epidemiology (who)</dt><dd>Transmitted rapidly in areas of <b>poor hygiene</b>; leading infectious cause of blindness worldwide. <span class="cmp-src">Slide 45</span></dd>
+<dt>Risk Factors</dt><dd>Poor hygiene; recurrent infection. <span class="cmp-src">Slides 45–46</span></dd>
+<dt>Pathology</dt><dd>Repeated infection: conjunctival inflammation, then <b>eyelid scarring</b>, then entropion, then <b>trichiasis</b> (lashes rubbing the eye), then blindness. <span class="cmp-src">Slide 46</span></dd>
+<dt>Clinical Manifestation</dt><dd>Most active cases <b>asymptomatic</b>; if symptomatic: red eye, foreign body sensation, purulent discharge, follicles (especially upper lid). <span class="cmp-src">Slide 45</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Mass drug administration of single-dose oral azithromycin</b> where prevalence is 5% or more; usually curative, reinfection common without better hygiene; trichiasis requires surgery. <span class="cmp-src">Slide 46</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-episcleritis"><summary><span class="cmp-name">Episcleritis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Episcleritis <span class="cmp-src">Slides 5, 47</span></dd>
+<dt>Definition</dt><dd>Common, generally harmless inflammation of the <b>episclera</b> (thin layer of tissue between the white of the eye and its clear outer covering; deep subconjunctival tissue) <span class="cmp-src">Slides 5, 47</span></dd>
+<dt>Etiology (cause)</dt><dd>Often idiopathic; often no systemic association <span class="cmp-src">Slide 47</span></dd>
+<dt>Epidemiology (who)</dt><dd>Common <span class="cmp-src">Slide 47</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Acute-onset <b>mild pain</b> and focal, often sectoral redness; no discharge or photophobia; episcleral vessels move slightly with a cotton-tip applicator (after anesthesia); may recur in same or other eye <span class="cmp-src">Slides 47–48</span></dd>
+<dt>Diagnosis</dt><dd><b>Phenylephrine 2.5% test</b>: one drop in affected eye, wait 15 min, episcleral vessels should blanch <span class="cmp-src">Slide 48</span></dd>
+<dt>Treatment/Therapy</dt><dd>Artificial tears + oral NSAID (nonsteroidal anti-inflammatory drug), taken with food; <b>refer to ophthalmology if no response within 2 days</b>; usually self-limited, resolves over 2–3 weeks <span class="cmp-src">Slide 48</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-scleritis"><summary><span class="cmp-name">Scleritis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Scleritis <span class="cmp-src">Slides 5, 49</span></dd>
+<dt>Definition</dt><dd>Painful, serious inflammation of the <b>sclera</b> (tough white outer layer of the eye) <span class="cmp-src">Slides 5, 49</span></dd>
+<dt>Etiology (cause)</dt><dd>Often a <b>systemic autoimmune condition</b> <span class="cmp-src">Slide 49</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Inflammation of scleral, episcleral and conjunctival vessels; scleral thinning lets the choroid show through (bluish, violaceous area); sclera at risk for perforation, greatest in necrotizing disease <span class="cmp-src">Slides 49–50</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Severe boring eye pain, worse at night</b>, radiating to face/periorbital region, may wake patient; pain with eye movement; diffuse conjunctival injection; <b>violaceous hue</b> of sclera; scleral vessels do NOT move with cotton-tip applicator (after anesthesia) <span class="cmp-src">Slides 49, 69</span></dd>
+<dt>Diagnosis</dt><dd>Slit lamp exam and ophthalmoscopy (fundoscopy) by ophthalmology; work-up for underlying systemic condition <span class="cmp-src">Slide 50</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral urgency, two stated: <b>urgent referral to ophthalmology</b> (scleritis management) and <b>same day</b> (red-eye referral timing); systemic corticosteroids or other immune-modulating agents (noninfectious anterior: often systemic NSAIDs (nonsteroidal anti-inflammatory drugs) first); may need surgical patch; less pain = first sign of response <span class="cmp-src">Slides 50, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-preseptal-cellulitis"><summary><span class="cmp-name">Pre-septal (periorbital) cellulitis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Pre-septal (periorbital) cellulitis (also: periorbital cellulitis) <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Definition</dt><dd>Bacterial infection of the eyelid and skin around the eye, <b>in front of the orbital septum</b> <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Etiology (cause)</dt><dd>Direct extension from bacterial sinus, skin or dental infection; in diabetic, elderly or immunocompromised consider fungus (aspergillosis, mucormycosis) <span class="cmp-src">Slide 52</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Diabetic, elderly, or immunocompromised: consider fungal cause <span class="cmp-src">Slide 52</span></dd>
+<dt>Pathology</dt><dd>Preseptal soft-tissue inflammation on CT (computed tomography) <span class="cmp-src">Slide 51</span></dd>
+<dt>Clinical Manifestation</dt><dd>Periocular pain, fever/chills, warmth; diffuse balloon-like edema, erythema, tenderness of lids and periorbital tissue; variable conjunctival injection; <b>eye itself is white</b>; vision, pupils and eye movements normal <span class="cmp-src">Slides 52–53</span></dd>
+<dt>Diagnosis</dt><dd>CT (computed tomography) of orbits and paranasal sinuses with contrast (mild, clearly preseptal disease may be managed clinically without routine CT); complete eye exam with fundoscopy; Gram stain/culture of drainage; CBC (complete blood count) with differential; blood cultures <span class="cmp-src">Slide 53</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Mild: outpatient oral antibiotics 10–14 days</b> aimed at <i>Staphylococcus</i> (with or without MRSA (methicillin-resistant <i>Staphylococcus aureus</i>)) and <i>Streptococcus</i>; moderate-severe (toxic), poor compliance, age 5 or younger, or failing oral: admit + IV (intravenous) antibiotics 48–72 hours, then oral at least 1 week <span class="cmp-src">Slide 53</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-postseptal-cellulitis"><summary><span class="cmp-name">Post-septal (orbital) cellulitis</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Post-septal (orbital) cellulitis (also: orbital cellulitis) <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Definition</dt><dd>Dangerous bacterial infection of the tissues inside the eye socket, <b>behind the orbital septum</b> <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Etiology (cause)</dt><dd>Direct extension from bacterial sinus (e.g. ethmoiditis), skin or dental infection; in diabetic, elderly or immunocompromised consider fungus (aspergillosis, mucormycosis) <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Diabetic, elderly, or immunocompromised: consider fungal cause <span class="cmp-src">Slide 52</span></dd>
+<dt>Pathology</dt><dd>Inflammatory stranding of retrobulbar (intraconal and extraconal) soft tissue with proptosis and tenting of the posterior globe on CT (computed tomography); untreated may spread intracranially: meningitis, cavernous sinus thrombosis <span class="cmp-src">Slides 51, 53</span></dd>
+<dt>Clinical Manifestation</dt><dd>Periocular pain, fever/chills, lid edema/erythema PLUS <b>painful, decreased extraocular movement</b>, reduced vision, diplopia, proptosis, significant conjunctival injection (eye itself red), possible afferent pupillary defect <span class="cmp-src">Slides 52, 68</span></dd>
+<dt>Diagnosis</dt><dd>CT (computed tomography) of orbits and paranasal sinuses with contrast; complete eye exam with fundoscopy; Gram stain/culture of drainage; CBC (complete blood count) with differential; blood cultures <span class="cmp-src">Slide 53</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral urgency, two stated: <b>emergent</b> (red-eye referral timing) and urgent ophthalmology/ENT (ear, nose, throat) involvement (cellulitis management); <b>all cases: hospitalization + broad-spectrum IV (intravenous) antibiotics 48–72 hours</b>, then oral at least 1 week; ENT, oral maxillofacial surgery and/or infectious disease consults <span class="cmp-src">Slides 53, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd>Threatens vision and life <span class="cmp-src">Slide 68</span></dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-keratitis"><summary><span class="cmp-name">Keratitis</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Keratitis (also: microbial keratitis) <span class="cmp-src">Slides 5, 55</span></dd>
+<dt>Definition</dt><dd>Inflammation of the <b>cornea</b> (clear, dome-shaped window covering the front of the eye) <span class="cmp-src">Slides 5, 55</span></dd>
+<dt>Etiology (cause)</dt><dd>Bacterial, viral, fungal infection; parasitic rare (<i>Acanthamoeba</i>, a free-living amoeba in soil, dust, water) <span class="cmp-src">Slide 55</span></dd>
+<dt>Epidemiology (who)</dt><dd><i>Acanthamoeba</i> keratitis occurs primarily in contact lens wearers with poor lens hygiene (e.g. rinsing lens with tap water) <span class="cmp-src">Slide 55</span></dd>
+<dt>Risk Factors</dt><dd>Corneal trauma, dry eyes, <b>contact lens overwear</b> (overnight wear increases risk), topical ocular corticosteroid therapy <span class="cmp-src">Slides 55, 71</span></dd>
+<dt>Pathology</dt><dd>Ciliary flush from anterior ciliary artery branches signals corneal inflammation; undertreated: corneal scarring or perforation → endophthalmitis <span class="cmp-src">Slides 54, 56</span></dd>
+<dt>Clinical Manifestation</dt><dd>Eye pain, foreign body sensation, tearing, <b>photophobia</b>, redness at edge of cornea, blurred vision; corneal opacity/haziness, <b>“broken up” corneal light reflex</b>, ciliary flush; <i>Acanthamoeba</i>: classic corneal ring infiltrate <span class="cmp-src">Slide 55</span></dd>
+<dt>Diagnosis</dt><dd>Slit-lamp exam with fluorescein (epithelial defect, white infiltrate); culture/smear for large, central, deep, atypical or unresponsive ulcers (preserve lenses/case) <span class="cmp-src">Slides 56, 71</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral urgency, two stated: <b>urgent, within 24 hours</b> (keratitis management) and <b>same day</b> (red-eye referral timing); treat underlying cause to prevent scarring; remove contacts, <b>do not patch; no take-home topical anesthetic or corticosteroid</b> <span class="cmp-src">Slides 56, 70–71</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-herpes-simplex-keratitis"><summary><span class="cmp-name">Herpes simplex keratitis</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Herpes simplex keratitis (also: dendritic keratitis) <span class="cmp-src">Slide 57</span></dd>
+<dt>Definition</dt><dd>Herpetic keratitis from herpes simplex virus, showing a <b>true dendrite</b> on the cornea <span class="cmp-src">Slide 57</span></dd>
+<dt>Etiology (cause)</dt><dd>HSV-1 (herpes simplex virus type 1) much more common in the eye than HSV-2 <span class="cmp-src">Slide 58</span></dd>
+<dt>Epidemiology (who)</dt><dd>Patients often <b>younger</b> <span class="cmp-src">Slide 58</span></dd>
+<dt>Risk Factors</dt><dd>Physical/emotional stress triggers recurrences <span class="cmp-src">Slide 59</span></dd>
+<dt>Pathology</dt><dd>Recurrent disease can cause stromal scarring, neurotrophic keratopathy, glaucoma, need for corneal transplant, permanent visual loss <span class="cmp-src">Slide 59</span></dd>
+<dt>Clinical Manifestation</dt><dd>Primary HSV-1 infection often not clinically apparent; facial vesicles <b>lack dermatomal distribution</b> and may not respect midline (only 10% of primary dermatitis bilateral); recurrences common <span class="cmp-src">Slides 58–59</span></dd>
+<dt>Diagnosis</dt><dd>Fluorescein with cobalt blue light: <b>true dendrite</b> (“tree branching”, stained central bed, unstained raised edges, <b>terminal end bulbs</b>) = pathognomonic; slit-lamp + dilated fundoscopy by ophthalmology <span class="cmp-src">Slides 57, 59</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer to ophthalmology; <b>oral antivirals</b> (acyclovir, valacyclovir, famciclovir) × 10 days; <b>NO topical glucocorticoids by primary care with active epithelial disease</b>, leave to ophthalmology <span class="cmp-src">Slide 59</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-herpes-zoster-keratitis"><summary><span class="cmp-name">Herpes zoster keratitis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Herpes zoster keratitis (also: herpes zoster ophthalmicus (ocular involvement); pseudodendritic keratitis) <span class="cmp-src">Slide 57</span></dd>
+<dt>Definition</dt><dd>Herpetic keratitis from herpes zoster with <b>pseudodendrites</b> on the cornea <span class="cmp-src">Slide 57</span></dd>
+<dt>Etiology (cause)</dt><dd>Herpes zoster virus <span class="cmp-src">Slide 58</span></dd>
+<dt>Epidemiology (who)</dt><dd>Patients often <b>older</b>; rare in children; also seen in immunosuppressed (e.g. HIV (human immunodeficiency virus), cancer) <span class="cmp-src">Slide 58</span></dd>
+<dt>Risk Factors</dt><dd>Older age; immunosuppression; <b>Hutchinson sign</b> (tip of nose involved) = higher risk of ocular involvement <span class="cmp-src">Slide 58</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Pain/paresthesias of affected skin, may follow headache, fever, malaise; <b>dermatomal vesicles (most often V1 (first trigeminal division)) respecting midline</b>, unilateral, often spares lower lid; rash may precede eye involvement by days to months; postherpetic neuralgia <span class="cmp-src">Slides 58–59</span></dd>
+<dt>Diagnosis</dt><dd>Fluorescein with cobalt blue light: <b>pseudodendrites</b> lacking tree-branch pattern, raised edges and terminal end bulbs; slit-lamp + dilated fundoscopy by ophthalmology <span class="cmp-src">Slides 57, 59</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer to ophthalmology (ocular herpes zoster ophthalmicus: <b>same day</b>); <b>oral antivirals × 10 days</b> (ideally within 72 hours of rash), IV (intravenous) acyclovir if immunocompromised/severe; steroid drops per ophthalmology; retinitis/choroiditis/optic neuritis: corticosteroids + IV acyclovir; zoster vaccine prevention <span class="cmp-src">Slides 59, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-corneal-ulcer"><summary><span class="cmp-name">Corneal ulcer</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Corneal ulcer <span class="cmp-src">Slide 60</span></dd>
+<dt>Definition</dt><dd>Open sore on the <b>cornea</b> (clear front surface of the eye) <span class="cmp-src">Slide 60</span></dd>
+<dt>Etiology (cause)</dt><dd>Eye infection, corneal abrasion, severe dry eyes, eyelid closure problems, autoimmune diseases (e.g. rheumatoid arthritis: peripheral ulceration) <span class="cmp-src">Slide 60</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd><b>Contact lens use = major risk factor</b> <span class="cmp-src">Slide 60</span></dd>
+<dt>Pathology</dt><dd>Corneal defect; heals with scar (may calcify); ciliary flush from anterior ciliary artery branches signals corneal inflammation <span class="cmp-src">Slides 54, 60</span></dd>
+<dt>Clinical Manifestation</dt><dd>Painful eye, <b>reluctance/resistance to opening eye</b> (photophobia, foreign body sensation), tearing, blurred vision, red eye; ciliary flush; white spot with surrounding corneal irregularity <span class="cmp-src">Slide 60</span></dd>
+<dt>Diagnosis</dt><dd>Slit lamp and fluorescein exam; <b>swab for culture</b> of central and/or large ulcers <span class="cmp-src">Slide 61</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral urgency, two stated: <b>emergent referral to ophthalmology</b> (corneal ulcer management) and <b>same day</b> (red-eye referral timing); start broad-spectrum topical agent (4th-generation fluoroquinolone); steroid drops only per ophthalmology; next-day follow-up; severe/unresponsive may need corneal transplant <span class="cmp-src">Slides 61, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-anterior-uveitis"><summary><span class="cmp-name">Anterior uveitis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Anterior uveitis (also: iritis; iridocyclitis) <span class="cmp-src">Slides 5, 62</span></dd>
+<dt>Definition</dt><dd>Inflammation of the front of the uvea: iris (iritis) or iris and ciliary body (iridocyclitis) <span class="cmp-src">Slides 5, 62</span></dd>
+<dt>Etiology (cause)</dt><dd>Idiopathic, autoimmune; may be infectious <span class="cmp-src">Slides 62–63</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>White cells in anterior chamber, <b>keratic precipitates</b> (white blood cell deposits on posterior surface of cornea); iris adheres to lens (posterior synechiae) giving irregular pupil <span class="cmp-src">Slides 62, 69</span></dd>
+<dt>Clinical Manifestation</dt><dd>Eye pain, redness at edge of cornea, photophobia, <b>vision often preserved</b>; <b>consensual photophobia</b> (pain in affected eye when light shone in other eye); ciliary flush; variable IOP (intraocular pressure); irregular pupil <span class="cmp-src">Slides 62, 68</span></dd>
+<dt>Diagnosis</dt><dd>Slit lamp exam (cells, “snowstorm” in anterior chamber, flare) and dilated fundoscopy; systemic evaluation if recurrent or signs of systemic autoimmune disease <span class="cmp-src">Slides 62–63, 69</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral urgency, two stated: <b>urgent, within 24 hours</b> (uveitis management; delay risks vision loss) and <b>same day</b> (red-eye referral timing); infectious: treat organism; noninfectious: often <b>topical corticosteroids</b>; acute cases respond in days–weeks, chronic slowly <span class="cmp-src">Slides 63, 70</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l10-posterior-uveitis"><summary><span class="cmp-name">Posterior uveitis</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Posterior uveitis (also: choroiditis; retinitis) <span class="cmp-src">Slides 5, 64</span></dd>
+<dt>Definition</dt><dd>Inflammation of the back of the eye: the <b>choroid</b> (vascular middle layer) and frequently the retina <span class="cmp-src">Slides 5, 64</span></dd>
+<dt>Etiology (cause)</dt><dd>Idiopathic, autoimmune, infectious (toxoplasmosis, cytomegalovirus) <span class="cmp-src">Slide 64</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Cells in posterior vitreous, vitreous haze, inflammation of retina or choroid; develops more slowly than anterior uveitis, may last years <span class="cmp-src">Slides 64–65</span></dd>
+<dt>Clinical Manifestation</dt><dd>Blurred vision, floaters, scotomas, metamorphopsia; <b>no pain if isolated posterior uveitis</b>; may be acute and rapidly vision-threatening <span class="cmp-src">Slide 64</span></dd>
+<dt>Diagnosis</dt><dd>Slit lamp exam and dilated fundoscopy; possibly <b>fluorescein angiography</b> (active vs inactive lesions) <span class="cmp-src">Slide 65</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer to ophthalmology (long-term follow-up); by cause, like anterior uveitis, but <b>not responsive to topical treatment</b>: may need intraocular corticosteroid injection; exclude infection before immunosuppression <span class="cmp-src">Slide 65</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+</section>
+<section class="deck" id="l11">
+<h2 class="deck-title">Lecture 11 &middot; Neuro-Ophthalmology</h2>
+<p class="lecturer">Lauren Reynolds, MSPA, PA-C &middot; 12 conditions &middot; source: 11. Neuro-Ophthalmology STUDENT VERSION 2026.pptx</p>
+<details class="cmp-card" id="l11-nystagmus"><summary><span class="cmp-name">Nystagmus</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Nystagmus <span class="cmp-src">Slide 3</span></dd>
+<dt>Definition</dt><dd>Involuntary, biphasic, rhythmic, tremor-like oscillating movement of the eyes. <span class="cmp-src">Slide 3</span></dd>
+<dt>Etiology (cause)</dt><dd>Congenital (infantile or latent) or acquired; <b>upbeat</b> nystagmus is always abnormal (cerebellar or medullary lesion), less commonly drug intoxication; pendular type often congenital or after prolonged bilateral blindness beginning in childhood. <span class="cmp-src">Slides 3–4</span></dd>
+<dt>Epidemiology (who)</dt><dd>Most common form is horizontal jerk nystagmus. <span class="cmp-src">Slide 4</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd><b>Jerk</b>: slow drift then fast beat, named for the fast-phase direction (vertical, horizontal, torsional), worse gazing toward the fast phase; horizontal types: physiologic gaze-evoked, infantile, spasmus nutans, latent. <b>Pendular</b>: both phases equal velocity and amplitude, mostly horizontal. <span class="cmp-src">Slide 4</span></dd>
+<dt>Clinical Manifestation</dt><dd>Usually symptomatic unless acquired before age 8: <b>vertigo</b> (often primary symptom, common with vestibular problems); oscillopsia (environment seems to move back and forth); blurred vision; abnormal compensatory head positioning. <span class="cmp-src">Slide 3</span></dd>
+<dt>Diagnosis</dt><dd>Refer/work up: infants and young children with nystagmus; nystagmus acquired in adolescence or adulthood; concerning adult nystagmus (upbeat, monocular/asymmetric, non-physiologic horizontal). Complete ophthalmic exam, then initial imaging, then labs if relevant. <span class="cmp-src">Slide 5</span></dd>
+<dt>Treatment/Therapy</dt><dd>Referral to ophthalmology; the <b>underlying etiology</b> must be addressed. <span class="cmp-src">Slide 5</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-opioid-overdose-miosis"><summary><span class="cmp-name">Opioid overdose (pupillary constriction)</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Opioid overdose (pupillary constriction) <span class="cmp-src">Slide 12</span></dd>
+<dt>Definition</dt><dd>Overdose of opioids, which act as parasympathomimetics on the pupil. <span class="cmp-src">Slide 12</span></dd>
+<dt>Etiology (cause)</dt><dd>Excess opioid intake. <span class="cmp-src">Slide 12</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Parasympathomimetic effect on the pupillary constriction pathway causes miosis. <span class="cmp-src">Slides 11–12</span></dd>
+<dt>Clinical Manifestation</dt><dd>Decreased mental status, <b>respiratory depression</b> (under 12/min), decreased tidal volume, pupillary constriction; mental status and breathing are what matter clinically. <span class="cmp-src">Slide 12</span></dd>
+<dt>Diagnosis</dt><dd>Monitor pupil size alongside breathing: pupils may re-constrict before respiratory depression returns, signaling need for another dose. <span class="cmp-src">Slide 12</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Naloxone</b> (preferably intravenous; intranasal available over the counter); lasts about 2 hours, so repeat if respiratory depression and coma return; can continue until pupils dilate. <span class="cmp-src">Slide 12</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-anisocoria"><summary><span class="cmp-name">Anisocoria</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Anisocoria (also: asymmetric pupils; physiologic (benign) anisocoria) <span class="cmp-src">Slide 21</span></dd>
+<dt>Definition</dt><dd>Unequal pupil size; pupils should be unequal only when the efferent pathways are not working properly. <span class="cmp-src">Slide 21</span></dd>
+<dt>Etiology (cause)</dt><dd>Most commonly <b>physiologic</b>. Small pupil abnormal: ocular condition preventing dilation, miotic drops (pilocarpine), sympathetic dysfunction (Horner). Large pupil abnormal: pharmacologic mydriasis (anticholinergics, sympathomimetics), trauma including prior eye surgery, Adie tonic pupil, cranial nerve III palsy. <span class="cmp-src">Slides 21–22</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Ocular trauma; topical medications; toxin and drug exposure (atropine, ipratropium, scopolamine, glycopyrrolate, clonidine, phenylephrine, epinephrine). <span class="cmp-src">Slides 22–23</span></dd>
+<dt>Pathology</dt><dd>Efferent limb is bilateral, so both pupils normally receive the same command. Anticholinergic pupil is usually 8 mm or more and nonreactive; sympathomimetic pupil only 1-2 mm larger than baseline. <span class="cmp-src">Slides 21–22</span></dd>
+<dt>Clinical Manifestation</dt><dd>Physiologic: usually under 0.4 mm, <b>equal in light and dark</b>, no dilation lag, usually persistent, may switch sides. Small pupil abnormal if it dilates poorly in dim light; large pupil abnormal if it constricts poorly to light. <span class="cmp-src">Slides 20–22</span></dd>
+<dt>Diagnosis</dt><dd>History (trauma, old photographs, topical drugs, toxins, neuro signs); compare pupils in light and dark. More in dark: apraclonidine (small pupil dilates = Horner). More in light: 0.1% pilocarpine constricts Adie pupil; no constriction to 1% pilocarpine = pharmacologic. <span class="cmp-src">Slides 20, 23</span></dd>
+<dt>Treatment/Therapy</dt><dd>Physiologic anisocoria can be normal; note and document the difference so the cause can be worked out. <span class="cmp-src">Slide 20</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-relative-afferent-pupillary-defect"><summary><span class="cmp-name">Relative afferent pupillary defect</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Relative afferent pupillary defect (also: Marcus Gunn pupil) <span class="cmp-src">Slide 26</span></dd>
+<dt>Definition</dt><dd>Pupil sign indicating an <b>afferent defect</b>, usually at the level of the retina or optic nerve. <span class="cmp-src">Slide 26</span></dd>
+<dt>Etiology (cause)</dt><dd>Lesion of the afferent limb of the pupillary reflex (retina or cranial nerve II), i.e. the pre-chiasmal visual pathway. <span class="cmp-src">Slide 26</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Diminished perception of light in the affected eye, so moving light from the normal eye to the affected eye makes both pupils dilate. <span class="cmp-src">Slide 26</span></dd>
+<dt>Clinical Manifestation</dt><dd>Light in affected eye: no direct or consensual response; light in normal eye: both constrict; <b>swinging light back to the affected eye: both pupils dilate at the same rate</b>. Lid normal. <span class="cmp-src">Slides 24, 26</span></dd>
+<dt>Diagnosis</dt><dd>Pupil exam moving a bright light from the normal to the affected eye. Differential: optic nerve lesion (glaucoma, optic neuritis/multiple sclerosis), retinal detachment, macular degeneration, CRVO (central retinal vein occlusion). <span class="cmp-src">Slide 26</span></dd>
+<dt>Treatment/Therapy</dt><dd>Determined by the <b>underlying cause</b>. <span class="cmp-src">Slide 26</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-horner-syndrome"><summary><span class="cmp-name">Horner syndrome</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Horner syndrome (also: oculo-sympathetic paresis) <span class="cmp-src">Slide 28</span></dd>
+<dt>Definition</dt><dd>Acquired condition following damage to the <b>sympathetic nerve supply</b> of the eye. <span class="cmp-src">Slide 28</span></dd>
+<dt>Etiology (cause)</dt><dd>Often idiopathic. 1st-order: brainstem stroke/tumor, spinal cord lesion above T1. 2nd-order: <b>Pancoast tumor</b> (superior pulmonary sulcus), thyroid cancer. 3rd-order: <b>carotid dissection</b>, cavernous sinus thrombosis. <span class="cmp-src">Slides 15, 30</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Trauma (e.g. brachial plexus injury, carotid dissection); reported after COVID-19 with intubation/mechanical ventilation. <span class="cmp-src">Slides 15, 28</span></dd>
+<dt>Pathology</dt><dd>Loss of the 3-neuron sympathetic pathway (hypothalamus, ciliospinal center of Budge C8-T2, superior cervical ganglion, along carotid) to the pupil dilator, facial sweat glands and Muller muscle. <span class="cmp-src">Slides 13, 30</span></dd>
+<dt>Clinical Manifestation</dt><dd><mark class="prof-highlight">&#9733; Classic triad: ptosis, miosis, anhidrosis</mark> (anhidrosis may be absent depending on lesion site). Hallmark: <mark class="prof-highlight">&#9733; dilation lag</mark> (anisocoria most evident 4-5 s after dimming lights). Normal levator function; usually unilateral. <span class="cmp-src">Slides 15, 24, 28–29, 49</span></dd>
+<dt>Diagnosis</dt><dd><mark class="prof-highlight">&#9733; Dilute apraclonidine drops</mark>: no effect on normal pupil, dilate the Horner pupil in most patients. Cocaine drops are an alternative (less sensitive, costly, special storage). Carotid dissection may add focal neurologic complaints. <span class="cmp-src">Slides 15, 28</span></dd>
+<dt>Treatment/Therapy</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-argyll-robertson-pupil"><summary><span class="cmp-name">Argyll Robertson pupil</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Argyll Robertson pupil <span class="cmp-src">Slides 19, 32</span></dd>
+<dt>Definition</dt><dd>Bilateral miosis with <b>light-near dissociation</b>: pupils do not constrict to light but quickly constrict with near accommodation. <span class="cmp-src">Slides 19, 32</span></dd>
+<dt>Etiology (cause)</dt><dd>Classically <b>tertiary syphilis</b>; also diabetes mellitus, chronic alcohol use, neurosarcoidosis, multiple sclerosis, encephalitis. <span class="cmp-src">Slide 32</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Exact mechanism unknown; suspected dorsal midbrain (pretectal) lesion interrupts the light reflex, while the near pathway skips that portion (<mark class="prof-highlight">&#9733; basis of light-near dissociation</mark>). <span class="cmp-src">Slides 19, 32–33</span></dd>
+<dt>Clinical Manifestation</dt><dd>Bilateral small, irregular pupils; weak or absent light response not improved by dark adaptation; normal or brisk near response; syphilis patients may have tabes dorsalis (posterior column involvement, sensory ataxia). <span class="cmp-src">Slides 24, 32</span></dd>
+<dt>Diagnosis</dt><dd>Pupils slowly dilate with atropine drops; syphilis workup may be indicated. <span class="cmp-src">Slide 32</span></dd>
+<dt>Treatment/Therapy</dt><dd>No treatment for the pupil itself; treat the underlying cause (syphilis: intramuscular <b>penicillin G</b>). <span class="cmp-src">Slide 32</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-adie-tonic-pupil"><summary><span class="cmp-name">Adie tonic pupil</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Adie tonic pupil (also: tonic pupil; Holmes-Adie syndrome) <span class="cmp-src">Slide 35</span></dd>
+<dt>Definition</dt><dd>Dilated pupil with poor light reaction and slow, tonic constriction and re-dilation to near effort. <span class="cmp-src">Slide 35</span></dd>
+<dt>Etiology (cause)</dt><dd>Inflammation (infection vs autoimmune) damaging the ciliary ganglion or short ciliary nerves. <span class="cmp-src">Slide 35</span></dd>
+<dt>Epidemiology (who)</dt><dd>Often <b>females in their 30s</b>; often unilateral. <span class="cmp-src">Slide 36</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Parasympathetic damage followed by <b>aberrant reinnervation</b>; pupil becomes supersensitive to cholinergic drops. <span class="cmp-src">Slides 35–36</span></dd>
+<dt>Clinical Manifestation</dt><dd>Mydriasis, poor light reaction, slow near constriction then slow re-dilation; often asymptomatic or photophobia/blurring; sector paralysis on slit lamp; reduced corneal sensation; often absent Achilles/patellar reflexes; no ptosis or eye movement weakness. <span class="cmp-src">Slides 24, 35–36</span></dd>
+<dt>Diagnosis</dt><dd><b>Dilute pilocarpine 0.1%</b>: no effect on normal pupil, constricts the Adie pupil in most patients (unless acute phase); slit lamp; esthesiometer for corneal sensation. <span class="cmp-src">Slides 23, 36–37</span></dd>
+<dt>Treatment/Therapy</dt><dd>Idiopathic Adie syndrome is largely benign: <b>reassurance</b>. Over time the pupil becomes smaller (&quot;little old Adie&quot;). <span class="cmp-src">Slide 36</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-cranial-nerve-iii-palsy"><summary><span class="cmp-name">Cranial nerve III (oculomotor) palsy</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Cranial nerve III (oculomotor) palsy (also: third nerve palsy) <span class="cmp-src">Slides 39–40</span></dd>
+<dt>Definition</dt><dd>Peripheral palsy of the oculomotor nerve (levator palpebrae, superior/inferior/medial rectus, inferior oblique, pupillary sphincter). <span class="cmp-src">Slides 39–40</span></dd>
+<dt>Etiology (cause)</dt><dd>Most common: <b>microvascular disease</b> (diabetes mellitus, hypertension). Most dreaded: compression by enlarging aneurysm, usually <b>posterior communicating artery</b>. Other: severe head trauma, migraine, uncal herniation. <span class="cmp-src">Slide 40</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Diabetes mellitus; hypertension; severe head trauma (skull fracture and/or loss of consciousness). <span class="cmp-src">Slide 40</span></dd>
+<dt>Pathology</dt><dd>Levator palpebrae inactivated (ptosis); sphincter pupillae tone lost (mydriasis); unopposed superior oblique and lateral rectus pull eye down and out. <span class="cmp-src">Slide 40</span></dd>
+<dt>Clinical Manifestation</dt><dd>Ptosis, mydriasis, eye <b>&quot;down and out&quot;</b>; binocular horizontal, vertical, or oblique diplopia; reduced levator function, usually unilateral. <span class="cmp-src">Slides 24, 40, 49</span></dd>
+<dt>Diagnosis</dt><dd>Classify complete vs incomplete and <mark class="prof-highlight">&#9733; pupil-involved vs pupil-spared</mark>. Pupil involved: <b>immediate (STAT) CTA (computed tomography angiography) head/MRA (magnetic resonance angiography) brain</b>. Pupil-sparing: reassurance and imaging, but not urgently. <span class="cmp-src">Slide 41</span></dd>
+<dt>Treatment/Therapy</dt><dd>By etiology. Traumatic: observe about 6 months before corrective treatment; patch one eye for diplopia. Microvascular: good prognosis, improves within weeks, resolves by 3 months. Aneurysm pre-rupture: often endovascular coiling. <span class="cmp-src">Slide 41</span></dd>
+<dt>Mortality &#9733;</dt><dd>Aneurysm threatens rupture within hours or days; rupture is a <b>cerebrovascular emergency</b>. <span class="cmp-src">Slides 40–41</span></dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-cranial-nerve-iv-palsy"><summary><span class="cmp-name">Cranial nerve IV (trochlear) palsy</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Cranial nerve IV (trochlear) palsy (also: fourth nerve palsy) <span class="cmp-src">Slides 42–43</span></dd>
+<dt>Definition</dt><dd>Peripheral palsy of the trochlear nerve, which supplies the superior oblique (intorts and depresses the eye); peripheral lesion gives ipsilateral deficits. <span class="cmp-src">Slides 42–43</span></dd>
+<dt>Etiology (cause)</dt><dd>Isolated palsy most commonly <b>congenital</b> (even in adults); acquired: trauma (even mild), microvascular disease (diabetes mellitus, hypertension). <span class="cmp-src">Slide 43</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Trauma; diabetes mellitus; hypertension. <span class="cmp-src">Slides 43, 46</span></dd>
+<dt>Pathology</dt><dd>Only nerve arising from the dorsal brainstem and crossing; with superior oblique weak, the inferior oblique is unopposed in medial gaze. <span class="cmp-src">Slides 42–43</span></dd>
+<dt>Clinical Manifestation</dt><dd>Binocular <b>vertical diplopia</b>; deficit most apparent on adduction; compensatory <b>head tilt to the opposite side</b> improves hypertropia, ipsilateral tilt worsens it. <span class="cmp-src">Slide 43</span></dd>
+<dt>Diagnosis</dt><dd>Isolated atraumatic palsy: MRI (magnetic resonance imaging) brain with and without contrast; hemoglobin A1C if risk factors and no known diabetes. <span class="cmp-src">Slide 46</span></dd>
+<dt>Treatment/Therapy</dt><dd>Traumatic: observe about 6 months before corrective treatment; patch one eye for diplopia meanwhile. Congenital: patching in children (especially under 5) under an ophthalmologist. Microvascular: resolves by 3 months. <span class="cmp-src">Slide 46</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-cranial-nerve-vi-palsy"><summary><span class="cmp-name">Cranial nerve VI (abducens) palsy</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Cranial nerve VI (abducens) palsy (also: sixth nerve palsy) <span class="cmp-src">Slides 44–45</span></dd>
+<dt>Definition</dt><dd>Peripheral palsy of the abducens nerve, which supplies the lateral rectus (abducts the eye). <span class="cmp-src">Slides 44–45</span></dd>
+<dt>Etiology (cause)</dt><dd>Children: most commonly <b>intracranial tumors</b> (brainstem, posterior fossa). Adults: most commonly <b>microvascular disease</b> (diabetes mellitus, hypertension); also major trauma (skull base fracture). <span class="cmp-src">Slide 45</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Diabetes mellitus; hypertension; skull base fracture. <span class="cmp-src">Slides 45–46</span></dd>
+<dt>Pathology</dt><dd>Lateral rectus weakness impairs abduction. <span class="cmp-src">Slide 44</span></dd>
+<dt>Clinical Manifestation</dt><dd>Binocular <b>horizontal diplopia</b>. <span class="cmp-src">Slide 45</span></dd>
+<dt>Diagnosis</dt><dd>Isolated atraumatic palsy: MRI (magnetic resonance imaging) brain with and without contrast; hemoglobin A1C if risk factors and no known diabetes. <span class="cmp-src">Slide 46</span></dd>
+<dt>Treatment/Therapy</dt><dd>Traumatic: observe about 6 months before corrective treatment; patch one eye for diplopia meanwhile. Congenital: patching in children (especially under 5) under an ophthalmologist. Microvascular: improves within weeks, resolves by 3 months. <span class="cmp-src">Slide 46</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-ptosis"><summary><span class="cmp-name">Ptosis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Ptosis (also: blepharoptosis) <span class="cmp-src">Slide 48</span></dd>
+<dt>Definition</dt><dd>Drooping of the upper eyelid from a congenital or acquired abnormality of the muscles that elevate the eyelid. <span class="cmp-src">Slide 48</span></dd>
+<dt>Etiology (cause)</dt><dd>Cranial nerve III palsy, Horner syndrome, myasthenia gravis, myotonic dystrophy, pseudoptosis (dermatochalasis), mechanical (infection, inflammation, lid tumor), botulinum toxin injection, infectious botulism. <span class="cmp-src">Slide 49</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Botulinum toxin injection of the eyelid or upper face; food or wound botulism exposure. <span class="cmp-src">Slide 49</span></dd>
+<dt>Pathology</dt><dd>Lid elevators: levator palpebrae superioris (cranial nerve III) and sympathetic Muller muscle (extra 1-2 mm); orbicularis oculi (cranial nerve VII) closes the lids. <span class="cmp-src">Slide 48</span></dd>
+<dt>Clinical Manifestation</dt><dd>Clues: cranial nerve III (reduced levator, mydriasis, eye movement deficit); Horner (normal levator, miosis); <b>myasthenia gravis</b> (variable through the day, fatigable, diplopia); botulism (bilateral palsies, symmetric descending weakness). <span class="cmp-src">Slide 49</span></dd>
+<dt>Diagnosis</dt><dd>Assess levator function, laterality, pupil, eye movements and variability; myotonic dystrophy also has temporalis/sternocleidomastoid/distal weakness, cataracts, cardiac conduction issues, long hollow-cheeked face. <span class="cmp-src">Slide 49</span></dd>
+<dt>Treatment/Therapy</dt><dd>Directed at the cause; botulinum toxin ptosis usually resolves in 3-4 weeks. <span class="cmp-src">Slide 49</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l11-pre-post-chiasmal-lesions"><summary><span class="cmp-name">Pre- and post-chiasmal lesions (visual field defects)</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Pre- and post-chiasmal lesions (visual field defects) <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Definition</dt><dd>Lesions along the visual pathway producing characteristic visual field defects depending on location. <span class="cmp-src">Slides 51–52</span></dd>
+<dt>Etiology (cause)</dt><dd>End-stage glaucoma (constricted field); optic neuritis in multiple sclerosis or macular degeneration (central scotoma); <b>pituitary tumor</b> (bitemporal hemianopia); <b>stroke</b> (homonymous hemianopia). <span class="cmp-src">Slide 51</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Pre-chiasm (optic nerve): single-eye loss. Chiasm: <b>bitemporal hemianopia</b>. Post-chiasm (tract, radiation, cortex): contralateral <b>homonymous hemianopia</b>; optic radiation lesions can give quadrantanopia; cortex may spare the macula. <span class="cmp-src">Slides 51–53</span></dd>
+<dt>Clinical Manifestation</dt><dd>Constricted field (bilateral sometimes signifies hysteria), central scotoma, total monocular blindness, bitemporal hemianopia, homonymous hemianopia, superior quadrantanopia, macular-sparing hemianopia. <span class="cmp-src">Slides 51–53</span></dd>
+<dt>Diagnosis</dt><dd>Thorough history and physical; labs and imaging (CT (computed tomography) head or MRI (magnetic resonance imaging) brain) if indicated. <span class="cmp-src">Slide 54</span></dd>
+<dt>Treatment/Therapy</dt><dd>Ophthalmology referral; specialist referral as appropriate (neurology, vascular surgery, neurosurgery). <span class="cmp-src">Slide 54</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+</section>
+<section class="deck" id="l12">
+<h2 class="deck-title">Lecture 12 &middot; Acute Vision Loss</h2>
+<p class="lecturer">Monique Jaquith, DMSc, PA-C &middot; 12 conditions &middot; source: 12. Acute Vision Loss current - Jaquith.pptx</p>
+<details class="cmp-card" id="l12-amaurosis-fugax"><summary><span class="cmp-name">Amaurosis fugax</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Amaurosis fugax (also: fleeting blindness) <span class="cmp-src">Slides 3–5</span></dd>
+<dt>Definition</dt><dd>Transient, painless monocular vision loss lasting a few seconds to minutes; a group of disorders with benign to grave neurologic or ophthalmologic implications <span class="cmp-src">Slides 3–5</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Retinal emboli of carotid (TIA, transient ischemic attack) or cardiac origin</b>; retinal vascular spasm; also migraine or retinal artery occlusion <span class="cmp-src">Slides 3–5</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Older age; diabetes; hypertension; atherosclerosis; cardiac valve disease; intravenous drug use; sickle cell; coagulation disorders; Raynaud phenomenon <span class="cmp-src">Slide 5</span></dd>
+<dt>Pathology</dt><dd>Blockage in the blood vessels that supply the retina causes retinal ischemia <span class="cmp-src">Slides 4, 6</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Transient &quot;curtain&quot; descending over the vision</b> of one eye (less often ascending); mild blurring or fogging to complete blackness; part or all of the visual field; painless <span class="cmp-src">Slides 4, 6</span></dd>
+<dt>Diagnosis</dt><dd>History: one or both eyes (cover each eye), duration, pain, exact symptoms; carotid Doppler if carotid source suspected; echocardiogram if cardiac source; MRA (magnetic resonance angiography) of all arteries for emboli <span class="cmp-src">Slides 4, 7</span></dd>
+<dt>Treatment/Therapy</dt><dd>Treat the underlying cause; aspirin and clopidogrel to reduce stroke risk; carotid endarterectomy for carotid emboli; calcium channel blockers for Raynaud/vasospasm; early evaluation reduces vision loss (~85% fully recover, the rest progress to central retinal artery occlusion) <span class="cmp-src">Slide 8</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-acute-angle-closure-glaucoma"><summary><span class="cmp-name">Acute angle-closure glaucoma</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Acute angle-closure glaucoma (also: acute closed-angle glaucoma) <span class="cmp-src">Slides 9, 12, 14</span></dd>
+<dt>Definition</dt><dd>Emergency: the iris blocks the drainage angle and intraocular pressure rises dramatically; can cause permanent blindness without prompt treatment <span class="cmp-src">Slides 9, 12, 14</span></dd>
+<dt>Etiology (cause)</dt><dd>Severe angle occlusion by the iris; obstruction may be secondary to tumor, scarring, or other mechanical causes <span class="cmp-src">Slides 9, 14</span></dd>
+<dt>Epidemiology (who)</dt><dd>Much less common than chronic open-angle glaucoma <span class="cmp-src">Slide 15</span></dd>
+<dt>Risk Factors</dt><dd>Systemic anticholinergics (e.g. atropine); nebulized bronchodilators; history of anterior uveitis; lens dislocation; optic neuropathy; African American race <span class="cmp-src">Slide 14</span></dd>
+<dt>Pathology</dt><dd>Closed angle: iris blocks outflow through the trabecular meshwork, so fluid builds up behind the iris and intraocular pressure rises <span class="cmp-src">Slides 9, 12, 14</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Severe, sudden eye pain</b>; decreased vision; <b>colored halos around lights</b>; headache, nausea, and vomiting common <span class="cmp-src">Slides 13, 16</span></dd>
+<dt>Diagnosis</dt><dd>Dilated (fixed) pupil; hazy cornea; bilateral narrow or occluded angle; tonometry or gonioscopy shows intraocular pressure <b>40–80 mmHg</b> <span class="cmp-src">Slides 11, 13, 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Topical pilocarpine or topical beta-blocker (timolol); IV (intravenous) acetazolamide (carbonic anhydrase inhibitor), then mannitol or isosorbide; definitive: <b>laser peripheral iridotomy</b> 1–2 days after onset <span class="cmp-src">Slides 13, 20</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-chronic-openangle-glaucoma"><summary><span class="cmp-name">Chronic open-angle glaucoma</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Chronic open-angle glaucoma (also: primary open-angle glaucoma) <span class="cmp-src">Slides 9, 15</span></dd>
+<dt>Definition</dt><dd>Chronic, idiopathic optic nerve damage with an open angle and progressive peripheral visual field loss <span class="cmp-src">Slides 9, 15</span></dd>
+<dt>Etiology (cause)</dt><dd>Idiopathic; abnormal trabecular meshwork/canal of Schlemm secondary to aging <span class="cmp-src">Slides 9, 15</span></dd>
+<dt>Epidemiology (who)</dt><dd>Much more common than acute angle-closure; over 90% of glaucoma is primary open-angle <span class="cmp-src">Slides 12, 15</span></dd>
+<dt>Risk Factors</dt><dd>African American race; Hispanic ethnicity; adults over 40 and increasing age; diabetes; family history; hypertension; myopia <span class="cmp-src">Slide 15</span></dd>
+<dt>Pathology</dt><dd>Aging trabecular meshwork next to the canal of Schlemm becomes blocked → optic nerve damage and visual field loss, with or without elevated intraocular pressure; optic nerve cupping (widened, deepened cup from lost nerve fibers) <span class="cmp-src">Slides 12, 15, 19</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Asymptomatic in most</b>; may have persistently elevated bilateral intraocular pressure; gradual peripheral vision loss → <b>&quot;tunnel vision&quot;</b> → complete blindness <span class="cmp-src">Slides 13, 16</span></dd>
+<dt>Diagnosis</dt><dd>Unobstructed open angle with optic nerve defects: <b>increased cup-to-disc ratio</b>, rim pitting/thinning, bayoneting (narrow angulations of vessels), splinter hemorrhages; visual field defects; intraocular pressure normal or high on tonometry/gonioscopy <span class="cmp-src">Slides 13, 18–19</span></dd>
+<dt>Treatment/Therapy</dt><dd>Lower intraocular pressure; first-line drops: <b>latanoprost</b>, tafluprost, timolol (beta-blocker); if refractory/advanced: laser trabeculoplasty, then trabeculectomy with iridectomy <span class="cmp-src">Slides 12–13, 21</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-optic-neuritis"><summary><span class="cmp-name">Optic neuritis</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Optic neuritis <span class="cmp-src">Slide 22</span></dd>
+<dt>Definition</dt><dd>Inflammatory condition that damages the optic nerve <span class="cmp-src">Slide 22</span></dd>
+<dt>Etiology (cause)</dt><dd>Inflammation from multiple sclerosis, autoimmune disorders, postviral, or idiopathic <span class="cmp-src">Slide 23</span></dd>
+<dt>Epidemiology (who)</dt><dd>Usually 18–45 years old; 75% female <span class="cmp-src">Slide 23</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Inflammatory, demyelinating damage to the optic nerve; recurrence carries a greater risk of developing multiple sclerosis <span class="cmp-src">Slides 22–24</span></dd>
+<dt>Clinical Manifestation</dt><dd>Unilateral vision loss over hours to days; <b>painful eye movement</b>; RAPD (relative afferent pupillary defect; Marcus Gunn pupil); central vision and color vision loss; disc often normal-appearing; spontaneous recovery (near-normal vision at 1 year) <span class="cmp-src">Slides 23–24</span></dd>
+<dt>Diagnosis</dt><dd>Clinical diagnosis from history and exam; full ophthalmic (slit lamp, dilated fundoscopy, color vision) and neurologic exam; <b>MRI (magnetic resonance imaging) of brain and orbits with and without contrast</b> (optic nerve enhancement; periventricular T2 FLAIR (fluid-attenuated inversion recovery) hyperintensities); may need labs <span class="cmp-src">Slides 23–24</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Refer to ophthalmology</b>; corticosteroids may quicken visual recovery and delay onset of multiple sclerosis; 2 or more demyelinating lesions on MRI → refer to neurology/neuro-ophthalmology <span class="cmp-src">Slide 24</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-retinal-detachment"><summary><span class="cmp-name">Retinal detachment</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Retinal detachment <span class="cmp-src">Slides 25–26</span></dd>
+<dt>Definition</dt><dd>Serious emergency in which the light-sensitive retina pulls away from its normal position; rhegmatogenous, traction, or serous/exudative types <span class="cmp-src">Slides 25–26</span></dd>
+<dt>Etiology (cause)</dt><dd>Commonly follows a <b>retinal tear or hole</b> <span class="cmp-src">Slide 26</span></dd>
+<dt>Epidemiology (who)</dt><dd>Most common after age 50 <span class="cmp-src">Slide 26</span></dd>
+<dt>Risk Factors</dt><dd>Myopia; trauma; cataract extraction; diabetes; tumor; connective tissue diseases; family history <span class="cmp-src">Slide 26</span></dd>
+<dt>Pathology</dt><dd>Age-related shrinkage of the vitreous humor causes traction on the retina <span class="cmp-src">Slide 26</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>New flashes and floaters</b> (retinal tears); gray/black peripheral shadow, a <b>&quot;curtain or dark cloud&quot;</b> that may cover the whole field in days; sudden vision loss if the macula is involved; changes with head position <span class="cmp-src">Slide 27</span></dd>
+<dt>Diagnosis</dt><dd>Direct and dilated ophthalmoscopy: elevated gray retina with folds, pigmented well-demarcated detachment, orange crescent-shaped tears; ultrasound determines type and is more sensitive than fundoscopy <span class="cmp-src">Slides 28–29</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Emergency: refer immediately</b>; surgical repair urgently or within a week by type: laser photocoagulation, cryotherapy, pneumatic retinopexy, vitrectomy, scleral buckle <span class="cmp-src">Slide 30</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-central-retinal-vein-occlusion"><summary><span class="cmp-name">Central retinal vein occlusion</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Central retinal vein occlusion (also: CRVO) <span class="cmp-src">Slide 31</span></dd>
+<dt>Definition</dt><dd>Blockage of the main retinal vein that prevents blood from draining, causing sudden blurry vision or vision loss <span class="cmp-src">Slide 31</span></dd>
+<dt>Etiology (cause)</dt><dd>Occlusion of the central retinal vein by a <b>thrombus</b> <span class="cmp-src">Slide 32</span></dd>
+<dt>Epidemiology (who)</dt><dd>More common than central retinal artery occlusion <span class="cmp-src">Slide 32</span></dd>
+<dt>Risk Factors</dt><dd>Hypertension; diabetes; hyperlipidemia; Raynaud phenomenon; age over 50; hypercoagulable disorders; giant cell arteritis; endocarditis; atrial myxoma; obesity <span class="cmp-src">Slide 32</span></dd>
+<dt>Pathology</dt><dd>Thrombus blocks venous drainage of the entire retina; neovascularization occurs weeks to months later <span class="cmp-src">Slides 32, 34–35</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Sudden, painless vision loss</b>, sometimes gradual over days to a week; more severe than branch occlusion <span class="cmp-src">Slides 33, 35</span></dd>
+<dt>Diagnosis</dt><dd>Disc swelling, venous dilation, cotton wool spots, retinal hemorrhages: <b>&quot;blood and thunder&quot; fundus</b>; confirm with color fundus photography and fluorescein angiography; evaluate for underlying disorders <span class="cmp-src">Slide 34</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Urgent referral to ophthalmologist</b> to restore blood flow <span class="cmp-src">Slide 34</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-branch-retinal-vein-occlusion"><summary><span class="cmp-name">Branch retinal vein occlusion</span><span class="cmp-nc">6 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Branch retinal vein occlusion (also: BRVO) <span class="cmp-src">Slide 35</span></dd>
+<dt>Definition</dt><dd>Blockage of a smaller side-branch retinal vein, affecting part of the eye <span class="cmp-src">Slide 35</span></dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Occludes a branch vein rather than the main trunk, so only part of the retina is affected <span class="cmp-src">Slide 35</span></dd>
+<dt>Clinical Manifestation</dt><dd>Vision loss limited to part of the eye; less severe than central retinal vein occlusion <span class="cmp-src">Slide 35</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-central-retinal-artery-occlusion"><summary><span class="cmp-name">Central retinal artery occlusion</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Central retinal artery occlusion (also: CRAO) <span class="cmp-src">Slide 36</span></dd>
+<dt>Definition</dt><dd>Emergency that acts like a <b>stroke in the eye</b>, causing sudden, painless vision loss in one eye <span class="cmp-src">Slide 36</span></dd>
+<dt>Etiology (cause)</dt><dd>Arteriosclerosis; atherosclerosis; carotid or cardiac emboli <span class="cmp-src">Slide 37</span></dd>
+<dt>Epidemiology (who)</dt><dd>Less common than central retinal vein occlusion <span class="cmp-src">Slide 32</span></dd>
+<dt>Risk Factors</dt><dd>Hypertension; diabetes; hyperlipidemia; Raynaud phenomenon; old age; hypercoagulable disorders; giant cell arteritis; endocarditis; atrial myxoma; obesity; atrial fibrillation <span class="cmp-src">Slide 37</span></dd>
+<dt>Pathology</dt><dd>Blocked central retinal artery: <mark class="prof-highlight">&#9733; irreversible retinal damage may occur after 90 minutes</mark>; <mark class="prof-highlight">&#9733; risk of stroke increases at onset of the occlusion</mark>; neovascularization weeks to months later <span class="cmp-src">Slides 37, 39</span></dd>
+<dt>Clinical Manifestation</dt><dd>Painless, profound vision loss over seconds; acuity counting fingers to light perception; temporal &quot;island&quot; of vision; <mark class="prof-highlight">&#9733; pupil slow to direct light but brisk when the other eye is illuminated</mark> <span class="cmp-src">Slide 38</span></dd>
+<dt>Diagnosis</dt><dd><b>Pale retinal swelling with cherry-red spot at the fovea</b>; blocked arteries, segmented venous blood, emboli; color fundus photography and fluorescein angiography show absent perfusion <span class="cmp-src">Slide 39</span></dd>
+<dt>Treatment/Therapy</dt><dd>Prompt treatment: high-concentration inhaled oxygen and digital massage over the eyelid; IV (intravenous) acetazolamide to lower intraocular pressure; anterior chamber paracentesis; thrombolytic into the ophthalmic artery within 8 hours <span class="cmp-src">Slide 40</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-branch-retinal-artery-occlusion"><summary><span class="cmp-name">Branch retinal artery occlusion</span><span class="cmp-nc">5 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Branch retinal artery occlusion (also: BRAO) <span class="cmp-src">Slide 41</span></dd>
+<dt>Definition</dt><dd>Sudden, painless blockage of a smaller branch retinal artery in one eye <span class="cmp-src">Slide 41</span></dd>
+<dt>Etiology (cause)</dt><dd>Embolus or clot <span class="cmp-src">Slide 41</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Blocks a branch vessel rather than the main arterial trunk, so ischemia is localized <span class="cmp-src">Slide 41</span></dd>
+<dt>Clinical Manifestation</dt><dd>Sudden, painless, <b>partial, localized vision loss</b> in one eye (vs severe, widespread loss in central occlusion) <span class="cmp-src">Slide 41</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-papilledema"><summary><span class="cmp-name">Papilledema</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Papilledema <span class="cmp-src">Slides 42–43</span></dd>
+<dt>Definition</dt><dd>Swelling of the optic disc caused by <b>increased intracranial pressure</b> <span class="cmp-src">Slides 42–43</span></dd>
+<dt>Etiology (cause)</dt><dd>Tumor; trauma; intracranial infection; hemorrhage; vitamin A toxicity <span class="cmp-src">Slide 43</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Raised intracranial pressure swells the optic disc; acute: hemorrhages, cotton wool spots; chronic: elevated disc, blurred margins; atrophic: optic nerve axons die <span class="cmp-src">Slides 43, 45</span></dd>
+<dt>Clinical Manifestation</dt><dd>Non-specific vision changes (flickering, blurry, double vision); signs of raised intracranial pressure: nausea, vomiting, headache <span class="cmp-src">Slide 44</span></dd>
+<dt>Diagnosis</dt><dd>Ophthalmoscopy: engorged retinal veins, swollen disc, ± hemorrhages; <b>lumbar puncture: raised opening pressure</b> confirms it; MRI (magnetic resonance imaging) and/or CT (computed tomography) of the head to rule out mass lesion <span class="cmp-src">Slide 46</span></dd>
+<dt>Treatment/Therapy</dt><dd>Treat the underlying disorder <span class="cmp-src">Slide 46</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-non-arteritic-anterior-ischemic-optic-neuropathy"><summary><span class="cmp-name">Non-arteritic anterior ischemic optic neuropathy</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Non-arteritic anterior ischemic optic neuropathy (also: NAION) <span class="cmp-src">Slides 47–48</span></dd>
+<dt>Definition</dt><dd>Sudden loss of blood flow to the front of the optic nerve (optic disc) causing rapid, painless vision loss; the non-arteritic type <span class="cmp-src">Slides 47–48</span></dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd><b>90–95% of cases</b>; age 40–60 <span class="cmp-src">Slide 48</span></dd>
+<dt>Risk Factors</dt><dd>Small, crowded optic disc (<b>&quot;disc at risk&quot;</b>); hypertension; diabetes; high cholesterol; sleep apnea <span class="cmp-src">Slides 48, 52</span></dd>
+<dt>Pathology</dt><dd>Optic disc ischemia; optic nerve edema resolves within 8 weeks, leaving atrophy <span class="cmp-src">Slides 47, 52</span></dd>
+<dt>Clinical Manifestation</dt><dd>Sudden, painless loss of side or central vision; swollen, pale optic nerve head; usually one eye first, the other at risk; mild visual improvement in some over months <span class="cmp-src">Slides 50, 52</span></dd>
+<dt>Diagnosis</dt><dd><b>Diagnosis of exclusion</b>: same workup as arteritic to exclude giant cell arteritis; medical evaluation (hypertension, diabetes, anemia); neuroimaging if unclear <span class="cmp-src">Slide 52</span></dd>
+<dt>Treatment/Therapy</dt><dd>Observation and cardiovascular risk factor modification; consider avoiding bedtime antihypertensives (nocturnal hypotension); counsel on risk to the other eye <span class="cmp-src">Slide 52</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l12-arteritic-anterior-ischemic-optic-neuropathy"><summary><span class="cmp-name">Arteritic anterior ischemic optic neuropathy</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Arteritic anterior ischemic optic neuropathy (also: AAION; giant cell (temporal) arteritis) <span class="cmp-src">Slides 47, 49</span></dd>
+<dt>Definition</dt><dd>Sudden loss of blood flow to the front of the optic nerve from giant cell arteritis; <b>medical emergency</b> to prevent vision loss in the other eye <span class="cmp-src">Slides 47, 49</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Giant cell arteritis</b> (temporal arteritis), an inflammation of blood vessels <span class="cmp-src">Slide 49</span></dd>
+<dt>Epidemiology (who)</dt><dd>Age 55 and older <span class="cmp-src">Slide 49</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Arteritic inflammation cuts blood flow to the optic disc; biopsy shows thickening of the media and endothelium <span class="cmp-src">Slides 47, 49, 51</span></dd>
+<dt>Clinical Manifestation</dt><dd>Sudden, painless vision loss; swollen, pale optic nerve head; one eye first; systemic: malaise, weight loss, fever, temporal/occipital headache, <b>scalp tenderness</b> (hair combing), <b>jaw claudication</b> (pain with chewing) <span class="cmp-src">Slides 49–50</span></dd>
+<dt>Diagnosis</dt><dd>ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein); <b>temporal artery biopsy is the gold standard</b> (may wait up to 1 week after starting steroids); color Doppler ultrasound may be suggestive <span class="cmp-src">Slide 51</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer emergently any patient over 50 with sudden vision loss; <b>early IV (intravenous) methylprednisolone</b> x3 days, then slow oral taper for 6–12+ months; famotidine for ulcer prophylaxis; tocilizumab as steroid-sparing option; osteoporosis prevention <span class="cmp-src">Slide 51</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+</section>
+<section class="deck" id="l13">
+<h2 class="deck-title">Lecture 13 &middot; Chronic Vision Loss and Tumors of the Eye</h2>
+<p class="lecturer">Valerie Beck, DMSc, PA-C &middot; 15 conditions &middot; source: Chronic Vision Loss &amp; Tumors - Dr Rappa.pptx</p>
+<details class="cmp-card" id="l13-idiopathic-intracranial-hypertension"><summary><span class="cmp-name">Idiopathic intracranial hypertension</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Idiopathic intracranial hypertension (also: pseudotumor cerebri) <span class="cmp-src">Slides 4–5</span></dd>
+<dt>Definition</dt><dd>Elevated intracranial pressure (<b>elevated lumbar puncture opening pressure</b>) of idiopathic cause; also called pseudotumor cerebri. <span class="cmp-src">Slides 4–5</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Idiopathic</b>. <span class="cmp-src">Slide 4</span></dd>
+<dt>Epidemiology (who)</dt><dd>Primarily <b>overweight females of childbearing age</b>. <span class="cmp-src">Slide 4</span></dd>
+<dt>Risk Factors</dt><dd>Overweight; obesity-related metabolic syndrome is often associated. <span class="cmp-src">Slides 4, 6</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Intractable headaches of variable features · transient visual loss · pulsatile tinnitus (intracranial noises) · pain behind the eyes · mild pain with eye movement or globe compression · signs: <mark class="prof-highlight">&#9733; papilledema</mark>, visual field loss, abducens (sixth cranial nerve) palsy. <span class="cmp-src">Slide 4</span></dd>
+<dt>Diagnosis</dt><dd>MRI (magnetic resonance imaging) of brain with and without contrast plus magnetic resonance venography (rules out cerebral venous sinus thrombosis) · lumbar puncture: <b>elevated opening pressure</b> · systemic blood pressure · ophthalmology: perimetry, dilated fundoscopy, optic nerve photography. <span class="cmp-src">Slides 5–6</span></dd>
+<dt>Treatment/Therapy</dt><dd>Start <b>acetazolamide</b> promptly + weight reduction program with a dietitian; followed by ophthalmology and neurology · failure/intolerance of medical therapy: surgical cerebrospinal fluid diversion (optic nerve sheath fenestration or ventriculoperitoneal shunt). <span class="cmp-src">Slide 5</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-primary-openangle-glaucoma"><summary><span class="cmp-name">Primary open-angle glaucoma</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Primary open-angle glaucoma <span class="cmp-src">Slide 8</span></dd>
+<dt>Definition</dt><dd>The most common form of glaucoma: progressive optic nerve damage and visual field loss, typically with normal (open) anterior chamber angles and elevated intraocular pressure. <span class="cmp-src">Slide 8</span></dd>
+<dt>Etiology (cause)</dt><dd>Optic nerve damage from elevated intraocular pressure; &quot;primary&quot; = no known secondary cause of open-angle glaucoma. <span class="cmp-src">Slides 9, 40</span></dd>
+<dt>Epidemiology (who)</dt><dd>Adult onset; many patients do not know they have it. <span class="cmp-src">Slide 9</span></dd>
+<dt>Risk Factors</dt><dd><b>Elevated intraocular pressure</b> · age · race · family history of glaucoma. <span class="cmp-src">Slide 8</span></dd>
+<dt>Pathology</dt><dd>Open angle at the trabecular meshwork (versus closed in angle-closure) · excavation (cupping) of the optic nerve: cup-to-disc ratio 0.2 normal, 0.7 to 0.99 in glaucoma. <span class="cmp-src">Slides 7–8</span></dd>
+<dt>Clinical Manifestation</dt><dd>Often asymptomatic at onset, then slowly progressive, <b>painless</b> vision loss · peripheral loss with <mark class="prof-highlight">&#9733; central acuity initially spared</mark> · optic cupping, characteristic field loss on perimetry, may have elevated intraocular pressure. <span class="cmp-src">Slides 8, 40</span></dd>
+<dt>Diagnosis</dt><dd><b>Annual ophthalmology exam</b> · optic nerve damage on fundoscopy and/or perimetry, adult onset, normal-appearing angles on gonioscopy, no secondary cause. <span class="cmp-src">Slide 9</span></dd>
+<dt>Treatment/Therapy</dt><dd>Goal: preserve vision · eyedrops that lower pressure by reducing aqueous production or increasing outflow: beta blockers (timolol), alpha-2 agonists (brimonidine), carbonic anhydrase inhibitors (dorzolamide), prostaglandin analogs (latanoprost) · laser trabeculoplasty · surgery · damage is irreversible, but treatment preserves vision. <span class="cmp-src">Slide 9</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-age-related-macular-degeneration"><summary><span class="cmp-name">Age-related macular degeneration</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Age-related macular degeneration (also: dry (nonexudative) and wet (exudative)) <span class="cmp-src">Slides 11–12, 40</span></dd>
+<dt>Definition</dt><dd>Degeneration of the central retina (macula), in a dry (nonexudative) and a wet (exudative) form; dry can become wet. <span class="cmp-src">Slides 11–12, 40</span></dd>
+<dt>Etiology (cause)</dt><dd>Exact cause unknown; multifactorial. <span class="cmp-src">Slide 11</span></dd>
+<dt>Epidemiology (who)</dt><dd><b>80% dry, 20% wet</b>. <span class="cmp-src">Slide 11</span></dd>
+<dt>Risk Factors</dt><dd>Age · <b>cigarette smoking</b> · genetics possible (research ongoing). <span class="cmp-src">Slide 11</span></dd>
+<dt>Pathology</dt><dd>Dry: soft and hard drusen, pigment clumping, geographic atrophy (waste products collect under the macula) · wet: choroidal neovascularization grows behind the retina and bleeds into it, then forms a disciform scar. <span class="cmp-src">Slides 11–13</span></dd>
+<dt>Clinical Manifestation</dt><dd>Blurred vision · <b>central scotoma</b> · metamorphopsia (visual distortion) · wet: swelling, bleeding, scarring with rapid vision change and central vision loss; lens stays clear. <span class="cmp-src">Slides 11–12, 40</span></dd>
+<dt>Diagnosis</dt><dd>Dry: Amsler grid for home monitoring + serial slit lamp exams · wet: the same plus fluorescein angiography and optical coherence tomography. <span class="cmp-src">Slide 14</span></dd>
+<dt>Treatment/Therapy</dt><dd><mark class="prof-highlight">&#9733; STOP SMOKING</mark> · dry: AREDS2 (Age-Related Eye Disease Study 2) formula: high-dose vitamins C and E, zinc, copper, lutein, zeaxanthin (no beta carotene: lung cancer risk in smokers) · wet: intravitreal anti-VEGF (vascular endothelial growth factor) injection, thermal laser photocoagulation, photodynamic therapy · slows but does not reverse loss. <span class="cmp-src">Slide 14</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-myopia"><summary><span class="cmp-name">Myopia</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Myopia (also: nearsightedness) <span class="cmp-src">Slide 18</span></dd>
+<dt>Definition</dt><dd>Refractive error with excessive refractive power: distant objects focus <b>in front of the retina</b>. <span class="cmp-src">Slide 18</span></dd>
+<dt>Etiology (cause)</dt><dd>&quot;Long eyeball&quot;, generally from an overly protruding cornea. <span class="cmp-src">Slide 18</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Family history (genetic) · prolonged periods of reading · ocular trauma displacing the lens forward. <span class="cmp-src">Slide 18</span></dd>
+<dt>Pathology</dt><dd>Excess refractive power places the focal point anterior to the retina. <span class="cmp-src">Slide 18</span></dd>
+<dt>Clinical Manifestation</dt><dd>Reduced clarity of distance vision (refractive error is the most common cause of reduced visual acuity); blur improves with corrective lenses. <span class="cmp-src">Slides 17–18, 40</span></dd>
+<dt>Diagnosis</dt><dd>Snellen chart in primary care · <b>pinhole occluder</b> overcomes most refractive errors · confirmed by an optometrist with a phoropter. <span class="cmp-src">Slide 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer suspected isolated refractive error to an <b>optometrist</b> · <b>concave</b> spherical lens (negative diopter) scatters light and moves focus back onto the retina · first line: spectacles, contact lenses, laser refractive surgery. <span class="cmp-src">Slides 17–18</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-hyperopia"><summary><span class="cmp-name">Hyperopia</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Hyperopia (also: farsightedness) <span class="cmp-src">Slide 19</span></dd>
+<dt>Definition</dt><dd>Refractive error with insufficient refractive power: distant objects focus <b>behind the retina</b>. <span class="cmp-src">Slide 19</span></dd>
+<dt>Etiology (cause)</dt><dd>&quot;Short eyeball&quot;, generally from a flat cornea. <span class="cmp-src">Slide 19</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Anything that shortens the eye&#x27;s axial length: ocular trauma displacing the lens backward, mass effect of an orbital tumor behind the retina. <span class="cmp-src">Slide 19</span></dd>
+<dt>Pathology</dt><dd>Insufficient refractive power places the focal point posterior to the retina. <span class="cmp-src">Slide 19</span></dd>
+<dt>Clinical Manifestation</dt><dd>Reduced clarity of vision (refractive error is the most common cause of reduced visual acuity); blur improves with corrective lenses. <span class="cmp-src">Slides 17, 40</span></dd>
+<dt>Diagnosis</dt><dd>Snellen chart in primary care · <b>pinhole occluder</b> overcomes most refractive errors · confirmed by an optometrist with a phoropter. <span class="cmp-src">Slide 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer suspected isolated refractive error to an <b>optometrist</b> · <b>convex</b> spherical lens (positive diopter) converges light and moves focus forward onto the retina · first line: spectacles, contact lenses, laser refractive surgery. <span class="cmp-src">Slides 17, 19</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-astigmatism"><summary><span class="cmp-name">Astigmatism</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Astigmatism <span class="cmp-src">Slide 20</span></dd>
+<dt>Definition</dt><dd>Refractive error with uneven curvature of the cornea or lens, so no point focus forms on the retina: <b>multiple focal points</b>. <span class="cmp-src">Slide 20</span></dd>
+<dt>Etiology (cause)</dt><dd>Uneven (oval) curvature of the cornea or lens. <span class="cmp-src">Slide 20</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Largely unknown; possibly genetic or developmental. <span class="cmp-src">Slide 20</span></dd>
+<dt>Pathology</dt><dd>Oval-shaped cornea produces multiple focal points instead of one. <span class="cmp-src">Slide 20</span></dd>
+<dt>Clinical Manifestation</dt><dd>Blurry image; blur improves with corrective lenses. <span class="cmp-src">Slides 20, 40</span></dd>
+<dt>Diagnosis</dt><dd>Snellen chart in primary care · <b>pinhole occluder</b> overcomes most refractive errors · confirmed by an optometrist with a phoropter. <span class="cmp-src">Slide 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer suspected isolated refractive error to an <b>optometrist</b> · corrected with a <b>toric lens</b> · first line: spectacles, contact lenses, laser refractive surgery. <span class="cmp-src">Slides 17, 20</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-presbyopia"><summary><span class="cmp-name">Presbyopia</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Presbyopia <span class="cmp-src">Slide 21</span></dd>
+<dt>Definition</dt><dd><b>Not a refractive error</b>: age-related loss of the lens&#x27;s normal accommodation for near vision. <span class="cmp-src">Slide 21</span></dd>
+<dt>Etiology (cause)</dt><dd>With age the lens grows larger, thicker and much less elastic, so it can no longer round up when the zonular fibers loosen. <span class="cmp-src">Slide 21</span></dd>
+<dt>Epidemiology (who)</dt><dd>Starts around <b>age 45</b>; essentially zero accommodation by age 65 to 70. <span class="cmp-src">Slide 21</span></dd>
+<dt>Risk Factors</dt><dd>Increasing age. <span class="cmp-src">Slide 21</span></dd>
+<dt>Pathology</dt><dd>Lost ability to increase focusing power at reading distance, so the near image focuses behind the retina. <span class="cmp-src">Slide 21</span></dd>
+<dt>Clinical Manifestation</dt><dd>Cannot focus on objects at arm&#x27;s length or closer. <span class="cmp-src">Slide 21</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Convex lens</b> for near only: a half-glass, or the bottom part of bifocals if distance correction is also needed. <span class="cmp-src">Slide 21</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-strabismus"><summary><span class="cmp-name">Strabismus</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Strabismus <span class="cmp-src">Slides 25, 30</span></dd>
+<dt>Definition</dt><dd>Misalignment of the eyes: esotropia (in), exotropia (out), hypertropia (up), hypotropia (down). <span class="cmp-src">Slides 25, 30</span></dd>
+<dt>Etiology (cause)</dt><dd>Many causes: disorder of the brain, cranial nerves, neuromuscular junction or extraocular muscles · children: congenital (infantile esotropia, Duane, Mobius, Brown syndromes) or acquired (accommodative esotropia, sensory esotropia from cataract, tumors, thyroid eye disease, myasthenia gravis, raised intracranial pressure). <span class="cmp-src">Slides 25, 27</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Down syndrome (higher prevalence of esotropia) · cerebral palsy · thyroid eye disease (restrictive, muscle inflammation). <span class="cmp-src">Slide 29</span></dd>
+<dt>Pathology</dt><dd>Neurologic causes include cranial nerve palsies: third (ptosis, pupil involvement, exotropia with vertical deviation), fourth (vertical diplopia worse on downgaze), sixth (horizontal diplopia, esotropia). <span class="cmp-src">Slides 25, 29</span></dd>
+<dt>Clinical Manifestation</dt><dd>Adult: <b>diplopia that disappears when either eye is covered</b> · one eye fails to track, fixate or move fully in a gaze direction · complications: amblyopia (up to 50% of younger children), diplopia (acquired, age 4+), extraocular muscle contracture. <span class="cmp-src">Slides 25, 28</span></dd>
+<dt>Diagnosis</dt><dd>History, pattern of misalignment, associated findings · confirm with the <b>cover test</b> (elicits fixation movement of the misaligned eye) · displaced corneal light reflex in moderate to large deviations. <span class="cmp-src">Slides 25, 28</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Refer to ophthalmology at any age</b> for comprehensive exam; prognosis depends on the underlying cause. <span class="cmp-src">Slide 28</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-amblyopia"><summary><span class="cmp-name">Amblyopia</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Amblyopia (also: lazy eye) <span class="cmp-src">Slide 33</span></dd>
+<dt>Definition</dt><dd>Developmental vision disorder: one eye fails to reach normal acuity <b>even with glasses or contact lenses</b>. <span class="cmp-src">Slide 33</span></dd>
+<dt>Etiology (cause)</dt><dd>Abnormal early visual development; the brain favors one eye · causes: <b>strabismus</b> (most common), anisometropia (large prescription difference between eyes; seen with eyelid hemangioma, congenital ptosis), deprivation (cataract, ptosis, corneal opacity). <span class="cmp-src">Slides 30, 33</span></dd>
+<dt>Epidemiology (who)</dt><dd><mark class="prof-highlight">&#9733; The most common cause of vision loss in children</mark>; up to 3 to 5% of children. <span class="cmp-src">Slide 33</span></dd>
+<dt>Risk Factors</dt><dd>Strabismus (up to 50% of younger children with strabismus develop amblyopia) · significant refractive difference between eyes · congenital ptosis, cataract. <span class="cmp-src">Slides 28, 30, 33</span></dd>
+<dt>Pathology</dt><dd>Brain ignores input from the weaker eye, which develops poor vision; unequal vision develops in the first decade. <span class="cmp-src">Slides 30, 33</span></dd>
+<dt>Clinical Manifestation</dt><dd>Usually the same signs as strabismus · unequal vision between the eyes · occlusion objection: child unbothered when the amblyopic eye is covered, fussy when the good eye is covered. <span class="cmp-src">Slides 30, 32</span></dd>
+<dt>Diagnosis</dt><dd>Screen all children under 5 (USPSTF (US Preventive Services Task Force), American Academy of Pediatrics) · preverbal: fixation reflex, occlusion objection, vertical prism tests · verbal (usually over 3): optotypes; unilateral = 2 or more lines difference. <span class="cmp-src">Slides 30–32</span></dd>
+<dt>Treatment/Therapy</dt><dd>Refer all to ophthalmology · <b>patch the good eye</b> (or dilate it with atropine drops) · outcome good for most if treated before age 7, though many do not reach normal vision; better if started under age 5, with better baseline acuity and good compliance. <span class="cmp-src">Slide 34</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-cataract"><summary><span class="cmp-name">Cataract</span><span class="cmp-star">&#9733; Professor emphasized</span><span class="cmp-nc">1 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Cataract (also: acquired and pediatric (congenital)) <span class="cmp-src">Slide 36</span></dd>
+<dt>Definition</dt><dd>Lens proteins break down and clump, <b>clouding the lens</b> and impairing vision; most develop slowly and are age-related. <span class="cmp-src">Slide 36</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Aging</b> (most common overall) · secondary to other eye disease · trauma · medications · systemic disease · pediatric: most commonly idiopathic. <span class="cmp-src">Slide 36</span></dd>
+<dt>Epidemiology (who)</dt><dd>Mostly age-related · posterior subcapsular: <mark class="prof-highlight">&#9733; more rapid onset, classically under 50</mark>. <span class="cmp-src">Slides 36–37</span></dd>
+<dt>Risk Factors</dt><dd>Diabetes · corticosteroid use · cigarette smoking · UV (ultraviolet) exposure. <span class="cmp-src">Slide 36</span></dd>
+<dt>Pathology</dt><dd>Acquired: nuclear (central yellow-brown), posterior subcapsular (plaque near back of lens), cortical (peripheral spoke-like) · pediatric: <mark class="prof-highlight">&#9733; zonular is the most common</mark>, polar, nuclear, posterior lenticonus. <span class="cmp-src">Slides 37–38</span></dd>
+<dt>Clinical Manifestation</dt><dd>Slowly progressive blur, <b>glare</b> (bright sun, night headlights) · nuclear: myopic shift, distance worse than near · posterior subcapsular: trouble reading · pediatric: inattentive if bilateral, smaller eye, nystagmus · <mark class="prof-highlight">&#9733; a cataract alone does NOT cause a relative afferent pupillary defect</mark>. <span class="cmp-src">Slides 36–37</span></dd>
+<dt>Diagnosis</dt><dd>Early: slit lamp exam · advanced: <b>loss of red reflex</b> on ophthalmoscopy, leukocoria (white pupil) · non-urgent ophthalmology referral for slit lamp and dilated fundoscopy (urgent if secondary uveitis or glaucoma). <span class="cmp-src">Slides 36, 39</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Surgery only</b> (extraction with lens implant), deferred until it impairs daily activities unless neonatal (amblyopia risk) or it hinders or causes other eye disease · full visual recovery in 99% · declines surgery: trial of mydriasis (cyclopentolate), annual review · posterior capsule opacification after surgery: YAG (yttrium aluminum garnet) laser. <span class="cmp-src">Slide 39</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-retinoblastoma"><summary><span class="cmp-name">Retinoblastoma</span><span class="cmp-star">&#9733; Professor emphasized</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Retinoblastoma <span class="cmp-src">Slide 41</span></dd>
+<dt>Definition</dt><dd>Rare eye cancer, primarily of <b>young children</b>, developing in the retina. <span class="cmp-src">Slide 41</span></dd>
+<dt>Etiology (cause)</dt><dd>Caused by a mutation. <span class="cmp-src">Slide 41</span></dd>
+<dt>Epidemiology (who)</dt><dd>Primarily young children; rare in adults. <span class="cmp-src">Slides 41, 47</span></dd>
+<dt>Risk Factors</dt><dd><b>Family history</b>. <span class="cmp-src">Slide 41</span></dd>
+<dt>Pathology</dt><dd>Unilateral or bilateral retinal tumor; calcifications on imaging; metastasis usually within 1 year of diagnosis. <span class="cmp-src">Slides 41–42, 47</span></dd>
+<dt>Clinical Manifestation</dt><dd>Poor vision or strabismus · <mark class="prof-highlight">&#9733; leukocoria</mark> if the tumor is large and near the back of the lens · smaller tumors seen only on ophthalmoscopy. <span class="cmp-src">Slide 41</span></dd>
+<dt>Diagnosis</dt><dd>Screen red reflex and alignment; refer suspected cases within weeks (family history: within the first 8 weeks of life, exam under anesthesia) · dilated ophthalmoscopy + imaging · <b>biopsy contraindicated</b> (tumor seeding). <span class="cmp-src">Slide 42</span></dd>
+<dt>Treatment/Therapy</dt><dd>Ocular oncologist: multimodal therapy, or enucleation if very large · genetic counseling · best outcomes with early diagnosis, small tumors, no metastasis. <span class="cmp-src">Slide 42</span></dd>
+<dt>Mortality &#9733;</dt><dd>Death nearly <b>100% if untreated</b>; treated 5-year survival over 95%; no recurrence 5 years after diagnosis = cured. <span class="cmp-src">Slide 42</span></dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-uveal-melanoma"><summary><span class="cmp-name">Primary uveal melanoma</span><span class="cmp-star">&#9733; Professor emphasized</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Primary uveal melanoma (also: includes iris, ciliary body and choroidal melanoma) <span class="cmp-src">Slide 45</span></dd>
+<dt>Definition</dt><dd><mark class="prof-highlight">&#9733; The most common eye cancer in adults</mark>, arising from melanocytes of the uveal tract (choroid, ciliary body or iris). <span class="cmp-src">Slide 45</span></dd>
+<dt>Etiology (cause)</dt><dd>Melanocytes of the uvea; distinct from cutaneous and conjunctival melanoma. <span class="cmp-src">Slide 45</span></dd>
+<dt>Epidemiology (who)</dt><dd>Adults. <span class="cmp-src">Slide 45</span></dd>
+<dt>Risk Factors</dt><dd>Cutaneous or <b>iris nevi</b> · cutaneous freckles · ocular melanocytosis. <span class="cmp-src">Slides 45, 50, 54</span></dd>
+<dt>Pathology</dt><dd>Melanotic or amelanotic; iris (anterior uvea), ciliary body or choroid (posterior uvea); ciliary body tumors may show a sentinel vessel and extrascleral extension. <span class="cmp-src">Slide 44</span></dd>
+<dt>Clinical Manifestation</dt><dd>Usually <b>asymptomatic</b>, found on routine surveillance · iris melanoma: slow-growing dark brown or translucent mass, usually inferior, unilateral, over 3 mm base and 1 mm deep, prominent feeder vessel, corectopia (pupil pulled out of shape). <span class="cmp-src">Slides 45, 50</span></dd>
+<dt>Diagnosis</dt><dd>Refer to ophthalmology for fundoscopy and testing (ocular oncologist) · clinical diagnosis: history, exam, imaging · FNA (fine needle aspiration) biopsy for molecular prognostic testing · differential: iris nevus, congenital heterochromia. <span class="cmp-src">Slides 45–46</span></dd>
+<dt>Treatment/Therapy</dt><dd>Most common treatment: <b>radiation therapy</b>; surgical resection now less common; local treatment effective. <span class="cmp-src">Slide 46</span></dd>
+<dt>Mortality &#9733;</dt><dd>High metastatic risk, often present at diagnosis; <mark class="prof-highlight">&#9733; liver is the most common site</mark> · <b>10-year mortality 32%</b>; iris melanoma far better (about 4 to 10%). <span class="cmp-src">Slide 46</span></dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-iris-nevus"><summary><span class="cmp-name">Iris nevus</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Iris nevus (also: nevus of the iris) <span class="cmp-src">Slide 48</span></dd>
+<dt>Definition</dt><dd>Small, pigmented, <b>benign</b> spot on the iris; typically harmless. <span class="cmp-src">Slide 48</span></dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd>Often clinically apparent around <b>puberty</b>. <span class="cmp-src">Slide 48</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Pigmented or nonpigmented; typically does not grow; usually not vascular; low risk of transformation to melanoma. <span class="cmp-src">Slides 48–49</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Asymptomatic</b> · usually inferior half of iris · flat or minimally elevated (under 1 mm), uncommonly over 3 mm · may cause corectopia (pupil pulled out of shape) or iris ectropion (iris pigment epithelium on the anterior iris surface). <span class="cmp-src">Slides 48–49</span></dd>
+<dt>Diagnosis</dt><dd>Refer to ophthalmology to rule out melanoma · ABCDEF growth predictors: <b>A</b>ge 40 or under, <b>B</b>lood in anterior chamber, <b>C</b>lock-hour inferior, <b>D</b>iffuse, <b>E</b>ctropion, <b>F</b>eathery margins. <span class="cmp-src">Slides 49, 51</span></dd>
+<dt>Treatment/Therapy</dt><dd>Ophthalmology surveillance, more frequent at first, then <b>annual with dilated fundoscopy</b> · ocular oncologist for concerning lesions. <span class="cmp-src">Slide 49</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-conjunctival-melanoma"><summary><span class="cmp-name">Conjunctival melanoma</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Conjunctival melanoma <span class="cmp-src">Slide 52</span></dd>
+<dt>Definition</dt><dd>Rare but potentially fatal eye cancer of the <b>conjunctiva</b>. <span class="cmp-src">Slide 52</span></dd>
+<dt>Etiology (cause)</dt><dd>More similar to cutaneous and mucosal melanoma than to uveal melanoma. <span class="cmp-src">Slides 45, 52</span></dd>
+<dt>Epidemiology (who)</dt><dd>Typically <b>middle-aged to elderly</b> patients. <span class="cmp-src">Slide 52</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Usually <b>asymptomatic</b>, found on routine surveillance · nodular, well-vascularized, dark brown or translucent conjunctival mass · prominent conjunctival <b>feeder vessel</b>. <span class="cmp-src">Slide 52</span></dd>
+<dt>Diagnosis</dt><dd>Refer to ophthalmology (ocular oncologist) · clinical diagnosis: history, exam, imaging · wide excisional biopsy · differential: conjunctival nevus (stable, cysts, well-defined borders), primary acquired melanosis. <span class="cmp-src">Slides 52–54</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Wide excision</b> (orbital exenteration if advanced) + adjunctive radiation · sentinel lymph node biopsy to detect early metastasis. <span class="cmp-src">Slide 53</span></dd>
+<dt>Mortality &#9733;</dt><dd>Potentially fatal; <b>10-year mortality 39%</b>. <span class="cmp-src">Slides 52–53</span></dd>
+</dl>
+</details>
+<details class="cmp-card" id="l13-squamous-cell-carcinoma"><summary><span class="cmp-name">Squamous cell carcinoma</span><span class="cmp-nc">7 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Squamous cell carcinoma <span class="cmp-src">Slide 55</span></dd>
+<dt>Definition</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Non-pigmented lesion that may appear <b>gelatinous or leukoplakic</b> (white patch). <span class="cmp-src">Slide 55</span></dd>
+<dt>Diagnosis</dt><dd>Can be mistaken for <b>amelanotic melanoma</b>. <span class="cmp-src">Slide 55</span></dd>
+<dt>Treatment/Therapy</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+</section>
+<section class="deck" id="l14">
+<h2 class="deck-title">Lecture 14 &middot; Ocular Trauma</h2>
+<p class="lecturer">Chand Shah, MPAS, PA-C &middot; 14 conditions &middot; source: CMS I Ocular Trauma - Shah Fallsv.pptx</p>
+<details class="cmp-card" id="l14-openglobe-injury"><summary><span class="cmp-name">Open globe injury</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Open globe injury <span class="cmp-src">Slide 14</span></dd>
+<dt>Definition</dt><dd>Ocular injury with a <b>full-thickness defect in the cornea and/or sclera</b>; divided into full-thickness eye wall laceration and globe rupture <span class="cmp-src">Slide 14</span></dd>
+<dt>Etiology (cause)</dt><dd>Sharp object or high-velocity projectile (eye wall laceration) or severe blunt trauma (globe rupture) <span class="cmp-src">Slides 14–15, 17</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Intraocular compartments are exposed to the external environment <span class="cmp-src">Slide 14</span></dd>
+<dt>Clinical Manifestation</dt><dd>Pupil distorted (usually toward the wound); flat anterior chamber; extruding uveal tissue; massive hemorrhagic chemosis; <b>soft eye</b>; deep eyelid laceration; intraocular blood (hyphema, vitreous hemorrhage) <span class="cmp-src">Slide 14</span></dd>
+<dt>Diagnosis</dt><dd>CT (computed tomography) without contrast for eye penetration; with metal or organic penetration: CT of the orbit, <b>no MRI (magnetic resonance imaging)</b>; never dilate the eye when trauma is suspected <span class="cmp-src">Slide 6</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Tape a protective shield</b> over the eye and consult ophthalmology immediately; antiemetic, analgesics, tetanus vaccine; do not remove a penetrating object; immediate surgical repair <span class="cmp-src">Slides 6, 17</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-full-thickness-eye-wall-laceration"><summary><span class="cmp-name">Full-thickness eye wall laceration</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Full-thickness eye wall laceration <span class="cmp-src">Slide 15</span></dd>
+<dt>Definition</dt><dd>Open globe injury that cuts completely through the cornea, sclera, or both <span class="cmp-src">Slide 15</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Sharp object or high-velocity projectile</b> (e.g., fishing hook, knife) <span class="cmp-src">Slide 15</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Object may be withdrawn/extruded before evaluation, retained in the wound, or pass through (entry and exit wound); cut lens capsule makes the lens hydrated, edematous, opaque; lens fragments in the anterior chamber cause inflammation <span class="cmp-src">Slides 15–16</span></dd>
+<dt>Clinical Manifestation</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Diagnosis</dt><dd>Fundoscopic exam, always checking the anterior compartments <span class="cmp-src">Slide 16</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Lensectomy</b> required but may be delayed past globe repair (to treat hyphema/inflammation and plan intraocular lens placement); leave posterior-segment foreign bodies alone at initial evaluation <span class="cmp-src">Slide 16</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-globe-rupture"><summary><span class="cmp-name">Globe rupture</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Globe rupture <span class="cmp-src">Slide 17</span></dd>
+<dt>Definition</dt><dd>Splitting or tearing of the cornea and/or sclera at a weak point <span class="cmp-src">Slide 17</span></dd>
+<dt>Etiology (cause)</dt><dd><b>Severe blunt ocular trauma</b> (e.g., car airbag, fist, baseball) <span class="cmp-src">Slide 17</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Common sites: posterior to the extraocular muscles (especially superonasal quadrant), along prior intraocular surgery incisions, lamina cribrosa <span class="cmp-src">Slide 17</span></dd>
+<dt>Clinical Manifestation</dt><dd>Suspect with any blunt trauma causing <b>massive hemorrhagic chemosis or a soft eye</b> <span class="cmp-src">Slide 17</span></dd>
+<dt>Diagnosis</dt><dd>CT (computed tomography) may be done to rule out a foreign object <span class="cmp-src">Slide 17</span></dd>
+<dt>Treatment/Therapy</dt><dd>Protective shield taped over the eye and <b>immediate ophthalmology consult</b>; antiemetic, analgesics, tetanus vaccine; <b>immediate surgical repair</b> (wound exploration and repair) <span class="cmp-src">Slide 17</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-corneal-abrasion"><summary><span class="cmp-name">Corneal abrasion</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Corneal abrasion <span class="cmp-src">Slide 18</span></dd>
+<dt>Definition</dt><dd>Scratching or scraping away of some of the corneal epithelium <span class="cmp-src">Slide 18</span></dd>
+<dt>Etiology (cause)</dt><dd>Injury such as a fingernail or contact lens manipulation <span class="cmp-src">Slide 18</span></dd>
+<dt>Epidemiology (who)</dt><dd>One of the most common ophthalmic injuries <span class="cmp-src">Slide 18</span></dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Loss of epithelium exposes the basement membrane, which takes up fluorescein <span class="cmp-src">Slide 18</span></dd>
+<dt>Clinical Manifestation</dt><dd>Severe foreign body sensation, tearing, light sensitivity, blurred vision <span class="cmp-src">Slide 18</span></dd>
+<dt>Diagnosis</dt><dd><b>Slit-lamp exam with fluorescein</b> (stains the exposed basement membrane) shows the extent <span class="cmp-src">Slide 18</span></dd>
+<dt>Treatment/Therapy</dt><dd>Topical broad-spectrum antibacterial: erythromycin ointment (no contact lens, or organic source); ciprofloxacin, ofloxacin or tobramycin (contact lens wear); patching may ease pain; periodic re-exam; <b>never prescribe topical anesthetic drops</b> (delay healing, mask worsening, cause corneal ulcer) <span class="cmp-src">Slides 18, 20</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-corneal-conjunctival-foreign-body"><summary><span class="cmp-name">Corneal/conjunctival foreign body</span><span class="cmp-nc">3 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Corneal/conjunctival foreign body <span class="cmp-src">Slide 21</span></dd>
+<dt>Definition</dt><dd>Object with too little momentum to pass through the eye wall becomes embedded in the cornea or conjunctiva <span class="cmp-src">Slide 21</span></dd>
+<dt>Etiology (cause)</dt><dd>History of <b>grinding or striking metal</b> <span class="cmp-src">Slide 21</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Iron or copper foreign bodies leave a <b>rust ring</b> <span class="cmp-src">Slide 22</span></dd>
+<dt>Clinical Manifestation</dt><dd>Foreign body sensation, light sensitivity, excessive tearing <span class="cmp-src">Slide 21</span></dd>
+<dt>Diagnosis</dt><dd>Slit lamp shows small bodies; larger ones visible on diffuse light exam; <b>linear vertical corneal epithelial defects</b> mean a foreign body under the upper lid (tarsal conjunctiva): evert the lid promptly <span class="cmp-src">Slide 21</span></dd>
+<dt>Treatment/Therapy</dt><dd>Topical anesthetic, slit-lamp exam, remove with sterile 27-gauge needle (upper-lid body: cotton-tipped applicator); rust ring: battery-operated burr drill; antibiotics + abrasion care; ophthalmology if it may have passed through the cornea <span class="cmp-src">Slides 21–22</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-hyphema"><summary><span class="cmp-name">Hyphema</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Hyphema <span class="cmp-src">Slide 24</span></dd>
+<dt>Definition</dt><dd>Hemorrhage/blood in the <b>anterior chamber</b> from trauma injuring its blood vessels <span class="cmp-src">Slide 24</span></dd>
+<dt>Etiology (cause)</dt><dd>Blunt or penetrating trauma <span class="cmp-src">Slide 24</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd>Sickle cell anemia and aspirin/antiplatelet drugs raise the risk of secondary hemorrhage <span class="cmp-src">Slide 25</span></dd>
+<dt>Pathology</dt><dd>High risk of <b>secondary hemorrhage</b> causing permanent visual loss; most rebleeding occurs in the <b>first 72 hours</b> <span class="cmp-src">Slide 25</span></dd>
+<dt>Clinical Manifestation</dt><dd>Blurred vision, eye pain, light sensitivity; can be a sign of open globe <span class="cmp-src">Slide 24</span></dd>
+<dt>Diagnosis</dt><dd>Diffuse light exam (gross hyphema), slit lamp, comprehensive ophthalmic exam; measure IOP (intraocular pressure) unless penetrating injury is suspected <span class="cmp-src">Slides 24–25</span></dd>
+<dt>Treatment/Therapy</dt><dd>Goal: prevent rebleeding; bedrest, head of bed slightly up; antiemetics; corticosteroids; cycloplegic drops; <b>oral aminocaproic acid</b> (antifibrinolytic); avoid aspirin/antiplatelets; treat high pressure (beta blockers, pilocarpine, acetazolamide, osmotic agents) <span class="cmp-src">Slide 25</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-lid-laceration"><summary><span class="cmp-name">Lid laceration</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Lid laceration (also: eyelid laceration) <span class="cmp-src">Slide 26</span></dd>
+<dt>Definition</dt><dd>Laceration of the eyelid; full-thickness or partial-thickness <span class="cmp-src">Slide 26</span></dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Unrepaired deep medial-third laceration (canalicular system transection) causes <b>chronic tearing</b> <span class="cmp-src">Slide 27</span></dd>
+<dt>Clinical Manifestation</dt><dd>Full-thickness lid laceration accompanies corneal laceration or globe rupture in <b>about 2/3 of cases</b> <span class="cmp-src">Slide 26</span></dd>
+<dt>Diagnosis</dt><dd>Determine whether it goes through the tarsal plate of the upper lid; check margin, medial canthus, lacrimal system, inner lid surface, ptosis, levator <span class="cmp-src">Slides 26–27</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Ophthalmology consult</b>: lid margin, within 6-8 mm of medial canthus, lacrimal duct/sac, inner lid surface, ptosis, tarsal plate or levator; partial-thickness: emergency room repair, ophthalmology in 2-3 days; face may be left open 24 h before closure <span class="cmp-src">Slides 26–27, 30</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-orbital-contusion"><summary><span class="cmp-name">Orbital and lid contusion</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Orbital and lid contusion <span class="cmp-src">Slide 31</span></dd>
+<dt>Definition</dt><dd>Eye trauma causing soft tissue swelling within the orbit <b>without hemorrhage</b> <span class="cmp-src">Slide 31</span></dd>
+<dt>Etiology (cause)</dt><dd>Eye trauma <span class="cmp-src">Slide 31</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>Tarsal plate and orbital septal margin act as a wall that keeps blood in the anterior tissues <span class="cmp-src">Slide 31</span></dd>
+<dt>Clinical Manifestation</dt><dd><b>Preseptal ecchymosis or hematoma</b> <span class="cmp-src">Slide 31</span></dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd>Supportive to surgical depending on status; <b>must rule out brain trauma</b> <span class="cmp-src">Slide 31</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-periorbital-hematoma"><summary><span class="cmp-name">Periorbital hematoma</span><span class="cmp-nc">6 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Periorbital hematoma <span class="cmp-src">Slide 33</span></dd>
+<dt>Definition</dt><dd>Bleeding within the orbit, around the eye <span class="cmp-src">Slide 33</span></dd>
+<dt>Etiology (cause)</dt><dd>Trauma; orbit/eyelid surgery; peribulbar injections; orbital varices; lymphangiomas and arteriovenous malformations; anticoagulants; sickle cell anemia; orbital pseudotumor; idiopathic <span class="cmp-src">Slide 33</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Lateral canthotomy with cantholysis</b> (expose lateral canthal tendon, incise its inferior branch) to drain the blood <span class="cmp-src">Slide 33</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-rhegmatogenous-retinal-detachment"><summary><span class="cmp-name">Rhegmatogenous retinal detachment</span><span class="cmp-nc">2 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Rhegmatogenous retinal detachment <span class="cmp-src">Slide 35</span></dd>
+<dt>Definition</dt><dd>Retinal detachment from one or more full-thickness breaks in the sensory retina <span class="cmp-src">Slide 35</span></dd>
+<dt>Etiology (cause)</dt><dd>Retinal breaks + vitreous traction let <b>liquefied vitreous pass into the subretinal space</b>; usually spontaneous and age-related <span class="cmp-src">Slide 35</span></dd>
+<dt>Epidemiology (who)</dt><dd><b>Most common</b> type of retinal detachment <span class="cmp-src">Slide 35</span></dd>
+<dt>Risk Factors</dt><dd>Myopia, cataract surgery, ocular trauma; usually preceded by <b>posterior vitreous detachment</b> <span class="cmp-src">Slides 35, 37</span></dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd><b>Shadow or curtain</b> descending over vision; cloudy/smoky vision, floaters, flashes; monocular field defects; reduced central acuity if macula involved <span class="cmp-src">Slide 36</span></dd>
+<dt>Diagnosis</dt><dd>History and dilated eye exam; refer immediately, seen by ophthalmology <b>within 24 hours</b> <span class="cmp-src">Slide 36</span></dd>
+<dt>Treatment/Therapy</dt><dd><b>Surgical</b>; immediate ophthalmology; pain control, antiemetics, head of bed at 30-40 degrees <span class="cmp-src">Slide 35</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-traction-retinal-detachment"><summary><span class="cmp-name">Traction retinal detachment</span><span class="cmp-nc">5 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Traction retinal detachment <span class="cmp-src">Slides 35, 39</span></dd>
+<dt>Definition</dt><dd>One of the three types of retinal detachment; typically more localized, with a concave shape <span class="cmp-src">Slides 35, 39</span></dd>
+<dt>Etiology (cause)</dt><dd>Most commonly <b>proliferative diabetic retinopathy</b> <span class="cmp-src">Slide 39</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd>More localized, <b>concave</b> detachment; starts along the vasculature, then spreads to the retina and macula <span class="cmp-src">Slide 39</span></dd>
+<dt>Clinical Manifestation</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd>Surgical <span class="cmp-src">Slide 39</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-exudative-retinal-detachment"><summary><span class="cmp-name">Exudative (serous) retinal detachment</span><span class="cmp-nc">6 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Exudative (serous) retinal detachment (also: serous retinal detachment) <span class="cmp-src">Slide 39</span></dd>
+<dt>Definition</dt><dd>Detachment <b>without a retinal break or vitreoretinal traction</b> <span class="cmp-src">Slide 39</span></dd>
+<dt>Etiology (cause)</dt><dd>Systemic vascular or inflammatory disease, or intraocular tumors <span class="cmp-src">Slide 39</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Diagnosis</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Treatment/Therapy</dt><dd><b>Manage the underlying condition</b> <span class="cmp-src">Slide 39</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-orbital-floor-blowout-fracture"><summary><span class="cmp-name">Orbital floor (blowout) fracture</span><span class="cmp-nc">4 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Orbital floor (blowout) fracture (also: blowout fracture; orbital fracture) <span class="cmp-src">Slide 40</span></dd>
+<dt>Definition</dt><dd>Fracture of the orbital floor (most often) or medial wall <span class="cmp-src">Slide 40</span></dd>
+<dt>Etiology (cause)</dt><dd>Blunt object (fist, ball) raises orbital pressure and <b>blows out</b> the floor; or a blow to the infraorbital rim buckles the floor <span class="cmp-src">Slide 40</span></dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Periorbital ecchymosis, lid edema, <b>infraorbital numbness</b>, subcutaneous emphysema; diplopia on upward gaze (inferior rectus entrapment) or lateral gaze (medial rectus); severe pain, bradycardia, vomiting on attempted eye movement (entrapment); children: <b>white-eyed blowout</b> (entrapment without orbital soft tissue signs) <span class="cmp-src">Slides 41–42</span></dd>
+<dt>Diagnosis</dt><dd><b>CT (computed tomography) of orbits and midface</b> <span class="cmp-src">Slide 43</span></dd>
+<dt>Treatment/Therapy</dt><dd>No entrapment/eye injury: ice, analgesics, follow up 2-3 days; sinus blood: antibiotics; true blowout: ophthalmology (30% globe injury); <b>entrapment: immediate facial trauma surgeon</b> (muscle necrosis); surgery may wait 1-2 weeks <span class="cmp-src">Slide 43</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+<details class="cmp-card" id="l14-basilar-skull-fracture"><summary><span class="cmp-name">Basilar skull fracture</span><span class="cmp-nc">5 not covered</span></summary>
+<dl class="cmp-fields">
+<dt>Name of Condition</dt><dd>Basilar skull fracture <span class="cmp-src">Slide 44</span></dd>
+<dt>Definition</dt><dd>Linear fracture of the skull base (cribriform, orbital plate of frontal, temporal, sphenoid or occipital bone) <span class="cmp-src">Slide 44</span></dd>
+<dt>Etiology (cause)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Epidemiology (who)</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Risk Factors</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Pathology</dt><dd class="nc">Not covered in the lecture</dd>
+<dt>Clinical Manifestation</dt><dd>Often asymptomatic; <b>Battle sign</b> (bruising behind the ear), <b>raccoon eyes</b> (periorbital bruising); hemotympanum (blood in the middle ear); CSF (cerebrospinal fluid) leak: clear or pink rhinorrhea, otorrhea <span class="cmp-src">Slides 44–46</span></dd>
+<dt>Diagnosis</dt><dd>CSF (cerebrospinal fluid) may be dextrose-positive; <b>halo/double ring sign</b> (inner ring of blood, outer ring of cerebrospinal fluid) on filter paper or bedsheet; CT (computed tomography) of orbits, though fractures may not show <span class="cmp-src">Slides 44, 46–47</span></dd>
+<dt>Treatment/Therapy</dt><dd>CSF (cerebrospinal fluid) leak: <b>neurosurgery consult and admission</b>; admission based on condition, associated injuries, brain injury on CT (computed tomography); antibiotics controversial (resistant organisms) <span class="cmp-src">Slide 47</span></dd>
+<dt>Mortality &#9733;</dt><dd class="nc">Not covered in the lecture</dd>
+</dl>
+</details>
+</section>
+<footer class="guide-foot">
+  <p style="text-align:center;margin:0 0 10px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+  <p style="text-align:center;">Built from your PAJ 5500 lecture decks for personal study &middot; Class of 2028.</p>
+  <p style="text-align:center;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+
+<script>
+(function(){
+  var input=document.getElementById('cmp-filter'), count=document.getElementById('cmp-count');
+  var cards=[].slice.call(document.querySelectorAll('details.cmp-card'));
+  var decks=[].slice.call(document.querySelectorAll('section.deck'));
+  function apply(){
+    var q=(input.value||'').trim().toLowerCase();
+    if(q.length<2){
+      cards.forEach(function(c){c.classList.remove('cmp-hidden');c.open=false;});
+      decks.forEach(function(d){d.classList.remove('cmp-hidden');});
+      count.textContent='';return;
+    }
+    var n=0;
+    cards.forEach(function(c){var hit=c.textContent.toLowerCase().indexOf(q)!==-1;
+      c.classList.toggle('cmp-hidden',!hit);c.open=hit;if(hit)n++;});
+    decks.forEach(function(d){d.classList.toggle('cmp-hidden',!d.querySelector('details.cmp-card:not(.cmp-hidden)'));});
+    count.textContent=n+(n===1?' match':' matches');
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(ev){if(ev.key==='Escape'){input.value='';apply();}});
+  document.getElementById('cmp-expand').addEventListener('click',function(){
+    cards.forEach(function(c){if(!c.classList.contains('cmp-hidden'))c.open=true;});});
+  document.getElementById('cmp-collapse').addEventListener('click',function(){
+    cards.forEach(function(c){c.open=false;});});
+  // theme.js "Search this guide" marks the current hit with .search-hit-current
+  // but cannot see inside a closed <details>; open that card (a user action).
+  new MutationObserver(function(ms){ms.forEach(function(m){var el=m.target;
+    if(el.classList&&el.classList.contains('search-hit-current')){var d=el.closest('details.cmp-card');
+      if(d&&!d.open){d.classList.remove('cmp-hidden');d.open=true;el.scrollIntoView({block:'center'});}}});})
+    .observe(document.querySelector('main')||document.body,{subtree:true,attributes:true,attributeFilter:['class']});
+  // Following a table-of-contents link opens that card (a user action, not load state).
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!a)return;
+    var t=document.getElementById(a.getAttribute('href').slice(1));
+    if(t&&t.tagName==='DETAILS'){t.classList.remove('cmp-hidden');t.open=true;}
+  });
+})();
+</script>
+</body>
+</html>
