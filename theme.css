@@ -1284,7 +1284,6 @@ a.corner-btn:hover { text-decoration: none; }
   /* Slide the whole bar left by its own width minus the handle's 26px, so
      the handle (last child, flush with the bar's outer/right edge) is the
      only part left on screen -- a persistent tab to bring it back. */
-  .tts-bar.collapsed { transform: translateX(calc(-100% + 26px)); }
 }
 .tts-btn {
   width: 38px;
@@ -1340,6 +1339,34 @@ a.corner-btn:hover { text-decoration: none; }
   background: #22262e;
   color: #e5e7eb;
 }
+/* Read-aloud bar, design review item 9 (2026-09-25): collapsed by default
+   to a 44px pill (Play + expand tab); expanded it docks to the foot of the
+   Contents column on desktop (theme.js sets left/width and pads the TOC) and
+   becomes a bottom sheet on phones. The voice picker gets room for its name. */
+.tts-bar.collapsed .tts-extra,
+.tts-bar.collapsed .tts-bar-row + .tts-bar-row { display: none; }
+.tts-bar.collapsed { border-radius: 999px; transform: none; }
+.tts-bar.collapsed .tts-bar-content { padding: 3px; }
+.tts-bar .tts-handle { display: flex; }
+.tts-bar.collapsed .tts-handle { border-radius: 0 999px 999px 0; }
+.tts-bar.collapsed .tts-btn { width: 38px; height: 38px; }
+.tts-voice { max-width: 190px; }
+body.tts-docked .tts-bar:not(.collapsed) .tts-bar-content { flex: 1; min-width: 0; }
+body.tts-docked .tts-bar:not(.collapsed) .tts-voice { max-width: none; min-width: 0; }
+@media (max-width: 640px) {
+  .tts-bar.collapsed { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 12px; }
+  .tts-bar:not(.collapsed) {
+    left: 0; right: 0; bottom: 0;
+    border-radius: 16px 16px 0 0; border-bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, .18);
+  }
+  .tts-bar:not(.collapsed) .tts-bar-content { flex: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 10px 8px; gap: 8px 10px; }
+  .tts-bar:not(.collapsed) .tts-bar-row + .tts-bar-row { flex: 1 1 100%; justify-content: center; }
+  .tts-bar:not(.collapsed) .tts-voice { max-width: 240px; }
+  .tts-bar:not(.collapsed) .tts-handle { border-radius: 0 16px 0 0; }
+}
+
 .tts-active {
   background: rgba(255, 213, 79, .35) !important;
   border-radius: 6px;

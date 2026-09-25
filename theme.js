@@ -1798,16 +1798,57 @@ window.SitePrompts = {
     handleBtn.setAttribute("aria-label", "Hide or show read-aloud controls");
     handleBtn.innerHTML = "&lsaquo;";
 
-    var barCollapsed = localStorage.getItem("ttsBarCollapsed") === "1";
+    // Collapsed BY DEFAULT (design review item 9, 2026-09-25): it used to
+    // open as a two-row panel floating over the Contents sidebar on desktop
+    // and over body text on phones. Collapsed it is one 44px pill -- Play plus
+    // the expand tab -- at every width; an explicit choice is remembered.
+    var barCollapsed = localStorage.getItem("ttsBarCollapsed") !== "0";
+    prevBtn.classList.add("tts-extra");
+    nextBtn.classList.add("tts-extra");
+    stopBtn.classList.add("tts-extra");
+    function paintHandle() {
+      var c = bar.classList.contains("collapsed");
+      handleBtn.setAttribute("aria-expanded", c ? "false" : "true");
+      handleBtn.setAttribute("aria-label", c ? "Show read-aloud controls" : "Hide read-aloud controls");
+    }
     if (barCollapsed) bar.classList.add("collapsed");
     handleBtn.addEventListener("click", function () {
       var nowCollapsed = bar.classList.toggle("collapsed");
       localStorage.setItem("ttsBarCollapsed", nowCollapsed ? "1" : "0");
+      paintHandle();
+      dockToToc();
     });
+    paintHandle();
 
     bar.appendChild(barContent);
     bar.appendChild(handleBtn);
     document.body.appendChild(bar);
+
+    // Desktop: dock the bar to the foot of the Contents column instead of
+    // floating over its last entries: the column is shortened to end above
+    // the bar, so no entry is ever underneath it. Guides without a visible sidebar keep the
+    // plain bottom-left position.
+    var tocEl = document.querySelector("nav.toc");
+    function dockToToc() {
+      var r = tocEl && tocEl.offsetParent !== null ? tocEl.getBoundingClientRect() : null;
+      var docked = !!(r && r.width > 150 && window.innerWidth > 820);
+      document.body.classList.toggle("tts-docked", docked);
+      if (docked) {
+        bar.style.left = Math.round(Math.max(8, r.left) + 10) + "px";
+        bar.style.width = bar.classList.contains("collapsed") ? "" : Math.round(r.width - 20) + "px";
+        // the Contents column ends above the bar (guide_toc_sizing's
+        // calc(100dvh - 38px), less the bar and its margins)
+        var cut = 38 + bar.offsetHeight + 32;
+        tocEl.style.maxHeight = "calc(100vh - " + cut + "px)";
+        tocEl.style.maxHeight = "calc(100dvh - " + cut + "px)";
+      } else {
+        bar.style.left = "";
+        bar.style.width = "";
+        if (tocEl) tocEl.style.maxHeight = "";
+      }
+    }
+    dockToToc();
+    window.addEventListener("resize", dockToToc);
 
     // Voice quality/gender is almost entirely down to which installed voice
     // is picked -- rate/pitch tweaks don't fix a robotic-sounding voice.
