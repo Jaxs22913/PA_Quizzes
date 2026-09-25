@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Microbiology Exam 2</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#1f4d2b;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+</head>
+<body>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Microbiology · Exam 2 · Class of 2028</div>
+    <h1>Microbiology Exam 2 Cram Sheet</h1>
+    <p class="sub">Lectures 7 and 8 so far — Disorders in Immunity and Diagnosing Infections. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.</p>
+    <div class="toc">
+      <a href="#l7-scope" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · What the Lecturer Flagged</a>
+      <a href="#l7-types" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Immunopathologies & the Four Hypersensitivities</a>
+      <a href="#l7-allergy" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Type I in Detail, Diagnosis & Management</a>
+      <a href="#l7-transfusion" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Transfusion Reactions & Rh</a>
+      <a href="#l7-transplant" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Transplantation & Histocompatibility</a>
+      <a href="#l7-auto-deficiency" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Autoimmunity & Immunodeficiency</a>
+      <a href="#l7-cancer" style="color:#183c22"><span class="dot" style="background:#1f4d2b"></span>L7 · Carcinogenesis & Immunotherapy</a>
+      <a href="#l8-categories" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L8 · Diagnosing Infections: The Three Categories</a>
+      <a href="#l8-phenotypic" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L8 · Phenotypic Methods & Sensitivity Testing</a>
+      <a href="#l8-genotypic-immuno" style="color:#316c42"><span class="dot" style="background:#3f8a55"></span>L8 · Genotypic & Immunological Methods</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="micro-exam-2-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="l7-scope" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · What the Lecturer Flagged</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Learn this table</td><td>The four-hypersensitivity summary table (slide 9): “a chart you should pay attention to.”</td></tr>
+          <tr><td class="h">★ The one mechanism</td><td>Desensitization works by raising allergen-specific immunoglobulin G that BLOCKS the allergen from the immunoglobulin E on mast cells.</td></tr>
+          <tr><td class="h">★ No type I</td><td>Type I plays NO part in graft rejection or in autoimmunity. Both use II, III and IV.</td></tr>
+          <tr><td class="h">★ B cell vs T cell defect</td><td>B cell defect (agammaglobulinemia) → recurrent BACTERIAL infections. T cell defect → fungal, viral, protozoan.</td></tr>
+          <tr><td class="h">Not to memorize</td><td>Helminth-allergen pairings (slide 6) · graft versus host grades (slide 50) · autoimmune disease charts (slides 58–60) · the order of the transformation sequence (slide 67). Oncogenic virus table (slide 68) deferred to the virus lectures.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-types" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Immunopathologies & the Four Hypersensitivities</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Four immunopathologies</td><td>OVER: allergy/hypersensitivity, autoimmunity (typically). UNDER: immunodeficiency, cancer (both a cause and an effect of immune dysfunction).</td></tr>
+          <tr><td class="h">Hypersensitivity</td><td>Exaggerated, misdirected response to an allergen using the SAME mechanisms as protective immunity. I, II, III = B cell mediated; IV = T cell mediated.</td></tr>
+          <tr><td class="h">Type I</td><td>IMMEDIATE. Immunoglobulin E on mast cells, basophils, eosinophils is crosslinked → mediators. Hay fever, hives, anaphylactic shock.</td></tr>
+          <tr><td class="h">Type II</td><td>Immunoglobulin G/M against CELL SURFACE antigen → complement, lysis by membrane attack complex, phagocytosis. Transfusion reactions, Rh disease, autoimmune hemolytic anemia, myasthenia gravis.</td></tr>
+          <tr><td class="h">Type III</td><td>Immunoglobulin G/M against SOLUBLE antigen → immune complexes in basement membranes. Needs lots of antigen; delayed hours to days; joints, skin, kidney. Serum sickness, Arthus reaction, post-streptococcal glomerulonephritis, lupus, rheumatoid arthritis.</td></tr>
+          <tr><td class="h">Type IV</td><td>DELAYED, T cell mediated. Infectious allergy (tuberculosis, leprosy, syphilis, histoplasmosis, toxoplasmosis, candidiasis), tuberculin test, contact dermatitis, graft rejection.</td></tr>
+          <tr><td class="h">Hygiene hypothesis</td><td>Helminths give the allergic profile without allergy: nonspecific immunoglobulin E crowds Fc receptors and regulatory T cells suppress. Remove the worms and the immune system is underused and poorly regulated.</td></tr>
+          <tr><td class="h">Asthma crosses types</td><td>Acute = type I (bronchospasm, mucus). Chronic = TYPE IV (cytokines, eosinophil granules).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-allergy" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Type I in Detail, Diagnosis & Management</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sensitizing vs provocative dose</td><td>FIRST contact: immunoglobulin E made and parked on mast cells, no symptoms. LATER contact: allergen crosslinks it → degranulation. 10,000–40,000 immunoglobulin E per cell.</td></tr>
+          <tr><td class="h">Skin</td><td>Urticaria = skin mast cells + histamine. Angioedema = DEEPER mast cells. Eczema = PROLONGED response. Food urticaria: antigen carried to the skin in blood.</td></tr>
+          <tr><td class="h">Anaphylaxis</td><td>Cutaneous = wheal and flare (used in diagnosis). Systemic = fluid leaves blood → pressure falls → swelling → asphyxiation. 500–1000 deaths a year in the United States.</td></tr>
+          <tr><td class="h">Epinephrine (5 actions)</td><td>Reseals endothelial tight junctions · relaxes bronchi · reduces airway mucosal edema · stimulates heart · suppresses histamine release.</td></tr>
+          <tr><td class="h">Late phase</td><td>About 6 HOURS after the immediate reaction; synthesized mediators such as leukotrienes; eosinophils; tissue more sensitive next time.</td></tr>
+          <tr><td class="h">Diagnosis</td><td>Allergy or infection? Skin prick/intradermal (wheal and flare) · blood: specific immunoglobulin E, basophils · supervised food challenge · PATCH test = contact dermatitis (type IV).</td></tr>
+          <tr><td class="h">Drugs</td><td>Corticosteroids ↓ immunoglobulin E via lymphocytes · cromolyn blocks degranulation · montelukast blocks leukotriene synthesis · omalizumab = anti-immunoglobulin E antibody · antihistamines block receptors.</td></tr>
+          <tr><td class="h">Desensitization</td><td>Subcutaneous immunotherapy most common; ~80% improve. Also regulatory T cells. Sublingual: under the tongue; peanut dose 1/75 of a kernel.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-transfusion" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Transfusion Reactions & Rh</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why ABO</td><td>Red cells carry NO major histocompatibility complex molecules. You make antibody against the ABO antigens you LACK.</td></tr>
+          <tr><td class="h">Cross-match</td><td>RECIPIENT serum against DONOR red cells — never the reverse (too little donor antibody to react).</td></tr>
+          <tr><td class="h">Consequences</td><td>Complement lysis → blocked glomeruli, fever, jaundice; coated cells also cleared by natural killer cells and macrophages.</td></tr>
+          <tr><td class="h">Rh disease</td><td>Rh-negative mother, Rh-positive fetus. First pregnancy sensitizes; later ones hemolytic (erythroblastosis fetalis).</td></tr>
+          <tr><td class="h">Rhogam timing</td><td>Passive anti-Rh antibody prevents sensitization. 26–28 WEEKS · within 72 HOURS of birth · after invasive tests, abdominal injury, accidental exposure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-transplant" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Transplantation & Histocompatibility</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Graft types</td><td>Autograft = self · isograft = identical twin · allograft = same species · xenograft = other species.</td></tr>
+          <tr><td class="h">★ Rejection by type</td><td>Hyperacute = II (preexisting antibody; engorged, purple graft) · acute = IV (T cells vs human leukocyte antigen differences) · chronic = III (thickened vessel walls) · graft versus host = IV.</td></tr>
+          <tr><td class="h">Chronic rejection</td><td>Months to years; fails MORE THAN HALF of kidney and heart transplants after 10+ years.</td></tr>
+          <tr><td class="h">Acute rejection route</td><td>Graft dendritic cells → SPLEEN → activate effector T cells → back via blood → graft destroyed.</td></tr>
+          <tr><td class="h">Cornea</td><td>First organ transplanted; succeeds WITHOUT a human leukocyte antigen match — eye downregulates T cells, macrophages, neutrophils, complement.</td></tr>
+          <tr><td class="h">Liver</td><td>Human leukocyte antigens NOT assessed; ABO IS. Hepatocytes: little class I, no class II.</td></tr>
+          <tr><td class="h">Bone marrow</td><td>MOST sensitive to mismatch → graft versus host disease (skin, muscle, liver, gut) in ~30%.</td></tr>
+          <tr><td class="h">Preventing rejection</td><td>Tissue typing, mixed lymphocyte reaction; purine analogs, corticosteroids, tacrolimus, cyclosporine, rapamycin (sirolimus).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-auto-deficiency" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Autoimmunity & Immunodeficiency</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Autoimmunity</td><td>Lost tolerance → autoantibodies and sensitized T cells. All types EXCEPT I. Runs in families; WOMEN more often.</td></tr>
+          <tr><td class="h">Sequestered antigen</td><td>Privileged tissue (central nervous system, lens, thyroid, testes) damaged later releases unseen antigen. One injured eye → T cells attack BOTH.</td></tr>
+          <tr><td class="h">Molecular mimicry</td><td>Rheumatic fever (strep → heart) · Lyme arthritis (Borrelia) · reactive arthritis (Shigella, Salmonella, Campylobacter) · type 1 diabetes (coxsackie A/B, echovirus, rubella).</td></tr>
+          <tr><td class="h">Thymic senescence</td><td>Thymus involutes to fat; premature aging in young people with autoimmunity; less output → infection, cancer, autoimmunity.</td></tr>
+          <tr><td class="h">Slide 61 diseases</td><td>Graves' (stimulates follicle cells → hyper) · Hashimoto's (destroys them → hypo) · myasthenia gravis (acetylcholine receptors) · multiple sclerosis (myelin; T cells + antibody; Epstein-Barr link).</td></tr>
+          <tr><td class="h">Primary vs secondary</td><td>PRIMARY = congenital, genetic. SECONDARY = acquired after birth: human immunodeficiency virus (T helper cells), chemotherapy, radiation, blood cell cancers.</td></tr>
+          <tr><td class="h">Primary examples</td><td>Agammaglobulinemia (B, no antibody) · DiGeorge (T, no thymus) · severe combined immunodeficiency (both limbs, no adaptive response) · complement, phagocyte defects.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l7-cancer" style="--acc:#1f4d2b;--acc-bg:#e0e6e1;--acc-zebra:#eff3f0;--acc-ink:#183c22">
+    <div class="shead"><span class="dot" style="background:#1f4d2b"></span><h2>L7 · Carcinogenesis & Immunotherapy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Transformation</td><td>ONE cell with MULTIPLE accumulated mutations; oncogenes activated by radiation, chemicals, oncogenic viruses. Benign = contained; malignant = spreads.</td></tr>
+          <tr><td class="h">Cancer cell traits</td><td>Self-stimulating · ignore stop signals · no apoptosis · angiogenesis · metastasis · constant replication · evade immunity.</td></tr>
+          <tr><td class="h">Tumor antigens</td><td>SPECIFIC = tumor only. ASSOCIATED = tumor + normal cells (less).</td></tr>
+          <tr><td class="h">Evasion</td><td>Shed the natural killer stress ligand · secrete transforming growth factor beta → regulatory T cells (+ interleukin 10). More regulatory T cells = WORSE prognosis.</td></tr>
+          <tr><td class="h">Checkpoint inhibitors</td><td>Block the T cell OFF signal; do not kill directly. Melanoma, some lung cancers.</td></tr>
+          <tr><td class="h">Adoptive cell therapy</td><td>Patient's cells engineered and returned. CAR-T (chimeric antigen receptor T cells) APPROVED for blood cancers; tumor infiltrating lymphocytes in development; chimeric antigen receptor natural killer cells in trials.</td></tr>
+          <tr><td class="h">Antibodies & cytokines</td><td>100+ monoclonal antibodies, diagnosis AND therapy; conjugates carry drug or radionuclide. Interleukin 2 → T and natural killer cells (kidney, melanoma). Interferon alpha → natural killer and dendritic cells. Erythropoietin = red cells; interleukin 11 = platelets.</td></tr>
+          <tr><td class="h">Coley · viruses · vaccines</td><td>Coley's toxins (1890s; killed strep + Serratia; displaced by radiation and chemotherapy). Oncolytic viruses replicate only in tumor cells; mumps natural. Prophylactic: hepatitis B, papillomavirus. Therapeutic: bacillus Calmette-Guérin (bladder), sipuleucel-T (prostate).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l8-categories" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L8 · Diagnosing Infections: The Three Categories</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Scope note</td><td>The objectives are the course-wide list; the lecture teaches diagnostic METHODS. Sort every technique into one of three.</td></tr>
+          <tr><td class="h">Phenotypic</td><td>Observable traits (phenotype = physical expression of genes): morphology, biochemistry, chemistry, drug sensitivity. Needs culture → SLOWER.</td></tr>
+          <tr><td class="h">Genotypic</td><td>Genetic makeup; NO culture needed — slow Mycobacterium, hard Legionella. Faster diagnosis → timely treatment.</td></tr>
+          <tr><td class="h">Immunological</td><td>Antigen-antibody specificity; culture optional. Rapid strep 10–15 minutes, but you need a hypothesis first.</td></tr>
+          <tr><td class="h">Specimens</td><td>ALL potentially infectious. Results depend on collection, handling, transport, storage. Universal precautions MITIGATE, not eliminate.</td></tr>
+          <tr><td class="h">Results</td><td>Direct tests or culture-isolation-identification; results PRESUMPTIVE or CONFIRMATORY.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l8-phenotypic" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L8 · Phenotypic Methods & Sensitivity Testing</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Morphology</td><td>Microscopic: shape, size, stain (Gram, flagellar, acid-fast), structures. Macroscopic: colony texture, size, shape, pigment.</td></tr>
+          <tr><td class="h">Biochemical</td><td>Presence or absence of enzymes/pathways: fermentation, amino acids, hydrolysis, catalase, oxidase, coagulase, hemolysins.</td></tr>
+          <tr><td class="h">★ Blood agar</td><td>Detects HEMOLYSIS — the lecturer's “take-home message”, especially for pathogenic Gram-positives.</td></tr>
+          <tr><td class="h">Other media</td><td>Chocolate agar: “mainly anaerobic culturing” (slide's wording) · mannitol salts: selects salt tolerance, differentiates mannitol · citrate: blue = pH up · urea: hot pink = urease.</td></tr>
+          <tr><td class="h">Normal flora?</td><td>Is the recovered organism the cause, or normal flora? Koch's postulates reasoning.</td></tr>
+          <tr><td class="h">Kirby-Bauer</td><td>Disk diffusion: WHICH drug and at WHAT dose; LARGER zone = more effective. Minimum inhibitory concentration strips give the concentration.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l8-genotypic-immuno" style="--acc:#3f8a55;--acc-bg:#e4efe7;--acc-zebra:#f2f7f3;--acc-ink:#316c42">
+    <div class="shead"><span class="dot" style="background:#3f8a55"></span><h2>L8 · Genotypic & Immunological Methods</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Polymerase chain reaction</td><td>Thermal cycler amplifies nucleic acid; Kary Mullis. Guanine + cytosine content = taxonomy, not specific identification.</td></tr>
+          <tr><td class="h">Ribosomal ribonucleic acid</td><td>16S for bacteria, 18S for eukaryotes → phylogenetic trees. Restriction fragment length polymorphism = “fingerprinting.”</td></tr>
+          <tr><td class="h">Serology</td><td>In vitro testing of serum; titer in binding antibody units. Serotyping = known antibody identifies an unknown microbe.</td></tr>
+          <tr><td class="h">Agglutination vs precipitation</td><td>Agglutination = WHOLE-CELL/insoluble antigen, clumps, MORE sensitive (blood typing, syphilis, Weil-Felix, pregnancy, rapid strep). Precipitation = SOLUBLE antigen, needs gel/liquid (Ouchterlony, immunoelectrophoresis → antibody class).</td></tr>
+          <tr><td class="h">Blots</td><td>Southern = deoxyribonucleic acid (the man's name) · Northern = ribonucleic acid · WESTERN = PROTEIN, second test for human immunodeficiency virus · Eastern = other epitopes.</td></tr>
+          <tr><td class="h">Complement fixation</td><td>4 parts: antigen, antibody, complement, sheep red cells. NO hemolysis = POSITIVE. Hemolysis = negative.</td></tr>
+          <tr><td class="h">Fluorescent · immunoassay · in vivo</td><td>Dye-labeled monoclonal antibody, direct or indirect. Immunoassays detect TRACE amounts (radioimmunoassay; enzyme-linked immunosorbent assay, 96-well). In vivo: tuberculin, allergy tests.</td></tr>
+          <tr><td class="h">Viruses</td><td>Not cells; need a host cell → labor intensive to culture; rapid antigen-antibody tests.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Microbiology Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

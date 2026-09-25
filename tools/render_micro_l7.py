@@ -10,8 +10,9 @@ from render import render
 
 OUT = os.path.join(os.path.dirname(HERE), "Microbiology Exam 2")
 PALETTE = dict(navy="#1f4d2b", indigo="#3f8a55", gold="#c2903a", ice="#e8f4ea")
-CHIPS = ["Immunopathologies", "The four types", "Type I mechanism",
-         "Anaphylaxis", "Diagnosis &amp; management", "Transfusion reactions"]
+CHIPS = ["Immunopathologies", "The four types", "Allergy management",
+         "Transfusion reactions", "Transplantation", "Autoimmunity",
+         "Immunodeficiency", "Carcinogenesis", "Immunotherapy"]
 INTRO = ("Lecture 7 of Microbiology &mdash; Disorders in Immunity. Thirty questions, every one "
          "cited to the slide it came from. "
          "<b>One table organizes most of this lecture.</b> The four hypersensitivities differ by "
@@ -32,7 +33,12 @@ INTRO = ("Lecture 7 of Microbiology &mdash; Disorders in Immunity. Thirty questi
          "sensitizing and provocative doses; the skin, nasal, gut and airway manifestations; "
          "anaphylaxis and how epinephrine reverses it; the late phase reaction; allergy "
          "diagnosis and the three management strategies including desensitization; and "
-         "transfusion reactions through ABO, cross-matching, Rh factor and Rhogam.")
+         "transfusion reactions through ABO, cross-matching, Rh factor and Rhogam; "
+         "graft types and the rejection timeline (hyperacute type II, acute type IV, chronic type III, "
+         "graft versus host type IV) with the tissues that tolerate mismatch; the origins of "
+         "autoimmunity and its type II, III and IV diseases; primary against secondary "
+         "immunodeficiency; carcinogenesis, oncogenic viruses and tumor evasion; and the "
+         "immunotherapies from checkpoint inhibitors to cancer vaccines.")
 
 sets = json.load(io.open(os.path.join(HERE, "micro_l7_sets.json"), encoding="utf-8"))
 for n, key, fname in ((1, "set1", "disorders-in-immunity-quiz.html"),
