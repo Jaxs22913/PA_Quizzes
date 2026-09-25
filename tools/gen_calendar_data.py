@@ -10,9 +10,15 @@ import parse_calendar_export
 # covers the week of Sep 21 onward and supersedes the monthly print-outs for
 # those dates (it moved 13 events and named the real lecturers, e.g. Carter).
 # Everything BEFORE EXPORT_FROM still comes from the monthly PDFs.
-EXPORT_PDF = os.path.expanduser(
-    "~/Desktop/PA Quizzes/Calendars/Fall Semester - 2026/Outlook export 2026-09-25.pdf")
-EXPORT_FROM = "2026-09-21"
+# Standing workflow (Jaxon, 2026-09-25): each update is a new
+# "Outlook export <YYYY-MM-DD>.pdf" dropped in the semester's Calendars folder.
+# The NEWEST one is used automatically, from its own first date onward.
+import glob
+_exports = sorted(glob.glob(os.path.expanduser(
+    "~/Desktop/PA Quizzes/Calendars/Fall Semester - 2026/Outlook export *.pdf")))
+EXPORT_PDF = _exports[-1] if _exports else None
+EXPORT_FROM = (min(e["date"] for e in parse_calendar_export.parse(EXPORT_PDF))
+               if EXPORT_PDF else "9999-12-31")
 
 OUT = "/Users/jaxonluke/Developer/PA_Quizzes/calendar-data.js"
 
@@ -160,7 +166,7 @@ def apply_moves(out):
 def main():
     evs = [e for e in parse() if e["date"] < EXPORT_FROM]
     seen = set()
-    for e in parse_calendar_export.parse(EXPORT_PDF):
+    for e in (parse_calendar_export.parse(EXPORT_PDF) if EXPORT_PDF else []):
         k = (e["date"], e["title"])   # the export lists both halves of a lunch-split session
         if k in seen:
             continue
