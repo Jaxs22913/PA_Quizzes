@@ -149,14 +149,14 @@ BATCH = {
   "&ldquo;I get mouth ulcers over and over, and I&rsquo;ve had sores on my genitals and trouble "
   "with my eyes.&rdquo;",
   "Inspect oral ulcers, then <b>examine the genitals and refer for a slit lamp examination of the "
-  "eyes</b>. Look for skin lesions &mdash; erythema nodosum and pustules. <b>Pathergy test</b> "
-  "&mdash; a needle prick producing a pustule at 24 to 48 hours. Examine joints and the nervous "
-  "system.",
+  "eyes</b>. Look for skin lesions &mdash; erythema nodosum and pustules. Examine joints and the "
+  "nervous system.",
   [("Recurrent aphthous stomatitis", "Oral ulcers ALONE, with no genital, ocular or systemic disease"),
    ("Inflammatory bowel disease", "Oral ulcers with bowel symptoms rather than genital ulcers and uveitis"),
    ("Herpes simplex", "Vesicular, clustered, and it responds to antivirals")],
-  "<b>Clinical criteria</b> &rarr; recurrent oral ulceration PLUS two of: recurrent genital "
-  "ulceration, eye lesions, skin lesions, a positive pathergy test. <b>Slit lamp</b> &rarr; "
+  "<b>Clinical</b> &rarr; recurrent aphthous ulceration in the context of the characteristic "
+  "systemic manifestations; genital ulcers, similar in appearance to oral aphthae, occur in about "
+  "75%. <b>Slit lamp</b> &rarr; "
   "uveitis. <b>Inflammatory markers</b> &rarr; raised. There is no single confirmatory blood test.",
   "Isolated oral ulcers with no other system involved mean simple aphthous stomatitis; a positive "
   "viral swab means herpes; bowel investigation identifies inflammatory bowel disease instead."),

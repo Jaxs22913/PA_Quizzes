@@ -643,6 +643,18 @@ def convert(relpath):
                 "#h2t-corner", "#h2t-settings", ".h2t-corner", ".sitebar"):
         for el in soup.select(sel):
             el.decompose()
+    # Page chrome inside the footer: the "Back to Homepage" link, the
+    # report-a-mistake line and the "Built from your ... lecture decks" credit
+    # line. They are meaningless in a Word copy and landed in the body of the
+    # regenerated CMS Exam 2 and PDM guide .docx files (2026-09-24). Only these
+    # <p> lines go: many footers also carry a real source line ("Source: <deck>,
+    # Slides 1-62 ...") or a quotation attribution, which must stay, so the whole
+    # <footer> is NOT dropped.
+    for foot in soup.find_all("footer"):
+        for p in foot.find_all("p"):
+            if (p.select_one('a[href="../index.html"], a[onclick*="reportMistake"]')
+                    or p.get_text(" ", strip=True).startswith("Built from ")):
+                p.decompose()
 
     doc = Document()
     st = doc.styles["Normal"]

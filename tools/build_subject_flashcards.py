@@ -181,12 +181,33 @@ ICON = ('<circle cx="12" cy="12" r="9"/><path d="M8.5 13.5c1.2 1.4 5.8 1.4 7 0"/
         '<path d="M9 9.5h.01M15 9.5h.01"/>')
 
 
+# A condition charted in two lectures carries a <span class="dup">also Lecture N</span>
+# badge in the chart. On a card front that badge is a citation ("Solar lentigo
+# also Lecture 8"), which the self-contained rule forbids, but dropping it would
+# leave two identical fronts. Each such row gets a topic label instead, keyed by
+# the row's image file; a new dup row without a label stops the build.
+DUP_LABEL = {
+    "l3_s108_1.jpg": "photodermatology",
+    "l8_s014_1.jpg": "pigmented skin lesions",
+}
+_DUP = re.compile(r'\s*<span class="dup">.*?</span>', re.S)
+
+
+def card_name(row):
+    if _DUP.search(row[1]):
+        assert row[0] in DUP_LABEL, "dup-badged chart row needs a DUP_LABEL entry: %r" % row[0]
+        return "%s (%s)" % (clean_name(_DUP.sub("", row[1])), DUP_LABEL[row[0]])
+    name = clean_name(row[1])
+    assert not re.search(r"\bLecture\s+\d", name), "lecture citation in a card front: %r" % name
+    return name
+
+
 def build_derm():
     rows = [r for r in CHART.ROWS if r[0] != "SECTION"]
     cards, match, skipped = [], [], []
     seen = set()
     for r in rows:
-        name = clean_name(r[1])
+        name = card_name(r)
         desc = plain(r[2])
         if not name or not desc:
             continue
