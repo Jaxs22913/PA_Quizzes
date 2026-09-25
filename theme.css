@@ -2284,6 +2284,66 @@ body.quiz-running header .pill { display: none; }
   body.quiz-running .wrap > header { transition: none; }
 }
 
+/* Question first on phones (design review item 4, 2026-09-25). At 390px the
+   first screen used to be ~60% chrome: a 100px top gap, the back link, the
+   banner, a wrapping stats row, a tinted toolbar box whose "Submit exam"
+   wrapped to three lines, and a three-line objective chip -- only 2.5 of 4
+   choices were visible. While a question is on screen:
+     - the top gap goes (back link's inline 36px margin, wrap padding);
+     - the stats row and the Flag / Questions / Submit row become two slim
+       sticky rows (every button stays in the DOM -- swipe navigation reads
+       the on-screen buttons for permission, and the engine finds them by id);
+     - the objective chip is clamped to one line.
+   The keyboard-shortcuts corner button is hidden on touch-only phones while a
+   quiz runs (there is no keyboard to use it with) so the settings gear can sit
+   at the end of the sticky row instead of over the timer. */
+@media (max-width: 640px) {
+  body.quiz-running > .wrap { padding-top: 6px; }
+  body.quiz-running > .wrap > a[href$="index.html"]:first-child { margin: 2px 0 8px !important; }
+  body.quiz-running #quiz-header-logo { margin-bottom: 4px !important; }
+  body.quiz-running .wrap > header { padding: 10px 14px; margin-bottom: 10px; border-radius: 12px; }
+  body.quiz-running header h1 { font-size: 14.5px; }
+  body.quiz-running #quiz .qbody { padding: 0 16px 18px; }
+  body.quiz-running #quiz { overflow: visible; }
+
+  body.quiz-running #quiz .topbar {
+    position: sticky; top: 0; z-index: 20;
+    box-sizing: border-box; min-height: 46px;
+    margin: 0 -16px; padding: 8px 60px 8px 16px;
+    gap: 8px; flex-wrap: nowrap; white-space: nowrap;
+    font-size: 12px;
+    background: var(--card, #fff);
+    border-radius: 14px 14px 0 0;
+  }
+  body.quiz-running #quiz .topbar .bar { flex: 1 1 0; min-width: 0; height: 6px; }
+  body.quiz-running #quiz .topbar .examctl-btn { padding: 4px 9px; font-size: 12px; }
+
+  body.quiz-running #quiz .examtoolbar {
+    position: sticky; top: 46px; z-index: 19;
+    margin: 0 -16px 10px; padding: 6px 16px 8px;
+    gap: 6px; flex-wrap: nowrap; justify-content: flex-start;
+    overflow-x: auto; scrollbar-width: none;
+    background: var(--card, #fff);
+    border: 0; border-bottom: 1px solid var(--line, #e5e7eb); border-radius: 0;
+  }
+  body.quiz-running #quiz .examtoolbar > button {
+    flex: 0 0 auto; white-space: nowrap;
+    font-size: 12px; padding: 6px 10px;
+  }
+  body.quiz-running #quiz .examtoolbar > .examctl-btn-submit { margin-left: auto; }
+  body.quiz-running #quiz .examtoolbar.hidden { display: none; }
+
+  body.quiz-running #quiz .qmeta { flex-wrap: nowrap; min-width: 0; margin-bottom: 8px; }
+  body.quiz-running #quiz .qmeta .tag {
+    min-width: 0; max-width: 100%;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  body.quiz-running #quiz .qmeta .tag:empty { display: none; }
+}
+@media (max-width: 640px) and (hover: none) and (pointer: coarse) {
+  body.quiz-running #shortcuts-btn { display: none; }
+}
+
 /* ============================================================
    6. MOTION LAYER (2026-07-27)
    ------------------------------------------------------------
