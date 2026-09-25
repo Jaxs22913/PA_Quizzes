@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 2 study guide (Lecture 4, Ophthalmic Drugs).
+"""Build the Pharmacology I Exam 2 study guide (Lectures 4 to 7).
 
 Same skeleton-lift as build_pharm_guide.py: take the Exam 1 guide's head and
 tail so the chrome, design system and read-aloud wiring come for free, and
 splice in a fresh table of contents and body.
 
 BUILT INCREMENTALLY, AND THE PAGE SAYS SO. The syllabus puts LECTURES 4 TO 8 in
-Exam 2; this guide covers Lecture 4 only (Lecture 5 so far has quizzes only). The rest drop in as further
-sections without touching this file's structure, exactly as the CMS Exam 3
-chart was grown.
+Exam 2. Section 1 (Lecture 4, ophthalmic) lives in this file; sections 2 to 4
+(Lecture 5 ENT, Lecture 6 antihypertensives, Lecture 7 lipids; added 2026-09-25)
+live in _pharm_e2_guide_l5.py, _l6.py and _l7.py and are spliced in after it.
+Lecture 8 drops in the same way once it is delivered (2026-09-30).
 
 Objectives are VERBATIM from the syllabus, not from the deck. The two differ on
 objective 2 -- the syllabus says "molecular mechanism of action", the slide
@@ -18,7 +19,11 @@ drops "molecular" -- and [[guide_verbatim_io_rule]] says the syllabus wins.
 Deliberately NO data-audio-dir: the mp3s do not exist, and pointing at an empty
 audio folder broke read-aloud on iPad once already.
 """
-import os, re
+import os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _pharm_e2_guide_l5 as L5
+import _pharm_e2_guide_l6 as L6
+import _pharm_e2_guide_l7 as L7
 
 ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
 DONOR = os.path.join(ROOT, "Pharmacology I Exam 1/pharm-exam-1-study-guide.html")
@@ -35,6 +40,7 @@ TOC = '''<nav class="toc">
   <a href="#oph-glaucoma">1.6 Objectives 1&ndash;7 &mdash; Glaucoma</a>
   <a href="#oph-diagnostic">1.7 Objectives 1&ndash;3 &mdash; Diagnostic and procedural agents</a>
   <a href="#oph-admin">1.8 Objectives 9&ndash;10 &mdash; Administration, monitoring and patient education</a>
+@@MORE_TOC@@
 </nav>'''
 
 BODY = '''<main>
@@ -60,21 +66,22 @@ BODY = '''<main>
 
   <div class="callout"><strong>This is one of five lectures in Exam 2.</strong> The syllabus puts
   <strong>Lectures 4 to 8</strong> in this exam &mdash; ophthalmic drugs, then ear, nose and
-  throat, and then the cardiovascular block. Lectures 4 to 7 have been delivered and Lecture 8 has
-  not. This guide covers Lecture 4 only: Lecture 5 (ear, nose and throat drugs) is covered by its
-  quizzes, and the guide sections for Lectures 5 to 8 are still to come.</div>
+  throat, and then the cardiovascular block. This guide covers <strong>Lectures 4 to 7</strong>:
+  ophthalmic drugs (this section), ear, nose and throat drugs (section 2), antihypertensives
+  (section 3) and the lipid-lowering drugs (section 4). Lecture 8 (myocardial ischemia) has not
+  been delivered yet; its section will be added once it is.</div>
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; HE PROMISED TO ASK THIS</span>
     <p style="margin-top:2px">At 50:27 of the recording: <em>&ldquo;Most of you will probably
     forget this and we&rsquo;ll get it wrong on the test. But I will tell you, <strong>I will ask
     this question</strong>, it&rsquo;ll come up in ENT as well &mdash; there&rsquo;s <strong>rebound
-    hyperaemia</strong>.&rdquo;</em></p>
+    hyperemia</strong>.&rdquo;</em></p>
     <p>The mechanism in his own words: over-the-counter redness drops are <strong>alpha-1
-    agonists</strong> that vasoconstrict to reduce swelling and oedema. Constant activation
+    agonists</strong> that vasoconstrict to reduce swelling and edema. Constant activation
     <strong>downregulates the receptors</strong>, so when the drug stops there are fewer left for
-    naturally occurring noradrenaline and adrenaline to bind &mdash; and the vessels
-    <em>&ldquo;just blow open&rdquo;</em>. Hence the counselling point on slide 48: use for
+    naturally occurring norepinephrine and epinephrine to bind &mdash; and the vessels
+    <em>&ldquo;just blow open&rdquo;</em>. Hence the counseling point on slide 48: use for
     <strong>under two weeks</strong>, and if there is no improvement in <strong>72 hours</strong>,
     stop and be seen, because it may be something more serious.</p>
   </div>
@@ -96,7 +103,7 @@ BODY = '''<main>
     <em>&ldquo;don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. Any of
     these can do that.&rdquo;</em> The adverse effects that name one drug and no other &mdash;
     ciprofloxacin&rsquo;s white precipitate, the bitter taste of the carbonic anhydrase
-    inhibitors, iris colour change with the prostaglandins &mdash; are examinable.</li>
+    inhibitors, iris color change with the prostaglandins &mdash; are examinable.</li>
     <li><mark class="prof-highlight">Specific combination products</mark> &mdash; <em>&ldquo;the
     specific combinations, I don&rsquo;t care that you memorize, <strong>but</strong> just know if
     I was to say, hey, patient&rsquo;s on this drug right now, what would be a helpful second line
@@ -129,7 +136,7 @@ BODY = '''<main>
 
   <p>Distribution into the eye happens normally after systemic absorption, and some drugs
   <strong>accumulate</strong> there &mdash; the named example is the <strong>bull&rsquo;s eye
-  lesion after chloroquine</strong>. Some drugs are also <strong>metabolised within the eye</strong>,
+  lesion after chloroquine</strong>. Some drugs are also <strong>metabolized within the eye</strong>,
   which is exploited deliberately: <strong>dipivefrin becomes epinephrine</strong> and
   <strong>latanoprost becomes prostaglandin F2-alpha</strong> once inside. Elimination is otherwise
   ordinary hepatic and renal clearance.</p>
@@ -137,7 +144,7 @@ BODY = '''<main>
   <p>The route table is worth holding by its trade-offs rather than its rows. <strong>Topical</strong>
   is convenient, economical and relatively safe, at the price of compliance, surface toxicity and
   systemic absorption. <strong>Periocular injection</strong> &mdash; subconjunctival, sub-Tenon&rsquo;s,
-  retrobulbar &mdash; reaches posterior uveitis and cystoid macular oedema, at the price of
+  retrobulbar &mdash; reaches posterior uveitis and cystoid macular edema, at the price of
   <strong>globe perforation, optic nerve trauma and retinal artery or vein occlusion</strong>.
   <strong>Intracameral</strong> injection is prompt and used in anterior segment surgery and
   infection, but short-lived.</p>
@@ -146,7 +153,7 @@ BODY = '''<main>
 
   <p>Most conjunctivitis is <strong>not</strong> bacterial. The common causes given are
   <strong>viruses, allergies, environmental irritants and contact lenses</strong>, with immune-mediated
-  reactions, systemic disease and tumours less common. The bacterial pathogens worth naming are
+  reactions, systemic disease and tumors less common. The bacterial pathogens worth naming are
   <strong>Neisseria, Haemophilus, Streptococcus pneumoniae, Staphylococcus aureus</strong> and
   <strong>Moraxella catarrhalis</strong>. The spectrum shifts over time &mdash; the example is the
   fall in <em>Haemophilus influenzae</em> after the vaccine.</p>
@@ -165,7 +172,7 @@ BODY = '''<main>
   so supercoiled DNA cannot relax and the strands break; <strong>bacitracin</strong> blocks
   mucopeptide transfer into the cell wall; <strong>polymyxin B</strong> binds membrane
   phospholipids and lets the contents leak out; and <strong>sulfacetamide</strong> and
-  <strong>trimethoprim</strong> hit folate at successive steps &mdash; sulfacetamide antagonising
+  <strong>trimethoprim</strong> hit folate at successive steps &mdash; sulfacetamide antagonizing
   p-aminobenzoic acid, trimethoprim blocking reduction to tetrahydrofolate.</div>
 
   <p><strong>Drug choice is the testable part.</strong> <strong>Erythromycin</strong> ointment is
@@ -181,7 +188,7 @@ BODY = '''<main>
   <div class="callout"><strong>Two adverse effects that actually distinguish something.</strong>
   Ocular irritation and hypersensitivity are shared by essentially every agent here, so they name
   no drug. The two that do: <strong>ciprofloxacin produces a white precipitate in about 17%</strong>,
-  worth recognising so it is not mistaken for a worsening infiltrate; and
+  worth recognizing so it is not mistaken for a worsening infiltrate; and
   <strong>aminoglycosides used for several days can cause corneal ulceration and a reactive
   keratoconjunctivitis</strong>, which changes how long you continue them. The one genuine
   contraindication in the list is <strong>sulfacetamide in sulfonamide allergy</strong>.</div>
@@ -228,9 +235,9 @@ BODY = '''<main>
   occupying it &mdash; while remaining competitive with histamine. They decrease capillary
   dilation, itch and swelling. Onset is <strong>within minutes</strong>, but allow
   <strong>two weeks</strong> to judge full efficacy. They are typically preferred over mast cell
-  stabilisers, and can worsen ocular dryness.</p>
+  stabilizers, and can worsen ocular dryness.</p>
 
-  <p><strong>Mast cell stabilisers</strong> &mdash; cromolyn, lodoxamide, nedocromil &mdash;
+  <p><strong>Mast cell stabilizers</strong> &mdash; cromolyn, lodoxamide, nedocromil &mdash;
   inhibit degranulation, limiting release of histamine, tryptase and prostaglandin D2, and dampen
   basophils, eosinophils and neutrophils. They take <strong>5 to 14 days</strong> for full effect
   and are <strong>not useful for acute symptoms</strong>, which is the whole distinction from the
@@ -239,10 +246,10 @@ BODY = '''<main>
 
   <div class="pearl"><strong>The imidazoline question.</strong> The vasoconstrictors activate
   <strong>postjunctional alpha-adrenergic receptors</strong> on conjunctival vessels, reducing
-  oedema and redness. But their receptor behaviour splits by route:
+  edema and redness. But their receptor behavior splits by route:
   <mark class="prof-highlight">locally they act on alpha-1; systemically they target
   alpha-2</mark>. That is why an accidental ingestion in a toddler causes central nervous system
-  depression, bradycardia and apnoea rather than the hypertension you might expect &mdash; and it
+  depression, bradycardia and apnea rather than the hypertension you might expect &mdash; and it
   is the same central alpha-2 effect that contraindicates brimonidine under two years.</div>
 
   <h3 class="sub" id="oph-inflam">1.5 &middot; Objectives 5&ndash;7 &mdash; Anti-inflammatories and dry eye</h3>
@@ -304,11 +311,11 @@ BODY = '''<main>
   agonists</strong>, <strong>beta blockers</strong>, <strong>carbonic anhydrase inhibitors</strong>.
   The alpha agonists appear on <em>both</em> lists, which is where most errors come from.</p>
 
-  <p><strong>Prostaglandins</strong> (latanoprost, travoprost, bimatoprost, tafluprost) analogue
+  <p><strong>Prostaglandins</strong> (latanoprost, travoprost, bimatoprost, tafluprost) are analogs of
   prostaglandin F2-alpha and increase outflow. They are <strong>first line and the most commonly
   used</strong>, dosed <strong>once daily &mdash; and exceeding that inhibits the pressure-lowering
-  effect</strong>. Warn about <strong>eyelash lengthening and iris colour change</strong>, plus
-  conjunctival hyperaemia. Limited systemic effects.</p>
+  effect</strong>. Warn about <strong>eyelash lengthening and iris color change</strong>, plus
+  conjunctival hyperemia. Limited systemic effects.</p>
 
   <p><strong>Beta blockers</strong> block beta receptors in the ciliary epithelium, reducing
   catecholamine activation and cyclic AMP, and so aqueous production. <strong>Betaxolol is
@@ -320,7 +327,7 @@ BODY = '''<main>
   <p><strong>Alpha-2 agonists</strong> (apraclonidine, brimonidine) reduce catecholamine release
   presynaptically and aqueous production postsynaptically, and increase outflow.
   <strong>Contraindicated under two years &mdash; central nervous system depression and
-  apnoea.</strong> Apraclonidine is highly ionised at physiological pH, which limits blood-brain
+  apnea.</strong> Apraclonidine is highly ionized at physiological pH, which limits blood-brain
   barrier penetration; brimonidine is more lipophilic but causes less allergic conjunctivitis.</p>
 
   <p><strong>Carbonic anhydrase inhibitors</strong> (dorzolamide, brinzolamide) reduce bicarbonate
@@ -334,7 +341,7 @@ BODY = '''<main>
   <div class="callout"><strong>The question he said he would ask.</strong> Combination products
   &mdash; brimonidine with timolol, brinzolamide with brimonidine, dorzolamide with timolol &mdash;
   are synergistic because they target <em>different</em> routes, and fewer drops improves
-  compliance. He does not want the products memorised; he wants
+  compliance. He does not want the products memorized; he wants
   <mark class="prof-highlight">&ldquo;patient&rsquo;s on this drug right now, what would be a
   helpful second line agent to add on?&rdquo;</mark> Answer it by asking which side of the
   production/outflow divide the current drug is on, and adding from the other.
@@ -346,7 +353,7 @@ BODY = '''<main>
 
   <h3 class="sub" id="oph-diagnostic">1.7 &middot; Objectives 1&ndash;3 &mdash; Diagnostic and procedural agents</h3>
 
-  <p><strong>Anaesthetics</strong> (tetracaine, proparacaine) inhibit sodium influx into the neuron
+  <p><strong>Anesthetics</strong> (tetracaine, proparacaine) inhibit sodium influx into the neuron
   so the signal cannot propagate. Indications: <strong>tonometry, foreign body removal, superficial
   corneal surgery</strong>. Two warnings that matter more than the mechanism: the eye stays numb
   for <strong>10 to 20 minutes with no blink reflex</strong>, so it is unprotected; and
@@ -390,6 +397,7 @@ BODY = '''<main>
   <strong>discarded or disinfected</strong> first. The eye makeup goes too.</p>
 
 </section>
+@@MORE_BODY@@
 </main>'''
 
 
@@ -415,18 +423,20 @@ def main():
     tail_and_head_fix = re.compile(r'\s*<link rel="alternate"[^>]*pharm-exam-1[^>]*>')
 
     head = re.sub(r"<title>.*?</title>",
-                  "<title>Pharmacology I Exam 2 Study Guide &mdash; Ophthalmic Drugs</title>",
+                  "<title>Pharmacology I Exam 2 Study Guide &mdash; Lectures 4 to 7</title>",
                   head, count=1, flags=re.S)
     head = re.sub(r'<header class="top">.*?</header>',
                   '<header class="top">\n  <h1>Pharmacology I Exam 2 Study Guide</h1>\n'
-                  '  <p>Lecture 4 &middot; Ophthalmic Drugs &middot; Class of 2028</p>\n'
+                  '  <p>Lectures 4 to 7 &middot; Ophthalmic, ENT, Antihypertensive and Lipid-Lowering Drugs &middot; Class of 2028</p>\n'
                   '  <p>Adam Wood, Pharm.D., DABAT</p>\n</header>',
                   head, count=1, flags=re.S)
     # No audio exists for this lecture; an empty audio dir breaks read-aloud.
     head = re.sub(r'\s*data-audio-dir="[^"]*"', "", head)
     head = tail_and_head_fix.sub("", head)
 
-    html = head + '<div class="layout wrap" data-readable>' + "\n" + TOC + "\n\n" + BODY + tail
+    toc = TOC.replace("@@MORE_TOC@@", "\n".join((L5.TOC, L6.TOC, L7.TOC)))
+    body = BODY.replace("@@MORE_BODY@@", L5.BODY + L6.BODY + L7.BODY)
+    html = head + '<div class="layout wrap" data-readable>' + "\n" + toc + "\n\n" + body + tail
 
     for tag in ("div", "section", "p", "h2", "h3", "ol", "ul", "li", "nav", "main", "strong", "em"):
         o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
@@ -434,7 +444,11 @@ def main():
     assert "data-audio-dir" not in html, "audio dir survived"
     assert "TEST_YOURSELF" not in html, "Exam 1 question bank survived"
     assert "pharm-exam-1" not in html, "a link to Exam 1 survived"
-    assert html.count("<li>") >= 10, "objectives missing"
+    assert html.count("<li>") >= 40, "objectives missing"
+    for sid in ("ophthalmic", "ent", "htn", "lipid"):
+        assert '<section class="deck" id="%s">' % sid in html, "section %s missing" % sid
+    assert html.count('class="io-box"') == 4, "expected four objective boxes"
+    assert "@@" not in html, "placeholder survived"
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)

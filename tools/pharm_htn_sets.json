@@ -1,0 +1,3372 @@
+{
+ "raas1": [
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "When is an angiotensin receptor blocker used for left ventricular dysfunction?",
+   "opts": [
+    [
+     "Only after a beta blocker fails",
+     "Beta blocker failure is not the trigger. An angiotensin receptor blocker is used in left ventricular dysfunction when an ACE inhibitor cannot be tolerated."
+    ],
+    [
+     "Only with a potassium supplement",
+     "Potassium supplements raise the risk of hyperkalemia with these drugs and are not required. The indication is intolerance of an ACE inhibitor."
+    ],
+    [
+     "Never, as it worsens heart failure",
+     "It is used in left ventricular dysfunction, started low and titrated upward, whenever an ACE inhibitor cannot be tolerated."
+    ],
+    [
+     "When an ACE inhibitor is not tolerated",
+     "Correct. The ACE (angiotensin-converting enzyme) inhibitor is the default in left ventricular dysfunction; the receptor blocker is the replacement when the patient cannot tolerate it."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 28"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "Which statement about ACE (angiotensin-converting enzyme) inhibitors in pregnancy is accurate?",
+   "opts": [
+    [
+     "Contraindicated in the second and third trimesters",
+     "Correct. They cause fetal morbidity and mortality, including birth defects and fetal death, so they are contraindicated in the second and third trimesters."
+    ],
+    [
+     "Safe once the first trimester has ended",
+     "The danger is greatest after the first trimester: they are contraindicated in the second and third trimesters because of birth defects and fetal death."
+    ],
+    [
+     "Contraindicated in the first trimester only",
+     "The trimesters named are the second and third, when fetal morbidity and mortality occur, not the first alone."
+    ],
+    [
+     "Preferred for hypertension throughout pregnancy",
+     "They cause birth defects and fetal death and are contraindicated in the second and third trimesters, so they are never the preferred pregnancy agent."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 22"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which of these drugs is an angiotensin receptor blocker?",
+   "opts": [
+    [
+     "Benazepril",
+     "Benazepril is an angiotensin-converting enzyme inhibitor (-pril). It lowers angiotensin II production rather than blocking its receptor."
+    ],
+    [
+     "Valsartan",
+     "Correct. The -sartan suffix identifies an angiotensin receptor blocker, the same family as losartan, candesartan, irbesartan and telmisartan."
+    ],
+    [
+     "Nisoldipine",
+     "Nisoldipine is a dihydropyridine calcium channel blocker (-dipine) approved for hypertension, not a blocker of angiotensin receptors."
+    ],
+    [
+     "Nadolol",
+     "Nadolol is a non-selective beta blocker (-lol). Angiotensin receptor blockers carry the -sartan suffix, as valsartan does."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 27"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "A 52-year-old with type 2 diabetes and newly diagnosed hypertension needs a first agent. Which class is preferred for its kidney-protective effect?",
+   "opts": [
+    [
+     "A beta blocker",
+     "Beta blockers are not first line for hypertension and can mask or prolong hypoglycemia in a diabetic. The kidney-protective choice is an ACE inhibitor."
+    ],
+    [
+     "An alpha-1 blocker",
+     "Prazosin and its relatives are add-on or prostate agents, not the preferred first choice in diabetes. ACE inhibitors carry the kidney protection."
+    ],
+    [
+     "An ACE inhibitor",
+     "Correct. ACE (angiotensin-converting enzyme) inhibitors are preferred in diabetics because they lower glomerular pressure and slow diabetic nephropathy; an angiotensin receptor blocker is the equivalent choice."
+    ],
+    [
+     "A direct vasodilator",
+     "Hydralazine and minoxidil are reserved for severe or resistant hypertension with other agents. The diabetic's first choice is an ACE inhibitor."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 16"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "How do angiotensin receptor blockers lower blood pressure?",
+   "opts": [
+    [
+     "By inhibiting renin release",
+     "Reduced renin release is how beta blockers lower angiotensin II (beta-1 blockade at the kidney). Angiotensin receptor blockers act at the AT1 receptor itself."
+    ],
+    [
+     "By blocking AT1 receptors",
+     "Correct. They bind the AT1 (angiotensin II type 1) receptor with high affinity and dissociate slowly, giving sustained blockade: vasodilation, less aldosterone and less sodium reabsorption."
+    ],
+    [
+     "By inhibiting the converting enzyme",
+     "That is the ACE inhibitor mechanism. Angiotensin receptor blockers leave angiotensin II production alone and block its AT1 receptor instead."
+    ],
+    [
+     "By stimulating central alpha-2 sites",
+     "Central alpha-2 stimulation is how clonidine and guanfacine work. Angiotensin receptor blockers act peripherally at the AT1 receptor."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 25"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "protocol",
+   "q": "Blood pressure has not improved after two titration steps. What is the most common cause of a lack of response?",
+   "opts": [
+    [
+     "Medication nonadherence",
+     "Correct. Nonadherence is listed first, ahead of the white coat effect and improper measurement, so it is considered before assuming the drugs have failed."
+    ],
+    [
+     "The white coat effect",
+     "The white coat effect is on the list, but second; the most common cause of lack of response is medication nonadherence."
+    ],
+    [
+     "Tolerance to the drug",
+     "Drug tolerance is not among the listed causes. The most common are nonadherence, the white coat effect and improper blood pressure measurement, in that order."
+    ],
+    [
+     "Excess dietary potassium",
+     "Dietary potassium is not a cause of treatment failure on the list. Medication nonadherence is the most common cause."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "What should a patient starting benazepril be told about potassium?",
+   "opts": [
+    [
+     "Take a daily potassium supplement to replace losses",
+     "The drug retains potassium rather than wasting it, so a supplement risks hyperkalemia. Supplements and salt substitutes should be avoided."
+    ],
+    [
+     "Potassium is not affected by this medicine",
+     "Potassium is affected: less aldosterone means potassium rises, which is why supplements and salt substitutes are a problem."
+    ],
+    [
+     "Expect low potassium, so watch for cramps",
+     "The expected change is a rise, not a fall. Hyperkalemia is the risk, made worse by supplements and salt substitutes."
+    ],
+    [
+     "Avoid potassium supplements and salt substitutes",
+     "Correct. ACE (angiotensin-converting enzyme) inhibitors raise potassium, and supplements or potassium-based salt substitutes add to it; renal disease raises the risk further."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 20"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "class",
+   "q": "Which ACE (angiotensin-converting enzyme) inhibitor has a short half-life, making it the exception to once-daily dosing?",
+   "opts": [
+    [
+     "Lisinopril",
+     "Lisinopril is a once-daily agent. The short half-life exception to once-daily dosing is captopril."
+    ],
+    [
+     "Ramipril",
+     "Ramipril is dosed once daily like most of the class. Captopril is the short half-life exception."
+    ],
+    [
+     "Captopril",
+     "Correct. Captopril's short half-life sets it apart; most other ACE inhibitors are given once daily, though some lose effect near the end of the interval."
+    ],
+    [
+     "Trandolapril",
+     "Trandolapril follows the once-daily pattern of most of the class. The exception with a short half-life is captopril."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 15"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient with salt-sensitive hypertension responds poorly to losartan. What improves the response?",
+   "opts": [
+    [
+     "Doubling the losartan dose",
+     "Receptors are saturated at starting doses, so dose increases change blood pressure only slightly. Adding a diuretic is what improves salt-sensitive hypertension."
+    ],
+    [
+     "Adding an ACE inhibitor",
+     "Pairing an ACE (angiotensin-converting enzyme) inhibitor with an angiotensin receptor blocker is not the step; the recommended combinations add a diuretic or a dihydropyridine."
+    ],
+    [
+     "Adding a potassium supplement",
+     "Potassium supplements raise the hyperkalemia risk with this class and do nothing for the salt-sensitive response. Adding a diuretic does."
+    ],
+    [
+     "Adding a diuretic",
+     "Correct. Angiotensin receptor blockers are less effective in the salt-sensitive form; adding a diuretic improves outcomes, which is why most come as combination products."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 28"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "In a patient with renal disease whose renal blood flow depends on angiotensin II, what can happen when an ACE (angiotensin-converting enzyme) inhibitor is started?",
+   "opts": [
+    [
+     "Filtration rate rises sharply",
+     "The change is a fall, not a rise: removing angiotensin II takes away the support that kept glomerular pressure up in these kidneys."
+    ],
+    [
+     "Filtration rate drops sharply",
+     "Correct. Where renal blood flow depends on angiotensin II, ACE inhibitors can dramatically decrease the glomerular filtration rate, so they are used cautiously and titrated slowly."
+    ],
+    [
+     "Renal blood flow is unchanged",
+     "Renal blood flow is not spared in these patients; the loss of angiotensin II can dramatically decrease glomerular filtration."
+    ],
+    [
+     "Potassium falls sharply",
+     "Potassium tends to rise on this class, especially with renal disease. The kidney-specific danger is a dramatic fall in filtration."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 21"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "What benefit do ACE (angiotensin-converting enzyme) inhibitors provide when given after a myocardial infarction?",
+   "opts": [
+    [
+     "Less remodeling, lower mortality",
+     "Correct. After infarction they reduce myocardial remodeling and lower overall mortality; angiotensin II otherwise drives hypertrophy and remodeling."
+    ],
+    [
+     "Dissolution of the thrombus",
+     "ACE inhibitors have no thrombolytic action. Their post-infarction benefit is reduced myocardial remodeling and lower overall mortality."
+    ],
+    [
+     "Faster heart rate recovery",
+     "They do not act to speed the heart. After infarction the benefit is less remodeling of the damaged myocardium and reduced mortality."
+    ],
+    [
+     "Prevention of reflex tachycardia",
+     "Reflex tachycardia is a problem of dihydropyridines and direct vasodilators, not what ACE inhibitors are given for after infarction; they reduce remodeling and mortality."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 18"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A 64-year-old with chronic kidney disease who uses a salt substitute is started on lisinopril. Which laboratory abnormality is most important to anticipate?",
+   "opts": [
+    [
+     "Hypokalemia",
+     "The direction is wrong: less aldosterone means potassium is retained, so potassium rises rather than falls, especially with kidney disease and a salt substitute."
+    ],
+    [
+     "Hypercalcemia",
+     "Calcium is not the concern with ACE inhibitors. Renal disease plus a potassium-containing salt substitute makes hyperkalemia the one to watch."
+    ],
+    [
+     "Hyperkalemia",
+     "Correct. Hyperkalemia is most often seen with renal disease and in those taking potassium-sparing diuretics, potassium supplements or salt substitutes; this patient has two of those."
+    ],
+    [
+     "Hypoglycemia",
+     "Masked or prolonged hypoglycemia is a beta blocker problem. With an ACE inhibitor, renal disease and a salt substitute, potassium rises."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 20"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "When should a patient starting an ACE (angiotensin-converting enzyme) inhibitor be most alert for angioedema?",
+   "opts": [
+    [
+     "During the first week",
+     "Correct. Angioedema usually develops in the first week of therapy and is reversible if the drug is removed."
+    ],
+    [
+     "After six months or more",
+     "Six months marks the late end of the window for the dry cough, not angioedema. Angioedema usually appears in the first week."
+    ],
+    [
+     "Only after a dose increase",
+     "Angioedema is not tied to titration. It usually develops in the first week of therapy, whatever the dose."
+    ],
+    [
+     "Only after stopping the drug",
+     "Angioedema occurs while the drug is being taken, usually in the first week, and resolves once the drug is removed."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 22"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "protocol",
+   "q": "How should an ACE (angiotensin-converting enzyme) inhibitor be started in a patient with renal disease?",
+   "opts": [
+    [
+     "Full dose, reduced if needed",
+     "Starting at full dose risks an abrupt fall in filtration in a kidney that depends on angiotensin II. The approach is low doses moved up slowly."
+    ],
+    [
+     "A loading dose, then daily doses",
+     "No loading dose is used. In renal disease the drug is started low and increased slowly because filtration can drop sharply."
+    ],
+    [
+     "Low dose, increased slowly",
+     "Correct. Because glomerular filtration can fall dramatically where renal blood flow depends on angiotensin II, the drug is used cautiously: low doses moved upward slowly."
+    ],
+    [
+     "It is never used in renal disease",
+     "It is not banned: it slows diabetic and other nephropathies. It is used cautiously, starting low and titrating slowly."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 21"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "protocol",
+   "q": "After an antihypertensive is started or titrated, when should blood pressure control be reassessed?",
+   "opts": [
+    [
+     "About 3 days later",
+     "Three days is too soon to judge the effect of a change; the recommended reassessment is about 4 weeks after starting or titrating."
+    ],
+    [
+     "About 6 months later",
+     "Six months leaves a patient uncontrolled for too long; reassessment is recommended about 4 weeks after each change."
+    ],
+    [
+     "Only at the annual visit",
+     "Annual review is far too infrequent after a change. Blood pressure is reassessed about 4 weeks after starting or titrating therapy."
+    ],
+    [
+     "About 4 weeks later",
+     "Correct. Control is reassessed about 4 weeks after starting or titrating, and one or two titration steps are appropriate before modifying or adding medication."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "Renin-angiotensin system",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Which action belongs to angiotensin II?",
+   "opts": [
+    [
+     "Stimulating renin release",
+     "Angiotensin II inhibits renin release as negative feedback. That is why blocking its production lets renin and angiotensin I rise."
+    ],
+    [
+     "Stimulating aldosterone secretion",
+     "Correct. Angiotensin II also constricts arterioles and renal vessels, raises sympathetic outflow, and stimulates thirst and antidiuretic hormone release."
+    ],
+    [
+     "Dilating renal arterioles",
+     "Angiotensin II causes renal vasoconstriction. Renal vasodilation is what the angiotensin receptor blockers produce by blocking it."
+    ],
+    [
+     "Suppressing thirst centrally",
+     "The reverse: angiotensin II stimulates thirst, sodium appetite and antidiuretic hormone secretion through its central actions."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 8"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "At diagnosis, a patient's systolic pressure is 24 mmHg above goal. Which starting regimen is recommended?",
+   "opts": [
+    [
+     "ACE inhibitor plus a receptor blocker",
+     "The pairing is an ACE inhibitor OR an angiotensin receptor blocker, combined with a dihydropyridine calcium channel blocker, not the two renin-angiotensin drugs together."
+    ],
+    [
+     "ACE inhibitor plus a dihydropyridine",
+     "Correct. When systolic pressure is more than 20 mmHg (or diastolic more than 10 mmHg) above goal, start an ACE (angiotensin-converting enzyme) inhibitor or angiotensin receptor blocker plus a dihydropyridine."
+    ],
+    [
+     "Beta blocker plus clonidine",
+     "Neither is a first-step agent. Pressure this far above goal starts an ACE inhibitor or angiotensin receptor blocker with a dihydropyridine."
+    ],
+    [
+     "A dihydropyridine by itself",
+     "Monotherapy fits pressure that is only modestly above goal. At more than 20 mmHg systolic above goal, the algorithm starts a two-drug combination."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "ACE vs angiotensin receptor blockers",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient on enalapril has a bothersome dry cough but well-controlled blood pressure. Which change is most appropriate?",
+   "opts": [
+    [
+     "Switch to an angiotensin receptor blocker",
+     "Correct. Angiotensin receptor blockers do not affect bradykinin metabolism, so they do not cause cough, and they keep the benefit of blocking angiotensin II."
+    ],
+    [
+     "Switch to a different ACE inhibitor",
+     "The cough is not related to the specific agent: every ACE (angiotensin-converting enzyme) inhibitor lets bradykinin build up, so a switch within the class keeps the cough."
+    ],
+    [
+     "Halve the dose of enalapril",
+     "The cough is not dose-related, so halving the dose does not remove it. Moving to an angiotensin receptor blocker does."
+    ],
+    [
+     "Add a beta blocker to suppress it",
+     "Beta blockers have no antitussive role and can cause bronchospasm. The fix is to change to a drug that spares bradykinin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 30"
+  }
+ ],
+ "raas2": [
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "Which drug added to losartan most increases the risk of hyperkalemia?",
+   "opts": [
+    [
+     "A potassium-sparing diuretic",
+     "Correct. Hyperkalemia with angiotensin receptor blockers is linked to renal disease and potassium-sparing diuretics, both of which keep potassium in."
+    ],
+    [
+     "A dihydropyridine",
+     "A dihydropyridine calcium channel blocker is a standard partner for losartan and does not raise potassium; the risk comes from potassium-sparing diuretics."
+    ],
+    [
+     "A beta-1 selective blocker",
+     "Beta-1 selective blockers are not linked to hyperkalemia here. The drug that adds to losartan's potassium retention is a potassium-sparing diuretic."
+    ],
+    [
+     "An alpha-1 blocker",
+     "Alpha-1 blockers cause orthostatic hypotension, not hyperkalemia. The potassium danger with losartan is a potassium-sparing diuretic."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 29"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which statement describes ACE (angiotensin-converting enzyme) inhibitors in left ventricular dysfunction?",
+   "opts": [
+    [
+     "Avoid, as they worsen remodeling",
+     "ACE inhibitors reduce ventricular remodeling and hypertrophy rather than worsening them; they should be given to all with left ventricular dysfunction unless contraindicated."
+    ],
+    [
+     "Use only after beta blockers fail",
+     "They are not held in reserve. The recommendation is that every patient with left ventricular dysfunction receives one unless it is contraindicated."
+    ],
+    [
+     "Give to all unless contraindicated",
+     "Correct. They reduce remodeling, afterload and preload, delay progression of heart failure, and reduce myocardial infarction and hospitalization."
+    ],
+    [
+     "Use only when blood pressure is high",
+     "The benefit in left ventricular dysfunction is not limited to hypertension: reduced afterload and remodeling help regardless, so all should receive one unless contraindicated."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 17"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A 58-year-old without diabetes has blood pressure 8/4 mmHg above goal and a urine albumin-to-creatinine ratio below 300 mg/g. Lifestyle counseling is under way. Which is an appropriate first drug?",
+   "opts": [
+    [
+     "A beta blocker or an alpha-1 blocker",
+     "Neither is first line. Beta blockers are not recommended for first-line management of hypertension, and alpha-1 blockers are specialty add-ons."
+    ],
+    [
+     "Hydralazine or minoxidil",
+     "Direct vasodilators are kept for severe or refractory hypertension alongside other agents. The algorithm starts with an ACE inhibitor or angiotensin receptor blocker, or a dihydropyridine."
+    ],
+    [
+     "An ACE inhibitor or a dihydropyridine",
+     "Correct. Below the combination threshold and without albuminuria, first line is an ACE (angiotensin-converting enzyme) inhibitor or angiotensin receptor blocker, or a dihydropyridine calcium channel blocker."
+    ],
+    [
+     "Clonidine or guanfacine",
+     "Central sympatholytics are not in the first-line step. The algorithm begins with an ACE inhibitor or angiotensin receptor blocker, or a dihydropyridine."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A patient asks whether the dry cough from her ACE (angiotensin-converting enzyme) inhibitor will stop if the dose is lowered. What is accurate?",
+   "opts": [
+    [
+     "It resolves with a lower dose",
+     "The cough is not related to dose, so lowering it does not reliably help; if it is bothersome the ACE inhibitor may need to be removed."
+    ],
+    [
+     "It stops on switching to captopril",
+     "The cough is not specific to one agent: every ACE inhibitor raises bradykinin, so switching within the class does not solve it."
+    ],
+    [
+     "It is not related to dose or agent",
+     "Correct. The cough is not dose- or agent-related, is more frequent in women, and may require removing the ACE inhibitor if it is bothersome."
+    ],
+    [
+     "It occurs only in the first day",
+     "It usually appears between 1 week and 6 months after starting, not only on the first day."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 19"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "protocol",
+   "q": "Why does raising an angiotensin receptor blocker's dose change blood pressure only a little?",
+   "opts": [
+    [
+     "Higher doses induce its metabolism",
+     "Enzyme induction is not the explanation. The AT1 receptors are already saturated at starting doses, so extra drug has little left to block."
+    ],
+    [
+     "Receptors saturate at starting doses",
+     "Correct. AT1 (angiotensin II type 1) receptors are saturated at starting doses for most agents, so the dose response is nonlinear; adding a diuretic increases the effect more than a dose increase."
+    ],
+    [
+     "It is converted to an inactive form",
+     "Inactivation is not the reason. With AT1 receptors already saturated at starting doses, higher doses produce only small further changes."
+    ],
+    [
+     "Higher doses block the receptor less",
+     "More drug does not block less. The receptors are nearly all occupied at starting doses, so there is little additional blockade to gain."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 28"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "A patient in her third trimester cannot take an ACE (angiotensin-converting enzyme) inhibitor. Is an angiotensin receptor blocker an acceptable substitute?",
+   "opts": [
+    [
+     "No, it is also avoided then",
+     "Correct. Angiotensin receptor blockers share the fetal morbidity and mortality and are not given in the second and third trimesters."
+    ],
+    [
+     "Yes, it spares the fetus",
+     "It does not spare the fetus. Angiotensin receptor blockers carry the same fetal morbidity and mortality and are not given in trimesters two and three."
+    ],
+    [
+     "Yes, at a reduced dose",
+     "Dose reduction does not make it safe. The class is not given in the second and third trimesters because of fetal harm."
+    ],
+    [
+     "Only if potassium is normal",
+     "Potassium is not the deciding factor. The class is avoided in the second and third trimesters because of fetal morbidity and mortality."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 29"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient taking lisinopril and amlodipine remains above goal after titration, and adherence and measurement have been confirmed. What is the next step?",
+   "opts": [
+    [
+     "Add a thiazide-like diuretic",
+     "Correct. After an ACE (angiotensin-converting enzyme) inhibitor or angiotensin receptor blocker plus a dihydropyridine, the next step is a thiazide-like diuretic; if pressure is still uncontrolled, it is apparent resistant hypertension."
+    ],
+    [
+     "Add losartan",
+     "Adding an angiotensin receptor blocker to an ACE inhibitor doubles up on the same system and is not the next step; a thiazide-like diuretic is."
+    ],
+    [
+     "Add hydralazine",
+     "Direct vasodilators are not the third step. The algorithm adds a thiazide-like diuretic after the ACE inhibitor plus dihydropyridine combination."
+    ],
+    [
+     "Swap amlodipine for verapamil",
+     "Swapping to a non-dihydropyridine is not a step in the algorithm; after the two-drug combination, a thiazide-like diuretic is added."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Four days after starting lisinopril, a patient develops rapid swelling of the lips, tongue and throat. What is the most likely cause?",
+   "opts": [
+    [
+     "Hyperkalemia from low aldosterone",
+     "Hyperkalemia is a real risk of this class but does not cause facial and airway swelling. This is angioedema from bradykinin accumulation."
+    ],
+    [
+     "Bradykinin-mediated angioedema",
+     "Correct. ACE (angiotensin-converting enzyme) inhibitor angioedema is rare, usually appears in the first week, and is reversible when the drug is removed."
+    ],
+    [
+     "First-dose hypotension",
+     "First-dose hypotension causes dizziness or fainting, not swelling of the lips and larynx. That picture is bradykinin-mediated angioedema."
+    ],
+    [
+     "Sodium and water retention",
+     "Sodium retention is a clonidine or direct vasodilator problem and produces generalized fluid gain, not rapid swelling of the lips and tongue."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 22"
+  },
+  {
+   "topic": "Hypertension algorithm",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient with hypertension mildly above goal has a urine albumin-to-creatinine ratio of 450 mg/g. Which initial therapy is recommended?",
+   "opts": [
+    [
+     "A dihydropyridine calcium channel blocker",
+     "A dihydropyridine is a first-line option only when there is no albuminuria. At a ratio of 300 mg/g or more, the choice is an ACE inhibitor or angiotensin receptor blocker."
+    ],
+    [
+     "A beta blocker or an alpha-1 blocker",
+     "Beta blockers are not first line, alpha-1 blockers are specialty add-ons, and neither offers kidney protection. Albuminuria of this degree calls for an ACE inhibitor or angiotensin receptor blocker."
+    ],
+    [
+     "An ACE inhibitor or receptor blocker",
+     "Correct. With an albumin-to-creatinine ratio of 300 mg/g or more, the algorithm starts an ACE (angiotensin-converting enzyme) inhibitor or an angiotensin receptor blocker, consistent with their kidney-protective effect."
+    ],
+    [
+     "Hydralazine or minoxidil",
+     "Direct vasodilators are for severe or resistant hypertension with other agents. Albuminuria points to an ACE inhibitor or angiotensin receptor blocker."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Besides lowering angiotensin II, what does blocking angiotensin-converting enzyme do to bradykinin?",
+   "opts": [
+    [
+     "Speeds its breakdown",
+     "The reverse. Angiotensin-converting enzyme normally inactivates bradykinin, so blocking the enzyme lets bradykinin build up rather than clearing it faster."
+    ],
+    [
+     "Slows its breakdown",
+     "Correct. The same enzyme that makes angiotensin II also inactivates bradykinin, so bradykinin accumulates -- the root of both the dry cough and angioedema."
+    ],
+    [
+     "Blocks its receptor",
+     "ACE inhibitors do not act on a bradykinin receptor. They stop the enzyme that degrades bradykinin, so its level rises."
+    ],
+    [
+     "Leaves it unchanged",
+     "Bradykinin is directly affected: the enzyme that is blocked is the one that breaks it down, so bradykinin accumulates."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 11"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "class",
+   "q": "Which ACE (angiotensin-converting enzyme) inhibitor has an intravenous active form?",
+   "opts": [
+    [
+     "Lisinopril",
+     "Lisinopril is an oral agent without a separate intravenous form. Enalapril's active form, enalaprilat, is the intravenous one."
+    ],
+    [
+     "Benazepril",
+     "Benazepril is given orally. The ACE inhibitor with an intravenous active form is enalapril, as enalaprilat."
+    ],
+    [
+     "Quinapril",
+     "Quinapril is an oral agent. Enalaprilat, the active form of enalapril, is the intravenous option."
+    ],
+    [
+     "Enalapril",
+     "Correct. Enalapril is converted to enalaprilat, which is available as the intravenous form."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 13"
+  },
+  {
+   "topic": "Angiotensin receptor blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Why can angiotensin II still be produced in a patient taking an ACE (angiotensin-converting enzyme) inhibitor?",
+   "opts": [
+    [
+     "Renin makes it directly",
+     "Renin cleaves angiotensinogen to angiotensin I; it does not make angiotensin II. The escape route is other enzymes such as chymase, trypsin and cathepsin."
+    ],
+    [
+     "The adrenal gland secretes it",
+     "The adrenal cortex responds to angiotensin II by releasing aldosterone; it is not a source of angiotensin II. Chymase and similar enzymes are."
+    ],
+    [
+     "Bradykinin converts into it",
+     "Bradykinin is degraded to inactive products, not converted to angiotensin II. The alternative production comes from chymase, trypsin and cathepsin."
+    ],
+    [
+     "Other enzymes such as chymase",
+     "Correct. Trypsin, cathepsin and chymase provide alternative routes to angiotensin II -- the limiting factor of ACE inhibitors that angiotensin receptor blockers get around."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 23"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient on lisinopril begins taking ibuprofen daily for knee pain. How do NSAIDs (nonsteroidal anti-inflammatory drugs) affect the ACE inhibitor?",
+   "opts": [
+    [
+     "They increase its effect",
+     "The direction is wrong. NSAIDs blunt the drug, because they block prostaglandin-driven relaxation that bradykinin produces."
+    ],
+    [
+     "They have no interaction",
+     "There is a listed interaction: NSAIDs decrease the effect of ACE inhibitors by blocking bradykinin-mediated relaxation that depends on prostaglandins."
+    ],
+    [
+     "They cause its cough",
+     "The cough comes from bradykinin and substance P accumulating in the lungs, not from NSAIDs; NSAIDs instead reduce the drug's effect."
+    ],
+    [
+     "They reduce its effect",
+     "Correct. NSAIDs block the prostaglandin-dependent, bradykinin-mediated relaxation that contributes to the ACE (angiotensin-converting enzyme) inhibitor's effect, so blood pressure control weakens."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 22"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "First-dose hypotension with an ACE (angiotensin-converting enzyme) inhibitor is most common in which patient?",
+   "opts": [
+    [
+     "One with mild, untreated hypertension",
+     "Mild untreated hypertension is not a listed risk group. Sodium depletion, heart failure and multiple antihypertensives are."
+    ],
+    [
+     "One who is sodium depleted",
+     "Correct. It is most common in sodium-depleted patients, in heart failure and in those on several antihypertensive drugs, and occurs with the first dose or an upward titration."
+    ],
+    [
+     "One with type 2 diabetes alone",
+     "Diabetes makes an ACE inhibitor the preferred agent but is not a first-dose hypotension risk group; sodium depletion is."
+    ],
+    [
+     "One younger than 40 years",
+     "Youth is not a risk factor listed for this. First-dose hypotension is most common with sodium depletion, heart failure or multiple antihypertensives."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 20"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "A patient's medication list includes ramipril. To which drug class does it belong?",
+   "opts": [
+    [
+     "Angiotensin receptor blockers",
+     "Angiotensin receptor blockers end in -sartan (losartan, valsartan). A -pril ending identifies an angiotensin-converting enzyme inhibitor instead."
+    ],
+    [
+     "ACE inhibitors",
+     "Correct. The -pril suffix marks an ACE (angiotensin-converting enzyme) inhibitor; ramipril sits alongside lisinopril, enalapril, benazepril and quinapril."
+    ],
+    [
+     "Dihydropyridine blockers",
+     "Dihydropyridine calcium channel blockers end in -dipine (amlodipine, nifedipine). Ramipril's -pril ending marks an ACE inhibitor."
+    ],
+    [
+     "Beta blockers",
+     "Beta blockers end in -lol (metoprolol, atenolol). The -pril suffix belongs to the angiotensin-converting enzyme inhibitors."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 14"
+  },
+  {
+   "topic": "Renin-angiotensin system",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "What happens to renin release when renal perfusion falls?",
+   "opts": [
+    [
+     "It decreases",
+     "Falling renal perfusion is sensed by the renal baroreceptor as reduced stretch of the afferent arteriole, and renin release rises rather than falls."
+    ],
+    [
+     "It stays constant",
+     "Renin release is actively controlled; the renal baroreceptor raises it when afferent arteriolar stretch falls with poor perfusion."
+    ],
+    [
+     "It stops completely",
+     "Low renal perfusion is one of the main stimuli for renin release. The renal baroreceptor increases secretion when the afferent arteriole is less stretched."
+    ],
+    [
+     "It increases",
+     "Correct. The renal baroreceptor responds to stretch of the afferent arteriole: less perfusion, more renin. Sympathetic activity at beta-1 receptors raises it too."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 7"
+  },
+  {
+   "topic": "ACE vs angiotensin receptor blockers",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Compared with ACE (angiotensin-converting enzyme) inhibitors, which statement about angiotensin receptor blockers is accurate?",
+   "opts": [
+    [
+     "They do not cause the dry cough",
+     "Correct. They do not affect bradykinin metabolism, so cough does not occur and angioedema is less frequent, which is why patients may be switched to them."
+    ],
+    [
+     "They cause more angioedema",
+     "The reverse: angiotensin receptor blockers have a lower incidence of angioedema, which is one reason a patient may be switched to one."
+    ],
+    [
+     "They raise bradykinin further",
+     "Angiotensin receptor blockers do not inhibit bradykinin breakdown at all; that is why they avoid the cough."
+    ],
+    [
+     "They are safe late in pregnancy",
+     "Like ACE inhibitors, they are not given in the second and third trimesters because of fetal morbidity and mortality."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 30"
+  },
+  {
+   "topic": "ACE inhibitors",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient develops a persistent dry cough six weeks after starting lisinopril. What is the likely cause?",
+   "opts": [
+    [
+     "Bradykinin accumulating in the lungs",
+     "Correct. Bradykinin and substance P accumulate because the converting enzyme no longer breaks them down; the cough appears between 1 week and 6 months."
+    ],
+    [
+     "Angiotensin II acting on the airways",
+     "Angiotensin II falls on an ACE inhibitor, so it cannot be the cause. The cough comes from bradykinin and substance P accumulating in the lungs."
+    ],
+    [
+     "Aldosterone excess retaining fluid",
+     "Aldosterone synthesis falls on this drug. The dry cough is a bradykinin and substance P effect in the lungs."
+    ],
+    [
+     "Beta-2 blockade in the bronchi",
+     "Bronchospasm from beta-2 blockade belongs to beta blockers. The ACE inhibitor cough comes from bradykinin accumulating in the lungs."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 19"
+  }
+ ],
+ "ccb1": [
+  {
+   "topic": "Calcium channel blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Why are arterial vessels 3 to 10 times more sensitive to calcium channel blockers than myocardial cells?",
+   "opts": [
+    [
+     "Myocytes lack L-type calcium channels",
+     "Myocytes do have L-type channels; they supply the trigger calcium. The difference is that myocytes also recycle calcium from the sarcoplasmic reticulum."
+    ],
+    [
+     "Arteries store more internal calcium",
+     "It is the reverse: myocytes have the recirculating internal store, while arteries depend on calcium entering through L-type channels."
+    ],
+    [
+     "Arteries carry more beta-2 receptors",
+     "Beta receptors are not how calcium channel blockers act. The sensitivity comes from arteries depending on calcium entry through L-type channels."
+    ],
+    [
+     "Arteries rely on outside calcium entry",
+     "Correct. Arterial smooth muscle depends on exogenous calcium through L-type channels, whereas myocytes also draw on a recirculating store in the sarcoplasmic reticulum."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 39"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which pair of calcium channel blockers lowers heart rate and slows atrioventricular conduction?",
+   "opts": [
+    [
+     "Amlodipine and nifedipine",
+     "These are dihydropyridines, which act mainly on vascular smooth muscle and have no effect on atrioventricular conduction."
+    ],
+    [
+     "Felodipine and isradipine",
+     "These are dihydropyridines approved for hypertension; they dilate arteries rather than slowing the heart. Diltiazem and verapamil slow it."
+    ],
+    [
+     "Nicardipine and nimodipine",
+     "Both are dihydropyridines: nicardipine is the intravenous one and nimodipine is for subarachnoid hemorrhage. Neither slows atrioventricular conduction."
+    ],
+    [
+     "Diltiazem and verapamil",
+     "Correct. Only the non-dihydropyridines strongly suppress the sinoatrial and atrioventricular nodes; this one distinction drives their indications, adverse effects and contraindications."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 42"
+  },
+  {
+   "topic": "Calcium channel blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "At therapeutic doses, how do calcium channel blockers affect preload and afterload?",
+   "opts": [
+    [
+     "Lower afterload, no change in preload",
+     "Correct. At therapeutic doses they do not reduce venous tone, so they decrease afterload without affecting preload."
+    ],
+    [
+     "Lower preload, no change in afterload",
+     "The reverse. They are ineffective at decreasing venous tone, so preload is unaffected, while arterial dilation lowers afterload."
+    ],
+    [
+     "Lower preload and afterload equally",
+     "Veins are not dilated at therapeutic doses, so only afterload falls. Nitroprusside is the drug that acts on both veins and arterioles."
+    ],
+    [
+     "Raise preload and lower afterload",
+     "Preload does not rise; it is simply unaffected because venous tone is not reduced. Afterload falls through arterial dilation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 38"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which calcium channel blocker is more likely than diltiazem to cause gynecomastia?",
+   "opts": [
+    [
+     "Verapamil",
+     "Verapamil is not the agent named in the gynecomastia comparison, which lists nifedipine as more likely than diltiazem."
+    ],
+    [
+     "Nifedipine",
+     "Correct. Gynecomastia is listed with the comparison that nifedipine exceeds diltiazem; gingival hyperplasia is shared across the class."
+    ],
+    [
+     "Nimodipine",
+     "Nimodipine is the subarachnoid hemorrhage agent and is not named in the gynecomastia comparison; nifedipine is."
+    ],
+    [
+     "Nicardipine",
+     "Nicardipine is the intravenous dihydropyridine; the gynecomastia comparison names nifedipine over diltiazem."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 51"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "A patient was admitted last week with unstable angina. Which calcium channel blocker formulation should be avoided?",
+   "opts": [
+    [
+     "Extended-release non-dihydropyridine",
+     "The listed contraindication in unstable angina or recent infarction is the immediate-release dihydropyridine formulation, not an extended-release non-dihydropyridine."
+    ],
+    [
+     "Immediate-release dihydropyridine",
+     "Correct. Unstable angina or recent myocardial infarction contraindicates immediate-release dihydropyridines, and short-acting formulations are to be avoided in general."
+    ],
+    [
+     "Intravenous non-dihydropyridine",
+     "Intravenous diltiazem or verapamil is not the formulation named for this situation; immediate-release dihydropyridines are."
+    ],
+    [
+     "Any oral non-dihydropyridine",
+     "The unstable angina contraindication is written for immediate-release dihydropyridines, whose abrupt vasodilation provokes reflex tachycardia."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 52"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A transplant recipient taking tacrolimus is started on diltiazem. What is expected to happen to the tacrolimus level?",
+   "opts": [
+    [
+     "It falls",
+     "The direction is the reverse: diltiazem inhibits the CYP3A4 and P-glycoprotein routes that clear tacrolimus, so the level rises."
+    ],
+    [
+     "It is unchanged",
+     "Tacrolimus is on the CYP3A4 and P-glycoprotein lists for non-dihydropyridines, so its level is not expected to stay unchanged; it rises."
+    ],
+    [
+     "It rises",
+     "Correct. Non-dihydropyridines inhibit CYP3A4 and P-glycoprotein, and tacrolimus and cyclosporine are on both lists, so their levels rise."
+    ],
+    [
+     "It becomes unmeasurable",
+     "Nothing makes tacrolimus unmeasurable here. Diltiazem's CYP3A4 and P-glycoprotein inhibition raises it."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "interaction",
+   "q": "What effect does adding a CYP3A4 inhibitor have on a non-dihydropyridine such as verapamil?",
+   "opts": [
+    [
+     "It lengthens its half-life",
+     "Correct. CYP3A4 inhibitors increase the half-life of non-dihydropyridines, and of dihydropyridines as well."
+    ],
+    [
+     "It shortens its half-life",
+     "Inhibiting the enzyme that clears the drug prolongs it rather than shortening it. CYP3A4 inhibitors increase the half-life."
+    ],
+    [
+     "It blocks its absorption",
+     "Absorption is not the listed effect. CYP3A4 inhibitors increase the half-life of non-dihydropyridines."
+    ],
+    [
+     "It has no effect on it",
+     "There is a listed effect: CYP3A4 inhibitors increase the non-dihydropyridine half-life."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 48"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient on simvastatin is started on verapamil and develops muscle aches. By what mechanism does verapamil raise simvastatin levels?",
+   "opts": [
+    [
+     "CYP3A4 induction",
+     "Induction would lower simvastatin levels. Verapamil is an inhibitor of CYP3A4, which is why the statin accumulates."
+    ],
+    [
+     "P-glycoprotein induction",
+     "Verapamil inhibits P-glycoprotein (raising digoxin); it does not induce it. The statin interaction is through CYP3A4 inhibition."
+    ],
+    [
+     "Protein binding displacement",
+     "Displacement from proteins is not the listed mechanism. Non-dihydropyridines raise these statins by inhibiting CYP3A4."
+    ],
+    [
+     "CYP3A4 inhibition",
+     "Correct. Non-dihydropyridines inhibit CYP3A4, raising atorvastatin, lovastatin and simvastatin, as well as carbamazepine, propranolol, tacrolimus and cyclosporine."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "Which condition is a contraindication to a dihydropyridine calcium channel blocker?",
+   "opts": [
+    [
+     "Chronic stable angina",
+     "Stable angina is an approved indication for amlodipine, nifedipine and nicardipine, not a contraindication."
+    ],
+    [
+     "Essential hypertension",
+     "Hypertension is the main indication for dihydropyridines. The contraindication is severe aortic stenosis."
+    ],
+    [
+     "First-degree heart block",
+     "Dihydropyridines have no effect on atrioventricular conduction, so heart block is a problem for diltiazem and verapamil rather than for them."
+    ],
+    [
+     "Severe aortic stenosis",
+     "Correct. Severe aortic stenosis is a contraindication, as are unstable angina or recent myocardial infarction when an immediate-release formulation would be used."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 52"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient with hypertension also has heart failure. Which calcium channel blocker avoids the relative contraindication in heart failure?",
+   "opts": [
+    [
+     "Verapamil",
+     "Verapamil has the strongest suppression of contractility and can exacerbate heart failure; heart failure is a relative contraindication to it."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem is a non-dihydropyridine; heart failure is a relative contraindication because of its negative inotropic effect."
+    ],
+    [
+     "Amlodipine",
+     "Correct. Heart failure is a relative contraindication to the non-dihydropyridines because they suppress contractility; amlodipine, a dihydropyridine approved for hypertension, has little effect on contractility."
+    ],
+    [
+     "Nimodipine",
+     "Nimodipine is a dihydropyridine, but its approved indication is subarachnoid hemorrhage, not hypertension. Amlodipine is the hypertension choice."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 46"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which approved indication belongs to verapamil but not to amlodipine?",
+   "opts": [
+    [
+     "Supraventricular tachycardia",
+     "Correct. Both treat angina and hypertension; only the non-dihydropyridines slow the atrioventricular node enough to treat supraventricular tachycardia."
+    ],
+    [
+     "Chronic stable angina",
+     "Angina is approved for both: verapamil and amlodipine (with nifedipine and nicardipine) are all used for it. The difference is supraventricular tachycardia."
+    ],
+    [
+     "Essential hypertension",
+     "Hypertension is an approved indication for both drugs. Only verapamil adds supraventricular tachycardia."
+    ],
+    [
+     "Subarachnoid hemorrhage",
+     "Subarachnoid hemorrhage is nimodipine's indication, not verapamil's. Verapamil's extra indication is supraventricular tachycardia."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 44"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "How does verapamil raise digoxin levels?",
+   "opts": [
+    [
+     "CYP3A4 induction",
+     "Verapamil inhibits rather than induces CYP3A4, and digoxin is listed under P-glycoprotein. Inhibition of that transporter is the route."
+    ],
+    [
+     "Reduced renal blood flow",
+     "Changes in renal blood flow are not the listed mechanism. Verapamil raises digoxin by inhibiting P-glycoprotein."
+    ],
+    [
+     "P-glycoprotein inhibition",
+     "Correct. Non-dihydropyridines inhibit P-glycoprotein, raising digoxin, tacrolimus, cyclosporine and carbamazepine; digoxin also adds a pharmacodynamic interaction."
+    ],
+    [
+     "Binding digoxin in the gut",
+     "Binding in the gut lowers absorption, as bile acid sequestrants do. Verapamil raises digoxin by inhibiting P-glycoprotein."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which laboratory change is listed among the adverse effects of non-dihydropyridines?",
+   "opts": [
+    [
+     "Raised serum potassium",
+     "Raised potassium belongs to ACE (angiotensin-converting enzyme) inhibitors and angiotensin receptor blockers, not calcium channel blockers."
+    ],
+    [
+     "Raised liver function tests",
+     "Correct. Elevations in liver function tests are listed, and liver disease is a relative contraindication to diltiazem and verapamil."
+    ],
+    [
+     "Raised serum uric acid",
+     "Raised uric acid is a niacin effect. The listed laboratory change for non-dihydropyridines is elevated liver function tests."
+    ],
+    [
+     "Raised blood glucose",
+     "Raised glucose is listed for clonidine (and for beta blockers in type 2 diabetes), not for non-dihydropyridines, which raise liver function tests."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 45"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient started on nifedipine reports a pounding, rapid heartbeat. What explains it?",
+   "opts": [
+    [
+     "Direct stimulation of the sinus node",
+     "Dihydropyridines do not stimulate the sinoatrial node; the fast rate is a reflex response to the fall in vascular resistance."
+    ],
+    [
+     "Blockade of cardiac beta-1 receptors",
+     "Beta-1 blockade slows the heart rather than speeding it, and nifedipine does not block beta receptors. This is reflex tachycardia from vasodilation."
+    ],
+    [
+     "Reflex tachycardia from vasodilation",
+     "Correct. Strong arterial dilation drops resistance abruptly and the heart compensates by speeding up; rebound tachycardia is a listed dihydropyridine effect."
+    ],
+    [
+     "Hyperkalemia from renal effects",
+     "Hyperkalemia belongs to ACE inhibitors and angiotensin receptor blockers. A rapid heartbeat on nifedipine is reflex tachycardia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 51"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "Which is listed as a relative contraindication to non-dihydropyridine calcium channel blockers?",
+   "opts": [
+    [
+     "Gastroesophageal reflux disease",
+     "Correct. Heart failure, liver disease and gastroesophageal reflux disease are relative contraindications; the drugs relax smooth muscle, including the lower esophageal sphincter."
+    ],
+    [
+     "Asthma with frequent wheeze",
+     "Asthma is a concern with non-selective beta blockers because of bronchospasm; it is not listed for non-dihydropyridines, whose relative list includes reflux disease."
+    ],
+    [
+     "Gout with raised uric acid",
+     "Gout is a relative contraindication to niacin because it raises uric acid; the non-dihydropyridine relative list is heart failure, liver disease and reflux disease."
+    ],
+    [
+     "Hypokalemia on a diuretic",
+     "Low potassium is not a listed contraindication for these drugs. The relative contraindications are heart failure, liver disease and reflux disease."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 46"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient on diltiazem is started on amiodarone. What pharmacodynamic risk does the combination carry?",
+   "opts": [
+    [
+     "Reflex tachycardia",
+     "Reflex tachycardia comes from dihydropyridine vasodilation. Amiodarone added to diltiazem slows the heart further rather than speeding it."
+    ],
+    [
+     "Excess slowing of the heart",
+     "Correct. Amiodarone with a non-dihydropyridine can slow the sinus rate or worsen atrioventricular block; digoxin and beta blockers are listed alongside it."
+    ],
+    [
+     "Hyperkalemia",
+     "Potassium is not the concern of this pair. The risk is additive nodal suppression: a slower sinus rate or worsened atrioventricular block."
+    ],
+    [
+     "Loss of diltiazem effect",
+     "The effects add rather than cancel. The combination slows the sinus rate or worsens atrioventricular block."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  }
+ ],
+ "ccb2": [
+  {
+   "topic": "Dihydropyridines",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient on amlodipine develops ankle swelling. What is the mechanism?",
+   "opts": [
+    [
+     "Heart failure from negative inotropy",
+     "Dihydropyridines have little effect on contractility (0 to +). Worsening heart failure from negative inotropy is a non-dihydropyridine problem."
+    ],
+    [
+     "Peripheral vasodilation",
+     "Correct. Peripheral edema is listed under the peripheral vasodilation effects of dihydropyridines, together with dyspnea, wheezing and rebound tachycardia."
+    ],
+    [
+     "Sodium retention by aldosterone",
+     "Aldosterone-driven retention is not the explanation offered for dihydropyridine edema; it is a consequence of peripheral vasodilation."
+    ],
+    [
+     "Low albumin from liver injury",
+     "Dihydropyridine edema is not explained by liver injury or albumin loss. It is listed as a peripheral vasodilation effect."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 51"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "interaction",
+   "q": "How do dihydropyridines differ from non-dihydropyridines with respect to CYP3A4?",
+   "opts": [
+    [
+     "Stronger CYP3A4 inhibitors",
+     "It is the non-dihydropyridines that inhibit CYP3A4. Dihydropyridines affect other drugs only pharmacodynamically."
+    ],
+    [
+     "Substrates, not inhibitors",
+     "Correct. CYP3A4 inhibitors lengthen the half-life of both groups, but only the non-dihydropyridines inhibit CYP3A4 and alter other drugs through it."
+    ],
+    [
+     "Inducers of CYP3A4",
+     "Dihydropyridines are not described as inducers. They are substrates, so CYP3A4 inhibitors increase their half-life."
+    ],
+    [
+     "Unaffected by CYP3A4",
+     "They are affected: CYP3A4 inhibitors increase the dihydropyridine half-life. What they lack is the non-dihydropyridines' inhibitory effect."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 54"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "class",
+   "q": "Most dihydropyridines are taken by mouth only. Which one is available intravenously?",
+   "opts": [
+    [
+     "Amlodipine",
+     "Amlodipine is an oral dihydropyridine for angina and hypertension. The intravenous exception is nicardipine."
+    ],
+    [
+     "Felodipine",
+     "Felodipine is oral only and approved for hypertension. Nicardipine is the dihydropyridine available intravenously."
+    ],
+    [
+     "Nisoldipine",
+     "Nisoldipine is taken by mouth for hypertension. The only intravenous dihydropyridine is nicardipine."
+    ],
+    [
+     "Nicardipine",
+     "Correct. The dihydropyridines are oral only, except nicardipine, which is available intravenously; it is approved for angina and hypertension."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 49"
+  },
+  {
+   "topic": "Calcium channel blockers",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which is a listed therapeutic use of calcium channel blockers as a class?",
+   "opts": [
+    [
+     "Benign prostatic hyperplasia",
+     "Prostatic hyperplasia is treated with alpha-1 blockers such as terazosin, doxazosin and tamsulosin, not calcium channel blockers."
+    ],
+    [
+     "Hypertensive crisis by infusion",
+     "The crisis agent given by intravenous infusion is nitroprusside. Calcium channel blocker uses include angina, arrhythmias and migraine prophylaxis."
+    ],
+    [
+     "Benign essential tremor",
+     "Essential tremor is a beta blocker indication, from blocking beta-2 receptors on skeletal muscle. Calcium channel blockers are used for migraine prophylaxis."
+    ],
+    [
+     "Migraine prophylaxis",
+     "Correct. Class uses are angina, hypertension, supraventricular arrhythmias, diastolic heart failure, cerebral ischemia and migraine prophylaxis."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 41"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which dihydropyridine is approved for subarachnoid hemorrhage?",
+   "opts": [
+    [
+     "Nifedipine",
+     "Nifedipine is approved for angina and hypertension. The subarachnoid hemorrhage agent is nimodipine."
+    ],
+    [
+     "Nicardipine",
+     "Nicardipine is approved for angina and hypertension and is the one available intravenously. Nimodipine is the subarachnoid hemorrhage agent."
+    ],
+    [
+     "Nimodipine",
+     "Correct. Nimodipine's approved indication is subarachnoid hemorrhage, unlike the other dihydropyridines, which are approved for hypertension with or without angina."
+    ],
+    [
+     "Nisoldipine",
+     "Nisoldipine is approved for hypertension only. Nimodipine is the dihydropyridine used for subarachnoid hemorrhage."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 49"
+  },
+  {
+   "topic": "Dihydropyridines",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which of these drugs is a dihydropyridine calcium channel blocker?",
+   "opts": [
+    [
+     "Felodipine",
+     "Correct. The -dipine suffix marks a dihydropyridine; felodipine, isradipine and nisoldipine are approved for hypertension."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem is a non-dihydropyridine, one of the two that act on the sinoatrial and atrioventricular nodes. The -dipine suffix marks the dihydropyridines."
+    ],
+    [
+     "Verapamil",
+     "Verapamil is the other non-dihydropyridine, with the strongest cardiac suppression. Dihydropyridines carry the -dipine suffix, like felodipine."
+    ],
+    [
+     "Fosinopril",
+     "Fosinopril is an ACE (angiotensin-converting enzyme) inhibitor, as its -pril suffix shows. Felodipine is the dihydropyridine here."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 49"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "Which calcium channel blocker would be used to slow the ventricular rate in atrial fibrillation?",
+   "opts": [
+    [
+     "Nicardipine",
+     "Nicardipine is the intravenous dihydropyridine; it lowers blood pressure but has no effect on atrioventricular conduction, so it cannot control the rate."
+    ],
+    [
+     "Diltiazem",
+     "Correct. Diltiazem strongly suppresses the sinoatrial node and atrioventricular conduction; atrial fibrillation or flutter is an approved non-dihydropyridine indication."
+    ],
+    [
+     "Nimodipine",
+     "Nimodipine is the dihydropyridine approved for subarachnoid hemorrhage and does not slow atrioventricular conduction."
+    ],
+    [
+     "Isradipine",
+     "Isradipine is a dihydropyridine approved for hypertension. Rate control needs a non-dihydropyridine such as diltiazem."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 44"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "An older patient on verapamil has a heart rate of 48 beats per minute. Which other adverse effects follow from the same cardiac action?",
+   "opts": [
+    [
+     "Reflex tachycardia and palpitations",
+     "Reflex tachycardia is a dihydropyridine effect. Verapamil suppresses the nodes and contractility instead, causing bradycardia and heart block."
+    ],
+    [
+     "Hypertrichosis and pericardial effusion",
+     "Hypertrichosis belongs to minoxidil. Verapamil's cardiac action causes atrioventricular block, bradycardia and worsening heart failure."
+    ],
+    [
+     "Dry cough and angioedema",
+     "Cough and angioedema are bradykinin effects of ACE inhibitors, not consequences of verapamil's cardiac suppression."
+    ],
+    [
+     "First-degree block and worse heart failure",
+     "Correct. Negative inotropic and nodal effects produce first-degree atrioventricular block, bradycardia, and exacerbation of heart failure or pulmonary edema."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 45"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A 72-year-old starting verapamil asks which change in bowel habit to watch for. What should she be told?",
+   "opts": [
+    [
+     "Black stools",
+     "Stools that may turn black are listed for hydralazine, not verapamil. Verapamil's bowel effect to warn about is constipation."
+    ],
+    [
+     "Oily, fatty stools",
+     "Fatty stools are not a verapamil effect; the listed gastrointestinal problem to watch for is constipation."
+    ],
+    [
+     "Constipation",
+     "Correct. Constipation is among the listed gastrointestinal effects of non-dihydropyridines, so bowel habits are worth asking about at follow-up."
+    ],
+    [
+     "Bloody diarrhea",
+     "Bloody diarrhea is not a listed effect. The non-dihydropyridine bowel effect patients should know about is constipation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 45"
+  },
+  {
+   "topic": "Calcium channel blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Which calcium channel type do these drugs block in vascular smooth muscle, cardiac myocytes and nodal tissue?",
+   "opts": [
+    [
+     "L-type channels",
+     "Correct. L-type channels sit in vascular smooth muscle, cardiac myocytes and the sinoatrial and atrioventricular nodes, and all three drug groups bind them."
+    ],
+    [
+     "T-type channels",
+     "T-type channels mediate pacemaker depolarization and are the mibefradil target, not the channel these drugs block across all three tissues."
+    ],
+    [
+     "Ryanodine receptors",
+     "Ryanodine receptors release calcium from the sarcoplasmic reticulum; calcium channel blockers act on the L-type channel in the cell membrane."
+    ],
+    [
+     "IP3 receptors",
+     "Inositol triphosphate (IP3) receptors modulate sarcoplasmic reticulum calcium release; the drug target is the L-type membrane channel."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 33"
+  },
+  {
+   "topic": "Calcium channel blockers",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is listed for both diltiazem and amlodipine?",
+   "opts": [
+    [
+     "First-degree heart block",
+     "Atrioventricular block follows from non-dihydropyridine nodal suppression. Dihydropyridines such as amlodipine have no effect on atrioventricular conduction."
+    ],
+    [
+     "Dry cough",
+     "Dry cough is an ACE inhibitor effect from bradykinin, not a calcium channel blocker effect. Gingival hyperplasia is the shared one."
+    ],
+    [
+     "Gingival hyperplasia",
+     "Correct. Gingival hyperplasia appears in the adverse effect lists of both the non-dihydropyridines and the dihydropyridines."
+    ],
+    [
+     "Hypertrichosis",
+     "Hypertrichosis is characteristic of minoxidil. The effect shared by diltiazem and amlodipine is gingival hyperplasia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 51"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient has paroxysmal supraventricular tachycardia. Which calcium channel blocker is appropriate?",
+   "opts": [
+    [
+     "Verapamil",
+     "Correct. Supraventricular tachycardia -- atrial fibrillation or flutter and paroxysmal supraventricular tachycardia -- is an approved indication for the non-dihydropyridines."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine is a dihydropyridine approved for angina and hypertension. It does not slow atrioventricular conduction, so it cannot treat supraventricular tachycardia."
+    ],
+    [
+     "Nifedipine",
+     "Nifedipine is a dihydropyridine: vasodilation with reflex tachycardia, not nodal slowing. Supraventricular tachycardia needs verapamil or diltiazem."
+    ],
+    [
+     "Felodipine",
+     "Felodipine is a dihydropyridine approved only for hypertension. Only the non-dihydropyridines act on the nodes to treat supraventricular tachycardia."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 44"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "What is advised when verapamil is combined with a beta blocker?",
+   "opts": [
+    [
+     "Use higher doses of each",
+     "Their effects add, so higher doses would compound the fall in heart rate and contractility. Lower doses of each are advised."
+    ],
+    [
+     "Separate doses by 4 hours",
+     "Timing separation is the rule for bile acid sequestrants. For this pharmacodynamic synergy the advice is lower doses of each."
+    ],
+    [
+     "Give only intravenously",
+     "The route does not solve additive cardiac depression. The advice for the combination is lower doses of each."
+    ],
+    [
+     "Use lower doses of each",
+     "Correct. The two are synergistic in lowering blood pressure, heart rate and contractility, so lower doses of each are used when they are combined."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 75"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Why do non-dihydropyridines slow atrioventricular conduction while dihydropyridines do not?",
+   "opts": [
+    [
+     "They block T-type channels only",
+     "T-type channels handle pacemaker depolarization and are not how these drugs differ. The difference is that non-dihydropyridines also delay slow-channel recovery."
+    ],
+    [
+     "They also delay slow-channel recovery",
+     "Correct. Both reduce the slow inward calcium current, but only the non-dihydropyridines also decrease the channel's rate of recovery, which slows atrioventricular conduction."
+    ],
+    [
+     "They also block sodium channels",
+     "Sodium channel blockade is not described for either group. What separates them is whether the drug delays recovery of the slow calcium channel."
+    ],
+    [
+     "They also block beta-1 receptors",
+     "Neither group blocks beta receptors. Non-dihydropyridines slow conduction because they delay recovery of the slow calcium channel as well as reducing its current."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 40"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient on diltiazem needs a statin. Which statin's levels would diltiazem's CYP3A4 inhibition raise?",
+   "opts": [
+    [
+     "Rosuvastatin",
+     "Rosuvastatin undergoes minimal CYP metabolism, so it is not on the list of statins raised by non-dihydropyridines."
+    ],
+    [
+     "Pravastatin",
+     "Pravastatin is metabolized by enzymatic and nonenzymatic routes rather than CYP3A4, so diltiazem's inhibition does not raise it the same way."
+    ],
+    [
+     "Atorvastatin",
+     "Correct. The statins raised by non-dihydropyridine CYP3A4 inhibition are atorvastatin, lovastatin and simvastatin."
+    ],
+    [
+     "Pitavastatin",
+     "Pitavastatin is cleared by glucuronidation rather than CYP3A4. The CYP3A4 statins are atorvastatin, lovastatin and simvastatin."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Non-dihydropyridines",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "Which condition is a contraindication to diltiazem?",
+   "opts": [
+    [
+     "Advanced heart block",
+     "Correct. Advanced heart block and hypotension are contraindications; heart failure, liver disease and gastroesophageal reflux disease are relative contraindications."
+    ],
+    [
+     "Supraventricular tachycardia",
+     "Supraventricular tachycardia is an approved indication for diltiazem, not a contraindication; nodal slowing is what treats it."
+    ],
+    [
+     "Chronic stable angina",
+     "Angina is an approved indication for diltiazem. The contraindication is advanced heart block, which its nodal suppression would worsen."
+    ],
+    [
+     "Uncomplicated hypertension",
+     "Hypertension is an approved indication. Diltiazem is contraindicated in advanced heart block and hypotension."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 46"
+  }
+ ],
+ "beta1": [
+  {
+   "topic": "Beta blocker indications",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "indication",
+   "q": "In thyrotoxicosis, beta blockers relieve tachycardia, tremor and anxiety. What additional effect do they have on thyroxine (T4) and triiodothyronine (T3)?",
+   "opts": [
+    [
+     "Less thyroid hormone synthesis",
+     "Blocking hormone synthesis in the gland is not the effect described. Beta blockers reduce peripheral conversion of thyroxine (T4) to triiodothyronine (T3)."
+    ],
+    [
+     "More thyroid-stimulating hormone",
+     "Beta blockers are not described as raising thyroid-stimulating hormone. Their extra action is reduced peripheral thyroxine-to-triiodothyronine conversion."
+    ],
+    [
+     "Less peripheral T4-to-T3 conversion",
+     "Correct. They reduce the peripheral conversion of thyroxine (T4) to the more active triiodothyronine (T3), besides blunting the adrenergic symptoms."
+    ],
+    [
+     "Less iodine uptake by the gland",
+     "Iodine uptake is not affected by beta blockers. They act peripherally, reducing conversion of thyroxine (T4) to triiodothyronine (T3)."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 66"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which conduction problem can beta blockers cause?",
+   "opts": [
+    [
+     "Reflex tachycardia",
+     "Reflex tachycardia comes from vasodilators such as dihydropyridines and hydralazine. Beta blockers slow the heart and can cause heart block."
+    ],
+    [
+     "Atrioventricular block",
+     "Correct. Cardiodepressive effects include bradycardia (heart rate under 60) and first-, second- or third-degree atrioventricular block, as well as negative inotropy and fatigue."
+    ],
+    [
+     "Supraventricular tachycardia",
+     "Supraventricular arrhythmias are an indication: beta blockers block the atrioventricular node and slow transmission. The conduction problem they cause is heart block."
+    ],
+    [
+     "Ventricular tachycardia",
+     "Beta blockers are cardio-depressive; the conduction effect they cause is atrioventricular block, with bradycardia."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 71"
+  },
+  {
+   "topic": "Beta blocker mechanism",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "How do beta blockers lower angiotensin II?",
+   "opts": [
+    [
+     "Blocking renal beta-1 receptors",
+     "Correct. Beta-1 receptors on the juxtaglomerular cells mediate renin release, so blocking them reduces renin and therefore angiotensin II."
+    ],
+    [
+     "Inhibiting the converting enzyme",
+     "That is the ACE (angiotensin-converting enzyme) inhibitor mechanism. Beta blockers act upstream, by blocking the beta-1 receptors that release renin."
+    ],
+    [
+     "Blocking the AT1 receptor",
+     "AT1 (angiotensin II type 1) receptor blockade belongs to angiotensin receptor blockers. Beta blockers reduce renin release through beta-1 blockade."
+    ],
+    [
+     "Blocking lung beta-2 receptors",
+     "Blocking pulmonary beta-2 receptors causes bronchospasm; it does not lower angiotensin II. The renin effect is through beta-1 receptors."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 56"
+  },
+  {
+   "topic": "Beta blocker agents",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "class",
+   "q": "Which beta-1 selective blocker is given intravenously?",
+   "opts": [
+    [
+     "Esmolol",
+     "Correct. Esmolol is the second-generation, beta-1 selective agent marked for intravenous use."
+    ],
+    [
+     "Atenolol",
+     "Atenolol is an oral beta-1 selective agent. The intravenous beta-1 selective blocker is esmolol."
+    ],
+    [
+     "Bisoprolol",
+     "Bisoprolol is an oral beta-1 selective agent, one of the three used for heart failure. Esmolol is the intravenous one."
+    ],
+    [
+     "Acebutolol",
+     "Acebutolol is an oral beta-1 selective agent. Esmolol is the beta-1 selective blocker given intravenously."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 61"
+  },
+  {
+   "topic": "Beta blocker groups",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which beta blocker is beta-1 selective?",
+   "opts": [
+    [
+     "Atenolol",
+     "Correct. Atenolol is a second-generation, beta-1 selective agent, alongside acebutolol, bisoprolol, esmolol and metoprolol."
+    ],
+    [
+     "Propranolol",
+     "Propranolol is first-generation and non-selective, blocking beta-1 and beta-2 receptors alike."
+    ],
+    [
+     "Nadolol",
+     "Nadolol is a first-generation, non-selective beta blocker. The beta-1 selective choice here is atenolol."
+    ],
+    [
+     "Timolol",
+     "Timolol is a non-selective, first-generation agent, used in glaucoma and migraine prophylaxis. Atenolol is the beta-1 selective one."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 61"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A patient wants to stop his metoprolol abruptly before a trip. What is the danger?",
+   "opts": [
+    [
+     "Hypoglycemia, sweating or confusion",
+     "Hypoglycemia is prolonged while taking a beta blocker, not provoked by stopping one. The withdrawal risk is angina, infarction or marked hypertension."
+    ],
+    [
+     "Angina, infarction or a pressure surge",
+     "Correct. Sudden withdrawal can cause acute angina, myocardial infarction or a marked rise in blood pressure, so the drug is withdrawn slowly."
+    ],
+    [
+     "Bronchospasm, wheeze or cough",
+     "Bronchospasm comes from taking a beta blocker, especially a non-selective one. Stopping abruptly risks angina, infarction or a marked rise in pressure."
+    ],
+    [
+     "Hyperkalemia, weakness or palpitations",
+     "Potassium is not the withdrawal concern. Abrupt cessation risks acute angina, infarction and a marked rise in blood pressure."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 73"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient on propranolol develops vivid nightmares and low mood. Which property of the drug explains this?",
+   "opts": [
+    [
+     "Beta-1 selectivity",
+     "Propranolol is non-selective, and selectivity is not what drives central effects. Lipid solubility determines how much reaches the brain."
+    ],
+    [
+     "Alpha-1 blockade",
+     "Propranolol does not block alpha-1 receptors; carvedilol and labetalol do. Its central effects come from high lipid solubility."
+    ],
+    [
+     "Intravenous use",
+     "Propranolol here is oral; the intravenous beta blocker is esmolol. Central effects are linked to high lipid solubility."
+    ],
+    [
+     "High lipid solubility",
+     "Correct. Highly lipid-soluble beta blockers such as propranolol cause more central effects: depression, nightmares and vivid dreams, hallucinations and fatigue."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 74"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "Which beta blocker is indicated for heart failure?",
+   "opts": [
+    [
+     "Bisoprolol",
+     "Correct. The three beta blockers used for heart failure are carvedilol, metoprolol succinate and bisoprolol."
+    ],
+    [
+     "Propranolol",
+     "Propranolol is a non-selective agent used for migraine prophylaxis; it is not one of the heart failure three (carvedilol, metoprolol succinate, bisoprolol)."
+    ],
+    [
+     "Atenolol",
+     "Atenolol is beta-1 selective but not one of the heart failure agents. Those are carvedilol, metoprolol succinate and bisoprolol."
+    ],
+    [
+     "Nadolol",
+     "Nadolol is a non-selective, first-generation agent. The heart failure beta blockers are carvedilol, metoprolol succinate and bisoprolol."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 70"
+  },
+  {
+   "topic": "Beta blockers in hypertension",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A 61-year-old with hypertension had a myocardial infarction last year. Which class should generally be used initially?",
+   "opts": [
+    [
+     "An alpha-1 blocker",
+     "Alpha-1 blockers are specialty add-ons with no post-infarction role. After a myocardial infarction a beta blocker is generally used initially."
+    ],
+    [
+     "A beta blocker",
+     "Correct. A history of myocardial infarction is a reason to start a beta blocker early; beta blockade protects ischemic myocardium and protects against recurrent infarction."
+    ],
+    [
+     "Hydralazine",
+     "Hydralazine is contraindicated in coronary artery disease and ischemia because reflex sympathetic activation increases cardiac workload."
+    ],
+    [
+     "Clonidine",
+     "Clonidine has no post-infarction indication and causes rebound hypertension if stopped. A beta blocker is the initial choice after infarction."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 108"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "How does beta blockade help a patient with exertional angina?",
+   "opts": [
+    [
+     "It dilates the coronary arteries",
+     "Coronary dilation is not the mechanism described. Beta blockade lowers oxygen demand, so exercise time before symptoms is prolonged."
+    ],
+    [
+     "It raises myocardial contractility",
+     "Beta blockade lowers contractility and heart rate, reducing oxygen demand; raising contractility would worsen ischemia."
+    ],
+    [
+     "It dissolves coronary thrombus",
+     "Beta blockers have no thrombolytic action. They help angina by reducing oxygen demand and prolonging exercise time."
+    ],
+    [
+     "It prolongs time to symptoms",
+     "Correct. By blunting the rise in heart rate and contractility, beta blockade lengthens the time to the angina-provoking heart rate and prolongs exercise time."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 67"
+  },
+  {
+   "topic": "Beta blocker groups",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which beta blocker also blocks alpha-1 receptors?",
+   "opts": [
+    [
+     "Metoprolol",
+     "Metoprolol is a beta-1 selective, second-generation agent without alpha-1 blockade. Carvedilol and labetalol add alpha-1 blockade."
+    ],
+    [
+     "Carvedilol",
+     "Correct. Carvedilol and labetalol are the third-generation exceptions that add alpha-1 blockade; carvedilol is also antioxidant and antiproliferative."
+    ],
+    [
+     "Atenolol",
+     "Atenolol is beta-1 selective and has no alpha-1 action. The alpha-1 blocking beta blockers are carvedilol and labetalol."
+    ],
+    [
+     "Propranolol",
+     "Propranolol is non-selective for beta receptors but does not block alpha-1. Carvedilol and labetalol do."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 62"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "Why are beta blockers contraindicated in a patient with COPD (chronic obstructive pulmonary disease) who has bronchospasm?",
+   "opts": [
+    [
+     "They cause bradykinin-induced cough",
+     "Bradykinin cough belongs to ACE (angiotensin-converting enzyme) inhibitors. Beta blockers cause bronchospasm by blocking airway beta-2 receptors."
+    ],
+    [
+     "They cause sodium and water retention",
+     "Fluid retention is not the reason. The problem in lung disease is beta-2 blockade in the airways, which causes bronchospasm."
+    ],
+    [
+     "They block airway beta-2 receptors",
+     "Correct. Blocking pulmonary beta-2 receptors reduces bronchial smooth muscle relaxation; about a third of COPD patients develop bronchospasm."
+    ],
+    [
+     "They raise blood carbon dioxide",
+     "Carbon dioxide retention is not the described mechanism. Blocking pulmonary beta-2 receptors impairs bronchial relaxation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 71"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A patient with type 1 diabetes is starting propranolol. What should he be told about hypoglycemia?",
+   "opts": [
+    [
+     "It will become less frequent",
+     "Beta blockers do not protect against hypoglycemia; by inhibiting glycogenolysis they prolong it and hide its warning signs."
+    ],
+    [
+     "Insulin will no longer be needed",
+     "Beta blockers do not replace insulin. The warning is that hypoglycemia may be prolonged and its symptoms masked."
+    ],
+    [
+     "Warning signs may be masked",
+     "Correct. Beta blockers inhibit glycogenolysis, so hypoglycemia lasts longer, and they mask its adrenergic warning symptoms."
+    ],
+    [
+     "Blood sugar will run high only",
+     "In type 2 diabetes reduced insulin can raise glucose, but the danger stressed for any diabetic is prolonged, masked hypoglycemia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 72"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "protocol",
+   "q": "How should a beta blocker be started in a patient with heart failure?",
+   "opts": [
+    [
+     "Full dose from the first day",
+     "A full starting dose risks decompensation, because symptoms initially worsen. The approach is a very low dose increased slowly."
+    ],
+    [
+     "Only once symptoms have gone",
+     "Treatment is not delayed until symptoms resolve. The drug is started at a very low dose and titrated slowly because it first worsens symptoms."
+    ],
+    [
+     "Intravenously for the first week",
+     "Intravenous loading is not the approach. Heart failure patients start at a very low oral dose that is increased slowly."
+    ],
+    [
+     "Very low dose, increased slowly",
+     "Correct. Beta blockers initially worsen heart failure symptoms, so they are started at a very low dose and increased slowly."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 70"
+  }
+ ],
+ "beta2": [
+  {
+   "topic": "Beta blocker indications",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "indication",
+   "q": "How do beta blockers relieve benign essential tremor?",
+   "opts": [
+    [
+     "Cardiac beta-1 blockade",
+     "Cardiac beta-1 blockade slows the heart but does not explain tremor relief, which comes from blocking skeletal muscle beta-2 receptors."
+    ],
+    [
+     "Vascular alpha-1 blockade",
+     "Alpha-1 blockade dilates vessels; it is not the tremor mechanism. Beta blockers relieve tremor by blocking beta-2 receptors on skeletal muscle."
+    ],
+    [
+     "Skeletal muscle beta-2 blockade",
+     "Correct. Blocking beta-2 receptors on skeletal muscle is the mechanism given for benign essential tremor; panic attacks respond through sympathetic and central effects."
+    ],
+    [
+     "Central alpha-2 stimulation",
+     "Central alpha-2 stimulation is clonidine's mechanism. Tremor relief comes from skeletal muscle beta-2 blockade."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 69"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which effect on blood lipids is listed as an adverse effect of beta blockers?",
+   "opts": [
+    [
+     "Elevated triglycerides",
+     "Correct. Elevated triglycerides are listed among beta blocker adverse effects; by contrast, prazosin mildly lowers triglycerides and raises HDL (high-density lipoprotein)."
+    ],
+    [
+     "Lowered triglycerides",
+     "The listed effect is the reverse: beta blockers raise triglycerides. The mild triglyceride fall belongs to prazosin."
+    ],
+    [
+     "Raised HDL cholesterol",
+     "A rise in HDL (high-density lipoprotein) is reported with prazosin, not beta blockers, whose listed lipid effect is raised triglycerides."
+    ],
+    [
+     "Lowered LDL cholesterol",
+     "Lowering LDL (low-density lipoprotein) is not a beta blocker effect; the listed adverse lipid effect is elevated triglycerides."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 74"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Why does stopping a beta blocker abruptly provoke a rebound?",
+   "opts": [
+    [
+     "Catecholamine synthesis stops",
+     "Catecholamine synthesis does not stop during therapy. The rebound comes from receptors upregulated while they were blocked."
+    ],
+    [
+     "Receptors upregulate during blockade",
+     "Correct. Chronic blockade upregulates beta receptors, so sudden removal exposes more receptors to catecholamines; the drug is withdrawn slowly."
+    ],
+    [
+     "Renin release is permanently lost",
+     "Renin is suppressed while beta-1 receptors are blocked, not permanently lost. Rebound reflects receptor upregulation."
+    ],
+    [
+     "The drug has a long half-life",
+     "A long half-life would soften withdrawal, not cause it. The rebound comes from receptor upregulation during blockade."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 73"
+  },
+  {
+   "topic": "Beta blockers in hypertension",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "Where do beta blockers sit in the management of uncomplicated hypertension?",
+   "opts": [
+    [
+     "First line for most patients",
+     "Beta blockers are specifically not recommended first line. They are started early only for a compelling indication such as a prior myocardial infarction."
+    ],
+    [
+     "First line in diabetes",
+     "In diabetes the preferred agent is an ACE inhibitor for its kidney protection; beta blockers can prolong and mask hypoglycemia."
+    ],
+    [
+     "Only for hypertensive crisis",
+     "Hypertensive crisis is treated with intravenous nitroprusside. Beta blockers are used for chronic hypertension but not as first line."
+    ],
+    [
+     "Not recommended first line",
+     "Correct. They are not recommended for first-line management; first line is an ACE (angiotensin-converting enzyme) inhibitor or angiotensin receptor blocker, or a dihydropyridine."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 63"
+  },
+  {
+   "topic": "Beta blockers in hypertension",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "For hypertension, which patient is a beta blocker expected to work best in?",
+   "opts": [
+    [
+     "An older patient with asthma",
+     "Asthma is where beta blockers cause bronchospasm. The group they work best in is young patients with resting tachycardia and high renin."
+    ],
+    [
+     "A patient with intermittent claudication",
+     "Claudication worsens with beta-2 blockade of vessels. Beta blockers work best in young patients with resting tachycardia."
+    ],
+    [
+     "A young patient with resting tachycardia",
+     "Correct. They work best in young patients with resting tachycardia, raised catecholamines and raised renin, though fatigue and limited exercise are common complaints."
+    ],
+    [
+     "A patient with frequent hypoglycemia",
+     "Beta blockers prolong hypoglycemia and mask its warning signs. They work best in young patients with resting tachycardia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 63"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient on propranolol reports cold fingers and calf pain when walking. What is the mechanism?",
+   "opts": [
+    [
+     "Vascular alpha-1 blockade",
+     "Alpha-1 blockade dilates vessels and would warm the extremities; it causes orthostatic hypotension, not cold fingers."
+    ],
+    [
+     "Cardiac beta-1 stimulation",
+     "Propranolol blocks rather than stimulates beta-1 receptors. The cold extremities come from blocking vascular beta-2 receptors."
+    ],
+    [
+     "Calcium channel blockade",
+     "Calcium channel blockade dilates arteries rather than constricting them. Impaired peripheral circulation here is a beta-2 blockade effect."
+    ],
+    [
+     "Vascular beta-2 blockade",
+     "Correct. Blocking beta-2 receptors in blood vessels impairs peripheral circulation: cold extremities (Raynaud's phenomenon), muscle fatigue and intermittent claudication."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 73"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Why do beta blockers prolong hypoglycemia?",
+   "opts": [
+    [
+     "They inhibit glycogenolysis",
+     "Correct. Low glucose normally triggers epinephrine-driven glycogenolysis; blocking it slows recovery and masks the symptoms."
+    ],
+    [
+     "They increase insulin secretion",
+     "Beta blockers reduce rather than increase insulin, which is why glucose can rise in type 2 diabetes. Hypoglycemia is prolonged because glycogenolysis is blocked."
+    ],
+    [
+     "They block glucose absorption",
+     "Glucose absorption from the gut is not affected. The recovery from a low is slowed because glycogenolysis is inhibited."
+    ],
+    [
+     "They activate hepatic glucokinase",
+     "Glucokinase is not involved in the described mechanism. Beta blockers prolong hypoglycemia by inhibiting glycogenolysis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 72"
+  },
+  {
+   "topic": "Beta blocker groups",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "A patient takes nadolol. How is it classified?",
+   "opts": [
+    [
+     "Non-selective beta blocker",
+     "Correct. Nadolol is one of the first-generation, non-selective agents, with propranolol, penbutolol, pindolol, sotalol and timolol."
+    ],
+    [
+     "Beta-1 selective blocker",
+     "The beta-1 selective (second-generation) agents are acebutolol, atenolol, bisoprolol, esmolol and metoprolol. Nadolol is non-selective."
+    ],
+    [
+     "Alpha-1 and beta blocker",
+     "The agents that add alpha-1 blockade are the third-generation carvedilol and labetalol. Nadolol is a first-generation, non-selective beta blocker."
+    ],
+    [
+     "Central alpha-2 agonist",
+     "Central alpha-2 agonists are clonidine and guanfacine. Nadolol ends in -lol and is a non-selective beta blocker."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 60"
+  },
+  {
+   "topic": "Beta blocker adverse effects",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A patient with mild asthma needs a beta blocker after a myocardial infarction. Which choice carries the lowest risk of bronchospasm?",
+   "opts": [
+    [
+     "Propranolol",
+     "Propranolol is non-selective and blocks pulmonary beta-2 receptors, the mechanism of bronchospasm in asthma."
+    ],
+    [
+     "Metoprolol",
+     "Correct. Bronchospasm is less likely with beta-1 selective agents such as metoprolol, because pulmonary beta-2 receptors are relatively spared."
+    ],
+    [
+     "Nadolol",
+     "Nadolol is non-selective, so it blocks the airway beta-2 receptors that keep bronchi relaxed. A beta-1 selective agent is safer."
+    ],
+    [
+     "Timolol",
+     "Timolol is non-selective; even as an eye drop its systemic beta-2 blockade can provoke bronchospasm. Metoprolol is beta-1 selective."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 71"
+  },
+  {
+   "topic": "Beta blocker mechanism",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "When a non-selective beta blocker is first started, what happens to total peripheral resistance?",
+   "opts": [
+    [
+     "It falls immediately",
+     "Resistance does not fall at first. With cardiac output reduced, total peripheral resistance rises acutely by reflex."
+    ],
+    [
+     "It does not change",
+     "It does change: the acute fall in cardiac output produces a reflex rise in total peripheral resistance."
+    ],
+    [
+     "It falls, then rises",
+     "The sequence is the other way: an acute reflex rise, with blood pressure falling only over chronic therapy."
+    ],
+    [
+     "It rises by reflex",
+     "Correct. Cardiac output falls, so peripheral resistance rises reflexly at first; mean arterial pressure falls only with chronic therapy as the baroreflex adjusts."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 56"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which beta blocker is used for migraine prophylaxis?",
+   "opts": [
+    [
+     "Esmolol",
+     "Esmolol is an intravenous beta-1 selective agent with no prophylactic role. Propranolol and timolol are used for migraine prevention."
+    ],
+    [
+     "Propranolol",
+     "Correct. Propranolol and timolol are used for migraine prophylaxis; the mechanism is uncertain (central or vascular), and low doses are used."
+    ],
+    [
+     "Labetalol",
+     "Labetalol is a third-generation agent with alpha-1 blockade, not a migraine prophylactic. Propranolol is."
+    ],
+    [
+     "Bisoprolol",
+     "Bisoprolol is one of the heart failure agents. Migraine prophylaxis uses propranolol or timolol."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 65"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which beta blocker is used for glaucoma?",
+   "opts": [
+    [
+     "Timolol",
+     "Correct. Timolol reduces production of aqueous humor in the ciliary body; systemic effects from the eye drops are notable."
+    ],
+    [
+     "Atenolol",
+     "Atenolol is an oral beta-1 selective agent for cardiovascular use. The glaucoma beta blocker here is timolol."
+    ],
+    [
+     "Esmolol",
+     "Esmolol is the intravenous beta-1 selective agent. Timolol is the one used for glaucoma, where it reduces aqueous humor production."
+    ],
+    [
+     "Carvedilol",
+     "Carvedilol is a third-generation agent used for heart failure. Timolol is used for glaucoma."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 65"
+  },
+  {
+   "topic": "Beta blocker groups",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Besides beta blockade, what additional action does labetalol have?",
+   "opts": [
+    [
+     "ACE inhibition",
+     "Angiotensin-converting enzyme inhibition belongs to the -pril drugs. Labetalol's extra action is alpha-1 blockade."
+    ],
+    [
+     "Alpha-1 blockade",
+     "Correct. Labetalol is a third-generation agent that blocks alpha-1 receptors and has beta-2 agonist activity, giving direct vasodilation."
+    ],
+    [
+     "Central alpha-2 stimulation",
+     "Stimulating central alpha-2 receptors is how clonidine works. Labetalol adds peripheral alpha-1 blockade."
+    ],
+    [
+     "Potassium channel opening",
+     "Opening ATP-modulated potassium channels is minoxidil's mechanism. Labetalol's additional action is alpha-1 blockade."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 62"
+  },
+  {
+   "topic": "Beta blocker indications",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which is a listed indication for beta blockers?",
+   "opts": [
+    [
+     "Opiate withdrawal",
+     "Blunting opiate withdrawal is attributed to clonidine's analgesic activity, not beta blockers."
+    ],
+    [
+     "Hypertensive crisis",
+     "Hypertensive crisis is treated with intravenous nitroprusside. Beta blocker indications include panic attacks and essential tremor."
+    ],
+    [
+     "Acute panic attacks",
+     "Correct. Beta blockers help acute panic attacks through sympathetic and central effects; the list also includes glaucoma, migraine prophylaxis, thyrotoxicosis and essential tremor."
+    ],
+    [
+     "Prostatic hyperplasia",
+     "Benign prostatic hyperplasia is treated with alpha-1 blockers such as tamsulosin, terazosin and doxazosin, not beta blockers."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 69"
+  }
+ ],
+ "other1": [
+  {
+   "topic": "Minoxidil",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is characteristic of oral minoxidil?",
+   "opts": [
+    [
+     "Lupus syndrome",
+     "Drug-induced lupus syndrome belongs to hydralazine, especially in slow acetylators. Minoxidil's characteristic effect is hypertrichosis."
+    ],
+    [
+     "Hypertrichosis",
+     "Correct. Oral minoxidil causes hair growth on the face, back, arms and legs; it also causes myocardial ischemia and arrhythmias."
+    ],
+    [
+     "Cyanide toxicity",
+     "Cyanide toxicity comes from nitroprusside infusion. Minoxidil causes hypertrichosis."
+    ],
+    [
+     "Dry cough",
+     "A dry cough from bradykinin is an ACE (angiotensin-converting enzyme) inhibitor effect. Minoxidil's hallmark is hypertrichosis."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 105"
+  },
+  {
+   "topic": "Direct vasodilators",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Why do direct vasodilators lose their effect over time when used alone?",
+   "opts": [
+    [
+     "Reflex responses cause tachyphylaxis",
+     "Correct. Arteriolar dilation triggers reflex sympathetic activation (tachycardia, higher cardiac output, fluid retention, raised renin), producing tachyphylaxis."
+    ],
+    [
+     "They induce their own metabolism",
+     "Enzyme induction is not the explanation. The loss of effect is tachyphylaxis from reflex sympathetic activation."
+    ],
+    [
+     "They block their own receptor",
+     "They do not act by receptor blockade. Reflex tachycardia, fluid retention and raised renin blunt the effect."
+    ],
+    [
+     "They cause hypokalemia",
+     "Potassium loss is not the reason. Reflex sympathetic activation and fluid retention cause tachyphylaxis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 97"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which effect on blood lipids has been reported with prazosin?",
+   "opts": [
+    [
+     "A rise in triglycerides",
+     "Raised triglycerides are listed as a beta blocker adverse effect. Prazosin mildly lowers triglycerides and LDL (low-density lipoprotein)."
+    ],
+    [
+     "A mild rise in HDL",
+     "Correct. Prazosin shows evidence of a mild reduction in LDL (low-density lipoprotein) and triglycerides and increased HDL (high-density lipoprotein)."
+    ],
+    [
+     "A rise in LDL",
+     "Prazosin is reported to mildly reduce LDL (low-density lipoprotein), not raise it, while increasing HDL (high-density lipoprotein)."
+    ],
+    [
+     "A large fall in HDL",
+     "The reported change is a mild increase in HDL (high-density lipoprotein), not a fall."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 78"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Why is clonidine often given with a diuretic?",
+   "opts": [
+    [
+     "It causes hyperkalemia",
+     "Hyperkalemia is an ACE (angiotensin-converting enzyme) inhibitor and angiotensin receptor blocker concern. Clonidine is paired with a diuretic because it retains sodium."
+    ],
+    [
+     "It raises renin sharply",
+     "Raised renin is a feature of direct vasodilators and prazosin. Clonidine is combined with a diuretic because it causes sodium retention."
+    ],
+    [
+     "It causes rebound edema",
+     "No rebound edema is described. The reason for the diuretic is that clonidine causes sodium retention."
+    ],
+    [
+     "It causes sodium retention",
+     "Correct. Clonidine causes sodium retention, so it is often given with a diuretic; it also decreases antidiuretic hormone (vasopressin) secretion."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 93"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "How is the reflex tachycardia seen with prazosin described?",
+   "opts": [
+    [
+     "Marked, like minoxidil",
+     "Minoxidil's reflex effects are the most severe (cardiac output up 2 to 3 times). Prazosin's reflex tachycardia is mild."
+    ],
+    [
+     "Absent altogether",
+     "It is present but mild. Prazosin lowers peripheral resistance and triggers a mild reflex rise in heart rate."
+    ],
+    [
+     "Severe and dose limiting",
+     "It is described as mild, not severe or dose limiting; the dose-limiting problem is orthostatic hypotension."
+    ],
+    [
+     "Mild",
+     "Correct. Prazosin causes only mild reflex tachycardia, possibly because of some central sympatholytic activity and because it dilates both arteries and veins."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 80"
+  },
+  {
+   "topic": "Hydralazine",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "What should a patient starting hydralazine be told about stool color?",
+   "opts": [
+    [
+     "Stools may turn orange",
+     "Orange discoloration is not listed for hydralazine. The warning is that stools may turn black."
+    ],
+    [
+     "Stools may turn pale",
+     "Pale stools are not a listed hydralazine effect. Patients are told their stools may turn black."
+    ],
+    [
+     "Stools may turn black",
+     "Correct. Stools may turn black on hydralazine, so the patient is warned ahead of time rather than being alarmed by it."
+    ],
+    [
+     "Stools will not change",
+     "Stool color can change: patients should be warned that stools may turn black."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 102"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "Which of these drugs is an alpha-1 blocker?",
+   "opts": [
+    [
+     "Doxazosin",
+     "Correct. The -zosin suffix marks the alpha-1 selective antagonists: prazosin, terazosin and doxazosin, with tamsulosin as the alpha-1A selective agent."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem is a non-dihydropyridine calcium channel blocker that slows the atrioventricular node. The -zosin suffix identifies alpha-1 blockers."
+    ],
+    [
+     "Guanfacine",
+     "Guanfacine is a central alpha-2 agonist that reduces sympathetic outflow. Alpha-1 blockers carry the -zosin suffix, as doxazosin does."
+    ],
+    [
+     "Hydralazine",
+     "Hydralazine is a direct arteriolar vasodilator whose mechanism is not fully clear. Doxazosin is the alpha-1 blocker here."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 82"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Clonidine has analgesic activity. What additional use does this support?",
+   "opts": [
+    [
+     "Blunting opiate withdrawal",
+     "Correct. Clonidine's analgesic activity blunts opiate withdrawal reactions."
+    ],
+    [
+     "Migraine prophylaxis",
+     "Migraine prophylaxis is an indication for propranolol, timolol and calcium channel blockers. Clonidine's extra use is blunting opiate withdrawal."
+    ],
+    [
+     "Prostatic hyperplasia",
+     "Benign prostatic hyperplasia is treated with alpha-1 blockers such as tamsulosin. Clonidine blunts opiate withdrawal reactions."
+    ],
+    [
+     "Essential tremor",
+     "Benign essential tremor responds to beta blockers through skeletal muscle beta-2 blockade. Clonidine's extra use is opiate withdrawal."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 93"
+  },
+  {
+   "topic": "Nitroprusside",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "When is thiocyanate toxicity most likely during nitroprusside therapy?",
+   "opts": [
+    [
+     "The first minutes of infusion",
+     "Early toxicity is not thiocyanate. It accumulates with long infusions or in renal failure."
+    ],
+    [
+     "Only in slow acetylators",
+     "Acetylator status matters for hydralazine, not nitroprusside. Thiocyanate builds up with long infusions or renal failure."
+    ],
+    [
+     "Long infusions or renal failure",
+     "Correct. Thiocyanate accumulates with long-term infusions or renal failure, causing weakness, anoxia, tinnitus, muscle spasms and toxic psychosis."
+    ],
+    [
+     "Only after oral dosing",
+     "Nitroprusside is given by intravenous infusion. Thiocyanate toxicity follows long infusions or renal failure."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 107"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "Which is listed as an advantage of central sympatholytics?",
+   "opts": [
+    [
+     "No sedation at all",
+     "Sedation is a typical side effect of the class, along with dry mouth. The lipid-neutral profile is an advantage."
+    ],
+    [
+     "No withdrawal reactions",
+     "Abrupt withdrawal hypertension is a class side effect. The advantage is that they have no negative effects on lipids."
+    ],
+    [
+     "No negative effect on lipids",
+     "Correct. Advantages include no negative effects on lipids, efficacy independent of age, race and gender, suitability for monotherapy, and good effect in the elderly."
+    ],
+    [
+     "A wide therapeutic range",
+     "The class has a narrow therapeutic range, which is listed as a side effect, not an advantage."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 90"
+  },
+  {
+   "topic": "Hydralazine",
+   "io": "Identify contraindications for antihypertensive drugs",
+   "slot": "contraindication",
+   "q": "In which patient is hydralazine contraindicated?",
+   "opts": [
+    [
+     "A young adult with severe hypertension",
+     "Chronic or severe hypertension is where hydralazine is used, with a diuretic and a beta blocker. The contraindication is coronary disease in the elderly."
+    ],
+    [
+     "A patient already taking a diuretic",
+     "A diuretic is a recommended partner, not a contraindication. Hydralazine is contraindicated in coronary artery disease and ischemia."
+    ],
+    [
+     "A patient already on a beta blocker",
+     "A beta blocker is a recommended partner that blunts the reflex tachycardia. The contraindications are coronary disease, older age and ischemia."
+    ],
+    [
+     "An older adult with coronary disease",
+     "Correct. Hydralazine is contraindicated in coronary artery disease, the elderly and ischemia, because vasodilation with reflex sympathetic activation raises cardiac workload."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 102"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "How does prazosin lower blood pressure?",
+   "opts": [
+    [
+     "Stimulates central alpha-2 receptors",
+     "Central alpha-2 stimulation is how clonidine and guanfacine reduce sympathetic outflow. Prazosin blocks peripheral alpha-1 receptors."
+    ],
+    [
+     "Blocks vascular alpha-1 receptors",
+     "Correct. Reversible blockade of vascular alpha-1 receptors dilates precapillary arterioles and lowers total peripheral resistance, with a reflex rise in heart rate."
+    ],
+    [
+     "Opens arteriolar potassium channels",
+     "Opening ATP-modulated potassium channels is minoxidil's mechanism. Prazosin reversibly blocks vascular alpha-1 receptors."
+    ],
+    [
+     "Blocks cardiac beta-1 receptors",
+     "Beta-1 blockade lowers cardiac output and is the beta blocker mechanism. Prazosin acts on vascular alpha-1 receptors instead."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 77"
+  },
+  {
+   "topic": "Minoxidil",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A patient using topical minoxidil (Rogaine) for hair growth asks whether it can affect the heart. What is accurate?",
+   "opts": [
+    [
+     "It may have cardiovascular effects",
+     "Correct. The topical form is used for hair growth, and it may have cardiovascular effects, so the question is a fair one."
+    ],
+    [
+     "It cannot reach the circulation",
+     "It is not described as entirely local. Topical minoxidil may have cardiovascular effects."
+    ],
+    [
+     "It only acts on scalp arteries",
+     "Its effects are not described as confined to the scalp; the topical form may have cardiovascular effects."
+    ],
+    [
+     "It lowers blood pressure reliably",
+     "It is not used as an antihypertensive. The caution is simply that the topical form may have cardiovascular effects."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 105"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Outline appropriate patient education for antihypertensive drugs",
+   "slot": "education",
+   "q": "A patient on clonidine runs out of tablets over a long weekend. What is the main danger?",
+   "opts": [
+    [
+     "Rebound hypertension",
+     "Correct. Abrupt withdrawal hypertension is a class side effect, and clonidine withdrawal reactions may be severe, so the drug must not be stopped suddenly."
+    ],
+    [
+     "Profound bradycardia",
+     "Bradycardia occurs while taking clonidine. Stopping it abruptly does the opposite: blood pressure rebounds sharply."
+    ],
+    [
+     "Prolonged hypoglycemia",
+     "Clonidine raises rather than lowers blood glucose, and stopping it does not cause hypoglycemia. The danger is rebound hypertension."
+    ],
+    [
+     "Marked hyperkalemia",
+     "Potassium is not the withdrawal risk. Sudden cessation of clonidine causes rebound hypertension."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 94"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "A 68-year-old man has benign prostatic hyperplasia and hypertension. Which single drug treats both?",
+   "opts": [
+    [
+     "Tamsulosin",
+     "Tamsulosin treats benign prostatic hyperplasia but has limited vascular effects because it is alpha-1A selective, so it is not the antihypertensive choice."
+    ],
+    [
+     "Clonidine",
+     "Clonidine lowers blood pressure centrally but has no prostate indication. Terazosin treats both conditions."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine treats hypertension and angina but not prostatic hyperplasia. An alpha-1 blocker such as terazosin treats both."
+    ],
+    [
+     "Terazosin",
+     "Correct. The other alpha-1 selective agents, terazosin and doxazosin, are used both as antihypertensives and for benign prostatic hyperplasia."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 83"
+  },
+  {
+   "topic": "Nitroprusside",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Which vessels does nitroprusside dilate?",
+   "opts": [
+    [
+     "Arterioles only",
+     "Arteriole-only dilation describes hydralazine and minoxidil. Nitroprusside acts on veins as well as arterioles."
+    ],
+    [
+     "Veins and arterioles",
+     "Correct. Nitric oxide released from nitroprusside activates cyclic GMP and lowers intracellular calcium in both veins and arterioles."
+    ],
+    [
+     "Veins only",
+     "Nitroprusside dilates arterioles as well as veins; it is not a venous-only agent."
+    ],
+    [
+     "Coronary arteries only",
+     "Its action is not limited to the coronaries: nitroprusside dilates veins and arterioles generally."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 106"
+  },
+  {
+   "topic": "Hydralazine",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Which statement about hydralazine's mechanism of action is accurate?",
+   "opts": [
+    [
+     "It opens potassium channels",
+     "Opening ATP-modulated potassium channels is minoxidil's mechanism. Hydralazine's mechanism is not clear."
+    ],
+    [
+     "It releases nitric oxide and cyanide",
+     "Nitric oxide with bound cyanide describes nitroprusside. Hydralazine's mechanism remains unclear."
+    ],
+    [
+     "It is not fully understood",
+     "Correct. The mechanism is not clear; proposed actions include increased cyclic GMP (via nitric oxide), renal prostaglandins and interference with calcium movement."
+    ],
+    [
+     "It blocks alpha-1 receptors",
+     "Alpha-1 blockade is the prazosin mechanism. Hydralazine acts directly on arterioles by a mechanism that is not clear."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 100"
+  }
+ ],
+ "other2": [
+  {
+   "topic": "Central sympatholytics",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which pair of side effects is typical of central sympatholytics?",
+   "opts": [
+    [
+     "Cough and angioedema",
+     "Cough and angioedema are bradykinin effects of ACE (angiotensin-converting enzyme) inhibitors, not central sympatholytics."
+    ],
+    [
+     "Flushing and tachycardia",
+     "Flushing with reflex tachycardia belongs to vasodilators such as dihydropyridines and hydralazine. Central agents cause sedation and dry mouth."
+    ],
+    [
+     "Sedation and dry mouth",
+     "Correct. Drowsiness or sedation and dry mouth are central effects; sexual dysfunction, a narrow therapeutic range and abrupt withdrawal hypertension complete the list."
+    ],
+    [
+     "Hair growth and edema",
+     "Hypertrichosis with fluid retention points to minoxidil. The central sympatholytic pair is sedation and dry mouth."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 91"
+  },
+  {
+   "topic": "Hydralazine",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Hydralazine is N-acetylated in the liver. Which patients are at higher risk of its lupus syndrome?",
+   "opts": [
+    [
+     "Fast acetylators",
+     "Fast acetylators clear the drug quickly. The listed risk factor for hydralazine lupus is being a slow acetylator."
+    ],
+    [
+     "Slow acetylators",
+     "Correct. Slow acetylators clear hydralazine more slowly; with high doses, long-term use, female sex and Caucasian ancestry, this raises the risk of lupus syndrome."
+    ],
+    [
+     "Patients on low doses",
+     "Low doses are protective; high doses are the risk factor, along with long-term use and slow acetylation."
+    ],
+    [
+     "Patients on short courses",
+     "Short-term use is not a risk factor; long-term therapy is, together with high dose and slow acetylation."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 101"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient takes clonidine together with a beta blocker. What happens to blood pressure if the clonidine is stopped abruptly?",
+   "opts": [
+    [
+     "It falls sharply",
+     "The fall in pressure is what the two drugs do together. Abrupt clonidine withdrawal makes blood pressure rise dramatically."
+    ],
+    [
+     "It stays the same",
+     "The beta blocker does not protect against clonidine withdrawal; blood pressure rises dramatically."
+    ],
+    [
+     "It rises sharply",
+     "Correct. While both are taken they lower pressure together, but abrupt clonidine withdrawal in this combination produces a dramatic rise in blood pressure."
+    ],
+    [
+     "It rises only slightly",
+     "The listed effect is a marked rise, not a slight one, which is why clonidine is never stopped abruptly."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 75"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "How does clonidine lower blood pressure?",
+   "opts": [
+    [
+     "Blocks central alpha-2 receptors",
+     "Clonidine activates rather than blocks these receptors; it is an alpha-2 agonist, and stimulation is what reduces sympathetic outflow."
+    ],
+    [
+     "Blocks vascular alpha-1 receptors",
+     "Peripheral alpha-1 blockade is the prazosin mechanism. Clonidine acts centrally by stimulating alpha-2 receptors."
+    ],
+    [
+     "Blocks renal beta-1 receptors",
+     "Blocking beta-1 receptors to reduce renin is a beta blocker action. Clonidine stimulates central alpha-2 receptors."
+    ],
+    [
+     "Stimulates central alpha-2 receptors",
+     "Correct. Clonidine is an alpha-2 and imidazoline agonist; stimulating central alpha-2A receptors inhibits sympathetic outflow and increases parasympathetic activity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 92"
+  },
+  {
+   "topic": "Nitroprusside",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "drug choice",
+   "q": "Which drug is given by intravenous infusion for hypertensive crisis?",
+   "opts": [
+    [
+     "Nitroprusside",
+     "Correct. Nitroprusside is the hypertensive crisis agent, given by intravenous infusion; it dilates both veins and arterioles."
+    ],
+    [
+     "Hydralazine",
+     "Hydralazine is listed for chronic hypertension with a diuretic and a beta blocker. Nitroprusside is the crisis infusion."
+    ],
+    [
+     "Minoxidil",
+     "Minoxidil is an oral agent for severe or refractory chronic hypertension. The crisis infusion is nitroprusside."
+    ],
+    [
+     "Clonidine",
+     "Clonidine is an oral central sympatholytic for chronic hypertension. Nitroprusside is given by infusion in a crisis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 99"
+  },
+  {
+   "topic": "Minoxidil",
+   "io": "Identify indications for commonly used antihypertensive drugs",
+   "slot": "indication",
+   "q": "When is oral minoxidil used for hypertension?",
+   "opts": [
+    [
+     "Hypertensive crisis by infusion",
+     "The crisis agent given by intravenous infusion is nitroprusside. Minoxidil is an oral triple-therapy agent for severe or refractory hypertension."
+    ],
+    [
+     "First line in young patients",
+     "Minoxidil is never first line; the first-line agents are ACE inhibitors or angiotensin receptor blockers and dihydropyridines."
+    ],
+    [
+     "Severe or refractory hypertension",
+     "Correct. Minoxidil is used in triple therapy, with a diuretic and a beta blocker, for severe or refractory hypertension."
+    ],
+    [
+     "Hypertension in pregnancy",
+     "Pregnancy is not its listed use. Minoxidil is reserved for severe or refractory hypertension as part of triple therapy."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 99"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "Which drug added to prazosin may enhance its postural hypotension?",
+   "opts": [
+    [
+     "An NSAID",
+     "NSAIDs (nonsteroidal anti-inflammatory drugs) attenuate prazosin's response rather than enhancing its hypotension. Beta blockers enhance postural hypotension."
+    ],
+    [
+     "A potassium supplement",
+     "Potassium supplements matter with ACE inhibitors and angiotensin receptor blockers. With prazosin, beta blockers enhance postural hypotension."
+    ],
+    [
+     "A bile acid resin",
+     "Bile acid sequestrants bind oral drugs in the gut and are not the listed prazosin interaction; beta blockers enhance its postural hypotension."
+    ],
+    [
+     "A beta blocker",
+     "Correct. Beta blockers may enhance prazosin's postural hypotension; NSAIDs (nonsteroidal anti-inflammatory drugs) attenuate its response, and caution is needed in cardiac and renal failure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 81"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "A patient recently started on prazosin feels lightheaded every time he stands up. What is the most likely cause?",
+   "opts": [
+    [
+     "Reflex bradycardia",
+     "Prazosin produces a mild reflex tachycardia, not bradycardia. Dizziness on standing is orthostatic hypotension."
+    ],
+    [
+     "First-dose hyperkalemia",
+     "Hyperkalemia belongs to ACE (angiotensin-converting enzyme) inhibitors and angiotensin receptor blockers, not prazosin, whose standing dizziness is orthostatic."
+    ],
+    [
+     "Central sedation",
+     "Drowsiness can occur, but dizziness specifically on standing is orthostatic hypotension from alpha-1 blockade."
+    ],
+    [
+     "Orthostatic hypotension",
+     "Correct. Orthostatic hypotension with postural dizziness is the leading prazosin side effect, alongside headache, drowsiness and lack of energy."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 79"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "Why does tamsulosin have limited effects on blood pressure?",
+   "opts": [
+    [
+     "It does not reach the blood",
+     "Tamsulosin is absorbed and reaches the circulation. Its vascular sparing comes from alpha-1A selectivity."
+    ],
+    [
+     "It blocks beta-1 receptors too",
+     "Tamsulosin has no beta-1 blocking action. Its limited effect on blood pressure reflects selectivity for alpha-1A receptors."
+    ],
+    [
+     "It is alpha-1A selective",
+     "Correct. Tamsulosin selectively blocks alpha-1A receptors of the prostate, whereas vascular receptors are alpha-1B, so vascular effects are limited."
+    ],
+    [
+     "It is an alpha-2 agonist",
+     "Tamsulosin is an alpha-1A selective antagonist, not an alpha-2 agonist like clonidine."
+    ]
+   ],
+   "c": 2,
+   "cite": "Antihypertensives.pptx, Slide 84"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Describe adverse effects of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "What effect does clonidine have on blood glucose?",
+   "opts": [
+    [
+     "It lowers it",
+     "The direction is the reverse: clonidine inhibits insulin secretion, so blood glucose rises."
+    ],
+    [
+     "It raises it",
+     "Correct. Clonidine increases blood glucose by inhibiting insulin secretion."
+    ],
+    [
+     "It masks lows only",
+     "Masking hypoglycemic warning signs is a beta blocker effect. Clonidine raises blood glucose by inhibiting insulin secretion."
+    ],
+    [
+     "It has no effect",
+     "It does affect glucose: by inhibiting insulin secretion, clonidine raises blood glucose."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 92"
+  },
+  {
+   "topic": "Central sympatholytics",
+   "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs",
+   "slot": "class",
+   "q": "How does guanfacine compare with clonidine?",
+   "opts": [
+    [
+     "Less sedation",
+     "Correct. Guanfacine is less potent but the most selective (alpha-2 far more than alpha-1), causes less sedation, and has only an occasional withdrawal syndrome."
+    ],
+    [
+     "More potent",
+     "Guanfacine is less potent than clonidine. Its advantages are greater alpha-2 selectivity and less sedation."
+    ],
+    [
+     "Less alpha-2 selective",
+     "Guanfacine is the most selective for alpha-2 over alpha-1 receptors, not less selective."
+    ],
+    [
+     "More withdrawal",
+     "Guanfacine has only an occasional withdrawal syndrome, whereas clonidine withdrawal reactions may be severe."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 95"
+  },
+  {
+   "topic": "Alpha-1 blockers",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs",
+   "slot": "interaction",
+   "q": "A patient on prazosin begins daily naproxen. What effect do NSAIDs (nonsteroidal anti-inflammatory drugs) have on prazosin?",
+   "opts": [
+    [
+     "They enhance its hypotension",
+     "Enhanced postural hypotension is the beta blocker interaction. NSAIDs attenuate prazosin's response."
+    ],
+    [
+     "They attenuate its response",
+     "Correct. NSAIDs attenuate the response to prazosin, as they also reduce the effect of ACE (angiotensin-converting enzyme) inhibitors."
+    ],
+    [
+     "They raise its blood levels",
+     "No pharmacokinetic rise is described. The listed interaction is that NSAIDs attenuate prazosin's blood pressure response."
+    ],
+    [
+     "They have no interaction",
+     "There is a listed interaction: NSAIDs attenuate the response to prazosin."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 81"
+  },
+  {
+   "topic": "Nitroprusside",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "During a nitroprusside infusion, a patient develops trembling, vomiting and convulsions. Sodium thiosulfate is given. Which toxicity does it limit?",
+   "opts": [
+    [
+     "Cyanide toxicity",
+     "Correct. Each nitroprusside molecule carries five cyanide groups; cyanide toxicity causes trembling, vomiting and convulsions, and sodium thiosulfate limits it."
+    ],
+    [
+     "Thiocyanate toxicity",
+     "Thiocyanate toxicity causes weakness, anoxia, tinnitus, muscle spasms and toxic psychosis with long infusions or renal failure; thiosulfate is given for cyanide."
+    ],
+    [
+     "Lupus syndrome",
+     "Lupus syndrome is a hydralazine toxicity of long-term, high-dose use. The infusion toxicity that thiosulfate limits is cyanide."
+    ],
+    [
+     "Hyperkalemia",
+     "Hyperkalemia is not a nitroprusside toxicity. Sodium thiosulfate is given to limit cyanide toxicity."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 107"
+  },
+  {
+   "topic": "Minoxidil",
+   "io": "Describe the molecular mechanism of action of antihypertensive drugs",
+   "slot": "mechanism",
+   "q": "How does minoxidil relax arteriolar smooth muscle?",
+   "opts": [
+    [
+     "Opens ATP-modulated potassium channels",
+     "Correct. Increased potassium efflux hyperpolarizes the cell and relaxes the muscle; its action on potassium channels also causes arrhythmias."
+    ],
+    [
+     "Raises nitric oxide and cyclic GMP",
+     "Nitric oxide activating cyclic GMP is nitroprusside's mechanism (and a proposed one for hydralazine). Minoxidil opens potassium channels."
+    ],
+    [
+     "Blocks L-type calcium channels",
+     "L-type calcium channel blockade is the calcium channel blocker mechanism. Minoxidil hyperpolarizes cells by opening potassium channels."
+    ],
+    [
+     "Blocks vascular alpha-1 receptors",
+     "Alpha-1 blockade is prazosin's mechanism. Minoxidil opens ATP-modulated potassium channels."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 103"
+  },
+  {
+   "topic": "Direct vasodilators",
+   "io": "List commonly used protocols and patient monitoring for antihypertensive drugs",
+   "slot": "protocol",
+   "q": "Hydralazine for chronic hypertension is combined with a beta blocker and a diuretic. What is the reason?",
+   "opts": [
+    [
+     "To prevent hydralazine lupus syndrome",
+     "Lupus syndrome risk depends on dose, duration, sex and acetylator status, not on co-therapy. The partners counter reflex tachycardia and fluid retention."
+    ],
+    [
+     "To slow its hepatic acetylation",
+     "Neither partner changes N-acetylation. They are there to counter the reflex tachycardia and fluid retention hydralazine provokes."
+    ],
+    [
+     "To block its cyanide metabolite",
+     "Cyanide is a nitroprusside metabolite, not a hydralazine one. The partners counter reflex tachycardia and fluid retention."
+    ],
+    [
+     "To offset reflex tachycardia and fluid",
+     "Correct. Direct vasodilators trigger reflex tachycardia, higher cardiac output, fluid retention and raised renin, which the beta blocker and diuretic counter."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 99"
+  },
+  {
+   "topic": "Hydralazine",
+   "io": "Summarize side effects and toxic manifestations of antihypertensive drugs",
+   "slot": "adverse effect",
+   "q": "Which patient is at greatest risk of hydralazine lupus syndrome?",
+   "opts": [
+    [
+     "A man on a short low-dose course",
+     "Male sex, short courses and low doses are the opposite of the listed risk factors: high dose, long term, women and slow acetylators."
+    ],
+    [
+     "A woman on high doses long term",
+     "Correct. The risk factors are high dose, long-term therapy, female sex, slow acetylator status and Caucasian ancestry."
+    ],
+    [
+     "A fast acetylator on low doses",
+     "Fast acetylators on low doses are at the lowest risk. High dose, long-term use and slow acetylation raise it."
+    ],
+    [
+     "A child on a single dose",
+     "A single dose does not carry the risk. Lupus syndrome follows high-dose, long-term use, especially in women and slow acetylators."
+    ]
+   ],
+   "c": 1,
+   "cite": "Antihypertensives.pptx, Slide 101"
+  }
+ ]
+}

@@ -9,6 +9,11 @@ so the question is a real discrimination rather than a category guess.
 Exam 2 had no drills at all until now, though [[pharmacology_exam_spec]] calls
 for them and Exam 1 carries six.
 
+2026-09-24: Lecture 6 (Antihypertensives.pptx, deck key HTN) and Lecture 7
+(Lipids.pptx, deck key LIP) added as two more sets. Their banks are
+pharm_drill_htn.py and pharm_drill_lipid.py; the master drill now interleaves
+five sets instead of three. ENT (Lecture 5) still has no drill.
+
 Answer positions rotate through A-D, never chosen while authoring.
 """
 import os, sys
@@ -22,9 +27,12 @@ from render import render
 import pharm_drill_oph_antiinfective as ai
 import pharm_drill_oph_allergy as al
 import pharm_drill_oph_glaucoma as gl
+import pharm_drill_htn as ht
+import pharm_drill_lipid as lp
 
 OUT = os.path.join(ROOT, "Pharmacology I Exam 2")
-DECK = {"OPH": "Ophthalmology-2.pptx"}
+DECK = {"OPH": "Ophthalmology-2.pptx", "HTN": "Antihypertensives.pptx",
+        "LIP": "Lipids.pptx"}
 
 SETS = [
     (ai, "pharm-e2-drill-anti-infectives.html", "Ocular Anti-infectives Drill",
@@ -34,13 +42,21 @@ SETS = [
     (al, "pharm-e2-drill-allergy-inflammation.html",
      "Allergy, Inflammation &amp; Dry Eye Drill",
      "Topic — Ocular allergy, inflammation and dry eye",
-     ["Antihistamines", "Mast cell stabilisers", "Vasoconstrictors",
+     ["Antihistamines", "Mast cell stabilizers", "Vasoconstrictors",
       "Non-steroidals", "Glucocorticoids", "Dry eye"]),
     (gl, "pharm-e2-drill-glaucoma-diagnostics.html",
      "Glaucoma &amp; Diagnostics Drill",
-     "Topic — Glaucoma agents, anaesthetics, cycloplegics and stains",
+     "Topic — Glaucoma agents, anesthetics, cycloplegics and stains",
      ["Prostaglandins", "Beta blockers", "Alpha-2 agonists",
       "Carbonic anhydrase inhibitors", "Cholinergics", "Diagnostics"]),
+    (ht, "pharm-e2-drill-antihypertensives.html", "Antihypertensives Drill",
+     "Topic — Antihypertensive drug classes and agents",
+     ["ACE inhibitors &amp; receptor blockers", "Calcium channel blockers",
+      "Beta blockers", "Alpha &amp; central agents", "Vasodilators"]),
+    (lp, "pharm-e2-drill-lipids.html", "Lipid-Lowering Drugs Drill",
+     "Topic — Drugs that lower cholesterol and triglyceride levels",
+     ["Statins", "Ezetimibe", "Fibrates", "Bile acid sequestrants", "Niacin",
+      "PCSK9 inhibitors"]),
 ]
 
 INTRO = ("One fact, four drug names. No patient, no story &mdash; just the thing that drug "
@@ -106,11 +122,11 @@ def main():
         sub="Pharmacology I &middot; Exam 2 &middot; rapid drill",
         pill="%d questions" % len(qs),
         chips=["Anti-infectives", "Allergy &amp; inflammation", "Glaucoma",
-               "Diagnostics"],
-        intro="All %d rapid-drill questions in one sitting, interleaved across the three "
+               "Diagnostics", "Antihypertensives", "Lipids"],
+        intro="All %d rapid-drill questions in one sitting, interleaved across the %d "
               "sets. Same format throughout &mdash; one fact, four names, no doses. Set a "
               "shorter length on this screen if you want a sample rather than the whole "
-              "thing." % len(qs),
+              "thing." % (len(qs), len(SETS)),
         questions=qs, already_converted=True,
         navy="#6b3524", indigo="#9c5230", gold="#c9a227", ice="#fbf1e6",
     )

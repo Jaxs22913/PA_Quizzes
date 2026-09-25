@@ -63,7 +63,7 @@ dict(q="Which ophthalmic antibiotic class binds the 50S ribosome and blocks tran
      why="The macrolide mechanism: no protein synthesis, so the bacterium dies.",
      wrong=[("Tobramycin", "Binds the 30S subunit instead."),
             ("Ciprofloxacin", "Targets DNA gyrase and topoisomerase IV."),
-            ("Sulfacetamide", "Antagonises PABA to block folic acid synthesis.")]),
+            ("Sulfacetamide", "Antagonizes PABA to block folic acid synthesis.")]),
 
 dict(q="Which ophthalmic antibiotic class binds the 30S subunit to interfere with protein synthesis?",
      ans="Gentamicin", src=("OPH", 23),
@@ -79,7 +79,7 @@ dict(q="Which ophthalmic antibiotic class inhibits DNA gyrase and topoisomerase 
             ("Gentamicin", "Acts at the 30S subunit."),
             ("Natamycin", "An antifungal that binds sterol in the fungal membrane.")]),
 
-dict(q="Which ophthalmic agent antagonises PABA to block folic acid synthesis?",
+dict(q="Which ophthalmic agent antagonizes PABA to block folic acid synthesis?",
      ans="Sulfacetamide", src=("OPH", 19),
      why="Interfering with folate synthesis stops bacterial growth.",
      wrong=[("Trimethoprim", "Also a folate-pathway drug, but it inhibits REDUCTION of folic acid to tetrahydrofolate."),
@@ -187,7 +187,7 @@ dict(q="Which prodrug is converted in the eye to epinephrine?",
 dict(q="Which drug accumulates in the eye and produces a bull's eye lesion?",
      ans="Chloroquine", src=("OPH", 10),
      why="The example given of a drug distributing into and accumulating in the eye.",
-     wrong=[("Latanoprost", "Changes eyelash length and iris colour, not a bull's eye lesion."),
+     wrong=[("Latanoprost", "Changes eyelash length and iris color, not a bull's eye lesion."),
             ("Timolol", "Its risks are systemic beta blockade."),
             ("Dorzolamide", "Bitter taste and stinging on administration.")]),
 

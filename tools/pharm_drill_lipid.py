@@ -1,0 +1,180 @@
+# -*- coding: utf-8 -*-
+"""Rapid-drill bank: lipid-lowering drugs (Lecture 7, Lipids.pptx).
+
+One fact, four drug names, no doses. One drug per choice; every wrong choice is
+another lipid-lowering agent.
+
+From the statin pharmacokinetic table only the CYP row is asked (the scope cap
+said aloud). High intensity is asked only as drug identity (atorvastatin,
+rosuvastatin), never as a patient scenario. Nothing depends on the 7.5 versus
+10 per cent risk threshold, and ezetimibe is never keyed to NPC1L1.
+"""
+ITEMS = [
+dict(q="Which statin has MINIMAL CYP metabolism, so CYP3A4 inhibitors affect it least?",
+     ans="Rosuvastatin", src=("LIP", 20),
+     why="Rosuvastatin's major metabolic route is listed as minimal CYP, unlike the CYP3A4 statins.",
+     wrong=[("Atorvastatin", "Atorvastatin is a CYP3A4 substrate, so verapamil, amiodarone and grapefruit juice raise its levels."),
+            ("Lovastatin", "Lovastatin is metabolized by CYP3A4 and is raised by non-dihydropyridine calcium channel blockers."),
+            ("Simvastatin", "Simvastatin is a CYP3A4 substrate, one of the three statins raised by diltiazem and verapamil.")]),
+
+dict(q="Which statin is a CYP3A4 SUBSTRATE, raised by verapamil and grapefruit juice?",
+     ans="Lovastatin", src=("LIP", 20),
+     why="Atorvastatin, lovastatin and simvastatin are the CYP3A4 statins.",
+     wrong=[("Rosuvastatin", "Rosuvastatin has minimal CYP metabolism, which is why it is the least affected by CYP3A4 inhibitors."),
+            ("Pravastatin", "Pravastatin is metabolized by enzymatic and nonenzymatic routes rather than mainly by CYP3A4."),
+            ("Pitavastatin", "Pitavastatin is cleared by glucuronidation (UGT1A3 and UGT2B7), not by CYP3A4.")]),
+
+dict(q="Which statin is metabolized mainly by CYP2C9?",
+     ans="Fluvastatin", src=("LIP", 20),
+     why="Fluvastatin's major metabolic enzyme is CYP2C9, not CYP3A4.",
+     wrong=[("Simvastatin", "Simvastatin is a CYP3A4 substrate, raised by verapamil, amiodarone and grapefruit juice."),
+            ("Atorvastatin", "Atorvastatin is metabolized by CYP3A4, one of the three CYP3A4 statins."),
+            ("Rosuvastatin", "Rosuvastatin has minimal CYP metabolism rather than CYP2C9 metabolism.")]),
+
+dict(q="Which statin is cleared by GLUCURONIDATION (UGT enzymes) rather than CYP?",
+     ans="Pitavastatin", src=("LIP", 20),
+     why="Pitavastatin's major metabolic enzymes are UGT1A3 and UGT2B7.",
+     wrong=[("Atorvastatin", "Atorvastatin is a CYP3A4 substrate, not a glucuronidated statin."),
+            ("Lovastatin", "Lovastatin is metabolized by CYP3A4, so CYP3A4 inhibitors raise its levels."),
+            ("Fluvastatin", "Fluvastatin is metabolized mainly by CYP2C9, not by glucuronidation.")]),
+
+dict(q="Which statin can be used as HIGH-INTENSITY therapy?",
+     ans="Atorvastatin", src=("LIP", 68),
+     why="Only atorvastatin and rosuvastatin reach high intensity, lowering LDL (low-density lipoprotein) by 50% or more.",
+     wrong=[("Pravastatin", "Pravastatin reaches moderate or low intensity only, not the 50% or greater LDL reduction of high intensity."),
+            ("Fluvastatin", "Fluvastatin appears only at moderate or low intensity; atorvastatin and rosuvastatin are the high-intensity statins."),
+            ("Lovastatin", "Lovastatin is a moderate- or low-intensity statin; high intensity is reached only by atorvastatin and rosuvastatin.")]),
+
+dict(q="Which is the OTHER statin, besides atorvastatin, that reaches HIGH INTENSITY?",
+     ans="Rosuvastatin", src=("LIP", 68),
+     why="Atorvastatin and rosuvastatin are the only two high-intensity statins.",
+     wrong=[("Simvastatin", "Simvastatin reaches moderate or low intensity only; the second high-intensity statin is rosuvastatin."),
+            ("Pitavastatin", "Pitavastatin is listed only at moderate intensity; rosuvastatin is the other high-intensity statin."),
+            ("Pravastatin", "Pravastatin is moderate or low intensity; rosuvastatin joins atorvastatin at high intensity.")]),
+
+dict(q="Which drug is the CHOLESTEROL ABSORPTION INHIBITOR, acting at the intestinal brush border?",
+     ans="Ezetimibe", src=("LIP", 28),
+     why="Ezetimibe selectively inhibits intestinal cholesterol absorption, raising hepatic LDL (low-density lipoprotein) receptor expression.",
+     wrong=[("Colesevelam", "Colesevelam is a bile acid sequestrant that binds bile acids and blocks their reabsorption at the terminal ileum."),
+            ("Gemfibrozil", "Gemfibrozil is a fibrate that activates PPAR-alpha to lower triglycerides."),
+            ("Evolocumab", "Evolocumab is an injectable PCSK9 inhibitor that keeps hepatic LDL (low-density lipoprotein) receptors active.")]),
+
+dict(q="Which drug's concentrations are LOWERED BY ANTACIDS?",
+     ans="Ezetimibe", src=("LIP", 31),
+     why="Antacids and bile acid sequestrants decrease ezetimibe concentrations; cyclosporine increases them.",
+     wrong=[("Rosuvastatin", "Antacids are not a listed statin interaction; statin interactions run through CYP3A4 and grapefruit juice."),
+            ("Fenofibrate", "Fenofibrate's listed interactions are warfarin, statins, ezetimibe and resins, not antacids."),
+            ("Alirocumab", "Alirocumab is an injectable antibody, so an antacid in the gut cannot change its concentrations.")]),
+
+dict(q="Which drug ACTIVATES PPAR-ALPHA to lower triglycerides and raise HDL (high-density lipoprotein)?",
+     ans="Fenofibrate", src=("LIP", 34),
+     why="Fibrates activate PPAR-alpha: more fatty acid oxidation, less VLDL (very low-density lipoprotein), more ApoA-1 and HDL (high-density lipoprotein).",
+     wrong=[("Ezetimibe", "Ezetimibe blocks intestinal cholesterol absorption and has an insignificant effect on HDL (high-density lipoprotein)."),
+            ("Colestipol", "Colestipol is a bile acid sequestrant; it can raise triglycerides rather than lowering them."),
+            ("Atorvastatin", "Atorvastatin inhibits HMG-CoA reductase; it lowers LDL (low-density lipoprotein) most, not through PPAR-alpha.")]),
+
+dict(q="Which drug INCREASES the ANTICOAGULANT EFFECT of warfarin?",
+     ans="Gemfibrozil", src=("LIP", 38),
+     why="Fibrates increase the anticoagulant effect of warfarin.",
+     wrong=[("Colesevelam", "Bile acid sequestrants reduce warfarin ABSORPTION, the opposite direction; doses are separated to avoid it."),
+            ("Ezetimibe", "Ezetimibe's listed interactions are fibrates, resins, antacids and cyclosporine, not warfarin."),
+            ("Evolocumab", "Evolocumab is an injectable PCSK9 inhibitor with no listed warfarin interaction.")]),
+
+dict(q="Which fibrate is named as a RELATIVE CONTRAINDICATION with statins?",
+     ans="Gemfibrozil", src=("LIP", 23),
+     why="Gemfibrozil sits on the statin relative contraindication list with cyclosporine, niacin and erythromycin, because of myopathy.",
+     wrong=[("Fenofibrate", "Fenofibrate is not the fibrate named on the statin relative contraindication list, which names gemfibrozil."),
+            ("Bezafibrate", "Bezafibrate appears only in the fibrate product list and is not named as a statin relative contraindication."),
+            ("Ezetimibe", "Ezetimibe is added to statins on purpose for dual inhibition; it is not a relative contraindication.")]),
+
+dict(q="Which drug is a BILE ACID SEQUESTRANT?",
+     ans="Cholestyramine", src=("LIP", 43),
+     why="The bile acid sequestrants are cholestyramine, colestipol and colesevelam.",
+     wrong=[("Ezetimibe", "Ezetimibe is the cholesterol absorption inhibitor, blocking uptake at the brush border rather than binding bile acids."),
+            ("Fenofibrate", "Fenofibrate is a fibrate that activates PPAR-alpha, not a bile acid sequestrant."),
+            ("Pravastatin", "Pravastatin is a statin that inhibits HMG-CoA reductase, not a bile acid sequestrant.")]),
+
+dict(q="Which drug is CONTRAINDICATED when TRIGLYCERIDES exceed 400 mg/dL?",
+     ans="Colestipol", src=("LIP", 48),
+     why="Resins may raise VLDL (very low-density lipoprotein) and triglycerides; above 400 mg/dL is an absolute contraindication.",
+     wrong=[("Fenofibrate", "Fenofibrate lowers triglycerides 20 to 50% and is the treatment for levels over 1000 mg/dL, not contraindicated by them."),
+            ("Gemfibrozil", "Gemfibrozil is a fibrate that lowers triglycerides; a high level is its indication, not a contraindication."),
+            ("Niacin", "Niacin lowers triglycerides 20 to 50%; its contraindications are liver disease, gout, ulcers and diabetes.")]),
+
+dict(q="Which lipid-lowering drug is APPROVED IN PREGNANCY because it is not absorbed?",
+     ans="Cholestyramine", src=("LIP", 42),
+     why="Bile acid sequestrants are not absorbed, so they are approved for children, adolescents and pregnancy.",
+     wrong=[("Atorvastatin", "Statins are contraindicated in pregnancy, along with hepatic disease."),
+            ("Fenofibrate", "Fibrates are contraindicated in pregnancy, severe hepatic or renal dysfunction and gallbladder disease."),
+            ("Simvastatin", "Simvastatin is a statin, and pregnancy is one of the two statin contraindications.")]),
+
+dict(q="Which drug INTERFERES WITH ABSORPTION of digoxin, warfarin and thyroxine?",
+     ans="Colesevelam", src=("LIP", 47),
+     why="Anion-exchange resins bind these drugs in the gut; give them 1 hour before or 4 hours after the resin.",
+     wrong=[("Evolocumab", "Evolocumab is an injectable antibody and does not bind drugs in the gut."),
+            ("Fenofibrate", "Fenofibrate increases warfarin's anticoagulant effect; it does not block oral absorption of these drugs."),
+            ("Rosuvastatin", "Rosuvastatin has minimal CYP metabolism and no listed effect on the absorption of these drugs.")]),
+
+dict(q="Which drug causes PROSTAGLANDIN-MEDIATED FLUSHING, minimized by aspirin?",
+     ans="Niacin", src=("LIP", 55),
+     why="Niacin flushing is prostaglandin mediated; aspirin premedication minimizes it.",
+     wrong=[("Fenofibrate", "Fenofibrate's adverse effects are gastrointestinal upset, cholelithiasis and myopathy, not flushing."),
+            ("Ezetimibe", "Ezetimibe causes gastrointestinal effects and raised transaminases with statins, not flushing."),
+            ("Colestipol", "Colestipol causes bloating, flatulence and constipation, not prostaglandin-mediated flushing.")]),
+
+dict(q="Which drug RAISES URIC ACID and glucose, so gout and diabetes are relative contraindications?",
+     ans="Niacin", src=("LIP", 56),
+     why="At larger doses niacin raises liver enzymes, glucose and uric acid; chronic liver disease is its absolute contraindication.",
+     wrong=[("Gemfibrozil", "Gemfibrozil's contraindications are pregnancy, severe hepatic or renal dysfunction and gallbladder disease, not gout."),
+            ("Ezetimibe", "Ezetimibe has no stated contraindications; uric acid and glucose are not affected."),
+            ("Cholestyramine", "Cholestyramine is not absorbed; its contraindications are high triglycerides and familial dysbetalipoproteinemia.")]),
+
+dict(q="Which form of niacin is NOT EFFECTIVE as an antilipemic?",
+     ans="Niacinamide", src=("LIP", 50),
+     why="Nicotinic acid is the antilipemic form; its amide, niacinamide (nicotinamide), is not effective.",
+     wrong=[("Nicotinic acid", "Nicotinic acid is the form of niacin used as an antilipemic."),
+            ("Extended-release niacin", "Extended-release niacin is a prescription antilipemic product and is effective, unlike niacinamide."),
+            ("Immediate-release niacin", "Immediate-release niacin, as a supplement or by prescription, is an effective antilipemic, unlike niacinamide.")]),
+
+dict(q="Which drug produces the LARGEST RISE IN HDL (high-density lipoprotein)?",
+     ans="Niacin", src=("LIP", 61),
+     why="Nicotinic acid raises HDL by 15 to 35%, the largest rise of any class.",
+     wrong=[("Ezetimibe", "Ezetimibe's effect on HDL (high-density lipoprotein) is insignificant."),
+            ("Colesevelam", "Resins raise HDL (high-density lipoprotein) by only 3 to 5%."),
+            ("Pravastatin", "Statins raise HDL (high-density lipoprotein) by only 5 to 15%.")]),
+
+dict(q="Which drug causes CHOLELITHIASIS and is contraindicated in existing gallbladder disease?",
+     ans="Fenofibrate", src=("LIP", 37),
+     why="Fibrates cause cholelithiasis and are contraindicated in existing gallbladder disease.",
+     wrong=[("Niacin", "Niacin's adverse effects are flushing, raised uric acid, glucose and liver enzymes, not gallstones."),
+            ("Colestipol", "Colestipol causes gastrointestinal effects and vitamin malabsorption; gallbladder disease is not its contraindication."),
+            ("Rosuvastatin", "Statins are contraindicated in hepatic disease and pregnancy, not gallbladder disease.")]),
+
+dict(q="Which drug is an injectable MONOCLONAL ANTIBODY against PCSK9?",
+     ans="Alirocumab", src=("LIP", 60),
+     why="Alirocumab and evolocumab are the injectable-only, expensive PCSK9 inhibitors.",
+     wrong=[("Ezetimibe", "Ezetimibe is an oral cholesterol absorption inhibitor, not an antibody."),
+            ("Colesevelam", "Colesevelam is an oral bile acid sequestrant, not an injectable antibody."),
+            ("Gemfibrozil", "Gemfibrozil is an oral fibrate that activates PPAR-alpha; it is not an antibody.")]),
+
+dict(q="Which drug's MOST SERIOUS adverse reaction is HYPERSENSITIVITY?",
+     ans="Evolocumab", src=("LIP", 60),
+     why="Hypersensitivity reactions are the most serious adverse reaction to PCSK9 inhibitors.",
+     wrong=[("Simvastatin", "Simvastatin's most severe toxicity is muscle damage, with rare rhabdomyolysis."),
+            ("Niacin", "Niacin's hallmark adverse effect is prostaglandin-mediated flushing, with raised uric acid and glucose."),
+            ("Fenofibrate", "Fenofibrate causes gastrointestinal upset, cholelithiasis and myopathy.")]),
+
+dict(q="Which drug and its active GLUCURONIDE metabolite circulate ENTEROHEPATICALLY?",
+     ans="Ezetimibe", src=("LIP", 28),
+     why="Enterohepatic recirculation returns ezetimibe to its site of action and limits systemic exposure.",
+     wrong=[("Cholestyramine", "Cholestyramine is not absorbed at all; it binds bile acids and is excreted in feces."),
+            ("Atorvastatin", "Atorvastatin is metabolized by CYP3A4; enterohepatic recirculation of a glucuronide is the ezetimibe story."),
+            ("Evolocumab", "Evolocumab is an injected antibody; it does not recirculate through the gut and liver.")]),
+
+dict(q="Which drug is FIRST LINE when LDL (low-density lipoprotein) lowering drugs are indicated?",
+     ans="Atorvastatin", src=("LIP", 25),
+     why="Statins are the most efficacious and best tolerated agents and are first line for LDL lowering.",
+     wrong=[("Ezetimibe", "Ezetimibe is typically added to a statin for dual inhibition rather than used first line."),
+            ("Colestipol", "Resins are safe but poorly tolerated, used with a statin or for modest LDL reductions."),
+            ("Gemfibrozil", "Fibrates are primarily for triglycerides over 1000 mg/dL or low HDL (high-density lipoprotein).")]),
+]

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 2 cram sheet (Lecture 4, Ophthalmic Drugs).
+"""Build the Pharmacology I Exam 2 cram sheet (Lectures 4 to 7).
+
+Lecture 4 topics live here; Lectures 5 to 7 (ENT, antihypertensives, lipids;
+added 2026-09-25) are in _pharm_e2_cram_l5l7.py and appended after them.
 
 Opens with what Dr. Wood excludes, because on this lecture that is the single
 most useful thing to read first -- a 79-slide drug deck of which dosing,
@@ -11,6 +14,8 @@ import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
+sys.path.insert(0, HERE)
+from _pharm_e2_cram_l5l7 import T as T_L5L7
 
 OUT = os.path.join(os.path.dirname(HERE),
                    "Pharmacology I Exam 2/pharm-exam-2-cram-sheet.html")
@@ -20,20 +25,20 @@ T = [
  ["Dosing","&ldquo;Not for memorization sake necessarily, because you can always look up the dosing for a medication <b>if you know which drug you actually want to use in the first place</b>.&rdquo; The deck is full of regimens. Learn none of them."],
  ["Formulations","&ldquo;I don&rsquo;t care that you memorize that necessarily, with some exceptions.&rdquo; Percent strengths, solution against ointment: not the question."],
  ["That ONE indications table","&ldquo;Don&rsquo;t worry so much about indications for use&hellip; a lot of them have a lot of crossover.&rdquo; He means the slide listing ten antibiotics against overlapping indications &mdash; orientation, not content. <b>What each agent is FOR is still asked.</b>"],
- ["Which agent irritates","&ldquo;Don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. <b>Any of these can do that.</b>&rdquo; That is about the GENERIC irritation. <b>The effects that name one drug are fair game</b> &mdash; ciprofloxacin&rsquo;s white precipitate, the bitter taste of the carbonic anhydrase inhibitors, iris colour change with the prostaglandins."],
+ ["Which agent irritates","&ldquo;Don&rsquo;t memorize which ones cause eye irritation or hypersensitivity. <b>Any of these can do that.</b>&rdquo; That is about the GENERIC irritation. <b>The effects that name one drug are fair game</b> &mdash; ciprofloxacin&rsquo;s white precipitate, the bitter taste of the carbonic anhydrase inhibitors, iris color change with the prostaglandins."],
  ["Combination products","&ldquo;The specific combinations, I don&rsquo;t care that you memorize, <b>BUT</b> just know if I was to say, hey, patient&rsquo;s on this drug right now, what would be a helpful second line agent to add on?&rdquo; Products out, reasoning in."],
- ["&#9733; What IS promised","&ldquo;<b>I will tell you, I will ask this question</b>&hellip; there&rsquo;s rebound hyperaemia.&rdquo; It is in the allergy block below."],
+ ["&#9733; What IS promised","&ldquo;<b>I will tell you, I will ask this question</b>&hellip; there&rsquo;s rebound hyperemia.&rdquo; It is in the allergy block below."],
 ]},
 {"id":"kinetics","label":"Delivery &amp; kinetics","color":"#2f4f6b","rows":[
  ["ONE variable","<b>Time in contact with the eye.</b> Gels, ointments and solid inserts exist to prolong contact in the cul-de-sac. So does blocking the tear ducts with silicone plugs or cautery."],
  ["Two routes, two effects","<b>TRANSCORNEAL &rarr; local effect.</b> Has a lag time; rate depends on the CONCENTRATION GRADIENT, governed by <b>Fick&rsquo;s law</b>. <b>NASOLACRIMAL &rarr; systemic effect</b>, and it <b>AVOIDS FIRST-PASS METABOLISM</b> &mdash; which is why a topical beta blocker can drop a heart rate."],
  ["Four absorption determinants","Time in cul-de-sac and tear film &middot; nasolacrimal drainage &middot; protein binding &middot; diffusion across cornea and conjunctiva."],
  ["Prodrugs activated IN the eye","<b>Dipivefrin &rarr; epinephrine. Latanoprost &rarr; prostaglandin F2-alpha.</b> Some drugs instead ACCUMULATE &mdash; chloroquine&rsquo;s <b>bull&rsquo;s eye lesion</b>."],
- ["Route trade-offs","TOPICAL: convenient, economical, safe; costs compliance, surface toxicity, systemic absorption. PERIOCULAR (subconjunctival, sub-Tenon&rsquo;s, retrobulbar): reaches posterior uveitis and cystoid macular oedema; risks <b>globe perforation, optic nerve trauma, retinal vessel occlusion</b>. INTRACAMERAL: prompt, anterior segment, short-lived."],
+ ["Route trade-offs","TOPICAL: convenient, economical, safe; costs compliance, surface toxicity, systemic absorption. PERIOCULAR (subconjunctival, sub-Tenon&rsquo;s, retrobulbar): reaches posterior uveitis and cystoid macular edema; risks <b>globe perforation, optic nerve trauma, retinal vessel occlusion</b>. INTRACAMERAL: prompt, anterior segment, short-lived."],
 ]},
 {"id":"abx","label":"Ocular antibiotics","color":"#1f6f5c","rows":[
  ["★ THE MECHANISM PAIR","<b>Macrolides &rarr; 50S</b> (block transpeptidation). <b>Aminoglycosides &rarr; 30S.</b> Same endpoint, different subunit."],
- ["The other mechanisms","<b>Fluoroquinolones</b> &rarr; DNA gyrase + topoisomerase IV, double-stranded breakage. <b>Bacitracin</b> &rarr; blocks mucopeptide transfer into the CELL WALL. <b>Polymyxin B</b> &rarr; binds membrane phospholipids, contents leak. <b>Sulfacetamide</b> &rarr; antagonises PABA. <b>Trimethoprim</b> &rarr; blocks reduction to tetrahydrofolate. (The last two are the same pathway, one step apart.)"],
+ ["The other mechanisms","<b>Fluoroquinolones</b> &rarr; DNA gyrase + topoisomerase IV, double-stranded breakage. <b>Bacitracin</b> &rarr; blocks mucopeptide transfer into the CELL WALL. <b>Polymyxin B</b> &rarr; binds membrane phospholipids, contents leak. <b>Sulfacetamide</b> &rarr; antagonizes PABA. <b>Trimethoprim</b> &rarr; blocks reduction to tetrahydrofolate. (The last two are the same pathway, one step apart.)"],
  ["★ DRUG CHOICE","<b>Erythromycin</b> = commonest, SOOTHING, usable before a bacterial cause is confirmed; also ophthalmia neonatorum prophylaxis. <b>Fluoroquinolone</b> = corneal ulcers, suspected <b>Pseudomonas</b>, and therefore CONTACT LENS wearers once keratitis is excluded. <b>Azithromycin</b> = twice daily instead of 4+, but expensive and used less."],
  ["The only two adverse effects that name a drug","<b>Ciprofloxacin &rarr; white precipitate in ~17%.</b> <b>Aminoglycoside over several days &rarr; corneal ulceration and reactive keratoconjunctivitis.</b> Everything else irritates."],
  ["The only hard contraindication","<b>Sulfacetamide in sulfonamide allergy.</b>"],
@@ -47,10 +52,10 @@ T = [
  ["★ Fungal risk factors","Trauma &middot; chronic ocular surface disease &middot; contact lens wear &middot; immunosuppression &mdash; <b>including topical steroid use</b>. The only one a prescription creates."],
 ]},
 {"id":"allergy","label":"Allergy","color":"#a8562f","rows":[
- ["★★ REBOUND HYPERAEMIA","The promised question. OTC redness drops are <b>alpha-1 agonists</b> &rarr; vasoconstriction. Constant activation <b>DOWNREGULATES the receptors</b> &rarr; on stopping, fewer receptors for endogenous catecholamines &rarr; <b>vessels blow open</b>. Use <b>&lt;2 weeks</b>; no improvement in <b>72 hours</b> &rarr; stop and be seen."],
- ["★ Imidazoline ingestion","<b>LOCALLY alpha-1. SYSTEMICALLY alpha-2.</b> That is why a toddler who swallows the bottle gets CNS depression and apnoea, not hypertension. Same receptor logic as the brimonidine age limit."],
- ["H1 agents","<b>Not antagonists &mdash; INVERSE AGONISTS</b> that inactivate the receptor, still competitive with histamine. Onset <b>minutes</b>; allow <b>2 weeks</b> for full efficacy. Typically preferred over mast cell stabilisers. Can worsen dryness."],
- ["Mast cell stabilisers","Cromolyn, lodoxamide, nedocromil. Inhibit degranulation (histamine, tryptase, PGD2). <b>5&ndash;14 days</b> to full effect &mdash; <b>NOT for acute symptoms</b>. Often 4&times; daily. For predictable seasonal allergy in someone intolerant of alternatives."],
+ ["★★ REBOUND HYPEREMIA","The promised question. OTC redness drops are <b>alpha-1 agonists</b> &rarr; vasoconstriction. Constant activation <b>DOWNREGULATES the receptors</b> &rarr; on stopping, fewer receptors for endogenous catecholamines &rarr; <b>vessels blow open</b>. Use <b>&lt;2 weeks</b>; no improvement in <b>72 hours</b> &rarr; stop and be seen."],
+ ["★ Imidazoline ingestion","<b>LOCALLY alpha-1. SYSTEMICALLY alpha-2.</b> That is why a toddler who swallows the bottle gets CNS depression and apnea, not hypertension. Same receptor logic as the brimonidine age limit."],
+ ["H1 agents","<b>Not antagonists &mdash; INVERSE AGONISTS</b> that inactivate the receptor, still competitive with histamine. Onset <b>minutes</b>; allow <b>2 weeks</b> for full efficacy. Typically preferred over mast cell stabilizers. Can worsen dryness."],
+ ["Mast cell stabilizers","Cromolyn, lodoxamide, nedocromil. Inhibit degranulation (histamine, tryptase, PGD2). <b>5&ndash;14 days</b> to full effect &mdash; <b>NOT for acute symptoms</b>. Often 4&times; daily. For predictable seasonal allergy in someone intolerant of alternatives."],
  ["The cascade","IgE binds Fc receptors on <b>mast cells and basophils</b>; tyrosine kinases in <b>5&ndash;15 seconds</b>; histamine, PAF, leukotrienes &rarr; vasodilation, swelling, redness, itch."],
 ]},
 {"id":"inflam","label":"Anti-inflammatories &amp; dry eye","color":"#b8862f","rows":[
@@ -64,15 +69,15 @@ T = [
 {"id":"glaucoma","label":"Glaucoma","color":"#4a4f8c","rows":[
  ["★ Sort every drug by side","<b>INCREASE OUTFLOW:</b> prostaglandins, alpha agonists, cholinergics. <b>DECREASE PRODUCTION:</b> alpha agonists, beta blockers, carbonic anhydrase inhibitors. <b>Alpha agonists are on BOTH</b> &mdash; that is where the errors come from."],
  ["The three definitions","<b>Ocular hypertension</b> = high pressure, NO nerve damage, NO field loss. <b>Open angle</b> = increased production or decreased drainage; may have damage. <b>Angle closure</b> = blocked canal, often normal nerve, usually acute PAIN. Normal IOP <b>10&ndash;21 mmHg</b>. Drugs target OPEN angle."],
- ["★ Prostaglandins","<b>FIRST LINE, most commonly used.</b> Increase outflow. <b>ONCE DAILY &mdash; exceeding it INHIBITS the effect.</b> Warn: <b>eyelash length and IRIS COLOUR change</b>, hyperaemia. Latanoprost, travoprost, bimatoprost, tafluprost."],
+ ["★ Prostaglandins","<b>FIRST LINE, most commonly used.</b> Increase outflow. <b>ONCE DAILY &mdash; exceeding it INHIBITS the effect.</b> Warn: <b>eyelash length and IRIS COLOR change</b>, hyperemia. Latanoprost, travoprost, bimatoprost, tafluprost."],
  ["★ Beta blockers","Block beta receptors in ciliary epithelium &rarr; less cAMP &rarr; less production. <b>Betaxolol = beta-1 SELECTIVE</b> (safer in asthma). Carteolol, timolol, levobunolol = non-selective, more efficacious, more risk. Systemic: <b>heart failure, bradycardia, heart block, airway resistance</b>."],
- ["★ Alpha-2 agonists","Apraclonidine, brimonidine. Reduce production AND increase outflow. <b>CONTRAINDICATED UNDER 2 YEARS &mdash; CNS depression and apnoea.</b> Apraclonidine ionised &rarr; less blood-brain penetration; brimonidine lipophilic but less allergic conjunctivitis."],
+ ["★ Alpha-2 agonists","Apraclonidine, brimonidine. Reduce production AND increase outflow. <b>CONTRAINDICATED UNDER 2 YEARS &mdash; CNS depression and apnea.</b> Apraclonidine ionized &rarr; less blood-brain penetration; brimonidine lipophilic but less allergic conjunctivitis."],
  ["Carbonic anhydrase inhibitors","Dorzolamide, brinzolamide. Less bicarbonate &rarr; less fluid. Tolerability is the issue: <b>bitter taste ~25%, stinging ~33%</b>."],
  ["Cholinergics","Pilocarpine, carbachol, acetylcholine. Muscarinic &rarr; ciliary muscle contracts &rarr; outflow opens. <b>Fixed small pupils, myopia, blurring</b> &mdash; <b>young patients cannot tolerate it</b>."],
  ["★ Treat / target","Treat those <b>with risk factors</b>; monitor those without. Start with a <b>prostaglandin or beta blocker</b>, optionally <b>one eye</b> as its own control. Goal: <b>20&ndash;30% reduction</b>. Combinations are synergistic across DIFFERENT routes."],
 ]},
 {"id":"diag","label":"Diagnostic agents &amp; administration","color":"#3d6b52","rows":[
- ["★ Anaesthetics","Tetracaine, proparacaine. Inhibit <b>sodium influx</b>. For tonometry, foreign body removal, superficial corneal surgery. <b>Numb 10&ndash;20 min with NO BLINK REFLEX.</b> <b>DO NOT PRESCRIBE</b> &mdash; repeated use is epithelial-toxic and delays healing."],
+ ["★ Anesthetics","Tetracaine, proparacaine. Inhibit <b>sodium influx</b>. For tonometry, foreign body removal, superficial corneal surgery. <b>Numb 10&ndash;20 min with NO BLINK REFLEX.</b> <b>DO NOT PRESCRIBE</b> &mdash; repeated use is epithelial-toxic and delays healing."],
  ["Cycloplegics &mdash; two routes","<b>ANTIMUSCARINICS</b> (atropine, cyclopentolate, tropicamide) block muscarinic receptors &rarr; mydriasis. <b>SYMPATHOMIMETIC</b> (phenylephrine) stimulates the dilator &rarr; pupil stays <b>more light-reactive</b>. Uses: fundoscopy; uveitis to prevent synechiae and relieve ciliary spasm."],
  ["Fluorescein","Reveals <b>epithelial defects of cornea and conjunctiva</b>. Anterior segment staining; discloses corneal injury."],
  ["★ BEFORE any drop","<b>MEASURE VISUAL ACUITY.</b> Document allergies and last eye exam. Repeat acuity every visit &mdash; <b>if it worsens, immediate ophthalmology consult</b>."],
@@ -81,16 +86,20 @@ T = [
 ]},
 ]
 
+T = T + T_L5L7
+assert len({t["id"] for t in T}) == len(T), "duplicate topic id"
+
 html = render(
-    title="Pharmacology I Exam 2 Cram Sheet &mdash; Ophthalmic Drugs",
+    title="Pharmacology I Exam 2 Cram Sheet &mdash; Lectures 4 to 7",
     kicker="Pharmacology I &middot; Exam 2 &middot; Class of 2028",
-    h1="Ophthalmic Drugs Cram Sheet",
-    sub="Lecture 4, Adam Wood Pharm.D. DABAT. Opens with what he says is NOT on the exam, "
-        "because on this lecture that is the most useful thing to read first.",
+    h1="Pharmacology I Exam 2 Cram Sheet",
+    sub="Lectures 4 to 7 (ophthalmic, ear-nose-throat, antihypertensive and lipid-lowering drugs), "
+        "Adam Wood Pharm.D. DABAT. Each lecture opens with what he says is NOT on the exam. "
+        "&#9733; = professor emphasized (Lectures 6 and 7 from the recording; Lecture 5 has no stars yet).",
     topics=T,
     guide_href="pharm-exam-2-study-guide.html",
-    footer_note="Lecture 4 of five in Exam 2 &mdash; this sheet covers Lecture 4 only; Lectures 5 "
-                "to 7 have been delivered and Lecture 8 has not. "
+    footer_note="Exam 2 covers Lectures 4 to 8 &mdash; this sheet covers Lectures 4 to 7; "
+                "Lecture 8 (myocardial ischemia) has not been delivered yet. "
                 "The <a href=\"pharm-exam-2-study-guide.html\">study guide</a> has the full "
                 "treatment.")
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

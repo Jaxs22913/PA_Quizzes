@@ -1,0 +1,2302 @@
+{
+ "statin1": [
+  {
+   "topic": "Lipid transport",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Which apolipoprotein binds LDL (low-density lipoprotein) to its receptor?",
+   "opts": [
+    [
+     "ApoB-100",
+     "Correct. ApoB-100 is the only apoprotein of LDL and the ligand for the LDL receptor, which clears about 75% of LDL particles, mostly in the liver."
+    ],
+    [
+     "ApoA-I",
+     "ApoA-I is the HDL (high-density lipoprotein) protein that fibrates increase. LDL binds its receptor through ApoB-100."
+    ],
+    [
+     "ApoC-II",
+     "ApoC-II sits on chylomicrons and VLDL (very low-density lipoprotein); it is not LDL's receptor ligand, which is ApoB-100."
+    ],
+    [
+     "ApoE",
+     "ApoE mediates hepatic uptake of remnants and IDL (intermediate-density lipoprotein). LDL's only apoprotein, and its receptor ligand, is ApoB-100."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 12"
+  },
+  {
+   "topic": "Statin mechanism",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Which enzyme do statins inhibit?",
+   "opts": [
+    [
+     "Lipoprotein lipase",
+     "Lipoprotein lipase hydrolyzes triglyceride in chylomicrons and VLDL (very low-density lipoprotein); fibrates increase it. Statins inhibit HMG-CoA reductase."
+    ],
+    [
+     "Cholesterol 7-alpha hydroxylase",
+     "Cholesterol 7-alpha hydroxylase converts cholesterol to bile acids and rises with bile acid sequestrants. Statins inhibit HMG-CoA reductase."
+    ],
+    [
+     "HMG-CoA reductase",
+     "Correct. Statins inhibit HMG-CoA reductase in the hepatic cholesterol synthesis pathway."
+    ],
+    [
+     "PCSK9 in the plasma",
+     "PCSK9 is the target of the monoclonal antibodies alirocumab and evolocumab. Statins inhibit HMG-CoA reductase."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 16"
+  },
+  {
+   "topic": "Statin benefit groups",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which patient with diabetes and no clinical cardiovascular disease meets a statin benefit group?",
+   "opts": [
+    [
+     "Age 30 with LDL of 120 mg/dL",
+     "At 30 the patient is younger than the 40-to-75 age range that defines the diabetes group."
+    ],
+    [
+     "Age 55 with LDL of 60 mg/dL",
+     "An LDL of 60 mg/dL is below the 70 to 189 mg/dL range the diabetes group requires."
+    ],
+    [
+     "Age 55 with LDL of 120 mg/dL",
+     "Correct. The diabetes group is ages 40 to 75 with LDL (low-density lipoprotein) 70 to 189 mg/dL and no clinical atherosclerotic cardiovascular disease."
+    ],
+    [
+     "Age 82 with LDL of 120 mg/dL",
+     "At 82 the patient is older than the 40-to-75 age range that defines the diabetes group."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 65"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "Which measure reduces the risk of statin myopathy?",
+   "opts": [
+    [
+     "Routinely adding a fibrate",
+     "Combining statins with fibrates is done only cautiously because it raises myopathy risk."
+    ],
+    [
+     "Using the lowest effective dose",
+     "Correct. Risk is also reduced by caution in renal impairment, caution with fibrates, avoiding other drug interactions, and monitoring symptoms and laboratory values."
+    ],
+    [
+     "Taking it with grapefruit juice",
+     "Grapefruit juice raises CYP3A4 statin levels, adding to myopathy risk rather than reducing it."
+    ],
+    [
+     "Using the highest tolerated dose",
+     "Higher doses raise myopathy risk. The listed measure is the lowest effective dose."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 22"
+  },
+  {
+   "topic": "Statin guidelines",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "How does the ACC/AHA (American College of Cardiology/American Heart Association) cholesterol guideline differ from ATP III (Adult Treatment Panel III)?",
+   "opts": [
+    [
+     "It targets an LDL below 100 mg/dL",
+     "An LDL under 100 mg/dL as the optimal goal is the ATP III approach, which the newer guideline dropped."
+    ],
+    [
+     "It does not treat to an LDL target",
+     "Correct. It starts moderate- or high-intensity statin therapy for the four benefit groups and does not titrate to a specific LDL (low-density lipoprotein) target."
+    ],
+    [
+     "It starts everyone on high intensity",
+     "The newer guideline starts either moderate- or high-intensity statin therapy for the four groups, not high intensity for all."
+    ],
+    [
+     "It makes niacin the first choice",
+     "Statins remain first line; the change was dropping titration to an LDL target."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 64"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "What is the most severe muscle toxicity of statins?",
+   "opts": [
+    [
+     "Myalgia",
+     "Myalgia is muscle pain without the severity of rhabdomyolysis, which is the rare but most serious muscle toxicity."
+    ],
+    [
+     "Muscle cramps at night",
+     "Cramping is not the listed severe toxicity. Rhabdomyolysis is the rare, most severe form."
+    ],
+    [
+     "Rhabdomyolysis",
+     "Correct. Myalgia and myopathy (0.2 to 0.4%) are more common; rhabdomyolysis is rare but the most severe, and muscle toxicity requires stopping the statin."
+    ],
+    [
+     "Essential tremor",
+     "Tremor is not a statin muscle toxicity; beta blockers are used to treat essential tremor. Rhabdomyolysis is the severe form."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 22"
+  },
+  {
+   "topic": "Statin interactions",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Which antiarrhythmic is listed as a CYP-mediated statin interaction?",
+   "opts": [
+    [
+     "Amiodarone",
+     "Correct. Verapamil, amiodarone, niacin, fibric acid derivatives and grapefruit juice are the listed statin interactions, especially through CYP3A4."
+    ],
+    [
+     "Digoxin",
+     "Digoxin is affected by bile acid sequestrants and by verapamil's P-glycoprotein inhibition; it is not a listed statin interaction."
+    ],
+    [
+     "Esmolol",
+     "Esmolol is an intravenous beta-1 selective blocker, not a listed statin interaction. Amiodarone is."
+    ],
+    [
+     "Sotalol",
+     "Sotalol is a first-generation, non-selective beta blocker and is not on the statin interaction list, which names verapamil and amiodarone."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 24"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which is a common side effect of statins?",
+   "opts": [
+    [
+     "Cutaneous flushing and itching",
+     "Prostaglandin-mediated flushing is the hallmark of niacin, not statins."
+    ],
+    [
+     "Constipation and bloating",
+     "Constipation, bloating and flatulence are the gastrointestinal effects of bile acid sequestrants."
+    ],
+    [
+     "Headache and sleep disturbance",
+     "Correct. Common statin side effects are headache, sleep disturbance, fatigue, gastrointestinal intolerance, flu-like symptoms and liver enzyme rises."
+    ],
+    [
+     "Gallstones and abdominal pain",
+     "Cholelithiasis (gallstones) with abdominal pain points to fibrates, and ezetimibe with a fibrate raises it; statins cause headache and sleep disturbance."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 21"
+  },
+  {
+   "topic": "Statin agents",
+   "io": "Identify drug classes and commonly prescribed drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which of these drugs is an HMG-CoA reductase inhibitor?",
+   "opts": [
+    [
+     "Pitavastatin",
+     "Correct. The -statin suffix marks the class: lovastatin, simvastatin, pravastatin, fluvastatin, atorvastatin, rosuvastatin and pitavastatin."
+    ],
+    [
+     "Ezetimibe",
+     "Ezetimibe is the cholesterol absorption inhibitor, acting at the intestinal brush border rather than on HMG-CoA reductase."
+    ],
+    [
+     "Gemfibrozil",
+     "Gemfibrozil is a fibric acid derivative that activates PPAR-alpha. The HMG-CoA reductase inhibitors end in -statin."
+    ],
+    [
+     "Colesevelam",
+     "Colesevelam is a bile acid sequestrant that binds bile acids in the gut. Statins, ending in -statin, inhibit HMG-CoA reductase."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 17"
+  },
+  {
+   "topic": "Statin contraindications",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "In which patient is a statin contraindicated?",
+   "opts": [
+    [
+     "A patient aged 50 with diabetes",
+     "Diabetes at ages 40 to 75 with LDL (low-density lipoprotein) 70 to 189 mg/dL is a statin benefit group, not a contraindication."
+    ],
+    [
+     "A patient after a heart attack",
+     "Clinical atherosclerotic cardiovascular disease is the first statin benefit group, not a contraindication."
+    ],
+    [
+     "A patient with LDL of 210 mg/dL",
+     "LDL (low-density lipoprotein) above 190 mg/dL is a statin benefit group. Pregnancy is the contraindication here."
+    ],
+    [
+     "A patient who is pregnant",
+     "Correct. Hepatic disease and pregnancy are the statin contraindications."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 23"
+  },
+  {
+   "topic": "Statin metabolism",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Which statin is metabolized mainly by CYP3A4?",
+   "opts": [
+    [
+     "Rosuvastatin",
+     "Rosuvastatin undergoes minimal CYP metabolism, which is why it is the least affected by CYP3A4 inhibitors."
+    ],
+    [
+     "Pravastatin",
+     "Pravastatin is metabolized by enzymatic and nonenzymatic routes, not mainly by CYP3A4."
+    ],
+    [
+     "Pitavastatin",
+     "Pitavastatin is cleared by glucuronidation (UGT1A3 and UGT2B7), not by CYP3A4."
+    ],
+    [
+     "Simvastatin",
+     "Correct. Atorvastatin, lovastatin and simvastatin are the CYP3A4 statins, so CYP3A4 inhibitors such as verapamil raise their levels."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 20"
+  },
+  {
+   "topic": "Lipid transport",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Which lipoprotein carries dietary fat away from the intestine?",
+   "opts": [
+    [
+     "Chylomicrons",
+     "Correct. Chylomicrons are secreted by intestinal cells; lipoprotein lipase hydrolyzes their triglyceride core, and the liver removes the remnants."
+    ],
+    [
+     "Very low-density lipoprotein",
+     "Very low-density lipoprotein (VLDL) is made by the liver from carbohydrate and fatty acids, carrying endogenous rather than dietary fat."
+    ],
+    [
+     "Low-density lipoprotein",
+     "Low-density lipoprotein (LDL) is the product of VLDL and IDL breakdown in plasma, not the carrier of dietary fat from the gut."
+    ],
+    [
+     "High-density lipoprotein",
+     "High-density lipoprotein (HDL) transfers cholesteryl ester to other particles and returns cholesterol to the liver; chylomicrons carry dietary fat."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 7"
+  },
+  {
+   "topic": "Statin interactions",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "Which item in a patient's diet interacts with simvastatin through CYP450 metabolism?",
+   "opts": [
+    [
+     "Salt substitutes",
+     "Salt substitutes contain potassium and matter with ACE (angiotensin-converting enzyme) inhibitors because of hyperkalemia, not with statins."
+    ],
+    [
+     "Alcohol",
+     "Alcohol is listed as a niacin interaction. The dietary item listed with statins through CYP450 metabolism is grapefruit juice."
+    ],
+    [
+     "Antacids",
+     "Antacids lower ezetimibe concentrations; they are not the listed statin interaction. Grapefruit juice is."
+    ],
+    [
+     "Grapefruit juice",
+     "Correct. Grapefruit juice is listed with verapamil, amiodarone, niacin and fibrates as a statin interaction, especially involving CYP3A4."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 24"
+  },
+  {
+   "topic": "Statin benefit groups",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "A 42-year-old with no diabetes and no cardiovascular disease has an LDL (low-density lipoprotein) cholesterol of 212 mg/dL. Does he fall into a statin benefit group?",
+   "opts": [
+    [
+     "No, he needs diabetes as well",
+     "Diabetes defines a separate group. LDL above 190 mg/dL is a benefit group on its own."
+    ],
+    [
+     "Yes, LDL above 190 alone qualifies",
+     "Correct. Individuals with LDL above 190 mg/dL form one of the four statin benefit groups, whatever their other risk factors."
+    ],
+    [
+     "No, he must be at least 55",
+     "No minimum age of 55 applies to this group. LDL above 190 mg/dL alone places him in a benefit group."
+    ],
+    [
+     "No, he needs prior heart disease",
+     "Clinical cardiovascular disease is a separate group. LDL above 190 mg/dL qualifies by itself."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 65"
+  },
+  {
+   "topic": "Statin intensity",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "By how much does high-intensity statin therapy lower LDL (low-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "By 30 to 49%",
+     "A 30 to 49% reduction defines moderate-intensity therapy. High intensity lowers LDL by 50% or more."
+    ],
+    [
+     "By 50% or more",
+     "Correct. High intensity lowers LDL by 50% or more; moderate intensity by 30 to 49%; low intensity by less than 30%."
+    ],
+    [
+     "By less than 30%",
+     "Under 30% defines low-intensity therapy. High intensity lowers LDL by 50% or more."
+    ],
+    [
+     "By 10 to 20%",
+     "A reduction this small is below even low-intensity therapy; high intensity lowers LDL by 50% or more."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 68"
+  },
+  {
+   "topic": "Statin intensity",
+   "io": "Identify drug classes and commonly prescribed drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which statin can be used as high-intensity therapy?",
+   "opts": [
+    [
+     "Pravastatin",
+     "Pravastatin reaches moderate or low intensity only. The high-intensity statins are atorvastatin and rosuvastatin."
+    ],
+    [
+     "Lovastatin",
+     "Lovastatin is a moderate- or low-intensity statin. High intensity is reached only by atorvastatin and rosuvastatin."
+    ],
+    [
+     "Fluvastatin",
+     "Fluvastatin appears only at moderate or low intensity. Atorvastatin and rosuvastatin are the high-intensity options."
+    ],
+    [
+     "Rosuvastatin",
+     "Correct. Only atorvastatin and rosuvastatin reach high intensity, lowering LDL (low-density lipoprotein) cholesterol by 50% or more."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 68"
+  }
+ ],
+ "statin2": [
+  {
+   "topic": "Statin intensity",
+   "io": "Identify drug classes and commonly prescribed drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which of these statins is one of the two that can reach high intensity?",
+   "opts": [
+    [
+     "Simvastatin",
+     "Simvastatin reaches moderate or low intensity only. Atorvastatin and rosuvastatin are the high-intensity statins."
+    ],
+    [
+     "Pitavastatin",
+     "Pitavastatin is listed only as moderate intensity. The two high-intensity statins are atorvastatin and rosuvastatin."
+    ],
+    [
+     "Atorvastatin",
+     "Correct. Atorvastatin and rosuvastatin are the only statins that reach high intensity (50% or greater lowering of LDL, low-density lipoprotein, cholesterol)."
+    ],
+    [
+     "Pravastatin",
+     "Pravastatin is moderate or low intensity. Only atorvastatin and rosuvastatin reach high intensity."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 68"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "A patient on simvastatin develops muscle toxicity. What is required?",
+   "opts": [
+    [
+     "Continue and add a fibrate",
+     "Fibrates add to statin myopathy risk. Muscle toxicity requires the statin to be discontinued."
+    ],
+    [
+     "Double the dose briefly",
+     "A higher dose raises myopathy risk. Muscle toxicity requires discontinuing the statin."
+    ],
+    [
+     "Discontinue the statin",
+     "Correct. The presence of muscle toxicity requires discontinuing the statin; myopathy occurs in 0.2 to 0.4% with rare rhabdomyolysis."
+    ],
+    [
+     "Switch to taking it with grapefruit",
+     "Grapefruit juice raises statin levels through CYP3A4 and would worsen toxicity. The statin must be stopped."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 22"
+  },
+  {
+   "topic": "Statin interactions",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which antibiotic is a relative contraindication with statins?",
+   "opts": [
+    [
+     "Erythromycin",
+     "Correct. Erythromycin is on the relative contraindication list with cyclosporine and other immunosuppressants, gemfibrozil and niacin."
+    ],
+    [
+     "Amoxicillin",
+     "Amoxicillin is not on the statin relative contraindication list. Erythromycin is."
+    ],
+    [
+     "Cephalexin",
+     "Cephalexin is not listed with statins. The antibiotic listed as a relative contraindication is erythromycin."
+    ],
+    [
+     "Doxycycline",
+     "Doxycycline is not listed as a statin relative contraindication. Erythromycin is."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 23"
+  },
+  {
+   "topic": "Statin place in therapy",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which class is first-line therapy when LDL (low-density lipoprotein) cholesterol lowering drugs are indicated?",
+   "opts": [
+    [
+     "Bile acid sequestrants",
+     "Resins are the safest (not absorbed) but poorly tolerated and used with a statin or for modest LDL reductions. Statins are first line."
+    ],
+    [
+     "Fibrates",
+     "Fibrates are primarily for triglycerides over 1000 mg/dL or low HDL (high-density lipoprotein), not first-line LDL lowering."
+    ],
+    [
+     "Statins",
+     "Correct. Statins are the most efficacious and best tolerated of all the agents and are first line when LDL-lowering drugs are indicated."
+    ],
+    [
+     "Niacin",
+     "Niacin is useful for atherogenic dyslipidemia and in combination; statins are first line for LDL lowering."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 25"
+  },
+  {
+   "topic": "Statin contraindications",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which condition is listed as a contraindication to statins?",
+   "opts": [
+    [
+     "Type 2 diabetes",
+     "Diabetes is a reason to use a statin (a benefit group), not a contraindication."
+    ],
+    [
+     "Hypertension",
+     "Hypertension is not a statin contraindication. Hepatic disease and pregnancy are."
+    ],
+    [
+     "Prior stroke",
+     "A prior stroke is clinical atherosclerotic cardiovascular disease, a benefit group. Hepatic disease is the contraindication."
+    ],
+    [
+     "Hepatic disease",
+     "Correct. Hepatic disease and pregnancy are the listed contraindications; liver enzyme rises on therapy are managed by reducing the dose or pausing."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 23"
+  },
+  {
+   "topic": "Statin benefit groups",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which patient falls into one of the four major statin benefit groups?",
+   "opts": [
+    [
+     "A 55-year-old after a myocardial infarction",
+     "Correct. Clinical atherosclerotic cardiovascular disease is the first benefit group; the others are LDL above 190 mg/dL, diabetes at 40 to 75 with LDL 70 to 189, and high estimated risk."
+    ],
+    [
+     "A 35-year-old with diabetes and LDL of 120",
+     "The diabetes group covers ages 40 to 75 with LDL (low-density lipoprotein) 70 to 189 mg/dL; at 35 this patient falls outside it."
+    ],
+    [
+     "A 50-year-old with LDL of 150 and 3% risk",
+     "Without disease, diabetes or LDL above 190 mg/dL, a statin group needs a high estimated 10-year risk; 3% is low."
+    ],
+    [
+     "A 60-year-old with diabetes and LDL of 60",
+     "The diabetes group requires LDL (low-density lipoprotein) of 70 to 189 mg/dL; 60 mg/dL falls below it."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 65"
+  },
+  {
+   "topic": "Statin metabolism",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "drug choice",
+   "q": "A patient on verapamil needs a statin. Which statin would CYP3A4 inhibition affect least?",
+   "opts": [
+    [
+     "Atorvastatin",
+     "Atorvastatin is a CYP3A4 substrate, and verapamil inhibits CYP3A4, so its levels rise. Rosuvastatin has minimal CYP metabolism."
+    ],
+    [
+     "Rosuvastatin",
+     "Correct. Rosuvastatin has minimal CYP metabolism, so verapamil's CYP3A4 inhibition matters least; atorvastatin, lovastatin and simvastatin are CYP3A4 substrates."
+    ],
+    [
+     "Lovastatin",
+     "Lovastatin is metabolized by CYP3A4, so verapamil raises it. Rosuvastatin avoids that interaction."
+    ],
+    [
+     "Simvastatin",
+     "Simvastatin is a CYP3A4 substrate raised by verapamil, a CYP3A4 inhibitor. Rosuvastatin has minimal CYP metabolism."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 20"
+  },
+  {
+   "topic": "Statin mechanism",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How does inhibiting hepatic cholesterol synthesis lower serum LDL (low-density lipoprotein)?",
+   "opts": [
+    [
+     "It blocks intestinal cholesterol uptake",
+     "Blocking cholesterol absorption at the brush border is ezetimibe's mechanism. Statins work by upregulating hepatic LDL receptors."
+    ],
+    [
+     "It binds bile acids in the gut",
+     "Binding bile acids is the bile acid sequestrant mechanism. Statins lower intracellular cholesterol, which upregulates LDL receptors."
+    ],
+    [
+     "It activates PPAR-alpha",
+     "PPAR-alpha activation is the fibrate mechanism, lowering triglycerides. Statins raise hepatic LDL receptor numbers."
+    ],
+    [
+     "It upregulates hepatic LDL receptors",
+     "Correct. Lower intracellular cholesterol stimulates LDL receptor synthesis, increasing hepatic uptake of LDL, VLDL remnants and IDL from the circulation."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 18"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which statement about serious liver injury from statins is accurate?",
+   "opts": [
+    [
+     "It affects a quarter of users",
+     "Even the enzyme rise affects only 0.5 to 2.5% of patients, and serious liver problems are exceedingly rare."
+    ],
+    [
+     "It is exceedingly rare",
+     "Correct. Liver enzyme rises occur in 0.5 to 2.5% of patients, dose-dependently, but serious liver problems are exceedingly rare."
+    ],
+    [
+     "It is the main reason to stop",
+     "Serious liver injury is exceedingly rare; muscle toxicity is the listed reason that requires stopping a statin."
+    ],
+    [
+     "It occurs regardless of dose",
+     "The liver enzyme rise is dose-dependent, and serious liver problems are exceedingly rare."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 21"
+  },
+  {
+   "topic": "Statin interactions",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which combination is a relative contraindication for statin therapy?",
+   "opts": [
+    [
+     "A statin with ezetimibe",
+     "Ezetimibe is designed to be added to a statin for dual inhibition; it raises transaminases but is not a relative contraindication."
+    ],
+    [
+     "A statin with gemfibrozil",
+     "Correct. Relative contraindications are concomitant cyclosporine or other immunosuppressants, gemfibrozil, niacin and erythromycin."
+    ],
+    [
+     "A statin with lisinopril",
+     "An ACE (angiotensin-converting enzyme) inhibitor is not a listed statin interaction. Gemfibrozil is a relative contraindication."
+    ],
+    [
+     "A statin with amlodipine",
+     "Amlodipine is not on the statin interaction or contraindication lists. Gemfibrozil is a relative contraindication because of myopathy."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 23"
+  },
+  {
+   "topic": "Statin guidelines",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "A patient cannot tolerate a moderate- or high-intensity statin. What is recommended?",
+   "opts": [
+    [
+     "Use the maximum tolerated dose",
+     "Correct. If high- or moderate-intensity therapy is not tolerated, the maximum tolerated dose is used instead, keeping side effects and interactions in mind."
+    ],
+    [
+     "Stop statins permanently",
+     "Intolerance of higher intensity is not a reason to abandon statins; the maximum tolerated dose is used instead."
+    ],
+    [
+     "Replace it with niacin alone",
+     "The recommendation for intolerance is the maximum tolerated statin dose, not a switch to niacin."
+    ],
+    [
+     "Add gemfibrozil to the statin",
+     "Gemfibrozil is a relative contraindication with statins because of myopathy. The maximum tolerated statin dose is used."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 69"
+  },
+  {
+   "topic": "Statin mechanism",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Which is a pleiotropic effect of statins, beyond lowering cholesterol?",
+   "opts": [
+    [
+     "Raised triglycerides",
+     "Raising triglycerides is a bile acid sequestrant problem, not a statin effect; statins lower triglycerides modestly."
+    ],
+    [
+     "Plaque stabilization",
+     "Correct. Pleiotropic effects include plaque stabilization, improved endothelial function, platelet inhibition, reduced leukocyte adhesiveness and reduced inflammatory markers."
+    ],
+    [
+     "Increased platelet stickiness",
+     "The reverse: platelet inhibition and antithrombosis are among the pleiotropic effects of statins."
+    ],
+    [
+     "Increased inflammatory markers",
+     "Statins reduce inflammatory markers; that reduction is listed among their pleiotropic effects."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 19"
+  },
+  {
+   "topic": "Statin adverse effects",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "A patient's liver enzymes rise after starting atorvastatin. What is the recommended management?",
+   "opts": [
+    [
+     "Stop it and never restart",
+     "Permanent withdrawal is not the listed approach; the dose is reduced or the statin paused until enzymes return to normal."
+    ],
+    [
+     "Continue it at the same dose",
+     "The enzyme rise is not simply ignored: it is managed by reducing the dose or stopping until levels normalize."
+    ],
+    [
+     "Add a fibrate to protect it",
+     "Adding a fibrate raises myopathy risk and does nothing for liver enzymes. The dose is reduced or the drug paused."
+    ],
+    [
+     "Lower the dose or pause it",
+     "Correct. Liver enzyme rises occur in 0.5 to 2.5% of patients in a dose-dependent manner and are managed by reducing the dose or stopping until levels return to normal."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 21"
+  },
+  {
+   "topic": "Statin guidelines",
+   "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels",
+   "slot": "protocol",
+   "q": "Under the ACC/AHA (American College of Cardiology/American Heart Association) guideline, why are lipids measured at follow-up visits?",
+   "opts": [
+    [
+     "To titrate to an LDL goal",
+     "Titrating to an LDL target was the ATP III (Adult Treatment Panel III) approach that the newer guideline dropped."
+    ],
+    [
+     "To detect liver disease early",
+     "Follow-up lipid panels are not a liver screen; they are measured to assess adherence to treatment."
+    ],
+    [
+     "To assess adherence",
+     "Correct. Lipids are measured at follow-up to assess adherence to treatment, not to reach a specific LDL (low-density lipoprotein) target."
+    ],
+    [
+     "To decide whether to add niacin",
+     "The stated purpose of follow-up lipid measurement is to assess adherence to treatment."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 64"
+  },
+  {
+   "topic": "Lipid transport",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "What happens when LDL (low-density lipoprotein) receptor activity falls?",
+   "opts": [
+    [
+     "LDL accumulates, driving atherosclerosis",
+     "Correct. Reduced receptor activity lets LDL particles build up in plasma, which leads to atherosclerosis; most LDL-lowering classes work by raising receptor activity."
+    ],
+    [
+     "HDL accumulates, protecting arteries",
+     "HDL (high-density lipoprotein) is not cleared by the LDL receptor. Falling receptor activity lets LDL accumulate, driving atherosclerosis."
+    ],
+    [
+     "Chylomicrons clear faster from blood",
+     "Chylomicron remnants are cleared through a different receptor protein. Less LDL receptor activity makes LDL accumulate."
+    ],
+    [
+     "Triglycerides fall in the plasma",
+     "The direct consequence is LDL accumulation and atherosclerosis, not a fall in triglycerides."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 12"
+  }
+ ],
+ "ldl1": [
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "When resins deplete the bile acid pool, which hepatic enzyme increases to convert cholesterol into bile acids?",
+   "opts": [
+    [
+     "Acyl-CoA:cholesterol acyltransferase",
+     "Acyl-coenzyme A:cholesterol acyltransferase esterifies cholesterol for storage and packaging; it does not convert cholesterol into bile acids."
+    ],
+    [
+     "Cholesterol 7-alpha hydroxylase",
+     "Correct. Increased 7-alpha hydroxylase activity converts more cholesterol to bile acids, and the liver adds LDL receptors, increasing VLDL and LDL removal."
+    ],
+    [
+     "Lipoprotein lipase in plasma",
+     "Lipoprotein lipase hydrolyzes triglyceride in chylomicrons and very low-density lipoprotein; it does not make bile acids. Cholesterol 7-alpha hydroxylase does."
+    ],
+    [
+     "Hepatic HMG-CoA reductase",
+     "HMG-CoA reductase is the statin target in cholesterol synthesis; it does not convert cholesterol into bile acids. Cholesterol 7-alpha hydroxylase does."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 41"
+  },
+  {
+   "topic": "PCSK9 inhibitors",
+   "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "What is the most serious adverse reaction to evolocumab?",
+   "opts": [
+    [
+     "Hypersensitivity reactions",
+     "Correct. Hypersensitivity reactions are the most serious adverse reaction listed for the PCSK9 inhibitors."
+    ],
+    [
+     "Rhabdomyolysis from muscle breakdown",
+     "Rhabdomyolysis is the rare, most severe statin muscle toxicity, not the listed PCSK9 inhibitor reaction."
+    ],
+    [
+     "Prostaglandin-mediated flushing",
+     "Flushing is a prostaglandin-mediated niacin effect. The most serious evolocumab reaction is hypersensitivity."
+    ],
+    [
+     "Gallstones (cholelithiasis)",
+     "Cholelithiasis is a fibrate effect. Hypersensitivity is the most serious reaction to PCSK9 inhibitors."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 60"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Which commonly used product lowers ezetimibe concentrations?",
+   "opts": [
+    [
+     "Antacids",
+     "Correct. Antacids decrease ezetimibe concentrations, as bile acid sequestrants may; cyclosporine increases them."
+    ],
+    [
+     "Grapefruit juice",
+     "Grapefruit juice is the CYP-mediated statin interaction, not an ezetimibe one. Antacids lower ezetimibe levels."
+    ],
+    [
+     "Alcohol",
+     "Alcohol is listed as a niacin interaction. The product that lowers ezetimibe concentrations is antacids."
+    ],
+    [
+     "Salt substitutes",
+     "Salt substitutes raise potassium with ACE (angiotensin-converting enzyme) inhibitors. Antacids lower ezetimibe."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 31"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Where in the gut do resins block the reabsorption of bile acids?",
+   "opts": [
+    [
+     "The terminal ileum",
+     "Correct. Bile acids are normally reabsorbed at the terminal ileum and recirculated to the liver; resins block that reabsorption so bile acid excretion rises."
+    ],
+    [
+     "The stomach",
+     "Bile acids are not reabsorbed in the stomach. Resins act at the terminal ileum, where enterohepatic reabsorption occurs."
+    ],
+    [
+     "The brush border of the jejunum",
+     "Brush-border sterol uptake in the upper small intestine is where ezetimibe acts. Resins block bile acid reabsorption at the terminal ileum."
+    ],
+    [
+     "The gallbladder wall",
+     "The gallbladder stores and secretes bile; it is not the reabsorption site. Resins block bile acid reabsorption at the terminal ileum."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 14"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "When should a bile acid sequestrant be taken in relation to meals?",
+   "opts": [
+    [
+     "At least 4 hours after meals",
+     "Four hours is the gap for other drugs taken after the resin, not the meal timing. The resin is taken within 1 hour of a meal."
+    ],
+    [
+     "Within 1 hour of a meal",
+     "Correct. Resins are taken within 1 hour of a meal, when bile acids are being secreted, and other medications are separated from them."
+    ],
+    [
+     "Fasting, at bedtime only",
+     "A fasting bedtime dose is not advised; the resin is taken within 1 hour of a meal."
+    ],
+    [
+     "With or without meals",
+     "With or without meals is the instruction for ezetimibe. Resins are taken within 1 hour of a meal."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 45"
+  },
+  {
+   "topic": "LDL receptor thread",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Statins, ezetimibe, bile acid sequestrants and PCSK9 inhibitors lower LDL (low-density lipoprotein) through which shared end result?",
+   "opts": [
+    [
+     "Less VLDL secreted by the liver",
+     "Reduced VLDL (very low-density lipoprotein) secretion is how fibrates and niacin lower triglycerides. These four share more LDL receptor activity."
+    ],
+    [
+     "More active hepatic LDL receptors",
+     "Correct. Statins and resins upregulate them, ezetimibe raises their expression by cutting cholesterol supply, and PCSK9 inhibitors keep them active longer."
+    ],
+    [
+     "More HDL made by the liver",
+     "Raising HDL (high-density lipoprotein) is the strength of niacin and fibrates. These four drugs share more hepatic LDL receptors."
+    ],
+    [
+     "Less bile acid in the intestine",
+     "Only resins deplete intestinal bile acid. The end point all four share is more active hepatic LDL receptors."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 18"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which condition is an absolute contraindication to bile acid sequestrants?",
+   "opts": [
+    [
+     "Pregnancy in the third trimester",
+     "Resins are approved in pregnancy because they are not absorbed; pregnancy contraindicates statins and fibrates instead."
+    ],
+    [
+     "Childhood or adolescence",
+     "Resins are approved for children and adolescents. The absolute contraindication is familial dysbetalipoproteinemia."
+    ],
+    [
+     "Chronic hepatic disease",
+     "Hepatic disease contraindicates statins; resins are not absorbed. Their absolute contraindication is familial dysbetalipoproteinemia."
+    ],
+    [
+     "Familial dysbetalipoproteinemia",
+     "Correct. Familial dysbetalipoproteinemia (with its increased triglycerides) and triglycerides above 400 mg/dL are absolute contraindications."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 48"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which laboratory change occurs when ezetimibe is combined with a statin?",
+   "opts": [
+    [
+     "Raised hepatic transaminases",
+     "Correct. Ezetimibe's adverse effects are gastrointestinal effects and elevated hepatic transaminases when combined with statins."
+    ],
+    [
+     "Raised serum potassium",
+     "Raised potassium belongs to ACE (angiotensin-converting enzyme) inhibitors and angiotensin receptor blockers, not ezetimibe."
+    ],
+    [
+     "Raised serum uric acid",
+     "Raised uric acid is a niacin effect at larger doses. Ezetimibe with a statin raises hepatic transaminases."
+    ],
+    [
+     "Raised serum calcium",
+     "Calcium is not affected by ezetimibe. The listed laboratory change with a statin is raised hepatic transaminases."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 30"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "How is ezetimibe typically used?",
+   "opts": [
+    [
+     "As first-line monotherapy",
+     "Statins are first line for LDL lowering. Ezetimibe is used on top of a statin for dual inhibition."
+    ],
+    [
+     "For triglycerides over 1000",
+     "Triglycerides over 1000 mg/dL are the primary fibrate indication; ezetimibe barely affects triglycerides."
+    ],
+    [
+     "As a weekly injection",
+     "Injectable use describes PCSK9 inhibitors. Ezetimibe is an oral agent added to a statin."
+    ],
+    [
+     "Added to a statin",
+     "Correct. It pairs with a statin for dual inhibition -- the statin blocks synthesis, ezetimibe blocks absorption -- for additional LDL (low-density lipoprotein) lowering."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 27"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "A patient has taken cholestyramine for years. Which deficiency is she at risk of?",
+   "opts": [
+    [
+     "Potassium, magnesium and zinc",
+     "Electrolyte loss of this kind is not a listed resin effect. They cause malabsorption of vitamins A, D, E and K and folic acid."
+    ],
+    [
+     "Water-soluble B vitamins and iron",
+     "Iron and the water-soluble B vitamins are not the listed deficiencies. Resins impair absorption of vitamins A, D, E and K and folic acid."
+    ],
+    [
+     "Fat-soluble vitamins and folate",
+     "Correct. Resins cause malabsorption of vitamins A, D, E and K and of folic acid."
+    ],
+    [
+     "Sodium, chloride and bicarbonate",
+     "Sodium, chloride and bicarbonate loss is not described. The malabsorption is of vitamins A, D, E and K and folic acid."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 46"
+  },
+  {
+   "topic": "PCSK9 inhibitors",
+   "io": "Identify drug classes and commonly prescribed drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which of these drugs is a PCSK9 inhibitor?",
+   "opts": [
+    [
+     "Ezetimibe",
+     "Ezetimibe is the cholesterol absorption inhibitor, an oral drug acting at the brush border. The PCSK9 inhibitors are the -mab antibodies."
+    ],
+    [
+     "Colesevelam",
+     "Colesevelam is a bile acid sequestrant. The PCSK9 inhibitors are alirocumab and evolocumab."
+    ],
+    [
+     "Fenofibrate",
+     "Fenofibrate is a fibrate that activates PPAR-alpha. Evolocumab is the PCSK9 inhibitor here."
+    ],
+    [
+     "Evolocumab",
+     "Correct. Alirocumab and evolocumab are the PCSK9 inhibitors; the -mab suffix marks them as monoclonal antibodies."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 60"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which adverse effect profile is typical of bile acid sequestrants?",
+   "opts": [
+    [
+     "Flushing, itching, raised uric acid",
+     "Flushing and raised uric acid are niacin effects. Resins cause bloating, flatulence and constipation."
+    ],
+    [
+     "Myalgia, headache, raised enzymes",
+     "Myalgia, headache and liver enzyme rises are statin effects. Resins cause gastrointestinal effects."
+    ],
+    [
+     "Bloating, flatulence, constipation",
+     "Correct. Resins cause gastrointestinal effects -- bloating, flatulence, fullness, constipation and nausea -- plus malabsorption of fat-soluble vitamins and folic acid."
+    ],
+    [
+     "Gallstones, nausea, myopathy",
+     "Cholelithiasis with myopathy is the fibrate pattern. Resins cause bloating, flatulence and constipation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 46"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Why are bile acid sequestrants approved for children, adolescents and pregnancy?",
+   "opts": [
+    [
+     "They are cleared quickly by the kidney",
+     "Renal clearance is not the reason. Resins are not absorbed at all, so they cause few systemic effects."
+    ],
+    [
+     "They are not absorbed from the gut",
+     "Correct. Because resins stay in the gastrointestinal tract, systemic side effects are limited; they are called the safest drug for that reason."
+    ],
+    [
+     "They have no effect on other drugs",
+     "Resins do affect other drugs, binding digoxin, warfarin, thyroxine, beta blockers and thiazides. Their safety comes from not being absorbed."
+    ],
+    [
+     "They have no gastrointestinal effects",
+     "Gastrointestinal effects are common: bloating, flatulence, fullness, constipation and nausea. Their safety comes from not being absorbed."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 42"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "How should ezetimibe be taken in relation to meals?",
+   "opts": [
+    [
+     "Within 1 hour of a meal",
+     "Taking a dose within 1 hour of a meal is the resin instruction. Ezetimibe may be taken with or without meals."
+    ],
+    [
+     "Only on an empty stomach",
+     "No fasting requirement applies; ezetimibe may be taken with or without meals."
+    ],
+    [
+     "With or without meals",
+     "Correct. Ezetimibe can be taken with or without meals, unlike bile acid sequestrants, which are taken within 1 hour of a meal."
+    ],
+    [
+     "Only with a high-fat meal",
+     "A fatty meal is not required; ezetimibe may be taken with or without meals."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 29"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which statement describes the place of bile acid sequestrants in therapy?",
+   "opts": [
+    [
+     "Most efficacious and best tolerated",
+     "That describes statins, the first-line agents. Resins are safe but poorly tolerated and used for modest reductions or with a statin."
+    ],
+    [
+     "First choice when triglycerides are over 1000 mg/dL",
+     "Triglycerides over 1000 mg/dL are the primary fibrate indication; resins can raise triglycerides."
+    ],
+    [
+     "Safest, but poorly tolerated",
+     "Correct. They are the safest because they have no systemic effects, but poorly tolerated; they are used with a statin or where only modest LDL (low-density lipoprotein) reductions are needed."
+    ],
+    [
+     "Injectable only and expensive",
+     "Injectable-only and expensive describes the PCSK9 inhibitors. Resins are oral, safe and poorly tolerated."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 49"
+  }
+ ],
+ "ldl2": [
+  {
+   "topic": "Ezetimibe",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Where does ezetimibe act?",
+   "opts": [
+    [
+     "The intestinal brush border",
+     "Correct. Ezetimibe selectively inhibits cholesterol absorption at the brush border membrane, blocking sterol uptake in the upper small intestine."
+    ],
+    [
+     "The terminal ileum",
+     "The terminal ileum is where resins block bile acid reabsorption. Ezetimibe acts at the intestinal brush border."
+    ],
+    [
+     "The hepatocyte enzyme",
+     "Hepatocyte HMG-CoA reductase is the statin target. Ezetimibe acts in the intestine, at the brush border."
+    ],
+    [
+     "Adipose tissue",
+     "Reducing fatty acid mobilization from adipose tissue is niacin's action. Ezetimibe acts at the brush border."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 27"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How do bile acid sequestrants lower LDL (low-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "They inhibit HMG-CoA reductase",
+     "Inhibiting HMG-CoA reductase is the statin mechanism. Resins bind bile acids in the gut and interrupt their enterohepatic recirculation."
+    ],
+    [
+     "They bind bile acids in the gut",
+     "Correct. Bound bile acids are excreted in feces instead of recirculating, so the liver makes more bile acids from cholesterol and more LDL receptors, lowering LDL."
+    ],
+    [
+     "They block brush-border uptake",
+     "Blocking cholesterol uptake at the intestinal brush border is ezetimibe's mechanism. Resins bind bile acids."
+    ],
+    [
+     "They activate PPAR-alpha",
+     "PPAR-alpha activation is how fibrates lower triglycerides. Resins act by binding bile acids in the gut."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 42"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Cholestyramine reduces the absorption of which drug?",
+   "opts": [
+    [
+     "Warfarin",
+     "Correct. As anion exchange resins they interfere with the absorption of digoxin, warfarin, thyroxine, beta blockers and thiazide diuretics."
+    ],
+    [
+     "Evolocumab",
+     "Evolocumab is injected, so a resin in the gut cannot affect its absorption. Warfarin, an oral drug, is on the list."
+    ],
+    [
+     "Nitroprusside",
+     "Nitroprusside is given by intravenous infusion, bypassing the gut. Resins reduce absorption of oral drugs such as warfarin."
+    ],
+    [
+     "Esmolol",
+     "Esmolol is an intravenous beta blocker, so gut binding cannot affect it. Warfarin's absorption is reduced by resins."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 47"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "How should a patient prepare cholestyramine powder?",
+   "opts": [
+    [
+     "Swallow the powder dry",
+     "The powder is not taken dry; it must be mixed with water or fruit juice, ideally a pulpy drink to mask the taste."
+    ],
+    [
+     "Dissolve it under the tongue",
+     "Resins act in the gut lumen and are not absorbed, so sublingual use makes no sense; the powder is mixed in water or fruit juice."
+    ],
+    [
+     "Mix it in water or fruit juice",
+     "Correct. Powders must be mixed with water or fruit juice, and a pulpy drink masks the taste."
+    ],
+    [
+     "Mix it with an antacid",
+     "Antacids are not the vehicle; they interact with ezetimibe. The powder is mixed with water or fruit juice."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 45"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "A patient taking colestipol also takes thyroxine. How should the thyroxine be timed?",
+   "opts": [
+    [
+     "1 hour before or 4 hours after",
+     "Correct. Resins interfere with absorption of digoxin, warfarin, thyroxine, beta blockers and thiazide diuretics; giving the drug 1 hour before or 4 hours after the resin avoids it."
+    ],
+    [
+     "At the same time as the resin",
+     "Taking them together lets the resin bind the thyroxine and reduce its absorption. Separate by 1 hour before or 4 hours after."
+    ],
+    [
+     "30 minutes after the resin",
+     "Half an hour after is too soon; the resin is still in the gut. The drug is given 1 hour before or 4 hours after."
+    ],
+    [
+     "Timing does not matter",
+     "Timing matters because resins bind thyroxine in the gut. It is given 1 hour before or 4 hours after the resin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 47"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "A patient with a fasting triglyceride of 600 mg/dL needs cholesterol treatment. Which class is contraindicated?",
+   "opts": [
+    [
+     "Fibric acid derivatives",
+     "Fibrates lower triglycerides by 20 to 50% and are the treatment for very high levels, not a contraindication."
+    ],
+    [
+     "Nicotinic acid (niacin)",
+     "Niacin lowers triglycerides and raises HDL (high-density lipoprotein); a high triglyceride level does not contraindicate it."
+    ],
+    [
+     "HMG-CoA reductase inhibitors",
+     "Statins lower triglycerides modestly and are not contraindicated by a high level. Resins are, because they may raise triglycerides."
+    ],
+    [
+     "Bile acid sequestrants",
+     "Correct. Triglycerides above 400 mg/dL are an absolute contraindication to resins (above 200 mg/dL is relative), because they can raise VLDL (very low-density lipoprotein) production and triglycerides."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 48"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "drug choice",
+   "q": "A patient planning a pregnancy needs LDL (low-density lipoprotein) lowering. Which class is approved in pregnancy?",
+   "opts": [
+    [
+     "Statins",
+     "Pregnancy is one of the two listed statin contraindications, with hepatic disease. Bile acid sequestrants are approved in pregnancy."
+    ],
+    [
+     "Bile acid sequestrants",
+     "Correct. Resins are not absorbed and are approved in pregnancy, whereas pregnancy is a listed contraindication for statins and for fibrates."
+    ],
+    [
+     "Fibrates",
+     "Pregnancy is a listed fibrate contraindication, with severe hepatic or renal dysfunction and gallbladder disease. Resins are approved in pregnancy."
+    ],
+    [
+     "Statin with niacin",
+     "The lovastatin and niacin combination contains a statin, and pregnancy contraindicates statins. Bile acid sequestrants are the pregnancy option."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 42"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "What limits ezetimibe's systemic exposure?",
+   "opts": [
+    [
+     "Extensive CYP3A4 metabolism",
+     "CYP3A4 metabolism is the story for atorvastatin, lovastatin and simvastatin. Ezetimibe's exposure is limited by enterohepatic recirculation."
+    ],
+    [
+     "Enterohepatic recirculation",
+     "Correct. Ezetimibe and its active glucuronide metabolite circulate enterohepatically, returning the drug to its site of action and limiting systemic exposure."
+    ],
+    [
+     "Rapid renal excretion",
+     "Renal clearance is not the described reason. Enterohepatic recirculation keeps ezetimibe at its site of action."
+    ],
+    [
+     "It is not absorbed at all",
+     "Complete non-absorption describes bile acid sequestrants. Ezetimibe forms an active glucuronide and recirculates enterohepatically."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 28"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Why are bile acid sequestrants avoided when triglycerides are high?",
+   "opts": [
+    [
+     "They may raise triglycerides",
+     "Correct. Resins may increase VLDL (very low-density lipoprotein) production, raising triglycerides; on the lipid comparison, resins show no change or a rise in triglycerides."
+    ],
+    [
+     "They cause gallstones",
+     "Cholelithiasis is a fibrate adverse effect (and a risk of ezetimibe with a fibrate), not the reason resins are avoided."
+    ],
+    [
+     "They lower HDL sharply",
+     "Resins raise HDL (high-density lipoprotein) slightly. The reason to avoid them is that they may raise triglycerides."
+    ],
+    [
+     "They damage the liver",
+     "Resins are not absorbed and have no systemic toxicity. The concern is increased VLDL production raising triglycerides."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 46"
+  },
+  {
+   "topic": "PCSK9 inhibitors",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How do PCSK9 inhibitors lower LDL (low-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "They inhibit cholesterol synthesis",
+     "Inhibiting cholesterol synthesis is the statin mechanism. PCSK9 inhibitors preserve hepatic LDL receptors."
+    ],
+    [
+     "They bind bile acids in the gut",
+     "Binding bile acids is how resins work. PCSK9 inhibitors keep LDL receptors active longer."
+    ],
+    [
+     "They activate PPAR-alpha in liver",
+     "PPAR-alpha activation is the fibrate mechanism. PCSK9 inhibitors keep hepatic LDL receptors active."
+    ],
+    [
+     "They keep LDL receptors active longer",
+     "Correct. PCSK9 processes hepatic LDL receptors; blocking it keeps the receptors active for longer, lowering LDL concentrations by 43 to 58%."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 60"
+  },
+  {
+   "topic": "Bile acid sequestrants",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Above what triglyceride level is a bile acid sequestrant a relative contraindication?",
+   "opts": [
+    [
+     "1000 mg/dL",
+     "Triglycerides over 1000 mg/dL are the primary indication for a fibrate, not the resin threshold."
+    ],
+    [
+     "200 mg/dL",
+     "Correct. Triglycerides above 200 mg/dL are a relative contraindication; above 400 mg/dL, or familial dysbetalipoproteinemia, is absolute."
+    ],
+    [
+     "150 mg/dL",
+     "Under 150 mg/dL is the normal triglyceride goal in ATP III (Adult Treatment Panel III); the resin relative threshold is 200 mg/dL."
+    ],
+    [
+     "100 mg/dL",
+     "A level of 100 mg/dL is normal; the relative contraindication to resins begins above 200 mg/dL."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 48"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "What risk increases when ezetimibe is combined with a fibrate?",
+   "opts": [
+    [
+     "Hyperkalemia",
+     "Hyperkalemia is not a lipid-drug interaction; it belongs to ACE inhibitors and angiotensin receptor blockers. The combination raises cholelithiasis."
+    ],
+    [
+     "Cutaneous flushing",
+     "Flushing is a prostaglandin-mediated niacin effect. Ezetimibe with a fibrate raises cholelithiasis."
+    ],
+    [
+     "Cholelithiasis",
+     "Correct. Fibric acid derivatives with ezetimibe increase hepatobiliary side effects, leading to cholelithiasis and myopathies."
+    ],
+    [
+     "Angioedema",
+     "Angioedema is a bradykinin effect of ACE (angiotensin-converting enzyme) inhibitors. The ezetimibe and fibrate risk is cholelithiasis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 31"
+  },
+  {
+   "topic": "Ezetimibe",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How does ezetimibe lower LDL (low-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "It inhibits hepatic cholesterol synthesis",
+     "Inhibiting hepatic synthesis at HMG-CoA reductase is the statin mechanism; ezetimibe acts on the intestine's supply side."
+    ],
+    [
+     "It binds bile acids in the terminal ileum",
+     "Binding bile acids at the terminal ileum is the resin mechanism. Ezetimibe selectively inhibits cholesterol absorption."
+    ],
+    [
+     "It blocks PCSK9 in the circulation",
+     "Blocking PCSK9 is how alirocumab and evolocumab work. Ezetimibe inhibits intestinal cholesterol absorption."
+    ],
+    [
+     "It blocks intestinal cholesterol absorption",
+     "Correct. Less cholesterol reaches the liver, so hepatic LDL receptor expression rises and atherogenic particles carry less cholesterol."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 28"
+  },
+  {
+   "topic": "PCSK9 inhibitors",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which description fits alirocumab?",
+   "opts": [
+    [
+     "Oral bile acid-binding resin",
+     "Oral resins are cholestyramine, colestipol and colesevelam. Alirocumab is an injectable monoclonal antibody."
+    ],
+    [
+     "Oral HMG-CoA reductase inhibitor",
+     "Oral HMG-CoA reductase inhibitors are the statins. Alirocumab is an injectable monoclonal antibody against PCSK9."
+    ],
+    [
+     "Injectable monoclonal antibody",
+     "Correct. Alirocumab and evolocumab are injectable-only monoclonal antibodies, and they are expensive."
+    ],
+    [
+     "Oral cholesterol absorption blocker",
+     "The oral cholesterol absorption inhibitor is ezetimibe. Alirocumab is an injectable monoclonal antibody."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 60"
+  }
+ ],
+ "tg1": [
+  {
+   "topic": "Fibrates",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "In which patient is a fibrate contraindicated?",
+   "opts": [
+    [
+     "One with triglycerides over 1000 mg/dL",
+     "Triglycerides above 1000 mg/dL are the primary indication for a fibrate, not a contraindication."
+    ],
+    [
+     "One with a low HDL cholesterol",
+     "Low HDL (high-density lipoprotein) is a primary fibrate indication, since fibrates raise HDL by 10 to 35%."
+    ],
+    [
+     "One with well-controlled diabetes",
+     "Diabetes is a relative contraindication to niacin, not to fibrates. Existing gallbladder disease contraindicates fibrates."
+    ],
+    [
+     "One with existing gallbladder disease",
+     "Correct. Fibrate contraindications are pregnancy, severe hepatic or renal dysfunction, and existing gallbladder disease; cholelithiasis is also an adverse effect."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 37"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is characteristic of fibrates?",
+   "opts": [
+    [
+     "Cholelithiasis",
+     "Correct. Fibrate adverse effects are gastrointestinal (nausea, abdominal pain, diarrhea), cholelithiasis and myopathy."
+    ],
+    [
+     "Cutaneous flushing",
+     "Prostaglandin-mediated flushing is the hallmark of niacin. Fibrates cause cholelithiasis, myopathy and gastrointestinal effects."
+    ],
+    [
+     "Vitamin malabsorption",
+     "Malabsorption of vitamins A, D, E and K and folic acid is a resin effect. Fibrates cause cholelithiasis."
+    ],
+    [
+     "Hypersensitivity",
+     "Hypersensitivity reactions are the most serious PCSK9 inhibitor effect. Fibrates characteristically cause cholelithiasis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 36"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "drug choice",
+   "q": "A patient's only lipid problem is a triglyceride level over 1000 mg/dL. Which class is most appropriate?",
+   "opts": [
+    [
+     "A bile acid sequestrant",
+     "Resins can raise triglycerides and are contraindicated above 400 mg/dL, so they are the wrong choice here."
+    ],
+    [
+     "A fibrate",
+     "Correct. Triglycerides over 1000 mg/dL are the primary fibrate indication; fibrates lower triglycerides by 20 to 50% (niacin by a similar amount)."
+    ],
+    [
+     "Ezetimibe",
+     "Ezetimibe lowers triglycerides only about 8%, far too little for a level over 1000 mg/dL."
+    ],
+    [
+     "A PCSK9 inhibitor",
+     "PCSK9 inhibitors lower LDL (low-density lipoprotein) by keeping LDL receptors active; triglycerides over 1000 mg/dL call for a fibrate."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 39"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Which substance is listed as a niacin interaction?",
+   "opts": [
+    [
+     "Antacids",
+     "Antacids lower ezetimibe concentrations; they are not a listed niacin interaction."
+    ],
+    [
+     "Alcohol",
+     "Correct. Niacin interactions are statins, bile acid sequestrants and alcohol."
+    ],
+    [
+     "Warfarin",
+     "Warfarin's effect is increased by fibrates and its absorption reduced by resins; it is not a listed niacin interaction."
+    ],
+    [
+     "Thyroxine",
+     "Thyroxine absorption is reduced by bile acid sequestrants; it is not listed with niacin, whose interactions include alcohol."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 57"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How do fibrates lower triglycerides?",
+   "opts": [
+    [
+     "More fatty acid oxidation, less VLDL",
+     "Correct. Increased fatty acid oxidation reduces secretion of triglyceride-rich VLDL (very low-density lipoprotein), lowering triglycerides by 20 to 50%."
+    ],
+    [
+     "Less fatty acid release from fat",
+     "Reduced fatty acid mobilization from adipose tissue is the niacin mechanism. Fibrates increase fatty acid oxidation."
+    ],
+    [
+     "Binding bile acids in the gut",
+     "Binding bile acids is the resin mechanism, and resins can raise triglycerides. Fibrates increase fatty acid oxidation."
+    ],
+    [
+     "Blocking cholesterol absorption",
+     "Blocking intestinal cholesterol absorption is ezetimibe's mechanism, with little triglyceride effect. Fibrates increase fatty acid oxidation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 34"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "What does niacin do to glucose control at larger doses?",
+   "opts": [
+    [
+     "Improves glucose tolerance",
+     "The reverse: niacin decreases glucose tolerance and raises glucose at larger doses."
+    ],
+    [
+     "Masks hypoglycemia",
+     "Masking hypoglycemia is a beta blocker effect. Niacin decreases glucose tolerance."
+    ],
+    [
+     "Decreases glucose tolerance",
+     "Correct. Larger doses raise glucose and decrease glucose tolerance, making diabetes a relative contraindication."
+    ],
+    [
+     "Has no glucose effect",
+     "Niacin does affect glucose: larger doses raise it and decrease glucose tolerance."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 55"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which lipid-lowering class can RAISE triglycerides?",
+   "opts": [
+    [
+     "Fibric acid derivatives",
+     "Fibrates lower triglycerides by 20 to 50%; they are the treatment for very high levels."
+    ],
+    [
+     "Bile acid sequestrants",
+     "Correct. Resins show no change or a rise in triglycerides, because they may increase VLDL (very low-density lipoprotein) production."
+    ],
+    [
+     "Nicotinic acid (niacin)",
+     "Niacin lowers triglycerides by 20 to 50% and raises HDL (high-density lipoprotein) the most of any class."
+    ],
+    [
+     "HMG-CoA reductase inhibitors",
+     "Statins lower triglycerides modestly, by about 7 to 30%. Resins are the class that can raise them."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 61"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which class lowers LDL (low-density lipoprotein) cholesterol the most?",
+   "opts": [
+    [
+     "Fibrates",
+     "Fibrates lower LDL only 5 to 20%; their strength is triglycerides and HDL (high-density lipoprotein)."
+    ],
+    [
+     "Niacin",
+     "Niacin lowers LDL 5 to 25%; its strengths are raising HDL (high-density lipoprotein) and lowering triglycerides."
+    ],
+    [
+     "Statins",
+     "Correct. Statins lower LDL by 18 to 55%, the most of any class; they are the most efficacious and first line."
+    ],
+    [
+     "Ezetimibe",
+     "Ezetimibe lowers LDL about 18% and is used as an add-on to a statin."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 61"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How does niacin reduce hepatic VLDL (very low-density lipoprotein) production?",
+   "opts": [
+    [
+     "Less fatty acid mobilized from fat",
+     "Correct. Niacin decreases mobilization of free fatty acids from adipose tissue, so the liver makes less triglyceride, VLDL and apo B; LDL falls and HDL rises."
+    ],
+    [
+     "More fatty acid oxidation",
+     "Increasing fatty acid oxidation through PPAR-alpha is the fibrate mechanism. Niacin reduces fatty acid mobilization from adipose tissue."
+    ],
+    [
+     "Binding of bile acids",
+     "Binding bile acids is the resin mechanism, which may actually raise VLDL. Niacin reduces fatty acid mobilization."
+    ],
+    [
+     "Blocking cholesterol uptake",
+     "Blocking intestinal cholesterol uptake is ezetimibe's mechanism. Niacin reduces fatty acid mobilization from adipose tissue."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 53"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which is an ABSOLUTE contraindication to niacin?",
+   "opts": [
+    [
+     "Peptic ulcer disease",
+     "Peptic ulcer disease is a relative, not absolute, contraindication to niacin. Chronic liver disease is absolute."
+    ],
+    [
+     "Chronic liver disease",
+     "Correct. Chronic liver disease is the absolute contraindication; peptic ulcer disease, symptomatic gout, significant hyperuricemia and diabetes are relative ones."
+    ],
+    [
+     "History of symptomatic gout",
+     "Symptomatic gout is a relative contraindication, because niacin raises uric acid. Chronic liver disease is absolute."
+    ],
+    [
+     "Diabetes with glucose intolerance",
+     "Diabetes is a relative contraindication, since niacin decreases glucose tolerance. Chronic liver disease is absolute."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 56"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "drug choice",
+   "q": "A patient with high triglycerides has existing gallbladder disease. Which agent should be avoided?",
+   "opts": [
+    [
+     "Niacin",
+     "Gallbladder disease is not a niacin contraindication; niacin's are chronic liver disease (absolute) and gout, peptic ulcer and diabetes (relative)."
+    ],
+    [
+     "Atorvastatin",
+     "Gallbladder disease is not a statin contraindication; statins are contraindicated in hepatic disease and pregnancy."
+    ],
+    [
+     "Fenofibrate",
+     "Correct. Existing gallbladder disease contraindicates fibrates, which cause cholelithiasis."
+    ],
+    [
+     "Evolocumab",
+     "Gallbladder disease is not a listed contraindication for PCSK9 inhibitors, whose most serious reaction is hypersensitivity."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 37"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "Which nuclear transcription factor do fibrates activate?",
+   "opts": [
+    [
+     "PPAR-alpha",
+     "Correct. Fibrates activate PPAR-alpha, increasing fatty acid oxidation (so less VLDL, very low-density lipoprotein, is secreted) and increasing ApoA-1 expression."
+    ],
+    [
+     "The LDL receptor",
+     "The LDL (low-density lipoprotein) receptor is a cell-surface receptor that statins, resins and PCSK9 inhibitors increase; fibrates act on PPAR-alpha."
+    ],
+    [
+     "HMG-CoA reductase",
+     "HMG-CoA reductase is the statin target, an enzyme rather than a transcription factor. Fibrates activate PPAR-alpha."
+    ],
+    [
+     "PCSK9",
+     "PCSK9 processes hepatic LDL receptors and is blocked by monoclonal antibodies. Fibrates activate PPAR-alpha."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 34"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "For which lipid pattern is niacin particularly useful?",
+   "opts": [
+    [
+     "Isolated high HDL",
+     "A high HDL (high-density lipoprotein) is desirable and not a treatment target; niacin is used for atherogenic dyslipidemia."
+    ],
+    [
+     "Familial dysbetalipoproteinemia",
+     "Familial dysbetalipoproteinemia is an absolute contraindication to resins, not niacin's listed indication."
+    ],
+    [
+     "Pregnancy-related high LDL",
+     "Resins are the class approved in pregnancy. Niacin's place is atherogenic dyslipidemia."
+    ],
+    [
+     "Atherogenic dyslipidemia",
+     "Correct. Niacin is useful for atherogenic dyslipidemia and as combination therapy when atherogenic dyslipidemia comes with elevated LDL (low-density lipoprotein)."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 58"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "What is the primary indication for a fibrate?",
+   "opts": [
+    [
+     "LDL over 190 in a young adult",
+     "LDL (low-density lipoprotein) above 190 mg/dL is a statin benefit group. Fibrates are for very high triglycerides or low HDL."
+    ],
+    [
+     "High LDL during pregnancy",
+     "Pregnancy contraindicates fibrates; resins are the class approved in pregnancy."
+    ],
+    [
+     "Statin-induced raised enzymes",
+     "Rising liver enzymes on a statin are managed by lowering the dose or pausing it, not with a fibrate, whose own indication is very high triglycerides or low HDL."
+    ],
+    [
+     "Triglycerides over 1000 or low HDL",
+     "Correct. The primary indication is triglycerides above 1000 mg/dL or low HDL (high-density lipoprotein) cholesterol."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 39"
+  }
+ ],
+ "tg2": [
+  {
+   "topic": "Niacin",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "What mediates the cutaneous flushing caused by niacin?",
+   "opts": [
+    [
+     "Bradykinin",
+     "Bradykinin accumulation causes the cough and angioedema of ACE (angiotensin-converting enzyme) inhibitors, not niacin flushing."
+    ],
+    [
+     "Prostaglandins",
+     "Correct. Niacin flushing is a prostaglandin-mediated effect, which is why premedication with aspirin minimizes it."
+    ],
+    [
+     "Histamine",
+     "Histamine is not the described mediator. Niacin flushing is prostaglandin mediated and blunted by aspirin."
+    ],
+    [
+     "Serotonin",
+     "Serotonin is not the described mediator. Niacin flushing is a prostaglandin-mediated effect."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 55"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "drug choice",
+   "q": "A patient with high triglycerides has a history of symptomatic gout. Which triglyceride-lowering option is best avoided?",
+   "opts": [
+    [
+     "Niacin",
+     "Correct. Niacin raises uric acid, so symptomatic gout and significant hyperuricemia are relative contraindications."
+    ],
+    [
+     "Fenofibrate",
+     "Gout is not a fibrate contraindication; fenofibrate lowers triglycerides without raising uric acid."
+    ],
+    [
+     "Gemfibrozil",
+     "Gemfibrozil is a fibrate; its contraindications are pregnancy, severe hepatic or renal dysfunction and gallbladder disease, not gout."
+    ],
+    [
+     "Bezafibrate",
+     "Bezafibrate is a fibrate, and gout is not on the fibrate contraindication list. Niacin is the one to avoid."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 56"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels",
+   "slot": "contraindication",
+   "q": "Which organ dysfunction, when severe, contraindicates a fibrate?",
+   "opts": [
+    [
+     "Pulmonary or cardiac",
+     "Lung or heart dysfunction is not on the fibrate contraindication list. Severe hepatic or renal dysfunction is."
+    ],
+    [
+     "Thyroid or adrenal",
+     "Endocrine gland dysfunction is not a listed fibrate contraindication. Severe hepatic or renal dysfunction is."
+    ],
+    [
+     "Hepatic or renal",
+     "Correct. Severe hepatic or renal dysfunction contraindicates fibrates, along with pregnancy and existing gallbladder disease."
+    ],
+    [
+     "Pancreatic or splenic",
+     "These are not on the list. Fibrates are contraindicated in severe hepatic or renal dysfunction."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 37"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "What is ezetimibe's effect on HDL (high-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "A large rise",
+     "A large HDL rise belongs to niacin and fibrates. Ezetimibe's effect on HDL is insignificant."
+    ],
+    [
+     "A sharp fall",
+     "Ezetimibe does not lower HDL; its effect on HDL is insignificant while it lowers LDL about 18%."
+    ],
+    [
+     "A rise greater than niacin",
+     "No class raises HDL more than niacin. Ezetimibe's HDL effect is insignificant."
+    ],
+    [
+     "Insignificant",
+     "Correct. Ezetimibe lowers LDL (low-density lipoprotein) modestly and triglycerides slightly, with an insignificant effect on HDL."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 61"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Why is niacin a relative contraindication in a patient with symptomatic gout?",
+   "opts": [
+    [
+     "It causes gallstones",
+     "Cholelithiasis is a fibrate effect. Niacin's problem in gout is that it raises uric acid."
+    ],
+    [
+     "It raises uric acid",
+     "Correct. At larger doses niacin raises liver enzymes, glucose and uric acid, so gout and significant hyperuricemia are relative contraindications."
+    ],
+    [
+     "It raises potassium",
+     "Raised potassium is an ACE (angiotensin-converting enzyme) inhibitor effect. Niacin raises uric acid."
+    ],
+    [
+     "It lowers kidney blood flow",
+     "Reduced renal blood flow is not the described mechanism. Niacin raises uric acid at larger doses."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 55"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "A patient on warfarin is started on gemfibrozil. Which interaction is expected?",
+   "opts": [
+    [
+     "Reduced warfarin absorption",
+     "Reduced warfarin absorption is the bile acid sequestrant interaction, avoided by separating the doses. Fibrates increase warfarin's effect."
+    ],
+    [
+     "Reduced anticoagulant effect",
+     "The direction is the reverse: fibrates increase the anticoagulant effect of warfarin."
+    ],
+    [
+     "No interaction is expected",
+     "There is a listed interaction: fibrates increase warfarin's anticoagulant effect."
+    ],
+    [
+     "Increased anticoagulant effect",
+     "Correct. Fibrates increase the anticoagulant effect of warfarin; they also interact with statins, ezetimibe and bile acid sequestrants."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 38"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels",
+   "slot": "adverse effect",
+   "q": "Which adverse effects are listed for the lovastatin and extended-release niacin combination?",
+   "opts": [
+    [
+     "Cough, angioedema and hyperkalemia",
+     "Cough, angioedema and hyperkalemia are ACE (angiotensin-converting enzyme) inhibitor effects, not those of a lipid combination."
+    ],
+    [
+     "Bloating, constipation and flatulence",
+     "Bloating, constipation and flatulence are bile acid sequestrant effects. The lovastatin and niacin combination causes hepatotoxicity, myopathy and flushing."
+    ],
+    [
+     "Gallstones, nausea and diarrhea",
+     "Gallstones with nausea and diarrhea point to fibrates. The combination's listed effects are hepatotoxicity, myopathy and flushing."
+    ],
+    [
+     "Hepatotoxicity, myopathy and flushing",
+     "Correct. The combination carries the statin's muscle and liver risks and niacin's flushing."
+    ]
+   ],
+   "c": 3,
+   "cite": "Lipids.pptx, Slide 59"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels",
+   "slot": "interaction",
+   "q": "Why is a statin combined with a fibrate only with caution?",
+   "opts": [
+    [
+     "Higher risk of myopathy",
+     "Correct. Both classes can cause myopathy, so they are combined cautiously; gemfibrozil is a relative contraindication with statins."
+    ],
+    [
+     "Loss of LDL lowering",
+     "The combination does not cancel the statin's LDL (low-density lipoprotein) lowering. The concern is added myopathy risk."
+    ],
+    [
+     "Higher risk of flushing",
+     "Flushing is a niacin effect. The concern with a statin plus a fibrate is myopathy."
+    ],
+    [
+     "Higher risk of hyperkalemia",
+     "Potassium is not the concern of this pair. The caution is because of increased myopathy risk."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 22"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which two classes both lower triglycerides by 20 to 50% and raise HDL (high-density lipoprotein) substantially?",
+   "opts": [
+    [
+     "Resins and ezetimibe",
+     "Resins can raise triglycerides and ezetimibe barely affects HDL. Fibrates and niacin share this profile."
+    ],
+    [
+     "Fibrates and niacin",
+     "Correct. Both lower triglycerides by 20 to 50% and raise HDL (niacin 15 to 35%, fibrates 10 to 35%)."
+    ],
+    [
+     "Statins and resins",
+     "Statins and resins are chiefly LDL (low-density lipoprotein) lowering agents, and resins can raise triglycerides."
+    ],
+    [
+     "Ezetimibe and statins",
+     "These lower LDL (low-density lipoprotein) through the supply and synthesis sides. Fibrates and niacin lower triglycerides and raise HDL."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 61"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels",
+   "slot": "indication",
+   "q": "Which class produces the largest rise in HDL (high-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "Nicotinic acid",
+     "Correct. Niacin raises HDL by 15 to 35%, the largest rise of any class; fibrates follow at 10 to 35%."
+    ],
+    [
+     "Ezetimibe",
+     "Ezetimibe's effect on HDL is insignificant. Niacin produces the largest rise."
+    ],
+    [
+     "Bile acid sequestrants",
+     "Resins raise HDL only 3 to 5%. Niacin produces the largest HDL rise."
+    ],
+    [
+     "Statins",
+     "Statins raise HDL by only 5 to 15%. Niacin produces the largest rise."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 61"
+  },
+  {
+   "topic": "Fibrates",
+   "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels",
+   "slot": "mechanism",
+   "q": "How do fibrates raise HDL (high-density lipoprotein)?",
+   "opts": [
+    [
+     "They block HDL breakdown in the gut",
+     "HDL is not broken down in the gut. Fibrates raise HDL by increasing ApoA-1 expression."
+    ],
+    [
+     "They inhibit HMG-CoA reductase",
+     "HMG-CoA reductase inhibition is the statin mechanism. Fibrates raise HDL through increased ApoA-1 expression."
+    ],
+    [
+     "They increase ApoA-1 expression",
+     "Correct. PPAR-alpha activation increases expression of ApoA-1, the HDL apolipoprotein, raising HDL by 10 to 35%."
+    ],
+    [
+     "They bind cholesterol in the bile",
+     "Binding in the bile is not a fibrate action. Fibrates raise HDL by increasing ApoA-1 expression."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 34"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "A patient starting niacin asks how to reduce the flushing. What is recommended?",
+   "opts": [
+    [
+     "Take aspirin beforehand",
+     "Correct. Flushing is prostaglandin mediated and is minimized by premedication with aspirin."
+    ],
+    [
+     "Take it with alcohol",
+     "Alcohol is listed as a niacin interaction and does not prevent flushing. Aspirin premedication does."
+    ],
+    [
+     "Take it with grapefruit juice",
+     "Grapefruit juice is a statin interaction and has no role in niacin flushing. Aspirin premedication minimizes it."
+    ],
+    [
+     "Take it with an antacid",
+     "Antacids lower ezetimibe levels and do nothing for niacin flushing. Aspirin premedication minimizes it."
+    ]
+   ],
+   "c": 0,
+   "cite": "Lipids.pptx, Slide 55"
+  },
+  {
+   "topic": "Lipid profiles by class",
+   "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels",
+   "slot": "education",
+   "q": "Which lifestyle measure raises HDL (high-density lipoprotein) cholesterol?",
+   "opts": [
+    [
+     "Grapefruit juice",
+     "Grapefruit juice is a CYP-mediated statin interaction, not a way to raise HDL. Exercise raises HDL."
+    ],
+    [
+     "Salt substitutes",
+     "Salt substitutes add potassium and matter with ACE (angiotensin-converting enzyme) inhibitors. Exercise raises HDL."
+    ],
+    [
+     "Exercise",
+     "Correct. HDL increases with exercise, a lifestyle measure that complements the drug classes that raise it, niacin and fibrates."
+    ],
+    [
+     "Fasting before meals",
+     "Fasting before meals is not a listed way to raise HDL; exercise is the lifestyle measure that raises it."
+    ]
+   ],
+   "c": 2,
+   "cite": "Lipids.pptx, Slide 62"
+  },
+  {
+   "topic": "Niacin",
+   "io": "Identify drug classes and commonly prescribed drugs that lower cholesterol and triglyceride levels",
+   "slot": "class",
+   "q": "Which form of niacin is NOT effective as an antilipemic?",
+   "opts": [
+    [
+     "Nicotinic acid",
+     "Nicotinic acid is the form used as an antilipemic. The amide form, niacinamide, is the ineffective one."
+    ],
+    [
+     "Niacinamide",
+     "Correct. Niacin is a B-complex vitamin; nicotinic acid is the antilipemic form, and its amide, niacinamide (nicotinamide), is not effective."
+    ],
+    [
+     "Extended-release niacin",
+     "Extended-release niacin is a prescription antilipemic product. Niacinamide is the form that does not work."
+    ],
+    [
+     "Immediate-release niacin",
+     "Immediate-release niacin is an antilipemic product (a supplement or by prescription). Niacinamide is ineffective."
+    ]
+   ],
+   "c": 1,
+   "cite": "Lipids.pptx, Slide 50"
+  }
+ ]
+}

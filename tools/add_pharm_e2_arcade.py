@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Pharmacology I Exam 2 (Ophthalmic Drugs) Arcade decks.
+"""Add the Pharmacology I Exam 2 Arcade decks (Lectures 4 to 7).
+
+Lecture 4 decks are below; Lectures 5 to 7 come from _pharm_e2_arcade_l5l7.py.
 
 Three decks matching the three quiz topics, so a student can drill the same
 split they revise. ATOMIC FACTS ONLY per [[arcade_content_policy]] -- one
@@ -15,7 +17,9 @@ adder earned the hard way -- decks must land INSIDE DEMO_DECKS, and the exam
 registry edit is scoped to the Pharmacology group so it cannot rewrite another
 class's deck list.
 """
-import os, re
+import os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _pharm_e2_arcade_l5l7 import DECKS as DECKS_L5L7
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCADE = os.path.join(ROOT, "arcade.js")
@@ -153,6 +157,10 @@ DECKS = [
 ]
 
 
+# Lectures 5 to 7 (ENT, antihypertensives, lipids), drafted 2026-09-25.
+DECKS = DECKS + DECKS_L5L7
+
+
 def js(decks):
     out = []
     for did, name, color, icon, cards in decks:
@@ -169,7 +177,8 @@ def jstr(s):
 
 def main():
     # Nothing in this deck may be a dose or a strength.
-    bad = re.compile(r"(?i)\b\d+\s*(mg|milligram|microgram|unit|per cent solution)\b"
+    # "mg/dL" is a laboratory threshold (a triglyceride cut-off), not a dose.
+    bad = re.compile(r"(?i)\b\d+\s*(mg(?!/dL)|milligram|microgram|unit|per cent solution)\b"
                      r"|\b\d+\s*%\s*(solution|ointment|suspension)")
     for did, _n, _c, _i, cards in DECKS:
         for q, a in cards:

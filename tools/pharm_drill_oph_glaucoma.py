@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Rapid-drill bank: glaucoma agents, anaesthetics, cycloplegics and fluorescein.
+"""Rapid-drill bank: glaucoma agents, anesthetics, cycloplegics and fluorescein.
 
 One fact, four drug names, no doses.
 
@@ -12,22 +12,22 @@ the question he said he would ask, not which brand name pairs which two drugs.
 ITEMS = [
 dict(q="Which class is FIRST LINE for glaucoma and the most commonly used?",
      ans="Latanoprost", src=("OPH", 64),
-     why="The prostaglandin analogues, which increase aqueous outflow. Beta blockers are second line.",
+     why="The prostaglandin analogs, which increase aqueous outflow. Beta blockers are second line.",
      wrong=[("Timolol", "A beta blocker, which is second line and works by reducing production."),
             ("Dorzolamide", "A carbonic anhydrase inhibitor, reducing production."),
             ("Pilocarpine", "A cholinergic agonist, poorly tolerated and rarely first choice.")]),
 
-dict(q="Which glaucoma class changes EYELASH LENGTH and IRIS COLOUR?",
+dict(q="Which glaucoma class changes EYELASH LENGTH and IRIS COLOR?",
      ans="Bimatoprost", src=("OPH", 65),
-     why="The prostaglandin analogues, which is why one of them is also marketed for lash growth. They also cause conjunctival hyperaemia.",
-     wrong=[("Brimonidine", "An alpha-2 agonist; irritation, hyperaemia and allergic conjunctivitis."),
+     why="The prostaglandin analogs, which is why one of them is also marketed for lash growth. They also cause conjunctival hyperemia.",
+     wrong=[("Brimonidine", "An alpha-2 agonist; irritation, hyperemia and allergic conjunctivitis."),
             ("Betaxolol", "A beta-1 selective blocker."),
             ("Brinzolamide", "A carbonic anhydrase inhibitor; bitter taste and stinging.")]),
 
-dict(q="Why must a prostaglandin analogue NOT be dosed more than once daily?",
+dict(q="Why must a prostaglandin analog NOT be dosed more than once daily?",
      ans="Exceeding once daily INHIBITS the pressure-lowering effect", src=("OPH", 66),
      why="More is worse, not better, which is counterintuitive and therefore worth holding.",
-     wrong=[("It causes rebound hyperaemia", "That is the topical vasoconstrictors."),
+     wrong=[("It causes rebound hyperemia", "That is the topical vasoconstrictors."),
             ("It raises the risk of cataract", "That is the ocular glucocorticoids."),
             ("It causes bradycardia", "That is systemic absorption of a beta blocker.")]),
 
@@ -61,15 +61,15 @@ dict(q="Which glaucoma class works by blocking beta receptors in the ciliary bod
 
 dict(q="Which glaucoma agent is CONTRAINDICATED in children under two years of age?",
      ans="Brimonidine", src=("OPH", 69),
-     why="The alpha-2 agonists, because of central nervous system depression and apnoea.",
+     why="The alpha-2 agonists, because of central nervous system depression and apnea.",
      wrong=[("Latanoprost", "No such age contraindication is given."),
             ("Timolol", "Its cautions are cardiac and respiratory."),
             ("Dorzolamide", "Its adverse effects are taste and stinging.")]),
 
 dict(q="Which alpha-2 agonist is MORE LIPOPHILIC?",
      ans="Brimonidine", src=("OPH", 69),
-     why="Apraclonidine is highly ionised at physiological pH; brimonidine is the more lipophilic of the two, and allergic conjunctivitis is less common with it.",
-     wrong=[("Apraclonidine", "Highly ionised at physiological pH."),
+     why="Apraclonidine is highly ionized at physiological pH; brimonidine is the more lipophilic of the two, and allergic conjunctivitis is less common with it.",
+     wrong=[("Apraclonidine", "Highly ionized at physiological pH."),
             ("Timolol", "A beta blocker."),
             ("Pilocarpine", "A cholinergic agonist.")]),
 
@@ -83,9 +83,9 @@ dict(q="Which class reduces aqueous production by inhibiting carbonic anhydrase 
 dict(q="Which glaucoma class causes a BITTER TASTE in about a quarter of patients and stinging in about a third?",
      ans="Brinzolamide", src=("OPH", 70),
      why="The carbonic anhydrase inhibitors, which also cause allergic conjunctivitis.",
-     wrong=[("Latanoprost", "Hyperaemia, irritation, lash and iris changes."),
+     wrong=[("Latanoprost", "Hyperemia, irritation, lash and iris changes."),
             ("Timolol", "Systemic cardiac and respiratory effects."),
-            ("Brimonidine", "Irritation, hyperaemia, pruritus, allergic conjunctivitis.")]),
+            ("Brimonidine", "Irritation, hyperemia, pruritus, allergic conjunctivitis.")]),
 
 dict(q="Which class activates muscarinic receptors, contracting the ciliary muscle to facilitate outflow?",
      ans="Pilocarpine", src=("OPH", 72),
@@ -120,7 +120,7 @@ dict(q="What is the general goal of glaucoma therapy, in terms of pressure?",
      why="And therapy can be started in one eye to judge efficacy and tolerability.",
      wrong=[("A 50 per cent reduction", "Beyond the stated goal."),
             ("Any reduction at all", "A specific target is given."),
-            ("Normalising to below 10 mmHg", "Below the normal range, which starts at about 10.")]),
+            ("Normalizing to below 10 mmHg", "Below the normal range, which starts at about 10.")]),
 
 dict(q="Which patients with ocular hypertension are treated rather than monitored?",
      ans="Those WITH risk factors", src=("OPH", 74),
@@ -129,16 +129,16 @@ dict(q="Which patients with ocular hypertension are treated rather than monitore
             ("Only those already blind in one eye", "Not the stated rule."),
             ("Only those under 40", "Age is not the stated criterion.")]),
 
-dict(q="Which ocular anaesthetic leaves the eye numb for 10 to 20 minutes with NO BLINK REFLEX?",
+dict(q="Which ocular anesthetic leaves the eye numb for 10 to 20 minutes with NO BLINK REFLEX?",
      ans="Proparacaine", src=("OPH", 75),
-     why="True of both ocular anaesthetics, and the reason you must not write prescriptions for them.",
-     wrong=[("Tropicamide", "A cycloplegic; it dilates rather than anaesthetises."),
+     why="True of both ocular anesthetics, and the reason you must not write prescriptions for them.",
+     wrong=[("Tropicamide", "A cycloplegic; it dilates rather than anesthetizes."),
             ("Phenylephrine", "A sympathomimetic mydriatic."),
             ("Fluorescein", "A diagnostic stain.")]),
 
 dict(q="Which ocular agents should you NOT write prescriptions for?",
      ans="Tetracaine", src=("OPH", 75),
-     why="The ocular anaesthetics. Used in clinic for tonometry, foreign body removal and superficial corneal surgery, but not sent home.",
+     why="The ocular anesthetics. Used in clinic for tonometry, foreign body removal and superficial corneal surgery, but not sent home.",
      wrong=[("Latanoprost", "A chronic glaucoma therapy, prescribed routinely."),
             ("Olopatadine", "An antihistamine, prescribed routinely."),
             ("Erythromycin", "An antibiotic ointment, prescribed routinely.")]),
@@ -148,7 +148,7 @@ dict(q="Which class competitively blocks muscarinic receptors to produce mydrias
      why="The antimuscarinic cycloplegics, with atropine and cyclopentolate. Also used in uveitis to prevent synechiae and relieve ciliary spasm.",
      wrong=[("Phenylephrine", "A sympathomimetic, also producing mydriasis but by a different mechanism."),
             ("Pilocarpine", "A cholinergic agonist, which CONSTRICTS the pupil."),
-            ("Proparacaine", "An anaesthetic.")]),
+            ("Proparacaine", "An anesthetic.")]),
 
 dict(q="A pupil dilated with which agent stays MORE REACTIVE TO LIGHT?",
      ans="Phenylephrine", src=("OPH", 77),
@@ -160,7 +160,7 @@ dict(q="A pupil dilated with which agent stays MORE REACTIVE TO LIGHT?",
 dict(q="Which agent reveals epithelial defects of the cornea and conjunctiva?",
      ans="Fluorescein", src=("OPH", 78),
      why="Used for anterior segment staining and disclosing corneal injury.",
-     wrong=[("Proparacaine", "An anaesthetic, often used alongside it but not the stain."),
+     wrong=[("Proparacaine", "An anesthetic, often used alongside it but not the stain."),
             ("Tropicamide", "A cycloplegic."),
             ("Phenylephrine", "A mydriatic.")]),
 
