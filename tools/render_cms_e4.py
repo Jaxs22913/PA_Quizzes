@@ -6,7 +6,7 @@ used -- Exam 1 teal (182), Exam 2 indigo (226), Exam 3 violet (259), so Exam 4
 is plum (292). Four-option sets, per the exam standard.
 
     python3 render_cms_e4.py l20io
-    python3 render_cms_e4.py l21io | l21vig | l22io | l22vig | l25io | l25vig
+    python3 render_cms_e4.py l21io | l21vig | l22io | l22vig | l23io | l23vig | l25io | l25vig
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -61,6 +61,20 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 22",
    chips=["Statin decisions", "Hypertriglyceridemia", "Familial hypercholesterolemia",
           "Secondary causes", "Drug selection"]),
+ "l23io": dict(sets="cms_e4l23_sets.json",
+   files=["valvular-heart-disease-quiz.html", "valvular-heart-disease-quiz-version-2.html"],
+   title="Valvular Heart Disease Quiz %d — CMS I Exam 4",
+   h1="Valvular Heart Disease &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 23",
+   chips=["Murmur words", "Aortic and mitral", "Pulmonic and tricuspid", "Severity",
+          "Valve replacement"]),
+ "l23vig": dict(sets="cms_e4l23_vig_sets.json",
+   files=["valvular-heart-disease-vignettes.html", "valvular-heart-disease-vignettes-version-2.html"],
+   title="Valvular Heart Disease Vignettes %d — CMS I Exam 4",
+   h1="Valvular Heart Disease &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 23",
+   chips=["Murmur by location", "Maneuvers", "Echocardiogram", "Surgery or medicine",
+          "Anticoagulation"]),
  "l25io": dict(sets="cms_e4l25_sets.json",
    files=["heart-failure-quiz.html", "heart-failure-quiz-version-2.html"],
    title="Heart Failure Quiz %d — CMS I Exam 4",

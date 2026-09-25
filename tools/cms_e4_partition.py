@@ -5,6 +5,7 @@
     python3 cms_e4_partition.py l21io     # Lecture 21 Hypotension, objective (Set 1)
     python3 cms_e4_partition.py l21vig    # Lecture 21 Hypotension, vignettes (Set 2)
     python3 cms_e4_partition.py l22io | l22vig   # Atherosclerosis and Lipid Disorders
+    python3 cms_e4_partition.py l23io | l23vig   # Valvular Heart Disease
     python3 cms_e4_partition.py l25io | l25vig   # Heart Failure
 
 Trimmed from cms_e3_partition.py. The Exam 3 driver carries three pieces of
@@ -52,6 +53,8 @@ TWO PATHS (2026-09-24).
 
   Selection is swap-based LOCAL SEARCH (2026-08-26, cms_e2l1), not
   best-of-N shuffles, so the gameable term can actually be driven down.
+  Optional scope TOPIC_BAND = {topic: (min, max)} holds every form's count of
+  each named topic inside a band (Lecture 23: equal weight per valve lesion).
   Length fixes come from cms_e4l<N>_lengthfix.FIXES, keyed by
   (module, index within module, option index) and applied before any guard.
 """
@@ -74,6 +77,8 @@ GUARDED = {
  "l21vig": ("l21", True, 20260924 + 212),
  "l22io": ("l22", False, 20260924 + 221),
  "l22vig": ("l22", True, 20260924 + 222),
+ "l23io": ("l23", False, 20260925 + 231),
+ "l23vig": ("l23", True, 20260925 + 232),
  "l25io": ("l25", False, 20260924 + 251),
  "l25vig": ("l25", True, 20260924 + 252),
 }
@@ -430,9 +435,24 @@ def guarded_main():
     def req_short(idxs):
         return sum(max(0, n - sum(1 for i in idxs if i in req_hit[lab])) for lab, _, _, n in required)
 
+    # TOPIC_BAND (optional, scope module): {topic: (min, max)} per form. Added for
+    # Lecture 23, where the lecturer said every valve lesion is equally likely on
+    # the test, so no lesion may be thin or crowd the others. Scored, then asserted.
+    band = dict(getattr(scope, "TOPIC_BAND", {}))
+    for t, (lo, hi) in band.items():
+        n_pool = sum(1 for q in POOL if q["topic"] == t)
+        assert n_pool >= 2 * lo, "pool has only %d %r questions for two forms at %d each" % (n_pool, t, lo)
+
+    def band_miss(idxs):
+        if not band:
+            return 0
+        c = Counter(POOL[i]["topic"] for i in idxs)
+        return sum(max(0, lo - c.get(t, 0)) + max(0, c.get(t, 0) - hi) for t, (lo, hi) in band.items())
+
     def total(sel):
         return (score(sel[:PER_SET]) + score(sel[PER_SET:])
-                + 100 * (req_short(sel[:PER_SET]) + req_short(sel[PER_SET:])))
+                + 100 * (req_short(sel[:PER_SET]) + req_short(sel[PER_SET:]))
+                + 60 * (band_miss(sel[:PER_SET]) + band_miss(sel[PER_SET:])))
 
     def dx_ok(sel):
         return (sum(1 for i in sel[:PER_SET] if i in dxset) <= DX_CAP and
@@ -483,6 +503,10 @@ def guarded_main():
             assert sum(1 for i in part if i in req_hit[lab]) >= n, "a form lacks %r" % lab
         print("required %r: %d and %d per form (minimum %d)" % (lab, sum(1 for i in cur[:PER_SET] if i in req_hit[lab]),
               sum(1 for i in cur[PER_SET:] if i in req_hit[lab]), n))
+    for part in (cur[:PER_SET], cur[PER_SET:]):
+        assert band_miss(part) == 0, "a form breaks TOPIC_BAND: %s" % dict(Counter(POOL[i]["topic"] for i in part))
+    if band:
+        print("topic band %s: every form within it" % sorted(set(band.values())))
     answer_text = {i: POOL[i]["opts"][0][0] for i in cur}
     sets = []
     for part in (cur[:PER_SET], cur[PER_SET:]):

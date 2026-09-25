@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #a753b4; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valvular Heart Disease Quiz 2 — CMS I Exam 4</title>
+<style>
+  :root{
+    --navy:#702d7a; --indigo:#a753b4; --gold:#c08a2e; --ice:#f9eefa;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+</head>
+<body>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Valvular Heart Disease &mdash; Quiz 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 4 &middot; Lecture 23</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Murmur words</span><span class="chip">Aortic and mitral</span><span class="chip">Pulmonic and tricuspid</span><span class="chip">Severity</span><span class="chip">Valve replacement</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Aortic regurgitation", "io": "Aortic regurgitation", "q": "Which valve lesion goes with a Corrigan pulse?", "opts": [["Mitral regurgitation", "Mitral regurgitation gives a holosystolic blowing murmur at the apex radiating to the axilla. The collapsing Corrigan pulse is aortic regurgitation."], ["Tricuspid regurgitation", "Tricuspid regurgitation raises the jugular venous pressure with neck pulsations and a venous thrill. The Corrigan arterial pulse belongs to aortic regurgitation."], ["Aortic regurgitation", "Correct. A Corrigan pulse, the water hammer or collapsing pulse, has a very rapid upstroke followed by a rapid collapse. It goes with chronic aortic regurgitation, and a question may name it without describing it."], ["Aortic stenosis", "Aortic stenosis gives the opposite pulse: a weak, delayed carotid upstroke, a clue to severe disease when felt with a forceful apex beat."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 27", "slot": "differential"}, {"topic": "Mitral regurgitation", "io": "Mitral regurgitation", "q": "Which regurgitant fraction marks severe mitral regurgitation?", "opts": [["20% or more", "Twenty percent is mild mitral regurgitation, under 30%. Severe is a regurgitant fraction of 50% or more."], ["40% or more", "Forty percent sits inside the moderate band of 30 to 49%. Severe mitral regurgitation starts at 50%."], ["50% or more", "Correct. Severe mitral regurgitation is a regurgitant fraction of 50% or more, half of the stroke volume going back into the left atrium. Moderate is 30 to 49% and mild under 30%."], ["30% or more", "A 30% threshold sweeps in moderate disease, 30 to 49%. Severe mitral regurgitation begins at a regurgitant fraction of 50%."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 50", "slot": "test finding"}, {"topic": "Murmur foundations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, prevention, and prognosis for valvular heart disease", "q": "Which event produces the first heart sound (S1)?", "opts": [["Aortic and pulmonic valves closing", "Closure of the semilunar valves, aortic and pulmonic, produces the second heart sound at the end of systole, not the first."], ["Rapid filling of a dilated ventricle", "Rapid filling of a dilated, volume-loaded left ventricle in early diastole produces the third heart sound, the systolic heart failure sound."], ["Atrial contraction into a stiff ventricle", "Atrial contraction against a hypertrophied, pressure-loaded ventricle produces the fourth heart sound late in diastole, just before the first."], ["Mitral and tricuspid valves closing", "Correct. The first heart sound is the atrioventricular valves, mitral and tricuspid, closing as the ventricles begin to contract. It marks the start of systole."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 7", "slot": "etiology"}, {"topic": "Mitral regurgitation", "io": "Mitral regurgitation", "q": "Which transcatheter device repairs a leaking mitral valve without replacing it?", "opts": [["Tricuspid annuloplasty ring", "Annuloplasty repairs tricuspid regurgitation from annular dilation. The transcatheter repair for mitral regurgitation is the mitral valve clip."], ["A mitral valve clip", "Correct. A mitral valve clip grasps the leaflets to reduce the leak. The other surgical options for mitral regurgitation are transcatheter mitral valve replacement or a mechanical or biological valve."], ["Percutaneous balloon valvotomy", "Balloon valvotomy opens a stenotic mitral valve; it would not stop a leak. The repair device for mitral regurgitation is the mitral valve clip."], ["Transcatheter aortic valve", "A transcatheter aortic valve replaces the aortic valve in aortic stenosis. The mitral regurgitation repair device is the mitral valve clip."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 52", "slot": "agent/regimen"}, {"topic": "Pulmonic stenosis", "io": "Pulmonic stenosis", "q": "Which electrocardiogram findings fit pulmonic stenosis?", "opts": [["Right axis deviation, right ventricular hypertrophy", "Correct. Pulmonic stenosis raises right ventricular pressure, and the electrocardiogram shows right axis deviation with right ventricular hypertrophy. The echo shows abnormal valve motion and a raised jet on Doppler."], ["Left axis deviation, left ventricular hypertrophy", "Left-sided hypertrophy belongs to aortic stenosis and chronic aortic regurgitation. Pulmonic stenosis loads the right ventricle."], ["Left atrial abnormality, atrial fibrillation", "Left atrial abnormality with atrial fibrillation is the mitral stenosis pattern. Pulmonic stenosis gives right axis deviation and right ventricular hypertrophy."], ["Right atrial enlargement, no ventricular change", "Right atrial enlargement out of proportion to right ventricular change is tricuspid stenosis. Pulmonic stenosis thickens the right ventricle."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 58", "slot": "test finding"}, {"topic": "Prosthetic valves and anticoagulation", "io": "Compare and contrast anticoagulation therapy for prosthetic heart valves.", "q": "Which drug is the most commonly used vitamin K antagonist for a mechanical valve?", "opts": [["Aspirin", "Aspirin is an antiplatelet agent, and antiplatelets are ranked below vitamin K antagonists for mechanical valves. The vitamin K antagonist is warfarin."], ["Clopidogrel", "Clopidogrel is an antiplatelet agent, not a vitamin K antagonist. The most commonly used vitamin K antagonist is warfarin."], ["Warfarin", "Correct. Warfarin is the most commonly used vitamin K antagonist, the long-term anticoagulant for mechanical heart valves; if surgery requires heparin instead, warfarin is bridged until the ratio is therapeutic."], ["Heparin", "Heparin is not a vitamin K antagonist; it is the bridging agent used around surgery. The most common vitamin K antagonist is warfarin."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 75", "slot": "agent/regimen"}, {"topic": "Tricuspid stenosis", "io": "Tricuspid stenosis", "q": "Which electrocardiogram finding points to tricuspid stenosis?", "opts": [["Left ventricular hypertrophy out of proportion to the left atrium", "Left ventricular hypertrophy is the aortic stenosis and chronic aortic regurgitation finding. Tricuspid stenosis shows right atrial enlargement."], ["Right atrial enlargement out of proportion to the right ventricle", "Correct. Tricuspid stenosis shows right atrial enlargement out of proportion to right ventricular hypertrophy, because the obstruction sits behind the right atrium and spares the ventricle."], ["Left atrial enlargement out of proportion to the left ventricle", "Left atrial abnormality with a spared left ventricle is the mitral stenosis pattern. Tricuspid stenosis enlarges the right atrium."], ["Right ventricular hypertrophy out of proportion to the right atrium", "Dominant right ventricular hypertrophy with right axis deviation fits pulmonic stenosis. Tricuspid stenosis enlarges the right atrium more than the ventricle."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 68", "slot": "test finding"}, {"topic": "Tricuspid stenosis", "io": "Tricuspid stenosis", "q": "Tricuspid stenosis obstructs flow between which chambers?", "opts": [["Right atrium to right ventricle", "Correct. Tricuspid stenosis narrows the valve between the right atrium and right ventricle, obstructing inflow; the right atrium dilates and hypertrophies, with low cardiac output and portal congestion."], ["Left atrium to left ventricle", "Obstruction between the left atrium and left ventricle is mitral stenosis. Tricuspid stenosis blocks inflow from the right atrium to the right ventricle."], ["Right ventricle to pulmonary artery", "Obstruction of right ventricular outflow to the lungs is pulmonic stenosis. Tricuspid stenosis obstructs inflow from the right atrium."], ["Left ventricle to aorta", "Obstruction of left ventricular outflow is aortic stenosis. Tricuspid stenosis obstructs right atrial to right ventricular inflow."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slides 65, 66", "slot": "etiology"}, {"topic": "Murmur foundations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, prevention, and prognosis for valvular heart disease", "q": "Which ventricle does a fourth heart sound (S4) point to?", "opts": [["A thin, dilated right ventricle", "The fourth heart sound is framed around a hypertrophied, pressure-loaded left ventricle, not a thin dilated right one, which is a volume-overload picture."], ["A thick, hypertrophied left ventricle", "Correct. The fourth heart sound is the high-pressure sound of diastolic heart failure: left ventricular hypertrophy, as from aortic stenosis, with the atrium contracting against a stiff ventricle."], ["A dilated, volume-loaded left ventricle", "A dilated, volume-loaded ventricle gives the third heart sound, the sound of systolic heart failure and backflow such as aortic regurgitation."], ["A normal ventricle closing its valves", "Valve closure produces the first and second heart sounds in any heart. The fourth heart sound signals a hypertrophied, stiff left ventricle."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 7", "slot": "differential"}, {"topic": "Pulmonic regurgitation", "io": "Pulmonic regurgitation", "q": "What is the management approach to pulmonic regurgitation?", "opts": [["Tricuspid annuloplasty", "Annuloplasty repairs tricuspid regurgitation from annular dilation. Pulmonic regurgitation is managed by treating the underlying condition."], ["Treat the underlying condition", "Correct. Pulmonic regurgitation is managed by treating the underlying condition, with referral when it is seen on an echocardiogram or when right heart failure symptoms and signs appear."], ["Pulmonic balloon valvuloplasty", "Balloon valvuloplasty opens a stenotic pulmonic valve, and outflow tract procedures like it are the most common cause of pulmonic regurgitation, not its treatment."], ["Lifelong anticoagulation", "Lifelong anticoagulation is for mechanical heart valves. Pulmonic regurgitation is managed by treating the underlying condition."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 64", "slot": "first-line"}, {"topic": "Tricuspid stenosis", "io": "Tricuspid stenosis", "q": "For tricuspid stenosis, what is balloon valvotomy reserved for?", "opts": [["Every patient with a murmur", "An audible murmur alone does not justify valvotomy. It is reserved for hepatic congestion that may progress to cirrhosis or severe venous congestion."], ["Mild disease without symptoms", "Mild, asymptomatic disease is not an indication. Valvotomy is reserved for hepatic congestion threatening cirrhosis or severe venous congestion."], ["Children and young adults only", "Age is the valvuloplasty rule for aortic stenosis. In tricuspid stenosis, valvotomy is reserved for hepatic or severe systemic venous congestion."], ["Hepatic congestion risking cirrhosis", "Correct. Balloon valvotomy and valve repair are reserved for tricuspid stenosis with hepatic congestion that may lead to cirrhosis, or severe systemic venous congestion."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 69", "slot": "escalation"}, {"topic": "Aortic regurgitation", "io": "Aortic regurgitation", "q": "What is the treatment for acute severe aortic regurgitation?", "opts": [["Watchful waiting with repeat echo", "Only the chronic form stays silent for 10 to 15 years. Acute severe aortic regurgitation causes cardiogenic shock and needs emergency surgery."], ["Emergency valve replacement or repair", "Correct. Acute severe aortic regurgitation is treated with emergency aortic valve replacement or repair, ideally within 24 hours; the patient presents in cardiogenic shock with pulmonary edema."], ["Afterload reduction with hydralazine", "Afterload reduction is the medical management of chronic aortic regurgitation with preserved ejection fraction or no symptoms. The acute severe lesion needs emergency surgery."], ["Percutaneous balloon valvotomy", "Balloon valvotomy opens a stenotic mitral valve. It has no place in acute aortic regurgitation, which needs emergency valve replacement or repair."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slides 26, 31", "slot": "first-line"}, {"topic": "Pulmonic regurgitation", "io": "Pulmonic regurgitation", "q": "Which change makes the pulmonic regurgitation murmur louder?", "opts": [["Expiration", "Expiration reduces venous return to the right heart and softens pulmonic regurgitation. Inspiration makes it louder."], ["Sitting upright", "Moving from supine to upright reduces venous return. The pulmonic regurgitation murmur is louder lying supine, squatting or on inspiration."], ["Squatting", "Correct. Anything that increases venous return makes the pulmonic regurgitation murmur louder: inspiration, squatting and lying supine. Expiration and standing, which reduce venous return, soften it."], ["Standing", "Standing reduces venous return, so the pulmonic regurgitation murmur gets softer, not louder."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 63", "slot": "test finding"}, {"topic": "Pulmonic stenosis", "io": "Pulmonic stenosis", "q": "Pulmonic stenosis is commonly part of which congenital condition?", "opts": [["Ankylosing spondylitis", "Ankylosing spondylitis is a valvular cause of aortic regurgitation. Pulmonic stenosis is commonly part of tetralogy of Fallot."], ["Tetralogy of Fallot", "Correct. Pulmonic stenosis is commonly part of tetralogy of Fallot. It is almost always congenital, and carcinoid disease is the other listed cause."], ["Marfan syndrome", "Marfan syndrome dilates the aortic root and causes aortic regurgitation. Pulmonic stenosis is commonly part of tetralogy of Fallot."], ["A bicuspid aortic valve", "A bicuspid aortic valve is the leading cause of aortic stenosis under 70. Pulmonic stenosis is commonly part of tetralogy of Fallot."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 55", "slot": "etiology"}, {"topic": "Rheumatic heart disease", "io": "Acute rheumatic fever", "q": "Why is rheumatic mitral stenosis rare in developed countries?", "opts": [["Degenerative disease has replaced it", "Degenerative, atherosclerotic disease is the leading cause of aortic stenosis over 70, not of mitral stenosis. Mitral stenosis is rare where rheumatic fever is rare."], ["Bicuspid valves are repaired at birth", "A bicuspid valve is a congenital aortic problem and the leading cause of aortic stenosis under 70. It has nothing to do with the rarity of mitral stenosis."], ["Balloon valvotomy prevents narrowing", "Percutaneous balloon valvotomy treats severe symptomatic mitral stenosis once it exists. The disease is rare because rheumatic fever has become uncommon."], ["Rheumatic fever has become less common", "Correct. Mitral stenosis is rare in developed countries because the incidence of rheumatic fever, its most common cause, has fallen there."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 34", "slot": "epidemiology"}, {"topic": "Mitral valve prolapse", "io": "Mitral valve prolapse", "q": "What treatment does uncomplicated mitral valve prolapse usually need?", "opts": [["Usually none", "Correct. Mitral valve prolapse usually needs no treatment. If it progresses to mitral regurgitation, the options are a clip, transcatheter mitral valve replacement, or a biological or mechanical valve."], ["Lifelong anticoagulation", "Lifelong anticoagulation is for mechanical heart valves, not for a benign, asymptomatic prolapse."], ["Early valve replacement", "Replacement is considered only if prolapse progresses to significant mitral regurgitation. Uncomplicated prolapse usually needs no treatment."], ["Balloon valvotomy", "Balloon valvotomy opens a stenotic mitral valve. A prolapsing, redundant valve usually needs no treatment at all."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 54", "slot": "first-line"}, {"topic": "Aortic stenosis", "io": "Aortic stenosis", "q": "Which study should any patient with symptoms suggestive of aortic stenosis receive?", "opts": [["A chest radiograph", "A chest radiograph cannot show leaflet calcification or grade stenosis. Symptoms suggestive of aortic stenosis call for an echocardiogram."], ["An electrocardiogram alone", "Left ventricular hypertrophy on the electrocardiogram has low sensitivity for aortic stenosis. Suggestive symptoms call for an echocardiogram."], ["An echocardiogram", "Correct. Exertional chest pressure, shortness of breath or syncope suggestive of aortic stenosis calls for an echocardiogram, which shows thickened, calcified leaflets with reduced opening and grades severity."], ["A left heart catheterization", "Catheterization is the definitive study, but it is not the first step for suggestive symptoms. Any patient with those symptoms should get an echocardiogram."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 22", "slot": "initial test"}, {"topic": "Mitral valve prolapse", "io": "Mitral valve prolapse", "q": "What is the usual course of mitral valve prolapse?", "opts": [["Rapidly fatal within years", "Rapid mortality belongs to symptomatic aortic stenosis, 75% at 3 years. Mitral valve prolapse is usually benign and asymptomatic."], ["Relentlessly progressive stenosis", "Prolapse does not narrow the valve. It is usually benign, and the complication to watch for is mitral regurgitation."], ["Heart failure by middle age", "Heart failure is not the usual course. Mitral valve prolapse is usually benign and asymptomatic, occasionally progressing to mitral regurgitation."], ["Benign and asymptomatic", "Correct. Mitral valve prolapse is usually benign and asymptomatic, needing no treatment unless it progresses to mitral regurgitation."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 54", "slot": "prognosis"}, {"topic": "Tricuspid regurgitation", "io": "Tricuspid regurgitation", "q": "Which symptoms appear in severe tricuspid regurgitation?", "opts": [["Angina and exertional syncope", "Angina and exertional syncope are cardinal symptoms of aortic stenosis. Severe tricuspid regurgitation causes pedal edema and ascites."], ["Head bobbing and wide pulses", "Head bobbing and a wide pulse pressure are chronic aortic regurgitation signs. Severe tricuspid regurgitation causes pedal edema and ascites."], ["Pedal edema and ascites", "Correct. Mild to moderate tricuspid regurgitation is usually asymptomatic; severe disease causes pedal edema and ascites as systemic venous pressure rises."], ["Hemoptysis and hoarseness", "Hemoptysis and hoarseness come from the high-pressure, enlarged left atrium of mitral stenosis. Severe tricuspid regurgitation causes pedal edema and ascites."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 71", "slot": "manifestation"}, {"topic": "Tricuspid regurgitation", "io": "Tricuspid regurgitation", "q": "Primary tricuspid regurgitation from infective endocarditis is typical of whom?", "opts": [["Intravenous drug users", "Correct. Primary tricuspid regurgitation comes from infective endocarditis in intravenous drug users. Endocarditis from other sources more often involves the mitral valve."], ["Healthy women aged 15 to 30", "Healthy women 15 to 30 are the typical patients with mitral valve prolapse. Tricuspid endocarditis is typical of intravenous drug users."], ["Adults older than 70", "Over 70 the leading valve problem is degenerative aortic stenosis. Primary tricuspid regurgitation from endocarditis is typical of intravenous drug users."], ["Children with tetralogy of Fallot", "Tetralogy of Fallot commonly includes pulmonic stenosis. Tricuspid endocarditis is typical of intravenous drug users."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 70", "slot": "risk factors"}, {"topic": "Murmur foundations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, prevention, and prognosis for valvular heart disease", "q": "Which valve lies beneath the second intercostal space at the left sternal border?", "opts": [["Aortic", "The aortic area is the mirror image: the second intercostal space at the right sternal border. The left side at that level is the pulmonic area."], ["Tricuspid", "The tricuspid area is the fifth intercostal space at the lower left sternal border. The second intercostal space on the left is the pulmonic area."], ["Mitral", "The mitral area is the apex, at the fifth intercostal space in the midclavicular line. The second intercostal space at the left sternal border is the pulmonic area."], ["Pulmonic", "Correct. The pulmonic area is the second intercostal space at the left sternal border. Questions give the location in these anatomic terms rather than naming the area, so the valve underneath has to be known."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 8", "slot": "manifestation"}, {"topic": "Aortic stenosis", "io": "Aortic stenosis", "q": "Which advice fits a patient with aortic stenosis?", "opts": [["Start high-intensity interval training", "Strenuous physical activity and competitive sports are to be avoided in aortic stenosis, because exertion can provoke angina, syncope and heart failure."], ["Carry a nitrate for exertional chest pain", "Nitrates are avoided in aortic stenosis with angina because they drop preload. The advice is to avoid strenuous activity and dehydration."], ["Avoid strenuous activity and competitive sports", "Correct. Medical care for mild and moderate aortic stenosis rests on the preload-dependent physiology: avoid strenuous physical activity and competitive sports, and avoid dehydration and hypovolemia."], ["Restrict fluids to lower cardiac workload", "Fluid restriction risks hypovolemia, which is exactly what a preload-dependent patient with aortic stenosis must avoid. The advice is to avoid strenuous exertion and dehydration."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slide 20", "slot": "education"}, {"topic": "Pulmonic regurgitation", "io": "Pulmonic regurgitation", "q": "What is the most common cause of pulmonic regurgitation?", "opts": [["Iatrogenic injury", "Correct. The most common cause of pulmonic regurgitation is iatrogenic: surgical valvotomy, valvectomy or valvuloplasty done to relieve right ventricular outflow tract obstruction leaves the valve leaking."], ["Pulmonary hypertension", "Pulmonary hypertension is the high-pressure cause of pulmonic regurgitation, but it is not the most common. Iatrogenic injury after outflow tract procedures is."], ["Carcinoid disease", "Carcinoid disease is a low-pressure cause of pulmonic regurgitation, but not the most common one. Iatrogenic injury is."], ["A bicuspid valve", "A congenital bicuspid pulmonic valve is a low-pressure cause, but the most common cause of pulmonic regurgitation is iatrogenic."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 61", "slot": "etiology"}, {"topic": "Mitral stenosis", "io": "Mitral stenosis", "q": "In mitral stenosis, atrial fibrillation is a risk factor for what?", "opts": [["Papillary muscle rupture", "Papillary muscle rupture follows acute myocardial infarction and causes acute mitral regurgitation. Atrial fibrillation in mitral stenosis raises thromboembolic risk."], ["Thromboembolism", "Correct. Left atrial enlargement predisposes to atrial fibrillation, and atrial fibrillation is a risk factor for thromboembolism, one of the main dangers of mitral stenosis."], ["Aortic dissection", "Aortic dissection is a root cause of acute aortic regurgitation. In mitral stenosis, atrial fibrillation raises the risk of thromboembolism."], ["Rheumatic fever recurrence", "Rheumatic fever is an autoimmune reaction to group A streptococci, not a consequence of the rhythm. Atrial fibrillation in mitral stenosis raises thromboembolic risk."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 35", "slot": "risk factors"}, {"topic": "Prosthetic valves and anticoagulation", "io": "Compare and contrast anticoagulation therapy for prosthetic heart valves.", "q": "What is the target international normalized ratio for a mechanical aortic valve?", "opts": [["2.5 (range 2.0 to 3.0)", "Correct. A mechanical aortic valve targets an international normalized ratio of 2.5, range 2.0 to 3.0. A mechanical mitral valve, or valves in both positions, targets 3.0."], ["3.0 (range 2.5 to 3.5)", "A target of 3.0, range 2.5 to 3.5, is for a mechanical mitral valve or for valves in both positions. The aortic target is 2.5."], ["1.5 (range 1.0 to 2.0)", "A ratio of 1.5 is below any mechanical valve target. The mechanical aortic valve target is 2.5, range 2.0 to 3.0."], ["4.0 (range 3.5 to 4.5)", "A ratio of 4.0 exceeds every mechanical valve target. The aortic target is 2.5, and the highest target, mitral or both, is 3.0."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 75", "slot": "test finding"}, {"topic": "Prosthetic valves and anticoagulation", "io": "Compare and contrast anticoagulation therapy for prosthetic heart valves.", "q": "Which is avoided as the sole long-term therapy for a mechanical heart valve?", "opts": [["A vitamin K antagonist", "A vitamin K antagonist such as warfarin is exactly the recommended long-term therapy for mechanical valves. Antiplatelet therapy alone is what falls short."], ["Warfarin", "Warfarin is the most commonly used vitamin K antagonist and the recommended therapy for mechanical valves, not something to avoid."], ["Warfarin with a heparin bridge for surgery", "Bridging warfarin with heparin around surgery is required, not avoided. Antiplatelet therapy alone is inadequate for a mechanical valve."], ["An antiplatelet agent", "Correct. Vitamin K antagonist therapy is recommended over antiplatelet agents for the long-term management of mechanical valves, so an antiplatelet agent alone is not adequate."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 75", "slot": "avoid"}, {"topic": "Mitral stenosis", "io": "Mitral stenosis", "q": "Who accounts for most mitral stenosis caused by rheumatic fever?", "opts": [["Men, about 80%", "Eighty percent male describes symptomatic aortic stenosis. Rheumatic mitral stenosis is the reverse, about 80% women."], ["Children under 10", "Rheumatic mitral stenosis takes about 20 years to be diagnosed after the fever, so it is not a disease of young children. About 80% of patients are women."], ["Adults older than 70", "Age over 70 is the setting of degenerative aortic stenosis. Rheumatic mitral stenosis is defined by sex, about 80% women, and by the 20-year lag after rheumatic fever."], ["Women, about 80%", "Correct. About 80% of mitral stenosis due to rheumatic fever occurs in women. By contrast, 80% of patients with symptomatic aortic stenosis are men."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 34", "slot": "epidemiology"}, {"topic": "Mitral valve prolapse", "io": "Identify medical care strategies for valvular heart disease in the lecture topic list for the following populations.", "q": "Who is the typical patient with mitral valve prolapse?", "opts": [["A healthy woman aged 15 to 30", "Correct. Mitral valve prolapse is usually found in healthy women 15 to 30 years old, is usually benign and asymptomatic, and is heard as a mid-systolic click at the apex."], ["A man older than 70", "Older men with a harsh systolic murmur suggest degenerative aortic stenosis. Mitral valve prolapse is typical of healthy young women."], ["A person who injects drugs", "Injection drug use points to tricuspid valve endocarditis and primary tricuspid regurgitation. Mitral valve prolapse is typical of healthy women 15 to 30."], ["A child with tetralogy of Fallot", "Tetralogy of Fallot commonly includes pulmonic stenosis. Mitral valve prolapse is typical of healthy women 15 to 30."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 54", "slot": "epidemiology"}, {"topic": "Mitral stenosis", "io": "Mitral stenosis", "q": "Which drug relieves dyspnea and orthopnea in mitral stenosis?", "opts": [["A loop diuretic", "Correct. Symptoms of dyspnea and orthopnea in mitral stenosis are treated with loop diuretics such as furosemide or bumetanide, which relieve the pulmonary congestion."], ["A nitrate", "Nitrates are named in the aortic stenosis avoid list. The medical treatment for mitral stenosis symptoms is a loop diuretic."], ["Hydralazine", "Hydralazine is an afterload-reducing agent for chronic aortic regurgitation. Mitral stenosis dyspnea and orthopnea are treated with loop diuretics."], ["Warfarin", "Warfarin is the vitamin K antagonist for mechanical heart valves. Loop diuretics treat the congestive symptoms of mitral stenosis."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 41", "slot": "agent/regimen"}, {"topic": "Tricuspid regurgitation", "io": "Tricuspid regurgitation", "q": "Which procedure treats tricuspid regurgitation caused by annular dilation?", "opts": [["A mitral valve clip", "A mitral valve clip treats mitral regurgitation. Tricuspid regurgitation from annular dilation is treated with annuloplasty."], ["Annuloplasty", "Correct. Tricuspid regurgitation from annular dilation is treated with annuloplasty after treating the underlying condition; valve repair or replacement is used when the cause is primary."], ["Valve replacement", "Replacement, like repair, is used when tricuspid regurgitation has a primary cause such as endocarditis. Annular dilation is treated with annuloplasty."], ["Balloon valvotomy", "Balloon valvotomy opens a stenotic valve; it would worsen a leak. Annular dilation is treated with annuloplasty."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slide 72", "slot": "agent/regimen"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

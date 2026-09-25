@@ -6,7 +6,8 @@ Condensed from the Exam 4 study guide, per the template README: compress what
 the guide already says, keep numbers and names verbatim, add nothing new.
 
 Topics matching the guide's sections: six for Hypertension, then three each for
-Hypotension and Lipids and two for Heart Failure (added 2026-09-25). More will be added as the rest of the
+Hypotension, Lipids and Valvular Heart Disease and two for Heart Failure (added
+2026-09-25). More will be added as the rest of the
 cardiovascular block is posted -- the sub line says so rather than implying the
 block is complete.
 """
@@ -137,7 +138,35 @@ topics = [
  ["Lifestyle", "Saturated fat <b>&lt;7%</b> (slide wins over the spoken 10%), soluble fiber 20&ndash;30 g, plant stanols, lose 5&ndash;10%, 30 minutes activity, stop smoking. <b>2026 / PREVENT: rotations only, not tested.</b>"],
 ]},
 
-# ---- Lecture 25 (Carter), condensed from guide section 4 ----
+# ---- Lecture 23 (Carter), condensed from guide section 4 (added 2026-09-25) ----
+{"id": "l23-murmurs", "label": "Valves: Murmur Words & Test Tips", "color": "#5a3d8a", "rows": [
+ ["&#9733; The words", "<b>Harsh / rumble = stenosis</b> &rarr; abnormal forward flow &rarr; pressure overload. <b>Blowing = regurgitation</b> &rarr; abnormal backflow &rarr; volume overload. No audio on the test &mdash; murmurs come as words."],
+ ["&#9733; Timing", "<b>Systolic</b>: aortic stenosis, mitral regurgitation, pulmonic stenosis, tricuspid regurgitation. <b>Diastolic</b>: aortic regurgitation, mitral stenosis, pulmonic regurgitation, tricuspid stenosis &mdash; &ldquo;ARMS rest because they are PRetty TiredS&rdquo;."],
+ ["&#9733; Where (A-P-E-T-M)", "<b>Aortic</b> 2nd right intercostal space, sternal border &middot; <b>Pulmonic</b> 2nd left &middot; <b>Erb&rsquo;s point</b> 3rd left &middot; <b>Tricuspid</b> 5th, lower left sternal border &middot; <b>Mitral</b> apex, 5th space, midclavicular line. Stems give the location, not the valve name."],
+ ["Respiration (RILE)", "<b>Right-sided louder on inspiration</b> (more venous return) &middot; <b>left-sided louder on expiration</b>. Carvallo sign = the inspiratory increase; it tells tricuspid from mitral regurgitation."],
+ ["Heart sounds", "S1 = mitral + tricuspid closing &middot; S2 = aortic + pulmonic closing &middot; S3 = dilated, volume-loaded ventricle (systolic failure) &middot; S4 = hypertrophied, pressure-loaded ventricle (diastolic failure, e.g. aortic stenosis)."],
+ ["Equal weight", "&ldquo;Just as likely a tricuspid valve question as an aortic valve question.&rdquo; Grading is tested only for aortic and mitral stenosis, plus <b>severe regurgitation = regurgitant fraction &ge;50%</b>."],
+]},
+{"id": "l23-left", "label": "Valves: Aortic & Mitral", "color": "#7a2d5c", "rows": [
+ ["&#9733; Aortic stenosis", "Most common valve disease. &gt;70 degenerative, &lt;70 <b>bicuspid</b>. <b>Harsh systolic crescendo-decrescendo, 2nd right space, to the carotids</b>; softer with Valsalva, standing, handgrip; louder squatting, sitting forward. Forceful apex + <b>delayed, weak carotid = severe</b>."],
+ ["&#9733; Aortic stenosis numbers", "Severe = <b>area &lt;1.0 cm&sup2;, mean gradient &gt;40 mmHg, jet &gt;4.0 m/s</b> (&ldquo;4, 40 and 1&rdquo;). Survival: angina 5 y &middot; syncope 3 y &middot; <b>heart failure 2 y (most common, worst)</b>. Symptomatic: <b>75% dead at 3 years</b>."],
+ ["&#9733; Aortic stenosis care", "<b>Preload dependent</b>: avoid strenuous activity / competitive sports, dehydration; hypertension &rarr; avoid beta blockers and calcium channel blockers; angina &rarr; <b>avoid nitrates</b>. Surgery: severe + symptomatic systolic dysfunction, or bicuspid &rarr; transcatheter replacement; children / young adults &rarr; balloon valvuloplasty. <b>All on echo &rarr; cardiology.</b>"],
+ ["&#9733; Aortic regurgitation", "<b>High-pitched blowing DIASTOLIC</b>, 3rd space / left upper sternal border, to the apex (the slide&rsquo;s &ldquo;holosystolic&rdquo; is struck). <b>Corrigan pulse</b> (water hammer: rapid upstroke, rapid collapse), de Musset (head bobbing), wide pulse pressure. Root causes: Marfan, dissection, aortitis, hypertension."],
+ ["Aortic regurgitation care", "Echo finds the <b>cause</b> (root dilation, dissection). Chronic, preserved fraction &rarr; <b>afterload reduction</b>. <b>Acute severe &rarr; emergency replacement (&lt;24 h)</b>; if delayed, IV diuretics + nitroprusside. Falling fraction &rarr; surgery; untreated survival 2&ndash;3 y. Audible murmur &rarr; cardiology."],
+ ["&#9733; Mitral stenosis", "<b>Rheumatic</b> (most common; 80% women; ~20 y after the fever). <b>Left atrium enlarges &rarr; atrial fibrillation &rarr; thromboembolism.</b> Hemoptysis, hoarseness (Ortner), dysphagia. <b>Low diastolic rumble at the apex after an opening snap</b>, bell, left side. Severe = <b>&lt;1.0 cm&sup2;, gradient &gt;10, velocity &gt;3.0</b>. Loop diuretic &rarr; balloon valvotomy."],
+ ["Mitral regurgitation", "Backflow into the left atrium in systole. Acute: papillary muscle / chordae rupture, endocarditis. <b>Holosystolic blowing at the apex &rarr; axilla</b>; louder squatting, handgrip; softer standing, Valsalva. Severe = <b>regurgitant fraction &ge;50%</b>. Surgery: ejection fraction &lt;60% or end-systolic dimension &gt;40 mm &rarr; clip, transcatheter or surgical replacement."],
+ ["Mitral valve prolapse", "Myxomatous; <b>healthy women 15&ndash;30</b>; <b>mid-systolic click at the apex</b>; echo: redundant leaflets &gt;5 mm. Usually benign, no treatment; may progress to mitral regurgitation."],
+]},
+{"id": "l23-right", "label": "Valves: Right Side & Prosthetic Valves", "color": "#2f5d6b", "rows": [
+ ["Pulmonic stenosis", "Almost always congenital (tetralogy of Fallot; carcinoid). <b>Harsh mid-systolic ejection, left upper sternal border, louder on inspiration</b>, split S2. Electrocardiogram: right axis deviation, right ventricular hypertrophy. Mild&ndash;moderate: none, 94% 20-y survival. Severe: diuretics + <b>balloon valvuloplasty</b>. On echo &rarr; cardiology."],
+ ["&#9733; Pulmonic regurgitation", "<b>Iatrogenic = most common</b> (after valvotomy / valvuloplasty for outflow obstruction); pulmonary hypertension = the high-pressure cause. <b>Graham Steell</b>: brief early diastolic decrescendo, 2nd left space. Usually incidental. Treat the cause; refer on echo or right heart failure."],
+ ["Tricuspid stenosis", "Rheumatic worldwide, congenital in the US; women. Right atrium &rarr; right ventricle blocked. <b>Mid-diastolic rumble near the xiphoid, louder on inspiration</b>; right upper quadrant pain, cold skin. Electrocardiogram: right atrial enlargement out of proportion. Low salt, diuretics, aldosterone antagonist; <b>bioprosthetic</b> replacement. (Suffusion sign not tested.)"],
+ ["&#9733; Tricuspid regurgitation", "Most common = <b>annular dilation from pulmonary hypertension</b>; primary = <b>endocarditis in intravenous drug users</b>. <b>Holosystolic, lower left sternal border, louder on inspiration (Carvallo)</b> &mdash; that separates it from mitral regurgitation. Raised jugular pressure, venous thrill; severe: edema, ascites. Annuloplasty."],
+ ["&#9733; Mechanical valve", "Titanium and carbon &rarr; <b>lifelong vitamin K antagonist (warfarin)</b> &mdash; over no therapy and over antiplatelets. International normalized ratio: <b>aortic 2.5</b> (2.0&ndash;3.0) &middot; <b>mitral 3.0</b> (2.5&ndash;3.5) &middot; <b>both 3.0</b>. Surgery &rarr; <b>bridge with heparin</b>."],
+ ["Biological valve", "Pig or cow tissue &rarr; no anticoagulation beyond the immediate postoperative period; preferred when anticoagulation is contraindicated. (Valve type by age on slide 74 is unsettled &mdash; not learned.)"],
+]},
+
+# ---- Lecture 25 (Carter), condensed from guide section 5 ----
 {"id": "l25-core", "label": "Heart Failure: Groups, Stages & Classes", "color": "#7a2d47", "rows": [
  ["2022, not the deck", "Tested on the <b>2022</b> guideline; slide 57 (2026 changes) = rotations only. Learn <b>&ldquo;mildly&rdquo;</b> reduced (not &ldquo;moderately&rdquo;), <b>&le;40 / 41&ndash;49 / &ge;50</b> (not &lt;40 / &gt;50), stage D = <b>advanced</b> (not &ldquo;decompensated&rdquo;), calcium channel blockers = <b>avoid</b> (no subclass ranking), beta blockers by <b>class</b>. Digitalis not keyed."],
  ["&#9733; Systolic vs diastolic", "<b>Systolic</b> = squeeze fails: ischemic or dilated cardiomyopathy &rarr; reduced ejection fraction &rarr; normal or low pressure &rarr; <b>third heart sound</b> &rarr; pulmonary edema. <b>Diastolic</b> = relaxation fails: hypertrophic (hypertension) &rarr; preserved fraction &rarr; hypertension &rarr; <b>fourth heart sound</b> &rarr; peripheral then pulmonary edema. Add an elevated B-type natriuretic peptide = slam dunk."],
@@ -167,10 +196,11 @@ html = render(
     title="Cram Sheet — CMS I Exam 4",
     kicker="Clinical Medicine and Surgery I · Exam 4 · Class of 2028",
     h1="CMS I Exam 4 Cram Sheet",
-    sub="Hypertension, hypotension, atherosclerosis and lipid disorders, and heart failure "
-        "condensed: classification and causes, the orthostatic heart-rate tell, the lipid "
-        "memory aid and 2018 statin decisions, and the 2022 heart failure groups, stages and "
-        "therapy. Coronary artery disease and valvular disease follow when posted.",
+    sub="Hypertension, hypotension, atherosclerosis and lipid disorders, valvular heart disease "
+        "and heart failure condensed: classification and causes, the orthostatic heart-rate tell, "
+        "the lipid memory aid and 2018 statin decisions, the murmur words and valve-by-valve "
+        "essentials, and the 2022 heart failure groups, stages and therapy. Coronary artery "
+        "disease follows when posted.",
     topics=topics,
     guide_href="cms-exam-4-study-guide.html",
     footer_note="Condensed from the CMS I Exam 4 Study Guide (Class of 2028). "
