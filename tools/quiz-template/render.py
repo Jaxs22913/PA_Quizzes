@@ -1,4 +1,4 @@
-import json, colorsys, os
+import json, colorsys, os, sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = open(os.path.join(_HERE, "template.html"), encoding="utf-8").read()
@@ -81,4 +81,9 @@ def render(*, title, h1, sub, pill, chips, intro, questions,
     src = src.replace("__CHIPS__", chips_html)
     src = src.replace("__INTRO__", intro)
     src = src.replace("__QUESTIONS_JSON__", json.dumps(converted, ensure_ascii=False))
-    return src
+    # Designed dark mode (tools/dark_tokens.py): opt the page in and write its
+    # dark palette, derived from the four colours above. Semester 1 is never
+    # re-rendered (frozen), so everything rendered from here is eligible.
+    sys.path.insert(0, os.path.dirname(_HERE))
+    import dark_tokens
+    return dark_tokens.apply(src, "quiz")

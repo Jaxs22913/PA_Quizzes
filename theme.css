@@ -470,12 +470,12 @@ a.corner-btn:hover { text-decoration: none; }
    pull-to-refresh indicator, and JS-appended toast/update-banner elements
    (all direct children of <body>, outside .wrap) keep the viewport as their
    containing block instead of inheriting a filtered one. */
-:root[data-theme="dark"] body > .wrap {
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap {
   filter: invert(1) hue-rotate(180deg);
 }
-:root[data-theme="dark"] body > .wrap .diagram-wrap,
-:root[data-theme="dark"] body > .wrap img,
-:root[data-theme="dark"] body > .wrap video {
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .diagram-wrap,
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap img,
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap video {
   filter: invert(1) hue-rotate(180deg);
 }
 :root[data-theme="dark"] body {
@@ -513,7 +513,7 @@ a.corner-btn:hover { text-decoration: none; }
 :root[data-contrast="high"] body > .wrap {
   filter: contrast(1.35);
 }
-:root[data-theme="dark"][data-contrast="high"] body > .wrap {
+:root[data-theme="dark"][data-contrast="high"] body:not([data-dark="tokens"]) > .wrap {
   filter: invert(1) hue-rotate(180deg) contrast(1.35);
 }
 :root[data-contrast="high"] body.homepage .page {
@@ -1603,15 +1603,15 @@ a.corner-btn:hover { text-decoration: none; }
    their LIGHT colours and let the filter turn them dark (same rule
    calendar.html documents). The rules above still serve any page that shows
    these controls outside an inverted .wrap. */
-:root[data-theme="dark"] body > .wrap .examctl-btn { background: #f9fafb; border-color: #e5e7eb; color: #374151; }
-:root[data-theme="dark"] body > .wrap .examctl-btn.flagged { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
-:root[data-theme="dark"] body > .wrap .examctl-timer.danger { background: #fee2e2 !important; border-color: #dc2626 !important; color: #7f1d1d !important; }
-:root[data-theme="dark"] body > .wrap .examtoolbar {
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examctl-btn { background: #f9fafb; border-color: #e5e7eb; color: #374151; }
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examctl-btn.flagged { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examctl-timer.danger { background: #fee2e2 !important; border-color: #dc2626 !important; color: #7f1d1d !important; }
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examtoolbar {
   background: color-mix(in srgb, var(--exam-toolbar-accent, #4f46e5) 12%, transparent);
   border-color: color-mix(in srgb, var(--exam-toolbar-accent, #4f46e5) 35%, transparent);
 }
-:root[data-theme="dark"] body > .wrap .examtoolbar .examctl-btn-primary { background: #fff; }
-:root[data-theme="dark"] body > .wrap .examtoolbar .examctl-btn-primary.flagged { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examtoolbar .examctl-btn-primary { background: #fff; }
+:root[data-theme="dark"] body:not([data-dark="tokens"]) > .wrap .examtoolbar .examctl-btn-primary.flagged { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
 
 /* Guide text highlighting (added 2026-07-10). mark.user-hl-* colors are
    deliberately NOT given a :root[data-theme="dark"] override -- they live
@@ -2936,3 +2936,54 @@ body.homepage .continue-item:hover {
 @media (prefers-reduced-motion: reduce) {
   #read-bar, #read-bar span { transition: none; }
 }
+
+
+/* ==========================================================================
+   DESIGNED DARK MODE for quiz / guide / cram pages (design review item 7,
+   2026-09-25). Opt-in per page: tools/dark_tokens.py adds
+   body[data-dark="tokens"] and writes that page's own dark palette (derived
+   from its light one with the site's 4.60:1 recipe) into a <style
+   id="dark-tokens"> block. The invert filter and the image counter-invert
+   above are both switched off for such pages, together. Semester 1 is frozen
+   and never opted in, so it stays on the filter.
+
+   Roles: --navy/--indigo/--accent* are TEXT-role colours, re-pointed to the
+   lifted dark values; --navy-l/--indigo-l/--accent*-l keep the LIGHT value for
+   FILLS that carry white text (banners, filled buttons, table headers,
+   letter badges). Everything below only re-points hard-coded light colours in
+   the templates at those tokens -- no new colours.
+   ========================================================================== */
+:root[data-theme="dark"] body[data-dark="tokens"] { background: var(--page, #0f1115); color: var(--ink); }
+:root[data-theme="dark"][data-contrast="high"] body[data-dark="tokens"] > .wrap { filter: contrast(1.35); }
+:root[data-theme="dark"] body[data-dark="tokens"] mark.user-hl-yellow { background: rgba(253, 224, 71, .28); }
+:root[data-theme="dark"] body[data-dark="tokens"] mark.user-hl-green  { background: rgba(134, 239, 172, .24); }
+:root[data-theme="dark"] body[data-dark="tokens"] mark.user-hl-pink   { background: rgba(249, 168, 212, .26); }
+:root[data-theme="dark"] body[data-dark="tokens"] mark.user-hl-blue   { background: rgba(147, 197, 253, .26); }
+
+/* --- quizzes (tools/quiz-template) --- */
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .wrap > header { background: linear-gradient(135deg, var(--navy-l), var(--indigo-l)); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .wrap > a[href$="index.html"]:first-child { color: var(--muted) !important; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] #quiz-header-logo > span:first-child { background: linear-gradient(to left, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] #quiz-header-logo > span:last-child { background: linear-gradient(to right, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .card { box-shadow: 0 1px 0 rgba(255,255,255,.03), 0 10px 30px rgba(0,0,0,.35); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .btn-primary { background: var(--indigo-l); color: #fff; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .btn-primary:hover { background: var(--navy-l); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .btn-ghost { background: transparent; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .tag-topic,
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .seg-btn.is-on { background: var(--navy-l); color: #fff; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .opt { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .opt.selected-exam .ltr { background: var(--indigo-l); border-color: var(--indigo-l); color: #fff; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .opt.correct .ltr { background: var(--ok-l); border-color: var(--ok-l); color: #fff; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .opt.wrong .ltr { background: var(--bad-l); border-color: var(--bad-l); color: #fff; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .bar,
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .brow .bbar { background: var(--line); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .ring { background: conic-gradient(var(--indigo) calc(var(--p) * 1%), var(--line) 0); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .ring i,
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .mitem { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .erow,
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .brow .bname { color: var(--ink); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .perfect { border-color: var(--ok); color: var(--ok); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] #resume-banner { background: var(--a-amber-soft) !important; border-color: color-mix(in oklab, var(--a-amber) 40%, transparent) !important; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] #resume-banner > p:first-child { color: var(--a-amber) !important; }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .examtoolbar .examctl-btn-primary { background: var(--card); color: var(--indigo); border-color: var(--indigo); }
+:root[data-theme="dark"] body[data-dark-kind="quiz"] .examtoolbar .examctl-btn-submit { background: var(--indigo-l); color: #fff; }

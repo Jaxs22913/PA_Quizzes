@@ -102,3 +102,12 @@ string) — prefer authoring directly in the native schema for new content.
 
 Run `tools/check_answer_distribution.py` against the new file(s) — see that script and the
 `answer_position_bias_check` memory for why this is mandatory.
+
+## Dark mode (2026-09-25)
+
+`render()` now finishes by calling `tools/dark_tokens.py`'s `apply()`, which adds
+`data-dark="tokens"` to `<body>` and writes the page's own dark palette (derived
+from the four colours above with the site's 4.60:1 recipe) into a fenced
+`<style id="dark-tokens">` block. theme.css then skips the old invert filter for
+the page. After hand-editing a page's palette, re-run `python3 tools/dark_tokens.py`
+(`--check` reports stale pages). Semester 1 pages are never opted in.
