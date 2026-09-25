@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #a753b4; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 4 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#702d7a; --indigo:#a753b4; --gold:#c08a2e; --ice:#f9eefa;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#702d7a;--gold-l:#c08a2e;--indigo-l:#a753b4;--navy:#da91e5;--indigo:#be68cb;--gold:#c08a2e;--ice:#2d1b30;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#be68cb;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 4 &middot; Cardiology block I, Lectures 20&ndash;25 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all six lectures of the first cardiology block &mdash; <b>ten from each</b>, so every form is a genuine cumulative rehearsal rather than a sample of whichever lecture had the most questions written for it. <b>Forty-eight are patient vignettes</b> and twelve are direct recall, eight and two from every lecture, with the lead-in spread across diagnosis, testing, treatment, next step, patient education and what to avoid.<br><br>About half of the questions are not in the topic quizzes, so these forms are worth working even after those. <b>Four options, A&ndash;D</b>, and every wrong choice gets its own explanation saying why it is wrong.<br><br><b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. Every question cites the slide it came from.</p>
+    <div class="chips"><span class="chip">Hypertension</span><span class="chip">Hypotension</span><span class="chip">Atherosclerosis &amp; lipids</span><span class="chip">Valvular heart disease</span><span class="chip">Coronary artery disease</span><span class="chip">Heart failure</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Primary prevention", "io": "Identify medical care strategies for atherosclerosis and lipid disorders in the lecture topic list for the following populations. 6. infant 7. child 8. adolescent 9. adult 10. elderly", "q": "An 81-year-old woman with no history of atherosclerotic disease asks whether she should start a statin for prevention. Her low-density lipoprotein is 145 mg/dL. What is the most appropriate approach?", "opts": [["Automatic high-intensity statin", "High intensity is not automatic above 75 in primary prevention; the decision follows assessment and discussion."], ["Refuse any statin due to age", "Age alone does not rule out a statin; the approach is individual assessment and discussion."], ["Clinical assessment and risk discussion", "Correct. Above 75 in primary prevention the approach is clinical assessment and a risk discussion rather than an automatic prescription."], ["Calculate the Pooled Cohort risk", "The Pooled Cohort Equation estimates risk for ages 40 to 79, so an 81-year-old falls outside its range."]], "c": 2, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 96"}, {"topic": "Severe hypertriglyceridemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 27-year-old man has clusters of small yellowish-white papules (eruptive xanthomas) on his elbows after a weekend of heavy drinking. His triglyceride is 900 mg/dL and his low-density lipoprotein is normal. Which lipoproteins are most likely extremely elevated?", "opts": [["Low-density lipoprotein and lipoprotein(a)", "His low-density lipoprotein is normal, and these particles are tied to tendon xanthomas and atherosclerosis rather than eruptive papules."], ["Chylomicrons or very-low-density lipoprotein", "Correct. Eruptive xanthomas are usually seen with extremely high chylomicrons or very-low-density lipoprotein, and alcohol inhibits hepatic fatty-acid oxidation, raising triglyceride."], ["Intermediate-density lipoprotein alone", "Intermediate-density lipoprotein is the remnant after triglyceride delivery, not the particle behind eruptive xanthomas."], ["High-density lipoprotein and apolipoprotein A-I", "High-density lipoprotein and its structural apolipoprotein A-I are protective and do not produce xanthomas."]], "c": 1, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 32"}, {"topic": "Aortic regurgitation", "io": "Aortic regurgitation", "q": "Which cause of aortic regurgitation is a disease of the aortic root rather than the valve?", "opts": [["Marfan syndrome", "Correct. Marfan syndrome is an aortic root disease, alongside aortic dissection, cystic medial degeneration, familial aneurysm, aortitis and hypertension. The root dilates and pulls the cusps apart."], ["Rheumatic fever", "Rheumatic fever damages the valve itself and is listed among the valvular causes of aortic regurgitation, not the root causes such as Marfan syndrome."], ["A bicuspid aortic valve", "A congenital bicuspid valve is a valvular cause of aortic regurgitation. The root causes include Marfan syndrome, dissection and aortitis."], ["Infective endocarditis", "Endocarditis destroys the valve cusps and is a valvular cause of aortic regurgitation; it can also cause the acute form. Marfan syndrome is a root cause."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 24"}, {"topic": "Heterozygous familial hypercholesterolemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 40-year-old man is newly found to have heterozygous familial hypercholesterolemia with low-density lipoprotein of 250 mg/dL. He has read about a new injectable and wants it instead of any pill. Which option is inappropriate as initial therapy?", "opts": [["Evolocumab before trying a statin", "Correct. The steps must be followed: high-intensity statins first, then ezetimibe and nicotinic acid, and the injectable only for patients refractory to drug therapy."], ["A high-intensity statin", "A high-intensity statin is the common first regimen in heterozygous familial hypercholesterolemia and is entirely appropriate."], ["A low saturated-fat, low-cholesterol diet", "A diet low in saturated fat and cholesterol is part of his treatment, alongside the statin, so it is appropriate."], ["Addressing smoking and blood pressure", "Aggressive reduction of vascular risk factors such as smoking, hypertension and diabetes is recommended, so this is appropriate."]], "c": 0, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 110"}, {"topic": "Ejection fraction groups", "io": "Define the following diagnostic and therapeutic groups of HF patients, and the treatment implications/recommendations for each group: a. HF with reduced EF (HFrEF) b. HF with mildly reduced EF (HFmrEF) c. HF with preserved EF (HFpEF)", "q": "What is a normal left ventricular ejection fraction?", "opts": [["50% or higher", "Correct. Normal ejection fraction is 50% or more, and it is the dividing line for treatment: 50% or higher is preserved ejection fraction, 49% or less falls into a reduced group."], ["80% or higher", "That sets normal far too high. Normal left ventricular ejection fraction is 50% or higher."], ["70% or higher", "That sets normal too high and would label many healthy hearts abnormal. Normal is 50% or higher."], ["30% or higher", "That sets normal far too low; 30% is well within reduced ejection fraction. Normal is 50% or higher."]], "c": 0, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 22"}, {"topic": "Hypertensive emergency", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 62-year-old man arrives with blood pressure 232/128, confusion and blurred vision. Over the first hour, how far should his mean arterial pressure be reduced?", "opts": [["By at least half, to remove the immediate danger", "Overly rapid reduction is specifically harmful; the first-hour limit is about a fifth to a quarter of the mean arterial pressure."], ["By no more than about twenty to twenty-five percent", "Correct, targeting around 160/100 to 110 over two to six hours and gradual normalization over a day or two. Autoregulation has adapted to the higher pressure, so dropping it to a chronic goal acutely can cause ischemic stroke, myocardial injury or renal failure."], ["No reduction until imaging is complete", "Stabilization and controlled reduction begin promptly alongside the focused assessment."], ["To below 130/80 within the first hour", "Reducing to the chronic goal within an hour risks precisely the ischemic injury the controlled approach exists to avoid."]], "c": 1, "cite": "20. Hypertension - Jaquith.pptx, Slide 69"}, {"topic": "Ischemia and coronary anatomy", "io": "Acute myocardial infraction", "q": "A 60-year-old man with an occluded coronary artery is being rushed to the catheterization laboratory. His wife asks how quickly heart muscle is permanently damaged. Which time frame is most accurate?", "opts": [["About 40 to 60 minutes", "Correct. The heart is only 0.3% of body weight but consumes 7% of total oxygen demand, and irreversible injury occurs in about 40 to 60 minutes of ischemia. That is why rapid reperfusion matters."], ["About 24 to 48 hours", "A day or two describes later healing, not the onset of permanent damage. Irreversible myocardial injury occurs within about 40 to 60 minutes of ischemia."], ["About 5 to 10 minutes", "Ischemic muscle does not die within the first few minutes. Irreversible myocardial injury occurs after about 40 to 60 minutes, which is the window reperfusion races against."], ["About 6 to 8 hours", "Waiting hours is far too long: irreversible myocardial injury begins after about 40 to 60 minutes of ischemia, so the damage accumulates well before six hours."]], "c": 0, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 7"}, {"topic": "Tricuspid regurgitation", "io": "Tricuspid regurgitation", "q": "A 67-year-old woman has a holosystolic murmur, and the examiner is unsure whether it is tricuspid or mitral in origin. Which bedside maneuver best separates the two?", "opts": [["Standing up quickly", "Standing softens mitral regurgitation, but the maneuver that separates it from tricuspid regurgitation is inspiration, which increases the right-sided murmur."], ["Sustained handgrip", "Handgrip raises resistance to ejection and makes mitral regurgitation louder, but it is not the maneuver named to separate the two. Inspiration increases only the tricuspid murmur."], ["Deep inspiration", "Correct. Inspiration increases venous return to the right heart, so the tricuspid regurgitation murmur grows louder (the Carvallo sign) while mitral regurgitation does not. That distinguishes them."], ["Full expiration", "Expiration increases left-sided murmurs, so it does not single out the tricuspid lesion. Inspiration makes tricuspid regurgitation louder and distinguishes it."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slides 71, 9"}, {"topic": "Mitral regurgitation", "io": "Mitral regurgitation", "q": "A 60-year-old man has palpitations and fatigue. There is a holosystolic blowing murmur at the apex that radiates to the axilla and is loudest in the left lateral decubitus position (lying on the left side). Which is the most likely diagnosis?", "opts": [["Mitral valve prolapse", "Mitral valve prolapse gives a mid-systolic click at the apex and is usually asymptomatic. A holosystolic blowing murmur to the axilla is established mitral regurgitation."], ["Mitral regurgitation", "Correct. Blowing means regurgitation and holosystolic narrows it to the mitral or tricuspid valve; the apex, the radiation to the axilla and the left lateral position mark mitral regurgitation."], ["Tricuspid regurgitation", "Tricuspid regurgitation is holosystolic too, but it sits at the left mid or lower sternal border near the epigastrium and grows louder with inspiration. It does not radiate to the axilla."], ["Aortic stenosis", "Aortic stenosis is a harsh crescendo-decrescendo systolic murmur at the second right intercostal space radiating to the carotids. This murmur is blowing and holosystolic."]], "c": 1, "cite": "Valvular Heart Disease - Carter.pptx, Slides 48, 73"}, {"topic": "Familial hypercholesterolemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "What is the treatment of choice in homozygous familial hypercholesterolemia?", "opts": [["Fibrate monotherapy with diet", "Triglyceride is normal in familial hypercholesterolemia, so a fibrate targets the wrong lipid."], ["Lifestyle and dietary change alone", "Lifestyle cannot correct a receptor defect with total cholesterol of about 400 to above 1000 mg/dL."], ["Low-density lipoprotein apheresis", "Correct. Apheresis, like dialysis, is the elective removal of low-density particles from the circulation; most patients also need more than one drug, starting with high-intensity statins."], ["Moderate-intensity statin alone", "Moderate intensity is far too weak; high-intensity statins are the usual drug regimen alongside apheresis."]], "c": 2, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 109"}, {"topic": "Stage-based therapy", "io": "Differentiate each stage of the American College of Cardiology/American Heart Association (ACC/AHA), natural history classification of heart failure, and associated treatment recommendations of each stage.", "q": "A 52-year-old woman with type 2 diabetes and hypertension has no cardiac symptoms. Her echocardiogram is normal. Which drug class is recommended first to lower her risk of heart failure?", "opts": [["Mineralocorticoid receptor antagonist", "The antagonist belongs to symptomatic heart failure, strongly in reduced ejection fraction. Stage A with diabetes calls for a sodium-glucose cotransporter 2 inhibitor."], ["Beta blocker as the first agent", "A beta blocker is a stage B therapy, added once structural disease exists. In stage A with diabetes the first drug is a sodium-glucose cotransporter 2 inhibitor."], ["Loop diuretic such as bumetanide", "A loop diuretic treats congestion, which she does not have. Stage A with diabetes calls for a sodium-glucose cotransporter 2 inhibitor."], ["Sodium-glucose cotransporter 2 inhibitor", "Correct. Risk factors with a normal heart and no symptoms are stage A, at risk for heart failure, and the one strong drug recommendation there is a sodium-glucose cotransporter 2 inhibitor in patients with diabetes, not a beta blocker."]], "c": 3, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 52"}, {"topic": "Troponin", "io": "Non-ST segment elevation", "q": "A 64-year-old woman with an hour of chest pressure at rest has ST depression in two consecutive leads and a standard troponin I of 0.3 ng/mL. Which diagnosis fits?", "opts": [["Stable angina", "Stable angina is exertional pain relieved by rest, with no troponin rise. Rest pain with ST depression and an abnormal troponin I is a non-ST-elevation infarction."], ["An ST-elevation myocardial infarction", "An ST-elevation infarction needs ST elevation in two or more leads. She has ST depression with an abnormal standard troponin I (0.3 ng/mL), a non-ST-elevation infarction."], ["Unstable angina", "Unstable angina has normal troponin levels. A standard troponin I of 0.3 ng/mL is above the 0.04 ng/mL cut-off, and the elevated troponin is what separates infarction from unstable angina."], ["A non-ST-elevation myocardial infarction", "Correct. ST depression greater than 1 mm and/or T-wave inversion in two or more consecutive leads with an elevated troponin is a non-ST-elevation infarction. A standard troponin I above 0.04 ng/mL is abnormal, and 0.3 ng/mL is well above it."]], "c": 3, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 47; Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a"}, {"topic": "Cardiogenic syncope", "io": "Develop a differential diagnosis for a patient presenting with hypotension based on history, physical examination, and diagnostic findings.", "q": "A 66-year-old woman with prior heart attacks collapsed without any prodrome while climbing stairs and woke within 20 seconds. Which referral should accompany her cardiac testing?", "opts": [["Physical therapy referral", "Physical therapy is not part of the listed cardiogenic work-up, which pairs cardiac tests with cardiology."], ["Cardiology consultation", "Correct. Arrhythmic, structural and vascular cardiogenic syncope each pair their tests with cardiology consultation."], ["Neurology consultation", "Neurology suits autonomic failure or seizure; an abrupt collapse with cardiac history points to cardiology."], ["Dietitian referral", "A dietitian has no listed role in cardiogenic syncope, whose work-up pairs cardiac tests with cardiology consultation."]], "c": 1, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 16"}, {"topic": "Referral", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 55-year-old man remains above goal despite the described sequence: adherence confirmed, diuretic optimized, three agents titrated, spironolactone added and tolerated. What now?", "opts": [["Refer to a hypertension specialist", "Correct. Referral is reserved for truly difficult cases after the full sequence has been worked through rather than being an early substitute for it."], ["Stop spironolactone and restart from a single agent", "The approach builds on the regimen already in place rather than discarding it and beginning again."], ["Add a second mineralocorticoid antagonist", "Duplicating the mineralocorticoid antagonist class is not among the described escalation steps."], ["Accept the current pressure as his individual goal", "A defined numeric goal of below 130/80 applies, and specialist options remain beyond this sequence."]], "c": 0, "cite": "20. Hypertension - Jaquith.pptx, Slide 67"}, {"topic": "Microvascular angina", "io": "Angina pectoris", "q": "A 52-year-old woman has recurrent anginal chest pain during periods of work stress and anxiety. Her electrocardiogram shows ST changes during symptoms, and coronary angiography shows normal coronary arteries. What is the most likely diagnosis?", "opts": [["Unstable angina", "Unstable angina is a change in stable angina from atherosclerotic plaque and is an acute coronary syndrome. Normal coronary arteries in a stressed woman point to microvascular angina."], ["Stable angina", "Stable angina comes from atherosclerotic narrowing that coronary angiography, the gold standard for coronary artery disease, would show. Her coronary arteries are normal."], ["Microvascular angina", "Correct. Microvascular angina (formerly cardiac syndrome X) is angina with ST changes, possibly with elevated biomarkers, but normal coronary arteries on the angiogram; it is more frequent in women and often associated with stress or anxiety."], ["Vasospastic angina", "Vasospastic angina strikes at rest between midnight and early morning, mostly in smokers under 50, with transient ST elevation. Her stress-related angina in a woman with normal arteries fits microvascular angina."]], "c": 2, "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 93, 94"}, {"topic": "Syncope definitions", "io": "Define hypotension", "q": "Which description defines syncope?", "opts": [["Dizziness and tunnel vision without collapse", "Warning symptoms such as dizziness, lightheadedness and tunnel vision without losing consciousness define near-syncope, also called presyncope."], ["Prolonged unconsciousness needing support", "Syncope is transient and self-limited, and recovery is spontaneous. Prolonged unconsciousness needing support falls outside the definition."], ["Collapse with confusion lasting an hour", "Prolonged confusion afterward points away from syncope, whose recovery is spontaneous and complete, and toward causes such as seizure."], ["Brief loss of consciousness, then full recovery", "Correct. Syncope is a transient, self-limited loss of consciousness with inability to maintain postural tone, followed by spontaneous recovery."]], "c": 3, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 8"}, {"topic": "Classes and stages", "io": "Define each class of the New York Heart Association (NYHA) symptomatic and functional classification of heart failure.", "q": "A 71-year-old man with heart failure with reduced ejection fraction is comfortable at rest but becomes breathless after only a few steps across a room. Which New York Heart Association class describes him?", "opts": [["Class III", "Correct. Symptoms with only slight exertion, such as a few steps across a room, and none at rest are class III. Class II is symptoms with ordinary exertion and class IV is symptoms at rest."], ["Class IV", "Class IV is symptoms at rest, and he is comfortable at rest. Slight exertion provoking symptoms is class III."], ["Class II", "Class II is symptoms with ordinary exertion. Breathlessness after only slight effort, like a few steps across a room, is class III."], ["Class I", "Class I is the absence of any heart failure symptoms. Breathlessness with only slight exertion is class III."]], "c": 0, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 24"}, {"topic": "Unstable angina and non-ST-elevation infarction", "io": "Acute coronary syndrome", "q": "A 59-year-old man had 30 minutes of chest pressure at rest. His electrocardiogram shows nonspecific T-wave changes, and his first troponin I is not abnormal. Which is the most appropriate next step?", "opts": [["Discharge him home now", "A single troponin I that is not abnormal does not end the workup after rest pain. Troponin is used to rule an infarction out, and that takes a repeat level."], ["Order a calcium score", "A coronary calcium score stratifies future risk and is not used to diagnose an acute coronary syndrome. The next step after rest pain is a repeat troponin I."], ["Give a thrombolytic agent", "Thrombolytics are for an ST-elevation infarction when percutaneous intervention is two or more hours away. Nonspecific T-wave changes do not qualify; repeat the troponin I."], ["Repeat the troponin I", "Correct. Troponin is drawn serially: when one is drawn, a second follows, because the change over time is what matters. A rising troponin I would turn this presentation into an infarction."]], "c": 3, "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 32, 47; Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a"}, {"topic": "Drug therapy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "A 67-year-old woman with neurogenic orthostatic hypotension asks whether she can keep a vasopressor at home for bad days. What should she be told?", "opts": [["A home supply is reasonable", "Pressors are not outpatient drugs; home options for neurogenic syncope are midodrine or droxidopa with slow position changes."], ["Pressors are hospital-only drugs", "Correct. Epinephrine, norepinephrine, dopamine, phenylephrine and vasopressin are listed for the emergency department and intensive care only."], ["Only if she avoids salt", "Salt is not the issue; pressors are used only in the emergency department and intensive care."], ["Only after a tilt-table test", "A tilt-table test is for the tachycardia syndrome and would not make a pressor safe for home use."]], "c": 1, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 23"}, {"topic": "Homozygous familial hypercholesterolemia", "io": "Identify medical care strategies for atherosclerosis and lipid disorders in the lecture topic list for the following populations. 6. infant 7. child 8. adolescent 9. adult 10. elderly", "q": "A 7-year-old boy with homozygous familial hypercholesterolemia and under 2% of normal receptor activity asks, through his parents, why he needs frequent sessions attached to a machine. Which explanation is most appropriate?", "opts": [["It filters the bad cholesterol out", "Correct. Apheresis is like dialysis: the elective removal of low-density particles from the circulation, and it is the treatment of choice for the homozygous disorder."], ["It lowers his triglyceride level", "His triglyceride is normal; the machine removes low-density lipoprotein particles."], ["It replaces his missing liver cells", "Replacing receptors is what liver transplantation may do; apheresis removes low-density particles from the blood."], ["It cures the disorder in weeks", "Apheresis removes particles repeatedly; the inherited receptor defect remains, so treatment continues."]], "c": 0, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 109"}, {"topic": "Right-sided heart failure", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, prevention, and prognosis for heart failure.", "q": "A 34-year-old woman has progressive leg edema and jugular venous distension (distended neck veins). At the apex there is a low-pitched diastolic rumble with an opening snap. Which is the most likely cause of her right-sided heart failure?", "opts": [["Hypertrophic cardiomyopathy", "Hypertrophic cardiomyopathy leads the diastolic chain with a fourth heart sound. An apical diastolic rumble with a snap is mitral stenosis."], ["Mitral valve stenosis", "Correct. A rumbling diastolic murmur at the apex with an opening snap is mitral stenosis, one of the three causes of right-sided failure with chronic left-sided failure and pulmonary arterial hypertension."], ["Tricuspid regurgitation", "Tricuspid regurgitation gives a holosystolic murmur at the left lower sternal border, louder on inspiration. An apical diastolic rumble with a snap is mitral stenosis."], ["Aortic valve stenosis", "Aortic stenosis is the most common valvular cause of heart failure overall but does not give an apical diastolic rumble with a snap. This is mitral stenosis."]], "c": 1, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 10"}, {"topic": "Populations", "io": "Identify medical care strategies for heart failure in the lecture topic list for the following populations. 1. infant 2. child 3. adolescent 4. adult 5. elderly", "q": "An 81-year-old woman has progressive breathlessness and ankle edema over three months. Her N-terminal pro-B-type natriuretic peptide is 720. What does this level suggest for her age?", "opts": [["Heart failure is likely", "Correct. Older than 75, an N-terminal fragment above 450 makes heart failure likely. In a younger patient the threshold would be 125."], ["Heart failure is ruled out", "No rule-out applies at 720. Older than 75, a level above 450 makes heart failure likely."], ["Only a younger cut-off applies", "The age-specific threshold exists precisely for patients older than 75: above 450 heart failure is likely."], ["The level is normal for her age", "The age-adjusted threshold over 75 is 450, and 720 exceeds it. Heart failure is likely."]], "c": 0, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 38"}, {"topic": "Renovascular disease", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 68-year-old smoker with peripheral arterial disease has blood pressure of 168/94 despite three agents. An abdominal bruit is audible, ultrasound shows a right kidney 2 cm smaller than the left, and he has had two episodes of sudden pulmonary edema. What is the most likely underlying cause?", "opts": [["Renovascular disease", "Correct. The cluster is characteristic: resistant pressure, an abdominal bruit, asymmetric kidneys and recurrent flash pulmonary edema. In an older patient with established vascular disease the mechanism is atherosclerotic stenosis, often bilateral and progressive."], ["Chronic kidney disease from diabetes", "Diabetic kidney disease reduces both kidneys' function together rather than producing a 2 cm size discrepancy with a bruit."], ["Primary aldosteronism", "Aldosteronism also presents with resistant hypertension, but with unexplained hypokalemia rather than asymmetric kidneys and an abdominal bruit."], ["Obstructive sleep apnea", "Sleep apnea contributes to resistant hypertension, but through nocturnal sympathetic activation, without bruits or asymmetric kidneys."]], "c": 0, "cite": "20. Hypertension - Jaquith.pptx, Slide 15"}, {"topic": "Patient education", "io": "Define the following diagnostic and therapeutic groups of HF patients, and the treatment implications/recommendations for each group: a. HF with reduced EF (HFrEF) b. HF with mildly reduced EF (HFmrEF) c. HF with preserved EF (HFpEF)", "q": "A 66-year-old woman with reduced ejection fraction is started on spironolactone alongside her loop diuretic. Which counseling point is most accurate?", "opts": [["It replaces the need for her beta blocker", "The antagonist adds to the beta blocker rather than replacing it; both are core classes. It spares potassium, so levels are checked."], ["It is only a short course for congestion", "Spironolactone is a strong, ongoing recommendation in reduced ejection fraction, not a short diuretic course. It spares potassium, so levels are checked."], ["It wastes potassium like her loop diuretic", "Loops and thiazide-like diuretics waste potassium; spironolactone spares it. That is why her potassium is monitored."], ["It spares potassium, so levels are checked", "Correct. Spironolactone is a mineralocorticoid receptor antagonist, a potassium-sparing diuretic, which is why her potassium and renal function will be followed alongside the potassium-wasting loop."]], "c": 3, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 40"}, {"topic": "Blood pressure norms", "io": "Identify medical care strategies for hypotension in the lecture topic list for the following populations. a. infant b. child c. adolescent d. adult e. elderly", "q": "A 3-year-old boy has his pressure recorded at a well visit, and a new staff member flags it as low by comparing it with an adult's normal range. Which is the most appropriate next step?", "opts": [["Measure it again in adult units", "The units are not the issue; the reference range is, because norms change with age."], ["Start a vasopressor for hypotension", "Vasopressors are for the emergency department and intensive care, and a reading has not yet been shown to be low for his age."], ["Order an echocardiogram at once", "Echocardiography evaluates structural heart disease; the first step is judging the reading against age-specific norms."], ["Compare it with norms for his age", "Correct. Blood pressure norms are affected by age, so a child's reading is judged against the normal range for his age rather than an adult's."]], "c": 3, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 20"}, {"topic": "Vasovagal syncope", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "A 25-year-old woman fainted once after standing for an hour in the heat at a graduation, with warmth and nausea first and rapid recovery. Her examination and readings are normal. Which is the most appropriate management?", "opts": [["Begin midodrine daily", "Midodrine is best with neurogenic syncope and is not first-line for a vasovagal faint."], ["Refer for echocardiography", "Echocardiography is for structural cardiogenic syncope; a triggered faint with a prodrome points to a reflex cause."], ["Start fludrocortisone", "Fludrocortisone is best with postural orthostatic tachycardia syndrome, which her normal readings do not suggest."], ["Advise avoiding the trigger", "Correct. Vasovagal syncope is treated by trigger avoidance, here prolonged standing in the heat, with safety precautions when unavoidable."]], "c": 3, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 15"}, {"topic": "Non-neurogenic orthostatic", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "A 71-year-old woman had her diuretic dose increased 1 week ago for high readings. She now feels lightheaded whenever she stands and nearly fainted at church. Supine she is 132/78 with a heart rate of 70; standing she is 108/68 with a heart rate of 96. What is the most likely diagnosis?", "opts": [["Vasovagal reflex syncope", "Vasovagal syncope is triggered by fear, pain, heat or prolonged standing, with a transient reflex rather than a medication-linked postural fall."], ["Non-neurogenic orthostatic hypotension", "Correct. Medication and volume loss are typical non-neurogenic causes, and the heart rate rise from 70 to 96 shows the autonomic reflex is intact."], ["Chronic cardiogenic hypotension", "Chronic cardiogenic hypotension comes from reduced ejection fraction heart failure or cardiomyopathy, which nothing here suggests."], ["Neurogenic orthostatic hypotension", "The neurogenic form shows a minimal heart rate rise because the autonomic system has failed; her rise is significant."]], "c": 1, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 12"}, {"topic": "Apolipoproteins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "Which apolipoprotein is critical in triglyceride clearance?", "opts": [["Apolipoprotein(a)", "Apolipoprotein(a) forms lipoprotein(a), a causal atherosclerosis risk factor; it does not clear triglyceride."], ["Apolipoprotein A-I", "Apolipoprotein A-I is the structural protein of high-density lipoprotein, found on all of its particles, rather than a triglyceride-clearance protein."], ["Apolipoprotein B-48", "Apolipoprotein B-48 is the intestinal structural protein of chylomicrons; the clearance role belongs to apolipoprotein E."], ["Apolipoprotein E", "Correct. Apolipoprotein E is important in triglyceride metabolism and critical in triglyceride clearance, which is why its mutation lets chylomicron and very-low-density remnants accumulate."]], "c": 3, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 11"}, {"topic": "Aortic dissection", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis", "q": "What imaging is required when dissection is suspected, and what does a normal chest radiograph mean?", "opts": [["Immediate cross-sectional vascular imaging", "Correct. The radiograph may show a widened mediastinum, but it cannot rule the diagnosis out, so a normal film must not be allowed to end the workup."], ["Imaging can wait until blood pressure is controlled", "The imaging is immediate and surgical involvement urgent, since the diagnosis determines both the pressure target and the operation."], ["A chest radiograph alone is sufficient to exclude it", "A normal chest radiograph specifically does not exclude dissection, which is why cross-sectional angiography is required."], ["Echocardiography is the definitive study", "Immediate cross-sectional vascular imaging is what is required; echocardiography establishes coarctation rather than excluding dissection."]], "c": 0, "cite": "20. Hypertension - Jaquith.pptx, Slide 29"}, {"topic": "Resistant hypertension", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 59-year-old man remains at 158/96 on three agents at maximally tolerated doses. What is the commonest explanation to exclude first?", "opts": [["Progressive renal artery stenosis", "Renovascular disease is one secondary cause to consider, but it is not the commonest reason control appears resistant."], ["An incorrectly sized cuff", "Measurement error belongs on the list, but nonadherence is specifically named as commonest."], ["Medication nonadherence", "Correct, and it heads a list that also includes measurement error, white coat effect, high sodium or alcohol intake, interfering drugs, and undiagnosed sleep apnea or secondary hypertension."], ["Undiagnosed primary aldosteronism", "Secondary hypertension is on the list to rule out, but nonadherence is the commonest single explanation for apparent resistance."]], "c": 2, "cite": "20. Hypertension - Jaquith.pptx, Slide 66"}, {"topic": "Hypotension definition", "io": "Define hypotension", "q": "A 58-year-old man's pressure is 100/64, which is normal for many adults but far below his usual 150/90, and he now feels lightheaded. How should this reading be interpreted?", "opts": [["As normal, since it is above 90", "No single fixed number defines hypotension; relative hypotension must be considered against the patient's usual pressure."], ["As proof of autonomic failure", "Autonomic failure is shown by a postural fall with a minimal heart rate rise, not by one resting reading."], ["As relative hypotension for him", "Correct. Hypotension is a fall below normal, and normal is judged against the patient's age, comorbidities and own baseline, so a relative fall can be significant."], ["As a measurement artifact", "A reading consistent with his symptoms should not be dismissed; each reading is a snapshot to interpret, not to discard."]], "c": 2, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 20"}, {"topic": "Preferred combinations", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education and prognosis", "q": "Which drug combinations are preferred as initial therapy?", "opts": [["An angiotensin-converting enzyme inhibitor with an angiotensin receptor blocker", "This combination is specifically prohibited: dual renin-angiotensin blockade raises hyperkalemia and kidney injury risk without additional benefit."], ["A beta blocker with a non-dihydropyridine calcium channel blocker", "This pairing risks severe bradycardia and heart block because both slow nodal conduction."], ["Two thiazide-type diuretics together", "Combining agents of the same class adds adverse effects without the complementary mechanism that the preferred pairings provide."], ["A renin-angiotensin blocker with a calcium blocker or diuretic", "Correct, because the classes act by complementary mechanisms. A single-pill combination is preferred where two agents are started, since it improves adherence. That means an angiotensin-converting enzyme inhibitor or angiotensin receptor blocker paired with a dihydropyridine or a thiazide-type diuretic."]], "c": 3, "cite": "20. Hypertension - Jaquith.pptx, Slide 65"}, {"topic": "Chest pain workup and risk scores", "io": "Acute coronary syndrome", "q": "A 54-year-old man arrives at the emergency department with 30 minutes of chest pressure. Which pair of studies does every patient with chest pain receive?", "opts": [["Treadmill stress test and D-dimer", "A D-dimer is only a maybe in the chest pain workup, and a stress test is not done on arrival with active pain. Every patient gets a stat electrocardiogram and a chest radiograph."], ["Coronary angiography and echocardiogram", "Coronary angiography is the gold standard for coronary disease but not the universal first study. Every chest pain patient starts with a stat electrocardiogram and a chest radiograph."], ["Electrocardiogram and chest radiograph", "Correct. All chest pain patients get a chest radiograph and a stat electrocardiogram. Blood work (complete blood count, metabolic panel, coagulation studies, troponin) follows."], ["Calcium score and a lipid panel", "A calcium score is for risk stratification, not acute chest pain, and lipids can come later. The universal first pair is a stat electrocardiogram and a chest radiograph."]], "c": 2, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 32"}, {"topic": "Postural tachycardia syndrome", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "A 24-year-old woman with Ehlers-Danlos syndrome has palpitations and lightheadedness on standing that ease when she lies down. Within 8 minutes of standing her heart rate rises from 72 to 108 while her pressure stays steady. What is the most likely diagnosis?", "opts": [["Neurogenic orthostatic hypotension", "Neurogenic orthostatic hypotension combines a pressure fall with a minimal heart rate rise, the opposite of her pattern."], ["Vasovagal reflex syncope", "Vasovagal syncope follows triggers such as fear or heat with bradycardia, not a sustained tachycardia on standing."], ["Postural orthostatic tachycardia syndrome", "Correct. A rise of more than 30 beats per minute within 10 minutes of standing, improving when lying down, in a young woman with Ehlers-Danlos syndrome fits the syndrome, sometimes expanded as positional."], ["Non-neurogenic orthostatic hypotension", "Non-neurogenic orthostatic hypotension requires a pressure fall that meets criteria; her pressure stays steady."]], "c": 2, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 18"}, {"topic": "Angina presentation", "io": "Acute coronary syndrome", "q": "Where does the pain of acute coronary syndrome most commonly refer?", "opts": [["Straight to the back", "Pain going straight through to the back is the pancreatic pattern. Acute coronary syndrome most commonly refers to the jaw, tooth or arm."], ["Right lower quadrant", "The right lower quadrant is not a coronary referral site. Acute coronary syndrome refers mostly to the jaw, tooth or arm, sometimes the epigastrium."], ["Right scapular region", "Right scapular pain is the gallbladder pattern. Acute coronary syndrome pain most commonly refers to the jaw, tooth or arm."], ["Jaw, tooth or arm", "Correct. Acute coronary syndrome pain refers most commonly to the jaw, tooth or arm, but it can go to the back, the scapular region, or the epigastrium and left upper quadrant."]], "c": 3, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 31"}, {"topic": "Mitral stenosis", "io": "Mitral stenosis", "q": "A 48-year-old woman with rheumatic mitral stenosis has an echocardiogram showing a markedly enlarged left atrium. Which complication is she at greatest risk of developing?", "opts": [["Concentric hypertrophy", "Concentric left ventricular hypertrophy is the pressure response to aortic stenosis. Mitral stenosis enlarges the left atrium instead, and that leads to atrial fibrillation."], ["Left ventricular dilation", "Eccentric left ventricular dilation is the volume response of aortic and mitral regurgitation. Mitral stenosis loads the left atrium, predisposing to atrial fibrillation."], ["Atrial fibrillation", "Correct. In mitral stenosis the left atrium enlarges under raised pressure, and left atrial enlargement predisposes to an abnormal rhythm such as atrial fibrillation, which is common in severe disease."], ["Aortic root dilation", "Aortic root dilation is a cause of aortic regurgitation, found on echo. Mitral stenosis enlarges the left atrium, which predisposes to atrial fibrillation."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slides 35, 39"}, {"topic": "Tricuspid stenosis", "io": "Tricuspid stenosis", "q": "A 53-year-old woman with severe symptomatic tricuspid stenosis is scheduled for valve replacement. Which valve type is preferred?", "opts": [["Bioprosthetic valve", "Correct. For severe symptomatic tricuspid stenosis, bioprosthetic valve replacement is preferred; balloon valvotomy and repair are reserved for hepatic congestion or severe systemic venous congestion."], ["Annuloplasty ring", "Annuloplasty treats tricuspid regurgitation from annular dilation. When a stenotic tricuspid valve is replaced, bioprosthetic is preferred."], ["Mechanical valve", "A mechanical valve needs lifelong anticoagulation. In tricuspid stenosis bioprosthetic replacement is the preferred valve."], ["Balloon valvotomy", "Balloon valvotomy is reserved for tricuspid stenosis with hepatic congestion that may lead to cirrhosis or severe venous congestion. The preferred replacement is bioprosthetic."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 69"}, {"topic": "Drugs to avoid", "io": "Compare and contrast precipitating factors, clinical manifestations, diagnosis (including role of B-type natriuretic peptide, BNP), and treatment of acute decompensated heart failure.", "q": "A 78-year-old man was treated in the intensive care unit with dobutamine for acute heart failure. His daughter asks whether he can continue it at home to keep his heart strong. What is the most appropriate response?", "opts": [["Only if his blood pressure is high", "Blood pressure does not make dobutamine a home drug. Inotropes are for intensive care use only."], ["Yes, as long-term home maintenance", "Dobutamine is not a home maintenance therapy; inotropes are for intensive care use only."], ["Inotropes are for intensive care only", "Correct. Inotropic therapy, including dobutamine, norepinephrine, epinephrine and milrinone, is for intensive care use only. Outpatient therapy is guideline-directed therapy for his ejection fraction group."], ["Yes, in place of his other medicines", "Inotropes do not replace guideline-directed therapy and are for intensive care use only."]], "c": 2, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 51"}, {"topic": "Screening", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 32-year-old man arrives for his first adult screening visit, having eaten lunch an hour ago. Which lipid test can be done today without fasting?", "opts": [["Triglyceride with high-density cholesterol", "Triglyceride is the fasting-dependent value, so this pair cannot be drawn after a meal."], ["Total and high-density cholesterol", "Correct. Total and high-density cholesterol need no fasting; their ratio is the most efficient and cost-effective way to predict coronary risk."], ["Triglyceride and total cholesterol", "Triglyceride requires a 9- to 12-hour fast, so it cannot be done validly after lunch."], ["Calculated low-density lipoprotein", "A calculated low-density value relies on fasting triglyceride and needs a 9- to 12-hour fast."]], "c": 1, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 66"}, {"topic": "Orthostatic diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "A 74-year-old man reports fainting twice after standing. Before any test is ordered, which part of his evaluation is most important for identifying the source?", "opts": [["A detailed history", "Correct. History is the most important portion of accurately diagnosing the source of orthostatic syncope, or of referring to the right specialty for confirmation."], ["A tilt-table test", "Tilt-table testing is for postural orthostatic tachycardia syndrome and cannot replace the history in orthostatic syncope."], ["An echocardiogram", "Echocardiography evaluates structural cardiogenic syncope; the history comes first and decides whether it is needed."], ["A chest radiograph", "A chest radiograph is not part of the orthostatic evaluation; the history is what identifies the likely source."]], "c": 0, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 13"}, {"topic": "ST-elevation infarction and right ventricular infarct", "io": "ST segment elevation", "q": "Why can nitroglycerin cause shock in a right ventricular infarct?", "opts": [["It provokes coronary spasm", "Nitroglycerin relieves coronary spasm rather than causing it. The problem in a right ventricular infarct is the fall in preload and output."], ["It triggers major bleeding", "Bleeding is the danger of thrombolytics, not nitroglycerin. Nitroglycerin causes shock here by lowering the preload the right ventricle depends on."], ["Lost preload drops output", "Correct. The infarcted right ventricle is preload dependent; decreasing preload reduces the Frank-Starling effect, the ventricle fails into right-sided heart failure, output falls and shock follows."], ["It blocks the atrioventricular node", "Nitroglycerin does not block conduction. In a right ventricular infarct it drops the preload the failing right ventricle needs, and output falls."]], "c": 2, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 63"}, {"topic": "Hypertriglyceridemia management", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 50-year-old woman on a statin has reached her low-density lipoprotein goal, but her triglyceride remains 260 mg/dL after lifestyle changes. What is the most appropriate next step?", "opts": [["Add a fibrate or niacin", "Correct. The primary aim is the low-density goal, and if triglyceride stays above 200 mg/dL once it is reached, additional triglyceride-lowering therapy (a fibrate or niacin) is indicated."], ["Continue with no change", "Triglyceride above 200 after the low-density goal is reached is the trigger for more treatment."], ["Stop the statin and watch", "The statin achieved the primary target and stays; the residual triglyceride is treated in addition."], ["Begin apheresis sessions", "Apheresis is the treatment of choice for homozygous familial hypercholesterolemia, not for residual triglyceride."]], "c": 0, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 116"}, {"topic": "Acute stroke", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 74-year-old woman presents with acute right hemiparesis and aphasia of two hours' duration. Her blood pressure is 196/104. How should her blood pressure be managed?", "opts": [["Leave the blood pressure entirely untreated", "A distinct protocol applies rather than no management at all, so the pressure is managed by different rules."], ["Reduce the mean arterial pressure by a quarter in an hour", "That is the general hypertensive emergency approach, and acute stroke follows a distinct protocol instead."], ["Reduce the pressure to below 130/80 immediately", "Applying a chronic prevention target acutely is exactly what the caution warns against."], ["Follow the acute stroke protocol, not chronic targets", "Correct. Acute stroke is specifically excepted from the general emergency reduction approach, because driving the pressure to a chronic target can extend the ischemic injury."]], "c": 3, "cite": "20. Hypertension - Jaquith.pptx, Slide 27"}, {"topic": "Coarctation of the aorta", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 24-year-old woman with hypertension has weak delayed femoral pulses and a leg pressure lower than her arm pressure. Which study establishes the diagnosis?", "opts": [["Renal duplex ultrasound", "Renal duplex investigates renovascular disease, which is suggested by an abdominal bruit and asymmetric kidneys rather than by femoral pulse delay."], ["Echocardiography", "Correct, and the referral that follows is to a vascular surgeon or a structural cardiologist. The bedside findings raise the question; the echocardiogram answers it."], ["A morning aldosterone to renin ratio", "That screens for primary aldosteronism, which does not produce an arm-to-leg pressure gradient."], ["Polysomnography", "Sleep study investigates obstructive sleep apnea, suggested by snoring and witnessed apneas."]], "c": 1, "cite": "20. Hypertension - Jaquith.pptx, Slide 34"}, {"topic": "Low high-density lipoprotein", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 52-year-old man with low high-density lipoprotein has improved his lifestyle, and his clinician is weighing a drug chosen specifically to raise high-density lipoprotein. Which drug raises it most?", "opts": [["Colesevelam", "Colesevelam is a bile acid sequestrant that lowers low-density lipoprotein 15% to 30% as an adjunct and is not used to raise high-density lipoprotein."], ["Niacin", "Correct. Niacin raises high-density lipoprotein 15% to 35%, better than other medications, compared with fibrates 10% to 30%, statins 5% to 22% and ezetimibe 8%."], ["Pravastatin", "Statins such as pravastatin raise high-density lipoprotein 5% to 22%, less than niacin."], ["Ezetimibe", "Ezetimibe raises high-density lipoprotein only about 8% and is used mainly as a low-density adjunct."]], "c": 1, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 85"}, {"topic": "Pulmonic regurgitation", "io": "Pulmonic regurgitation", "q": "A 62-year-old woman with pulmonary hypertension has pulmonic regurgitation. She has no symptoms of right heart failure. Which is the most appropriate management?", "opts": [["Pulmonic balloon valvuloplasty", "Balloon valvuloplasty opens severe symptomatic pulmonic stenosis, and valvuloplasty is itself the most common cause of pulmonic regurgitation. Treat the underlying condition."], ["Transcatheter valve replacement", "Transcatheter replacement is used for severe aortic stenosis. Pulmonic regurgitation is managed by treating what drives it, such as pulmonary hypertension."], ["Treat the underlying condition", "Correct. Management of pulmonic regurgitation is to treat the underlying condition -- here the pulmonary hypertension, the high-pressure cause -- with referral when it is seen on echo or right heart failure develops."], ["Lifelong warfarin therapy", "Warfarin is for mechanical valves. Pulmonic regurgitation is managed by treating the underlying condition, here pulmonary hypertension."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slides 64, 61"}, {"topic": "Hypotension treatment", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following hypotensive disorders: a. Orthostatic hypotension b. Vasovagal hypotension", "q": "For reflex hypotension, what is the treatment principle?", "opts": [["Reduce or remove the medication", "Reducing or removing a medication is the approach for iatrogenic hypotension, where a drug is the offending agent."], ["Treat the autonomic disease", "Treating an underlying condition is the approach for orthostasis, such as autonomic failure or volume loss, rather than for reflex causes."], ["Start a vasopressor infusion", "Vasopressor infusions are for the emergency department and intensive care only, not the management of reflex hypotension."], ["Reduce or remove the trigger", "Correct. The principle is to remove the offending agent or trigger: reflex causes are managed by reducing or removing the trigger."]], "c": 3, "cite": "Hypotension CM1 2026 - Carter.pptx, Slide 23"}, {"topic": "Prosthetic valves and anticoagulation", "io": "Compare and contrast anticoagulation therapy for prosthetic heart valves.", "q": "Which drug is the most commonly used vitamin K antagonist for a mechanical valve?", "opts": [["Warfarin", "Correct. Warfarin is the most commonly used vitamin K antagonist, the long-term anticoagulant for mechanical heart valves; if surgery requires heparin instead, warfarin is bridged until the ratio is therapeutic."], ["Heparin", "Heparin is not a vitamin K antagonist; it is the bridging agent used around surgery. The most common vitamin K antagonist is warfarin."], ["Clopidogrel", "Clopidogrel is an antiplatelet agent, not a vitamin K antagonist. The most commonly used vitamin K antagonist is warfarin."], ["Aspirin", "Aspirin is an antiplatelet agent, and antiplatelets are ranked below vitamin K antagonists for mechanical valves. The vitamin K antagonist is warfarin."]], "c": 0, "cite": "Valvular Heart Disease - Carter.pptx, Slide 75"}, {"topic": "Mitral valve prolapse", "io": "Mitral valve prolapse", "q": "A 22-year-old healthy woman has no symptoms. On a routine examination a mid-systolic click is heard at the apex with no murmur. Which is the most likely diagnosis?", "opts": [["Mitral stenosis", "Mitral stenosis gives an opening snap and a low-pitched diastolic rumble at the apex, usually decades after rheumatic fever. A lone mid-systolic click is prolapse."], ["Mitral regurgitation", "Mitral regurgitation is a holosystolic blowing murmur radiating to the axilla. A click with no murmur is prolapse, which may later progress to regurgitation."], ["Aortic stenosis", "Aortic stenosis is a harsh systolic crescendo-decrescendo murmur at the second right intercostal space, mostly in older adults. A mid-systolic click is prolapse."], ["Mitral valve prolapse", "Correct. Mitral valve prolapse usually affects healthy women aged 15 to 30, is usually benign and asymptomatic, and gives a mid-systolic click at the apex as the leaflets flare into the left atrium."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 54"}, {"topic": "Home monitoring", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 50-year-old man starting home monitoring asks how to do it. What should he be told?", "opts": [["One reading each morning for three days", "That collects far less data than the standard schedule and is more vulnerable to a single odd value."], ["Readings only when he feels unwell", "Most patients with mild to moderate hypertension have no reliable blood pressure-related symptoms, so symptom-triggered readings would miss the point."], ["Two readings morning and evening for seven days", "Correct, and the accompanying instruction matters as much: do not overreact to the highest single reading, because acting on outliers generates anxiety and unnecessary changes in therapy. They are taken at least a minute apart and the average is reported."], ["Continuous monitoring over twenty-four hours at home", "That describes ambulatory monitoring rather than the home schedule with a validated upper-arm device."]], "c": 2, "cite": "20. Hypertension - Jaquith.pptx, Slide 45"}, {"topic": "Natriuretic peptides", "io": "Compare and contrast precipitating factors, clinical manifestations, diagnosis (including role of B-type natriuretic peptide, BNP), and treatment of acute decompensated heart failure.", "q": "A 73-year-old woman with chronic heart failure has a B-type natriuretic peptide that has risen by 100 since her last visit. What does this change imply?", "opts": [["No change in her relative risk of death", "The level carries prognostic weight: each rise of 100 adds about 35% to the relative risk of death."], ["About 35% higher relative risk of death", "Correct. Each increase of 100 carries about a 35% increase in the relative risk of death, so a rising level is a warning sign even when symptoms seem stable."], ["About 5% higher relative risk of death", "That understates it. Each rise of 100 carries about a 35% increase in the relative risk of death."], ["About 90% higher relative risk of death", "That overstates it. Each rise of 100 carries about a 35% increase in the relative risk of death."]], "c": 1, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 38"}, {"topic": "Hemodynamic profiles", "io": "Compare and contrast precipitating factors, clinical manifestations, diagnosis (including role of B-type natriuretic peptide, BNP), and treatment of acute decompensated heart failure.", "q": "Which finding is a sign of low perfusion rather than congestion in heart failure?", "opts": [["Breathless lying flat", "Orthopnea is a sign of congestion. Low perfusion shows as a narrow pulse pressure, cool extremities and low sodium."], ["Narrow pulse pressure", "Correct. Low perfusion shows as a narrow pulse pressure, sleepiness or obtundation, low serum sodium, cool extremities, hypotension on an angiotensin-converting enzyme inhibitor and renal dysfunction."], ["An enlarged liver", "Hepatomegaly is a sign of congestion. Low perfusion shows as a narrow pulse pressure, cool extremities and low sodium."], ["Distended neck veins", "Jugular venous distension is a sign of congestion. Low perfusion shows as a narrow pulse pressure, cool extremities and low sodium."]], "c": 1, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 29"}, {"topic": "Electrocardiogram localization", "io": "ST segment elevation", "q": "A 62-year-old man has crushing chest pain. His electrocardiogram shows ST elevation in leads II, III and aVF. Which artery is most likely occluded?", "opts": [["Left marginal branch", "The left marginal branch comes off the circumflex and supplies the lateral left ventricle, seen in I, aVL, V5 and V6. Inferior elevation in II, III and aVF points to the right coronary artery."], ["Diagonal branch artery", "A diagonal branch of the left anterior descending artery can cause lateral changes in I, aVL, V5 and V6. The inferior leads point to the right coronary artery."], ["Left anterior descending", "The left anterior descending artery is the culprit for anterior and septal leads V1-V4. ST elevation in II, III and aVF is inferior, the right coronary artery."], ["Right coronary artery", "Correct. Leads II, III and aVF are the inferior leads, and inferior ST elevation points to the right coronary artery (and/or the circumflex). The right coronary artery also supplies the atrioventricular node."]], "c": 3, "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 61, 62"}, {"topic": "Pulmonic stenosis", "io": "Pulmonic stenosis", "q": "A 12-year-old boy has a harsh mid-systolic ejection murmur at the left upper sternal border that increases with inspiration. Which is the most appropriate test to evaluate the valve?", "opts": [["Chest radiograph", "A chest radiograph cannot show valve motion or flow across the valve. Pulmonic stenosis is diagnosed by echocardiogram, with an increased jet on Doppler."], ["Electrocardiogram only", "An electrocardiogram may show right axis deviation and right ventricular hypertrophy, but it cannot show the valve. An echocardiogram is needed."], ["Cardiac catheterization", "Catheterization is not the test used to diagnose pulmonic stenosis. An echocardiogram shows abnormal valve motion and the increased Doppler jet."], ["Echocardiogram", "Correct. Pulmonic stenosis is diagnosed by echocardiogram, which shows abnormal valve motion and an increased jet velocity across the valve on Doppler."]], "c": 3, "cite": "Valvular Heart Disease - Carter.pptx, Slide 58"}, {"topic": "Masked hypertension", "io": "Hypertension: classification, subtypes, effects on target organs, etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing, management, referrals, patient education, and prognosis", "q": "A 52-year-old man reads 124/78 in clinic, but his home average over seven days is 142/90. Why does this matter?", "opts": [["It carries real risk despite normal office readings", "Correct. This is masked hypertension, and it is the reason out-of-office measurement is not merely a way of avoiding overtreatment: it also finds the patients whose risk the clinic reading conceals."], ["It indicates his home device is miscalibrated", "A validated upper-arm device used to the standard schedule is the reference, not the office reading."], ["It is a benign pattern requiring no follow-up", "It carries clinically important cardiovascular risk, which is precisely why identifying it matters."], ["It means he has white coat hypertension", "White coat hypertension is the opposite pattern, with high office and normal home readings."]], "c": 0, "cite": "20. Hypertension - Jaquith.pptx, Slide 48"}, {"topic": "Aortic stenosis", "io": "Aortic stenosis", "q": "A 72-year-old woman reports six months of breathlessness when she walks her dog and one episode of fainting while gardening. She has never had cardiac imaging. Which is the most appropriate next step?", "opts": [["Electrocardiogram alone", "An electrocardiogram may show left ventricular hypertrophy in severe disease, but with low sensitivity and questionable specificity. It cannot exclude the lesion; echocardiography is needed."], ["Transesophageal echocardiogram", "Transesophageal imaging is useful for congenital aortic stenosis. In an older adult with likely degenerative disease, the transthoracic echocardiogram is the study to order."], ["Transthoracic echocardiogram", "Correct. Any patient with symptoms suggestive of aortic stenosis (exertional chest pressure, shortness of breath or syncope) should get an echocardiogram. Transthoracic imaging shows thickened, calcified leaflets with reduced opening."], ["Left heart catheterization", "Left heart catheterization gives the definitive findings, but it is not where the workup starts. Suggestive symptoms are first answered with a transthoracic echocardiogram."]], "c": 2, "cite": "Valvular Heart Disease - Carter.pptx, Slides 18, 22"}, {"topic": "Mixed dyslipidemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atherosclerosis and lipid disorders: 1. Hypertriglyceridemia 2. Hypercholesterolemia 3. HDL cholesterol 4. LDL and VLDL cholesterol", "q": "A 44-year-old man with a sedentary job has a triglyceride of 280 mg/dL, low-density lipoprotein of 165 mg/dL and non-high-density cholesterol of 205 mg/dL. He has no xanthomas. Which is the most likely diagnosis?", "opts": [["Severe hypertriglyceridemia", "The severe form needs triglyceride above 500 mg/dL, usually without raised low-density lipoprotein."], ["Mixed dyslipidemia", "Correct. Triglyceride above 150 with low-density lipoprotein above 130 or non-high-density above 160 defines mixed dyslipidemia, the most common type in clinical practice."], ["Familial chylomicronemia syndrome", "Chylomicronemia has fasting triglyceride usually above 1000 with pancreatitis and eruptive xanthomas."], ["Homozygous familial hypercholesterolemia", "The homozygous form presents in childhood with total cholesterol of about 400 to above 1000 and normal triglyceride."]], "c": 1, "cite": "22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx, Slide 54"}, {"topic": "Post-infarction care and sudden cardiac death", "io": "Acute myocardial infraction", "q": "A 59-year-old man is ready for discharge after an ST-elevation myocardial infarction. His heart rate is 78/min with no bradycardia. Which drug class improves survival rates across the board after infarction?", "opts": [["Glycoprotein 2b/3a inhibitor", "Glycoprotein 2b/3a inhibitors have fallen out of favor and are not a survival therapy after discharge. The class that improves survival rates across the board is the beta blocker."], ["Calcium channel blocker", "Calcium channel blockers do not improve prognosis overall after infarction; only diltiazem and verapamil reduce mortality, and only with preserved left ventricular function. Beta blockers improve survival across the board."], ["Beta blocker", "Correct. Beta blockers improve survival rates across the board after myocardial infarction, so they belong in post-infarction management unless bradycardia or another contraindication is present."], ["Sublingual nitroglycerin", "Sublingual nitroglycerin relieves anginal pain as needed but carries no survival claim. The post-infarction class that improves survival across the board is the beta blocker."]], "c": 2, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 80"}, {"topic": "Atherosclerosis and risk factors", "io": "Identify medical care strategies for coronary artery disease in the lecture topic list for the following populations.", "q": "A 40-year-old woman's mother had a myocardial infarction at 70 and her brother had one at 50. She asks which relative's heart attack raises her own coronary risk. Which answer is accurate?", "opts": [["Neither relative's", "Her brother qualifies: a male first-degree relative with a myocardial infarction before 55 is a nonmodifiable genetic risk factor. Only her mother, at 70, falls outside the cut-off."], ["Only her brother's", "Correct. Family history counts when a male first-degree relative had sudden death or myocardial infarction before 55, or a female first-degree relative before 65. Her brother at 50 qualifies; her mother at 70 does not."], ["Both relatives'", "Only one qualifies. The cut-offs are under 55 for a male first-degree relative and under 65 for a female one, so her brother at 50 counts but her mother at 70 does not."], ["Only her mother's", "A female first-degree relative counts only if the event came before 65. Her mother was 70, so she does not qualify; her brother, a male relative under 55, does."]], "c": 1, "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 22"}, {"topic": "Diagnostic testing", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, prevention, and prognosis for heart failure.", "q": "A 69-year-old man has breathlessness and orthopnea (breathlessness lying flat). His chest radiograph shows blunted costophrenic angles, cephalization (prominent upper-lobe vessels) and an enlarged cardiac silhouette. Which study best measures his ejection fraction?", "opts": [["A repeat chest radiograph", "A radiograph shows effusion, vessels and heart size but no ejection fraction. The multigated acquisition scan measures it most accurately."], ["Multigated acquisition scan", "Correct. The radiograph supports heart failure with effusion, cephalization and an increased cardiothoracic ratio, but cannot measure function. The multigated acquisition scan is the most accurate for ejection fraction."], ["Right heart catheterization", "Catheterization grades hemodynamic severity. The multigated acquisition scan is the most accurate for ejection fraction."], ["Twelve-lead electrocardiogram", "The electrocardiogram shows ischemia, hypertrophy or strain but not ejection fraction. The multigated acquisition scan is the most accurate."]], "c": 1, "cite": "HEART FAILURE Carter 2026 PP.pptx, Slide 33"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(PKEY)); } catch(e){ return null; } }
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
