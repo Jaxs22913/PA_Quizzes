@@ -254,12 +254,18 @@ _ACRO_OK = re.compile(r"^(?:I{1,3}|IV|VI{0,3}|IX|X|S[1-4]|mmHg|QRS)$")
 _UK = re.compile(r"\b\w*(?:aemi|oedem|oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
                  r"anaesth|foet)\w*\b|\b(?:tumour|colour|behaviour|favour|centre|litre|fibre|"
                  r"counsell\w*|labell\w*|modell\w*|travell\w*|ageing|programme|manoeuvres?|grey|"
-                 r"whilst|amongst|analyze[ds]?|paralyze[ds]?|license|defense|practice[ds]?|"
-                 r"recognis\w*|characteris\w*|organis\w*|summaris\w*|emphasis(?:e|ed|es|ing)|"
-                 r"minimis\w*|maximis\w*|normalis\w*|stabilis\w*|prioritis\w*|optimis\w*|mobilis\w*|"
-                 r"utilis\w*|sensitis\w*|hospitalis\w*|specialis\w*|visualis\w*|categoris\w*|"
-                 r"standardis\w*|individualis\w*|randomis\w*|hypothesis(?:e|ed)|neutralis\w*|"
-                 r"metabolis(?:e|ed|es|ing))\b", re.I)
+                 r"whilst|amongst|analy[s]e[ds]?|paraly[s]e[ds]?|licen[c]e|defen[c]e|practi[s]e[ds]?|"
+                 r"(?:recogn|character|organ|summar|minim|maxim|normal|stabil|priorit|optim|mobil|"
+                 r"util|sensit|hospital|special|visual|categor|standard|individual|random|neutral)"
+                 r"is(?:e|ed|es|ing|ation|ations)|emphasis(?:e|ed|es|ing)|"
+                 r"hypothesis(?:e|ed)|metabolis(?:e|ed|es|ing))\b", re.I)
+# 2026-09-25: (1) the -is stems used to end in \w*, which flagged the correct US
+# words "specialist", "characteristic" and "organism"; they now match only the
+# -ise/-ised/-ising/-isation endings (same fix as cms_e5_partition.py). (2) The
+# 2026-09-23 US-spelling sweep rewrote this pattern's British alternatives to
+# the US forms (analyze, license, defense, practice ...), so the guard flagged
+# correct words and missed the British ones; the bracketed spellings keep the
+# British forms without check_us_spelling.py rewriting them again.
 
 SET1_LEAD_NOTE = None
 

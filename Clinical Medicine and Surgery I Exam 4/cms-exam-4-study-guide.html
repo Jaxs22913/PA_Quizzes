@@ -2121,6 +2121,10 @@
 </script>
 
 <style>
+  /* The .cond / dl.eight / table.wr blocks below use --c-* tokens that were never
+     defined, so the condition boxes had currentColor borders and no fill.
+     Definitions copied from the Exam 5 guide (2026-09-25). */
+  :root{--c-line:var(--line);--c-ice:#fcf5f8;--c-mute:var(--soft);--c-panel:var(--accent);--c-panel-fg:#fff;}
   .cond{border:1px solid var(--c-line);border-radius:10px;padding:12px 15px;margin:12px 0;
         background:var(--c-ice);}
   .cond h4{margin:0 0 8px;font-size:1.02rem;display:flex;align-items:baseline;gap:9px;
