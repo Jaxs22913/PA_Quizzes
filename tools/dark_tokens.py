@@ -43,7 +43,10 @@ FROZEN = ("Anatomy Exam", "Anatomy Practicum Exam", "CAM Nutrition Exam",
           "Physical Diagnosis 1 Exam", "Physiology Exam")
 # Page kinds rolled out so far. Each kind needs its component rules in
 # theme.css ("DESIGNED DARK MODE" block) before it is switched on here.
-KINDS = ("quiz",)
+KINDS = ("quiz", "guide")
+# Pages that ship their own bespoke component set the theme.css block does not
+# cover; they keep the invert filter until someone maps their components.
+EXCLUDE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
 SKIP_DIRS = {".git", "tools", "group-quizzes", "cram-personal", "icons", "audio",
              "class-traps", "Remediation"}
 
@@ -167,7 +170,7 @@ def quiz_tokens(v):
 
 def guide_tokens(v):
     a1 = soft(hue_of(v["accent"]))
-    t = {"ink": INK, "paper": PAGE, "line": LINE, "soft": MUTED,
+    t = {"ink": INK, "paper": PAGE, "line": LINE, "soft": MUTED, "muted": MUTED,
          "card": CARD, "soft-bg": a1}
     for k in ("accent", "accent2", "accent3"):
         if k in v:
@@ -238,7 +241,7 @@ def eligible():
         if not os.path.isdir(p) or d in SKIP_DIRS or d.startswith(".") or d.startswith(FROZEN):
             continue
         for f in sorted(os.listdir(p)):
-            if f.endswith(".html"):
+            if f.endswith(".html") and d + "/" + f not in EXCLUDE:
                 yield os.path.join(p, f)
 
 def selftest():

@@ -2987,3 +2987,56 @@ body.homepage .continue-item:hover {
 :root[data-theme="dark"] body[data-dark-kind="quiz"] #resume-banner > p:first-child { color: var(--a-amber) !important; }
 :root[data-theme="dark"] body[data-dark-kind="quiz"] .examtoolbar .examctl-btn-primary { background: var(--card); color: var(--indigo); border-color: var(--indigo); }
 :root[data-theme="dark"] body[data-dark-kind="quiz"] .examtoolbar .examctl-btn-submit { background: var(--indigo-l); color: #fff; }
+
+/* --- study guides --- */
+/* Fills that carry white text read their palette variable where they are
+   painted, so pointing the variable back at the light value ON that element
+   keeps each guide's own banner gradient and header cells exactly as designed. */
+:root[data-theme="dark"] body[data-dark-kind="guide"] header.top,
+:root[data-theme="dark"] body[data-dark-kind="guide"] th,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .lecpill {
+  --accent: var(--accent-l); --accent2: var(--accent2-l, var(--accent-l)); --accent3: var(--accent3-l, var(--accent-l));
+}
+:root[data-theme="dark"] body[data-dark-kind="guide"] header.top { filter: none; }
+:root[data-theme="dark"] body[data-dark-kind="guide"] nav.toc { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .io-box { background: var(--accent3-soft, var(--soft-bg)); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .callout { background: var(--accent3-soft, var(--soft-bg)); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .pearl { background: var(--accent2-soft, var(--soft-bg)); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] tr:nth-child(even) td { background: rgba(255, 255, 255, .035); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] code { background: var(--line); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] figure.fig,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .figgrid,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .figgrid .fg-nopic { background: var(--card); }
+/* Section tags and "Test yourself" buttons: white on the light gold/green
+   fill measured 2.4-3.4:1 even in light mode; in dark they become a tinted
+   chip in the lifted accent, and the button takes the guide's primary fill. */
+:root[data-theme="dark"] body[data-dark-kind="guide"] .tag { background: var(--accent2-soft, var(--soft-bg)); color: var(--accent2, var(--accent)); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .test-yourself-btn { background: var(--accent-l); color: #fff; }
+/* Professor-emphasis marks (professor_emphasized_content) and the amber
+   notes: the site's amber, dark variant. */
+:root[data-theme="dark"] body[data-dark-kind="guide"] mark.prof-highlight { background: var(--a-amber-soft); color: var(--ink); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--a-amber) 55%, transparent); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .prof-flag { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .prof-flag-label,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-star,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .audio-pending { background: var(--a-amber-soft); color: var(--a-amber-hover); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-note b { color: var(--a-amber-hover); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] { --c-ice: var(--soft-bg); --c-mute: var(--soft); --c-line: var(--line); --c-panel: var(--accent-l); }
+/* a legend mark written with an inline light background */
+:root[data-theme="dark"] body[data-dark-kind="guide"] mark.prof-highlight[style] { background: var(--a-amber-soft) !important; }
+/* muted text inside a header cell sits on the light fill: keep it light */
+:root[data-theme="dark"] body[data-dark-kind="guide"] th { --soft: #e5e7eb; }
+/* the referral tier bar's same-day fill measured 4.23:1 with white text in
+   light mode too; its darker neighbour tier is the page's own colour */
+:root[data-theme="dark"] body[data-dark-kind="guide"] .tierbar .t-sd { background: #9b5301; }
+/* one TOC link carries an inline light-mode colour */
+:root[data-theme="dark"] body[data-dark-kind="guide"] nav.toc a.top-link[style*="color"] { color: var(--accent2, var(--accent)) !important; }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-note,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .callout.warn,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .callout.audio-note,
+:root[data-theme="dark"] body[data-dark-kind="guide"] dl.cmp-fields dd.contested { background: var(--a-amber-soft); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] details.cmp-card,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-prof,
+:root[data-theme="dark"] body[data-dark-kind="guide"] .sixty div,
+:root[data-theme="dark"] body[data-dark-kind="guide"] details.qa { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] dl.cmp-fields dt { background: var(--soft-bg); }
+:root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-tools input { background: var(--card); color: var(--ink); }
