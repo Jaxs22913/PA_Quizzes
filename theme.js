@@ -2963,6 +2963,16 @@ window.openTestYourself = (function () {
     panel.appendChild(heading);
     panel.appendChild(scoreEl);
 
+    // Banks were written in two shapes over time: {q, choices, correct, explain|expl}
+    // and {q, o, a, why}. Accept both, so no button throws and every explanation shows.
+    questions = questions.map(function (q) {
+      return {
+        q: q.q,
+        choices: q.choices || q.o || [],
+        correct: (q.correct !== undefined) ? q.correct : q.a,
+        explain: q.explain || q.expl || q.why || ""
+      };
+    });
     questions.forEach(function (q, qi) {
       var qDiv = el("div", "tq-q");
       qDiv.appendChild(el("p", "tq-qtext", (qi + 1) + ". " + q.q));
