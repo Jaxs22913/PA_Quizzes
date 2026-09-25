@@ -43,7 +43,7 @@ FROZEN = ("Anatomy Exam", "Anatomy Practicum Exam", "CAM Nutrition Exam",
           "Physical Diagnosis 1 Exam", "Physiology Exam")
 # Page kinds rolled out so far. Each kind needs its component rules in
 # theme.css ("DESIGNED DARK MODE" block) before it is switched on here.
-KINDS = ("quiz", "guide")
+KINDS = ("quiz", "guide", "cram")
 # Pages that ship their own bespoke component set the theme.css block does not
 # cover; they keep the invert filter until someone maps their components.
 EXCLUDE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
@@ -216,10 +216,30 @@ def tokens_for(kind, s):
 
 BEGIN, END = "<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)-->", "<!--DARK-TOKENS:END-->"
 
-def block(tok):
+TOPIC = re.compile(r'<section class="topic" id="([^"]+)" style="--acc:(#[0-9a-fA-F]{3,6})')
+
+def cram_topic_rules(s):
+    """Cram sheets colour each topic inline (--acc/--acc-bg/--acc-zebra/--acc-ink
+    on the <section>, a dark ink on its TOC chip). Inline custom properties only
+    lose to an !important stylesheet declaration, hence the !important here."""
+    out = []
+    for tid, acc in TOPIC.findall(s):
+        H = hue_of(acc)
+        bg = soft(H)
+        # the term cell sits on the tint, the card, or a zebra row (card + 3.5%
+        # white = #21242a); solve against whichever is lightest
+        worst = max((bg, CARD, "#21242a"), key=lambda c: lum(hex_rgb(c)))
+        ink = lift(acc, worst)
+        out.append('#%s{--acc-bg:%s!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:%s!important}'
+                   % (tid, bg, ink))
+        out.append('.toc a[href="#%s"]{color:%s!important}' % (tid, lift(acc, CARD)))
+    pre = ':root[data-theme="dark"] body[data-dark="tokens"] '
+    return "".join(pre + r for r in out)
+
+def block(tok, extra=""):
     body = "".join("--%s:%s;" % kv for kv in tok.items())
-    return ('%s<style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{%s}</style>%s'
-            % (BEGIN, body, END))
+    return ('%s<style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{%s}%s</style>%s'
+            % (BEGIN, body, extra, END))
 
 def apply(s, kind=None):
     """Return the page with the opt-in attribute and a fresh token block."""
@@ -230,7 +250,8 @@ def apply(s, kind=None):
     if not tok:
         return s
     s = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", "", s, flags=re.S)
-    s = s.replace("</head>", block(tok) + "\n</head>", 1)
+    extra = cram_topic_rules(s) if kind == "cram" else ""
+    s = s.replace("</head>", block(tok, extra) + "\n</head>", 1)
     if not re.search(r"<body[^>]*\bdata-dark=", s):
         s = re.sub(r"<body\b", '<body data-dark="tokens" data-dark-kind="%s"' % kind, s, count=1)
     return s

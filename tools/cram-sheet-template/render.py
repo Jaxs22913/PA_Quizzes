@@ -1,4 +1,4 @@
-import colorsys, os
+import colorsys, os, sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = open(os.path.join(_HERE, "template.html"), encoding="utf-8").read()
@@ -94,4 +94,8 @@ def render(*, title, kicker, h1, sub, topics, guide_href, footer_note, primary=N
     src = src.replace("__TOPICS_HTML__", topics_html)
     src = src.replace("__FOOTER_NOTE__", footer_note)
     src = src.replace("__PRIMARY__", primary)
-    return src
+    # Designed dark mode (tools/dark_tokens.py): opt in and derive the page's
+    # dark palette, per-topic colours included.
+    sys.path.insert(0, os.path.dirname(_HERE))
+    import dark_tokens
+    return dark_tokens.apply(src, "cram")

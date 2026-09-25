@@ -3040,3 +3040,11 @@ body.homepage .continue-item:hover {
 :root[data-theme="dark"] body[data-dark-kind="guide"] details.qa { background: var(--card); }
 :root[data-theme="dark"] body[data-dark-kind="guide"] dl.cmp-fields dt { background: var(--soft-bg); }
 :root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-tools input { background: var(--card); color: var(--ink); }
+
+/* --- cram sheets (tools/cram-sheet-template) --- */
+:root[data-theme="dark"] body[data-dark-kind="cram"] .note,
+:root[data-theme="dark"] body[data-dark-kind="cram"] .toc a { background: var(--card); }
+:root[data-theme="dark"] body[data-dark-kind="cram"] .note { color: var(--body); }
+:root[data-theme="dark"] body[data-dark-kind="cram"] thead th { color: var(--ink); }
+:root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:first-child { background: linear-gradient(to left, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
+:root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:last-child { background: linear-gradient(to right, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
