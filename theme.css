@@ -2188,6 +2188,11 @@ mark.user-hl.hl-flash {
   --measure: 68ch;
 }
 
+/* Safety net: any page that never sets a body font would otherwise fall
+   back to the browser's default serif (Times). :where() keeps this at zero
+   specificity, so every page that DOES set its own font still wins. */
+:where(body) { font-family: var(--font-sans); }
+
 /* Page titles across the app shell. Scoped to the shells + guide/cram
    banners so no quiz question text is ever touched. */
 body.homepage .brand-title,

@@ -93,7 +93,7 @@
   .sub{color:var(--muted);font-size:14px;margin:0 0 22px}
   label.row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.5px;margin:0 0 14px;cursor:pointer}
   select, input[type=number]{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
-  .btn{appearance:none;border:0;cursor:pointer;font:700 15px/1 ui-sans-serif;border-radius:12px;
+  .btn{appearance:none;border:0;cursor:pointer;font:700 15px/1 var(--font-sans,system-ui,sans-serif);border-radius:12px;
     padding:14px 24px;background:var(--acc);color:#fff;transition:background .15s;width:100%}
   .btn:hover{background:var(--acc2)}
   .btn:disabled{opacity:.45;cursor:not-allowed}
@@ -105,14 +105,14 @@
   .hostplayhint{text-align:center;color:var(--muted);font-size:12px;font-style:italic;margin-bottom:22px}
   .playerlist{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;min-height:32px}
   .pchip{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:600}
-  .qnum{font:700 12px/1 ui-sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
-  .qtext{font:700 19px/1.4 ui-sans-serif;margin:0 0 20px}
+  .qnum{font:700 12px/1 var(--font-sans,system-ui,sans-serif);letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+  .qtext{font:700 19px/1.4 var(--font-sans,system-ui,sans-serif);margin:0 0 20px}
   .choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
   .choice{border:1.5px solid var(--line);border-radius:12px;padding:14px 15px;font-size:14.5px}
   .choice.correct{border-color:var(--good);background:var(--goodbg)}
   .reveal-explain{background:var(--paper);border:1px solid var(--line);border-radius:12px;
     padding:14px 16px;margin-bottom:20px;font-size:14.5px;line-height:1.55;color:var(--ink)}
-  .reveal-explain .re-label{display:block;font:700 11px/1 ui-sans-serif;letter-spacing:.08em;
+  .reveal-explain .re-label{display:block;font:700 11px/1 var(--font-sans,system-ui,sans-serif);letter-spacing:.08em;
     text-transform:uppercase;color:var(--good);margin-bottom:6px}
   .reveal-explain .re-cite{display:block;margin-top:10px;font-size:12.5px;color:var(--muted);font-style:italic}
   .progress{color:var(--muted);font-size:13.5px;margin-bottom:16px;text-align:center}
@@ -164,7 +164,7 @@
   .host-code-badge .hcb-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
   .host-code-badge .hcb-value{font:800 18px/1 ui-monospace,Menlo,monospace;letter-spacing:.05em;color:var(--acc)}
   .hcb-close{appearance:none;border:1.5px solid var(--line);background:var(--paper);color:var(--muted);
-    width:24px;height:24px;border-radius:50%;font:700 12px/1 ui-sans-serif;cursor:pointer;flex:none;
+    width:24px;height:24px;border-radius:50%;font:700 12px/1 var(--font-sans,system-ui,sans-serif);cursor:pointer;flex:none;
     display:flex;align-items:center;justify-content:center;padding:0}
   .hcb-close:hover{border-color:var(--bad);color:var(--bad)}
   .pchip .pc-av{margin-right:6px}
