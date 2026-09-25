@@ -4753,7 +4753,15 @@ window.openPauseOverlay = function (opts) {
   bar.setAttribute('aria-hidden', 'true');
   var fill = document.createElement('span');
   bar.appendChild(fill);
-  document.body.appendChild(bar);
+  /* Design review item 17 (2026-09-25): on guides with the sticky back bar
+     the progress line runs along that bar's bottom edge, in the guide's own
+     --accent, instead of across the very top of the window. The back bar is
+     a body child (never inside the inverted .wrap), so the reason above for
+     staying out of .wrap still holds; the bar stays 38px because this line is
+     absolutely positioned. */
+  var backBar = document.querySelector('body > .guide-back-bar');
+  if (backBar) { bar.classList.add('in-back-bar'); backBar.appendChild(bar); }
+  else document.body.appendChild(bar);
 
   var ticking = false;
 

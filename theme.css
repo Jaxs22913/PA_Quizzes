@@ -3012,6 +3012,12 @@ body.homepage .continue-item:hover {
 @media (prefers-reduced-motion: reduce) {
   #read-bar, #read-bar span { transition: none; }
 }
+/* Item 17: docked along the bottom edge of the sticky 38px back bar. */
+#read-bar.in-back-bar { position: absolute; top: auto; bottom: -1px; height: 2px; z-index: 1; }
+#read-bar.in-back-bar span { background: var(--accent, var(--a-amber, #ad631e)); border-radius: 0; }
+/* pages still on the invert filter carry a LIGHT --accent, too dark to read on
+   the dark bar; they keep the Guides amber, which has a real dark value */
+:root[data-theme="dark"] body:not([data-dark="tokens"]) #read-bar.in-back-bar span { background: var(--a-amber); }
 
 
 /* ==========================================================================
