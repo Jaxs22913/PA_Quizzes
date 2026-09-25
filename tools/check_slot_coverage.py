@@ -99,6 +99,14 @@ TITLES = {
  "l7": "Lecture 7 - Benign Skin Lesions",
  "l8": "Lecture 8 - Pigmented Skin Lesions",
  "l9": "Lecture 9 - Pre-Malignant and Malignant Cutaneous Lesions",
+ # Exam 4 (cardiovascular) pools are named cms_e4l<N>_pool_<x> and hold
+ # QUESTIONS rather than POOL_* -- added 2026-09-24, when the discovery below
+ # was found not to see them at all (the Hypertension pools had never been
+ # measured by this tool).
+ "e4l20": "Exam 4 Lecture 20 - Hypertension",
+ "e4l21": "Exam 4 Lecture 21 - Hypotension",
+ "e4l22": "Exam 4 Lecture 22 - Atherosclerosis and Lipid Disorders",
+ "e4l25": "Exam 4 Lecture 25 - Heart Failure",
 }
 
 
@@ -106,12 +114,12 @@ def _discover():
     import glob, os.path as _p
     here = _p.dirname(_p.abspath(__file__))
     found = {}
-    for path in glob.glob(_p.join(here, "cms_l*_pool_*.py")):
-        m = re.match(r"cms_(l\d+)_pool_([a-z])$", _p.basename(path)[:-3])
+    for path in glob.glob(_p.join(here, "cms_l*_pool_*.py")) + glob.glob(_p.join(here, "cms_e4l*_pool_*.py")):
+        m = re.match(r"cms_((?:e4)?l\d+)_pool_([a-z])$", _p.basename(path)[:-3])
         if m:
             found.setdefault(m.group(1), []).append("cms_%s_pool_%s" % m.groups())
     out = OrderedDict()
-    for key in sorted(found, key=lambda k: int(k[1:])):
+    for key in sorted(found, key=lambda k: (k.startswith("e4"), int(re.sub(r"^(e4)?l", "", k)))):
         title = TITLES.get(key)
         assert title, ("pools exist for %s but it has no title here -- add one rather "
                        "than letting the lecture go unchecked" % key)
@@ -128,6 +136,8 @@ def load(mods):
         except ModuleNotFoundError:
             continue                      # a pool that does not exist yet is fine
         names = [k for k in dir(mod) if k.startswith("POOL_")]
+        if not names and hasattr(mod, "QUESTIONS"):
+            names = ["QUESTIONS"]          # the Exam 4 pools
         for n in names:
             out += getattr(mod, n)
     return out

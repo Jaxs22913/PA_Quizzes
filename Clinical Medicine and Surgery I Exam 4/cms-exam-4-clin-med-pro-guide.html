@@ -208,7 +208,7 @@
 </head>
 <body>
 <style>
-  /* Professor-emphasised content. Star + highlight, per the convention set by
+  /* Professor-emphasized content. Star + highlight, per the convention set by
      the CAM/Nutrition guide. Here the marks are derived from the 2026-08-17
      lecture recording: prosodic weight, time spent, and repetition. */
   .prof-flag{
@@ -266,7 +266,7 @@
 </header>
 
 <style>
-  /* Clin Med Pro cards (render_clinmedpro_e34.py) */
+  /* Clin Med Pro cards (tools/build_cms_clinmedpro.py) */
   .cmp-intro ol{columns:2;column-gap:28px;margin:6px 0 4px;padding-left:22px;font-size:.9rem}
   .cmp-tools{position:sticky;top:38px;z-index:5;background:var(--paper);padding:10px 0 8px;
     display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line);margin-bottom:10px}
@@ -304,6 +304,8 @@
   .cmp-src{display:inline-block;margin-left:6px;font-size:.7rem;color:var(--soft);white-space:nowrap}
   .cmp-prof{margin:0;padding:8px 14px;font-size:.84rem;background:#fffdf5;border-bottom:1px solid var(--line)}
   .cmp-hidden{display:none !important}
+  dl.cmp-fields mark.prof-highlight{background:#fef3d4;color:#3a2c05;padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 0 0 1px #e8c766}
   @media(max-width:820px){.cmp-tools{position:static}}
   @media(max-width:640px){
     .cmp-intro ol{columns:1}
@@ -402,12 +404,12 @@
 <main>
 <section class="deck" id="how">
 <h2 class="deck-title">How to use this guide</h2>
-<div class="callout cmp-intro"><p>Dr. Carter&rsquo;s <b>Clin Med Pro Study Tip</b> (Hypotension deck, slide 7) lists what to learn for every condition. Each card below answers those ten fields:</p><ol><li>Name of Condition</li><li>Definition</li><li>Etiology (cause)</li><li>Epidemiology (who)</li><li>Risk Factors</li><li>Pathology</li><li>Clinical Manifestation</li><li>Diagnosis</li><li>Treatment/Therapy</li><li>Mortality &#9733;</li></ol><p>Every field comes from the lecture slides only. Where a deck is silent the card says <i>Not covered in the lecture</i> rather than filling the gap from elsewhere (196 of 740 fields in this exam; Mortality alone: 52 of 74). Mortality gives death or survival figures where a deck has them; where it states only an outcome, the line is labelled <i>Prognosis</i> or <i>Complications</i>. Slide numbers follow each field. Tap a card to open it.</p></div>
+<div class="callout cmp-intro"><p>Dr. Carter&rsquo;s <b>Clin Med Pro Study Tip</b> (Hypotension deck, slide 7) lists what to learn for every condition. Each card below answers those ten fields:</p><ol><li>Name of Condition</li><li>Definition</li><li>Etiology (cause)</li><li>Epidemiology (who)</li><li>Risk Factors</li><li>Pathology</li><li>Clinical Manifestation</li><li>Diagnosis</li><li>Treatment/Therapy</li><li>Mortality &#9733;</li></ol><p>Every field comes from the lecture slides only. Where a deck is silent the card says <i>Not covered in the lecture</i> rather than filling the gap from elsewhere (196 of 740 fields in this exam; Mortality alone: 52 of 74). Slide numbers follow each field. Cards open closed; tap one to read it.</p></div>
 </section>
 <div class="cmp-tools"><input type="search" id="cmp-filter" placeholder="Filter conditions (e.g. vertigo, murmur, statin)" aria-label="Filter conditions" autocomplete="off"><span class="cmp-count" id="cmp-count" aria-live="polite"></span><button type="button" id="cmp-expand">Expand all</button><button type="button" id="cmp-collapse">Collapse all</button></div>
 <section class="deck" id="l20">
 <h2 class="deck-title">Lecture 20 &middot; Hypertension</h2>
-<p class="lecturer">Prof. Monique Jaquith &middot; 22 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Prof. Monique Jaquith &middot; 22 conditions &middot; source: 20. Hypertension- Jaquith .pptx</p>
 <details class="cmp-card" id="l20-primary-hypertension"><summary><span class="cmp-name">Primary (essential) hypertension</span><span class="cmp-nc">1 not covered</span></summary>
 <dl class="cmp-fields">
 <dt>Name of Condition</dt><dd>Primary (essential) hypertension (HTN); adult hypertension <span class="cmp-src">Slides 4, 10</span></dd>
@@ -719,7 +721,7 @@
 </section>
 <section class="deck" id="l21">
 <h2 class="deck-title">Lecture 21 &middot; Hypotension</h2>
-<p class="lecturer">Dr. Carter &middot; 8 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Dr. Carter &middot; 8 conditions &middot; source: Hypotension CM1 2026 - Carter.pptx</p>
 <details class="cmp-card" id="l21-hypotension"><summary><span class="cmp-name">Hypotension</span><span class="cmp-nc">2 not covered</span></summary>
 <dl class="cmp-fields">
 <dt>Name of Condition</dt><dd>Hypotension <span class="cmp-src">Slide 8</span></dd>
@@ -835,7 +837,7 @@
 </section>
 <section class="deck" id="l22">
 <h2 class="deck-title">Lecture 22 &middot; Atherosclerosis and Lipid Disorders</h2>
-<p class="lecturer">Dr. Carter &middot; 13 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Dr. Carter &middot; 13 conditions &middot; source: 22. Atherosclerosis and Lipid Disorders 2026 Carter.pptx</p>
 <div class="cmp-note"><b>Note:</b> Lipid treatment follows the 2018 cholesterol guideline, per Dr. Carter; the deck&#x27;s older Adult Treatment Panel III (ATP III) goals and its 2026 infographic are left out.</div>
 <details class="cmp-card" id="l22-dyslipidemia"><summary><span class="cmp-name">Dyslipidemia</span></summary>
 <dl class="cmp-fields">
@@ -1022,7 +1024,7 @@
 </section>
 <section class="deck" id="l23">
 <h2 class="deck-title">Lecture 23 &middot; Valvular Heart Disease</h2>
-<p class="lecturer">Dr. Carter &middot; 11 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Dr. Carter &middot; 11 conditions &middot; source: Valvular Heart Disease - Carter.pptx</p>
 <div class="cmp-note"><b>Note:</b> Slide corrections from the lecture to be added. Dr. Carter said in class that some of these slides contain mistakes; facts the slides contradict are not keyed below until the lecture transcript settles them.</div>
 <details class="cmp-card" id="l23-aortic-stenosis"><summary><span class="cmp-name">Aortic stenosis</span></summary>
 <dl class="cmp-fields">
@@ -1181,7 +1183,7 @@
 </section>
 <section class="deck" id="l24">
 <h2 class="deck-title">Lecture 24 &middot; Coronary Artery Disease</h2>
-<p class="lecturer">Dr. Carter &middot; 11 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Dr. Carter &middot; 11 conditions &middot; source: Coronary Artery Disease Carter 2026.pptx</p>
 <details class="cmp-card" id="l24-ischemic-heart-disease"><summary><span class="cmp-name">Ischemic heart disease (general CAD)</span></summary>
 <dl class="cmp-fields">
 <dt>Name of Condition</dt><dd>Ischemic heart disease; coronary artery disease (CAD) / ischemia; ischemic myocardium <span class="cmp-src">Slides 1, 4, 5</span></dd>
@@ -1339,7 +1341,7 @@
 </section>
 <section class="deck" id="l25">
 <h2 class="deck-title">Lecture 25 &middot; Heart Failure</h2>
-<p class="lecturer">Dr. Carter &middot; 9 conditions &middot; from the lecture slides</p>
+<p class="lecturer">Dr. Carter &middot; 9 conditions &middot; source: HEART FAILURE Carter 2026 PP.pptx</p>
 <div class="cmp-note"><b>Note:</b> Classified per the 2022 AHA/ACC/HFSA heart failure guideline (American Heart Association / American College of Cardiology / Heart Failure Society of America), per Dr. Carter; the deck&#x27;s 2026 changes on slide 57 are left out.</div>
 <details class="cmp-card" id="l25-heart-failure"><summary><span class="cmp-name">Heart failure (the syndrome)</span><span class="cmp-star">&#9733; Professor emphasized</span></summary>
 <p class="cmp-prof">&#9733; Slide 32 flags Brain Natriuretic Peptide with &#x27;***&#x27;</p>
@@ -1560,6 +1562,12 @@
     cards.forEach(function(c){if(!c.classList.contains('cmp-hidden'))c.open=true;});});
   document.getElementById('cmp-collapse').addEventListener('click',function(){
     cards.forEach(function(c){c.open=false;});});
+  // theme.js "Search this guide" marks the current hit with .search-hit-current
+  // but cannot see inside a closed <details>; open that card (a user action).
+  new MutationObserver(function(ms){ms.forEach(function(m){var el=m.target;
+    if(el.classList&&el.classList.contains('search-hit-current')){var d=el.closest('details.cmp-card');
+      if(d&&!d.open){d.classList.remove('cmp-hidden');d.open=true;el.scrollIntoView({block:'center'});}}});})
+    .observe(document.querySelector('main')||document.body,{subtree:true,attributes:true,attributeFilter:['class']});
   // Following a table-of-contents link opens that card (a user action, not load state).
   document.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!a)return;
