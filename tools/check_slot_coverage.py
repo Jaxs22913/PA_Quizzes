@@ -107,6 +107,7 @@ TITLES = {
  "e4l21": "Exam 4 Lecture 21 - Hypotension",
  "e4l22": "Exam 4 Lecture 22 - Atherosclerosis and Lipid Disorders",
  "e4l23": "Exam 4 Lecture 23 - Valvular Heart Disease",
+ "e4l24": "Exam 4 Lecture 24 - Coronary Artery Disease",
  "e4l25": "Exam 4 Lecture 25 - Heart Failure",
  # Exam 5 (Cardiology Block Exam II), same shape as Exam 4 -- added 2026-09-25.
  "e5l27": "Exam 5 Lecture 27 - Arterial Occlusive Disease and Aortic Aneurysm",

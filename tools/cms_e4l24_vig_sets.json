@@ -1,0 +1,1626 @@
+{
+ "set1": [
+  {
+   "topic": "Electrocardiogram localization",
+   "io": "ST segment elevation",
+   "q": "A 69-year-old man has 40 minutes of chest pressure. His 12-lead electrocardiogram shows ST depression in V1, V2 and V3 with no ST elevation in any lead. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "Order a coronary calcium score",
+     "A calcium score stratifies future risk and has no place in acute chest pain. V1-V3 depression calls for posterior leads V7-V9 to find a posterior infarct."
+    ],
+    [
+     "Record posterior leads V7-V9",
+     "Correct. ST depression in V1-V3 can be the reciprocal view of a posterior infarct. Posterior leads V7-V9 show the ST elevation directly, confirming a posterior infarct from the right coronary or circumflex artery."
+    ],
+    [
+     "Repeat the tracing next week",
+     "A posterior infarct is easy to miss, and waiting a week loses the chance to treat it. Record posterior leads V7-V9 now to look for ST elevation on the back of the heart."
+    ],
+    [
+     "Treat as stable angina",
+     "Forty minutes of pressure with ST depression in V1-V3 is not stable exertional angina. It may be a posterior infarct, confirmed with posterior leads V7-V9."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 62",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 60-year-old woman has episodes of jaw and tooth pain when she walks uphill that ease when she rests. Her dentist found no dental cause. Which is the most likely cause of her pain?",
+   "opts": [
+    [
+     "Gallbladder disease",
+     "Gallbladder pain refers to the right scapular region and is not brought on by walking uphill. Exertional jaw and tooth pain is referred ischemic pain."
+    ],
+    [
+     "Pancreatitis",
+     "Pancreatic pain goes straight through to the back and is not exertional. Jaw and tooth pain with exertion that eases with rest is referred cardiac pain."
+    ],
+    [
+     "Aortic dissection",
+     "Aortic dissection refers pain to the left or interscapular region and is not a recurrent exertional pattern. Referral to the jaw and teeth fits ischemia."
+    ],
+    [
+     "Myocardial ischemia",
+     "Correct. Exertional pain relieved by rest is ischemic, and acute coronary syndrome refers pain most commonly to the jaw, tooth or arm. Toothache is even listed among the descriptors of angina."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 26, 31",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Unstable angina and non-ST-elevation infarction",
+   "io": "Non-ST segment elevation",
+   "q": "A 66-year-old man with a non-ST-elevation myocardial infarction is pain-free and stable on aspirin, clopidogrel and a beta blocker. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "A thrombolytic infusion",
+     "Thrombolytics are for an ST-elevation infarction when percutaneous intervention is two or more hours away. A stabilized non-ST-elevation infarction goes to catheterization."
+    ],
+    [
+     "Discharge, no further testing",
+     "Discharge without imaging the coronaries leaves the culprit lesion untreated. After stabilization the next step is left heart catheterization with coronary angiography."
+    ],
+    [
+     "Coronary calcium scoring",
+     "A calcium score is a risk-stratification test for the future, not a tool for an acute coronary syndrome. The next step here is left heart catheterization."
+    ],
+    [
+     "Left heart catheterization",
+     "Correct. Following initial stabilization, unstable angina and non-ST-elevation infarction proceed to left heart catheterization with coronary angiography to find the lesion, then angioplasty or a stent as needed."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 50",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Troponin",
+   "io": "Acute coronary syndrome",
+   "q": "A 44-year-old woman with atypical chest discomfort has a normal electrocardiogram and two high-sensitivity troponin I values of 3 and 4 ng/L. She asks what the blood test showed. Which explanation is most accurate?",
+   "opts": [
+    [
+     "It proves her arteries are clear",
+     "Troponin measures heart muscle injury, not the state of the arteries; only angiography shows the lumen. Her high-sensitivity troponin I values of 3 and 4 ng/L rule out an infarct."
+    ],
+    [
+     "It rules in a heart attack",
+     "High-sensitivity troponin is a rule-out tool, not a rule-in one, and her high-sensitivity troponin I values of 3 and 4 ng/L are below the women's 99th percentile of 12 ng/L."
+    ],
+    [
+     "It cannot be used in women",
+     "High-sensitivity troponin I has a women's cut-off of its own, 12 ng/L, set lower than the men's 20 ng/L precisely so women are not missed."
+    ],
+    [
+     "It safely rules out a heart attack",
+     "Correct. High-sensitivity troponin is used mainly to rule out cardiac injury and send people home safely; it is less useful as a positive predictor. Two high-sensitivity troponin I values of 3 and 4 ng/L sit well below the women's 12 ng/L."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "test finding",
+   "lead": "education"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 56-year-old woman with an ST-elevation myocardial infarction takes a phosphodiesterase inhibitor for pulmonary arterial hypertension; her last dose was six hours ago. Which medication is contraindicated?",
+   "opts": [
+    [
+     "Nitroglycerin",
+     "Correct. Nitroglycerin is contraindicated within 24 hours of a phosphodiesterase inhibitor. These drugs are prescribed for pulmonary arterial hypertension as well as erectile dysfunction, so everyone is asked."
+    ],
+    [
+     "Chewable aspirin",
+     "Chewable aspirin is the first medication in every ST-elevation infarction and does not interact with a phosphodiesterase inhibitor. Nitroglycerin is the one contraindicated."
+    ],
+    [
+     "Clopidogrel",
+     "Clopidogrel, a P2Y12 receptor antagonist, is given once catheterization is confirmed. A recent phosphodiesterase inhibitor rules out nitroglycerin, not clopidogrel."
+    ],
+    [
+     "A heparin drip",
+     "A heparin drip is the anticoagulant started once catheterization is confirmed. The drug made dangerous by a recent phosphodiesterase inhibitor is nitroglycerin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 73",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Post-infarction care and sudden cardiac death",
+   "io": "Acute coronary syndrome",
+   "q": "A 52-year-old woman is admitted with a non-ST-elevation myocardial infarction. Her low-density lipoprotein cholesterol is 68 mg/dL, and she has never taken a statin. What is the most appropriate statin plan?",
+   "opts": [
+    [
+     "A statin only if her cholesterol rises",
+     "Waiting for the cholesterol to rise misses the indication: every acute coronary syndrome patient gets a high-intensity statin now, regardless of baseline low-density lipoprotein cholesterol."
+    ],
+    [
+     "High-intensity statin before discharge",
+     "Correct. Every patient with an acute coronary syndrome gets high-intensity statin therapy regardless of baseline low-density lipoprotein cholesterol, and it should be started before hospital discharge."
+    ],
+    [
+     "No statin, since her cholesterol is low",
+     "The statin decision after an acute coronary syndrome does not depend on the cholesterol value. High-intensity therapy is given regardless of baseline low-density lipoprotein cholesterol."
+    ],
+    [
+     "Moderate-intensity statin after discharge",
+     "Both the intensity and the timing are off. Acute coronary syndrome calls for high-intensity statin therapy, and it should be instituted before the patient leaves the hospital."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 81",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Ischemia and coronary anatomy",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following coronary artery disease:",
+   "q": "A 45-year-old woman with untreated hyperthyroidism has chest pressure whenever she climbs stairs. She asks how her thyroid condition could cause chest pain. Which explanation is most accurate?",
+   "opts": [
+    [
+     "It raises the heart's oxygen demand",
+     "Correct. Myocardial ischemia is a mismatch between oxygen demand and supply. Hyperthyroidism sits on the increased-demand side, with exercise, emotional stress, left ventricular hypertrophy, hyperthermia and cocaine."
+    ],
+    [
+     "It lowers the blood's oxygen supply",
+     "Reduced supply comes from atherosclerosis, thrombus, anemia, spasm, dissection, carboxyhemoglobin and hypoxia. Hyperthyroidism works on the other side, by raising oxygen demand."
+    ],
+    [
+     "It narrows the coronary arteries",
+     "Fixed narrowing is atherosclerosis, a supply-side cause. Hyperthyroidism causes ischemia by increasing the heart's oxygen demand, not by narrowing the vessels."
+    ],
+    [
+     "It triggers coronary artery spasm",
+     "Spasm is a supply-side cause of ischemia, seen with vasospastic angina. Hyperthyroidism is listed among the causes of increased myocardial oxygen demand."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 5, 6",
+   "slot": "etiology",
+   "lead": "education"
+  },
+  {
+   "topic": "Post-infarction care and sudden cardiac death",
+   "io": "Acute myocardial infraction",
+   "q": "A 68-year-old man is recovering from a large anterior wall myocardial infarction and is already on aspirin. Which additional agent is recommended for his infarct?",
+   "opts": [
+    [
+     "Warfarin",
+     "Correct. Aspirin is recommended after infarction, and warfarin is additionally recommended in patients with large anterior wall myocardial infarctions, which is his situation."
+    ],
+    [
+     "Streptokinase",
+     "Streptokinase is a fibrinolytic given acutely for ST-elevation infarction when a percutaneous intervention unit is 2 or more hours away. It is not long-term therapy; warfarin is, for a large anterior infarct."
+    ],
+    [
+     "Eptifibatide",
+     "Eptifibatide is a glycoprotein 2b/3a inhibitor, a class that has fallen out of favor. After a large anterior wall infarction, the recommended addition is warfarin."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine is a calcium channel blocker, and that class does not improve prognosis overall after infarction. A large anterior wall infarct calls for warfarin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 83",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 35-year-old woman has confirmed vasospastic angina with early-morning episodes at rest. She has stopped smoking and carries sublingual nitroglycerin for symptoms. Which is the first-line preventive therapy?",
+   "opts": [
+    [
+     "Nonselective beta blocker",
+     "Nonselective beta blockers are on the avoid list for vasospastic angina, together with aspirin and triptans. The first-line preventive therapy is a calcium channel blocker."
+    ],
+    [
+     "Dual antiplatelet therapy",
+     "Dual antiplatelet therapy protects stents and treats acute coronary syndromes from plaque. Aspirin is avoided in vasospastic angina; a calcium channel blocker is first-line."
+    ],
+    [
+     "Coronary stent placement",
+     "A stent holds open an artery narrowed by plaque, but vasospasm occurs in arteries without high-grade stenosis. First-line therapy is a calcium channel blocker."
+    ],
+    [
+     "Calcium channel blocker",
+     "Correct. First-line therapy for vasospastic angina is a calcium channel blocker such as diltiazem or amlodipine, alongside stopping smoking and nitrates for symptoms."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 92",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "Acute coronary syndrome",
+   "q": "A 57-year-old man had a drug-eluting stent placed two weeks ago for an acute coronary syndrome. He tells you the clopidogrel is expensive and he plans to stop it because his chest pain is gone. What should he be told?",
+   "opts": [
+    [
+     "It can stop once the chest pain is gone",
+     "The medication protects the stent, not the symptom. Stopping dual antiplatelet therapy in the first 6 weeks carries about a 50% risk of sudden in-stent restenosis, pain or no pain."
+    ],
+    [
+     "Missed doses matter only if pain returns",
+     "Restenosis can come suddenly and without warning. Missing dual antiplatelet therapy in the first 6 weeks after a stent carries about a 50% risk of sudden in-stent restenosis."
+    ],
+    [
+     "Stopping now risks sudden restenosis",
+     "Correct. Noncompliance with dual antiplatelet therapy (a P2Y12 receptor antagonist such as clopidogrel plus aspirin) in the first 6 weeks after a stent carries about a 50% risk of sudden in-stent restenosis."
+    ],
+    [
+     "Aspirin alone now protects the stent",
+     "After a stent, protection comes from dual antiplatelet therapy: clopidogrel plus aspirin together. Dropping clopidogrel in the first 6 weeks carries about a 50% risk of sudden in-stent restenosis."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 52",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 57-year-old man has substernal pressure whenever he mows the lawn. He asks whether changing his position will ease the pain if it is angina. Which answer is accurate?",
+   "opts": [
+    [
+     "Leaning forward usually relieves it",
+     "Angina is not positional, so leaning forward does not relieve it. Exertional anginal pain eases with rest and with nitroglycerin."
+    ],
+    [
+     "Deep breathing usually relieves it",
+     "Breathing does not change anginal pain, which is not affected by position. Rest and nitroglycerin relieve exertional angina."
+    ],
+    [
+     "Angina is not affected by position",
+     "Correct. Anginal pain is not affected by position and typically worsens with exertion, because exertion raises myocardial oxygen demand. Rest and nitroglycerin relieve it."
+    ],
+    [
+     "Lying flat usually relieves it",
+     "Position does not change angina. It is relieved by rest and nitroglycerin, because the pain comes from the demand that exertion places on the heart."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 27",
+   "slot": "manifestation",
+   "lead": "education"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 60-year-old woman has chest pressure only with brisk walking, relieved by rest. Lifestyle changes, a statin, aspirin and sublingual nitroglycerin are started. Which daily medication class is added first?",
+   "opts": [
+    [
+     "Beta blocker",
+     "Correct. Stable angina treatment is lifestyle modification, a beta blocker, a statin and aspirin, with sublingual nitroglycerin for attacks. A calcium channel blocker is used only if beta blockers are contraindicated."
+    ],
+    [
+     "Calcium channel blocker",
+     "A calcium channel blocker is the substitute when beta blockers are contraindicated in stable angina. With no contraindication, the beta blocker comes first."
+    ],
+    [
+     "Thrombolytic agent",
+     "Thrombolytics are given for an ST-elevation infarction when the nearest percutaneous intervention unit is two or more hours away. They have no role in stable exertional angina."
+    ],
+    [
+     "Intravenous nitrate",
+     "Intravenous nitrates are part of the initial treatment of unstable angina and non-ST-elevation infarction in hospital. Stable angina is treated with a daily beta blocker."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 39",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 55-year-old man who received a heart transplant has exertional shortness of breath and fatigue but no chest pain. His daughter asks how he could have heart disease without pain. Which explanation is accurate?",
+   "opts": [
+    [
+     "Chest pain appears only with a full infarct",
+     "Angina is chest discomfort from transient ischemia short of infarction, so pain does not wait for an infarct. In a transplanted heart the ischemia may be silent."
+    ],
+    [
+     "His shortness of breath rules out the heart",
+     "Shortness of breath is one of the presenting symptoms of silent ischemia, alongside cough, nausea, diaphoresis, dizziness and fatigue. It points toward the heart, not away."
+    ],
+    [
+     "Transplanted hearts can have silent ischemia",
+     "Correct. A transplanted heart is one of the settings for silent ischemia, along with diabetes and peripheral neuropathy: chest discomfort may be absent, and shortness of breath or fatigue may be the only signs."
+    ],
+    [
+     "Transplanted hearts cannot become ischemic",
+     "A transplanted heart can become ischemic; it simply may not signal pain. A transplanted heart is listed among the causes of silent ischemia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 29, 30",
+   "slot": "manifestation",
+   "lead": "education"
+  },
+  {
+   "topic": "Chest pain workup and risk scores",
+   "io": "Acute coronary syndrome",
+   "q": "A 47-year-old woman with chest pressure in the emergency department asks whether a coronary calcium score could show whether she is having a heart attack. Which answer is accurate?",
+   "opts": [
+    [
+     "Yes; a score of zero excludes one",
+     "A calcium score is not used to diagnose or exclude acute coronary syndrome. It stratifies long-term risk; the acute question is answered by the electrocardiogram and troponin."
+    ],
+    [
+     "Yes, if done within the hour",
+     "Timing does not make a calcium score an acute test. It is used for risk stratification only, not for acute coronary syndrome."
+    ],
+    [
+     "No; it estimates future risk",
+     "Correct. A cardiac computed tomography calcium score is a risk stratification tool, not a test for acute coronary syndrome. A higher score means higher future risk, not an infarct in progress."
+    ],
+    [
+     "Yes; a high score confirms one",
+     "A high calcium score raises future risk but cannot confirm an acute event. Acute coronary syndrome is worked up with the electrocardiogram and troponin, not a calcium score."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 35",
+   "slot": "initial test",
+   "lead": "education"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 57-year-old woman with an ST-elevation myocardial infarction arrives at a hospital with a catheterization lab. What is the goal time from her arrival to balloon inflation?",
+   "opts": [
+    [
+     "Under 90 minutes",
+     "Correct. The goal door-to-balloon time is under 90 minutes. Time is muscle: the electrocardiogram within 10 minutes starts the clock, and the catheterization team is called at once."
+    ],
+    [
+     "Under 30 minutes",
+     "Thirty minutes is the goal for starting a thrombolytic after arrival when intervention is two or more hours away. The door-to-balloon goal is under 90 minutes."
+    ],
+    [
+     "Under 10 minutes",
+     "Ten minutes is the target for obtaining the electrocardiogram after arrival. The door-to-balloon goal for opening the artery is under 90 minutes."
+    ],
+    [
+     "Under 3 hours",
+     "Three hours would be too slow for an on-site catheterization lab. The door-to-balloon goal is under 90 minutes; distant units two or more hours away prompt thrombolytics."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 68",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "ST segment elevation",
+   "q": "A 66-year-old man with severe multivessel coronary disease is scheduled for a coronary artery bypass graft. Which conduit is the first choice to bypass his obstructions?",
+   "opts": [
+    [
+     "The popliteal vein",
+     "The popliteal vein is not harvested for bypass. First choice is a mammary or radial artery; the great saphenous vein is the fallback when an artery cannot be used."
+    ],
+    [
+     "A mammary or radial artery",
+     "Correct. Bypass grafting anastomoses one or both of the mammary arteries, or a radial artery, to the coronary artery distal to the obstructive lesion. A vein is used only if an artery cannot be used."
+    ],
+    [
+     "The great saphenous vein",
+     "The great saphenous vein is the vein used when an artery cannot be, connecting the aorta to the coronary artery beyond the obstruction. An artery, mammary or radial, is the first choice."
+    ],
+    [
+     "The superficial femoral vein",
+     "The superficial femoral vein is not the bypass conduit. Arteries (the mammary or radial) come first, and when a vein must be used it is the great saphenous vein."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 76, 77",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Atherosclerosis and risk factors",
+   "io": "Identify medical care strategies for coronary artery disease in the lecture topic list for the following populations.",
+   "q": "A 52-year-old woman and her 52-year-old husband ask at a wellness visit whether their age already counts as a coronary risk factor. Which answer is accurate?",
+   "opts": [
+    [
+     "Only for her",
+     "The thresholds run the other way. Women reach the age risk factor at 55 or older, men at 45 or older, so at 52 only the husband qualifies."
+    ],
+    [
+     "For both of them",
+     "They share an age but not a threshold. Men count from 45 and women from 55, so the 52-year-old woman does not yet have age as a risk factor."
+    ],
+    [
+     "For neither of them",
+     "Her husband already qualifies: age is a coronary risk factor at 45 or older in men. She will reach the female threshold at 55."
+    ],
+    [
+     "Only for her husband",
+     "Correct. Age becomes a nonmodifiable coronary risk factor at 45 or older for men and 55 or older for women. At 52 he has crossed his threshold and she has not."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 22",
+   "slot": "risk factors",
+   "lead": "education"
+  },
+  {
+   "topic": "Troponin",
+   "io": "Acute coronary syndrome",
+   "q": "A 56-year-old man with chest discomfort has a first high-sensitivity troponin I of 16 ng/L. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "Discharge on this one value",
+     "A single high-sensitivity troponin I, even below the men's 20 ng/L cut-off, is not enough to send him home. A second troponin I is drawn to watch the trend."
+    ],
+    [
+     "Start thrombolytic therapy",
+     "Thrombolytics are for ST-elevation myocardial infarction when catheterization is far away. His high-sensitivity troponin I of 16 ng/L is not abnormal for a man; repeat it."
+    ],
+    [
+     "Call it abnormal and admit",
+     "The men's high-sensitivity troponin I cut-off is 20 ng/L; 16 ng/L would be abnormal in a woman, not in him. The right move is a second troponin I."
+    ],
+    [
+     "Draw a second troponin I",
+     "Correct. For a man the high-sensitivity troponin I 99th percentile is 20 ng/L, so 16 ng/L is not abnormal, but one value never stands alone: when you get one, you get two, and watch the change."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Troponin",
+   "io": "Unstable",
+   "q": "A 61-year-old man has new chest pain at rest, T-wave inversion on his electrocardiogram and a standard troponin I of 0.01 ng/mL. What does this troponin I result indicate?",
+   "opts": [
+    [
+     "It needs no repeat draw",
+     "One troponin I value never stands alone: when you get one, you get two, because a rising second value changes the diagnosis. His 0.01 ng/mL standard troponin I is repeated."
+    ],
+    [
+     "It is not abnormal",
+     "Correct. A standard troponin I is abnormal above 0.04 ng/mL, so 0.01 ng/mL is not abnormal. Rest pain with nonspecific T-wave changes and a normal troponin is unstable angina, and the troponin I is still repeated."
+    ],
+    [
+     "It confirms an infarction",
+     "Infarction requires an elevated troponin. A standard troponin I of 0.01 ng/mL is below the 0.04 ng/mL cut-off, which is what keeps this picture at unstable angina."
+    ],
+    [
+     "It is abnormal for a man",
+     "Sex-specific cut-offs belong to the high-sensitivity troponin I (20 ng/L in men). A standard troponin I is abnormal above 0.04 ng/mL for anyone, and 0.01 ng/mL is not."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 46, 47; Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 40-year-old man with vasospastic angina, now on a calcium channel blocker, read that daily aspirin prevents heart attacks and asks whether he should start it. What should he be told?",
+   "opts": [
+    [
+     "Aspirin is avoided in this condition",
+     "Correct. Aspirin is on the avoid list for vasospastic angina, together with nonselective beta blockers and triptans. His prevention is a calcium channel blocker plus stopping smoking."
+    ],
+    [
+     "Aspirin prevents future spasm attacks",
+     "Aspirin targets platelets in plaque-driven acute coronary syndromes, and in vasospastic angina it is on the avoid list. Spasm is prevented with a calcium channel blocker."
+    ],
+    [
+     "Take aspirin only during an episode",
+     "Episodes are relieved with nitroglycerin, not aspirin. Aspirin is avoided in vasospastic angina, along with nonselective beta blockers and triptans."
+    ],
+    [
+     "Add aspirin once he quits smoking",
+     "Stopping smoking is part of treatment, but it does not make aspirin appropriate. Aspirin stays on the avoid list for vasospastic angina."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 92",
+   "slot": "avoid",
+   "lead": "education"
+  },
+  {
+   "topic": "Ischemia and coronary anatomy",
+   "io": "Acute myocardial infraction",
+   "q": "A 60-year-old man with an occluded coronary artery is being rushed to the catheterization laboratory. His wife asks how quickly heart muscle is permanently damaged. Which time frame is most accurate?",
+   "opts": [
+    [
+     "About 24 to 48 hours",
+     "A day or two describes later healing, not the onset of permanent damage. Irreversible myocardial injury occurs within about 40 to 60 minutes of ischemia."
+    ],
+    [
+     "About 40 to 60 minutes",
+     "Correct. The heart is only 0.3% of body weight but consumes 7% of total oxygen demand, and irreversible injury occurs in about 40 to 60 minutes of ischemia. That is why rapid reperfusion matters."
+    ],
+    [
+     "About 5 to 10 minutes",
+     "Ischemic muscle does not die within the first few minutes. Irreversible myocardial injury occurs after about 40 to 60 minutes, which is the window reperfusion races against."
+    ],
+    [
+     "About 6 to 8 hours",
+     "Waiting hours is far too long: irreversible myocardial injury begins after about 40 to 60 minutes of ischemia, so the damage accumulates well before six hours."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 7",
+   "slot": "prognosis",
+   "lead": "education"
+  },
+  {
+   "topic": "Electrocardiogram localization",
+   "io": "ST segment elevation",
+   "q": "A 58-year-old woman has chest pain with ST elevation in V1 through V4. Which pattern of ischemia does ST elevation reflect?",
+   "opts": [
+    [
+     "Microvascular dysfunction",
+     "Microvascular angina gives angina with ST changes but normal coronary arteries on angiography. ST elevation in V1-V4 reflects transmural ischemia of the anterior wall."
+    ],
+    [
+     "Transmural ischemia",
+     "Correct. Transmural ischemia, involving the full thickness of the wall, produces ST elevation in the leads over that region. Subendocardial ischemia of the inner wall produces ST depression instead."
+    ],
+    [
+     "Subendocardial ischemia",
+     "Subendocardial ischemia, confined to the inner wall, produces ST depression over the ischemic region. ST elevation reflects full-thickness, transmural ischemia."
+    ],
+    [
+     "Reversible demand ischemia",
+     "Demand ischemia in stable angina produces stress-induced changes, usually T-wave inversion. Persistent ST elevation reflects transmural ischemia."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 55",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Microvascular angina",
+   "io": "Angina pectoris",
+   "q": "A 55-year-old woman has microvascular angina confirmed after angiography showed normal coronary arteries. Which treatment is appropriate?",
+   "opts": [
+    [
+     "Reassurance alone",
+     "Microvascular angina is not left untreated; its treatment is very similar to coronary artery disease, with risk-factor reduction, a calcium channel blocker, beta blocker, statin and more."
+    ],
+    [
+     "Calcium channel blocker",
+     "Correct. Treatment of microvascular angina is very similar to coronary artery disease: lifestyle modification and risk-factor reduction, a calcium channel blocker, beta blocker, angiotensin-converting enzyme inhibitor and statin."
+    ],
+    [
+     "Coronary stent placement",
+     "A stent holds open a narrowed coronary artery, and her arteries are normal on angiography. Microvascular angina is treated much like coronary artery disease, including a calcium channel blocker."
+    ],
+    [
+     "Thrombolytic therapy",
+     "Thrombolytics are for ST-elevation infarction when a percutaneous unit is 2 or more hours away. Microvascular angina is treated medically, for example with a calcium channel blocker."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 96",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "Non-ST segment elevation",
+   "q": "A 62-year-old woman is being discharged after a drug-eluting stent was placed for a non-ST-elevation myocardial infarction. She is on aspirin and clopidogrel. Which other drug class belongs in her discharge regimen?",
+   "opts": [
+    [
+     "Calcium channel blocker",
+     "Calcium channel blockers do not improve prognosis overall after an infarction. The post-stent regimen adds a statin and an angiotensin-converting enzyme inhibitor to dual antiplatelet therapy."
+    ],
+    [
+     "Fibrinolytic infusion",
+     "Fibrinolytics are given for ST-elevation infarction only when a percutaneous intervention unit is 2 or more hours away. Her artery is already stented; she needs a statin at discharge."
+    ],
+    [
+     "High-intensity statin",
+     "Correct. Medical optimization after stent placement is dual antiplatelet therapy, a statin and an angiotensin-converting enzyme inhibitor, with anticoagulation if indicated. Every acute coronary syndrome patient gets a high-intensity statin before discharge."
+    ],
+    [
+     "Glycoprotein 2b/3a inhibitor",
+     "Glycoprotein 2b/3a inhibitors such as eptifibatide have fallen out of favor. Post-stent optimization is dual antiplatelet therapy, a statin and an angiotensin-converting enzyme inhibitor."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 52, 81",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Unstable angina and non-ST-elevation infarction",
+   "io": "Non-ST segment elevation",
+   "q": "A 68-year-old woman has an hour of substernal pressure. Her electrocardiogram shows ST-segment depression of 2 mm in V5 and V6 without ST elevation, and her standard troponin I is 0.62 ng/mL. Which is the most likely diagnosis?",
+   "opts": [
+    [
+     "Unstable angina",
+     "Unstable angina has the same kind of electrocardiogram changes but a troponin I that is not abnormal. Her troponin I of 0.62 ng/mL is elevated, which makes it an infarction."
+    ],
+    [
+     "Infarction with ST elevation",
+     "An ST-elevation infarction needs ST elevation above 1 mm in two or more leads. Her tracing shows ST depression with no elevation, so the infarct is non-ST-elevation."
+    ],
+    [
+     "Vasospastic angina",
+     "Vasospastic angina causes transient ST changes during an episode of rest pain that resolve, with normal coronaries at angiography. It does not explain an hour of pain with an elevated troponin I."
+    ],
+    [
+     "Infarction without ST elevation",
+     "Correct. ST-segment depression above 1 mm and/or T-wave inversion in two or more consecutive leads, with symptoms and an elevated troponin I (standard troponin I above 0.04 ng/mL), is a non-ST-elevation infarction."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 47, 86; Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "differential",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 68-year-old woman with right ventricular infarction (ST elevation in V4R) is given sublingual nitroglycerin in triage, and her blood pressure falls to 70/40 mmHg. What explains the fall?",
+   "opts": [
+    [
+     "Ventricular aneurysm",
+     "A ventricular aneurysm develops later as a complication of infarction. An abrupt fall after nitroglycerin in right ventricular infarction is from lost preload."
+    ],
+    [
+     "Lost preload",
+     "Correct. Nitroglycerin reduces preload, which removes the Frank-Starling effect the injured right ventricle depends on. Output drops further, the right ventricle fails and the patient goes into shock."
+    ],
+    [
+     "Myocardial rupture",
+     "Myocardial rupture is a mechanical complication of infarction, not the immediate effect of a nitrate. Here nitroglycerin removed the preload the right ventricle needs."
+    ],
+    [
+     "Thrombolytic bleeding",
+     "Thrombolytics carry a risk of intracerebral hemorrhage, but she received nitroglycerin, not a thrombolytic. The fall comes from lost preload to the right ventricle."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 63",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 44-year-old woman with vasospastic angina also has migraines. Her medication list includes amlodipine, diltiazem, sublingual nitroglycerin and sumatriptan. Which medication should she avoid?",
+   "opts": [
+    [
+     "Sumatriptan",
+     "Correct. Triptans such as sumatriptan can precipitate coronary vasospasm and are on the avoid list for vasospastic angina, along with nonselective beta blockers and aspirin."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine is a calcium channel blocker, the first-line therapy for vasospastic angina, so it should be continued. The drug to stop is the triptan, which can precipitate spasm."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem is a first-line calcium channel blocker for vasospastic angina and belongs in her regimen. Sumatriptan, a triptan, is the one to avoid."
+    ],
+    [
+     "Sublingual nitroglycerin",
+     "Nitrates are used for symptoms in vasospastic angina, and the episodes respond to nitroglycerin. The medication to avoid is sumatriptan, since triptans can trigger spasm."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 89, 92",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Electrocardiogram localization",
+   "io": "ST segment elevation",
+   "q": "A 62-year-old man has crushing chest pain. His electrocardiogram shows ST elevation in leads II, III and aVF. Which artery is most likely occluded?",
+   "opts": [
+    [
+     "Diagonal branch artery",
+     "A diagonal branch of the left anterior descending artery can cause lateral changes in I, aVL, V5 and V6. The inferior leads point to the right coronary artery."
+    ],
+    [
+     "Left anterior descending",
+     "The left anterior descending artery is the culprit for anterior and septal leads V1-V4. ST elevation in II, III and aVF is inferior, the right coronary artery."
+    ],
+    [
+     "Right coronary artery",
+     "Correct. Leads II, III and aVF are the inferior leads, and inferior ST elevation points to the right coronary artery (and/or the circumflex). The right coronary artery also supplies the atrioventricular node."
+    ],
+    [
+     "Left marginal branch",
+     "The left marginal branch comes off the circumflex and supplies the lateral left ventricle, seen in I, aVL, V5 and V6. Inferior elevation in II, III and aVF points to the right coronary artery."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 61, 62",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 36-year-old man who smokes a pack a day has vasospastic angina with episodes at rest in the early morning. He takes amlodipine and asks which lifestyle change matters most. What should he be told?",
+   "opts": [
+    [
+     "Follow a low-salt diet",
+     "A low-salt, low-fat diet is advice after unstable angina and non-ST-elevation infarction. For vasospastic angina, stopping smoking, a major risk factor, matters most."
+    ],
+    [
+     "Sleep sitting upright",
+     "Anginal pain is not affected by position, and early-morning episodes come from spasm, not posture. Stopping smoking, a major risk factor, is the change to make."
+    ],
+    [
+     "Stop smoking",
+     "Correct. Cigarette smoking is a major risk factor for vasospastic angina, and stopping smoking is the first line of its treatment, alongside a calcium channel blocker and nitrates for symptoms."
+    ],
+    [
+     "Avoid all exertion",
+     "Vasospastic episodes occur at rest, most often from midnight to early morning, not with exertion. The change that matters most is to stop smoking, a major risk factor."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 89, 92",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 62-year-old woman with exertional chest tightness develops T-wave inversion during an exercise stress test. Which test is the gold standard for confirming coronary artery disease?",
+   "opts": [
+    [
+     "Coronary angiography",
+     "Correct. Coronary angiography, with dye injected at catheterization and pictures taken of the coronary arteries, is the gold standard for diagnosing coronary artery disease after a positive stress test."
+    ],
+    [
+     "Nuclear stress test",
+     "A nuclear stress test shows reversible perfusion defects (ischemia) and fixed ones (infarction), and an abnormal result leads to catheterization. It is not the gold standard; angiography is."
+    ],
+    [
+     "Transthoracic echocardiogram",
+     "An echocardiogram shows regional wall motion abnormalities such as hypokinesia or akinesia. It does not image the coronary lumen; coronary angiography is the gold standard."
+    ],
+    [
+     "Coronary calcium score",
+     "A cardiac computed tomography calcium score is used for risk stratification, not to diagnose an acute syndrome or confirm disease. Coronary angiography is the gold standard."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 35, 38",
+   "slot": "gold standard",
+   "lead": "test"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Ischemia and coronary anatomy",
+   "io": "Acute myocardial infraction",
+   "q": "A 61-year-old man with an acute myocardial infarction is taken for coronary angiography. Which vessel is most often the culprit in this setting?",
+   "opts": [
+    [
+     "Anterior interventricular artery",
+     "Correct. Occlusion of the anterior interventricular artery, formerly called the left anterior descending artery, is the most common cause of acute myocardial infarction (about 40–50%), followed by the right coronary artery and then the left circumflex."
+    ],
+    [
+     "Posterior interventricular branch",
+     "The posterior interventricular branch is a branch vessel, usually arising from the right coronary artery. It is not a leading culprit; the anterior interventricular artery is the most common."
+    ],
+    [
+     "Right coronary artery",
+     "The right coronary artery is the second most common culprit, at about 30–40% of acute infarcts. The anterior interventricular artery comes first, at about 40–50%."
+    ],
+    [
+     "Left circumflex artery",
+     "The left circumflex artery is the least common of the three main culprits, at about 15–20%. The anterior interventricular artery is the most common cause of acute myocardial infarction."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 14",
+   "slot": "epidemiology",
+   "lead": "test"
+  },
+  {
+   "topic": "Ischemia and coronary anatomy",
+   "io": "Acute myocardial infraction",
+   "q": "A 64-year-old man with an inferior ST-elevation myocardial infarction suddenly develops complete heart block on the monitor. Which artery is most likely occluded?",
+   "opts": [
+    [
+     "Diagonal artery",
+     "The diagonal artery is a lateral branch that helps supply the left ventricle. Complete heart block during an infarct points to the right coronary artery, which supplies the atrioventricular node."
+    ],
+    [
+     "Right coronary artery",
+     "Correct. The right coronary artery supplies the atrioventricular node, so an occlusion that produces complete heart block points to it. That is why right coronary artery infarcts are the ones most likely to cause dysrhythmias."
+    ],
+    [
+     "Left circumflex artery",
+     "The left circumflex artery can supply the sinoatrial node in a minority of people, but the atrioventricular node is supplied by the right coronary artery, so heart block implicates the right coronary artery."
+    ],
+    [
+     "Anterior interventricular artery",
+     "The anterior interventricular artery (the former left anterior descending) is the most common culprit overall, but it supplies the anterior wall and septum, not the atrioventricular node."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 11",
+   "slot": "etiology",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Troponin",
+   "io": "Acute coronary syndrome",
+   "q": "A 59-year-old woman with chest pressure has a first high-sensitivity troponin I of 8 ng/L and a second, drawn later, of 30 ng/L. How should the second result be interpreted?",
+   "opts": [
+    [
+     "A lab error to ignore",
+     "A rise between draws is exactly what serial troponins look for. Her second high-sensitivity troponin I of 30 ng/L is abnormal for a woman and must be acted on."
+    ],
+    [
+     "A normal result for a woman",
+     "The women's high-sensitivity troponin I 99th percentile is 12 ng/L; 30 ng/L is well above it. The result is abnormal and rising."
+    ],
+    [
+     "A stable, reassuring result",
+     "A jump from 8 to 30 ng/L in high-sensitivity troponin I is not stable. A second value higher than the first is the change serial draws are meant to catch."
+    ],
+    [
+     "A rising, abnormal result",
+     "Correct. Serial troponins are drawn to watch the change. Her second high-sensitivity troponin I of 30 ng/L is above the women's 99th percentile of 12 ng/L and higher than the first, so another is ordered as cells continue to die."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 68-year-old woman with long-standing diabetes and peripheral neuropathy has had two days of shortness of breath, nausea and fatigue, with no chest pain. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "Treat as viral gastroenteritis",
+     "Nausea and fatigue in a patient with diabetes and neuropathy may be silent ischemia. Labeling it gastroenteritis skips the stat electrocardiogram she needs."
+    ],
+    [
+     "Reassure her and send her home",
+     "The absence of chest pain does not exclude ischemia in diabetes or neuropathy; these patients have silent ischemia. She needs a stat electrocardiogram first."
+    ],
+    [
+     "Obtain a stat electrocardiogram",
+     "Correct. Chest discomfort may be absent in silent ischemia, which occurs with diabetes, peripheral neuropathy and a transplanted heart. Dyspnea, nausea and fatigue can be the presentation, and every chest pain workup starts with a stat electrocardiogram."
+    ],
+    [
+     "Order an outpatient stress test",
+     "A stress test belongs to the stable workup. Possible acute ischemia presenting silently needs a stat electrocardiogram now, not a delayed outpatient study."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 29, 30, 32",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "Non-ST segment elevation",
+   "q": "A 60-year-old man with a non-ST-elevation myocardial infarction is on aspirin, clopidogrel and heparin before catheterization. A colleague suggests adding eptifibatide. Which antiplatelet class, having fallen out of favor, should not be added?",
+   "opts": [
+    [
+     "Glycoprotein 2b/3a inhibitor",
+     "Correct. Eptifibatide, abciximab and tirofiban block the glycoprotein 2b/3a receptor, and this class has fallen out of favor. Antithrombotic therapy is typically dual antiplatelet therapy with or without anticoagulation."
+    ],
+    [
+     "P2Y12 receptor antagonist",
+     "The P2Y12 receptor antagonist (clopidogrel, prasugrel, ticagrelor) is half of standard dual antiplatelet therapy, which he is already on. It is the glycoprotein 2b/3a class that has fallen out of favor."
+    ],
+    [
+     "Aspirin, the cyclooxygenase inhibitor",
+     "Aspirin is the cyclooxygenase inhibitor in dual antiplatelet therapy and is given chewed at once in every acute coronary syndrome. The class that has fallen out of favor is the glycoprotein 2b/3a inhibitor."
+    ],
+    [
+     "High-intensity statin",
+     "A statin is not an antiplatelet agent, and a high-intensity statin is given to every acute coronary syndrome patient before discharge. The glycoprotein 2b/3a inhibitors are the ones out of favor."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 52, 74",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Chest pain workup and risk scores",
+   "io": "Acute coronary syndrome",
+   "q": "A 58-year-old woman with chest pain in the emergency department is being risk-stratified with the HEART score. Which element does this score include?",
+   "opts": [
+    [
+     "Chest radiograph",
+     "A chest radiograph is part of every chest pain workup, but it is not an element of the score. The HEART components are history, electrocardiogram, age, risk factors and troponin."
+    ],
+    [
+     "Calcium score",
+     "A calcium score is a separate long-term risk tool, not part of the HEART score, which uses history, electrocardiogram, age, risk factors and the initial troponin."
+    ],
+    [
+     "D-dimer level",
+     "A D-dimer is a possible chest pain test, not a HEART element. The score combines history, electrocardiogram, age, risk factors and the initial troponin."
+    ],
+    [
+     "Initial troponin",
+     "Correct. The HEART score is built from History, Electrocardiogram, Age, Risk factors and the initial Troponin. It predicts the risk of an adverse outcome in acute coronary syndrome."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 34",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 58-year-old man has chest pressure when he climbs two flights of stairs. It fades after three minutes of rest and has followed the same pattern for months. His resting electrocardiogram is normal. Which test is most appropriate next?",
+   "opts": [
+    [
+     "Serial troponin I measurements",
+     "Serial troponin I draws belong to rest pain and a suspected acute coronary syndrome. His pain is exertional, brief and unchanged, which is stable angina and calls for a stress test."
+    ],
+    [
+     "Ergonovine provocation test",
+     "Ergonovine or acetylcholine given during angiography is the gold standard for vasospastic angina, which occurs at rest. His pain is brought on by exertion and relieved by rest."
+    ],
+    [
+     "Posterior-lead electrocardiogram",
+     "Posterior leads V7-V9 are recorded when ST depression in V1-V3 suggests a posterior infarct. A normal resting tracing with exertional pain calls for a stress test instead."
+    ],
+    [
+     "Exercise treadmill stress test",
+     "Correct. Stable angina is diagnosed by stress-test-induced electrocardiogram changes, usually T-wave inversion, on an exercise (treadmill), nuclear or cardiac computed tomography stress test. Coronary angiography remains the gold standard."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 37, 38",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 49-year-old man has chest pressure radiating to his left shoulder, with shortness of breath and sweating, while shoveling snow. Which treatment typically relieves this type of pain?",
+   "opts": [
+    [
+     "An antacid",
+     "An antacid treats reflux pain. Exertional pressure radiating to the shoulder with sweating is typical cardiac chest pain, which is relieved with nitroglycerin."
+    ],
+    [
+     "A muscle relaxant",
+     "Musculoskeletal pain does not come with sweating and shortness of breath on exertion. Typical cardiac chest pain is relieved with nitroglycerin."
+    ],
+    [
+     "An anti-inflammatory",
+     "An anti-inflammatory targets musculoskeletal or pericardial pain. The pattern here is typical angina, and nitroglycerin is what relieves it."
+    ],
+    [
+     "Nitroglycerin",
+     "Correct. Typical cardiac chest pain is substernal pressure, worse with exertion, radiating to the neck or shoulder, with shortness of breath and diaphoresis, and relieved with nitroglycerin."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 25",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Angina presentation",
+   "io": "Angina pectoris",
+   "q": "A 63-year-old man describes his chest pressure while holding a clenched fist over his sternum (Levine sign). Which condition does this gesture most suggest?",
+   "opts": [
+    [
+     "Aortic dissection",
+     "Aortic dissection classically refers pain to the left or interscapular region of the back. A clenched fist over the sternum is the Levine sign of ischemic chest pain."
+    ],
+    [
+     "Biliary colic",
+     "Gallbladder pain refers to the right scapular region. The Levine sign, a fist held over the sternum, suggests myocardial ischemia instead."
+    ],
+    [
+     "Pancreatitis",
+     "Pancreatic pain goes straight through to the back. A clenched fist over the sternum is the Levine sign, which points to ischemic chest pain."
+    ],
+    [
+     "Myocardial ischemia",
+     "Correct. The Levine sign, a clenched fist held over the sternum while describing the discomfort, is the classic gesture of ischemic, anginal chest pain."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 28",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Electrocardiogram localization",
+   "io": "ST segment elevation",
+   "q": "A 61-year-old man has chest pain with ST elevation in V1 through V4. Which artery is the most likely culprit?",
+   "opts": [
+    [
+     "Right coronary artery trunk",
+     "The right coronary artery is the culprit for inferior ST elevation in II, III and aVF. V1-V4 are the anterior and septal leads of the anterior interventricular artery."
+    ],
+    [
+     "Anterior interventricular artery",
+     "Correct. V1-V4 are the anterior and septal leads, supplied by the anterior interventricular artery, formerly the left anterior descending artery, the most common culprit in acute infarction."
+    ],
+    [
+     "Posterior interventricular branch",
+     "The posterior interventricular branch supplies the inferior wall, seen in II, III and aVF. Anterior and septal leads V1-V4 point to the anterior interventricular artery."
+    ],
+    [
+     "Left circumflex coronary artery",
+     "The circumflex is the culprit for the lateral leads I, aVL, V5 and V6. ST elevation in V1-V4 is anterior and septal, the anterior interventricular artery."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 14, 61",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 62-year-old woman with an ST-elevation myocardial infarction is to receive a fibrinolytic because the nearest intervention unit is far away. Which agent is the most commonly used today?",
+   "opts": [
+    [
+     "Tenecteplase",
+     "Correct. Tenecteplase is the most common fibrinolytic today. Alteplase, reteplase, streptokinase, anistreplase and lanoteplase are other agents, and every one carries a risk of intracerebral hemorrhage."
+    ],
+    [
+     "Streptokinase",
+     "Streptokinase is an older fibrinolytic still on the list of agents, but it is not the most common today. Tenecteplase is."
+    ],
+    [
+     "Eptifibatide",
+     "Eptifibatide is a platelet glycoprotein receptor inhibitor, a class that has fallen out of favor. It is not a fibrinolytic; tenecteplase is the most common one."
+    ],
+    [
+     "Heparin",
+     "Heparin is an anticoagulant drip started once catheterization is confirmed. It does not dissolve clot; tenecteplase is the most common fibrinolytic."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 74",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Troponin",
+   "io": "Acute coronary syndrome",
+   "q": "A 46-year-old man with six hours of atypical chest discomfort has a normal electrocardiogram and two high-sensitivity troponin I values of 4 ng/L. Which disposition is most appropriate?",
+   "opts": [
+    [
+     "Start thrombolytic therapy",
+     "Thrombolytics treat ST-elevation infarction when catheterization is far away. His normal electrocardiogram and high-sensitivity troponin I of 4 ng/L show no infarct."
+    ],
+    [
+     "Admit to intensive care",
+     "Intensive care is for high-risk acute coronary syndrome, such as a TIMI (Thrombolysis in Myocardial Infarction) score of 3 or higher. Two not-abnormal high-sensitivity troponin I values allow safe discharge."
+    ],
+    [
+     "Discharge with follow-up",
+     "Correct. Troponin is a tool that says who can safely go home. Two high-sensitivity troponin I values of 4 ng/L, far below the men's 20 ng/L, with a normal electrocardiogram rule out an infarct."
+    ],
+    [
+     "Urgent cardiac catheterization",
+     "Catheterization is for a patient with an infarct or high risk. Two high-sensitivity troponin I values of 4 ng/L and a normal electrocardiogram rule out a heart attack."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026 - SUPPLEMENT slide 72a",
+   "slot": "first-line",
+   "lead": "next step"
+  },
+  {
+   "topic": "Electrocardiogram localization",
+   "io": "ST segment elevation",
+   "q": "A 65-year-old man has 30 minutes of crushing chest pressure. His electrocardiogram shows a new left bundle branch block; a tracing last month was normal. How should this be managed?",
+   "opts": [
+    [
+     "As stable angina",
+     "Stable angina is exertional pain relieved by rest with a stable tracing. A new left bundle branch block with ongoing pressure is treated as an ST-elevation infarction."
+    ],
+    [
+     "As unstable angina",
+     "Unstable angina shows nonspecific changes such as inverted T waves. A new left bundle branch block is an ST-elevation infarction equivalent and is managed as one."
+    ],
+    [
+     "As a benign conduction delay",
+     "An old, known bundle branch block may be incidental, but a new one with 30 minutes of chest pressure is an ST-elevation infarction equivalent and treated as such."
+    ],
+    [
+     "As an ST-elevation infarct",
+     "Correct. A new left bundle branch block with ischemic symptoms is treated as an ST-elevation myocardial infarction equivalent: aspirin and activation of the catheterization team without waiting."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 65",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 55-year-old man with stable exertional angina has a documented contraindication to beta blockers. Which medication class is used instead?",
+   "opts": [
+    [
+     "Thrombolytic agent",
+     "Thrombolytics dissolve clot in an ST-elevation infarction when percutaneous intervention is two or more hours away. They do not replace a daily anti-anginal drug."
+    ],
+    [
+     "Phosphodiesterase inhibitor",
+     "A phosphodiesterase inhibitor within 24 hours makes nitroglycerin contraindicated; it is not an angina drug. The replacement for a beta blocker is a calcium channel blocker."
+    ],
+    [
+     "Calcium channel blocker",
+     "Correct. In stable angina, a calcium channel blocker takes the place of the beta blocker when beta blockers are contraindicated, alongside lifestyle change, a statin, aspirin and sublingual nitroglycerin."
+    ],
+    [
+     "Nonselective beta blocker",
+     "A nonselective beta blocker is still a beta blocker, so the contraindication applies. The listed alternative in stable angina is a calcium channel blocker."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 39",
+   "slot": "escalation",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "Unstable",
+   "q": "A 71-year-old woman with unstable angina undergoes catheterization. Her narrowed coronary artery is dilated with an inflated balloon, and no stent is left behind. Which term describes this procedure?",
+   "opts": [
+    [
+     "Atherectomy",
+     "Atherectomy is the physical removal of coronary atheroma, calcium and excess cellular material. This artery was stretched open with a balloon, not cleared by removing plaque."
+    ],
+    [
+     "Plain old balloon angioplasty",
+     "Correct. Plain old balloon angioplasty uses a balloon to open a narrowed artery without placing a stent. Once a drug-eluting or bare stent is placed, the procedure is called a percutaneous coronary intervention."
+    ],
+    [
+     "Percutaneous coronary intervention",
+     "Percutaneous coronary intervention is the placement of a drug-eluting or non-drug-eluting stent to keep the artery open. No stent was placed here, so the balloon-only procedure has its own name."
+    ],
+    [
+     "Coronary angiography",
+     "Coronary angiography is dye injected to identify the lesion or blockage. It images the artery; dilating the narrowing with a balloon is a separate, therapeutic step."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 50, 69",
+   "slot": "differential",
+   "lead": "treatment"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 63-year-old man has ST elevation in leads II, III and aVF and in the right-sided lead V4R, consistent with right ventricular infarction. His blood pressure is 104/66 mmHg. Which medication should be avoided?",
+   "opts": [
+    [
+     "A heparin drip",
+     "A heparin drip is started once catheterization is confirmed in an ST-elevation infarction. In right ventricular infarction the drug to avoid is nitroglycerin."
+    ],
+    [
+     "Nitroglycerin",
+     "Correct. In a right ventricular infarct, do not give nitroglycerin: it lowers preload, the failing right ventricle loses its Frank-Starling support, output falls further and the patient can go into shock."
+    ],
+    [
+     "Chewable aspirin",
+     "Chewable aspirin is given in every ST-elevation infarction, including one involving the right ventricle. The drug to avoid here is nitroglycerin, which drops preload."
+    ],
+    [
+     "Clopidogrel",
+     "Clopidogrel, a P2Y12 receptor antagonist, is given once catheterization is confirmed. Right ventricular involvement rules out nitroglycerin, not antiplatelet therapy."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 62, 63",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 64-year-old man at a hospital with a catheterization lab has ST elevation in leads I, aVL, V5 and V6. He has chewed his aspirin. Which team is called now?",
+   "opts": [
+    [
+     "Outpatient cardiology clinic",
+     "An outpatient referral fits stable disease, not an ongoing infarction. With ST elevation, the catheterization team is activated immediately."
+    ],
+    [
+     "Inpatient medicine team",
+     "Admission to a medical ward delays reperfusion. An ST-elevation infarction needs the catheterization team now, aiming for under 90 minutes door to balloon."
+    ],
+    [
+     "Cardiac catheterization team",
+     "Correct. Treatment of an ST-elevation infarction is aspirin and a call to the cardiac catheterization (percutaneous coronary intervention) team, with a door-to-balloon goal under 90 minutes."
+    ],
+    [
+     "Cardiothoracic surgery team",
+     "Surgical bypass is reserved for selected patients, such as those who cannot receive stents. The emergency call in an ST-elevation infarction is to the catheterization team."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 66, 68",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "ST-elevation infarction and right ventricular infarct",
+   "io": "ST segment elevation",
+   "q": "A 54-year-old man has an anterior ST-elevation myocardial infarction at a rural hospital. The nearest percutaneous coronary intervention unit is three hours away. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "Coronary artery bypass graft",
+     "Bypass grafting is a surgical revascularization for selected patients, not an emergency step at a rural hospital. Three hours from intervention means a thrombolytic."
+    ],
+    [
+     "Thrombolytic within 30 minutes",
+     "Correct. When the closest percutaneous intervention unit is two or more hours away, thrombolytics are given, started within 30 minutes of arrival, after checking for contraindications."
+    ],
+    [
+     "Transfer without a thrombolytic",
+     "Transfer alone suits a unit within reach of the door-to-balloon goal of under 90 minutes. At three hours away, a thrombolytic is given first."
+    ],
+    [
+     "Wait for a second troponin I",
+     "An ST-elevation infarction is treated on the electrocardiogram and symptoms, not delayed for serial troponin I. At three hours from intervention, give a thrombolytic."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 67, 74",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Unstable angina and non-ST-elevation infarction",
+   "io": "Unstable",
+   "q": "A 71-year-old woman is admitted with unstable angina. Her oxygen saturation (SpO2) is 98% on room air. Which part of the classic initial bundle should be withheld?",
+   "opts": [
+    [
+     "Supplemental oxygen",
+     "Correct. Oxygen is given only when the oxygen saturation is below 91%; with normal oxygenation it is not administered because it causes peripheral vasoconstriction. The rest of the bundle stands."
+    ],
+    [
+     "Chewable aspirin",
+     "Chewable aspirin is given at once to every patient with unstable angina or a non-ST-elevation infarction. It is the one part of the bundle never skipped without a contraindication."
+    ],
+    [
+     "A beta blocker",
+     "A beta blocker reduces myocardial oxygen demand and is part of the initial treatment of unstable angina. With normal oxygenation, it is oxygen that is withheld."
+    ],
+    [
+     "Clopidogrel",
+     "Clopidogrel with aspirin is the dual antiplatelet therapy of unstable angina and non-ST-elevation infarction. With a saturation of 98%, it is oxygen that is left out."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 49, 73",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Catheterization and revascularization",
+   "io": "Non-ST segment elevation",
+   "q": "A 64-year-old man with a non-ST-elevation myocardial infarction is stabilized and taken to the catheterization laboratory. Dye shows a tight narrowing of the anterior interventricular artery, which is opened with a balloon and held open with a drug-eluting stent. Which term names the procedure that opened the artery?",
+   "opts": [
+    [
+     "Plain old balloon angioplasty",
+     "Plain old balloon angioplasty opens a narrowed artery without a stent. Once a stent is left in place to hold the artery open, the procedure is a percutaneous coronary intervention."
+    ],
+    [
+     "Percutaneous coronary intervention",
+     "Correct. Percutaneous coronary intervention is the placement of a drug-eluting or non-drug-eluting stent to keep the coronary artery open. Anything done to the vessel during the catheterization, beyond imaging it, is the intervention."
+    ],
+    [
+     "Coronary angiography",
+     "Coronary angiography is the injection of dye to identify the lesion or blockage. It showed the narrowing here, but it did not open the artery; the stent placement did."
+    ],
+    [
+     "Left heart catheterization",
+     "Left heart catheterization is the introduction of a guidewire for access to the heart chambers and coronary arteries. It is the access, not the stent that opened the vessel."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 50, 51",
+   "slot": "differential",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 38-year-old woman who smokes has recurrent chest pain at rest between 3 and 5 a.m., each episode lasting about 10 minutes. An electrocardiogram during one episode shows transient ST-segment elevation that resolves, and coronary angiography shows no significant stenosis. What is the most likely diagnosis?",
+   "opts": [
+    [
+     "Vasospastic angina",
+     "Correct. Vasospastic (Prinzmetal) angina occurs at rest, most often between midnight and early morning, in younger patients who smoke, with transient ST-segment elevation during an episode and no high-grade stenosis."
+    ],
+    [
+     "Unstable angina",
+     "Unstable angina is a change in stable angina from an atherosclerotic plaque, with normal troponin. A young smoker with clean arteries and transient ST elevation in early-morning episodes has vasospasm."
+    ],
+    [
+     "Stable angina",
+     "Stable angina is precipitated by activity and relieved by rest and nitroglycerin, with atherosclerotic narrowing. Her pain comes at rest in the early morning with normal arteries, which is vasospasm."
+    ],
+    [
+     "ST-elevation myocardial infarction",
+     "ST-elevation infarction shows ST elevation not quickly reversed and ends in necrosis from an occlusion. Her elevation is transient and resolves, and her arteries are free of high-grade stenosis."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 88, 89, 90",
+   "slot": "differential",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Ischemia and coronary anatomy",
+   "io": "Acute myocardial infraction",
+   "q": "A 59-year-old woman has an echocardiogram two days after an anterior myocardial infarction. One segment of the left ventricular wall bulges outward when the rest of the ventricle contracts. Which term describes this wall motion?",
+   "opts": [
+    [
+     "Hypokinesia",
+     "Hypokinesia is reduced movement: the segment still moves inward, only less. An outward bulge during contraction is dyskinesia."
+    ],
+    [
+     "Hyperkinesia",
+     "Hyperkinesia means exaggerated normal inward movement and is not one of the ischemic wall motion abnormalities. Those are hypokinesia, akinesia and dyskinesia, and a bulge is dyskinesia."
+    ],
+    [
+     "Dyskinesia",
+     "Correct. Dyskinesia is bulging, paradoxical wall movement. It is one of the three regional wall motion abnormalities an echocardiogram shows after ischemia, alongside hypokinesia and akinesia."
+    ],
+    [
+     "Akinesia",
+     "Akinesia is a lack of movement: the segment stays still rather than bulging. A wall that moves outward while the rest contracts is dyskinesia."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 9",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Chest pain workup and risk scores",
+   "io": "Non-ST segment elevation",
+   "q": "A 68-year-old man admitted with a non-ST-elevation myocardial infarction has a TIMI (Thrombolysis in Myocardial Infarction) risk score of 5. Which management does this score support?",
+   "opts": [
+    [
+     "A repeat score before deciding",
+     "The score has already crossed the line that matters: 3 or higher justifies an early invasive approach. Recalculating only delays revascularization."
+    ],
+    [
+     "An early invasive approach",
+     "Correct. A TIMI score of 3 or higher marks the patient who needs intensive care or emergent revascularization, so a score of 5 justifies an early invasive approach with catheterization."
+    ],
+    [
+     "Discharge with outpatient follow-up",
+     "Discharge fits a low-risk patient. A TIMI score of 3 or higher, and his is 5, calls for intensive care or emergent revascularization."
+    ],
+    [
+     "Medical therapy with no angiography",
+     "Medical therapy alone suits a low score. At a TIMI score of 3 or higher the score is used to justify catheterization and revascularization."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 71, 72",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 66-year-old man with stable angina is prescribed sublingual nitroglycerin. What should he do if his chest pain is unimproved five minutes after one dose?",
+   "opts": [
+    [
+     "Call emergency medical services",
+     "Correct. Sublingual nitroglycerin is the cornerstone of angina therapy, but pain that is unimproved or worse five minutes after one dose, or not relieved by three doses, means calling emergency medical services."
+    ],
+    [
+     "Lie down and wait an hour",
+     "Waiting an hour delays care for a possible acute coronary syndrome. Pain unrelieved five minutes after a nitroglycerin dose means calling emergency medical services at once."
+    ],
+    [
+     "Double his daily beta blocker",
+     "Changing a maintenance drug at home does not treat pain that nitroglycerin has failed to relieve. The instruction is to call emergency medical services after five minutes without relief."
+    ],
+    [
+     "Book a clinic visit this week",
+     "A routine visit is for stable, predictable angina. Pain unimproved five minutes after nitroglycerin may be an acute coronary syndrome and needs emergency medical services now."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 39, 40",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Vasospastic angina",
+   "io": "Vasospastic (Prinzmetal variant)",
+   "q": "A 42-year-old man who smokes reports brief episodes of chest pain at rest in the early morning that resolve on their own. Coronary vasospasm is suspected. Which test is the gold standard for confirming the diagnosis?",
+   "opts": [
+    [
+     "Angiography with a provocation agent",
+     "Correct. The gold standard is coronary artery spasm provoked during angiography by ergonovine or acetylcholine, then resolved with nitroglycerin given through the catheter."
+    ],
+    [
+     "Treadmill stress electrocardiogram",
+     "Vasospastic angina occurs at rest and is not driven by increased oxygen demand, so exercise testing does not establish it. The gold standard is angiography with ergonovine or acetylcholine provocation."
+    ],
+    [
+     "Nuclear perfusion stress imaging",
+     "Nuclear stress testing looks for exercise- or stress-induced perfusion defects from fixed stenosis. Spasm is proven by provoking it with ergonovine or acetylcholine at angiography."
+    ],
+    [
+     "Coronary calcium scoring by computed tomography",
+     "Calcium scoring is risk stratification for atherosclerosis, not a test for spasm, which can occur in normal arteries. Provocation with ergonovine or acetylcholine at angiography is the gold standard."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 91",
+   "slot": "gold standard",
+   "lead": "test"
+  },
+  {
+   "topic": "Unstable angina and non-ST-elevation infarction",
+   "io": "Unstable",
+   "q": "A 69-year-old woman with known stable angina says her chest pain now comes more often, lasts longer and appears with less exertion. Which is the most appropriate next step?",
+   "opts": [
+    [
+     "Outpatient stress test next month",
+     "A scheduled stress test suits stable angina. A worsening pattern is unstable angina, a medical emergency evaluated now rather than next month."
+    ],
+    [
+     "Add a nightly nitrate patch",
+     "Adding a drug at home treats the change as stable disease. Increasing angina is unstable angina, an acute coronary syndrome that needs emergency evaluation."
+    ],
+    [
+     "Emergency department evaluation",
+     "Correct. A change in a patient's stable angina (occurring at rest, new and limiting, or increasing in frequency and discomfort) is unstable angina, an acute coronary syndrome and a medical emergency."
+    ],
+    [
+     "Routine follow-up in 3 months",
+     "Routine follow-up fits unchanged stable angina. Angina that is increasing in frequency and severity is unstable angina, an acute coronary syndrome needing emergency evaluation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 45, 49",
+   "slot": "referral",
+   "lead": "next step"
+  },
+  {
+   "topic": "Post-infarction care and sudden cardiac death",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following coronary artery disease:",
+   "q": "A 48-year-old man with no known heart disease collapses while jogging and cannot be resuscitated. Autopsy shows extensive coronary artery disease. What is the most likely cause of his sudden cardiac death?",
+   "opts": [
+    [
+     "Electrolyte abnormality",
+     "Electrolyte abnormalities are among the other causes of sudden cardiac death. The most common cause, and the fit with coronary artery disease, is ventricular fibrillation."
+    ],
+    [
+     "Complete heart block",
+     "Complete heart block follows loss of the atrioventricular node's supply from the right coronary artery. The most common cause of sudden cardiac death is ventricular fibrillation."
+    ],
+    [
+     "Ventricular fibrillation",
+     "Correct. The most common cause of sudden cardiac death is ventricular fibrillation, and sudden death is the initial manifestation of coronary artery disease in over 20% of patients, as it was for him."
+    ],
+    [
+     "Hypertrophic cardiomyopathy",
+     "Hypertrophic cardiomyopathy is one of the other causes of sudden cardiac death, but his autopsy shows coronary disease. The most common cause of sudden cardiac death is ventricular fibrillation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 85",
+   "slot": "etiology",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Microvascular angina",
+   "io": "Angina pectoris",
+   "q": "A 52-year-old woman has recurrent anginal chest pain during periods of work stress and anxiety. Her electrocardiogram shows ST changes during symptoms, and coronary angiography shows normal coronary arteries. What is the most likely diagnosis?",
+   "opts": [
+    [
+     "Unstable angina",
+     "Unstable angina is a change in stable angina from atherosclerotic plaque and is an acute coronary syndrome. Normal coronary arteries in a stressed woman point to microvascular angina."
+    ],
+    [
+     "Microvascular angina",
+     "Correct. Microvascular angina (formerly cardiac syndrome X) is angina with ST changes, possibly with elevated biomarkers, but normal coronary arteries on the angiogram; it is more frequent in women and often associated with stress or anxiety."
+    ],
+    [
+     "Vasospastic angina",
+     "Vasospastic angina strikes at rest between midnight and early morning, mostly in smokers under 50, with transient ST elevation. Her stress-related angina in a woman with normal arteries fits microvascular angina."
+    ],
+    [
+     "Stable angina",
+     "Stable angina comes from atherosclerotic narrowing that coronary angiography, the gold standard for coronary artery disease, would show. Her coronary arteries are normal."
+    ]
+   ],
+   "c": 1,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 93, 94",
+   "slot": "differential",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Atherosclerosis and risk factors",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following coronary artery disease:",
+   "q": "A 57-year-old man with hypertension, obesity and a sedentary office job asks which of his coronary risk factors he cannot change. Which answer is accurate?",
+   "opts": [
+    [
+     "His age and sex",
+     "Correct. Age, sex and genetics (family history) are the nonmodifiable coronary risk factors. Hypertension, obesity and a sedentary lifestyle are all modifiable and are where his effort should go."
+    ],
+    [
+     "His blood pressure",
+     "Hypertension is a modifiable risk factor; controlling blood pressure is part of reducing his risk. The factors he cannot change are his age and male sex."
+    ],
+    [
+     "His body weight",
+     "Obesity is a modifiable risk factor that weight loss can address. His nonmodifiable factors are age (45 or older in men) and sex."
+    ],
+    [
+     "His activity level",
+     "A sedentary lifestyle is modifiable: exercise is part of risk-factor control. What he cannot change is his age and his sex."
+    ]
+   ],
+   "c": 0,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slides 22, 23",
+   "slot": "risk factors",
+   "lead": "education"
+  },
+  {
+   "topic": "Stable angina",
+   "io": "Stable",
+   "q": "A 70-year-old man with chronic stable angina asks about preventing future attacks. Which platelet-inhibiting regimen is more effective than either drug alone?",
+   "opts": [
+    [
+     "Aspirin plus warfarin",
+     "Warfarin is an anticoagulant, recommended after a large anterior wall infarction, not a platelet inhibitor paired for prevention. The effective pairing is aspirin with clopidogrel."
+    ],
+    [
+     "Clopidogrel plus ticagrelor",
+     "Clopidogrel and ticagrelor are both P2Y12 receptor antagonists, the same class. Dual antiplatelet therapy pairs one of them with aspirin, a cyclooxygenase inhibitor."
+    ],
+    [
+     "Aspirin plus a heparin drip",
+     "A heparin drip is an in-hospital anticoagulant started once catheterization is confirmed for an infarction. Prevention of future attacks pairs aspirin with clopidogrel."
+    ],
+    [
+     "Aspirin plus clopidogrel",
+     "Correct. Aspirin (used in chronic stable angina and after a survived acute coronary syndrome) and clopidogrel both inhibit platelets, and together they are more effective than either one alone."
+    ]
+   ],
+   "c": 3,
+   "cite": "Coronary Artery Disease Carter 2026.pptx, Slide 41",
+   "slot": "agent/regimen",
+   "lead": "treatment"
+  }
+ ]
+}

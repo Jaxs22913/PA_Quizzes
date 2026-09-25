@@ -6,6 +6,7 @@
     python3 cms_e4_partition.py l21vig    # Lecture 21 Hypotension, vignettes (Set 2)
     python3 cms_e4_partition.py l22io | l22vig   # Atherosclerosis and Lipid Disorders
     python3 cms_e4_partition.py l23io | l23vig   # Valvular Heart Disease
+    python3 cms_e4_partition.py l24io | l24vig   # Coronary Artery Disease
     python3 cms_e4_partition.py l25io | l25vig   # Heart Failure
 
 Trimmed from cms_e3_partition.py. The Exam 3 driver carries three pieces of
@@ -55,6 +56,16 @@ TWO PATHS (2026-09-24).
   best-of-N shuffles, so the gameable term can actually be driven down.
   Optional scope TOPIC_BAND = {topic: (min, max)} holds every form's count of
   each named topic inside a band (Lecture 23: equal weight per valve lesion).
+  Optional scope extras added for Lecture 24 (all absent elsewhere, so every
+  other lecture's guards and sets are unchanged):
+    EXTRA_CITES   extra sources a cite may name after "; " (or alone) -- the
+                  troponin slide shown in class but not in the posted deck
+    ACRO_OK       regex of tokens that are names, not abbreviations (the ST
+                  segment, the augmented limb leads, the HEART and TIMI scores)
+    STEM_BANNED   patterns refused in stems only (no value AT a cut-off)
+    TOPIC_BANNED  {topic: [patterns]} refused anywhere in that topic's questions
+    LINTS         (label, trigger, requirement, "each" | "stem"): any text (or
+                  the stem) matching the trigger must also match the requirement
   Length fixes come from cms_e4l<N>_lengthfix.FIXES, keyed by
   (module, index within module, option index) and applied before any guard.
 """
@@ -79,6 +90,8 @@ GUARDED = {
  "l22vig": ("l22", True, 20260924 + 222),
  "l23io": ("l23", False, 20260925 + 231),
  "l23vig": ("l23", True, 20260925 + 232),
+ "l24io": ("l24", False, 20260925 + 241),
+ "l24vig": ("l24", True, 20260925 + 242),
  "l25io": ("l25", False, 20260924 + 251),
  "l25vig": ("l25", True, 20260924 + 252),
 }
@@ -317,6 +330,11 @@ def guard_all(scope, pool, origin, vig):
     banned = [re.compile(p, re.I) for p in getattr(scope, "SCOPE_BANNED", ())]
     named = dict(getattr(scope, "NAMED", {}))
     deck = scope.DECK
+    extra_cites = tuple(getattr(scope, "EXTRA_CITES", ()))
+    acro_ok = re.compile(r"^(?:%s)$" % scope.ACRO_OK) if getattr(scope, "ACRO_OK", None) else None
+    stem_banned = [re.compile(p, re.I) for p in getattr(scope, "STEM_BANNED", ())]
+    topic_banned = {t: [re.compile(p, re.I) for p in ps] for t, ps in getattr(scope, "TOPIC_BANNED", {}).items()}
+    lints = [(lab, re.compile(tr, re.I), re.compile(nd, re.I), wh) for lab, tr, nd, wh in getattr(scope, "LINTS", ())]
 
     errs = []
     seen_stems = Counter(q["q"].strip().lower() for q in pool)
@@ -334,13 +352,24 @@ def guard_all(scope, pool, origin, vig):
                 errs.append((where(i), "distractor %d explanation under 60 chars" % j))
         if seen_stems[q["q"].strip().lower()] > 1: errs.append((where(i), "duplicate stem"))
         # citation
-        m = re.match(r"^(.*), Slides? (\d+)", q.get("cite", ""))
-        if not m or m.group(1) != deck:
-            errs.append((where(i), "cite must read '%s, Slide N', got %r" % (deck, q.get("cite"))))
-        else:
-            for n in re.findall(r"\d+", q["cite"][len(deck):]):
-                if int(n) in excluded:
-                    errs.append((where(i), "cites excluded slide %s" % n))
+        cite = q.get("cite", "")
+        if extra_cites:
+            parts = cite.split("; ")
+            bad_extra = [p for p in parts[1:] if p not in extra_cites]
+            if bad_extra:
+                errs.append((where(i), "unknown extra source %r" % bad_extra[0]))
+            if parts[0] in extra_cites and len(parts) == 1:
+                cite = None                     # the supplement alone
+            else:
+                cite = parts[0]
+        if cite is not None:
+            m = re.match(r"^(.*), Slides? (\d+)", cite)
+            if not m or m.group(1) != deck:
+                errs.append((where(i), "cite must read '%s, Slide N', got %r" % (deck, q.get("cite"))))
+            else:
+                for n in re.findall(r"\d+", cite[len(deck):]):
+                    if int(n) in excluded:
+                        errs.append((where(i), "cites excluded slide %s" % n))
         # slot and io
         if q.get("slot") not in SLOTS: errs.append((where(i), "bad slot %r" % q.get("slot")))
         if q.get("io") not in ios: errs.append((where(i), "io is not a verbatim scope IO"))
@@ -351,12 +380,22 @@ def guard_all(scope, pool, origin, vig):
             if _UK.search(t): errs.append((where(i), "UK spelling in %s: %r" % (label, _UK.search(t).group(0))))
             for b in banned:
                 if b.search(t): errs.append((where(i), "scope-banned %r in %s" % (b.pattern, label)))
+            for b in topic_banned.get(q["topic"], ()):
+                if b.search(t): errs.append((where(i), "topic-banned %r in %s" % (b.pattern, label)))
+            for lab, tr, nd, wh in lints:
+                if wh == "each" and tr.search(t) and not nd.search(t):
+                    errs.append((where(i), "lint %r in %s" % (lab, label)))
             for mm in _ACRO.finditer(t):
                 tok = mm.group(1)
-                if _ACRO_OK.match(tok):
+                if _ACRO_OK.match(tok) or (acro_ok and acro_ok.match(tok)):
                     continue
                 if not t[mm.end():].startswith(" ("):
                     errs.append((where(i), "bare acronym %r in %s" % (tok, label)))
+        for b in stem_banned:
+            if b.search(q["q"]): errs.append((where(i), "stem-banned %r" % b.pattern))
+        for lab, tr, nd, wh in lints:
+            if wh == "stem" and tr.search(q["q"]) and not nd.search(q["q"]):
+                errs.append((where(i), "lint %r in stem" % lab))
         if _MOA.search(q["q"]): errs.append((where(i), "mechanism-of-action stem"))
         if _DEP.search(q["q"]): errs.append((where(i), "stem refers to another question"))
         if not q["q"].rstrip().endswith("?"): errs.append((where(i), "stem does not end on a question"))
