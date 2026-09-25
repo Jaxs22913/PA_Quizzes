@@ -212,12 +212,16 @@
      re-laying anything out. */
   .guide-subgroup[data-stack] .guide-grid {
     display: flex; gap: 0; align-items: stretch;
-    --card-w: 268px; --peek: 52px;
+    --card-w: 268px; --peek: var(--peek-rest, 52px);
     padding: 2px 2px 6px;
   }
   /* The hover spread is capped per stack by the script -- see restack().
      Pharmacology Exam 1 is eleven cards, and a fixed 116px fan would have
-     run ~1430px wide and pushed the page into a horizontal scroll. */
+     run ~1430px wide and pushed the page into a horizontal scroll.
+     The RESTING fan is sized by the script too (--peek-rest, and --card-w on
+     narrow screens): at 390px the eleven-card fan used to be 926px wide, so
+     every phone got a sideways-scrolling page. restack() now fits the whole
+     fan inside the sub-group's own width at every screen size. */
   .guide-subgroup[data-stack] .guide-grid:hover { --peek: var(--peek-open, 116px); }
   .guide-subgroup[data-stack] .guide-card {
     flex: 0 0 var(--card-w);
@@ -244,6 +248,9 @@
     writing-mode: vertical-rl; text-orientation: sideways;
     padding: 12px 0;
     font: 700 11.5px/1 var(--font-sans, ui-sans-serif);
+    /* A phone squeezes eleven spines into ~13-18px each; the label shrinks
+       with its strip instead of spilling over the next card. */
+    font-size: clamp(0px, calc(var(--peek) - 4px), 11.5px);
     letter-spacing: .02em; color: var(--muted);
     background: var(--card); border-left: 1px solid var(--border);
     border-radius: 0 13px 13px 0;
@@ -280,7 +287,7 @@
 
   /* No hover on touch, so the fan is opened by the button instead. */
   @media (hover: none) {
-    .guide-subgroup[data-stack] .guide-grid { --peek: 64px; }
+    .guide-subgroup[data-stack] .guide-grid { --peek: var(--peek-rest, 64px); }
   }
 
   .guide-subgroup-title {
@@ -437,6 +444,7 @@
 
   .mistake-note { text-align: center; font-size: 13.5px; color: var(--muted); margin-top: 30px; font-style: italic; }
 </style>
+<script src="calendar-data.js"></script>
 <script src="semesters.js"></script>
 <script src="semester-picker.js"></script>
 </head>
@@ -507,7 +515,7 @@
 
   <div class="guide-group" id="group-cms-1">
     <p class="guide-group-title">Clinical Medicine and Surgery I</p>
-          <div class="guide-subgroup" data-stack="1">
+          <div class="guide-subgroup" data-class="cms-1" data-exam="1">
         <p class="guide-subgroup-title">Exam 1 &middot; Dermatology <span class="sg-count">4</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-exam-1-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/cms-derm-chart-images/l6_s024_2.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -528,7 +536,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup" data-stack="1">
+      <div class="guide-subgroup" data-class="cms-1" data-exam="2">
         <p class="guide-subgroup-title">Exam 2 &middot; Ophthalmology <span class="sg-count">4</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-exam-2-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%202/cms-ophtho-chart-images/l12-s028_1.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -549,7 +557,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup" data-stack="1">
+      <div class="guide-subgroup" data-class="cms-1" data-exam="3">
         <p class="guide-subgroup-title">Exam 3 &middot; Ear, Nose and Throat <span class="sg-count">3</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%203/cms-exam-3-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Medicine%20and%20Surgery%20I%20Exam%203/cms-ent-chart-images/l15-s016_pos1.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -566,7 +574,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-class="cms-1" data-exam="4">
         <p class="guide-subgroup-title">Exam 4 &middot; Cardiology I <span class="sg-count">2</span></p>
         <div class="guide-grid">
           <a class="guide-card" href="Clinical%20Medicine%20and%20Surgery%20I%20Exam%204/cms-exam-4-study-guide.html"><span class="guide-badge">Study Guide</span>
@@ -583,7 +591,7 @@
 
   <div class="guide-group" id="group-microbiology">
     <p class="guide-group-title">Microbiology</p>
-      <div class="guide-subgroup" data-stack="1">
+      <div class="guide-subgroup" data-class="microbiology" data-exam="1">
         <p class="guide-subgroup-title">Exam 1 <span class="sg-count">3</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Microbiology%20Exam%201/micro-exam-1-study-guide.html"><span class="gc-thumb"><img src="Microbiology%20Exam%201/micro-exam-1-study-guide-images/002.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -604,7 +612,7 @@
 
   <div class="guide-group" id="group-pharm-1">
     <p class="guide-group-title">Pharmacology I</p>
-          <div class="guide-subgroup" data-stack="1">
+          <div class="guide-subgroup" data-class="pharm-1" data-exam="1">
         <p class="guide-subgroup-title">Exam 1 <span class="sg-count">11</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide.html"><span class="gc-thumb"><img src="Pharmacology%20I%20Exam%201/pharm-exam-1-study-guide-images/005.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -663,7 +671,7 @@
 
         </div>
       </div>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-class="pharm-1" data-exam="2">
         <p class="guide-subgroup-title">Exam 2 &middot; Ophthalmic Drugs <span class="sg-count">3</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Pharmacology%20I%20Exam%202/pharm-exam-2-study-guide.html">
@@ -688,7 +696,7 @@
 
   <div class="guide-group" id="group-pdm-1">
     <p class="guide-group-title">Principles of Diagnostic Medicine I</p>
-      <div class="guide-subgroup" data-stack="1">
+      <div class="guide-subgroup" data-class="pdm-1" data-exam="1">
         <p class="guide-subgroup-title">Exam 1 <span class="sg-count">3</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-study-guide.html"><span class="gc-thumb"><img src="Principles%20of%20Diagnostic%20Medicine%20I%20Exam%201/pdm-exam-1-l5-images/fishbone.png" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -710,7 +718,7 @@
 
   <div class="guide-group" id="group-physical-diagnosis-2">
     <p class="guide-group-title">Physical Diagnosis 2</p>
-      <div class="guide-subgroup">
+      <div class="guide-subgroup" data-class="physical-diagnosis-2" data-exam="1">
         <p class="guide-subgroup-title">Exam 1 &middot; 30 September <span class="sg-count">2</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide.html"><span class="gc-thumb"><img src="Physical%20Diagnosis%202%20Exam%201/pd2-exam-1-study-guide-images/01-skin-layers.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
@@ -723,7 +731,7 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup" data-stack="1">
+      <div class="guide-subgroup" data-class="physical-diagnosis-2" data-exam="ent-osce">
         <p class="guide-subgroup-title">ENT OSCE &middot; 16 September <span class="sg-count">3</span></p>
         <div class="guide-grid">
       <a class="guide-card" href="Physical%20Diagnosis%202%20Exam%201/pd2-ent-osce-study-guide.html">
@@ -743,14 +751,19 @@
       </a>
         </div>
       </div>
-      <div class="guide-subgroup">
-        <p class="guide-subgroup-title">Later OSCEs <span class="sg-count">2</span></p>
+      <div class="guide-subgroup" data-class="physical-diagnosis-2" data-exam="cardiac-osce">
+        <p class="guide-subgroup-title">Cardiac OSCE &middot; 21 October <span class="sg-count">1</span></p>
         <div class="guide-grid">
       <a class="guide-card ref" href="Physical%20Diagnosis%202%20Exam%201/pd2-cardiac-osce.html">
         <span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Cardiac OSCE Run-Sheet &mdash; 21 October</p>
         <p class="guide-card-desc">The whole station in order: focused history for chest pain, dyspnea, palpitations and syncope, the cardiac risk factors as a set, then the examination at thirty degrees &mdash; jugular and carotid, precordial inspection, palpation for heaves and for thrills, auscultation at all five areas with both diaphragm and bell, lung bases, and the peripheral vascular exam &mdash; then differentials, studies, diagnosis, plan and presentation. 120 items.</p>
       </a>
+        </div>
+      </div>
+      <div class="guide-subgroup" data-class="physical-diagnosis-2" data-exam="pulmonary-osce">
+        <p class="guide-subgroup-title">Pulmonary OSCE &middot; 10 November <span class="sg-count">1</span></p>
+        <div class="guide-grid">
       <a class="guide-card ref" href="Physical%20Diagnosis%202%20Exam%201/pd2-pulmonary-osce.html">
         <span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Pulmonary OSCE Run-Sheet &mdash; 10 November</p>
@@ -763,7 +776,9 @@
 
   <div class="guide-group" id="group-clin-path-1">
     <p class="guide-group-title">Clinical Pathophysiology I</p>
-    <div class="guide-grid">
+      <div class="guide-subgroup" data-class="clin-path-1" data-exam="1">
+        <p class="guide-subgroup-title">Exam 1 <span class="sg-count">2</span></p>
+        <div class="guide-grid">
       <a class="guide-card" href="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide.html"><span class="gc-thumb"><img src="Clinical%20Pathophysiology%20I%20Exam%201/cp-exam-1-study-guide-images/001.jpg" alt="" loading="lazy" decoding="async"></span><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Clinical Pathophysiology I Exam 1 Study Guide</p>
         <p class="guide-card-desc">Three lectures. <strong>Inflammation</strong> &mdash; the vascular causal chain, acute versus chronic and the three causes of chronicity, all eight patterns from serous to gangrenous, every leukocyte with its nucleus and granules, the nine-step sequence, and the mediators and opsonins with the biomaterial pearl. <strong>Dermatology</strong> &mdash; integumentary anatomy and the pathophysiology of the primary and secondary lesions. <strong>Abnormal cell growth</strong> &mdash; the seven non-neoplastic abnormalities sorted into three groups, the dysplasia-to-invasion spectrum and the basement membrane that defines it, grading by differentiation, the three routes of spread, the mesenchymal-versus-epithelial naming rule, the four categories of gene alteration, the five microbes with their exact mechanisms, heredity, and TNM. Every syllabus objective, answered in order. <strong>Mechanism throughout, never management</strong> &mdash; that is the line between this course and Clinical Medicine and Surgery.</p>
@@ -772,12 +787,15 @@
         <p class="guide-card-title">Clinical Pathophysiology I Exam 1 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of all three lectures: definitions and the vascular chain, acute versus chronic, all eight inflammation patterns side by side, every white blood cell, the nine-step sequence, the mediators with what discriminates each, the dermatology lesion mechanisms, and then abnormal cell growth &mdash; agenesis through dysplasia, benign against malignant, the naming rule, the four gene-alteration categories, the microbial mechanisms, and the whole TNM system.</p>
       </a>
-    </div>
+        </div>
+      </div>
   </div>
 
   <div class="guide-group" id="group-med-lit">
     <p class="guide-group-title">Interpretation of Medical Literature</p>
-    <div class="guide-grid">
+      <div class="guide-subgroup" data-class="med-lit" data-exam="1">
+        <p class="guide-subgroup-title">Exam 1 <span class="sg-count">2</span></p>
+        <div class="guide-grid">
       <a class="guide-card" href="Interpretation%20of%20Medical%20Literature%20Exam%201/medical-literature-study-guide.html"><span class="guide-badge">Study Guide</span>
         <p class="guide-card-title">Medical Literature Study Guide</p>
         <p class="guide-card-desc">All five decks for sessions 1&ndash;4, each instructional objective verbatim and answered in order. <strong>Bias &amp; validity</strong> &mdash; the epidemiologic data sources, the alternatives to evidence by name, all ten biases with their examples, chance versus bias and the test that separates them, internal against external validity. <strong>Evidence</strong> &mdash; Sackett and Cochrane, both clinical studies pyramids with the filtered/unfiltered split, the USPSTF certainty levels and grades A&ndash;D and I, the ABCD method, the databases. <strong>Study design</strong> &mdash; qualitative against quantitative, the descriptive/analytic and experimental/observational axes, and cross-sectional, case-control, cohort and randomised trials in detail. <strong>Rates</strong> &mdash; every mortality rate with its numerator and denominator, incidence against prevalence including which is larger in chronic and acute disease, sampling, surveillance and outbreak investigation. <strong>Data &amp; variation</strong> &mdash; the three levels of measurement, content/criterion/construct validity, all the kinds of variation, distribution and dispersion, and the normal/abnormal boundary. <strong>Tests</strong> &mdash; the 2&times;2 table lettered and formulaic, SnOUT and SpIN, why predictive values move with prevalence and likelihood ratios do not, the LR bands with their rule-of-thumb shifts, the worked Centor example, and parallel against serial testing.</p>
@@ -786,7 +804,8 @@
         <p class="guide-card-title">Medical Literature Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation of all six topics: the ten biases with what distinguishes each, bias against chance and the test that separates them, the evidence pyramid with the filtered split, the USPSTF certainty levels and all five grades, every study design with what defines its groups and which direction it looks, every mortality rate with its numerator and denominator, incidence against prevalence in chronic and acute disease, the three data types, the three validities, all the kinds of variation, and the whole of test interpretation &mdash; the 2&times;2 lettered, SnOUT and SpIN, the prevalence effect on predictive values, both likelihood ratio formulas with the band table and its rule-of-thumb shifts, the Centor worked example, and parallel against serial testing.</p>
       </a>
-    </div>
+        </div>
+      </div>
   </div>
 
   <div class="guide-group" id="group-physiology">
@@ -996,6 +1015,107 @@
    jump-nav chip that points at it, so there are no empty section headers and no
    chips that scroll to nothing. */
 (function () {
+  // ---- Stack an exam's cards automatically once it has been sat ----------
+  // Jaxon, 2026-09-22: "stack the guides after that exam is completed for all
+  // classes", then "Only do this semester 2 and forward". It used to be a
+  // hand-added data-stack="1", and four sat exams were missed that way.
+  //
+  // Each Semester 2+ sub-group names its class (data-class, the id used by
+  // semesters.js and calendar-data.js) and its sitting (data-exam: the exam
+  // number, or a key such as "ent-osce" for a sitting with no number, whose
+  // words must all appear in the calendar title). From the day AFTER that
+  // class's graded sitting in calendar-data.js the sub-group gets the same
+  // data-stack="1" the hand edit used to add. Only k:"exam" rows count: a
+  // retest never holds the fan back (CMS Exam 2 was fanned before its retest).
+  // Semester 1 and Remediation carry no tags and are left exactly as written,
+  // and a hand-written data-stack="1" still works on its own.
+  //
+  // This runs before the filter script below collects its cards and
+  // sub-groups, because merging moves cards and removes sub-groups.
+  (function autoStack() {
+    var tagged = Array.prototype.slice.call(
+      document.querySelectorAll(".guide-subgroup[data-class][data-exam]"));
+    if (!tagged.length) return;
+    var cal = window.CalendarData;
+    if (!cal || !cal.all) {
+      console.info("guides: calendar-data.js is not loaded, so no exam stacks automatically");
+      return;
+    }
+    var reg = window.Semesters;
+    var firstTerm = reg && reg.all && reg.all[0] ? reg.all[0].id : null;
+
+    function sitting(cls, exam) {
+      var num = /^\d+$/.test(exam) ? Number(exam) : null;
+      var words = num === null ? exam.toLowerCase().split("-").filter(Boolean) : [];
+      var hits = cal.all.filter(function (e) {
+        if (e.k !== "exam" || e.c !== cls || !e.d) return false;
+        var t = String(e.t || "").toLowerCase();
+        if (num !== null) {
+          var m = /\bexam\s*#\s*(\d+)/.exec(t);
+          return !!m && Number(m[1]) === num;
+        }
+        return words.length > 0 && words.every(function (w) {
+          return new RegExp("\\b" + w.replace(/[^a-z0-9]/g, "") + "\\b").test(t);
+        });
+      });
+      hits.sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : 0; });
+      return hits[0] || null;
+    }
+    // Local midnight at the start of the day after the sitting. The date is
+    // split by hand: new Date("YYYY-MM-DD") parses as UTC midnight, which is
+    // the previous evening in Florida and would stack an exam a day early.
+    function dayAfter(ymd) {
+      var p = ymd.split("-");
+      return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]) + 1);
+    }
+
+    var now = new Date();
+    var sat = {}, order = [];
+    tagged.forEach(function (sg) {
+      var cls = sg.getAttribute("data-class"), exam = sg.getAttribute("data-exam");
+      var ev = sitting(cls, exam);
+      if (!ev) {
+        console.info("guides: no exam for " + cls + ' "' + exam +
+                     '" in calendar-data.js, so that sub-group stays a grid');
+        return;
+      }
+      if (firstTerm && ev.s === firstTerm) return;   // Semester 1 stays as written
+      if (now < dayAfter(ev.d)) return;              // not sat yet
+      var key = cls + "|" + exam;
+      if (!sat[key]) { sat[key] = []; order.push(key); }
+      sat[key].push(sg);
+    });
+
+    order.forEach(function (key) {
+      var list = sat[key], host = list[0];
+      // A live exam split into purpose sub-groups merges into ONE fan once it
+      // is sat (Jaxon, 2026-09-09: "Put all the pharm exam 1 cards together
+      // not seperate groups"). restack() puts the study guide in front.
+      if (list.length > 1) {
+        var grid = host.querySelector(".guide-grid");
+        list.slice(1).forEach(function (sg) {
+          Array.prototype.slice.call(sg.querySelectorAll(".guide-card"))
+            .forEach(function (c) { grid.appendChild(c); });
+          sg.parentNode.removeChild(sg);
+        });
+        var title = host.querySelector(".guide-subgroup-title");
+        if (title) {
+          var exam = host.getAttribute("data-exam");
+          var count = title.querySelector(".sg-count");
+          var label = /^\d+$/.test(exam) ? "Exam " + exam
+            : (title.textContent.replace(count ? count.textContent : "", "").trim());
+          var n = host.querySelectorAll(".guide-card").length;
+          while (title.firstChild) title.removeChild(title.firstChild);
+          title.appendChild(document.createTextNode(label + " "));
+          if (!count) { count = document.createElement("span"); count.className = "sg-count"; }
+          count.textContent = n;
+          title.appendChild(count);
+        }
+      }
+      host.setAttribute("data-stack", "1");
+    });
+  })();
+
   var chips = Array.prototype.slice.call(document.querySelectorAll(".guide-filter-chip"));
   var cards = Array.prototype.slice.call(document.querySelectorAll(".guide-card"));
   var jumpChips = Array.prototype.slice.call(document.querySelectorAll(".class-jump-chip"));
@@ -1080,14 +1200,32 @@
         if (!c.dataset.spine) c.dataset.spine = spineLabel(c);
         if (i === 0) c.classList.add("is-front");
       });
-      // Cap how far the fan opens so a long stack cannot push the page wide.
-      // Measured off the sub-group, which is already inside the page gutters.
+      // Fit the whole fan inside the sub-group, resting AND opened, so no
+      // stack can push the page wide. Measured off the sub-group, which is
+      // already inside the page gutters; a hidden one measures 0 and keeps
+      // its last sizes until it is shown and apply() runs again.
+      //   resting spine: 52px (64px on touch), less if that would not fit;
+      //   below 18px a spine stops being legible, so the front card narrows
+      //   first (down to 190px) before the spines squeeze any further;
+      //   opened (hover): up to 116px, never narrower than resting.
+      // At 390px Pharmacology's eleven cards used to make the page 926px wide.
       var grid = sg.querySelector(".guide-grid");
-      if (grid && fan.length > 1) {
-        var avail = sg.clientWidth || grid.clientWidth;
-        var cardW = parseFloat(getComputedStyle(grid).getPropertyValue("--card-w")) || 268;
-        var room = Math.floor((avail - cardW - 8) / (fan.length - 1));
-        grid.style.setProperty("--peek-open", Math.max(52, Math.min(116, room)) + "px");
+      var avail = sg.clientWidth;
+      if (grid && fan.length > 1 && avail > 0) {
+        var gaps = fan.length - 1;
+        var base = window.matchMedia && matchMedia("(hover: none)").matches ? 64 : 52;
+        var cardW = 268, SPINE_MIN = 18, CARD_MIN = 190, SLACK = 6;
+        var rest = Math.floor((avail - cardW - SLACK) / gaps);
+        if (rest < SPINE_MIN) {
+          cardW = Math.max(CARD_MIN, Math.min(268, avail - SLACK - SPINE_MIN * gaps));
+          rest = Math.floor((avail - cardW - SLACK) / gaps);
+        }
+        rest = Math.max(0, Math.min(base, rest));
+        var open = Math.floor((avail - cardW - SLACK) / gaps);
+        open = Math.max(rest, Math.min(116, open));
+        grid.style.setProperty("--card-w", cardW + "px");
+        grid.style.setProperty("--peek-rest", rest + "px");
+        grid.style.setProperty("--peek-open", open + "px");
       }
 
       var btn = sg.querySelector(".sg-toggle");
@@ -1134,8 +1272,6 @@
       if (badge) badge.textContent = n;
     });
 
-    restack();
-
     groups.forEach(function (g) {
       var live = Array.prototype.some.call(g.querySelectorAll(".guide-card"), function (c) {
         return c.style.display !== "none";
@@ -1145,6 +1281,10 @@
         if (ch.getAttribute("href") === "#" + g.id) ch.style.display = live ? "" : "none";
       });
     });
+
+    // After the groups are shown or hidden: restack() measures widths, and a
+    // class group that is still display:none measures 0.
+    restack();
 
     // counts follow the semester, not the whole site
     var counts = { all: 0, guide: 0, cram: 0, ref: 0, remediation: 0 };
@@ -1194,6 +1334,28 @@
   };
   window.__guidesApply = apply;
   apply();
+
+  // The fan is sized to the page width, so re-fit it when that width changes
+  // (rotation, window resize, a scrollbar appearing). Only width matters.
+  var lastW = 0, pending = false;
+  function refit() {
+    pending = false;
+    var w = document.documentElement.clientWidth;
+    if (w === lastW) return;
+    lastW = w;
+    restack();
+  }
+  lastW = document.documentElement.clientWidth;
+  function queueRefit() {
+    if (pending) return;
+    pending = true;
+    (window.requestAnimationFrame || setTimeout)(refit);
+  }
+  window.addEventListener("resize", queueRefit);
+  if (window.ResizeObserver) {
+    var wrap = document.querySelector(".wrap");
+    if (wrap) new ResizeObserver(queueRefit).observe(wrap);
+  }
 })();
 </script>
 <script>

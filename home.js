@@ -794,10 +794,15 @@ document.querySelectorAll(".semester").forEach(semester => {
 
 /* ---- from index.html (was inline at line 1970) ---- */
 (function () {
-      // Curated, not auto-generated from every recent commit -- only quizzes
-      // meant to be highlighted to visitors as freshly added get an entry.
-      // Update this list (and the "What's New" panel below) whenever new
-      // quiz content ships. NEW_BADGE_DAYS controls how long a badge lasts.
+      // LEGACY -- do not add to this list. New content is tagged inline in
+      // index.html instead: <span class="quiz-tag quiz-tag--new"
+      // data-added="YYYY-MM-DD">New</span> after the quiz link, which expires
+      // on its own after 3 days. This list (frozen since 2026-08-19) and its
+      // "What's New" panel are kept only until the owner decides whether to
+      // retire them.
+      // Originally: curated, not auto-generated from every recent commit --
+      // only quizzes meant to be highlighted to visitors as freshly added got
+      // an entry. NEW_BADGE_DAYS controls how long a badge lasts.
       var NEW_QUIZZES = {
         "Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/dermatology-ii-quiz.html": "2026-08-19",
         "Clinical%20Medicine%20and%20Surgery%20I%20Exam%201/dermatology-ii-quiz-version-2.html": "2026-08-19",
