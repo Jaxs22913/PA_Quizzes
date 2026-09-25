@@ -10059,7 +10059,7 @@ function initHeader() {
 // timed race, so each page sets window.onFCGamepadButton itself to map
 // button index -> whatever action makes sense there (mirrors how each page
 // also owns its own keydown handler).
-window.addEventListener("gamepadconnected", function () { showToast("🎮 Controller connected"); });
+window.addEventListener("gamepadconnected", function () { showToast("Controller connected"); });
 (function () {
   var prevButtons = {};
   function poll() {

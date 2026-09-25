@@ -146,7 +146,9 @@
   .podium{display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:6px 0 26px;min-height:170px}
   .podium-slot{display:flex;flex-direction:column;align-items:center;width:30%;max-width:110px}
   .podium-avatar{font-size:32px;margin-bottom:4px}
-  .podium-medal{font-size:19px;margin-bottom:2px}
+  .podium-medal{font-size:19px;margin-bottom:2px;position:relative;display:inline-flex;justify-content:center;color:var(--acc)}
+  .podium-rank{position:absolute;left:0;right:0;top:12px;font:800 8.5px/1 var(--font-sans,system-ui,sans-serif);text-align:center}
+  h2.has-si[data-center]{justify-content:center;width:100%}
   .podium-name{font-weight:700;font-size:12.5px;text-align:center;margin-bottom:3px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .podium-score{font-size:11.5px;color:var(--muted);margin-bottom:6px;font-weight:700}
   .podium-riser{width:100%;border-radius:10px 10px 0 0}
@@ -223,7 +225,7 @@
 
   <section id="answered-wait" class="card hidden">
     <div class="waiting">
-      <div class="big">✅</div>
+      <div class="big"><svg class="si si-checkCircle" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9.6"/></svg></div>
       Answer locked in! Waiting for everyone else…
     </div>
   </section>
@@ -236,7 +238,7 @@
   </section>
 
   <section id="finished-screen" class="card hidden">
-    <h2 style="margin-top:0;text-align:center">🏁 Final results</h2>
+    <h2 style="margin-top:0;text-align:center" class="has-si" data-center><svg class="si si-trophy" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 4h8v5.5a4 4 0 0 1-8 0z"/><path d="M8 6H5.5a2.5 2.5 0 0 0 2.6 4M16 6h2.5a2.5 2.5 0 0 1-2.6 4"/><path d="M12 13.5V17M8.5 20.5h7M10 17h4"/></svg> Final results</h2>
     <div class="podium" id="podium"></div>
     <div id="final-leaderboard"></div>
     <div id="miss-review" class="review-wrap"></div>
@@ -542,12 +544,12 @@
     var box = $("feedback-box");
     if (myAnswer) {
       box.innerHTML = myAnswer.correct
-        ? '<div class="big">🎉</div><div>Correct!</div><div class="pts">+' + myAnswer.points + ' points</div>'
-        : '<div class="big">❌</div><div>Not quite — correct answer: <b></b></div>';
+        ? '<div class="big">' + window.SiteIcon("checkCircle", 48) + '</div><div>Correct!</div><div class="pts">+' + myAnswer.points + ' points</div>'
+        : '<div class="big">' + window.SiteIcon("xCircle", 48) + '</div><div>Not quite — correct answer: <b></b></div>';
       var bEl = box.querySelector("b");
       if (bEl) bEl.textContent = q.choices[q.answer];
     } else {
-      box.innerHTML = '<div class="big">⌛</div><div>Time’s up — no answer submitted.</div>';
+      box.innerHTML = '<div class="big">' + window.SiteIcon("timer", 48) + '</div><div>Time’s up — no answer submitted.</div>';
     }
     // Same "why" + source citation shown on the site's regular quizzes after
     // answering -- exp/cite come straight from the group-quizzes chunk (ported
@@ -611,7 +613,7 @@
     if (misses.length === 0) {
       var perfect = document.createElement("div");
       perfect.className = "review-perfect";
-      perfect.textContent = "🎉 Perfect — you didn't miss a single question!";
+      perfect.innerHTML = window.SiteIcon("star", 16) + " Perfect — you didn't miss a single question!";
       wrap.appendChild(perfect);
       return;
     }
@@ -619,7 +621,7 @@
     var toggle = document.createElement("button");
     toggle.className = "review-toggle";
     var lbl = document.createElement("span");
-    lbl.textContent = "📖 Review your " + misses.length + " miss" + (misses.length === 1 ? "" : "es");
+    lbl.innerHTML = window.SiteIcon("book", 15) + " Review your " + misses.length + " miss" + (misses.length === 1 ? "" : "es");
     var chev = document.createElement("span");
     chev.className = "chev"; chev.textContent = "▾";
     toggle.appendChild(lbl); toggle.appendChild(chev);
@@ -681,7 +683,9 @@
     var top3 = sorted.slice(0, 3);
     var order = [top3[1], top3[0], top3[2]];
     var classes = ["second", "first", "third"];
-    var medals = ["🥈", "🥇", "🥉"];
+    var medals = [2, 1, 3].map(function (n) {
+      return window.SiteIcon("medal", 24) + '<b class="podium-rank">' + n + '</b>';
+    });
     order.forEach(function (p, i) {
       if (!p) { box.appendChild(document.createElement("div")).className = "podium-slot"; return; }
       var slot = document.createElement("div");

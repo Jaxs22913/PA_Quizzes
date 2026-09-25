@@ -1,3 +1,43 @@
+/* ============================================================
+   Site icon set (design review item 14, 2026-09-25). ONE source for UI
+   chrome icons, drawn for this site: 24px grid, 2px round-capped stroke,
+   currentColor, no fills except tiny dots. Replaces the text glyphs
+   (flag, three-line menu, pause bars, stars, arrows) and emoji (controller,
+   flame, people, trophy...) that rendered differently on every OS and never
+   matched the stroke icons the corner buttons already used.
+     window.SiteIcon("flag", 15)  ->  '<svg class="si si-flag" ...>'
+   Content emoji (Group Study avatars chosen by students) are not chrome and
+   are left alone.
+   ============================================================ */
+window.SiteIcon = (function () {
+  var P = {
+    flag: '<path d="M5.5 21V4"/><path d="M5.5 4.6c3.8-2 7.2 2 11 0v8.2c-3.8 2-7.2-2-11 0"/>',
+    grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>',
+    pause: '<rect x="6.5" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2"/>',
+    arrowLeft: '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
+    list: '<path d="M9 6.5h11M9 12h11M9 17.5h11"/><path d="M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01" stroke-width="2.6"/>',
+    flame: '<path d="M12 3c1 3.2 5 5.4 5 10.2a5 5 0 0 1-10 0c0-2.3 1.1-3.7 2.3-4.9.2 1.7 1 2.8 2.2 3.2-.2-3.1-.1-5.6.5-8.5z"/>',
+    users: '<circle cx="9" cy="8.5" r="3.3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 5.3a3.3 3.3 0 0 1 0 6.4"/><path d="M17.5 14.4c2 .8 3.5 2.9 3.5 5.6"/>',
+    timer: '<circle cx="12" cy="13.5" r="7.5"/><path d="M12 10v3.6l2.4 1.6"/><path d="M9.5 2.8h5"/>',
+    cup: '<path d="M4.5 9h12v4.5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M16.5 10.5h1.2a2.6 2.6 0 0 1 0 5.2h-1.4"/><path d="M8.5 3.5v2.5M12.5 3.5v2.5"/>',
+    check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    checkCircle: '<circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9.6"/>',
+    xCircle: '<circle cx="12" cy="12" r="9"/><path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"/>',
+    x: '<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>',
+    trophy: '<path d="M8 4h8v5.5a4 4 0 0 1-8 0z"/><path d="M8 6H5.5a2.5 2.5 0 0 0 2.6 4M16 6h2.5a2.5 2.5 0 0 1-2.6 4"/><path d="M12 13.5V17M8.5 20.5h7M10 17h4"/>',
+    book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14.5H6.5A2.5 2.5 0 0 0 4 20z"/><path d="M4 20a1.5 1.5 0 0 0 1.5 1.5H20V17.5"/>',
+    star: '<path d="M12 3.6l2.6 5.2 5.8.9-4.2 4.1 1 5.7L12 16.8l-5.2 2.7 1-5.7-4.2-4.1 5.8-.9z"/>',
+    gamepad: '<rect x="2.5" y="7" width="19" height="11" rx="5.5"/><path d="M7.5 10.8v3.4M5.8 12.5h3.4"/><path d="M15.5 11.3h.01M17.8 13.6h.01" stroke-width="2.6"/>',
+    medal: '<path d="M8.5 3h7l-2.2 7M8.5 3l2.2 7"/><circle cx="12" cy="15.5" r="5.5"/>'
+  };
+  return function (name, size, extraClass) {
+    size = size || 16;
+    return '<svg class="si si-' + name + (extraClass ? " " + extraClass : "") + '" width="' + size + '" height="' + size +
+      '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+      (P[name] || "") + "</svg>";
+  };
+})();
+
 /* One prompt at a time (design review item 3, 2026-09-25). A first-time
    visitor used to get the sign-in modal AND the install banner together on the
    homepage, and the tour modal AND a controller toast together on their first
@@ -1152,7 +1192,7 @@ window.SitePrompts = {
 
       if (state.running) {
         pill.classList.add("visible");
-        pill.textContent = (state.phase === "break" ? "☕ " : "🍅 ") + fmt(rem);
+        pill.innerHTML = window.SiteIcon(state.phase === "break" ? "cup" : "timer", 14) + " " + fmt(rem);
         pill.classList.toggle("pomo-pill-break", state.phase === "break");
       } else {
         pill.classList.remove("visible");
@@ -3169,7 +3209,7 @@ window.openQuestionNav = (function () {
     var legend = el("div", "qnav-legend");
     legend.appendChild(el("span", "qnav-legend-item", "■ Answered"));
     legend.appendChild(el("span", "qnav-legend-item unanswered", "□ Unanswered"));
-    legend.appendChild(el("span", "qnav-legend-item flagged", "⚑ Flagged"));
+    legend.appendChild(el("span", "qnav-legend-item flagged", window.SiteIcon("flag", 13) + " Flagged"));
     panel.appendChild(legend);
 
     var grid = el("div", "qnav-grid");
@@ -3258,9 +3298,9 @@ window.showToast = function (message, duration) {
     if (!correct) { streak = 0; return; }
     streak++;
     if (THRESHOLDS.indexOf(streak) !== -1) {
-      window.showToast(streak + " in a row! 🔥");
+      window.showToast(streak + " in a row!");
     } else if (streak > THRESHOLDS[THRESHOLDS.length - 1] && streak % 10 === 0) {
-      window.showToast(streak + " in a row! 🔥");
+      window.showToast(streak + " in a row!");
     }
   };
 })();
@@ -3362,8 +3402,8 @@ window.openPauseOverlay = function (opts) {
     try { localStorage.setItem("gamepadHintShown", "1"); } catch (err) {}
     if (window.showToast) {
       window.showToast(firstPad
-        ? "Controller connected 🎮 A/B/X/Y to answer, RB/LB to move on/back. Press ? for full controls."
-        : "Controller connected 🎮 A/B/X/Y answers, RB/RT next, LB/LT back", firstPad ? 5500 : undefined);
+        ? "Controller connected. A/B/X/Y to answer, RB/LB to move on/back. Press ? for full controls."
+        : "Controller connected. A/B/X/Y answers, RB/RT next, LB/LT back", firstPad ? 5500 : undefined);
     }
     if (!polling) { polling = true; requestAnimationFrame(pollGamepads); }
   });
@@ -3415,7 +3455,7 @@ window.openPauseOverlay = function (opts) {
   fab.className = "toc-fab";
   fab.title = "Show contents";
   fab.setAttribute("aria-label", "Show contents");
-  fab.innerHTML = "☰ Contents";
+  fab.innerHTML = window.SiteIcon("list", 15) + " Contents";
   document.body.appendChild(fab);
 
   // Collapsing/restoring the sidebar changes <main>'s width, which reflows
@@ -4992,8 +5032,7 @@ window.openPauseOverlay = function (opts) {
   function styleLink(a, extra) {
     a.href = "#";
     a.className = "report-link-auto";
-    a.style.cssText = "color:var(--muted,#6b7280);font-size:12.5px;font-style:italic;" +
-                      "text-decoration:underline;cursor:pointer;" + (extra || "");
+    a.style.cssText = "cursor:pointer;" + (extra || "");
     a.addEventListener("click", function (e) { e.preventDefault(); window.reportMistake(); });
     return a;
   }
@@ -5004,7 +5043,7 @@ window.openPauseOverlay = function (opts) {
     var row = document.createElement("p");
     row.style.cssText = "text-align:center;margin:14px 0 2px;";
     var a = styleLink(document.createElement("a"));
-    a.textContent = "\u2605 Something wrong with this question? Report it \u2605";
+    a.textContent = "Something wrong with this question? Report it";
     row.appendChild(a);
     quiz.appendChild(row);
   }
@@ -5028,7 +5067,7 @@ window.openPauseOverlay = function (opts) {
     p.className = "report-foot-auto";
     p.style.cssText = "text-align:center;margin:26px 0 18px;";
     var a = styleLink(document.createElement("a"));
-    a.textContent = "\u2605 See a mistake on this page? Report it \u2605";
+    a.textContent = "See a mistake on this page? Report it";
     p.appendChild(a);
     host.appendChild(p);
   }
@@ -5378,4 +5417,75 @@ window.openPauseOverlay = function (opts) {
   });
   // after the last collapsible meta, so it reads at the end of the visible line
   first.insertAdjacentElement("afterend", btn);
+})();
+
+
+/* ============================================================
+   Icon pass over chrome the engine or older markup writes as glyphs
+   (design review item 14). Generated quiz pages spell the toolbar with
+   text glyphs (flag, three-line menu, pause bars) and the engine rewrites
+   the Flag button's innerHTML on every toggle, so this re-applies on
+   mutation rather than once. Report links everywhere lose their stars and
+   italics and gain the flag icon. Back links' text arrows become the
+   arrow icon. No generated file is edited.
+   ============================================================ */
+(function () {
+  var GLYPH = /^\s*[\u2190\u2605\u2691\u2630\u275A\u25A0\u25A1][\s\u2190\u2605\u2691\u2630\u275A\u25A0\u25A1]*/;
+  function iconize(el, name, size) {
+    // only a control that STARTS with a text glyph; one that already carries
+    // an svg (Arcade's and Review's back links) is left alone
+    if (!el || el.querySelector("svg")) return;
+    var t = el.firstChild;
+    if (!t || t.nodeType !== 3 || !GLYPH.test(t.nodeValue)) return;
+    t.nodeValue = t.nodeValue.replace(GLYPH, "");
+    // the words become their own span so a phone can show the icon alone
+    var label = document.createElement("span");
+    label.className = "si-label";
+    label.textContent = t.nodeValue.replace(/\s+$/, "");
+    el.replaceChild(label, t);
+    el.insertAdjacentHTML("afterbegin", window.SiteIcon(name, size || 15));
+    el.classList.add("has-si");
+    // keeps the button named when a phone hides the words
+    if (el.tagName === "BUTTON") el.setAttribute("aria-label", el.textContent.replace(/\s+/g, " ").trim());
+  }
+  function pass(root) {
+    root = root || document;
+    iconize(document.getElementById("flagbtn"), "flag");
+    iconize(document.getElementById("navbtn"), "grid");
+    iconize(document.getElementById("pausebtn"), "pause", 13);
+    root.querySelectorAll(".sq-flag").forEach(function (b) { iconize(b, "flag", 13); });
+    document.querySelectorAll("a.back-link, .guide-back-link, body > .wrap > a[href$='index.html']:first-child, .wrap > a.back").forEach(function (a) {
+      iconize(a, "arrowLeft", 15);
+    });
+    document.querySelectorAll("a.report-link-auto, a[onclick*='reportMistake']").forEach(function (a) {
+      if (a.classList.contains("report-link")) return;
+      if (a.closest(".question-issue-row, .corner-btn, button")) return;
+      // strip the decorative stars around the link, in it and beside it
+      a.childNodes.forEach(function (n) { if (n.nodeType === 3) n.nodeValue = n.nodeValue.replace(/\s*★\s*/g, " ").replace(/^\s+|\s+$/g, ""); });
+      var p = a.parentElement;
+      if (p) {
+        p.childNodes.forEach(function (n) { if (n.nodeType === 3 && /★/.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(/★/g, "").replace(/^\s+$/, ""); });
+        if (p.style && p.style.fontStyle === "italic") p.style.fontStyle = "normal";
+      }
+      a.classList.add("report-link");
+      a.style.fontStyle = "normal";
+      a.insertAdjacentHTML("afterbegin", window.SiteIcon("flag", 13) + " ");
+    });
+  }
+  function start() {
+    pass();
+    var quiz = document.getElementById("quiz");
+    if (quiz && window.MutationObserver) {
+      var pending = false;
+      new MutationObserver(function () {
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(function () { pending = false; pass(quiz); });
+      }).observe(quiz, { childList: true, subtree: true });
+    }
+    // footer links are injected by the report-entry IIFE; catch late ones
+    setTimeout(pass, 600);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
 })();

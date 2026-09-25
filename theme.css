@@ -3220,3 +3220,26 @@ html body .wrap > a.back svg { width: 15px; height: 15px; flex: none; }
 /* the guide bar has no --muted of its own */
 .guide-back-link { --muted: #4b5563; }
 :root[data-theme="dark"] .guide-back-link { --muted: #c9cdd4; }
+
+/* Site icon set (design review item 14). Icons sit on the text baseline and
+   take the colour of the control they are in. */
+.si { display: inline-block; flex: none; vertical-align: -0.16em; }
+.has-si { display: inline-flex; align-items: center; gap: 6px; }
+.examtoolbar .has-si, #pausebtn.has-si { gap: 5px; }
+.toc-fab .si { vertical-align: -0.2em; margin-right: 2px; }
+.qnav-legend-item .si { vertical-align: -0.15em; }
+/* Report links: a quiet small link with a flag, not an italic underlined
+   line wrapped in stars. Still on every page (report_feature). */
+a.report-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-style: normal; font-weight: 500;
+  color: var(--muted, #6b7280); text-decoration: none; cursor: pointer;
+}
+a.report-link:hover { color: var(--ink, #1f2937); text-decoration: underline; text-underline-offset: 3px; }
+/* Phones, quiz running: the Flag button shows its icon alone (its name stays
+   as aria-label), which is what lets Flag / Questions / Submit share one row
+   at 390px now that each carries an icon. */
+@media (max-width: 640px) {
+  body.quiz-running #quiz #flagbtn .si-label { display: none; }
+  body.quiz-running #quiz #flagbtn { padding-left: 10px; padding-right: 10px; }
+}

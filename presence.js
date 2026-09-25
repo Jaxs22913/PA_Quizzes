@@ -75,7 +75,8 @@
         return v.uid !== uid && v.lastSeenMs != null && (now - v.lastSeenMs) < STALE_MS;
       });
       if (others.length > 0) {
-        pill.textContent = "👥 " + others.length + (others.length === 1 ? " other " : " others ") + resourcePhrase();
+        pill.innerHTML = (window.SiteIcon ? window.SiteIcon("users", 14) + " " : "") +
+          others.length + (others.length === 1 ? " other " : " others ") + resourcePhrase();
         pill.classList.add("visible");
       } else {
         pill.classList.remove("visible");
