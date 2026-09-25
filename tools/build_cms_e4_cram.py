@@ -6,10 +6,9 @@ Condensed from the Exam 4 study guide, per the template README: compress what
 the guide already says, keep numbers and names verbatim, add nothing new.
 
 Topics matching the guide's sections: six for Hypertension, then three each for
-Hypotension, Lipids and Valvular Heart Disease and two for Heart Failure (added
-2026-09-25). More will be added as the rest of the
-cardiovascular block is posted -- the sub line says so rather than implying the
-block is complete.
+Hypotension, Lipids, Valvular Heart Disease and Coronary Artery Disease, and two
+for Heart Failure (added 2026-09-25). With Coronary Artery Disease (Lecture 24)
+in, the sheet covers the whole block, Lectures 20-25.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -166,7 +165,34 @@ topics = [
  ["Biological valve", "Pig or cow tissue &rarr; no anticoagulation beyond the immediate postoperative period; preferred when anticoagulation is contraindicated. (Valve type by age on slide 74 is unsettled &mdash; not learned.)"],
 ]},
 
-# ---- Lecture 25 (Carter), condensed from guide section 5 ----
+# ---- Lecture 24 (Carter), condensed from guide section 5 ----
+{"id": "l24-found", "label": "CAD: Anatomy, Pain & Workup", "color": "#8a5a2b", "rows": [
+ ["Ischemia", "Oxygen <b>demand vs supply</b> mismatch. Heart = 0.3% of body weight, 7% of oxygen use. <b>Irreversible injury in 40&ndash;60 minutes.</b> Wall motion on echo: hypokinesia (reduced), akinesia (none), dyskinesia (bulging)."],
+ ["&#9733; Arteries", "Three main: right coronary, left anterior descending, circumflex. <b>Right coronary supplies the atrioventricular node</b> &rarr; complete heart block. <b>Anterior interventricular artery = LAD (left anterior descending)</b>, the most common culprit (40&ndash;50%), then right coronary (30&ndash;40%), circumflex (15&ndash;20%)."],
+ ["Risk factors", "Men &ge;45, women &ge;55; family history male &lt;55 / female &lt;65. Smoking = strong predictor in <b>women &lt;45</b>. Plaque rupture &rarr; platelets + tissue factor &rarr; clotting cascade &rarr; fibrin."],
+ ["&#9733; The pain", "Substernal pressure, worse with exertion, <b>not positional</b>, relieved by nitroglycerin; Levine's sign = clenched fist over the sternum. <b>Silent ischemia</b> in diabetes, neuropathy, transplanted heart &rarr; dyspnea, nausea, fatigue. Referred: jaw, tooth, arm."],
+ ["Workup", "Every chest pain: <b>chest radiograph + STAT electrocardiogram</b>. Calcium score = <b>risk stratification, not acute coronary syndrome</b>. Abnormal nuclear stress test &rArr; cardiac catheterization."],
+ ["&#9733; Risk scores", "HEART = History, EKG (electrocardiogram), Age, Risk factors, Troponin (parts only). <b>TIMI (Thrombolysis in Myocardial Infarction) 3 or higher &rarr; early invasive approach</b> &mdash; the only score cut-off tested."],
+]},
+{"id": "l24-acs", "label": "CAD: Troponin, Angina & the ECG", "color": "#a3341f", "rows": [
+ ["&#9733; Troponin I", "Standard: <b>abnormal above 0.04 ng/mL</b>. High-sensitivity: <b>12 ng/L women, 20 ng/L men</b> (99th percentile). <b>Rules OUT</b> (who can go home); <b>one means two</b> (repeat, watch for a rise). Troponin I is heart-specific; smooth muscle has none."],
+ ["Stable angina", "Most common; with exertion, relieved by rest + nitroglycerin. Stress-test T-wave inversion; <b>coronary angiography = gold standard</b>. Beta blocker (calcium channel blocker if contraindicated), statin, aspirin &plusmn; clopidogrel. <b>Call emergency medical services if unimproved 5 min after one dose or after 3 doses.</b>"],
+ ["&#9733; Unstable angina vs the infarcts", "Unstable angina: rest pain, inverted T waves, <b>troponin normal</b>. Non-ST-elevation infarction: <b>ST depression &gt;1 mm and/or T inversion</b> in &ge;2 consecutive leads + <b>troponin elevated</b>. ST-elevation: &gt;1 mm in &ge;2 consecutive leads; <b>new left bundle branch block = equivalent</b>."],
+ ["UA / NSTEMI treatment", "Medical emergency: chewable aspirin, beta blocker, intravenous nitrates, dual antiplatelet &plusmn; anticoagulation. <b>Oxygen only if SpO2 &lt;91%.</b> Then catheterization and angiography."],
+ ["&#9733; Lead &rarr; artery", "<b>II, III, aVF = inferior = right coronary</b> &middot; I, aVL, V5&ndash;V6 = lateral = circumflex &middot; V1&ndash;V4 = anterior/septal = LAD (V4 is anterior). Subendocardial &rarr; ST depression; transmural &rarr; ST elevation. Q waves = infarct already done."],
+ ["&#9733; Posterior", "<b>ST depression in V1&ndash;V3</b> = posterior infarct (easy to miss) &rarr; record <b>posterior leads V7&ndash;V9</b>."],
+]},
+{"id": "l24-tx", "label": "CAD: STEMI Care, Stents & Variants", "color": "#1f5c3a", "rows": [
+ ["&#9733; Time is muscle", "Electrocardiogram <b>within 10 min</b>; door-to-balloon <b>&lt;90 min</b>. Chewable aspirin, call the catheterization team, then P2Y12 antagonist + heparin; beta blocker if no bradycardia. <b>Thrombolytics if intervention is 2+ hours away</b>, within 30 min of arrival; tenecteplase most common."],
+ ["&#9733; Right ventricular infarct", "Right coronary occlusion reaching the right ventricle (15&ndash;30%; ST elevation V1, V4R): <b>NO nitroglycerin</b> &mdash; preload falls, shock. Also no nitroglycerin within 24 h of a phosphodiesterase inhibitor (ask women: pulmonary arterial hypertension)."],
+ ["Thrombolytic contraindications", "Absolute: active bleeding, major surgery/trauma 4 weeks, hemorrhagic stroke in the previous year, unknown stroke 6 weeks, pregnancy, uncontrolled &gt;190/100."],
+ ["&#9733; Words have meaning", "Catheterization = the tube in; <b>angiography = dye + pictures</b>; plain old balloon angioplasty = no stent; <b>percutaneous coronary intervention = stent</b>. <b>Missing dual antiplatelet therapy in the first 6 weeks = 50% sudden in-stent restenosis.</b> Bypass: mammary/radial <b>artery first</b>, saphenous vein if not."],
+ ["&#9733; After the infarct", "<b>Beta blockers improve survival; calcium channel blockers do not</b> (diltiazem/verapamil only with preserved function). High-intensity statin for every acute coronary syndrome before discharge; ACE (angiotensin-converting enzyme) inhibitor if reduced function; warfarin for large anterior infarcts. Dressler = pericarditis; cardiogenic shock more with left-sided."],
+ ["&#9733; Sudden cardiac death", "Most often <b>ventricular fibrillation</b>; the first sign of coronary disease in <b>over 20%</b>."],
+ ["&#9733; Vasospastic (Prinzmetal)", "Often &lt;50, smoker, <b>rest pain midnight&ndash;8 a.m.</b>, 5&ndash;15 min, transient ST elevation, normal coronaries. <b>Gold standard: ergonovine/acetylcholine at angiography</b>, relieved by nitroglycerin. <b>Calcium channel blocker first-line</b>; avoid <b>nonselective</b> beta blockers, aspirin, triptans."],
+ ["Microvascular angina", "Formerly cardiac syndrome X: angina + ST changes, <b>normal coronaries</b>, women, stress; diagnosis of exclusion (needs angiography); treated like coronary disease."],
+]},
+# ---- Lecture 25 (Carter), condensed from guide section 6 ----
 {"id": "l25-core", "label": "Heart Failure: Groups, Stages & Classes", "color": "#7a2d47", "rows": [
  ["2022, not the deck", "Tested on the <b>2022</b> guideline; slide 57 (2026 changes) = rotations only. Learn <b>&ldquo;mildly&rdquo;</b> reduced (not &ldquo;moderately&rdquo;), <b>&le;40 / 41&ndash;49 / &ge;50</b> (not &lt;40 / &gt;50), stage D = <b>advanced</b> (not &ldquo;decompensated&rdquo;), calcium channel blockers = <b>avoid</b> (no subclass ranking), beta blockers by <b>class</b>. Digitalis not keyed."],
  ["&#9733; Systolic vs diastolic", "<b>Systolic</b> = squeeze fails: ischemic or dilated cardiomyopathy &rarr; reduced ejection fraction &rarr; normal or low pressure &rarr; <b>third heart sound</b> &rarr; pulmonary edema. <b>Diastolic</b> = relaxation fails: hypertrophic (hypertension) &rarr; preserved fraction &rarr; hypertension &rarr; <b>fourth heart sound</b> &rarr; peripheral then pulmonary edema. Add an elevated B-type natriuretic peptide = slam dunk."],
@@ -196,11 +222,11 @@ html = render(
     title="Cram Sheet — CMS I Exam 4",
     kicker="Clinical Medicine and Surgery I · Exam 4 · Class of 2028",
     h1="CMS I Exam 4 Cram Sheet",
-    sub="Hypertension, hypotension, atherosclerosis and lipid disorders, valvular heart disease "
-        "and heart failure condensed: classification and causes, the orthostatic heart-rate tell, "
-        "the lipid memory aid and 2018 statin decisions, the murmur words and valve-by-valve "
-        "essentials, and the 2022 heart failure groups, stages and therapy. Coronary artery "
-        "disease follows when posted.",
+    sub="The whole Exam 4 block condensed &mdash; hypertension, hypotension, atherosclerosis and "
+        "lipid disorders, valvular heart disease, coronary artery disease and heart failure: "
+        "classification and causes, the orthostatic heart-rate tell, the lipid memory aid and 2018 "
+        "statin decisions, the murmur words and valve-by-valve essentials, the troponin numbers and "
+        "lead-to-artery chart, and the 2022 heart failure groups, stages and therapy.",
     topics=topics,
     guide_href="cms-exam-4-study-guide.html",
     footer_note="Condensed from the CMS I Exam 4 Study Guide (Class of 2028). "
