@@ -51,7 +51,7 @@ POOL_B = [
  dict(topic="Lichenification", io=IOC,
    q="Which description of lichenification is accurate?",
    opts=[
-     ["Long-term scratching or rubbing of a pruritic area in an itch-scratch cycle, producing hyperplasia and hyperkeratosis with solid, firm, thick plaques without scaling",
+     ["Long-term scratching or rubbing in an itch-scratch cycle, causing hyperplasia and hyperkeratosis in thick plaques without scaling",
       "Correct. The itch-scratch cycle drives hyperplasia and hyperkeratosis into firm, thick plaques without scaling, as in lichen simplex chronicus."],
      ["Loss of melanocytes across a circumscribed area",
       "Loss of melanocytes produces a hypopigmented macule such as vitiligo; lichenification is epidermal thickening from long-term scratching or rubbing."],
@@ -64,7 +64,7 @@ POOL_B = [
  dict(topic="Erosion and ulcer", io=IOC,
    q="What is the tissue distinction between an erosion and an ulcer?",
    opts=[
-     ["An erosion is focal loss of epidermis that does not penetrate below the dermal-epidermal junction; an ulcer is focal loss of epidermis AND dermis, with destruction of collagen and infiltration of inflammatory cells",
+     ["An erosion stays above the dermal-epidermal junction; an ulcer loses epidermis AND dermis, destroying collagen with inflammatory infiltrate",
       "Correct. The junction is the boundary that separates them, and crossing it is what brings collagen destruction into play."],
      ["An erosion involves epidermis and dermis; an ulcer is limited to the epidermis",
       "This reverses the two: an erosion stops above the dermal-epidermal junction, while an ulcer loses epidermis and dermis with collagen destruction."],
@@ -77,7 +77,7 @@ POOL_B = [
  dict(topic="Fissure", io=IOC,
    q="Which description of a fissure is accurate?",
    opts=[
-     ["A linear ulcer forming a crack in the epidermis, from loss of elasticity or flexibility, severe dryness and mechanical tension, with hyperkeratosis thickening the stratum corneum",
+     ["A linear ulcer cracking the epidermis, from lost elasticity, severe dryness and mechanical tension",
       "Correct. A fissure is a linear ulcer cracking the epidermis where lost elasticity, severe dryness and mechanical tension act on a thickened stratum corneum."],
      ["A superficial loss of epidermis that spares the dermal-epidermal junction",
       "Superficial epidermal loss sparing the dermal-epidermal junction is an erosion; a fissure is a linear, crack-shaped ulcer in the epidermis."],
@@ -90,8 +90,8 @@ POOL_B = [
  dict(topic="Wound healing", io=IOC,
    q="Which description of the inflammatory phase of wound healing is accurate?",
    opts=[
-     ["Days 1 to 3: a fibrin hemostatic plug forms, neutrophils and macrophages remove dead tissue, and growth factors and cytokines are secreted to signal the next phase",
-      "Correct. The phase both cleans the wound and issues the signal that starts proliferation."],
+     ["Days 1 to 3: a fibrin hemostatic plug forms, neutrophils and macrophages remove dead tissue, and growth factors are secreted",
+      "Correct. The phase both cleans the wound and issues the signal, through secreted growth factors and cytokines, that starts proliferation."],
      ["Days 4 to 21: granulation tissue forms from macrophages, fibroblasts and endothelial cells",
       "Granulation tissue forming over days 4 to 21 is the proliferative phase; the inflammatory phase, days 1 to 3, forms a fibrin plug and clears dead tissue."],
      ["Days 21 to one year: type III collagen is replaced by type I",
@@ -103,7 +103,7 @@ POOL_B = [
  dict(topic="Wound healing", io=IOC,
    q="Which description of the proliferative phase of wound healing is accurate?",
    opts=[
-     ["Granulation tissue, comprised of macrophages, fibroblasts and endothelial cells, over days 4 to 21",
+     ["Granulation tissue of macrophages, fibroblasts and endothelial cells, days 4 to 21",
       "Correct. Over days 4 to 21, granulation tissue forms, comprised of macrophages, fibroblasts and endothelial cells, before remodeling begins."],
      ["A fibrin hemostatic plug, over days 1 to 3",
       "A fibrin hemostatic plug forms in the inflammatory phase, days 1 to 3; the proliferative phase, days 4 to 21, forms granulation tissue."],
@@ -116,7 +116,7 @@ POOL_B = [
  dict(topic="Wound healing", io=IOC,
    q="Which description of collagen in the remodeling phase of wound healing is accurate?",
    opts=[
-     ["Type III collagen is replaced with stronger type I collagen oriented in small parallel bundles, whereas normal dermis has a basket-weave orientation",
+     ["Type III collagen is replaced by stronger type I in small parallel bundles, unlike the basket-weave of normal dermis",
       "Correct. In remodeling, from day 21 to one year, type III collagen gives way to stronger type I in small parallel bundles, unlike the basket-weave of normal dermis."],
      ["Type I collagen is replaced with type III in basket-weave orientation",
       "This reverses both: weaker type III is replaced by stronger type I, laid in parallel bundles rather than the basket-weave of normal dermis."],
@@ -142,8 +142,8 @@ POOL_B = [
  dict(topic="Keloids", io=IOC,
    q="How do hypertrophic scars and keloids depart from normal healing?",
    opts=[
-     ["Fibroblast dysregulation prolongs the proliferative phase, collagen deposition and degradation become imbalanced during remodeling, and collagen bundles develop haphazardly and exceed the boundaries of the initial wound",
-      "Correct. Two phases go wrong, and exceeding the original wound margin is the defining outcome."],
+     ["Fibroblast dysregulation prolongs the proliferative phase and unbalances remodeling, so collagen bundles grow haphazardly beyond the original wound",
+      "Correct. Two phases go wrong: proliferation is prolonged, and collagen deposition and degradation become imbalanced during remodeling. Exceeding the original wound margin is the defining outcome."],
      ["Keratinocyte division slows and elastin degrades, thinning the tissue",
       "Slowed keratinocyte division and elastin degradation describe atrophy, which thins the skin; keloids come from a prolonged proliferative phase and excess collagen."],
      ["The inflammatory phase never resolves, so granulation tissue never forms at all",
@@ -168,7 +168,7 @@ POOL_B = [
  dict(topic="Secondary lesions", io=IOC,
    q="A patient has thick, leathery plaques on the neck and forearms with no scaling, after months of scratching. Which secondary lesion is this, mechanistically?",
    opts=[
-     ["Lichenification, from hyperplasia and hyperkeratosis driven by the itch-scratch cycle",
+     ["Lichenification, from itch-scratch-driven hyperplasia and hyperkeratosis",
       "Correct. The absence of scaling is what separates it from psoriasis, whose plaques do scale."],
      ["Scale, from desquamating stratum corneum",
       "Scale is desquamating stratum corneum, and these plaques have none; lichenification forms thick plaques without scaling."],
@@ -181,7 +181,7 @@ POOL_B = [
  dict(topic="Secondary lesions", io=IOC,
    q="Why does an ulcer scar while an erosion generally does not?",
    opts=[
-     ["An ulcer destroys collagen in the dermis, so healing must lay down new collagen; an erosion spares the dermal-epidermal junction and the dermis beneath it",
+     ["An ulcer destroys dermal collagen, which healing must replace; an erosion spares the dermis",
       "Correct. Scarring is a dermal repair process, so a lesion confined above the junction has nothing to scar."],
      ["An ulcer is infected and an erosion is sterile",
       "Infection does not define either lesion; the difference is depth, since an ulcer destroys dermal collagen and an erosion stays above the junction."],

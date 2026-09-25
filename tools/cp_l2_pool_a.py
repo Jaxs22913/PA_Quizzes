@@ -18,7 +18,7 @@ POOL_A = [
  dict(topic="Skin functions", io=IOA,
    q="Where does each step of vitamin D activation take place, beginning in the skin?",
    opts=[
-     ["Cholecalciferol is produced in the skin under ultraviolet B light, then hydroxylated first in the liver and then in the kidneys to the active form calcitriol",
+     ["Cholecalciferol forms in the skin under ultraviolet B light, then is hydroxylated in the liver and then the kidneys to calcitriol",
       "Correct. The skin only starts the process; two further hydroxylation steps in separate organs are needed before the hormone is active."],
      ["Calcitriol is produced directly in the skin under ultraviolet B light and requires no further modification",
       "The skin produces cholecalciferol, which is inactive until hydroxylated twice elsewhere."],
@@ -44,7 +44,7 @@ POOL_A = [
  dict(topic="Epidermis", io=IOA,
    q="Which statement correctly describes the cell population of the epidermis?",
    opts=[
-     ["Keratinocytes, melanocytes, Merkel cells and Langerhans cells, with keratinocytes about 90 percent",
+     ["Keratinocytes (about 90 percent), melanocytes, Merkel cells and Langerhans cells",
       "Correct. The epidermis holds keratinocytes, melanocytes, Merkel cells and Langerhans cells, and keratinocytes, which produce keratin, make up about 90 percent of it."],
      ["Fibroblasts, macrophages, adipocytes and mast cells, with fibroblasts predominating",
       "Fibroblasts, macrophages, adipocytes and mast cells are cells of the dermis; the epidermis holds keratinocytes, melanocytes, Merkel cells and Langerhans cells."],
@@ -148,8 +148,8 @@ POOL_A = [
  dict(topic="Appendages", io=IOA,
    q="How do eccrine and apocrine sweat glands differ in secretion and function?",
    opts=[
-     ["Eccrine open onto the skin surface and secrete water and electrolytes for cooling by evaporation; apocrine sit mainly in the axilla and anogenital areas and secrete protein and fatty lipids, functioning as scent glands",
-      "Correct. Body odor comes from bacterial degradation of apocrine sweat, not from the sweat itself, and eccrine sweat cools the body by evaporation."],
+     ["Eccrine secrete water and electrolytes for evaporative cooling; apocrine, mainly axillary and anogenital, secrete protein and lipids as scent glands",
+      "Correct. Eccrine glands open onto the skin surface and cool the body by evaporation; body odor comes from bacterial degradation of apocrine sweat, not from the sweat itself."],
      ["Eccrine sit in the axilla and secrete lipids; apocrine open onto the surface and secrete water and electrolytes",
       "This swaps the two glands: eccrine glands open onto the skin surface for evaporative cooling, and apocrine glands sit in the axilla and anogenital areas."],
      ["Both secrete sebum, differing only in the body regions they occupy",
@@ -226,7 +226,7 @@ POOL_A = [
  dict(topic="Papules", io=IOB,
    q="What is the tissue basis of a papule?",
    opts=[
-     ["Hyperplasia of the epidermis with hyperkeratosis, plus inflammation and dense collagen fibers in the dermis",
+     ["Epidermal hyperplasia with hyperkeratosis, over dermal inflammation and dense collagen",
       "Correct. A papule is an elevated solid lesion under 5 millimeters, built from epidermal hyperplasia with hyperkeratosis over dermal inflammation, as in seborrheic keratosis."],
      ["Fluid containing inflammatory cells collecting within or beneath the epidermis",
       "Fluid with inflammatory cells within or beneath the epidermis forms a vesicle; a papule is solid, from hyperplasia with hyperkeratosis."],
@@ -265,8 +265,8 @@ POOL_A = [
  dict(topic="Vesicles", io=IOB,
    q="What distinguishes a vesicle from a bulla?",
    opts=[
-     ["A vesicle is up to 5 millimeters with fluid containing inflammatory cells collecting within or directly beneath the epidermis; a bulla is greater than 5 millimeters and involves separation of epidermis from dermis",
-      "Correct. The bulla represents a deeper plane of cleavage, not merely a bigger blister."],
+     ["A vesicle is up to 5 millimeters, with fluid within or beneath the epidermis; a bulla is larger and separates epidermis from dermis",
+      "Correct. A vesicle holds fluid containing inflammatory cells within or directly beneath the epidermis; a bulla, greater than 5 millimeters, involves separation of epidermis from dermis. The bulla represents a deeper plane of cleavage, not merely a bigger blister."],
      ["A vesicle is greater than 5 millimeters and a bulla up to 5, with identical mechanisms",
       "The sizes are reversed: a vesicle is up to 5 millimeters and a bulla is larger, and a bulla forms by separation of the epidermis from the dermis."],
      ["A vesicle is solid and a bulla is fluid-filled",
@@ -278,7 +278,7 @@ POOL_A = [
  dict(topic="Vesicles", io=IOB,
    q="Which factors cause bullae?",
    opts=[
-     ["Mechanical factors, infections, toxins, chemical exposure and autoimmune reactions",
+     ["Mechanical factors, infections, toxins, chemicals and autoimmunity",
       "Correct, with bullous impetigo as the bacterial example and bullous pemphigoid as the autoimmune one."],
      ["Increased melanin production and ultraviolet exposure only",
       "Increased melanin production causes hyperpigmented macules; bullae arise from mechanical, infectious, toxic, chemical or autoimmune injury."],

@@ -113,7 +113,7 @@ POOL_B = [
  dict(topic="Presbyopia", io=IO5, slot="etiology", kfe=True,
    q="What is the mechanism of presbyopia?",
    opts=[
-     ["The lens loses elasticity and the ciliary muscle loses accommodation, through sclerosis",
+     ["The lens stiffens and the ciliary muscle loses accommodation, through sclerosis",
       "Correct — sclerosis stiffens the lens and the ciliary muscle loses accommodation, so the eye can no longer focus on near objects."],
      ["The axial globe shortens with age",
       "The globe does not shorten in presbyopia; it is a lens and ciliary muscle problem, loss of elasticity and accommodation through sclerosis."],
@@ -126,7 +126,7 @@ POOL_B = [
  dict(topic="Presbyopia", io=IO5, slot="manifestation", kfe=True,
    q="What is the functional consequence of presbyopia?",
    opts=[
-     ["Inability to focus on near objects, so reading glasses or bifocals are needed",
+     ["Inability to focus on near objects, so reading glasses are needed",
       "Correct — the sclerotic lens and ciliary muscle can no longer accommodate, so near objects cannot be focused and readers or bifocals are needed."],
      ["Inability to focus on distant objects",
       "Distance vision is not the one lost; presbyopia removes near focus, as the lens and ciliary muscle lose accommodation."],
@@ -200,7 +200,7 @@ POOL_B = [
  dict(topic="Strabismus", io=IO4, slot="etiology",
    q="What are the two pathophysiological causes of strabismus?",
    opts=[
-     ["Extraocular muscle imbalance and cranial nerve palsy of the third, fourth or sixth nerves",
+     ["Extraocular muscle imbalance and third, fourth or sixth nerve palsy",
       "Correct — strabismus is mechanical: an extraocular muscle imbalance or a palsy of the third, fourth or sixth cranial nerve misaligns the visual axes."],
      ["Retinal detachment and vitreous hemorrhage",
       "Retinal detachment and vitreous hemorrhage affect the image, not alignment; strabismus comes from extraocular muscle imbalance or cranial nerve palsy."],
@@ -213,7 +213,7 @@ POOL_B = [
  dict(topic="Amblyopia", io=IO4, slot="etiology",
    q="What is amblyopia?",
    opts=[
-     ["Reduced best-corrected visual acuity from abnormal visual processing during the critical developmental period",
+     ["Reduced best-corrected acuity from abnormal visual development",
       "Correct — amblyopia is a visual deficit rather than a mechanical one: best-corrected acuity stays reduced because visual processing developed abnormally during the critical pediatric period."],
      ["Ocular misalignment from extraocular muscle imbalance",
       "Misalignment from muscle imbalance or nerve palsy is strabismus, a mechanical problem; amblyopia is the visual deficit that uncorrected strabismus can cause."],

@@ -61,8 +61,8 @@ POOL_D = [
  dict(topic="Open-angle glaucoma", io=IO6, slot="etiology", kfe=True,
    q="What is the mechanism of primary open-angle glaucoma?",
    opts=[
-     ["The iridocorneal angle stays open but microscopic resistance in the trabecular meshwork impairs outflow, raising pressure gradually",
-      "Correct — the angle is open; the obstruction is microscopic and downstream."],
+     ["An open angle, but trabecular meshwork resistance impairs outflow",
+      "Correct — the angle is open; the obstruction is microscopic resistance in the trabecular meshwork, downstream, so pressure rises gradually."],
      ["The iridocorneal angle narrows anatomically and blocks outflow suddenly",
       "Anatomical narrowing that suddenly blocks outflow is angle-closure glaucoma; in open-angle disease the angle stays open and the resistance is microscopic."],
      ["Aqueous production by the ciliary body increases sharply",
@@ -109,7 +109,7 @@ POOL_D = [
  dict(topic="Angle-closure glaucoma", io=IO6, slot="manifestation", kfe=True,
    q="What is the symptom set of acute angle-closure glaucoma?",
    opts=[
-     ["Severe eye pain, headache, halos around lights, cloudy cornea, a fixed mid-dilated pupil, and nausea and vomiting",
+     ["Severe eye pain, halos, cloudy cornea, fixed mid-dilated pupil, and vomiting",
       "Correct — iris bombé blocks aqueous outflow totally, and the rapid pressure spike above 50 mmHg produces pain, headache, halos, a cloudy cornea, a fixed mid-dilated pupil and vomiting."],
      ["Painless gradual bilateral blurring with glare at night",
       "Painless gradual blurring with night glare is cataract; acute angle closure is a sudden, painful pressure spike with halos and a fixed mid-dilated pupil."],
@@ -227,7 +227,7 @@ POOL_D = [
  dict(topic="Vitreous aging", io=IO8, slot="etiology", kfe=True,
    q="Which change in the vitreous underlies rhegmatogenous retinal detachment?",
    opts=[
-     ["It liquefies, so fluid can track through any retinal break into the subretinal space",
+     ["It liquefies, so fluid tracks through a break into the subretinal space",
       "Correct — once liquefied, vitreous fluid can pass through a full-thickness retinal tear into the subretinal space and peel the neurosensory retina off the pigment epithelium."],
      ["It solidifies, pressing the retina more firmly against the pigment epithelium",
       "Solidification is not the change; in rhegmatogenous detachment liquefied vitreous fluid passes through a full-thickness tear into the subretinal space."],
@@ -241,7 +241,7 @@ POOL_D = [
  dict(topic="Dry macular degeneration", io=IO9, slot="etiology", kfe=True,
    q="What is the hallmark of dry, atrophic macular degeneration?",
    opts=[
-     ["Drusen — discrete yellow extracellular debris beneath the pigment epithelium and Bruch membrane",
+     ["Drusen: yellow extracellular debris beneath the pigment epithelium",
       "Correct — drusen are discrete yellow extracellular deposits of lipofuscin and apolipoproteins beneath the pigment epithelium and Bruch membrane, the hallmark of the dry form."],
      ["Choroidal neovascularization breaching into the subretinal space",
       "Choroidal neovascularization breaching into the subretinal space is the wet form; the dry form's hallmark is drusen beneath the pigment epithelium."],
@@ -276,7 +276,7 @@ POOL_D = [
  dict(topic="Wet macular degeneration", io=IO9, slot="etiology", kfe=True,
    q="What is the mechanism of wet, neovascular macular degeneration?",
    opts=[
-     ["Hypoxia and inflammation trigger choroidal neovascularization, and new vessels breach beneath the pigment epithelium into the subretinal space",
+     ["Choroidal neovascularization breaching beneath the pigment epithelium",
       "Correct — hypoxia and inflammation trigger choroidal neovascularization, and the new vessels breach beneath the pigment epithelium into the subretinal space, where they leak blood and serous fluid."],
      ["Extracellular debris accumulates beneath the pigment epithelium",
       "Lipofuscin debris beneath the pigment epithelium forms drusen, the hallmark of dry macular degeneration, not the neovascular wet form."],
@@ -360,7 +360,7 @@ POOL_D = [
  dict(topic="Diabetic retinopathy", io=IO3, slot="etiology",
    q="What drives the change from non-proliferative to proliferative diabetic retinopathy?",
    opts=[
-     ["Severe ischemia upregulates vascular endothelial growth factor, producing neovascularization",
+     ["Severe ischemia upregulates vascular endothelial growth factor",
       "Correct — chronic hyperglycemia occludes capillaries, severe ischemia upregulates vascular endothelial growth factor, and fragile new vessels grow on the disc and retina."],
      ["Rising intraocular pressure forces new vessels to form",
       "Intraocular pressure is not the driver; severe ischemia upregulates vascular endothelial growth factor, which produces the fragile new vessels."],
@@ -465,7 +465,7 @@ POOL_D = [
  dict(topic="Visual field defects", io=IO10, slot="etiology", kfe=True,
    q="Why does a central chiasmal lesion spare nasal vision in both eyes?",
    opts=[
-     ["Only the crossing nasal retinal fibers are interrupted, and those carry the temporal fields; the temporal retinal fibers travel ipsilaterally and are untouched",
+     ["Only the crossing nasal fibers are cut, and they carry the temporal fields",
       "Correct — only the nasal retinal fibers cross at the chiasm, and they carry the temporal fields; the temporal retinal fibers stay ipsilateral, so nasal vision survives."],
      ["The lesion damages the temporal retinal fibers, which carry nasal vision",
       "Temporal retinal fibers stay ipsilateral, so a central lesion misses them; it cuts the crossing nasal fibers, which carry the temporal fields."],
@@ -504,7 +504,7 @@ POOL_D = [
  dict(topic="Visual field defects", io=IO10, slot="differential",
    q="A temporal lobe lesion affecting part of the optic radiation produces which defect?",
    opts=[
-     ["Contralateral superior quadrantanopsia, or pie in the sky",
+     ["Contralateral superior quadrantanopsia",
       "Correct — a temporal lobe lesion, surgery or middle cerebral artery stroke at the temporal optic radiation causes contralateral superior quadrantanopsia, pie in the sky."],
      ["Contralateral inferior quadrantanopsia",
       "Inferior quadrantanopsia is not the temporal result; damage to the temporal optic radiation removes the contralateral superior quadrant, pie in the sky."],

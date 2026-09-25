@@ -28,7 +28,7 @@ POOL_A = [
  dict(topic="Unique features of the eye", io=IO1, slot="etiology",
    q="What makes the eye the only place in the body where live neural tissue can be seen directly?",
    opts=[
-     ["The optic nerve head is visible through the pupil without cutting any tissue",
+     ["The optic nerve head is visible through the pupil noninvasively",
       "Correct — the eye is a nervous window: the only place in the body where live neural tissue and a cranial nerve, the optic nerve head, can be seen directly."],
      ["The retina can be biopsied more safely than any other neural tissue",
       "Biopsy is not the point; the eye is the only place where live neural tissue, the optic nerve head, can be seen directly without cutting any tissue."],

@@ -57,7 +57,7 @@ POOL_C = [
  dict(topic="Where the -itis is", io=IO3, slot="etiology",
    q="How does panophthalmitis differ from endophthalmitis?",
    opts=[
-     ["It involves all layers of the globe and may extend into orbital tissue",
+     ["It involves every layer of the globe and may enter the orbit",
       "Correct — pan- means all: panophthalmitis involves every layer of the globe and can spread into the orbit, beyond the intraocular infection of endophthalmitis."],
      ["It involves only the vitreous",
       "Vitreous alone is narrower than endophthalmitis, not broader; panophthalmitis involves every layer of the globe and may reach the orbit."],
@@ -205,7 +205,7 @@ POOL_C = [
  dict(topic="Orbital cellulitis", io=IO3, slot="manifestation",
    q="Which findings does orbital cellulitis show that periorbital cellulitis lacks?",
    opts=[
-     ["Proptosis, decreased extraocular movement and a risk of optic nerve compression",
+     ["Proptosis, reduced eye movement and risk of optic nerve compression",
       "Correct — bacteria breach the orbital septum into the soft tissue behind the globe, and the purulence there causes proptosis, reduced extraocular movement and optic nerve compression risk."],
      ["Erythema and edema of the lid, localized by the septum",
       "Lid erythema and edema held forward by the septum is periorbital cellulitis, which spares eye movement and vision; orbital cellulitis breaches the septum."],
@@ -309,7 +309,7 @@ POOL_C = [
  dict(topic="Pinguecula and pterygium", io=IO3, slot="differential",
    q="What single feature separates a pterygium from a pinguecula?",
    opts=[
-     ["The pterygium encroaches onto the cornea; the pinguecula does not",
+     ["A pterygium grows onto the cornea; a pinguecula does not",
       "Correct — both are fibrovascular proliferations from chronic ultraviolet, wind and dust exposure, but only the pterygium encroaches onto the cornea and can impair vision."],
      ["The pterygium is yellow; the pinguecula is triangular",
       "The descriptions are reversed: the pinguecula is the yellowish nodule and the pterygium the triangular wing; the separator is corneal encroachment."],
@@ -322,7 +322,7 @@ POOL_C = [
  dict(topic="Chalazion and hordeolum", io=IO3, slot="differential",
    q="Which description fits a chalazion?",
    opts=[
-     ["A chronic, non-tender, sterile granulomatous lipogranuloma of a blocked meibomian gland",
+     ["A non-tender, sterile lipogranuloma of a blocked meibomian gland",
       "Correct — sterile and granulomatous is what separates it from an infection."],
      ["An acute, tender, focal abscess of a gland at the lid margin",
       "An acute, tender focal abscess is a hordeolum, usually from Staphylococcus aureus; a chalazion is chronic, non-tender and sterile."],

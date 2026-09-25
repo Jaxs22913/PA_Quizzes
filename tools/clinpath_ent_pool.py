@@ -166,7 +166,7 @@ QUESTIONS = [
 {"topic": "Otosclerosis", "io": O2, "slot": "epidemiology",
  "q": "Which demographic and inheritance profile fits otosclerosis?",
  "opts": [
-  ["Young-to-middle-aged females, accelerated by pregnancy; 50% autosomal dominant",
+  ["Young-to-middle-aged females; 50% autosomal dominant",
    "Correct. Otosclerosis is most common in young-to-middle-aged females and is accelerated by pregnancy; 50 percent of cases are autosomal dominant with variable penetrance."],
   ["Commonest in older males, with no hereditary component",
    "Both halves are wrong: the peak is younger and female, and half of cases are autosomal dominant."],
@@ -205,7 +205,7 @@ QUESTIONS = [
 {"topic": "Ototoxicity", "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.", "slot": "mechanism",
  "q": "Which two ototoxic effects are reversible or symptom-limited rather than permanent?",
  "opts": [
-  ["Furosemide on the strial potential; salicylate on prestin",
+  ["Furosemide and salicylate",
    "Correct. The loop diuretic effect on the strial potential is reversible, and the salicylate effect on the outer hair cell motor protein produces tinnitus. Neither destroys the cells outright."],
   ["Gentamicin and tobramycin damage",
    "Gentamicin and tobramycin generate reactive oxygen species that destroy outer hair cells from the cochlear base, a destructive rather than reversible effect."],
@@ -335,7 +335,7 @@ QUESTIONS = [
 {"topic": "Vertigo vs dizziness", "io": "Objective 4 — Differentiate the pathogenesis of vertigo and dizziness.", "slot": "mechanism",
  "q": "Which features mark vertigo as PERIPHERAL rather than central?",
  "opts": [
-  ["Sudden onset, horizontal or rotational nystagmus, fatigable, suppressed by visual fixation",
+  ["Sudden onset, horizontal-rotary nystagmus, fatigable, suppressed by fixation",
    "Correct. Peripheral vertigo involves the inner ear or cranial nerve VIII, with sudden onset and prominent horizontal or rotational nystagmus that is fatigable and suppressed by visual fixation."],
   ["Gradual onset, vertical nystagmus, non-suppressible, with neurological deficits",
    "Gradual onset, vertical non-suppressible nystagmus and neurological deficits describe CENTRAL vertigo from the brainstem or cerebellum."],
@@ -361,7 +361,7 @@ QUESTIONS = [
 {"topic": "Meniere disease", "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.", "slot": "mechanism",
  "q": "What is the mechanism of Meniere disease?",
  "opts": [
-  ["Defective endolymph resorption causing hydrops, ballooning the scala media until micro-ruptures occur",
+  ["Defective endolymph resorption causes hydrops until micro-ruptures occur",
    "Correct. Endolymphatic hydrops is the lesion: fluid accumulates because it is not resorbed, the membranous labyrinth distends, and micro-ruptures follow. The episodic nature follows from that cycle."],
   ["Inflammatory swelling and vascular congestion of the labyrinth after a viral infection",
    "That is labyrinthitis, and the recent upper respiratory infection is what separates the two clinically."],
@@ -595,7 +595,7 @@ QUESTIONS = [
 {"topic": "Vocal cord lesions", "io": "Objective 3 — Describe the molecular mechanisms of common disorders of ear, nose, neck, and throat.", "slot": "mechanism",
  "q": "Which description fits vocal cord polyps, as distinct from nodules?",
  "opts": [
-  ["Unilateral, soft and pedunculated on the middle third, after one severe strain",
+  ["Unilateral, soft, pedunculated; from one severe strain",
    "Correct. One event rather than chronic repetition, and the healing response is inflammatory rather than a callus. Site and laterality both differ from nodules."],
   ["Bilateral fibrous calluses from chronic phonotrauma",
    "Bilateral fibrous calluses from chronic phonotrauma are NODULES. Polyps differ on every count &mdash; unilateral, soft, and from one event."],
@@ -608,7 +608,7 @@ QUESTIONS = [
 {"topic": "Tonsillitis", "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.", "slot": "microbiology",
  "q": "Which statement about bacterial tonsillitis and its abscess complication is accurate?",
  "opts": [
-  ["Group A Streptococcus; asymmetric deviation with trismus",
+  ["Group A Streptococcus; asymmetry and trismus",
    "Correct. Tonsillitis is usually Group A Streptococcus, and asymmetric tonsillar deviation with trismus indicates a complicating tonsillar abscess."],
   ["Streptococcus pneumoniae; bilateral exudate",
    "Streptococcus pneumoniae causes otitis media and rhinosinusitis, and tonsillar exudate is a symptom of ordinary tonsillitis, not of abscess."],
@@ -637,7 +637,7 @@ QUESTIONS = [
 {"topic": "Ear anatomy", "io": O1, "slot": "mechanism",
  "q": "Which structure separates the external ear from the middle ear?",
  "opts": [
-  ["The tympanic membrane, which vibrates and passes energy to the ossicles",
+  ["The tympanic membrane, which vibrates the ossicles",
    "Correct. It is the boundary and the first moving part of the conducting chain, which is why perforating it causes conductive loss."],
   ["The oval window, which passes energy to the cochlea",
    "The oval window is the boundary between MIDDLE and INNER ear, driven by the stapes."],
@@ -650,7 +650,7 @@ QUESTIONS = [
 {"topic": "Ear anatomy", "io": O1, "slot": "mechanism",
  "q": "What makes the middle ear vulnerable to the pressure changes behind otitis media?",
  "opts": [
-  ["It is an air-filled space vented only by the Eustachian tube",
+  ["It vents only via the Eustachian tube",
    "Correct. A sealed air pocket with one vent is why closing the vent drops the pressure and draws in fluid."],
   ["It is fluid-filled and cannot compress",
    "The middle ear is air-filled; the INNER ear holds the fluid."],
@@ -689,7 +689,7 @@ QUESTIONS = [
 {"topic": "Conductive loss mechanisms", "io": O5, "slot": "mechanism",
  "q": "Why does cerumen impaction cause conductive rather than sensorineural loss?",
  "opts": [
-  ["It blocks the canal, so sound never reaches the conducting chain",
+  ["It blocks sound delivery down the canal",
    "Correct. The cochlea is untouched, and the defect is purely one of delivery."],
   ["It damages the outer hair cells",
    "Wax sits in the canal and never reaches the cochlea, so the hair cells are untouched by it."],
@@ -702,7 +702,7 @@ QUESTIONS = [
 {"topic": "Hearing loss patterns", "io": O5, "slot": "mechanism",
  "q": "Why does a lesion of cranial nerve VIII produce the same audiometric pattern as cochlear damage?",
  "opts": [
-  ["Both sit beyond the conducting chain, so both give sensorineural loss",
+  ["Both lie beyond the conducting chain",
    "Correct. The category is defined by where the defect sits, not by which of the two structures failed."],
   ["Both stiffen the ossicles",
    "Stiffened ossicles cause conductive loss, as in otosclerosis. The cochlea and cranial nerve VIII both lie beyond the conducting chain, so both give sensorineural loss."],
@@ -728,7 +728,7 @@ QUESTIONS = [
 {"topic": "Otitis externa", "io": O3, "slot": "mechanism",
  "q": "Why does prolonged antibiotic use predispose to FUNGAL otitis externa?",
  "opts": [
-  ["It removes the bacterial competition that normally limits fungal growth",
+  ["It removes competing bacteria",
    "Correct. Prolonged antibiotic use suppresses the bacteria, and Aspergillus niger or Candida albicans then take over as fungal otitis externa."],
   ["It thins the canal skin directly",
    "Antibiotics do not thin the canal skin. What they remove is the bacterial competition."],
@@ -741,7 +741,7 @@ QUESTIONS = [
 {"topic": "Equilibrium", "io": O4, "slot": "mechanism",
  "q": "Why are there three semicircular canals rather than one?",
  "opts": [
-  ["They sit in three planes, so rotation in any direction is detected",
+  ["They cover three planes of rotation",
    "Correct. Sagittal, coronal and transverse between them cover all rotational movement."],
   ["Each detects a different speed of rotation",
    "The three canals are distinguished by the plane they occupy, not by the speed of rotation they detect."],
@@ -754,7 +754,7 @@ QUESTIONS = [
 {"topic": "Vertigo vs dizziness", "io": O4, "slot": "mechanism",
  "q": "Why does asymmetrical vestibular input produce a false sense of motion?",
  "opts": [
-  ["The brain reads the mismatch between the two sides as movement",
+  ["The brain reads the mismatch as motion",
    "Correct. Balance is a comparison, so unequal input is indistinguishable from turning."],
   ["The cochlea sends conflicting auditory signals",
    "The cochlea handles hearing and contributes nothing to the sense of position or movement."],
@@ -767,7 +767,7 @@ QUESTIONS = [
 {"topic": "Meniere disease", "io": O3, "slot": "mechanism",
  "q": "Why does the vertigo of Meniere disease come in attacks rather than continuously?",
  "opts": [
-  ["Pressure builds until micro-ruptures occur, then re-equilibrates",
+  ["Pressure builds, ruptures, then resets",
    "Correct. Defective resorption lets endolymph accumulate and balloon the scala media until micro-ruptures occur; that build-up and release makes it episodic."],
   ["The virus replicates in waves",
    "Meniere disease is a disorder of endolymph resorption, not an infection, so there is no organism replicating."],
@@ -780,7 +780,7 @@ QUESTIONS = [
 {"topic": "Nasal polyps", "io": O3, "slot": "mechanism",
  "q": "Why are nasal polyps classed as non-neoplastic?",
  "opts": [
-  ["No new tissue is grown; existing mucosa becomes edematous",
+  ["No new tissue grows; the mucosa is edematous",
    "Correct. Nasal polyps are benign edematous masses of the mucous membranes of the sinus ostia or ethmoid air cells, not new neoplastic tissue."],
   ["They are malignant but slow growing",
    "Polyps are benign and not neoplastic at all, so describing them as slow-growing malignancy is wrong twice over."],
@@ -793,7 +793,7 @@ QUESTIONS = [
 {"topic": "Epistaxis", "io": O3, "slot": "mechanism",
  "q": "Why does anticoagulation favor POSTERIOR rather than anterior epistaxis?",
  "opts": [
-  ["Posterior bleeding is driven by systemic vascular and clotting factors",
+  ["Posterior bleeds reflect systemic causes",
    "Correct. Anterior causes are local insults to the mucosa; posterior causes act on the vessels and on clotting."],
   ["The anterior septum has no blood supply",
    "Kiesselbach's plexus supplies the anterior septum richly, which is exactly why anterior bleeds are the common ones."],
@@ -806,7 +806,7 @@ QUESTIONS = [
 {"topic": "Cervical lymphadenopathy", "io": O2, "slot": "mechanism",
  "q": "What does it mean, structurally, for lymph nodes to be MATTED?",
  "opts": [
-  ["They have lost their individual capsules and move as one mass",
+  ["They move together as one mass",
    "Correct. Matted nodes move together as one mass, and persistent rubbery or matted nodes in older adults require assessment to rule out lymphoma."],
   ["They are tender and mobile",
    "Tender and mobile describes a reactive node responding to local infection, which is the reassuring picture."],

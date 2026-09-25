@@ -13,8 +13,8 @@ POOL_C = [
  dict(topic="Vascular lesions", io=IOD,
    q="Which description of petechiae is accurate?",
    opts=[
-     ["Minor bleeding into the dermis from capillary rupture, infection, thrombocytopenia or vasculitis, 1 to 2 millimeters or less",
-      "Correct. Petechiae are non-blanchable pinpoint deposits of blood in the dermis, 1 to 2 millimeters or less, from minor bleeding such as capillary rupture."],
+     ["Minor bleeding into the dermis, such as from capillary rupture, 1 to 2 millimeters or less",
+      "Correct. Petechiae are non-blanchable pinpoint deposits of blood in the dermis, 1 to 2 millimeters or less, from minor bleeding such as capillary rupture, infection, thrombocytopenia or vasculitis."],
      ["Permanent dilatation of superficial dermal vessels, 1 to 2 millimeters",
       "Permanent dilatation and thinning of superficial dermal vessels is telangiectasia; petechiae are pinpoint deposits of blood from bleeding into the dermis."],
      ["Increased melanin production in the basal layer, up to 5 millimeters",
@@ -52,8 +52,8 @@ POOL_C = [
  dict(topic="Vascular lesions", io=IOD,
    q="What defines telangiectasia at the tissue level?",
    opts=[
-     ["Permanent dilatation and thinning of the endothelium of capillaries, venules and arterioles in the superficial dermis, with NO inflammatory cell infiltration",
-      "Correct. The absence of inflammatory infiltrate is the discriminating feature."],
+     ["Permanent dilatation and endothelial thinning of superficial dermal vessels, with NO inflammatory infiltrate",
+      "Correct. The dilated, thinned vessels are the capillaries, venules and arterioles of the superficial dermis, and the absence of inflammatory infiltrate is the discriminating feature."],
      ["Capillary rupture with blood deposited into the dermis",
       "Capillary rupture depositing blood in the dermis produces petechiae and purpura; telangiectasia is permanent vessel dilatation with no inflammatory infiltrate."],
      ["Dense inflammatory infiltration around dilated vessels",
@@ -78,7 +78,7 @@ POOL_C = [
  dict(topic="Contact dermatitis", io=IOD,
    q="What are the two phases of allergic contact dermatitis?",
    opts=[
-     ["Sensitization, in which Langerhans cells present haptens to T cells to create specialized memory; and elicitation, in which re-exposure to the same hapten promotes T cell migration and cutaneous inflammation",
+     ["Sensitization, as Langerhans cells present haptens to T cells to form memory; then elicitation, as re-exposure drives T cell migration and inflammation",
       "Correct. Langerhans cells train T cells against a hapten, and re-exposure triggers T cell migration and inflammation, a delayed reaction at 48 to 72 hours."],
      ["Sensitization by mast cell degranulation, then elicitation by histamine release",
       "Mast cell degranulation releasing histamine is the urticaria pathway; allergic contact dermatitis is a delayed, T cell-mediated hypersensitivity reaction."],
@@ -143,7 +143,7 @@ POOL_C = [
  dict(topic="Seborrheic dermatitis", io=IOD,
    q="Which description of seborrheic dermatitis is accurate?",
    opts=[
-     ["Cutaneous microbiome dysbiosis, altered immune response and epidermal barrier dysfunction, affecting regions rich in sebaceous glands — scalp, face and upper trunk",
+     ["Microbiome dysbiosis, altered immunity and barrier dysfunction, in the sebaceous-rich scalp, face and upper trunk",
       "Correct. The cause is incompletely understood, but dysbiosis, altered immunity and barrier dysfunction contribute, in sebaceous-rich scalp, face and upper trunk."],
      ["A single fungal pathogen acting alone, affecting the palms and soles",
       "No single pathogen explains it, and the palms and soles are not its territory; it affects sebaceous-rich scalp, face and upper trunk with several contributing factors."],
@@ -169,7 +169,7 @@ POOL_C = [
  dict(topic="Actinic keratosis", io=IOD,
    q="Which description of actinic keratosis is accurate?",
    opts=[
-     ["Damage from excessive cumulative ultraviolet exposure leading to intraepidermal proliferation of dysplastic keratinocytes, carrying higher risk for squamous cell carcinoma",
+     ["Cumulative ultraviolet damage causing intraepidermal proliferation of dysplastic keratinocytes, raising squamous cell carcinoma risk",
       "Correct. Actinic keratosis is the most common precancer, arising on skin damaged by chronic ultraviolet exposure, and it carries a higher risk of squamous cell carcinoma."],
      ["Benign proliferation of immature keratinocytes, carrying higher risk for basal cell carcinoma",
       "Benign proliferation of immature keratinocytes is seborrheic keratosis; actinic keratosis is dysplastic keratinocyte proliferation raising squamous cell carcinoma risk."],
@@ -182,8 +182,8 @@ POOL_C = [
  dict(topic="Psoriasis", io=IOD,
    q="Which mechanism drives psoriasis?",
    opts=[
-     ["Active T cells infiltrating the epidermis stimulate keratinocyte proliferation and excessive cytokine production, particularly tumor necrosis factor alpha, interferon gamma and interleukin-12",
-      "Correct. Active T cells infiltrate the epidermis, stimulating keratinocyte proliferation and excess cytokines, so skin cells multiply up to ten times faster."],
+     ["Active T cells in the epidermis drive keratinocyte proliferation and excess cytokines, such as tumor necrosis factor alpha",
+      "Correct. Active T cells infiltrate the epidermis, stimulating keratinocyte proliferation and excess cytokines (tumor necrosis factor alpha, interferon gamma and interleukin-12), so skin cells multiply up to ten times faster."],
      ["Mast cells release histamine which drives keratinocyte proliferation",
       "Mast cell histamine release produces the wheals of urticaria; in psoriasis, active T cells stimulate keratinocyte proliferation and excess cytokine production."],
      ["Langerhans cells present haptens to T cells producing delayed hypersensitivity",
@@ -195,7 +195,7 @@ POOL_C = [
  dict(topic="Psoriasis", io=IOD,
    q="Which structural epidermal changes occur in psoriasis?",
    opts=[
-     ["Epidermal hyperplasia, loss of the stratum granulosum, and failure of epidermal cells to secrete lipids producing xeroderma",
+     ["Epidermal hyperplasia, loss of the stratum granulosum, and failed lipid secretion causing xeroderma",
       "Correct. Active T cells drive keratinocyte proliferation into epidermal hyperplasia, the stratum granulosum is lost, and epidermal cells stop secreting lipids."],
      ["Thinning of the epidermis with slowed keratinocyte division",
       "Thinning with slowed keratinocyte division is atrophy; psoriatic skin cells multiply up to ten times faster, producing epidermal hyperplasia."],
@@ -208,7 +208,7 @@ POOL_C = [
  dict(topic="Verrucae", io=IOD,
    q="How does human papillomavirus produce a common wart?",
    opts=[
-     ["It invades epidermal basal cells through microabrasions, leading to proliferation of the epidermis",
+     ["It invades epidermal basal cells via microabrasions, driving epidermal proliferation",
       "Correct. Human papillomavirus invades epidermal basal cells through microabrasions, and that infection leads to proliferation of the epidermis."],
      ["It infects melanocytes at the dermal-epidermal junction",
       "Melanocytes at the dermal-epidermal junction give rise to melanoma; human papillomavirus infects epidermal basal cells through microabrasions."],
@@ -221,7 +221,7 @@ POOL_C = [
  dict(topic="Dermatophytes", io=IOD,
    q="Which description of how dermatophytes infect the skin is accurate?",
    opts=[
-     ["Spores secrete keratinases and proteases to metabolize and digest keratin in skin, hair and nails, typically within the stratum corneum",
+     ["Spores secrete keratinases and proteases that digest keratin, typically in the stratum corneum",
       "Correct. Dermatophyte spores secrete keratinases and proteases that digest keratin in skin, hair and nails, and infection typically occurs in the stratum corneum."],
      ["They invade basal cells through microabrasions and drive epidermal proliferation",
       "Invading basal cells through microabrasions is how human papillomavirus causes warts; dermatophytes digest keratin in the stratum corneum."],
@@ -247,8 +247,8 @@ POOL_C = [
  dict(topic="Nails", io=IOD,
    q="Which description of leukonychia is accurate?",
    opts=[
-     ["Temporary incomplete keratinization at the nail bed, usually harmless nail bed damage but also seen with heavy metal poisoning",
-      "Correct. Leukonychia, or Mee's lines, shows white streaks or spots from temporary incomplete keratinization at the nail bed, usually from harmless nail bed damage."],
+     ["Temporary incomplete keratinization at the nail bed, usually from harmless nail bed damage",
+      "Correct. Leukonychia, or Mee's lines, shows white streaks or spots from temporary incomplete keratinization at the nail bed, usually from harmless nail bed damage, though it is also seen with heavy metal poisoning."],
      ["A halt of keratin production, associated with illness and malnourishment",
       "A halt of keratin production causes Beau's lines, which are transverse grooves; leukonychia shows white streaks or spots from incomplete keratinization."],
      ["Overgrowth of connective tissue in the nail bed",
@@ -260,7 +260,7 @@ POOL_C = [
  dict(topic="Nails", io=IOD,
    q="What is the suspected mechanism of koilonychia?",
    opts=[
-     ["Impaired keratin synthesis associated with deficiency anemia, weakening the nail plate into raised ridges that are thin and concave",
+     ["Impaired keratin synthesis with deficiency anemia, leaving a thin, concave nail plate",
       "Correct. Koilonychia is thought to reflect impaired keratin synthesis with deficiency anemia, leaving a weakened, thin, concave nail; the exact pathophysiology is unknown."],
      ["A halt of keratin production producing transverse grooves",
       "A halt of keratin production with transverse grooves is Beau's lines; koilonychia is a thin, concave nail from impaired keratin synthesis."],
@@ -273,7 +273,7 @@ POOL_C = [
  dict(topic="Nails", io=IOD,
    q="Which description of Beau's lines is accurate?",
    opts=[
-     ["A halt of keratin production producing horizontal or transverse grooves, associated with illness, stress, injury to the nail and malnourishment",
+     ["A halt of keratin production causing transverse grooves, with illness, stress, nail injury or malnourishment",
       "Correct. Beau's lines are horizontal or transverse grooves caused by a halt of keratin production, associated with illness, stress, nail injury and malnourishment."],
      ["Overgrowth of connective tissue in the nail bed, associated with liver disease and diabetes",
       "Connective tissue overgrowth in the nail bed is Terry's nails; Beau's lines are grooves from a halt in keratin production."],
@@ -286,7 +286,7 @@ POOL_C = [
  dict(topic="Nails", io=IOD,
    q="Which description of the pathology of nail clubbing is accurate?",
    opts=[
-     ["Increased capillary density, with increased release of vascular endothelial growth factor",
+     ["Increased capillary density, with more vascular endothelial growth factor release",
       "Correct. The main pathologic finding in clubbing is increased capillary density, with increased release of vascular endothelial growth factor."],
      ["Overgrowth of connective tissue in the nail bed",
       "Connective tissue overgrowth in the nail bed produces Terry's nails; the main pathologic finding in clubbing is increased capillary density."],
@@ -312,7 +312,7 @@ POOL_C = [
  dict(topic="Basal cell carcinoma", io=IOD,
    q="Which mechanism underlies basal cell carcinoma?",
    opts=[
-     ["The Hedgehog signaling pathway, following ultraviolet-induced mutation of basal keratinocytes in the epidermis",
+     ["The Hedgehog pathway, after ultraviolet-induced mutation of basal keratinocytes",
       "Correct. Ultraviolet-induced mutation of basal keratinocytes overactivates Hedgehog signaling and drives tumor growth in this slow-growing, rarely metastasizing cancer."],
      ["The tp53 tumor suppressor pathway, in differentiated keratinocytes",
       "The tp53 tumor suppressor gene mutation belongs to squamous cell carcinoma; basal cell carcinoma overactivates the Hedgehog signaling pathway in basal keratinocytes."],
@@ -351,7 +351,7 @@ POOL_C = [
  dict(topic="Melanoma", io=IOD,
    q="What are the growth phases of melanoma, in order?",
    opts=[
-     ["Radial growth within the epidermis, then vertical growth penetrating the dermis, then increasing tumor thickness, then metastatic invasion of lymphatics and blood vessels",
+     ["Radial growth in the epidermis, vertical growth into the dermis, thickening, then lymphatic and vascular invasion",
       "Correct. Melanoma cells first multiply within the epidermis, then penetrate the dermis, grow deeper and thicker, and finally invade lymphatics and blood vessels."],
      ["Vertical growth first, then radial spread within the epidermis",
       "This reverses the first two: melanoma first multiplies radially within the epidermis, then grows vertically to penetrate the dermis."],
@@ -390,7 +390,7 @@ POOL_C = [
  dict(topic="Contact dermatitis", io=IOD,
    q="A patient reacts to a nickel earring 48 to 72 hours after wearing it. Which mechanism does the delay reflect?",
    opts=[
-     ["Delayed hypersensitivity requiring T cell migration after re-exposure to a hapten previously presented by Langerhans cells",
+     ["Delayed hypersensitivity: T cells migrate after re-exposure to a hapten once presented by Langerhans cells",
       "Correct. The delay is the time the cellular response takes, which is what distinguishes it from an immediate mast cell reaction."],
      ["Immediate immunoglobulin E-mediated mast cell degranulation",
       "Immunoglobulin E-mediated mast cell degranulation produces wheals, not a 48 to 72 hour delay; nickel allergy is a delayed T cell-mediated reaction."],

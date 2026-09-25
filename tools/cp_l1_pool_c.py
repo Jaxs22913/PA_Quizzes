@@ -58,7 +58,7 @@ POOL_C = [
       "Nothing reverses at this point: increased vascular permeability is the step before stasis, and leukocyte adhesion is the step after it."],
      ["It terminates the inflammatory response",
       "The sequence continues through adhesion, transmigration, chemotaxis, aggregation and phagocytosis."],
-     ["It precedes leukocyte adhesion in the sequence, as slowed flow allows leukocytes to contact the endothelium",
+     ["It precedes leukocyte adhesion, since slowed flow lets leukocytes contact the endothelium",
       "Correct. Hemoconcentration and stasis sit immediately before leukocyte adhesion in the sequence of events of acute inflammation."]],
    c=3, cite=c(30)),
 
@@ -134,7 +134,7 @@ POOL_C = [
    opts=[
      ["The final mediator, causing fibrosis and scar formation",
       "Fibrosis is a healing outcome rather than a histamine effect, and histamine acts first rather than last."],
-     ["The first mediator of the initial inflammatory response, causing dilation of arterioles and increased permeability of capillaries and venules",
+     ["The first mediator of the response, dilating arterioles and increasing capillary and venule permeability",
       "Correct. Histamine is the first mediator of the initial response, dilating arterioles and increasing capillary and venule permeability."],
      ["A chemotactic factor drawing neutrophils to the site",
       "Chemotaxis to neutrophils and monocytes comes from complement components; histamine dilates arterioles and raises permeability."],
@@ -164,7 +164,7 @@ POOL_C = [
       "Antibody production and antigen presentation are lymphocyte and monocyte functions; bradykinin increases capillary permeability and causes pain."],
      ["Coagulation and trapping of exudate",
       "Coagulation and trapping of exudate belong to the coagulation system; bradykinin increases capillary permeability and causes pain."],
-     ["Increased capillary permeability, pain, and possibly increased leukocyte chemotaxis",
+     ["Increased capillary permeability, pain, and possibly leukocyte chemotaxis",
       "Correct. Bradykinin is the plasma-protein mediator that adds pain to the permeability effect."]],
    c=3, cite=c(28)),
 
@@ -216,7 +216,7 @@ POOL_C = [
       "T cell receptors are carried by T lymphocytes, not phagocytes; phagocytes recognize immunoglobulin G through Fc receptors binding its Fc portion."],
      ["Through histamine receptors on the endothelium",
       "Histamine acts on the vessels and plays no part in opsonin recognition; phagocytes bind the Fc portion of immunoglobulin G through Fc receptors."],
-     ["Through Fc receptors that recognize the Fc portion of immunoglobulin G",
+     ["Through Fc receptors binding the Fc portion of the antibody",
       "Correct. Macrophages and neutrophils carry Fc receptors that bind the Fc portion of the antibody."]],
    c=3, cite=c(29)),
 
@@ -238,7 +238,7 @@ POOL_C = [
    opts=[
      ["Because sterilization leaves residual endotoxin that acts as a chemotactic agent",
       "Endotoxin plays no part; a sterile device provokes inflammation because it becomes coated with immunoglobulin G and C3b."],
-     ["Because the material becomes coated with immunoglobulin G and C3b, and immune cells recognize that coating and attach to it",
+     ["Because it becomes coated with immunoglobulin G and C3b, which immune cells recognize",
       "Correct. Opsonization of the biomaterial is what makes it a target regardless of sterility."],
      ["Because the device physically obstructs lymphatic drainage",
       "Lymphatic obstruction is not the mechanism; the device is coated with immunoglobulin G and C3b, which immune cells recognize."],
