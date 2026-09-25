@@ -3136,3 +3136,24 @@ body.homepage .continue-item:hover {
   line-height: 1.6;
   max-width: var(--measure, 68ch);
 }
+
+/* Quiet the strike-out control (design review item 11, 2026-09-25). Every
+   choice showed a bordered X box at all times -- four extra controls beside
+   four answers. With a pointer it now rests at 35% and comes up when the row
+   is hovered or focused; on touch it stays visible but borderless and
+   lighter. A struck-out row keeps its X at full strength so the state reads.
+   Function unchanged. */
+#quiz .cross-toggle {
+  transition: opacity var(--dur-1, 160ms) var(--ease, ease), border-color var(--dur-1, 160ms) var(--ease, ease);
+}
+@media (hover: hover) {
+  #quiz .opt .cross-toggle { opacity: .35; border-color: transparent; }
+  #quiz .opt:hover .cross-toggle,
+  #quiz .opt:focus-within .cross-toggle,
+  #quiz .opt .cross-toggle:focus-visible { opacity: 1; border-color: var(--line); }
+}
+@media (hover: none) {
+  #quiz .opt .cross-toggle { border-color: transparent; opacity: .75; }
+}
+#quiz .opt.crossed .cross-toggle { opacity: 1; border-color: var(--bad); }
+@media (prefers-reduced-motion: reduce) { #quiz .cross-toggle { transition: none; } }
