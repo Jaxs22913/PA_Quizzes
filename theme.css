@@ -3124,3 +3124,15 @@ body.homepage .continue-item:hover {
 :root[data-theme="dark"] body[data-dark-kind="cram"] thead th { color: var(--ink); }
 :root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:first-child { background: linear-gradient(to left, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
 :root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:last-child { background: linear-gradient(to right, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
+
+/* Quiz stem in regular weight (design review item 10, 2026-09-25). Every
+   generated quiz set .qtext at weight 600, so a 30-65 question block read as
+   one long semi-bold paragraph; emphasis only means something when the body
+   is regular. #quiz scopes it to the quiz engine (paged and all-on-a-page
+   views) and outranks the template's own .qtext rule, so no page changes.
+   Group Study's big centred question keeps its heading weight. */
+#quiz .qtext {
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: var(--measure, 68ch);
+}
