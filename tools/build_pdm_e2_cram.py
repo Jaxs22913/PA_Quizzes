@@ -154,7 +154,7 @@ html = render(
     guide_href="pdm-exam-2-study-guide.html",
     footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 2 Study Guide (Class of 2028). Covers Lectures 7–9; Lecture 10 (Coagulation and Hemostasis Testing) is added when its deck is posted. Emphasis rows quote the 15 and 17 September 2026 recordings; the Lecture 9 rows are from the slides alone.",
 )
-assert not re.search(r"(?i)haem|oedem|tumour|colour|centre|anaem|oesoph", html)
+assert not re.search(r"(?i)ha[e]m|o[e]dem|tumo[u]r|colo[u]r|cent[r]e|ana[e]m|o[e]soph", html)
 open(OUT, "w", encoding="utf-8").write(html)
 print("wrote %s (%d KB, %d topics, %d rows)" % (os.path.basename(OUT), len(html) // 1024,
       len(topics), sum(len(t["rows"]) for t in topics)))
