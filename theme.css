@@ -2343,6 +2343,13 @@ body.quiz-running header .pill { display: none; }
 @media (max-width: 640px) and (hover: none) and (pointer: coarse) {
   body.quiz-running #shortcuts-btn { display: none; }
 }
+/* Hide the live running score mid-quiz on phones (design review item 4,
+   shipped as its own commit so it can be reverted alone). UWorld never shows
+   it mid-block; the score still appears on the results screen, and the
+   element stays in the DOM for the engine to keep updating. */
+@media (max-width: 640px) {
+  body.quiz-running #quiz .topbar #scoretxt { display: none; }
+}
 
 /* ============================================================
    6. MOTION LAYER (2026-07-27)
