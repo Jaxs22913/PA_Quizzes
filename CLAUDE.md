@@ -171,13 +171,11 @@ Others worth knowing: `check_length_bias`, `check_ppt_grounding`,
 `tools/check_length_bias_fast.py` (node literal extractor, identical numbers,
 ~3 s site-wide).
 
-**Upgraded 2026-09-22 — they now FAIL on real defects they used to pass.**
-`check_self_contained` (with the new `tools/_lecturers.py`) catches lecturer
-names and scans TEST_YOURSELF banks; `check_pool_cites` also reads `*_sets.json`
-and `master-exams*.json` — run it BEFORE any render, a stale sets file puts
+`check_self_contained` (with `tools/_lecturers.py`) catches lecturer names and
+scans TEST_YOURSELF banks; `check_pool_cites` also reads `*_sets.json` and
+`master-exams*.json` — run it BEFORE any render, because a stale sets file puts
 citations back; `check_truncated_keys` compares master keys with their
-topic/pool twins. Until Phase 2 (§8) lands, several are red on Semester 2
-content. Always read the denominator a checker prints.
+topic/pool twins. Always read the denominator a checker prints.
 
 ---
 
@@ -185,8 +183,7 @@ content. Always read the denominator a checker prints.
 
 These are the ones most often broken. Each has a memory with the full story.
 
-- **Four options.** Site-wide, no exceptions (the earlier five-option rule was
-  reversed 2026-09-13).
+- **Four options.** Site-wide, no exceptions.
 - **Every stem asks exactly ONE thing.** Stacked stems test three things at once
   and tell the student nothing about which part they missed.
 - **Every stem is self-contained.** Never cite the lecture, the deck, the
@@ -202,57 +199,18 @@ These are the ones most often broken. Each has a memory with the full story.
 - **Slides-only grounding.** Content comes from the deck. A lecturer's aside
   does not add content the deck lacks.
 - **Semester 1 exams are frozen** — never modify them.
+- **US spelling** in Semester 2+ content (hemoconcentration, tumor, edema); keep
+  taxonomic names such as *Haemophilus*.
 
 ---
 
-## 8. State as of 2026-09-23 — READ THE HANDOFF FIRST
+## 8. Current state and open work
 
-**A "Fix defects" pass is half done.** Full handoff, outside the public repo:
-`~/Developer/PA_Quizzes-handoff/2026-09-23/HANDOFF.md` (state, Jaxon's
-decisions, the defect inventory, a ready Phase 2 workflow script, open
-questions). The memory `phase2_handoff` points there too.
-
-- **Phase 1 is done and live** (commits `fade96b7`..`d64b08a8`): RPG removed;
-  sat Semester 2 exams stacked on `guides.html` (CMS E3, PD2 ENT OSCE, PDM E1,
-  Micro E1) and CMS Exam 4 given its own group; Micro whole-exam papers under a
-  "Whole-Exam Review" divider; `pdm-urinalysis` Arcade deck reachable; Med Lit
-  restored to the calendar (exam 2026-11-02); checkers upgraded (§6).
-- **Phase 2 has NOT run** (stopped before writing anything). Its scope, most
-  urgent first: CMS I ENT retest 2026-09-25 (citations, 2 truncated master
-  keys, GTD bank), Clin Path I Exam 1 2026-09-28 (lecturer-named stems, ~900
-  thin explanations, a sets file that would restore "Professor Rappa"), PD II
-  Exam 1 2026-09-30 (lecturer-named stems, truncated master keys, 3
-  course-mechanics questions to remove, thin explanations), then PDM E1 (the
-  contrast-radioactive claim, "Reynolds contrasted..." stem), CMS E1/E2, Pharm,
-  Micro/Med Lit, Arcade, and automatic guide stacking for Semester 2+.
-- **Decisions already made (2026-09-22):** PD2 course-mechanics questions
-  removed only (L1 quiz 15 -> 12, masters A/D/E 60 -> 59); PDM contrast = keep
-  the deck's keyed answer + state the accurate fact beside it; rewrite Clin
-  Path E1 and PD2 E1 thin explanations (refute + fact, >= 60 chars); guides
-  stack automatically after each exam, Semester 2 and forward only; design
-  review quit; RPG scrapped.
-- The earlier claim that "all 292 banks are citation-free" was only true of the
-  old, narrower `check_pool_cites` regex. Of the "46 pages" still citing, 33
-  were frozen Semester 1 pages; the real Semester 2 set is in the handoff
-  inventory.
-- **Microbiology Exam 1 was sat 2026-09-21.** Its papers: the Webster-review
-  weighted `micro-exam-1-exam-style-quiz.html` (77 q) and the
-  timetable-weighted `micro-exam-1-timetable-weighted-quiz.html` (65 q, the
-  real 65 apportioned over 14 scheduled hours — `timetable_weighted_exams`).
-- Micro has two lecturers: **Webster** (1, 2, 5, 7, 10, 12, 14, 17, 18) and
-  **Fair** (3, 4, 6, 8, 9, 11, 13, 15, 16, 19). Webster's lectures carry
-  almost no signposting, but she reviewed her Exam 1 objectives in class
-  (`micro_webster_review`); Fair gives **no** examinability signposting across
-  ~205 measured minutes, so weight his lectures by time-on-topic
-  (`transcript_emphasis_measurement`).
-
-### Open build work (not defects — ask before starting)
-
-- Guides + cram sheets for 7 Exam-2 topics (Micro L7/L8, Clin Path L6/L7,
-  PD2 L5, PDM L7/L8) and Pharm L5 ENT in its existing guide.
-- PDM L9 deck in the inbox since 09-21, unbuilt; PDM Lab 2 handling (ask).
-- Micro L7 quizzes cover only objectives 1-4 of 9 (pool B never written).
-- Master exams for Exam-2 blocks, held until each block is complete.
+Session state (what is in progress, decisions Jaxon has already made, exam
+dates to plan around, open questions) lives outside this file, in the newest
+dated folder under `~/Developer/PA_Quizzes-handoff/` and the PENDING entries at
+the top of the memory index. Read those before starting work; this file holds
+only what stays true between sessions.
 
 ---
 
