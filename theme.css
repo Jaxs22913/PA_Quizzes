@@ -3184,3 +3184,39 @@ body.homepage .continue-item:hover {
   body > header.top.hero-open .hero-more svg { transform: rotate(180deg); }
 }
 @media (prefers-reduced-motion: reduce) { body > header.top .hero-more svg { transition: none; } }
+
+/* One back link (design review item 13, 2026-09-25). There were five
+   wordings ("Back to Homepage", "Back to Home", "Back to home", "Home",
+   "Back") at five weights and colours, from y=18 to y=120. Every link that
+   goes home now reads "Back to home"; the guide bar keeps "Back" because
+   guideGoBack() returns to the page you came from, not home. One style for
+   all of them, here; `html body` outranks each page's own older rule. The
+   quiz template's link is inline-styled (hence !important) and its 36px top
+   margin put it ~100px lower than anyone else's -- it now sits right under
+   the logo row like the others sit under theirs. Semester 1 copy is not
+   edited; only this style reaches it. */
+html body a.back-link,
+html body .wrap > a.back,
+html body .guide-back-link,
+html body > .wrap > a[href$="index.html"]:first-child {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  font: 600 13.5px/1.2 var(--font-sans) !important;
+  color: var(--muted, #6b7280) !important;
+  text-decoration: none;
+  letter-spacing: 0;
+  transition: color var(--dur-1, 160ms) var(--ease, ease);
+}
+html body a.back-link,
+html body .wrap > a.back { margin: 0 0 16px; padding: 4px 0; }
+html body > .wrap > a[href$="index.html"]:first-child { margin: 10px 0 14px !important; padding: 4px 0; }
+html body a.back-link:hover,
+html body .wrap > a.back:hover,
+html body .guide-back-link:hover,
+html body > .wrap > a[href$="index.html"]:first-child:hover { color: var(--accent, var(--ink, #1f2937)) !important; text-decoration: none; }
+html body a.back-link svg,
+html body .wrap > a.back svg { width: 15px; height: 15px; flex: none; }
+/* the guide bar has no --muted of its own */
+.guide-back-link { --muted: #4b5563; }
+:root[data-theme="dark"] .guide-back-link { --muted: #c9cdd4; }
