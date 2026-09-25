@@ -111,6 +111,55 @@ body.guides-page #refresh-btn { display: flex; }
   background: #191c22;
   border-bottom-color: #2a2e37;
 }
+/* One toolbar (design review item 8): #corner-actions docked inside the bar.
+   Height stays 38px, so the nav.toc top:38px convention still holds. */
+.guide-back-bar > #corner-actions.in-bar {
+  position: static;
+  margin-left: auto;
+  gap: 2px;
+  align-items: center;
+}
+.guide-back-bar #corner-actions.in-bar .corner-btn,
+.guide-back-bar .bar-more-menu .corner-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  color: #374151;
+  transition: background-color var(--dur-1, 160ms) var(--ease, ease), color var(--dur-1, 160ms) var(--ease, ease);
+}
+.guide-back-bar #corner-actions.in-bar .corner-btn:hover,
+.guide-back-bar .bar-more-menu .corner-btn:hover { transform: none; background: #f1f2f5; color: #111827; }
+.guide-back-bar #corner-actions.in-bar .corner-btn:active { transform: scale(.94); }
+:root[data-theme="dark"] .guide-back-bar #corner-actions.in-bar .corner-btn,
+:root[data-theme="dark"] .guide-back-bar .bar-more-menu .corner-btn { background: transparent; color: #c9cdd4; border: 0; }
+:root[data-theme="dark"] .guide-back-bar #corner-actions.in-bar .corner-btn:hover,
+:root[data-theme="dark"] .guide-back-bar .bar-more-menu .corner-btn:hover { background: #22262e; color: #f3f4f6; }
+.guide-back-bar #more-btn { display: none; }
+.bar-more-menu { display: none; }
+@media (max-width: 640px) {
+  .guide-back-bar #corner-actions.in-bar > .corner-btn:not(#guide-search-btn):not(#settings-btn):not(#more-btn) { display: none; }
+  .guide-back-bar #more-btn { display: flex; }
+  .bar-more-menu.open {
+    display: flex; flex-direction: column; gap: 2px;
+    position: absolute; top: 40px; right: 8px; z-index: 560;
+    min-width: 210px; padding: 6px;
+    background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
+  }
+  :root[data-theme="dark"] .bar-more-menu.open { background: #191c22; border-color: #2a2e37; box-shadow: 0 10px 30px rgba(0, 0, 0, .5); }
+  .guide-back-bar .bar-more-menu .corner-btn {
+    display: flex !important; width: 100%; height: 40px;
+    justify-content: flex-start; gap: 12px; padding: 0 10px;
+    font: 600 14px/1 var(--font-sans);
+  }
+  .guide-back-bar .bar-more-menu .corner-btn::after { content: attr(aria-label); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-back-bar #corner-actions.in-bar .corner-btn { transition: none; }
+}
 .guide-back-link {
   display: inline-flex;
   align-items: center;

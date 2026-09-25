@@ -162,6 +162,7 @@ window.SitePrompts = {
   var GEAR = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
   var ARROW_LEFT = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
   var CALC = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><line x1="8" y1="19" x2="8" y2="19.01"/><line x1="12" y1="19" x2="12" y2="19.01"/><line x1="16" y1="19" x2="16" y2="19.01"/></svg>';
+  var MORE_ICON = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg>';
   var TIMER = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg>';
 
   function currentTheme() {
@@ -1438,7 +1439,64 @@ window.SitePrompts = {
       }
     }
 
-    document.body.appendChild(group);
+    // ONE TOOLBAR on guides and cram sheets (design review item 8,
+    // 2026-09-25). They used to float six 38px circles over the page (half
+    // over the hero on desktop, colliding with the logo mark on a phone cram
+    // sheet, half of them off-screen on a phone guide). The group now docks
+    // as a right-aligned icon row INSIDE the sticky 38px .guide-back-bar.
+    // Every script that adds a tool (search, highlights, guide-ink's pen)
+    // appends to #corner-actions by id, so they land in the bar too. On
+    // phones only Search and Settings stay in the row; the rest open from a
+    // "More" menu (the buttons are moved, not rebuilt, so their listeners
+    // and ids are untouched).
+    var dockBar = document.querySelector(".guide-back-bar");
+    if (dockBar) {
+      group.classList.add("in-bar");
+      var moreBtn = makeCornerBtn("more-btn", "More tools");
+      moreBtn.innerHTML = MORE_ICON;
+      moreBtn.setAttribute("aria-haspopup", "true");
+      moreBtn.setAttribute("aria-expanded", "false");
+      var moreMenu = document.createElement("div");
+      moreMenu.className = "bar-more-menu";
+      moreMenu.setAttribute("role", "menu");
+      var ROW_KEEP = { "guide-search-btn": 1, "settings-btn": 1, "more-btn": 1 };
+      var SETTINGS_ONLY = { "refresh-btn": 1, "theme-toggle-btn": 1, "calc-btn": 1, "pomo-btn": 1, "account-btn": 1 };
+      function closeMore() {
+        if (!moreMenu.classList.contains("open")) return;
+        [].slice.call(moreMenu.children).forEach(function (b) { group.insertBefore(b, moreBtn); });
+        moreMenu.classList.remove("open");
+        moreBtn.setAttribute("aria-expanded", "false");
+      }
+      function openMore() {
+        [].slice.call(group.children).forEach(function (b) {
+          // tools theme.css folds into the Settings panel stay out of the menu
+          if (ROW_KEEP[b.id] || SETTINGS_ONLY[b.id]) return;
+          moreMenu.appendChild(b);
+        });
+        if (!moreMenu.children.length) return;
+        moreMenu.classList.add("open");
+        moreBtn.setAttribute("aria-expanded", "true");
+      }
+      moreBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (moreMenu.classList.contains("open")) closeMore(); else openMore();
+      });
+      moreMenu.addEventListener("click", function () { setTimeout(closeMore, 0); });
+      document.addEventListener("click", function (e) {
+        if (!moreMenu.contains(e.target) && e.target !== moreBtn) closeMore();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMore(); });
+      window.addEventListener("resize", closeMore);
+      group.appendChild(moreBtn);
+      dockBar.appendChild(group);
+      dockBar.appendChild(moreMenu);
+      // the pen button is appended later by guide-ink.js; keep More last
+      new MutationObserver(function () {
+        if (group.lastElementChild !== moreBtn) group.appendChild(moreBtn);
+      }).observe(group, { childList: true });
+    } else {
+      document.body.appendChild(group);
+    }
 
     // "Back to previous page" -- fixed top-left, mirroring #corner-actions'
     // top-right placement. Only on non-homepage pages (index.html has its
