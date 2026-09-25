@@ -3157,3 +3157,30 @@ body.homepage .continue-item:hover {
 }
 #quiz .opt.crossed .cross-toggle { opacity: 1; border-color: var(--bad); }
 @media (prefers-reduced-motion: reduce) { #quiz .cross-toggle { transition: none; } }
+
+/* Give the guide hero back the first screen on phones (design review item
+   12, 2026-09-25). At 390px a guide opened on four lines of ~32px serif and
+   two paragraphs of meta: 100% banner, 0% content. The title now scales with
+   the screen, the first meta line is clamped to one line, and the rest sits
+   behind a "Details" disclosure theme.js adds. Serif stays on the title only;
+   desktop is unchanged. */
+.hero-more { display: none; }
+@media (max-width: 640px) {
+  body > header.top { padding: 18px 18px 16px; }
+  body > header.top h1 { font-size: clamp(26px, 7vw, 40px); line-height: 1.15; margin-bottom: 6px; }
+  body > header.top.hero-collapsible:not(.hero-open) > p:first-of-type {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  body > header.top.hero-collapsible:not(.hero-open) > p:first-of-type ~ p,
+  body > header.top.hero-collapsible:not(.hero-open) > .hdr-note,
+  body > header.top.hero-collapsible:not(.hero-open) > .hdr-save { display: none; }
+  body > header.top .hero-more {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;
+    font: 700 12.5px/1 var(--font-sans); color: #fff; cursor: pointer;
+    background: rgba(255, 255, 255, .12); border: 1.5px solid rgba(255, 255, 255, .55);
+    border-radius: 999px; padding: 6px 12px;
+  }
+  body > header.top .hero-more svg { transition: transform var(--dur-1, 160ms) var(--ease, ease); }
+  body > header.top.hero-open .hero-more svg { transform: rotate(180deg); }
+}
+@media (prefers-reduced-motion: reduce) { body > header.top .hero-more svg { transition: none; } }

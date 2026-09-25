@@ -5351,3 +5351,31 @@ window.openPauseOverlay = function (opts) {
     init();
   }
 })();
+
+/* ============================================================
+   Guide hero disclosure on phones (design review item 12, 2026-09-25).
+   The meta paragraphs after the first collapse behind a "Details" toggle
+   at <=640px (CSS does the hiding; the toggle is inert on desktop, where
+   the button is not displayed). Guides only: header.top + .guide-back-bar.
+   ============================================================ */
+(function () {
+  if (!document.querySelector(".guide-back-bar")) return;
+  var hero = document.querySelector("body > header.top");
+  if (!hero) return;
+  var metas = hero.querySelectorAll(":scope > p, :scope > .hdr-note, :scope > .hdr-save");
+  var first = hero.querySelector(":scope > p");
+  if (!first || metas.length < 2) return;
+  hero.classList.add("hero-collapsible");
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "hero-more";
+  btn.setAttribute("aria-expanded", "false");
+  btn.innerHTML = 'Details <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
+  btn.addEventListener("click", function () {
+    var open = hero.classList.toggle("hero-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.firstChild.nodeValue = open ? "Less " : "Details ";
+  });
+  // after the last collapsible meta, so it reads at the end of the visible line
+  first.insertAdjacentElement("afterend", btn);
+})();
