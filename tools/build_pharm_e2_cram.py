@@ -89,7 +89,8 @@ html = render(
         "because on this lecture that is the most useful thing to read first.",
     topics=T,
     guide_href="pharm-exam-2-study-guide.html",
-    footer_note="Lecture 4 of five in Exam 2 &mdash; lectures 5 to 8 are not delivered yet. "
+    footer_note="Lecture 4 of five in Exam 2 &mdash; this sheet covers Lecture 4 only; Lectures 5 "
+                "to 7 have been delivered and Lecture 8 has not. "
                 "The <a href=\"pharm-exam-2-study-guide.html\">study guide</a> has the full "
                 "treatment.")
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

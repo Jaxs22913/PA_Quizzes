@@ -8,6 +8,11 @@ on this site.
 
 Also enforces the length targets set for this bank, so a future addition
 that reverts to paragraph-length options fails the build instead of shipping.
+
+GUARDED (2026-09-24): pharm-vignettes*.html were edited in place after this
+rendered them (qid fields, repaired explanations), so this refuses to overwrite a
+page whose questions differ from what it would render unless run with --force.
+See tools/_pharm_render_guard.py.
 """
 import io, json, os, random, statistics, sys
 from collections import Counter
@@ -17,6 +22,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
 from pharm_vig_pool import POOL
 from render import render
+from _pharm_render_guard import guard
 
 OUT = os.path.join(os.path.dirname(HERE), "Pharmacology I Exam 1")
 PAL = dict(navy="#6b3524", indigo="#9c5230", gold="#c9a227", ice="#fbf1e6")
@@ -97,11 +103,14 @@ def main():
     INTRO = ("Short clinical vignettes for Pharmacology I Exam 1 &mdash; one or two sentences, four "
              "options, and options short enough to scan. Written to be to the point, with the "
              "reasoning in the answer explanation rather than crammed into the choices.")
-    for n, (key, fname) in enumerate((("set1", "pharm-vignettes.html"),
-                                      ("set2", "pharm-vignettes-version-2.html")), start=1):
-        qs = [{"topic": q["topic"], "io": "Clinical application &mdash; Exam 1 lectures",
-               "q": q["q"], "opts": q["opts"], "c": q["c"],
-               "cite": "%s, Slide %d" % (q["deck"], q["slide"])} for q in sets[key]]
+    FILES = (("set1", "pharm-vignettes.html"), ("set2", "pharm-vignettes-version-2.html"))
+    RENDER = {key: [{"topic": q["topic"], "io": "Clinical application &mdash; Exam 1 lectures",
+                     "q": q["q"], "opts": q["opts"], "c": q["c"],
+                     "cite": "%s, Slide %d" % (q["deck"], q["slide"])} for q in sets[key]]
+              for key, _ in FILES}
+    guard([(os.path.join(OUT, f), RENDER[k]) for k, f in FILES], force="--force" in sys.argv)
+    for n, (key, fname) in enumerate(FILES, start=1):
+        qs = RENDER[key]
         html = render(title="Pharmacology I Vignettes %d &mdash; Exam 1" % n,
                       h1="Pharmacology I &mdash; Vignettes %d" % n,
                       sub="Pharmacology I &middot; Exam 1 &middot; Short clinical cases",

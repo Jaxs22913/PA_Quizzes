@@ -48,7 +48,7 @@ POOL_A = [
      ["Recent travel, animal contact, contaminated water, insect bites, and crowding",
       "Those describe exposure routes for other infections rather than fungal predisposition."],
      ["Genetic polymorphisms, vaccination status, blood group, sex, and geography",
-      "None of these appears on the predisposing factors slide."]],
+      "Genetics, vaccination status and blood group are not predisposing factors; immunodeficiency from cancer, HIV (human immunodeficiency virus), transplants or chemotherapy is."]],
    c=0, cite=c(91)),
 
  dict(topic="Fungal biology", io=IO9,

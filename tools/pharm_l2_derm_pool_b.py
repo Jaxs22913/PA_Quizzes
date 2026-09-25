@@ -38,10 +38,10 @@ POOL_B = [
       "Correct. Raised immunoglobulin E, positive skin tests, dry patchy scales and infection susceptibility are the minor ones."],
      ["Raised immunoglobulin E, positive allergy skin tests, and dry patchy scales",
       "These are listed as minor indicators rather than major ones."],
-     ["Nikolsky sign, mucosal erosion, and fever",
-      "Nikolsky sign, mucosal erosion and fever point to a blistering or drug reaction such as Stevens-Johnson syndrome, not to atopic dermatitis."],
+     ["Edema, vesicles, erosions and ulcers",
+      "Edema, vesicles, erosions and ulcers describe the local inflammation imiquimod causes, not atopic dermatitis indicators."],
      ["Comedones, papulopustular lesions, and nodules",
-      "These are acne lesions."]],
+      "Comedones, papulopustular lesions and nodules are the noninflammatory and inflammatory lesions of acne, not atopic dermatitis indicators."]],
    c=0, cite=c(34)),
 
  dict(topic="Atopic dermatitis", io=IO10,

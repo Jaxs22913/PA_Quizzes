@@ -79,13 +79,13 @@ POOL_B = [
    q="Which hypertensive crisis is paired with phentolamine?",
    opts=[
      ["Crisis following abrupt clonidine withdrawal",
-      "Correct, which is the rebound the clonidine slide warns about."],
+      "Correct. Stopping clonidine abruptly causes rebound hypertension, and phentolamine is used for the hypertensive crisis that follows."],
      ["Crisis in pre-eclampsia",
-      "Not an indication given."],
+      "Pre-eclampsia is not a phentolamine use; its uses are pheochromocytoma, norepinephrine extravasation, clonidine withdrawal and impotence."],
      ["Crisis from cocaine intoxication",
-      "Cocaine intoxication is managed with benzodiazepines first; the crisis paired with phentolamine follows abrupt clonidine withdrawal."],
+      "Cocaine appears as an epinephrine interaction that exaggerates its cardiovascular actions, not as an indication for phentolamine."],
      ["Crisis in thyroid storm",
-      "Propranolol is the agent linked to hyperthyroidism."]],
+      "Propranolol, not phentolamine, is the agent used in hyperthyroidism, where it blunts the widespread sympathetic stimulation."]],
    c=0, cite=c(110)),
 
  dict(topic="Prazosin group", io=IO11,

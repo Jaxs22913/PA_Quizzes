@@ -242,10 +242,10 @@ QUESTIONS = [
 
  dict(topic="Carbapenems", io="4d — Carbapenems", cite=D % 43,
   q="Carbapenems are the drug of choice for which infections?",
-  opts=[["Multidrug-resistant Gram-negative and ESBL producers", "Correct, along with nosocomial infection and meningitis."],
-        ["Methicillin-resistant Staphylococcus aureus bacteraemia", "Resistant Staphylococcus is specifically not covered."],
-        ["Uncomplicated urinary infection in the community", "That would be far broader than needed."],
-        ["Syphilis and other spirochaetal infections", "Penicillin G remains the agent there."]]),
+  opts=[["Multidrug-resistant Gram-negatives, extended-spectrum beta-lactamase producers, nosocomial infections and meningitis", "Correct. Carbapenems resist hydrolysis by beta-lactamases, and their central nervous system penetration is why meningitis is on the list."],
+        ["Methicillin-resistant Staphylococcus aureus, penicillin-allergy infections, endocarditis and osteomyelitis", "Those are vancomycin's drug-of-choice uses; carbapenem Gram-positive coverage specifically excludes methicillin-resistant Staphylococcus aureus."],
+        ["Toxin-mediated disease, skin and soft tissue infection, osteomyelitis and surgical prophylaxis", "Those are clindamycin's drug-of-choice uses; carbapenems are chosen for resistant Gram-negative and nosocomial infections and for meningitis."],
+        ["Enterococcus, Listeria, endocarditis prophylaxis and upper respiratory tract infection", "Those are the ampicillin and amoxicillin drug-of-choice uses; carbapenems are chosen for resistant Gram-negative and nosocomial infections and for meningitis."]]),
 
  dict(topic="Carbapenems", io="4d — Carbapenems", cite=D % 44,
   q="Which carbapenem is specifically linked to seizures?",

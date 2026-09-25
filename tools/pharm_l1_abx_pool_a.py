@@ -362,6 +362,6 @@ POOL_A = [
      ["Bioavailability, protein binding, volume of distribution, and clearance",
       "These are valid pharmacokinetic parameters but a different framework; the one used here is absorption, distribution, penetration into compartments, and elimination."],
      ["Bactericidal activity, time-dependent killing, and concentration-dependent killing",
-      "Those are pharmacodynamic properties, listed separately from pharmacokinetics on the same slide."]],
+      "Those are pharmacodynamic properties, which sit beside pharmacokinetics as a separate drug factor when choosing a regimen."]],
    c=0, cite=c(7)),
 ]

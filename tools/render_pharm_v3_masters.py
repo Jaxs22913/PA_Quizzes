@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Render Master Exam set 2 for Pharmacology I Exam 1 -- forms F to J."""
+"""Render Master Exam set 2 for Pharmacology I Exam 1 -- forms F to J.
+
+GUARDED (2026-09-24): the shipped pages were hand-edited after rendering, so this
+refuses to overwrite a page whose questions differ from render(committed sets)
+unless run with --force.  See tools/_pharm_render_guard.py for the history.
+"""
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
 from render import render
+sys.path.insert(0, HERE)
+from _pharm_render_guard import guard
 
 D = "Pharmacology I Exam 1"
 OUT = os.path.join(os.path.dirname(HERE), D)
@@ -26,6 +33,8 @@ INTRO = ("A second set of five cumulative forms, <b>written from scratch</b> rat
          "does not state one. Answer positions were assigned by rotation after writing, so no "
          "position is favoured.")
 
+guard([(os.path.join(OUT, "pharm-exam-1-master-exam-form-%s.html" % n.lower()), S[n])
+       for n in "FGHIJ"], force="--force" in sys.argv)
 for name in "FGHIJ":
     fn = "pharm-exam-1-master-exam-form-%s.html" % name.lower()
     html = render(title="Pharmacology I Exam 1 Master Exam &mdash; Form %s" % name,

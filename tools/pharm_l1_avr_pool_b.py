@@ -31,11 +31,11 @@ POOL_B = [
      ["The 48-hour window for starting treatment has passed",
       "Correct. Because the drug blocks release of new virus rather than clearing existing virus, starting late has little to act on."],
      ["Treatment should be started at a doubled dose to compensate",
-      "No dose escalation strategy is described, and dosing is not tested."],
+      "A doubled dose cannot make up for a late start; oseltamivir must be started as soon as possible, within 48 hours."],
      ["Treatment is equally effective at any point in the illness",
       "Neuraminidase inhibition prevents release of newly made virions, so it only helps while the virus is still replicating; benefit falls sharply after the first 48 hours."],
      ["Acyclovir should be substituted",
-      "Acyclovir has no activity against influenza."]],
+      "Acyclovir is indicated for herpes simplex and varicella-zoster; oseltamivir is the agent targeted against influenza A and B."]],
    c=0, cite=c(126)),
 
  dict(topic="Comparisons", io=IO5,

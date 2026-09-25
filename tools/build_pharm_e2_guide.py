@@ -7,7 +7,7 @@ tail so the chrome, design system and read-aloud wiring come for free, and
 splice in a fresh table of contents and body.
 
 BUILT INCREMENTALLY, AND THE PAGE SAYS SO. The syllabus puts LECTURES 4 TO 8 in
-Exam 2; only Lecture 4 has been delivered. The remaining four drop in as further
+Exam 2; this guide covers Lecture 4 only (Lecture 5 so far has quizzes only). The rest drop in as further
 sections without touching this file's structure, exactly as the CMS Exam 3
 chart was grown.
 
@@ -60,8 +60,9 @@ BODY = '''<main>
 
   <div class="callout"><strong>This is one of five lectures in Exam 2.</strong> The syllabus puts
   <strong>Lectures 4 to 8</strong> in this exam &mdash; ophthalmic drugs, then ear, nose and
-  throat, and then the cardiovascular block. Only Lecture 4 has been delivered, so this guide has
-  one section and will grow. It says so rather than implying the exam is covered.</div>
+  throat, and then the cardiovascular block. Lectures 4 to 7 have been delivered and Lecture 8 has
+  not. This guide covers Lecture 4 only: Lecture 5 (ear, nose and throat drugs) is covered by its
+  quizzes, and the guide sections for Lectures 5 to 8 are still to come.</div>
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; HE PROMISED TO ASK THIS</span>

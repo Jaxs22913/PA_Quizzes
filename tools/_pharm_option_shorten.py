@@ -157,8 +157,8 @@ SHORTEN = {
    "Adrenal suppression, hyperglycaemia, glaucoma, cataracts",
  "Photosensitivity, severe sunburn, desquamation, burning and stinging that decrease with continued use":
    "Photosensitivity, sunburn, desquamation and stinging",
- "Nikolsky sign, mucosal erosion at two or more sites, and fever preceding the rash by one to three days":
-   "Nikolsky sign, mucosal erosion and a preceding fever",
+ "Edema, vesicles, erosions and ulcers at sites where a topical immunomodulator was applied":
+   "Edema, vesicles, erosions and ulcers",
  "Discoloration of teeth and depression of skeletal growth — avoid under 8 years old and in the second and third trimesters":
    "Teeth discoloration and skeletal effects; avoid under 8",
  "Kernicterus from bilirubin displacement — avoid in the first 30 days of life and throughout the third trimester of pregnancy":

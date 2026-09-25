@@ -49,7 +49,7 @@ DECKS = [
   ["Which fluoroquinolone must not be used for urinary tract infection?", "Moxifloxacin."],
   ["What is the fluoroquinolone dual mechanism?", "Inhibition of DNA gyrase and of topoisomerase IV."],
   ["Which musculoskeletal injury do fluoroquinolones cause?", "Tendonitis and Achilles tendon rupture."],
-  ["Which class carries this lecture's only explicit black box warnings?", "The polymyxins."],
+  ["Which antibacterial class carries black box warnings for nephrotoxicity and neurotoxicity?", "The polymyxins."],
   ["What are the polymyxin black box warnings?", "Nephrotoxicity, neurotoxicity and neuromuscular blockade."],
   ["What must a patient on metronidazole avoid?", "Ethanol, because of a disulfiram-like reaction."],
   ["What does linezolid risk when combined with a serotonergic drug?", "Serotonin syndrome."],

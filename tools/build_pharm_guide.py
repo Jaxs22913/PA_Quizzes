@@ -469,7 +469,7 @@ BODY = '''<main>
 
 TEST_YOURSELF = '''  var TEST_YOURSELF = {
     principles: [
-      {q:"Which of these is on the lecture's BACTERIOSTATIC list?",
+      {q:"Which of these antibacterials is BACTERIOSTATIC?",
        choices:["Clindamycin","Vancomycin","Metronidazole","Cephalosporins"],correct:0,
        explain:"Clindamycin sits with erythromycin, tetracyclines, sulfonamides and trimethoprim. The other three are on the bactericidal list."},
       {q:"An agent shows a post-antibiotic effect and concentration-dependent killing. What dosing follows?",
@@ -478,9 +478,9 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
       {q:"Selectivity of the protein synthesis inhibitors rests on which difference?",
        choices:["Bacteria lack ribosomes entirely","Bacteria use RNA where humans use DNA","Bacterial ribosomes sit outside the cell","Bacterial 70S versus mammalian 80S ribosomes"],correct:3,
        explain:"70S (50S plus 30S) against 80S (60S plus 40S). It is a difference of degree, which is why high levels can still reach mammalian ribosomes and cause dose-related toxicity."},
-      {q:"Which six toxicity categories does the lecture list under drug factors?",
+      {q:"Which six toxicity categories count as drug factors when choosing an antibiotic regimen?",
        choices:["Gastrointestinal, integument, hematologic, central nervous system, hepatic, renal","Cardiac, pulmonary, endocrine, ocular, dermatologic, renal","Renal, hepatic, endocrine, vascular, lymphatic, ocular","Neurologic, muscular, skeletal, vascular, renal, hepatic"],correct:0,
-       explain:"These six recur as the monitoring parameters for individual classes later in the lecture, so they work as a checklist rather than a list to recite."},
+       explain:"These six recur as the monitoring parameters for individual antibiotic classes, so they work as a checklist rather than a list to recite."},
       {q:"For a time-dependent agent with no post-antibiotic effect, what is the target?",
        choices:["Peak concentration ten times the minimal inhibitory concentration","A single daily peak","Time above the minimal inhibitory concentration for 40 to 70 percent of the interval","Trough above the minimal inhibitory concentration at all times"],correct:2,
        explain:"Without a post-antibiotic effect the organism resumes growing the moment the level falls, so what matters is how much of the interval sits above the threshold."}
@@ -506,9 +506,9 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
       {q:"Which fluoroquinolone must NOT be used for urinary tract infection?",
        choices:["Ciprofloxacin","Levofloxacin","Moxifloxacin","All are suitable"],correct:2,
        explain:"Moxifloxacin also lacks Pseudomonas coverage, unlike levofloxacin, and needs no renal dose adjustment."},
-      {q:"Which class carries the only explicit BLACK BOX warnings in this lecture?",
-       choices:["Fluoroquinolones","Polymyxins","Macrolides","Aminoglycosides"],correct:1,
-       explain:"Nephrotoxicity, neurotoxicity and neuromuscular blockade. Black box warnings rank third in what to weight for this exam, above ordinary adverse effects."},
+      {q:"Polymyxin B and polymyxin E carry BLACK BOX warnings for which toxicities?",
+       choices:["Tendon rupture, peripheral neuropathy and QT prolongation","Nephrotoxicity, neurotoxicity and neuromuscular blockade","Ototoxicity, red man syndrome and phlebitis","Photosensitivity, tooth discoloration and depressed skeletal growth"],correct:1,
+       explain:"Polymyxin B and E carry black box warnings for these three. The other sets are adverse effects of the fluoroquinolones, vancomycin and tetracyclines in turn."},
       {q:"Clindamycin covers everything EXCEPT which group?",
        choices:["Gram-positive aerobes","Gram-positive anaerobes","Gram-negative anaerobes","Gram-negative aerobes"],correct:3,
        explain:"That gap is why it is combined with another agent for intra-abdominal infection."},

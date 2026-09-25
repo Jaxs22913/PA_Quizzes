@@ -13,17 +13,17 @@ rule -- because that is the one fact in this lecture with a promise attached.
 ITEMS = [
 dict(q="Which class of eye drop causes REBOUND HYPERAEMIA if used for too long?",
      ans="Naphazoline", src=("OPH", 48),
-     why="The topical vasoconstrictors. He flagged this one explicitly as a question he would ask, and the same trap reappears with nasal sprays.",
+     why="Naphazoline is a topical vasoconstrictor, and prolonged use leads to rebound hyperemia after discontinuation; nasal decongestant sprays share the risk.",
      wrong=[("Olopatadine", "An antihistamine; its problems are irritation, headache and dryness."),
-            ("Cromolyn", "A mast cell stabiliser; slow to work but no rebound."),
-            ("Ketorolac", "An ophthalmic non-steroidal; no rebound effect.")]),
+            ("Cromolyn", "Cromolyn is a mast cell stabilizer that needs 5 to 14 days for full effect; ocular irritation, not rebound, is its problem."),
+            ("Ketorolac", "Ketorolac is an ophthalmic nonsteroidal anti-inflammatory; its adverse reactions are lacrimation, keratitis and raised eye pressure.")]),
 
 dict(q="A patient asks how long they may use a vasoconstrictor eye drop. What is the limit?",
      ans="Less than two weeks", src=("OPH", 48),
-     why="Beyond that, rebound hyperaemia follows discontinuation. He called it a great counselling point.",
+     why="Vasoconstrictor drops are for short-term use under two weeks; prolonged use leads to rebound hyperemia after they are stopped.",
      wrong=[("Less than 72 hours", "72 hours is the point at which NO IMPROVEMENT should send them to a provider, not the usage limit."),
-            ("Less than six weeks", "Far beyond the stated limit."),
-            ("No limit", "Prolonged use is precisely the problem.")]),
+            ("Less than six weeks", "Six weeks is far past the limit; vasoconstrictor drops are for short-term use of under two weeks only."),
+            ("No limit", "Use does have a limit, because prolonged use of a vasoconstrictor drop leads to rebound hyperemia after stopping.")]),
 
 dict(q="A patient using an over-the-counter vasoconstrictor drop has had no improvement. At what point should they stop and see a provider?",
      ans="72 hours", src=("OPH", 48),

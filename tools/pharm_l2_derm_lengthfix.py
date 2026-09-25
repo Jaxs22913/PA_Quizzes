@@ -27,7 +27,7 @@ FIXES = {
  32: (2, "Mupirocin is the preferred agent for acne; bacitracin is losing efficacy to Propionibacterium acnes resistance"),
  33: (1, "It is safe in the second and third trimesters, and only the first trimester requires contraceptive cover"),
  39: (2, "Bleaching of hair and clothing, together with staining of the surrounding skin at the injection site"),
- 41: (2, "Nikolsky sign, mucosal erosion at two or more sites, and fever preceding the rash by one to three days"),
+ 41: (2, "Edema, vesicles, erosions and ulcers at sites where a topical immunomodulator was applied"),
  42: (2, "Frequent hot baths with a high pH soap, air drying afterwards, and occlusive dressings left on overnight"),
  47: (1, "Patient age, sex, body weight and skin type, taken together with the season in which treatment is given"),
  49: (3, "Photosensitivity, severe sunburn, desquamation, burning and stinging that decrease with continued use"),

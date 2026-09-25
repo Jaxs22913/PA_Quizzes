@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Render the Pharmacology I Exam 1 Master Exams -- five cumulative 60-question forms."""
+"""Render the Pharmacology I Exam 1 Master Exams -- five cumulative 60-question forms.
+
+GUARDED (2026-09-24): the shipped pages were hand-edited after rendering, so this
+refuses to overwrite a page whose questions differ from render(committed sets)
+unless run with --force.  See tools/_pharm_render_guard.py for the history.
+"""
 import sys, os, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
 from render import render
+sys.path.insert(0, HERE)
+from _pharm_render_guard import guard
 
 D = "Pharmacology I Exam 1"
 OUT = os.path.join(os.path.dirname(HERE), D)
@@ -27,6 +34,8 @@ INTRO = ("Sixty questions drawn from every topic in the Exam 1 block, in proport
          "to scan, with the reasoning moved into the explanation. The five v1 forms are kept "
          "under Archived quizzes for extra practice.")
 
+guard([(os.path.join(OUT, "pharm-exam-1-master-exam-form-%s.html" % n.lower()), S[n])
+       for n in "ABCDE"], force="--force" in sys.argv)
 for name in ("A", "B", "C", "D", "E"):
     fn = "pharm-exam-1-master-exam-form-%s.html" % name.lower()
     html = render(title="Pharmacology I Exam 1 Master Exam &mdash; Form %s" % name,

@@ -8,12 +8,18 @@ this renders whichever one it is given:
     python3 render_pharm_l3.py adren
 
 Palette inherited from the existing Pharmacology I Exam 1 quizzes.
+
+GUARDED (2026-09-24): the shipped pages were hand-edited after rendering, so this
+refuses to overwrite a page whose questions differ from render(committed sets)
+unless run with --force.  See tools/_pharm_render_guard.py for the history.
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "quiz-template"))
 import render as R
+sys.path.insert(0, HERE)
+from _pharm_render_guard import guard
 
 TOPIC = sys.argv[1] if len(sys.argv) > 1 else "chol"
 OUT = os.path.join(ROOT, "Pharmacology I Exam 1")
@@ -38,6 +44,8 @@ SPEC = {
 
 SUB = "Pharmacology I &middot; Exam 1 &middot; Lecture 3: Principles of Autonomic Nervous System Pharmacology"
 SETS = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
+guard([(os.path.join(OUT, f), SETS[k]) for k, f in zip(("set1", "set2"), SPEC["files"])],
+      force="--force" in sys.argv)
 
 for n, (key, fname) in enumerate(zip(("set1", "set2"), SPEC["files"]), start=1):
     qs = SETS[key]
