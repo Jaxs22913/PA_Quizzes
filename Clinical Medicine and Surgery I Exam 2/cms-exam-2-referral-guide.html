@@ -268,6 +268,13 @@
   .tierbar a span{display:block;font-weight:500;font-size:.74rem;opacity:.9;margin-top:2px;}
   .t-em{background:#9d2235;} .t-sd{background:#b26a12;}
   .t-ur{background:#2d3f7a;} .t-ro{background:#5c6070;}
+  /* Light-mode contrast (2026-09-27). The page-wide th{background:accent}
+     rule leaked into these label-style headers, leaving --soft grey on navy
+     at 1.54:1; they are meant to be plain uppercase labels over a rule. And
+     white on the same-day amber measured 4.23:1: the site's darker amber
+     (--a-amber-hover), which dark mode already uses here, gives 5.78:1. */
+  :root[data-theme="light"] .rtab th{background:transparent;}
+  :root[data-theme="light"] .t-sd{background:#9b5301;}
   .rtab{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.9rem;}
   .rtab th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.8px;
     color:var(--soft);border-bottom:2px solid var(--line);padding:6px 8px;font-weight:700;}
