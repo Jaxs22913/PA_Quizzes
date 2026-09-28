@@ -47,8 +47,10 @@ Hours come from calendar-data.js (HOURS below): five 2-hour lectures and L25
 Heart Failure, the only 3-hour lecture, 13 hours in all. Each lecture's exact
 share is 60 x hours / 13 (9.23 for 2 h, 13.85 for 3 h); the whole parts sum to
 58, and largest remainder gives the two left over to L25 (.85) and then to one
-2-hour lecture (.23, a five-way tie broken toward the earliest lecture, L20):
-10 / 9 / 9 / 9 / 9 / 14. alloc_by_hours() re-derives it and the build asserts it.
+2-hour lecture (.23, a five-way tie). The tie goes to L23 Valvular (Jaxon,
+2026-09-27): with ten slots it fits all nine lesions plus the mechanical-valve
+warfarin item in every form, instead of rotating one lesion out:
+9 / 9 / 9 / 10 / 9 / 14. alloc_by_hours() re-derives it and the build asserts it.
 
 MIX: 48 VIGNETTE + 12 REGULAR per form (80% patient stems), the precedent's
 20% recall share kept per lecture as closely as whole numbers allow: 20% of
@@ -104,19 +106,22 @@ LEC_NAME = {"l20": "L20 Hypertension", "l21": "L21 Hypotension",
 HOURS = {"l20": 2, "l21": 2, "l22": 2, "l23": 2, "l24": 2, "l25": 3}   # calendar-data.js
 
 
+TIE_FIRST = {"l23"}   # Valvular: its nine lesions + warfarin item need ten slots
+
+
 def alloc_by_hours(total=60):
-    """Largest remainder on total x hours / sum(hours); ties go to the earlier lecture."""
+    """Largest remainder on total x hours / sum(hours); ties go to TIE_FIRST, then the earlier lecture."""
     H = sum(HOURS.values())
     exact = {l: total * HOURS[l] / H for l in LECS}
     out = {l: int(exact[l]) for l in LECS}
     left = total - sum(out.values())
-    for l in sorted(LECS, key=lambda l: (-(exact[l] - out[l]), LECS.index(l)))[:left]:
+    for l in sorted(LECS, key=lambda l: (-round(exact[l] - out[l], 9), l not in TIE_FIRST, LECS.index(l)))[:left]:
         out[l] += 1
     return out
 
 
 ALLOC = alloc_by_hours()
-assert [ALLOC[l] for l in LECS] == [10, 9, 9, 9, 9, 14], ALLOC
+assert [ALLOC[l] for l in LECS] == [9, 9, 9, 10, 9, 14], ALLOC
 REG = {"l20": 2, "l21": 2, "l22": 2, "l23": 2, "l24": 2, "l25": 2}    # see MIX in the docstring
 PER_LEC = {l: {"reg": REG[l], "vig": ALLOC[l] - REG[l]} for l in LECS}  # per lecture per form
 PER_FORM = sum(ALLOC.values())           # 60
