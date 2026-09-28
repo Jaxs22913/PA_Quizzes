@@ -156,6 +156,9 @@ SCOPE_BANNED = [
     r"0\.5 ?mm|past (7|seven) days|(2|two) or more episodes",               # TIMI criteria cut-offs
     # ---- D12 dual antiplatelet durations
     r"\b(6|six|12|twelve) months?\b|\b(a|one|full) year\b",
+    # ---- beta blockers "improve survival across the board" (2026-09-29 truth rule: benefit is
+    # established with reduced ejection fraction only; REDUCE-AMI, 2025 ACC/AHA ACS guideline)
+    r"across the board",
     # ---- D14 the 50% "coin flip" and the slide's "restenosis" name for it
     r"50 ?%[^.?;]{0,60}(restenosis|stent)|coin flip|sudden (in-stent )?restenosis",
     # ---- D9 slide 94's biomarker line belongs to MINOCA, not microvascular angina

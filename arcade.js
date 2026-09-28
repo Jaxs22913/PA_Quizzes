@@ -9235,7 +9235,7 @@ var DEMO_DECKS = [
       ["Missing dual antiplatelet therapy in the first 6 weeks risks?", "Sudden stent thrombosis: a clot that occludes the stent."],
       ["First-choice bypass conduit?", "A mammary or radial artery."],
       ["Vein used when no artery is suitable?", "The great saphenous vein."],
-      ["Drug class that improves survival after infarction?", "Beta blockers."],
+      ["Drug class that improves survival after infarction with a reduced ejection fraction?", "Beta blockers."],
       ["Do calcium channel blockers improve post-infarction prognosis?", "Not overall."],
       ["Diltiazem or verapamil after infarction is for?", "Angina or rate control without a beta blocker; no mortality benefit."],
       ["Statin after an acute coronary syndrome?", "High-intensity for all, before discharge."],
