@@ -333,4 +333,18 @@ V(T_MVA, IO_D,
     "Triptans can precipitate vasospastic angina and are avoided in it. The factor described for microvascular angina is stress or anxiety."]],
   C(94, 95), "risk factors", "education"),
 
+# ------------------------------------------------------------ right ventricular infarct (added 2026-09-27 for the
+# Exam 4 masters: the pool held four right-ventricular-nitroglycerin items, one short of five forms)
+V(T_STEMI, IO_STE,
+  "A 66-year-old man is admitted with an inferior ST-elevation myocardial infarction that extends into the right ventricle, with ST elevation in the right-sided lead V4R. His daughter asks why he is not being given nitroglycerin for his chest pain. What should she be told?",
+  [["It would lower his preload",
+    "Correct. In a right ventricular infarct, nitroglycerin is not given: decreasing the preload reduces the Frank-Starling effect on the right ventricle, which can fail into right-sided heart failure, dropping output and precipitating shock."],
+   ["It would cause bleeding",
+    "Bleeding, including intracerebral hemorrhage, is the risk of thrombolytics, not nitroglycerin. Nitroglycerin is withheld because it lowers the preload his right ventricle depends on."],
+   ["It would cause coronary spasm",
+    "Nitroglycerin relieves coronary spasm rather than causing it, and response to it is part of diagnosing vasospastic angina. Here it is withheld because lowering preload can drop his output into shock."],
+   ["It would slow his heart rate",
+    "Slowing the heart rate is the concern with a beta blocker, which is withheld for bradycardia. Nitroglycerin is withheld because it lowers the preload his failing right ventricle needs."]],
+  C(62, 63), "avoid", "education"),
+
 ]

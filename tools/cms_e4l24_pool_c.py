@@ -499,4 +499,18 @@ S(T_MVA, IO_ANG,
     "It is treated, not ignored: lifestyle and risk-factor reduction, a calcium channel blocker, beta blockers, an angiotensin-converting enzyme inhibitor and a statin, much as in coronary artery disease."]],
   C(96), "first-line"),
 
+# ---------------------------------------------------------------- right ventricular infarct (added 2026-09-27 for the
+# Exam 4 masters: the pool held four right-ventricular-nitroglycerin items, one short of five forms)
+S(T_STEMI, IO_STE,
+  "Nitroglycerin is withheld in a right ventricular infarct because the injured right ventricle depends on what?",
+  [["Adequate preload",
+    "Correct. The infarcted right ventricle is preload dependent: nitroglycerin decreases preload, which reduces the Frank-Starling effect on its myocardium, so it fails into right-sided heart failure, output drops and shock follows."],
+   ["A slow heart rate",
+    "Bradycardia is the reason a beta blocker is withheld in an infarction, not a need of the right ventricle. Nitroglycerin is withheld because it removes the preload the right ventricle depends on."],
+   ["Relief of spasm",
+    "Coronary spasm drives vasospastic angina, and nitroglycerin relieves it. A right ventricular infarct comes from right coronary artery occlusion, and its failing ventricle depends on preload."],
+   ["Extra oxygen",
+    "Oxygen is given in an infarction only when the oxygen saturation is below 91%, and nitroglycerin does not take it away. Nitroglycerin lowers the preload the right ventricle depends on."]],
+  C(63), "avoid"),
+
 ]
