@@ -3373,3 +3373,23 @@ html.gl-open { overflow: hidden; }
   @keyframes gl-in { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
   @media (min-width: 900px) { @keyframes gl-in { from { transform: translateX(28px); opacity: 0; } to { transform: none; opacity: 1; } } }
 }
+
+
+/* ---- Pull-to-refresh element: hidden by default, site-wide (2026-09-28) ----
+   Every page carries <div id="pull-refresh"> with its own inline rule that
+   collapses it to height 0. Ten Pharmacology reference sheets (Exam 1 charts,
+   the Exam 2 ocular reference) shipped the element WITHOUT that rule, so a 240px
+   EKG-logo band sat above the page in both themes. This is the same collapse,
+   in the one shared stylesheet, so a template that forgets it can no longer
+   put the element on screen. It is a fallback: pages that define their own
+   rule (later in the cascade, same specificity) keep theirs. */
+#pull-refresh {
+  position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; z-index: 1000; pointer-events: none;
+}
+#pull-refresh svg { width: 100%; height: 44px; }
+#pull-refresh path {
+  fill: none; stroke: #6b3524; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 420; stroke-dashoffset: 420;
+}
