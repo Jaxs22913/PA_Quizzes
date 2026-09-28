@@ -58,13 +58,19 @@ def convert_question(q):
 def render(*, title, h1, sub, pill, chips, intro, questions,
            oxblood=None, brass=None, teal=None,
            navy=None, indigo=None, gold=None, ice=None,
-           already_converted=False):
+           already_converted=False, progress_sig_strict=False):
     """already_converted=True: `questions` are already in the native
     {topic,io,q,opts:[[text,explanation],...],c,cite} schema (the preferred
     path for brand-new quiz content, where each option can get its own real
     explanation instead of a shared 'why' text). Default False expects the
     legacy {topic,q,choices,answer,correct,why,src} schema and runs
-    convert_question() first."""
+    convert_question() first.
+
+    progress_sig_strict=True: a saved in-progress attempt that carries no
+    question-set signature is treated as stale and discarded on load (see
+    PROGRESS_SIG_STRICT in template.html). Pass it only when the page's
+    questions have CHANGED under an existing URL; re-rendering an unchanged
+    quiz with it on would wipe every student's attempt in flight."""
     if not (navy and indigo and gold and ice):
         navy, indigo, gold, ice = derive_palette(oxblood, brass, teal)
     converted = questions if already_converted else [convert_question(q) for q in questions]
@@ -81,6 +87,9 @@ def render(*, title, h1, sub, pill, chips, intro, questions,
     src = src.replace("__CHIPS__", chips_html)
     src = src.replace("__INTRO__", intro)
     src = src.replace("__QUESTIONS_JSON__", json.dumps(converted, ensure_ascii=False))
+    marker = "/*__PROGRESS_SIG_STRICT__*/false"
+    assert src.count(marker) == 1, "template.html lost its PROGRESS_SIG_STRICT marker"
+    src = src.replace(marker, "true" if progress_sig_strict else "false")
     # Designed dark mode (tools/dark_tokens.py): opt the page in and write its
     # dark palette, derived from the four colours above. Semester 1 is never
     # re-rendered (frozen), so everything rendered from here is eligible.

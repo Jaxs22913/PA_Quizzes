@@ -409,8 +409,14 @@ document.querySelectorAll(".semester").forEach(semester => {
           if (!raw) return;
           const saved = JSON.parse(raw);
           const current = saved.current ?? saved.i ?? saved.idx;
-          if (current === undefined) return;
+          if (typeof current !== "number" || !isFinite(current) || current < 0) return;
           const total = saved.total ?? (saved.order ? saved.order.length : undefined);
+          // A saved attempt that cannot be resumed is not offered. The quiz
+          // page itself discards an attempt whose question set has changed
+          // (the `sig` check in tools/quiz-template/template.html) the next
+          // time it is opened; until then this entry still shows, and the
+          // link lands on a fresh start with a one-line note saying why.
+          if (total !== undefined && current >= total) return;
           entries.push({
             href: a.getAttribute("href"),
             lastWriteMs: lastWriteMeta[pkey] || 0,

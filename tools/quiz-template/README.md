@@ -111,3 +111,22 @@ from the four colours above with the site's 4.60:1 recipe) into a fenced
 `<style id="dark-tokens">` block. theme.css then skips the old invert filter for
 the page. After hand-editing a page's palette, re-run `python3 tools/dark_tokens.py`
 (`--check` reports stale pages). Semester 1 pages are never opted in.
+
+## Saved progress and changed questions (2026-09-27)
+
+A saved in-progress attempt (`qp:<pathname>`) holds `order` (indices into
+`QUESTIONS`) and `answers`. If a page is re-rendered with different questions
+under the same URL, resuming would put the old answers on new questions. The
+engine therefore saves `sig` (question count plus an FNV-1a hash of the stems)
+with the attempt, and on load:
+
+- a saved attempt whose `sig` differs from the page's is discarded, on every page;
+- a saved attempt with **no** `sig` (saved before this guard) is discarded only
+  on pages rendered with `render(..., progress_sig_strict=True)`.
+
+Pass `progress_sig_strict=True` only when a page's questions have **changed**
+under an existing URL (the CMS I Exam 4 master forms, 2026-09-27). Re-rendering
+an unchanged quiz with it on would wipe every attempt students have in flight.
+Only `qp:` is discarded: the `qc:` completion record and theme.js's `qm:`
+missed-question records are never touched. A discarded attempt shows a one-line
+note on the start screen.
