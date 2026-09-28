@@ -3191,6 +3191,12 @@ body.homepage .continue-item:hover {
   max-width: var(--measure, 68ch);
 }
 
+/* Bold lead-in (design-review leftovers item 3): theme.js wraps the final
+   sentence of each Semester 2 stem in .q-lead; the rest stays at the
+   regular weight item 10 set. 600 is the weight the whole stem used to
+   carry. */
+#quiz .qtext .q-lead { font-weight: 600; }
+
 /* Quiet the strike-out control (design review item 11, 2026-09-25). Every
    choice showed a bordered X box at all times -- four extra controls beside
    four answers. With a pointer it now rests at 35% and comes up when the row

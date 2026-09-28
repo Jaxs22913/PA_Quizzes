@@ -5499,3 +5499,66 @@ window.openPauseOverlay = function (opts) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
+
+
+/* ============================================================
+   BOLD THE LEAD-IN (design-review leftovers item 3, 2026-09-27).
+   Since item 10 the stem is regular weight; the question sentence itself
+   ("Which is the most appropriate next step?") is now set bold, so the
+   varied lead-ins read at a glance. Done here at display time rather than
+   by re-rendering 300 generated quizzes: the engine writes each stem with
+   textContent into #qtext (paged view) and .qtext (all-on-a-page view);
+   this splits that one text node at the start of the final sentence and
+   wraps the tail in <strong class="q-lead">. The text itself (and so
+   textContent, the report form's context, copy/paste and answer checking,
+   which never reads the stem) is unchanged. Scope: pages tools/dark_tokens.py
+   opted in as body[data-dark-kind="quiz"], i.e. Semester 2+ generated
+   quizzes only; Semester 1 (frozen) and Group Study never carry it.
+   Imperative lead-ins ("Name the condition shown.") count too; a
+   one-sentence stem is all lead-in, so it is all bold.
+   ============================================================ */
+(function () {
+  if (typeof MutationObserver !== "function") return;
+  // Returns the index where the stem's final sentence (the lead-in) starts.
+  // Not a sentence end: a title or Latin abbreviation, or a middle initial
+  // after a capitalised name ("Tom G. Prince"); "amphotericin B." still ends one.
+  var ABBR = /(?:(?:^|[\s(])(?:Dr|Drs|Mr|Mrs|Ms|St|Sr|Jr|vs|etc|approx|No|Fig|e\.g|i\.e|cf|al|Inc|Prof|U\.S|a\.m|p\.m)|\b[A-Z][a-z]+ [A-Z])\.["”’')\]]*$/;
+  function leadStart(t) {
+    var re = /[.?!]["”’')\]]*\s+(?=["“‘(]?[A-Z0-9])/g, m, start = 0;
+    var end = t.replace(/\s+$/, "").length;
+    while ((m = re.exec(t))) {
+      var cut = m.index + m[0].length;
+      if (cut >= end) break;
+      if (ABBR.test(t.slice(0, m.index + 1 + (m[0].match(/^[.?!]["”’')\]]*/)[0].length - 1)))) continue;
+      start = cut;
+    }
+    return start;
+  }
+
+  function bolden(el) {
+    var n = el.firstChild;
+    if (!n || n !== el.lastChild || n.nodeType !== 3) return;   // already split, empty, or not plain text
+    var t = n.data;
+    if (!t.trim()) return;
+    var s = leadStart(t);
+    var b = document.createElement("strong");
+    b.className = "q-lead";
+    var tail = s > 0 ? n.splitText(s) : n;
+    el.replaceChild(b, tail);
+    b.appendChild(tail);
+  }
+  function pass(quiz) {
+    var list = quiz.querySelectorAll(".qtext");
+    for (var i = 0; i < list.length; i++) bolden(list[i]);
+  }
+  function start() {
+    if (!document.body || document.body.getAttribute("data-dark-kind") !== "quiz") return;
+    var quiz = document.getElementById("quiz");
+    if (!quiz) return;
+    pass(quiz);
+    new MutationObserver(function () { pass(quiz); })
+      .observe(quiz, { childList: true, subtree: true });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
