@@ -242,7 +242,7 @@ SECTION = """
   <ul>
     <li>Visible bleeding from the fracture into the soft tissue at the base of the head</li>
     <li><b>Raccoon eyes</b> (periorbital ecchymosis) and <b>Battle sign</b> (retroauricular ecchymosis)</li>
-    <li>Bleeding into the middle ear or sphenoid sinus; <b>haemotympanum</b></li>
+    <li>Bleeding into the middle ear or sphenoid sinus; <b>hemotympanum</b></li>
     <li><b>Cerebrospinal fluid leak</b> &mdash; clear or pink rhinorrhea</li>
   </ul>
   <div class="callout">

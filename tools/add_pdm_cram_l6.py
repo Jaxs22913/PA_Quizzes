@@ -81,10 +81,10 @@ TOPICS = [
  ]),
  ("l6-blood", "Blood — The Three Meanings", "#9c2b2b", "#f6e6e6", "#faf0f0", "#6f1c1c", [
    ("WHAT THE PAD DETECTS", "HEME — present in RED CELLS, FREE HEMOGLOBIN and MYOGLOBIN alike. A positive result DOES NOT SAY WHICH."),
-   ("HAEMATURIA", "INTACT RED CELLS. From bleeding ANYWHERE along the urinary tract."),
+   ("HEMATURIA", "INTACT RED CELLS. From bleeding ANYWHERE along the urinary tract."),
    ("HEMATURIA — causes", "INFECTION · INFLAMMATION · TRAUMA · TUMOR · CALCULUS · OVER-AGGRESSIVE ANTICOAGULATION."),
    ("GROSS vs MICROSCOPIC", "GROSS is visible to the naked eye. MICROSCOPIC needs analysis — defined as THREE OR MORE red cells."),
-   ("HAEMOGLOBINURIA", "FREE HEMOGLOBIN, NO intact cells. From INTRAVASCULAR HEMOLYSIS — sickle cell, transfusion reaction, severe BURNS."),
+   ("HEMOGLOBINURIA", "FREE HEMOGLOBIN, NO intact cells. From INTRAVASCULAR HEMOLYSIS — sickle cell, transfusion reaction, severe BURNS."),
    ("HEMOGLOBINURIA — the confirming test", "RAISED SERUM UNCONJUGATED BILIRUBIN (a direct product of hemoglobin metabolism)."),
    ("MYOGLOBINURIA", "MYOGLOBIN, NO intact cells. From SKELETAL MUSCLE injury — trauma, ELECTRIC SHOCK, RHABDOMYOLYSIS (compression, hyperthermia, STATINS)."),
    ("MYOGLOBINURIA — the confirming test", "RAISED SERUM CREATINE PHOSPHOKINASE."),

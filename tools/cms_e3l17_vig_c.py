@@ -51,7 +51,7 @@ QUESTIONS = [
   opts=[["Anosmia", "Correct."],
         ["Hyposmia", "That is reduced, not absent, smell."],
         ["Halitosis", "That is bad breath."],
-        ["Rhinorrhoea", "That is a runny nose."]]),
+        ["Rhinorrhea", "That is a runny nose."]]),
 
  dict(topic="Allergic rhinitis", io=IO_B, lead="treatment", cite=D % 68,
   q="A 14-year-old girl with allergic rhinitis is drowsy on her current antihistamine during school. What is the sensible adjustment?",

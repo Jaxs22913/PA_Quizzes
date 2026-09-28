@@ -153,7 +153,7 @@ ROWS_L14 = [
 
  ("Basilar skull fracture", TRA,
   "<b>Raccoon eyes</b> &middot; <b>Battle sign</b> &middot; clear or pink rhinorrhea",
-  "Linear fracture of the skull base &mdash; cribriform plate, orbital plate of frontal, petrous or squamous temporal, sphenoid or occipital. <b>Often no symptoms directly.</b> Indirect signs: bleeding into soft tissue at the skull base, <b>raccoon eyes</b>, <b>Battle sign</b>, bleeding into middle ear or sphenoid sinus, <b>haemotympanum</b>, and cerebrospinal fluid leak with clear or pink rhinorrhea.",
+  "Linear fracture of the skull base &mdash; cribriform plate, orbital plate of frontal, petrous or squamous temporal, sphenoid or occipital. <b>Often no symptoms directly.</b> Indirect signs: bleeding into soft tissue at the skull base, <b>raccoon eyes</b>, <b>Battle sign</b>, bleeding into middle ear or sphenoid sinus, <b>hemotympanum</b>, and cerebrospinal fluid leak with clear or pink rhinorrhea.",
   "<b>CT orbits</b> &mdash; though the fracture is not always visible. For suspected cerebrospinal fluid: a <b>dextrose stick may be positive</b>, and fluid on filter paper or a bedsheet shows a <b>halo or double ring sign</b> (inner blood, outer cerebrospinal fluid).",
   "<b>Cerebrospinal fluid leak: neurosurgery consult and admission.</b> Admission otherwise turns on the clinical picture, associated injuries and any brain injury on CT.",
   "Emergent",

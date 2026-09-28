@@ -370,7 +370,7 @@ POOL_B = [
       "Epinephrine is a bronchodilator."],
      ["Bradycardia",
       "It is a positive chronotrope."],
-     ["Hypoglycaemia",
+     ["Hypoglycemia",
       "It raises blood glucose."]],
    c=0, cite=c(86)),
 

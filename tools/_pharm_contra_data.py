@@ -264,7 +264,7 @@ ROWS = [
   "metabolic acidosis, tachycardia and hyperpyrexia. <b>Treat by rapid cooling and dantrolene (Dantrium)</b>.",
   "NAMED", L3, 70, ["Malignant Hyperthermia", "halothane", "dantrolene", "rigidity"]),
  ("Succinylcholine",
-  "<b>Hyperkalaemia</b>, and <b>prolonged paralysis (apnea)</b> in patients <b>genetically deficient in plasma "
+  "<b>Hyperkalemia</b>, and <b>prolonged paralysis (apnea)</b> in patients <b>genetically deficient in plasma "
   "cholinesterase</b> or with electrolyte imbalance.",
   "CAUT", L3, 70, ["Apnea", "genetically deficient in plasma cholinesterase", "Hyperkalemia"]),
  ("Atracurium<br><span class=g>nondepolarizing blocker</span>",

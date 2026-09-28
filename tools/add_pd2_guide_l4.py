@@ -216,7 +216,7 @@ BODY = """
   incorrect.</b> The other bedside screens are <b>finger rub</b> and a <b>watch</b>.</p>
   <table class="tbl">
     <tr><th></th><th>Conductive loss</th><th>Sensorineural loss</th></tr>
-    <tr><td><b>Pathophysiology</b></td><td>External or middle ear disorder impairs conduction to the inner ear. Foreign body, otitis media, perforation, <b>otosclerosis of the ossicles</b></td><td>Inner ear disorder involving the <b>cochlear nerve</b> and impulse transmission to the brain. Loud noise, inner ear infection, trauma, acoustic neuroma, congenital and familial disorders, <b>ageing</b></td></tr>
+    <tr><td><b>Pathophysiology</b></td><td>External or middle ear disorder impairs conduction to the inner ear. Foreign body, otitis media, perforation, <b>otosclerosis of the ossicles</b></td><td>Inner ear disorder involving the <b>cochlear nerve</b> and impulse transmission to the brain. Loud noise, inner ear infection, trauma, acoustic neuroma, congenital and familial disorders, <b>aging</b></td></tr>
     <tr><td><b>Usual age of onset</b></td><td>Childhood and young adulthood, <b>up to about 40</b></td><td><b>Middle or later years</b></td></tr>
     <tr><td><b>Canal and drum</b></td><td>Abnormality usually <b>VISIBLE</b> &mdash; <b>except in otosclerosis</b></td><td>Problem <b>not visible</b></td></tr>
     <tr><td><b>Effect on sound</b></td><td>Little effect. Hearing <b>seems to improve in a noisy environment</b>. <b>Voice remains SOFT</b>, because the inner ear and cochlear nerve are intact</td><td><b>Higher registers lost</b>, so sound may be distorted. Hearing <b>worsens in noise</b>. <b>Voice may be LOUD</b>, because hearing is difficult</td></tr>
@@ -269,7 +269,7 @@ BODY = """
     <tr><td><b>Patency</b></td><td>Occlude one nostril and breathe in. <b>UNILATERAL</b> obstruction &rarr; <b>foreign body, tumor, deviated septum</b></td></tr>
     <tr><td><b>Masses</b></td><td><b>Polyps</b> &mdash; associated with allergic rhinitis, <b>aspirin sensitivity</b>, asthma, chronic sinus infection, <b>cystic fibrosis</b>. Also cysts and tumors</td></tr>
     <tr><td><b>Symmetry and deformity</b></td><td>Deviated septum, perforated septum, trauma</td></tr>
-    <tr><td><b>Discharge</b></td><td>Thick and purulent, thin and watery, or bloody. Note <b>odour</b></td></tr>
+    <tr><td><b>Discharge</b></td><td>Thick and purulent, thin and watery, or bloody. Note <b>odor</b></td></tr>
     <tr><td><b>Mucosa</b></td><td>Color, swelling, bleeding, ulceration. <b>Red and swollen &rarr; VIRAL.</b> <b>Pale, bluish or red &rarr; ALLERGIC</b></td></tr>
     <tr><td><b>Septum</b></td><td>Perforation &mdash; from <b>trauma, surgery or drug use</b></td></tr>
     <tr><td><b>Palpation</b></td><td>Press <b>UP</b> on the frontal sinuses <b>avoiding the eyes</b>; press <b>UP</b> on the maxillary sinuses</td></tr>
@@ -385,7 +385,7 @@ BODY = """
     <tr><td><b>Tender</b></td><td><b>Inflammation</b></td></tr>
     <tr><td><b>Hard or fixed</b></td><td><b>Malignancy</b></td></tr>
     <tr><td><b>Enlarged supraclavicular node on the LEFT</b></td><td><b>Metastasis from an abdominal or thoracic malignancy</b></td></tr>
-    <tr><td><b>Generalised</b></td><td>Human immunodeficiency virus, Epstein-Barr virus, <b>lymphoma, leukemia, sarcoidosis</b></td></tr>
+    <tr><td><b>Generalized</b></td><td>Human immunodeficiency virus, Epstein-Barr virus, <b>lymphoma, leukemia, sarcoidosis</b></td></tr>
   </table>
   <p>The left supraclavicular node is the one worth knowing cold: it drains territory a long way
   from the neck, so finding one there redirects the entire search.</p>

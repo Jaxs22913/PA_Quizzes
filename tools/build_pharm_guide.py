@@ -312,7 +312,7 @@ BODY = '''<main>
   <strong>fluoroquinolones</strong> under Objective 4, and <strong>posaconazole</strong> among the
   antifungals. Worth understanding once rather than memorizing three times.
   <br><br>
-  The QT interval measures how long the ventricle takes to <strong>repolarise</strong>. Repolarization
+  The QT interval measures how long the ventricle takes to <strong>repolarize</strong>. Repolarization
   depends on potassium leaving the cell, and these drugs block the potassium channel that lets it out
   &mdash; the <strong>hERG</strong> channel, named in the figure on the drug-induced QT slide. Block it,
   repolarization takes longer, and the QT stretches. Stretch it far enough and the rhythm degenerates

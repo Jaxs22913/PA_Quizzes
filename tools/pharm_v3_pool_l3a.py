@@ -440,8 +440,8 @@ QUESTIONS = [
 
  dict(topic="Neuromuscular blockers", io="5 — Summarize side effects of cholinergic antagonists", cite=D % 70,
   q="Which electrolyte disturbance does succinylcholine cause?",
-  opts=[["Hyperkalaemia", "Correct, by increasing potassium release from intracellular stores."],
-        ["Hypokalaemia", "Potassium rises rather than falls."],
-        ["Hypercalcaemia", "Calcium is released within muscle in malignant hyperthermia."],
-        ["Hyponatraemia", "Sodium is not the ion affected."]]),
+  opts=[["Hyperkalemia", "Correct, by increasing potassium release from intracellular stores."],
+        ["Hypokalemia", "Potassium rises rather than falls."],
+        ["Hypercalcemia", "Calcium is released within muscle in malignant hyperthermia."],
+        ["Hyponatremia", "Sodium is not the ion affected."]]),
 ]

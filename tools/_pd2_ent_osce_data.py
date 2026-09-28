@@ -279,7 +279,7 @@ OSCE = {
    ("Aphthous ulcer", "Heals in 7 to 10 days; on non-keratinized mucosa"),
    ("Erythroplakia or leukoplakia", "A patch rather than an ulcer, though either may harbor carcinoma")],
   "<b>Biopsy</b> &rarr; squamous cell carcinoma. <b>p16 immunohistochemistry or in situ "
-  "hybridisation</b> &rarr; positive in human papillomavirus related oropharyngeal disease, which "
+  "hybridization</b> &rarr; positive in human papillomavirus related oropharyngeal disease, which "
   "carries a better prognosis. <b>Computed tomography or magnetic resonance</b> &rarr; the primary "
   "and any nodal spread.",
   "Healing within two weeks after removing an irritant excludes malignancy; a normal ear "

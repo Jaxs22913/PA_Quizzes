@@ -25,7 +25,7 @@ OUTDIR = "Clinical Medicine and Surgery I Exam 3"
 ORDER = [
  ("l18-cong", "4.3 &middot; Congenital neck masses",
   ["Branchial cleft cyst", "Thyroglossal duct cyst", "Dermoid cyst", "Plunging ranula",
-   "Laryngocele", "Lymphangioma (cystic hygroma)", "Haemangioma", "Teratoma", "Thymic cyst",
+   "Laryngocele", "Lymphangioma (cystic hygroma)", "Hemangioma", "Teratoma", "Thymic cyst",
    "Sternocleidomastoid tumor of infancy"]),
  ("l18-infl", "4.4 &middot; Inflammatory neck masses",
   ["Reactive viral lymphadenopathy", "HIV-associated cervical adenopathy",

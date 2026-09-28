@@ -181,7 +181,7 @@ QUESTIONS = [
   q="Which events are named as causes of an acquired perilymphatic fistula?",
   opts=[["Barotrauma, temporal bone trauma or stapes surgery", "Correct."],
         ["Loud noise exposure over years", "That produces noise-induced loss."],
-        ["Ageing", "That produces presbycusis."],
+        ["Aging", "That produces presbycusis."],
         ["Viral upper respiratory infection", "That is not a named cause."]]),
 
  dict(topic="Perilymphatic fistula", io=IO_A, lead="defining feature", cite=D % 64,

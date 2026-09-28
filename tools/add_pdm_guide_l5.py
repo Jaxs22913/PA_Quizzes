@@ -282,7 +282,7 @@ SEC5 = """
   <div class="callout warn">
     <p><strong>Three pitfalls.</strong> <b>Hyperglycemia lowers the measured sodium</b> by about
     1.6&ndash;2 mEq/L per 100 mg/dL of glucose above normal &mdash; use a corrected sodium, from a
-    calculator. <b>Pseudohyponatraemia</b> from severe hyperlipidemia or hyperproteinemia gives a
+    calculator. <b>Pseudohyponatremia</b> from severe hyperlipidemia or hyperproteinemia gives a
     falsely low sodium <em>with a normal osmolality</em>. And <b>the number alone never gives the
     diagnosis</b> &mdash; read sodium alongside volume status.</p>
   </div>

@@ -287,7 +287,7 @@ QUESTIONS = [
  dict(topic="Antivirals", io="8 — Anti-influenza agents", cite=D % 126,
   q="Which enzyme does oseltamivir inhibit?",
   opts=[["Neuraminidase", "Correct, preventing budding progeny from being cleaved free."],
-        ["Haemagglutinin", "That is not the target named."],
+        ["Hemagglutinin", "That is not the target named."],
         ["Viral thymidine kinase", "That activates acyclovir instead."],
         ["Reverse transcriptase", "That is not relevant to influenza here."]]),
 

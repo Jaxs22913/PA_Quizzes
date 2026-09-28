@@ -345,7 +345,7 @@ BODY = """
   weeks is unclassified, and in practice means either a second acute episode or an untreated
   allergy underneath.</p>
 
-  <p><b>Nasal polyps.</b> Non-neoplastic, benign <b>oedematous</b> masses arising from the mucous
+  <p><b>Nasal polyps.</b> Non-neoplastic, benign <b>edematous</b> masses arising from the mucous
   membranes of the sinus ostia or ethmoid air cells. <b>Molecular pathway:</b> chronic type 2
   allergic responses, diffuse cytokine release &mdash; <b>interleukins 4, 5 and 13</b> &mdash; and
   <b>tissue eosinophil influx</b>. <b>Not neoplastic</b> is the word that matters: no new tissue is

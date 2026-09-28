@@ -69,7 +69,7 @@ BATCH = {
   "Palpate a <b>soft, compressible, ill-defined mass, usually in the posterior triangle</b>. "
   "<b>Transilluminate &mdash; it glows brightly</b>, which is the classic finding. Assess airway "
   "and feeding. Watch for sudden enlargement after an infection or bleed.",
-  [("Haemangioma", "Red or blue, blanches, and follows proliferate-then-involute growth"),
+  [("Hemangioma", "Red or blue, blanches, and follows proliferate-then-involute growth"),
    ("Branchial cleft cyst", "Discrete and unilocular, anterior rather than posterior triangle"),
    ("Teratoma", "Contains solid elements and calcification; does not transilluminate uniformly")],
   "<b>Ultrasound</b> &rarr; a multiloculated cystic mass with thin septa. <b>Magnetic resonance</b> "
@@ -78,7 +78,7 @@ BATCH = {
   "Bright uniform transillumination with multiloculated cysts excludes a solid tumor; a blanching "
   "vascular lesion is a hemangioma; solid components with calcification mean teratoma."),
 
-"Haemangioma": E(
+"Hemangioma": E(
   "&ldquo;It wasn&rsquo;t there at birth, then it appeared and grew fast for months &mdash; now "
   "it&rsquo;s fading.&rdquo;",
   "Inspect color and depth &mdash; superficial lesions are bright red, deep ones bluish. "
@@ -100,7 +100,7 @@ BATCH = {
   "airway immediately</b> &mdash; that is the priority. Look for tracheal deviation and check "
   "feeding. Examine the thyroid.",
   [("Lymphangioma", "Soft, compressible and transilluminates; purely cystic"),
-   ("Goitre", "Moves with swallowing and is thyroid in origin"),
+   ("Goiter", "Moves with swallowing and is thyroid in origin"),
    ("Neuroblastoma", "Firm, may be associated with Horner syndrome and raised urinary catecholamines")],
   "<b>Ultrasound and magnetic resonance</b> &rarr; a heterogeneous mass with <b>fat, cystic areas "
   "and CALCIFICATION</b> &mdash; that mixed tissue content is what names it. <b>Alpha-fetoprotein</b> "

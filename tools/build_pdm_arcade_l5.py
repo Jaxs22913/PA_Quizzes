@@ -112,10 +112,10 @@ DECK = dict(
   ["Hepatocellular pattern", "Transaminases out of proportion to ALP"],
   ["Cholestatic pattern", "ALP out of proportion to the transaminases"],
   ["Anion gap 8 to 12", "Normal, standard formula"],
-  ["Urine sodium under 20", "Hypovolaemia"],
+  ["Urine sodium under 20", "Hypovolemia"],
   ["Urine sodium over 40", "Inappropriate antidiuretic hormone secretion"],
   ["Urea : creatinine over 20", "Prerenal"],
-  ["Pseudohyponatraemia", "Low sodium with a NORMAL osmolality"],
+  ["Pseudohyponatremia", "Low sodium with a NORMAL osmolality"],
     ])
 
 # ---- guard: no card may turn on one of the three disputed ranges -----------

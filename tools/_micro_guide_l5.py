@@ -255,7 +255,7 @@ SECTION = """
       starving them of iron</strong></li>
       <li>Increases production and activity of <strong>neutrophils</strong></li>
       <li>Enhances <strong>T cell proliferation</strong></li>
-      <li>Enhances immune <strong>signalling</strong></li>
+      <li>Enhances immune <strong>signaling</strong></li>
       <li>Enhances <strong>tissue resistance to the damaging effects of tumor necrosis factor
       alpha</strong> &mdash; protection against the body's own mediator</li>
     </ul>

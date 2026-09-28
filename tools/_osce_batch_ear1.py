@@ -311,7 +311,7 @@ BATCH = {
   "Cranial nerves VII and IX to XII. <b>Never biopsy it in clinic.</b>",
   [("High-riding jugular bulb", "A vascular variant, also blue behind the drum, but not a tumor"),
    ("Aberrant internal carotid artery", "Pulsatile too &mdash; and biopsy would be catastrophic"),
-   ("Haemotympanum", "Blood behind the drum after trauma; not pulsatile")],
+   ("Hemotympanum", "Blood behind the drum after trauma; not pulsatile")],
   "<b>Computed tomography and magnetic resonance with angiography</b> &rarr; an intensely enhancing "
   "mass with a <b>salt and pepper</b> pattern of flow voids and bone erosion. <b>Urinary "
   "catecholamines</b> if it is secreting.",

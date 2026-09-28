@@ -445,7 +445,7 @@ POOL_C = [
       "Correct — male-pattern hair loss is an androgen-dependent trait with a strong paternal influence on risk."],
      ["Testosterone acting directly on the follicle",
       "Dihydrotestosterone is the androgen named."],
-     ["Oestradiol",
+     ["Estradiol",
       "This is not the androgen responsible."],
      ["Cortisol",
       "This is not implicated in androgenetic alopecia."]],

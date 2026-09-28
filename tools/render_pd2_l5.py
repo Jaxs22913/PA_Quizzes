@@ -9,7 +9,7 @@ OUT = os.path.join(os.path.dirname(HERE), "Physical Diagnosis 2 Exam 2")
 S = json.load(open(os.path.join(HERE, "pd2_l5_sets.json"), encoding="utf-8"))
 PAL = dict(navy="#3a5a40", indigo="#5f8a68", gold="#c08a2e", ice="#eef4ef")
 CHIPS = ["Cardiac history", "Heart sounds", "Apical impulse", "Murmurs",
-         "Manoeuvres", "Peripheral vascular"]
+         "Maneuvers", "Peripheral vascular"]
 INTRO = (
   "Thirty questions on the advanced cardiovascular and peripheral vascular examination. "
   "<b>The maneuvers are the block worth getting right, and the deck says why.</b> Valsalva and "

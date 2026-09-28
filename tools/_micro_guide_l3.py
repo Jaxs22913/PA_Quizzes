@@ -81,7 +81,7 @@ SECTION = """
     <tr><td>Bubonic plague</td><td>100&ndash;500 bacterial cells</td></tr>
     <tr><td>SARS-CoV-1</td><td>about 280 viral particles (animal study)</td></tr>
     <tr><td>Influenza A</td><td>about 790 viral particles</td></tr>
-    <tr><td>Gonorrhoea</td><td>1,000 bacterial cells</td></tr>
+    <tr><td>Gonorrhea</td><td>1,000 bacterial cells</td></tr>
     <tr><td><strong>Cholera</strong></td><td><strong>100,000,000 bacterial cells</strong></td></tr>
   </table>
   <div class="pearl">Read that table as a virulence ranking, not a list of numbers. Measles needs

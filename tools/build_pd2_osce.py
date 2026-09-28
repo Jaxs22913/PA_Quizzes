@@ -96,7 +96,7 @@ def background(items):
           say("Prior episodes of the same problem, and what was done about them"),
           say("Chronic medical conditions"),
           say("Previous surgeries or procedures"),
-          say("Hospitalisations"),
+          say("Hospitalizations"),
         ]),
         ("h4", "Medications and allergies"),
         ("items", [

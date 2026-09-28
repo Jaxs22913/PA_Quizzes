@@ -224,7 +224,7 @@ SECTION = """
     <tr><th>Acquired &mdash; cortical</th><td><strong>Radial, spoke-like</strong> opacities in
       the periphery. <strong>Asymptomatic until it reaches the center</strong>, at which point
       <strong>glare is the most common complaint</strong>.</td></tr>
-    <tr><th>Paediatric</th><td><mark class="prof-highlight">Zonular is the commonest</mark>
+    <tr><th>Pediatric</th><td><mark class="prof-highlight">Zonular is the commonest</mark>
       &mdash; white opacity surrounding the nucleus. <strong>Polar</strong> is less common but
       central, so it is caught more easily. Also nuclear, and posterior lenticonus.</td></tr>
     <tr><th>Signs</th><td>Early: slit lamp. Advanced: <strong>loss of the red reflex</strong>,

@@ -716,7 +716,7 @@ DIFF_L19 = {
  "Behcet syndrome": ("Yes", "Oral and <b>genital</b>", "Oral ulcers in up to 100%, genital in 75%"),
  "Oral lichen planus": ("Varies &mdash; erosive types hurt", "Buccal mucosa, tongue, lips", "<b>Wickham striae</b> &mdash; lacy white lines"),
  "Systemic lupus erythematosus &mdash; oral": ("Varies", "Lips, soft and buccal mucosa", "<b>Honeycomb patches</b>; may be the first sign of lupus"),
- "Herpes simplex ulcers": ("Yes", "Perioral and oral, <b>keratinised</b> surfaces", "<b>Burning prodrome ~24 h before the lesion</b>"),
+ "Herpes simplex ulcers": ("Yes", "Perioral and oral, <b>keratinized</b> surfaces", "<b>Burning prodrome ~24 h before the lesion</b>"),
  "Acute suppurative sialadenitis": ("Yes &mdash; firm, diffusely tender", "<b>Parotid</b>, unilateral", "<b>Pus expressed from the duct</b>"),
  "Sialolithiasis": ("Yes &mdash; with eating", "<b>Submandibular duct</b> in 80&ndash;90%", "<b>Salivary colic</b> &mdash; swelling and pain on eating"),
  "Parotitis": ("Yes", "Parotid", "Mumps is the classic viral cause"),

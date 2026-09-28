@@ -234,7 +234,7 @@ BODY = '''<main>
   <h3 class="sub" id="derm-vocabulary">2.2 &middot; Objective b &mdash; The descriptive vocabulary</h3>
   <p>Five features describe any lesion: <strong>distribution</strong> (location) &middot;
   <strong>configuration</strong> (shape) &middot; <strong>morphology</strong> (form and structure)
-  &middot; <strong>colour</strong> &middot; <strong>texture</strong>.</p>
+  &middot; <strong>color</strong> &middot; <strong>texture</strong>.</p>
   <p><strong>Distribution</strong> &mdash; unilateral, bilateral, symmetric, asymmetric,
   photodistribution, intertriginous, flexural, extensor, palmar-plantar, hair-bearing areas.
   Distribution is often the fastest route to a diagnosis:</p>
@@ -476,7 +476,7 @@ BODY = '''<main>
   <p>Six characteristics are assessed by inspection, palpation, or both:</p>
   <table>
     <tr><th>Characteristic</th><th>Descriptive terms</th></tr>
-    <tr><td>Colour</td><td>Increase or decrease in pigmentation &middot; erythema/rubor &middot; pallor &middot; jaundice &middot; cyanosis</td></tr>
+    <tr><td>Color</td><td>Increase or decrease in pigmentation &middot; erythema/rubor &middot; pallor &middot; jaundice &middot; cyanosis</td></tr>
     <tr><td>Moisture</td><td>Dryness &middot; sweating &middot; oiliness</td></tr>
     <tr><td>Temperature</td><td>Warmth &middot; coolness &mdash; <strong>use the dorsal aspect of the hands</strong></td></tr>
     <tr><td>Texture</td><td>Roughness &middot; smoothness</td></tr>

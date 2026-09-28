@@ -106,7 +106,7 @@ SECTION = """
   <div class="callout warn">
     <p><strong>Reservoir and vector are not the same thing, and the difference can be
     subtle.</strong> For malaria the <em>reservoir</em> may be birds while the <em>vector</em> is a
-    particular species of mosquito. The reservoir <em>harbours</em>; the vector
+    particular species of mosquito. The reservoir <em>harbors</em>; the vector
     <em>delivers</em>.</p>
   </div>
 

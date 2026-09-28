@@ -57,7 +57,7 @@ TOPICS = [
    ("Polymorphous light eruption", "Commonest idiopathic photodermatosis. Spring onset, spares chronically exposed skin, hardens by late summer. Antinuclear antibody is MANDATORY to exclude lupus. Prophylactic narrow band ultraviolet B in spring is the most effective prevention."),
    ("Actinic keratosis", "Sandpaper texture · TP53 · field cancerization → field therapy (5-fluorouracil, imiquimod, photodynamic therapy) for confluent disease."),
    ("Dermatoheliosis", "Solar elastosis is the histological hallmark. TRETINOIN is the only agent approved for photoaging."),
-   ("Millimetres", "CMS uses 1 cm for macule/patch and papule/plaque. Clinical Pathophysiology uses 5 mm. Answer with the course in front of you."),
+   ("Millimeters", "CMS uses 1 cm for macule/patch and papule/plaque. Clinical Pathophysiology uses 5 mm. Answer with the course in front of you."),
  ]),
  ("bacterial-acne", "Acne Vulgaris & Follicular Infection", "#3b5aa0", "#e4e8f2", "#f1f3f8", "#2e467d", [
    ("Four factors", "Follicular hyperkeratinization · increased sebum · Cutibacterium acnes (anaerobic Gram-positive rod) · inflammation."),

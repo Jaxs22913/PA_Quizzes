@@ -223,7 +223,7 @@ ITEMS = [
                 ("Nasal cellulitis", "That is diffuse redness and warmth without displacement of the bony framework.")]),
 
     # --------------------------------------------------------------- neck
-    dict(cond="Haemangioma", img="l18-s027_pos1.jpg", slide=27, deck=D18, io=NECK,
+    dict(cond="Hemangioma", img="l18-s027_pos1.jpg", slide=27, deck=D18, io=NECK,
          alt="Bright red slightly raised soft plaque with a lobulated surface on the skin behind and below the ear of an infant",
          why="A red, soft, raised vascular lesion in an infant. These vascular malformations appear in the first few months of life as a red or bluish soft, compressible mass, and most involute on their own.",
          wrong=[("Branchial cleft cyst", "That is a smooth deep swelling along the anterior border of the sternocleidomastoid, with normal skin over it."),

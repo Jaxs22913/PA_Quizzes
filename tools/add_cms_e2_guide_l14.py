@@ -68,7 +68,7 @@ FIGS = {
    ("l14-s042_pos4.jpg", "Medial wall fracture",
     "Periorbital ecchymosis and swelling", 42)],
  "@@BASILAR@@": [
-   ("l14-s045_pos1.jpg", "Haemotympanum",
+   ("l14-s045_pos1.jpg", "Hemotympanum",
     "Blood behind the tympanic membrane", 45),
    ("l14-s045_pos2.jpg", "Raccoon eyes",
     "Periorbital ecchymosis, without direct orbital trauma", 45),

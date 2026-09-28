@@ -66,7 +66,7 @@ POOL_A = [
       "Culture follows the urinalysis rather than substituting for it."]],
    c=0, cite=c(4)),
 
- dict(topic="Colour", io=IOA, slot="interpretation",
+ dict(topic="Color", io=IOA, slot="interpretation",
    q="Urine appears pale yellow and almost colorless. What does that suggest?",
    opts=[
      ["Dilute urine",
@@ -79,7 +79,7 @@ POOL_A = [
       "Blood gives a bright or dark red color."]],
    c=0, cite=c(7)),
 
- dict(topic="Colour", io=IOA, slot="interpretation",
+ dict(topic="Color", io=IOA, slot="interpretation",
    q="Urine is yellow-brown with a green tinge. Which substance does that point to?",
    opts=[
      ["Bilirubin",
@@ -92,7 +92,7 @@ POOL_A = [
       "Urea is present in all urine and does not color it this way."]],
    c=0, cite=c(7)),
 
- dict(topic="Colour", io=IOA, slot="patient education",
+ dict(topic="Color", io=IOA, slot="patient education",
    q="A patient is prescribed a medication that will turn the urine a striking color. What should be done?",
    opts=[
      ["Warn the patient in advance so the change does not alarm them",
@@ -144,12 +144,12 @@ POOL_A = [
       "Refrigeration preserves the specimen rather than clouding it."]],
    c=0, cite=c(8)),
 
- dict(topic="Odour", io=IOA, slot="interpretation",
+ dict(topic="Odor", io=IOA, slot="interpretation",
    q="What is the normal odor of urine described as?",
    opts=[
      ["Aromatic",
       "Correct — that is the term used for the normal odor."],
-     ["Odourless",
+     ["Odorless",
       "Normal urine has a faint odor rather than none."],
      ["Ammonia-like",
       "An ammonia odor means urea has been broken down by bacteria."],
@@ -157,7 +157,7 @@ POOL_A = [
       "A sweet odor points to ketones."]],
    c=0, cite=c(9)),
 
- dict(topic="Odour", io=IOA, slot="specimen handling",
+ dict(topic="Odor", io=IOA, slot="specimen handling",
    q="A specimen collected two hours ago smells strongly of ammonia. What explains it?",
    opts=[
      ["Urea has been broken down by bacteria while the sample stood",
@@ -170,7 +170,7 @@ POOL_A = [
       "Refrigeration prevents this change rather than causing it."]],
    c=0, cite=c(9)),
 
- dict(topic="Odour", io=IOA, slot="specimen handling",
+ dict(topic="Odor", io=IOA, slot="specimen handling",
    q="A specimen cannot be examined within one to two hours. How should it be kept?",
    opts=[
      ["Refrigerated, with no preservative added",
@@ -183,7 +183,7 @@ POOL_A = [
       "Warmth accelerates the decomposition that refrigeration prevents."]],
    c=0, cite=c(9)),
 
- dict(topic="Odour", io=IOA, slot="interpretation",
+ dict(topic="Odor", io=IOA, slot="interpretation",
    q="Urine has a fruity, sweet odor. What does that point to?",
    opts=[
      ["Ketones",
@@ -196,7 +196,7 @@ POOL_A = [
       "Nitrites carry no characteristic odor."]],
    c=0, cite=c(9)),
 
- dict(topic="Odour", io=IOA, slot="interpretation",
+ dict(topic="Odor", io=IOA, slot="interpretation",
    q="Urine has a fecal odor. Which condition should be considered?",
    opts=[
      ["A fistula between bowel and bladder",

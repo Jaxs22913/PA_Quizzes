@@ -78,7 +78,7 @@ ROWS_L15 = [
   "19", D15),
 
  ("Barotrauma", PRESS,
-  "<b>Cannot equalize</b> &middot; flying or <b>SCUBA</b> &middot; <b>haemotympanum</b> behind the drum",
+  "<b>Cannot equalize</b> &middot; flying or <b>SCUBA</b> &middot; <b>hemotympanum</b> behind the drum",
   "Inability to equalize middle ear pressure, seen with <b>air travel, rapid altitude change and SCUBA diving</b>. May <b>rupture the tympanic membrane</b> or bleed into the middle ear. <b>Otalgia and conductive hearing loss.</b>",
   "Otoscopy: <b>decreased mobility on insufflation</b>, <b>visible hemotympanum</b> if there is hemorrhage, visible perforation if present. Severe cases can rupture the <b>round or oval window</b>, adding <b>tinnitus, sensorineural hearing loss, vertigo, nausea and vomiting</b> &mdash; that combination means the inner ear is involved.",
   "Equalize by <b>swallowing, yawning, exhaling through the nose against resistance</b>. Oral or intranasal decongestants may help. <b>Myringotomy gives instant relief</b> and is reserved for severe otalgia and hearing loss with an intact membrane (ENT). Recurrent episodes in frequent flyers may justify <b>tympanostomy tubes</b> (ENT).",
@@ -210,7 +210,7 @@ DIFF_L15 = {
  "Otitis media with effusion": ("<b>NO</b> &mdash; often asymptomatic", "<b>Conductive</b>, temporary", "<b>Dull</b> drum, <b>air&ndash;fluid level</b>"),
  "Chronic otitis media": ("Varies with activity", "<b>Conductive</b>", "<b>Non-healing perforation</b>"),
  "Mastoiditis": ("<b>YES</b>", "<b>Conductive</b>", "Complication of acute otitis media"),
- "Barotrauma": ("<b>YES</b> &mdash; otalgia", "<b>Conductive</b>; sensorineural if the window ruptures", "<b>Haemotympanum</b>, reduced mobility"),
+ "Barotrauma": ("<b>YES</b> &mdash; otalgia", "<b>Conductive</b>; sensorineural if the window ruptures", "<b>Hemotympanum</b>, reduced mobility"),
  "Cerumen impaction": ("No &mdash; pruritus, fullness", "<b>Conductive</b>", "<b>Wax obstructing</b> the canal"),
  "Cholesteatoma": ("No &mdash; otorrhea", "<b>Conductive</b>, a late finding", "<b>Keratin debris in a retraction</b>"),
  "Hematoma of the external ear": ("<b>YES</b>", "None", "<b>Auricle swollen, landmarks lost</b>"),

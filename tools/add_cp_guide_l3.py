@@ -138,7 +138,7 @@ BODY = '''<section class="deck" id="abnormal-cell-growth">
   <h3 class="sub" id="acg-spread">3.4 &middot; Objective d &mdash; Routes of tumor spread</h3>
   <table>
     <tr><th>Route</th><th>Mechanism</th><th>Where it goes</th></tr>
-    <tr><td><b>Haematogenous</b></td><td>Cells <b>separate from each other</b> and degrade intercellular tissue with <b>enzymes</b>; cells invade the vessel; <b>multiple tumor fragments</b> travel</td><td>Typically through <b>veins</b> &mdash; especially the <b>portal vein</b> and the <b>inferior vena cava</b>, so cancers often spread to <b>liver</b> and <b>lungs</b> respectively. One organ may carry several nodules</td></tr>
+    <tr><td><b>Hematogenous</b></td><td>Cells <b>separate from each other</b> and degrade intercellular tissue with <b>enzymes</b>; cells invade the vessel; <b>multiple tumor fragments</b> travel</td><td>Typically through <b>veins</b> &mdash; especially the <b>portal vein</b> and the <b>inferior vena cava</b>, so cancers often spread to <b>liver</b> and <b>lungs</b> respectively. One organ may carry several nodules</td></tr>
     <tr><td><b>Lymphatic</b></td><td>Cancer spreads into lymphatic vessels <b>at the tumor margin</b></td><td>Follows the <b>natural route of lymphatic drainage</b> &mdash; which is why nodal staging is anatomically predictable</td></tr>
     <tr><td><b>Seeding</b></td><td>Invasion of tumor <b>through an organ surface</b> into a cavity</td><td><b>Pericardial, pleural, peritoneal</b> cavities, joint cavities, and the <b>subarachnoid space</b>. <b>Most commonly the peritoneal cavity</b></td></tr>
   </table>

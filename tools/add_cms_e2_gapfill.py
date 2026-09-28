@@ -59,7 +59,7 @@ NYSTAGMUS = """
     <tr><th></th><th>Jerk</th><th>Pendular</th></tr>
     <tr><td><b>Phases</b></td><td>A slow phase and a fast phase</td><td><b>Both phases equal</b> in velocity and amplitude &mdash; <b>no fast phase at all</b></td></tr>
     <tr><td><b>Named for</b></td><td>The direction of the <b>FAST</b> beat &mdash; vertical, horizontal or torsional</td><td>Not named by beat, since there is no fast beat</td></tr>
-    <tr><td><b>Behaviour</b></td><td><b>Increases with gaze toward the fast phase</b></td><td>Most often horizontal</td></tr>
+    <tr><td><b>Behavior</b></td><td><b>Increases with gaze toward the fast phase</b></td><td>Most often horizontal</td></tr>
     <tr><td><b>Context</b></td><td>Most common form is <b>horizontal jerk</b> &mdash; eyes drift slowly one way, snap back</td><td>Usually <b>congenital</b>, or follows <b>prolonged bilateral blindness beginning in childhood</b></td></tr>
   </table>
   <p><strong>The horizontal jerk subtypes:</strong> normal <b>physiologic gaze-evoked</b>,

@@ -92,7 +92,7 @@ QUESTIONS = [
  "opts": [
    ["Syndrome of inappropriate antidiuretic hormone",
     "Correct. A genuinely low serum osmolality with inappropriately CONCENTRATED urine — the kidney should be making dilute urine to shed water and is doing the opposite. Small cell lung cancer is a classic source."],
-   ["Pseudohyponatraemia",
+   ["Pseudohyponatremia",
     "There the measured sodium is low but serum osmolality is NORMAL, because the sodium is diluted by lipid or protein rather than by water. Here osmolality is genuinely low."],
    ["Diabetes insipidus",
     "The opposite defect — too little antidiuretic effect, giving a high sodium and dilute urine."],

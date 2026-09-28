@@ -182,7 +182,7 @@ SECTION = """
   Lifetime risk about <strong>2% in white individuals</strong> and <strong>0.1 to 0.5% in persons of
   color</strong> &mdash; lower, but not zero, which is why acral and nail sites still get checked.</p>
   <table>
-    <tr><th>Subtype</th><th>Behaviour</th></tr>
+    <tr><th>Subtype</th><th>Behavior</th></tr>
     <tr><td><b>Superficial spreading</b> (~2/3)</td><td>Intermittently sun-exposed skin; evolves radially before vertical growth</td></tr>
     <tr><td><b>Lentigo maligna</b></td><td>Chronically sun-exposed skin of older adults; slow radial growth phase</td></tr>
     <tr><td><b>Nodular</b></td><td><b>Rapidly growing; often amelanotic; may LACK the classic features</b> &mdash; high-risk for exactly that reason</td></tr>
@@ -266,7 +266,7 @@ SECTION = """
   <p>The deck calls <strong>diagnostic delay a recurring theme and a preventable harm</strong> in this
   module, and every item below is arranged around that.</p>
   <table>
-    <tr><th>Tumour</th><th>Pattern</th></tr>
+    <tr><th>Tumor</th><th>Pattern</th></tr>
     <tr><td><b>Nail unit melanoma</b></td><td>Rare acral melanoma, most often from the <b>matrix</b>. <b>Not clearly ultraviolet-driven; any skin tone.</b> <b>Thumb and great toe</b>. New or evolving <b>longitudinal melanonychia in ONE digit</b>, increasing width, irregular color/thickness/spacing, <b>proximal widening or triangular shape</b>, blurred borders, nail splitting, ulceration or subungual mass</td></tr>
     <tr><td><b>Nail unit squamous cell carcinoma / Bowen</b></td><td><b>The most common malignant nail tumor.</b> Chronic unilateral verrucous periungual papule or plaque, subungual hyperkeratosis, onycholysis, oozing, bleeding, nail-plate destruction, longitudinal erythronychia &mdash; <b>often repeatedly labeled a wart, paronychia or fungal infection</b>. Associations: high-risk human papillomavirus, immunosuppression, chronic inflammation or trauma, prior radiation, older age</td></tr>
     <tr><td><b>Nail unit basal cell carcinoma</b></td><td><b>Exceptionally uncommon</b> &mdash; consider it in a persistent ulcerated or pearly lesion of the nail fold or bed</td></tr>

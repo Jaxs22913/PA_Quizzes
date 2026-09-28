@@ -60,7 +60,7 @@ QUESTIONS = [
    "An alpha agonist would not be expected to do this, and it is not described."],
   ["Drowsiness and sedation",
    "Sedation belongs to first generation antihistamines. Oxymetazoline's systemic effect is raised blood pressure."],
-  ["Hypoglycaemia", "Not among the described effects. Oxymetazoline is associated with rebound congestion and raised blood pressure."]],
+  ["Hypoglycemia", "Not among the described effects. Oxymetazoline is associated with rebound congestion and raised blood pressure."]],
  "c": 0, "cite": D + ", Slide 50"},
 
 {"topic": "Oxymetazoline", "io": IO_INTERACT, "slot": "mechanism",

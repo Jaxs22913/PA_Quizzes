@@ -302,7 +302,7 @@ ROWS = [
                               "Tachycardia (higher doses)", "Urinary retention", "hallucinations, delirium"]),
  ("Succinylcholine",
   "<b>Malignant hyperthermia</b> with halothane &mdash; muscular rigidity, metabolic acidosis, tachycardia, "
-  "hyperpyrexia. <b>Apnoea</b> with plasma cholinesterase deficiency. <b>Hyperkalaemia.</b>",
+  "hyperpyrexia. <b>Apnea</b> with plasma cholinesterase deficiency. <b>Hyperkalaemia.</b>",
   "<b>Treat malignant hyperthermia by rapid cooling and dantrolene (Dantrium)</b>, which blocks calcium release "
   "from the sarcoplasmic reticulum.",
   "Muscle / Electrolyte", L3, 70, ["Malignant Hyperthermia", "muscular rigidity, metabolic acidosis",

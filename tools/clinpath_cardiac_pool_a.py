@@ -69,7 +69,7 @@ QUESTIONS = [
    "Valve function is not the described consequence of myocardial ischemia."]],
  "c": 0, "cite": D + ", Slide 4"},
 
-{"topic": "Coronary heart disease", "io": IO_CHD, "slot": "aetiology",
+{"topic": "Coronary heart disease", "io": IO_CHD, "slot": "etiology",
  "q": "Atherosclerosis narrows the coronary lumen. Which processes does that narrowing predispose to?",
  "opts": [
   ["Thrombosis, coronary vasospasm and endothelial cell dysfunction",
@@ -82,7 +82,7 @@ QUESTIONS = [
    "That describes myocarditis, which is not a consequence of coronary atherosclerosis."]],
  "c": 0, "cite": D + ", Slide 8"},
 
-{"topic": "Coronary heart disease", "io": IO_CHD, "slot": "aetiology",
+{"topic": "Coronary heart disease", "io": IO_CHD, "slot": "etiology",
  "q": "Which are given as uncommon causes of coronary heart disease?",
  "opts": [
   ["Reduced oxygen content of the blood, and poor perfusion",

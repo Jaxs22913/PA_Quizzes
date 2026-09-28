@@ -242,9 +242,11 @@ def fix_text(s, code_string=False, hits=None, where=""):
             out.append(t); continue
         prev = s[start - 1] if start else ""
         nxt = s[pos] if pos < len(s) else ""
-        if prev in GLUE or nxt in GLUE:
+        # prev/nxt are "" at a string edge, and "" is `in` every string: test truthiness
+        # first, or every one-word string (a one-word answer choice) is skipped as code
+        if (prev and prev in GLUE) or (nxt and nxt in GLUE):
             out.append(t); continue
-        if nows and (prev in "-.#/:=" or nxt in "-.#/:=" or prev == "-" or nxt == "-"):
+        if nows and ((prev and prev in "-.#/:=") or (nxt and nxt in "-.#/:=")):
             out.append(t); continue
         # the whitespace-free chunk this word sits in
         a = start
@@ -425,6 +427,8 @@ def fix_py(src, hits, where):
             a = offs[t.start[0] - 1] + t.start[1]
             b = offs[t.end[0] - 1] + t.end[1]
             lit = src[a:b]
+            if src[a - 1:a] == "[" and src[b:b + 1] == "]":
+                continue                          # a subscript key (r["colour"]) is code
             m = re.match(r"^([A-Za-z]*)('''|\"\"\"|'|\")", lit, re.S)
             pre, q = m.group(1), m.group(2)
             if "b" in pre.lower():

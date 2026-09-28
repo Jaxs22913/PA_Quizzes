@@ -43,7 +43,7 @@ RULES = [
            "<b>posaconazole</b> (whose QT risk runs mostly through the hypokalemia and "
            "hypomagnesemia it causes). He flagged it the first time it appeared and again three "
            "minutes later.<br><br>What he actually taught around it: the QT interval is how long "
-           "the ventricle takes to <b>repolarise</b>, and it lengthens because the drug blocks the "
+           "the ventricle takes to <b>repolarize</b>, and it lengthens because the drug blocks the "
            "potassium channel that lets K<sup>+</sup> out of the cell &mdash; the slide names it the "
            "<b>hERG</b> channel. A long enough QT degenerates into <b>torsades de pointes</b>, "
            "French for &ldquo;twisting of the points&rdquo;, a ventricular arrhythmia he called "

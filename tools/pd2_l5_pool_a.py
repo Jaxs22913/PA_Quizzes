@@ -95,7 +95,7 @@ POOL_A = [
    "Duration is one of the things to ask about rather than a threshold for significance."]],
  "c": 0, "cite": c(6)},
 
-{"topic": "Dyspnoea", "io": IO_HX, "slot": "manifestation",
+{"topic": "Dyspnea", "io": IO_HX, "slot": "manifestation",
  "q": "How is dyspnea defined?",
  "opts": [["Awareness of breathing out of proportion to exertion",
    "Correct, and the qualifier matters: it is the mismatch with the level of exertion rather than breathlessness as such. It is common in both cardiac and pulmonary problems."],
@@ -107,7 +107,7 @@ POOL_A = [
    "That describes palpitations."]],
  "c": 0, "cite": c(7)},
 
-{"topic": "Orthopnoea", "io": IO_HX, "slot": "manifestation",
+{"topic": "Orthopnea", "io": IO_HX, "slot": "manifestation",
  "q": "How is orthopnea quantified?",
  "opts": [["By the number of pillows used for sleeping",
    "Correct, or by the fact that the patient needs to sleep sitting up. The refinement is to ask what the pillows are actually being used for."],
@@ -119,7 +119,7 @@ POOL_A = [
    "The quantification described is by pillow count rather than by saturation."]],
  "c": 0, "cite": c(7)},
 
-{"topic": "Orthopnoea", "io": IO_HX, "slot": "education",
+{"topic": "Orthopnea", "io": IO_HX, "slot": "education",
  "q": "Why ask what the patient is using the pillows for?",
  "opts": [["Pillow use may reflect habit rather than breathlessness",
    "Correct — the pillow count only quantifies orthopnea if the pillows are there because lying flat causes breathlessness."],
@@ -143,7 +143,7 @@ POOL_A = [
    "Exertional breathlessness is ordinary dyspnea; this occurs at rest, during sleep."]],
  "c": 0, "cite": c(7)},
 
-{"topic": "Oedema", "io": IO_HX, "slot": "manifestation",
+{"topic": "Edema", "io": IO_HX, "slot": "manifestation",
  "q": "How is edema defined?",
  "opts": [["Excess fluid in the extravascular interstitial space",
    "Correct, and the striking figure is that up to 10 percent of body weight can accumulate before pitting edema appears."],
@@ -155,7 +155,7 @@ POOL_A = [
    "Hemosiderin staining is a skin change of chronic venous insufficiency rather than the definition of edema."]],
  "c": 0, "cite": c(8)},
 
-{"topic": "Oedema", "io": IO_HX, "slot": "manifestation",
+{"topic": "Edema", "io": IO_HX, "slot": "manifestation",
  "q": "How much weight can accumulate before pitting edema appears?",
  "opts": [["About 10 percent of body weight",
    "Correct, which is why the symptom can be well established before the sign is visible — and why daily morning weights are a useful thing to recommend."],
@@ -167,7 +167,7 @@ POOL_A = [
    "A substantial amount accumulates first — about 10 percent of body weight."]],
  "c": 0, "cite": c(8)},
 
-{"topic": "Oedema", "io": IO_HX, "slot": "education",
+{"topic": "Edema", "io": IO_HX, "slot": "education",
  "q": "Which questions help characterize edema?",
  "opts": [["Do shoes or rings get tight? Eyelids puffy?",
    "Correct, focusing on location, timing and setting — and whether it is worse in the morning or the evening, which points toward different causes."],

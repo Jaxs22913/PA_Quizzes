@@ -106,7 +106,7 @@ QUESTIONS = [
   q="Which single feature is described as the big distinguishing factor between viral and bacterial or fungal sinusitis?",
   opts=[["Pain", "Correct &mdash; it occurs only in bacterial and fungal disease, and is reproducible on palpation."],
         ["Nasal congestion", "Occurs in viral disease too, so it separates nothing."],
-        ["Rhinorrhoea", "A feature of viral and allergic disease as well."],
+        ["Rhinorrhea", "A feature of viral and allergic disease as well."],
         ["Postnasal drip", "Common to every cause."]]),
 
  dict(topic="Bacterial sinusitis", io=IO_A, lead="diagnostic technique", cite=D % 18,

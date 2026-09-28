@@ -207,7 +207,7 @@ TOPICS = [
 
 # ---------------------------------------------------------------- L3
 {"id": "l3", "label": "L3 &middot; Derm, ENT &amp; Ophtho Testing", "color": "#a8562f", "cols": COLS, "rows": [
-  (N, "<b>THE MELANOMA RULE.</b> NARROW EXCISIONAL biopsy, 1&ndash;3 <i>millimetre</i> margins, to a "
+  (N, "<b>THE MELANOMA RULE.</b> NARROW EXCISIONAL biopsy, 1&ndash;3 <i>millimeter</i> margins, to a "
       "depth that does NOT transect the base &mdash; so Breslow depth can be measured. A partial "
       "shave is allowed only when suspicion is LOW and may underestimate depth.",
    why("SAID", "Said three separate times in the lecture. Do not confuse the 1&ndash;3 mm DIAGNOSTIC "

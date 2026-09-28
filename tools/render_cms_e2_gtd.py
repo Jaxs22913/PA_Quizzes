@@ -65,7 +65,7 @@ def main():
         pill="%d pictures" % len(questions),
         chips=["Eyelid &amp; lacrimal", "Ocular surface", "Sclera &amp; orbit",
                "Cornea", "Retina &amp; optic nerve", "Pupil &amp; movements",
-               "Tumours", "Trauma"],
+               "Tumors", "Trauma"],
         intro="One picture at a time, four condition names underneath. Every wrong choice "
               "is something the block teaches from the same part of the eye, so the picture "
               "has to be read rather than the list. Tap any picture to enlarge it.",

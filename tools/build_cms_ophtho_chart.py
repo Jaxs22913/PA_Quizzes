@@ -512,7 +512,7 @@ openly licensed photograph from elsewhere instead, credited by author, source an
 picture. The classic CDC chlamydial conjunctivitis photograph is <i>not</i> among them: its own library
 page marks it copyright protected, so an open-access case report stands in for it.<br><br>
 <b>Two of the deck&rsquo;s pictures are deliberately NOT used.</b> Slide 29&rsquo;s first image is a
-<b>hyphaema</b> and slide 27&rsquo;s third is <b>conjunctival intraepithelial neoplasia</b> &mdash;
+<b>hyphema</b> and slide 27&rsquo;s third is <b>conjunctival intraepithelial neoplasia</b> &mdash;
 both are captioned <i>DDX</i> on the slide itself. Putting either in a chart cell would say
 &ldquo;this is what the condition looks like&rdquo; about a picture of something else.<br><br>
 <b>Where a slide reads as an absolute and its own speaker notes soften it, the hedge is what is

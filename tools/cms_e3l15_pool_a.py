@@ -294,7 +294,7 @@ QUESTIONS = [
 
  dict(topic="Barotrauma", io=IO_A, lead="clinical manifestation", cite=D % 23,
   q="Which otoscopic finding indicates bleeding into the middle ear after barotrauma?",
-  opts=[["Haemotympanum", "Correct — blood visible behind the drum."],
+  opts=[["Hemotympanum", "Correct — blood visible behind the drum."],
         ["A retraction pocket", "That indicates chronic negative pressure."],
         ["Canal exostoses", "Those are bony canal growths."],
         ["A chalky white mass", "That suggests cholesteatoma."]]),

@@ -127,7 +127,7 @@ POOL_B = [
  dict(topic="Differential diagnosis", io="Discuss clinical principles and decision-making",
    q="In the confusion example, which cause is placed under Iatrogenic/intoxication?",
    opts=[
-     ["Hypoglycaemia",
+     ["Hypoglycemia",
       "Hypoglycemia is listed under Endocrine and metabolic causes."],
      ["Narcotics, and alcohol intoxication or withdrawal",
       "Correct. Iatrogenic covers harm from treatment, so prescribed narcotics sit here alongside alcohol intoxication and withdrawal as substance-related causes."],

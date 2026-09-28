@@ -234,9 +234,9 @@ BODY = """
   have had cataract surgery, or if acute angle-closure glaucoma is suspected. If you do dilate,
   <b>document the time and the agents used</b>.</p>
   <table class="tbl">
-    <tr><th></th><th>Colour</th><th>Disc</th><th>Cup / vessels</th></tr>
+    <tr><th></th><th>Color</th><th>Disc</th><th>Cup / vessels</th></tr>
     <tr><td><b>Normal</b></td><td>Yellowish-orange to cream</td><td><b>Sharp</b> margin</td><td>Cup central or slightly temporal, diameter <b>less than half the disc</b></td></tr>
-    <tr><td><b>Papilloedema</b> (raised intracranial pressure)</td><td>Pink</td><td><b>Swollen, margins blurred</b></td><td><b>Cup not visible</b>; loss of vessel pulsations</td></tr>
+    <tr><td><b>Papilledema</b> (raised intracranial pressure)</td><td>Pink</td><td><b>Swollen, margins blurred</b></td><td><b>Cup not visible</b>; loss of vessel pulsations</td></tr>
     <tr><td><b>Glaucomatous cupping</b></td><td>&mdash;</td><td>&mdash;</td><td>Cup <b>enlarged, more than half</b> the disc; vessels sink in and around the disc</td></tr>
     <tr><td><b>Optic atrophy</b></td><td><b>White</b></td><td>&mdash;</td><td><b>Tiny disc vessels absent.</b> Seen in optic neuritis, multiple sclerosis, temporal arteritis</td></tr>
   </table>
@@ -249,7 +249,7 @@ BODY = """
     <tr><td><b>Orbital (blow-out) fracture</b></td><td>Sunken eye, <b>hypoesthesia of the infraorbital area</b> (infraorbital nerve), <b>diplopia particularly on UPWARD gaze</b>, decreased motility, sometimes an ipsilateral nosebleed. Refer to ophthalmology or oral and maxillofacial surgery</td></tr>
     <tr><td><b>Enophthalmos</b></td><td>Sunken eye with ecchymosis, point tenderness and a <b>palpable step-off</b> at the orbital rim. Observe from above the head looking down</td></tr>
     <tr><td><b>Zygomatic fracture</b></td><td><b>Flattening of the malar eminence</b>, best seen from behind the seated patient. Edema and ecchymosis of temple or infraorbital area, palpable step-off, infraorbital hypoesthesia. <b>Pain on opening the mouth</b>, because temporalis passes medial to the arch and inserts on the mandible</td></tr>
-    <tr><td><b>Hyphaema</b></td><td>Blood in the anterior chamber, usually blunt trauma. Check acuity, pupils (a crescent-like iris defect if torn; reduced reactions if the sphincter is damaged), the <b>red reflex</b>, the <b>intraocular pressure</b>, and slit lamp</td></tr>
+    <tr><td><b>Hyphema</b></td><td>Blood in the anterior chamber, usually blunt trauma. Check acuity, pupils (a crescent-like iris defect if torn; reduced reactions if the sphincter is damaged), the <b>red reflex</b>, the <b>intraocular pressure</b>, and slit lamp</td></tr>
     <tr><td><b>Corneal abrasion</b></td><td>Blunt trauma &mdash; fingernail, contact lens. Significant pain and photophobia, blepharospasm, foreign body sensation, tearing. <b>Evert the upper lid</b>: a foreign body in the upper tarsal conjunctiva scratches the cornea with every blink. <b>A hazy cornea suggests bacterial infection.</b> Topical anesthetic gives immediate relief but is <b>for diagnosis, not treatment</b></td></tr>
     <tr><td><b>Corneal ulcer</b></td><td>Pain, photophobia, tearing, reduced vision. Red eye, circumcorneal injection, purulent or watery discharge. <b>Herpes simplex ulcers are not very painful.</b> An ophthalmoscope at <b>+40 diopters</b> may reveal it, but <b>fluorescein is more sensitive</b> for early ulcers</td></tr>
   </table>

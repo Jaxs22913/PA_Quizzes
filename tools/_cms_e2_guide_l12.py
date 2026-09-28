@@ -190,14 +190,14 @@ SECTION = """
   </div>
   <table class="tbl">
     <tr><th>Facet</th><th>Content</th></tr>
-    <tr><td><b>Causes</b></td><td><b>Tumor, trauma, intracranial infection</b> (meningitis), <b>haemorrhage</b>, <b>vitamin A toxicity</b></td></tr>
+    <tr><td><b>Causes</b></td><td><b>Tumor, trauma, intracranial infection</b> (meningitis), <b>hemorrhage</b>, <b>vitamin A toxicity</b></td></tr>
     <tr><td><b>Visual symptoms</b></td><td>Non-specific: <b>flickering vision, blurry vision, double vision</b></td></tr>
     <tr><td><b>Systemic symptoms</b></td><td>Non-specific signs of raised intracranial pressure: <b>nausea, vomiting, headache</b></td></tr>
     <tr><td><b>Fundus</b></td><td><b>Engorged retinal veins</b>, <b>swollen optic disc</b>, with or without retinal hemorrhages</td></tr>
     <tr><td><b>Diagnosis</b></td><td><b>Lumbar puncture</b> &mdash; an increased opening pressure confirms raised intracranial pressure. <b>MRI and/or CT head to rule out a mass lesion</b></td></tr>
     <tr><td><b>Treatment</b></td><td><b>Treat the underlying disorder</b></td></tr>
   </table>
-  <figure class="fig figpair"><img src="%(IMG)ss045_1.jpg" loading="lazy" alt="Swollen optic disc with flame hemorrhages, arrowed."><img src="%(IMG)ss045_4.jpg" loading="lazy" alt="Swollen optic disc with a cotton wool spot, arrowed."><figcaption><b>Acute papilledema.</b> Left, <b>haemorrhages</b>; right, a <b>cotton wool spot</b>. <span class="cite">Slide 45 A and B</span></figcaption></figure>
+  <figure class="fig figpair"><img src="%(IMG)ss045_1.jpg" loading="lazy" alt="Swollen optic disc with flame hemorrhages, arrowed."><img src="%(IMG)ss045_4.jpg" loading="lazy" alt="Swollen optic disc with a cotton wool spot, arrowed."><figcaption><b>Acute papilledema.</b> Left, <b>hemorrhages</b>; right, a <b>cotton wool spot</b>. <span class="cite">Slide 45 A and B</span></figcaption></figure>
   <figure class="fig figpair"><img src="%(IMG)ss045_3.jpg" loading="lazy" alt="Elevated optic disc with blurred margins and no hemorrhage."><img src="%(IMG)ss045_2.jpg" loading="lazy" alt="Pale optic disc with tortuous vessels, arrowed."><figcaption><b>Left, chronic papilledema</b> &mdash; disc elevation and blurred margins, <b>but no hemorrhages or cotton wool spots</b>. <b>Right, the atrophic phase</b> &mdash; the optic nerve axons have died. <span class="cite">Slide 45 C and D</span></figcaption></figure>
   <div class="callout">
     <p><strong>Papilledema pushes the disc OUT. Glaucoma cups it IN.</strong> She stressed how

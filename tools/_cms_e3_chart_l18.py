@@ -102,7 +102,7 @@ ROWS_L18 = [
   "Positive transillumination is the bedside finding that separates it from the solid masses.",
   "26", D18),
 
- ("Haemangioma", CONG,
+ ("Hemangioma", CONG,
   "<b>Red or bluish compressible mass</b> that <b>ENLARGES WITH CRYING</b> or straining &middot; "
   "<b>90% self-resolve</b>",
   "A malformation of vascular tissue. Present in the first few months of life, grows rapidly through "
@@ -371,7 +371,7 @@ DIFF_L18 = {
  "Laryngocele": ("No", "Larynx &mdash; level of the false cord", "Smooth dilation at the false cord on laryngoscopy"),
  "Plunging ranula": ("No &mdash; painless", "<b>Submental</b>, from the sublingual gland", "Extends through mylohyoid into the neck"),
  "Lymphangioma (cystic hygroma)": ("No &mdash; non-tender", "Anywhere; often posterior triangle", "<b>Transilluminates</b> &mdash; soft, doughy, compressible"),
- "Haemangioma": ("No", "Superficial, any site", "<b>Enlarges with crying or straining</b>; red or bluish, compressible"),
+ "Hemangioma": ("No", "Superficial, any site", "<b>Enlarges with crying or straining</b>; red or bluish, compressible"),
  "Teratoma": ("No", "Any; noted at birth", "Firm, with <b>calcifications</b> on imaging"),
  "Dermoid cyst": ("No &mdash; non-tender", "<b>Midline</b> submental", "Mobile midline mass that does NOT move with the tongue"),
  "Thymic cyst": ("Only if infected", "Lower anterior neck", "<b>Hassall corpuscles</b> on biopsy"),
@@ -399,5 +399,5 @@ DIFF_L18 = {
 
 # The deck's only clinical photograph. Everything else is a diagram or a table.
 IMGS_L18 = {
- "Haemangioma": ("l18-s027_pos1.jpg", 27),
+ "Hemangioma": ("l18-s027_pos1.jpg", 27),
 }

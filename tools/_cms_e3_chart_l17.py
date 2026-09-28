@@ -287,7 +287,7 @@ ROWS_L17 = [
 
 DIFF_L17 = {
  "Acute sinusitis (rhinosinusitis)": ("<b>Pressure</b>; frank pain suggests bacterial",
-   "<b>Rhinorrhoea</b>, postnasal drip", "Pain <b>worse bending forward</b>"),
+   "<b>Rhinorrhea</b>, postnasal drip", "Pain <b>worse bending forward</b>"),
  "Bacterial sinusitis &mdash; the features that suggest it": ("<b>YES &mdash; and REPRODUCIBLE on palpation</b>",
    "Purulent, sometimes <b>putrid</b>", "<b>UNILATERAL</b> maxillary tenderness"),
  "Sinusitis with urgent features": ("<b>YES</b>", "Any", "<b>Diplopia, periorbital swelling, confusion</b>"),

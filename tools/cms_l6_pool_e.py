@@ -164,7 +164,7 @@ POOL_E = [
    opts=[
      ["Dysuria",
       "Correct — ulcerated vulvar lesions are burned by passing urine, and the resulting dysuria can be severe enough to cause retention."],
-     ["Haematuria",
+     ["Hematuria",
       "Hematuria indicates bleeding within the urinary tract; herpetic ulcers cause pain on voiding rather than blood in the urine."],
      ["Urinary frequency",
       "Frequency is not the symptom named."],

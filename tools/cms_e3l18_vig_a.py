@@ -75,7 +75,7 @@ Q("Lymphangioma", IO,
     "Correct. Lymph spaces that fail to connect to the rest of the lymphatic system fill with clear "
     "lymph, and clear fluid transmits light. Positive transillumination is therefore the "
     "distinguishing bedside sign, and it also explains the soft, doughy, compressible texture."],
-   ["Haemangioma",
+   ["Hemangioma",
     "A hemangioma is filled with blood rather than lymph, so it appears red or bluish and does not "
     "transilluminate. It also enlarges with crying, which a lymphangioma does not."],
    ["Teratoma",
@@ -86,7 +86,7 @@ Q("Lymphangioma", IO,
     "infected in late childhood or early adulthood, tender and erythematous rather than soft and "
     "glowing."]], C(26)),
 
-Q("Haemangioma", IO,
+Q("Hemangioma", IO,
   "A 5-month-old has a red, soft, compressible neck mass that has grown since birth and enlarges "
   "when he cries. He feeds well and the airway is clear.",
   [["Observation",
@@ -115,7 +115,7 @@ Q("Teratoma", IO,
    ["Lymphangioma",
     "A lymphangioma is soft, doughy, compressible and transilluminates because it contains clear "
     "lymph. It neither feels firm nor calcifies."],
-   ["Haemangioma",
+   ["Hemangioma",
     "A hemangioma appears in the first months rather than at delivery, is soft and compressible, "
     "and enlarges with crying. Calcification is not a feature."],
    ["Thyroglossal duct cyst",

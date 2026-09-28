@@ -566,7 +566,7 @@ QUESTIONS = [
    "Posterior bleeds are the 10 percent, and they come from Woodruff's plexus; anterior bleeds come from Kiesselbach's plexus on the anterior septum."]],
  "c": 0, "cite": "5. ENT Clinical Pathophysiology_STUDENT VERSION.pptx, Slide 23"},
 
-{"topic": "Epistaxis", "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.", "slot": "aetiology",
+{"topic": "Epistaxis", "io": "Objective 2 — Review the ear, nose, neck, and throat pathology.", "slot": "etiology",
  "q": "How do the causes of anterior and posterior epistaxis differ?",
  "opts": [
   ["Anterior from local trauma and dry air; posterior from hypertension and anticoagulation",

@@ -29,7 +29,7 @@ IO_FUNC = "Review the function of cardiac structures"
 
 QUESTIONS = [
 
-{"topic": "Ischaemia", "io": IO_ISCH, "slot": "mechanism",
+{"topic": "Ischemia", "io": IO_ISCH, "slot": "mechanism",
  "q": "What is the immediate metabolic consequence of reduced oxygen supply to cardiac cells?",
  "opts": [
   ["The formation of adenosine triphosphate falls",
@@ -42,7 +42,7 @@ QUESTIONS = [
    "Extraction is not the described first consequence; the shortfall is in supply relative to demand."]],
  "c": 0, "cite": D + ", Slide 30"},
 
-{"topic": "Ischaemia", "io": IO_ISCH, "slot": "mechanism",
+{"topic": "Ischemia", "io": IO_ISCH, "slot": "mechanism",
  "q": "Which factors are described as impairing coronary perfusion?",
  "opts": [
   ["Plaques, thrombosis, vasospasm, microcirculation, pressure",
@@ -55,7 +55,7 @@ QUESTIONS = [
    "Pericardial disease is not among the described causes of impaired coronary perfusion."]],
  "c": 0, "cite": D + ", Slide 30"},
 
-{"topic": "Ischaemia", "io": IO_ISCH, "slot": "mechanism",
+{"topic": "Ischemia", "io": IO_ISCH, "slot": "mechanism",
  "q": "Which determinants of workload increase myocardial oxygen demand?",
  "opts": [
   ["Heart rate, preload, afterload and contractility",
@@ -81,7 +81,7 @@ QUESTIONS = [
    "Indefinite anaerobic metabolism is not the described adaptation."]],
  "c": 0, "cite": D + ", Slide 31"},
 
-{"topic": "Ischaemia", "io": IO_ISCH, "slot": "mechanism",
+{"topic": "Ischemia", "io": IO_ISCH, "slot": "mechanism",
  "q": "What principally determines oxygen delivery to the myocardium?",
  "opts": [
   ["Metabolic signals",
@@ -328,7 +328,7 @@ QUESTIONS = [
    "Rate reduction is not the described compensation. The heart compensates by myocardial cell hypertrophy as the gradient develops."]],
  "c": 0, "cite": D + ", Slide 43"},
 
-{"topic": "Valvular disease", "io": IO_VALVE, "slot": "aetiology",
+{"topic": "Valvular disease", "io": IO_VALVE, "slot": "etiology",
  "q": "What are the primary causes of valvular stenosis?",
  "opts": [
   ["Post-inflammatory scarring from rheumatic fever",
@@ -341,7 +341,7 @@ QUESTIONS = [
    "Coxsackievirus relates to myocarditis. Stenosis follows rheumatic scarring or age-related calcification."]],
  "c": 0, "cite": D + ", Slide 43"},
 
-{"topic": "Valvular disease", "io": IO_VALVE, "slot": "aetiology",
+{"topic": "Valvular disease", "io": IO_VALVE, "slot": "etiology",
  "q": "What causes ACUTE valvular regurgitation?",
  "opts": [
   ["Infection, or rupture of a papillary muscle",
@@ -458,7 +458,7 @@ QUESTIONS = [
    "Papillary rupture causes acute regurgitation rather than prolapse."]],
  "c": 0, "cite": D + ", Slide 49"},
 
-{"topic": "Aortic stenosis", "io": IO_VALVE, "slot": "aetiology",
+{"topic": "Aortic stenosis", "io": IO_VALVE, "slot": "etiology",
  "q": "What is the most common cause of aortic valve stenosis?",
  "opts": [
   ["Calcification occurring with aging",
@@ -510,7 +510,7 @@ QUESTIONS = [
    "That is mitral stenosis. Aortic regurgitation is backflow from the aorta during diastole."]],
  "c": 0, "cite": D + ", Slide 53"},
 
-{"topic": "Aortic regurgitation", "io": IO_VALVE, "slot": "aetiology",
+{"topic": "Aortic regurgitation", "io": IO_VALVE, "slot": "etiology",
  "q": "What is a common cause of aortic regurgitation?",
  "opts": [
   ["Dilation of the aortic root",
@@ -692,7 +692,7 @@ QUESTIONS = [
    "That describes myocarditis. Dilated cardiomyopathy is cardiac failure with chamber dilation."]],
  "c": 0, "cite": D + ", Slide 63"},
 
-{"topic": "Dilated cardiomyopathy", "io": IO_MYO, "slot": "aetiology",
+{"topic": "Dilated cardiomyopathy", "io": IO_MYO, "slot": "etiology",
  "q": "Which factors are associated with dilated cardiomyopathy?",
  "opts": [
   ["Alcohol, genetics, pregnancy and a post-viral state",
@@ -731,7 +731,7 @@ QUESTIONS = [
    "That describes myocarditis. In restrictive cardiomyopathy a fibrotic, non-compliant myocardium restricts diastolic filling."]],
  "c": 0, "cite": D + ", Slide 65"},
 
-{"topic": "Restrictive cardiomyopathy", "io": IO_MYO, "slot": "aetiology",
+{"topic": "Restrictive cardiomyopathy", "io": IO_MYO, "slot": "etiology",
  "q": "What is restrictive cardiomyopathy most often related to?",
  "opts": [
   ["A specific clinical condition",
@@ -809,7 +809,7 @@ QUESTIONS = [
    "The impairment is of filling rather than of contraction: the chambers are compressed from outside by the fluid."]],
  "c": 0, "cite": D + ", Slide 69"},
 
-{"topic": "Acute pericarditis", "io": IO_PERI, "slot": "aetiology",
+{"topic": "Acute pericarditis", "io": IO_PERI, "slot": "etiology",
  "q": "What causes most acute pericarditis?",
  "opts": [
   ["Most are idiopathic",

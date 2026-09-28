@@ -108,7 +108,7 @@ Q("Lymphangioma", IO, "Which physical finding characterizes a lymphangioma?",
     "Enlargement with raised venous pressure is a hemangioma feature, reflecting engorgement of "
     "blood-filled channels rather than lymph-filled ones."]], C(26)),
 
-Q("Haemangioma", IO, "What is the natural history of a head and neck hemangioma?",
+Q("Hemangioma", IO, "What is the natural history of a head and neck hemangioma?",
   [["Rapid growth in the first year, then involution from 18 to 24 months",
     "Correct. Hemangiomas appear in the first few months of life, grow rapidly through the first "
     "year, and then begin to involute at 18 to 24 months. About 90 percent resolve without therapy, "
@@ -124,7 +124,7 @@ Q("Haemangioma", IO, "What is the natural history of a head and neck hemangioma?
     "Resolution takes years rather than weeks, and the proliferative phase comes first. Expecting "
     "clearance in a month would lead to premature alarm when it enlarges instead."]], C(27)),
 
-Q("Haemangioma", IO, "What is first-line drug treatment when a hemangioma requires intervention?",
+Q("Hemangioma", IO, "What is first-line drug treatment when a hemangioma requires intervention?",
   [["Propranolol",
     "Correct. Intervention is reserved for airway compromise, skin ulceration, dysphagia, "
     "thrombocytopenia or cardiac failure, since most lesions resolve untreated. When treatment is "

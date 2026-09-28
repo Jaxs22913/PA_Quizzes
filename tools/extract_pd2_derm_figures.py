@@ -106,7 +106,7 @@ FIGURES = [
 
  ("s053_1.png", "collarette-scale", 53,
   "Pale skin with two ring-shaped lesions, each edged by a fine rim of scale that is attached at the outer margin and lifting free toward the center.",
-  "<b>Collarette scale</b> &mdash; pityriasis rosea. Fine scale attached at the <b>periphery</b> and detached at the <b>centre</b>, sitting on the edge of an inflammatory lesion. Which end is attached is the entire definition."),
+  "<b>Collarette scale</b> &mdash; pityriasis rosea. Fine scale attached at the <b>periphery</b> and detached at the <b>center</b>, sitting on the edge of an inflammatory lesion. Which end is attached is the entire definition."),
 
  ("s055_1.jpg", "diascopy", 55,
   "A clear glass slide pressed against skin by a thumb and finger; small red spots remain visible through the glass in the compressed area and continue outside it.",

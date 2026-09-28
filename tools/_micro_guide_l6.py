@@ -116,7 +116,7 @@ SECTION = """
     <tr><td>Structure</td><td><strong>Four</strong> polypeptide chains &mdash; two identical <strong>heavy</strong>, two identical <strong>light</strong>. Y-shaped</td><td><strong>Two</strong> parallel chains. Relatively small &mdash; equivalent to <strong>one fork</strong> of the Y</td></tr>
     <tr><td>Regions</td><td>Variable and constant</td><td>Variable and constant, formed by genetic recombination</td></tr>
     <tr><td>Secreted?</td><td>Yes &mdash; as antibody</td><td><strong>NEVER</strong></td></tr>
-    <tr><td>Recognises</td><td>Free antigen</td><td>Antigen <strong>only when presented with MHC</strong></td></tr>
+    <tr><td>Recognizes</td><td>Free antigen</td><td>Antigen <strong>only when presented with MHC</strong></td></tr>
   </table>
   <p>The variable-region genes are <strong>locked in for the life of the cell and its
   progeny</strong>, including its memory cells. The first receptor on a young B cell is a small
@@ -189,8 +189,8 @@ SECTION = """
   separating:</p>
   <table class="tbl">
     <tr><th>Reaction</th><th>How</th></tr>
-    <tr><td><strong>Opsonisation</strong></td><td>Coating the organism so phagocytes can engulf it. Matters most for <strong>slippery envelopes, waxy capsules and slime layers</strong>. The word is Greek &mdash; something cooked with food, a condiment or coating</td></tr>
-    <tr><td><strong>Neutralisation</strong></td><td>Blocking a virus's <strong>attachment spike proteins</strong> so it cannot enter a host cell &mdash; which also makes it easier to phagocytose</td></tr>
+    <tr><td><strong>Opsonization</strong></td><td>Coating the organism so phagocytes can engulf it. Matters most for <strong>slippery envelopes, waxy capsules and slime layers</strong>. The word is Greek &mdash; something cooked with food, a condiment or coating</td></tr>
+    <tr><td><strong>Neutralization</strong></td><td>Blocking a virus's <strong>attachment spike proteins</strong> so it cannot enter a host cell &mdash; which also makes it easier to phagocytose</td></tr>
     <tr><td><strong>Agglutination</strong></td><td><strong>Cross-linking</strong> adjacent cells. The <strong>IgM pentamer, with ten binding sites</strong>, is particularly effective</td></tr>
     <tr><td><strong>Complement fixation</strong></td><td>Antibody binds, leaving sites for complement proteins, which use <strong>perforins</strong> to lyse the envelope. This is objective 8's content in this lecture</td></tr>
   </table>
@@ -229,7 +229,7 @@ SECTION = """
       <li><strong>-mab</strong> &mdash; monoclonal antibody (a protein)</li>
       <li><strong>-omab</strong> &mdash; <strong>mouse</strong></li>
       <li><strong>-ximab</strong> &mdash; <strong>chimeric</strong></li>
-      <li><strong>-zumab</strong> &mdash; <strong>humanised</strong></li>
+      <li><strong>-zumab</strong> &mdash; <strong>humanized</strong></li>
       <li><strong>-umab</strong> &mdash; entirely <strong>human</strong></li>
     </ul>
     <p>Two examples: <strong>adalimumab</strong> for rheumatoid and psoriatic arthritis, Crohn

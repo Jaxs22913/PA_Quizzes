@@ -155,7 +155,7 @@ Q("Lymphangioma", IO,
     "the rest of the lymphatic system, so it fills with clear lymph. Clear fluid is what allows light "
     "to pass through, which is why positive transillumination is its distinguishing bedside sign, "
     "and why the mass feels soft, doughy and compressible."],
-   ["Haemangioma",
+   ["Hemangioma",
     "A hemangioma is filled with blood rather than lymph, so it appears red or bluish and does not "
     "transilluminate. It also enlarges with crying or straining, which a lymphangioma does not."],
    ["Teratoma",
@@ -167,7 +167,7 @@ Q("Lymphangioma", IO,
     "transilluminating mass in a toddler."]],
   "diagnosis", D, 26),
 
-Q("Haemangioma", IO,
+Q("Hemangioma", IO,
   "A 6-month-old has a red, soft, compressible mass on the neck that has grown since birth and "
   "becomes larger and more prominent when he cries. He is feeding well, and the airway is not "
   "compromised.",

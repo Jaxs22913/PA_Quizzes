@@ -51,7 +51,7 @@ POOL_A = [
    "Contractility is the mechanical response to the impulse rather than its propagation."]],
  "c": 0, "cite": c(3)},
 
-{"topic": "Depolarisation", "io": IOB, "slot": "definition",
+{"topic": "Depolarization", "io": IOB, "slot": "definition",
  "q": "What does depolarization represent, and what is its relationship to contraction?",
  "opts": [
   ["Activation of cardiac tissue, and it precedes contraction",
@@ -64,7 +64,7 @@ POOL_A = [
    "The resting state is phase four, which is neither depolarization nor repolarization."]],
  "c": 0, "cite": c(4)},
 
-{"topic": "Depolarisation", "io": IOB, "slot": "mechanism",
+{"topic": "Depolarization", "io": IOB, "slot": "mechanism",
  "q": "What happens to the membrane during depolarization?",
  "opts": [
   ["It becomes less negative",

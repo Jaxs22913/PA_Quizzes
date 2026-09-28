@@ -93,7 +93,7 @@ RECEPTORS = [
       actions=["<b>Bronchodilation</b>",
                "<b>Vasodilation</b> in skeletal muscle beds",
                "<b>Relaxes the uterus</b>",
-               "Contributes to <b>hyperglycaemia</b> with epinephrine"],
+               "Contributes to <b>hyperglycemia</b> with epinephrine"],
       agon=[
             ("Direct-acting &mdash; catecholamines",
              "isoproterenol &middot; epinephrine"),

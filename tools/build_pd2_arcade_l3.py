@@ -129,7 +129,7 @@ DECK = dict(
   ["Oculomotor palsy", "Dilated, FIXED to both; ptosis + lateral deviation"],
   ["Horizontal diplopia", "Palsy of cranial nerve III or VI"],
   ["Vertical diplopia", "Palsy of cranial nerve III or IV"],
-  ["Papilloedema", "Pink swollen disc, blurred margins, no cup"],
+  ["Papilledema", "Pink swollen disc, blurred margins, no cup"],
   ["Glaucomatous cupping", "Cup MORE than half the disc; vessels sink in"],
   ["Optic atrophy", "WHITE disc, tiny vessels absent"],
   ["Pinhole corrects it", "A refractive error"],
@@ -140,7 +140,7 @@ DECK = dict(
   ["Lid lag", "Hyperthyroidism"],
   ["Blow-out fracture", "Diplopia on UPWARD gaze; infraorbital numbness"],
   ["Zygomatic fracture", "Flattened cheek; pain opening the mouth"],
-  ["Hyphaema", "Blood in the ANTERIOR CHAMBER"],
+  ["Hyphema", "Blood in the ANTERIOR CHAMBER"],
   ["Crescent shadow present", "Iris bowed forward; NARROW angle"],
     ])
 

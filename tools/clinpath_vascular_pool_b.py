@@ -164,7 +164,7 @@ QUESTIONS = [
    "Correct &mdash; genetics is named as the most important risk factor, ahead of the modifiable ones such as hyperlipidemia, smoking and hypertension."],
   ["Smoking",
    "Smoking is on the list, but family history is named as most important."],
-  ["Hyperlipidaemia",
+  ["Hyperlipidemia",
    "Hyperlipidemia heads the list as written but family history is the one singled out as most important."],
   ["Increasing age",
    "Age is a listed risk factor, but the emphasis falls on family history."]],

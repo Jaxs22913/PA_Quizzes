@@ -377,7 +377,7 @@ ANSWERS = [
        "<b>phase one</b> it activates the nicotinic receptor at the neuromuscular end plate "
        "and depolarizes it &mdash; which is what produces the <b>fasciculations</b>, and what "
        "makes it a <i>depolarizing</i> agent. It then keeps sitting on the receptor until the "
-       "receptor <b>desensitises</b> from being over-activated, and that is <b>phase two</b>, "
+       "receptor <b>desensitizes</b> from being over-activated, and that is <b>phase two</b>, "
        "when the <b>flaccid paralysis</b> appears.</p>"
        "<p><b>His mnemonic, back from the autonomic lecture:</b> the days of the week &mdash; "
        "<b>F</b>riday for <b>f</b>asciculations first, then <b>W</b>ednesday for "

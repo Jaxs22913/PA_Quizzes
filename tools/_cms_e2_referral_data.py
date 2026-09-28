@@ -109,7 +109,7 @@ FIRST = {
  "Orbital floor (blowout) fracture": "True blowout &rarr; ophthalmology, because <b>30% have a "
                    "significant globe injury</b>. Entrapment &rarr; facial trauma surgeon.",
  "Basilar skull fracture": "Cerebrospinal fluid leak &rarr; neurosurgery consult and admission.",
- "Gonococcal conjunctivitis": "Newborn: <b>hospitalise</b>, systemic ceftriaxone once, specialty "
+ "Gonococcal conjunctivitis": "Newborn: <b>hospitalize</b>, systemic ceftriaxone once, specialty "
                    "consultation. Untreated risk is corneal perforation.",
  "Cataract &mdash; pediatric": "Surgery is <b>not</b> deferred in a neonate &mdash; it is done "
                    "early to prevent amblyopia.",

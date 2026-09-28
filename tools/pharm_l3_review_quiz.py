@@ -47,7 +47,7 @@ ITEMS = [
 
  dict(q="Which finding indicates NICOTINIC rather than muscarinic stimulation?",
       ans="Fasciculations", why="Fasciculations sit in the nicotinic list alongside mydriasis, tachycardia, weakness and hypertension.",
-      wrong=[("Bronchorrhoea", "Watery bronchial secretion is muscarinic."),
+      wrong=[("Bronchorrhea", "Watery bronchial secretion is muscarinic."),
              ("Lacrimation", "Tearing is muscarinic."),
              ("Bradycardia", "A muscarinic effect; nicotinic stimulation produces tachycardia instead.")],
       src=(S, 29)),
@@ -229,7 +229,7 @@ ITEMS = [
       why="The mad-as-a-hatter progression runs from sedation and anxiety through hallucinations to seizures.",
       wrong=[("Flaccid paralysis", "That belongs to depolarizing neuromuscular blockade."),
              ("Bradycardia", "Anticholinergics speed the heart."),
-             ("Bronchorrhoea", "They dry secretions rather than increasing them.")],
+             ("Bronchorrhea", "They dry secretions rather than increasing them.")],
       src=(S, 50)),
 
  dict(q="Pralidoxime is given for acetylcholinesterase inhibitor poisoning. What is its key limitation?",

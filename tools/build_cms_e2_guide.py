@@ -305,7 +305,7 @@ BODY = """<main class="content">
   <h3 class="sub" id="e2l1-sclera">1.7 &middot; Episcleritis and scleritis</h3>
   <table class="tbl">
     <tr><th></th><th>Episcleritis</th><th>Scleritis</th></tr>
-    <tr><td>Aetiology</td><td>Often idiopathic, often no systemic association</td><td>Often <b>systemic autoimmune</b></td></tr>
+    <tr><td>Etiology</td><td>Often idiopathic, often no systemic association</td><td>Often <b>systemic autoimmune</b></td></tr>
     <tr><td>Pain</td><td><b>Mild</b>, acute onset, focal. No discharge, no photophobia</td><td><b>Severe boring pain, worse at night</b>, radiating to face and periorbital region</td></tr>
     <tr><td>Appearance</td><td>Redness, often sectoral</td><td><b>Violaceous hue</b> &mdash; choroid showing through thinned sclera. Pain with eye movement</td></tr>
     <tr><td>Cotton-tip test</td><td>Vessels <b>CAN</b> be moved slightly</td><td>Vessels <b>CANNOT</b> be moved</td></tr>
@@ -359,7 +359,7 @@ BODY = """<main class="content">
   <h3 class="sub" id="e2l1-uveitis">1.9 &middot; Uveitis</h3>
   <table class="tbl">
     <tr><th></th><th>Anterior (iritis, iridocyclitis)</th><th>Posterior (choroiditis, retinitis)</th></tr>
-    <tr><td>Aetiology</td><td>Idiopathic, autoimmune</td><td>Idiopathic, autoimmune, <b>infectious &mdash; toxoplasmosis, cytomegalovirus</b></td></tr>
+    <tr><td>Etiology</td><td>Idiopathic, autoimmune</td><td>Idiopathic, autoimmune, <b>infectious &mdash; toxoplasmosis, cytomegalovirus</b></td></tr>
     <tr><td>Pain</td><td><b>Yes</b> &mdash; with photophobia and redness at the corneal edge</td><td><b>NO pain</b> if isolated</td></tr>
     <tr><td>Vision</td><td>Often <b>preserved</b></td><td>Blurred, with <b>floaters, scotomas, metamorphopsia</b></td></tr>
     <tr><td>Signs</td><td><b>Cells in the anterior chamber</b>, consensual photophobia, ciliary flush, variable pressure, irregular pupil stuck to lens or cornea, <b>keratic precipitates</b> (white cell deposits on the corneal endothelium)</td><td><b>Cells in the posterior vitreous</b>, vitreous haze, retinal or choroidal inflammation</td></tr>

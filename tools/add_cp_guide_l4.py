@@ -109,7 +109,7 @@ BODY = """
 
   <p><b>Vision needs three things and will fail if any one is lost:</b> image formation (light
   refracted by cornea and lens onto the retina), photoreceptor excitation (photons make rods and
-  cones fire <b>hyperpolarising</b> potentials), and neural transmission (optic nerve to occipital
+  cones fire <b>hyperpolarizing</b> potentials), and neural transmission (optic nerve to occipital
   cortex).</p>
 
   <p><b>Rods, about 120 million</b>, are high-sensitivity, for dim light and the peripheral retina.

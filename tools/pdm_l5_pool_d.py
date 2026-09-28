@@ -439,7 +439,7 @@ POOL_D = [
  dict(topic="Fluid balance", io=IOI, slot="test finding",
    q="A urine sodium below 20 milliequivalents per liter suggests what?",
    opts=[
-     ["Hypovolaemia", "Correct — a hypovolemic kidney reabsorbs sodium avidly, driving the urine sodium below 20 milliequivalents per liter."],
+     ["Hypovolemia", "Correct — a hypovolemic kidney reabsorbs sodium avidly, driving the urine sodium below 20 milliequivalents per liter."],
      ["The syndrome of inappropriate antidiuretic hormone secretion",
       "That is suggested by a urine sodium above 40 with concentrated urine."],
      ["Intrinsic renal failure", "Intrinsic renal failure impairs sodium reabsorption, so the urine sodium is typically raised rather than low."],
@@ -451,7 +451,7 @@ POOL_D = [
    opts=[
      ["The syndrome of inappropriate antidiuretic hormone secretion",
       "Correct — inappropriate antidiuretic hormone retains water while sodium continues to be excreted, giving concentrated urine with a high sodium."],
-     ["Hypovolaemia", "That is suggested by a urine sodium below 20."],
+     ["Hypovolemia", "That is suggested by a urine sodium below 20."],
      ["Diabetic ketoacidosis", "That is read from glucose, bicarbonate, and the gap."],
      ["Hepatorenal syndrome", "Hepatorenal syndrome behaves like hypovolemia, with avid sodium retention and a LOW urine sodium."]],
    c=0, cite=c(25)),

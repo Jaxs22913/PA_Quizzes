@@ -98,7 +98,7 @@ SEC6 = """
   <h3 class="sub" id="l6-inspection">6.2 &middot; Inspection &mdash; color, transparency, odor</h3>
   <p>The examination starts the way a physical examination does, by looking.</p>
   <table class="tbl">
-    <tr><th>Colour</th><th>Suggests</th></tr>
+    <tr><th>Color</th><th>Suggests</th></tr>
     <tr><td>Pale yellow to colorless</td><td>Dilute urine &mdash; possibly overhydrated</td></tr>
     <tr><td>Dark yellow or amber</td><td>Concentrated urine &mdash; possibly dehydrated</td></tr>
     <tr><td>Yellow-brown or green</td><td><b>Bilirubin</b> &mdash; hepatitis, cirrhosis, biliary obstruction</td></tr>
@@ -116,7 +116,7 @@ SEC6 = """
   <p><strong>Odour.</strong> Normal is called <em>aromatic</em>. An <b>ammonia</b> smell means the
   sample has stood long enough for bacteria to decompose its urea &mdash; refrigerate a specimen
   that will not be read within one to two hours, and <strong>add no preservative</strong>. A
-  <b>foul</b> odor suggests bacterial infection; a <b>faecal</b> odor suggests an enterovesical
+  <b>foul</b> odor suggests bacterial infection; a <b>fecal</b> odor suggests an enterovesical
   fistula; a <b>fruity or sweet</b> odor means ketones, and sends you to the blood sugar.</p>
 
   <h3 class="sub" id="l6-strip">6.3 &middot; The reagent strip</h3>

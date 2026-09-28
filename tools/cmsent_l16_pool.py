@@ -208,7 +208,7 @@ Q("Glomus tumor", IO,
     "bulb. Its blood flow is what produces pulsatile tinnitus, its mass effect on the ossicular chain "
     "produces the conductive loss, and its vascularity is what makes it appear red-blue behind the "
     "drum and blanch when pressure is applied."],
-   ["Haemotympanum",
+   ["Hemotympanum",
     "Blood behind the drum after barotrauma or trauma also looks dark, but it arrives acutely with a "
     "precipitating event, resolves over weeks, and does not pulsate or blanch because it is static "
     "collected blood rather than a perfused mass."],

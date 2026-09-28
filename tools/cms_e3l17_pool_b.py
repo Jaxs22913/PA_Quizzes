@@ -53,7 +53,7 @@ QUESTIONS = [
  dict(topic="Perforated septum", io=IO_A, lead="etiology", cite=D % 37,
   q="Which infection is named as a rare cause of septal perforation?",
   opts=[["Secondary syphilis", "Correct, though rarely seen now."],
-        ["Gonorrhoea", "Syphilis is the treponemal infection implicated, not this one."],
+        ["Gonorrhea", "Syphilis is the treponemal infection implicated, not this one."],
         ["Influenza", "Not a cause of perforation."],
         ["Epstein-Barr virus", "That is linked to nasopharyngeal carcinoma."]]),
 
@@ -178,7 +178,7 @@ QUESTIONS = [
 
  dict(topic="Nasal foreign body", io=IO_A, lead="diagnostic technique", cite=D % 54,
   q="What establishes the diagnosis of a nasal foreign body?",
-  opts=[["Visualisation", "Correct &mdash; imaging is rarely needed."],
+  opts=[["Visualization", "Correct &mdash; imaging is rarely needed."],
         ["Plain radiography", "Many objects are radiolucent, and imaging is rarely needed."],
         ["Culture of the discharge", "That identifies organisms, not the object."],
         ["Nasal endoscopy under anesthesia in all cases", "Direct visualization usually suffices."]]),

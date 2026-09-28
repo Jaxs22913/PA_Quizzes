@@ -80,7 +80,7 @@ Q("Ectropion", IO,
 
 Q("Dermatochalasis", IO,
   "What causes dermatochalasis?",
-  [["Ageing", "Correct — excess flaps or folds of skin, bilaterally."],
+  [["Aging", "Correct — excess flaps or folds of skin, bilaterally."],
    ["Chronic infection", "Infection is not a cause; dermatochalasis is an aging change, with excess folds of lid skin on both sides."],
    ["Allergy", "Produces lid edema rather than excess skin."],
    ["Thyroid disease", "Causes lid retraction and proptosis rather than excess skin."]],

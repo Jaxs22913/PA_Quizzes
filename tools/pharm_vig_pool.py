@@ -369,7 +369,7 @@ POOL = [
    opts=[["Plasma cholinesterase deficiency", "A genetic variant with low or absent enzyme."],
          ["Renal failure", "Not the stated cause."],
          ["Malignant hyperthermia", "That presents with rigidity and fever."],
-         ["Hypokalaemia", "Succinylcholine raises potassium."]],
+         ["Hypokalemia", "Succinylcholine raises potassium."]],
    c=0, deck=SRC3, slide=70),
  dict(topic="Oxymetazoline", q="A patient has used Afrin for a week and is more congested than before. What is this?",
    opts=[["Rhinitis medicamentosa", "Rebound congestion past three days."],
