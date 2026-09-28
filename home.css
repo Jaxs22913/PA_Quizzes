@@ -354,6 +354,13 @@
        #4b5563 is the site's existing stronger muted grey (the guide back
        link's): 6.6:1 measured there. Dark mode keeps --muted. */
     :root[data-theme="light"] body.homepage .subtitle { color: #4b5563; }
+    /* Same grey for the other small muted text that sits on a tint rather
+       than on white: inactive class tabs on the warm ground (4.48:1) and the
+       semester card's progress label and disclaimer on its blue wash
+       (4.41:1). */
+    :root[data-theme="light"] body.homepage .tab-btn:not(.active):not(:hover),
+    :root[data-theme="light"] body.homepage .semester-progress-label,
+    :root[data-theme="light"] body.homepage .ai-disclaimer { color: #4b5563; }
 
     .search-wrap { position: relative; margin: 18px 0; display: flex; gap: 10px; }
     .search-input-box { position: relative; flex: 1; min-width: 0; }
