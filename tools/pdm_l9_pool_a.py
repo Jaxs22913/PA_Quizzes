@@ -420,7 +420,7 @@ POOL_A = [
  "q": "A 73-year-old with known heart failure has B-type natriuretic peptide checked at each visit. Which is a recognized use of serial natriuretic peptides?",
  "opts": [
   ["Monitoring the course of disease",
-   "Correct. Beyond the rule-out, they help guide therapy, monitor the disease course and stratify risk, including cardiovascular mortality and likelihood of readmission."],
+   "Correct. Beyond the rule-out, they monitor the disease course and stratify risk, including cardiovascular mortality and likelihood of readmission. Adjusting treatment to the peptide level has not been shown to improve outcomes."],
   ["Detecting reinfarction after a stent",
    "Reinfarction and reocclusion are detected with troponin, which reflects myocyte injury rather than the stretch of heart failure."],
   ["Diagnosing statin myopathy",
