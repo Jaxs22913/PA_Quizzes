@@ -9232,7 +9232,7 @@ var DEMO_DECKS = [
       ["Plain old balloon angioplasty leaves out?", "A stent."],
       ["Percutaneous coronary intervention places?", "A drug-eluting or non-drug-eluting stent."],
       ["Atherectomy?", "Physical removal of atheroma, calcium and cellular material."],
-      ["Missing dual antiplatelet therapy in the first 6 weeks risks?", "50% sudden in-stent restenosis."],
+      ["Missing dual antiplatelet therapy in the first 6 weeks risks?", "Sudden stent thrombosis: a clot that occludes the stent."],
       ["First-choice bypass conduit?", "A mammary or radial artery."],
       ["Vein used when no artery is suitable?", "The great saphenous vein."],
       ["Drug class that improves survival after infarction?", "Beta blockers."],

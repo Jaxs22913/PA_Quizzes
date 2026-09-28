@@ -46,14 +46,22 @@ line below):
       confirmed with posterior leads V7-V9 (slide 62's row, per the audio).
   D8  drug classes may be named ("P2Y12 receptor antagonist"); no how-does-it-
       work stems, no dosing, generic names only, no bare acronyms.
-  D9  microvascular angina / MINOCA: the deck's definitions stay (guide caveat);
-      no question asks students to tell them apart -- "MINOCA" and
-      "non-obstructive" are banned from questions outright.
+  D9  microvascular angina / MINOCA: no question asks students to tell them
+      apart -- "MINOCA" and "non-obstructive" are banned from questions
+      outright. 2026-09-28 truth rule: slide 94's "possibly even with elevated
+      cardiac biomarkers" belongs to MINOCA (an infarction), not to
+      microvascular angina, so no explanation says it (banned below); the
+      guide states the standard distinction.
   D10 coronary dominance: the number is avoided (67% banned; slide 62's
       70-85% banned).
   D11 his spoken slips are never keyed -- every errata "unkeyed" item is one
       SCOPE_BANNED line below.
   D12 dual antiplatelet durations (slide 52 vs 83 differ): unkeyed.
+  D14 slide 52 "Noncompliance with DAPT in the first 6 weeks -> 50% risk of
+      Sudden Re-InStent Stenosis" (he endorsed it as a "coin flip"). 2026-09-28
+      truth rule: the event is STENT THROMBOSIS (a sudden clot), and no source
+      gives a 50% risk, so the number is never keyed; the adherence point is
+      keyed as "sudden stent thrombosis". Both halves are banned below.
   D13 deck typos (Forsinopril, Antistreplase, "Drug Eluding", "suppled",
       "PCTA"): correct spellings in content; the typos are banned.
 
@@ -148,6 +156,10 @@ SCOPE_BANNED = [
     r"0\.5 ?mm|past (7|seven) days|(2|two) or more episodes",               # TIMI criteria cut-offs
     # ---- D12 dual antiplatelet durations
     r"\b(6|six|12|twelve) months?\b|\b(a|one|full) year\b",
+    # ---- D14 the 50% "coin flip" and the slide's "restenosis" name for it
+    r"50 ?%[^.?;]{0,60}(restenosis|stent)|coin flip|sudden (in-stent )?restenosis",
+    # ---- D9 slide 94's biomarker line belongs to MINOCA, not microvascular angina
+    r"(possibly|may be)[^.?;]{0,20}elevated[^.?;]{0,30}biomarkers?|biomarkers? may be elevated",
     # ---- D13 deck typos
     r"Forsinopril|Antistreplase|Eluding|suppled|PCTA",
     # ---- brand names on this deck the partition's generic list lacks

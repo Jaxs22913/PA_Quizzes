@@ -8,7 +8,7 @@ KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
 Patient vignettes with a varied lead-in (the lead-in decides the answer).
 Diagnosis stays a minority lead. Scope caps and the defaults live in
 cms_e4l24_scope.py: no dual antiplatelet durations (only the first-6-weeks
-restenosis risk); bypass conduit = artery first, great saphenous vein when an
+thrombosis risk; the slide's "50% ... restenosis" is not keyed); bypass conduit = artery first, great saphenous vein when an
 artery cannot be used; vasospastic angina keyed on slide 90 (transient ST
 elevation during an episode that resolves) and never on slide 91's T-wave /
 ST-depression line; "nonselective" beta blockers only; no MINOCA item.
@@ -68,14 +68,14 @@ V(T_REV, IO_STABLE,
 
 V(T_REV, IO_ACS,
   "A 57-year-old man had a drug-eluting stent placed two weeks ago for an acute coronary syndrome. He tells you the clopidogrel is expensive and he plans to stop it because his chest pain is gone. What should he be told?",
-  [["Stopping now risks sudden restenosis",
-    "Correct. Noncompliance with dual antiplatelet therapy (a P2Y12 receptor antagonist such as clopidogrel plus aspirin) in the first 6 weeks after a stent carries about a 50% risk of sudden in-stent restenosis."],
+  [["Stopping now risks a clot in the stent",
+    "Correct. Stopping dual antiplatelet therapy (a P2Y12 receptor antagonist such as clopidogrel plus aspirin) in the first 6 weeks after a stent is the strongest predictor of stent thrombosis, a sudden clot that occludes the stent and can cause a large, often fatal infarction."],
    ["Aspirin alone now protects the stent",
-    "After a stent, protection comes from dual antiplatelet therapy: clopidogrel plus aspirin together. Dropping clopidogrel in the first 6 weeks carries about a 50% risk of sudden in-stent restenosis."],
+    "After a stent, protection comes from dual antiplatelet therapy: clopidogrel plus aspirin together. Dropping clopidogrel in the first 6 weeks is the strongest predictor of sudden stent thrombosis."],
    ["It can stop once the chest pain is gone",
-    "The medication protects the stent, not the symptom. Stopping dual antiplatelet therapy in the first 6 weeks carries about a 50% risk of sudden in-stent restenosis, pain or no pain."],
+    "The medication protects the stent, not the symptom. Stopping dual antiplatelet therapy in the first 6 weeks risks sudden stent thrombosis, pain or no pain."],
    ["Missed doses matter only if pain returns",
-    "Restenosis can come suddenly and without warning. Missing dual antiplatelet therapy in the first 6 weeks after a stent carries about a 50% risk of sudden in-stent restenosis."]],
+    "Stent thrombosis can come suddenly and without warning. Missing dual antiplatelet therapy in the first 6 weeks after a stent is the strongest predictor of it."]],
   C(52), "education", "education"),
 
 V(T_REV, IO_NSTE,
@@ -288,7 +288,7 @@ V(T_VSA, IO_D,
 V(T_MVA, IO_ANG,
   "A 52-year-old woman has recurrent anginal chest pain during periods of work stress and anxiety. Her electrocardiogram shows ST changes during symptoms, and coronary angiography shows normal coronary arteries. What is the most likely diagnosis?",
   [["Microvascular angina",
-    "Correct. Microvascular angina (formerly cardiac syndrome X) is angina with ST changes, possibly with elevated biomarkers, but normal coronary arteries on the angiogram; it is more frequent in women and often associated with stress or anxiety."],
+    "Correct. Microvascular angina (formerly cardiac syndrome X) is angina with ST changes but normal coronary arteries on the angiogram; it is more frequent in women and often associated with stress or anxiety."],
    ["Vasospastic angina",
     "Vasospastic angina strikes at rest between midnight and early morning, mostly in smokers under 50, with transient ST elevation. Her stress-related angina in a woman with normal arteries fits microvascular angina."],
    ["Stable angina",
