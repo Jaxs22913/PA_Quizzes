@@ -236,6 +236,73 @@ def cram_topic_rules(s):
     pre = ':root[data-theme="dark"] body[data-dark="tokens"] '
     return "".join(pre + r for r in out)
 
+
+# ------------------------------------------------ light-mode contrast repairs
+# (2026-09-27, design-review leftovers item 1). Several templates set a mid-
+# light palette colour as TEXT or as a FILL under white text, 2.0-4.46:1 in
+# LIGHT mode. Each such colour gets a light "-t" partner: itself when it already clears 4.5:1, else
+# the same hue re-solved with the site recipe to 4.60:1 against the darkest
+# light surface it sits on, chroma capped at its own (gold stays gold, just
+# deeper). White text on a -t fill then also clears 4.60:1. theme.css
+# re-points the page variables at these only under data-theme="light", so
+# dark mode is untouched.
+LIGHT_TARGET = 4.60
+
+def darken_to(hexc, bg, target=LIGHT_TARGET):
+    if contrast(hex_rgb(hexc), hex_rgb(bg)) >= 4.5:
+        return hexc
+    L, C, H = rgb_oklch(hex_rgb(hexc))
+    return solve(H, bg, target, cmax=C)
+
+_RULE = re.compile(r"([^{}]+)\{([^{}]*)\}")
+_BG = re.compile(r"background(?:-color)?\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b")
+
+def light_surfaces(s):
+    """Solid light backgrounds the page's own first <style> paints text on
+    (paper, TOC, IO box, callouts, zebra rows, figures). Code chips, images,
+    marks, table headers and dark-mode rules are not text grounds for accents."""
+    m = re.search(r"<style[^>]*>(.*?)</style>", s, re.S)
+    css = re.sub(r"/\*.*?\*/", "", m.group(1), flags=re.S) if m else ""
+    out = []
+    for sel, body in _RULE.findall(css):
+        if re.search(r"code|img|mark|prof|\bth\b|data-theme|kbd|@media|header", sel):
+            continue
+        for h in _BG.findall(body):
+            if lum(hex_rgb(h)) > 0.55:
+                out.append(h)
+    root = first_root_block(s)
+    for n in ("paper", "page", "card", "ice"):
+        h = (VAR(n).search(root) or [None, None])[1]
+        if h:
+            out.append(h)
+    return out or ["#ffffff"]
+
+def darkest(cols):
+    return min(cols, key=lambda c: lum(hex_rgb(c)))
+
+INLINE_ACC = re.compile(r'class="test-yourself-btn"[^>]*style="--acc:(#[0-9a-fA-F]{3,6})')
+
+def light_tokens(kind, s):
+    """The LIGHT-mode block: -t tokens on body, plus rules for colours a page
+    sets inline (a stylesheet only beats an inline custom property with
+    !important), all under data-theme="light"."""
+    root = first_root_block(s)
+    get = lambda n: (VAR(n).search(root) or [None, None])[1]
+    worst = darkest(light_surfaces(s))
+    tok, rules = {}, []
+    pre = ':root[data-theme="light"] body[data-dark="tokens"] '
+    if kind == "guide":
+        for k in ("accent", "accent2", "accent3"):
+            if get(k):
+                tok[k + "-t"] = darken_to(get(k), worst)
+        for acc in sorted(set(INLINE_ACC.findall(s))):
+            f = darken_to(acc, "#ffffff")
+            if f != acc:
+                rules.append('.test-yourself-btn[style*="--acc:%s"]{--acc:%s!important}' % (acc, f))
+    body = "".join("--%s:%s;" % kv for kv in tok.items())
+    head = (':root[data-theme="light"] body[data-dark="tokens"]{%s}' % body) if body else ""
+    return head + "".join(pre + r for r in rules)
+
 def block(tok, extra=""):
     body = "".join("--%s:%s;" % kv for kv in tok.items())
     return ('%s<style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{%s}%s</style>%s'
@@ -250,7 +317,7 @@ def apply(s, kind=None):
     if not tok:
         return s
     s = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", "", s, flags=re.S)
-    extra = cram_topic_rules(s) if kind == "cram" else ""
+    extra = (cram_topic_rules(s) if kind == "cram" else "") + light_tokens(kind, s)
     s = s.replace("</head>", block(tok, extra) + "\n</head>", 1)
     if not re.search(r"<body[^>]*\bdata-dark=", s):
         s = re.sub(r"<body\b", '<body data-dark="tokens" data-dark-kind="%s"' % kind, s, count=1)

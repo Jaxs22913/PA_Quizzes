@@ -3131,6 +3131,19 @@ body.homepage .continue-item:hover {
 :root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:first-child { background: linear-gradient(to left, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
 :root[data-theme="dark"] body[data-dark-kind="cram"] #quiz-header-logo > span:last-child { background: linear-gradient(to right, rgba(255,255,255,.14), rgba(255,255,255,0)) !important; }
 
+/* LIGHT-MODE CONTRAST for the same opted-in pages (design-review leftovers
+   item 1, 2026-09-27). Some template colours measure 2.0-4.46:1 in LIGHT mode
+   too. tools/dark_tokens.py writes each page a light "-t" partner per palette
+   colour (itself if it already clears 4.5:1, else the same hue re-solved with
+   the site's 4.60:1 recipe against the page's darkest light surface, chroma
+   capped at its own, so gold stays gold, only deeper) plus rules for colours
+   set inline. The rules below use them under data-theme="light" only; every
+   dark rule above is untouched. */
+/* Guide section tags: white on the light gold/green --accent2 measured
+   2.9-3.4:1. (Test-yourself buttons carry their colour inline, so their
+   rules are written per page by the tool.) */
+:root[data-theme="light"] body[data-dark-kind="guide"] .tag { background: var(--accent2-t, var(--accent2)); }
+
 /* Quiz stem in regular weight (design review item 10, 2026-09-25). Every
    generated quiz set .qtext at weight 600, so a 30-65 question block read as
    one long semi-bold paragraph; emphasis only means something when the body
