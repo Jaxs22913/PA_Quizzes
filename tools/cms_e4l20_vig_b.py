@@ -72,7 +72,7 @@ Q("Preferred combinations", IO,
     "Correct. The preferred combinations pair a renin-angiotensin blocker with either a "
     "dihydropyridine or a thiazide-type diuretic, because the classes act by complementary "
     "mechanisms."],
-   ["An ACE inhibitor with an angiotensin receptor blocker",
+   ["An angiotensin-converting enzyme inhibitor with an angiotensin receptor blocker",
     "This combination must NEVER be used: dual blockade raises hyperkalemia and acute kidney injury "
     "risk without additional benefit."],
    ["A beta blocker with verapamil",
@@ -93,10 +93,10 @@ Q("Dual RAAS blockade", IO,
     "They act at different points on the same pathway rather than canceling; the problem is "
     "additive harm."],
    ["Angioedema occurs in most patients on the combination",
-    "Angioedema is a recognized risk of ACE inhibition specifically; the reason to avoid the "
+    "Angioedema is a recognized risk of angiotensin-converting enzyme inhibition specifically; the reason to avoid the "
     "combination is renal and potassium harm."]], C(65)),
 
-Q("ACE inhibitor cough", IO,
+Q("Angiotensin-converting enzyme inhibitor cough", IO,
   "A 59-year-old woman develops a persistent dry cough six weeks after starting lisinopril. Her "
   "blood pressure is at goal. What is the appropriate response?",
   [["Switch to an angiotensin receptor blocker",
@@ -114,10 +114,10 @@ Q("ACE inhibitor cough", IO,
     "treatment."]], C(63)),
 
 Q("Angioedema", IO,
-  "A 48-year-old Black man develops lip and tongue swelling three months after starting an ACE "
+  "A 48-year-old Black man develops lip and tongue swelling three months after starting an angiotensin-converting enzyme "
   "inhibitor. What should be known about this?",
   [["It is two to four times more common in this group",
-    "Correct. It is a bradykinin-mediated class effect of ACE inhibition. Angiotensin receptor blockers can usually be used instead, though angioedema with them remains possible. An angiotensin receptor blocker is usually substituted."],
+    "Correct. It is a bradykinin-mediated class effect of angiotensin-converting enzyme inhibition. Angiotensin receptor blockers can usually be used instead, though angioedema with them remains possible. An angiotensin receptor blocker is usually substituted."],
    ["It is a dose-related effect that resolves on dose reduction",
     "It is a class effect rather than a dose phenomenon, and the agent is stopped rather than "
     "reduced."],
@@ -196,7 +196,7 @@ Q("Thiazide adverse effects", IO,
    ["Thiazide-induced hyperkalemia",
     "Thiazides cause hypokalemia rather than hyperkalemia, and neither precipitates gout."],
    ["Thiazide-induced angioedema",
-    "Angioedema is an ACE inhibitor class effect mediated by bradykinin rather than a thiazide effect."],
+    "Angioedema is an angiotensin-converting enzyme inhibitor class effect mediated by bradykinin rather than a thiazide effect."],
    ["Thiazide-induced ankle edema",
     "Dependent ankle edema is a dihydropyridine effect and would not present as an acutely "
     "inflamed single joint."]], C(55)),
@@ -434,7 +434,7 @@ Q("Escalation", IO,
   "maximally tolerated doses. What is the next step?",
   [["Add a thiazide-type diuretic",
     "Correct. The foundational three are a renin-angiotensin blocker, a dihydropyridine and a thiazide-type diuretic, all titrated before resistance can be considered confirmed. It is the third of the foundational agents."],
-   ["Add an ACE inhibitor",
+   ["Add an angiotensin-converting enzyme inhibitor",
     "Dual renin-angiotensin blockade is prohibited because of hyperkalemia and kidney injury risk."],
    ["Add spironolactone now",
     "Spironolactone is the fourth agent, added only after the foundational three have been optimized."],
