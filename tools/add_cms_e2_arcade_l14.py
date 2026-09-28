@@ -46,7 +46,7 @@ DECKS = [
   ["Typical history for a corneal abrasion?", "A fingernail, or handling a contact lens."],
   ["How is a corneal abrasion diagnosed?", "Slit lamp with fluorescein."],
   ["What does fluorescein stain in an abrasion?", "The exposed basement membrane."],
-  ["Treatment for a corneal abrasion?", "Topical broad-spectrum antibacterial; patching may ease pain."],
+  ["Treatment for a corneal abrasion?", "Topical broad-spectrum antibacterial; no patch."],
   ["Which drops are NEVER sent home?", "Topical anesthetics."],
   ["Why are take-home anesthetic drops forbidden?", "They delay healing, mask worsening symptoms and can cause a corneal ulcer."],
   ["Typical history for a corneal foreign body?", "Grinding or striking metal."],

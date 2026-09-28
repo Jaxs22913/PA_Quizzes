@@ -65,7 +65,7 @@ ROWS_L14 = [
   "<b>Fingernail or contact lens</b> &middot; severe <b>foreign body sensation</b>",
   "Scraping away of corneal epithelium. <b>One of the commonest ocular injuries.</b> Severe foreign body sensation, tearing, photophobia, blurred vision.",
   "<b>Slit lamp with fluorescein</b>, which stains the exposed basement membrane and shows the extent.",
-  "<b>Topical broad-spectrum antibacterial.</b> Patching may ease pain. Re-examine periodically to confirm healing and exclude infection.",
+  "<b>Topical broad-spectrum antibacterial.</b> No patch (the slide suggests one; patching neither speeds healing nor eases pain). Re-examine periodically to confirm healing and exclude infection.",
   "Urgent",
   "<b>NEVER send the patient home with topical anesthetic drops.</b> They delay healing, mask worsening symptoms, and can cause a corneal ulcer.",
   "18", D14),

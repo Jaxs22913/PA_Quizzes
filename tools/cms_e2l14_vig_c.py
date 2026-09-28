@@ -36,7 +36,7 @@ QUESTIONS = [
 
  dict(topic="Corneal abrasion", io=IO_A, lead="treatment", cite=D % 18,
   q="A 31-year-old has a corneal abrasion from a fingernail. Which treatment is appropriate?",
-  opts=[["A topical broad-spectrum antibacterial, with review to confirm healing", "Correct, and patching may ease the pain."],
+  opts=[["A topical broad-spectrum antibacterial, with review to confirm healing", "Correct. Patching is no longer advised: it neither speeds healing nor relieves the pain, and it is avoided with contact lens wear."],
         ["A topical antiviral", "There is no viral indication."],
         ["A topical corticosteroid", "Steroids are not the treatment for an abrasion."],
         ["No treatment and no follow-up", "Antibiotic cover and re-examination are both part of care."]]),

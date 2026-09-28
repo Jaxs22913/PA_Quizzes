@@ -114,7 +114,7 @@ SECTION = """
   ocular injuries, typically from a fingernail or handling a contact lens. Severe foreign body
   sensation, tearing, photophobia, blurred vision. <strong>Slit lamp with fluorescein</strong>
   stains the exposed basement membrane and shows the extent. Treat with a <strong>topical
-  broad-spectrum antibacterial</strong>; patching may ease pain; re-examine to confirm healing.</p>
+  broad-spectrum antibacterial</strong>; no patch (slide 18 says patching may ease pain, but it neither speeds healing nor relieves pain); re-examine to confirm healing.</p>
   <div class="callout">
     <p><strong>Never give a patient topical anesthetic drops to take home.</strong> They delay
     healing, mask worsening symptoms, and can cause a corneal ulcer. This is the single most

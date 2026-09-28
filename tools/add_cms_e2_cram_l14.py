@@ -66,7 +66,7 @@ SECTIONS = "".join([
   ("Corneal abrasion &mdash; history", "FINGERNAIL or CONTACT LENS handling. One of the COMMONEST ocular injuries."),
   ("Corneal abrasion &mdash; symptoms", "SEVERE foreign body sensation, tearing, photophobia, blurred vision."),
   ("Corneal abrasion &mdash; diagnosis", "SLIT LAMP with FLUORESCEIN &mdash; stains the exposed BASEMENT MEMBRANE."),
-  ("Corneal abrasion &mdash; treatment", "TOPICAL BROAD-SPECTRUM ANTIBACTERIAL. Patching may ease pain. Re-examine."),
+  ("Corneal abrasion &mdash; treatment", "TOPICAL BROAD-SPECTRUM ANTIBACTERIAL. NO PATCH (slide says it may ease pain; it does not). Re-examine."),
   ("Foreign body &mdash; history", "GRINDING or STRIKING METAL."),
   ("THE LOCALIZING SIGN", "LINEAR VERTICAL corneal defects = object in the TARSAL CONJUNCTIVA of the UPPER LID. EVERT THE LID."),
   ("Foreign body &mdash; removal", "Topical anesthetic &rarr; slit lamp &rarr; STERILE 27-GAUGE NEEDLE. RUST RING (iron/copper) &rarr; battery BURR."),
