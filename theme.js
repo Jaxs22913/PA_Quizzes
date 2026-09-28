@@ -5627,7 +5627,10 @@ window.openPauseOverlay = function (opts) {
     b.innerHTML = window.SiteIcon("book", 17) +
       '<span class="gl-txt"><span class="gl-kicker"></span><span class="gl-title"></span></span>' +
       window.SiteIcon("arrowRight", 15);
-    b.querySelector(".gl-kicker").textContent = L[3] ? "Find it in the study guide" : "Related section of the study guide";
+    // three honest tiers: the paragraph itself / the section that holds it / the
+    // section where that slide's material lives (the guide may not spell it out)
+    b.querySelector(".gl-kicker").textContent = L[4] ? "Closest section in the study guide"
+      : (L[3] ? "Find it in the study guide" : "Find it in this section of the study guide");
     b.querySelector(".gl-title").textContent = L[2];
     return b;
   }
@@ -5787,7 +5790,8 @@ window.openPauseOverlay = function (opts) {
           '<iframe class="gl-frame" title="Study guide passage"></iframe></div>' +
       '</div>';
     var panel = root.querySelector(".gl-panel");
-    root.querySelector(".gl-hk").textContent = L[3] ? "Study guide" : "Study guide · related section";
+    root.querySelector(".gl-hk").textContent = L[4] ? "Study guide · closest section"
+      : (L[3] ? "Study guide" : "Study guide · this section");
     root.querySelector(".gl-hn").textContent = L[2];
     var full = root.querySelector(".gl-full");
     full.href = url + "#" + L[1];

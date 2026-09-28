@@ -72,7 +72,10 @@ def main():
         keys = {B.qkey(q) for Q in quizzes for q in Q}
         cache = {}
         bad = 0
-        for k, (gi, anchor, title, snip) in data["l"].items():
+        near = 0
+        for k, row in data["l"].items():
+            gi, anchor, title, snip = row[:4]
+            near += 1 if len(row) > 4 else 0
             if k not in keys:
                 fails.append("%s: orphan link %s (%s) - question edited/removed" % (d, k, title))
                 bad += 1
@@ -95,8 +98,8 @@ def main():
         nl = len(data["l"])
         total_q += len(keys)
         total_l += nl
-        print("%-52s %5d questions, %5d linked (%2d%%)%s" % (d, len(keys), nl, round(100 * nl / max(1, len(keys))),
-                                                             "  FAIL x%d" % bad if bad else ""))
+        print("%-46s %5d q, %5d linked (%3d%%; %d exact-source, %d closest-section)%s" % (
+            d, len(keys), nl, round(100 * nl / max(1, len(keys))), nl - near, near, "  FAIL x%d" % bad if bad else ""))
     print("TOTAL %d questions, %d linked (%d%%)" % (total_q, total_l, round(100 * total_l / max(1, total_q))))
     if fails:
         print("\nFAIL (%d):" % len(fails))

@@ -118,6 +118,39 @@ def slides_in(text):
     return nums
 
 
+def ensure_heading_ids(path):
+    """Give every id-less <h2>-<h4> in a guide a stable id (gh-<slug>[-n]).
+    Some guides (Medical Literature) ship headings with no ids, so nothing in
+    them can be linked to. Only ADDS id attributes, idempotent, and a rebuilt
+    guide simply gets them again on the next run of this tool."""
+    s = open(path, encoding="utf-8").read()
+    # Only for guides that ship (almost) no heading ids at all. Guides with ids on
+    # their real sections are left byte-for-byte alone; a few id-less sub-headings
+    # there are not worth editing a generated page for.
+    if len(re.findall(r'\bid="', s)) >= 12:      # ids already sit on its real sections/cards
+        return 0
+    used = set(re.findall(r'\bid="([^"]+)"', s))
+    n = [0]
+
+    def sub(m):
+        tag, attrs, inner = m.group(1), m.group(2), m.group(3)
+        if re.search(r'\bid=', attrs):
+            return m.group(0)
+        text = html.unescape(re.sub(r"<[^>]+>", "", inner))
+        slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:48] or "section"
+        cand, k = "gh-" + slug, 2
+        while cand in used:
+            cand, k = "gh-%s-%d" % (slug, k), k + 1
+        used.add(cand)
+        n[0] += 1
+        return "<%s%s id=\"%s\">%s</%s>" % (tag, attrs, cand, inner, tag)
+
+    new = re.sub(r"<(h[2-4])([^>]*)>(.*?)</\1>", sub, s, flags=re.S)
+    if n[0]:
+        open(path, "w", encoding="utf-8").write(new)
+    return n[0]
+
+
 def parse_guide(path):
     s = open(path, encoding="utf-8").read()
     body = s[s.find("<body"):]
@@ -213,7 +246,7 @@ def best_block(idx, q, sc):
     ans = q["opts"][q["c"]]
     qt = collections.Counter()
     for t in toks(ans[0]):
-        qt[t] += 2.0
+        qt[t] += 3.0          # the KEY picks the paragraph (a stem-word pick chose the wrong one)
     for t in toks(q["q"]):
         qt[t] += 1.0
     best, text = 0.0, None
@@ -262,6 +295,64 @@ def load_questions(path):
     return json.loads(m.group(1)) if m else None
 
 
+def near_window(idx, anchors, deck, slide):
+    """(lo, hi) section indexes between the confident links of the slides on
+    either side of `slide`, in the deck's main guide; None if unknowable."""
+    if slide is None:
+        return None
+    mine = [(s_, p) for d, s_, p in anchors if d == deck]
+    if not mine:
+        return None
+    guide = collections.Counter(idx.secs[p]["guide"] for _, p in mine).most_common(1)[0][0]
+    mine = [(s_, p) for s_, p in mine if idx.secs[p]["guide"] == guide]
+    before = [x for x in mine if x[0] <= slide]
+    after = [x for x in mine if x[0] >= slide]
+    cands = []
+    if before:
+        cands.append(max(before)[1])
+    if after:
+        cands.append(min(after)[1])
+    lo, hi = min(cands), max(cands)
+    if hi - lo > 10:                      # neighbours far apart: use the nearer one only
+        near = (max(before) if before else min(after))[1]
+        lo = hi = near
+    return lo, hi
+
+
+def near_section(idx, anchors, q, deck, slide):
+    """Tier 3 -- the section a slide lives in, from its NEIGHBOURS.
+
+    Slides are taught in order and the guides follow slide order, so a question
+    citing slide 43 belongs between the sections that slides 41 and 45 already
+    link to. `anchors` = [(deck, slide, section index)] from confident links.
+    Restricted to the guide most of that deck's anchors point at; among the
+    sections between the two neighbours the question's own words choose.
+    Validated by hiding each confident link and predicting it back: ~84% the
+    exact section (~90% when another question cites the same slide)."""
+    if slide is None:
+        return None
+    mine = [(s_, p) for d, s_, p in anchors if d == deck]
+    if not mine:
+        return None
+    guide = collections.Counter(idx.secs[p]["guide"] for _, p in mine).most_common(1)[0][0]
+    mine = [(s_, p) for s_, p in mine if idx.secs[p]["guide"] == guide]
+    same = [p for s_, p in mine if s_ == slide]
+    if same:
+        return collections.Counter(same).most_common(1)[0][0]
+    before = [x for x in mine if x[0] < slide]
+    after = [x for x in mine if x[0] > slide]
+    cands = []
+    if before:
+        cands.append(max(before)[1])
+    if after:
+        cands.append(min(after)[1])
+    lo, hi = min(cands), max(cands)
+    if hi - lo > 8:                       # neighbours far apart in the guide: trust the nearer slide only
+        lo = hi = (max(before)[1] if before else min(after)[1])
+    w = weights(q)
+    return max(range(lo, hi + 1), key=lambda i: idx.score(w, idx.secs[i]))
+
+
 def build_folder(folder, dry=False):
     gpaths = sorted(g for g in glob.glob(os.path.join(folder, "*.html"))
                     if 'data-dark-kind="guide"' in open(g, encoding="utf-8").read()
@@ -273,6 +364,9 @@ def build_folder(folder, dry=False):
             quizzes.append(Q)
     if not quizzes:
         return None
+    if not dry:
+        for g in gpaths:
+            ensure_heading_ids(g)
     idx = Index(gpaths) if gpaths else None
     if idx is None or not idx.secs:
         # A Semester 2 quiz folder with no anchored guide still gets a (empty)
@@ -280,39 +374,98 @@ def build_folder(folder, dry=False):
         if not dry:
             with open(os.path.join(folder, "guide-links.json"), "w", encoding="utf-8") as fh:
                 json.dump({"v": 1, "g": [], "l": {}}, fh, separators=(",", ":"))
-        return collections.Counter(), sum(len(Q) for Q in quizzes)
-    guides, links, seen = [], {}, set()
-    tiers = collections.Counter()
+        return collections.Counter(), sum(len(Q) for Q in quizzes), []
+    pos = {(sc["guide"], sc["id"]): i for i, sc in enumerate(idx.secs)}
+    items, seen = [], set()
     for Q in quizzes:
         for q in Q:
             k = qkey(q)
             if k in seen:
                 continue
             seen.add(k)
-            sc, exact = match(idx, q)
-            if sc is None:
-                tiers["none"] += 1
+            items.append({"q": q, "k": k, "deck": deck_of(q["cite"]), "slide": slide_of(q["cite"]), "link": None})
+    # pass 1: direct matches (the key is really in the guide)
+    for it in items:
+        q = it["q"]
+        sc, exact = match(idx, q)
+        if sc is None:
+            continue
+        blk = best_block(idx, q, sc)
+        b = idx.cov(q, set(toks(blk or "")))
+        s = idx.cov(q, sc["tok"])
+        if exact or (b is not None and b >= PASSAGE_MIN):
+            it["link"] = ("passage", sc, snippet(blk) if blk else "")
+        elif b is not None and s is not None and b >= SECTION_PARA_MIN and s >= SECTION_MIN:
+            it["link"] = ("section", sc, "")
+    # pass 2: the sections that CONTAIN the key, nearest to where the slide sits.
+    # Direct matching missed these because the question's own words outweighed
+    # the key when choosing a section (a nail in the eye, key "leave it in
+    # place", is taught in "The disposition ladder" but its stem words pulled a
+    # neighbour). Candidates = sections holding >=85% of the key's terms; among
+    # them BM25 chooses, with a boost inside the window the slide's neighbours
+    # define. A candidate far outside that window is not trusted.
+    anchors = [(it["deck"], it["slide"], pos[(it["link"][1]["guide"], it["link"][1]["id"])])
+               for it in items if it["link"] and it["link"][0] == "passage" and it["slide"] is not None]
+    for it in items:
+        if it["link"]:
+            continue
+        q = it["q"]
+        win = near_window(idx, anchors, it["deck"], it["slide"])
+        w = weights(q)
+        best, bs = None, 0.0
+        for i, sc in enumerate(idx.secs):
+            c = idx.cov(q, sc["tok"])
+            if c is None or c < SECTION_MIN:
                 continue
+            in_win = win is not None and win[0] - 2 <= i <= win[1] + 2
+            if win is not None and not in_win:
+                continue
+            sco = idx.score(w, sc) * (1.6 if win is not None and win[0] <= i <= win[1] else 1.0)
+            if sco > bs:
+                best, bs = i, sco
+        if best is not None:
+            sc = idx.secs[best]
             blk = best_block(idx, q, sc)
             b = idx.cov(q, set(toks(blk or "")))
-            s = idx.cov(q, sc["tok"])
-            snip = None
-            if exact or (b is not None and b >= PASSAGE_MIN):
-                tier, snip = "passage", (snippet(blk) if blk else "")
-            elif b is not None and s is not None and b >= SECTION_PARA_MIN and s >= SECTION_MIN:
-                tier, snip = "section", ""
+            if b is not None and b >= PASSAGE_MIN:
+                it["link"] = ("passage", sc, snippet(blk))
             else:
-                tiers["none"] += 1
-                continue
-            tiers[tier] += 1
-            if sc["guide"] not in guides:
-                guides.append(sc["guide"])
-            links[k] = [guides.index(sc["guide"]), sc["id"], clean_title(sc["title"]), snip]
+                it["link"] = ("section", sc, "")
+    # pass 3: still nothing -> the closest section by slide position
+    gaps = []
+    for it in items:
+        if it["link"]:
+            continue
+        p = near_section(idx, anchors, it["q"], it["deck"], it["slide"])
+        if p is None:
+            # no slide neighbours at all: the best text match anywhere still
+            # names the right neighbourhood far more often than not
+            sc, _ = match(idx, it["q"])
+            if sc is not None:
+                p = pos[(sc["guide"], sc["id"])]
+        if p is not None:
+            sc = idx.secs[p]
+            it["link"] = ("near", sc, "")
+            if (idx.cov(it["q"], sc["tok"]) or 0) < SECTION_PARA_MIN:
+                gaps.append((it["q"], sc))          # the guide probably never teaches this fact
+    guides, links, tiers = [], {}, collections.Counter()
+    for it in items:
+        if not it["link"]:
+            tiers["none"] += 1
+            continue
+        tier, sc, snip = it["link"]
+        tiers[tier] += 1
+        if sc["guide"] not in guides:
+            guides.append(sc["guide"])
+        row = [guides.index(sc["guide"]), sc["id"], clean_title(sc["title"]), snip]
+        if tier == "near":
+            row.append(1)
+        links[it["k"]] = row
     out = {"v": 1, "g": guides, "l": links}
     if not dry:
         with open(os.path.join(folder, "guide-links.json"), "w", encoding="utf-8") as fh:
             json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
-    return tiers, len(seen)
+    return tiers, len(items), gaps
 
 
 def main():
@@ -322,17 +475,23 @@ def main():
         d for d in os.listdir(_REPO)
         if os.path.isdir(os.path.join(_REPO, d)) and not d.startswith((".", "tools", "work", "group-", "audio", "icons")))
     total = collections.Counter()
+    allgaps = []
     for d in folders:
         p = d if os.path.isabs(d) else os.path.join(_REPO, d)
         r = build_folder(p, dry)
         if r is None:
             continue
-        tiers, n = r
+        tiers, n, gaps = r
         total.update(tiers)
-        linked = tiers["passage"] + tiers["section"]
-        print("%-52s %5d questions  %3d%% linked (%d passage, %d section)" % (
-            os.path.basename(p), n, round(100 * linked / n), tiers["passage"], tiers["section"]))
-    print("TOTAL", dict(total))
+        allgaps.extend((os.path.basename(p), q, sc) for q, sc in gaps)
+        linked = n - tiers["none"]
+        print("%-46s %5d q  %3d%% linked (%d passage, %d section, %d closest, %d none)" % (
+            os.path.basename(p), n, round(100 * linked / max(1, n)), tiers["passage"], tiers["section"],
+            tiers["near"], tiers["none"]))
+    print("TOTAL", dict(total), "| probably-not-in-the-guide:", len(allgaps))
+    if "--gaps" in sys.argv:
+        for folder, q, sc in allgaps:
+            print("GAP\t%s\t%s\t%s\t-> %s" % (folder, q["opts"][q["c"]][0][:60], q["cite"][-50:], sc["title"][:40]))
 
 
 if __name__ == "__main__":
