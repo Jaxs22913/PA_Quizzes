@@ -190,9 +190,12 @@ def build():
     <p><b>Score 0 to 1</b> &mdash; risk of group A streptococcus roughly 1&ndash;10%; no further
     testing and no antibiotics. <b>Score 2 to 3</b> &mdash; risk roughly 11&ndash;35%; perform a
     rapid antigen test or culture and treat only if positive. <b>Score 4 or more</b> &mdash; risk
-    roughly 51&ndash;53%; consider empiric treatment. <b>A negative rapid test is always confirmed
-    with a throat culture</b>, and the definitive test is <b>antistreptolysin O</b>, which matters
-    because carriers culture positive while asymptomatic.</p>
+    roughly 51&ndash;53%; consider empiric treatment. <b>In children and adolescents, a negative rapid
+    test is confirmed with a throat culture</b> (the slide says &ldquo;always&rdquo;; the Infectious
+    Diseases Society of America does not require it in adults). The slide calls <b>antistreptolysin
+    O</b> the definitive test, because carriers culture positive while asymptomatic, but the titer
+    rises only over weeks: it shows recent past infection, as in rheumatic fever, and does not
+    diagnose an acute sore throat.</p>
   </div>
 
   <p><strong>Streptococcal against viral pharyngitis</strong> (the comparison on slide 71). The

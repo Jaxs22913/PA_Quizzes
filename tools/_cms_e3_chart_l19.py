@@ -335,9 +335,11 @@ ROWS_L19 = [
   "in winter and spring; droplet spread; incubation 2&ndash;5 days. <b>Fever above 100.4&nbsp;&deg;F, "
   "sore throat, cervical lymphadenopathy, dysphagia, odynophagia, LACK OF COUGH, abdominal "
   "pain.</b> Tonsillar and pharyngeal erythema with purulent exudate.",
-  "<b>Rapid antigen detection test</b>; <b>a negative rapid test is always confirmed with a throat "
-  "culture</b>. <b>Definitive test is antistreptolysin O</b>, useful because carriers have a "
-  "positive culture while asymptomatic. <b>Centor criteria</b> (slide 76): age 3&ndash;14 "
+  "<b>Rapid antigen detection test</b>; in children and adolescents <b>a negative rapid test is "
+  "confirmed with a throat culture</b> (the slide says &ldquo;always&rdquo;; adults usually need no "
+  "backup culture). The slide calls <b>antistreptolysin O</b> the definitive test because carriers "
+  "culture positive while asymptomatic, but the titer rises over weeks: it shows recent past "
+  "infection, as in rheumatic fever, and does <b>not</b> diagnose an acute sore throat. <b>Centor criteria</b> (slide 76): age 3&ndash;14 "
   "<b>+1</b>, age 15&ndash;44 <b>0</b>, age 45 or over <b>&minus;1</b>; absence of cough <b>+1</b>; "
   "tonsillar exudate <b>+1</b>; fever <b>+1</b>; tender anterior cervical lymphadenopathy <b>+1</b>.",
   "Symptomatic care plus antibiotics: <b>penicillin VK for 10 days</b>, or amoxicillin. "

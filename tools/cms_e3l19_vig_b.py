@@ -26,9 +26,9 @@ Q("Bacterial pharyngitis", IO,
    ["Start penicillin without further testing",
     "Empiric treatment is defensible at the highest scores, but with a negative rapid test in hand "
     "the culture settles it within a day or two and avoids treating a viral illness."],
-   ["Order antistreptolysin O titres today",
-    "Antistreptolysin O is the definitive test but reflects an antibody response that takes time to "
-    "rise, so it establishes past infection rather than guiding acute treatment."]], C(74)),
+   ["Order antistreptolysin O titers today",
+    "Antistreptolysin O does not diagnose an acute sore throat: the titer rises over weeks, so it "
+    "shows recent past infection, as in rheumatic fever, rather than guiding acute treatment."]], C(74)),
 
 Q("Viral pharyngitis", IO,
   "A 22-year-old has a sore throat with cough, hoarseness, rhinitis and conjunctivitis for three "

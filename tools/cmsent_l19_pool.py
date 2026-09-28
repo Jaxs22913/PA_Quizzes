@@ -279,10 +279,10 @@ Q("Bacterial pharyngitis", IO,
     "Empiric treatment is a defensible option at the very highest scores, but with a negative rapid "
     "test in hand the culture will settle the question within a day or two and avoids treating a "
     "viral illness."],
-   ["Order antistreptolysin O titres to make the diagnosis today",
-    "Antistreptolysin O is the definitive test but reflects an antibody response that takes time to "
-    "rise, so it is useful for establishing past infection rather than for deciding treatment during "
-    "an acute sore throat."]],
+   ["Order antistreptolysin O titers to make the diagnosis today",
+    "Antistreptolysin O does not diagnose an acute sore throat: the titer rises over weeks, so it "
+    "shows recent past infection, as in rheumatic fever, rather than deciding treatment during an "
+    "acute sore throat."]],
   "next step", D, 74),
 
 Q("Vocal cord nodules", IO,
