@@ -34,6 +34,9 @@ CONTESTED on the slides, so NEVER KEYED:
   Rutherford IIA arterial Doppler: "often audible" (s62 text) vs "often
       inaudible" (s65 table). IIA is keyed only on its prognosis and on the
       absence of sensory loss / weakness, never on its arterial Doppler.
+      2026-09-28 truth rule: the s65 table is the accurate one (SVS reporting
+      standards: IIA arterial often inaudible, venous audible); the guide says
+      so. Still not keyed.
   Slide 73's "What is the difference between a bruit and a murmur?" is asked
       and never answered.
   ABI "normal > 0.9-1.3" (s42) is a mixed notation; stems use values well
