@@ -43,7 +43,7 @@ FROZEN = ("Anatomy Exam", "Anatomy Practicum Exam", "CAM Nutrition Exam",
           "Physical Diagnosis 1 Exam", "Physiology Exam")
 # Page kinds rolled out so far. Each kind needs its component rules in
 # theme.css ("DESIGNED DARK MODE" block) before it is switched on here.
-KINDS = ("quiz", "guide", "cram")
+KINDS = ("quiz", "guide", "cram", "chart")
 # Pages that ship their own bespoke component set the theme.css block does not
 # cover; they keep the invert filter until someone maps their components.
 EXCLUDE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
@@ -185,6 +185,66 @@ def cram_tokens(v):
             "primary-l": v["primary"],
             "primary": lift(v["primary"], soft(hue_of(v["primary"])))}
 
+ZEBRA = "#21242a"   # card + 3.5% white, the zebra row every kind uses
+
+def chart_tokens(v):
+    """Comparison charts (the --c-* palette: CMS derm/ophtho/ENT, derm staging,
+    PD2 ENT OSCE chart). Text roles lifted against the lightest dark ground a
+    cell can have (a zebra row or the panel tint); the giveaway column gets
+    its own gold tint. Fills that carry white text (--acc in the header row,
+    --acc2 section rows, --c-gv-h) keep their light values."""
+    panel = soft(hue_of(v["acc"]))
+    grounds = (CARD, ZEBRA, panel)
+    worst = max(grounds, key=lambda c: lum(hex_rgb(c)))
+    t = {"page": PAGE, "ink": INK, "muted": MUTED, "line": LINE, "card": CARD,
+         "acc-l": v["acc"], "acc": lift(v["acc"], worst),
+         "c-line": LINE, "c-tbl": CARD, "c-zebra": ZEBRA, "c-fg": INK,
+         "c-panel": panel, "c-panel-fg": INK, "c-btn-bg": CARD,
+         "c-mute": MUTED, "c-mute2": MUTED, "c-pt": MUTED}
+    for k, target in (("c-name", TARGET), ("c-b", 7.0), ("c-warn", TARGET),
+                      ("c-labs-h", TARGET), ("c-dup", TARGET)):
+        if k in v:
+            t[k] = lift(v[k], worst, target)
+    if "c-gv-bg" in v:
+        gv = soft(hue_of(v["c-gv-bg"]))
+        t["c-gv-bg"] = gv
+        if "c-gv-b" in v:
+            t["c-gv-b"] = lift(v["c-gv-b"], gv)
+    return t
+
+_COLOR = re.compile(r"(?<![-\w])color\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b")
+
+def fixed_text_rules(s):
+    """Dark rules for text colours a chart hard-codes in its own CSS (urgency
+    labels, coverage keys): each dark-on-white hex is lifted with the recipe
+    against the zebra row, keeping its hue. Rules with a background of their
+    own (a filled chip) are left alone."""
+    out = []
+    for block in re.findall(r"<style[^>]*>(.*?)</style>", s, re.S):
+        css = re.sub(r"/\*.*?\*/", "", block, flags=re.S)
+        css = re.sub(r"@media print\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}", "", css)
+        for sel, body in _RULE.findall(css):
+            sel = sel.strip()
+            if sel.startswith((":root", "@")) or "data-theme" in sel:
+                continue
+            pre = lambda: ",".join(':root[data-theme="dark"] body[data-dark="tokens"] ' + x.strip()
+                                   for x in sel.split(","))
+            # a hard-coded white surface (TOC pills, figure frames) -> the card;
+            # image backgrounds stay white for transparent slide captures
+            if re.search(r"background(?:-color)?\s*:\s*#fff(?:fff)?\b", body) and "img" not in sel:
+                out.append(pre() + "{background:%s}" % CARD)
+            if "background" in body:
+                continue
+            for h in _COLOR.findall(body):
+                if contrast(hex_rgb(h), hex_rgb(CARD)) < 4.5:
+                    out.append(pre() + "{color:%s}" % lift(h, ZEBRA))
+    # group chips carry an inline fill under white text
+    for g in sorted(set(re.findall(r'class="grp" style="background:(#[0-9a-fA-F]{6})"', s))):
+        f = darken_to(g, "#ffffff")
+        if f != g:
+            out.append(':root[data-theme="dark"] body[data-dark="tokens"] .grp[style*="background:%s"]{background:%s!important}' % (g, f))
+    return "".join(out)
+
 # ---------------------------------------------------------------- page scan
 VAR = lambda name: re.compile(r"--%s\s*:\s*(#[0-9a-fA-F]{3,6})\b" % re.escape(name))
 
@@ -199,6 +259,8 @@ def classify(s):
         return "guide"
     if "--primary" in s and 'class="topic' in s:
         return "cram"
+    if "--c-panel" in s and "--acc:" in first_root_block(s):
+        return "chart"
     return None
 
 def tokens_for(kind, s):
@@ -213,6 +275,12 @@ def tokens_for(kind, s):
     if kind == "cram":
         p = get("primary")
         return cram_tokens({"primary": p}) if p else None
+    if kind == "chart":
+        v = {m.group(1): m.group(2) for m in re.finditer(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\b", root)}
+        return chart_tokens(v) if "acc" in v else None
+
+BOOT = ("<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme')"
+        " || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>")
 
 BEGIN, END = "<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)-->", "<!--DARK-TOKENS:END-->"
 
@@ -342,8 +410,15 @@ def apply(s, kind=None):
     if not tok:
         return s
     s = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", "", s, flags=re.S)
-    extra = (cram_topic_rules(s) if kind == "cram" else "") + light_tokens(kind, s)
+    extra = ((cram_topic_rules(s) if kind == "cram" else "")
+             + (fixed_text_rules(s) if kind == "chart" else "")
+             + light_tokens(kind, s))
     s = s.replace("</head>", block(tok, extra) + "\n</head>", 1)
+    # Every page needs the one-line theme bootstrap before first paint;
+    # theme.js only toggles data-theme, it never sets it on load. The five
+    # comparison charts shipped without it, so they never went dark at all.
+    if "setAttribute('data-theme'" not in s:
+        s = re.sub(r"(<meta charset=[^>]*>)", r"\1\n" + BOOT.replace("\\", "\\\\"), s, count=1)
     if not re.search(r"<body[^>]*\bdata-dark=", s):
         s = re.sub(r"<body\b", '<body data-dark="tokens" data-dark-kind="%s"' % kind, s, count=1)
     return s

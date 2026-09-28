@@ -31,7 +31,7 @@ Slide images are used with the slide cited, per [[media_asset_licensing]].
 Marks baked into the pixels (DermNet, NPIAP, McGraw-Hill/Fitzpatrick's source
 lines) are left visible on purpose -- they ride along as part of citing.
 """
-import os, subprocess, html as H
+import os, subprocess, sys, html as H
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -461,6 +461,10 @@ def build():
                 .replace("{{TOC}}", toc)
                 .replace("{{ROWS}}", "".join(rows)))
 
+    # designed dark mode + theme bootstrap (tools/dark_tokens.py)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dark_tokens
+    html = dark_tokens.apply(html, "chart")
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s - %d systems, %d levels, %d figures, %d KB"
           % (os.path.basename(OUT), len(SYSTEMS), n_levels, n_figs, len(html) // 1024))

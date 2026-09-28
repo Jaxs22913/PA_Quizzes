@@ -3123,6 +3123,17 @@ body.homepage .continue-item:hover {
 :root[data-theme="dark"] body[data-dark-kind="guide"] dl.cmp-fields dt { background: var(--soft-bg); }
 :root[data-theme="dark"] body[data-dark-kind="guide"] .cmp-tools input { background: var(--card); color: var(--ink); }
 
+/* --- comparison charts (the --c-* palette: CMS derm/ophtho/ENT comparison
+   charts, derm staging chart, PD2 ENT OSCE chart; 2026-09-27) ---
+   The palette variables carry almost everything; only the fills that carry
+   white text (header row, pressed filter chips) take the light --acc back. */
+:root[data-theme="dark"] body[data-dark-kind="chart"] thead th,
+:root[data-theme="dark"] body[data-dark-kind="chart"] .filterbar button[aria-pressed="true"],
+:root[data-theme="dark"] body[data-dark-kind="chart"] .filt.on { --acc: var(--acc-l); }
+/* the giveaway header's sub-line is written inline in a pale teal that only
+   cleared 3.99:1 on the gold fill; plain white clears 4.75:1 */
+:root[data-theme="dark"] body[data-dark-kind="chart"] th.gv-h span[style*="color"] { color: #fff !important; }
+
 /* --- cram sheets (tools/cram-sheet-template) --- */
 :root[data-theme="dark"] body[data-dark-kind="cram"] .note,
 :root[data-theme="dark"] body[data-dark-kind="cram"] .toc a { background: var(--card); }

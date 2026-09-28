@@ -635,6 +635,10 @@ __ROWS__
         assert all(str(x).strip() for x in r), "row %r has an empty cell" % r[0]
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    # designed dark mode + theme bootstrap (tools/dark_tokens.py)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dark_tokens
+    html = dark_tokens.apply(html, "chart")
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s (%d KB, %d conditions, %d with a picture, %d groups)"
           % (os.path.basename(OUT), len(html) // 1024, len(ROWS), n_pics, len(GROUP_COLOUR))

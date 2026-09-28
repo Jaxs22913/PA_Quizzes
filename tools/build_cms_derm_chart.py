@@ -22,7 +22,7 @@ Every image was viewed on a contact sheet before being assigned to a row.
 Conditions with no suitable slide image get a labeled placeholder rather than
 a picture of something else.
 """
-import os, re, html as H
+import os, re, sys, html as H
 from PIL import Image, PngImagePlugin
 PngImagePlugin.MAX_TEXT_CHUNK = 100 * 1024 * 1024
 
@@ -1671,6 +1671,10 @@ def main():
                 .replace("__NNOLABS__", str(nolabs))
                 .replace("__NIMGS__", str(n_imgs))
                 .replace("__NEXT__", str(n_ext)))
+    # designed dark mode + theme bootstrap (tools/dark_tokens.py)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dark_tokens
+    html = dark_tokens.apply(html, "chart")
     open(OUT_HTML, "w", encoding="utf-8").write(html)
     kb = sum(os.path.getsize(os.path.join(OUT_DIR, f)) for f in os.listdir(OUT_DIR)) // 1024
     print("wrote %s" % os.path.basename(OUT_HTML))

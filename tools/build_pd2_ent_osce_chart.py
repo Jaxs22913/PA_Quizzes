@@ -324,6 +324,10 @@ __EMROWS__
     row = set(re.findall(r'<tr data-r="([^"]+)"', html))
     assert btn == row, "filter buttons %r do not match row regions %r" % (btn - row, row - btn)
 
+    # designed dark mode + theme bootstrap (tools/dark_tokens.py)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dark_tokens
+    html = dark_tokens.apply(html, "chart")
     open(OUT, "w", encoding="utf-8").write(html)
     print("wrote %s (%d KB, %d conditions: %d routine, %d urgent, %d emergent, %d regions)"
           % (os.path.basename(OUT), len(html)//1024, len(C.ROWS),
