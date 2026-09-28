@@ -15,6 +15,8 @@ window.SiteIcon = (function () {
     grid: '<rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>',
     pause: '<rect x="6.5" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2"/>',
     arrowLeft: '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>',
+    arrowRight: '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
+    external: '<path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>',
     list: '<path d="M9 6.5h11M9 12h11M9 17.5h11"/><path d="M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01" stroke-width="2.6"/>',
     flame: '<path d="M12 3c1 3.2 5 5.4 5 10.2a5 5 0 0 1-10 0c0-2.3 1.1-3.7 2.3-4.9.2 1.7 1 2.8 2.2 3.2-.2-3.1-.1-5.6.5-8.5z"/>',
     users: '<circle cx="9" cy="8.5" r="3.3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 5.3a3.3 3.3 0 0 1 0 6.4"/><path d="M17.5 14.4c2 .8 3.5 2.9 3.5 5.6"/>',
@@ -5558,6 +5560,274 @@ window.openPauseOverlay = function (opts) {
     pass(quiz);
     new MutationObserver(function () { pass(quiz); })
       .observe(quiz, { childList: true, subtree: true });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+
+
+/* ============================================================
+   STUDY-GUIDE PEEK (2026-09-28). Under every explanation, a button opens the
+   study-guide passage that teaches the question, in a panel INSIDE the quiz.
+   Nothing navigates: the question, the answer, the timer and every saved
+   state stay exactly where they were, and closing the panel (x, Esc, tapping
+   outside, or the phone's Back button) returns to the same question. That is
+   the point of doing it as a panel and not a link.
+
+   Data: <exam folder>/guide-links.json, written by tools/build_guide_links.py
+   and keyed by an FNV-1a hash of "<stem>\n<correct option text>", so an edited
+   question has no entry and shows no button. No file (or a 404) = the feature
+   is simply absent. Scope: body[data-dark-kind="quiz"], i.e. Semester 2+
+   generated quizzes; Semester 1 (frozen) and Group Study never carry it.
+
+   The guide is fetched as text and shown in a same-origin srcdoc iframe with
+   every <script> removed, so an embedded guide runs none of theme.js: no
+   analytics hit, no presence write, no sign-in prompt, no second Firebase.
+   All the work (theme, hiding the guide's own chrome, opening any <details>,
+   scrolling, highlighting) is done from out here on the iframe's document.
+
+   Where buttons go (all rebuilt by the engine, so a MutationObserver re-adds
+   them): #expl after an answer, #sexpl-N in the all-on-a-page view, and every
+   .mitem in the results review (matched to its question by stem).
+   ============================================================ */
+(function () {
+  if (typeof MutationObserver !== "function" || !window.fetch) return;
+  var links = null, failed = false, requested = false;
+  var root = null, lastTrigger = null, pushed = false, scheduled = false;
+  var guideCache = {};
+
+  function fnv(s) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+    return (h >>> 0).toString(36);
+  }
+  function keyOf(q) { return fnv(q.q + "\n" + q.opts[q.c][0]); }
+  function bank() { try { return QUESTIONS; } catch (e) { return null; } }
+  function cur() { try { return order; } catch (e) { return null; } }
+
+  function load() {
+    if (requested) return;
+    requested = true;
+    fetch(new URL("guide-links.json", location.href).href)
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) {
+        if (!j || j.v !== 1 || !j.l || !j.g) throw 0;
+        links = j; schedule();
+      })
+      .catch(function () { failed = true; });
+  }
+
+  function makeBtn(q) {
+    var k = keyOf(q), L = links.l[k];
+    if (!L) return null;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "gl-btn";
+    b.setAttribute("data-gl", k);
+    b.innerHTML = window.SiteIcon("book", 17) +
+      '<span class="gl-txt"><span class="gl-kicker"></span><span class="gl-title"></span></span>' +
+      window.SiteIcon("arrowRight", 15);
+    b.querySelector(".gl-kicker").textContent = L[3] ? "Find it in the study guide" : "Related section of the study guide";
+    b.querySelector(".gl-title").textContent = L[2];
+    return b;
+  }
+
+  // Put (or replace, or remove) the button inside `host` for question `q`.
+  function place(host, q) {
+    var old = host.querySelector(":scope > .gl-btn");
+    var want = q && links.l[keyOf(q)] ? keyOf(q) : null;
+    if (old && old.getAttribute("data-gl") === want) return;
+    if (old) old.remove();
+    if (!want) return;
+    host.appendChild(makeBtn(q));
+  }
+
+  function pass() {
+    scheduled = false;
+    var Q = bank();
+    if (!Q || !links) return;
+    var ord = cur();
+    // paged view: the live explanation panel
+    var ex = document.getElementById("expl");
+    if (ex && ex.classList.contains("show") && ord && typeof idx === "number") {
+      var q0 = Q[ord[idx]];
+      if (q0) place(ex, q0);
+    }
+    // all-on-a-page view
+    var sx = document.querySelectorAll('[id^="sexpl-"].show');
+    for (var i = 0; i < sx.length; i++) {
+      var n = parseInt(sx[i].id.slice(6), 10);
+      if (ord && !isNaN(n) && Q[ord[n]]) place(sx[i], Q[ord[n]]);
+    }
+    // results review: each item carries "Q7. <stem>"
+    var items = document.querySelectorAll("#results .mitem");
+    for (var j = 0; j < items.length; j++) {
+      var mq = items[j].querySelector(".mq");
+      if (!mq) continue;
+      var stem = mq.textContent.replace(/^\s*Q\d+\.\s*/, "").replace(/\s+/g, " ").trim();
+      var hit = null;
+      for (var m = 0; m < Q.length; m++) {
+        if (Q[m].q.replace(/\s+/g, " ").trim() === stem) { hit = Q[m]; break; }
+      }
+      if (hit) place(items[j], hit);
+    }
+  }
+  function schedule() {
+    if (scheduled) return;
+    scheduled = true;
+    (window.requestAnimationFrame || setTimeout)(pass);
+  }
+
+  /* ---------- the panel ---------- */
+  var CHROME_CSS =
+    ".guide-back-bar,header.top,nav.toc,#quiz-footer-logo,#pull-refresh,.guide-foot,.word-btn," +
+    ".corner-btn,[class*='floating'],.toc-fab{display:none!important}" +
+    "html,body{margin:0!important;padding:0!important}" +
+    ".layout{display:block!important;max-width:none!important;margin:0!important;padding:10px 16px 60vh!important}" +
+    "main{max-width:none!important;margin:0!important;padding:0!important}" +
+    ".gl-mark{background:#fef3d4!important;color:#3a2c05!important;box-shadow:0 0 0 4px #fef3d4,0 0 0 5px #e8c766;border-radius:4px}" +
+    ":root[data-theme='dark'] .gl-mark{background:#4a3a12!important;color:#f7ecc8!important;box-shadow:0 0 0 4px #4a3a12,0 0 0 5px #7a6220}" +
+    ".gl-head-mark{scroll-margin-top:10px;border-left:4px solid #e8c766;padding-left:10px!important}";
+
+  function textOf(el) { return (el.textContent || "").replace(/\s+/g, ""); }
+
+  function findBlock(doc, target, snippet) {
+    var want = snippet.replace(/\s+/g, "");
+    if (!want) return null;
+    var all = doc.querySelectorAll("li,p,tr,dd,dt,blockquote,figcaption,summary,td");
+    var first = null;
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (target && !(target.compareDocumentPosition(el) & 4) && !target.contains(el)) continue;   // at/after the section heading
+      if (textOf(el).indexOf(want) !== -1) { first = el; break; }
+    }
+    if (!first) return null;
+    var best = first, bestLen = textOf(first).length;      // the most specific block inside it
+    for (var j = 0; j < all.length; j++) {
+      var c = all[j];
+      if (c !== first && first.contains(c) && textOf(c).indexOf(want) !== -1 && textOf(c).length < bestLen) { best = c; bestLen = textOf(c).length; }
+    }
+    return best;
+  }
+
+  function arrive(frame, L, panel) {
+    var doc = frame.contentDocument, win = frame.contentWindow;
+    if (!doc || !win) return;
+    doc.documentElement.setAttribute("data-theme", document.documentElement.getAttribute("data-theme") || "light");
+    var st = doc.createElement("style"); st.textContent = CHROME_CSS; doc.head.appendChild(st);
+    var target = doc.getElementById(L[1]);
+    if (!target) { panel.querySelector(".gl-load").textContent = "That part of the guide moved. Use “Open full guide”."; return; }
+    for (var p = target; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
+    var hit = L[3] ? findBlock(doc, target, L[3]) : null;
+    if (hit) for (var d = hit; d; d = d.parentElement) if (d.tagName === "DETAILS") d.open = true;
+    var mark = hit || target;
+    if (hit) hit.classList.add("gl-mark"); else target.classList.add("gl-head-mark");
+    // Images above the passage load late and push it down, so keep it pinned
+    // to the same spot until the student takes over (any scroll gesture / key)
+    // or a few seconds pass. Eager loading so the shifts happen now, not as
+    // they scroll.
+    var pinned = true;
+    function align() {
+      if (!pinned) return;
+      var y = mark.getBoundingClientRect().top + win.pageYOffset - (hit ? Math.max(40, win.innerHeight * 0.28) : 12);
+      win.scrollTo(0, Math.max(0, y));
+    }
+    var imgs = doc.images;
+    for (var k = 0; k < imgs.length; k++) imgs[k].loading = "eager";
+    doc.addEventListener("load", align, true);
+    ["wheel", "touchstart", "mousedown", "keydown"].forEach(function (ev) {
+      doc.addEventListener(ev, function () { pinned = false; }, { passive: true, capture: true });
+    });
+    setTimeout(function () { pinned = false; }, 4500);
+    align();
+    panel.classList.add("is-ready");
+  }
+
+  function guideText(url) {
+    if (guideCache[url]) return guideCache[url];
+    guideCache[url] = fetch(url).then(function (r) { if (!r.ok) throw 0; return r.text(); })
+      .then(function (t) {
+        t = t.replace(/<script[\s\S]*?<\/script>/gi, "");
+        var base = url.split("#")[0];
+        return t.replace(/<head([^>]*)>/i, '<head$1><base href="' + base.replace(/"/g, "&quot;") + '">');
+      });
+    guideCache[url].catch(function () { delete guideCache[url]; });
+    return guideCache[url];
+  }
+
+  function closePanel(viaPop) {
+    if (!root) return;
+    root.remove(); root = null;
+    document.documentElement.classList.remove("gl-open");
+    if (pushed) { pushed = false; if (!viaPop) { try { history.back(); } catch (e) {} } }
+    if (lastTrigger && document.contains(lastTrigger)) { try { lastTrigger.focus({ preventScroll: true }); } catch (e) {} }
+  }
+
+  function openPanel(key, trigger) {
+    var L = links && links.l[key];
+    if (!L) return;
+    if (root) closePanel(true);
+    lastTrigger = trigger;
+    var url = new URL(links.g[L[0]], location.href).href;
+    root = document.createElement("div");
+    root.className = "gl-root";
+    root.setAttribute("role", "dialog");
+    root.setAttribute("aria-label", "Study guide");
+    root.innerHTML =
+      '<div class="gl-backdrop"></div>' +
+      '<div class="gl-panel">' +
+        '<div class="gl-grab" aria-hidden="true"></div>' +
+        '<div class="gl-head">' +
+          window.SiteIcon("book", 18) +
+          '<div class="gl-ht"><div class="gl-hk"></div><div class="gl-hn"></div></div>' +
+          '<a class="gl-full" target="_blank" rel="noopener"></a>' +
+          '<button type="button" class="gl-x" aria-label="Close study guide"></button>' +
+        '</div>' +
+        '<div class="gl-body"><div class="gl-load">Loading the guide…</div>' +
+          '<iframe class="gl-frame" title="Study guide passage"></iframe></div>' +
+      '</div>';
+    var panel = root.querySelector(".gl-panel");
+    root.querySelector(".gl-hk").textContent = L[3] ? "Study guide" : "Study guide · related section";
+    root.querySelector(".gl-hn").textContent = L[2];
+    var full = root.querySelector(".gl-full");
+    full.href = url + "#" + L[1];
+    full.innerHTML = '<span>Full guide</span>' + window.SiteIcon("external", 14);
+    var x = root.querySelector(".gl-x"); x.innerHTML = window.SiteIcon("x", 18);
+    x.addEventListener("click", function () { closePanel(false); });
+    root.querySelector(".gl-backdrop").addEventListener("click", function () { closePanel(false); });
+    document.body.appendChild(root);
+    document.documentElement.classList.add("gl-open");
+    try { history.pushState({ gl: 1 }, ""); pushed = true; } catch (e) { pushed = false; }
+    x.focus({ preventScroll: true });
+
+    var frame = root.querySelector(".gl-frame");
+    guideText(url).then(function (t) {
+      if (!root || root.querySelector(".gl-frame") !== frame) return;
+      frame.addEventListener("load", function () {
+        if (!root) return;
+        arrive(frame, L, panel);
+      }, { once: true });
+      frame.srcdoc = t;
+    }).catch(function () {
+      var ld = root && root.querySelector(".gl-load");
+      if (ld) ld.textContent = "The guide could not load here. Use “Full guide” to open it in a new tab.";
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".gl-btn");
+    if (b) { e.preventDefault(); openPanel(b.getAttribute("data-gl"), b); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (root && (e.key === "Escape" || e.key === "Esc")) { e.preventDefault(); closePanel(false); }
+  });
+  window.addEventListener("popstate", function () { if (root) closePanel(true); });
+
+  function start() {
+    if (!document.body || document.body.getAttribute("data-dark-kind") !== "quiz") return;
+    if (!document.getElementById("quiz")) return;
+    load();
+    new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();

@@ -133,6 +133,11 @@ Micro Exam 1 timetable quiz (§8) is the clean example to copy —
    self-expiring New tag (`new_exam_tag`).
 5. Re-run `tools/build_group_quizzes.py` — **required after any quiz change.**
    The Group Study bank is generated from the quiz files; never hand-edit it.
+   Likewise re-run `tools/build_guide_links.py` (then `tools/check_guide_links.py`)
+   after any Semester 2 quiz OR guide rebuild: it writes the per-folder
+   `guide-links.json` behind the "Find it in the study guide" panel. A link is
+   keyed to the question's exact text, so an edited question loses its link
+   until this is re-run, and a rebuilt guide can orphan an anchor.
 6. Run the checkers (§6), fix, then commit and push. For quiz builds
    specifically, pushing is part of the spec — you do not need to wait to be
    asked.
@@ -165,7 +170,7 @@ python3 tools/check_answer_distribution.py "<file>"
 
 Others worth knowing: `check_length_bias`, `check_ppt_grounding`,
 `check_truncated_keys`, `check_accordions_closed`, `check_spelling`,
-`check_slot_coverage`, `check_pool_cites`.
+`check_slot_coverage`, `check_pool_cites`, `check_guide_links`.
 
 `check_length_bias.py` drives headless Chrome and is slow and fragile; use
 `tools/check_length_bias_fast.py` (node literal extractor, identical numbers,

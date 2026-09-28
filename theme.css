@@ -3303,3 +3303,73 @@ a.report-link:hover { color: var(--ink, #1f2937); text-decoration: underline; te
   body.quiz-running #quiz #flagbtn .si-label { display: none; }
   body.quiz-running #quiz #flagbtn { padding-left: 10px; padding-right: 10px; }
 }
+
+
+/* ---- Study-guide peek (2026-09-28) -------------------------------------
+   Button under an explanation + the panel it opens. See the block comment in
+   theme.js. Colours come from the quiz page's own tokens (--card, --ink,
+   --line, --navy, --ice, --muted), which each Semester 2 quiz already defines
+   for light AND dark, so nothing here invents a colour. */
+.gl-btn {
+  display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box;
+  margin: 14px 0 2px; padding: 12px 14px; text-align: left; cursor: pointer;
+  font: inherit; color: var(--ink, #20233a);
+  background: var(--ice, #eef2ff); border: 1px solid var(--line, #dbe7e5); border-radius: 12px;
+  transition: border-color .15s, transform .15s;
+}
+.gl-btn:hover { border-color: var(--navy, #123456); }
+.gl-btn:focus-visible { outline: 2px solid var(--navy, #123456); outline-offset: 2px; }
+.gl-btn > .si:first-child { flex: none; color: var(--navy, #123456); }
+.gl-btn > .si:last-child { flex: none; margin-left: auto; color: var(--muted, #5b6178); }
+.gl-txt { display: flex; flex-direction: column; min-width: 0; gap: 1px; }
+.gl-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted, #5b6178); }
+.gl-title { font-size: 14.5px; font-weight: 600; line-height: 1.3; }
+.mitem .gl-btn { margin-top: 10px; }
+
+.gl-root { position: fixed; inset: 0; z-index: 9500; pointer-events: none; }
+.gl-backdrop { position: absolute; inset: 0; background: rgba(10, 12, 20, .5); pointer-events: auto; }
+.gl-panel {
+  position: absolute; pointer-events: auto; display: flex; flex-direction: column;
+  background: var(--card, #fff); color: var(--ink, #20233a);
+  border: 1px solid var(--line, #dbe7e5); box-shadow: 0 18px 60px rgba(0, 0, 0, .28);
+  left: 0; right: 0; bottom: 0; height: 88vh; height: 88dvh;
+  border-radius: 18px 18px 0 0; border-bottom: 0;
+}
+.gl-grab { width: 40px; height: 4px; border-radius: 4px; background: var(--line, #dbe7e5); margin: 8px auto 0; flex: none; }
+.gl-head { display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 16px; border-bottom: 1px solid var(--line, #dbe7e5); flex: none; }
+.gl-head > .si { flex: none; color: var(--navy, #123456); }
+.gl-ht { min-width: 0; flex: 1; }
+.gl-hk { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted, #5b6178); }
+.gl-hn { font-size: 15px; font-weight: 700; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gl-full {
+  flex: none; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
+  color: var(--navy, #123456); text-decoration: none; padding: 8px 10px; border-radius: 9px; border: 1px solid var(--line, #dbe7e5);
+}
+.gl-full:hover { border-color: var(--navy, #123456); }
+.gl-x {
+  flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ink, #20233a); background: transparent; border: 0; border-radius: 10px; cursor: pointer;
+}
+.gl-x:hover { background: var(--ice, #eef2ff); }
+.gl-x:focus-visible, .gl-full:focus-visible { outline: 2px solid var(--navy, #123456); outline-offset: 2px; }
+.gl-body { position: relative; flex: 1; min-height: 0; background: var(--card, #fff); }
+.gl-load { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center; font-size: 14px; color: var(--muted, #5b6178); }
+.gl-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; opacity: 0; }
+.gl-panel.is-ready .gl-frame { opacity: 1; }
+.gl-panel.is-ready .gl-load { display: none; }
+
+html.gl-open { overflow: hidden; }
+
+/* Wide screens: a side drawer, no dimming, so the question stays visible and
+   the page stays usable beside it. */
+@media (min-width: 900px) {
+  .gl-backdrop { background: transparent; pointer-events: none; }
+  .gl-panel { left: auto; top: 0; height: auto; width: min(580px, 46vw); border-radius: 0; border-top: 0; border-right: 0; border-bottom: 0; }
+  .gl-grab { display: none; }
+  html.gl-open { overflow: auto; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gl-panel { animation: gl-in .22s ease-out; }
+  @keyframes gl-in { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (min-width: 900px) { @keyframes gl-in { from { transform: translateX(28px); opacity: 0; } to { transform: none; opacity: 1; } } }
+}
