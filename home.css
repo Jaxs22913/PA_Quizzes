@@ -1730,3 +1730,16 @@
    terms render stacked down the page, each with its own heading, progress bar
    and picker, which reads as duplicated content rather than as a bug. */
 .semester.hidden { display: none; }
+
+/* Light-mode contrast (design-review leftovers item 1, 2026-09-27). Every
+   site accent is solved to 4.60:1 on WHITE; set on its own pale -soft wash
+   the same accent drops to 4.17-4.26:1. Chips and pills that put an accent
+   on its wash take that accent's existing darker -hover shade (5.3:1 on the
+   wash), light theme only. */
+:root[data-theme="light"] body.homepage .my-progress-link { color: var(--a-blue-hover); }
+:root[data-theme="light"] body.homepage .review-link { color: var(--a-crimson-hover); }
+:root[data-theme="light"] body.homepage .mycram-link { color: var(--a-green-hover); }
+:root[data-theme="light"] body.homepage .week-day,
+:root[data-theme="light"] body.homepage .quiz-tag--updated,
+:root[data-theme="light"] body.homepage .ai-disclaimer a.ai-report { color: var(--a-blue-hover); }
+:root[data-theme="light"] body.homepage .question-issue-pill { color: var(--a-amber-hover); }

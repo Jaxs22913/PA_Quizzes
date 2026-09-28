@@ -426,6 +426,14 @@
     border-radius: 999px; margin: 0 0 7px;
   }
 
+  /* Light-mode contrast (design-review leftovers item 1, 2026-09-27): each
+     badge's accent measured 4.17-4.26:1 on its own -soft wash; the accent's
+     existing darker -hover shade gives 5.3:1. Dark mode unchanged. */
+  :root[data-theme="light"] .guide-badge { color: var(--a-blue-hover); }
+  :root[data-theme="light"] .cram-badge { color: var(--a-green-hover); }
+  :root[data-theme="light"] .ref-badge { color: var(--a-amber-hover); }
+  :root[data-theme="light"] .remediation-badge { color: var(--a-violet-hover); }
+
   /* Filter-by-type chips (added 2026-07-23). Toggle which kinds of study aid
      show in the grid; the active chip borrows each type's own accent
      (blue = all/guides, green = cram, amber = reference) to tie the control
