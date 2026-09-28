@@ -16,9 +16,10 @@ within a second of each other and the derived start times are unreliable. Order
 here is by duration and content, verified from the transcripts afterwards, not
 from mtime.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, subprocess, sys, time
 
-TOOL = "/Users/jaxonluke/Developer/PA_Quizzes/tools/lecture_transcript.py"
+TOOL = _REPO + "/tools/lecture_transcript.py"
 ASSETS = os.path.expanduser(
     "~/Library/Containers/com.gingerlabs.Notability/Data/Library/"
     "Application Support/local-persistence-collab-production/assets")

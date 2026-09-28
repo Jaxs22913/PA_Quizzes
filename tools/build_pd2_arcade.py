@@ -17,9 +17,10 @@ No bare abbreviations -- the standing rule is the full term, or ABBREVIATION
 (full term) on first use. Nothing about how the course works: no grade
 weightings, no file naming, no sequestration times.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 
 ICON_CR = '<path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h6"/>'
 ICON_MORPH = '<circle cx="8" cy="9" r="3"/><circle cx="16" cy="15" r="4"/><path d="M4 19h4"/>'

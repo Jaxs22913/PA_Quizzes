@@ -4,8 +4,9 @@
 Same AST byte-offset splice as apply_decite.py: option text repeats inside a
 pool, so a string replacement cannot tell two identical strings apart.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import ast, glob, os, sys
-TOOLS = "/Users/jaxonluke/Developer/PA_Quizzes/tools"
+TOOLS = _REPO + "/tools"
 tsv, APPLY = sys.argv[1], "--apply" in sys.argv
 
 want = {}

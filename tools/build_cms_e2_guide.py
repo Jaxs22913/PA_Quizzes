@@ -35,9 +35,10 @@ given. Use --out=PATH to write the build somewhere else for comparison. Only use
 --force after the builder has been brought back up to the page and a scratch
 build diffs clean against it.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-exam-2-study-guide.html")
 

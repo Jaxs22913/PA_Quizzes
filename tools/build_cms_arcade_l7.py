@@ -9,9 +9,10 @@ recognition pairs with compressed identity tags. Nothing here needs a picture,
 which matters because Arcade has no image support -- the recognition work lives
 in the guide's photograph strips and the comparison chart.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a magnifier over a small lesion
 ICON = ('<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.2 15.2 21 21"/>'
         '<circle cx="10.5" cy="10.5" r="2"/>')

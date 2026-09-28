@@ -33,10 +33,11 @@ lecture's photograph: barotrauma is taught in Lecture 15, but the only
 hemotympanum in either deck is Lecture 16 slide 59. The citation is derived
 from the filename prefix so it cannot drift from the file.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys, html as H
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-ophtho-comparison-chart.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-ent-comparison-chart.html")
 

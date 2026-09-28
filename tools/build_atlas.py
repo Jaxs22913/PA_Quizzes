@@ -14,10 +14,11 @@ drift from them. Two page formats are in the repo and both are handled:
 Grouping is lifted out of index.html so the atlas matches the homepage exactly
 rather than reimplementing the classification.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import html, json, os, re, sys
 from PIL import Image
 
-REPO = "/Users/jaxonluke/Developer/PA_Quizzes"
+REPO = _REPO
 EXAMS = {"anatomy-practicum-exam2": ("Anatomy Practicum Exam 2", "Practicum Exam 2"),
          "anatomy-practicum-exam3": ("Anatomy Practicum Exam 3", "Practicum Exam 3")}
 

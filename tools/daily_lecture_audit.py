@@ -34,9 +34,10 @@ reported on at all.
 
 Exit code 0 always; this is a report, not a gate.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, json, sys, datetime, sqlite3, shutil, tempfile
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 CAL = os.path.join(ROOT, "calendar-data.js")
 INBOX_ROOT = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2")
 NOTA = os.path.expanduser(

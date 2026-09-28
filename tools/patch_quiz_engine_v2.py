@@ -32,9 +32,10 @@ round-robins across objectives, then rebalances answer positions -- see
 pickOrder(). Below the objective count full coverage stops being possible and
 the sample just spreads as widely as it can.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import io, os, sys, hashlib, glob
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 TEMPLATE = os.path.join(ROOT, "tools/quiz-template/template.html")
 SEM2_DIRS = [
     "Clinical Medicine and Surgery I Exam 1", "Microbiology Exam 1",

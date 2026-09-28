@@ -10,9 +10,10 @@ Registers the deck in BOTH structures arcade.js keeps: the flat deck list and
 the class/exam grouping. A deck missing from the grouping is invisible in the
 app, which is exactly how two decks shipped broken earlier today.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 ICON = ('<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/>'
         '<circle cx="12" cy="12" r="2.5"/><path d="M12 2v2"/><path d="M12 20v2"/>')
 

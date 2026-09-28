@@ -25,9 +25,10 @@ Method. Two instruments, and they disagreed in a way worth recording:
 Idempotent: re-running is a no-op. Run it AFTER extend_cp_guide_l2.py, which
 regenerates the section and would otherwise drop the marks.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import io, sys, os
 
-G = "/Users/jaxonluke/Developer/PA_Quizzes/Clinical Pathophysiology I Exam 1/cp-exam-1-study-guide.html"
+G = _REPO + "/Clinical Pathophysiology I Exam 1/cp-exam-1-study-guide.html"
 
 def flag(label, body):
     return ('<div class="prof-flag"><span class="prof-flag-label">&#9733; %s</span>\n  %s</div>'

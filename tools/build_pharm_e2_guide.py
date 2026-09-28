@@ -19,13 +19,14 @@ drops "molecular" -- and [[guide_verbatim_io_rule]] says the syllabus wins.
 Deliberately NO data-audio-dir: the mp3s do not exist, and pointing at an empty
 audio folder broke read-aloud on iPad once already.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pharm_e2_guide_l5 as L5
 import _pharm_e2_guide_l6 as L6
 import _pharm_e2_guide_l7 as L7
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Pharmacology I Exam 1/pharm-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Pharmacology I Exam 2/pharm-exam-2-study-guide.html")
 

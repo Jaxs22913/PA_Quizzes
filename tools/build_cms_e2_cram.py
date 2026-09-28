@@ -22,9 +22,10 @@ given. Use --out=PATH to write the build somewhere else for comparison. Only use
 --force after the builder has been brought back up to the page and a scratch
 build diffs clean against it.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import sys, os, re
-sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
-sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools")
+sys.path.insert(0, _REPO + "/tools/cram-sheet-template")
+sys.path.insert(0, _REPO + "/tools")
 from render import render
 from cms_e2_ophtho_diff import DIFF, bucket
 
@@ -44,7 +45,7 @@ def names(key):
         out.append(n.upper())
     return " \u00b7 ".join(out)
 
-OUT = ("/Users/jaxonluke/Developer/PA_Quizzes/Clinical Medicine and Surgery I Exam 2/"
+OUT = (_REPO + "/Clinical Medicine and Surgery I Exam 2/"
        "cms-exam-2-cram-sheet.html")
 
 topics = [

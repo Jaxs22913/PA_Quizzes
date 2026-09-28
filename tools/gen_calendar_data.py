@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Emit calendar-data.js from the parsed academic-calendar events."""
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, re, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from parse_calendar import parse
@@ -20,7 +21,7 @@ EXPORT_PDF = _exports[-1] if _exports else None
 EXPORT_FROM = (min(e["date"] for e in parse_calendar_export.parse(EXPORT_PDF))
                if EXPORT_PDF else "9999-12-31")
 
-OUT = "/Users/jaxonluke/Developer/PA_Quizzes/calendar-data.js"
+OUT = _REPO + "/calendar-data.js"
 
 # Summer Semester 1 events before the Fall calendar's August page picks up.
 # Carried over from the list that used to be inlined in home.js so nothing is

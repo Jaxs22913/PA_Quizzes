@@ -5,11 +5,14 @@ Condensed from the exam's own guide. Two rows are not condensations of the deck
 but of Professor Reynolds' stated exam scope, because knowing what you do NOT
 have to memorize is worth as much the night before as any fact.
 """
+# WARNING: base builder only. Lectures 3-6 are appended by add_pdm_cram_l3_l4.py, add_pdm_cram_l5.py,
+# add_pdm_cram_l6.py (and later); running this alone TRUNCATES the live sheet (519 lines lost, 2026-09-28).
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import sys, os
-sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
+sys.path.insert(0, _REPO + "/tools/cram-sheet-template")
 from render import render
 
-OUT = "/Users/jaxonluke/Developer/PA_Quizzes/Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-cram-sheet.html"
+OUT = _REPO + "/Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-cram-sheet.html"
 
 topics = [
  {"id": "scope", "label": "How This Exam Is Written", "color": "#69406c", "rows": [

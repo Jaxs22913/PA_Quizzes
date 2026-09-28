@@ -37,10 +37,11 @@ Exam 2 chart's shades rotated to that hue with saturation and lightness
 untouched, which is the same recipe the three CMS charts were built on. See
 [[site_design_tokens]].
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys, colorsys, html as H
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 3/cms-ent-comparison-chart.html")
 OUT = os.path.join(ROOT, "Physical Diagnosis 2 Exam 1/pd2-ent-osce-chart.html")
 

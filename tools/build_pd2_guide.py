@@ -17,12 +17,13 @@ teach -- it assumes PD I. Those are answered here from the PD I material
 rather than skipped, with a pointer to the PD I guide that covers them at
 length.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from extract_pd2_derm_figures import figure_html
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
 OUT = os.path.join(ROOT, "Physical Diagnosis 2 Exam 1/pd2-exam-1-study-guide.html")
 

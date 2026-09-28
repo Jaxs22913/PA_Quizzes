@@ -16,11 +16,12 @@ the guide without teaching anything. What survives earns its place:
 Slide images are cleared for use provided the slide is cited, so each carries
 its deck and slide number. Every one was viewed before being captioned.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, shutil
 from PIL import Image
 
 SRC = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad/pdm_imgs"
-OUT = "/Users/jaxonluke/Developer/PA_Quizzes/Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-study-guide-images"
+OUT = _REPO + "/Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-study-guide-images"
 MAXW = 900
 
 FIGURES = [

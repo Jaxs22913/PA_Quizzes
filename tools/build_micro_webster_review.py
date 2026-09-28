@@ -41,10 +41,11 @@ Scope: Lectures 1, 2 and 5 only. Lectures 3, 4 and 6 are another lecturer's and
 she did not review them -- the page says so rather than leaving a silent gap,
 because a review guide that looks complete and is not is worse than none.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os
 import re
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Microbiology Exam 1/micro-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Microbiology Exam 1/micro-exam-1-webster-review.html")
 

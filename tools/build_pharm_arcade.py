@@ -14,9 +14,10 @@ compressed identity tag rather than an explanation.
 No dosages anywhere, per Dr. Wood. No bare abbreviations either -- the standing
 rule is to write the full term, or ABBREVIATION (full term) on first use.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 
 ICON_ABX = '<path d="M4 12a8 8 0 0 1 16 0"/><path d="M8 12v6M16 12v6"/><circle cx="12" cy="8" r="2"/>'
 ICON_AVR = '<path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="5"/>'

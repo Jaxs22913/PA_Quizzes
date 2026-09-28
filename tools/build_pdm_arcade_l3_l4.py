@@ -16,9 +16,10 @@ course, so the recognition work -- what an acanthocyte actually looks like --
 lives in the guide's 22 photographs. What is here is the verbal half: the name,
 the discriminating feature, and the disease.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a microscope over a slide
 ICON3 = ('<path d="M9 3h4v6H9z"/><path d="M11 9v5"/><circle cx="11" cy="16" r="3"/>'
          '<path d="M5 21h14"/><path d="M14 21a6 6 0 0 0-6-9"/>')

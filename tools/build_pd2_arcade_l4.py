@@ -14,9 +14,10 @@ rule most likely to be asked.
 House rules: no card may depend on having the deck open, and none may be about
 course mechanics -- this deck is unusually full of the latter.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a tuning fork
 ICON = ('<path d="M9 3v7a3 3 0 0 0 6 0V3"/><path d="M12 13v8"/>')
 

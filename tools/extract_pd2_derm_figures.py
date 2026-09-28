@@ -19,11 +19,12 @@ privacy judgment, not a licensing one, and it stands independently.
 Images are capped at 900 px wide and re-encoded as JPEG, which takes the set
 from 8.0 MB to something a study guide can actually load.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, shutil
 from PIL import Image
 
 SRC = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad/derm_imgs"
-OUT = "/Users/jaxonluke/Developer/PA_Quizzes/Physical Diagnosis 2 Exam 1/pd2-exam-1-study-guide-images"
+OUT = _REPO + "/Physical Diagnosis 2 Exam 1/pd2-exam-1-study-guide-images"
 MAXW = 900
 
 # (source file, output stem, slide, alt text, caption)

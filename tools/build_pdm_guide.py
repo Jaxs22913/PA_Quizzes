@@ -18,11 +18,12 @@ independent transcript: reference ranges are always supplied, predictive values
 are never calculated, and the tube objective means the order of draw and the
 common color-to-test pairings rather than the deck's exhaustive additive table.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from extract_pdm_figures import figure_html
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
 OUT = os.path.join(ROOT, "Principles of Diagnostic Medicine I Exam 1/pdm-exam-1-study-guide.html")
 IMGDIR = "pdm-exam-1-study-guide-images"

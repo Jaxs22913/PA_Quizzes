@@ -6,13 +6,14 @@ half a dozen wrapper signatures and guessing arg positions is how you corrupt
 one), then spliced by AST byte offset, because option text repeats and plain
 string replacement cannot tell two identical strings apart.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import ast, glob, importlib.util, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools")
+sys.path.insert(0, _REPO + "/tools")
 from decite import rewrite
 from check_pool_cites import CITES
 
-TOOLS = "/Users/jaxonluke/Developer/PA_Quizzes/tools"
+TOOLS = _REPO + "/tools"
 APPLY = "--apply" in sys.argv
 
 def stems_of(path, mod):

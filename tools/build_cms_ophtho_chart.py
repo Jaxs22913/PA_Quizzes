@@ -33,10 +33,11 @@ Jaquith described this exam as "pretty much all clinical vignettes ... recognize
 conditions by the vignette", and a vignette gives itself away in a handful of
 words. Every phrase there is language the DECK itself uses.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys, html as H
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 1/cms-derm-comparison-chart.html")
 OUT = os.path.join(ROOT, "Clinical Medicine and Surgery I Exam 2/cms-ophtho-comparison-chart.html")
 

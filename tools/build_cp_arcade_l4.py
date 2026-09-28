@@ -13,9 +13,10 @@ Arcade has no image support, so the recognition half -- what a detached retina
 or a drusen-covered macula actually looks like -- lives in the guide's four
 figures. What is here is the verbal half.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # an eye with a pupil
 ICON = ('<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/>'
         '<circle cx="12" cy="12" r="2.5"/>')

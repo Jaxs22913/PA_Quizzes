@@ -15,9 +15,10 @@ The two definitional thresholds that ARE carded -- three red cells for
 microscopic hematuria, four hours for the nitrite conversion -- are
 definitions and procedural intervals, not laboratory ranges.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a specimen cup with a fill line
 ICON6 = ('<path d="M6 6h12l-1.2 13a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8Z"/>'
          '<path d="M5 6h14"/><path d="M7.4 13h9.2"/>')

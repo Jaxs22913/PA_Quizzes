@@ -10,9 +10,10 @@ Scope note: this class is pathophysiology, so the guide stays on mechanism.
 No management, no treatment — see the clin_path_exam_spec memory for why that
 line matters against Clinical Medicine and Surgery I.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
 OUT = os.path.join(ROOT, "Clinical Pathophysiology I Exam 1/cp-exam-1-study-guide.html")
 IMGS = "cp-exam-1-study-guide-images"

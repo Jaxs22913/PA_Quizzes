@@ -9,9 +9,10 @@ this triple always names one explanation.
 
 TSV: pool <TAB> stem <TAB> option_index <TAB> new explanation
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import ast, os, sys
 
-TOOLS = "/Users/jaxonluke/Developer/PA_Quizzes/tools"
+TOOLS = _REPO + "/tools"
 tsv, APPLY = sys.argv[1], "--apply" in sys.argv
 
 rows = []

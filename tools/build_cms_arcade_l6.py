@@ -18,9 +18,10 @@ definitions column by text and Learn/Sprint exclude distractors equal to the
 correct answer. Distorting a fact so that no two cards share a value would be
 the wrong trade.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a spore with a hypha, for fungus
 ICON = ('<circle cx="8" cy="8" r="3.2"/><path d="M10.4 10.4C13 13 15 14 18 14"/>'
         '<path d="M13 11.6c.6 1.8.4 3.4-.6 4.8"/><circle cx="18.5" cy="14.2" r="1.6"/>')

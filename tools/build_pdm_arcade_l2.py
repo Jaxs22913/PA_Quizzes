@@ -13,9 +13,10 @@ which is exactly the context she said she always supplies.
 Nothing draws on slide 34, whose two-column structures table cannot be
 reconstructed from the file. Asserted.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a scanner gantry: a ring with the table passing through it
 ICON = ('<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/>'
         '<path d="M3 20h18"/>')

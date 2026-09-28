@@ -6,9 +6,10 @@ One deck for one topic, joining the existing Clin Path Exam 1 group.
 SCOPE: pathophysiology only, like the quizzes. Nothing here asks what you would
 do about a cancer -- only what is happening in the tissue and why.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # dividing cell: two nuclei separating inside a membrane
 ICON = ('<circle cx="12" cy="12" r="9"/><circle cx="9" cy="12" r="2.2"/>'
         '<circle cx="15" cy="12" r="2.2"/>')

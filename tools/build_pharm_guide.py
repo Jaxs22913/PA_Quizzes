@@ -15,9 +15,10 @@ renumbering.
 Deliberately NO data-audio-dir: the mp3s do not exist, and pointing at an empty
 audio folder is what broke read-aloud on iPad once already.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Microbiology Exam 1/micro-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Pharmacology I Exam 1/pharm-exam-1-study-guide.html")
 I = "pharm-exam-1-study-guide-images"

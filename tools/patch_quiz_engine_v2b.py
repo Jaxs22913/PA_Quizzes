@@ -17,9 +17,10 @@ Also fixes two things the subsetting work exposed:
   - the resume banner counted against the full bank, so a 10-question attempt
     read "Question 3 of 30"
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import io, os, sys, glob
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 TARGETS = [os.path.join(ROOT, "tools/quiz-template/template.html")]
 for d in ["Clinical Medicine and Surgery I Exam 1", "Microbiology Exam 1",
           "Pharmacology I Exam 1", "Physical Diagnosis 2 Exam 1",

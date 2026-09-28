@@ -10,9 +10,10 @@ predictive value. Nothing here reaches into the deck's exhaustive additive table
 either -- the tube cards stay on the order of draw and the four pairings she
 actually called out.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 ICON = '<path d="M9 3h6v5l4 9a3 3 0 0 1-3 4H8a3 3 0 0 1-3-4l4-9z"/><path d="M8 14h8"/>'
 
 DECKS = [

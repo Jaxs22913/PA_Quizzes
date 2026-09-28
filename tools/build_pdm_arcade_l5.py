@@ -16,9 +16,10 @@ reference ranges rather than asking anyone to recall them.
 THE ANION GAP IS THE EXCEPTION AND IS CARDED. It appears once, she said 8 to 12
 aloud, and it is a calculated threshold rather than a laboratory range.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a test tube with a level line
 ICON5 = ('<path d="M9 3h6"/><path d="M10 3v13a2 2 0 0 0 4 0V3"/><path d="M10 12h4"/>'
          '<circle cx="12" cy="15" r="1"/>')

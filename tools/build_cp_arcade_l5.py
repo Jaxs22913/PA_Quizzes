@@ -20,9 +20,10 @@ Arcade has no image support, so the recognition half -- what otitis externa or
 a nasal polyp looks like -- lives in the guide's eleven figures. This is the
 verbal half.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # an ear
 ICON = ('<path d="M6 9a6 6 0 1 1 12 0c0 2.5-1.5 3.5-2.5 4.5S14 15.5 14 17a3 3 0 0 1-6 0"/>'
         '<path d="M10 9a2 2 0 1 1 4 0c0 1-1 1.5-1.5 2.5"/>')

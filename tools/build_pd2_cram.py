@@ -10,11 +10,12 @@ Six topics rather than two, because the two lectures split naturally: the
 encounter and documentation on one side, and on the other the skin's structure,
 the descriptive vocabulary, the abnormal findings, and the technique.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import sys, os
-sys.path.insert(0, "/Users/jaxonluke/Developer/PA_Quizzes/tools/cram-sheet-template")
+sys.path.insert(0, _REPO + "/tools/cram-sheet-template")
 from render import render
 
-OUT = "/Users/jaxonluke/Developer/PA_Quizzes/Physical Diagnosis 2 Exam 1/pd2-exam-1-cram-sheet.html"
+OUT = _REPO + "/Physical Diagnosis 2 Exam 1/pd2-exam-1-cram-sheet.html"
 
 topics = [
  {"id": "encounter", "label": "The Encounter, Presentation & Documentation", "color": "#4a5c24",

@@ -19,9 +19,10 @@ section 9.5 and the cram sheet spell out.
 
 Everything is from the PowerPoint, not the lecture audio.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import json, os, re, sys
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 # a lesion under a dermatoscope's ring light, with an eye-catching irregular border
 ICON = ('<circle cx="12" cy="12" r="9"/>'
         '<path d="M9.2 9.4c1.6-1.5 4-1.3 5.2.4 1 1.5.3 3.6-1.4 4.4-1.9.9-4.2-.2-4.5-2"/>')

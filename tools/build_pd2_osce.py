@@ -29,9 +29,10 @@ in then.
 Each page stores its ticks under its own key so the three do not overwrite
 each other.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, html
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-head-to-toe-checksheet.html")
 OUTDIR = os.path.join(ROOT, "Physical Diagnosis 2 Exam 1")
 

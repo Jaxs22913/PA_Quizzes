@@ -8,9 +8,10 @@ a deck missing from the grouping is invisible in the app no matter how good it
 is. pdm-chemistry-panels and cp-ophthalmic-pathophys were both in that state.
 This script is idempotent and asserts every deck it touches ends up in both.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ARCADE = "/Users/jaxonluke/Developer/PA_Quizzes/arcade.js"
+ARCADE = _REPO + "/arcade.js"
 ICON = ('<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/>'
         '<circle cx="12" cy="12" r="2.5"/><path d="M4 4l16 16"/>')
 

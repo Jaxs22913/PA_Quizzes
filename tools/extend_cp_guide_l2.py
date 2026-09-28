@@ -14,9 +14,10 @@ Scope note: this material is also taught in Clinical Medicine and Surgery I this
 term. Everything here stays on mechanism -- what is happening in the tissue and
 why. Diagnosis and management belong to the other course.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-G = "/Users/jaxonluke/Developer/PA_Quizzes/Clinical Pathophysiology I Exam 1/cp-exam-1-study-guide.html"
+G = _REPO + "/Clinical Pathophysiology I Exam 1/cp-exam-1-study-guide.html"
 I = "cp-exam-1-study-guide-images"
 
 FIG_SKIN = ('<figure class="fig"><img width="800" height="558" loading="lazy" src="%s/010.jpg" '

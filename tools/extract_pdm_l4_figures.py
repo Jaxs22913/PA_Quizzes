@@ -26,12 +26,13 @@ its deck and slide number. Every one was viewed at full size before captioning.
 NOT loading="lazy": a lazy figure is absent from the guide's own Download-as-PDF
 unless the reader happened to scroll past it.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, shutil
 from PIL import Image, PngImagePlugin
 
 PngImagePlugin.MAX_TEXT_CHUNK = 100 * 1024 * 1024
 SRC = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad/pdm_l4_imgs"
-OUT = ("/Users/jaxonluke/Developer/PA_Quizzes/Principles of Diagnostic Medicine I Exam 1/"
+OUT = (_REPO + "/Principles of Diagnostic Medicine I Exam 1/"
        "pdm-exam-1-l4-images")
 MAXW = 900
 DECK = "Complete Blood Count and Hematology Diagnostics - Shahsv.pptx"

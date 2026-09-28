@@ -19,11 +19,12 @@ from the guide's own Download-as-PDF unless the reader happened to scroll past
 it. theme.js now warms lazy images before printing, so the old ones are covered
 too, but new figures do not need the crutch.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, shutil
 from PIL import Image
 
 SRC = "/private/tmp/claude-501/-Users-jaxonluke/8623a091-045a-42b8-8052-ca7d2eb04188/scratchpad/pdm_l2_imgs"
-OUT = ("/Users/jaxonluke/Developer/PA_Quizzes/Principles of Diagnostic Medicine I Exam 1/"
+OUT = (_REPO + "/Principles of Diagnostic Medicine I Exam 1/"
        "pdm-exam-1-l2-images")
 MAXW = 900
 DECK = "2. svPrinciples of Medical Imaging.pptx"

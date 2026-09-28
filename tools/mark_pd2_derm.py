@@ -23,10 +23,11 @@ identical site-wide.
 
 Idempotent.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import io, os, sys
 
-G = "/Users/jaxonluke/Developer/PA_Quizzes/Physical Diagnosis 2 Exam 1/pd2-exam-1-study-guide.html"
-PHARM = "/Users/jaxonluke/Developer/PA_Quizzes/tools/build_pharm_guide.py"
+G = _REPO + "/Physical Diagnosis 2 Exam 1/pd2-exam-1-study-guide.html"
+PHARM = _REPO + "/tools/build_pharm_guide.py"
 
 
 def flag(label, body):

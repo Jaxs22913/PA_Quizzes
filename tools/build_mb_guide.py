@@ -7,9 +7,10 @@ green identity used by this class's quizzes.
 Thirteen objectives — the guide is organized by them in order, which is what
 makes a lecture this broad navigable at all.
 """
+_REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re
 
-ROOT = "/Users/jaxonluke/Developer/PA_Quizzes"
+ROOT = _REPO
 DONOR = os.path.join(ROOT, "Physical Diagnosis 1 Exam 3/pd1-exam3-study-guide.html")
 OUT = os.path.join(ROOT, "Microbiology Exam 1/micro-exam-1-study-guide.html")
 I = "micro-exam-1-study-guide-images"
