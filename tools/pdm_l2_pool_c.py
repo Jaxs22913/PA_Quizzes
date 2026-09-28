@@ -203,10 +203,10 @@ POOL_C = [
    c=0, cite=c(50)),
 
  dict(topic="Contrast media", io=IOG, slot="complication",
-   q="Why is cancer a risk factor for all contrast material?",
+   q="Why does a contrast-enhanced x-ray study carry a cancer risk?",
    opts=[
-     ["Because the dyes are technically radioactive, as are the imaging techniques themselves",
-      "Correct — the cancer risk attaches to the ionizing radiation of the contrast-enhanced studies rather than to a pharmacological effect of the dye. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."],
+     ["Because the imaging technique itself uses ionizing radiation",
+      "Correct — the cancer risk attaches to the ionizing radiation of the x-ray-based study rather than to the dye. Iodinated and gadolinium agents are not radioactive; only nuclear medicine tracers such as technetium-99 are."],
      ["Because the dyes are nephrotoxic, and chronic renal injury raises malignancy risk over time",
       "Nephrotoxicity is a real risk of iodinated contrast, but it is not the reason given."],
      ["Because the dyes are retained in tissue indefinitely, and retained foreign material transforms",
@@ -231,8 +231,8 @@ POOL_C = [
  dict(topic="Contrast media", io=IOG, slot="agent/regimen",
    q="Which agent is used for intravenous contrast in computed tomography?",
    opts=[
-     ["Omnipaque (iohexol), a radioactive form of iodine given into the vein",
-      "Correct — intravenous Omnipaque (iohexol) is the computed tomography contrast agent; it is nephrotoxic, so urea nitrogen and creatinine are checked first. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are."],
+     ["Omnipaque (iohexol), a radiopaque iodine agent given into the vein",
+      "Correct — intravenous Omnipaque (iohexol) is the computed tomography contrast agent. Its iodine makes it radiopaque, not radioactive: only nuclear medicine tracers such as technetium-99 are radioactive. It is nephrotoxic, so urea nitrogen and creatinine are checked first."],
      ["Visipaque (iodixanol), a barium salt suspension given into the vein",
       "Iodixanol is iodinated and iso-osmolal; barium is enteral and never intravenous."],
      ["Gadolinium, a paramagnetic metal chelate given into the vein",

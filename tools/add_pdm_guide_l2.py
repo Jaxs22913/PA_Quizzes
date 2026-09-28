@@ -198,11 +198,11 @@ BODY_TMPL = '''<section class="deck" id="medical-imaging">
   inflammation, increased blood flow and increased cellular or metabolic activity, and outlines
   luminal structures when given by mouth or as an enema. It can be injected into joints
   (arthrogram), into the central nervous system (intrathecal) and into the bladder (retrograde
-  pyelogram). Because the dyes are technically radioactive, the deck names <b>cancer as a risk
-  factor for all contrast material</b>. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</p>
+  pyelogram). The deck calls the dyes &ldquo;technically radioactive&rdquo; and names cancer as a risk
+  factor for all contrast material. <b>That is not accurate:</b> iodinated and gadolinium agents are radiopaque, not radioactive, and are not carcinogenic themselves. The cancer risk of a contrast study comes from the <b>ionizing radiation of the x-ray-based technique</b> (radiography, fluoroscopy, computed tomography); only nuclear medicine tracers such as technetium-99 are radioactive.</p>
   <table>
     <tr><th>Study</th><th>Agent</th><th>Before you give it</th><th>Watch for</th></tr>
-    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; a radioactive form of iodine. Note that iodinated and gadolinium agents are not themselves radioactive; only nuclear medicine tracers such as technetium-99 are.</td><td><b>Check blood urea nitrogen and creatinine</b>; give one liter of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumor delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
+    <tr><td>Computed tomography, intravenous</td><td>Omnipaque (iohexol) &mdash; an iodinated agent, radiopaque rather than radioactive (the slide&rsquo;s &ldquo;radioactive form of iodine&rdquo; is an error; only nuclear medicine tracers are radioactive).</td><td><b>Check blood urea nitrogen and creatinine</b>; give one liter of normal saline to protect the kidneys</td><td>Nephrotoxicity. Indicated for inflammation, cancer staging, tumor delineation, vasculopathy, emboli, thrombi, stenosis, aneurysm</td></tr>
     <tr><td>Angiography</td><td>Iohexol arterially, lower concentration than for intravenous computed tomography; iso-osmolal iodixanol (Visipaque) believed safer</td><td>Same renal checks</td><td>Same iodinated risks</td></tr>
     <tr><td>Computed tomography, oral</td><td>Barium, or Gastrografin</td><td><b>Barium is contraindicated if perforation is suspected</b> &mdash; use Gastrografin</td><td>Barium is toxic to extra-intestinal tissue and causes alkaline burns. Unpleasant taste</td></tr>
     <tr><td>Fluoroscopy swallow study</td><td>Oral barium, with sequential films</td><td>Same perforation caveat</td><td>Same</td></tr>
