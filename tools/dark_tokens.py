@@ -26,6 +26,11 @@ Neutrals are the site's existing dark tokens (home.css / theme.css): page
 #0f1115, card #191c22, line #2a2e37, ink #e5e7eb, muted #9aa1ac, and
 Progress/Review's dark green/crimson for right/wrong.
 
+Kinds: quiz, guide, cram, chart (the --c-* comparison charts) and ref (the
+older Pharmacology I reference sheets: --ink/--body/--paper/--navy/--indigo/
+--ice, .hero, .toc, .scroll tables; added 2026-09-28, which also repairs their
+light-mode contrast and the gram-coverage page's undefined filter variables).
+
 Scope: Semester 2+ only. Semester 1 is frozen and stays on the filter.
 Idempotent; re-run after any quiz render, guide build or cram build:
 
@@ -43,7 +48,7 @@ FROZEN = ("Anatomy Exam", "Anatomy Practicum Exam", "CAM Nutrition Exam",
           "Physical Diagnosis 1 Exam", "Physiology Exam")
 # Page kinds rolled out so far. Each kind needs its component rules in
 # theme.css ("DESIGNED DARK MODE" block) before it is switched on here.
-KINDS = ("quiz", "guide", "cram", "chart")
+KINDS = ("quiz", "guide", "cram", "chart", "ref")
 # Pages that ship their own bespoke component set the theme.css block does not
 # cover; they keep the invert filter until someone maps their components.
 EXCLUDE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
@@ -212,6 +217,80 @@ def chart_tokens(v):
             t["c-gv-b"] = lift(v["c-gv-b"], gv)
     return t
 
+_RULE = re.compile(r"([^{}]+)\{([^{}]*)\}")
+
+def ref_tokens(v):
+    """Pharmacology I reference sheets (the older hand-built template: --ink
+    --body --muted --line --paper --card --navy --indigo --gold --ice, .hero,
+    .toc, .scroll tables). Same recipe as the quiz kind, on the same variable
+    names, so the page's own CSS goes dark by itself once the variables move.
+    --navy and --indigo become TEXT/accent values; anything that uses them as a
+    FILL under white text (the table header) is re-pointed at the -l partner
+    in ref_rules()."""
+    ice = soft(hue_of(v["indigo"]))
+    return {
+        "navy-l": v["navy"], "indigo-l": fill(v["indigo"], v["navy"]),
+        "navy": lift(v["navy"], ice, 7.0), "indigo": lift(v["indigo"], ice),
+        "gold": v["gold"], "ice": ice,
+        "ink": INK, "body": INK, "muted": MUTED, "line": LINE, "paper": PAGE, "card": CARD,
+        "shadow": "0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35)",
+    }
+
+INLINE_FG = re.compile(r'style="[^"]*?(?<![-\w])color:\s*(#[0-9a-fA-F]{6})')
+
+def ref_rules(s):
+    """Rules a reference sheet needs beyond its variables.
+
+    Both themes: the gram-coverage sheet's filter buttons read --acc, --c-line,
+    --c-btn-bg, --c-fg and --c-mute, which that page never defines (the active
+    button was white text on nothing); define them from the page's own palette.
+    thead th.dn / th.sl (header cells that also carry the body-cell classes) were ink / grey on navy, 1.79:1; header text is always white.
+    Dark only: the table header keeps its LIGHT navy fill, zebra rows and the
+    contraindication tints (hard-coded light in the page CSS) go dark, and any
+    dark-on-white text colour set inline is lifted with the site recipe."""
+    both = ('body[data-dark="tokens"]{--acc:var(--indigo);--c-line:var(--line);--c-btn-bg:var(--card);'
+            '--c-fg:var(--ink);--c-mute:var(--muted)}'
+            'body[data-dark="tokens"] thead th{color:#fff}')
+    # a fill under white text (the gram key's olive "moderate" cell was 4.46:1):
+    # white-on-fill must clear 4.5:1 in BOTH themes, so solve it once for both
+    css = re.sub(r"/\*.*?\*/", "", "".join(re.findall(r"<style[^>]*>(.*?)</style>", s, re.S)), flags=re.S)
+    for sel, decl in _RULE.findall(css):
+        sel = sel.strip()
+        bg = _BG.search(decl)
+        if (bg and re.search(r"(?<![-\w])color\s*:\s*#fff(?:fff)?\b", decl)
+                and "data-theme" not in sel and not sel.startswith("@") and "{" not in sel):
+            f = darken_to(bg.group(1), "#ffffff")
+            if f != bg.group(1):
+                both += "".join('body[data-dark="tokens"] %s{background:%s}' % (one.strip(), f) for one in sel.split(","))
+    pre = ':root[data-theme="dark"] body[data-dark="tokens"] '
+    red = soft(hue_of("#b3261e"))
+    rules = [
+        "thead th{background:var(--navy-l)}",
+        "tbody tr:nth-child(even){background:%s}" % ZEBRA,
+        "tr.t-abs td,tr.t-bbw td,tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:%s}" % red,
+        ".note{border-color:%s}" % LINE,
+        ".note.warn{background:%s;border-color:#5a2a2c}" % red,
+        ".gf.on{background:var(--indigo-l);border-color:var(--indigo-l)}",
+    ]
+    for h in sorted(set(INLINE_FG.findall(s))):
+        if contrast(hex_rgb(h), hex_rgb(ZEBRA)) < 4.5:
+            rules.append('[style*="color:%s"]{color:%s!important}' % (h, lift(h, ZEBRA)))
+    # per-card colour set as an inline custom property (--cc, --rc: the group
+    # cards' heading text and left border). Lifted only when the stylesheet
+    # uses it as text/border and never as a fill, so no white-on-fill pair breaks.
+    css = re.sub(r"/\*.*?\*/", "", "".join(re.findall(r"<style[^>]*>(.*?)</style>", s, re.S)), flags=re.S)
+    for name, h in sorted(set(re.findall(r'style="[^"]*?--([\w-]+):\s*(#[0-9a-fA-F]{6})', s))):
+        uses = [(prop, val) for _sel, body in _RULE.findall(css) for prop, val in re.findall(r"([\w-]+)\s*:\s*([^;]*)", body)
+                if "var(--%s)" % name in val]
+        if uses and all(prop == "color" or prop.startswith("border") for prop, _ in uses) \
+                and contrast(hex_rgb(h), hex_rgb(CARD)) < 4.5:
+            rules.append('[style*="--%s:%s"]{--%s:%s!important}' % (name, h, name, lift(h, CARD)))
+    def scoped(rule):
+        # every selector of a comma list needs the dark prefix, not just the first
+        sel, _, decl = rule.partition("{")
+        return ",".join(pre + x.strip() for x in sel.split(",")) + "{" + decl
+    return both + "".join(scoped(r) for r in rules)
+
 _COLOR = re.compile(r"(?<![-\w])color\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b")
 
 def fixed_text_rules(s):
@@ -261,6 +340,9 @@ def classify(s):
         return "cram"
     if "--c-panel" in s and "--acc:" in first_root_block(s):
         return "chart"
+    root = first_root_block(s)
+    if 'class="hero"' in s and all(("--%s:" % n) in root for n in ("body", "paper", "navy", "indigo", "ice")):
+        return "ref"
     return None
 
 def tokens_for(kind, s):
@@ -278,6 +360,9 @@ def tokens_for(kind, s):
     if kind == "chart":
         v = {m.group(1): m.group(2) for m in re.finditer(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{3,6})\b", root)}
         return chart_tokens(v) if "acc" in v else None
+    if kind == "ref":
+        v = {n: get(n) for n in ("navy", "indigo", "gold", "ice")}
+        return ref_tokens(v) if all(v.values()) else None
 
 BOOT = ("<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme')"
         " || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>")
@@ -322,7 +407,6 @@ def darken_to(hexc, bg, target=LIGHT_TARGET):
     L, C, H = rgb_oklch(hex_rgb(hexc))
     return solve(H, bg, target, cmax=C)
 
-_RULE = re.compile(r"([^{}]+)\{([^{}]*)\}")
 _BG = re.compile(r"background(?:-color)?\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b")
 
 def light_surfaces(s):
@@ -392,6 +476,15 @@ def light_tokens(kind, s):
             ink = darken_to(v["acc-ink"], ground)
             if ink != v["acc-ink"]:
                 rules.append('#%s{--acc-ink:%s!important}' % (tid, ink))
+    elif kind == "ref":
+        # muted grey text sat at 4.33-4.46:1 on the zebra row and the tints
+        if get("muted"):
+            tok["muted"] = darken_to(get("muted"), worst)
+        # dark-on-light text colours set inline (a gold TOC chip was 3.25:1)
+        for h in sorted(set(INLINE_FG.findall(s))):
+            t = darken_to(h, worst)
+            if t != h:
+                rules.append('[style*="color:%s"]{color:%s!important}' % (h, t))
     body = "".join("--%s:%s;" % kv for kv in tok.items())
     head = (':root[data-theme="light"] body[data-dark="tokens"]{%s}' % body) if body else ""
     return head + "".join(pre + r for r in rules)
@@ -411,7 +504,8 @@ def apply(s, kind=None):
         return s
     s = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", "", s, flags=re.S)
     extra = ((cram_topic_rules(s) if kind == "cram" else "")
-             + (fixed_text_rules(s) if kind == "chart" else "")
+             + (fixed_text_rules(s) if kind in ("chart", "ref") else "")
+             + (ref_rules(s) if kind == "ref" else "")
              + light_tokens(kind, s))
     s = s.replace("</head>", block(tok, extra) + "\n</head>", 1)
     # Every page needs the one-line theme bootstrap before first paint;
