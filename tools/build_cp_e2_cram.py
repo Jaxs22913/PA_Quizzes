@@ -72,7 +72,7 @@ T = [
  {"id": "l6-myo", "label": "L6 · Infective, Myocardial & Pericardial", "color": "#5a3a6e", "rows": [
   ("Rheumatic heart disease", "After GROUP A BETA-HEMOLYTIC STREPTOCOCCUS. IMMUNE attack by CROSS-REACTIVITY; HLA (human leukocyte antigen) predisposition. All layers → carditis. Valves: swelling, erosions, platelets + fibrin, then SCARRING and SHORTENING."),
   ("Infective endocarditis", "Invasion + colonization of endocardium; BLOODSTREAM INVASION is a prerequisite. VEGETATIONS = organisms in FIBRIN → dysfunction + EMBOLI. Commonest: Streptococcus, Staphylococcus aureus."),
-  ("Subacute endocarditis", "Insidious; needs a PREEXISTING valve lesion. LESS VIRULENT organisms (slide lists S. aureus, Streptococcus, Candida) cannot attack a healthy endocardium. (Textbook generally pairs S. aureus with the acute form.)"),
+  ("Subacute endocarditis", "Insidious; needs a PREEXISTING valve lesion. LESS VIRULENT organisms (typically Streptococcus) cannot attack a healthy endocardium. S. aureus is ACUTE, not subacute (the slide lists it here; Robbins pairs it with the acute form)."),
   ("Myocarditis", "Inflammation + leukocyte infiltration + necrosis. Microbes, immune disease, physical agents; COXSACKIEVIRUS most common in North America. Left ventricular dysfunction, ALL FOUR chambers dilated, edematous muscle, endocardium usually NORMAL."),
   ("Dilated cardiomyopathy", "Also 'congested'. Dilation of one or both ventricles → failure. ALCOHOL · GENETICS · PREGNANCY · POST-VIRAL."),
   ("Hypertrophic cardiomyopathy", "Thick, HYPERKINETIC muscle. OUTFLOW OBSTRUCTION + impaired DIASTOLIC FILLING."),
