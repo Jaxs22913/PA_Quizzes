@@ -119,6 +119,7 @@ SCOPE_BANNED = [
     r"aortic (valve )?leaflet[^.?;]{0,60}flutter|flutter[^.?;]{0,60}aortic (valve )?leaflet",  # E3: never key the struck "aortic leaflet"
     r"no treatment (is )?required",                           # s64 / I1
     r"almost always congenital[^.?;]{0,60}regurg|regurg[^.?;]{0,60}almost always congenital",
+    r"(congenital|congenital disease)[^.?;]{0,40}(in the )?united states|united states[^.?;]{0,80}congenital",  # slide 65 "In US almost always congenital" (tricuspid stenosis): not accurate, 2026-09-28
     r"\b55\b|(mechanical|transcatheter|bioprosthetic|biological)[^.?;]{0,80}\b(younger|older|under|over) (than )?70\b",  # I2
     r"valsalva[^.?;]{0,90}mitral stenosis|mitral stenosis[^.?;]{0,90}valsalva",               # s38
     r"(mild|moderate)[^.?;]{0,40}mitral stenosis[^.?;]{0,60}(cm|mmHg|m/s)",                    # s40

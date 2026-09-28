@@ -419,7 +419,7 @@ S(T_MVP, IO_MVP,
    ["Aortic stenosis",
     "Aortic stenosis is degenerative or bicuspid, and unrelated to prolapse of the mitral leaflets. Prolapse may progress to mitral regurgitation."],
    ["Tricuspid stenosis",
-    "Tricuspid stenosis is rheumatic worldwide and congenital in the United States. Mitral valve prolapse may progress to mitral regurgitation."]],
+    "Tricuspid stenosis is mostly rheumatic, with carcinoid disease another cause. Mitral valve prolapse may progress to mitral regurgitation."]],
   C(54), "complication"),
 
 S(T_MVP, IO_MVP,

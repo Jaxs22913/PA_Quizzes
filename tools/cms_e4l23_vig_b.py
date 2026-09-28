@@ -290,7 +290,7 @@ V(T_MVP, IO_MVP,
    ["Aortic stenosis",
     "Aortic stenosis is degenerative in older adults or from a bicuspid valve. Mitral valve prolapse progresses to mitral regurgitation."],
    ["Tricuspid stenosis",
-    "Tricuspid stenosis is mainly rheumatic worldwide and congenital in the United States. Mitral valve prolapse may progress to mitral regurgitation."]],
+    "Tricuspid stenosis is mainly rheumatic, with carcinoid disease another cause. Mitral valve prolapse may progress to mitral regurgitation."]],
   C(54, 45), "complication", "complication"),
 
 V(T_MVP, IO_MVP,
