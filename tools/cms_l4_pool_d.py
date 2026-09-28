@@ -161,7 +161,7 @@ POOL_D = [
    q="A patient with folliculitis has not responded to a topical antibiotic and the infection is now extensive. Which oral agents apply?",
    opts=[
      ["Cephalexin or dicloxacillin",
-      "Correct — trimethoprim-sulfamethoxazole, ciprofloxacin or linezolid if resistance is suspected."],
+      "Correct — trimethoprim-sulfamethoxazole, clindamycin, doxycycline or linezolid if resistance is suspected."],
      ["Penicillin V or amoxicillin",
       "Those are not the agents named for extensive folliculitis."],
      ["Erythromycin or clarithromycin",

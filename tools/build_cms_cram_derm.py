@@ -87,7 +87,7 @@ TOPICS = [
    ("Chronic paronychia", "At least 6 weeks. Irritant/allergen reaction, CANDIDA commonest. Keep hands dry + topical antifungal; fluconazole if severe."),
    ("Necrotizing fasciitis", "UNRELENTING PAIN OUT OF PROPORTION. No response at 48 h. Area later goes NUMB (nerves destroyed) — that is progression. Tests must NOT delay debridement."),
    ("Gas on imaging", "Clostridium perfringens produces gas; Group A strep does NOT."),
-   ("MRSA orals", "Trimethoprim-sulfamethoxazole · clindamycin · doxycycline (+ linezolid, ciprofloxacin in places). Sensitive = dicloxacillin, cephalexin."),
+   ("MRSA orals", "Trimethoprim-sulfamethoxazole · clindamycin · doxycycline (+ linezolid; the slide&rsquo;s ciprofloxacin is not reliable for MRSA). Sensitive = dicloxacillin, cephalexin."),
    ("Primary vs secondary", "Primary = previously normal skin (impetigo through a cut). Secondary = skin already damaged (impetigo invading eczema)."),
  ]),
  ("infestations-1", "Scabies, Lice, Bites & Stings", "#1d6b53", "#dfeae7", "#eff5f3", "#175341", [

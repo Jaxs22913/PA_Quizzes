@@ -163,14 +163,14 @@ POOL_A = [
  dict(topic="Folliculitis", io=IOB,
    q="A 45-year-old man with diabetes has extensive folliculitis and a culture growing methicillin-resistant Staphylococcus aureus. Which oral options are appropriate?",
    opts=[
-     ["Trimethoprim-sulfamethoxazole, ciprofloxacin or linezolid",
-      "Correct. Cephalexin and dicloxacillin cover the methicillin-sensitive organism."],
+     ["Trimethoprim-sulfamethoxazole, clindamycin or linezolid",
+      "Correct. These, with doxycycline, are the oral options for methicillin-resistant Staphylococcus aureus; cephalexin and dicloxacillin cover only the methicillin-sensitive organism."],
      ["Cephalexin, dicloxacillin or amoxicillin-clavulanate",
       "Those cover the sensitive organism rather than this one."],
      ["Penicillin V, erythromycin base or clarithromycin",
       "Those are used for erysipelas and erythrasma."],
-     ["Doxycycline, minocycline or sarecycline for acne",
-      "Those are the oral tetracyclines used in acne vulgaris."]],
+     ["Ciprofloxacin, levofloxacin or moxifloxacin",
+      "Fluoroquinolones are not reliable against methicillin-resistant Staphylococcus aureus, where resistance is common; the oral options are trimethoprim-sulfamethoxazole, clindamycin, doxycycline or linezolid."]],
    c=0, cite=c(47)),
 
  dict(topic="Pseudomonas folliculitis", io=IOA,

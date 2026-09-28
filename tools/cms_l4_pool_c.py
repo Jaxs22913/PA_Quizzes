@@ -409,7 +409,7 @@ POOL_C = [
    q="Which trait is shared by the oral agents used for methicillin-resistant Staphylococcus aureus skin infection?",
    opts=[
      ["Trimethoprim-sulfamethoxazole, clindamycin and doxycycline recur as the core options",
-      "Correct, with linezolid and ciprofloxacin added in particular settings."],
+      "Correct, with linezolid added in particular settings; fluoroquinolones such as ciprofloxacin are not reliable against it."],
      ["Dicloxacillin, cephalexin and amoxicillin-clavulanate recur as the core options",
       "Those are the agents for methicillin-sensitive disease."],
      ["Penicillin V, erythromycin and clarithromycin recur as the core options",
