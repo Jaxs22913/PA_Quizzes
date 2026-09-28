@@ -19,10 +19,15 @@ HIS STATED CORRECTIONS WIN over the slide (the one exception to "the slide wins"
 UNKEYED (Jaxon may override later -- each is one SCOPE_BANNED line below):
   E3  slide 29   which leaflet flutters on echo. Carter struck "anterior mitral
                  leaflet" and said aortic; the textbook (and his own first answer)
-                 says mitral. Key neither.
+                 says mitral. 2026-09-28 "If it conflicts do what is true": the
+                 anterior MITRAL leaflet is taught (explanations, guide); the
+                 struck "aortic leaflet" version is the banned line below.
   I1  slide 64   pulmonic regurgitation "Almost always congenital, no treatment
                  required" -- the most common cause is IATROGENIC (slide 61, said
-                 three times). "Pulmonary hypertension is our number one cause"
+                 three times). True for SIGNIFICANT regurgitation (after outflow
+                 tract surgery); overall, mild regurgitation from pulmonary
+                 hypertension is commoner (Merck Manual), so every item says
+                 "significant" (2026-09-28 truth rule). "Pulmonary hypertension is our number one cause"
                  (spoken, overridden by him 40 s later) is never keyed either.
   I2  slide 74   valve type by age ("TAVR/TMVR ... <55", "Mechanical ... <70") --
                  contradicts what he taught in part 1. Only what both agree on is
@@ -111,7 +116,7 @@ SCOPE_BANNED = [
     r"suffusion",                                             # C3
     r"low[- ]flow|low[- ]gradient|pseudo[- ]?severe",         # C4
     r"dobutamine",                                            # s31 deck error
-    r"flutter",                                               # E3 leaflet (see the note below)
+    r"aortic (valve )?leaflet[^.?;]{0,60}flutter|flutter[^.?;]{0,60}aortic (valve )?leaflet",  # E3: never key the struck "aortic leaflet"
     r"no treatment (is )?required",                           # s64 / I1
     r"almost always congenital[^.?;]{0,60}regurg|regurg[^.?;]{0,60}almost always congenital",
     r"\b55\b|(mechanical|transcatheter|bioprosthetic|biological)[^.?;]{0,80}\b(younger|older|under|over) (than )?70\b",  # I2
@@ -126,8 +131,8 @@ SCOPE_BANNED = [
 ]
 
 # The tricuspid stenosis symptom on slide 67 is "fluttering discomfort in neck".
-# It is written in questions as "a quivering discomfort in the neck" so the E3
-# guard (r"flutter") can stay a blunt instrument.
+# It is written in questions as "a quivering discomfort in the neck", so no
+# flutter wording can be mistaken for the E3 leaflet line.
 
 # Named findings in vignette stems carry their description in parentheses.
 NAMED = {

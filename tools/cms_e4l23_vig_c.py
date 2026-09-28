@@ -7,9 +7,10 @@ KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
 The "lesser valves" get the same share as the aortic and mitral lesions: "you
 will just as likely have a tricuspid valve question as you will an aortic valve
 question." Scope (cms_e4l23_scope.py): no pulmonic or tricuspid stenosis
-grading (slides 58 and 68 tables); the most common cause of pulmonic
-regurgitation is iatrogenic, and slide 64's "almost always congenital" is not
-keyed; tricuspid stenosis inflow is right atrium to right ventricle (slide 66,
+grading (slides 58 and 68 tables); the most common cause of SIGNIFICANT
+pulmonic regurgitation is iatrogenic (every item says "significant": overall,
+mild regurgitation from pulmonary hypertension is commoner), and slide 64's
+"almost always congenital" is not keyed; tricuspid stenosis inflow is right atrium to right ventricle (slide 66,
 not slide 65's "from the LA"); no suffusion sign; the slide 67 neck symptom is
 written "quivering discomfort in the neck"; mild-to-moderate tricuspid
 stenosis management is left unasked (slide 69's empty heading).
@@ -131,7 +132,7 @@ V(T_PS, IO_PS,
 V(T_PR, IO_PR,
   "A 28-year-old man had a surgical valvuloplasty as a child to relieve right ventricular outflow obstruction. He now has a brief, high-pitched decrescendo early diastolic murmur at the second left intercostal space that radiates toward the mid right sternal border with full inspiration. Which is the most likely diagnosis?",
   [["Pulmonic regurgitation",
-    "Correct. A brief, high-pitched early diastolic murmur at the second left intercostal space with inspiratory radiation (the Graham Steell murmur) is pulmonic regurgitation, and surgery on the right ventricular outflow tract is its most common cause."],
+    "Correct. A brief, high-pitched early diastolic murmur at the second left intercostal space with inspiratory radiation (the Graham Steell murmur) is pulmonic regurgitation, and surgery on the right ventricular outflow tract is the most common cause of significant regurgitation."],
    ["Pulmonic stenosis",
     "Pulmonic stenosis is at the left upper sternal border too, but it is a harsh mid-systolic ejection murmur. This murmur is early diastolic, which is regurgitation."],
    ["Aortic regurgitation",
@@ -143,13 +144,13 @@ V(T_PR, IO_PR,
 V(T_PR, IO_PR,
   "A 24-year-old woman has an early diastolic murmur at the second left intercostal space from pulmonic regurgitation. Her history includes a balloon valvuloplasty at age 6 for right ventricular outflow obstruction. Which is the most likely cause of her regurgitation?",
   [["Her prior valvuloplasty",
-    "Correct. Iatrogenic regurgitation, after surgical valvotomy, valvectomy or valvuloplasty to reduce right ventricular outflow tract obstruction, is the most common cause of pulmonic regurgitation."],
+    "Correct. Iatrogenic regurgitation, after surgical valvotomy, valvectomy or valvuloplasty to reduce right ventricular outflow tract obstruction, is the most common cause of significant pulmonic regurgitation."],
    ["Carcinoid disease",
-    "Carcinoid disease is a low-pressure cause of pulmonic regurgitation, but nothing in her history suggests it. Her prior valvuloplasty is the most common cause overall."],
+    "Carcinoid disease is a low-pressure cause of pulmonic regurgitation, but nothing in her history suggests it. Her prior valvuloplasty is the most common cause of significant regurgitation."],
    ["Rheumatic heart disease",
     "Rheumatic heart disease is the leading cause of mitral stenosis and, worldwide, of tricuspid stenosis. Her pulmonic regurgitation follows her prior valvuloplasty."],
    ["Myxomatous degeneration",
-    "Myxomatous degeneration causes mitral valve prolapse. The most common cause of pulmonic regurgitation is iatrogenic, as after her valvuloplasty."]],
+    "Myxomatous degeneration causes mitral valve prolapse. The most common cause of significant pulmonic regurgitation is iatrogenic, as after her valvuloplasty."]],
   C(61), "etiology", "diagnosis"),
 
 V(T_PR, IO_PR,
@@ -181,7 +182,7 @@ V(T_PR, IO_PR,
   [["Treat the underlying condition",
     "Correct. Management of pulmonic regurgitation is to treat the underlying condition -- here the pulmonary hypertension, the high-pressure cause -- with referral when it is seen on echo or right heart failure develops."],
    ["Pulmonic balloon valvuloplasty",
-    "Balloon valvuloplasty opens severe symptomatic pulmonic stenosis, and valvuloplasty is itself the most common cause of pulmonic regurgitation. Treat the underlying condition."],
+    "Balloon valvuloplasty opens severe symptomatic pulmonic stenosis, and valvuloplasty is itself the most common cause of significant pulmonic regurgitation. Treat the underlying condition."],
    ["Lifelong warfarin therapy",
     "Warfarin is for mechanical valves. Pulmonic regurgitation is managed by treating the underlying condition, here pulmonary hypertension."],
    ["Transcatheter valve replacement",
@@ -343,7 +344,7 @@ V(T_TR, IO_TR,
    ["Rheumatic leaflet narrowing",
     "Rheumatic disease narrows valves, most commonly the mitral, causing stenosis. Her leak is from annular dilation due to right ventricular dilation."],
    ["A prior valvuloplasty",
-    "A prior valvuloplasty for outflow obstruction is the most common cause of pulmonic regurgitation. Her tricuspid leak comes from annular dilation."]],
+    "A prior valvuloplasty for outflow obstruction is the most common cause of significant pulmonic regurgitation. Her tricuspid leak comes from annular dilation."]],
   C(70), "etiology", "diagnosis"),
 
 V(T_TR, IO_TR,
