@@ -3393,3 +3393,25 @@ html.gl-open { overflow: hidden; }
   fill: none; stroke: #6b3524; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
   stroke-dasharray: 420; stroke-dashoffset: 420;
 }
+
+
+/* ---- Comparison-chart table container on narrow screens (2026-09-28) -------
+   The CMS ENT / CMS ophthalmology / PD2 ENT OSCE charts wrap their 8-9 column
+   tables in <div class="tblwrap">, which no stylesheet defined (the chart CSS
+   only styled a .scroll class the markup never used). At 390px the columns
+   collapsed to ~33px and every word broke into single letters. The derm chart,
+   which uses .scroll, already scrolls sideways; this gives .tblwrap the same
+   behaviour, screen-only and <=900px so desktop and print are untouched, and
+   pins the first column so a row stays identifiable while scrolling. */
+@media screen and (max-width: 900px) {
+  .tblwrap { overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--c-line, #cfdcdb); border-radius: 12px; }
+  .tblwrap::before { content: "Swipe sideways to see every column"; position: sticky; left: 0;
+    display: block; width: max-content; padding: 7px 12px; font-size: 12px; font-weight: 600;
+    color: var(--c-mute, #4c5f5e); }
+  .tblwrap > table { min-width: 1120px; }
+  .tblwrap tbody tr:not(.sec) td:first-child { position: sticky; left: 0; z-index: 2;
+    background: var(--c-tbl, #fff); box-shadow: 1px 0 0 var(--c-line, #cfdcdb); }
+  .tblwrap tbody tr:not(.sec):nth-child(even) td:first-child { background: var(--c-zebra, #f7fbfa); }
+  .tblwrap thead th:first-child { position: sticky; left: 0; z-index: 4; background: var(--acc); }
+}
