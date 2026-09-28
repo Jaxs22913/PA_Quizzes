@@ -3144,6 +3144,15 @@ body.homepage .continue-item:hover {
    rules are written per page by the tool.) */
 :root[data-theme="light"] body[data-dark-kind="guide"] .tag { background: var(--accent2-t, var(--accent2)); }
 
+/* Guide accent TEXT: TOC section links, h3/h4 headings, IO-box titles and
+   objective headings are set in the guide's --accent2 gold (2.0-3.5:1) or a
+   light --accent3 (3.4-4.4:1). Re-pointed inside the content column and TOC
+   only, so the header banner gradient keeps its exact colours; borders in the
+   same variable deepen with it. */
+:root[data-theme="light"] body[data-dark-kind="guide"] .layout {
+  --accent: var(--accent-t); --accent2: var(--accent2-t); --accent3: var(--accent3-t);
+}
+
 /* Quiz buttons: white on the Micro / Pharm E2 / PD2 / PDM teal --indigo fills
    measured 3.95-4.46:1, and the same colour as text (Back, Flag, "N left")
    on white likewise. Re-pointed inside the quiz only, so each exam keeps its

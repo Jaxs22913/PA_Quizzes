@@ -281,6 +281,7 @@ def darkest(cols):
     return min(cols, key=lambda c: lum(hex_rgb(c)))
 
 INLINE_ACC = re.compile(r'class="test-yourself-btn"[^>]*style="--acc:(#[0-9a-fA-F]{3,6})')
+INLINE_TOPLINK = re.compile(r'class="top-link"[^>]*style="color:\s*(#[0-9a-fA-F]{3,6})')
 
 def light_tokens(kind, s):
     """The LIGHT-mode block: -t tokens on body, plus rules for colours a page
@@ -299,6 +300,10 @@ def light_tokens(kind, s):
             f = darken_to(acc, "#ffffff")
             if f != acc:
                 rules.append('.test-yourself-btn[style*="--acc:%s"]{--acc:%s!important}' % (acc, f))
+        for col in sorted(set(INLINE_TOPLINK.findall(s))):
+            t = darken_to(col, worst)
+            if t != col:
+                rules.append('nav.toc a.top-link[style*="%s"]{color:%s!important}' % (col, t))
     elif kind == "quiz":
         # the failing pairs are all on the white card: white text on the
         # filled buttons, and Back / Flag / "N left" text on the card
