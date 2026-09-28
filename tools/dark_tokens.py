@@ -299,6 +299,13 @@ def light_tokens(kind, s):
             f = darken_to(acc, "#ffffff")
             if f != acc:
                 rules.append('.test-yourself-btn[style*="--acc:%s"]{--acc:%s!important}' % (acc, f))
+    elif kind == "quiz":
+        # the failing pairs are all on the white card: white text on the
+        # filled buttons, and Back / Flag / "N left" text on the card
+        ground = get("card") or "#ffffff"
+        for k in ("navy", "indigo"):
+            if get(k):
+                tok[k + "-t"] = darken_to(get(k), ground)
     body = "".join("--%s:%s;" % kv for kv in tok.items())
     head = (':root[data-theme="light"] body[data-dark="tokens"]{%s}' % body) if body else ""
     return head + "".join(pre + r for r in rules)

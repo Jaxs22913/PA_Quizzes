@@ -3144,6 +3144,14 @@ body.homepage .continue-item:hover {
    rules are written per page by the tool.) */
 :root[data-theme="light"] body[data-dark-kind="guide"] .tag { background: var(--accent2-t, var(--accent2)); }
 
+/* Quiz buttons: white on the Micro / Pharm E2 / PD2 / PDM teal --indigo fills
+   measured 3.95-4.46:1, and the same colour as text (Back, Flag, "N left")
+   on white likewise. Re-pointed inside the quiz only, so each exam keeps its
+   own hue; exams already at 4.5:1 get their own colour back unchanged. */
+:root[data-theme="light"] body[data-dark-kind="quiz"] > .wrap {
+  --navy: var(--navy-t); --indigo: var(--indigo-t); --exam-toolbar-accent: var(--indigo-t);
+}
+
 /* Quiz stem in regular weight (design review item 10, 2026-09-25). Every
    generated quiz set .qtext at weight 600, so a 30-65 question block read as
    one long semi-bold paragraph; emphasis only means something when the body
