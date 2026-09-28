@@ -321,7 +321,9 @@ def fixed_text_rules(s):
     for g in sorted(set(re.findall(r'class="grp" style="background:(#[0-9a-fA-F]{6})"', s))):
         f = darken_to(g, "#ffffff")
         if f != g:
-            out.append(':root[data-theme="dark"] body[data-dark="tokens"] .grp[style*="background:%s"]{background:%s!important}' % (g, f))
+            # white text on the chip must clear 4.5:1 in BOTH themes (the light
+            # value of the ophtho gold was 3.25:1, the ENT olive 4.46:1)
+            out.append('body[data-dark="tokens"] .grp[style*="background:%s"]{background:%s!important}' % (g, f))
     return "".join(out)
 
 # ---------------------------------------------------------------- page scan
@@ -476,6 +478,23 @@ def light_tokens(kind, s):
             ink = darken_to(v["acc-ink"], ground)
             if ink != v["acc-ink"]:
                 rules.append('#%s{--acc-ink:%s!important}' % (tid, ink))
+    elif kind == "chart":
+        # a palette colour used as TEXT on the white/zebra ground (the derm
+        # staging chart's gold source line was 3.04:1): solve it in light only
+        root_vars = dict(re.findall(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{6})\b", root))
+        css = re.sub(r"/\*.*?\*/", "", "".join(re.findall(r"<style[^>]*>(.*?)</style>", s, re.S)), flags=re.S)
+        for sel, decl in _RULE.findall(css):
+            sel = sel.strip()
+            m = re.search(r"(?<![-\w])color\s*:\s*var\(--([\w-]+)\)", decl)
+            if (m and m.group(1) in root_vars and "background" not in decl
+                    and "data-theme" not in sel and not sel.startswith("@") and "{" not in sel):
+                t = darken_to(root_vars[m.group(1)], worst)
+                if t != root_vars[m.group(1)]:
+                    for one in sel.split(","):
+                        rules.append("%s{color:%s}" % (one.strip(), t))
+        # the giveaway header cell: pale text on the gold fill was 3.99:1
+        if "th.gv-h" in s:
+            rules.append("th.gv-h,th.gv-h span{color:#fff!important}")   # the span carries an inline pale colour
     elif kind == "ref":
         # muted grey text sat at 4.33-4.46:1 on the zebra row and the tints
         if get("muted"):
