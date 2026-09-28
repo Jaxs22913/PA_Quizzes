@@ -311,6 +311,19 @@ def light_tokens(kind, s):
         for k in ("navy", "indigo"):
             if get(k):
                 tok[k + "-t"] = darken_to(get(k), ground)
+    elif kind == "cram":
+        if get("primary"):
+            tok["primary-t"] = darken_to(get("primary"), worst)
+        # topic term cells take an inline --acc-ink; on the topic's zebra row
+        # a few measured 4.40-4.50:1
+        for tid, style in re.findall(r'<section class="topic" id="([^"]+)" style="([^"]*)"', s):
+            v = dict(re.findall(r"--([\w-]+):(#[0-9a-fA-F]{3,6})", style))
+            if "acc-ink" not in v:
+                continue
+            ground = darkest([v[k] for k in ("acc-bg", "acc-zebra") if k in v] + ["#ffffff"])
+            ink = darken_to(v["acc-ink"], ground)
+            if ink != v["acc-ink"]:
+                rules.append('#%s{--acc-ink:%s!important}' % (tid, ink))
     body = "".join("--%s:%s;" % kv for kv in tok.items())
     head = (':root[data-theme="light"] body[data-dark="tokens"]{%s}' % body) if body else ""
     return head + "".join(pre + r for r in rules)

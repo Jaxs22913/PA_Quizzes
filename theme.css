@@ -3153,6 +3153,13 @@ body.homepage .continue-item:hover {
   --accent: var(--accent-t); --accent2: var(--accent2-t); --accent3: var(--accent3-t);
 }
 
+/* Cram sheets: the kicker line is set in --primary on the page ground
+   (PD2 E2 gold 3.04:1); topic term inks are re-solved per page by the tool.
+   The PDM high-yield legend's tier pills carried the body ink on their dark
+   fills (1.4-2.0:1): white, as the same pills inside the table already are. */
+:root[data-theme="light"] body[data-dark-kind="cram"] .kicker { color: var(--primary-t, var(--primary)); }
+:root[data-theme="light"] body[data-dark-kind="cram"] .tier { color: #fff; }
+
 /* Quiz buttons: white on the Micro / Pharm E2 / PD2 / PDM teal --indigo fills
    measured 3.95-4.46:1, and the same colour as text (Back, Flag, "N left")
    on white likewise. Re-pointed inside the quiz only, so each exam keeps its
