@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Render the five CMS I Exam 4 (cardiology block I) Master Exams -- 60 questions each.
+"""Render the five CMS I Exam 4 (cardiology block I) Master Exams -- 60 questions each,
+weighted by scheduled lecture hours (10/9/9/9/9/14, rebuilt 2026-09-27).
 
 Reads Clinical Medicine and Surgery I Exam 4/master-exams.json, written by
 tools/cms_e4_masters_partition.py (which puts the keys on a 15/15/15/15 A-D
@@ -22,11 +23,12 @@ PAL = dict(navy="#702d7a", indigo="#a753b4", gold="#c08a2e", ice="#f9eefa")
 CHIPS = ["Hypertension", "Hypotension", "Atherosclerosis &amp; lipids",
          "Valvular heart disease", "Coronary artery disease", "Heart failure"]
 INTRO = (
-  "Sixty questions drawn from all six lectures of the first cardiology block &mdash; <b>ten from "
-  "each</b>, so every form is a genuine cumulative rehearsal rather than a sample of whichever "
-  "lecture had the most questions written for it. <b>Forty-eight are patient vignettes</b> and "
-  "twelve are direct recall, eight and two from every lecture, with the lead-in spread across "
-  "diagnosis, testing, treatment, next step, patient education and what to avoid.<br><br>"
+  "Sixty questions drawn from all six lectures of the first cardiology block, <b>weighted by "
+  "scheduled lecture hours</b>: ten from Hypertension, nine from each of the four other two-hour "
+  "lectures and fourteen from Heart Failure, the one three-hour lecture. <b>Forty-eight are "
+  "patient vignettes</b> and twelve are direct recall, two from every lecture, with the lead-in "
+  "spread across diagnosis, testing, treatment, next step, patient education and what to "
+  "avoid.<br><br>"
   "About half of the questions are not in the topic quizzes, so these forms are worth working "
   "even after those. <b>Four options, A&ndash;D</b>, and every wrong choice gets its own "
   "explanation saying why it is wrong.<br><br>"
@@ -41,6 +43,9 @@ for name in ("A", "B", "C", "D", "E"):
                   sub="Exam 4 &middot; Cardiology block I, Lectures 20&ndash;25 &middot; "
                       "Form %s" % name,
                   pill="60 questions", chips=CHIPS, intro=INTRO,
-                  questions=S[name], already_converted=True, **PAL)
+                  questions=S[name], already_converted=True,
+                  # 2026-09-27: the forms were rebuilt under the same URLs, so a
+                  # saved attempt from before the rebuild (no signature) is stale
+                  progress_sig_strict=True, **PAL)
     open(os.path.join(OUT, fn), "w", encoding="utf-8").write(html)
     print("wrote", fn, "(%d questions)" % len(S[name]))

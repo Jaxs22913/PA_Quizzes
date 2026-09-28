@@ -41,17 +41,25 @@ topic quizzes meets as much new material as the other rules allow.
   do not open on a patient). Lead-ins for its 64 vignettes are labeled by hand
   in L20_LEAD, because regex classification is not enough ([[cms_exam_spec]]).
 
-ALLOCATION: TEN PER LECTURE PER FORM. The Exam 3 precedent (the most recent
-CMS master set) is an equal share per lecture, "ten from each"; neither CMS
-precedent weights by scheduled hours. Six lectures into 60 is exactly 10, so
-there is no rounding gap. The hours-weighted alternative (L25 is the only
-three-hour lecture) is shown in MANIFEST.md for Jaxon to choose.
+ALLOCATION: WEIGHTED BY SCHEDULED LECTURE HOURS (Jaxon, 2026-09-27: "Weight
+them by hours"; the first build, 2026-09-25, was an equal ten per lecture).
+Hours come from calendar-data.js (HOURS below): five 2-hour lectures and L25
+Heart Failure, the only 3-hour lecture, 13 hours in all. Each lecture's exact
+share is 60 x hours / 13 (9.23 for 2 h, 13.85 for 3 h); the whole parts sum to
+58, and largest remainder gives the two left over to L25 (.85) and then to one
+2-hour lecture (.23, a five-way tie broken toward the earliest lecture, L20):
+10 / 9 / 9 / 9 / 9 / 14. alloc_by_hours() re-derives it and the build asserts it.
 
-MIX: 8 VIGNETTE + 2 REGULAR per lecture per form (48 + 12 = 80% patient
-stems). Exam 2's masters were 70% vignettes and Exam 3's were all patient
-stems after its 2026-09-16 edit; 80% is the exam standard's floor for patient
-stems (check_exam_standard.py) and Jaquith's "pretty much all clinical
-vignettes" -- while keeping the recall questions the CMS spec's "mix" asks for.
+MIX: 48 VIGNETTE + 12 REGULAR per form (80% patient stems), the precedent's
+20% recall share kept per lecture as closely as whole numbers allow: 20% of
+10 = 2 exactly; 20% of 9 = 1.8 and 20% of 14 = 2.8. Holding the form at 12
+regular leaves four regular slots for five lectures tied at .8; the four
+2-hour lectures take them, so all four stay identical (2 + 7) and L25 is
+2 + 12 -- the alternative (L25 3 + 11) has the same total rounding error but
+forces an arbitrary pick of which 2-hour lecture drops to 1 + 8. 80% is the
+exam standard's floor for patient stems (check_exam_standard.py) and
+Jaquith's "pretty much all clinical vignettes" -- while keeping the recall
+questions the CMS spec's "mix" asks for.
 
 STRATIFICATION, the Exam 2 lesson ([[cms_ophtho_masters]]): each (lecture,
 kind, lead-in) cell is spread across the five forms at most one apart, so no
@@ -59,7 +67,7 @@ lecture and no lead-in type drops out of a form. Regular questions are
 stratified by their fact slot's group (SLOT_GROUP).
 
 WHAT THE LOCAL SEARCH HOLDS (hard = by construction or asserted)
-  hard  exactly 8 vignettes + 2 regular per lecture per form; no question in two
+  hard  exactly PER_LEC vignettes + regular per lecture per form; no question in two
         forms; every cell within one of even across forms
   hard  each lecture's REQUIRED content in every form (scope REQUIRED: L23
         mechanical valve -> warfarin, L24 troponin, L24 right-ventricular infarct
@@ -93,8 +101,26 @@ LECS = ["l20", "l21", "l22", "l23", "l24", "l25"]
 LEC_NAME = {"l20": "L20 Hypertension", "l21": "L21 Hypotension",
             "l22": "L22 Atherosclerosis & Lipids", "l23": "L23 Valvular",
             "l24": "L24 Coronary Artery Disease", "l25": "L25 Heart Failure"}
-PER_LEC = {"vig": 8, "reg": 2}           # per lecture per form
-PER_FORM = 6 * sum(PER_LEC.values())     # 60
+HOURS = {"l20": 2, "l21": 2, "l22": 2, "l23": 2, "l24": 2, "l25": 3}   # calendar-data.js
+
+
+def alloc_by_hours(total=60):
+    """Largest remainder on total x hours / sum(hours); ties go to the earlier lecture."""
+    H = sum(HOURS.values())
+    exact = {l: total * HOURS[l] / H for l in LECS}
+    out = {l: int(exact[l]) for l in LECS}
+    left = total - sum(out.values())
+    for l in sorted(LECS, key=lambda l: (-(exact[l] - out[l]), LECS.index(l)))[:left]:
+        out[l] += 1
+    return out
+
+
+ALLOC = alloc_by_hours()
+assert [ALLOC[l] for l in LECS] == [10, 9, 9, 9, 9, 14], ALLOC
+REG = {"l20": 2, "l21": 2, "l22": 2, "l23": 2, "l24": 2, "l25": 2}    # see MIX in the docstring
+PER_LEC = {l: {"reg": REG[l], "vig": ALLOC[l] - REG[l]} for l in LECS}  # per lecture per form
+PER_FORM = sum(ALLOC.values())           # 60
+assert PER_FORM == 60 and sum(REG.values()) == 12
 DX_RANGE = (10, 13)                      # diagnosis lead-ins per form of 60
 SKEW_CAP = 0.40
 SEED = 20260925
@@ -252,13 +278,14 @@ def build(dry_run=False):
     for lec in LECS[1:]:
         qs, req, band = load_guarded_lecture(lec)
         # TOPIC_BAND's per-form minimum (2-4 per lesion in a set of 30) cannot
-        # fit into ten questions; what carries over is its intent, every banded
-        # topic in every form -- possible only when the band fits in the ten.
-        if band and len(band) <= sum(PER_LEC.values()):
-            EVERY_FORM[lec] = band
-        elif band:
-            print("   %s TOPIC_BAND has %d topics for %d slots: spread is scored, not required"
-                  % (lec, len(band), sum(PER_LEC.values())))
+        # fit into a lecture's share; what carries over is its intent, every
+        # banded topic in every form -- possible only when the band fits beside
+        # the lecture's REQUIRED items (L23: nine lesions + the mechanical-valve
+        # warfarin item, whose topic is outside the band, need ten slots). When
+        # it fits all but k, each form carries all but k banded topics and no
+        # banded topic is missing from more than one form (the misses rotate).
+        if band:
+            EVERY_FORM[lec] = band              # resolved into BAND_MIN below, once REQUIRED hits are known
         for q in qs:
             q["_lec"] = lec
         POOL += qs
@@ -268,6 +295,7 @@ def build(dry_run=False):
     # the topic sets were built from the pools as they stand; a stem shipped in a
     # topic quiz must still be in its pool (a topic page edited after rendering
     # would mean the pool is no longer the source of truth)
+    NTOPICS = {lec: len({q["topic"] for q in POOL if q["_lec"] == lec}) for lec in LECS}
     topic_used = used_in_topic_sets()
     for q in POOL:
         q["_fresh"] = q["q"].strip() not in topic_used
@@ -281,15 +309,30 @@ def build(dry_run=False):
     for lec, lab, srx, krx, n in REQ:
         hit = {i for i, q in enumerate(POOL) if q["_lec"] == lec
                and srx.search(q["q"]) and krx.search(q["opts"][0][0])}
-        # Every form when the pool can supply it; otherwise as many forms as it
-        # can (reported, never silently): L24's right-ventricular-infarct
-        # nitroglycerin item has only four questions in the whole pool.
-        target = min(len(FORMS), len(hit) // n)
-        assert target >= 1, "%s %r: nothing in the pool" % (lec, lab)
-        if target < len(FORMS):
-            print("!! %s %r: the pool holds %d such questions, so it can reach %d of %d forms"
-                  % (lec, lab, len(hit), target, len(FORMS)))
+        # Every form, always. (The 2026-09-25 build could reach only four forms
+        # with L24's right-ventricular-infarct nitroglycerin item; two questions
+        # were written into cms_e4l24_vig_c / pool_c on 2026-09-27 to fix that.)
+        target = len(FORMS)
+        assert len(hit) // n >= target, "%s %r: the pool holds %d such questions, %d forms need %d" % (
+            lec, lab, len(hit), len(FORMS), n * len(FORMS))
         req_hit[(lec, lab)] = (hit, n, target)
+
+    # How many banded topics fit in each form: the lecture's slots, less one per
+    # REQUIRED item none of whose questions sits on a banded topic.
+    BAND_MIN = {}
+    for lec, band in list(EVERY_FORM.items()):
+        reserve = sum(1 for (l, lab), (hit, n, target) in req_hit.items()
+                      if l == lec and not any(POOL[i]["topic"] in band for i in hit))
+        fit = ALLOC[lec] - reserve
+        if fit < len(band) - 1:
+            print("   %s TOPIC_BAND has %d topics for %d free slots: spread is scored, not required"
+                  % (lec, len(band), fit))
+            del EVERY_FORM[lec]
+            continue
+        BAND_MIN[lec] = min(len(band), fit)
+        print("   %s TOPIC_BAND: %d topics, %d slots, %d reserved for REQUIRED -> %d banded topics per form%s"
+              % (lec, len(band), ALLOC[lec], reserve, BAND_MIN[lec],
+                 "" if BAND_MIN[lec] == len(band) else " (each topic missing from at most one form)"))
 
     G = [gameable(q) for q in POOL]
     groups = defaultdict(list)                  # (lec, kind) -> pool indices
@@ -303,7 +346,7 @@ def build(dry_run=False):
             print("   %-30s %-3s %3d candidates  %3d fresh  %2d gameable  cells=%s" % (
                 LEC_NAME[lec], kind, len(idx), sum(POOL[i]["_fresh"] for i in idx),
                 sum(G[i] for i in idx), dict(sorted(Counter(cell_lead(POOL[i]) for i in idx).items()))))
-            assert len(idx) >= len(FORMS) * PER_LEC[kind]
+            assert len(idx) >= len(FORMS) * PER_LEC[lec][kind]
 
     # ---------------------------------------------------------------- scoring
     def form_pen(sel):
@@ -320,8 +363,10 @@ def build(dry_run=False):
             lq = [q for q in qs if q["_lec"] == lec]
             tops = Counter(q["topic"] for q in lq)
             pen += 8 * sum(max(0, c - 2) for c in tops.values())
-            pen += 1.5 * (10 - len(tops))
-            pen += 60 * sum(1 for t in EVERY_FORM.get(lec, ()) if t not in tops)
+            pen += 1.5 * (min(ALLOC[lec], NTOPICS[lec]) - len(tops))
+            if lec in EVERY_FORM:
+                have = sum(1 for t in EVERY_FORM[lec] if t in tops)
+                pen += 60 * max(0, BAND_MIN[lec] - have)
         keys = Counter(q["opts"][0][0].strip().lower() for q in qs)
         pen += 40 * sum(c - 1 for c in keys.values() if c > 1)
         pen += 1.0 * sum(1 for q in qs if not q["_fresh"])
@@ -334,6 +379,11 @@ def build(dry_run=False):
                 q = POOL[i]
                 cnt[(q["_lec"], q["_kind"], cell_lead(q))][f] += 1
         pen = 200 * sum(max(0, max(v) - min(v) - 1) for v in cnt.values())
+        # a banded topic may miss at most one form (the misses rotate)
+        for lec, band in EVERY_FORM.items():
+            for t in band:
+                nf = sum(1 for sel in forms if any(POOL[i]["_lec"] == lec and POOL[i]["topic"] == t for i in sel))
+                pen += 200 * max(0, len(FORMS) - 1 - nf)
         for (lec, lab), (hit, n, target) in req_hit.items():
             covered = sum(1 for sel in forms if len(hit & set(sel)) >= n)
             pen += 500 * max(0, target - covered)
@@ -345,7 +395,7 @@ def build(dry_run=False):
     # cmsent/cmsophtho deal, with the per-lecture quota enforced.
     forms = [[] for _ in FORMS]
     for (lec, kind), idx in sorted(groups.items()):
-        need = PER_LEC[kind] * len(FORMS)
+        need = PER_LEC[lec][kind] * len(FORMS)
         cells = defaultdict(list)
         for i in idx:
             cells[cell_lead(POOL[i])].append(i)
@@ -435,7 +485,7 @@ def build(dry_run=False):
         for lec in LECS:
             for kind in ("reg", "vig"):
                 n = sum(1 for i in sel if (POOL[i]["_lec"], POOL[i]["_kind"]) == (lec, kind))
-                assert n == PER_LEC[kind], "Form %s %s %s has %d" % (name, lec, kind, n)
+                assert n == PER_LEC[lec][kind], "Form %s %s %s has %d" % (name, lec, kind, n)
         leads = Counter(POOL[i]["lead"] for i in sel if POOL[i]["_kind"] == "vig")
         assert DX_RANGE[0] <= leads.get("diagnosis", 0) <= DX_RANGE[1], "Form %s diagnosis %d" % (
             name, leads.get("diagnosis", 0))
@@ -443,8 +493,12 @@ def build(dry_run=False):
         assert sum(G[i] for i in sel) == 0, "Form %s has a length-gameable question" % name
         for lec, band in EVERY_FORM.items():
             tops = {POOL[i]["topic"] for i in sel if POOL[i]["_lec"] == lec}
-            assert all(t in tops for t in band), "Form %s %s misses %s" % (
+            assert sum(t in tops for t in band) >= BAND_MIN[lec], "Form %s %s misses %s" % (
                 name, lec, [t for t in band if t not in tops])
+    for lec, band in EVERY_FORM.items():
+        for t in band:
+            nf = sum(1 for sel in forms if any(POOL[i]["_lec"] == lec and POOL[i]["topic"] == t for i in sel))
+            assert nf >= len(FORMS) - 1, "%s %r is in only %d forms" % (lec, t, nf)
 
     # ---------------------------------------------------------------- permute per form
     out = {}
