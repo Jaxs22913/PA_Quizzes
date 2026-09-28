@@ -51,7 +51,11 @@ FROZEN = ("Anatomy Exam", "Anatomy Practicum Exam", "CAM Nutrition Exam",
 KINDS = ("quiz", "guide", "cram", "chart", "ref")
 # Pages that ship their own bespoke component set the theme.css block does not
 # cover; they keep the invert filter until someone maps their components.
-EXCLUDE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
+EXCLUDE = set()
+# Pages on the shared template's palette that also carry their OWN hard-coded
+# light components (cards, tables, chips set in the page CSS). They get the
+# generic light-surface pass in light_surface_rules() on top of their kind.
+BESPOKE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
 SKIP_DIRS = {".git", "tools", "group-quizzes", "cram-personal", "icons", "audio",
              "class-traps", "Remediation"}
 
@@ -218,6 +222,49 @@ def chart_tokens(v):
     return t
 
 _RULE = re.compile(r"([^{}]+)\{([^{}]*)\}")
+
+# selectors the shared theme.css already themes; a bespoke pass must not fight it
+_SHARED_CHROME = re.compile(r"^(?:header\.top|nav\.toc|body|html)\b")
+
+def light_surface_rules(s, tok=None):
+    """Dark equivalents for the hard-coded LIGHT surfaces a bespoke page sets in
+    its own CSS (white cards and tables, pale tinted callouts and chips): a
+    near-white surface becomes the card, a tint becomes the dark tint of its own
+    hue, and a text colour set in the same rule is lifted with the site recipe
+    against the new ground. Gradients, fills that carry white text and the
+    shared chrome are left alone."""
+    pre = ':root[data-theme="dark"] body[data-dark="tokens"] '
+    css = re.sub(r"/\*.*?\*/", "", "".join(re.findall(r"<style[^>]*>(.*?)</style>", s, re.S)), flags=re.S)
+    out = []
+    for sel, body in _RULE.findall(css):
+        sel = sel.strip()
+        if (not sel or sel.startswith("@") or "data-theme" in sel or ":root" in sel or "{" in sel
+                or "gradient" in body or _SHARED_CHROME.match(sel)):
+            continue
+        # a fill drawn from a palette variable under white text keeps its LIGHT
+        # partner (the lifted value is a text colour: white on it is ~3.4:1)
+        bv = re.search(r"(?<![-\w])background(?:-color)?\s*:\s*var\(--([\w-]+)\)", body)
+        if (bv and tok and (bv.group(1) + "-l") in tok
+                and re.search(r"(?<![-\w])color\s*:\s*#fff(?:fff)?\b", body)):
+            out.append(",".join(pre + x.strip() for x in sel.split(",")) + "{background:var(--%s-l)}" % bv.group(1))
+            continue
+        bg = re.search(r"(?<![-\w])background(?:-color)?\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b", body)
+        if not bg or lum(hex_rgb(bg.group(1))) <= 0.55:
+            continue
+        h = bg.group(1)
+        dark = CARD if contrast(hex_rgb(h), hex_rgb("#ffffff")) < 1.12 else soft(hue_of(h))
+        decl = "background:%s" % dark
+        cm = re.search(r"(?<![-\w])color\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})\b", body)
+        if cm and contrast(hex_rgb(cm.group(1)), hex_rgb(dark)) < 4.5:
+            decl += ";color:%s" % lift(cm.group(1), dark)
+        # text set from a palette variable: shared theme.css re-points every guide
+        # <th> at the LIGHT palette (so header cells keep their fill), which would
+        # leave a row-header cell dark-on-dark; use the page's lifted value literally
+        vm = re.search(r"(?<![-\w])color\s*:\s*var\(--([\w-]+)\)", body)
+        if vm and tok and vm.group(1) in tok:
+            decl += ";color:%s" % tok[vm.group(1)]
+        out.append(",".join(pre + x.strip() for x in sel.split(",")) + "{" + decl + "}")
+    return "".join(out)
 
 def ref_tokens(v):
     """Pharmacology I reference sheets (the older hand-built template: --ink
@@ -513,7 +560,7 @@ def block(tok, extra=""):
     return ('%s<style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{%s}%s</style>%s'
             % (BEGIN, body, extra, END))
 
-def apply(s, kind=None):
+def apply(s, kind=None, bespoke=False):
     """Return the page with the opt-in attribute and a fresh token block."""
     kind = kind or classify(s)
     if not kind:
@@ -522,9 +569,19 @@ def apply(s, kind=None):
     if not tok:
         return s
     s = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", "", s, flags=re.S)
+    if bespoke:
+        # palette variables the kind does not know (a page's own --warn rust,
+        # used as heading text) still need lifting for the dark ground
+        css_all = "".join(re.findall(r"<style[^>]*>(.*?)</style>", s, re.S))
+        for name, h in re.findall(r"--([\w-]+)\s*:\s*(#[0-9a-fA-F]{6})\b", first_root_block(s)):
+            if (name not in tok and not name.endswith(("-l", "-t"))
+                    and re.search(r"(?<![-\w])color\s*:\s*var\(--%s\)" % re.escape(name), css_all)
+                    and contrast(hex_rgb(h), hex_rgb(ZEBRA)) < 4.5):
+                tok[name] = lift(h, ZEBRA)
     extra = ((cram_topic_rules(s) if kind == "cram" else "")
              + (fixed_text_rules(s) if kind in ("chart", "ref") else "")
              + (ref_rules(s) if kind == "ref" else "")
+             + (light_surface_rules(s, tok) if bespoke else "")
              + light_tokens(kind, s))
     s = s.replace("</head>", block(tok, extra) + "\n</head>", 1)
     # Every page needs the one-line theme bootstrap before first paint;
@@ -572,7 +629,7 @@ def main():
         kind = classify(s)
         if not kind or kind not in kinds_on:
             continue
-        new = apply(s, kind)
+        new = apply(s, kind, os.path.relpath(path, ROOT) in BESPOKE)
         if new == s and "data-dark=" not in s:
             continue   # palette not found: stays on the filter
         n += 1
