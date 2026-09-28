@@ -5682,15 +5682,21 @@ window.openPauseOverlay = function (opts) {
   }
 
   /* ---------- the panel ---------- */
+  var MARK_CSS =
+    ".gl-mark{background:#fef3d4!important;color:#3a2c05!important;box-shadow:0 0 0 4px #fef3d4,0 0 0 5px #e8c766;border-radius:4px}" +
+    ":root[data-theme='dark'] .gl-mark{background:#4a3a12!important;color:#f7ecc8!important;box-shadow:0 0 0 4px #4a3a12,0 0 0 5px #7a6220}" +
+    ".gl-head-mark{scroll-margin-top:10px;border-left:4px solid #e8c766;padding-left:10px!important}";
   var CHROME_CSS =
     ".guide-back-bar,header.top,nav.toc,#quiz-footer-logo,#pull-refresh,.guide-foot,.word-btn," +
     ".corner-btn,[class*='floating'],.toc-fab{display:none!important}" +
     "html,body{margin:0!important;padding:0!important}" +
     ".layout{display:block!important;max-width:none!important;margin:0!important;padding:10px 16px 60vh!important}" +
     "main{max-width:none!important;margin:0!important;padding:0!important}" +
-    ".gl-mark{background:#fef3d4!important;color:#3a2c05!important;box-shadow:0 0 0 4px #fef3d4,0 0 0 5px #e8c766;border-radius:4px}" +
-    ":root[data-theme='dark'] .gl-mark{background:#4a3a12!important;color:#f7ecc8!important;box-shadow:0 0 0 4px #4a3a12,0 0 0 5px #7a6220}" +
-    ".gl-head-mark{scroll-margin-top:10px;border-left:4px solid #e8c766;padding-left:10px!important}";
+    MARK_CSS;
+  // Expanded ("Full guide"): the whole guide with its contents sidebar; only the bits that
+  // need scripts or navigation away from the quiz stay hidden.
+  var FULL_CSS =
+    ".guide-back-bar,#quiz-footer-logo,#pull-refresh,.word-btn{display:none!important}" + MARK_CSS;
 
   function textOf(el) { return (el.textContent || "").replace(/\s+/g, ""); }
 
@@ -5718,6 +5724,7 @@ window.openPauseOverlay = function (opts) {
     if (!doc || !win) return;
     doc.documentElement.setAttribute("data-theme", document.documentElement.getAttribute("data-theme") || "light");
     var st = doc.createElement("style"); st.textContent = CHROME_CSS; doc.head.appendChild(st);
+    frame._glStyle = st;
     var target = doc.getElementById(L[1]);
     if (!target) { panel.querySelector(".gl-load").textContent = "That part of the guide moved. Use “Open full guide”."; return; }
     for (var p = target; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
@@ -5737,6 +5744,7 @@ window.openPauseOverlay = function (opts) {
     }
     var imgs = doc.images;
     for (var k = 0; k < imgs.length; k++) imgs[k].loading = "eager";
+    frame._glRealign = function () { pinned = true; align(); pinned = false; };
     doc.addEventListener("load", align, true);
     ["wheel", "touchstart", "mousedown", "keydown"].forEach(function (ev) {
       doc.addEventListener(ev, function () { pinned = false; }, { passive: true, capture: true });
@@ -5783,7 +5791,7 @@ window.openPauseOverlay = function (opts) {
         '<div class="gl-head">' +
           window.SiteIcon("book", 18) +
           '<div class="gl-ht"><div class="gl-hk"></div><div class="gl-hn"></div></div>' +
-          '<a class="gl-full" target="_blank" rel="noopener"></a>' +
+          '<button type="button" class="gl-full"></button>' +
           '<button type="button" class="gl-x" aria-label="Close study guide"></button>' +
         '</div>' +
         '<div class="gl-body"><div class="gl-load">Loading the guide…</div>' +
@@ -5793,9 +5801,18 @@ window.openPauseOverlay = function (opts) {
     root.querySelector(".gl-hk").textContent = L[4] ? "Study guide · closest section"
       : (L[3] ? "Study guide" : "Study guide · this section");
     root.querySelector(".gl-hn").textContent = L[2];
+    // "Full guide" expands THIS panel (no new window, so there is always a way back
+    // to the question); the same button then reads "Back to question".
     var full = root.querySelector(".gl-full");
-    full.href = url + "#" + L[1];
-    full.innerHTML = '<span>Full guide</span>' + window.SiteIcon("external", 14);
+    function setFull(on) {
+      panel.classList.toggle("is-full", on);
+      full.innerHTML = on ? window.SiteIcon("arrowLeft", 14) + '<span>Back to question</span>'
+                          : '<span>Full guide</span>' + window.SiteIcon("layers", 14);
+      var f = root.querySelector(".gl-frame");
+      if (f && f._glStyle) { f._glStyle.textContent = on ? FULL_CSS : CHROME_CSS; if (f._glRealign) setTimeout(f._glRealign, 60); }
+    }
+    full.addEventListener("click", function () { setFull(!panel.classList.contains("is-full")); });
+    setFull(false);
     var x = root.querySelector(".gl-x"); x.innerHTML = window.SiteIcon("x", 18);
     x.addEventListener("click", function () { closePanel(false); });
     root.querySelector(".gl-backdrop").addEventListener("click", function () { closePanel(false); });

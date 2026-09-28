@@ -18,6 +18,14 @@ folder:
 
 Prints the denominator (questions and how many are linked) per folder.
 Exit 1 on any failure.
+
+--strict  (the STANDING RULE, Jaxon 2026-09-28: "all questions should link back
+          to where the concept is explained"): also fail for any question whose
+          link is only a 'closest section' guess, i.e. whose fact the class
+          guide does not actually explain. Fix by adding the fact to the guide
+          (tools/guide_additions/, tools/apply_guide_additions.py), then
+          re-run tools/build_guide_links.py. Run this at the end of EVERY
+          Semester 2 quiz or exam build.
 """
 import glob
 import html
@@ -42,6 +50,7 @@ def guide_text(path):
 
 def main():
     fails, total_q, total_l = [], 0, 0
+    strict_near = []
     for d in sorted(os.listdir(ROOT)):
         p = os.path.join(ROOT, d)
         if not os.path.isdir(p):
@@ -96,11 +105,16 @@ def main():
                 if want not in after:
                     fails.append("%s: snippet not at/after #%s in %s: %r" % (d, anchor, g, snip[:50])); bad += 1
         nl = len(data["l"])
+        strict_near.append((d, near))
         total_q += len(keys)
         total_l += nl
         print("%-46s %5d q, %5d linked (%3d%%; %d exact-source, %d closest-section)%s" % (
             d, len(keys), nl, round(100 * nl / max(1, len(keys))), nl - near, near, "  FAIL x%d" % bad if bad else ""))
     print("TOTAL %d questions, %d linked (%d%%)" % (total_q, total_l, round(100 * total_l / max(1, total_q))))
+    if "--strict" in sys.argv:
+        for d, n_near in strict_near:
+            if n_near:
+                fails.append("%s: %d question(s) have no passage that explains them (closest-section guess only)" % (d, n_near))
     if fails:
         print("\nFAIL (%d):" % len(fails))
         for f in fails[:40]:

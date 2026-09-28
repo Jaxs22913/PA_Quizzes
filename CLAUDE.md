@@ -166,6 +166,7 @@ python3 tools/check_self_contained.py "<Class Exam N>"
 python3 tools/check_leadin_present.py "<file>"
 python3 tools/check_console_errors.py "<file>"
 python3 tools/check_answer_distribution.py "<file>"
+python3 tools/build_guide_links.py && python3 tools/check_guide_links.py --strict   # Semester 2: every question explained in its guide
 ```
 
 Others worth knowing: `check_length_bias`, `check_ppt_grounding`,
@@ -203,6 +204,13 @@ These are the ones most often broken. Each has a memory with the full story.
 - **No abbreviations**, or write them as `ABBREV (full term)`.
 - **Slides-only grounding.** Content comes from the deck. A lecturer's aside
   does not add content the deck lacks.
+- **Every question links back to where its concept is explained** (Jaxon,
+  2026-09-28, standing for all future work). Each Semester 2 question must have
+  a passage in its OWN class's study guide that teaches the fact, so the "Find it
+  in the study guide" button lands on the explanation. If the guide does not teach
+  it, write it into the guide (`tools/guide_additions/`, then
+  `tools/apply_guide_additions.py`) — do not settle for a nearby section. Finish
+  every build with `python3 tools/build_guide_links.py && python3 tools/check_guide_links.py --strict`.
 - **Semester 1 exams are frozen** — never modify them.
 - **US spelling** in Semester 2+ content (hemoconcentration, tumor, edema); keep
   taxonomic names such as *Haemophilus*.

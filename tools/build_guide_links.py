@@ -51,6 +51,7 @@ _REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PASSAGE_MIN = 0.85       # answer-term coverage of the best paragraph
 SECTION_PARA_MIN = 0.60  # ... for the section tier
 SECTION_MIN = 0.85       # ... plus coverage of the whole section
+EXPLAINED_MIN = 0.80     # a closest section 'explains it, in other words' at this key coverage
 W_ANSWER, W_STEM, W_EXPL = 1.5, 2.0, 1.0
 SLIDE_BONUS = 1.15
 
@@ -313,20 +314,20 @@ def near_window(idx, anchors, deck, slide):
     if after:
         cands.append(min(after)[1])
     lo, hi = min(cands), max(cands)
-    if hi - lo > 10:                      # neighbours far apart: use the nearer one only
+    if hi - lo > 10:                      # neighbors far apart: use the nearer one only
         near = (max(before) if before else min(after))[1]
         lo = hi = near
     return lo, hi
 
 
 def near_section(idx, anchors, q, deck, slide):
-    """Tier 3 -- the section a slide lives in, from its NEIGHBOURS.
+    """Tier 3 -- the section a slide lives in, from its NEIGHBORS.
 
     Slides are taught in order and the guides follow slide order, so a question
     citing slide 43 belongs between the sections that slides 41 and 45 already
     link to. `anchors` = [(deck, slide, section index)] from confident links.
     Restricted to the guide most of that deck's anchors point at; among the
-    sections between the two neighbours the question's own words choose.
+    sections between the two neighbors the question's own words choose.
     Validated by hiding each confident link and predicting it back: ~84% the
     exact section (~90% when another question cites the same slide)."""
     if slide is None:
@@ -347,10 +348,29 @@ def near_section(idx, anchors, q, deck, slide):
     if after:
         cands.append(min(after)[1])
     lo, hi = min(cands), max(cands)
-    if hi - lo > 8:                       # neighbours far apart in the guide: trust the nearer slide only
+    if hi - lo > 8:                       # neighbors far apart in the guide: trust the nearer slide only
         lo = hi = (max(before)[1] if before else min(after)[1])
     w = weights(q)
     return max(range(lo, hi + 1), key=lambda i: idx.score(w, idx.secs[i]))
+
+
+def load_additions(folder):
+    """{question key: (line id, section title, plain text)} for lines written into the
+    guide by tools/apply_guide_additions.py -- those questions link straight to
+    their own line (the fact was written FOR them, so no guessing)."""
+    out = {}
+    p = os.path.join(_REPO, "tools", "guide_additions",
+                     re.sub(r"[^a-z0-9]+", "-", os.path.basename(folder).lower()).strip("-") + ".json")
+    if not os.path.exists(p):
+        return out
+    d = json.load(open(p, encoding="utf-8"))
+    for it in d["items"]:
+        if not it.get("html") or it["html"] == "SKIP":
+            continue
+        plain = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", it["html"]))).strip()
+        for k in it["keys"]:
+            out[k] = ("ga-" + it["id"], d["guide"], it.get("section_title", ""), plain)
+    return out
 
 
 def build_folder(folder, dry=False):
@@ -384,8 +404,16 @@ def build_folder(folder, dry=False):
                 continue
             seen.add(k)
             items.append({"q": q, "k": k, "deck": deck_of(q["cite"]), "slide": slide_of(q["cite"]), "link": None})
+    # pass 0: a question whose fact was written into the guide FOR it links to that line
+    adds = load_additions(folder)
+    for it in items:
+        a = adds.get(it["k"])
+        if a and any(sc["guide"] == a[1] for sc in idx.secs):
+            it["link"] = ("passage", {"guide": a[1], "id": a[0], "title": a[2], "tok": collections.Counter()}, snippet(a[3]))
     # pass 1: direct matches (the key is really in the guide)
     for it in items:
+        if it["link"]:
+            continue
         q = it["q"]
         sc, exact = match(idx, q)
         if sc is None:
@@ -402,10 +430,11 @@ def build_folder(folder, dry=False):
     # the key when choosing a section (a nail in the eye, key "leave it in
     # place", is taught in "The disposition ladder" but its stem words pulled a
     # neighbour). Candidates = sections holding >=85% of the key's terms; among
-    # them BM25 chooses, with a boost inside the window the slide's neighbours
+    # them BM25 chooses, with a boost inside the window the slide's neighbors
     # define. A candidate far outside that window is not trusted.
     anchors = [(it["deck"], it["slide"], pos[(it["link"][1]["guide"], it["link"][1]["id"])])
-               for it in items if it["link"] and it["link"][0] == "passage" and it["slide"] is not None]
+               for it in items if it["link"] and it["link"][0] == "passage" and it["slide"] is not None
+               and (it["link"][1]["guide"], it["link"][1]["id"]) in pos]
     for it in items:
         if it["link"]:
             continue
@@ -438,16 +467,18 @@ def build_folder(folder, dry=False):
             continue
         p = near_section(idx, anchors, it["q"], it["deck"], it["slide"])
         if p is None:
-            # no slide neighbours at all: the best text match anywhere still
-            # names the right neighbourhood far more often than not
+            # no slide neighbors at all: the best text match anywhere still
+            # names the right neighborhood far more often than not
             sc, _ = match(idx, it["q"])
             if sc is not None:
                 p = pos[(sc["guide"], sc["id"])]
         if p is not None:
             sc = idx.secs[p]
-            it["link"] = ("near", sc, "")
-            if (idx.cov(it["q"], sc["tok"]) or 0) < SECTION_PARA_MIN:
-                gaps.append((it["q"], sc))          # the guide probably never teaches this fact
+            if (idx.cov(it["q"], sc["tok"]) or 0) >= EXPLAINED_MIN:
+                it["link"] = ("section", sc, "")     # the section holds >=80% of the key: it explains it, in other words
+            else:
+                it["link"] = ("near", sc, "")
+                gaps.append((it["q"], sc))           # the guide does not teach this fact: write it in
     guides, links, tiers = [], {}, collections.Counter()
     for it in items:
         if not it["link"]:

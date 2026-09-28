@@ -3345,7 +3345,11 @@ a.report-link:hover { color: var(--ink, #1f2937); text-decoration: underline; te
   flex: none; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
   color: var(--navy, #123456); text-decoration: none; padding: 8px 10px; border-radius: 9px; border: 1px solid var(--line, #dbe7e5);
 }
+.gl-full { font: inherit; font-size: 13px; background: transparent; cursor: pointer; }
 .gl-full:hover { border-color: var(--navy, #123456); }
+/* Expanded to the whole guide: fills the screen, the button becomes "Back to question" */
+.gl-root .gl-panel.is-full { left: 0; right: 0; top: 0; bottom: 0; width: auto; height: 100%; border-radius: 0; border: 0; }
+.gl-root .gl-panel.is-full .gl-grab { display: none; }
 .gl-x {
   flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
   color: var(--ink, #20233a); background: transparent; border: 0; border-radius: 10px; cursor: pointer;
@@ -3415,3 +3419,15 @@ html.gl-open { overflow: hidden; }
   .tblwrap tbody tr:not(.sec):nth-child(even) td:first-child { background: var(--c-zebra, #f7fbfa); }
   .tblwrap thead th:first-child { position: sticky; left: 0; z-index: 4; background: var(--acc); }
 }
+
+
+/* ---- "Also tested" lines inside study guides (2026-09-28) -------------------
+   Facts the practice questions test that the class guide did not teach, written
+   into the end of the right section by tools/apply_guide_additions.py. Neutral
+   grey tint + rule so it sits inside any guide's palette and in dark mode. */
+.qa-also { margin: 16px 0 8px; padding: 9px 16px 7px; border-left: 3px solid rgba(128, 128, 128, .5);
+  border-radius: 0 8px 8px 0; background: rgba(128, 128, 128, .08); }
+.qa-also .qa-also-label { margin: 0 0 4px; font-size: .72rem; font-weight: 800; letter-spacing: .07em;
+  text-transform: uppercase; opacity: .8; }
+.qa-also ul { margin: 0; padding-left: 1.25em; }
+.qa-also li { margin: .35em 0; }
