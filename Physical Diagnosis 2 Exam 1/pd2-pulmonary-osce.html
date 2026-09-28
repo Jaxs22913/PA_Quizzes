@@ -685,7 +685,7 @@ window.reportMistake = function(){
   var a = document.createElement("a");
   a.href = "#";
   a.textContent = "\u2605 See a mistake on this page? Report it \u2605";
-  a.style.cssText = "color:#6b7280;font-size:12.5px;font-style:italic;text-decoration:underline;cursor:pointer;";
+  a.style.cssText = "color:var(--ink2);font-size:12.5px;font-style:italic;text-decoration:underline;cursor:pointer;";
   wrap.appendChild(a);
   (document.querySelector("footer") || document.body).appendChild(wrap);
 
