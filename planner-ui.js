@@ -828,7 +828,7 @@
     ov.innerHTML = '<div class="pl-vid-box"><div class="pl-vid-head"><b>Study Planner walkthrough</b>' +
       '<button type="button" class="pl-vid-x" aria-label="Close video">' + icon("x", 18) + '</button></div>' +
       '<video controls playsinline preload="none" poster="' + POSTER + '"></video>' +
-      '<p class="pl-vid-note" id="pl-vid-note">About 3 minutes, with music. Captions on screen.</p></div>';
+      '<p class="pl-vid-note" id="pl-vid-note">About 4 minutes, with music. Captions on screen.</p></div>';
     document.body.appendChild(ov);
     document.body.style.overflow = "hidden";
     var v = ov.querySelector("video"), x = ov.querySelector(".pl-vid-x");
@@ -901,7 +901,7 @@
     ov.id = "pl-help-pop"; ov.className = "pl-vid"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", "How to use the planner");
     ov.innerHTML = '<div class="pl-choose"><div class="pl-vid-head"><b>How would you like to learn the planner?</b><button type="button" class="pl-vid-x" aria-label="Close">' + icon("x", 18) + '</button></div>' +
       '<div class="pl-choices">' +
-      '<button type="button" class="pl-choice" data-pick="video">' + icon("play", 26) + '<b>Video tour</b><span>Watch a short walkthrough with music. About 3 minutes, in a popup.</span></button>' +
+      '<button type="button" class="pl-choice" data-pick="video">' + icon("play", 26) + '<b>Video tour</b><span>Watch a short walkthrough with music. About 4 minutes, in a popup.</span></button>' +
       '<button type="button" class="pl-choice" data-pick="tour">' + icon("target", 26) + '<b>Virtual tour</b><span>Click through the real page step by step. Each part lights up as it is explained.</span></button>' +
       '</div></div>';
     document.body.appendChild(ov);
