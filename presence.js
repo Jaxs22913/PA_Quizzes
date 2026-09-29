@@ -21,8 +21,13 @@
 
   if (!document.querySelector(".guide-back-bar")) return;
 
-  var HEARTBEAT_MS = 20000;
-  var STALE_MS = 45000; // ~2x heartbeat, same staleness-detection tradeoff group-study.js documents
+  // Firestore's free tier is 20K writes / 50K reads a day for the whole class. A heartbeat every 20 s from
+  // every open guide tab, hidden ones included, plus every viewer reading every other viewer's heartbeat,
+  // used up that quota in one study day. So: one write a minute, and only while the tab is on screen
+  // (a hidden tab is not "studying now"; it stops writing and stops listening, and simply ages out of
+  // the count after STALE_MS).
+  var HEARTBEAT_MS = 60000;
+  var STALE_MS = 130000; // ~2x heartbeat plus slack, same staleness-detection tradeoff group-study.js documents
 
   function boot() {
     var auth = firebase.auth();
@@ -116,8 +121,10 @@
       if (recheckTimer) { clearInterval(recheckTimer); recheckTimer = null; }
     }
 
+    function visible() { return document.visibilityState !== "hidden"; }
     auth.onAuthStateChanged(function (user) {
       if (user && !user.isAnonymous) {
+        if (!visible()) return;   // opened in a background tab: start when it is first shown
         startHeartbeat(user.uid);
         startListening(user.uid);
       } else {
@@ -130,7 +137,8 @@
     document.addEventListener("visibilitychange", function () {
       var uid = auth.currentUser && !auth.currentUser.isAnonymous ? auth.currentUser.uid : null;
       if (!uid) return;
-      if (document.visibilityState === "visible") writePresence(uid); // catch up immediately after backgrounding instead of waiting up to HEARTBEAT_MS
+      if (visible()) { startHeartbeat(uid); startListening(uid); }   // writes once now, then every HEARTBEAT_MS
+      else { stopHeartbeat(); stopListening(); }
     });
   }
 

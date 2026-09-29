@@ -40,10 +40,24 @@
     try { return JSON.parse(realGetItem.call(localStorage, META_KEY)) || {}; }
     catch (e) { return {}; }
   }
-  function touchMeta(key, ts) {
+  // Besides one timestamp per key, the meta object carries four reserved entries
+  // (their names start with "__", which no synced key does):
+  //   __u    keys changed on this device that have not reached the cloud yet
+  //   __uid  the account this device last synced with
+  //   __max  newest cloud timestamp seen, so a page load can ask only for what is newer
+  //   __full when this device last read the WHOLE cloud copy
+  function touchMeta(key, ts, dirty) {
     var m = getMeta();
     m[key] = ts;
+    if (dirty) { m.__u = m.__u || {}; m.__u[key] = 1; }
     realSetItem.call(localStorage, META_KEY, JSON.stringify(m));
+  }
+  function clearDirty(key, ts) {   // only if the key has not been written again since this push started
+    var m = getMeta();
+    if (m.__u && m.__u[key] && m[key] === ts) {
+      delete m.__u[key];
+      realSetItem.call(localStorage, META_KEY, JSON.stringify(m));
+    }
   }
 
   var currentUser = null;
@@ -71,10 +85,11 @@
     var val = realGetItem.call(localStorage, key);
     var ts = Date.now();
     touchMeta(key, ts);
+    var done = function () { clearDirty(key, ts); };
     if (val === null) {
-      docRef(key).delete().catch(reportWriteError);
+      docRef(key).delete().then(done).catch(reportWriteError);
     } else {
-      docRef(key).set({ value: val, updatedAt: ts }).catch(reportWriteError);
+      docRef(key).set({ value: val, updatedAt: ts }).then(done).catch(reportWriteError);
     }
   }
 
@@ -111,43 +126,53 @@
   Storage.prototype.setItem = function (key, value) {
     realSetItem.call(this, key, value);
     if (this === localStorage && key !== META_KEY) {
-      touchMeta(key, Date.now());
+      touchMeta(key, Date.now(), true);
       schedulePush(key);
     }
   };
   Storage.prototype.removeItem = function (key) {
     realRemoveItem.call(this, key);
     if (this === localStorage && key !== META_KEY) {
-      touchMeta(key, Date.now());
+      touchMeta(key, Date.now(), true);
       schedulePush(key);
     }
   };
 
-  function pushAllLocal() {
-    var keys = [];
-    for (var i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
-    keys.forEach(function (key) {
-      if (key !== META_KEY) schedulePush(key);
-    });
-  }
+  // What a page load costs matters: Firestore's free tier is 50K reads and 20K writes a day for the
+  // whole class, and this runs on every page for every signed-in student. So a normal load asks the
+  // cloud only for keys changed since the last look (a few documents, not one per key the student
+  // has) and pushes only keys that changed on this device and never arrived. The whole cloud copy is
+  // still read on a first sign-in, on an account change, and every FULL_EVERY_MS as a safety net
+  // (clock differences between devices could otherwise hide a change). A key written on this device
+  // is pushed the moment it is written, exactly as before; that path is untouched.
+  var FULL_EVERY_MS = 6 * 3600 * 1000;
+  // Ask for keys strictly newer than the newest timestamp seen. No look-back margin on purpose: the
+  // old client re-wrote every key on every page load, so an account's documents can all sit within
+  // seconds of each other, and any margin would re-read them all on every load. A key written by a
+  // device whose clock runs behind could be missed by this cheap read, so the periodic full read
+  // (FULL_EVERY_MS) is what catches it.
+  var SKEW_MARGIN_MS = 0;
 
-  // Pulls every synced key from Firestore; for each one, keeps whichever
-  // side (local vs. cloud) has the newer recorded timestamp. This is what
-  // makes switching devices safe in both directions: a brand-new device has
-  // no local timestamps at all, so cloud always wins; a device that was
-  // just used offline has fresher local timestamps, so local wins and gets
-  // pushed back up afterward by pushAllLocal(). Returns whether anything
-  // actually changed on this device, so the caller can decide whether a
-  // reload is warranted.
+  // Pulls keys from Firestore; for each one, keeps whichever side (local vs. cloud) has the newer
+  // recorded timestamp. This is what makes switching devices safe in both directions: a brand-new
+  // device has no local timestamps at all, so cloud always wins; a device that was just used offline
+  // has fresher local timestamps, so local wins and gets pushed back up afterward. Resolves to
+  // { changed, full, cloud } where `cloud` maps key -> cloud timestamp for the documents it read.
   function hydrateFromCloud(uid) {
-    return db.collection("users").doc(uid).collection("kv").get().then(function (snap) {
+    var m0 = getMeta(), now = Date.now();
+    var full = m0.__uid !== uid || !m0.__full || !m0.__max || (now - m0.__full) > FULL_EVERY_MS || m0.__full > now;
+    var q = db.collection("users").doc(uid).collection("kv");
+    if (!full) q = q.where("updatedAt", ">", Math.max(0, m0.__max - SKEW_MARGIN_MS));
+    return q.get().then(function (snap) {
       var meta = getMeta();
-      var changed = false;
+      var changed = false, cloud = {}, max = full ? 0 : (meta.__max || 0);
       snap.forEach(function (doc) {
         var key = decodeURIComponent(doc.id);
         var data = doc.data();
         var cloudTs = data.updatedAt || 0;
         var localTs = meta[key] || 0;
+        cloud[key] = cloudTs;
+        if (cloudTs > max) max = cloudTs;
         if (cloudTs > localTs) {
           var localVal = realGetItem.call(localStorage, key);
           if (localVal !== data.value) {
@@ -157,9 +182,31 @@
           meta[key] = cloudTs;
         }
       });
+      meta.__uid = uid;
+      meta.__max = max;
+      if (full) meta.__full = Date.now();
       realSetItem.call(localStorage, META_KEY, JSON.stringify(meta));
-      return changed;
+      return { changed: changed, full: full, cloud: cloud };
     });
+  }
+
+  // After hydrating: send up what the cloud does not have. After a full read that is every local key
+  // that is missing from the cloud or newer here; after a partial read, the keys marked as not yet
+  // pushed. (Before this, every local key was re-written on every page load.)
+  function pushPending(res) {
+    var meta = getMeta(), keys = [];
+    if (res.full) {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k === META_KEY) continue;
+        if (!(k in res.cloud) || (meta[k] || 0) > res.cloud[k]) keys.push(k);
+      }
+      // keys deleted here while signed out: nothing local to enumerate, the dirty list remembers them
+      Object.keys(meta.__u || {}).forEach(function (k) { if (keys.indexOf(k) < 0 && realGetItem.call(localStorage, k) === null) keys.push(k); });
+    } else {
+      keys = Object.keys(meta.__u || {});
+    }
+    keys.forEach(function (key) { schedulePush(key); });
   }
 
   function reportAuthError(err) {
@@ -195,8 +242,9 @@
     currentUser = user;
     renderAccountUI(user);
     if (user) {
-      hydrateFromCloud(user.uid).then(function (changed) {
-        pushAllLocal();
+      hydrateFromCloud(user.uid).then(function (res) {
+        pushPending(res);
+        var changed = res.changed;
         // No extra loop guard needed: hydrateFromCloud() already writes the
         // updated timestamp into META_KEY before we get here, so the very
         // next hydrate (on the page this reload lands on) sees

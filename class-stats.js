@@ -307,12 +307,24 @@
 
     var el = document.getElementById("class-counter-value");
     if (!el) return; // this page doesn't display the counter
-    statRef().onSnapshot(function (snap) {
-      var v = (snap.exists && snap.data() && snap.data().questionsCompleted) || 0;
-      var wrap = document.getElementById("class-counter");
-      if (wrap) wrap.classList.add("ready");
-      animateTo(el, v);
-    }, function () { /* offline / permission-denied -- leave the placeholder */ });
+    // Every increment anyone makes is pushed to every page listening, and each push is a billed read.
+    // A hidden tab has nobody looking at the number, so it listens only while the page is on screen
+    // (coming back to it costs one read and shows the current total).
+    var unsub = null;
+    function listen() {
+      if (unsub) return;
+      unsub = statRef().onSnapshot(function (snap) {
+        var v = (snap.exists && snap.data() && snap.data().questionsCompleted) || 0;
+        var wrap = document.getElementById("class-counter");
+        if (wrap) wrap.classList.add("ready");
+        animateTo(el, v);
+      }, function () { /* offline / permission-denied -- leave the placeholder */ });
+    }
+    function unlisten() { if (unsub) { unsub(); unsub = null; } }
+    if (document.visibilityState !== "hidden") listen();
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden") unlisten(); else listen();
+    });
   }
 
   if (window.__firebaseReady) boot();
