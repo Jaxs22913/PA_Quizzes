@@ -369,25 +369,31 @@
   /* ========================================================= PLAN panel == */
   function stackedChart(days, exams, cap, opts) {
     opts = opts || {};
-    var N = days.length, W = 700, Hh = 150, pad = 22, bw = (W - 8) / N, max = 60;
-    days.forEach(function (d) { max = Math.max(max, (cap[d] || 0), (d.tot || 0)); });
+    var N = days.length, W = 700, Hh = 150, pad = 44, bw = (W - 8) / N;
     var totals = days.map(function (d) { return (opts.plan[d] || []).reduce(function (a, t) { return a + t.minutes; }, 0); });
-    max = Math.max.apply(null, [60].concat(totals, days.map(function (d) { return cap[d] || 0; })));
+    var max = Math.max.apply(null, [60].concat(totals, days.map(function (d) { return cap[d] || 0; })));
     max = Math.ceil(max / 60) * 60;
     var colorFor = {}; exams.forEach(function (x) { colorFor[x.id] = colorOf(x.c); });
+    var examDay = {}; exams.forEach(function (e) { (examDay[e.d] = examDay[e.d] || []).push(e); });
+    // Every day is dated under its bar; on long views every second day, plus every exam day.
+    var step = N > 30 ? 2 : 1;
     var s = '<svg class="pl-chart" viewBox="0 0 ' + W + " " + (Hh + pad) + '" role="img" aria-label="Planned study minutes per day">';
     for (var g = 0; g <= max; g += 60) { var y = Hh - g / max * (Hh - 8); s += '<line x1="0" x2="' + W + '" y1="' + y + '" y2="' + y + '" class="grid"/>' + (g ? '<text x="' + (W - 2) + '" y="' + (y - 2) + '" class="lbl r">' + g / 60 + ' h</text>' : ""); }
     days.forEach(function (d, i) {
-      var x = 4 + i * bw, yy = Hh, ts = opts.plan[d] || [];
-      var rest = !cap[d];
-      ts.forEach(function (t) { var hgt = t.minutes / max * (Hh - 8); yy -= hgt; s += '<rect x="' + (x + 1) + '" y="' + yy.toFixed(1) + '" width="' + Math.max(1, bw - 2).toFixed(1) + '" height="' + Math.max(0.5, hgt - 0.6).toFixed(1) + '" rx="1.5" fill="' + (colorFor[t.exam] || "var(--a-teal)") + '"><title>' + esc(dLabel(d) + " · " + hm(t.minutes)) + "</title></rect>"; });
+      var x = 4 + i * bw, yy = Hh, ts = opts.plan[d] || [], ex = examDay[d] || [];
+      ts.forEach(function (t) { var hgt = t.minutes / max * (Hh - 8); yy -= hgt; s += '<rect x="' + (x + 1) + '" y="' + yy.toFixed(1) + '" width="' + Math.max(1, bw - 2).toFixed(1) + '" height="' + Math.max(0.5, hgt - 0.6).toFixed(1) + '" rx="1.5" fill="' + (colorFor[t.exam] || "var(--a-teal)") + '"><title>' + esc(dLabel(d) + " \u00b7 " + hm(t.minutes)) + "</title></rect>"; });
       if (cap[d]) { var cy = Hh - cap[d] / max * (Hh - 8); s += '<line x1="' + (x + 1) + '" x2="' + (x + bw - 1) + '" y1="' + cy + '" y2="' + cy + '" class="cap"/>'; }
       if (d === TODAY) s += '<rect x="' + x + '" y="' + (Hh + 2) + '" width="' + bw + '" height="3" class="today"/>';
-      var ex = exams.filter(function (e) { return e.d === d; });
-      ex.forEach(function (e) { s += '<path d="M' + (x + bw / 2) + " " + (Hh + 3) + " l-4 8 h8 z\" fill=\"" + colorOf(e.c) + '"><title>' + esc(nameOf(e) + " exam") + "</title></path>"; });
-      if ((E.dow(d) === 1 || i === 0) && !ex.length) s += '<text x="' + (x + bw / 2) + '" y="' + (Hh + 18) + '" class="lbl c">' + (E.parse(d).getMonth() + 1) + "/" + E.parse(d).getDate() + "</text>";
+      ex.forEach(function (e) { s += '<path d="M' + (x + bw / 2) + " " + (Hh + 5) + " l-4.5 8 h9 z\" fill=\"" + colorOf(e.c) + '"><title>' + esc(nameOf(e) + " exam") + "</title></path>"; });
+      var prevEx = i > 0 && examDay[days[i - 1]], nextEx = i < N - 1 && examDay[days[i + 1]];
+      var show = ex.length || (i % step === 0 && !prevEx && !nextEx) || (i === 0);
+      if (show) {
+        var dt = E.parse(d), cls = "lbl c" + (ex.length ? " ex" : d === TODAY ? " td" : ""), fill = ex.length ? ' style="fill:' + colorOf(ex[0].c) + '"' : "";
+        s += '<text x="' + (x + bw / 2) + '" y="' + (Hh + 26) + '" class="' + cls + '"' + fill + '>' + DOW[dt.getDay()].charAt(0) + '</text>' +
+             '<text x="' + (x + bw / 2) + '" y="' + (Hh + 37) + '" class="' + cls + '"' + fill + '>' + (((N <= 30 && ex.length) || dt.getDay() === 1 || i === 0 || dt.getDate() === 1) ? (dt.getMonth() + 1) + "/" + dt.getDate() : dt.getDate()) + "</text>";
+      }
     });
-    return s + "</svg>";
+    return '<div class="pl-chartwrap">' + s + "</svg></div>";
   }
 
   function examStatus(x, fp) {

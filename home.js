@@ -277,7 +277,10 @@ document.querySelectorAll(".semester").forEach(semester => {
             st.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.2 5 5.4 5 10.2a5 5 0 0 1-10 0c0-2.3 1.1-3.7 2.3-4.9.2 1.7 1 2.8 2.2 3.2-.2-3.1-.1-5.6.5-8.5z"/></svg>' + c.streak + "-day streak";
           }
         }
-        fill.style.strokeDashoffset = (263.9 * (1 - frac)).toFixed(1);
+        /* Set after first paint so the ring sweeps in instead of appearing filled. */
+        requestAnimationFrame(function () { requestAnimationFrame(function () {
+          fill.style.strokeDashoffset = (263.9 * (1 - frac)).toFixed(1);
+        }); });
         box.setAttribute("aria-label", "Today's study plan: " + main.textContent);
       })();
 

@@ -299,7 +299,11 @@
   .pl-chart { width: 100%; height: auto; display: block; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 8px 6px 2px; box-sizing: border-box; }
   .pl-chart .grid { stroke: rgba(127,127,127,.22); stroke-width: 1; }
   .pl-chart .cap { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 3 2; }
+  .pl-chartwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .pl-chartwrap .pl-chart { min-width: 620px; }
   .pl-chart .lbl { font-size: 9px; fill: var(--muted); }
+  .pl-chart .lbl.ex { font-weight: 800; font-size: 9.5px; }
+  .pl-chart .lbl.td { font-weight: 800; fill: var(--accent); }
   .pl-chart .lbl.r { text-anchor: end; } .pl-chart .lbl.c { text-anchor: middle; }
   .pl-chart .today { fill: var(--accent); }
   .pl-seg { font: inherit; font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: var(--r-pill); border: 1px solid var(--border); background: var(--card); color: var(--muted); cursor: pointer; }
