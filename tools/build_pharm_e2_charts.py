@@ -226,10 +226,7 @@ def build_kcz():
 
 
 def build_charts():
-    for l in lecs():
-        ch = L.load(l).get("chart")
-        if not ch:
-            continue
+    for l, ch in [(l, c) for l in lecs() for c in L.charts_of(L.load(l))]:
         hdr = [(h, "") for h in ch["headers"]]
         trs = []
         for r in ch["rows"]:

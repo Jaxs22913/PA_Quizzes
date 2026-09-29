@@ -86,6 +86,11 @@ def lectures_present():
     return [l for l in LECTURES if load(l) is not None]
 
 
+def charts_of(d):
+    """The lecture's comparison charts: the single "chart" plus any in "charts"."""
+    return ([d["chart"]] if d.get("chart") else []) + list(d.get("charts") or [])
+
+
 def iter_rows(d):
     """(kind, row) for every row that carries slide+verify."""
     for k in KINDS:
@@ -94,8 +99,7 @@ def iter_rows(d):
     for grp in ("killers", "commons", "zebras"):
         for r in (d.get("kcz") or {}).get(grp, []):
             yield "kcz-" + grp, r
-    ch = d.get("chart")
-    if ch:
+    for ch in charts_of(d):
         for r in ch.get("rows", []):
             yield "chart", r
 

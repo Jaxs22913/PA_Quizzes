@@ -2477,5 +2477,154 @@
    }
   ],
   "notes": "<b>Two facts flagged as very easy test questions:</b> anything that changes <b>potassium</b> (ACE inhibitors and angiotensin receptor blockers raise it) and <b>pregnancy</b> (ACE inhibitors and angiotensin receptor blockers are not given in the second and third trimesters). <b>Two drugs you must never stop suddenly:</b> beta blockers and clonidine. Diuretics are taught later with heart failure; here they appear only as partners (added to angiotensin receptor blockers, clonidine and the direct vasodilators). Every cell is drawn from the Indications, Side Effects and Contraindications pages, where each fact carries its own slide reference."
- }
+ },
+ "charts": [
+  {
+   "slug": "vasodilator-chart",
+   "title": "Direct Vasodilators Compared",
+   "sub": "Hydralazine, minoxidil and nitroprusside: what each dilates and how strong its reflex effects are.",
+   "headers": [
+    "Drug",
+    "Veins",
+    "Arterioles",
+    "Tachycardia (reflex)",
+    "Sodium retention"
+   ],
+   "notes": "A plus means the effect is present and more plus means stronger; a minus means it is not. <b>Minoxidil is the strongest arteriolar dilator and causes the most reflex tachycardia and sodium retention.</b> <b>Nitroprusside is the only one of the three that also dilates veins</b> and does not cause sodium retention. (The lecturer said not to memorize the plus counts; know the pattern.)",
+   "rows": [
+    {
+     "cells": [
+      "Hydralazine<br><span class=g>Apresoline</span>",
+      "&minus;",
+      "+",
+      "+",
+      "+"
+     ],
+     "slide": 98,
+     "verify": [
+      "Hydralazine - + + +"
+     ]
+    },
+    {
+     "cells": [
+      "Minoxidil<br><span class=g>Loniten</span>",
+      "&minus;",
+      "+++",
+      "+++",
+      "+++"
+     ],
+     "slide": 98,
+     "verify": [
+      "Minoxidil - +++ +++ +++"
+     ]
+    },
+    {
+     "cells": [
+      "Nitroprusside<br><span class=g>Nitropress</span>",
+      "+",
+      "++",
+      "+",
+      "&minus;"
+     ],
+     "slide": 98,
+     "verify": [
+      "Nitroprusside + ++ + -"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "beta-blocker-chart",
+   "title": "Non-Selective Beta Blockers Compared",
+   "sub": "The first-generation beta blockers on the slides, by membrane-stabilizing activity, lipid solubility and intrinsic sympathomimetic activity.",
+   "headers": [
+    "Drug",
+    "Group",
+    "Membrane stabilizing",
+    "Lipid solubility",
+    "Intrinsic sympathomimetic activity (ISA)"
+   ],
+   "notes": "<b>Lipid solubility predicts central nervous system effects</b> (depression, nightmares, vivid dreams): propranolol and penbutolol are the highly lipid-soluble ones. <b>Pindolol has the most intrinsic sympathomimetic activity</b>, meaning it partly stimulates the receptor it blocks. (The lecturer said not to memorize the plus counts; know the pattern.)",
+   "rows": [
+    {
+     "cells": [
+      "Nadolol<br><span class=g>Corgard</span>",
+      "Non-selective (first generation)",
+      "0",
+      "Low",
+      "0"
+     ],
+     "slide": 60,
+     "verify": [
+      "Nadolol (Corgard) 0 Low 0"
+     ]
+    },
+    {
+     "cells": [
+      "Penbutolol<br><span class=g>Levatol</span>",
+      "Non-selective (first generation)",
+      "0",
+      "High",
+      "+"
+     ],
+     "slide": 60,
+     "verify": [
+      "Penbutolol (Levatol) 0 High +"
+     ]
+    },
+    {
+     "cells": [
+      "Pindolol<br><span class=g>Visken</span>",
+      "Non-selective (first generation)",
+      "+",
+      "Low",
+      "+++"
+     ],
+     "slide": 60,
+     "verify": [
+      "Pindolol (Visken) + Low +++"
+     ]
+    },
+    {
+     "cells": [
+      "Propranolol<br><span class=g>Inderal</span>",
+      "Non-selective (first generation)",
+      "++",
+      "High",
+      "0"
+     ],
+     "slide": 60,
+     "verify": [
+      "Propranolol (Inderal) ++ High 0"
+     ]
+    },
+    {
+     "cells": [
+      "Sotalol<br><span class=g>Betapace</span>",
+      "Non-selective (first generation)",
+      "0",
+      "Low",
+      "0"
+     ],
+     "slide": 60,
+     "verify": [
+      "Sotolol (Betapace) 0 Low 0"
+     ]
+    },
+    {
+     "cells": [
+      "Timolol<br><span class=g>Blocadren</span>",
+      "Non-selective (first generation)",
+      "0",
+      "Moderate",
+      "0"
+     ],
+     "slide": 60,
+     "verify": [
+      "Timolol (Blocadren) 0 moderate 0"
+     ]
+    }
+   ]
+  }
+ ]
 }
