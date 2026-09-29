@@ -969,43 +969,8 @@
   }
 
   /* ====================================================== how to use === */
-  /* The "How to use" button opens the recorded walkthrough in a popup. The file is only
-     requested when the popup opens (nothing downloads with the page), and closing it
-     (button, Esc, or a tap outside) stops playback and returns focus to the button. */
-  var VIDEO = "media/planner-walkthrough.mp4", POSTER = "media/planner-walkthrough-poster.jpg", SEEN_KEY = "tourSeen:planner";
-  function openVideo() {
-    if ($("pl-vid")) return;
-    var opener = $("pl-help");
-    var ov = document.createElement("div");
-    ov.id = "pl-vid"; ov.className = "pl-vid"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", "Study Planner walkthrough video");
-    ov.innerHTML = '<div class="pl-vid-box"><div class="pl-vid-head"><b>Study Planner walkthrough</b>' +
-      '<button type="button" class="pl-vid-x" aria-label="Close video">' + icon("x", 18) + '</button></div>' +
-      '<video controls playsinline preload="none" poster="' + POSTER + '"></video>' +
-      '<p class="pl-vid-note" id="pl-vid-note">About 4 minutes, with music. Captions on screen.</p></div>';
-    document.body.appendChild(ov);
-    document.body.style.overflow = "hidden";
-    var v = ov.querySelector("video"), x = ov.querySelector(".pl-vid-x");
-    function close() {
-      try { v.pause(); v.removeAttribute("src"); v.load(); } catch (e) {}
-      ov.remove(); document.body.style.overflow = ""; document.removeEventListener("keydown", onKey, true);
-      if (opener && opener.focus) opener.focus();
-    }
-    function onKey(e) {
-      if (e.key === "Escape") { e.preventDefault(); close(); }
-      else if (e.key === "Tab") {           // keep focus inside the popup
-        var f = [x, v]; var i = f.indexOf(document.activeElement);
-        e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
-      }
-    }
-    document.addEventListener("keydown", onKey, true);
-    x.addEventListener("click", close);
-    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
-    v.addEventListener("error", function () { $("pl-vid-note").textContent = "The video could not be loaded. Check your connection and try again."; });
-    v.preload = "metadata"; v.src = VIDEO;
-    var p = v.play(); if (p && p.catch) p.catch(function () {});
-    x.focus();
-    markSeen();
-  }
+  /* "How to use" runs the virtual tour: the real page lights up step by step. */
+  var SEEN_KEY = "tourSeen:planner";
   /* ============================================================ tour === */
   /* The "Virtual tour": walks through every part of the real page using the site's own
      tour engine (SiteTour), switching tabs as it goes. Targets are picked when it starts,
@@ -1046,42 +1011,13 @@
     window.SiteTour.run(tourSteps(), "tourSeen:planner:tour", function () { setTab("today"); });
   }
 
-  /* "How to use" first asks which kind of help the student wants. */
   function markSeen() { try { localStorage.setItem(SEEN_KEY, "1"); } catch (e) {} var hb = $("pl-help"); if (hb) hb.classList.remove("new"); }
-  function openHelp() {
-    if ($("pl-help-pop")) return;
-    var opener = document.activeElement;
-    var ov = document.createElement("div");
-    ov.id = "pl-help-pop"; ov.className = "pl-vid"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", "How to use the planner");
-    ov.innerHTML = '<div class="pl-choose"><div class="pl-vid-head"><b>How would you like to learn the planner?</b><button type="button" class="pl-vid-x" aria-label="Close">' + icon("x", 18) + '</button></div>' +
-      '<div class="pl-choices">' +
-      '<button type="button" class="pl-choice" data-pick="video">' + icon("play", 26) + '<b>Video tour</b><span>Watch a short walkthrough with music. About 4 minutes, in a popup.</span></button>' +
-      '<button type="button" class="pl-choice" data-pick="tour">' + icon("target", 26) + '<b>Virtual tour</b><span>Click through the real page step by step. Each part lights up as it is explained.</span></button>' +
-      '</div></div>';
-    document.body.appendChild(ov);
-    var btns = [].slice.call(ov.querySelectorAll("button"));
-    function close(restore) { ov.remove(); document.removeEventListener("keydown", onKey, true); if (restore && opener && opener.focus) opener.focus(); }
-    function onKey(e) {
-      if (e.key === "Escape") { e.preventDefault(); close(true); }
-      else if (e.key === "Tab") { var i = btns.indexOf(document.activeElement); e.preventDefault(); btns[(i + (e.shiftKey ? btns.length - 1 : 1)) % btns.length].focus(); }
-    }
-    document.addEventListener("keydown", onKey, true);
-    ov.addEventListener("click", function (e) {
-      if (e.target === ov) { close(true); return; }
-      var b = e.target.closest("button"); if (!b) return;
-      var pick = b.getAttribute("data-pick");
-      if (pick === "video") { close(false); openVideo(); }
-      else if (pick === "tour") { close(false); startTour(); }
-      else close(true);
-    });
-    btns[1].focus();
-  }
   function initHelp() {
     var b = $("pl-help"); if (!b) return;
     b.innerHTML = icon("help", 16) + " How to use";
     var seen = false; try { seen = !!localStorage.getItem(SEEN_KEY); } catch (e) {}
     if (!seen) b.classList.add("new");
-    b.addEventListener("click", openHelp);
+    b.addEventListener("click", startTour);
   }
 
   /* ============================================================== boot == */
