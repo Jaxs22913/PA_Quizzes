@@ -163,7 +163,11 @@
     if (from < floor) from = floor;
     var changed = false;
     E.range(from, TODAY).forEach(function (d) {
-      if (!store.days[d]) { store.days[d] = { tasks: materialize(d, false) }; changed = true; }
+      var rd = store.days[d];
+      if (!rd) { store.days[d] = { tasks: materialize(d, false) }; changed = true; }
+      else if (rd.pre) {          // made ahead of time by the exam picker: its day has come, so add the automatic tasks
+        delete rd.pre; if (!isManual() && !rd.off) rd.tasks = materialize(d, true); changed = true;
+      }
     });
     if (changed) save();
   }
@@ -179,6 +183,14 @@
       rec.tasks.forEach(function (t) { if (t.exam && !t.done) done[t.exam] = (done[t.exam] || 0) + t.minutes; });
     }
     if (rec) used[TODAY] = 99999;
+    Object.keys(store.days).forEach(function (d) {          // content the student scheduled ahead (exam picker)
+      if (d <= TODAY || store.days[d].off) return;
+      store.days[d].tasks.forEach(function (t) {
+        if (!t.manual || t.done) return;
+        used[d] = (used[d] || 0) + t.minutes;
+        if (t.exam) done[t.exam] = (done[t.exam] || 0) + t.minutes;
+      });
+    });
     var off = offMap();
     var p = E.plan(exams, TODAY, c, store.ovr, done, off, used, nowMin(), store.created);
     // What the plan believes each exam still needs, ignoring today's frozen list.
@@ -211,6 +223,11 @@
     var a = [];
     function L(href, label) { a.push('<a class="pl-link" href="' + esc(encodeURI(href)) + '">' + label + "</a>"); }
     function short(t) { t = String(t).replace(/\s+/g, " "); return t.length > 34 ? t.slice(0, 33).replace(/\s+\S*$/, "") + "\u2026" : t; }
+    if (t.manual && t.href) {
+      L(t.href, "Open " + (t.hk === "guide" ? "the guide" : t.hk === "cram" ? "the cram sheet" : t.hk === "master" ? "the exam" : t.hk === "ref" ? "the page" : "the quiz"));
+      if (t.hk !== "guide" && r.guide) L(r.guide, "Study guide");
+      return a.join("");
+    }
     if (t.manual) {
       if (r.guide) L(r.guide, "Study guide");
       if (r.cram) L(r.cram, "Cram sheet");
@@ -283,6 +300,8 @@
   }
 
   /* ============================================================ manual mode === */
+  /* Tasks the student put on a future day themselves (exam picker), shown beside the automatic ones. */
+  function aheadOf(d) { var r = store.days[d]; return r && !r.off ? r.tasks.filter(function (t) { return t.manual; }) : []; }
   function dayTasksOf(d, fp) {
     if (isManual()) { var r = store.days[d]; return r && !r.off ? r.tasks.filter(isRealTask) : []; }
     return fp.plan.days[d] || [];
@@ -326,6 +345,124 @@
     flash("Added to " + (E.diff(TODAY, day) === 0 ? "today" : E.diff(TODAY, day) === 1 ? "tomorrow" : dLabel(day)));
   }
 
+
+  /* ===================================================== exam content picker == */
+  /* Choose an upcoming exam and the planner lists what there is to do for it (study guide, cram
+     sheet, reference pages, every quiz, the master exams), each with a time estimate and a link.
+     Tick what you want, pick a start and finish day, and each becomes a task on your plan. */
+  var xp = { ex: "", sel: {}, start: null, fin: null, spread: true };
+  var PGROUPS = [["read", "Read and review", ["guide", "cram"]], ["ref", "Reference pages", ["ref"]], ["quiz", "Topic quizzes and drills", ["quiz", "drill"]], ["master", "Master exams", ["master"]]];
+  function pickExams() {
+    return futurePlan().exams.filter(function (x) { var r = RES[resKey(x)]; return x.d > TODAY && r && r.items && r.items.length; });
+  }
+  function pickExam() { return pickExams().filter(function (x) { return x.id === xp.ex; })[0] || null; }
+  function itemMin(it, x) {
+    var m;
+    if (it.k === "guide") { var lec = x.units.filter(function (u) { return u.kind === "lec" && u.date <= TODAY; }).length; m = lec ? Math.max(30, Math.min(180, lec * 20)) : 60; }
+    else if (it.k === "cram") m = 30;
+    else if (it.k === "ref") m = 15;
+    else if (it.k === "master") m = Math.max(30, it.n || 60);
+    else m = Math.max(10, Math.round((it.n || 30) * 0.8));
+    return Math.round(m / 5) * 5;
+  }
+  function itemName(it, x) {
+    if (it.k === "guide") { var u = unitText(x.units.filter(function (v) { return v.date <= TODAY; })); return "Read the study guide" + (u ? " (" + u + ")" : ""); }
+    if (it.k === "cram") return "Work through the cram sheet";
+    if (it.k === "ref") return "Review: " + it.t;
+    return it.t;
+  }
+  function pickDefaults(x) {
+    var sel = {}, firstMaster = true;
+    (RES[resKey(x)].items || []).forEach(function (it) {
+      if (it.k === "ref") return;
+      if (it.k === "master") { if (firstMaster) sel[it.href] = true; firstMaster = false; return; }
+      sel[it.href] = true;
+    });
+    xp.sel = sel; xp.start = TODAY;
+    var last = E.add(x.d, -1);
+    xp.fin = last < TODAY ? TODAY : (E.diff(TODAY, last) > 14 ? E.add(TODAY, 14) : last);
+  }
+  function pickDays() {
+    var out = [], d = xp.start || TODAY;
+    while (d <= xp.fin) { if (!(store.days[d] && store.days[d].off)) out.push(d); d = E.add(d, 1); }
+    return out.length ? out : [xp.start || TODAY];
+  }
+  /* which day each ticked item lands on, in order (study guide first, master exams last) */
+  function pickSchedule(x) {
+    var items = (RES[resKey(x)].items || []).filter(function (it) { return xp.sel[it.href]; });
+    var days = xp.spread ? pickDays() : [xp.start || TODAY];
+    var total = items.reduce(function (a, it) { return a + itemMin(it, x); }, 0), cum = 0;
+    return items.map(function (it) {
+      var m = itemMin(it, x), idx = total ? Math.min(days.length - 1, Math.floor(cum / total * days.length)) : 0;
+      cum += m; return { it: it, day: days[idx], min: m };
+    });
+  }
+  function pickSummary(x) {
+    var sch = pickSchedule(x);
+    if (!sch.length) return "Tick at least one item.";
+    var total = sch.reduce(function (a, r) { return a + r.min; }, 0), used = {}; sch.forEach(function (r) { used[r.day] = (used[r.day] || 0) + r.min; });
+    var nd = Object.keys(used).length, avg = Math.round(total / nd / 5) * 5, c = cfg(), cap = 0;
+    Object.keys(used).forEach(function (d) { var w = E.windowOf(d, c, null, false); cap = Math.max(cap, w ? E.capOf(w, c) : 0); });
+    var s = "<b>" + sch.length + " task" + (sch.length > 1 ? "s" : "") + "</b> · " + hm(total) + " over " + nd + " day" + (nd > 1 ? "s" : "") + " (about " + hm(avg) + " a day)";
+    if (cap && avg > cap) s += '<span class="pl-xwarn"> That is more than your study window allows (about ' + hm(cap) + " a day). Untick some items or choose a later finish day.</span>";
+    return s;
+  }
+  function pickerBody() {
+    var exams = pickExams(), x = pickExam();
+    var h = '<label class="pl-mf"><span>Which exam?</span><select data-pick="exam"><option value="">Choose an upcoming exam…</option>' +
+      exams.map(function (e) { return '<option value="' + esc(e.id) + '"' + (x && x.id === e.id ? " selected" : "") + ">" + esc(nameOf(e)) + " (" + esc(dLabel(e.d)) + ", " + esc(relDay(e.d)) + ")</option>"; }).join("") + "</select></label>";
+    if (!x) return h + '<p class="pl-fine">Pick an exam and its study guide, cram sheet, quizzes and master exams appear here to tick off. Each one you keep becomes a task with a time estimate and a link.</p>';
+    var r = RES[resKey(x)], last = E.add(x.d, -1), opts = E.range(TODAY, last < TODAY ? TODAY : last).slice(0, 60);
+    function dayOpts(from, cur) { return opts.filter(function (d) { return d >= from; }).map(function (d) { return '<option value="' + d + '"' + (d === cur ? " selected" : "") + ">" + esc(d === TODAY ? "Today" : dLabel(d)) + "</option>"; }).join(""); }
+    h += '<div class="pl-xdays"><label class="pl-mf"><span>Start on</span><select data-pick="start">' + dayOpts(TODAY, xp.start) + "</select></label>" +
+      '<label class="pl-mf"><span>Finish by</span><select data-pick="fin"' + (xp.spread ? "" : " disabled") + ">" + dayOpts(xp.start, xp.fin) + "</select></label></div>" +
+      '<label class="pl-xspread"><input type="checkbox" data-pick="spread"' + (xp.spread ? " checked" : "") + "> Spread the tasks across those days (unticked, everything goes on the start day)</label>";
+    PGROUPS.forEach(function (g) {
+      var its = r.items.filter(function (it) { return g[2].indexOf(it.k) >= 0; });
+      if (!its.length) return;
+      var on = its.filter(function (it) { return xp.sel[it.href]; }).length;
+      h += '<fieldset class="pl-xgroup"><legend>' + esc(g[1]) + ' <span class="pl-xcount">' + on + " of " + its.length + "</span></legend>" +
+        '<div class="pl-xall"><button type="button" class="pl-link-btn" data-act="pickgroup" data-g="' + g[0] + '" data-v="1">Select all</button> · <button type="button" class="pl-link-btn" data-act="pickgroup" data-g="' + g[0] + '" data-v="0">None</button></div>' +
+        its.map(function (it) {
+          return '<label class="pl-xrow"><input type="checkbox" data-pick="item" data-href="' + esc(it.href) + '"' + (xp.sel[it.href] ? " checked" : "") + '><span class="pl-xname">' + esc(itemName(it, x)) + '</span><span class="pl-xmeta">' + (it.n ? it.n + " questions · " : "") + hm(itemMin(it, x)) + "</span></label>";
+        }).join("") + "</fieldset>";
+    });
+    h += '<div class="pl-xsum" data-pick-sum aria-live="polite">' + pickSummary(x) + "</div>" +
+      '<div class="pl-mgo"><button class="pl-btn" type="button" data-act="pickadd">' + icon("plus", 14) + " Add to my plan</button></div>" +
+      (isManual() ? "" : '<p class="pl-fine">In automatic mode these count toward ' + esc(nameOf(x)) + ", so the plan schedules less on its own for that exam. You can delete any of them from the Plan tab.</p>");
+    return h;
+  }
+  function pickerCard() {
+    return '<details class="pl-xpick"><summary>' + icon("book", 16) + " Add an exam’s study content<span> · pick an exam, get its to-do list</span></summary><div class=\"pl-xbody\" data-xhost>" + pickerBody() + "</div></details>";
+  }
+  function renderPicker(keepFocus) {
+    [].forEach.call(document.querySelectorAll("[data-xhost]"), function (el) { el.innerHTML = pickerBody(); });
+    if (keepFocus) { var f = document.querySelector('[data-xhost] [data-pick="' + keepFocus + '"]'); if (f) f.focus(); }
+  }
+  function updatePickSummary() {
+    var x = pickExam(); if (!x) return;
+    [].forEach.call(document.querySelectorAll("[data-pick-sum]"), function (el) { el.innerHTML = pickSummary(x); });
+    [].forEach.call(document.querySelectorAll("[data-xhost] .pl-xgroup"), function (fs) {
+      var boxes = fs.querySelectorAll('input[data-pick="item"]'), on = [].filter.call(boxes, function (b) { return b.checked; }).length, c = fs.querySelector(".pl-xcount");
+      if (c) c.textContent = on + " of " + boxes.length;
+    });
+  }
+  function addPicked() {
+    var x = pickExam(); if (!x) return;
+    var sch = pickSchedule(x); if (!sch.length) return;
+    var stamp = Date.now().toString(36);
+    sch.forEach(function (r, i) {
+      var rec = store.days[r.day] || (store.days[r.day] = { tasks: [] });
+      if (!rec.tasks.length && r.day > TODAY && !isManual()) rec.pre = true;      // its automatic tasks are added when the day arrives
+      rec.off = false;
+      rec.tasks.push({ id: r.day + "|x" + stamp + i, manual: true, name: itemName(r.it, x), minutes: r.min, exam: x.id, href: r.it.href, hk: r.it.k,
+        ex: { name: nameOf(x), d: x.d, c: x.c, key: resKey(x) }, done: false, logged: 0 });
+    });
+    invalidate(); save(); xp.sel = {}; xp.ex = "";
+    renderAll();
+    flash("Added " + sch.length + " task" + (sch.length > 1 ? "s" : "") + " for " + nameOf(x));
+  }
+
   function renderToday() {
     var host = $("pl-today"), fp = futurePlan(), S = streakState(), rec = store.days[TODAY] || { tasks: [] };
     var c = fp.cfg, win = E.windowOf(TODAY, c, nowMin(), true), full = E.windowOf(TODAY, c, null, false);
@@ -355,6 +492,7 @@
     else if (isManual()) h += '<div class="pl-empty">' + (rec.off ? "Enjoy the day off." : "No tasks yet. Add your first one below.") + "</div>";
     else h += '<div class="pl-empty">' + (rec.off ? "Enjoy the day off." : "No study tasks today.") + " Use " + '<button class="pl-link-btn" type="button" data-act="replan">Re-plan</button>' + " if you changed your hours, or add your own task below.</div>";
     h += isManual() ? manualForm(TODAY) : '<form class="pl-add" data-act="addform"><input name="name" type="text" maxlength="80" placeholder="Add your own task (does not affect your streak)" aria-label="Task name"><input name="min" type="number" min="5" max="240" step="5" value="30" aria-label="Minutes"><button class="pl-btn" type="submit">' + icon("plus", 14) + " Add</button></form>";
+    h += pickerCard();
     h += "</div>";
     h += '<div class="pl-colside">' + streakCard(S) + "</div></div>";
 
@@ -492,8 +630,9 @@
     var view = store.ui.horizon || 28;
     var range = E.range(TODAY, E.add(TODAY, view - 1)), capMap = {};
     range.forEach(function (d) { capMap[d] = (isManual() || (store.days[d] && store.days[d].off)) ? 0 : E.capOf(E.windowOf(d, c, nowMin(), d === TODAY), c); });
-    var planDays = {}; range.forEach(function (d) { planDays[d] = isManual() ? dayTasksOf(d, fp) : (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []); });
+    var planDays = {}; range.forEach(function (d) { planDays[d] = isManual() ? dayTasksOf(d, fp) : (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []).concat(aheadOf(d)); });
     var h = isManual() ? modeNote() + '<div id="pl-mform-host">' + manualForm(TODAY) + "</div>" : overloadBanner(fp);
+    h += pickerCard();
     var cr = E.crunches(fp.exams.filter(function (x) { return !(store.ovr[x.id] && store.ovr[x.id].off); }), 5, 3);
     cr.slice(0, 2).forEach(function (k) { h += '<div class="pl-note"><b>' + icon("flag", 14) + " Crunch:</b> " + k.count + " graded dates between " + dLabel(k.from) + " and " + dLabel(k.to) + (isManual() ? ". Leave yourself time for each." : ". The plan starts these early and works on the nearest one first.") + "</div>"; });
 
@@ -588,7 +727,7 @@
   function settingsPreviewData() {
     invalidate();
     var fp = futurePlan(), c = fp.cfg, range = E.range(TODAY, E.add(TODAY, 34)), capMap = {}, pd = {};
-    range.forEach(function (d) { capMap[d] = (store.days[d] && store.days[d].off) ? 0 : E.capOf(E.windowOf(d, c, nowMin(), d === TODAY), c); pd[d] = (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []); });
+    range.forEach(function (d) { capMap[d] = (store.days[d] && store.days[d].off) ? 0 : E.capOf(E.windowOf(d, c, nowMin(), d === TODAY), c); pd[d] = (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []).concat(aheadOf(d)); });
     var short = 0; Object.keys(fp.shortfall).forEach(function (k) { short += fp.shortfall[k]; });
     var planned = 0; range.forEach(function (d) { planned += pd[d].reduce(function (a, t) { return a + t.minutes; }, 0); });
     var week = 0; range.slice(0, 7).forEach(function (d) { week += pd[d].reduce(function (a, t) { return a + t.minutes; }, 0); });
@@ -761,6 +900,11 @@
         flash(nm === "manual" ? "Manual mode on: the planner is off" : "Automatic planning is back on");
       }
     }
+    else if (act === "pickgroup") {
+      var xg = PGROUPS.filter(function (g) { return g[0] === t.getAttribute("data-g"); })[0], xe = pickExam();
+      if (xg && xe) { RES[resKey(xe)].items.forEach(function (it) { if (xg[2].indexOf(it.k) >= 0) { if (t.getAttribute("data-v") === "1") xp.sel[it.href] = true; else delete xp.sel[it.href]; } }); renderPicker(); var det = t.closest("details"); if (det) det.open = true; }
+    }
+    else if (act === "pickadd") addPicked();
     else if (act === "mquick") { var qf = t.closest("form"); qf.name.value = t.getAttribute("data-t"); qf.name.focus(); }
     else if (act === "mmin") { var mf = t.closest("form"); mf.min.value = t.getAttribute("data-m"); [].forEach.call(mf.querySelectorAll("[data-act=mmin]"), function (b) { b.classList.toggle("on", b === t); }); }
     else if (act === "mday" || act === "mexam") {
@@ -772,6 +916,15 @@
     var t = e.target; touched = true;
     if (t.name === "min" && t.closest && t.closest("form.pl-mform")) { [].forEach.call(t.closest("form").querySelectorAll("[data-act=mmin]"), function (b) { b.classList.toggle("on", b.getAttribute("data-m") === t.value); }); return; }
     if (t.closest && t.closest("form.pl-mform")) return;
+    if (t.hasAttribute("data-pick")) {
+      var pk = t.getAttribute("data-pick");
+      if (pk === "exam") { xp.ex = t.value; var xx = pickExam(); if (xx) pickDefaults(xx); renderPicker("exam"); }
+      else if (pk === "item") { if (t.checked) xp.sel[t.getAttribute("data-href")] = true; else delete xp.sel[t.getAttribute("data-href")]; updatePickSummary(); }
+      else if (pk === "start") { xp.start = t.value; if (xp.fin < xp.start) xp.fin = xp.start; renderPicker("start"); }
+      else if (pk === "fin") { xp.fin = t.value; updatePickSummary(); }
+      else if (pk === "spread") { xp.spread = t.checked; renderPicker("spread"); }
+      return;
+    }
     if (t.getAttribute("data-act") === "tick") {
       var tk = findTask(t.getAttribute("data-day"), t.getAttribute("data-tid")); if (!tk) return;
       var wasDone = streakState().todayDone;
@@ -871,6 +1024,7 @@
       { before: tab("today"), selector: pick("#pl-today .pl-streak"), title: "Your streak", text: "A day counts when every task in its plan is ticked. Rest days never break it, and every 5 finished days earns a freeze (keep up to 2) that covers one missed day." },
       { before: tab("today"), selector: pick("#pl-today .pl-week"), title: "This week", text: "Green is a finished day, a snowflake is a day a freeze saved, and a cross is a missed one." },
       { before: tab("today"), selector: pick("#pl-today form.pl-mform", "#pl-today form.pl-add"), title: man ? "Add a study task" : "Your own tasks", text: man ? "Name it, pick the exam, the day and how long. Quick buttons fill in common ideas and lengths." : "Add anything else you need to do today. Your tasks show up in the day but never affect the streak." },
+      { before: tab("today"), selector: "#pl-today .pl-xpick", title: "Add an exam’s study content", text: "Pick an upcoming exam and its study guide, cram sheet, quizzes and master exams appear as a checklist with time estimates. Keep what you want, choose a start and finish day, and each becomes a task with a link." },
       { before: tab("plan"), selector: pick("#pl-plan .pl-chart"), title: "Study load", text: "Every bar is a day, colored by exam, with its date underneath. Triangles mark exam days." + (man ? "" : " The dashed line is your daily limit. Far-off exams start light and build as they get close.") },
       { before: tab("plan"), selector: pick("#pl-plan .pl-exam", "#pl-plan .pl-exams"), title: "Your exams", text: man ? "Each exam shows how much time you have planned for it, so nothing gets forgotten." : "Each exam shows what is done and what is still planned, and warns you if it will not fit in your hours. Nothing is planned before its lecture has been delivered." },
       { before: tab("plan"), selector: pick("#pl-plan .pl-eopt summary", "#pl-plan [data-act=mexam]"), title: man ? "Add a task for an exam" : "Adjust an exam", text: man ? "One tap fills the form with that exam. You can also plan any day ahead of time." : "Change the total hours, how hard it is, when to start, or say you have not started it yet. You can also switch an exam off." },
@@ -945,7 +1099,7 @@
   window.PlannerUI = {
     dayInfo: function (d) {
       var rec = store.days[d]; if (rec && rec.tasks && rec.tasks.length) { var real = rec.tasks.filter(isRealTask); return { minutes: real.reduce(function (a, t) { return a + t.minutes; }, 0), done: real.length && real.every(function (t) { return t.done; }) }; }
-      if (d >= TODAY) { var fp = futurePlan(), ts = fp.plan.days[d]; if (ts && ts.length) return { minutes: ts.reduce(function (a, t) { return a + t.minutes; }, 0), done: false, planned: true }; }
+      if (d >= TODAY) { var fp = futurePlan(), ts = (fp.plan.days[d] || []).concat(aheadOf(d)); if (ts && ts.length) return { minutes: ts.reduce(function (a, t) { return a + t.minutes; }, 0), done: false, planned: true }; }
       return null;
     },
     setTab: setTab, hm: hm
