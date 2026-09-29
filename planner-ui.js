@@ -667,7 +667,10 @@
     h += '<div class="pl-sect"><h3>' + icon("target", 16) + " Your exams</h3><span class=\"pl-sect-r\">" + (isManual() ? "" : "<button class=\"pl-btn small ghost\" type=\"button\" data-act=\"ics\">" + icon("download", 13) + " Add study blocks to my calendar</button>") + "</span></div>";
     h += '<div class="pl-exams">' + (fp.exams.filter(function (x) { return x.d > TODAY; }).map(function (x) { return examCard(x, fp); }).join("") || '<div class="pl-empty">No upcoming exams on the calendar.</div>') + "</div>";
     var skipped = fp.exams.filter(function (x) { return x.d > TODAY; }).length;
-    if (!c.planRetests && !isManual()) h += '<p class="pl-fine">Retests and course remediation are shown on the calendar but not planned. Turn on "Plan for retests too" in Settings if you want them included.</p>';
+    if (retestEvents().length && !isManual()) {
+      var nPick = retestEvents().filter(function (e) { return (store.settings.retests || {})[E.examId(e)]; }).length;
+      h += '<details class="pl-xpick pl-rtpick"><summary>' + icon("flag", 16) + " Retests and remediation<span> · " + (nPick ? nPick + " selected" : "tick the ones you have to take") + "</span></summary><div class=\"pl-xbody\">" + retestSection(true) + "</div></details>";
+    }
     host.innerHTML = h;
     var jump = openDayOnce && $("d-" + openDayOnce); if (jump) jump.open = true;   // only after a "next few days" tap
   }
@@ -744,7 +747,7 @@
     }
   }
   function presetMatch() {
-    var s = store.settings, keys = Object.keys(s).filter(function (k) { return k !== "win"; });
+    var s = store.settings, keys = Object.keys(s).filter(function (k) { return k !== "win" && k !== "retests"; });
     if (!keys.length) return "balanced";
     var hit = null;
     Object.keys(E.PRESETS).forEach(function (id) {
@@ -752,6 +755,24 @@
       if (pk.length === keys.length && pk.every(function (k) { return s[k] === p[k]; })) hit = id;
     });
     return hit || "custom";
+  }
+  /* Retests and course remediation: you only retake what you did not pass, so the student
+     ticks the ones that apply to them and only those are planned. */
+  function retestEvents() {
+    return EVENTS.filter(function (e) { return (e.k === "retest" || e.k === "remediation") && e.c && e.d >= TODAY; })
+      .sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : 0; });
+  }
+  function retestSection(bare) {
+    var evs = retestEvents(), picked = (store.settings.retests) || {};
+    var h = bare ? "" : '<div class="pl-sect"><h3>' + icon("flag", 16) + " Retests and remediation</h3></div>";
+    if (!evs.length) return h + '<div class="pl-empty">No retests or remediation exams are left on the calendar.</div>';
+    h += '<p class="pl-fine top">You only retake an exam you did not pass. Tick each one you actually have to take, and the planner prepares for just those. You can change this any time, for example after your grades come back.</p><div class="pl-retests">' +
+      evs.map(function (e) {
+        var id = E.examId(e), n = nameOf(e);
+        return '<label class="pl-retest' + (picked[id] ? " on" : "") + '" style="--c:' + colorOf(e.c) + '"><input type="checkbox" data-retest="' + esc(id) + '"' + (picked[id] ? " checked" : "") + '><span class="pl-rt-main"><b>' + esc(n) + '</b><span>' + esc(dLabel(e.d)) + " · " + esc(relDay(e.d)) + '</span></span><span class="pl-rt-state">' + (picked[id] ? "I have to take it" : "Not taking it") + "</span></label>";
+      }).join("") + "</div>";
+    var n = evs.filter(function (e) { return picked[E.examId(e)]; }).length;
+    return h + '<p class="pl-fine">' + (n ? n + " selected, planned like any other exam." : "None selected, so none are planned.") + "</p>";
   }
   function renderSettings() {
     var host = $("pl-settings"), c = cfg(), cur = presetMatch();
@@ -761,6 +782,7 @@
       '<button type="button" class="pl-modebtn' + (isManual() ? " on" : "") + '" data-act="mode" data-v="manual" aria-pressed="' + isManual() + '"><b>Manual</b><span>The planner is off. You add your own tasks and study time.</span></button></div>';
     if (isManual()) {
       h += '<div class="pl-note">' + '<b>Manual mode is on.</b> Nothing is scheduled for you. Add tasks on the Today tab, or plan ahead on the Plan tab where you can pick any day and any exam. Tasks you add count toward your streak, and your links, timer and stats work the same. The style, study-window and algorithm settings return when you switch back to Automatic.</div>';
+      h += retestSection();
       h += '<div class="pl-sect"><h3>Reset</h3></div><div class="pl-rowbtns"><button class="pl-btn small ghost danger" type="button" data-act="resetall">Erase my planner history</button></div>';
       host.innerHTML = h; return;
     }
@@ -778,7 +800,7 @@
       var v = c[f[0]];
       return '<label class="pl-field"><span class="pl-fl">' + f[1] + '</span><input type="number" data-set="' + f[0] + '" min="' + f[2] + '" max="' + f[3] + '" step="' + f[4] + '" value="' + v + '"><span class="pl-fh">' + esc(f[5]) + "</span></label>";
     }).join("") + "</div>";
-    h += '<label class="pl-toggle"><input type="checkbox" data-set="planRetests"' + (c.planRetests ? " checked" : "") + "> Plan for retests and remediation too</label>";
+    h += retestSection();
 
     h += '<div class="pl-sect"><h3>' + icon("chart", 16) + " Preview</h3></div><div id=\"pl-preview\"></div>";
     h += '<div class="pl-sect"><h3>' + icon("book", 16) + ' Why it works this way</h3></div><div class="pl-why"><ul>' +
@@ -876,9 +898,9 @@
     else if (act === "dayoffd") { var rd = store.days[day]; if (!rd) rd = store.days[day] = { tasks: [] }; rd.off = !rd.off; if (!rd.off && !rd.tasks.length && day > TODAY) delete store.days[day]; save(); renderAll(); }
     else if (act === "horizon") { store.ui.horizon = +t.getAttribute("data-n"); save(); renderPlan(); }
     else if (act === "more30") { var c2 = cfg(), w = c2.win.map(function (x) { return { on: x.on, start: x.start, end: x.end }; }); w.forEach(function (x) { if (x.on) x.end = Math.min(1439, x.end + 30); }); store.settings.win = w; save(); replan(); renderAll(); }
-    else if (act === "preset") { var p = E.PRESETS[t.getAttribute("data-id")].p, keep = store.settings.win; store.settings = {}; Object.keys(p).forEach(function (k) { store.settings[k] = p[k]; }); if (keep) store.settings.win = keep; save(); renderAll(); }
+    else if (act === "preset") { var p = E.PRESETS[t.getAttribute("data-id")].p, keep = store.settings.win, keepRt = store.settings.retests; store.settings = {}; Object.keys(p).forEach(function (k) { store.settings[k] = p[k]; }); if (keep) store.settings.win = keep; if (keepRt) store.settings.retests = keepRt; save(); renderAll(); }
     else if (act === "copymon") { var cc = cfg(), m = cc.win[1], nw = cc.win.map(function (x, i) { return i >= 1 && i <= 5 ? { on: m.on, start: m.start, end: m.end } : { on: x.on, start: x.start, end: x.end }; }); store.settings.win = nw; save(); renderAll(); }
-    else if (act === "resetset") { store.settings = {}; save(); renderAll(); }
+    else if (act === "resetset") { var keepR = store.settings.retests; store.settings = {}; if (keepR) store.settings.retests = keepR; save(); renderAll(); }
     else if (act === "resetall") { if (confirm("Erase your streak, task history and settings? This can't be undone.")) { store = fresh(); save(); timerState = null; saveTimer(); ensureDays(); renderAll(); } }
     else if (act === "resetex") { delete store.ovr[t.getAttribute("data-ex")]; save(); renderAll(); }
     else if (act === "ics") icsExport();
@@ -916,6 +938,12 @@
     var t = e.target; touched = true;
     if (t.name === "min" && t.closest && t.closest("form.pl-mform")) { [].forEach.call(t.closest("form").querySelectorAll("[data-act=mmin]"), function (b) { b.classList.toggle("on", b.getAttribute("data-m") === t.value); }); return; }
     if (t.closest && t.closest("form.pl-mform")) return;
+    if (t.hasAttribute("data-retest")) {
+      var rid = t.getAttribute("data-retest"), rt = {}; Object.keys(store.settings.retests || {}).forEach(function (k) { rt[k] = true; });
+      if (t.checked) rt[rid] = true; else delete rt[rid];
+      if (Object.keys(rt).length) store.settings.retests = rt; else delete store.settings.retests;
+      save(); invalidate(); renderAll(); return;
+    }
     if (t.hasAttribute("data-pick")) {
       var pk = t.getAttribute("data-pick");
       if (pk === "exam") { xp.ex = t.value; var xx = pickExam(); if (xx) pickDefaults(xx); renderPicker("exam"); }
@@ -1021,7 +1049,14 @@
   }
 
   /* ============================================================== boot == */
+  /* The old single "Plan for retests too" switch becomes one pick per retest. */
+  function migrateRetests() {
+    if (store.settings.planRetests === undefined) return;
+    if (store.settings.planRetests) { var rt = store.settings.retests || {}; retestEvents().forEach(function (e) { rt[E.examId(e)] = true; }); store.settings.retests = rt; }
+    delete store.settings.planRetests; save();
+  }
   function boot() {
+    migrateRetests();
     fetch("planner-resources.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (j) {
       RES = j || {}; ensureDays(); renderAll();
     });

@@ -18,6 +18,21 @@ eq(E.parseCoverage("X (Lectures 7-10 and Lab 2)"), { lec: [7,8,9,10], lab: [2] }
 eq(E.parseCoverage("X - OSCE"), { lec: [], lab: [] }, "none");
 eq(E.parseCoverage("PD II Exam #2 (#5-7)"), { lec: [5,6,7], lab: [] }, "hash range");
 
+
+/* --- retests: planned only for the ones the student says they have to take --- */
+{
+  const today = "2026-09-28", none = E.deriveExams(EV, today, E.settingsWith({}));
+  ok(none.every(x => !x.retest), "no retest is planned by default");
+  const rts = EV.filter(e => (e.k === "retest" || e.k === "remediation") && e.c && e.d >= today);
+  ok(rts.length > 3, "the calendar has retests to pick from");
+  const one = rts.find(e => /Cardiology Block Exam I$/.test(e.t)), id1 = E.examId(one);
+  const picked = E.deriveExams(EV, today, E.settingsWith({ retests: { [id1]: true } }));
+  eq(picked.filter(x => x.retest).map(x => x.id), [id1], "exactly the ticked retest is planned");
+  eq(picked.filter(x => !x.retest).length, none.length, "regular exams are unchanged");
+  const all = E.deriveExams(EV, today, E.settingsWith({ planRetests: true }));
+  eq(all.filter(x => x.retest).length, rts.length, "legacy planRetests still plans every retest");
+  eq(new Set(rts.map(E.examId)).size, rts.length, "retest ids are unique");
+}
 /* --- every real exam, several 'today's --- */
 const days = ["2026-09-28", "2026-10-06", "2026-10-20", "2026-11-05"];
 days.forEach(today => {

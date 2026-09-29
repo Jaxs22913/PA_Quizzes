@@ -64,7 +64,8 @@
     rampPower: 1.6,            // >1 = back-loaded ramp, 1 = flat
     taperLastDayMin: 60,       // the day before an exam is light
     minBlock: 15, maxBlock: 50, // minutes per task
-    planRetests: false,
+    planRetests: false,        // legacy: plan every retest (tests only); the app uses `retests` below
+    retests: {},               // {examId: true} for each retest / remediation the student says they have to take
     catchUpMax: 1.6            // most a missed backlog may inflate the remaining days
   };
   var PRESETS = {
@@ -113,8 +114,17 @@
     return out;
   }
 
-  function isGraded(kind, planRetests) {
-    return kind === "exam" || (planRetests && (kind === "retest" || kind === "remediation"));
+  /* Stable id of a calendar event as an exam: the same string deriveExams gives it. */
+  function examId(e) {
+    var retest = e.k !== "exam";
+    return e.c + "|" + e.d + "|" + classPrefix(e.t) + "|" + (e.t.match(/#\s*(\d+)/) || [0, ""])[1] + (retest ? "|r" : "");
+  }
+  /* Exams are always planned. A retest or remediation is planned only when the student
+     said they have to take it (you retake only what you did not pass). */
+  function isGraded(e, cfg) {
+    if (e.k === "exam") return true;
+    if (e.k !== "retest" && e.k !== "remediation") return false;
+    return !!(cfg.planRetests || (cfg.retests && cfg.retests[examId(e)]));
   }
 
   /* events: [{d,t,c,k,s}]. Returns exams on/after `from`, each with units and a
@@ -128,7 +138,7 @@
     });
     var out = [];
     events.forEach(function (e) {
-      if (!isGraded(e.k, cfg.planRetests) || e.d < from || !e.c) return;
+      if (!isGraded(e, cfg) || e.d < from || !e.c) return;
       var cov = parseCoverage(e.t), units = [];
       cov.lec.forEach(function (n) { units.push({ kind: "lec", n: n, date: (lecDates[e.c] || {})[n] || null }); });
       cov.lab.forEach(function (n) { units.push({ kind: "lab", n: n, date: (labDates[e.c] || {})[n] || null }); });
@@ -137,7 +147,7 @@
       units.forEach(function (u) { if (!u.date || u.date >= e.d) u.date = add(e.d, -21); });
       units.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : (a.n - b.n); });
       out.push({
-        id: e.c + "|" + e.d + "|" + classPrefix(e.t) + "|" + (e.t.match(/#\s*(\d+)/) || [0, ""])[1] + (retest ? "|r" : ""),
+        id: examId(e),
         d: e.d, t: e.t, name: classPrefix(e.t) + (retest ? " (retest)" : ""), c: e.c, kind: e.k,
         units: units, practical: practical, retest: retest,
         num: (e.t.match(/(?:exam|#)\s*#?\s*(\d+)/i) || [0, null])[1] ? +(e.t.match(/(?:exam|#)\s*#?\s*(\d+)/i)[1]) : null,
@@ -428,7 +438,7 @@
   return {
     DEFAULTS: DEFAULTS, PRESETS: PRESETS, settingsWith: settingsWith,
     parse: parse, fmt: fmt, add: add, diff: diff, dow: dow, mondayOf: mondayOf, range: range,
-    lectureNo: lectureNo, parseCoverage: parseCoverage, deriveExams: deriveExams,
+    lectureNo: lectureNo, parseCoverage: parseCoverage, deriveExams: deriveExams, examId: examId,
     examHours: examHours, windowOf: windowOf, capOf: capOf, timeline: timeline, demandFor: demandFor, plan: plan, tidyDay: tidyDay,
     replayStreak: replayStreak, doneMinutes: doneMinutes, doneByExam: doneByExam,
     weeklyMinutes: weeklyMinutes, crunches: crunches
