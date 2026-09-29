@@ -110,6 +110,7 @@ TITLES = {
  "e4l24": "Exam 4 Lecture 24 - Coronary Artery Disease",
  "e4l25": "Exam 4 Lecture 25 - Heart Failure",
  # Exam 5 (Cardiology Block Exam II), same shape as Exam 4 -- added 2026-09-25.
+ "e5l26": "Exam 5 Lecture 26 - Venous Disorders",
  "e5l27": "Exam 5 Lecture 27 - Arterial Occlusive Disease and Aortic Aneurysm",
  "e5l28": "Exam 5 Lecture 28 - Cardiomyopathy",
 }

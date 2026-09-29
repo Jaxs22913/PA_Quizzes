@@ -5,11 +5,15 @@
 Condensed from the Exam 5 study guide, per the template README: compress what
 the guide already says, keep numbers and names verbatim, add nothing new.
 
-Topics match the guide's sections: four for Lecture 27 (Arterial Occlusive
-Disease and Aortic Aneurysm) and four for Lecture 28 (Cardiomyopathy), built
-2026-09-25 from the slides only -- the lectures are on 2026-10-01, so the sub
-line says audio emphasis follows. Lectures 26 and 29-32 are added as their
-decks are posted. Same palette rotation as the guide (Exam 5 rose).
+Topics match the guide's sections: six for Lecture 26 (Venous Disorders, Prof.
+Shah; built with the lecture's emphasis: the Virchow triad and the Wells criteria
+are the top card, marked with a star and the gold palette used for emphasis
+cards on the CMS I Exam 2 sheet; the guide's other highlighted "most common"
+facts carry a star in the row label), four for Lecture 27 (Arterial Occlusive
+Disease and Aortic Aneurysm) and four for Lecture 28 (Cardiomyopathy). Lectures
+27 and 28 were built 2026-09-25 from the slides only -- the lectures are on
+2026-10-01, so their emphasis follows. Lectures 29-32 are added as their decks
+are posted. Same palette rotation as the guide (Exam 5 rose).
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -18,6 +22,75 @@ sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
 
 topics = [
+# ---- Lecture 26, condensed from guide section 1 (built with the lecture's emphasis) ----
+{"id": "l26-emph", "label": "★ Professor Emphasized — Virchow Triad &amp; Wells Criteria", "color": "#b8860b", "rows": [
+ ["★ Virchow triad", "Why a clot forms in a vein: <b>venous stasis</b> + <b>hypercoagulable state</b> + <b>endothelial trauma</b> (vascular endothelial injury). Three big overarching categories; she named all three three times in a row. Several arms often act together (a hip fracture is trauma, then immobilization)."],
+ ["Stasis (alterations in blood flow)", "Immobilization: long flights, prolonged sitting, postoperative inactivity (the deck gives about a <b>20-fold</b> risk). Venous insufficiency. Heart failure."],
+ ["Hypercoagulable state", "Inherited: <b>factor V Leiden = the most common inherited cause</b>; prothrombin gene mutation; protein C or protein S deficiency; antithrombin deficiency. Acquired: cancer; oral contraceptive pill (more if she also smokes or is obese) or postmenopausal estrogen replacement therapy; pregnancy."],
+ ["Endothelial trauma", "Surgery, especially <b>knee or hip replacement</b> or hip fracture repair; trauma and burns; intravenous drug use (lower extremity injection). The slide also files smoking and hypertension here."],
+ ["Triad on a case", "Long car ride or a cast &rarr; stasis. Cancer, pregnancy, estrogen or a known clotting disorder &rarr; hypercoagulable state. Recent surgery, fracture, burns or injection drug use &rarr; endothelial trauma."],
+ ["★ Wells criteria: use", "Stratifies the pretest likelihood of deep vein thrombosis. <b>Outpatient and emergency department only &mdash; not inpatients.</b> She said the criteria come straight from the risk factors, so know the risk factors best."],
+ ["Wells: +1 each", "Active cancer (treatment or palliation within 6 months) &middot; bedridden more than 3 days or major surgery within 12 weeks &middot; calf swelling more than 3 cm versus the other leg (measured 10 cm below the tibial tuberosity) &middot; collateral (nonvaricose) superficial veins &middot; entire leg swollen &middot; localized tenderness along the deep venous system &middot; pitting edema confined to the symptomatic leg &middot; paralysis, paresis or recent plaster immobilization of the lower extremity &middot; previously documented deep vein thrombosis."],
+ ["Wells: &minus;2", "<b>Alternative diagnosis at least as likely as deep vein thrombosis = &minus;2.</b>"],
+ ["Wells: score &rarr; order", "<b>Zero or less = low</b> &rarr; D-dimer first (negative: stop; positive: ultrasound). <b>1 to 2 = moderate</b> (pretest probability about 17%) &rarr; D-dimer, then ultrasound if positive. <b>3 or more = high</b> &rarr; <b>skip the D-dimer, order the ultrasound.</b>"],
+ ["Wells: pathway", "Low or moderate: D-dimer negative = stop; positive = ultrasound of the thigh; negative = stop. High: ultrasound of the thigh; if negative, either ultrasound of the lower leg, phlebography (venography), or a repeat thigh ultrasound in <b>1 week</b>."],
+ ["Travel is NOT a criterion", "&ldquo;Bedridden&rdquo; means after surgery or immobilized in a cast or plaster, so a long flight scores nothing (travel is still a risk factor and a minor transient trigger for treatment duration)."],
+ ["★ D-dimer", "<b>Sensitive but not specific.</b> A raised D-dimer means increased fibrinolysis somewhere, not necessarily a leg clot; a rule-out test for deep vein thrombosis and pulmonary embolism, only when the Wells score is low or moderate. Know what you will do next with either result. Contrast venography (gold standard, invasive) was replaced by venous duplex ultrasound."],
+]},
+{"id": "l26-dvt", "label": "Deep Vein Thrombosis", "color": "#a3341f", "rows": [
+ ["Epidemiology", "Clot in the deep veins, usually the legs; lower extremity about <b>10 times</b> more common than upper. Starts in the calf and moves proximally (popliteal, femoral, iliac). Proximal: femoral and popliteal; distal: <b>peroneal</b>; pregnancy: pelvic veins. Upper extremity 5&ndash;10% of all, from <b>pacemakers, implantable cardiac defibrillators, central venous catheters</b>. Pulmonary embolism: up to 6% upper vs <b>15&ndash;30%</b> lower."],
+ ["Other risk factors", "<b>★ Personal or family history of clot &mdash; prior episode about 30 times the recurrence risk.</b> Age older than 60; obesity; slightly more males; smoking, heart failure, hypertension, chronic kidney disease, chronic obstructive pulmonary disease, inflammatory bowel disease; cancer and chemotherapy; air travel and sedentary life; estrogen contraceptives, postmenopausal hormone replacement, first <b>6&ndash;12 weeks postpartum</b>."],
+ ["Presentation", "Swelling (<b>97%</b> sensitive), pain (86%), warmth (72%), &plusmn; erythema; a calf cramp that persists and worsens over days. Distal clot: calf only; proximal: calf or whole leg. <b>Homan sign</b> is neither sensitive nor specific. Upper extremity: arm swelling and discomfort."],
+ ["Differential", "Ruptured popliteal (Baker) cyst: severe sudden calf discomfort. Cellulitis: erythema, possibly fever and chills. Post-thrombotic syndrome: chronic venous insufficiency 6&ndash;24 months after a clot. Superficial thrombophlebitis: tender cord. Lymphedema: chronic edema, pelvic surgery, malignancy or radiation. Calf muscle tear: inciting injury, ankle bruising. Drug-induced edema (amlodipine): often bilateral, no inflammation."],
+ ["Diagnosis", "Wells score (top card), then D-dimer and/or <b>venous duplex ultrasound of the involved extremity</b>; say why you are ordering it."],
+ ["★ Treatment: mainstay", "<b>Anticoagulation is the mainstay &mdash; &ldquo;the biggest thing that we need to know.&rdquo;</b> Thrombolysis and thrombectomy are add-ons for selected large clots, never routine. Strategies: (1) heparin, then bridge to warfarin; (2) parenteral for <b>5 days</b>, then dabigatran or edoxaban; (3) oral monotherapy, loading then maintenance: rivaroxaban or apixaban."],
+ ["Anticoagulant classes", "Low molecular weight heparin: enoxaparin. Unfractionated heparin: intravenous bolus then infusion, adjusted by the activated partial thromboplastin time. Fondaparinux: indirect factor Xa inhibitor. Rivaroxaban, apixaban: direct factor Xa inhibitors. Dabigatran: direct thrombin inhibitor. Warfarin: vitamin K antagonist, monitored by the international normalized ratio."],
+ ["Contraindications", "<b>Active bleeding, acute intracranial hemorrhage, major trauma, severe bleeding disorders.</b>"],
+ ["★ Duration", "Minimum <b>3 months</b> for every first episode. <b>Major transient (reversible) factor</b> (general anesthesia over 30 minutes, hospitalization or bed rest 3 days or more, major trauma or fracture): <b>3 months</b>. <b>Minor transient factor</b> (estrogen, pregnancy, minor surgery, prolonged travel, minor leg injury): <b>3&ndash;6 months</b>. <b>Unprovoked first clot: indefinite</b> (an undiscovered clotting condition cannot be excluded)."],
+ ["★ Outpatient", "<b>Yes:</b> hemodynamically stable, low bleeding risk, no renal insufficiency, good support and reliable adherence. <b>No:</b> iliofemoral (proximal) clot, concurrent symptomatic pulmonary embolism, high bleeding risk, other comorbidities needing inpatient care. Options: rivaroxaban; apixaban; low molecular weight heparin or fondaparinux 5 days then dabigatran or edoxaban; or either heparin 5 days overlapping warfarin until the international normalized ratio is above 2. <b>Creatinine clearance below 30 mL/min: hospitalize</b>; unfractionated heparin + warfarin overlapped at least 5 days and until the ratio is above 2 for 24 hours."],
+ ["Reversal agents", "Unfractionated or low molecular weight heparin: <b>protamine sulfate</b>. Dabigatran: <b>idarucizumab</b>. Apixaban, rivaroxaban: <b>andexanet alfa</b>. Warfarin: four-factor prothrombin complex concentrate, fresh frozen plasma or intravenous vitamin K; oral vitamin K is the usual outpatient choice. Bleeding is the most serious adverse effect."],
+ ["Vena cava filter", "Inferior vena cava filter <b>only</b> with an acute proximal lower extremity clot and active bleeding, or when anticoagulation is otherwise contraindicated; keeps the clot from traveling to the lungs."],
+ ["Prevention", "<b>Intermittent pneumatic compression</b> (sequential compression devices), especially when immobilized after surgery or in a long hospital stay. It does the calf muscles&rsquo; job so blood does not stagnate: it treats the stasis arm of the triad."],
+ ["Complications", "<b>Pulmonary embolism = the biggest</b>: ask every patient about breathing difficulty right away. Post-thrombotic syndrome (chronic venous insufficiency, 6&ndash;24 months later). Recurrence. Bleeding from treatment. Fatal pulmonary embolism without adequate treatment: under 1% (clot alone), about 3% (non-massive), about 9% (massive)."],
+]},
+{"id": "l26-cvi", "label": "Chronic Venous Insufficiency", "color": "#2f5d6b", "rows": [
+ ["What", "Severe manifestation of venous hypertension (also <b>post-thrombotic syndrome</b>): edema, skin changes (hyperpigmentation, dermatitis, lipodermatosclerosis) and ulceration from reflux and/or obstruction. <b>Primary</b> = wall or valve abnormality; <b>secondary</b> = prior deep vein thrombosis."],
+ ["Causes", "<b>★ Prior deep vein thrombosis = the most common cause</b> (about 25% have no known clot; ask about leg trauma or surgery). Also progressive superficial venous reflux, pelvic vein obstruction, arteriovenous fistula. Risk factors: advancing age, female, family history, ligamentous laxity (flat feet), higher body mass index, smoking, leg trauma, higher parity, high estrogen states."],
+ ["Presentation", "<b>Progressive pitting edema of the lower leg</b> is the primary symptom. Dull discomfort, heaviness, throbbing, burning, pruritus from the <b>medial malleolus</b>; worse standing or sitting with feet dependent, <b>relieved by elevation and walking</b>. Grade and document the pitting."],
+ ["Skin findings", "<b>Stasis dermatitis</b>: pruritic, eczematous; earliest sign is erythema, scaling and slight hyperpigmentation above the medial malleolus. <b>Hemosiderin</b> staining: brown or blue-gray, separates venous from arterial. <b>Lipodermatosclerosis</b>: firm, indurated, skin tacked down, medial ankle, may form a constrictive band. Cellulitis: blanching erythema, hard to diagnose &mdash; outline and date it."],
+ ["Venous ulcer", "Above the ankle, <b>medial or anterior</b>; painful; clean base, fibrinous exudate, serous drainage. Heals with a thin scar that breaks down easily. Arterial ulcers: dry, punched out, painful at the toes and lateral ankle."],
+ ["Differential", "Heart failure, chronic kidney disease, decompensated liver disease: <b>bilateral</b> edema. Drug edema: calcium channel blockers, nonsteroidal anti-inflammatory drugs, thiazolidinediones. Lymphedema: unilateral, no varicosities. Lipedema: bilateral symmetric, just above the ankles, women. Other ulcers: diabetic neuropathic, arterial, autoimmune, sickle cell anemia, erythema induratum. Punch biopsy if unsure."],
+ ["Work-up", "<b>Venous duplex ultrasound first</b>: patency (clot?) and valvular competence (reflux?). <b>★ Arterial pulse examination and ankle-brachial index</b> for any leg wound and older patients: not to diagnose the venous disease but to <b>rule out peripheral artery disease before compression</b>. Cross-sectional venography if ultrasound falls short; catheter venography (gold standard) only before an intervention."],
+ ["Management", "<b>Always nonoperative first.</b> Feet elevated <b>ABOVE heart level</b>; daily walking and ankle flexion; skin care with emollients (mid-potency topical corticosteroid for stasis dermatitis); <b>★ compression = standard treatment, graduated (tightest at the ankle)</b>; cellulitis: oral antibiotics (cephalexin or clindamycin). Ulcers need edema control and compression, wound care referral, <b>4&ndash;6 months</b> to heal. No oral drug proven; surgery occludes or removes vessels."],
+ ["Refer to vascular", "<b>Arterial insufficiency (same-day)</b>; nonhealing ulcers; recurrent ulcers; persistent stasis dermatitis; suspected contact dermatitis; diagnostic doubt; significant saphenous reflux; long-term edema control."],
+]},
+{"id": "l26-varicose", "label": "Varicose Veins", "color": "#5a3d8a", "rows": [
+ ["What", "Dilated, tortuous superficial veins from <b>venous reflux and venous hypertension</b>; most commonly the <b>great saphenous vein</b>, also the short saphenous vein."],
+ ["Risk factors", "<b>★ Family history = the most common predisposing factor.</b> Prolonged standing or heavy lifting; women after pregnancy."],
+ ["Symptoms", "<b>★ Dull, achy heaviness or fatigue brought on by standing = the most common symptom.</b> Itching above the ankle or over the veins; may be asymptomatic. Long-standing varicose veins can progress to chronic venous insufficiency."],
+ ["Exam", "Dilated, tortuous, palpable veins of the thigh and calf, seen standing; may be tender."],
+ ["Diagnosis", "<b>Clinical</b>: examine the leg in a dependent position. Venous duplex (Doppler) ultrasound confirms and maps the extent of reflux."],
+ ["Management", "Isolated varicose veins: elevation, exercise, compression, <b>rule out arterial disease before compression</b>; stockings for weeks to months before ablation. Goal = symptoms and appearance; they often recur. Procedures: <b>sclerotherapy</b>, vein stripping, laser or radiofrequency catheter."],
+]},
+{"id": "l26-phlebitis", "label": "Superficial Phlebitis, Thrombophlebitis &amp; Septic Thrombophlebitis", "color": "#1f5c3a", "rows": [
+ ["Definitions", "<b>Phlebitis</b> = inflammation of the vein wall <b>without</b> thrombus. <b>Thrombophlebitis</b> = phlebitis <b>with</b> thrombus. Told apart because treatment differs."],
+ ["Risk factors", "<b>Varicose veins = the most common cause in the lower extremity.</b> <b>Recent intravenous catheter use (peripherally inserted central catheter most common) = the most common cause in the upper extremity.</b> Inactivity; local trauma or procedure on superficial veins; pregnancy or estrogen; malignancy or hypercoagulable state; prior superficial vein thrombosis without varicose veins."],
+ ["Presentation", "Tenderness, pain, induration and erythema along a superficial vein; an <b>indurated palpable cord</b> with warmth and erythema; you can trace the vein."],
+ ["Septic (suppurative)", "Infection within the vein: <b>high fever, fluctuance, purulent drainage</b>, or erythema extending well beyond the vein margin. Uncommon without prior venous cannulation, so ask about a recent intravenous line. The deck gives no treatment; a missed infection can leave the patient septic."],
+ ["Diagnosis", "History and examination, confirmed by <b>venous duplex ultrasound (gold standard)</b>: noncompressible superficial vein with wall thickening. Wall thickening alone = phlebitis; with a clot inside = thrombophlebitis."],
+ ["★ Treatment", "<b>Nonsteroidal anti-inflammatory drugs first</b> (ibuprofen, diclofenac), warm compresses, compression, elevation. <b>Anticoagulation only for extensive clot burden</b> or intermediate or higher thrombosis risk (unfractionated heparin, enoxaparin, fondaparinux). Repeat examination in <b>7&ndash;10 days</b>; repeat duplex ultrasound if signs persist or worsen."],
+ ["Prognosis", "Rarely causes serious complications; <b>rarely embolizes</b>. Counsel: patients worry it is a clot."],
+]},
+{"id": "l26-avf", "label": "Arteriovenous Fistula", "color": "#8a5a2b", "rows": [
+ ["What", "Abnormal artery-to-vein connection that <b>bypasses the capillary bed</b>; created (hemodialysis), acquired (iatrogenic, trauma) or congenital."],
+ ["Created (dialysis)", "<b>★ Upper extremity fistulas are the ones most commonly created for hemodialysis access</b> (upper arm or forearm, preferred over the leg). Healthy: <b>diffuse thrill and soft bruit</b>, both systolic and diastolic; <b>collapses completely on arm elevation</b>. <b>Cannot hear a bruit: refer.</b>"],
+ ["Acquired (iatrogenic)", "Most common in the <b>lower extremity</b>, the <b>femoral vessels</b>, after groin access for percutaneous procedures such as cardiac catheterization. Examine the puncture site with a complete lower extremity vascular examination; compare pulses with the pre-procedure pulses."],
+ ["Diagnosis", "Physical examination; <b>duplex ultrasound</b> confirms a suspected iatrogenic fistula; computed tomography angiography or angiography gives location and size."],
+ ["Nicoladoni-Branham sign", "Compressing a large fistula <b>slows the heart rate</b> (reflex). Do not hold the fistula closed to demonstrate it on a patient."],
+ ["Complications", "Watch for infection, chronic venous insufficiency, heart failure and ischemia."],
+ ["Management", "<b>Acquired:</b> surgical, remove the fistula or decrease its size. <b>Congenital:</b> hard to treat (many communications); elastic support hose, sometimes embolization. Primary care: keep it free of infection, decide congenital versus acquired, find out how, refer."],
+]},
+
 # ---- Lecture 27, condensed from guide section 1 ----
 {"id": "l27-pad", "label": "Peripheral Artery Disease", "color": "#7a2d5a", "rows": [
  ["Who", "Older than <b>60</b> with no other risk factors, or <b>50 with risk factors</b>; males &gt; females; <b>half also have coronary artery disease</b>. Smoking = <b>three times</b> the risk; elevated homocysteine = earlier atherosclerosis."],
@@ -95,10 +168,12 @@ html = render(
     title="Cram Sheet — CMS I Exam 5",
     kicker="Clinical Medicine and Surgery I · Exam 5 · Class of 2028",
     h1="CMS I Exam 5 Cram Sheet",
-    sub="Arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed from the Exam 5 "
-        "study guide: claudication and the ankle-brachial index, acute limb ischemia, carotid and aneurysm "
-        "thresholds, dissection, and the five cardiomyopathies. Built from the slides only; lecture audio "
-        "emphasis to be added after 10/01. The rest of the block follows when posted.",
+    sub="Venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed "
+        "from the Exam 5 study guide: the Virchow triad and Wells criteria first, then deep vein thrombosis, "
+        "chronic venous insufficiency, claudication and the ankle-brachial index, acute limb ischemia, carotid "
+        "and aneurysm thresholds, dissection, and the five cardiomyopathies. Lecture 26 carries the "
+        "lecture&rsquo;s emphasis (starred); Lectures 27&ndash;28 are built from the slides only, with lecture "
+        "audio emphasis to be added after 10/01. The rest of the block follows when posted.",
     topics=topics,
     guide_href="cms-exam-5-study-guide.html",
     footer_note="Condensed from the CMS I Exam 5 Study Guide (Class of 2028). "

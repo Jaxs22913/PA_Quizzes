@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b4538c; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venous Disorders Vignettes 1 — CMS I Exam 5</title>
+<style>
+  :root{
+    --navy:#7a2d5a; --indigo:#b4538c; --gold:#c08a2e; --ice:#faeef4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d5a;--gold-l:#c08a2e;--indigo-l:#b4538c;--navy:#e790be;--indigo:#cb67a1;--gold:#c08a2e;--ice:#321927;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#cb67a1;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d5a;--indigo-t:#b4538c;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Venous Disorders &mdash; Vignettes 1</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 5 &middot; Lecture 26</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Leg swelling</span><span class="chip">Virchow triad</span><span class="chip">Wells score</span><span class="chip">Venous ulcer</span><span class="chip">Superficial phlebitis</span><span class="chip">Dialysis fistula</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 50-year-old woman with symptomatic varicose veins has worn stockings and exercised faithfully for several months with persistent aching. Duplex ultrasound confirms great saphenous vein reflux. Which is the most appropriate next treatment?", "opts": [["Surgical valvuloplasty", "Valvuloplasty is a surgical option for chronic venous insufficiency and carries a high risk of postoperative clot. Varicose veins with reflux are treated with ablation."], ["Venous ablation therapy", "Correct. Stockings are tried for weeks to months before venous ablation is offered, and the goal is to improve symptoms and appearance. She has now failed that trial, with reflux confirmed."], ["Lifelong observation only", "Observation is reasonable for mild disease, but she has persistent symptoms after a full conservative trial. Ablation is offered once stockings fail."], ["Oral flavonoid therapy", "Flavonoids are used to increase venous tone, and no oral drug has proven useful for venous disease. Persistent symptoms with confirmed reflux call for venous ablation."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 43", "slot": "escalation", "lead": "treatment"}, {"topic": "Anticoagulation choices", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 52-year-old man starts outpatient treatment for deep vein thrombosis with low molecular weight heparin injections overlapped with warfarin. The injections continue for at least five days and until his international normalized ratio is above which value?", "opts": [["Above 3", "The overlap ends once the international normalized ratio is above 2, the therapeutic threshold for this indication. Waiting for a value above 3 would prolong the injections without benefit."], ["Above 4", "An international normalized ratio above 4 is over-anticoagulated and raises the bleeding risk. The heparin overlap stops once warfarin is therapeutic, at a value above 2."], ["Above 2", "Correct. Parenteral therapy overlaps with warfarin for at least five days and until the international normalized ratio is above 2, when warfarin has reached its therapeutic effect and the heparin can stop."], ["Above 1", "An international normalized ratio just above 1 is barely different from normal, so warfarin has not yet taken effect. The overlap continues until the value is above 2."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 66", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Upper-extremity disease and complications", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 45-year-old woman has a catheter-related deep vein thrombosis of the right arm and asks how likely a pulmonary embolism is compared with a leg clot. Which statement is accurate?", "opts": [["Up to 6%, versus 15 to 30% for leg clots", "Correct. Pulmonary embolism occurs in up to 6% of upper-extremity deep vein thromboses, versus 15% to 30% of lower-extremity clots. Arm clots are only 5% to 10% of all deep vein thromboses."], ["15 to 30%, versus up to 6% for leg clots", "This reverses the figures. Pulmonary embolism complicates 15% to 30% of lower-extremity clots and only up to 6% of upper-extremity clots, so her risk is the lower one."], ["About 3% for arm and leg clots alike", "About 3% is the estimated fatal-embolism rate for untreated symptomatic non-massive pulmonary embolism, not the frequency of embolism, which differs by site: up to 6% for arm and 15% to 30% for leg clots."], ["Under 1% for arm clots, 6% for leg clots", "Under 1% is the untreated fatal-embolism estimate for a clot without pulmonary embolism. The actual frequency of embolism is up to 6% for arm clots and 15% to 30% for leg clots."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 47", "slot": "epidemiology", "lead": "complication"}, {"topic": "Virchow triad", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 68-year-old woman with active pancreatic cancer, which supplies the hypercoagulable component of the Virchow triad, has an acute proximal deep vein thrombosis of the left leg. She also has active gastrointestinal bleeding. Which treatment is most appropriate?", "opts": [["Systemic thrombolysis", "Thrombolysis breaks down clots and carries a high bleeding risk, so it is dangerous with active hemorrhage. It is reserved for large proximal clots or stable pulmonary embolism in patients who can bleed safely."], ["Outpatient rivaroxaban", "Rivaroxaban is a direct factor Xa inhibitor, an anticoagulant, and active bleeding contraindicates anticoagulants. Her bleeding must be controlled first, and a filter covers the clot risk meanwhile."], ["Inferior vena cava filter", "Correct. An inferior vena cava filter is used for acute proximal lower-extremity deep vein thrombosis when there is active bleeding or anticoagulation is otherwise contraindicated. The filter keeps the clot from traveling to the lungs and causing pulmonary embolism."], ["Unfractionated heparin infusion", "Unfractionated heparin is an anticoagulant, and active bleeding contraindicates every anticoagulant. Giving it would worsen the hemorrhage; a filter protects the lungs without thinning the blood."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 69", "slot": "escalation", "lead": "treatment"}, {"topic": "Arteriovenous fistula of the extremity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 50-year-old man developed a single large arteriovenous fistula of the forearm after a penetrating injury. It causes swelling and a bruit over the arm. Which is the management for this acquired fistula?", "opts": [["Surgical removal or size reduction", "Correct. Acquired fistulas, whether from trauma or from a procedure, are managed surgically by removing the fistula or decreasing its size. Embolization is an option sometimes used for congenital fistulas."], ["Compression stockings alone", "Elastic support is the conservative approach for congenital fistulas with numerous communications. An acquired single large fistula from trauma is treated surgically."], ["Warm compresses and elevation", "Compresses and elevation are for superficial thrombophlebitis of a vein. They do nothing for an abnormal artery to vein connection, which is managed surgically when acquired."], ["Lifelong anticoagulation alone", "Anticoagulation treats thrombosis and does not close a fistula. The connection from a penetrating injury is repaired by removing it or decreasing its size."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 86", "slot": "escalation", "lead": "treatment"}, {"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 55-year-old man with symptomatic varicose veins has a duplex ultrasound showing significant saphenous vein reflux. Which referral is most appropriate?", "opts": [["Vascular specialist", "Correct. Significant saphenous reflux is one of the triggers for referral to a vascular specialist, who can offer the options for treating reflux."], ["Cardiologist", "Varicose veins are a superficial venous disease, not a cardiac one. Significant saphenous reflux is referred to a vascular specialist."], ["Hematologist", "A hematologist evaluates clotting disorders, and reflux in a saphenous vein is a valve problem. The appropriate referral is to a vascular specialist."], ["Orthopedic surgeon", "An orthopedic surgeon treats bone and joint disease. Significant saphenous reflux is referred to a vascular specialist for venous intervention."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 37", "slot": "referral", "lead": "referral"}, {"topic": "Bleeding, filters and thrombolysis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 69-year-old man receiving an unfractionated heparin infusion for deep vein thrombosis develops life-threatening bleeding. Which agent reverses the heparin?", "opts": [["Protamine sulfate", "Correct. Protamine sulfate is the reversal agent for unfractionated heparin and low molecular weight heparin when bleeding is life-threatening. Each anticoagulant has its own specific reversal agent."], ["Idarucizumab", "Idarucizumab reverses dabigatran, a direct thrombin inhibitor, and does nothing for heparin. The agent that neutralizes heparin is protamine sulfate."], ["Andexanet alfa", "Andexanet alfa reverses the direct factor Xa inhibitors apixaban and rivaroxaban. Heparin is reversed instead by protamine sulfate."], ["Vitamin K by mouth", "Oral vitamin K is a warfarin reversal option and works slowly. Heparin has its own reversal agent, protamine sulfate, which acts on the drug directly."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 68", "slot": "complication", "lead": "treatment"}, {"topic": "Chronic venous insufficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 74-year-old man with diabetes has a painful ulcer over the lateral ankle. His foot is cool and the pedal pulses are weak. Which test should be obtained next?", "opts": [["Punch biopsy of the ulcer", "A biopsy is used when the cause stays uncertain after examination. Weak pulses and a lateral ulcer already suggest arterial disease, so the ankle-brachial index comes first."], ["Ankle-brachial index", "Correct. A painful lateral ankle ulcer with weak pulses suggests arterial insufficiency, and the arterial pulse examination with the ankle-brachial index is performed on any lower extremity wound to look for it."], ["Venous duplex ultrasound", "Duplex assesses venous patency and valve reflux. The lateral location, pain and weak pulses point to an arterial cause, which the ankle-brachial index screens for."], ["Catheter-based venography", "Venography is the invasive venous gold standard, reserved for planning an intervention. It does not evaluate the arterial supply behind this ulcer."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 28", "slot": "initial test", "lead": "test"}, {"topic": "Duration and setting of treatment", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 44-year-old man develops a first calf deep vein thrombosis one week after minor knee arthroscopy under a local nerve block, followed by a long car trip. Which duration of anticoagulation is appropriate?", "opts": [["A fixed three months", "Three months is for a major transient risk factor such as surgery under general anesthesia, prolonged hospitalization or major trauma. His minor surgery and travel are minor factors, warranting three to six months."], ["Indefinitely", "Indefinite treatment is reserved for an unprovoked first clot. His clot has identifiable transient triggers, so open-ended anticoagulation is not needed."], ["Six weeks", "Six weeks is below the three-month minimum that applies to every first venous thromboembolism. His clot warrants three to six months."], ["Three to six months", "Correct. A clot provoked by a minor transient risk factor, such as estrogen therapy, pregnancy, minor surgery, prolonged travel or minor leg injury, is treated for three to six months, chosen from the patient's history."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 64", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 42-year-old woman has symptomatic varicose veins that did not improve with stockings. She prefers a nonsurgical procedure in which a solution is injected to scar and close the veins. Which procedure fits?", "opts": [["Vein stripping", "Stripping is a surgical procedure that removes the vein rather than an injection that closes it. It is a surgical reflux treatment, not the injection she prefers."], ["Radiofrequency ablation", "Radiofrequency uses a catheter to treat reflux with heat, and nothing is injected. The injection of a solution to scar the vein is sclerotherapy."], ["Venous bypass", "Bypass is successful in select patients with chronic venous insufficiency and is a major surgery. It does not close veins, which sclerotherapy does by injection."], ["Sclerotherapy", "Correct. Sclerotherapy is the injection of a sclerosing agent to fibrose and obliterate the veins, one of the interventions for varicose veins along with stripping and catheter-based ablation."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 44", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Wells criteria", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 24-year-old soccer player comes to urgent care with left calf pain that began two days ago when he felt a sudden pull while sprinting, and he has bruising around the ankle. He has no leg swelling, tenderness along the deep veins, cancer, cast or history of clots. By the Wells criteria, a calf muscle tear is at least as likely as deep vein thrombosis. Which is the most appropriate first test?", "opts": [["D-dimer blood test", "Correct. The likelier alternative diagnosis subtracts 2 from his Wells score, giving a low likelihood. Low-likelihood patients start with a D-dimer, and a negative result lets the clinician stop, since D-dimer is a sensitive rule-out test."], ["Venous duplex ultrasound", "Venous duplex ultrasound is ordered first for a high Wells score, or after a positive D-dimer. For this low-likelihood patient it is not the first test, because a negative D-dimer could end the work-up."], ["Contrast ascending venography", "Contrast ascending venography is invasive and has been replaced by duplex ultrasound. It is not an initial test for a low-likelihood patient, whose first step is a D-dimer."], ["Computed tomography of the leg", "Computed tomography of the leg is not part of the deep vein thrombosis pathway, which relies on the D-dimer for low-likelihood patients and venous duplex ultrasound for confirmation."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56", "slot": "initial test", "lead": "test"}, {"topic": "Virchow triad", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 27-year-old woman has a first deep vein thrombosis of the left leg. Genetic testing shows factor V Leiden, an inherited clotting abnormality. Which component of the Virchow triad does this finding represent?", "opts": [["Venous insufficiency", "Venous insufficiency, such as valve failure, is listed under venous stasis rather than clotting tendency. An inherited change in a clotting factor is a hypercoagulable state, the correct component."], ["Hypercoagulable state", "Correct. Factor V Leiden is an inherited hypercoagulable state, like prothrombin gene mutation and protein C, protein S or antithrombin deficiency. It makes the blood clot too readily, the hypercoagulable component of the triad."], ["Venous stasis", "Venous stasis means slowed flow from immobilization, heart failure or venous insufficiency. Her gene change alters the blood's clotting tendency, not its flow, so it belongs in the hypercoagulable component."], ["Endothelial trauma", "Endothelial trauma is injury to the vein wall from surgery, fracture, burns or injection. Factor V Leiden leaves the vessel lining intact and changes coagulation, which is the hypercoagulable component instead."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 49", "slot": "risk factors", "lead": "diagnosis"}, {"topic": "Chronic venous insufficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 66-year-old man has long-standing pitting edema of the lower leg with brown pigmentation and a healed medial ankle ulcer. Duplex ultrasound shows thickened, scarred valve leaflets and chronic obstruction of the femoral vein. He does not recall any leg clot. Which is the most likely cause of his condition?", "opts": [["Congenital arteriovenous fistula", "A fistula is a rare cause that produces venous hypertension by shunting arterial blood. Scarred valves and femoral vein obstruction are the signature of a prior clot."], ["Pelvic vein neoplastic obstruction", "A pelvic tumor can obstruct venous outflow, but it does not scar the valve leaflets of the leg veins. Post-thrombotic valve scarring points to an earlier deep vein thrombosis."], ["Prior deep vein thrombosis", "Correct. Scarred valve leaflets with chronic proximal obstruction are post-thrombotic changes, and prior deep vein thrombosis is the leading cause even though about a quarter of patients recall no clot."], ["Progressive superficial reflux", "Superficial reflux is another common cause, but it produces dilated veins with incompetent valves. Thickened, scarred leaflets with obstruction point to an earlier clot."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 11", "slot": "etiology", "lead": "diagnosis"}, {"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 34-year-old woman has visible, dilated, tortuous veins of the thigh and calf that are tender to palpation, with aching heaviness after prolonged standing. Which is the most common predisposing factor for her condition?", "opts": [["Recent pregnancy", "Women are at higher risk after pregnancy, and it is a recognized risk factor. Family history remains the most common predisposing factor for varicose veins."], ["Regular heavy lifting", "Heavy lifting produces periods of high venous pressure and adds risk. It is less common than family history, the leading predisposing factor for this condition."], ["Family history of varicose veins", "Correct. The most common predisposing factor for varicose veins is family history, so ask whether relatives have them, and how old they were when they developed."], ["Prolonged standing at work", "Long periods of standing raise venous pressure and are a recognized risk factor. It is not the most common predisposing factor, which is family history."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 39", "slot": "risk factors", "lead": "next step"}, {"topic": "Differential diagnosis of a swollen leg", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 59-year-old woman had a left leg deep vein thrombosis 11 months ago. She now has chronic left leg heaviness, edema and brownish ankle skin that worsen with standing and improve with elevation. What is the most likely diagnosis?", "opts": [["Recurrent deep vein thrombosis", "A recurrent clot would usually present acutely with new swelling, pain and warmth. Slowly progressive heaviness with skin change, relieved by elevation, points to chronic venous disease."], ["Lymphedema", "Lymphedema is chronic swelling that usually follows pelvic surgery, malignancy or radiation, and brownish hemosiderin staining is rare in it. Her prior leg clot, brown ankle skin and heaviness that eases with elevation point to a venous cause."], ["Drug-induced edema", "Drug-induced edema, such as from dihydropyridine calcium channel blockers, is usually bilateral without inflammation. Her unilateral swelling after a leg clot points to post-thrombotic syndrome."], ["Post-thrombotic syndrome", "Correct. Post-thrombotic (postphlebitic) syndrome is symptomatic chronic venous insufficiency that follows a deep vein thrombosis, appearing 6 to 24 months later, with heaviness, edema and brownish skin change from venous hypertension."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 52", "slot": "differential", "lead": "diagnosis"}, {"topic": "Venous disorders, mixed cases", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 67-year-old woman with metastatic breast cancer on active treatment presents to the emergency department with a swollen right leg. The entire leg is swollen and the right calf measures 4 cm more than the left. No alternative diagnosis is judged as likely as deep vein thrombosis, and no other Wells criteria are present. Which is the best next test?", "opts": [["Ankle-brachial index", "The ankle-brachial index tests arterial flow to the leg and does not detect venous thrombosis. A high Wells score calls for duplex ultrasound."], ["Venous duplex ultrasound", "Correct. Active cancer, a swollen entire leg and calf swelling over 3 cm give a Wells score of 3, meaning thrombosis is likely. High-probability patients skip the D-dimer and go straight to ultrasound."], ["D-dimer assay first", "A D-dimer is the first test for low or moderate Wells scores, where a negative result rules out clot. At a score of 3 or higher the probability is high, so ultrasound is ordered directly."], ["Contrast ascending venography", "Venography is the historic gold standard but is invasive and has been replaced by venous duplex ultrasound of the involved extremity as the test for deep vein thrombosis."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56", "slot": "initial test", "lead": "next step"}, {"topic": "Wells criteria", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 62-year-old woman on chemotherapy for breast cancer comes to the emergency department with a calf 4 cm larger than the other, tenderness along the deep veins and no better explanation, so her Wells score is high. Her D-dimer, drawn at triage, is negative. Which action should be avoided?", "opts": [["Ordering a venous duplex ultrasound", "Ultrasound is exactly what a high Wells score calls for, whatever the D-dimer shows. It is the appropriate next test, so ordering it is the right action, not one to avoid."], ["Asking about shortness of breath", "Pointed questions about breathing are part of the evaluation, because the lower-extremity clot can send an embolus to the lungs. This is good practice rather than a mistake to avoid."], ["Measuring both calf circumferences", "Comparing the calves at a set point below the tibial tuberosity is how the Wells item for swelling over 3 cm is scored. It is a useful step, not an error."], ["Ending the work-up at the D-dimer", "Correct. With a high Wells score the D-dimer is skipped, or if it was drawn, a negative result does not end the evaluation: she still goes to venous duplex ultrasound. Stopping here risks missing a clot with high pretest probability."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56", "slot": "avoid", "lead": "avoid"}, {"topic": "Arteriovenous fistula of the extremity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 66-year-old woman has a large arteriovenous fistula of the thigh and a positive Nicoladoni-Branham sign (slowing of the heart rate when the fistula is compressed). Her resting pulse is 88 beats per minute. Which action should the examiner avoid?", "opts": [["Feeling for a thrill over it", "Light palpation for a thrill does not compress the fistula and is safe. Palpation is a core part of the examination that establishes the diagnosis."], ["Checking pulses below it", "Distal pulses should be checked to look for evidence of ischemia. This routine assessment does not compress a large fistula and does not trigger a reflex slowing of the heart."], ["Holding the fistula compressed", "Correct. Compressing a large fistula reflexly slows the heart rate, so sustained manual compression risks a significant fall in pulse and should be avoided during the examination."], ["Listening over it for a bruit", "Auscultation is part of the standard examination and carries no risk to the heart rate. Diagnosis of a fistula is made on physical examination, including the bruit."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 85", "slot": "avoid", "lead": "avoid"}, {"topic": "Wells criteria", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 71-year-old man hospitalized for six days with pneumonia develops swelling of the left calf. His team considers using the Wells criteria to estimate his probability of deep vein thrombosis. Which statement about applying the Wells criteria to him is accurate?", "opts": [["Meant for outpatient or emergency use", "Correct. The Wells criteria are used in the outpatient and emergency department settings, not for inpatients, in whom the score is less useful. A hospitalized patient needs clinical judgment and ultrasound rather than this pathway."], ["Most accurate in hospitalized patients", "The score is less useful in hospitalized patients; it is validated for outpatients and emergency department patients. Inpatients need clinical judgment and ultrasound instead of this pathway."], ["Designed for upper-extremity clots", "The Wells criteria for deep vein thrombosis address suspected leg clots, with items such as calf swelling and pitting edema of the leg. Upper-extremity clots are not what this score was built for."], ["A low score replaces all testing", "A low score does not replace testing; it leads to a D-dimer first, and only a negative result stops the work-up. The score guides which test comes next, not whether to test."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 54", "slot": "initial test", "lead": "test"}, {"topic": "Virchow triad", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 71-year-old man has been on strict bed rest for six days during an admission for pneumonia and now has swelling and aching of the entire left leg. Which component of the Virchow triad does his prolonged bed rest represent?", "opts": [["Endothelial trauma", "Endothelial trauma is direct injury to the vein wall from surgery, fracture, burns, catheters or injection. Bed rest for pneumonia does not injure the vessel lining; it slows flow, which is stasis."], ["Arterial vasospasm", "Arterial vasospasm is not a component of the Virchow triad, which comprises venous stasis, hypercoagulable state and endothelial trauma. Immobility acts on the veins by slowing their blood flow."], ["Venous stasis", "Correct. Bed rest is immobilization, which alters blood flow and lets blood pool in the leg veins, the venous stasis component of the Virchow triad. Prolonged immobilization raises the risk of deep vein thrombosis about twenty-fold."], ["Hypercoagulable state", "A hypercoagulable state is an inherited or acquired clotting tendency, such as factor V Leiden, cancer, estrogen use or pregnancy. Lying still changes blood flow rather than clotting chemistry, so it is stasis."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 49", "slot": "etiology", "lead": "diagnosis"}, {"topic": "Wells criteria", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 47-year-old woman with a previous deep vein thrombosis two years ago comes to the emergency department with swelling of the entire right leg. She has no pitting edema, calf asymmetry over 3 cm, tenderness along the deep veins, collateral veins, cancer, recent bed rest, surgery or cast, and no better alternative diagnosis. By the Wells criteria, which likelihood category applies?", "opts": [["Low (score below 1)", "A low likelihood is a score below 1, reached only with few positives or the minus 2 credit for a likelier alternative diagnosis. Her two positive items total 2, which is above the low band."], ["High (score of 3 or more)", "High likelihood requires 3 or more points. She has only two positive items, so she falls in the moderate band and receives a D-dimer rather than going straight to ultrasound."], ["Moderate (score of 3 to 4)", "The moderate band is 1 to 2 points, and a score of 3 or more is already high likelihood. Her total of 2 is moderate, but the numeric range offered here is wrong."], ["Moderate (score of 1 to 2)", "Correct. A previously documented deep vein thrombosis adds 1 point and swelling of the entire leg adds 1 point, for 2 in total, the moderate band of 1 to 2. Moderate likelihood leads to a D-dimer next."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55", "slot": "risk factors", "lead": "test"}, {"topic": "D-dimer and ultrasound", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 55-year-old man has a positive D-dimer during evaluation of calf pain two weeks after a bicycle crash with extensive bruising. He asks why his clinician says the result cannot confirm a clot. Which explanation is accurate?", "opts": [["It rises only with pulmonary embolism", "D-dimer rises with fibrinolysis anywhere in the body, including after trauma, and is useful as a rule-out test for both deep vein thrombosis and pulmonary embolism. It is not limited to one disease."], ["It rises only with thigh clots", "D-dimer does not localize a clot to the thigh or anywhere else. It reflects fibrinolysis from many causes, so ultrasound is needed to find and locate any thrombus."], ["It reflects fibrinolysis from many causes", "Correct. D-dimer elevation implies increased fibrinolysis, but it is sensitive and not specific. Bruising, surgery, cancer and many other conditions raise it, so a positive result needs imaging while a negative one helps rule out a clot."], ["It is specific but not sensitive", "This reverses the facts: D-dimer is sensitive but not specific. Its sensitivity is why a negative result helps rule out a clot, and its poor specificity is why a positive one needs imaging."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 57", "slot": "education", "lead": "education"}, {"topic": "Superficial phlebitis and thrombophlebitis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 63-year-old man with a peripherally inserted central catheter for chemotherapy develops a tender cord in the upper arm. Venous duplex ultrasound shows extensive clot burden in a superficial vein. He has active cancer and a prior deep vein thrombosis. Which therapy should be added to compresses and an anti-inflammatory drug?", "opts": [["Aspirin alone", "Aspirin is not among the agents given for this problem. The listed options for extensive clot or higher thrombotic risk are unfractionated heparin, enoxaparin and fondaparinux."], ["Anticoagulation", "Correct. With extensive clot burden or an intermediate or higher risk of thrombosis, anticoagulation may be started, using unfractionated heparin, low molecular weight heparin such as enoxaparin, or fondaparinux."], ["Systemic corticosteroids", "Corticosteroids do not treat clot and can worsen thrombotic risk. When clot burden is extensive or thrombotic risk is higher, the added therapy is a heparin or fondaparinux."], ["Broad-spectrum antibiotics", "Antibiotics are for infection within the vein, suggested by high fever, purulence or redness beyond the vein. This bland extensive clot in a high-risk patient calls for anticoagulation."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 79", "slot": "agent/regimen", "lead": "treatment"}, {"topic": "Chronic venous insufficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 66-year-old woman has a painful ulcer above the medial malleolus with a clean base, fibrinous exudate and serous drainage, surrounded by brown pigmentation and pitting edema. Her pedal pulses are strong and her ankle-brachial index is 1.10. Which measure is essential for the ulcer to heal?", "opts": [["Topical antibiotic dressings alone", "The ulcer has a clean base and no sign of infection. Without controlling edema and applying compression, a venous ulcer will not heal whatever dressing is used."], ["Oral flavonoid therapy alone", "Flavonoids increase venous tone, but no oral medication has been proven useful for venous disease. Healing depends on compression and edema control."], ["Early surgical valvuloplasty", "Valvuloplasty is occasionally successful and carries a high risk of postoperative deep vein thrombosis. Initial nonoperative care with compression comes first."], ["Compression with edema control", "Correct. Venous ulcers will not heal unless edema is controlled and compression is applied, and an ankle-brachial index of 1.10 shows compression is safe. Wound care referral supports this."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 35", "slot": "first-line", "lead": "treatment"}, {"topic": "Arteriovenous fistula of the extremity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 38-year-old woman has a congenital arteriovenous fistula of the calf with numerous small communications, causing chronic swelling and aching. She has no signs of ischemia or heart failure. Which is the most appropriate initial management?", "opts": [["Ligation of every communication", "Ligating each communication is impractical because the connections can be numerous. Conservative treatment with elastic support hose is the standard initial approach."], ["Elastic support hose", "Correct. Congenital fistulas are difficult to treat because the communications can be numerous, so they are managed conservatively with elastic support hose once peripheral artery disease is excluded. Embolization sometimes removes one."], ["Surgical excision of the fistula", "Surgical removal or size reduction suits an acquired fistula. Congenital fistulas have numerous communications, making excision difficult, so conservative care is used first."], ["Lifelong anticoagulation", "Anticoagulation treats venous thrombosis and does not close or manage an artery to vein connection. Congenital fistulas are treated conservatively with elastic support hose."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 86", "slot": "first-line", "lead": "treatment"}, {"topic": "Upper-extremity disease and complications", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 50-year-old woman with a diagnosed leg deep vein thrombosis, not yet treated, develops sudden shortness of breath and pleuritic chest pain. Which complication has occurred?", "opts": [["Acute myocardial infarction", "Infarction of the heart is arterial, and nothing in this scenario suggests it. A known leg clot with sudden dyspnea and pleuritic pain points to embolization to the pulmonary arteries."], ["Pulmonary embolism", "Correct. Part of the thrombus can break off and travel to the lungs, causing a pulmonary embolism, the most important complication of deep vein thrombosis. Sudden breathlessness and pleuritic pain in this setting should prompt that concern."], ["Post-thrombotic syndrome", "Post-thrombotic syndrome is symptomatic chronic venous insufficiency that appears 6 to 24 months after a clot. It develops slowly in the leg and does not cause sudden breathlessness."], ["Septic thrombophlebitis", "Septic thrombophlebitis is an infected superficial vein, marked by high fever, purulent drainage and redness spreading beyond the vein, usually after cannulation. It does not produce acute breathlessness."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 72", "slot": "complication", "lead": "complication"}, {"topic": "Superficial phlebitis and thrombophlebitis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 52-year-old man with uncomplicated superficial thrombophlebitis of the forearm after an intravenous catheter is discharged on warm compresses, elevation and an anti-inflammatory drug. He is anxious that the clot could travel to his lungs. Which follow-up instruction is most appropriate?", "opts": [["Reexamination in 24 to 48 hours", "Such a short interval is unnecessary for a stable outpatient with a low-risk superficial clot. The recheck to assess resolution or progression is set at 7 to 10 days."], ["Reexamination in 7 to 10 days", "Correct. A repeat examination within 7 to 10 days checks for resolution versus progression, and persistence or worsening prompts a repeat duplex ultrasound. He should return sooner if it worsens."], ["Reexamination in 6 to 8 weeks", "Waiting 6 to 8 weeks would leave progression unrecognized for too long. The examination is due within 7 to 10 days to separate resolution from worsening."], ["Return only if fever develops", "Fever suggests infection within the vein, but progression of a clot can occur without it. A scheduled recheck within 7 to 10 days is needed, not follow-up only for fever."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 80", "slot": "education", "lead": "education"}, {"topic": "Chronic venous insufficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 52-year-old man with chronic venous insufficiency and recurrent ulcers is being considered for an invasive venous procedure. Which test is the gold standard for defining his venous anatomy beforehand?", "opts": [["Catheter-based venography", "Correct. Catheter-based venography is the gold standard, rarely needed to make the diagnosis, and is performed before an invasive intervention to define the anatomy."], ["Venous duplex ultrasound", "Duplex is the first test to confirm the diagnosis, rule out clot and find reflux. It is noninvasive and not the gold standard used before an intervention."], ["Cross-sectional venography", "Computed tomography or magnetic resonance venography helps evaluate deep veins that ultrasound cannot detect. It is a supplement, and catheter venography remains the gold standard."], ["Ankle-brachial index", "This measures arterial pressure to exclude peripheral artery disease before compression. It says nothing about venous anatomy, which catheter venography defines."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 29", "slot": "gold standard", "lead": "test"}, {"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 45-year-old man has dilated superficial leg veins with dull aching after standing. He has no edema, skin changes or ulceration, and his pedal pulses are normal. Which is the most appropriate initial management?", "opts": [["Laser vein ablation", "Ablation is offered after a trial of conservative therapy with stockings fails, generally weeks to months. It is not where management of isolated varicose veins begins."], ["Vein sclerotherapy", "Sclerotherapy fibroses the veins by injection and is an intervention. Isolated varicose veins start with conservative measures, which are identical to those for venous insufficiency."], ["Vein stripping surgery", "Stripping is a surgical option reserved for patients who do not improve conservatively. Isolated varicose veins begin with elevation, exercise and compression."], ["Stockings and exercise", "Correct. Isolated varicose veins without edema, skin changes or ulceration are managed conservatively at first, using leg elevation, exercise and compression once arterial disease has been ruled out."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 42", "slot": "first-line", "lead": "next step"}, {"topic": "Virchow triad", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 64-year-old woman must stay in bed for several days after major abdominal surgery. Her team wants a preventive measure aimed at the venous stasis component of the Virchow triad. Which measure is most appropriate?", "opts": [["Intermittent pneumatic compression", "Correct. Intermittent pneumatic compression, sequential devices that squeeze the legs in turn, imitates the calf muscle pump and keeps blood moving, countering stasis. It is used especially when a patient is immobilized after surgery or hospitalized for long."], ["Inferior vena cava filter", "An inferior vena cava filter catches clots after they form and is reserved for acute proximal deep vein thrombosis when anticoagulation is contraindicated. It is not a routine preventive measure for stasis after surgery."], ["Thrombolytic infusion", "Thrombolysis breaks down an existing clot in selected patients with a large proximal deep vein thrombosis or stable pulmonary embolism. It treats established clots and carries bleeding risk, so it is not prevention."], ["Warm compresses to the calves", "Warm compresses are a comfort measure for superficial phlebitis and do nothing to keep deep venous blood moving. Intermittent pneumatic compression mimics the muscle pump and counters stasis."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 71", "slot": "first-line", "lead": "treatment"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

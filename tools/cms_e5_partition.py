@@ -45,6 +45,8 @@ GUARDED = {
  "l27vig": ("l27", True, 20260925 + 272),
  "l28io": ("l28", False, 20260925 + 281),
  "l28vig": ("l28", True, 20260925 + 282),
+ "l26io": ("l26", False, 20260929 + 261),
+ "l26vig": ("l26", True, 20260929 + 262),
 }
 if WHICH not in GUARDED:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(GUARDED)))
@@ -104,7 +106,8 @@ _BRAND = re.compile(r"\b(Lipitor|Crestor|Zocor|Pravachol|Livalo|Zetia|Vytorin|Re
                     r"Lanoxin|Corlanor|Verquvo|BiDil|Florinef|ProAmatine|Northera|Mestinon|Vasotec|"
                     r"Zestril|Cozaar|Diovan|Norvasc|Tenormin|Inderal|LifeVest|Tryngolza|"
                     r"Plavix|Pletal|Trental|Activase|Cordarone|Pacerone|Norpace|Brevibloc|Nipride|"
-                    r"Coumadin|Eliquis|Xarelto|Calan|Cardizem)\b")
+                    r"Coumadin|Eliquis|Xarelto|Calan|Cardizem|Pradaxa|Arixtra|Atrixtra|Praxibind|Andexxa|K-?centra|Kcentra|"
+                    r"Keflex|Cleocin|Lovenox|Motrin|Advil|Savaysa|Retavase|Brevibloc)\b")
 
 # Mechanism-of-action STEMS (Carter: "no mechanism of action questions").
 # Disease pathophysiology is not banned -- drug mechanism is.
@@ -152,17 +155,34 @@ def load_guarded(lec, vig):
         fixes = importlib.import_module("cms_e5%s_lengthfix" % lec).FIXES
     except ImportError:
         fixes = {}
+    try:    # reviewer fixes kept OUT of the pool sources: {stem: {"q":..., "cite":..., "opts": {original option text: [new text|None, new explanation|None]}}}
+        patches = importlib.import_module("cms_e5%s_patch" % lec).PATCHES
+    except ImportError:
+        patches = {}
+    used = set()
     pool, origin = [], []
     for m in mods:
         qs = importlib.import_module(m).QUESTIONS
         for i, q in enumerate(qs):
             q = json.loads(json.dumps(q))          # never mutate the module's list
             q.setdefault("c", 0)
+            pt = patches.get(q["q"])
+            if pt:
+                used.add(q["q"])
+                if "q" in pt: q["q"] = pt["q"]
+                if "cite" in pt: q["cite"] = pt["cite"]
+                for old_txt, (txt, ex) in pt.get("opts", {}).items():     # options are found by their ORIGINAL text
+                    hit = [o for o in q["opts"] if o[0] == old_txt]
+                    assert len(hit) == 1, "patch option %r not found in %r" % (old_txt, q["q"][:60])
+                    if txt is not None: hit[0][0] = txt
+                    if ex is not None: hit[0][1] = ex
             for j in range(4):
                 if (m, i, j) in fixes:
                     q["opts"][j][0] = fixes[(m, i, j)]
             pool.append(q)
             origin.append((m, i))
+    unused = [k for k in patches if k not in used and any(k == q["q"] for m in mods for q in importlib.import_module(m).QUESTIONS)]
+    assert not unused, "patches that matched no question: %r" % unused[:3]
     stale = [k for k in fixes if k[0] in mods and k[1] >= len(importlib.import_module(k[0]).QUESTIONS)]
     assert not stale, "length fixes point past the end of their pool: %r" % stale[:3]
     return scope, mods, pool, origin, len([k for k in fixes if k[0] in mods])
