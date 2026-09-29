@@ -84,6 +84,9 @@
     } else if (name === "resume") {
       if (h && h.resume) h.resume();
       else { t.since = Date.now(); t.running = true; try { localStorage.setItem(TKEY, JSON.stringify(t)); } catch (e) {} }
+    } else if (name === "stop") {          // remove the timer without ticking the task; the minutes timed so far are kept
+      if (h && h.stop) h.stop();
+      else commit(t, false, Math.round(Math.min(elapsed(t), t.total * 60000) / 60000));
     } else if (name === "done") {
       if (h && h.done) h.done();
       else commit(t, true, Math.round(Math.min(elapsed(t), t.total * 60000) / 60000));
@@ -129,7 +132,8 @@
         (t.running
           ? '<button type="button" data-ft="pause" title="Pause the timer" aria-label="Pause the timer">' + icon("pause", 15) + "</button>"
           : '<button type="button" data-ft="resume" title="Resume the timer" aria-label="Resume the timer">' + icon("play", 15) + '<span class="ft-lbl">Resume</span></button>') +
-        '<button type="button" class="ft-ok" data-ft="done" title="Mark the task done" aria-label="Mark the task done">' + icon("check", 15) + '<span class="ft-lbl">Done</span></button>';
+        '<button type="button" class="ft-ok" data-ft="done" title="Mark the task done" aria-label="Mark the task done">' + icon("check", 15) + '<span class="ft-lbl">Done</span></button>' +
+        '<button type="button" data-ft="stop" title="Remove the timer (keeps the time so far, does not tick the task)" aria-label="Remove the timer without finishing the task">' + icon("x", 15) + "</button>";
       document.body.appendChild(pill);
     }
     pill.querySelector(".ft-clock").textContent = clock(Math.max(0, left));
@@ -139,7 +143,7 @@
   document.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest("#ft-pill [data-ft]"); if (!b) return;
     var k = b.getAttribute("data-ft");
-    if (k === "pause" || k === "resume" || k === "done") act(k);
+    if (k === "pause" || k === "resume" || k === "done" || k === "stop") act(k);
     else if (k === "close") { result = null; clearTimeout(resultTimer); hide(); update(); }
     else if (k === "mark" && result) {
       var r = result, h = hooks(); result = null; clearTimeout(resultTimer);

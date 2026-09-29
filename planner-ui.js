@@ -557,6 +557,7 @@
     pause: function () { pauseTimer(false); },
     resume: function () { if (timerState && !timerState.running) pauseTimer(true); },
     done: function () { commitTimer(true); },
+    stop: function () { commitTimer(false); },
     markDone: function (day, tid) { var t = findTask(day, tid); if (t) { t.done = true; save(); invalidate(); renderAll(); } }
   };
   window.addEventListener("storage", function (e) {     // the timer or the plan was changed from another tab or the floating pill
