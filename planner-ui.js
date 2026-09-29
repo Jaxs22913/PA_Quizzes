@@ -601,11 +601,26 @@
     if (id === "calendar" && window.PlannerCalendarHook) window.PlannerCalendarHook();
     window.scrollTo(0, 0);
   }
+  /* A few numbers for the homepage ring, so it never has to load the planner. Written
+     only for a student who already has a saved record (same reason save() is lazy). */
+  function writeHome() {
+    if (!touched || TEST) return;
+    try {
+      var rec = store.days[TODAY] || { tasks: [] }, real = rec.tasks.filter(isRealTask), S = streakState();
+      var planned = real.reduce(function (a, t) { return a + t.minutes; }, 0);
+      var done = real.filter(function (t) { return t.done; });
+      localStorage.setItem("planner:home:v1", JSON.stringify({
+        v: 1, day: TODAY, planned: planned, done: done.reduce(function (a, t) { return a + t.minutes; }, 0),
+        n: real.length, k: done.length, streak: S.streak, off: !!rec.off
+      }));
+    } catch (e) {}
+  }
   function renderAll() {
     invalidate();
     renderToday(); renderPlan(); renderStats();
     if (!$("pl-panel-settings").hidden) renderSettings();
     if (window.PlannerCalendarHook) window.PlannerCalendarHook();
+    writeHome();
   }
 
   function findEx(id) { return futurePlan().exams.filter(function (x) { return x.id === id; })[0]; }

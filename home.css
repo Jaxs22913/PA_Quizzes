@@ -509,6 +509,39 @@
     .search-result .sr-path { font-size: 12px; color: var(--muted); margin-top: 2px; }
     .search-no-results { padding: 14px 12px; font-size: 14px; color: var(--muted); text-align: center; }
 
+
+    /* Today's study ring (2026-09-28). A rail card above the week widget on desktop,
+       a full-width row under the header on phones, and ordinary flow in between. */
+    .planner-widget { display: block; margin: 18px 0; text-decoration: none; color: var(--ink); transition: border-color .15s, transform .15s; }
+    .planner-widget:hover { border-color: var(--a-teal); }
+    .pw-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+    .pw-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0; }
+    .pw-go { font-size: 12.5px; font-weight: 700; color: var(--a-teal); }
+    .planner-widget:hover .pw-go { text-decoration: underline; }
+    .pw-body { display: flex; align-items: center; gap: 14px; }
+    .pw-ring { position: relative; width: 68px; height: 68px; flex: none; }
+    .pw-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .pw-ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+    .pw-track { stroke: rgba(127,127,127,.2); }
+    .pw-fill { stroke: var(--a-teal); stroke-dasharray: 263.9; stroke-dashoffset: 263.9; transition: stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1), stroke .3s; }
+    .planner-widget.is-done .pw-fill { stroke: var(--a-green); }
+    .pw-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 800; color: var(--ink); }
+    .pw-pct small { font-size: 10px; font-weight: 700; opacity: .65; margin-left: 1px; }
+    .pw-text { min-width: 0; }
+    .pw-main { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+    .pw-sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height: 1.35; }
+    .pw-streak { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 12px; font-weight: 700; color: var(--a-amber-hover, var(--a-amber)); }
+    .pw-streak svg { width: 13px; height: 13px; }
+    @media (prefers-reduced-motion: reduce) { .pw-fill, .planner-widget { transition: none; } }
+    @media (min-width: 1220px) {
+      .planner-widget { position: absolute; left: calc(100% + 24px); width: 260px; margin: 0; box-sizing: border-box; }
+    }
+    @media (max-width: 640px) {
+      .page > #planner-widget { order: 19; flex: 1 1 100%; margin: 14px 0 0; padding: 12px 14px; box-sizing: border-box; }
+      .page > #planner-widget .pw-ring { width: 56px; height: 56px; }
+      .page > #planner-widget .pw-top { margin-bottom: 6px; }
+    }
+
     .week-widget { margin: 18px 0; }
     .week-widget-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 12px; flex-wrap: wrap; }
     .week-title {

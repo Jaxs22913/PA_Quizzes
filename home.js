@@ -251,6 +251,36 @@ document.querySelectorAll(".semester").forEach(semester => {
 
       document.getElementById("week-range").textContent = fmt(weekDates[0]) + " – " + fmt(weekDates[weekDates.length - 1]);
 
+      /* Today's study ring. Reads the summary the planner leaves in localStorage; it
+         only counts if it is from today, otherwise the student simply has not opened
+         today's plan yet. */
+      (function renderPlannerRing() {
+        var box = document.getElementById("planner-widget");
+        if (!box) return;
+        var c = null, todayKey = ymd(new Date());
+        try { c = JSON.parse(localStorage.getItem("planner:home:v1")); } catch (e) {}
+        if (c && c.day !== todayKey) c = null;
+        var main = document.getElementById("pw-main"), sub = document.getElementById("pw-sub"),
+            pct = document.getElementById("pw-pct"), fill = document.getElementById("pw-fill"),
+            st = document.getElementById("pw-streak");
+        function hm(m) { m = Math.round(m); return m < 60 ? m + " min" : Math.floor(m / 60) + " h" + (m % 60 ? " " + (m % 60) + " min" : ""); }
+        var frac = 0;
+        if (c && c.off) { main.textContent = "Day off"; sub.textContent = "Your streak is safe."; }
+        else if (c && c.n === 0) { main.textContent = "Rest day"; sub.textContent = "Nothing planned today."; }
+        else if (c && c.n > 0) {
+          frac = c.planned ? Math.min(1, c.done / c.planned) : 0;
+          if (frac >= 1) { box.classList.add("is-done"); main.textContent = "All done today"; sub.textContent = c.n + " of " + c.n + " tasks finished"; }
+          else { main.textContent = hm(c.planned - c.done) + " to go"; sub.textContent = c.k + " of " + c.n + " task" + (c.n === 1 ? "" : "s") + " done"; }
+          pct.innerHTML = Math.round(frac * 100) + "<small>%</small>";
+          if (c.streak > 0) {
+            st.hidden = false;
+            st.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.2 5 5.4 5 10.2a5 5 0 0 1-10 0c0-2.3 1.1-3.7 2.3-4.9.2 1.7 1 2.8 2.2 3.2-.2-3.1-.1-5.6.5-8.5z"/></svg>' + c.streak + "-day streak";
+          }
+        }
+        fill.style.strokeDashoffset = (263.9 * (1 - frac)).toFixed(1);
+        box.setAttribute("aria-label", "Today's study plan: " + main.textContent);
+      })();
+
       // Keep both floating sidebars (this one and #continue-widget) level with the
       // top of the semester card rather than the top of the page -- measured, not
       // hardcoded, so it stays correct if the header/subtitle text ever changes length.
@@ -269,7 +299,14 @@ document.querySelectorAll(".semester").forEach(semester => {
         const weekEl = document.getElementById("week-widget");
         const continueEl = document.getElementById("continue-widget");
         const statsEl = document.getElementById("stats-widget");
-        if (weekEl) weekEl.style.top = offset + "px";
+        const plannerEl = document.getElementById("planner-widget");
+        let weekTop = offset;
+        if (plannerEl) {
+          plannerEl.style.top = offset + "px";
+          const plannerH = plannerEl.getBoundingClientRect().height / zoom;
+          weekTop = offset + (plannerH ? plannerH + 18 : 0);
+        }
+        if (weekEl) weekEl.style.top = weekTop + "px";
         const relaxEl = document.getElementById("relax-cta-row");
         const groupEl = document.getElementById("group-cta-row");
         const arcadeEl = document.getElementById("arcade-cta-row");
@@ -349,7 +386,7 @@ document.querySelectorAll(".semester").forEach(semester => {
             window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
         var order = ["question-issue-row", "relax-cta-row", "group-cta-row",
-                     "arcade-cta-row", "stats-widget", "week-widget",
+                     "arcade-cta-row", "stats-widget", "planner-widget", "week-widget",
                      "semester-card", "continue-widget"];
         var step = 0;
         order.forEach(function (id) {
@@ -1322,6 +1359,7 @@ function showToast(message, duration) {
 function buildHomeTourSteps() {
       var steps = [
         { selector: "#site-search", title: "Search everything", text: "Search every quiz on the site by name from right here." },
+        { selector: "#planner-widget", title: "Today's study ring", text: "Check off your study tasks in the planner and this ring closes. It also shows your streak." },
         { selector: "#week-widget", title: "This week", text: "See this week's exams and practicums at a glance — it automatically moves to next week every Friday at 5pm." }
       ];
       var continueWidget = document.getElementById("continue-widget");

@@ -214,6 +214,23 @@
       </div>
     </div>
 
+    <!-- Today's study ring. Filled by home.js from the tiny summary the planner writes
+         ("planner:home:v1"); it never loads the planner itself. Sits above the week widget. -->
+    <a id="planner-widget" class="card planner-widget" href="calendar.html#today" aria-label="Today's study plan">
+      <div class="pw-top"><h2 class="pw-title">Today&rsquo;s study</h2><span class="pw-go">Open &rarr;</span></div>
+      <div class="pw-body">
+        <div class="pw-ring">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" class="pw-track"></circle><circle cx="50" cy="50" r="42" class="pw-fill" id="pw-fill"></circle></svg>
+          <div class="pw-pct" id="pw-pct">&ndash;</div>
+        </div>
+        <div class="pw-text">
+          <div class="pw-main" id="pw-main">Open today&rsquo;s plan</div>
+          <div class="pw-sub" id="pw-sub">Tasks, timer and streak</div>
+          <div class="pw-streak" id="pw-streak" hidden></div>
+        </div>
+      </div>
+    </a>
+
     <div class="mobile-widgets-row">
       <div id="week-widget" class="card week-widget">
         <div class="week-widget-top">
