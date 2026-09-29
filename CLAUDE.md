@@ -156,6 +156,14 @@ to localStorage until the student interacts (a blank record would beat their clo
 cloud-sync); the page uses its own designed dark tokens, not the invert filter; the homepage ring reads `planner:home:v1` (written by planner-ui.js); the How to use button offers a video popup (`media/planner-walkthrough.mp4`; re-record it when the planner UI changes noticeably) or a SiteTour virtual tour; Settings has an Automatic/Manual mode switch (manual tasks count toward the streak). Details:
 memory `study_planner.md`.
 
+### Book Questions (Med Lit)
+
+`Interpretation of Medical Literature Book Questions/` holds the 183 textbook questions Jaxon supplied
+(Clinical Epidemiology Study Questions, 14 chapters, one quiz each). Source of truth is
+`tools/medlit_book_sets.json`, written by `tools/build_medlit_book.py` from the .docx and rendered by
+`tools/render_medlit_book.py`. They keep the book's 3-7 choices and single explanation, so
+`check_exam_standard.py` skips this folder on purpose (`TEXTBOOK`) and there is no guide-link button.
+
 ### Guides, cram sheets, Arcade
 
 - Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box

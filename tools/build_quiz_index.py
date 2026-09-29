@@ -21,6 +21,8 @@ def main():
         folder = os.path.basename(os.path.dirname(path))
         if any(k in fn for k in SKIP):
             continue
+        if folder.endswith("Book Questions"):      # textbook practice, not part of any exam's readiness count
+            continue
         src = open(path, encoding="utf8", errors="ignore").read()
         # a quiz is a page with a question bank, which is what "done" means here
         if not re.search(r'const (?:QUESTIONS|DATA|QUIZ_DATA)\s*=\s*\[', src):

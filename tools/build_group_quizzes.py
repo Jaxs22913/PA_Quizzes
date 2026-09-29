@@ -92,7 +92,7 @@ def exam_from_path(path):
     a slug shape."""
     folder = path.split(os.sep)[0]
     m = re.search(r'\bExam\s*(\d+)\s*$', folder)
-    return ("Exam " + m.group(1)) if m else "General"
+    return ("Exam " + m.group(1)) if m else ("Book Questions" if folder.endswith("Book Questions") else "General")
 
 
 def category_from_path(path):
@@ -102,6 +102,7 @@ def category_from_path(path):
     fixups = {
         "CAM Nutrition": "CAM / Nutrition", "Nutrition Class": "Nutrition",
         "Anatomy Practicum": "Anatomy Practicum", "Intro to PA Profession": "Intro to PA",
+        "Interpretation of Medical Literature Book Questions": "Interpretation of Medical Literature",
     }
     return fixups.get(cat, cat) or "Other"
 

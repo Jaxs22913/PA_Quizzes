@@ -79,6 +79,13 @@ FROZEN = (
 )
 
 
+# Textbook question banks reproduced as the book gives them: three to seven choices, ONE explanation for the
+# correct answer (every wrong choice repeats it), completion-style stems. The house exam standard is about
+# questions we write; these are exempt from it by design (Jaxon, 2026-09-29, "put these ... format them how we
+# do our quizzes" -- the engine, not a rewrite of the book). Every OTHER checker still reads them.
+TEXTBOOK = ("Interpretation of Medical Literature Book Questions",)
+
+
 def is_frozen(rel):
     """True for a repo-relative path inside a Semester 1 folder. The one place
     other checkers ask -- check_self_contained, check_leadin_present and
@@ -262,6 +269,8 @@ def main():
         if rel.startswith(("tools", "group-quizzes", "icons", "audio")):
             continue
         if args.target and args.target not in rel:
+            continue
+        if rel.startswith(TEXTBOOK):
             continue
         if not args.include_frozen and any(rel.startswith(d) for d in FROZEN):
             frozen_skipped.append(rel)
