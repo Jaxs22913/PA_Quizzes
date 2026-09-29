@@ -177,6 +177,40 @@
   @media (prefers-reduced-motion: reduce){.nu-ring .nu-fill,.nu-bar i{transition:none}}
 
   /* --- study planner ------------------------------------------------------ */
+  .pl-mode { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 0 0 14px; }
+  .pl-modebtn { font: inherit; text-align: left; padding: 14px 16px; border-radius: var(--r-md); border: 2px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; display: grid; gap: 4px; }
+  .pl-modebtn b { font-size: 16px; } .pl-modebtn span { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  .pl-modebtn:hover { border-color: var(--accent); }
+  .pl-modebtn.on { border-color: var(--accent); background: var(--accent-soft); box-shadow: 0 0 0 1px var(--accent); }
+  .pl-modebtn.on b::after { content: "  \2713"; color: var(--a-teal-hover); }
+  .pl-mform { margin-top: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pl-mform .wide, .pl-mtitle, .pl-mquick, .pl-mgo { grid-column: 1 / -1; }
+  .pl-mtitle { font-size: 15px; font-weight: 800; color: var(--ink); display: flex; align-items: center; gap: 7px; }
+  .pl-mf { display: grid; gap: 5px; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+  .pl-mf i { font-weight: 500; }
+  .pl-mform input, .pl-mform select { font: inherit; font-size: 14.5px; padding: 9px 10px; border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--card); color: var(--ink); min-width: 0; width: 100%; box-sizing: border-box; }
+  .pl-mform input:focus-visible, .pl-mform select:focus-visible { outline: 3px solid color-mix(in oklab, var(--accent) 45%, transparent); outline-offset: 1px; }
+  .pl-mquick, .pl-mmins { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .pl-mother { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; margin-left: 4px; }
+  .pl-mother input { width: 76px; }
+  .pl-mgo { display: flex; justify-content: flex-end; }
+  @media (max-width: 560px) { .pl-mform { grid-template-columns: 1fr; } }
+  .pl-plist li .pl-x { margin-left: 2px; align-self: center; }
+  .pl-choose { width: min(560px, 100%); background: #0f1115; color: #e8eaf0; border: 1px solid #2a2f3a; border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,.55); overflow: hidden; }
+  .pl-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 6px 16px 18px; }
+  .pl-choice { font: inherit; text-align: left; padding: 16px; border-radius: 14px; border: 1px solid #343a48; background: #171a21; color: #e8eaf0; cursor: pointer; display: grid; gap: 6px; }
+  .pl-choice .si { color: #35d6d8; }
+  .pl-choice b { font-size: 17px; } .pl-choice span { font-size: 13px; color: #a3abb8; line-height: 1.45; }
+  .pl-choice:hover, .pl-choice:focus-visible { border-color: #35d6d8; outline: none; box-shadow: 0 0 0 2px rgba(53,214,216,.35); }
+  @media (max-width: 560px) { .pl-choices { grid-template-columns: 1fr; } }
+  .pl-vid { position: fixed; inset: 0; z-index: 9500; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(6,8,12,.8); }
+  .pl-vid-box { width: min(1040px, 100%); max-height: 100%; background: #0f1115; color: #e8eaf0; border: 1px solid #2a2f3a; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,.55); display: flex; flex-direction: column; }
+  .pl-vid-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px 10px 18px; font-size: 15px; }
+  .pl-vid-x { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #343a48; background: transparent; color: #e8eaf0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+  .pl-vid-x:hover { background: #22262e; }
+  .pl-vid-x:focus-visible, .pl-vid video:focus-visible { outline: 3px solid #35d6d8; outline-offset: 2px; }
+  .pl-vid video { display: block; width: 100%; aspect-ratio: 16 / 9; max-height: calc(100vh - 150px); background: #000; }
+  .pl-vid-note { margin: 0; padding: 9px 18px 12px; font-size: 12.5px; color: #a3abb8; }
   .pl-headrow { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .pl-headrow h1 { margin-bottom: 8px; }
   .pl-help { position: relative; font: inherit; font-size: 13.5px; font-weight: 700; padding: 8px 14px 8px 12px; border-radius: var(--r-pill); border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; }

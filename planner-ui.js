@@ -98,15 +98,16 @@
     }
     return [runs(lec, "lecture"), runs(lab, "lab")].filter(Boolean).join(" and ");
   }
+  function isManual() { return store.mode === "manual"; }
   function taskTitle(t) {
-    if (t.custom) return t.name;
+    if (t.custom || t.manual) return t.name;
     var u = unitText(t.units);
     if (t.kind === "firstpass") return u ? "Learn " + u : "Start practicing";
     if (t.kind === "review") return u ? "Review " + u + " from memory" : "Practice the routine again";
     return t.osce ? "Full run-through, timed" : "Mixed practice questions across the whole exam";
   }
   function taskHow(t) {
-    if (t.custom) return "";
+    if (t.custom || t.manual) return "";
     if (t.kind === "firstpass") return "Read your notes once, then close them and write what you can recall. Fix gaps in the study guide.";
     if (t.kind === "review") return "Answer questions or write it out from memory first; only then check the guide. Testing yourself beats rereading.";
     return t.osce ? "Say every step and finding aloud, in order, without the sheet." : "Take a master exam or mixed quiz, then send every miss back to the guide.";
@@ -134,11 +135,12 @@
   }
 
   function materialize(day, keepDone) {
+    if (isManual() && !keepDone) return [];          // manual mode: the planner schedules nothing
     var c = cfg(), exams = examsFrom(day, c), isToday = day === TODAY;
     var done = doneBefore(day), used = {};
     var keep = [];
     if (keepDone && store.days[day]) {
-      keep = store.days[day].tasks.filter(function (t) { return t.done || t.custom; });
+      keep = store.days[day].tasks.filter(function (t) { return t.done || t.custom || t.manual; });
       keep.forEach(function (t) { if (t.exam) done[t.exam] = (done[t.exam] || 0) + Math.max(t.minutes || 0, t.logged || 0); });
       used[day] = keep.filter(function (t) { return t.done; }).reduce(function (a, t) { return a + t.minutes; }, 0);
     }
@@ -171,6 +173,7 @@
   function futurePlan() {
     if (cache) return cache;
     var c = cfg(), exams = examsFrom(TODAY, c);
+    if (isManual()) return (cache = { exams: exams, plan: { days: {} }, info: {}, shortfall: {}, cfg: c });
     var done = E.doneByExam(store.days), used = {}, rec = store.days[TODAY];
     if (rec && !rec.off) {
       rec.tasks.forEach(function (t) { if (t.exam && !t.done) done[t.exam] = (done[t.exam] || 0) + t.minutes; });
@@ -208,6 +211,12 @@
     var a = [];
     function L(href, label) { a.push('<a class="pl-link" href="' + esc(encodeURI(href)) + '">' + label + "</a>"); }
     function short(t) { t = String(t).replace(/\s+/g, " "); return t.length > 34 ? t.slice(0, 33).replace(/\s+\S*$/, "") + "\u2026" : t; }
+    if (t.manual) {
+      if (r.guide) L(r.guide, "Study guide");
+      if (r.cram) L(r.cram, "Cram sheet");
+      L("index.html", "Quizzes");
+      return a.join("");
+    }
     if (t.kind === "final") {
       if (r.master) L(r.master, "Master exam");
       if (r.cram) L(r.cram, "Cram sheet");
@@ -263,14 +272,58 @@
     var tm = t.start != null ? clock(t.start) + "–" + clock(t.end) : "";
     var timer = timerState && timerState.day === day && timerState.tid === t.id;
     var logged = t.logged ? " · " + hm(t.logged) + " timed" : "";
-    return '<li class="pl-task' + (t.done ? " done" : "") + (t.custom ? " custom" : "") + '" data-tid="' + esc(t.id) + '" style="--c:' + (t.ex ? colorOf(t.ex.c) : "var(--a-teal)") + '">' +
+    return '<li class="pl-task' + (t.done ? " done" : "") + (t.custom || t.manual ? " custom" : "") + '" data-tid="' + esc(t.id) + '" style="--c:' + (t.ex ? colorOf(t.ex.c) : "var(--a-teal)") + '">' +
       '<label class="pl-check"><input type="checkbox" data-act="tick" data-day="' + day + '" data-tid="' + esc(t.id) + '"' + (t.done ? " checked" : "") + (editable ? "" : " disabled") + ' aria-label="Mark done: ' + esc(taskTitle(t)) + '"><span class="pl-box">' + icon("check", 15) + "</span></label>" +
       '<div class="pl-tmain"><div class="pl-ttitle">' + esc(taskTitle(t)) + (t.part ? ' <span class="pl-part">' + esc(t.part) + "</span>" : "") + "</div>" +
       '<div class="pl-tmeta">' + (t.ex ? '<span class="pl-exname">' + esc(t.ex.name) + "</span> · " : "") + '<b>' + hm(t.minutes) + "</b>" + (tm ? " · " + tm : "") + esc(logged) + (t.ex && t.ex.d ? " · exam " + relDay(t.ex.d) : "") + "</div>" +
-      (t.custom ? "" : '<details class="pl-how"><summary>How to do it</summary><p>' + esc(taskHow(t)) + "</p></details>") +
+      (t.custom || t.manual ? "" : '<details class="pl-how"><summary>How to do it</summary><p>' + esc(taskHow(t)) + "</p></details>") +
       '<div class="pl-tlinks">' + linksFor(t) + "</div></div>" +
       '<div class="pl-tact">' + (editable && !t.done ? '<button class="pl-btn small' + (timer ? " on" : "") + '" type="button" data-act="timer" data-day="' + day + '" data-tid="' + esc(t.id) + '">' + icon(timer ? "timer" : "play", 13) + (timer ? " Timing" : " Start") + "</button>" : "") +
-      (t.custom && editable ? '<button class="pl-x" type="button" data-act="deltask" data-day="' + day + '" data-tid="' + esc(t.id) + '" aria-label="Delete task">' + icon("x", 13) + "</button>" : "") + "</div></li>";
+      ((t.custom || t.manual) && editable ? '<button class="pl-x" type="button" data-act="deltask" data-day="' + day + '" data-tid="' + esc(t.id) + '" aria-label="Delete task">' + icon("x", 13) + "</button>" : "") + "</div></li>";
+  }
+
+  /* ============================================================ manual mode === */
+  function dayTasksOf(d, fp) {
+    if (isManual()) { var r = store.days[d]; return r && !r.off ? r.tasks.filter(isRealTask) : []; }
+    return fp.plan.days[d] || [];
+  }
+  function flash(msg) {
+    var el = document.createElement("div"); el.className = "pl-toast"; el.setAttribute("role", "status"); el.innerHTML = icon("check", 16) + " " + esc(msg);
+    document.body.appendChild(el); setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 400); }, 1800);
+  }
+  var QUICK = ["Read notes", "Practice questions", "Flashcards", "Study guide", "Review misses"];
+  function manualForm(defDay) {
+    var exams = futurePlan().exams.filter(function (x) { return x.d >= TODAY; });
+    var days = E.range(TODAY, E.add(TODAY, 27));
+    function dayName(d) { var n = E.diff(TODAY, d); return n === 0 ? "Today" : n === 1 ? "Tomorrow" : dLabel(d); }
+    return '<form class="pl-mform" data-act="manualform"><div class="pl-mtitle">' + icon("plus", 16) + ' Add a study task</div>' +
+      '<label class="pl-mf wide"><span>What will you study?</span><input name="name" type="text" maxlength="80" required placeholder="e.g. Cardiology lecture 22 notes" autocomplete="off"></label>' +
+      '<div class="pl-mquick" aria-label="Quick ideas">' + QUICK.map(function (q) { return '<button type="button" class="pl-seg" data-act="mquick" data-t="' + esc(q) + '">' + esc(q) + "</button>"; }).join("") + "</div>" +
+      '<label class="pl-mf"><span>For which exam?</span><select name="exam"><option value="">No specific exam</option>' +
+        exams.map(function (x) { return '<option value="' + esc(x.id) + '">' + esc(nameOf(x)) + " (" + esc(dLabel(x.d)) + ")</option>"; }).join("") + "</select></label>" +
+      '<label class="pl-mf"><span>Which day?</span><select name="day">' + days.map(function (d) { return '<option value="' + d + '"' + (d === (defDay || TODAY) ? " selected" : "") + ">" + esc(dayName(d)) + "</option>"; }).join("") + "</select></label>" +
+      '<div class="pl-mf wide"><span>How long?</span><div class="pl-mmins">' + [15, 30, 45, 60, 90, 120].map(function (m) { return '<button type="button" class="pl-seg' + (m === 30 ? " on" : "") + '" data-act="mmin" data-m="' + m + '">' + hm(m) + "</button>"; }).join("") +
+        '<span class="pl-mother">or <input name="min" type="number" min="5" max="480" step="5" value="30" aria-label="Minutes"> min</span></div></div>' +
+      '<label class="pl-mf"><span>Start time <i>(optional)</i></span><input name="time" type="time" step="300"></label>' +
+      '<div class="pl-mgo"><button class="pl-btn" type="submit">' + icon("plus", 14) + ' Add task</button></div></form>';
+  }
+  function modeNote() {
+    if (!isManual()) return "";
+    return '<div class="pl-note"><b>' + icon("sliders", 14) + ' Manual mode:</b> the planner is off, so nothing is scheduled for you. Add your own tasks and study time; they count toward your streak. <button class="pl-link-btn" type="button" data-act="mode" data-v="auto">Switch back to automatic</button></div>';
+  }
+  function addManualTask(f) {
+    var name = f.name.value.trim(), min = Math.round(+f.min.value), day = f.day.value, exId = f.exam.value, time = f.time.value;
+    if (!name) { f.name.focus(); return; }
+    if (!(min >= 5 && min <= 480)) { f.min.focus(); return; }
+    var x = exId ? futurePlan().exams.filter(function (e) { return e.id === exId; })[0] : null;
+    var rec = store.days[day] || (store.days[day] = { tasks: [] });
+    var t = { id: day + "|m" + Date.now().toString(36) + Math.floor(Math.random() * 1e4).toString(36), manual: true, name: name, minutes: min, exam: x ? x.id : null,
+              ex: x ? { name: nameOf(x), d: x.d, c: x.c, key: resKey(x) } : null, done: false, logged: 0 };
+    if (time) { t.start = toMin(time); t.end = t.start + min; }
+    rec.tasks.push(t); rec.off = false;
+    rec.tasks.sort(function (a, b) { return (a.start == null ? 1e9 : a.start) - (b.start == null ? 1e9 : b.start); });   // stable: untimed keep their order
+    save(); f.name.value = ""; renderAll();
+    flash("Added to " + (E.diff(TODAY, day) === 0 ? "today" : E.diff(TODAY, day) === 1 ? "tomorrow" : dLabel(day)));
   }
 
   function renderToday() {
@@ -284,23 +337,24 @@
 
     var hero;
     if (rec.off) hero = ["Day off", "You took today off. It won't break your streak."];
+    else if (!real.length && isManual()) hero = ["Nothing planned yet", "Add what you plan to study today, and how long."];
     else if (!real.length) hero = [full ? "Nothing planned" : "Rest day", full ? "Nothing is due yet, or your study window has already closed." : "This is one of your rest days. Rest is part of the plan."];
     else if (pct >= 1) hero = ["All done", "That's today's plan finished. Nice work."];
-    else hero = [hm(plannedMin - doneMin) + " to go", "of " + hm(plannedMin) + " planned" + (full ? " between " + clock(win ? win.start : full.start) + " and " + clock(full.end) : "") + "."];
+    else hero = [hm(plannedMin - doneMin) + " to go", "of " + hm(plannedMin) + " planned" + (full && !isManual() ? " between " + clock(win ? win.start : full.start) + " and " + clock(full.end) : "") + "."];
     h += '<div class="pl-hero"><div class="pl-ringwrap">' + ringSvg(pct) + '<div class="pl-ringtxt">' + (plannedMin ? Math.round(pct * 100) + '<small>%</small>' : "\u2013") + '</div></div><div><div class="pl-date">' + esc(dLabel(TODAY, true)) + '</div><div class="pl-h2">' + esc(hero[0]) + '</div><div class="pl-ssub">' + esc(hero[1]) + "</div></div></div>";
 
     todayExams.forEach(function (x) { h += '<div class="pl-note good"><b>Exam today:</b> ' + esc(nameOf(x)) + ". You've done the work; sleep and a calm morning matter more than one more pass.</div>"; });
-    h += overloadBanner(fp);
-    if (rec.tasks.some(function (t) { return t.catchup; })) h += "";
+    h += isManual() ? modeNote() : overloadBanner(fp);
 
     h += '<div class="pl-cols"><div class="pl-colmain">';
     h += '<div class="pl-sect"><h3>' + icon("list", 16) + ' Today\'s tasks</h3><span class="pl-sect-r">';
-    h += '<button class="pl-btn small ghost" type="button" data-act="replan">' + icon("refresh", 13) + " Re-plan</button> ";
+    if (!isManual()) h += '<button class="pl-btn small ghost" type="button" data-act="replan">' + icon("refresh", 13) + " Re-plan</button> ";
     h += '<button class="pl-btn small ghost" type="button" data-act="dayoff">' + icon("moon", 13) + (rec.off ? " Undo day off" : " Take today off") + "</button></span></div>";
     h += '<div id="pl-timer"></div>';
     if (rec.tasks.length) h += '<ul class="pl-tasks">' + rec.tasks.map(function (t) { return taskRow(t, TODAY, true); }).join("") + "</ul>";
+    else if (isManual()) h += '<div class="pl-empty">' + (rec.off ? "Enjoy the day off." : "No tasks yet. Add your first one below.") + "</div>";
     else h += '<div class="pl-empty">' + (rec.off ? "Enjoy the day off." : "No study tasks today.") + " Use " + '<button class="pl-link-btn" type="button" data-act="replan">Re-plan</button>' + " if you changed your hours, or add your own task below.</div>";
-    h += '<form class="pl-add" data-act="addform"><input name="name" type="text" maxlength="80" placeholder="Add your own task (does not affect your streak)" aria-label="Task name"><input name="min" type="number" min="5" max="240" step="5" value="30" aria-label="Minutes"><button class="pl-btn" type="submit">' + icon("plus", 14) + " Add</button></form>";
+    h += isManual() ? manualForm(TODAY) : '<form class="pl-add" data-act="addform"><input name="name" type="text" maxlength="80" placeholder="Add your own task (does not affect your streak)" aria-label="Task name"><input name="min" type="number" min="5" max="240" step="5" value="30" aria-label="Minutes"><button class="pl-btn" type="submit">' + icon("plus", 14) + " Add</button></form>";
     h += "</div>";
     h += '<div class="pl-colside">' + streakCard(S) + "</div></div>";
 
@@ -308,7 +362,7 @@
     var upcoming = fp.exams.filter(function (x) { return x.d > TODAY; }).slice(0, 3);
     h += '<div class="pl-sect"><h3>' + icon("calendar", 16) + " Next few days</h3></div><div class=\"pl-mini\">";
     for (var i = 1; i <= 4; i++) {
-      var d = E.add(TODAY, i), ts = (store.days[d] && store.days[d].off) ? null : (fp.plan.days[d] || []), tot = ts ? ts.reduce(function (a, t) { return a + t.minutes; }, 0) : 0;
+      var d = E.add(TODAY, i), ts = (store.days[d] && store.days[d].off) ? null : dayTasksOf(d, fp), tot = ts ? ts.reduce(function (a, t) { return a + t.minutes; }, 0) : 0;
       h += '<button type="button" class="pl-minirow" data-go="plan" data-day="' + d + '"><span class="pl-minid">' + esc(dLabel(d)) + '</span><span class="pl-minib">' + (ts === null ? "Day off" : tot ? hm(tot) + " · " + ts.length + " task" + (ts.length === 1 ? "" : "s") : "Rest") + "</span></button>";
     }
     h += "</div>";
@@ -406,7 +460,17 @@
     return { st: st, note: note, info: info };
   }
 
+  function manualExamCard(x) {
+    var planned = 0, done = 0;
+    Object.keys(store.days).forEach(function (d) { store.days[d].tasks.forEach(function (t) { if (t.exam === x.id) { planned += t.minutes; if (t.done) done += Math.max(t.minutes, t.logged || 0); } }); });
+    var days = E.diff(TODAY, x.d), pct = planned ? Math.min(1, done / planned) : 0, soon = days <= 14 && !planned;
+    return '<article class="pl-exam" style="--c:' + colorOf(x.c) + '"><div class="pl-etop"><div><div class="pl-ename">' + esc(nameOf(x)) + '</div><div class="pl-emeta">' + dLabel(x.d) + " · " + days + " day" + (days === 1 ? "" : "s") + (x.units.length ? " · " + esc(unitText(x.units)) : x.practical ? " · practical" : "") + '</div></div>' +
+      '<span class="pl-badge ' + (soon ? "warn" : planned ? "ok" : "off") + '">' + (planned ? hm(planned) + " planned" : soon ? "Nothing planned yet" : "Nothing planned") + "</span></div>" +
+      (planned ? '<div class="pl-ebar"><i style="width:' + Math.round(pct * 100) + '%"></i></div><div class="pl-emeta">' + hm(done) + " done of " + hm(planned) + "</div>" : "") +
+      '<div class="pl-dayacts" style="padding:8px 0 0"><button class="pl-btn small ghost" type="button" data-act="mexam" data-ex="' + esc(x.id) + '">' + icon("plus", 13) + " Add a task for this exam</button></div></article>";
+  }
   function examCard(x, fp) {
+    if (isManual()) return manualExamCard(x);
     var c = fp.cfg, o = store.ovr[x.id] || {}, s = examStatus(x, fp), info = s.info;
     var done = info.doneMin || 0, left = info.pendingMin || 0, total = done + left, pct = total ? Math.min(1, done / total) : 0;
     var r = RES[resKey(x)], has = r && (r.guide || r.cram || (r.refs && r.refs.length));
@@ -427,11 +491,11 @@
     var host = $("pl-plan"), fp = futurePlan(), c = fp.cfg, S = null;
     var view = store.ui.horizon || 28;
     var range = E.range(TODAY, E.add(TODAY, view - 1)), capMap = {};
-    range.forEach(function (d) { capMap[d] = (store.days[d] && store.days[d].off) ? 0 : E.capOf(E.windowOf(d, c, nowMin(), d === TODAY), c); });
-    var planDays = {}; range.forEach(function (d) { planDays[d] = (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []); });
-    var h = overloadBanner(fp);
+    range.forEach(function (d) { capMap[d] = (isManual() || (store.days[d] && store.days[d].off)) ? 0 : E.capOf(E.windowOf(d, c, nowMin(), d === TODAY), c); });
+    var planDays = {}; range.forEach(function (d) { planDays[d] = isManual() ? dayTasksOf(d, fp) : (d === TODAY && store.days[TODAY]) ? store.days[TODAY].tasks.filter(isRealTask) : (fp.plan.days[d] || []); });
+    var h = isManual() ? modeNote() + '<div id="pl-mform-host">' + manualForm(TODAY) + "</div>" : overloadBanner(fp);
     var cr = E.crunches(fp.exams.filter(function (x) { return !(store.ovr[x.id] && store.ovr[x.id].off); }), 5, 3);
-    cr.slice(0, 2).forEach(function (k) { h += '<div class="pl-note"><b>' + icon("flag", 14) + " Crunch:</b> " + k.count + " graded dates between " + dLabel(k.from) + " and " + dLabel(k.to) + ". The plan starts these early and works on the nearest one first.</div>"; });
+    cr.slice(0, 2).forEach(function (k) { h += '<div class="pl-note"><b>' + icon("flag", 14) + " Crunch:</b> " + k.count + " graded dates between " + dLabel(k.from) + " and " + dLabel(k.to) + (isManual() ? ". Leave yourself time for each." : ". The plan starts these early and works on the nearest one first.") + "</div>"; });
 
     h += '<div class="pl-sect"><h3>' + icon("chart", 16) + " Study load</h3><span class=\"pl-sect-r\">" + [14, 28, 56].map(function (n) { return '<button class="pl-seg' + (view === n ? " on" : "") + '" type="button" data-act="horizon" data-n="' + n + '">' + n / 7 + " wk</button>"; }).join("") + "</span></div>";
     h += stackedChart(range, fp.exams, capMap, { plan: planDays });
@@ -441,24 +505,30 @@
     range.slice(0, Math.min(view, 21)).forEach(function (d) {
       var rec = store.days[d], ts = planDays[d], off = rec && rec.off, tot = ts.reduce(function (a, t) { return a + t.minutes; }, 0);
       var win = E.windowOf(d, c, null, false);
-      h += '<details class="pl-dayrow' + (d === TODAY ? " is-today" : "") + '" id="d-' + d + '"' + '><summary><span class="pl-dd">' + esc(dLabel(d)) + '</span><span class="pl-dtot">' + (off ? "Day off" : tot ? hm(tot) : win ? "Nothing due" : "Rest day") + '</span>' +
+      h += '<details class="pl-dayrow' + (d === TODAY ? " is-today" : "") + '" id="d-' + d + '"' + '><summary><span class="pl-dd">' + esc(dLabel(d)) + '</span><span class="pl-dtot">' + (off ? "Day off" : tot ? hm(tot) : isManual() ? "Nothing planned" : win ? "Nothing due" : "Rest day") + '</span>' +
         '<span class="pl-dchips">' + ts.reduce(function (a, t) { if (a.indexOf(t.exam) < 0) a.push(t.exam); return a; }, []).slice(0, 4).map(function (id) { var x = fp.exams.filter(function (e) { return e.id === id; })[0]; return x ? '<i style="background:' + colorOf(x.c) + '"></i>' : ""; }).join("") + "</span></summary>";
       if (ts.length) {
         h += '<ul class="pl-plist">' + ts.map(function (t) {
+          if (t.manual) {
+            var mc = t.ex ? colorOf(t.ex.c) : "var(--muted)";
+            return '<li style="--c:' + mc + '"><i></i><span><b>' + esc(t.name) + "</b>" + (t.ex ? " · " + esc(t.ex.name) : "") + '</span><span class="pl-t">' + hm(t.minutes) + (t.start != null ? " · " + clock(t.start) : "") + (t.done ? " · done" : "") + '</span>' +
+              '<button class="pl-x" type="button" data-act="deltask" data-day="' + d + '" data-tid="' + esc(t.id) + '" aria-label="Delete task">' + icon("x", 13) + "</button></li>";
+          }
           var x = fp.exams.filter(function (e) { return e.id === t.exam; })[0] || {};
           var tk = t.ex ? t : { exam: t.exam, kind: t.kind, minutes: t.minutes, units: t.units, start: t.start, end: t.end, part: t.part, ex: { name: nameOf(x) } };
           return '<li style="--c:' + colorOf(x.c || (t.ex && t.ex.c)) + '"><i></i><span><b>' + esc(taskTitle(tk)) + "</b> · " + esc(tk.ex.name) + '</span><span class="pl-t">' + hm(t.minutes) + (t.start != null ? " · " + clock(t.start) : "") + "</span></li>";
         }).join("") + "</ul>";
       }
-      if (d >= TODAY) h += '<div class="pl-dayacts"><button class="pl-btn small ghost" type="button" data-act="dayoffd" data-day="' + d + '">' + icon("moon", 13) + (off ? " Undo day off" : " Take this day off") + "</button></div>";
+      if (d >= TODAY && isManual()) h += '<div class="pl-dayacts"><button class="pl-btn small" type="button" data-act="mday" data-day="' + d + '">' + icon("plus", 13) + " Add a task to this day</button> <button class=\"pl-btn small ghost\" type=\"button\" data-act=\"dayoffd\" data-day=\"" + d + "\">" + icon("moon", 13) + (off ? " Undo day off" : " Take this day off") + "</button></div>";
+      else if (d >= TODAY) h += '<div class="pl-dayacts"><button class="pl-btn small ghost" type="button" data-act="dayoffd" data-day="' + d + '">' + icon("moon", 13) + (off ? " Undo day off" : " Take this day off") + "</button></div>";
       h += "</details>";
     });
     h += "</div>";
 
-    h += '<div class="pl-sect"><h3>' + icon("target", 16) + " Your exams</h3><span class=\"pl-sect-r\"><button class=\"pl-btn small ghost\" type=\"button\" data-act=\"ics\">" + icon("download", 13) + " Add study blocks to my calendar</button></span></div>";
+    h += '<div class="pl-sect"><h3>' + icon("target", 16) + " Your exams</h3><span class=\"pl-sect-r\">" + (isManual() ? "" : "<button class=\"pl-btn small ghost\" type=\"button\" data-act=\"ics\">" + icon("download", 13) + " Add study blocks to my calendar</button>") + "</span></div>";
     h += '<div class="pl-exams">' + (fp.exams.filter(function (x) { return x.d > TODAY; }).map(function (x) { return examCard(x, fp); }).join("") || '<div class="pl-empty">No upcoming exams on the calendar.</div>') + "</div>";
     var skipped = fp.exams.filter(function (x) { return x.d > TODAY; }).length;
-    if (!c.planRetests) h += '<p class="pl-fine">Retests and course remediation are shown on the calendar but not planned. Turn on "Plan for retests too" in Settings if you want them included.</p>';
+    if (!c.planRetests && !isManual()) h += '<p class="pl-fine">Retests and course remediation are shown on the calendar but not planned. Turn on "Plan for retests too" in Settings if you want them included.</p>';
     host.innerHTML = h;
     var jump = openDayOnce && $("d-" + openDayOnce); if (jump) jump.open = true;   // only after a "next few days" tap
   }
@@ -546,7 +616,16 @@
   }
   function renderSettings() {
     var host = $("pl-settings"), c = cfg(), cur = presetMatch();
-    var h = '<div class="pl-sect"><h3>' + icon("sliders", 16) + " How the plan is built</h3></div><p class=\"pl-fine top\">Pick a style, then fine-tune anything. The chart at the bottom redraws with your next five weeks as you change things.</p>";
+    var h = '<div class="pl-sect"><h3>' + icon("sliders", 16) + " How the plan is built</h3></div>";
+    h += '<div class="pl-mode" role="group" aria-label="Planning mode">' +
+      '<button type="button" class="pl-modebtn' + (isManual() ? "" : " on") + '" data-act="mode" data-v="auto" aria-pressed="' + (!isManual()) + '"><b>Automatic</b><span>The planner builds every day for you from your exams and study hours.</span></button>' +
+      '<button type="button" class="pl-modebtn' + (isManual() ? " on" : "") + '" data-act="mode" data-v="manual" aria-pressed="' + isManual() + '"><b>Manual</b><span>The planner is off. You add your own tasks and study time.</span></button></div>';
+    if (isManual()) {
+      h += '<div class="pl-note">' + '<b>Manual mode is on.</b> Nothing is scheduled for you. Add tasks on the Today tab, or plan ahead on the Plan tab where you can pick any day and any exam. Tasks you add count toward your streak, and your links, timer and stats work the same. The style, study-window and algorithm settings return when you switch back to Automatic.</div>';
+      h += '<div class="pl-sect"><h3>Reset</h3></div><div class="pl-rowbtns"><button class="pl-btn small ghost danger" type="button" data-act="resetall">Erase my planner history</button></div>';
+      host.innerHTML = h; return;
+    }
+    h += '<p class="pl-fine top">Pick a style, then fine-tune anything. The chart at the bottom redraws with your next five weeks as you change things.</p>';
     h += '<div class="pl-presets">' + Object.keys(E.PRESETS).map(function (id) { var p = E.PRESETS[id]; return '<button type="button" class="pl-preset' + (cur === id ? " on" : "") + '" data-act="preset" data-id="' + id + '"><b>' + p.label + "</b><span>" + esc(p.note) + "</span></button>"; }).join("") + (cur === "custom" ? '<div class="pl-preset on"><b>Custom</b><span>Your own numbers.</span></div>' : "") + "</div>";
 
     h += '<div class="pl-sect"><h3>' + icon("clock", 16) + " When you study</h3></div><p class=\"pl-fine top\">Set the time you usually start and when you stop for the day. Tasks are placed inside this window, today's plan only uses the time still left in it, and the hours you can fit set how much can be scheduled.</p>";
@@ -664,9 +743,35 @@
     else if (act === "resetall") { if (confirm("Erase your streak, task history and settings? This can't be undone.")) { store = fresh(); save(); timerState = null; saveTimer(); ensureDays(); renderAll(); } }
     else if (act === "resetex") { delete store.ovr[t.getAttribute("data-ex")]; save(); renderAll(); }
     else if (act === "ics") icsExport();
+    else if (act === "mode") {
+      var nm = t.getAttribute("data-v") === "manual" ? "manual" : "auto";
+      if ((store.mode || "auto") !== nm) {
+        if (nm === "manual") {
+          store.mode = "manual";
+          var tr = store.days[TODAY];      // a clean slate: drop today's unfinished automatic tasks, keep anything ticked or added
+          if (tr) tr.tasks = tr.tasks.filter(function (x) { return x.done || x.custom || x.manual; });
+        } else delete store.mode;
+        if (nm === "auto") {
+          // Rebuild what is left of today, keeping anything ticked or added -- but leave a day
+          // the student has already finished alone, so switching modes never un-finishes it.
+          var tr2 = store.days[TODAY], real2 = tr2 ? tr2.tasks.filter(isRealTask) : [];
+          if (!(real2.length && real2.every(function (x) { return x.done; }))) replan();
+        }
+        save(); renderAll();
+        flash(nm === "manual" ? "Manual mode on: the planner is off" : "Automatic planning is back on");
+      }
+    }
+    else if (act === "mquick") { var qf = t.closest("form"); qf.name.value = t.getAttribute("data-t"); qf.name.focus(); }
+    else if (act === "mmin") { var mf = t.closest("form"); mf.min.value = t.getAttribute("data-m"); [].forEach.call(mf.querySelectorAll("[data-act=mmin]"), function (b) { b.classList.toggle("on", b === t); }); }
+    else if (act === "mday" || act === "mexam") {
+      var pf = document.querySelector("#pl-plan form.pl-mform");
+      if (pf) { if (act === "mday") pf.day.value = day; else pf.exam.value = t.getAttribute("data-ex"); pf.scrollIntoView({ block: "center" }); pf.name.focus({ preventScroll: true }); }
+    }
   });
   document.addEventListener("change", function (e) {
     var t = e.target; touched = true;
+    if (t.name === "min" && t.closest && t.closest("form.pl-mform")) { [].forEach.call(t.closest("form").querySelectorAll("[data-act=mmin]"), function (b) { b.classList.toggle("on", b.getAttribute("data-m") === t.value); }); return; }
+    if (t.closest && t.closest("form.pl-mform")) return;
     if (t.getAttribute("data-act") === "tick") {
       var tk = findTask(t.getAttribute("data-day"), t.getAttribute("data-tid")); if (!tk) return;
       var wasDone = streakState().todayDone;
@@ -693,7 +798,8 @@
     }
   });
   document.addEventListener("submit", function (e) {
-    var f = e.target; if (f.getAttribute("data-act") !== "addform") return; e.preventDefault(); touched = true;
+    var f = e.target; if (f.getAttribute("data-act") === "manualform") { e.preventDefault(); touched = true; addManualTask(f); return; }
+    if (f.getAttribute("data-act") !== "addform") return; e.preventDefault(); touched = true;
     var name = f.name.value.trim(), min = +f.min.value; if (!name || !(min > 0)) return;
     var rec = store.days[TODAY] || (store.days[TODAY] = { tasks: [] });
     rec.tasks.push({ id: TODAY + "|c" + Date.now().toString(36), custom: true, name: name, minutes: min, done: false, logged: 0 });
@@ -709,48 +815,119 @@
     setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 400); }, 3200);
   }
 
+  /* ====================================================== how to use === */
+  /* The "How to use" button opens the recorded walkthrough in a popup. The file is only
+     requested when the popup opens (nothing downloads with the page), and closing it
+     (button, Esc, or a tap outside) stops playback and returns focus to the button. */
+  var VIDEO = "media/planner-walkthrough.mp4", POSTER = "media/planner-walkthrough-poster.jpg", SEEN_KEY = "tourSeen:planner";
+  function openVideo() {
+    if ($("pl-vid")) return;
+    var opener = $("pl-help");
+    var ov = document.createElement("div");
+    ov.id = "pl-vid"; ov.className = "pl-vid"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", "Study Planner walkthrough video");
+    ov.innerHTML = '<div class="pl-vid-box"><div class="pl-vid-head"><b>Study Planner walkthrough</b>' +
+      '<button type="button" class="pl-vid-x" aria-label="Close video">' + icon("x", 18) + '</button></div>' +
+      '<video controls playsinline preload="none" poster="' + POSTER + '"></video>' +
+      '<p class="pl-vid-note" id="pl-vid-note">About 3 minutes, with music. Captions on screen.</p></div>';
+    document.body.appendChild(ov);
+    document.body.style.overflow = "hidden";
+    var v = ov.querySelector("video"), x = ov.querySelector(".pl-vid-x");
+    function close() {
+      try { v.pause(); v.removeAttribute("src"); v.load(); } catch (e) {}
+      ov.remove(); document.body.style.overflow = ""; document.removeEventListener("keydown", onKey, true);
+      if (opener && opener.focus) opener.focus();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      else if (e.key === "Tab") {           // keep focus inside the popup
+        var f = [x, v]; var i = f.indexOf(document.activeElement);
+        e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
+      }
+    }
+    document.addEventListener("keydown", onKey, true);
+    x.addEventListener("click", close);
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    v.addEventListener("error", function () { $("pl-vid-note").textContent = "The video could not be loaded. Check your connection and try again."; });
+    v.preload = "metadata"; v.src = VIDEO;
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+    x.focus();
+    markSeen();
+  }
   /* ============================================================ tour === */
-  /* "How to use": walks through every part of the planner using the site's own tour
-     engine (SiteTour), switching tabs as it goes. Targets are picked when the button is
-     pressed, with fallbacks, so a rest day with no tasks still gets a sensible walkthrough. */
-  var TOUR_KEY = "tourSeen:planner";
+  /* The "Virtual tour": walks through every part of the real page using the site's own
+     tour engine (SiteTour), switching tabs as it goes. Targets are picked when it starts,
+     with fallbacks, so a rest day with no tasks still gets a sensible walkthrough. */
   function tourSteps() {
     function pick() { for (var k = 0; k < arguments.length; k++) if (document.querySelector(arguments[k])) return arguments[k]; return null; }
     function tab(n) { return function () { setTab(n); }; }
+    var man = isManual();
     return [
-      { before: tab("today"), selector: pick("#pl-today .pl-hero"), title: "Your day at a glance", text: "The ring fills as you finish today's tasks. It shows how much is planned, the study window you set, and what is left." },
-      { before: tab("today"), selector: pick("#pl-today .pl-task", "#pl-today .pl-sect"), title: "Today's tasks", text: "Each task says what to study, for how long, and when. They come from your exam calendar, and a lecture only appears after it has been delivered." },
-      { before: tab("today"), selector: pick("#pl-today .pl-how summary", "#pl-today .pl-sect"), title: "How to do it", text: "Open it for a study method, then use the links to jump to the study guide, cram sheet or practice questions for that exam." },
+      { before: tab("today"), selector: pick("#pl-today .pl-hero"), title: "Your day at a glance", text: "The ring fills as you finish today's tasks. It shows how much is planned, and what is left." },
+      { before: tab("today"), selector: pick("#pl-today .pl-task", "#pl-today .pl-sect"), title: "Today's tasks", text: man ? "These are the tasks you added for today, each with its length and exam." : "Each task says what to study, for how long, and when. They come from your exam calendar, and a lecture only appears after it has been delivered." },
+      { before: tab("today"), selector: pick("#pl-today .pl-how summary", "#pl-today .pl-tlinks", "#pl-today .pl-sect"), title: man ? "Study links" : "How to do it", text: man ? "Tasks tied to an exam link straight to its study guide, cram sheet and practice questions." : "Open it for a study method, then use the links to jump to the study guide, cram sheet or practice questions for that exam." },
       { before: tab("today"), selector: pick("#pl-today .pl-check", "#pl-today .pl-sect"), title: "Check it off", text: "Tick a task once you have really finished it. Finish every task in the day to keep your streak going." },
       { before: tab("today"), selector: pick("#pl-today [data-act=timer]", "#pl-today .pl-sect"), title: "Focus timer", text: "Press Start on a task to count down the session. It only times you: it never ticks a task for you, so you stay honest." },
-      { before: tab("today"), selector: pick("#pl-today [data-act=replan]"), title: "Re-plan and days off", text: "Changed your hours or fell behind? Re-plan rebuilds what is left today. Take today off for a rest day; it never breaks your streak." },
+      { before: tab("today"), selector: pick("#pl-today [data-act=replan]", "#pl-today [data-act=dayoff]"), title: man ? "Days off" : "Re-plan and days off", text: man ? "Take a day off any time; it never breaks your streak." : "Changed your hours or fell behind? Re-plan rebuilds what is left today. Take today off for a rest day; it never breaks your streak." },
       { before: tab("today"), selector: pick("#pl-today .pl-streak"), title: "Your streak", text: "A day counts when every task in its plan is ticked. Rest days never break it, and every 5 finished days earns a freeze (keep up to 2) that covers one missed day." },
       { before: tab("today"), selector: pick("#pl-today .pl-week"), title: "This week", text: "Green is a finished day, a snowflake is a day a freeze saved, and a cross is a missed one." },
-      { before: tab("today"), selector: pick("#pl-today form.pl-add"), title: "Your own tasks", text: "Add anything else you need to do today. Your tasks show up in the day but never affect the streak." },
-      { before: tab("plan"), selector: pick("#pl-plan .pl-chart"), title: "Study load", text: "Every bar is a day, colored by exam, with its date underneath. Triangles mark exam days and the dashed line is your daily limit. Far-off exams start light and build as they get close." },
-      { before: tab("plan"), selector: pick("#pl-plan .pl-exam", "#pl-plan .pl-exams"), title: "Your exams", text: "Each exam shows what is done and what is still planned, and warns you if it will not fit in your hours. Nothing is planned before its lecture has been delivered." },
-      { before: tab("plan"), selector: pick("#pl-plan .pl-eopt summary"), title: "Adjust an exam", text: "Change the total hours, how hard it is, when to start, or say you have not started it yet. You can also switch an exam off." },
-      { before: tab("plan"), selector: pick("#pl-plan .pl-dayrow"), title: "Day by day", text: "Open any upcoming day to see its tasks and times, or take that day off." },
+      { before: tab("today"), selector: pick("#pl-today form.pl-mform", "#pl-today form.pl-add"), title: man ? "Add a study task" : "Your own tasks", text: man ? "Name it, pick the exam, the day and how long. Quick buttons fill in common ideas and lengths." : "Add anything else you need to do today. Your tasks show up in the day but never affect the streak." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-chart"), title: "Study load", text: "Every bar is a day, colored by exam, with its date underneath. Triangles mark exam days." + (man ? "" : " The dashed line is your daily limit. Far-off exams start light and build as they get close.") },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-exam", "#pl-plan .pl-exams"), title: "Your exams", text: man ? "Each exam shows how much time you have planned for it, so nothing gets forgotten." : "Each exam shows what is done and what is still planned, and warns you if it will not fit in your hours. Nothing is planned before its lecture has been delivered." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-eopt summary", "#pl-plan [data-act=mexam]"), title: man ? "Add a task for an exam" : "Adjust an exam", text: man ? "One tap fills the form with that exam. You can also plan any day ahead of time." : "Change the total hours, how hard it is, when to start, or say you have not started it yet. You can also switch an exam off." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-dayrow"), title: "Day by day", text: man ? "Open any upcoming day to see or delete its tasks, or add one to that day." : "Open any upcoming day to see its tasks and times, or take that day off." },
       { before: tab("calendar"), selector: pick("#pl-panel-calendar .controls"), title: "Calendar", text: "The full academic calendar. Days with study planned carry a Study tag, and the filters narrow it to one class or to exams only." },
       { before: tab("stats"), selector: pick("#pl-stats .pl-tiles"), title: "Stats", text: "Your streaks, weekly minutes and time per exam. After an exam, log your score to see how your hours related to your results." },
+      { before: tab("settings"), selector: pick("#pl-settings .pl-mode"), title: "Automatic or Manual", text: "Automatic builds every day for you. Switch to Manual to turn the planner off and add your own tasks and study time." },
       { before: tab("settings"), selector: pick("#pl-settings .pl-presets"), title: "Pick a style", text: "Balanced, Keep-up, Late push or Light. Each one sets a whole group of numbers at once." },
       { before: tab("settings"), selector: pick("#pl-settings .pl-win"), title: "When you study", text: "Set your usual start time and when you quit for each weekday. The plan only uses that time, and a day switched off becomes a rest day." },
       { before: tab("settings"), selector: pick("#pl-settings .pl-field"), title: "Fine-tune the algorithm", text: "Hours per lecture, how early to start, how steep the ramp is, review spacing, breaks and more. Every field explains itself underneath." },
       { before: tab("settings"), selector: pick("#pl-preview"), title: "Live preview", text: "Your next five weeks redraw as you change anything above, so you can see the effect before you commit." },
-      { before: tab("today"), selector: null, title: "That is everything", text: "Reopen this walkthrough any time with How to use. Your progress saves on this device and syncs when you are signed in." }
-    ];
+      { before: tab("today"), selector: null, title: "That is everything", text: "Reopen this any time with How to use. Your progress saves on this device and syncs when you are signed in." }
+    ].filter(function (s) { return s.selector || !s.before || s.title === "That is everything"; });
   }
   function startTour() {
     if (!window.SiteTour) return;
     renderSettings();   // its elements must exist before the steps can point at them
-    window.SiteTour.run(tourSteps(), TOUR_KEY, function () { var b = $("pl-help"); if (b) b.classList.remove("new"); setTab("today"); });
+    markSeen();
+    window.SiteTour.run(tourSteps(), "tourSeen:planner:tour", function () { setTab("today"); });
+  }
+
+  /* "How to use" first asks which kind of help the student wants. */
+  function markSeen() { try { localStorage.setItem(SEEN_KEY, "1"); } catch (e) {} var hb = $("pl-help"); if (hb) hb.classList.remove("new"); }
+  function openHelp() {
+    if ($("pl-help-pop")) return;
+    var opener = document.activeElement;
+    var ov = document.createElement("div");
+    ov.id = "pl-help-pop"; ov.className = "pl-vid"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", "How to use the planner");
+    ov.innerHTML = '<div class="pl-choose"><div class="pl-vid-head"><b>How would you like to learn the planner?</b><button type="button" class="pl-vid-x" aria-label="Close">' + icon("x", 18) + '</button></div>' +
+      '<div class="pl-choices">' +
+      '<button type="button" class="pl-choice" data-pick="video">' + icon("play", 26) + '<b>Video tour</b><span>Watch a short walkthrough with music. About 3 minutes, in a popup.</span></button>' +
+      '<button type="button" class="pl-choice" data-pick="tour">' + icon("target", 26) + '<b>Virtual tour</b><span>Click through the real page step by step. Each part lights up as it is explained.</span></button>' +
+      '</div></div>';
+    document.body.appendChild(ov);
+    var btns = [].slice.call(ov.querySelectorAll("button"));
+    function close(restore) { ov.remove(); document.removeEventListener("keydown", onKey, true); if (restore && opener && opener.focus) opener.focus(); }
+    function onKey(e) {
+      if (e.key === "Escape") { e.preventDefault(); close(true); }
+      else if (e.key === "Tab") { var i = btns.indexOf(document.activeElement); e.preventDefault(); btns[(i + (e.shiftKey ? btns.length - 1 : 1)) % btns.length].focus(); }
+    }
+    document.addEventListener("keydown", onKey, true);
+    ov.addEventListener("click", function (e) {
+      if (e.target === ov) { close(true); return; }
+      var b = e.target.closest("button"); if (!b) return;
+      var pick = b.getAttribute("data-pick");
+      if (pick === "video") { close(false); openVideo(); }
+      else if (pick === "tour") { close(false); startTour(); }
+      else close(true);
+    });
+    btns[1].focus();
   }
   function initHelp() {
     var b = $("pl-help"); if (!b) return;
     b.innerHTML = icon("help", 16) + " How to use";
-    var seen = false; try { seen = !!localStorage.getItem(TOUR_KEY); } catch (e) {}
+    var seen = false; try { seen = !!localStorage.getItem(SEEN_KEY); } catch (e) {}
     if (!seen) b.classList.add("new");
-    b.addEventListener("click", startTour);
+    b.addEventListener("click", openHelp);
   }
 
   /* ============================================================== boot == */

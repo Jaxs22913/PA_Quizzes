@@ -38,6 +38,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
+  /* Video is left to the browser: Range requests and 206 responses do not belong in the
+     cache, and Safari is fussy about video served through a service worker. */
+  if (/\.(mp4|webm|mov)$/i.test(url.pathname)) return;
+
   /* Audio is cache-FIRST, unlike everything else. These files are immutable
      and large; the default network-first path would re-download 1.2MB from
      the network every time Rain is selected, even though the copy on disk is

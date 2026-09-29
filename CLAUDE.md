@@ -153,7 +153,7 @@ Test hook: `calendar.html?asof=2026-09-28&now=17:30` (separate `planner:v1:test`
 Rules worth knowing: nothing is scheduled before its lecture is delivered (release dates come
 from the `lecture` events in calendar-data.js, fallback exam minus 21 days); nothing is written
 to localStorage until the student interacts (a blank record would beat their cloud history in
-cloud-sync); the page uses its own designed dark tokens, not the invert filter; the homepage ring reads `planner:home:v1` (written by planner-ui.js); the How to use button drives SiteTour (theme.js). Details:
+cloud-sync); the page uses its own designed dark tokens, not the invert filter; the homepage ring reads `planner:home:v1` (written by planner-ui.js); the How to use button offers a video popup (`media/planner-walkthrough.mp4`; re-record it when the planner UI changes noticeably) or a SiteTour virtual tour; Settings has an Automatic/Manual mode switch (manual tasks count toward the streak). Details:
 memory `study_planner.md`.
 
 ### Guides, cram sheets, Arcade
