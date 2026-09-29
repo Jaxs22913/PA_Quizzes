@@ -1,0 +1,91 @@
+{
+ "id": "stats",
+ "label": "Statistics & Causation",
+ "color": "#2f5d8a",
+ "rows": [
+  [
+   "Probability",
+   "<b>P(E) = times E occurs &divide; times E can occur</b> (all opportunities, not just non-events &mdash; that would be <i>odds</i>). Lies <b>between 0 and 1</b>: 0 cannot occur, 1 definitely occurs, <b>0.5</b> = equal chance. All probabilities in the sample <b>sum to 1</b>, so P(not E) = 1 &minus; P(E). Example: 36 of 240 = <b>0.15</b>; not = 0.85."
+  ],
+  [
+   "Statistical significance",
+   "How likely the result is to have happened by chance. <b>More significant = less likely to be chance.</b> Two kinds matter: <b>statistical</b> and <b>clinical</b>."
+  ],
+  [
+   "P value",
+   "Probability of an observed difference happening by chance &mdash; calculated <b>assuming no true difference</b>. <b>Not</b> the probability the null is true, that the treatment works, or that the study is biased; not the effect size. <b>0.5</b> = 50/50 &middot; <b>0.05</b> = 1/20 (<b>&lt;0.05 = significant</b>, an <b>arbitrary</b> convention) &middot; <b>0.01</b> = 1/100 highly significant &middot; <b>0.001</b> = 1/1000 very highly significant."
+  ],
+  [
+   "Reading a p value",
+   "p = 0.03: significant, but <b>not</b> a 3% chance the drug fails and not 97% of patients responding. p = 0.20: not significant &mdash; <b>does not prove no effect</b> (a low-power study can miss a real one). A lower p value does <b>not</b> mean a larger difference."
+  ],
+  [
+   "Null hypothesis",
+   "The hypothesis that there is <b>no difference</b>; usually the <b>opposite of what researchers hope to find</b> (drug and placebo lower pressure equally). Evidence against it &rarr; <b>more support for a difference</b>."
+  ],
+  [
+   "Type I error (&alpha;)",
+   "<b>False positive</b>: stating there is a difference when there is not. What most medical research worries about; <b>expressed by the p value</b> (judged against the threshold, usually 0.05)."
+  ],
+  [
+   "Type II error (&beta;)",
+   "<b>False negative</b>: stating there is no difference when there is one; the result looks not significant. Follows from <b>study limits</b> &mdash; short follow-up, poor compliance. When no true difference exists, the correct conclusion is &ldquo;not significant&rdquo;."
+  ],
+  [
+   "Statistical tests",
+   "<b>Chi square</b>: two or more proportions, many observations &middot; <b>Fisher exact</b>: two proportions, few observations &middot; <b>Mann-Whitney U</b>: two medians &middot; <b>Student t</b>: two means &middot; <b>F test</b>: two or more means &middot; <b>Pearson's r</b>: association between two variables &middot; <b>Logistic regression</b>: dichotomous outcome &middot; <b>Cox proportional hazards</b>: time-to-event outcome &middot; <b>Propensity score</b>: select matching controls."
+  ],
+  [
+   "Confidence interval",
+   "Statistical <b>precision</b>: a range (confidence limits) that should contain the true value; <b>95%</b> = 95% of such intervals would contain it. <b>Narrow = precise, wide = imprecise.</b> Not the range holding 95% of patients, and does not fix bias."
+  ],
+  [
+   "Reading an interval",
+   "<b>Relative risk: no effect = 1</b>; interval containing 1 = not significant (e.g. 1.2, 0.8&ndash;1.8); entirely below 1 = significant reduction (0.70, 0.55&ndash;0.90). <b>Difference: no effect = 0.</b> Excluding the no-effect value matches p &lt; 0.05."
+  ],
+  [
+   "Statistical power",
+   "Probability a study finds a significant difference when one <b>really exists</b>. <b>Power = 1 &minus; P<sub>&beta;</sub></b> (type II error probability). Type II 0.20 &rarr; power <b>0.80</b>; power 0.90 &rarr; type II 0.10. Low power (small trial) &rarr; likely to miss a real difference."
+  ],
+  [
+   "Multiple comparisons",
+   "Strength of tests depends on the <b>number of questions</b> and <b>how focused</b> they are; often unknown how many were made. <b>Choosing interesting comparisons after analysis distorts the data.</b> At p 0.05 (1/20): 60 null comparisons &rarr; about <b>3</b> chance hits; at 0.01 (1/100): 200 &rarr; about <b>2</b>. Misleading recipe: many comparisons &rarr; test each &rarr; pick the significant ones &rarr; hide how many were examined."
+  ],
+  [
+   "Multivariable modeling",
+   "Effect of <b>two or more variables together</b> (an equation): one variable's effect <b>while accounting for others</b> (confounding, effect modifiers), or their <b>combined effect</b> predicting an event. Steps: identify variables &rarr; select (<b>strongest association first</b>) &rarr; identify assumptions (normality, homoscedasticity, independent errors) &rarr; create the model."
+  ],
+  [
+   "Modeling limits",
+   "Validity rests on <b>assumptions about the data</b>; <b>poor at identifying effect modification</b>; <b>may omit rare variables</b> with a strong relationship to the outcome. Cannot prove cause or remove random error."
+  ],
+  [
+   "Statistical vs clinical significance",
+   "<b>Chance versus relevance to patients.</b> Statistical significance does <b>not</b> imply clinical significance: p &lt; 0.0001 can still be irrelevant to practice (1 millimeter of mercury drop in 40,000 patients). <b>Larger differences tend to be more clinically significant</b>, but small ones can still be significant. A big, important difference in a small trial (30% lower deaths, p 0.12) may be non-significant from low power."
+  ],
+  [
+   "Types of cause",
+   "<b>Sufficient</b>: if present, disease always occurs. <b>Necessary</b>: if absent, disease cannot occur (present &rarr; may or may not). <b>Risk factor</b>: raises probability; neither. <b>Direct</b> vs <b>indirect</b> (through <b>intervening variables</b>, e.g. obesity &rarr; blood pressure, cholesterol, glucose). <b>Non-causal association</b>: statistically significant, no causal relationship. Koch's postulates = <b>single cause</b>; also multiple causes and a <b>web of causation</b>."
+  ],
+  [
+   "Association to cause",
+   "Exclude, in order: <b>bias</b> (selection or measurement) &rarr; <b>chance</b> &rarr; <b>confounding</b>. Only then is a cause likely. Cause cannot be proved beyond all doubt; <b>the more criteria met, the stronger the case</b>."
+  ],
+  [
+   "Criteria for causality",
+   "<b>Temporality</b> (cause first) &middot; <b>strength</b> (large relative risk) &middot; <b>dose-response</b> (more exposure, more disease) &middot; <b>reversibility</b> (less exposure, less disease) &middot; <b>consistency</b> (replicable) &middot; <b>biologic plausibility</b> &middot; <b>specificity</b> (one cause, one effect &mdash; demanding) &middot; <b>analogy</b> (similar exposure and disease)."
+  ],
+  [
+   "Pitfalls in causal research",
+   "<b>Measurement bias</b> (operator error, calibration) &middot; <b>recall bias</b> (difficulty remembering) &middot; <b>selection bias</b> (how people get in, poor randomization) &middot; <b>random error</b> (by chance, accounted for through <b>p values</b>) &middot; confounding &middot; effect modification."
+  ],
+  [
+   "Design and causation",
+   "Strongest to weakest: systematic review &rarr; <b>randomized controlled trial</b> &rarr; multiple time series &rarr; non-randomized trial &rarr; <b>cohort</b> &rarr; <b>case-control</b> &rarr; time series &rarr; cross-sectional &rarr; case series &rarr; <b>case report</b>. Random assignment <b>balances confounders</b>. Cross-sectional cannot show <b>which came first</b>."
+  ],
+  [
+   "Findings for and against cause",
+   "<b>For</b>: temporal sequence, small effect, specificity, analogy, biologic plausibility, consistency, large effect, dose-response, reversibility. <b>Against</b>: <b>incorrect temporal sequence</b>, no effect, not biologically plausible, no analogy, no dose-response, not reversible, not specific. A strong design finding <b>no effect</b> = strong evidence <b>against</b> cause."
+  ]
+ ]
+}

@@ -170,7 +170,7 @@
 <header class="top">
   <h1>Interpretation of Medical Literature — Master Study Guide</h1>
   <p>PAJ 5512 · Class of 2028 · NSU Jacksonville · Fall 2026</p>
-  <p>Covers 5 lecture decks (sessions 1–4) · Instructional Objectives verbatim per deck</p>
+  <p>Covers 11 lecture decks (sessions 1–4 and 7–10) · Instructional Objectives verbatim per deck</p>
 </header>
 
 <div class="layout wrap" data-readable>
@@ -182,6 +182,12 @@
   <a href="#rates">4 &middot; Rates &amp; Disease Measurement</a>
   <a href="#data">5 &middot; Data, Validity &amp; Variation</a>
   <a href="#tests">6 &middot; Diagnostic Tests</a>
+  <a href="#risk" data-s710="1">7 &middot; Risk &amp; Ratios</a>
+  <a href="#prognosis" data-s710="1">8 &middot; Prognosis &amp; Outcomes</a>
+  <a href="#prevention" data-s710="1">9 &middot; Prevention &amp; Screening</a>
+  <a href="#trials" data-s710="1">10 &middot; Research &amp; Trials</a>
+  <a href="#stats" data-s710="1">11 &middot; Statistics, Correlation &amp; Causation</a>
+  <a href="#reviews" data-s710="1">12 &middot; Clinical Questions &amp; Reviews</a>
   <a href="#quickref">&#9733; Quick-Reference Tables</a>
 </nav>
 
@@ -905,6 +911,1410 @@ LR&minus; = (1 &minus; 0.65) / 0.96 = 0.35 / 0.96 = <strong>0.36</strong> &mdash
 </ol>
 <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-interpretation-of-medical-literature-exam-1-005"><b>Blinding in test comparison.</b> Those conducting each test should be blinded to the other's result because one result could influence the reading of the other, a form of measurement bias.</li><li id="ga-interpretation-of-medical-literature-exam-1-008"><b>Prevalence in test studies.</b> Predictive values will differ if prevalence differs, so a published value may not transfer to your setting; check whether a study's prevalence matches your own population.</li><li id="ga-interpretation-of-medical-literature-exam-1-020"><b>Limit on diagnosis.</b> The diagnosis of disease is limited by how good the tests used to measure it are. Sensitivity and specificity guide test selection, while predictive values describe what a given result means.</li></ul></div>
 </section>
+
+
+
+<!-- medlit-s7-10 begin -->
+<!-- ============ 7 RISK ============ -->
+<section class="deck" id="risk">
+<h2 class="deck-title" id="gh-7-risk-and-ratios">7 &middot; Risk &amp; Ratios</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 7 &middot; Fletcher ch. 6-7</p>
+
+<div class="io-box">
+  <h3 id="gh-risk-instructional-objectives">Instructional Objectives</h3>
+  <ol>
+    <li>Describe the importance of risk and risk factors in studies of disease</li>
+    <li>Interpret relative risks</li>
+    <li>Discuss methods of predicting risk</li>
+    <li>Describe cohort studies and the advantages and limitations of this type of study design in medical research</li>
+    <li>Discuss methods of comparing risk</li>
+    <li>Explain confounding variables and methods for controlling confounding</li>
+    <li>Describe effect modification</li>
+    <li>Describe case control studies and the advantages and limitations of this type of study design in medical research</li>
+    <li>Interpret relative risks and odds ratios</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-risk-io-1-what-a-risk-factor-is">IO 1 &mdash; What a risk factor is</h3>
+<p>A <strong>risk factor</strong> is a factor associated with an <strong>increase in the probability</strong> of developing the disease <em>later</em>. It raises the probability; it does not make the disease certain, so risk factors describe groups of people rather than guaranteeing an outcome for one person. A factor that is present only after the disease has begun is not a risk factor, and a treatment that lowers the chance of disease is a protective intervention rather than a risk factor.</p>
+<p><strong>Example &mdash; congestive heart failure:</strong> smoking &middot; hypertension &middot; hypercholesterolemia &middot; family history &middot; diabetes &middot; valvular disease. For other diseases the risk factors may be less well known.</p>
+
+<h3 class="sub" id="gh-risk-io-1-recognizing-risk">IO 1 &mdash; Recognizing risk</h3>
+<table>
+<tr><th>Situation</th><th>Effect on recognizing the risk</th></tr>
+<tr><td>Large risk with rapid effects</td><td><strong>Easy to recognize</strong>: a big effect that appears soon after exposure is hard to miss</td></tr>
+<tr><td>Long latency between exposure and disease</td><td>Can <strong>obscure the results</strong>: the disease appears long after the exposure, so the two can look unrelated unless people are followed for a sufficient period of time</td></tr>
+<tr><td>Frequent exposure that results in disease</td><td>May be obscured unless <strong>&ldquo;exposed&rdquo; is compared with &ldquo;unexposed&rdquo;</strong>; when most people are exposed the disease may seem ordinary</td></tr>
+<tr><td>Low disease incidence</td><td>More difficult. If the risk is <strong>small, a larger population must be affected</strong> to detect a difference between exposed and unexposed; a small risk produces few extra cases</td></tr>
+<tr><td>Common disease with known risk factors</td><td>Difficult to distinguish new risk factors</td></tr>
+<tr><td>One risk factor, many outcomes</td><td>A given risk factor may contribute to a number of different outcomes (multiple causes and effects)</td></tr>
+</table>
+<div class="pearl"><strong>Rare disease:</strong> following a rare disease in a cohort requires a very large cohort, so a case-control study is better for rare disease.</div>
+
+<h3 class="sub" id="gh-risk-io-1-what-risk-is-used-for">IO 1 &mdash; What risk is used for</h3>
+<table>
+<tr><th>Use</th><th>What it means</th></tr>
+<tr><td><strong>Prediction</strong> of a future event</td><td>Probabilities are based on <strong>groups</strong>; relative risk is calculated to determine the probability</td></tr>
+<tr><td><strong>Cause</strong></td><td>Risk factors may predict disease but <strong>may not be a cause</strong>; a factor that predicts without causing is a <strong>disease marker</strong>. Prediction does not prove causation</td></tr>
+<tr><td><strong>Diagnosis</strong></td><td>Risk factors increase the probability of getting the disease, but the <strong>best predictor in an individual is the presence of early clinical disease</strong></td></tr>
+<tr><td><strong>Prevention</strong></td><td><strong>Removal of the risk factor lowers the probability</strong> of developing the disease. Examples: controlling hypertension to prevent heart failure; controlling dietary intake to prevent obesity and so decrease the likelihood of type II diabetes mellitus; avoiding second-hand cigarette smoke to avoid cancer. Advising a patient to stop smoking to lower the chance of lung cancer is prevention</td></tr>
+</table>
+
+<h3 class="sub" id="gh-risk-io-1-how-risk-is-studied">IO 1 &mdash; How risk is studied</h3>
+<p>Experimental studies of risk in humans are limited by <strong>ethical constraints</strong>: investigators cannot ethically assign people to a harmful exposure. So <strong>observational</strong> studies are used: a <strong>concurrent (prospective) cohort</strong>, a <strong>historical (retrospective) cohort</strong>, or a <strong>case-control</strong> study.</p>
+
+<h3 class="sub" id="gh-risk-io-2-relative-risk-and-what-its-values-mean">IO 2 &mdash; Relative risk and what its values mean</h3>
+<p><strong>Relative risk</strong> asks how many times more likely exposed persons are than non-exposed persons. It is expressed as a <strong>ratio of the incidence in exposed persons to the incidence in non-exposed persons</strong>, and it examines the <strong>strength of association</strong> between the independent variable (exposure) and the dependent variable (outcome).</p>
+<div class="callout"><strong>Relative risk</strong> = incidence in exposed persons &divide; incidence in non-exposed persons.</div>
+<table>
+<tr><th>Relative risk</th><th>Meaning</th></tr>
+<tr><td><strong>= 1</strong> (null value)</td><td>Absolute risk in the exposed equals that in the unexposed: <strong>no association</strong> between exposure and disease</td></tr>
+<tr><td><strong>&gt; 1</strong></td><td>Absolute risk in the exposed is greater than in the unexposed persons; risk is higher with the exposure</td></tr>
+<tr><td><strong>&lt; 1</strong></td><td>Absolute risk in the exposed is less than in the unexposed persons: a <strong>negative association</strong> that may be <strong>protective</strong>, for example protection through exposure to an effective vaccine</td></tr>
+</table>
+<ul>
+  <li>For <strong>prevention</strong> of disease we expect the relative risk to be <strong>less than one</strong>.</li>
+  <li>Relative risk is a ratio of two incidences, and incidences cannot be negative, so relative risk can take any value above zero but cannot be negative (and is not capped at 2 or clustered near 1).</li>
+  <li>Reading the number: a relative risk of 2.5 means exposed persons are <strong>2.5 times as likely</strong> to develop the disease. Above 1, the excess is read as a percentage (1.25 is 25 percent higher, 1.4 is 40 percent higher); below 1, the shortfall is read the same way, so a relative risk of <strong>0.6</strong> means the risk in the exposed is 0.6 times that in the unexposed, that is <strong>40 percent lower</strong>.</li>
+  <li>Relative risk is a ratio, not a percentage: a 2.5 percent increase in risk would be a relative risk of 1.025.</li>
+  <li>Raw case counts cannot be compared directly, because the groups differ in size; each count is first turned into an incidence (cases divided by the people in the group) and then the two incidences are divided.</li>
+</ul>
+<div class="pearl"><strong>The limit of relative risk.</strong> Because the calculation of relative risk cancels out incidence, it does not clarify the size of risk in discussions with patients or help much in the decision to try to alter a risk in a patient. A doubling of risk looks the same whether the baseline is 1 in 10,000 or 1 in 10 (see IO 5).</div>
+
+<h4 class="subsub" id="gh-risk-worked-example-oral-contraceptives-and-thromb">Worked example &mdash; birth control pills and thrombophlebitis</h4>
+<p>For 10 years, 2,000 women were followed: 1,000 randomly selected young women on birth control pills and 1,000 randomly selected young women who were nonusers. 30 of the women on the pills developed thrombophlebitis over the 10-year period; 3 of the nonusers developed it over the same period.</p>
+<table>
+<tr><th></th><th>Outcome &mdash; yes</th><th>Outcome &mdash; no</th><th>Total</th></tr>
+<tr><td><strong>Exposed</strong> (took the pills)</td><td>exposed with the outcome</td><td>exposed without the outcome</td><td>all who were exposed</td></tr>
+<tr><td><strong>Unexposed</strong> (did not take the pills)</td><td>unexposed with the outcome</td><td>unexposed without the outcome</td><td>all who were unexposed</td></tr>
+<tr><td>Total</td><td>all with the outcome</td><td>all without the outcome</td><td>everyone in the study</td></tr>
+</table>
+<table>
+<tr><th></th><th>Thrombophlebitis</th><th>No thrombophlebitis</th><th>Total</th></tr>
+<tr><td>Pill users</td><td>30</td><td>970</td><td>1,000</td></tr>
+<tr><td>Pill non-users</td><td>3</td><td>997</td><td>1,000</td></tr>
+</table>
+<p>Risk in users = 30/1,000 = 0.03. Risk in non-users = 3/1,000 = 0.003. <strong>Relative risk</strong> = risk in users &divide; risk in non-users = 0.03 &divide; 0.003 = <strong>10</strong>. Expressed: women on the pill are 10 times more likely to develop thrombophlebitis than those not on the pill. Had the relative risk equaled 1, the pill would not increase the risk of thrombophlebitis: there would be no association between pill use and the development of thrombophlebitis.</p>
+<div class="callout"><strong>Why this is not a randomized controlled trial.</strong> The women were randomly <em>selected</em> but not randomly <em>assigned</em> to take the pill or not. Random assignment of the treatment or exposure is what defines a randomized trial, so this is a prospective cohort study. How people are assigned makes the difference; following participants forward in time is common to cohort studies and trials alike, and equal group sizes do not distinguish the designs.</div>
+
+<h3 class="sub" id="gh-risk-io-3-predicting-risk-from-groups">IO 3 &mdash; Predicting risk from groups</h3>
+<p>Risk is used for <strong>prediction of a future event</strong>, and the probabilities are based on <strong>groups of people</strong>, not on one patient followed in detail. Relative risk is calculated to determine the probability. For an individual patient, the <strong>best predictor is the presence of early clinical disease</strong>, not the presence of a single risk factor and not the relative risk or the incidence of the wider population. A probability quoted from cohort data, such as the chance a smoker develops lung disease within ten years, is prediction.</p>
+
+<h3 class="sub" id="gh-risk-io-3-absolute-risk-and-the-cohort-that-measures-it">IO 3 &mdash; Absolute risk, and the cohort that measures it</h3>
+<p><strong>Absolute risk</strong> is the possibility of an event in the population under study: the <strong>incidence</strong> of disease in that population. It does not indicate whether exposure is associated with an increased risk of disease.</p>
+<div class="callout"><strong>Incidence</strong> = number of <em>new</em> cases over a given time &divide; number of people in the group. It counts only new cases, not existing ones, and the denominator is the people in the group, not other cases. For example, 18 new cases among 600 people is 18 &divide; 600 = 0.03, that is 3 percent.</div>
+<p>Among the observational designs, the <strong>cohort study</strong> establishes incidence directly: following exposed and unexposed persons forward shows who develops the disease (the printed table of cohort study advantages calls it the only way of establishing incidence, that is absolute risk, directly). A case-control study starts from persons who already have the condition, a case report describes a single patient, and expert opinion is not a followed group, so none of them supplies incidence.</p>
+<p><strong>Predicting cases from a relative risk.</strong> Because relative risk = exposed incidence &divide; unexposed incidence, the exposed incidence = relative risk &times; unexposed incidence. Multiply that incidence by the number of people in the group to get the expected number of cases. Example: unexposed incidence 0.05 and relative risk 3 gives an exposed incidence of 0.15, so 200 exposed persons are expected to produce 0.15 &times; 200 = 30 cases. The relative risk multiplies the incidence, not the head count.</p>
+
+<h3 class="sub" id="gh-risk-io-4-what-a-cohort-is">IO 4 &mdash; What a cohort is, and how it is followed</h3>
+<p>A <strong>cohort</strong> is a group of people with a <strong>common characteristic</strong> assembled at a similar point and <strong>followed over time</strong>. The characteristic may be age, date of birth, exposure to a risk factor, having a specific disease, or participation in a preventive or therapeutic intervention. It can be any characteristic that is followed for a significant period of time.</p>
+<p><strong>Design of a cohort study of risk:</strong> persons without disease are divided into two groups &mdash; those exposed to a risk factor and those not exposed. Both groups are followed over time to determine what proportion of each group develops disease. Relative risk can be calculated.</p>
+<ul>
+  <li>The cohort must be followed over a <strong>sufficient period of time</strong> to observe the expected outcome.</li>
+  <li>It must have <strong>complete follow-up</strong> so that <strong>attrition</strong> (people dropping out) does not falsely skew the outcome data. A larger control group does not replace lost participants; the safeguard is following everyone through to the outcome.</li>
+  <li>Check what was actually measured in the follow-up: were data points collected that relate to the study?</li>
+</ul>
+
+<h3 class="sub" id="gh-risk-io-4-historical-and-concurrent-cohorts">IO 4 &mdash; Historical and concurrent cohorts</h3>
+<table>
+<tr><th></th><th>Historical (retrospective) cohort</th><th>Concurrent (prospective) cohort</th></tr>
+<tr><td>When the cohort is assembled</td><td>In the <strong>past</strong>, identified from records, then followed forward over time to the present</td><td>In the <strong>present</strong>, then followed into the future</td></tr>
+<tr><td>Outcomes</td><td>Have already occurred</td><td>Occur during follow-up</td></tr>
+<tr><td>Weakness</td><td>Utility is limited since data may be incomplete: records were not set up for all the data points the research needs</td><td>Needs a long wait and many subjects (see the table below)</td></tr>
+</table>
+<p>Be careful: a case-control study grouped by disease is sometimes called &ldquo;retrospective&rdquo;. A historical cohort is grouped by exposure and followed forward, so it is not a case-control study. It is also not a randomized trial, which assigns the exposure by chance.</p>
+
+<h3 class="sub" id="gh-risk-io-4-advantages-and-limitations-of-cohort-studies">IO 4 &mdash; Advantages and limitations of cohort studies</h3>
+<table>
+<tr><th>Advantages</th><th>Limitations</th></tr>
+<tr><td>Establishes <strong>incidence directly</strong></td><td><strong>Inefficient</strong>: a large cohort must be enrolled, since only a limited number develop the condition</td></tr>
+<tr><td>Logical approach: if persons are exposed, do they develop disease?</td><td><strong>Expensive</strong></td></tr>
+<tr><td>Exposure can be elicited <strong>without bias</strong> from already knowing the outcome (recall bias: exposure information can be biased if participants know the disease studied and can recall)</td><td>Results are <strong>not available for many years</strong></td></tr>
+<tr><td>Can assess the relationship between the exposure and a <strong>number of outcomes</strong> or diseases</td><td>Only the risk factor (exposure) <strong>recorded at the outset</strong> can be followed, so other contributing exposures may be missed when a disease has multiple causes</td></tr>
+</table>
+<table>
+<tr><th>Cohort type</th><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td><strong>All cohort study types</strong></td><td>The only way of establishing incidence (absolute risk) directly &middot; follows the same logic as the clinical question &middot; exposure elicited without the bias that might occur if the outcome were known before exposure was documented &middot; can assess the relationship between exposure and many diseases</td><td>Susceptible to confounding and other biases</td></tr>
+<tr><td><strong>Prospective</strong></td><td>Can study a wide range of possible risk factors &middot; can collect lifestyle and demographic data not available in most medical records &middot; can set up standardized ways of measuring exposure and degree of exposure</td><td>Inefficient, because many more subjects must be enrolled than experience the event of interest, so it <strong>cannot be used for rare diseases</strong> &middot; expensive &middot; results not available for a long time &middot; assesses only the relatively few factors recorded at the outset</td></tr>
+<tr><td><strong>Retrospective (historical)</strong></td><td>More efficient, <strong>cheaper and faster</strong> than prospective cohort studies, because the data were already collected for another purpose and the patient outcomes have already occurred</td><td>Narrower range of possible risk factors &middot; cannot examine patient characteristics not available in the data set &middot; measurement of exposure and degree of exposure may not be standardized</td></tr>
+<tr><td><strong>Case-cohort</strong></td><td>All advantages of retrospective cohort studies apply; even more efficient because only a <strong>sample of the unexposed group</strong> is analyzed</td><td>All disadvantages of retrospective cohort studies apply; difficult for readers to understand the weighting procedures used in the analysis</td></tr>
+</table>
+
+<h3 class="sub" id="gh-risk-io-5-three-types-of-risk">IO 5 &mdash; Three types of risk</h3>
+<table>
+<tr><th>Measure</th><th>What it is</th><th>Formula</th></tr>
+<tr><td><strong>Absolute risk</strong></td><td>Possibility of an event in a population; the incidence of disease in a population. Does not indicate if exposure is associated with increased risk</td><td>New cases over a given time &divide; number of people in the group</td></tr>
+<tr><td><strong>Attributable risk</strong></td><td>Possibility of disease following exposure; takes exposure to a risk factor into account. It is the <strong>excess incidence</strong> in the exposed group</td><td>Incidence in exposed persons <strong>minus</strong> incidence in non-exposed persons</td></tr>
+<tr><td><strong>Relative risk</strong></td><td>How many times more likely exposed persons are than non-exposed persons; examines strength of association</td><td>Incidence in exposed persons <strong>divided by</strong> incidence in non-exposed persons</td></tr>
+</table>
+<ul>
+  <li>Attributable risk is a <strong>difference</strong> (subtraction, exposed minus unexposed, in that order); relative risk is a <strong>ratio</strong> of two incidences. Adding the incidences gives nothing meaningful.</li>
+  <li>Example: incidence 15 per 500 (0.03) in exposed persons and 5 per 500 (0.01) in unexposed persons gives an attributable risk of 0.03 &minus; 0.01 = <strong>0.02</strong>, while the relative risk is 0.03 &divide; 0.01 = 3.0.</li>
+  <li>Example: 36 of 300 exposed (0.12) and 20 of 400 unexposed (0.05) persons developed disease. The relative risk is 0.12 &divide; 0.05 = <strong>2.4</strong> and the attributable risk is 0.07. Dividing the raw counts (36 by 20) ignores the group sizes.</li>
+  <li>Example: an unexposed incidence of 0.02 and a relative risk of 4 give an exposed incidence of 4 &times; 0.02 = <strong>0.08</strong>; the attributable risk is 0.08 &minus; 0.02 = 0.06.</li>
+  <li>Example: an incidence of 8 percent in exposed and 2 percent in unexposed persons gives a relative risk of 8 &divide; 2 = 4.0; the difference of 6 percentage points is the attributable risk, and the sum of the two incidences (10) has no meaning. In a cohort where 10 of 500 vaccinated and 40 of 500 unvaccinated persons developed influenza, the relative risk with vaccination is 0.02 &divide; 0.08 = 0.25.</li>
+</ul>
+
+<h3 class="sub" id="gh-risk-io-5-same-relative-risk-different-attributable-risk">IO 5 &mdash; Same relative risk, different attributable risk</h3>
+<p>The same relative risk can hide very different numbers of excess cases, because relative risk cancels out incidence while attributable risk depends on it. <strong>The higher the baseline incidence, the greater the attributable risk for the same relative risk.</strong></p>
+<table>
+<tr><th>Incidence in unexposed</th><th>Incidence in exposed</th><th>Relative risk</th><th>Attributable risk (exposed &minus; unexposed)</th></tr>
+<tr><td>1/10,000</td><td>2/10,000</td><td>2.0</td><td>1/10,000 (0.1 per 1,000)</td></tr>
+<tr><td>1/1,000</td><td>2/1,000</td><td>2.0</td><td>1/1,000</td></tr>
+<tr><td>1/100</td><td>2/100</td><td>2.0</td><td>10/1,000</td></tr>
+<tr><td>1/10</td><td>2/10</td><td>2.0</td><td>100/1,000</td></tr>
+</table>
+<p>For example, with a relative risk of 2.0 the attributable risk is 0.001 when the baseline incidence is 1 in 1,000 (0.002 minus 0.001) but 0.1 when the baseline is 1 in 10 (0.2 minus 0.1). The exposure with the higher baseline incidence has the far greater attributable risk; the relative risks are equal, so equal relative risks do not mean equal attributable risks.</p>
+<div class="callout"><strong>Note on the printed table.</strong> The textbook figure this table comes from prints the attributable risk column as 0.2/1,000, 2/1,000, 20/1,000 and 200/1,000. Those are twice the true differences (they equal the exposed incidence per 1,000, not exposed minus unexposed). The values above follow the definition, incidence in exposed minus incidence in non-exposed; the lesson is unchanged.</div>
+
+<h3 class="sub" id="gh-risk-io-6-confounding">IO 6 &mdash; Confounding variables</h3>
+<p><strong>Confounding</strong> causes <strong>systematic error (bias)</strong>. A confounder is an <strong>additional independent factor related to both the exposure and the outcome</strong>, so it can distort the apparent association and produce a false one. It is not random error: chance produces variation equally likely above or below the truth, small samples add random error, and dropout is the attrition effect.</p>
+<p>Example: if smoking is more common among coffee drinkers and also raises the risk of pancreatic cancer, smoking is related to both the exposure (coffee) and the outcome (cancer) and is a confounder of the coffee-cancer association.</p>
+<div class="callout"><strong>A confounder is not an effect modifier.</strong> A factor related only to the outcome cannot account for a difference between exposed and unexposed persons. A variable whose presence or absence changes the <em>effect</em> of the exposure is an effect modifier, which is not a bias (IO 7).</div>
+
+<h3 class="sub" id="gh-risk-io-6-controlling-confounding">IO 6 &mdash; Methods for controlling confounding</h3>
+<table>
+<tr><th>Method</th><th>Description</th><th>Design</th><th>Analysis</th></tr>
+<tr><td><strong>Randomization</strong></td><td>Assign patients to groups in a way that gives each patient an <strong>equal chance</strong> of falling into one group or the other, so confounders are spread between the groups by chance</td><td>+</td><td></td></tr>
+<tr><td><strong>Restriction</strong></td><td>Limit the range of characteristics of patients in the study</td><td>+</td><td></td></tr>
+<tr><td><strong>Matching</strong></td><td>For each patient in one group, select one or more patients with the <strong>same characteristics</strong> (except the one under study) for a comparison group</td><td>+</td><td>+</td></tr>
+<tr><td><strong>Stratification</strong></td><td>Compare rates <strong>within subgroups (strata)</strong> with otherwise similar probability of the outcome</td><td></td><td>+</td></tr>
+<tr><td><strong>Simple adjustment</strong></td><td>Mathematically adjust crude rates for <strong>one or a few characteristics</strong> so that equal weight is given to strata of similar risk</td><td></td><td>+</td></tr>
+<tr><td><strong>Multivariable adjustment</strong></td><td>Adjust for differences in a <strong>large number of factors</strong> related to outcome using mathematical modeling techniques</td><td></td><td>+</td></tr>
+<tr><td><strong>Best-case / worst-case analysis</strong></td><td>Describe how different the results could be under the most extreme (or simply very unlikely) assumption about selection bias</td><td></td><td>+</td></tr>
+</table>
+<ul>
+  <li>Only <strong>randomization and restriction</strong> are design-phase-only methods.</li>
+  <li><strong>Matching</strong> works at either phase, design or analysis.</li>
+  <li>Stratification, simple adjustment, multivariable adjustment and best-case/worst-case analysis are applied only in the analysis phase.</li>
+</ul>
+
+<h3 class="sub" id="gh-risk-io-7-effect-modification">IO 7 &mdash; Effect modification</h3>
+<p><strong>Effect modification</strong> means the presence or absence of a variable <strong>changes the effect of the exposure</strong>. The change may be <strong>synergistic</strong> (the variable strengthens the effect) or <strong>antagonistic</strong> (it weakens or opposes the effect). It is <strong>NOT a bias</strong>: it is a real change in the effect, whereas confounding is a systematic error to be controlled.</p>
+<p><strong>Example:</strong> aspirin, age and prior history and their effect on the development of upper gastrointestinal bleeding &mdash; age and prior history modify how strongly aspirin affects the chance of bleeding. Likewise, if a drug lowers blood pressure far more in younger than in older adults, age is an effect modifier of the drug's effect, not a confounder.</p>
+<table>
+<tr><th></th><th>Confounding</th><th>Effect modification</th></tr>
+<tr><td>What it is</td><td>Additional factor related to both exposure and outcome</td><td>Variable whose presence or absence changes the effect of exposure</td></tr>
+<tr><td>Bias?</td><td><strong>Yes</strong>, systematic error, controlled by methods such as matching and stratification</td><td><strong>No</strong>, not a bias; it may be synergistic or antagonistic and can arise in observational studies as well as trials</td></tr>
+</table>
+
+<h3 class="sub" id="gh-risk-io-8-case-control-design">IO 8 &mdash; Case-control design</h3>
+<p>In a <strong>case-control study</strong> the <strong>case group has the condition</strong> and the <strong>control group does not</strong>. The groups are chosen on the basis of whether they have the condition (outcome), not on the basis of exposure. Controls may be drawn from the <strong>same cohort</strong>, from the <strong>community or a hospital</strong>, or <strong>matched</strong> to the cases.</p>
+<p><strong>Direction:</strong> cases and controls are identified first and each is then compared for earlier exposure to the risk factor (exposed or not). Time runs forward for events but the research runs <strong>backward</strong>, from disease to past exposure &mdash; the reverse of a cohort study, which looks forward from exposure to disease. The design ends in an <strong>estimate of relative risk</strong>. The exposure is the factor compared between the groups (for example, past sunburns in a study comparing patients with and without melanoma); the presence or absence of the condition defines the groups.</p>
+<p><strong>Exposure information.</strong> Exposure is ideally <strong>measured</strong>, but oftentimes subjects are asked about their exposure, which brings <strong>recall bias</strong>: the accuracy of memory and the ability to recall specific information may not be perfect, especially once subjects know the disease studied.</p>
+<p><strong>Example of the design:</strong> a case-control study of helmet use and head injury among skiers and snowboarders. Cases had a head injury and controls did not; each was compared for whether a helmet had been used, with age, sex, nationality, skill level, equipment used, ski school attendance and rented-or-owned equipment controlled.</p>
+
+<h3 class="sub" id="gh-risk-io-8-advantages-and-limitations-of-case-control-studies">IO 8 &mdash; Advantages and limitations of case-control studies</h3>
+<p>Cohort studies are <strong>not ideal for capturing causation</strong>: there is a <strong>latency period</strong> between exposure and pathological effect, and a <strong>large sample</strong> is required although only a limited number of participants get the condition. Case-control studies are practical for this situation, and better suited to a <strong>rare disease with a long latency</strong>:</p>
+<table>
+<tr><th>Advantages</th><th>Limitations</th></tr>
+<tr><td><strong>Smaller samples</strong>, because the cases are picked for already having the condition</td><td><strong>Recall bias</strong> when subjects are asked about past exposure</td></tr>
+<tr><td><strong>No need to wait</strong> for the condition to develop, so results do not take years</td><td>Cannot establish incidence directly; the measure of association is the odds ratio rather than relative risk</td></tr>
+<tr><td>Suits a <strong>rare disease with a long latency</strong>, which a cohort could study only with a huge group followed for years</td><td>Depends on a control group without the condition, which must be chosen (from the same cohort, community or hospital, or matched)</td></tr>
+</table>
+<p>A case-control study still needs a defined case group and a control group, and still asks about earlier exposure; what it avoids is waiting for the condition to develop. Once the exposures that increase the risk of disease are understood, the exposure is followed to determine causation.</p>
+
+<h3 class="sub" id="gh-risk-io-9-which-measure-for-which-design">IO 9 &mdash; Which measure for which design</h3>
+<p>The <strong>odds ratio</strong> (relative odds) is the measure of association for <strong>case-control studies</strong>. For <strong>cohort studies</strong>, the incidence of disease in the exposed versus non-exposed can be calculated directly, so <strong>relative risk</strong> is usually used rather than the odds ratio. Relative risk and odds ratio allow numerical expression of the likelihood of a risk outcome: <strong>relative risk for cohort studies, odds ratio for case-control studies</strong>. The odds ratio is an <strong>estimated relative risk</strong>.</p>
+<p>Example: researchers enroll 150 patients with a rare cancer and 300 without it and ask about past exposure. This is a case-control study, so the measure of association is the odds ratio, not the relative risk, attributable risk or absolute risk.</p>
+
+<h3 class="sub" id="gh-risk-io-9-the-lettered-2-2-table-and-the-formulas">IO 9 &mdash; The lettered 2&times;2 table and the formulas</h3>
+<table>
+<tr><th></th><th>Cases</th><th>Noncases</th><th>Total</th></tr>
+<tr><td><strong>Exposed</strong></td><td><code>a</code></td><td><code>b</code></td><td>a + b</td></tr>
+<tr><td><strong>Not exposed</strong></td><td><code>c</code></td><td><code>d</code></td><td>c + d</td></tr>
+<tr><td>Total</td><td>a + c</td><td>b + d</td><td></td></tr>
+</table>
+<table>
+<tr><th>Study</th><th>Measure</th><th>Formula</th></tr>
+<tr><td><strong>Cohort</strong></td><td>Relative risk</td><td>[ a / (a + b) ] &divide; [ c / (c + d) ] &mdash; the incidence in the exposed, a over a plus b, divided by the incidence in the unexposed, c over c plus d</td></tr>
+<tr><td><strong>Case-control</strong></td><td>Odds ratio</td><td>[ a / c ] &divide; [ b / d ] = <strong>ad / bc</strong> &mdash; the odds of exposure in cases, a over c, divided by the odds of exposure in controls, b over d, which simplifies to the cross-products ad over bc</td></tr>
+</table>
+<ul>
+  <li><strong>Odds</strong> compare those with the exposure to those without it: exposed &divide; not exposed (48 exposed and 12 unexposed cases give odds of 48/12 = 4, not the proportion 0.8).</li>
+  <li>Odds ratio = odds of exposure in cases &divide; odds of exposure in controls. The case odds go on top; inverting the ratio is a slip.</li>
+  <li>Example: 60 of 100 cases and 30 of 100 controls exposed. Odds in cases 60/40 = 1.5; odds in controls 30/70 = about 0.43; odds ratio = 1.5 &divide; 0.43 = <strong>3.5</strong>, matching ad/bc = (60 &times; 70)/(40 &times; 30) = 4,200/1,200.</li>
+  <li>Example: 20 of 100 cases and 40 of 100 controls exposed. Odds in cases 20/80 = 0.25; odds in controls 40/60 = about 0.67; odds ratio = about <strong>0.38</strong>, which is below 1, so exposure is associated with lower odds of disease.</li>
+  <li>Dividing the exposed counts alone (60 by 30) ignores the unexposed counts and is not the odds ratio.</li>
+</ul>
+
+<h3 class="sub" id="gh-risk-io-9-worked-odds-ratio-and-how-to-state-it">IO 9 &mdash; A worked odds ratio, and how to state it</h3>
+<p>200 women were selected: 100 young women with thrombophlebitis and 100 without. History of prior birth control pill use in the past 5 years was carefully obtained. 90 of the 100 women with thrombophlebitis were using pills; 45 of the 100 women without thrombophlebitis had used them.</p>
+<table>
+<tr><th></th><th>Thrombophlebitis</th><th>No thrombophlebitis</th></tr>
+<tr><td>Pill users</td><td>90</td><td>45</td></tr>
+<tr><td>Pill non-users</td><td>10</td><td>55</td></tr>
+<tr><td>Total</td><td>100 cases</td><td>100 controls</td></tr>
+</table>
+<p>Odds of pill use in cases = 90/10 = 9. Odds of pill use in controls = 45/55 = 0.82. Odds ratio = 9 &divide; 0.82 = <strong>11.0</strong>.</p>
+<p><strong>Expressing the result.</strong> Women with thrombophlebitis have 11 times greater odds of having taken birth control pills than women without thrombophlebitis. The version to use, and the one we actually want to know, is: women who take birth control pills have 11 times greater odds of developing thrombophlebitis. The odds ratio is the same whichever way it is read, so a result such as &ldquo;patients with lung disease had six times the odds of prior asbestos exposure&rdquo; is stated as: exposed persons have six times the odds of the disease.</p>
+<ul>
+  <li>An odds ratio is a ratio of odds. It is not a percentage of exposed persons who are affected, and an odds ratio of six is not a one-in-six frequency.</li>
+  <li>An odds ratio above 1 means the <em>exposed</em>, not the unexposed, have the greater odds.</li>
+</ul>
+<div class="pearl"><strong>Summary.</strong> Relative risk for cohort studies, odds ratio for case-control studies. Both allow a numerical expression of the likelihood of a risk outcome, and the odds ratio is an estimated relative risk.</div>
+
+<h3 class="sub" id="gh-risk-facts-at-a-glance">Definitions and rules of thumb</h3>
+<ul>
+  <li><strong>Risk factor.</strong> A risk factor is a factor associated with a higher chance of developing a disease later. It raises the probability of disease rather than making it certain, so risk factors describe groups, not a guaranteed outcome for one person.</li>
+  <li><strong>Who takes part in a risk study.</strong> Healthy people take part: a study of risk follows people who do not yet have the disease, because the question is who goes on to develop it, so the outcome of interest is diagnosis.</li>
+  <li><strong>Long latency.</strong> A long latency between exposure and disease can obscure the association: the disease appears long after the exposure, so the two can look unrelated unless people are followed for a sufficient period of time.</li>
+  <li><strong>Relative risk of 1.0.</strong> When the risk in the exposed group equals the risk in the unexposed group, the relative risk is 1.0, the null value, and this indicates no association between exposure and disease. For example, 20 of 500 exposed and 16 of 400 unexposed are both 0.04.</li>
+  <li><strong>Recall bias.</strong> Recall bias arises from participants' difficulty remembering past exposures, which distorts the reported exposure or history; it is a particular weakness of case-control studies.</li>
+  <li><strong>Effect modifier.</strong> A variable whose presence or absence changes the effect of the exposure is an effect modifier. If an exposure raises the risk much more in older patients than in younger ones, age is an effect modifier, which differs from a confounder that only distorts the association.</li>
+</ul>
+</section>
+
+<!-- ============ 8 PROGNOSIS ============ -->
+<section class="deck" id="prognosis">
+<h2 class="deck-title" id="gh-8-prognosis-and-outcomes">8 &middot; Prognosis &amp; Outcomes</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 7 &middot; Fletcher ch. 5-8</p>
+
+<div class="io-box">
+  <h3 id="gh-prognosis-instructional-objectives">Instructional Objectives</h3>
+  <ol>
+    <li>Describe prognosis</li>
+    <li>Describe prognostic factors</li>
+    <li>Compare and contrast risk and prognostic factors</li>
+    <li>Discuss the clinical course and natural history of disease</li>
+    <li>Discuss methods to measure outcomes</li>
+    <li>Discuss survival analysis</li>
+    <li>Discuss bias in cohort studies</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-prognosis-io-1-describe-prognosis">IO 1 &mdash; Describe prognosis</h3>
+<p><strong>Prognosis</strong> is the <strong>prediction for the course of disease</strong>. It is what a clinician tries to estimate once a diagnosis has been made: how the disease will unfold in terms of survival, complications, disability and similar outcomes.</p>
+<ul>
+  <li><strong>Prognosis is expressed quantitatively as a rate</strong>, such as five-year survival, the case-fatality rate, the response rate, the remission rate and the recurrence rate. Each states how often an outcome occurs.</li>
+  <li>Prognosis can also use <strong>cure</strong> or <strong>death</strong> as its endpoints.</li>
+  <li>The <strong>natural history</strong> of a disease is what occurs <strong>without intervention</strong>. <strong>Prognosis can often be improved through clinical intervention</strong>, which is how clinicians change the natural history to improve the outcome.</li>
+  <li>The reason to <strong>detect disease at an earlier point</strong> is to <strong>maximize the effectiveness of treatment</strong>. Earlier detection helps only if treatment given sooner actually changes the outcome.</li>
+</ul>
+<div class="pearl"><strong>Natural history versus prognosis.</strong> Natural history is the course <em>without</em> intervention. Prognosis is the predicted course, and it can often be improved through clinical intervention.</div>
+
+<h3 class="sub" id="gh-prognosis-io-2-prognostic-factors">IO 2 &mdash; Prognostic factors</h3>
+<p><strong>Prognostic factors</strong> help identify groups of patients who <strong>share a similar disease but have different prognoses</strong>. They work within one disease, separating the patients who have it into groups that fare better or worse.</p>
+<ul>
+  <li><strong>Prognosis studies look for protective or progressing factors</strong> &mdash; factors that protect against, or promote, progression of the disease. These are different from the factors that raise the chance of getting the disease.</li>
+  <li><strong>Multiple factors are a better predictor of outcome than a single data point.</strong></li>
+  <li><strong>Clinical prediction rules</strong> estimate the <strong>probability of an outcome based on a set of patient characteristics</strong>, combining several factors into one estimate for an individual patient.</li>
+  <li><strong>Adjustment for important prognostic factors</strong> addresses whether <strong>other factors explain a difference in outcome</strong>: are the differences in the prognosis of the groups related to the factor under study or to some other factor?</li>
+</ul>
+<h4 class="subsub" id="gh-prognosis-example-after-a-heart-attack">Example &mdash; acute myocardial infarction</h4>
+<p>In a patient who has had an acute myocardial infarction, the <strong>poor prognostic factors</strong> are: <strong>increasing age</strong>, <strong>female</strong> sex, <strong>cigarette smoking</strong>, <strong>hypotension</strong>, <strong>anterior infarction</strong>, <strong>congestive heart failure</strong> and <strong>ventricular arrhythmia</strong>. The outcomes are death, reinfarction and other complications.</p>
+<p><strong>Ventricular arrhythmia</strong> is a poor prognostic factor that arises after the infarction; it is not a risk factor for developing coronary disease in a healthy person.</p>
+
+<h3 class="sub" id="gh-prognosis-io-3-risk-versus-prognostic-factors">IO 3 &mdash; Risk factors versus prognostic factors</h3>
+<p><strong>Risk factors do not necessarily represent a poorer prognosis.</strong> Being at risk of getting a disease and faring badly once you have it are separate questions, so the two sets of factors can differ, although some factors appear on both lists.</p>
+<table>
+<tr><th></th><th>Risk studies</th><th>Prognosis studies</th></tr>
+<tr><td><strong>Participants</strong></td><td>Healthy participants</td><td>Sick participants</td></tr>
+<tr><td><strong>Outcome</strong></td><td>Outcome is diagnosis</td><td>Outcome is death, complications, disability&hellip;</td></tr>
+<tr><td><strong>Rates</strong></td><td>Rates are low &mdash; diagnosis is rare</td><td>Rates are high &mdash; outcomes are common</td></tr>
+<tr><td><strong>Factors</strong></td><td>Risk factors may predict diagnosis</td><td>Protective or progressing factors are different from risk factors</td></tr>
+</table>
+<h4 class="subsub" id="gh-prognosis-risk-and-prognostic-factors-for-coronary-disease">The coronary disease example</h4>
+<table>
+<tr><th>Risk factors (predict who gets the infarction)</th><th>Poor prognostic factors (predict the outcome once it has happened)</th></tr>
+<tr><td>Increasing age</td><td>Increasing age</td></tr>
+<tr><td>Male sex</td><td>Female sex</td></tr>
+<tr><td>Cigarette smoking</td><td>Cigarette smoking</td></tr>
+<tr><td>Hypertension</td><td>Hypotension</td></tr>
+<tr><td>Increased low-density lipoprotein / decreased high-density lipoprotein</td><td>Anterior infarction</td></tr>
+<tr><td>Inactivity</td><td>Congestive heart failure</td></tr>
+<tr><td>&mdash;</td><td>Ventricular arrhythmia</td></tr>
+</table>
+<p><strong>Increasing age</strong> and <strong>cigarette smoking</strong> appear on both lists: they raise the chance of an infarction <em>and</em> worsen the outlook after one. Inactivity, hypertension and the lipid pattern are risk factors for developing coronary disease. Anterior infarction, congestive heart failure, hypotension and ventricular arrhythmia are poor prognostic factors that apply once the infarction has occurred. Hypertension is the blood pressure abnormality on the risk list; hypotension is the one that marks a poor prognosis.</p>
+
+<h3 class="sub" id="gh-prognosis-io-4-clinical-course-and-natural-history">IO 4 &mdash; Clinical course and natural history</h3>
+<p><strong>The natural history of disease is what occurs without intervention.</strong> It is the untreated benchmark: as new treatments arise, they are compared with the <strong>natural (untreated) outcome of disease</strong>.</p>
+<h4 class="subsub" id="gh-prognosis-the-five-ds">The five Ds</h4>
+<p>The course of disease is described and quantified by the <strong>five Ds: death, disease, discomfort, disability, dissatisfaction</strong>.</p>
+<p><strong>Severity of disease matters because it establishes priorities for clinical services and public health programs.</strong></p>
+<h4 class="subsub" id="gh-prognosis-stages-of-the-clinical-course">Stages of the clinical course</h4>
+<table>
+<tr><th>Order</th><th>Stage</th></tr>
+<tr><td>1</td><td>Biologic onset</td></tr>
+<tr><td>2</td><td>Pathology evident</td></tr>
+<tr><td>3</td><td>Signs and symptoms present</td></tr>
+<tr><td>4</td><td>Medical care sought</td></tr>
+<tr><td>5</td><td>Diagnosis given</td></tr>
+<tr><td>6</td><td>Treatment recommended and implemented</td></tr>
+<tr><td>7</td><td>Outcome</td></tr>
+</table>
+<p>The first stage is <strong>biologic onset</strong>. <strong>Diagnosis is given immediately after medical care is sought</strong>, and treatment is recommended and implemented only after the diagnosis. The outcome comes last.</p>
+<ul>
+  <li>The <strong>preclinical phase</strong> is the period in which the <strong>disease is present but signs and symptoms have not yet appeared</strong>.</li>
+  <li>The <strong>clinical phase</strong> begins once signs and symptoms of disease are present, and runs through care sought, diagnosis and treatment to the outcome.</li>
+  <li><strong>Screening can find disease before signs and symptoms appear</strong>, that is, during the preclinical phase. Detecting disease at an earlier point is what screening aims to do.</li>
+</ul>
+
+<h3 class="sub" id="gh-prognosis-io-5-rates-that-describe-prognosis">IO 5 &mdash; Rates that describe prognosis</h3>
+<table>
+<tr><th>Rate</th><th>Definition</th></tr>
+<tr><td><strong>5-year survival</strong></td><td>Percent of patients surviving 5 years from some point in the course of their disease</td></tr>
+<tr><td><strong>Case fatality</strong></td><td>Percent of patients with a disease who die of it</td></tr>
+<tr><td><strong>Disease-specific mortality</strong></td><td>Number of people per 10,000 (or 100,000) <em>population</em> dying of a specific disease</td></tr>
+<tr><td><strong>Response</strong></td><td>Percent of patients showing some evidence of improvement following an intervention</td></tr>
+<tr><td><strong>Remission</strong></td><td>Percent of patients entering a phase in which disease is no longer detectable</td></tr>
+<tr><td><strong>Recurrence</strong></td><td>Percent of patients who have return of disease after a disease-free interval</td></tr>
+</table>
+<p>Time under observation is either stated or assumed to be sufficiently long that <strong>all events that will occur have been observed</strong>.</p>
+<div class="callout"><strong>Watch the denominator.</strong> Case fatality divides by <em>patients with the disease</em>, so it measures how severe the disease is among the sick. Disease-specific mortality divides by the <em>whole population</em>. Response, remission and recurrence each divide by the patients at risk of that event.</div>
+<p><strong>Outcomes of disease should include the full range of manifestations</strong>: consider both <strong>biological and clinical outcomes</strong>, and also consider <strong>quality of life</strong> measures.</p>
+<h4 class="subsub" id="gh-prognosis-the-arithmetic">The arithmetic, with fresh numbers</h4>
+<table>
+<tr><th>Rate</th><th>Formula</th><th>Example</th></tr>
+<tr><td>Case-fatality ratio</td><td>People who die &divide; people who have the disease</td><td>12 deaths among 150 patients = 8%</td></tr>
+<tr><td>Disease-specific mortality</td><td>Deaths from the disease &divide; population &times; 100,000</td><td>24 deaths in a population of 80,000 = 30 per 100,000</td></tr>
+<tr><td>Five-year survival</td><td>Patients alive at 5 years &divide; patients followed</td><td>90 alive of 200 = 45%</td></tr>
+<tr><td>Response rate</td><td>Patients improved &divide; patients treated</td><td>36 improved of 60 = 60%</td></tr>
+<tr><td>Recurrence rate</td><td>Patients whose disease returned &divide; patients who were disease free</td><td>8 of 40 = 20%</td></tr>
+</table>
+<h4 class="subsub" id="gh-prognosis-case-fatality-ratio">Case-fatality ratio</h4>
+<p>The <strong>case-fatality ratio</strong> is the number of people who die divided by the number of people who have the disease. It is <strong>usually used for acute, short-term disease where death occurs shortly after diagnosis</strong>, because the deaths can be counted without long follow-up. For chronic disease with survival of decades, survival measures are used instead.</p>
+<p>From a risk communication standpoint, be careful with <strong>negative framing</strong> &mdash; presenting the number dying rather than the number surviving. The data are the same, but the framing can sway perception: it changes how the risk is perceived.</p>
+<h4 class="subsub" id="gh-prognosis-five-year-survival">Five-year survival</h4>
+<p>Five-year survival is <strong>frequently used in clinical medicine, particularly to describe outcomes of cancer patients</strong>.</p>
+<ul>
+  <li><strong>Rates can mask important data.</strong> Four conditions can have nearly identical five-year survival &mdash; each of the four curves ends with roughly 5&ndash;10% of patients alive at five years &mdash; while the survival curves differ greatly. A single rate does not show <strong>when the deaths occur</strong> within the five years.</li>
+</ul>
+<table>
+<tr><th>Condition</th><th>Shape of the survival curve over five years</th></tr>
+<tr><td><strong>Dissecting aneurysm</strong></td><td>Falls <strong>steeply in the first year</strong> (most patients die early), then levels off at a low plateau</td></tr>
+<tr><td><strong>Lung cancer</strong></td><td>Falls steadily and roughly evenly over the years</td></tr>
+<tr><td><strong>Amyotrophic lateral sclerosis</strong></td><td>Falls slowly at first, then more quickly</td></tr>
+<tr><td><strong>Age 100 years</strong></td><td>Falls gradually and continuously</td></tr>
+</table>
+<h4 class="subsub" id="gh-prognosis-screening-and-five-year-survival">Screening can inflate five-year survival</h4>
+<p>The five-year time line is <strong>problematic when considering screening programs</strong>: the disease may be found earlier, but <strong>death still occurs at a similar point</strong>. Patients simply <strong>live longer with a diagnosis</strong>, so measured survival rises without anyone living longer. This is a potential bias if disease is detected earlier but the natural history of disease is not impacted favorably by treatment.</p>
+<p><strong>Reading the timeline:</strong> survival from diagnosis is the year of death minus the year of diagnosis. In the standard timeline used to illustrate this, the disease begins in 1987, is detected by screening in 1989 or diagnosed without screening in 1991, and death occurs in 1995 either way. Survival from diagnosis is therefore 6 years with screening (1989 to 1995) against 4 years without (1991 to 1995), yet <strong>death did not come any later</strong>. Moving the diagnosis earlier by some number of years adds that many years to the measured survival when the date of death is unchanged.</p>
+<p><strong>Another limitation:</strong> those with a history of disease duration of less than five years <strong>cannot be evaluated</strong> by this measure, nor can patients treated with a <strong>new therapy introduced within the past five years</strong>, because no one has yet been followed for five years.</p>
+
+<h3 class="sub" id="gh-prognosis-io-6-survival-analysis">IO 6 &mdash; Survival analysis</h3>
+<p><strong>Survival analysis</strong> follows a cohort over time and records the outcomes at designated time intervals. People can be added at various times in the course of their disease, and each contributes the time they are followed, giving the <strong>person-years</strong> contributed to the study.</p>
+<p>The <strong>probability of surviving to any point in time is estimated from the cumulative probability of surviving each of the time intervals that preceded it</strong> &mdash; the chances of surviving each earlier interval are multiplied together. For example, surviving three successive intervals with probabilities of 0.95, 0.90 and 0.60 gives 0.95 &times; 0.90 &times; 0.60 = 0.513, about 51%.</p>
+<p><em>Note on scope.</em> The course material describes the outcome of survival analysis as limited to living versus dying; the same method is also applied to any single event that happens once, such as recurrence or remission.</p>
+
+<h4 class="subsub" id="gh-prognosis-kaplan-meier">Kaplan-Meier method</h4>
+<ul>
+  <li>Rather than using pre-determined intervals, such as death at one year, <strong>the exact point in time when each death occurs is noted and a new interval begins</strong>. This generates the curve.</li>
+  <li>Because each death starts a new interval, the curve is a series of <strong>steps</strong>: it holds level and then steps down at each death.</li>
+  <li>Patients who are <strong>censored</strong> (no longer followed, and alive as far as is known) leave the number at risk <strong>without being counted as deaths</strong>. In each interval the probability of surviving is the number who survive divided by the number still at risk, for example 7 of 8 at risk surviving gives 0.875.</li>
+</ul>
+
+<h4 class="subsub" id="gh-prognosis-cox-regression">Cox proportional hazards survival regression</h4>
+<ul>
+  <li>Similar to Kaplan-Meier, but it can be used to <strong>study the effect of an exposure on outcome after adjusting for confounders</strong>.</li>
+  <li>It can also be used to find <strong>prognostic indicators</strong> for survival in a given disease, taking into account the effects of <strong>multiple predictors</strong> on the shape of the survival curve &mdash; for example treatment differences, age differences and differences in drug dosages.</li>
+  <li>The <strong>hazard ratio</strong> that results can be interpreted as a <strong>relative risk (risk ratio)</strong>. A hazard ratio of 2 means the group with the factor has twice the risk of the outcome (dying) as the group without it. A ratio of <strong>less than 1</strong> is considered <strong>protective</strong>; a ratio of 1 means the same risk in both groups.</li>
+  <li>A hazard ratio of 0.25 means the group has 25% of the risk of the comparison group, that is, 75% lower.</li>
+</ul>
+
+<h4 class="subsub" id="gh-prognosis-reading-a-survival-curve">Reading a survival curve</h4>
+<ul>
+  <li>Survival curves <strong>estimate the survival for a hypothetical, rather than actual, cohort</strong>.</li>
+  <li><strong>Precision is greater earlier</strong>, on the left side of the curve, because the population still being followed is larger.</li>
+  <li>The shape of the curve can be deceptive: it tends to <strong>flatten or plateau</strong> when the event of interest is occurring to fewer numbers of participants being followed, so the flat tail rests on few participants and does not mean deaths have stopped.</li>
+</ul>
+
+<h4 class="subsub" id="gh-prognosis-other-survival-measures">Other survival measures</h4>
+<table>
+<tr><th>Measure</th><th>Definition</th><th>Notes</th></tr>
+<tr><td><strong>Median survival time</strong></td><td>The length of time that half the population survives</td><td>Advantages: <strong>less affected by extremes</strong>, and it <strong>can be calculated earlier</strong>, before all the population have died</td></tr>
+<tr><td><strong>Relative survival time</strong></td><td>Based on the survival expected at a given age without the disease: <strong>observed survival in people with the disease &divide; expected survival if the disease were absent</strong></td><td>Compares people with the disease with what would be expected without it</td></tr>
+</table>
+<p>The median is the middle value when survival times are put in order: for seven ordered times of 2, 4, 7, 9, 13, 18 and 30 months it is 9 months, whereas the mean (11.9 months) is pulled upward by the longest survivor. On a curve, the median survival is read where survival crosses 50%. For relative survival, an observed survival of 63% against an expected 90% gives 63 &divide; 90 = 70%.</p>
+
+<h3 class="sub" id="gh-prognosis-io-7-bias-in-cohort-studies">IO 7 &mdash; Bias in cohort studies</h3>
+<p><strong>Bias in survival cohort studies may falsely create or obscure differences that do exist.</strong></p>
+
+<h4 class="subsub" id="gh-prognosis-inception-cohorts">Inception cohorts and zero time</h4>
+<ul>
+  <li>Cohorts should all be identified at a similar point in the disease course, called <strong>zero time</strong> &mdash; a shared point in the disease course.</li>
+  <li><strong>Inception cohorts</strong> are assembled at <strong>onset of disease, when it first becomes clinically apparent</strong> &mdash; as early as possible and as uniform as possible. Patients assembled at different points in the course cannot be compared fairly.</li>
+  <li>Specific inclusion criteria need to be specified.</li>
+  <li>Consider the <strong>referral pattern</strong> of the patients in the study: patients at an academic medical center may differ from those in the community.</li>
+  <li>Sources of <strong>selection bias</strong> include <strong>convenience samples</strong>, <strong>volunteer samples</strong>, declines from those selected for study, and dropouts.</li>
+</ul>
+
+<h4 class="subsub" id="gh-prognosis-the-cohort-biases">The named biases</h4>
+<table>
+<tr><th>Bias</th><th>What it is</th><th>Examples and how it is handled</th></tr>
+<tr><td><strong>Susceptibility bias</strong></td><td>Those assembled for the study <strong>differ in some way</strong> that affects the outcome</td><td>Different points in the disease course, other concurrent disease, prior treatment</td></tr>
+<tr><td><strong>Migration bias</strong></td><td>Patients <strong>drop out of the study or change groups</strong></td><td>Reasons include death, recovery, disability. Ask whether dropouts are similar to those who stay. <strong>As the proportion of dropouts increases, the potential for bias increases.</strong></td></tr>
+<tr><td><strong>Measurement bias</strong></td><td>Participants in one group have an <strong>increased likelihood of having their outcome detected</strong> than those in another group, that is, outcomes in one group are more likely to be detected</td><td>May be due to differences in methods used to classify the outcome. Minimize by <strong>blinding</strong>, establishing <strong>strict criteria</strong> for whether the outcome has occurred, and applying efforts to discover outcomes <strong>equally in all study groups</strong></td></tr>
+<tr><td><strong>Selection bias</strong></td><td>The compared groups differ in ways unrelated to the factor under study</td><td>Controlled by <strong>randomization, restriction, matching, stratification, adjustment</strong> and <strong>best/worst case variation</strong></td></tr>
+</table>
+<p>The question to ask about selection bias: <strong>are the differences in the prognosis of the groups related to the factor under study or to some other factor(s)?</strong></p>
+<p>Matching, restriction and stratification handle only the factors chosen for consideration. <strong>Randomization is the only method of dealing with differences between groups whose benefits are not limited to the factors selected for consideration</strong>, so it also handles factors nobody measured. Studies typically use several methods to control bias. Blinding, matching, restriction and stratification each address a different bias: blinding addresses measurement bias, while the others address selection bias.</p>
+<p><strong>Generalizability</strong> is often limited because the patients in the study may not be representative of other populations or of individual patients.</p>
+
+<h4 class="subsub" id="gh-prognosis-what-to-look-for">What to look for in a prognosis study</h4>
+<ol>
+  <li>Was an <strong>inception cohort</strong> assembled? &mdash; so that patients start at a similar point in their disease.</li>
+  <li>Were the entry criteria objective and reasonable?</li>
+  <li>Was the follow-up of subjects adequate?</li>
+  <li>Are the study patients similar to yours?</li>
+  <li>Was there adjustment for important prognostic factors?</li>
+  <li>Were <strong>outcomes assessed objectively and blindly</strong>?</li>
+</ol>
+
+<div class="pearl"><strong>Summary.</strong> The natural history of disease is what occurs without intervention. Prognosis can often be improved through clinical intervention. Prognosis is expressed quantitatively through rates. Bias can influence measurement of survival rate outcomes.</div>
+
+<h3 class="sub" id="gh-prognosis-facts-at-a-glance">Definitions and formulas</h3>
+<ul>
+  <li><strong>Prognostic factors.</strong> Prognostic factors identify patients with the same disease who have different prognoses. They separate patients who share a diagnosis into groups that fare differently.</li>
+  <li><strong>Risk factors and prognosis.</strong> Risk factors do not necessarily represent a poorer prognosis, so being at risk of developing a disease and faring badly with it are separate questions; a risk factor need not worsen prognosis.</li>
+  <li><strong>Case-fatality ratio.</strong> Case-fatality ratio = number of deaths from a disease &divide; number of people with the disease. For example, 30 deaths among 400 people with the disease is 30/400 = 0.075, or 7.5 percent. It is most useful for acute, short-term disease where death follows quickly after diagnosis, because the deaths can be counted without long follow-up.</li>
+  <li><strong>Five-year survival rate.</strong> Five-year survival rate = number of patients alive at five years &divide; number of patients in the cohort when no one is lost to follow-up. For example, 90 of 150 patients alive is 90/150 = 0.60, or 60 percent.</li>
+  <li><strong>New treatments.</strong> As new treatments arise, they are compared with the natural (untreated) outcome of the disease, which is the baseline that shows whether a treatment changes what would otherwise happen.</li>
+</ul>
+</section>
+
+<!-- ============ 9 PREVENTION ============ -->
+<section class="deck" id="prevention">
+<h2 class="deck-title" id="gh-9-prevention-and-screening">9 &middot; Prevention &amp; Screening</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 8 &middot; Fletcher ch. 9&ndash;10</p>
+
+<div class="io-box">
+  <h3 id="gh-instructional-objectives-9">Instructional Objectives</h3>
+  <ol>
+    <li>Discuss the types of clinical prevention</li>
+    <li>Discuss the levels of prevention</li>
+    <li>Discuss intervention in terms of prevention</li>
+    <li>Describe advantages and disadvantages of screening exams</li>
+    <li>Discuss the principles of community screening programs</li>
+    <li>Describe number-needed-to-treat (NNT) and number-needed-to-harm (NNH)</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-prevention-types">Objective 1 &mdash; The types of clinical prevention</h3>
+<p><strong>Prevention</strong> is defined as interventions for <strong>people without complaints</strong>, to identify and modify risk factors to avoid the onset of disease, or to find disease early in its course. Preventive care is built into clinical practice in four ways.</p>
+<table>
+<tr><th>Type</th><th>What it is</th><th>Example</th></tr>
+<tr><td><strong>Immunization</strong></td><td>Giving a vaccine so that protection exists before infection occurs</td><td>A hepatitis B or influenza vaccine given to a healthy adult</td></tr>
+<tr><td><strong>Screening</strong></td><td>Testing people who have no symptoms in order to find disease early</td><td>Measuring blood pressure in adults who feel well</td></tr>
+<tr><td><strong>Behavioral / lifestyle counseling</strong></td><td>Advice aimed at changing habits; the intervention is advice, not a drug or a test</td><td>Counseling a smoker to quit, or advice about diet</td></tr>
+<tr><td><strong>Chemoprevention</strong></td><td>Giving a medication to a healthy person solely to lower the chance of future disease</td><td>A daily medication started by a healthy patient at raised risk</td></tr>
+</table>
+<div class="pearl"><strong>Sorting a scenario into a type:</strong> a vaccine is <em>immunization</em>; advice about habits is <em>counseling</em>; a drug given to a healthy person to lower disease risk is <em>chemoprevention</em>; a test looking for disease in people without symptoms is <em>screening</em>. Emergency stabilization, palliative care and surgical resection are treatments for established illness and are not among the four types.</div>
+
+<h3 class="sub" id="gh-prevention-levels">Objective 2 &mdash; The levels of prevention</h3>
+<table>
+<tr><th>Level</th><th>What it does</th><th>Where it acts on the timeline of disease</th></tr>
+<tr><td><strong>Primary</strong></td><td>Prevents disease from occurring by <strong>removing underlying causes or risk factors</strong>. Works at the <strong>individual or community</strong> level</td><td>Before any disease exists (&ldquo;no disease&rdquo;)</td></tr>
+<tr><td><strong>Secondary</strong></td><td>Detects disease <strong>while it is asymptomatic</strong>; this is the level of screening</td><td>During asymptomatic disease, after onset and before clinical diagnosis</td></tr>
+<tr><td><strong>Tertiary</strong></td><td>Clinical intervention (treatment) that <strong>reduces complications following diagnosis</strong></td><td>During the clinical course, after clinical diagnosis</td></tr>
+</table>
+<p>The timeline runs: <em>no disease</em> &rarr; <strong>onset</strong> &rarr; <em>asymptomatic disease</em> &rarr; <strong>clinical diagnosis</strong> &rarr; <em>clinical course</em>. Primary prevention is labeled &ldquo;remove risk factors&rdquo;, secondary &ldquo;early detection and treatment&rdquo;, and tertiary &ldquo;reduce complications&rdquo;. The three levels are primary, secondary and tertiary; the four types of Objective 1 are different things and are not levels.</p>
+<div class="pearl"><strong>Worked classifications.</strong> A healthy adult receiving an influenza vaccine is <strong>primary</strong> prevention (removing the risk of infection before any disease exists). Screening asymptomatic people is <strong>secondary</strong>. Treating a patient after a heart attack has been diagnosed, to reduce the chance of complications, is <strong>tertiary</strong>. Screening is an example of secondary prevention, not a level in itself.</div>
+
+<h3 class="sub" id="gh-prevention-intervention">Objective 3 &mdash; Intervention in terms of prevention</h3>
+<h4 class="subsub" id="gh-prevention-inclusion">When should a condition be included in preventive care?</h4>
+<p>Three questions decide whether a condition belongs in preventive care.</p>
+<table>
+<tr><th>Criterion</th><th>What is asked</th></tr>
+<tr><td><strong>1. Burden of suffering</strong></td><td>How great is the burden the condition causes? Measured by mortality rates, hospitalizations and incidence, and framed as six D&rsquo;s: <strong>death, disease, disability, discomfort, dissatisfaction and destitution</strong></td></tr>
+<tr><td><strong>2. Quality of the screening test</strong> (if one is to be used)</td><td><strong>Sensitivity, specificity, simplicity, cost, safety and acceptability</strong></td></tr>
+<tr><td><strong>3a. Treatment, for primary and tertiary prevention</strong></td><td>How good is the therapeutic intervention: <strong>effectiveness, safety and cost-effectiveness</strong></td></tr>
+<tr><td><strong>3b. Treatment, for secondary prevention</strong></td><td>How good is the treatment once the condition is found: effectiveness, safety, cost-effectiveness, and <strong>early treatment after screening being more effective than later treatment without screening, once the patient becomes symptomatic</strong></td></tr>
+</table>
+<p>Each component belongs to only one criterion: disability, death and hospitalizations describe <em>burden</em>; sensitivity, specificity, simplicity and acceptability describe the <em>test</em>; effectiveness and cost-effectiveness of therapy describe the <em>treatment</em>.</p>
+<div class="callout"><strong>A serious, common condition with an accurate, cheap test but no effective treatment is not worth screening for.</strong> Screening pays off only if treatment given early is more effective than treatment given later, so with no effective treatment, finding the condition early cannot improve outcomes.</div>
+
+<h4 class="subsub" id="gh-prevention-research">How each level is studied</h4>
+<table>
+<tr><th>Level</th><th>Typical research</th></tr>
+<tr><td><strong>Primary</strong></td><td>Immunization studies are typically <strong>randomized controlled trials</strong>, and counseling approaches are studied with randomized controlled trials. <strong>Observational studies</strong> are used <strong>when randomization is not possible or not ethical</strong>. <strong>Longitudinal studies</strong> are used to study safety (adverse effects)</td></tr>
+<tr><td><strong>Secondary</strong></td><td>Similar to studies in curative medicine, assessing outcomes following treatment. <strong>For screening to have value, outcomes must be better when disease is identified and treated early.</strong> A <strong>cohort</strong> design may be used because it can take <strong>years</strong> to determine effectiveness</td></tr>
+<tr><td><strong>Tertiary</strong></td><td>Treatments are similar to those used in disease intervention and are tested with randomized controlled trials. <strong>Caution:</strong> such studies are typically done to prove the <strong>therapeutic</strong> effects of a treatment, not its <strong>preventive</strong> effects, so the effect on prevention is often identified later</td></tr>
+</table>
+<p><strong>Cohort design.</strong> A cohort study starts with a defined population and divides it, without randomization, into an <strong>exposed</strong> and a <strong>not exposed</strong> group, then follows each forward to see who develops disease and who does not. The diagram shows the retrospective form, in which the groups are defined in the past (1980) and followed to the present (2000). Groups are defined by exposure and followed for the outcome; a case-control study does the reverse, starting from the outcome.</p>
+
+<h3 class="sub" id="gh-prevention-screening">Objective 4 &mdash; Advantages and disadvantages of screening exams</h3>
+<h4 class="subsub" id="gh-prevention-advantage">The advantage</h4>
+<p>The advantage of screening is that <strong>disease can be found early, while it is asymptomatic, and so treated earlier</strong> in its course. It pays off when outcomes are better with early detection and treatment than when disease is found later.</p>
+
+<h4 class="subsub" id="gh-prevention-prevalence-incidence">Prevalence screens and incidence screens</h4>
+<table>
+<tr><th>Screening round</th><th>Detects</th></tr>
+<tr><td><strong>First screening</strong></td><td><strong>Prevalent cases</strong>: disease already present in the population. Prevalence is the number affected at a given point in time</td></tr>
+<tr><td><strong>Second and subsequent screenings</strong></td><td><strong>Incident cases</strong>: disease that has newly developed since the last screen. Incidence is the number who develop the disease over a given time period</td></tr>
+</table>
+
+<h4 class="subsub" id="gh-prevention-biases">Three biases in observational studies of screening</h4>
+<p>The three biases are <strong>lead-time bias, length-time bias and compliance bias</strong>. Each can make screening look better than it is.</p>
+
+<h4 class="subsub" id="gh-prevention-lead-time">Lead-time bias</h4>
+<p><strong>Lead time</strong> is the time by which screening advances diagnosis: the time between detection from screening and when the condition would have been diagnosed from symptoms. The <strong>apparent improvement in survival time is not due to improved survival</strong>; it is due to increased time knowing the diagnosis.</p>
+<table>
+<tr><th>Situation</th><th>Diagnosis</th><th>Death</th><th>Survival measured from diagnosis</th></tr>
+<tr><td>Unscreened</td><td>Usual (later, from symptoms)</td><td>At its usual time</td><td>Shorter</td></tr>
+<tr><td>Screened, early treatment <strong>not</strong> effective</td><td>Earlier</td><td><strong>Unchanged</strong></td><td>Longer, but only because diagnosis moved earlier</td></tr>
+<tr><td>Screened, early treatment <strong>is</strong> effective</td><td>Earlier</td><td><strong>Later</strong></td><td>Longer, and genuinely improved survival</td></tr>
+</table>
+<p>Survival from diagnosis is the age at death minus the age at diagnosis. If a cancer is found by screening at age 60 and would have been diagnosed from symptoms at age 64, and the patient dies at age 72 either way, survival from diagnosis is 12 years with screening and 8 years without. The apparent gain is 4 years, which equals the lead time, and the patient has not lived a day longer. Earlier diagnosis happens in every screened group; a longer survival is a real improvement <strong>only when early treatment is effective and delays death</strong>.</p>
+
+<h4 class="subsub" id="gh-prevention-length-time">Length-time bias</h4>
+<p>Outcomes appear better with screening because <strong>more slow-developing conditions with better prognoses are detected</strong>. Slow-developing conditions are present for longer, so a screen is likely to catch them, and they have better prognoses than fast-developing conditions. <strong>Screening works best for conditions that develop slowly.</strong> <strong>Rapidly developing conditions usually cause symptoms before screening is done</strong>, so they tend to escape it and are diagnosed clinically instead. In a diagram of tumor growth against time, the rapidly growing tumors reach the point of diagnosis after symptoms between screens, while a single screen mostly catches the slower-growing ones.</p>
+
+<h4 class="subsub" id="gh-prevention-compliance">Compliance bias</h4>
+<p>The outcome in the screened group appears better because those people are <strong>more compliant</strong>. Compliant patients are <strong>more invested in their health</strong> and have better outcomes for reasons unrelated to the screening itself. For example, volunteers who attend screening may have lower death rates than people who decline even if screening offers no benefit.</p>
+
+<h4 class="subsub" id="gh-prevention-test-properties">Properties of tests used in screening</h4>
+<ul>
+  <li>High <strong>sensitivity early in the disease</strong>, so the test does not miss disease</li>
+  <li>High <strong>specificity</strong>, to <strong>reduce false positives</strong>. A screened population is mostly healthy, so specificity is what keeps healthy people from being wrongly flagged. (Missing disease is a false negative, which high sensitivity reduces.)</li>
+  <li>Consider <strong>positive and negative predictive values</strong> because disease prevalence is low</li>
+  <li><strong>Simple to administer and inexpensive</strong></li>
+  <li><strong>Safe</strong> to administer</li>
+</ul>
+
+<h4 class="subsub" id="gh-prevention-disadvantages">The disadvantages: unintended consequences of screening</h4>
+<table>
+<tr><th>Consequence</th><th>Meaning</th></tr>
+<tr><td><strong>False-positive results</strong></td><td>A healthy person is wrongly flagged: <strong>expense, inconvenience and unnecessary interventions</strong></td></tr>
+<tr><td><strong>Negative labeling effect</strong></td><td>Harm from being labeled as having a condition; an <strong>ethical concern</strong></td></tr>
+<tr><td><strong>Overdiagnosis</strong></td><td>Finding disease when <strong>the finding does not help the patient</strong>. It is an <strong>extreme example of length-time bias</strong>: screening picks up the slowest conditions, and at the extreme they are so indolent that finding them helps no one</td></tr>
+<tr><td><strong>Incidentalomas</strong></td><td>An <strong>abnormality outside the area being examined</strong>, found unexpectedly while looking elsewhere</td></tr>
+</table>
+<p>A false-positive result flags someone who is healthy; a repeat-screen finding is an incident case, and neither is an incidentaloma. The biases above (lead-time, length-time, compliance) are further disadvantages, because they make screening appear better than it is.</p>
+
+<h4 class="subsub" id="gh-prevention-appraise">What to look for in prevention studies</h4>
+<ol>
+  <li>The <strong>rationale</strong> for the prevention: the burden, the quality of the screening test and the effectiveness of the intervention</li>
+  <li>Identification of the <strong>level</strong> of prevention</li>
+  <li>The <strong>properties of the tests</strong> used</li>
+  <li><strong>Strategies to reduce bias</strong></li>
+</ol>
+
+<h3 class="sub" id="gh-prevention-community">Objective 5 &mdash; Principles of community screening programs</h3>
+<p>A community screening program takes place in a <strong>community setting</strong>. Its objective is to <strong>test large numbers of individuals at little or no cost</strong> to the participants.</p>
+
+<h4 class="subsub" id="gh-prevention-objectives">Possible objectives of a program</h4>
+<table>
+<tr><th>Objective</th><th>Example</th></tr>
+<tr><td>Target disease so <strong>treatment can cure</strong> patients</td><td>Sexually transmitted infections, cancers</td></tr>
+<tr><td>Target disease so <strong>treatment can prevent complications</strong></td><td>Hypertension</td></tr>
+<tr><td>Target a <strong>behavioral risk factor</strong> to change the behavior</td><td>Trying to get people to stop smoking</td></tr>
+<tr><td>Target a <strong>metabolic risk factor</strong> to change diet and avoid disease</td><td>Modified diet to reduce cholesterol levels and avoid coronary artery disease</td></tr>
+</table>
+
+<h4 class="subsub" id="gh-prevention-establishing">Establishing a screening program</h4>
+<ul>
+  <li>The condition should be an <strong>important or serious public health problem</strong></li>
+  <li>There should be <strong>effective treatment available</strong></li>
+  <li>The <strong>natural history</strong> of the disease should be <strong>well understood</strong></li>
+  <li>The disease must be <strong>prevalent but not found in everyone</strong></li>
+  <li>Those with positive screens must have <strong>access to care</strong></li>
+  <li>It must be clear <strong>who is responsible for following up the results</strong> of the screening: what counts as a positive test, how findings become part of a participant&rsquo;s medical record, and so on</li>
+</ul>
+<p>Before a program starts, <strong>the benefits of being screened must outweigh the costs and harms</strong>. The test should be safe with minimal side effects, quick and easy to administer, inexpensive, and <strong>acceptable to the public and to their health care providers</strong>. Its <strong>sensitivity, specificity, positive predictive value and negative predictive value must be known and be acceptable</strong>; the predictive values must be known as well because they depend on how common the disease is in the people screened.</p>
+<div class="pearl"><strong>The evidence standard.</strong> A classic 1971 statement holds that a practitioner should have <strong>conclusive evidence that screening can alter the natural history of disease in a significant proportion of those screened</strong>. A longer survival after diagnosis is not enough, because it may be lead time alone, and detecting an abnormality is not enough either. Current screening guidelines are published by the United States Preventive Services Task Force.</div>
+
+<h4 class="subsub" id="gh-prevention-low-prevalence">Low prevalence: why high-risk groups are screened</h4>
+<p>With low prevalence, <strong>even highly specific tests generate more false positives than true positive results</strong>, because <strong>healthy people far outnumber cases</strong>: a small error rate applied to a very large healthy group produces more wrong positives than the few true cases produce right ones. Specificity and sensitivity themselves do not change with prevalence; the predictive values do. Therefore programs <strong>screen &ldquo;higher risk&rdquo; populations</strong>, where prevalence is higher. In a higher-risk group the <strong>positive predictive value rises</strong> (a larger share of positive results are true), while screening only people without risk factors would lower prevalence further and make the ratio of false to true positives worse. A test with lower specificity would generate still more false positives. The positive and negative predictive values can be calculated.</p>
+<h4 class="subsub" id="gh-prevention-screen-arithmetic">The arithmetic</h4>
+<p>Build the counts from the number screened, the prevalence, the sensitivity and the specificity (the same two-by-two table as in Session 4):</p>
+<ul>
+  <li>People with disease = number screened &times; prevalence. <strong>True positives</strong> = people with disease &times; sensitivity; <strong>false negatives</strong> = the rest of them.</li>
+  <li>Healthy people = number screened minus people with disease. <strong>False positives</strong> = healthy people &times; (1 &minus; specificity); only healthy people can be false positives.</li>
+  <li><strong>Positive predictive value</strong> = true positives &divide; (true positives + false positives).</li>
+</ul>
+<p>Example of the method with fresh figures: 5,000 people screened, prevalence 2 percent, sensitivity 80 percent, specificity 90 percent. People with disease = 100, true positives = 80. Healthy = 4,900, false positives = 490. Positive predictive value = 80 &divide; 570, about 14 percent. False positives outnumber true positives about six to one although the test is 90 percent specific.</p>
+
+<h3 class="sub" id="gh-prevention-nnt-nnh">Objective 6 &mdash; Number needed to treat and number needed to harm</h3>
+<table>
+<tr><th></th><th>Number needed to treat (NNT)</th><th>Number needed to harm (NNH)</th></tr>
+<tr><td><strong>Meaning</strong></td><td>The number of patients who need to be <strong>treated for one to get a benefit</strong> (for example, prevent disease). Often discussed in studies of immunizations</td><td>The number of patients who need to <strong>have a given intervention for one to experience a harm</strong></td></tr>
+<tr><td><strong>Calculation</strong></td><td>1 &divide; <strong>absolute risk reduction</strong>, where the absolute risk reduction = risk in the control group &minus; risk in the treated group</td><td>1 &divide; <strong>absolute increase in risk</strong>, where the increase = risk in the treated group &minus; risk in the control group</td></tr>
+<tr><td><strong>Reading it</strong></td><td><strong>Large</strong> number &rarr; the intervention is largely <strong>ineffective</strong> (many treated to help one). <strong>Small</strong> number &rarr; largely <strong>effective</strong></td><td><strong>Small</strong> number &rarr; harm is frequent. <strong>Large</strong> number &rarr; harm is rare, so the intervention is safer</td></tr>
+</table>
+<div class="pearl"><strong>Ideally the number needed to treat should be low and the number needed to harm should be high.</strong> Few patients need treatment for one to benefit, and many must be treated before one is harmed. The worst pairing is a high number needed to treat with a low number needed to harm.</div>
+<h4 class="subsub" id="gh-prevention-nnt-method">Working with the numbers</h4>
+<ul>
+  <li><strong>The standard calculation is not printed on the slides, which define the ideas.</strong> Both numbers are the reciprocal of an absolute change in risk, expressed as a decimal: an absolute risk reduction of 5 percentage points is 0.05, so the number needed to treat is 1 &divide; 0.05 = 20. A risk that falls from 10 percent to 6 percent is a reduction of 4 points (0.04), giving a number needed to treat of 25. A side effect that rises from 1 percent to 4 percent is an increase of 0.03, giving a number needed to harm of about 33.</li>
+  <li>Use the <strong>difference</strong> between the two groups&rsquo; risks, not either group&rsquo;s risk alone, and not the difference in event <em>counts</em>: when 50 of 1,000 untreated and 30 of 1,000 treated patients have an event, the risk falls from 0.05 to 0.03, an absolute reduction of 0.02, and the number needed to treat is 50, not 20.</li>
+  <li><strong>Comparing treatments</strong> for the same outcome over the same period: the smaller number needed to treat is the more effective treatment. For harm, the larger number needed to harm is the safer.</li>
+  <li><strong>Expected effect in a group</strong> = number of patients &divide; the number needed to treat (cases prevented) or &divide; the number needed to harm (patients harmed). With a number needed to treat of 50, treating 500 patients prevents 10 cases; with a number needed to harm of 100, treating 500 patients harms 5. Dividing is correct; multiplying is not.</li>
+  <li><strong>Comparing benefit and harm:</strong> one patient in every number-needed-to-treat benefits, and one in every number-needed-to-harm is harmed. A number needed to harm that is <em>smaller</em> than the number needed to treat means harm is more frequent than benefit (for example a number needed to treat of 30 and a number needed to harm of 20 for equally serious outcomes).</li>
+  <li><strong>Baseline risk matters.</strong> The number needed to treat depends on the baseline risk as well as on how much the treatment cuts it, so a treatment that halves risk gives a larger number in a low-risk group: halving a risk of 4 percent leaves 2 percent (a reduction of 0.02, number needed to treat 50), whereas halving a risk of 1 percent leaves 0.5 percent (a reduction of 0.005, number needed to treat 200). A large number therefore does not always mean a poor drug; it can also reflect a low-risk group.</li>
+</ul>
+
+<h3 class="sub" id="gh-prevention-facts-at-a-glance">Definitions and formulas</h3>
+<ul>
+  <li><strong>Practical features of a screening test.</strong> A screening test is applied to many healthy people, so it must be simple to give, safe and inexpensive.</li>
+  <li><strong>Expected false positives.</strong> Expected false positives = (1 &minus; specificity) &times; number of people without the disease; true positives = sensitivity &times; number with the disease. For example, with specificity 90 percent among 5,000 healthy people, 10 percent test positive, giving 500 false positives.</li>
+  <li><strong>Positive predictive value in screening.</strong> Positive predictive value = true positives &divide; (true positives + false positives). When prevalence is low, false positives outnumber true positives even for an accurate test, so the positive predictive value is low; for example 50 true positives and 450 false positives give 50/500, or 10 percent.</li>
+  <li><strong>Length-time bias in a program.</strong> Screening catches more slow, favorable conditions, so screened patients look better even if screening changed nothing. A program that finds mostly slow-growing cancers, with screened patients apparently outliving unscreened patients whose cancers were found by symptoms, illustrates length-time bias.</li>
+</ul>
+</section>
+
+<!-- ============ 10 TRIALS ============ -->
+<section class="deck" id="trials">
+<h2 class="deck-title" id="gh-10-research-and-trials">10 &middot; Research &amp; Trials</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 8 &middot; Fletcher ch. 9</p>
+
+<div class="io-box">
+  <h3 id="gh-instructional-objectives-10">Instructional Objectives</h3>
+  <ol>
+    <li>Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness</li>
+    <li>Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research</li>
+    <li>List considerations for treatments or interventions that undergo controlled trials</li>
+    <li>Describe observational studies and the advantages and limitations of this type of study design in medical research</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-trials-io1-testing-ideas">IO 1 &mdash; Testing ideas: coincidence, bias and wishful thinking</h3>
+<p>Decisions about treatment need to avoid resting on <strong>coincidence</strong>, <strong>biased comparisons</strong> and <strong>wishful thinking</strong>. The better basis is <strong>evidence-based information on the relationships between treatments and outcomes</strong>.</p>
+
+<h3 class="sub" id="gh-trials-io1-treatment">IO 1 &mdash; Treatment and treatment hypotheses</h3>
+<p>A <strong>treatment</strong> is an <strong>intervention to improve the course of disease</strong>. It may be applied at <strong>any point in the natural course of disease</strong>, and it may be a medication, surgery, a lifestyle change and so on.</p>
+<p>A <strong>treatment hypothesis</strong> may develop from any of four sources:</p>
+<ul>
+  <li>the <strong>mechanism or etiology</strong> of the disease</li>
+  <li><strong>clinical observation</strong></li>
+  <li><strong>epidemiologic studies</strong></li>
+  <li><strong>trial and error</strong></li>
+</ul>
+<p>However a hypothesis arises, <strong>most require testing</strong> to evaluate their usefulness and outcomes. A plausible mechanism, wide use or a clinician's approval does not replace that testing.</p>
+
+<h3 class="sub" id="gh-trials-io1-comparative">IO 1 &mdash; Comparative effectiveness</h3>
+<p><strong>Comparative effectiveness</strong> is the <strong>direct comparison of two or more interventions</strong> believed to improve outcomes. The comparison identifies any <strong>harms and benefits</strong> and compares the <strong>end results</strong>.</p>
+<p>Treatments can be studied with observational and experimental designs. <strong>Cohort studies</strong> are limited by <strong>systematic differences in the groups other than the treatment factor</strong>. The <strong>randomized controlled trial</strong> is the <strong>gold standard for evaluating treatment efficacy</strong>.</p>
+
+<h3 class="sub" id="gh-trials-io1-sampling">IO 1 &mdash; Sampling</h3>
+<p><strong>Sampling</strong> is the process of <strong>selecting participants</strong> for a study, trying to <strong>represent the larger population</strong>. An entire population is rarely studied, which is why a sample is used. The population has to be defined, and defining it <strong>too wide or too narrow causes problems</strong>.</p>
+<table>
+<tr><th>Method</th><th>What it is</th><th>Points</th></tr>
+<tr><td><strong>Random sampling</strong></td><td>All members of the population have the <strong>same chance</strong> of being selected</td><td>The <strong>best way to get a representative sample</strong>; randomization can be done <strong>manually or by computer</strong></td></tr>
+<tr><td><strong>Stratified sampling</strong></td><td>Subgroups are created to <strong>represent how the groups exist in the population</strong> (by gender, age, education level and so on)</td><td>Can also provide <strong>equal groups that are not equal in the population</strong>, for example by diagnosis or diagnostic category</td></tr>
+<tr><td><strong>Cluster sampling</strong></td><td>Clusters of participants are selected based on <strong>membership in a group</strong></td><td>Examples: <strong>all patients in designated hospital units</strong>, all seniors participating in support groups, all students in designated special education classrooms</td></tr>
+</table>
+<p><em>Mirroring the population.</em> If a clinic population is 60 percent women and a stratified sample of 100 is meant to mirror it, the sample holds 0.60 &times; 100 = 60 women.</p>
+
+<h3 class="sub" id="gh-trials-io1-eligibility">IO 1 &mdash; Inclusion and exclusion criteria</h3>
+<ul>
+  <li><strong>Inclusion criteria</strong> are the <strong>characteristics participants must have</strong>.</li>
+  <li><strong>Exclusion criteria</strong> are the <strong>factors that prevent inclusion</strong>.</li>
+</ul>
+<table>
+<tr><th>Trial of a diabetes drug</th><th>Kind of criterion</th></tr>
+<tr><td>Diagnosis of type II diabetes</td><td>Inclusion</td></tr>
+<tr><td>History of unstable blood glucose levels</td><td>Inclusion</td></tr>
+<tr><td>Comorbidities</td><td>Exclusion</td></tr>
+<tr><td>Contraindication to the treatments under evaluation</td><td>Exclusion</td></tr>
+</table>
+<p>The same logic applies to any drug: having the disease being studied, or poor control of it, is an inclusion criterion, while a <strong>contraindication to the treatment under evaluation</strong> (an allergy to an ingredient, for example) is an exclusion criterion.</p>
+<p><strong>Each additional set of criteria shrinks the eligible pool.</strong> A published chart of patients with chronic obstructive pulmonary disease shows the eligible share falling step by step, as the percentage of all patients still eligible after each set of criteria:</p>
+<table>
+<tr><th>Criteria applied</th><th>Share of all patients still eligible</th></tr>
+<tr><td>All patients</td><td>100%</td></tr>
+<tr><td>Pulmonary function tests not within range</td><td>65.8%</td></tr>
+<tr><td>Other inclusion and exclusion (symptoms, smoking)</td><td>32.9%</td></tr>
+<tr><td>Other aspects of the disease (oxygen, oral steroids)</td><td>28.2%</td></tr>
+<tr><td>Other lung disease (asthma)</td><td>20.0%</td></tr>
+<tr><td>Other medical conditions</td><td>13.2% = <strong>final eligibility</strong></td></tr>
+</table>
+<p>The pool <strong>shrinks with every added set of criteria, sometimes to a small fraction</strong> of all patients with the condition. To work out how many remain, multiply through the steps in sequence. For example, 1,000 patients with 50 percent meeting a first criterion and 40 percent of those meeting a second leave 1,000 &times; 0.5 &times; 0.4 = 200.</p>
+
+<h3 class="sub" id="gh-trials-io1-comparison-groups">IO 1 &mdash; Comparison groups, placebo and the Hawthorne effect</h3>
+<p><strong>Comparison groups are the standard</strong> in trials. They may be treatment versus placebo, treatment versus treatment, or treatment versus non-treatment.</p>
+<ul>
+  <li>A <strong>placebo</strong> is <strong>indistinguishable from the treatment but has no specific mechanism of action</strong>. It <strong>helps blinding</strong>.</li>
+  <li>The <strong>placebo effect</strong> is the <strong>change in condition</strong> experienced by individuals given a placebo <strong>because they expect a change</strong>.</li>
+  <li>The <strong>Hawthorne effect</strong> is the tendency of participants to <strong>change their behavior when given special interest or attention</strong> during a study.</li>
+</ul>
+<div class="pearl"><strong>Two different changes.</strong> Placebo effect = the <em>condition</em> changes because of <em>expectation</em>. Hawthorne effect = <em>behavior</em> changes because of <em>attention</em>.</div>
+
+<h3 class="sub" id="gh-trials-io1-randomization">IO 1 &mdash; Randomization</h3>
+<p><strong>Random sampling and random assignment are different steps.</strong> Sampling picks <em>who enters the study</em> from the population. Assignment picks <em>which group each of those subjects joins</em>. Random assignment is preferred for testing a treatment because it <strong>limits systematic differences between the groups</strong> other than the treatment factor.</p>
+<h4 class="subsub" id="gh-trials-io1-stratified">Stratified randomization</h4>
+<p>In a <strong>stratified randomized</strong> trial the eligible patients are first divided into <strong>strata</strong> (for example strata 1, 2 and 3). <strong>Randomization to treatment or control takes place separately within each stratum</strong>. The final study groups are then formed by combining the treatment patients from every stratum into one group and the control patients into the other.</p>
+
+<h3 class="sub" id="gh-trials-io1-compliance">IO 1 &mdash; Compliance</h3>
+<p><strong>Compliance</strong> is the degree to which participants <strong>act in accordance with instructions</strong> (or patients with medical advice). <strong>Noncompliance is not always intentional</strong>; unintentional causes include <strong>misunderstandings</strong>, <strong>lack of transportation</strong> and <strong>forgetfulness</strong>. Deliberately skipping doses or stopping a drug by choice is intentional noncompliance.</p>
+
+<h3 class="sub" id="gh-trials-io1-blinding">IO 1 &mdash; Blinding</h3>
+<p><strong>Blinding</strong> (also called <strong>masking</strong>) means <strong>making participants unaware of which treatment is being received</strong>.</p>
+<table>
+<tr><th>Term</th><th>Who is unaware</th></tr>
+<tr><td><strong>Single-blind</strong></td><td>The <strong>subjects</strong> are unaware; the <strong>researchers are aware</strong></td></tr>
+<tr><td><strong>Double-blind</strong></td><td>The <strong>researchers and the subjects are both unaware</strong></td></tr>
+<tr><td><strong>Allocation concealment</strong></td><td>The <strong>researchers who assign patients to treatment groups are blinded</strong>, so they cannot steer which group a patient enters</td></tr>
+<tr><td><strong>Open label</strong></td><td><strong>No blinding is done</strong></td></tr>
+</table>
+
+<h3 class="sub" id="gh-trials-io1-efficacy">IO 1 &mdash; Efficacy and effectiveness</h3>
+<table>
+<tr><th></th><th>Efficacy</th><th>Effectiveness</th></tr>
+<tr><td>Circumstances</td><td><strong>Ideal</strong> trial circumstances</td><td><strong>Real, ordinary</strong> circumstances</td></tr>
+<tr><td>Takes into account</td><td>&mdash;</td><td><strong>Compliance, practicality and cost</strong></td></tr>
+</table>
+<p>A drug can therefore have <strong>high efficacy but low effectiveness</strong>: it works when everyone takes every dose under close monitoring, but poorly in clinics where doses are missed.</p>
+<ul>
+  <li><strong>Internal validity</strong> &mdash; the degree to which results are <strong>correct for the sample of patients studied</strong>.</li>
+  <li><strong>Generalizability</strong> &mdash; the degree to which results can be <strong>applied to other settings</strong>.</li>
+</ul>
+
+<h3 class="sub" id="gh-trials-io2-rct-design">IO 2 &mdash; Design of a randomized controlled trial</h3>
+<p>A randomized controlled trial is built in this order:</p>
+<ol>
+  <li>Start with a <strong>research question</strong> about a population.</li>
+  <li>Draw a <strong>sample</strong> of people (subjects) from the population to be in the study.</li>
+  <li><strong>Randomly assign</strong> the subjects to treatment groups.</li>
+  <li><strong>Follow both groups forward in time</strong> and measure the outcome of interest.</li>
+  <li>Calculate the <strong>risk of the outcome</strong> in each of the treatment groups.</li>
+  <li><strong>Compare risk between groups</strong> using the <strong>relative risk</strong>, the <strong>risk difference</strong> or the <strong>hazard ratio</strong>.</li>
+</ol>
+<h4 class="subsub" id="gh-trials-io2-risk-arithmetic">Comparing risk between groups</h4>
+<table>
+<tr><th>Measure</th><th>How it is worked out</th></tr>
+<tr><td><strong>Risk</strong> in a group</td><td>Patients with the outcome &divide; patients in that group (a count of events is not itself a risk)</td></tr>
+<tr><td><strong>Relative risk</strong></td><td>Risk in the treatment group &divide; risk in the comparison group</td></tr>
+<tr><td><strong>Risk difference</strong></td><td>Risk in the comparison group &minus; risk in the treatment group, in percentage points</td></tr>
+</table>
+<p><em>Example (invented numbers).</em> If 15 of 100 treated patients and 30 of 100 comparison patients had the outcome, the risks are 15 percent and 30 percent, the relative risk is 0.15 &divide; 0.30 = <strong>0.5</strong>, and the risk difference is <strong>15 percentage points</strong>.</p>
+
+<h3 class="sub" id="gh-trials-io2-superiority">IO 2 &mdash; Superiority and non-inferiority trials</h3>
+<ul>
+  <li><strong>Superiority trials</strong> determine whether <strong>one treatment is better than another</strong>.</li>
+  <li><strong>Non-inferiority trials</strong> determine whether a <strong>new treatment is unlikely to be less effective</strong> than an established treatment. The new treatment <strong>may be cheaper, safer or easier</strong>.</li>
+  <li>Non-inferiority trials <strong>usually require a larger sample size</strong> than superiority trials, because the differences may be small.</li>
+</ul>
+
+<h3 class="sub" id="gh-trials-io2-limits">IO 2 &mdash; Advantages and limitations of randomized controlled trials</h3>
+<p><strong>Advantage:</strong> random assignment limits systematic differences between groups, which is why the randomized controlled trial is the gold standard for evaluating treatment efficacy.</p>
+<p><strong>Limitations:</strong></p>
+<ul>
+  <li><strong>Confounding may exist in smaller randomized trials</strong>, because chance imbalances between the groups are more likely when few participants are enrolled.</li>
+  <li>They are <strong>expensive</strong>.</li>
+  <li>They raise <strong>logistical issues</strong>: sample selection, randomization, blinding, consistency with all participants, and time.</li>
+</ul>
+
+<h3 class="sub" id="gh-trials-io3-ethics">IO 3 &mdash; Is a trial ethical?</h3>
+<ul>
+  <li><strong>Randomization is ethical only when no conclusive evidence favors one treatment</strong>: there is no reason to believe the treatments under evaluation are unequal. Once conclusive evidence exists that a treatment prevents death, for example, there is no real uncertainty left and assigning patients to placebo would be unethical.</li>
+  <li>The <strong>primary outcome must be benefits, not harms</strong>.</li>
+  <li>Participants <strong>must give consent</strong>.</li>
+  <li>If there is <strong>evidence of harm, futility or effectiveness, the study is ended</strong>.</li>
+</ul>
+
+<h3 class="sub" id="gh-trials-io3-bias">IO 3 &mdash; Methodological issues and possible bias</h3>
+<p>Five issues can bias a controlled trial:</p>
+<ul>
+  <li><strong>Participants without the disease in question</strong> being enrolled.</li>
+  <li><strong>Compliance</strong> problems.</li>
+  <li><strong>Cross-over</strong>: <strong>switching from one randomly assigned treatment to another</strong>, so participants no longer stay in the group to which they were assigned.</li>
+  <li><strong>Unacknowledged co-interventions</strong>: <strong>an extra treatment that goes unrecorded</strong> and can affect the outcome.</li>
+  <li>The <strong>assessment of the outcome</strong> may be biased.</li>
+</ul>
+<p>Even with blinding it may be possible to determine the treatment group, because <strong>side effects</strong> (and similar clues) can reveal it. Biased assessment of outcomes is avoided by using <strong>specific objective criteria and blinding</strong>.</p>
+<h4 class="subsub" id="gh-trials-io3-four-outcomes">The four possible outcomes of a study</h4>
+<table>
+<tr><th>Conclusion &darr; / Reality &rarr;</th><th>Treatments are NOT different</th><th>Treatments ARE different</th></tr>
+<tr><td><strong>Study concludes not different</strong></td><td>Correct</td><td><strong>ERROR</strong> &mdash; a real difference was missed</td></tr>
+<tr><td><strong>Study concludes different</strong></td><td><strong>ERROR</strong> &mdash; a difference was found that does not exist</td><td>Correct</td></tr>
+</table>
+<p>Two of the four pairings are correct and <strong>two are errors</strong>. A conclusion is correct only when it matches reality; blinding does not turn a wrong conclusion into a correct one.</p>
+
+<h3 class="sub" id="gh-trials-io3-n-of-1">IO 3 &mdash; Trials of N = 1 (single subject design)</h3>
+<p>A <strong>rare type of clinical trial</strong> in which <strong>one patient is given one treatment at a time</strong>. The <strong>provider and the patient are blinded</strong> to which treatment is given when, and the outcomes are assessed.</p>
+
+<h3 class="sub" id="gh-trials-io3-phases">IO 3 &mdash; Phases of clinical trials</h3>
+<table>
+<tr><th>Phase</th><th>Size and design</th><th>Aim</th></tr>
+<tr><td><strong>Phase I</strong></td><td>Small number of participants; <strong>no control group</strong></td><td>Identify a <strong>safe, tolerated dose</strong></td></tr>
+<tr><td><strong>Phase II</strong></td><td>Small number of participants</td><td>Identify a <strong>preliminary effect</strong> and any <strong>relationship to dose</strong></td></tr>
+<tr><td><strong>Phase III</strong></td><td><strong>Larger</strong> number of participants than phases I and II; <strong>randomized</strong>; often published</td><td>Identify <strong>definitive evidence of effect</strong> and some common side effects; it <strong>does not usually identify uncommon side effects</strong></td></tr>
+<tr><td><strong>Postmarketing surveillance</strong></td><td>Following <strong>large numbers of patients after the drug is released</strong></td><td>Helps identify <strong>more uncommon side effects</strong></td></tr>
+</table>
+<p>A side effect that occurs in about 1 in 20,000 patients is far too rare to show up in the small numbers of phases I and II or usually even in phase III; it is postmarketing surveillance of large numbers that detects it.</p>
+
+<h3 class="sub" id="gh-trials-io3-appraising">IO 3 &mdash; Evaluating a treatment study</h3>
+<ol>
+  <li>Is it a <strong>controlled trial with random assignment</strong>?</li>
+  <li>Are the <strong>study patients similar to yours</strong>? (This tells you whether the results apply to your patient.)</li>
+  <li>Was there <strong>complete follow-up</strong>? Look at <strong>best- and worst-case scenarios for dropouts</strong>.</li>
+  <li>Was <strong>blinding</strong> used?</li>
+  <li>Are the <strong>intervention and control groups similar</strong>?</li>
+  <li>Is there <strong>clinical significance as well as statistical significance</strong>?</li>
+  <li>Are <strong>other factors affecting the outcome</strong> considered?</li>
+</ol>
+<p><strong>Best- and worst-case scenarios for dropouts.</strong> The analysis assumes the best and worst possible outcomes for the patients lost to follow-up and checks whether the study&rsquo;s conclusion would change. It shows whether the conclusions survive the lost patients.</p>
+<p><em>Example (invented numbers).</em> In a treated group of 100 patients, 12 were lost and 25 of the 88 who finished had the outcome. If every lost patient is assumed to have had the outcome, the treated group&rsquo;s risk is (25 + 12) &divide; 100 = <strong>37 percent</strong>, not 25 &divide; 88 = 28 percent.</p>
+<div class="pearl"><strong>Clinical versus statistical significance.</strong> A difference can be statistically significant yet too small to matter to patients, so ask about clinical significance as well.</div>
+
+<h3 class="sub" id="gh-trials-io4-observational">IO 4 &mdash; Observational studies: advantages and limitations</h3>
+<p>Observational studies of treatment <strong>collect information on patients currently being treated for a disorder</strong>, instead of assigning the treatment.</p>
+<ul>
+  <li><strong>Advantage:</strong> they include <strong>real-world patients</strong>, which brings both a benefit and drawbacks.</li>
+  <li><strong>Limitation:</strong> it is <strong>difficult to avoid confounding and effect modification</strong>.</li>
+  <li>Their findings <strong>often agree with the findings of randomized controlled trials, but can be dramatically different</strong>.</li>
+  <li>It is <strong>difficult to draw conclusions from uncontrolled trials</strong>, because there is nothing to compare the treated patients against.</li>
+</ul>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td><strong>Confounding</strong></td><td>An <strong>additional independent factor related to both the exposure and the outcome</strong></td></tr>
+<tr><td><strong>Effect modification</strong></td><td>The <strong>presence or absence of a variable changes the effect of the exposure</strong></td></tr>
+</table>
+<div class="pearl"><strong>Confounding in practice.</strong> If sicker patients are given a drug more often and also die more often, severity of illness is related to both the exposure (the drug) and the outcome (death). That is confounding, not effect modification.</div>
+
+<h3 class="sub" id="gh-trials-facts-at-a-glance">Definitions and formulas</h3>
+<ul>
+  <li><strong>Efficacy.</strong> Efficacy is concerned with results under ideal trial circumstances, whereas effectiveness reflects ordinary, real circumstances.</li>
+  <li><strong>Compliance.</strong> Compliance is the degree to which participants act in accordance with instructions, or patients with medical advice.</li>
+  <li><strong>Unintentional noncompliance.</strong> Noncompliance is not always intentional: misunderstandings, lack of transportation to visits and forgetfulness are unintentional causes.</li>
+  <li><strong>Sources of treatment hypotheses.</strong> Treatment hypotheses come from the mechanism or etiology of the disease, clinical observation, epidemiologic studies, and trial and error.</li>
+  <li><strong>Consent.</strong> Participants must give consent to take part in a trial; consent is one of the conditions for an ethical trial, alongside genuine uncertainty about which treatment is better.</li>
+  <li><strong>Basis of treatment decisions.</strong> Treatment decisions should rest on evidence about the relationship between a treatment and its outcomes, rather than on coincidence, biased comparisons and wishful thinking.</li>
+  <li><strong>Limitations of randomized controlled trials.</strong> They are expensive, and they raise logistical issues in sample selection, randomization, blinding and consistency across participants and time.</li>
+  <li><strong>Risk in a group.</strong> Risk = number of patients with the outcome &divide; number of patients in the group. For example, 30 of 200 is 0.15, or 15 percent.</li>
+  <li><strong>Relative risk.</strong> Relative risk = risk in the treated group &divide; risk in the comparison group. For example, risks of 0.05 and 0.20 give a relative risk of 0.25.</li>
+  <li><strong>Risk difference.</strong> Risk difference = risk in the comparison group &minus; risk in the treated group, in percentage points. For example, risks of 30 percent and 18 percent give a difference of 12 percentage points.</li>
+  <li><strong>Eligibility criteria shrink the pool.</strong> Each eligibility criterion removes patients, so the pool shrinks step by step: multiply the number screened by the proportion meeting each criterion in turn. For example, 1,000 screened, with 50 percent meeting the first criterion and 40 percent of those meeting the second, leaves 200.</li>
+</ul>
+</section>
+
+<!-- ============ 11 STATISTICS ============ -->
+<section class="deck" id="stats">
+<h2 class="deck-title" id="gh-11-statistics-correlation-and-causation">11 &middot; Statistics, Correlation &amp; Causation</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 9 &middot; Fletcher ch. 11-12</p>
+
+<div class="io-box">
+  <h3 id="gh-instructional-objectives-11">Instructional Objectives</h3>
+  <ol>
+    <li>Explain the following statistical concepts: Significance, P value, Null hypothesis, Confidence interval, Statistical power, Multiple comparisons, Multivariable modeling</li>
+    <li>Compare and contrast statistical significance and clinical importance</li>
+    <li>Define criteria to determine causation</li>
+    <li>Discuss the impact of study design on the ability to determine causation</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-stats-probability">Objective 1 &mdash; Review of probability</h3>
+<p><strong>Probability</strong> is the likelihood that any one event will occur, given all the possible outcomes. The probability (P) that an event (E) will occur is estimated by:</p>
+<div class="callout"><strong>P (E) = number of times E occurs &divide; number of times E can occur</strong></div>
+<p>The denominator is <em>every</em> opportunity for the event, including the ones where it occurred. Dividing by the number of times the event does <em>not</em> occur gives the <em>odds</em>, which is a different quantity, and inverting the fraction gives a value above one, which cannot be a probability.</p>
+<ul>
+  <li>Probability must lie <strong>between 0 and 1</strong>. A value of <strong>0</strong> means the event cannot occur; a value of <strong>1</strong> means it will definitely occur.</li>
+  <li>A value of <strong>0.5</strong> means an equal probability of occurring or not occurring, so the event is as likely to occur as not.</li>
+  <li>The <strong>sum of all probabilities of all events in the sample must equal 1</strong>. So the probability that an event does <em>not</em> occur is 1 minus the probability that it does: if the probability of having a condition is 0.35, the probability of not having it is 0.65.</li>
+  <li>Counting works the same way: if 36 of 240 patients in a clinic have a condition, the probability that a randomly chosen patient has it is 36 &divide; 240 = 0.15, and the probability of not having it is 204 &divide; 240 = 0.85.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-significance-and-p-value">Objective 1 &mdash; Significance and the p value</h3>
+<p>Two kinds of significance matter when reading a study: <strong>statistical significance</strong> and <strong>clinical significance</strong>.</p>
+<p><strong>Statistical significance</strong> describes how likely it is for the result to have happened by chance, so it describes how unlikely chance is as the explanation. <strong>More statistically significant = less likely to be chance. Less statistically significant = more likely to be chance.</strong> It does not describe how much the treatment helps an individual patient, how carefully the study was designed, or whether the result would change practice.</p>
+<p>The <strong>p value</strong> is the probability of an observed difference happening by chance. Read precisely, it is calculated on the assumption that no true difference exists: it is the probability of a difference at least this large arising by chance alone. It is <strong>not</strong> the probability that the null hypothesis is true, not the probability that the treatment truly works, not the proportion of patients who respond, not the size of the difference between groups (the effect size), and not the probability that the study is biased. Bias is systematic error, and a p value addresses random chance only.</p>
+<table>
+<tr><th>p value</th><th>Chance of a result this extreme</th><th>How it is generally described</th></tr>
+<tr><td>0.5</td><td>50/50</td><td>Chance is as likely as not</td></tr>
+<tr><td>0.05</td><td>1/20</td><td>Values <strong>less than 0.05</strong> are generally accepted to be statistically significant</td></tr>
+<tr><td>0.01</td><td>1/100</td><td>Generally accepted to indicate <strong>highly significant</strong></td></tr>
+<tr><td>0.001</td><td>1/1000</td><td>Generally accepted to indicate <strong>very highly significant</strong></td></tr>
+</table>
+<div class="pearl"><strong>0.05 is an arbitrary number.</strong> It is a convention, not a law of probability theory, not a proof of clinical benefit and not a limit set by regulators; nothing changes in the data between a p value of 0.049 and 0.051.</div>
+<ul>
+  <li><strong>Reading a p value of 0.03</strong> (new drug against placebo): 0.03 is below 0.05, so the difference is statistically significant. It does not mean there is a 3 percent chance the drug does not work, and it does not mean the drug works in 97 percent of patients. Statistical significance also does not imply that the difference is large enough to change practice.</li>
+  <li><strong>Reading a p value of 0.20</strong>: 0.20 is above 0.05, so the result is not statistically significant and chance remains a reasonable explanation. It does not show that the treatment has no effect (the study may lack power, see below), it is not the proportion of patients who improved, and it is nowhere near very highly significant.</li>
+  <li>A lower p value shows only that chance is less likely as an explanation. It does not show that the difference is larger or more important.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-null-hypothesis">Objective 1 &mdash; The null hypothesis</h3>
+<p>The <strong>null hypothesis</strong> is the hypothesis that there is <strong>no difference</strong>. It is usually the opposite of what the researchers are interested in finding, and it is used in statistical analysis: the test asks how well the data fit it. The hypothesis that a difference is present is the alternative to the null hypothesis. The null hypothesis is not a statement about bias or about whether the sample is representative.</p>
+<ul>
+  <li><strong>Example.</strong> Researchers hope to show that a new drug lowers blood pressure more than placebo. The null hypothesis is that the drug and placebo lower pressure equally. Drug better than placebo is the researchers' hoped-for alternative, and placebo better than drug states a difference in the wrong direction.</li>
+  <li>If there is not evidence to support the null hypothesis, there is <strong>more support for a difference being present</strong>. Evidence against the null hypothesis, which states no difference, is what lends support to a difference. Identical groups is what the null hypothesis itself states, so weak support for it points away from that idea.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-type-i-and-ii-error">Objective 1 &mdash; Type I and type II error (four possible statistical conclusions)</h3>
+<table>
+<tr><th rowspan="2">Conclusion of the statistical test</th><th colspan="2">True difference</th></tr>
+<tr><th>Present</th><th>Absent</th></tr>
+<tr><td><strong>Significant</strong></td><td>Correct</td><td><strong>Type I (&alpha;) error</strong></td></tr>
+<tr><td><strong>Not significant</strong></td><td><strong>Type II (&beta;) error</strong></td><td>Correct</td></tr>
+</table>
+<ul>
+  <li><strong>Type I error (&alpha; error, also called an alpha error) = false POSITIVE</strong> &mdash; stating there is a difference, or concluding that a relationship exists, when there is not. Most medical research is concerned with the possibility of type I error, which is expressed by the p value (judged against the chosen threshold, usually 0.05).</li>
+  <li><strong>Type II error (&beta; error, also called a beta error) = false NEGATIVE</strong> &mdash; stating there is no difference, or concluding that no relationship exists, when there is one. The real difference is missed and the statistic appears not to be significant. (The precise wording is that the test failed to detect a real difference.)</li>
+  <li>Type II error sometimes occurs as a result of <strong>study limitations</strong>, such as <strong>length of follow-up</strong> and <strong>subject compliance</strong>: too brief a follow-up, or subjects not adhering to treatment, can hide a real difference. A p value below 0.001 is a significant result, so it cannot be the cause of a false negative, and random assignment and blinding are strengths of design rather than causes of type II error.</li>
+  <li><strong>When no true difference exists</strong>, the correct conclusion is that the result is <strong>not significant</strong>. A significant result would be a type I error, the null hypothesis is true in that case (it should not be rejected), and power is defined only for the case where a difference does exist.</li>
+  <li><strong>Examples.</strong> A trial concludes that a supplement lowers cholesterol but in truth it has no effect: type I error (a false positive). A short trial finds no significant benefit from a drug that truly works: type II error (a false negative). Measuring the outcome incorrectly is measurement bias and choosing the wrong test is a different problem; neither is what defines type I or type II error.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-tests">Objective 1 &mdash; Common statistical tests</h3>
+<table>
+<tr><th>Test</th><th>When used</th></tr>
+<tr><th colspan="2">To test the statistical significance of a difference</th></tr>
+<tr><td>Chi square</td><td>Between two or more proportions (when there is a large number of observations)</td></tr>
+<tr><td>Fisher exact</td><td>Between two proportions (when there is a small number of observations)</td></tr>
+<tr><td>Mann-Whitney U</td><td>Between two medians</td></tr>
+<tr><td>Student t</td><td>Between two means</td></tr>
+<tr><td>F test</td><td>Between two or more means</td></tr>
+<tr><th colspan="2">To describe the extent of association</th></tr>
+<tr><td>Regression coefficient</td><td>Between an independent (predictor) variable and a dependent (outcome) variable</td></tr>
+<tr><td>Pearson's r</td><td>Between two variables</td></tr>
+<tr><th colspan="2">To model the effects of multiple variables</th></tr>
+<tr><td>Logistic regression</td><td>With a dichotomous outcome</td></tr>
+<tr><td>Cox proportional hazards</td><td>With a time-to-event outcome</td></tr>
+<tr><td>Propensity score</td><td>Select matching controls</td></tr>
+</table>
+<p>Means are averages of continuous values, medians are middle values, and proportions are shares of a group. The Fisher exact test takes over from the chi-square test when the number of observations is small.</p>
+
+<h3 class="sub" id="gh-stats-confidence-intervals">Objective 1 &mdash; Confidence intervals</h3>
+<p>A confidence interval expresses <strong>statistical precision</strong>. It is a range of scores with boundaries, or <strong>confidence limits</strong>, that should contain the true value. A <strong>95% confidence interval</strong> means that there is a 95% chance that the confidence interval contains the true value; put another way, if the study were repeated many times, about 95 percent of such intervals would contain the true value.</p>
+<ul>
+  <li>A <strong>narrow</strong> interval means greater statistical precision; a <strong>wide</strong> interval means a less precise one. Two studies can report the same point estimate with different precision: a relative risk of 0.6 with an interval of 0.5 to 0.7 is more precise than the same 0.6 with an interval of 0.2 to 1.8.</li>
+  <li>An interval is <strong>not</strong> the range that holds 95 percent of patients' individual values, it is not a range for the p value, it does not measure or correct bias (an interval can be narrow and still be wrong if the study is biased), and it is not the same as clinical importance or statistical power.</li>
+</ul>
+<h4 class="subsub" id="gh-stats-reading-an-interval">Reading an interval around a relative risk or a difference</h4>
+<p>For a <strong>relative risk</strong>, 1 means no difference, and values below 1 mean the risk is lower in the treated or exposed group. In a plot of relative risk the outcomes with intervals lying entirely on one side of 1 are statistically significant, and an interval that spans 1 is not. For a <strong>difference</strong> (for example in mean weight loss) the value of no effect is <strong>0</strong>.</p>
+<table>
+<tr><th>Result</th><th>Reading</th></tr>
+<tr><td>Relative risk 0.70, 95% confidence interval 0.55 to 0.90</td><td>Whole interval below 1: a <strong>statistically significant reduction</strong> in risk</td></tr>
+<tr><td>Relative risk 1.2, 95% confidence interval 0.8 to 1.8</td><td>Interval contains 1: <strong>no statistically significant difference</strong>. The point estimate suggests a 20 percent increase, but an increase is not established because the interval runs from below 1 to well above it, which also makes the estimate imprecise</td></tr>
+<tr><td>Difference in weight loss, 95% confidence interval 1.0 to 3.5 kilograms</td><td>Interval entirely above 0: statistically significant</td></tr>
+<tr><td>Difference in weight loss, 95% confidence interval -0.5 to 3.0 kilograms (or -2.0 to 1.5, or -1.5 to 0.5)</td><td>Interval contains 0: not statistically significant</td></tr>
+</table>
+<p>A 95% confidence interval that excludes the value of no effect corresponds to a p value below 0.05 for the same comparison, and an interval that contains it corresponds to a p value above 0.05. The interval adds what the p value alone cannot: the range of plausible effect sizes.</p>
+<p><strong>Worked graph (systematic review of corticosteroids for pneumonia).</strong> Each outcome is drawn as a point (the relative risk) with a line (its confidence interval) on a scale from 0 to 2, with 1 as the line of no effect. Mortality and mechanical ventilation lie to the left of 1 with intervals that do not reach 1 (corticosteroids benefit). Hyperglycemia lies to the right of 1 with an interval that does not reach 1 (corticosteroids harm). Gastrointestinal bleed has a point just under 1 and a very wide interval that crosses 1, so it is imprecise and not significant.</p>
+
+<h3 class="sub" id="gh-stats-power">Objective 1 &mdash; Statistical power</h3>
+<p><strong>Statistical power</strong> is the probability that a study will find a statistically significant difference when the difference really exists. It is calculated in terms of type II error:</p>
+<div class="callout"><strong>Statistical power = 1 &minus; P<sub>&beta;</sub></strong>, where P<sub>&beta;</sub> is the probability of a type II (&beta;) error.</div>
+<ul>
+  <li>Statistical power is <strong>high</strong> when studies have a high probability of detecting true differences. Power is the complement of the type II error probability, not the type I error probability, not the p value, not the size of the difference and not the chance that the null hypothesis is true.</li>
+  <li><strong>Calculation.</strong> A study with a 20 percent (0.20) chance of a type II error has power 1 &minus; 0.20 = 0.80, or 80 percent. A study with power 0.90 has a type II error probability of 1 &minus; 0.90 = 0.10. Ninety-five percent is the level used for confidence intervals and 5 percent (0.05) is the usual threshold for type I error; neither is derived from the type II error probability.</li>
+  <li><strong>Low power</strong> means a high probability of type II error, so a real difference is likely to be missed. A small trial of a drug that truly works can therefore report a non-significant p value (for example 0.30) simply because it had too little power. A non-significant result does not prove there is no effect and does not prove the null hypothesis true; it fails to reject it. That is a type II error, not a type I error.</li>
+  <li>Larger samples give more power, which is why pooling data across studies in a meta-analysis usually helps.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-multiple-comparisons">Objective 1 &mdash; Multiple comparisons</h3>
+<p>The strength of statistical tests depends on the <strong>number of research questions</strong> in a study and <strong>how focused</strong> those questions are. It is not always possible to know how many comparisons were made. <strong>Selecting more interesting comparisons after the analysis is complete can distort the data.</strong> When many comparisons are made in one study, some may look significant by chance alone; more comparisons do not make any p value more accurate, do not make type II error impossible and do not narrow confidence intervals.</p>
+<ul>
+  <li><strong>Expected chance findings.</strong> A p value of 0.05 corresponds to a chance of 1 in 20. If a study makes 60 comparisons and none reflects a true difference, about 60 &divide; 20 = 3 will appear significant by chance. At a p value of 0.01 (1 in 100), 200 comparisons with no true difference give about 200 &divide; 100 = 2 chance findings. Using the 0.05 threshold instead of 0.01 would predict 10, which is the wrong rate.</li>
+</ul>
+<table>
+<tr><th colspan="2">How multiple comparisons can be misleading (Fletcher Table 11.3)</th></tr>
+<tr><td>1</td><td>Make multiple comparisons within a study</td></tr>
+<tr><td>2</td><td>Apply tests of statistical significance to each comparison</td></tr>
+<tr><td>3</td><td>Find a few comparisons that are &ldquo;interesting&rdquo; (statistically significant)</td></tr>
+<tr><td>4</td><td>Build an article around one of these interesting findings</td></tr>
+<tr><td>5</td><td>Do not mention the context of the individual comparison (how many questions were examined and which question was considered primary before the data were examined)</td></tr>
+<tr><td>6</td><td>Construct a post hoc argument for the plausibility of the isolated finding</td></tr>
+</table>
+<p>The practice that misleads is picking interesting results after analysis and hiding how many were examined. Naming the primary question beforehand, reporting every comparison that was made, and limiting the study to a few focused questions all protect against the distortion.</p>
+
+<h3 class="sub" id="gh-stats-multivariable-modeling">Objective 1 &mdash; Multivariable modeling</h3>
+<p>Multivariable modeling examines the <strong>effect of two or more variables together</strong>, as opposed to a single variable in isolation. It is a mathematical construct (an equation), and it is used in two ways:</p>
+<ul>
+  <li>To look at the effect of <strong>one variable on the outcome while taking the effect of other variables into account</strong> (confounding or effect modifiers), which allows one variable's effect to be isolated.</li>
+  <li>To look at the <strong>combined effect of multiple variables acting together</strong> to predict a clinical event.</li>
+</ul>
+<h4 class="subsub" id="gh-stats-modeling-process">Process</h4>
+<ol>
+  <li><strong>Identify variables related to the outcome</strong> (confounding, effect modifiers).</li>
+  <li><strong>Select variables for inclusion</strong>: consider those with the strongest association with the outcome first (not those least associated, easiest to measure or with the most missing data).</li>
+  <li><strong>Identify assumptions.</strong> They commonly involve probability distributions, with underlying assumptions such as normality, homoscedasticity and independence of errors.</li>
+  <li><strong>Create the model.</strong></li>
+</ol>
+<h4 class="subsub" id="gh-stats-modeling-limitations">Limitations</h4>
+<ul>
+  <li><strong>Validity is based on assumptions about the data</strong>: a model is valid only if its assumptions hold. The number of patients recruited affects precision and power, and adding more variables or requiring every variable to be significant does not secure validity.</li>
+  <li><strong>Poor at identifying effect modification.</strong> (Taking confounders into account is what a model is designed to do.)</li>
+  <li><strong>May omit rare variables</strong> with a strong relationship with the outcome.</li>
+  <li>A model cannot prove that the outcome is caused by a variable, cannot remove random error (which is estimated statistically and never eliminated) and does not replace the need for a comparison group.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-clinical-importance">Objective 2 &mdash; Statistical significance versus clinical importance</h3>
+<p>Statistical significance asks how likely chance is as an explanation; <strong>clinical significance (importance)</strong> asks whether the difference is relevant to practice and to patients. A short contrast: <strong>chance versus relevance to patients</strong>. (Random error versus systematic error, precision versus accuracy, and validity versus reliability are different pairs and do not contrast the two kinds of significance.)</p>
+<ul>
+  <li><strong>Statistical significance does not imply clinical significance.</strong> Differences can be present with a p value below 0.0001 and still not have any relevance to clinical practice. So a very small p value tells you nothing about relevance: it does not make a difference relevant, and it does not make it irrelevant either.</li>
+  <li><strong>Larger differences tend to be more clinically significant, but small differences can still be statistically significant</strong> (especially in very large samples). A lower p value is not the same as a larger difference, and sample size affects statistical significance and precision rather than how much a difference matters clinically.</li>
+  <li>The reverse also happens: an important difference can fail to reach statistical significance, for example in a small study with low power.</li>
+  <li><strong>Question test.</strong> &ldquo;Would it matter to the patient?&rdquo; is a clinical question. &ldquo;Is the p value below 0.05?&rdquo;, &ldquo;Does the interval exclude no effect?&rdquo; and &ldquo;Was the null hypothesis rejected?&rdquo; are all statistical questions.</li>
+</ul>
+<table>
+<tr><th>Situation</th><th>Interpretation</th></tr>
+<tr><td>40,000 patients; systolic blood pressure lowered by 1 millimeter of mercury; p value below 0.0001</td><td>Statistically significant but of doubtful clinical importance: a fall this small is unlikely to matter to patients</td></tr>
+<tr><td>Small trial; 30 percent lower death rate; p value 0.12</td><td>Possibly important but not statistically significant; 0.12 does not reach 0.05, and a small study may simply lack power, so it does not prove the treatment has no effect</td></tr>
+</table>
+
+<h3 class="sub" id="gh-stats-types-of-cause">Objective 3 &mdash; The study of causation and the types of cause</h3>
+<p><strong>Causality exists if a factor produces or contributes to the production of a specified outcome.</strong> It is not the same as association (any factor associated with an outcome), nor as merely occurring before an outcome, nor as having a significant p value.</p>
+<ul>
+  <li><strong>Single causes, multiple causes, and the web of causation</strong> (many factors acting together).</li>
+  <li><strong>Koch's postulates</strong> for infectious disease are the example of a <strong>single cause</strong>: the organism must be present in every case of disease; must be isolated and grown in pure culture; must cause a specific disease; and must be recovered from an inoculated animal and be identified.</li>
+</ul>
+<table>
+<tr><th>Type of causal relationship</th><th>Definition</th></tr>
+<tr><td><strong>Sufficient cause</strong></td><td>Precedes the disease and, <strong>if present, the disease always occurs</strong> (it guarantees the disease whenever present)</td></tr>
+<tr><td><strong>Necessary cause</strong></td><td>Precedes the disease and, <strong>if absent, the disease cannot occur</strong>. If the cause is present, disease may or may not occur (necessary but not sufficient)</td></tr>
+<tr><td><strong>Risk factor</strong></td><td>Increases the probability of a disease in a group of persons who have the factor; <strong>neither sufficient nor necessary</strong>. It makes disease more likely without guaranteeing it, and disease can still occur without it</td></tr>
+<tr><td><strong>Direct causality</strong></td><td>The factor under consideration exerts its effects without intermediate factors</td></tr>
+<tr><td><strong>Indirect causality</strong></td><td>One factor influences one or more other factors (<strong>intervening variables</strong>) that are in turn directly causal. Example: cardiovascular disease associated with obesity is in part due to the higher blood pressure and higher levels of cholesterol and glucose that often occur with obesity. Likewise, poverty raises tuberculosis risk partly through crowded housing and malnutrition. Intervening variables lie on the pathway between the cause and the outcome, unlike a confounder, which is a separate factor associated with both exposure and outcome</td></tr>
+<tr><td><strong>Non-causal association</strong></td><td>The relationship between the two variables is statistically significant, but no causal relationship exists (the temporal relationship may be incorrect, and a shared factor such as summer weather can drive both). Example: ice cream sales and drowning deaths both rise in summer and the link is statistically significant, yet neither causes the other</td></tr>
+</table>
+<p><strong>Applying the definitions.</strong> If disease X never occurs without exposure Y but many exposed people stay healthy, Y is a <strong>necessary but not sufficient</strong> cause. Y would have to always produce disease when present to be sufficient.</p>
+<h4 class="subsub" id="gh-stats-association-to-cause">From association to cause</h4>
+<p>Before concluding that a statistical association is causal, three alternative explanations must be excluded, taken in this order: <strong>bias in selection or measurement</strong> first, then <strong>chance</strong>, then <strong>confounding</strong>. If bias is likely, or chance is likely, or confounding is present, the association is not causal; only when none of them explains it is a cause likely. (Dose-response, reversibility, specificity, temporality, strength and analogy are criteria that support cause, not alternative explanations to be excluded, and precision, power and validity are properties of a study.) It is not possible to prove a causal relationship beyond all doubt; what is possible is to increase the evidence.</p>
+
+<h3 class="sub" id="gh-stats-criteria-for-causation">Objective 3 &mdash; Criteria for causality</h3>
+<table>
+<tr><th>Criterion</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><strong>Temporality</strong></td><td>The cause precedes the effect</td><td>Exposure comes before the disease appears</td></tr>
+<tr><td><strong>Strength of the association</strong></td><td>Judged by the size of the relative risk: a large relative risk is a strong association (it is not judged by how many studies report it, by whether a mechanism is known, or by whether exposure can be reversed)</td><td>A very high relative risk</td></tr>
+<tr><td><strong>Dose-response</strong></td><td>Larger exposure &rarr; higher rate of disease</td><td>Lung cancer rates rise with the number of cigarettes smoked each day</td></tr>
+<tr><td><strong>Reversibility</strong></td><td>Decreased exposure &rarr; less disease</td><td>Lung cancer risk falls in people who stop smoking</td></tr>
+<tr><td><strong>Consistency</strong></td><td>Findings are replicable in other studies</td><td>Several studies in different populations find the same association</td></tr>
+<tr><td><strong>Biologically plausible</strong></td><td>Makes sense biologically</td><td>A known mechanism explains how the exposure could injure tissue</td></tr>
+<tr><td><strong>Specificity</strong></td><td>One cause leads to one effect. It is a demanding criterion, because a single exposure often produces several effects and a cause need not be specific to be real</td><td>&mdash;</td></tr>
+<tr><td><strong>Analogy</strong></td><td>Similar cause and effect pattern for a similar exposure and disease</td><td>A newly studied virus produces a disease pattern like that of a well-established similar virus</td></tr>
+</table>
+<div class="pearl"><strong>The more criteria that are met for causation, the stronger the case.</strong> Meeting many criteria strengthens the association, but no set of criteria proves cause with certainty. The independent variable causes the dependent variable.</div>
+<h4 class="subsub" id="gh-stats-criteria-example">The criteria applied: Helicobacter pylori and duodenal ulcer</h4>
+<ul>
+  <li><strong>Temporal:</strong> <em>Helicobacter pylori</em> is linked to chronic gastritis, which is associated with the development of duodenal ulcer.</li>
+  <li><strong>Strength:</strong> <em>H. pylori</em> is found in 90% of patients with duodenal ulcer. <strong>Dose-response:</strong> its concentration is higher in the mucosa of patients with duodenal ulcer than in ulcer-free patients.</li>
+  <li><strong>Replication:</strong> the observations have been repeatedly replicated. <strong>Biologic plausibility:</strong> there are binding sites for <em>H. pylori</em> on antral cells, and it can follow these cells into the duodenum.</li>
+  <li><strong>Alternative explanations:</strong> smoking increases risk but is not a risk factor in patients without <em>H. pylori</em>. <strong>Cessation of exposure:</strong> eradication of <em>H. pylori</em> results in healed ulcers.</li>
+  <li><strong>Specificity:</strong> prevalence in patients with duodenal ulcer is 90-100%, but the organism is also found in some asymptomatic patients and those with gastric ulcers, so specificity is only partly met.</li>
+  <li><strong>Consistency with other knowledge:</strong> prevalence is the same in men as in women, and duodenal ulcer prevalence peaked in the late 19th century when <em>H. pylori</em> was more prevalent because of poor living conditions.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-pitfalls">Objective 3 &mdash; Pitfalls in causal research</h3>
+<table>
+<tr><th>Pitfall</th><th>What it is</th></tr>
+<tr><td><strong>Measurement bias</strong></td><td>Possible operator error, calibration problems and the like</td></tr>
+<tr><td><strong>Recall bias</strong></td><td>Difficulty remembering: participants' difficulty in recalling past exposures distorts the reported exposure or history</td></tr>
+<tr><td><strong>Selection bias</strong></td><td>How people get into the study, such as poor randomization</td></tr>
+<tr><td><strong>Random error</strong></td><td>Occurs by chance and is <strong>accounted for through the p values</strong> used in the study. It is not handled by blinding, matching cases with controls, or excluding older participants: blinding protects against performance and measurement bias, and matching addresses confounding</td></tr>
+<tr><td><strong>Confounding</strong></td><td>A covariate whose effect cannot be separated from the variable studied</td></tr>
+<tr><td><strong>Effect modification</strong></td><td>The effect of an exposure differs according to another variable; a multivariable model is poor at identifying it</td></tr>
+</table>
+
+<h3 class="sub" id="gh-stats-design-and-causation">Objective 4 &mdash; The impact of study design on determining causation</h3>
+<p>Evidence for or against cause depends both on the <strong>design</strong> of the study and on the <strong>findings</strong>. The hierarchy of designs for causal evidence runs from strongest to weakest:</p>
+<ol>
+  <li>Systematic review</li>
+  <li>Randomized controlled trial</li>
+  <li>Multiple time series</li>
+  <li>Non-randomized trial</li>
+  <li>Cohort</li>
+  <li>Case-control</li>
+  <li>Time series</li>
+  <li>Cross-sectional</li>
+  <li>Case series</li>
+  <li>Case report (the weakest, at the bottom of the hierarchy)</li>
+</ol>
+<table>
+<tr><th>Findings that argue FOR a causal relationship</th><th>Findings that argue AGAINST a causal relationship</th></tr>
+<tr><td>Temporal sequence &middot; small effect &middot; specificity &middot; analogy &middot; biologic plausibility &middot; consistency &middot; large effect &middot; dose-response &middot; reversibility</td><td>Incorrect temporal sequence (the disease appears before the exposure) &middot; no effect &middot; not biologically plausible &middot; no analogy &middot; no dose-response &middot; not reversible &middot; not specific</td></tr>
+</table>
+<ul>
+  <li>The <strong>randomized controlled trial</strong> gives the strongest single-study evidence for causation (systematic reviews, which pool trials, sit at the very top with it). <strong>Random assignment balances confounders between the groups</strong> (it spreads them evenly), which is why it strengthens causal conclusions; it does not remove random error (still accounted for through p values), does not guarantee a significant result and does not make measurements more reliable.</li>
+  <li>A <strong>cohort study</strong> ranks above a <strong>case-control study</strong>, which looks backward from the outcome. Cross-sectional studies, case series and a case report rank below it; a case series describes patients without a comparison group.</li>
+  <li>A <strong>cross-sectional study</strong> is weak evidence for causation because exposure and outcome are measured together at a single point in time, so it cannot show which came first; the temporal sequence, an essential criterion for cause, cannot be established. It can still detect an association and does measure the outcome.</li>
+  <li><strong>Strong design plus a finding.</strong> A well-designed randomized trial that finds no effect of an exposure on an outcome provides <strong>strong evidence against a causal link</strong> (provided the trial had adequate power). A design at the top of the hierarchy makes the evidence strong rather than weak, and a finding of no effect argues against cause, however strong the design.</li>
+</ul>
+<div class="pearl"><strong>Association is not cause.</strong> Exclude bias, chance and confounding, then weigh the criteria (temporality, strength, dose-response, reversibility, consistency, biologic plausibility, specificity, analogy) and the strength of the design. The stronger the design and the more criteria met, the stronger the case for causation.</div>
+
+<h3 class="sub" id="gh-stats-facts-at-a-glance">Definitions</h3>
+<ul>
+  <li><strong>Biologic plausibility.</strong> Biologic plausibility is met when the relationship makes sense biologically, for example when a known mechanism explains how an exposure could injure tissue; it strengthens the case that the relationship is causal.</li>
+  <li><strong>Evidence for causation.</strong> The more criteria for causation that are met, the stronger the case for a cause grows, though causation cannot be proved beyond all doubt.</li>
+</ul>
+</section>
+
+<!-- ============ 12 REVIEWS ============ -->
+<section class="deck" id="reviews">
+<h2 class="deck-title" id="gh-12-clinical-questions-and-reviews">12 &middot; Clinical Questions &amp; Reviews</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 10 &middot; Fletcher ch. 13&ndash;14</p>
+
+<div class="io-box">
+  <h3 id="gh-instructional-objectives-12">Instructional Objectives</h3>
+  <ol>
+    <li>Discuss the advantages and limitations of narrative reviews</li>
+    <li>Discuss the advantages and limitations of systemic reviews</li>
+    <li>Identify the components of a PICO question: Patients, Intervention, Comparison, Outcomes</li>
+    <li>Identify methods to conduct a systematic review</li>
+    <li>Discuss publication bias</li>
+    <li>Discuss the principles of meta-analysis</li>
+    <li>Discuss the advantages and limitations of meta-analysis</li>
+    <li>Discuss grading recommendations for treatment</li>
+    <li>Discuss conflict of interest</li>
+    <li>Identify resources for answering clinical questions</li>
+  </ol>
+</div>
+
+<div class="callout"><strong>Wording note.</strong> The second objective says &ldquo;systemic reviews&rdquo;, and the source material repeats that spelling. The term throughout the medical literature is <strong>systematic review</strong>, and that is the term used in this guide. Objectives are answered below in order.</div>
+
+<h3 class="sub" id="gh-reviews-io-1-narrative-reviews">IO 1 &mdash; Narrative reviews</h3>
+<p>A <strong>narrative review</strong> is an expert summary of the evidence and recommendations. It is written by an author who chooses what to cite and how to describe it, with no set method for finding, choosing or appraising the studies.</p>
+<table>
+<tr><th>Advantages</th><th>Limitations</th></tr>
+<tr><td>
+It can cover <strong>broad topics</strong> and a <strong>range of issues</strong>.<br><br>
+Its authors <strong>usually have experience caring for patients with the disease</strong>.
+</td><td>
+The information may be influenced by the <strong>values and personal experience</strong> of the authors.<br><br>
+It is <strong>unstructured</strong>, so its validity may be questionable.<br><br>
+Cited articles may have been <strong>selected to prove a point of view</strong>.<br><br>
+It <strong>may not include a critique</strong> of the original research.
+</td></tr>
+</table>
+<p><strong>Where it fits.</strong> Because a narrative review is broad and unstructured, it suits an overview of many aspects of a disease. A question with a defined population, intervention and outcome &mdash; whether one drug lowers mortality more than another, whether a test detects a disease more accurately, or whether screening lowers deaths in one age group &mdash; is a focused question, and answering it is the job of a systematic review.</p>
+<div class="pearl"><strong>Selective citing.</strong> A narrative review that cites only the trials favoring the author's preferred therapy shows the limitation directly: with no structured method, the author can pick the articles that support a point of view and leave out the rest, so one opinion can look like the consensus.</div>
+
+<h3 class="sub" id="gh-reviews-io-2-systematic-reviews">IO 2 &mdash; Systematic reviews: the question, the studies and how to appraise one</h3>
+<p>A <strong>systematic review</strong> is a review of evidence with the goal of answering a <strong>specific, predetermined clinical question</strong>. That is the contrast with a narrative review, which is broad and open ended: the question of a systematic review is specific and is set in advance, before the studies are found, so the answer cannot be shaped around what the reviewers happen to find.</p>
+<h4 class="subsub" id="gh-reviews-defining-the-question">Defining the question</h4>
+<p>The first task is to define a focused question. The considerations are:</p>
+<ul>
+  <li>Are <strong>strong studies</strong> available?</li>
+  <li><strong>How many</strong> studies are available?</li>
+  <li>Do <strong>all the studies agree</strong>?</li>
+</ul>
+<p>Put together, whether a review question can be answered depends on whether strong studies exist and whether they agree. Wanting a particular answer, sharing a publisher, or the existence of earlier expert commentary does not show that answerable studies exist.</p>
+<h4 class="subsub" id="gh-reviews-summarizing-the-studies">Summarizing the studies</h4>
+<p>Once studies are found, the review asks how many quality studies were found and what the results were. The results are summarized as <strong>effect size</strong>, <strong>precision</strong> and <strong>validity</strong> &mdash; both internal validity (are the conclusions valid for the sample studied) and external validity (do they hold in other settings).</p>
+<h4 class="subsub" id="gh-reviews-evaluating-a-systematic-review-article">Evaluating a systematic review article</h4>
+<p>A reader appraising a systematic review asks five things:</p>
+<ol>
+  <li>How were the studies <strong>located</strong>?</li>
+  <li>What <strong>inclusion and exclusion criteria</strong> were used?</li>
+  <li>How <strong>valid</strong> were the original studies?</li>
+  <li>What <strong>biases</strong> existed in the original studies?</li>
+  <li>What were the <strong>results</strong> of the original studies, and was there <strong>variation</strong> among them?</li>
+</ol>
+<p>The search and the criteria are read together with the validity of the original studies. The layout of tables, the length of the reference list and who drafted a section are not appraisal questions.</p>
+<div class="pearl"><strong>Why the effort is worth it.</strong> Good systematic reviews and meta-analyses provide the <strong>highest level of evidence</strong>. A systematic review is helpful in <strong>summarizing bodies of evidence to make clinical decisions</strong>. It is stronger than a narrative review, which can be influenced by the author's values and may cite selectively, and stronger than a single case report or an expert's personal opinion, which sit at the base of the hierarchy of evidence (see section 2).</div>
+
+<h3 class="sub" id="gh-reviews-io-3-the-clinical-question-format">IO 3 &mdash; The four-part clinical question (PICO)</h3>
+<p>A focused question is organized into four components, abbreviated <strong>PICO</strong>: <strong>P</strong>atients, <strong>I</strong>ntervention, <strong>C</strong>omparison and <strong>O</strong>utcomes.</p>
+<table>
+<tr><th>Letter</th><th>Component</th><th>The question it answers</th></tr>
+<tr><td><strong>P</strong></td><td>Patient, population or problem &mdash; <em>who</em></td><td>How would I describe a group of patients similar to mine?</td></tr>
+<tr><td><strong>I</strong></td><td>Intervention, prognostic factor or exposure &mdash; <em>what</em></td><td>Which main intervention, prognostic factor or exposure am I considering?</td></tr>
+<tr><td><strong>C</strong></td><td>Comparison &mdash; <em>what is the alternative</em></td><td>What is the main alternative to compare with the intervention?</td></tr>
+<tr><td><strong>O</strong></td><td>Outcome you would like to measure</td><td>What can I hope to accomplish, measure, improve or affect?</td></tr>
+</table>
+<p><strong>The intervention element is wider than a treatment.</strong> It can be a <strong>prognostic factor or an exposure</strong>, so the same format organizes risk and prognosis questions as well as treatment questions. The <strong>comparison</strong> is the alternative set against the intervention &mdash; another treatment, or none. The <strong>outcome</strong> is what is measured, and the <strong>patient</strong> element sets the group to which the answer will apply.</p>
+<table>
+<tr><th>Question</th><th>P</th><th>I</th><th>C</th><th>O</th></tr>
+<tr><td>Vitamin C for a cold</td><td>Adults with a cold</td><td>Vitamin C</td><td>No vitamin C</td><td>Resolution of common cold symptoms</td></tr>
+<tr><td>High fiber diet or regular exercise and colon cancer risk</td><td>Older adults</td><td>High fiber diet</td><td>Regular exercise</td><td>Reduction in risk for colon cancer</td></tr>
+<tr><td>Virtual colonoscopy in ulcerative colitis</td><td>Patients with ulcerative colitis</td><td>Virtual colonoscopy</td><td>Standard colonoscopy</td><td>Sensitivity and specificity for detecting colon cancer</td></tr>
+<tr><td>Angiotensin-converting enzyme inhibitors in congestive heart failure</td><td>Patients with congestive heart failure</td><td>Angiotensin-converting enzyme inhibitors</td><td>Patients who do not receive them</td><td>The death rate</td></tr>
+<tr><td>Skin adhesives or sutures for superficial lacerations</td><td>All patients? A more specific population may be needed</td><td>Skin adhesives</td><td>Sutures</td><td>Closing superficial skin lacerations</td></tr>
+</table>
+<ul>
+  <li><strong>A question comparing two diagnostic tests</strong> can name the accuracy of each test &mdash; <strong>sensitivity and specificity</strong> &mdash; as its outcome, as in the virtual colonoscopy row above.</li>
+  <li><strong>A question that is too broad needs refining.</strong> If a question is asked &ldquo;for all patients&rdquo;, the patient element is the one to make more specific; a more specific population may need to be defined.</li>
+  <li><strong>A complete question has all four parts.</strong> A question that omits the comparison does not say what the intervention is being measured against; one that names no group, or no measurable outcome (&ldquo;better in some way&rdquo;), cannot be answered from studies. A well-built example: in adults with migraine, does a daily preventive drug, compared with placebo, reduce the number of headache days?</li>
+</ul>
+
+<h3 class="sub" id="gh-reviews-io-4-methods-of-a-systematic-review">IO 4 &mdash; Methods for conducting a systematic review</h3>
+<table>
+<tr><th>Step</th><th>Methodologic considerations</th></tr>
+<tr><td><strong>1. Define a specific question</strong></td><td>The PICO format organizes the question. A <strong>protocol</strong> identifies the question and the analysis <strong>prospectively</strong>.</td></tr>
+<tr><td><strong>2. Select studies for the review</strong></td><td>Find all relevant studies based on the study question and design. Determine the final studies from the initial list with <strong>explicit criteria</strong> based on the study question and study design. <strong>At least two reviewers</strong> confirm consistency of the selection process. <strong>List excluded studies and the rationale.</strong> Assess for <strong>publication and reporting bias</strong> (for example, <strong>funnel plots</strong>).</td></tr>
+<tr><td><strong>3. Describe each study's characteristics and risk of bias</strong></td><td>Scoring systems can be used. <strong>At least two reviewers</strong> confirm consistency of the assessment.</td></tr>
+<tr><td><strong>4. Summarize the studies</strong></td><td>Figures &mdash; <strong>forest plots</strong>. <strong>Tables of characteristics.</strong></td></tr>
+<tr><td><strong>5. Pooling (meta-analysis) if justified</strong></td><td>Calculate the <strong>summary effect and confidence interval</strong> using a <strong>fixed effect model or a random effects model</strong>. On the forest plot the summary is shown as a <strong>diamond</strong>.</td></tr>
+<tr><td><strong>6. Identify reasons for differences among studies (heterogeneity) if present</strong></td><td>Statistical tests: <strong>Cochran's Q</strong> and the <strong>I-squared statistic</strong>. <strong>Subgroup analysis</strong> (based on study quality and other factors) and <strong>sensitivity analysis</strong>. <strong>Metaregression.</strong> Discussion in the text of the role of bias and study factors.</td></tr>
+</table>
+<p>Read the steps as an order: the question is defined first, the studies are then selected, described and summarized, pooling comes after the summary and only if it is justified, and the exploration of heterogeneity is last.</p>
+<ul>
+  <li><strong>Protocol.</strong> Writing the question and the planned analysis down before searching stops the reviewers from shaping either around the results they find. A forest plot is a figure made after analysis; a funnel plot checks for publication and reporting bias; sensitivity analysis explores differences after the results are in.</li>
+  <li><strong>Consistency.</strong> A single reviewer, the lead author alone, or the journal editor cannot show that the criteria were applied consistently; at least two reviewers do, both when selecting studies and when assessing each study's risk of bias.</li>
+  <li><strong>Excluded studies.</strong> The reason each was excluded is listed, so a reader can judge whether the criteria were applied fairly.</li>
+  <li><strong>Forest plots and tables</strong> summarize the studies. Funnel plots belong to the selection step, where publication and reporting bias are assessed. A nomogram and a receiver operating characteristic curve are tools for interpreting diagnostic tests, not for summarizing or checking a review.</li>
+  <li><strong>Methods that explore differences</strong> among pooled studies are subgroup analysis, sensitivity analysis and metaregression. Blinding and randomization protect a single trial from bias and do not explore differences between studies.</li>
+  <li><strong>Heterogeneity tests.</strong> Cochran's Q and the I-squared statistic quantify how much study results differ; survival-analysis tests, correlation coefficients and rank tests serve other purposes.</li>
+</ul>
+<h4 class="subsub" id="gh-reviews-finding-studies">Finding studies</h4>
+<p>To <strong>sample the best studies</strong>, the reviewers ask:</p>
+<ul>
+  <li>How strong was the <strong>study design</strong>?</li>
+  <li>Was the <strong>sample size sufficient</strong>? (A trial with only a handful of participants is weighed against the others for exactly this reason.)</li>
+  <li>What kind(s) of <strong>bias</strong> was present, and are there concerns for <strong>publication bias</strong>?</li>
+  <li>What were the <strong>limitations</strong>?</li>
+  <li>Was the research <strong>peer-reviewed</strong>?</li>
+  <li>Is the information <strong>still current</strong>, or have more recent studies been published?</li>
+</ul>
+<p>The reviewers also <strong>develop inclusion and exclusion criteria</strong>; the criteria are explicit and based on the study question and design.</p>
+
+<h3 class="sub" id="gh-reviews-io-5-publication-bias">IO 5 &mdash; Publication bias</h3>
+<p><strong>Publication bias:</strong> research without statistically significant results is <strong>less likely to be published</strong>. Two causes are named: <strong>journal editor preference</strong>, and a <strong>sponsoring organization or company</strong> being less likely to support research that is unfavorable to them or their product. Research with significant results is more likely to appear in print, whatever the rigor or sample size of the studies.</p>
+<p><strong>Reporting bias</strong> is different: only a <strong>subset of all relevant data</strong> is made available. Publication bias concerns whole studies failing to reach print; reporting bias concerns a study that appears but shows only part of its data.</p>
+<ul>
+  <li><strong>It should always be considered.</strong> A review can include only what has been published, so studies that were never published leave the review looking at a skewed set. It threatens every kind of review that relies on published studies, systematic reviews and meta-analyses included.</li>
+  <li><strong>The direction of the distortion.</strong> If trials showing no benefit of a drug are never published, a meta-analysis of the journal articles sees only the trials favoring the drug, so the pooled benefit may be overstated.</li>
+  <li><strong>What does not fix it.</strong> A statistical model, such as a random effects model, cannot restore studies that were never published. Two reviewers selecting studies makes the selection consistent but cannot include studies that do not exist in print. Pooling does not reveal them either.</li>
+  <li><strong>How it is assessed.</strong> Assessing for publication and reporting bias (for example, with <strong>funnel plots</strong>) is part of selecting studies for a systematic review. A reader of a meta-analysis asks whether publication bias is possible for the selected topic.</li>
+</ul>
+
+<h3 class="sub" id="gh-reviews-io-6-principles-of-meta-analysis">IO 6 &mdash; Principles of meta-analysis</h3>
+<p>A <strong>meta-analysis</strong> combines the results of similar studies to examine effect size quantitatively. Its principles:</p>
+<ul>
+  <li><strong>Weighted analysis of numerical results, proportionally to study size.</strong> A larger study counts for more. If weight is in proportion to size, each study's share of the weight is its participants divided by all the participants pooled: with trials of 200 and 800 participants, the smaller carries 200 of 1,000, which is 20 percent, and the larger 80 percent. Equal weighting would give each 50 percent, and picking only the largest study or counting positive studies is not pooling.</li>
+  <li><strong>Pooling gives a more precise estimate of effect size</strong> than any single study.</li>
+  <li><strong>Inclusion and exclusion criteria are very important</strong>, because they decide which studies are pooled.</li>
+  <li><strong>The studies must be similar.</strong> A statistical test for heterogeneity asks how different the reported effect sizes are.</li>
+</ul>
+<div class="callout"><strong>A note on weighting.</strong> Weighting proportionally to study size is the standard simplification. In practice, meta-analyses weight by the precision of each study's estimate, which is driven largely by its size, so a larger study still counts for more.</div>
+<h4 class="subsub" id="gh-reviews-heterogeneity">Heterogeneity</h4>
+<p><strong>Heterogeneity</strong> is the extent to which trial results are different from one another. A statistical test for it takes as its <strong>null hypothesis that there is no difference between the study results</strong>, and looks for statistically significant differences among them. This is not the null hypothesis of the pooled effect (no effect of the intervention), and it is not about bias or agreement between reviewers. The tests named are <strong>Cochran's Q</strong> and the <strong>I-squared statistic</strong>.</p>
+<h4 class="subsub" id="gh-reviews-fixed-and-random-effects">Fixed effect and random effects models</h4>
+<table>
+<tr><th></th><th>Fixed effect model</th><th>Random effects model</th></tr>
+<tr><td>When</td><td>There is <strong>no significant heterogeneity</strong>.</td><td><strong>Heterogeneity is present.</strong></td></tr>
+<tr><td>Assumption</td><td>Assumes <strong>one fixed magnitude for the effect size</strong>; any variation is due to chance.</td><td>Allows for <strong>variation that is not due to chance</strong>.</td></tr>
+<tr><td>Judgment</td><td>&mdash;</td><td>Depends on <strong>value judgment rather than statistical analysis</strong> to determine similarity.</td></tr>
+<tr><td>Disadvantage</td><td>Studies with many similarities could be considered duplication rather than new research.</td><td>&mdash;</td></tr>
+</table>
+<p>Both models calculate the summary effect and its confidence interval. So a statistically significant test of heterogeneity across pooled trials favors the random effects model, while a fixed effect model suits pooled trials with no significant heterogeneity. A model that assumes a different effect in every study would not justify pooling to one fixed magnitude, and counting positive studies is not a model.</p>
+
+<h3 class="sub" id="gh-reviews-io-7-meta-analysis-advantages-and-limitations">IO 7 &mdash; Meta-analysis: advantages and limitations</h3>
+<table>
+<tr><th>Advantages</th><th>Limitations</th></tr>
+<tr><td>
+A <strong>stronger, more precise estimate</strong> of effect size.<br><br>
+Can detect <strong>complications</strong>.<br><br>
+Can detect <strong>differences in subgroups</strong>.<br><br>
+Helps identify <strong>benefits versus harms</strong>.
+</td><td>
+<strong>Only as good as the included studies.</strong><br><br>
+<strong>May be misleading if the included studies are not similar</strong> &mdash; consider the strength of the value judgment.
+</td></tr>
+</table>
+<ul>
+  <li><strong>Only as good as the studies.</strong> Combining poor studies produces a larger, more confident poor estimate; the flaws of the included studies are carried into the pooled result. A meta-analysis is not immune to them, cannot escape publication bias, and still needs inclusion and exclusion criteria.</li>
+  <li><strong>Pooling adds participants together</strong>, so the pooled sample is larger than any single study's; it does not reduce sample size. Combining numerical results is exactly what it does, and it is not restricted to rare complications: it can examine benefits, harms, complications and subgroups.</li>
+  <li><strong>When it misleads.</strong> A meta-analysis may be misleading if the studies combined are not similar. Similar studies, for example those measuring the same outcome, are what pooling calls for, and a larger pooled sample is an advantage, not a hazard.</li>
+  <li><strong>What pooling cannot do.</strong> It cannot find studies that were never published, and it does not remove bias inside the individual studies.</li>
+</ul>
+<h4 class="subsub" id="gh-reviews-evaluating-a-meta-analysis-article">Evaluating a meta-analysis article</h4>
+<p>A reader appraising a meta-analysis asks:</p>
+<ol>
+  <li>What is the <strong>quality of the included studies</strong> &mdash; are they <strong>all at the same level</strong>? (A meta-analysis that combines one high-quality trial with several seriously flawed studies raises exactly this question.)</li>
+  <li>Is there a possibility of <strong>publication bias</strong> for the selected topic?</li>
+  <li>What <strong>differences existed between the included studies</strong>, and were they statistically significant?</li>
+</ol>
+<div class="pearl"><strong>Summary of reviews and meta-analyses.</strong> Good systematic reviews and meta-analyses provide the highest level of evidence. Meta-analysis increases statistical power through the larger sample sizes from pooling data. A systematic review can summarize bodies of evidence to make clinical decisions. <strong>Publication bias should always be considered.</strong></div>
+
+<h3 class="sub" id="gh-reviews-io-8-grading-recommendations-for-treatment">IO 8 &mdash; Grading recommendations for treatment</h3>
+<p><strong>Grading evidence</strong> is a <strong>quick way to assess clinical significance</strong>. It is <strong>most often applied to treatment and screening</strong>. It still involves <strong>some degree of value judgment</strong>, because the pros and cons must be weighed. The scheme is based on the Grading of Recommendations Assessment, Development and Evaluation (GRADE) guidelines.</p>
+<div class="callout"><strong>Reading a grade.</strong> The <strong>number</strong> (1 or 2) is the <strong>strength of the recommendation</strong>: 1 is strong, 2 is weak. The <strong>letter</strong> (A to C) is the <strong>quality of the supporting evidence</strong>, that is, confidence in the estimate of effect: A is high, B is moderate, C is low. A grade expresses confidence and strength; it does not guarantee an outcome, and it does not replace clinical judgment.</div>
+<table>
+<tr><th>Grade</th><th>Clarity of risk and benefit</th><th>Quality of supporting evidence</th><th>Implications</th></tr>
+<tr><td><strong>1A</strong><br>Strong recommendation, high-quality evidence</td><td>Benefits clearly outweigh risks and burdens, or vice versa</td><td>Consistent evidence from well-performed randomized controlled trials, or overwhelming evidence in some other form. Further research is unlikely to change confidence in the estimates of benefits and risks.</td><td>Applies to most patients in most circumstances without reservation. Clinicians should follow a strong recommendation unless there is a clear and compelling rationale for an alternative approach.</td></tr>
+<tr><td><strong>1B</strong><br>Strong recommendation, moderate-quality evidence</td><td>Benefits clearly outweigh risks and burdens, or vice versa</td><td>Randomized controlled trials with important limitations (inconsistent results, methodologic flaws, or imprecision), or very strong evidence of some other research design. Further research is likely to change confidence in the estimates.</td><td>Strong recommendation that applies to most patients. Clinicians should follow it unless there is a clear and compelling rationale for an alternative approach.</td></tr>
+<tr><td><strong>1C</strong><br>Strong recommendation, low-quality evidence</td><td>Benefits appear to outweigh risks and burdens, or vice versa</td><td>Evidence from observational studies, unsystematic clinical experience, or randomized controlled trials with serious flaws. Any estimate of effect is uncertain.</td><td>Strong recommendation that applies to most patients. Some of the evidence base supporting the recommendation is of low quality.</td></tr>
+<tr><td><strong>2A</strong><br>Weak recommendation, high-quality evidence</td><td>Benefits closely balanced with risks and burdens</td><td>Consistent evidence from well-performed randomized controlled trials, or overwhelming evidence of some other form. Further research is unlikely to change confidence.</td><td>Weak recommendation. The best action may differ depending on circumstances or patient or societal values.</td></tr>
+<tr><td><strong>2B</strong><br>Weak recommendation, moderate-quality evidence</td><td>Benefits closely balanced with risks and burdens, with some uncertainty in the estimates of benefits, risks and burdens</td><td>Randomized controlled trials with important limitations, or very strong evidence from some other research design. Further research is likely to change confidence.</td><td>Weak recommendation. Alternative approaches are likely to be better for some patients under some circumstances.</td></tr>
+<tr><td><strong>2C</strong><br>Weak recommendation, low-quality evidence</td><td>Uncertainty in the estimates of benefits, risks and burdens; benefits may be closely balanced with risks and burdens</td><td>Evidence from observational studies, unsystematic clinical experience, or randomized controlled trials with serious flaws. Any estimate of effect is uncertain.</td><td>Very weak recommendation. Other alternatives may be equally reasonable.</td></tr>
+</table>
+<ul>
+  <li><strong>1A versus 1B.</strong> Both are strong recommendations, in which benefits clearly outweigh risks and burdens. 1B is graded lower because its randomized trials have important limitations, so further research may change confidence.</li>
+  <li><strong>What 1C rests on.</strong> Observational studies, unsystematic clinical experience, or seriously flawed trials. 1A rests on consistent well-performed trials; 1B on trials with important limitations.</li>
+  <li><strong>What makes a recommendation weak.</strong> Benefits closely balanced with risks and burdens, or uncertainty in the estimates. Risks clearly outweighing benefits is &ldquo;or vice versa&rdquo; and gives a <em>strong</em> recommendation (against the treatment).</li>
+  <li><strong>Acting on a grade.</strong> Follow a strong recommendation unless there is a compelling rationale for an alternative; the choice with a weak recommendation varies with circumstances and values, as 2A shows. A grade of 2A has high-quality evidence but is weak because benefits and risks are closely balanced.</li>
+</ul>
+<h4 class="subsub" id="gh-reviews-clinical-practice-guidelines">Clinical practice guidelines and their standards</h4>
+<p>Good guidelines give the recommendations along with the <strong>supporting evidence and rationale</strong>. Apply your <strong>best clinical judgment</strong> when deciding to use guidelines in your practice; a guideline supports judgment and does not replace it.</p>
+<table>
+<tr><th>Standard</th><th>Explanation</th></tr>
+<tr><td>Transparency</td><td>How the guideline was developed and funded has been made explicit and is publicly accessible.</td></tr>
+<tr><td>Conflict of interest</td><td>Group members' conflicts of interest related to financial, intellectual, institutional, and patient or public activities bearing on the guideline are disclosed.</td></tr>
+<tr><td>Group composition</td><td>Group membership was multidisciplinary and balanced, comprising a variety of methodologic experts and clinicians, and populations expected to be affected by the guideline.</td></tr>
+<tr><td>Systematic review</td><td>Recommendations are based on systematic reviews that met high standards for quality.</td></tr>
+<tr><td>Evidence and strength of recommendation</td><td>Each recommendation is accompanied by an explanation for its underlying reasoning, the level of confidence in the evidence, and the strength of the recommendation.</td></tr>
+<tr><td>Description of recommendations</td><td>The guideline states precisely what the recommended action is and under what circumstances it should be performed.</td></tr>
+<tr><td>External review</td><td>The guideline has been reviewed by the full spectrum of relevant stakeholders (for example, scientific and clinical experts, organizations, and patients).</td></tr>
+<tr><td>Updating</td><td>The guideline reports the date of publication and evidence review, and plans for updating when there is new evidence that would substantially change the guideline.</td></tr>
+</table>
+<p>Tell the standards apart by what each one checks. <strong>Transparency</strong> is about how the guideline was developed and funded; <strong>conflict of interest</strong> is about disclosure of members' interests; <strong>group composition</strong> is about who sat on the panel that wrote it; <strong>external review</strong> is about stakeholders assessing the finished guideline; <strong>updating</strong> is about publication dates and plans to revise it.</p>
+
+<h3 class="sub" id="gh-reviews-io-9-conflict-of-interest">IO 9 &mdash; Conflict of interest</h3>
+<p>Accepting a recommendation means asking whether the people behind it stand to gain. Conflict of interest is when financial or personal considerations affect objectivity; its impact may be conscious or unconscious. There are three kinds:</p>
+<table>
+<tr><th>Kind</th><th>Questions to ask</th></tr>
+<tr><td><strong>Financial</strong></td><td>Who <strong>funded the research</strong>? Who benefits financially &mdash; the authors or their families?</td></tr>
+<tr><td><strong>Personal, intellectual or career</strong></td><td>Are there <strong>personal biases</strong> involved? Are there <strong>professional benefits</strong> for the author? (A researcher whose promotion depends on publishing a positive result has this kind.)</td></tr>
+<tr><td><strong>Institutional</strong></td><td>Does this <strong>benefit one organization more than others</strong>? (A trade group's guideline that endorses only products sold by its member companies has this kind.)</td></tr>
+</table>
+<ul>
+  <li><strong>Why acknowledge it.</strong> It is important to acknowledge conflicts of interest <strong>so readers can determine whether bias (unintended or otherwise) is present</strong>. Disclosure does not exclude a study or change its data; it informs the reader.</li>
+  <li><strong>How it manifests:</strong> <strong>selective reporting of results</strong>; <strong>study selection for systematic reviews and meta-analyses</strong>; <strong>exaggeration or fabrication of results</strong>. Random assignment, confidence intervals and blinding of assessors are safeguards or statistical tools, not signs of conflict.</li>
+  <li><strong>Peer review helps</strong>, in addition to disclosure; neither replaces the other.</li>
+</ul>
+<h4 class="subsub" id="gh-reviews-the-peer-review-process">The peer review process</h4>
+<ol>
+  <li>The manuscript is <strong>submitted</strong>.</li>
+  <li>It is <strong>screened by the editors</strong>.</li>
+  <li>It is <strong>forwarded to peer reviewers</strong>, who <strong>reject</strong>, <strong>recommend revision</strong> or <strong>accept for publication</strong>.</li>
+  <li>The <strong>editors review language, grammar and so on</strong>.</li>
+  <li><strong>Publication.</strong></li>
+</ol>
+<p>So the editors screen a manuscript first, and peer reviewers see it only after that; after acceptance the editors still review language and grammar before publication, so an accepted article is neither published with no further review nor corrected for grammar by the peer reviewers.</p>
+
+<h3 class="sub" id="gh-reviews-io-10-resources-for-clinical-questions">IO 10 &mdash; Resources for answering clinical questions</h3>
+<h4 class="subsub" id="gh-reviews-how-to-keep-current">How to keep current</h4>
+<p>Suggested ways to keep current: <strong>professional organizations</strong>, <strong>journal articles</strong>, <strong>colleagues</strong> and <strong>patients</strong>. Sales representatives, advertising and press releases are not among them; they are promotion, not appraised evidence. Systematic reviews, meta-analyses and clinical practice guidelines (IO 2, 6 and 8) are the resources that summarize the evidence for a clinical question.</p>
+<h4 class="subsub" id="gh-reviews-screening-an-article">Screening an article</h4>
+<ol>
+  <li>Is the <strong>title</strong> related to the topic, and does it have the <strong>keywords</strong> you have in mind? If <strong>no</strong>, skip the article and go to the next.</li>
+  <li>If <strong>yes</strong>, read the <strong>abstract, summary and conclusion</strong>. Look for clear-cut aims and objectives, a well-defined research hypothesis, and precise conclusions.</li>
+  <li>Is that useful or relevant to what you are looking for? If <strong>no</strong>, skip the article and go to the next. If <strong>yes</strong>, read the <strong>entire article</strong>.</li>
+</ol>
+<h4 class="subsub" id="gh-reviews-reading-an-abstract-and-beyond">Reading an abstract, and beyond it</h4>
+<table>
+<tr><th>Quick reading &mdash; the abstract</th><th>Beyond the abstract</th></tr>
+<tr><td>
+What is the study about?<br>
+What was concluded?<br>
+Are the conclusions valid?<br>
+Who does it apply to?<br>
+Can I apply it to my patients?<br>
+Should I apply it to my patients?
+</td><td>
+How big was the effect?<br>
+How strong were the research methods?<br>
+What limitations existed, and were they addressed?<br>
+Any potential for bias, and was it addressed?<br>
+What impact will the results of the study have?<br>
+What are the author's recommendations?
+</td></tr>
+</table>
+<h4 class="subsub" id="gh-reviews-where-to-look">Where to look: cursory and in-depth review</h4>
+<table>
+<tr><th>Review</th><th>Your question</th><th>Where to look</th></tr>
+<tr><td rowspan="5"><strong>Cursory</strong> (title and abstract)</td><td>What is this study about?</td><td>Title</td></tr>
+<tr><td>What was concluded?</td><td>Conclusions</td></tr>
+<tr><td>Is it likely to be true?</td><td>Design</td></tr>
+<tr><td>To whom does it apply?</td><td>Patients and setting</td></tr>
+<tr><td>What was found?</td><td>Results</td></tr>
+<tr><td rowspan="4"><strong>In depth</strong> (the article)</td><td>Importance of the research question?</td><td>Introduction</td></tr>
+<tr><td>How big was the effect?</td><td>Figures and tables</td></tr>
+<tr><td>How strong were the methods?</td><td>Methods</td></tr>
+<tr><td>Context</td><td>Discussion</td></tr>
+</table>
+<p>The figure shows an option to stop after each step, so the reader need not go on to the in-depth review. The size of the effect is read from the figures and tables, whereas the methods show how strong the study was, the introduction shows the importance of the question, and the discussion gives context.</p>
+
+<h3 class="sub" id="gh-reviews-facts-at-a-glance">Definitions and questions to ask</h3>
+<ul>
+  <li><strong>Publication bias always matters.</strong> Publication bias should always be considered when reading a review: a review can only include what has been published, so unpublished null results leave it looking at a skewed set of studies, and missing studies can distort the evidence.</li>
+  <li><strong>Quick reading of an abstract.</strong> Quick reading asks what the study is about, whether the conclusions are valid, who it applies to, and whether it can and should be applied to your patients.</li>
+  <li><strong>Appraising the included studies.</strong> When a meta-analysis combines studies, ask whether the studies are all of equal quality: the quality of the included studies should be examined, and mixing very different levels of quality weakens the pooled result.</li>
+  <li><strong>Missing studies in a review.</strong> A review that searches only published articles is most likely to be missing studies without significant results, because research without significant results is less likely to be published.</li>
+  <li><strong>Weighting in a meta-analysis.</strong> A meta-analysis gives larger, more precise studies more weight, and the pooled result is a more precise estimate of the effect than any single study gives.</li>
+</ul>
+</section>
+<!-- medlit-s7-10 end -->
 
 <!-- ============ QUICK REFERENCE ============ -->
 <section class="deck" id="quickref">

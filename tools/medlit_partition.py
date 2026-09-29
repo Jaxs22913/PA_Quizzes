@@ -35,6 +35,13 @@ SPECS = {
  "s3rates": (["medlit_s3rates_pool:POOL"], "medlit_s3rates_sets.json"),
  "s3data": (["medlit_s3data_pool:POOL"], "medlit_s3data_sets.json"),
  "s4tests": (["medlit_s4tests_pool:POOL"], "medlit_s4tests_sets.json"),
+ # Sessions 7-10 (added 2026-09-28)
+ "s7risk": (["medlit_s7risk_pool:POOL"], "medlit_s7risk_sets.json"),
+ "s7prog": (["medlit_s7prog_pool:POOL"], "medlit_s7prog_sets.json"),
+ "s8prev": (["medlit_s8prev_pool:POOL"], "medlit_s8prev_sets.json"),
+ "s8trials": (["medlit_s8trials_pool:POOL"], "medlit_s8trials_sets.json"),
+ "s9stats": (["medlit_s9stats_pool:POOL"], "medlit_s9stats_sets.json"),
+ "s10reviews": (["medlit_s10reviews_pool:POOL"], "medlit_s10reviews_sets.json"),
 }
 if WHICH not in SPECS:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(SPECS)))

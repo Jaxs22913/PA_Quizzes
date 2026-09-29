@@ -1,0 +1,249 @@
+<!-- ============ 11 STATISTICS ============ -->
+<section class="deck" id="stats">
+<h2 class="deck-title" id="gh-11-statistics-correlation-and-causation">11 &middot; Statistics, Correlation &amp; Causation</h2>
+<p class="lecturer">Megan B. Finck, MMS, PA-C &middot; Session 9 &middot; Fletcher ch. 11-12</p>
+
+<div class="io-box">
+  <h3 id="gh-instructional-objectives-11">Instructional Objectives</h3>
+  <ol>
+    <li>Explain the following statistical concepts: Significance, P value, Null hypothesis, Confidence interval, Statistical power, Multiple comparisons, Multivariable modeling</li>
+    <li>Compare and contrast statistical significance and clinical importance</li>
+    <li>Define criteria to determine causation</li>
+    <li>Discuss the impact of study design on the ability to determine causation</li>
+  </ol>
+</div>
+
+<h3 class="sub" id="gh-stats-probability">Objective 1 &mdash; Review of probability</h3>
+<p><strong>Probability</strong> is the likelihood that any one event will occur, given all the possible outcomes. The probability (P) that an event (E) will occur is estimated by:</p>
+<div class="callout"><strong>P (E) = number of times E occurs &divide; number of times E can occur</strong></div>
+<p>The denominator is <em>every</em> opportunity for the event, including the ones where it occurred. Dividing by the number of times the event does <em>not</em> occur gives the <em>odds</em>, which is a different quantity, and inverting the fraction gives a value above one, which cannot be a probability.</p>
+<ul>
+  <li>Probability must lie <strong>between 0 and 1</strong>. A value of <strong>0</strong> means the event cannot occur; a value of <strong>1</strong> means it will definitely occur.</li>
+  <li>A value of <strong>0.5</strong> means an equal probability of occurring or not occurring, so the event is as likely to occur as not.</li>
+  <li>The <strong>sum of all probabilities of all events in the sample must equal 1</strong>. So the probability that an event does <em>not</em> occur is 1 minus the probability that it does: if the probability of having a condition is 0.35, the probability of not having it is 0.65.</li>
+  <li>Counting works the same way: if 36 of 240 patients in a clinic have a condition, the probability that a randomly chosen patient has it is 36 &divide; 240 = 0.15, and the probability of not having it is 204 &divide; 240 = 0.85.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-significance-and-p-value">Objective 1 &mdash; Significance and the p value</h3>
+<p>Two kinds of significance matter when reading a study: <strong>statistical significance</strong> and <strong>clinical significance</strong>.</p>
+<p><strong>Statistical significance</strong> describes how likely it is for the result to have happened by chance, so it describes how unlikely chance is as the explanation. <strong>More statistically significant = less likely to be chance. Less statistically significant = more likely to be chance.</strong> It does not describe how much the treatment helps an individual patient, how carefully the study was designed, or whether the result would change practice.</p>
+<p>The <strong>p value</strong> is the probability of an observed difference happening by chance. Read precisely, it is calculated on the assumption that no true difference exists: it is the probability of a difference at least this large arising by chance alone. It is <strong>not</strong> the probability that the null hypothesis is true, not the probability that the treatment truly works, not the proportion of patients who respond, not the size of the difference between groups (the effect size), and not the probability that the study is biased. Bias is systematic error, and a p value addresses random chance only.</p>
+<table>
+<tr><th>p value</th><th>Chance of a result this extreme</th><th>How it is generally described</th></tr>
+<tr><td>0.5</td><td>50/50</td><td>Chance is as likely as not</td></tr>
+<tr><td>0.05</td><td>1/20</td><td>Values <strong>less than 0.05</strong> are generally accepted to be statistically significant</td></tr>
+<tr><td>0.01</td><td>1/100</td><td>Generally accepted to indicate <strong>highly significant</strong></td></tr>
+<tr><td>0.001</td><td>1/1000</td><td>Generally accepted to indicate <strong>very highly significant</strong></td></tr>
+</table>
+<div class="pearl"><strong>0.05 is an arbitrary number.</strong> It is a convention, not a law of probability theory, not a proof of clinical benefit and not a limit set by regulators; nothing changes in the data between a p value of 0.049 and 0.051.</div>
+<ul>
+  <li><strong>Reading a p value of 0.03</strong> (new drug against placebo): 0.03 is below 0.05, so the difference is statistically significant. It does not mean there is a 3 percent chance the drug does not work, and it does not mean the drug works in 97 percent of patients. Statistical significance also does not imply that the difference is large enough to change practice.</li>
+  <li><strong>Reading a p value of 0.20</strong>: 0.20 is above 0.05, so the result is not statistically significant and chance remains a reasonable explanation. It does not show that the treatment has no effect (the study may lack power, see below), it is not the proportion of patients who improved, and it is nowhere near very highly significant.</li>
+  <li>A lower p value shows only that chance is less likely as an explanation. It does not show that the difference is larger or more important.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-null-hypothesis">Objective 1 &mdash; The null hypothesis</h3>
+<p>The <strong>null hypothesis</strong> is the hypothesis that there is <strong>no difference</strong>. It is usually the opposite of what the researchers are interested in finding, and it is used in statistical analysis: the test asks how well the data fit it. The hypothesis that a difference is present is the alternative to the null hypothesis. The null hypothesis is not a statement about bias or about whether the sample is representative.</p>
+<ul>
+  <li><strong>Example.</strong> Researchers hope to show that a new drug lowers blood pressure more than placebo. The null hypothesis is that the drug and placebo lower pressure equally. Drug better than placebo is the researchers' hoped-for alternative, and placebo better than drug states a difference in the wrong direction.</li>
+  <li>If there is not evidence to support the null hypothesis, there is <strong>more support for a difference being present</strong>. Evidence against the null hypothesis, which states no difference, is what lends support to a difference. Identical groups is what the null hypothesis itself states, so weak support for it points away from that idea.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-type-i-and-ii-error">Objective 1 &mdash; Type I and type II error (four possible statistical conclusions)</h3>
+<table>
+<tr><th rowspan="2">Conclusion of the statistical test</th><th colspan="2">True difference</th></tr>
+<tr><th>Present</th><th>Absent</th></tr>
+<tr><td><strong>Significant</strong></td><td>Correct</td><td><strong>Type I (&alpha;) error</strong></td></tr>
+<tr><td><strong>Not significant</strong></td><td><strong>Type II (&beta;) error</strong></td><td>Correct</td></tr>
+</table>
+<ul>
+  <li><strong>Type I error (&alpha; error, also called an alpha error) = false POSITIVE</strong> &mdash; stating there is a difference, or concluding that a relationship exists, when there is not. Most medical research is concerned with the possibility of type I error, which is expressed by the p value (judged against the chosen threshold, usually 0.05).</li>
+  <li><strong>Type II error (&beta; error, also called a beta error) = false NEGATIVE</strong> &mdash; stating there is no difference, or concluding that no relationship exists, when there is one. The real difference is missed and the statistic appears not to be significant. (The precise wording is that the test failed to detect a real difference.)</li>
+  <li>Type II error sometimes occurs as a result of <strong>study limitations</strong>, such as <strong>length of follow-up</strong> and <strong>subject compliance</strong>: too brief a follow-up, or subjects not adhering to treatment, can hide a real difference. A p value below 0.001 is a significant result, so it cannot be the cause of a false negative, and random assignment and blinding are strengths of design rather than causes of type II error.</li>
+  <li><strong>When no true difference exists</strong>, the correct conclusion is that the result is <strong>not significant</strong>. A significant result would be a type I error, the null hypothesis is true in that case (it should not be rejected), and power is defined only for the case where a difference does exist.</li>
+  <li><strong>Examples.</strong> A trial concludes that a supplement lowers cholesterol but in truth it has no effect: type I error (a false positive). A short trial finds no significant benefit from a drug that truly works: type II error (a false negative). Measuring the outcome incorrectly is measurement bias and choosing the wrong test is a different problem; neither is what defines type I or type II error.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-tests">Objective 1 &mdash; Common statistical tests</h3>
+<table>
+<tr><th>Test</th><th>When used</th></tr>
+<tr><th colspan="2">To test the statistical significance of a difference</th></tr>
+<tr><td>Chi square</td><td>Between two or more proportions (when there is a large number of observations)</td></tr>
+<tr><td>Fisher exact</td><td>Between two proportions (when there is a small number of observations)</td></tr>
+<tr><td>Mann-Whitney U</td><td>Between two medians</td></tr>
+<tr><td>Student t</td><td>Between two means</td></tr>
+<tr><td>F test</td><td>Between two or more means</td></tr>
+<tr><th colspan="2">To describe the extent of association</th></tr>
+<tr><td>Regression coefficient</td><td>Between an independent (predictor) variable and a dependent (outcome) variable</td></tr>
+<tr><td>Pearson's r</td><td>Between two variables</td></tr>
+<tr><th colspan="2">To model the effects of multiple variables</th></tr>
+<tr><td>Logistic regression</td><td>With a dichotomous outcome</td></tr>
+<tr><td>Cox proportional hazards</td><td>With a time-to-event outcome</td></tr>
+<tr><td>Propensity score</td><td>Select matching controls</td></tr>
+</table>
+<p>Means are averages of continuous values, medians are middle values, and proportions are shares of a group. The Fisher exact test takes over from the chi-square test when the number of observations is small.</p>
+
+<h3 class="sub" id="gh-stats-confidence-intervals">Objective 1 &mdash; Confidence intervals</h3>
+<p>A confidence interval expresses <strong>statistical precision</strong>. It is a range of scores with boundaries, or <strong>confidence limits</strong>, that should contain the true value. A <strong>95% confidence interval</strong> means that there is a 95% chance that the confidence interval contains the true value; put another way, if the study were repeated many times, about 95 percent of such intervals would contain the true value.</p>
+<ul>
+  <li>A <strong>narrow</strong> interval means greater statistical precision; a <strong>wide</strong> interval means a less precise one. Two studies can report the same point estimate with different precision: a relative risk of 0.6 with an interval of 0.5 to 0.7 is more precise than the same 0.6 with an interval of 0.2 to 1.8.</li>
+  <li>An interval is <strong>not</strong> the range that holds 95 percent of patients' individual values, it is not a range for the p value, it does not measure or correct bias (an interval can be narrow and still be wrong if the study is biased), and it is not the same as clinical importance or statistical power.</li>
+</ul>
+<h4 class="subsub" id="gh-stats-reading-an-interval">Reading an interval around a relative risk or a difference</h4>
+<p>For a <strong>relative risk</strong>, 1 means no difference, and values below 1 mean the risk is lower in the treated or exposed group. In a plot of relative risk the outcomes with intervals lying entirely on one side of 1 are statistically significant, and an interval that spans 1 is not. For a <strong>difference</strong> (for example in mean weight loss) the value of no effect is <strong>0</strong>.</p>
+<table>
+<tr><th>Result</th><th>Reading</th></tr>
+<tr><td>Relative risk 0.70, 95% confidence interval 0.55 to 0.90</td><td>Whole interval below 1: a <strong>statistically significant reduction</strong> in risk</td></tr>
+<tr><td>Relative risk 1.2, 95% confidence interval 0.8 to 1.8</td><td>Interval contains 1: <strong>no statistically significant difference</strong>. The point estimate suggests a 20 percent increase, but an increase is not established because the interval runs from below 1 to well above it, which also makes the estimate imprecise</td></tr>
+<tr><td>Difference in weight loss, 95% confidence interval 1.0 to 3.5 kilograms</td><td>Interval entirely above 0: statistically significant</td></tr>
+<tr><td>Difference in weight loss, 95% confidence interval -0.5 to 3.0 kilograms (or -2.0 to 1.5, or -1.5 to 0.5)</td><td>Interval contains 0: not statistically significant</td></tr>
+</table>
+<p>A 95% confidence interval that excludes the value of no effect corresponds to a p value below 0.05 for the same comparison, and an interval that contains it corresponds to a p value above 0.05. The interval adds what the p value alone cannot: the range of plausible effect sizes.</p>
+<p><strong>Worked graph (systematic review of corticosteroids for pneumonia).</strong> Each outcome is drawn as a point (the relative risk) with a line (its confidence interval) on a scale from 0 to 2, with 1 as the line of no effect. Mortality and mechanical ventilation lie to the left of 1 with intervals that do not reach 1 (corticosteroids benefit). Hyperglycemia lies to the right of 1 with an interval that does not reach 1 (corticosteroids harm). Gastrointestinal bleed has a point just under 1 and a very wide interval that crosses 1, so it is imprecise and not significant.</p>
+
+<h3 class="sub" id="gh-stats-power">Objective 1 &mdash; Statistical power</h3>
+<p><strong>Statistical power</strong> is the probability that a study will find a statistically significant difference when the difference really exists. It is calculated in terms of type II error:</p>
+<div class="callout"><strong>Statistical power = 1 &minus; P<sub>&beta;</sub></strong>, where P<sub>&beta;</sub> is the probability of a type II (&beta;) error.</div>
+<ul>
+  <li>Statistical power is <strong>high</strong> when studies have a high probability of detecting true differences. Power is the complement of the type II error probability, not the type I error probability, not the p value, not the size of the difference and not the chance that the null hypothesis is true.</li>
+  <li><strong>Calculation.</strong> A study with a 20 percent (0.20) chance of a type II error has power 1 &minus; 0.20 = 0.80, or 80 percent. A study with power 0.90 has a type II error probability of 1 &minus; 0.90 = 0.10. Ninety-five percent is the level used for confidence intervals and 5 percent (0.05) is the usual threshold for type I error; neither is derived from the type II error probability.</li>
+  <li><strong>Low power</strong> means a high probability of type II error, so a real difference is likely to be missed. A small trial of a drug that truly works can therefore report a non-significant p value (for example 0.30) simply because it had too little power. A non-significant result does not prove there is no effect and does not prove the null hypothesis true; it fails to reject it. That is a type II error, not a type I error.</li>
+  <li>Larger samples give more power, which is why pooling data across studies in a meta-analysis usually helps.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-multiple-comparisons">Objective 1 &mdash; Multiple comparisons</h3>
+<p>The strength of statistical tests depends on the <strong>number of research questions</strong> in a study and <strong>how focused</strong> those questions are. It is not always possible to know how many comparisons were made. <strong>Selecting more interesting comparisons after the analysis is complete can distort the data.</strong> When many comparisons are made in one study, some may look significant by chance alone; more comparisons do not make any p value more accurate, do not make type II error impossible and do not narrow confidence intervals.</p>
+<ul>
+  <li><strong>Expected chance findings.</strong> A p value of 0.05 corresponds to a chance of 1 in 20. If a study makes 60 comparisons and none reflects a true difference, about 60 &divide; 20 = 3 will appear significant by chance. At a p value of 0.01 (1 in 100), 200 comparisons with no true difference give about 200 &divide; 100 = 2 chance findings. Using the 0.05 threshold instead of 0.01 would predict 10, which is the wrong rate.</li>
+</ul>
+<table>
+<tr><th colspan="2">How multiple comparisons can be misleading (Fletcher Table 11.3)</th></tr>
+<tr><td>1</td><td>Make multiple comparisons within a study</td></tr>
+<tr><td>2</td><td>Apply tests of statistical significance to each comparison</td></tr>
+<tr><td>3</td><td>Find a few comparisons that are &ldquo;interesting&rdquo; (statistically significant)</td></tr>
+<tr><td>4</td><td>Build an article around one of these interesting findings</td></tr>
+<tr><td>5</td><td>Do not mention the context of the individual comparison (how many questions were examined and which question was considered primary before the data were examined)</td></tr>
+<tr><td>6</td><td>Construct a post hoc argument for the plausibility of the isolated finding</td></tr>
+</table>
+<p>The practice that misleads is picking interesting results after analysis and hiding how many were examined. Naming the primary question beforehand, reporting every comparison that was made, and limiting the study to a few focused questions all protect against the distortion.</p>
+
+<h3 class="sub" id="gh-stats-multivariable-modeling">Objective 1 &mdash; Multivariable modeling</h3>
+<p>Multivariable modeling examines the <strong>effect of two or more variables together</strong>, as opposed to a single variable in isolation. It is a mathematical construct (an equation), and it is used in two ways:</p>
+<ul>
+  <li>To look at the effect of <strong>one variable on the outcome while taking the effect of other variables into account</strong> (confounding or effect modifiers), which allows one variable's effect to be isolated.</li>
+  <li>To look at the <strong>combined effect of multiple variables acting together</strong> to predict a clinical event.</li>
+</ul>
+<h4 class="subsub" id="gh-stats-modeling-process">Process</h4>
+<ol>
+  <li><strong>Identify variables related to the outcome</strong> (confounding, effect modifiers).</li>
+  <li><strong>Select variables for inclusion</strong>: consider those with the strongest association with the outcome first (not those least associated, easiest to measure or with the most missing data).</li>
+  <li><strong>Identify assumptions.</strong> They commonly involve probability distributions, with underlying assumptions such as normality, homoscedasticity and independence of errors.</li>
+  <li><strong>Create the model.</strong></li>
+</ol>
+<h4 class="subsub" id="gh-stats-modeling-limitations">Limitations</h4>
+<ul>
+  <li><strong>Validity is based on assumptions about the data</strong>: a model is valid only if its assumptions hold. The number of patients recruited affects precision and power, and adding more variables or requiring every variable to be significant does not secure validity.</li>
+  <li><strong>Poor at identifying effect modification.</strong> (Taking confounders into account is what a model is designed to do.)</li>
+  <li><strong>May omit rare variables</strong> with a strong relationship with the outcome.</li>
+  <li>A model cannot prove that the outcome is caused by a variable, cannot remove random error (which is estimated statistically and never eliminated) and does not replace the need for a comparison group.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-clinical-importance">Objective 2 &mdash; Statistical significance versus clinical importance</h3>
+<p>Statistical significance asks how likely chance is as an explanation; <strong>clinical significance (importance)</strong> asks whether the difference is relevant to practice and to patients. A short contrast: <strong>chance versus relevance to patients</strong>. (Random error versus systematic error, precision versus accuracy, and validity versus reliability are different pairs and do not contrast the two kinds of significance.)</p>
+<ul>
+  <li><strong>Statistical significance does not imply clinical significance.</strong> Differences can be present with a p value below 0.0001 and still not have any relevance to clinical practice. So a very small p value tells you nothing about relevance: it does not make a difference relevant, and it does not make it irrelevant either.</li>
+  <li><strong>Larger differences tend to be more clinically significant, but small differences can still be statistically significant</strong> (especially in very large samples). A lower p value is not the same as a larger difference, and sample size affects statistical significance and precision rather than how much a difference matters clinically.</li>
+  <li>The reverse also happens: an important difference can fail to reach statistical significance, for example in a small study with low power.</li>
+  <li><strong>Question test.</strong> &ldquo;Would it matter to the patient?&rdquo; is a clinical question. &ldquo;Is the p value below 0.05?&rdquo;, &ldquo;Does the interval exclude no effect?&rdquo; and &ldquo;Was the null hypothesis rejected?&rdquo; are all statistical questions.</li>
+</ul>
+<table>
+<tr><th>Situation</th><th>Interpretation</th></tr>
+<tr><td>40,000 patients; systolic blood pressure lowered by 1 millimeter of mercury; p value below 0.0001</td><td>Statistically significant but of doubtful clinical importance: a fall this small is unlikely to matter to patients</td></tr>
+<tr><td>Small trial; 30 percent lower death rate; p value 0.12</td><td>Possibly important but not statistically significant; 0.12 does not reach 0.05, and a small study may simply lack power, so it does not prove the treatment has no effect</td></tr>
+</table>
+
+<h3 class="sub" id="gh-stats-types-of-cause">Objective 3 &mdash; The study of causation and the types of cause</h3>
+<p><strong>Causality exists if a factor produces or contributes to the production of a specified outcome.</strong> It is not the same as association (any factor associated with an outcome), nor as merely occurring before an outcome, nor as having a significant p value.</p>
+<ul>
+  <li><strong>Single causes, multiple causes, and the web of causation</strong> (many factors acting together).</li>
+  <li><strong>Koch's postulates</strong> for infectious disease are the example of a <strong>single cause</strong>: the organism must be present in every case of disease; must be isolated and grown in pure culture; must cause a specific disease; and must be recovered from an inoculated animal and be identified.</li>
+</ul>
+<table>
+<tr><th>Type of causal relationship</th><th>Definition</th></tr>
+<tr><td><strong>Sufficient cause</strong></td><td>Precedes the disease and, <strong>if present, the disease always occurs</strong> (it guarantees the disease whenever present)</td></tr>
+<tr><td><strong>Necessary cause</strong></td><td>Precedes the disease and, <strong>if absent, the disease cannot occur</strong>. If the cause is present, disease may or may not occur (necessary but not sufficient)</td></tr>
+<tr><td><strong>Risk factor</strong></td><td>Increases the probability of a disease in a group of persons who have the factor; <strong>neither sufficient nor necessary</strong>. It makes disease more likely without guaranteeing it, and disease can still occur without it</td></tr>
+<tr><td><strong>Direct causality</strong></td><td>The factor under consideration exerts its effects without intermediate factors</td></tr>
+<tr><td><strong>Indirect causality</strong></td><td>One factor influences one or more other factors (<strong>intervening variables</strong>) that are in turn directly causal. Example: cardiovascular disease associated with obesity is in part due to the higher blood pressure and higher levels of cholesterol and glucose that often occur with obesity. Likewise, poverty raises tuberculosis risk partly through crowded housing and malnutrition. Intervening variables lie on the pathway between the cause and the outcome, unlike a confounder, which is a separate factor associated with both exposure and outcome</td></tr>
+<tr><td><strong>Non-causal association</strong></td><td>The relationship between the two variables is statistically significant, but no causal relationship exists (the temporal relationship may be incorrect, and a shared factor such as summer weather can drive both). Example: ice cream sales and drowning deaths both rise in summer and the link is statistically significant, yet neither causes the other</td></tr>
+</table>
+<p><strong>Applying the definitions.</strong> If disease X never occurs without exposure Y but many exposed people stay healthy, Y is a <strong>necessary but not sufficient</strong> cause. Y would have to always produce disease when present to be sufficient.</p>
+<h4 class="subsub" id="gh-stats-association-to-cause">From association to cause</h4>
+<p>Before concluding that a statistical association is causal, three alternative explanations must be excluded, taken in this order: <strong>bias in selection or measurement</strong> first, then <strong>chance</strong>, then <strong>confounding</strong>. If bias is likely, or chance is likely, or confounding is present, the association is not causal; only when none of them explains it is a cause likely. (Dose-response, reversibility, specificity, temporality, strength and analogy are criteria that support cause, not alternative explanations to be excluded, and precision, power and validity are properties of a study.) It is not possible to prove a causal relationship beyond all doubt; what is possible is to increase the evidence.</p>
+
+<h3 class="sub" id="gh-stats-criteria-for-causation">Objective 3 &mdash; Criteria for causality</h3>
+<table>
+<tr><th>Criterion</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><strong>Temporality</strong></td><td>The cause precedes the effect</td><td>Exposure comes before the disease appears</td></tr>
+<tr><td><strong>Strength of the association</strong></td><td>Judged by the size of the relative risk: a large relative risk is a strong association (it is not judged by how many studies report it, by whether a mechanism is known, or by whether exposure can be reversed)</td><td>A very high relative risk</td></tr>
+<tr><td><strong>Dose-response</strong></td><td>Larger exposure &rarr; higher rate of disease</td><td>Lung cancer rates rise with the number of cigarettes smoked each day</td></tr>
+<tr><td><strong>Reversibility</strong></td><td>Decreased exposure &rarr; less disease</td><td>Lung cancer risk falls in people who stop smoking</td></tr>
+<tr><td><strong>Consistency</strong></td><td>Findings are replicable in other studies</td><td>Several studies in different populations find the same association</td></tr>
+<tr><td><strong>Biologically plausible</strong></td><td>Makes sense biologically</td><td>A known mechanism explains how the exposure could injure tissue</td></tr>
+<tr><td><strong>Specificity</strong></td><td>One cause leads to one effect. It is a demanding criterion, because a single exposure often produces several effects and a cause need not be specific to be real</td><td>&mdash;</td></tr>
+<tr><td><strong>Analogy</strong></td><td>Similar cause and effect pattern for a similar exposure and disease</td><td>A newly studied virus produces a disease pattern like that of a well-established similar virus</td></tr>
+</table>
+<div class="pearl"><strong>The more criteria that are met for causation, the stronger the case.</strong> Meeting many criteria strengthens the association, but no set of criteria proves cause with certainty. The independent variable causes the dependent variable.</div>
+<h4 class="subsub" id="gh-stats-criteria-example">The criteria applied: Helicobacter pylori and duodenal ulcer</h4>
+<ul>
+  <li><strong>Temporal:</strong> <em>Helicobacter pylori</em> is linked to chronic gastritis, which is associated with the development of duodenal ulcer.</li>
+  <li><strong>Strength:</strong> <em>H. pylori</em> is found in 90% of patients with duodenal ulcer. <strong>Dose-response:</strong> its concentration is higher in the mucosa of patients with duodenal ulcer than in ulcer-free patients.</li>
+  <li><strong>Replication:</strong> the observations have been repeatedly replicated. <strong>Biologic plausibility:</strong> there are binding sites for <em>H. pylori</em> on antral cells, and it can follow these cells into the duodenum.</li>
+  <li><strong>Alternative explanations:</strong> smoking increases risk but is not a risk factor in patients without <em>H. pylori</em>. <strong>Cessation of exposure:</strong> eradication of <em>H. pylori</em> results in healed ulcers.</li>
+  <li><strong>Specificity:</strong> prevalence in patients with duodenal ulcer is 90-100%, but the organism is also found in some asymptomatic patients and those with gastric ulcers, so specificity is only partly met.</li>
+  <li><strong>Consistency with other knowledge:</strong> prevalence is the same in men as in women, and duodenal ulcer prevalence peaked in the late 19th century when <em>H. pylori</em> was more prevalent because of poor living conditions.</li>
+</ul>
+
+<h3 class="sub" id="gh-stats-pitfalls">Objective 3 &mdash; Pitfalls in causal research</h3>
+<table>
+<tr><th>Pitfall</th><th>What it is</th></tr>
+<tr><td><strong>Measurement bias</strong></td><td>Possible operator error, calibration problems and the like</td></tr>
+<tr><td><strong>Recall bias</strong></td><td>Difficulty remembering: participants' difficulty in recalling past exposures distorts the reported exposure or history</td></tr>
+<tr><td><strong>Selection bias</strong></td><td>How people get into the study, such as poor randomization</td></tr>
+<tr><td><strong>Random error</strong></td><td>Occurs by chance and is <strong>accounted for through the p values</strong> used in the study. It is not handled by blinding, matching cases with controls, or excluding older participants: blinding protects against performance and measurement bias, and matching addresses confounding</td></tr>
+<tr><td><strong>Confounding</strong></td><td>A covariate whose effect cannot be separated from the variable studied</td></tr>
+<tr><td><strong>Effect modification</strong></td><td>The effect of an exposure differs according to another variable; a multivariable model is poor at identifying it</td></tr>
+</table>
+
+<h3 class="sub" id="gh-stats-design-and-causation">Objective 4 &mdash; The impact of study design on determining causation</h3>
+<p>Evidence for or against cause depends both on the <strong>design</strong> of the study and on the <strong>findings</strong>. The hierarchy of designs for causal evidence runs from strongest to weakest:</p>
+<ol>
+  <li>Systematic review</li>
+  <li>Randomized controlled trial</li>
+  <li>Multiple time series</li>
+  <li>Non-randomized trial</li>
+  <li>Cohort</li>
+  <li>Case-control</li>
+  <li>Time series</li>
+  <li>Cross-sectional</li>
+  <li>Case series</li>
+  <li>Case report (the weakest, at the bottom of the hierarchy)</li>
+</ol>
+<table>
+<tr><th>Findings that argue FOR a causal relationship</th><th>Findings that argue AGAINST a causal relationship</th></tr>
+<tr><td>Temporal sequence &middot; small effect &middot; specificity &middot; analogy &middot; biologic plausibility &middot; consistency &middot; large effect &middot; dose-response &middot; reversibility</td><td>Incorrect temporal sequence (the disease appears before the exposure) &middot; no effect &middot; not biologically plausible &middot; no analogy &middot; no dose-response &middot; not reversible &middot; not specific</td></tr>
+</table>
+<ul>
+  <li>The <strong>randomized controlled trial</strong> gives the strongest single-study evidence for causation (systematic reviews, which pool trials, sit at the very top with it). <strong>Random assignment balances confounders between the groups</strong> (it spreads them evenly), which is why it strengthens causal conclusions; it does not remove random error (still accounted for through p values), does not guarantee a significant result and does not make measurements more reliable.</li>
+  <li>A <strong>cohort study</strong> ranks above a <strong>case-control study</strong>, which looks backward from the outcome. Cross-sectional studies, case series and a case report rank below it; a case series describes patients without a comparison group.</li>
+  <li>A <strong>cross-sectional study</strong> is weak evidence for causation because exposure and outcome are measured together at a single point in time, so it cannot show which came first; the temporal sequence, an essential criterion for cause, cannot be established. It can still detect an association and does measure the outcome.</li>
+  <li><strong>Strong design plus a finding.</strong> A well-designed randomized trial that finds no effect of an exposure on an outcome provides <strong>strong evidence against a causal link</strong> (provided the trial had adequate power). A design at the top of the hierarchy makes the evidence strong rather than weak, and a finding of no effect argues against cause, however strong the design.</li>
+</ul>
+<div class="pearl"><strong>Association is not cause.</strong> Exclude bias, chance and confounding, then weigh the criteria (temporality, strength, dose-response, reversibility, consistency, biologic plausibility, specificity, analogy) and the strength of the design. The stronger the design and the more criteria met, the stronger the case for causation.</div>
+
+<h3 class="sub" id="gh-stats-facts-at-a-glance">Definitions</h3>
+<ul>
+  <li><strong>Biologic plausibility.</strong> Biologic plausibility is met when the relationship makes sense biologically, for example when a known mechanism explains how an exposure could injure tissue; it strengthens the case that the relationship is causal.</li>
+  <li><strong>Evidence for causation.</strong> The more criteria for causation that are met, the stronger the case for a cause grows, though causation cannot be proved beyond all doubt.</li>
+</ul>
+</section>

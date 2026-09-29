@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b55575; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Literature Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#7a2d47; --indigo:#b55575; --gold:#c08a2e; --ice:#faeff3;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink)}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d47;--gold-l:#c08a2e;--indigo-l:#b55575;--navy:#ea91aa;--indigo:#cd6a8a;--gold:#c08a2e;--ice:#341921;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#cd6a8a;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d47;--indigo-t:#b55575;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Interpretation of Medical Literature &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 1 &middot; Lectures 1&ndash;13 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">60 questions covering every lecture deck in the Exam 1 block, the same number from each topic. <b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. The live sessions (small groups, journal days and project time) have no deck and are not included. Every question cites the slide it is built on.</p>
+    <div class="chips"><span class="chip">Bias &amp; validity</span><span class="chip">Study designs</span><span class="chip">Diagnostic tests</span><span class="chip">Risk &amp; ratios</span><span class="chip">Trials &amp; statistics</span><span class="chip">Reviews &amp; evidence</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Defining abnormality", "io": "Discuss the limitations of differentiating between normal and abnormal", "slot": "principle", "q": "In what context should abnormality be determined?", "opts": [["Whatever differs from the patient's previous result", "A change may reflect biologic variation or measurement error rather than a pathological difference."], ["Whatever falls outside two standard deviations", "A statistical cutoff of that kind does not establish that a value is associated with harm."], ["Whatever the laboratory reports as high or low", "Laboratory flags follow reference ranges, and cutoff points for normal and abnormal are often arbitrary."], ["Values known to be associated with disease, disability or death", "Correct, together with a clinically recognizable difference from healthy, rather than by statistical position alone."]], "c": 3, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 77"}, {"topic": "ROC curve", "io": "Discuss accuracy of diagnostic tests", "slot": "definition", "q": "What does a receiver operating characteristic curve plot?", "opts": [["Sensitivity against disease severity", "Severity is not one of the axes; the curve trades true positives against false positives."], ["Positive predictive value against prevalence", "That relationship is shown in the prevalence tables rather than by this curve."], ["Pre-test probability against post-test probability", "That relationship is read from the likelihood ratio nomogram."], ["True positive rate against false positive rate", "Correct, with one minus specificity on the horizontal axis, which lets clinicians compare alternative tests for the same diagnosis."]], "c": 3, "cite": "4 PAJ5512 Tests MBF 2026sc.pptx, Slide 21"}, {"topic": "Unintended consequences", "io": "Describe advantages and disadvantages of screening exams", "slot": "definition", "q": "What is overdiagnosis?", "opts": [["Diagnosing disease at an earlier stage", "Earlier diagnosis of disease that will matter is lead time, and overdiagnosis concerns disease that would never have mattered."], ["Ordering more tests than are affordable", "Overdiagnosis refers to the finding, not to the number of tests ordered."], ["Diagnosing the same disease twice", "Overdiagnosis is about detecting disease that does not matter to the patient, not about repeated diagnosis."], ["Finding disease that does not help the patient", "Correct. The finding brings no benefit to the patient, so the label and any treatment can only add harm."]], "c": 3, "cite": "8 PAJ5512 Prevention MBF_2026sc.pptx, Slide 23"}, {"topic": "Likelihood ratio bands", "io": "Describe pretest odds, posttest odds and likelihood ratios", "slot": "grading", "q": "What does a likelihood ratio below 0.1 indicate?", "opts": [["Strong evidence to rule out", "Correct, and such a ratio virtually rules out the chance that the patient has the disease, which is the mirror of a ratio above 10 ruling it in."], ["An indeterminate result", "The indeterminate band runs from 0.5 to 2, well above a ratio capable of ruling disease out."], ["Moderate evidence to rule out", "Moderate evidence to rule out corresponds to the 0.1 to 0.2 band."], ["Weak evidence to rule out", "Weak evidence to rule out corresponds to the 0.2 to 0.5 band."]], "c": 0, "cite": "4 PAJ5512 Tests MBF 2026sc.pptx, Slide 44"}, {"topic": "Other methods", "io": "Describe the various research methods utilized in medical research", "slot": "differential", "q": "What distinguishes quasi-experimental from experimental research?", "opts": [["The researcher controls the treatment but not the assignment", "Correct, and that is why it has less control than a true experiment: without control of assignment, the groups may differ in ways the treatment did not create."], ["The researcher controls the assignment but not the treatment", "The relationship runs the other way: treatment is controlled, assignment is not."], ["The researcher controls both, but the study is smaller", "Controlling both treatment and assignment is a true experiment, whatever the size of the study."], ["The researcher controls neither treatment nor assignment", "Controlling neither describes an observational design rather than a quasi-experimental one."]], "c": 0, "cite": "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 12"}, {"topic": "Data sources", "io": "Identify epidemiologic data sources", "slot": "data source", "q": "What characterizes a state list of reportable diseases?", "opts": [["It is identical in every state", "Reportable disease lists are set by individual states, which is why they are described state by state."], ["It is limited to sexually transmitted infections", "Chancroid and chlamydia appear on such lists, but so do poisonings, congenital anomalies and cancers."], ["It is limited to diseases that can be prevented by vaccination", "Vaccine-preventable diseases such as diphtheria appear, but the lists extend well beyond them."], ["It is long and varied, spanning infections, poisonings and cancers", "Correct. A single state list runs from acquired immunodeficiency syndrome and anthrax through arsenic and carbon monoxide poisoning to cancer and congenital anomalies."]], "c": 3, "cite": "1 PAJ5512 Introduction Bias Validity MBF_2026sc.pptx, Slide 15"}, {"topic": "Effect modification", "io": "Describe effect modification", "slot": "application", "q": "A drug lowers blood pressure far more in younger than in older adults. What does age represent here?", "opts": [["A confounder", "A confounder is linked to both exposure and outcome and distorts the association; here age changes the size of the drug's effect."], ["A matched control", "Matching selects comparison patients with the same characteristics; it does not describe a variable that changes the effect of an exposure."], ["A source of recall bias", "Recall bias concerns inaccurate memory of past exposure; age here alters the size of the drug's effect."], ["An effect modifier", "Correct: the effect of the exposure differs according to the level of another variable, which is effect modification and not a bias."]], "c": 3, "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"}, {"topic": "Treatment and hypotheses", "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness", "slot": "principle", "q": "What do most treatment hypotheses need before their usefulness is accepted?", "opts": [["Approval from the treating clinician", "Clinical approval is not evidence of benefit; hypotheses about treatment require testing to evaluate usefulness and outcomes."], ["Testing of usefulness and outcomes", "Correct, because most hypotheses, however they arise, require testing to evaluate how useful the treatment is and what outcomes it produces."], ["A plausible mechanism of disease", "A mechanism is one source of a hypothesis, but it does not show that the treatment works; most hypotheses still require testing of usefulness and outcomes."], ["Use in a large number of patients", "Widespread use without a controlled comparison cannot separate benefit from coincidence; a hypothesis requires testing to evaluate usefulness and outcomes."]], "c": 1, "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 7"}, {"topic": "Lead-time bias", "io": "Describe advantages and disadvantages of screening exams", "slot": "interpretation", "q": "If early treatment after screening is not effective, how does screening affect the time of death?", "opts": [["It makes death impossible to date", "Death is recorded normally; the point is that it comes at the same time as without screening."], ["It does not change it", "Correct. Diagnosis comes earlier but death occurs at the same time, so survival after diagnosis looks longer without anyone living longer."], ["It delays death", "Delay of death would need early treatment that works, and here it does not."], ["It brings death forward", "Screening does not shorten life; death occurs at the same time and only the moment of diagnosis moves earlier."]], "c": 1, "cite": "8 PAJ5512 Prevention MBF_2026sc.pptx, Slide 18"}, {"topic": "Meta-analysis strengths and limits", "io": "Discuss the advantages and limitations of meta-analysis", "slot": "advantage", "q": "Which is an advantage of a meta-analysis?", "opts": [["A stronger, more precise estimate of effect size", "Correct, because combining similar studies narrows the uncertainty around the effect compared with any one of them alone."], ["Immunity to flaws in the included studies", "The opposite applies: a meta-analysis is only as good as the studies included, so their flaws carry into the pooled result."], ["Freedom from publication bias", "Publication bias should always be considered, since a pooled analysis can include only the studies that were made available."], ["No need for inclusion and exclusion criteria", "The criteria are very important, because they decide which studies are pooled."]], "c": 0, "cite": "10 PAJ5512 Clinical Questions and Reviews MBF_2026sc.pptx, Slide 25"}, {"topic": "Prognostic factors", "io": "Describe prognostic factors", "slot": "definition", "q": "What does a clinical prediction rule estimate?", "opts": [["The prevalence of disease in a community", "Prevalence is measured by counting cases in a population; a prediction rule estimates an outcome for an individual patient."], ["Outcome probability from patient characteristics", "Correct, using a set of characteristics rather than one finding, which predicts outcome better than any single data point."], ["The best treatment from a list of drugs", "A prediction rule estimates how likely an outcome is, and choosing a treatment is a separate decision."], ["The sensitivity of a test in a new setting", "Test properties are measured against a gold standard; a prediction rule estimates the chance of an outcome."]], "c": 1, "cite": "7 PAJ5512 Prognosis MBF 2026sc.pptx, Slide 29"}, {"topic": "Null hypothesis", "io": "Explain the following statistical concepts: Significance, P value, Null hypothesis, Confidence interval, Statistical power, Multiple comparisons, Multivariable modeling", "slot": "application", "q": "Researchers hope to show that a new drug lowers blood pressure more than placebo. What is the null hypothesis?", "opts": [["The drug lowers pressure in every patient", "That is a sweeping claim of universal benefit, whereas the null hypothesis is simply that there is no difference."], ["The placebo lowers pressure more than the drug", "That states a difference in the wrong direction; the null hypothesis states no difference in either direction."], ["The drug and placebo lower pressure equally", "Correct: the null hypothesis is that there is no difference, which is the opposite of what the researchers hope to find."], ["The drug lowers pressure more than placebo", "That is the researchers' hoped-for finding, the alternative hypothesis; the null hypothesis is its opposite."]], "c": 2, "cite": "9 PAJ5512 Statistics Causation MBF_2026sc.pptx, Slide 8"}, {"topic": "Appraising prognosis studies", "io": "Discuss bias in cohort studies", "slot": "framework", "q": "Which is a question to ask when appraising a prognosis study?", "opts": [["Were outcomes assessed objectively and blindly?", "Correct, and the others are whether an inception cohort was assembled, whether entry criteria were objective, whether follow-up was adequate, whether the patients resemble yours and whether important prognostic factors were adjusted for."], ["Was the study limited to a single center?", "A single center is a consideration for generalizability, but the appraisal asks whether the study patients resemble yours."], ["Were the participants free of the disease?", "Prognosis studies enroll patients who have the disease, so healthy participants would signal a risk study."], ["Was the exposure assigned by the investigator?", "That is a question for trials; a prognosis cohort observes patients rather than assigning them."]], "c": 0, "cite": "7 PAJ5512 Prognosis MBF 2026sc.pptx, Slide 30"}, {"topic": "Validity", "io": "Discuss internal and external validity", "slot": "principle", "q": "Which two questions should a provider ask when presented with a study?", "opts": [["Who funded the study, and were the results statistically significant?", "Funding and significance are worth knowing, but the two validity questions concern correctness within the sample and applicability beyond it."], ["Are the conclusions valid for the sample, and does the sample represent my patients?", "Correct, and the two map onto the two kinds of validity: the first is internal validity, the second external validity, which is why both have to be asked."], ["How large was the sample, and how long did the study run?", "Size and duration bear on a study's quality but are not the two questions named for judging validity."], ["Was the study published in a high-impact journal, and how often is it cited?", "Journal standing is not what determines whether conclusions hold for the sample or apply to your patients."]], "c": 1, "cite": "1 PAJ5512 Introduction Bias Validity MBF_2026sc.pptx, Slide 50"}, {"topic": "Criteria for causation", "io": "Define criteria to determine causation", "slot": "definition", "q": "What does the specificity criterion state?", "opts": [["Less exposure leads to less disease", "That is the reversibility criterion, in which decreased exposure leads to less disease."], ["One effect can have many causes", "That describes multiple causes or a web of causation, not the specificity criterion."], ["One cause leads to one effect", "Correct, though it is a demanding criterion, because a single exposure often produces several effects and a cause need not be specific to be real."], ["Larger exposure leads to more disease", "That is the dose-response criterion, in which a larger exposure leads to a higher rate of disease."]], "c": 2, "cite": "9 PAJ5512 Statistics Causation MBF_2026sc.pptx, Slide 30"}, {"topic": "Databases", "io": "Discuss the use of common databases to access medical literature", "slot": "resource", "q": "Which database is maintained by the United States National Library of Medicine?", "opts": [["The Cochrane Library", "That is maintained by the Cochrane Collaboration rather than by the National Library of Medicine."], ["Medline and PubMed", "Correct, and it sits alongside the Cochrane Library, Evidence Based Medicine Reviews and Up-To-Date among the named evidence-based resources."], ["Clinical Key", "That is a commercial clinical search resource rather than a national library database."], ["Up-To-Date", "That is a commercial point-of-care resource rather than a national library database."]], "c": 1, "cite": "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 21"}, {"topic": "Cross-sectional", "io": "Compare and contrast the following study designs: cross-sectional, cohort, case-control, randomized controlled clinical trials, systematic reviews, meta-analysis", "slot": "definition", "q": "What is a longitudinal ecologic survey?", "opts": [["Ongoing surveillance or repeated surveys measuring trends", "Correct, and it may reveal an association, such as whether lung cancer incidence rises as smoking increases among women over time."], ["A single survey of a population at one moment", "One survey at one moment is an ordinary cross-sectional study rather than a longitudinal one."], ["A trial in which exposure is assigned and followed", "Assignment of exposure makes a study experimental rather than an ecologic survey."], ["A study comparing cases with controls for past exposure", "That describes a case-control study using individual level data."]], "c": 0, "cite": "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 19"}, {"topic": "Publication bias", "io": "Discuss publication bias", "slot": "principle", "q": "Why should publication bias always be considered when reading a review?", "opts": [["A random effects model corrects it", "Choosing a statistical model does not restore studies that were never published, so the model cannot correct this."], ["Missing studies can distort the evidence", "Correct, because a review can only include what has been published, so unpublished null results leave it looking at a skewed set of studies."], ["Two reviewers selecting studies removes it", "Independent reviewers make selection consistent, yet they cannot include studies that were never published."], ["It affects only narrative reviews", "It threatens any review that relies on published studies, including systematic reviews and meta-analyses, which is why it must always be considered."]], "c": 1, "cite": "10 PAJ5512 Clinical Questions and Reviews MBF_2026sc.pptx, Slide 29"}, {"topic": "Bias in trials", "io": "List considerations for treatments or interventions that undergo controlled trials", "slot": "framework", "q": "How many of the four possible pairings of study conclusion and reality are errors?", "opts": [["Four", "Two of the four pairings are correct, namely a study that correctly finds no difference and one that correctly finds a difference."], ["Three", "Only two pairings are errors; when the conclusion matches reality, whether both say different or both say not different, it is correct."], ["Two", "Correct: one error is concluding the treatments differ when they do not, and the other is concluding they do not differ when they do."], ["One", "There are two errors, not one: a difference found that does not exist, and a real difference that was missed; the other two pairings are correct."]], "c": 2, "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 26"}, {"topic": "Risk factors", "io": "Describe the importance of risk and risk factors in studies of disease", "slot": "principle", "q": "How can a long latency between exposure and disease affect the results of a study?", "opts": [["It makes the association easier to see", "A long latency does the opposite: with a long gap between exposure and disease the result can be obscured, whereas a large risk with rapid effects is easy to recognize."], ["It strengthens the association", "Latency does not strengthen an association; it hides one, because the disease shows up long after the exposure took place."], ["It has no effect on the results", "Latency does matter: a long gap between exposure and disease can obscure results, which is why follow-up must last long enough to observe the outcome."], ["It can obscure the association", "Correct, because the disease appears long after the exposure, so the two can look unrelated unless people are followed for a sufficient period of time."]], "c": 3, "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 4"}, {"topic": "Cohort strengths and limits", "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research", "slot": "advantage", "q": "What advantage does a retrospective cohort study have over a prospective one?", "opts": [["It measures exposure in a standardized way", "Measurement of exposure may not be standardized in a retrospective cohort; a prospective study can set up standardized measurement."], ["It can examine any patient characteristic", "A retrospective cohort cannot examine characteristics missing from the data set, whereas a prospective study can collect data not found in most medical records."], ["It studies a wider range of risk factors", "The range of risk factors is NARROWER in a retrospective cohort, because only what was already recorded can be studied."], ["It is faster, cheaper and more efficient", "Correct, because the data were already collected for another purpose and the outcomes have already occurred; the trade-off is a narrower range of risk factors."]], "c": 3, "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 16"}, {"topic": "Intra-patient variation", "io": "Differentiate between the types of variation in disease measurement", "slot": "principle", "q": "What three sources can explain variation within one patient?", "opts": [["Biologic variation, measurement error, and real disease change", "Correct, and identifying which is operating is the clinical point: intervention should only be considered if there is a true pathological change."], ["Incidence, prevalence and case fatality", "Those are measures of disease frequency and severity rather than sources of variation."], ["Bias, chance and confounding", "Those are threats to a study's conclusions rather than explanations for one patient's values changing."], ["Sampling, blinding and randomization", "Those are design features of a study rather than sources of intra-patient variation."]], "c": 0, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 66"}, {"topic": "Steps of a review", "io": "Identify methods to conduct a systematic review", "slot": "principle", "q": "How are the studies in a systematic review summarized?", "opts": [["Scatter plots and life tables", "These display other kinds of data; the summary step uses forest plots and tables of the studies' characteristics."], ["Funnel plots and dose-response curves", "A funnel plot assesses publication bias and is used at the selection step; summarizing relies on forest plots and characteristic tables."], ["Forest plots and tables of characteristics", "Correct, because figures such as forest plots show results across studies, and tables set out the characteristics of each one."], ["Nomograms and receiver operating characteristic curves", "Those are tools for interpreting diagnostic tests, and the summary step uses forest plots and tables of characteristics."]], "c": 2, "cite": "10 PAJ5512 Clinical Questions and Reviews MBF_2026sc.pptx, Slide 21"}, {"topic": "Incidence density", "io": "Compare and contrast incidence and prevalence rates", "slot": "definition", "q": "What is incidence density useful for?", "opts": [["Populations of fixed size followed together", "A group of fixed size is what cumulative incidence handles, counting new cases among a membership that does not change."], ["Measuring how many people have a condition now", "Counting everyone who has a condition at a moment is prevalence rather than any measure of new occurrence."], ["Dynamic populations, with people moving in and out", "Correct, which is why it is often used in clinical trials, where participants enroll and leave at different times rather than all being present throughout."], ["Comparing mortality between nations", "International health comparison is commonly done with the infant mortality rate."]], "c": 2, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 19"}, {"topic": "Challenges", "io": "Discuss the importance and value of evidence-based medicine", "slot": "limitation", "q": "Which challenge arises when two sound studies disagree?", "opts": [["Measurement bias", "Measurement bias is a systematic error within a study rather than a challenge of implementing evidence-based practice."], ["Outdated evidence", "Outdated evidence is a separate named challenge, concerning currency rather than disagreement."], ["Publication bias", "Publication bias concerns which studies reach print rather than what to do when published studies disagree."], ["Conflicting evidence", "Correct, and it sits alongside evidence being simply unavailable or outdated, so the clinician may face too little evidence, too old, or too contradictory."]], "c": 3, "cite": "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 6"}, {"topic": "Case-control", "io": "Compare and contrast the following study designs: cross-sectional, cohort, case-control, randomized controlled clinical trials, systematic reviews, meta-analysis", "slot": "principle", "q": "What can a case-control study be used for?", "opts": [["Generating hypotheses only", "It can also test them, unlike the cross-sectional design, which is described as generating only."], ["Establishing causation definitively", "Some designs prove cause and effect while others show relationships or predictability; an observational design does not settle causation."], ["Generating or testing hypotheses", "Correct, which sets it apart from the cross-sectional design: that one generates hypotheses only, while a case-control study can also test them."], ["Measuring the effect of an assigned intervention", "Assigned interventions belong to experimental designs, whereas the case-control study observes exposures that already occurred."]], "c": 2, "cite": "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 21"}, {"topic": "Meta-analysis", "io": "Discuss the principles of evidence-based medicine", "slot": "principle", "q": "Why does pooling data across studies usually help?", "opts": [["It converts observational studies into experiments", "Pooling does not change the design of the studies being combined."], ["It removes any bias present in the individual studies", "Combining studies does not correct bias within them; a pooled estimate can carry the same systematic error at larger scale."], ["A greater number of participants usually means greater power", "Correct, and the qualifier usually is deliberate: pooling poor studies produces a larger poor study rather than a reliable answer."], ["It guarantees the result will be statistically significant", "Greater power raises the chance of detecting a real effect but does not guarantee any particular result."]], "c": 2, "cite": "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 14"}, {"topic": "Surveillance", "io": "Describe considerations for disease surveillance and outbreak investigations", "slot": "principle", "q": "Why does surveillance need to establish a baseline?", "opts": [["Because a baseline proves the cause of the disease", "Hypothesis testing for etiology is a separate function, carried out with case-control or cohort studies."], ["Because surveillance is required to be passive", "Surveillance may be active or passive, and the baseline requirement applies either way."], ["Because baselines determine the case definition", "The case definition is established during an outbreak investigation rather than derived from a baseline."], ["Without it a rise in cases cannot be recognized", "Correct, and establishing that baseline is listed among its core purposes, alongside determining the magnitude of a health problem."]], "c": 3, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 34"}, {"topic": "Types of data", "io": "Discuss the types of data and their relationship to medical research", "slot": "principle", "q": "Why does the level of measurement matter in medical research?", "opts": [["It determines the prevalence of the condition", "Prevalence is a property of the population rather than a consequence of the measurement scale."], ["It determines whether the study is primary or secondary", "Primary and secondary concern who collected the data rather than how finely it was measured."], ["It determines whether the measurement is reliable", "Reliability concerns consistency on repetition, which is independent of the level of measurement used."], ["It determines what can legitimately be said about two values", "Correct: nominal categories can only be counted, ordinal values can be ranked, and only interval data supports statements about how much two values differ."]], "c": 3, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 48"}, {"topic": "Mortality rates", "io": "Discuss the concepts of rate and rate determination", "slot": "principle", "q": "Why does an age-adjusted death rate differ from a crude one?", "opts": [["Adjustment removes deaths from unrelated causes", "Restricting to one cause gives the cause-specific rate rather than an age-adjusted one."], ["Adjustment changes the multiplier used", "The multiplier only scales the figure for readability; adjustment changes what the figure accounts for."], ["Adjustment removes the effect of the population's age structure", "Correct, and the difference can be substantial: a crude United States rate of about 794 per 100,000 in 2009 corresponded to an age-adjusted figure of about 741."], ["Adjustment converts the rate into a proportion", "Expressing deaths as a share of all deaths gives proportionate mortality rather than an adjusted rate."]], "c": 2, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 10"}, {"topic": "USPSTF grades", "io": "Analyze resources for bias and validity", "slot": "grading", "q": "Which two grades carry the same instruction to offer or provide the service?", "opts": [["C and D", "Grade D recommends against the service, which is the opposite instruction."], ["A and B", "Correct, because both rest on a net benefit judged at least moderate. Grade C offers selectively, Grade D discourages, and Grade I calls for the clinical considerations to be read."], ["B and C", "Grade C offers the service selectively for particular patients rather than providing it as a matter of course."], ["D and I", "Grade D discourages the service and Grade I neither recommends nor discourages it."]], "c": 1, "cite": "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 12"}, {"topic": "Number needed to harm", "io": "Describe number-needed-to-treat (NNT) and number-needed-to-harm (NNH)", "slot": "calculation", "q": "Serious bleeding occurs in 3.0 percent of treated patients and 1.0 percent of control patients. What is the number needed to harm?", "opts": [["33 patients", "That is one divided by 0.03, using only the treated group's risk; the increase of 0.02 gives 50."], ["50 patients", "Correct. The absolute increase in risk is 3.0 minus 1.0, or 0.02, and one divided by 0.02 is 50."], ["2 patients", "That is the increase in percentage points; the number needed to harm is the reciprocal of 0.02, which is 50."], ["100 patients", "That is one divided by 0.01, using only the control group's risk; the increase of 0.02 gives 50."]], "c": 1, "cite": "8 PAJ5512 Prevention MBF_2026sc.pptx, Slide 14"}, {"topic": "Grading recommendations", "io": "Discuss grading recommendations for treatment", "slot": "identify", "q": "What evidence supports a 1C recommendation?", "opts": [["Observational studies, unsystematic experience or flawed trials", "Correct, and any estimate of effect from such evidence is uncertain, although benefits still appear to outweigh risks and burdens."], ["Overwhelming evidence from several trial designs", "Overwhelming evidence in some other form belongs to the highest quality of evidence, graded A."], ["Consistent evidence from well-performed randomized trials", "That describes 1A, in which further research is unlikely to change confidence in the estimates of benefits and risks."], ["Randomized trials with important limitations", "That describes 1B; the evidence behind 1C is of lower quality still."]], "c": 0, "cite": "10 PAJ5512 Clinical Questions and Reviews MBF_2026sc.pptx, Slide 31"}, {"topic": "Eligibility criteria", "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness", "slot": "principle", "q": "What happens to the pool of eligible patients as more inclusion and exclusion criteria are applied?", "opts": [["It shifts entirely into the control group", "Eligibility is decided before assignment; criteria narrow the pool, and only then are the eligible patients randomly assigned."], ["It shrinks, sometimes to a small fraction", "Correct: each set of criteria removes more patients, so the final eligible group can be a small fraction of all patients with the condition."], ["It grows as the population becomes better defined", "Every added criterion removes patients rather than adding them, so the eligible pool shrinks step by step."], ["It stays the same because criteria only describe", "Criteria decide who can be enrolled, so applying more of them removes patients and shrinks the eligible group."]], "c": 1, "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 17"}, {"topic": "Procedural bias", "io": "Discuss the various types of bias in medical research including: selection/sampling bias, measurement bias, confounding, procedural bias, attrition effect, non-response bias, reporting bias, publication bias", "slot": "definition", "q": "What is procedural bias?", "opts": [["Respondents differ systematically from non-respondents", "That is non-response bias, which concerns who answers rather than the circumstances in which they were asked."], ["Participants drop out before the study is complete", "That is the attrition effect, which reduces sample size rather than distorting how responses were elicited."], ["Interview or questionnaire results are affected by the method of delivery", "Correct, and the example is pointed: administering a questionnaire after an operation while the patient is still under the after-effects of anesthesia."], ["Care differs between the groups in ways other than the intervention", "That is performance bias, which concerns treatment received rather than how information was collected."]], "c": 2, "cite": "1 PAJ5512 Introduction Bias Validity MBF_2026sc.pptx, Slide 44"}, {"topic": "Types of cause", "io": "Define criteria to determine causation", "slot": "definition", "q": "What defines a sufficient cause?", "opts": [["If it is present, the disease sometimes occurs", "That describes a risk factor, which increases the probability of disease without guaranteeing it."], ["If it is absent, the disease cannot occur", "That defines a NECESSARY cause, which must be present for the disease to occur."], ["If it is absent, the disease occurs less often", "That describes a risk factor, which is neither sufficient nor necessary."], ["If it is present, the disease always occurs", "Correct: a sufficient cause precedes the disease and guarantees it whenever present."]], "c": 3, "cite": "9 PAJ5512 Statistics Causation MBF_2026sc.pptx, Slide 26"}, {"topic": "Relative risk", "io": "Interpret relative risks", "slot": "principle", "q": "For an intervention that prevents disease, what relative risk is expected?", "opts": [["A negative number", "Relative risk is a ratio of two incidences, and incidences cannot be negative, so the ratio cannot be either."], ["Greater than one", "A value above one would mean the risk in the exposed exceeds the risk in the unexposed, which is what a harmful exposure shows."], ["Less than one", "Correct, because prevention should leave the exposed group, those receiving the intervention, with lower risk than the unexposed group."], ["Exactly one", "One is the null value and would mean the intervention makes no difference to risk, so nothing would be prevented."]], "c": 2, "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 19"}, {"topic": "Cox regression", "io": "Discuss survival analysis", "slot": "definition", "q": "The hazard ratio from a Cox analysis is interpreted like which measure?", "opts": [["Relative risk (risk ratio)", "Correct: a hazard ratio above 1 means more risk of the outcome than the comparison group, and below 1 means less."], ["Positive predictive value", "Predictive value describes what a positive test result means, unlike a ratio comparing risk between two groups."], ["Sensitivity", "Sensitivity is the probability that a person with disease tests positive, a measure of test accuracy."], ["Prevalence", "Prevalence is the proportion of a population with a condition at one time and is not a ratio of risks."]], "c": 0, "cite": "7 PAJ5512 Prognosis MBF 2026sc.pptx, Slide 19"}, {"topic": "Appraising a test", "io": "Identify and describe limitations of diagnostic tests", "slot": "framework", "q": "Which question should be asked about a study of a new diagnostic test?", "opts": [["Was the study published in a high-impact journal?", "Journal standing is not among the questions named for appraising a diagnostic test study."], ["Was the test developed commercially?", "Commercial origin is not among the questions named, though conflicts of interest matter generally."], ["Did every subject undergo both tests?", "Correct, alongside whether the study included a spectrum of patients and whether those conducting each test were blinded to the other's result. That means the new test and the gold standard."], ["How many authors contributed to the study?", "The number of authors is not among the questions named for appraising a diagnostic test study."]], "c": 2, "cite": "4 PAJ5512 Tests MBF 2026sc.pptx, Slide 50"}, {"topic": "Rates", "io": "Discuss the concepts of rate and rate determination", "slot": "principle", "q": "Why are rates used rather than raw counts?", "opts": [["Rates remove the effect of chance", "Random variation affects rates as much as counts; what rates provide is comparability."], ["Rates establish the cause of a disease", "Rates measure how much disease there is rather than what produced it."], ["Rates are easier to collect than counts", "A rate requires the count plus a denominator, so it takes more information rather than less."], ["Rates allow comparisons", "Correct. Two places with different populations cannot be compared on counts alone, which is why a denominator and a time period are built into the measure."]], "c": 3, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 5"}, {"topic": "Primary and secondary research", "io": "Discuss the purposes of research", "slot": "definition", "q": "Which are given as examples of secondary research?", "opts": [["Meta-analyses and systematic review articles", "Correct, because both analyze data that already exists rather than collecting new data. Original research articles are the example of primary research."], ["Laboratory test results and vital signs", "Those are clinical measurements listed among the primary research instruments."], ["Questionnaires and surveys", "Those are data collection instruments used in primary research rather than examples of secondary research."], ["Original research articles", "Original research articles are the named example of primary research, where the investigators collected the data themselves."]], "c": 0, "cite": "1 PAJ5512 Introduction Bias Validity MBF_2026sc.pptx, Slide 36"}, {"topic": "The 2x2 table", "io": "Describe sensitivity, specificity, positive predictive value and negative predictive value", "slot": "formula", "q": "Written in the lettered cells, what is positive predictive value?", "opts": [["a over a plus c", "a over a plus c is sensitivity, calculated down the disease column rather than across the test row."], ["a over a plus b", "Correct, dividing true positives by everyone who tested positive, which is why the mix of diseased and healthy people in the population affects it."], ["d over b plus d", "d over b plus d is specificity, a fixed property of the test rather than a predictive value."], ["d over c plus d", "d over c plus d is negative predictive value, read across the test-negative row rather than the positive one."]], "c": 1, "cite": "Assigned reading: The Classic 2 X 2 Table"}, {"topic": "Statistical power", "io": "Explain the following statistical concepts: Significance, P value, Null hypothesis, Confidence interval, Statistical power, Multiple comparisons, Multivariable modeling", "slot": "definition", "q": "What is statistical power?", "opts": [["The chance of detecting a real difference", "Correct: the probability that a study will find a statistically significant difference when the difference really exists."], ["The chance of reporting a false difference", "That describes a type I error (false positive); power concerns finding differences that are truly there."], ["The chance that the null hypothesis is true", "The null hypothesis being true means no difference exists; power is defined for the case where a difference does exist."], ["The size of the difference between groups", "The size of a difference is the effect size; power is a probability of detecting a difference that exists."]], "c": 0, "cite": "9 PAJ5512 Statistics Causation MBF_2026sc.pptx, Slide 16"}, {"topic": "Odds ratio", "io": "Interpret relative risks and odds ratios", "slot": "calculation", "q": "In a case-control study, 60 of 100 cases and 30 of 100 controls had been exposed. What is the odds ratio?", "opts": [["1.5", "1.5 is only the odds of exposure among cases; the odds ratio divides it by the odds of exposure among controls."], ["3.5", "Correct: the odds of exposure are 60 to 40, which is 1.5, in cases and 30 to 70, about 0.43, in controls, and the ratio is 3.5, matching ad over bc, 4,200 over 1,200."], ["0.29", "0.29 inverts the ratio, control odds over case odds; the odds in cases go on top."], ["2.0", "2.0 divides the exposed counts, 60 by 30, ignoring the unexposed counts; odds compare exposed with unexposed within each group."]], "c": 1, "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 38"}, {"topic": "Central tendency", "io": "Discuss variation, distribution, and dispersion in data", "slot": "definition", "q": "What is the median?", "opts": [["The middle score, with half the values on each side", "Correct, and because it depends on position rather than magnitude, an extreme value at one end moves it far less than it moves the mean."], ["The most frequently occurring value", "The most frequently occurring value is the mode, which need not lie near the middle of the distribution."], ["The average of all the values", "The sum of the values divided by their number is the mean, which outliers can pull away from the center."], ["The range between the 25th and 75th percentiles", "That is the interquartile range, a measure of dispersion rather than of where the middle of the data lies."]], "c": 0, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 71"}, {"topic": "Compliance and blinding", "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness", "slot": "definition", "q": "What is compliance in a trial?", "opts": [["Agreeing to be randomized to a group", "Agreeing to take part is consent; compliance is the degree to which participants act in accordance with instructions once enrolled."], ["Remaining unaware of the assigned treatment", "That is blinding; compliance is the degree to which participants act in accordance with instructions."], ["Having the disease being studied", "That is an inclusion characteristic; compliance is the degree to which participants act in accordance with instructions."], ["Acting in accordance with instructions", "Correct: it is the degree to which participants act in accordance with instructions, or patients with medical advice."]], "c": 3, "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 22"}, {"topic": "Design hierarchy", "io": "Compare and contrast the following study designs: cross-sectional, cohort, case-control, randomized controlled clinical trials, systematic reviews, meta-analysis", "slot": "principle", "q": "What is said about the relative strength of study designs?", "opts": [["Observational designs cannot guide practice at all", "Every design is described as able to guide practice, within the limits of what it can establish."], ["All designs carry equal evidential weight", "Some designs are explicitly stronger than others, which is what the evidence pyramid represents."], ["Some are stronger, but all serve a purpose and can guide practice", "Correct, and the distinction drawn is between designs that establish cause and effect and those that establish relationships or predictability."], ["Only randomized controlled trials should influence practice", "All designs are described as serving a purpose and capable of guiding practice."]], "c": 2, "cite": "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 33"}, {"topic": "Clinical course", "io": "Discuss the clinical course and natural history of disease", "slot": "principle", "q": "With what should the outcome of a new treatment be compared?", "opts": [["The natural, untreated course of the disease", "Correct, because only against the untreated outcome can a treatment's effect on prognosis be judged."], ["The course in people without the disease", "Healthy people do not have the disease, so their course is no benchmark for what a treatment achieves."], ["The course in patients who were cured", "Selecting only cured patients would bias the comparison; the benchmark is the natural course of the disease."], ["The cost of the most expensive alternative", "Cost is a separate consideration; effect is judged against the outcome without treatment."]], "c": 0, "cite": "7 PAJ5512 Prognosis MBF 2026sc.pptx, Slide 3"}, {"topic": "Interval data", "io": "Identify different levels of measurement in data", "slot": "definition", "q": "What defines interval data?", "opts": [["Categories with no order", "Categories with no order at all define nominal data, such as eye color or blood group."], ["Order without defined intervals", "Order without defined intervals defines ordinal data, such as cancer staging from one to four."], ["Values restricted to two categories", "Restriction to two categories describes dichotomous data, which is a subtype of nominal rather than interval."], ["Order with defined, equal intervals", "Correct, and it splits into two subtypes: continuous data, which can take any value in a range, and discrete data, which takes only specific values."]], "c": 3, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 51"}, {"topic": "Predictive values", "io": "Describe sensitivity, specificity, positive predictive value and negative predictive value", "slot": "definition", "q": "What is positive predictive value?", "opts": [["The probability that someone testing negative is disease free", "The probability a negative result is truly disease free is negative predictive value rather than positive."], ["The probability that someone testing positive has the disease", "Correct, calculated as true positives over true positives plus false positives, which reads across the test-positive row."], ["The probability that someone with disease tests positive", "The probability a diseased person tests positive is sensitivity, read down the disease column."], ["The probability that someone without disease tests negative", "The probability a healthy person tests negative is specificity, a fixed property of the test."]], "c": 1, "cite": "4 PAJ5512 Tests MBF 2026sc.pptx, Slide 24"}, {"topic": "Evidence hierarchy", "io": "Analyze resources for bias and validity", "slot": "principle", "q": "What is true of studies at the higher levels of an evidence hierarchy?", "opts": [["They are least vulnerable to bias and more generalizable", "Correct, and there is a third property: outcomes are more likely to be attributable to the construct actually being studied rather than to something else."], ["They are published more quickly than lower-level studies", "Speed of publication is not among the properties that define a higher level of evidence."], ["They involve fewer participants and so are more precise", "Precision generally rises with sample size rather than falling, and the properties named concern bias, generalisability and attribution."], ["They are always experimental rather than observational", "Systematic reviews sit at the top of the pyramid and are secondary research rather than experiments."]], "c": 0, "cite": "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 8"}, {"topic": "Design goals", "io": "Describe the various research methods utilized in medical research", "slot": "principle", "q": "What is the goal of epidemiologic and clinical research design?", "opts": [["An unbiased comparison between groups with and without the factor", "Correct, and everything a good design permits follows from that aim: quantifying the risk difference, determining temporal sequence and minimizing bias."], ["Proving that the factor causes the outcome in every case", "Some designs establish relationships or predictability rather than cause, and no design proves causation in every case."], ["Enrolling as many participants as possible", "Adequate sample size matters, but the stated goal is an unbiased comparison rather than sheer numbers."], ["Describing one group of patients in complete detail", "Complete description of a single group is a descriptive aim, not the comparative goal stated here."]], "c": 0, "cite": "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 13"}, {"topic": "Attrition effect", "io": "Discuss the various types of bias in medical research including: selection/sampling bias, measurement bias, confounding, procedural bias, attrition effect, non-response bias, reporting bias, publication bias", "slot": "definition", "q": "What is the attrition effect, and what is its consequence?", "opts": [["Survey respondents differ systematically from those who do not respond", "That is non-response bias, which concerns a survey's respondents rather than participants leaving a study in progress."], ["Participants drop out of the study, which reduces the sample size", "Correct, and a smaller sample is the immediate consequence, which matters because a study's ability to detect a real difference depends on how many participants remain."], ["Participants are allocated to groups that differ at baseline", "That is selection bias, present from the beginning rather than developing as participants leave."], ["Investigators withhold a subset of their data", "That is reporting bias, a decision about disclosure rather than participants departing."]], "c": 1, "cite": "1 PAJ5512 Introduction Bias Validity MBF_2026sc.pptx, Slide 44"}, {"topic": "Treatment and hypotheses", "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research", "slot": "principle", "q": "Which study design is the gold standard for evaluating treatment efficacy?", "opts": [["Cross-sectional survey", "A cross-sectional survey captures a single point in time and cannot compare assigned treatments; the randomized controlled trial is the gold standard."], ["Retrospective case-control study", "A case-control study groups by outcome and cannot control who receives a treatment; the gold standard for treatment efficacy is the randomized controlled trial."], ["Randomized controlled trial", "Correct, because random assignment limits systematic differences between the groups other than the treatment factor, which limits cohort studies."], ["Prospective cohort study", "A cohort study is limited by systematic differences in the groups other than the treatment factor; the randomized controlled trial is the gold standard for efficacy."]], "c": 2, "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 9"}, {"topic": "Confidence interval", "io": "Explain the following statistical concepts: Significance, P value, Null hypothesis, Confidence interval, Statistical power, Multiple comparisons, Multivariable modeling", "slot": "principle", "q": "What does a confidence interval indicate about an estimate?", "opts": [["Its freedom from bias", "An interval can be narrow and still be wrong if the study is biased; precision is not accuracy."], ["Its statistical power", "Power is the chance of detecting a true difference, calculated as one minus the type II error probability, which is a different quantity."], ["Its clinical importance", "Clinical importance depends on whether the size of the effect matters to patients, not on how narrow the interval is."], ["Its statistical precision", "Correct: a narrow interval means a precise estimate and a wide interval a less precise one."]], "c": 3, "cite": "9 PAJ5512 Statistics Causation MBF_2026sc.pptx, Slide 14"}, {"topic": "Prevention and its types", "io": "Discuss the types of clinical prevention", "slot": "classification", "q": "Which of these is one of the four types of clinical prevention?", "opts": [["Chemoprevention", "Correct. The four types are immunization, screening, behavioral or lifestyle counseling, and chemoprevention, all of which are built into routine practice."], ["Emergency stabilization", "Emergency stabilization treats an acute crisis, whereas the four types of prevention work on people before disease or before it is symptomatic."], ["Palliative care", "Palliative care eases symptoms of advanced illness; the four types of prevention are immunization, screening, counseling and chemoprevention."], ["Surgical resection", "Resection is a treatment for established disease; the four types of prevention are immunization, screening, counseling and chemoprevention."]], "c": 0, "cite": "8 PAJ5512 Prevention MBF_2026sc.pptx, Slide 4"}, {"topic": "Distribution by place", "io": "Describe considerations for disease surveillance and outbreak investigations", "slot": "definition", "q": "What does endemic mean?", "opts": [["A concentration of new cases in a given time", "A concentration of new cases in a given time is an epidemic, which belongs to distribution by time."], ["A disease that has been eradicated", "Endemic describes a disease confined to an area rather than one that has gone."], ["Disease limited by geographic location", "Correct, and it belongs to distribution by place, alongside the outbreak lists, travel notices and food safety recalls maintained nationally."], ["Widespread cases across many regions", "Widespread cases describe a pandemic, which may develop rapidly or slowly depending on the disease."]], "c": 2, "cite": "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 32"}, {"topic": "Reading articles", "io": "Identify resources for answering clinical questions", "slot": "differential", "q": "Which question belongs to quick reading of an abstract?", "opts": [["What impact will the results have?", "Judging the impact of the results is part of reading beyond the abstract."], ["Are the conclusions valid?", "Correct, along with what the study is about, who it applies to, and whether it can and should be applied to your patients."], ["What limitations existed and were they addressed?", "Limitations and how they were handled are examined beyond the abstract."], ["How big was the effect?", "Size of effect is one of the questions asked when reading beyond the abstract."]], "c": 1, "cite": "10 PAJ5512 Clinical Questions and Reviews MBF_2026sc.pptx, Slide 38"}, {"topic": "Five-year survival", "io": "Discuss methods to measure outcomes", "slot": "limitation", "q": "Why can five-year survival not evaluate a therapy introduced two years ago?", "opts": [["Five-year survival applies only to screening", "Five-year survival is a general outcome measure, though screening creates one of its biases."], ["Newer therapies never improve survival", "New therapies can improve survival; the problem is that not enough time has passed to measure five-year outcomes."], ["No one has yet been followed for five years", "Correct: patients treated with a therapy introduced within the past five years, or with a disease duration under five years, cannot be evaluated."], ["The natural history has been changed", "A changed natural history is what treatment aims for; the obstacle here is only insufficient follow-up time."]], "c": 2, "cite": "7 PAJ5512 Prognosis MBF 2026sc.pptx, Slide 14"}, {"topic": "Low prevalence screening", "io": "Discuss the principles of community screening programs", "slot": "principle", "q": "How can a program reduce the problem of false positives from low prevalence?", "opts": [["Use a test with lower specificity", "Lower specificity generates even more false positives, so the effort would make the problem worse."], ["Screen higher-risk populations", "Correct. Prevalence is higher in higher-risk groups, so a larger share of positive results are true."], ["Stop calculating predictive values", "Positive and negative predictive values can be calculated and are exactly what shows the problem."], ["Screen only people without risk factors", "That lowers prevalence further and worsens the ratio of false to true positives."]], "c": 1, "cite": "8 PAJ5512 Prevention MBF_2026sc.pptx, Slide 28"}];
+const LTR = ["A","B","C","D","E"];
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function figHTML(q){
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

@@ -58,6 +58,37 @@ SPEC = {
    sub="Interpretation of Medical Literature &middot; Session 3",
    chips=["Levels of measurement", "Validity", "Reliability",
           "Types of variation", "Normal vs abnormal"]),
+ # Sessions 7-10. chips="auto" takes the five most-used topic names from the sets themselves.
+ "s7risk": dict(sets="medlit_s7risk_sets.json",
+   files=["risk-ratios-quiz.html", "risk-ratios-quiz-version-2.html"],
+   title="Risk and Ratios Quiz %d — Interpretation of Medical Literature",
+   h1="Risk and Ratios &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 7", chips="auto"),
+ "s7prog": dict(sets="medlit_s7prog_sets.json",
+   files=["prognosis-outcomes-quiz.html", "prognosis-outcomes-quiz-version-2.html"],
+   title="Prognosis and Outcomes Quiz %d — Interpretation of Medical Literature",
+   h1="Prognosis and Outcomes &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 7", chips="auto"),
+ "s8prev": dict(sets="medlit_s8prev_sets.json",
+   files=["prevention-screening-quiz.html", "prevention-screening-quiz-version-2.html"],
+   title="Prevention and Screening Quiz %d — Interpretation of Medical Literature",
+   h1="Prevention and Screening &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 8", chips="auto"),
+ "s8trials": dict(sets="medlit_s8trials_sets.json",
+   files=["research-trials-quiz.html", "research-trials-quiz-version-2.html"],
+   title="Research and Trials Quiz %d — Interpretation of Medical Literature",
+   h1="Research and Trials &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 8", chips="auto"),
+ "s9stats": dict(sets="medlit_s9stats_sets.json",
+   files=["statistics-causation-quiz.html", "statistics-causation-quiz-version-2.html"],
+   title="Statistics, Correlation and Causation Quiz %d — Interpretation of Medical Literature",
+   h1="Statistics, Correlation and Causation &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 9", chips="auto"),
+ "s10reviews": dict(sets="medlit_s10reviews_sets.json",
+   files=["clinical-questions-reviews-quiz.html", "clinical-questions-reviews-quiz-version-2.html"],
+   title="Clinical Questions and Reviews Quiz %d — Interpretation of Medical Literature",
+   h1="Clinical Questions and Reviews &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Session 10", chips="auto"),
  "s4tests": dict(sets="medlit_s4tests_sets.json",
    files=["diagnostic-tests-quiz.html", "diagnostic-tests-quiz-version-2.html"],
    title="Diagnostic Tests Quiz %d — Interpretation of Medical Literature",
@@ -68,6 +99,11 @@ SPEC = {
 }[sys.argv[1] if len(sys.argv) > 1 else "s1"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
+if SPEC["chips"] == "auto":
+    import html as _h
+    from collections import Counter as _C
+    cnt = _C(q["topic"] for k in ("set1", "set2") for q in S[k])
+    SPEC["chips"] = [_h.escape(t, quote=False) for t, _ in cnt.most_common(5)]
 for n, (key, fname) in enumerate(zip(("set1", "set2"), SPEC["files"]), start=1):
     qs = S[key]
     html = R.render(title=SPEC["title"] % n, h1=SPEC["h1"] % n, sub=SPEC["sub"],

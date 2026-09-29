@@ -122,13 +122,27 @@ topics = [
 ]},
 ]
 
+# Sessions 7-10 (added 2026-09-28): each topic is a JSON file in tools/medlit_cram_s7_10/,
+# condensed from the matching section of the study guide (tools/medlit_guide_s7_10/).
+import json as _json
+_ORDER = ["risk", "prognosis", "prevention", "trials", "stats", "reviews"]
+for _k in _ORDER:
+    _p = os.path.join(HERE, "medlit_cram_s7_10", _k + ".json")
+    if os.path.exists(_p):
+        topics.append(_json.load(open(_p, encoding="utf-8")))
+_late = len(topics) > 6
+
 html = render(
     title="Cram Sheet — Interpretation of Medical Literature",
     kicker="Interpretation of Medical Literature · Class of 2028",
     h1="Medical Literature Cram Sheet",
-    sub="Sessions 1–4 condensed: the bias taxonomy, the evidence hierarchy and USPSTF grades, "
-        "every study design, rates with incidence against prevalence, data and variation, and "
-        "the whole of diagnostic test interpretation.",
+    sub=("Sessions 1–4 and 7–10 condensed: the bias taxonomy, the evidence hierarchy and USPSTF grades, "
+         "every study design, rates, data and variation, diagnostic test interpretation, risk and "
+         "ratios, prognosis, prevention and screening, trials, statistics and causation, and "
+         "systematic reviews." if _late else
+         "Sessions 1–4 condensed: the bias taxonomy, the evidence hierarchy and USPSTF grades, "
+         "every study design, rates with incidence against prevalence, data and variation, and "
+         "the whole of diagnostic test interpretation."),
     topics=topics,
     guide_href="medical-literature-study-guide.html",
     footer_note="Condensed from the Medical Literature Study Guide (Class of 2028). "

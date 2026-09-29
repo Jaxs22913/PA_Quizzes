@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Placebo",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is a placebo?",
+   "opts": [
+    [
+     "Looks identical but has no specific action",
+     "Correct: it is indistinguishable from the treatment yet has no specific mechanism of action, which is what allows it to help blinding."
+    ],
+    [
+     "A weaker dose of the active treatment given openly",
+     "A weaker dose still has the treatment's mechanism of action; a placebo is indistinguishable from the treatment but has no specific mechanism."
+    ],
+    [
+     "A standard therapy compared against the new one",
+     "A standard therapy has its own mechanism of action, so comparing two therapies is treatment versus treatment; a placebo has no specific mechanism."
+    ],
+    [
+     "A treatment that mimics the disease being studied",
+     "A placebo does not imitate the disease; it imitates the appearance of the treatment while having no specific mechanism of action."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Superiority and non-inferiority",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "sample size",
+   "q": "How does the sample size of a non-inferiority trial usually compare with that of a superiority trial?",
+   "opts": [
+    [
+     "Smaller, because the comparator is established",
+     "An established comparator does not shrink the need for numbers; small differences require a larger sample size than superiority trials."
+    ],
+    [
+     "The same, because the design is identical",
+     "The designs ask different questions, and small differences usually demand a larger sample size in a non-inferiority trial."
+    ],
+    [
+     "Not needed, because no difference is sought",
+     "Non-inferiority trials still need enough participants to detect small differences, so they usually require a larger sample size than superiority trials."
+    ],
+    [
+     "Larger, because differences may be small",
+     "Correct: because the differences to be ruled out may be small, non-inferiority trials usually require a larger sample size than superiority trials."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Efficacy and effectiveness",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "Which term describes how correct a trial's results are for the patients it actually enrolled?",
+   "opts": [
+    [
+     "Generalizability",
+     "That is external validity, the degree results apply to other settings; correctness for the enrolled sample is internal validity."
+    ],
+    [
+     "Internal validity",
+     "Correct, and it differs from generalizability, which is the degree results can be applied to other settings."
+    ],
+    [
+     "Compliance",
+     "That is how closely participants follow the assigned treatment; correctness of the results for the enrolled sample is internal validity."
+    ],
+    [
+     "Representativeness",
+     "Resemblance of the sample to the wider population bears on generalizability; correctness for the enrolled sample is internal validity."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "What is confounding?",
+   "opts": [
+    [
+     "A factor whose presence changes the effect of exposure",
+     "That is effect modification; confounding is an additional independent factor related to both the exposure and the outcome."
+    ],
+    [
+     "Random error in measuring the outcome",
+     "Random error is chance variation in measurement; confounding is an additional factor related to both exposure and outcome."
+    ],
+    [
+     "An additional factor related to exposure and outcome",
+     "Correct: an additional independent factor related to both the exposure and the outcome, which can distort the apparent effect of the exposure."
+    ],
+    [
+     "A participant switching between treatments",
+     "That is cross-over; confounding is an additional independent factor related to both exposure and outcome."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Superiority and non-inferiority",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "rationale",
+   "q": "Why might a new treatment be tested for non-inferiority?",
+   "opts": [
+    [
+     "It may be cheaper, safer or easier",
+     "Correct: if it is unlikely to be less effective but has such advantages, it can be preferable to the established treatment."
+    ],
+    [
+     "It is expected to be far more effective",
+     "A treatment expected to be much better would be tested for superiority; non-inferiority suits one that may be cheaper, safer or easier."
+    ],
+    [
+     "It has no established comparison treatment",
+     "Non-inferiority requires an established treatment to compare against; the reason to use it is that the new one may be cheaper, safer or easier."
+    ],
+    [
+     "It avoids the need for randomization",
+     "These trials are still randomized comparisons; the reason to choose the design is that the new treatment may be cheaper, safer or easier."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "What is a variable called when its presence or absence changes the exposure's effect?",
+   "opts": [
+    [
+     "A confounder",
+     "A confounder distorts the observed association because it is related to both exposure and outcome; it does not change the exposure's own effect."
+    ],
+    [
+     "A selection factor",
+     "Selection factors determine who enters each group; a variable that changes the exposure's effect is an effect modifier."
+    ],
+    [
+     "An effect modifier",
+     "Correct: the exposure acts differently depending on the variable, which is not the same as merely distorting the association."
+    ],
+    [
+     "A crossover variable",
+     "Crossover is a participant moving to another treatment group; a variable that changes the exposure's effect is an effect modifier."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Appraising treatment studies",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "appraisal",
+   "q": "Besides statistical significance, what should a reader look for in a treatment study?",
+   "opts": [
+    [
+     "Clinical significance",
+     "Correct: a difference can be statistically significant yet too small to matter to patients, so clinical significance must be judged as well."
+    ],
+    [
+     "A larger number of statistical tests",
+     "More tests do not make a result more meaningful; the reader should ask whether the difference is clinically significant as well as statistically significant."
+    ],
+    [
+     "Agreement with the sponsor's expectations",
+     "Agreement with expectations is not a standard of quality; the reader should ask whether there is clinical significance as well as statistical significance."
+    ],
+    [
+     "The names of the participating centers",
+     "Where the study was run does not show whether the effect matters to patients; the reader should look for clinical significance beside statistical significance."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "advantage",
+   "q": "What is an advantage of observational studies of treatment?",
+   "opts": [
+    [
+     "They eliminate confounding",
+     "They do the opposite: confounding and effect modification are difficult to avoid in observational studies."
+    ],
+    [
+     "They include real-world patients",
+     "Correct, though the same feature carries drawbacks, since real-world patients differ in ways that are hard to control."
+    ],
+    [
+     "They assign treatment by chance",
+     "Chance assignment defines a randomized trial; observational studies collect information on patients already being treated."
+    ],
+    [
+     "They guarantee balanced groups",
+     "Groups in observational studies may differ systematically; balance is not guaranteed, unlike the aim of randomization."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "calculation",
+   "q": "In a trial, 21 of 150 patients given a new drug and 42 of 150 given standard care had the outcome. What is the risk in the new-drug group?",
+   "opts": [
+    [
+     "28 percent",
+     "That is the standard-care group's risk, 42 divided by 150; the question asks about the new-drug group, 21 divided by 150."
+    ],
+    [
+     "14 percent",
+     "Correct: 21 patients with the outcome divided by 150 in the group is 0.14, which is the risk of the outcome in that treatment group."
+    ],
+    [
+     "21 percent",
+     "That treats the count of 21 events as a percentage; risk is events divided by the number in the group, so 21 divided by 150 is 14 percent."
+    ],
+    [
+     "50 percent",
+     "That expresses the new-drug risk as a fraction of the standard-care risk, 0.14 divided by 0.28, which is the relative risk of 0.5 rather than the group's own risk."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "Eligibility criteria",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "calculation",
+   "q": "Of 9,000 patients screened, 60 percent meet the first criterion, half of those meet the second, and 80 percent of those meet the third. How many remain eligible?",
+   "opts": [
+    [
+     "5,400",
+     "That is the number left after only the first criterion; the second and third criteria each remove more patients, leaving 2,160."
+    ],
+    [
+     "2,700",
+     "That is the number left after the first two criteria; applying the third criterion, which 80 percent meet, leaves 2,160."
+    ],
+    [
+     "7,200",
+     "That applies only the last percentage, 80 percent of 9,000, to everyone screened; the criteria apply in sequence, leaving 2,160."
+    ],
+    [
+     "2,160",
+     "Correct: 9,000 x 0.6 = 5,400, then x 0.5 = 2,700, then x 0.8 = 2,160, a steady shrinking of the eligible pool."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Appraising treatment studies",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "calculation",
+   "q": "In a trial, 20 of the 90 treated patients who completed follow-up had the outcome, and 10 of the original 100 treated patients were lost. Assuming every lost patient had the outcome, what is the treated group's risk?",
+   "opts": [
+    [
+     "22 percent",
+     "That is 20 divided by the 90 who completed follow-up, which ignores the lost patients that the worst-case assumption counts as events."
+    ],
+    [
+     "20 percent",
+     "That divides the 20 events by all 100, ignoring that under the assumption the 10 lost patients also had the outcome, making 30 events."
+    ],
+    [
+     "30 percent",
+     "Correct: the 10 lost patients are added to the 20 events, giving 30 out of the original 100 treated patients."
+    ],
+    [
+     "10 percent",
+     "That is the proportion lost, 10 of 100, not the risk; the 20 observed events plus the 10 assumed events give 30 percent."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Trial phases",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "application",
+   "q": "A drug's side effect occurs in about 1 in 20,000 patients. Which stage is most likely to detect it?",
+   "opts": [
+    [
+     "Phase I dose-finding studies",
+     "Phase I has a small number of participants, far too few to see an event in 20,000; it identifies a safe, tolerated dose."
+    ],
+    [
+     "Postmarketing surveillance",
+     "Correct: following large numbers of patients after the drug is released is what helps identify more uncommon side effects."
+    ],
+    [
+     "Phase II effect-finding studies",
+     "Phase II also uses a small number of participants; a rare event needs the large numbers followed in postmarketing surveillance."
+    ],
+    [
+     "Phase III randomized trials",
+     "Phase III, though larger, does not usually identify uncommon side effects; postmarketing surveillance of large numbers does."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 34"
+  },
+  {
+   "topic": "Eligibility criteria",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "application",
+   "q": "In a trial of a new asthma inhaler, which is an exclusion criterion?",
+   "opts": [
+    [
+     "Allergy to a component of the inhaler",
+     "Correct: a contraindication to a treatment under evaluation is an exclusion criterion, a factor that prevents inclusion."
+    ],
+    [
+     "A confirmed diagnosis of asthma",
+     "The diagnosis of the disease being studied is a characteristic participants must have, so it is an inclusion criterion rather than an exclusion criterion."
+    ],
+    [
+     "Frequent symptoms despite treatment",
+     "Poor control of the disease is a characteristic that makes a participant suitable for the study, an inclusion criterion, not a factor preventing inclusion."
+    ],
+    [
+     "Willingness to be randomized",
+     "Willingness to take part is something participants must have, so it works as an inclusion requirement; exclusions are factors such as a contraindication to the treatment."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Efficacy and effectiveness",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "factors",
+   "q": "Which factors does effectiveness take into account?",
+   "opts": [
+    [
+     "Compliance, practicality and cost",
+     "Correct: these real-world factors are what separate effectiveness, in ordinary circumstances, from efficacy, in ideal circumstances."
+    ],
+    [
+     "Dose, half-life and mechanism of action",
+     "Those are pharmacologic properties of a drug; effectiveness takes into account compliance, practicality and cost."
+    ],
+    [
+     "Randomization, blinding and allocation",
+     "Those are design features of a trial; effectiveness takes into account compliance, practicality and cost."
+    ],
+    [
+     "Age, sex and diagnostic category",
+     "Those are participant characteristics that may define strata; effectiveness takes into account compliance, practicality and cost."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "RCT limitations",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "Which is a limitation of randomized controlled trials?",
+   "opts": [
+    [
+     "They cannot include a control group",
+     "Control groups, such as placebo or another treatment, are a standard feature of trials; the limitations are expense and logistics."
+    ],
+    [
+     "They are expensive",
+     "Correct, and they also raise logistical issues in sample selection, randomization, blinding, consistency across participants and time."
+    ],
+    [
+     "They cannot be blinded",
+     "Blinding is possible, single or double, though it is one of the logistical issues; the limitations include expense and logistical difficulty."
+    ],
+    [
+     "They cannot evaluate efficacy",
+     "The randomized controlled trial is the gold standard for evaluating treatment efficacy; its limitations include expense and logistical issues."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 30"
+  },
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "principle",
+   "q": "What should treatment decisions rest on, rather than coincidence, biased comparisons and wishful thinking?",
+   "opts": [
+    [
+     "The treatment most commonly used in practice",
+     "Popularity is not evidence, since a widely used treatment can still lack tested benefit; decisions should rest on evidence linking treatments to outcomes."
+    ],
+    [
+     "Impressions from memorable individual patients",
+     "Memorable cases are exactly the coincidence and wishful thinking that evidence is meant to replace; sound decisions use evidence on treatments and outcomes."
+    ],
+    [
+     "Agreement among clinicians who use the treatment",
+     "Agreement can share the same bias and hope; the safer basis is evidence-based information on the relationship between treatments and outcomes."
+    ],
+    [
+     "Evidence on how treatments relate to outcomes",
+     "Correct, because coincidence, biased comparisons and wishful thinking all mislead; evidence on the relationship between a treatment and its outcomes is the sound basis."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 5"
+  },
+  {
+   "topic": "Trial phases",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "phases",
+   "q": "Which stage of clinical trials is larger than phases I and II, randomized, and gives definitive evidence of effect?",
+   "opts": [
+    [
+     "Phase I",
+     "Phase I uses a small number of participants, with no control group, to identify a safe and tolerated dose."
+    ],
+    [
+     "Phase II",
+     "Phase II uses a small number of participants to identify a preliminary effect and any relationship to dose, not definitive evidence."
+    ],
+    [
+     "Phase III",
+     "Correct: it enrolls more participants, is randomized, gives definitive evidence of effect plus some common side effects, and is often published."
+    ],
+    [
+     "Postmarketing surveillance",
+     "Postmarketing surveillance follows large numbers of patients after release and helps identify uncommon side effects; phase III gives definitive evidence of effect."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 34"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "principle",
+   "q": "Which is the best way to obtain a representative sample?",
+   "opts": [
+    [
+     "Random sampling",
+     "Correct: because all members of the population have the same chance of being selected, the sample tends to represent the population."
+    ],
+    [
+     "Enrolling the first volunteers who respond",
+     "Volunteers are not chosen with equal chance and may differ from the population; random sampling is the best way to obtain a representative sample."
+    ],
+    [
+     "Choosing patients the investigator judges typical",
+     "Judgment introduces the investigator's own bias; giving every member the same chance of selection, as random sampling does, is the best way to be representative."
+    ],
+    [
+     "Selecting only patients from one clinic",
+     "One clinic's patients may not look like the wider population; random sampling, with equal chance for all members, is the best way to get a representative sample."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "example",
+   "q": "Which is an example of cluster sampling?",
+   "opts": [
+    [
+     "All patients in designated hospital units",
+     "Correct: clusters are selected on membership in a group, such as all seniors in support groups or all students in designated classrooms."
+    ],
+    [
+     "Every tenth patient on a clinic list",
+     "That picks individuals at a fixed interval; cluster sampling selects entire groups, such as every patient in designated hospital units."
+    ],
+    [
+     "Equal numbers of men and women",
+     "Building subgroups by a characteristic is stratified sampling; cluster sampling takes whole groups based on membership, such as hospital units."
+    ],
+    [
+     "Names drawn at random from a registry",
+     "Drawing individuals with equal chance is random sampling; cluster sampling takes whole groups, such as every patient in designated hospital units."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "calculation",
+   "q": "A clinic population is 55 percent women and 45 percent men. A sample of 200 patients is drawn by stratified sampling to mirror it. How many women should the sample contain?",
+   "opts": [
+    [
+     "100",
+     "That splits the sample equally, which is not how the groups exist in the population; a mirrored sample takes 55 percent of 200, or 110 women."
+    ],
+    [
+     "90",
+     "That is the number of men, 45 percent of 200; the women make up 55 percent of the population and so 110 of the 200."
+    ],
+    [
+     "55",
+     "That takes the percentage as though it were a count; mirroring the population means 55 percent of 200, which is 110 women."
+    ],
+    [
+     "110",
+     "Correct: stratified sampling reproduces the population's makeup, so 55 percent of 200 is 110 women, leaving 90 men."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 18"
+  },
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "principle",
+   "q": "Which study design is the gold standard for evaluating treatment efficacy?",
+   "opts": [
+    [
+     "Prospective cohort study",
+     "A cohort study is limited by systematic differences in the groups other than the treatment factor; the randomized controlled trial is the gold standard for efficacy."
+    ],
+    [
+     "Retrospective case-control study",
+     "A case-control study groups by outcome and cannot control who receives a treatment; the gold standard for treatment efficacy is the randomized controlled trial."
+    ],
+    [
+     "Cross-sectional survey",
+     "A cross-sectional survey captures a single point in time and cannot compare assigned treatments; the randomized controlled trial is the gold standard."
+    ],
+    [
+     "Randomized controlled trial",
+     "Correct, because random assignment limits systematic differences between the groups other than the treatment factor, which limits cohort studies."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "comparison",
+   "q": "How do observational findings compare with randomized trial findings?",
+   "opts": [
+    [
+     "They always match the trial findings",
+     "Observational findings often agree with randomized trials but can be dramatically different, so they cannot be assumed to match."
+    ],
+    [
+     "They rarely agree with trial findings",
+     "Observational findings often agree with randomized trials; the concern is that they can sometimes differ dramatically."
+    ],
+    [
+     "They differ only in the size of the sample",
+     "The differences can be dramatic in the findings themselves, driven by confounding, and are not merely a matter of sample size."
+    ],
+    [
+     "They often agree but can differ dramatically",
+     "Correct, which is why observational results cannot simply be accepted in place of a randomized trial."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Bias in trials",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "framework",
+   "q": "How many of the four possible pairings of study conclusion and reality are errors?",
+   "opts": [
+    [
+     "One",
+     "There are two errors, not one: a difference found that does not exist, and a real difference that was missed; the other two pairings are correct."
+    ],
+    [
+     "Two",
+     "Correct: one error is concluding the treatments differ when they do not, and the other is concluding they do not differ when they do."
+    ],
+    [
+     "Three",
+     "Only two pairings are errors; when the conclusion matches reality, whether both say different or both say not different, it is correct."
+    ],
+    [
+     "Four",
+     "Two of the four pairings are correct, namely a study that correctly finds no difference and one that correctly finds a difference."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 26"
+  },
+  {
+   "topic": "Trial ethics",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "ethics",
+   "q": "For a randomized trial testing whether a treatment works, what should its primary outcome measure?",
+   "opts": [
+    [
+     "Harms rather than benefits",
+     "An ethical trial is built around the possible benefit of the treatment; making harm the primary outcome reverses that requirement."
+    ],
+    [
+     "Cost to the health system",
+     "Cost may matter in judging effectiveness, but the ethical requirement is that the primary outcome measures benefits rather than harms."
+    ],
+    [
+     "Benefits rather than harms",
+     "Correct: the primary outcome must be the benefit of the treatment, not harm, as one of the requirements for an ethical trial."
+    ],
+    [
+     "Compliance with the protocol",
+     "Compliance is how well participants follow instructions, which can bias results; the primary outcome of an ethical trial must be benefit, not harm."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Eligibility criteria",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What are inclusion criteria?",
+   "opts": [
+    [
+     "Characteristics participants must have",
+     "Correct: for example, a diagnosis of the disease being studied; exclusion criteria are the factors that prevent inclusion."
+    ],
+    [
+     "Factors that prevent participation",
+     "Those are exclusion criteria; inclusion criteria are the characteristics participants must have to be enrolled."
+    ],
+    [
+     "Outcomes that count as treatment success",
+     "Outcomes are what the trial measures after enrollment; inclusion criteria are the characteristics participants must have to enter."
+    ],
+    [
+     "Reasons a participant may later withdraw",
+     "Withdrawal happens after enrollment; inclusion criteria are the characteristics participants must have in order to be included at the start."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is a treatment?",
+   "opts": [
+    [
+     "A test used to confirm the diagnosis",
+     "A test detects or confirms disease, whereas a treatment is an intervention meant to improve its course, such as a medication, surgery or lifestyle change."
+    ],
+    [
+     "Only a medication given after diagnosis",
+     "Medication is only one form of treatment; surgery and lifestyle changes also count, and treatment may be applied at any point in the course of disease."
+    ],
+    [
+     "An intervention to improve the course of disease",
+     "Correct, and it may be a medication, surgery or a lifestyle change, applied at any point in the natural course of disease."
+    ],
+    [
+     "Any exposure that raises the risk of disease",
+     "An exposure that raises risk is a risk factor; a treatment is an intervention intended to improve the course of disease."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 6"
+  },
+  {
+   "topic": "Eligibility criteria",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "principle",
+   "q": "What happens to the pool of eligible patients as more inclusion and exclusion criteria are applied?",
+   "opts": [
+    [
+     "It grows as the population becomes better defined",
+     "Every added criterion removes patients rather than adding them, so the eligible pool shrinks step by step."
+    ],
+    [
+     "It shrinks, sometimes to a small fraction",
+     "Correct: each set of criteria removes more patients, so the final eligible group can be a small fraction of all patients with the condition."
+    ],
+    [
+     "It stays the same because criteria only describe",
+     "Criteria decide who can be enrolled, so applying more of them removes patients and shrinks the eligible group."
+    ],
+    [
+     "It shifts entirely into the control group",
+     "Eligibility is decided before assignment; criteria narrow the pool, and only then are the eligible patients randomly assigned."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "What makes observational treatment studies hard to interpret?",
+   "opts": [
+    [
+     "Excessive control over who receives treatment",
+     "Observational studies lack the investigator's control over who receives treatment; that lack is what makes confounding hard to avoid."
+    ],
+    [
+     "Confounding and effect modification",
+     "Correct: both are difficult to avoid when treatment is not assigned, so differences may reflect other factors rather than the treatment."
+    ],
+    [
+     "The absence of any real-world patients",
+     "Observational studies do include real-world patients, which is a benefit; the difficulty is avoiding confounding and effect modification."
+    ],
+    [
+     "Use of blinding that hides the exposure",
+     "Blinding is not the defining problem; confounding and effect modification are difficult to avoid in observational studies."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Compliance and blinding",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is compliance in a trial?",
+   "opts": [
+    [
+     "Agreeing to be randomized to a group",
+     "Agreeing to take part is consent; compliance is the degree to which participants act in accordance with instructions once enrolled."
+    ],
+    [
+     "Remaining unaware of the assigned treatment",
+     "That is blinding; compliance is the degree to which participants act in accordance with instructions."
+    ],
+    [
+     "Acting in accordance with instructions",
+     "Correct: it is the degree to which participants act in accordance with instructions, or patients with medical advice."
+    ],
+    [
+     "Having the disease being studied",
+     "That is an inclusion characteristic; compliance is the degree to which participants act in accordance with instructions."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 22"
+  },
+  {
+   "topic": "Efficacy and effectiveness",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What does efficacy represent?",
+   "opts": [
+    [
+     "Results under ordinary real-world circumstances",
+     "That is effectiveness; efficacy represents results under the ideal circumstances of a trial."
+    ],
+    [
+     "Results adjusted for compliance and cost",
+     "Compliance, practicality and cost are what effectiveness takes into account; efficacy represents ideal trial circumstances."
+    ],
+    [
+     "Results that apply to other settings",
+     "That is generalizability; efficacy represents results under ideal trial circumstances."
+    ],
+    [
+     "Results under ideal trial circumstances",
+     "Correct: efficacy is concerned with ideal circumstances, whereas effectiveness reflects ordinary, real circumstances."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 27"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "principle",
+   "q": "What do most treatment hypotheses need before their usefulness is accepted?",
+   "opts": [
+    [
+     "Testing of usefulness and outcomes",
+     "Correct, because most hypotheses, however they arise, require testing to evaluate how useful the treatment is and what outcomes it produces."
+    ],
+    [
+     "A plausible mechanism of disease",
+     "A mechanism is one source of a hypothesis, but it does not show that the treatment works; most hypotheses still require testing of usefulness and outcomes."
+    ],
+    [
+     "Approval from the treating clinician",
+     "Clinical approval is not evidence of benefit; hypotheses about treatment require testing to evaluate usefulness and outcomes."
+    ],
+    [
+     "Use in a large number of patients",
+     "Widespread use without a controlled comparison cannot separate benefit from coincidence; a hypothesis requires testing to evaluate usefulness and outcomes."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 7"
+  },
+  {
+   "topic": "Compliance and blinding",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "Who is unaware of the treatment in a single-blind trial?",
+   "opts": [
+    [
+     "The researchers, but not the participants",
+     "That reverses it: single-blind means the researchers are aware and the subjects are not."
+    ],
+    [
+     "Both the researchers and the participants",
+     "That is double-blind; in a single-blind trial only the subjects are unaware while the researchers know."
+    ],
+    [
+     "Neither the researchers nor the participants",
+     "If nobody is blinded the trial is open label; single-blind means the subjects are unaware and the researchers are aware."
+    ],
+    [
+     "The participants, but not the researchers",
+     "Correct: in a single-blind trial the researchers are aware of the treatment and the subjects are not."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 23"
+  },
+  {
+   "topic": "Efficacy and effectiveness",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "application",
+   "q": "A drug works well in a tightly monitored trial where nearly everyone takes every dose, but poorly in clinics where many patients miss doses. How do its efficacy and effectiveness compare?",
+   "opts": [
+    [
+     "Efficacy is low and effectiveness is high",
+     "That reverses them; the ideal circumstances of the trial give high efficacy, and the poor real-world performance is low effectiveness."
+    ],
+    [
+     "Efficacy is high and effectiveness is low",
+     "Correct: efficacy reflects ideal circumstances, such as full compliance, while effectiveness reflects ordinary circumstances, including missed doses."
+    ],
+    [
+     "Both efficacy and effectiveness are low",
+     "Efficacy is judged under ideal circumstances, and the drug works well there, so efficacy is high; effectiveness is what falls short."
+    ],
+    [
+     "Both efficacy and effectiveness are high",
+     "Effectiveness reflects ordinary circumstances, including compliance, and the drug performs poorly there, so effectiveness is low."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "measures",
+   "q": "Which measures compare the risk of an outcome between trial groups?",
+   "opts": [
+    [
+     "Sensitivity, specificity or likelihood ratio",
+     "Those are properties of diagnostic tests, not measures comparing the risk of an outcome between treatment groups; trials use relative risk, risk difference or hazard ratio."
+    ],
+    [
+     "Prevalence, incidence or case fatality",
+     "Those describe how often disease occurs or proves fatal in one population rather than comparing groups; trials compare risk with relative risk, risk difference or hazard ratio."
+    ],
+    [
+     "Mean, median or standard deviation",
+     "Those summarize the center and spread of a measurement; comparing risk between groups uses relative risk, risk difference or hazard ratio."
+    ],
+    [
+     "Relative risk, risk difference or hazard ratio",
+     "Correct: each takes the risk calculated in the treatment groups and compares it between them."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "What information do observational studies of treatment collect?",
+   "opts": [
+    [
+     "Data on patients assigned by the investigator",
+     "Assignment by the investigator defines an experimental study; observational studies collect information on patients already being treated."
+    ],
+    [
+     "Data on healthy volunteers before treatment",
+     "Observational studies of treatment look at patients currently being treated for a disorder, not healthy volunteers."
+    ],
+    [
+     "Data on patients already being treated",
+     "Correct: they collect information on patients currently being treated for a disorder, rather than assigning treatments."
+    ],
+    [
+     "Data on participants unaware of their group",
+     "Being unaware of a group is blinding in a trial; observational studies collect information on patients currently being treated."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "calculation",
+   "q": "In a trial, 12 of 200 patients on a new drug and 30 of 200 on placebo had the outcome. What is the relative risk on the new drug?",
+   "opts": [
+    [
+     "2.5",
+     "That inverts the ratio, placebo risk over new-drug risk; relative risk here puts the new-drug risk of 0.06 over the placebo risk of 0.15, giving 0.4."
+    ],
+    [
+     "0.4",
+     "Correct: the risk on the new drug is 12/200 = 0.06 and on placebo 30/200 = 0.15, and 0.06 divided by 0.15 is 0.4."
+    ],
+    [
+     "0.06",
+     "That is the risk in the new-drug group alone, 12 divided by 200; relative risk compares the two groups' risks, 0.06 divided by 0.15."
+    ],
+    [
+     "0.15",
+     "That is the placebo group's own risk, 30 divided by 200; relative risk is the new-drug risk divided by it, 0.06 divided by 0.15, or 0.4."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "Superiority and non-inferiority",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "What does a non-inferiority trial determine?",
+   "opts": [
+    [
+     "Whether a new treatment is unlikely to be less effective",
+     "Correct: it asks whether a new treatment is unlikely to be less effective than an established one, which suits a treatment that may be cheaper, safer or easier."
+    ],
+    [
+     "Whether one treatment is clearly better than another",
+     "That is a superiority trial; a non-inferiority trial asks whether a new treatment is unlikely to be less effective than an established one."
+    ],
+    [
+     "Whether a treatment is safe at a given dose",
+     "Finding a safe, tolerated dose is the aim of an early phase of clinical trials; non-inferiority compares a new treatment with an established one."
+    ],
+    [
+     "Whether a sample represents its population",
+     "That concerns sampling; non-inferiority asks whether a new treatment is unlikely to be less effective than an established one."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is comparative effectiveness?",
+   "opts": [
+    [
+     "Comparing one treatment against no treatment only",
+     "Comparative effectiveness compares two or more interventions believed to improve outcomes, not a single treatment against nothing."
+    ],
+    [
+     "Direct comparison of two or more interventions",
+     "Correct, and the interventions compared are ones believed to improve outcomes; the aim is to identify any harms and benefits and compare the end results."
+    ],
+    [
+     "Comparing ideal trial results with everyday practice",
+     "That contrast describes efficacy versus effectiveness; comparative effectiveness is the direct comparison of two or more interventions."
+    ],
+    [
+     "Comparing compliance between treatment groups",
+     "Compliance is one factor within a trial; comparative effectiveness directly compares interventions for harms, benefits and end results."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 8"
+  },
+  {
+   "topic": "Placebo",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is the Hawthorne effect?",
+   "opts": [
+    [
+     "Condition changes because a change is expected",
+     "That is the placebo effect, a change in condition from expecting a change; the Hawthorne effect is a change in behavior from special attention."
+    ],
+    [
+     "Participants receive an unrecorded second treatment",
+     "That is an unacknowledged co-intervention; the Hawthorne effect is a change in behavior caused by special attention during a study."
+    ],
+    [
+     "Participants stop treatment after side effects",
+     "Stopping because of side effects is a compliance problem; the Hawthorne effect is a change in behavior from receiving special attention."
+    ],
+    [
+     "Behavior changes when given special attention",
+     "Correct: participants change their behavior because of the special interest or attention they receive during a study."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Trial phases",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "phases",
+   "q": "What does a phase II trial aim to identify?",
+   "opts": [
+    [
+     "A safe, tolerated dose",
+     "That is the aim of phase I; phase II identifies preliminary effect and any relationship to dose."
+    ],
+    [
+     "Preliminary effect and dose relationship",
+     "Correct: phase II also uses a small number of participants, and looks for a preliminary effect and any relationship of the effect to dose."
+    ],
+    [
+     "Definitive evidence of effect",
+     "That is phase III, which is larger and randomized; phase II identifies a preliminary effect and any relationship to dose."
+    ],
+    [
+     "Uncommon side effects after release",
+     "Those come from postmarketing surveillance; phase II identifies a preliminary effect and any relationship to dose."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 33"
+  },
+  {
+   "topic": "Compliance and blinding",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "cause",
+   "q": "Which is an unintentional cause of noncompliance?",
+   "opts": [
+    [
+     "Deciding the treatment is not needed",
+     "That is a deliberate choice; unintentional causes include misunderstandings, lack of transportation and forgetfulness."
+    ],
+    [
+     "Skipping doses after feeling better",
+     "Skipping doses by choice is intentional; unintentional causes include misunderstandings, lack of transportation and forgetfulness."
+    ],
+    [
+     "Lack of transportation to visits",
+     "Correct: noncompliance is not always intentional, and misunderstandings, lack of transportation and forgetfulness are examples."
+    ],
+    [
+     "Stopping the drug out of distrust",
+     "Distrust leads to a deliberate decision; the unintentional causes are misunderstandings, lack of transportation and forgetfulness."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 22"
+  },
+  {
+   "topic": "Trial phases",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "phases",
+   "q": "What does a phase I trial aim to identify?",
+   "opts": [
+    [
+     "A safe, tolerated dose",
+     "Correct: phase I uses a small number of participants and no control group to identify a safe and tolerated dose."
+    ],
+    [
+     "Definitive evidence of effect",
+     "That is the aim of phase III; phase I uses a small number of participants with no control group to identify a safe, tolerated dose."
+    ],
+    [
+     "Uncommon side effects after release",
+     "Those are identified by postmarketing surveillance in large numbers of patients; phase I identifies a safe, tolerated dose."
+    ],
+    [
+     "Preliminary effect and dose relationship",
+     "That is phase II; phase I comes first and identifies a safe, tolerated dose."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 33"
+  },
+  {
+   "topic": "Observational studies",
+   "io": "Describe observational studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "application",
+   "q": "In a study of patients treated with a drug, sicker patients received it more often and also died more often. Which problem does this illustrate?",
+   "opts": [
+    [
+     "Effect modification",
+     "Effect modification means a variable changes the size of the exposure's effect; here severity is linked to both drug use and death, which is confounding."
+    ],
+    [
+     "Confounding",
+     "Correct: severity of illness is related both to receiving the drug (the exposure) and to death (the outcome), so it distorts the comparison."
+    ],
+    [
+     "Placebo effect",
+     "The placebo effect is a change from expecting benefit; here severity of illness is related to both treatment and death, which is confounding."
+    ],
+    [
+     "Cross-over",
+     "Cross-over is moving between assigned treatments in a trial; here illness severity is tied to both exposure and outcome, which is confounding."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Trial ethics",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "ethics",
+   "q": "What must participants give to take part in a trial?",
+   "opts": [
+    [
+     "A promise not to withdraw",
+     "Ethical trials rest on consent, not on binding participants to stay; consent to take part is what participants must give."
+    ],
+    [
+     "Proof they can comply with instructions",
+     "Compliance is not a precondition that participants must prove; the ethical requirement is that they give consent to take part."
+    ],
+    [
+     "Knowledge of which group they are in",
+     "Knowing the group would defeat blinding; the ethical requirement is consent to take part, given before entering the trial."
+    ],
+    [
+     "Consent to take part",
+     "Correct: participants must give consent, which is one of the conditions for an ethical trial alongside genuine uncertainty about the treatments."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Bias in trials",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "bias",
+   "q": "How can biased assessment of outcomes be avoided?",
+   "opts": [
+    [
+     "Judging outcomes by overall clinical impression",
+     "Impression is subjective and invites bias; the way to avoid biased assessment is to use specific objective criteria and blinding."
+    ],
+    [
+     "Specific objective criteria and blinding",
+     "Correct: outcome assessment can be biased, and clear objective criteria together with blinding of those assessing keep judgment from steering the result."
+    ],
+    [
+     "Letting the sponsor grade each outcome",
+     "The sponsor has an interest in the result, which invites bias; use specific objective criteria and blinding instead."
+    ],
+    [
+     "Open label assessment by the investigator",
+     "An unblinded investigator can be swayed by knowing the group; the remedy is specific objective criteria plus blinding."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 25"
+  },
+  {
+   "topic": "Placebo",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is the placebo effect?",
+   "opts": [
+    [
+     "Change in condition from expecting a change",
+     "Correct: individuals given a placebo experience a change in their condition because they expect one, even though the placebo has no specific mechanism."
+    ],
+    [
+     "Change in behavior from special attention",
+     "That is the Hawthorne effect, participants changing behavior when given special interest or attention during a study."
+    ],
+    [
+     "Change caused by the drug's specific mechanism",
+     "A placebo has no specific mechanism of action; the placebo effect arises from the person's expectation of change."
+    ],
+    [
+     "Change from moving to the other treatment",
+     "Moving from one assigned treatment to another is cross-over; the placebo effect arises from expecting a change after a placebo."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Bias in trials",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "definition",
+   "q": "What is cross-over in a trial?",
+   "opts": [
+    [
+     "Switching from one assigned treatment to another",
+     "Correct, and it is a methodological problem because participants no longer stay in the group to which they were randomly assigned."
+    ],
+    [
+     "Leaving the trial before the outcome is measured",
+     "That is dropping out, a failure of follow-up; cross-over is moving from one randomly assigned treatment to another."
+    ],
+    [
+     "Receiving an unrecorded additional treatment",
+     "That is an unacknowledged co-intervention; cross-over is moving from one randomly assigned treatment to another."
+    ],
+    [
+     "Entering the study without the disease",
+     "That is a separate enrollment problem; cross-over is moving from one randomly assigned treatment to another."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 24"
+  },
+  {
+   "topic": "Efficacy and effectiveness",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is generalizability?",
+   "opts": [
+    [
+     "Degree results can be applied to other settings",
+     "Correct, and it differs from internal validity, which is whether results are correct for the sample of patients studied."
+    ],
+    [
+     "Degree results are correct for the sample studied",
+     "That is internal validity; generalizability is the degree to which results can be applied to other settings."
+    ],
+    [
+     "Degree participants follow instructions",
+     "That is compliance; generalizability is the degree to which results can be applied to other settings."
+    ],
+    [
+     "Degree assignment is hidden from researchers",
+     "That is allocation concealment; generalizability is the degree to which results can be applied to other settings."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Trial ethics",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "ethics",
+   "q": "When is randomizing patients to different treatments ethical?",
+   "opts": [
+    [
+     "When investigators prefer the newer treatment",
+     "Investigator preference is not a justification; randomization is ethical only when there is no conclusive evidence that one treatment is better."
+    ],
+    [
+     "When one treatment is already known to be better",
+     "Randomizing patients away from a treatment already known to be better would be unethical; it requires that no conclusive evidence exists."
+    ],
+    [
+     "When no conclusive evidence favors one treatment",
+     "Correct: randomization is ethical when there is no reason to believe the treatments under evaluation are unequal, that is, when the evidence is not conclusive."
+    ],
+    [
+     "When participants cannot tell the groups apart",
+     "Concealment of the group is blinding, a matter of trial validity; the ethical justification for randomizing is the absence of conclusive evidence."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Trial ethics",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "ethics",
+   "q": "What should happen if evidence of harm, futility or effectiveness emerges during a trial?",
+   "opts": [
+    [
+     "Enrollment continues to the planned end",
+     "Carrying on regardless would keep participants exposed to harm or deprive them of a proven benefit; the study is ended when such evidence appears."
+    ],
+    [
+     "The study is ended",
+     "Correct: continuing would expose participants to harm, to a treatment that is not working, or would withhold one already shown to work."
+    ],
+    [
+     "Only the control group is stopped",
+     "Stopping one group does not resolve the problem, since the evidence bears on the whole comparison; the study as a whole is ended."
+    ],
+    [
+     "The sample size is quietly reduced",
+     "Shrinking the sample does not answer evidence of harm, futility or effectiveness; the study is ended when such evidence appears."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Compliance and blinding",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What is allocation concealment?",
+   "opts": [
+    [
+     "Blinding of only the participants receiving treatment",
+     "Blinding participants is single-blind; allocation concealment blinds the researchers who assign patients to treatment groups."
+    ],
+    [
+     "Hiding the results from readers until publication",
+     "Concealment concerns the assignment of patients to groups, not publication; the researchers assigning patients are blinded."
+    ],
+    [
+     "Making the placebo look identical to the drug",
+     "That helps blind the participants; allocation concealment blinds the researchers who are assigning patients to treatment groups."
+    ],
+    [
+     "Blinding of the researchers who assign patients",
+     "Correct: the researchers who assign patients to treatment groups are blinded, so they cannot steer which group a patient enters."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 23"
+  },
+  {
+   "topic": "Bias in trials",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "bias",
+   "q": "Why might participants identify their group despite blinding?",
+   "opts": [
+    [
+     "The placebo has a specific mechanism of action",
+     "A placebo has no specific mechanism of action; the clue that can unmask a group is a side effect of the active treatment."
+    ],
+    [
+     "Randomization discloses the assignment",
+     "Randomization decides assignment by chance and does not reveal it; it can be inferred from side effects and similar clues."
+    ],
+    [
+     "The consent form names each participant's group",
+     "A consent form describes the study for everyone; participants can determine their group from side effects and similar clues."
+    ],
+    [
+     "Side effects may reveal the treatment",
+     "Correct: even with blinding, also called masking, it may be possible to determine the treatment group from side effects and similar clues."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 24"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "calculation",
+   "q": "In a trial, 40 of 250 patients on a new drug and 65 of 250 on standard care had the outcome. What is the risk difference?",
+   "opts": [
+    [
+     "25 percent",
+     "That is the difference in the number of events, 65 minus 40, rather than the difference between the two risks, 26 percent minus 16 percent."
+    ],
+    [
+     "16 percent",
+     "That is the new-drug group's own risk, 40 divided by 250; the risk difference subtracts it from the standard-care risk of 26 percent."
+    ],
+    [
+     "10 percent",
+     "Correct: the risks are 40/250 = 16 percent and 65/250 = 26 percent, and the difference between them is 10 percentage points."
+    ],
+    [
+     "0.62",
+     "That is the relative risk, 16 percent divided by 26 percent; the risk difference subtracts the two risks and gives 10 percent."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "Sampling",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "definition",
+   "q": "What defines random sampling?",
+   "opts": [
+    [
+     "Every member has the same chance of selection",
+     "Correct, which makes it the best way to obtain a representative sample; it can be done manually or by computer."
+    ],
+    [
+     "Members are chosen because they are easy to reach",
+     "Choosing whoever is convenient gives no equal chance of selection; random sampling gives all members of the population the same chance."
+    ],
+    [
+     "Whole groups are chosen by their membership",
+     "That describes cluster sampling; in random sampling each individual member of the population has the same chance of being selected."
+    ],
+    [
+     "Subgroups are chosen to match population makeup",
+     "That describes stratified sampling; random sampling gives every member the same chance of selection with no subgroups imposed."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Treatment and hypotheses",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "source",
+   "q": "Which is a recognized source of treatment hypotheses?",
+   "opts": [
+    [
+     "A single coincidental recovery",
+     "Coincidence is one of the things treatment decisions should avoid resting on; hypotheses come from mechanism, clinical observation, epidemiology and trial and error."
+    ],
+    [
+     "A comparison of biased groups",
+     "Biased comparisons mislead rather than generate sound hypotheses; the recognized sources are disease mechanism, clinical observation, epidemiologic studies and trial and error."
+    ],
+    [
+     "Hope that a new drug works",
+     "Wishful thinking is a named hazard, not a source; hypotheses arise from mechanism, clinical observation, epidemiologic studies and trial and error."
+    ],
+    [
+     "Epidemiologic studies",
+     "Correct, alongside the mechanism or etiology of the disease, clinical observation, and trial and error."
+    ]
+   ],
+   "c": 3,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 7"
+  },
+  {
+   "topic": "Appraising treatment studies",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "appraisal",
+   "q": "Why should a reader ask whether study patients are similar to their own?",
+   "opts": [
+    [
+     "To confirm that randomization worked",
+     "Whether the intervention and control groups are similar is a separate appraisal question; similarity to your own patients is about applicability."
+    ],
+    [
+     "To judge whether the results apply",
+     "Correct: it is a check on applying the study to the patient in front of you, the same concern as generalizability."
+    ],
+    [
+     "To check that outcomes were assessed objectively",
+     "Objective outcome assessment is judged from the criteria and blinding; similarity to your patients tells you whether the results apply."
+    ],
+    [
+     "To decide whether the sample size was adequate",
+     "Sample size is judged from the design and precision; similarity to your patients tells you whether the results apply to them."
+    ]
+   ],
+   "c": 1,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "differentiation",
+   "q": "What is the difference between random sampling and random assignment in a trial?",
+   "opts": [
+    [
+     "Sampling picks the group; assignment picks who enters",
+     "That reverses them: sampling selects who is in the study from the population, and random assignment then allocates those subjects to treatment groups."
+    ],
+    [
+     "Sampling is done by hand; assignment by computer",
+     "Randomization of either kind can be done manually or by computer; the real difference is that sampling selects who enters and assignment selects the group."
+    ],
+    [
+     "Sampling picks who enters; assignment picks the group",
+     "Correct: a sample is drawn from the population to be in the study, and those subjects are then randomly assigned to treatment groups."
+    ],
+    [
+     "Sampling avoids bias; assignment introduces it",
+     "Neither introduces bias by design; random assignment aims to limit systematic differences between groups, while sampling selects who enters the study."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Discuss following concepts and how they apply to medical research: Hypotheses, Sampling, Treatment, Comparative effectiveness, Clinical trials, Inclusion and exclusion criteria, Placebo, Randomization, Compliance, Blinding, Efficacy and effectiveness",
+   "slot": "purpose",
+   "q": "Why is random assignment preferred when testing a treatment?",
+   "opts": [
+    [
+     "It ensures every participant complies",
+     "Randomization does not control behavior; compliance is the degree to which participants act in accordance with instructions and can fail for many reasons."
+    ],
+    [
+     "It keeps participants unaware of their group",
+     "Keeping participants unaware of their treatment is blinding, a separate safeguard from randomization, which decides who is assigned to which group."
+    ],
+    [
+     "It limits systematic differences between groups",
+     "Correct: cohort comparisons are limited by systematic differences in groups other than the treatment factor, which random assignment is used to limit."
+    ],
+    [
+     "It removes the need for a comparison group",
+     "Trials still depend on comparison groups, such as treatment versus placebo; random assignment makes those groups comparable rather than unnecessary."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Appraising treatment studies",
+   "io": "List considerations for treatments or interventions that undergo controlled trials",
+   "slot": "appraisal",
+   "q": "What is the purpose of best- and worst-case scenarios for patients who drop out?",
+   "opts": [
+    [
+     "To decide how large the sample should be",
+     "Sample size is set in planning; best- and worst-case scenarios test whether the conclusions hold given patients who were lost to follow-up."
+    ],
+    [
+     "To identify which patients were noncompliant",
+     "Noncompliance concerns not following instructions; the scenarios test whether conclusions hold given patients who dropped out."
+    ],
+    [
+     "To see if conclusions survive the lost patients",
+     "Correct: complete follow-up matters, so the analysis assumes the best and worst possible outcomes for those lost and checks whether the conclusion changes."
+    ],
+    [
+     "To pick the outcome measure of interest",
+     "The outcome measure is chosen in the design; the scenarios test whether conclusions hold despite patients lost to follow-up."
+    ]
+   ],
+   "c": 2,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "RCT design",
+   "io": "Describe randomized controlled trials and the advantages and limitations of this type of study design in medical research",
+   "slot": "sequence",
+   "q": "What is done with the two groups once subjects have been randomly assigned?",
+   "opts": [
+    [
+     "They are followed forward and the outcome measured",
+     "Correct, and the risk of the outcome is then calculated in each treatment group and compared between the groups."
+    ],
+    [
+     "Subjects are drawn from the wider population",
+     "Drawing the sample happens before assignment; after random assignment both groups are followed forward in time and the outcome of interest is measured."
+    ],
+    [
+     "Risks are then compared using relative risk",
+     "Comparison of risk comes only after the groups have been followed and the risk in each has been calculated; following forward comes first."
+    ],
+    [
+     "The research question is chosen",
+     "The research question about a population is the starting point of the design; after random assignment the groups are followed forward and outcomes measured."
+    ]
+   ],
+   "c": 0,
+   "cite": "8 PAJ5512 Research and Trials MBF_2026sc.pptx, Slide 11"
+  }
+ ]
+}

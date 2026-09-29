@@ -1,0 +1,91 @@
+{
+ "id": "risk",
+ "label": "Risk & Ratios",
+ "color": "#2f6b57",
+ "rows": [
+  [
+   "Risk factor",
+   "A factor associated with an <b>increase in the probability</b> of developing the disease <i>later</i>. Raises probability, never certainty &mdash; it describes <b>groups</b>. Example, heart failure: smoking &middot; hypertension &middot; hypercholesterolemia &middot; family history &middot; diabetes &middot; valvular disease."
+  ],
+  [
+   "Recognizing risk",
+   "<b>Large risk with rapid effects</b> = easy. Harder: <b>long latency</b> obscures results &middot; frequent exposure hidden unless exposed is compared with unexposed &middot; <b>low incidence</b> (a small risk needs a <b>larger affected population</b>) &middot; common disease with known risk factors hides new ones. Rare disease: cohort needs a very large group, so <b>case-control is better</b>."
+  ],
+  [
+   "Uses of risk",
+   "<b>Prediction</b> (probabilities from <i>groups</i>) &middot; <b>Cause</b> (may predict without causing &mdash; a <b>disease marker</b>) &middot; <b>Diagnosis</b> (best predictor in an individual = <b>early clinical disease</b>) &middot; <b>Prevention</b> (remove the factor to lower probability: control hypertension, avoid second-hand smoke)."
+  ],
+  [
+   "Studying risk in humans",
+   "Experiments are limited by <b>ethical constraints</b>. Use observational designs: <b>concurrent (prospective) cohort</b>, <b>historical (retrospective) cohort</b>, <b>case-control</b>."
+  ],
+  [
+   "Absolute risk",
+   "The <b>incidence</b> of disease in the population: <b>new cases over a given time &divide; people in the group</b> (18 of 600 = 0.03). Does <b>not</b> show whether exposure raises risk."
+  ],
+  [
+   "Attributable risk",
+   "Excess incidence in the exposed: <b>incidence in exposed <u>minus</u> incidence in non-exposed</b>. A <i>difference</i>, exposed first (0.03 &minus; 0.01 = 0.02)."
+  ],
+  [
+   "Relative risk",
+   "<b>Incidence in exposed &divide; incidence in non-exposed</b>: how many times more likely, and the <b>strength of association</b>. Use incidences, never raw counts (36/300 &divide; 20/400 = 2.4, not 36/20). Exposed incidence = relative risk &times; unexposed incidence."
+  ],
+  [
+   "Reading relative risk",
+   "<b>= 1</b> null value, equal risk, <b>no association</b> &middot; <b>&gt; 1</b> higher risk in exposed (2.5 = 2.5 times as likely) &middot; <b>&lt; 1</b> negative association, may be <b>protective</b> (0.6 = 40 percent lower; effective vaccine). Prevention expects <b>&lt; 1</b>. It is a ratio, so never negative."
+  ],
+  [
+   "Relative risk vs attributable risk",
+   "Relative risk <b>cancels out incidence</b>, so it hides the size of the risk. Same relative risk of 2.0 gives attributable risk 0.001 at baseline 1 in 1,000 but 0.1 at 1 in 10 &mdash; <b>higher baseline = greater attributable risk</b>."
+  ],
+  [
+   "Cohort study",
+   "Group with a <b>common characteristic</b> (age, birth date, exposure, disease, intervention) assembled at a similar point and <b>followed over time</b>. Needs <b>enough follow-up time</b> and <b>complete follow-up</b> so attrition does not skew the outcome. Divide the disease-free cohort by exposure, follow, compare proportions who develop disease."
+  ],
+  [
+   "Historical vs concurrent",
+   "<b>Historical (retrospective)</b>: assembled in the past from records, followed forward to the present &mdash; data may be incomplete. <b>Concurrent (prospective)</b>: assembled now, followed into the future. A case-control study grouped by disease is <i>not</i> a historical cohort. Random <i>selection</i> is not random <i>assignment</i>, so it is not a randomized trial."
+  ],
+  [
+   "Cohort pros and cons",
+   "<b>+</b> establishes <b>incidence directly</b> &middot; logical (exposed, do they get disease?) &middot; exposure recorded without knowing the outcome &middot; many outcomes per exposure. <b>&minus;</b> inefficient (large cohort) &middot; expensive &middot; years to results &middot; only exposures recorded at the outset &middot; susceptible to confounding."
+  ],
+  [
+   "Prospective vs retrospective vs case-cohort",
+   "<b>Prospective</b>: wide range of risk factors, lifestyle data, standardized exposure; but <b>not for rare diseases</b>. <b>Retrospective</b>: <b>faster, cheaper, more efficient</b>; but narrower risk factors, cannot examine characteristics missing from the data, exposure not standardized. <b>Case-cohort</b>: even more efficient (only a <b>sample of the unexposed</b> analyzed); weighting hard to follow."
+  ],
+  [
+   "Confounding",
+   "<b>Systematic error (bias)</b> from an additional independent factor related to <b>both</b> exposure and outcome. Example: smoking, coffee and pancreatic cancer."
+  ],
+  [
+   "Controlling confounding",
+   "<b>Randomization</b> (equal chance; design) &middot; <b>Restriction</b> (limit patient characteristics; design) &middot; <b>Matching</b> (same characteristics; <b>design and analysis</b>) &middot; <b>Stratification</b> (rates within strata; analysis) &middot; <b>Simple adjustment</b> (one or few characteristics) &middot; <b>Multivariable adjustment</b> (many factors, modeling) &middot; <b>Best-case/worst-case analysis</b> (extreme selection-bias assumptions). Design-only: randomization and restriction."
+  ],
+  [
+   "Effect modification",
+   "A variable's presence or absence <b>changes the effect of the exposure</b>: <b>synergistic</b> (strengthens) or <b>antagonistic</b> (weakens). <b>NOT a bias</b> &mdash; confounding is. Example: aspirin, <b>age and prior history</b> and upper gastrointestinal bleeding."
+  ],
+  [
+   "Case-control study",
+   "<b>Cases have the condition, controls do not</b>; controls from the same cohort, community/hospital, or matched. Groups chosen by <b>outcome</b>; looks <b>backward</b> to past exposure; yields an <b>estimate of relative risk</b>."
+  ],
+  [
+   "Case-control pros and cons",
+   "<b>+</b> smaller samples (cases picked for having the condition) &middot; no waiting for the condition &middot; suits <b>rare disease with long latency</b> (cohorts are poor at this: latency, large sample, few cases). <b>&minus;</b> <b>recall bias</b> &mdash; exposure is often asked, and memory is imperfect &middot; no incidence."
+  ],
+  [
+   "Relative risk vs odds ratio",
+   "<b>Cohort &rarr; relative risk</b> (incidence can be calculated directly). <b>Case-control &rarr; odds ratio</b>, an <b>estimated relative risk</b>. Lettered table (a exposed cases, b exposed noncases, c unexposed cases, d unexposed noncases): relative risk = <b>[a/(a+b)] &divide; [c/(c+d)]</b>; odds ratio = <b>(a/c) &divide; (b/d) = ad/bc</b>."
+  ],
+  [
+   "Odds ratio calculations",
+   "Odds = exposed &divide; unexposed (48 exposed, 12 unexposed = 4, not 0.8). Odds ratio = odds in cases &divide; odds in controls, cases on top. 60/100 cases vs 30/100 controls exposed: 1.5 &divide; 0.43 = <b>3.5</b>. Below 1 (20/100 vs 40/100 = 0.38) = lower odds of disease."
+  ],
+  [
+   "Stating an odds ratio",
+   "Read either way: cases have 11 times greater odds of prior exposure, so the <b>exposed have 11 times greater odds of disease</b> (the version to use). It is a ratio of odds, not a percentage or a one-in-N frequency."
+  ]
+ ]
+}

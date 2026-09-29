@@ -28,6 +28,7 @@ and the download is a plain <a download> that every browser handles.
 
     python3 tools/build_guide_docx.py            # every in-scope document
     python3 tools/build_guide_docx.py --list     # show scope and stop
+    python3 tools/build_guide_docx.py "Medical Literature"   # only documents whose path contains this
 """
 import os, re, sys, io as _io, json, urllib.parse
 
@@ -801,6 +802,9 @@ def coverage(src, docx_path):
 
 def main():
     docs = in_scope_documents()
+    only = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if only:
+        docs = [(slug, p) for slug, p in docs if all(o in p for o in only)]
     if "--list" in sys.argv:
         print("Semester 2+ classes:", ", ".join(sorted(semester_scope())))
         for slug, p in docs: print("   %-16s %s" % (slug, p))

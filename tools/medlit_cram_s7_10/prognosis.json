@@ -1,0 +1,87 @@
+{
+ "id": "prognosis",
+ "label": "Prognosis & Outcomes",
+ "color": "#6b4a2f",
+ "rows": [
+  [
+   "Prognosis",
+   "The <b>prediction for the course of disease</b>. Expressed as <b>rates</b> (five-year survival, case fatality, response, remission, recurrence) or with <b>cure</b> / <b>death</b> as endpoints. <b>Natural history</b> = what occurs <b>without intervention</b>; prognosis can often be improved by clinical intervention. Detect earlier &rarr; <b>maximize effectiveness of treatment</b>."
+  ],
+  [
+   "Five Ds &amp; severity",
+   "<b>Death, disease, discomfort, disability, dissatisfaction.</b> Severity <b>establishes priorities for clinical services and public health programs</b>. Compare new treatments with the <b>natural (untreated) outcome</b>."
+  ],
+  [
+   "Clinical course",
+   "Biologic onset &rarr; pathology evident &rarr; signs and symptoms &rarr; medical care sought &rarr; <b>diagnosis given</b> &rarr; treatment recommended and implemented &rarr; outcome. <b>Preclinical phase</b> = disease present, no signs or symptoms yet (where <b>screening</b> works); <b>clinical phase</b> = from signs and symptoms on."
+  ],
+  [
+   "Prognostic factors",
+   "Identify patients with the <b>same disease but different prognoses</b>. Prognosis studies look for <b>protective or progressing factors</b>. <b>Multiple factors</b> predict better than a single data point. <b>Clinical prediction rules</b> = probability of an outcome from a set of patient characteristics. <b>Adjustment</b> asks whether some <i>other</i> factor explains the difference."
+  ],
+  [
+   "Risk vs prognosis studies",
+   "<b>Risk</b>: healthy participants &middot; outcome is <b>diagnosis</b> &middot; rates low (diagnosis rare). <b>Prognosis</b>: sick participants &middot; outcome is <b>death, complications, disability</b> &middot; rates high (outcomes common) &middot; protective or progressing factors differ from risk factors."
+  ],
+  [
+   "Risk factors &ne; prognostic factors",
+   "Risk factors <b>do not necessarily mean a poorer prognosis</b>. Infarction: on <b>both</b> lists = increasing age, <b>cigarette smoking</b>. Risk only = male, hypertension, low-density / high-density lipoprotein pattern, inactivity. Poor prognosis only = female, <b>hypotension</b>, anterior infarction, congestive heart failure, <b>ventricular arrhythmia</b>."
+  ],
+  [
+   "Prognosis rates",
+   "<b>5-year survival</b> = percent alive 5 years from some point in the disease &middot; <b>case fatality</b> = percent of <i>patients</i> who die of it &middot; <b>disease-specific mortality</b> = per 10,000 / 100,000 <i>population</i> &middot; <b>response</b> = some improvement after an intervention &middot; <b>remission</b> = disease no longer detectable &middot; <b>recurrence</b> = return after a disease-free interval. Observation is assumed long enough for all events to occur."
+  ],
+  [
+   "Outcomes to include",
+   "The <b>full range</b> of manifestations: <b>biological and clinical</b> outcomes, plus <b>quality of life</b>."
+  ],
+  [
+   "Case-fatality ratio",
+   "People who die &divide; people who have the disease. Suits <b>acute, short-term disease</b> where death follows diagnosis quickly. Beware <b>negative framing</b> (number dying vs number surviving) &mdash; it sways how risk is perceived."
+  ],
+  [
+   "Five-year survival",
+   "Frequent in <b>cancer</b>. <b>Rates can mask data</b>: dissecting aneurysm (steep first-year drop, then plateau), lung cancer (steady), amyotrophic lateral sclerosis (slow then faster) and age 100 can share nearly the same five-year rate. Cannot evaluate disease of <b>&lt;5 years'</b> duration or a <b>new therapy introduced within 5 years</b>."
+  ],
+  [
+   "Screening artifact",
+   "Disease found earlier but <b>death at a similar point</b> &rarr; patients just <b>live longer with a diagnosis</b>. Measured survival = year of death &minus; year of diagnosis (1989 &rarr; 1995 = 6 years vs 1991 &rarr; 1995 = 4, same death date). Earlier diagnosis adds that many years."
+  ],
+  [
+   "Survival analysis",
+   "Follow a cohort over time; <b>person-years</b> contributed by people added at different times. Survival to a point = <b>cumulative probability of surviving each preceding interval</b> (multiply them: 0.95 &times; 0.90 &times; 0.60 = 0.513)."
+  ],
+  [
+   "Kaplan-Meier",
+   "A <b>new interval begins at the exact time of each death</b> &rarr; a stepwise curve. <b>Censored</b> patients leave the number at risk <b>without counting as deaths</b>. Interval survival = survivors &divide; at risk (7 of 8 = 0.875)."
+  ],
+  [
+   "Cox regression &amp; hazard ratio",
+   "Like Kaplan-Meier but <b>adjusts for confounders</b> and handles <b>multiple predictors</b> (treatment, age, dose); finds prognostic indicators. <b>Hazard ratio = relative risk</b>: 2 = twice the risk; <b>&lt;1 protective</b>; 1 = same risk; 0.25 = 25% of the comparison risk."
+  ],
+  [
+   "Survival curves",
+   "Estimate survival for a <b>hypothetical</b>, not actual, cohort. <b>Precision is greatest early</b> (left; larger population). A flat <b>plateau can deceive</b>: fewer participants remain followed."
+  ],
+  [
+   "Median &amp; relative survival",
+   "<b>Median</b> = time half the population survives; <b>less affected by extremes</b>, can be found <b>before all have died</b> (2, 4, 7, 9, 13, 18, 30 &rarr; 9; the mean, 11.9, is pulled up). <b>Relative survival</b> = <b>observed &divide; expected</b> survival without the disease (63 &divide; 90 = 70%)."
+  ],
+  [
+   "Inception cohort &amp; zero time",
+   "Identify all members at a <b>similar point (zero time)</b>; assemble at <b>onset, when disease first becomes clinically apparent</b>, as early and uniform as possible; state inclusion criteria; consider <b>referral pattern</b> (academic center vs community)."
+  ],
+  [
+   "Selection bias",
+   "Sources: <b>convenience samples</b>, <b>volunteer samples</b>, declines from those selected, dropouts. Ask whether the prognosis difference is due to the factor studied or <b>another factor</b>. Controls: <b>randomization, restriction, matching, stratification, adjustment, best/worst case variation</b>. <b>Randomization</b> alone also covers unmeasured factors."
+  ],
+  [
+   "Cohort biases",
+   "<b>Susceptibility</b>: groups differ at entry (disease course, concurrent disease, prior treatment). <b>Migration</b>: dropouts or group changes (death, recovery, disability); more dropouts = more bias; are they like those who stay? <b>Measurement</b>: outcome detected more in one group &rarr; <b>blind</b>, strict criteria, equal effort. Bias may <b>falsely create or obscure</b> differences."
+  ],
+  [
+   "Appraising a prognosis study",
+   "Inception cohort? &middot; Entry criteria objective and reasonable? &middot; Follow-up adequate? &middot; Patients similar to yours (generalizability limited)? &middot; Adjusted for prognostic factors? &middot; <b>Outcomes assessed objectively and blindly?</b>"
+  ]
+ ]
+}

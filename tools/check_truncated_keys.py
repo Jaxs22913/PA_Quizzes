@@ -92,6 +92,8 @@ REVIEWED = {
         "B: a drug class, plural; the complete answer",
     ("cms_e3l15_vig_a", "The mastoid air cells"):
         "B: 'which structures' answered by one plural structure (mastoiditis)",
+    ("medlit_s7risk_pool", "4"):
+        "B: a numeric answer to a calculation (odds of exposure among cases = 48/12); the stem asks for the number",
 }
 
 
@@ -99,6 +101,8 @@ REVIEWED = {
 # keyed by (folder, key text) so one entry covers a form page and the
 # master-exams.json it is rendered from.
 REVIEWED_MASTERS = {
+    ("Interpretation of Medical Literature Exam 1", "Findings may be presented in language clinicians struggle with"):
+        "D: a complete sentence that ends on a preposition, not a cut list (judged sound in the Evidence pool)",
     # signature B on the same keys already judged in the pools (REVIEWED above)
     ("Clinical Medicine and Surgery I Exam 1", "Wickham striae"):
         "B: the stem's list is the vignette's findings; the key is the one named sign asked for",

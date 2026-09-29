@@ -1,0 +1,1566 @@
+{
+ "set1": [
+  {
+   "topic": "Cohort strengths and limits",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "advantage",
+   "q": "What advantage does a retrospective cohort study have over a prospective one?",
+   "opts": [
+    [
+     "It is faster, cheaper and more efficient",
+     "Correct, because the data were already collected for another purpose and the outcomes have already occurred; the trade-off is a narrower range of risk factors."
+    ],
+    [
+     "It studies a wider range of risk factors",
+     "The range of risk factors is NARROWER in a retrospective cohort, because only what was already recorded can be studied."
+    ],
+    [
+     "It measures exposure in a standardized way",
+     "Measurement of exposure may not be standardized in a retrospective cohort; a prospective study can set up standardized measurement."
+    ],
+    [
+     "It can examine any patient characteristic",
+     "A retrospective cohort cannot examine characteristics missing from the data set, whereas a prospective study can collect data not found in most medical records."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "example",
+   "q": "Aspirin raises the risk of upper gastrointestinal bleeding much more in older patients than in younger ones. What is age in this relationship?",
+   "opts": [
+    [
+     "A confounder",
+     "A confounder distorts an association because it is related to both exposure and outcome; here age changes the size of the exposure's own effect."
+    ],
+    [
+     "The dependent variable",
+     "The dependent variable is the outcome, which here is bleeding; age is the variable that changes how strongly aspirin acts."
+    ],
+    [
+     "A control group",
+     "A control group is a comparison group of unexposed subjects; age here is a characteristic that changes the exposure's effect."
+    ],
+    [
+     "An effect modifier",
+     "Correct: the exposure acts differently depending on age, which is what effect modification means, as opposed to age merely distorting the association."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "definition",
+   "q": "What is effect modification?",
+   "opts": [
+    [
+     "A third factor distorts the association",
+     "A third factor related to both exposure and outcome that distorts the association is confounding, a bias; effect modification is not a bias."
+    ],
+    [
+     "A variable changes the effect of exposure",
+     "Correct: the presence or absence of the variable changes the effect of the exposure, and the change may be synergistic or antagonistic."
+    ],
+    [
+     "Participants drop out during follow-up",
+     "Losing participants during follow-up is the attrition effect; effect modification concerns how a variable alters the effect of exposure."
+    ],
+    [
+     "Results vary randomly between samples",
+     "Random variation is chance; effect modification is a variable whose presence or absence alters the effect of exposure."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "Which bias threatens a case-control study when subjects are asked about past exposure?",
+   "opts": [
+    [
+     "Attrition effect",
+     "Attrition is dropout during follow-up, a cohort problem; case-control subjects are not followed forward."
+    ],
+    [
+     "Publication bias",
+     "Publication bias concerns which finished studies get published, not how exposure is reported by subjects."
+    ],
+    [
+     "Recall bias",
+     "Correct: accuracy of memory and the ability to recall specific information are imperfect, so reported exposure may be inaccurate, especially once subjects know the disease being studied."
+    ],
+    [
+     "Non-response bias",
+     "Non-response bias arises when responders differ from non-responders; recall bias specifically concerns inaccurate memory of past exposure."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 33"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "definition",
+   "q": "Effect modification that weakens the effect of an exposure is called what?",
+   "opts": [
+    [
+     "Antagonistic",
+     "Correct, and effect modification that strengthens the effect of exposure is synergistic; neither form is a bias."
+    ],
+    [
+     "Synergistic",
+     "Synergistic effect modification strengthens the effect of the exposure rather than weakening it."
+    ],
+    [
+     "Random",
+     "Random describes chance variation; the two forms of effect modification are synergistic and antagonistic."
+    ],
+    [
+     "Confounding",
+     "Confounding is a systematic error, a bias, whereas effect modification is not a bias."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "application",
+   "q": "A study compares patients with newly diagnosed melanoma to patients without it and asks about past sunburns. What is the exposure?",
+   "opts": [
+    [
+     "A diagnosis of melanoma",
+     "Melanoma is the condition that defines the case group, not the exposure being asked about."
+    ],
+    [
+     "Being in the control group",
+     "Control status is defined by not having the condition; the exposure is the factor asked about, past sunburns."
+    ],
+    [
+     "Sunburns in the past",
+     "Correct: the exposure is the factor compared between the groups, here past sunburns, while the presence or absence of melanoma defines the groups."
+    ],
+    [
+     "The patient's age at diagnosis",
+     "Age is a characteristic that might be matched or considered as a confounder, not the exposure this study asks about."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "application",
+   "q": "Researchers enroll 150 patients with a rare cancer and 300 without it, and ask about past exposure. Which measure of association suits this study?",
+   "opts": [
+    [
+     "Odds ratio",
+     "Correct, because the odds ratio is the measure of association for case-control studies, while relative risk is used for cohort studies."
+    ],
+    [
+     "Relative risk",
+     "Relative risk is used for cohort studies, where incidence in the exposed and unexposed can be calculated directly."
+    ],
+    [
+     "Attributable risk",
+     "Attributable risk subtracts incidences, which this design cannot supply directly; the odds ratio is the measure for case-control studies."
+    ],
+    [
+     "Absolute risk",
+     "Absolute risk is the incidence in a population, which needs a followed group; the odds ratio is the measure for case-control studies."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "advantage",
+   "q": "What does a case-control study not need to do that a cohort study does?",
+   "opts": [
+    [
+     "Define who counts as a case",
+     "A case group must still be defined as persons who have the condition; that is the starting point of the design."
+    ],
+    [
+     "Wait for the condition to develop",
+     "Correct, since the cases already have the condition, which is why results do not take years to obtain."
+    ],
+    [
+     "Identify a comparison group",
+     "The control group without the condition is required, since exposure in cases is compared with exposure in controls."
+    ],
+    [
+     "Ask about earlier exposure",
+     "Earlier exposure is exactly what the study asks about, which is why recall bias is a concern."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "principle",
+   "q": "What does a relative risk below 1 suggest?",
+   "opts": [
+    [
+     "The exposure increases risk",
+     "An increase in risk corresponds to a relative risk above 1, where the risk in the exposed exceeds the risk in the unexposed."
+    ],
+    [
+     "The exposure may be protective",
+     "Correct, because risk in the exposed is lower than in the unexposed, a negative association, as with protection through exposure to an effective vaccine."
+    ],
+    [
+     "The exposure has no effect",
+     "No effect corresponds to the null value of exactly 1; a value below 1 means the exposed have lower risk than the unexposed."
+    ],
+    [
+     "The exposure was measured wrongly",
+     "A value below 1 is a valid result, not a measurement error; it reflects lower risk in the exposed, as with an effective vaccine."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Cohort strengths and limits",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "What limits the risk factors a cohort study can examine?",
+   "opts": [
+    [
+     "Only diseases with short latency",
+     "Cohorts can be followed for long periods; the limit is that only the exposure recorded at the outset can be followed."
+    ],
+    [
+     "Only exposed persons are followed",
+     "Both exposed and unexposed persons are followed and compared; the limit concerns which exposures were recorded at the start."
+    ],
+    [
+     "Only one outcome can be studied",
+     "A cohort can assess the relationship between an exposure and a number of outcomes; the restriction concerns which exposures were recorded."
+    ],
+    [
+     "Only exposures recorded at the outset",
+     "Correct, so other contributing exposures may be missed when a disease has multiple causes."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 15"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "principle",
+   "q": "What does an odds ratio from a case-control study estimate?",
+   "opts": [
+    [
+     "Attributable risk",
+     "Attributable risk is a difference between incidences, which a case-control study cannot supply directly; the odds ratio estimates relative risk."
+    ],
+    [
+     "Absolute risk",
+     "Absolute risk is incidence in a population, which a case-control study cannot supply directly; the odds ratio estimates relative risk."
+    ],
+    [
+     "Relative risk",
+     "Correct: an odds ratio is an estimated relative risk, which is why the case-control design ends in an estimate of relative risk."
+    ],
+    [
+     "Incidence in the exposed",
+     "Incidence in the exposed cannot be calculated directly in a case-control study; the odds ratio estimates the relative risk instead."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 36"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "calculation",
+   "q": "In a case-control study, 60 of 100 cases and 30 of 100 controls had been exposed. What is the odds ratio?",
+   "opts": [
+    [
+     "2.0",
+     "2.0 divides the exposed counts, 60 by 30, ignoring the unexposed counts; odds compare exposed with unexposed within each group."
+    ],
+    [
+     "3.5",
+     "Correct: the odds of exposure are 60 to 40, which is 1.5, in cases and 30 to 70, about 0.43, in controls, and the ratio is 3.5, matching ad over bc, 4,200 over 1,200."
+    ],
+    [
+     "1.5",
+     "1.5 is only the odds of exposure among cases; the odds ratio divides it by the odds of exposure among controls."
+    ],
+    [
+     "0.29",
+     "0.29 inverts the ratio, control odds over case odds; the odds in cases go on top."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 38"
+  },
+  {
+   "topic": "Cohort studies",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "What limits the usefulness of a historical cohort study?",
+   "opts": [
+    [
+     "Records may lack needed data points",
+     "Correct, since records were not set up for all the data points the research needs, so data may be incomplete until the study has run long enough."
+    ],
+    [
+     "Outcomes have not yet occurred",
+     "In a historical cohort the outcomes have already occurred; the problem is incomplete records, not waiting for outcomes."
+    ],
+    [
+     "Participants cannot be identified",
+     "The cohort is identified from records, so identification is possible; the weakness is that those records may lack the data needed."
+    ],
+    [
+     "Exposure is assigned by chance",
+     "Exposure in a cohort study is observed, not assigned; the limit here is the completeness of the records."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 12"
+  },
+  {
+   "topic": "Controlling confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "differential",
+   "q": "Which analysis method uses mathematical modeling to adjust for a large number of factors?",
+   "opts": [
+    [
+     "Multivariable adjustment",
+     "Correct: it adjusts for differences in many factors related to the outcome using mathematical modeling techniques, in the analysis phase."
+    ],
+    [
+     "Simple adjustment",
+     "Simple adjustment corrects crude rates for one or a few characteristics, so that equal weight is given to strata of similar risk."
+    ],
+    [
+     "Stratification",
+     "Stratification compares rates within subgroups of similar risk rather than modeling many factors at once."
+    ],
+    [
+     "Restriction",
+     "Restriction limits the range of patient characteristics in the study, a design-phase method rather than a model."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "application",
+   "q": "A drug lowers blood pressure far more in younger than in older adults. What does age represent here?",
+   "opts": [
+    [
+     "A confounder",
+     "A confounder is linked to both exposure and outcome and distorts the association; here age changes the size of the drug's effect."
+    ],
+    [
+     "An effect modifier",
+     "Correct: the effect of the exposure differs according to the level of another variable, which is effect modification and not a bias."
+    ],
+    [
+     "A source of recall bias",
+     "Recall bias concerns inaccurate memory of past exposure; age here alters the size of the drug's effect."
+    ],
+    [
+     "A matched control",
+     "Matching selects comparison patients with the same characteristics; it does not describe a variable that changes the effect of an exposure."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Risk factors",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "definition",
+   "q": "What is a risk factor?",
+   "opts": [
+    [
+     "A factor that guarantees later disease",
+     "A risk factor increases the probability of developing the disease later; it does not make the disease certain, and many exposed people never develop it."
+    ],
+    [
+     "A factor that appears only after disease begins",
+     "A risk factor is defined by raising the probability of developing the disease LATER, so it comes before the disease rather than after it."
+    ],
+    [
+     "A treatment that lowers the chance of disease",
+     "A treatment that lowers the chance of disease is a protective intervention, whereas a risk factor is associated with an INCREASE in the probability of disease."
+    ],
+    [
+     "A factor tied to a higher chance of later disease",
+     "Correct, because it raises the probability of developing the disease later rather than making it certain, which is why risk factors describe groups and not a guaranteed outcome for one person."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 3"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "formula",
+   "q": "In a cohort 2x2 table with exposed cases (a), exposed noncases (b), unexposed cases (c) and unexposed noncases (d), which expression gives the relative risk?",
+   "opts": [
+    [
+     "ad divided by bc",
+     "That is the odds ratio, the measure of association for case-control studies rather than the relative risk of a cohort."
+    ],
+    [
+     "a/(a+c) divided by b/(b+d)",
+     "That divides within columns, comparing the proportion exposed among cases with that among noncases, which is how a case-control table is read."
+    ],
+    [
+     "a/(a+b) divided by c/(c+d)",
+     "Correct: the incidence in the exposed, a over a plus b, divided by the incidence in the unexposed, c over c plus d."
+    ],
+    [
+     "a/c divided by b/d",
+     "That is the odds ratio written another way (equal to ad over bc); relative risk uses the incidences a/(a+b) and c/(c+d)."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 36"
+  },
+  {
+   "topic": "Absolute risk",
+   "io": "Discuss methods of predicting risk",
+   "slot": "formula",
+   "q": "How is incidence, or absolute risk, calculated?",
+   "opts": [
+    [
+     "New cases in a period divided by group size",
+     "Correct, and because it does not compare exposed with unexposed, absolute risk does not show whether the exposure is associated with increased risk."
+    ],
+    [
+     "All current cases divided by group size",
+     "Dividing all existing cases by the group counts old and new cases together; incidence counts only NEW cases arising over the period."
+    ],
+    [
+     "New cases divided by all current cases",
+     "The denominator of incidence is the number of people in the group, not the number of cases."
+    ],
+    [
+     "Exposed cases divided by unexposed cases",
+     "Counts of cases ignore group sizes; relative risk divides the incidence in the exposed by the incidence in the unexposed."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Cohort studies",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "principle",
+   "q": "What must a cohort study have so that attrition does not falsely skew the outcome?",
+   "opts": [
+    [
+     "Complete follow-up of the cohort",
+     "Correct: if participants drop out, the outcome data can be falsely skewed, so the cohort must also be followed long enough to observe the expected outcome."
+    ],
+    [
+     "A larger control group",
+     "A larger control group does not replace participants who are lost; the safeguard is complete follow-up of everyone in the cohort."
+    ],
+    [
+     "Random assignment to exposure",
+     "Exposure is observed rather than assigned in a cohort study; dropout is addressed by following everyone through to the outcome."
+    ],
+    [
+     "Recall of past exposures",
+     "Recall of past exposure is a concern in case-control studies; in a cohort, losses are prevented by following everyone over time."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 10"
+  },
+  {
+   "topic": "Cohort studies",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "What defines a cohort?",
+   "opts": [
+    [
+     "Cases matched with healthy controls",
+     "Matching cases with controls describes a case-control study; a cohort is assembled by a shared characteristic and followed forward."
+    ],
+    [
+     "Patients randomly assigned to treatment",
+     "Random assignment defines a randomized trial; a cohort is a group with a common characteristic assembled at a similar point and followed over time."
+    ],
+    [
+     "A single patient followed in detail",
+     "A cohort is a group of people rather than one patient; the members share a characteristic and are followed over time."
+    ],
+    [
+     "People sharing a trait, followed over time",
+     "Correct, and the shared characteristic may be age, date of birth, an exposure, having a specific disease, or taking part in a preventive or therapeutic intervention."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 9"
+  },
+  {
+   "topic": "Uses of risk",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "application",
+   "q": "A clinician advises a patient to stop smoking to lower the chance of lung cancer. Which use of risk information is this?",
+   "opts": [
+    [
+     "Prediction",
+     "Prediction estimates the probability of a future event from data on groups; advising removal of the factor goes further and aims to lower that probability."
+    ],
+    [
+     "Diagnosis",
+     "Diagnosis concerns whether disease is already present, and the best predictor in an individual is early clinical disease, not a risk factor."
+    ],
+    [
+     "Cause",
+     "Cause concerns whether a risk factor actually produces the disease, and a factor can predict disease without causing it; advice to remove a factor is prevention."
+    ],
+    [
+     "Prevention",
+     "Correct, because removing a risk factor lowers the probability of developing the disease, as with controlling hypertension to prevent heart failure or avoiding second-hand smoke."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 7"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "framework",
+   "q": "In which direction does a case-control study look for exposure?",
+   "opts": [
+    [
+     "Forward from exposure to disease",
+     "Looking forward from exposure to disease describes a cohort study, which follows exposed and unexposed persons over time."
+    ],
+    [
+     "Forward from random assignment",
+     "Random assignment belongs to trials; a case-control study starts from persons who already have or lack the condition."
+    ],
+    [
+     "Only at the moment of diagnosis",
+     "Exposure at diagnosis alone would say nothing about earlier exposure; the design looks back at exposure before the condition."
+    ],
+    [
+     "Backward from disease to past exposure",
+     "Correct: cases and controls are identified first and then compared for earlier exposure, so the research runs backward in time and yields an estimate of relative risk."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 31"
+  },
+  {
+   "topic": "Controlling confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "differential",
+   "q": "Which method gives each patient an equal chance of falling into either group?",
+   "opts": [
+    [
+     "Restriction",
+     "Restriction limits the range of characteristics of patients in the study rather than assigning them by chance."
+    ],
+    [
+     "Randomization",
+     "Correct: it is applied in the design phase and spreads confounders between the groups by chance."
+    ],
+    [
+     "Matching",
+     "Matching selects comparison patients with the same characteristics as each patient in the other group rather than assigning by chance."
+    ],
+    [
+     "Stratification",
+     "Stratification compares rates within subgroups with otherwise similar probability of the outcome, and is applied in the analysis phase."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "calculation",
+   "q": "In a cohort, 12 of 300 exposed and 16 of 400 unexposed persons developed a disease. What does this show?",
+   "opts": [
+    [
+     "Exposure lowers the risk by a quarter",
+     "Comparing raw counts, 12 against 16, ignores the different group sizes; both incidences are 0.04, giving a relative risk of exactly 1."
+    ],
+    [
+     "Exposure raises the risk by a third",
+     "Sixteen over twelve compares counts in groups of different size; converting to incidences gives 0.04 in each group and a relative risk of 1."
+    ],
+    [
+     "No association with the exposure",
+     "Correct: 12 of 300 and 16 of 400 are both 0.04, so the relative risk is 1.0, the null value, which indicates no association between exposure and disease."
+    ],
+    [
+     "The counts are insufficient to judge",
+     "The counts and group sizes are enough to calculate both incidences, 0.04 each, so the relative risk of 1.0 can be found."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 25"
+  },
+  {
+   "topic": "Cohort studies",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "definition",
+   "q": "Which type of cohort study identifies the cohort from records and follows it forward to the present?",
+   "opts": [
+    [
+     "Historical (retrospective) cohort",
+     "Correct: the cohort is assembled in the past from records and followed forward to the present, so the outcomes have already occurred."
+    ],
+    [
+     "Concurrent (prospective) cohort",
+     "A concurrent cohort is assembled in the present and followed into the future; it does not depend on past records."
+    ],
+    [
+     "Case-control study",
+     "A case-control study is grouped by disease; despite sometimes being called retrospective, a historical cohort is grouped by exposure and followed forward."
+    ],
+    [
+     "Randomized controlled trial",
+     "A randomized trial assigns the exposure by chance; a historical cohort only observes an exposure already recorded in the past."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 13"
+  },
+  {
+   "topic": "Risk factors",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "principle",
+   "q": "Which situation makes a risk easiest to recognize?",
+   "opts": [
+    [
+     "A small risk with a long latency",
+     "A long latency between exposure and disease can obscure the result, and a small risk needs a larger affected population before a difference shows."
+    ],
+    [
+     "A rare disease with delayed onset",
+     "Low disease incidence makes a risk harder to recognize, and delayed onset adds a long latency; a rare disease needs a very large cohort to show a difference."
+    ],
+    [
+     "A large risk with rapid effects",
+     "Correct, because a big effect that appears soon after exposure is hard to miss. Long latency, low incidence and many already-known risk factors each make a risk harder to spot."
+    ],
+    [
+     "A common disease with many known risk factors",
+     "When a common disease already has known risk factors it is difficult to distinguish new ones, so recognition is harder rather than easier."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 4"
+  },
+  {
+   "topic": "Cohort strengths and limits",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "advantage",
+   "q": "Which is an advantage of cohort studies?",
+   "opts": [
+    [
+     "Rare diseases can be studied cheaply",
+     "Rare diseases need a very large cohort, so cohort studies are inefficient and expensive for them; case-control studies suit rare disease."
+    ],
+    [
+     "Incidence can be established directly",
+     "Correct, because following exposed and unexposed persons forward shows how many develop disease; exposure is also recorded without knowledge of the outcome."
+    ],
+    [
+     "Results are available within weeks",
+     "Cohort results may not be available for many years, since the group must be followed until the outcome occurs."
+    ],
+    [
+     "Few participants need enrolling",
+     "A large cohort must be enrolled, which is why cohort studies are inefficient."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 14"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "advantage",
+   "q": "Why do case-control studies need smaller samples than cohort studies?",
+   "opts": [
+    [
+     "Controls are not required for the comparison",
+     "Controls are essential, since exposure in cases is compared with exposure in persons without the condition."
+    ],
+    [
+     "Cases are picked for having the condition",
+     "Correct: a cohort must be large because only a limited number of those followed get the condition, whereas a case-control study starts with people who already have it."
+    ],
+    [
+     "Exposure is randomly assigned to subjects",
+     "Exposure is observed rather than assigned in a case-control study; random assignment belongs to trials."
+    ],
+    [
+     "Bias from recall of exposure is removed",
+     "Recall bias is a recognized limitation of case-control studies, because subjects are often asked about past exposure."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Attributable risk",
+   "io": "Discuss methods of comparing risk",
+   "slot": "definition",
+   "q": "What does attributable risk measure?",
+   "opts": [
+    [
+     "How many times likelier exposed persons are",
+     "That describes relative risk, a ratio of the two incidences; attributable risk is their difference."
+    ],
+    [
+     "Incidence in the whole population",
+     "Incidence in a population is absolute risk, which takes no account of exposure to a risk factor."
+    ],
+    [
+     "Excess incidence in the exposed group",
+     "Correct: it is the incidence in exposed persons minus the incidence in non-exposed persons, the possibility of disease following exposure."
+    ],
+    [
+     "Odds of exposure among cases",
+     "Odds of exposure among cases belong to the odds ratio of a case-control study; attributable risk compares incidences in exposed and unexposed persons."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 18"
+  },
+  {
+   "topic": "Controlling confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "differential",
+   "q": "Which method compares rates within subgroups that have a similar probability of the outcome?",
+   "opts": [
+    [
+     "Restriction",
+     "Restriction limits the range of characteristics of patients in the study, which is a design-phase method rather than a comparison within subgroups."
+    ],
+    [
+     "Multivariable adjustment",
+     "Multivariable adjustment uses mathematical modeling to adjust for differences in a large number of factors, not comparison within subgroups."
+    ],
+    [
+     "Matching",
+     "Matching selects comparison patients with the same characteristics, rather than comparing rates within strata of similar risk."
+    ],
+    [
+     "Stratification",
+     "Correct: comparing rates within strata of otherwise similar risk is an analysis-phase method for controlling confounding."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 27"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Risk factors",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "principle",
+   "q": "What is needed to detect a difference between exposed and unexposed groups when the risk is small?",
+   "opts": [
+    [
+     "A larger affected population",
+     "Correct, because a small risk produces few extra cases, so many more people must be affected before exposed and unexposed groups can be told apart."
+    ],
+    [
+     "A shorter follow-up period",
+     "Shortening follow-up would leave even fewer cases to compare; a small risk calls for a larger affected population instead."
+    ],
+    [
+     "Fewer unexposed persons",
+     "The comparison needs the unexposed group; with a small risk, a larger population must be affected to detect a difference."
+    ],
+    [
+     "A single exposed patient",
+     "One patient cannot show a difference between groups; detecting a small risk needs a larger population."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 5"
+  },
+  {
+   "topic": "Attributable risk",
+   "io": "Discuss methods of comparing risk",
+   "slot": "calculation",
+   "q": "Incidence is 15 per 500 in exposed persons and 5 per 500 in unexposed persons. What is the attributable risk?",
+   "opts": [
+    [
+     "3.0",
+     "Three is the ratio of the two incidences, 0.03 over 0.01, which is the relative risk rather than the attributable risk."
+    ],
+    [
+     "0.04",
+     "0.04 is the sum of the two incidences; attributable risk is the incidence in the exposed minus the incidence in the unexposed."
+    ],
+    [
+     "0.03",
+     "0.03 is the incidence in the exposed alone; attributable risk subtracts the unexposed incidence of 0.01 from it."
+    ],
+    [
+     "0.02",
+     "Correct: the exposed incidence is 0.03 and the unexposed incidence is 0.01, and their difference is 0.02."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 18"
+  },
+  {
+   "topic": "Controlling confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "differential",
+   "q": "Which pair of methods is applied only in the design phase?",
+   "opts": [
+    [
+     "Matching and stratification",
+     "Stratification is an analysis method, and matching can be used at either phase, so this pair is not design-only."
+    ],
+    [
+     "Randomization and restriction",
+     "Correct: both are built into the study plan, whereas matching works at either phase and the remaining methods are analysis-phase methods."
+    ],
+    [
+     "Simple and multivariable adjustment",
+     "Both adjustment methods are applied in the analysis phase, after the data are collected, not in the design phase."
+    ],
+    [
+     "Stratification and randomization",
+     "Stratification is analysis-only and randomization is design-only, so this pair does not sit in the design phase together."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 27"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "principle",
+   "q": "What does a relative risk of 1 indicate?",
+   "opts": [
+    [
+     "Exposed persons have double the risk",
+     "A relative risk of 2 would mean double the risk; a value of 1 means the two risks are equal, which is the null value."
+    ],
+    [
+     "Exposure fully protects against disease",
+     "Protection appears as a value below 1; a relative risk of exactly 1 means the exposure makes no difference to risk."
+    ],
+    [
+     "Every exposed person develops the disease",
+     "A relative risk of 1 says nothing about everyone falling ill; it says the risk in the exposed equals the risk in the unexposed."
+    ],
+    [
+     "Equal risk in exposed and unexposed",
+     "Correct: 1 is the null value, meaning absolute risk in the exposed equals absolute risk in the unexposed, so there is no association between exposure and disease."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "application",
+   "q": "Which situation favors a case-control design?",
+   "opts": [
+    [
+     "A common disease with rapid onset",
+     "A common disease with rapid onset produces cases quickly in a cohort, so the cohort's drawbacks matter less."
+    ],
+    [
+     "A need to measure incidence directly",
+     "Incidence is established directly by a cohort study, not by a case-control study."
+    ],
+    [
+     "A rare disease with long latency",
+     "Correct: a cohort would need a very large group followed for years for few cases, whereas a case-control study starts from the cases and needs a smaller sample."
+    ],
+    [
+     "A budget for decades of follow-up",
+     "Long follow-up is exactly what a case-control study avoids; a cohort study is the design that needs it."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "application",
+   "q": "A study reports a relative risk of 0.6 for an exposure. What does that mean?",
+   "opts": [
+    [
+     "Exposed persons have 60 percent higher risk",
+     "A relative risk of 0.6 is below 1, so risk is lower in the exposed; a 60 percent rise would be a relative risk of 1.6."
+    ],
+    [
+     "Exposed persons have 40 percent lower risk",
+     "Correct: the risk in exposed persons is 0.6 times that in unexposed persons, which is 40 percent lower, indicating a possibly protective association."
+    ],
+    [
+     "Exposed persons have 40 percent higher risk",
+     "A 40 percent rise would be a relative risk of 1.4; 0.6 is below the null value of 1 and points to lower risk in the exposed."
+    ],
+    [
+     "Exposed and unexposed persons have equal risk",
+     "Equal risk corresponds to a relative risk of exactly 1, the null value; 0.6 means the exposed group has lower risk."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "definition",
+   "q": "Effect modification that strengthens the effect of an exposure is called what?",
+   "opts": [
+    [
+     "Synergistic",
+     "Correct, and effect modification that weakens the effect of exposure is antagonistic; neither form is a bias."
+    ],
+    [
+     "Antagonistic",
+     "Antagonistic effect modification weakens or opposes the effect of the exposure rather than strengthening it."
+    ],
+    [
+     "Confounding",
+     "Confounding is a systematic error from a factor related to both exposure and outcome, not a way in which an effect is strengthened."
+    ],
+    [
+     "Systematic",
+     "Systematic describes error (bias) such as confounding; the forms of effect modification are synergistic and antagonistic."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Risk factors",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "principle",
+   "q": "How can a frequent exposure that causes disease go unnoticed?",
+   "opts": [
+    [
+     "The exposure was measured too precisely",
+     "Precise measurement is not the barrier; a frequent exposure is obscured when exposed persons are never compared with unexposed persons."
+    ],
+    [
+     "No exposed versus unexposed comparison",
+     "Correct, because when most people are exposed the disease may seem ordinary; comparing exposed persons with unexposed persons is what reveals the risk."
+    ],
+    [
+     "The disease appeared too quickly",
+     "A large risk with rapid effects is easy to recognize; the trouble with a frequent exposure is the missing comparison with unexposed persons."
+    ],
+    [
+     "The unexposed group was too large",
+     "The size of the unexposed group is not the problem; the risk is obscured when there is no unexposed comparison group at all."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 4"
+  },
+  {
+   "topic": "Studies of risk",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "differential",
+   "q": "Researchers randomly select 400 people who exercise and 400 who do not, then follow them for ten years. Why is this not a randomized controlled trial?",
+   "opts": [
+    [
+     "Participants were followed over time",
+     "Following participants forward is common to cohort studies and trials alike; random ASSIGNMENT is what separates a trial."
+    ],
+    [
+     "Participants were chosen at random",
+     "Random selection describes how people were picked, not how the exposure was allocated; how people are assigned makes the difference."
+    ],
+    [
+     "The groups were equal in size",
+     "Group size does not distinguish designs; a trial requires random assignment to the exposure or treatment."
+    ],
+    [
+     "Exposure was not randomly assigned",
+     "Correct: random assignment of the exposure is what defines a randomized trial; here the groups were defined by an exposure people already had, making this a prospective cohort study."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 22"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "formula",
+   "q": "In a 2x2 table with exposed cases (a), exposed noncases (b), unexposed cases (c) and unexposed noncases (d), what is the odds ratio?",
+   "opts": [
+    [
+     "ac divided by bd",
+     "That multiplies within columns; the odds of exposure in cases (a over c) divided by the odds in controls (b over d) simplifies to ad over bc."
+    ],
+    [
+     "ad divided by bc",
+     "Correct: the odds of exposure in cases, a over c, divided by the odds of exposure in controls, b over d, simplifies to ad over bc."
+    ],
+    [
+     "ab divided by cd",
+     "That multiplies across rows; the odds ratio is ad over bc, the cross-products of the 2x2 table."
+    ],
+    [
+     "a/(a+b) divided by c/(c+d)",
+     "That expression is the relative risk formula for a cohort table, built from incidences in the exposed and unexposed rows rather than odds."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 36"
+  },
+  {
+   "topic": "Attributable risk",
+   "io": "Discuss methods of comparing risk",
+   "slot": "formula",
+   "q": "How is attributable risk calculated?",
+   "opts": [
+    [
+     "Exposed incidence divided by unexposed incidence",
+     "Dividing the two incidences gives relative risk, a ratio measuring strength of association, rather than attributable risk."
+    ],
+    [
+     "Unexposed incidence minus exposed incidence",
+     "Subtracting in that order reverses the sign; attributable risk starts from the incidence in the exposed persons."
+    ],
+    [
+     "Exposed incidence minus unexposed incidence",
+     "Correct: subtracting the incidence in non-exposed persons from that in exposed persons leaves the incidence attributable to the exposure."
+    ],
+    [
+     "Exposed incidence plus unexposed incidence",
+     "Adding the two incidences gives a meaningless combination; attributable risk is the difference between them."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 18"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "principle",
+   "q": "Why do cohort studies usually use relative risk rather than odds ratio?",
+   "opts": [
+    [
+     "Incidence can be calculated directly",
+     "Correct: cohort studies can directly calculate the incidence of disease in the exposed versus non-exposed, so relative risk is usually used rather than the odds ratio."
+    ],
+    [
+     "Odds cannot be calculated from cohort data",
+     "Odds can be calculated from any 2x2 table; what a cohort allows is direct calculation of incidence, so relative risk is used."
+    ],
+    [
+     "Cohort studies lack an unexposed group",
+     "Cohort studies compare exposed with unexposed persons, and that comparison is what gives the relative risk."
+    ],
+    [
+     "Odds ratios apply only to randomized trials",
+     "The odds ratio is the measure of association for case-control studies, not for randomized trials."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 35"
+  },
+  {
+   "topic": "Case-control studies",
+   "io": "Describe case control studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "Why is a cohort study often impractical for an exposure with a long latency and a rare outcome?",
+   "opts": [
+    [
+     "Exposure cannot be measured in them",
+     "Cohort studies record exposure at the outset; the difficulty is the latency and the large sample needed, not measurement."
+    ],
+    [
+     "Latency means long waits, large samples",
+     "Correct: with a latency between exposure and pathological effect a large sample is needed and only a limited number get the condition; case-control studies need smaller samples and no waiting."
+    ],
+    [
+     "They cannot follow persons over time",
+     "Following persons over time is what defines a cohort study; the trouble is how long and how large the follow-up must be."
+    ],
+    [
+     "They always rely on recall of exposure",
+     "Recall of exposure is the weakness of case-control studies; a cohort records exposure at the outset."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 29"
+  },
+  {
+   "topic": "Uses of risk",
+   "io": "Discuss methods of predicting risk",
+   "slot": "principle",
+   "q": "In an individual patient, what is the best predictor of disease?",
+   "opts": [
+    [
+     "Presence of a single risk factor",
+     "A risk factor raises the probability for groups of people; in an individual, early clinical disease is the better predictor."
+    ],
+    [
+     "The relative risk of the exposure",
+     "Relative risk describes the strength of an association in groups, not what will happen to one person, for whom early clinical disease predicts best."
+    ],
+    [
+     "Incidence in the wider population",
+     "Incidence in a population gives a probability for the group; for an individual patient the best predictor is early clinical disease."
+    ],
+    [
+     "Presence of early clinical disease",
+     "Correct: risk factors raise the probability of disease, but in an individual it is early clinical disease itself that predicts best."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 6"
+  },
+  {
+   "topic": "Confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "application",
+   "q": "In a study of coffee drinking and pancreatic cancer, smoking is more common among coffee drinkers and also raises cancer risk. What role does smoking play?",
+   "opts": [
+    [
+     "An effect modifier",
+     "An effect modifier changes the size of the exposure's effect and is not a bias; smoking here is linked to both exposure and outcome."
+    ],
+    [
+     "A confounder",
+     "Correct: smoking is related to both the exposure, coffee, and the outcome, cancer, so it can produce a false association, a systematic error."
+    ],
+    [
+     "The outcome",
+     "The outcome is the cancer being studied; smoking is an additional factor rather than the disease itself."
+    ],
+    [
+     "The exposure",
+     "The exposure under study is coffee drinking; smoking is an additional factor linked to both exposure and outcome."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 26"
+  },
+  {
+   "topic": "Cohort strengths and limits",
+   "io": "Describe cohort studies and the advantages and limitations of this type of study design in medical research",
+   "slot": "limitation",
+   "q": "Why can a prospective cohort study not be used for rare diseases?",
+   "opts": [
+    [
+     "Enrollment must far exceed the few events",
+     "Correct: it is inefficient because many more subjects must be enrolled than experience the event of interest, and it is also expensive and slow."
+    ],
+    [
+     "Rare diseases have no measurable exposures",
+     "Exposures to rare diseases can be measured; the difficulty is the very large number of subjects needed."
+    ],
+    [
+     "The cohort cannot be followed forward",
+     "A prospective cohort is followed forward by design; the problem is that so few of those enrolled develop the rare disease."
+    ],
+    [
+     "Standardized measures are unavailable",
+     "A prospective cohort can set up standardized ways of measuring exposure; the limit is sample size, not measurement."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 16"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Discuss methods of comparing risk",
+   "slot": "calculation",
+   "q": "The incidence is 0.02 in unexposed persons. An exposure carries a relative risk of 4. What is the incidence in exposed persons?",
+   "opts": [
+    [
+     "0.08",
+     "Correct: relative risk is the exposed incidence divided by the unexposed incidence, so the exposed incidence is 4 times 0.02, which is 0.08."
+    ],
+    [
+     "0.06",
+     "0.06 is the excess over the baseline, the attributable risk (0.08 minus 0.02), not the exposed incidence itself."
+    ],
+    [
+     "0.005",
+     "0.005 divides the baseline by the relative risk; a relative risk above 1 multiplies the baseline instead."
+    ],
+    [
+     "0.02",
+     "0.02 is the baseline in the unexposed; a relative risk of 4 means the exposed incidence is four times that."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 19"
+  },
+  {
+   "topic": "Effect modification",
+   "io": "Describe effect modification",
+   "slot": "differential",
+   "q": "How does effect modification differ from confounding?",
+   "opts": [
+    [
+     "It is a real effect, not a bias",
+     "Correct: confounding is a systematic error to be controlled, whereas effect modification is not a bias but a genuine change in the effect of exposure."
+    ],
+    [
+     "It is a bias that must be removed",
+     "Effect modification is explicitly not a bias; confounding is the systematic error that methods such as matching and stratification try to remove."
+    ],
+    [
+     "It arises only in randomized trials",
+     "Effect modification can arise in observational studies too; what defines it is a variable that changes the effect of exposure."
+    ],
+    [
+     "It always weakens the effect",
+     "The change may be synergistic, strengthening the effect, or antagonistic, weakening it; it does not always weaken it."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 28"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "calculation",
+   "q": "In a cohort, 10 of 500 vaccinated and 40 of 500 unvaccinated persons developed influenza. What is the relative risk of influenza with vaccination?",
+   "opts": [
+    [
+     "4.0",
+     "That inverts the ratio and would suggest the vaccinated have four times the risk; vaccination is the exposure, so its incidence goes on top."
+    ],
+    [
+     "0.06",
+     "0.06 is the difference in incidence, 0.08 minus 0.02, which is the size of the attributable risk rather than the ratio."
+    ],
+    [
+     "0.25",
+     "Correct: 0.02 divided by 0.08 is 0.25; a value below 1 means the vaccinated have lower risk, here one quarter of the risk in the unvaccinated."
+    ],
+    [
+     "0.02",
+     "0.02 is the incidence among the vaccinated, the absolute risk in the exposed group; relative risk compares it with the incidence in the unvaccinated."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 20"
+  },
+  {
+   "topic": "Uses of risk",
+   "io": "Discuss methods of predicting risk",
+   "slot": "principle",
+   "q": "On what are probabilities of a future event based when predicting from risk factors?",
+   "opts": [
+    [
+     "One patient followed in detail",
+     "A single patient cannot yield a probability; predictions from risk factors are probabilities based on groups."
+    ],
+    [
+     "Data from groups of people",
+     "Correct: predictions from risk factors are probabilities drawn from groups, which is why they fit an individual only loosely."
+    ],
+    [
+     "The clinician's judgment alone",
+     "Clinical judgment is not the source of the probability; predictions from risk factors rest on data from groups of people."
+    ],
+    [
+     "Laboratory results from relatives",
+     "Relatives' results do not define the probability; risk-based predictions come from groups of people sharing the factor."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 6"
+  },
+  {
+   "topic": "Attributable risk",
+   "io": "Discuss methods of comparing risk",
+   "slot": "application",
+   "q": "Two exposures each have a relative risk of 2.0. Baseline incidence is 1 in 1,000 for the first and 1 in 10 for the second. Which has the greater attributable risk?",
+   "opts": [
+    [
+     "The first, with the lower baseline",
+     "The first exposure's excess is only 0.001 (0.002 minus 0.001); a low baseline gives a small attributable risk despite the same ratio."
+    ],
+    [
+     "Both, because the relative risks are equal",
+     "Equal relative risks do not give equal attributable risks; relative risk cancels out incidence, whereas attributable risk depends on it."
+    ],
+    [
+     "Neither can be calculated",
+     "Both can be calculated from the stated incidences, as the exposed incidence minus the unexposed incidence."
+    ],
+    [
+     "The second, with the higher baseline",
+     "Correct: attributable risk is the difference in incidence, 0.1 for the second exposure (0.2 minus 0.1) against 0.001 for the first, so the same relative risk hides a huge gap in excess cases."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Confounding",
+   "io": "Explain confounding variables and methods for controlling confounding",
+   "slot": "principle",
+   "q": "What kind of error does confounding cause?",
+   "opts": [
+    [
+     "Error caused by chance alone",
+     "Chance produces random variation, equally likely above or below the truth; confounding is a systematic error, a bias."
+    ],
+    [
+     "Sampling error from a small study",
+     "Small samples add random error; confounding is a bias that arises from a factor related to both exposure and outcome."
+    ],
+    [
+     "Error from participants dropping out",
+     "Dropout is the attrition effect, a separate problem; confounding is systematic error from a third factor."
+    ],
+    [
+     "Systematic error (bias)",
+     "Correct: confounding causes systematic error, because an additional factor related to both exposure and outcome distorts the association in a consistent way."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 26"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "application",
+   "q": "A cohort study finds a relative risk of 2.5. How likely are exposed persons to develop the disease compared with unexposed persons?",
+   "opts": [
+    [
+     "2.5 percent more likely",
+     "Relative risk is a ratio, not a percentage; a 2.5 percent increase in risk would be a relative risk of 1.025."
+    ],
+    [
+     "Half as likely",
+     "Half as likely corresponds to a relative risk of 0.5, below the null value; 2.5 is above 1, so risk is higher in the exposed."
+    ],
+    [
+     "2.5 times as likely",
+     "Correct: relative risk is the ratio of the incidence in exposed persons to the incidence in unexposed persons, so 2.5 means exposed persons are two and a half times as likely."
+    ],
+    [
+     "25 percent more likely",
+     "A 25 percent increase would be a relative risk of 1.25; 2.5 means two and a half times the risk."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 19"
+  },
+  {
+   "topic": "Absolute risk",
+   "io": "Discuss methods of predicting risk",
+   "slot": "calculation",
+   "q": "During two years, 18 of 600 patients on a surgical ward developed a pressure injury. What is the absolute risk?",
+   "opts": [
+    [
+     "3 percent",
+     "Correct: absolute risk is incidence, the number of new cases divided by the number of people in the group, so 18 divided by 600 is 0.03."
+    ],
+    [
+     "18 percent",
+     "Eighteen is the number of new cases, not a percentage; incidence divides it by the 600 people in the group."
+    ],
+    [
+     "0.3 percent",
+     "0.3 percent is 0.003, a tenfold slip; 18 divided by 600 is 0.03, which is 3 percent."
+    ],
+    [
+     "33 percent",
+     "33 comes from dividing the group size by the number of cases, which inverts the fraction; incidence puts the new cases on top."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 17"
+  },
+  {
+   "topic": "Risk factors",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "principle",
+   "q": "How can a long latency between exposure and disease affect the results of a study?",
+   "opts": [
+    [
+     "It makes the association easier to see",
+     "A long latency does the opposite: with a long gap between exposure and disease the result can be obscured, whereas a large risk with rapid effects is easy to recognize."
+    ],
+    [
+     "It strengthens the association",
+     "Latency does not strengthen an association; it hides one, because the disease shows up long after the exposure took place."
+    ],
+    [
+     "It has no effect on the results",
+     "Latency does matter: a long gap between exposure and disease can obscure results, which is why follow-up must last long enough to observe the outcome."
+    ],
+    [
+     "It can obscure the association",
+     "Correct, because the disease appears long after the exposure, so the two can look unrelated unless people are followed for a sufficient period of time."
+    ]
+   ],
+   "c": 3,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 4"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "calculation",
+   "q": "In a case-control study, 20 of 100 cases and 40 of 100 controls had been exposed. What is the odds ratio?",
+   "opts": [
+    [
+     "2.7",
+     "2.7 inverts the ratio, control odds over case odds; the odds of exposure in cases go on top."
+    ],
+    [
+     "0.38",
+     "Correct: (20 over 80) divided by (40 over 60) is 0.25 over 0.67, about 0.375, which is below 1, so exposure is associated with lower odds of disease."
+    ],
+    [
+     "0.50",
+     "0.50 divides the exposed counts, 20 by 40, ignoring the unexposed counts; odds compare exposed with unexposed within each group."
+    ],
+    [
+     "0.25",
+     "0.25 is only the odds of exposure among cases, 20 to 80; the odds ratio divides it by the odds of exposure among controls."
+    ]
+   ],
+   "c": 1,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 38"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "principle",
+   "q": "For an intervention that prevents disease, what relative risk is expected?",
+   "opts": [
+    [
+     "Greater than one",
+     "A value above one would mean the risk in the exposed exceeds the risk in the unexposed, which is what a harmful exposure shows."
+    ],
+    [
+     "Exactly one",
+     "One is the null value and would mean the intervention makes no difference to risk, so nothing would be prevented."
+    ],
+    [
+     "Less than one",
+     "Correct, because prevention should leave the exposed group, those receiving the intervention, with lower risk than the unexposed group."
+    ],
+    [
+     "A negative number",
+     "Relative risk is a ratio of two incidences, and incidences cannot be negative, so the ratio cannot be either."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 19"
+  },
+  {
+   "topic": "Relative risk",
+   "io": "Interpret relative risks",
+   "slot": "limitation",
+   "q": "Why does a relative risk alone not show the size of a patient's risk?",
+   "opts": [
+    [
+     "It counts only the exposed group",
+     "Relative risk uses both groups, exposed and unexposed; what it lacks is the baseline incidence itself, because the division cancels it."
+    ],
+    [
+     "It cannot exceed two",
+     "Relative risk can take any value above zero; the limitation is that the ratio hides how large the underlying incidence is."
+    ],
+    [
+     "It cancels out incidence",
+     "Correct: dividing one incidence by another removes the incidence itself, so a doubling of risk looks the same whether the baseline is 1 in 10,000 or 1 in 10."
+    ],
+    [
+     "It is always close to one",
+     "Relative risk can be far from one; a value of 2.0 can arise from very different baseline incidences, which the ratio conceals."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 21"
+  },
+  {
+   "topic": "Odds ratio",
+   "io": "Interpret relative risks and odds ratios",
+   "slot": "application",
+   "q": "Patients with lung disease had six times the odds of prior asbestos exposure compared with patients without it. Which statement follows?",
+   "opts": [
+    [
+     "Six percent of exposed persons develop disease",
+     "An odds ratio is a ratio of odds, not the percentage of exposed persons who are affected."
+    ],
+    [
+     "Unexposed persons have six times the odds of disease",
+     "That reverses the direction; an odds ratio above 1 means the exposed, not the unexposed, have the greater odds."
+    ],
+    [
+     "Exposed persons have six times the odds of disease",
+     "Correct: the odds ratio is the same whichever way it is read, so it can be stated as the odds of disease in the exposed, which is what is actually wanted."
+    ],
+    [
+     "One in six exposed persons has the disease",
+     "An odds ratio of six is not a one-in-six frequency; it compares odds between groups."
+    ]
+   ],
+   "c": 2,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 39"
+  },
+  {
+   "topic": "Studies of risk",
+   "io": "Describe the importance of risk and risk factors in studies of disease",
+   "slot": "principle",
+   "q": "Why are experimental studies of risk in humans limited?",
+   "opts": [
+    [
+     "Ethical constraints on exposing people",
+     "Correct, since investigators cannot ethically assign people to a harmful exposure, so observational designs are used: concurrent (prospective) cohort, historical (retrospective) cohort and case-control studies."
+    ],
+    [
+     "Risk cannot be expressed as a ratio",
+     "Risk can be expressed as relative risk, a ratio of incidences; the limit on experiments is ethical rather than mathematical."
+    ],
+    [
+     "Experiments cannot measure incidence",
+     "Experiments can measure incidence; the limit is that exposing people to a suspected harm is unethical, which is why observational studies are used."
+    ],
+    [
+     "Exposures cannot be measured in humans",
+     "Exposures can be measured in humans; the constraint is that people cannot ethically be assigned to a harmful exposure."
+    ]
+   ],
+   "c": 0,
+   "cite": "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 8"
+  }
+ ]
+}

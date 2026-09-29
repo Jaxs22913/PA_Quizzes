@@ -33,6 +33,10 @@ Usage:
   audit_guide_links.py export --set section|closest|extras|passage|added|new --out DIR
                               [--sample 0.2] [--seed N] [--size 50]
   audit_guide_links.py import DIR
+  audit_guide_links.py export-pins --pins FILE --out DIR [--size 50]
+      FILE = {"<exam folder>": {"<question key>": "<guide heading id>"}}. For questions whose best
+      passage the word-overlap matcher misses, name the guide subsection that states the fact;
+      the judges then see THAT subsection's paragraphs. A PASS re-points the link there at `import`.
 """
 import glob
 import json
@@ -247,6 +251,34 @@ def cmd_export(args):
     print("exported %d items in %d batches -> %s" % (len(items), (len(items) + size - 1) // size, out))
 
 
+def cmd_export_pins(args):
+    pins = json.load(open(args[args.index("--pins") + 1], encoding="utf-8"))
+    out = args[args.index("--out") + 1]
+    size = int(args[args.index("--size") + 1]) if "--size" in args else 50
+    os.makedirs(out, exist_ok=True)
+    items, manifest = [], {}
+    for d, m in pins.items():
+        F = Folder(d)
+        for k, anchor in m.items():
+            q = F.questions.get(k)
+            v = F.data["l"].get(k)
+            if not q or not v:
+                print("skip (unknown question):", d, k)
+                continue
+            guide = F.data["g"][v[0]]
+            cands = candidates(q, F.blocks(guide, anchor), "")
+            if not cands:
+                print("skip (no paragraphs under %s):" % anchor, k)
+                continue
+            ans = q["opts"][q["c"]]
+            items.append({"id": k, "question": q["q"], "answer": ans[0], "explanation": ans[1], "paragraphs": [{"n": c["n"], "text": c["text"]} for c in cands]})
+            manifest[k] = {"folder": d, "guide": guide, "anchor": anchor, "kind": "pinned", "paras": [c["_full"] for c in cands]}
+    for i in range(0, len(items), size):
+        json.dump(items[i:i + size], open(os.path.join(out, "judge-%03d.json" % (i // size + 1)), "w"), ensure_ascii=False, indent=1)
+    json.dump(manifest, open(os.path.join(out, "manifest.json"), "w"), ensure_ascii=False)
+    print("exported %d pinned items in %d batches -> %s" % (len(items), (len(items) + size - 1) // size, out))
+
+
 def cmd_import(args):
     dirp = args[0]
     manifest = json.load(open(os.path.join(dirp, "manifest.json"), encoding="utf-8"))
@@ -300,7 +332,7 @@ def main():
         print(__doc__)
         return
     {"status": lambda: cmd_status(), "authored": lambda: cmd_authored(),
-     "export": lambda: cmd_export(a), "import": lambda: cmd_import(a[1:])}[a[0]]()
+     "export": lambda: cmd_export(a), "export-pins": lambda: cmd_export_pins(a), "import": lambda: cmd_import(a[1:])}[a[0]]()
 
 
 if __name__ == "__main__":
