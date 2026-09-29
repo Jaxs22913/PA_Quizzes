@@ -3441,6 +3441,29 @@ window.openPauseOverlay = function (opts) {
   });
 })();
 
+// focus-timer.js bootstrap (added 2026-09-29) -- a task's focus timer started in the study planner
+// follows the student from page to page as a small pill in the top-left corner. The planner keeps
+// the running timer in localStorage; this only fetches the pill's code while that key exists, so
+// pages with no running timer never request the file. The planner calls window.__loadFocusTimer()
+// when it starts or resumes a timer, since the key did not exist yet when its page loaded.
+(function () {
+  var TKEY = "planner:timer:v1", loaded = false;
+  function load() {
+    if (loaded || window.FocusTimer) return;
+    loaded = true;
+    var thisScript = document.querySelector('script[src$="theme.js"]');
+    var base = thisScript ? thisScript.getAttribute("src").replace(/theme\.js$/, "") : "";
+    var s = document.createElement("script");
+    s.src = base + "focus-timer.js";
+    document.head.appendChild(s);
+  }
+  window.__loadFocusTimer = load;
+  var has = false;
+  try { has = !!localStorage.getItem(TKEY); } catch (e) {}
+  if (has) load();
+  window.addEventListener("storage", function (e) { if (e.key === TKEY && e.newValue) load(); });   // started in another tab
+})();
+
 // guide-ink.js bootstrap (added 2026-07-14) -- freehand stylus/Apple Pencil
 // drawing layer for guides. Unlike cloud-sync.js's chain, this has no
 // Firebase dependency at all (it just writes to localStorage, which

@@ -513,7 +513,6 @@
   var TKEY = "planner:timer:v1" + (TEST ? ":test" : "");
   var timerState = null, tick = null;
   try { timerState = JSON.parse(localStorage.getItem(TKEY)); } catch (e) {}
-  if (timerState && timerState.day !== TODAY) timerState = null;
   function saveTimer() { try { if (timerState) localStorage.setItem(TKEY, JSON.stringify(timerState)); else localStorage.removeItem(TKEY); } catch (e) {} }
   function elapsedMs() { return timerState ? timerState.acc + (timerState.running ? Date.now() - timerState.since : 0) : 0; }
   function findTask(day, tid) { var r = store.days[day]; return r ? r.tasks.filter(function (t) { return t.id === tid; })[0] : null; }
@@ -521,10 +520,10 @@
   function commitTimer(markDone) {
     if (!timerState) return;
     var t = findTask(timerState.day, timerState.tid);
-    var mins = Math.round(elapsedMs() / 60000);
+    var mins = Math.round(Math.min(elapsedMs(), timerState.total * 60000) / 60000);   // never more than the block was set for
     if (t) { t.logged = (t.logged || 0) + mins; if (markDone) t.done = true; }
     timerState = null; saveTimer(); clearInterval(tick); tick = null; document.title = baseTitle;
-    save(); invalidate(); renderAll();
+    save(); invalidate(); renderAll(); syncPill();
   }
   function renderTimerBox() {
     var box = $("pl-timer"); if (!box) return;
@@ -539,6 +538,30 @@
     startTick();
   }
   var baseTitle = document.title;
+  /* Pausing hides the floating timer on other pages; resuming brings it back. */
+  function pauseTimer(toggle) {
+    if (!timerState) return;
+    if (timerState.running) { timerState.acc += Date.now() - timerState.since; timerState.running = false; }
+    else if (toggle) { timerState.since = Date.now(); timerState.running = true; }
+    saveTimer(); renderTimerBox(); syncPill();
+  }
+  function syncPill() { if (window.__loadFocusTimer) window.__loadFocusTimer(); if (window.FocusTimer) window.FocusTimer.update(); }
+  /* A block that ran out, or one left over from an earlier day, is settled once: the minutes go on
+     the task (never more than the block was set for) and the task is left for the student to tick. */
+  function settleTimer() {
+    if (!timerState) return;
+    var left = timerState.total * 60000 - elapsedMs();
+    if (timerState.day !== TODAY || (timerState.running && left <= 0)) commitTimer(false);
+  }
+  window.PlannerTimer = {
+    pause: function () { pauseTimer(false); },
+    done: function () { commitTimer(true); },
+    markDone: function (day, tid) { var t = findTask(day, tid); if (t) { t.done = true; save(); invalidate(); renderAll(); } }
+  };
+  window.addEventListener("storage", function (e) {     // the timer or the plan was changed from another tab or the floating pill
+    if (e.key === TKEY) { try { timerState = JSON.parse(localStorage.getItem(TKEY)); } catch (er) { timerState = null; } if (!timerState) { clearInterval(tick); tick = null; document.title = baseTitle; } renderTimerBox(); renderToday(); }
+    else if (e.key === KEY && !TEST) { store = load(); touched = true; invalidate(); renderAll(); }
+  });
   function startTick() {
     if (tick) return;
     tick = setInterval(function () {
@@ -546,15 +569,18 @@
       var left = timerState.total * 60000 - elapsedMs(), c = $("pl-tclock");
       if (c) c.textContent = fmtClock(left < 0 ? -left : left);
       if (timerState.running) document.title = (left > 0 ? fmtClock(left) : "Time's up") + " · " + baseTitle;
-      if (left <= 0 && !timerState.fired) { timerState.fired = true; saveTimer(); renderTimerBox(); }
+      if (left <= 0 && timerState.running) {
+        var ranMin = Math.round(timerState.total); commitTimer(false);
+        flash("Time\u2019s up \u00b7 " + ranMin + " min logged. Tick the task when you\u2019re done.");
+      }
     }, 1000);
   }
   function startTimer(day, tid) {
     var t = findTask(day, tid); if (!t) return;
     if (timerState && (timerState.day !== day || timerState.tid !== tid)) commitTimer(false);
     if (timerState && timerState.tid === tid) return;
-    timerState = { day: day, tid: tid, total: Math.max(5, t.minutes - (t.logged || 0)), acc: 0, since: Date.now(), running: true, fired: false };
-    saveTimer(); renderToday();
+    timerState = { day: day, tid: tid, total: Math.max(5, t.minutes - (t.logged || 0)), acc: 0, since: Date.now(), running: true, fired: false, title: taskTitle(t) };
+    touched = true; save(); saveTimer(); renderToday(); syncPill();   // the task must be on disk for other pages to find it
     var tb = $("pl-timer"); if (tb && tb.scrollIntoView) tb.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
 
@@ -889,7 +915,7 @@
     var day = t.getAttribute("data-day"), tid = t.getAttribute("data-tid");
     touched = true;
     if (act === "timer") { startTimer(day, tid); }
-    else if (act === "tpause") { if (timerState) { if (timerState.running) { timerState.acc += Date.now() - timerState.since; timerState.running = false; } else { timerState.since = Date.now(); timerState.running = true; } saveTimer(); renderTimerBox(); } }
+    else if (act === "tpause") { pauseTimer(true); }
     else if (act === "tdone") commitTimer(true);
     else if (act === "tstop") commitTimer(false);
     else if (act === "deltask") { var r = store.days[day]; r.tasks = r.tasks.filter(function (x) { return x.id !== tid; }); save(); renderAll(); }
@@ -1060,7 +1086,7 @@
     fetch("planner-resources.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (j) {
       RES = j || {}; ensureDays(); renderAll();
     });
-    ensureDays(); renderAll();
+    ensureDays(); settleTimer(); renderAll();
     var h = (location.hash || "").replace("#", "");
     setTab(h || "today");
     initHelp();
