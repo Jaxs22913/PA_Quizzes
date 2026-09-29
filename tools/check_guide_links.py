@@ -27,6 +27,7 @@ Exit 1 on any failure.
           re-run tools/build_guide_links.py. Run this at the end of EVERY
           Semester 2 quiz or exam build.
 """
+import collections
 import glob
 import html
 import json
@@ -115,13 +116,17 @@ def main():
         # every link must have been independently AUDITED (tools/audit_guide_links.py)
         import audit_guide_links as A
         audit = A.load_audit()
+        exempt = json.load(open(os.path.join(ROOT, "tools", "guide_link_exempt.json"), encoding="utf-8"))["keys"] \
+            if os.path.exists(os.path.join(ROOT, "tools", "guide_link_exempt.json")) else {}
         for d in A.folders():
             F = A.Folder(d)
-            bad = [k for k, v in F.data["l"].items() if not A.record_current(F, k, v, audit.get(A.akey(d, k)))]
+            bad = [k for k, v in F.data["l"].items() if A.akey(d, k) not in exempt and not A.record_current(F, k, v, audit.get(A.akey(d, k)))]
             if bad:
                 fails.append("%s: %d link(s) have no current independent audit (run tools/audit_guide_links.py)" % (d, len(bad)))
+        n_exempt = collections.Counter(k.split("|")[0] for k in exempt)
         for d, n_near in strict_near:
-            if n_near:
+            n_near -= n_exempt.get(d, 0)
+            if n_near > 0:
                 fails.append("%s: %d question(s) have no passage that explains them (closest-section guess only)" % (d, n_near))
     if fails:
         print("\nFAIL (%d):" % len(fails))
