@@ -194,6 +194,8 @@ while i < n:
         i += 1
 
 # ---- assemble
+EXPL_PATH = os.path.join(ROOT, "tools", "medlit_book_explanations.json")
+EXPL = json.load(open(EXPL_PATH, encoding="utf-8")) if os.path.exists(EXPL_PATH) else {}
 out = []
 for ch in chapters:
     qs = []
@@ -210,9 +212,18 @@ for ch in chapters:
         # no letter in the wording: the choices can be reordered, and the page prints the right letter itself
         bad = "Not the best answer. The best answer is: %s. See the explanation under it." % otext.rstrip(".")
         opts = [[t, good if idx == q["c"] else bad] for idx, (l, t) in enumerate(q["opts"])]
+        cite = "Clinical Epidemiology Study Questions, Question %s" % q["num"]
+        ex = EXPL.get(q["num"])
+        if ex:
+            # per-choice explanations written from the lecture decks (tools/medlit_book_explanations.json),
+            # keyed by choice TEXT so the answer-position balancing below can move choices safely
+            assert [t for _, t in q["opts"]] and all(t in ex["expls"] for _, t in q["opts"]), q["num"]
+            opts = [[t, ex["expls"][t]] for _, t in q["opts"]]
+            assert opts[q["c"]][1].startswith("Correct"), q["num"]
+            cite = "; ".join(ex["cites"] + [cite])
         d = {"num": q["num"], "c0": q["c"], "expl_src": q["expl"], "topic": ch["title"], "io": "Chapter %d · %s" % (ch["n"], ch["title"]),
              "q": "\n\n".join(pre + [" ".join(q["stem"])] + asks[:1]), "opts": opts, "c": q["c"],
-             "cite": "Clinical Epidemiology Study Questions, Question %s" % q["num"]}
+             "cite": cite}
         if img:
             d["img"] = "images/" + img[1]; d["alt"] = ALT[img[0]]; d["slide"] = CAPTION[img[0]]
         qs.append(d)

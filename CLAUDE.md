@@ -161,8 +161,17 @@ memory `study_planner.md`.
 `Interpretation of Medical Literature Book Questions/` holds the 183 textbook questions Jaxon supplied
 (Clinical Epidemiology Study Questions, 14 chapters, one quiz each). Source of truth is
 `tools/medlit_book_sets.json`, written by `tools/build_medlit_book.py` from the .docx and rendered by
-`tools/render_medlit_book.py`. They keep the book's 3-7 choices and single explanation, so
-`check_exam_standard.py` skips this folder on purpose (`TEXTBOOK`) and there is no guide-link button.
+`tools/render_medlit_book.py`. They keep the book's 3-7 choices, so `check_exam_standard.py` skips this
+folder on purpose (`TEXTBOOK`). The book explains only the correct answer; the per-choice explanations
+(refute + replacing fact) live in `tools/medlit_book_explanations.json`, keyed by question number and by
+choice TEXT (so answer-position balancing can move choices), written from the lecture decks and
+independently fact-checked; each carries its deck cites (which come first in `cite`) and a `support` level
+(deck / partial / book-only). The folder has no guide of its own: `tools/guide_external.json` maps it to the
+Exam 1 study guide, `guide-links.json` stores the relative path, and the facts the guide lacked were added
+through `tools/guide_additions/interpretation-of-medical-literature-book-questions.json` (its `folder` names
+the Exam 1 folder; `apply_guide_additions.py` merges every additions file targeting one guide in a single
+pass). Edit an explanation -> rerun `build_medlit_book.py`, `render_medlit_book.py`, then the section 7
+link procedure.
 
 ### Guides, cram sheets, Arcade
 

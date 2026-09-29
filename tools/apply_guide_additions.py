@@ -75,39 +75,43 @@ def render_block(items):
     return '<div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul>%s</ul></div>\n' % lis
 
 
-def apply_file(path, check=False):
-    data = json.load(open(path, encoding="utf-8"))
-    gpath = os.path.join(ROOT, data["folder"], data["guide"])
+def apply_guide(gpath, datas, check=False):
+    """Write every additions file that targets this guide in ONE pass (a second pass would
+    strip the first file's generated blocks: GEN removes them all before re-inserting)."""
     doc = open(gpath, encoding="utf-8").read()
     base = GEN.sub("", doc)
     by = {}
-    for it in data["items"]:
-        if it.get("html") and it["html"] != "SKIP":
-            by.setdefault(it["section_id"], []).append(it)
+    for path, data in datas:
+        for it in data["items"]:
+            if it.get("html") and it["html"] != "SKIP":
+                by.setdefault(it["section_id"], []).append(it)
     # insert from the bottom of the document up so earlier offsets stay valid
     spots = []
     for sid, its in by.items():
         p = insertion_point(base, sid)
         if p is None:
-            raise SystemExit("%s: section id %s not found in %s" % (path, sid, data["guide"]))
+            raise SystemExit("%s: section id %s not found in %s" % ([d[0] for d in datas], sid, gpath))
         spots.append((p, sid, its))
     new = base
     for p, sid, its in sorted(spots, key=lambda x: -x[0]):
         new = new[:p] + render_block(its) + new[p:]
-    if check:
-        return data["folder"], data["guide"], new != doc
-    if new != doc:
+    if new != doc and not check:
         open(gpath, "w", encoding="utf-8").write(new)
-    return data["folder"], data["guide"], new != doc
+    return new != doc
 
 
 def main():
     check = "--check" in sys.argv
     stale = 0
+    files = {}
     for f in sorted(glob.glob(os.path.join(DATA, "*.json"))):
-        folder, guide, changed = apply_file(f, check)
-        n = len([1 for it in json.load(open(f))["items"] if it.get("html") not in (None, "SKIP")])
-        print("%-46s %4d lines  %s" % (folder, n, ("STALE/missing" if check else "written") if changed else "up to date"))
+        d = json.load(open(f, encoding="utf-8"))
+        files.setdefault(os.path.join(ROOT, d["folder"], d["guide"]), []).append((f, d))
+    for gpath, datas in files.items():
+        changed = apply_guide(gpath, datas, check)
+        for f, d in datas:
+            n = len([1 for it in d["items"] if it.get("html") not in (None, "SKIP")])
+            print("%-46s %4d lines  %s" % (os.path.basename(f)[:-5][:46], n, ("STALE/missing" if check else "written") if changed else "up to date"))
         stale += changed
     if check and stale:
         sys.exit(1)

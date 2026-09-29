@@ -22,9 +22,9 @@ for ch in CH:
     fn = "chapter-%02d-%s-quiz.html" % (ch["n"], slug(ch["title"]))
     qs = [{k: v for k, v in q.items() if k != "num"} for q in ch["questions"]]
     figs = sum(1 for q in qs if q.get("img"))
-    intro = ("Book questions for chapter %d, <b>%s</b>: %d questions from the course textbook, with the book's answer and "
-             "explanation after each. The book explains only the correct answer, so every wrong choice shows that same "
-             "explanation." % (ch["n"], ch["title"].replace("&", "&amp;"), n))
+    intro = ("Book questions for chapter %d, <b>%s</b>: %d questions from the course textbook, with the book's answer. "
+             "Every choice gets its own explanation, and each question links to the study guide passage that teaches it. "
+             "The book's own choices are kept as written, so a question may have three to seven." % (ch["n"], ch["title"].replace("&", "&amp;"), n))
     html = R.render(title="Chapter %d: %s Quiz — Book Questions — Interpretation of Medical Literature" % (ch["n"], ch["title"]),
                     h1="Chapter %d &mdash; %s" % (ch["n"], ch["title"].replace("&", "&amp;")),
                     sub="Interpretation of Medical Literature &middot; Book Questions",

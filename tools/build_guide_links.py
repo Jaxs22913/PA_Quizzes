@@ -373,10 +373,21 @@ def load_additions(folder):
     return out
 
 
+def external_guides(folder):
+    """Guide paths a quiz folder borrows from another folder (tools/guide_external.json)."""
+    p = os.path.join(_REPO, "tools", "guide_external.json")
+    if not os.path.exists(p):
+        return []
+    rel = json.load(open(p, encoding="utf-8")).get(os.path.basename(folder))
+    return [os.path.join(_REPO, rel)] if rel else []
+
+
 def build_folder(folder, dry=False):
     gpaths = sorted(g for g in glob.glob(os.path.join(folder, "*.html"))
                     if 'data-dark-kind="guide"' in open(g, encoding="utf-8").read()
-                    and not re.search(r"osce|l3-review", g))
+                    and not re.search(r"osce|l3-review", g)) or external_guides(folder)
+    # a guide's identity is its file name everywhere; guide-links.json stores the path from this folder
+    relpath = {os.path.basename(g): os.path.relpath(g, folder) for g in gpaths}
     quizzes = []
     for f in sorted(glob.glob(os.path.join(folder, "*.html"))):
         Q = load_questions(f)
@@ -421,7 +432,7 @@ def build_folder(folder, dry=False):
         r = audit.get(os.path.basename(folder) + "|" + it["k"])
         if it["link"] or not r or r.get("v") != "PASS":
             continue
-        sc = by_id.get((r["g"], r["a"]))
+        sc = by_id.get((os.path.basename(r["g"]), r["a"]))
         if sc and any(fnv(re.sub(r"\s+", " ", b).strip()) == r["p"] for b in blocks_of(sc)):
             it["link"] = ("passage", sc, r["s"])
     # pass 1: direct matches (the key is really in the guide)
@@ -500,9 +511,10 @@ def build_folder(folder, dry=False):
             continue
         tier, sc, snip = it["link"]
         tiers[tier] += 1
-        if sc["guide"] not in guides:
-            guides.append(sc["guide"])
-        row = [guides.index(sc["guide"]), sc["id"], clean_title(sc["title"]), snip]
+        gp = relpath.get(sc["guide"], sc["guide"])
+        if gp not in guides:
+            guides.append(gp)
+        row = [guides.index(gp), sc["id"], clean_title(sc["title"]), snip]
         if tier == "near":
             row.append(1)
         links[it["k"]] = row
