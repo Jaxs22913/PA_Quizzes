@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lipid-lowering drugs: class comparison &mdash; Pharmacology I Exam 2 (Class of 2028)</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --navy:#6b3524;--indigo:#9c5230;--gold:#c9a227;--ice:#fbf1e6;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo);font-weight:800}
+  h1{margin:6px 0 8px;font-size:31px;line-height:1.15;color:var(--ink);letter-spacing:-.015em}
+  .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;margin-top:6px}
+  .legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+  .note{margin-top:14px;background:var(--ice);border:1px solid rgba(107,53,36,.18);
+    border-radius:11px;padding:13px 15px;font-size:14.5px}
+  .note.warn{background:#fff6f5;border-color:rgba(179,38,30,.22)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .toc a{font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .toc a:hover{background:var(--ice)}
+  section{margin:0 0 26px}
+  .shead{display:flex;align-items:center;gap:9px;margin:0 0 9px}
+  .shead .dot{width:11px;height:11px;border-radius:50%;background:var(--indigo)}
+  h2{margin:0;font-size:19.5px;color:var(--ink);letter-spacing:-.01em}
+  .tag{font-size:12px;font-weight:600;color:var(--muted);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);
+    border-radius:13px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5px}
+  thead th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;
+    padding:10px 13px;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+  td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfbfd}
+  .dn-h{width:20%}.p-h{width:12%}.sl-h{width:9%}
+  .dn{font-weight:800;color:var(--ink)}
+  .ct u{text-underline-offset:3px;text-decoration-thickness:2px}
+  .sl{font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .g{color:var(--muted);font-weight:500;font-size:12.5px}
+  .pill{display:inline-block;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;
+    text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  tr.t-abs td,tr.t-bbw td{background:#fff6f5}
+  tr.t-abs:nth-child(even) td,tr.t-bbw:nth-child(even) td{background:#fff1ef}
+  footer{margin-top:34px;color:var(--muted);font-size:13.5px;text-align:center}
+  /* NO dark palette here on purpose. theme.css does dark mode by inverting
+     body > .wrap (filter: invert(1) hue-rotate(180deg)), so a page authors in
+     LIGHT colours and the filter flips them. These charts used to declare a
+     dark palette too, so in dark mode the filter turned those dark cards back
+     into LIGHT ones -- readable, but a white card on a black page. Measured
+     against guides.html, which keeps its cards dark because it does not
+     double up. Checked by tools/check_dark_contrast.py. */
+  @media(max-width:640px){h1{font-size:25px}.wrap{padding:18px 13px 60px}}
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#6b3524;--indigo-l:#9c5230;--navy:#dc9d89;--indigo:#c47653;--gold:#c9a227;--ice:#351b10;--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);}body[data-dark="tokens"]{--acc:var(--indigo);--c-line:var(--line);--c-btn-bg:var(--card);--c-fg:var(--ink);--c-mute:var(--muted)}body[data-dark="tokens"] thead th{color:#fff}:root[data-theme="dark"] body[data-dark="tokens"] thead th{background:var(--navy-l)}:root[data-theme="dark"] body[data-dark="tokens"] tbody tr:nth-child(even){background:#21242a}:root[data-theme="dark"] body[data-dark="tokens"] tr.t-abs td,:root[data-theme="dark"] body[data-dark="tokens"] tr.t-bbw td,:root[data-theme="dark"] body[data-dark="tokens"] tr.t-abs:nth-child(even) td,:root[data-theme="dark"] body[data-dark="tokens"] tr.t-bbw:nth-child(even) td{background:#361a16}:root[data-theme="dark"] body[data-dark="tokens"] .note{border-color:#2a2e37}:root[data-theme="dark"] body[data-dark="tokens"] .note.warn{background:#361a16;border-color:#5a2a2c}:root[data-theme="dark"] body[data-dark="tokens"] .gf.on{background:var(--indigo-l);border-color:var(--indigo-l)}:root[data-theme="light"] body[data-dark="tokens"]{--muted:#676e7c;}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="pharm-exam-2-lipid-chart.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="ref">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 2 &middot; Class of 2028</div>
+    <h1>Lipid-lowering drugs: class comparison</h1>
+    <p class="sub">Six classes side by side: how each works, what it does to low-density lipoprotein (LDL), high-density lipoprotein (HDL) and triglycerides, and what to warn about.</p>
+    <div class="legend"></div>
+
+  </header>
+
+  <div class="toc"></div>
+
+<style>
+  tr.grp td{background:var(--ice);color:var(--navy);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:8px 13px}
+  .bbwtag{display:inline-block;background:#7a1010;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:1px}
+  .wq{margin:12px 0 10px;padding:13px 16px;border-left:4px solid var(--gold);background:var(--ice);border-radius:0 11px 11px 0}
+  .wq p{margin:0;font-size:15.5px;line-height:1.5;font-style:italic}
+  .wq footer{margin:8px 0 0;font-size:12.5px;color:var(--muted);font-style:normal;font-weight:600;text-align:left}
+  .wq .ts{font-variant-numeric:tabular-nums}
+  .rule{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:0 0 14px;box-shadow:var(--shadow)}
+  .rule h3{margin:0 0 4px;font-size:17px;color:var(--ink);letter-spacing:-.01em}
+  .rule > p{margin:6px 0 0;font-size:14.5px}
+  .said{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-left:6px}
+  .kbucket{margin:0 0 22px}
+</style><section id="l7"><div class="shead"><span class="dot" style="background:#7a4b9a"></span><h2>Lecture 7 &mdash; Drugs that Lower Cholesterol and Triglyceride Levels <span class="tag">7 rows</span></h2></div><div class="note">All figures are percent change. <b>Three cues to read across the table:</b> statins are first line and lower LDL the most; niacin and the fibrates lower triglycerides and raise HDL; <b>bile acid sequestrants are the only class that can raise triglycerides</b>, so a high triglyceride level rules them out. None of these classes carries a black box warning.</div><div class="scroll"><table><thead><tr><th>Class and examples</th><th>How it works</th><th>Effect on low-density lipoprotein (LDL), high-density lipoprotein (HDL) and triglycerides</th><th>Signature adverse effect</th><th>Do not use / cautions</th><th>Patient education</th><th class="sl-h">Source</th></tr></thead><tbody><tr><td class="dn"><b>Statins</b><br><span class=g>atorvastatin, fluvastatin, lovastatin, pitavastatin, pravastatin, rosuvastatin, simvastatin</span></td><td class="ct">Block cholesterol synthesis in the liver, so the liver makes more low-density lipoprotein (LDL) cholesterol receptors and removes more LDL from the blood</td><td class="ct">LDL <b>↓ 18-55%</b> (largest fall of the single oral agents)<br>high-density lipoprotein (HDL) cholesterol ↑ 5-15%<br>Triglycerides ↓ 7-30%</td><td class="ct"><b>Muscle toxicity</b> (myalgia, myopathy, rare rhabdomyolysis); liver enzyme rise</td><td class="ct"><b>Contraindicated in active hepatic disease and pregnancy.</b> CYP3A4 (cytochrome P450 3A4) interactions: verapamil, amiodarone, grapefruit juice. Niacin and fibrates also raise the risk of muscle toxicity</td><td class="ct">Report muscle symptoms; <b>avoid grapefruit juice</b> (mainly with atorvastatin, lovastatin and simvastatin); not for use in pregnancy, stop if pregnancy occurs</td><td class="sl">L7<br><span class="g">slide 61<br>slide 18<br>slide 22<br>slide 21<br>slide 23<br>slide 24</span></td></tr><tr><td class="dn"><b>Ezetimibe</b><br><span class=g>Zetia</span></td><td class="ct">Blocks cholesterol absorption in the intestine, so less cholesterol reaches the liver and liver low-density lipoprotein (LDL) cholesterol receptors increase</td><td class="ct">LDL <b>↓ 18%</b><br>high-density lipoprotein (HDL) cholesterol insignificant<br>Triglycerides ↓ 8%<br>(adds 15%-20% more LDL lowering to a statin)</td><td class="ct">Gastrointestinal effects; raised liver transaminases with a statin</td><td class="ct">No contraindication stated. Fibrates raise gallstone and muscle risk; bile acid sequestrants and antacids lower levels; cyclosporine raises them</td><td class="ct"><b>Take with or without meals</b>; tell the prescriber about antacids and bile acid sequestrants, which lower its levels</td><td class="sl">L7<br><span class="g">slide 61<br>slide 28<br>slide 29<br>slide 30<br>slide 31</span></td></tr><tr><td class="dn"><b>Bile acid sequestrants</b><br><span class=g>cholestyramine, colestipol, colesevelam</span></td><td class="ct">Bind bile acids in the gut so they are lost in the feces; the liver makes more bile acids and more low-density lipoprotein (LDL) cholesterol receptors</td><td class="ct">LDL <b>↓ 15-50%</b><br>high-density lipoprotein (HDL) cholesterol ↑ 3-5%<br><b>Triglycerides no change or ↑</b></td><td class="ct">Bloating, flatulence, constipation; <b>malabsorption of vitamins A, D, E, K and folic acid</b>; may raise triglycerides</td><td class="ct"><b>Absolute: triglycerides above 400 mg/dL, familial dysbetalipoproteinemia.</b> Relative: triglycerides above 200 mg/dL. Binds other drugs (digoxin, warfarin, thyroxine, beta blockers, thiazides)</td><td class="ct"><b>Mix powder in water or pulpy juice; take within 1 hour of a meal; other drugs 1 hour before or 4 hours after.</b> Approved in children and pregnancy</td><td class="sl">L7<br><span class="g">slide 61<br>slide 42<br>slide 46<br>slide 48<br>slide 47<br>slide 45</span></td></tr><tr><td class="dn"><b>Fibrates</b><br><span class=g>gemfibrozil, fenofibrate, bezafibrate</span></td><td class="ct">Activate peroxisome proliferator-activated receptor alpha (PPAR-alpha), a nuclear transcription factor: less secretion of triglyceride-rich very low-density lipoprotein (VLDL), and more apoprotein A-1, which raises high-density lipoprotein (HDL) cholesterol</td><td class="ct">low-density lipoprotein (LDL) cholesterol ↓ 5-20%<br>HDL <b>↑ 10-35%</b><br>Triglycerides <b>↓ 20-50%</b></td><td class="ct">Gastrointestinal effects; <b>cholelithiasis</b>; myopathy</td><td class="ct"><b>Contraindicated in pregnancy, severe hepatic or renal dysfunction, existing gallbladder disease.</b> Increases the anticoagulant effect of warfarin</td><td class="ct">Primary use: triglycerides above 1000 mg/dL or low HDL; watch for bruising or bleeding on warfarin; report muscle symptoms</td><td class="sl">L7<br><span class="g">slide 61<br>slide 34<br>slide 36<br>slide 37<br>slide 38<br>slide 39</span></td></tr><tr><td class="dn"><b>Niacin</b><br><span class=g>nicotinic acid, vitamin B3; Niaspan (extended release), Niacor (immediate release)</span></td><td class="ct">Reduces free fatty acid mobilization and liver production of very low-density lipoprotein (VLDL) and apoprotein B, so less low-density lipoprotein (LDL) cholesterol forms</td><td class="ct">LDL ↓ 5-25%<br>high-density lipoprotein (HDL) cholesterol <b>↑ 15-35%</b> (with fibrates, the largest rise)<br>Triglycerides <b>↓ 20-50%</b></td><td class="ct"><b>Cutaneous flushing</b> (prostaglandin mediated); nausea; raised liver enzymes, glucose and uric acid at larger doses</td><td class="ct"><b>Absolute: chronic liver disease.</b> Relative: peptic ulcer disease, symptomatic gout, significant hyperuricemia, diabetes. Interacts with statins, bile acid sequestrants, alcohol</td><td class="ct"><b>Premedicate with aspirin to minimize flushing</b>; use niacin, not niacinamide, which is not effective</td><td class="sl">L7<br><span class="g">slide 61<br>slide 53<br>slide 55<br>slide 56<br>slide 57<br>slide 50</span></td></tr><tr><td class="dn"><b>PCSK9 inhibitors</b><br><span class=g>alirocumab (Praluent), evolocumab (Repatha)</span></td><td class="ct">Monoclonal antibodies that bind and block proprotein convertase subtilisin/kexin type 9 (PCSK9), a protein that marks liver low-density lipoprotein (LDL) cholesterol receptors for breakdown, so the receptors stay active longer</td><td class="ct">LDL <b>↓ 43-58%</b><br>high-density lipoprotein (HDL) cholesterol and triglyceride effects not given</td><td class="ct"><b>Hypersensitivity reactions</b> (the most serious adverse reaction)</td><td class="ct">No contraindication listed; prior serious allergic reaction to the drug rules out further use; expensive</td><td class="ct"><b>Injectable only</b>; report allergic reactions</td><td class="sl">L7<br><span class="g">slide 60<br>slide 60</span></td></tr><tr><td class="dn"><b>Lovastatin plus niacin</b><br><span class=g>Advicor (combination product)</span></td><td class="ct">Combines a statin with extended release niacin</td><td class="ct">low-density lipoprotein (LDL) cholesterol <b>↓ ~50%</b><br>high-density lipoprotein (HDL) cholesterol ↑ ~30%<br>Triglycerides ↓ ~40%</td><td class="ct"><b>Hepatotoxicity, myopathy and flushing</b></td><td class="ct">Carries the cautions of both drugs (see the statin and niacin rows)</td><td class="ct">Report muscle symptoms; expect flushing</td><td class="sl">L7<br><span class="g">slide 59<br>slide 59</span></td></tr></tbody></table></div></section>
+
+  <footer>
+    Every row is checked against the slide it cites by <code>tools/check_pharm_e2.py</code> before this page is written.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+</div>
+</body>
+</html>
