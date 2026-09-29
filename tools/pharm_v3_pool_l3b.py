@@ -69,10 +69,10 @@ QUESTIONS = [
 
  dict(topic="Adrenergic agonists", io="4 — Predict the effects of adrenergic and cholinergic stimulation and inhibition on effector organs", cite=D % 84,
   q="Through which receptor does epinephrine reduce insulin release?",
-  opts=[["Alpha-1", "Correct, while glycogenolysis and glucagon release run through beta-2."],
+  opts=[["Alpha-2", "Correct. Alpha-2 inhibits insulin release, while glycogenolysis and glucagon release run through beta-2."],
         ["Beta-1", "Beta-1 drives the cardiac effects."],
         ["Beta-2", "Beta-2 raises glycogenolysis and glucagon."],
-        ["Alpha-2", "Alpha-2 is presynaptic and not the one named."]]),
+        ["Alpha-1", "Alpha-1 constricts vessels and dilates the pupil. It is not the receptor that inhibits insulin release, which is alpha-2."]]),
 
  dict(topic="Adrenergic agonists", io="3 — Identify indications for adrenergic agonists", cite=D % 84,
   q="Why is albuterol preferred for chronic asthma over epinephrine?",
