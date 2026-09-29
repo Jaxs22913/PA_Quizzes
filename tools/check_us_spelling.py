@@ -527,7 +527,7 @@ TOOL_SKIP = re.compile(r"^(check_|audit_|measure_|console_|transcribe_|pull_|ocr
 
 # shared infrastructure that names Semester 2 folders but writes no content of
 # its own (and _lecturers.py, whose strings are match patterns)
-TOOL_EXCLUDE = {"check_us_spelling.py", "_lecturers.py", "build_guide_docx.py",
+TOOL_EXCLUDE = {"check_us_spelling.py", "_lecturers.py", "build_guide_docx.py", "guide_link_audit.json",   # verbatim guide quotes, scanned at source
                 "build_master_exams.py", "patch_quiz_engine_v2.py", "patch_quiz_engine_v2b.py",
                 "fix_guide_footers.py", "add_guide_report_footer.py",
                 "patch_guide_top_and_save.py", "_arcade_add.py", "_pharm_render_guard.py"}

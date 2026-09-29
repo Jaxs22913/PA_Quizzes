@@ -204,13 +204,27 @@ These are the ones most often broken. Each has a memory with the full story.
 - **No abbreviations**, or write them as `ABBREV (full term)`.
 - **Slides-only grounding.** Content comes from the deck. A lecturer's aside
   does not add content the deck lacks.
-- **Every question links back to where its concept is explained** (Jaxon,
-  2026-09-28, standing for all future work). Each Semester 2 question must have
-  a passage in its OWN class's study guide that teaches the fact, so the "Find it
-  in the study guide" button lands on the explanation. If the guide does not teach
-  it, write it into the guide (`tools/guide_additions/`, then
-  `tools/apply_guide_additions.py`) — do not settle for a nearby section. Finish
-  every build with `python3 tools/build_guide_links.py && python3 tools/check_guide_links.py --strict`.
+- **Every question links back to where its concept is explained, and that link is
+  independently VERIFIED** (Jaxon, 2026-09-28, standing for all future work). Each
+  Semester 2 question must have a passage in its OWN class's study guide that STATES
+  the fact behind the correct answer, and a separate reader must have confirmed it.
+  A word-overlap match is not enough (about 1 in 4 section-level matches turned out
+  to be on-topic but not stating the fact). Procedure for any new or changed
+  Semester 2 question:
+    1. write the fact into the guide if it is missing (`tools/guide_additions/`, then
+       `tools/apply_guide_additions.py`; text only from the question's own vetted
+       explanation, checked by `tools/verify_guide_additions.py`);
+    2. `python3 tools/build_guide_links.py`;
+    3. `python3 tools/audit_guide_links.py authored` (records lines written for a
+       question), then `... export --set new --out DIR`, have judges read the
+       batches under `tools/audit_guide_links_JUDGE.md` (each PASS needs a verbatim
+       quote from the guide, machine-checked), `... import DIR`;
+    4. anything PARTIAL/FAIL: write the fact into the guide and repeat;
+    5. `python3 tools/check_guide_links.py --strict` must pass (it fails on any link
+       without a current audit record).
+  If a judge finds the guide CONTRADICTS the answer key, that is a possible wrong
+  key: check it against the slides and the truth (see `truth_wins_on_conflict`)
+  before anything else.
 - **Semester 1 exams are frozen** — never modify them.
 - **US spelling** in Semester 2+ content (hemoconcentration, tumor, edema); keep
   taxonomic names such as *Haemophilus*.

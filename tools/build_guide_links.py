@@ -410,6 +410,20 @@ def build_folder(folder, dry=False):
         a = adds.get(it["k"])
         if a and any(sc["guide"] == a[1] for sc in idx.secs):
             it["link"] = ("passage", {"guide": a[1], "id": a[0], "title": a[2], "tok": collections.Counter()}, snippet(a[3]))
+    # pass 0b: a link an independent judge PASSED (tools/audit_guide_links.py) is used exactly
+    # as audited, provided the paragraph it quoted still exists in the guide
+    audit = {}
+    ap = os.path.join(_REPO, "tools", "guide_link_audit.json")
+    if os.path.exists(ap):
+        audit = json.load(open(ap, encoding="utf-8"))
+    by_id = {(sc["guide"], sc["id"]): sc for sc in idx.secs}
+    for it in items:
+        r = audit.get(os.path.basename(folder) + "|" + it["k"])
+        if it["link"] or not r or r.get("v") != "PASS":
+            continue
+        sc = by_id.get((r["g"], r["a"]))
+        if sc and any(fnv(re.sub(r"\s+", " ", b).strip()) == r["p"] for b in blocks_of(sc)):
+            it["link"] = ("passage", sc, r["s"])
     # pass 1: direct matches (the key is really in the guide)
     for it in items:
         if it["link"]:

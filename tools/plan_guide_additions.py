@@ -115,7 +115,13 @@ def main():
         p = os.path.join(ROOT, d)
         if not os.path.isdir(p) or not d.startswith(("Clinical", "Microbiology", "Pharmacology I", "Physical Diagnosis 2", "Principles", "Interpretation")):
             continue
-        if "--round2" in sys.argv:
+        if "--keys" in sys.argv:
+            # repair mode: exactly these question keys (from an audit repair.json)
+            want = set()
+            for f in sys.argv[sys.argv.index("--keys") + 1].split(","):
+                want |= {e["id"] for e in json.load(open(f))}
+            r = plan_folder(p, only_keys=want, id_tag=(sys.argv[sys.argv.index("--tag") + 1] if "--tag" in sys.argv else "r"))
+        elif "--round2" in sys.argv:
             res = B.build_folder(p, dry=True)
             keys = {B.qkey(q) for q, _ in (res[2] if res else [])}
             r = plan_folder(p, only_keys=keys, id_tag=(sys.argv[sys.argv.index("--tag") + 1] if "--tag" in sys.argv else "b")) if keys else []

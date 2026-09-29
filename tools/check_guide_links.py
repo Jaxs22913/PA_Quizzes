@@ -112,6 +112,14 @@ def main():
             d, len(keys), nl, round(100 * nl / max(1, len(keys))), nl - near, near, "  FAIL x%d" % bad if bad else ""))
     print("TOTAL %d questions, %d linked (%d%%)" % (total_q, total_l, round(100 * total_l / max(1, total_q))))
     if "--strict" in sys.argv:
+        # every link must have been independently AUDITED (tools/audit_guide_links.py)
+        import audit_guide_links as A
+        audit = A.load_audit()
+        for d in A.folders():
+            F = A.Folder(d)
+            bad = [k for k, v in F.data["l"].items() if not A.record_current(F, k, v, audit.get(A.akey(d, k)))]
+            if bad:
+                fails.append("%s: %d link(s) have no current independent audit (run tools/audit_guide_links.py)" % (d, len(bad)))
         for d, n_near in strict_near:
             if n_near:
                 fails.append("%s: %d question(s) have no passage that explains them (closest-section guess only)" % (d, n_near))
