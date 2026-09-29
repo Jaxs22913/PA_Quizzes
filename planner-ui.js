@@ -709,6 +709,50 @@
     setTimeout(function () { el.classList.add("out"); setTimeout(function () { el.remove(); }, 400); }, 3200);
   }
 
+  /* ============================================================ tour === */
+  /* "How to use": walks through every part of the planner using the site's own tour
+     engine (SiteTour), switching tabs as it goes. Targets are picked when the button is
+     pressed, with fallbacks, so a rest day with no tasks still gets a sensible walkthrough. */
+  var TOUR_KEY = "tourSeen:planner";
+  function tourSteps() {
+    function pick() { for (var k = 0; k < arguments.length; k++) if (document.querySelector(arguments[k])) return arguments[k]; return null; }
+    function tab(n) { return function () { setTab(n); }; }
+    return [
+      { before: tab("today"), selector: pick("#pl-today .pl-hero"), title: "Your day at a glance", text: "The ring fills as you finish today's tasks. It shows how much is planned, the study window you set, and what is left." },
+      { before: tab("today"), selector: pick("#pl-today .pl-task", "#pl-today .pl-sect"), title: "Today's tasks", text: "Each task says what to study, for how long, and when. They come from your exam calendar, and a lecture only appears after it has been delivered." },
+      { before: tab("today"), selector: pick("#pl-today .pl-how summary", "#pl-today .pl-sect"), title: "How to do it", text: "Open it for a study method, then use the links to jump to the study guide, cram sheet or practice questions for that exam." },
+      { before: tab("today"), selector: pick("#pl-today .pl-check", "#pl-today .pl-sect"), title: "Check it off", text: "Tick a task once you have really finished it. Finish every task in the day to keep your streak going." },
+      { before: tab("today"), selector: pick("#pl-today [data-act=timer]", "#pl-today .pl-sect"), title: "Focus timer", text: "Press Start on a task to count down the session. It only times you: it never ticks a task for you, so you stay honest." },
+      { before: tab("today"), selector: pick("#pl-today [data-act=replan]"), title: "Re-plan and days off", text: "Changed your hours or fell behind? Re-plan rebuilds what is left today. Take today off for a rest day; it never breaks your streak." },
+      { before: tab("today"), selector: pick("#pl-today .pl-streak"), title: "Your streak", text: "A day counts when every task in its plan is ticked. Rest days never break it, and every 5 finished days earns a freeze (keep up to 2) that covers one missed day." },
+      { before: tab("today"), selector: pick("#pl-today .pl-week"), title: "This week", text: "Green is a finished day, a snowflake is a day a freeze saved, and a cross is a missed one." },
+      { before: tab("today"), selector: pick("#pl-today form.pl-add"), title: "Your own tasks", text: "Add anything else you need to do today. Your tasks show up in the day but never affect the streak." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-chart"), title: "Study load", text: "Every bar is a day, colored by exam, with its date underneath. Triangles mark exam days and the dashed line is your daily limit. Far-off exams start light and build as they get close." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-exam", "#pl-plan .pl-exams"), title: "Your exams", text: "Each exam shows what is done and what is still planned, and warns you if it will not fit in your hours. Nothing is planned before its lecture has been delivered." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-eopt summary"), title: "Adjust an exam", text: "Change the total hours, how hard it is, when to start, or say you have not started it yet. You can also switch an exam off." },
+      { before: tab("plan"), selector: pick("#pl-plan .pl-dayrow"), title: "Day by day", text: "Open any upcoming day to see its tasks and times, or take that day off." },
+      { before: tab("calendar"), selector: pick("#pl-panel-calendar .controls"), title: "Calendar", text: "The full academic calendar. Days with study planned carry a Study tag, and the filters narrow it to one class or to exams only." },
+      { before: tab("stats"), selector: pick("#pl-stats .pl-tiles"), title: "Stats", text: "Your streaks, weekly minutes and time per exam. After an exam, log your score to see how your hours related to your results." },
+      { before: tab("settings"), selector: pick("#pl-settings .pl-presets"), title: "Pick a style", text: "Balanced, Keep-up, Late push or Light. Each one sets a whole group of numbers at once." },
+      { before: tab("settings"), selector: pick("#pl-settings .pl-win"), title: "When you study", text: "Set your usual start time and when you quit for each weekday. The plan only uses that time, and a day switched off becomes a rest day." },
+      { before: tab("settings"), selector: pick("#pl-settings .pl-field"), title: "Fine-tune the algorithm", text: "Hours per lecture, how early to start, how steep the ramp is, review spacing, breaks and more. Every field explains itself underneath." },
+      { before: tab("settings"), selector: pick("#pl-preview"), title: "Live preview", text: "Your next five weeks redraw as you change anything above, so you can see the effect before you commit." },
+      { before: tab("today"), selector: null, title: "That is everything", text: "Reopen this walkthrough any time with How to use. Your progress saves on this device and syncs when you are signed in." }
+    ];
+  }
+  function startTour() {
+    if (!window.SiteTour) return;
+    renderSettings();   // its elements must exist before the steps can point at them
+    window.SiteTour.run(tourSteps(), TOUR_KEY, function () { var b = $("pl-help"); if (b) b.classList.remove("new"); setTab("today"); });
+  }
+  function initHelp() {
+    var b = $("pl-help"); if (!b) return;
+    b.innerHTML = icon("help", 16) + " How to use";
+    var seen = false; try { seen = !!localStorage.getItem(TOUR_KEY); } catch (e) {}
+    if (!seen) b.classList.add("new");
+    b.addEventListener("click", startTour);
+  }
+
   /* ============================================================== boot == */
   function boot() {
     fetch("planner-resources.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (j) {
@@ -717,6 +761,7 @@
     ensureDays(); renderAll();
     var h = (location.hash || "").replace("#", "");
     setTab(h || "today");
+    initHelp();
     if (timerState) { renderTimerBox(); }
     document.addEventListener("visibilitychange", function () { if (!document.hidden && !TEST && realToday() !== TODAY) location.reload(); });
   }

@@ -177,6 +177,13 @@
   @media (prefers-reduced-motion: reduce){.nu-ring .nu-fill,.nu-bar i{transition:none}}
 
   /* --- study planner ------------------------------------------------------ */
+  .pl-headrow { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .pl-headrow h1 { margin-bottom: 8px; }
+  .pl-help { position: relative; font: inherit; font-size: 13.5px; font-weight: 700; padding: 8px 14px 8px 12px; border-radius: var(--r-pill); border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .pl-help:hover { background: var(--accent-soft); }
+  .pl-help.new::after { content: ""; position: absolute; top: -3px; right: -3px; width: 10px; height: 10px; border-radius: 50%; background: var(--a-crimson); box-shadow: 0 0 0 2px var(--page); animation: pl-pulse 1.8s ease-out infinite; }
+  @keyframes pl-pulse { 0% { box-shadow: 0 0 0 2px var(--page), 0 0 0 2px rgba(223,42,68,.55); } 100% { box-shadow: 0 0 0 2px var(--page), 0 0 0 10px rgba(223,42,68,0); } }
+  @media (prefers-reduced-motion: reduce) { .pl-help.new::after { animation: none; } }
   .pl-tabs { position: sticky; top: 0; z-index: 30; display: flex; gap: 4px; overflow-x: auto;
     background: var(--bg); padding: 8px 0; margin: 0 0 16px; border-bottom: 1px solid var(--border);
     scrollbar-width: none; }
@@ -392,8 +399,13 @@
 <body data-dark="tokens">
 <div class="wrap">
   <a class="back-link" href="index.html">&larr; Back to home</a>
-  <div class="eyebrow">Class of 2028</div>
-  <h1>Study Planner</h1>
+  <div class="pl-headrow">
+    <div>
+      <div class="eyebrow">Class of 2028</div>
+      <h1>Study Planner</h1>
+    </div>
+    <button type="button" class="pl-help" id="pl-help"><span>How to use</span></button>
+  </div>
   <p class="lede">Your exams, turned into a daily plan. It only schedules a lecture after it has been delivered, starts light for far-off exams, and builds toward the ones that are close. Tick tasks off to keep your streak.</p>
 
   <nav class="pl-tabs" role="tablist" aria-label="Planner sections">

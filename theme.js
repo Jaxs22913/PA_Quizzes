@@ -42,7 +42,8 @@ window.SiteIcon = (function () {
     download: '<path d="M12 4v11"/><path d="M7.5 11l4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/>',
     chart: '<path d="M4.5 19.5h15"/><path d="M7 19.5v-6M12 19.5V7M17 19.5v-9"/>',
     refresh: '<path d="M19.5 12a7.5 7.5 0 0 1-13 5"/><path d="M4.5 12a7.5 7.5 0 0 1 13-5"/><path d="M17.5 3.5V7H14M6.5 20.5V17H10"/>',
-    moon: '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>'
+    moon: '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1.1.9-1.1 1.7"/><path d="M12 17h.01" stroke-width="2.6"/>'
   };
   return function (name, size, extraClass) {
     size = size || 16;
@@ -106,12 +107,12 @@ window.SitePrompts = {
     showPrompt(validSteps, storageKey);
   }
 
-  function run(steps, storageKey) {
+  function run(steps, storageKey, onDone) {
     if (active) return;
     var validSteps = validate(steps);
     if (!validSteps.length) return;
     active = true;
-    runSteps(validSteps, storageKey);
+    runSteps(validSteps, storageKey, onDone);
   }
 
   function showPrompt(steps, storageKey) {
@@ -141,7 +142,7 @@ window.SitePrompts = {
     });
   }
 
-  function runSteps(steps, storageKey) {
+  function runSteps(steps, storageKey, onDone) {
     var i = 0;
     var spotlight = el("div", "tour-spotlight");
     var tooltip = el("div", "tour-tooltip");
@@ -154,29 +155,28 @@ window.SitePrompts = {
       tooltip.remove();
       window.removeEventListener("resize", place);
       active = false;
+      if (onDone) { try { onDone(); } catch (e) {} }
     }
 
     function place() {
       var step = steps[i];
+      // A step may switch the page to where its target lives (tabs) before it is measured.
+      if (step.before) { try { step.before(); } catch (e) {} }
       var target = step.selector ? document.querySelector(step.selector) : null;
+      var r = null;
       if (target) {
-        target.scrollIntoView({ block: "center" });
-        var r = target.getBoundingClientRect();
+        // 'instant' so a page with smooth scrolling is measured after the jump, not mid-scroll.
+        try { target.scrollIntoView({ block: "center", behavior: "instant" }); }
+        catch (e) { target.scrollIntoView({ block: "center" }); }
+        r = target.getBoundingClientRect();
         var pad = 8;
         spotlight.style.display = "block";
         spotlight.style.top = (r.top - pad) + "px";
         spotlight.style.left = (r.left - pad) + "px";
         spotlight.style.width = (r.width + pad * 2) + "px";
         spotlight.style.height = (r.height + pad * 2) + "px";
-
-        var tipTop = r.bottom + 16;
-        if (tipTop + 170 > window.innerHeight) tipTop = Math.max(16, r.top - 170);
-        tooltip.style.top = tipTop + "px";
-        tooltip.style.left = Math.min(Math.max(16, r.left), window.innerWidth - 316) + "px";
       } else {
         spotlight.style.display = "none";
-        tooltip.style.top = "50%";
-        tooltip.style.left = "50%";
       }
 
       tooltip.innerHTML =
@@ -189,6 +189,21 @@ window.SitePrompts = {
           (i > 0 ? '<button type="button" class="tour-btn" id="tour-back">Back</button>' : '') +
           '<button type="button" class="tour-btn primary" id="tour-next">' + (i === steps.length - 1 ? "Done" : "Next") + '</button>' +
         '</div>';
+
+      // Placed after the content exists so the real size is used: beside/below the target
+      // when it fits, above it otherwise, and always fully on screen (also centred when
+      // the step has no target).
+      var tw = tooltip.offsetWidth, th = tooltip.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
+      if (r) {
+        var tipTop = r.bottom + 16;
+        if (tipTop + th > vh - 12) tipTop = r.top - th - 16;
+        if (tipTop < 12) tipTop = vh - th - 12;
+        tooltip.style.top = tipTop + "px";
+        tooltip.style.left = Math.max(12, Math.min(r.left, vw - tw - 12)) + "px";
+      } else {
+        tooltip.style.top = Math.max(12, (vh - th) / 2) + "px";
+        tooltip.style.left = Math.max(12, (vw - tw) / 2) + "px";
+      }
 
       document.getElementById("tour-skip").addEventListener("click", finish);
       var backBtn = document.getElementById("tour-back");
