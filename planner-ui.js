@@ -555,6 +555,7 @@
   }
   window.PlannerTimer = {
     pause: function () { pauseTimer(false); },
+    resume: function () { if (timerState && !timerState.running) pauseTimer(true); },
     done: function () { commitTimer(true); },
     markDone: function (day, tid) { var t = findTask(day, tid); if (t) { t.done = true; save(); invalidate(); renderAll(); } }
   };

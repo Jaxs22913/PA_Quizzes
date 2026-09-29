@@ -3,8 +3,8 @@
  * The planner (calendar.html) starts a countdown for a task and keeps it in localStorage under
  * "planner:timer:v1". This file, loaded by theme.js on every page while that key exists, draws a
  * small pill in the top-left corner so the timer stays visible on quizzes, guides and the
- * homepage. It goes away when the timer runs out, when the student marks the task done, or when
- * they pause it (a paused timer is resumed from the Today tab of the planner).
+ * homepage. Pausing keeps it on screen (frozen, with a Resume button); it goes away only when the
+ * timer runs out, when the student marks the task done, or when they stop it in the planner.
  *
  * It only reads and writes the two planner keys; the planner page owns the rest (the streak, the
  * task list). When the planner page itself is open it registers window.PlannerTimer and this pill
@@ -20,6 +20,7 @@
   function clock(ms) { var s = Math.max(0, Math.round(ms / 1000)), m = Math.floor(s / 60); return m + ":" + (s % 60 < 10 ? "0" : "") + (s % 60); }
   function icon(n, s) { return window.SiteIcon ? window.SiteIcon(n, s) : ""; }
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function todayYmd() { var d = new Date(); return d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate(); }
   function hooks() { return window.PlannerTimer || null; }
   function taskOf(store, t) { var r = store && store.days && store.days[t.day]; return r ? (r.tasks || []).filter(function (x) { return x.id === t.tid; })[0] : null; }
   function taskName(t) {
@@ -43,7 +44,7 @@
     "#ft-pill button.ft-ok{background:#35d6d8;border-color:#35d6d8;color:#06282a}" +
     "#ft-pill button.ft-ok:hover{filter:brightness(.93);background:#35d6d8}" +
     "#ft-pill button:focus-visible{outline:3px solid #35d6d8;outline-offset:2px}" +
-    "#ft-pill.ft-done{padding-left:12px}#ft-pill .ft-msg{font-weight:700}" +
+    "#ft-pill.ft-done{padding-left:12px}#ft-pill .ft-msg{font-weight:700}#ft-pill .ft-paused{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#f5b942}#ft-pill.ft-isPaused .ft-clock{opacity:.75}" +
     "@media print{#ft-pill{display:none}}";
 
   function ensureStyle() {
@@ -80,6 +81,9 @@
     if (name === "pause") {
       if (h && h.pause) h.pause();
       else { t.acc += Date.now() - t.since; t.running = false; try { localStorage.setItem(TKEY, JSON.stringify(t)); } catch (e) {} }
+    } else if (name === "resume") {
+      if (h && h.resume) h.resume();
+      else { t.since = Date.now(); t.running = true; try { localStorage.setItem(TKEY, JSON.stringify(t)); } catch (e) {} }
     } else if (name === "done") {
       if (h && h.done) h.done();
       else commit(t, true, Math.round(Math.min(elapsed(t), t.total * 60000) / 60000));
@@ -101,32 +105,41 @@
   function update() {
     var t = readT();
     if (result) return;                       // the "time's up" message is showing
-    if (!t || !t.running) { hide(); return; } // gone, or paused (resumed from the planner)
+    if (!t) { hide(); return; }
     var s = readS();
     if (!s) { hide(); return; }               // no saved plan yet (or storage unavailable): show nothing, delete nothing
     if (!taskOf(s, t)) { hide(); if (!hooks()) { try { localStorage.removeItem(TKEY); } catch (e) {} } return; }
     if (box()) { hide(); return; }            // the planner's own timer card is on screen
+    if (t.day < todayYmd()) {                 // left over from an earlier day: settle it once
+      if (!hooks()) { commit(t, false, Math.round(Math.min(elapsed(t), t.total * 60000) / 60000)); }
+      hide(); return;
+    }
     var left = t.total * 60000 - elapsed(t);
-    if (left <= 0) {
+    if (t.running && left <= 0) {
       if (hooks()) { hide(); return; }        // the planner page settles it itself
       var mins = Math.round(t.total); commit(t, false, mins); chime(); showResult(t, mins); return;
     }
     ensureStyle();
+    var state = t.running ? "run" : "pause";
+    if (pill && pill.getAttribute("data-state") !== state) hide();     // rebuild when pausing / resuming
     if (!pill) {
-      pill = document.createElement("div"); pill.id = "ft-pill"; pill.setAttribute("role", "timer"); pill.setAttribute("aria-label", "Focus timer");
-      pill.innerHTML = icon("timer", 18) + '<span class="ft-clock"></span><span class="ft-name"></span>' +
-        '<button type="button" data-ft="pause" title="Pause (hides this timer; resume it in the planner)" aria-label="Pause the timer">' + icon("pause", 15) + "</button>" +
+      pill = document.createElement("div"); pill.id = "ft-pill"; pill.setAttribute("role", "timer"); pill.setAttribute("aria-label", "Focus timer"); pill.setAttribute("data-state", state);
+      if (!t.running) pill.className = "ft-isPaused";
+      pill.innerHTML = icon("timer", 18) + '<span class="ft-clock"></span>' + (t.running ? "" : '<span class="ft-paused">Paused</span>') + '<span class="ft-name"></span>' +
+        (t.running
+          ? '<button type="button" data-ft="pause" title="Pause the timer" aria-label="Pause the timer">' + icon("pause", 15) + "</button>"
+          : '<button type="button" data-ft="resume" title="Resume the timer" aria-label="Resume the timer">' + icon("play", 15) + '<span class="ft-lbl">Resume</span></button>') +
         '<button type="button" class="ft-ok" data-ft="done" title="Mark the task done" aria-label="Mark the task done">' + icon("check", 15) + '<span class="ft-lbl">Done</span></button>';
       document.body.appendChild(pill);
     }
-    pill.querySelector(".ft-clock").textContent = clock(left);
+    pill.querySelector(".ft-clock").textContent = clock(Math.max(0, left));
     var nm = pill.querySelector(".ft-name"), name = taskName(t); if (nm.textContent !== name) nm.textContent = name;
   }
 
   document.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest("#ft-pill [data-ft]"); if (!b) return;
     var k = b.getAttribute("data-ft");
-    if (k === "pause" || k === "done") act(k);
+    if (k === "pause" || k === "resume" || k === "done") act(k);
     else if (k === "close") { result = null; clearTimeout(resultTimer); hide(); update(); }
     else if (k === "mark" && result) {
       var r = result, h = hooks(); result = null; clearTimeout(resultTimer);
