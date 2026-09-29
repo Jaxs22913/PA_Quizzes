@@ -142,6 +142,20 @@ Micro Exam 1 timetable quiz (§8) is the clean example to copy —
    specifically, pushing is part of the spec — you do not need to wait to be
    asked.
 
+### The study planner (calendar.html)
+
+Built 2026-09-28. `calendar.html` is now Today / Plan / Calendar / Stats / Settings.
+Logic is `planner-engine.js` (pure, browser + node), UI is `planner-ui.js`, links come from
+`planner-resources.json` (`python3 tools/build_planner_resources.py` after a new exam folder
+or study page). Tests: `node tools/test_planner.js` against the real calendar (caps, rest days,
+lecture-release constraint, ramp, streak replay); it must pass after any engine change.
+Test hook: `calendar.html?asof=2026-09-28&now=17:30` (separate `planner:v1:test` key).
+Rules worth knowing: nothing is scheduled before its lecture is delivered (release dates come
+from the `lecture` events in calendar-data.js, fallback exam minus 21 days); nothing is written
+to localStorage until the student interacts (a blank record would beat their cloud history in
+cloud-sync); the page uses its own designed dark tokens, not the invert filter. Details:
+memory `study_planner.md`.
+
 ### Guides, cram sheets, Arcade
 
 - Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box
