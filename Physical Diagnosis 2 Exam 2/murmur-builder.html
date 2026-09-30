@@ -174,7 +174,7 @@
      P plateau, H high-pitched extra sound, L low-pitched extra sound.
      A build is six slots: systole early/mid/late, then diastole early/mid/late.
      Shapes and timings are the lecture deck's (slides 38-44, 50-54, 66-81).
-     `vs` is the "little things": what separates this pattern from the one it is mistaken for. */
+     `where` is the chest piece and site from the deck. */
   var NAMES = { S1: "S1", S2: "S2", C: "Crescendo", D: "Decrescendo", X: "Crescendo-decrescendo",
                 P: "Plateau", H: "High-pitched sound", L: "Low-pitched sound", SYS: "Systolic", DIA: "Diastolic" };
   var SLOT = ["early systole", "mid systole", "late systole", "early diastole", "mid diastole", "late diastole"];
@@ -182,33 +182,29 @@
   var BUILDS = {
     normal: { title: "Normal S1 and S2", accept: ["------"],
       listen: "Two sounds and nothing between them: S1 (“lub”), a quiet systole, S2 (“dub”), a quiet diastole. Anything you can hear in a quiet gap is an extra sound or a murmur.",
-      vs: ["Listen to both gaps, not just the first one. An S3 hides in early diastole and an S4 in late diastole; a click sits in mid to late systole."],
+      where: ["S1: best with the diaphragm at the apex. S2: best with the diaphragm at the base, over the aortic and pulmonic areas.", "Listen in a quiet room with the stethoscope directly on the skin."],
       assoc: ["A normal heart. S1 is closure of the mitral and tricuspid valves; S2 is closure of the aortic and pulmonic valves (A2 usually louder than P2)."],
       slides: "13, 14, 34" },
     s3: { title: "S3, the ventricular gallop", accept: ["---L--"],
-      listen: "A soft, low thud just after S2, early in diastole: lub-dub-dee, Ken-TUC-ky. Use the bell at the apex with the patient in left lateral decubitus.",
-      vs: ["Not an S4: S4 comes just before S1 (dee-lub-dub, Ten-nes-SEE); S3 follows S2.",
-           "Not an opening snap: the snap is sharp and high pitched and comes very early in diastole; S3 is low pitched."],
+      listen: "A soft, low thud just after S2, early in diastole: lub-dub-dee, Ken-TUC-ky.",
+      where: ["With the bell at the apex, with the patient in the left lateral decubitus position."],
       assoc: ["S3 (ventricular gallop): physiologic in children, young adults and the last trimester of pregnancy.",
               "Pathologic over age 40: heart failure, decreased myocardial contractility, volume overload from aortic or mitral regurgitation, and left-to-right shunts."],
       slides: "40" },
     s4: { title: "S4, the atrial gallop", accept: ["-----L"],
-      listen: "A dull, low thump just before S1, late in diastole: dee-lub-dub, Ten-nes-SEE. Bell at the apex, left lateral decubitus.",
-      vs: ["Not an S3: S3 follows S2 (Ken-TUC-ky); S4 leads into the next S1.",
-           "Not a click: a click is sharp and high pitched and falls in systole; S4 is dull and low pitched."],
+      listen: "A dull, low thump just before S1, late in diastole: dee-lub-dub, Ten-nes-SEE.",
+      where: ["With the bell at the apex, with the patient in the left lateral decubitus position.", "Also listen along the lower left sternal border."],
       assoc: ["S4 (atrial gallop): normal in trained athletes and older people.",
               "Stiff, hypertrophied or fibrotic ventricle: hypertensive heart disease, aortic stenosis, ischemic and hypertrophic cardiomyopathy."],
       slides: "42" },
     click: { title: "Mid-systolic click", accept: ["-H----", "--H---"],
-      listen: "A sharp, high-pitched snap in the middle to late part of systole, between S1 and S2. Diaphragm.",
-      vs: ["Not an ejection sound: an ejection sound comes right after S1, in early systole; a click comes later.",
-           "Not an opening snap: the snap is in diastole, right after S2."],
+      listen: "A sharp, high-pitched snap in the middle to late part of systole, between S1 and S2.",
+      where: ["With the diaphragm, at or medial to the apex and along the lower left sternal border."],
       assoc: ["Systolic click: usually mitral valve prolapse. Usually single but may be several, and it is often followed by a late systolic murmur."],
       slides: "38, 39, 44" },
     midsys: { title: "Midsystolic murmur", accept: ["-X----"],
       listen: "Quiet right after S1, then a murmur that swells to a peak in the middle of systole and fades away before S2: a diamond with a gap on each side (crescendo-decrescendo).",
-      vs: ["Not holosystolic: a holosystolic murmur starts at S1 with no gap and runs to S2 at the same loudness.",
-           "Not a late systolic murmur: that one stays quiet until near the end and is loudest at S2."],
+      where: ["It depends on the cause: aortic stenosis at the aortic area, pulmonic stenosis at the pulmonic area, hypertrophic cardiomyopathy at Erb’s point (the tricuspid area)."],
       assoc: ["Innocent murmurs (grade 1 to 3, common in children) and physiologic ones (anemia, pregnancy, fever, hyperthyroidism).",
               "Aortic stenosis: harsh, aortic area, often radiating to the carotids.",
               "Pulmonic stenosis: harsh, pulmonic area.",
@@ -216,53 +212,45 @@
       slides: "51, 54, 66, 67, 68, 70" },
     latesys: { title: "Late systolic murmur", accept: ["--C---"],
       listen: "Silent after S1, then a murmur that builds and peaks right at S2.",
-      vs: ["Not midsystolic: a midsystolic murmur fades away before S2; this one keeps growing until S2.",
-           "Listen for a click just before it: in mitral valve prolapse the click comes first."],
+      where: ["At the apex and along the lower left sternal border, where the click of mitral valve prolapse is heard."],
       assoc: ["Mitral valve prolapse: a mid to late systolic click followed by a late systolic murmur of mitral regurgitation that crescendos up to S2."],
       slides: "39, 51" },
     holosys: { title: "Holosystolic (pansystolic) murmur", accept: ["PPP---"],
       listen: "Starts immediately with S1 and never lets up until S2: the same steady loudness all the way (plateau), with no gap at either end.",
-      vs: ["Not midsystolic: there is no quiet gap after S1 and none before S2.",
-           "Not a late systolic murmur: it does not wait; it begins right at S1."],
+      where: ["Mitral regurgitation: at the apex. Tricuspid regurgitation: at the lower left sternal border."],
       assoc: ["Mitral regurgitation: loudest at the apex, radiating to the left axilla, harsh.",
               "Tricuspid regurgitation: loudest at the lower left sternal border, blowing, not reaching the axilla."],
       slides: "51, 72, 73, 74" },
     mvp: { title: "Click followed by a late systolic murmur", accept: ["-HC---"],
       listen: "A sharp click in the middle of systole, then a murmur that builds toward S2.",
-      vs: ["The click is the giveaway: the lecture ties mitral valve prolapse to a click followed by a late systolic murmur.",
-           "The murmur crescendos up to S2 (from mitral regurgitation); it does not fade before S2."],
+      where: ["The click: with the diaphragm, at or medial to the apex and along the lower left sternal border. The murmur follows it."],
       assoc: ["Mitral valve prolapse: the click, then the late systolic murmur of mitral regurgitation crescendoing up to S2."],
       slides: "39" },
     s4mid: { title: "S4 with a midsystolic murmur", accept: ["-X---L"],
       listen: "A diamond in the middle of systole, and then, after the quiet of early and mid diastole, a dull low thump just before the next S1.",
-      vs: ["Listen after the murmur: the extra sound is at the very end of diastole, just before S1, not just after S2 (that would be an S3).",
-           "The murmur fills only the middle of systole; a holosystolic murmur would touch both S1 and S2."],
+      where: ["The S4: bell at the apex, left lateral decubitus.", "The midsystolic murmur: aortic stenosis at the aortic area; hypertrophic cardiomyopathy at Erb’s point."],
       assoc: ["Aortic stenosis and hypertrophic cardiomyopathy are causes of an S4 and are midsystolic murmurs, so the two are heard together."],
       slides: "42, 67, 70" },
     s3holo: { title: "S3 with a holosystolic murmur", accept: ["PPPL--"],
       listen: "A murmur that fills systole from S1 to S2, then a soft low thud just after S2.",
-      vs: ["Listen right after S2: the extra sound is early in diastole (S3), not just before S1 (S4).",
-           "The murmur touches both S1 and S2; a midsystolic murmur would leave gaps."],
+      where: ["The S3: bell at the apex, left lateral decubitus.", "The holosystolic murmur of mitral regurgitation: at the apex."],
       assoc: ["Volume overload from mitral regurgitation is one cause of an S3, and mitral regurgitation is a holosystolic murmur."],
       slides: "40, 74" },
     snap: { title: "Opening snap and a diastolic murmur", accept: ["---HD-", "---H-D", "---HDD"],
-      listen: "A sharp snap right after S2, then a low rumble that fades (decrescendo) through mid to late diastole. Bell at the apex, left lateral decubitus.",
-      vs: ["Not an S3: the snap is sharp and high pitched; an S3 is a soft, low thud.",
-           "Not a click: the snap comes after S2, in diastole; a click is in systole."],
+      listen: "A sharp snap right after S2, then a low rumble that fades (decrescendo) through mid to late diastole.",
+      where: ["The snap: with the diaphragm, just medial to the apex and along the lower left sternal border.", "The rumble: with the bell at the apex, with the patient in the left lateral decubitus position."],
       assoc: ["Mitral stenosis: the opening snap of a stenotic mitral valve, then a low-pitched mid to late diastolic decrescendo rumble at the apex.",
               "Tricuspid stenosis is similar: a low-pitched rumble that follows an opening snap, at the left lower sternal border."],
       slides: "44, 79, 80" },
     earlydia: { title: "Early diastolic murmur", accept: ["---D--"],
       listen: "It starts the instant S2 ends, loudest at the start, and fades away (decrescendo). High pitched and blowing, so it can be mistaken for breath sounds.",
-      vs: ["Not a systolic murmur: it comes after S2, not before it. Palpating the carotid helps: systolic sounds coincide with the carotid upstroke.",
-           "It is a decrescendo that starts loud; a late diastolic murmur builds up into S1 instead."],
+      where: ["Aortic regurgitation: at the aortic area and down the left intercostal space, with the patient sitting forward and holding the breath after exhaling.", "Pulmonic regurgitation: at the pulmonic area."],
       assoc: ["Aortic regurgitation: aortic area, best heard sitting forward after exhaling.",
               "Pulmonic regurgitation: pulmonic area, may increase with inspiration."],
       slides: "50, 52, 77, 78" },
     ej: { title: "Ejection sound and a midsystolic murmur", accept: ["HX----"],
       listen: "A sharp, high-pitched click right after S1, then a diamond in the middle of systole.",
-      vs: ["The click is early: right after S1, unlike a mitral valve prolapse click, which falls in mid to late systole.",
-           "It occurs shortly after S1, has a sharp clicking quality and is best heard with the diaphragm."],
+      where: ["With the diaphragm. An aortic ejection sound is heard at the base and the apex; a pulmonic one in the second and third intercostal spaces."],
       assoc: ["Aortic or pulmonic stenosis: the valve halts abruptly as it opens in early systole, and the harsh murmur follows.",
               "A pulmonic ejection sound decreases with inspiration; an aortic one does not vary with breathing."],
       slides: "38, 67, 68" }
@@ -426,7 +414,7 @@
     try { var bk = "murmurBuilder:best"; var prev = +localStorage.getItem(bk) || 0; if (state.score > prev) localStorage.setItem(bk, String(state.score)); } catch (e) {}
 
     var exp = patternCells(best), h = "";
-    h += "<h2>" + (ok ? "Right — that is a " : "Not quite — this was a ") + b.title.charAt(0).toLowerCase() + b.title.slice(1) + ".</h2>";
+    h += "<h2>" + (ok ? "Right \u2014 " : "Not quite \u2014 this was ") + b.title + ".</h2>";
     if (!ok) {
       h += '<ul class="diff">';
       [0, 1].forEach(function (z) {
@@ -439,9 +427,8 @@
       h += "</ul>";
     }
     h += '<div class="correct-build"><p class="phase">' + (ok ? "Your build" : "The correct build") + '</p><div class="board">' + stripHtml(exp, ["SYS", "DIA"], true, null) + "</div></div>";
-    h += '<div class="sec"><h3>What to listen for</h3><p>' + b.listen + "</p></div>";
-    h += '<div class="sec"><h3>The little things</h3><ul>' + b.vs.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
-    h += '<div class="sec"><h3>What makes this pattern</h3><ul>' + b.assoc.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
+    h += '<div class="sec"><h3>What the sound is</h3><p>' + b.listen + "</p><ul>" + b.assoc.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
+    h += '<div class="sec"><h3>Where it is best heard</h3><ul>' + b.where.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
     h += '<p class="src">Lecture slides ' + b.slides + " (PD II Advanced Cardiovascular &amp; Peripheral Vascular System).</p>";
     var box = $("result"); box.className = "card result " + (ok ? "right" : "wrong"); box.innerHTML = h; box.hidden = false;
     $("next").textContent = state.idx === state.order.length - 1 ? "See results" : "Next round";
