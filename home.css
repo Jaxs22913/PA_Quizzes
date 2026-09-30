@@ -870,7 +870,7 @@
       box-shadow: var(--shadow);
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
-    .relax-cta svg:not(.vines):not(.arc-inv):not(.arc-pm):not(.arc-coin):not(.crowd) { width: 18px; height: 18px; flex: none; }
+    .relax-cta svg:not(.vines):not(.arc-inv):not(.arc-pm):not(.crowd) { width: 18px; height: 18px; flex: none; }
     .relax-cta svg.leaf-icon { transition: transform .4s var(--ease-spring); }
     /* Vines that grow onto the Relax widget on hover (rebuilt 2026-09-30, Jaxon: "make it look like vines").
        A sinuous stem draws in from each of two corners, curling tendrils follow it, and lance-shaped
@@ -925,13 +925,12 @@
       .arcade-cta:hover .cab-back, .arcade-cta:hover .cab-front { transform: none; }
     }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
-    /* ---- Arcade widget: insert a coin (2026-09-30, reworked the same day) --------------------
-       On hover a coin arcs in from the TOP-LEFT corner and lands on the cabinet icon (so it never
-       passes over the word), the screen flickers, a pixel invader marches on the left and a chomper
+    /* ---- Arcade widget (2026-09-30, reworked the same day; Jaxon removed the coin) ---------------
+       On hover the cabinet screen flickers, a pixel invader marches on the left and a chomper
        eats a row of dots on the right. Everything stays in the two outer thirds of the widget,
        clear of the icon and the label, and the old full-page confetti burst now only fires for the
        small inline Arcade button (home.js). */
-    .relax-cta > .arc-inv, .relax-cta > .arc-pm, .relax-cta > .arc-coin, .relax-cta > .crowd { position: absolute; pointer-events: none; z-index: 0; }
+    .relax-cta > .arc-inv, .relax-cta > .arc-pm, .relax-cta > .crowd { position: absolute; pointer-events: none; z-index: 0; }
     .arcade-cta .arc-inv { left: 16px; top: 14px; width: 33px; height: 24px; fill: var(--accent2, #218640); opacity: 0; transition: opacity .25s; }
     .arcade-cta .arc-inv .f2 { display: none; }
     .arcade-cta .arc-pm { right: 10px; top: 0; width: 84px; height: 52px; opacity: 0; transition: opacity .25s; }
@@ -959,20 +958,6 @@
     @keyframes pm-d1 { 0%, 31% { opacity: 1; } 32%, 99% { opacity: 0; } 100% { opacity: 1; } }
     @keyframes pm-d2 { 0%, 53% { opacity: 1; } 54%, 99% { opacity: 0; } 100% { opacity: 1; } }
     @keyframes pm-d3 { 0%, 75% { opacity: 1; } 76%, 99% { opacity: 0; } 100% { opacity: 1; } }
-    /* coin: an arc from the top-left corner onto the icon's left edge, spinning as it goes */
-    .arcade-cta .arc-coin { left: 12px; top: -26px; width: 20px; height: 20px; opacity: 0; color: #f2b01e; overflow: visible; }
-    .arcade-cta .arc-coin .ping { transform-box: fill-box; transform-origin: center; opacity: 0; }
-    .arcade-cta:hover .arc-coin, .arcade-cta:focus-visible .arc-coin { animation: arc-coin-arc 1s cubic-bezier(.4,.05,.55,1) .05s 1 both; }
-    .arcade-cta:hover .arc-coin .ping, .arcade-cta:focus-visible .arc-coin .ping { animation: arc-ping .5s ease-out .78s 1 both; }
-    @keyframes arc-coin-arc {
-      0%   { left: 12px; top: -26px; opacity: 0; transform: rotateY(0) scale(1); }
-      12%  { opacity: 1; }
-      52%  { left: calc(50% - 92px); top: 20px; transform: rotateY(360deg) scale(1); }
-      74%  { left: calc(50% - 62px); top: 16px; transform: rotateY(540deg) scale(1); opacity: 1; }
-      86%  { left: calc(50% - 56px); top: 16px; transform: rotateY(540deg) scale(.4); opacity: 0; }
-      100% { left: calc(50% - 56px); top: 16px; opacity: 0; }
-    }
-    @keyframes arc-ping { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(2.3); opacity: 0; } }
     .arcade-cta .cab-front { fill: currentColor; fill-opacity: 0; }
     .arcade-cta:hover .cab-front, .arcade-cta:focus-visible .cab-front { animation: arc-flicker 1.6s steps(1, end) .8s infinite; }
     @keyframes arc-flicker { 0%, 100% { fill-opacity: .16; } 12% { fill-opacity: .04; } 24% { fill-opacity: .2; } 40% { fill-opacity: .08; } 58% { fill-opacity: .22; } 74% { fill-opacity: .06; } }
@@ -988,7 +973,7 @@
     @keyframes av-hop { 0% { transform: translateY(26px); } 55% { transform: translateY(-7px); } 78% { transform: translateY(2px); } 100% { transform: none; } }
     @keyframes av-bob { 0%, 100% { transform: none; } 50% { transform: translateY(-3px); } }
     @media (prefers-reduced-motion: reduce) {
-      .arcade-cta .arc-inv, .arcade-cta .arc-pm, .arcade-cta .arc-coin, .group-cta .crowd { display: none; }
+      .arcade-cta .arc-inv, .arcade-cta .arc-pm, .group-cta .crowd { display: none; }
       .arcade-cta:hover .cab-front, .arcade-cta:focus-visible .cab-front { animation: none; }
     }
     @media (prefers-reduced-motion: reduce) {
