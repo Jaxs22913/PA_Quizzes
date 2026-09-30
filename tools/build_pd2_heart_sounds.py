@@ -90,6 +90,8 @@ CSS = """  .clip{margin:10px 0 6px;padding:10px 14px 12px;border:1px solid var(-
   .clip-title{margin:0 0 6px;font-size:.95rem;}
   .clip-where{color:var(--soft);font-weight:400;font-size:.84rem;}
   .clip audio{width:100%;max-width:480px;height:44px;display:block;}
+  header.top h1::before{content:"";display:inline-block;width:.85em;height:.85em;margin-right:.35em;vertical-align:-.05em;
+    background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat;}
   .lib-note{font-size:.84rem;color:var(--soft);margin:2px 0 14px;}
   @media(max-width:700px){main table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}}
 """

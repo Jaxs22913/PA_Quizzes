@@ -359,6 +359,11 @@
     padding: 3px 8px; border-radius: 999px; margin: 0 0 7px;
   }
   .guide-card-title { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
+  /* Audio material carries the same headphones mark as its homepage link. */
+  .guide-card--listen .guide-card-title::before {
+    content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 7px; vertical-align: -2px;
+    background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
   /* Descriptions were running to full paragraphs, which left every grid row
      ragged. Two lines, then ellipsis -- the card is a doorway, not the
      content. */
@@ -911,7 +916,7 @@
         <p class="guide-card-title">Physical Diagnosis 2 Exam 2 Cram Sheet</p>
         <p class="guide-card-desc">The night-before condensation, with eleven topics and eighty-five rows. It opens with what the lecture kept coming back to. Then come every heart sound and gallop, the impulse patterns, the Levine grades, all eleven murmurs in one table (timing, pitch, loudest point, radiation and maneuvers), the maneuver rules, arterial versus venous insufficiency, the ankle brachial index values and the pitting edema grades.</p>
       </a>
-      <a class="guide-card ref" href="Physical%20Diagnosis%202%20Exam%202/pd2-exam-2-heart-sound-guide.html">
+      <a class="guide-card ref guide-card--listen" href="Physical%20Diagnosis%202%20Exam%202/pd2-exam-2-heart-sound-guide.html">
         <span class="ref-badge">Quick Reference</span>
         <p class="guide-card-title">Physical Diagnosis 2 Exam 2 &mdash; Heart Sound &amp; Murmur Listening Guide</p>
         <p class="guide-card-desc"><strong>Twenty-two recordings</strong> you can play &mdash; normal S1 and S2, splitting, click, S3, S4, opening snap, and the systolic and diastolic murmurs &mdash; each with what to listen for and the lecture slide that teaches it. The companion to the listening quiz.</p>
