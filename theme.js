@@ -3033,8 +3033,15 @@ window.openPauseOverlay = function (opts) {
   function capToc() {
     capRaf = 0;
     if (!toc.offsetParent) return;                       // hidden: collapsed, or a narrow screen
-    var room = Math.floor(window.innerHeight - Math.max(toc.getBoundingClientRect().top, 38)) - 12;
-    toc.style.maxHeight = Math.max(room, 160) + "px";
+    // "Large" text applies CSS zoom to the whole page wrapper (theme.css, data-text-size), and a
+    // zoomed element's max-height is in its own, unzoomed pixels: 800px really covers 920 on
+    // screen. That is the bug Jaxon kept hitting (1.15 zoom = the box ran ~15% past the window).
+    // So measure the zoom (drawn height / layout height) and convert the room back.
+    var r = toc.getBoundingClientRect(), zoom = 1;
+    if (toc.offsetHeight > 0 && r.height > 0) zoom = r.height / toc.offsetHeight;
+    if (Math.abs(zoom - 1) < 0.01 || zoom < 0.5 || zoom > 3) zoom = 1;
+    var room = (window.innerHeight - Math.max(r.top, 38) - 12) / zoom;
+    toc.style.maxHeight = Math.max(Math.floor(room), 160) + "px";
   }
   function queueCap() { if (!capRaf) capRaf = requestAnimationFrame(capToc); }
   window.addEventListener("scroll", queueCap, { passive: true });
