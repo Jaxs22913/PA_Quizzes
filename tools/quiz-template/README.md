@@ -57,6 +57,24 @@ end-of-quiz review. `theme.js` arms it for click-to-enlarge automatically. Quest
 Note that `tools/build_group_quizzes.py` drops any quiz containing a picture question: Group
 Study is text-only, and "name this photograph" without the photograph is not a question.
 
+### Listening questions
+
+`audio` puts a player where a picture would go — added for the Physical Diagnosis 2 heart-sound quiz,
+where the recording *is* the question:
+
+```json
+{
+  "audio": "heart-sounds/aortic-stenosis.mp3",
+  "alt": "Recording of a heart murmur through a stethoscope",
+  "credit": "Heart Sound &amp; Murmur Library, University of Michigan (CC BY-SA 3.0)"
+}
+```
+
+`audio` is relative to the rendered quiz file. It loads only when someone presses play (`preload="none"`),
+and the native controls give play, seek and replay. `alt` is the accessible name (do not name the sound
+in it). `credit` is printed under the player as HTML, so a licence link can go there. Like picture
+quizzes, `tools/build_group_quizzes.py` skips a quiz that contains audio questions.
+
 ### Grouping by something other than an objective
 
 `io` drives the results breakdown and the chip above the stem. It is normally an instructional

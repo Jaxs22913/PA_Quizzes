@@ -147,7 +147,7 @@ def slug(s):
 
 def has_image(q):
     blob = json.dumps(q, ensure_ascii=False).lower()
-    return any(k in blob for k in ('"img"', 'imgsrc', 'imgcaption', 'data-img', '.png', '.jpg', '.jpeg', '.webp'))
+    return any(k in blob for k in ('"audio"', '"img"', 'imgsrc', 'imgcaption', 'data-img', '.png', '.jpg', '.jpeg', '.webp'))
 
 
 def _first(q, keys):
