@@ -3553,6 +3553,30 @@ window.openPauseOverlay = function (opts) {
   collapseBtn.addEventListener("click", function () { setCollapsed(true); });
   fab.addEventListener("click", function () { setCollapsed(false); });
   try { if (localStorage.getItem(KEY) === "1") setCollapsed(true); } catch (e) {}
+
+  // Keep the whole Contents box inside the visible window at every scroll position
+  // (2026-09-30, Jaxon: "the scroll on the contents doesn't let me go to the bottom").
+  // Each guide's inline CSS caps nav.toc at 100dvh - 38px and sticks it at top:38px, which is
+  // right once the page has scrolled past the banner -- but until then the box starts LOWER
+  // (below the header, 170-250px down) and its bottom hangs off the screen. Scrolling inside
+  // it cannot help (overscroll-behavior:contain stops the scroll reaching the page), so the
+  // last entries were unreachable. The cap is therefore recomputed from where the box
+  // actually is: room = visible height - max(its top, 38).
+  // Extra room at the end so the last entries scroll clear of the floating widget at the bottom left.
+  toc.style.paddingBottom = "76px";
+  var capRaf = 0;
+  function capToc() {
+    capRaf = 0;
+    if (!toc.offsetParent) return;                       // hidden: collapsed, or a narrow screen
+    var room = Math.floor(window.innerHeight - Math.max(toc.getBoundingClientRect().top, 38));
+    toc.style.maxHeight = Math.max(room, 160) + "px";
+  }
+  function queueCap() { if (!capRaf) capRaf = requestAnimationFrame(capToc); }
+  window.addEventListener("scroll", queueCap, { passive: true });
+  window.addEventListener("resize", queueCap);
+  collapseBtn.addEventListener("click", queueCap);
+  fab.addEventListener("click", queueCap);
+  queueCap();
 })();
 
 // Seasonal snowfall (added 2026-07-16) -- December only. Lives here rather
