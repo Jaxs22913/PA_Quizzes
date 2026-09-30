@@ -817,6 +817,16 @@
        and tablet; the narrow 260px desktop sidebar shrinks it just enough
        (see the >=1180px block) rather than letting it wrap to two lines. */
     .class-counter .cc-label { white-space: nowrap; }
+    /* Odometer digits (class-stats.js animateTo): each digit is a column of 0-9 that slides to its value. */
+    .class-counter .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .class-counter .odo { display: inline-flex; align-items: flex-end; }
+    .class-counter .od { display: inline-block; height: 1.18em; line-height: 1.18; overflow: hidden; }
+    .class-counter .odr { display: flex; flex-direction: column; transform: translateY(calc(var(--d, 0) * -1.18em)); transition: transform 1.05s cubic-bezier(.16,.84,.26,1); }
+    .class-counter .odr i { font-style: normal; height: 1.18em; line-height: 1.18; }
+    .class-counter .osep { line-height: 1.18; }
+    .class-counter.cc-bump .cc-num { animation: cc-bump .55s ease-out 1; }
+    @keyframes cc-bump { 0% { transform: scale(1); } 30% { transform: scale(1.14); } 100% { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .class-counter .odr { transition: none; } .class-counter.cc-bump .cc-num { animation: none; } }
     .my-progress-link {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--accent-soft, #eef0fd); color: var(--accent, #2a6df2);

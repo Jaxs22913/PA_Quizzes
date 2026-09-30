@@ -189,6 +189,7 @@
   }
 
   window.ClassStats = {
+    _odo: function (el, n) { animateTo(el, n); },   // test hook: drive the odometer without Firebase
     // Record n newly-completed questions toward the class total.
     record: function (n) {
       n = Math.max(0, Math.floor(+n || 0));
@@ -286,17 +287,57 @@
     };
   }
 
+  // The homepage counter is an ODOMETER (2026-09-30, Jaxon: "do 4"): every digit is its own column
+  // that rolls to its new value, right-most first, instead of the whole number being swapped.
+  // The real number stays in a visually hidden span for screen readers and for aria-live; the
+  // rolling digits are aria-hidden decoration. With reduced motion the digits simply jump.
+  var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function digitCol(d) {
+    var col = document.createElement("span"); col.className = "od";
+    var roll = document.createElement("span"); roll.className = "odr";
+    for (var k = 0; k < 10; k++) { var i = document.createElement("i"); i.textContent = k; roll.appendChild(i); }
+    roll.style.setProperty("--d", d); col.appendChild(roll); return col;
+  }
   function animateTo(el, target) {
     var start = parseInt(el.getAttribute("data-val") || "0", 10) || 0;
-    if (target === start) { el.textContent = target.toLocaleString(); el.setAttribute("data-val", target); return; }
-    var t0 = performance.now(), dur = 900;
-    (function step(now) {
-      var p = Math.min(1, (now - t0) / dur);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(start + (target - start) * eased).toLocaleString();
-      if (p < 1) requestAnimationFrame(step);
-      else { el.textContent = target.toLocaleString(); el.setAttribute("data-val", target); }
-    })(t0);
+    var str = target.toLocaleString();
+    var sr = el.querySelector(".sr"), od = el.querySelector(".odo");
+    if (!sr) {
+      el.textContent = "";
+      sr = document.createElement("span"); sr.className = "sr"; el.appendChild(sr);
+      od = document.createElement("span"); od.className = "odo"; od.setAttribute("aria-hidden", "true"); el.appendChild(od);
+    }
+    sr.textContent = str;
+    var prevStr = start.toLocaleString();
+    // rebuild the columns when the shape changes (a comma or a new digit appears), starting each
+    // digit at its old value so it rolls from where it was
+    var shapeKey = str.replace(/\d/g, "9");
+    if (od.getAttribute("data-shape") !== shapeKey) {
+      od.innerHTML = ""; od.setAttribute("data-shape", shapeKey);
+      var pad = prevStr.length < str.length ? new Array(str.length - prevStr.length + 1).join("0") : "";
+      var from = (pad + prevStr).slice(-str.length);
+      for (var i = 0; i < str.length; i++) {
+        var ch = str.charAt(i);
+        if (/\d/.test(ch)) od.appendChild(digitCol(/\d/.test(from.charAt(i)) ? +from.charAt(i) : 0));
+        else { var sep = document.createElement("span"); sep.className = "osep"; sep.textContent = ch; od.appendChild(sep); }
+      }
+    }
+    var cols = od.querySelectorAll(".odr"), digits = str.replace(/\D/g, "");
+    if (reduceMotion || target === start && el.getAttribute("data-val") !== null) {
+      [].forEach.call(cols, function (c, n) { c.style.transition = "none"; c.style.setProperty("--d", digits.charAt(n)); });
+    } else {
+      // right-most digit first, each column a little later than the one to its right
+      void od.offsetWidth;   // flush the starting digits so the roll is a transition, not a jump
+      requestAnimationFrame(function () {
+        [].forEach.call(cols, function (c, n) {
+          c.style.transitionDelay = ((cols.length - 1 - n) * 70) + "ms";
+          c.style.setProperty("--d", digits.charAt(n));
+        });
+      });
+      var wrap = el.closest ? el.closest(".class-counter") : null;
+      if (wrap && target > start && start > 0) { wrap.classList.remove("cc-bump"); void wrap.offsetWidth; wrap.classList.add("cc-bump"); }
+    }
+    el.setAttribute("data-val", target);
   }
 
   function boot() {
