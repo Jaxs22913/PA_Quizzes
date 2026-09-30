@@ -3024,11 +3024,16 @@ window.openPauseOverlay = function (opts) {
   // it cannot help (overscroll-behavior:contain stops the scroll reaching the page), so the
   // last entries were unreachable. The cap is therefore recomputed from where the box
   // actually is: room = visible height - max(its top, 38).
+  // Belt and braces (2026-09-30, second report: "still doesn't show it all"): however the browser
+  // measures its window (toolbars, zoom, an installed-app frame), the last entries must be able to
+  // scroll well clear of the box's bottom edge, so the list ends with ~a hundred pixels of runway
+  // and the cap leaves a small margin instead of landing exactly on the window edge.
+  toc.style.paddingBottom = "110px";
   var capRaf = 0;
   function capToc() {
     capRaf = 0;
     if (!toc.offsetParent) return;                       // hidden: collapsed, or a narrow screen
-    var room = Math.floor(window.innerHeight - Math.max(toc.getBoundingClientRect().top, 38));
+    var room = Math.floor(window.innerHeight - Math.max(toc.getBoundingClientRect().top, 38)) - 12;
     toc.style.maxHeight = Math.max(room, 160) + "px";
   }
   function queueCap() { if (!capRaf) capRaf = requestAnimationFrame(capToc); }
