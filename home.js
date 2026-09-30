@@ -1434,7 +1434,7 @@ function buildHomeTourSteps() {
           })(i);
         }
       }
-      document.querySelectorAll('a[href="arcade.html"]').forEach(function (btn) {
+      document.querySelectorAll('a[href="arcade.html"]:not(.relax-cta)').forEach(function (btn) {
         btn.addEventListener("mouseenter", function () { burstFromButton(btn); });
       });
 
@@ -1470,7 +1470,7 @@ function buildHomeTourSteps() {
           })(i);
         }
       }
-      document.querySelectorAll('a[href="group-join.html"]').forEach(function (btn) {
+      document.querySelectorAll('a[href="group-join.html"]:not(.relax-cta)').forEach(function (btn) {
         btn.addEventListener("mouseenter", function () { joinAtButton(btn); });
       });
     })();
