@@ -1109,6 +1109,15 @@
       box-shadow: var(--shadow-lift);
     }
     a.quiz-link:hover::before { transform: scale(1.6) rotate(-30deg); }
+    /* Listening quizzes (audio questions) swap the round bullet for headphones, so the
+       one quiz you play by ear reads differently from the rest at a glance. A mask keeps the
+       icon on the link's accent colour in light and dark without a second asset. */
+    a.quiz-link--listen::before {
+      width: 17px; height: 17px; border-radius: 0; background: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 18v-6a9 9 0 0 1 18 0v6'/%3E%3Cpath d='M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    a.quiz-link--listen:hover::before { transform: scale(1.2); }
     @media (prefers-reduced-motion: reduce) {
       a.quiz-link, a.quiz-link::before { transition: none; }
       a.quiz-link:hover { transform: none; }
