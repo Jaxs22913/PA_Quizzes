@@ -402,7 +402,7 @@ window.SitePrompts = {
      nothing started later than 0.3s in, but a piece released at 2s would
      otherwise be yanked out of the air mid-fall. */
   function burstConfetti(count, spread) {
-    var colors = ["#2563eb", "#16a34a", "#9333ea", "#f59e0b", "#dc2626"];
+    var colors = window.__confettiColors || ["#2563eb", "#16a34a", "#9333ea", "#f59e0b", "#dc2626"];
     var release = typeof spread === "number" ? spread : 0.3;
     var lifetime = (release + 3.2) * 1000;
     for (var i = 0; i < count; i++) {
@@ -5476,4 +5476,147 @@ window.openPauseOverlay = function (opts) {
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
+})();
+
+
+/* ============================================================
+   PA WEEK (2026-09-30, Jaxon: "a theme for PA week ... Monday through Friday
+   next week", "fun animations")
+   ------------------------------------------------------------
+   Active Mon 5 - Fri 9 October 2026 only (year-specific on purpose: move the dates each
+   year), or on any page loaded with ?paweek=1 so it can be previewed outside the window.
+   Same architecture as the other seasonal themes: lives here so every page gets it.
+   1. A canvas of PA-themed things drifting UP like balloons behind the UI (hearts,
+      stethoscopes, medical crosses, pills, little "PA" badges) that scatter from the
+      cursor or a finger (the standing repel default for particle themes).
+   2. body.paweek-theme, which the app-shell pages tint and drift (theme.css, arcade.css,
+      guides.html, group-join.html, group-host.html).
+   3. A welcome card on the app-shell pages, once a day per device: a heartbeat line that
+      keeps drawing, a line for the day of the week, and a burst of PA-coloured confetti.
+   4. Quiz-completion confetti in the same colours all week.
+   ============================================================ */
+(function () {
+  var now = new Date();
+  var inWeek = now.getFullYear() === 2026 && now.getMonth() === 9 && now.getDate() >= 5 && now.getDate() <= 9;
+  var preview = false;
+  try { preview = /[?&]paweek=1(&|$)/.test(location.search); } catch (e) {}
+  if (!inWeek && !preview) return;
+
+  document.body.classList.add("paweek-theme");
+  var PALETTE = ["#2563eb", "#14b8a6", "#f43f5e", "#f59e0b", "#8b5cf6"];
+  window.__confettiColors = PALETTE;
+
+  /* ---------- 1. the drifting shapes ---------- */
+  var canvas = document.createElement("canvas");
+  canvas.setAttribute("aria-hidden", "true");
+  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
+  document.body.insertBefore(canvas, document.body.firstChild);
+  var ctx = canvas.getContext("2d");
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var density = window.innerWidth < 700 ? 14 : 28;
+  var mouseX = null, mouseY = null, REPEL = 110;
+  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
+  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
+  window.addEventListener("touchmove", function (e) { if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; } }, { passive: true });
+  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
+  function resize() {
+    canvas.width = window.innerWidth * devicePixelRatio; canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width = window.innerWidth + "px"; canvas.style.height = window.innerHeight + "px";
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  }
+  window.addEventListener("resize", resize); resize();
+
+  // heart (the same two-lobe bezier the Valentine's theme uses), stethoscope, cross, pill, PA badge
+  var KINDS = ["heart", "heart", "steth", "steth", "cross", "cross", "pill", "badge"];
+  function traceHeart(s) {
+    var w = s * 1.8, h = s * 1.7, top = h * 0.28, mid = (h + top) / 2;
+    ctx.translate(0, -h * 0.5);
+    ctx.beginPath(); ctx.moveTo(0, top);
+    ctx.bezierCurveTo(0, 0, -w / 2, 0, -w / 2, top); ctx.bezierCurveTo(-w / 2, mid, 0, mid, 0, h);
+    ctx.bezierCurveTo(0, mid, w / 2, mid, w / 2, top); ctx.bezierCurveTo(w / 2, 0, 0, 0, 0, top); ctx.closePath();
+  }
+  function drawShape(p) {
+    var s = p.s, c = p.color;
+    ctx.fillStyle = c; ctx.strokeStyle = c;
+    if (p.kind === "heart") { traceHeart(s); ctx.fill(); }
+    else if (p.kind === "cross") {
+      var a = s * 0.42; ctx.beginPath(); ctx.rect(-a, -s, 2 * a, 2 * s); ctx.rect(-s, -a, 2 * s, 2 * a); ctx.fill();
+    } else if (p.kind === "pill") {
+      var r = s * 0.72, h = s * 1.05;
+      ctx.beginPath(); ctx.moveTo(-h, -r); ctx.lineTo(h, -r); ctx.arc(h, 0, r, -Math.PI / 2, Math.PI / 2); ctx.lineTo(-h, r); ctx.arc(-h, 0, r, Math.PI / 2, Math.PI * 1.5); ctx.closePath();
+      ctx.fill();
+      ctx.save(); ctx.clip(); ctx.fillStyle = "rgba(255,255,255,.88)"; ctx.fillRect(-h * 2, -r, h * 2, 2 * r); ctx.restore();
+      ctx.lineWidth = 1.4; ctx.stroke();
+    } else if (p.kind === "steth") {
+      ctx.lineWidth = Math.max(1.6, s * 0.2); ctx.lineCap = "round"; ctx.lineJoin = "round";
+      ctx.beginPath(); ctx.moveTo(-s * 0.75, -s * 1.05); ctx.quadraticCurveTo(-s * 0.75, s * 0.35, 0, s * 0.35); ctx.quadraticCurveTo(s * 0.75, s * 0.35, s * 0.75, -s * 1.05); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, s * 0.35); ctx.bezierCurveTo(0, s * 1.0, s * 0.95, s * 0.6, s * 0.95, s * 1.0); ctx.stroke();
+      ctx.beginPath(); ctx.arc(s * 0.95, s * 1.25, s * 0.28, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(-s * 0.75, -s * 1.05, s * 0.14, 0, Math.PI * 2); ctx.arc(s * 0.75, -s * 1.05, s * 0.14, 0, Math.PI * 2); ctx.fill();
+    } else {
+      ctx.beginPath(); ctx.arc(0, 0, s * 1.15, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#fff"; ctx.font = "800 " + Math.round(s * 1.05) + "px -apple-system, system-ui, sans-serif";
+      ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("PA", 0, s * 0.06);
+    }
+  }
+  function make(randomY) {
+    return {
+      kind: KINDS[(Math.random() * KINDS.length) | 0], color: PALETTE[(Math.random() * PALETTE.length) | 0],
+      s: 8 + Math.random() * 7, x: Math.random() * window.innerWidth,
+      y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 30 + Math.random() * 60,
+      speed: 0.28 + Math.random() * 0.4, drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
+      tilt: Math.random() * 6, opacity: 0.5 + Math.random() * 0.35, vx: 0, vy: 0
+    };
+  }
+  var ps = []; for (var i = 0; i < density; i++) ps.push(make(true));
+  function frame(still) {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    for (var k = 0; k < ps.length; k++) {
+      var p = ps[k];
+      if (!still) {
+        if (mouseX !== null) {
+          var dx = p.x - mouseX, dy = p.y - mouseY, dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < REPEL && dist > 0.01) { var f = (1 - dist / REPEL) * 1.8; p.vx += dx / dist * f; p.vy += dy / dist * f; }
+        }
+        p.vx *= 0.9; p.vy *= 0.9;
+        p.y -= p.speed; p.y += p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 0.9 + p.vx; p.tilt += 0.012;
+        if (p.y < -60) { ps[k] = make(false); continue; }
+        if (p.x < -40) p.x = window.innerWidth + 40; if (p.x > window.innerWidth + 40) p.x = -40;
+      }
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(Math.sin(p.tilt) * 0.4);
+      ctx.globalAlpha = p.opacity * (0.85 + 0.15 * Math.sin(p.drift * 2));
+      drawShape(p); ctx.restore();
+    }
+    ctx.globalAlpha = 1;
+  }
+  if (reduce) frame(true);
+  else (function loop() { frame(false); requestAnimationFrame(loop); })();
+
+  /* ---------- 3. the welcome card (app-shell pages only, once a day) ---------- */
+  var path = location.pathname.replace(/^.*\//, "");
+  var shell = document.body.classList.contains("homepage") || /^(|index\.html|guides\.html|calendar\.html|arcade[\w-]*\.html|group-(join|host)\.html)$/.test(path);
+  if (!shell) return;
+  var DAYS = {
+    1: "Kickoff! This week belongs to physician assistants, and to the one you are becoming.",
+    2: "Every heartbeat you learn is a patient you will help someday.",
+    3: "Halfway there. Teamwork is at the heart of the PA profession.",
+    4: "Fun fact: PAs practice medicine in every specialty.",
+    5: "Last day of PA Week. You have earned a little celebration."
+  };
+  var dow = now.getDay(); if (dow < 1 || dow > 5) dow = 1;
+  var key = "paWeekSeen:" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate(), seen = false;
+  try { seen = !preview && localStorage.getItem(key) === "1"; } catch (e) {}
+  if (seen) return;
+  try { localStorage.setItem(key, "1"); } catch (e) {}
+  var card = document.createElement("div");
+  card.className = "pa-toast"; card.setAttribute("role", "status");
+  card.innerHTML = '<svg class="pa-ecg" viewBox="0 0 120 32" aria-hidden="true"><path pathLength="1" d="M0 17H22L27 17 31 5 37 28 42 12 46 17H70L75 17 79 7 85 26 89 17H120"/></svg>' +
+    '<div class="pa-toast-txt"><b>Happy PA Week, Class of 2028!</b><span></span></div>' +
+    '<button type="button" class="pa-toast-x" aria-label="Close">&times;</button>';
+  card.querySelector("span").textContent = DAYS[dow];
+  document.body.appendChild(card);
+  function close() { card.classList.add("out"); setTimeout(function () { card.remove(); }, 450); }
+  card.querySelector(".pa-toast-x").addEventListener("click", close);
+  setTimeout(close, 9000);
+  if (!reduce && window.burstConfetti) setTimeout(function () { window.burstConfetti(90, 1.4); }, 350);
 })();

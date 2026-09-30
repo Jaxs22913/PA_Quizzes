@@ -74,10 +74,17 @@
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
+  :root[data-theme="light"] body.paweek-theme {
+    --paper: #e7f6f4; --card: #fbfffe; --line: #c7e7e1;
+    background: linear-gradient(120deg, #e7f6f4, #f2fbf9, #d4edf2, #e7f6f4);
+    background-color: #e7f6f4;
+    background-size: 300% 300%;
+    animation: bg-drift 16s ease-in-out infinite;
+  }
   @media (prefers-reduced-motion: reduce) {
     /* !important needed: the :root[data-theme=...]-scoped drift rules above
        are more specific than a plain class selector can match without it. */
-    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme {
+    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme, body.paweek-theme {
       animation: none !important;
       background-position: 0% 50% !important;
     }

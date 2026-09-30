@@ -492,6 +492,13 @@ a.corner-btn:hover { text-decoration: none; }
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
+:root[data-theme="light"] body.homepage.paweek-theme {
+  --bg: #e7f6f4; --card: #fbfffe; --border: #c7e7e1;
+  background: linear-gradient(120deg, #e7f6f4, #f2fbf9, #d4edf2, #e7f6f4);
+  background-color: #e7f6f4;
+  background-size: 300% 300%;
+  animation: bg-drift 16s ease-in-out infinite;
+}
 @media (prefers-reduced-motion: reduce) {
   /* !important needed here: the :root[data-theme=...]-scoped drift rules
      above are more specific than a plain class selector can match without
@@ -501,7 +508,8 @@ a.corner-btn:hover { text-decoration: none; }
   body.homepage.vday-theme,
   body.homepage.fall-theme,
   body.homepage.stpatricks-theme,
-  body.homepage.xmas-theme {
+  body.homepage.xmas-theme,
+  body.homepage.paweek-theme {
     animation: none !important;
     background-position: 0% 50% !important;
   }
@@ -3264,3 +3272,35 @@ html.gl-open { overflow: hidden; }
   text-transform: uppercase; opacity: .8; }
 .qa-also ul { margin: 0; padding-left: 1.25em; }
 .qa-also li { margin: .35em 0; }
+
+
+/* ============================================================
+   PA WEEK welcome card (theme.js, Oct 5-9 2026 or ?paweek=1)
+   Appended to <body> (so it sits outside the dark-mode invert wrapper and
+   carries its own dark colours). Slides down, a heartbeat line keeps drawing.
+   ============================================================ */
+.pa-toast {
+  position: fixed; left: 50%; top: 14px; z-index: 9500; transform: translate(-50%, 0);
+  display: flex; align-items: center; gap: 12px; width: max-content; max-width: min(520px, calc(100vw - 24px)); box-sizing: border-box;
+  padding: 10px 14px 10px 12px; border-radius: 16px; border: 1.5px solid #14b8a6;
+  background: #ffffff; color: #1f2937; box-shadow: 0 10px 30px rgba(20, 184, 166, .28), 0 2px 6px rgba(0, 0, 0, .08);
+  animation: pa-in .6s cubic-bezier(.3, 1.4, .5, 1) both;
+}
+.pa-toast.out { animation: pa-out .4s ease forwards; }
+.pa-ecg { width: 62px; height: 22px; flex: none; fill: none; stroke: #f43f5e; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.pa-ecg path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: pa-beat 2.2s ease-in-out .3s infinite; }
+.pa-toast-txt { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
+.pa-toast-txt b { font-size: 14.5px; }
+.pa-toast-txt span { font-size: 12.5px; color: #4b5563; }
+.pa-toast-x { flex: none; border: 0; background: none; color: #6b7280; font-size: 22px; line-height: 1; cursor: pointer; padding: 2px 4px; }
+.pa-toast-x:hover { color: #111827; }
+:root[data-theme="dark"] .pa-toast { background: #1c1f26; color: #e5e7eb; border-color: #2dd4bf; box-shadow: 0 10px 30px rgba(20, 184, 166, .22); }
+:root[data-theme="dark"] .pa-toast-txt span { color: #aeb4bf; }
+:root[data-theme="dark"] .pa-toast-x { color: #9ca3af; }
+@keyframes pa-in { from { opacity: 0; transform: translate(-50%, -26px) scale(.94); } }
+@keyframes pa-out { to { opacity: 0; transform: translate(-50%, -18px) scale(.96); } }
+@keyframes pa-beat { 0% { stroke-dashoffset: 1; } 55% { stroke-dashoffset: 0; } 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: -1; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .pa-toast { animation: none; }
+  .pa-ecg path { animation: none; stroke-dashoffset: 0; }
+}
