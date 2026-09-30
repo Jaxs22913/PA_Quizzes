@@ -860,24 +860,31 @@
       box-shadow: var(--shadow);
       transition: border-color .15s, transform .15s, box-shadow .15s;
     }
-    .relax-cta svg:not(.sprig) { width: 18px; height: 18px; flex: none; }
+    .relax-cta svg:not(.vines) { width: 18px; height: 18px; flex: none; }
     .relax-cta svg.leaf-icon { transition: transform .4s var(--ease-spring); }
-    /* Branches that grow onto the Relax widget on hover (leafy sprigs from two corners) */
+    /* Vines that grow onto the Relax widget on hover (rebuilt 2026-09-30, Jaxon: "make it look like vines").
+       A sinuous stem draws in from each of two corners, curling tendrils follow it, and lance-shaped
+       leaves unfurl one after another from where they join the stem; once grown the vine sways very
+       slightly. Plain transitions, so moving the pointer away retracts it instead of snapping.
+       Keyboard focus grows them too. The bottom-right vine is the same drawing turned half a turn. */
     .relax-cta > svg.leaf-icon, .relax-cta > span { position: relative; z-index: 1; }
-    .relax-cta .sprig { position: absolute; width: 64px; height: 40px; color: var(--accent, #2a6df2); opacity: .5; pointer-events: none; z-index: 0; }
-    .relax-cta .sprig-tl { top: -3px; left: -5px; }
-    .relax-cta .sprig-br { bottom: -3px; right: -5px; transform: rotate(180deg); }
-    .relax-cta .sprig .vine { stroke-dasharray: 1; stroke-dashoffset: 1; }
-    .relax-cta .sprig .leaf { transform: scale(0); transform-box: fill-box; transform-origin: center; }
-    .relax-cta:hover .sprig .vine { animation: vine-draw .7s ease forwards; }
-    .relax-cta:hover .sprig g:nth-of-type(1) .leaf { animation: leaf-grow .45s ease .18s forwards; }
-    .relax-cta:hover .sprig g:nth-of-type(2) .leaf { animation: leaf-grow .45s ease .32s forwards; }
-    .relax-cta:hover .sprig g:nth-of-type(3) .leaf { animation: leaf-grow .45s ease .44s forwards; }
-    @keyframes vine-draw { to { stroke-dashoffset: 0; } }
-    @keyframes leaf-grow { from { transform: scale(0); } to { transform: scale(1); } }
+    .relax-cta .vines { position: absolute; width: 84px; height: 42px; color: var(--accent, #2a6df2); opacity: .62; pointer-events: none; z-index: 0; overflow: visible; }
+    .relax-cta .vines-tl { top: -2px; left: -3px; }
+    .relax-cta .vines-br { bottom: -2px; right: -3px; transform: rotate(180deg); }
+    .relax-cta .vsway { transform-box: view-box; transform-origin: 0 0; }
+    .relax-cta .vstem, .relax-cta .vtend { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .32s ease; }
+    .relax-cta .vgrow { transform: scale(0) rotate(-24deg); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .28s ease; }
+    .relax-cta .vl { fill: currentColor; fill-opacity: .34; stroke: currentColor; stroke-width: .8; stroke-linejoin: round; }
+    .relax-cta .vrib { stroke: currentColor; stroke-width: .6; opacity: .75; stroke-linecap: round; }
+    .relax-cta:hover .vstem, .relax-cta:focus-visible .vstem { stroke-dashoffset: 0; transition: stroke-dashoffset 1s cubic-bezier(.45,.05,.25,1); }
+    .relax-cta:hover .vtend, .relax-cta:focus-visible .vtend { stroke-dashoffset: 0; transition: stroke-dashoffset .7s ease .55s; }
+    .relax-cta:hover .vtend2, .relax-cta:focus-visible .vtend2 { transition-delay: .85s; }
+    .relax-cta:hover .vgrow, .relax-cta:focus-visible .vgrow { transform: scale(1) rotate(0); transition: transform .55s cubic-bezier(.3,1.5,.5,1) var(--d, .5s); }
+    .relax-cta:hover .vsway, .relax-cta:focus-visible .vsway { animation: vine-sway 3.6s ease-in-out 1.6s infinite; }
+    @keyframes vine-sway { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(1.8deg); } }
     @media (prefers-reduced-motion: reduce) {
-      .relax-cta:hover .sprig .vine { animation: none; stroke-dashoffset: 0; }
-      .relax-cta:hover .sprig .leaf { animation: none; transform: scale(1); }
+      .relax-cta .vstem, .relax-cta .vtend, .relax-cta .vgrow { transition: none !important; }
+      .relax-cta:hover .vsway, .relax-cta:focus-visible .vsway { animation: none; }
       .relax-cta:not(.group-cta):not(.arcade-cta):hover { animation: none; box-shadow: 0 8px 22px rgba(37,99,235,.3); }
     }
     .relax-cta .leaf-blade { fill: rgba(37,99,235,.15); transition: fill .5s var(--ease); }
@@ -909,9 +916,9 @@
     }
     .relax-cta:hover .leaf-blade { fill: rgba(37,99,235,.20); }
     @media (prefers-reduced-motion: reduce) {
-      .class-counter:hover .cc-icon svg, .relax-cta:hover svg { transform: none; }
+      .class-counter:hover .cc-icon svg, .relax-cta:hover svg.leaf-icon { transform: none; }
       .my-progress-link:hover .mp-line { animation: none; }
-      .class-counter .cc-icon svg, .relax-cta svg { transition: none; }
+      .class-counter .cc-icon svg, .relax-cta svg.leaf-icon { transition: none; }
     }
 
     .tabs {
