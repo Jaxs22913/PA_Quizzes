@@ -71,6 +71,20 @@
   .cell.drop{border-color:var(--acc);background:var(--acc-soft);}
   .cell:focus-visible,.zone:focus-visible,.pal:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
 
+  /* ---- after Submit only: the correct build draws itself in and a playhead follows the recording ---- */
+  .cell.pop svg{animation:mb-pop .24s cubic-bezier(.3,1.7,.5,1) 1;}
+  @keyframes mb-pop{0%{transform:scale(.6)}100%{transform:none}}
+  .strip.draw .cell svg > *{transform-box:fill-box;transform-origin:50% 100%;animation:mb-grow .5s cubic-bezier(.3,1.3,.5,1) calc(var(--k,0) * .07s + .1s) both;}
+  .strip.draw .zone.filled{animation:mb-slide .45s ease .05s both;}
+  @keyframes mb-grow{from{transform:scaleY(0);opacity:.3}to{transform:none;opacity:1}}
+  @keyframes mb-slide{from{transform:translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+  .correct-build .board{position:relative;}
+  .playhead{position:absolute;top:0;bottom:0;width:0;pointer-events:none;z-index:3;opacity:0;transition:opacity .25s;}
+  .playhead.on{opacity:1;}
+  .playhead::before{content:"";position:absolute;left:-1.5px;top:-4px;bottom:-4px;width:3px;border-radius:2px;background:var(--gold);box-shadow:0 0 0 1px rgba(255,255,255,.7),0 0 12px rgba(192,138,46,.9);}
+  .playhead::after{content:"";position:absolute;left:-5px;top:-9px;width:10px;height:10px;border-radius:50%;background:var(--gold);}
+  .cell.hit{box-shadow:0 0 0 3px var(--gold);}
+  .heard{margin:12px 0 0;}
   .palette{display:block;margin-top:6px;}
   .pal{font:inherit;font-size:11.5px;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:12px;
     padding:3px 4px 5px;width:84px;cursor:grab;touch-action:none;display:flex;flex-direction:column;align-items:center;gap:1px;
@@ -126,7 +140,7 @@
     .pal.label{min-width:0;flex:1}
     .stats{margin-left:0;width:100%}
   }
-  @media(prefers-reduced-motion:reduce){*{transition:none !important}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important}.strip.draw .cell svg > *,.strip.draw .zone.filled,.cell.pop svg{animation:none !important}.playhead{transition:none}}
 </style>
 </head>
 <body>
@@ -257,20 +271,20 @@
   };
 
   var ITEMS = [
-    { clip: "01_apex_normal_s1_s2_supine_bell.mp3", build: "normal" },
-    { clip: "05_apex_s3_lld_bell.mp3", build: "s3" },
-    { clip: "03_apex_s4_lld_bell.mp3", build: "s4" },
-    { clip: "04_apex_mid_sys_click_supine_bell.mp3", build: "click" },
-    { clip: "07_apex_mid_sys_mur_supine_bell.mp3", build: "midsys" },
-    { clip: "08_apex_late_sys_mur_supine_bell.mp3", build: "latesys" },
-    { clip: "09_apex_holo_sys_mur_supine_bell.mp3", build: "holosys" },
-    { clip: "10_apex_sys_click_late_sys_mur_lld_bell.mp3", build: "mvp" },
-    { clip: "11_apex_s4_mid_sys_mur_lld_bell.mp3", build: "s4mid" },
-    { clip: "12_apex_s3_holo_sys_mur_lld_bell.mp3", build: "s3holo" },
-    { clip: "13_apex_os_dias_mur_lld_bell.mp3", build: "snap" },
-    { clip: "15_aortic_sys_mur_absent_s2_sitting_bell.mp3", build: "midsys" },
-    { clip: "16_aortic_early_dias_mur_sitting_bell.mp3", build: "earlydia" },
-    { clip: "23_pulm_eject_sys_mur_single_s2_eject_click_supine_diaph.mp3", build: "ej" }
+    { clip: "01_apex_normal_s1_s2_supine_bell.mp3", cyc: [0.148, 0.449, 0.951], build: "normal" },
+    { clip: "05_apex_s3_lld_bell.mp3", cyc: [0.215, 0.54, 1.07], build: "s3" },
+    { clip: "03_apex_s4_lld_bell.mp3", cyc: [0.207, 0.519, 1.035], build: "s4" },
+    { clip: "04_apex_mid_sys_click_supine_bell.mp3", cyc: [0.355, 0.672, 1.207], build: "click" },
+    { clip: "07_apex_mid_sys_mur_supine_bell.mp3", cyc: [0.442, 0.8, 1.386], build: "midsys" },
+    { clip: "08_apex_late_sys_mur_supine_bell.mp3", cyc: [0.301, 0.691, 1.248], build: "latesys" },
+    { clip: "09_apex_holo_sys_mur_supine_bell.mp3", cyc: [0.253, 0.594, 1.193], build: "holosys" },
+    { clip: "10_apex_sys_click_late_sys_mur_lld_bell.mp3", cyc: [0.314, 0.632, 1.166], build: "mvp" },
+    { clip: "11_apex_s4_mid_sys_mur_lld_bell.mp3", cyc: [0.309, 0.651, 1.208], build: "s4mid" },
+    { clip: "12_apex_s3_holo_sys_mur_lld_bell.mp3", cyc: [0.594, 0.885, 1.344], build: "s3holo" },
+    { clip: "13_apex_os_dias_mur_lld_bell.mp3", cyc: [0.598, 0.899, 1.41], build: "snap" },
+    { clip: "15_aortic_sys_mur_absent_s2_sitting_bell.mp3", cyc: [0.156, 0.506, 0.88], s2est: true, build: "midsys" },
+    { clip: "16_aortic_early_dias_mur_sitting_bell.mp3", cyc: [0.171, 0.471, 0.971], build: "earlydia" },
+    { clip: "23_pulm_eject_sys_mur_single_s2_eject_click_supine_diaph.mp3", cyc: [0.696, 1.005, 1.557], build: "ej" }
   ];
 
   /* ---------------- drawing ---------------- */
@@ -296,7 +310,7 @@
   function anchorLabel(i) { return i === 4 ? "S₂" : "S₁"; }
 
   /* ---------------- state ---------------- */
-  var state = { order: [], idx: 0, cells: [], labels: [null, null], armed: null, done: false, score: 0, streak: 0, missed: [] };
+  var state = { pop: -1, strip: null, order: [], idx: 0, cells: [], labels: [null, null], armed: null, done: false, score: 0, streak: 0, missed: [] };
   var $ = function (id) { return document.getElementById(id); };
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function prefilled() { return $("prefill").checked; }
@@ -319,6 +333,7 @@
     return '<button type="button" class="' + cls + '" data-z="' + z + '" aria-label="' + aria + '"' + (locked ? " disabled" : "") + ">" + text + "</button>";
   }
   function cellHtml(i, code, locked, verdict) {
+    var popCls = (!locked && state.pop === i) ? " pop" : "";
     var lockedCell = locked || (prefilled() && isAnchor(i));
     var sh;
     if (code) sh = art(code);
@@ -326,11 +341,11 @@
     else sh = '<svg viewBox="0 0 60 76" aria-hidden="true"></svg>';
     var cap = isAnchor(i) ? (i === 4 ? "S2" : "S1") : ["early", "mid", "late"][slotIndex(i) % 3];
     var label = (isAnchor(i) ? (i === 4 ? "S2 position" : "S1 position") : SLOT[slotIndex(i)]) + (code ? ", " + NAMES[code] : ", empty");
-    return '<button type="button" class="cell' + (code ? " filled" : "") + (isAnchor(i) ? " anchor" : "") + (lockedCell ? " locked" : "") + (verdict ? " " + verdict : "") +
-           '" data-i="' + i + '" aria-label="' + label + '"' + (lockedCell ? " disabled" : "") + ">" + sh + '<span class="cap">' + cap + "</span></button>";
+    return '<button type="button" class="cell' + (code ? " filled" : "") + (isAnchor(i) ? " anchor" : "") + (lockedCell ? " locked" : "") + (verdict ? " " + verdict : "") + popCls +
+           '" style="--k:' + i + '" data-i="' + i + '" aria-label="' + label + '"' + (lockedCell ? " disabled" : "") + ">" + sh + '<span class="cap">' + cap + "</span></button>";
   }
-  function stripHtml(cells, labels, locked, verdict) {
-    var h = '<div class="strip">' + zoneHtml(0, labels[0], locked, verdict && verdict.z0) + zoneHtml(1, labels[1], locked, verdict && verdict.z1);
+  function stripHtml(cells, labels, locked, verdict, draw) {
+    var h = '<div class="strip' + (draw ? " draw" : "") + '">' + zoneHtml(0, labels[0], locked, verdict && verdict.z0) + zoneHtml(1, labels[1], locked, verdict && verdict.z1);
     for (var i = 0; i < 9; i++) h += cellHtml(i, cells[i], locked, verdict && verdict[i]);
     return h + "</div>";
   }
@@ -357,7 +372,7 @@
     if (state.done) return;
     if (isLabel(code)) { flash("Systolic and Diastolic go in the boxes over the top."); return; }
     if (isAnchor(i) && prefilled()) return;
-    state.cells[i] = code; render();
+    state.cells[i] = code; state.pop = code ? i : -1; render(); state.pop = -1;
   }
   function placeZone(z, code) {
     if (state.done) return;
@@ -374,6 +389,7 @@
   }
   function loadRound() {
     var it = cur();
+    state.strip = null;
     state.done = false; newBoard();
     $("result").hidden = true; $("nextRow").hidden = true;
     $("kicker").textContent = "Build this sound…";
@@ -383,6 +399,35 @@
     $("stScore").textContent = state.score; $("stStreak").textContent = state.streak;
     render();
   }
+
+
+  /* ---------------- playhead (after Submit only) ----------------
+     Each recording's beat timing was measured offline from the audio itself (S1, S2 and the next S1, in seconds
+     of the 20-second excerpt; clip 15 has no audible S2 so its S2 is an estimate). The line moves across the
+     correct build in step with whatever the player is playing: S1 to S2 over the systole half, S2 to the next S1
+     over the diastole half, then it starts the next beat. */
+  var rafId = 0;
+  function startPlayhead() {
+    if (rafId) return;
+    (function loop() {
+      rafId = requestAnimationFrame(loop);
+      var strip = state.strip, ph = $("playhead");
+      if (!strip || !ph || !state.done) { if (!strip) { cancelAnimationFrame(rafId); rafId = 0; } return; }
+      var a = $("aud"), it = cur();
+      if (!it || !it.cyc || a.paused || a.ended) { ph.classList.remove("on"); clearHit(strip); return; }
+      var t1 = it.cyc[0], t2 = it.cyc[1], T = it.cyc[2] - it.cyc[0];
+      var u = (((a.currentTime - t1) % T) + T) % T, sys = t2 - t1;
+      var cells = strip.querySelectorAll(".cell"), box = strip.getBoundingClientRect();
+      var c0 = cells[0].getBoundingClientRect(), c4 = cells[4].getBoundingClientRect(), c8 = cells[8].getBoundingClientRect();
+      var x0 = c0.left + c0.width / 2 - box.left, x4 = c4.left + c4.width / 2 - box.left, x8 = c8.left + c8.width / 2 - box.left;
+      var x = u < sys ? x0 + (x4 - x0) * (u / sys) : x4 + (x8 - x4) * ((u - sys) / (T - sys));
+      ph.style.left = x + "px"; ph.style.top = (c0.top - box.top) + "px"; ph.style.height = c0.height + "px"; ph.classList.add("on");
+      var hit = -1;
+      for (var i = 0; i < 9; i++) { var r = cells[i].getBoundingClientRect(); if (x + box.left >= r.left - 1 && x + box.left <= r.right + 1) { hit = i; break; } }
+      for (var j = 0; j < 9; j++) cells[j].classList.toggle("hit", j === hit);
+    })();
+  }
+  function clearHit(strip) { [].forEach.call(strip.querySelectorAll(".cell.hit"), function (c) { c.classList.remove("hit"); }); }
 
   function patternCells(p) {
     var c = ["S1", null, null, null, "S2", null, null, null, "S1"], map = [1, 2, 3, 5, 6, 7];
@@ -426,11 +471,15 @@
       });
       h += "</ul>";
     }
-    h += '<div class="correct-build"><p class="phase">' + (ok ? "Your build" : "The correct build") + '</p><div class="board">' + stripHtml(exp, ["SYS", "DIA"], true, null) + "</div></div>";
+    h += '<div class="correct-build"><p class="phase">' + (ok ? "Your build" : "The correct build") + '</p><div class="board">' + stripHtml(exp, ["SYS", "DIA"], true, null, true) + '<div class="playhead" id="playhead"></div></div>' +
+         '<p class="heard"><button class="btn btn-ghost" id="hearIt" type="button">\u25B6 Hear it against the build</button></p></div>';
     h += '<div class="sec"><h3>What the sound is</h3><p>' + b.listen + "</p><ul>" + b.assoc.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
     h += '<div class="sec"><h3>Where it is best heard</h3><ul>' + b.where.map(function (a) { return "<li>" + a + "</li>"; }).join("") + "</ul></div>";
     h += '<p class="src">Lecture slides ' + b.slides + " (PD II Advanced Cardiovascular &amp; Peripheral Vascular System).</p>";
     var box = $("result"); box.className = "card result " + (ok ? "right" : "wrong"); box.innerHTML = h; box.hidden = false;
+    state.strip = box.querySelector(".correct-build .board");
+    var hb = $("hearIt"); if (hb) hb.addEventListener("click", function () { var c = cur().cyc; var a = $("aud"); a.currentTime = Math.max(0, c[0] - 0.25); a.play(); });
+    startPlayhead();
     $("next").textContent = state.idx === state.order.length - 1 ? "See results" : "Next round";
     $("nextRow").hidden = false;
     box.scrollIntoView({ behavior: "smooth", block: "nearest" });
