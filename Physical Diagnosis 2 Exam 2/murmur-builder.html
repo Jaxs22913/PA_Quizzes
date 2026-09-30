@@ -144,7 +144,6 @@
     <div class="card">
       <p class="kicker" id="kicker">Build this sound&hellip;</p>
       <p class="prompt" id="prompt"></p>
-      <p class="ctx" id="ctx"></p>
       <div class="player" id="player">
         <audio id="aud" controls preload="none"></audio>
         <p class="credit">Recording: <a href="https://open.umich.edu/find/open-educational-resources/medical/heart-sound-murmur-library" target="_blank" rel="noopener">Heart Sound &amp; Murmur Library</a>, Richard D. Judge and Rajesh Mangrulkar, University of Michigan, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Shortened to a 20-second excerpt.</p>
@@ -269,25 +268,21 @@
       slides: "38, 67, 68" }
   };
 
-  var AT_APEX = "Heard at the apex with the patient supine.";
-  var AT_APEX_LLD = "Heard at the apex with the patient in the left lateral decubitus position.";
-  var AT_AORTIC = "Heard at the aortic area with the patient sitting.";
-  var AT_PULM = "Heard at the pulmonic area with the patient supine.";
   var ITEMS = [
-    { clip: "01_apex_normal_s1_s2_supine_bell.mp3", ctx: AT_APEX, build: "normal" },
-    { clip: "05_apex_s3_lld_bell.mp3", ctx: AT_APEX_LLD, build: "s3" },
-    { clip: "03_apex_s4_lld_bell.mp3", ctx: AT_APEX_LLD, build: "s4" },
-    { clip: "04_apex_mid_sys_click_supine_bell.mp3", ctx: AT_APEX, build: "click" },
-    { clip: "07_apex_mid_sys_mur_supine_bell.mp3", ctx: AT_APEX, build: "midsys" },
-    { clip: "08_apex_late_sys_mur_supine_bell.mp3", ctx: AT_APEX, build: "latesys" },
-    { clip: "09_apex_holo_sys_mur_supine_bell.mp3", ctx: AT_APEX, build: "holosys" },
-    { clip: "10_apex_sys_click_late_sys_mur_lld_bell.mp3", ctx: AT_APEX_LLD, build: "mvp" },
-    { clip: "11_apex_s4_mid_sys_mur_lld_bell.mp3", ctx: AT_APEX_LLD, build: "s4mid" },
-    { clip: "12_apex_s3_holo_sys_mur_lld_bell.mp3", ctx: AT_APEX_LLD, build: "s3holo" },
-    { clip: "13_apex_os_dias_mur_lld_bell.mp3", ctx: AT_APEX_LLD, build: "snap" },
-    { clip: "15_aortic_sys_mur_absent_s2_sitting_bell.mp3", ctx: AT_AORTIC, build: "midsys" },
-    { clip: "16_aortic_early_dias_mur_sitting_bell.mp3", ctx: AT_AORTIC, build: "earlydia" },
-    { clip: "23_pulm_eject_sys_mur_single_s2_eject_click_supine_diaph.mp3", ctx: AT_PULM, build: "ej" }
+    { clip: "01_apex_normal_s1_s2_supine_bell.mp3", build: "normal" },
+    { clip: "05_apex_s3_lld_bell.mp3", build: "s3" },
+    { clip: "03_apex_s4_lld_bell.mp3", build: "s4" },
+    { clip: "04_apex_mid_sys_click_supine_bell.mp3", build: "click" },
+    { clip: "07_apex_mid_sys_mur_supine_bell.mp3", build: "midsys" },
+    { clip: "08_apex_late_sys_mur_supine_bell.mp3", build: "latesys" },
+    { clip: "09_apex_holo_sys_mur_supine_bell.mp3", build: "holosys" },
+    { clip: "10_apex_sys_click_late_sys_mur_lld_bell.mp3", build: "mvp" },
+    { clip: "11_apex_s4_mid_sys_mur_lld_bell.mp3", build: "s4mid" },
+    { clip: "12_apex_s3_holo_sys_mur_lld_bell.mp3", build: "s3holo" },
+    { clip: "13_apex_os_dias_mur_lld_bell.mp3", build: "snap" },
+    { clip: "15_aortic_sys_mur_absent_s2_sitting_bell.mp3", build: "midsys" },
+    { clip: "16_aortic_early_dias_mur_sitting_bell.mp3", build: "earlydia" },
+    { clip: "23_pulm_eject_sys_mur_single_s2_eject_click_supine_diaph.mp3", build: "ej" }
   ];
 
   /* ---------------- drawing ---------------- */
@@ -395,7 +390,6 @@
     $("result").hidden = true; $("nextRow").hidden = true;
     $("kicker").textContent = "Build this sound…";
     $("prompt").textContent = "Listen closely, then build what you hear in the order you hear it.";
-    $("ctx").textContent = it.ctx;
     var aud = $("aud"); aud.pause(); aud.src = "heart-sounds/" + it.clip; aud.load();
     $("stRound").textContent = state.idx + 1; $("stTotal").textContent = state.order.length;
     $("stScore").textContent = state.score; $("stStreak").textContent = state.streak;
