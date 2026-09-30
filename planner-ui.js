@@ -983,9 +983,12 @@
     }
     if (t.getAttribute("data-act") === "tick") {
       var tk = findTask(t.getAttribute("data-day"), t.getAttribute("data-tid")); if (!tk) return;
-      var wasDone = streakState().todayDone;
+      var before = streakState(), wasDone = before.todayDone;
       tk.done = t.checked; save(); renderAll();
-      if (!wasDone && streakState().todayDone) celebrate();
+      if (tk.done) popTask(t.getAttribute("data-tid"));
+      var after = streakState();
+      if (after.streak > before.streak) bumpStreak(before.streak, after.streak);
+      if (!wasDone && after.todayDone) celebrate();
     } else if (t.hasAttribute("data-set")) {
       var k = t.getAttribute("data-set"), v = t.type === "checkbox" ? t.checked : parseFloat(t.value);
       if (t.type !== "checkbox" && isNaN(v)) return;
@@ -1014,6 +1017,37 @@
     rec.tasks.push({ id: TODAY + "|c" + Date.now().toString(36), custom: true, name: name, minutes: min, done: false, logged: 0 });
     save(); renderAll();
   });
+
+  /* Ticking feedback (css in calendar.html, "Ticking a task"): renderAll() has just rebuilt the rows, so the
+     animation is applied to the NEW row by task id and removed again after it has played. */
+  function popTask(tid) {
+    var rows = document.querySelectorAll('.pl-task[data-tid="' + String(tid).replace(/"/g, '\\"') + '"]');
+    if (!rows.length || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    [].forEach.call(rows, function (row) {
+      row.classList.add("pl-pop");
+      var box = row.querySelector(".pl-check"), sparks = [];
+      if (box) for (var i = 0; i < 9; i++) {
+        var s = document.createElement("i"); s.className = "pl-spark";
+        s.style.setProperty("--a", (i * 40 + Math.round(Math.random() * 22)) + "deg");
+        s.style.setProperty("--d", (20 + Math.round(Math.random() * 12)) + "px");
+        s.style.setProperty("--c", i % 3 === 0 ? "var(--a-amber)" : i % 3 === 1 ? "var(--a-teal)" : "var(--a-green)");
+        box.appendChild(s); sparks.push(s);
+      }
+      setTimeout(function () { row.classList.remove("pl-pop"); sparks.forEach(function (s) { s.remove(); }); }, 900);
+    });
+  }
+  function bumpStreak(from, to) {
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    [].forEach.call(document.querySelectorAll(".pl-streak"), function (card) {
+      var fl = card.querySelector(".pl-flame"), num = card.querySelector(".pl-snum");
+      if (fl) { fl.classList.add("pl-flame-up"); setTimeout(function () { fl.classList.remove("pl-flame-up"); }, 1000); }
+      if (num && num.firstChild && num.firstChild.nodeType === 3) {
+        var tn = num.firstChild; tn.nodeValue = from + " "; num.classList.add("pl-num-up");
+        setTimeout(function () { tn.nodeValue = to + " "; }, 380);
+        setTimeout(function () { num.classList.remove("pl-num-up"); }, 900);
+      }
+    });
+  }
 
   function celebrate() {
     var S = streakState(), el = document.createElement("div");

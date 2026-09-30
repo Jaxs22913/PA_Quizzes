@@ -294,6 +294,29 @@
     border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: var(--r-md); }
   .pl-task.done { opacity: .62; }
   .pl-task.done .pl-ttitle { text-decoration: line-through; }
+  /* Ticking a task (planner-ui.js adds .pl-pop for under a second): the box springs, its check DRAWS,
+     a line sweeps across the title before it settles into the normal strike-through, the row flashes
+     green once and small sparks fly off the box. */
+  .pl-task.pl-pop { animation: pl-rowflash .7s ease-out 1; }
+  .pl-task.pl-pop .pl-box { animation: pl-boxpop .42s cubic-bezier(.3,1.7,.5,1) 1; }
+  .pl-task.pl-pop .pl-box svg path { stroke-dasharray: 24; stroke-dashoffset: 24; animation: pl-draw .34s ease .1s forwards; }
+  .pl-task.pl-pop .pl-ttitle { animation: pl-strike .5s ease .12s both; }
+  .pl-spark { position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: var(--c, var(--a-green)); pointer-events: none; opacity: 0; animation: pl-spark .62s ease-out forwards; }
+  @keyframes pl-boxpop { 0% { transform: scale(.72); } 100% { transform: none; } }
+  @keyframes pl-draw { to { stroke-dashoffset: 0; } }
+  @keyframes pl-strike { from { text-decoration-color: transparent; opacity: 1; } 55% { opacity: 1; } }
+  @keyframes pl-rowflash { 0% { background: color-mix(in oklab, var(--a-green) 20%, var(--card)); } 100% { background: var(--card); } }
+  @keyframes pl-spark { 0% { opacity: 1; transform: rotate(var(--a)) translateX(7px) scale(1); } 100% { opacity: 0; transform: rotate(var(--a)) translateX(var(--d)) scale(.3); } }
+  /* the streak flame: a hop and a warm glow when a tick completes the day and the streak grows */
+  .pl-flame.pl-flame-up { animation: pl-flameup .9s cubic-bezier(.3,1.5,.5,1) 1; }
+  .pl-snum.pl-num-up { animation: pl-numup .5s ease-out 1; }
+  @keyframes pl-flameup { 0% { transform: scale(1); box-shadow: 0 0 0 0 color-mix(in oklab, var(--a-amber) 55%, transparent); } 30% { transform: scale(1.22) rotate(-7deg); } 60% { transform: scale(.96) rotate(4deg); box-shadow: 0 0 0 12px color-mix(in oklab, var(--a-amber) 0%, transparent); } 100% { transform: none; } }
+  @keyframes pl-numup { 0% { transform: translateY(6px); opacity: .3; } 100% { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .pl-task.pl-pop, .pl-task.pl-pop .pl-box, .pl-task.pl-pop .pl-ttitle, .pl-flame.pl-flame-up, .pl-snum.pl-num-up { animation: none; }
+    .pl-task.pl-pop .pl-box svg path { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+    .pl-spark { display: none; }
+  }
   .pl-check { position: relative; display: block; width: 28px; height: 28px; flex: none; cursor: pointer; margin-top: 1px; }
   .pl-check input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
   .pl-box { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 2px solid var(--muted); border-radius: 8px; color: transparent; transition: background .15s, border-color .15s; }
