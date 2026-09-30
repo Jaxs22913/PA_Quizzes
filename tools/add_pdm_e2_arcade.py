@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the PDM I Exam 2 Arcade decks -- Lectures 7, 8 and 9.
+"""Add the PDM I Exam 2 Arcade decks -- Lectures 7, 8, 9 and 10.
 
 Cards are derived from the existing question pools rather than re-read from the
 PPTs. The pools are already atomic (short stem, short key) and every one cites
@@ -29,6 +29,8 @@ SCAN_ICON = ('<path d="M3 8V5a2 2 0 0 1 2-2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v3
 FLASK_ICON = ('<path d="M9 3h6"/><path d="M10 3v6L4.5 18.5A1.5 1.5 0 0 0 5.8 21h12.4a1.5 1.5 0 0 0 1.3-2.5L14 9V3"/>'
               '<path d="M7.5 15h9"/>')
 
+DROP_ICON = ('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9 15a3 3 0 0 0 3 3"/>')
+
 CARDS = json.load(open(os.path.join(HERE, "pdm_e2_cards.json"), encoding="utf-8"))
 DECKS = [
  ("pdm-ecg", "Electrocardiography &mdash; Basics", "accent1", HEART_ICON,
@@ -39,6 +41,10 @@ DECKS = [
  # recording was still being transcribed. US spelling, full terms.
  ("pdm-cardiac-biomarkers-lipids", "Cardiac Biomarkers &amp; Lipids", "accent2", FLASK_ICON,
   [tuple(c) for c in CARDS["pdm-cardiac-biomarkers-lipids"]]),
+ # Lecture 10 (added 2026-09-30): written from the deck and the L10 pools; emphasis from the
+ # 30 September recording only re-weights, it adds no off-deck card.
+ ("pdm-coagulation-hemostasis", "Coagulation &amp; Hemostasis Testing", "accent3", DROP_ICON,
+  [tuple(c) for c in CARDS["pdm-coagulation-hemostasis"]]),
 ]
 
 if __name__ == "__main__":
