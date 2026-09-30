@@ -3304,3 +3304,21 @@ html.gl-open { overflow: hidden; }
   .pa-toast { animation: none; }
   .pa-ecg path { animation: none; stroke-dashoffset: 0; }
 }
+
+
+/* PA Week splash text beside the homepage logo (theme.js 2b): a yellow tilted hashtag that pulses, like
+   the splash on Minecraft's title screen. */
+.pa-splash {
+  position: absolute; display: none; z-index: 5; pointer-events: none; white-space: nowrap;
+  font: 800 21px/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: -.01em;
+  color: #ffe93b; text-shadow: 2px 2px 0 #3d3a0a, 0 0 10px rgba(255, 233, 59, .55);
+  transform: translate(-50%, -50%) rotate(-18deg); animation: pa-pulse .9s ease-in-out infinite;
+}
+.pa-splash.on { display: block; }
+.pa-splash-big { left: 77%; top: 30%; }
+.pa-splash-small { left: calc(50% + 108px); top: 34%; font-size: 12px; }
+.pa-splash.swap { animation: pa-pulse .9s ease-in-out infinite, pa-swap .35s ease-out 1; }
+@keyframes pa-pulse { 0%, 100% { transform: translate(-50%, -50%) rotate(-18deg) scale(1); } 50% { transform: translate(-50%, -50%) rotate(-18deg) scale(1.13); } }
+@keyframes pa-swap { from { opacity: 0; } to { opacity: 1; } }
+:root[data-theme="light"] .pa-splash { color: #f5c400; text-shadow: 2px 2px 0 #5c4a00, 0 0 8px rgba(245, 196, 0, .4); }
+@media (prefers-reduced-motion: reduce) { .pa-splash, .pa-splash.swap { animation: none; } }

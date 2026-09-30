@@ -5592,6 +5592,32 @@ window.openPauseOverlay = function (opts) {
   if (reduce) frame(true);
   else (function loop() { frame(false); requestAnimationFrame(loop); })();
 
+  /* ---------- 2b. the splash text on the logo (homepage only) ----------
+     Jaxon: "add the #s that are for PA week on the side like how minecraft has the pulsing in the
+     corner". A yellow tilted hashtag that pulses beside the logo and changes every few seconds,
+     like the splash text on Minecraft's title screen. Two copies (the big desktop logo and the
+     small phone logo); whichever logo is showing gets the visible one. */
+  if (document.body.classList.contains("homepage")) {
+    var TAGS = ["#PAWeek", "#NationalPAWeek", "#PAWeek2026", "#ClassOf2028"], ti = 0;
+    var bigHost = document.querySelector(".brand-mark"), smallHost = document.querySelector(".page > header h1");
+    var mk = function (host, cls) {
+      if (!host) return null;
+      var el = document.createElement("span");
+      el.className = "pa-splash " + cls; el.setAttribute("aria-hidden", "true"); el.textContent = TAGS[0];
+      host.style.position = "relative"; host.appendChild(el); return el;
+    };
+    var big = mk(bigHost, "pa-splash-big"), small = mk(smallHost, "pa-splash-small");
+    var which = function () {
+      var desktop = !!(bigHost && bigHost.offsetParent !== null && bigHost.getBoundingClientRect().height > 0);
+      if (big) big.classList.toggle("on", desktop); if (small) small.classList.toggle("on", !desktop);
+    };
+    which(); window.addEventListener("resize", which);
+    setInterval(function () {
+      ti = (ti + 1) % TAGS.length;
+      [big, small].forEach(function (el) { if (el) { el.textContent = TAGS[ti]; el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap"); } });
+    }, 3800);
+  }
+
   /* ---------- 3. the welcome card (app-shell pages only, once a day) ---------- */
   var path = location.pathname.replace(/^.*\//, "");
   var shell = document.body.classList.contains("homepage") || /^(|index\.html|guides\.html|calendar\.html|arcade[\w-]*\.html|group-(join|host)\.html)$/.test(path);
