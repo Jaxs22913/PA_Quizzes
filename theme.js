@@ -5397,3 +5397,83 @@ window.openPauseOverlay = function (opts) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();
+
+
+/* ============================================================
+   ANSWER FEEDBACK + SCORE RING (2026-09-30)
+   ------------------------------------------------------------
+   Jaxon: "do 2" from a list of animations to improve. Lives here, not in
+   tools/quiz-template/template.html, because the template only applies at
+   render time and this must reach all 400+ existing quiz pages.
+   - When an option GAINS .correct / .wrong the letter badge gets a check or a cross that
+     draws itself (css in theme.css section 7). Options that are rendered with the class
+     already set (review lists, exam-mode redraws that remove and re-add it) are left alone,
+     which is why this watches class CHANGES rather than looking for the class.
+   - When the results ring appears its --p runs from 0 to the score and the number counts up.
+   ============================================================ */
+(function () {
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var OK = '<svg class="fx-mark" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M6.5 12.8l3.6 3.7 7.4-8.3"/></svg>';
+  var BAD = '<svg class="fx-mark" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M7.5 7.5l9 9"/><path pathLength="1" d="M16.5 7.5l-9 9"/></svg>';
+
+  function mark(opt, ok) {
+    var ltr = opt.querySelector(".ltr");
+    if (!ltr) return;
+    var old = ltr.querySelector(".fx-mark");
+    if (old) old.remove();
+    ltr.insertAdjacentHTML("beforeend", ok ? OK : BAD);
+    ltr.classList.add("fx-has-mark");
+  }
+  function unmark(opt) {
+    var ltr = opt.querySelector(".ltr");
+    if (!ltr || !ltr.classList.contains("fx-has-mark")) return;
+    var m = ltr.querySelector(".fx-mark"); if (m) m.remove();
+    ltr.classList.remove("fx-has-mark");
+  }
+  function has(cls, name) { return (" " + cls + " ").indexOf(" " + name + " ") > -1; }
+
+  function animateRing(ring) {
+    if (ring.getAttribute("data-fx") || reduce) return;
+    var target = parseFloat(ring.style.getPropertyValue("--p"));
+    if (!(target > 0)) return;
+    ring.setAttribute("data-fx", "1");
+    var num = ring.querySelector("b"), t0 = null, DUR = 1000;
+    ring.style.setProperty("--p", "0");
+    if (num) num.textContent = "0%";
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / DUR), e = 1 - Math.pow(1 - k, 3), v = target * e;
+      ring.style.setProperty("--p", v.toFixed(2));
+      if (num) num.textContent = Math.round(v) + "%";
+      if (k < 1) requestAnimationFrame(step);
+      else { ring.style.setProperty("--p", String(target)); if (num) num.textContent = Math.round(target) + "%"; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function start() {
+    if (!document.getElementById("opts") && !document.getElementById("results") && !document.querySelector(".opts")) return;
+    new MutationObserver(function (list) {
+      for (var i = 0; i < list.length; i++) {
+        var m = list[i];
+        if (m.type === "attributes") {
+          var t = m.target;
+          if (!t.classList || !t.classList.contains("opt")) continue;
+          var was = m.oldValue || "", now = t.className;
+          if (has(now, "correct") && !has(was, "correct")) mark(t, true);
+          else if (has(now, "wrong") && !has(was, "wrong")) mark(t, false);
+          else if (!has(now, "correct") && !has(now, "wrong") && (has(was, "correct") || has(was, "wrong"))) unmark(t);
+        } else {
+          for (var j = 0; j < m.addedNodes.length; j++) {
+            var n = m.addedNodes[j];
+            if (n.nodeType !== 1) continue;
+            if (n.matches && n.matches(".ring")) animateRing(n);
+            else if (n.querySelector) { var r = n.querySelector(".ring"); if (r) animateRing(r); }
+          }
+        }
+      }
+    }).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ["class"], attributeOldValue: true });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();

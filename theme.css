@@ -2391,12 +2391,27 @@ details[open] > *:not(summary) {
 }
 @keyframes opt-wrong {
   0%,100% { transform: none; }
-  22%     { transform: translateX(-3px); }
-  58%     { transform: translateX(3px); }
-  82%     { transform: translateX(-1.5px); }
+  15%     { transform: translateX(-6px); }
+  35%     { transform: translateX(6px); }
+  55%     { transform: translateX(-4px); }
+  75%     { transform: translateX(3px); }
+  90%     { transform: translateX(-1px); }
 }
-.opt.correct { animation: opt-correct 380ms var(--ease) 1; }
-.opt.wrong   { animation: opt-wrong  260ms var(--ease) 1; }
+/* a soft ring that breathes outward from the right answer, once */
+@keyframes opt-ring {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok, #218640) 42%, transparent); }
+  100% { box-shadow: 0 0 0 11px color-mix(in srgb, var(--ok, #218640) 0%, transparent); }
+}
+.opt.correct { animation: opt-correct 380ms var(--ease) 1, opt-ring 720ms ease-out 1; }
+.opt.wrong   { animation: opt-wrong  440ms var(--ease) 1; }
+/* The letter badge becomes a check (right) or a cross (wrong) that DRAWS itself; theme.js injects
+   the svg when an option gains .correct/.wrong, and the letter is kept in the DOM for screen readers. */
+.opt .ltr.fx-has-mark { font-size: 0; animation: fx-pop .34s cubic-bezier(.3,1.6,.5,1) 1; }
+.opt .ltr .fx-mark { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
+.opt .ltr .fx-mark path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: fx-draw .36s ease .1s forwards; }
+.opt .ltr .fx-mark path + path { animation-delay: .24s; }
+@keyframes fx-draw { to { stroke-dashoffset: 0; } }
+@keyframes fx-pop { 0% { transform: scale(.6); } 100% { transform: none; } }
 /* the eliminated options recede rather than just dimming */
 .opt.dim { transition: opacity var(--dur-2) var(--ease), filter var(--dur-2) var(--ease); }
 
@@ -2425,7 +2440,8 @@ figure.fig.fig-in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .q-enter #qtext, .q-enter #opts, .expl.show, #results,
-  .opt.correct, .opt.wrong { animation: none !important; }
+  .opt.correct, .opt.wrong, .opt .ltr.fx-has-mark { animation: none !important; }
+  .opt .ltr .fx-mark path { animation: none !important; stroke-dashoffset: 0; }
   figure.fig, figure.fig.fig-pending { opacity: 1 !important; transform: none !important; }
 }
 
