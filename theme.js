@@ -3319,7 +3319,7 @@ window.__themeKit = (function () {
 
   /* ----- particles drifting behind the UI -----
      cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
-     begin(ctx) once per frame, after(ctx, still) once per frame after the particles, kick (spin from the cursor),
+     begin(ctx) once per frame, after(ctx, still, k) once per frame after the particles, kick (spin from the cursor),
      repelR/repelK, dprCap, fps (cap), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
      [y, height] of a band to clear as well,
      reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
@@ -3350,7 +3350,7 @@ window.__themeKit = (function () {
         cfg.draw(ctx, p);
         if (cfg.rad) { r = cfg.rad(p) + 2; p.bb = [Math.floor(p.x - r), Math.floor(p.y - r), Math.ceil(2 * r) + 1, Math.ceil(2 * r) + 1]; }
       }
-      if (cfg.after) cfg.after(ctx, still);
+      if (cfg.after) cfg.after(ctx, still, k);
       ctx.globalAlpha = 1;
     }
     var loop = kit.loop(function (now, dt) { frame(false, dt); }, cfg.fps);
@@ -3445,18 +3445,42 @@ window.__themeKit = (function () {
   return kit;
 })();
 
-// Seasonal snowfall (added 2026-07-16) -- December. Lives here rather than in any one page's HTML so
-// every current page picks it up for free and every future page does too, as long as it includes
-// theme.js. A canvas fixed to the viewport and pushed behind all real content with z-index:-1 (the
-// same technique index.html's own .edge-decor strips use), built on __themeKit.field.
+// Seasonal snowfall (added 2026-07-16, brought up to the Halloween standard 2026-10-01) -- December (Dec 1-30;
+// Dec 31 is New Year's). Lives here rather than in any one page's HTML so every current page picks it up for free and
+// every future page does too, as long as it includes theme.js. A canvas fixed to the viewport and pushed behind all real
+// content with z-index:-1 (the same technique index.html's own .edge-decor strips use), built on __themeKit.field.
+//   - The bigger flakes are six-armed crystals that spin slowly and spin away from the cursor or a finger.
+//   - Flakes that reach the bottom edge settle into a thin drift (a few pixels at most) that gently melts away.
+//   - Light mode draws the flakes with a faint cool outline (white on cream was nearly invisible).
+//   - Quiz-completion confetti is icy blue and silver unless the holiday lights set their own. 30 fps, dirty-rect
+//     redraw, canvas capped at 2x pixel density, reduced motion: one frozen frame.
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("snow")) return;
   document.body.classList.add("xmas-theme");
-  var windStrength = 0.35;
+  if (!kit.on("lights")) kit.colors(["#93c5fd", "#60a5fa", "#bfdbfe", "#a5b4fc", "#cbd5e1"]);
+  var windStrength = 0.35, COL = 6, MAXH = 6, heights = [], dark = false, gain = window.innerWidth < 700 ? 0.45 : 0.8;   // the drift: one height per 6px column, in px
+
+  function landed(x) {                                            // a flake settles: bump the columns around it
+    var c = Math.floor(x / COL), i, d;
+    for (d = -3; d <= 3; d++) {
+      i = c + d;
+      if (i >= 0 && i < heights.length) heights[i] = Math.min(MAXH, heights[i] + gain * (1 - Math.abs(d) / 4));
+    }
+  }
+  function crystal(ctx, r) {                                       // six arms = three lines through the centre
+    ctx.beginPath();
+    for (var k = 0; k < 3; k++) {
+      var a = k * Math.PI / 3, dx = Math.cos(a) * r * 1.7, dy = Math.sin(a) * r * 1.7;
+      ctx.moveTo(-dx, -dy); ctx.lineTo(dx, dy);
+    }
+    ctx.stroke();
+  }
   kit.field({
-    cls: "th-snow", dprCap: 99, reduced: "run", wrap: 10,
-    count: window.innerWidth < 700 ? 45 : 90,            // lighter on narrow/mobile viewports
+    cls: "th-snow", dprCap: 2, reduced: "still", wrap: 10, kick: true, fps: 30,
+    count: window.innerWidth < 700 ? 45 : 90,                      // lighter on narrow/mobile viewports
+    rad: function (f) { return f.r * 1.9 + 2; },
+    strip: function () { return [window.innerHeight - MAXH - 4, MAXH + 5]; },
     make: function (randomY) {
       var r = 1.7 + Math.random() * 3.4;
       return {
@@ -3464,13 +3488,49 @@ window.__themeKit = (function () {
         y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
         r: r, speed: 0.5 + r * 0.45 + Math.random() * 0.4,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.005 + Math.random() * 0.01,
+        spin: Math.random() * Math.PI, spinSpeed: (Math.random() - 0.5) * 0.03,
         opacity: 0.6 + Math.random() * 0.4, vx: 0, vy: 0
       };
     },
-    move: function (f) { f.y += f.speed + f.vy; f.drift += f.driftSpeed; f.x += Math.sin(f.drift) * (windStrength * 1.6) + f.vx; },
-    gone: function (f) { return f.y > window.innerHeight + 10; },
-    begin: function (ctx) { ctx.fillStyle = "#ffffff"; },
-    draw: function (ctx, f) { ctx.globalAlpha = f.opacity; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); }
+    move: function (f, k) {
+      f.y += (f.speed + f.vy) * k; f.drift += f.driftSpeed * k; f.x += (Math.sin(f.drift) * (windStrength * 1.6) + f.vx) * k;
+      f.spin += f.spinSpeed * k;
+    },
+    gone: function (f) {
+      var H = window.innerHeight;
+      if (f.y > H + 10) return true;
+      var h = heights[Math.floor(f.x / COL)] || 0;
+      if (f.r > 2.2 && f.y > H - h - f.r - 3 && Math.random() < 0.6) { landed(f.x); return true; }   // lands on the drift
+      return false;
+    },
+    begin: function (ctx) {
+      var n = Math.ceil(window.innerWidth / COL) + 2;
+      if (heights.length !== n) { heights.length = 0; for (var i = 0; i < n; i++) heights.push(0); }
+      dark = document.documentElement.getAttribute("data-theme") === "dark";
+      ctx.fillStyle = dark ? "#ffffff" : "#f4f8fd";
+      ctx.strokeStyle = dark ? "#ffffff" : "rgba(110, 140, 185, .75)"; ctx.lineWidth = dark ? 1 : 0.9; ctx.lineCap = "round";
+    },
+    draw: function (ctx, f) {
+      ctx.globalAlpha = f.opacity;
+      if (f.r > 3.4) { ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.spin); crystal(ctx, f.r * 0.9); ctx.restore(); }
+      else { ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); if (!dark) ctx.stroke(); }
+    },
+    after: function (ctx, still, k) {
+      var H = window.innerHeight, W = window.innerWidth, i, any = false;
+      for (i = 0; i < heights.length; i++) {
+        if (!still) heights[i] = Math.max(0, heights[i] - (0.0004 * heights[i] + 0.0003) * (k || 1));   // melts: proportional + a little constant
+        if (heights[i] > 0.15) any = true;
+      }
+      if (!any) return;
+      ctx.beginPath(); ctx.moveTo(0, H);
+      for (i = 0; i < heights.length; i++) ctx.lineTo(i * COL + COL / 2, H - heights[i]);
+      ctx.lineTo(W, H); ctx.closePath();
+      ctx.globalAlpha = 0.92; ctx.fillStyle = dark ? "#ffffff" : "#f4f8fd"; ctx.fill();
+      ctx.globalAlpha = 1; ctx.strokeStyle = dark ? "rgba(255,255,255,0)" : "rgba(110, 140, 185, .6)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0, H - heights[0]);
+      for (i = 1; i < heights.length; i++) ctx.lineTo(i * COL + COL / 2, H - heights[i]);
+      ctx.stroke();
+    }
   });
 })();
 
