@@ -3261,7 +3261,8 @@ window.__themeKit = (function () {
     if (!ptrOn) {
       ptrOn = true;
       window.addEventListener("mousemove", function (e) { ptr.x = e.clientX; ptr.y = e.clientY; });
-      window.addEventListener("mouseleave", function () { ptr.x = ptr.y = null; });
+      document.documentElement.addEventListener("mouseleave", function () { ptr.x = ptr.y = null; });     // window never gets mouseleave
+      window.addEventListener("mouseout", function (e) { if (!e.relatedTarget) ptr.x = ptr.y = null; });
       window.addEventListener("touchmove", function (e) { if (e.touches.length) { ptr.x = e.touches[0].clientX; ptr.y = e.touches[0].clientY; } }, { passive: true });
       window.addEventListener("touchend", function () { ptr.x = ptr.y = null; });
     }
@@ -3323,7 +3324,7 @@ window.__themeKit = (function () {
   /* ----- particles drifting behind the UI -----
      cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
      begin(ctx) once per frame, after(ctx, still, k) once per frame after the particles, kick (spin from the cursor),
-     repelR/repelK, dprCap, fps (cap), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
+     repelR/repelK, dprCap, fps (cap), onSize(particles, W, H), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
      [y, height] of a band to clear as well + dirty() -> [[x, y, w, h], ...] more rectangles to clear,
      reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
   kit.field = function (cfg) {
@@ -3367,11 +3368,17 @@ window.__themeKit = (function () {
     }
     function build() {
       cv = kit.canvas(cfg.cls, cfg.dprCap);
-      cv.onSize = function () { if (kit.reduced() && mode === "still") frame(true); };     // resizing clears a canvas: repaint the frozen frame
+      cv.onSize = function () {                                                          // resizing clears a canvas: repaint the frozen frame
+        if (cfg.onSize) cfg.onSize(ps, cv.W, cv.H);
+        if (kit.reduced() && mode === "still") frame(true);
+      };
       var n = typeof cfg.count === "function" ? cfg.count() : cfg.count;
       ps = []; for (var i = 0; i < n; i++) ps.push(cfg.make(true));
     }
     kit.onMotion(apply);
+    if (window.MutationObserver) new MutationObserver(function () {                      // the site light/dark switch repaints a frozen frame
+      if (cv && kit.reduced() && mode === "still") frame(true);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     apply();
     return { particles: function () { return ps; }, canvas: function () { return cv; } };
   };
@@ -3418,6 +3425,7 @@ window.__themeKit = (function () {
     body.appendChild(card);
     function close() { card.classList.add("out"); setTimeout(function () { card.remove(); }, 450); }
     card.querySelector(".pa-toast-x").addEventListener("click", close);
+    document.addEventListener("keydown", function esc(e) { if (e.key === "Escape") { document.removeEventListener("keydown", esc); close(); } });
     setTimeout(close, o.ms || 9000);
     if (o.burst && !kit.reduced() && window.burstConfetti) setTimeout(function () { window.burstConfetti(o.burst[0], o.burst[1]); }, 350);
     return card;
@@ -3486,7 +3494,7 @@ window.__themeKit = (function () {
   if (!kit.on("snow")) return;
   document.body.classList.add("xmas-theme");
   if (!kit.on("lights")) kit.colors(["#93c5fd", "#60a5fa", "#bfdbfe", "#a5b4fc", "#cbd5e1"]);
-  var windStrength = 0.35, COL = 6, MAXH = 6, heights = [], dark = false, gain = window.innerWidth < 700 ? 0.45 : 0.8;   // the drift: one height per 6px column, in px
+  var windStrength = 0.35, COL = 6, MAXH = 5, heights = [], dark = false, gain = window.innerWidth < 700 ? 0.4 : 0.73;   // the drift: one height per 6px column, in px
 
   function landed(x) {                                            // a flake settles: bump the columns around it
     var c = Math.floor(x / COL), i, d;
@@ -3495,7 +3503,7 @@ window.__themeKit = (function () {
       if (i >= 0 && i < heights.length) heights[i] = Math.min(MAXH, heights[i] + gain * (1 - Math.abs(d) / 4));
     }
   }
-  function crystal(ctx, r) {                                       // six arms = three lines through the centre
+  function crystal(ctx, r) {                                       // six arms = three lines through the center
     ctx.beginPath();
     for (var k = 0; k < 3; k++) {
       var a = k * Math.PI / 3, dx = Math.cos(a) * r * 1.7, dy = Math.sin(a) * r * 1.7;
@@ -3545,7 +3553,7 @@ window.__themeKit = (function () {
     after: function (ctx, still, k) {
       var H = window.innerHeight, W = window.innerWidth, i, any = false;
       for (i = 0; i < heights.length; i++) {
-        if (!still) heights[i] = Math.max(0, heights[i] - (0.0004 * heights[i] + 0.0003) * (k || 1));   // melts: proportional + a little constant
+        if (!still) heights[i] = Math.max(0, heights[i] - (0.0008 * heights[i] + 0.0004) * (k || 1));   // melts: proportional + a little constant
         if (heights[i] > 0.15) any = true;
       }
       if (!any) return;
@@ -3657,7 +3665,8 @@ window.__themeKit.fireworks = function (cfg) {
       var s = shows[i], x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
       if (!s.parts) {                                                    // rocket on its way up
         s.rise += dt / 0.6; var e = 1 - Math.pow(1 - Math.min(1, s.rise), 2), ny = H + 8 + (s.by - H - 8) * e;
-        ctx.globalAlpha = 0.85; ctx.strokeStyle = s.pal[0]; ctx.lineWidth = 1.8; ctx.lineCap = "round";
+        var rc = s.pal[0]; if (cfg.white && cfg.white.indexOf(rc) >= 0 && !dark) rc = s.pal[1] || rc;      // a white rocket would vanish on a light page
+        ctx.globalAlpha = 0.85; ctx.strokeStyle = rc; ctx.lineWidth = 1.8; ctx.lineCap = "round";
         ctx.beginPath(); ctx.moveTo(s.x, ny + 22); ctx.lineTo(s.x, ny); ctx.stroke();
         dirty.push([Math.floor(s.x - 4), Math.floor(ny - 4), 9, 30]);
         if (s.rise >= 1) {                                               // burst
@@ -3746,7 +3755,7 @@ window.__themeKit.fireworks = function (cfg) {
   var kit = window.__themeKit;
   if (!kit.on("fireworks")) return;
   document.body.classList.add("fireworks-theme");
-  kit.colors(["#dc2626", "#2563eb", "#f8fafc", "#ef4444", "#3b82f6"]);
+  kit.colors(["#dc2626", "#2563eb", "#1e40af", "#ef4444", "#3b82f6"]);
   kit.fireworks({
     cls: "th-fireworks", white: ["#ffffff"],
     palettes: function (dark) {
@@ -3823,6 +3832,7 @@ window.__themeKit.fireworks = function (cfg) {
     },
     after: function (ctx, still, k) {
       rects = [];
+      if (still) { sparks.length = 0; return; }                    // reduced motion switched on mid-pop: no frozen sparks
       if (!sparks.length) return;
       var dt = (k || 1) / 60;
       for (var i = sparks.length - 1; i >= 0; i--) {
@@ -3857,6 +3867,9 @@ window.__themeKit.fireworks = function (cfg) {
   F = kit.field({
     cls: "th-leaves", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30, count: N,
     rad: function (l) { return l.s * 2.2; },
+    onSize: function (ps, W, H) {                                  // the window grew or shrank: lying leaves go back on the new bottom edge
+      for (var i = 0; i < ps.length; i++) if (ps[i].rest) ps[i].y = H - ps[i].s * 0.45 - Math.random() * 3;
+    },
     make: function (randomY) {
       var s = 5 + Math.random() * 7;
       return {
@@ -4051,7 +4064,7 @@ window.__themeKit.fireworks = function (cfg) {
   var GRAIN = ["#ca8a04", "#d4a017", "#b8860b"];
   var KINDS = ["leaf", "leaf", "leaf", "acorn", "acorn", "wheat"], speedMul = 0.35;
 
-  function acorn(ctx, s, color) {                   // nut with a dark cap and a short stem, centred on the origin
+  function acorn(ctx, s, color) {                   // nut with a dark cap and a short stem, centered on the origin
     ctx.fillStyle = color; ctx.beginPath(); ctx.ellipse(0, s * 0.3, s * 0.55, s * 0.85, 0, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = "#5b3410"; ctx.beginPath(); ctx.ellipse(0, -s * 0.28, s * 0.68, s * 0.46, 0, Math.PI, 0); ctx.closePath(); ctx.fill();
     ctx.lineWidth = Math.max(1, s * 0.16); ctx.strokeStyle = "#5b3410"; ctx.lineCap = "round";
@@ -4161,7 +4174,7 @@ window.__themeKit.fireworks = function (cfg) {
       ctx.beginPath(); ctx.moveTo(0, c.s * 0.1); ctx.lineTo(0, c.s * 1.15);          // the stem
       ctx.lineWidth = Math.max(1, c.s * 0.16); ctx.strokeStyle = "#14532d"; ctx.stroke();
       ctx.restore();
-      if (c.glint > 0) {                                                             // a four-point golden glint
+      if (c.glint > 0 && !kit.reduced()) {                                           // a four-point golden glint
         var t = Math.sin(Math.PI * (1 - c.glint / 0.55)), r = c.s * (0.5 + 1.1 * t);
         ctx.rotate(-c.spin); ctx.globalAlpha = 0.9 * t; ctx.fillStyle = "#fde047";
         ctx.beginPath(); ctx.moveTo(0, -r); ctx.quadraticCurveTo(r * 0.12, -r * 0.12, r, 0); ctx.quadraticCurveTo(r * 0.12, r * 0.12, 0, r);
