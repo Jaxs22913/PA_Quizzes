@@ -3177,7 +3177,10 @@ window.__themeKit = (function () {
   var NAMES = ["snow", "lights", "newyear", "hearts", "clovers", "paweek", "leaves", "halloween", "thanksgiving", "fireworks"];
   var ALIAS = { xmas: "snow", december: "snow", holiday: "lights", ny: "newyear", vday: "hearts", valentines: "hearts",
     stpatricks: "clovers", clover: "clovers", fall: "leaves", autumn: "leaves", july4: "fireworks", fourth: "fireworks" };
-  function canon(n) { n = String(n || "").toLowerCase(); return NAMES.indexOf(n) >= 0 ? n : (ALIAS[n] || null); }
+  function canon(n) {
+    n = String(n || "").toLowerCase();
+    return NAMES.indexOf(n) >= 0 ? n : (Object.prototype.hasOwnProperty.call(ALIAS, n) ? ALIAS[n] : null);
+  }
 
   // Thanksgiving week: Monday to Friday around the 4th Thursday of November (Nov 23-27 in 2026).
   function thanksgivingWeek(d) {
@@ -3364,6 +3367,7 @@ window.__themeKit = (function () {
     }
     function build() {
       cv = kit.canvas(cfg.cls, cfg.dprCap);
+      cv.onSize = function () { if (kit.reduced() && mode === "still") frame(true); };     // resizing clears a canvas: repaint the frozen frame
       var n = typeof cfg.count === "function" ? cfg.count() : cfg.count;
       ps = []; for (var i = 0; i < n; i++) ps.push(cfg.make(true));
     }
@@ -3584,9 +3588,18 @@ window.__themeKit = (function () {
   var host = document.createElement("div");
   host.className = "th-lights"; host.setAttribute("aria-hidden", "true");
   body.appendChild(host);
+  function firstInFlow(el) {                                  // nothing visible comes before it in the page flow
+    for (var e = el; e && e !== body; e = e.parentElement) {
+      for (var p = e.previousElementSibling; p; p = p.previousElementSibling) {
+        var pos = getComputedStyle(p).position;
+        if (p.offsetHeight > 0 && pos !== "fixed" && pos !== "absolute") return false;
+      }
+    }
+    return true;
+  }
   function place() {                                          // below the sticky back bar where a page has one
-    var bar = document.querySelector(".guide-back-bar");
-    host.style.top = (bar && bar.offsetTop < 8 ? bar.offsetHeight : 0) + "px";   // only when the bar is the very first thing
+    var bar = document.querySelector(".guide-back-bar");        // (its offsetTop is its stuck position once scrolled, so ask about the flow instead)
+    host.style.top = (bar && firstInFlow(bar) ? bar.offsetHeight : 0) + "px";
   }
 
   function build() {
@@ -3608,8 +3621,11 @@ window.__themeKit = (function () {
     place();
   }
   build();
-  var t = 0;
-  window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(build, 150); });
+  var t = 0, lastW = window.innerWidth;
+  window.addEventListener("resize", function () {                // height-only changes (a phone's URL bar) rebuild nothing
+    clearTimeout(t);
+    t = setTimeout(function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; build(); } else place(); }, 150);
+  });
 })();
 
 
