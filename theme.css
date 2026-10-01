@@ -2440,6 +2440,19 @@ details[open] > *:not(summary) {
 }
 #results { animation: results-in var(--dur-3) var(--ease-spring) both; }
 
+/* Results reveal (theme.js "Results reveal"): rolling percentage digits + rows that slide in one by one.
+   The digits are drawn with ::before so the real number is never doubled in the page text. */
+.rs-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.rs-od { display: inline-flex; height: 1em; line-height: 1; overflow: hidden; vertical-align: top; font-variant-numeric: tabular-nums; }
+.rs-d { display: block; height: 1em; overflow: hidden; }
+.rs-r { display: flex; flex-direction: column; transform: translateY(calc(var(--d, 0) * -1em)); transition: transform 1s cubic-bezier(.33, 1, .68, 1); }
+.rs-c { display: block; height: 1em; line-height: 1; }
+.rs-c::before { content: attr(data-d); }
+.rs-p::before { content: "%"; }
+#results.rs-go .brow, #results.rs-go .mitem.rs-it { animation: rs-slide .38s cubic-bezier(.2, .8, .2, 1) both; animation-delay: var(--rs-d, 0ms); }
+@keyframes rs-slide { from { opacity: 0; transform: translateX(-16px); } }
+@media (prefers-reduced-motion: reduce) { #results.rs-go .brow, #results.rs-go .mitem.rs-it { animation: none !important; } .rs-r { transition: none; } }
+
 /* --- progress bar ---------------------------------------------------- */
 #barfill { transition: width var(--dur-2) var(--ease) !important; }
 

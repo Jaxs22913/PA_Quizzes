@@ -5726,23 +5726,82 @@ window.__halloween = (function () {
   }
   function has(cls, name) { return (" " + cls + " ").indexOf(" " + name + " ") > -1; }
 
+  /* ---- Results reveal (2026-10-01) -------------------------------------------------------------
+     The ring fills to the score (as before), the percentage is an ODOMETER whose digits roll into place
+     (same technique as the homepage class counter), and the objective rows plus the first few missed
+     questions slide in one by one. About 1.5 s in all; ANY click, tap or key skips straight to the end;
+     reduced motion shows the final state at once. Nothing here touches scoring: the real "NN%" stays in the
+     DOM as visually-hidden text (so scripts that read #results, like the confetti tiers, see the true
+     number at every moment) and the rolling digits are CSS-drawn decoration. */
+  var ODO_MS = 1000, STAGGER_BASE = 360, STAGGER_STEP = 55, STAGGER_MAX = 10, MISSED_MAX = 4;
+  function buildOdometer(b, str) {
+    if (!/^\d{1,3}%$/.test(str)) return null;
+    var sr = document.createElement("span"); sr.className = "rs-sr"; sr.textContent = str;
+    var od = document.createElement("span"); od.className = "rs-od"; od.setAttribute("aria-hidden", "true");
+    var cols = [];
+    for (var n = 0; n < str.length - 1; n++) {
+      var col = document.createElement("span"); col.className = "rs-d";
+      var roll = document.createElement("span"); roll.className = "rs-r"; roll.style.setProperty("--d", "0");
+      for (var k = 0; k < 10; k++) { var c = document.createElement("span"); c.className = "rs-c"; c.setAttribute("data-d", k); roll.appendChild(c); }
+      col.appendChild(roll); od.appendChild(col); cols.push({ el: roll, d: str.charAt(n) });
+    }
+    var pc = document.createElement("span"); pc.className = "rs-p"; od.appendChild(pc);
+    b.textContent = ""; b.appendChild(sr); b.appendChild(od);
+    return cols;
+  }
+  var activeFinish = null;
   function animateRing(ring) {
     if (ring.getAttribute("data-fx") || reduce) return;
-    var target = parseFloat(ring.style.getPropertyValue("--p"));
-    if (!(target > 0)) return;
     ring.setAttribute("data-fx", "1");
-    var num = ring.querySelector("b"), t0 = null, DUR = 1000;
-    ring.style.setProperty("--p", "0");
-    if (num) num.textContent = "0%";
-    function step(ts) {
-      if (t0 === null) t0 = ts;
-      var k = Math.min(1, (ts - t0) / DUR), e = 1 - Math.pow(1 - k, 3), v = target * e;
-      ring.style.setProperty("--p", v.toFixed(2));
-      if (num) num.textContent = Math.round(v) + "%";
-      if (k < 1) requestAnimationFrame(step);
-      else { ring.style.setProperty("--p", String(target)); if (num) num.textContent = Math.round(target) + "%"; }
+    if (activeFinish) activeFinish();      // a restart that beat the previous show to the end
+    var root = document.getElementById("results") || document.body;
+    var target = parseFloat(ring.style.getPropertyValue("--p")) || 0;
+    var num = ring.querySelector("b"), cols = null, done = false, raf = 0, t0 = null, backstop = 0;
+
+    // stagger: objective rows, then the first few missed questions
+    var rows = root.querySelectorAll(".brow"), items = root.querySelectorAll(".missed .mitem"), i, d = 0;
+    for (i = 0; i < rows.length && i < STAGGER_MAX; i++, d++) rows[i].style.setProperty("--rs-d", (STAGGER_BASE + d * STAGGER_STEP) + "ms");
+    var staged = [].slice.call(rows, 0, STAGGER_MAX);
+    for (i = 0; i < items.length && i < MISSED_MAX; i++, d++) {
+      items[i].classList.add("rs-it"); items[i].style.setProperty("--rs-d", (STAGGER_BASE + d * STAGGER_STEP) + "ms"); staged.push(items[i]);
     }
-    requestAnimationFrame(step);
+    root.classList.add("rs-go");
+
+    if (target > 0) {
+      ring.style.setProperty("--p", "0");
+      if (num) cols = buildOdometer(num, num.textContent.trim());
+      if (cols) {
+        void root.offsetWidth;              // flush the 0 digits so the roll is a transition, not a jump
+        for (i = 0; i < cols.length; i++) {
+          cols[i].el.style.transitionDelay = ((cols.length - 1 - i) * 60) + "ms";   // right-most digit first
+          cols[i].el.style.setProperty("--d", cols[i].d);
+        }
+      }
+    }
+    function step(ts) {
+      if (done) return;
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / ODO_MS), e = 1 - Math.pow(1 - k, 3);
+      ring.style.setProperty("--p", (target * e).toFixed(2));
+      if (k < 1) raf = requestAnimationFrame(step);
+    }
+    if (target > 0) raf = requestAnimationFrame(step);
+
+    function finish() {                      // the end of the show, reached by the clock or by any click
+      if (done) return;
+      done = true; cancelAnimationFrame(raf); clearTimeout(backstop);
+      if (activeFinish === finish) activeFinish = null;
+      document.removeEventListener("pointerdown", finish, true);
+      document.removeEventListener("keydown", finish, true);
+      ring.style.setProperty("--p", String(target));
+      if (cols) for (var j = 0; j < cols.length; j++) { cols[j].el.style.transition = "none"; cols[j].el.style.transitionDelay = "0ms"; cols[j].el.style.setProperty("--d", cols[j].d); }
+      root.classList.remove("rs-go");
+      for (var q = 0; q < staged.length; q++) { staged[q].classList.remove("rs-it"); staged[q].style.removeProperty("--rs-d"); }
+    }
+    activeFinish = finish;
+    document.addEventListener("pointerdown", finish, true);
+    document.addEventListener("keydown", finish, true);
+    backstop = setTimeout(finish, Math.max(ODO_MS + 200, STAGGER_BASE + staged.length * STAGGER_STEP + 420));
   }
 
   function start() {
