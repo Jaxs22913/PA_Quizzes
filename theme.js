@@ -3193,10 +3193,11 @@ window.__themeKit = (function () {
     paweek: function (d) { return d.getFullYear() === 2026 && d.getMonth() === 9 && d.getDate() >= 5 && d.getDate() <= 9; },
     leaves: function (d) { return d.getMonth() === 9 && d.getDate() >= 17 && d.getDate() <= 31; },
     halloween: function (d) { return d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31; },
-    lights: function (d) { return d.getMonth() === 11 && d.getDate() <= 25; }, newyear: function () { return false; },
+    lights: function (d) { return d.getMonth() === 11 && d.getDate() <= 25; },
+    newyear: function (d) { var m = d.getMonth(), x = d.getDate(); return (m === 11 && x === 31) || (m === 0 && x <= 2); },
     thanksgiving: thanksgivingWeek, fireworks: function () { return false; }
   };
-  var YIELDS = [["halloween", "leaves"]];         // [winner, loser]: on a date both match, only the winner runs
+  var YIELDS = [["halloween", "leaves"], ["newyear", "snow"], ["newyear", "lights"]];         // [winner, loser]: on a date both match, only the winner runs
 
   var list = [], fresh = [];
   try {
@@ -3527,6 +3528,113 @@ window.__themeKit = (function () {
   window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(build, 150); });
 })();
 
+
+/* ============================================================
+   FIREWORKS ENGINE (2026-10-01) -- shared by the New Year's and July 4 themes: quiet bursts in the
+   corners and along the edges, behind the UI. A rocket rises from the bottom edge, bursts into a ring
+   of sparks that drift down and fade. At most 2-3 bursts at once, 30 frames a second, one canvas behind
+   the UI, redrawn only where something moved, stopped in a hidden tab, none under reduced motion.
+   kit.fireworks({ cls, palettes: function (dark) -> [[color, ...], ...], white: "colors that need an
+   outline on a light page" }). A palette is one burst's colors.
+   ============================================================ */
+window.__themeKit.fireworks = function (cfg) {
+  var kit = window.__themeKit, cv = null, ctx = null, shows = [], dirty = [], next = 0, clock = 0;
+  var loop = kit.loop(function (now, dt) {
+    var W = cv.W, H = cv.H, dark = document.documentElement.getAttribute("data-theme") === "dark", i, j;
+    for (i = 0; i < dirty.length; i++) ctx.clearRect(dirty[i][0], dirty[i][1], dirty[i][2], dirty[i][3]);
+    dirty.length = 0;
+    clock += dt;
+    var narrow = W < 700;
+    if (clock >= next && shows.length < (narrow ? 2 : 3)) {
+      var band = narrow ? 0.5 : 0.26, left = Math.random() < 0.5;       // wide screens: the outer quarters only
+      var x = narrow ? W * (0.1 + Math.random() * 0.8) : (left ? W * (0.03 + Math.random() * band * 0.85) : W * (1 - 0.03 - Math.random() * band * 0.85));
+      var pals = cfg.palettes(dark);
+      shows.push({ x: x, by: H * (0.1 + Math.random() * 0.4), y: H + 8, rise: 0, pal: pals[(Math.random() * pals.length) | 0],
+        parts: null, age: 0, scale: narrow ? 0.7 : 1 });
+      next = clock + 1.1 + Math.random() * 1.8;
+    }
+    for (i = shows.length - 1; i >= 0; i--) {
+      var s = shows[i], x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+      if (!s.parts) {                                                    // rocket on its way up
+        s.rise += dt / 0.6; var e = 1 - Math.pow(1 - Math.min(1, s.rise), 2), ny = H + 8 + (s.by - H - 8) * e;
+        ctx.globalAlpha = 0.85; ctx.strokeStyle = s.pal[0]; ctx.lineWidth = 1.8; ctx.lineCap = "round";
+        ctx.beginPath(); ctx.moveTo(s.x, ny + 22); ctx.lineTo(s.x, ny); ctx.stroke();
+        dirty.push([Math.floor(s.x - 4), Math.floor(ny - 4), 9, 30]);
+        if (s.rise >= 1) {                                               // burst
+          var n = 36 + ((Math.random() * 18) | 0), sp0 = (190 + Math.random() * 110) * s.scale;
+          s.parts = [];
+          for (j = 0; j < n; j++) {
+            var a = (j / n) * Math.PI * 2 + Math.random() * 0.2, v = sp0 * (0.55 + Math.random() * 0.45);
+            s.parts.push({ x: s.x, y: s.by, vx: Math.cos(a) * v, vy: Math.sin(a) * v, c: s.pal[j % s.pal.length], k: (Math.random() * 9) | 0 });
+          }
+          s.life = 1.7 + Math.random() * 0.6;
+        }
+        continue;
+      }
+      s.age += dt;
+      if (s.age >= s.life) { shows.splice(i, 1); continue; }
+      var f = s.age / s.life, alpha = (f < 0.12 ? f / 0.12 : 1 - (f - 0.12) / 0.88) * (dark ? 0.95 : 0.85);
+      var drag = Math.pow(0.968, dt * 60), fall = 28 * dt, byColor = {}, p, key;
+      for (j = 0; j < s.parts.length; j++) {
+        p = s.parts[j];
+        p.vx *= drag; p.vy = p.vy * drag + fall; p.x += p.vx * dt; p.y += p.vy * dt;
+        if (f > 0.5 && ((j + (s.age * 9 | 0) * 3 + p.k) % 5) === 0) continue;       // late sparks twinkle out
+        (byColor[p.c] || (byColor[p.c] = [])).push(p);
+        if (p.x < x0) x0 = p.x; if (p.x > x1) x1 = p.x; if (p.y < y0) y0 = p.y; if (p.y > y1) y1 = p.y;
+      }
+      ctx.lineCap = "round";
+      for (key in byColor) {
+        var arr = byColor[key], white = cfg.white && cfg.white.indexOf(key) >= 0 && !dark;
+        if (white) {                                                       // white spark on a light page: a blue halo first
+          ctx.globalAlpha = alpha * 0.5; ctx.strokeStyle = "#1e40af"; ctx.lineWidth = 3.6; ctx.beginPath();
+          for (j = 0; j < arr.length; j++) { ctx.moveTo(arr[j].x - arr[j].vx * 0.045, arr[j].y - arr[j].vy * 0.045); ctx.lineTo(arr[j].x, arr[j].y); }
+          ctx.stroke();
+        }
+        ctx.globalAlpha = alpha; ctx.strokeStyle = key; ctx.lineWidth = white ? 2 : 2.4; ctx.beginPath();
+        for (j = 0; j < arr.length; j++) { ctx.moveTo(arr[j].x - arr[j].vx * 0.045, arr[j].y - arr[j].vy * 0.045); ctx.lineTo(arr[j].x, arr[j].y); }
+        ctx.stroke();
+      }
+      if (x1 > x0) dirty.push([Math.floor(x0 - 18), Math.floor(y0 - 18), Math.ceil(x1 - x0 + 36), Math.ceil(y1 - y0 + 36)]);
+    }
+    ctx.globalAlpha = 1;
+  }, 30);
+  function apply() {
+    if (kit.reduced()) { loop.stop(); if (cv) { cv.remove(); cv = ctx = null; } shows = []; dirty = []; return; }
+    if (!cv) { cv = kit.canvas(cfg.cls, 2); ctx = cv.ctx; cv.onSize = function () { dirty = [[0, 0, cv.W, cv.H]]; }; next = 0.5; clock = 0; }
+    loop.start();
+  }
+  kit.onMotion(apply);
+  apply();
+};
+
+/* ============================================================
+   NEW YEAR'S (2026-10-01) -- Dec 31, Jan 1 and Jan 2 (local date, every year), or ?theme=newyear.
+   Takes precedence over the December snow and lights on Dec 31. Quiet gold and silver fireworks in the
+   corners and edges behind the UI (kit.fireworks), a champagne light-mode tint (body.newyear-theme),
+   gold and silver quiz confetti, and a one-time-per-day splash card with the year that is about to
+   begin (Dec 31 shows next year's number; Jan 1-2 the current one) on the app-shell pages.
+   ============================================================ */
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("newyear")) return;
+  document.body.classList.add("newyear-theme");
+  kit.colors(["#d4a017", "#f0c040", "#b8c0cc", "#94a3b8", "#e5b73b"]);
+  kit.fireworks({
+    cls: "th-newyear",
+    palettes: function (dark) {
+      return dark ? [["#fbbf24", "#fde68a"], ["#e2e8f0", "#cbd5e1"], ["#fcd34d", "#e2e8f0"]]
+                  : [["#b8860b", "#d4a017"], ["#64748b", "#94a3b8"], ["#c28a00", "#64748b"]];
+    }
+  });
+  if (!kit.isShell()) return;
+  var now = new Date(), year = now.getMonth() >= 6 ? now.getFullYear() + 1 : now.getFullYear();
+  var card = kit.card({
+    key: "themeCard:newyear:" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate(), fresh: kit.fresh("newyear"),
+    cls: "th-card-ny", burst: [70, 1.2],
+    html: '<div class="th-ny-year"></div><div class="pa-toast-txt"><b>Happy New Year!</b><span>Class of 2028: another year closer.</span></div>'
+  });
+  if (card) card.querySelector(".th-ny-year").textContent = String(year);
+})();
 
 // Seasonal Valentine's theme (added 2026-07-17) -- Jan 31 - Feb 14. Floating hearts behind all UI, plus
 // the light-mode pink tint on the app-shell pages (body.vday-theme).

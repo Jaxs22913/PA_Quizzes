@@ -506,6 +506,13 @@ a.corner-btn:hover { text-decoration: none; }
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
+:root[data-theme="light"] body.homepage.newyear-theme {
+  --bg: #eef0f6; --card: #fefeff; --border: #d3d8e8;
+  background: linear-gradient(120deg, #eef0f6, #f8f4e8, #e2e6f2, #eef0f6);
+  background-color: #eef0f6;
+  background-size: 300% 300%;
+  animation: bg-drift 16s ease-in-out infinite;
+}
 :root[data-theme="light"] body.homepage.thanksgiving-theme {
   --bg: #fdf6e8; --card: #fffefa; --border: #efe0bc;
   background: linear-gradient(120deg, #fdf6e8, #fffaf0, #f8ebc9, #fdf6e8);
@@ -524,7 +531,7 @@ a.corner-btn:hover { text-decoration: none; }
   body.homepage.stpatricks-theme,
   body.homepage.xmas-theme,
   body.homepage.paweek-theme,
-  body.homepage.halloween-theme, body.homepage.thanksgiving-theme {
+  body.homepage.halloween-theme, body.homepage.thanksgiving-theme, body.homepage.newyear-theme {
     animation: none !important;
     background-position: 0% 50% !important;
   }
@@ -3513,3 +3520,15 @@ body.th-paused .hw-glow { animation-play-state: paused; }
 body.th-paused .th-grp { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .th-grp { animation: none; opacity: 1; } }
 @media print { .th-lights { display: none !important; } }
+
+
+/* ============================================================
+   NEW YEAR'S splash card (theme.js): same card as the PA Week welcome (.pa-toast), recolored.
+   The fireworks themselves are a canvas (theme.js, kit.fireworks).
+   ============================================================ */
+.pa-toast.th-card-ny { border-color: #d4a017; box-shadow: 0 10px 30px rgba(212, 160, 23, .30), 0 2px 6px rgba(0, 0, 0, .08); }
+.th-ny-year { flex: none; font: 800 30px/1 ui-rounded, "SF Pro Rounded", system-ui, sans-serif; letter-spacing: .02em; color: #9a6b00; animation: th-ny-pulse 1.6s ease-in-out infinite; }
+@keyframes th-ny-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+:root[data-theme="dark"] .pa-toast.th-card-ny { border-color: #fbbf24; box-shadow: 0 10px 30px rgba(251, 191, 36, .22); }
+:root[data-theme="dark"] .th-ny-year { color: #fbbf24; }
+@media (prefers-reduced-motion: reduce) { .th-ny-year { animation: none; } }
