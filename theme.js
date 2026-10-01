@@ -3694,16 +3694,24 @@ window.__themeKit.fireworks = function (cfg) {
   });
 })();
 
-// Seasonal Fall theme (added 2026-07-17) -- Oct 17-23 (Oct 24-31 is Halloween, which takes over; see
-// __themeKit YIELDS). Tumbling autumn leaves behind all UI, plus the warm light-mode tint (body.fall-theme).
+// Seasonal Fall theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Oct 17-23
+// (Oct 24-31 is Halloween, which takes over; see __themeKit YIELDS). Autumn leaves behind all UI, plus the
+// warm light-mode tint (body.fall-theme).
+//   - Leaves rock side to side like a pendulum as they fall and flip over (a squashed width), instead of
+//     spinning flat; the cursor or a finger still scatters and spins them.
+//   - Leaves that reach the bottom edge can land and lie there (a loose litter along the edge, never more than
+//     half of them), fade out after 20-30 seconds, and fly up again if the cursor sweeps through.
+//   - Quiz-completion confetti in autumn colors. 30 fps, dirty-rect redraw, reduced motion: one still frame.
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("leaves")) return;
   document.body.classList.add("fall-theme");
+  kit.colors(["#ea580c", "#c2410c", "#ca8a04", "#991b1b", "#b45309"]);
   var COLORS = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"], speedMul = 0.35;
-  kit.field({
-    cls: "th-leaves", dprCap: 99, reduced: "run", wrap: 20, kick: true,
-    count: window.innerWidth < 700 ? 18 : 34,
+  var N = window.innerWidth < 700 ? 18 : 34, MAXPILE = Math.round(N * 0.5), resting = 0, F = null;
+  F = kit.field({
+    cls: "th-leaves", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30, count: N,
+    rad: function (l) { return l.s * 2.2; },
     make: function (randomY) {
       var s = 5 + Math.random() * 7;
       return {
@@ -3711,15 +3719,40 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
         s: s, speed: (0.3 + s * 0.05) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
-        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.04,
+        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.016,
+        flip: Math.random() * Math.PI * 2, flipSpeed: 0.03 + Math.random() * 0.05,
+        rest: false, restT: 0, restMax: 20 + Math.random() * 10,
         opacity: 0.5 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
       };
     },
-    move: function (l) { l.y += l.speed + l.vy; l.drift += l.driftSpeed; l.spin += l.spinSpeed; l.x += Math.sin(l.drift) * 1.1 + l.vx; },
-    gone: function (l) { return l.y > window.innerHeight + 20; },
+    move: function (l, k) {
+      if (l.rest) {
+        if (Math.abs(l.vx) + Math.abs(l.vy) > 0.9) { l.rest = false; l.vy = -(1.6 + Math.random() * 1.6); l.restT = 0; }   // the cursor swept it up
+        else { l.restT += k / 60; l.vx = l.vy = 0; return; }
+      }
+      l.y += (l.speed + l.vy) * k; l.drift += l.driftSpeed * k; l.spin += l.spinSpeed * k; l.flip += l.flipSpeed * k;
+      l.x += (Math.sin(l.drift) * 1.1 + l.vx) * k;
+    },
+    gone: function (l) {
+      var H = window.innerHeight;
+      if (l.rest) return l.restT > l.restMax;
+      if (l.y > H - l.s * 0.5 && resting < MAXPILE && Math.random() < 0.8) {     // lands on the edge
+        l.rest = true; l.restT = 0; l.vx = l.vy = 0; l.y = H - l.s * 0.45 - Math.random() * 3; return false;
+      }
+      return l.y > H + 20;
+    },
+    begin: function () { if (!F) return; resting = 0; var ps = F.particles(); for (var i = 0; i < ps.length; i++) if (ps[i].rest) resting++; },
     draw: function (ctx, l) {
-      ctx.save(); ctx.translate(l.x, l.y); ctx.rotate(l.spin);
-      ctx.globalAlpha = l.opacity; ctx.fillStyle = l.color;
+      ctx.save(); ctx.translate(l.x, l.y);
+      var a = l.opacity;
+      if (l.rest) {
+        ctx.rotate(l.spin); ctx.scale(1, 0.42);                                  // lying flat
+        a = Math.min(l.opacity + 0.1, 0.85) * Math.min(1, (l.restMax - l.restT) / 3);
+      } else {
+        ctx.rotate(Math.cos(l.drift) * 0.7 + l.spin * 0.35);                     // rocks into each swing
+        ctx.scale(Math.max(0.18, Math.abs(Math.cos(l.flip))), 1);              // tumbles over
+      }
+      ctx.globalAlpha = a; ctx.fillStyle = l.color;
       kit.shapes.leaf(ctx, l.s); ctx.fill(); ctx.restore();
     }
   });
