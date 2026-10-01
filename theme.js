@@ -3321,7 +3321,7 @@ window.__themeKit = (function () {
      cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
      begin(ctx) once per frame, after(ctx, still, k) once per frame after the particles, kick (spin from the cursor),
      repelR/repelK, dprCap, fps (cap), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
-     [y, height] of a band to clear as well,
+     [y, height] of a band to clear as well + dirty() -> [[x, y, w, h], ...] more rectangles to clear,
      reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
   kit.field = function (cfg) {
     var cv = null, ps = [], mode = cfg.reduced || "off", R = cfg.repelR || 110, K = cfg.repelK || 1.8;
@@ -3332,6 +3332,7 @@ window.__themeKit = (function () {
       if (cfg.rad && !still) {                                   // erase only where each particle was (plus the strip, if any)
         for (i = 0; i < ps.length; i++) { p = ps[i]; if (p.bb) ctx.clearRect(p.bb[0], p.bb[1], p.bb[2], p.bb[3]); }
         if (cfg.strip) { r = cfg.strip(); ctx.clearRect(0, r[0], W, r[1]); }
+        if (cfg.dirty) { r = cfg.dirty(); for (i = 0; i < r.length; i++) ctx.clearRect(r[i][0], r[i][1], r[i][2], r[i][3]); }
       } else ctx.clearRect(0, 0, W, H);
       if (cfg.begin) cfg.begin(ctx);
       for (i = 0; i < ps.length; i++) {
@@ -3416,6 +3417,28 @@ window.__themeKit = (function () {
     setTimeout(close, o.ms || 9000);
     if (o.burst && !kit.reduced() && window.burstConfetti) setTimeout(function () { window.burstConfetti(o.burst[0], o.burst[1]); }, 350);
     return card;
+  };
+
+  /* ----- a decoration beside/behind the homepage logo (homepage only) -----
+     The homepage has two logos: the big one (.brand-mark, desktop) and the small one in the h1 (phones);
+     whichever is showing gets the visible copy. Returns the two spans (or null off the homepage). */
+  kit.logoMark = function (cls, behind) {
+    if (!body.classList.contains("homepage")) return null;
+    var bigHost = document.querySelector(".brand-mark"), smallHost = document.querySelector(".page > header h1");
+    function mk(host, c) {
+      if (!host) return null;
+      var el = document.createElement("span");
+      el.className = cls + " " + cls + "-" + c; el.setAttribute("aria-hidden", "true");
+      host.style.position = "relative"; if (behind) host.style.isolation = "isolate";
+      host.insertBefore(el, host.firstChild); return el;
+    }
+    var big = mk(bigHost, "big"), small = mk(smallHost, "small");
+    function which() {
+      var desktop = !!(bigHost && bigHost.offsetParent !== null && bigHost.getBoundingClientRect().height > 0);
+      if (big) big.classList.toggle("on", desktop); if (small) small.classList.toggle("on", !desktop);
+    }
+    which(); window.addEventListener("resize", which);
+    return [big, small];
   };
 
   /* ----- outlines the themes share (path only: the caller fills or strokes) ----- */
@@ -3724,16 +3747,41 @@ window.__themeKit.fireworks = function (cfg) {
   });
 })();
 
-// Seasonal Valentine's theme (added 2026-07-17) -- Jan 31 - Feb 14. Floating hearts behind all UI, plus
-// the light-mode pink tint on the app-shell pages (body.vday-theme).
+// Seasonal Valentine's theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Jan 31 - Feb 14.
+// Floating hearts behind all UI, plus the light-mode pink tint on the app-shell pages (body.vday-theme).
+//   - A heart pops in a tiny sparkle when the cursor lands right on it or it is clicked/tapped (another floats up
+//     from the bottom to replace it); the standing scatter-from-the-cursor still applies around it.
+//   - On the homepage the logo gets a soft heartbeat glow behind it (CSS only, lub-dub then a rest).
+//   - Pink quiz-completion confetti. 30 fps, dirty-rect redraw, canvas capped at 2x, reduced motion: one still frame.
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("hearts")) return;
   document.body.classList.add("vday-theme");
   var COLORS = ["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"], speedMul = 0.35;
-  kit.field({
-    cls: "th-hearts", dprCap: 99, reduced: "run", wrap: 20,
+  kit.colors(["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"]);
+  var ptr = kit.pointer(), sparks = [], rects = [], F = null;
+  function pop(h) {                                              // a heart bursts into a few sparks
+    h.dead = true;
+    for (var i = 0; i < 9; i++) {
+      var a = (i / 9) * Math.PI * 2 + Math.random() * 0.5, v = 1.1 + Math.random() * 1.5;
+      sparks.push({ x: h.x, y: h.y + h.s * 0.7, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 0.3, life: 0, max: 0.55 + Math.random() * 0.3,
+        r: 1.2 + Math.random() * 1.5, c: i % 3 === 0 ? "#fde68a" : (i % 3 === 1 ? "#ffffff" : h.color) });
+    }
+  }
+  window.addEventListener("click", function (e) {                // a click or tap on a heart pops it (the click still goes to the page)
+    if (!F || kit.reduced()) return;
+    var ps = F.particles(), best = null, bd = 1e9;
+    for (var i = 0; i < ps.length; i++) {
+      var h = ps[i], dx = e.clientX - h.x, dy = e.clientY - (h.y + h.s * 0.7), d = dx * dx + dy * dy, R = h.s * 1.3 + 10;
+      if (d < R * R && d < bd && !h.dead) { best = h; bd = d; }
+    }
+    if (best) pop(best);
+  });
+  F = kit.field({
+    cls: "th-hearts", dprCap: 2, reduced: "still", wrap: 20, fps: 30,
     count: window.innerWidth < 700 ? 18 : 34,
+    rad: function (h) { return h.s * 1.9 + 3; },
+    dirty: function () { return rects; },
     make: function (randomY) {
       var s = 6 + Math.random() * 9;
       return {
@@ -3741,17 +3789,38 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 10 + Math.random() * 40,
         s: s, speed: (0.35 + s * 0.045) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
-        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0, dead: false
       };
     },
-    move: function (h) { h.y -= h.speed; h.y += h.vy; h.drift += h.driftSpeed; h.x += Math.sin(h.drift) * 0.6 + h.vx; },
-    gone: function (h) { return h.y < -20; },
+    move: function (h, k) {
+      h.y -= h.speed * k; h.y += h.vy * k; h.drift += h.driftSpeed * k; h.x += (Math.sin(h.drift) * 0.6 + h.vx) * k;
+      if (ptr.x !== null && kit.fine()) {                          // the cursor lands right on it
+        var dx = ptr.x - h.x, dy = ptr.y - (h.y + h.s * 0.7), R = h.s * 0.9 + 5;
+        if (dx * dx + dy * dy < R * R) pop(h);
+      }
+    },
+    gone: function (h) { return h.dead || h.y < -20; },
     draw: function (ctx, h) {
       ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(Math.sin(h.drift) * 0.25);
       ctx.globalAlpha = h.opacity; ctx.fillStyle = h.color;
       kit.shapes.heart(ctx, h.s); ctx.fill(); ctx.restore();
+    },
+    after: function (ctx, still, k) {
+      rects = [];
+      if (!sparks.length) return;
+      var dt = (k || 1) / 60;
+      for (var i = sparks.length - 1; i >= 0; i--) {
+        var p = sparks[i]; p.life += dt;
+        if (p.life >= p.max) { sparks.splice(i, 1); continue; }
+        p.x += p.vx * (k || 1); p.y += p.vy * (k || 1); p.vy += 0.03 * (k || 1);
+        ctx.globalAlpha = 1 - p.life / p.max; ctx.fillStyle = p.c;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        rects.push([Math.floor(p.x - p.r - 2), Math.floor(p.y - p.r - 2), Math.ceil(p.r * 2 + 5), Math.ceil(p.r * 2 + 5)]);
+      }
+      ctx.globalAlpha = 1;
     }
   });
+  kit.logoMark("vd-beat", true);
 })();
 
 // Seasonal Fall theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Oct 17-23

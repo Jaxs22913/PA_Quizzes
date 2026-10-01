@@ -452,7 +452,7 @@ a.corner-btn:hover { text-decoration: none; }
    inside that date window) so it never bleeds outside the season. */
 :root[data-theme="light"] body.homepage.vday-theme {
   --bg: #fbe7ee;
-  --card: #fff8fa;
+  --card: #fffcfd;
   --border: #f0cddb;
   background: linear-gradient(120deg, #fbe7ee, #fef0f7, #f5d3e0, #fbe7ee);
   background-color: #fbe7ee;   /* see note below: the shorthand above resets this to transparent */
@@ -3546,3 +3546,28 @@ body.th-paused .th-grp { animation-play-state: paused; }
 .pa-toast.th-card-4th .pa-toast-txt b { color: #b91c1c; }
 :root[data-theme="dark"] .pa-toast.th-card-4th { border-color: #60a5fa; box-shadow: 0 10px 30px rgba(96, 165, 250, .22); }
 :root[data-theme="dark"] .pa-toast.th-card-4th .pa-toast-txt b { color: #f87171; }
+
+
+/* ============================================================
+   VALENTINE'S (theme.js, Jan 31 - Feb 14 or ?theme=hearts): a heartbeat glow behind the homepage logo.
+   The floating hearts and their pop sparkles are a canvas (theme.js). Two copies (the big desktop logo and the
+   small phone logo); the one whose logo is showing gets .on. Compositor-only animation, no layout.
+   ============================================================ */
+.vd-beat {
+  position: absolute; display: none; z-index: -1; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 63, 94, .34) 0%, rgba(244, 63, 94, .14) 42%, rgba(244, 63, 94, 0) 70%);
+  animation: vd-beat 1.9s ease-in-out infinite; will-change: transform, opacity;
+}
+.vd-beat.on { display: block; }
+.vd-beat-big { left: 50%; top: 44%; width: 250px; height: 250px; margin: -125px 0 0 -125px; }
+.vd-beat-small { left: 50%; top: 40%; width: 170px; height: 170px; margin: -85px 0 0 -85px; }
+:root[data-theme="dark"] .vd-beat { background: radial-gradient(circle, rgba(251, 113, 133, .36) 0%, rgba(251, 113, 133, .15) 42%, rgba(251, 113, 133, 0) 70%); }
+@keyframes vd-beat {
+  0%, 56%, 100% { transform: scale(.9); opacity: .55; }
+  12% { transform: scale(1.12); opacity: 1; }
+  26% { transform: scale(.96); opacity: .7; }
+  38% { transform: scale(1.07); opacity: .92; }
+}
+body.th-paused .vd-beat { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .vd-beat { animation: none; opacity: .7; } }
+@media print { .vd-beat { display: none !important; } }
