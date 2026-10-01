@@ -13,7 +13,8 @@ BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/
 FILES = {"L4": "pharm-ophthalmology-wood-2026-09-03.transcript.txt",
          "L5": "pharm-ent-jax-2026-09-17.transcript.txt",
          "L6": "pharm-l6-antihypertensives-2026-09-22.transcript.txt",
-         "L7": "pharm-l7-lipids-2026-09-22.transcript.txt"}
+         "L7": "pharm-l7-lipids-2026-09-22.transcript.txt",
+         "L8": "pharm-l8-l9-myocardial-ischemia-diuretics-2026-09-30.transcript.txt"}   # the live stream held L8 then L9; Lecture 8 is its first 1:05:10
 KINDS = {"marker", "rule", "shape", "scope", "emphasis"}
 _cache = {}
 

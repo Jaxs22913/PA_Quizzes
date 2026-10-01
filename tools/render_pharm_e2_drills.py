@@ -14,6 +14,9 @@ for them and Exam 1 carries six.
 pharm_drill_htn.py and pharm_drill_lipid.py; the master drill now interleaves
 five sets instead of three. ENT (Lecture 5) still has no drill.
 
+2026-09-30: Lecture 8 (Myocardial Ischemia Drugs.pptx, deck key MI) added as a
+sixth set (pharm_drill_mi.py); the master drill now interleaves six sets.
+
 Answer positions rotate through A-D, never chosen while authoring.
 """
 import os, sys
@@ -29,10 +32,11 @@ import pharm_drill_oph_allergy as al
 import pharm_drill_oph_glaucoma as gl
 import pharm_drill_htn as ht
 import pharm_drill_lipid as lp
+import pharm_drill_mi as mi
 
 OUT = os.path.join(ROOT, "Pharmacology I Exam 2")
 DECK = {"OPH": "Ophthalmology-2.pptx", "HTN": "Antihypertensives.pptx",
-        "LIP": "Lipids.pptx"}
+        "LIP": "Lipids.pptx", "MI": "Myocardial Ischemia Drugs.pptx"}
 
 SETS = [
     (ai, "pharm-e2-drill-anti-infectives.html", "Ocular Anti-infectives Drill",
@@ -57,6 +61,10 @@ SETS = [
      "Topic — Drugs that lower cholesterol and triglyceride levels",
      ["Statins", "Ezetimibe", "Fibrates", "Bile acid sequestrants", "Niacin",
       "PCSK9 inhibitors"]),
+    (mi, "pharm-e2-drill-myocardial-ischemia.html", "Myocardial Ischemia Drill",
+     "Topic — Drugs used to treat myocardial ischemia",
+     ["Beta blockers", "Calcium channel blockers", "Nitrates", "Antiplatelets",
+      "Fibrinolytics"]),
 ]
 
 INTRO = ("One fact, four drug names. No patient, no story &mdash; just the thing that drug "
@@ -122,7 +130,8 @@ def main():
         sub="Pharmacology I &middot; Exam 2 &middot; rapid drill",
         pill="%d questions" % len(qs),
         chips=["Anti-infectives", "Allergy &amp; inflammation", "Glaucoma",
-               "Diagnostics", "Antihypertensives", "Lipids"],
+               "Diagnostics", "Antihypertensives", "Lipids",
+               "Myocardial ischemia"],
         intro="All %d rapid-drill questions in one sitting, interleaved across the %d "
               "sets. Same format throughout &mdash; one fact, four names, no doses. Set a "
               "shorter length on this screen if you want a sample rather than the whole "

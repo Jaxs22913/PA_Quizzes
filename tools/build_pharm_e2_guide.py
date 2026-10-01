@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 2 study guide (Lectures 4 to 7).
+"""Build the Pharmacology I Exam 2 study guide (Lectures 4 to 8).
 
 Same skeleton-lift as build_pharm_guide.py: take the Exam 1 guide's head and
 tail so the chrome, design system and read-aloud wiring come for free, and
@@ -10,7 +10,8 @@ BUILT INCREMENTALLY, AND THE PAGE SAYS SO. The syllabus puts LECTURES 4 TO 8 in
 Exam 2. Section 1 (Lecture 4, ophthalmic) lives in this file; sections 2 to 4
 (Lecture 5 ENT, Lecture 6 antihypertensives, Lecture 7 lipids; added 2026-09-25)
 live in _pharm_e2_guide_l5.py, _l6.py and _l7.py and are spliced in after it.
-Lecture 8 drops in the same way once it is delivered (2026-09-30).
+Section 5 (Lecture 8, myocardial ischemia; added 2026-09-30) lives in
+_pharm_e2_guide_l8.py and is spliced in the same way.
 
 Objectives are VERBATIM from the syllabus, not from the deck. The two differ on
 objective 2 -- the syllabus says "molecular mechanism of action", the slide
@@ -25,6 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pharm_e2_guide_l5 as L5
 import _pharm_e2_guide_l6 as L6
 import _pharm_e2_guide_l7 as L7
+import _pharm_e2_guide_l8 as L8
 
 ROOT = _REPO
 DONOR = os.path.join(ROOT, "Pharmacology I Exam 1/pharm-exam-1-study-guide.html")
@@ -67,10 +69,10 @@ BODY = '''<main>
 
   <div class="callout"><strong>This is one of five lectures in Exam 2.</strong> The syllabus puts
   <strong>Lectures 4 to 8</strong> in this exam &mdash; ophthalmic drugs, then ear, nose and
-  throat, and then the cardiovascular block. This guide covers <strong>Lectures 4 to 7</strong>:
+  throat, and then the cardiovascular block. This guide covers <strong>Lectures 4 to 8</strong>:
   ophthalmic drugs (this section), ear, nose and throat drugs (section 2), antihypertensives
-  (section 3) and the lipid-lowering drugs (section 4). Lecture 8 (myocardial ischemia) has not
-  been delivered yet; its section will be added once it is.</div>
+  (section 3), the lipid-lowering drugs (section 4) and myocardial ischemia drug therapy
+  (section 5).</div>
 
   <div class="prof-flag">
     <span class="prof-flag-label">&#9733; HE PROMISED TO ASK THIS</span>
@@ -424,19 +426,19 @@ def main():
     tail_and_head_fix = re.compile(r'\s*<link rel="alternate"[^>]*pharm-exam-1[^>]*>')
 
     head = re.sub(r"<title>.*?</title>",
-                  "<title>Pharmacology I Exam 2 Study Guide &mdash; Lectures 4 to 7</title>",
+                  "<title>Pharmacology I Exam 2 Study Guide &mdash; Lectures 4 to 8</title>",
                   head, count=1, flags=re.S)
     head = re.sub(r'<header class="top">.*?</header>',
                   '<header class="top">\n  <h1>Pharmacology I Exam 2 Study Guide</h1>\n'
-                  '  <p>Lectures 4 to 7 &middot; Ophthalmic, ENT, Antihypertensive and Lipid-Lowering Drugs &middot; Class of 2028</p>\n'
+                  '  <p>Lectures 4 to 8 &middot; Ophthalmic, ENT, Antihypertensive, Lipid-Lowering and Myocardial Ischemia Drugs &middot; Class of 2028</p>\n'
                   '  <p>Adam Wood, Pharm.D., DABAT</p>\n</header>',
                   head, count=1, flags=re.S)
     # No audio exists for this lecture; an empty audio dir breaks read-aloud.
     head = re.sub(r'\s*data-audio-dir="[^"]*"', "", head)
     head = tail_and_head_fix.sub("", head)
 
-    toc = TOC.replace("@@MORE_TOC@@", "\n".join((L5.TOC, L6.TOC, L7.TOC)))
-    body = BODY.replace("@@MORE_BODY@@", L5.BODY + L6.BODY + L7.BODY)
+    toc = TOC.replace("@@MORE_TOC@@", "\n".join((L5.TOC, L6.TOC, L7.TOC, L8.TOC)))
+    body = BODY.replace("@@MORE_BODY@@", L5.BODY + L6.BODY + L7.BODY + L8.BODY)
     html = head + '<div class="layout wrap" data-readable>' + "\n" + toc + "\n\n" + body + tail
 
     for tag in ("div", "section", "p", "h2", "h3", "ol", "ul", "li", "nav", "main", "strong", "em"):
@@ -446,9 +448,9 @@ def main():
     assert "TEST_YOURSELF" not in html, "Exam 1 question bank survived"
     assert "pharm-exam-1" not in html, "a link to Exam 1 survived"
     assert html.count("<li>") >= 40, "objectives missing"
-    for sid in ("ophthalmic", "ent", "htn", "lipid"):
+    for sid in ("ophthalmic", "ent", "htn", "lipid", "mi"):
         assert '<section class="deck" id="%s">' % sid in html, "section %s missing" % sid
-    assert html.count('class="io-box"') == 4, "expected four objective boxes"
+    assert html.count('class="io-box"') == 5, "expected five objective boxes"
     assert "@@" not in html, "placeholder survived"
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

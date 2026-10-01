@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 2 cram sheet (Lectures 4 to 7).
+"""Build the Pharmacology I Exam 2 cram sheet (Lectures 4 to 8).
 
 Lecture 4 topics live here; Lectures 5 to 7 (ENT, antihypertensives, lipids;
-added 2026-09-25) are in _pharm_e2_cram_l5l7.py and appended after them.
+added 2026-09-25) are in _pharm_e2_cram_l5l7.py and Lecture 8 (myocardial
+ischemia; added 2026-09-30) is in _pharm_e2_cram_l8.py, appended after them.
 
 Opens with what Dr. Wood excludes, because on this lecture that is the single
 most useful thing to read first -- a 79-slide drug deck of which dosing,
@@ -16,6 +17,7 @@ sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
 from render import render
 sys.path.insert(0, HERE)
 from _pharm_e2_cram_l5l7 import T as T_L5L7
+from _pharm_e2_cram_l8 import T as T_L8
 
 OUT = os.path.join(os.path.dirname(HERE),
                    "Pharmacology I Exam 2/pharm-exam-2-cram-sheet.html")
@@ -86,20 +88,19 @@ T = [
 ]},
 ]
 
-T = T + T_L5L7
+T = T + T_L5L7 + T_L8
 assert len({t["id"] for t in T}) == len(T), "duplicate topic id"
 
 html = render(
-    title="Pharmacology I Exam 2 Cram Sheet &mdash; Lectures 4 to 7",
+    title="Pharmacology I Exam 2 Cram Sheet &mdash; Lectures 4 to 8",
     kicker="Pharmacology I &middot; Exam 2 &middot; Class of 2028",
     h1="Pharmacology I Exam 2 Cram Sheet",
-    sub="Lectures 4 to 7 (ophthalmic, ear-nose-throat, antihypertensive and lipid-lowering drugs), "
+    sub="Lectures 4 to 8 (ophthalmic, ear-nose-throat, antihypertensive, lipid-lowering and myocardial ischemia drugs), "
         "Adam Wood Pharm.D. DABAT. Each lecture opens with what he says is NOT on the exam. "
-        "&#9733; = professor emphasized (Lectures 6 and 7 from the recording; Lecture 5 has no stars yet).",
+        "&#9733; = professor emphasized (Lectures 6, 7 and 8 from the recording; Lecture 5 has no stars yet).",
     topics=T,
     guide_href="pharm-exam-2-study-guide.html",
-    footer_note="Exam 2 covers Lectures 4 to 8 &mdash; this sheet covers Lectures 4 to 7; "
-                "Lecture 8 (myocardial ischemia) has not been delivered yet. "
+    footer_note="Exam 2 covers Lectures 4 to 8 &mdash; this sheet covers all five. "
                 "The <a href=\"pharm-exam-2-study-guide.html\">study guide</a> has the full "
                 "treatment.")
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

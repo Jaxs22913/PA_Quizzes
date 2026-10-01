@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Pharmacology I Exam 2 Arcade decks (Lectures 4 to 7).
+"""Add the Pharmacology I Exam 2 Arcade decks (Lectures 4 to 8).
 
-Lecture 4 decks are below; Lectures 5 to 7 come from _pharm_e2_arcade_l5l7.py.
+Lecture 4 decks are below; Lectures 5 to 7 come from _pharm_e2_arcade_l5l7.py, Lecture 8 from _pharm_e2_arcade_l8.py.
 
 Three decks matching the three quiz topics, so a student can drill the same
 split they revise. ATOMIC FACTS ONLY per [[arcade_content_policy]] -- one
@@ -20,6 +20,7 @@ class's deck list.
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _pharm_e2_arcade_l5l7 import DECKS as DECKS_L5L7
+from _pharm_e2_arcade_l8 import DECKS as DECKS_L8
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCADE = os.path.join(ROOT, "arcade.js")
@@ -158,7 +159,8 @@ DECKS = [
 
 
 # Lectures 5 to 7 (ENT, antihypertensives, lipids), drafted 2026-09-25.
-DECKS = DECKS + DECKS_L5L7
+# Lecture 8 (myocardial ischemia: antianginals, acute coronary syndrome).
+DECKS = DECKS + DECKS_L5L7 + DECKS_L8
 
 
 def js(decks):

@@ -19,7 +19,7 @@ LECTURES = {
     "L5": {"n": 5, "title": "Ear, Nose and Throat Drugs", "deck": "ENT Jax Pharmacology.pptx"},
     "L6": {"n": 6, "title": "Antihypertensive Drugs", "deck": "Antihypertensives.pptx"},
     "L7": {"n": 7, "title": "Drugs that Lower Cholesterol and Triglyceride Levels", "deck": "Lipids.pptx"},
-    "L8": {"n": 8, "title": "Myocardial Ischemia Drug Therapy", "deck": None},   # deck lands after 2026-09-30
+    "L8": {"n": 8, "title": "Myocardial Ischemia Drug Therapy", "deck": "Myocardial Ischemia Drugs.pptx"},
 }
 KINDS = ("indications", "sideeffects", "contra")
 _cache = {}

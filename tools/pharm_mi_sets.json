@@ -1,0 +1,2818 @@
+{
+ "anginal1": [
+  {
+   "topic": "Angina types and goals",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "Which risk factor for coronary heart disease can a patient change?",
+   "opts": [
+    [
+     "Tobacco use",
+     "Correct. Tobacco use, a sedentary lifestyle, diabetes, overweight, hypertension and dyslipidemia are modifiable risk factors that therapy targets."
+    ],
+    [
+     "Age older than 45 in men",
+     "Age is fixed. Male age over 45 and female age over 55 are non-modifiable risk factors."
+    ],
+    [
+     "Age older than 55 in women",
+     "Age cannot be changed. Female age over 55 is a non-modifiable risk factor, unlike tobacco use, which can be stopped."
+    ],
+    [
+     "Family history of premature events",
+     "A family history of a premature cardiovascular event is non-modifiable, unlike tobacco use, diabetes or hypertension."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 9"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "Patients starting a calcium channel blocker are counseled about dizziness and which other problem?",
+   "opts": [
+    [
+     "Nightmares",
+     "Nightmares are a beta blocker adverse effect; constipation is the second counseling point for calcium channel blockers."
+    ],
+    [
+     "Hyperglycemia",
+     "Hyperglycemia is a beta blocker effect; calcium channel blocker counseling covers dizziness and constipation."
+    ],
+    [
+     "Constipation",
+     "Correct. Dizziness and constipation are the counseling points for calcium channel blockers."
+    ],
+    [
+     "Sexual dysfunction",
+     "Sexual dysfunction is listed for beta blockers; calcium channel blocker counseling covers dizziness and constipation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 24"
+  },
+  {
+   "topic": "Supply and demand",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "Which action of calcium channel blockers improves myocardial oxygen supply?",
+   "opts": [
+    [
+     "Stabilizing atherosclerotic plaque",
+     "Plaque stabilization is a vasculoprotective effect of drugs such as statins; calcium channel blockers raise supply by relieving vasospasm."
+    ],
+    [
+     "Blocking platelet aggregation",
+     "Blocking platelet aggregation is the antiplatelet effect of aspirin and clopidogrel, not a calcium channel blocker action."
+    ],
+    [
+     "Relief of coronary vasospasm",
+     "Correct. Calcium channel blockers relieve vasospasm and mildly dilate areas of fixed stenosis, raising supply, and they also lower demand."
+    ],
+    [
+     "Reducing ventricular volume",
+     "Lower ventricular volume reduces wall tension, a demand-side effect (strongest with nitrates). The supply effect of these drugs is relief of vasospasm."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 20"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "A patient taking verapamil is started on a statin. Which statin's level rises most?",
+   "opts": [
+    [
+     "Simvastatin",
+     "Correct. Simvastatin is a cytochrome P450 3A4 substrate, and verapamil inhibits that enzyme, so simvastatin levels climb (statin metabolism is covered with the lipid-lowering drugs)."
+    ],
+    [
+     "Rosuvastatin",
+     "Rosuvastatin undergoes minimal cytochrome P450 metabolism, so a 3A4 inhibitor such as verapamil barely changes its level."
+    ],
+    [
+     "Pravastatin",
+     "Pravastatin is cleared by enzymatic and nonenzymatic routes rather than by cytochrome P450 3A4, so verapamil has little effect on it."
+    ],
+    [
+     "Pitavastatin",
+     "Pitavastatin is cleared mainly by glucuronidation, not cytochrome P450 3A4, so verapamil does not raise its level much."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which blood pressure reading contraindicates starting a beta blocker or calcium channel blocker?",
+   "opts": [
+    [
+     "Systolic pressure above 140 mmHg",
+     "High pressure is not a contraindication; hypertension with angina is a reason to use a beta blocker."
+    ],
+    [
+     "Diastolic pressure above 90 mmHg",
+     "An elevated diastolic pressure is no reason to withhold these drugs; the concern is pressure too low, not too high."
+    ],
+    [
+     "Systolic pressure below 100 mmHg",
+     "Correct. Both classes lower blood pressure, so a systolic pressure below 100 mmHg contraindicates them."
+    ],
+    [
+     "Systolic pressure below 130 mmHg",
+     "A systolic pressure below 130 mmHg is not a contraindication; the limit for starting these drugs is a systolic pressure below 100 mmHg."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 23"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which valve lesion contraindicates nitrates?",
+   "opts": [
+    [
+     "Mitral valve prolapse",
+     "Mitral valve prolapse is not among the nitrate contraindications; aortic valve stenosis is the valve lesion listed."
+    ],
+    [
+     "Aortic valve stenosis",
+     "Correct. Aortic valve stenosis is a nitrate contraindication, alongside obstructive cardiomyopathy and phosphodiesterase-5 inhibitor use."
+    ],
+    [
+     "Aortic regurgitation",
+     "Aortic regurgitation is not listed as a nitrate contraindication; the valve lesion listed is aortic valve stenosis."
+    ],
+    [
+     "Tricuspid regurgitation",
+     "Tricuspid regurgitation is not listed as a nitrate contraindication; aortic valve stenosis is."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 33"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "protocol",
+   "q": "Angina persists despite two antianginal drugs. What is the usual next step?",
+   "opts": [
+    [
+     "Lifestyle counseling alone",
+     "Lifestyle change is part of care for everyone, but persistent angina on two drugs calls for further workup such as angiography, not counseling alone."
+    ],
+    [
+     "Further workup, such as angiography",
+     "Correct. If a third agent seems needed, the patient probably needs further workup such as angiography rather than another drug."
+    ],
+    [
+     "Adding an antiplatelet for symptoms",
+     "Antiplatelet drugs do not relieve angina symptoms; they help prevent events. Persistent angina calls for further workup."
+    ],
+    [
+     "Adding a third drug without reassessment",
+     "A third agent probably signals the need for further workup such as angiography first, rather than adding another drug without reassessment."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 36"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which drug is taken every day to prevent anginal attacks rather than to relieve an acute one?",
+   "opts": [
+    [
+     "Metoprolol",
+     "Correct. Beta blockers, calcium channel blockers and long-acting nitrates are taken to prevent attacks; they are not rescue drugs."
+    ],
+    [
+     "Sublingual nitroglycerin",
+     "Sublingual nitroglycerin is the quick-relief drug for an acute attack; it can be taken before exertion to prevent effort-induced angina, but it is not a daily preventive."
+    ],
+    [
+     "Nitroglycerin lingual spray",
+     "The lingual spray is a short-acting rescue form; it can be used before exertion to prevent effort-induced angina, but the daily preventives are beta blockers, calcium channel blockers and long-acting nitrates."
+    ],
+    [
+     "Aspirin",
+     "Aspirin prevents acute coronary syndromes; it neither prevents nor relieves attacks of angina, which is the job of antianginal drugs."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 27"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "How are long-acting nitrates usually used?",
+   "opts": [
+    [
+     "As first-line monotherapy",
+     "Long-acting nitrates are not recommended as monotherapy; beta blockers are first line, with nitrates usually added on."
+    ],
+    [
+     "As add-on therapy",
+     "Correct. They are usually adjunctive, added when a beta blocker or calcium channel blocker is not enough; monotherapy is not recommended."
+    ],
+    [
+     "Only for acute attacks",
+     "Acute attacks are treated with short-acting sublingual nitroglycerin. Long-acting forms are for prevention, usually as add-on therapy."
+    ],
+    [
+     "Only after an infarction",
+     "Long-acting nitrates are not limited to a post-infarction role; they are adjunctive antianginals added to other drugs."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 29"
+  },
+  {
+   "topic": "Calcium channel blocker split",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which condition favors choosing a calcium channel blocker over a beta blocker?",
+   "opts": [
+    [
+     "Prior myocardial infarction",
+     "A prior infarction favors a beta blocker, which is first line after a myocardial infarction."
+    ],
+    [
+     "Hypertension with angina",
+     "Beta blockers are first line for hypertension with angina; a calcium channel blocker is only the alternative."
+    ],
+    [
+     "Vasospastic angina",
+     "Correct. Calcium channel blockers relieve vasospasm, while beta blockers may worsen vasospastic angina."
+    ],
+    [
+     "Anxiety with angina",
+     "Anxiety is one of the conditions where a beta blocker is useful, so it does not push toward a calcium channel blocker; vasospastic angina does."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 22"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "A patient with peripheral vascular disease starts a beta blocker. Which symptom may worsen?",
+   "opts": [
+    [
+     "Ankle swelling",
+     "Ankle swelling (peripheral edema) is typical of dihydropyridine calcium channel blockers; the beta blocker precaution in vascular disease is claudication."
+    ],
+    [
+     "Facial flushing",
+     "Flushing is an effect of nitrates and dihydropyridine calcium channel blockers; the beta blocker problem in vascular disease is claudication."
+    ],
+    [
+     "Constipation",
+     "Constipation is counseled with calcium channel blockers. The beta blocker precaution in peripheral vascular disease is claudication."
+    ],
+    [
+     "Leg pain with walking",
+     "Correct. Claudication is listed as a possible beta blocker adverse reaction, which is why peripheral vascular disease is a precaution."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Nitrate education",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "What should patients starting a nitrate be warned about?",
+   "opts": [
+    [
+     "Constipation after each dose",
+     "Constipation is counseled with calcium channel blockers; the nitrate warning is orthostatic hypotension."
+    ],
+    [
+     "Dizziness when standing up",
+     "Correct. Nitrates cause orthostatic hypotension, so patients are warned about light-headedness on standing."
+    ],
+    [
+     "Slow heart rate at rest",
+     "Nitrates raise heart rate reflexively; slow heart rate is a beta blocker effect. The nitrate warning is orthostatic hypotension."
+    ],
+    [
+     "Persistent dry cough",
+     "Dry cough is not a nitrate effect; the warning is orthostatic hypotension, which causes dizziness on standing."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 28"
+  },
+  {
+   "topic": "Nitrate tolerance",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "What is the loss of nitrate effect with continuous use called?",
+   "opts": [
+    [
+     "Anaphylaxis",
+     "Anaphylaxis is a severe allergic reaction; the loss of nitrate effect with continuous use is tachyphylaxis."
+    ],
+    [
+     "Reflex tachycardia",
+     "Reflex tachycardia is a nitrate adverse effect from vasodilation, not loss of response."
+    ],
+    [
+     "Rebound angina",
+     "Rebound angina describes symptoms returning after a drug is withdrawn; the loss of effect during continuous use is tachyphylaxis."
+    ],
+    [
+     "Tachyphylaxis",
+     "Correct. Tachyphylaxis is rapid tolerance to a nitrate's effect, handled with a nitrate-free interval."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 32"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "A patient taking a beta blocker feels well and wants to stop it. What should he be told?",
+   "opts": [
+    [
+     "Avoid stopping it abruptly",
+     "Correct. Rapid discontinuation of a beta blocker must be avoided, so the patient should not stop it on his own."
+    ],
+    [
+     "Stop it once symptoms resolve",
+     "Stopping because he feels well is the error; beta blockers are prophylactic, and rapid discontinuation must be avoided."
+    ],
+    [
+     "Take it only when chest pain starts",
+     "Beta blockers prevent symptoms and are taken on a schedule; as-needed use is the pattern for sublingual nitroglycerin."
+    ],
+    [
+     "Skip it on days without exertion",
+     "Beta blockers work as regular prophylaxis and are not skipped on quiet days; stopping rapidly is what must be avoided."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Comorbid conditions",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which antianginal type is best avoided in a patient with angina and asthma?",
+   "opts": [
+    [
+     "Non-selective beta blockers",
+     "Correct. In asthma, non-selective beta blockers are avoided; cardioselective beta blockers and calcium channel blockers remain options."
+    ],
+    [
+     "Beta-1 selective beta blockers",
+     "Beta-1 selective agents have less airway effect and are the beta blocker choice if one is needed; the non-selective ones are the problem."
+    ],
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Non-dihydropyridines are first line in asthma; they do not block airway beta receptors."
+    ],
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Calcium channel blockers are a suitable choice in asthma; the class to avoid is the non-selective beta blockers."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 34"
+  },
+  {
+   "topic": "Calcium channel blocker split",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "A patient started on a beta blocker for angina cannot tolerate it because of nightmares. Which drug is the usual substitute?",
+   "opts": [
+    [
+     "Diltiazem",
+     "Correct. A non-dihydropyridine calcium channel blocker is the usual substitute when a beta blocker is not tolerated, since it also lowers heart rate and contractility."
+    ],
+    [
+     "Isosorbide mononitrate",
+     "A long-acting nitrate is used when beta blockers and calcium channel blockers cannot be used, so it is not the first substitute."
+    ],
+    [
+     "Sublingual nitroglycerin",
+     "Sublingual nitroglycerin is a rescue drug for acute attacks; it cannot replace a daily preventive such as a beta blocker."
+    ],
+    [
+     "Lisinopril",
+     "Angiotensin-converting enzyme inhibitors do not relieve angina symptoms, so they cannot substitute for a beta blocker; a non-dihydropyridine such as diltiazem can."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 22"
+  },
+  {
+   "topic": "Angina types and goals",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which benefit do antianginal drugs provide?",
+   "opts": [
+    [
+     "Regression of coronary plaque",
+     "Antianginals relieve and prevent symptoms; they do not shrink plaque. Plaque stabilization is the job of vasculoprotective drugs such as statins."
+    ],
+    [
+     "Removal of coronary stenosis",
+     "A fixed narrowing is treated by revascularization (stent or bypass graft). Antianginals improve exercise capacity and reduce symptoms."
+    ],
+    [
+     "Prevention of clot formation",
+     "Clot prevention is the role of antiplatelet drugs such as aspirin. Antianginals improve exercise capacity and symptom frequency."
+    ],
+    [
+     "Better exercise capacity",
+     "Correct. Antianginals improve exercise capacity, reduce exercise-induced ST-segment changes and lower the frequency of symptoms."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 14"
+  },
+  {
+   "topic": "Supply and demand",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which calcium channel blocker typically raises heart rate?",
+   "opts": [
+    [
+     "Nifedipine",
+     "Correct. Nifedipine is a strong dihydropyridine vasodilator, and the drop in pressure prompts a reflex rise in heart rate."
+    ],
+    [
+     "Verapamil",
+     "Verapamil is a non-dihydropyridine agent that lowers heart rate and slows atrioventricular conduction instead of raising the rate."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem is a non-dihydropyridine agent that lowers heart rate; the reflex tachycardia belongs to the dihydropyridine vasodilators."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine leaves heart rate essentially unchanged, unlike nifedipine and felodipine, which raise it through reflex tachycardia."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 21"
+  },
+  {
+   "topic": "Variant angina",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "A 34-year-old nonsmoker has chest pain that wakes her at 4 a.m., with ST-segment elevation that resolves. Which antianginal class is best avoided?",
+   "opts": [
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Calcium channel blockers relieve vasospasm and are a mainstay of variant angina; beta blockers are the class to avoid."
+    ],
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Dihydropyridines relieve vasospasm and reduce symptoms in variant angina. The class that may worsen it is beta blockers."
+    ],
+    [
+     "Long-acting nitrates",
+     "Nitrates relieve vasospasm and are used with calcium channel blockers in variant angina; beta blockers are the class to avoid."
+    ],
+    [
+     "Beta blockers",
+     "Correct. This is vasospastic (variant) angina; beta blockers may worsen symptoms, while calcium channel blockers and nitrates reduce them."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 39"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which adverse effect of nitrates is a compensatory response to vasodilation?",
+   "opts": [
+    [
+     "Bradycardia",
+     "Nitrates raise heart rate reflexively rather than slowing it; bradycardia is a beta blocker effect."
+    ],
+    [
+     "Reflex tachycardia",
+     "Correct. Falling pressure from vasodilation prompts a reflex rise in heart rate; it is listed with headache, flushing and postural hypotension."
+    ],
+    [
+     "Heart block",
+     "Nitrates do not slow atrioventricular conduction; heart block is a concern with beta blockers and non-dihydropyridines."
+    ],
+    [
+     "Hyperglycemia",
+     "Hyperglycemia is a beta blocker effect; the nitrate compensatory response is reflex tachycardia."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 31"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "Which drug class must not be combined with nitrates?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Beta blockers are routinely combined with nitrates in angina; the dangerous partner is a phosphodiesterase-5 inhibitor."
+    ],
+    [
+     "Calcium channel blockers",
+     "Calcium channel blockers are used with long-acting nitrates; the contraindicated combination is a phosphodiesterase-5 inhibitor."
+    ],
+    [
+     "Angiotensin-converting enzyme inhibitors",
+     "These are not contraindicated with nitrates; the unsafe combination is a phosphodiesterase-5 inhibitor."
+    ],
+    [
+     "Phosphodiesterase-5 inhibitors",
+     "Correct. Sildenafil, tadalafil and vardenafil with a nitrate can cause hypotension, myocardial infarction or stroke."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 33"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Long-acting nitrates become initial therapy when which drugs cannot be used?",
+   "opts": [
+    [
+     "Beta blockers and calcium channel blockers",
+     "Correct. A long-acting nitrate is initial therapy only when both beta blockers and calcium channel blockers are contraindicated or not tolerated."
+    ],
+    [
+     "Beta blockers alone",
+     "If only beta blockers are unsuitable, a calcium channel blocker is the next choice; nitrates are used when both classes fail."
+    ],
+    [
+     "Calcium channel blockers alone",
+     "Beta blockers are first line, so losing calcium channel blockers alone does not make a nitrate the initial drug."
+    ],
+    [
+     "Aspirin and clopidogrel",
+     "Antiplatelets are vasculoprotective rather than antianginal, so their absence does not make a nitrate initial therapy."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 29"
+  },
+  {
+   "topic": "Nitrate education",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "A patient's chest pain is not relieved 5 minutes after the first nitroglycerin dose. What should he do?",
+   "opts": [
+    [
+     "Wait 30 minutes before repeating",
+     "Waiting is unsafe; unrelieved pain may signal an infarction, so emergency services are called at once and repeat doses continue."
+    ],
+    [
+     "Call emergency services",
+     "Correct. No relief after the first dose means he should call emergency services, while repeat doses continue until help arrives."
+    ],
+    [
+     "Switch to a long-acting nitrate",
+     "Long-acting nitrates are preventive and act too slowly for an unrelieved attack; emergency services must be called."
+    ],
+    [
+     "Rest and see if the pain settles",
+     "Pain not relieved by the first dose needs emergency services; waiting passively risks delaying care for a possible infarction."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 27"
+  },
+  {
+   "topic": "Beta blocker use",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which beta blocker is beta-1 selective?",
+   "opts": [
+    [
+     "Propranolol",
+     "Propranolol is a non-selective beta blocker, blocking beta-2 as well as beta-1 receptors; metoprolol and atenolol are the beta-1 selective agents."
+    ],
+    [
+     "Metoprolol",
+     "Correct. Metoprolol and atenolol are beta-1 selective beta blockers."
+    ],
+    [
+     "Nadolol",
+     "Nadolol is a non-selective beta blocker. The beta-1 selective beta blockers are metoprolol and atenolol."
+    ],
+    [
+     "Carvedilol",
+     "Carvedilol is classed as a third-generation agent, along with labetalol, and not as a beta-1 selective one; metoprolol and atenolol are selective."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 17"
+  },
+  {
+   "topic": "Add-on therapy",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which drug is recommended for patients allergic to aspirin?",
+   "opts": [
+    [
+     "Heparin",
+     "Heparin is an anticoagulant used alongside fibrinolysis or antiplatelet agents, not a substitute for aspirin; clopidogrel is the antiplatelet used for aspirin allergy."
+    ],
+    [
+     "Enoxaparin",
+     "Enoxaparin is a low-molecular-weight heparin, an anticoagulant, not the antiplatelet substitute for aspirin allergy; that is clopidogrel."
+    ],
+    [
+     "Alteplase",
+     "Alteplase is a fibrinolytic that dissolves a clot in an acute infarction; it is not used as chronic antiplatelet therapy."
+    ],
+    [
+     "Clopidogrel",
+     "Correct. Clopidogrel is as efficacious as aspirin in secondary prevention and is recommended when aspirin cannot be used because of allergy."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 37"
+  },
+  {
+   "topic": "Calcium channel blocker split",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "Why do verapamil and diltiazem call for caution with a beta blocker?",
+   "opts": [
+    [
+     "Additive reflex tachycardia",
+     "Reflex tachycardia is a dihydropyridine effect. Verapamil and diltiazem lower heart rate, which is why they add to a beta blocker."
+    ],
+    [
+     "Reduced absorption of the beta blocker",
+     "The concern is the additive effect on heart rate and conduction, not absorption: both drugs slow the heart and the atrioventricular node, so the effects add."
+    ],
+    [
+     "Additive bradycardia and conduction delay",
+     "Correct. Both lower heart rate and slow atrioventricular conduction, so combining them with a beta blocker adds to these effects."
+    ],
+    [
+     "Loss of blood pressure lowering effect",
+     "Both drug types lower pressure, so the effect is not lost; the concern is additive slowing of heart rate and conduction."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 23"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "Which enzyme's interactions call for caution with calcium channel blockers?",
+   "opts": [
+    [
+     "Cytochrome P450 2D6",
+     "Cytochrome P450 2D6 is not the enzyme flagged for calcium channel blockers; the precaution is cytochrome P450 3A4."
+    ],
+    [
+     "Cytochrome P450 2C9",
+     "Cytochrome P450 2C9 is not the enzyme flagged for this class; the precaution is cytochrome P450 3A4."
+    ],
+    [
+     "Cytochrome P450 3A4",
+     "Correct. Calcium channel blockers are subject to cytochrome P450 3A4 interactions, so drugs that inhibit or induce it change their levels."
+    ],
+    [
+     "Cytochrome P450 1A2",
+     "Cytochrome P450 1A2 is not the enzyme flagged for this class; the precaution is cytochrome P450 3A4."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 23"
+  },
+  {
+   "topic": "Supply and demand",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "How do beta blockers directly change myocardial oxygen supply?",
+   "opts": [
+    [
+     "They dilate the coronary arteries",
+     "Coronary dilation is a nitrate effect (calcium channel blockers also dilate). Beta blockers leave oxygen supply unchanged and only lower demand."
+    ],
+    [
+     "They relieve coronary vasospasm",
+     "Relief of vasospasm belongs to calcium channel blockers and nitrates; beta blockers leave supply unchanged and only lower demand; they may worsen vasospastic angina."
+    ],
+    [
+     "They have no effect on supply",
+     "Correct. Beta blockers act on the demand side, lowering heart rate and contractility; they do not dilate the coronary arteries, so other antianginals are needed to raise supply."
+    ],
+    [
+     "They dilate areas of fixed stenosis",
+     "Mild dilation at fixed stenoses is a calcium channel blocker effect. Beta blockers do not change coronary flow; they lower demand."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 16"
+  },
+  {
+   "topic": "Add-on therapy",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which drug is vasculoprotective rather than antianginal?",
+   "opts": [
+    [
+     "Metoprolol",
+     "Metoprolol is a beta blocker, an antianginal that lowers heart rate and contractility."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine is a calcium channel blocker, an antianginal; aspirin is the vasculoprotective option in this list."
+    ],
+    [
+     "Isosorbide mononitrate",
+     "Isosorbide mononitrate is a long-acting nitrate, an antianginal; aspirin is the vasculoprotective option."
+    ],
+    [
+     "Aspirin",
+     "Correct. Aspirin, statins and angiotensin-converting enzyme inhibitors are the vasculoprotective group; beta blockers, calcium channel blockers and nitrates are the antianginals."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 12"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which heart condition is a contraindication to beta blockers?",
+   "opts": [
+    [
+     "Anxiety with angina",
+     "Anxiety is listed among the conditions where beta blockers are useful, so it does not contraindicate them."
+    ],
+    [
+     "Acute decompensated heart failure",
+     "Correct. Beta blockers can worsen an acutely decompensated heart; they are contraindicated there, along with bradycardia, low pressure and heart block."
+    ],
+    [
+     "Supraventricular arrhythmia",
+     "A supraventricular arrhythmia is an indication for a beta blocker, not a reason to avoid one."
+    ],
+    [
+     "Prior myocardial infarction",
+     "A prior infarction is an indication for a beta blocker; the contraindication is acute decompensated heart failure."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 18"
+  }
+ ],
+ "anginal2": [
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "Which calcium channel blocker both inhibits and is a substrate of cytochrome P450 3A4?",
+   "opts": [
+    [
+     "Verapamil",
+     "Correct. Verapamil (like diltiazem) is both a substrate and an inhibitor of cytochrome P450 3A4, so it raises levels of other drugs cleared by that enzyme."
+    ],
+    [
+     "Amlodipine",
+     "Amlodipine is a dihydropyridine, taught as a cytochrome P450 3A4 substrate only, not a meaningful inhibitor like verapamil and diltiazem."
+    ],
+    [
+     "Nifedipine",
+     "Nifedipine is a dihydropyridine, taught as a cytochrome P450 3A4 substrate only, not a meaningful inhibitor; the non-dihydropyridines, verapamil and diltiazem, are the inhibitors."
+    ],
+    [
+     "Felodipine",
+     "Felodipine is a dihydropyridine, taught as a cytochrome P450 3A4 substrate only, not a meaningful inhibitor, so it does not raise levels of other drugs the way verapamil does."
+    ]
+   ],
+   "c": 0,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "Which second messenger do nitrates increase to relax vascular smooth muscle?",
+   "opts": [
+    [
+     "Cyclic guanosine monophosphate",
+     "Correct. Nitric oxide from nitrates stimulates conversion of guanosine triphosphate to cyclic guanosine monophosphate, which lowers calcium and relaxes smooth muscle."
+    ],
+    [
+     "Cyclic adenosine monophosphate",
+     "Cyclic adenosine monophosphate is the messenger of beta receptor signaling, not the nitrate pathway, which raises cyclic guanosine monophosphate."
+    ],
+    [
+     "Inositol trisphosphate",
+     "Inositol trisphosphate releases calcium and promotes contraction, the opposite of the nitrate effect, which runs through cyclic guanosine monophosphate."
+    ],
+    [
+     "Cytosolic calcium",
+     "Nitrates lower cytosolic calcium to relax smooth muscle; the messenger they raise is cyclic guanosine monophosphate."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 26"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which adverse effects do nitrates and dihydropyridine calcium channel blockers share?",
+   "opts": [
+    [
+     "Bradycardia and fatigue",
+     "Bradycardia and fatigue are beta blocker effects; nitrates and dihydropyridines instead cause headache and flushing."
+    ],
+    [
+     "Constipation and cough",
+     "Constipation is a calcium channel blocker counseling point, but cough is not listed; the shared effects are headache and flushing."
+    ],
+    [
+     "Headache and flushing",
+     "Correct. Nitrates and dihydropyridines both cause headache and flushing, reflecting vasodilation."
+    ],
+    [
+     "Nightmares and dyslipidemia",
+     "Both are beta blocker effects; nitrates and dihydropyridines share headache and flushing from vasodilation."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 31"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which condition is a contraindication to nitrates?",
+   "opts": [
+    [
+     "Vasospastic angina",
+     "Vasospastic angina is treated with nitrates, which relieve vasospasm."
+    ],
+    [
+     "Effort-induced angina",
+     "Effort-induced angina is an indication for nitrates, which are taken to prevent it."
+    ],
+    [
+     "Prior myocardial infarction",
+     "A prior infarction is not a nitrate contraindication; obstructive cardiomyopathy is."
+    ],
+    [
+     "Obstructive cardiomyopathy",
+     "Correct. Nitrates are contraindicated in obstructive cardiomyopathy, as well as in aortic valve stenosis and with phosphodiesterase-5 inhibitors."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 33"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "monitoring",
+   "q": "Which set of parameters is monitored during beta blocker therapy?",
+   "opts": [
+    [
+     "Heart rate, glucose, lipids",
+     "Correct. Beta blockers can cause bradycardia, hyperglycemia and dyslipidemia, so heart rate, blood sugar and lipids are followed."
+    ],
+    [
+     "Potassium, creatinine, sodium",
+     "Those chemistry tests are not the ones tied to beta blocker adverse effects; heart rate, blood sugar and lipids are."
+    ],
+    [
+     "Liver enzymes, bilirubin, albumin",
+     "Liver tests are not the monitoring focus; beta blockers call for heart rate, blood sugar and lipid checks."
+    ],
+    [
+     "Platelets, clotting time, hemoglobin",
+     "Bleeding and clotting measures relate to antiplatelet and antithrombotic drugs, whereas beta blockers need heart rate, sugar and lipid monitoring."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Variant angina",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which combination reduces symptoms of vasospastic angina?",
+   "opts": [
+    [
+     "Calcium channel blocker and nitrate",
+     "Correct. Both classes relieve vasospasm and reduce symptoms; beta blockers are avoided because they may worsen them."
+    ],
+    [
+     "Beta blocker and nitrate",
+     "The nitrate helps, but the beta blocker may worsen vasospastic angina; the calcium channel blocker is the partner to use."
+    ],
+    [
+     "Beta blocker and calcium channel blocker",
+     "The calcium channel blocker helps, but a beta blocker may worsen vasospasm, so it should not be part of the regimen."
+    ],
+    [
+     "Beta blocker and aspirin",
+     "A beta blocker may worsen vasospastic angina and aspirin prevents events rather than relieving symptoms; calcium channel blockers and nitrates reduce symptoms."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 39"
+  },
+  {
+   "topic": "Nitrate education",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "How is nitroglycerin taken for an acute attack?",
+   "opts": [
+    [
+     "Swallowed whole with water",
+     "Nitroglycerin for an acute attack is used under the tongue; swallowing it would delay relief."
+    ],
+    [
+     "Chewed and swallowed",
+     "Chewing and swallowing is the instruction for aspirin at the first signs of chest pain, not for nitroglycerin."
+    ],
+    [
+     "Under the tongue",
+     "Correct. A sublingual tablet or spray is placed under the tongue for rapid absorption."
+    ],
+    [
+     "Applied to the chest",
+     "Chest application describes nitroglycerin ointment, a long-acting form; the acute attack form is placed under the tongue."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 28"
+  },
+  {
+   "topic": "Add-on therapy",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "What is aspirin used for in ischemic heart disease?",
+   "opts": [
+    [
+     "Preventing acute coronary syndromes",
+     "Correct. Aspirin is given to all patients with ischemic heart disease without contraindications to prevent acute coronary syndromes."
+    ],
+    [
+     "Relieving effort-induced angina",
+     "Aspirin does not relieve angina symptoms; nitrates, beta blockers and calcium channel blockers do that."
+    ],
+    [
+     "Lowering heart rate",
+     "Lowering heart rate is a beta blocker and non-dihydropyridine effect; aspirin is an antiplatelet that prevents acute coronary syndromes."
+    ],
+    [
+     "Lowering wall tension",
+     "Lowering wall tension is done by nitrates and other vasodilators; aspirin's role is preventing acute coronary syndromes."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 37"
+  },
+  {
+   "topic": "Beta blocker use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which drug class is first line for chronic stable angina when no contraindication is present?",
+   "opts": [
+    [
+     "Long-acting nitrates",
+     "Long-acting nitrates are mostly added on or used when beta blockers and calcium channel blockers cannot be used; they are not first line."
+    ],
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Dihydropyridines are mainly added to a beta blocker when it is not enough, so they are not the first-line class."
+    ],
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Non-dihydropyridines are used when beta blockers are contraindicated or not tolerated, which makes them the alternative rather than the first choice."
+    ],
+    [
+     "Beta blockers",
+     "Correct. Beta blockers are first-line therapy absent a contraindication; they lower heart rate and contractility and so lower oxygen demand."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 17"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Besides relieving an acute attack, what is short-acting nitroglycerin used for?",
+   "opts": [
+    [
+     "Preventing effort-induced angina",
+     "Correct. Short-acting nitrates are taken before activity to prevent effort-induced angina as well as to relieve acute symptoms."
+    ],
+    [
+     "Preventing acute coronary syndromes",
+     "Preventing acute coronary syndromes is the role of vasculoprotective drugs such as aspirin and statins, not of nitrates."
+    ],
+    [
+     "Lowering mortality after infarction",
+     "Nitrates give no mortality benefit, only relief of chest pain; beta blockers are the drug that lowers mortality after infarction."
+    ],
+    [
+     "Replacing daily beta blockers",
+     "Short-acting nitroglycerin is a rescue and pre-exertion drug, not a daily replacement for prophylactic therapy."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 27"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is typical of dihydropyridine calcium channel blockers?",
+   "opts": [
+    [
+     "Bradycardia",
+     "Bradycardia belongs to beta blockers and non-dihydropyridines; dihydropyridines tend to raise or leave heart rate unchanged."
+    ],
+    [
+     "Nightmares",
+     "Nightmares are a beta blocker effect, not a dihydropyridine one."
+    ],
+    [
+     "Peripheral edema",
+     "Correct. Headache, flushing and peripheral edema are the characteristic dihydropyridine effects, reflecting strong vasodilation."
+    ],
+    [
+     "Hyperglycemia",
+     "Hyperglycemia is a beta blocker effect; dihydropyridines cause headache, flushing and peripheral edema."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 24"
+  },
+  {
+   "topic": "Nitrate use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which nitrate formulation is used to relieve an acute attack of angina?",
+   "opts": [
+    [
+     "Isosorbide mononitrate",
+     "Isosorbide mononitrate is a long-acting agent lasting about 12 hours, used for prevention rather than rescue."
+    ],
+    [
+     "Sublingual nitroglycerin",
+     "Correct. Short-acting nitroglycerin (tablet or spray under the tongue) relieves acute symptoms and can prevent effort-induced angina."
+    ],
+    [
+     "Isosorbide dinitrate",
+     "Isosorbide dinitrate is long-acting, lasting 3 to 6 hours, and used for prophylaxis, not for an acute attack."
+    ],
+    [
+     "Nitroglycerin ointment",
+     "Nitroglycerin ointment is a long-acting form spread on the chest for prevention; sublingual nitroglycerin is used for an acute attack."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 27"
+  },
+  {
+   "topic": "Angina types and goals",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which treatment goal extends life rather than improving quality of life?",
+   "opts": [
+    [
+     "Relieving symptoms",
+     "Relieving symptoms improves quality of life; preventing acute coronary syndromes is the goal that increases its quantity."
+    ],
+    [
+     "Preventing acute coronary syndromes",
+     "Correct. Preventing acute coronary syndromes increases the quantity of life; relieving and preventing symptoms improves its quality."
+    ],
+    [
+     "Preventing symptoms",
+     "Preventing symptoms improves quality of life, not its length; preventing acute coronary syndromes increases quantity of life."
+    ],
+    [
+     "Improving exercise capacity",
+     "Better exercise capacity is a quality-of-life benefit of antianginal drugs; preventing acute coronary syndromes is the goal that extends life."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 10"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which condition is a contraindication to non-dihydropyridine calcium channel blockers?",
+   "opts": [
+    [
+     "Vasospastic angina",
+     "Vasospastic angina is a reason to choose a calcium channel blocker, which relieves vasospasm."
+    ],
+    [
+     "Acute heart failure",
+     "Correct. Verapamil and diltiazem depress contractility, so acute heart failure, low ejection fraction, bradycardia and heart block contraindicate them."
+    ],
+    [
+     "Severe peripheral vascular disease",
+     "Severe peripheral vascular disease favors calcium channel blockers over beta blockers rather than contraindicating them."
+    ],
+    [
+     "Asthma",
+     "Asthma does not contraindicate calcium channel blockers; they do not block airway beta receptors and are a first-line choice there."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 23"
+  },
+  {
+   "topic": "Calcium channel blocker safety",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "interaction",
+   "q": "What is the main risk of adding simvastatin to a patient who takes verapamil?",
+   "opts": [
+    [
+     "Loss of the verapamil effect",
+     "Simvastatin does not blunt verapamil; the interaction runs the other way, with verapamil raising simvastatin levels."
+    ],
+    [
+     "Excess slowing of the heart",
+     "Simvastatin has no effect on heart rate or conduction; the hazard is the higher statin level caused by cytochrome P450 3A4 inhibition."
+    ],
+    [
+     "Reduced absorption of simvastatin",
+     "Verapamil does not reduce simvastatin absorption; by blocking cytochrome P450 3A4 it raises simvastatin levels."
+    ],
+    [
+     "Statin muscle and liver toxicity",
+     "Correct. Verapamil inhibits cytochrome P450 3A4, which clears simvastatin, so higher simvastatin levels raise the risk of muscle and liver toxicity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antihypertensives.pptx, Slide 47"
+  },
+  {
+   "topic": "Supply and demand",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which three factors set myocardial oxygen demand?",
+   "opts": [
+    [
+     "Arterial oxygen pressure, hemoglobin, and coronary flow",
+     "Those set oxygen supply, not demand: arterial oxygen pressure, hemoglobin concentration and coronary flow and distribution decide how much oxygen arrives."
+    ],
+    [
+     "Heart rate, hemoglobin level, and coronary flow",
+     "This mixes the two sides. Hemoglobin and coronary flow govern supply; only heart rate, contractility and wall tension set demand."
+    ],
+    [
+     "Contractility, oxygen extraction, and coronary flow",
+     "Oxygen extraction and coronary flow belong to supply. Demand is set by heart rate, contractility and systolic wall tension."
+    ],
+    [
+     "Heart rate, contractility, and wall tension",
+     "Correct. Demand rises with a faster heart rate, stronger contraction and greater systolic wall tension; wall tension reflects ventricular volume and pressure (preload and afterload)."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 6"
+  },
+  {
+   "topic": "Calcium channel blocker split",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which drug is a non-dihydropyridine calcium channel blocker?",
+   "opts": [
+    [
+     "Amlodipine",
+     "Amlodipine is a dihydropyridine, a mainly vasodilating agent with little effect on heart rate or atrioventricular conduction."
+    ],
+    [
+     "Nifedipine",
+     "Nifedipine is a dihydropyridine; the non-dihydropyridine agents are diltiazem and verapamil."
+    ],
+    [
+     "Diltiazem",
+     "Correct. Diltiazem and verapamil are the non-dihydropyridines, which lower heart rate and slow atrioventricular conduction."
+    ],
+    [
+     "Felodipine",
+     "Felodipine is a dihydropyridine vasodilator; diltiazem and verapamil make up the non-dihydropyridine group."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 21"
+  },
+  {
+   "topic": "Calcium channel blocker split",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which calcium channel blocker formulation should be avoided in angina?",
+   "opts": [
+    [
+     "Long-acting amlodipine",
+     "Long-acting amlodipine is an accepted choice, often added to a beta blocker; the agent to avoid is short-acting nifedipine."
+    ],
+    [
+     "Short-acting nifedipine",
+     "Correct. Short-acting agents, nifedipine in particular, should be avoided; long-acting agents are used."
+    ],
+    [
+     "Sustained-release verapamil",
+     "Verapamil is an accepted non-dihydropyridine choice; the formulation to avoid is short-acting nifedipine."
+    ],
+    [
+     "Extended-release diltiazem",
+     "Diltiazem is an accepted non-dihydropyridine choice; short-acting nifedipine is the one to avoid."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 22"
+  },
+  {
+   "topic": "Angina types and goals",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which type of angina is caused by a transient, abrupt narrowing of a coronary artery, often at night or in the early morning?",
+   "opts": [
+    [
+     "Chronic stable angina",
+     "Chronic stable angina is the exertional pattern graded I to IV by the activity that provokes it; it is not a night-time vasospastic event."
+    ],
+    [
+     "Unstable angina",
+     "Unstable angina belongs to acute coronary syndrome and signals plaque disruption, not a spasm of the vessel wall in a young patient."
+    ],
+    [
+     "Variant (Prinzmetal) angina",
+     "Correct. Vasospastic angina is a transient, abrupt reduction in vessel diameter; it affects younger patients with fewer risk factors and often occurs at night."
+    ],
+    [
+     "Class I angina",
+     "Class I angina means no limitation of ordinary activity and comfort at rest; it says nothing about a night-time vessel spasm, which defines variant angina."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 8"
+  },
+  {
+   "topic": "Nitrate education",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "How is a nitroglycerin patch or ointment scheduled through the day?",
+   "opts": [
+    [
+     "Worn continuously, changed daily",
+     "Continuous exposure leads to loss of effect; a daily gap without the drug preserves it."
+    ],
+    [
+     "Applied only when pain starts",
+     "Patches and ointment are slowly absorbed preventive forms, not rescue drugs; sublingual nitroglycerin treats an attack."
+    ],
+    [
+     "6 hours on, then 18 hours off",
+     "The taught schedule is 12 hours on and 12 hours off; 6 hours on would leave most of the day without antianginal coverage."
+    ],
+    [
+     "12 hours on, then 12 hours off",
+     "Correct. The patch or ointment is worn for 12 hours and left off for 12 hours each day."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 31"
+  },
+  {
+   "topic": "Add-on therapy",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "What role do angiotensin-converting enzyme inhibitors play in stable coronary artery disease?",
+   "opts": [
+    [
+     "They relieve acute angina attacks",
+     "They do not relieve angina symptoms; sublingual nitroglycerin relieves an acute attack."
+    ],
+    [
+     "They lower myocardial oxygen consumption",
+     "They do not significantly change myocardial oxygen consumption, unlike beta blockers, calcium channel blockers and nitrates."
+    ],
+    [
+     "They may slow disease progression",
+     "Correct. They do not relieve angina, but may slow progression and are used in coronary disease with diabetes or left ventricular systolic dysfunction."
+    ],
+    [
+     "They prevent effort-induced angina",
+     "Because they do not relieve angina, they are not antianginal prophylaxis; their role is to slow disease progression."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 35"
+  },
+  {
+   "topic": "Nitrate safety",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "A man taking isosorbide mononitrate asks about erectile dysfunction drugs. What is the counseling?",
+   "opts": [
+    [
+     "Avoid combining them with nitrates",
+     "Correct. Sildenafil, tadalafil and vardenafil with any nitrate can cause hypotension, myocardial infarction or stroke."
+    ],
+    [
+     "Safe if the nitrate is a skin patch",
+     "The route does not matter; any nitrate combined with a phosphodiesterase-5 inhibitor can cause dangerous hypotension."
+    ],
+    [
+     "Safe if taken with a meal",
+     "A meal does not remove the interaction; the combination can still cause hypotension, myocardial infarction or stroke."
+    ],
+    [
+     "Safe if the nitrate is short-acting",
+     "Short-acting nitrates interact too; the combination is contraindicated regardless of nitrate formulation."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 33"
+  },
+  {
+   "topic": "Comorbid conditions",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "A patient with angina has a heart rate of 50 beats per minute and atrioventricular block. Which class is first line?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Beta blockers slow the heart and conduction and are contraindicated with bradycardia or atrioventricular block."
+    ],
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Correct. With bradycardia or atrioventricular block, a dihydropyridine is first line; it does not slow atrioventricular conduction."
+    ],
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Verapamil and diltiazem slow heart rate and atrioventricular conduction, so they are avoided with bradycardia or heart block."
+    ],
+    [
+     "Long-acting nitrates",
+     "Long-acting nitrates are the alternative here, not first line; a dihydropyridine is preferred."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 34"
+  },
+  {
+   "topic": "Comorbid conditions",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "When left ventricular function is decreased and a beta blocker cannot be used, which calcium channel blocker is the alternative?",
+   "opts": [
+    [
+     "Verapamil",
+     "Non-dihydropyridines such as verapamil are avoided when left ventricular function is decreased, since they depress contractility."
+    ],
+    [
+     "Diltiazem",
+     "Diltiazem lowers contractility and heart rate, so it is avoided with decreased left ventricular function; amlodipine is the alternative."
+    ],
+    [
+     "Amlodipine",
+     "Correct. Beta blockers are first line with decreased left ventricular function; amlodipine is the calcium channel blocker alternative."
+    ],
+    [
+     "Nifedipine",
+     "Calcium channel blockers other than amlodipine are avoided with decreased left ventricular function, and nifedipine's short-acting form is avoided in angina anyway."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 34"
+  },
+  {
+   "topic": "Nitrate education",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "Where should nitroglycerin tablets be stored?",
+   "opts": [
+    [
+     "In a daily pill organizer",
+     "Tablets should stay in the original packaging in a cool, dry place, not be moved to a daily pill organizer."
+    ],
+    [
+     "In the bathroom cabinet",
+     "A bathroom is warm and humid; tablets need their original packaging and a cool, dry place."
+    ],
+    [
+     "In the refrigerator",
+     "Nitroglycerin tablets are kept in the original packaging in a cool, dry place, not refrigerated."
+    ],
+    [
+     "In the original container",
+     "Correct. Tablets belong in the original packaging in a cool, dry place."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 28"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which class is most likely responsible for nightmares and sexual dysfunction?",
+   "opts": [
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Dihydropyridines cause headache, flushing and peripheral edema, not nightmares or sexual dysfunction."
+    ],
+    [
+     "Beta blockers",
+     "Correct. Fatigue, sexual dysfunction, nightmares and worsened claudication are listed adverse reactions of beta blockers."
+    ],
+    [
+     "Long-acting nitrates",
+     "Nitrates cause headache, flushing, postural hypotension and reflex tachycardia; nightmares and sexual dysfunction point to beta blockers."
+    ],
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Non-dihydropyridines are counseled for dizziness and constipation; nightmares and sexual dysfunction are beta blocker effects."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Beta blocker use",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which history makes a beta blocker the preferred antianginal?",
+   "opts": [
+    [
+     "Prior myocardial infarction",
+     "Correct. A beta blocker is given after a myocardial infarction unless contraindicated, and is the first-line antianginal in that setting."
+    ],
+    [
+     "Sinus bradycardia",
+     "A slow heart rate is a reason to avoid beta blockers; a dihydropyridine calcium channel blocker is first line with bradycardia."
+    ],
+    [
+     "Reactive airway disease",
+     "Reactive airway disease is a caution for beta blockers, especially non-selective ones; it is a reason for care, not the history that favors them."
+    ],
+    [
+     "Second-degree atrioventricular block",
+     "Atrioventricular block is a contraindication to beta blockers, so they are not preferred; the post-infarction history is what favors them."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 38"
+  },
+  {
+   "topic": "Beta blocker safety",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which adverse effect do beta blockers, calcium channel blockers, and nitrates share?",
+   "opts": [
+    [
+     "Bradycardia",
+     "Bradycardia occurs with beta blockers and non-dihydropyridines, but nitrates raise heart rate through a reflex response."
+    ],
+    [
+     "Peripheral edema",
+     "Peripheral edema is a dihydropyridine effect; it is not shared by beta blockers or nitrates."
+    ],
+    [
+     "Sexual dysfunction",
+     "Sexual dysfunction is listed for beta blockers only; the effect all three classes share is hypotension."
+    ],
+    [
+     "Hypotension",
+     "Correct. All three antianginal classes lower systolic pressure, and hypotension is listed for each."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Supply and demand",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which antianginal class lowers oxygen demand mainly by reducing ventricular volume?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Beta blockers lower heart rate and contractility, and ventricular volume actually rises; they do not reduce it."
+    ],
+    [
+     "Nitrates",
+     "Correct. Nitrates lower left ventricular volume the most, which lowers wall tension; they raise heart rate reflexively rather than lowering it."
+    ],
+    [
+     "Non-dihydropyridine calcium channel blockers",
+     "Verapamil and diltiazem act mainly through lower heart rate and contractility, leaving ventricular volume unchanged or slightly lower."
+    ],
+    [
+     "Dihydropyridine calcium channel blockers",
+     "Dihydropyridines act mainly by lowering systolic pressure through arterial vasodilation; ventricular volume is unchanged or slightly lower."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 25"
+  }
+ ],
+ "acs1": [
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "What activates and aggregates platelets once collagen is exposed at the injury?",
+   "opts": [
+    [
+     "Tissue factor and factor VIIa",
+     "Tissue factor with factor VIIa starts the plasma clotting cascade and generates thrombin; platelets are activated by adenosine diphosphate and thromboxane A2."
+    ],
+    [
+     "Fibrinogen and plasminogen",
+     "Fibrinogen is converted to fibrin by thrombin and plasminogen is the precursor of plasmin. Platelets are activated by adenosine diphosphate and thromboxane A2."
+    ],
+    [
+     "Prothrombin and factor X",
+     "Prothrombin and factor X are plasma clotting factors, not platelet activators. Adenosine diphosphate and thromboxane A2 activate platelets."
+    ],
+    [
+     "Adenosine diphosphate and thromboxane A2",
+     "Correct. Adenosine diphosphate and thromboxane A2 activate and aggregate platelets at the injured plaque surface."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 47"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which vascular condition contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Peripheral artery disease",
+     "Peripheral artery disease is not a contraindication to fibrinolytics. Aortic dissection is."
+    ],
+    [
+     "Varicose veins",
+     "Varicose veins are a superficial venous problem and not a listed contraindication. The vascular contraindication is aortic dissection."
+    ],
+    [
+     "Raynaud phenomenon",
+     "Raynaud phenomenon is vasospasm of small digital arteries and not a contraindication. The vascular contraindication is aortic dissection."
+    ],
+    [
+     "Aortic dissection",
+     "Correct. Aortic dissection is a listed contraindication, since fibrinolytics could worsen bleeding from the torn aortic wall."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which fibrinolytic is contraindicated in a patient who received it before or had an allergic reaction to it?",
+   "opts": [
+    [
+     "Alteplase",
+     "Alteplase is a recombinant tissue plasminogen activator, not the agent barred by prior exposure. That is streptokinase."
+    ],
+    [
+     "Reteplase",
+     "Reteplase is a recombinant agent and is not the one barred by prior exposure. The agent barred after prior exposure or allergy is streptokinase."
+    ],
+    [
+     "Tenecteplase",
+     "Tenecteplase is a recombinant agent and is not the one barred by prior exposure. The agent barred after prior exposure or allergy is streptokinase."
+    ],
+    [
+     "Streptokinase",
+     "Correct. Prior exposure to streptokinase or an allergic reaction to it is a listed contraindication to using it again."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Fibrinolytic agents",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "What advantage do reteplase and tenecteplase have over alteplase?",
+   "opts": [
+    [
+     "No risk of intracranial hemorrhage",
+     "Every fibrinolytic can cause bleeding, including intracranial hemorrhage. The advantage of these two over alteplase is a longer half-life."
+    ],
+    [
+     "A longer half-life",
+     "Correct. Reteplase and tenecteplase have a longer half-life than tissue plasminogen activator (alteplase)."
+    ],
+    [
+     "No risk of allergic reactions",
+     "Allergic reactions are listed for fibrinolytics as a group. The advantage of reteplase and tenecteplase over alteplase is a longer half-life."
+    ],
+    [
+     "Activation of plasminogen without fibrin",
+     "Activating plasminogen without fibrin is not an advantage; streptokinase is the agent that does not depend on fibrin. The advantage of reteplase and tenecteplase is a longer half-life."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 64"
+  },
+  {
+   "topic": "Fibrinolytic indications",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "When do fibrinolytics give the most benefit in ST-elevation myocardial infarction?",
+   "opts": [
+    [
+     "Late, after a day of symptoms",
+     "Benefit falls with delay. Fibrinolytics are most useful early after symptom onset."
+    ],
+    [
+     "Only after stent placement",
+     "Waiting for stent placement is not when fibrinolytics work best. They are most beneficial early after symptom onset."
+    ],
+    [
+     "Early after symptom onset",
+     "Correct. Benefit is greatest when fibrinolytics are given early after symptom onset, and there is less benefit with later presentation."
+    ],
+    [
+     "After cardiac biomarkers normalize",
+     "Waiting for biomarkers to normalize means the window has passed. Fibrinolytics are most beneficial early after symptom onset."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 65"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which finding contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Type 2 diabetes mellitus",
+     "Diabetes is a coronary risk factor, not a listed contraindication to fibrinolytics. Active bleeding or a hemorrhagic disorder is."
+    ],
+    [
+     "Previous myocardial infarction",
+     "A prior infarction is not a contraindication. Active bleeding or a hemorrhagic disorder is."
+    ],
+    [
+     "Active bleeding",
+     "Correct. Active bleeding or a hemorrhagic disorder contraindicates fibrinolytics, which cause bleeding as their main adverse effect."
+    ],
+    [
+     "Hypercholesterolemia",
+     "High cholesterol is not a contraindication. The listed contraindication is active bleeding or a hemorrhagic disorder."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Beta blockers in ACS",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "monitoring",
+   "q": "Which findings should be checked before and after a beta blocker is given in acute coronary syndrome?",
+   "opts": [
+    [
+     "Heart rate and blood pressure",
+     "Correct. The cautions are bradycardia and hypotension, so heart rate and blood pressure are watched closely."
+    ],
+    [
+     "Body temperature and weight",
+     "These do not reflect the beta blocker risks. Heart rate and blood pressure are monitored because of bradycardia and hypotension."
+    ],
+    [
+     "Serum sodium and calcium",
+     "Electrolyte changes are not the main beta blocker concern. Bradycardia and hypotension make heart rate and blood pressure the findings to check."
+    ],
+    [
+     "Urine output and appetite",
+     "These are not the monitoring points for beta blockers. Heart rate and blood pressure are checked because of bradycardia and hypotension."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 55"
+  },
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which step begins thrombus formation over an atherosclerotic plaque?",
+   "opts": [
+    [
+     "Platelet aggregation at the plaque",
+     "Platelet adhesion, activation and aggregation follow the endothelial injury; they do not begin the sequence. Injured endothelium comes first."
+    ],
+    [
+     "Formation of fibrin strands",
+     "Fibrin strands form later, once thrombin converts fibrinogen. The sequence begins with injury to the endothelium over the plaque."
+    ],
+    [
+     "Injury to the overlying endothelium",
+     "Correct. Spontaneous plaque rupture or procedural injury such as balloon deployment leaves injured endothelium, which starts platelet adhesion and the clotting cascade."
+    ],
+    [
+     "Occlusion of the lumen by thrombus",
+     "Complete occlusion by thrombus is the end result of the sequence, not its start. Injury to the overlying endothelium begins it."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 43"
+  },
+  {
+   "topic": "Nitrates in ACS",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which set of adverse reactions is expected with nitrates?",
+   "opts": [
+    [
+     "Hypotension, headache, reflex tachycardia",
+     "Correct. Nitrate vasodilation causes hypotension and headache, and the pressure fall can trigger reflex tachycardia."
+    ],
+    [
+     "Hypertension, headache, reflex bradycardia",
+     "Nitrates lower blood pressure rather than raising it, and the reflex response is tachycardia, not bradycardia."
+    ],
+    [
+     "Hypotension, cough, reflex bradycardia",
+     "Cough is not a nitrate reaction, and the reflex response to vasodilation is tachycardia rather than bradycardia."
+    ],
+    [
+     "Hypotension, constipation, reflex tachycardia",
+     "Constipation is not a nitrate reaction; the expected adverse reactions are hypotension, headache and reflex tachycardia."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 54"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which patient factor contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Pregnancy",
+     "Correct. Pregnancy is a listed contraindication to fibrinolytics, because of bleeding risk."
+    ],
+    [
+     "Hyperlipidemia",
+     "High cholesterol is a coronary risk factor, not a contraindication to fibrinolytics. The listed patient factor is pregnancy."
+    ],
+    [
+     "Obesity",
+     "Obesity is a coronary risk factor, not a listed contraindication to fibrinolytics; the listed patient factor is pregnancy."
+    ],
+    [
+     "Smoking history",
+     "Smoking history is a coronary risk factor, not a fibrinolytic contraindication. The listed patient factor is pregnancy."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Fibrinolytic mechanism",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "How does streptokinase activate plasminogen?",
+   "opts": [
+    [
+     "It binds plasminogen already attached to fibrin",
+     "That describes tissue plasminogen activator. Streptokinase instead forms a stable one-to-one complex with plasminogen."
+    ],
+    [
+     "It forms a one-to-one complex with it",
+     "Correct. Streptokinase forms a stable one-to-one complex with plasminogen that exposes a catalytic site and converts plasminogen to plasmin."
+    ],
+    [
+     "It is itself converted to plasmin",
+     "Streptokinase is not converted to plasmin; it forms a one-to-one complex with plasminogen that activates it."
+    ],
+    [
+     "It blocks plasminogen activator inhibitor-1",
+     "Streptokinase does not work by blocking the inhibitor. It forms a stable one-to-one complex with plasminogen."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 59"
+  },
+  {
+   "topic": "Aspirin in ACS",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "Which drug should a patient chew and swallow at the first signs of chest pain from suspected acute coronary syndrome?",
+   "opts": [
+    [
+     "Clopidogrel",
+     "Clopidogrel is the antiplatelet substitute for patients allergic to aspirin, not the drug chewed at the first sign of chest pain, which is aspirin."
+    ],
+    [
+     "Nitroglycerin",
+     "Nitroglycerin is taken sublingually for chest pain relief and does not improve outcomes. The drug chewed and swallowed, which reduces mortality, is aspirin."
+    ],
+    [
+     "Aspirin",
+     "Correct. Aspirin is used at the first signs of chest pain and reduces mortality and reinfarction in both ST-elevation and non-ST-elevation acute coronary syndrome."
+    ],
+    [
+     "Metoprolol",
+     "Metoprolol is a beta blocker used for protection after infarction. It is not the first-sign drug chewed and swallowed; that is aspirin."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 52"
+  },
+  {
+   "topic": "Nitrates in ACS",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Why are nitrates used in acute coronary syndrome?",
+   "opts": [
+    [
+     "To lower mortality",
+     "Nitrates have no mortality benefit. Aspirin lowers mortality, while nitrates only relieve chest pain."
+    ],
+    [
+     "To relieve chest pain",
+     "Correct. Nitrates give relief of chest pain only; they show no mortality benefit and no improvement in outcomes."
+    ],
+    [
+     "To limit infarct size",
+     "Reduced infarct size is a beta blocker benefit. Nitrates provide relief of chest pain without improving outcomes."
+    ],
+    [
+     "To prevent reinfarction",
+     "Reinfarction is reduced by aspirin. Nitrates are used for chest pain relief and do not improve outcomes."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 54"
+  },
+  {
+   "topic": "ACS classification",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "An electrocardiogram shows ST-segment elevation in a patient with ischemic chest discomfort. What is the working diagnosis?",
+   "opts": [
+    [
+     "ST-elevation myocardial infarction",
+     "Correct. ST-segment elevation with ischemic discomfort defines ST-elevation myocardial infarction, the form for which fibrinolytics are indicated."
+    ],
+    [
+     "Unstable angina",
+     "Unstable angina and non-ST-elevation infarction both show no ST elevation on the electrocardiogram; ST elevation with ischemic discomfort means ST-elevation myocardial infarction."
+    ],
+    [
+     "Non-ST-elevation myocardial infarction",
+     "By definition this type has no ST elevation on the tracing. ST-segment elevation with ischemic discomfort identifies ST-elevation myocardial infarction instead."
+    ],
+    [
+     "Stable angina",
+     "Stable angina is predictable, exertional discomfort and is not an acute coronary syndrome; ST elevation with ischemic discomfort indicates ST-elevation myocardial infarction."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 41"
+  },
+  {
+   "topic": "Fibrinolytic adverse effects",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which fibrinolytic is chiefly associated with fever, chills and rash?",
+   "opts": [
+    [
+     "Streptokinase",
+     "Correct. Fever, chills and skin rash occur mainly with streptokinase; allergic reactions, including anaphylaxis, can occur with any fibrinolytic."
+    ],
+    [
+     "Alteplase",
+     "Alteplase is a recombinant tissue plasminogen activator, not the agent chiefly linked to fever, chills and rash. That is streptokinase."
+    ],
+    [
+     "Reteplase",
+     "Reteplase is a recombinant agent and is not the one chiefly linked to fever, chills and rash. Streptokinase is."
+    ],
+    [
+     "Tenecteplase",
+     "Tenecteplase is a recombinant agent and is not chiefly linked to fever, chills and rash. Streptokinase is."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 62"
+  },
+  {
+   "topic": "Fibrinolytic indications",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "For which condition are fibrinolytics indicated?",
+   "opts": [
+    [
+     "Unstable angina",
+     "Fibrinolytics are not recommended in unstable angina because bleeding risk outweighs benefit. They are indicated in ST-elevation myocardial infarction."
+    ],
+    [
+     "Non-ST-elevation myocardial infarction",
+     "There is less benefit and the bleeding risk outweighs it, so fibrinolytics are not recommended. They are indicated in ST-elevation myocardial infarction."
+    ],
+    [
+     "Stable angina",
+     "Stable angina is managed with antianginal drugs; fibrinolytics are indicated in ST-elevation myocardial infarction."
+    ],
+    [
+     "ST-elevation myocardial infarction",
+     "Correct. Fibrinolytics are indicated in ST-elevation myocardial infarction, where they restore coronary flow by lysing the clot."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 65"
+  },
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which factor starts the plasma clotting cascade at the site of vessel injury?",
+   "opts": [
+    [
+     "Thromboxane A2",
+     "Thromboxane A2 activates and aggregates platelets rather than starting the plasma cascade. Tissue factor starts the cascade."
+    ],
+    [
+     "Tissue factor",
+     "Correct. Tissue factor, with factor VIIa, starts the plasma clotting cascade at the injury, leading to prothrombin becoming thrombin and then fibrin."
+    ],
+    [
+     "Adenosine diphosphate",
+     "Adenosine diphosphate activates and aggregates platelets, it does not start the plasma cascade. Tissue factor does."
+    ],
+    [
+     "Plasminogen",
+     "Plasminogen is the inactive precursor of the fibrinolytic enzyme plasmin. The clotting cascade is started by tissue factor."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 47"
+  },
+  {
+   "topic": "Aspirin in ACS",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which outcomes does aspirin reduce in acute coronary syndrome?",
+   "opts": [
+    [
+     "Resting heart rate and contractility",
+     "Lowering heart rate and contractility is what beta blockers do. Aspirin decreases recurrent ischemia, reinfarction, stroke and cardiac death."
+    ],
+    [
+     "Preload through venous dilation",
+     "Dilating veins to lower preload is the nitrate effect. Aspirin decreases recurrent ischemia, reinfarction, stroke and cardiac death."
+    ],
+    [
+     "Reinfarction, stroke and cardiac death",
+     "Correct. Aspirin decreases recurrent ischemia, reinfarction, stroke and cardiac death."
+    ],
+    [
+     "Clot size through direct lysis",
+     "Direct lysis of clot is the work of fibrinolytics. Aspirin decreases recurrent ischemia, reinfarction, stroke and cardiac death."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 53"
+  },
+  {
+   "topic": "Aspirin in ACS",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which drug is withheld from a patient with suspected acute coronary syndrome who has an active gastrointestinal bleed?",
+   "opts": [
+    [
+     "Metoprolol",
+     "An active gastrointestinal bleed does not limit beta blockers; their cautions are bradycardia, hypotension, heart block and severe reactive airway disease."
+    ],
+    [
+     "Nitroglycerin",
+     "Nitrates are contraindicated by hypotension and phosphodiesterase-5 inhibitors, not a gastrointestinal bleed. Aspirin is the drug withheld in that setting."
+    ],
+    [
+     "Morphine",
+     "Morphine's concerns are hypotension and allergy, not a gastrointestinal bleed. The drug withheld with a gastrointestinal bleed is aspirin."
+    ],
+    [
+     "Aspirin",
+     "Correct. A gastrointestinal bleed is a contraindication to aspirin, along with allergy and recent intracranial hemorrhage, because aspirin raises bleeding risk."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 53"
+  },
+  {
+   "topic": "Morphine",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Why is morphine controversial in unstable angina and non-ST-elevation myocardial infarction?",
+   "opts": [
+    [
+     "It may raise mortality",
+     "Correct. Morphine may have increased mortality in unstable angina and non-ST-elevation myocardial infarction, so its use there is controversial."
+    ],
+    [
+     "It fails to relieve ischemic pain",
+     "Morphine is an opioid analgesic that does relieve pain. The controversy is a possible increase in mortality."
+    ],
+    [
+     "It markedly increases bleeding risk",
+     "Bleeding risk is the main concern with fibrinolytics and antiplatelet drugs. Morphine's concerns are hypotension, allergy and a possible mortality increase."
+    ],
+    [
+     "It cannot be combined with aspirin",
+     "Aspirin is given with other therapy at the first signs of chest pain. The controversy is that morphine may increase mortality."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 56"
+  },
+  {
+   "topic": "Beta blockers in ACS",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "A patient with acute coronary syndrome has severe wheezing from reactive airway disease. Which drug class calls for caution?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Correct. Severe reactive airway disease is a listed caution for beta blockers in acute coronary syndrome."
+    ],
+    [
+     "Nitrates",
+     "Nitrates are limited by hypotension and phosphodiesterase-5 inhibitors, not reactive airway disease. Beta blockers are the class needing caution."
+    ],
+    [
+     "Heparins",
+     "Heparins are not limited by reactive airway disease. The class needing caution in severe reactive airway disease is the beta blockers."
+    ],
+    [
+     "Fibrinolytics",
+     "Fibrinolytic contraindications involve bleeding and related risks, not airway disease. Severe reactive airway disease calls for caution with beta blockers."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 55"
+  },
+  {
+   "topic": "Other antithrombotics",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which drug group is used in conjunction with fibrinolytic or antiplatelet therapy to block the clotting cascade?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Beta blockers lower myocardial oxygen demand; they do not block the clotting cascade. Heparins are the group used with fibrinolysis or antiplatelet agents."
+    ],
+    [
+     "Nitrates",
+     "Nitrates relieve chest pain and do not act on clotting. Heparins are the group used with fibrinolysis or antiplatelet agents."
+    ],
+    [
+     "Heparins",
+     "Correct. Heparins are anticoagulants used in conjunction with fibrinolysis or antiplatelet agents."
+    ],
+    [
+     "Morphine",
+     "Morphine is an opioid analgesic for pain unresponsive to nitrates. Heparins are the group used with fibrinolysis or antiplatelet agents."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 66"
+  },
+  {
+   "topic": "ACS classification",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "What happens to an infarct in the hours after coronary occlusion if blood flow is not restored?",
+   "opts": [
+    [
+     "It stays the same size",
+     "The infarct does not stay fixed; it grows into the area of ischemia over hours unless flow is restored."
+    ],
+    [
+     "It grows into ischemic tissue",
+     "Correct. The infarct enlarges over hours and grows into the area of ischemia, which is why restoring coronary blood flow is a goal of therapy."
+    ],
+    [
+     "It shrinks without treatment",
+     "Without restored flow the infarct does not shrink; it grows into the area of ischemia over hours."
+    ],
+    [
+     "It stays limited to its core",
+     "The infarct does not remain confined to its core; it expands into the surrounding ischemic area over hours."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 41"
+  },
+  {
+   "topic": "Fibrinolytic mechanism",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "Which active enzyme lyses the fibrin in a clot?",
+   "opts": [
+    [
+     "Plasminogen",
+     "Plasminogen is inactive in circulation; it must be converted to plasmin, which lyses fibrin."
+    ],
+    [
+     "Thrombin",
+     "Thrombin forms fibrin from fibrinogen rather than lysing it. Plasmin is the enzyme that lyses fibrin."
+    ],
+    [
+     "Plasminogen activator inhibitor-1",
+     "Plasminogen activator inhibitor-1 opposes tissue plasminogen activator. Plasmin is the enzyme that lyses fibrin."
+    ],
+    [
+     "Plasmin",
+     "Correct. Plasmin is formed from plasminogen and lyses fibrin."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 58"
+  },
+  {
+   "topic": "Fibrinolytic adverse effects",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is shared by all fibrinolytic agents?",
+   "opts": [
+    [
+     "Pulmonary fibrosis",
+     "Pulmonary fibrosis is not a fibrinolytic effect. The effect shared by all fibrinolytics is bleeding."
+    ],
+    [
+     "Bleeding",
+     "Correct. Bleeding, including intracranial hemorrhage, is the adverse effect of all fibrinolytics."
+    ],
+    [
+     "Hypoglycemia",
+     "Fibrinolytics do not affect blood glucose. Their shared adverse effect is bleeding."
+    ],
+    [
+     "Constipation",
+     "Constipation is not a fibrinolytic adverse effect. The shared adverse effect of all agents is bleeding."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 62"
+  }
+ ],
+ "acs2": [
+  {
+   "topic": "Nitrates in ACS",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which drug group contraindicates nitrates because of the risk of severe hypotension?",
+   "opts": [
+    [
+     "Beta blockers",
+     "Beta blockers are used together with nitrates in acute coronary syndrome; their own cautions are bradycardia, hypotension and heart block."
+    ],
+    [
+     "Phosphodiesterase-5 inhibitors",
+     "Correct. Phosphodiesterase-5 inhibitors are a listed contraindication to nitrates, because together they can cause severe hypotension."
+    ],
+    [
+     "Heparins",
+     "Heparins are anticoagulants with no vasodilator interaction. The drug group contraindicated with nitrates is the phosphodiesterase-5 inhibitors."
+    ],
+    [
+     "Fibrinolytics",
+     "Fibrinolytics raise bleeding risk but do not interact with nitrates. The contraindicated combination is nitrates with phosphodiesterase-5 inhibitors."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 54"
+  },
+  {
+   "topic": "ACS classification",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which pair of conditions makes up non-ST-elevation acute coronary syndrome?",
+   "opts": [
+    [
+     "Unstable angina and non-ST-elevation myocardial infarction",
+     "Correct. With no ST elevation on the electrocardiogram the diagnosis is unstable angina or non-ST-elevation myocardial infarction, separated by a biochemical marker."
+    ],
+    [
+     "Stable angina and non-ST-elevation myocardial infarction",
+     "Stable angina is predictable exertional angina, not an acute coronary syndrome. The non-ST-elevation group is unstable angina plus non-ST-elevation myocardial infarction."
+    ],
+    [
+     "Unstable angina and ST-elevation myocardial infarction",
+     "ST-elevation myocardial infarction is its own category with ST-segment elevation. The non-ST-elevation group pairs unstable angina with non-ST-elevation infarction."
+    ],
+    [
+     "Variant angina and ST-elevation myocardial infarction",
+     "ST-elevation infarction is a separate category, and variant angina is vasospastic angina. The non-ST-elevation group is unstable angina plus non-ST-elevation infarction."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 41"
+  },
+  {
+   "topic": "Fibrinolytic mechanism",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "mechanism",
+   "q": "What is the shared mechanism of all fibrinolytics?",
+   "opts": [
+    [
+     "Inhibiting thromboxane A2 synthesis",
+     "Fibrinolytics do not block thromboxane A2; they convert plasminogen to plasmin, which lyses fibrin."
+    ],
+    [
+     "Neutralizing activated factor X",
+     "Inhibiting activated factor X is an anticoagulant action (heparins, given with fibrinolytics); fibrinolytics convert plasminogen to plasmin."
+    ],
+    [
+     "Converting plasminogen to plasmin",
+     "Correct. All fibrinolytics act directly or indirectly to convert plasminogen to plasmin, which lyses the fibrin clot."
+    ],
+    [
+     "Blocking adenosine diphosphate receptors",
+     "Blocking adenosine diphosphate receptors is an antiplatelet action, not fibrinolysis. Fibrinolytics convert plasminogen to plasmin."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 58"
+  },
+  {
+   "topic": "Fibrinolytic adverse effects",
+   "io": "Describe adverse effects of drugs used to treat myocardial ischemia",
+   "slot": "adverse effect",
+   "q": "Which immune reaction is listed for all fibrinolytic agents?",
+   "opts": [
+    [
+     "Allergic reactions only with streptokinase",
+     "Allergic and anaphylactic reactions are listed for all fibrinolytics; it is fever, chills and rash that occur mainly with streptokinase."
+    ],
+    [
+     "Autoimmune hemolytic anemia",
+     "Autoimmune hemolytic anemia is not a listed fibrinolytic effect. The listed immune reactions are allergic reactions including anaphylaxis."
+    ],
+    [
+     "Delayed contact dermatitis",
+     "Contact dermatitis is not a listed fibrinolytic effect. The listed immune reactions are allergic reactions including anaphylaxis."
+    ],
+    [
+     "Allergic reactions including anaphylaxis",
+     "Correct. Allergic reactions, including anaphylactic reactions, are listed for all fibrinolytic agents; fever, chills and rash occur mainly with streptokinase."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 62"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which blood pressure finding contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Severe uncontrolled hypertension",
+     "Correct. Severe uncontrolled hypertension contraindicates fibrinolytics because of the risk of intracranial bleeding."
+    ],
+    [
+     "Well-controlled hypertension",
+     "Hypertension that is well controlled is not a contraindication; it is severe, uncontrolled hypertension that bars fibrinolytics."
+    ],
+    [
+     "Mildly raised pressure from pain",
+     "A mild, pain-related rise is not a contraindication. Severe uncontrolled hypertension is."
+    ],
+    [
+     "Low-normal blood pressure",
+     "Low-normal pressure is not a contraindication to fibrinolytics. Severe uncontrolled hypertension is."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "ACS classification",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "monitoring",
+   "q": "With no ST elevation on the electrocardiogram, what separates unstable angina from non-ST-elevation myocardial infarction?",
+   "opts": [
+    [
+     "The duration of the chest pain",
+     "Pain duration does not define either diagnosis. A biochemical marker of myocardial injury is what separates infarction from unstable angina."
+    ],
+    [
+     "The response to nitroglycerin",
+     "Response to nitroglycerin does not define either diagnosis; a biochemical marker of myocardial injury separates unstable angina from infarction."
+    ],
+    [
+     "The presence of Q waves on the tracing",
+     "Q waves on the tracing do not separate the two. A biochemical marker of myocardial injury, positive only in infarction, does."
+    ],
+    [
+     "A biochemical marker in the blood",
+     "Correct. A biochemical marker of myocardial injury is positive in infarction and negative in unstable angina, which is how the two non-ST-elevation diagnoses are separated."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 41"
+  },
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Where do the assembled clotting factor complexes continue the cascade during propagation?",
+   "opts": [
+    [
+     "On the surface of intact endothelium",
+     "Intact endothelium does not host these complexes. Propagation continues on the surface of activated platelets."
+    ],
+    [
+     "Inside the fibrous cap of the plaque",
+     "The fibrous cap is part of the plaque wall, not the site of propagation. The complexes assemble on the surface of activated platelets."
+    ],
+    [
+     "Along smooth muscle cell membranes",
+     "Smooth muscle cells lie deeper in the vessel wall. Propagation takes place on the surface of activated platelets."
+    ],
+    [
+     "On the surface of activated platelets",
+     "Correct. Assembled complexes on activated platelets convert prothrombin to thrombin and fibrinogen to fibrin and stabilize the clot."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 50"
+  },
+  {
+   "topic": "Fibrinolytic indications",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Why are fibrinolytics not recommended in non-ST-elevation acute coronary syndrome?",
+   "opts": [
+    [
+     "They cannot be combined with aspirin",
+     "Aspirin is used in both ST-elevation and non-ST-elevation syndromes. The reason is that bleeding risk outweighs benefit."
+    ],
+    [
+     "They cannot be combined with heparins",
+     "Heparins are used in conjunction with fibrinolysis. Fibrinolytics are avoided because bleeding risk outweighs benefit."
+    ],
+    [
+     "Bleeding risk outweighs benefit",
+     "Correct. In non-ST-elevation acute coronary syndrome the bleeding risk is greater than the benefit, so fibrinolytics are not recommended."
+    ],
+    [
+     "They cause coronary vasospasm",
+     "Vasospasm is not the reason. Fibrinolytics are not recommended because the bleeding risk outweighs the benefit."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 68"
+  },
+  {
+   "topic": "Fibrinolytic agents",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "drug choice",
+   "q": "How do alteplase, reteplase and tenecteplase compare in their responses and adverse effects?",
+   "opts": [
+    [
+     "They are very similar",
+     "Correct. The three recombinant tissue plasminogen activators produce very similar responses and adverse effects, chiefly bleeding."
+    ],
+    [
+     "Reteplase causes far less bleeding",
+     "Reteplase does not avoid bleeding; the three agents have very similar responses and adverse effects, with bleeding the main risk."
+    ],
+    [
+     "Tenecteplase carries no bleeding risk",
+     "Every fibrinolytic can cause bleeding, including tenecteplase. The three agents have very similar responses and adverse effects."
+    ],
+    [
+     "Alteplase alone causes allergic reactions",
+     "Allergic reactions are listed for all fibrinolytics, not alteplase alone. The three agents have very similar responses and adverse effects."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 61"
+  },
+  {
+   "topic": "Aspirin in ACS",
+   "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia",
+   "slot": "education",
+   "q": "When should a patient with suspected acute coronary syndrome take aspirin?",
+   "opts": [
+    [
+     "Only after arriving at the hospital",
+     "Aspirin should not wait for hospital arrival; it is used at the first signs of chest pain because it reduces mortality and reinfarction."
+    ],
+    [
+     "After the pain has lasted an hour",
+     "Waiting an hour delays benefit. Aspirin is taken at the first signs of chest pain, not after a prolonged delay."
+    ],
+    [
+     "At the first signs of chest pain",
+     "Correct. Aspirin is used at the first signs of chest pain; early use reduces mortality and reinfarction."
+    ],
+    [
+     "Once the electrocardiogram confirms infarction",
+     "Aspirin is not held for confirmation. It is used at the first signs of chest pain in both ST-elevation and non-ST-elevation presentations."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 52"
+  },
+  {
+   "topic": "Aspirin in ACS",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which history is a contraindication to aspirin in suspected acute coronary syndrome?",
+   "opts": [
+    [
+     "Recent intracranial hemorrhage",
+     "Correct. Aspirin is contraindicated with allergy, a recent gastrointestinal bleed or a recent intracranial hemorrhage because it raises bleeding risk."
+    ],
+    [
+     "Prior myocardial infarction",
+     "Prior infarction is a reason to give aspirin, which decreases reinfarction and cardiac death. Its contraindications are allergy, recent gastrointestinal bleeding and recent intracranial hemorrhage."
+    ],
+    [
+     "Previous stent placement",
+     "A stent is a reason for antiplatelet therapy, not a contraindication to aspirin. Contraindications are allergy, recent gastrointestinal bleeding and recent intracranial hemorrhage."
+    ],
+    [
+     "Hyperlipidemia",
+     "Hyperlipidemia is a risk factor for coronary disease and does not preclude aspirin. Contraindications are allergy, recent gastrointestinal bleeding and recent intracranial hemorrhage."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 53"
+  },
+  {
+   "topic": "Fibrinolytic agents",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which of these drugs is a fibrinolytic?",
+   "opts": [
+    [
+     "Enoxaparin",
+     "Enoxaparin is a heparin-type anticoagulant rather than a fibrinolytic. Fibrinolytics include alteplase, reteplase and tenecteplase."
+    ],
+    [
+     "Tenecteplase",
+     "Correct. Tenecteplase is a recombinant fibrinolytic, like alteplase and reteplase."
+    ],
+    [
+     "Clopidogrel",
+     "Clopidogrel is an antiplatelet drug, not a fibrinolytic. Fibrinolytics include alteplase, reteplase and tenecteplase."
+    ],
+    [
+     "Metoprolol",
+     "Metoprolol is a beta blocker. Fibrinolytics, which activate plasminogen, include alteplase, reteplase and tenecteplase."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 64"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which recent event contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "A recent blood draw",
+     "A draw from a compressible arm vein is not a contraindication. Recent surgery, biopsy or puncture of a noncompressible vessel is."
+    ],
+    [
+     "A recent dental cleaning",
+     "A routine dental cleaning is not a listed contraindication. Recent surgery, serious trauma or resuscitation are the listed events."
+    ],
+    [
+     "A recent vaccination",
+     "An injection does not contraindicate fibrinolytics. The listed events are recent surgery, biopsy, serious head or facial trauma and resuscitation."
+    ],
+    [
+     "Recent major surgery",
+     "Correct. Recent surgery (including organ biopsy, puncture of noncompressible vessels, serious head or facial trauma and cardiopulmonary resuscitation) contraindicates fibrinolytics because of bleeding."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which neurologic history contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Migraine headaches",
+     "Migraine is not a listed contraindication. The neurologic contraindication is an active intracranial process such as a tumor."
+    ],
+    [
+     "Childhood febrile seizure",
+     "A remote febrile seizure is not a listed contraindication. The neurologic contraindication is an active intracranial process such as a tumor."
+    ],
+    [
+     "Active intracranial tumor",
+     "Correct. An active intracranial process such as a tumor contraindicates fibrinolytics because of the risk of intracranial hemorrhage."
+    ],
+    [
+     "Essential tremor",
+     "Essential tremor is a movement disorder and not a contraindication. The neurologic contraindication is an active intracranial process such as a tumor."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Beta blockers in ACS",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which benefit do beta blockers provide after acute coronary syndrome?",
+   "opts": [
+    [
+     "Dissolution of the coronary clot",
+     "Dissolving clot is the role of fibrinolytics. Beta blockers reduce infarct size and sudden cardiac death."
+    ],
+    [
+     "Smaller infarct size, fewer sudden deaths",
+     "Correct. Beta blockers reduce infarct size, heart failure incidence and sudden cardiac death."
+    ],
+    [
+     "Chest pain relief with no outcome benefit",
+     "That describes nitrates. Beta blockers improve outcomes, reducing infarct size and sudden cardiac death."
+    ],
+    [
+     "Blockade of platelet aggregation",
+     "Blocking platelets is the work of antiplatelet drugs. Beta blockers lower infarct size and sudden cardiac death."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 55"
+  },
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "Which mediator links tissue injury, coagulation and the platelet response?",
+   "opts": [
+    [
+     "Thrombin",
+     "Correct. Thrombin converts fibrinogen to fibrin and also elicits multiple platelet responses, tying injury, coagulation and platelet activation together."
+    ],
+    [
+     "Plasmin",
+     "Plasmin is the fibrinolytic enzyme that dissolves fibrin. The mediator linking injury, coagulation and platelet response is thrombin."
+    ],
+    [
+     "Fibrinogen",
+     "Fibrinogen is the substrate that thrombin converts to fibrin, not the link between injury, coagulation and platelets. That link is thrombin."
+    ],
+    [
+     "Tissue plasminogen activator",
+     "Tissue plasminogen activator converts plasminogen to plasmin in fibrinolysis. The mediator linking injury, coagulation and platelets is thrombin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 47"
+  },
+  {
+   "topic": "Nitrates in ACS",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which finding contraindicates nitrates in suspected acute coronary syndrome?",
+   "opts": [
+    [
+     "Hypertension",
+     "High blood pressure is not a contraindication; nitrates lower pressure. The listed contraindications are hypotension and phosphodiesterase-5 inhibitors."
+    ],
+    [
+     "Hypotension",
+     "Correct. Hypotension is a listed contraindication, because nitrates lower blood pressure further."
+    ],
+    [
+     "Ongoing chest pain",
+     "Ongoing chest pain is the reason to give nitrates, for pain relief. The contraindications are hypotension and phosphodiesterase-5 inhibitors."
+    ],
+    [
+     "Elevated cardiac biomarkers",
+     "Elevated biomarkers indicate infarction and do not bar nitrates. The listed contraindications are hypotension and phosphodiesterase-5 inhibitors."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 54"
+  },
+  {
+   "topic": "Thrombus formation",
+   "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia",
+   "slot": "physiology",
+   "q": "How does thrombin amplify its own production?",
+   "opts": [
+    [
+     "By activating plasminogen to plasmin",
+     "Converting plasminogen to plasmin is fibrinolysis, which dissolves clot. Thrombin amplifies itself by activating factors V and VIII."
+    ],
+    [
+     "By activating factors V and VIII",
+     "Correct. During amplification thrombin activates platelets and factors V and VIII, which assemble with factors IXa on activated platelets to make more thrombin."
+    ],
+    [
+     "By blocking the action of tissue factor",
+     "Tissue factor starts the cascade during initiation and is not blocked by thrombin. Thrombin amplifies its own production by activating factors V and VIII."
+    ],
+    [
+     "By converting fibrin back to fibrinogen",
+     "Thrombin converts fibrinogen to fibrin, not the reverse. It amplifies its own production by activating factors V and VIII."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 49"
+  },
+  {
+   "topic": "Nitrates in ACS",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "protocol",
+   "q": "How are nitrates given as acute coronary syndrome care progresses?",
+   "opts": [
+    [
+     "Intravenous infusion, then sublingual",
+     "The order is reversed here. Care starts with sublingual nitrates and moves to an intravenous infusion once the patient is in hospital."
+    ],
+    [
+     "Sublingual, then intravenous infusion",
+     "Correct. Therapy starts sublingually until the patient is in the hospital, then changes to an intravenous infusion."
+    ],
+    [
+     "Oral, then transdermal patch",
+     "Oral and patch forms are long-acting angina options, not the acute pathway. Acute coronary syndrome care goes sublingual, then intravenous infusion."
+    ],
+    [
+     "Sublingual, then oral extended-release",
+     "Extended-release oral nitrate is a chronic angina option. In acute coronary syndrome, sublingual dosing is followed by intravenous infusion."
+    ]
+   ],
+   "c": 1,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 54"
+  },
+  {
+   "topic": "Fibrinolytic contraindications",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which bleeding history contraindicates fibrinolytics?",
+   "opts": [
+    [
+     "Occasional spotting from hemorrhoids",
+     "Minor hemorrhoidal spotting is not a listed contraindication. Recent serious gastrointestinal bleeding is."
+    ],
+    [
+     "A nosebleed during childhood",
+     "A remote minor nosebleed does not contraindicate fibrinolytics. Recent serious gastrointestinal bleeding does."
+    ],
+    [
+     "Recent serious gastrointestinal bleeding",
+     "Correct. Serious gastrointestinal bleeding in the recent past is a listed contraindication, since fibrinolytics could restart serious bleeding."
+    ],
+    [
+     "Bruising after a minor fall",
+     "Minor bruising is not a listed contraindication. The listed bleeding history is recent serious gastrointestinal bleeding."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Morphine",
+   "io": "Identify indications for drugs used to treat myocardial ischemia",
+   "slot": "indication",
+   "q": "Which drug manages chest pain that does not respond to nitrates in ST-elevation myocardial infarction?",
+   "opts": [
+    [
+     "Metoprolol",
+     "Metoprolol lowers infarct size and sudden cardiac death but is not the analgesic for pain unresponsive to nitrates. Morphine is used for that."
+    ],
+    [
+     "Aspirin",
+     "Aspirin reduces mortality and reinfarction, not pain. Morphine is the opioid analgesic used for pain unresponsive to nitrates."
+    ],
+    [
+     "Morphine",
+     "Correct. Morphine, an opioid analgesic, is used for chest pain unresponsive to nitrates in ST-elevation myocardial infarction."
+    ],
+    [
+     "Alteplase",
+     "Alteplase is a fibrinolytic that restores flow in ST-elevation infarction; it is not an analgesic. Morphine manages nitrate-resistant pain."
+    ]
+   ],
+   "c": 2,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 56"
+  },
+  {
+   "topic": "Other antithrombotics",
+   "io": "Identify drug classes and commonly prescribed drugs used to treat myocardial ischemia",
+   "slot": "class",
+   "q": "Which drug class is used before percutaneous coronary intervention and to prevent clots after stent placement?",
+   "opts": [
+    [
+     "Glycoprotein IIb/IIIa inhibitors",
+     "These are not routinely recommended before percutaneous coronary intervention. P2Y12 receptor antagonists are the class used before it and with stents."
+    ],
+    [
+     "Fibrinolytics",
+     "Fibrinolytics lyse clot in ST-elevation myocardial infarction rather than prevent clots after stenting. P2Y12 receptor antagonists do that."
+    ],
+    [
+     "Beta blockers",
+     "Beta blockers reduce infarct size and sudden cardiac death but do not prevent stent clotting. P2Y12 receptor antagonists provide clot prophylaxis."
+    ],
+    [
+     "P2Y12 receptor antagonists",
+     "Correct. P2Y12 receptor antagonists, which block the adenosine diphosphate receptor on platelets, are used before percutaneous coronary intervention and as clot prophylaxis with stent placement."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 66"
+  },
+  {
+   "topic": "Beta blockers in ACS",
+   "io": "Identify contraindications for drugs used to treat myocardial ischemia",
+   "slot": "contraindication",
+   "q": "Which finding calls for caution before giving a beta blocker in acute coronary syndrome?",
+   "opts": [
+    [
+     "Sinus tachycardia",
+     "A fast sinus rate is something beta blockers slow; the cautions are bradycardia, hypotension, heart block and severe reactive airway disease."
+    ],
+    [
+     "Premature ventricular beats",
+     "Premature ventricular beats do not limit beta blockers. The listed cautions are bradycardia, hypotension, heart block and severe reactive airway disease."
+    ],
+    [
+     "Hypertension",
+     "High blood pressure is a setting where beta blockers help. Low blood pressure, bradycardia and heart block are the cautions."
+    ],
+    [
+     "Heart block",
+     "Correct. Heart block is a listed caution, along with bradycardia, hypotension and severe reactive airway disease, because beta blockers slow conduction."
+    ]
+   ],
+   "c": 3,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 55"
+  },
+  {
+   "topic": "Fibrinolytic adverse effects",
+   "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy",
+   "slot": "monitoring",
+   "q": "What should be watched for closely after fibrinolytic therapy?",
+   "opts": [
+    [
+     "Signs of bleeding",
+     "Correct. Bleeding, including intracranial hemorrhage, is the main risk of fibrinolytics, so the patient is monitored for it."
+    ],
+    [
+     "Blood glucose falls",
+     "Hypoglycemia is not an effect of fibrinolytics. Bleeding is the main risk, so signs of bleeding are watched for."
+    ],
+    [
+     "Potassium elevation",
+     "Hyperkalemia is not a fibrinolytic effect. Bleeding is the main risk that needs close monitoring."
+    ],
+    [
+     "Reduced urine output",
+     "Reduced urine output is not a fibrinolytic effect. The monitoring focus is signs of bleeding."
+    ]
+   ],
+   "c": 0,
+   "cite": "Myocardial Ischemia Drugs.pptx, Slide 62"
+  }
+ ]
+}
