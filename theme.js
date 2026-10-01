@@ -3317,21 +3317,28 @@ window.__themeKit = (function () {
 
   /* ----- particles drifting behind the UI -----
      cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
-     begin(ctx) once per frame, kick (spin from the cursor), repelR/repelK, dprCap,
+     begin(ctx) once per frame, after(ctx, still) once per frame after the particles, kick (spin from the cursor),
+     repelR/repelK, dprCap, fps (cap), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
+     [y, height] of a band to clear as well,
      reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
   kit.field = function (cfg) {
     var cv = null, ps = [], mode = cfg.reduced || "off", R = cfg.repelR || 110, K = cfg.repelK || 1.8;
     kit.pointer();
-    function frame(still) {
-      var ctx = cv.ctx, W = window.innerWidth, H = window.innerHeight, i, p;
-      ctx.clearRect(0, 0, W, H);
+    function frame(still, dt) {
+      var ctx = cv.ctx, W = window.innerWidth, H = window.innerHeight, i, p, r;
+      var k = cfg.fps && dt ? Math.max(0.5, Math.min(3, dt * 60)) : 1;      // frame-rate scale (1 at 60 fps)
+      if (cfg.rad && !still) {                                   // erase only where each particle was (plus the strip, if any)
+        for (i = 0; i < ps.length; i++) { p = ps[i]; if (p.bb) ctx.clearRect(p.bb[0], p.bb[1], p.bb[2], p.bb[3]); }
+        if (cfg.strip) { r = cfg.strip(); ctx.clearRect(0, r[0], W, r[1]); }
+      } else ctx.clearRect(0, 0, W, H);
       if (cfg.begin) cfg.begin(ctx);
       for (i = 0; i < ps.length; i++) {
         p = ps[i];
         if (!still) {
-          kit.repel(p, p.x, p.y, R, K, cfg.kick);
-          p.vx *= 0.9; p.vy *= 0.9;
-          cfg.move(p);
+          kit.repel(p, p.x, p.y, R, K * k, cfg.kick);
+          var dec = k === 1 ? 0.9 : Math.pow(0.9, k);
+          p.vx *= dec; p.vy *= dec;
+          cfg.move(p, k);
           if (cfg.gone(p)) { ps[i] = cfg.make(false); continue; }
           if (cfg.wrap) {
             if (p.x < -cfg.wrap) p.x = window.innerWidth + cfg.wrap;
@@ -3339,10 +3346,12 @@ window.__themeKit = (function () {
           }
         }
         cfg.draw(ctx, p);
+        if (cfg.rad) { r = cfg.rad(p) + 2; p.bb = [Math.floor(p.x - r), Math.floor(p.y - r), Math.ceil(2 * r) + 1, Math.ceil(2 * r) + 1]; }
       }
+      if (cfg.after) cfg.after(ctx, still);
       ctx.globalAlpha = 1;
     }
-    var loop = kit.loop(function () { frame(false); });
+    var loop = kit.loop(function (now, dt) { frame(false, dt); }, cfg.fps);
     function apply() {
       if (kit.reduced() && mode !== "run") {
         loop.stop();
@@ -3690,7 +3699,7 @@ window.__themeKit = (function () {
   }
 
   kit.field({
-    cls: "th-thanks", dprCap: 2, reduced: "still", wrap: 20, kick: true,
+    cls: "th-thanks", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30, rad: function (p) { return p.s * 2.4; },
     count: window.innerWidth < 700 ? 16 : 30,
     make: function (randomY) {
       var kind = KINDS[(Math.random() * KINDS.length) | 0], s = 6 + Math.random() * 6;
@@ -3705,9 +3714,9 @@ window.__themeKit = (function () {
         opacity: 0.5 + Math.random() * 0.4, color: pal[(Math.random() * pal.length) | 0], vx: 0, vy: 0
       };
     },
-    move: function (p) {
-      p.y += p.speed + p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 1.1 + p.vx;
-      if (p.kind === "wheat") p.spinSpeed = 0; else p.spin += p.spinSpeed;      // wheat sways instead of tumbling
+    move: function (p, k) {
+      p.y += (p.speed + p.vy) * k; p.drift += p.driftSpeed * k; p.x += (Math.sin(p.drift) * 1.1 + p.vx) * k;
+      if (p.kind === "wheat") p.spinSpeed = 0; else p.spin += p.spinSpeed * k;      // wheat sways instead of tumbling
     },
     gone: function (p) { return p.y > window.innerHeight + 24; },
     draw: function (ctx, p) {
