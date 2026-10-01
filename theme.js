@@ -3193,7 +3193,7 @@ window.__themeKit = (function () {
     paweek: function (d) { return d.getFullYear() === 2026 && d.getMonth() === 9 && d.getDate() >= 5 && d.getDate() <= 9; },
     leaves: function (d) { return d.getMonth() === 9 && d.getDate() >= 17 && d.getDate() <= 31; },
     halloween: function (d) { return d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31; },
-    lights: function () { return false; }, newyear: function () { return false; },
+    lights: function (d) { return d.getMonth() === 11 && d.getDate() <= 25; }, newyear: function () { return false; },
     thanksgiving: thanksgivingWeek, fireworks: function () { return false; }
   };
   var YIELDS = [["halloween", "leaves"]];         // [winner, loser]: on a date both match, only the winner runs
@@ -3471,6 +3471,62 @@ window.__themeKit = (function () {
     draw: function (ctx, f) { ctx.globalAlpha = f.opacity; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); }
   });
 })();
+
+/* ============================================================
+   HOLIDAY LIGHTS (2026-10-01) -- Dec 1-25 (local date, every year), or ?theme=lights to preview.
+   A string of bulbs hanging along the top of the page, blinking in a slow wave that travels along it and
+   swaying a little. It runs alongside the December snow (which keeps going to Dec 30).
+   - Pure CSS animation, no canvas, no JS loop. Bulbs are dealt into 10 wrappers (bulb 1, 11, 21 ... share
+     one), each wrapper twinkles (opacity) and sways (a few px sideways) on its own phase, so consecutive
+     bulbs are out of step and the blink travels along the string. Ten animations instead of eighty is what
+     keeps the main-thread cost (measured) inside the Halloween budget.
+   - It hangs from the TOP OF THE DOCUMENT (position:absolute), not the viewport, so it scrolls away with
+     the page and never sits over text you are reading. z-index 1: every positioned bar, button, tab strip,
+     toast and dialog (z-index 2 and up) paints over it, and it is pointer-events:none, so nothing it
+     overlaps can be blocked or hidden. On the guides and reference pages, where the sticky back bar is the first thing
+     on the page, it hangs from the bottom edge of that bar instead of behind it.
+   - Rebuilt (debounced) on resize; hidden while printing; reduced motion: the bulbs stay lit and still.
+   The December cream tint comes from body.xmas-theme, which this also sets.
+   ============================================================ */
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("lights")) return;
+  var body = document.body;
+  body.classList.add("lights-theme", "xmas-theme");
+  kit.colors(["#dc2626", "#16a34a", "#f59e0b", "#2563eb", "#ec4899"]);
+
+  var COLORS = ["#ef4444", "#f59e0b", "#22c55e", "#3b82f6", "#ec4899"];
+  var host = document.createElement("div");
+  host.className = "th-lights"; host.setAttribute("aria-hidden", "true");
+  body.appendChild(host);
+  function place() {                                          // below the sticky back bar where a page has one
+    var bar = document.querySelector(".guide-back-bar");
+    host.style.top = (bar && bar.offsetTop < 8 ? bar.offsetHeight : 0) + "px";   // only when the bar is the very first thing
+  }
+
+  function build() {
+    var W = window.innerWidth, narrow = W < 700;
+    var swags = Math.max(2, Math.round(W / (narrow ? 130 : 200))), sw = W / swags, sag = narrow ? 7 : 10;
+    var gap = narrow ? 30 : 36, n = Math.max(6, Math.floor(W / gap)), step = W / n;
+    var d = "M0 2", i, html = "";
+    for (i = 0; i < swags; i++) d += " Q" + ((i + 0.5) * sw).toFixed(1) + " " + (2 + 2 * sag) + " " + ((i + 1) * sw).toFixed(1) + " 2";
+    html = '<svg class="th-wire" width="' + W + '" height="' + (sag + 6) + '" viewBox="0 0 ' + W + " " + (sag + 6) + '"><path d="' + d + '"/></svg>';
+    var G = 10, groups = [];                                    // bulbs i, i+G, i+2G ... share one wrapper (and one animation)
+    for (i = 0; i < G; i++) groups.push("");
+    for (i = 0; i < n; i++) {
+      var x = (i + 0.5) * step, k = Math.min(swags - 1, Math.floor(x / sw)), t = (x - k * sw) / sw;
+      var y = 2 + 4 * sag * t * (1 - t);
+      groups[i % G] += '<i class="th-bulb" style="left:' + x.toFixed(1) + "px;top:" + y.toFixed(1) + "px;--c:" + COLORS[i % COLORS.length] + '"></i>';
+    }
+    for (i = 0; i < G; i++) html += '<div class="th-grp" style="--d:' + (-(i * 0.34)).toFixed(2) + 's">' + groups[i] + "</div>";
+    host.innerHTML = html;
+    place();
+  }
+  build();
+  var t = 0;
+  window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(build, 150); });
+})();
+
 
 // Seasonal Valentine's theme (added 2026-07-17) -- Jan 31 - Feb 14. Floating hearts behind all UI, plus
 // the light-mode pink tint on the app-shell pages (body.vday-theme).

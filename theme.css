@@ -3491,3 +3491,25 @@ body.th-paused .hw-glow { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) { .th-acorn { display: none; } }
 @media print { .th-acorn { display: none !important; } }
+
+
+/* ============================================================
+   HOLIDAY LIGHTS (theme.js, Dec 1-25 or ?theme=lights): a string of bulbs along the top edge.
+   Absolute at the top of the document (it scrolls away), z-index 1 under every bar and control, pointer-events none, outside the layout flow (no layout shift). Composited opacity and
+   transform animation only, on 10 wrappers. The bulb positions are computed in JS from the viewport width.
+   ============================================================ */
+.th-lights { position: absolute; top: 0; left: 0; width: 100%; height: 40px; overflow: hidden; z-index: 1; pointer-events: none; }
+.th-wire { position: absolute; left: 0; top: 0; overflow: visible; fill: none; stroke: #2f5d3a; stroke-width: 1.5; stroke-linecap: round; opacity: .8; }
+:root[data-theme="dark"] .th-wire { stroke: #5b9a6c; opacity: .7; }
+.th-grp { position: absolute; left: 0; top: 0; width: 100%; height: 0; animation: th-twinkle 3.4s ease-in-out var(--d, 0s) infinite, th-sway 5.2s ease-in-out var(--d, 0s) infinite alternate; will-change: opacity, transform; }
+.th-bulb { position: absolute; width: 7px; height: 11px; margin-left: -3.5px; }
+.th-bulb::before { content: ""; position: absolute; left: 1.5px; top: -2px; width: 4px; height: 3px; border-radius: 1px; background: #3f3f46; }
+.th-bulb::after {
+  content: ""; position: absolute; left: 0; top: 1px; width: 7px; height: 10px; border-radius: 50% 50% 55% 55% / 40% 40% 62% 62%;
+  background: var(--c); box-shadow: 0 0 7px 2px var(--c);
+}
+@keyframes th-twinkle { 0%, 100% { opacity: .4; } 45%, 55% { opacity: 1; } }
+@keyframes th-sway { from { transform: translateX(-1.8px); } to { transform: translateX(1.8px); } }
+body.th-paused .th-grp { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .th-grp { animation: none; opacity: 1; } }
+@media print { .th-lights { display: none !important; } }
