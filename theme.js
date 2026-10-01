@@ -3195,7 +3195,8 @@ window.__themeKit = (function () {
     halloween: function (d) { return d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31; },
     lights: function (d) { return d.getMonth() === 11 && d.getDate() <= 25; },
     newyear: function (d) { var m = d.getMonth(), x = d.getDate(); return (m === 11 && x === 31) || (m === 0 && x <= 2); },
-    thanksgiving: thanksgivingWeek, fireworks: function () { return false; }
+    thanksgiving: thanksgivingWeek,
+    fireworks: function (d) { return d.getMonth() === 6 && d.getDate() >= 3 && d.getDate() <= 5; }
   };
   var YIELDS = [["halloween", "leaves"], ["newyear", "snow"], ["newyear", "lights"]];         // [winner, loser]: on a date both match, only the winner runs
 
@@ -3634,6 +3635,33 @@ window.__themeKit.fireworks = function (cfg) {
     html: '<div class="th-ny-year"></div><div class="pa-toast-txt"><b>Happy New Year!</b><span>Class of 2028: another year closer.</span></div>'
   });
   if (card) card.querySelector(".th-ny-year").textContent = String(year);
+})();
+
+/* ============================================================
+   FIREWORKS / JULY 4 (2026-10-01) -- Jul 3, 4 and 5 (local date, every year), or ?theme=fireworks.
+   The same quiet fireworks as New Year's (kit.fireworks) in red, white and blue behind the UI, a pale
+   blue light-mode tint (body.fireworks-theme), patriotic quiz confetti, and a small "Happy 4th" card
+   once a day on the app-shell pages.
+   ============================================================ */
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("fireworks")) return;
+  document.body.classList.add("fireworks-theme");
+  kit.colors(["#dc2626", "#2563eb", "#f8fafc", "#ef4444", "#3b82f6"]);
+  kit.fireworks({
+    cls: "th-fireworks", white: ["#ffffff"],
+    palettes: function (dark) {
+      return dark ? [["#f87171", "#ef4444"], ["#60a5fa", "#3b82f6"], ["#ffffff", "#e2e8f0"], ["#f87171", "#ffffff", "#60a5fa"]]
+                  : [["#dc2626", "#ef4444"], ["#2563eb", "#3b82f6"], ["#dc2626", "#ffffff", "#2563eb"], ["#ffffff", "#2563eb"]];
+    }
+  });
+  if (!kit.isShell()) return;
+  var now = new Date();
+  kit.card({
+    key: "themeCard:fireworks:" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate(), fresh: kit.fresh("fireworks"),
+    cls: "th-card-4th", burst: [60, 1.2],
+    html: '<div class="pa-toast-txt"><b>Happy 4th of July!</b><span>Enjoy the fireworks, then back to the books.</span></div>'
+  });
 })();
 
 // Seasonal Valentine's theme (added 2026-07-17) -- Jan 31 - Feb 14. Floating hearts behind all UI, plus

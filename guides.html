@@ -114,6 +114,13 @@
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
+  :root[data-theme="light"] body.fireworks-theme {
+    --bg: #eef3fb; --card: #fbfdff; --border: #cdd9ee;
+    background: linear-gradient(120deg, #eef3fb, #fbf1f1, #e0eaf9, #eef3fb);
+    background-color: #eef3fb;
+    background-size: 300% 300%;
+    animation: bg-drift 16s ease-in-out infinite;
+  }
   :root[data-theme="light"] body.newyear-theme {
     --bg: #eef0f6; --card: #fefeff; --border: #d3d8e8;
     background: linear-gradient(120deg, #eef0f6, #f8f4e8, #e2e6f2, #eef0f6);
@@ -131,7 +138,7 @@
   @media (prefers-reduced-motion: reduce) {
     /* !important needed: the :root[data-theme=...]-scoped drift rules above
        are more specific than a plain class selector can match without it. */
-    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme, body.paweek-theme, body.halloween-theme, body.thanksgiving-theme, body.newyear-theme {
+    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme, body.paweek-theme, body.halloween-theme, body.thanksgiving-theme, body.newyear-theme, body.fireworks-theme {
       animation: none !important;
       background-position: 0% 50% !important;
     }

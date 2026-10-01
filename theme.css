@@ -506,6 +506,13 @@ a.corner-btn:hover { text-decoration: none; }
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
+:root[data-theme="light"] body.homepage.fireworks-theme {
+  --bg: #eef3fb; --card: #fbfdff; --border: #cdd9ee;
+  background: linear-gradient(120deg, #eef3fb, #fbf1f1, #e0eaf9, #eef3fb);
+  background-color: #eef3fb;
+  background-size: 300% 300%;
+  animation: bg-drift 16s ease-in-out infinite;
+}
 :root[data-theme="light"] body.homepage.newyear-theme {
   --bg: #eef0f6; --card: #fefeff; --border: #d3d8e8;
   background: linear-gradient(120deg, #eef0f6, #f8f4e8, #e2e6f2, #eef0f6);
@@ -531,7 +538,7 @@ a.corner-btn:hover { text-decoration: none; }
   body.homepage.stpatricks-theme,
   body.homepage.xmas-theme,
   body.homepage.paweek-theme,
-  body.homepage.halloween-theme, body.homepage.thanksgiving-theme, body.homepage.newyear-theme {
+  body.homepage.halloween-theme, body.homepage.thanksgiving-theme, body.homepage.newyear-theme, body.homepage.fireworks-theme {
     animation: none !important;
     background-position: 0% 50% !important;
   }
@@ -3532,3 +3539,10 @@ body.th-paused .th-grp { animation-play-state: paused; }
 :root[data-theme="dark"] .pa-toast.th-card-ny { border-color: #fbbf24; box-shadow: 0 10px 30px rgba(251, 191, 36, .22); }
 :root[data-theme="dark"] .th-ny-year { color: #fbbf24; }
 @media (prefers-reduced-motion: reduce) { .th-ny-year { animation: none; } }
+
+
+/* JULY 4 splash card (theme.js, Jul 3-5 or ?theme=fireworks): the PA Week card in red and blue. */
+.pa-toast.th-card-4th { border-color: #2563eb; box-shadow: 0 10px 30px rgba(37, 99, 235, .26), 0 2px 6px rgba(0, 0, 0, .08); }
+.pa-toast.th-card-4th .pa-toast-txt b { color: #b91c1c; }
+:root[data-theme="dark"] .pa-toast.th-card-4th { border-color: #60a5fa; box-shadow: 0 10px 30px rgba(96, 165, 250, .22); }
+:root[data-theme="dark"] .pa-toast.th-card-4th .pa-toast-txt b { color: #f87171; }
