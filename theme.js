@@ -3503,16 +3503,33 @@ window.__themeKit = (function () {
       if (i >= 0 && i < heights.length) heights[i] = Math.min(MAXH, heights[i] + gain * (1 - Math.abs(d) / 4));
     }
   }
-  function crystal(ctx, r) {                                       // six arms = three lines through the center
-    ctx.beginPath();
-    for (var k = 0; k < 3; k++) {
-      var a = k * Math.PI / 3, dx = Math.cos(a) * r * 1.7, dy = Math.sin(a) * r * 1.7;
-      ctx.moveTo(-dx, -dy); ctx.lineTo(dx, dy);
+  // One draw call per opacity band instead of one per flake: flakes are queued by draw() and flushed in after().
+  var dots = [[], [], []], arms = [[], [], []], ALPHA = [0.65, 0.82, 0.97];
+  function flush(ctx) {
+    var b, i, f, a, dx, dy, r;
+    for (b = 0; b < 3; b++) {
+      ctx.globalAlpha = ALPHA[b];
+      if (dots[b].length) {
+        ctx.beginPath();
+        for (i = 0; i < dots[b].length; i++) { f = dots[b][i]; ctx.moveTo(f.x + f.r, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); }
+        ctx.fill(); if (!dark) ctx.stroke();
+      }
+      if (arms[b].length) {                                        // six arms = three lines through the center
+        ctx.beginPath();
+        for (i = 0; i < arms[b].length; i++) {
+          f = arms[b][i]; r = f.r * 0.9 * 1.7;
+          for (a = 0; a < 3; a++) {
+            dx = Math.cos(f.spin + a * Math.PI / 3) * r; dy = Math.sin(f.spin + a * Math.PI / 3) * r;
+            ctx.moveTo(f.x - dx, f.y - dy); ctx.lineTo(f.x + dx, f.y + dy);
+          }
+        }
+        ctx.stroke();
+      }
+      dots[b].length = 0; arms[b].length = 0;
     }
-    ctx.stroke();
   }
   kit.field({
-    cls: "th-snow", dprCap: 2, reduced: "still", wrap: 10, kick: true, fps: 30,
+    cls: "th-snow", dprCap: 1.5, reduced: "still", wrap: 10, kick: true, fps: 30,
     count: window.innerWidth < 700 ? 45 : 90,                      // lighter on narrow/mobile viewports
     rad: function (f) { return f.r * 1.9 + 2; },
     strip: function () { return [window.innerHeight - MAXH - 4, MAXH + 5]; },
@@ -3545,12 +3562,9 @@ window.__themeKit = (function () {
       ctx.fillStyle = dark ? "#ffffff" : "#f4f8fd";
       ctx.strokeStyle = dark ? "#ffffff" : "rgba(110, 140, 185, .75)"; ctx.lineWidth = dark ? 1 : 0.9; ctx.lineCap = "round";
     },
-    draw: function (ctx, f) {
-      ctx.globalAlpha = f.opacity;
-      if (f.r > 3.4) { ctx.save(); ctx.translate(f.x, f.y); ctx.rotate(f.spin); crystal(ctx, f.r * 0.9); ctx.restore(); }
-      else { ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); if (!dark) ctx.stroke(); }
-    },
+    draw: function (ctx, f) { (f.r > 3.4 ? arms : dots)[f.opacity < 0.75 ? 0 : (f.opacity < 0.9 ? 1 : 2)].push(f); },
     after: function (ctx, still, k) {
+      flush(ctx);
       var H = window.innerHeight, W = window.innerWidth, i, any = false;
       for (i = 0; i < heights.length; i++) {
         if (!still) heights[i] = Math.max(0, heights[i] - (0.0008 * heights[i] + 0.0004) * (k || 1));   // melts: proportional + a little constant
@@ -3803,7 +3817,7 @@ window.__themeKit.fireworks = function (cfg) {
     if (best) pop(best);
   });
   F = kit.field({
-    cls: "th-hearts", dprCap: 2, reduced: "still", wrap: 20, fps: 30,
+    cls: "th-hearts", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30,
     count: window.innerWidth < 700 ? 18 : 34,
     rad: function (h) { return h.s * 1.9 + 3; },
     dirty: function () { return rects; },
@@ -3865,7 +3879,7 @@ window.__themeKit.fireworks = function (cfg) {
   var COLORS = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"], speedMul = 0.35;
   var N = window.innerWidth < 700 ? 18 : 34, MAXPILE = Math.round(N * 0.5), resting = 0, F = null;
   F = kit.field({
-    cls: "th-leaves", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30, count: N,
+    cls: "th-leaves", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30, count: N,
     rad: function (l) { return l.s * 2.2; },
     onSize: function (ps, W, H) {                                  // the window grew or shrank: lying leaves go back on the new bottom edge
       for (var i = 0; i < ps.length; i++) if (ps[i].rest) ps[i].y = H - ps[i].s * 0.45 - Math.random() * 3;
@@ -4082,7 +4096,7 @@ window.__themeKit.fireworks = function (cfg) {
   }
 
   kit.field({
-    cls: "th-thanks", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30, rad: function (p) { return p.s * 2.4; },
+    cls: "th-thanks", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30, rad: function (p) { return p.s * 2.4; },
     count: window.innerWidth < 700 ? 16 : 30,
     make: function (randomY) {
       var kind = KINDS[(Math.random() * KINDS.length) | 0], s = 6 + Math.random() * 6;
@@ -4140,7 +4154,7 @@ window.__themeKit.fireworks = function (cfg) {
   kit.colors(["#16a34a", "#22c55e", "#4ade80", "#fbbf24", "#15803d"]);
   var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35, F = null;
   F = kit.field({
-    cls: "th-clovers", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30,
+    cls: "th-clovers", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30,
     count: window.innerWidth < 700 ? 16 : 30,
     rad: function (c) { return c.s * 2.6; },
     make: function (randomY) {
@@ -6247,7 +6261,7 @@ window.__themeKit.fireworks = function (cfg) {
     };
   }
   kit.field({
-    cls: "th-paweek", dprCap: 2, reduced: "still", wrap: 40, first: true, fps: 30,
+    cls: "th-paweek", dprCap: 1.5, reduced: "still", wrap: 40, first: true, fps: 30,
     count: window.innerWidth < 700 ? 14 : 28,
     rad: function (p) { return p.s * 2.6; },
     make: make,
