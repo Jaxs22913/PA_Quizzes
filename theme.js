@@ -5999,3 +5999,181 @@ window.__halloween = (function () {
   setTimeout(close, 9000);
   if (!reduce && window.burstConfetti) setTimeout(function () { window.burstConfetti(90, 1.4); }, 350);
 })();
+
+
+/* ============================================================
+   GUIDE MOTION (2026-10-01): sections ease in as they are scrolled to, and the Contents list gets a
+   sliding marker that follows the section you are reading. Guides, cram sheets and reference pages only
+   (body[data-dark-kind] guide / cram / ref).
+   ------------------------------------------------------------
+   Safety rules, because hiding content is the one thing this must never get wrong:
+   - Nothing is hidden unless this script runs to the end: the hidden class is added by script, never
+     written in the markup, so JS-off, a script error, the Word export and the "Find it in the study
+     guide" panel (which strips scripts) all show everything.
+   - Only blocks that start BELOW the first screen are hidden, so nothing visible at load ever flickers.
+   - Reaching a block reveals it AND everything before it in the page, so a #hash jump, a Contents click,
+     a search hit, Ctrl-F, or a fast scroll can never leave invisible content behind or above you.
+   - Print (and beforeprint) reveal everything; reduced motion hides nothing at all.
+   - Observed blocks are section-level (callouts, conditions, tables, cards...), not paragraphs, so a long
+     guide costs one IntersectionObserver over ~150 elements.
+   The marker never reads layout per frame: section positions are cached and refreshed when the page
+   changes size, then each scroll frame is a binary search over numbers.
+   ============================================================ */
+(function () {
+  var kind = document.body && document.body.getAttribute("data-dark-kind");
+  if (kind !== "guide" && kind !== "cram" && kind !== "ref") return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- 1. sections ease in ---------- */
+  var UNIT = ".io-box,.callout,.pearl,.cond,.cmp-card,.tbl-wrap,.figgrid,.study,.clip,.scroll,details,h3.sub,.shead";
+  var pending = [], ptr = 0, idxOf = typeof WeakMap === "function" ? new WeakMap() : null, io = null;
+
+  function revealUpTo(i, near) {
+    for (; ptr <= i && ptr < pending.length; ptr++) {
+      var el = pending[ptr];
+      if (!near) el.classList.add("rv-now");           // far above or below the screen: no animation to watch
+      el.classList.add("rv-in");
+      (function (e) { setTimeout(function () { e.classList.remove("rv-p", "rv-in", "rv-now"); }, near ? 520 : 40); })(el);
+      if (io) io.unobserve(el);
+    }
+  }
+  function revealAll() { revealUpTo(pending.length - 1, false); }
+  function revealThrough(target) {                      // everything before the target, the target's own block, and a little after
+    if (!pending.length || !target) return;
+    var last = -1;
+    for (var i = 0; i < pending.length; i++) {
+      var rel = pending[i].compareDocumentPosition(target);
+      if (rel & 8 /* contains */ || rel & 4 /* precedes */ || pending[i] === target) last = i;
+      else break;
+    }
+    revealUpTo(Math.min(last + 3, pending.length - 1), false);   // instant: the target must be solid on arrival
+  }
+
+  function setupReveal() {
+    if (reduce || typeof IntersectionObserver !== "function" || !idxOf) return;
+    if (document.documentElement.scrollHeight < window.innerHeight * 1.6) return;
+    var H = window.innerHeight, units = [], seen = [];
+    var secs = document.querySelectorAll("section");
+    for (var s = 0; s < secs.length; s++) {
+      var sec = secs[s];
+      if (sec.querySelector("section")) continue;
+      var kids = [], ch = sec.children;
+      for (var c = 0; c < ch.length; c++) if (ch[c].matches(UNIT)) kids.push(ch[c]);
+      if (kids.length) for (var k = 0; k < kids.length; k++) units.push(kids[k]);
+      else units.push(sec);
+    }
+    for (var u = 0; u < units.length; u++) {
+      var el = units[u];
+      if (el.closest("nav,header,.guide-back-bar") || el.matches("figure.fig") || el.querySelector("figure.fig-pending")) continue;
+      var r = el.getBoundingClientRect();
+      if (r.height < 24 || r.top < H) continue;          // not rendered, tiny, or on / above the first screen: leave alone
+      seen.push(el);
+    }
+    if (!seen.length) return;
+    var lastY = window.pageYOffset, jumped = false;
+    window.addEventListener("scroll", function () {      // one scroll event that moves most of a screen is a jump, not a scroll
+      var y = window.pageYOffset;
+      if (Math.abs(y - lastY) > window.innerHeight * 0.9) jumped = true;
+      lastY = y;
+    }, { passive: true });
+    io = new IntersectionObserver(function (list) {
+      var hi = -1;
+      for (var i = 0; i < list.length; i++) {
+        if (!list[i].isIntersecting) continue;
+        var n = idxOf.get(list[i].target);
+        if (n !== undefined && n > hi) hi = n;
+      }
+      if (hi >= 0) { revealUpTo(hi, !jumped); jumped = false; }   // reaching one reveals all before it, even ones you jumped over; after a jump (search hit, Ctrl-F, scrollIntoView) no fade, so it lands solid
+    });
+    for (var p = 0; p < seen.length; p++) {
+      idxOf.set(seen[p], p); pending.push(seen[p]);
+      seen[p].classList.add("rv-p");
+      io.observe(seen[p]);
+    }
+    window.addEventListener("beforeprint", revealAll);
+    window.addEventListener("hashchange", function () {
+      try { revealThrough(document.getElementById(decodeURIComponent(location.hash.slice(1)))); } catch (e) {}
+    });
+    document.addEventListener("click", function (e) {    // a link to a place in this page: open the way before the browser scrolls
+      var a = e.target && e.target.closest ? e.target.closest("a[href^='#']") : null;
+      if (!a || a.getAttribute("href").length < 2) return;
+      try { revealThrough(document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)))); } catch (x) {}
+    }, true);
+    if (location.hash.length > 1) { try { revealThrough(document.getElementById(decodeURIComponent(location.hash.slice(1)))); } catch (e) {} }
+    // belt and braces: whatever the observer missed, anything on screen after load or resize is shown
+    function sweep() {
+      var h = window.innerHeight;
+      for (var i = ptr; i < pending.length; i++) {
+        var rr = pending[i].getBoundingClientRect();
+        if (rr.top < h) { revealUpTo(i, true); }
+      }
+    }
+    window.addEventListener("load", function () { setTimeout(sweep, 400); });
+    var scT = 0; window.addEventListener("scroll", function () { clearTimeout(scT); scT = setTimeout(function () { jumped = false; sweep(); }, 250); }, { passive: true });   // once the scrolling settles
+    var rsT = 0; window.addEventListener("resize", function () { clearTimeout(rsT); rsT = setTimeout(sweep, 300); });
+  }
+
+  /* ---------- 2. the Contents marker ---------- */
+  function setupMarker() {
+    var toc = document.querySelector("nav.toc");
+    if (!toc) return;
+    var links = toc.querySelectorAll("a[href^='#']"), items = [];
+    for (var i = 0; i < links.length; i++) {
+      var id = links[i].getAttribute("href").slice(1), t = null;
+      try { t = document.getElementById(decodeURIComponent(id)); } catch (e) {}
+      if (t) items.push({ a: links[i], t: t, top: 0 });
+    }
+    if (items.length < 2) return;
+    var mark = document.createElement("span");
+    mark.className = "toc-mark"; mark.setAttribute("aria-hidden", "true");
+    toc.insertBefore(mark, toc.firstChild);
+    var LINE = 140, cur = -2, sh = 0, raf = 0, ready = false;
+
+    function measure() {
+      var y = window.pageYOffset;
+      for (var i = 0; i < items.length; i++) items[i].top = items[i].t.getBoundingClientRect().top + y;
+      var sorted = true;                                  // the list should run in page order; if not, fall back to sorting
+      for (i = 1; i < items.length; i++) if (items[i].top < items[i - 1].top - 1) { sorted = false; break; }
+      if (!sorted) items.sort(function (a, b) { return a.top - b.top; });
+      sh = document.documentElement.scrollHeight;
+    }
+    function show(n) {
+      if (!toc.offsetParent) { cur = -2; return; }        // hidden (collapsed or a narrow screen): place it when it comes back
+      if (n < 0) { mark.classList.remove("on"); cur = n; return; }
+      var a = items[n].a;
+      mark.style.height = a.offsetHeight + "px";
+      mark.style.transform = "translateY(" + a.offsetTop + "px)";
+      if (!ready || reduce) { mark.style.transition = "none"; } else mark.style.transition = "";
+      mark.classList.add("on");
+      if (!ready) { void mark.offsetWidth; ready = true; if (!reduce) mark.style.transition = ""; }
+      var prev = toc.querySelector("a.toc-cur"); if (prev) prev.classList.remove("toc-cur");
+      a.classList.add("toc-cur");
+      cur = n;
+      if (toc.scrollHeight > toc.clientHeight + 4 && !toc.matches(":hover")) {   // keep the entry in sight inside a long list
+        var top = a.offsetTop, bot = top + a.offsetHeight;
+        if (top < toc.scrollTop + 30 || bot > toc.scrollTop + toc.clientHeight - 30) {
+          var want = Math.max(0, top - toc.clientHeight / 3);
+          if (reduce || !toc.scrollTo) toc.scrollTop = want; else toc.scrollTo({ top: want, behavior: "smooth" });
+        }
+      }
+    }
+    function update() {
+      raf = 0;
+      if (document.documentElement.scrollHeight !== sh) measure();
+      var y = window.pageYOffset + LINE, lo = 0, hi = items.length - 1, n = -1;
+      while (lo <= hi) { var mid = (lo + hi) >> 1; if (items[mid].top <= y) { n = mid; lo = mid + 1; } else hi = mid - 1; }
+      if (window.pageYOffset + window.innerHeight >= document.documentElement.scrollHeight - 4) n = items.length - 1;
+      if (n !== cur) show(n);
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(update); }
+    measure(); update();
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", function () { measure(); cur = -2; queue(); });
+    window.addEventListener("load", function () { measure(); cur = -2; queue(); });
+    document.addEventListener("toggle", function () { measure(); queue(); }, true);   // an accordion opening moves everything below it
+    new MutationObserver(function () { cur = -2; queue(); }).observe(document.body, { attributes: true, attributeFilter: ["class"] });   // Contents shown or hidden again
+  }
+
+  function go() { try { setupReveal(); } catch (e) { revealAll(); } try { setupMarker(); } catch (e) {} }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();
