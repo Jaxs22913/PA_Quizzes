@@ -3155,373 +3155,378 @@ window.openPauseOverlay = function (opts) {
   queueCap();
 })();
 
-// Seasonal snowfall (added 2026-07-16) -- December only. Lives here rather
-// than in any one page's HTML so every current page picks it up for free
-// and every future page does too, as long as it includes theme.js like the
-// rest of the site. A plain canvas overlay, fixed to the viewport and
-// pushed behind all real content with z-index:-1 -- the same technique
-// index.html's own .edge-decor strips already use, just injected instead
-// of hardcoded per page.
-(function () {
-  if (new Date().getMonth() !== 11) return;
+/* ============================================================
+   THEME KIT (2026-10-01) -- the one place the seasonal themes share their plumbing, so a new theme is
+   a small config instead of a copy of the last one. window.__themeKit gives every theme:
+   - WHEN: kit.on("snow") answers "is this theme running on this page?". All date windows and the
+     precedence rules live in RULES / YIELDS below, nowhere else.
+   - PREVIEW: ?theme=<name>[,<name>] shows just those themes on any date (sticks for the rest of the
+     browser tab via sessionStorage; ?theme=off clears it). Each theme also answers to its own
+     ?<name>=1 / ?<name>=0 (?halloween=1, ?paweek=1, ?lights=1 ...). kit.fresh(name) is true only
+     when the flag is in THIS url, so one-shot things (welcome cards) replay on a preview click but
+     not on every page of a sticky preview.
+   - kit.field: a canvas of drifting particles behind the UI (repel from the cursor or a finger,
+     optional spin kick, respawn, wrap, paused when the tab is hidden, reduced-motion mode).
+   - kit.canvas / kit.loop / kit.pointer / kit.repel / kit.trail / kit.card / kit.shapes / kit.colors:
+     the pieces kit.field and the bespoke themes are built from.
+   Rules every theme keeps: behind the content or pointer-events none, no layout shift, nothing runs in
+   a hidden tab, reduced motion respected, fine-pointer-only cursor effects.
+   ============================================================ */
+window.__themeKit = (function () {
+  var kit = {}, body = document.body;
+  var NAMES = ["snow", "lights", "newyear", "hearts", "clovers", "paweek", "leaves", "halloween", "thanksgiving", "fireworks"];
+  var ALIAS = { xmas: "snow", december: "snow", holiday: "lights", ny: "newyear", vday: "hearts", valentines: "hearts",
+    stpatricks: "clovers", clover: "clovers", fall: "leaves", autumn: "leaves", july4: "fireworks", fourth: "fireworks" };
+  function canon(n) { n = String(n || "").toLowerCase(); return NAMES.indexOf(n) >= 0 ? n : (ALIAS[n] || null); }
 
-  document.body.classList.add("xmas-theme");
-
-  var canvas = document.createElement("canvas");
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-  document.body.insertBefore(canvas, document.body.firstChild);
-  var ctx = canvas.getContext("2d");
-
-  var flakes = [];
-  // Lighter on narrow/mobile viewports -- fewer flakes to redraw each
-  // frame keeps this cheap on weaker mobile GPUs/CPUs.
-  var density = window.innerWidth < 700 ? 45 : 90;
-  var windStrength = 0.35;
-
-  // Cursor tracking for the mouse-repel effect below. Listens on window
-  // (not the canvas, which is pointer-events:none) so page UI on top of
-  // the canvas still gets normal clicks/hovers.
-  var mouseX = null, mouseY = null;
-  var REPEL_RADIUS = 110;
-  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
-  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
-  window.addEventListener("touchmove", function (e) {
-    if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; }
-  }, { passive: true });
-  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
-
-  function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  // Thanksgiving week: Monday to Friday around the 4th Thursday of November (Nov 23-27 in 2026).
+  function thanksgivingWeek(d) {
+    if (d.getMonth() !== 10) return false;
+    var firstDow = new Date(d.getFullYear(), 10, 1).getDay();
+    var thu = 1 + ((4 - firstDow + 7) % 7) + 21;
+    return d.getDate() >= thu - 3 && d.getDate() <= thu + 1;
   }
-  window.addEventListener("resize", resize);
-  resize();
+  var RULES = {                                   // local date, every year unless a year is named
+    snow: function (d) { return d.getMonth() === 11; },
+    hearts: function (d) { var m = d.getMonth(), x = d.getDate(); return (m === 0 && x === 31) || (m === 1 && x <= 14); },
+    clovers: function (d) { var m = d.getMonth(), x = d.getDate(); return m === 2 && x >= 3 && x <= 17; },
+    paweek: function (d) { return d.getFullYear() === 2026 && d.getMonth() === 9 && d.getDate() >= 5 && d.getDate() <= 9; },
+    leaves: function (d) { return d.getMonth() === 9 && d.getDate() >= 17 && d.getDate() <= 31; },
+    halloween: function (d) { return d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31; },
+    lights: function () { return false; }, newyear: function () { return false; },
+    thanksgiving: thanksgivingWeek, fireworks: function () { return false; }
+  };
+  var YIELDS = [["halloween", "leaves"]];         // [winner, loser]: on a date both match, only the winner runs
 
-  function makeFlake(randomY) {
-    var r = 1.7 + Math.random() * 3.4;
-    return {
-      x: Math.random() * window.innerWidth,
-      y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
-      r: r,
-      speed: 0.5 + r * 0.45 + Math.random() * 0.4,
-      drift: Math.random() * Math.PI * 2,
-      driftSpeed: 0.005 + Math.random() * 0.01,
-      opacity: 0.6 + Math.random() * 0.4,
-      // Perturbation velocity from cursor repulsion, decays each frame so
-      // a flake scatters on contact then settles back into its normal
-      // drift/fall rather than staying permanently displaced.
-      vx: 0,
-      vy: 0
-    };
-  }
-  for (var s = 0; s < density; s++) flakes.push(makeFlake(true));
-
-  function step() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    ctx.fillStyle = "#ffffff";
-    for (var i = 0; i < flakes.length; i++) {
-      var f = flakes[i];
-
-      if (mouseX !== null) {
-        var dx = f.x - mouseX, dy = f.y - mouseY;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < REPEL_RADIUS && dist > 0.01) {
-          var force = (1 - dist / REPEL_RADIUS) * 1.8;
-          f.vx += (dx / dist) * force;
-          f.vy += (dy / dist) * force;
-        }
-      }
-      f.vx *= 0.9;
-      f.vy *= 0.9;
-
-      f.y += f.speed + f.vy;
-      f.drift += f.driftSpeed;
-      f.x += Math.sin(f.drift) * (windStrength * 1.6) + f.vx;
-      if (f.y > window.innerHeight + 10) { flakes[i] = makeFlake(false); continue; }
-      if (f.x < -10) f.x = window.innerWidth + 10;
-      if (f.x > window.innerWidth + 10) f.x = -10;
-      ctx.globalAlpha = f.opacity;
-      ctx.beginPath();
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-})();
-
-// Seasonal Valentine's theme (added 2026-07-17) -- two weeks before Feb 14
-// through Feb 14 itself (Jan 31 - Feb 14). Same pattern as the December
-// snow feature above: lives in theme.js (not any one page's HTML) so every
-// current and future page gets it automatically. Floating hearts behind
-// all UI (z-index:-1), plus a homepage-only light-mode pink tint gated on
-// the same window via a body class, rather than a permanent theme.css
-// color change.
-(function () {
-  var d = new Date();
-  var m = d.getMonth(), day = d.getDate();
-  var inWindow = (m === 0 && day === 31) || (m === 1 && day <= 14);
-  if (!inWindow) return;
-
-  document.body.classList.add("vday-theme");
-
-  var canvas = document.createElement("canvas");
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-  document.body.insertBefore(canvas, document.body.firstChild);
-  var ctx = canvas.getContext("2d");
-
-  var hearts = [];
-  // Lighter on narrow/mobile viewports, same reasoning as the snow above.
-  var density = window.innerWidth < 700 ? 18 : 34;
-  var speedMul = 0.35;
-  var COLORS = ["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"];
-
-  // Cursor tracking for the mouse-repel effect below. Listens on window
-  // (not the canvas, which is pointer-events:none) so page UI on top of
-  // the canvas still gets normal clicks/hovers.
-  var mouseX = null, mouseY = null;
-  var REPEL_RADIUS = 110;
-  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
-  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
-  window.addEventListener("touchmove", function (e) {
-    if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; }
-  }, { passive: true });
-  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
-
-  function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  function makeHeart(randomY) {
-    var s = 6 + Math.random() * 9;
-    return {
-      x: Math.random() * window.innerWidth,
-      y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 10 + Math.random() * 40,
-      s: s,
-      speed: (0.35 + s * 0.045) * speedMul,
-      drift: Math.random() * Math.PI * 2,
-      driftSpeed: 0.006 + Math.random() * 0.012,
-      opacity: 0.35 + Math.random() * 0.4,
-      color: COLORS[(Math.random() * COLORS.length) | 0],
-      // Perturbation velocity from cursor repulsion, decays each frame so
-      // a heart scatters on contact then settles back into its normal
-      // drift/float rather than staying permanently displaced.
-      vx: 0,
-      vy: 0
-    };
-  }
-  for (var hi = 0; hi < density; hi++) hearts.push(makeHeart(true));
-
-  // Classic two-lobe heart silhouette (flat top notch, round lobes,
-  // pointed bottom), drawn at (0,0) sized to `s`, transformed by the
-  // caller via ctx.translate/rotate.
-  function traceHeart(s) {
-    var w = s * 1.8, h = s * 1.7;
-    var top = h * 0.28;
-    var mid = (h + top) / 2;
-    ctx.beginPath();
-    ctx.moveTo(0, top);
-    ctx.bezierCurveTo(0, 0, -w / 2, 0, -w / 2, top);
-    ctx.bezierCurveTo(-w / 2, mid, 0, mid, 0, h);
-    ctx.bezierCurveTo(0, mid, w / 2, mid, w / 2, top);
-    ctx.bezierCurveTo(w / 2, 0, 0, 0, 0, top);
-    ctx.closePath();
-  }
-
-  function step() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for (var i = 0; i < hearts.length; i++) {
-      var h = hearts[i];
-
-      if (mouseX !== null) {
-        var dx = h.x - mouseX, dy = h.y - mouseY;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < REPEL_RADIUS && dist > 0.01) {
-          var force = (1 - dist / REPEL_RADIUS) * 1.8;
-          h.vx += (dx / dist) * force;
-          h.vy += (dy / dist) * force;
-        }
-      }
-      h.vx *= 0.9;
-      h.vy *= 0.9;
-
-      h.y -= h.speed;
-      h.y += h.vy;
-      h.drift += h.driftSpeed;
-      h.x += Math.sin(h.drift) * 0.6 + h.vx;
-      var rot = Math.sin(h.drift) * 0.25;
-
-      if (h.y < -20) { hearts[i] = makeHeart(false); continue; }
-      if (h.x < -20) h.x = window.innerWidth + 20;
-      if (h.x > window.innerWidth + 20) h.x = -20;
-
-      ctx.save();
-      ctx.translate(h.x, h.y);
-      ctx.rotate(rot);
-      ctx.globalAlpha = h.opacity;
-      ctx.fillStyle = h.color;
-      traceHeart(h.s);
-      ctx.fill();
-      ctx.restore();
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-})();
-
-// Halloween gate (2026-10-01): Oct 24-31 inclusive (local date), or any page loaded with
-// ?halloween=1 (sticks for the rest of that browser tab via sessionStorage so a preview survives
-// clicking around; ?halloween=0 clears it). Computed once here because TWO things read it: the
-// autumn-leaves IIFE just below yields to it (Oct 24-31 is Halloween, never leaves + bats at once)
-// and the Halloween IIFE after it.
-window.__halloween = (function () {
-  var d = new Date();
-  var on = d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31;
+  var list = [], fresh = [];
   try {
-    var q = /[?&]halloween=(\d)(&|$)/.exec(location.search);
-    if (q) { if (q[1] === "1") sessionStorage.setItem("hwPreview", "1"); else sessionStorage.removeItem("hwPreview"); }
-    if (sessionStorage.getItem("hwPreview") === "1") on = true;
-  } catch (e) { if (/[?&]halloween=1(&|$)/.test(location.search)) on = true; }
-  return on;
+    var stored = sessionStorage.getItem("themePreview");
+    if (stored) list = stored.split(",").filter(canon);
+    var re = /[?&]([a-z0-9]+)=([^&#]*)/gi, m;
+    while ((m = re.exec(location.search))) {
+      var key = m[1].toLowerCase(), val = decodeURIComponent(m[2]).toLowerCase();
+      if (key === "theme") {
+        list = (val === "off" || val === "0" || val === "") ? [] : val.split(",").map(canon).filter(Boolean);
+        fresh = list.slice();
+      } else if (canon(key) && (val === "1" || val === "0")) {
+        var c = canon(key);
+        list = list.filter(function (x) { return x !== c; });
+        if (val === "1") { list.push(c); fresh.push(c); }
+      }
+    }
+    if (list.length) sessionStorage.setItem("themePreview", list.join(",")); else sessionStorage.removeItem("themePreview");
+  } catch (e) {
+    var q = /[?&]theme=([a-z,]+)/i.exec(location.search);
+    if (q) list = q[1].toLowerCase().split(",").map(canon).filter(Boolean);
+    NAMES.forEach(function (n) { if (new RegExp("[?&]" + n + "=1(&|$)").test(location.search)) list.push(n); });
+    fresh = list.slice();
+  }
+  var on = {};
+  if (list.length) list.forEach(function (n) { on[n] = true; });
+  else {
+    var now = new Date();
+    NAMES.forEach(function (n) { if (RULES[n](now)) on[n] = true; });
+    YIELDS.forEach(function (y) { if (on[y[0]]) delete on[y[1]]; });
+  }
+  kit.previewing = list.length > 0;
+  kit.on = function (n) { return !!on[n]; };
+  kit.fresh = function (n) { return fresh.indexOf(n) >= 0; };
+  kit.colors = function (arr) { window.__confettiColors = arr; };
+
+  /* ----- motion preference, pointer type, tab visibility ----- */
+  var rmq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
+  var fmq = window.matchMedia ? matchMedia("(hover: hover) and (pointer: fine)") : { matches: false };
+  kit.reduced = function () { return rmq.matches; };
+  kit.fine = function () { return fmq.matches; };
+  var motionSubs = [], visSubs = [];
+  kit.onMotion = function (fn) { motionSubs.push(fn); };
+  kit.onVisible = function (fn) { visSubs.push(fn); };
+  function motionChanged() { motionSubs.forEach(function (f) { f(rmq.matches); }); }
+  if (rmq.addEventListener) rmq.addEventListener("change", motionChanged); else if (rmq.addListener) rmq.addListener(motionChanged);
+  function visChanged() {
+    body.classList.toggle("th-paused", document.hidden);            // CSS animations pause with it
+    visSubs.forEach(function (f) { f(!document.hidden); });
+  }
+  document.addEventListener("visibilitychange", visChanged);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) visChanged(); });   // back/forward cache restore
+
+  /* ----- cursor / finger position (null when it is off the window) and the standing scatter ----- */
+  var ptr = { x: null, y: null }, ptrOn = false;
+  kit.pointer = function () {
+    if (!ptrOn) {
+      ptrOn = true;
+      window.addEventListener("mousemove", function (e) { ptr.x = e.clientX; ptr.y = e.clientY; });
+      window.addEventListener("mouseleave", function () { ptr.x = ptr.y = null; });
+      window.addEventListener("touchmove", function (e) { if (e.touches.length) { ptr.x = e.touches[0].clientX; ptr.y = e.touches[0].clientY; } }, { passive: true });
+      window.addEventListener("touchend", function () { ptr.x = ptr.y = null; });
+    }
+    return ptr;
+  };
+  // Pushes particle p (drawn at x,y; carries vx/vy) away from the pointer inside radius R. kick: also
+  // spin it (needs p.spinSpeed). The caller decays vx/vy each frame, so p settles back by itself.
+  kit.repel = function (p, x, y, R, k, kick) {
+    if (ptr.x === null) return;
+    var dx = x - ptr.x, dy = y - ptr.y, dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < R && dist > 0.01) {
+      var force = (1 - dist / R) * k;
+      p.vx += (dx / dist) * force; p.vy += (dy / dist) * force;
+      if (kick) {
+        p.spinSpeed += (dx > 0 ? 1 : -1) * force * 0.01;
+        if (p.spinSpeed > 0.12) p.spinSpeed = 0.12;
+        if (p.spinSpeed < -0.12) p.spinSpeed = -0.12;
+      }
+    }
+  };
+
+  /* ----- a fixed canvas behind the UI, sized to the viewport ----- */
+  kit.canvas = function (cls, dprCap) {
+    var el = document.createElement("canvas");
+    el.className = "th-cv " + cls; el.setAttribute("aria-hidden", "true");
+    el.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
+    body.insertBefore(el, body.firstChild);
+    var o = { el: el, ctx: el.getContext("2d"), W: 0, H: 0, onSize: null, gone: false };
+    function size() {
+      var dpr = Math.min(window.devicePixelRatio || 1, dprCap || 2);
+      o.W = window.innerWidth; o.H = window.innerHeight;
+      el.width = Math.round(o.W * dpr); el.height = Math.round(o.H * dpr);
+      o.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (o.onSize) o.onSize();
+    }
+    var t = 0;
+    function onResize() { clearTimeout(t); t = setTimeout(function () { if (!o.gone) size(); }, 100); }
+    window.addEventListener("resize", onResize);
+    o.remove = function () { o.gone = true; window.removeEventListener("resize", onResize); if (el.parentNode) el.parentNode.removeChild(el); };
+    size();
+    return o;
+  };
+
+  /* ----- a requestAnimationFrame loop that stops in a hidden tab (fps: optional cap) ----- */
+  kit.loop = function (fn, fps) {
+    var raf = 0, last = 0, want = false, gap = fps ? 1000 / fps - 2 : 0;
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      if (gap && now - last < gap) return;
+      var dt = Math.min(0.05, (now - last) / 1000); last = now;
+      fn(now, dt);
+    }
+    function go() { if (!raf && want && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+    function halt() { cancelAnimationFrame(raf); raf = 0; }
+    kit.onVisible(function (vis) { if (vis) go(); else halt(); });
+    return { start: function () { want = true; go(); }, stop: function () { want = false; halt(); } };
+  };
+
+  /* ----- particles drifting behind the UI -----
+     cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
+     begin(ctx) once per frame, kick (spin from the cursor), repelR/repelK, dprCap,
+     reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
+  kit.field = function (cfg) {
+    var cv = null, ps = [], mode = cfg.reduced || "off", R = cfg.repelR || 110, K = cfg.repelK || 1.8;
+    kit.pointer();
+    function frame(still) {
+      var ctx = cv.ctx, W = window.innerWidth, H = window.innerHeight, i, p;
+      ctx.clearRect(0, 0, W, H);
+      if (cfg.begin) cfg.begin(ctx);
+      for (i = 0; i < ps.length; i++) {
+        p = ps[i];
+        if (!still) {
+          kit.repel(p, p.x, p.y, R, K, cfg.kick);
+          p.vx *= 0.9; p.vy *= 0.9;
+          cfg.move(p);
+          if (cfg.gone(p)) { ps[i] = cfg.make(false); continue; }
+          if (cfg.wrap) {
+            if (p.x < -cfg.wrap) p.x = window.innerWidth + cfg.wrap;
+            if (p.x > window.innerWidth + cfg.wrap) p.x = -cfg.wrap;
+          }
+        }
+        cfg.draw(ctx, p);
+      }
+      ctx.globalAlpha = 1;
+    }
+    var loop = kit.loop(function () { frame(false); });
+    function apply() {
+      if (kit.reduced() && mode !== "run") {
+        loop.stop();
+        if (mode === "off") { if (cv) { cv.remove(); cv = null; } ps = []; }
+        else { if (!cv) build(); frame(true); }
+      } else { var fresh = !cv; if (fresh) build(); loop.start(); if (fresh && cfg.first) frame(false); }
+    }
+    function build() {
+      cv = kit.canvas(cfg.cls, cfg.dprCap);
+      var n = typeof cfg.count === "function" ? cfg.count() : cfg.count;
+      ps = []; for (var i = 0; i < n; i++) ps.push(cfg.make(true));
+    }
+    kit.onMotion(apply);
+    apply();
+    return { particles: function () { return ps; }, canvas: function () { return cv; } };
+  };
+
+  /* ----- a pooled cursor trail (fine pointers only, never on touch, throttled) -----
+     o: cls, pool, gap (ms), min (px between drops), dx/dy (offset from the pointer), ms, ease,
+     frames(x, y) -> Web Animations keyframes */
+  kit.trail = function (o) {
+    var pool = [], idx = 0, lastX = -999, lastY = -999, lastT = 0, N = o.pool || 16;
+    function el(i) {
+      if (pool[i]) return pool[i];
+      var d = document.createElement("div");
+      d.className = o.cls; d.setAttribute("aria-hidden", "true");
+      body.appendChild(d); pool[i] = d; return d;
+    }
+    window.addEventListener("mousemove", function (e) {
+      if (kit.reduced() || !kit.fine() || document.hidden || e.buttons) return;
+      var now = e.timeStamp || Date.now();
+      if (now - lastT < (o.gap || 55)) return;
+      var dx = e.clientX - lastX, dy = e.clientY - lastY, min = o.min || 26;
+      if (dx * dx + dy * dy < min * min) return;
+      lastT = now; lastX = e.clientX; lastY = e.clientY;
+      var d = el(idx); idx = (idx + 1) % N;
+      if (d._a) d._a.cancel();
+      d._a = d.animate(o.frames(Math.round(e.clientX) + (o.dx || 0), Math.round(e.clientY) + (o.dy || 0)),
+        { duration: o.ms || 950, easing: o.ease || "ease-out", fill: "backwards" });
+    });
+  };
+
+  /* ----- a welcome card, once a day per device on the app-shell pages (preview: every time) -----
+     o: key (localStorage), fresh (replay), cls, html, ms, burst [count, spread]. Returns the card or null. */
+  kit.isShell = function () {
+    var path = location.pathname.replace(/^.*\//, "");
+    return body.classList.contains("homepage") || /^(|index\.html|guides\.html|calendar\.html|arcade[\w-]*\.html|group-(join|host)\.html)$/.test(path);
+  };
+  kit.card = function (o) {
+    var seen = false;
+    try { seen = !o.fresh && localStorage.getItem(o.key) === "1"; } catch (e) {}
+    if (seen) return null;
+    try { localStorage.setItem(o.key, "1"); } catch (e) {}
+    var card = document.createElement("div");
+    card.className = "pa-toast" + (o.cls ? " " + o.cls : ""); card.setAttribute("role", "status");
+    card.innerHTML = o.html + '<button type="button" class="pa-toast-x" aria-label="Close">&times;</button>';
+    body.appendChild(card);
+    function close() { card.classList.add("out"); setTimeout(function () { card.remove(); }, 450); }
+    card.querySelector(".pa-toast-x").addEventListener("click", close);
+    setTimeout(close, o.ms || 9000);
+    if (o.burst && !kit.reduced() && window.burstConfetti) setTimeout(function () { window.burstConfetti(o.burst[0], o.burst[1]); }, 350);
+    return card;
+  };
+
+  /* ----- outlines the themes share (path only: the caller fills or strokes) ----- */
+  kit.shapes = {
+    heart: function (ctx, s) {                    // classic two-lobe heart, notch on top, tip at (0, h)
+      var w = s * 1.8, h = s * 1.7, top = h * 0.28, mid = (h + top) / 2;
+      ctx.beginPath(); ctx.moveTo(0, top);
+      ctx.bezierCurveTo(0, 0, -w / 2, 0, -w / 2, top); ctx.bezierCurveTo(-w / 2, mid, 0, mid, 0, h);
+      ctx.bezierCurveTo(0, mid, w / 2, mid, w / 2, top); ctx.bezierCurveTo(w / 2, 0, 0, 0, 0, top); ctx.closePath();
+    },
+    leaf: function (ctx, s) {                     // pointed leaf, tip to tip along y
+      ctx.beginPath(); ctx.moveTo(0, -s);
+      ctx.quadraticCurveTo(s * 0.9, -s * 0.3, 0, s); ctx.quadraticCurveTo(-s * 0.9, -s * 0.3, 0, -s); ctx.closePath();
+    },
+    leaflet: function (ctx, s) {                  // one heart-shaped clover leaflet, tip at the origin (no beginPath)
+      var w = s * 1.45, h = s * 1.1, top = h * 0.22, mid = (h + top) / 2;
+      ctx.moveTo(0, top - h);
+      ctx.bezierCurveTo(0, -h, -w / 2, -h, -w / 2, top - h); ctx.bezierCurveTo(-w / 2, mid - h, 0, mid - h, 0, 0);
+      ctx.bezierCurveTo(0, mid - h, w / 2, mid - h, w / 2, top - h); ctx.bezierCurveTo(w / 2, -h, 0, -h, 0, top - h);
+    },
+    clover: function (ctx, s) {                   // four leaflets meeting at the origin
+      ctx.beginPath();
+      for (var i = 0; i < 4; i++) { ctx.save(); ctx.rotate(i * Math.PI / 2); kit.shapes.leaflet(ctx, s); ctx.restore(); }
+      ctx.closePath();
+    }
+  };
+  return kit;
 })();
 
-// Seasonal Fall/Halloween theme (added 2026-07-17) -- Oct 17-23 (Oct 24-31 is the Halloween theme below). Same
-// pattern as the December snow / Valentine's hearts above: lives in
-// theme.js so every current and future page gets it automatically.
-// Tumbling autumn leaves behind all UI (z-index:-1), plus a homepage-only
-// light-mode warm tint gated on the same window via a body class.
+// Seasonal snowfall (added 2026-07-16) -- December. Lives here rather than in any one page's HTML so
+// every current page picks it up for free and every future page does too, as long as it includes
+// theme.js. A canvas fixed to the viewport and pushed behind all real content with z-index:-1 (the
+// same technique index.html's own .edge-decor strips use), built on __themeKit.field.
 (function () {
-  var d = new Date();
-  var m = d.getMonth(), day = d.getDate();
-  if (!(m === 9 && day >= 17 && day <= 31) || window.__halloween) return;
+  var kit = window.__themeKit;
+  if (!kit.on("snow")) return;
+  document.body.classList.add("xmas-theme");
+  var windStrength = 0.35;
+  kit.field({
+    cls: "th-snow", dprCap: 99, reduced: "run", wrap: 10,
+    count: window.innerWidth < 700 ? 45 : 90,            // lighter on narrow/mobile viewports
+    make: function (randomY) {
+      var r = 1.7 + Math.random() * 3.4;
+      return {
+        x: Math.random() * window.innerWidth,
+        y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
+        r: r, speed: 0.5 + r * 0.45 + Math.random() * 0.4,
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.005 + Math.random() * 0.01,
+        opacity: 0.6 + Math.random() * 0.4, vx: 0, vy: 0
+      };
+    },
+    move: function (f) { f.y += f.speed + f.vy; f.drift += f.driftSpeed; f.x += Math.sin(f.drift) * (windStrength * 1.6) + f.vx; },
+    gone: function (f) { return f.y > window.innerHeight + 10; },
+    begin: function (ctx) { ctx.fillStyle = "#ffffff"; },
+    draw: function (ctx, f) { ctx.globalAlpha = f.opacity; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); }
+  });
+})();
 
-  document.body.classList.add("fall-theme");
-
-  var canvas = document.createElement("canvas");
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-  document.body.insertBefore(canvas, document.body.firstChild);
-  var ctx = canvas.getContext("2d");
-
-  var leaves = [];
-  var density = window.innerWidth < 700 ? 18 : 34;
-  var speedMul = 0.35;
-  var COLORS = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"];
-
-  // Cursor tracking for the mouse-repel effect below. Listens on window
-  // (not the canvas, which is pointer-events:none) so page UI on top of
-  // the canvas still gets normal clicks/hovers.
-  var mouseX = null, mouseY = null;
-  var REPEL_RADIUS = 110;
-  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
-  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
-  window.addEventListener("touchmove", function (e) {
-    if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; }
-  }, { passive: true });
-  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
-
-  function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  function makeLeaf(randomY) {
-    var s = 5 + Math.random() * 7;
-    return {
-      x: Math.random() * window.innerWidth,
-      y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
-      s: s,
-      speed: (0.3 + s * 0.05) * speedMul,
-      drift: Math.random() * Math.PI * 2,
-      driftSpeed: 0.008 + Math.random() * 0.014,
-      spin: Math.random() * Math.PI * 2,
-      spinSpeed: (Math.random() - 0.5) * 0.04,
-      opacity: 0.5 + Math.random() * 0.4,
-      color: COLORS[(Math.random() * COLORS.length) | 0],
-      // Perturbation velocity from cursor repulsion, decays each frame so
-      // a leaf scatters on contact then settles back into its normal
-      // drift/fall rather than staying permanently displaced.
-      vx: 0,
-      vy: 0
-    };
-  }
-  for (var li = 0; li < density; li++) leaves.push(makeLeaf(true));
-
-  // Simple pointed leaf silhouette (two curves from tip to tip), drawn at
-  // (0,0) sized to `s`, transformed by the caller via translate/rotate.
-  function traceLeaf(s) {
-    ctx.beginPath();
-    ctx.moveTo(0, -s);
-    ctx.quadraticCurveTo(s * 0.9, -s * 0.3, 0, s);
-    ctx.quadraticCurveTo(-s * 0.9, -s * 0.3, 0, -s);
-    ctx.closePath();
-  }
-
-  function step() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for (var i = 0; i < leaves.length; i++) {
-      var l = leaves[i];
-
-      if (mouseX !== null) {
-        var dx = l.x - mouseX, dy = l.y - mouseY;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < REPEL_RADIUS && dist > 0.01) {
-          var force = (1 - dist / REPEL_RADIUS) * 1.8;
-          l.vx += (dx / dist) * force;
-          l.vy += (dy / dist) * force;
-          l.spinSpeed += (dx > 0 ? 1 : -1) * force * 0.01;
-          if (l.spinSpeed > 0.12) l.spinSpeed = 0.12;
-          if (l.spinSpeed < -0.12) l.spinSpeed = -0.12;
-        }
-      }
-      l.vx *= 0.9;
-      l.vy *= 0.9;
-
-      l.y += l.speed + l.vy;
-      l.drift += l.driftSpeed;
-      l.spin += l.spinSpeed;
-      l.x += Math.sin(l.drift) * 1.1 + l.vx;
-
-      if (l.y > window.innerHeight + 20) { leaves[i] = makeLeaf(false); continue; }
-      if (l.x < -20) l.x = window.innerWidth + 20;
-      if (l.x > window.innerWidth + 20) l.x = -20;
-
-      ctx.save();
-      ctx.translate(l.x, l.y);
-      ctx.rotate(l.spin);
-      ctx.globalAlpha = l.opacity;
-      ctx.fillStyle = l.color;
-      traceLeaf(l.s);
-      ctx.fill();
-      ctx.restore();
+// Seasonal Valentine's theme (added 2026-07-17) -- Jan 31 - Feb 14. Floating hearts behind all UI, plus
+// the light-mode pink tint on the app-shell pages (body.vday-theme).
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("hearts")) return;
+  document.body.classList.add("vday-theme");
+  var COLORS = ["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"], speedMul = 0.35;
+  kit.field({
+    cls: "th-hearts", dprCap: 99, reduced: "run", wrap: 20,
+    count: window.innerWidth < 700 ? 18 : 34,
+    make: function (randomY) {
+      var s = 6 + Math.random() * 9;
+      return {
+        x: Math.random() * window.innerWidth,
+        y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 10 + Math.random() * 40,
+        s: s, speed: (0.35 + s * 0.045) * speedMul,
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
+        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+      };
+    },
+    move: function (h) { h.y -= h.speed; h.y += h.vy; h.drift += h.driftSpeed; h.x += Math.sin(h.drift) * 0.6 + h.vx; },
+    gone: function (h) { return h.y < -20; },
+    draw: function (ctx, h) {
+      ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(Math.sin(h.drift) * 0.25);
+      ctx.globalAlpha = h.opacity; ctx.fillStyle = h.color;
+      kit.shapes.heart(ctx, h.s); ctx.fill(); ctx.restore();
     }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+  });
+})();
+
+// Seasonal Fall theme (added 2026-07-17) -- Oct 17-23 (Oct 24-31 is Halloween, which takes over; see
+// __themeKit YIELDS). Tumbling autumn leaves behind all UI, plus the warm light-mode tint (body.fall-theme).
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("leaves")) return;
+  document.body.classList.add("fall-theme");
+  var COLORS = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"], speedMul = 0.35;
+  kit.field({
+    cls: "th-leaves", dprCap: 99, reduced: "run", wrap: 20, kick: true,
+    count: window.innerWidth < 700 ? 18 : 34,
+    make: function (randomY) {
+      var s = 5 + Math.random() * 7;
+      return {
+        x: Math.random() * window.innerWidth,
+        y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
+        s: s, speed: (0.3 + s * 0.05) * speedMul,
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
+        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.04,
+        opacity: 0.5 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+      };
+    },
+    move: function (l) { l.y += l.speed + l.vy; l.drift += l.driftSpeed; l.spin += l.spinSpeed; l.x += Math.sin(l.drift) * 1.1 + l.vx; },
+    gone: function (l) { return l.y > window.innerHeight + 20; },
+    draw: function (ctx, l) {
+      ctx.save(); ctx.translate(l.x, l.y); ctx.rotate(l.spin);
+      ctx.globalAlpha = l.opacity; ctx.fillStyle = l.color;
+      kit.shapes.leaf(ctx, l.s); ctx.fill(); ctx.restore();
+    }
+  });
 })();
 
 /* ============================================================
-   HALLOWEEN (2026-10-01) -- Oct 24-31 inclusive (local date), or ?halloween=1 to preview
-   (window.__halloween, computed above; the autumn leaves yield to it).
+   HALLOWEEN (2026-10-01) -- Oct 24-31 inclusive (local date), or ?theme=halloween / ?halloween=1 to
+   preview (__themeKit; the autumn leaves yield to it).
    Three things, each cheap and each behind the content, none touching layout:
    1. A few bats flapping across the sky (one canvas behind the UI, dirty-rect redraw, cursor/finger
       scatters them like the other particle themes, stops when the tab is hidden).
@@ -3532,14 +3537,11 @@ window.__halloween = (function () {
    group-join.html, group-host.html). prefers-reduced-motion: no bats, no trail, glows hold still.
    ============================================================ */
 (function () {
-  if (!window.__halloween) return;
+  var kit = window.__themeKit;
+  if (!kit.on("halloween")) return;
   var body = document.body;
   body.classList.add("halloween-theme");
-  window.__confettiColors = ["#f97316", "#7c3aed", "#22c55e", "#facc15", "#ea580c"];
-
-  var rmq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
-  var fine = window.matchMedia ? matchMedia("(hover: hover) and (pointer: fine)") : { matches: false };
-  function reduced() { return rmq.matches; }
+  kit.colors(["#f97316", "#7c3aed", "#22c55e", "#facc15", "#ea580c"]);
 
   /* ---------- 2. candle glows (CSS does the flicker) ---------- */
   ["a", "b"].forEach(function (k) {
@@ -3549,8 +3551,8 @@ window.__halloween = (function () {
   });
 
   /* ---------- 1. bats ---------- */
-  var canvas = null, ctx = null, raf = 0, last = 0, W = 0, H = 0, bats = [];
-  var mx = null, my = null, REPEL = 120;
+  var cv = null, ctx = null, W = 0, H = 0, bats = [];
+  var ptr = kit.pointer(), REPEL = 120;
   var nBats = window.innerWidth < 700 ? 4 : 7;
 
   function makeBat(first) {
@@ -3565,15 +3567,7 @@ window.__halloween = (function () {
       ox: 0, oy: 0, vx: 0, vy: 0, bb: null, y: 0
     };
   }
-  function resize() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = window.innerWidth; H = window.innerHeight;
-    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    for (var i = 0; i < bats.length; i++) bats[i].bb = null;
-  }
-  var rzT = 0;
-  function onResize() { clearTimeout(rzT); rzT = setTimeout(function () { if (canvas) resize(); }, 150); }
+  function onSize() { W = cv.W; H = cv.H; for (var i = 0; i < bats.length; i++) bats[i].bb = null; }
 
   // front-facing bat silhouette: body, head with ears, two scalloped wings (flap = -1..1 lifts the tips)
   function drawBat(b, color) {
@@ -3602,9 +3596,7 @@ window.__halloween = (function () {
     ctx.restore();
   }
 
-  function step(now) {
-    raf = requestAnimationFrame(step);
-    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+  var loop = kit.loop(function (now, dt) {
     var dark = document.documentElement.getAttribute("data-theme") === "dark";
     var color = dark ? "#9d86c4" : "#2b1b3d";
     var i, b;
@@ -3620,10 +3612,7 @@ window.__halloween = (function () {
       b.t += dt; b.flap += dt * b.flapF * Math.PI * 2;
       b.x += b.dir * b.speed * dt;
       b.y = b.baseY + Math.sin(b.t * b.bobF * Math.PI * 2) * b.bobA;
-      if (mx !== null) {                               // scatter from the cursor like the other themes
-        var dx = b.x + b.ox - mx, dy = b.y + b.oy - my, d = Math.sqrt(dx * dx + dy * dy);
-        if (d < REPEL && d > 0.01) { var f = (1 - d / REPEL) * 2.2; b.vx += dx / d * f; b.vy += dy / d * f; }
-      }
+      kit.repel(b, b.x + b.ox, b.y + b.oy, REPEL, 2.2);   // scatter from the cursor like the other themes
       b.vx *= decay; b.vy *= decay; b.ox += b.vx; b.oy += b.vy;
       b.ox *= Math.pow(0.985, dt * 60); b.oy *= Math.pow(0.985, dt * 60);   // drift back to the flight line
       b.vyDraw = Math.cos(b.t * b.bobF * Math.PI * 2) * b.bobA * b.bobF;
@@ -3633,215 +3622,65 @@ window.__halloween = (function () {
       b.bb = [Math.floor(cx - r), Math.floor(cy - r), Math.ceil(r * 2), Math.ceil(r * 2)];
     }
     ctx.globalAlpha = 1;
-  }
+  });
   function startBats() {
-    if (canvas || reduced()) return;
-    canvas = document.createElement("canvas");
-    canvas.className = "hw-bats"; canvas.setAttribute("aria-hidden", "true");
-    canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-    body.insertBefore(canvas, body.firstChild);
-    ctx = canvas.getContext("2d");
-    resize();
+    if (cv || kit.reduced()) return;
+    cv = kit.canvas("th-bats hw-bats", 2); ctx = cv.ctx; cv.onSize = onSize; onSize();
     bats = []; for (var i = 0; i < nBats; i++) bats.push(makeBat(true));
     // the first-frame bats are spread across the sky already, but leave a few outside so it opens calm
     for (i = 0; i < bats.length; i += 2) { bats[i].wait = 0.5 + Math.random() * 4; bats[i].x = bats[i].dir > 0 ? -40 : W + 40; }
-    if (!document.hidden) { last = performance.now(); raf = requestAnimationFrame(step); }
+    loop.start();
   }
-  function stopBats() {
-    cancelAnimationFrame(raf); raf = 0;
-    if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
-    canvas = ctx = null; bats = [];
-  }
-  window.addEventListener("resize", onResize);
-  window.addEventListener("mousemove", function (e) { mx = e.clientX; my = e.clientY; });
-  window.addEventListener("mouseleave", function () { mx = my = null; });
-  window.addEventListener("touchmove", function (e) { if (e.touches.length) { mx = e.touches[0].clientX; my = e.touches[0].clientY; } }, { passive: true });
-  window.addEventListener("touchend", function () { mx = my = null; });
-  document.addEventListener("visibilitychange", function () {     // nothing runs in a background tab
-    body.classList.toggle("hw-paused", document.hidden);
-    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
-    else if (canvas && !raf) { last = performance.now(); raf = requestAnimationFrame(step); }
-  });
-  function onMotionPref() { if (reduced()) { stopBats(); } else { startBats(); } }
-  if (rmq.addEventListener) rmq.addEventListener("change", onMotionPref);
+  function stopBats() { loop.stop(); if (cv) cv.remove(); cv = ctx = null; bats = []; }
+  kit.onMotion(function (reduced) { if (reduced) stopBats(); else startBats(); });
   startBats();
 
   /* ---------- 3. pumpkin trail ---------- */
-  var POOL = 16, pumps = [], pi = 0, lastX = -999, lastY = -999, lastT = 0;
-  function pumpkin(i) {
-    if (pumps[i]) return pumps[i];
-    var el = document.createElement("div");
-    el.className = "hw-pumpkin"; el.setAttribute("aria-hidden", "true");
-    body.appendChild(el); pumps[i] = el; return el;
-  }
-  window.addEventListener("mousemove", function (e) {
-    if (reduced() || !fine.matches || document.hidden || e.buttons) return;
-    var now = e.timeStamp || Date.now();
-    if (now - lastT < 55) return;
-    var dx = e.clientX - lastX, dy = e.clientY - lastY;
-    if (dx * dx + dy * dy < 26 * 26) return;
-    lastT = now; lastX = e.clientX; lastY = e.clientY;
-    var el = pumpkin(pi); pi = (pi + 1) % POOL;
-    if (el._a) el._a.cancel();
-    var r = Math.round((Math.random() - 0.5) * 50), x = Math.round(e.clientX) - 14, y = Math.round(e.clientY) + 12;   // offset so the pointer never sits on one
-    var sz = 0.8 + Math.random() * 0.45;
-    el._a = el.animate([
-      { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
-      { opacity: 0.8, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
-      { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 35) + "deg) scale(" + (sz * 0.55) + ")" }
-    ], { duration: 950, easing: "ease-out", fill: "backwards" });
+  kit.trail({
+    cls: "hw-pumpkin", pool: 16, gap: 55, min: 26, dx: -14, dy: 12, ms: 950,   // offset so the pointer never sits on one
+    frames: function (x, y) {
+      var r = Math.round((Math.random() - 0.5) * 50), sz = 0.8 + Math.random() * 0.45;
+      return [
+        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
+        { opacity: 0.8, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
+        { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 35) + "deg) scale(" + (sz * 0.55) + ")" }
+      ];
+    }
   });
 })();
 
-// Seasonal St. Patrick's theme (added 2026-07-17) -- Mar 3-17. Same
-// pattern as the seasonal features above: lives in theme.js so every
-// current and future page gets it automatically. Falling four-leaf
-// clovers behind all UI (z-index:-1), plus a homepage-only light-mode
-// green tint gated on the same window via a body class.
+// Seasonal St. Patrick's theme (added 2026-07-17) -- Mar 3-17. Falling four-leaf clovers behind all UI,
+// plus the green light-mode tint (body.stpatricks-theme).
 (function () {
-  var d = new Date();
-  var m = d.getMonth(), day = d.getDate();
-  if (!(m === 2 && day >= 3 && day <= 17)) return;
-
+  var kit = window.__themeKit;
+  if (!kit.on("clovers")) return;
   document.body.classList.add("stpatricks-theme");
-
-  var canvas = document.createElement("canvas");
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-  document.body.insertBefore(canvas, document.body.firstChild);
-  var ctx = canvas.getContext("2d");
-
-  var clovers = [];
-  var density = window.innerWidth < 700 ? 16 : 30;
-  var speedMul = 0.35;
-  var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"];
-
-  // Cursor tracking for the mouse-repel effect below. Listens on window
-  // (not the canvas, which is pointer-events:none) so page UI on top of
-  // the canvas still gets normal clicks/hovers.
-  var mouseX = null, mouseY = null;
-  var REPEL_RADIUS = 110;
-  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
-  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
-  window.addEventListener("touchmove", function (e) {
-    if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; }
-  }, { passive: true });
-  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
-
-  function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  function makeClover(randomY) {
-    var s = 5 + Math.random() * 7;
-    return {
-      x: Math.random() * window.innerWidth,
-      y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
-      s: s,
-      speed: (0.3 + s * 0.05) * speedMul,
-      drift: Math.random() * Math.PI * 2,
-      driftSpeed: 0.008 + Math.random() * 0.014,
-      spin: Math.random() * Math.PI * 2,
-      spinSpeed: (Math.random() - 0.5) * 0.035,
-      opacity: 0.4 + Math.random() * 0.4,
-      color: COLORS[(Math.random() * COLORS.length) | 0],
-      // Perturbation velocity from cursor repulsion, decays each frame so
-      // a clover scatters on contact then settles back into its normal
-      // drift/fall rather than staying permanently displaced.
-      vx: 0,
-      vy: 0
-    };
-  }
-  for (var ci = 0; ci < density; ci++) clovers.push(makeClover(true));
-
-  // A single heart-shaped leaflet with its point at the local origin (0,0)
-  // and its rounded lobes/notch extending outward in -y -- reusing the
-  // same classic two-lobe bezier formula as the Valentine's heart, just
-  // re-anchored so the tip (not the notch) sits at (0,0).
-  function traceLeaflet(s) {
-    var w = s * 1.45, h = s * 1.1;
-    var top = h * 0.22;
-    var mid = (h + top) / 2;
-    ctx.moveTo(0, top - h);
-    ctx.bezierCurveTo(0, -h, -w / 2, -h, -w / 2, top - h);
-    ctx.bezierCurveTo(-w / 2, mid - h, 0, mid - h, 0, 0);
-    ctx.bezierCurveTo(0, mid - h, w / 2, mid - h, w / 2, top - h);
-    ctx.bezierCurveTo(w / 2, -h, 0, -h, 0, top - h);
-  }
-
-  // Four-leaf clover: four heart-shaped leaflets radiating from a shared
-  // center point (tips touching in the middle, lobes pointing outward),
-  // plus a short stem -- drawn at (0,0) sized to `s`, transformed by the
-  // caller via translate/rotate.
-  var CLOVER_ANGLES = [0, Math.PI / 2, Math.PI, Math.PI * 1.5];
-  function traceClover(s) {
-    ctx.beginPath();
-    for (var i = 0; i < CLOVER_ANGLES.length; i++) {
-      ctx.save();
-      ctx.rotate(CLOVER_ANGLES[i]);
-      traceLeaflet(s);
+  var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35;
+  kit.field({
+    cls: "th-clovers", dprCap: 99, reduced: "run", wrap: 20, kick: true,
+    count: window.innerWidth < 700 ? 16 : 30,
+    make: function (randomY) {
+      var s = 5 + Math.random() * 7;
+      return {
+        x: Math.random() * window.innerWidth,
+        y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
+        s: s, speed: (0.3 + s * 0.05) * speedMul,
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
+        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.035,
+        opacity: 0.4 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+      };
+    },
+    move: function (c) { c.y += c.speed + c.vy; c.drift += c.driftSpeed; c.spin += c.spinSpeed; c.x += Math.sin(c.drift) * 1.1 + c.vx; },
+    gone: function (c) { return c.y > window.innerHeight + 20; },
+    draw: function (ctx, c) {
+      ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.spin);
+      ctx.globalAlpha = c.opacity; ctx.fillStyle = c.color;
+      kit.shapes.clover(ctx, c.s); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(0, c.s * 0.1); ctx.lineTo(0, c.s * 1.15);          // the stem
+      ctx.lineWidth = Math.max(1, c.s * 0.16); ctx.strokeStyle = "#14532d"; ctx.stroke();
       ctx.restore();
     }
-    ctx.closePath();
-  }
-  function strokeCloverStem(s) {
-    ctx.beginPath();
-    ctx.moveTo(0, s * 0.1);
-    ctx.lineTo(0, s * 1.15);
-    ctx.lineWidth = Math.max(1, s * 0.16);
-    ctx.strokeStyle = "#14532d";
-    ctx.stroke();
-  }
-
-  function step() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for (var i = 0; i < clovers.length; i++) {
-      var c = clovers[i];
-
-      if (mouseX !== null) {
-        var dx = c.x - mouseX, dy = c.y - mouseY;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < REPEL_RADIUS && dist > 0.01) {
-          var force = (1 - dist / REPEL_RADIUS) * 1.8;
-          c.vx += (dx / dist) * force;
-          c.vy += (dy / dist) * force;
-          c.spinSpeed += (dx > 0 ? 1 : -1) * force * 0.01;
-          if (c.spinSpeed > 0.12) c.spinSpeed = 0.12;
-          if (c.spinSpeed < -0.12) c.spinSpeed = -0.12;
-        }
-      }
-      c.vx *= 0.9;
-      c.vy *= 0.9;
-
-      c.y += c.speed + c.vy;
-      c.drift += c.driftSpeed;
-      c.spin += c.spinSpeed;
-      c.x += Math.sin(c.drift) * 1.1 + c.vx;
-
-      if (c.y > window.innerHeight + 20) { clovers[i] = makeClover(false); continue; }
-      if (c.x < -20) c.x = window.innerWidth + 20;
-      if (c.x > window.innerWidth + 20) c.x = -20;
-
-      ctx.save();
-      ctx.translate(c.x, c.y);
-      ctx.rotate(c.spin);
-      ctx.globalAlpha = c.opacity;
-      ctx.fillStyle = c.color;
-      traceClover(c.s);
-      ctx.fill();
-      strokeCloverStem(c.s);
-      ctx.restore();
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+  });
 })();
 
 
@@ -5849,49 +5688,22 @@ window.__halloween = (function () {
    4. Quiz-completion confetti in the same colours all week.
    ============================================================ */
 (function () {
+  var kit = window.__themeKit;
+  if (!kit.on("paweek")) return;
   var now = new Date();
-  var inWeek = now.getFullYear() === 2026 && now.getMonth() === 9 && now.getDate() >= 5 && now.getDate() <= 9;
-  var preview = false;
-  try { preview = /[?&]paweek=1(&|$)/.test(location.search); } catch (e) {}
-  if (!inWeek && !preview) return;
+  var preview = kit.fresh("paweek");
 
   document.body.classList.add("paweek-theme");
   var PALETTE = ["#2563eb", "#14b8a6", "#f43f5e", "#f59e0b", "#8b5cf6"];
-  window.__confettiColors = PALETTE;
+  kit.colors(PALETTE);
 
-  /* ---------- 1. the drifting shapes ---------- */
-  var canvas = document.createElement("canvas");
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
-  document.body.insertBefore(canvas, document.body.firstChild);
-  var ctx = canvas.getContext("2d");
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var density = window.innerWidth < 700 ? 14 : 28;
-  var mouseX = null, mouseY = null, REPEL = 110;
-  window.addEventListener("mousemove", function (e) { mouseX = e.clientX; mouseY = e.clientY; });
-  window.addEventListener("mouseleave", function () { mouseX = null; mouseY = null; });
-  window.addEventListener("touchmove", function (e) { if (e.touches.length) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; } }, { passive: true });
-  window.addEventListener("touchend", function () { mouseX = null; mouseY = null; });
-  function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio; canvas.height = window.innerHeight * devicePixelRatio;
-    canvas.style.width = window.innerWidth + "px"; canvas.style.height = window.innerHeight + "px";
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-  }
-  window.addEventListener("resize", resize); resize();
-
+  /* ---------- 1. the drifting shapes (kit.field: one canvas behind the UI, repel, hidden-tab pause) ---------- */
   // heart (the same two-lobe bezier the Valentine's theme uses), stethoscope, cross, pill, PA badge
   var KINDS = ["heart", "heart", "steth", "steth", "cross", "cross", "pill", "badge"];
-  function traceHeart(s) {
-    var w = s * 1.8, h = s * 1.7, top = h * 0.28, mid = (h + top) / 2;
-    ctx.translate(0, -h * 0.5);
-    ctx.beginPath(); ctx.moveTo(0, top);
-    ctx.bezierCurveTo(0, 0, -w / 2, 0, -w / 2, top); ctx.bezierCurveTo(-w / 2, mid, 0, mid, 0, h);
-    ctx.bezierCurveTo(0, mid, w / 2, mid, w / 2, top); ctx.bezierCurveTo(w / 2, 0, 0, 0, 0, top); ctx.closePath();
-  }
-  function drawShape(p) {
+  function drawShape(ctx, p) {
     var s = p.s, c = p.color;
     ctx.fillStyle = c; ctx.strokeStyle = c;
-    if (p.kind === "heart") { traceHeart(s); ctx.fill(); }
+    if (p.kind === "heart") { ctx.translate(0, -s * 1.7 * 0.5); kit.shapes.heart(ctx, s); ctx.fill(); }
     else if (p.kind === "cross") {
       var a = s * 0.42; ctx.beginPath(); ctx.rect(-a, -s, 2 * a, 2 * s); ctx.rect(-s, -a, 2 * s, 2 * a); ctx.fill();
     } else if (p.kind === "pill") {
@@ -5921,29 +5733,18 @@ window.__halloween = (function () {
       tilt: Math.random() * 6, opacity: 0.5 + Math.random() * 0.35, vx: 0, vy: 0
     };
   }
-  var ps = []; for (var i = 0; i < density; i++) ps.push(make(true));
-  function frame(still) {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for (var k = 0; k < ps.length; k++) {
-      var p = ps[k];
-      if (!still) {
-        if (mouseX !== null) {
-          var dx = p.x - mouseX, dy = p.y - mouseY, dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < REPEL && dist > 0.01) { var f = (1 - dist / REPEL) * 1.8; p.vx += dx / dist * f; p.vy += dy / dist * f; }
-        }
-        p.vx *= 0.9; p.vy *= 0.9;
-        p.y -= p.speed; p.y += p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 0.9 + p.vx; p.tilt += 0.012;
-        if (p.y < -60) { ps[k] = make(false); continue; }
-        if (p.x < -40) p.x = window.innerWidth + 40; if (p.x > window.innerWidth + 40) p.x = -40;
-      }
+  kit.field({
+    cls: "th-paweek", dprCap: 99, reduced: "still", wrap: 40, first: true,
+    count: window.innerWidth < 700 ? 14 : 28,
+    make: make,
+    move: function (p) { p.y -= p.speed; p.y += p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 0.9 + p.vx; p.tilt += 0.012; },
+    gone: function (p) { return p.y < -60; },
+    draw: function (ctx, p) {
       ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(Math.sin(p.tilt) * 0.4);
       ctx.globalAlpha = p.opacity * (0.85 + 0.15 * Math.sin(p.drift * 2));
-      drawShape(p); ctx.restore();
+      drawShape(ctx, p); ctx.restore();
     }
-    ctx.globalAlpha = 1;
-  }
-  if (reduce) frame(true);
-  else (function loop() { frame(false); requestAnimationFrame(loop); })();
+  });
 
   /* ---------- 2b. the splash text on the logo (homepage only) ----------
      Jaxon: "add the #s that are for PA week on the side like how minecraft has the pulsing in the
@@ -5972,9 +5773,7 @@ window.__halloween = (function () {
   }
 
   /* ---------- 3. the welcome card (app-shell pages only, once a day) ---------- */
-  var path = location.pathname.replace(/^.*\//, "");
-  var shell = document.body.classList.contains("homepage") || /^(|index\.html|guides\.html|calendar\.html|arcade[\w-]*\.html|group-(join|host)\.html)$/.test(path);
-  if (!shell) return;
+  if (!kit.isShell()) return;
   var DAYS = {
     1: "Kickoff! This week belongs to physician assistants, and to the one you are becoming.",
     2: "Every heartbeat you learn is a patient you will help someday.",
@@ -5983,21 +5782,12 @@ window.__halloween = (function () {
     5: "Last day of PA Week. You have earned a little celebration."
   };
   var dow = now.getDay(); if (dow < 1 || dow > 5) dow = 1;
-  var key = "paWeekSeen:" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate(), seen = false;
-  try { seen = !preview && localStorage.getItem(key) === "1"; } catch (e) {}
-  if (seen) return;
-  try { localStorage.setItem(key, "1"); } catch (e) {}
-  var card = document.createElement("div");
-  card.className = "pa-toast"; card.setAttribute("role", "status");
-  card.innerHTML = '<svg class="pa-ecg" viewBox="0 0 120 32" aria-hidden="true"><path pathLength="1" d="M0 17H22L27 17 31 5 37 28 42 12 46 17H70L75 17 79 7 85 26 89 17H120"/></svg>' +
-    '<div class="pa-toast-txt"><b>Happy PA Week, Class of 2028!</b><span></span></div>' +
-    '<button type="button" class="pa-toast-x" aria-label="Close">&times;</button>';
-  card.querySelector("span").textContent = DAYS[dow];
-  document.body.appendChild(card);
-  function close() { card.classList.add("out"); setTimeout(function () { card.remove(); }, 450); }
-  card.querySelector(".pa-toast-x").addEventListener("click", close);
-  setTimeout(close, 9000);
-  if (!reduce && window.burstConfetti) setTimeout(function () { window.burstConfetti(90, 1.4); }, 350);
+  var card = kit.card({
+    key: "paWeekSeen:" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate(), fresh: preview, burst: [90, 1.4],
+    html: '<svg class="pa-ecg" viewBox="0 0 120 32" aria-hidden="true"><path pathLength="1" d="M0 17H22L27 17 31 5 37 28 42 12 46 17H70L75 17 79 7 85 26 89 17H120"/></svg>' +
+      '<div class="pa-toast-txt"><b>Happy PA Week, Class of 2028!</b><span></span></div>'
+  });
+  if (card) card.querySelector("span").textContent = DAYS[dow];
 })();
 
 

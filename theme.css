@@ -3372,7 +3372,7 @@ html.gl-open { overflow: hidden; }
   85% { opacity: .75; transform: scale(1); }
   100% { opacity: .85; transform: scale(1); }
 }
-body.hw-paused .hw-glow { animation-play-state: paused; }
+body.th-paused .hw-glow { animation-play-state: paused; }
 @media (max-width: 700px) { .hw-glow { width: 300px; height: 300px; } .hw-glow-a { left: -130px; bottom: -130px; } .hw-glow-b { right: -140px; top: -140px; } }
 .hw-pumpkin {
   position: fixed; left: 0; top: 0; width: 20px; height: 19px; margin: -10px 0 0 -10px; z-index: 9400;
@@ -3463,3 +3463,11 @@ body.hw-paused .hw-glow { animation-play-state: paused; }
 .toc-mark.on { opacity: 1; }
 :root[data-theme="light"] nav.toc a.toc-cur { color: var(--accent, #2563eb); }
 @media (prefers-reduced-motion: reduce) { .toc-mark { transition: none !important; } }
+
+
+/* ============================================================
+   THEME KIT (theme.js, window.__themeKit): what every seasonal theme shares.
+   body.th-paused is set while the tab is hidden so CSS animations stop with the canvases.
+   Theme canvases and cursor trails never print.
+   ============================================================ */
+@media print { .th-cv { display: none !important; } }
