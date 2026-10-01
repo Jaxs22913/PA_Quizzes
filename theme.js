@@ -6234,10 +6234,11 @@ window.__themeKit.fireworks = function (cfg) {
     };
   }
   kit.field({
-    cls: "th-paweek", dprCap: 99, reduced: "still", wrap: 40, first: true,
+    cls: "th-paweek", dprCap: 2, reduced: "still", wrap: 40, first: true, fps: 30,
     count: window.innerWidth < 700 ? 14 : 28,
+    rad: function (p) { return p.s * 2.6; },
     make: make,
-    move: function (p) { p.y -= p.speed; p.y += p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 0.9 + p.vx; p.tilt += 0.012; },
+    move: function (p, k) { p.y -= p.speed * k; p.y += p.vy * k; p.drift += p.driftSpeed * k; p.x += (Math.sin(p.drift) * 0.9 + p.vx) * k; p.tilt += 0.012 * k; },
     gone: function (p) { return p.y < -60; },
     draw: function (ctx, p) {
       ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(Math.sin(p.tilt) * 0.4);
@@ -6251,26 +6252,30 @@ window.__themeKit.fireworks = function (cfg) {
      corner". A yellow tilted hashtag that pulses beside the logo and changes every few seconds,
      like the splash text on Minecraft's title screen. Two copies (the big desktop logo and the
      small phone logo); whichever logo is showing gets the visible one. */
-  if (document.body.classList.contains("homepage")) {
-    var TAGS = ["#PAWeek", "#NationalPAWeek", "#PAWeek2026", "#ClassOf2028"], ti = 0;
-    var bigHost = document.querySelector(".brand-mark"), smallHost = document.querySelector(".page > header h1");
-    var mk = function (host, cls) {
-      if (!host) return null;
-      var el = document.createElement("span");
-      el.className = "pa-splash " + cls; el.setAttribute("aria-hidden", "true"); el.textContent = TAGS[0];
-      host.style.position = "relative"; host.appendChild(el); return el;
-    };
-    var big = mk(bigHost, "pa-splash-big"), small = mk(smallHost, "pa-splash-small");
-    var which = function () {
-      var desktop = !!(bigHost && bigHost.offsetParent !== null && bigHost.getBoundingClientRect().height > 0);
-      if (big) big.classList.toggle("on", desktop); if (small) small.classList.toggle("on", !desktop);
-    };
-    which(); window.addEventListener("resize", which);
-    setInterval(function () {
+  var marks = kit.logoMark("pa-splash");
+  if (marks) {
+    var TAGS = ["#PAWeek", "#NationalPAWeek", "#PAWeek2026", "#ClassOf2028"], ti = 0, timer = 0;
+    marks.forEach(function (el) { if (el) el.textContent = TAGS[0]; });
+    var cycle = function () {
       ti = (ti + 1) % TAGS.length;
-      [big, small].forEach(function (el) { if (el) { el.textContent = TAGS[ti]; el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap"); } });
-    }, 3800);
+      marks.forEach(function (el) { if (el) { el.textContent = TAGS[ti]; el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap"); } });
+    };
+    var run = function (on) { clearInterval(timer); timer = on ? setInterval(cycle, 3800) : 0; };
+    run(!document.hidden); kit.onVisible(run);                      // nothing cycles in a hidden tab
   }
+
+  /* ---------- 2c. a tiny medical-cross trail behind a mouse pointer (kit.trail: fine pointers only) ---------- */
+  kit.trail({
+    cls: "pa-trail", pool: 14, gap: 60, min: 30, dx: -8, dy: 10, ms: 900,
+    frames: function (x, y) {
+      var r = Math.round((Math.random() - 0.5) * 50), sz = 0.8 + Math.random() * 0.45;
+      return [
+        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
+        { opacity: 0.85, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
+        { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 30) + "deg) scale(" + (sz * 0.5) + ")" }
+      ];
+    }
+  });
 
   /* ---------- 3. the welcome card (app-shell pages only, once a day) ---------- */
   if (!kit.isShell()) return;

@@ -3585,3 +3585,16 @@ body.th-paused .vd-beat { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) { .cl-spark { display: none; } }
 @media print { .cl-spark { display: none !important; } }
+
+
+/* ============================================================
+   PA WEEK (theme.js, Oct 5-9 2026 or ?theme=paweek): the medical-cross cursor trail.
+   The drifting hearts/stethoscopes/crosses/pills/badges are a canvas (theme.js).
+   ============================================================ */
+.pa-trail {
+  position: fixed; left: 0; top: 0; width: 16px; height: 16px; margin: -8px 0 0 -8px; z-index: 9400;
+  pointer-events: none; opacity: 0; will-change: transform, opacity;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 2h6v7h7v6h-7v7H9v-7H2V9h7z' fill='%2314b8a6'/%3E%3Cpath d='M10.6 4h2.8v7.6H20v2.8h-6.6V20h-2.8v-5.6H4v-2.8h6.6z' fill='%23ffffff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+@media (prefers-reduced-motion: reduce) { .pa-trail { display: none; } }
+@media print { .pa-trail { display: none !important; } }
