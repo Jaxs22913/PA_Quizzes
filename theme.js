@@ -3649,6 +3649,91 @@ window.__themeKit = (function () {
   });
 })();
 
+/* ============================================================
+   THANKSGIVING (2026-10-01) -- Monday to Friday of Thanksgiving week (the 4th Thursday of November;
+   Nov 23-27 in 2026, computed every year by __themeKit), or ?theme=thanksgiving to preview.
+   1. Autumn leaves, acorns and wheat drifting down behind the UI (kit.field; the leaf outline is the
+      same kit.shapes.leaf the October leaves use, they spin away from the cursor or a finger).
+   2. A little acorn-spark trail behind a mouse pointer (kit.trail: fine pointers only, 14 pooled
+      elements, never on touch).
+   3. Harvest confetti on quiz completion (window.__confettiColors) and the warm light-mode tint on the
+      app-shell pages (body.thanksgiving-theme in theme.css, arcade.css, guides.html, group-join.html,
+      group-host.html).
+   prefers-reduced-motion: one still frame of the drift, no trail.
+   ============================================================ */
+(function () {
+  var kit = window.__themeKit;
+  if (!kit.on("thanksgiving")) return;
+  document.body.classList.add("thanksgiving-theme");
+  kit.colors(["#c2410c", "#d97706", "#ca8a04", "#92400e", "#b45309", "#65a30d"]);
+
+  var LEAF = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"];
+  var NUT = ["#a16207", "#92400e", "#b45309"];
+  var GRAIN = ["#ca8a04", "#d4a017", "#b8860b"];
+  var KINDS = ["leaf", "leaf", "leaf", "acorn", "acorn", "wheat"], speedMul = 0.35;
+
+  function acorn(ctx, s, color) {                   // nut with a dark cap and a short stem, centred on the origin
+    ctx.fillStyle = color; ctx.beginPath(); ctx.ellipse(0, s * 0.3, s * 0.55, s * 0.85, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#5b3410"; ctx.beginPath(); ctx.ellipse(0, -s * 0.28, s * 0.68, s * 0.46, 0, Math.PI, 0); ctx.closePath(); ctx.fill();
+    ctx.lineWidth = Math.max(1, s * 0.16); ctx.strokeStyle = "#5b3410"; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(0, -s * 0.7); ctx.lineTo(s * 0.12, -s * 1.05); ctx.stroke();
+  }
+  function wheat(ctx, s, color) {                   // a stalk with pairs of grains up the top
+    ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = Math.max(1, s * 0.13); ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(0, s * 1.5); ctx.lineTo(0, -s * 0.8); ctx.stroke();
+    for (var k = 0; k < 4; k++) {
+      var y = -s * 0.7 + k * s * 0.4;
+      ctx.beginPath(); ctx.ellipse(-s * 0.2, y, s * 0.11, s * 0.3, -0.55, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(s * 0.2, y, s * 0.11, s * 0.3, 0.55, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.beginPath(); ctx.ellipse(0, -s * 1.15, s * 0.11, s * 0.32, 0, 0, Math.PI * 2); ctx.fill();
+  }
+
+  kit.field({
+    cls: "th-thanks", dprCap: 2, reduced: "still", wrap: 20, kick: true,
+    count: window.innerWidth < 700 ? 16 : 30,
+    make: function (randomY) {
+      var kind = KINDS[(Math.random() * KINDS.length) | 0], s = 6 + Math.random() * 6;
+      var pal = kind === "leaf" ? LEAF : (kind === "acorn" ? NUT : GRAIN);
+      return {
+        kind: kind, x: Math.random() * window.innerWidth,
+        y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
+        s: s, speed: (0.3 + s * 0.05) * speedMul,
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
+        spin: kind === "wheat" ? (Math.random() - 0.5) * 0.5 : Math.random() * Math.PI * 2,
+        spinSpeed: kind === "wheat" ? 0 : (Math.random() - 0.5) * 0.04,
+        opacity: 0.5 + Math.random() * 0.4, color: pal[(Math.random() * pal.length) | 0], vx: 0, vy: 0
+      };
+    },
+    move: function (p) {
+      p.y += p.speed + p.vy; p.drift += p.driftSpeed; p.x += Math.sin(p.drift) * 1.1 + p.vx;
+      if (p.kind === "wheat") p.spinSpeed = 0; else p.spin += p.spinSpeed;      // wheat sways instead of tumbling
+    },
+    gone: function (p) { return p.y > window.innerHeight + 24; },
+    draw: function (ctx, p) {
+      ctx.save(); ctx.translate(p.x, p.y);
+      ctx.rotate(p.kind === "wheat" ? p.spin + Math.sin(p.drift) * 0.35 : p.spin);
+      ctx.globalAlpha = p.opacity;
+      if (p.kind === "leaf") { ctx.fillStyle = p.color; kit.shapes.leaf(ctx, p.s); ctx.fill(); }
+      else if (p.kind === "acorn") acorn(ctx, p.s, p.color);
+      else wheat(ctx, p.s * 0.95, p.color);
+      ctx.restore();
+    }
+  });
+
+  kit.trail({
+    cls: "th-acorn", pool: 14, gap: 60, min: 30, dx: -8, dy: 12, ms: 900,
+    frames: function (x, y) {
+      var r = Math.round((Math.random() - 0.5) * 60), sz = 0.8 + Math.random() * 0.4, j = Math.round((Math.random() - 0.5) * 12);
+      return [
+        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
+        { opacity: 0.9, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
+        { opacity: 0, transform: "translate(" + (x + j) + "px," + (y + 18) + "px) rotate(" + (r + 40) + "deg) scale(" + (sz * 0.5) + ")" }
+      ];
+    }
+  });
+})();
+
 // Seasonal St. Patrick's theme (added 2026-07-17) -- Mar 3-17. Falling four-leaf clovers behind all UI,
 // plus the green light-mode tint (body.stpatricks-theme).
 (function () {
