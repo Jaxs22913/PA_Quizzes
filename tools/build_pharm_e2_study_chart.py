@@ -187,12 +187,12 @@ th{background:#d9d9d9;font-size:7pt;font-weight:700;text-align:center;vertical-a
 th.w{background:#000;color:#fff}
 td{border:1px solid #000;padding:3px 4px;vertical-align:top;font-size:%(fs)spt;line-height:1.22;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 td.c b{display:block;font-size:%(fsb)spt;line-height:1.2}
-td.c i{display:block;font-style:normal;color:#444;font-size:5.6pt;margin-top:3px;line-height:1.2}
+td.c i{display:block;font-style:normal;color:#444;font-size:6.4pt;margin-top:3px;line-height:1.2}
 td.g,td.c{hyphens:manual;-webkit-hyphens:manual}
 td.g{font-weight:700}
-td.g i{display:block;font-style:normal;font-weight:400;color:#444;font-size:5.8pt;margin-top:2px}
+td.g i{display:block;font-style:normal;font-weight:400;color:#444;font-size:6.4pt;margin-top:2px}
 td.w.bbw{background:#f3d9d6}
-td.w .bb{display:block;font-weight:800;font-size:5.8pt;letter-spacing:.04em;margin-bottom:1px}
+td.w .bb{display:block;font-weight:800;font-size:6.4pt;letter-spacing:.04em;margin-bottom:1px}
 td.w.n{text-align:center;color:#555}
 col.c1{width:10.5%%}col.c2{width:11%%}col.c3{width:15.5%%}col.c4{width:16.5%%}col.c5{width:15.5%%}col.c6{width:14.5%%}col.c7{width:16.5%%}
 """
@@ -210,9 +210,9 @@ def pdf_row(r, minh):
 
 
 def pdf_table(rows, first, minh):
-    head = HEAD_P1 if first else HEAD_WEB
+    head = HEAD_WEB
     th = "".join('<th%s>%s</th>' % (' class="w"' if i == 6 else "",
-                 E(h).replace(" / ", " /<br>").replace("Special Indications or", "Special Indications or<br>") if i == 6 and not first else E(h))
+                 E(h).replace(" / ", " /<br>").replace("Special Indications or", "Special Indications or<br>") if i == 6 else E(h))
                  for i, h in enumerate(head))
     cg = "<colgroup>" + "".join('<col class="c%d">' % i for i in range(1, 8)) + "</colgroup>"
     return "<h1>%s</h1><table>%s<thead><tr>%s</tr></thead><tbody>%s</tbody></table>" % (
@@ -295,7 +295,7 @@ def measure(ch, rows, fs, fsb):
     return hs
 
 
-def build_pdf(d, fs="6.5", fsb="7.4"):
+def build_pdf(d, fs="7.5", fsb="8.2"):
     rows = d["rows"]
     # page height 8.5in - .6in margins = 758px; title block 22px, header row 36px (+ border slack)
     avail = 758 - 62
