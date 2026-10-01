@@ -2785,15 +2785,119 @@ window.showToast = function (message, duration) {
 (function () {
   var streak = 0;
   var THRESHOLDS = [3, 5, 10, 15, 20, 25];
+
+  /* ---- Streak flame (2026-10-01) -----------------------------------------------------------------
+     After 3 correct answers in a row a small flame sits beside the question number and grows (3 small,
+     5 medium, 8 large, 10+ biggest with a spark). A wrong answer snuffs it with a puff of smoke.
+     Nothing is stored or sent: the streak is read from the engine's own answer list when it is there
+     (so a question answered once counts once, Restart starts from zero, and a resumed quiz shows the
+     right number on its next answer), and falls back to a plain in-memory counter otherwise. The
+     engine only calls this for first answers in live-feedback mode, never in Exam Mode, which is
+     exactly when a flame would leak whether an answer was right. The flame is position:absolute
+     inside .topbar (theme.css, "STREAK FLAME"), pointer-events none, so it moves and blocks nothing. */
+  var flame = null, smokeT = 0;
+  var rmq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
+  var gid = 0;
+  function flameSvg() {
+    var id = "sfg" + (++gid);
+    return '<svg class="sf-fl" viewBox="0 0 24 32" aria-hidden="true"><defs><linearGradient id="' + id + '" x1="0" y1="1" x2="0" y2="0">' +
+    '<stop offset="0" stop-color="#ea580c"/><stop offset=".6" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient></defs>' +
+    '<path fill="url(#' + id + ')" d="M12 1C13 7 20 11 20 20c0 7-3.5 11-8 11s-8-4-8-11c0-5 3-7.500 4.500-10.500C9.500 11.500 10 12.500 11 13 10 8 10.500 4 12 1z"/>' +
+    '<path fill="#fde047" d="M12 15c1 3 4 5 4 9 0 3.500-2 5.500-4 5.500s-4-2-4-5.500c0-3 3-5 4-9z"/></svg>';
+  }
+
+  function engineStreak() {
+    try {
+      if (typeof answers === "undefined" || typeof order === "undefined" || typeof QUESTIONS === "undefined") return -1;
+      var last = (typeof idx === "number" && answers[idx] !== null && answers[idx] !== undefined) ? idx : -1, i;
+      if (last < 0) for (i = 0; i < answers.length; i++) if (answers[i] !== null && answers[i] !== undefined) last = i;
+      if (last < 0) return 0;
+      var n = 0;                       // the run of correct answers that ENDS at the question just answered
+      for (i = last; i >= 0; i--) {
+        var q = QUESTIONS[order[i]];
+        if (q && answers[i] === q.c) n++; else break;
+      }
+      return n;
+    } catch (e) { return -1; }
+  }
+  function tierOf(n) { return n >= 10 ? 4 : n >= 8 ? 3 : n >= 5 ? 2 : n >= 3 ? 1 : 0; }
+  function topbar() {
+    var c = document.getElementById("counter");
+    return c && c.parentNode && c.parentNode.classList && c.parentNode.classList.contains("topbar") ? c : null;
+  }
+  function place(el, c) {            // just right of the question number, wherever its width has got to
+    el.style.left = (c.offsetLeft + c.offsetWidth + 4) + "px";
+    var bar = c.nextElementSibling;  // Large text on a phone squeezes the progress bar to nothing: no room, so no flame
+    el.classList.toggle("sf-tight", !!bar && bar.offsetWidth < 20);
+  }
+  function watchCounter(c) {
+    if (c._sfWatch || typeof MutationObserver !== "function") return;
+    c._sfWatch = true;
+    new MutationObserver(function () { if (flame && flame.parentNode) place(flame, c); })
+      .observe(c, { childList: true, characterData: true, subtree: true });
+  }
+  function showFlame(n, fresh) {
+    var c = topbar();
+    if (!c) return;
+    var bar = c.parentNode;
+    bar.classList.add("sf-host");
+    if (!flame || flame.parentNode !== bar) {
+      if (flame && flame.parentNode) flame.parentNode.removeChild(flame);
+      flame = document.createElement("span");
+      flame.className = "sf"; flame.setAttribute("aria-hidden", "true");
+      flame.innerHTML = flameSvg() + '<b class="sf-n"></b><i class="sf-spark"></i><i class="sf-spark b"></i>';
+      bar.appendChild(flame);
+      fresh = true;
+    }
+    watchCounter(c);
+    var t = String(tierOf(n)), grew = flame.getAttribute("data-t") !== t;
+    flame.setAttribute("data-t", t);
+    flame.querySelector(".sf-n").textContent = n;
+    place(flame, c);
+    flame.classList.remove("sf-out");
+    if (fresh) { flame.classList.remove("sf-grow"); flame.classList.add("sf-ignite"); }
+    else if (grew && !rmq.matches) {
+      flame.classList.remove("sf-ignite", "sf-grow"); void flame.offsetWidth; flame.classList.add("sf-grow");
+    }
+  }
+  function snuff() {
+    if (!flame || !flame.parentNode) return;
+    var f = flame, bar = f.parentNode;
+    flame = null;
+    if (!rmq.matches) {
+      var sm = document.createElement("span");
+      sm.className = "sf-smoke"; sm.setAttribute("aria-hidden", "true");
+      sm.innerHTML = "<i></i><i></i><i></i>";
+      sm.style.left = (f.offsetLeft + f.offsetWidth / 2) + "px";
+      sm.style.top = (f.offsetTop + f.offsetHeight - 6) + "px";
+      bar.appendChild(sm);
+      setTimeout(function () { if (sm.parentNode) sm.parentNode.removeChild(sm); }, 1000);
+    }
+    f.classList.remove("sf-ignite", "sf-grow"); f.classList.add("sf-out");
+    setTimeout(function () { if (f.parentNode) f.parentNode.removeChild(f); }, rmq.matches ? 0 : 340);
+  }
+
   window.trackAnswerStreak = function (correct) {
-    if (!correct) { streak = 0; return; }
-    streak++;
+    var s = engineStreak();
+    if (s < 0) s = correct ? streak + 1 : 0;
+    var prev = streak;
+    streak = correct ? s : 0;
+    if (!correct) { if (prev >= 3 || flame) snuff(); return; }
+    if (streak >= 3) showFlame(streak, false);
+    else if (flame && flame.parentNode) { flame.parentNode.removeChild(flame); flame = null; }   // e.g. a jump past an unanswered question
+    // the flame already says "N in a row", so the older toast only speaks on pages that cannot show one
+    if (flame && flame.parentNode) return;
     if (THRESHOLDS.indexOf(streak) !== -1) {
       window.showToast(streak + " in a row!");
     } else if (streak > THRESHOLDS[THRESHOLDS.length - 1] && streak % 10 === 0) {
       window.showToast(streak + " in a row!");
     }
   };
+  /* Restart quiz: the engine's own answer list is cleared, but the flame element is still on screen. */
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("[onclick*='startExam']") : null;
+    if (b && flame) { streak = 0; if (flame.parentNode) flame.parentNode.removeChild(flame); flame = null; }
+  });
 })();
 
 // Pause/Resume for timed quizzes (added 2026-07-10), same "generic engine,
