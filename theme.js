@@ -3278,7 +3278,23 @@ window.openPauseOverlay = function (opts) {
   requestAnimationFrame(step);
 })();
 
-// Seasonal Fall/Halloween theme (added 2026-07-17) -- Oct 17-31. Same
+// Halloween gate (2026-10-01): Oct 24-31 inclusive (local date), or any page loaded with
+// ?halloween=1 (sticks for the rest of that browser tab via sessionStorage so a preview survives
+// clicking around; ?halloween=0 clears it). Computed once here because TWO things read it: the
+// autumn-leaves IIFE just below yields to it (Oct 24-31 is Halloween, never leaves + bats at once)
+// and the Halloween IIFE after it.
+window.__halloween = (function () {
+  var d = new Date();
+  var on = d.getMonth() === 9 && d.getDate() >= 24 && d.getDate() <= 31;
+  try {
+    var q = /[?&]halloween=(\d)(&|$)/.exec(location.search);
+    if (q) { if (q[1] === "1") sessionStorage.setItem("hwPreview", "1"); else sessionStorage.removeItem("hwPreview"); }
+    if (sessionStorage.getItem("hwPreview") === "1") on = true;
+  } catch (e) { if (/[?&]halloween=1(&|$)/.test(location.search)) on = true; }
+  return on;
+})();
+
+// Seasonal Fall/Halloween theme (added 2026-07-17) -- Oct 17-23 (Oct 24-31 is the Halloween theme below). Same
 // pattern as the December snow / Valentine's hearts above: lives in
 // theme.js so every current and future page gets it automatically.
 // Tumbling autumn leaves behind all UI (z-index:-1), plus a homepage-only
@@ -3286,7 +3302,7 @@ window.openPauseOverlay = function (opts) {
 (function () {
   var d = new Date();
   var m = d.getMonth(), day = d.getDate();
-  if (!(m === 9 && day >= 17 && day <= 31)) return;
+  if (!(m === 9 && day >= 17 && day <= 31) || window.__halloween) return;
 
   document.body.classList.add("fall-theme");
 
@@ -3397,6 +3413,180 @@ window.openPauseOverlay = function (opts) {
     requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
+})();
+
+/* ============================================================
+   HALLOWEEN (2026-10-01) -- Oct 24-31 inclusive (local date), or ?halloween=1 to preview
+   (window.__halloween, computed above; the autumn leaves yield to it).
+   Three things, each cheap and each behind the content, none touching layout:
+   1. A few bats flapping across the sky (one canvas behind the UI, dirty-rect redraw, cursor/finger
+      scatters them like the other particle themes, stops when the tab is hidden).
+   2. Two candle glows in opposite corners that flicker (CSS opacity/transform only).
+   3. A pumpkin trail behind a mouse pointer (fine-pointer devices only, 16 pooled elements, Web
+      Animations, throttled; never on touch).
+   body.halloween-theme tints the app-shell pages in light mode (theme.css, arcade.css, guides.html,
+   group-join.html, group-host.html). prefers-reduced-motion: no bats, no trail, glows hold still.
+   ============================================================ */
+(function () {
+  if (!window.__halloween) return;
+  var body = document.body;
+  body.classList.add("halloween-theme");
+  window.__confettiColors = ["#f97316", "#7c3aed", "#22c55e", "#facc15", "#ea580c"];
+
+  var rmq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
+  var fine = window.matchMedia ? matchMedia("(hover: hover) and (pointer: fine)") : { matches: false };
+  function reduced() { return rmq.matches; }
+
+  /* ---------- 2. candle glows (CSS does the flicker) ---------- */
+  ["a", "b"].forEach(function (k) {
+    var g = document.createElement("div");
+    g.className = "hw-glow hw-glow-" + k; g.setAttribute("aria-hidden", "true");
+    body.insertBefore(g, body.firstChild);
+  });
+
+  /* ---------- 1. bats ---------- */
+  var canvas = null, ctx = null, raf = 0, last = 0, W = 0, H = 0, bats = [];
+  var mx = null, my = null, REPEL = 120;
+  var nBats = window.innerWidth < 700 ? 4 : 7;
+
+  function makeBat(first) {
+    var s = 11 + Math.random() * 11;                       // half wingspan in px
+    var dir = Math.random() < 0.5 ? 1 : -1;
+    return {
+      s: s, dir: dir, speed: 38 + Math.random() * 46,
+      x: first ? Math.random() * W : (dir > 0 ? -40 - s * 2 : W + 40 + s * 2),
+      baseY: H * (0.06 + Math.random() * 0.7), bobA: 10 + Math.random() * 26, bobF: 0.5 + Math.random() * 0.8,
+      t: Math.random() * 20, flap: Math.random() * 6, flapF: 5.5 + Math.random() * 3,
+      wait: first ? 0 : 1 + Math.random() * 6, a: 0.55 + Math.random() * 0.25,
+      ox: 0, oy: 0, vx: 0, vy: 0, bb: null, y: 0
+    };
+  }
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    for (var i = 0; i < bats.length; i++) bats[i].bb = null;
+  }
+  var rzT = 0;
+  function onResize() { clearTimeout(rzT); rzT = setTimeout(function () { if (canvas) resize(); }, 150); }
+
+  // front-facing bat silhouette: body, head with ears, two scalloped wings (flap = -1..1 lifts the tips)
+  function drawBat(b, color) {
+    var s = b.s, f = Math.sin(b.flap), tip = -f * s * 0.75;
+    ctx.save();
+    ctx.translate(b.x + b.ox, b.y + b.oy);
+    ctx.rotate(Math.max(-0.35, Math.min(0.35, (b.vyDraw || 0) * 0.004)));
+    ctx.globalAlpha = b.a; ctx.fillStyle = color;
+    for (var side = -1; side <= 1; side += 2) {
+      ctx.save(); ctx.scale(side, 1);
+      ctx.beginPath();
+      ctx.moveTo(s * 0.1, -s * 0.12);
+      ctx.quadraticCurveTo(s * 0.5, -s * 0.45 + tip * 0.45, s, tip);                     // leading edge to the tip
+      ctx.quadraticCurveTo(s * 0.86, tip * 0.7 + s * 0.2, s * 0.68, tip * 0.5 + s * 0.3);  // scallops back
+      ctx.quadraticCurveTo(s * 0.58, tip * 0.4 + s * 0.12, s * 0.45, tip * 0.3 + s * 0.36);
+      ctx.quadraticCurveTo(s * 0.3, tip * 0.15 + s * 0.16, s * 0.12, s * 0.3);
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+    ctx.beginPath(); ctx.ellipse(0, s * 0.02, s * 0.17, s * 0.3, 0, 0, Math.PI * 2); ctx.fill();   // body
+    ctx.beginPath(); ctx.arc(0, -s * 0.3, s * 0.15, 0, Math.PI * 2); ctx.fill();                  // head
+    ctx.beginPath();                                                                               // ears
+    ctx.moveTo(-s * 0.14, -s * 0.36); ctx.lineTo(-s * 0.12, -s * 0.62); ctx.lineTo(-s * 0.02, -s * 0.42);
+    ctx.moveTo(s * 0.14, -s * 0.36); ctx.lineTo(s * 0.12, -s * 0.62); ctx.lineTo(s * 0.02, -s * 0.42);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function step(now) {
+    raf = requestAnimationFrame(step);
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    var color = dark ? "#9d86c4" : "#2b1b3d";
+    var i, b;
+    for (i = 0; i < bats.length; i++) {                // erase where each bat was
+      b = bats[i];
+      if (b.bb) ctx.clearRect(b.bb[0], b.bb[1], b.bb[2], b.bb[3]);
+      b.bb = null;
+    }
+    var decay = Math.pow(0.9, dt * 60);
+    for (i = 0; i < bats.length; i++) {
+      b = bats[i];
+      if (b.wait > 0) { b.wait -= dt; continue; }
+      b.t += dt; b.flap += dt * b.flapF * Math.PI * 2;
+      b.x += b.dir * b.speed * dt;
+      b.y = b.baseY + Math.sin(b.t * b.bobF * Math.PI * 2) * b.bobA;
+      if (mx !== null) {                               // scatter from the cursor like the other themes
+        var dx = b.x + b.ox - mx, dy = b.y + b.oy - my, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < REPEL && d > 0.01) { var f = (1 - d / REPEL) * 2.2; b.vx += dx / d * f; b.vy += dy / d * f; }
+      }
+      b.vx *= decay; b.vy *= decay; b.ox += b.vx; b.oy += b.vy;
+      b.ox *= Math.pow(0.985, dt * 60); b.oy *= Math.pow(0.985, dt * 60);   // drift back to the flight line
+      b.vyDraw = Math.cos(b.t * b.bobF * Math.PI * 2) * b.bobA * b.bobF;
+      if ((b.dir > 0 && b.x > W + 50) || (b.dir < 0 && b.x < -50)) { bats[i] = makeBat(false); continue; }
+      drawBat(b, color);
+      var r = b.s * 1.4 + 4, cx = b.x + b.ox, cy = b.y + b.oy;
+      b.bb = [Math.floor(cx - r), Math.floor(cy - r), Math.ceil(r * 2), Math.ceil(r * 2)];
+    }
+    ctx.globalAlpha = 1;
+  }
+  function startBats() {
+    if (canvas || reduced()) return;
+    canvas = document.createElement("canvas");
+    canvas.className = "hw-bats"; canvas.setAttribute("aria-hidden", "true");
+    canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;";
+    body.insertBefore(canvas, body.firstChild);
+    ctx = canvas.getContext("2d");
+    resize();
+    bats = []; for (var i = 0; i < nBats; i++) bats.push(makeBat(true));
+    // the first-frame bats are spread across the sky already, but leave a few outside so it opens calm
+    for (i = 0; i < bats.length; i += 2) { bats[i].wait = 0.5 + Math.random() * 4; bats[i].x = bats[i].dir > 0 ? -40 : W + 40; }
+    if (!document.hidden) { last = performance.now(); raf = requestAnimationFrame(step); }
+  }
+  function stopBats() {
+    cancelAnimationFrame(raf); raf = 0;
+    if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
+    canvas = ctx = null; bats = [];
+  }
+  window.addEventListener("resize", onResize);
+  window.addEventListener("mousemove", function (e) { mx = e.clientX; my = e.clientY; });
+  window.addEventListener("mouseleave", function () { mx = my = null; });
+  window.addEventListener("touchmove", function (e) { if (e.touches.length) { mx = e.touches[0].clientX; my = e.touches[0].clientY; } }, { passive: true });
+  window.addEventListener("touchend", function () { mx = my = null; });
+  document.addEventListener("visibilitychange", function () {     // nothing runs in a background tab
+    body.classList.toggle("hw-paused", document.hidden);
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (canvas && !raf) { last = performance.now(); raf = requestAnimationFrame(step); }
+  });
+  function onMotionPref() { if (reduced()) { stopBats(); } else { startBats(); } }
+  if (rmq.addEventListener) rmq.addEventListener("change", onMotionPref);
+  startBats();
+
+  /* ---------- 3. pumpkin trail ---------- */
+  var POOL = 16, pumps = [], pi = 0, lastX = -999, lastY = -999, lastT = 0;
+  function pumpkin(i) {
+    if (pumps[i]) return pumps[i];
+    var el = document.createElement("div");
+    el.className = "hw-pumpkin"; el.setAttribute("aria-hidden", "true");
+    body.appendChild(el); pumps[i] = el; return el;
+  }
+  window.addEventListener("mousemove", function (e) {
+    if (reduced() || !fine.matches || document.hidden || e.buttons) return;
+    var now = e.timeStamp || Date.now();
+    if (now - lastT < 55) return;
+    var dx = e.clientX - lastX, dy = e.clientY - lastY;
+    if (dx * dx + dy * dy < 26 * 26) return;
+    lastT = now; lastX = e.clientX; lastY = e.clientY;
+    var el = pumpkin(pi); pi = (pi + 1) % POOL;
+    if (el._a) el._a.cancel();
+    var r = Math.round((Math.random() - 0.5) * 50), x = Math.round(e.clientX) - 14, y = Math.round(e.clientY) + 12;   // offset so the pointer never sits on one
+    var sz = 0.8 + Math.random() * 0.45;
+    el._a = el.animate([
+      { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
+      { opacity: 0.8, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
+      { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 35) + "deg) scale(" + (sz * 0.55) + ")" }
+    ], { duration: 950, easing: "ease-out", fill: "backwards" });
+  });
 })();
 
 // Seasonal St. Patrick's theme (added 2026-07-17) -- Mar 3-17. Same

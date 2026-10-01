@@ -78,10 +78,17 @@
     background-size: 300% 300%;
     animation: bg-drift 16s ease-in-out infinite;
   }
+  :root[data-theme="light"] body.halloween-theme {
+    --paper: #f1e9f6; --card: #fefcff; --line: #dccbea;
+    background: linear-gradient(120deg, #f1e9f6, #f8f1fb, #f6dcc6, #f1e9f6);
+    background-color: #f1e9f6;
+    background-size: 300% 300%;
+    animation: bg-drift 16s ease-in-out infinite;
+  }
   @media (prefers-reduced-motion: reduce) {
     /* !important needed: the :root[data-theme=...]-scoped drift rules above
        are more specific than a plain class selector can match without it. */
-    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme, body.paweek-theme {
+    body, body.vday-theme, body.fall-theme, body.stpatricks-theme, body.xmas-theme, body.paweek-theme, body.halloween-theme {
       animation: none !important;
       background-position: 0% 50% !important;
     }

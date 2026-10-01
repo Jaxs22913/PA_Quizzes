@@ -499,6 +499,13 @@ a.corner-btn:hover { text-decoration: none; }
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
+:root[data-theme="light"] body.homepage.halloween-theme {
+  --bg: #f1e9f6; --card: #fefcff; --border: #dccbea;
+  background: linear-gradient(120deg, #f1e9f6, #f8f1fb, #f6dcc6, #f1e9f6);
+  background-color: #f1e9f6;
+  background-size: 300% 300%;
+  animation: bg-drift 16s ease-in-out infinite;
+}
 @media (prefers-reduced-motion: reduce) {
   /* !important needed here: the :root[data-theme=...]-scoped drift rules
      above are more specific than a plain class selector can match without
@@ -509,7 +516,8 @@ a.corner-btn:hover { text-decoration: none; }
   body.homepage.fall-theme,
   body.homepage.stpatricks-theme,
   body.homepage.xmas-theme,
-  body.homepage.paweek-theme {
+  body.homepage.paweek-theme,
+  body.homepage.halloween-theme {
     animation: none !important;
     background-position: 0% 50% !important;
   }
@@ -3322,3 +3330,44 @@ html.gl-open { overflow: hidden; }
 @keyframes pa-swap { from { opacity: 0; } to { opacity: 1; } }
 :root[data-theme="light"] .pa-splash { color: #f5c400; text-shadow: 2px 2px 0 #5c4a00, 0 0 8px rgba(245, 196, 0, .4); }
 @media (prefers-reduced-motion: reduce) { .pa-splash, .pa-splash.swap { animation: none; } }
+
+
+/* ============================================================
+   HALLOWEEN (theme.js, Oct 24-31 or ?halloween=1): candle glows + pumpkin trail.
+   The bats are a canvas (theme.js). Everything is fixed, pointer-events none, outside the layout flow.
+   ============================================================ */
+.hw-glow {
+  position: fixed; z-index: -1; pointer-events: none; width: 460px; height: 460px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, .26) 0%, rgba(251, 146, 60, .09) 36%, rgba(251, 146, 60, 0) 68%);
+  animation: hw-flicker 3.3s linear infinite; will-change: opacity, transform;
+}
+.hw-glow-a { left: -190px; bottom: -190px; }
+.hw-glow-b { right: -200px; top: -200px; animation-duration: 4.4s; animation-delay: -1.9s; }
+:root[data-theme="dark"] .hw-glow {
+  background: radial-gradient(circle, rgba(251, 146, 60, .30) 0%, rgba(249, 115, 22, .11) 36%, rgba(249, 115, 22, 0) 68%);
+}
+@keyframes hw-flicker {
+  0% { opacity: .85; transform: scale(1); }
+  7% { opacity: .55; transform: scale(.96); }
+  13% { opacity: .95; transform: scale(1.03); }
+  21% { opacity: .68; transform: scale(.98); }
+  30% { opacity: 1; transform: scale(1.05); }
+  39% { opacity: .72; transform: scale(.985); }
+  51% { opacity: .93; transform: scale(1.03); }
+  62% { opacity: .6; transform: scale(.965); }
+  73% { opacity: 1; transform: scale(1.04); }
+  85% { opacity: .75; transform: scale(1); }
+  100% { opacity: .85; transform: scale(1); }
+}
+body.hw-paused .hw-glow { animation-play-state: paused; }
+@media (max-width: 700px) { .hw-glow { width: 300px; height: 300px; } .hw-glow-a { left: -130px; bottom: -130px; } .hw-glow-b { right: -140px; top: -140px; } }
+.hw-pumpkin {
+  position: fixed; left: 0; top: 0; width: 20px; height: 19px; margin: -10px 0 0 -10px; z-index: 9400;
+  pointer-events: none; opacity: 0; will-change: transform, opacity;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath d='M16 9 C15.5 6 17 3.5 20 2.5' fill='none' stroke='%2365a30d' stroke-width='2.6' stroke-linecap='round'/%3E%3Cellipse cx='9' cy='18.5' rx='8' ry='10.5' fill='%23c2410c'/%3E%3Cellipse cx='23' cy='18.5' rx='8' ry='10.5' fill='%23c2410c'/%3E%3Cellipse cx='12.5' cy='18.5' rx='7' ry='10.8' fill='%23ea580c'/%3E%3Cellipse cx='19.5' cy='18.5' rx='7' ry='10.8' fill='%23ea580c'/%3E%3Cellipse cx='16' cy='18.5' rx='5' ry='11' fill='%23fb923c'/%3E%3Cpath d='M10.5 16.5 L13.5 16.5 L12 13.5 Z M18.5 16.5 L21.5 16.5 L20 13.5 Z M11.5 21.5 Q16 25.5 20.5 21.5 Q16 23 11.5 21.5 Z' fill='%23431407'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hw-glow { animation: none; opacity: .8; }
+  .hw-pumpkin { display: none; }
+}
+@media print { .hw-glow, .hw-bats, .hw-pumpkin { display: none !important; } }
