@@ -474,7 +474,7 @@ a.corner-btn:hover { text-decoration: none; }
    light-mode green tint, same .theme-class-scoped pattern as vday-theme. */
 :root[data-theme="light"] body.homepage.stpatricks-theme {
   --bg: #d7f0dd;
-  --card: #eefaf1;
+  --card: #f9fefb;
   --border: #a9dab8;
   background: linear-gradient(120deg, #d7f0dd, #e9f9ec, #bfe8ca, #d7f0dd);
   background-color: #d7f0dd;   /* see note below: the shorthand above resets this to transparent */
@@ -3571,3 +3571,17 @@ body.th-paused .th-grp { animation-play-state: paused; }
 body.th-paused .vd-beat { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .vd-beat { animation: none; opacity: .7; } }
 @media print { .vd-beat { display: none !important; } }
+
+
+/* ============================================================
+   ST. PATRICK'S (theme.js, Mar 3-17 or ?theme=clovers): the lucky-sparkle cursor trail.
+   The falling clovers and their glints are a canvas (theme.js).
+   ============================================================ */
+.cl-spark {
+  position: fixed; left: 0; top: 0; width: 16px; height: 16px; margin: -8px 0 0 -8px; z-index: 9400;
+  pointer-events: none; opacity: 0; will-change: transform, opacity;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1 Q13.4 10.6 23 12 Q13.4 13.4 12 23 Q10.6 13.4 1 12 Q10.6 10.6 12 1Z' fill='%23facc15'/%3E%3Cpath d='M12 6 Q12.8 11.2 18 12 Q12.8 12.8 12 18 Q11.2 12.8 6 12 Q11.2 11.2 12 6Z' fill='%23fef9c3'/%3E%3C/svg%3E") center / contain no-repeat;
+  filter: drop-shadow(0 0 2px rgba(22, 163, 74, .65));
+}
+@media (prefers-reduced-motion: reduce) { .cl-spark { display: none; } }
+@media print { .cl-spark { display: none !important; } }

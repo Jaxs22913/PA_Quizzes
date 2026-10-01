@@ -4097,16 +4097,23 @@ window.__themeKit.fireworks = function (cfg) {
   });
 })();
 
-// Seasonal St. Patrick's theme (added 2026-07-17) -- Mar 3-17. Falling four-leaf clovers behind all UI,
-// plus the green light-mode tint (body.stpatricks-theme).
+// Seasonal St. Patrick's theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Mar 3-17.
+// Falling four-leaf clovers behind all UI, plus the green light-mode tint (body.stpatricks-theme).
+//   - Clovers spin faster and tumble over as they fall (the width squashes and flips), and every second or so one
+//     catches the light with a little golden glint.
+//   - A lucky-sparkle trail follows a mouse pointer (kit.trail: fine pointers only, 14 pooled elements).
+//   - Green and gold quiz-completion confetti. 30 fps, dirty-rect redraw, canvas capped at 2x, reduced motion:
+//     one still frame and no trail.
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("clovers")) return;
   document.body.classList.add("stpatricks-theme");
-  var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35;
-  kit.field({
-    cls: "th-clovers", dprCap: 99, reduced: "run", wrap: 20, kick: true,
+  kit.colors(["#16a34a", "#22c55e", "#4ade80", "#fbbf24", "#15803d"]);
+  var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35, F = null;
+  F = kit.field({
+    cls: "th-clovers", dprCap: 2, reduced: "still", wrap: 20, kick: true, fps: 30,
     count: window.innerWidth < 700 ? 16 : 30,
+    rad: function (c) { return c.s * 2.6; },
     make: function (randomY) {
       var s = 5 + Math.random() * 7;
       return {
@@ -4114,19 +4121,48 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
         s: s, speed: (0.3 + s * 0.05) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
-        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.035,
+        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.06,
+        flip: Math.random() * Math.PI * 2, flipSpeed: 0.025 + Math.random() * 0.04, glint: 0,
         opacity: 0.4 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
       };
     },
-    move: function (c) { c.y += c.speed + c.vy; c.drift += c.driftSpeed; c.spin += c.spinSpeed; c.x += Math.sin(c.drift) * 1.1 + c.vx; },
-    gone: function (c) { return c.y > window.innerHeight + 20; },
+    move: function (c, k) {
+      c.y += (c.speed + c.vy) * k; c.drift += c.driftSpeed * k; c.spin += c.spinSpeed * k; c.flip += c.flipSpeed * k;
+      c.x += (Math.sin(c.drift) * 1.1 + c.vx) * k;
+      if (c.glint > 0) c.glint -= k / 60;
+    },
+    gone: function (c) { return c.y > window.innerHeight + 24; },
+    begin: function () {                                              // now and then one clover catches the light
+      if (!F || Math.random() > 0.03) return;
+      var ps = F.particles(), c = ps[(Math.random() * ps.length) | 0];
+      if (c && c.glint <= 0 && c.y > 0 && c.y < window.innerHeight) c.glint = 0.55;
+    },
     draw: function (ctx, c) {
       ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.spin);
+      ctx.save(); ctx.scale(Math.max(0.3, Math.abs(Math.cos(c.flip))), 1);          // tumbles over
       ctx.globalAlpha = c.opacity; ctx.fillStyle = c.color;
       kit.shapes.clover(ctx, c.s); ctx.fill();
       ctx.beginPath(); ctx.moveTo(0, c.s * 0.1); ctx.lineTo(0, c.s * 1.15);          // the stem
       ctx.lineWidth = Math.max(1, c.s * 0.16); ctx.strokeStyle = "#14532d"; ctx.stroke();
       ctx.restore();
+      if (c.glint > 0) {                                                             // a four-point golden glint
+        var t = Math.sin(Math.PI * (1 - c.glint / 0.55)), r = c.s * (0.5 + 1.1 * t);
+        ctx.rotate(-c.spin); ctx.globalAlpha = 0.9 * t; ctx.fillStyle = "#fde047";
+        ctx.beginPath(); ctx.moveTo(0, -r); ctx.quadraticCurveTo(r * 0.12, -r * 0.12, r, 0); ctx.quadraticCurveTo(r * 0.12, r * 0.12, 0, r);
+        ctx.quadraticCurveTo(-r * 0.12, r * 0.12, -r, 0); ctx.quadraticCurveTo(-r * 0.12, -r * 0.12, 0, -r); ctx.fill();
+      }
+      ctx.restore();
+    }
+  });
+  kit.trail({
+    cls: "cl-spark", pool: 14, gap: 55, min: 26, dx: -9, dy: 8, ms: 850,
+    frames: function (x, y) {
+      var r = Math.round((Math.random() - 0.5) * 80), sz = 0.7 + Math.random() * 0.6, j = Math.round((Math.random() - 0.5) * 14);
+      return [
+        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.3) + ")" },
+        { opacity: 0.95, offset: 0.2, transform: "translate(" + x + "px," + y + "px) rotate(" + (r + 20) + "deg) scale(" + sz + ")" },
+        { opacity: 0, transform: "translate(" + (x + j) + "px," + (y - 14) + "px) rotate(" + (r + 90) + "deg) scale(" + (sz * 0.4) + ")" }
+      ];
     }
   });
 })();
