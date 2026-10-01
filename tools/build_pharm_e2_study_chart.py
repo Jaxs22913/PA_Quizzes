@@ -14,6 +14,8 @@ clipped.
 
     python3 tools/build_pharm_e2_study_chart.py            # page + PDF
     python3 tools/build_pharm_e2_study_chart.py --no-pdf   # page only
+    python3 tools/build_pharm_e2_study_chart.py --docx     # Word copy (runs build_guide_docx.py, then underlines the
+                                                           # texts that are not on the PowerPoint, which that tool drops)
 """
 import html as H, json, os, re, shutil, subprocess, sys, tempfile
 
@@ -69,6 +71,17 @@ def warn_parts(r):
     return k, (E(r["warning"]) if k != "none" else "&mdash;")
 
 
+def contra_html(r):
+    """The contraindications cell, escaped, with every text that is NOT on the PowerPoint underlined (<u class="offppt">)."""
+    txt = r["contraindications"]
+    spans = sorted((txt.index(a), txt.index(a) + len(a)) for a in r.get("contra_added") or [])
+    out, pos = [], 0
+    for a, b in spans:
+        out.append(E(txt[pos:a])); out.append('<u class="offppt">%s</u>' % E(txt[a:b])); pos = b
+    out.append(E(txt[pos:]))
+    return "".join(out)
+
+
 def lec_title(l):
     return "Lecture %d &mdash; %s" % (L.LECTURES[l]["n"], L.LECTURES[l]["title"])
 
@@ -96,6 +109,8 @@ WEB_CSS = """<style>
   .chart tr.grp td{background:var(--ice);color:var(--navy);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:8px 13px;border-left:0}
   .chart td.wn{font-weight:600}
   .chart td.wn.none{color:var(--muted);font-weight:500;text-align:center}
+  u.offppt{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;text-decoration-color:currentColor}
+  .hero .offnote{font-weight:600}
   .bbwtag{display:inline-block;background:#7a1010;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin:0 6px 4px 0;vertical-align:1px}
   @media (max-width:980px){
     .chart{background:transparent;border:0;box-shadow:none}
@@ -130,6 +145,8 @@ WEB_CSS = """<style>
     .chart td.dn b{font-size:7.5pt}
     .chart td.dn .sl,.chart td.gn .g{font-size:6pt}
     .bbwtag{background:#fff!important;color:#000!important;border:1px solid #000;font-size:6pt}
+    .hero .offnote{display:block!important;font-size:7pt;margin:0 0 4px}
+    u.offppt{text-decoration:underline!important;text-decoration-thickness:1.5px;text-underline-offset:2px}
   }
 </style>"""
 
@@ -157,7 +174,7 @@ def build_page(d):
             '<td class="wn%s" data-label="Special Warning">%s%s</td></tr>'
             % (" t-bbw" if k == "bbw" else "", E(HEAD_WEB[0]), E(r["class"]), E(cites(r)),
                g, ('<span class="g">%s</span>' % gnote) if gnote else "",
-               E(r["moa"]), E(r["indications"]), E(r["contraindications"]), E(r["adverse"]),
+               E(r["moa"]), E(r["indications"]), contra_html(r), E(r["adverse"]),
                " none" if k == "none" else "", tag, w))
     table = '<div class="chart"><table>%s%s<tbody>%s</tbody></table></div>' % (colg, thead, "".join(body))
     per = {}
@@ -166,7 +183,8 @@ def build_page(d):
     sub = ('Your blank Pharmacology Drug Study Chart, filled in for Exam 2 (Lectures 4&ndash;8): one row per drug class, '
            'every cell taken from the slides and checked against them.')
     legend = ('<a class="pdfbtn" href="%s" download style="margin-left:0">Download the PDF</a><span>Shaded rows carry a <b>black box warning</b>; where the slides do not mention it, the cell says so. '
-              'No dosages (Dr. Wood does not test them). %d classes.</span>' % (PDF, len(rows)))
+              'No dosages (Dr. Wood does not test them). %d classes.</span>'
+              '<span class="offnote"><u class="offppt">Underlined</u> contraindications are not stated in the PowerPoint.</span>' % (PDF, len(rows)))
     html = page(title="Pharmacology Drug Study Chart - Exam 2", kicker="Pharmacology I &middot; Exam 2 &middot; Class of 2028",
                 h1="Pharmacology Drug Study Chart &mdash; Exam 2", sub=sub, legend=legend, notes="", toc="",
                 body=WEB_CSS + table, footer_note="")
@@ -181,7 +199,9 @@ PDF_CSS = """
 html,body{margin:0;padding:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif}
 .pg{page-break-after:always;width:10.4in}
 .pg:last-child{page-break-after:auto}
-h1{font-size:11pt;text-align:center;margin:0 0 5px;height:17px;line-height:17px;letter-spacing:.01em}
+h1{font-size:11pt;text-align:center;margin:0 0 1px;height:17px;line-height:17px;letter-spacing:.01em}
+p.note{font-size:6.6pt;text-align:center;margin:0 0 4px;height:11px;line-height:11px;color:#222}
+u.offppt{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;text-decoration-color:#000}
 table{border-collapse:collapse;width:10.4in;table-layout:fixed;border:1px solid #000}
 th{background:#d9d9d9;font-size:7pt;font-weight:700;text-align:center;vertical-align:middle;border:1px solid #000;padding:4px 3px;height:34px;line-height:1.2}
 th.w{background:#000;color:#fff}
@@ -206,7 +226,7 @@ def pdf_row(r, minh):
     return ('<tr style="height:%dpx"><td class="c"><b>%s</b><i>%s</i></td><td class="g">%s%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>'
             '<td class="%s">%s%s</td></tr>'
             % (minh, E(r["class"]), lec, g, ("<i>%s</i>" % gnote) if gnote else "", E(r["moa"]), E(r["indications"]),
-               E(r["contraindications"]), E(r["adverse"]), wc, '<span class="bb">BLACK BOX</span>' if k == "bbw" else "", w))
+               contra_html(r), E(r["adverse"]), wc, '<span class="bb">BLACK BOX</span>' if k == "bbw" else "", w))
 
 
 def pdf_table(rows, first, minh):
@@ -215,7 +235,7 @@ def pdf_table(rows, first, minh):
                  E(h).replace(" / ", " /<br>").replace("Special Indications or", "Special Indications or<br>") if i == 6 else E(h))
                  for i, h in enumerate(head))
     cg = "<colgroup>" + "".join('<col class="c%d">' % i for i in range(1, 8)) + "</colgroup>"
-    return "<h1>%s</h1><table>%s<thead><tr>%s</tr></thead><tbody>%s</tbody></table>" % (
+    return '<h1>%s</h1><p class="note"><u class="offppt">Underlined</u> contraindications are not stated in the PowerPoint.</p><table>%s<thead><tr>%s</tr></thead><tbody>%s</tbody></table>' % (
         E(PDF_TITLE), cg, th, "".join(pdf_row(r, minh) for r in rows))
 
 
@@ -297,8 +317,8 @@ def measure(ch, rows, fs, fsb):
 
 def build_pdf(d, fs="7.5", fsb="8.2"):
     rows = d["rows"]
-    # page height 8.5in - .6in margins = 758px; title block 22px, header row 36px (+ border slack)
-    avail = 758 - 62
+    # page height 8.5in - .6in margins = 758px; title block 22px + note 16px, header row 36px (+ border slack)
+    avail = 758 - 78
     minh = 72      # rows never print shorter than this, so short rows keep the form's grid look
     ch = None
     for _ in range(4):
@@ -337,7 +357,69 @@ def build_pdf(d, fs="7.5", fsb="8.2"):
     print("wrote %-40s %3d KB  %d pages (%s rows per page)" % (PDF, os.path.getsize(out) // 1024, n, "/".join(str(len(x)) for x in pages)))
 
 
+def underline_docx(d):
+    """The shared Word converter (build_guide_docx.py) has no <u> handling, so the underline is applied to the finished
+    .docx here: every `contra_added` text inside the Contraindications column, plus the word "Underlined" in the legend."""
+    import copy
+    import docx
+    from docx.oxml.ns import qn
+    path = os.path.join(OUTDIR, PAGE.replace(".html", ".docx"))
+    doc = docx.Document(path)
+
+    def mark(par, needle):
+        n = 0
+        for run in list(par.runs):
+            t = run.text
+            i = t.find(needle)
+            if i < 0 or run.underline:
+                continue
+            before, mid, after = t[:i], t[i:i + len(needle)], t[i + len(needle):]
+            run.text = mid; run.underline = True
+            if before:
+                b = copy.deepcopy(run._r); run._r.addprevious(b)
+                for te in b.findall(qn("w:t")): b.remove(te)
+                from docx.text.run import Run
+                br = Run(b, par); br.text = before; br.underline = None
+            if after:
+                a = copy.deepcopy(run._r); run._r.addnext(a)
+                for te in a.findall(qn("w:t")): a.remove(te)
+                from docx.text.run import Run
+                ar = Run(a, par); ar.text = after; ar.underline = None
+            n += 1
+        return n
+    by_class = {r["class"]: r.get("contra_added") or [] for r in d["rows"]}
+    want = sum(len(v) for v in by_class.values()); done = 0
+    for tbl in doc.tables:
+        for row in tbl.rows:
+            cells = row.cells
+            if len(cells) < 5:
+                continue
+            head = cells[0].text.strip()
+            cls = [c for c in by_class if head.startswith(c)]
+            if not cls:
+                continue
+            for a in by_class[max(cls, key=len)]:
+                k = sum(mark(par, a) for par in cells[4].paragraphs)
+                if k != 1:
+                    sys.exit("docx underline: %r found %d times in the row %r" % (a, k, head[:40]))
+                done += k
+    for par in doc.paragraphs:
+        if par.text.startswith("Underlined contraindications") or "Underlined contraindications are not stated" in par.text:
+            mark(par, "Underlined")
+    if done != want:
+        sys.exit("docx underline: underlined %d of %d texts" % (done, want))
+    doc.save(path)
+    print("docx: underlined %d contraindication texts" % done)
+
+
 def main():
+    if "--docx" in sys.argv:
+        ok, d = CK.check(verbose=False)
+        if not ok:
+            sys.exit("fact-check failed")
+        subprocess.check_call([sys.executable, os.path.join(HERE, "build_guide_docx.py"), PAGE])
+        underline_docx(d)
+        return
     ok, d = CK.check(verbose=False)
     if not ok:
         CK.check(verbose=True)

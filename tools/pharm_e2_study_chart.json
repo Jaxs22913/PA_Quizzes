@@ -97,7 +97,24 @@
      "generics",
      14,
      "azithromycin"
+    ],
+    [
+     "contraindications",
+     15,
+     "Interactions: none"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "no drug interactions",
+     "proof": [
+      [
+       15,
+       "Interactions: none"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -147,21 +164,6 @@
      "Preferred for conjunctivitis in contact lens wearers once keratitis is ruled out"
     ],
     [
-     "contraindications",
-     22,
-     "once keratitis is ruled out"
-    ],
-    [
-     "contraindications",
-     22,
-     "Emerging resistance"
-    ],
-    [
-     "contraindications",
-     21,
-     "none clinically (when given ophthalmically)"
-    ],
-    [
      "adverse",
      21,
      "ocular irritation, white precipitate (ciprofloxacin ~17%), unpleasant taste after instillation"
@@ -205,7 +207,52 @@
      "indications",
      22,
      "Frequent dosing"
+    ],
+    [
+     "contraindications",
+     22,
+     "Preferred for conjunctivitis in contact lens wearers once keratitis is ruled out"
+    ],
+    [
+     "contraindications",
+     22,
+     "Emerging resistance"
+    ],
+    [
+     "contraindications",
+     21,
+     "Drug interactions: none clinically (when given ophthalmically)"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Caution: rule out keratitis first in a contact lens wearer",
+     "proof": [
+      [
+       22,
+       "Preferred for conjunctivitis in contact lens wearers once keratitis is ruled out"
+      ]
+     ]
+    },
+    {
+     "text": "emerging resistance",
+     "proof": [
+      [
+       22,
+       "Emerging resistance"
+      ]
+     ]
+    },
+    {
+     "text": "no interactions when given in the eye",
+     "proof": [
+      [
+       21,
+       "Drug interactions: none clinically (when given ophthalmically)"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -267,7 +314,24 @@
      "generics",
      23,
      "tobramycin"
+    ],
+    [
+     "contraindications",
+     23,
+     "Drug interactions: none clinically"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "no clinically significant interactions",
+     "proof": [
+      [
+       23,
+       "Drug interactions: none clinically"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -336,21 +400,6 @@
      "Bacitracin ointment"
     ],
     [
-     "contraindications",
-     19,
-     "avoid in patients with a sulfonamide allergy"
-    ],
-    [
-     "contraindications",
-     20,
-     "Drug interactions: none clinically"
-    ],
-    [
-     "contraindications",
-     18,
-     "Drug interactions: none clinically"
-    ],
-    [
      "adverse",
      18,
      "Adverse effects: ocular irritation"
@@ -384,7 +433,47 @@
      "generics",
      18,
      "trimethoprim"
+    ],
+    [
+     "contraindications",
+     19,
+     "avoid in patients with a sulfonamide allergy"
+    ],
+    [
+     "contraindications",
+     20,
+     "Drug interactions: none clinically"
+    ],
+    [
+     "contraindications",
+     18,
+     "Drug interactions: none clinically"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Sulfacetamide: avoid in patients with a sulfonamide allergy",
+     "proof": [
+      [
+       19,
+       "avoid in patients with a sulfonamide allergy"
+      ]
+     ]
+    },
+    {
+     "text": "Bacitracin and Polytrim: no clinically significant interactions",
+     "proof": [
+      [
+       20,
+       "Drug interactions: none clinically"
+      ],
+      [
+       18,
+       "Drug interactions: none clinically"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -440,16 +529,6 @@
      "Oral (500- and 1000-mg tablets)"
     ],
     [
-     "contraindications",
-     25,
-     "No antiviral agents for viral conjunctivitis caused by adenoviruses"
-    ],
-    [
-     "contraindications",
-     25,
-     "Self-limited course"
-    ],
-    [
      "adverse",
      27,
      "Adverse effects: ocular irritation, punctate keratopathy"
@@ -488,7 +567,38 @@
      "generics",
      26,
      "famciclovir"
+    ],
+    [
+     "contraindications",
+     25,
+     "No antiviral agents for viral conjunctivitis caused by adenoviruses"
+    ],
+    [
+     "contraindications",
+     25,
+     "Self-limited course"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "No antiviral is used for viral conjunctivitis caused by adenoviruses",
+     "proof": [
+      [
+       25,
+       "No antiviral agents for viral conjunctivitis caused by adenoviruses"
+      ]
+     ]
+    },
+    {
+     "text": "it is self-limited",
+     "proof": [
+      [
+       25,
+       "Self-limited course"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -575,7 +685,9 @@
      26,
      "cidofovir"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L4",
@@ -689,7 +801,9 @@
    ],
    "absent": [
     "contraindications"
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L4",
@@ -760,11 +874,6 @@
      "Allergy"
     ],
     [
-     "contraindications",
-     44,
-     "No significant drug interactions"
-    ],
-    [
      "adverse",
      44,
      "Adverse effects: ocular irritation, headache, increased ocular dryness"
@@ -813,7 +922,24 @@
      "generics",
      43,
      "olopatadine"
+    ],
+    [
+     "contraindications",
+     44,
+     "No significant drug interactions"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "no significant drug interactions",
+     "proof": [
+      [
+       44,
+       "No significant drug interactions"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -826,7 +952,7 @@
    ],
    "moa": "Inhibit mast cell degranulation, limiting release of histamine, tryptase and prostaglandin D2; also dampen mediator release from basophils, eosinophils and neutrophils.",
    "indications": "Predictable seasonal allergies in patients who do not tolerate other therapies. Full effect takes 5 to 14 days.",
-   "contraindications": "None listed. Limitation: not useful for acute symptoms (slow onset).",
+   "contraindications": "None listed. Limitation: not useful for acute symptoms (5-14 days for full efficacy).",
    "adverse": "Ocular irritation; unpleasant taste; headache.",
    "warning": "NOT for acute symptoms: 5 to 14 days to full effect, and often four-times-daily dosing.",
    "warning_kind": "special",
@@ -862,11 +988,6 @@
      "5-14 days for full efficacy"
     ],
     [
-     "contraindications",
-     47,
-     "NOT useful for acute symptoms"
-    ],
-    [
      "adverse",
      47,
      "Adverse reactions: ocular irritation, unpleasant taste, headache"
@@ -895,9 +1016,35 @@
      "generics",
      46,
      "nedocromil"
+    ],
+    [
+     "contraindications",
+     47,
+     "NOT useful for acute symptoms"
+    ],
+    [
+     "contraindications",
+     47,
+     "5-14 days for full efficacy"
     ]
    ],
-   "absent": []
+   "absent": [],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Limitation: not useful for acute symptoms (5-14 days for full efficacy)",
+     "proof": [
+      [
+       47,
+       "NOT useful for acute symptoms"
+      ],
+      [
+       47,
+       "5-14 days for full efficacy"
+      ]
+     ]
+    }
+   ]
   },
   {
    "lecture": "L4",
@@ -944,16 +1091,6 @@
      "OTC"
     ],
     [
-     "contraindications",
-     48,
-     "If no improvement in 72 hours, discontinue and see a provider"
-    ],
-    [
-     "contraindications",
-     49,
-     "What does this mean for accidental ingestions?"
-    ],
-    [
      "adverse",
      48,
      "Prolonged use leads to rebound hyperemia after discontinuation"
@@ -982,7 +1119,70 @@
      "indications",
      48,
      "Decreased conjunctival edema"
+    ],
+    [
+     "contraindications",
+     48,
+     "Good for short term use (< 2 weeks)"
+    ],
+    [
+     "contraindications",
+     48,
+     "Prolonged use leads to rebound hyperemia after discontinuation"
+    ],
+    [
+     "contraindications",
+     48,
+     "If no improvement in 72 hours, discontinue and see a provider (could be something more serious)"
+    ],
+    [
+     "contraindications",
+     49,
+     "Systemically will target alpha 2 receptors"
+    ],
+    [
+     "contraindications",
+     49,
+     "What does this mean for accidental ingestions?"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Not for prolonged use",
+     "proof": [
+      [
+       48,
+       "Good for short term use (< 2 weeks)"
+      ],
+      [
+       48,
+       "Prolonged use leads to rebound hyperemia after discontinuation"
+      ]
+     ]
+    },
+    {
+     "text": "If no improvement in 72 hours, stop and see a provider (it could be something more serious)",
+     "proof": [
+      [
+       48,
+       "If no improvement in 72 hours, discontinue and see a provider (could be something more serious)"
+      ]
+     ]
+    },
+    {
+     "text": "Accidental ingestion matters: systemically these act on alpha-2 receptors",
+     "proof": [
+      [
+       49,
+       "Systemically will target alpha 2 receptors"
+      ],
+      [
+       49,
+       "What does this mean for accidental ingestions?"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1023,11 +1223,6 @@
      "Postoperative inflammation/pain and allergic conjunctivitis"
     ],
     [
-     "contraindications",
-     51,
-     "Not routinely recommended for conjunctivitis"
-    ],
-    [
      "adverse",
      51,
      "Adverse reactions: lacrimation, keratitis, IOP increase, ocular irritation"
@@ -1061,7 +1256,24 @@
      "generics",
      51,
      "nepafenac"
+    ],
+    [
+     "contraindications",
+     51,
+     "Not routinely recommended for conjunctivitis"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Not routinely recommended for conjunctivitis",
+     "proof": [
+      [
+       51,
+       "Not routinely recommended for conjunctivitis"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1078,7 +1290,7 @@
    ],
    "moa": "Suppress the late-phase allergic reaction: inhibit phospholipase A2, so fewer arachidonic acid-derived inflammatory mediators; also inhibit fibrin and collagen deposition (less scarring).",
    "indications": "Severe ocular allergy; anterior uveitis; external eye inflammatory disease; inflammation after ocular surgery. Given topically or intraocularly.",
-   "contraindications": "Generally reserved for refractory symptoms, limited to under 2 weeks. Cautions: infection, corneal ulcers, glaucoma and raised eye pressure, cataract, delayed wound healing.",
+   "contraindications": "Generally used for refractory symptoms, limited to under 2 weeks of pulse therapy. Cautions: infection, corneal ulcers, glaucoma and raised eye pressure, cataract, delayed wound healing.",
    "adverse": "Cataract; raised eye pressure (more with a family history) and glaucoma; infection (decreased immune function); delayed wound healing; corneal ulcers.",
    "warning": "Limit to under 2 weeks. Soft steroids (fluorometholone, loteprednol, rimexolone) carry a lower risk of raised eye pressure.",
    "warning_kind": "special",
@@ -1117,26 +1329,6 @@
      "indications",
      52,
      "Inflammation following ocular surgery"
-    ],
-    [
-     "contraindications",
-     54,
-     "Generally used for refractory symptoms"
-    ],
-    [
-     "contraindications",
-     54,
-     "Limited to < 2 week pulse therapy"
-    ],
-    [
-     "contraindications",
-     54,
-     "Corneal ulcers"
-    ],
-    [
-     "contraindications",
-     54,
-     "Infections (decreased immune function)"
     ],
     [
      "adverse",
@@ -1202,7 +1394,83 @@
      "generics",
      55,
      "triamcinolone"
+    ],
+    [
+     "contraindications",
+     54,
+     "Generally used for refractory symptoms"
+    ],
+    [
+     "contraindications",
+     54,
+     "Limited to < 2 week pulse therapy"
+    ],
+    [
+     "contraindications",
+     54,
+     "Infections (decreased immune function)"
+    ],
+    [
+     "contraindications",
+     54,
+     "Corneal ulcers"
+    ],
+    [
+     "contraindications",
+     54,
+     "Elevated IOP (more with family history), glaucoma"
+    ],
+    [
+     "contraindications",
+     54,
+     "Cataract formation"
+    ],
+    [
+     "contraindications",
+     54,
+     "Delayed wound healing"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Generally used for refractory symptoms, limited to under 2 weeks of pulse therapy",
+     "proof": [
+      [
+       54,
+       "Generally used for refractory symptoms"
+      ],
+      [
+       54,
+       "Limited to < 2 week pulse therapy"
+      ]
+     ]
+    },
+    {
+     "text": "Cautions: infection, corneal ulcers, glaucoma and raised eye pressure, cataract, delayed wound healing",
+     "proof": [
+      [
+       54,
+       "Infections (decreased immune function)"
+      ],
+      [
+       54,
+       "Corneal ulcers"
+      ],
+      [
+       54,
+       "Elevated IOP (more with family history), glaucoma"
+      ],
+      [
+       54,
+       "Cataract formation"
+      ],
+      [
+       54,
+       "Delayed wound healing"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1279,7 +1547,9 @@
      57,
      "polyvinyl"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L4",
@@ -1334,7 +1604,24 @@
      "generics",
      58,
      "cyclosporine"
+    ],
+    [
+     "contraindications",
+     58,
+     "Drug interactions: none"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "no drug interactions",
+     "proof": [
+      [
+       58,
+       "Drug interactions: none"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1389,11 +1676,6 @@
      "Once daily dosing"
     ],
     [
-     "contraindications",
-     66,
-     "Inhibits IOP lowering effects"
-    ],
-    [
      "adverse",
      65,
      "conjunctival hyperemia, ocular irritation, changes in eyelash length and iris color"
@@ -1427,7 +1709,33 @@
      "generics",
      65,
      "tafluprost"
+    ],
+    [
+     "contraindications",
+     66,
+     "Once daily dosing"
+    ],
+    [
+     "contraindications",
+     66,
+     "Don't exceed! Inhibits IOP lowering effects"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Do not exceed once-daily dosing: more frequent dosing inhibits the pressure-lowering effect",
+     "proof": [
+      [
+       66,
+       "Once daily dosing"
+      ],
+      [
+       66,
+       "Don't exceed! Inhibits IOP lowering effects"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1473,16 +1781,6 @@
      "Generally start with a prostaglandin analog or beta blocker"
     ],
     [
-     "contraindications",
-     68,
-     "Less risk for causing bronchoconstriction in patient with asthma history"
-    ],
-    [
-     "contraindications",
-     67,
-     "worsening heart failure, bradycardia, heart block, increased airway resistance (asthma)"
-    ],
-    [
      "adverse",
      67,
      "Adverse reactions: worsening heart failure, bradycardia, heart block, increased airway resistance (asthma)"
@@ -1516,7 +1814,49 @@
      "generics",
      67,
      "betaxolol"
+    ],
+    [
+     "contraindications",
+     67,
+     "worsening heart failure, bradycardia, heart block, increased airway resistance (asthma)"
+    ],
+    [
+     "contraindications",
+     68,
+     "Less risk for causing bronchoconstriction in patient with asthma history"
+    ],
+    [
+     "contraindications",
+     67,
+     "Beta 1 selective Betaxolol"
     ]
+   ],
+   "contra_added": [
+    "Avoid or use cautiously in"
+   ],
+   "contra_claims": [
+    {
+     "text": "heart failure, bradycardia, heart block and asthma",
+     "proof": [
+      [
+       67,
+       "worsening heart failure, bradycardia, heart block, increased airway resistance (asthma)"
+      ]
+     ]
+    },
+    {
+     "text": "Beta-1 selective agents (betaxolol) carry less bronchoconstriction risk in asthma",
+     "proof": [
+      [
+       68,
+       "Less risk for causing bronchoconstriction in patient with asthma history"
+      ],
+      [
+       67,
+       "Beta 1 selective Betaxolol"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1558,11 +1898,6 @@
      "Alpha adrenergic agonists"
     ],
     [
-     "contraindications",
-     69,
-     "Contraindicated in children < 2 years (CNS depression/apnea)"
-    ],
-    [
      "adverse",
      69,
      "Ocular irritation, hyperemia (rebound effect), pruritus, allergic conjunctivitis (less common with brimonidine)"
@@ -1581,7 +1916,24 @@
      "generics",
      69,
      "brimonidine"
+    ],
+    [
+     "contraindications",
+     69,
+     "Contraindicated in children < 2 years (CNS depression/apnea)"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Contraindicated in children under 2 years (central nervous system depression and apnea)",
+     "proof": [
+      [
+       69,
+       "Contraindicated in children < 2 years (CNS depression/apnea)"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1651,7 +2003,9 @@
      70,
      "brinzolamide"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L4",
@@ -1688,16 +2042,6 @@
      "used in surgical settings"
     ],
     [
-     "contraindications",
-     72,
-     "Younger patients are usually intolerant of miotic therapy due to visual blurring"
-    ],
-    [
-     "contraindications",
-     72,
-     "Poor compliance due to side effects and frequent administration"
-    ],
-    [
      "adverse",
      72,
      "Adverse reactions: fixed/small pupils, myopia, visual disturbances, headaches"
@@ -1721,7 +2065,38 @@
      "generics",
      72,
      "pilocarpine"
+    ],
+    [
+     "contraindications",
+     72,
+     "Younger patients are usually intolerant of miotic therapy due to visual blurring"
+    ],
+    [
+     "contraindications",
+     72,
+     "Poor compliance due to side effects and frequent administration"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Younger patients are usually intolerant because of visual blurring",
+     "proof": [
+      [
+       72,
+       "Younger patients are usually intolerant of miotic therapy due to visual blurring"
+      ]
+     ]
+    },
+    {
+     "text": "poor compliance from side effects and frequent administration",
+     "proof": [
+      [
+       72,
+       "Poor compliance due to side effects and frequent administration"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1752,11 +2127,6 @@
      "tonometry, foreign body removal, superficial corneal surgery"
     ],
     [
-     "contraindications",
-     75,
-     "Don't write prescriptions for these"
-    ],
-    [
      "adverse",
      75,
      "hypersensitivity, burning sensation"
@@ -1780,7 +2150,24 @@
      "generics",
      75,
      "proparacaine"
+    ],
+    [
+     "contraindications",
+     75,
+     "Don't write prescriptions for these"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Do not write prescriptions for these",
+     "proof": [
+      [
+       75,
+       "Don't write prescriptions for these"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -1861,7 +2248,9 @@
      77,
      "phenylephrine"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L4",
@@ -1902,7 +2291,9 @@
      78,
      "fluorescein"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L5",
@@ -1959,16 +2350,6 @@
      "Benzathine G penicillin (IM injection) once"
     ],
     [
-     "contraindications",
-     7,
-     "PCN allergy"
-    ],
-    [
-     "contraindications",
-     8,
-     "PCN allergy"
-    ],
-    [
      "warning",
      8,
      "Use a rapid strep test to prevent over prescribing"
@@ -1992,7 +2373,42 @@
      "generics",
      8,
      "benzathine"
+    ],
+    [
+     "contraindications",
+     5,
+     "Cefdinir (Omnicef) or azithromycin (Zithromax) for penicillin allergic patients"
+    ],
+    [
+     "contraindications",
+     7,
+     "PCN allergy - clindamycin"
+    ],
+    [
+     "contraindications",
+     8,
+     "PCN allergy - cephalexin"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Penicillin allergy: use an alternative (see the next row)",
+     "proof": [
+      [
+       5,
+       "Cefdinir (Omnicef) or azithromycin (Zithromax) for penicillin allergic patients"
+      ],
+      [
+       7,
+       "PCN allergy - clindamycin"
+      ],
+      [
+       8,
+       "PCN allergy - cephalexin"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2055,11 +2471,6 @@
      "cephalexin (Keflex), Clindamycin (Cleocin), Azithromycin (Zithromax)"
     ],
     [
-     "contraindications",
-     5,
-     "50% of S. pneumoniae resistant to macrolides"
-    ],
-    [
      "warning",
      6,
      "Ceftriaxone (Rocephin) IM x3 doses q24h"
@@ -2108,9 +2519,26 @@
      "indications",
      6,
      "If no antibiotics in past 3 months"
+    ],
+    [
+     "contraindications",
+     5,
+     "50% of S. pneumoniae resistant to macrolides"
     ]
    ],
-   "boxed_not_on_slides": true
+   "boxed_not_on_slides": true,
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Up to 50% of Streptococcus pneumoniae are resistant to macrolides",
+     "proof": [
+      [
+       5,
+       "50% of S. pneumoniae resistant to macrolides"
+      ]
+     ]
+    }
+   ]
   },
   {
    "lecture": "L5",
@@ -2168,16 +2596,6 @@
      "Alternative"
     ],
     [
-     "contraindications",
-     10,
-     "not recommended for patients with ruptured TM or tubes in place"
-    ],
-    [
-     "contraindications",
-     10,
-     "Cochlear damage and hearing loss"
-    ],
-    [
      "adverse",
      10,
      "Neomycin"
@@ -2216,7 +2634,33 @@
      "generics",
      9,
      "neomycin"
+    ],
+    [
+     "contraindications",
+     10,
+     "not recommended for patients with ruptured TM or tubes in place"
+    ],
+    [
+     "contraindications",
+     10,
+     "Cochlear damage and hearing loss"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Polymyxin B: not recommended with a ruptured eardrum or ear tubes in place (cochlear damage, hearing loss)",
+     "proof": [
+      [
+       10,
+       "not recommended for patients with ruptured TM or tubes in place"
+      ],
+      [
+       10,
+       "Cochlear damage and hearing loss"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2245,21 +2689,6 @@
      "indications",
      12,
      "Indications: Systemic fungal infections"
-    ],
-    [
-     "contraindications",
-     12,
-     "QTc prolongation"
-    ],
-    [
-     "contraindications",
-     12,
-     "CYP3A4 inhibitor"
-    ],
-    [
-     "contraindications",
-     12,
-     "Hepatitis, abnormal LFT, cirrhosis, hepatic failure"
     ],
     [
      "adverse",
@@ -2291,7 +2720,44 @@
      "generics",
      12,
      "ketoconazole"
+    ],
+    [
+     "contraindications",
+     12,
+     "QTc prolongation"
+    ],
+    [
+     "contraindications",
+     12,
+     "Hepatitis, abnormal LFT, cirrhosis, hepatic failure"
+    ],
+    [
+     "contraindications",
+     12,
+     "CYP3A4 inhibitor"
     ]
+   ],
+   "contra_added": [
+    "which raises levels of other drugs"
+   ],
+   "contra_claims": [
+    {
+     "text": "Cautions drawn from the adverse effects: QT prolongation, hepatic toxicity, and CYP3A4 (cytochrome P450 3A4) inhibition",
+     "proof": [
+      [
+       12,
+       "QTc prolongation"
+      ],
+      [
+       12,
+       "Hepatitis, abnormal LFT, cirrhosis, hepatic failure"
+      ],
+      [
+       12,
+       "CYP3A4 inhibitor"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2348,7 +2814,9 @@
      13,
      "nystatin"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L5",
@@ -2396,31 +2864,6 @@
      "Antinflammatory"
     ],
     [
-     "contraindications",
-     17,
-     "Bleeding disorders"
-    ],
-    [
-     "contraindications",
-     17,
-     "very low doses may be of benefit in hypertensive disorders (pre-eclampsia)"
-    ],
-    [
-     "contraindications",
-     17,
-     "Children with fever associated with viral disease (chicken pox/influenza)"
-    ],
-    [
-     "contraindications",
-     20,
-     "Do not take if taking anticoagulants, aspirin inhibits platelet function"
-    ],
-    [
-     "contraindications",
-     20,
-     "Do not take aspirin and other NSAIDS"
-    ],
-    [
      "adverse",
      16,
      "Bleeding, GI, nausea"
@@ -2464,7 +2907,75 @@
      "generics",
      15,
      "aspirin"
+    ],
+    [
+     "contraindications",
+     17,
+     "Contraindications Bleeding disorders"
+    ],
+    [
+     "contraindications",
+     17,
+     "Pregnancy ; very low doses may be of benefit in hypertensive disorders (pre-eclampsia)"
+    ],
+    [
+     "contraindications",
+     17,
+     "Children with fever associated with viral disease (chicken pox/influenza)"
+    ],
+    [
+     "contraindications",
+     20,
+     "Do not take if taking anticoagulants, aspirin inhibits platelet function"
+    ],
+    [
+     "contraindications",
+     20,
+     "Do not take aspirin and other NSAIDS"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Bleeding disorders",
+     "proof": [
+      [
+       17,
+       "Contraindications Bleeding disorders"
+      ]
+     ]
+    },
+    {
+     "text": "pregnancy (very low doses may help preeclampsia)",
+     "proof": [
+      [
+       17,
+       "Pregnancy ; very low doses may be of benefit in hypertensive disorders (pre-eclampsia)"
+      ]
+     ]
+    },
+    {
+     "text": "children with fever from a viral illness (chickenpox, influenza)",
+     "proof": [
+      [
+       17,
+       "Children with fever associated with viral disease (chicken pox/influenza)"
+      ]
+     ]
+    },
+    {
+     "text": "do not combine with anticoagulants or other nonsteroidal anti-inflammatory drugs",
+     "proof": [
+      [
+       20,
+       "Do not take if taking anticoagulants, aspirin inhibits platelet function"
+      ],
+      [
+       20,
+       "Do not take aspirin and other NSAIDS"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2476,7 +2987,7 @@
    ],
    "moa": "Ibuprofen reversibly inhibits cyclooxygenase-1 and cyclooxygenase-2, decreasing prostaglandin synthesis.",
    "indications": "Relief of mild to moderate pain (ibuprofen: anti-inflammatory, analgesic, antipyretic). Naproxen (Aleve): longer half-life, less frequent dosing.",
-   "contraindications": "Allergy to the product; may exacerbate asthma; avoid under 6 months of age; history of stomach ulcers or perforation; renal dysfunction.",
+   "contraindications": "Ibuprofen: allergy to the product; may exacerbate asthma; avoid under 6 months of age; history of stomach ulcers or perforation; renal dysfunction.",
    "adverse": "Gastric or duodenal ulcers, perforation, bleeding; edema and fluid retention; acute renal failure.",
    "warning": "Prescription NSAIDs carry an FDA (Food and Drug Administration) boxed warning for cardiovascular events and gastrointestinal bleeding (not stated in the lecture). Ibuprofen lowers ACE (angiotensin-converting enzyme) inhibitor effect and raises lithium and methotrexate levels.",
    "warning_kind": "bbw",
@@ -2511,26 +3022,6 @@
      "indications",
      23,
      "longer half-life, less frequent dosing"
-    ],
-    [
-     "contraindications",
-     22,
-     "Allergic to product"
-    ],
-    [
-     "contraindications",
-     22,
-     "May exacerbate asthma"
-    ],
-    [
-     "contraindications",
-     22,
-     "Avoid in children < 6 months of age"
-    ],
-    [
-     "contraindications",
-     22,
-     "PMHx of stomach ulcers/perforation, renal dysfunction"
     ],
     [
      "adverse",
@@ -2571,7 +3062,75 @@
      "generics",
      23,
      "naproxen"
+    ],
+    [
+     "contraindications",
+     22,
+     "Contraindications (relative/absolute): Allergic to product"
+    ],
+    [
+     "contraindications",
+     22,
+     "May exacerbate asthma"
+    ],
+    [
+     "contraindications",
+     22,
+     "Avoid in children < 6 months of age"
+    ],
+    [
+     "contraindications",
+     22,
+     "PMHx of stomach ulcers/perforation, renal dysfunction"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Ibuprofen: allergy to the product",
+     "proof": [
+      [
+       22,
+       "Contraindications (relative/absolute): Allergic to product"
+      ]
+     ]
+    },
+    {
+     "text": "may exacerbate asthma",
+     "proof": [
+      [
+       22,
+       "May exacerbate asthma"
+      ]
+     ]
+    },
+    {
+     "text": "avoid under 6 months of age",
+     "proof": [
+      [
+       22,
+       "Avoid in children < 6 months of age"
+      ]
+     ]
+    },
+    {
+     "text": "history of stomach ulcers or perforation",
+     "proof": [
+      [
+       22,
+       "PMHx of stomach ulcers/perforation, renal dysfunction"
+      ]
+     ]
+    },
+    {
+     "text": "renal dysfunction",
+     "proof": [
+      [
+       22,
+       "PMHx of stomach ulcers/perforation, renal dysfunction"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2603,16 +3162,6 @@
      "Indications: pain, fever >100 F"
     ],
     [
-     "contraindications",
-     25,
-     "Allergic to product"
-    ],
-    [
-     "contraindications",
-     25,
-     "Alcohol & Tylenol can increase risk of liver damage (chronically)"
-    ],
-    [
      "adverse",
      24,
      "Very well tolerated, no notable side effects at therapeutic doses"
@@ -2631,7 +3180,38 @@
      "generics",
      24,
      "acetaminophen"
+    ],
+    [
+     "contraindications",
+     25,
+     "Contraindications (relative/absolute): Allergic to product"
+    ],
+    [
+     "contraindications",
+     25,
+     "Alcohol & Tylenol can increase risk of liver damage (chronically)"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Allergy to the product (the only one listed)",
+     "proof": [
+      [
+       25,
+       "Contraindications (relative/absolute): Allergic to product"
+      ]
+     ]
+    },
+    {
+     "text": "Alcohol increases the risk of liver damage (chronic use)",
+     "proof": [
+      [
+       25,
+       "Alcohol & Tylenol can increase risk of liver damage (chronically)"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -2712,21 +3292,6 @@
      "Adjuvant role in anaphylaxis"
     ],
     [
-     "contraindications",
-     32,
-     "Additive with other CNS depressants or alcohol"
-    ],
-    [
-     "contraindications",
-     32,
-     "Restlessness and excitation at higher doses (especially children)"
-    ],
-    [
-     "contraindications",
-     32,
-     "Excitation seen in overdose"
-    ],
-    [
      "adverse",
      36,
      "Sedation"
@@ -2785,9 +3350,64 @@
      "generics",
      34,
      "promethazine"
+    ],
+    [
+     "contraindications",
+     32,
+     "Additive with other CNS depressants or alcohol"
+    ],
+    [
+     "contraindications",
+     32,
+     "Restlessness and excitation at higher doses (especially children)"
+    ],
+    [
+     "contraindications",
+     32,
+     "Excitation seen in overdose"
     ]
    ],
-   "boxed_not_on_slides": true
+   "boxed_not_on_slides": true,
+   "contra_added": [
+    "instead of sedation"
+   ],
+   "contra_claims": [
+    {
+     "text": "Additive sedation with other central nervous system depressants or alcohol",
+     "proof": [
+      [
+       32,
+       "Additive with other CNS depressants or alcohol"
+      ]
+     ]
+    },
+    {
+     "text": "Excitation",
+     "proof": [
+      [
+       32,
+       "Restlessness and excitation at higher doses (especially children)"
+      ],
+      [
+       32,
+       "Excitation seen in overdose"
+      ]
+     ]
+    },
+    {
+     "text": "at higher doses (especially in children) and in overdose",
+     "proof": [
+      [
+       32,
+       "Restlessness and excitation at higher doses (especially children)"
+      ],
+      [
+       32,
+       "Excitation seen in overdose"
+      ]
+     ]
+    }
+   ]
   },
   {
    "lecture": "L5",
@@ -2872,7 +3492,9 @@
      37,
      "loratadine"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L5",
@@ -2902,11 +3524,6 @@
      "allergic rhinitis & vasomotor rhinitis"
     ],
     [
-     "contraindications",
-     39,
-     "Do not use with other nasal sprays"
-    ],
-    [
      "adverse",
      38,
      "bitter taste, epistaxis"
@@ -2930,7 +3547,24 @@
      "generics",
      38,
      "azelastine"
+    ],
+    [
+     "contraindications",
+     39,
+     "Do not use with other nasal sprays"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Do not use with other nasal sprays",
+     "proof": [
+      [
+       39,
+       "Do not use with other nasal sprays"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3008,7 +3642,24 @@
      "generics",
      42,
      "triamcinolone"
+    ],
+    [
+     "contraindications",
+     43,
+     "Interactions: No information available"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "interactions: no information available",
+     "proof": [
+      [
+       43,
+       "Interactions: No information available"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3021,7 +3672,7 @@
    ],
    "moa": "Not given in this lecture (dexamethasone is classed as a synthetic adrenocortical steroid).",
    "indications": "Allergic rhinitis, allergic conjunctivitis and drug hypersensitivity reactions.",
-   "contraindications": "Systemic fungal infections (dexamethasone); allergy to the product; infections, especially fungal (prednisone).",
+   "contraindications": "Systemic fungal infections (dexamethasone); allergy to the product and infections, especially fungal (prednisone).",
    "adverse": "Sodium and fluid retention, heart failure, hypertension, low potassium; glucose intolerance; cushingoid features; tendon rupture, fractures; cataracts, glaucoma, raised eye pressure; weakened immunity.",
    "warning": "Do not stop abruptly (dexamethasone after more than 1 week; prednisone: rebound symptoms). Avoid chickenpox or measles exposure and live vaccines.",
    "warning_kind": "special",
@@ -3044,21 +3695,6 @@
      "indications",
      47,
      "Allergic rhinitis, allergic conjunctivitis, & Drug hypersensitivity reaction"
-    ],
-    [
-     "contraindications",
-     46,
-     "System fungal infections"
-    ],
-    [
-     "contraindications",
-     48,
-     "Allergic to product"
-    ],
-    [
-     "contraindications",
-     48,
-     "Infections, especially fungal"
     ],
     [
      "adverse",
@@ -3124,7 +3760,47 @@
      "generics",
      47,
      "prednisolone"
+    ],
+    [
+     "contraindications",
+     46,
+     "System fungal infections"
+    ],
+    [
+     "contraindications",
+     48,
+     "Contraindications (relative/absolute): Allergic to product"
+    ],
+    [
+     "contraindications",
+     48,
+     "Infections, especially fungal"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Systemic fungal infections (dexamethasone)",
+     "proof": [
+      [
+       46,
+       "System fungal infections"
+      ]
+     ]
+    },
+    {
+     "text": "allergy to the product and infections, especially fungal (prednisone)",
+     "proof": [
+      [
+       48,
+       "Contraindications (relative/absolute): Allergic to product"
+      ],
+      [
+       48,
+       "Infections, especially fungal"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3180,16 +3856,6 @@
      "Eustachian tube dysfunction due to viral infection"
     ],
     [
-     "contraindications",
-     51,
-     "Interactions: MAOIs & antidepressants"
-    ],
-    [
-     "contraindications",
-     52,
-     "decreased effect of antihypertensives"
-    ],
-    [
      "adverse",
      50,
      "rebound rhinitis"
@@ -3223,7 +3889,38 @@
      "generics",
      53,
      "phenylephrine"
+    ],
+    [
+     "contraindications",
+     51,
+     "Interactions: MAOIs & antidepressants"
+    ],
+    [
+     "contraindications",
+     52,
+     "Interactions: decreased effect of antihypertensives"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Oxymetazoline interacts with monoamine oxidase inhibitors and antidepressants",
+     "proof": [
+      [
+       51,
+       "Interactions: MAOIs & antidepressants"
+      ]
+     ]
+    },
+    {
+     "text": "pseudoephedrine decreases the effect of antihypertensives",
+     "proof": [
+      [
+       52,
+       "Interactions: decreased effect of antihypertensives"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3270,16 +3967,6 @@
      "Indications: cough"
     ],
     [
-     "contraindications",
-     57,
-     "Allergic to product or related products (tetracaine)"
-    ],
-    [
-     "contraindications",
-     58,
-     "currently taking or within 2 weeks of taking an MAOI"
-    ],
-    [
      "adverse",
      57,
      "local anesthesia from chewing the capsule"
@@ -3313,7 +4000,38 @@
      "generics",
      58,
      "dextromethorphan"
+    ],
+    [
+     "contraindications",
+     57,
+     "Allergic to product or related products (tetracaine)"
+    ],
+    [
+     "contraindications",
+     58,
+     "currently taking or within 2 weeks of taking an MAOI"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Benzonatate: allergy to the product or related products (tetracaine)",
+     "proof": [
+      [
+       57,
+       "Allergic to product or related products (tetracaine)"
+      ]
+     ]
+    },
+    {
+     "text": "Dextromethorphan: taking, or within 2 weeks of taking, a monoamine oxidase inhibitor",
+     "proof": [
+      [
+       58,
+       "currently taking or within 2 weeks of taking an MAOI"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3394,16 +4112,6 @@
      "Mucolytic properties when inhaled"
     ],
     [
-     "contraindications",
-     59,
-     "allergic to product"
-    ],
-    [
-     "contraindications",
-     59,
-     "Interactions: No information available"
-    ],
-    [
      "adverse",
      59,
      "Side Effects: N/V"
@@ -3447,7 +4155,38 @@
      "generics",
      63,
      "n-acetylcysteine"
+    ],
+    [
+     "contraindications",
+     59,
+     "Contraindications (relative/absolute): allergic to product"
+    ],
+    [
+     "contraindications",
+     59,
+     "Interactions: No information available"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Guaifenesin: allergy to the product",
+     "proof": [
+      [
+       59,
+       "Contraindications (relative/absolute): allergic to product"
+      ]
+     ]
+    },
+    {
+     "text": "no interactions listed",
+     "proof": [
+      [
+       59,
+       "Interactions: No information available"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3467,7 +4206,7 @@
    ],
    "moa": "Block angiotensin-converting enzyme: less angiotensin II (less vasoconstriction, aldosterone, sodium reabsorption and norepinephrine release) and less bradykinin breakdown.",
    "indications": "Hypertension (preferred in diabetics); heart failure and left ventricular dysfunction; after myocardial infarction (lower mortality); diabetic nephropathy; coronary artery disease with diabetes or left ventricular dysfunction.",
-   "contraindications": "Pregnancy (2nd and 3rd trimesters). Caution in kidney disease (may sharply lower filtration), with potassium-sparing diuretics, potassium supplements or salt substitutes (hyperkalemia); nonsteroidal anti-inflammatory drugs blunt the effect.",
+   "contraindications": "Pregnancy (2nd and 3rd trimesters). Caution in kidney disease (may sharply lower filtration), with potassium-sparing diuretics, potassium supplements or salt substitutes (hyperkalemia); nonsteroidal anti-inflammatory drugs can blunt the effect.",
    "adverse": "Dry cough (5-15%, bradykinin); hyperkalemia; first-dose hypotension; kidney impairment; angioedema (rare, 0.1-0.5%); fetal harm.",
    "warning": "FDA (Food and Drug Administration) boxed warning: fetal toxicity (birth defects, fetal death; contraindicated in the 2nd and 3rd trimesters). Angioedema: stop the drug.",
    "warning_kind": "bbw",
@@ -3541,26 +4280,6 @@
      35,
      "Used in patients with coronary artery disease with diabetes and/or left ventricular systolic dysfunction",
      "L8"
-    ],
-    [
-     "contraindications",
-     22,
-     "Contraindicated in 2nd and 3rd trimesters"
-    ],
-    [
-     "contraindications",
-     21,
-     "ACE inhibitors will dramatically decrease GFR"
-    ],
-    [
-     "contraindications",
-     20,
-     "potassium sparing diuretics, K+ supplements or salt substitutes"
-    ],
-    [
-     "contraindications",
-     22,
-     "NSAIDS can"
     ],
     [
      "adverse",
@@ -3661,7 +4380,93 @@
      "generics",
      14,
      "moexipril"
+    ],
+    [
+     "contraindications",
+     22,
+     "Contraindicated in 2nd and 3rd trimesters"
+    ],
+    [
+     "contraindications",
+     21,
+     "Renal disease, blood flow may be highly dependent on ANG II"
+    ],
+    [
+     "contraindications",
+     21,
+     "ACE inhibitors will dramatically decrease GFR"
+    ],
+    [
+     "contraindications",
+     21,
+     "Use cautiously"
+    ],
+    [
+     "contraindications",
+     20,
+     "potassium sparing diuretics, K+ supplements or salt substitutes"
+    ],
+    [
+     "contraindications",
+     22,
+     "NSAIDS can"
+    ],
+    [
+     "contraindications",
+     22,
+     "ACE inhibitors effects"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Pregnancy (2nd and 3rd trimesters)",
+     "proof": [
+      [
+       22,
+       "Contraindicated in 2nd and 3rd trimesters"
+      ]
+     ]
+    },
+    {
+     "text": "Caution in kidney disease (may sharply lower filtration)",
+     "proof": [
+      [
+       21,
+       "Renal disease, blood flow may be highly dependent on ANG II"
+      ],
+      [
+       21,
+       "ACE inhibitors will dramatically decrease GFR"
+      ],
+      [
+       21,
+       "Use cautiously"
+      ]
+     ]
+    },
+    {
+     "text": "with potassium-sparing diuretics, potassium supplements or salt substitutes (hyperkalemia)",
+     "proof": [
+      [
+       20,
+       "potassium sparing diuretics, K+ supplements or salt substitutes"
+      ]
+     ]
+    },
+    {
+     "text": "nonsteroidal anti-inflammatory drugs can blunt the effect",
+     "proof": [
+      [
+       22,
+       "NSAIDS can"
+      ],
+      [
+       22,
+       "ACE inhibitors effects"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3739,26 +4544,6 @@
      "Diabetic Nephropathy"
     ],
     [
-     "contraindications",
-     29,
-     "Not given in 2-3 trimesters"
-    ],
-    [
-     "contraindications",
-     29,
-     "renal disease or K+ sparing diuretics"
-    ],
-    [
-     "contraindications",
-     29,
-     "First dose effect"
-    ],
-    [
-     "contraindications",
-     29,
-     "Impairment of renal function"
-    ],
-    [
      "adverse",
      29,
      "Hyperkalemia"
@@ -3832,7 +4617,66 @@
      "generics",
      27,
      "valsartan"
+    ],
+    [
+     "contraindications",
+     29,
+     "Not given in 2-3 trimesters"
+    ],
+    [
+     "contraindications",
+     29,
+     "renal disease or K+ sparing diuretics"
+    ],
+    [
+     "contraindications",
+     29,
+     "First dose effect"
+    ],
+    [
+     "contraindications",
+     29,
+     "Impairment of renal function"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Pregnancy (not given in the 2nd and 3rd trimesters)",
+     "proof": [
+      [
+       29,
+       "Not given in 2-3 trimesters"
+      ]
+     ]
+    },
+    {
+     "text": "Caution: hyperkalemia with kidney disease or potassium-sparing diuretics",
+     "proof": [
+      [
+       29,
+       "renal disease or K+ sparing diuretics"
+      ]
+     ]
+    },
+    {
+     "text": "first-dose hypotension",
+     "proof": [
+      [
+       29,
+       "First dose effect"
+      ]
+     ]
+    },
+    {
+     "text": "kidney impairment",
+     "proof": [
+      [
+       29,
+       "Impairment of renal function"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -3911,31 +4755,6 @@
      "Migraine prophylaxis"
     ],
     [
-     "contraindications",
-     46,
-     "Advanced heart block"
-    ],
-    [
-     "contraindications",
-     46,
-     "Hypotension"
-    ],
-    [
-     "contraindications",
-     46,
-     "Heart failure"
-    ],
-    [
-     "contraindications",
-     46,
-     "GERD"
-    ],
-    [
-     "contraindications",
-     46,
-     "Liver disease"
-    ],
-    [
      "adverse",
      45,
      "Flushing, headache, hypotension, peripheral edema, dizziness"
@@ -3994,7 +4813,52 @@
      "warning",
      75,
      "Synergistic effects to ↓ BP, ↓ HR,"
+    ],
+    [
+     "contraindications",
+     46,
+     "Advanced heart block"
+    ],
+    [
+     "contraindications",
+     46,
+     "Hypotension"
+    ],
+    [
+     "contraindications",
+     46,
+     "Relative Contraindications: Heart failure Liver disease GERD"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Advanced heart block",
+     "proof": [
+      [
+       46,
+       "Advanced heart block"
+      ]
+     ]
+    },
+    {
+     "text": "hypotension",
+     "proof": [
+      [
+       46,
+       "Hypotension"
+      ]
+     ]
+    },
+    {
+     "text": "Relative: heart failure, liver disease, gastroesophageal reflux disease",
+     "proof": [
+      [
+       46,
+       "Relative Contraindications: Heart failure Liver disease GERD"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -4065,21 +4929,6 @@
      "Approved indication: subarachnoid hemorrhage"
     ],
     [
-     "contraindications",
-     52,
-     "Severe aortic stenosis"
-    ],
-    [
-     "contraindications",
-     52,
-     "Unstable angina or recent MI (immediate release formulation)"
-    ],
-    [
-     "contraindications",
-     49,
-     "Avoid short acting formulations"
-    ],
-    [
      "adverse",
      51,
      "Peripheral edema"
@@ -4148,7 +4997,52 @@
      "generics",
      49,
      "nimodipine"
+    ],
+    [
+     "contraindications",
+     52,
+     "Severe aortic stenosis"
+    ],
+    [
+     "contraindications",
+     52,
+     "Unstable angina or recent MI (immediate release formulation)"
+    ],
+    [
+     "contraindications",
+     49,
+     "Avoid short acting formulations"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Severe aortic stenosis",
+     "proof": [
+      [
+       52,
+       "Severe aortic stenosis"
+      ]
+     ]
+    },
+    {
+     "text": "unstable angina or recent myocardial infarction (immediate-release form)",
+     "proof": [
+      [
+       52,
+       "Unstable angina or recent MI (immediate release formulation)"
+      ]
+     ]
+    },
+    {
+     "text": "Avoid short-acting formulations",
+     "proof": [
+      [
+       49,
+       "Avoid short acting formulations"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -4251,31 +5145,6 @@
      "Benign essential tremor"
     ],
     [
-     "contraindications",
-     71,
-     "contraindicated"
-    ],
-    [
-     "contraindications",
-     71,
-     "Less likely with b1 selective agents"
-    ],
-    [
-     "contraindications",
-     71,
-     "AV block"
-    ],
-    [
-     "contraindications",
-     72,
-     "mask symptoms"
-    ],
-    [
-     "contraindications",
-     73,
-     "Peripheral artery disease"
-    ],
-    [
      "adverse",
      71,
      "Bronchoconstriction"
@@ -4359,7 +5228,135 @@
      "generics",
      60,
      "sotolol"
+    ],
+    [
+     "contraindications",
+     71,
+     "1/3 of COPD patients have bronchospasm - contraindicated"
+    ],
+    [
+     "contraindications",
+     71,
+     "Less likely with b1 selective agents"
+    ],
+    [
+     "contraindications",
+     56,
+     "Bronchospasm in asthma"
+    ],
+    [
+     "contraindications",
+     34,
+     "Asthma: first line non-dihydropyridine and cardioselective beta blocker, avoid non-cardioselective beta blocker",
+     "L8"
+    ],
+    [
+     "contraindications",
+     71,
+     "AV block - 1st, 2nd, 3rd degree heart block"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+     "L8"
+    ],
+    [
+     "contraindications",
+     71,
+     "HR < 60 beats/min"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM",
+     "L8"
+    ],
+    [
+     "contraindications",
+     72,
+     "mask symptoms"
+    ],
+    [
+     "contraindications",
+     73,
+     "Peripheral artery disease (intermittent claudication)"
+    ],
+    [
+     "contraindications",
+     71,
+     "Negative inotropy ↔ Fatigue ↔ CHF"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Bronchospasm or asthma (non-selective agents are worst)",
+     "proof": [
+      [
+       71,
+       "1/3 of COPD patients have bronchospasm - contraindicated"
+      ],
+      [
+       71,
+       "Less likely with b1 selective agents"
+      ],
+      [
+       56,
+       "Bronchospasm in asthma"
+      ],
+      [
+       34,
+       "Asthma: first line non-dihydropyridine and cardioselective beta blocker, avoid non-cardioselective beta blocker",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "heart block",
+     "proof": [
+      [
+       71,
+       "AV block - 1st, 2nd, 3rd degree heart block"
+      ],
+      [
+       18,
+       "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "slow heart rate",
+     "proof": [
+      [
+       71,
+       "HR < 60 beats/min"
+      ],
+      [
+       18,
+       "Contraindications HR < 60 BPM",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "Caution in diabetes (masks hypoglycemia), peripheral artery disease and heart failure",
+     "proof": [
+      [
+       72,
+       "mask symptoms"
+      ],
+      [
+       73,
+       "Peripheral artery disease (intermittent claudication)"
+      ],
+      [
+       71,
+       "Negative inotropy ↔ Fatigue ↔ CHF"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -4437,26 +5434,6 @@
      "Angina pectoris"
     ],
     [
-     "contraindications",
-     71,
-     "Less likely with b1 selective agents"
-    ],
-    [
-     "contraindications",
-     71,
-     "AV block"
-    ],
-    [
-     "contraindications",
-     71,
-     "HR < 60 beats/min"
-    ],
-    [
-     "contraindications",
-     72,
-     "mask symptoms"
-    ],
-    [
      "adverse",
      71,
      "Bronchoconstriction"
@@ -4510,7 +5487,106 @@
      "generics",
      61,
      "esmolol"
+    ],
+    [
+     "contraindications",
+     71,
+     "1/3 of COPD patients have bronchospasm - contraindicated"
+    ],
+    [
+     "contraindications",
+     71,
+     "Less likely with b1 selective agents"
+    ],
+    [
+     "contraindications",
+     71,
+     "AV block - 1st, 2nd, 3rd degree heart block"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+     "L8"
+    ],
+    [
+     "contraindications",
+     71,
+     "HR < 60 beats/min"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM",
+     "L8"
+    ],
+    [
+     "contraindications",
+     72,
+     "mask symptoms"
+    ],
+    [
+     "contraindications",
+     73,
+     "Peripheral artery disease (intermittent claudication)"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Bronchospasm (less likely than with non-selective agents)",
+     "proof": [
+      [
+       71,
+       "1/3 of COPD patients have bronchospasm - contraindicated"
+      ],
+      [
+       71,
+       "Less likely with b1 selective agents"
+      ]
+     ]
+    },
+    {
+     "text": "heart block",
+     "proof": [
+      [
+       71,
+       "AV block - 1st, 2nd, 3rd degree heart block"
+      ],
+      [
+       18,
+       "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "bradycardia",
+     "proof": [
+      [
+       71,
+       "HR < 60 beats/min"
+      ],
+      [
+       18,
+       "Contraindications HR < 60 BPM",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "Caution in diabetes and peripheral artery disease",
+     "proof": [
+      [
+       72,
+       "mask symptoms"
+      ],
+      [
+       73,
+       "Peripheral artery disease (intermittent claudication)"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -4601,21 +5677,6 @@
      "Hypertension"
     ],
     [
-     "contraindications",
-     71,
-     "contraindicated"
-    ],
-    [
-     "contraindications",
-     71,
-     "AV block"
-    ],
-    [
-     "contraindications",
-     72,
-     "mask symptoms"
-    ],
-    [
      "adverse",
      71,
      "Bronchoconstriction"
@@ -4664,9 +5725,69 @@
      "generics",
      62,
      "betaxolol"
+    ],
+    [
+     "contraindications",
+     71,
+     "1/3 of COPD patients have bronchospasm - contraindicated"
+    ],
+    [
+     "contraindications",
+     71,
+     "AV block - 1st, 2nd, 3rd degree heart block"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+     "L8"
+    ],
+    [
+     "contraindications",
+     72,
+     "mask symptoms"
+    ],
+    [
+     "contraindications",
+     73,
+     "Peripheral artery disease (intermittent claudication)"
     ]
    ],
-   "generics_note": "The slide groups carteolol and betaxolol (beta-1 selective) here too."
+   "generics_note": "The slide groups carteolol and betaxolol (beta-1 selective) here too.",
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "As for all beta blockers: bronchospasm, heart block, bradycardia",
+     "proof": [
+      [
+       71,
+       "1/3 of COPD patients have bronchospasm - contraindicated"
+      ],
+      [
+       71,
+       "AV block - 1st, 2nd, 3rd degree heart block"
+      ],
+      [
+       18,
+       "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block",
+       "L8"
+      ]
+     ]
+    },
+    {
+     "text": "caution in diabetes and peripheral artery disease",
+     "proof": [
+      [
+       72,
+       "mask symptoms"
+      ],
+      [
+       73,
+       "Peripheral artery disease (intermittent claudication)"
+      ]
+     ]
+    }
+   ]
   },
   {
    "lecture": "L6",
@@ -4679,7 +5800,7 @@
    ],
    "moa": "Reversible blockade of vascular alpha-1 receptors: dilates precapillary arterioles and lowers total peripheral resistance, with a reflex rise in heart rate. Tamsulosin is alpha-1a selective with little effect on blood vessels.",
    "indications": "Hypertension (prazosin with beta blockers and diuretics; mildly improves lipids); benign prostatic hyperplasia (terazosin, doxazosin, tamsulosin). Terazosin and doxazosin have longer half-lives (once daily).",
-   "contraindications": "None listed. Caution in cardiac and renal failure; nonsteroidal anti-inflammatory drugs blunt the response; beta blockers may worsen postural hypotension.",
+   "contraindications": "None listed. Prazosin: caution in cardiac and renal failure; nonsteroidal anti-inflammatory drugs blunt the response; beta blockers may worsen postural hypotension.",
    "adverse": "Orthostatic hypotension, postural dizziness, headache, drowsiness, lack of energy; mild reflex tachycardia; sodium and water retention; impotence.",
    "warning": "Orthostatic hypotension is the main side effect (postural dizziness).",
    "warning_kind": "special",
@@ -4751,21 +5872,6 @@
      "Benign prostatic hyperplasia"
     ],
     [
-     "contraindications",
-     81,
-     "Caution in cardiac and renal failure"
-    ],
-    [
-     "contraindications",
-     81,
-     "NSAIDS attenuate response"
-    ],
-    [
-     "contraindications",
-     81,
-     "b-blockers may enhance postural hypotension"
-    ],
-    [
      "adverse",
      79,
      "Orthostatic Hypotension"
@@ -4834,7 +5940,52 @@
      "generics",
      84,
      "tamsulosin"
+    ],
+    [
+     "contraindications",
+     81,
+     "Caution in cardiac and renal failure"
+    ],
+    [
+     "contraindications",
+     81,
+     "NSAIDS attenuate response"
+    ],
+    [
+     "contraindications",
+     81,
+     "b-blockers may enhance postural hypotension"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Prazosin: caution in cardiac and renal failure",
+     "proof": [
+      [
+       81,
+       "Caution in cardiac and renal failure"
+      ]
+     ]
+    },
+    {
+     "text": "nonsteroidal anti-inflammatory drugs blunt the response",
+     "proof": [
+      [
+       81,
+       "NSAIDS attenuate response"
+      ]
+     ]
+    },
+    {
+     "text": "beta blockers may worsen postural hypotension",
+     "proof": [
+      [
+       81,
+       "b-blockers may enhance postural hypotension"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -4925,16 +6076,6 @@
      "blunts opiate withdrawal reactions"
     ],
     [
-     "contraindications",
-     91,
-     "Narrow therapeutic range"
-    ],
-    [
-     "contraindications",
-     93,
-     "Causes Sodium Retention, often given with diuretic"
-    ],
-    [
      "adverse",
      91,
      "Drowsiness/sedation"
@@ -4988,7 +6129,38 @@
      "generics",
      95,
      "guanfacine"
+    ],
+    [
+     "contraindications",
+     91,
+     "Narrow therapeutic range"
+    ],
+    [
+     "contraindications",
+     93,
+     "Causes Sodium Retention, often given with diuretic"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Narrow therapeutic range",
+     "proof": [
+      [
+       91,
+       "Narrow therapeutic range"
+      ]
+     ]
+    },
+    {
+     "text": "clonidine causes sodium retention, so it is often given with a diuretic",
+     "proof": [
+      [
+       93,
+       "Causes Sodium Retention, often given with diuretic"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5075,21 +6247,6 @@
      "Nitroprusside (IV infusion)"
     ],
     [
-     "contraindications",
-     102,
-     "Coronary artery disease"
-    ],
-    [
-     "contraindications",
-     102,
-     "Ischemia"
-    ],
-    [
-     "contraindications",
-     102,
-     "Elderly"
-    ],
-    [
      "adverse",
      97,
      "Tachycardia"
@@ -5158,7 +6315,47 @@
      "adverse",
      104,
      "Myocardial ischemia due to reflexes and sympathetics"
+    ],
+    [
+     "contraindications",
+     102,
+     "Contraindicated: Coronary artery disease Elderly Ischemia"
+    ],
+    [
+     "contraindications",
+     104,
+     "Myocardial ischemia due to reflexes and sympathetics"
+    ],
+    [
+     "contraindications",
+     104,
+     "Arrhythmias due to action on K+ channel"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Hydralazine: coronary artery disease, ischemia, elderly",
+     "proof": [
+      [
+       102,
+       "Contraindicated: Coronary artery disease Elderly Ischemia"
+      ]
+     ]
+    },
+    {
+     "text": "Minoxidil: none listed (its ischemia and arrhythmias are adverse effects)",
+     "proof": [
+      [
+       104,
+       "Myocardial ischemia due to reflexes and sympathetics"
+      ],
+      [
+       104,
+       "Arrhythmias due to action on K+ channel"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5175,7 +6372,7 @@
    ],
    "moa": "Reduce hepatic cholesterol synthesis, lowering intracellular cholesterol, which upregulates the LDL (low-density lipoprotein) receptor and increases uptake of non-HDL (high-density lipoprotein) particles from the blood.",
    "indications": "First-line when low-density lipoprotein (LDL) cholesterol lowering is indicated; most efficacious and best tolerated. Benefit groups: existing cardiovascular disease; LDL above 190 mg/dL; diabetes aged 40-75 with LDL 70-189; no disease or diabetes, LDL 70-189 and 10-year risk above 7.5%.",
-   "contraindications": "Liver disease; pregnancy (current labeling weighs risk and benefit). Relative: cyclosporine or other immunosuppressants, gemfibrozil, niacin, erythromycin.",
+   "contraindications": "Liver disease; pregnancy (current labeling weighs risk and benefit). Relative: concomitant use of cyclosporine or other immunosuppressants, gemfibrozil, niacin, erythromycin.",
    "adverse": "Headache, sleep disturbance, fatigue, gastrointestinal upset, flu-like symptoms; raised liver enzymes (0.5-2.5%); myalgia and myopathy (0.2-0.4%); rare rhabdomyolysis.",
    "warning": "Muscle toxicity: stop the statin. Use fibrates cautiously with statins. Interactions via CYP3A4 (cytochrome P450 3A4) inhibitors: verapamil, amiodarone, grapefruit juice; also niacin and fibrates.",
    "warning_kind": "special",
@@ -5229,21 +6426,6 @@
      "indications",
      65,
      "estimated 10-year ASCVD risk >7.5%"
-    ],
-    [
-     "contraindications",
-     23,
-     "Hepatic disease"
-    ],
-    [
-     "contraindications",
-     23,
-     "Pregnancy"
-    ],
-    [
-     "contraindications",
-     23,
-     "concomitant use of cyclosporin or other immunosuppressants, gemfibrozil, niacin, and erythromycin"
     ],
     [
      "adverse",
@@ -5349,7 +6531,54 @@
      "warning",
      24,
      "Niacin"
+    ],
+    [
+     "contraindications",
+     23,
+     "Contraindications Hepatic disease"
+    ],
+    [
+     "contraindications",
+     23,
+     "Hepatic disease Pregnancy"
+    ],
+    [
+     "contraindications",
+     23,
+     "Relative CI: concomitant use of cyclosporin or other immunosuppressants, gemfibrozil, niacin, and erythromycin"
     ]
+   ],
+   "contra_added": [
+    "(current labeling weighs risk and benefit)"
+   ],
+   "contra_claims": [
+    {
+     "text": "Liver disease",
+     "proof": [
+      [
+       23,
+       "Contraindications Hepatic disease"
+      ]
+     ]
+    },
+    {
+     "text": "pregnancy",
+     "proof": [
+      [
+       23,
+       "Hepatic disease Pregnancy"
+      ]
+     ]
+    },
+    {
+     "text": "Relative: concomitant use of cyclosporine or other immunosuppressants, gemfibrozil, niacin, erythromycin",
+     "proof": [
+      [
+       23,
+       "Relative CI: concomitant use of cyclosporin or other immunosuppressants, gemfibrozil, niacin, and erythromycin"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5360,7 +6589,7 @@
    ],
    "moa": "Selectively inhibits intestinal cholesterol absorption: less cholesterol reaches the liver, so more hepatic LDL (low-density lipoprotein) receptors and less cholesterol in atherogenic particles.",
    "indications": "Lowers low-density lipoprotein (LDL) cholesterol; adds another 15-20% of LDL lowering when added to a statin. Taken with or without meals.",
-   "contraindications": "None listed. Interactions: fibrates (gallstones, myopathy); bile acid sequestrants and antacids lower levels; cyclosporine raises levels.",
+   "contraindications": "None listed. Interactions: fibrates (gallstones, myopathy); bile acid sequestrants may lower levels and antacids lower levels; cyclosporine raises levels.",
    "adverse": "Gastrointestinal effects; raised liver transaminases when given with statins.",
    "warning": "Fibrates with ezetimibe raise the risk of cholelithiasis (gallstones) and myopathy.",
    "warning_kind": "special",
@@ -5388,21 +6617,6 @@
      "with or without meals"
     ],
     [
-     "contraindications",
-     31,
-     "Bile acid sequestrants may decrease concentrations"
-    ],
-    [
-     "contraindications",
-     31,
-     "Antacids decrease concentrations"
-    ],
-    [
-     "contraindications",
-     31,
-     "Cyclosporine increase concentrations"
-    ],
-    [
      "adverse",
      30,
      "GI-related effects"
@@ -5421,7 +6635,61 @@
      "generics",
      28,
      "ezetimibe"
+    ],
+    [
+     "contraindications",
+     31,
+     "Fibric acid derivatives- increase hepatobiliary side effects leading to cholelithiasis and myopathies"
+    ],
+    [
+     "contraindications",
+     31,
+     "Bile acid sequestrants may decrease concentrations"
+    ],
+    [
+     "contraindications",
+     31,
+     "Antacids decrease concentrations"
+    ],
+    [
+     "contraindications",
+     31,
+     "Cyclosporine increase concentrations"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Interactions: fibrates (gallstones, myopathy)",
+     "proof": [
+      [
+       31,
+       "Fibric acid derivatives- increase hepatobiliary side effects leading to cholelithiasis and myopathies"
+      ]
+     ]
+    },
+    {
+     "text": "bile acid sequestrants may lower levels and antacids lower levels",
+     "proof": [
+      [
+       31,
+       "Bile acid sequestrants may decrease concentrations"
+      ],
+      [
+       31,
+       "Antacids decrease concentrations"
+      ]
+     ]
+    },
+    {
+     "text": "cyclosporine raises levels",
+     "proof": [
+      [
+       31,
+       "Cyclosporine increase concentrations"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5480,21 +6748,6 @@
      "HDL-C ↑ 10-35%"
     ],
     [
-     "contraindications",
-     37,
-     "Pregnancy"
-    ],
-    [
-     "contraindications",
-     37,
-     "Severe hepatic or renal dysfunction"
-    ],
-    [
-     "contraindications",
-     37,
-     "Existing gall bladder disease"
-    ],
-    [
      "adverse",
      36,
      "nausea"
@@ -5543,7 +6796,52 @@
      "generics",
      33,
      "bezafibrate"
+    ],
+    [
+     "contraindications",
+     37,
+     "Fibrates - Contraindications Pregnancy"
+    ],
+    [
+     "contraindications",
+     37,
+     "Severe hepatic or renal dysfunction"
+    ],
+    [
+     "contraindications",
+     37,
+     "Existing gall bladder disease"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Pregnancy",
+     "proof": [
+      [
+       37,
+       "Fibrates - Contraindications Pregnancy"
+      ]
+     ]
+    },
+    {
+     "text": "severe liver or kidney dysfunction",
+     "proof": [
+      [
+       37,
+       "Severe hepatic or renal dysfunction"
+      ]
+     ]
+    },
+    {
+     "text": "existing gallbladder disease",
+     "proof": [
+      [
+       37,
+       "Existing gall bladder disease"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5605,21 +6903,6 @@
      "Approved for children, adolescence and pregnancy"
     ],
     [
-     "contraindications",
-     48,
-     "Familial dysbetalipoproteinemia (increased TG)"
-    ],
-    [
-     "contraindications",
-     48,
-     "Triglycerides > 400 mg/dL"
-    ],
-    [
-     "contraindications",
-     48,
-     "Triglycerides > 200 mg/dL"
-    ],
-    [
      "adverse",
      46,
      "bloating"
@@ -5678,7 +6961,47 @@
      "generics",
      15,
      "colesevelam"
+    ],
+    [
+     "contraindications",
+     48,
+     "Absolute: Familial dysbetalipoproteinemia (increased TG)"
+    ],
+    [
+     "contraindications",
+     48,
+     "Triglycerides > 400 mg/dL"
+    ],
+    [
+     "contraindications",
+     48,
+     "Relative: Triglycerides > 200 mg/dL"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Absolute: familial dysbetalipoproteinemia; triglycerides above 400 mg/dL",
+     "proof": [
+      [
+       48,
+       "Absolute: Familial dysbetalipoproteinemia (increased TG)"
+      ],
+      [
+       48,
+       "Triglycerides > 400 mg/dL"
+      ]
+     ]
+    },
+    {
+     "text": "Relative: triglycerides above 200 mg/dL",
+     "proof": [
+      [
+       48,
+       "Relative: Triglycerides > 200 mg/dL"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5742,31 +7065,6 @@
      "Inositol hexaniacinate"
     ],
     [
-     "contraindications",
-     56,
-     "chronic liver disease"
-    ],
-    [
-     "contraindications",
-     56,
-     "peptic ulcer disease"
-    ],
-    [
-     "contraindications",
-     56,
-     "h/o symptomatic gout"
-    ],
-    [
-     "contraindications",
-     56,
-     "significant hyperuricemia"
-    ],
-    [
-     "contraindications",
-     56,
-     "diabetes (glucose intolerance)"
-    ],
-    [
      "adverse",
      55,
      "Cutaneous flushing"
@@ -5815,7 +7113,65 @@
      "generics",
      51,
      "inositol"
+    ],
+    [
+     "contraindications",
+     56,
+     "Absolute: chronic liver disease"
+    ],
+    [
+     "contraindications",
+     56,
+     "Relative: peptic ulcer disease"
+    ],
+    [
+     "contraindications",
+     56,
+     "h/o symptomatic gout"
+    ],
+    [
+     "contraindications",
+     56,
+     "significant hyperuricemia"
+    ],
+    [
+     "contraindications",
+     56,
+     "diabetes (glucose intolerance)"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Absolute: chronic liver disease",
+     "proof": [
+      [
+       56,
+       "Absolute: chronic liver disease"
+      ]
+     ]
+    },
+    {
+     "text": "Relative: peptic ulcer disease, symptomatic gout, significant hyperuricemia, diabetes (glucose intolerance)",
+     "proof": [
+      [
+       56,
+       "Relative: peptic ulcer disease"
+      ],
+      [
+       56,
+       "h/o symptomatic gout"
+      ],
+      [
+       56,
+       "significant hyperuricemia"
+      ],
+      [
+       56,
+       "diabetes (glucose intolerance)"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -5878,7 +7234,9 @@
      60,
      "evolocumab"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   },
   {
    "lecture": "L8",
@@ -5892,8 +7250,8 @@
     "labetalol"
    ],
    "moa": "Lower myocardial oxygen demand: decrease heart rate, contractility and systolic wall tension. No effect on oxygen supply.",
-   "indications": "First-line for angina without contraindications, especially with hypertension, anxiety, supraventricular arrhythmias, heart failure or a prior myocardial infarction. In acute coronary syndrome: fewer deaths, smaller infarcts, less sudden cardiac death.",
-   "contraindications": "Heart rate under 60; systolic pressure under 100; atrioventricular block; acute decompensated heart failure. Precautions: reactive airway disease, systolic heart failure, diabetes, peripheral vascular disease. Avoid in variant (Prinzmetal) angina.",
+   "indications": "First-line for angina without contraindications, especially with hypertension, anxiety, supraventricular arrhythmias, heart failure or a prior myocardial infarction. In acute coronary syndrome: given intravenously first, then orally; lower early and late mortality, smaller infarcts, fewer heart failure events and less sudden cardiac death (the course answer; current guidelines favor oral therapy in the first day).",
+   "contraindications": "Heart rate under 60; systolic pressure under 100; atrioventricular block; acute decompensated heart failure. Precautions: reactive airway disease, systolic heart failure, diabetes, peripheral vascular disease. Avoid in variant (Prinzmetal) angina. In diabetes, avoid non-cardioselective agents (course table).",
    "adverse": "Hypotension, bradycardia, hyperglycemia, dyslipidemia; fatigue, sexual dysfunction, nightmares, worsened claudication.",
    "warning": "Avoid rapid discontinuation. FDA (Food and Drug Administration) boxed warning for abrupt cessation: metoprolol, atenolol, propranolol, nadolol (not stated in the lecture). Avoid in variant angina.",
    "warning_kind": "bbw",
@@ -5904,6 +7262,7 @@
     17,
     18,
     19,
+    34,
     39,
     55
    ],
@@ -5940,36 +7299,6 @@
      "reduction in early and late mortality, reduction in infarct size, HF incidence, and sudden cardiac death"
     ],
     [
-     "contraindications",
-     18,
-     "HR < 60 BPM"
-    ],
-    [
-     "contraindications",
-     18,
-     "Systolic BP < 100 mmHg"
-    ],
-    [
-     "contraindications",
-     18,
-     "AV block"
-    ],
-    [
-     "contraindications",
-     18,
-     "Acute decompensated heart failure"
-    ],
-    [
-     "contraindications",
-     18,
-     "Reactive airway disease"
-    ],
-    [
-     "contraindications",
-     39,
-     "Avoid beta blockers"
-    ],
-    [
      "adverse",
      19,
      "Hypotension, bradycardia, hyperglycemia, dyslipidemia"
@@ -5988,11 +7317,6 @@
      "warning",
      39,
      "Avoid beta blockers"
-    ],
-    [
-     "contraindications",
-     8,
-     "Vasospastic or Variant (Prinzmetal) Angina"
     ],
     [
      "generics",
@@ -6023,7 +7347,80 @@
      "generics",
      17,
      "labetalol"
+    ],
+    [
+     "indications",
+     55,
+     "IV followed by PO"
+    ],
+    [
+     "contraindications",
+     18,
+     "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block Acute decompensated heart failure"
+    ],
+    [
+     "contraindications",
+     18,
+     "Precautions Reactive airway disease Systolic heart failure Diabetes Peripheral vascular disease"
+    ],
+    [
+     "contraindications",
+     39,
+     "Avoid beta blockers"
+    ],
+    [
+     "contraindications",
+     8,
+     "Vasospastic or Variant (Prinzmetal) Angina"
+    ],
+    [
+     "contraindications",
+     34,
+     "avoid non-cardioselective beta blocker"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Heart rate under 60; systolic pressure under 100; atrioventricular block; acute decompensated heart failure",
+     "proof": [
+      [
+       18,
+       "Contraindications HR < 60 BPM Systolic BP < 100 mmHg AV block Acute decompensated heart failure"
+      ]
+     ]
+    },
+    {
+     "text": "Precautions: reactive airway disease, systolic heart failure, diabetes, peripheral vascular disease",
+     "proof": [
+      [
+       18,
+       "Precautions Reactive airway disease Systolic heart failure Diabetes Peripheral vascular disease"
+      ]
+     ]
+    },
+    {
+     "text": "Avoid in variant (Prinzmetal) angina",
+     "proof": [
+      [
+       39,
+       "Avoid beta blockers"
+      ],
+      [
+       8,
+       "Vasospastic or Variant (Prinzmetal) Angina"
+      ]
+     ]
+    },
+    {
+     "text": "In diabetes, avoid non-cardioselective agents (course table)",
+     "proof": [
+      [
+       34,
+       "avoid non-cardioselective beta blocker"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6037,8 +7434,8 @@
     "felodipine"
    ],
    "moa": "Lower demand (lower systolic wall tension; non-dihydropyridines also slow the heart and lower contractility) and raise supply (mild dilation at fixed stenoses, relief of vasospasm).",
-   "indications": "Non-dihydropyridines: initial therapy when beta blockers are contraindicated or not tolerated. Dihydropyridines: added to a beta blocker when it alone fails. Chosen for vasospastic angina, severe peripheral vascular disease, asthma, uncontrolled diabetes.",
-   "contraindications": "Systolic pressure under 100. Non-dihydropyridines: heart rate under 60, acute heart failure, ejection fraction under 40%, atrioventricular block. Precaution: a non-dihydropyridine with a beta blocker; CYP3A4 (cytochrome P450 3A4) interactions.",
+   "indications": "Non-dihydropyridines: initial therapy when beta blockers are contraindicated or not tolerated. Dihydropyridines: added to a beta blocker when it alone fails. Chosen for vasospastic angina, severe peripheral vascular disease, asthma, uncontrolled diabetes. Diabetes with no other reason for a beta blocker: a non-dihydropyridine is first line (course table; current practice also accepts a cardioselective beta blocker).",
+   "contraindications": "Systolic pressure under 100. Non-dihydropyridines: heart rate under 60, acute heart failure, ejection fraction under 40%, atrioventricular block. Precaution: a non-dihydropyridine with a beta blocker; CYP3A4 (cytochrome P450 3A4) interactions. After a myocardial infarction the course table says to avoid calcium channel blockers (a beta blocker is first line; current practice allows a non-dihydropyridine if a beta blocker cannot be used).",
    "adverse": "Hypotension; dihydropyridines: headache, flushing, peripheral edema. Counsel on dizziness and constipation.",
    "warning": "Avoid short-acting agents (nifedipine). With left ventricular dysfunction, amlodipine is the only calcium channel blocker used.",
    "warning_kind": "special",
@@ -6085,41 +7482,6 @@
      "indications",
      22,
      "vasospastic angina, severe peripheral vascular disease, asthma, uncontrolled diabetes"
-    ],
-    [
-     "contraindications",
-     23,
-     "Systolic BP < 100 mmHg"
-    ],
-    [
-     "contraindications",
-     23,
-     "HR < 60 BPM (NDHP)"
-    ],
-    [
-     "contraindications",
-     23,
-     "Acute heart failure (NDHP)"
-    ],
-    [
-     "contraindications",
-     23,
-     "Ejection fraction < 40% (NDHP)"
-    ],
-    [
-     "contraindications",
-     23,
-     "AV block"
-    ],
-    [
-     "contraindications",
-     23,
-     "Concurrent beta blocker use (NDHP)"
-    ],
-    [
-     "contraindications",
-     23,
-     "CYP3A4 interactions"
     ],
     [
      "adverse",
@@ -6170,7 +7532,118 @@
      "generics",
      21,
      "felodipine"
+    ],
+    [
+     "indications",
+     34,
+     "Diabetes: first line non-dihydropyridine"
+    ],
+    [
+     "contraindications",
+     23,
+     "Systolic BP < 100 mmHg"
+    ],
+    [
+     "contraindications",
+     23,
+     "HR < 60 BPM (NDHP)"
+    ],
+    [
+     "contraindications",
+     23,
+     "Acute heart failure (NDHP)"
+    ],
+    [
+     "contraindications",
+     23,
+     "Ejection fraction < 40% (NDHP)"
+    ],
+    [
+     "contraindications",
+     23,
+     "AV block"
+    ],
+    [
+     "contraindications",
+     34,
+     "avoid non-dihydropyridines and beta blockers"
+    ],
+    [
+     "contraindications",
+     23,
+     "Concurrent beta blocker use (NDHP)"
+    ],
+    [
+     "contraindications",
+     23,
+     "CYP3A4 interactions"
+    ],
+    [
+     "contraindications",
+     34,
+     "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
     ]
+   ],
+   "contra_added": [
+    "current practice allows a non-dihydropyridine if a beta blocker cannot be used"
+   ],
+   "contra_claims": [
+    {
+     "text": "Systolic pressure under 100",
+     "proof": [
+      [
+       23,
+       "Systolic BP < 100 mmHg"
+      ]
+     ]
+    },
+    {
+     "text": "Non-dihydropyridines: heart rate under 60, acute heart failure, ejection fraction under 40%, atrioventricular block",
+     "proof": [
+      [
+       23,
+       "HR < 60 BPM (NDHP)"
+      ],
+      [
+       23,
+       "Acute heart failure (NDHP)"
+      ],
+      [
+       23,
+       "Ejection fraction < 40% (NDHP)"
+      ],
+      [
+       23,
+       "AV block"
+      ],
+      [
+       34,
+       "avoid non-dihydropyridines and beta blockers"
+      ]
+     ]
+    },
+    {
+     "text": "Precaution: a non-dihydropyridine with a beta blocker; CYP3A4 (cytochrome P450 3A4) interactions",
+     "proof": [
+      [
+       23,
+       "Concurrent beta blocker use (NDHP)"
+      ],
+      [
+       23,
+       "CYP3A4 interactions"
+      ]
+     ]
+    },
+    {
+     "text": "After a myocardial infarction the course table says to avoid calcium channel blockers (a beta blocker is first line",
+     "proof": [
+      [
+       34,
+       "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6183,7 +7656,7 @@
    ],
    "moa": "Nitric oxide raises cyclic guanosine monophosphate and lowers cytosolic calcium: smooth muscle relaxation and vasodilation (lower left ventricular volume). Also dilate coronary arteries, relieve vasospasm, and have antiplatelet effects.",
    "indications": "Sublingual tablet or spray: relieve acute ischemia, prevent effort-induced angina; call for help if no relief 5 minutes after the first dose. Long-acting forms: adjunct, not monotherapy. In acute coronary syndrome: pain relief only, no mortality benefit.",
-   "contraindications": "Phosphodiesterase type 5 inhibitors (sildenafil, tadalafil, vardenafil); aortic valve stenosis; obstructive cardiomyopathy; hypotension.",
+   "contraindications": "Concurrent use of phosphodiesterase type 5 inhibitors (sildenafil, tadalafil, vardenafil); aortic valve stenosis; obstructive cardiomyopathy; hypotension.",
    "adverse": "Headache, flushing, postural hypotension, reflex tachycardia; tachyphylaxis (tolerance), managed with a nitrate-free interval.",
    "warning": "NEVER with sildenafil, tadalafil or vardenafil: hypotension, myocardial infarction or stroke.",
    "warning_kind": "special",
@@ -6256,26 +7729,6 @@
      "no mortality benefit, just relief of chest pain"
     ],
     [
-     "contraindications",
-     33,
-     "Concurrent use of phosphodiesterase inhibitors"
-    ],
-    [
-     "contraindications",
-     33,
-     "Aortic valve stenosis"
-    ],
-    [
-     "contraindications",
-     33,
-     "Obstructive cardiomyopathy"
-    ],
-    [
-     "contraindications",
-     54,
-     "Contraindication – hypotension, PDE inhibitors"
-    ],
-    [
      "adverse",
      31,
      "Headache, flushing, postural hypotension, reflex tachycardia"
@@ -6329,7 +7782,102 @@
      "generics",
      38,
      "NTG"
+    ],
+    [
+     "contraindications",
+     33,
+     "Concurrent use of phosphodiesterase inhibitors"
+    ],
+    [
+     "contraindications",
+     33,
+     "Sildenafil (Viagra®)"
+    ],
+    [
+     "contraindications",
+     33,
+     "Tadalafil (Cialis®)"
+    ],
+    [
+     "contraindications",
+     33,
+     "Vardenafil (Levitra®)"
+    ],
+    [
+     "contraindications",
+     26,
+     "inhibit PDE5"
+    ],
+    [
+     "contraindications",
+     33,
+     "Aortic valve stenosis"
+    ],
+    [
+     "contraindications",
+     33,
+     "Obstructive cardiomyopathy"
+    ],
+    [
+     "contraindications",
+     54,
+     "Contraindication - hypotension, PDE inhibitors"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Concurrent use of phosphodiesterase type 5 inhibitors (sildenafil, tadalafil, vardenafil)",
+     "proof": [
+      [
+       33,
+       "Concurrent use of phosphodiesterase inhibitors"
+      ],
+      [
+       33,
+       "Sildenafil (Viagra®)"
+      ],
+      [
+       33,
+       "Tadalafil (Cialis®)"
+      ],
+      [
+       33,
+       "Vardenafil (Levitra®)"
+      ],
+      [
+       26,
+       "inhibit PDE5"
+      ]
+     ]
+    },
+    {
+     "text": "aortic valve stenosis",
+     "proof": [
+      [
+       33,
+       "Aortic valve stenosis"
+      ]
+     ]
+    },
+    {
+     "text": "obstructive cardiomyopathy",
+     "proof": [
+      [
+       33,
+       "Obstructive cardiomyopathy"
+      ]
+     ]
+    },
+    {
+     "text": "hypotension",
+     "proof": [
+      [
+       54,
+       "Contraindication - hypotension, PDE inhibitors"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6401,27 +7949,6 @@
      "Recommended for patients allergic to aspirin"
     ],
     [
-     "contraindications",
-     53,
-     "Allergy"
-    ],
-    [
-     "contraindications",
-     53,
-     "Recent GI bleed"
-    ],
-    [
-     "contraindications",
-     53,
-     "Recent intracranial hemorrhage"
-    ],
-    [
-     "contraindications",
-     17,
-     "Bleeding disorders",
-     "L5"
-    ],
-    [
      "adverse",
      16,
      "Bleeding, GI, nausea",
@@ -6448,7 +7975,40 @@
      "generics",
      13,
      "clopidogrel"
+    ],
+    [
+     "contraindications",
+     53,
+     "Contraindications Allergy Recent GI bleed Recent intracranial hemorrhage"
+    ],
+    [
+     "contraindications",
+     17,
+     "Contraindications Bleeding disorders",
+     "L5"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Aspirin: allergy; recent gastrointestinal bleeding; recent intracranial hemorrhage",
+     "proof": [
+      [
+       53,
+       "Contraindications Allergy Recent GI bleed Recent intracranial hemorrhage"
+      ]
+     ]
+    },
+    {
+     "text": "bleeding disorders",
+     "proof": [
+      [
+       17,
+       "Contraindications Bleeding disorders",
+       "L5"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6462,7 +8022,7 @@
    ],
    "moa": "Activate conversion of plasminogen to plasmin, which lyses fibrin. Streptokinase forms a 1:1 complex with plasminogen; alteplase, reteplase and tenecteplase act only on fibrin-bound plasminogen.",
    "indications": "ST-elevation myocardial infarction: under 75 years and within 12 hours of symptom onset. Less benefit over 75 years, after 6 hours, or in non-ST-elevation myocardial infarction. Relatively few patients receive them.",
-   "contraindications": "Active bleeding or bleeding disorder; surgery within 10 days; serious gastrointestinal bleeding within 3 months; severe hypertension (diastolic above 110 mmHg); prior stroke or intracranial tumor; aortic dissection; pericarditis; prior streptokinase; pregnancy.",
+   "contraindications": "Active bleeding or bleeding disorder; surgery within 10 days; serious gastrointestinal bleeding within 3 months; severe hypertension (diastolic above 110 mmHg); prior stroke or active intracranial process (tumors); aortic dissection; acute pericarditis; prior streptokinase exposure or allergic reaction; pregnancy.",
    "adverse": "Bleeding (0.5-7%; intracranial hemorrhage 0.4-0.94%); allergic reactions, fever, chills, rash (mainly streptokinase, urokinase); anaphylaxis; ventricular arrhythmias.",
    "warning": "Not recommended in non-ST-elevation acute coronary syndrome: bleeding risk exceeds benefit.",
    "warning_kind": "special",
@@ -6528,51 +8088,6 @@
      "Tenecteplase (TNKase)"
     ],
     [
-     "contraindications",
-     63,
-     "Surgery within 10 days"
-    ],
-    [
-     "contraindications",
-     63,
-     "Serious gastrointestinal bleeding within 3 months"
-    ],
-    [
-     "contraindications",
-     63,
-     "diastolic pressure >110 mm Hg"
-    ],
-    [
-     "contraindications",
-     63,
-     "Active bleeding or hemorrhagic disorder"
-    ],
-    [
-     "contraindications",
-     63,
-     "Previous cerebrovascular accident or active intracranial process (tumors)"
-    ],
-    [
-     "contraindications",
-     63,
-     "Aortic dissection"
-    ],
-    [
-     "contraindications",
-     63,
-     "Acute pericarditis"
-    ],
-    [
-     "contraindications",
-     63,
-     "STK prior exposure or allergic reaction"
-    ],
-    [
-     "contraindications",
-     63,
-     "Pregnancy"
-    ],
-    [
      "adverse",
      62,
      "Bleeding"
@@ -6626,7 +8141,138 @@
      "generics",
      61,
      "tenecteplase"
+    ],
+    [
+     "contraindications",
+     63,
+     "Active bleeding or hemorrhagic disorder"
+    ],
+    [
+     "contraindications",
+     63,
+     "Surgery within 10 days"
+    ],
+    [
+     "contraindications",
+     63,
+     "Serious gastrointestinal bleeding within 3 months"
+    ],
+    [
+     "contraindications",
+     63,
+     "hypertension (diastolic pressure >110 mm Hg)"
+    ],
+    [
+     "contraindications",
+     63,
+     "Previous cerebrovascular accident or active intracranial process (tumors)"
+    ],
+    [
+     "contraindications",
+     63,
+     "Aortic dissection"
+    ],
+    [
+     "contraindications",
+     63,
+     "Acute pericarditis"
+    ],
+    [
+     "contraindications",
+     63,
+     "STK prior exposure or allergic reaction"
+    ],
+    [
+     "contraindications",
+     63,
+     "Pregnancy"
     ]
+   ],
+   "contra_added": [
+    "severe"
+   ],
+   "contra_claims": [
+    {
+     "text": "Active bleeding or bleeding disorder",
+     "proof": [
+      [
+       63,
+       "Active bleeding or hemorrhagic disorder"
+      ]
+     ]
+    },
+    {
+     "text": "surgery within 10 days",
+     "proof": [
+      [
+       63,
+       "Surgery within 10 days"
+      ]
+     ]
+    },
+    {
+     "text": "serious gastrointestinal bleeding within 3 months",
+     "proof": [
+      [
+       63,
+       "Serious gastrointestinal bleeding within 3 months"
+      ]
+     ]
+    },
+    {
+     "text": "hypertension (diastolic above 110 mmHg)",
+     "proof": [
+      [
+       63,
+       "hypertension (diastolic pressure >110 mm Hg)"
+      ]
+     ]
+    },
+    {
+     "text": "prior stroke or active intracranial process (tumors)",
+     "proof": [
+      [
+       63,
+       "Previous cerebrovascular accident or active intracranial process (tumors)"
+      ]
+     ]
+    },
+    {
+     "text": "aortic dissection",
+     "proof": [
+      [
+       63,
+       "Aortic dissection"
+      ]
+     ]
+    },
+    {
+     "text": "acute pericarditis",
+     "proof": [
+      [
+       63,
+       "Acute pericarditis"
+      ]
+     ]
+    },
+    {
+     "text": "prior streptokinase exposure or allergic reaction",
+     "proof": [
+      [
+       63,
+       "STK prior exposure or allergic reaction"
+      ]
+     ]
+    },
+    {
+     "text": "pregnancy",
+     "proof": [
+      [
+       63,
+       "Pregnancy"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6660,16 +8306,6 @@
      "Used in STEMI"
     ],
     [
-     "contraindications",
-     56,
-     "May have increased mortality in UA/NSTEMI"
-    ],
-    [
-     "contraindications",
-     56,
-     "Controversial"
-    ],
-    [
      "adverse",
      56,
      "May cause hypotension, allergy"
@@ -6683,7 +8319,38 @@
      "generics",
      56,
      "morphine"
+    ],
+    [
+     "contraindications",
+     56,
+     "May have increased mortality in UA/NSTEMI"
+    ],
+    [
+     "contraindications",
+     56,
+     "Controversial"
     ]
+   ],
+   "contra_added": [],
+   "contra_claims": [
+    {
+     "text": "Caution: may increase mortality in unstable angina and non-ST-elevation myocardial infarction",
+     "proof": [
+      [
+       56,
+       "May have increased mortality in UA/NSTEMI"
+      ]
+     ]
+    },
+    {
+     "text": "use is controversial",
+     "proof": [
+      [
+       56,
+       "Controversial"
+      ]
+     ]
+    }
    ]
   },
   {
@@ -6746,7 +8413,9 @@
      66,
      "heparin"
     ]
-   ]
+   ],
+   "contra_added": [],
+   "contra_claims": []
   }
  ]
 }

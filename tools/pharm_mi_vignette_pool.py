@@ -16,8 +16,9 @@ SCOPE. Source: Myocardial Ischemia Drugs.pptx. No doses or amounts (timings and 
 Nothing is built on the descoped slide claims: fibrin affinity of reteplase/tenecteplase, urokinase as an
 antigenic agent, the list of factors plasmin lyses, the age / hour / pressure cut-offs, or trial
 percentages. The nitroglycerin five-minute instruction appears only as a fact in a stem, and the key
-is the ACTION. Morphine is asked once. No question depends on an antianginal's comorbidity cell that is
-contested (prior infarction -> avoid calcium channel blockers; diabetes -> non-dihydropyridine).
+is the ACTION. Morphine is asked once. No question in THIS pool depends on an antianginal's comorbidity cell
+that is contested (prior infarction -> avoid calcium channel blockers; diabetes -> non-dihydropyridine); the
+vignettes that DO (keyed as the course teaches, by Jaxon's decision of 2026-09-30) are in pharm_mi_pool_course.py.
 
 `lead` is bookkeeping for the distribution report; the partitioner strips it from the sets file.
 """

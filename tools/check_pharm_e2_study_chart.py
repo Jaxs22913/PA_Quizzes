@@ -16,6 +16,10 @@ adverse effects, special warning). Every row must:
   * carry no milligram dose (Dr. Wood: doses are not tested; allow_dose is for the one 4 gram limit he told us to know),
     no abbreviation without its full term in the same cell, no British spelling, no words naming the source, no letter
     references;
+  * split the contraindications cell into statements: every statement is either listed in `contra_claims` (text + slide
+    proofs, which must equal the row's contraindications verify entries) or is an `contra_added` substring (text that is NOT
+    on the slides; the page and the PDF underline it). Nothing else may remain in the cell except the placeholders "None
+    listed", "None listed as such" and "Not listed as a contraindication", and punctuation;
   * flag any black box warning the slides do not mention with the sentence "FDA (Food and Drug Administration) boxed
     warning" and boxed_not_on_slides, exactly as the other Exam 2 reference pages do.
 
@@ -40,6 +44,8 @@ BRIT = re.compile(r"\b(colour|flavour|oedema|anaemia|haemoglobin|paediatric|foet
 TOKEN = re.compile(r"\b[A-Z]{2,}[A-Z0-9]*\b")
 TOKEN_OK = {"QT", "ST", "II", "III", "IV", "NOT", "NEVER", "AND", "ONLY", "P450"}   # ST/QT are ECG labels (like QRS); P450 sits inside "cytochrome P450"; the rest is emphasis
 STOPWORDS = {"with", "plus", "and", "the"}
+PLACEHOLDER = re.compile(r"None listed as such|None listed|Not listed as a contraindication")
+PUNCT_ONLY = re.compile(r"^[\s.;:,()\-]*$")
 
 
 def plain(s):
@@ -66,6 +72,41 @@ def unexpanded(cell):
     return sorted(set(bad))
 
 
+def contra_spans(r):
+    """(problems, claim_spans, added_spans) for the contraindications cell of one row."""
+    txt = r.get("contraindications") or ""
+    probs, claims, added = [], [], []
+    spans = []
+    for a in r.get("contra_added") or []:
+        if not isinstance(a, str) or not a:
+            probs.append("contra_added entry %r is not text" % (a,)); continue
+        n = txt.count(a)
+        if n != 1:
+            probs.append("contra_added %r occurs %d times in the cell (must be exactly once)" % (a, n)); continue
+        i = txt.index(a); spans.append((i, i + len(a), "added", a)); added.append(a)
+    for cl in r.get("contra_claims") or []:
+        t = cl.get("text") if isinstance(cl, dict) else None
+        if not t:
+            probs.append("bad contra_claims entry %r" % (cl,)); continue
+        n = txt.count(t)
+        if n != 1:
+            probs.append("claim %r occurs %d times in the cell (must be exactly once)" % (t, n)); continue
+        i = txt.index(t); spans.append((i, i + len(t), "claim", t)); claims.append(t)
+    spans.sort()
+    for x, y in zip(spans, spans[1:]):
+        if y[0] < x[1]:
+            probs.append("overlap between %s %r and %s %r (an underlined text must never also be a proved claim)" % (x[2], x[3], y[2], y[3]))
+    rest, pos = [], 0
+    for a, b, _, _ in spans:
+        if a >= pos:
+            rest.append(txt[pos:a]); pos = max(pos, b)
+    rest.append(txt[pos:])
+    left = PLACEHOLDER.sub("", " ".join(rest))
+    if not PUNCT_ONLY.match(left):
+        probs.append("contraindications text not covered by a claim, an underlined substring or a placeholder: %r" % left.strip())
+    return probs, claims, added
+
+
 def check(verbose=True):
     d = json.load(open(DATA, encoding="utf-8"))
     extra = d.get("extra_text", {})
@@ -73,6 +114,8 @@ def check(verbose=True):
     fails, subs = [], 0
     nslide = {l: L.slide_count(l) for l in L.LECTURES}
     per, short, bbw = {}, [], 0
+    nclaims = nadded = 0
+    per_c = {}
     for i, r in enumerate(rows):
         lab = "%s #%d %s" % (r.get("lecture"), i + 1, (r.get("class") or "?")[:46])
         def F(msg):
@@ -130,6 +173,36 @@ def check(verbose=True):
                     F("%s is declared absent but does not start None listed / Not given" % f)
             elif not have.get(f) and not (f == "warning" and r.get("warning_kind") == "bbw" and r.get("boxed_not_on_slides")):
                 F("cell %s has no verify proof" % f)
+        # ---- contraindications: every statement proved (claims) or underlined (contra_added)
+        for k in ("contra_added", "contra_claims"):
+            if not isinstance(r.get(k), list):
+                F("missing list field %s" % k)
+        probs, _cl, _ad = contra_spans(r)
+        for pb in probs:
+            F("contraindications: " + pb)
+        nclaims += len(_cl); nadded += len(_ad)
+        per_c[lec] = per_c.get(lec, (0, 0)); per_c[lec] = (per_c[lec][0] + len(_cl), per_c[lec][1] + len(_ad))
+        proof_set = set()
+        for cl in r.get("contra_claims") or []:
+            if not isinstance(cl, dict) or not cl.get("proof"):
+                F("claim %r has no slide proof" % (cl.get("text") if isinstance(cl, dict) else cl,)); continue
+            for pr in cl["proof"]:
+                if not (isinstance(pr, list) and len(pr) in (2, 3)):
+                    F("bad claim proof %r" % (pr,)); continue
+                pl = pr[2] if len(pr) == 3 else lec
+                if pl not in L.LECTURES or not isinstance(pr[0], int) or not 1 <= pr[0] <= nslide[pl]:
+                    F("claim proof slide %r not in %s deck" % (pr[0], pl)); continue
+                if L.norm(pr[1]) not in slide_body(pl, pr[0], extra):
+                    F("CLAIM %r NOT ON %s SLIDE %d: %r" % (cl["text"], pl, pr[0], pr[1]))
+                proof_set.add(("contraindications", pr[0], pr[1]) + ((pl,) if len(pr) == 3 else ()))
+        verify_set = {tuple(v) for v in (r.get("verify") or []) if v and v[0] == "contraindications"}
+        if verify_set != proof_set:
+            F("contraindications verify entries must equal the union of the claim proofs (an underlined statement can never carry a slide proof): extra %s, missing %s"
+              % (sorted(verify_set - proof_set)[:2], sorted(proof_set - verify_set)[:2]))
+        for a in r.get("contra_added") or []:
+            core = L.norm(a.strip("() "))
+            if len(core.split()) >= 3 and any(core in slide_body(lec, s2, extra) for s2 in range(1, nslide[lec] + 1)):
+                F("underlined text %r is actually on a slide of its lecture" % a)
         # ---- generics on the cited slides
         texts = " ".join(slide_body(lec, s, extra) for s in slides) + " " + " ".join(slide_body(vl, s, extra) for vl, s in cross)
         for g in gen:
@@ -173,6 +246,8 @@ def check(verbose=True):
               % (len(rows), " ".join("%s=%d" % (k, per[k]) for k in sorted(per)), subs, bbw, len(short)))
         for lab, n in short:
             print("    only %d generic(s): %s" % (n, lab))
+        print("contraindication statements proved: %d   underlined (not in the PowerPoint): %d   per lecture (proved/underlined): %s"
+              % (nclaims, nadded, " ".join("%s=%d/%d" % (k, v[0], v[1]) for k, v in sorted(per_c.items()))))
         print("OK" if not fails else "FAILED %d" % len(fails))
         for lab, why in fails[:80]:
             print("    [%s] %s" % (lab, why))

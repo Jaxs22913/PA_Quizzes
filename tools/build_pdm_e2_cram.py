@@ -186,6 +186,14 @@ topics = [
    ["Clot vs breakdown", "Thrombin = clot generation; plasmin = clot breakdown."],
    ["Other fibrinolysis tests", "Euglobulin clot lysis time; alpha-2 antiplasmin and plasminogen activator inhibitor 1 assays."],
  ]},
+ {"id": "coag-memaid", "label": "Memory Aid: The Wall-Building Crew", "color": "#1f5566", "rows": [
+   ["A story, not a fact", "The lecturer's own picture: platelets are the BRICKS, clotting factors the MORTAR. A vessel is a flood wall; bleeding is a breach; hemostasis is a repair crew against a demolition crew. Full story in guide 10.0, with where it breaks."],
+   ["Bricks (primary hemostasis)", "Platelets = bricks. von Willebrand factor = scaffolding hooks that bolt bricks to the bare wall. Glycoprotein IIb/IIIa and fibrinogen = clips between bricks. Prostacyclin = non-stick coating on healthy wall. Too few bricks = bleeding tiers."],
+   ["Mortar crew (secondary hemostasis)", "Factors make the mortar: the workers that mix it (prothrombin comes from the liver); vitamin K licenses II, VII, IX, X (warfarin revokes it). Tissue factor + VII = outside alarm (PT). XII, XI, IX, VIII = inside chain (aPTT). X with V = shared foreman. Thrombin = master mixer; fibrinogen = powder; fibrin = wet mortar; XIII = hardener."],
+   ["Brakes and saboteurs", "Antithrombin III, protein C, protein S = safety inspectors (deficient = clots; low in DIC). Heparin and dabigatran = saboteurs at the mixers (aPTT and thrombin time up). Mixing study: spare crew corrects = a worker is missing; no correction = a saboteur."],
+   ["Demolition crew (fibrinolysis)", "Plasminogen waits, tissue plasminogen activator calls it out, plasmin tears down hardened mortar. FIBRIN DEGRADATION PRODUCTS = rubble. D-DIMER = rubble from HARDENED mortar only (thrombin + XIII + plasmin): it proves a wall was built and torn down, never WHICH wall, so a normal one helps exclude thrombosis."],
+   ["Disseminated intravascular coagulation", "Both crews run wild everywhere: bricks used up (platelets down), powder used up (fibrinogen down), mortar slow (PT and aPTT up), rubble everywhere (D-dimer up). Nothing is normal."],
+ ]},
  {"id": "coag-patterns", "label": "Reading the Patterns", "color": "#1f5566", "rows": [
    ["Start here", "Bleeding workup: blood count with smear, PT/INR, aPTT, fibrinogen. INTERPRET BY THE PT/aPTT PATTERN FIRST."],
    ["★ Where to begin", "An abnormal PTT means CLOTTING FACTORS (secondary hemostasis), never platelets. Normal PT and aPTT with bleeding means think PLATELETS (function, von Willebrand). Bleeding and clotting use the SAME tests; the INR places a patient on the clot-to-bleed spectrum."],
@@ -213,7 +221,7 @@ topics = [
    ["Five screening tests", "Platelet count/size/shape, bleeding time, aPTT, PT, fibrinogen. Then factor assays and fibrinolysis tests."],
    ["Bleeding workup", "Blood count with smear, PT/INR, aPTT, fibrinogen: the FACTOR AND PLATELET screens."],
    ["Thrombotic workup", "PT, aPTT, D-DIMER (thrombin-generation markers); most abnormal in DIC. PT and D-dimer are independent risk factors for arterial thrombosis."],
-   ["Hypercoagulable testing", "Primary causes: antithrombin III, protein C, protein S, factor XII; fibrinolytic mechanisms. Tests: anticoagulant factors (incl. LUPUS ANTICOAGULANT), fibrinogen, PT, aPTT, thrombin time."],
+   ["Hypercoagulable testing", "Primary causes: antithrombin III, protein C, protein S (the slide also lists factor XII, which is not an established thrombophilia); fibrinolytic mechanisms. Tests: anticoagulant factors (incl. LUPUS ANTICOAGULANT), fibrinogen, PT, aPTT, thrombin time."],
    ["Inherited bleeding, screens normal", "Skin bruising, petechiae, mucosal = platelet disorder or mild vWD · hemarthroses/deep hematoma = fibrinolytic inhibitor deficiency (euglobulin clot lysis time) · umbilical stump bleeding = FACTOR XIII."],
    ["Inherited bleeding, screens prolonged", "PT only = VII. aPTT only = VIII (hemophilia A), IX (hemophilia B), XI, severe von Willebrand disease. Both = X, V, II (normal thrombin time) or fibrinogen (prolonged thrombin time). Bleeding into joints and muscles = factor deficiency."],
  ]},

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #4e8a76; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #b8862f; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDM I Exam 2 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#2f5d50; --indigo:#4e8a76; --gold:#b8862f; --ice:#eef5f1;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#2f5d50;--gold-l:#b8862f;--indigo-l:#2f5d50;--navy:#88b8a9;--indigo:#5c9883;--gold:#b8862f;--ice:#052a20;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#5c9883;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#2f5d50;--indigo-t:#44806d;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Principles of Diagnostic Medicine I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 2 &middot; Lectures 7&ndash;10 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all four lectures of the Exam 2 block, in exam proportions rather than at random: <b>each lecture is two scheduled hours, so each contributes fifteen questions to every form</b>. The lead-ins are spread across what a test shows, which test to order, how to read a result, why a finding happens, and the limits of a study, and every form carries all of them. About a quarter of the questions are not in the topic quizzes, so these forms are worth working even after those. <b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. <b>These forms cover the four LECTURES.</b> The exam also covers Lab 2, for which no material has been handed out; when it is, it gets folded in and these are rebuilt. <b>You are not expected to recall reference ranges</b> &mdash; where a value matters, its scale is given in the question. Four options, A&ndash;D, and every wrong choice gets its own explanation. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Electrocardiography</span><span class="chip">Cardiac imaging &amp; vascular studies</span><span class="chip">Cardiac biomarkers &amp; lipid testing</span><span class="chip">Coagulation &amp; hemostasis testing</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Risk assessment", "io": "Discuss the use of lipid testing for cardiovascular risk assessment", "q": "A 55-year-old's lipid values are entered into a cardiovascular risk equation. What does that step produce?", "opts": [["A diagnosis of acute infarction", "A risk equation estimates future risk; acute infarction is diagnosed with troponin and the clinical picture."], ["A 10-year risk estimate", "Correct. Lipid values feed 10-year risk estimation, with the PREVENT (Predicting Risk of cardiovascular disease EVENTs) equations in the current guideline, and the estimate then drives treatment intensity."], ["A measured LDL-C value", "LDL-C (low-density lipoprotein cholesterol) is an input, usually calculated; the equation's output is risk."], ["A lifetime lipoprotein(a) level", "Lipoprotein(a) is measured once in the lab; it is not produced by a risk equation."]], "c": 1, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 46"}, {"topic": "Troponin versus creatine kinase", "io": "Compare and contrast cardiac biomarkers: Creatine kinase, Cardiac troponins, BNP, hs-CRP", "q": "A 55-year-old presents two days after an episode of chest pain. Why is troponin preferred over CK-MB (creatine kinase muscle-brain isoenzyme)?", "opts": [["It rises later and clears more quickly", "The reverse: troponin rises sooner and remains elevated longer than CK-MB."], ["It is also raised by skeletal muscle injury", "Lack of cardiac specificity is creatine kinase's weakness. Troponin has very high specificity for myocardial injury."], ["It is cheaper and needs no clinical context", "Cost is not the stated advantage, and troponin always needs clinical context; a single value out of context is a classic trap."], ["It rises sooner and stays elevated longer", "Correct. That expands the window for diagnosis and treatment, which matters for a patient presenting late."]], "c": 3, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 12"}, {"topic": "Cephalization", "io": "Identify common abnormal cardiovascular imaging findings", "q": "What is cephalization on a chest radiograph?", "opts": [["Fluid tracking into the interlobar fissures", "That would be described as effusion or fissural fluid rather than cephalization."], ["The trachea deviating toward the apex", "Tracheal deviation is a different sign entirely. Cephalization is enlargement of the upper zone vessels."], ["Upper zone vessels becoming larger", "Correct. Flow redistributes upward, which is why the sign sits in the lungs while the problem is in the heart."], ["Calcification of the aortic arch", "Great vessel calcification is listed separately from cephalization."]], "c": 2, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 9"}, {"topic": "Lipoprotein(a)", "io": "Discuss indications for ordering a lipid profile", "q": "A 35-year-old has lipoprotein(a) measured for the first time. How often does it generally need measuring?", "opts": [["Every year", "Annual repetition adds nothing for a value that is largely genetic and stable across life."], ["Every 5 years", "Five-yearly repetition is the adult screening interval for the standard lipid panel, not for lipoprotein(a)."], ["Once in a lifetime", "Correct. It is more than 90% genetically determined and stable over life, and needs no fasting, so a single measurement generally suffices."], ["After every statin change", "Statins do not lower lipoprotein(a), so rechecking it with each statin change would not guide therapy."]], "c": 2, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 38"}, {"topic": "Refractory periods", "io": "Define absolute and relative refractory periods", "q": "What distinguishes the relative from the absolute refractory period?", "opts": [["In the relative period no stimulus of any strength will produce a response", "That describes the absolute period; the relative one can be overcome."], ["In the relative period a sufficiently strong stimulus can produce a response", "Correct. It is the dangerous window: the cell is excitable again but not yet fully recovered, so a stimulus arriving there can start something abnormal."], ["The relative period occurs before the absolute period", "It runs from the middle to the end of phase three, after the absolute period."], ["The relative period occupies the whole of phase 4", "Phase four is the resting state, in which the cell responds normally."]], "c": 1, "cite": "Principles of Electrocardiography.pptx, Slide 11"}, {"topic": "Reading a panel", "io": "Analyze a lipid profile", "q": "A 44-year-old asks what the normal LDL-C (low-density lipoprotein cholesterol) is. What is the accurate answer?", "opts": [["Below 200 mg/dL for everyone", "Below 200 mg/dL is the desirable total cholesterol, not an LDL-C goal, and LDL-C goals vary by risk."], ["Below 150 mg/dL for everyone", "Below 150 mg/dL is the desirable triglyceride level; LDL-C has risk-based goals instead."], ["The goal depends on her risk tier", "Correct. Adult LDL-C and non-HDL-C have no single normal value; the goal depends on the patient's atherosclerotic risk tier, whereas triglyceride, apoB (apolipoprotein B) and lipoprotein(a) thresholds are more fixed."], ["Any value while HDL-C is high", "A high HDL-C (high-density lipoprotein cholesterol) does not cancel LDL-C; HDL-C is not even a treatment target."]], "c": 2, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 40"}, {"topic": "Cardiothoracic ratio", "io": "Measure the cardiothoracic ratio to evaluate cardiac enlargement", "q": "A properly performed posteroanterior chest radiograph shows the cardiac silhouette occupying 58 percent of the internal thoracic diameter. What does that suggest?", "opts": [["A normal heart size", "A normal ratio sits below about one half of the internal thoracic diameter, and this measurement is above it."], ["Pulmonary hypertension without cardiac enlargement", "The ratio measures the cardiac silhouette rather than the pulmonary circulation."], ["Cardiomegaly", "Correct. The silhouette should normally occupy no more than about half the internal thoracic diameter, so this exceeds it."], ["A pericardial effusion specifically", "An effusion can enlarge the silhouette, but the ratio identifies enlargement rather than its cause."]], "c": 2, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 8"}, {"topic": "Cardiovascular magnetic resonance", "io": "Discuss indications, advantages, and limitations of cardiac MRI", "q": "What does cardiovascular magnetic resonance map to build its three-dimensional images?", "opts": [["Iodinated contrast pooling in vessels", "Magnetic resonance needs no iodinated contrast, which is one of its advantages; the image comes from hydrogen atoms in the tissue itself."], ["Reflected high-frequency sound pulses", "Reflected sound forms an ultrasound or echocardiographic image; magnetic resonance maps hydrogen atoms using magnetic fields and radiofrequency."], ["Gamma rays emitted by an injected tracer", "Gamma emission from a radioactive tracer forms a nuclear perfusion image; magnetic resonance uses no radioactive tracer and no ionizing radiation, only hydrogen atoms in the tissue."], ["Hydrogen atoms", "Correct. Strong magnetic fields and radiofrequency pulses are used to map hydrogen atoms, giving very detailed anatomy of the heart and great vessels."]], "c": 3, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 54"}, {"topic": "Nuclear cardiology", "io": "Discuss indications, advantages, and limitations of nuclear cardiology studies", "q": "How is the heart stressed for a nuclear perfusion study in a patient who cannot exercise?", "opts": [["Pharmacologically, with an agent such as adenosine", "Correct. The stress can be produced by exercise or by drug, and the imaging is the same either way."], ["By transesophageal pacing", "Pacing is not the described method; pharmacological stress with an agent such as adenosine is."], ["By cold pressor testing", "Not among the described methods. Pharmacological stress, with an agent such as adenosine, is used instead."], ["The study cannot be performed without exercise", "Pharmacological stress exists precisely so that it can be performed without exercise."]], "c": 0, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 47"}, {"topic": "Cardiothoracic ratio", "io": "Measure the cardiothoracic ratio to evaluate cardiac enlargement", "q": "Why does the cardiothoracic ratio require a properly performed posteroanterior film?", "opts": [["Only a posteroanterior film shows the pulmonary vasculature", "Vasculature is visible on other projections; it is the silhouette measurement that depends on projection."], ["Projection alters the apparent size of the cardiac silhouette", "Correct. A ratio measured off the wrong projection is a measurement of the technique rather than of the heart."], ["Contrast is required and is only given for posteroanterior films", "No contrast is involved in measuring the ratio; it is the projection that alters the apparent silhouette size."], ["The ratio can only be calculated with electrocardiographic gating", "Gating belongs to cardiac computed tomography rather than to plain radiography."]], "c": 1, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 8"}, {"topic": "Systematic approach", "io": "Determine heart rate using an electrocardiogram", "q": "Which relationship is checked when assessing P waves on a strip?", "opts": [["Whether there is a P wave for every QRS complex and a QRS for every P wave", "Correct. It is a two-way check, and each direction fails in a different way, which is what makes the blocks distinguishable."], ["Whether the P wave is taller than the T wave", "Relative amplitude is not the check; it is whether each P has a QRS and each QRS a P."], ["Whether the P wave falls within the QT interval", "The QT interval covers ventricular activity and does not contain the P wave."], ["Whether the P wave is visible in all twelve leads", "The described check concerns the relationship with the QRS rather than visibility across leads."]], "c": 0, "cite": "Principles of Electrocardiography.pptx, Slide 46"}, {"topic": "Phase 4", "io": "Describe action potentials and impulse conduction through the cardiac conduction system", "q": "What is the ionic arrangement during phase 4, the resting state?", "opts": [["More sodium inside the cell, with potassium outside", "The arrangement is the other way round: potassium is the ion held inside at rest."], ["Equal concentrations of all ions across the membrane", "An equal distribution would leave no voltage across the membrane, and the resting cell holds a substantial one."], ["Calcium inside the cell with potassium outside", "Calcium sits outside at rest and enters later, during the plateau."], ["More potassium inside the cell", "Correct. That separation is the stored charge the cell spends when it fires, and restoring it is what the later phases achieve. With sodium and calcium outside."]], "c": 3, "cite": "Principles of Electrocardiography.pptx, Slide 6"}, {"topic": "Cardiac computed tomography", "io": "Discuss indications, advantages, and limitations of cardiac CT", "q": "Which is an indication for cardiac computed tomography rather than the angiographic study?", "opts": [["Detecting and excluding coronary stenosis", "Stenosis detection is the indication for the angiographic study."], ["Assessing exercise capacity", "Exercise capacity is assessed by stress testing rather than by cardiac computed tomography."], ["Evaluating deep venous thrombosis", "Deep vein thrombosis is assessed by vascular ultrasound rather than by cardiac computed tomography."], ["Pre-operative planning before cardiac surgery", "Correct, alongside calcium deposits, coronary anatomical anomalies and congenital disease, and it is usually done immediately before the angiographic study. Particularly valvular and great vessel procedures."]], "c": 3, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 43"}, {"topic": "Echocardiographic stress test", "io": "Discuss indications, advantages, and limitations of stress testing", "q": "What is the echocardiogram looking for after exercise, and why must it be obtained quickly?", "opts": [["Valve gradients, which take time to develop", "The study looks for induced wall motion abnormality rather than valve gradients."], ["Pericardial fluid, which accumulates after exertion", "Pericardial fluid is not what the post-exercise images are looking for."], ["Coronary calcium, which is best seen at high heart rates", "Calcium is assessed by computed tomography and is unrelated to heart rate."], ["Abnormal left ventricular wall motion induced by exercise", "Correct. The finding is transient, so the patient is asked to dismount quickly and the heart is imaged before it settles. Which resolves as the heart recovers."]], "c": 3, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 37"}, {"topic": "Indications", "io": "Discuss indications for ordering coagulation studies", "q": "A 72-year-old woman takes a direct oral anticoagulant and has a normal prothrombin time and partial thromboplastin time. What does this mean for her bleeding risk?", "opts": [["Bleeding risk is excluded", "Normal screening times do not remove the bleeding risk from these drugs."], ["Routine level monitoring is required", "Routine monitoring of direct oral anticoagulants is not required."], ["The drug has no anticoagulant effect", "These drugs can be fully active while leaving the prothrombin time and partial thromboplastin time normal."], ["Bleeding risk is still increased", "Correct. Most direct oral anticoagulants may not derange the prothrombin time or partial thromboplastin time yet still increase bleeding risk, and routine monitoring is not required."]], "c": 3, "cite": "Coagulation Studies 2026.pptx, Slide 23"}, {"topic": "Workups", "io": "Compare and contrast laboratory studies used to evaluate bleeding and thrombotic disorders", "q": "A 29-year-old woman with recurrent thrombosis is evaluated for a hypercoagulable state. Which deficiency is a primary cause tested?", "opts": [["Hemophilia A", "Hemophilia A is a clotting factor deficiency that causes bleeding, not a hypercoagulable state."], ["Protein C deficiency", "Correct. Primary hypercoagulable causes include deficiencies of antithrombin III, protein C and protein S, along with abnormal fibrinolytic mechanisms."], ["Immune thrombocytopenia", "Immune thrombocytopenia lowers the platelet count, a bleeding problem."], ["Factor VII deficiency", "Factor VII deficiency impairs clotting and causes bleeding, so it is not a hypercoagulable cause."]], "c": 1, "cite": "Coagulation Studies 2026.pptx, Slide 10"}, {"topic": "Lipids and lipoproteins", "io": "Compare and contrast lipids and lipoproteins involved in atherosclerotic disease", "q": "A 48-year-old asks why cholesterol travels in the blood inside particles. What is the reason?", "opts": [["Cholesterol and triglycerides are insoluble", "Correct. The major lipids, cholesterol and triglycerides, are insoluble in plasma, so they travel packaged inside lipoproteins."], ["Cholesterol is broken down by plasma enzymes", "The reason is solubility, not protection from enzymes; lipoprotein lipase acts on triglycerides carried in the particles."], ["Particles let the kidney filter cholesterol", "Lipoproteins are not a route for renal filtration; LDL (low-density lipoprotein) is cleared by receptors on hepatocytes."], ["Free cholesterol would raise the troponin", "Troponin is a myocyte injury marker and has nothing to do with how lipids are carried."]], "c": 0, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 32"}, {"topic": "Workups", "io": "Compare and contrast laboratory studies used to evaluate bleeding and thrombotic disorders", "q": "A 36-year-old woman has easy bruising and bleeding gums. Which initial set of studies is appropriate?", "opts": [["Prothrombin time, activated partial thromboplastin time and D-dimer", "That is the thrombotic workup. A bleeding patient needs the platelet count and smear and fibrinogen instead of D-dimer."], ["D-dimer and fibrin monomers only", "These markers of clot formation and breakdown do not screen platelets or coagulation factors."], ["Blood count with smear, clotting times and fibrinogen", "Correct. The bleeding workup is a blood count with differential and peripheral smear, prothrombin time with international normalized ratio, activated partial thromboplastin time and fibrinogen."], ["Bleeding time alone", "One test cannot screen every cause of bleeding, and platelets, factors and fibrinogen all need evaluating."]], "c": 2, "cite": "Coagulation Studies 2026.pptx, Slide 31"}, {"topic": "S wave", "io": "Measure and interpret the intervals, segments and waves of the cardiac cycle", "q": "What must a deflection do to count as a true S wave?", "opts": [["Follow the T wave", "The S wave follows the R wave, well before the T wave; what defines it is crossing the baseline."], ["Exceed one small box in amplitude", "The defining requirement is crossing the baseline rather than reaching an amplitude."], ["Extend below the baseline", "Correct. If it does not, it is called an S wave pattern instead, which is a distinction of naming that matters when describing a tracing precisely."], ["Appear in every lead", "Not all three QRS waves are present in every lead or every rhythm."]], "c": 2, "cite": "Principles of Electrocardiography.pptx, Slide 37"}, {"topic": "Contiguous leads", "io": "Describe the fundamental principles of electrocardiography", "q": "Lead I and lead aVL form a contiguous group with which other leads?", "opts": [["V5 and V6", "Correct. Leads I, aVL, V5 and V6 look at the same area of the heart, so a change across all four means more than one isolated lead."], ["V1 and V2", "V1 and V2 sit in the group with V3 and V4, which looks at a different area; leads I and aVL group with V5 and V6."], ["II and III", "Leads II and III group with aVF; leads I and aVL group with V5 and V6."], ["V3 and V4", "V3 and V4 belong to the V1 to V4 group rather than the lead I group; leads I and aVL group with V5 and V6."]], "c": 0, "cite": "Principles of Electrocardiography.pptx, Slide 25"}, {"topic": "Pacemaker rates", "io": "Describe action potentials and impulse conduction through the cardiac conduction system", "q": "Which structure is described as the third pacemaker, taking over if both the sinoatrial and atrioventricular nodes fail?", "opts": [["The bundle of His", "The bundle of His is the connection between the atrioventricular node and the bundle branches rather than the third pacemaker."], ["The left anterior fascicle", "The fascicles are branches of the conducting pathway rather than a named pacemaker."], ["The Purkinje network", "Correct, at an intrinsic rate of twenty to forty -- slow enough to be a last resort rather than a comfortable substitute."], ["The internodal tracts", "These connect the sinoatrial node to the atrioventricular node rather than pacing the heart."]], "c": 2, "cite": "Principles of Electrocardiography.pptx, Slide 17"}, {"topic": "Cardiovascular magnetic resonance", "io": "Discuss indications, advantages, and limitations of cardiac MRI", "q": "Which aortic conditions is cardiovascular magnetic resonance used to diagnose and monitor?", "opts": [["The coronary artery calcium burden", "Calcium is scored by non-contrast computed tomography rather than by magnetic resonance."], ["Aneurysm, dissection, hematoma, coarctation", "Correct. All four are questions about the wall and the lumen of a large vessel, which is where its detailed anatomy is most useful."], ["Valve vegetations", "Vegetations are sought on echocardiography, particularly the transesophageal study."], ["Deep venous thrombosis", "Deep vein thrombosis is assessed by vascular ultrasound rather than by cardiovascular magnetic resonance."]], "c": 1, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 56"}, {"topic": "von Willebrand studies", "io": "Describe laboratory findings associated with platelet abnormalities", "q": "A 19-year-old woman has heavy menses and easy bruising. Which inherited bleeding disorder is the most common overall?", "opts": [["Hemophilia A", "Hemophilia A, factor VIII deficiency, is common among the factor deficiencies, but von Willebrand disease is the most common inherited bleeding disorder overall."], ["Hemophilia B", "Hemophilia B, factor IX deficiency, is less common than von Willebrand disease."], ["Factor XIII deficiency", "Factor XIII deficiency is rare, marked by umbilical stump bleeding and lifelong severe bleeding, and far less common than von Willebrand disease."], ["von Willebrand disease", "Correct. von Willebrand disease is the most common inherited bleeding disorder, and it is tested with von Willebrand factor antigen, activity and a factor VIII level."]], "c": 3, "cite": "Coagulation Studies 2026.pptx, Slide 11"}, {"topic": "Voltage", "io": "Describe the fundamental principles of electrocardiography", "q": "On standard calibration, a deflection rises ten millimeters, which is two large boxes. What voltage does it represent?", "opts": [["1 millivolt", "Correct. Standard calibration sets two large boxes, a 10 millimeter deflection, equal to 1 millivolt, so each small box is 0.1 millivolt."], ["10 millivolts", "That is ten times too large; on standard calibration a 10 millimeter deflection equals 1 millivolt, because each small box is 0.1 millivolt."], ["0.1 millivolt", "That is the value of a single small box, one millimeter tall; two large boxes equal 10 millimeters, which is 1 millivolt."], ["0.5 millivolt", "That would be half the standard deflection; a rise of two large boxes, 10 millimeters, equals 1 millivolt."]], "c": 0, "cite": "Principles of Electrocardiography.pptx, Slide 28"}, {"topic": "Phase 0", "io": "Describe action potentials and impulse conduction through the cardiac conduction system", "q": "What happens during phase 0, the upstroke?", "opts": [["Calcium channels open and calcium enters the cell", "Calcium entry belongs to phase two, the plateau, and it is what triggers contraction."], ["Fast sodium channels open and sodium rushes into the cell", "Correct. It is the fastest event in the cycle, and the rapid inward sodium current is what drives the voltage positive."], ["Potassium channels open and potassium leaves the cell", "Potassium movement dominates the repolarizing phases rather than the upstroke."], ["Sodium is actively pumped out of the cell", "Active extrusion restores the gradient over time; the upstroke is a passive rapid influx."]], "c": 1, "cite": "Principles of Electrocardiography.pptx, Slide 7"}, {"topic": "Vascular ultrasound", "io": "Compare and contrast cardiovascular imaging modalities", "q": "Which limitations are described for vascular ultrasound?", "opts": [["Ionizing radiation dose and contrast nephrotoxicity", "Neither applies: ultrasound uses no ionizing radiation and no iodinated contrast."], ["Highly operator dependent, limited by body habitus", "Correct. Calcification causes acoustic shadowing, which matters because the vessels most worth imaging are often the ones most calcified. Degraded by bone, air and calcification."], ["Dependence on heart rate and rhythm", "Rate and rhythm dependence belongs to cardiac computed tomography."], ["Inability to show blood flow", "Showing both anatomy and flow is one of its advantages rather than a limitation, with Doppler supplying the flow."]], "c": 1, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 18"}, {"topic": "D-dimer", "io": "Define: hemostasis, primary hemostasis, secondary hemostasis, thrombus, fibrinolysis, fibrin degradation products, D-dimer", "q": "A 40-year-old man has a D-dimer reported. Which three enzymes act to form this cross-linked fibrin degradation product?", "opts": [["Thrombin, tissue factor and factor VII", "Tissue factor and factor VII start the extrinsic pathway. They help generate thrombin, but they do not degrade cross-linked fibrin into D-dimer."], ["Plasmin, antithrombin and protein C", "Antithrombin and protein C are anticoagulant proteins that restrain clotting. D-dimer requires thrombin, factor XIII and plasmin."], ["Factor Xa, factor IXa and factor VIIIa", "These are coagulation factors in the generation of thrombin. None of them cross-links or degrades fibrin to make D-dimer."], ["Thrombin, factor XIII and plasmin", "Correct. D-dimer results from the action of thrombin (forming fibrin), activated factor XIII (cross-linking it) and plasmin (degrading it)."]], "c": 3, "cite": "Coagulation Studies 2026.pptx, Slide 7"}, {"topic": "Measured versus calculated", "io": "Describe measured and calculated lipid profile components", "q": "A 50-year-old man gets a standard lipid panel. Which components are measured directly?", "opts": [["LDL-C, non-HDL-C and triglycerides", "LDL-C and non-HDL-C are both calculated from the measured values, not measured directly on a standard panel."], ["Total cholesterol, HDL-C and triglycerides", "Correct. Those three are measured. LDL-C (low-density lipoprotein cholesterol) and non-HDL-C are calculated, so the LDL-C on a standard report is an estimate. HDL-C is high-density lipoprotein cholesterol."], ["Total cholesterol, LDL-C and non-HDL-C", "Total cholesterol is measured, but LDL-C and non-HDL-C are calculated."], ["LDL-C, HDL-C and total cholesterol", "LDL-C is the classic calculated value; on a standard panel it is an estimate rather than a measurement."]], "c": 1, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 42"}, {"topic": "Apolipoproteins", "io": "Compare and contrast lipids and lipoproteins involved in atherosclerotic disease", "q": "A 39-year-old is found to have a variant of an apolipoprotein that is critical in triglyceride clearance. Which apolipoprotein is that?", "opts": [["ApoA-II (apolipoprotein A-II)", "ApoA-II is the second most abundant HDL (high-density lipoprotein) apolipoprotein, not the triglyceride-clearance protein."], ["ApoB-48 (apolipoprotein B-48)", "ApoB-48 is the structural protein of chylomicrons, made by the intestine."], ["ApoE (apolipoprotein E)", "Correct. ApoE is important in triglyceride metabolism and critical in triglyceride clearance. ApoC, apoC-III and apoA-V regulate triglyceride metabolism."], ["Apo(a) (apolipoprotein(a))", "Apo(a) forms lipoprotein(a); its significance is atherogenic and genetic risk rather than triglyceride clearance."]], "c": 2, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 36"}, {"topic": "Platelet abnormalities", "io": "Describe laboratory findings associated with platelet abnormalities", "q": "A 70-year-old man bleeds, and a physician reviews platelet counts. Which statement about count and bleeding is correct?", "opts": [["Only low counts cause bleeding", "Extreme thrombocythemia can also cause bleeding, so a very high count does not protect against it."], ["Only high counts cause bleeding", "Thrombocytopenia clearly causes bleeding, with risk rising as the count falls."], ["Counts never cause bleeding with a normal prothrombin time", "A normal prothrombin time and partial thromboplastin time with bleeding actually points toward a platelet problem, quantitative or qualitative."], ["Very low and very high counts can both cause bleeding", "Correct. Thrombocytopenia and extreme thrombocythemia, above 1,000 times 10 to the ninth per liter, can both cause bleeding."]], "c": 3, "cite": "Coagulation Studies 2026.pptx, Slide 34"}, {"topic": "Mixing study", "io": "Discuss diagnostic testing for: primary hemostasis, secondary hemostasis, fibrinolysis", "q": "A 50-year-old man has an isolated prolonged partial thromboplastin time. Before further evaluation, which effect must be ruled out first?", "opts": [["Heparin", "Correct. The algorithm for an isolated prolonged partial thromboplastin time begins by ruling out heparin effect."], ["Warfarin", "Warfarin mainly prolongs the prothrombin time and international normalized ratio."], ["Aspirin", "Aspirin affects platelet function and leaves the partial thromboplastin time normal."], ["Platelet clumping", "Clumping falsely lowers the automated platelet count. It does not prolong the partial thromboplastin time."]], "c": 0, "cite": "Coagulation Studies 2026.pptx, Slide 27"}, {"topic": "Platelet abnormalities", "io": "Describe laboratory findings associated with platelet abnormalities", "q": "A 52-year-old man has a low automated platelet count. His smear shows platelet clumps and platelets surrounding neutrophils. What does this indicate?", "opts": [["Disseminated intravascular coagulation", "Disseminated intravascular coagulation shows a low count with prolonged clotting times, low fibrinogen and a high D-dimer, not clumping on the smear."], ["Thrombotic thrombocytopenic purpura", "Thrombotic thrombocytopenic purpura shows fragmented red cells (schistocytes) on the smear, not platelet clumps."], ["A falsely low count", "Correct. Clumping and platelets ringing neutrophils (satellitism) make the automated count read falsely low, which is spurious thrombocytopenia."], ["Immune thrombocytopenia", "A true immune thrombocytopenia has few platelets on the smear. Clumping means the platelets are present but miscounted."]], "c": 2, "cite": "Coagulation Studies 2026.pptx, Slide 14"}, {"topic": "Ordering", "io": "Discuss indications for ordering cardiac biomarkers", "q": "A 64-year-old has an acute coronary syndrome confirmed. Besides troponin, which biomarker also carries prognostic value after the event?", "opts": [["Creatine kinase", "Creatine kinase is largely historical for infarction and is used for skeletal muscle injury, not prognosis after acute coronary syndrome."], ["Myoglobin", "Myoglobin is among the markers no longer used to evaluate cardiac disease."], ["Lactate dehydrogenase", "Lactate dehydrogenase is also retired from cardiac evaluation."], ["B-type natriuretic peptide", "Correct. B-type natriuretic peptide or its N-terminal fragment supports heart failure diagnosis and triage and is also prognostic after acute coronary syndrome."]], "c": 3, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 23"}, {"topic": "QRS complex", "io": "Measure and interpret the intervals, segments and waves of the cardiac cycle", "q": "What does the QRS complex represent, and what should it look like?", "opts": [["Ventricular repolarization, broad and rounded", "Ventricular repolarization is the T wave, which is broad and rounded."], ["Ventricular depolarization, narrow with sharp points", "Correct, with a duration under three small boxes. A wide QRS means the ventricles were not activated through the normal fast pathway."], ["Atrial depolarization, narrow and upright", "Atrial depolarization is the P wave rather than the QRS complex, which is ventricular."], ["The plateau phase of the action potential", "The plateau corresponds to the ST segment rather than to the QRS."]], "c": 1, "cite": "Principles of Electrocardiography.pptx, Slide 34"}, {"topic": "Hexaxial system", "io": "Identify the standard limb and precordial leads and their proper anatomical placement", "q": "What is the hexaxial reference system used to determine?", "opts": [["The normal axis of the heart", "Correct. Six views in one plane are what make an axis calculable at all."], ["The heart rate", "Rate is determined from the strip by the six-second or three hundred method rather than from the axis system."], ["The horizontal view of the heart", "The horizontal view comes from the precordial leads; the hexaxial system determines the axis."], ["The duration of the QT interval", "Interval durations are measured on the tracing rather than derived from the reference system."]], "c": 0, "cite": "Principles of Electrocardiography.pptx, Slide 22"}, {"topic": "C-reactive protein", "io": "Discuss indications for ordering cardiac biomarkers", "q": "A 50-year-old in primary prevention has borderline cardiovascular risk. When is high-sensitivity C-reactive protein appropriate?", "opts": [["To refine atherosclerotic risk", "Correct. It is an inflammatory risk-enhancing marker in select primary-prevention patients, not a diagnostic test for an acute cardiac event."], ["To diagnose acute infarction", "Acute infarction is diagnosed with serial troponin. High-sensitivity C-reactive protein is explicitly not for acute diagnosis."], ["To triage acute dyspnea", "Dyspnea triage for suspected heart failure uses a natriuretic peptide."], ["To detect statin myopathy", "Statin myopathy is evaluated with creatine kinase. Statins actually lower C-reactive protein."]], "c": 0, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 23"}, {"topic": "Definitions", "io": "Define: hemostasis, primary hemostasis, secondary hemostasis, thrombus, fibrinolysis, fibrin degradation products, D-dimer", "q": "A 44-year-old woman is taught the three overlapping stages of hemostasis. Which set is correct?", "opts": [["Primary hemostasis, secondary hemostasis, fibrinolysis", "Correct. Hemostasis has three overlapping stages: the platelet plug (primary hemostasis), the fibrin clot built by the coagulation factors (secondary hemostasis) and the breakdown of the clot (fibrinolysis)."], ["Primary hemostasis, secondary hemostasis, thrombosis", "Thrombosis is a pathologic clot forming in a vessel, not a stage of normal hemostasis. The third stage is fibrinolysis, the breakdown of the clot."], ["Platelet plug, fibrin clot, embolism", "An embolism is a clot that has moved somewhere. The third stage of hemostasis is the dissolving of the clot by fibrinolysis."], ["Coagulation, thrombosis, embolism", "These describe clot behavior in disease. Normal hemostasis runs from platelet plug, through coagulation, to fibrinolysis."]], "c": 0, "cite": "Coagulation Studies 2026.pptx, Slide 6"}, {"topic": "Inherited bleeding", "io": "Discuss diagnostic testing for: primary hemostasis, secondary hemostasis, fibrinolysis", "q": "A 34-year-old man has hemarthroses and hematoma after surgery, with a normal prothrombin time, partial thromboplastin time and platelet count. Which next test fits?", "opts": [["Factor VIII assay", "A factor VIII assay addresses a prolonged partial thromboplastin time, which this patient does not have."], ["Euglobulin clot lysis time", "Correct. This picture suggests deficiency of inhibitors of the fibrinolytic system, evaluated with euglobulin clot lysis time and testing for alpha-2 antiplasmin and plasminogen activator inhibitor 1."], ["A mixing study", "A mixing study applies only when the prothrombin time or partial thromboplastin time is prolonged."], ["Platelet aggregation", "Platelet disorders bring skin bruising, petechiae and mucosal bleeding, not hemarthroses and deep hematomas."]], "c": 1, "cite": "Coagulation Studies 2026.pptx, Slide 28"}, {"topic": "T wave", "io": "Measure and interpret the intervals, segments and waves of the cardiac cycle", "q": "What does the peak of the T wave mark?", "opts": [["The end of ventricular depolarization", "Ventricular depolarization ends with the QRS complex rather than at the peak of the T wave."], ["The start of atrial repolarization", "Atrial repolarization is not represented as a distinct feature here."], ["The beginning of the ST segment", "The ST segment begins at the J point and ends at the onset of the T wave."], ["The dividing line between the absolute and the relative refractory period", "Correct, which is what makes a stimulus landing near the T wave peak so consequential: the cell has just become excitable again."]], "c": 3, "cite": "Principles of Electrocardiography.pptx, Slide 40"}, {"topic": "Echocardiography", "io": "Discuss indications, advantages, and limitations of echocardiography", "q": "In which position does a patient lie initially for transthoracic echocardiography?", "opts": [["Supine and flat throughout", "The patient starts in the left lateral decubitus position and is repositioned."], ["Left lateral decubitus", "Correct. It brings the heart toward the chest wall, and the patient is moved through other positions to obtain the different views."], ["Prone", "The prone position is not used. The patient starts in left lateral decubitus and is repositioned for other views."], ["Standing", "The study is performed lying, starting in the left lateral decubitus position."]], "c": 1, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 24"}, {"topic": "Sinoatrial node", "io": "Describe action potentials and impulse conduction through the cardiac conduction system", "q": "What is the intrinsic firing rate of the sinoatrial node, the main pacemaker of the heart?", "opts": [["40 to 60 beats per minute", "That is the intrinsic rate of the atrioventricular node, the back-up pacemaker; the sinoatrial node fires faster, at 60 to 100 beats per minute."], ["20 to 40 beats per minute", "That is the intrinsic rate of the Purkinje network, the third pacemaker; the sinoatrial node fires much faster, at 60 to 100 beats per minute."], ["60 to 100 beats per minute", "Correct. This is the fastest intrinsic rate in the conduction system, which is why the sinoatrial node normally sets the pace and the slower pacemakers stay in reserve."], ["100 to 150 beats per minute", "That is faster than any structure in the conduction system fires on its own; the sinoatrial node's intrinsic rate is 60 to 100 beats per minute."]], "c": 2, "cite": "Principles of Electrocardiography.pptx, Slide 13"}, {"topic": "Limb leads", "io": "Describe the fundamental principles of electrocardiography", "q": "Which physical limb electrode was added to the original three to give four limb electrodes?", "opts": [["Right arm", "The right arm electrode was one of the original three; the one added later is the right leg electrode."], ["Right leg", "Correct. The right leg electrode was added to the original three (right arm, left arm, left leg). It serves as a ground, and the four physical limb electrodes give the six hexaxial leads."], ["Left arm", "The left arm electrode was one of the original three limb electrodes; the one added later is the right leg electrode."], ["Left leg", "The left leg electrode was already one of the original three limb electrodes; the one added later is the right leg electrode."]], "c": 1, "cite": "Principles of Electrocardiography.pptx, Slide 22"}, {"topic": "Natriuretic peptides", "io": "Compare and contrast cardiac biomarkers: Creatine kinase, Cardiac troponins, BNP, hs-CRP", "q": "A 72-year-old woman has worsening dyspnea and leg edema. What does a raised B-type natriuretic peptide in her blood reflect?", "opts": [["Myocyte necrosis", "Necrosis releases troponin, the contractile regulatory protein. The natriuretic peptides are secreted in response to stretch, not released by dying cells."], ["Systemic inflammation", "Inflammation is what C-reactive protein reflects, an acute-phase reactant made by the liver."], ["Skeletal muscle breakdown", "Skeletal muscle injury is the territory of creatine kinase, for example in rhabdomyolysis or statin myopathy."], ["Myocardial wall stretch", "Correct. B-type natriuretic peptide is released by the ventricles with volume or pressure overload. It reflects stretch rather than injury, a different mechanism from troponin, so the two are complementary."]], "c": 3, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 4"}, {"topic": "Mixing study", "io": "Interpret common coagulation studies including: PT, INR, aPTT, D-dimer", "q": "A 28-year-old man has an isolated prolonged partial thromboplastin time that corrects on mixing, with a low factor VIII and normal von Willebrand antigen and activity. Which diagnosis fits?", "opts": [["von Willebrand disease", "von Willebrand disease would show abnormal von Willebrand antigen and activity."], ["Lupus anticoagulant", "Lupus anticoagulant is an inhibitor that fails to correct on mixing, and it does not lower factor VIII."], ["Hemophilia", "Correct. A low factor VIII with normal von Willebrand antigen and activity is hemophilia, and with abnormal von Willebrand studies it would be von Willebrand disease."], ["Dysfibrinogenemia", "Dysfibrinogenemia is a fibrinogen function problem evaluated through fibrinogen activity and antigen, not factor VIII."]], "c": 2, "cite": "Coagulation Studies 2026.pptx, Slide 27"}, {"topic": "Bleeding time", "io": "Describe laboratory findings associated with platelet abnormalities", "q": "A 27-year-old man has a normal platelet count and a bleeding time of 18 minutes (reference 3 to 10). What does this suggest?", "opts": [["Platelets are not working well", "Correct. With a normal platelet count a prolonged bleeding time signals a platelet function problem, a primary hemostasis defect."], ["Coagulation factors are deficient", "Factor deficiencies prolong the prothrombin time or partial thromboplastin time, not bleeding time as the primary finding."], ["Fibrinolysis is excessive", "Excess fibrinolysis is assessed by other tests, such as euglobulin clot lysis time. Bleeding time reflects the platelet plug."], ["The platelet count is falsely high", "The count is normal, and a falsely high count would not lengthen the bleeding time."]], "c": 0, "cite": "Coagulation Studies 2026.pptx, Slide 16"}, {"topic": "Phase 2", "io": "Describe action potentials and impulse conduction through the cardiac conduction system", "q": "Why is phase 2 called the plateau?", "opts": [["All ion movement stops entirely", "Ions continue to move; it is the balance between two currents that holds the voltage steady."], ["Sodium continues to enter at a constant rate", "Sodium channels have closed by this point; the inward current here is calcium."], ["Calcium entering the cell is matched by potassium moving the other way", "Correct, and the calcium entering during this balance is what actually produces contraction, so the flat part of the trace is the working part of the beat. So the voltage holds."], ["The cell has returned to its resting voltage and remains there", "The plateau sits well above the resting voltage, which is reached again at the end of phase three."]], "c": 2, "cite": "Principles of Electrocardiography.pptx, Slide 9"}, {"topic": "Risk assessment", "io": "Discuss the use of lipid testing for cardiovascular risk assessment", "q": "A 54-year-old's 10-year PREVENT (Predicting Risk of cardiovascular disease EVENTs) estimate is 4%, in the borderline tier of 3% to under 5%. Besides discussing the estimate, what does the framework add for her?", "opts": [["Evaluating risk enhancers", "Correct. At borderline risk the framework pairs the risk discussion with an evaluation of risk enhancers, such as an elevated lipoprotein(a) or triglycerides of 150 mg/dL or above."], ["Immediate cardiac catheterization", "No invasive testing is prompted by a risk estimate; the framework works through discussion, enhancers and a calcium score."], ["Serial troponin measurement", "Serial troponin is for suspected acute coronary syndrome, not risk stratification in an asymptomatic person."], ["Stopping all lipid testing", "Borderline risk calls for more information, not less; lipid testing continues."]], "c": 0, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 50"}, {"topic": "Echocardiography", "io": "Discuss indications, advantages, and limitations of echocardiography", "q": "Why is an intravenous sedative given before a transesophageal echocardiogram?", "opts": [["To slow the heart for clearer images", "Slowing the heart for images is the role of medication before cardiac computed tomography; the sedative here relaxes the patient and prevents vomiting."], ["To numb the back of the throat", "A local anesthetic applied to the back of the throat does the numbing; the intravenous sedative relaxes the patient and prevents vomiting."], ["To relax the patient and prevent vomiting", "Correct. The sedative helps the patient relax and prevents vomiting while the probe is passed through the mouth and down the esophagus."], ["To prevent a reaction to contrast", "The sedative is given to relax the patient and prevent vomiting while the probe is passed, not to prevent a reaction to contrast; transesophageal echocardiography does not use iodinated contrast."]], "c": 2, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 25"}, {"topic": "Electrophysiological testing", "io": "Discuss indications, advantages, and limitations of coronary angiography", "q": "How are the catheters for electrophysiological testing introduced?", "opts": [["Through arteries into the left ventricle", "Electrophysiological catheters are placed through veins into the right heart; arterial access to the left side is used for left heart catheterization."], ["Down the esophagus on an endoscope", "The esophageal route belongs to transesophageal echocardiography; electrophysiological catheters are passed through veins into the right atrium or ventricle."], ["Into each coronary artery through the aorta", "Entering each coronary artery is how angiography is done; electrophysiological catheters go through veins into the right atrium or right ventricle."], ["Through veins into the right heart", "Correct. Three or four catheters pass from the internal jugular, subclavian or common femoral vein into the right atrium or right ventricle."]], "c": 3, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 64"}, {"topic": "Indications", "io": "Discuss indications for ordering a lipid profile", "q": "A 40-year-old with no risk factors is due a routine lipid profile and has eaten breakfast. Is the sample acceptable?", "opts": [["Yes, nonfasting is acceptable for most", "Correct. Nonfasting is acceptable for most people. Fasting is reserved for triglycerides of 400 mg/dL or above, triglyceride disorders, or a family history of premature disease or genetic dyslipidemia."], ["No, every lipid profile must be fasting", "Fasting is no longer required for most patients; it is reserved for specific situations."], ["No, lipids can only be drawn at night", "No time-of-day rule applies to the lipid profile; the question is only whether fasting is needed."], ["Yes, but only lipoprotein(a) is valid", "Lipoprotein(a) needs no fasting, but the standard nonfasting profile is also acceptable for most."]], "c": 0, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 46"}, {"topic": "Fibrinogen", "io": "Discuss diagnostic testing for: primary hemostasis, secondary hemostasis, fibrinolysis", "q": "A 45-year-old woman has a fibrinogen of 0.4 grams per liter (reference 2.0 to 4.0) before traumatic surgery. What is the concern?", "opts": [["Coronary artery disease", "That risk applies to a very high fibrinogen, above 7.0 grams per liter."], ["Hemorrhage after surgery", "Correct. A fibrinogen below 0.5 grams per liter can result in hemorrhage after traumatic surgery; low fibrinogen means bleeding."], ["Deep vein thrombosis", "A low fibrinogen leaves too little substrate for clotting, raising bleeding risk. High fibrinogen is the clot concern."], ["Platelet clumping", "Platelet clumping falsely lowers the automated platelet count and is unrelated to the fibrinogen level."]], "c": 1, "cite": "Coagulation Studies 2026.pptx, Slide 21"}, {"topic": "Creatine kinase", "io": "Compare and contrast cardiac biomarkers: Creatine kinase, Cardiac troponins, BNP, hs-CRP", "q": "A 23-year-old is brought in after collapsing during a marathon, with dark urine and painful thighs. Which marker best evaluates the suspected problem?", "opts": [["Troponin I", "Troponin I has cardiac specificity, which is the wrong target: the concern here is skeletal muscle, and creatine kinase is the test for that."], ["N-terminal pro B-type natriuretic peptide", "The natriuretic peptides reflect cardiac wall stretch and are used for heart failure triage, not for muscle breakdown."], ["Lactate dehydrogenase", "Lactate dehydrogenase is listed among markers no longer used to evaluate cardiac disease, and it is not the test for rhabdomyolysis."], ["Creatine kinase", "Correct. Rhabdomyolysis is skeletal muscle injury, which is exactly where creatine kinase is still used. Its low cardiac specificity is no drawback here."]], "c": 3, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 4"}, {"topic": "ApoB", "io": "Analyze a lipid profile", "q": "A 58-year-old with diabetes has an LDL-C (low-density lipoprotein cholesterol) already below 70 mg/dL on therapy. Which test helps find remaining risk?", "opts": [["HDL-C (high-density lipoprotein cholesterol)", "Low HDL-C is a marker, not a therapeutic target, and it does not count atherogenic particles."], ["Creatine kinase", "Creatine kinase evaluates skeletal muscle injury such as statin myopathy, not residual atherosclerotic risk."], ["ApoB (apolipoprotein B)", "Correct. ApoB is used when triglycerides are 150 mg/dL or above, in diabetes, or when LDL-C is below 70 mg/dL, to find residual risk carried by atherogenic particles."], ["Troponin", "Troponin is an acute myocardial injury marker, not a lipid risk marker."]], "c": 2, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 40"}, {"topic": "TP segment", "io": "Measure and interpret the intervals, segments and waves of the cardiac cycle", "q": "Why is the TP segment the best place to assess the isoelectric line?", "opts": [["It is the longest segment on the tracing", "Length is not the reason; the absence of electrical activity is."], ["It contains the J point", "The J point sits between the QRS complex and the ST segment."], ["It is unaffected by lead placement", "All parts of the tracing depend on lead placement; the TP segment is chosen because the cells are at rest."], ["It represents the resting state of the cardiac cells, between one T wave and the next P wave", "Correct. Nothing electrical is happening there, so it gives the truest baseline against which to judge elevation or depression elsewhere."]], "c": 3, "cite": "Principles of Electrocardiography.pptx, Slide 44"}, {"topic": "Vascular ultrasound", "io": "Compare and contrast cardiovascular imaging modalities", "q": "On a vascular ultrasound, how does tissue density relate to the image?", "opts": [["The denser the structure the darker it appears", "The relationship runs the other way: dense structures return more signal and appear lighter."], ["Density does not affect the image, only depth does", "Both matter: depth sets position on the screen and density sets brightness."], ["The denser the structure the lighter it appears", "Correct, and superficial structures sit nearer the top of the screen, which together let you orient any image without being told what it is. So air is black and bone is near white."], ["Only flowing blood produces any signal", "Tissue of all kinds reflects sound; Doppler is what adds flow information."]], "c": 2, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 14"}, {"topic": "Exercise stress test", "io": "Discuss indications, advantages, and limitations of stress testing", "q": "Which exercise modalities are used, and which is preferred among the cycles?", "opts": [["Treadmill and cycle ergometer", "Correct, and arm ergometry exists for patients who cannot use their legs, which keeps the test available to more people. With the stationary bicycle preferred."], ["Treadmill only", "Cycle ergometry is described alongside the treadmill as one of the two common modalities."], ["Arm ergometry, as first choice", "Arm ergometry is listed but the stationary bicycle is the preferred cycle."], ["Step testing", "Step testing is not among the modalities described, which are the treadmill, the cycle ergometer and arm ergometry."]], "c": 0, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 30"}, {"topic": "Injury versus infarction", "io": "Compare and contrast cardiac biomarkers: Creatine kinase, Cardiac troponins, BNP, hs-CRP", "q": "A 62-year-old has a troponin above the 99th percentile limit. What else must be present to call it a myocardial infarction?", "opts": [["A raised creatine kinase as confirmation", "Creatine kinase adds no diagnostic value for infarction once troponin is available, so it is not the confirming criterion."], ["Ischemia and a rising or falling pattern", "Correct. Any troponin elevation is myocardial injury; infarction is injury plus ischemia plus a rising or falling pattern. Keeping the two apart is essential."], ["A raised B-type natriuretic peptide", "B-type natriuretic peptide reflects stretch, not injury; it does not convert an injury into an infarction."], ["A value at least 10 times the limit", "Ten times the limit is the threshold for bypass-related type 5 infarction, not the general definition."]], "c": 1, "cite": "svCardiac Biomarkers and Lipids.pptx, Slide 22"}, {"topic": "Inherited bleeding", "io": "Interpret common coagulation studies including: PT, INR, aPTT, D-dimer", "q": "A 26-year-old man has large palpable ecchymoses and bleeding into joints and muscles with hematoma formation. Which category fits?", "opts": [["Platelet disorder", "Platelet disorders typically cause skin bruising, petechiae and mucous membrane bleeding."], ["Clotting factor deficiency", "Correct. Large palpable ecchymoses and bleeding into deep soft tissues, joints and muscles with hematoma are typical of a clotting factor deficiency."], ["Mild von Willebrand disease", "Mild von Willebrand disease behaves like a platelet disorder, with mucosal and skin bleeding."], ["Spurious thrombocytopenia", "Spurious thrombocytopenia is a counting artifact and causes no bleeding."]], "c": 1, "cite": "Coagulation Studies 2026.pptx, Slide 28"}, {"topic": "Exercise stress test", "io": "Discuss indications, advantages, and limitations of stress testing", "q": "A patient stops an exercise stress test having reached 70 percent of their predicted maximum heart rate, with no electrocardiographic changes. How should the result be read?", "opts": [["Inadequate to exclude ischemia", "Correct. The threshold for a valid test is 85 percent, so a negative result below it says nothing about the heart, only about the test."], ["A negative test, excluding ischemia", "A negative result only counts once the heart rate threshold has been reached."], ["A positive test", "Nothing here indicates ischemia; the problem is that the test was not taken far enough to say."], ["Equivocal, requiring repeat in six months", "The result is uninterpretable rather than equivocal, and the stated consequence is that ischemia has not been excluded."]], "c": 0, "cite": "Cardiac Imaging and Vascular Studies - Elwaya.pptx, Slide 31"}, {"topic": "Prothrombin time", "io": "Interpret common coagulation studies including: PT, INR, aPTT, D-dimer", "q": "A 35-year-old woman has a prothrombin time of 19 seconds (reference 11 to 13) and a normal activated partial thromboplastin time. Which deficiency fits?", "opts": [["Factor VII", "Correct. An isolated prolonged prothrombin time points to the extrinsic pathway, factor VII deficiency."], ["Factor VIII", "Factor VIII deficiency prolongs the activated partial thromboplastin time and leaves the prothrombin time normal."], ["Factor IX", "Factor IX deficiency, hemophilia B, prolongs the activated partial thromboplastin time with a normal prothrombin time."], ["Factor XI", "Factor XI deficiency prolongs the activated partial thromboplastin time and spares the prothrombin time."]], "c": 0, "cite": "Coagulation Studies 2026.pptx, Slide 32"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

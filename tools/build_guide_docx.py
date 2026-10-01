@@ -223,7 +223,7 @@ def break_classes_from_css(soup):
     return out
 
 
-def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
+def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False, underline=False):
     """Walk inline content, preserving bold/italic/highlight rather than
     flattening it -- the highlights are the professor-emphasis marks and carry
     meaning."""
@@ -234,6 +234,8 @@ def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
                 continue
             r = par.add_run(re.sub(r"\s+", " ", txt))
             r.bold, r.italic = bold, italic
+            if underline:
+                r.underline = True
             if mono:
                 r.font.name = "Consolas"; r.font.size = Pt(9)
             if hilite:
@@ -271,7 +273,8 @@ def emit_runs(par, node, bold=False, italic=False, hilite=False, mono=False):
                   bold or bool(kls & LABEL_CLASSES) or n in ("b", "strong", "th"),
                   italic or n in ("i", "em", "cite"),
                   hilite or (n == "mark"),
-                  mono or n in ("code", "kbd", "samp"))
+                  mono or n in ("code", "kbd", "samp"),
+                  underline or n == "u")
         # A label span needs a break on BOTH sides: breaking only before it
         # still welds it to what follows -- "Labs to order" + "None routinely."
         # came out as "Labs to orderNone routinely."

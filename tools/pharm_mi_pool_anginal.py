@@ -12,7 +12,9 @@ EMPHASIS (weight only): none yet -- the recording is not transcribed. Weighted b
 indications, patient education, adverse effects, contraindications and drug choice outnumber mechanism and
 physiology, and the pool asks what unites or separates the three classes before it asks about a single agent.
 
-DECK CONFLICTS AVOIDED (truth wins; none of these is keyed):
+DECK CONFLICTS AVOIDED (truth wins; none of these is keyed), EXCEPT the two groups Jaxon decided on 2026-09-30
+to key "as the course says", which now live in pharm_mi_pool_course.py (slide 34 prior-infarction and diabetes
+cells, and the 3-6 month nitroglycerin replacement; the notes on them below are kept as the history):
   * slide 13 "aspirin, clopidogrel increase coronary blood flow" is not asked, and no distractor says aspirin
     fails to dilate the coronary arteries.
   * slide 34 "prior myocardial infarction: avoid calcium channel blockers" and the diabetes row are contested; only

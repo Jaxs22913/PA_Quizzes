@@ -17,6 +17,9 @@ Left out on purpose (Jaxon's standing rules, 2026-09-30 brief):
     oral" beta blocker route (current practice is oral first), any "only fibrin-bound"
     claim about reteplase, and "enoxaparin preferred over heparin" as a key (older
     studies only).
+  Update 2026-09-30: Jaxon decided to key the contested cells, the 3-6 month nitroglycerin replacement and
+  the intravenous-then-oral beta blocker "as the course says". That decision was applied to the topic quizzes
+  and vignettes (pharm_mi_pool_course.py), the guide, cram sheet and charts; this drill was not extended.
 """
 ITEMS = [
 # ---- beta blockers ----

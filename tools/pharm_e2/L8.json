@@ -144,14 +144,15 @@
   {
    "group": "Beta blockers",
    "drug": "Beta blockers<br><span class=g>metoprolol, atenolol (beta-1 selective); propranolol, nadolol (non-selective); carvedilol, labetalol (third generation)</span>",
-   "text": "<b>Comorbid conditions:</b> the first-line antianginal is a <b>beta blocker</b> when the patient has <b>hypertension</b>, a <b>prior myocardial infarction</b> or <b>decreased left ventricular function</b>.",
+   "text": "<b>Comorbid conditions:</b> the first-line antianginal is a <b>beta blocker</b> when the patient has <b>hypertension</b>, a <b>prior myocardial infarction</b> or <b>decreased left ventricular function</b>. <b>Prior myocardial infarction:</b> beta blocker first line and, in the course table, calcium channel blockers are avoided (current practice allows a non-dihydropyridine when a beta blocker cannot be used).",
    "edu": "Prior myocardial infarction is also the trigger in the treatment summary: beta blockers are given after an infarction unless contraindicated.",
    "tier": "DOC",
    "slide": 34,
    "verify": [
     "Hypertension: first line beta blocker",
     "Prior myocardial infarction: first line beta blocker",
-    "Decreased left ventricular function: first line beta blocker"
+    "Decreased left ventricular function: first line beta blocker",
+    "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
    ],
    "also": [
     {
@@ -213,6 +214,17 @@
   {
    "group": "Calcium channel blockers",
    "drug": "Calcium channel blockers<br><span class=g>dihydropyridine and non-dihydropyridine</span>",
+   "text": "<b>Diabetes (comorbidity table, the course answer):</b> when the patient has diabetes and no other reason to need a beta blocker, a <b>non-dihydropyridine</b> is first line; the alternatives are a <b>long-acting nitrate</b> and a <b>cardioselective beta blocker</b>. Current practice is more flexible: a cardioselective beta blocker remains a sound first choice in diabetes.",
+   "edu": "Diabetes is the one row where the table puts a non-dihydropyridine ahead of a beta blocker, because beta blockers can raise blood sugar and mask the signs of hypoglycemia.",
+   "tier": "IND",
+   "slide": 34,
+   "verify": [
+    "Diabetes: first line non-dihydropyridine, alternatives long-acting nitrate and cardioselective beta blocker"
+   ]
+  },
+  {
+   "group": "Calcium channel blockers",
+   "drug": "Calcium channel blockers<br><span class=g>dihydropyridine and non-dihydropyridine</span>",
    "text": "<b>Monitoring:</b> relief of symptoms, and heart rate for the non-dihydropyridines. <b>Education:</b> dizziness and constipation (constipation mainly with verapamil).",
    "edu": "<b>Avoid short-acting agents, nifedipine being the named example.</b> Warn about dizziness and constipation.",
    "tier": "EDU",
@@ -266,7 +278,7 @@
   {
    "group": "Short-acting nitrates",
    "drug": "Short-acting nitrates<br><span class=g>nitroglycerin: sublingual tablet (Nitrostat), lingual spray (Nitrolingual Pumpspray)</span>",
-   "text": "<b>Storage:</b> keep in the original packaging in a cool, dry place; <b>traditional counseling is to replace the tablets 3&ndash;6 months after opening</b> (current labeling gives the printed expiration date if the tablets stay in the tightly closed original glass container), and to replace them sooner if they no longer work. <b>Administration:</b> the tablet or spray is applied under the tongue.",
+   "text": "<b>Storage:</b> keep in the original packaging in a cool, dry place; <b>the course rule is to replace the tablets 3&ndash;6 months after opening</b> (current labeling gives the printed expiration date if the tablets stay in the tightly closed original glass container), and to replace them sooner if they no longer work. <b>Administration:</b> the tablet or spray is applied under the tongue.",
    "edu": "A patient who says the tablets no longer work should be asked how old the bottle is and how it was stored.",
    "tier": "EDU",
    "slide": 28,
@@ -515,8 +527,8 @@
   {
    "group": "Acute coronary syndrome",
    "drug": "Beta blockers in acute coronary syndrome",
-   "text": "<b>Started early.</b> Older teaching is intravenous followed by oral therapy; current practice favors oral therapy within the first day and avoids the intravenous route when there is heart failure, low cardiac output or risk of shock. Benefits listed in older trials: smaller infarct size and less sudden cardiac death; the early mortality and heart failure benefits are not established today.",
-   "edu": "Nitrates relieve pain without an outcome benefit; beta blockers have a long-term outcome benefit after infarction, but only when acute decompensated heart failure, shock risk, heart block and bradycardia are absent.",
+   "text": "<b>Started early: intravenous followed by oral therapy</b> (the course sequence). <b>Benefit taught: reduction in early and late mortality, infarct size, heart failure incidence and sudden cardiac death.</b> Current guidelines differ: they favor oral therapy within the first day, avoid the intravenous route when there is heart failure, low cardiac output or risk of shock, and rest the benefit mainly on long-term use after infarction.",
+   "edu": "Nitrates relieve pain without an outcome benefit; beta blockers are taught to lower mortality, but only when acute decompensated heart failure, shock risk, heart block and bradycardia are absent.",
    "tier": "IND",
    "slide": 55,
    "verify": [
@@ -908,6 +920,16 @@
   {
    "group": "Beta blockers",
    "drug": "Beta blockers<br><span class=g>metoprolol, atenolol (beta-1 selective); propranolol, nadolol (non-selective); carvedilol, labetalol (third generation)</span>",
+   "text": "<b>Diabetes:</b> <b>avoid non-cardioselective beta blockers</b>; a cardioselective beta blocker is a listed alternative (beta blockers can raise blood sugar and mask hypoglycemia).",
+   "tier": "AVOID",
+   "slide": 34,
+   "verify": [
+    "Diabetes: first line non-dihydropyridine, alternatives long-acting nitrate and cardioselective beta blocker, avoid non-cardioselective beta blocker"
+   ]
+  },
+  {
+   "group": "Beta blockers",
+   "drug": "Beta blockers<br><span class=g>metoprolol, atenolol (beta-1 selective); propranolol, nadolol (non-selective); carvedilol, labetalol (third generation)</span>",
    "text": "<b>Avoid in variant (vasospastic) angina</b>: beta blockers may lead to worsened symptoms.",
    "tier": "AVOID",
    "slide": 39,
@@ -992,6 +1014,16 @@
     "Decreased left ventricular function",
     "alternative amlodipine",
     "avoid other calcium channel blockers"
+   ]
+  },
+  {
+   "group": "Calcium channel blockers",
+   "drug": "Calcium channel blockers<br><span class=g>dihydropyridine and non-dihydropyridine</span>",
+   "text": "<b>Prior myocardial infarction:</b> a beta blocker is first line and, in the course table, <b>calcium channel blockers are avoided</b> (current practice allows a non-dihydropyridine when a beta blocker cannot be used).",
+   "tier": "AVOID",
+   "slide": 34,
+   "verify": [
+    "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
    ]
   },
   {
@@ -1328,16 +1360,16 @@
     "Do not use / avoid",
     "Patient education and monitoring"
    ],
-   "notes": "<b>Reading the hemodynamic column:</b> wall tension falls when the pressure the heart pumps against falls (afterload) or when the filling volume falls (preload). <b>Nitrates lower the left ventricular volume the most (preload); dihydropyridines lower pressure the most; beta blockers and non-dihydropyridines slow the heart.</b> Nifedipine, felodipine and the nitrates raise the heart rate (reflex tachycardia; amlodipine leaves it unchanged) while beta blockers and non-dihydropyridines lower it. <b>Two cells of the original comorbidity table are deliberately left out</b> (&ldquo;prior myocardial infarction: avoid calcium channel blockers&rdquo; and the diabetes row that makes non-dihydropyridines first line) because they are over-simplified and do not match current practice. <b>An older overview also says aspirin and clopidogrel increase coronary blood flow;</b> that is not established, so it is not repeated here. Patient education for nitroglycerin: store in the original container, traditional rule: replace tablets 3&ndash;6 months after opening (labeling uses the expiration date if kept in the original glass container), call emergency medical services if the first dose gives no relief after 5 minutes.",
+   "notes": "<b>Reading the hemodynamic column:</b> wall tension falls when the pressure the heart pumps against falls (afterload) or when the filling volume falls (preload). <b>Nitrates lower the left ventricular volume the most (preload); dihydropyridines lower pressure the most; beta blockers and non-dihydropyridines slow the heart.</b> Nifedipine, felodipine and the nitrates raise the heart rate (reflex tachycardia; amlodipine leaves it unchanged) while beta blockers and non-dihydropyridines lower it. <b>Two cells of the comorbidity table are kept as the course teaches them</b> (&ldquo;prior myocardial infarction: avoid calcium channel blockers&rdquo; and the diabetes row that makes non-dihydropyridines first line); both are simpler than current practice, which allows a non-dihydropyridine after infarction when a beta blocker cannot be used and still accepts a cardioselective beta blocker in diabetes. <b>An older overview also says aspirin and clopidogrel increase coronary blood flow;</b> that is not established, so it is not repeated here. Patient education for nitroglycerin: store in the original container; course rule: replace tablets 3&ndash;6 months after opening (current labeling uses the expiration date if kept in the original glass container), call emergency medical services if the first dose gives no relief after 5 minutes.",
    "rows": [
     {
      "cells": [
       "<b>Beta blockers</b><br><span class=g>metoprolol, atenolol (beta-1 selective); propranolol, nadolol (non-selective); carvedilol, labetalol (third generation)</span>",
       "<b>Lower oxygen demand only;</b> no effect on oxygen supply.",
       "Heart rate <b>falls markedly</b>; contractility falls; systolic blood pressure falls; left ventricular volume <b>rises</b>.",
-      "<b>First line</b> in the absence of contraindications. First line when there is hypertension, a prior myocardial infarction or decreased left ventricular function. Also useful in anxiety, supraventricular arrhythmias and stable (compensated) heart failure.",
+      "<b>First line</b> in the absence of contraindications. First line when there is hypertension, a prior myocardial infarction or decreased left ventricular function. In diabetes a cardioselective beta blocker is an alternative (course table). Also useful in anxiety, supraventricular arrhythmias and stable (compensated) heart failure.",
       "Hypotension, bradycardia, hyperglycemia, dyslipidemia, fatigue, sexual dysfunction, nightmares, worsened claudication.",
-      "<b>Contraindicated:</b> heart rate below 60, systolic pressure below 100 mmHg, atrioventricular block, acute decompensated heart failure. <b>Avoid all beta blockers</b> in bradycardia, atrioventricular block and <b>variant angina</b>; avoid non-cardioselective agents in asthma.",
+      "<b>Contraindicated:</b> heart rate below 60, systolic pressure below 100 mmHg, atrioventricular block, acute decompensated heart failure. <b>Avoid all beta blockers</b> in bradycardia, atrioventricular block and <b>variant angina</b>; avoid non-cardioselective agents in asthma and in diabetes (course table).",
       "<b>Avoid rapid discontinuation</b> (stop gradually; added background: rebound angina and myocardial infarction, with a Food and Drug Administration (FDA) boxed warning on several agents); dizziness and fatigue. Monitor heart rate, blood sugar and lipids."
      ],
      "slide": 17,
@@ -1375,7 +1407,8 @@
        "slide": 34,
        "verify": [
         "Prior myocardial infarction: first line beta blocker",
-        "avoid non-cardioselective beta blocker"
+        "avoid non-cardioselective beta blocker",
+        "Diabetes: first line non-dihydropyridine, alternatives long-acting nitrate and cardioselective beta blocker, avoid non-cardioselective beta blocker"
        ]
       },
       {
@@ -1393,7 +1426,7 @@
       "Heart rate <b>rises</b> (reflex) with nifedipine and felodipine, but <b>amlodipine leaves it unchanged</b>; contractility unchanged or decreased; systolic blood pressure falls <b>markedly</b>; left ventricular volume unchanged or decreased. Strongest vasodilation (four plus); atrioventricular conduction unchanged.",
       "<b>Added to a beta blocker</b> when the beta blocker alone is not successful; also combined with long-acting nitrates. Chosen (as a class) for <b>vasospastic angina</b>, asthma, severe peripheral vascular disease and uncontrolled diabetes; left ventricular dysfunction is dihydropyridines only. First line in <b>bradycardia or atrioventricular block</b>. Amlodipine is the alternative in decreased left ventricular function.",
       "Hypotension, <b>headache, flushing, peripheral edema</b>.",
-      "<b>Avoid short-acting agents</b> (nifedipine). Contraindicated with systolic pressure below 100 mmHg. Avoid calcium channel blockers other than amlodipine in decreased left ventricular function.",
+      "<b>Avoid short-acting agents</b> (nifedipine). Contraindicated with systolic pressure below 100 mmHg. Avoid calcium channel blockers other than amlodipine in decreased left ventricular function. <b>After a myocardial infarction the course table says to avoid calcium channel blockers</b> (current practice allows a non-dihydropyridine when a beta blocker cannot be used).",
       "Dizziness; monitor relief of symptoms. Cytochrome P450 3A4 (CYP3A4) interactions."
      ],
      "slide": 22,
@@ -1436,7 +1469,8 @@
        "slide": 34,
        "verify": [
         "first line dihydropyridine",
-        "alternative amlodipine"
+        "alternative amlodipine",
+        "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
        ]
       }
      ]
@@ -1446,9 +1480,9 @@
       "<b>Non-dihydropyridine calcium channel blockers</b><br><span class=g>diltiazem, verapamil</span>",
       "<b>Lower demand and help supply:</b> mild dilation in areas of fixed stenosis and relief of vasospasm; act on the heart as well as the vessels.",
       "Heart rate <b>falls</b>; contractility <b>falls</b>; systolic blood pressure falls; left ventricular volume unchanged or decreased. Moderate vasodilation (two plus); <b>atrioventricular conduction falls</b> (verapamil the most).",
-      "<b>Initial therapy</b> when beta blockers are contraindicated or not tolerated. Chosen (as a class) for vasospastic angina, asthma, severe peripheral vascular disease and uncontrolled diabetes (not for left ventricular dysfunction). Avoid in bradycardia or atrioventricular block.",
+      "<b>Initial therapy</b> when beta blockers are contraindicated or not tolerated. Chosen (as a class) for vasospastic angina, asthma, severe peripheral vascular disease and uncontrolled diabetes (not for left ventricular dysfunction). <b>First line in diabetes</b> when there is no other reason for a beta blocker (course table; current practice also accepts a cardioselective beta blocker). Avoid in bradycardia or atrioventricular block.",
       "Hypotension; slowed heart rate and atrioventricular conduction.",
-      "<b>Contraindicated:</b> systolic pressure below 100 mmHg, heart rate below 60, acute heart failure, ejection fraction below 40 percent. <b>Caution</b> with a concurrent beta blocker.",
+      "<b>Contraindicated:</b> systolic pressure below 100 mmHg, heart rate below 60, acute heart failure, ejection fraction below 40 percent. <b>Caution</b> with a concurrent beta blocker. <b>After a myocardial infarction the course table says to avoid calcium channel blockers.</b>",
       "<b>Monitor heart rate.</b> Dizziness and constipation. Cytochrome P450 3A4 (CYP3A4) interactions."
      ],
      "slide": 22,
@@ -1490,7 +1524,9 @@
       {
        "slide": 34,
        "verify": [
-        "avoid non-dihydropyridines and beta blockers"
+        "avoid non-dihydropyridines and beta blockers",
+        "Diabetes: first line non-dihydropyridine",
+        "Prior myocardial infarction: first line beta blocker, avoid calcium channel blockers"
        ]
       }
      ]
@@ -1503,7 +1539,7 @@
       "<b>Rescue:</b> relieve acute symptoms and prevent effort-induced angina. Sublingual nitroglycerin for acute relief.",
       "Hypotension (orthostatic), headache, reflex tachycardia.",
       "<b>Contraindicated:</b> <b>phosphodiesterase type 5 inhibitors</b> (sildenafil, tadalafil, vardenafil) and hypotension. <b>Avoid</b> in severe aortic valve stenosis and obstructive cardiomyopathy.",
-      "Store in the original container in a cool, dry place; <b>traditional rule: replace tablets 3&ndash;6 months after opening</b> (labeling uses the expiration date if kept in the tightly closed original glass container); apply or spray under the tongue; warn about orthostatic hypotension; <b>call emergency medical services if there is no relief 5 minutes after the first dose</b>."
+      "Store in the original container in a cool, dry place; <b>course rule: replace tablets 3&ndash;6 months after opening</b> (current labeling uses the expiration date if kept in the tightly closed original glass container); apply or spray under the tongue; warn about orthostatic hypotension; <b>call emergency medical services if there is no relief 5 minutes after the first dose</b>."
      ],
      "slide": 27,
      "verify": [
@@ -1665,7 +1701,7 @@
     "ST-elevation myocardial infarction versus non-ST-elevation acute coronary syndrome",
     "Key cautions and contraindications"
    ],
-   "notes": "<b>Three wording flags.</b> (1) An older source says reteplase and tenecteplase have increased fibrin affinity; that is true of <b>tenecteplase</b> but <b>not of reteplase</b>, so it is stated for tenecteplase only. (2) It says fever, chills and rash occur mainly with streptokinase <b>and urokinase</b>; only <b>streptokinase</b> is treated as the antigenic agent here. (3) Its age, time and bleeding-rate numbers for fibrinolytics and the aspirin amount are left out because doses and percentages are not tested; know the qualitative points (fibrinolytics are for ST-elevation myocardial infarction and not for non-ST-elevation disease; bleeding including intracranial hemorrhage is the main risk). The fibrinolytic rows also simplify &ldquo;activate only fibrin-bound plasminogen&rdquo;: alteplase and tenecteplase are fibrin-selective, reteplase less so. <b>Two more flags:</b> beta blockers in acute infarction are taught here as intravenous then oral with an early mortality benefit, which comes from older trials (current practice favors oral therapy in the first day and avoids the intravenous route with heart failure or shock risk); and the fibrinolytic contraindication list is the older one, which current guidelines split into absolute and relative items.",
+   "notes": "<b>Three wording flags.</b> (1) An older source says reteplase and tenecteplase have increased fibrin affinity; that is true of <b>tenecteplase</b> but <b>not of reteplase</b>, so it is stated for tenecteplase only. (2) It says fever, chills and rash occur mainly with streptokinase <b>and urokinase</b>; only <b>streptokinase</b> is treated as the antigenic agent here. (3) Its age, time and bleeding-rate numbers for fibrinolytics and the aspirin amount are left out because doses and percentages are not tested; know the qualitative points (fibrinolytics are for ST-elevation myocardial infarction and not for non-ST-elevation disease; bleeding including intracranial hemorrhage is the main risk). The fibrinolytic rows also simplify &ldquo;activate only fibrin-bound plasminogen&rdquo;: alteplase and tenecteplase are fibrin-selective, reteplase less so. <b>Two more flags:</b> beta blockers in acute infarction are kept as the course teaches them, intravenous then oral with an early and late mortality benefit; that comes from older trials, and current practice favors oral therapy in the first day, avoids the intravenous route with heart failure or shock risk and rests the benefit mainly on long-term use; and the fibrinolytic contraindication list is the older one, which current guidelines split into absolute and relative items.",
    "rows": [
     {
      "cells": [
@@ -1725,8 +1761,8 @@
     {
      "cells": [
       "<b>Beta blockers</b>",
-      "Lower heart rate and demand; started early (older teaching: intravenous first, then oral; current practice favors oral therapy in the first day).",
-      "Smaller infarct size and less sudden cardiac death in older trials; the <b>early mortality and heart failure benefits are not established today</b>.",
+      "Lower heart rate and demand; started early: <b>intravenous first, then oral</b> (the course sequence; current guidelines favor oral therapy in the first day).",
+      "Taught to <b>reduce early and late mortality</b>, infarct size, heart failure and sudden cardiac death (the course answer; current evidence supports mainly the long-term benefit after infarction, most clearly with reduced ventricular function).",
       "Both: common therapy for both groups.",
       "<b>Caution:</b> bradycardia or hypotension, heart block, severe reactive airway disease. Avoid the intravenous route with heart failure, low cardiac output or risk of shock."
      ],

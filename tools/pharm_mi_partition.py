@@ -142,6 +142,9 @@ def main():
                      back, broad, len({q["topic"] for q in rot})))
     json.dump(sets, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("wrote", os.path.basename(path))
+    if not only:        # the course-keyed questions (pharm_mi_pool_course.py) are appended, never split
+        from pharm_mi_course_extend import extend_topics
+        extend_topics()
 
 
 if __name__ == "__main__":

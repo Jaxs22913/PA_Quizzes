@@ -1,0 +1,968 @@
+{
+ "digoxin1": [
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which intracellular ion rises first when digoxin blocks the sodium-potassium pump, and then raises intracellular calcium?",
+   "opts": [
+    [
+     "Potassium",
+     "Intracellular potassium falls rather than rises when the pump is blocked, because the pump is what carries potassium into the cell."
+    ],
+    [
+     "Chloride",
+     "Chloride is not the ion trapped by the pump; blocking the pump raises intracellular sodium, which then raises calcium through the exchanger."
+    ],
+    [
+     "Sodium",
+     "Correct. Pump inhibition traps sodium in the cell, and the sodium-calcium exchanger then raises intracellular calcium, so the fibers shorten with more force."
+    ],
+    [
+     "Magnesium",
+     "Magnesium is not the ion that accumulates; pump inhibition raises intracellular sodium, which in turn raises intracellular calcium."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 62"
+  },
+  {
+   "topic": "Monitoring",
+   "io": "List commonly used protocols and patient monitoring for diuretics and heart failure drugs",
+   "slot": "monitoring",
+   "q": "Which serum potassium goal protects a patient taking digoxin together with a thiazide diuretic?",
+   "opts": [
+    [
+     "Below 3.5 milliequivalents per liter",
+     "A low potassium is the hazard, because hypokalemia raises digitalis toxicity; potassium should stay above 4.0 milliequivalents per liter."
+    ],
+    [
+     "Above 4.0 milliequivalents per liter",
+     "Correct. Thiazides lower potassium and raise digitalis toxicity, so potassium should be kept above 4.0 milliequivalents per liter."
+    ],
+    [
+     "Between 3.0 and 3.5 milliequivalents per liter",
+     "That range is hypokalemia, which raises digitalis toxicity; the goal is above 4.0 milliequivalents per liter."
+    ],
+    [
+     "Any value if magnesium is normal",
+     "Normal magnesium does not remove the risk; potassium itself should be kept above 4.0 milliequivalents per liter with a thiazide."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 29"
+  },
+  {
+   "topic": "Contraindications",
+   "io": "Identify contraindications for diuretics and heart failure drugs",
+   "slot": "contraindication",
+   "q": "Which conduction disorder contraindicates digoxin?",
+   "opts": [
+    [
+     "Atrial fibrillation with heart failure",
+     "Atrial fibrillation with heart failure is a use of digoxin for rate control, not a contraindication."
+    ],
+    [
+     "Normal sinus rhythm",
+     "A normal sinus rhythm is not a contraindication; digoxin slows nodal conduction, so advanced atrioventricular block is."
+    ],
+    [
+     "Advanced atrioventricular block",
+     "Correct. Digoxin slows nodal conduction, so advanced atrioventricular block is a contraindication."
+    ],
+    [
+     "Sinus tachycardia",
+     "Sinus tachycardia is not a contraindication; the conduction disorder that contraindicates digoxin is advanced atrioventricular block."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 71"
+  },
+  {
+   "topic": "Interactions",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with diuretics and heart failure drugs",
+   "slot": "interaction",
+   "q": "Which diuretic-related abnormality raises the risk of digoxin toxicity?",
+   "opts": [
+    [
+     "Hyperuricemia",
+     "Hyperuricemia from diuretics causes gout but does not raise digitalis toxicity; potassium and magnesium loss does."
+    ],
+    [
+     "Hyponatremia",
+     "Hyponatremia from loop diuretics can cause seizures but is not the electrolyte problem that raises digitalis toxicity; hypokalemia is."
+    ],
+    [
+     "Hypokalemia",
+     "Correct. Hypokalemia, especially from loop or thiazide diuretics, raises digitalis toxicity and arrhythmia risk, together with hypomagnesemia."
+    ],
+    [
+     "Hypophosphatemia",
+     "Phosphate is not the electrolyte named; the diuretic interaction with digitalis is hypokalemia and hypomagnesemia causing arrhythmias."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 19"
+  },
+  {
+   "topic": "Contraindications",
+   "io": "Identify contraindications for diuretics and heart failure drugs",
+   "slot": "contraindication",
+   "q": "Which heart rate disorder contraindicates digoxin?",
+   "opts": [
+    [
+     "Severe bradycardia or sick sinus syndrome",
+     "Correct. Digoxin slows the nodes further, so severe bradycardia and sick sinus syndrome are contraindications."
+    ],
+    [
+     "Atrial fibrillation with a rapid rate",
+     "A rapid atrial fibrillation rate with heart failure is a use of digoxin for rate control, not a contraindication."
+    ],
+    [
+     "Mild sinus tachycardia",
+     "Mild tachycardia is not listed; digoxin is contraindicated in severe bradycardia and sick sinus syndrome, where it slows the nodes further."
+    ],
+    [
+     "Normal sinus rhythm",
+     "A normal sinus rhythm is not a contraindication; digoxin is contraindicated in severe bradycardia and sick sinus syndrome."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 71"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which enzyme does digoxin inhibit?",
+   "opts": [
+    [
+     "Phosphodiesterase 3",
+     "Phosphodiesterase 3 is inhibited by milrinone and inamrinone, not by digoxin, which acts on the sodium-potassium ATPase pump."
+    ],
+    [
+     "Sodium-potassium ATPase",
+     "Correct. Digoxin inhibits the sodium-potassium ATPase pump, which is the starting point of both its inotropic and its neurohormonal actions."
+    ],
+    [
+     "Neprilysin",
+     "Neprilysin is inhibited by sacubitril, which keeps natriuretic peptides and bradykinin from being broken down; digoxin inhibits sodium-potassium ATPase."
+    ],
+    [
+     "Carbonic anhydrase",
+     "Carbonic anhydrase is inhibited by acetazolamide and related diuretics; digoxin inhibits the sodium-potassium ATPase pump of cardiac cells."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 62"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which gastrointestinal symptoms are early signs of digoxin toxicity?",
+   "opts": [
+    [
+     "Constipation and bloating",
+     "Constipation is listed for thiazides, not digoxin; the gastrointestinal signs of digoxin toxicity are anorexia and nausea."
+    ],
+    [
+     "Anorexia and nausea",
+     "Correct. Anorexia and nausea are the gastrointestinal signs listed for digoxin toxicity."
+    ],
+    [
+     "Heartburn and belching",
+     "These are not the listed signs; digoxin toxicity causes anorexia and nausea."
+    ],
+    [
+     "Abdominal cramps with bloody stool",
+     "Bloody stool is not part of digoxin toxicity; anorexia and nausea are the gastrointestinal signs."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 68"
+  },
+  {
+   "topic": "Structure and class",
+   "io": "Describe absorption, distribution, metabolism, and excretion of diuretics and heart failure drugs",
+   "slot": "class",
+   "q": "Which properties of digoxin do its attached sugar molecules influence?",
+   "opts": [
+    [
+     "Absorption, half-life and metabolism",
+     "Correct. The sugar molecules shape how digoxin is absorbed, how long it lasts and how it is metabolized; activity comes from the lactone ring and steroid nucleus."
+    ],
+    [
+     "Activation of beta-1 receptors",
+     "Digoxin does not act through beta-1 receptors at all; its activity depends on the lactone ring and steroid nucleus, and the sugars change absorption, half-life and metabolism."
+    ],
+    [
+     "Selectivity for atrial over ventricular cells",
+     "No such selectivity is attributed to the sugars; they influence absorption, half-life and metabolism, while activity depends on the ring and nucleus."
+    ],
+    [
+     "Affinity for digoxin immune Fab fragments",
+     "Antibody fragment affinity is not a function of the sugars; they influence absorption, half-life and metabolism of the drug."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 61"
+  },
+  {
+   "topic": "Antidote",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "drug choice",
+   "q": "Which drug rapidly reverses life-threatening digoxin toxicity?",
+   "opts": [
+    [
+     "Atropine",
+     "Atropine can raise a slow heart rate but does not neutralize digoxin; the antibody fragment does."
+    ],
+    [
+     "Digoxin immune Fab",
+     "Correct. Digoxin immune Fab is an antibody that binds digoxin and rapidly reverses toxicity."
+    ],
+    [
+     "Protamine sulfate",
+     "Protamine sulfate reverses heparin; digoxin toxicity is reversed by digoxin immune Fab."
+    ],
+    [
+     "Naloxone",
+     "Naloxone reverses opioids; digoxin toxicity is reversed by digoxin immune Fab."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 72"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which electrocardiogram change accompanies digoxin toxicity?",
+   "opts": [
+    [
+     "Lengthened PR interval",
+     "Correct. Nodal slowing lengthens the PR interval, shortens the QT interval and depresses the ST segment."
+    ],
+    [
+     "Shortened PR interval",
+     "The PR interval lengthens, not shortens, because digoxin slows nodal conduction."
+    ],
+    [
+     "Lengthened QT interval",
+     "The QT interval shortens rather than lengthens in digoxin toxicity."
+    ],
+    [
+     "Elevated ST segment",
+     "The ST segment is depressed, not elevated, in digoxin toxicity."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 70"
+  },
+  {
+   "topic": "Antidote",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "drug choice",
+   "q": "From which animal is digoxin immune Fab produced?",
+   "opts": [
+    [
+     "Rabbits",
+     "The antibody source is sheep, immunized with digoxin coupled to human serum albumin, not rabbits."
+    ],
+    [
+     "Horses",
+     "The antibody source is sheep immunized with digoxin coupled to human serum albumin, not horses."
+    ],
+    [
+     "Goats",
+     "The antibody source is sheep immunized with digoxin coupled to human serum albumin, not goats."
+    ],
+    [
+     "Sheep",
+     "Correct. Healthy sheep are immunized with digoxin coupled to human serum albumin, and their antibody is the source of the antidote."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 72"
+  },
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "Which clinical benefit does digoxin provide in heart failure?",
+   "opts": [
+    [
+     "Fewer hospitalizations",
+     "Correct. Digoxin improves symptoms, exercise tolerance and quality of life and lowers the number of hospitalizations."
+    ],
+    [
+     "Longer survival",
+     "Digoxin has no survival benefit; it improves symptoms, exercise tolerance, quality of life and hospitalization rates."
+    ],
+    [
+     "Slower disease progression",
+     "There is no evidence that digoxin slows disease progression; its benefits are symptomatic and fewer hospitalizations."
+    ],
+    [
+     "Reversal of the underlying cardiomyopathy",
+     "Digoxin does not reverse the disease or slow its progression; its benefits are better symptoms, exercise tolerance and fewer hospitalizations."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 66"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which autonomic change is part of the newer, neurohormonal action of digoxin?",
+   "opts": [
+    [
+     "Higher sympathetic and lower parasympathetic activity",
+     "That is the reverse; sympathetic activity falls and parasympathetic activity rises, which lowers blood pressure and heart rate."
+    ],
+    [
+     "Higher sympathetic and higher parasympathetic activity",
+     "Sympathetic activity does not rise; it falls with digoxin while parasympathetic activity rises."
+    ],
+    [
+     "Lower sympathetic and lower parasympathetic activity",
+     "Parasympathetic activity does not fall; it rises, particularly in the atrioventricular node and conduction system."
+    ],
+    [
+     "Lower sympathetic and higher parasympathetic activity",
+     "Correct. Digoxin lowers sympathetic and raises parasympathetic nervous system activity, which slows the heart and resensitizes the baroreflex."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which symptom of digoxin toxicity arises from the central nervous system?",
+   "opts": [
+    [
+     "Hearing loss",
+     "Hearing damage is an ototoxicity of loop diuretics, not a central symptom of digoxin toxicity."
+    ],
+    [
+     "Gynecomastia",
+     "Gynecomastia is an androgen-receptor effect of spironolactone, not a central symptom of digoxin toxicity."
+    ],
+    [
+     "Dry cough",
+     "Dry cough is an effect of angiotensin-converting enzyme inhibitors; digoxin's central symptoms include confusion and abnormal dreams."
+    ],
+    [
+     "Abnormal dreams",
+     "Correct. Delirium, fatigue, confusion, dizziness and abnormal dreams are the central symptoms of digoxin toxicity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 69"
+  },
+  {
+   "topic": "Structure and class",
+   "io": "Identify diuretics and heart failure drug classes and commonly prescribed diuretics and heart failure drugs",
+   "slot": "class",
+   "q": "Which drug family does digoxin belong to?",
+   "opts": [
+    [
+     "Phosphodiesterase 3 inhibitor",
+     "Phosphodiesterase 3 inhibitors are milrinone and inamrinone, which raise cyclic adenosine monophosphate; digoxin is a digitalis glycoside that blocks the sodium-potassium pump."
+    ],
+    [
+     "Beta-1 receptor agonist",
+     "Stimulating beta-1 receptors is what dobutamine does; digoxin is a digitalis glycoside that raises contractility by blocking the sodium-potassium pump."
+    ],
+    [
+     "Digitalis glycoside",
+     "Correct. Digoxin is a digitalis glycoside: a lactone ring and steroid nucleus with attached sugars, acting on the sodium-potassium pump of cardiac cells."
+    ],
+    [
+     "Hyperpolarization-activated channel blocker",
+     "Blocking the hyperpolarization-activated channel is what ivabradine does; digoxin is a digitalis glycoside that inhibits the sodium-potassium pump."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 61"
+  },
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "Which type of ventricular dysfunction in symptomatic heart failure is digoxin considered for?",
+   "opts": [
+    [
+     "Diastolic dysfunction",
+     "Diastolic dysfunction is impaired relaxation with preserved ejection fraction; digoxin is considered for systolic dysfunction, where contraction is weak."
+    ],
+    [
+     "Systolic dysfunction",
+     "Correct. Digoxin is considered for symptomatic heart failure with systolic dysfunction, where contractility is reduced."
+    ],
+    [
+     "Right atrial enlargement",
+     "That is not a heart failure category; digoxin is considered for symptomatic heart failure with systolic dysfunction."
+    ],
+    [
+     "Isolated pericardial effusion",
+     "That is not an indication; digoxin is considered for symptomatic heart failure with systolic dysfunction."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 67"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which heart rate change is the most typical cardiac sign of digoxin toxicity?",
+   "opts": [
+    [
+     "Sinus tachycardia",
+     "Digoxin slows the heart through nodal slowing and parasympathetic action; bradycardia is the typical rate change."
+    ],
+    [
+     "A fixed rapid regular rate",
+     "Digoxin does not lock in a rapid rate; nodal slowing makes bradycardia the typical change."
+    ],
+    [
+     "Bradycardia",
+     "Correct. Nodal slowing makes bradycardia the typical cardiac sign, although digoxin can provoke almost any arrhythmia."
+    ],
+    [
+     "Heart rate with no change",
+     "Digoxin toxicity slows nodal conduction and typically causes bradycardia, which can progress to block."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 70"
+  },
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "Which rhythm disorder alongside heart failure makes digoxin useful for rate control?",
+   "opts": [
+    [
+     "Ventricular tachycardia",
+     "Ventricular tachycardia is a contraindication to digoxin, which can itself provoke ventricular arrhythmias."
+    ],
+    [
+     "Sick sinus syndrome",
+     "Sick sinus syndrome is a contraindication; digoxin is used for rate control in atrial fibrillation with heart failure."
+    ],
+    [
+     "Advanced atrioventricular block",
+     "Advanced atrioventricular block is a contraindication, because digoxin slows nodal conduction further; atrial fibrillation is the rate-control use."
+    ],
+    [
+     "Atrial fibrillation",
+     "Correct. Digoxin's rate-slowing properties make it useful for rate control in atrial fibrillation together with heart failure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 67"
+  },
+  {
+   "topic": "Monitoring",
+   "io": "List commonly used protocols and patient monitoring for diuretics and heart failure drugs",
+   "slot": "monitoring",
+   "q": "Why is the digoxin concentration kept in a target range rather than pushed higher?",
+   "opts": [
+    [
+     "Higher concentrations may give worse outcomes",
+     "Correct. Higher concentrations in heart failure may be associated with worse outcomes, and they raise toxicity risk without added benefit."
+    ],
+    [
+     "Higher concentrations remove the survival gap",
+     "Digoxin has no survival benefit at any concentration; higher concentrations may be associated with worse outcomes."
+    ],
+    [
+     "Lower concentrations cause toxicity first",
+     "Toxicity comes with higher concentrations; lower targets are chosen because higher ones may be associated with worse outcomes."
+    ],
+    [
+     "Higher concentrations lose inotropic effect",
+     "Inotropic effect does not vanish at higher concentrations; the concern is that higher concentrations may give worse outcomes."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 65"
+  }
+ ],
+ "digoxin2": [
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "Why is digoxin an add-on rather than a mandatory drug in heart failure?",
+   "opts": [
+    [
+     "It shortens survival",
+     "Digoxin is not shown to shorten survival; it is optional because it gives no survival benefit while relieving symptoms."
+    ],
+    [
+     "It gives no survival benefit",
+     "Correct. Mandatory drugs are the ones that prolong life; digoxin only relieves symptoms and reduces hospitalizations, so it is optional."
+    ],
+    [
+     "It does not relieve symptoms",
+     "Digoxin does relieve symptoms and improve exercise tolerance; it is optional because it does not improve survival."
+    ],
+    [
+     "It cannot be given with diuretics",
+     "Digoxin is given on top of diuretics; it is optional because it provides no survival benefit."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 66"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which effect describes the older, inotropic understanding of how digoxin works?",
+   "opts": [
+    [
+     "Lower preload through increased urine flow",
+     "Lowering preload through urine flow is a diuretic action; digoxin is described as increasing the force of contraction."
+    ],
+    [
+     "Greater force of cardiac muscle contraction",
+     "Correct. The older view is a positive inotropic action, a stronger contraction; the newer view adds neurohormonal effects."
+    ],
+    [
+     "Blocked pacemaker current in the sinoatrial node",
+     "Blocking the pacemaker current describes ivabradine; digoxin is described as increasing the force of contraction."
+    ],
+    [
+     "Balanced dilation of arteries and veins",
+     "Balanced arterial and venous dilation is described for milrinone and inamrinone; digoxin is described as increasing contraction force."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 63"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which inotropic drug lowers heart rate instead of raising it?",
+   "opts": [
+    [
+     "Dobutamine",
+     "Dobutamine is a beta-1 agonist that stimulates the force of contraction more than the rate, and it does not slow the heart."
+    ],
+    [
+     "Milrinone",
+     "Milrinone adds contractility plus vasodilation and carries a risk of ventricular arrhythmia; it is not described as slowing the heart."
+    ],
+    [
+     "Dopamine",
+     "Dopamine acts through dopamine and beta receptors to support output; it is not the inotrope that lowers heart rate."
+    ],
+    [
+     "Digoxin",
+     "Correct. Resetting the baroreflex and raising parasympathetic activity slow the heart rate, while the contraction becomes stronger."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 64"
+  },
+  {
+   "topic": "Monitoring",
+   "io": "List commonly used protocols and patient monitoring for diuretics and heart failure drugs",
+   "slot": "monitoring",
+   "q": "Which measurement is followed against a target range during digoxin therapy?",
+   "opts": [
+    [
+     "Plasma renin activity",
+     "Plasma renin activity is not the monitored measure; digoxin itself has a target concentration that is followed."
+    ],
+    [
+     "Serum creatine kinase",
+     "Creatine kinase is not followed for digoxin; the drug has its own serum concentration target."
+    ],
+    [
+     "Platelet count",
+     "Thrombocytopenia is a concern with milrinone, not digoxin; digoxin has its own serum concentration that is followed against a target range."
+    ],
+    [
+     "Serum digoxin concentration",
+     "Correct. A serum digoxin concentration is followed against a target range, and higher concentrations may be linked to worse outcomes in heart failure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 65"
+  },
+  {
+   "topic": "Contraindications",
+   "io": "Identify contraindications for diuretics and heart failure drugs",
+   "slot": "contraindication",
+   "q": "Which combination of electrolyte disturbances raises the risk of digoxin toxicity?",
+   "opts": [
+    [
+     "Low potassium, low magnesium and high calcium",
+     "Correct. Hypokalemia, hypomagnesemia and hypercalcemia all make digoxin toxicity more likely and are cautions for its use."
+    ],
+    [
+     "Low potassium, high magnesium and low calcium",
+     "High magnesium and low calcium are not the risks; low magnesium and high calcium raise digoxin toxicity."
+    ],
+    [
+     "High sodium, high magnesium and low calcium",
+     "None of these is the pattern; digoxin toxicity is raised by low potassium, low magnesium and high calcium."
+    ],
+    [
+     "Low potassium, high magnesium and high calcium",
+     "Magnesium is a risk when it is low, not high; digoxin toxicity is raised by low potassium, low magnesium and high calcium."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 71"
+  },
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "In which patient with heart failure is digoxin mainly added?",
+   "opts": [
+    [
+     "One newly diagnosed and without symptoms",
+     "Digoxin is not a starting drug; it is added when symptoms persist despite optimal angiotensin-converting enzyme inhibitor, beta blocker and diuretic therapy."
+    ],
+    [
+     "One still symptomatic on optimal standard drugs",
+     "Correct. Digoxin is mainly added for patients who remain symptomatic despite optimal doses of angiotensin-converting enzyme inhibitors, beta blockers and diuretics."
+    ],
+    [
+     "One in whom survival benefit is the only goal",
+     "Digoxin gives no survival benefit, so it is added for persistent symptoms, not to prolong life; other drugs do that."
+    ],
+    [
+     "One whose pulse is already very slow",
+     "A slow pulse or severe bradycardia is a contraindication; digoxin is for persistent symptoms on standard therapy."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 67"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "In which part of the heart does digoxin raise parasympathetic activity?",
+   "opts": [
+    [
+     "Ventricular contractile muscle",
+     "Parasympathetic activity rises in the atrioventricular node and conduction system; ventricular muscle gains force from the pump effect instead."
+    ],
+    [
+     "Coronary artery walls",
+     "The parasympathetic rise is described in the atrioventricular node and conduction system, not in the coronary vessels."
+    ],
+    [
+     "Atrioventricular node",
+     "Correct. Parasympathetic activity rises in the atrioventricular node and conduction system, which slows conduction and heart rate."
+    ],
+    [
+     "Pulmonary vein sleeves",
+     "No parasympathetic effect is described there; it occurs in the atrioventricular node and conduction system."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 64"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "A patient with heart failure reports seeing yellow-green halos around streetlights. Which drug is the likely cause?",
+   "opts": [
+    [
+     "Carvedilol",
+     "Carvedilol's adverse effects are not visual halos; yellow-green halos point to digoxin toxicity."
+    ],
+    [
+     "Spironolactone",
+     "Spironolactone causes hyperkalemia, gynecomastia and menstrual changes, not yellow-green halos, which point to digoxin."
+    ],
+    [
+     "Digoxin",
+     "Correct. Yellow-green halos and blurred vision are visual signs of digoxin toxicity, which calls for checking a serum concentration."
+    ],
+    [
+     "Furosemide",
+     "Furosemide causes volume depletion, hypokalemia and ototoxicity, not yellow-green halos, which point to digoxin."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 68"
+  },
+  {
+   "topic": "Benefits and place",
+   "io": "Identify indications for commonly used diuretics and heart failure drugs",
+   "slot": "indication",
+   "q": "Which statement about digoxin and the course of heart failure is correct?",
+   "opts": [
+    [
+     "It slows progression as angiotensin-converting enzyme inhibitors do",
+     "Angiotensin-converting enzyme inhibitors slow progression and prolong survival; for digoxin there is no evidence of slowed progression."
+    ],
+    [
+     "It halts progression when added to a diuretic",
+     "Pairing it with a diuretic relieves symptoms; there is no evidence that digoxin slows disease progression."
+    ],
+    [
+     "It slows progression at higher concentrations",
+     "Higher concentrations may be linked to worse outcomes, not slower progression; there is no evidence that digoxin slows disease progression."
+    ],
+    [
+     "It has no evidence of slowing progression",
+     "Correct. There is no evidence that digoxin slows disease progression; it improves symptoms but is not disease-modifying."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 67"
+  },
+  {
+   "topic": "Contraindications",
+   "io": "Identify contraindications for diuretics and heart failure drugs",
+   "slot": "contraindication",
+   "q": "Which ventricular rhythm problem contraindicates digoxin?",
+   "opts": [
+    [
+     "Atrial fibrillation",
+     "Atrial fibrillation with heart failure is a use of digoxin, not a contraindication."
+    ],
+    [
+     "Normal sinus rhythm",
+     "A normal sinus rhythm is not a contraindication; ventricular tachycardia and premature ventricular beats are."
+    ],
+    [
+     "Ventricular tachycardia",
+     "Correct. Premature ventricular beats and ventricular tachycardia are contraindications, because digoxin makes the ventricles more irritable."
+    ],
+    [
+     "Sinus tachycardia",
+     "Sinus tachycardia is not the listed contraindication; ventricular tachycardia and premature ventricular beats are."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 71"
+  },
+  {
+   "topic": "Antidote",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "How does digoxin immune Fab reverse toxicity?",
+   "opts": [
+    [
+     "It blocks the sodium-calcium exchanger",
+     "It does not act on the exchanger; it binds digoxin with a higher affinity than the pump has."
+    ],
+    [
+     "It stimulates the sodium-potassium pump",
+     "It does not stimulate the pump; it neutralizes digoxin by binding it with a higher affinity than the sodium-potassium pump has."
+    ],
+    [
+     "It binds digoxin more tightly than the pump does",
+     "Correct. Its affinity for digoxin exceeds that of the sodium-potassium pump, so it pulls digoxin away and reverses toxicity rapidly."
+    ],
+    [
+     "It restores potassium in the heart muscle",
+     "It does not give potassium; it neutralizes digoxin by binding it with higher affinity than the pump."
+    ]
+   ],
+   "c": 2,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 72"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which process underlies the ventricular arrhythmias of digoxin toxicity?",
+   "opts": [
+    [
+     "Digoxin-induced afterdepolarization",
+     "Correct. Digoxin-induced afterdepolarization makes ventricular cells fire extra beats, seen as premature ventricular beats and ventricular arrhythmia."
+    ],
+    [
+     "Accelerated pacemaker current in the sinoatrial node",
+     "That would raise sinus rate; the ventricular arrhythmias come from digoxin-induced afterdepolarization, while the nodes are slowed."
+    ],
+    [
+     "Loss of sodium-potassium ATPase from the cell",
+     "The pump is inhibited, not lost; the arrhythmia mechanism is digoxin-induced afterdepolarization."
+    ],
+    [
+     "Direct calcium channel blockade",
+     "Digoxin does not block calcium channels; it raises intracellular calcium and causes afterdepolarization."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 70"
+  },
+  {
+   "topic": "Contraindications",
+   "io": "Identify contraindications for diuretics and heart failure drugs",
+   "slot": "contraindication",
+   "q": "Which cardiac syndrome contraindicates digoxin?",
+   "opts": [
+    [
+     "Long QT syndrome",
+     "Long QT syndrome is not the listed contraindication; Wolff-Parkinson-White syndrome is."
+    ],
+    [
+     "Brugada syndrome",
+     "Brugada syndrome is not the listed contraindication; Wolff-Parkinson-White syndrome is."
+    ],
+    [
+     "Mitral valve prolapse",
+     "Mitral valve prolapse is not listed as a contraindication; Wolff-Parkinson-White syndrome is."
+    ],
+    [
+     "Wolff-Parkinson-White",
+     "Correct. Wolff-Parkinson-White syndrome is listed among the contraindications to digoxin."
+    ]
+   ],
+   "c": 3,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 71"
+  },
+  {
+   "topic": "Toxicity",
+   "io": "Summarize side effects and toxic manifestations of diuretics and heart failure drugs",
+   "slot": "adverse effect",
+   "q": "Which term names the yellow-green vision of digoxin toxicity?",
+   "opts": [
+    [
+     "Xanthopsia",
+     "Correct. Xanthopsia is yellow vision, with yellow-green halos and shining lights around objects, a visual sign of digoxin toxicity."
+    ],
+    [
+     "Nyctalopia",
+     "Nyctalopia is poor vision in dim light; the yellow-green vision of digoxin toxicity is xanthopsia."
+    ],
+    [
+     "Diplopia",
+     "Diplopia is double vision; the yellow-green tint of digoxin toxicity is called xanthopsia."
+    ],
+    [
+     "Scotoma",
+     "A scotoma is a blind spot in the visual field; the yellow-green tint of digoxin toxicity is called xanthopsia."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 68"
+  },
+  {
+   "topic": "Interactions",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with diuretics and heart failure drugs",
+   "slot": "interaction",
+   "q": "Potassium loss from a thiazide diuretic increases the toxicity of which heart failure drug?",
+   "opts": [
+    [
+     "Digoxin",
+     "Correct. Thiazides increase digitalis toxicity through potassium loss, so potassium must be kept above 4.0 milliequivalents per liter."
+    ],
+    [
+     "Carvedilol",
+     "Carvedilol toxicity is not raised through potassium loss; the thiazide potassium-loss interaction of concern is with digoxin."
+    ],
+    [
+     "Spironolactone",
+     "Spironolactone holds on to potassium, so a thiazide's potassium loss offsets it rather than raising its toxicity; the interaction of concern is with digoxin."
+    ],
+    [
+     "Sacubitril-valsartan",
+     "Sacubitril-valsartan tends to raise potassium, so a thiazide's potassium loss offsets it rather than raising its toxicity; the concern is digoxin."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 29"
+  },
+  {
+   "topic": "Mechanism",
+   "io": "Describe the molecular mechanism of action of diuretics and heart failure drugs",
+   "slot": "mechanism",
+   "q": "Which neurohormonal system does digoxin suppress in heart failure?",
+   "opts": [
+    [
+     "Parasympathetic nervous system",
+     "The parasympathetic system is increased by digoxin, not suppressed; the system it suppresses is the renin-angiotensin-aldosterone system."
+    ],
+    [
+     "Renin-angiotensin-aldosterone system",
+     "Correct. Digoxin lowers renin-angiotensin-aldosterone activity, which reduces remodeling and structural change and improves tissue perfusion."
+    ],
+    [
+     "Baroreflex sensing system",
+     "Digoxin resensitizes the baroreflex rather than suppressing it; the suppressed system is renin-angiotensin-aldosterone."
+    ],
+    [
+     "Natriuretic peptide system",
+     "Raising natriuretic peptides is the effect of sacubitril, not digoxin; digoxin suppresses renin-angiotensin-aldosterone activity."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 65"
+  },
+  {
+   "topic": "Structure and class",
+   "io": "Identify diuretics and heart failure drug classes and commonly prescribed diuretics and heart failure drugs",
+   "slot": "class",
+   "q": "Which structural features of digoxin are essential for its activity?",
+   "opts": [
+    [
+     "A lactone ring and a steroid nucleus",
+     "Correct. The lactone ring and the steroid nucleus are essential for activity; the attached sugar molecules only modify absorption, half-life and metabolism."
+    ],
+    [
+     "A lactone ring and the sugar molecules",
+     "The steroid nucleus is also essential, and the sugar molecules are not: they only influence absorption, half-life and metabolism."
+    ],
+    [
+     "A steroid nucleus and the sugar molecules",
+     "The lactone ring is also essential for activity, and the sugar molecules are not; they influence absorption, half-life and metabolism."
+    ],
+    [
+     "The sugar molecules and a benzene ring",
+     "Neither is the essential part. Activity depends on the lactone ring and the steroid nucleus; the sugars only change absorption and half-life."
+    ]
+   ],
+   "c": 0,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 61"
+  },
+  {
+   "topic": "Interactions",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with diuretics and heart failure drugs",
+   "slot": "interaction",
+   "q": "A patient taking digoxin is started on furosemide. Which concern does the combination raise?",
+   "opts": [
+    [
+     "Loss of the digoxin inotropic effect",
+     "Loop diuretics do not cancel the inotropic effect; they lower potassium and magnesium, which makes digitalis arrhythmias more likely."
+    ],
+    [
+     "Arrhythmias from electrolyte loss",
+     "Correct. Loop diuretics waste potassium and magnesium, and low levels of both with digitalis produce arrhythmias."
+    ],
+    [
+     "Hyperkalemia with conduction block",
+     "Loop diuretics lower rather than raise potassium; the concern is hypokalemia and hypomagnesemia causing arrhythmias."
+    ],
+    [
+     "Faster renal clearance of digoxin",
+     "Clearance is not what changes; the interaction is hypokalemia and hypomagnesemia with digitalis, causing arrhythmias."
+    ]
+   ],
+   "c": 1,
+   "cite": "Diuretics and Heart Failure Drugs.pptx, Slide 19"
+  }
+ ]
+}

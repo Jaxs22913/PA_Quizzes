@@ -10,7 +10,8 @@ Weighting follows Dr. McInnis: indications, patient education, adverse effects
 and contraindications over mechanism. Deliberately NOT keyed (known deck
 conflicts or excluded numbers): fibrin affinity of reteplase and tenecteplase,
 urokinase as an antigen, the plasmin factor list, the contested comorbidity-table
-cells, "aspirin and clopidogrel increase coronary flow", the fibrinolytic
+cells (since 2026-09-30 the quizzes key those cells, the nitroglycerin replacement interval and the
+intravenous-then-oral beta blocker as the course teaches them; no Arcade card was added for them), "aspirin and clopidogrel increase coronary flow", the fibrinolytic
 time/age/percentage figures, and every dose or strength.
 
 NOT YET IN arcade.js: the integrator runs `python3 tools/add_pharm_e2_arcade.py`.

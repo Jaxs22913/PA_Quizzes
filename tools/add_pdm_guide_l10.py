@@ -21,6 +21,10 @@ Picture-only slides, all viewed at full size before being placed:
 Slides 29 and 30 are tables that exist only as pictures; they are TYPED here as HTML tables. The two
 algorithms (27, 28) are reproduced AND typed out step by step.
 
+AFTER THIS SCRIPT, run tools/add_pdm_l10_memaid.py (section 10.0, the wall-building crew memory aid, Jaxon
+2026-09-30), tools/apply_guide_additions.py, tools/build_guide_links.py and tools/build_guide_docx.py: this
+script rebuilds the whole section and strips the memory aid.
+
 Slide/figure disagreements flagged in the guide rather than resolved silently (truth wins): the
 thrombocytopenia threshold on slide 13, the "fibrin monomers (fibrin split products)" heading on slide
 22, the "international reference thromboplastin" wording on slide 20, hypersplenism filed under
@@ -175,7 +179,7 @@ SEC = """
   <p>Testing covers both primary and secondary causes.</p>
   <table>
     <tr><th>Causes</th><th>Examples</th></tr>
-    <tr><td><strong>Primary</strong></td><td>Deficiencies of <strong>antithrombin III, protein C, protein S and factor XII</strong>; abnormal fibrinolytic mechanisms</td></tr>
+    <tr><td><strong>Primary</strong></td><td>Deficiencies of <strong>antithrombin III, protein C and protein S</strong>; abnormal fibrinolytic mechanisms. <em>The slide also lists factor XII here, but factor XII deficiency is not an established cause of thrombosis (slide 32 itself says it prolongs the aPTT without bleeding), so the established primary causes to know are the first three.</em></td></tr>
     <tr><td><strong>Secondary</strong></td><td>Acquired platelet disorders; acquired diseases of coagulation and fibrinolytic impairment</td></tr>
     <tr><td><strong>Tests</strong></td><td>PT, aPTT, fibrinogen level, thrombin time; antiplatelet factors (for example prostacyclin); anticoagulant factors (<strong>antithrombin III, protein C, protein S, lupus anticoagulant</strong>); fibrinolysis tests</td></tr>
   </table>

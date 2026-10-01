@@ -81,6 +81,8 @@ def main():
     path = os.path.join(HERE, "pharm_mi_vignette_sets.json")
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("wrote", os.path.basename(path))
+    from pharm_mi_course_extend import extend_vignettes     # course-keyed vignettes are appended, never split
+    extend_vignettes()
 
 
 if __name__ == "__main__":

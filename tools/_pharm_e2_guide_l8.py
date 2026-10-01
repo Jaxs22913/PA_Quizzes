@@ -25,7 +25,14 @@ and what is true: slide 13 (antiplatelets "increase coronary flow"), slide 15
 (grade I), slide 23 (atrioventricular block unqualified), slide 34 (two contested
 cells), slide 55 (intravenous then oral), slide 58 (factor list), slides 61 and 64
 (fibrin affinity of reteplase), slide 62 (urokinase), slide 63 (old numbers),
-slide 65 (numbers). The contested cells and the wrong ones are NOT to be keyed.
+slide 65 (numbers). The wrong ones are NOT keyed.
+
+EXCEPTION, DECIDED BY JAXON 2026-09-30 ("key the contested items as 'the course says'"): three groups that
+Dr. Wood taught are keyed as the COURSE teaches them, with a "Course rule versus current practice" callout that
+says where current labeling or guidelines differ: (a) slide 34 prior infarction -> avoid calcium channel blockers
+and diabetes -> non-dihydropyridine first line; (b) nitroglycerin tablets replaced every 3 to 6 months after
+opening (slide 28); (c) beta blockers intravenous first then oral, with early and late mortality benefit
+(slides 52 and 55). Everything else on this page stays truth-wins. The questions are in pharm_mi_pool_course.py.
 
 SLIDES NOT COVERED: 1 (title), 2 (the deck's own objectives slide; the syllabus
 wording is used instead), 3, 40 and 69 (section dividers and "Questions?"). Every
@@ -90,6 +97,12 @@ BODY = '''
     <li><strong>Where the deck is wrong or out of date,</strong> the guide says so in a box headed
     &ldquo;Deck versus truth&rdquo; and follows the truth. Those points are not to be memorized as the
     slide words them.</li>
+    <li><strong>Three things he taught that current practice has moved past are the exception.</strong>
+    The exam follows the course, so they are keyed as he taught them, each in a box headed
+    &ldquo;Course rule versus current practice&rdquo;: the prior-infarction and diabetes cells of the
+    comorbidity table (5.5), replacing nitroglycerin tablets every 3 to 6 months (5.4), and intravenous then oral
+    beta blockers with an early mortality benefit in acute coronary syndrome (5.7). Learn the course rule for the
+    exam; the box says where current labeling or guidelines differ.</li>
   </ul></div>
 
   <h3 class="sub" id="mi-frame">5.1 &middot; Objectives 1&ndash;3 &mdash; Angina, and the oxygen supply-and-demand frame</h3>
@@ -391,7 +404,7 @@ BODY = '''
     <tr><td>Goals of therapy</td><td><strong>Relieve acute symptoms of myocardial ischemia and prevent effort-induced angina</strong> [slide 27]</td></tr>
     <tr><td>Forms pictured</td><td>Nitroglycerin sublingual tablets (Nitrostat) and a nitroglycerin lingual spray (Nitrolingual Pumpspray) [slide 27]</td></tr>
     <tr><td>Drug selection</td><td>Dosed every 5 minutes until relief or emergency medical services arrive (standard practice caps it at three doses in total; his words: keep dosing while waiting); <strong>call emergency medical services if there is no relief 5 minutes after the first dose</strong> [slide 27]</td></tr>
-    <tr><td>Patient education</td><td>Warn about <strong>orthostatic hypotension</strong>; store in the original packaging in a cool, dry place; <strong>replace the tablets 3 to 6 months after opening</strong> (the slide&rsquo;s older rule; see the note below); apply or spray under the tongue [slide 28]</td></tr>
+    <tr><td>Patient education</td><td>Warn about <strong>orthostatic hypotension</strong>; store in the original packaging in a cool, dry place; <strong>replace the tablets 3 to 6 months after opening</strong> (the course rule; current labeling differs, see the note below); apply or spray under the tongue [slide 28]</td></tr>
   </table>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 35:51 of the recording: <em>&ldquo;If I say a test question, which one of these is best for quick relief of myocardial&hellip; a quick relief of anginal symptoms, this is the answer. Okay, keep that in mind, highlight.&rdquo;</em></p>
@@ -405,7 +418,7 @@ BODY = '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 37:12 of the recording: <em>&ldquo;Orthostatic hypotension makes sense&hellip; store them in the original packaging, a cool dry place, don&rsquo;t put them into your pill minder&hellip; and then we&rsquo;ll say after opening it replace every three to six months or so&hellip; I say go ahead, yes, do replace it.&rdquo;</em></p>
-    <p>Warn about <mark class="prof-highlight">orthostatic hypotension</mark>; keep tablets in the original packaging in a cool, dry place; he teaches replacement every three to six months, which this guide notes is the course rule (current labeling ties expiry to the original bottle) [slide 28].</p>
+    <p>Warn about <mark class="prof-highlight">orthostatic hypotension</mark>; keep tablets in the original packaging in a cool, dry place; he teaches replacement every three to six months, which is the course rule to know (current labeling ties expiry to the original bottle, see the box below) [slide 28].</p>
   </div>
 
   <div class="callout"><strong>The five-minute rule is a safety protocol (Objective 9).</strong> The action is the
@@ -413,7 +426,7 @@ BODY = '''
   rather than keep dosing alone</strong> [slide 27]. The slide also says to dose every 5 minutes until relief or
   help arrives; the two lines agree once you read the second as &ldquo;while help is on the way&rdquo;. Standard practice caps it at three doses in total; his words: keep dosing while waiting.</div>
 
-  <div class="callout"><strong>Deck versus truth &mdash; replacing the tablets.</strong> Slide 28 says to replace nitroglycerin tablets 3 to 6 months after opening. That is older advice; current labeling ties the expiry to the printed date when the tablets stay in the original tightly closed bottle. Learn it as the slide&rsquo;s rule and do not treat the number as the point.</div>
+  <div class="callout"><strong>Course rule versus current practice &mdash; replacing the tablets.</strong> Slide 28 and the recording say to <strong>replace nitroglycerin tablets 3 to 6 months after opening</strong> (&ldquo;go ahead, yes, do replace it&rdquo;), because the drug is unstable and breaks down with light and moisture. <strong>Learn 3 to 6 months as the exam answer.</strong> Current labeling is looser: it ties the expiry to the printed date when the tablets stay in the tightly closed original glass bottle, so a patient should still replace tablets sooner if they no longer work.</div>
 
   <h4 class="subsub">Long-acting nitrates [slides 29 to 31]</h4>
   <table>
@@ -493,13 +506,13 @@ BODY = '''
   <table>
     <tr><th>Comorbid condition</th><th>First line</th><th>Alternative</th><th>Avoid</th></tr>
     <tr><td><strong>Hypertension</strong></td><td>Beta blocker</td><td>Non-dihydropyridine calcium channel blocker</td><td>None listed</td></tr>
-    <tr><td><strong>Prior myocardial infarction</strong></td><td>Beta blocker</td><td>None listed</td><td>Calcium channel blockers (slide wording; see the box below)</td></tr>
+    <tr><td><strong>Prior myocardial infarction</strong></td><td>Beta blocker</td><td>None listed</td><td>Calcium channel blockers (the course cell; see the box below)</td></tr>
     <tr><td><strong>Decreased left ventricular function</strong></td><td>Beta blocker</td><td>Amlodipine</td><td>Other calcium channel blockers</td></tr>
     <tr><td><strong>Bradycardia or atrioventricular block</strong></td><td>Dihydropyridine calcium channel blocker</td><td>Long-acting nitrate</td><td>Non-dihydropyridines and beta blockers</td></tr>
-    <tr><td><strong>Diabetes</strong></td><td>Non-dihydropyridine (slide wording; see the box below)</td><td>Long-acting nitrate; cardioselective beta blocker</td><td>Non-cardioselective beta blocker</td></tr>
+    <tr><td><strong>Diabetes</strong></td><td>Non-dihydropyridine (the course cell; see the box below)</td><td>Long-acting nitrate; cardioselective beta blocker</td><td>Non-cardioselective beta blocker</td></tr>
     <tr><td><strong>Asthma</strong></td><td>Non-dihydropyridine and cardioselective beta blocker</td><td>None listed</td><td><strong>Non-cardioselective beta blocker</strong></td></tr>
   </table>
-  <p>The firm, uncontested reading: a <strong>beta blocker is first line after a myocardial infarction, with
+  <p>Where the table and current practice agree: a <strong>beta blocker is first line after a myocardial infarction, with
   hypertension, and with reduced left ventricular function</strong> (amlodipine is the calcium channel blocker
   alternative there and the other calcium channel blockers are avoided); a <strong>dihydropyridine is first
   line with bradycardia or atrioventricular block, and non-dihydropyridines and beta blockers are avoided</strong>;
@@ -507,24 +520,27 @@ BODY = '''
   airway disease as a beta blocker precaution, which agrees. In asthma the cardioselective beta blockers the table
   lists are used with caution [slides 18 and 34]. In a patient with angina and asthma, <strong>non-selective beta blockers such as propranolol are avoided</strong>, while cardioselective beta blockers and non-dihydropyridine calcium channel blockers remain options [slide 34].</p>
 
-  <div class="callout"><strong>Deck versus truth &mdash; two contested cells in the comorbidity table.</strong>
+  <div class="callout"><strong>Course rule versus current practice &mdash; two cells of the comorbidity table.</strong>
   <ul>
-    <li><strong>Prior myocardial infarction &rarr; &ldquo;avoid calcium channel blockers.&rdquo;</strong> The slide
-    says avoid them; that is over-simple. A beta blocker is first line after a myocardial infarction, but a
-    non-dihydropyridine is a reasonable substitute when a beta blocker is contraindicated (slide 22) and there is no
-    reduced left ventricular function. What is avoided is short-acting nifedipine and, with reduced function, the
-    non-dihydropyridines.</li>
-    <li><strong>Diabetes &rarr; &ldquo;non-dihydropyridine first line, avoid non-cardioselective beta
-    blocker.&rdquo;</strong> This is an older simplification. A beta blocker remains a sound first choice in a patient
-    with diabetes and angina; a cardioselective agent is preferred, and slide 18&rsquo;s caution about diabetes still
-    applies. Diabetes is not a reason to put a non-dihydropyridine ahead of a beta blocker.</li>
+    <li><strong>Prior myocardial infarction &rarr; &ldquo;avoid calcium channel blockers.&rdquo;</strong> The course
+    teaches this: after an infarction a beta blocker is first line and calcium channel blockers are the class to
+    avoid, because the mortality evidence favors the beta blocker. <strong>Learn it as the exam answer.</strong>
+    Current practice is less absolute: a non-dihydropyridine is a reasonable substitute when a beta blocker is
+    contraindicated (slide 22) and left ventricular function is normal; what is avoided is short-acting nifedipine
+    and, with reduced function, the non-dihydropyridines.</li>
+    <li><strong>Diabetes &rarr; &ldquo;non-dihydropyridine first line; alternatives long-acting nitrate and
+    cardioselective beta blocker; avoid non-cardioselective beta blocker.&rdquo;</strong> The course teaches this
+    too (he gave the reason: beta blockers can raise blood sugar and mask the signs of hypoglycemia, so be cautious
+    unless there is another reason for one). <strong>Learn it as the exam answer.</strong> Current practice is more
+    flexible: a cardioselective beta blocker remains a sound first choice in a patient with diabetes and angina, and
+    diabetes alone is not a reason to put a non-dihydropyridine ahead of it.</li>
   </ul>
-  Do not memorize these two cells as the slide words them.</div>
+  Both cells are keyed as the course teaches them; the second sentence of each point is where current guidelines differ.</div>
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 43:30 of the recording: <em>&ldquo;This is a really good table for your anti-anginals&hellip; come back to this, because this is like a cornucopia of test questions could come from something like this.&rdquo;</em></p>
     <p>At 44:16 of the recording: <em>&ldquo;For things to avoid, for prior MI, calcium channel blockers kind of in general, we really prefer beta blockers just from the evidence that we have in terms of mortality&hellip; be very cautious.&rdquo;</em></p>
-    <p><strong>He read these; current practice differs.</strong> He walked the table row by row and called it a cornucopia of test questions: hypertension, reduced left ventricular function and (after a myocardial infarction) a prior infarction all point to a beta blocker; bradycardia or block points to a dihydropyridine; asthma points to a cardioselective beta blocker or a non-dihydropyridine [slide 34]. He also read the prior-infarction and diabetes cells as the slide words them, but the boxed note above applies: do not learn those two cells as the slide has them.</p>
+    <p><strong>He read every row, and the course keys them as he read them.</strong> He walked the table row by row and called it a cornucopia of test questions: hypertension, reduced left ventricular function and (after a myocardial infarction) a prior infarction all point to a beta blocker; bradycardia or block points to a dihydropyridine; asthma points to a cardioselective beta blocker or a non-dihydropyridine [slide 34]. He also read the prior-infarction cell (avoid calcium channel blockers) and, essentially as the slide words it, the diabetes cell (non-dihydropyridine first line): learn those two as the course has them; the box above says where current practice differs.</p>
   </div>
 
 
@@ -647,7 +663,7 @@ BODY = '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 55:17 of the recording: <em>&ldquo;Beta blockers will start IV initially till we get them under control and then we can switch over to PO, just know there&rsquo;s going to be contraindicated if they&rsquo;re already hypotensive or bradycardic or if they&rsquo;re having heart block&hellip; and then you know they have severe reactive airway disease, something like a cardioselective beta blocker would make sense.&rdquo;</em></p>
-    <p>Cautions: <mark class="prof-highlight">hypotension, bradycardia, heart block, severe reactive airway disease</mark> (a cardioselective agent would make sense) [slide 55]. <strong>Flag:</strong> the intravenous-then-oral sequence is older teaching that he gave; see the deck-versus-truth box above, and do not learn the sequence.</p>
+    <p>Cautions: <mark class="prof-highlight">hypotension, bradycardia, heart block, severe reactive airway disease</mark> (a cardioselective agent would make sense) [slide 55]. <strong>He teaches intravenous first, then oral, as the course rule:</strong> learn that sequence for the exam; the box below says where current guidelines differ.</p>
   </div>
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
@@ -663,13 +679,16 @@ BODY = '''
   says beta blockers cut the risk of myocardial infarction among unstable angina patients by 13 percent and cut
   deaths in myocardial infarction patients by 40 percent.</p>
 
-  <div class="callout"><strong>Deck versus truth &mdash; beta blockers in acute coronary syndrome.</strong> Slide 55
-  says &ldquo;intravenous followed by oral.&rdquo; That reflects older practice. Current guidance favors an oral beta
-  blocker within the first 24 hours and avoids early intravenous dosing in patients with signs of heart failure, low
-  output or a risk of shock; intravenous use is kept for ongoing ischemia or high blood pressure without those
-  contraindications. The mortality figures on slides 52 and 55 come from older trials; the benefit that holds today is mainly
-  long-term use after a myocardial infarction. Early beta blockade can worsen heart failure and shock, so the
-  heart failure benefit on the slide is also an older-trial claim. The caution list on the slide is the part to keep.</div>
+  <div class="callout"><strong>Course rule versus current practice &mdash; beta blockers in acute coronary syndrome.</strong>
+  Slide 55 says &ldquo;intravenous followed by oral,&rdquo; and slides 52 and 55 credit beta blockers with a reduction
+  in <strong>early and late mortality</strong>, infarct size, heart failure and sudden cardiac death. <strong>Learn the
+  intravenous-then-oral sequence and the early and late mortality benefit as the exam answer</strong> (the percentages stay
+  unlearned). Current guidance differs: it favors an oral beta blocker within the first 24 hours and avoids early
+  intravenous dosing in patients with signs of heart failure, low output or a risk of shock, keeping the intravenous
+  route for ongoing ischemia or high blood pressure without those contraindications. The mortality figures come from older
+  trials, and the benefit that holds today is mainly long-term use after a myocardial infarction, most clearly with reduced
+  ventricular function; early beta blockade can worsen heart failure and shock. The caution list on the slide is the part
+  that holds in both.</div>
 
   <h3 class="sub" id="mi-lytics">5.8 &middot; Objectives 1&ndash;7 &mdash; Fibrinolytics and other antithrombotic drugs</h3>
 
@@ -850,7 +869,7 @@ BODY = '''
     <tr><th>Drug</th><th>What to tell the patient</th></tr>
     <tr><td><strong>Beta blockers</strong></td><td>Do not stop suddenly; expect dizziness and fatigue [slide 19]</td></tr>
     <tr><td><strong>Calcium channel blockers</strong></td><td>Expect dizziness and constipation [slide 24]</td></tr>
-    <tr><td><strong>Short-acting nitrates</strong></td><td>Warn about orthostatic hypotension; store in the original packaging in a cool, dry place; replace tablets 3 to 6 months after opening (older rule, see 5.4); apply or spray under the tongue; call emergency medical services if there is no relief five minutes after the first dose [slides 27 and 28]</td></tr>
+    <tr><td><strong>Short-acting nitrates</strong></td><td>Warn about orthostatic hypotension; store in the original packaging in a cool, dry place; replace tablets 3 to 6 months after opening (course rule; current labeling differs, see 5.4); apply or spray under the tongue; call emergency medical services if there is no relief five minutes after the first dose [slides 27 and 28]</td></tr>
     <tr><td><strong>Long-acting nitrates</strong></td><td>12 hours on and 12 hours off for ointment and patch; wipe off the previous ointment dose before applying the next; keep the ointment covered with the applicator paper; expect headache, flushing and postural hypotension [slide 31]</td></tr>
     <tr><td><strong>Nitrates and erectile dysfunction drugs</strong></td><td>Counsel patients taking a nitrate, such as isosorbide mononitrate, to avoid combining it with sildenafil, tadalafil or vardenafil; the combination can cause hypotension, myocardial infarction or stroke [slide 33]</td></tr>
     <tr><td><strong>Aspirin in chest pain</strong></td><td>Chew and swallow at the first signs of chest pain [slide 52]</td></tr>

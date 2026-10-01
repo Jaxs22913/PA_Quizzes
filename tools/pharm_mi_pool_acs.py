@@ -26,7 +26,8 @@ LEFT OUT ON PURPOSE (no key built on them):
     figures (fibrinolytic contraindications are keyed qualitatively, for
     example "severe uncontrolled hypertension" and "recent major surgery");
   * "aspirin and clopidogrel increase coronary blood flow" (slide 13, topic 1);
-  * after the independent fact-check: the intravenous-then-oral beta blocker sequence (out of date), acute
+  * after the independent fact-check: the intravenous-then-oral beta blocker sequence (out of date; since
+    2026-09-30 it IS keyed as the course teaches it, in pharm_mi_pool_course.py), acute
     pericarditis as a fibrinolytic contraindication (not in current guidelines), enoxaparin "preferred over
     heparin" (guidelines accept either), prior stroke as a blanket contraindication (keyed the active intracranial
     tumor instead), plasminogen activator inhibitor-1 resistance for reteplase, and the Q-wave equivalence;

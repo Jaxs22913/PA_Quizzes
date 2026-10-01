@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #9c5230; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c9a227; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacology I Exam 2 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#6b3524; --indigo:#9c5230; --gold:#c9a227; --ice:#fbf1e6;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#6b3524;--gold-l:#c9a227;--indigo-l:#9c5230;--navy:#dc9d89;--indigo:#c47653;--gold:#c9a227;--ice:#351b10;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#c47653;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#6b3524;--indigo-t:#9c5230;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Pharmacology I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 2 &middot; Lectures 4&ndash;8 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from every lecture in the Exam 2 block (Lectures 4 to 8), so each form is a genuine cumulative rehearsal. <b>Weighted by the timetable</b>: these practice exams follow the convention of five questions per scheduled lecture hour, and Lectures 4, 5, 6 and 7 were two hours each while Lecture 8 was one, so each form carries <b>14 ophthalmic, 13 ENT, 13 antihypertensive, 13 lipid-lowering and 7 myocardial ischemia</b> questions. Nine hours at five per hour is 45, not 60, so the sixty are apportioned across those hours rather than invented. Questions are reused verbatim from the topic quizzes and clinical vignettes, so nothing here can drift from the material it summarizes, and <b>no question appears in more than one form</b>: all five give you 300 distinct questions. <b>Weighted the way the course asked for</b>: mechanism is capped at a fifth of each lecture, so indications, drug choice, side effects, contraindications and patient education carry the count. <b>No question turns on a drug dose</b>, per Dr. Wood. Answer positions are balanced inside every form (fifteen of each letter), and every wrong answer says what it actually belongs to.</p>
+    <div class="chips"><span class="chip">Ophthalmic drugs</span><span class="chip">ENT drugs</span><span class="chip">Antihypertensives</span><span class="chip">Lipid-lowering drugs</span><span class="chip">Myocardial ischemia</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Ocular drug delivery", "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs", "q": "Which delivery route carries the risk of globe perforation, optic nerve trauma and central retinal artery occlusion?", "cite": "Ophthalmology-2.pptx, Slide 5", "opts": [["Topical instillation", "Its limitations are compliance, corneal and conjunctival toxicity, nasal mucosal toxicity and systemic effects from nasolacrimal absorption — no needle, no perforation."], ["Oral administration", "Systemic exposure is the trade-off there, not mechanical injury to the globe."], ["Periocular injection", "Correct. These periocular injections reach the anterior segment, posterior uveitis and cystoid macular edema, but the needle is the hazard — perforation, optic nerve trauma, vascular occlusion and direct retinal drug toxicity if the globe is entered."], ["Intravenous administration", "Again a systemic route; it carries no risk of perforating the eye."]], "c": 2}, {"topic": "LDL receptor thread", "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels", "q": "Statins, ezetimibe, bile acid sequestrants and PCSK9 inhibitors lower LDL (low-density lipoprotein) through which shared end result?", "cite": "Lipids.pptx, Slide 18", "opts": [["Less VLDL secreted by the liver", "Reduced VLDL (very low-density lipoprotein) secretion is how fibrates and niacin lower triglycerides. These four share more LDL receptor activity."], ["More active hepatic LDL receptors", "Correct. Statins and resins upregulate them, ezetimibe raises their expression by cutting cholesterol supply, and PCSK9 inhibitors keep them active longer."], ["More HDL made by the liver", "Raising HDL (high-density lipoprotein) is the strength of niacin and fibrates. These four drugs share more hepatic LDL receptors."], ["Less bile acid in the intestine", "Only resins deplete intestinal bile acid. The end point all four share is more active hepatic LDL receptors."]], "c": 1}, {"topic": "Aspirin education", "io": "Outline appropriate patient education for ENT drugs", "q": "Why is a patient on aspirin told not to take it with an anticoagulant?", "cite": "ENT Jax Pharmacology.pptx, Slide 20", "opts": [["The anticoagulant blocks aspirin's absorption", "Absorption is not the problem. Aspirin inhibits platelet function, which adds a second bleeding mechanism to the anticoagulant."], ["Aspirin makes the anticoagulant ineffective", "The concern is additive bleeding risk rather than loss of effect: two different parts of hemostasis are disabled at once."], ["The combination causes Reye's syndrome", "Reye's relates to children with viral illness rather than to anticoagulants."], ["Aspirin inhibits platelet function", "Correct. Two different parts of hemostasis are disabled at once, which is more than the sum of either alone. Adding a second bleeding mechanism."]], "c": 3}, {"topic": "Niacin", "io": "Summarize side effects and toxic manifestations of drugs that lower cholesterol and triglyceride levels", "q": "Why is niacin a relative contraindication in a patient with symptomatic gout?", "cite": "Lipids.pptx, Slide 55", "opts": [["It causes gallstones", "Cholelithiasis is a fibrate effect. Niacin's problem in gout is that it raises uric acid."], ["It raises potassium", "Raised potassium is an ACE (angiotensin-converting enzyme) inhibitor effect. Niacin raises uric acid."], ["It raises uric acid", "Correct. At larger doses niacin raises liver enzymes, glucose and uric acid, so gout and significant hyperuricemia are relative contraindications."], ["It lowers kidney blood flow", "Reduced renal blood flow is not the described mechanism. Niacin raises uric acid at larger doses."]], "c": 2}, {"topic": "Antibacterials", "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education", "q": "A newborn needs prophylaxis against ophthalmia neonatorum. Which agent?", "cite": "Ophthalmology-2.pptx, Slide 14", "opts": [["Erythromycin ointment", "Correct. It is the named agent for newborn prophylaxis, and it is inexpensive."], ["Azithromycin solution", "Used for conjunctivitis, and considerably more expensive."], ["Moxifloxacin solution", "A fluoroquinolone for conjunctivitis and ulcers."], ["Natamycin suspension", "An antifungal."]], "c": 0}, {"topic": "Ocular antihistamines", "io": "Identify indications and contraindications of ophthalmic drugs", "q": "A patient starts an ocular antihistamine. How long before they feel relief, and how long before its full effect can be judged?", "cite": "Ophthalmology-2.pptx, Slide 44", "opts": [["Five to fourteen days before any effect at all", "That is the mast cell stabilizer timeline, and it is why they cannot treat acute symptoms."], ["Minutes for relief, two weeks for full efficacy", "Correct. Both halves matter in counseling — the drug does something immediately, so it will not feel useless, but the final verdict takes a fortnight."], ["Full effect immediately, with no further change", "Onset really is within minutes, but the effect continues to build, which is why two weeks are needed before judging whether it is working."], ["Six weeks, as with most topical ocular therapy", "Six weeks is not the timeline for any ocular allergy agent, and quoting it would make a working drug look like a failure."]], "c": 1}, {"topic": "Statin intensity", "io": "List commonly used protocols and patient monitoring for drugs that lower cholesterol and triglyceride levels", "q": "By how much does high-intensity statin therapy lower LDL (low-density lipoprotein) cholesterol?", "cite": "Lipids.pptx, Slide 68", "opts": [["By 30 to 49%", "A 30 to 49% reduction defines moderate-intensity therapy. High intensity lowers LDL by 50% or more."], ["By less than 30%", "Under 30% defines low-intensity therapy. High intensity lowers LDL by 50% or more."], ["By 50% or more", "Correct. High intensity lowers LDL by 50% or more; moderate intensity by 30 to 49%; low intensity by less than 30%."], ["By 10 to 20%", "A reduction this small is below even low-intensity therapy; high intensity lowers LDL by 50% or more."]], "c": 2}, {"topic": "Bile acid sequestrants", "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels", "q": "Which condition is an absolute contraindication to bile acid sequestrants?", "cite": "Lipids.pptx, Slide 48", "opts": [["Pregnancy in the third trimester", "Resins are approved in pregnancy because they are not absorbed; pregnancy contraindicates statins and fibrates instead."], ["Childhood or adolescence", "Resins are approved for children and adolescents. The absolute contraindication is familial dysbetalipoproteinemia."], ["Chronic hepatic disease", "Hepatic disease contraindicates statins; resins are not absorbed. Their absolute contraindication is familial dysbetalipoproteinemia."], ["Familial dysbetalipoproteinemia", "Correct. Familial dysbetalipoproteinemia (with its increased triglycerides) and triglycerides above 400 mg/dL are absolute contraindications."]], "c": 3}, {"topic": "ACE inhibitors", "io": "Describe adverse effects of antihypertensive drugs", "q": "A patient develops a persistent dry cough six weeks after starting lisinopril. What is the likely cause?", "cite": "Antihypertensives.pptx, Slide 19", "opts": [["Angiotensin II acting on the airways", "Angiotensin II falls on an ACE inhibitor, so it cannot be the cause. The cough comes from bradykinin and substance P accumulating in the lungs."], ["Bradykinin accumulating in the lungs", "Correct. Bradykinin and substance P accumulate because the converting enzyme no longer breaks them down; the cough appears between 1 week and 6 months."], ["Aldosterone excess retaining fluid", "Aldosterone synthesis falls on this drug. The dry cough is a bradykinin and substance P effect in the lungs."], ["Beta-2 blockade in the bronchi", "Bronchospasm from beta-2 blockade belongs to beta blockers. The ACE inhibitor cough comes from bradykinin accumulating in the lungs."]], "c": 1}, {"topic": "Ocular antibiotics", "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs", "q": "Which agent is described as the most common ophthalmic antibiotic, and what property lets it be used before a bacterial cause is confirmed?", "cite": "Ophthalmology-2.pptx, Slide 17", "opts": [["Azithromycin, because it is dosed less often", "Twice daily rather than four or more times is a real advantage, but it is considerably more expensive and not used as often clinically."], ["Erythromycin, because it is soothing on an inflamed eye", "Correct. It is the one you will see most, and because it soothes the inflamed eye it can reasonably be started even when a bacterial infection has not been confirmed."], ["Ciprofloxacin, because it covers the widest spectrum", "Broad and effective, but expensive, with emerging resistance, and reserved rather than reached for first."], ["Bacitracin, because it has no drug interactions", "True of nearly every topical ophthalmic antibiotic here, so it distinguishes nothing."]], "c": 1}, {"topic": "Central sympatholytics", "io": "Describe adverse effects of antihypertensive drugs", "q": "What effect does clonidine have on blood glucose?", "cite": "Antihypertensives.pptx, Slide 92", "opts": [["It lowers it", "The direction is the reverse: clonidine inhibits insulin secretion, so blood glucose rises."], ["It raises it", "Correct. Clonidine increases blood glucose by inhibiting insulin secretion."], ["It masks lows only", "Masking hypoglycemic warning signs is a beta blocker effect. Clonidine raises blood glucose by inhibiting insulin secretion."], ["It has no effect", "It does affect glucose: by inhibiting insulin secretion, clonidine raises blood glucose."]], "c": 1}, {"topic": "Ocular antimicrobials", "io": "Identify indications and contraindications of ophthalmic drugs", "q": "When are cultures routinely taken before starting an ophthalmic antibiotic?", "cite": "Ophthalmology-2.pptx, Slide 12", "opts": [["Always, because resistance is emerging", "Resistance is a real concern with the fluoroquinolones, but it has not changed the empiric approach for ordinary infections."], ["Only for conjunctivitis, not for keratitis", "No such split is drawn. The rule is about whether an unusual organism is expected, not about which part of the eye is involved."], ["Only when the patient wears contact lenses", "Contact lens wear changes the drug you choose because of Pseudomonas risk, not whether you culture."], ["Not unless an unusual organism is expected", "Correct. Broad-spectrum topical therapy is started empirically. Cultures are reserved for when something unusual is likely — the immunocompromised patient is the example given."]], "c": 3}, {"topic": "Hydralazine", "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs", "q": "Hydralazine is N-acetylated in the liver. Which patients are at higher risk of its lupus syndrome?", "cite": "Antihypertensives.pptx, Slide 101", "opts": [["Fast acetylators", "Fast acetylators clear the drug quickly. The listed risk factor for hydralazine lupus is being a slow acetylator."], ["Patients on low doses", "Low doses are protective; high doses are the risk factor, along with long-term use and slow acetylation."], ["Patients on short courses", "Short-term use is not a risk factor; long-term therapy is, together with high dose and slow acetylation."], ["Slow acetylators", "Correct. Slow acetylators clear hydralazine more slowly; with high doses, long-term use, female sex and Caucasian ancestry, this raises the risk of lupus syndrome."]], "c": 3}, {"topic": "Nitroprusside", "io": "Describe the molecular mechanism of action of antihypertensive drugs", "q": "Which vessels does nitroprusside dilate?", "cite": "Antihypertensives.pptx, Slide 106", "opts": [["Veins and arterioles", "Correct. Nitric oxide released from nitroprusside activates cyclic GMP and lowers intracellular calcium in both veins and arterioles."], ["Arterioles only", "Arteriole-only dilation describes hydralazine and minoxidil. Nitroprusside acts on veins as well as arterioles."], ["Veins only", "Nitroprusside dilates arterioles as well as veins; it is not a venous-only agent."], ["Coronary arteries only", "Its action is not limited to the coronaries: nitroprusside dilates veins and arterioles generally."]], "c": 0}, {"topic": "Bile acid sequestrants", "io": "Identify contraindications for drugs that lower cholesterol and triglyceride levels", "q": "A patient planning a pregnancy needs LDL (low-density lipoprotein) lowering. Which class is approved in pregnancy?", "cite": "Lipids.pptx, Slide 42", "opts": [["Statins", "Pregnancy is one of the two listed statin contraindications, with hepatic disease. Bile acid sequestrants are approved in pregnancy."], ["Bile acid sequestrants", "Correct. Resins are not absorbed and are approved in pregnancy, whereas pregnancy is a listed contraindication for statins and for fibrates."], ["Fibrates", "Pregnancy is a listed fibrate contraindication, with severe hepatic or renal dysfunction and gallbladder disease. Resins are approved in pregnancy."], ["Statin with niacin", "The lovastatin and niacin combination contains a statin, and pregnancy contraindicates statins. Bile acid sequestrants are the pregnancy option."]], "c": 1}, {"topic": "Bile acid sequestrants", "io": "Outline appropriate patient education for drugs that lower cholesterol and triglyceride levels", "q": "How should a patient prepare cholestyramine powder?", "cite": "Lipids.pptx, Slide 45", "opts": [["Swallow the powder dry", "The powder is not taken dry; it must be mixed with water or fruit juice, ideally a pulpy drink to mask the taste."], ["Dissolve it under the tongue", "Resins act in the gut lumen and are not absorbed, so sublingual use makes no sense; the powder is mixed in water or fruit juice."], ["Mix it with an antacid", "Antacids are not the vehicle; they interact with ezetimibe. The powder is mixed with water or fruit juice."], ["Mix it in water or fruit juice", "Correct. Powders must be mixed with water or fruit juice, and a pulpy drink masks the taste."]], "c": 3}, {"topic": "Ocular drug delivery", "io": "Identify ophthalmic drug classes and commonly prescribed ophthalmic drugs", "q": "A drop instilled in the eye reaches the systemic circulation and causes a side effect elsewhere in the body. By which route did it get there, and what is the consequence for its metabolism?", "cite": "Ophthalmology-2.pptx, Slide 8", "opts": [["Transcorneal absorption, which avoids first-pass metabolism", "Transcorneal absorption is what produces the LOCAL ocular effect. It is the route you want for the eye, not the route that causes systemic exposure."], ["Nasolacrimal drainage, with extensive first-pass metabolism", "The route is right but the consequence is backwards — avoiding the portal circulation is precisely what makes this absorption efficient and the systemic effects notable."], ["Conjunctival absorption into the retinal circulation", "Not the described pathway; systemic absorption from an eye drop is a nasolacrimal phenomenon."], ["Nasolacrimal drainage, which avoids first-pass metabolism", "Correct. Drug draining through the nasolacrimal duct is absorbed across nasal mucosa straight into the systemic circulation, bypassing the liver's first pass. That is why a topical drop can produce a systemic effect out of proportion to its dose."]], "c": 3}, {"topic": "Acute pharyngitis", "io": "Identify indications for commonly used ENT drugs", "q": "Which single-dose option is offered for streptococcal pharyngitis in a patient unlikely to finish a course?", "cite": "ENT Jax Pharmacology.pptx, Slide 8", "opts": [["A ten-day course of oral azithromycin", "Azithromycin is a penicillin-allergy alternative and is not a single dose here."], ["A ten-day course of oral amoxicillin", "Amoxicillin is given as a course over several days rather than as a single dose; the single-dose option is injected benzathine penicillin G."], ["Benzathine penicillin G by intramuscular injection", "Correct. One injection replaces the whole oral course, which is precisely its point when adherence is in doubt."], ["Intramuscular ceftriaxone given over three days", "Ceftriaxone is used in otitis media that has failed therapy, not for pharyngitis."]], "c": 2}, {"topic": "Precautions", "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education", "q": "At follow-up, a 61-year-old's documented visual acuity is worse than at the first visit. What does that require?", "cite": "Ophthalmology-2.pptx, Slide 33", "opts": [["Repeating the course of drops", "Worsening acuity needs assessment, not more of the same treatment."], ["Reassurance and review in a week", "Delay is precisely what the rule exists to prevent."], ["Immediate ophthalmology consult", "Correct — which is the reason acuity is documented at every visit."], ["Switching to an ointment", "Formulation is not the issue."]], "c": 2}, {"topic": "Trifluridine", "io": "Identify indications and contraindications of ophthalmic drugs", "q": "Beyond ocular irritation, which adverse effect is specific to trifluridine?", "cite": "Ophthalmology-2.pptx, Slide 27", "opts": [["A white corneal precipitate", "That is described with ciprofloxacin, in about one in six patients, rather than with trifluridine."], ["Raised intraocular pressure", "Pressure elevation is described with the nonsteroidals and with steroids rather than with an antiviral agent."], ["Changes in iris color", "Iris color change belongs to the prostaglandin analogs used in glaucoma."], ["Punctate keratopathy", "Correct. It is worth separating from the generic irritation every ophthalmic drug can cause, because this one names a drug and an actual corneal finding."]], "c": 3}, {"topic": "Statin metabolism", "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs that lower cholesterol and triglyceride levels", "q": "A patient on verapamil needs a statin. Which statin would CYP3A4 inhibition affect least?", "cite": "Lipids.pptx, Slide 20", "opts": [["Rosuvastatin", "Correct. Rosuvastatin has minimal CYP metabolism, so verapamil's CYP3A4 inhibition matters least; atorvastatin, lovastatin and simvastatin are CYP3A4 substrates."], ["Atorvastatin", "Atorvastatin is a CYP3A4 substrate, and verapamil inhibits CYP3A4, so its levels rise. Rosuvastatin has minimal CYP metabolism."], ["Lovastatin", "Lovastatin is metabolized by CYP3A4, so verapamil raises it. Rosuvastatin avoids that interaction."], ["Simvastatin", "Simvastatin is a CYP3A4 substrate raised by verapamil, a CYP3A4 inhibitor. Rosuvastatin has minimal CYP metabolism."]], "c": 0}, {"topic": "Ocular anesthetics", "io": "Describe the mechanism of action of ophthalmic drugs", "q": "How do tetracaine and proparacaine work?", "cite": "Ophthalmology-2.pptx, Slide 75", "opts": [["They inhibit sodium influx into the neuron", "Correct. Blocking the sodium channel stops the action potential, so the nerve cannot signal. It is the same mechanism as any local anesthetic, applied to the ocular surface."], ["They block muscarinic receptors on the ciliary muscle", "Blocking muscarinic receptors to dilate is the antimuscarinic cycloplegics, which is the opposite of what an anesthetic does."], ["They activate alpha-1 receptors to vasoconstrict", "Activating alpha-1 receptors to vasoconstrict is the ocular decongestants, which reduce redness rather than producing anesthesia."], ["They inhibit prostaglandin synthesis", "Inhibiting prostaglandin synthesis is the nonsteroidal anti-inflammatories; it reduces inflammation rather than blocking nerve conduction."]], "c": 0}, {"topic": "ACE inhibitors", "io": "Describe the molecular mechanism of action of antihypertensive drugs", "q": "Besides lowering angiotensin II, what does blocking angiotensin-converting enzyme do to bradykinin?", "cite": "Antihypertensives.pptx, Slide 11", "opts": [["Speeds its breakdown", "The reverse. Angiotensin-converting enzyme normally inactivates bradykinin, so blocking the enzyme lets bradykinin build up rather than clearing it faster."], ["Blocks its receptor", "ACE inhibitors do not act on a bradykinin receptor. They stop the enzyme that degrades bradykinin, so its level rises."], ["Leaves it unchanged", "Bradykinin is directly affected: the enzyme that is blocked is the one that breaks it down, so bradykinin accumulates."], ["Slows its breakdown", "Correct. The same enzyme that makes angiotensin II also inactivates bradykinin, so bradykinin accumulates -- the root of both the dry cough and angioedema."]], "c": 3}, {"topic": "PCSK9 inhibitors", "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels", "q": "Which description fits alirocumab?", "cite": "Lipids.pptx, Slide 60", "opts": [["Oral bile acid-binding resin", "Oral resins are cholestyramine, colestipol and colesevelam. Alirocumab is an injectable monoclonal antibody."], ["Oral HMG-CoA reductase inhibitor", "Oral HMG-CoA reductase inhibitors are the statins. Alirocumab is an injectable monoclonal antibody against PCSK9."], ["Oral cholesterol absorption blocker", "The oral cholesterol absorption inhibitor is ezetimibe. Alirocumab is an injectable monoclonal antibody."], ["Injectable monoclonal antibody", "Correct. Alirocumab and evolocumab are injectable-only monoclonal antibodies, and they are expensive."]], "c": 3}, {"topic": "Statin metabolism", "io": "Describe absorption, distribution, metabolism, and excretion of drugs that lower cholesterol and triglyceride levels", "q": "Which statin is metabolized mainly by CYP3A4?", "cite": "Lipids.pptx, Slide 20", "opts": [["Simvastatin", "Correct. Atorvastatin, lovastatin and simvastatin are the CYP3A4 statins, so CYP3A4 inhibitors such as verapamil raise their levels."], ["Rosuvastatin", "Rosuvastatin undergoes minimal CYP metabolism, which is why it is the least affected by CYP3A4 inhibitors."], ["Pravastatin", "Pravastatin is metabolized by enzymatic and nonenzymatic routes, not mainly by CYP3A4."], ["Pitavastatin", "Pitavastatin is cleared by glucuronidation (UGT1A3 and UGT2B7), not by CYP3A4."]], "c": 0}, {"topic": "Beta blocker groups", "io": "Identify antihypertensive drug classes and commonly prescribed antihypertensive drugs", "q": "A patient takes nadolol. How is it classified?", "cite": "Antihypertensives.pptx, Slide 60", "opts": [["Non-selective beta blocker", "Correct. Nadolol is one of the first-generation, non-selective agents, with propranolol, penbutolol, pindolol, sotalol and timolol."], ["Beta-1 selective blocker", "The beta-1 selective (second-generation) agents are acebutolol, atenolol, bisoprolol, esmolol and metoprolol. Nadolol is non-selective."], ["Alpha-1 and beta blocker", "The agents that add alpha-1 blockade are the third-generation carvedilol and labetalol. Nadolol is a first-generation, non-selective beta blocker."], ["Central alpha-2 agonist", "Central alpha-2 agonists are clonidine and guanfacine. Nadolol ends in -lol and is a non-selective beta blocker."]], "c": 0}, {"topic": "Calcium channel blockers", "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia.", "q": "A 68-year-old man with stable angina takes atenolol. His exertional chest pain persists. Pulse is 64 beats per minute, and the electrocardiogram shows normal conduction. Which added drug carries the greatest danger of symptomatic bradycardia and heart block?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 23", "opts": [["Verapamil", "Correct. A non-dihydropyridine calcium channel blocker also slows the sinoatrial and atrioventricular nodes, so adding it to a beta blocker risks bradycardia and block."], ["Amlodipine", "Dihydropyridines act on vessels and leave atrioventricular conduction unchanged, so they are the calcium channel blocker added to a beta blocker."], ["Felodipine", "Another dihydropyridine, so it is vasoselective. It does not slow the atrioventricular node, and this is why it pairs safely with a beta blocker."], ["Isosorbide mononitrate", "A nitrate dilates vessels and may raise heart rate reflexively. It does not slow conduction, so it is a safe adjunct to a beta blocker."]], "c": 0}, {"topic": "Beta blocker indications", "io": "Describe the molecular mechanism of action of antihypertensive drugs", "q": "In thyrotoxicosis, beta blockers relieve tachycardia, tremor and anxiety. What additional effect do they have on thyroxine (T4) and triiodothyronine (T3)?", "cite": "Antihypertensives.pptx, Slide 66", "opts": [["Less thyroid hormone synthesis", "Blocking hormone synthesis in the gland is not the effect described. Beta blockers reduce peripheral conversion of thyroxine (T4) to triiodothyronine (T3)."], ["More thyroid-stimulating hormone", "Beta blockers are not described as raising thyroid-stimulating hormone. Their extra action is reduced peripheral thyroxine-to-triiodothyronine conversion."], ["Less peripheral T4-to-T3 conversion", "Correct. They reduce the peripheral conversion of thyroxine (T4) to the more active triiodothyronine (T3), besides blunting the adrenergic symptoms."], ["Less iodine uptake by the gland", "Iodine uptake is not affected by beta blockers. They act peripherally, reducing conversion of thyroxine (T4) to triiodothyronine (T3)."]], "c": 2}, {"topic": "Hypertension algorithm", "io": "List commonly used protocols and patient monitoring for antihypertensive drugs", "q": "A patient taking lisinopril and amlodipine remains above goal after titration, and adherence and measurement have been confirmed. What is the next step?", "cite": "Antihypertensives.pptx, Slide 108", "opts": [["Add losartan", "Adding an angiotensin receptor blocker to an ACE inhibitor doubles up on the same system and is not the next step; a thiazide-like diuretic is."], ["Add a thiazide-like diuretic", "Correct. After an ACE (angiotensin-converting enzyme) inhibitor or angiotensin receptor blocker plus a dihydropyridine, the next step is a thiazide-like diuretic; if pressure is still uncontrolled, it is apparent resistant hypertension."], ["Add hydralazine", "Direct vasodilators are not the third step. The algorithm adds a thiazide-like diuretic after the ACE inhibitor plus dihydropyridine combination."], ["Swap amlodipine for verapamil", "Swapping to a non-dihydropyridine is not a step in the algorithm; after the two-drug combination, a thiazide-like diuretic is added."]], "c": 1}, {"topic": "Contact lenses", "io": "Identify indications and contraindications of ophthalmic drugs", "q": "A contact lens wearer has conjunctivitis. What is the advice about resuming lens wear?", "cite": "Ophthalmology-2.pptx, Slide 38", "opts": [["Stop, and resume after 24 hours clear of inflammation", "Correct. All three parts matter — stop, wait for a clear 24 hours, and deal with the lens itself. Eye makeup should go too, since it is the other reservoir."], ["Continue wearing them, since the drops will treat the eye anyway", "Lens wear maintains the insult and raises the risk of Pseudomonas keratitis."], ["Stop, and resume as soon as the drops are finished", "Finishing a course is not the same as the eye being quiet; the criterion is 24 hours without inflammation or discharge."], ["Stop permanently and switch to spectacles", "Unnecessarily absolute — lens wear can resume once the eye has settled."]], "c": 0}, {"topic": "Beta blockers in hypertension", "io": "List commonly used protocols and patient monitoring for antihypertensive drugs", "q": "A 61-year-old with hypertension had a myocardial infarction last year. Which class should generally be used initially?", "cite": "Antihypertensives.pptx, Slide 108", "opts": [["An alpha-1 blocker", "Alpha-1 blockers are specialty add-ons with no post-infarction role. After a myocardial infarction a beta blocker is generally used initially."], ["Hydralazine", "Hydralazine is contraindicated in coronary artery disease and ischemia because reflex sympathetic activation increases cardiac workload."], ["Clonidine", "Clonidine has no post-infarction indication and causes rebound hypertension if stopped. A beta blocker is the initial choice after infarction."], ["A beta blocker", "Correct. A history of myocardial infarction is a reason to start a beta blocker early; beta blockade protects ischemic myocardium and protects against recurrent infarction."]], "c": 3}, {"topic": "Ibuprofen", "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with ENT drugs", "q": "What happens when ibuprofen is combined with an anticoagulant?", "cite": "ENT Jax Pharmacology.pptx, Slide 22", "opts": [["The anticoagulant is inactivated", "The problem is additive bleeding risk rather than loss of anticoagulation."], ["Absorption of both drugs is reduced", "Absorption is not the issue. The combination prolongs prothrombin time and risks serious gastrointestinal bleeding."], ["Clotting time shortens", "The effect runs toward bleeding rather than clotting: prothrombin time is prolonged and gastrointestinal bleeding may follow."], ["Prothrombin time is prolonged", "Correct. Ibuprofen damages the mucosa and the anticoagulant stops the bleeding from being controlled, which is why the combination is worse than either alone. With a risk of serious gastrointestinal bleeding."]], "c": 3}, {"topic": "Acute otitis media", "io": "Identify indications for commonly used ENT drugs", "q": "When is injected ceftriaxone used in acute otitis media?", "cite": "ENT Jax Pharmacology.pptx, Slide 6", "opts": [["For failed therapy", "Correct. Both routes to it are practical rather than microbiological: the oral agents have not worked, or they cannot be kept down. Or when oral medication is not tolerated."], ["As first line in any child under two", "Age alone does not move a child to injection. The triggers are failed oral therapy, or an inability to keep oral medication down."], ["Whenever the tympanic membrane has perforated", "Perforation is not the stated trigger. Escalation to injection follows failed therapy, or intolerance of oral medication."], ["Only after culture confirms a resistant organism", "Middle ear fluid is not routinely cultured before escalating."]], "c": 0}, {"topic": "Oxymetazoline", "io": "Summarize side effects and toxic manifestations of ENT drugs", "q": "Besides rebound congestion, what systemic effect is described with oxymetazoline?", "cite": "ENT Jax Pharmacology.pptx, Slide 50", "opts": [["A slow heart rate", "An alpha agonist would not be expected to do this, and it is not described."], ["Drowsiness and sedation", "Sedation belongs to first generation antihistamines. Oxymetazoline's systemic effect is raised blood pressure."], ["Raised blood pressure", "Correct. A drug sprayed into the nose still reaches the circulation, which is what makes it worth asking about in a hypertensive patient."], ["Hypoglycemia", "Not among the described effects. Oxymetazoline is associated with rebound congestion and raised blood pressure."]], "c": 2}, {"topic": "Calcium channel blocker safety", "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with drugs used to treat myocardial ischemia", "q": "A patient taking verapamil is started on a statin. Which statin's level rises most?", "cite": "Antihypertensives.pptx, Slide 47", "opts": [["Rosuvastatin", "Rosuvastatin undergoes minimal cytochrome P450 metabolism, so a 3A4 inhibitor such as verapamil barely changes its level."], ["Simvastatin", "Correct. Simvastatin is a cytochrome P450 3A4 substrate, and verapamil inhibits that enzyme, so simvastatin levels climb (statin metabolism is covered with the lipid-lowering drugs)."], ["Pravastatin", "Pravastatin is cleared by enzymatic and nonenzymatic routes rather than by cytochrome P450 3A4, so verapamil has little effect on it."], ["Pitavastatin", "Pitavastatin is cleared mainly by glucuronidation, not cytochrome P450 3A4, so verapamil does not raise its level much."]], "c": 1}, {"topic": "Add-on therapy and variant angina", "io": "Identify indications for drugs used to treat myocardial ischemia", "q": "A 59-year-old woman with type 2 diabetes mellitus has exertional angina. She has no history of myocardial infarction, heart failure or hypertension, and no asthma. Heart rate is 76 beats per minute and blood pressure is 124/76 mmHg. In the traditional comorbidity-based approach, which class is first line?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 34", "opts": [["A non-cardioselective beta blocker", "This is the type the traditional table avoids in diabetes, because beta blockers can raise blood sugar and mask hypoglycemia."], ["A dihydropyridine calcium channel blocker", "A dihydropyridine is first line with bradycardia or atrioventricular block, which she does not have; in diabetes the traditional first line is a non-dihydropyridine."], ["A non-dihydropyridine calcium channel blocker", "Correct. With diabetes and no other reason for a beta blocker, the traditional table gives a non-dihydropyridine as first line; a long-acting nitrate or a cardioselective beta blocker is the alternative. Current practice is more flexible and still accepts a cardioselective beta blocker first."], ["A short-acting nitrate", "Short-acting nitroglycerin is for relief of an attack and is not a daily preventive; the traditional first line for prevention in diabetes is a non-dihydropyridine."]], "c": 2}, {"topic": "Ezetimibe", "io": "Identify indications for commonly used drugs that lower cholesterol and triglyceride levels", "q": "How is ezetimibe typically used?", "cite": "Lipids.pptx, Slide 27", "opts": [["As first-line monotherapy", "Statins are first line for LDL lowering. Ezetimibe is used on top of a statin for dual inhibition."], ["For triglycerides over 1000", "Triglycerides over 1000 mg/dL are the primary fibrate indication; ezetimibe barely affects triglycerides."], ["Added to a statin", "Correct. It pairs with a statin for dual inhibition -- the statin blocks synthesis, ezetimibe blocks absorption -- for additional LDL (low-density lipoprotein) lowering."], ["As a weekly injection", "Injectable use describes PCSK9 inhibitors. Ezetimibe is an oral agent added to a statin."]], "c": 2}, {"topic": "Bile acid sequestrants", "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels", "q": "Why are bile acid sequestrants avoided when triglycerides are high?", "cite": "Lipids.pptx, Slide 46", "opts": [["They cause gallstones", "Cholelithiasis is a fibrate adverse effect (and a risk of ezetimibe with a fibrate), not the reason resins are avoided."], ["They may raise triglycerides", "Correct. Resins may increase VLDL (very low-density lipoprotein) production, raising triglycerides; on the lipid comparison, resins show no change or a rise in triglycerides."], ["They lower HDL sharply", "Resins raise HDL (high-density lipoprotein) slightly. The reason to avoid them is that they may raise triglycerides."], ["They damage the liver", "Resins are not absorbed and have no systemic toxicity. The concern is increased VLDL production raising triglycerides."]], "c": 1}, {"topic": "Systemic corticosteroids", "io": "Outline appropriate patient education for ENT drugs", "q": "What is a patient on prednisone told about infection risk?", "cite": "ENT Jax Pharmacology.pptx, Slide 48", "opts": [["They should take prophylactic antibiotics", "Prophylaxis is not advised. The advice is to avoid chickenpox, measles and live vaccines while immunocompromised."], ["Infection risk only matters above a certain amount", "The advice is not framed as exposure-dependent. The patient is treated as immunocompromised and told to avoid live vaccines."], ["They are immunocompromised and should avoid chickenpox", "Correct. Live vaccines are the part most easily missed, because the patient does not think of a vaccine as an exposure. Measles and live vaccines."], ["There is no increased risk with short courses", "The immune suppression is stated without a short-course exemption."]], "c": 2}, {"topic": "Beta blockers in ACS", "io": "List commonly used protocols and patient monitoring for myocardial ischemia drug therapy", "q": "In the traditional approach to acute coronary syndrome, how is a beta blocker given?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 55", "opts": [["Orally only, after discharge", "Waiting until discharge is not the traditional teaching; the beta blocker is started early, intravenously and then switched to oral."], ["Orally first, then intravenously", "The sequence is the reverse here; the traditional approach starts with an intravenous dose and then moves to oral therapy."], ["Sublingually, then by patch", "Sublingual and patch forms describe nitrates, not beta blockers; the beta blocker goes intravenous first, then oral."], ["Intravenously first, then orally", "Correct. The traditional sequence is an intravenous beta blocker followed by an oral one. Current guidelines favor oral therapy within the first day and avoid the intravenous route when there is heart failure, low output or a risk of shock."]], "c": 3}, {"topic": "Bile acid sequestrants", "io": "Describe the molecular mechanism of action of drugs that lower cholesterol and triglyceride levels", "q": "How do bile acid sequestrants lower LDL (low-density lipoprotein) cholesterol?", "cite": "Lipids.pptx, Slide 42", "opts": [["They bind bile acids in the gut", "Correct. Bound bile acids are excreted in feces instead of recirculating, so the liver makes more bile acids from cholesterol and more LDL receptors, lowering LDL."], ["They inhibit HMG-CoA reductase", "Inhibiting HMG-CoA reductase is the statin mechanism. Resins bind bile acids in the gut and interrupt their enterohepatic recirculation."], ["They block brush-border uptake", "Blocking cholesterol uptake at the intestinal brush border is ezetimibe's mechanism. Resins bind bile acids."], ["They activate PPAR-alpha", "PPAR-alpha activation is how fibrates lower triglycerides. Resins act by binding bile acids in the gut."]], "c": 0}, {"topic": "Histamine receptors", "io": "Describe the mechanism of action of ENT drugs", "q": "Through which second messenger pathway do H1 receptors raise intracellular calcium?", "cite": "ENT Jax Pharmacology.pptx, Slide 29", "opts": [["Phospholipase C, producing IP3 and DAG", "Correct. It is the contrast with H2 that matters: H1 works through phospholipase C, H2 through adenylate cyclase and cyclic AMP."], ["Adenylate cyclase, raising cyclic AMP", "That is the H2 pathway. H1 receptors work through phospholipase C, producing IP3 and DAG to raise calcium."], ["Direct opening of a ligand-gated sodium channel", "Histamine receptors here are described as acting through second messengers."], ["Inhibition of guanylate cyclase", "Not the described pathway. H1 acts through phospholipase C; H2 acts through adenylate cyclase."]], "c": 0}, {"topic": "Reye's syndrome", "io": "Summarize side effects and toxic manifestations of ENT drugs", "q": "What underlying cellular abnormality is described in Reye's syndrome?", "cite": "ENT Jax Pharmacology.pptx, Slide 18", "opts": [["Autoimmune destruction of hepatocytes", "Not the described mechanism. Reye's syndrome involves mitochondrial dysfunction in brain, liver and muscle."], ["Mitochondrial dysfunction in brain", "Correct. One failing organelle across several tissues explains why an illness of the liver and brain also involves muscle. Liver and muscle."], ["Direct viral invasion of the brain", "The syndrome follows the viral illness rather than being the virus itself."], ["Accumulation of unconjugated bilirubin", "Not the described mechanism; the abnormality described is mitochondrial dysfunction across brain, liver and muscle."]], "c": 1}, {"topic": "Glaucoma", "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education", "q": "A 70-year-old on timolol drops develops fatigue and a heart rate of 48. What has happened?", "cite": "Ophthalmology-2.pptx, Slide 67", "opts": [["An allergic reaction to the preservative", "It would not produce bradycardia."], ["Rebound hyperemia", "A vasoconstrictor effect, and it does not affect heart rate."], ["Systemic beta blockade", "Correct. Worsening heart failure, bradycardia, heart block and increased airway resistance are all possible from a drop."], ["Carbonic anhydrase inhibition", "A different class, with taste and stinging as its problems."]], "c": 2}, {"topic": "Hydralazine", "io": "Outline appropriate patient education for antihypertensive drugs", "q": "What should a patient starting hydralazine be told about stool color?", "cite": "Antihypertensives.pptx, Slide 102", "opts": [["Stools may turn orange", "Orange discoloration is not listed for hydralazine. The warning is that stools may turn black."], ["Stools may turn pale", "Pale stools are not a listed hydralazine effect. Patients are told their stools may turn black."], ["Stools may turn black", "Correct. Stools may turn black on hydralazine, so the patient is warned ahead of time rather than being alarmed by it."], ["Stools will not change", "Stool color can change: patients should be warned that stools may turn black."]], "c": 2}, {"topic": "Ocular pharmacokinetics", "io": "Describe the mechanism of action of ophthalmic drugs", "q": "Transcorneal absorption has a lag time, and its rate depends most on one variable. Which, and what law governs it?", "cite": "Ophthalmology-2.pptx, Slide 8", "opts": [["The tear film pH, governed by the Henderson-Hasselbalch equation", "Ionization matters for some drugs, but the rate-determining variable stated here is the gradient."], ["The concentration gradient, governed by Fick's law", "Correct. Transcorneal movement is passive diffusion, so the steeper the gradient the faster the transfer. That is also why raising concentration, rather than volume, is the lever that matters."], ["The corneal blood flow, governed by Fick's principle", "The cornea is avascular, which is part of why diffusion rather than perfusion governs delivery."], ["The drug's molecular weight, governed by Graham's law", "Molecular weight is not the variable named. Transcorneal movement is passive diffusion, so it is the concentration gradient that governs the rate."]], "c": 1}, {"topic": "Acute bacterial rhinosinusitis", "io": "Identify indications for commonly used ENT drugs", "q": "What is the standard of therapy for acute bacterial rhinosinusitis?", "cite": "ENT Jax Pharmacology.pptx, Slide 7", "opts": [["Amoxicillin-clavulanate", "Correct. Unlike otitis media, this one starts with the clavulanate already on board, because beta-lactamase producing Haemophilus influenzae is common here."], ["High-dose amoxicillin alone", "That is the otitis media starting point; sinusitis begins a step further along."], ["Azithromycin", "Not the standard of therapy for this infection. Amoxicillin-clavulanate is, because beta-lactamase producing Haemophilus influenzae is common here."], ["Doxycycline", "Not among the agents offered here. The standard is amoxicillin-clavulanate, with clindamycin plus cefixime or levofloxacin for penicillin allergy."]], "c": 0}, {"topic": "Antivirals", "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education", "q": "A 22-year-old has watery, red eyes after a family member had the same. Adenoviral conjunctivitis is diagnosed. What is the treatment?", "cite": "Ophthalmology-2.pptx, Slide 25", "opts": [["Trifluridine drops", "For herpes simplex keratitis and keratoconjunctivitis, not adenovirus."], ["Oral valacyclovir", "For simplex keratitis and zoster ophthalmicus."], ["Symptomatic relief of irritation", "Correct. It runs a self-limited course. There is no antiviral for it."], ["A topical fluoroquinolone", "An antibacterial, which does nothing for a virus."]], "c": 2}, {"topic": "Thrombus formation", "io": "Describe the molecular mechanism of action of drugs used to treat myocardial ischemia", "q": "Which step begins thrombus formation over an atherosclerotic plaque?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 43", "opts": [["Platelet aggregation at the plaque", "Platelet adhesion, activation and aggregation follow the endothelial injury; they do not begin the sequence. Injured endothelium comes first."], ["Formation of fibrin strands", "Fibrin strands form later, once thrombin converts fibrinogen. The sequence begins with injury to the endothelium over the plaque."], ["Occlusion of the lumen by thrombus", "Complete occlusion by thrombus is the end result of the sequence, not its start. Injury to the overlying endothelium begins it."], ["Injury to the overlying endothelium", "Correct. Spontaneous plaque rupture or procedural injury such as balloon deployment leaves injured endothelium, which starts platelet adhesion and the clotting cascade."]], "c": 3}, {"topic": "Non-dihydropyridines", "io": "Describe absorption, distribution, metabolism, and excretion of antihypertensive drugs", "q": "What effect does adding a CYP3A4 inhibitor have on a non-dihydropyridine such as verapamil?", "cite": "Antihypertensives.pptx, Slide 48", "opts": [["It lengthens its half-life", "Correct. CYP3A4 inhibitors increase the half-life of non-dihydropyridines, and of dihydropyridines as well."], ["It shortens its half-life", "Inhibiting the enzyme that clears the drug prolongs it rather than shortening it. CYP3A4 inhibitors increase the half-life."], ["It blocks its absorption", "Absorption is not the listed effect. CYP3A4 inhibitors increase the half-life of non-dihydropyridines."], ["It has no effect on it", "There is a listed effect: CYP3A4 inhibitors increase the non-dihydropyridine half-life."]], "c": 0}, {"topic": "Nitrate education", "io": "Outline appropriate patient education for drugs used to treat myocardial ischemia", "q": "Traditionally, when should a patient replace sublingual nitroglycerin tablets after opening the bottle?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 28", "opts": [["Every 3 to 6 months", "Correct. The traditional counseling is to replace opened tablets every 3 to 6 months, so that a fresh supply is on hand in an emergency. Current labeling instead ties expiry to the printed date when the tablets stay in the tightly closed original glass bottle."], ["Every 1 to 2 weeks", "That is far more often than the traditional advice; opened tablets are replaced about every 3 to 6 months, not every week or two."], ["Every 12 to 18 months", "That is too long for the traditional advice, which replaces opened tablets every 3 to 6 months because nitroglycerin degrades."], ["Only when the bottle is empty", "Waiting for the bottle to empty risks a degraded tablet in an emergency; the traditional advice is to replace opened tablets every 3 to 6 months."]], "c": 0}, {"topic": "Variant angina", "io": "Identify contraindications for drugs used to treat myocardial ischemia", "q": "A 34-year-old nonsmoker has chest pain that wakes her at 4 a.m., with ST-segment elevation that resolves. Which antianginal class is best avoided?", "cite": "Myocardial Ischemia Drugs.pptx, Slide 39", "opts": [["Non-dihydropyridine calcium channel blockers", "Calcium channel blockers relieve vasospasm and are a mainstay of variant angina; beta blockers are the class to avoid."], ["Beta blockers", "Correct. This is vasospastic (variant) angina; beta blockers may worsen symptoms, while calcium channel blockers and nitrates reduce them."], ["Dihydropyridine calcium channel blockers", "Dihydropyridines relieve vasospasm and reduce symptoms in variant angina. The class that may worsen it is beta blockers."], ["Long-acting nitrates", "Nitrates relieve vasospasm and are used with calcium channel blockers in variant angina; beta blockers are the class to avoid."]], "c": 1}, {"topic": "Non-dihydropyridines", "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antihypertensive drugs", "q": "A transplant recipient taking tacrolimus is started on diltiazem. What is expected to happen to the tacrolimus level?", "cite": "Antihypertensives.pptx, Slide 47", "opts": [["It falls", "The direction is the reverse: diltiazem inhibits the CYP3A4 and P-glycoprotein routes that clear tacrolimus, so the level rises."], ["It is unchanged", "Tacrolimus is on the CYP3A4 and P-glycoprotein lists for non-dihydropyridines, so its level is not expected to stay unchanged; it rises."], ["It rises", "Correct. Non-dihydropyridines inhibit CYP3A4 and P-glycoprotein, and tacrolimus and cyclosporine are on both lists, so their levels rise."], ["It becomes unmeasurable", "Nothing makes tacrolimus unmeasurable here. Diltiazem's CYP3A4 and P-glycoprotein inhibition raises it."]], "c": 2}, {"topic": "Dextromethorphan", "io": "Describe the mechanism of action of ENT drugs", "q": "How does dextromethorphan suppress cough?", "cite": "ENT Jax Pharmacology.pptx, Slide 58", "opts": [["It anesthetizes airway stretch receptors", "That is benzonatate's mechanism. Dextromethorphan suppresses the medullary cough center through sigma receptors."], ["It constricts bronchial vessels", "Not its mechanism. Dextromethorphan acts centrally, suppressing the cough center in the medulla."], ["It breaks disulfide bonds in mucus", "That is N-acetylcysteine's mechanism. Dextromethorphan suppresses the medullary cough center."], ["It suppresses the medullary cough center", "Correct. It is related to codeine and acts centrally, which is the origin of both its confusion as a side effect and its misuse. It does so through sigma receptor activation, and it is related to codeine."]], "c": 3}, {"topic": "Dextromethorphan", "io": "Identify contraindications for ENT drugs", "q": "Which patient must not be given dextromethorphan?", "cite": "ENT Jax Pharmacology.pptx, Slide 58", "opts": [["One taking a monoamine oxidase inhibitor", "Correct. The two-week tail is the part that catches people out, because the patient has already stopped the drug. The restriction extends for two weeks after stopping one, which is the part most easily missed."], ["One taking an oral antihistamine", "Not a contraindication. The contraindication is a monoamine oxidase inhibitor, currently or within the past two weeks."], ["One with treated hypertension", "Not the stated contraindication, which is current or recent use of a monoamine oxidase inhibitor."], ["One with a productive, chesty cough", "That is a reason to question the choice rather than a contraindication."]], "c": 0}, {"topic": "Niacin", "io": "Describe adverse effects of drugs that lower cholesterol and triglyceride levels", "q": "What does niacin do to glucose control at larger doses?", "cite": "Lipids.pptx, Slide 55", "opts": [["Improves glucose tolerance", "The reverse: niacin decreases glucose tolerance and raises glucose at larger doses."], ["Masks hypoglycemia", "Masking hypoglycemia is a beta blocker effect. Niacin decreases glucose tolerance."], ["Decreases glucose tolerance", "Correct. Larger doses raise glucose and decrease glucose tolerance, making diabetes a relative contraindication."], ["Has no glucose effect", "Niacin does affect glucose: larger doses raise it and decrease glucose tolerance."]], "c": 2}, {"topic": "Reye's syndrome", "io": "Summarize side effects and toxic manifestations of ENT drugs", "q": "Who is affected by Reye's syndrome, and how dangerous is it?", "cite": "ENT Jax Pharmacology.pptx, Slide 18", "opts": [["Adults over sixty-five, with mortality around a tenth", "It is a disease of children rather than older adults, and the mortality described is far higher than a tenth."], ["Children, with mortality around half", "Correct. The severity is what justifies a blanket restriction on a cheap and otherwise useful drug."], ["Children, but it is almost never fatal", "Mortality is substantial, which is the reason for the restriction."], ["Any age, with mortality under one percent", "Neither the age group nor the mortality matches: it affects children, and around half of those affected die."]], "c": 1}, {"topic": "Antivirals", "io": "Ophthalmic drugs — indications, adverse effects, contraindications and patient education", "q": "A 34-year-old has a dendritic corneal lesion consistent with herpes simplex keratitis. Which TOPICAL agent is available?", "cite": "Ophthalmology-2.pptx, Slide 27", "opts": [["Natamycin", "An antifungal."], ["Valacyclovir", "An oral agent for simplex keratitis and zoster ophthalmicus, not a topical one."], ["Foscarnet", "Intravenous, for cytomegalovirus retinitis."], ["Trifluridine", "Correct, and its ocular toxicity is punctate keratopathy. Ganciclovir is the other ophthalmic preparation."]], "c": 3}, {"topic": "Beta blocker adverse effects", "io": "Outline appropriate patient education for antihypertensive drugs", "q": "A patient with type 1 diabetes is starting propranolol. What should he be told about hypoglycemia?", "cite": "Antihypertensives.pptx, Slide 72", "opts": [["It will become less frequent", "Beta blockers do not protect against hypoglycemia; by inhibiting glycogenolysis they prolong it and hide its warning signs."], ["Warning signs may be masked", "Correct. Beta blockers inhibit glycogenolysis, so hypoglycemia lasts longer, and they mask its adrenergic warning symptoms."], ["Insulin will no longer be needed", "Beta blockers do not replace insulin. The warning is that hypoglycemia may be prolonged and its symptoms masked."], ["Blood sugar will run high only", "In type 2 diabetes reduced insulin can raise glucose, but the danger stressed for any diabetic is prolonged, masked hypoglycemia."]], "c": 1}, {"topic": "H1 antagonists", "io": "Identify indications for commonly used ENT drugs", "q": "Which agent is singled out as having the strongest antimuscarinic action, especially for motion sickness?", "cite": "ENT Jax Pharmacology.pptx, Slide 34", "opts": [["Doxylamine", "Doxylamine is named as a sleep aid. Promethazine is the agent singled out for antimuscarinic strength in motion sickness."], ["Promethazine", "Correct. The antimuscarinic strength is what makes it the motion sickness choice, not its antihistamine potency."], ["Azelastine", "Azelastine is a nasal antihistamine for rhinitis. Promethazine is the one named for its antimuscarinic strength."], ["Cetirizine", "A second generation agent, which by design lacks these extra actions."]], "c": 1}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

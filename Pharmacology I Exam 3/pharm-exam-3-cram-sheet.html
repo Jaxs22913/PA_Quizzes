@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacology I Exam 3 Cram Sheet &mdash; Lecture 9 so far</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#8c1d12;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#8c1d12;--primary:#da6756;}:root[data-theme="dark"] body[data-dark="tokens"] #hf-rules{--acc-bg:#361a16!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dc6958!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-rules"]{color:#d46251!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-nephron{--acc-bg:#0f2537!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#6d8fae!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-nephron"]{color:#6688a7!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-loops{--acc-bg:#052a21!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#4e9985!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-loops"]{color:#46927d!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-thiazides{--acc-bg:#1e2038!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7f87c9!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-thiazides"]{color:#7880c1!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-kspare{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#d26e74!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-kspare"]{color:#ca676e!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-cai{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b4832b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-cai"]{color:#ad7c23!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-hf{--acc-bg:#291c33!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#a877cd!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-hf"]{color:#a170c6!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-core{--acc-bg:#0c291b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#67967b!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-core"]{color:#608f74!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-digoxin{--acc-bg:#351b10!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#cb754f!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-digoxin"]{color:#c36e48!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-other{--acc-bg:#1e2038!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#7f87c9!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-other"]{color:#7880c1!important}:root[data-theme="dark"] body[data-dark="tokens"] #hf-flags{--acc-bg:#361a16!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#dc6958!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#hf-flags"]{color:#d46251!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#8c1d12;}:root[data-theme="light"] body[data-dark="tokens"] #hf-cai{--acc-ink:#8b641f!important}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="pharm-exam-3-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Pharmacology I &middot; Exam 3 &middot; Class of 2028</div>
+    <h1>Pharmacology I Exam 3 Cram Sheet</h1>
+    <p class="sub">Lecture 9 (diuretics and heart failure drugs), Adam Wood Pharm.D. DABAT. Lectures 10 to 13 are added as delivered. &#9733; = professor emphasized (from the recording); a star only sets weight and adds no fact the slides lack. Rows marked FLAG say where a slide and the pharmacology disagree.</p>
+    <div class="toc">
+      <a href="#hf-rules" style="color:#6d170e"><span class="dot" style="background:#8c1d12"></span>Diuretics &amp; heart failure &middot; what he stressed</a>
+      <a href="#hf-nephron" style="color:#253e53"><span class="dot" style="background:#2f4f6b"></span>Diuretics &middot; the nephron and where each class works</a>
+      <a href="#hf-loops" style="color:#185748"><span class="dot" style="background:#1f6f5c"></span>Diuretics &middot; loop diuretics</a>
+      <a href="#hf-thiazides" style="color:#3a3e6d"><span class="dot" style="background:#4a4f8c"></span>Diuretics &middot; thiazides</a>
+      <a href="#hf-kspare" style="color:#6d252d"><span class="dot" style="background:#8c2f3a"></span>Diuretics &middot; potassium-sparing and aldosterone antagonists</a>
+      <a href="#hf-cai" style="color:#906925"><span class="dot" style="background:#b8862f"></span>Diuretics &middot; carbonic anhydrase inhibitors</a>
+      <a href="#hf-hf" style="color:#5f3a7a"><span class="dot" style="background:#7a4a9c"></span>Heart failure &middot; types, compensation, non-drug care</a>
+      <a href="#hf-core" style="color:#305340"><span class="dot" style="background:#3d6b52"></span>Heart failure &middot; diuretics, ACE inhibitors, beta blockers</a>
+      <a href="#hf-digoxin" style="color:#834325"><span class="dot" style="background:#a8562f"></span>Heart failure &middot; digoxin</a>
+      <a href="#hf-other" style="color:#3a3e6d"><span class="dot" style="background:#4a4f8c"></span>Heart failure &middot; other agents</a>
+      <a href="#hf-flags" style="color:#6d170e"><span class="dot" style="background:#8c1d12"></span>Deck versus truth &middot; learn the true version</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pharm-exam-3-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="hf-rules" style="--acc:#8c1d12;--acc-bg:#efdfde;--acc-zebra:#f7efee;--acc-ink:#6d170e">
+    <div class="shead"><span class="dot" style="background:#8c1d12"></span><h2>Diuretics &amp; heart failure &middot; what he stressed</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733;&#9733; Mortality or symptoms?</td><td>His standing rule for this whole lecture: <b>good for MORTALITY &rarr; the patient should be on it no matter what; good only for SYMPTOMS &rarr; may not be needed all the time.</b> <b>Symptoms only:</b> diuretics and digoxin. <b>Survival:</b> angiotensin-converting enzyme inhibitors (or angiotensin receptor blockers), the three beta blockers, aldosterone antagonists in advanced failure, sacubitril-valsartan, sodium-glucose cotransporter 2 inhibitors.</td></tr>
+          <tr><td class="h">&#9733;&#9733; Know every drug's effect on potassium</td><td>&ldquo;You can kill somebody very easily with potassium.&rdquo; <b>LOWER it:</b> loop diuretics, thiazides, carbonic anhydrase inhibitors. <b>RAISE it:</b> potassium-sparing diuretics, aldosterone antagonists, angiotensin-converting enzyme inhibitors, sacubitril-valsartan. Several drugs on one patient: work out which way the total falls.</td></tr>
+          <tr><td class="h">&#9733; Where salt goes, water follows</td><td>Diuretics work by blocking sodium (and usually chloride) reabsorption somewhere along the nephron, and water leaves with it. Too much fluid: volume overload and pulmonary edema. Too little: volume depletion and cardiovascular collapse.</td></tr>
+          <tr><td class="h">&#9733; Digoxin level</td><td>Digoxin has a very narrow therapeutic index and its level is checked. The slide gives a target range; he said he is <b>probably not going to quiz the specific level</b>. Know the narrow index, not the number.</td></tr>
+          <tr><td class="h">&#9733; Xanthopsia is the digoxin clue</td><td>Yellow-green vision with halos around lights is the classic clue to digoxin toxicity; in his words it is &ldquo;pathognomonic,&rdquo; nothing else does that. (Ivabradine also causes halos and brightness, but without the yellow-green tint.) It means check a level right away.</td></tr>
+          <tr><td class="h">&#9733; Heart failure decision shape</td><td>His rule of thumb: hypertensive patient in decompensated failure &rarr; <b>milrinone</b> (it dilates vessels). Hypotensive patient &rarr; <b>dobutamine or dopamine</b>. Ask what the blood pressure is.</td></tr>
+          <tr><td class="h">Doses</td><td>This site leaves milligram amounts out; doses are not tested in this course, per the earlier lectures. Timings, routes and clinical thresholds are kept.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-nephron" style="--acc:#2f4f6b;--acc-bg:#e2e6ea;--acc-zebra:#f0f3f5;--acc-ink:#253e53">
+    <div class="shead"><span class="dot" style="background:#2f4f6b"></span><h2>Diuretics &middot; the nephron and where each class works</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Why diuretics are dangerous</td><td><b>Diuretic</b> = a drug that increases urine flow and/or sodium chloride excretion. A sustained imbalance of sodium chloride intake against loss is fatal: too much gives volume overload and pulmonary edema; too little gives volume depletion and cardiovascular collapse.</td></tr>
+          <tr><td class="h">&#9733; Diuretic braking</td><td>The kidneys receive about 22% of the cardiac output and fight back against volume loss: <b>sympathetic nervous system and renin-angiotensin-aldosterone system activation, lower blood pressure (less pressure natriuresis), antidiuretic hormone up, renal cell hypertrophy.</b> He called the kidneys &ldquo;divas.&rdquo; This is why diuretics show <b>synergy with angiotensin-converting enzyme inhibitors and calcium channel blockers</b>, which blunt those compensations.</td></tr>
+          <tr><td class="h">Proximal tubule</td><td><b>60 to 70% of the filtrate is reabsorbed here</b> (glucose, amino acids, organic solutes; weak acids and bases are secreted into the lumen). <b>Carbonic anhydrase inhibitors work here.</b></td></tr>
+          <tr><td class="h">Loop of Henle</td><td>Concentrates the urine. <b>Descending limb: water leaves the lumen. Ascending limb: 25% of sodium reabsorbed, impermeable to water.</b> <b>Loop diuretics work here.</b></td></tr>
+          <tr><td class="h">Distal tubule</td><td>About <b>5% of sodium</b> reabsorbed. <b>Thiazide diuretics work here.</b></td></tr>
+          <tr><td class="h">Collecting duct</td><td><b>2 to 3% of sodium</b> reabsorbed; <b>aldosterone and antidiuretic hormone</b> act here (antidiuretic hormone opens the water channels). <b>Potassium-sparing diuretics work here.</b> Aldosterone adds sodium channels and pump activity, so sodium is reabsorbed and potassium lost.</td></tr>
+          <tr><td class="h">&#9733; Order of potency</td><td>Loops (inhibit 20 to 25% of sodium chloride reabsorption) &gt; thiazides (up to 5%) &gt; potassium-sparing diuretics and aldosterone antagonists (2 to 3%) &gt; carbonic anhydrase inhibitors (the &ldquo;wimpiest&rdquo;; the early 5% fades to 1 to 3% after 3 to 5 days). He presented the classes in descending order of potency.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-loops" style="--acc:#1f6f5c;--acc-bg:#e0ebe8;--acc-zebra:#eff5f4;--acc-ink:#185748">
+    <div class="shead"><span class="dot" style="background:#1f6f5c"></span><h2>Diuretics &middot; loop diuretics</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733; Agents and mechanism</td><td><b>Furosemide, bumetanide, torsemide, ethacrynic acid</b> (the one that breaks the naming pattern). They inhibit the <b>sodium-potassium-2 chloride carrier</b> on the luminal membrane of the <b>thick ascending limb</b>.</td></tr>
+          <tr><td class="h">Major actions</td><td>Inhibit sodium chloride reabsorption by <b>20 to 25%</b>; urine output up to <b>4 liters a day</b>; <b>more potassium, calcium and magnesium excreted</b> &rarr; hypokalemia, hypocalcemia, hypomagnesemia.</td></tr>
+          <tr><td class="h">&#9733; Works when the kidneys do not</td><td><b>Loops remain effective when creatinine clearance is below 30 milliliters a minute.</b> Urine flow does not mean the kidneys are working well.</td></tr>
+          <tr><td class="h">&#9733; Indications</td><td><b>Pulmonary edema, nephrotic syndrome, cirrhosis of the liver (ascites), hypercalcemia (with saline), heart failure, renal failure or insufficiency, hypertension</b> (volume-driven; not good for chronic hypertension).</td></tr>
+          <tr><td class="h">&#9733; Adverse effects</td><td><b>Volume depletion; hypokalemia (arrhythmias); hyperglycemia; contraction alkalosis; hyperuricemia (gout); ototoxicity</b> (hair cells in the cochlea); <b>hyponatremia</b> (seizures); allergic reactions (rash, photosensitivity); <b>azotemia</b> (blood urea nitrogen rises). Loops are the most potent, so they carry the most of these.</td></tr>
+          <tr><td class="h">Why the side effects happen</td><td><b>Hyperglycemia:</b> low potassium impairs insulin release; catecholamine release; insulin resistance. <b>Gout:</b> volume contraction concentrates uric acid and less is excreted. <b>Metabolic alkalosis:</b> volume depletion plus enhanced hydrogen ion secretion (the major factor). <b>Mild hyperlipidemia</b> from sympathetic activity. Reflex <b>renin, aldosterone and antidiuretic hormone</b> rise.</td></tr>
+          <tr><td class="h">Vasodilation</td><td>Loops also dilate vessels: they stimulate <b>prostaglandin E2 (blocked by non-steroidal anti-inflammatory drugs)</b>, plus a direct muscle-relaxing effect of unknown mechanism.</td></tr>
+          <tr><td class="h">&#9733; Interactions</td><td><b>Non-steroidal anti-inflammatory drugs</b> blunt the natriuretic and blood pressure response &middot; <b>aminoglycosides</b> potentiate ototoxicity &middot; <b>warfarin</b> competes for plasma protein binding &middot; <b>lithium</b> clearance falls and toxicity rises &middot; <b>digitalis</b>: hypokalemia plus hypomagnesemia gives arrhythmias.</td></tr>
+          <tr><td class="h">FLAG: boxed warning</td><td><b>FDA boxed warning, not on the slide:</b> furosemide, bumetanide and ethacrynic acid carry a boxed warning for profound diuresis with water and electrolyte depletion when given in excess. Torsemide does not.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-thiazides" style="--acc:#4a4f8c;--acc-bg:#e6e6ef;--acc-zebra:#f2f3f7;--acc-ink:#3a3e6d">
+    <div class="shead"><span class="dot" style="background:#4a4f8c"></span><h2>Diuretics &middot; thiazides</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733; Agents and mechanism</td><td><b>Chlorothiazide, hydrochlorothiazide, chlorthalidone, metolazone, indapamide.</b> They inhibit the <b>sodium/chloride transporter in the distal convoluted tubule</b> (major action).</td></tr>
+          <tr><td class="h">Major actions</td><td>Inhibit up to <b>5%</b> of filtered sodium chloride; urine output <b>1 to 2 liters a day</b>; <b>more potassium and magnesium excreted; LESS calcium excreted</b> (more calcium reabsorbed in the proximal and distal tubules). Acutely lower the glomerular filtration rate.</td></tr>
+          <tr><td class="h">&#9733; The calcium paradox</td><td>Thiazides <b>keep calcium from being excreted</b>, so they help patients with <b>calcium oxalate kidney stones</b> yet can cause a small rise in <b>serum calcium</b>. Less calcium in the urine means less to crystallize. Loops do the opposite.</td></tr>
+          <tr><td class="h">&#9733; Hypertension</td><td>Cheap, old and well tolerated. He described them as a useful second- or third-line <b>add-on</b> (current hypertension guidelines still list thiazides among first-line choices). Works best in <b>elderly patients, African American patients and sodium-retentive states</b>. Short term: lower blood volume and cardiac output; chronic: vessel relaxation, less sodium &ldquo;waterlogging&rdquo; of vessel walls, lower total peripheral resistance. <b>Low-dose thiazides are preferred</b>, with few adverse effects.</td></tr>
+          <tr><td class="h">Other indications</td><td>Hypertension, renal failure, cirrhosis of the liver, congestive heart failure, renal calcium stones.</td></tr>
+          <tr><td class="h">&#9733; Adverse effects</td><td>Volume depletion with reflex sympathetic and renin-angiotensin-aldosterone activation; <b>hypokalemia; metabolic alkalosis; hyperuricemia (gout); hyperglycemia (less insulin); hypercalcemia; hyperlipidemia</b> (a modest rise in low-density lipoprotein); rash, <b>photosensitivity</b>; dizziness, headache, weakness, restlessness; <b>sexual dysfunction; constipation</b>. Much of the loop list, only milder; the differences are that thiazides RAISE calcium and are not ototoxic.</td></tr>
+          <tr><td class="h">&#9733;&#9733; Metolazone</td><td>Thiazides lose effect at low creatinine clearance, but <b>metolazone still works</b>. His mnemonic: <b>&ldquo;metolazone could make a rock pee&rdquo;</b>. (FLAG, see the last topic: do not treat &ldquo;thiazides do not work in kidney failure&rdquo; as absolute.)</td></tr>
+          <tr><td class="h">&#9733; Interactions</td><td><b>Non-steroidal anti-inflammatory drugs</b> block prostaglandins and weaken the natriuretic action. <b>Digitalis toxicity</b> rises with potassium loss: keep potassium above 4.0 milliequivalents per liter.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-kspare" style="--acc:#8c2f3a;--acc-bg:#efe2e3;--acc-zebra:#f7f0f1;--acc-ink:#6d252d">
+    <div class="shead"><span class="dot" style="background:#8c2f3a"></span><h2>Diuretics &middot; potassium-sparing and aldosterone antagonists</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733; Potassium-sparing: agents and mechanism</td><td><b>Amiloride and triamterene</b> <b>block luminal sodium channels</b> in the collecting duct, inhibiting 2 to 3% of sodium chloride reabsorption and <b>decreasing the gradient for potassium secretion</b>. Modest increase in urine flow. Combination products with hydrochlorothiazide exist.</td></tr>
+          <tr><td class="h">Potassium-sparing: use</td><td>Same indications as the others but <b>much less natriuretic and diuretic effect</b>; <b>most often combined with another diuretic or an antihypertensive</b>. A loop plus a potassium-sparing drug offsets the potassium loss.</td></tr>
+          <tr><td class="h">&#9733; Potassium-sparing: adverse effects</td><td><b>Hyperkalemia</b> (the major difference from other diuretics); caution with <b>angiotensin-converting enzyme inhibitors, angiotensin blockers and potassium supplements</b>; glucose intolerance in diabetes; <b>megaloblastic anemia (triamterene)</b>; <b>azotemia (amiloride)</b>. Salt substitutes are usually <b>potassium chloride</b>, a hidden potassium source.</td></tr>
+          <tr><td class="h">FLAG: boxed warning</td><td><b>FDA boxed warning, not on the slide:</b> amiloride and triamterene both carry a boxed warning for hyperkalemia.</td></tr>
+          <tr><td class="h">Aldosterone: normal action</td><td>Aldosterone binds its receptor, moves to the nucleus and drives protein synthesis: <b>more sodium channels, more sodium-potassium pump activity, more energy production in the distal tubule</b>.</td></tr>
+          <tr><td class="h">&#9733; Aldosterone antagonists: agents and mechanism</td><td><b>Spironolactone, eplerenone.</b> They <b>bind the steroid receptor but do not move to the nucleus</b>, so they work best when aldosterone is high. Block 2 to 3% of sodium chloride reabsorption and reduce potassium loss; modest effect on lipids, glucose and uric acid.</td></tr>
+          <tr><td class="h">&#9733; Aldosterone antagonists: indications</td><td><b>Primary aldosteronism, hypertension, heart failure, edematous conditions, cirrhosis (secondary hyperaldosteronism), nephrotic syndrome.</b> Heart failure is the big one: advanced (class III or IV) failure; see FLAG.</td></tr>
+          <tr><td class="h">&#9733;&#9733; Aldosterone antagonists: adverse effects</td><td><b>Hyperkalemia and mild acidosis</b>; nausea, vomiting, gastrointestinal upset; <b>sex-hormone effects of spironolactone</b> (it blocks the androgen receptor; see FLAG) &rarr; <b>gynecomastia in men; menstrual irregularities in women</b> (the slide also lists testicular atrophy). <b>Eplerenone has less effect on androgen receptors</b>: switch to it if the patient complains of breast development or menstrual problems.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-cai" style="--acc:#b8862f;--acc-bg:#f5eee2;--acc-zebra:#faf7f0;--acc-ink:#906925">
+    <div class="shead"><span class="dot" style="background:#b8862f"></span><h2>Diuretics &middot; carbonic anhydrase inhibitors</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733; Agents and mechanism</td><td><b>Acetazolamide, dichlorphenamide, methazolamide.</b> Inhibit carbonic anhydrase: <b>bicarbonate absorption in the proximal tubule falls by 80 to 90%</b>, less hydrogen ion production, less hydrogen/sodium exchange. Bicarbonate is trapped in the tubule and passed out (alkaline urine, a mild acidification of the patient).</td></tr>
+          <tr><td class="h">Weak and self-limiting</td><td>Short term sodium and potassium excretion rises about 5%, but <b>after 3 to 5 days the effect shrinks to 1 to 3%</b> because the rest of the nephron compensates. The wimpiest diuretic.</td></tr>
+          <tr><td class="h">&#9733; Other uses</td><td><b>Glaucoma</b> (less bicarbonate in the ciliary body: dorzolamide, brinzolamide), <b>epilepsy</b> (metabolic acidosis, central nervous system effects), <b>mountain sickness</b> (acidifies the blood so the patient breathes faster).</td></tr>
+          <tr><td class="h">&#9733; Adverse effects</td><td><b>Metabolic acidosis</b> (the opposite of the contraction alkalosis of other diuretics), <b>potassium depletion, drowsiness</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-hf" style="--acc:#7a4a9c;--acc-bg:#ece6f1;--acc-zebra:#f6f2f8;--acc-ink:#5f3a7a">
+    <div class="shead"><span class="dot" style="background:#7a4a9c"></span><h2>Heart failure &middot; types, compensation, non-drug care</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Causes</td><td><b>Ischemic heart disease and myocardial infarction (50 to 60% of cases)</b>, hypertension, idiopathic dilated cardiomyopathy; other cardiomyopathies (alcoholic, viral, hypertrophic); drug induced.</td></tr>
+          <tr><td class="h">&#9733; Systolic dysfunction</td><td><b>Decreased contractility</b> (loss of muscle mass, left ventricular hypertrophy, dilated cardiomyopathies), assessed as a <b>reduced ejection fraction</b> (the slide says below 45%; current practice says 40% or less).</td></tr>
+          <tr><td class="h">&#9733; Diastolic dysfunction</td><td><b>Impaired relaxation:</b> thicker, stiffer ventricles; ischemia impairs removal of calcium back into the sarcoplasmic reticulum; less filling means less cardiac output. Symptoms with a <b>preserved ejection fraction</b>.</td></tr>
+          <tr><td class="h">Compensatory response</td><td><b>More preload</b> (sodium and water retention), <b>vasoconstriction</b>, <b>tachycardia and more contractility</b> (sympathetic activation), left ventricular hypertrophy. A vicious cycle that therapy has to interrupt.</td></tr>
+          <tr><td class="h">Precipitants of decompensation</td><td><b>Lack of compliance</b> (diet or medicines), uncontrolled hypertension, arrhythmias, inadequate therapy, inappropriate medicines or fluid overload; also acute anginal chest pain, pulmonary infection, emotional stress.</td></tr>
+          <tr><td class="h">Non-drug therapy</td><td><b>Restrict dietary sodium and fluid</b> (the slide gives 1 to 3 grams of sodium and under 2 liters of fluid a day); physical activity may improve function.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-core" style="--acc:#3d6b52;--acc-bg:#e4eae7;--acc-zebra:#f1f5f3;--acc-ink:#305340">
+    <div class="shead"><span class="dot" style="background:#3d6b52"></span><h2>Heart failure &middot; diuretics, ACE inhibitors, beta blockers</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733;&#9733; Diuretics in heart failure</td><td><b>Loops are the mainstay</b>; thiazides are not potent enough for most patients. They cut sodium and water retention and so <b>preload</b>, for <b>symptomatic benefit only</b>: <b>no evidence they slow progression or lower mortality</b>, and <b>not mandatory</b> (some patients take them as needed). <b>Daily weights</b> detect fluid overload.</td></tr>
+          <tr><td class="h">&#9733; Angiotensin-converting enzyme inhibitors: what they do</td><td><b>Lower preload, afterload and sympathetic activation; reduce left ventricular hypertrophy, dilation and remodeling; slow progression; lower mortality.</b> Hemodynamics, exercise tolerance, symptoms, admissions, progression and survival all improve. <b>Angiotensin-converting enzyme inhibitors or angiotensin receptor blockers have to be mandatory.</b></td></tr>
+          <tr><td class="h">Angiotensin-converting enzyme inhibitor problems</td><td><b>Renal function impairment, hypotension, raised serum potassium, cough, angioedema.</b> Loops lower potassium, angiotensin-converting enzyme inhibitors raise it: monitor.</td></tr>
+          <tr><td class="h">&#9733;&#9733; Beta blockers: only three</td><td>Beta blockers were classically considered contraindicated in heart failure. The ones with a <b>mortality benefit</b> are <b>carvedilol, metoprolol succinate (the extended-release form) and bisoprolol</b>; the others have not shown it.</td></tr>
+          <tr><td class="h">&#9733; Beta blockers: low and slow</td><td>Patient <b>stable before starting</b>; in hospital preferred; <b>very low starting doses</b>; <b>titrate up slowly</b> (the slide says over 6 to 8 weeks total); monitor for worsening heart failure signs and symptoms. Heart rate and contractility fall, so a rushed start can decompensate the patient.</td></tr>
+          <tr><td class="h">Beta blockers: benefit and place</td><td>Better exercise tolerance, a higher ejection fraction, slower progression, fewer hospitalizations, less need for transplant, <b>lower mortality</b>. <b>First line in class II to IV heart failure; patients should be on an angiotensin-converting enzyme inhibitor AND a beta blocker irrespective of symptoms.</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-digoxin" style="--acc:#a8562f;--acc-bg:#f3e7e2;--acc-zebra:#f9f3f0;--acc-ink:#834325">
+    <div class="shead"><span class="dot" style="background:#a8562f"></span><h2>Heart failure &middot; digoxin</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Structure and source</td><td><b>Lactone ring and steroid nucleus</b> are essential for activity; the sugar molecules influence absorption, half-life and metabolism.</td></tr>
+          <tr><td class="h">&#9733; Mechanism</td><td><b>Inhibits the sodium-potassium ATPase</b> &rarr; intracellular sodium rises &rarr; calcium enters through the sodium/calcium exchanger &rarr; <b>force of contraction rises</b> (the older, inotropic mechanism). The newer one is neurohormonal: <b>less sympathetic and more parasympathetic activity, baroreflex resensitized, renin-angiotensin-aldosterone system down</b>, so the heart rate falls (more parasympathetic effect on the atrioventricular node) and cardiac output rises.</td></tr>
+          <tr><td class="h">&#9733; Narrow therapeutic index</td><td>There is little gap between an effective and a toxic level, and it is <b>one of the few heart failure drugs whose level is checked</b>. Target range on the slide: 0.5 to 1 nanogram per milliliter; higher concentrations are associated with worse outcomes in heart failure. He will probably not quiz the number.</td></tr>
+          <tr><td class="h">&#9733;&#9733; Benefit: symptoms, NOT survival</td><td>Better symptoms, exercise tolerance and quality of life; <b>fewer hospitalizations; NO SURVIVAL BENEFIT</b>; no evidence of slowed disease progression. So it is <b>not mandatory</b> like angiotensin-converting enzyme inhibitors and beta blockers.</td></tr>
+          <tr><td class="h">&#9733; Place in therapy</td><td><b>Symptomatic patients already on optimal angiotensin-converting enzyme inhibitor/beta blocker and diuretic therapy</b>; can be used for <b>rate control in atrial fibrillation with heart failure</b>; considered in symptomatic systolic dysfunction. (FLAG: the slide says &ldquo;first line&rdquo; for the atrial fibrillation case; that is overstated.)</td></tr>
+          <tr><td class="h">&#9733; Toxicity</td><td><b>Gastrointestinal:</b> anorexia, nausea. <b>Visual:</b> blurred vision, photophobia, <b>xanthopsia, yellow-green halos around lights</b>. <b>Central:</b> delirium, fatigue, confusion, dizziness, abnormal dreams. <b>Cardiac:</b> nodal slowing (longer PR interval, shorter QT interval, depressed ST segment), <b>bradycardia</b>, digoxin-induced afterdepolarization (the tracing shows premature ventricular beats and ST depression).</td></tr>
+          <tr><td class="h">&#9733;&#9733; Contraindications and risk factors</td><td><b>Advanced atrioventricular block; severe bradycardia or sick sinus syndrome; premature ventricular beats and ventricular tachycardia; Wolff-Parkinson-White syndrome.</b> Toxicity is more likely with <b>hypokalemia, hypomagnesemia and hypercalcemia</b>: loops and thiazides lower potassium and magnesium, so a patient on digoxin plus a diuretic needs electrolyte monitoring. (FLAG: slide 71 prints hyperkalemia; see the last topic.)</td></tr>
+          <tr><td class="h">&#9733; Antidote: digoxin immune Fab</td><td>An <b>antibody fragment made by immunizing healthy sheep</b> with digoxin coupled to human serum albumin; its <b>affinity for digoxin is higher than digoxin's affinity for the sodium-potassium ATPase</b>, so it rapidly reverses toxicity. It can <b>unmask</b> what digoxin was treating (atrial fibrillation or heart failure decompensation).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-other" style="--acc:#4a4f8c;--acc-bg:#e6e6ef;--acc-zebra:#f2f3f7;--acc-ink:#3a3e6d">
+    <div class="shead"><span class="dot" style="background:#4a4f8c"></span><h2>Heart failure &middot; other agents</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">&#9733; Aldosterone antagonists in heart failure</td><td><b>Spironolactone lowers mortality in advanced (class III or IV) heart failure</b> (the slide says &ldquo;grade&rdquo;) by neurohormonal inhibition and slowed left ventricular remodeling. <b>Not eligible if potassium is above 5 or serum creatinine above 2.5.</b> Gynecomastia in men (about 10%; may respond to a lower dose); <b>eplerenone: little or no gynecomastia</b>.</td></tr>
+          <tr><td class="h">Milrinone and inamrinone</td><td><b>Phosphodiesterase type 3 inhibitors</b> (cyclic adenosine monophosphate up): direct stimulation of contraction <b>plus balanced arterial and venous dilation</b> &rarr; lower afterload, higher cardiac output. Approved for <b>short-term intravenous use in acute decompensated heart failure</b>; long-term use carries <b>higher mortality and morbidity than placebo</b>. Adverse: <b>thrombocytopenia (milrinone less), ventricular arrhythmias</b>.</td></tr>
+          <tr><td class="h">&#9733; Dobutamine and dopamine</td><td><b>Dobutamine: selective beta-1 agonist</b>, intravenous; stimulates force of contraction more than rate; short-term use to stabilize patients. <b>Dopamine</b>: intravenous, acts through dopamine and beta receptors. Unlike milrinone they are not vasodilators, so they suit a <b>hypotensive</b> decompensation; milrinone suits a hypertensive one.</td></tr>
+          <tr><td class="h">&#9733; Ivabradine</td><td><b>Blocks the hyperpolarization-activated cyclic nucleotide-gated channel</b> (pacemaker current in the sinoatrial node): <b>lowers heart rate without affecting contractility.</b> For patients <b>maxed out on beta blockers</b> who are in <b>normal sinus rhythm with a heart rate above 70</b>; fewer hospitalizations and heart failure deaths. Adverse: <b>atrial fibrillation risk, symptomatic bradycardia, visual impairment (phosphenes, halos, may resolve)</b>. Contraindications resemble beta blockers: hypotension, heart block, pacemaker.</td></tr>
+          <tr><td class="h">&#9733; Sacubitril-valsartan</td><td>Sacubitril is a <b>neprilysin inhibitor</b> (neprilysin normally degrades natriuretic peptide, bradykinin and other vasoactive peptides): vasodilation, natriuresis, diuresis, less myocardial growth and fibrosis. Formulated with <b>valsartan</b>, an angiotensin receptor blocker. Reduces cardiovascular death and hospitalization. <b>Never with an angiotensin-converting enzyme inhibitor: 36-hour washout.</b> Common adverse: hypotension, hyperkalemia, cough, renal insufficiency.</td></tr>
+          <tr><td class="h">FLAG: sacubitril-valsartan</td><td><b>FDA boxed warning, not on the slide:</b> fetal toxicity. A history of angioedema is also a contraindication.</td></tr>
+          <tr><td class="h">&#9733; Sodium-glucose cotransporter 2 inhibitors</td><td><b>Dapagliflozin, empagliflozin.</b> For <b>stable chronic heart failure with reduced ejection fraction</b>: <b>reduce mortality and hospitalizations</b>. Originally for diabetes: the kidneys stop reabsorbing glucose. Risks: <b>hypotension and fungal infections of the genitourinary tract</b> (the slide says &ldquo;fungal urinary tract infections&rdquo;). A &ldquo;necessary add-on&rdquo; for heart failure patients.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="hf-flags" style="--acc:#8c1d12;--acc-bg:#efdfde;--acc-zebra:#f7efee;--acc-ink:#6d170e">
+    <div class="shead"><span class="dot" style="background:#8c1d12"></span><h2>Deck versus truth &middot; learn the true version</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">FLAG: digoxin and potassium</td><td>Slide 71 lists <b>hyperkalemia</b> as a digoxin contraindication, and he said &ldquo;hyperkalemic&rdquo; once. Slides 19 and 29 (and the pharmacology) say the opposite: <b>hypokalemia, hypomagnesemia and hypercalcemia raise toxicity risk</b>. Learn hypokalemia.</td></tr>
+          <tr><td class="h">FLAG: descending limb</td><td>The descending limb is <b>permeable to water</b> (the slide: &ldquo;water leaves lumen&rdquo;); he misspoke once. The thick ascending limb is the impermeable one.</td></tr>
+          <tr><td class="h">FLAG: thiazides and calcium</td><td>Slide 24 lists hypercalcemia among thiazide indications. <b>Thiazides raise serum calcium and lower urinary calcium</b>: they treat calcium stones, not hypercalcemia (loops with saline do).</td></tr>
+          <tr><td class="h">FLAG: thiazides at low clearance</td><td>Slide 28: thiazides are ineffective below a creatinine clearance of 30 to 40. Learn <b>metolazone works at low clearance</b>; do not memorize &ldquo;thiazides never work in kidney disease&rdquo; (newer trials show chlorthalidone works in advanced kidney disease).</td></tr>
+          <tr><td class="h">FLAG: uric acid with thiazides</td><td>Slide 23 says thiazides increase uric acid excretion acutely; slide 26 and the clinical picture are <b>hyperuricemia and gout</b>. Learn hyperuricemia.</td></tr>
+          <tr><td class="h">FLAG: aldosterone antagonists and class</td><td>Slide 37 says heart failure &ldquo;class IV&rdquo;; slide 73 says &ldquo;grade III or IV.&rdquo; Learn <b>advanced (class III or IV) heart failure</b>. The slide 36 lines on a 30 to 60 minute lag and on calcium excretion are not carried here.</td></tr>
+          <tr><td class="h">FLAG: spironolactone and androgen receptors</td><td>Slide 38 calls spironolactone a &ldquo;partial agonist at testosterone receptors&rdquo; with &ldquo;weak androgenic effects&rdquo; (he repeated the partial agonist wording). <b>Spironolactone actually BLOCKS (antagonizes) the androgen receptor</b>, which is why it causes gynecomastia and menstrual irregularities. <b>Hirsutism is not an adverse effect of it</b> (the slide lists it, but spironolactone is used to treat hirsutism): do not learn it as one.</td></tr>
+          <tr><td class="h">FLAG: antidiuretic hormone and water</td><td>Slide 10 says water movement in the distal tubule is controlled by aldosterone. <b>Aldosterone drives sodium and potassium handling; antidiuretic hormone controls the collecting duct water channels</b> (slides 11, 30, 34).</td></tr>
+          <tr><td class="h">FLAG: ejection fraction and weight numbers</td><td>Reduced ejection fraction is now <b>40% or less</b> (slide 46 says below 45%). The weight gain of more than 1 pound a day (slide 52) is a teaching figure: <b>learn daily weights, and rapid gain means fluid</b>.</td></tr>
+          <tr><td class="h">FLAG: dopamine and the kidney</td><td>Slide 77 says dopamine infusions maintain renal function. Low-dose dopamine has not been shown to protect the kidneys; do not rely on that claim.</td></tr>
+          <tr><td class="h">FLAG: carbonic anhydrase notes</td><td>Slide 21 (thiazides have some carbonic anhydrase activity and phosphodiesterase inhibition at high doses) and slide 42 (head injury, less swelling) are not examined points: he said not to worry about the carbonic anhydrase action.</td></tr>
+          <tr><td class="h">Other boxed warnings (not on the slides)</td><td><b>FDA boxed warnings not on the slides:</b> furosemide, bumetanide, ethacrynic acid (profound diuresis); amiloride, triamterene (hyperkalemia); sacubitril-valsartan (fetal toxicity); angiotensin-converting enzyme inhibitors (fetal toxicity); abrupt beta blocker withdrawal (metoprolol).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Exam 3 covers Lectures 9 to 13 &mdash; this sheet covers Lecture 9 so far. The <a href="pharm-exam-3-study-guide.html">study guide</a> has the full treatment.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
