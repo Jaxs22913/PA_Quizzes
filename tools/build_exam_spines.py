@@ -38,6 +38,21 @@ END = "    /* --- END generated exam spines --- */"
 DARK_LIFT = 0.057     # mean of the seven light->dark tab-hue pairs in home.css
 DARK_FLOOR = 0.42     # below this a spine disappears against a dark card
 
+# Exams whose quiz pages reuse a sibling exam's palette would get the SAME spine as that
+# sibling, and Jaxon (2026-10-01) wants every exam in a class to read as its own place
+# ("you haven't been continuing the different coloring"). These pick another colour that
+# an exam on the site already owns (no new hexes, per site_design_tokens), so the spine
+# differs from its siblings even though the pages' own palette is shared.
+OVERRIDES = {
+    "pharm1-exam3": "#3f7a5c",       # green; exam 1 is brown, exam 2 is blue
+    "pd2-exam1": "#6b7f35",          # olive: keep the colour already shown on the live homepage
+    "cms1-exam3": "#6a4fa3",         # keep the colour already shown on the live homepage
+    "pd2-exam2": "#15707f",          # teal; exam 1 is green
+    "micro-exam2": "#2a5f8f",        # blue; exam 1 is green
+    "clinpath1-exam2": "#8a3d5b",    # rose; exam 1 is violet
+    "medlit-book": "#4f5666",        # slate; the exam proper is rose
+}
+
 SECTION = re.compile(r'<details class="exam-section" data-examid="([^"]+)"(.*?)</details>', re.S)
 LINK = re.compile(r'href="([^"]+?)/[^"/]+\.html"')
 INDIGO = re.compile(r'--indigo:\s*(#[0-9a-fA-F]{6})')
@@ -87,6 +102,8 @@ def main():
         if not col:
             unresolved.append((examid, "no --indigo in %s" % folder))
             continue
+        if examid in OVERRIDES:
+            col = OVERRIDES[examid]
         hh, ll, ss = hex_to_hls(col)
         dark = hls_to_hex(hh, max(ll + DARK_LIFT, DARK_FLOOR), ss)
         rows.append((examid, folder, col, dark, agree, total))
