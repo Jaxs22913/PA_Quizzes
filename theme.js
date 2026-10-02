@@ -2825,10 +2825,22 @@ window.showToast = function (message, duration) {
     var c = document.getElementById("counter");
     return c && c.parentNode && c.parentNode.classList && c.parentNode.classList.contains("topbar") ? c : null;
   }
-  function place(el, c) {            // just right of the question number, wherever its width has got to
-    el.style.left = (c.offsetLeft + c.offsetWidth + 4) + "px";
-    var bar = c.nextElementSibling;  // Large text on a phone squeezes the progress bar to nothing: no room, so no flame
-    el.classList.toggle("sf-tight", !!bar && bar.offsetWidth < 20);
+  function place(el, c) {
+    var bar = c.nextElementSibling, host = c.parentNode, phone = window.innerWidth <= 640;
+    el.classList.remove("sf-tight", "sf-over"); host.classList.remove("sf-swap");
+    if (!bar) return;
+    if (phone) {
+      // The phone row is full (question, bar, timer, Pause), so the pill takes the progress bar's own slot
+      // while the streak lasts: nothing moves, and the question number still says how far through you are.
+      el.classList.add("sf-over");                  // out of the row first, so measuring the bar is not fooled by the flame
+      if (bar.offsetWidth < 38) { el.classList.remove("sf-over"); el.classList.add("sf-tight"); return; }
+      host.classList.add("sf-swap");
+      el.style.left = bar.offsetLeft + "px";
+      el.style.top = (bar.offsetTop + bar.offsetHeight / 2 - el.offsetHeight / 2) + "px";
+      return;
+    }
+    el.style.left = el.style.top = "";
+    if (bar.offsetWidth < 60) el.classList.add("sf-tight");   // measured with the flame in the row
   }
   function watchCounter(c) {
     if (c._sfWatch || typeof MutationObserver !== "function") return;
@@ -2846,7 +2858,8 @@ window.showToast = function (message, duration) {
       flame = document.createElement("span");
       flame.className = "sf"; flame.setAttribute("aria-hidden", "true");
       flame.innerHTML = flameSvg() + '<b class="sf-n"></b><i class="sf-spark"></i><i class="sf-spark b"></i>';
-      bar.appendChild(flame);
+      var sc = document.getElementById("scoretxt");   // a flex item in the row, like the timer and the score
+      if (sc && sc.parentNode === bar) bar.insertBefore(flame, sc); else bar.appendChild(flame);
       fresh = true;
     }
     watchCounter(c);
@@ -2864,6 +2877,7 @@ window.showToast = function (message, duration) {
     if (!flame || !flame.parentNode) return;
     var f = flame, bar = f.parentNode;
     flame = null;
+    bar.classList.remove("sf-swap");
     if (!rmq.matches) {
       var sm = document.createElement("span");
       sm.className = "sf-smoke"; sm.setAttribute("aria-hidden", "true");

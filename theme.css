@@ -3415,19 +3415,24 @@ body.th-paused .hw-glow { animation-play-state: paused; }
    (phones: inside the sticky bar). Reduced motion: a still flame with the count.
    ============================================================ */
 .topbar.sf-host { position: relative; }
+/* An in-line pill in the quiz's top bar (a flex item beside the score), fixed 24px tall so a growing flame never
+   moves anything vertically. */
 .sf {
-  position: absolute; z-index: 3; pointer-events: none; display: flex; align-items: flex-end; gap: 1px;
-  bottom: 50%; margin-bottom: 4px; white-space: nowrap; transform-origin: 0% 100%;
+  position: relative; flex: none; pointer-events: none; display: inline-flex; align-items: center; gap: 4px;
+  height: 24px; padding: 0 9px 0 7px; border-radius: 999px; white-space: nowrap; transform-origin: 50% 50%;
+  background: rgba(249, 115, 22, .13); box-shadow: inset 0 0 0 1px rgba(249, 115, 22, .28);
 }
 .sf.sf-tight { display: none; }
-.sf-fl { display: block; width: 12px; height: 16px; transform-origin: 50% 100%; overflow: visible;
+.sf.sf-over { position: absolute; z-index: 3; }
+.topbar.sf-swap .bar { visibility: hidden; }
+.sf-fl { display: block; width: 11px; height: 15px; transform-origin: 50% 100%; overflow: visible;
   animation: sf-flick .85s ease-in-out infinite alternate; transition: width .35s cubic-bezier(.3, 1.6, .5, 1), height .35s cubic-bezier(.3, 1.6, .5, 1);
   filter: drop-shadow(0 0 3px rgba(249, 115, 22, .55)); }
-.sf[data-t="2"] .sf-fl { width: 16px; height: 21px; }
-.sf[data-t="3"] .sf-fl { width: 20px; height: 26px; }
-.sf[data-t="4"] .sf-fl { width: 23px; height: 30px; filter: drop-shadow(0 0 5px rgba(249, 115, 22, .75)); }
-.sf-n { font: 800 11px/1 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: #c2410c; margin: 0 0 1px 1px; letter-spacing: .01em; }
-.sf-spark { position: absolute; left: 50%; top: 4px; width: 3px; height: 3px; border-radius: 50%; background: #fde047; opacity: 0; display: none; }
+.sf[data-t="2"] .sf-fl { width: 13px; height: 18px; }
+.sf[data-t="3"] .sf-fl { width: 15px; height: 20px; }
+.sf[data-t="4"] .sf-fl { width: 16px; height: 22px; filter: drop-shadow(0 0 5px rgba(249, 115, 22, .75)); }
+.sf-n { font: 800 12px/1 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: #c2410c; letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.sf-spark { position: absolute; left: 14px; top: 3px; width: 3px; height: 3px; border-radius: 50%; background: #fde047; opacity: 0; display: none; }
 .sf[data-t="4"] .sf-spark { display: block; animation: sf-spark 1.25s ease-out infinite; }
 .sf-spark.b { animation-delay: .6s !important; margin-left: -6px; }
 .sf.sf-ignite { animation: sf-ignite .5s cubic-bezier(.3, 1.4, .5, 1) both; }
@@ -3449,18 +3454,19 @@ body.th-paused .hw-glow { animation-play-state: paused; }
 @keyframes sf-spark { 0% { transform: translate(0, 0) scale(1); opacity: 0; } 15% { opacity: 1; } 100% { transform: translate(5px, -9px) scale(.3); opacity: 0; } }
 @keyframes sf-puff { 0% { transform: translate(0, 0) scale(.5); opacity: 0; } 20% { opacity: .75; } 100% { transform: translate(4px, -16px) scale(2.1); opacity: 0; } }
 :root[data-theme="dark"] .sf-n { color: #fdba74; }
+:root[data-theme="dark"] .sf { background: rgba(251, 146, 60, .16); box-shadow: inset 0 0 0 1px rgba(251, 146, 60, .34); }
 /* phones: the bar is sticky at the top of the screen, so the flame must fit inside its 46px and the spark is dropped */
 @media (max-width: 640px) {
-  .sf { margin-bottom: 1px; }
+  .sf { height: 22px; padding: 0 6px 0 5px; gap: 2px; }
   .sf-fl { height: 13px; width: 10px; }
-  .sf[data-t="2"] .sf-fl { width: 12px; height: 16px; }
-  .sf[data-t="3"] .sf-fl { width: 14px; height: 19px; }
-  .sf[data-t="4"] .sf-fl { width: 16px; height: 21px; }
+  .sf[data-t="2"] .sf-fl { width: 11px; height: 15px; }
+  .sf[data-t="3"] .sf-fl { width: 12px; height: 16px; }
+  .sf[data-t="4"] .sf-fl { width: 13px; height: 18px; }
   .sf[data-t="4"] .sf-spark { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .sf, .sf.sf-ignite, .sf.sf-grow { animation: none; }
-  .sf-fl, .sf[data-t] .sf-fl { animation: none; transition: none; width: 12px; height: 16px; }
+  .sf-fl, .sf[data-t] .sf-fl { animation: none; transition: none; width: 11px; height: 15px; }
   .sf-spark, .sf-smoke { display: none !important; }
 }
 @media print { .sf, .sf-smoke { display: none !important; } }
