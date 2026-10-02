@@ -11,9 +11,12 @@ are the top card, marked with a star and the gold palette used for emphasis
 cards on the CMS I Exam 2 sheet; the guide's other highlighted "most common"
 facts carry a star in the row label), four for Lecture 27 (Arterial Occlusive
 Disease and Aortic Aneurysm) and four for Lecture 28 (Cardiomyopathy). Lectures
-27 and 28 were built 2026-09-25 from the slides only -- the lectures are on
-2026-10-01, so their emphasis follows. Lectures 29-32 are added as their decks
-are posted. Same palette rotation as the guide (Exam 5 rose).
+27 and 28 were built 2026-09-25 from the slides only. Lecture 28's emphasis
+(Carter, Zoom recording of 2026-10-01) was folded in the same day: a gold
+"Carter Emphasized" card on top of its four topics, star labels on the rows it
+touches, recording times in parentheses. Lecture 27's emphasis follows when its
+audio arrives. Lectures 29-32 are added as their decks are posted. Same palette
+rotation as the guide (Exam 5 rose).
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -128,39 +131,47 @@ topics = [
  ["Dissection", "Intimal tear &rarr; false lumen in the media. 60s&ndash;70s (younger in <b>Marfan</b>), male, <b>hypertension</b>. <b>Sudden tearing chest pain</b> that moves; syncope; aortic regurgitation. Electrocardiogram may be normal; <b>computed tomography chest and abdomen</b>. <b>Systolic 100&ndash;120 mmHg with esmolol or nitroprusside</b>; surgery; high untreated mortality."],
 ]},
 
-# ---- Lecture 28, condensed from guide section 2 ----
+# ---- Lecture 28, condensed from guide section 3 (emphasis from the 2026-10-01 Zoom recording; times = recording time) ----
+{"id": "l28-emph", "label": "★ Carter Emphasized — Cardiomyopathy", "color": "#b8860b", "rows": [
+ ["★ His study instruction", "At the close (2:07:05): study the <b>numbers, genes, most likely causes, best diagnostics and gold standards</b>. Take-home (2:07:26): cardiomyopathy is disease of the <b>muscle itself</b>; sort every case into dilated, hypertrophic or restrictive and decide <b>genetic versus secondary</b>."],
+ ["★ Best test", "<b>Dilated:</b> echocardiogram is definitive: thin dilated walls, ejection fraction &lt; 40% (58:27). <b>Myocarditis:</b> endomyocardial biopsy = <b>gold standard</b> even though rarely done (1:26:09); gadolinium magnetic resonance imaging shows the extent of inflammation (1:25:53). <b>Hypertrophic:</b> echocardiogram is the test of choice (1:38:54); <b>systolic anterior motion</b> is the telltale sign of obstruction (1:31:24). <b>Restrictive:</b> echocardiogram can look normal, so step to magnetic resonance imaging (1:58:21). <b>Takotsubo:</b> mid and apical hypokinesis or akinesis (2:02:41)."],
+ ["★ Numbers he read", "<b>Dilated:</b> 10,000 deaths and 46,000 hospitalizations a year; ages 20&ndash;60; familial up to 35%; ejection fraction &lt; 40%; defibrillator at &lt; 35% on optimized therapy; 50% dead at 5 years once symptomatic. <b>Myocarditis:</b> viral = 20% of dilated cardiomyopathy; one third later develop it. <b>Hypertrophic:</b> 1 in 500; at least 1,500 mutations; &gt; 80% of sudden deaths are ventricular fibrillation; wall 1.5 cm or more. <b>Takotsubo:</b> 90% postmenopausal women."],
+ ["★ Can't miss, and what he stressed", "<b>Can't miss:</b> hypertrophic cardiomyopathy, so syncope, especially in a young athlete, needs a work-up (1:33:35). <b>Stressed:</b> family history is &ldquo;extremely important&rdquo;, primary relatives first (51:26); alcohol is one of the few causes of dilated cardiomyopathy that can recover (47:50); constrictive pericarditis must be differentiated from restrictive cardiomyopathy (1:56:11)."],
+ ["★ Exercise (his last answer)", "Obstructive hypertrophic cardiomyopathy: no strenuous activity until it is worked up (2:10:39). The slide advice is mild to moderate, <b>noncompetitive</b> activity: do not key &ldquo;no exercise at all&rdquo;. Heart failure from other causes: be active (2:11:00)."],
+ ["★ Recording vs slide", "<b>Normal electrocardiogram in dilated cardiomyopathy:</b> slide says it &ldquo;almost rules it out&rdquo;; he said it does not (57:56). Truth: unlikely, not excluded. <b>Hypertrophic:</b> nitrates and positive inotropes avoided; diuretics only with care (he said stay away). Amiodarone is an adjunct; the defibrillator is the proven sudden-death device."],
+]},
 {"id": "l28-dcm", "label": "Dilated Cardiomyopathy", "color": "#5a3d8a", "rows": [
- ["What", "<b>Most common</b> cardiomyopathy: dilated, poorly contracting ventricle(s) <b>without</b> severe coronary disease or pressure/volume overload &rarr; systolic failure, globular heart; mitral (early) and tricuspid regurgitation."],
- ["Who / why", "Ages 20&ndash;60, male, high in African Americans. Idiopathic; <b>familial up to 35%</b> (autosomal dominant); viral or Chagas myocarditis; chemotherapy; <b>alcohol (can recover if stopped)</b>; thiamine deficiency; lupus, rheumatoid arthritis; <b>peripartum</b> (last trimester to 6 months after delivery). Idiopathic = main indication for transplant."],
+ ["★ What", "<b>Most common</b> cardiomyopathy: dilated, poorly contracting ventricle(s) <b>without</b> severe coronary disease or pressure/volume overload &rarr; systolic failure, globular heart; mitral (early) and tricuspid regurgitation."],
+ ["★ Who / why", "Ages 20&ndash;60, male, high in African Americans. Idiopathic; <b>familial up to 35%</b> (autosomal dominant); viral or Chagas myocarditis; chemotherapy; <b>alcohol (can recover if stopped; 47:50)</b>; thiamine deficiency; lupus, rheumatoid arthritis; <b>peripartum</b> (last trimester to 6 months after delivery). Idiopathic = main indication for transplant."],
  ["Signs", "Progressive exertional dyspnea, orthopnea, paroxysmal nocturnal dyspnea, edema; <b>laterally displaced impulse, third heart sound</b>, regurgitant murmurs, narrow pulse pressure, jugular distension, hepatojugular reflux."],
- ["Tests", "<b>Normal electrocardiogram almost rules it out.</b> Echo: <b>dilated thin walls</b>, ejection fraction &lt; 40%. X-ray: cardiomegaly, Kerley B lines. B-type natriuretic peptide &lt; 100 pg/mL excludes heart failure. Magnetic resonance imaging for inflammatory or infiltrative causes; biopsy rarely."],
- ["Treat", "As chronic heart failure: <b>every patient gets a beta blocker + angiotensin-converting enzyme inhibitor</b>; loop diuretics; spironolactone; sacubitril/valsartan. Anticoagulate only for atrial fibrillation, artificial valve or mural thrombus. <b>Defibrillator if ejection fraction &lt; 35% after maximal therapy</b>; biventricular pacemaker; assist device (bridge or destination); transplant."],
- ["Teach / outlook", "Remove the cause; <b>sodium &lt; 2 g/day</b>; genetic counseling if familial. <b>50% dead at 5 years once symptomatic.</b>"],
+ ["★ Tests", "Electrocardiogram usually abnormal; a normal one makes it unlikely but does not exclude it (slide 37: &ldquo;will almost rule out&rdquo;; Carter: &ldquo;doesn&rsquo;t rule out anything&rdquo;, 57:56). Echo = <b>definitive</b>: <b>dilated thin walls</b>, ejection fraction &lt; 40% (58:27). X-ray: cardiomegaly, Kerley B lines. B-type natriuretic peptide &lt; 100 pg/mL excludes heart failure. Magnetic resonance imaging for inflammatory or infiltrative causes; biopsy rarely."],
+ ["★ Treat", "As chronic heart failure: <b>every patient gets a beta blocker + angiotensin-converting enzyme inhibitor</b>; loop diuretics; spironolactone; sacubitril/valsartan. Anticoagulate only for atrial fibrillation, artificial valve or mural thrombus. <b>Defibrillator if ejection fraction &lt; 35% after maximal therapy (1:02:33)</b>; biventricular pacemaker; assist device (bridge or destination); transplant."],
+ ["★ Teach / outlook", "Remove the cause; <b>sodium &lt; 2 g/day</b>; genetic counseling if familial. <b>50% dead at 5 years once symptomatic (1:06:44).</b>"],
 ]},
 {"id": "l28-myo", "label": "Myocarditis &amp; Takotsubo", "color": "#1f5c3a", "rows": [
  ["Myocarditis: who", "Otherwise healthy, <b>young males</b>; <b>flulike illness 1&ndash;2 weeks before</b>; viral most frequent (Coxsackie B, parvovirus B19, human herpesvirus 6, COVID-19 (coronavirus disease 2019)...). Viral myocarditis = 20% of dilated cardiomyopathy."],
  ["Myocarditis: picture", "New heart failure or cardiogenic shock with no prior heart disease; palpitations, syncope, sudden death (ventricular arrhythmia, heart block)."],
- ["Myocarditis: tests", "Troponin, leukocytosis, sedimentation rate, echo; angiography to exclude ischemia; gadolinium magnetic resonance imaging. <b>Endomyocardial biopsy = gold standard</b>, for unexplained deterioration not responding to treatment."],
- ["Myocarditis: treat", "<b>Supportive care is the mainstay</b>; stabilize. Most mild cases recover; <b>one third later develop dilated cardiomyopathy</b>."],
- ["Takotsubo", "<b>90% postmenopausal women</b> after a big emotional or physical stressor; low cardiac risk. Mimics acute coronary syndrome: chest pain, dyspnea; troponin up; <b>ST elevation, T inversion</b>; echo <b>mid and apical hypokinesis</b>. <b>Confirmed by catheterization: normal coronaries.</b> Treat by the acute coronary syndrome protocol, admit to cardiology; beta blockers. <b>Most recover completely.</b>"],
+ ["★ Myocarditis: tests", "Troponin, leukocytosis, sedimentation rate, echo; angiography to exclude ischemia; <b>gadolinium magnetic resonance imaging</b> (best for the extent, 1:25:53). <b>Endomyocardial biopsy = gold standard</b> (1:26:09) once other causes are excluded, for unexplained deterioration not responding to treatment."],
+ ["★ Myocarditis: treat", "<b>Supportive care is the mainstay</b>; stabilize. Most mild cases recover; <b>one third later develop dilated cardiomyopathy</b> (1:21:57)."],
+ ["★ Takotsubo", "<b>90% postmenopausal women</b> (2:01:12) after a big emotional or physical stressor; low cardiac risk. Mimics acute coronary syndrome: chest pain, dyspnea; troponin up; <b>ST elevation, T inversion</b>; echo <b>mid and apical hypokinesis</b>. <b>Confirmed by catheterization: normal coronaries.</b> Treat by the acute coronary syndrome protocol, <b>admit to cardiology</b> (2:03:16); beta blockers. <b>Most recover completely</b> (2:03:39)."],
 ]},
 {"id": "l28-hcm", "label": "Hypertrophic Cardiomyopathy", "color": "#7a2d47", "rows": [
  ["What / who", "Unexplained left ventricular hypertrophy, <b>asymmetric septal</b>. <b>Autosomal dominant</b> (sarcomere genes); <b>1 in 500</b>; male. <b>Leading cause of sudden death in preadolescents and adolescents</b> (extreme exertion; &gt; 80% ventricular fibrillation)."],
- ["Obstruction", "Septum narrows the outflow tract + <b>systolic anterior motion</b> of the anterior mitral leaflet &rarr; mid-systolic obstruction."],
- ["Symptoms", "Dyspnea (commonest), palpitations, <b>exertional syncope / presyncope on standing = high sudden-death risk, urgent work-up</b>, angina without coronary disease."],
+ ["★ Obstruction", "Septum narrows the outflow tract + <b>systolic anterior motion</b> of the anterior mitral leaflet &rarr; mid-systolic obstruction. Systolic anterior motion on echo = the telltale sign (1:31:24)."],
+ ["★ Symptoms", "Dyspnea (commonest), palpitations, <b>exertional syncope / presyncope on standing = high sudden-death risk, urgent work-up</b> (1:33:35), angina without coronary disease."],
  ["Signs", "Normal blood pressure and rate; <b>pulsus bisferiens</b> (double peak); forceful sustained apex; <b>fourth heart sound</b>. Crescendo-decrescendo murmur, left sternal border 3rd&ndash;4th space, to the suprasternal notch, <b>not the carotids</b>."],
  ["Maneuvers", "<b>More blood in the heart = softer; less = louder.</b> Squat, leg raise, handgrip &rarr; softer. <b>Valsalva, standing</b>, amyl nitrite &rarr; louder. Breathing: no effect."],
- ["Tests", "<b>Echocardiography = test of choice</b>: wall <b>&ge; 1.5 cm</b>, septal pattern, small cavity, ejection fraction normal (&gt; 75% late). Electrocardiogram: inferior and lateral Q waves, left axis deviation. Magnetic resonance imaging if echo questionable; 24&ndash;48 h ambulatory monitor; catheterization only before invasive therapy; genetic testing does not change treatment."],
- ["Treat", "<b>Beta blocker first</b>, then verapamil or diltiazem. <b>AVOID nitrates, dehydrating diuretics, digoxin, epinephrine, norepinephrine.</b> Amiodarone (cuts sudden death), disopyramide, defibrillator; atrial fibrillation &rarr; anticoagulate. <b>Myectomy</b> or <b>alcohol septal ablation</b> (months to thin)."],
- ["Teach", "Mild to moderate <b>noncompetitive</b> activity; <b>stay hydrated</b>; avoid excess alcohol. Sudden death = leading cause of death."],
+ ["★ Tests", "<b>Echocardiography = test of choice</b> (1:38:54): wall <b>&ge; 1.5 cm</b>, septal pattern, small cavity, ejection fraction normal (&gt; 75% late). Electrocardiogram: inferior and lateral Q waves, left axis deviation. Magnetic resonance imaging if echo questionable; 24&ndash;48 h ambulatory monitor; catheterization only before invasive therapy; genetic testing does not change treatment."],
+ ["★ Treat", "<b>Beta blocker first</b>, then verapamil or diltiazem. <b>AVOID nitrates, dehydrating diuretics, digoxin, epinephrine, norepinephrine</b> (1:43:49). Amiodarone (slide: reduces sudden death; an adjunct, see the Recording vs slide row), disopyramide, defibrillator; atrial fibrillation &rarr; anticoagulate. <b>Myectomy</b> or <b>alcohol septal ablation</b> (months to thin)."],
+ ["★ Teach", "Mild to moderate <b>noncompetitive</b> activity (suspected obstructive disease: no strenuous activity until worked up, 2:10:39); <b>stay hydrated</b> (1:46:52); avoid excess alcohol. Sudden death = leading cause of death."],
 ]},
 {"id": "l28-rcm", "label": "Restrictive Cardiomyopathy &amp; Populations", "color": "#2f5d6b", "rows": [
- ["What", "<b>Least common.</b> Stiff, normal-size ventricles; <b>big atria</b>, atrial fibrillation; ejection fraction preserved until late; <b>right-sided failure dominates</b>; heart block from nodal fibrosis. <b>Poorest prognosis</b> of all."],
- ["Causes", "<b>Amyloidosis (most common in the United States)</b>, hemochromatosis, sarcoidosis, <b>mediastinal radiation, chemotherapy</b>; idiopathic; genetic."],
- ["Signs", "Late presentation; hepatomegaly, ascites, pedal edema; prefers sitting; raised jugular venous pressure; <b>Kussmaul sign</b> (jugular pressure <b>rises with inspiration</b>); fourth heart sound if no regurgitation."],
- ["Tests", "Electrocardiogram: <b>low QRS voltage in amyloid</b>. Echo: big atria, preserved function &mdash; <b>not definitive</b>. <b>Cardiac magnetic resonance imaging separates it from constrictive pericarditis (pericardial thickening = pericarditis).</b> Biopsy when all else is negative."],
+ ["★ What", "<b>Least common.</b> Stiff, normal-size ventricles; <b>big atria</b>, atrial fibrillation; ejection fraction preserved until late; <b>right-sided failure dominates</b>; heart block from nodal fibrosis. <b>Poorest prognosis</b> of all (1:59:32)."],
+ ["★ Causes", "<b>Amyloidosis (most common in the United States; 1:50:28)</b>, hemochromatosis, sarcoidosis, <b>mediastinal radiation, chemotherapy</b>; idiopathic; genetic."],
+ ["★ Signs", "Late presentation; hepatomegaly, ascites, pedal edema; prefers sitting; raised jugular venous pressure; <b>Kussmaul sign</b> (jugular pressure <b>rises with inspiration</b>; 1:55:08); fourth heart sound if no regurgitation."],
+ ["★ Tests", "Electrocardiogram: <b>low QRS voltage in amyloid</b>. Echo: big atria, preserved function &mdash; <b>not definitive</b>, can look normal (1:58:01). <b>Cardiac magnetic resonance imaging separates it from constrictive pericarditis (pericardial thickening = pericarditis)</b>; <b>constrictive pericarditis must be differentiated</b> (1:56:11). Biopsy when all else is negative."],
  ["Treat", "Treat the cause; <b>diuretics with caution (preload-dependent)</b>; beta blockers, verapamil or diltiazem; anticoagulate atrial thrombi; pacemaker for heart block; transplant."],
- ["Populations", "<b>Adolescent:</b> genetic screening for hypertrophic cardiomyopathy, activity restriction if high risk. <b>Adult:</b> guideline-directed therapy, devices, sodium restriction, alcohol cessation, assist device or transplant. <b>Elderly:</b> tailored to frailty, <b>cautious diuretics and vasodilators</b>, symptom control, palliative discussions. Rehab and hospice referral in end-stage disease."],
+ ["★ Populations", "<b>Adolescent:</b> genetic screening for hypertrophic cardiomyopathy, activity restriction if high risk (2:04:07). <b>Adult:</b> guideline-directed therapy, devices, sodium restriction, alcohol cessation, assist device or transplant. <b>Elderly:</b> tailored to frailty, <b>cautious diuretics and vasodilators</b>, symptom control (&ldquo;better days&rdquo;, 2:05:18), palliative discussions. Rehab and hospice referral in end-stage disease."],
 ]},
 ]
 
@@ -171,9 +182,9 @@ html = render(
     sub="Venous disorders, arterial occlusive disease and aortic aneurysm, and cardiomyopathy, condensed "
         "from the Exam 5 study guide: the Virchow triad and Wells criteria first, then deep vein thrombosis, "
         "chronic venous insufficiency, claudication and the ankle-brachial index, acute limb ischemia, carotid "
-        "and aneurysm thresholds, dissection, and the five cardiomyopathies. Lecture 26 carries the "
-        "lecture&rsquo;s emphasis (starred); Lectures 27&ndash;28 are built from the slides only, with lecture "
-        "audio emphasis to be added after 10/01. The rest of the block follows when posted.",
+        "and aneurysm thresholds, dissection, and the five cardiomyopathies. Lectures 26 and 28 carry "
+        "the lecturers&rsquo; emphasis (starred; Lecture 28 gives recording times in parentheses); Lecture 27 is built "
+        "from the slides only, with its audio emphasis to be added after 10/01. The rest of the block follows when posted.",
     topics=topics,
     guide_href="cms-exam-5-study-guide.html",
     footer_note="Condensed from the CMS I Exam 5 Study Guide (Class of 2028). "
