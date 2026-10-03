@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build 'Pharmacology I Exam 2: Most Likely 40' (Jaxon, 2026-10-03, two days before the exam).
+"""Build 'Pharmacology I Exam 2: Most Likely 45' (Jaxon, 2026-10-03, two days before the exam; asked for 40, then 45).
 
 THE REQUEST. "Make a 40 questions quiz with the most likely questions he would ask [Dr. Wood] with about equal
-weighting on the lectures." Forty questions, EIGHT PER LECTURE (Lectures 4 to 8: ophthalmic, ear/nose/throat,
+weighting on the lectures", then "Make that 40 quiz 45 most likely asked." Forty-five questions, NINE PER LECTURE (Lectures 4 to 8: ophthalmic, ear/nose/throat,
 antihypertensives, lipids, myocardial ischemia), chosen as the questions he is most likely to ask. Nobody can know
 what will be asked; this is an evidence-ranked bet, and the quiz says so.
 
@@ -27,10 +27,13 @@ THE EVIDENCE (five signals, all read from files in this repo, none invented):
 
 HOW THE PICKS WERE MADE. `score()` below ranks every shipped, vetted Exam 2 question (676, from the same sets files
 the topic quizzes and masters are rendered from) by the five signals; the ranked list per lecture is written to
-tools/pharm_e2_most_likely_report.json. The final eight per lecture are then chosen BY HAND from the top of that
+tools/pharm_e2_most_likely_45_report.json. The final nine per lecture are then chosen BY HAND from the top of that
 ranking against the entry-by-entry map in PICKS (each pick names the Wood entry numbers that drove it), because
 the score cannot see two things a person must: (a) the spread of shapes inside a lecture and (b) near-duplicates.
-Equal weighting is kept at 8/8/8/8/8 even where one lecture's eighth pick is weaker than another's ninth.
+Equal weighting is kept at 9/9/9/9/9 even where one lecture's ninth pick is weaker than another's tenth. The ninth
+pick per lecture (added when 40 became 45) came from the 'weighed and lost' list: no anesthetic drops to take home (L4),
+acetaminophen with alcohol or liver disease (L5), hydralazine slow acetylators (L6), niacin and fibrates versus resins (L7),
+the nitrate-free interval (L8).
 
 HARD EXCLUSIONS (they stay in the topic quizzes):
   * dosages, doses, regimens, frequencies (Dr. Wood: no dosages): same DOSE_KEY rule as the master exams. The ONE
@@ -40,7 +43,7 @@ HARD EXCLUSIONS (they stay in the topic quizzes):
   * a fact he said aloud that the slides do not carry (sinus rinses: distilled water) stays out: slides-only
     grounding, and the guide has no passage that states it.
 
-SOURCING. 39 of the 40 come from the shipped pools; 33 are reused VERBATIM (their option explanations, citations and
+SOURCING. 44 of the 45 come from the shipped pools; 38 are reused VERBATIM (their option explanations, citations and
 audited guide links come with them: a link is keyed to the stem plus the correct option text, so the same question
 keeps the same link), 5 had a stacked or underspecified stem rewritten after the independent review (REPLACE;
 each re-audited by a separate judge), and ten distractor explanations on five Lecture 4 vignettes were lengthened to
@@ -49,11 +52,11 @@ for Wood's own worked example of a stem ("a truck driver, which antihistamine"),
 for it. Reviewer swaps after the first draft: ht:raas2:6 (add-next shape), li:statin1:9 (statin pregnancy) and
 mv:set1:22 (add-on) replaced a pregnancy yes/no, a muscle-toxicity item and the five-minute nitroglycerin item.
 
-POSITIONS. Answer letters are re-dealt so the quiz holds exactly ten of each letter, two of each inside every
+POSITIONS. Answer letters are re-dealt so the quiz holds 11/11/11/12 of A-D, two or three of each inside every
 lecture, with no run longer than two; the key moves with its explanation.
 
-    python3 tools/build_pharm_e2_most_likely.py   # writes tools/pharm_e2_most_likely_sets.json + ..._report.json
-    python3 tools/render_pharm_e2_most_likely.py  # writes Pharmacology I Exam 2/pharm-e2-most-likely-40.html
+    python3 tools/build_pharm_e2_most_likely_45.py   # writes tools/pharm_e2_most_likely_45_sets.json + ..._report.json
+    python3 tools/render_pharm_e2_most_likely_45.py  # writes Pharmacology I Exam 2/pharm-e2-most-likely-45.html
 """
 import html as H
 import json
@@ -68,8 +71,8 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import build_guide_links as B  # noqa: E402  (same key function the guide-link builder uses)
 
-OUT = os.path.join(HERE, "pharm_e2_most_likely_sets.json")
-REPORT = os.path.join(HERE, "pharm_e2_most_likely_report.json")
+OUT = os.path.join(HERE, "pharm_e2_most_likely_45_sets.json")
+REPORT = os.path.join(HERE, "pharm_e2_most_likely_45_report.json")
 FOLDER = os.path.join(ROOT, "Pharmacology I Exam 2")
 SEED = 20261003
 
@@ -109,6 +112,9 @@ PICKS = [
              "the only antibiotic restriction he singled out."),
     dict(ref="op:anti2:16", lec="L4", shape="indication / class before agent", wood=[3],
          why="Corneal ulcer or contact lens wearer means Pseudomonas, and the fluoroquinolone is the class."),
+    dict(ref="e2:set2:4", lec="L4", shape="patient education / safety", wood=[68, 69],
+         why="No anesthetic drops to take home: with no blink reflex the cornea can be injured unnoticed; he said the "
+             "clinic uses them and patients never go home with them."),
     # ---- Lecture 5: ear, nose and throat -----------------------------------------------------------------------
     dict(ref="en:cough1:14", lec="L5", shape="side effect / patient education", wood=[28],
          why="Oxymetazoline rebound congestion: 'I highlight this every year ... it'll be somewhere on the test, "
@@ -133,6 +139,9 @@ PICKS = [
     dict(ref="en:inflam2:10", lec="L5", shape="interaction / monitoring", wood=[24, 34, 30],
          why="NSAID with a diuretic and an ACE inhibitor: the stomach and the kidney are the two big concerns, and "
              "he said to highlight anything kidney-toxic."),
+    dict(ref="en:inflam1:2", lec="L5", shape="patient education / safety", wood=[25],
+         why="Acetaminophen: he told the class to know the limit and to cut it back in liver disease or chronic alcohol "
+             "use; the dose is not asked (no-dosage rule) but the liver-and-alcohol warning is."),
     # ---- Lecture 6: antihypertensives ---------------------------------------------------------------------------
     dict(ref="ht:raas1:3", lec="L6", shape="first-line drug choice", wood=[52, 30],
          why="His own stem: 'based off this comorbidity, what do you start with', and his example is type 2 "
@@ -154,6 +163,8 @@ PICKS = [
              "stressed again in Lecture 8."),
     dict(ref="ht:beta1:10", lec="L6", shape="class discrimination", wood=[44, 45],
          why="Carvedilol and labetalol break the letter rule and add alpha-1 blockade: 'you just have to know these'."),
+    dict(ref="ht:other2:1", lec="L6", shape="adverse effect / risk group", wood=[50],
+         why="'Anytime you see acetylation, highlight it': hydralazine, fast and slow acetylators and the lupus-like syndrome."),
     # ---- Lecture 7: lipids ---------------------------------------------------------------------------------------
     dict(ref="li:ldl2:5", lec="L7", shape="contraindication", wood=[60],
          why="His own question: a triglyceride of 600, which class is contraindicated (the bile acid resin)."),
@@ -172,6 +183,9 @@ PICKS = [
          why="The four statin benefit groups: 'I'd want you to be able to identify those four risk categories'."),
     dict(ref="li:statin1:9", lec="L7", shape="contraindication", wood=[55],
          why="'ACEs, ARBs and now the statins are going to be mega no-no-go for pregnancy.'"),
+    dict(ref="li:tg2:8", lec="L7", shape="class discrimination", wood=[62, 64],
+         why="'Think of the test questions I could ask that would have you delineate between these products': niacin and "
+             "the fibrates share triglyceride lowering and HDL raising, unlike the resins."),
     # ---- Lecture 8: myocardial ischemia --------------------------------------------------------------------------
     dict(ref="mv:set1:24", lec="L8", shape="switch vignette", wood=[84, 82],
          why="'He wrote this question out loud': a beta blocker not tolerated because of nightmares, what to "
@@ -195,6 +209,8 @@ PICKS = [
              "what current practice allows)."),
     dict(ref="mv:set1:14", lec="L8", shape="contraindication vignette", wood=[110],
          why="Fibrinolytic contraindications: 'go through this checklist ... once it's given you can't take it away'."),
+    dict(ref="mv:set1:21", lec="L8", shape="patient education", wood=[95],
+         why="'All you need to know is the nitrate-free interval ... when the patient is least likely to have symptoms.'"),
 ]
 
 # --------------------------------------------------------------------------------------------------------------
@@ -332,10 +348,23 @@ REPLACE = {
                "Under 40, with no disease, no diabetes and LDL below 190 mg/dL, this patient fits none of the four benefit groups; the groups are disease, LDL above 190, diabetes at 40 to 75, and high estimated risk."]],
         c=0, keep_same_stem=True),
 }
+CITE_OVERRIDE = {"mv:set1:21": "Myocardial Ischemia Drugs.pptx, Slides 31 and 32"}
 TOPIC_OVERRIDE = {"mv:set1:1": "Antianginals after a myocardial infarction", "en:inflam2:2": "Aspirin and cyclooxygenase",
                   "en:inflam1:4": "Salicylates and Reye syndrome"}
 # explanation-only edits for keys (do not change the question's identity or guide link)
 EXPL_OVERRIDE.update({
+    ("en:inflam1:2", "The combination risks liver damage over time"):
+        "Correct. Chronic alcohol use together with acetaminophen increases the risk of liver damage, so a regular drinker is told to cut back or avoid it; an occasional drink is not the concern.",
+    ("en:inflam1:2", "The combination causes gastric ulceration"):
+        "Ulceration belongs to the non-steroidal anti-inflammatory drugs; the acetaminophen-alcohol concern is chronic liver damage.",
+    ("ht:other2:1", "Patients on low doses"):
+        "Low doses carry lower risk; high doses are the risk factor, along with long-term use and slow acetylation.",
+    ("ht:other2:1", "Fast acetylators"):
+        "Fast acetylators clear the drug quickly. The recognized risk factor for hydralazine lupus is being a slow acetylator.",
+    ("e2:set2:4", "Decline \u2014 not for home use"):
+        "Correct. The eye stays numb for 10 to 20 minutes with no blink reflex, so a patient who keeps treating himself at home can injure the cornea without feeling it; it is unsafe unsupervised.",
+    ("e2:set2:4", "Substitute a topical steroid"):
+        "A topical steroid is a different drug for a different purpose and carries its own risks, such as raised eye pressure; it does not replace an anesthetic, which is not sent home.",
     ("en:inflam2:10", "Renal function"):
         "Correct. Two interactions at once: ibuprofen with a diuretic puts the kidney at risk, and ibuprofen blunts the ACE inhibitor, so the blood pressure response also needs watching.",
     ("en:inflam2:10", "Serum potassium only"):
@@ -428,21 +457,25 @@ def score_all(pool):
 
 
 def deal_positions(qs, rng):
-    """Exactly ten of each letter, two per letter inside each block of eight, no run longer than two."""
-    for _ in range(20000):
+    """Blocks of nine (one per lecture): two of each letter plus one extra; over 45 the letters come out 11/11/11/12,
+    no run longer than two."""
+    n = len(qs)
+    for _ in range(200000):
         pos = []
-        for _blk in range(len(qs) // 8):
-            blk = [0, 0, 1, 1, 2, 2, 3, 3]
+        for _blk in range(n // 9):
+            blk = [0, 0, 1, 1, 2, 2, 3, 3, rng.randrange(4)]
             rng.shuffle(blk)
             pos += blk
-        run = 1
-        ok = True
-        for a, b in zip(pos, pos[1:]):
-            run = run + 1 if a == b else 1
+        c = Counter(pos)
+        if sorted(c.values()) != [11, 11, 11, 12]:
+            continue
+        run, ok = 1, True
+        for a_, b_ in zip(pos, pos[1:]):
+            run = run + 1 if a_ == b_ else 1
             if run > 2:
                 ok = False
                 break
-        if ok and all(c == len(pos) // 4 for c in Counter(pos).values()):
+        if ok:
             return pos
     raise SystemExit("could not deal positions")
 
@@ -458,9 +491,9 @@ def main():
             rank[r["ref"]] = (i, len(rows))
     # ----- validate the picks -----
     refs = [p["ref"] for p in PICKS]
-    assert len(refs) == len(set(refs)) == 40, "need 40 distinct picks, got %d" % len(refs)
+    assert len(refs) == len(set(refs)) == 45, "need 45 distinct picks, got %d" % len(refs)
     per = Counter(p["lec"] for p in PICKS)
-    assert dict(per) == {l: 8 for l in LEC_NAME}, per
+    assert dict(per) == {l: 9 for l in LEC_NAME}, per
     stems = set()
     for p in PICKS:
         q = pool[p["ref"]]
@@ -481,6 +514,8 @@ def main():
         if p["ref"] in REPLACE:
             r = REPLACE[p["ref"]]
             q["q"], q["opts"], q["c"] = r["q"], r["opts"], r["c"]
+        if p["ref"] in CITE_OVERRIDE:
+            q["cite"] = CITE_OVERRIDE[p["ref"]]
         if p["ref"] in TOPIC_OVERRIDE:
             q["topic"] = TOPIC_OVERRIDE[p["ref"]]
         q["opts"] = [[t, EXPL_OVERRIDE.get((p["ref"], t), e)] for t, e in q["opts"]]
