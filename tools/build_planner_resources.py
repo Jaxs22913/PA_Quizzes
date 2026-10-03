@@ -72,7 +72,7 @@ for folder in sorted(os.listdir(ROOT)):
             rec["refs"].append({"href": rel, "t": head_title(os.path.join(d, f)) or title(f)})
         elif "master-exam" in low and not rec["master"]:
             rec["master"] = rel
-        elif "quiz" in low or "drill" in low or "vignette" in low or "master" in low:
+        elif "quiz" in low or "drill" in low or "vignette" in low or "master" in low or "most-likely" in low:
             rec["quizzes"] += 1
     for f in files:
         low = f.lower()
@@ -86,7 +86,7 @@ for folder in sorted(os.listdir(ROOT)):
             rec["items"].append({"k": "cram", "t": "Cram sheet", "href": rel})
         elif "master-exam" in low:
             rec["items"].append({"k": "master", "t": page_name(path, f), "href": rel, "n": qcount(path)})
-        elif re.search(r"quiz|drill|vignette", low):
+        elif re.search(r"quiz|drill|vignette|most-likely", low):
             k = "drill" if "drill" in low else "quiz"
             rec["items"].append({"k": k, "t": page_name(path, f), "href": rel, "n": qcount(path)})
         elif re.search(r"osce|reference|chart|indications|side-effects|receptor|what-to-star|killers|gram-coverage|review-session|referral|guide", low):

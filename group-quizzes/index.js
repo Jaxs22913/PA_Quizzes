@@ -458,6 +458,7 @@ window.GROUP_INDEX = {
 "pharmacology-i-exam-2-pharm-e2-master-drill":{"title":"Master Drill","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":213},
 "pharmacology-i-exam-2-pharm-e2-mi-vignettes":{"title":"Myocardial Ischemia Drugs — Clinical Vignettes 1","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":25},
 "pharmacology-i-exam-2-pharm-e2-mi-vignettes-version-2":{"title":"Myocardial Ischemia Drugs — Clinical Vignettes 2","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":24},
+"pharmacology-i-exam-2-pharm-e2-most-likely-40":{"title":"Pharmacology I Exam 2: Most Likely 40","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":40},
 "pharmacology-i-exam-2-pharm-e2-vignettes":{"title":"Ophthalmic Drugs — Clinical Vignettes 1","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":21},
 "pharmacology-i-exam-2-pharm-e2-vignettes-version-2":{"title":"Ophthalmic Drugs — Clinical Vignettes 2","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":21},
 "pharmacology-i-exam-2-pharm-exam-2-master-exam-form-a":{"title":"Pharmacology I Exam 2 Master Exam — Form A","category":"Pharmacology I","exam":"Exam 2","sem":"fall-2026","n":60},
