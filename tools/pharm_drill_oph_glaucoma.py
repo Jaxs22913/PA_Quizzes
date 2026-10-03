@@ -54,7 +54,7 @@ dict(q="Which glaucoma class risks worsening heart failure, bradycardia, heart b
 
 dict(q="Which glaucoma class works by blocking beta receptors in the ciliary body epithelium to reduce aqueous production?",
      ans="Levobunolol", src=("OPH", 67),
-     why="Less catecholamine activation, less cyclic AMP, less aqueous made.",
+     why="Less catecholamine activation, less cyclic adenosine monophosphate (cAMP), less aqueous made.",
      wrong=[("Travoprost", "A prostaglandin, increasing OUTFLOW rather than reducing production."),
             ("Carbachol", "A cholinergic agonist, increasing outflow."),
             ("Apraclonidine", "An alpha-2 agonist, which does both.")]),
@@ -105,12 +105,12 @@ dict(q="Which cholinergic agonist is used in the SURGICAL setting?",
      ans="Acetylcholine", src=("OPH", 72),
      why="The surgical agent among the three cholinergic agonists.",
      wrong=[("Pilocarpine", "A topical agent for chronic use, not the surgical one."),
-            ("Carbachol", "Also topical, and also not the agent used in theater."),
+            ("Neostigmine", "Neostigmine blocks the breakdown of acetylcholine rather than activating the receptor directly, and it is not the surgical agonist."),
             ("Tropicamide", "A cycloplegic antimuscarinic, which does the opposite.")]),
 
 dict(q="A patient's pressure is not controlled on one agent. What is the principle behind adding a second?",
-     ans="Choose a DIFFERENT mechanism, for synergy and fewer drops", src=("OPH", 73),
-     why="Targeting multiple routes lowers pressure synergistically, and fewer drops improves compliance. Adding a drug of the same category would be the wrong move.",
+     ans="A drug with a DIFFERENT mechanism, for additive effect", src=("OPH", 73),
+     why="Targeting a different route lowers pressure additively; fixed combinations can then cut the number of drops. Adding a drug of the same category would be the wrong move.",
      wrong=[("Choose an agent of the same class at a higher strength", "Same mechanism gives no synergy."),
             ("Add a topical glucocorticoid", "Steroids RAISE intraocular pressure."),
             ("Add a topical vasoconstrictor", "It has no role in glaucoma.")]),
@@ -184,4 +184,5 @@ dict(q="Which two routes lower intraocular pressure, and which class does BOTH?"
      wrong=[("Latanoprost — it does both", "Prostaglandins increase outflow only."),
             ("Timolol — it does both", "Beta blockers decrease production only."),
             ("Dorzolamide — it does both", "Carbonic anhydrase inhibitors decrease production only.")]),
+
 ]
