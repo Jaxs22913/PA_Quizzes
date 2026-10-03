@@ -81,6 +81,11 @@ CLASS_DIRS = {
 }
 
 
+# Pages that are carded but must NOT get a Word copy: the converter drops inline SVG, and these
+# are diagrams (maps, timeline) with a PDF download of their own.
+NO_WORD_COPY = ("pharm-exam-2-game-plan.html",)
+
+
 def in_scope_documents():
     """Every document CARDED ON guides.html that belongs to a Semester 2+ class.
 
@@ -101,6 +106,8 @@ def in_scope_documents():
         if not href.endswith(".html") or not href.startswith(prefixes):
             continue
         if href in seen or not os.path.exists(os.path.join(ROOT, href)):
+            continue
+        if href.endswith(NO_WORD_COPY):
             continue
         seen.add(href)
         docs.append((href.split("/")[0], href))
