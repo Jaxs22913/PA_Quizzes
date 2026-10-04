@@ -18,8 +18,8 @@ INTRO = ("Forty-five questions, nine per lecture, picked from the facts the lect
          "(4 to 8), reuse questions already in the topic quizzes and vignettes, and carry no dosages.")
 
 fn = "pharm-e2-most-likely-45.html"
-html = render(title="Pharmacology I Exam 2: Most Likely 45",
-              h1="Pharmacology I Exam 2: Most Likely 45",
+html = render(title="Pharmacology I Exam 2: Most Likely 45 (Version 1)",
+              h1="Pharmacology I Exam 2: Most Likely 45 (Version 1)",
               sub="Pharmacology I &middot; Exam 2 &middot; Lectures 4&ndash;8 &middot; nine per lecture",
               pill="%d questions" % len(S), chips=CHIPS, intro=INTRO,
               questions=S, already_converted=True, **PAL)

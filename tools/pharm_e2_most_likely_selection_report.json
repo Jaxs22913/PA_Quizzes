@@ -1,0 +1,1532 @@
+{
+ "definite_promise_definition": "a first-person statement that this specific fact WILL be on the exam ('I will ask this question', 'it'll be somewhere on the test'); conditionals and emphasis-only phrases do not count",
+ "definite_promise_entries": {
+  "5": "L4 50:24 'I will tell you, I will ask this question ... rebound hyperemia ... no more than two weeks' (and 'I tell you explicitly')",
+  "28": "L5 1:21:24 Afrin: 'I'm telling you right now, it'll be somewhere on the test' (rebound congestion, three to five days)"
+ },
+ "reasked_in_v2": [
+  "e2:set1:3",
+  "en:cough1:11"
+ ],
+ "not_definite_examples": "hypothetical or conditional: 'I might give you a vignette' (26), 'if I told you ... nightmares' (84), 'test question I might ask' (57), 'you can say, the triglyceride is 600' (60), 'if I say a test question' (91), 'cornucopia of test questions could come from' (96), 'I'll make it pretty clear cut in the question' after 'I might say' (66), 'I want to be asking questions ... more like' (52); emphasis only: 'really important', 'know this', 'star it', 'definitely one thing to note' (54)",
+ "v1_facts_avoided_neighbours": {
+  "L4": "V1 has betaxolol for asthma, soft steroids, prostaglandin first line, add a second agent, sulfacetamide, contact-lens fluoroquinolone, anesthetic drops, toddler ingestion, rebound limit. V2 skips the beta blocker drop's systemic effects (the reason behind V1's betaxolol item), the steroid raised-pressure concern and the steroid-course-length item (a duration key and a uveitis case where practice differs).",
+  "L5": "V1 has Afrin rebound, polymyxin B, truck driver, ketoconazole QT, Reye, ear infection failure step, aspirin irreversible, NSAID kidney, acetaminophen with alcohol. V2 skips aspirin plus anticoagulant (same platelet fact as V1), first-generation sedation with alcohol (same teaching as V1's truck driver) and the ear infection first-line item (its key is a dose).",
+  "L6": "V1 has T2DM start, cough to receptor blocker, add a thiazide, potassium with ACE inhibitors, AF rate control, beta blocker withdrawal, constipation, carvedilol, hydralazine acetylators. V2 skips angioedema (same bradykinin teaching as V1's cough), clonidine rebound (V1's withdrawal theme), propranolol nightmares and lipid solubility (Wood ties them to V1's nightmares switch), tacrolimus with diltiazem (same CYP3A4 teaching as V1's verapamil and statin), NSAIDs blunting ACE inhibitors (V1 L5) and the start-two-drugs item.",
+  "L7": "V1 has triglyceride 600, triglycerides over 1000, verapamil and statins, niacin flush, statin plus fibrate, resin timing, benefit groups, statin pregnancy, niacin and fibrate versus resins. V2 skips grapefruit and simvastatin (V1's CYP3A4 point), the statins-lower-LDL-most comparison and resin warfarin.",
+  "L8": "V1 has nightmares switch, tadalafil, quick relief, add felodipine, variant angina, beta blocker plus verapamil, prior infarction, fibrinolytic bleeding contraindication, nitrate-free interval. V2 skips asthma to diltiazem (same switch logic as V1), verapamil and simvastatin, fibrinolytic intracranial hemorrhage (same bleeding teaching as V1's contraindication) and aspirin first chewed (kept to the clopidogrel allergy item). The five-minute call is in V2 only."
+ },
+ "overlap_questions_v1_v2": [],
+ "v1": {
+  "counts_per_lecture": {
+   "L4": 9,
+   "L5": 9,
+   "L6": 9,
+   "L7": 9,
+   "L8": 9
+  },
+  "reused": 44,
+  "new": 1,
+  "positions": {
+   "A": 11,
+   "B": 11,
+   "C": 11,
+   "D": 12
+  },
+  "shapes": {
+   "patient education": 8,
+   "side effect": 4,
+   "class discrimination": 5,
+   "first-line drug choice": 2,
+   "contraindication": 8,
+   "add-on": 3,
+   "indication": 2,
+   "drug choice": 3,
+   "failed first-line, next step": 1,
+   "interaction": 5,
+   "adverse effect": 1,
+   "switch": 1,
+   "quick relief versus prevention": 1,
+   "comorbidity table": 1
+  },
+  "picks": [
+   {
+    "ref": "e2:set2:1",
+    "lec": "L4",
+    "shape": "patient education",
+    "wood": [
+     5
+    ],
+    "why": "Rebound hyperemia and the two-week limit: he said 'I will ask this question ... star that, underline it, highlight it' and that people still miss it every test.",
+    "rank_in_lecture": [
+     10,
+     147
+    ],
+    "question": "A 24-year-old woman asks how long she can keep using her redness-relief drops. What do you tell her?"
+   },
+   {
+    "ref": "e2:set2:12",
+    "lec": "L4",
+    "shape": "side effect / safety",
+    "wood": [
+     6
+    ],
+    "why": "Vasoconstrictor drops swallowed by a toddler (alpha-1 locally, alpha-2 systemically): he spent a minute on 'OTC does not mean safe' and the counseling point.",
+    "rank_in_lecture": [
+     16,
+     147
+    ],
+    "question": "A toddler swallows a bottle of a parent's redness-relief drops. Why is this dangerous, given the drug acts on alpha-1 receptors in the eye?"
+   },
+   {
+    "ref": "op:inflam1:7",
+    "lec": "L4",
+    "shape": "class discrimination",
+    "wood": [
+     8
+    ],
+    "why": "'Three which are going to be starred': the soft steroids (fluorometholone, loteprednol, rimexolone) against the hard-hitting dexamethasone.",
+    "rank_in_lecture": [
+     6,
+     147
+    ],
+    "question": "What is meant by a soft steroid, and which agents are given as examples?"
+   },
+   {
+    "ref": "e2:set1:17",
+    "lec": "L4",
+    "shape": "first-line drug choice",
+    "wood": [
+     10
+    ],
+    "why": "Glaucoma ladder: prostaglandin analogs first line. He gave the order and a stem shape for it.",
+    "rank_in_lecture": [
+     25,
+     147
+    ],
+    "question": "A 62-year-old is newly diagnosed with open-angle glaucoma and has risk factors. Which class do you start?"
+   },
+   {
+    "ref": "e2:set2:16",
+    "lec": "L4",
+    "shape": "contraindication",
+    "wood": [
+     11,
+     12
+    ],
+    "why": "Asthma history: choose the beta-1 selective drop (betaxolol). 'Just ones you kind of have to know.'",
+    "rank_in_lecture": [
+     18,
+     147
+    ],
+    "question": "A 58-year-old with asthma needs a beta blocker drop for glaucoma. Which agent, and why?"
+   },
+   {
+    "ref": "e2:set1:7",
+    "lec": "L4",
+    "shape": "add-on / escalation",
+    "wood": [
+     14
+    ],
+    "why": "His own stem: 'patient is on this drug, what would you add?' and the right answer is a different mechanism, never a second drug of the same class.",
+    "rank_in_lecture": [
+     13,
+     147
+    ],
+    "question": "A 68-year-old on a prostaglandin analog still has inadequate pressure control. What is the principle for adding a second agent?"
+   },
+   {
+    "ref": "op:anti1:12",
+    "lec": "L4",
+    "shape": "contraindication",
+    "wood": [
+     2
+    ],
+    "why": "Sulfacetamide and a sulfonamide allergy: 'one thing you might want to be worried about ... notable'; the only antibiotic restriction he singled out.",
+    "rank_in_lecture": [
+     19,
+     147
+    ],
+    "question": "Which ophthalmic antibiotic must be avoided outright in a patient with a sulfonamide allergy?"
+   },
+   {
+    "ref": "op:anti2:16",
+    "lec": "L4",
+    "shape": "indication / class before agent",
+    "wood": [
+     3
+    ],
+    "why": "Corneal ulcer or contact lens wearer means Pseudomonas, and the fluoroquinolone is the class.",
+    "rank_in_lecture": [
+     5,
+     147
+    ],
+    "question": "A contact lens wearer has bacterial conjunctivitis and keratitis has been ruled out. Which class is preferred, and why?"
+   },
+   {
+    "ref": "e2:set2:4",
+    "lec": "L4",
+    "shape": "patient education / safety",
+    "wood": [
+     68,
+     69
+    ],
+    "why": "No anesthetic drops to take home: with no blink reflex the cornea can be injured unnoticed; he said the clinic uses them and patients never go home with them.",
+    "rank_in_lecture": [
+     20,
+     147
+    ],
+    "question": "A 33-year-old asks for a prescription for the numbing drops that helped during foreign body removal. What do you do?"
+   },
+   {
+    "ref": "en:cough1:14",
+    "lec": "L5",
+    "shape": "side effect / patient education",
+    "wood": [
+     28
+    ],
+    "why": "Oxymetazoline rebound congestion: 'I highlight this every year ... it'll be somewhere on the test, and a significant number of people still miss it.'",
+    "rank_in_lecture": [
+     13,
+     144
+    ],
+    "question": "A patient has used a topical decongestant spray daily for three weeks and is more blocked than when they started. What has happened?"
+   },
+   {
+    "ref": "en:anti2:14",
+    "lec": "L5",
+    "shape": "contraindication",
+    "wood": [
+     18
+    ],
+    "why": "Polymyxin B with a ruptured eardrum or tubes: 'really important ... an absolute contraindication'; he asked it two ways (which is contraindicated, which is preferred).",
+    "rank_in_lecture": [
+     1,
+     144
+    ],
+    "question": "Which otic ingredient is specifically not recommended when the tympanic membrane is perforated or tubes are in place?"
+   },
+   {
+    "ref": "NEW:truck",
+    "lec": "L5",
+    "shape": "drug choice vignette",
+    "wood": [
+     26
+    ],
+    "why": "His worked example of a vignette: a patient who drives a truck for a living, which antihistamine. Second-generation agents barely sedate; first-generation ones are the ones to avoid.",
+    "rank_in_lecture": null,
+    "question": "A 45-year-old long-haul truck driver has seasonal allergic rhinitis and drives 12 hours a day. Which antihistamine is the most appropriate choice for him?"
+   },
+   {
+    "ref": "en:anti1:7",
+    "lec": "L5",
+    "shape": "side effect / interaction",
+    "wood": [
+     19
+    ],
+    "why": "'Anytime you see QT prolongation or CYP3A4, make a note ... why do I make so many test questions about that?' Ketoconazole is that lecture's example.",
+    "rank_in_lecture": [
+     6,
+     144
+    ],
+    "question": "Which cardiac adverse effect is associated with ketoconazole?"
+   },
+   {
+    "ref": "en:inflam1:4",
+    "lec": "L5",
+    "shape": "contraindication",
+    "wood": [
+     23
+    ],
+    "why": "Reye syndrome: no aspirin for a child with a viral illness ('a really notable one ... potentially fatal').",
+    "rank_in_lecture": [
+     4,
+     144
+    ],
+    "question": "A child has a fever during chickenpox. Why must aspirin be avoided?"
+   },
+   {
+    "ref": "en:anti1:17",
+    "lec": "L5",
+    "shape": "failed first-line, next step",
+    "wood": [
+     15
+    ],
+    "why": "'First line, the backup if allergic, what if first line failed': the failure step for ear infection (no better at three days, step up to amoxicillin-clavulanate). The first-line item itself is not used because its key is 'high-dose amoxicillin' and he does not test doses.",
+    "rank_in_lecture": [
+     10,
+     144
+    ],
+    "question": "A child treated for acute otitis media has not improved after three days, and has had no antibiotics in the past three months. What is the next step?"
+   },
+   {
+    "ref": "en:inflam2:2",
+    "lec": "L5",
+    "shape": "class discrimination",
+    "wood": [
+     21
+    ],
+    "why": "Aspirin is an irreversible platelet inhibitor and ibuprofen is not: 'the key difference'.",
+    "rank_in_lecture": [
+     118,
+     144
+    ],
+    "question": "How does aspirin act on cyclooxygenase, and what follows from it?"
+   },
+   {
+    "ref": "en:inflam2:10",
+    "lec": "L5",
+    "shape": "interaction / monitoring",
+    "wood": [
+     24,
+     34,
+     30
+    ],
+    "why": "NSAID with a diuretic and an ACE inhibitor: the stomach and the kidney are the two big concerns, and he said to highlight anything kidney-toxic.",
+    "rank_in_lecture": [
+     2,
+     144
+    ],
+    "question": "A patient on a diuretic and an ACE inhibitor starts taking ibuprofen regularly. What should be watched?"
+   },
+   {
+    "ref": "en:inflam1:2",
+    "lec": "L5",
+    "shape": "patient education / safety",
+    "wood": [
+     25
+    ],
+    "why": "Acetaminophen: he told the class to know the limit and to cut it back in liver disease or chronic alcohol use; the dose is not asked (no-dosage rule) but the liver-and-alcohol warning is.",
+    "rank_in_lecture": [
+     28,
+     144
+    ],
+    "question": "What should a patient who drinks alcohol regularly be told about acetaminophen?"
+   },
+   {
+    "ref": "ht:raas1:3",
+    "lec": "L6",
+    "shape": "first-line drug choice",
+    "wood": [
+     52,
+     30
+    ],
+    "why": "His own stem: 'based off this comorbidity, what do you start with', and his example is type 2 diabetes, so an ACE inhibitor or receptor blocker for the kidney protection.",
+    "rank_in_lecture": [
+     10,
+     123
+    ],
+    "question": "A 52-year-old with type 2 diabetes and newly diagnosed hypertension needs a first agent. Which class is preferred for its kidney-protective effect?"
+   },
+   {
+    "ref": "ht:raas1:17",
+    "lec": "L6",
+    "shape": "class discrimination",
+    "wood": [
+     36
+    ],
+    "why": "ACE inhibitor versus receptor blocker: cough and angioedema ('great for test questions').",
+    "rank_in_lecture": [
+     25,
+     123
+    ],
+    "question": "A patient on enalapril has a bothersome dry cough but well-controlled blood pressure. Which change is most appropriate?"
+   },
+   {
+    "ref": "ht:raas2:6",
+    "lec": "L6",
+    "shape": "add-on / next step",
+    "wood": [
+     52
+    ],
+    "why": "His own stem again: 'the patient's on this, what do you want to go to next?' After an ACE inhibitor plus a dihydropyridine, the diuretic is the third drug (the order he walked through).",
+    "rank_in_lecture": [
+     2,
+     123
+    ],
+    "question": "A patient taking lisinopril and amlodipine remains above goal after titration, and adherence and measurement have been confirmed. What is the next step?"
+   },
+   {
+    "ref": "ht:raas1:11",
+    "lec": "L6",
+    "shape": "side effect / laboratory",
+    "wood": [
+     31
+    ],
+    "why": "'Anytime a medication affects your potassium ... a very easy test question to ask.'",
+    "rank_in_lecture": [
+     5,
+     123
+    ],
+    "question": "A 64-year-old with chronic kidney disease who uses a salt substitute is started on lisinopril. Which laboratory abnormality is most important to anticipate?"
+   },
+   {
+    "ref": "ht:ccb2:6",
+    "lec": "L6",
+    "shape": "drug choice",
+    "wood": [
+     38,
+     39
+    ],
+    "why": "'Which one would you use to reduce heart rate? It's diltiazem or verapamil'; he repeated it for emphasis and called it very easy to ask.",
+    "rank_in_lecture": [
+     7,
+     123
+    ],
+    "question": "Which calcium channel blocker would be used to slow the ventricular rate in atrial fibrillation?"
+   },
+   {
+    "ref": "ht:beta1:5",
+    "lec": "L6",
+    "shape": "patient education",
+    "wood": [
+     47
+    ],
+    "why": "Never stop a beta blocker abruptly (rebound, receptor up-regulation); he repeated it in Lecture 8.",
+    "rank_in_lecture": [
+     13,
+     123
+    ],
+    "question": "A patient wants to stop his metoprolol abruptly before a trip. What is the danger?"
+   },
+   {
+    "ref": "ht:ccb2:8",
+    "lec": "L6",
+    "shape": "patient education",
+    "wood": [
+     40,
+     89
+    ],
+    "why": "Constipation with the calcium channel blockers: 'very, very, very common ... ask about bowel habits'; stressed again in Lecture 8.",
+    "rank_in_lecture": [
+     48,
+     123
+    ],
+    "question": "A 72-year-old starting verapamil asks which change in bowel habit to watch for. What should she be told?"
+   },
+   {
+    "ref": "ht:beta1:10",
+    "lec": "L6",
+    "shape": "class discrimination",
+    "wood": [
+     44,
+     45
+    ],
+    "why": "Carvedilol and labetalol break the letter rule and add alpha-1 blockade: 'you just have to know these'.",
+    "rank_in_lecture": [
+     46,
+     123
+    ],
+    "question": "Which beta blocker also blocks alpha-1 receptors?"
+   },
+   {
+    "ref": "ht:other2:1",
+    "lec": "L6",
+    "shape": "adverse effect / risk group",
+    "wood": [
+     50
+    ],
+    "why": "'Anytime you see acetylation, highlight it': hydralazine, fast and slow acetylators and the lupus-like syndrome.",
+    "rank_in_lecture": [
+     26,
+     123
+    ],
+    "question": "Hydralazine is N-acetylated in the liver. Which patients are at higher risk of its lupus syndrome?"
+   },
+   {
+    "ref": "li:ldl2:5",
+    "lec": "L7",
+    "shape": "contraindication",
+    "wood": [
+     60
+    ],
+    "why": "His own question: a triglyceride of 600, which class is contraindicated (the bile acid resin).",
+    "rank_in_lecture": [
+     1,
+     83
+    ],
+    "question": "A patient with a fasting triglyceride of 600 mg/dL needs cholesterol treatment. Which class is contraindicated?"
+   },
+   {
+    "ref": "li:tg1:2",
+    "lec": "L7",
+    "shape": "drug choice",
+    "wood": [
+     57
+    ],
+    "why": "His own question: the patient's only problem is very high triglycerides, which class is best (fibrate).",
+    "rank_in_lecture": [
+     17,
+     83
+    ],
+    "question": "A patient's only lipid problem is a triglyceride level over 1000 mg/dL. Which class is most appropriate?"
+   },
+   {
+    "ref": "li:statin2:6",
+    "lec": "L7",
+    "shape": "interaction",
+    "wood": [
+     53
+    ],
+    "why": "Statins cleared by CYP3A4 and the way around it when the patient must be on verapamil or diltiazem (rosuvastatin): 'definitely know these'.",
+    "rank_in_lecture": [
+     9,
+     83
+    ],
+    "question": "A patient on verapamil needs a statin. Which statin would CYP3A4 inhibition affect least?"
+   },
+   {
+    "ref": "li:tg2:11",
+    "lec": "L7",
+    "shape": "patient education",
+    "wood": [
+     63
+    ],
+    "why": "Niacin flushing: aspirin pretreatment and extended release, with the prostaglandin reason.",
+    "rank_in_lecture": [
+     59,
+     83
+    ],
+    "question": "A patient starting niacin asks how to reduce the flushing. What is recommended?"
+   },
+   {
+    "ref": "li:tg2:7",
+    "lec": "L7",
+    "shape": "interaction",
+    "wood": [
+     58
+    ],
+    "why": "Statin plus fibrate: 'really careful ... myopathy risk goes up'; he said it under both drug classes.",
+    "rank_in_lecture": [
+     52,
+     83
+    ],
+    "question": "Why is a statin combined with a fibrate only with caution?"
+   },
+   {
+    "ref": "li:ldl2:4",
+    "lec": "L7",
+    "shape": "patient education",
+    "wood": [
+     59
+    ],
+    "why": "Bile acid resins bind other medicines: 'really critical ... separate from other meds'.",
+    "rank_in_lecture": [
+     3,
+     83
+    ],
+    "question": "A patient taking colestipol also takes thyroxine. How should the thyroxine be timed?"
+   },
+   {
+    "ref": "li:statin2:5",
+    "lec": "L7",
+    "shape": "indication",
+    "wood": [
+     66
+    ],
+    "why": "The four statin benefit groups: 'I'd want you to be able to identify those four risk categories'.",
+    "rank_in_lecture": [
+     2,
+     83
+    ],
+    "question": "Which patient falls into one of the four major statin benefit groups?"
+   },
+   {
+    "ref": "li:statin1:9",
+    "lec": "L7",
+    "shape": "contraindication",
+    "wood": [
+     55
+    ],
+    "why": "'ACEs, ARBs and now the statins are going to be mega no-no-go for pregnancy.'",
+    "rank_in_lecture": [
+     31,
+     83
+    ],
+    "question": "In which patient is a statin contraindicated?"
+   },
+   {
+    "ref": "li:tg2:8",
+    "lec": "L7",
+    "shape": "class discrimination",
+    "wood": [
+     62,
+     64
+    ],
+    "why": "'Think of the test questions I could ask that would have you delineate between these products': niacin and the fibrates share triglyceride lowering and HDL raising, unlike the resins.",
+    "rank_in_lecture": [
+     18,
+     83
+    ],
+    "question": "Which two classes both lower triglycerides by 20 to 50% and raise HDL (high-density lipoprotein) substantially?"
+   },
+   {
+    "ref": "mv:set1:24",
+    "lec": "L8",
+    "shape": "switch vignette",
+    "wood": [
+     84,
+     82
+    ],
+    "why": "'He wrote this question out loud': a beta blocker not tolerated because of nightmares, what to switch to (a non-dihydropyridine calcium channel blocker).",
+    "rank_in_lecture": [
+     35,
+     164
+    ],
+    "question": "A 56-year-old man with exertional angina stopped his beta blocker because of vivid nightmares and fatigue. Heart rate is 74 beats per minute and blood pressure is 134/82 mmHg. He has no asthma, conduction disease or heart failure. Which drug should replace it?"
+   },
+   {
+    "ref": "mv:set1:16",
+    "lec": "L8",
+    "shape": "interaction / safety",
+    "wood": [
+     90
+    ],
+    "why": "Nitrate with a phosphodiesterase-5 inhibitor: 'profound hypotension ... they could die'.",
+    "rank_in_lecture": [
+     66,
+     164
+    ],
+    "question": "A 58-year-old man with stable angina uses sublingual nitroglycerin as needed. He asks to start tadalafil for erectile dysfunction. What is the main danger of combining them?"
+   },
+   {
+    "ref": "ms:anginal2:12",
+    "lec": "L8",
+    "shape": "quick relief versus prevention",
+    "wood": [
+     77,
+     91
+    ],
+    "why": "'Which is best for quick relief': sublingual nitroglycerin. He said he will keep repeating the prophylaxis-versus-acute distinction.",
+    "rank_in_lecture": [
+     45,
+     164
+    ],
+    "question": "Which nitrate formulation is used to relieve an acute attack of angina?"
+   },
+   {
+    "ref": "mv:set1:22",
+    "lec": "L8",
+    "shape": "add-on",
+    "wood": [
+     78,
+     83
+    ],
+    "why": "'Patient's already on this and not at goal, what do you want to do next?': a dihydropyridine is added to a beta blocker (a non-dihydropyridine is not).",
+    "rank_in_lecture": [
+     22,
+     164
+    ],
+    "question": "A 60-year-old man with stable angina still has exertional attacks three times a week on metoprolol alone. Heart rate is 66 beats per minute, blood pressure is 140/84 mmHg, and conduction and ventricular function are normal. Which added drug best relieves his symptoms?"
+   },
+   {
+    "ref": "ms:anginal1:20",
+    "lec": "L8",
+    "shape": "contraindication",
+    "wood": [
+     85,
+     101
+    ],
+    "why": "Variant (Prinzmetal) angina: calcium channel blocker, and avoid the beta blocker.",
+    "rank_in_lecture": [
+     21,
+     164
+    ],
+    "question": "A 34-year-old nonsmoker has chest pain that wakes her at 4 a.m., with ST-segment elevation that resolves. Which antianginal class is best avoided?"
+   },
+   {
+    "ref": "ms:anginal1:27",
+    "lec": "L8",
+    "shape": "interaction",
+    "wood": [
+     83,
+     99,
+     48
+    ],
+    "why": "Beta blocker with verapamil or diltiazem is 'begging for trouble' (bradycardia, heart block); a dihydropyridine is the partner. Stressed in Lectures 6 and 8.",
+    "rank_in_lecture": [
+     15,
+     164
+    ],
+    "question": "Why do verapamil and diltiazem call for caution with a beta blocker?"
+   },
+   {
+    "ref": "mv:set1:1",
+    "lec": "L8",
+    "shape": "comorbidity table",
+    "wood": [
+     96,
+     97
+    ],
+    "why": "The comorbidity table was 'a cornucopia of test questions'; prior myocardial infarction means prefer a beta blocker and avoid calcium channel blockers (keyed as the course taught it; the explanation says what current practice allows).",
+    "rank_in_lecture": [
+     1,
+     164
+    ],
+    "question": "A 63-year-old man with stable exertional angina had a myocardial infarction three years ago. Heart rate is 70 beats per minute and blood pressure is 128/78 mmHg. He has no asthma and no conduction disease. In the traditional comorbidity-based approach, which class is best avoided?"
+   },
+   {
+    "ref": "mv:set1:14",
+    "lec": "L8",
+    "shape": "contraindication vignette",
+    "wood": [
+     110
+    ],
+    "why": "Fibrinolytic contraindications: 'go through this checklist ... once it's given you can't take it away'.",
+    "rank_in_lecture": [
+     62,
+     164
+    ],
+    "question": "A 58-year-old man has an ST-elevation myocardial infarction two hours after onset. Blood pressure is 128/78 mmHg and heart rate is 82 beats per minute. He vomited blood and passed black stools this week, and a gastroscopy found a bleeding ulcer. Which drug class should be avoided?"
+   },
+   {
+    "ref": "mv:set1:21",
+    "lec": "L8",
+    "shape": "patient education",
+    "wood": [
+     95
+    ],
+    "why": "'All you need to know is the nitrate-free interval ... when the patient is least likely to have symptoms.'",
+    "rank_in_lecture": [
+     109,
+     164
+    ],
+    "question": "A 68-year-old man wears a nitroglycerin patch around the clock. After several weeks his exertional angina returns despite the same patch. Which change best restores its effect?"
+   }
+  ],
+  "top_unpicked": {
+   "L4": [
+    {
+     "ref": "op:inflam2:9",
+     "score": 5.598,
+     "q": "How long may an over-the-counter ocular vasoconstrictor be used, and what should the patient be told if there "
+    },
+    {
+     "ref": "e2:set1:9",
+     "score": 5.483,
+     "q": "A 60-year-old with a strong family history of glaucoma needs a topical steroid for anterior uveitis. What is t"
+    },
+    {
+     "ref": "op:glauc1:5",
+     "score": 5.25,
+     "q": "A patient with asthma needs a topical beta blocker for glaucoma. Which agent is safer, and why?"
+    },
+    {
+     "ref": "e2:set1:3",
+     "score": 4.92,
+     "q": "A 30-year-old man has used an over-the-counter redness-relief drop every day for a month. His eyes are redder "
+    },
+    {
+     "ref": "op:glauc1:13",
+     "score": 4.757,
+     "q": "A patient is already on timolol and needs a second agent. Which combination product makes sense, and what is t"
+    },
+    {
+     "ref": "op:glauc1:9",
+     "score": 4.406,
+     "q": "In which patients are ophthalmic alpha-2 agonists contraindicated, and why?"
+    },
+    {
+     "ref": "e2:set2:15",
+     "score": 4.4,
+     "q": "A 70-year-old on timolol drops develops fatigue and a heart rate of 48. What has happened?"
+    },
+    {
+     "ref": "e2:set1:2",
+     "score": 4.155,
+     "q": "A 41-year-old man has used a vasoconstrictor drop for three days with no improvement in his red eye. What shou"
+    },
+    {
+     "ref": "op:glauc1:0",
+     "score": 3.817,
+     "q": "Which systemic adverse effects can a topical ophthalmic beta blocker produce?"
+    },
+    {
+     "ref": "op:glauc2:0",
+     "score": 3.696,
+     "q": "A patient has had proparacaine for foreign body removal. What must they be told, and what must you NOT do?"
+    },
+    {
+     "ref": "e2:set2:5",
+     "score": 3.65,
+     "q": "A 19-year-old contact lens wearer has purulent conjunctivitis. Keratitis has been excluded. Which class do you"
+    },
+    {
+     "ref": "op:inflam2:4",
+     "score": 3.617,
+     "q": "Which adverse effects limit ocular glucocorticoid use, and how long is a course generally kept to?"
+    }
+   ],
+   "L5": [
+    {
+     "ref": "en:inflam1:6",
+     "score": 4.308,
+     "q": "A child has fever during influenza. Why is acetaminophen preferred over aspirin?"
+    },
+    {
+     "ref": "en:anti1:13",
+     "score": 4.017,
+     "q": "Ciprofloxacin with dexamethasone is effective but expensive. What alternative is suggested?"
+    },
+    {
+     "ref": "en:anti1:0",
+     "score": 3.833,
+     "q": "A patient on an inhaled steroid has oral thrush and takes several other medicines. Which antifungal is preferr"
+    },
+    {
+     "ref": "en:anti2:18",
+     "score": 3.743,
+     "q": "A patient with streptococcal pharyngitis is penicillin-allergic. Which agents are offered?"
+    },
+    {
+     "ref": "en:anti2:10",
+     "score": 3.529,
+     "q": "Which agents are listed as available otic anti-infectives?"
+    },
+    {
+     "ref": "en:anti1:1",
+     "score": 3.417,
+     "q": "A patient using an inhaled steroid develops oral candidiasis. Which of these situations is NOT given as a sett"
+    },
+    {
+     "ref": "en:anti2:4",
+     "score": 3.292,
+     "q": "Which hepatic adverse effects are described with ketoconazole?"
+    },
+    {
+     "ref": "en:cough1:13",
+     "score": 3.161,
+     "q": "Which patient must not be given dextromethorphan?"
+    },
+    {
+     "ref": "en:cough2:8",
+     "score": 3.158,
+     "q": "Besides rebound congestion, what systemic effect is described with oxymetazoline?"
+    },
+    {
+     "ref": "en:anti2:9",
+     "score": 3.138,
+     "q": "What is the specific concern with polymyxin B reaching the middle ear?"
+    },
+    {
+     "ref": "en:anti1:6",
+     "score": 3.05,
+     "q": "What is ketoconazole indicated for here?"
+    },
+    {
+     "ref": "en:inflam2:0",
+     "score": 3.05,
+     "q": "Which organ systems carry ibuprofen's main adverse effects?"
+    }
+   ],
+   "L6": [
+    {
+     "ref": "ht:raas2:2",
+     "score": 8.15,
+     "q": "A 58-year-old without diabetes has blood pressure 8/4 mmHg above goal and a urine albumin-to-creatinine ratio "
+    },
+    {
+     "ref": "ht:raas1:16",
+     "score": 7.807,
+     "q": "At diagnosis, a patient's systolic pressure is 24 mmHg above goal. Which starting regimen is recommended?"
+    },
+    {
+     "ref": "ht:ccb1:1",
+     "score": 7.41,
+     "q": "Which pair of calcium channel blockers lowers heart rate and slows atrioventricular conduction?"
+    },
+    {
+     "ref": "ht:raas1:9",
+     "score": 6.675,
+     "q": "In a patient with renal disease whose renal blood flow depends on angiotensin II, what can happen when an ACE "
+    },
+    {
+     "ref": "ht:raas2:8",
+     "score": 6.2,
+     "q": "A patient with hypertension mildly above goal has a urine albumin-to-creatinine ratio of 450 mg/g. Which initi"
+    },
+    {
+     "ref": "ht:raas1:6",
+     "score": 6.179,
+     "q": "What should a patient starting benazepril be told about potassium?"
+    },
+    {
+     "ref": "ht:raas1:1",
+     "score": 6.071,
+     "q": "Which statement about ACE (angiotensin-converting enzyme) inhibitors in pregnancy is accurate?"
+    },
+    {
+     "ref": "ht:raas2:12",
+     "score": 5.975,
+     "q": "A patient on lisinopril begins taking ibuprofen daily for knee pain. How do NSAIDs (nonsteroidal anti-inflamma"
+    },
+    {
+     "ref": "ht:beta1:7",
+     "score": 5.728,
+     "q": "Which beta blocker is indicated for heart failure?"
+    },
+    {
+     "ref": "ht:ccb2:11",
+     "score": 5.596,
+     "q": "A patient has paroxysmal supraventricular tachycardia. Which calcium channel blocker is appropriate?"
+    },
+    {
+     "ref": "ht:raas2:5",
+     "score": 5.576,
+     "q": "A patient in her third trimester cannot take an ACE (angiotensin-converting enzyme) inhibitor. Is an angiotens"
+    },
+    {
+     "ref": "ht:beta1:1",
+     "score": 5.554,
+     "q": "Which conduction problem can beta blockers cause?"
+    }
+   ],
+   "L7": [
+    {
+     "ref": "li:statin1:13",
+     "score": 5.81,
+     "q": "A 42-year-old with no diabetes and no cardiovascular disease has an LDL (low-density lipoprotein) cholesterol "
+    },
+    {
+     "ref": "li:ldl1:6",
+     "score": 5.575,
+     "q": "Which condition is an absolute contraindication to bile acid sequestrants?"
+    },
+    {
+     "ref": "li:statin1:10",
+     "score": 5.291,
+     "q": "Which statin is metabolized mainly by CYP3A4?"
+    },
+    {
+     "ref": "li:ldl1:1",
+     "score": 5.017,
+     "q": "What is the most serious adverse reaction to evolocumab?"
+    },
+    {
+     "ref": "li:ldl2:2",
+     "score": 4.987,
+     "q": "Cholestyramine reduces the absorption of which drug?"
+    },
+    {
+     "ref": "li:statin1:12",
+     "score": 4.67,
+     "q": "Which item in a patient's diet interacts with simvastatin through CYP450 metabolism?"
+    },
+    {
+     "ref": "li:ldl1:12",
+     "score": 4.612,
+     "q": "Why are bile acid sequestrants approved for children, adolescents and pregnancy?"
+    },
+    {
+     "ref": "li:ldl1:4",
+     "score": 4.539,
+     "q": "When should a bile acid sequestrant be taken in relation to meals?"
+    },
+    {
+     "ref": "li:statin2:3",
+     "score": 4.278,
+     "q": "Which class is first-line therapy when LDL (low-density lipoprotein) cholesterol lowering drugs are indicated?"
+    },
+    {
+     "ref": "li:tg2:1",
+     "score": 4.25,
+     "q": "A patient with high triglycerides has a history of symptomatic gout. Which triglyceride-lowering option is bes"
+    },
+    {
+     "ref": "li:ldl1:14",
+     "score": 4.237,
+     "q": "Which statement describes the place of bile acid sequestrants in therapy?"
+    },
+    {
+     "ref": "li:tg1:9",
+     "score": 4.161,
+     "q": "Which is an ABSOLUTE contraindication to niacin?"
+    }
+   ],
+   "L8": [
+    {
+     "ref": "ms:anginal2:28",
+     "score": 8.188,
+     "q": "In the traditional comorbidity-based approach to angina therapy, which drug class is best avoided after a myoc"
+    },
+    {
+     "ref": "mv:set2:7",
+     "score": 7.896,
+     "q": "A 59-year-old woman with type 2 diabetes mellitus has exertional angina. She has no history of myocardial infa"
+    },
+    {
+     "ref": "ms:anginal2:0",
+     "score": 6.833,
+     "q": "Which calcium channel blocker both inhibits and is a substrate of cytochrome P450 3A4?"
+    },
+    {
+     "ref": "ms:acs2:23",
+     "score": 6.375,
+     "q": "Which finding calls for caution before giving a beta blocker in acute coronary syndrome?"
+    },
+    {
+     "ref": "ms:anginal1:2",
+     "score": 6.317,
+     "q": "In the traditional comorbidity-based approach, which class is first line for angina in a patient with diabetes"
+    },
+    {
+     "ref": "ms:anginal1:16",
+     "score": 5.458,
+     "q": "A patient started on a beta blocker for angina cannot tolerate it because of nightmares. Which drug is the usu"
+    },
+    {
+     "ref": "ms:anginal2:14",
+     "score": 5.451,
+     "q": "Which condition is a contraindication to non-dihydropyridine calcium channel blockers?"
+    },
+    {
+     "ref": "mv:set1:12",
+     "score": 5.204,
+     "q": "A 68-year-old man with stable angina takes atenolol. His exertional chest pain persists. Pulse is 64 beats per"
+    },
+    {
+     "ref": "ms:anginal1:28",
+     "score": 5.183,
+     "q": "Which enzyme's interactions call for caution with calcium channel blockers?"
+    },
+    {
+     "ref": "mv:set1:9",
+     "score": 5.173,
+     "q": "A 57-year-old woman with an acute coronary syndrome received intravenous metoprolol in the emergency departmen"
+    },
+    {
+     "ref": "ms:anginal2:24",
+     "score": 5.088,
+     "q": "A patient with angina has a heart rate of 50 beats per minute and atrioventricular block. Which class is first"
+    },
+    {
+     "ref": "mv:set2:0",
+     "score": 5.067,
+     "q": "A 64-year-old man with stable angina takes verapamil. His clinician adds simvastatin for hyperlipidemia, and t"
+    }
+   ]
+  },
+  "score_note": "score = (3 x Wood-entry overlap + killer/absolute-contraindication overlap + guide star) x (0.5 + McInnis slot weight); a screening aid, final picks are by hand (module docstring)"
+ },
+ "v2": {
+  "counts_per_lecture": {
+   "L4": 9,
+   "L5": 9,
+   "L6": 9,
+   "L7": 9,
+   "L8": 9
+  },
+  "reused": 45,
+  "new": 0,
+  "positions": {
+   "A": 11,
+   "B": 12,
+   "C": 11,
+   "D": 11
+  },
+  "picks": [
+   {
+    "ref": "e2:set1:3",
+    "lec": "L4",
+    "shape": "recognise the effect (definite-promise fact, new angle)",
+    "wood": [
+     5
+    ],
+    "redo_v1": true,
+    "why": "Rebound hyperemia, asked as 'what has happened' after a month of daily redness-relief drops. Version 1 asks the two-week limit; he promised this fact outright, so Version 2 asks it from the other side.",
+    "rank_in_lecture": 4,
+    "question": "A 30-year-old man has used an over-the-counter redness-relief drop every day for a month. His eyes are redder than when he started. What has happened?"
+   },
+   {
+    "ref": "e2:set2:6",
+    "lec": "L4",
+    "shape": "patient education",
+    "wood": [
+     10
+    ],
+    "why": "Prostaglandin analogs: longer lashes and iris color change (ladder body: no more than once daily, cosmetic changes).",
+    "rank_in_lecture": 50,
+    "question": "A 49-year-old woman starting a prostaglandin analog in one eye should be warned about which cosmetic effects?"
+   },
+   {
+    "ref": "e2:set2:10",
+    "lec": "L4",
+    "shape": "contraindication",
+    "wood": [
+     10
+    ],
+    "why": "Alpha-2 agonists are contraindicated under two years (apnea): the one age-based class ban in the glaucoma ladder.",
+    "rank_in_lecture": 28,
+    "question": "An 18-month-old needs pressure-lowering therapy. Which class is contraindicated?"
+   },
+   {
+    "ref": "e2:set2:14",
+    "lec": "L4",
+    "shape": "patient education",
+    "wood": [
+     13
+    ],
+    "why": "Carbonic anhydrase inhibitors: bitter taste and stinging are the adherence problem and the reason they are add-ons.",
+    "rank_in_lecture": 92,
+    "question": "A 71-year-old on dorzolamide complains of a persistent bitter taste and stinging on instillation. What do you tell him?"
+   },
+   {
+    "ref": "op:inflam2:5",
+    "lec": "L4",
+    "shape": "patient education",
+    "wood": [
+     70
+    ],
+    "why": "'First step, most important step: wash your hands.'",
+    "rank_in_lecture": 34,
+    "question": "A patient is being taught to instill an eye drop. What is named as the single most important step?"
+   },
+   {
+    "ref": "e2:set1:14",
+    "lec": "L4",
+    "shape": "drug choice",
+    "wood": [
+     4
+    ],
+    "why": "Natamycin is the only commercially available ophthalmic antifungal (he said not to memorize the organisms; the drug is the point).",
+    "rank_in_lecture": 99,
+    "question": "A 47-year-old farm worker develops fungal keratitis after a corneal injury with plant material. Which commercially available ophthalmic agent treats it?"
+   },
+   {
+    "ref": "e2:set1:6",
+    "lec": "L4",
+    "shape": "adverse effect",
+    "wood": [
+     1
+    ],
+    "why": "Aminoglycoside drops (tobramycin, gentamicin) are one of the two antibiotic exceptions he named: corneal ulceration.",
+    "rank_in_lecture": 53,
+    "question": "A 55-year-old has been using tobramycin drops for five days and now has worsening pain and a corneal defect. What has happened?"
+   },
+   {
+    "ref": "e2:set1:1",
+    "lec": "L4",
+    "shape": "drug choice",
+    "wood": [
+     0
+    ],
+    "why": "Erythromycin ointment: 'the most common ophthalmic antibiotic, dirt cheap'; newborn prophylaxis is its named use.",
+    "rank_in_lecture": 115,
+    "question": "A newborn needs prophylaxis against ophthalmia neonatorum. Which agent?"
+   },
+   {
+    "ref": "op:glauc2:8",
+    "lec": "L4",
+    "shape": "side effect",
+    "wood": [
+     10
+    ],
+    "why": "Cholinergic agonists are the last-line class; young patients cannot tolerate the blurring (ladder, last rung).",
+    "rank_in_lecture": 73,
+    "question": "Why are younger patients usually intolerant of miotic therapy?"
+   },
+   {
+    "ref": "en:cough1:11",
+    "lec": "L5",
+    "shape": "patient education (definite-promise fact, new angle)",
+    "wood": [
+     28
+    ],
+    "redo_v1": true,
+    "why": "Topical nasal decongestant: do not use beyond a few days. Version 1 asks 'what has happened' after three weeks; he promised this fact outright, so Version 2 asks the instruction itself.",
+    "rank_in_lecture": 44,
+    "question": "What is the central instruction for a patient given a topical nasal decongestant?"
+   },
+   {
+    "ref": "en:hist1:15",
+    "lec": "L5",
+    "shape": "interaction / anticipate",
+    "wood": [
+     27
+    ],
+    "why": "Systemic steroids raise blood sugar and blunt antidiabetic drugs (side-effect list he walked through).",
+    "rank_in_lecture": 32,
+    "question": "A patient with diabetes is started on a course of prednisone. What should be anticipated?"
+   },
+   {
+    "ref": "en:cough1:16",
+    "lec": "L5",
+    "shape": "patient education",
+    "wood": [
+     71
+    ],
+    "why": "Benzonatate: swallow whole, the do-not-chew-or-crush list.",
+    "rank_in_lecture": 23,
+    "question": "Why must a benzonatate capsule be swallowed whole?"
+   },
+   {
+    "ref": "en:anti2:16",
+    "lec": "L5",
+    "shape": "allergy backup",
+    "wood": [
+     15
+    ],
+    "why": "'First line's not good because the patient has an allergy, what do you use as a backup?' Ear infection with penicillin allergy.",
+    "rank_in_lecture": 22,
+    "question": "A child with acute otitis media has a penicillin allergy. Which agents are offered?"
+   },
+   {
+    "ref": "en:hist1:5",
+    "lec": "L5",
+    "shape": "monitoring / interaction",
+    "wood": [
+     31
+    ],
+    "why": "Diuretic plus dexamethasone: potassium ('anything that affects your potassium ... a very easy test question').",
+    "rank_in_lecture": 24,
+    "question": "A patient on a diuretic is started on dexamethasone. What should be monitored?"
+   },
+   {
+    "ref": "en:hist1:17",
+    "lec": "L5",
+    "shape": "patient education",
+    "wood": [
+     27
+    ],
+    "why": "Systemic steroids: 'no cold turkey, have them slowly taper off' after about a week.",
+    "rank_in_lecture": 25,
+    "question": "Why is a patient who has taken a corticosteroid for more than about a week told not to stop abruptly?"
+   },
+   {
+    "ref": "en:cough1:13",
+    "lec": "L5",
+    "shape": "contraindication",
+    "wood": [
+     19
+    ],
+    "why": "Dextromethorphan with a monoamine oxidase inhibitor: interaction rule ('easy to ask ... significant drug interactions').",
+    "rank_in_lecture": 14,
+    "question": "Which patient must not be given dextromethorphan?"
+   },
+   {
+    "ref": "en:anti2:12",
+    "lec": "L5",
+    "shape": "first-line drug choice",
+    "wood": [
+     15
+    ],
+    "why": "Bacterial sinusitis standard of care (amoxicillin-clavulanate), the 'first line' stem for the third infection.",
+    "rank_in_lecture": 48,
+    "question": "What is the standard of therapy for acute bacterial rhinosinusitis?"
+   },
+   {
+    "ref": "en:inflam1:8",
+    "lec": "L5",
+    "shape": "contraindication",
+    "wood": [
+     24
+    ],
+    "why": "Who should avoid ibuprofen (asthma, prior ulcer, renal impairment): the nonsteroidal anti-inflammatory risk list.",
+    "rank_in_lecture": 59,
+    "question": "Which patients should avoid ibuprofen?"
+   },
+   {
+    "ref": "ht:beta1:7",
+    "lec": "L6",
+    "shape": "drug choice",
+    "wood": [
+     46
+    ],
+    "why": "'Just know these three': carvedilol, metoprolol succinate, bisoprolol for heart failure.",
+    "rank_in_lecture": 14,
+    "question": "Which beta blocker is indicated for heart failure?"
+   },
+   {
+    "ref": "ht:raas1:9",
+    "lec": "L6",
+    "shape": "adverse effect",
+    "wood": [
+     32
+    ],
+    "why": "ACE inhibitors can drop kidney function acutely when flow depends on angiotensin II (and protect long term).",
+    "rank_in_lecture": 6,
+    "question": "In a patient with renal disease whose renal blood flow depends on angiotensin II, what can happen when an ACE (angiotensin-converting enzyme) inhibitor is started?"
+   },
+   {
+    "ref": "ht:raas2:5",
+    "lec": "L6",
+    "shape": "contraindication",
+    "wood": [
+     33,
+     55
+    ],
+    "why": "ACE inhibitors and receptor blockers in pregnancy (fetal toxicity); not a substitute for each other.",
+    "rank_in_lecture": 16,
+    "question": "A patient in her third trimester cannot take an ACE (angiotensin-converting enzyme) inhibitor. Is an angiotensin receptor blocker an acceptable substitute?"
+   },
+   {
+    "ref": "ht:other2:12",
+    "lec": "L6",
+    "shape": "adverse effect / antidote",
+    "wood": [
+     75
+    ],
+    "why": "Nitroprusside is given with sodium thiosulfate to limit cyanide toxicity.",
+    "rank_in_lecture": 58,
+    "question": "During a nitroprusside infusion, a patient develops trembling, vomiting and convulsions. Sodium thiosulfate is given. Which toxicity does it limit?"
+   },
+   {
+    "ref": "ht:other2:7",
+    "lec": "L6",
+    "shape": "adverse effect",
+    "wood": [
+     49
+    ],
+    "why": "Alpha-1 blockers (the -zosins): orthostatic hypotension.",
+    "rank_in_lecture": 93,
+    "question": "A patient recently started on prazosin feels lightheaded every time he stands up. What is the most likely cause?"
+   },
+   {
+    "ref": "ht:ccb2:15",
+    "lec": "L6",
+    "shape": "contraindication",
+    "wood": [
+     38,
+     39
+    ],
+    "why": "Non-dihydropyridines (diltiazem, verapamil) act on the heart, so advanced heart block is a contraindication.",
+    "rank_in_lecture": 74,
+    "question": "Which condition is a contraindication to diltiazem?"
+   },
+   {
+    "ref": "ht:beta2:7",
+    "lec": "L6",
+    "shape": "class discrimination",
+    "wood": [
+     44,
+     80
+    ],
+    "why": "'If it starts with an N through Z it's likely non-selective; A through M cardioselective': nadolol is non-selective.",
+    "rank_in_lecture": 56,
+    "question": "A patient takes nadolol. How is it classified?"
+   },
+   {
+    "ref": "ht:beta1:12",
+    "lec": "L6",
+    "shape": "patient education",
+    "wood": [
+     43,
+     47
+    ],
+    "why": "Beta blockers in diabetes: they prolong hypoglycemia and mask its warning signs (the beta blocker adverse-effect list).",
+    "rank_in_lecture": 29,
+    "question": "A patient with type 1 diabetes is starting propranolol. What should he be told about hypoglycemia?"
+   },
+   {
+    "ref": "ht:other1:14",
+    "lec": "L6",
+    "shape": "drug choice",
+    "wood": [
+     49
+    ],
+    "why": "Terazosin and doxazosin treat hypertension and benign prostatic hyperplasia.",
+    "rank_in_lecture": 53,
+    "question": "A 68-year-old man has benign prostatic hyperplasia and hypertension. Which single drug treats both?"
+   },
+   {
+    "ref": "li:tg2:13",
+    "lec": "L7",
+    "shape": "class discrimination",
+    "wood": [
+     61
+    ],
+    "why": "'If you ever see niacinamide, that's not the same thing': nicotinic acid is the antilipemic.",
+    "rank_in_lecture": 40,
+    "question": "Which form of niacin is NOT effective as an antilipemic?"
+   },
+   {
+    "ref": "li:statin1:4",
+    "lec": "L7",
+    "shape": "indication / guideline",
+    "wood": [
+     56
+    ],
+    "why": "No LDL target: 'it's not really the number that matters', the risk group and statin intensity do.",
+    "rank_in_lecture": 24,
+    "question": "How does the ACC/AHA (American College of Cardiology/American Heart Association) cholesterol guideline differ from ATP III (Adult Treatment Panel III)?"
+   },
+   {
+    "ref": "li:statin2:0",
+    "lec": "L7",
+    "shape": "class discrimination",
+    "wood": [
+     65
+    ],
+    "why": "'Can you identify what falls into the category of high': atorvastatin and rosuvastatin only.",
+    "rank_in_lecture": 67,
+    "question": "Which of these statins is one of the two that can reach high intensity?"
+   },
+   {
+    "ref": "li:ldl2:13",
+    "lec": "L7",
+    "shape": "class discrimination",
+    "wood": [
+     67
+    ],
+    "why": "When a statin is not the answer: the PCSK9 inhibitors are injected monoclonal antibodies.",
+    "rank_in_lecture": 41,
+    "question": "Which description fits alirocumab?"
+   },
+   {
+    "ref": "li:statin2:1",
+    "lec": "L7",
+    "shape": "adverse effect / management",
+    "wood": [
+     54
+    ],
+    "why": "Statin muscle toxicity: myalgia, creatine kinase, stop the statin ('definitely one thing to note').",
+    "rank_in_lecture": 46,
+    "question": "A patient on simvastatin develops muscle toxicity. What is required?"
+   },
+   {
+    "ref": "li:tg2:5",
+    "lec": "L7",
+    "shape": "interaction",
+    "wood": [
+     58
+    ],
+    "why": "Fibrates increase the effect of warfarin (watch for bruising and bleeding).",
+    "rank_in_lecture": 35,
+    "question": "A patient on warfarin is started on gemfibrozil. Which interaction is expected?"
+   },
+   {
+    "ref": "li:tg1:9",
+    "lec": "L7",
+    "shape": "contraindication",
+    "wood": [
+     63
+    ],
+    "why": "Niacin: chronic liver disease is the absolute contraindication (gout, diabetes, ulcer relative).",
+    "rank_in_lecture": 16,
+    "question": "Which is an ABSOLUTE contraindication to niacin?"
+   },
+   {
+    "ref": "li:ldl1:12",
+    "lec": "L7",
+    "shape": "indication",
+    "wood": [
+     59
+    ],
+    "why": "Bile acid resins are not absorbed, so they are the safest class and approved in children and pregnancy.",
+    "rank_in_lecture": 11,
+    "question": "Why are bile acid sequestrants approved for children, adolescents and pregnancy?"
+   },
+   {
+    "ref": "li:tg1:0",
+    "lec": "L7",
+    "shape": "contraindication",
+    "wood": [
+     62,
+     64
+    ],
+    "why": "Fibrates: existing gallbladder disease contraindicates them (cholelithiasis is also their adverse effect).",
+    "rank_in_lecture": 23,
+    "question": "In which patient is a fibrate contraindicated?"
+   },
+   {
+    "ref": "mv:set1:23",
+    "lec": "L8",
+    "shape": "allergy backup",
+    "wood": [
+     103
+    ],
+    "why": "Aspirin first in acute coronary syndrome; clopidogrel if the patient is allergic.",
+    "rank_in_lecture": 115,
+    "question": "A 61-year-old man with stable angina has a history of hives and wheezing after taking aspirin. Which drug should replace aspirin to prevent acute coronary syndrome?"
+   },
+   {
+    "ref": "mv:set1:7",
+    "lec": "L8",
+    "shape": "class discrimination",
+    "wood": [
+     104
+    ],
+    "why": "'Nitrates only help with symptom relief ... they don't do anything for outcomes.'",
+    "rank_in_lecture": 39,
+    "question": "A 54-year-old man with an acute coronary syndrome still has chest pain after aspirin. Blood pressure is 130/82 mmHg and he takes no phosphodiesterase-5 inhibitor. Which drug relieves his pain but does not improve survival?"
+   },
+   {
+    "ref": "mv:set1:15",
+    "lec": "L8",
+    "shape": "drug choice",
+    "wood": [
+     106
+    ],
+    "why": "Morphine for pain unresponsive to nitrates: pain only, no outcome benefit.",
+    "rank_in_lecture": 56,
+    "question": "A 57-year-old man with ST-elevation myocardial infarction still rates his pain 9 out of 10 after repeated sublingual nitroglycerin. Blood pressure is 124/76 mmHg. Which drug is used for chest pain unresponsive to nitrates?"
+   },
+   {
+    "ref": "mv:set1:3",
+    "lec": "L8",
+    "shape": "drug choice",
+    "wood": [
+     98
+    ],
+    "why": "ACE inhibitors do not treat angina; they slow progression (post-infarction, ventricular dysfunction, diabetes).",
+    "rank_in_lecture": 33,
+    "question": "A 65-year-old man with stable angina has type 2 diabetes mellitus and a reduced ejection fraction of 35 percent. He takes aspirin and metoprolol. Which added drug may slow progression of his coronary disease?"
+   },
+   {
+    "ref": "mv:set2:13",
+    "lec": "L8",
+    "shape": "contraindication",
+    "wood": [
+     115
+    ],
+    "why": "Non-ST-elevation: 'same drugs, fewer fibrinolytics'.",
+    "rank_in_lecture": 112,
+    "question": "A 63-year-old man has three hours of chest pressure. The electrocardiogram shows ST-segment depression, and the cardiac biomarker is elevated. He has no bleeding history. Which therapy is not recommended for him?"
+   },
+   {
+    "ref": "mv:set2:2",
+    "lec": "L8",
+    "shape": "contraindication",
+    "wood": [
+     87
+    ],
+    "why": "'Typically we avoid short-acting agents like nifedipine': prefer long-acting amlodipine.",
+    "rank_in_lecture": 40,
+    "question": "A 57-year-old man with hypertension and stable angina has a blood pressure of 154/94 mmHg and a heart rate of 82 beats per minute. His clinician plans a calcium channel blocker. Which calcium channel blocker should be avoided?"
+   },
+   {
+    "ref": "mv:set1:8",
+    "lec": "L8",
+    "shape": "patient education",
+    "wood": [
+     93
+    ],
+    "why": "Nitroglycerin tablets: original container, replace every three to six months (course rule; explanation notes current labeling).",
+    "rank_in_lecture": 17,
+    "question": "A 70-year-old man with stable angina opened his bottle of sublingual nitroglycerin tablets eight months ago. He keeps it in the original container in a bedroom drawer and has used it twice. In the traditional counseling, what should he be told about the tablets?"
+   },
+   {
+    "ref": "mv:set2:16",
+    "lec": "L8",
+    "shape": "patient education",
+    "wood": [
+     92
+    ],
+    "why": "'After five minutes if you don't get the relief, call 911': the action is the testable point.",
+    "rank_in_lecture": 118,
+    "question": "A 64-year-old man with known angina develops chest pressure at rest. He sits down and places one nitroglycerin tablet under his tongue. Five minutes later the pain is unchanged. What should he do next?"
+   },
+   {
+    "ref": "ms:anginal2:25",
+    "lec": "L8",
+    "shape": "drug choice",
+    "wood": [
+     86
+    ],
+    "why": "Left ventricular dysfunction: dihydropyridine only (amlodipine).",
+    "rank_in_lecture": 42,
+    "question": "When left ventricular function is decreased and a beta blocker cannot be used, which calcium channel blocker is the alternative?"
+   }
+  ]
+ }
+}
