@@ -182,6 +182,10 @@ def scan_derived():
             res["unreadable"].append({"file": rel, "error": str(e)[:100]})
             continue
         groups = d.items() if isinstance(d, dict) else [("", d)]
+        # Chaptered shape (tools/medlit_book_sets.json): a list of
+        # {"n", "title", "questions": [...]}, one level deeper than the rest.
+        if isinstance(d, list) and d and all(isinstance(s, dict) and isinstance(s.get("questions"), list) for s in d):
+            groups = [("%s.questions" % s.get("n", j), s["questions"]) for j, s in enumerate(d)]
         n = 0
         for key, qs in groups:
             if not isinstance(qs, list):
