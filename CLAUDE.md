@@ -214,6 +214,19 @@ scans TEST_YOURSELF banks; `check_pool_cites` also reads `*_sets.json` and
 citations back; `check_truncated_keys` compares master keys with their
 topic/pool twins. Always read the denominator a checker prints.
 
+### One runner, a permanent test rig, a saved recipe
+
+- `python3 tools/check_all.py "<Folder Name>" [--fast]` runs the standing checks
+  for one Semester 2 exam folder and prints one PASS/FAIL table (exit 1 on any
+  FAIL). `--fast` skips the slow guide-link pair. It deliberately EXCLUDES
+  `check_console_errors.py`, `check_answer_distribution.py`, `check_dark_contrast.py`
+  (they hit live Firebase; never run them). `pool cites` is site-wide, so a
+  failure there can belong to another exam's pool.
+- `~/Developer/pa-tools/` (outside the repo, own venv): `bin/pa-shot <page> [--dark]
+  [--mobile] [--full] [--out f.png]` screenshots with Firebase blocked and tours
+  suppressed; `bin/pa-sweep <pages>` runs the contrast + 390px overflow sweep.
+- `/new-exam-build` (user-level slash command) is the compact runbook for a new lecture/exam.
+
 ---
 
 ## 7. Content rules that are always on
