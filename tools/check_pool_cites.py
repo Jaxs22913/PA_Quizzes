@@ -169,6 +169,9 @@ def derived_files():
     fs = set(glob.glob(os.path.join(HERE, "*_sets.json")))
     fs |= set(glob.glob(os.path.join(HERE, "cms_l*_set*.json")))
     fs |= set(glob.glob(os.path.join(ROOT, "*", "master-exams*.json")))
+    # Verbatim textbook questions (Med Lit Book Questions): never reworded, so
+    # never scanned. Jaxon 2026-10-05.
+    fs -= {os.path.join(HERE, "medlit_book_sets.json")}
     return sorted(fs)
 
 
@@ -182,10 +185,6 @@ def scan_derived():
             res["unreadable"].append({"file": rel, "error": str(e)[:100]})
             continue
         groups = d.items() if isinstance(d, dict) else [("", d)]
-        # Chaptered shape (tools/medlit_book_sets.json): a list of
-        # {"n", "title", "questions": [...]}, one level deeper than the rest.
-        if isinstance(d, list) and d and all(isinstance(s, dict) and isinstance(s.get("questions"), list) for s in d):
-            groups = [("%s.questions" % s.get("n", j), s["questions"]) for j, s in enumerate(d)]
         n = 0
         for key, qs in groups:
             if not isinstance(qs, list):
