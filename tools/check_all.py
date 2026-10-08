@@ -81,6 +81,9 @@ def main(argv):
     if inbox:
         checks.append(("spelling vs inbox", ["tools/check_spelling.py", folder, inbox], True))
     checks.append(("accordions closed", ["tools/check_accordions_closed.py"], False))
+    # site-wide: every Semester 2+ quiz question carries a permanent id (a re-render drops
+    # them; tools/add_stable_qids.py puts them back from the last committed version)
+    checks.append(("permanent ids", ["tools/add_stable_qids.py", "--check"], False))
     if not fast:
         checks.append(("build_guide_links", ["tools/build_guide_links.py", folder], False))
         checks.append(("guide links --strict", ["tools/check_guide_links.py", "--strict"], False))

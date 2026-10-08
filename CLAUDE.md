@@ -136,7 +136,11 @@ Micro Exam 1 timetable quiz (§8) is the clean example to copy —
    (`quiz_engine_standardization`). Do not roll a new one.
 4. Register the quiz in `index.html` under the right class/exam section, with a
    self-expiring New tag (`new_exam_tag`).
-5. Re-run `tools/build_group_quizzes.py` — **required after any quiz change.**
+5. Run `python3 tools/add_stable_qids.py` after any render, BEFORE committing: render.py
+   drops the per-question `qid` that keeps a question's class-picks history attached
+   when its stem is reworded, and this puts it back from the last committed version
+   (`check_all.py` fails until it has run).
+   Re-run `tools/build_group_quizzes.py` — **required after any quiz change.**
    The Group Study bank is generated from the quiz files; never hand-edit it.
    Likewise re-run `tools/build_guide_links.py "<folder>"` (then `tools/check_guide_links.py --strict`)
    after any Semester 2 quiz OR guide rebuild: it writes the per-folder
