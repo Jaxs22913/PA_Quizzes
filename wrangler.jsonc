@@ -1,0 +1,26 @@
+// Cloudflare hosting for PA Quizzes (pa-quizzes.com). See docs/HOSTING_CLOUDFLARE.md.
+//
+// A static-assets-only Worker: there is no Worker script, so nothing runs per
+// request and static asset requests are free. Cloudflare recommends Workers
+// Static Assets over Pages for new static sites; it is used here (not Pages)
+// because Pages always redirects /page.html to /page, and PA Quizzes keys student
+// progress, highlights and presence on the exact page address.
+//
+// The site is published under /PA_Quizzes/ (by cloudflare/build.mjs) so every
+// address is byte-for-byte the one GitHub Pages serves; "/" redirects there.
+{
+  "name": "pa-quizzes",
+  "compatibility_date": "2026-09-24",
+  "assets": {
+    "directory": "./dist",
+    // Serve /x/page.html as-is. The default ("auto-trailing-slash") would
+    // redirect it to /x/page and change location.pathname, which re-keys
+    // every saved quiz. The one folder index (/PA_Quizzes/) is rewritten in
+    // cloudflare/_redirects.
+    "html_handling": "none",
+    // Missing files get a real 404 (dist/404.html), never the homepage.
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

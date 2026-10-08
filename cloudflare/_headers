@@ -1,0 +1,32 @@
+# Cloudflare response headers for PA Quizzes. HTML, JS, CSS and JSON keep the
+# default "public, max-age=0, must-revalidate" (ETag revalidation), because file
+# names carry no content hash and class content must never go stale. Media is
+# safe to hold briefly: images are almost never replaced in place.
+
+# Keep the preview hosts out of search results (the real site is pa-quizzes.com).
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
+
+/*.png
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/*.jpg
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/*.jpeg
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/*.webp
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/*.svg
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/*.mp3
+  ! Cache-Control
+  Cache-Control: public, max-age=86400
+
+# The service worker must always be re-checked so an update is never missed.
+/PA_Quizzes/sw.js
+  ! Cache-Control
+  Cache-Control: no-cache

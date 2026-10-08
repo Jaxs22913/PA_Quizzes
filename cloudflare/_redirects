@@ -1,0 +1,8 @@
+# PA Quizzes lives under /PA_Quizzes/ on Cloudflare too, so every page address,
+# and every saved-progress key built from one, matches the GitHub Pages copy.
+# Typing pa-quizzes.com lands on the homepage. First match wins.
+/                 /PA_Quizzes/             301
+/index.html       /PA_Quizzes/             301
+/PA_Quizzes       /PA_Quizzes/             301
+# html_handling is "none", so the folder address needs its index served explicitly.
+/PA_Quizzes/      /PA_Quizzes/index.html   200
