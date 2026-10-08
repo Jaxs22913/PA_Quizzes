@@ -226,7 +226,12 @@
   ];
 
   function classOfPath(path) {
-    var folder = decodeURIComponent(String(path || "")).split("/")[0];
+    // "Folder/file.html", "/Folder/file.html" and "/PA_Quizzes/Folder/file.html" all name the same
+    // folder: every page is one folder deep, so it is the segment before the file name
+    var raw = String(path || ""), dec = raw;
+    try { dec = decodeURIComponent(raw); } catch (e) {}
+    var parts = dec.split("/").filter(Boolean);
+    var folder = parts.length > 1 ? parts[parts.length - 2] : (parts[0] || "");
     for (var i = 0; i < FOLDER_CLASS.length; i++) {
       if (FOLDER_CLASS[i][0].test(folder)) return FOLDER_CLASS[i][1];
     }

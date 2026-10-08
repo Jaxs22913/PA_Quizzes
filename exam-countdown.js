@@ -22,6 +22,27 @@
     return new Date(+p[0], +p[1] - 1, +p[2]);
   }
 
+  /* qc: keys are "qc:" + location.pathname, so on the live site they carry the
+     /PA_Quizzes/ prefix. Read them all once, decoded, and look quizzes up by the
+     address they resolve to from this script's folder (the site root). */
+  var SITE_ROOT = (function () {
+    try { return new URL(".", (document.currentScript && document.currentScript.src) || location.href).href; }
+    catch (e) { return location.href; }
+  })();
+  var DONE = {};
+  function completedPaths() {
+    var out = {};
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf("qc:") !== 0) continue;
+      try {
+        var r = JSON.parse(localStorage.getItem(k));
+        if (r && r.total > 0) { var p; try { p = decodeURIComponent(k.slice(3)); } catch (e) { p = k.slice(3); } out[p] = 1; }
+      } catch (e) {}
+    }
+    return out;
+  }
+
   function daysUntil(d) {
     var t = new Date(); t.setHours(0, 0, 0, 0);
     return Math.round((parseLocal(d) - t) / 86400000);
@@ -29,6 +50,7 @@
 
   function folderIndex(idxJson) {
     var reg = window.Semesters, out = {};
+    DONE = completedPaths();
     Object.keys(idxJson).forEach(function (folder) {
       var files = idxJson[folder];
       var rec = { total: files.length, done: 0, cls: null, n: null };
@@ -37,8 +59,9 @@
       if (reg && reg.classOfPath) rec.cls = reg.classOfPath(folder + "/x.html") || null;
       files.forEach(function (fn) {
         try {
-          var v = localStorage.getItem("qc:/" + encodeURIComponent(folder) + "/" + fn);
-          if (v) { var r = JSON.parse(v); if (r && r.total > 0) rec.done++; }
+          // the full address the quiz saved under, whether the site is served from / or /PA_Quizzes/
+          var key = decodeURIComponent(new URL(encodeURIComponent(folder) + "/" + fn, SITE_ROOT).pathname);
+          if (DONE[key]) rec.done++;
         } catch (e) {}
       });
       out[folder] = rec;

@@ -155,8 +155,12 @@
       if (!rec || typeof rec.total !== "number" || rec.total <= 0 || typeof rec.score !== "number") continue;
       var raw = k.slice(3);                       // "/Anatomy%20Exam%204/...html"
       var dec = raw; try { dec = decodeURIComponent(raw); } catch (e) {}
-      var parts = dec.replace(/^\//, "").split("/");
-      var folder = parts.length > 1 ? parts[0] : "Other";
+      // drop the site's own base (/PA_Quizzes/ on the live site, / locally) before reading the folder
+      var base = new URL(".", location.href).pathname;
+      try { base = decodeURIComponent(base); } catch (e) {}
+      var rel = dec.indexOf(base) === 0 ? dec.slice(base.length) : dec.replace(/^\//, "");
+      var parts = rel.split("/").filter(Boolean);
+      var folder = parts.length > 1 ? parts[parts.length - 2] : "Other";
       var file = parts[parts.length - 1].replace(/\.html$/, "");
       out.push({ href: raw, folder: folder, name: quizName(file), score: rec.score, total: rec.total });
     }

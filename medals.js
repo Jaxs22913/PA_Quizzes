@@ -26,7 +26,8 @@
     var best = {};
     function put(path, pct) {
       if (!path || !isFinite(pct)) return;
-      var k = decodeURIComponent(path).replace(/^\//, "");
+      // stored paths are full page addresses (location.pathname), so compare those
+      var k; try { k = decodeURIComponent(path); } catch (e) { k = path; }
       if (!(k in best) || pct > best[k]) best[k] = pct;
     }
     try {
@@ -58,7 +59,8 @@
     var links = (root.querySelectorAll ? root.querySelectorAll("a.quiz-link[href]") : []);
     Array.prototype.forEach.call(links, function (a) {
       if (a.querySelector(".medal")) return;
-      var href = decodeURIComponent(a.getAttribute("href") || "").replace(/^\//, "");
+      // resolve the link to the same full address the quiz saved under (as home.js does)
+      var href; try { href = decodeURIComponent(new URL(a.getAttribute("href") || "", location.href).pathname); } catch (e) { return; }
       var pct = best[href];
       if (pct === undefined) return;
       var t = tier(pct);
