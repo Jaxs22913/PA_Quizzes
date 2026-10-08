@@ -163,7 +163,7 @@ add the new hosts there. Google Analytics (`G-2K06TXC2KK`) needs nothing.
 
 ## Cutover and rollback
 
-Until cutover (planned to ship together with the Pip AI), **GitHub Pages remains the
+Until cutover (timed by Jaxon), **GitHub Pages remains the
 site students use**, and Cloudflare is a parallel copy deployed from the same commits.
 Nothing about the GitHub site changes.
 

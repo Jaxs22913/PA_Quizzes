@@ -1,7 +1,7 @@
 # GitHub Pages "PA Quizzes has moved" page — NOT LIVE until cutover
 
 `site/` is what https://jaxs22913.github.io/PA_Quizzes/ will serve **after** Jaxon
-approves the cutover to https://pa-quizzes.com (planned to ship with the Pip AI).
+approves the cutover to https://pa-quizzes.com (timed by Jaxon).
 Until then GitHub Pages keeps serving the full site and nothing in this folder is
 deployed anywhere (`actions/upload-pages-artifact` skips `.github/`).
 

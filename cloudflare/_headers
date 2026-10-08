@@ -4,8 +4,8 @@
 # safe to hold briefly: images are almost never replaced in place.
 
 # Every host: match GitHub Pages, which sends "Access-Control-Allow-Origin: *" on
-# every file (the site is public; this keeps cross-origin fetches of site JSON,
-# e.g. from the future Pip front end, working the same on both hosts).
+# every file (the site is public; this keeps cross-origin fetches of site JSON
+# working the same on both hosts).
 #
 # UNTIL CUTOVER ONLY: keep pa-quizzes.com out of search results while GitHub Pages
 # is still the address students use (a student who found it early would start
