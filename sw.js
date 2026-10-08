@@ -23,10 +23,14 @@ self.addEventListener("install", (event) => {
   );
 });
 
+/* Old versions of THIS cache are cleared on activate -- and only those. Other code on
+   the site may keep its own caches in Cache Storage (large downloads a student chose to
+   keep, for example); deleting every cache not named CACHE_NAME would wipe them each
+   time this file changes. Only names starting with "pa-quizzes-" belong to this worker. */
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+      Promise.all(keys.filter((k) => k.indexOf("pa-quizzes-") === 0 && k !== CACHE_NAME).map((k) => caches.delete(k)))
     ).then(() => self.clients.claim())
   );
 });
@@ -41,6 +45,22 @@ self.addEventListener("fetch", (event) => {
   /* Video is left to the browser: Range requests and 206 responses do not belong in the
      cache, and Safari is fussy about video served through a service worker. */
   if (/\.(mp4|webm|mov)$/i.test(url.pathname)) return;
+
+  /* Anything under an immutable/ folder is cache-FIRST: those files are never edited
+     in place (a changed file gets a new name), so the copy on disk is always right and
+     the network-first path below would only re-download it on every page view. */
+  if (url.pathname.includes("/immutable/")) {
+    event.respondWith(
+      caches.match(req).then((hit) => hit || fetch(req).then((res) => {
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(req, copy)).catch(() => {});
+        }
+        return res;
+      }))
+    );
+    return;
+  }
 
   /* Audio is cache-FIRST, unlike everything else. These files are immutable
      and large; the default network-first path would re-download 1.2MB from

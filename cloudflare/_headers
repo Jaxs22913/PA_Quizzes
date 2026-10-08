@@ -38,6 +38,13 @@ https://:worker.:subdomain.workers.dev/*
   ! Cache-Control
   Cache-Control: public, max-age=86400
 
+# Files under an immutable/ folder are never edited in place (a changed file gets a new
+# name), so browsers may keep them for a year without re-checking. sw.js serves the same
+# folder cache-first.
+/PA_Quizzes/immutable/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
 # The service worker must always be re-checked so an update is never missed.
 /PA_Quizzes/sw.js
   ! Cache-Control
