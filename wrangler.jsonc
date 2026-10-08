@@ -22,5 +22,13 @@
     "not_found_handling": "404-page"
   },
   "workers_dev": true,
-  "preview_urls": true
+  "preview_urls": true,
+  "account_id": "bc3926e128ce1a9a9feb9aa2725dfd21",
+  // The source of truth for the domains: every deploy keeps exactly these attached.
+  // www is attached only so Cloudflare answers for it; the zone's Redirect Rule
+  // sends www.pa-quizzes.com/* to https://pa-quizzes.com/* before the Worker runs.
+  "routes": [
+    { "pattern": "pa-quizzes.com", "custom_domain": true },
+    { "pattern": "www.pa-quizzes.com", "custom_domain": true }
+  ]
 }

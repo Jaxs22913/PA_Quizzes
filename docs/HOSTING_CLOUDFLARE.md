@@ -38,11 +38,16 @@ student data. Nothing in Firebase moves.
 
 ```
 edit -> commit -> push to GitHub main
-   |-> GitHub Actions (.github/workflows/pages.yml) -> GitHub Pages   (unchanged)
-   '-> Cloudflare Workers Builds -> node cloudflare/build.mjs -> wrangler deploy -> Cloudflare
+   |-> GitHub Actions .github/workflows/pages.yml      -> GitHub Pages  (unchanged)
+   '-> GitHub Actions .github/workflows/cloudflare.yml -> node cloudflare/build.mjs
+                                                      -> wrangler deploy -> Cloudflare
 ```
 
-Both hosts deploy from the same commit, so they never drift apart.
+Both hosts deploy from the same commit, so they never drift apart, and a failed
+Cloudflare deploy never touches GitHub Pages (separate workflow). Deploys run in
+GitHub Actions rather than Cloudflare's own Workers Builds because Actions minutes are
+free and unlimited for a public repository, while Workers Builds' free plan is 3,000
+build minutes a month and would re-clone this 1.1 GB repository on every push.
 
 ### What the build does
 
@@ -72,30 +77,42 @@ Both hosts deploy from the same commit, so they never drift apart.
 
 ## Cloudflare settings (the exact values)
 
-Workers & Pages -> **Create** -> **Import a repository** (Workers, not Pages):
-
 | Setting | Value |
 |---|---|
-| Git account / repository | `Jaxs22913/PA_Quizzes` |
-| Project (Worker) name | `pa-quizzes` (must match `name` in `wrangler.jsonc`) |
-| Production branch | `main` |
+| Worker name | `pa-quizzes` (`name` in `wrangler.jsonc`) |
+| Account ID | `bc3926e128ce1a9a9feb9aa2725dfd21` (`account_id` in `wrangler.jsonc`) |
+| Production branch | `main` (the workflow runs on every push to it) |
 | Build command | `node cloudflare/build.mjs` |
-| Deploy command | `npx wrangler@4.138.0 deploy` |
-| Root directory | *(blank: the repository root)* |
-| Build output directory | none to enter: `wrangler.jsonc` sets `assets.directory` to `./dist` |
-| Builds for non-production branches | off |
-| Environment variables | none (there are no secrets; the Firebase web config is public by design and lives in `firebase-config.js`) |
+| Deploy command | `npx -y wrangler@4.138.0 deploy` |
+| Root directory | the repository root |
+| Build output directory | `dist` (set as `assets.directory` in `wrangler.jsonc`) |
+| Custom domains | `pa-quizzes.com`, `www.pa-quizzes.com` (`routes` in `wrangler.jsonc`; every deploy keeps exactly these attached) |
+| Environment variables | none. The only secret is the deploy token below. The Firebase web config is public by design and lives in `firebase-config.js`. |
+
+**The one secret: `CLOUDFLARE_API_TOKEN`** (GitHub repository secret, used only by
+`.github/workflows/cloudflare.yml`). To create or replace it:
+1. Cloudflare dashboard -> profile icon -> **My Profile -> API Tokens -> Create Token** ->
+   template **Edit Cloudflare Workers** -> **Use template**.
+2. Account Resources: *Include* -> `Jaxonluke22913@gmail.com's Account`.
+   Zone Resources: *Include* -> *Specific zone* -> `pa-quizzes.com`.
+3. **Continue to summary -> Create Token**, and copy it (it is shown once).
+4. GitHub -> `Jaxs22913/PA_Quizzes` -> **Settings -> Secrets and variables -> Actions ->
+   New repository secret**: name `CLOUDFLARE_API_TOKEN`, paste the value.
+Until the secret exists the workflow skips the deploy with a notice instead of failing.
+Never paste the token anywhere else; never commit it.
 
 Wrangler is pinned (4.138.0, released 2026-09-24) so a new Wrangler release cannot
-change a deploy unannounced. To upgrade, change the version in the deploy command and
-check that `compatibility_date` in `wrangler.jsonc` is not newer than that Wrangler
-supports (local `wrangler dev` refuses to start if it is).
+change a deploy unannounced. To upgrade, change the version in the workflow and check
+that `compatibility_date` in `wrangler.jsonc` is not newer than that Wrangler supports
+(local `wrangler dev` refuses to start if it is).
 
-Workers Builds free plan: 3,000 build minutes a month, one build at a time,
-20-minute timeout. If the minutes ever run short, deploy from GitHub Actions instead
-(free for public repositories): add a job running `cloudflare/build.mjs` then
-`cloudflare/wrangler-action` with a `CLOUDFLARE_API_TOKEN` repository secret, and
-disconnect the Git integration.
+Zone settings applied to `pa-quizzes.com` on 2026-10-08 (so the copy behaves like
+GitHub Pages): **Always Use HTTPS on**; **Browser Cache TTL "Respect Existing
+Headers"** (the zone default of 4 hours would have overridden the revalidate-always
+headers on HTML/JS); **Email Address Obfuscation off** (it rewrites pages that contain
+an email address and injects a script); Rocket Loader off (it rewrites inline scripts;
+every quiz keeps its questions inline); one Redirect Rule, `www.pa-quizzes.com` ->
+`https://pa-quizzes.com` + path, 301, query string kept.
 
 ## Custom domain: pa-quizzes.com
 
@@ -103,16 +120,11 @@ The domain was **not registered** on 2026-10-08 (`whois`: "No match"). Register 
 the same Cloudflare account (Domain Registration -> Register Domains), with auto-renew on,
 so its DNS lives there too. Then:
 
-1. Worker `pa-quizzes` -> **Settings -> Domains & Routes -> Add -> Custom domain**:
-   add `pa-quizzes.com`, then `www.pa-quizzes.com`. Cloudflare creates the DNS records
-   and the TLS certificates.
-2. Zone `pa-quizzes.com` -> **Rules -> Redirect Rules** -> create from the template
-   "Redirect from WWW to root": request URL `https://www.*` -> target `https://${1}`,
-   301, preserve query string.
-3. Zone -> **SSL/TLS -> Edge Certificates**: turn **Always Use HTTPS** on (HTTP -> HTTPS).
-   Leave **Rocket Loader** off: it rewrites inline scripts, and every quiz page keeps its
-   questions in an inline script.
-4. Firebase (below): add `pa-quizzes.com`.
+Registered 2026-10-08 in this Cloudflare account (auto-renew on, transfer lock on,
+WHOIS privacy on, expires 2027-10-08). The custom domains come from `routes` in
+`wrangler.jsonc`: the first deploy creates their DNS records and TLS certificates.
+The zone settings and the www redirect are listed above. Firebase needs
+`pa-quizzes.com` in its authorized domains (below).
 
 ## Firebase requirements
 
@@ -170,8 +182,9 @@ rollback is wanted.
 
 ## Turning Cloudflare off
 
-- Pause deploys: Worker `pa-quizzes` -> Settings -> Build -> disconnect the repository
-  (the current deployment keeps serving).
+- Pause deploys: GitHub -> Actions -> "Deploy to Cloudflare (pa-quizzes.com)" ->
+  **Disable workflow** (the current deployment keeps serving), or delete the
+  `CLOUDFLARE_API_TOKEN` secret (the workflow then skips).
 - Take the site down: Worker `pa-quizzes` -> Settings -> Domains & Routes -> disable
   `workers.dev` and remove the custom domains; or delete the Worker.
 - GitHub Pages is unaffected either way.
@@ -189,7 +202,8 @@ rollback is wanted.
 |---|---|
 | A page 404s on Cloudflare but works on GitHub | the link omits `.html` (GitHub Pages also serves `page` for `page.html`; Cloudflare does not, on purpose) |
 | Google sign-in shows "This domain is not authorized" | the host is missing from Firebase authorized domains |
-| Old content after a push | the build is still running (Workers & Pages -> pa-quizzes -> Deployments), or the 1-hour image cache |
+| Old content after a push | the deploy is still running (GitHub -> Actions -> "Deploy to Cloudflare"), or the 1-hour image cache |
+| The Cloudflare workflow says "skipping" | the `CLOUDFLARE_API_TOKEN` secret is missing |
 | Build fails "over 25 MiB" | a new file is too big for Cloudflare; compress it or host it elsewhere |
 | `wrangler dev` says the compatibility date is too new | lower `compatibility_date` or raise the pinned Wrangler |
 
