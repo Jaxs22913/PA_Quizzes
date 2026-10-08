@@ -217,3 +217,23 @@ These are bugs on the current site, unchanged by the move:
 - GitHub Pages also serves extensionless addresses (`/PA_Quizzes/review`), and visits
   made that way write keys the homepage cannot find.
 A path normaliser (`paqKeyPath`, specified in the 2026-10-08 audit) would fix all four.
+
+## Verification log (2026-10-08)
+
+| Check | Result |
+|---|---|
+| First deploy (GitHub Actions run 37736686708) | 3,749 files uploaded in 51 s; Worker `pa-quizzes` live on `pa-quizzes.jaxonluke22913.workers.dev`, `pa-quizzes.com`, `www.pa-quizzes.com` |
+| DNS | `pa-quizzes.com` -> 104.21.54.113 / 172.67.138.117 at Cloudflare's nameservers, 1.1.1.1 and 8.8.8.8 |
+| HTTPS | Let's Encrypt (YE2) certificate for `pa-quizzes.com` + `*.pa-quizzes.com`, valid to 2027-01-06, auto-renewed by Cloudflare; TLS 1.3, HTTP/2 |
+| Redirects | `http://` -> `https://`; `/` -> `/PA_Quizzes/`; `www.` -> apex with path and query kept (301) |
+| Every file | all 3,760 site files return 200 on `https://pa-quizzes.com` and are **byte-identical** to the repo build |
+| Headers | HTML/JS/JSON `max-age=0, must-revalidate`; png 1 h; mp3 1 d; `sw.js` `no-cache`; `Access-Control-Allow-Origin: *`; `noindex` (until cutover) |
+| Missing files | real 404 page; extensionless links retried once with `.html` |
+| Browser smoke test (Firebase, analytics and forms blocked) | 18 pages x Chromium (Chrome/Edge engine), WebKit (Safari engine) desktop + phone, Firefox desktop = 90 loads per host: **0 problems on Cloudflare that GitHub Pages does not also have, and 0 errors on either** |
+| Quiz flow (Chromium, WebKit) | start, answer, feedback, next, progress saved, resume offered: pass on both hosts; saved-progress key identical on both (`qp:/PA_Quizzes/<folder>/<page>.html`) |
+| Firebase authorized domains | `pa-quizzes.com` and `pa-quizzes.jaxonluke22913.workers.dev` added; `jaxs22913.github.io` kept |
+| Google sign-in on https://pa-quizzes.com | works (tested by Jaxon: sign-in, synced progress appears, session persists, sign-out) |
+| Cutover hand-off (held) | 22/22 checks pass across two real origins in headless Chrome |
+
+Not verified: real Safari/Edge apps (their engines were tested), an iPhone home-screen
+install, and real-student data over several days.
