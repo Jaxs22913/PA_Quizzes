@@ -3,7 +3,19 @@
 # names carry no content hash and class content must never go stale. Media is
 # safe to hold briefly: images are almost never replaced in place.
 
-# Keep the preview hosts out of search results (the real site is pa-quizzes.com).
+# Every host: match GitHub Pages, which sends "Access-Control-Allow-Origin: *" on
+# every file (the site is public; this keeps cross-origin fetches of site JSON,
+# e.g. from the future Pip front end, working the same on both hosts).
+#
+# UNTIL CUTOVER ONLY: keep pa-quizzes.com out of search results while GitHub Pages
+# is still the address students use (a student who found it early would start
+# with an empty local profile on a new origin). At cutover delete the
+# X-Robots-Tag line below; the workers.dev rule after it stays for good.
+/*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+
+# Keep the preview hosts out of search results for good (the real site is pa-quizzes.com).
 https://:worker.:subdomain.workers.dev/*
   X-Robots-Tag: noindex
 

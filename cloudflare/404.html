@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Page not found · PA Quizzes</title>
+<script>
+  // GitHub Pages also answers /page for /page.html, so old shared or bookmarked
+  // links of that form exist. Retry once with ".html" before showing the 404.
+  // No loop: a path ending in ".html" (or "/", or any extension) is never retried.
+  (function () {
+    var p = location.pathname;
+    if (/\/[^\/.]+$/.test(p)) location.replace(p + ".html" + location.search + location.hash);
+  })();
+</script>
 <style>
   :root { --bg: #f6f8fc; --card: #ffffff; --ink: #1d2433; --muted: #5a6478; --accent: #2a6df2; --accent-ink: #ffffff; }
   @media (prefers-color-scheme: dark) {

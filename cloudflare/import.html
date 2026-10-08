@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bringing your progress · PA Quizzes</title>
+<!--
+  Receives a student's saved data from the old GitHub Pages address at cutover.
+  See .github/pages-moved/README.md and docs/HOSTING_CLOUDFLARE.md.
+
+  The "we've moved" page on https://jaxs22913.github.io opens this page with
+  window.open (a click, so no popup blocker), this page says it is ready, the old
+  page posts every localStorage key, this page merges them and says done.
+
+  Deliberately self-contained: no theme.js, so cloud-sync never patches
+  localStorage.setItem here. A patched write would stamp every imported key as
+  newer than the cloud and push one Firestore write per key per student.
+-->
+<style>
+  :root { --bg: #f6f8fc; --card: #ffffff; --ink: #1d2433; --muted: #5a6478; --accent: #2a6df2; --accent-ink: #ffffff; --ok: #1d7f4e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11151d; --card: #1a202b; --ink: #e8ecf3; --muted: #a3adbf; --accent: #6f9bff; --accent-ink: #0b1220; --ok: #5fd39a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+         background: var(--bg); color: var(--ink); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { background: var(--card); max-width: 460px; width: 100%; padding: 32px 28px; border-radius: 16px;
+         box-shadow: 0 8px 30px rgba(0,0,0,.08); text-align: center; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  p { color: var(--muted); margin: 0 0 18px; }
+  .ok { color: var(--ok); font-weight: 600; }
+  a.btn, label.btn { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none;
+          font-weight: 600; padding: 12px 22px; border-radius: 999px; cursor: pointer; }
+  a.btn:focus-visible, label.btn:focus-within { outline: 3px solid var(--ink); outline-offset: 3px; }
+  input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">Bringing your progress…</h1>
+  <p id="msg" role="status" aria-live="polite">One moment.</p>
+  <div id="manual" hidden>
+    <p>If you saved a backup file from the old address, choose it here.</p>
+    <label class="btn">Choose backup file<input id="file" type="file" accept="application/json,.json"></label>
+  </div>
+  <p><a class="btn" id="go" href="/PA_Quizzes/" hidden>Go to PA Quizzes</a></p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var OLD_ORIGIN = "https://jaxs22913.github.io";
+  var META = "__cloudSyncMeta";
+  var $ = function (id) { return document.getElementById(id); };
+  var done = false;
+
+  function readMeta(raw) { try { return JSON.parse(raw) || {}; } catch (e) { return {}; } }
+
+  // Merge an export from the old origin into this origin's localStorage.
+  // A key is copied when it is missing here, or when the old copy's cloud-sync
+  // timestamp is newer. The sync record goes last:
+  //  - nothing synced here yet: take the old record verbatim, so this address acts
+  //    as the same device (one cheap partial read at sign-in, pending pushes kept);
+  //  - otherwise merge per key, union the not-yet-pushed sets, and drop __max and
+  //    __full so the next sign-in does one full read and settles any difference.
+  function merge(items) {
+    var oldMeta = readMeta(items[META]), hereRaw = localStorage.getItem(META), hereMeta = readMeta(hereRaw);
+    var copied = 0, kept = 0;
+    Object.keys(items).forEach(function (k) {
+      if (k === META || /^firebase[:_]/i.test(k) || typeof items[k] !== "string") return;
+      var here = localStorage.getItem(k);
+      var oldTs = +oldMeta[k] || 0, hereTs = +hereMeta[k] || 0;
+      if (here === null || oldTs > hereTs) {
+        if (here !== items[k]) localStorage.setItem(k, items[k]);
+        if (oldTs) hereMeta[k] = oldTs;
+        copied++;
+      } else kept++;
+    });
+    var meta;
+    if (hereRaw === null) {
+      meta = oldMeta;
+    } else {
+      meta = hereMeta;
+      var u = {};
+      [oldMeta.__u, hereMeta.__u].forEach(function (s) { if (s) Object.keys(s).forEach(function (k) { u[k] = 1; }); });
+      meta.__u = u;
+      if (oldMeta.__uid !== hereMeta.__uid) delete meta.__uid;
+      delete meta.__max; delete meta.__full;
+    }
+    if (Object.keys(meta).length) localStorage.setItem(META, JSON.stringify(meta));
+    try { localStorage.setItem("paq:importedAt", String(Date.now())); } catch (e) {}
+    return { copied: copied, kept: kept };
+  }
+
+  function safeNext(p) { return (typeof p === "string" && /^\/PA_Quizzes\/[^\\]*$/.test(p) && p.indexOf("//") < 0) ? p : "/PA_Quizzes/"; }
+
+  function finished(res, next) {
+    done = true;
+    $("title").textContent = "Your progress is here";
+    $("msg").innerHTML = '<span class="ok">Done.</span> ' + res.copied + " saved item" + (res.copied === 1 ? "" : "s") + " brought over.";
+    $("go").href = safeNext(next); $("go").hidden = false; $("manual").hidden = true;
+  }
+
+  window.addEventListener("message", function (e) {
+    if (e.origin !== OLD_ORIGIN || e.source !== window.opener || !e.data || e.data.type !== "paq-data" || e.data.v !== 1) return;
+    var res;
+    try { res = merge(e.data.items || {}); }
+    catch (err) { $("msg").textContent = "Your browser would not let this page save (" + (err && err.name || "error") + "). Your progress is still safe at the old address."; return; }
+    try { e.source.postMessage({ type: "paq-done", v: 1, copied: res.copied }, OLD_ORIGIN); } catch (err) {}
+    finished(res, e.data.next);
+    // The old tab now moves itself to the new address, so this helper tab closes.
+    setTimeout(function () { window.close(); }, 400);
+  });
+
+  $("file").addEventListener("change", function () {
+    var f = this.files && this.files[0]; if (!f) return;
+    var r = new FileReader();
+    r.onload = function () {
+      try {
+        var data = JSON.parse(r.result);
+        if (!data || data.type !== "paq-backup" || data.v !== 1 || typeof data.items !== "object") throw new Error("not a PA Quizzes backup");
+        finished(merge(data.items), "/PA_Quizzes/");
+      } catch (err) { $("msg").textContent = "That file is not a PA Quizzes backup."; }
+    };
+    r.readAsText(f);
+  });
+
+  if (window.opener) {
+    try { window.opener.postMessage({ type: "paq-ready", v: 1 }, OLD_ORIGIN); } catch (e) {}
+  }
+  setTimeout(function () {
+    if (done) return;
+    $("title").textContent = "Bring your progress";
+    $("msg").textContent = window.opener ? "Nothing arrived from the old address yet." : "Open the old address (jaxs22913.github.io/PA_Quizzes) and press its button, or use a backup file.";
+    $("manual").hidden = false; $("go").hidden = false;
+  }, window.opener ? 8000 : 0);
+})();
+</script>
+</body>
+</html>

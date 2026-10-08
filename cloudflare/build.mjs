@@ -8,9 +8,10 @@
 //
 // Only git-tracked files are published (no .DS_Store, no ignored scratch), minus
 // build tooling that no page links to. cloudflare/_redirects, _headers and
-// 404.html go to the dist root, where Workers Static Assets reads them.
+// 404.html go to the dist root, where Workers Static Assets reads them;
+// cloudflare/import.html (the cutover hand-off receiver) goes to /PA_Quizzes/.
 //
-//   node cloudflare/build.mjs        (Workers Builds runs this as the build command)
+//   node cloudflare/build.mjs        (.github/workflows/cloudflare.yml runs this on every push)
 
 import { execFileSync } from 'node:child_process'
 import { copyFileSync, constants, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'node:fs'
@@ -71,6 +72,10 @@ for (const name of ['_redirects', '_headers', '404.html']) {
   copyFileSync(join(ROOT, 'cloudflare', name), join(DIST, name))
   count++
 }
+// Cutover hand-off receiver (inert until the GitHub Pages "moved" page opens it).
+if (existsSync(join(SITE, 'import.html'))) throw new Error('site already has an import.html; rename cloudflare/import.html')
+copyFileSync(join(ROOT, 'cloudflare', 'import.html'), join(SITE, 'import.html'))
+count++
 
 if (tooBig.length) {
   console.error(`ERROR: ${tooBig.length} file(s) over 25 MiB cannot be deployed:\n  ${tooBig.join('\n  ')}`)

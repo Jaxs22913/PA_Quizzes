@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://pa-quizzes.com/">
+<meta name="theme-color" content="#2a6df2">
+<title>PA Quizzes has moved to pa-quizzes.com</title>
+<!--
+  The GitHub Pages "we've moved" page. NOT LIVE until cutover: see README.md in
+  this folder. Served as both index.html and 404.html, so every old address
+  (bookmarks, class messages, deep links to a quiz) lands here and points at the
+  same page on https://pa-quizzes.com, whose addresses are identical.
+
+  Self-contained on purpose: no theme.js, so no Firebase and no cloud-sync patch.
+-->
+<style>
+  :root { --bg: #f6f8fc; --card: #ffffff; --ink: #1d2433; --muted: #5a6478; --accent: #2a6df2; --accent-ink: #ffffff;
+          --soft: #e8effe; --ok: #1d7f4e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11151d; --card: #1a202b; --ink: #e8ecf3; --muted: #a3adbf; --accent: #6f9bff; --accent-ink: #0b1220;
+            --soft: #23304a; --ok: #5fd39a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+         background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { background: var(--card); max-width: 520px; width: 100%; padding: 36px 28px 28px; border-radius: 20px;
+         box-shadow: 0 10px 40px rgba(0,0,0,.10); text-align: center; }
+  h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 14px; }
+  .lead { margin: 0 0 6px; color: var(--muted); }
+  .url { display: block; font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: 2px 0 22px;
+         user-select: all; -webkit-user-select: all; word-break: break-all; }
+  .btn { display: inline-block; border: 0; background: var(--accent); color: var(--accent-ink); text-decoration: none;
+         font: inherit; font-weight: 700; font-size: 1.1rem; padding: 15px 30px; border-radius: 999px; cursor: pointer; }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .note { background: var(--soft); border-radius: 12px; padding: 12px 14px; margin: 24px 0 0; font-size: .95rem; }
+  .small { font-size: .9rem; color: var(--muted); margin: 14px 0 0; }
+  .small button { background: none; border: 0; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PA Quizzes has moved!</h1>
+  <p class="lead">Our new home is:</p>
+  <a class="url" id="url" href="https://pa-quizzes.com/">pa-quizzes.com</a>
+
+  <button class="btn" id="go" type="button">Go to PA Quizzes</button>
+  <noscript><p><a class="btn" href="https://pa-quizzes.com/">Go to PA Quizzes</a></p></noscript>
+
+  <p class="small" id="carry" hidden>Your saved progress on this device comes with you when you press the button.</p>
+  <p class="small" id="status" role="status" aria-live="polite"></p>
+
+  <p class="note"><strong>Please update your bookmark</strong> or saved link to <strong>pa-quizzes.com</strong>.</p>
+
+  <p class="small" id="count" hidden>Taking you there in <span id="secs">10</span> s. <button type="button" id="stay">Stay here</button></p>
+  <p class="small" id="backupRow" hidden><button type="button" id="backup">Download a backup of my saved progress</button></p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var NEW = "https://pa-quizzes.com";
+  var DONE_KEY = "paq:movedHandoffDone";
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Same address on the new site: every page keeps its exact path there.
+  var path = location.pathname.indexOf("/PA_Quizzes/") === 0 ? location.pathname : "/PA_Quizzes/";
+  var target = NEW + path + location.search + location.hash;
+  $("url").href = target;
+
+  function exportItems() {
+    var items = {};
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k === DONE_KEY || /^firebase[:_]/i.test(k)) continue;
+      items[k] = localStorage.getItem(k);
+    }
+    return items;
+  }
+  var items = {}, haveData = false, handedOff = false;
+  try { items = exportItems(); haveData = Object.keys(items).length > 0; handedOff = !!localStorage.getItem(DONE_KEY); } catch (e) {}
+
+  function leave() { location.replace(target); }
+
+  // Hand-off: open the receiver on the new address (a click, so no popup
+  // blocker), wait for it to say it is ready, send everything, then move this
+  // tab to the new address once it confirms. Falls back to plain navigation.
+  function handOff() {
+    var w = null;
+    try { w = window.open(NEW + "/PA_Quizzes/import.html", "paq-import"); } catch (e) {}
+    if (!w) { leave(); return; }
+    $("status").textContent = "Bringing your saved progress…";
+    var timer = setTimeout(function () {
+      $("status").textContent = "The new address did not answer. Taking you there anyway; your progress is still here if you come back.";
+      setTimeout(leave, 2500);
+    }, 15000);
+    window.addEventListener("message", function onMsg(e) {
+      if (e.origin !== NEW || e.source !== w || !e.data) return;
+      if (e.data.type === "paq-ready") {
+        w.postMessage({ type: "paq-data", v: 1, items: items, next: path + location.search + location.hash }, NEW);
+      } else if (e.data.type === "paq-done") {
+        clearTimeout(timer);
+        window.removeEventListener("message", onMsg);
+        try { localStorage.setItem(DONE_KEY, String(Date.now())); } catch (err) {}
+        $("status").textContent = "Done. Taking you to pa-quizzes.com…";
+        setTimeout(leave, 600);
+      }
+    });
+  }
+
+  $("go").addEventListener("click", function () { stopCountdown(); (haveData && !handedOff) ? handOff() : leave(); });
+
+  // Fallback: the same export as a file, for import on the new address.
+  if (haveData) {
+    $("backupRow").hidden = false;
+    $("backup").addEventListener("click", function () {
+      var blob = new Blob([JSON.stringify({ type: "paq-backup", v: 1, savedAt: new Date().toISOString(), items: items })], { type: "application/json" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = "pa-quizzes-progress-backup.json";
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  }
+
+  // Gentle automatic redirect, only when nothing would be left behind: a
+  // student with saved progress here presses the button so it comes along.
+  var timerId = null;
+  function stopCountdown() { if (timerId) { clearInterval(timerId); timerId = null; } $("count").hidden = true; }
+  if (haveData && !handedOff) {
+    $("carry").hidden = false;
+  } else {
+    var left = 10;
+    $("count").hidden = false;
+    timerId = setInterval(function () {
+      left -= 1; $("secs").textContent = String(left);
+      if (left <= 0) { stopCountdown(); leave(); }
+    }, 1000);
+    $("stay").addEventListener("click", stopCountdown);
+  }
+})();
+</script>
+</body>
+</html>
