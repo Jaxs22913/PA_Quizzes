@@ -4,7 +4,7 @@
     python3 tools/check_all.py "Pharmacology I Exam 3"          # everything
     python3 tools/check_all.py "Pharmacology I Exam 3" --fast   # skip the slow guide-link pair
 
-Runs, in order: answer-key consistency, exam standard (--new), self-contained,
+Runs, in order: answer-key consistency, exam standard (scoped to the folder), self-contained,
 lead-in present, length bias (fast, node), pool cites, US spelling, spelling vs
 the inbox (advisory, only if the inbox folder exists), accordions closed, then
 build_guide_links + check_guide_links --strict LAST (rewrites guide-links.json;
@@ -66,7 +66,10 @@ def main(argv):
 
     checks = [  # (name, args, advisory)
         ("answer keys", ["tools/check_answer_key_consistency.py", folder], False),
-        ("exam standard (--new)", ["tools/check_exam_standard.py", "--new"], False),
+        # Scoped to the folder, not --new: --new checks every quiz EVER New-tagged
+        # site-wide (tags stay in index.html after they expire) and nothing in a
+        # fresh folder that has not been tagged yet, which then reads as PASS.
+        ("exam standard", ["tools/check_exam_standard.py", folder], False),
         ("self-contained", ["tools/check_self_contained.py", folder], False),
         ("lead-in present", ["tools/check_leadin_present.py", folder], False),
         ("length bias (fast)", ["tools/check_length_bias_fast.py", folder], False),

@@ -1,6 +1,6 @@
 # PA_Quizzes — orientation for a new session
 
-**Written 2026-09-22.** Claude Code reads this file automatically at the start
+**Written 2026-09-22, last updated 2026-10-08.** Claude Code reads this file automatically at the start
 of every session in this repo. It is the map, not the territory: it tells you
 what exists and where the real detail lives, so read the things it points at
 rather than trusting the summary.
@@ -97,7 +97,12 @@ usually that window. Hard refresh or a private window confirms it.
   they disagree (`academic_calendar_pipeline`).
 - Lecture recordings come out of Notability; `tools/pull_notability_audio.py`
   and the `notability_audio_pipeline` memory cover the extraction, including two
-  traps that make a recording that IS there read as absent.
+  traps that make a recording that IS there read as absent. Transcribe with
+  `tools/pull_lecture_segments.py` (multi-clip lectures), `tools/lecture_transcript.py`
+  (one file) or `tools/transcribe_long.py`; Notability's own transcript goes next to
+  ours as `<stem>.notability.txt`, and YouTube live-stream lectures (Pharm) get
+  `<stem>.youtube-captions.txt` as their second opinion. Interpretation of Medical
+  Literature has no audio.
 
 ---
 
@@ -133,7 +138,7 @@ Micro Exam 1 timetable quiz (§8) is the clean example to copy —
    self-expiring New tag (`new_exam_tag`).
 5. Re-run `tools/build_group_quizzes.py` — **required after any quiz change.**
    The Group Study bank is generated from the quiz files; never hand-edit it.
-   Likewise re-run `tools/build_guide_links.py` (then `tools/check_guide_links.py`)
+   Likewise re-run `tools/build_guide_links.py "<folder>"` (then `tools/check_guide_links.py --strict`)
    after any Semester 2 quiz OR guide rebuild: it writes the per-folder
    `guide-links.json` behind the "Find it in the study guide" panel. A link is
    keyed to the question's exact text, so an edited question loses its link
@@ -188,21 +193,23 @@ link procedure.
 
 ## 6. The checkers — run them, do not trust memory
 
-34 live in `tools/check_*.py`. The standing minimum after any quiz build:
+43 live in `tools/check_*.py` (including `check_all.py`). The standing minimum
+after any quiz build is one command:
 
 ```bash
-python3 tools/check_answer_key_consistency.py "<file>"   # keys must be right
-python3 tools/check_exam_standard.py --new
-python3 tools/check_self_contained.py "<Class Exam N>"
-python3 tools/check_leadin_present.py "<file>"
-python3 tools/check_console_errors.py "<file>"
-python3 tools/check_answer_distribution.py "<file>"
-python3 tools/build_guide_links.py && python3 tools/check_guide_links.py --strict   # Semester 2: every question explained in its guide
+python3 tools/check_all.py "<Class Exam N>"   # keys, exam standard, self-contained, lead-ins,
+                                             # length bias, pool cites, US spelling, accordions,
+                                             # build_guide_links "<folder>" + check_guide_links --strict
 ```
 
-Others worth knowing: `check_length_bias`, `check_ppt_grounding`,
-`check_truncated_keys`, `check_accordions_closed`, `check_spelling`,
-`check_slot_coverage`, `check_pool_cites`, `check_guide_links`.
+plus a LOAD-ONLY look at the pages with `pa-shot` / `pa-sweep` (below). **Never run
+`check_console_errors.py`, `check_answer_distribution.py` or `check_dark_contrast.py`**:
+they open live pages with Firebase unblocked, so every run hits live reads and the
+presence and question counters.
+
+Others worth knowing: `check_ppt_grounding`, `check_truncated_keys`,
+`check_slot_coverage`, `check_master_pairing`, `check_index_sections`. `check_all.py`
+is the canonical list of what runs.
 
 `check_length_bias.py` drives headless Chrome and is slow and fragile; use
 `tools/check_length_bias_fast.py` (node literal extractor, identical numbers,
@@ -220,8 +227,10 @@ topic/pool twins. Always read the denominator a checker prints.
   for one Semester 2 exam folder and prints one PASS/FAIL table (exit 1 on any
   FAIL). `--fast` skips the slow guide-link pair. It deliberately EXCLUDES
   `check_console_errors.py`, `check_answer_distribution.py`, `check_dark_contrast.py`
-  (they hit live Firebase; never run them). `pool cites` is site-wide, so a
-  failure there can belong to another exam's pool.
+  (they hit live Firebase; never run them). `pool cites`, `accordions closed` and
+  `guide links --strict` are site-wide, so a failure there can belong to another
+  exam. The exam-standard check is scoped to the folder (since 2026-10-08; it used
+  to run `--new`, which checked nothing in a folder not yet New-tagged).
 - `~/Developer/pa-tools/` (outside the repo, own venv): `bin/pa-shot <page> [--dark]
   [--mobile] [--full] [--out f.png]` screenshots with Firebase blocked and tours
   suppressed; `bin/pa-sweep <pages>` runs the contrast + 390px overflow sweep.
