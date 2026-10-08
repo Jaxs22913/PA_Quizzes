@@ -31,6 +31,12 @@
 
   var META_KEY = "__cloudSyncMeta"; // { [localStorageKey]: lastWriteTimestampMs }
   var THROTTLE_MS = 5000;
+  // Keys that belong to this device only (a per-device setting, a cache, anything that
+  // should not follow the student to another device) start with "local:". They are
+  // never uploaded, never pulled down and never put in the meta object, so they also
+  // cost no Firestore reads or writes.
+  var LOCAL_PREFIX = "local:";
+  function isLocalOnly(key) { return typeof key === "string" && key.indexOf(LOCAL_PREFIX) === 0; }
 
   var realSetItem = Storage.prototype.setItem;
   var realGetItem = Storage.prototype.getItem;
@@ -94,7 +100,7 @@
   }
 
   function schedulePush(key) {
-    if (!currentUser || key === META_KEY) return;
+    if (!currentUser || key === META_KEY || isLocalOnly(key)) return;
     var now = Date.now();
     var last = lastPushed[key] || 0;
     if (now - last >= THROTTLE_MS) {
@@ -125,14 +131,14 @@
   // touched or synced.
   Storage.prototype.setItem = function (key, value) {
     realSetItem.call(this, key, value);
-    if (this === localStorage && key !== META_KEY) {
+    if (this === localStorage && key !== META_KEY && !isLocalOnly(key)) {
       touchMeta(key, Date.now(), true);
       schedulePush(key);
     }
   };
   Storage.prototype.removeItem = function (key) {
     realRemoveItem.call(this, key);
-    if (this === localStorage && key !== META_KEY) {
+    if (this === localStorage && key !== META_KEY && !isLocalOnly(key)) {
       touchMeta(key, Date.now(), true);
       schedulePush(key);
     }
@@ -168,6 +174,7 @@
       var changed = false, cloud = {}, max = full ? 0 : (meta.__max || 0);
       snap.forEach(function (doc) {
         var key = decodeURIComponent(doc.id);
+        if (isLocalOnly(key)) return;   // never pulled onto another device
         var data = doc.data();
         var cloudTs = data.updatedAt || 0;
         var localTs = meta[key] || 0;
@@ -198,7 +205,7 @@
     if (res.full) {
       for (var i = 0; i < localStorage.length; i++) {
         var k = localStorage.key(i);
-        if (k === META_KEY) continue;
+        if (k === META_KEY || isLocalOnly(k)) continue;
         if (!(k in res.cloud) || (meta[k] || 0) > res.cloud[k]) keys.push(k);
       }
       // keys deleted here while signed out: nothing local to enumerate, the dirty list remembers them
@@ -238,7 +245,12 @@
     return auth.signOut();
   };
 
-  auth.onAuthStateChanged(function (user) {
+  auth.onAuthStateChanged(function (authUser) {
+    // Group Study signs visitors in ANONYMOUSLY so they can join a room. That session
+    // persists across pages, but it is not a student account: syncing it would upload
+    // every localStorage key to a throwaway users/{anonUid} and show the signed-in dot.
+    // Only a real (Google) sign-in syncs; Group Study keeps working on its own.
+    var user = (authUser && !authUser.isAnonymous) ? authUser : null;
     currentUser = user;
     renderAccountUI(user);
     if (user) {
