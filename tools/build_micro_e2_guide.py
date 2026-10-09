@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 study guide (Lectures 7 and 8 so far).
+"""Build the Microbiology Exam 2 study guide (Lectures 7-10 so far).
 
 Skeleton lifted from the Microbiology Exam 1 guide -- head, styles, back bar,
 pull-to-refresh, footer and scripts -- so the class reads as one thing; only
@@ -10,12 +10,16 @@ Exam 1's palette.
 
 Sections are numbered by LECTURE (7, 8, ...) exactly as the Exam 1 guide is,
 and each lecture's instructional objectives are quoted verbatim from the
-syllabus and answered in order. Later Exam 2 lectures (9-13) get their own
-_micro_e2_guide_lN.py and a line in SECTIONS below.
+syllabus and answered in order. Later Exam 2 lectures get their own
+_micro_e2_guide_lN.py and a line in SECTIONS below. Lectures 9 and 10 live in
+tools/micro_e2/ (L9's section is hand-written HTML read by its module; L10's
+module renders its own fragment).
 
 Figures are re-extracted from the decks each run (python-pptx, by slide and
 image index) into micro-exam-2-study-guide-images/, and every one cites its
-slide. Each was viewed at full size before being captioned.
+slide. Each was viewed at full size before being captioned. The Lecture 9
+figures are the exception: tools/extract_micro_l9_figures.py writes them
+(re-encoded, at most 900 px wide), so this script only checks they exist.
 
     python3 tools/build_micro_e2_guide.py
 """
@@ -23,10 +27,13 @@ import io, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, "micro_e2"))
 import _micro_e2_guide_l7 as L7
 import _micro_e2_guide_l8 as L8
+import _micro_e2_guide_l9 as L9
+import _micro_e2_guide_l10 as L10
 
-SECTIONS = [L7, L8]
+SECTIONS = [L7, L8, L9, L10]
 DONOR = os.path.join(ROOT, "Microbiology Exam 1", "micro-exam-1-study-guide.html")
 OUTDIR = os.path.join(ROOT, "Microbiology Exam 2")
 OUT = os.path.join(OUTDIR, "micro-exam-2-study-guide.html")
@@ -34,6 +41,7 @@ IMGDIR = os.path.join(OUTDIR, "micro-exam-2-study-guide-images")
 INBOX = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Microbiology Inbox/Exam 2")
 DECK7 = os.path.join(INBOX, "Lecture 7  Dr. Webster  Disorders in Immunity.pptx")
 DECK8 = os.path.join(INBOX, "PAJ5200.Diagnosing Infections-2.pptx")
+DECK10 = os.path.join(INBOX, L10.DECK)
 
 # (deck, slide, picture index on that slide) -> published file name
 IMAGES = [
@@ -46,7 +54,9 @@ IMAGES = [
     (DECK8, 46, 1, "l8-s46-complement-fixation.jpg"),
     (DECK8, 48, 1, "l8-s48-fluorescent-antibody.jpg"),
     (DECK8, 51, 1, "l8-s51-elisa.jpg"),
-]
+] + [(DECK10, sl, k, name) for sl, k, name in L10.IMAGES]
+# written by tools/extract_micro_l9_figures.py (re-encoded); checked, not re-extracted
+L9_FIGURES = [name for _, _, name in L9.IMAGES]
 
 # No abbreviations in guide prose (no_abbreviations_content_policy): the two
 # nucleic acids are written out, as the Exam 1 guide does. Quotes keep the
@@ -73,7 +83,10 @@ def extract_images():
         ext = pics[k - 1].image.ext
         assert name.endswith("." + ext.replace("jpeg", "jpg")), (name, ext)
         io.open(os.path.join(IMGDIR, name), "wb").write(blob)
-    return len(IMAGES)
+    for name in L9_FIGURES:
+        assert os.path.exists(os.path.join(IMGDIR, name)), \
+            name + " missing: run tools/extract_micro_l9_figures.py"
+    return len(IMAGES) + len(L9_FIGURES)
 
 
 def main():
@@ -92,7 +105,8 @@ def main():
     head = re.sub(r"<header class=\"top\">.*?</header>",
         '<header class="top">\n  <h1>Microbiology &middot; Exam 2 &mdash; Study Guide</h1>\n'
         '  <p>PAJ 5200 Microbiology &middot; Class of 2028</p>\n'
-        '  <p>Covers Lectures 7 and 8 so far &mdash; Disorders in Immunity and Diagnosing Infections &middot; '
+        '  <p>Covers Lectures 7&ndash;10 so far &mdash; Disorders in Immunity, Diagnosing Infections, Cocci of '
+        'Medical Importance and Gram-Positive Bacilli &middot; '
         'Exam 2 (Lectures 7&ndash;13) is on Friday 23 October 2026; further sections are added as each '
         'lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n</header>',
         head, count=1, flags=re.S)

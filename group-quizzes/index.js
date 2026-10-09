@@ -367,6 +367,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-1-specific-immunity-quiz-version-2":{"title":"The Acquisition of Specific Immunity — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-transmission-of-microorganisms-quiz":{"title":"Transmission of Microorganisms — Quiz 1","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
 "microbiology-exam-1-transmission-of-microorganisms-quiz-version-2":{"title":"Transmission of Microorganisms — Quiz 2","category":"Microbiology","exam":"Exam 1","sem":"fall-2026","n":30},
+"microbiology-exam-2-cocci-of-medical-importance-quiz":{"title":"Cocci of Medical Importance — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-diagnosing-infections-quiz":{"title":"Diagnosing Infections — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-diagnosing-infections-quiz-version-2":{"title":"Diagnosing Infections — Quiz 2","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-disorders-in-immunity-quiz":{"title":"Disorders in Immunity — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},

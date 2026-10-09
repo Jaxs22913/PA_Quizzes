@@ -10,10 +10,20 @@ itself is a survey of diagnostic METHODS. The guide still answers the seven
 objectives in order, saying plainly where the deck gives an objective only a
 sentence or nothing at all -- rather than inventing content to fill it.
 
-AUDIO: 45 minutes, read in BOTH transcripts (local faster-whisper and
-Notability's own); the quotes used here appear in both. The recording stops at
-the break around slide 43, so slides 44-57 (complement fixation, fluorescent
-antibody, immunoassays, in vivo testing, viruses) have no audio.
+AUDIO: two recordings, both read in BOTH transcripts (local faster-whisper and
+Notability's own); the quotes used here appear in both. Part 1 (45 minutes)
+stops at the break around slide 43. Part 2 (10:35,
+micro-l8-diagnosing-infections-2026-09-18-part2, transcribed 2026-10-08) covers
+slides 45-57 after the break: complement fixation, fluorescent antibody,
+immunoassays, in vivo testing and viruses. The two part-2 transcripts agree on
+content; Notability's drops one sentence of the complement fixation passage
+([1:13] in the local transcript). Part 2 timestamps are the local transcript's.
+
+CHOCOLATE AGAR (truth_wins_on_conflict, 2026-10-09): slide 18 and the part-1
+recording call it "mainly used for anaerobic culturing". It is an enriched
+medium for fastidious organisms, incubated in extra carbon dioxide (the candle
+jar of the Lecture 9 deck, slide 57). The guide says so, and no quiz
+explanation repeats the anaerobic claim any more.
 """
 
 FIG = "micro-exam-2-study-guide-images"
@@ -66,11 +76,12 @@ SECTION = """
 
 <!--MICROL8AUDIO-->
   <div class="prof-flag" id="dx-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 18 September 2026</span>
-  <p>45 minutes, <b>both transcripts read and compared</b>; the quotes below appear in both. The
-  recording <b>stops at the break, around slide 43</b> (&ldquo;this is a very logical place for us to
-  pause&rdquo;), so complement fixation, fluorescent antibodies, immunoassays, in vivo testing and viral
-  diagnosis have no audio. The lecture is taught through laboratory anecdote and gives almost no exam
-  steer &mdash; the same pattern as this lecturer&rsquo;s Exam 1 lectures.</p>
+  <p><b>Two recordings, both transcripts read and compared</b>; the quotes below appear in both. Part 1
+  (45 minutes) runs to the break around slide 43 (&ldquo;this is a very logical place for us to
+  pause&rdquo;). Part 2 (about 11 minutes) picks up after the break and covers the rest of the deck:
+  complement fixation, fluorescent antibodies, immunoassays, in vivo testing and viral diagnosis. The
+  lecture is taught through laboratory anecdote and gives little exam steer &mdash; the same pattern as
+  this lecturer&rsquo;s Exam 1 lectures &mdash; so the two things it does stress are marked below.</p>
   <table>
     <tr><th>What was said</th><th>What it means for you</th></tr>
     <tr><td><em>&ldquo;You don&rsquo;t have to bog down in a lot of the details&hellip; I highlighted some
@@ -92,11 +103,46 @@ SECTION = """
     <tr><td>&ldquo;This is relevant to Koch&rsquo;s postulates, but remember, not all organisms will work
     for Koch&rsquo;s postulates. So what if the infection turns out to&hellip; be viral?&rdquo; [about minute 27]</td>
     <td>Slide 24&rsquo;s caution: finding an organism is not proof it causes the disease.</td></tr>
+    <tr><th colspan="2">After the break (part 2)</th></tr>
+    <tr><td>Complement fixation: <em>&ldquo;this one is absolutely backwards of what you would normally think
+    of as a microbiology test&hellip; the most important one is gonna be the sheep&rsquo;s red blood
+    cells&hellip; <mark class="prof-highlight">if the red blood cells burst, then your test is negative</mark>,
+    because that means that the complement is free.&rdquo;</em> [part 2, 0:15&ndash;1:34]</td>
+    <td>&#9733; Said three ways in one minute (&ldquo;backwards&rdquo;, &ldquo;exactly opposite or
+    counterintuitive&rdquo;, &ldquo;completely backwards&rdquo;). <strong>Lysis = negative; no lysis =
+    positive</strong> (slides 45&ndash;46, section 8.4).</td></tr>
+    <tr><td>In vivo allergy testing: <em>&ldquo;what you&rsquo;re looking for is a fairly rapid antigen-antibody
+    reaction. So <mark class="prof-highlight">which antibody class would be useful for allergy testing? IgE
+    [immunoglobulin E]</mark>&hellip; Remember, these are all good questions.&rdquo;</em> [part 2, 7:51&ndash;8:13]</td>
+    <td>&#9733; Ties slide 52&ndash;53&rsquo;s skin-prick grid to Lecture 7: the wheal and flare of an allergy
+    test is a type I, immunoglobulin E reaction (section 7). The tuberculin skin test on the same slide is
+    the delayed, T cell (type IV) one.</td></tr>
+    <tr><td>Fluorescent antibodies: <em>&ldquo;you have to know a little bit beforehand about what antibody and
+    antigen reaction you&rsquo;re looking for&rdquo;</em>; it needs a microscope with fluorescent optics and
+    &ldquo;a really, really dark microscope room.&rdquo; [part 2, 1:38&ndash;2:36]</td>
+    <td>The dye is carried by a specific (monoclonal) antibody (slide 47), so you choose it for the organism
+    or antibody you suspect: another test that needs a hypothesis first, like the rapid strep test.</td></tr>
+    <tr><td>Enzyme-linked immunosorbent assay: <em>&ldquo;you can either be qualitative, yes or no, or it can
+    be quantitative&rdquo;</em>, read by a plate reader; the <em>&ldquo;eight by twelve plates&rdquo;</em> and an
+    eight-channel pipettor let a technician <em>&ldquo;run through a lot of samples very, very
+    quickly&rdquo;</em>; <em>&ldquo;valuable for detecting HIV [human immunodeficiency virus].&rdquo;</em>
+    [part 2, 3:24&ndash;6:53]</td>
+    <td>Slide 50&rsquo;s 96-well plates and 8-channel pipettors are the point: throughput. The plate on
+    slide 51 is a human immunodeficiency virus antibody screen.</td></tr>
+    <tr><td>Viruses: <em>&ldquo;very difficult to grow in the lab. It might require human tissue culture. It
+    might require animal tissue culture&rdquo;</em>; rapid point-of-care kits give an answer in
+    <em>&ldquo;10 minutes or less&rdquo;</em> &mdash; strep, influenza A, COVID [coronavirus disease 2019]. [part 2, 8:15&ndash;9:11]</td>
+    <td>Slide 54: viruses are not cells and need a host cell, so culture is labor intensive and rapid
+    antigen-antibody tests fill the gap. (The rapid strep test in her list detects a bacterium; it is there as
+    the familiar example of the format.) The deoxyribonucleic acid and ribonucleic acid virus lectures
+    themselves are the last two of the semester, not this exam [9:18].</td></tr>
   </table>
-  <p class="muted"><b>One statement to hold loosely:</b> slide 18 and the recording both say chocolate agar
-  is &ldquo;mainly used for anaerobic culturing,&rdquo; and the lecturer describes the candle jar
-  that raises carbon dioxide. Learn it as the slide states it for this exam; it is flagged for review
-  rather than silently changed.</p>
+  <p class="muted"><b>Where the slide is wrong &mdash; chocolate agar:</b> slide 18 and the recording both say
+  chocolate agar is &ldquo;mainly used for anaerobic culturing.&rdquo; It is not an anaerobic medium. It is an
+  <strong>enriched</strong> medium for fastidious organisms such as <em>Neisseria</em>, usually incubated in
+  <strong>extra carbon dioxide</strong> &mdash; the candle jar the lecturer goes on to describe, and what the
+  Lecture 9 deck says (slide 57; section 9.11). Anaerobes need oxygen excluded altogether. No question keys
+  &ldquo;anaerobic&rdquo; for chocolate agar.</p>
   </div>
 <!--/MICROL8AUDIO-->
 
@@ -225,7 +271,9 @@ SECTION = """
     <tr><th>Common test or medium</th><th>What it shows</th></tr>
     <tr><td>Carbohydrate fermentation, amino acid utilization, hydrolysis of gelatin, starch or lipids, catalase, oxidase, coagulase, hemolysins</td><td>The common biochemical tests</td></tr>
     <tr><td><mark class="prof-highlight">Blood agar</mark></td><td><strong>Detects hemolytic activity</strong></td></tr>
-    <tr><td>Chocolate agar</td><td>&ldquo;Mainly used for anaerobic culturing&rdquo; (the slide&rsquo;s wording)</td></tr>
+    <tr><td>Chocolate agar</td><td>The slide says &ldquo;mainly used for anaerobic culturing&rdquo;; in fact an
+    <strong>enriched</strong> medium for fastidious organisms, grown in <strong>extra carbon dioxide</strong>
+    (candle jar), not anaerobically (see the recording box above and section 9.11)</td></tr>
     <tr><td>Mannitol salts agar</td><td><strong>Selects</strong> for salt tolerance and <strong>differentiates</strong> by the pH change of mannitol fermentation</td></tr>
     <tr><td>Simmons citrate</td><td>Citrate utilization; bromthymol blue turns <strong>blue as pH rises</strong></td></tr>
     <tr><td>Triple sugar iron slant</td><td>Several pH changes observable on one slant</td></tr>

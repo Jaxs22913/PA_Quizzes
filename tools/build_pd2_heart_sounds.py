@@ -105,7 +105,7 @@ TOC = '''<nav class="toc">
   <a href="#hs-murmurs">4 &middot; Murmurs by timing</a>
   <a href="#hs-combos">5 &middot; Sounds and murmurs together</a>
   <a href="#hs-table">6 &middot; Every recording at a glance</a>
-  <a href="#hs-credit">Recordings and licence</a>
+  <a href="#hs-credit">Recordings and license</a>
 </nav>'''
 
 BODY = '''<main>
@@ -240,11 +240,11 @@ BODY = '''<main>
     <tr><td>Ejection sound with mid-systolic murmur</td><td>Pulmonic area</td><td>Pulmonic stenosis</td><td>38, 68</td></tr>
   </table>
 
-  <h3 class="sub" id="hs-credit">Recordings and licence</h3>
+  <h3 class="sub" id="hs-credit">Recordings and license</h3>
   <p>All recordings are from the <a href="''' + P.LIB_URL + '''" target="_blank" rel="noopener">Heart Sound &amp; Murmur Library</a>, produced by the Learning Resource Center,
   Office of Medical Education, University of Michigan, by <b>Richard D. Judge</b> and <b>Rajesh Mangrulkar</b>, and licensed under
   <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 3.0</a>. Copyright The Regents of the University of Michigan.
-  Each recording here is shortened to a twenty-second excerpt (an adaptation), converted to a smaller mp3 and shared under the same licence. The lecture deck embeds the library&rsquo;s first recording on slide 36.</p>
+  Each recording here is shortened to a twenty-second excerpt (an adaptation), converted to a smaller mp3 and shared under the same license. The lecture deck embeds the library&rsquo;s first recording on slide 36.</p>
 
   <footer class="guide-foot">Source: <em>''' + P.DECK + '''</em> (Lauren Reynolds, MSPA, PA-C), Slides 13&ndash;15, 26, 30, 34&ndash;44, 46, 49&ndash;52, 66&ndash;80 and the
   University of Michigan Heart Sound &amp; Murmur Library recordings.</footer>

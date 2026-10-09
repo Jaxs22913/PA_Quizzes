@@ -21,6 +21,13 @@ WHAT IT READS. Every .html under the chosen folders, and in each one:
     so the self-tests on eleven Semester 2 pages were never looked at: 52
     citations on ten of them by the detector of 2026-09-22, 59 once RX was
     widened the same day (see _selfcontain_rx.py).
+  - the Murmur Builder's `var BUILDS = {...}` (Physical Diagnosis 2 Exam 2,
+    murmur-builder.html, added 2026-10-09). That page has no question text: each
+    `var ITEMS = [...]` entry is a recording {clip, cyc, build} whose answer is a
+    key of BUILDS, and BUILDS holds everything the student reads after submitting
+    (title, listen, where[], assoc[]). So BUILDS is read as the bank, and every
+    ITEMS entry must point into it; an ITEMS array of any other shape is still
+    reported as unreadable.
   Stems, option texts and explanations are checked; `io` and `cite` are
   provenance metadata and deliberately are not.
 
@@ -58,6 +65,10 @@ BANK_DECL = re.compile(r"\b(?:const|let|var)\s+(QUESTIONS|TEST_YOURSELF)\s*=\s*"
 # Other question-bank shapes that exist on Semester 1 pages. They are not read;
 # finding one in a live folder is reported rather than passed over.
 OTHER_DECL = re.compile(r"\b(?:const|let|var)\s+(ITEMS|questions|DECK|BANK|Q)\s*=\s*\[")
+# The Murmur Builder: ITEMS (recordings) answered by keys of BUILDS (see the docstring).
+BUILDS_DECL = re.compile(r"\b(?:const|let|var)\s+BUILDS\s*=\s*")
+# BUILDS keys that are not text a student reads: answer codes, a scoring flag, slide provenance.
+BUILD_METADATA = {"accept", "loose", "slides"}
 
 
 # --------------------------------------------------------------------------
@@ -255,6 +266,41 @@ def question_fields(q):
     return out
 
 
+def build_fields(b):
+    """[(field, text)] for one Murmur Builder BUILDS entry, or None if its shape is unknown."""
+    if not isinstance(b, dict) or not isinstance(b.get("title"), str):
+        return None
+    out = []
+    for k, v in b.items():
+        if k in METADATA or k in BUILD_METADATA:
+            continue
+        if isinstance(v, str):
+            out.append((k, v))
+        elif isinstance(v, list) and all(isinstance(x, str) for x in v):
+            out.extend(("%s %d" % (k, j), x) for j, x in enumerate(v))
+        elif not isinstance(v, (bool, int, float)):
+            return None
+    return out
+
+
+def murmur_builder_bank(text, items_match):
+    """-> (bank or None, problem or None) for an ITEMS array answered by BUILDS."""
+    mb = BUILDS_DECL.search(text)
+    if not mb:
+        return None, None
+    try:
+        builds = read_literal(text, mb.end())
+        items = read_literal(text, items_match.end() - 1)
+    except (JSLiteralError, ValueError) as e:
+        return None, "ITEMS/BUILDS: cannot parse (%s)" % str(e)[:70]
+    if not isinstance(builds, dict) or not isinstance(items, list):
+        return None, "ITEMS/BUILDS: not an array and an object"
+    for i, it in enumerate(items):
+        if not (isinstance(it, dict) and isinstance(it.get("clip"), str) and it.get("build") in builds):
+            return None, "ITEMS #%d: not a {clip, build} entry naming a key of BUILDS" % i
+    return ("BUILDS", [(k, v) for k, v in builds.items()]), None
+
+
 def page_banks(path):
     """-> (banks, problems). banks: [(bank name, [(location, question), ...])];
     problems: [str] -- anything in the page that holds questions and could not
@@ -284,6 +330,14 @@ def page_banks(path):
                 banks.append(("TEST_YOURSELF.%s" % sec,
                               [("%s[%d]" % (sec, i), q) for i, q in enumerate(qs)]))
     for m in OTHER_DECL.finditer(text):
+        if m.group(1) == "ITEMS":
+            bank, problem = murmur_builder_bank(text, m)
+            if bank:
+                banks.append(bank)
+                continue
+            if problem:
+                problems.append(problem)
+                continue
         problems.append("%s: a question bank shape this checker does not read" % m.group(1))
     return banks, problems
 
@@ -342,7 +396,7 @@ def scan(roots, review=False, quiet=False):
             res["ty_banks" if ty else "quiz_banks"] += 1
             res["ty_questions" if ty else "questions"] += len(entries)
             for loc, q in entries:
-                fields = question_fields(q)
+                fields = build_fields(q) if bank == "BUILDS" else question_fields(q)
                 if fields is None:
                     res["problems"].append({"file": rel, "problem": "%s %s: unrecognised question shape" % (bank, loc)})
                     continue
@@ -351,7 +405,7 @@ def scan(roots, review=False, quiet=False):
                     for sev, det, frag in scan_text(text):
                         rec = {"file": rel, "bank": bank, "index": loc, "field": field,
                                "text": text, "match": frag, "detector": det,
-                               "stem": q.get("q", "")[:160]}
+                               "stem": (q.get("q") or q.get("title") or "")[:160]}
                         (res["hits"] if sev == "hard" else res["review"]).append(rec)
                         by_file.setdefault(rel, []).append((sev, rec))
 

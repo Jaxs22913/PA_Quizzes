@@ -1,0 +1,17 @@
+    cocciMedicalImportance: [
+      {q:"Which test separates staphylococci from streptococci and enterococci?",
+       choices:["Coagulase","Catalase","Bacitracin disc","Optochin disc"],correct:1,
+       explain:"Staphylococci are catalase positive and bubble with hydrogen peroxide; streptococci and enterococci are catalase negative. Coagulase comes next, separating Staphylococcus aureus from the other staphylococci."},
+      {q:"A beta-hemolytic streptococcus is bacitracin sensitive. What is it?",
+       choices:["Streptococcus agalactiae","Streptococcus pneumoniae","Streptococcus pyogenes","A viridans streptococcus"],correct:2,
+       explain:"Bacitracin-sensitive beta-hemolytic streptococci are group A, Streptococcus pyogenes. Groups B and C are bacitracin resistant; the pneumococcus and viridans group are alpha hemolytic and sorted by optochin."},
+      {q:"What does M-protein give Streptococcus pyogenes?",
+       choices:["Resistance to phagocytosis","Protection against lysozyme","Adherence by short fibers","Digestion of fibrin clots"],correct:0,
+       explain:"M-protein contributes to resistance to phagocytosis. The C-carbohydrates protect against lysozyme, the fimbriae give adherence, and streptokinase digests fibrin clots."},
+      {q:"How does group B Streptococcus reach the newborn?",
+       choices:["Across the placenta","During vaginal delivery","By respiratory droplets","Via a dental procedure"],correct:1,
+       explain:"It is transferred to the infant during vaginal delivery, which is why pregnant women are screened and treated. It is the most prevalent cause of neonatal pneumonia, sepsis and meningitis."},
+      {q:"What gives a presumptive identification of gonorrhea from urethral exudate?",
+       choices:["Lancet-shaped pairs","Cocci in clusters","Diplococci inside neutrophils","Cocci in long chains"],correct:2,
+       explain:"Gram-negative intracellular diplococci within neutrophils are presumptive for Neisseria gonorrhoeae. Lancet-shaped pairs are the pneumococcus; clusters are staphylococci; chains are streptococci."}
+    ],

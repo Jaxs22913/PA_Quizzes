@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 cram sheet (Lectures 7 and 8 so far).
+"""Build the Microbiology Exam 2 cram sheet (Lectures 7-10 so far).
 
-Condensed ONLY from the Exam 2 study guide (tools/_micro_e2_guide_l7.py and
-_l8.py), which is itself built from the decks. Rows marked with a star carry
+Condensed ONLY from the Exam 2 study guide (tools/_micro_e2_guide_l7.py,
+_l8.py and tools/micro_e2/), which is itself built from the decks. Lectures 9
+and 10 are read from tools/micro_e2/l9_cram.json and l10_cram.json (same
+{id, label, color, rows} shape as the topics below). Rows marked with a star carry
 emphasis stated in the lecture recording; one row per lecture records what the
 lecturer said NOT to memorize, because knowing what to skip is worth as much
 the night before as any fact.
@@ -13,7 +15,7 @@ sheet. Add a topic per later Exam 2 lecture as it lands.
 
     python3 tools/build_micro_e2_cram.py
 """
-import io, os, sys
+import io, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(HERE, "cram-sheet-template"))
@@ -98,7 +100,7 @@ topics = [
    ["Morphology", "Microscopic: shape, size, stain (Gram, flagellar, acid-fast), structures. Macroscopic: colony texture, size, shape, pigment."],
    ["Biochemical", "Presence or absence of enzymes/pathways: fermentation, amino acids, hydrolysis, catalase, oxidase, coagulase, hemolysins."],
    ["★ Blood agar", "Detects HEMOLYSIS — the lecturer's “take-home message”, especially for pathogenic Gram-positives."],
-   ["Other media", "Chocolate agar: “mainly anaerobic culturing” (slide's wording) · mannitol salts: selects salt tolerance, differentiates mannitol · citrate: blue = pH up · urea: hot pink = urease."],
+   ["Other media", "Chocolate agar: ENRICHED medium for fastidious organisms, grown in extra carbon dioxide (candle jar) — NOT anaerobic, whatever the slide says · mannitol salts: selects salt tolerance, differentiates mannitol · citrate: blue = pH up · urea: hot pink = urease."],
    ["Normal flora?", "Is the recovered organism the cause, or normal flora? Koch's postulates reasoning."],
    ["Kirby-Bauer", "Disk diffusion: WHICH drug and at WHAT dose; LARGER zone = more effective. Minimum inhibitory concentration strips give the concentration."],
  ]},
@@ -108,17 +110,23 @@ topics = [
    ["Serology", "In vitro testing of serum; titer in binding antibody units. Serotyping = known antibody identifies an unknown microbe."],
    ["Agglutination vs precipitation", "Agglutination = WHOLE-CELL/insoluble antigen, clumps, MORE sensitive (blood typing, syphilis, Weil-Felix, pregnancy, rapid strep). Precipitation = SOLUBLE antigen, needs gel/liquid (Ouchterlony, immunoelectrophoresis → antibody class)."],
    ["Blots", "Southern = deoxyribonucleic acid (the man's name) · Northern = ribonucleic acid · WESTERN = PROTEIN, second test for human immunodeficiency virus · Eastern = other epitopes."],
-   ["Complement fixation", "4 parts: antigen, antibody, complement, sheep red cells. NO hemolysis = POSITIVE. Hemolysis = negative."],
-   ["Fluorescent · immunoassay · in vivo", "Dye-labeled monoclonal antibody, direct or indirect. Immunoassays detect TRACE amounts (radioimmunoassay; enzyme-linked immunosorbent assay, 96-well). In vivo: tuberculin, allergy tests."],
-   ["Viruses", "Not cells; need a host cell → labor intensive to culture; rapid antigen-antibody tests."],
+   ["★ Complement fixation", "“Absolutely backwards.” 4 parts: antigen, antibody, complement, sheep red cells. NO hemolysis = POSITIVE. Cells burst (hemolysis) = negative."],
+   ["Fluorescent · immunoassay · in vivo", "Dye-labeled monoclonal antibody, direct or indirect. Immunoassays detect TRACE amounts (radioimmunoassay; enzyme-linked immunosorbent assay, 96-well, high throughput). In vivo: tuberculin, allergy tests."],
+   ["★ Allergy testing", "A fairly rapid antigen-antibody reaction on the skin: the antibody class is immunoglobulin E (type I)."],
+   ["Viruses", "Not cells; need a host cell (human or animal tissue culture) → labor intensive to culture; rapid point-of-care antigen-antibody tests."],
  ]},
 ]
+
+for frag in ("l9_cram.json", "l10_cram.json"):
+    topics += json.load(io.open(os.path.join(HERE, "micro_e2", frag), encoding="utf-8"))
+ids = [t["id"] for t in topics]
+assert len(ids) == len(set(ids)), "duplicate topic id"
 
 html = render(
     title="Cram Sheet — Microbiology Exam 2",
     kicker="Microbiology · Exam 2 · Class of 2028",
     h1="Microbiology Exam 2 Cram Sheet",
-    sub="Lectures 7 and 8 so far — Disorders in Immunity and Diagnosing Infections. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.",
+    sub="Lectures 7–10 so far — Disorders in Immunity, Diagnosing Infections, Cocci of Medical Importance and Gram-Positive Bacilli. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.",
     topics=topics,
     guide_href="micro-exam-2-study-guide.html",
     footer_note="Condensed from the Microbiology Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",
