@@ -51,6 +51,7 @@ OVERRIDES = {
     "micro-exam2": "#2a5f8f",        # blue; exam 1 is green
     "clinpath1-exam2": "#8a3d5b",    # rose; exam 1 is violet
     "medlit-book": "#4f5666",        # slate; the exam proper is rose
+    "pharm1-exam2": "#4a7fa5",       # blue: keep the colour already shown on the live homepage
 }
 
 SECTION = re.compile(r'<details class="exam-section" data-examid="([^"]+)"(.*?)</details>', re.S)

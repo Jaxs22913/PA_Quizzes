@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Principles of Diagnostic Medicine I Exam 3</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#33363d;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="pdm-exam-3-cram-sheet.docx" title="Editable Word copy">
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#33363d;--primary:#878b93;}:root[data-theme="dark"] body[data-dark="tokens"] #scope{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#scope"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-scope{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-scope"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-conduction{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-conduction"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-cell{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-cell"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-paper-waves{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-paper-waves"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-leads{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-leads"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-rate{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-rate"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l11-sinus{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l11-sinus"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-scope{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-scope"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-premature{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-premature"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-escape{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-escape"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-junctional{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-junctional"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-ivr{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-ivr"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l12-svt{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l12-svt"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l13-ventricular{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l13-ventricular"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l13-tell-apart{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l13-tell-apart"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l13-paced{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l13-paced"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l13-blocks{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l13-blocks"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l13-block-logic{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l13-block-logic"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-axis{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-axis"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-bbb{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-bbb"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-fascicular{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-fascicular"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-atria{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-atria"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-ventricles{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-ventricles"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l14-systematic{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l14-systematic"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-frame{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-frame"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-jpoint{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-jpoint"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-arteries{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-arteries"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-leads{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-leads"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-stemi{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-stemi"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l15-extra-leads{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l15-extra-leads"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-mimics{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-mimics"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-brugada{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-brugada"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-lbbb{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-lbbb"]{color:#81858d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-wpw{--acc-bg:#35191b!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#e0646e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-wpw"]{color:#d85d67!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-lytes{--acc-bg:#2f2006!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#ad8544!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-lytes"]{color:#a57e3d!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-misc{--acc-bg:#35191d!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#c8737e!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-misc"]{color:#c06c77!important}:root[data-theme="dark"] body[data-dark="tokens"] #l16-drugs{--acc-bg:#192239!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#888c94!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l16-drugs"]{color:#81858d!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#33363d;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Principles of Diagnostic Medicine I Exam 3 · Class of 2028</div>
+    <h1>Principles of Diagnostic Medicine I Exam 3 Cram Sheet</h1>
+    <p class="sub">Lectures 11 to 16, the electrocardiography block. Rhythm analysis and the sinus rhythms; premature beats, escape rhythms and the supraventricular dysrhythmias; the ventricular rhythms and the atrioventricular blocks; axis, bundle branch blocks and chamber enlargement; ischemia, injury and infarction; pericarditis, electrolytes, drug effects and special patterns. Opens with how the exam is written.</p>
+    <div class="toc">
+      <a href="#scope" style="color:#282a30"><span class="dot" style="background:#33363d"></span>How This Exam Is Written</a>
+      <a href="#l11-scope" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Lecture 11: How It Is Asked</a>
+      <a href="#l11-conduction" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Conduction System & Pacemakers</a>
+      <a href="#l11-cell" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Cardiac Cell & Action Potential</a>
+      <a href="#l11-paper-waves" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Paper, Waves & Intervals</a>
+      <a href="#l11-leads" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Leads</a>
+      <a href="#l11-rate" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Rate, Regularity & the Five Steps</a>
+      <a href="#l11-sinus" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>The Sinus Rhythms</a>
+      <a href="#l12-scope" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Lecture 12: How It Is Asked</a>
+      <a href="#l12-premature" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Premature Beats</a>
+      <a href="#l12-escape" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Escape Beats & Rhythms</a>
+      <a href="#l12-junctional" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Junctional Rhythms</a>
+      <a href="#l12-ivr" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Idioventricular Rhythms</a>
+      <a href="#l12-svt" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Supraventricular Dysrhythmias</a>
+      <a href="#l13-ventricular" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Ventricular Rhythms (Lecture 13)</a>
+      <a href="#l13-tell-apart" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Telling the Ventricular Rhythms Apart</a>
+      <a href="#l13-paced" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Paced Rhythms</a>
+      <a href="#l13-blocks" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Atrioventricular Blocks</a>
+      <a href="#l13-block-logic" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Block Logic</a>
+      <a href="#l14-axis" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Axis (Lecture 14)</a>
+      <a href="#l14-bbb" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Bundle Branch Blocks</a>
+      <a href="#l14-fascicular" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Fascicular Blocks</a>
+      <a href="#l14-atria" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Atrial Enlargement</a>
+      <a href="#l14-ventricles" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Ventricular Hypertrophy</a>
+      <a href="#l14-systematic" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>The Systematic 12-Lead</a>
+      <a href="#l15-frame" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Ischemia, Injury, Infarction: the Ladder</a>
+      <a href="#l15-jpoint" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>J Point & Baseline</a>
+      <a href="#l15-arteries" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Coronary Arteries</a>
+      <a href="#l15-leads" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Leads → Wall → Reciprocal</a>
+      <a href="#l15-stemi" style="color:#282a30"><span class="dot" style="background:#33363d"></span>ST-Elevation Infarction & Reciprocal Changes</a>
+      <a href="#l15-extra-leads" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Posterior Leads & V4R</a>
+      <a href="#l16-mimics" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Pericarditis vs Early Repolarization vs Infarction</a>
+      <a href="#l16-brugada" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Brugada Syndrome</a>
+      <a href="#l16-lbbb" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Bundle Branch Block, Pacing & Sgarbossa</a>
+      <a href="#l16-wpw" style="color:#8b2d38"><span class="dot" style="background:#b23a48"></span>Preexcitation & Reentry</a>
+      <a href="#l16-lytes" style="color:#6c4e19"><span class="dot" style="background:#8a6420"></span>Potassium & Calcium</a>
+      <a href="#l16-misc" style="color:#5f242e"><span class="dot" style="background:#7a2e3b"></span>Hypothermia, Pulmonary Embolism, Thyroid</a>
+      <a href="#l16-drugs" style="color:#282a30"><span class="dot" style="background:#33363d"></span>Drug Toxicities</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pdm-exam-3-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="scope" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>How This Exam Is Written</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Reference ranges are GIVEN</td><td>“I'm not going to just throw a random number at you” — a rate, an interval or a potassium in a stem comes with the range that reads it.</td></tr>
+          <tr><td class="h">★ Name the rhythm</td><td>Rhythm naming is fair game, and most questions show the strip or the 12-lead with the vignette. Read every strip the same five ways: rate, regularity, P waves, PR interval, QRS.</td></tr>
+          <tr><td class="h">Next-best-test</td><td>Often another lead: posterior leads V7–V9 for isolated ST depression in V1–V4; V4R for an inferior infarction with hypotension.</td></tr>
+          <tr><td class="h">No treatment</td><td>Lecture 12 is “solely about rhythm interpretation and diagnosis”; Lecture 11 leaves treatment out too. Know what the tracing shows and means.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-scope" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Lecture 11: How It Is Asked</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ The atrial rule</td><td>“If there is P waves, the rhythm is atrial. Remember that, that's very important.”</td></tr>
+          <tr><td class="h">Not now (said out loud)</td><td>The U wave (“Don't focus on that right now”), the word hexaxial, and all treatment (“That'll be next week”).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-conduction" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Conduction System & Pacemakers</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Sinoatrial node</td><td>Main pacemaker, upper right atrial wall below the superior vena cava. 60–100 per minute.</td></tr>
+          <tr><td class="h">Atrioventricular node</td><td>Near the coronary sinus. BACKUP pacemaker, 40–60 per minute. Zones: transition, compact, trigger.</td></tr>
+          <tr><td class="h">Purkinje network</td><td>Third pacemaker (both nodes failed), 20–40 per minute. Conducts FASTEST of all.</td></tr>
+          <tr><td class="h">Bachmann's bundle</td><td>Right atrium to left atrium: the main interatrial route.</td></tr>
+          <tr><td class="h">Internodal tracts</td><td>Superior anterior (FAST), middle, inferior posterior (SLOW). In most people only the fast tract truly reaches the node.</td></tr>
+          <tr><td class="h">Bundle of His</td><td>The ONLY path atria → ventricles in a normal heart (the atrioventricular septum does not conduct).</td></tr>
+          <tr><td class="h">Bundle branches</td><td>Left splits into THREE fascicles: posterior, septal (septum = Q wave), anterior. Right is MUCH LONGER.</td></tr>
+          <tr><td class="h">Passive filling</td><td>70–80% of ventricular filling needs no atrial contraction.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-cell" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Cardiac Cell & Action Potential</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Four properties</td><td>AUTOMATICITY (own impulse) · EXCITABILITY (responds) · CONTRACTILITY · CONDUCTIVITY (cell to cell). The pacemaker hierarchy keeps lower cells quiet.</td></tr>
+          <tr><td class="h">Phase order</td><td>4 → 0 → 1 → 2 → 3.</td></tr>
+          <tr><td class="h">Phase 4 / 0</td><td>4 = rest, −90 millivolts, potassium inside. 0 = upstroke: fast SODIUM rushes in.</td></tr>
+          <tr><td class="h">Phase 1 / 2 / 3</td><td>1 = the notch. 2 = plateau: CALCIUM in → contraction. 3 = repolarization: calcium closes, POTASSIUM OUT, back to −90 (slides say potassium “in”; truth and the slide 17 figure say out).</td></tr>
+          <tr><td class="h">Absolute refractory</td><td>No response at all; about 180 milliseconds; QRS start to the T wave PEAK.</td></tr>
+          <tr><td class="h">Relative refractory</td><td>Responds, but fragile; T wave peak to end. The T wave peak divides the two.</td></tr>
+          <tr><td class="h">Vector</td><td>Left and down, toward the front. Lead II looks straight along it: the rhythm lead.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-paper-waves" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Paper, Waves & Intervals</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Paper</td><td>25 millimeters per second. Small box 0.04 SECONDS, 1 millimeter (slide says “0.04ms”). Large box 0.2 seconds, 5 millimeters. Horizontal = time, vertical = voltage. Calibration 10 millimeters tall.</td></tr>
+          <tr><td class="h">P wave</td><td>Atrial depolarization. Round, upright in lead II, ≤2.5 millimeters, under 0.12 seconds.</td></tr>
+          <tr><td class="h">★ PR interval</td><td>P onset to QRS start. 0.12–0.20 seconds (3–5 small boxes), constant. Blocks, accessory pathways, alternate pacemakers move it.</td></tr>
+          <tr><td class="h">★ QRS</td><td>Ventricular depolarization; a complex of Q, R, S. Under 0.12 seconds; 0.12 or more = abnormal ventricular conduction.</td></tr>
+          <tr><td class="h">Q / R / S</td><td>Q = septum (away from lead II), under 0.04 seconds. R = ventricular depolarization toward lead II (deck: anterior left ventricle). S = away from lead II (deck: lateral wall); must cross baseline, else “S wave pattern”.</td></tr>
+          <tr><td class="h">J point / ST / T</td><td>J = QRS meets ST, at baseline ±1 millimeter. ST = ventricles holding contraction. T = ventricular repolarization, asymmetric.</td></tr>
+          <tr><td class="h">QT</td><td>QRS start to T end; all ventricular activity. 350–450 milliseconds males, 360–460 females. QTc: Lecture 7 (no slide here).</td></tr>
+          <tr><td class="h">TP segment</td><td>Resting state; the BEST isoelectric reference (not the PR segment).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-leads" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Leads</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Bipolar I, II, III</td><td>Einthoven's triangle. Lead II: POSITIVE LEFT FOOT, negative right shoulder. Lead I: left shoulder +, right shoulder −. Lead III: left foot +, left shoulder −.</td></tr>
+          <tr><td class="h">Unipolar augmented</td><td>aVR, aVL, aVF (augmented vector right, left, foot): one physical lead + a theoretical central terminal (the deck says Wilson's; strictly that is the chest leads' reference).</td></tr>
+          <tr><td class="h">Chest leads</td><td>Unipolar, HORIZONTAL view. V1 4th space right of sternum · V2 4th left · V3 between · V4 5th midclavicular · V5 anterior axillary · V6 midaxillary.</td></tr>
+          <tr><td class="h">Who looks where</td><td>V1–V2 septal · V3–V4 anterior · I, aVL, V5, V6 lateral · II, III, aVF inferior. Contiguous = same area.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-rate" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Rate, Regularity & the Five Steps</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Six-second method</td><td>QRS count × 10 = ventricular rate; P waves × 10 = atrial rate. The most used; works on irregular rhythms.</td></tr>
+          <tr><td class="h">Count-down</td><td>Heavy lines from an R wave: 300, 150, 100, 75, 60, 50. Unreliable below 50.</td></tr>
+          <tr><td class="h">300 / 1500</td><td>300 ÷ large boxes; 1500 ÷ small boxes between R waves. 1500 is the MOST ACCURATE.</td></tr>
+          <tr><td class="h">Regularity</td><td>Compare consecutive R to R intervals; calipers (or marked paper) if unsure.</td></tr>
+          <tr><td class="h">★ Five steps</td><td>Rate → regularity → P waves → PR interval → QRS. Every strip, every time.</td></tr>
+          <tr><td class="h">Married P waves</td><td>Each P wave is causing its QRS. A P before every QRS = atrial origin; uniform upright P = sinus node.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l11-sinus" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>The Sinus Rhythms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Normal sinus rhythm</td><td>60–100, regular, normal married P waves, PR 0.12–0.20 constant, narrow QRS.</td></tr>
+          <tr><td class="h">Bradycardia / tachycardia</td><td>Same criteria; rate under 60 / over 100. QRS narrow or wide. RATE is the only difference.</td></tr>
+          <tr><td class="h">Sinus arrhythmia</td><td>60–100, IRREGULAR, otherwise sinus. Benign, most common in children. Inspiration → vagal tone suppressed → rate UP; exhalation → down.</td></tr>
+          <tr><td class="h">Sinus exit block</td><td>Node fires, impulse BLOCKED: whole cycle missing (no P, QRS, T). P to P MARCHES OUT (gap = multiple of the cycle).</td></tr>
+          <tr><td class="h">Sinus pause</td><td>Node STOPS and restarts; cycle RESETS; does NOT march out.</td></tr>
+          <tr><td class="h">Sinus arrest</td><td>Like a pause but AT LEAST THREE cycles missed; resets.</td></tr>
+          <tr><td class="h">Sick sinus syndrome</td><td>Exit block + pause + arrest in one patient (even one strip). Rare.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-scope" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Lecture 12: How It Is Asked</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Said out loud</td><td>Sawtooth = flutter (“the only rhythm that will have this pattern”); irregularly irregular = fibrillation; no P + narrow + regular + over 150 = supraventricular tachycardia.</td></tr>
+          <tr><td class="h">Not now</td><td>No treatment (“solely about rhythm interpretation and diagnosis”). Fibrillation types: “don't get too much into the weeds”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-premature" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Premature Beats</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Premature atrial complex</td><td>EARLY, from the atria outside the sinus node (increased automaticity); P wave of NEW SHAPE; narrow QRS.</td></tr>
+          <tr><td class="h">Premature junctional complex</td><td>EARLY, narrow; P wave NONE, INVERTED, or AFTER the QRS. Isolated ones: no clinical significance.</td></tr>
+          <tr><td class="h">Premature ventricular complex</td><td>EARLY, WIDE (typically over 0.12 s), NO P wave, T wave OPPOSITE the QRS.</td></tr>
+          <tr><td class="h">Groupings</td><td>Couplet = 2 · triplet = 3. Same shape = UNIFOCAL (one focus); different shapes = MULTIFOCAL.</td></tr>
+          <tr><td class="h">Patterns (all three types)</td><td>Every other beat = BIGEMINY · every 3rd = TRIGEMINY · every 4th = QUADRIGEMINY.</td></tr>
+          <tr><td class="h">★ R on T</td><td>A premature ventricular complex landing on the prior T wave (relative refractory period) can trigger ventricular tachycardia or fibrillation.</td></tr>
+          <tr><td class="h">Output</td><td>Frequent or grouped premature ventricular complexes can reduce cardiac output.</td></tr>
+          <tr><td class="h">Run of ventricular tachycardia</td><td>Slide 70 says 6 in a row; the usual definition is 3 or more consecutive ventricular beats. A brief (nonsustained) run needs evaluation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-escape" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Escape Beats & Rhythms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Escape = LATE</td><td>Arrives past the expected R wave, after a pause, because the pacemaker above failed or slowed.</td></tr>
+          <tr><td class="h">Junctional escape beat</td><td>Sinus node fails or slows; late narrow beat; the sinus node then resets.</td></tr>
+          <tr><td class="h">Junctional escape rhythm</td><td>Escape beats become the rhythm: the atrioventricular node takes over and suppresses the sinus node.</td></tr>
+          <tr><td class="h">Ventricular escape complex</td><td>Late and WIDE: BOTH nodes failed.</td></tr>
+          <tr><td class="h">Atrial escape</td><td>Named in the objective; no slide in the deck.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-junctional" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Junctional Rhythms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">P wave rule</td><td>Atria first → INVERTED P just before the QRS (short PR). Together → NO P. Ventricles first (trigger zone) → P AFTER the QRS.</td></tr>
+          <tr><td class="h">Junctional escape</td><td>40–60 per minute.</td></tr>
+          <tr><td class="h">Accelerated junctional</td><td>60–100 per minute.</td></tr>
+          <tr><td class="h">Junctional tachycardia</td><td>Over 100 per minute.</td></tr>
+          <tr><td class="h">All three</td><td>REGULAR (an irregular spot = a premature junctional complex); PR under 0.12 s if a P precedes; QRS usually narrow.</td></tr>
+          <tr><td class="h">Node zones</td><td>TRANSITION = arrhythmogenic, most premature junctional complexes · COMPACT = slows conduction, backup pacemaker · TRIGGER = fires down the His bundle.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-ivr" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Idioventricular Rhythms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Idioventricular rhythm</td><td>Purkinje network pacing. 20–40 per minute, REGULAR, WIDE (over 0.12 s), NO P waves.</td></tr>
+          <tr><td class="h">Accelerated idioventricular</td><td>Same, 40–100 per minute.</td></tr>
+          <tr><td class="h">Versus junctional</td><td>Junctional: 40–60, P absent or inverted, usually NARROW. Idioventricular: 20–40, no P, WIDE. Both regular.</td></tr>
+          <tr><td class="h">“Agonal rhythm”</td><td>Slide 75 equates it with idioventricular rhythm; agonal is the very slow (under about 20) dying end.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l12-svt" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Supraventricular Dysrhythmias</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Wandering atrial pacemaker</td><td>At least 3 P wave shapes, married; IRREGULAR; under 100; PR variable.</td></tr>
+          <tr><td class="h">Multifocal atrial tachycardia</td><td>The same, OVER 100 per minute (the deck's atrial tachycardia).</td></tr>
+          <tr><td class="h">★ Atrial flutter</td><td>Reentry circuit, usually RIGHT atrium (enlarged, scarred, ischemic tissue). SAWTOOTH = pathognomonic. Atrial rate about 300.</td></tr>
+          <tr><td class="h">Flutter ratio</td><td>Document flutter waves per QRS: 2:1, 3:1. Ratio changing = VARIABLE CONDUCTION (irregular). Count troughs to the next QRS; a notch on the QRS counts.</td></tr>
+          <tr><td class="h">★ Atrial fibrillation</td><td>Many atrial sites, sinus node suppressed, atrial KICK lost. No P waves, fibrillatory waves, IRREGULARLY IRREGULAR, atrial rate indeterminate.</td></tr>
+          <tr><td class="h">★ Supraventricular tachycardia</td><td>Atrioventricular nodal reentry: REGULAR, NARROW, 150–300, P NOT VISIBLE (or retrograde), started by a premature atrial complex.</td></tr>
+          <tr><td class="h">Typical vs atypical</td><td>Typical: DOWN SLOW, UP FAST; no P or pseudo S waves. Atypical: down fast, up slow; retrograde P clearly visible (RP interval).</td></tr>
+          <tr><td class="h">Rate ≠ rhythm</td><td>Upright sinus P before every QRS at 190 is still SINUS TACHYCARDIA. Unsure P or T? Call it a T wave.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l13-ventricular" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Ventricular Rhythms (Lecture 13)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Ventricular tachycardia</td><td>ANY tachycardia that originates in the ventricles. 100–300 per minute, REGULAR (monomorphic), no P waves (or DISSOCIATED ones), no PR, WIDE QRS. With OR without a pulse.</td></tr>
+          <tr><td class="h">Polymorphic / torsades de pointes</td><td>IRREGULAR ventricular tachycardia, 100–300, complexes TWIST around the baseline ("twisting of the points"). ★ Usually a consequence of a PROLONGED QT interval.</td></tr>
+          <tr><td class="h">Ventricular fibrillation</td><td>Chaotic firing of MULTIPLE ventricular foci; the muscle QUIVERS. 300–500, irregular, NO measurable P, QRS or T. No contraction = NO cardiac output, NO pulse. Fine (small waves) or coarse.</td></tr>
+          <tr><td class="h">Asystole</td><td>Lack of electrical activity, no pulse: FLAT LINE. Untreated ventricular fibrillation ends here.</td></tr>
+          <tr><td class="h">Pulseless electrical activity</td><td>ORGANIZED electrical activity, NO mechanical activity. ★ Can look like ANY organized rhythm, even normal sinus; the missing PULSE makes the diagnosis.</td></tr>
+          <tr><td class="h">Ventricular standstill</td><td>Atria contract, ventricles do not: upright P waves MARCH across with NO QRS. No pulse, no cardiac output. Can be paroxysmal.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l13-tell-apart" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Telling the Ventricular Rhythms Apart</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Monomorphic vs polymorphic</td><td>ONE shape, regular vs CHANGING shape, irregular. Rate and width are shared and cannot separate them.</td></tr>
+          <tr><td class="h">Tachycardia vs fibrillation</td><td>ORGANIZED identical complexes vs CHAOS with no measurable QRS. "You can see how organized V-tach truly is."</td></tr>
+          <tr><td class="h">Fine fibrillation vs asystole</td><td>Small continuous waves vs a FLAT line.</td></tr>
+          <tr><td class="h">Standstill vs asystole</td><td>Standstill keeps its P waves; asystole has none.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l13-paced" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Paced Rhythms</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Atrial pacing</td><td>Spike → NORMAL P-QRS-T. Depends on an INTACT conduction pathway, so the QRS is narrow.</td></tr>
+          <tr><td class="h">Ventricular pacing</td><td>★ Spike married to EVERY QRS + WIDE QRS + CONTRALATERAL T wave (opposite to the QRS) = ventricle captured. Paces below the atria.</td></tr>
+          <tr><td class="h">Both chambers</td><td>Rare: a spike before the P wave AND before each wide QRS.</td></tr>
+          <tr><td class="h">Wide rhythm?</td><td>Always look for pacer spikes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l13-blocks" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Atrioventricular Blocks</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What a block is</td><td>A DELAY in, or complete FAILURE of, conduction of an atrial impulse through the atrioventricular node.</td></tr>
+          <tr><td class="h">First-degree</td><td>★ Sinus rhythm with PR BEYOND 0.2 s; ALL P waves conducted; BENIGN delay in the atrioventricular node. "The only thing you need to know … is the PR interval duration."</td></tr>
+          <tr><td class="h">Second-degree type I (Wenckebach, Mobitz I)</td><td>PR LENGTHENS until a P wave is not conducted, then resets: grouped beats. Irregular. In the atrioventricular NODE: conduction slows beat by beat until one impulse fails.</td></tr>
+          <tr><td class="h">Second-degree type II (Mobitz II)</td><td>CONSTANT PR (normal or wide) with dropped QRS; ≥2 consecutive conducted beats before a drop; can drop >1 in a row. LESS common, MORE serious, ALWAYS conduction disease. BELOW the node (His-Purkinje). QRS usually wide.</td></tr>
+          <tr><td class="h">Third-degree (complete)</td><td>No P waves conducted: regular P-P UNRELATED to regular R-R, P waves march through the QRS-T. Atrial rate FASTER. Two pacemakers. QRS narrow or wide by escape origin.</td></tr>
+          <tr><td class="h">Third-degree causes</td><td>Age-related FIBROSIS and acute myocardial infarction, especially INFERIOR.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l13-block-logic" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Block Logic</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Cheat code (type I vs II)</td><td>Find the dropped beat. Compare PR BEFORE vs AFTER it: DIFFERENT = type I (after is shorter); EQUAL = type II.</td></tr>
+          <tr><td class="h">His two questions</td><td>More P waves than QRS? → a block. Then PR lengthening = type I, constant = type II, random = third-degree. (Long PR, nothing dropped = first-degree.)</td></tr>
+          <tr><td class="h">Escape in complete block</td><td>Atrioventricular junction → NARROW QRS. Purkinje / bundle-branch fibers → WIDE QRS.</td></tr>
+          <tr><td class="h">Ventricular tachycardia P waves</td><td>The ventricular impulse does not go back up to the atria, so any P waves are dissociated.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-axis" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Axis (Lecture 14)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Normal</td><td>-30 to +90 degrees: lead I UP, aVF UP.</td></tr>
+          <tr><td class="h">Left axis deviation</td><td>Beyond -30: lead I UP, aVF DOWN. Causes include left anterior fascicular block, past inferior infarction, ventricular pacing.</td></tr>
+          <tr><td class="h">Right axis deviation</td><td>Beyond +90: lead I DOWN, aVF UP. Causes include chronic obstructive pulmonary disease, pulmonary embolism, dextrocardia, left posterior fascicular block; NORMAL IN CHILDREN.</td></tr>
+          <tr><td class="h">Extreme (no man's land)</td><td>-90 to 180: lead I DOWN, aVF DOWN. Causes include ventricular arrhythmia, hyperkalemia, lead transposition. ★ Wide tachycardia + extreme axis → think VENTRICULAR TACHYCARDIA.</td></tr>
+          <tr><td class="h">Quick method</td><td>Lead I and aVF; is each QRS mostly positive or mostly negative?</td></tr>
+          <tr><td class="h">Slide errors</td><td>Slide 22's right-axis quadrant is drawn reversed (I down, aVF up is correct). Slide 21 lists left ventricular hypertrophy under right axis; it causes LEFT axis deviation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-bbb" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Bundle Branch Blocks</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Both</td><td>QRS 0.12 s or LONGER (3 small boxes). V1 decides the side.</td></tr>
+          <tr><td class="h">★ J point rule (V1)</td><td>Travel BACK from the J point: first deflection NEGATIVE = LEFT; POSITIVE = RIGHT. (Left blinker goes down.)</td></tr>
+          <tr><td class="h">Left bundle branch block</td><td>rS in V1; NOTCHED lateral QRS (I, aVL, V5, V6; double QRS best in V6); NO lateral Q waves.</td></tr>
+          <tr><td class="h">Right bundle branch block</td><td>rSR in V1; SLURRED S waves in I, aVL, V5, V6. Bunny ears unreliable: many V1 shapes, but always ends positive.</td></tr>
+          <tr><td class="h">Why wide</td><td>Blocked side waits for slow MYOCYTE-TO-MYOCYTE spread; ventricles depolarize in SEQUENCE (two-QRS phenomenon).</td></tr>
+          <tr><td class="h">Left block physiology</td><td>Right ventricle first; septal fascicle blocked → septal Q waves lost laterally.</td></tr>
+          <tr><td class="h">Incomplete block</td><td>Not in the deck or recording; not quizzed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-fascicular" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Fascicular Blocks</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Left bundle</td><td>Splits into ANTERIOR, POSTERIOR and SEPTAL fascicles.</td></tr>
+          <tr><td class="h">Left anterior (hemiblock)</td><td>LEFT axis, q in I and r in III (q1r3), II and III negative. ★ MOST COMMON intraventricular conduction abnormality in ACUTE MYOCARDIAL INFARCTION.</td></tr>
+          <tr><td class="h">Left posterior (hemiblock)</td><td>RIGHT axis, r in I and q in III (r1q3), III positive; lead II not significant. FAR LESS common.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-atria" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Atrial Enlargement</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Enlargement means</td><td>STRETCHING that DILATES a chamber; most seen in the ATRIA (valve disease, pulmonary hypertension, chronic obstructive pulmonary disease, pulmonary embolism).</td></tr>
+          <tr><td class="h">Right (P PULMONALE)</td><td>Limb leads: upright P TALLER than 2.5 mm. V1: biphasic, LARGER POSITIVE first part.</td></tr>
+          <tr><td class="h">Left (P MITRALE)</td><td>Limb leads: HUMPED P ≥0.12 s, humps ≥0.04 s apart. V1: biphasic, LARGE NEGATIVE terminal part.</td></tr>
+          <tr><td class="h">One lead is enough</td><td>Either criterion in ONE lead confirms it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-ventricles" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Ventricular Hypertrophy</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Hypertrophy means</td><td>THICKENING of the muscle that makes the chamber SMALLER.</td></tr>
+          <tr><td class="h">Right ventricular hypertrophy</td><td>MORE R than S in V1 and V2. Supported by right atrial enlargement, right axis deviation, STRAIN. Excluded by RIGHT BUNDLE BRANCH BLOCK, posterior infarction, age under 7 or 8.</td></tr>
+          <tr><td class="h">Strain pattern</td><td>ST from the J point into an INVERTED, ASYMMETRICAL T wave, V1 and V2.</td></tr>
+          <tr><td class="h">Left ventricular hypertrophy</td><td>LEFT axis; DEEP S in V1 and V2, TALL R in I, aVL, V5, V6. Any ONE: S (V1/V2) + R (V5/V6) ≥35 mm; R in aVL >12 mm; any chest lead >45 mm.</td></tr>
+          <tr><td class="h">★ Infarction mimic</td><td>Left ventricular hypertrophy is the MOST COMMON: CONCAVE upward ST elevation V1–V3 + lateral T inversion. Others: pericarditis, early repolarization, Brugada, left bundle branch block and ventricular pacing, hypothermia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l14-systematic" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>The Systematic 12-Lead</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Order</td><td>General impression → calibration → AXIS → QRS (wide? blocks?) → hypertrophy/enlargement → ST and T changes.</td></tr>
+          <tr><td class="h">Standard calibration</td><td>ONE big box wide, TWO big boxes tall.</td></tr>
+          <tr><td class="h">Name the rhythm first</td><td>A bundle branch block is NOT a rhythm: "sinus tachycardia with a left bundle branch block."</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-frame" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Ischemia, Injury, Infarction: the Ladder</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Hyperacute T waves</td><td>Often the VERY FIRST sign of ischemia. Broad, tall, SYMMETRICAL (big enough to hold the QRS). Normal T = asymmetrical, slow upstroke, sharper fall. Easily missed: no ST change to call yet.</td></tr>
+          <tr><td class="h">ST depression</td><td>SUBENDOCARDIAL ischemia (inner layer). Often GLOBAL, in nearly every lead.</td></tr>
+          <tr><td class="h">ST elevation</td><td>TRANSMURAL ischemia = INJURY (full wall thickness).</td></tr>
+          <tr><td class="h">Pathologic Q waves</td><td>INFARCTION: death of tissue, from a previous OR an acute event. Longer than 0.04 s (one small box) AND deeper than 2 mm, or more than 25% of the R wave. No R wave = QS complex, still pathologic in an infarction.</td></tr>
+          <tr><td class="h">T-wave inversion</td><td>No slide. In lecture: a sign of ischemia, LATER than hyperacute T waves.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-jpoint" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>J Point & Baseline</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">J point</td><td>Junction of the QRS and the ST segment. ST segment = J point to onset of the T wave. Healthy heart: both AT BASELINE.</td></tr>
+          <tr><td class="h">Ischemia moves it</td><td>Acute coronary syndrome can push the J point ABOVE (ST elevation) or BELOW (ST depression) the baseline.</td></tr>
+          <tr><td class="h">Baseline</td><td>Compare the J point with the TP SEGMENT. Fast rate, no TP segment: compare with the ONSET OF THE QRS.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-arteries" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Coronary Arteries</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Left coronary (left main)</td><td>Divides into the CIRCUMFLEX and the LEFT ANTERIOR DESCENDING.</td></tr>
+          <tr><td class="h">Right coronary</td><td>Right atrium, RIGHT VENTRICLE, BOTTOM (inferior) of the left ventricle, back of the septum. ★ Inferior wall = right coronary (about 80-85% of people, said in lecture).</td></tr>
+          <tr><td class="h">Left anterior descending</td><td>FRONT (and bottom) of the left ventricle, FRONT of the septum → septal, anterior, anteroseptal infarction.</td></tr>
+          <tr><td class="h">Circumflex</td><td>Left atrium, SIDE and BACK of the left ventricle → lateral, high lateral, POSTERIOR infarction.</td></tr>
+          <tr><td class="h">Coronary veins</td><td>Return used, oxygen-poor blood to the right atrium.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-leads" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Leads → Wall → Reciprocal</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Septal</td><td>V1, V2 · reciprocal NONE</td></tr>
+          <tr><td class="h">Anterior</td><td>V3, V4 · reciprocal NONE</td></tr>
+          <tr><td class="h">Anteroseptal</td><td>V1-V4 · reciprocal NONE (left anterior descending)</td></tr>
+          <tr><td class="h">Lateral</td><td>I, aVL, V5, V6 · reciprocal II, III, aVF</td></tr>
+          <tr><td class="h">Anterolateral</td><td>I, aVL, V3-V6 · reciprocal II, III, aVF</td></tr>
+          <tr><td class="h">Inferior</td><td>II, III, aVF · reciprocal I, aVL (right coronary)</td></tr>
+          <tr><td class="h">High lateral</td><td>I, aVL · reciprocal III, aVF (circumflex in lecture; a diagonal of the left anterior descending can also supply it)</td></tr>
+          <tr><td class="h">Posterior</td><td>NO facing lead · reciprocal V1-V4 (circumflex)</td></tr>
+          <tr><td class="h">aVR</td><td>The only lead with no wall assigned.</td></tr>
+          <tr><td class="h">★ Most common reciprocal pair</td><td>Lead III and lead aVL (in lecture).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-stemi" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>ST-Elevation Infarction & Reciprocal Changes</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Criterion</td><td>1 mm or more in 2 or more CONTIGUOUS leads, with or without reciprocal changes. (V2-V3 thresholds are higher, given in lecture: women 1.5 mm, men 40 and over 2 mm, men under 40 2.5 mm.)</td></tr>
+          <tr><td class="h">Reciprocal changes</td><td>Mirror image on the OPPOSITE leads. ST depression with ST elevation on the same tracing = ALWAYS reciprocal.</td></tr>
+          <tr><td class="h">★ Confirm, never rule out</td><td>Reciprocal changes CONFIRM ischemia when ST elevation is present; their ABSENCE does NOT exclude it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l15-extra-leads" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Posterior Leads & V4R</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Posterior trigger</td><td>ISOLATED ST depression in V1-V4 with NO elevation anywhere = reciprocal of a POSTERIOR infarction until proven otherwise. Obtain posterior leads.</td></tr>
+          <tr><td class="h">Posterior tracing</td><td>Move V4, V5, V6 to the BACK as V7, V8, V9 (the 15-lead). ST ELEVATION there confirms. 3-4% of infarctions; LEFT CIRCUMFLEX.</td></tr>
+          <tr><td class="h">★ Right ventricle</td><td>Inferior infarction (RIGHT CORONARY) + HYPOTENSION, CLEAR LUNGS, JUGULAR VEIN DISTENSION → suspect right ventricular involvement.</td></tr>
+          <tr><td class="h">V4R</td><td>V4 to the RIGHT 5th intercostal space, midclavicular line. ELEVATION in V4R confirms right ventricular involvement.</td></tr>
+          <tr><td class="h">Why it matters (lecture)</td><td>Right ventricular infarction makes output preload-dependent; nitroglycerin can cause collapse. More elevation in III than II raises suspicion before V4R.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-mimics" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Pericarditis vs Early Repolarization vs Infarction</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Infarction</td><td>LOCALIZED to contiguous leads, convex, reciprocal depression, Q waves.</td></tr>
+          <tr><td class="h">Pericarditis</td><td>Inflamed space between visceral and parietal pericardium. PR DEPRESSION, PR ELEVATION in aVR, GLOBAL CONCAVE ST elevation, NO reciprocal depression except aVR and V1.</td></tr>
+          <tr><td class="h">Not pericarditis if</td><td>ST depression in ANY lead other than aVR and V1, or ANY Q wave → consider an acute infarction.</td></tr>
+          <tr><td class="h">Benign early repolarization</td><td>Normal variant ST elevation. Mostly YOUNG MEN. NO clinical significance. Global concave elevation, J-point notch (J wave, fishhook), large T waves, no reciprocal depression, no PR depression.</td></tr>
+          <tr><td class="h">Lead V6 ratio</td><td>ST height ÷ T amplitude in V6: OVER 25% = pericarditis; UNDER 25% = early repolarization (more T wave than ST).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-brugada" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Brugada Syndrome</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">What</td><td>Inherited arrhythmogenic disease of the SODIUM channels of the RIGHT VENTRICULAR OUTFLOW TRACT. Young men of SOUTHEAST ASIAN descent.</td></tr>
+          <tr><td class="h">Type 1</td><td>Convex, COVED ST elevation.</td></tr>
+          <tr><td class="h">Type 2</td><td>SADDLEBACK ST elevation.</td></tr>
+          <tr><td class="h">★ Leads</td><td>Both types isolated to V1-V3 ("for a test question").</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-lbbb" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Bundle Branch Block, Pacing & Sgarbossa</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Problem</td><td>Left bundle branch block and ventricular pacing: WIDE QRS, GLOBAL ST elevation and T-wave changes → an infarction is hard to locate.</td></tr>
+          <tr><td class="h">Sgarbossa (any one)</td><td>CONCORDANT elevation 1 mm or more (positive QRS) · CONCORDANT depression 1 mm or more in V1-V3 · DISCORDANT elevation 5 mm or more (negative QRS).</td></tr>
+          <tr><td class="h">Paced rhythm</td><td>Pacing SPIKE (artifact) before each WIDE QRS, contralateral (discordant) T waves, global ST elevation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-wpw" style="--acc:#b23a48;--acc-bg:#f4e3e5;--acc-zebra:#faf1f2;--acc-ink:#8b2d38">
+    <div class="shead"><span class="dot" style="background:#b23a48"></span><h2>Preexcitation & Reentry</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Preexcitation</td><td>Ventricles activated EARLY through an accessory pathway that BYPASSES the atrioventricular node. Short PR + delta wave. Most common: WOLFF-PARKINSON-WHITE.</td></tr>
+          <tr><td class="h">Wolff-Parkinson-White</td><td>Pathway = bundle of KENT. Triad: SHORT PR, WIDE QRS, DELTA WAVE (slurred QRS upstroke).</td></tr>
+          <tr><td class="h">Type A / Type B</td><td>A = LEFT-sided Kent, QRS mostly POSITIVE in V1. B = RIGHT-sided, mostly NEGATIVE in V1.</td></tr>
+          <tr><td class="h">Orthodromic</td><td>Down the NORMAL pathway, up the accessory → regular NARROW tachycardia.</td></tr>
+          <tr><td class="h">Antidromic</td><td>Down the ACCESSORY pathway, up the normal → regular, monomorphic, WIDE tachycardia.</td></tr>
+          <tr><td class="h">Can't tell</td><td>May be impossible to tell from supraventricular or ventricular tachycardia (treat a wide one as ventricular tachycardia). Unknown pathway: once cardioversion restores sinus rhythm, look for delta waves.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-lytes" style="--acc:#8a6420;--acc-bg:#efe9e0;--acc-zebra:#f7f4ef;--acc-ink:#6c4e19">
+    <div class="shead"><span class="dot" style="background:#8a6420"></span><h2>Potassium & Calcium</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Hyperkalemia</td><td>PEAKED symmetric T (early) → FLAT P → WIDE QRS → SINE WAVE. Can also cause bradycardias, tachycardias, ST elevation, blocks.</td></tr>
+          <tr><td class="h">Hypokalemia</td><td>Below 3.5 mEq/L. Prolongs repolarization: T FLATTENING, PROMINENT U WAVES, T-U fusion, prominent P, ST depression (ST elevation in aVR).</td></tr>
+          <tr><td class="h">Hypocalcemia</td><td>Phase 2 PROLONGED: LONG ST, NORMAL T, prolonged QTc.</td></tr>
+          <tr><td class="h">Hypercalcemia</td><td>Phase 2 SHORTENED: SHORT ST, shortened QTc, T wave against the QRS.</td></tr>
+          <tr><td class="h">Sodium</td><td>No tracing or rhythm change (slide 46).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-misc" style="--acc:#7a2e3b;--acc-bg:#ece2e4;--acc-zebra:#f6f0f1;--acc-ink:#5f242e">
+    <div class="shead"><span class="dot" style="background:#7a2e3b"></span><h2>Hypothermia, Pulmonary Embolism, Thyroid</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Hypothermia</td><td>Near 35°C (95°F): SINUS BRADYCARDIA, then long intervals. Below 32°C (90°F): OSBORN waves (terminal QRS notch), often mistaken for an infarction.</td></tr>
+          <tr><td class="h">Pulmonary embolism</td><td>TACHYCARDIA (hypoxia → sympathetic), RIGHTWARD axis (right ventricular dilation), ST-T changes (localized ischemia), S1Q3T3 (deep S in I, Q in III, inverted T in III).</td></tr>
+          <tr><td class="h">Hyperthyroidism</td><td>SINUS TACHYCARDIA most common; atrial fibrillation second.</td></tr>
+          <tr><td class="h">Hypothyroidism</td><td>Sinus BRADYCARDIA, global LOW VOLTAGE, flat or inverted T, prolonged QTc, low P waves.</td></tr>
+          <tr><td class="h">Chronic obstructive pulmonary disease and long QT syndrome</td><td>Syllabus objectives with no slide; QT prolongation is listed under calcium, thyroid and drugs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l16-drugs" style="--acc:#33363d;--acc-bg:#e2e3e4;--acc-zebra:#f1f1f1;--acc-ink:#282a30">
+    <div class="shead"><span class="dot" style="background:#33363d"></span><h2>Drug Toxicities</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Digoxin</td><td>Buildup OR an overly sensitive heart. Inhibits the SODIUM-POTASSIUM PUMP. FREQUENT PREMATURE VENTRICULAR COMPLEXES most common (bigeminy). (Slide says intracellular potassium rises; truth: sodium and calcium rise inside, potassium stays outside.)</td></tr>
+          <tr><td class="h">Amiodarone</td><td>Blocks sodium, potassium and calcium channels + BETA BLOCKER. Slows conduction, SLOWS PHASE 3 → QT PROLONGATION, suppresses the sinoatrial node, slows the atrioventricular node.</td></tr>
+          <tr><td class="h">Tricyclic antidepressant</td><td>Fast SODIUM-channel blockade (widens the QRS, as on the slide's tracing) with delayed potassium outflow → QT PROLONGATION; ANTICHOLINERGIC → tachycardia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Principles of Diagnostic Medicine I Exam 3 Study Guide (Class of 2028). Covers Lectures 11–16 (lecture content). Emphasis rows quote the 5, 6 and 7 October 2026 recordings; ★ = emphasized in a recording.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

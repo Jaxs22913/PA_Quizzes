@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b23a48; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c79a3a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDM I Exam 3 Master Exam &mdash; Form A</title>
+<style>
+  :root{
+    --navy:#33363d; --indigo:#b23a48; --gold:#c79a3a; --ice:#f5eef0;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#33363d;--gold-l:#c79a3a;--indigo-l:#b23a48;--navy:#a7abb4;--indigo:#dd616b;--gold:#c79a3a;--ice:#35191b;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#dd616b;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#33363d;--indigo-t:#b23a48;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Principles of Diagnostic Medicine I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 3 &middot; Lectures 11&ndash;16 &middot; Form A</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all six lectures of the Exam 3 block, in exam proportions rather than at random: <b>each lecture is two scheduled hours, so each contributes ten questions to every form</b>. <b>More than half of every form shows you a rhythm strip or a 12-lead</b> and asks you to name the rhythm, read the finding or choose the next step, and the rest cover the rules behind those readings. Every form reaches every lecture's objectives as evenly as five forms allow. <b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions, all taken word for word from the topic quizzes. <b>These forms cover the six LECTURES.</b> The exam also covers Lab 3, which is not included here. <b>You are not expected to recall reference ranges</b> &mdash; where a value matters, its normal range is given in the question. Four options, A&ndash;D, and every wrong choice gets its own explanation. Every question cites its slide. <b>Tap any strip to enlarge it.</b></p>
+    <div class="chips"><span class="chip">Rhythm analysis &amp; sinus rhythms</span><span class="chip">Ectopy, escape &amp; supraventricular rhythms</span><span class="chip">Ventricular rhythms &amp; atrioventricular blocks</span><span class="chip">Axis, bundle branch blocks &amp; enlargement</span><span class="chip">Ischemia, injury &amp; infarction</span><span class="chip">Pericardial disease, electrolytes, drugs &amp; special patterns</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Ventricular fibrillation", "io": "Recognize ECG findings associated with ventricular dysrhythmias: ventricular tachycardia, ventricular fibrillation, Torsades de Pointes, asystole", "q": "A 61-year-old man is found unresponsive and pulseless. His monitor shows this. What is the rhythm?", "opts": [["Asystole", "Asystole is a lack of electrical activity, a flat line. This strip shows continuous small chaotic waves, which is fibrillation."], ["Pulseless electrical activity", "Pulseless electrical activity is an organized rhythm without a pulse. These waves are disorganized, with no QRS complexes."], ["Ventricular standstill", "Ventricular standstill shows upright P waves marching across with no QRS. This strip has no P waves, only chaotic ventricular activity."], ["Fine ventricular fibrillation", "Correct. Low-amplitude chaotic waves with no measurable P waves, QRS complexes or T waves are fine ventricular fibrillation, not a flat line."]], "c": 3, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 14", "img": "pdm-exam-3-quiz-images/l13-ventricular-fibrillation-a.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 14", "qid": "1iumhbf"}, {"topic": "Hypokalemia", "io": "Compare and contrast ECG manifestations of electrolyte abnormalities.", "q": "A 52-year-old man has the leads shown, with flattened T waves and the arrowed waves after them. Which electrolyte disturbance best explains this?", "opts": [["Hyperkalemia", "Hyperkalemia peaks the T wave; flattened T waves with prominent U waves are its opposite."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment and QTc so the T wave hugs the QRS; it does not bring out U waves."], ["Hypokalemia", "Correct. Hypokalemia (serum potassium below 3.5 mEq/L) prolongs repolarization: T-wave flattening, prominent U waves and ST depression are its classic signs."], ["Hypocalcemia", "Hypocalcemia lengthens the ST segment but leaves the T wave normally shaped, without prominent U waves."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 37; tracing from Slide 38", "img": "pdm-exam-3-quiz-images/16-leads-v4-v6-strip-a.jpg", "alt": "Leads V4, V5 and V6 on grid paper, with red arrows pointing to part of each beat", "slide": "Slide 38", "qid": "dpwmkb"}, {"topic": "Premature beat patterns", "io": "Compare and contrast ECG findings associated with atrial, junctional, and ventricular premature beats", "q": "A 49-year-old woman is told her premature beats come in a trigeminal pattern. Which premature beats can form such patterns?", "opts": [["All three types", "Correct. Premature atrial, junctional and ventricular complexes can all come in bigeminy, trigeminy and quadrigeminy."], ["Ventricular only", "Premature ventricular complexes do form these patterns, but so do atrial and junctional ones."], ["Atrial only", "Atrial bigeminy and trigeminy exist, but junctional and ventricular premature beats follow the same patterns."], ["Escape beats only", "Escape beats come late, after a pause; the patterns describe premature beats of any origin."]], "c": 0, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slide 73", "qid": "1apgpz3"}, {"topic": "Wandering atrial pacemaker", "io": "Recognize common supraventricular dysrhythmias: atrial tachycardia, supraventricular tachycardia (SVT), atrial flutter, atrial fibrillation", "q": "A 66-year-old woman's rate is 65 per minute (normal 60 to 100); her strip is shown. What is the rhythm?", "opts": [["Wandering atrial pacemaker", "Correct. P waves of at least three shapes, each married to its QRS, an irregular rhythm and a rate under 100 make a wandering atrial pacemaker."], ["Multifocal atrial tachycardia", "Multifocal atrial tachycardia needs a rate over 100 per minute; at 65 this is a wandering atrial pacemaker."], ["Premature atrial complexes", "Premature atrial complexes are occasional early beats in an otherwise sinus rhythm; here the P wave shape keeps changing."], ["Normal sinus rhythm", "Normal sinus rhythm is regular with one P wave shape; here it is irregular with several."]], "c": 0, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 11, 15, 16", "img": "pdm-exam-3-quiz-images/l12-s016-wandering-atrial-pacemaker-b.png", "alt": "Wide pink grid strip with deep narrow complexes at uneven spacing; the small waves in front of them change shape.", "slide": "Slide 16", "qid": "11awoep"}, {"topic": "Thyroid disorders", "io": "Topic — Thyroid disorders", "q": "A 67-year-old woman has hypothyroidism. Which tracing finding fits her condition?", "opts": [["Sinus tachycardia", "Sinus tachycardia is the commonest hyperthyroid finding, from adrenergic hyperactivity."], ["A shortened QTc", "Hypothyroidism prolongs the QTc; a short QTc is hypercalcemia."], ["Low-voltage QRS", "Correct. Hypothyroidism slows metabolism and contractility: sinus bradycardia with global low-voltage QRS complexes, flattened or inverted T waves, a prolonged QTc and low-amplitude P waves."], ["Peaked T waves", "Peaked T waves are hyperkalemia; hypothyroid T waves are flattened or inverted."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 44", "qid": "1sty1lo"}, {"topic": "Systematic 12-lead read", "io": "Determine the electrical axis of an electrocardiogram", "q": "A 36-year-old woman has this electrocardiogram. On a systematic read, how is her QRS assessed?", "opts": [["Right bundle branch block", "Right bundle branch block would widen the QRS to 0.12 seconds or longer with an rSR in V1. This QRS is narrow."], ["Within normal limits", "Correct. The QRS is narrow, with no bundle branch or fascicular block pattern: within normal limits, with a normal axis and no enlargement."], ["Left bundle branch block", "Left bundle branch block would widen the QRS and notch the lateral leads. This QRS is narrow."], ["Left anterior fascicular block", "Left anterior fascicular block needs left axis deviation. This axis is normal: lead I and aVF are positive."]], "c": 1, "cite": "14. EKG Axis, BBB.pptx, Slide 42", "img": "pdm-exam-3-quiz-images/l14-normal-12-lead.jpg", "alt": "Twelve-lead electrocardiogram", "slide": "Slide 41", "qid": "qsist9"}, {"topic": "Pericarditis versus early repolarization", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 26-year-old man's lead V6 shows much more T wave than ST elevation. Which diagnosis does this favor?", "opts": [["Acute pericarditis", "Pericarditis has more ST elevation relative to the T wave, an ST-to-T ratio above 25% in V6."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment until the T wave sits on the QRS; it is not judged by the V6 ratio."], ["Early repolarization", "Correct. In early repolarization there is more T wave than ST elevation in V6 (ratio under 25%); pericarditis has more ST elevation than T wave."], ["Type 2 Brugada", "Brugada changes are confined to V1 to V3 and are not judged by the V6 ratio."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 9", "qid": "rui1h0"}, {"topic": "Premature atrial complex", "io": "Recognize atrial, junctional, and ventricular premature beats", "q": "A 45-year-old woman notices skipped beats; her strip is shown. What are the early beats?", "opts": [["Premature ventricular complexes", "Premature ventricular complexes are wide, with no P wave and an opposite-direction T wave; these early beats are narrow with a P wave."], ["Premature atrial complexes", "Correct. The early beats are narrow and each has its own P wave, shaped differently from the sinus P waves: premature atrial complexes."], ["Premature junctional complexes", "A premature junctional complex has no P wave, an inverted one or one after the QRS; these early beats have an upright P of new shape."], ["Junctional escape beats", "Escape beats come late, after a pause; these beats come early, before the next expected beat."]], "c": 1, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 6, 7", "img": "pdm-exam-3-quiz-images/l12-s007-premature-atrial-complexes.jpg", "alt": "Lead II strip with narrow complexes; some beats arrive early, each with a small wave before it that differs in shape from the others.", "slide": "Slide 7", "qid": "p3pto"}, {"topic": "Paced rhythms", "io": "Recognize ECG findings associated with ventricular dysrhythmias: ventricular tachycardia, ventricular fibrillation, Torsades de Pointes, asystole", "q": "A 77-year-old woman with a ventricular pacemaker has a T wave after each paced beat. In which direction does that T wave point?", "opts": [["Opposite to the QRS complex", "Correct. A ventricular paced beat has a contralateral T wave, one going the opposite direction of the QRS complex."], ["The same direction as the QRS", "A T wave in the same direction as the QRS is the normal pattern of a conducted beat, not a paced ventricle."], ["Hidden inside the QRS", "The T wave of a paced beat is separate and visible after the wide QRS, pointing the opposite way."], ["Absent after every paced beat", "Paced ventricular beats repolarize, so a T wave follows each one. It points opposite to the QRS."]], "c": 0, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 18", "qid": "152xuvm"}, {"topic": "Bundle branch block criteria", "io": "Recognize ECG findings associated with bundle branch blocks: right bundle branch block, left bundle branch block", "q": "A 70-year-old woman has a bundle branch block. Which lead decides whether the block is right or left?", "opts": [["Lead II", "Lead II is the rhythm lead; the side of a bundle branch block is read in V1, by the first deflection before the J point."], ["aVR", "aVR does not decide the side of the block; V1 does, through the direction of the deflection just before the J point."], ["V4", "V4 does not decide the side; V1 decides it, and V6 is where the double QRS phenomenon is best seen."], ["V1", "Correct. Find the J point in V1 and travel backward: if the first deflection you reach is positive the block is right-sided, and if it is negative the block is left-sided."]], "c": 3, "cite": "14. EKG Axis, BBB.pptx, Slide 16", "qid": "1oej593"}, {"topic": "Regularity", "io": "Review determination of: heart rate, rhythm, PR interval, QRS duration, QT interval, QTc interval", "q": "A 69-year-old woman's strip is shown. How is its regularity best described?", "opts": [["Irregular", "Correct. The R to R intervals differ from beat to beat (the gaps between consecutive complexes are visibly unequal), so the rhythm is irregular."], ["Regular", "A regular rhythm has the same R to R interval every beat; here consecutive gaps clearly differ."], ["Regular with one pause", "One isolated gap in an otherwise even strip would suggest a dropped cycle; here the R to R intervals vary throughout."], ["Regular but slow", "Slow describes the rate, not regularity; the R to R intervals here are unequal, so it is irregular."]], "c": 0, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slides 54, 56", "img": "pdm-exam-3-quiz-images/l11-s056-irregular-strip.jpg", "alt": "Rhythm strip with narrow complexes whose spacing varies noticeably from one beat to the next.", "slide": "Slide 56", "qid": "1gnhy7c"}, {"topic": "Escape beats", "io": "Recognize atrial, junctional, and ventricular escape rhythms", "q": "A 77-year-old man's strip shows a narrow junctional beat. How does a junctional escape beat differ in timing from a premature junctional complex?", "opts": [["It comes early, before the next R", "Arriving early defines the premature junctional complex; the escape beat comes late."], ["It falls every other beat", "Every other beat describes bigeminy, a pattern of premature beats; an escape beat follows a pause."], ["It lands on the T wave", "A beat on the T wave is the R on T danger of a premature ventricular complex; escape beats come late."], ["It comes late, after a pause", "Correct. A junctional escape beat comes late, past where the next R wave was expected; a premature junctional complex comes early."]], "c": 3, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 50, 52", "qid": "2x7g2"}, {"topic": "Sinus arrhythmia", "io": "Recognize sinus rhythms: sinus bradycardia, sinus tachycardia, sinus arrhythmia", "q": "A healthy 9-year-old boy has this strip at a routine visit. What is the rhythm?", "opts": [["Normal sinus rhythm", "Normal sinus rhythm is regular; here the R to R intervals lengthen and shorten."], ["Sinus exit block", "Sinus exit block drops a whole cycle, leaving one gap that marches out; here intervals vary gradually."], ["Sinus arrhythmia", "Correct. Every complex has a normal P wave married to a narrow QRS with a normal PR, but the R to R intervals vary: sinus arrhythmia, a benign finding most common in children."], ["Sinus pause", "A sinus pause is a single sudden gap; here the spacing shifts gradually across the strip."]], "c": 2, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slides 81, 82, 84", "img": "pdm-exam-3-quiz-images/l11-s083-sinus-arrhythmia.png", "alt": "Rhythm strip with three-second tick marks and narrow complexes, each preceded by a small upright wave, with gaps that vary in length.", "slide": "Slide 83", "qid": "hnxzc1"}, {"topic": "Third-degree block", "io": "Discuss the related anatomy and physiology of AV nodal and infranodal conduction abnormalities", "q": "A 78-year-old woman's third-degree block has narrow QRS complexes on this strip. Where is her ventricular escape most likely coming from?", "opts": [["The atrioventricular junction", "Correct. In third-degree block the QRS is narrow or wide depending on the origin; a narrow escape comes from the atrioventricular junction, above the bundle branches."], ["The Purkinje and bundle-branch fibers", "An escape from the Purkinje or bundle-branch fibers spreads outside the normal pathway and is wide. These complexes are narrow."], ["The sinoatrial node", "The sinoatrial node drives only the atria in complete block. Its impulses never reach the ventricles."], ["Many ventricular foci", "Many foci firing at once is ventricular fibrillation. A complete block has one regular escape rhythm."]], "c": 0, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 48", "img": "pdm-exam-3-quiz-images/l13-third-degree-block-b.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 47", "qid": "qf6ga3"}, {"topic": "Right atrial enlargement", "io": "Recognize ECG findings associated with atrial enlargement: left atrial enlargement, right atrial enlargement", "q": "A 59-year-old woman with pulmonary hypertension has this lead II strip. Her P waves are taller than 2.5 millimeters (normal 2.5 or less). What do they indicate?", "opts": [["Left atrial enlargement", "Left atrial enlargement widens and notches the P wave rather than making it tall and peaked."], ["Right ventricular hypertrophy", "Right ventricular hypertrophy is a QRS finding in V1 and V2, not a P wave height in lead II."], ["Left ventricular hypertrophy", "Left ventricular hypertrophy raises QRS voltage; it does not make the P wave tall."], ["Right atrial enlargement", "Correct. An upright limb-lead P wave taller than 2.5 millimeters is P pulmonale, and one lead is enough to confirm right atrial enlargement."]], "c": 3, "cite": "14. EKG Axis, BBB.pptx, Slide 29", "img": "pdm-exam-3-quiz-images/l14-rae-lead-ii.jpg", "alt": "Single-lead tracing on electrocardiogram paper", "slide": "Slide 29", "qid": "erqq93"}, {"topic": "Sinus pause", "io": "Interpret electrocardiographic findings for sinus rhythms: sinus arrhythmia, sinus block, sick sinus syndrome", "q": "A 64-year-old man's strip is shown. What is the rhythm?", "opts": [["Sinus exit block", "In exit block the gap is a whole multiple of the P to P interval; this gap is about one and a half cycles, because the node reset."], ["Sinus pause", "Correct. The node stops firing and starts again, and the next beat does not fall on the marched-out schedule, because the cycle has reset: a sinus pause."], ["Sinus bradycardia", "Sinus bradycardia is evenly slow throughout; here a steady rhythm is broken by one long gap."], ["Sinus arrhythmia", "Sinus arrhythmia changes the spacing gradually with breathing; this is one sudden flat gap."]], "c": 1, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 91", "img": "pdm-exam-3-quiz-images/l11-s091-sinus-pause-strip.jpg", "alt": "Line drawing of a rhythm strip without grid: five narrow complexes with small upright waves before them; one longer flat stretch separates the second and third beats.", "slide": "Slide 91", "qid": "12gful1"}, {"topic": "Pericarditis", "io": "Recognize ECG findings associated with: Benign Early Repolarization (BER), acute pericarditis, long QT syndrome", "q": "A 29-year-old woman has the 12-lead shown, with global concave ST elevation. Which finding in lead aVR supports pericarditis?", "opts": [["PR-segment elevation", "Correct. Pericarditis inflames the atria too, so the PR segment is depressed in most leads and elevated in aVR, alongside global concave ST elevation."], ["ST-segment elevation", "aVR is one of the two leads where pericarditis may show ST depression; elevation in aVR is not its sign."], ["A pathologic Q wave", "Q waves anywhere on the tracing argue against pericarditis and mean an acute infarction must be considered."], ["A delta wave", "A delta wave is the slurred QRS upstroke of preexcitation; it has nothing to do with pericardial inflammation."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 6", "img": "pdm-exam-3-quiz-images/16-12-lead-case-m.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 6", "qid": "dodooj"}, {"topic": "Chamber enlargement", "io": "Discuss related anatomy and physiology of ventricular conduction abnormalities and chamber enlargement", "q": "A 66-year-old woman has ventricular hypertrophy. What does that term refer to?", "opts": [["Stretching that dilates a chamber", "Stretching and dilation is chamber enlargement, most often of the atria. Hypertrophy thickens the muscle."], ["Thickening that shrinks a chamber", "Correct. Ventricular hypertrophy is actual enlargement and thickening of the cardiac muscle, which in turn makes the ventricular chamber smaller."], ["A block in a bundle branch", "A bundle branch block is a conduction problem, not a change in the muscle's thickness."], ["Thinning that enlarges a chamber", "Hypertrophy thickens the wall rather than thinning it, and the chamber becomes smaller."]], "c": 1, "cite": "14. EKG Axis, BBB.pptx, Slide 32", "qid": "bw9vij"}, {"topic": "Junctional rhythm", "io": "Recognize ECG findings associated with dysrhythmias: junctional rhythm, accelerated junctional rhythm, idioventricular rhythm", "q": "A 66-year-old man's lead II strip is shown; his P waves are inverted. Why?", "opts": [["The sinus node fires early", "An early sinus beat keeps an upright P in lead II; inversion means the atria are activated from below."], ["The atria depolarize from below", "Correct. A junctional impulse travels up into the atria and depolarizes them from the bottom up, away from positive lead II, so the P waves are inverted."], ["The ventricles fire first", "Ventricles depolarizing first put the P wave after the QRS; inversion itself comes from bottom-up atrial activation."], ["Flutter waves replace them", "Flutter waves form a continuous sawtooth; these are single inverted P waves from a junctional impulse."]], "c": 1, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slide 47", "img": "pdm-exam-3-quiz-images/l12-s047-junctional-inverted-p-waves.jpg", "alt": "Lead II strip of regularly spaced narrow complexes, each preceded closely by a small downward deflection, one drawn in red.", "slide": "Slide 47", "qid": "mn29vo"}, {"topic": "Atrioventricular reentrant tachycardia", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 26-year-old man with an accessory pathway develops a sustained reentrant tachycardia. What typically starts it?", "opts": [["A premature beat near the pathway", "Correct. A premature atrial or ventricular complex occurring near the accessory pathway can initiate premature depolarization, and the pathway plus the normal pathway form a reentry circuit."], ["Sudden cooling below 32 degrees Celsius", "Cooling below 32 degrees Celsius produces Osborn waves; it is not the trigger of accessory pathway reentry."], ["A rise in serum calcium", "High calcium shortens the ST segment; it is not what starts accessory pathway reentry."], ["Inflammation of the pericardium", "Pericarditis produces global concave ST elevation, not reentrant tachycardia."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 30", "qid": "1jsz5ka"}, {"topic": "Hyperacute T waves", "io": "Recognize ECG findings associated with: myocardial ischemia, myocardial injury, myocardial infarction", "q": "A 48-year-old man has had 20 minutes of chest pressure. His precordial leads are shown, with no ST elevation. What are these T waves?", "opts": [["Normal T waves", "Normal T waves are asymmetrical, with a slow initial upstroke and a sharper terminal downstroke, and their amplitude is modest. These are tall and symmetrical."], ["Inverted T waves", "These T waves point upward. T-wave inversion is a later ischemic sign than hyperacute T waves."], ["Flattened T waves", "Flattened T waves (a hypokalemia and hypothyroidism finding) are low and shallow; these are tall and upright."], ["Hyperacute T waves", "Correct. Tall, increased in amplitude and symmetrical, with no ST elevation yet: hyperacute T waves, often the very first sign of cardiac ischemia."]], "c": 3, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 7", "img": "pdm-exam-3-quiz-images/15-precordial-leads-a.jpg", "alt": "Six precordial leads, V1 to V6, on grid paper", "slide": "Slide 7", "qid": "1hy0lcl"}, {"topic": "Hyperkalemia", "io": "Recognize ECG changes associated with: hyperkalemia, hypokalemia, hypercalcemia, hypocalcemia", "q": "A 68-year-old woman has hyperkalemia. Besides its classic signs, which other changes can it produce?", "opts": [["Delta waves and a short PR", "Delta waves with a short PR come from an accessory pathway, not from potassium."], ["Blocks and ST elevation", "Correct. Hyperkalemia can cause a host of changes, such as bradycardias, tachycardias, ST elevation, T-wave abnormalities and atrioventricular and bundle branch blocks."], ["Osborn waves only", "Osborn waves are the terminal notches of hypothermia and early repolarization."], ["No other changes at all", "Hyperkalemia is notable for producing many different changes beyond its classic signs."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 34", "qid": "2kycb9"}, {"topic": "Sick sinus syndrome", "io": "Compare and contrast sinus rhythms: sinus bradycardia, sinus tachycardia, sinus arrhythmia, sinus block, sick sinus syndrome", "q": "A 74-year-old man is evaluated for sick sinus syndrome. Which finding defines the condition?", "opts": [["A single long pause", "One isolated pause is a sinus pause; sick sinus syndrome is exit block, pause and arrest together."], ["All three on the same patient", "Correct. Sick sinus syndrome is defined by sinus exit block, sinus pause and sinus arrest occurring together in one patient, often on one strip."], ["A rate under 60 per minute", "A slow regular sinus rhythm is sinus bradycardia; sick sinus syndrome is the mixture of exit block, pause and arrest."], ["Variation with breathing", "Breathing-related variation is sinus arrhythmia, which is benign; sick sinus syndrome is the three failures together."]], "c": 1, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 101", "qid": "1q6xnnp"}, {"topic": "Lead placement", "io": "Review ECG lead placement", "q": "A 29-year-old woman's leads I, II and III form Einthoven's triangle. Why are they called bipolar leads?", "opts": [["Each needs two physical poles", "Correct. Leads I, II and III need physical positive and negative poles on the patient, so they are the bipolar leads."], ["They use a central terminal", "A theoretical central terminal as the negative pole is what makes the augmented and chest leads unipolar."], ["They view the heart horizontally", "The horizontal view comes from the precordial leads; the limb leads are bipolar because of their two physical poles."], ["The machine creates them", "The machine creates the augmented leads from one physical lead; the bipolar leads each use two physical electrodes."]], "c": 0, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 62", "qid": "ggfjxn"}, {"topic": "Comparing the blocks", "io": "Compare and contrast ECG findings associated with atrioventricular blocks: first-degree AV block, second-degree AV block, third-degree AV block", "q": "A 70-year-old man's PR intervals just before and just after a dropped beat are the same duration. Which block is this?", "opts": [["Second-degree type I", "Type I shows PR intervals of different duration around the dropped beat: longest before it, reset after it."], ["Third-degree block", "Third-degree block has no PR relationship at all; the P waves are unrelated to the QRS complexes."], ["First-degree block", "First-degree block conducts every P wave and never drops a beat, so there is no dropped beat to measure around."], ["Second-degree type II", "Correct. If the PR intervals before and after the dropped beat are equal in duration, it is always second-degree type II."]], "c": 3, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 50", "qid": "12twsj0"}, {"topic": "Action potential", "io": "Review cardiac conduction system anatomy and physiology", "q": "A 50-year-old woman's ventricular cell is in phase 3, rapid repolarization. Which ion movement returns it to its resting voltage?", "opts": [["Potassium entering the cell", "Moving positive potassium inward would make the inside more positive, not less; repolarization is potassium flowing out of the cell."], ["Calcium entering the cell", "Calcium channels close in phase 3; calcium entry is the phase 2 plateau that causes contraction."], ["Potassium leaving the cell", "Correct. Calcium channels close and potassium flows out of the cell, which makes the inside negative again; potassium efflux is what repolarizes the cell."], ["Sodium entering the cell", "Sodium influx is the phase 0 upstroke; in phase 3 the cell repolarizes as potassium leaves it."]], "c": 2, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slides 17, 22", "qid": "1tlgzis"}, {"topic": "Left atrial enlargement", "io": "Recognize ECG findings associated with atrial enlargement: left atrial enlargement, right atrial enlargement", "q": "A 70-year-old man has this lead II strip. Which chamber finding do its P waves show?", "opts": [["Left atrial enlargement", "Correct. The P waves are wide and humped with the humps well apart: P mitrale, left atrial enlargement."], ["Right atrial enlargement", "Right atrial enlargement gives tall, peaked P waves. These are wide and double-humped."], ["Right ventricular hypertrophy", "Right ventricular hypertrophy is read from the QRS in V1 and V2. The finding here is the P wave."], ["Left ventricular hypertrophy", "Left ventricular hypertrophy is a QRS voltage finding. The finding here is the P wave."]], "c": 0, "cite": "14. EKG Axis, BBB.pptx, Slide 31", "img": "pdm-exam-3-quiz-images/l14-lae-lead-ii.jpg", "alt": "Single-lead tracing on electrocardiogram paper", "slide": "Slide 31", "qid": "laz674"}, {"topic": "Premature ventricular complex", "io": "Recognize atrial, junctional, and ventricular premature beats", "q": "A 72-year-old man's strip is shown, with a short run of consecutive wide beats. What does the run represent?", "opts": [["A ventricular couplet", "A couplet is only two premature ventricular complexes in a row; this run is six wide beats long."], ["Ventricular bigeminy", "Bigeminy alternates single wide beats with normal ones; here the wide beats run back to back."], ["Ventricular tachycardia", "Correct. Three or more consecutive premature ventricular complexes at a fast rate are ventricular tachycardia; a brief run like this one is nonsustained and needs evaluation."], ["Idioventricular rhythm", "Idioventricular rhythm is a slow escape rhythm of 20 to 40 per minute; this is a fast run of ectopic beats."]], "c": 2, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 70, 71", "img": "pdm-exam-3-quiz-images/l12-s071-run-of-ventricular-tachycardia.jpg", "alt": "Strip with a few narrow beats, one broad beat, then a rapid run of six broad complexes before narrow beats return.", "slide": "Slide 71", "qid": "9iko5"}, {"topic": "Torsades de pointes", "io": "Recognize ECG findings associated with ventricular dysrhythmias: ventricular tachycardia, ventricular fibrillation, Torsades de Pointes, asystole", "q": "A 57-year-old man known to have a prolonged QT interval becomes unresponsive. His monitor shows this. What is the rhythm?", "opts": [["Monomorphic ventricular tachycardia", "The monomorphic form keeps one complex shape and a regular rhythm. Here the shape and amplitude keep changing."], ["Torsades de pointes", "Correct. Polymorphic ventricular tachycardia twisting around the baseline, in a patient with a prolonged QT interval, is torsades de pointes."], ["Fine ventricular fibrillation", "Fine ventricular fibrillation is low-amplitude chaotic squiggles with no measurable complexes. These complexes are large and wide."], ["Asystole", "Asystole is a flat line with no electrical activity. This strip shows continuous, rapid ventricular activity."]], "c": 1, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 11", "img": "pdm-exam-3-quiz-images/l13-torsades-b.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 11", "qid": "q86wjk"}, {"topic": "Conduction system", "io": "Review cardiac conduction system anatomy and physiology", "q": "A 52-year-old woman's sinoatrial impulse must reach her left atrium. Which structure is the main route?", "opts": [["Bundle of His", "The bundle of His connects the atrioventricular node to the bundle branches; atrium-to-atrium conduction runs through Bachmann's bundle."], ["Left bundle branch", "The left bundle branch enters the left ventricle, not the left atrium; Bachmann's bundle links the two atria."], ["Inferior posterior tract", "The inferior posterior tract is an internodal pathway toward the atrioventricular node; Bachmann's bundle reaches the left atrium."], ["Bachmann's bundle", "Correct. Bachmann's bundle extends from the right to the left atrium and is the main route of interatrial conduction."]], "c": 3, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 8", "qid": "hs5vso"}, {"topic": "Left bundle branch block and pacing", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 70-year-old man with chest pain has a left bundle branch block, shown here. Why is an ST-elevation infarction hard to locate on this tracing?", "opts": [["The block hides all ST segments", "The ST segments are still visible; the problem is that the block itself distorts them globally."], ["Wide QRS with global ST and T changes", "Correct. Left bundle branch blocks and ventricular paced rhythms cause wide QRS complexes with global ST elevation and T-wave changes, which make an ST-elevation infarction difficult to locate."], ["Bundle branch blocks prevent infarction", "A block does not protect the heart; it only makes an infarction harder to see."], ["The heart rate is always too fast", "The difficulty is the widened, distorted ventricular complex, not the rate."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 13; tracing from Slide 15", "img": "pdm-exam-3-quiz-images/16-12-lead-case-f.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 15", "qid": "ewblr5"}, {"topic": "PR interval", "io": "Review determination of: heart rate, rhythm, PR interval, QRS duration, QT interval, QTc interval", "q": "A 74-year-old man's lead II strip is shown, with the PR intervals bracketed. What is the PR interval doing?", "opts": [["Constant across the strip", "A constant PR would measure the same at every bracket; here each is longer than the last until a QRS drops."], ["Shortening before each beat", "The brackets get wider, not narrower, until a P wave is left with no QRS."], ["Varying at random", "The change is progressive, each PR longer than the last, ending in a dropped QRS, not random variation."], ["Lengthening until a beat drops", "Correct. Each PR interval is longer than the one before until a P wave stands alone without a QRS; the PR interval is not constant across the strip."]], "c": 3, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 59", "img": "pdm-exam-3-quiz-images/l11-s059-lengthening-pr-interval.jpg", "alt": "Lead II strip with brackets under the PR intervals of successive beats and one P wave labeled on its own.", "slide": "Slide 59", "qid": "1m6vt9o"}, {"topic": "Localization", "io": "Correlate ECG lead changes with anatomic regions of the heart.", "q": "A 63-year-old woman has an anteroseptal infarction. Which leads make up the anteroseptal territory?", "opts": [["V1, V2, V3 and V4", "Correct. The anteroseptal territory is V1 to V4: the septal leads V1 and V2 plus the anterior leads V3 and V4, with no reciprocal leads."], ["V3, V4, V5 and V6", "V5 and V6 are lateral leads; the anteroseptal territory is V1 to V4."], ["II, III and aVF", "II, III and aVF are the inferior leads, viewing the bottom of the left ventricle, not the septum."], ["I, aVL, V5 and V6", "I, aVL, V5 and V6 are the lateral leads, the circumflex territory, not the anteroseptal one."]], "c": 0, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 15", "qid": "1e1kg3m"}, {"topic": "Atrial flutter", "io": "Recognize common supraventricular dysrhythmias: atrial tachycardia, supraventricular tachycardia (SVT), atrial flutter, atrial fibrillation", "q": "A 68-year-old man's strip is shown. What is the rhythm?", "opts": [["Atrial fibrillation", "Atrial fibrillation has a chaotic, shapeless baseline and an irregularly irregular rhythm; this baseline is an organized sawtooth."], ["Multifocal atrial tachycardia", "Multifocal atrial tachycardia shows separate P waves of three shapes; here the baseline is a repeating sawtooth."], ["Atrial flutter", "Correct. The baseline between the narrow QRS complexes is a continuous sawtooth of flutter waves, a pattern pathognomonic of atrial flutter."], ["Wandering atrial pacemaker", "A wandering atrial pacemaker shows distinct P waves of several shapes under 100 per minute, not a sawtooth."]], "c": 2, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 24, 26, 27", "img": "pdm-exam-3-quiz-images/l12-s024-atrial-flutter-five-to-one.jpg", "alt": "Rhythm strip with three-second tick marks: narrow complexes separated by a continuous zigzag baseline of repeating pointed waves.", "slide": "Slide 24", "qid": "y3zx89"}, {"topic": "Junctional rhythm", "io": "Recognize ECG findings associated with dysrhythmias: junctional rhythm, accelerated junctional rhythm, idioventricular rhythm", "q": "A 51-year-old woman's rate is 120 per minute (normal 60 to 100); her lead II strip is shown. What is the rhythm?", "opts": [["Sinus tachycardia", "Sinus tachycardia shows upright P waves in lead II; inverted P waves with a short PR are junctional."], ["Junctional escape rhythm", "A junctional escape rhythm is 40 to 60 per minute; at 120 it is junctional tachycardia."], ["Atrial flutter", "Atrial flutter replaces P waves with a sawtooth baseline; here each QRS has a single inverted P."], ["Junctional tachycardia", "Correct. Inverted P waves just before narrow QRS complexes, a short PR and a regular rate of 120 make junctional tachycardia (over 100)."]], "c": 3, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 64, 67, 68", "img": "pdm-exam-3-quiz-images/l12-s067-junctional-tachycardia-b.jpg", "alt": "Lead II strip with closely spaced narrow complexes, each with a small downward deflection just before it.", "slide": "Slide 67", "qid": "1pgwifr"}, {"topic": "Ventricular tachycardia", "io": "Recognize ECG findings associated with ventricular dysrhythmias: ventricular tachycardia, ventricular fibrillation, Torsades de Pointes, asystole", "q": "A 70-year-old man's monitor shows regular, wide complexes with no P waves. Which rate range defines this rhythm?", "opts": [["300 to 500 per minute", "That is the rate of ventricular fibrillation, which is irregular and has no measurable QRS. Ventricular tachycardia runs at 100 to 300."], ["20 to 40 per minute", "A ventricular rate of 20 to 40 belongs to a slow escape rhythm, not a tachycardia. Ventricular tachycardia runs at 100 to 300 per minute."], ["100 to 300 per minute", "Correct. Ventricular tachycardia runs at 100 to 300 per minute, regular, with wide QRS complexes and no P waves."], ["60 to 100 per minute", "That is a normal rate. Ventricular tachycardia is, by name, a tachycardia, at 100 to 300 per minute."]], "c": 2, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 6", "qid": "9nyjny"}, {"topic": "Right ventricular hypertrophy", "io": "Recognize ECG findings associated with: left ventricular hypertrophy, right ventricular hypertrophy", "q": "A 23-year-old woman has this electrocardiogram. Which finding does it show?", "opts": [["Right ventricular hypertrophy", "Correct. Tall R waves exceeding the S waves in V1 and V2, with right axis deviation (lead I negative): right ventricular hypertrophy."], ["Left ventricular hypertrophy", "Left ventricular hypertrophy puts deep S waves in V1 and V2 and causes left axis deviation. Here V1 is dominantly positive."], ["Left bundle branch block", "Left bundle branch block makes V1 end negative with a wide QRS. V1 here is a tall positive complex."], ["Right atrial enlargement", "Right atrial enlargement is a P wave finding. The main change on this tracing is the tall R wave in V1."]], "c": 0, "cite": "14. EKG Axis, BBB.pptx, Slide 35", "img": "pdm-exam-3-quiz-images/l14-rvh-12-lead-b.jpg", "alt": "Twelve-lead electrocardiogram", "slide": "Slide 35", "qid": "16y0ci0"}, {"topic": "Pulmonary embolism", "io": "Recognize ECG findings associated with: COPD/COLD, pulmonary embolism, hypothermia", "q": "A 50-year-old woman has sudden severe shortness of breath with clear, equal lung sounds. Her 12-lead is shown. Which pattern on it is associated with pulmonary embolism?", "opts": [["Coved elevation in V1 to V3", "Coved elevation confined to V1 to V3 is type 1 Brugada, not pulmonary embolism."], ["A delta wave", "A delta wave marks preexcitation through an accessory pathway."], ["Peaked T waves", "Peaked, symmetric T waves are the early sign of hyperkalemia."], ["S1Q3T3", "Correct. A deep S wave in lead I, a Q wave in lead III and an inverted T wave in lead III, the S1Q3T3 pattern, is the classic pulmonary embolism finding, with sinus tachycardia."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 50", "img": "pdm-exam-3-quiz-images/16-12-lead-case-d.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 50", "qid": "yw974i"}, {"topic": "ST-elevation criteria", "io": "Recognize common ECG patterns associated with acute coronary syndromes.", "q": "A 61-year-old man with chest pain has ST elevation in II, III and aVF. Which criterion defines an ST-elevation myocardial infarction in these leads?", "opts": [["1 mm or more in two contiguous leads", "Correct. An ST-elevation infarction is considered when there is 1 mm or more of elevation in 2 or more contiguous leads, with or without reciprocal changes. (Leads V2 and V3 carry higher, sex- and age-specific thresholds.)"], ["1 mm in any single lead", "One lead is not enough; the elevation must appear in two or more contiguous leads looking at the same region."], ["2 mm in three unrelated leads", "Leads must be contiguous (same region). Elevation scattered across unrelated walls does not meet the criterion."], ["Any elevation with reciprocal changes", "Reciprocal changes confirm but are not required; the criterion is at least 1 mm in two or more contiguous leads."]], "c": 0, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 16", "qid": "ryshy8"}, {"topic": "Defining the axis", "io": "Define: normal axis, left axis deviation, right axis deviation", "q": "A 40-year-old man's electrocardiogram is reviewed for axis. Which range is the normal electrical axis?", "opts": [["0 to +180 degrees", "That range would take in most of right axis deviation. The normal axis runs from -30 to +90 degrees."], ["-30 to +90 degrees", "Correct. The normal electrical axis ranges between -30 and +90 degrees; both lead I and aVF are mostly positive."], ["+90 to +180 degrees", "That is right axis deviation, where lead I turns negative and aVF stays positive."], ["-30 to -90 degrees", "That is left axis deviation, where lead I is positive and aVF negative."]], "c": 1, "cite": "14. EKG Axis, BBB.pptx, Slide 20", "qid": "4osg9s"}, {"topic": "Bundle branch block criteria", "io": "Compare and contrast ECG findings associated with bundle branch blocks: incomplete and complete right bundle branch block, incomplete and complete left bundle branch block", "q": "A 77-year-old woman has a wide QRS with slurred S waves in leads I, aVL, V5 and V6. Which block is this?", "opts": [["Left bundle branch block", "Left bundle branch block notches the lateral QRS complexes and removes their Q waves; it does not give slurred S waves."], ["Left anterior fascicular block", "A fascicular block keeps the QRS narrow and is diagnosed by axis and limb-lead patterns."], ["Right bundle branch block", "Correct. Slurred S waves in the lateral leads are a right bundle branch block criterion, the double QRS phenomenon best seen in V6."], ["Left ventricular hypertrophy", "Left ventricular hypertrophy gives tall lateral R waves with a normal duration, not slurred S waves."]], "c": 2, "cite": "14. EKG Axis, BBB.pptx, Slide 16", "qid": "pgd7mb"}, {"topic": "Wolff-Parkinson-White", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 19-year-old man has occasional palpitations. His 12-lead in sinus rhythm is shown. Which pattern does it show?", "opts": [["Left bundle branch block", "A bundle branch block widens the QRS but leaves the PR interval normal and has no delta wave."], ["Ventricular paced rhythm", "A paced rhythm has a pacing spike before each wide QRS, not a short PR interval with a slurred delta wave."], ["Brugada syndrome", "Brugada changes are coved or saddleback ST elevation in V1 to V3, not a short PR with a delta wave."], ["Wolff-Parkinson-White", "Correct. A short PR interval, a slurred upstroke of the QRS (delta wave) and a widened QRS, the diagnostic triad, is Wolff-Parkinson-White preexcitation."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 28", "img": "pdm-exam-3-quiz-images/16-12-lead-case-o.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 28", "qid": "1der531"}, {"topic": "First-degree block", "io": "Recognize ECG findings associated with atrioventricular blocks: first-degree AV block, second-degree AV block Type I, second-degree AV block Type II, third-degree AV block", "q": "A 34-year-old woman feels well. Her PR interval is longer than 0.20 seconds (normal 0.12 to 0.20) on this strip. What is the rhythm?", "opts": [["First-degree atrioventricular block", "Correct. A sinus rhythm with every P wave conducted and a PR interval beyond 0.2 seconds is first-degree atrioventricular block."], ["Second-degree type I (Wenckebach)", "Type I shows a PR that lengthens until a P wave is not conducted. On this strip every P wave is followed by a QRS."], ["Second-degree type II (Mobitz II)", "Type II drops QRS complexes after some P waves. Nothing is dropped on this strip."], ["Third-degree (complete) block", "Third-degree block shows P waves unrelated to the QRS. Here each P wave is married to the QRS that follows it."]], "c": 0, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 26", "img": "pdm-exam-3-quiz-images/l13-first-degree-block-a.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 25", "qid": "18nlcwq"}, {"topic": "ST depression", "io": "Differentiate ECG findings associated with ischemia, injury, and infarction: ST-segment elevation, ST-segment depression, T-wave inversion, pathologic Q waves", "q": "A 66-year-old woman has chest pressure at rest. Her 12-lead is shown. Which finding is present across most leads?", "opts": [["ST-segment depression", "Correct. The J point and ST segment sit below the baseline in nearly every lead. Global ST-segment depression is the picture of subendocardial ischemia."], ["ST-segment elevation", "ST elevation would put the J point above the baseline in contiguous leads; here it sits below it almost everywhere, which is depression."], ["Pathologic Q waves", "Pathologic Q waves are deep, wide initial negative deflections that mark dead tissue. These complexes begin with normal upstrokes; the change is in the ST segment."], ["Hyperacute T waves", "Hyperacute T waves are broad, tall and symmetrical. The abnormality on this tracing is the ST segment dropping below baseline, not an enlarged T wave."]], "c": 0, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 9", "img": "pdm-exam-3-quiz-images/15-12-lead-case-a.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 9", "qid": "7di61u"}, {"topic": "Heart rate", "io": "Review determination of: heart rate, rhythm, PR interval, QRS duration, QT interval, QTc interval", "q": "A 33-year-old man's monitor prints this six-second strip. What is his ventricular rate?", "opts": [["130 per minute", "Correct. Thirteen QRS complexes fall in the six seconds, and thirteen times ten is 130 per minute."], ["110 per minute", "One hundred ten would be eleven complexes in six seconds; there are thirteen here, giving 130."], ["150 per minute", "One hundred fifty would need fifteen complexes; thirteen times ten is 130 per minute."], ["65 per minute", "Sixty-five halves the count; the six-second method multiplies thirteen complexes by ten, giving 130."]], "c": 0, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slides 44, 47", "img": "pdm-exam-3-quiz-images/l11-s047-six-second-strip-thirteen-complexes.jpg", "alt": "Six-second rhythm strip with tick marks at the start, middle and end, and regularly spaced narrow complexes.", "slide": "Slide 47", "qid": "10auz95"}, {"topic": "Reciprocal changes", "io": "Recognize common ECG patterns associated with acute coronary syndromes.", "q": "A 58-year-old man's 12-lead is shown, with ST elevation in II, III and aVF. How should the ST depression in leads I and aVL be read?", "opts": [["As a second infarction", "Reciprocal depression is the mirror image of one event seen from the opposite side, not evidence of a separate infarction."], ["As lateral subendocardial ischemia", "With ST elevation on the same tracing, depression is read as reciprocal first. Global depression without elevation is what points to subendocardial ischemia."], ["As a lead placement error", "Mirror-image depression in the leads opposite an infarct is expected physiology, and it is a confirmatory sign of ischemia, not a technical fault."], ["As a reciprocal change", "Correct. ST depression should always be considered a reciprocal change when ST elevation exists in the same tracing. I and aVL mirror the inferior leads, and the depression confirms the event."]], "c": 3, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 14; tracing from Slide 16", "img": "pdm-exam-3-quiz-images/15-12-lead-case-d.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 16", "qid": "172b53i"}, {"topic": "Second-degree type I", "io": "Compare and contrast ECG findings associated with atrioventricular blocks: first-degree AV block, second-degree AV block, third-degree AV block", "q": "A 60-year-old woman's strip shows a dropped beat. How does the PR interval after the dropped beat compare with the one before it?", "opts": [["It is the same", "Equal PR intervals before and after the dropped beat would make this second-degree type II. Here the PR resets shorter."], ["It is longer", "The PR is longest just before the dropped beat. After the drop it resets to its shortest."], ["It is shorter", "Correct. After the dropped beat the cycle begins over, so the next PR is shorter than the last, longest PR before the drop: second-degree type I."], ["It cannot be measured", "The P wave after the dropped beat is conducted, so its PR can be measured; it is shorter than the one before the drop."]], "c": 2, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 50", "img": "pdm-exam-3-quiz-images/l13-wenckebach-b.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 33", "qid": "15nrayo"}, {"topic": "Tricyclic antidepressant toxicity", "io": "Recognize ECG changes associated with: digoxin toxicity, amiodarone toxicity, tricyclic antidepressant toxicity", "q": "A 23-year-old woman took an overdose of amitriptyline, a tricyclic antidepressant. Her 12-lead is shown. Which drug effect causes her fast heart rate?", "opts": [["Beta-receptor blockade", "Beta blockade slows the heart; it is one of amiodarone's actions, not the cause of tricyclic tachycardia."], ["Anticholinergic activity", "Correct. Tricyclic antidepressants' anticholinergic activity causes the tachycardia; their fast sodium-channel blockade widens the QRS (the wide complexes on this tracing), and the QT is prolonged."], ["Sodium-potassium pump inhibition", "Pump inhibition is digoxin's mechanism, with frequent premature ventricular complexes as its commonest result."], ["Raised serum calcium", "High calcium shortens the ST segment and QTc; it is not what speeds the heart in a tricyclic overdose."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 49", "img": "pdm-exam-3-quiz-images/16-12-lead-case-k.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 49", "qid": "9q6iqm"}, {"topic": "Localization", "io": "Correlate ECG lead changes with anatomic regions of the heart.", "q": "A 66-year-old woman has ST elevation in I, aVL, V5 and V6. Which region does this localize to?", "opts": [["Inferior wall", "The inferior wall is viewed by II, III and aVF, which are the reciprocal leads of a lateral infarction."], ["Lateral wall", "Correct. I, aVL, V5 and V6 are the lateral leads, and the lateral wall's reciprocal leads are II, III and aVF."], ["Anteroseptal wall", "The anteroseptal wall is viewed by V1 to V4; elevation in I, aVL, V5 and V6 is lateral."], ["Posterior wall", "The posterior wall has no facing lead on the standard 12-lead; its reciprocal leads are V1 to V4."]], "c": 1, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 15", "qid": "glzx1q"}, {"topic": "Artery and territory", "io": "Review coronary artery anatomy and myocardial blood supply.", "q": "A 61-year-old man's 12-lead is shown, with ST elevation in I and aVL and reciprocal depression in III and aVF. Occlusion of which artery best explains it?", "opts": [["Right coronary artery", "The right coronary artery supplies the right heart and the bottom of the left ventricle; its occlusion elevates II, III and aVF, which are depressed here."], ["A coronary vein", "The coronary veins return used blood to the right atrium; an infarction pattern comes from an arterial occlusion."], ["Left circumflex artery", "Correct. The circumflex wraps around to supply the left atrium and the side and back of the left ventricle, so of these arteries it best explains a lateral infarction (a diagonal branch of the left anterior descending can also cause one)."], ["Left main coronary artery", "A left main occlusion starves both of its branches, so the anterior and septal leads would be elevated too, not the high lateral leads alone."]], "c": 2, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 4; tracing from Slide 17", "img": "pdm-exam-3-quiz-images/15-12-lead-case-e.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 17", "qid": "1aeioef"}, {"topic": "J point and baseline", "io": "Differentiate ECG findings associated with ischemia, injury, and infarction: ST-segment elevation, ST-segment depression, T-wave inversion, pathologic Q waves", "q": "A 44-year-old woman asks what the letter J in J point stands for. What does it stand for?", "opts": [["Joint", "It is not a joint; the J point is the junction where the QRS complex ends and the ST segment begins."], ["Jump", "Nothing jumps there; J stands for junction, the meeting point of the QRS and the ST segment."], ["Jugular", "Jugular refers to the neck veins (jugular vein distension is a right ventricular sign); J point means junction point."], ["Junction", "Correct. The junction point, or J point, is the junction between the QRS complex and the ST segment."]], "c": 3, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 5", "qid": "15ul986"}, {"topic": "Pulseless electrical activity", "io": "Correlate ECG findings with clinical implications of ventricular arrhythmias and AV blocks", "q": "A 58-year-old woman is unresponsive, and her monitor shows this organized rhythm. Which finding would make it pulseless electrical activity?", "opts": [["Absent P waves", "This rhythm has a P wave before each QRS, and pulseless electrical activity can look like any organized rhythm. The pulse decides it."], ["An irregular rhythm", "Regularity does not define it; pulseless electrical activity can be any organized rhythm. Only the missing pulse does."], ["No palpable pulse", "Correct. Pulseless electrical activity can look like any organized rhythm, even normal sinus; it is the absence of a pulse that makes the diagnosis."], ["Inverted T waves", "T wave direction does not make the diagnosis. Organized electrical activity becomes pulseless electrical activity when there is no pulse."]], "c": 2, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 16", "img": "pdm-exam-3-quiz-images/l13-pea-organized-rhythm.jpg", "alt": "Single-lead rhythm strip on electrocardiogram paper", "slide": "Slide 16", "qid": "1u5761"}, {"topic": "Atrial fibrillation", "io": "Compare and contrast ECG findings associated with supraventricular dysrhythmias: atrial flutter, atrial fibrillation, SVT, atrial tachycardia", "q": "A 70-year-old woman's strip shows no P waves in atrial fibrillation. What replaces them?", "opts": [["Flutter waves", "Flutter waves form the organized sawtooth of atrial flutter; fibrillation shows disorganized fibrillatory waves."], ["Inverted P waves", "Inverted P waves come from a junctional impulse; fibrillation has fibrillatory waves instead of P waves."], ["Retrograde P waves", "Retrograde P waves follow the QRS in junctional beats and reentry tachycardia; fibrillation shows fibrillatory waves."], ["Fibrillatory waves", "Correct. Atrial fibrillation has no P waves; fibrillatory (f) waves are present instead, and the atrial rate is indeterminate."]], "c": 3, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slides 33, 35, 37", "qid": "1otk9jp"}, {"topic": "Transmural ischemia", "io": "Compare and contrast ECG findings associated with ischemia, injury, and infarction.", "q": "A 64-year-old woman's chart says she has transmural ischemia. Which other term refers to the same thing?", "opts": [["Subendocardial ischemia", "Subendocardial ischemia is confined to the inner layer and shows as ST depression; transmural ischemia spans the full wall."], ["Myocardial injury", "Correct. Transmural ischemia is also referred to as injury, and it is represented on the tracing by ST-segment elevation."], ["Pathologic Q wave formation", "Pathologic Q waves mark infarction, the death of tissue; transmural ischemia is injury, which shows as ST elevation."], ["Early repolarization", "Early repolarization is a benign normal variant of ST elevation, not a synonym for transmural ischemia."]], "c": 1, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 10", "qid": "ids5gd"}, {"topic": "Reentry tachycardia", "io": "Discuss the related anatomy and physiology of supraventricular arrhythmias", "q": "A 26-year-old woman's strip is shown; her rate jumps abruptly from about 100 to about 200 per minute (normal 60 to 100). What kind of beat usually sets off this reentry tachycardia?", "opts": [["A ventricular escape beat", "An escape beat arrives late after nodal failure; the reentry tachycardia is usually started by an early atrial ectopic beat."], ["A dropped sinus cycle", "A dropped cycle is sinus exit block; a narrow-complex reentry tachycardia usually starts with a premature atrial complex."], ["A premature atrial complex", "Correct. Atrioventricular nodal reentrant tachycardia is usually set off by an ectopic beat, typically a premature atrial complex near the fast or slow tract."], ["A junctional escape beat", "Junctional escape beats come late after the sinus node fails; the usual trigger is an early atrial beat."]], "c": 2, "cite": "12. Ectopy, Escape Rhythms and Supraventricular Dysrhythmias.pptx, Slide 38", "img": "pdm-exam-3-quiz-images/l12-s038-reentry-tachycardia-onset.png", "alt": "Pink grid strip labeled 100 bpm on the left and 200 bpm on the right; regular narrow complexes abruptly become twice as frequent.", "slide": "Slide 38", "qid": "croqrl"}, {"topic": "Infarction mimics", "io": "Compare and contrast ECG findings associated with ventricular hypertrophy", "q": "A 64-year-old woman has ST elevation that may not be an infarction. Which condition is the most common mimic of ST-elevation infarction?", "opts": [["Right ventricular hypertrophy", "Right ventricular hypertrophy is not on the list of infarction mimics; left ventricular hypertrophy is the most common mimic."], ["Right atrial enlargement", "Right atrial enlargement is a P wave finding and does not mimic ST elevation."], ["Left anterior fascicular block", "A fascicular block shifts the axis; it is not on the list of infarction mimics."], ["Left ventricular hypertrophy", "Correct. Left ventricular hypertrophy is known as the most common mimic of ST-elevation myocardial infarction: it alters repolarization, changing the ST segment and T wave."]], "c": 3, "cite": "14. EKG Axis, BBB.pptx, Slide 58", "qid": "18t9zsg"}, {"topic": "Ventricular standstill", "io": "Compare and contrast ECG findings associated with ventricular dysrhythmias: ventricular tachycardia, ventricular fibrillation, Torsades de Pointes", "q": "A 74-year-old woman is in cardiac arrest. Which finding defines ventricular standstill?", "opts": [["QRS complexes with no P waves", "QRS complexes without P waves describe a ventricular rhythm such as ventricular tachycardia. Standstill has P waves and no QRS."], ["P waves with no QRS complexes", "Correct. In ventricular standstill there are atrial contractions but no ventricular contractions: obvious upright P waves march out with no QRS."], ["A flat line with no waves", "A flat line is asystole. Ventricular standstill keeps its P waves."], ["Chaotic waves with no QRS", "Chaotic waves without measurable complexes are ventricular fibrillation. Standstill has orderly P waves."]], "c": 1, "cite": "13. Ventricular Dysrhythmias and Atrioventricular Blocks.pptx, Slide 17", "qid": "1reetnk"}, {"topic": "Determining the axis", "io": "Determine the electrical axis of an electrocardiogram", "q": "A 63-year-old man has this electrocardiogram. What is his electrical axis?", "opts": [["Normal axis", "A normal axis has a mostly positive QRS in both lead I and aVF; the normal range is -30 to +90 degrees. That is not the pattern in leads I and aVF here."], ["Right axis deviation", "Right axis deviation has lead I mostly negative and aVF mostly positive, an axis beyond +90 degrees. That is not the pattern in leads I and aVF here."], ["Left axis deviation", "Correct. Lead I is mostly positive and aVF is mostly negative: left axis deviation."], ["Extreme axis deviation", "Extreme axis deviation, no man's land, has both lead I and aVF mostly negative. That is not the pattern in leads I and aVF here."]], "c": 2, "cite": "14. EKG Axis, BBB.pptx, Slide 24", "img": "pdm-exam-3-quiz-images/l14-axis-left.jpg", "alt": "Twelve-lead electrocardiogram", "slide": "Slide 24", "qid": "1okoofo"}, {"topic": "Sinus exit block", "io": "Discuss the related anatomy and physiology of sinus node dysfunction", "q": "A 75-year-old woman's strip shows sinus exit block. What is her sinoatrial node doing during the missing cycle?", "opts": [["Not firing at all", "A node that stops firing and restarts is a sinus pause or arrest; in exit block it fires but the impulse is blocked."], ["Firing, but blocked", "Correct. In sinus exit block the sinus node fires as normal, but the impulse is blocked from leaving it, so a cardiac cycle is absent."], ["Resetting its own timing", "Resetting is what makes a sinus pause; in exit block the node keeps its timing, so beats march out."], ["Firing faster than normal", "Faster firing would raise the rate; in exit block the node fires normally but the impulse does not exit."]], "c": 1, "cite": "11. Rhythm Analysis and Sinus Rhythm.pptx, Slide 85", "img": "pdm-exam-3-quiz-images/l11-s089-sinus-exit-block-timed.jpg", "alt": "Monitor strip with narrow complexes and the gaps labeled underneath in seconds: 1.1, 1.0, 2.2 and 1.0.", "slide": "Slide 89", "qid": "1d5eskk"}, {"topic": "Coronary anatomy", "io": "Review coronary artery anatomy and myocardial blood supply.", "q": "A 51-year-old woman is told her blocked artery supplies the front of the left ventricle and the front of the septum. Which artery is it?", "opts": [["Right coronary artery", "The right coronary artery supplies the back of the septum, the right heart and the bottom of the left ventricle, not the front of the septum."], ["Left circumflex artery", "The circumflex runs around to the side and back of the left ventricle; it does not supply the front of the septum."], ["Left anterior descending", "Correct. The left anterior descending artery supplies the front (and bottom) of the left ventricle and the front of the septum, which is why it carries septal and anterior infarctions."], ["Coronary veins", "The coronary veins return oxygen-poor blood to the right atrium. Arteries, here the left anterior descending, supply the muscle."]], "c": 2, "cite": "15. EKG Ischemia and Infarction.pptx, Slide 4", "qid": "egubp8"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>

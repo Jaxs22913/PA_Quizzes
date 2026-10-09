@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b23a48; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c79a3a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pericarditis, Electrolytes, Drugs &amp; Special Patterns Quiz 1 &mdash; Principles of Diagnostic Medicine I</title>
+<style>
+  :root{
+    --navy:#33363d; --indigo:#b23a48; --gold:#c79a3a; --ice:#f5eef0;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#33363d;--gold-l:#c79a3a;--indigo-l:#b23a48;--navy:#a7abb4;--indigo:#dd616b;--gold:#c79a3a;--ice:#35191b;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#dd616b;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#33363d;--indigo-t:#b23a48;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Pericarditis, Electrolytes, Drugs &amp; Special Patterns</h1>
+    <div class="sub">Principles of Diagnostic Medicine I &middot; Exam 3 &middot; Lecture 16</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Thirty questions on <b>the ST-elevation mimics and the special patterns</b>, and about half of them show you the tracing. Tell pericarditis (PR depression, global concave elevation, no reciprocal depression) from benign early repolarization (J-point notch, the lead V6 ratio) and from an infarction; recognize Brugada in V1 to V3, paced rhythms and Sgarbossa's criteria, Osborn waves, the Wolff-Parkinson-White triad and its reentrant tachycardias; and read potassium, calcium, thyroid, drug and pulmonary embolism changes. <b>Every laboratory value comes with its reference range.</b> Tap any tracing to enlarge it.</p>
+    <div class="chips"><span class="chip">Pericarditis</span><span class="chip">Early repolarization</span><span class="chip">Lead V6 ratio</span><span class="chip">Brugada syndrome</span><span class="chip">Bundle branch block, pacing and Sgarbossa</span><span class="chip">Hypothermia</span><span class="chip">Wolff-Parkinson-White</span><span class="chip">Reentrant tachycardias</span><span class="chip">Potassium and calcium</span><span class="chip">Thyroid</span><span class="chip">Digoxin, amiodarone, tricyclics</span><span class="chip">Pulmonary embolism</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Calcium disorders", "io": "Compare and contrast ECG manifestations of electrolyte abnormalities.", "q": "A 50-year-old woman has a long ST segment and long QTc. Her T wave is checked. What does it look like in hypocalcemia?", "opts": [["Normal in shape and duration", "Correct. Hypocalcemia prolongs the ST segment without affecting the duration of the T wave: a long QTc with a normally shaped T wave."], ["Tall, peaked and symmetric", "Tall, peaked, symmetric T waves are hyperkalemia; in hypocalcemia the T wave stays normal."], ["Flattened with a U wave", "A flattened T wave followed by a prominent U wave is hypokalemia; hypocalcemia keeps a normal T wave."], ["Pushed against the QRS", "A T wave pushed against the QRS is hypercalcemia, from a shortened ST segment, the opposite of hypocalcemia."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 40", "qid": "ppey81"}, {"topic": "Wolff-Parkinson-White", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 25-year-old woman has a preexcitation syndrome. Which is the most common one?", "opts": [["Brugada syndrome", "Brugada syndrome is an inherited sodium-channel disease of the right ventricular outflow tract, not a preexcitation syndrome."], ["Early repolarization", "Benign early repolarization is a normal variant ST elevation, not an accessory pathway syndrome."], ["Wolff-Parkinson-White", "Correct. The most common preexcitation syndrome is Wolff-Parkinson-White, in which the accessory pathway is the bundle of Kent."], ["Left bundle branch block", "A left bundle branch block is delayed, not early, ventricular activation."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 25", "qid": "rjncdv"}, {"topic": "Tricyclic antidepressant toxicity", "io": "Recognize ECG changes associated with: digoxin toxicity, amiodarone toxicity, tricyclic antidepressant toxicity", "q": "A 23-year-old woman took an overdose of amitriptyline, a tricyclic antidepressant. Her 12-lead is shown. Which drug effect causes her fast heart rate?", "opts": [["Beta-receptor blockade", "Beta blockade slows the heart; it is one of amiodarone's actions, not the cause of tricyclic tachycardia."], ["Anticholinergic activity", "Correct. Tricyclic antidepressants' anticholinergic activity causes the tachycardia; their fast sodium-channel blockade widens the QRS (the wide complexes on this tracing), and the QT is prolonged."], ["Sodium-potassium pump inhibition", "Pump inhibition is digoxin's mechanism, with frequent premature ventricular complexes as its commonest result."], ["Raised serum calcium", "High calcium shortens the ST segment and QTc; it is not what speeds the heart in a tricyclic overdose."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 49", "img": "pdm-exam-3-quiz-images/16-12-lead-case-k.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 49", "qid": "9q6iqm"}, {"topic": "Pulmonary embolism", "io": "Recognize ECG findings associated with: COPD/COLD, pulmonary embolism, hypothermia", "q": "A 47-year-old woman with a pulmonary embolism has new ST-segment and T-wave changes. What causes them?", "opts": [["Localized myocardial ischemia", "Correct. In pulmonary embolism, localized myocardial ischemia leads to specific ST-segment and T-wave changes, alongside tachycardia and a rightward axis."], ["Pericardial inflammation", "Pericardial inflammation gives global concave ST elevation with PR depression, not the embolism's ST-T changes."], ["An accessory pathway", "An accessory pathway produces a short PR and delta wave, not ischemic ST-T changes."], ["Low serum calcium", "Low calcium lengthens the ST segment; the embolism's ST-T changes come from localized ischemia."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 50", "qid": "1e9u6ab"}, {"topic": "Wolff-Parkinson-White", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 21-year-old man with preexcitation has a short PR interval. Why is it short?", "opts": [["The sinoatrial node fires faster", "The sinus rate does not set the PR interval; skipping the atrioventricular node's delay does."], ["The atria contract more slowly", "Slower atrial contraction would not shorten the PR; bypassing the atrioventricular node does."], ["It bypasses the atrioventricular node", "Correct. Because the accessory pathway bypasses the atrioventricular node, where the impulse is normally slowed, ventricular depolarization starts early and the PR interval is short."], ["The bundle branches are blocked", "Bundle branch block widens the QRS without shortening the PR interval."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 27", "qid": "u6klac"}, {"topic": "Digoxin toxicity", "io": "Recognize ECG changes associated with: digoxin toxicity, amiodarone toxicity, tricyclic antidepressant toxicity", "q": "An 86-year-old man taking digoxin develops toxicity although his dose is unchanged. Which explanation does the definition of toxicity allow?", "opts": [["Digoxin blocks the bundle of Kent", "The bundle of Kent is the Wolff-Parkinson-White accessory pathway; digoxin toxicity is buildup or oversensitivity."], ["His calcium has fallen too low", "Low calcium lengthens the ST segment; it is not the definition of digoxin toxicity."], ["Toxicity needs a dose increase", "Toxicity can occur without a higher dose, when the drug builds up or the heart becomes overly sensitive."], ["His heart has become overly sensitive", "Correct. Digoxin toxicity occurs when too much digoxin builds up in the body or when the heart becomes overly sensitive to it."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 47", "qid": "1ut97ya"}, {"topic": "Hyperkalemia", "io": "Compare and contrast ECG manifestations of electrolyte abnormalities.", "q": "A 71-year-old woman with kidney failure has the 12-lead shown. Which finding on it is the early sign of her electrolyte disturbance?", "opts": [["Flattened P waves", "Flattened P waves are a hyperkalemia sign too, but they come later than the peaked T wave."], ["A wide QRS", "QRS widening is a later hyperkalemia change, after the peaked T waves and P-wave flattening."], ["A sine wave", "The sine wave is the last and most severe hyperkalemia pattern, not the early sign."], ["Peaked T waves", "Correct. In hyperkalemia the peaked, symmetric T wave is the early sign; flattened P waves, a wide QRS and finally a sine wave follow as the potassium climbs."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 34; tracing from Slide 35", "img": "pdm-exam-3-quiz-images/16-12-lead-case-l.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 35", "qid": "c0mtoq"}, {"topic": "Paced rhythms", "io": "Recognize common pacemaker rhythms and pacing artifacts.", "q": "A 78-year-old man has the 12-lead shown. What are the sharp, narrow vertical lines just before each wide QRS?", "opts": [["Delta waves", "Delta waves are slurred, gradual upstrokes of the QRS in preexcitation; these are instantaneous vertical spikes."], ["P waves", "P waves are rounded atrial deflections; these are sharp, narrow lines that precede each paced QRS."], ["Pacing spikes", "Correct. Each sharp vertical line is the pacemaker's spike, the pacing artifact, followed by the wide QRS it produces in a ventricular paced rhythm."], ["Osborn waves", "Osborn waves are notches at the end of the QRS, in hypothermia and early repolarization; these lines come before it."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 14", "img": "pdm-exam-3-quiz-images/16-12-lead-case-q.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 14", "qid": "rq1e1a"}, {"topic": "Hypokalemia", "io": "Compare and contrast ECG manifestations of electrolyte abnormalities.", "q": "A 52-year-old man has the leads shown, with flattened T waves and the arrowed waves after them. Which electrolyte disturbance best explains this?", "opts": [["Hypokalemia", "Correct. Hypokalemia (serum potassium below 3.5 mEq/L) prolongs repolarization: T-wave flattening, prominent U waves and ST depression are its classic signs."], ["Hyperkalemia", "Hyperkalemia peaks the T wave; flattened T waves with prominent U waves are its opposite."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment and QTc so the T wave hugs the QRS; it does not bring out U waves."], ["Hypocalcemia", "Hypocalcemia lengthens the ST segment but leaves the T wave normally shaped, without prominent U waves."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 37; tracing from Slide 38", "img": "pdm-exam-3-quiz-images/16-leads-v4-v6-strip-a.jpg", "alt": "Leads V4, V5 and V6 on grid paper, with red arrows pointing to part of each beat", "slide": "Slide 38", "qid": "dpwmkb"}, {"topic": "Atrioventricular reentrant tachycardia", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 30-year-old man with a known accessory pathway has a regular, wide, monomorphic tachycardia, shown here. Which rhythm is most likely?", "opts": [["Orthodromic reentrant tachycardia", "Orthodromic reentry goes down the normal pathway, so its tachycardia is narrow."], ["Sinus tachycardia", "Sinus tachycardia has normal P waves before narrow QRS complexes; this is a wide-complex tachycardia."], ["Antidromic reentrant tachycardia", "Correct. Antidromic atrioventricular reentrant tachycardia conducts down the accessory pathway and back up the normal pathway, producing a regular, monomorphic, wide tachycardia."], ["Ventricular paced rhythm", "A paced rhythm shows a spike before each QRS at a programmed rate, not a wide tachycardia like this."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 33", "img": "pdm-exam-3-quiz-images/16-rhythm-strip-b.jpg", "alt": "Three-lead rhythm strip on grid paper at a fast rate", "slide": "Slide 33", "qid": "ac1sm5"}, {"topic": "Thyroid disorders", "io": "Topic — Thyroid disorders", "q": "A 36-year-old woman has hyperthyroidism. Which tracing finding is the most commonly observed?", "opts": [["Atrial fibrillation", "Atrial fibrillation is the second most common finding in hyperthyroidism, after sinus tachycardia."], ["Sinus bradycardia", "Sinus bradycardia is the hypothyroid finding, from a slowed metabolic rate."], ["Global low voltage", "Global low-voltage QRS complexes belong to hypothyroidism, not to an adrenergic, hyperthyroid state."], ["Sinus tachycardia", "Correct. Hyperthyroidism is a state of adrenergic hyperactivity, so sinus tachycardia is the most commonly observed finding; atrial fibrillation is the second most common."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 44", "qid": "1rvb1ec"}, {"topic": "Pericarditis", "io": "Recognize ECG findings associated with: Benign Early Repolarization (BER), acute pericarditis, long QT syndrome", "q": "A 34-year-old man has had chest pain for two days. His 12-lead is shown. Which diagnosis best fits the tracing?", "opts": [["Inferior ST-elevation infarction", "An inferior infarction elevates II, III and aVF with reciprocal depression in I and aVL; this elevation is global and concave with no reciprocal changes."], ["Benign early repolarization", "Early repolarization also shows global concave elevation, but not the PR-segment depression seen here; it carries J-point notching instead."], ["Acute pericarditis", "Correct. Global concave ST elevation with PR-segment depression, PR elevation in aVR and no reciprocal ST depression outside aVR and V1 is acute pericarditis."], ["Brugada syndrome", "Brugada changes are isolated to V1 to V3 (coved or saddleback elevation); this tracing's elevation is global."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 6", "img": "pdm-exam-3-quiz-images/16-12-lead-case-m.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 6", "qid": "d3dgvm"}, {"topic": "Wolff-Parkinson-White", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 20-year-old woman's 12-lead is shown. What is the slurred upstroke at the start of each QRS called?", "opts": [["A J wave", "A J (Osborn) wave is a notch at the end of the QRS, in hypothermia and early repolarization."], ["A U wave", "A U wave follows the T wave and is prominent in hypokalemia."], ["A pacing spike", "A pacing spike is a sharp vertical artifact before a paced QRS, not a gradual slur."], ["A delta wave", "Correct. The delta wave is a slurring of the QRS upstroke: impulses bypass the atrioventricular node through the accessory pathway and begin depolarizing the ventricles early."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 27; tracing from Slide 29", "img": "pdm-exam-3-quiz-images/16-12-lead-case-n.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 29", "qid": "c5wloe"}, {"topic": "Sgarbossa's criteria", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 71-year-old man with a ventricular paced rhythm has chest pain. Which finding meets Sgarbossa's criteria?", "opts": [["Discordant elevation of 2 mm", "Discordant elevation counts only at 5 mm or more, in a lead with a negative QRS."], ["Concordant elevation, 1 mm or more", "Correct. Concordant ST elevation of 1 mm or more in any lead with a positive QRS complex meets Sgarbossa's criteria for acute infarction in a paced rhythm or left bundle branch block."], ["A wide QRS complex", "A wide QRS is expected in a paced rhythm; it is the background, not a criterion."], ["T waves opposite the QRS", "T waves pointing opposite the QRS (discordant, contralateral) are normal for paced rhythms and left bundle branch block."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 18", "qid": "10igq8r"}, {"topic": "Brugada syndrome", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 30-year-old man of Southeast Asian descent fainted at rest. His 12-lead is shown. Which diagnosis fits the pattern in V1 and V2?", "opts": [["Type 1 Brugada pattern", "Correct. Coved (convex) ST elevation isolated to V1 to V3 in a young man of Southeast Asian descent is the type 1, coved-shaped Brugada pattern."], ["Type 2 Brugada pattern", "Type 2 is the saddleback shape, with the ST segment dipping before the T wave; these right precordial leads are coved."], ["Anteroseptal infarction", "An anteroseptal infarction elevates V1 to V4 in a patient with ischemic symptoms; the coved shape confined to V1 to V3 in a young man is Brugada."], ["Benign early repolarization", "Early repolarization is global and concave with J-point notching, not coved elevation confined to the right precordial leads."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 11", "img": "pdm-exam-3-quiz-images/16-12-lead-case-a.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 11", "qid": "150ppu4"}, {"topic": "Tricyclic antidepressant toxicity", "io": "Recognize ECG changes associated with: digoxin toxicity, amiodarone toxicity, tricyclic antidepressant toxicity", "q": "A 21-year-old woman took an overdose of a tricyclic antidepressant. Which pair of tracing changes does the overdose produce?", "opts": [["QT prolongation and tachycardia", "Correct. A tricyclic overdose prolongs the QT and, through anticholinergic activity, speeds the heart; its fast sodium-channel blockade also widens the QRS."], ["QT shortening and bradycardia", "Both go the wrong way: a tricyclic overdose prolongs the QT and speeds the heart through anticholinergic activity."], ["Peaked T waves and flat P waves", "Peaked T waves with flattened P waves are the hyperkalemia progression, not a tricyclic overdose."], ["Delta waves and a short PR", "A delta wave with a short PR interval is preexcitation through an accessory pathway, not a drug effect."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 49", "qid": "1sk6zpa"}, {"topic": "Hypothermia", "io": "Recognize ECG findings associated with: COPD/COLD, pulmonary embolism, hypothermia", "q": "A 75-year-old man was found outdoors on a winter night. His 12-lead is shown. What are the notches at the end of each QRS?", "opts": [["Delta waves", "Delta waves are slurred upstrokes at the start of the QRS in preexcitation; these notches sit at its end."], ["Osborn waves", "Correct. Below 32°C (90°F), Osborn (J) waves appear as notches at the end of the QRS, and they are frequently mistaken for an ST-elevation infarction."], ["Prominent U waves", "U waves follow the T wave and are a hypokalemia sign; these notches are at the junction of the QRS and ST segment."], ["Pacing artifacts", "Pacing artifacts are sharp spikes BEFORE a paced QRS, not rounded notches after it."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 16; tracing from Slide 17", "img": "pdm-exam-3-quiz-images/16-12-lead-case-c.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 17", "qid": "1q3d5bf"}, {"topic": "Benign early repolarization", "io": "Recognize ECG findings associated with: Benign Early Repolarization (BER), acute pericarditis, long QT syndrome", "q": "A 24-year-old man's 12-lead is shown: concave ST elevation with notched J points and no reciprocal depression. What clinical significance does this pattern carry?", "opts": [["It signals an evolving infarction", "An infarction shows localized elevation with reciprocal depression; diffuse concave elevation with J waves and no reciprocal change is the benign variant."], ["None; it is a normal variant", "Correct. Benign early repolarization, also called normal variant ST elevation, is seen mostly in young men and has no clinical significance."], ["It predicts sudden cardiac death", "Arrhythmia risk belongs to Brugada syndrome, an inherited arrhythmogenic disease with V1 to V3 changes, not to benign early repolarization."], ["It indicates pericardial inflammation", "Pericardial inflammation adds PR-segment depression; benign early repolarization has no clinical significance."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 7; tracing from Slide 8", "img": "pdm-exam-3-quiz-images/16-12-lead-case-e.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 8", "qid": "1du6rgr"}, {"topic": "Hypothermia", "io": "Recognize ECG findings associated with: COPD/COLD, pulmonary embolism, hypothermia", "q": "A 78-year-old woman's core temperature is falling toward 35°C (95°F; normal is about 37°C). Which tracing change occurs first?", "opts": [["Osborn waves", "Osborn waves become apparent only below 32°C (90°F), after bradycardia and interval prolongation."], ["Sinus tachycardia", "Cooling slows the sinus rate; sinus tachycardia is the commonest finding of hyperthyroidism."], ["Peaked T waves", "Peaked T waves are the early sign of hyperkalemia, not of cooling."], ["Sinus bradycardia", "Correct. As the body temperature approaches 35°C (95°F) sinus bradycardia occurs; the intervals then prolong, and below 32°C (90°F) Osborn waves appear."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 16", "qid": "1hjw9op"}, {"topic": "Atrioventricular reentrant tachycardia", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 27-year-old woman with an accessory pathway has the narrow-complex tachycardia shown. Which route does the circuit take?", "opts": [["Down the accessory, up the normal pathway", "That is the antidromic circuit, which depolarizes the ventricles through the accessory pathway and produces a wide tachycardia."], ["Down the normal pathway, up the accessory", "Correct. In orthodromic reentry, conduction toward the ventricles (anterograde) goes through the normal pathway and returns up the accessory pathway, so the QRS stays narrow."], ["Around the right ventricular outflow tract", "The right ventricular outflow tract is the site of Brugada syndrome's sodium-channel disease, not a reentry circuit."], ["Through the sinoatrial node alone", "Reentry needs a circuit: here the normal pathway and the accessory pathway together."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 30; tracing from Slide 32", "img": "pdm-exam-3-quiz-images/16-12-lead-case-j.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 32", "qid": "ww24zc"}, {"topic": "Pericarditis versus early repolarization", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 26-year-old man's lead V6 shows much more T wave than ST elevation. Which diagnosis does this favor?", "opts": [["Acute pericarditis", "Pericarditis has more ST elevation relative to the T wave, an ST-to-T ratio above 25% in V6."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment until the T wave sits on the QRS; it is not judged by the V6 ratio."], ["Type 2 Brugada", "Brugada changes are confined to V1 to V3 and are not judged by the V6 ratio."], ["Early repolarization", "Correct. In early repolarization there is more T wave than ST elevation in V6 (ratio under 25%); pericarditis has more ST elevation than T wave."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 9", "qid": "rui1h0"}, {"topic": "Calcium disorders", "io": "Compare and contrast ECG manifestations of electrolyte abnormalities.", "q": "A 57-year-old woman's serum calcium is low, 7.4 mg/dL (reference range 8.5 to 10.5). Why does her ST segment lengthen?", "opts": [["Phase 2 of the action potential is shortened", "Shortening phase 2 is hypercalcemia, which shortens the ST segment."], ["Phase 2 of the action potential is prolonged", "Correct. Hypocalcemia prolongs the duration of phase 2 of the cardiac action potential, which prolongs the ST segment without changing the T wave, and so prolongs the QTc."], ["Phase 0 of the action potential is delayed", "Phase 0 is the sodium upstroke, slowed by sodium-channel blockers; calcium acts on phase 2."], ["Repolarization of the atria is delayed", "The ST segment reflects the ventricular plateau, phase 2, which low calcium prolongs."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 40", "qid": "36h5yz"}, {"topic": "Atrioventricular reentrant tachycardia", "io": "Topic — Preexcitation and accessory pathway tachycardias", "q": "A 26-year-old man with an accessory pathway develops a sustained reentrant tachycardia. What typically starts it?", "opts": [["A premature beat near the pathway", "Correct. A premature atrial or ventricular complex occurring near the accessory pathway can initiate premature depolarization, and the pathway plus the normal pathway form a reentry circuit."], ["Sudden cooling below 32 degrees Celsius", "Cooling below 32 degrees Celsius produces Osborn waves; it is not the trigger of accessory pathway reentry."], ["A rise in serum calcium", "High calcium shortens the ST segment; it is not what starts accessory pathway reentry."], ["Inflammation of the pericardium", "Pericarditis produces global concave ST elevation, not reentrant tachycardia."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 30", "qid": "1jsz5ka"}, {"topic": "Thyroid disorders", "io": "Topic — Thyroid disorders", "q": "A 67-year-old woman has hypothyroidism. Which tracing finding fits her condition?", "opts": [["Sinus tachycardia", "Sinus tachycardia is the commonest hyperthyroid finding, from adrenergic hyperactivity."], ["A shortened QTc", "Hypothyroidism prolongs the QTc; a short QTc is hypercalcemia."], ["Peaked T waves", "Peaked T waves are hyperkalemia; hypothyroid T waves are flattened or inverted."], ["Low-voltage QRS", "Correct. Hypothyroidism slows metabolism and contractility: sinus bradycardia with global low-voltage QRS complexes, flattened or inverted T waves, a prolonged QTc and low-amplitude P waves."]], "c": 3, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 44", "qid": "1sty1lo"}, {"topic": "Pericarditis versus early repolarization", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 31-year-old woman has global concave ST elevation. Her lead V6 is shown, with the ST elevation boxed in blue and the T-wave height in red. Which diagnosis does the ratio favor?", "opts": [["Benign early repolarization", "Early repolarization gives a V6 ST/T ratio under 25%, with much more T wave than ST elevation; this ratio is higher."], ["Acute pericarditis", "Correct. The ST elevation is about half the T-wave height. An ST/T ratio above 25% in V6 suggests pericarditis: more ST elevation than T wave (the V6 phenomenon)."], ["Brugada syndrome", "Brugada changes are isolated to V1 to V3; the V6 ratio separates pericarditis from early repolarization."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment until the T wave sits against the QRS; it does not raise the ST/T ratio."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 9", "img": "pdm-exam-3-quiz-images/16-lead-v6-strip-b.png", "alt": "Lead V6 rhythm strip with a blue box and a red box drawn over one beat", "slide": "Slide 9", "qid": "1dn0vvp"}, {"topic": "Amiodarone toxicity", "io": "Recognize ECG changes associated with: digoxin toxicity, amiodarone toxicity, tricyclic antidepressant toxicity", "q": "A 72-year-old man has amiodarone toxicity. Which actions produce its tracing changes?", "opts": [["Sodium-potassium pump inhibition", "Pump inhibition is digoxin's mechanism; amiodarone blocks the ion channels themselves."], ["Anticholinergic activity alone", "Anticholinergic activity is a tricyclic antidepressant effect, causing tachycardia."], ["Multi-channel and beta blockade", "Correct. Amiodarone blocks sodium, potassium and calcium channels and also acts as a beta blocker in the heart, reducing conduction velocity."], ["An accessory conduction pathway", "An accessory pathway is an anatomic bypass (Wolff-Parkinson-White), not a drug action."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 48", "qid": "hagav3"}, {"topic": "Left bundle branch block and pacing", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 70-year-old man with chest pain has a left bundle branch block, shown here. Why is an ST-elevation infarction hard to locate on this tracing?", "opts": [["The block hides all ST segments", "The ST segments are still visible; the problem is that the block itself distorts them globally."], ["Wide QRS with global ST and T changes", "Correct. Left bundle branch blocks and ventricular paced rhythms cause wide QRS complexes with global ST elevation and T-wave changes, which make an ST-elevation infarction difficult to locate."], ["Bundle branch blocks prevent infarction", "A block does not protect the heart; it only makes an infarction harder to see."], ["The heart rate is always too fast", "The difficulty is the widened, distorted ventricular complex, not the rate."]], "c": 1, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 13; tracing from Slide 15", "img": "pdm-exam-3-quiz-images/16-12-lead-case-f.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 15", "qid": "ewblr5"}, {"topic": "Brugada syndrome", "io": "Compare and contrast ECG findings associated with: BER, acute pericarditis, STEMI patterns", "q": "A 28-year-old man's 12-lead is shown, with ST elevation in V2. Which pattern is this?", "opts": [["Type 2 Brugada (saddleback)", "Correct. Saddle-shaped (saddleback) ST elevation in V1 to V3 is type 2 Brugada; type 1 is the coved, convex shape."], ["Type 1 Brugada (coved)", "Type 1 is coved, convex elevation sloping straight down into the T wave; the saddle shape is type 2."], ["Acute pericarditis", "Pericarditis elevates the ST segment globally with PR depression, not in a saddle shape confined to V1 to V3."], ["Hyperkalemia", "Hyperkalemia shows peaked, symmetric T waves, then flattened P waves and a wide QRS; it has no saddle-shaped ST segment."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 12", "img": "pdm-exam-3-quiz-images/16-12-lead-case-b.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 12", "qid": "12dwrgu"}, {"topic": "Benign early repolarization", "io": "Recognize ECG findings associated with: Benign Early Repolarization (BER), acute pericarditis, long QT syndrome", "q": "A healthy 25-year-old man's lead V4 is shown. What is the circled notch at the end of the QRS called?", "opts": [["A J wave", "Correct. Terminal QRS notching in benign early repolarization is known as the J wave (also the fishhook sign, or Osborn wave)."], ["A delta wave", "A delta wave is a slur at the start of the QRS from preexcitation; this notch sits at the end."], ["A U wave", "A U wave follows the T wave and is prominent in hypokalemia; this notch is at the junction of the QRS and ST segment."], ["A pathologic Q wave", "A Q wave is the first negative deflection of the QRS; this is a positive notch at its end."]], "c": 0, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 7", "img": "pdm-exam-3-quiz-images/16-lead-v4-strip-a.jpg", "alt": "Lead V4 rhythm strip with one area circled in red", "slide": "Slide 7", "qid": "1mcmpkd"}, {"topic": "Hyperkalemia", "io": "Recognize ECG changes associated with: hyperkalemia, hypokalemia, hypercalcemia, hypocalcemia", "q": "A 63-year-old woman on dialysis missed three sessions. Her 12-lead is shown, with very wide QRS complexes and no visible P waves. Which disturbance best explains it?", "opts": [["Hypokalemia", "Hypokalemia flattens T waves and brings out U waves; it does not erase the P waves and widen the QRS like this."], ["Hypercalcemia", "Hypercalcemia shortens the ST segment and QTc; it does not widen the QRS or remove the P waves."], ["Severe hyperkalemia", "Correct. As potassium climbs, the P waves flatten away and the QRS widens toward a sine wave: late, severe hyperkalemia."], ["Hypothyroidism", "Hypothyroidism gives low-voltage complexes with sinus bradycardia, not this very wide QRS."]], "c": 2, "cite": "16. EKG Pericarditis Electrolytes and Other Abnormalities.pptx, Slide 36", "img": "pdm-exam-3-quiz-images/16-12-lead-case-r.jpg", "alt": "Twelve-lead electrocardiogram on grid paper, with each lead labeled", "slide": "Slide 36", "qid": "y1c2sw"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
