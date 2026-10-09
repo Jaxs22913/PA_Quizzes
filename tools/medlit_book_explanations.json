@@ -339,7 +339,7 @@
   "expls": {
    "Stratified sample": "That is wrong: a stratified sample first divides the population into subgroups (such as age or ethnicity) and samples within each, but here there are no subgroups, only a fixed rule based on admission order.",
    "Probability sample": "That is wrong: a probability sample requires that each patient have a known chance of selection set by a chance process, and this design describes no random start or other chance mechanism, only a convenient rule tied to the order of arrival.",
-   "Convenience sample": "Correct. Enrolling every 10th admission is a convenient rule with no stated random element; it might produce a representative sample, but because selection is not by chance it could misrepresent the hospital's patients.",
+   "Convenience sample": "Correct, as the best of these choices. Enrolling every 10th admission is a convenient rule with no stated random element or random start (strictly this is systematic sampling, which counts as a probability sample only when the starting point is chosen at random); it might produce a representative sample, but because selection is not by chance it could misrepresent the hospital's patients.",
    "Random sample": "That is wrong: in a random sample every patient has an equal chance of being selected by chance, but here selection is fixed by position in the admission order with no random element, so it is not random even if the resulting sample looks representative.",
    "Oversample": "That is wrong: an oversample deliberately takes extra people from a subgroup to study it, and nothing in this design targets a subgroup; it is a fixed every-10th rule."
   },
@@ -402,7 +402,7 @@
    "3 PAJ5512 Rates and Measurement MBF_2026sc.pptx, Slide 32"
   ],
   "expls": {
-   "Endemic": "Correct. Endemic refers to a disease limited by geographic location, and coccidioidomycosis is confined to the desert Southwest and Mexico.",
+   "Endemic": "Correct. Endemic refers to a disease limited by geographic location, and coccidioidomycosis is found mainly in the deserts of the southwestern United States and Mexico.",
    "Pandemic": "That is wrong: a pandemic is widespread disease across regions in a given time, which is the opposite of an infection confined to one geographic area.",
    "Incident": "That is wrong: incident describes new cases as in incidence, not the geographic pattern of a disease, so it does not describe an infection limited to a region.",
    "Epidemic": "That is wrong: an epidemic is a concentration of new cases in a given time, a temporal pattern, whereas a fungus that is steadily common in one geographic area is endemic.",
@@ -1022,11 +1022,11 @@
  },
  "5.4": {
   "support": "book-only",
-  "guide_fact": "On a calibration plot, points lying consistently above the line of perfect agreement mean the predicted rates are consistently higher than the observed rates, so calibration is poor.",
+  "guide_fact": "On a calibration plot with the predicted probability on the vertical axis and the observed proportion on the horizontal axis, points lying consistently above the line of perfect agreement mean the predicted rates are consistently higher than the observed rates, so the model overestimates risk and calibration is poor; points consistently below it mean the reverse.",
   "cites": [],
   "expls": {
    "The calibration is good, with predicted and observed rates the same.": "Good calibration would put the points on or near the dotted diagonal line, where predicted and observed rates are equal. In this plot every point sits above that line, so predicted rates do not match observed rates.",
-   "The calibration is poor, with predicted rates consistently higher than observed rates.": "Correct. Calibration compares the predicted probability with the observed proportion. Every point in the plot lies above the dotted line of perfect agreement, meaning the model predicted higher rates than actually occurred. It consistently overestimates risk.",
+   "The calibration is poor, with predicted rates consistently higher than observed rates.": "Correct. Calibration compares the predicted probability with the observed proportion. Every point in the plot lies above the dotted line of perfect agreement, meaning the model predicted higher rates than actually occurred. In this plot the predicted probability is on the vertical axis and the observed proportion on the horizontal axis, so points above the line mean predicted rates are higher than observed. It consistently overestimates risk.",
    "The calibration is poor, with predicted rates consistently lower than observed rates.": "Predicted rates lower than observed would put the points below the dotted diagonal line. In this plot every point lies above it, so the model overestimates risk rather than underestimating it.",
    "The calibration is poor, with predicted rates sometimes higher than observed rates, and other times lower than observed rates.": "Mixed error would show points scattered on both sides of the dotted diagonal line. Here all the points fall on the same side, above it, so the error is consistently in one direction: predicted rates are always higher than observed."
   },

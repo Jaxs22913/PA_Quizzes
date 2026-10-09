@@ -169,7 +169,7 @@ SECTION = """
       "serotyping and sensitivity testing. Notice gene probes appear on <em>both</em> sides, and that the "
       "patient contributes too: antibody titers, in vivo tests and the clinical picture.", 14) + """
   <p>Results come in two categories, <strong>presumptive</strong> or <strong>confirmatory</strong>. Immune
-  tests are generally easier (and more accurate) than testing for the microbe itself: the rapid strep
+  tests are generally easier and faster than hunting for the microbe itself (the slide also says more accurate, but a negative rapid test can still miss infection): the rapid strep
   test takes <strong>10&ndash;15 minutes</strong> &mdash; but you need a hypothesis first to choose the
   test (fever, sore throat and pus pockets on the tonsils suggest strep throat).</p>
 
@@ -192,8 +192,8 @@ SECTION = """
   </table>
 
   <h3 class="sub" id="dx-serology">8.3 &middot; Objective 1 &mdash; Serology, agglutination and precipitation</h3>
-  <p><strong>Serology</strong> is in vitro diagnostic testing of serum. Antibodies are extremely specific,
-  so the methods are very sensitive. Visible results: precipitates, color changes, or released
+  <p><strong>Serology</strong> is in vitro diagnostic testing of serum. Antibodies are extremely specific for their antigens,
+  so these methods can tell close relatives apart, and they are also very sensitive, able to detect small amounts. Visible results: precipitates, color changes, or released
   radioactivity. Tests identify antibody and measure how much is present &mdash; the
   <strong>titer</strong>, often reported in binding antibody units. A known antigen can test a
   patient&rsquo;s serum (serological diagnosis), or known antibody can identify an unknown microbe
@@ -215,7 +215,7 @@ SECTION = """
     <tr><th>Blot</th><th>Detects</th><th>Notes</th></tr>
     <tr><td>Southern (about 1975)</td><td>Specific <strong>DNA</strong> sequences</td><td>The original, invented by Edwin Southern</td></tr>
     <tr><td>Northern (about 1977)</td><td><strong>RNA</strong> (gene expression)</td><td>Oncogenes; transplant rejection</td></tr>
-    <tr><td><strong>Western</strong> (about 1981)</td><td><strong>Proteins</strong></td><td>Electrophoresis then an immunoassay; bands where antibody binds. <strong>Second test used to verify human immunodeficiency virus status</strong>; also bovine spongiform encephalopathy, Lyme disease, hepatitis B</td></tr>
+    <tr><td><strong>Western</strong> (about 1981)</td><td><strong>Proteins</strong></td><td>Electrophoresis then an immunoassay; bands where antibody binds. Long used as the <strong>second test to confirm human immunodeficiency virus status</strong>, though current United States guidance has replaced it with a second immunoassay and nucleic acid testing; also used in testing for bovine spongiform encephalopathy and Lyme disease</td></tr>
     <tr><td>Eastern (about 1982)</td><td>Proteins, lipids, carbohydrate epitopes</td><td>Post-translational products</td></tr>
   </table>
   """ + fig("l8-s46-complement-fixation.jpg", 800, 578,
@@ -302,9 +302,9 @@ SECTION = """
   and identification.</p>
 
   <h3 class="sub" id="dx-sensitivity">8.8 &middot; Objectives 5 &amp; 6 &mdash; Antimicrobial sensitivity testing and treatment strategy</h3>
-  <p>The Kirby-Bauer <strong>disk-diffusion</strong> test gives <strong>which drug is effective and at what
-  dose</strong>, and may indicate which combinations can be used. <strong>Larger zones of inhibition</strong>
-  mean a more effective agent. <strong>Minimum inhibitory concentration</strong> strips add the concentration
+  <p>The Kirby-Bauer <strong>disk-diffusion</strong> test shows <strong>which drugs the microbe is
+  susceptible or resistant to</strong> (the slide also says it gives the dose and usable combinations, but the dose comes from pharmacology and, for a dilution test, the minimum inhibitory concentration). For a given drug, <strong>a larger zone of inhibition</strong>
+  means the microbe is more susceptible to it; zones of different drugs cannot be ranked against each other. <strong>Minimum inhibitory concentration (MIC)</strong> strips add the concentration
   needed. For treatment strategy the deck&rsquo;s point is speed: faster, more accurate (genotypic)
   diagnosis means <strong>proper treatment can begin in a timely manner</strong>. Mechanisms of action and
   resistance themselves were Lecture 2&rsquo;s subject.</p>
@@ -327,14 +327,14 @@ TEST = """    diagnosingInfections: [
       {q:"In the complement fixation test, the sheep red cells hemolyze. What does that mean?",
        choices:["The patient's serum is positive","The complement was inactive","The antigen was absent","The patient's serum is negative"],correct:3,
        explain:"Hemolysis means complement stayed free because no antibody-antigen complex fixed it, so the serum is negative. Fixed complement leaves the cells intact, a positive result."},
-      {q:"Which blot detects proteins and is used as a second test for human immunodeficiency virus status?",
+      {q:"Which blot detects proteins and was long used as a second test for human immunodeficiency virus status?",
        choices:["Southern","Northern","Western","Eastern"],correct:2,
        explain:"The Western blot separates proteins by electrophoresis and then detects them with antibody. Southern detects DNA and Northern detects RNA."},
       {q:"Agglutination tests detect which kind of antigen?",
        choices:["Whole-cell or insoluble antigen","Soluble antigen","Only viral antigen","Only carbohydrate antigen"],correct:0,
        explain:"Agglutination crosslinks whole-cell or insoluble antigen into visible clumps. Precipitation is the test for soluble antigen, and it needs a gel or liquid matrix."},
-      {q:"On a disk-diffusion plate, what does a larger zone of inhibition indicate?",
-       choices:["A resistant organism","A contaminated plate","A slower-growing organism","A more effective agent"],correct:3,
-       explain:"A larger clear zone means the agent inhibited growth over a wider area, so it is more effective against that organism."}
+      {q:"On a disk-diffusion plate, what does a larger zone of inhibition around one drug indicate?",
+       choices:["A resistant organism","A contaminated plate","A slower-growing organism","A more susceptible organism"],correct:3,
+       explain:"A larger clear zone means the drug inhibited growth over a wider area, so the microbe is more susceptible to that drug. Zones of different drugs cannot be ranked against each other."}
     ],
 """

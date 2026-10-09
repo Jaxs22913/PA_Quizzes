@@ -71,7 +71,7 @@ BODY = """
   <b>palliative or exacerbating variables</b>, and <b>vision loss or visual deficits</b>.</p>
   <table class="tbl">
     <tr><th>Finding</th><th>What it points to</th></tr>
-    <tr><td><b>Bilateral</b> visual loss</td><td>A primary <b>neurologic</b> cause, not an ophthalmologic one</td></tr>
+    <tr><td><b>Bilateral</b> visual loss, especially sudden</td><td>A <b>neurologic</b> cause is likely rather than an eye one; gradual loss in both eyes is often cataract or similar eye disease</td></tr>
     <tr><td><b>Multiple new</b> flashes or floaters</td><td>Retinal tear or vitreous hemorrhage</td></tr>
     <tr><td>A <b>single</b> floater</td><td>Probably benign</td></tr>
     <tr><td><b>Rapid</b> deterioration</td><td>Vascular causes</td></tr>
@@ -107,9 +107,7 @@ BODY = """
     <p><b>Diplopia and the cranial nerves.</b> <b>HORIZONTAL</b> &mdash; images side by side &mdash;
     means a palsy of <b>cranial nerve III or VI</b>. <b>VERTICAL</b> &mdash; images on top of each
     other &mdash; means a palsy of <b>cranial nerve III or IV</b>.</p>
-    <p>Her shortcut: <em>&ldquo;three for both of those&rdquo;</em> &mdash; the third nerve appears
-    in both patterns, so seeing double of anything implicates it; two images <b>side by side</b>
-    is where the sixth nerve has joined in.</p>
+    <p>Her shortcut: <em>&ldquo;three for both of those&rdquo;</em> &mdash; the third nerve can cause either pattern, but double vision can also come from the sixth nerve alone (images <b>side by side</b>) or the fourth nerve alone (images on top of each other).</p>
     <p>Diplopia otherwise means faulty alignment or a neurological problem &mdash; brainstem or
     cerebellar lesions, or weakness of one or more extraocular muscles. Look for a
     <b>compensatory head posture</b>.</p>
@@ -180,9 +178,7 @@ BODY = """
   print a normal eye reads at 200 feet; <b>the larger the second number, the worse the vision</b>.
   If the patient cannot read the chart, document <b>counting fingers, hand motion, or light
   perception</b>.</p>
-  <p><b>Pinhole test:</b> the pinhole admits only light perpendicular to the lens, so the light
-  need not be bent to focus &mdash; it therefore corrects any <b>refractive</b> error. If the
-  deficit is <em>not</em> corrected, consider <b>cataract, optic nerve disease, or retinal
+  <p><b>Pinhole test:</b> the pinhole blocks the scattered outer rays and lets through only a narrow central beam, which shrinks the blur, so vision improves if the problem is a <b>refractive</b> error. If the deficit is <em>not</em> improved, consider <b>cataract, optic nerve disease, or retinal
   disease</b>.</p>
   <p><b>Confrontation fields</b> are best done with both the <b>static finger wiggle</b> test
   (arms' length, hands two feet apart lateral to the ears, wiggling fingers brought slowly into
@@ -216,10 +212,13 @@ BODY = """
   <table class="tbl">
     <tr><th></th><th>Pupil</th><th>Light</th><th>Near</th><th>Other</th></tr>
     <tr><td><b>Adie's tonic</b></td><td>Large, regular, usually unilateral</td><td>Severely reduced and slowed, or absent</td><td><b>Present but very slow</b></td><td>Degeneration of the ciliary ganglia and postganglionic parasympathetic fibers; slow accommodation blurs near vision</td></tr>
-    <tr><td><b>Argyll Robertson</b></td><td>Small, unequal, irregular</td><td><b>No reaction</b></td><td><b>Constricts</b></td><td>&ldquo;Accommodates but doesn't react.&rdquo; Classically tertiary syphilis, today more often diabetes; also Lyme. Mydriatics dilate it only <b>incompletely</b></td></tr>
+    <tr><td><b>Argyll Robertson</b></td><td>Small, unequal, irregular</td><td><b>No reaction</b></td><td><b>Constricts</b></td><td>&ldquo;Accommodates but doesn't react.&rdquo; Classically tertiary syphilis (neurosyphilis); diabetes and Lyme disease can cause a similar pupil, and today diabetes is the more common cause of a similar picture. Mydriatics dilate it only <b>incompletely</b></td></tr>
     <tr><td><b>Horner syndrome</b></td><td>Small (miosis)</td><td colspan="2"><b>Reacts briskly to both</b></td><td>Ptosis, anhidrosis of the ipsilateral face. Sympathetic supply to the pupil and levator interrupted. Congenital form: the involved iris is <b>lighter</b> (heterochromia)</td></tr>
-    <tr><td><b>Oculomotor palsy</b></td><td>Dilated</td><td colspan="2"><b>Fixed to both</b></td><td>Ptosis and lateral deviation almost always present</td></tr>
+    <tr><td><b>Oculomotor palsy</b></td><td>Dilated in a compressive palsy; often spared in a diabetic (ischemic) palsy</td><td colspan="2"><b>Fixed to both</b> in a compressive palsy</td><td>Ptosis and lateral deviation almost always present</td></tr>
   </table>
+  <p><b>The pupil in an oculomotor (third nerve) palsy:</b> in a compressive palsy the pupil is
+  dilated and fixed to both light and near effort, with ptosis and lateral deviation almost always
+  present; in a diabetic (ischemic) palsy the pupil is often spared.</p>
   <p><b>Once local eye disease is excluded, only three causes of a dilated pupil remain:</b>
   compression or other lesion of cranial nerve III; parasympathetic denervation from a ciliary
   ganglion lesion (Adie's); and pharmacologic block of the pupillary sphincter.</p>
@@ -230,8 +229,7 @@ BODY = """
   cataract, which lies deeper and is seen only through the pupil.</p>
 
   <h3 class="sub" id="l3-fundus">3.6 &middot; Fundoscopy</h3>
-  <p><b>Do NOT dilate</b> if serial neurologic examinations are required, in elderly patients who
-  have had cataract surgery, or if acute angle-closure glaucoma is suspected. If you do dilate,
+  <p><b>Do NOT dilate</b> if serial neurologic examinations are required, in elderly patients who have not had cataract surgery (a thick natural lens can crowd the angle), or if acute angle-closure glaucoma is suspected. (The slide says patients who have had cataract surgery; after surgery the artificial lens leaves more room.) If you do dilate,
   <b>document the time and the agents used</b>.</p>
   <table class="tbl">
     <tr><th></th><th>Color</th><th>Disc</th><th>Cup / vessels</th></tr>
@@ -288,7 +286,7 @@ TESTS = """    ocular: [
        explain:"Glaucoma: a dilated, fixed pupil with a steamy, cloudy cornea signals an acute increase in intraocular pressure, which is an emergency."},
       {q:"Which pupil accommodates but does not react to light?",
        choices:["Adie's tonic pupil","Argyll Robertson pupil","Horner syndrome","Oculomotor palsy"],correct:1,
-       explain:"Small, unequal and irregular. Classically tertiary syphilis, today more often diabetes."},
+       explain:"Small, unequal and irregular. Classically tertiary syphilis (neurosyphilis); diabetes can cause a similar pupil."},
       {q:"A patient's eye pain is RELIEVED by a topical anesthetic. What does that suggest?",
        choices:["A deep source","A surface problem such as corneal injury","Acute glaucoma","Optic neuritis"],correct:1,
        explain:"Pain NOT relieved suggests a deeper source. It is a depth test."},

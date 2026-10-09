@@ -437,10 +437,10 @@ POOL = [
  "c": 0, "cite": c(16)},
 
 {"topic": "Cohort strengths and limits", "io": IO4, "slot": "limitation",
- "q": "Why can a prospective cohort study not be used for rare diseases?",
+ "q": "Why is a prospective cohort study impractical for rare diseases?",
  "opts": [
   ["Enrollment must far exceed the few events",
-   "Correct: it is inefficient because many more subjects must be enrolled than experience the event of interest, and it is also expensive and slow."],
+   "Correct: it is impractical because many more subjects must be enrolled than experience the event of interest, and it is also expensive and slow."],
   ["Rare diseases have no measurable exposures",
    "Exposures to rare diseases can be measured; the difficulty is the very large number of subjects needed."],
   ["The cohort cannot be followed forward",

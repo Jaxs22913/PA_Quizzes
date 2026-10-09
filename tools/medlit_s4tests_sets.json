@@ -298,7 +298,7 @@
     ],
     [
      "About 16",
-     "Correct: 0.65 divided by 0.04 gives 16.25, so a positive result makes the infection about sixteen times more likely."
+     "Correct: 0.65 divided by 0.04 gives 16.25, so a positive result multiplies the odds of infection by about sixteen."
     ],
     [
      "About 1.5",
@@ -789,16 +789,16 @@
    "q": "A test has a negative likelihood ratio of 0.5. What does a negative result mean?",
    "opts": [
     [
-     "The patient is half as likely to have the condition",
-     "Correct, relative to the pre-test probability. A ratio below one lowers the probability, and one above one raises it."
+     "The odds of the condition are cut in half",
+     "Correct: a likelihood ratio multiplies the odds of the condition, so a ratio of 0.5 halves them. A ratio below one lowers the odds, and one above one raises them."
     ],
     [
-     "The patient is twice as likely to have the condition",
-     "A ratio below one moves the probability down rather than up."
+     "The odds of the condition are doubled",
+     "A ratio below one moves the odds down rather than up, so a ratio of 0.5 cannot double them; it halves them."
     ],
     [
      "Half of all negative results are wrong",
-     "The ratio expresses a shift in probability rather than an error rate."
+     "The ratio expresses a shift in the odds of the condition rather than an error rate; the share of negative results that are wrong is one minus the negative predictive value."
     ],
     [
      "The disease has a prevalence of 50 percent",
@@ -845,8 +845,8 @@
      "The ratio is a multiplier on the odds rather than a percentage of correct results."
     ],
     [
-     "A positive result makes it four times more likely",
-     "Correct, relative to the pre-test probability, which is what makes the ratio a multiplier rather than a probability in its own right."
+     "The odds of the condition are multiplied by four",
+     "Correct: a likelihood ratio multiplies the odds of the condition rather than its probability, so a ratio of 4 makes the odds four times what they were before the test."
     ],
     [
      "Four patients in every hundred have the disease",
@@ -854,7 +854,7 @@
     ],
     [
      "The test is correct four times out of five",
-     "A likelihood ratio does not express a rate of correctness; it expresses how much the result shifts probability."
+     "A likelihood ratio does not express a rate of correctness; it expresses how much the result multiplies the odds of the condition."
     ]
    ],
    "c": 1,

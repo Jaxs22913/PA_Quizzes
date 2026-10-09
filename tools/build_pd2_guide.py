@@ -246,7 +246,7 @@ BODY = '''<main>
     <tr><td>Sun-exposed (photodistribution)</td><td>Skin cancers</td></tr>
     <tr><td>Dermatome</td><td>Herpes zoster</td></tr>
     <tr><td>Extensor</td><td>Psoriasis</td></tr>
-    <tr><td>Flexor</td><td>Intertrigo</td></tr>
+    <tr><td>Flexor</td><td>Atopic dermatitis is the classic example (the inner elbows and the backs of the knees); intertrigo, inflammation in skin folds, is also paired with this pattern</td></tr>
     <tr><td>Intertriginous (creases and folds)</td><td>Involvement of skin folds</td></tr>
   </table>
   <p><strong>Configuration</strong> &mdash; the shape the lesions make together:</p>
@@ -358,7 +358,7 @@ BODY = '''<main>
   social history, cognition, and ability to perform activities of daily living.</div>
 
   <h3 class="sub" id="derm-abnormal">2.6 &middot; Objective d &mdash; Abnormal findings: the skin</h3>
-  <p><strong>Vascular lesions.</strong> The single maneuver that sorts them is
+  <p><strong>Vascular lesions.</strong> The maneuver that separates blanching from non-blanching lesions is
   <strong>diascopy</strong>: press a piece of clear glass or plastic against the skin and look at the
   lesion under pressure. <strong>If the color fades, there is vascular engorgement; if it does not
   fade, it is hemorrhage in the skin.</strong></p>
@@ -376,8 +376,7 @@ BODY = '''<main>
   of them blanches &mdash; because the blood is outside the vessels. Under 3 mm, 3 mm to 1 cm, over
   1 cm.</div>
   [[GRID:petechiae-purpura,ecchymosis,cherry-angioma]]
-  <p><strong>Dermatographism</strong> &mdash; &ldquo;writing on skin&rdquo;, an urticarial type
-  allergic reaction. Firm stroking produces the <strong>triple response of Lewis</strong>:</p>
+  <p><strong>Dermatographism</strong> &mdash; &ldquo;writing on skin&rdquo;, a hive-type (urticarial) reaction, often called allergic, though it is really an exaggerated skin response to pressure rather than a true allergy. Firm stroking produces the <strong>triple response of Lewis</strong>:</p>
   <table>
     <tr><th>Step</th><th>What appears</th><th>Mechanism</th></tr>
     <tr><td>1</td><td>Initial red line</td><td>Capillary dilatation</td></tr>
@@ -389,12 +388,10 @@ BODY = '''<main>
     <tr><th>Stage</th><th>Finding</th></tr>
     <tr><td>I</td><td>Alteration of <strong>intact</strong> skin: erythema that fails to blanch with pressure, plus change in temperature (warmth or coolness), consistency (firm or boggy), sensation (pain or itching), and color</td></tr>
     <tr><td>II</td><td><strong>Partial</strong> thickness skin loss involving epidermis, dermis or both</td></tr>
-    <tr><td>III</td><td><strong>Full</strong> thickness skin loss; necrosis of subcutaneous tissue; may extend to but <strong>not through</strong> underlying muscle</td></tr>
+    <tr><td>III</td><td><strong>Full</strong> thickness skin loss; necrosis of subcutaneous tissue; may extend to, but <strong>not through</strong>, the underlying fascia (the tough sheet over the muscle)</td></tr>
     <tr><td>IV</td><td>Full thickness skin loss; destruction of tissue, muscle and/or bone</td></tr>
   </table>
-  <div class="pearl">The stage I / stage II line is whether the skin is broken; the stage III /
-  stage IV line is whether muscle and bone are destroyed. &ldquo;Reaches muscle but does not go
-  through it&rdquo; is still stage III.</div>
+  <div class="pearl">The stage I / stage II line is whether the skin is broken; the stage III / stage IV line is whether the damage goes deeper than the fat: once muscle, bone or supporting structures are involved, it is stage IV. (The slide says stage III may reach muscle without going through it; in the standard staging, muscle involvement is already stage IV.)</div>
   [[GRID:pressure-ulcer-stage-1,pressure-ulcer-stage-2,pressure-ulcer-stage-3,pressure-ulcer-stage-4]]
   <p><strong>Tinea infections</strong>, named by site: corporis (body) &middot; pedis (foot) &middot;
   barbae (beard) &middot; cruris (groin) &middot; capitis (scalp) &middot; unguium (nails).</p>
@@ -534,9 +531,9 @@ TEST_YOURSELF = '''  var TEST_YOURSELF = {
       {q:"A bulla ruptures leaving a moist area that does not bleed. How is this described?",
        choices:["An ulcer","A fissure","An excoriation","An erosion"],correct:3,
        explain:"An erosion — loss of superficial epidermis that does not involve the dermis. Moist but not bleeding is the giveaway. An ulcer reaches the dermis, may bleed, and may scar."},
-      {q:"A pressure ulcer shows full thickness skin loss with necrosis reaching but not penetrating muscle. What stage?",
+      {q:"A pressure ulcer shows full thickness skin loss with necrosis of subcutaneous tissue reaching but not through the underlying fascia. What stage?",
        choices:["Stage III","Stage II","Stage IV","Stage I"],correct:0,
-       explain:"Stage III: full thickness loss with necrosis of subcutaneous tissue, extending to but NOT through underlying muscle. Stage IV is destruction of tissue, muscle and bone."},
+       explain:"Stage III: full thickness loss with necrosis of subcutaneous tissue, extending to but NOT through the underlying fascia. Stage IV is destruction of tissue with involvement of muscle, bone or supporting structures."},
       {q:"A patient has round patches of hair loss with hairs that taper toward the scalp and no scaling. What is this?",
        choices:["Tinea capitis","Alopecia areata","Trichotillomania","Androgenic alopecia"],correct:1,
        explain:"Those are exclamation point hairs — alopecia areata, a chronic inflammatory disease of hair follicles associated with autoimmune disorders. Tinea capitis would scale and break hairs off close to the scalp."},

@@ -109,7 +109,7 @@ QUESTIONS = [
   ["With other diuretics or antihypertensives", "Correct. Their weak effect makes them most useful in combination, where they hold on to potassium that the partner drug wastes."],
   ["Alone for acute pulmonary edema", "Acute pulmonary edema needs a potent loop diuretic; these drugs are too weak to be used alone."],
   ["Alone to prevent mountain sickness", "Mountain sickness is prevented with a carbonic anhydrase inhibitor, not a potassium-sparing diuretic."],
-  ["Alone for hypercalcemia with saline", "Hypercalcemia is treated with a loop diuretic and saline; potassium-sparing diuretics are not used alone this way."]],
+  ["Alone for hypercalcemia with saline", "Hypercalcemia is treated mainly with saline hydration, with a loop diuretic only as an add-on; potassium-sparing diuretics are not used alone this way."]],
  "c": 0, "cite": D + ", Slide 32"},
 
 {"topic": KS, "io": IO_AE, "slot": "adverse effect",
@@ -243,7 +243,7 @@ QUESTIONS = [
  "q": "Which condition raises aldosterone secondarily and is treated with an aldosterone antagonist?",
  "opts": [
   ["Cirrhosis of the liver", "Correct. Cirrhosis causes secondary hyperaldosteronism, and aldosterone antagonists are used for the resulting edema."],
-  ["Hypercalcemia", "Hypercalcemia is treated with a loop diuretic and saline; it is not an aldosterone-driven condition."],
+  ["Hypercalcemia", "Hypercalcemia is treated mainly with saline hydration, with a loop diuretic only as an add-on; it is not an aldosterone-driven condition."],
   ["Mountain sickness", "Mountain sickness is a carbonic anhydrase inhibitor indication and is not driven by aldosterone."],
   ["Glaucoma", "Glaucoma is treated by lowering aqueous humor, for example with carbonic anhydrase inhibitors, not aldosterone antagonists."]],
  "c": 0, "cite": D + ", Slide 37"},

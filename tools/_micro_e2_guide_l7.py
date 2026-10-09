@@ -122,8 +122,9 @@ SECTION = """
     <li>The tuberculin skin test is read at <b>48 to 72 hours</b>, and once positive it stays positive
     because of memory cells. [part 2, 4:19]</li>
     <li>Poison ivy oil binds the skin within about <b>15 minutes</b> (wash it off before then), and the
-    first exposure takes <b>7 to 10 days</b> to make effector T cells &mdash; by which time the
-    exposed skin has shed, so the first contact produces no rash. [part 2, 5:32&ndash;6:22]</li>
+    first exposure takes <b>7 to 10 days</b> to make effector T cells or more &mdash; so the first contact causes no quick rash (at most a delayed one) and later
+    contacts react much faster. The recording explains the missing first rash by the skin having shed; that explanation
+    is not established. [part 2, 5:32&ndash;6:22]</li>
     <li>Blood type <b>O</b> is the universal donor (no A or B antigen on the cell); <b>AB</b> is the
     universal recipient (no anti-A or anti-B antibody in the serum). [part 1, 38:19&ndash;39:20]</li>
     <li>Bone marrow donors are matched on <b>at least 10</b> human leukocyte antigen markers, and even
@@ -173,11 +174,11 @@ SECTION = """
   <div class="pearl"><strong>The hygiene hypothesis.</strong> Many allergens resemble parasitic antigens,
   and helminth infection (about 1 billion people heavily and persistently infected) produces exactly the
   allergic profile &mdash; CD4 type 2 helper T responses, high immunoglobulin E, more eosinophils and
-  mast cells &mdash; yet no allergic disease. Why: <strong>nonspecific immunoglobulin E competes</strong>
+  mast cells &mdash; yet people with chronic worm infections tend to have less allergic disease, for two proposed reasons: <strong>nonspecific immunoglobulin E competes</strong>
   for the Fc receptors on mast cells, basophils and activated eosinophils, and <strong>regulatory T
-  cells suppress</strong> T cell responses in chronic parasitic infection. Where helminths were eradicated
-  (Western Europe, North America) by better hygiene, vaccination and antibiotics, the immune system is
-  underused and less successfully regulated.</div>
+  cells suppress</strong> T cell responses in chronic parasitic infection. Where helminths were removed
+  (Western Europe, North America) by better sanitation and treatment, the idea is that this arm of the immune system is
+  underused and less successfully regulated, so it may overreact to harmless things.</div>
   <p><strong>Predisposition.</strong> A generalized predisposition to allergy is familial &mdash; not a
   predisposition to a specific allergy. Allergy is affected by age, infection and geographic area; atopic
   allergies may be lifelong, outgrown, or develop later in life. The four groups are defined by the
@@ -286,7 +287,7 @@ SECTION = """
   <table>
     <tr><th>Test</th><th>Use</th></tr>
     <tr><td>Skin testing &mdash; skin prick, intradermal</td><td>Reads wheal and flare reactions</td></tr>
-    <tr><td>Blood tests</td><td>Specific immunoglobulin E; increased basophils</td></tr>
+    <tr><td>Blood tests</td><td>Specific immunoglobulin E to the suspected allergen (the slide lists increased basophils, but a raised basophil count is not a reliable allergy marker)</td></tr>
     <tr><td>Physician-supervised challenge</td><td>Food allergy when other tests are inconclusive</td></tr>
     <tr><td>Patch test</td><td>Contact dermatitis (type IV)</td></tr>
   </table>
@@ -297,7 +298,7 @@ SECTION = """
     <tr><th>Drug</th><th>Action</th></tr>
     <tr><td>Corticosteroids</td><td>Inhibit lymphocytes to reduce immunoglobulin E</td></tr>
     <tr><td>Cromolyn sodium</td><td>Blocks mast cell degranulation</td></tr>
-    <tr><td>Montelukast sodium</td><td>Blocks leukotriene synthesis</td></tr>
+    <tr><td>Montelukast sodium</td><td>Blocks the action of leukotrienes (the freshly made products behind the late phase reaction); the slide says it blocks their synthesis, but montelukast is a receptor blocker</td></tr>
     <tr><td>Omalizumab</td><td>Monoclonal antibody against immunoglobulin E</td></tr>
     <tr><td>Antihistamines</td><td>Bind histamine receptors on target organs</td></tr>
     <tr><td>Epinephrine</td><td>Reverses airway constriction; re-establishes endothelial tight junctions</td></tr>
@@ -468,7 +469,7 @@ SECTION = """
   molecule then binds the lymphocytes&rsquo; receptor, and the tumor cell escapes killing. Tumors also
   secrete <strong>transforming growth factor beta</strong>, suppressing immunity and recruiting
   <strong>regulatory T cells</strong>, which make more of it plus interleukin 10 and suppress the CD8 and CD4
-  type 1 helper cells specific for tumor antigens. <strong>The more regulatory T cells in a tumor, the
+  type 1 helper cells specific for tumor antigens. <strong>In many cancers, the more regulatory T cells in a tumor, the
   worse the prognosis.</strong></div>
 
   <h3 class="sub" id="di-immunotherapy">7.9 &middot; Objective 9 &mdash; Comparing immunotherapy strategies</h3>
@@ -478,7 +479,7 @@ SECTION = """
     preventing the &ldquo;off&rdquo; signal so T cells keep killing. Do <em>not</em> kill cancer cells directly</td>
     <td>Melanoma, some lung cancers</td></tr>
     <tr><td><strong>Adoptive cell therapy</strong></td><td>Patient&rsquo;s own cells engineered outside the body and
-    returned</td><td>Tumor infiltrating lymphocytes: in development, not approved. CAR-T (chimeric antigen
+    returned</td><td>Tumor infiltrating lymphocytes: approved for advanced melanoma (lifileucel, 2024) and still being studied in other solid tumors (the slide says in development, not yet approved). CAR-T (chimeric antigen
     receptor T cells): <strong>approved for blood cancers</strong>. Chimeric antigen receptor natural killer cells: mostly in
     trials, including solid tumors</td></tr>
     <tr><td><strong>Monoclonal antibodies</strong></td><td>Diagnosis <em>and</em> elimination of cancer cells;

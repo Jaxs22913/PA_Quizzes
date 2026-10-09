@@ -599,8 +599,8 @@ POOL = [
 {"topic": "Meta-analysis", "io": IOA, "slot": "definition",
  "q": "What does pooling data in a meta-analysis achieve?",
  "opts": [
-  ["It produces what amounts to a single large study",
-   "Correct, and a greater number of participants usually means greater power, though the qualifier matters: pooling weak studies gives a larger weak study."],
+  ["It gives more power than any one study",
+   "Correct: pooling statistically combines the participants of several studies, and a greater number of participants usually means greater power, though pooling weak studies gives a larger but still weak result."],
   ["It removes bias present in the component studies",
    "Combining studies does not correct systematic error within them."],
   ["It converts observational studies into experiments",

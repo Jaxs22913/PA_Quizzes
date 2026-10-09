@@ -160,8 +160,10 @@ BODY = '''<main>
     <li>Distinguish cardiovascular causes from disorders of the pericardium, trachea, bronchi, parietal
     pleura, esophagus, chest wall, gallbladder, stomach and neck &mdash; <em>&ldquo;anything that&rsquo;s in
     there can cause pain &hellip; but the big bad that we worry about first, cardiac.&rdquo;</em></li>
-    <li>Men and women with acute coronary syndrome present with the classic symptoms of <b>exertional
-    angina</b>.</li>
+    <li>Men and women with acute coronary syndrome most often describe <b>classic chest pressure or
+    pain</b>, which can come on with exertion or at rest. (The slide ties this to exertional angina; exertional
+    chest pain is the picture of stable angina, while acute coronary syndrome is often pressure at rest,
+    prolonged, or new or worsening.)</li>
     <li><b>Women over 65</b> are likely to report <b>atypical symptoms</b>: upper back, neck or jaw pain,
     shortness of breath, paroxysmal nocturnal dyspnea, nausea, vomiting, fatigue. In the lecture: keep a
     high index of suspicion, because <em>&ldquo;sometimes it&rsquo;s just truly fatigue.&rdquo;</em></li>
@@ -236,7 +238,7 @@ BODY = '''<main>
       watching a classmate fish for a vein)</td><td>Vasovagal</td></tr>
       <tr><td>Stood up from a crouch, tunnel vision, then down</td><td>Orthostatic</td></tr>
       <tr><td><b>Sudden, no warning</b> &mdash; <em>&ldquo;they&rsquo;re here and then they&rsquo;re
-      not&rdquo;</em></td><td><b>Arrhythmia</b> &mdash; <em>&ldquo;please run and get the AED [automated external defibrillator] and then also
+      not&rdquo;</em></td><td><b>Think arrhythmia.</b> This can be an emergency; if the patient does not wake promptly or has no pulse &mdash; <em>&ldquo;please run and get the AED [automated external defibrillator] and then also
       call 911&rdquo;</em></td></tr>
       <tr><td>Comes round agitated and confused</td><td>A postictal phase &mdash; think seizure</td></tr>
     </table>
@@ -331,15 +333,17 @@ BODY = '''<main>
     shifts <b>lateral and possibly inferior</b> &mdash; for example the sixth intercostal space at the anterior
     axillary line.</li>
     <li>Supine, its diameter can be the size of a <b>quarter (about 2.5 cm)</b>; it is usually palpated as
-    <b>brisk and tapping</b>.</li>
+    <b>brisk and tapping</b>. (The deck&rsquo;s tables quote about 2 cm as normal and over 2 cm as enlarged; because a
+    normal supine impulse can reach about 2.5 cm, do not use a fixed number &mdash; judge whether it is larger than normal.)</li>
     <li>Cannot find it supine? Roll the patient to the <b>left lateral decubitus</b> position. Still nothing?
     Ask them to <b>exhale fully and hold</b> for a few seconds.</li>
     <li>Technique from the lecture: start with four fingers, lift them one at a time until one finger sits on
     the most intense point.</li>
   </ul>
   <div class="pearl"><b>Document where you find it.</b> The slide says so in capitals, and she explained why
-  (part 1, 29:05&ndash;30:43): a displaced impulse moves your thinking toward an enlarged heart, a shift from
-  fluid in the pleural space, or &mdash; with muffled heart sounds and a rub &mdash; a pericardial effusion.
+  (part 1, 29:05&ndash;30:43): a displaced impulse moves your thinking toward an enlarged heart or a shift caused by
+  fluid in the pleural space. Muffled heart sounds with a rub point toward pericardial disease, where the impulse is often faint
+  rather than displaced.
   <em>&ldquo;Knowing where you&rsquo;re supposed to find it and then documenting where you actually find it is
   valuable.&rdquo;</em></div>
 
@@ -357,7 +361,7 @@ BODY = '''<main>
   <table>
     <tr><th></th><th>Hyperkinetic</th><th>Pressure overload</th><th>Volume overload</th></tr>
     <tr><td>Location</td><td>Normal</td><td>Normal</td><td><b>Displaced to the left and possibly downward</b></td></tr>
-    <tr><td>Diameter</td><td>About 2 cm, though increased amplitude may make it feel larger</td><td>Over 2 cm</td><td>Over 2 cm</td></tr>
+    <tr><td>Diameter</td><td>Close to normal size, though increased amplitude may make it feel larger</td><td>Larger than normal</td><td>Larger than normal, spread out</td></tr>
     <tr><td>Amplitude</td><td>More forceful tapping</td><td>More forceful tapping</td><td>Diffuse</td></tr>
     <tr><td>Duration</td><td>Under two thirds of systole</td><td><b>Sustained</b></td><td>Often slightly sustained</td></tr>
     <tr><td>Examples</td><td>Anxiety, hyperthyroidism, severe anemia</td><td><b>Aortic stenosis, hypertension</b></td><td><b>Aortic or mitral regurgitation, cardiomyopathy</b></td></tr>
@@ -492,7 +496,7 @@ BODY = '''<main>
   <table>
     <tr><th></th><th>Innocent</th><th>Physiologic</th><th>Pathologic</th></tr>
     <tr><td>What it is</td><td>No physiologic or structural abnormality, usually from increased flow</td><td>From physiologic changes in body metabolism</td><td>A structural abnormality of the heart or great vessels</td></tr>
-    <tr><td>Features</td><td>Grade 1&ndash;3 of 6. <b>Diminishes</b> when the patient stands, sits up or does a Valsalva. Common in infancy and childhood, gone by adulthood</td><td>Examples: <b>anemia, pregnancy, fever, hyperthyroidism</b></td><td>Examples: <b>aortic stenosis, pulmonic stenosis, hypertrophic obstructive cardiomyopathy, atrial septal defect</b></td></tr>
+    <tr><td>Features</td><td>Grade 1&ndash;3 of 6. <b>Diminishes</b> when the patient stands, sits up or does a Valsalva. Most common in infancy and childhood, though healthy adults can have them too</td><td>Examples: <b>anemia, pregnancy, fever, hyperthyroidism</b></td><td>Examples: <b>aortic stenosis, pulmonic stenosis, hypertrophic obstructive cardiomyopathy, atrial septal defect</b></td></tr>
   </table>
   <p>She refined the slide on one point (part 3, 10:34): innocent is defined by the <b>absence of symptoms
   and of any structural abnormality</b>, not by the grade &mdash; <em>&ldquo;It&rsquo;s not that, oh, the grade
@@ -516,7 +520,7 @@ BODY = '''<main>
     <tr><td>Pitch</td><td>Medium, harsh</td><td>Medium, harsh</td><td>Medium, harsh</td><td>Medium, <b>blowing</b></td><td>Medium to high, <b>harsh</b> (the left ventricle is powerful)</td></tr>
     <tr><td>Shape</td><td>Crescendo-decrescendo</td><td>Crescendo-decrescendo</td><td>Crescendo-decrescendo</td><td>Plateau</td><td>Holosystolic</td></tr>
     <tr><td>Location</td><td><b>Aortic area</b></td><td><b>Pulmonic area</b></td><td><b>Erb&rsquo;s point, tricuspid area</b></td><td><b>Lower left sternal border</b></td><td><b>Apex</b></td></tr>
-    <tr><td>Radiation</td><td>Often to the <b>carotids</b>, down the left sternal border, even to the apex</td><td>Toward the left shoulder and neck, if loud</td><td>Down the left sternal border to the apex, possibly the base; <b>never to the neck</b></td><td>Right sternum, xiphoid, left midclavicular line; <b>not the axilla</b></td><td>To the <b>left axilla</b></td></tr>
+    <tr><td>Radiation</td><td>Often to the <b>carotids</b>, down the left sternal border, even to the apex</td><td>Toward the left shoulder and neck, if loud</td><td>Down the left sternal border to the apex, possibly the base; <b>usually not to the neck</b></td><td>Right sternum, xiphoid, left midclavicular line; <b>not the axilla</b></td><td>To the <b>left axilla</b></td></tr>
     <tr><td>Maneuvers</td><td>Heard better sitting and leaning forward. <b>Increases</b> with squatting from standing and with leg raise</td><td>None</td><td><b>Decreases with squatting; increases with Valsalva and standing</b></td><td>May increase slightly with inspiration</td><td>Increases with handgrip or squatting</td></tr>
   </table>
   [[GRID:valve-aortic-stenosis,valve-pulmonic-stenosis,hypertrophic-cardiomyopathy]]
@@ -531,8 +535,8 @@ BODY = '''<main>
     <p>The slide says it in capitals: <b>important to learn this murmur so you don&rsquo;t sign off incorrectly on
     a sports physical.</b> It is a disease of abnormally thickened myocardium, most commonly the
     <b>interventricular septum</b>, with the muscle fibers not aligned properly: a high-pitched,
-    crescendo-decrescendo, midsystolic murmur heard best at the <b>left lower sternal border</b>, because it is a
-    muscle problem rather than a valve one.</p>
+    crescendo-decrescendo, midsystolic murmur heard best along the <b>left sternal border</b> (Erb&rsquo;s point and the tricuspid area) rather than over the aortic area. It is a
+    muscle problem rather than a valve one, so it usually does not radiate to the neck.</p>
     <p>She ranked it above the other ejection murmurs (part 3, 16:50, both transcripts): <em>&ldquo;aortic
     stenosis, pulmonic stenosis, they get to a point where we&rsquo;re worried about them, but <b>[hypertrophic obstructive cardiomyopathy], we&rsquo;re
     worried about it, period</b>. The moment we recognize that this could be [it], we&rsquo;re worried.&rdquo;</em>
@@ -583,7 +587,7 @@ BODY = '''<main>
     <tr><td><b>Valsalva</b> (strain) &mdash; forceful expiration against a closed airway; the supine patient bears down, or pushes against your hand on the mid-abdomen</td><td>Raises intrathoracic pressure, <b>decreases left ventricular filling (preload)</b></td><td><b>Increases</b></td><td>Softer or no change</td><td>Click earlier, murmur lengthens</td></tr>
     <tr><td><b>Standing quickly from squatting</b></td><td>Blood moves to the legs: <b>less venous return, less preload</b></td><td><b>Louder</b></td><td><b>Softer</b></td><td>Click earlier, murmur lengthens</td></tr>
     <tr><td><b>Squatting from standing, or leg raise</b></td><td>Blood stored in the legs returns: <b>more venous return, more preload</b></td><td><b>Softer</b> (less outflow obstruction)</td><td><b>Louder</b> (more blood rushing past the narrow valve)</td><td>Moved <b>later</b> in systole; murmur shortens</td></tr>
-    <tr><td><b>Isometric handgrip</b></td><td>Raises vascular resistance</td><td colspan="3">Increases the systolic murmurs of <b>mitral regurgitation, pulmonic stenosis and ventricular septal defect</b>, and the diastolic murmurs of <b>aortic regurgitation and mitral stenosis</b></td></tr>
+    <tr><td><b>Isometric handgrip</b></td><td>Raises vascular resistance</td><td colspan="3">Increases the systolic murmurs of <b>mitral regurgitation and ventricular septal defect</b>, and the diastolic murmurs of <b>aortic regurgitation and mitral stenosis</b>. (The deck&rsquo;s list also names pulmonic stenosis; handgrip raises left-sided afterload, and a right-sided outflow murmur is not expected to increase, so it is left out here.)</td></tr>
   </table>
   [[FIG:maneuver-table]]
   <div class="pearl"><b>One rule generates the whole hypertrophic cardiomyopathy row.</b> Its obstruction is a
@@ -617,7 +621,7 @@ BODY = '''<main>
   <h4 class="subsub">Chronic arterial versus chronic venous insufficiency</h4>
   <table>
     <tr><th></th><th>Chronic arterial insufficiency</th><th>Chronic venous insufficiency</th></tr>
-    <tr><td>Pain</td><td><b>Pain with walking progressing to pain at rest (claudication)</b></td><td><b>No pain</b></td></tr>
+    <tr><td>Pain</td><td><b>Pain with walking (claudication), like angina of the legs, which can progress to pain at rest</b></td><td><b>Usually none or mild</b>: an ache or heaviness that eases with elevation, unlike claudication</td></tr>
     <tr><td>Color</td><td><b>Pale or dusky red</b>; <b>foot pallor on elevation, dusky rubor</b> on dependency</td><td><b>Cyanotic or brownish pigmentation</b> (hemosiderin staining); cyanosis of the foot when dependent</td></tr>
     <tr><td>Temperature</td><td><b>Cool</b> to touch</td><td><b>Normal</b></td></tr>
     <tr><td>Edema</td><td><b>None</b></td><td><b>Pitting edema</b></td></tr>
@@ -628,7 +632,8 @@ BODY = '''<main>
   </table>
   [[GRID:arterial-insufficiency-legs,arterial-rubor-ulcer,venous-insufficiency]]
   <div class="pearl"><b>Why each column looks the way it does</b> (part 3, 43:16&ndash;49:21). Arterial: not
-  enough blood arriving, so the limb is cool, pale, hairless (<em>&ldquo;we don&rsquo;t need that to survive, so
+  enough blood arriving, so the limb is cool and pale, and hair loss and thin, shiny skin are common findings
+  (poor supply starves what the body needs least to survive: <em>&ldquo;we don&rsquo;t need that to survive, so
   that becomes less of a priority&rdquo;</em>), and walking produces <b>&ldquo;angina of the legs&rdquo;</b>.
   Venous: <em>&ldquo;It&rsquo;s not the flow down. That&rsquo;s the issue. It&rsquo;s the flow back&rdquo;</em>,
   so fluid pools distally, stretches the skin until it breaks down, and stains it brown. With heavy edema over
@@ -672,8 +677,8 @@ BODY = '''<main>
     <tr><td><b>Femoral</b></td><td>Directly over the femoral artery, halfway between the anterior superior iliac spine and the pubic symphysis</td></tr>
   </table>
   [[FIG:bruit-sites]]
-  <p>A bruit means narrowing, and so possible arterial insufficiency of whatever that vessel supplies &mdash;
-  a renal bruit raises the question of whether the kidneys are getting enough blood.</p>
+  <p>A bruit often means narrowing, and so possible arterial insufficiency of whatever that vessel supplies,
+  though turbulent flow can have other causes &mdash; a renal bruit raises the question of whether the kidneys are getting enough blood.</p>
 
   <h4 class="subsub">Special techniques</h4>
   <p><b>Allen test</b> &mdash; evaluates the arterial supply of the hand by assessing the <b>patency of the radial
@@ -719,8 +724,10 @@ BODY = '''<main>
   suggested a computed tomography angiogram and she agreed. She also said she has ordered many and performed
   none &mdash; where she practiced, radiology did them.</div>
 
-  <p><b>Homans sign</b> &mdash; a test for <b>deep vein thrombosis</b>: <b>quickly and forcefully dorsiflex the
-  foot at the ankle with the knee bent</b>. <b>Positive: pain behind the knee.</b></p>
+  <p><b>Homans sign</b> &mdash; a test for <b>deep vein thrombosis</b>: classically you <b>quickly dorsiflex the
+  foot at the ankle with the knee bent</b>. <b>Positive: pain behind the knee.</b> The sign is now considered
+  unreliable and should not be used alone to decide whether a clot is present, and forceful manipulation of a limb that may hold a clot is discouraged;
+  the course teaches it as a technique.</p>
   [[FIG:homans-sign]]
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; a negative Homans does not reassure</span>
     <p>Perform it when you already <b>suspect</b> a deep vein thrombosis, on the leg you are worried about
@@ -747,7 +754,7 @@ BODY = '''<main>
     <li>Describe both the <b>depth</b> (the grade) and the <b>extent</b> &mdash; how far up the edema reaches.
     She described pitting up to the flanks along the dependent areas. Edema can also be <b>non-pitting</b>.</li>
     <li>Edema is not always a vascular finding: heart failure produces it with healthy vessels. Venous stasis
-    edema from the knee down, 3+ and nowhere else, is the pattern that points to the veins.</li>
+    edema classically sits from the knee down, often in one leg or with brown staining and varicose veins, and that pattern points to the veins, although heart failure can also cause leg edema.</li>
   </ul>
   <table>
     <tr><th>Grade</th><th>Depth</th><th>Description</th></tr>

@@ -136,7 +136,7 @@ FIGURES = [
   "<b>Pulmonic stenosis</b>: the same obstruction on the right side, with the thickened right ventricular wall it produces &mdash; a right ventricular pressure load."),
  (70, "3d0424", "hypertrophic-cardiomyopathy",
   "Two cutaway hearts side by side, a normal heart and one with hypertrophic cardiomyopathy showing a markedly thickened interventricular septum and left ventricular wall narrowing the outflow tract.",
-  "<b>Hypertrophic cardiomyopathy</b>: the thickening is in the <b>muscle</b>, most commonly the interventricular septum, not the valve. That is why this murmur is loudest at Erb's point and the tricuspid area rather than over the aortic area, and why it never radiates to the neck."),
+  "<b>Hypertrophic cardiomyopathy</b>: the thickening is in the <b>muscle</b>, most commonly the interventricular septum, not the valve. That is why this murmur is loudest at Erb's point and the tricuspid area rather than over the aortic area, and why it usually does not radiate to the neck."),
  (73, "083e66", "valve-tricuspid-regurgitation",
   "Two cutaway views of the right heart, one normal and one with tricuspid valve regurgitation showing arrows of blood leaking back from the right ventricle into the right atrium.",
   "<b>Tricuspid regurgitation</b>: blood leaking back into the right atrium through a valve that should be shut all through systole &mdash; hence pansystolic."),
@@ -169,7 +169,7 @@ FIGURES = [
   "The pitting edema grades, <b>held only in this picture</b> &mdash; the slide's text is just its title. Every step is 2 mm deeper: 1+ is 2 mm and disappears rapidly, 2+ is 4 mm and gone in 10&ndash;15 seconds, 3+ is 6 mm and may last more than a minute, 4+ is 8 mm and can last more than 2 minutes."),
  (92, "3d8fb3", "arterial-insufficiency-legs",
   "Both lower legs and feet showing shiny, hairless skin with patchy discoloration over the shins.",
-  "Chronic <b>arterial</b> insufficiency: loss of hair, discoloration and thin, shiny skin. Poor supply starves what the body does not need to survive first &mdash; the hair goes before anything else."),
+  "Chronic <b>arterial</b> insufficiency: loss of hair, discoloration and thin, shiny skin. Poor supply starves what the body needs least to survive, so hair loss and thin, shiny skin are common findings."),
  (92, "956659", "arterial-rubor-ulcer",
   "Two feet on a rough surface, one with a dusky red flush labeled rubor and a small dark ulcer on the tip of a toe labeled ischemic ulcer.",
   "Dependent <b>rubor</b> and an <b>ischemic ulcer</b> on the toe tip. The distal, most poorly perfused point is where the arterial ulcer forms, and it is painful unless neuropathy has taken the sensation away."),
@@ -229,7 +229,7 @@ FIGURES = [
   "Ankle pressures: cuff <b>above the malleoli</b>, Doppler over the <b>dorsalis pedis</b>, then again over the <b>posterior tibial</b>, then the other leg."),
  (114, "2f52bb", "homans-sign",
   "Illustration of a patient's leg with the knee flexed while an examiner abruptly dorsiflexes the ankle, with numbered steps and pain marked behind the knee as a positive sign.",
-  "<b>Homans sign</b>: knee flexed, foot dorsiflexed quickly and forcefully. <b>Pain behind the knee</b> is the positive result."),
+  "<b>Homans sign</b>: knee flexed, foot dorsiflexed quickly. <b>Pain behind the knee</b> is the positive result (classically; the sign is now considered unreliable)."),
 ]
 
 MAX_W = 760

@@ -924,10 +924,10 @@ POOL = [
 
 # ------------------------------------------------------ low prevalence
 {"topic": "Low prevalence screening", "io": IO5, "slot": "principle",
- "q": "When prevalence is very low, why does even a highly specific test give more false positives than true positives?",
+ "q": "When prevalence is very low, why can even a highly specific test give more false positives than true positives?",
  "opts": [
   ["Healthy people far outnumber cases",
-   "Correct. A small error rate applied to a very large healthy group produces more false positives than the few true cases produce true positives."],
+   "Correct. A small error rate applied to a very large healthy group can produce more false positives than the few true cases produce true positives."],
   ["Specificity falls as prevalence falls",
    "Specificity does not change with prevalence; the predictive values do."],
   ["Sensitivity rises as prevalence falls",

@@ -174,7 +174,7 @@ POOL_B = [
      ["If the patient wears contact lenses",
       "Contact lens wear is no reason to avoid it; the test is avoided only when the area is significantly inflamed or tender."],
      ["If the patient has had cataract surgery",
-      "Cataract surgery in the elderly is a reason not to dilate the pupils, not to skip this test; avoid it if the area is inflamed."],
+      "Having had cataract surgery does not rule out this test; avoid it only if the area is significantly inflamed or tender."],
      ["If the patient is over sixty-five",
       "Age is no reason to avoid it; the lacrimal sac compression test is avoided when the area is significantly inflamed or tender."]],
    c=0, cite=c(38)),

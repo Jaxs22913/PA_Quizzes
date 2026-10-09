@@ -87,16 +87,16 @@ POOL_A = [
    c=0, cite=c(7)),
 
  dict(topic="History", io=IO, slot="differential",
-   q="Bilateral visual loss usually implies which kind of problem?",
+   q="Sudden visual loss in both eyes usually points to which kind of problem?",
    opts=[
-     ["A primary neurologic cause rather than a primary ophthalmologic one",
-      "Correct — bilateral visual loss usually implies a primary neurologic etiology and not a primary ophthalmologic problem."],
+     ["A neurologic cause rather than an eye one",
+      "Correct — sudden loss of vision in both eyes points to a neurologic cause (the brain or the visual pathway) rather than an eye one; gradual loss in both eyes is more often cataract or similar eye disease."],
      ["A primary ophthalmologic cause",
-      "It runs the other way: bilateral visual loss usually implies a primary neurologic etiology, not an ophthalmologic one."],
+      "A primary eye cause fits gradual loss in both eyes (cataract, macular degeneration, glaucoma); sudden loss in both eyes points to a neurologic cause."],
      ["An infective cause",
-      "Infection is not the usual inference; bilateral visual loss usually implies a primary neurologic etiology."],
+      "Infection is not the usual inference; sudden loss of vision in both eyes points to a neurologic cause in the brain or visual pathway."],
      ["A traumatic cause",
-      "Trauma is not the usual inference; bilateral visual loss usually implies a primary neurologic etiology rather than an eye problem."]],
+      "Trauma would come with a history of injury; sudden loss of vision in both eyes points to a neurologic cause rather than an eye problem."]],
    c=0, cite=cn(10)),
 
  dict(topic="History", io=IO, slot="differential",

@@ -60,7 +60,6 @@ FIXES = {
  (91, 2): "The oculomotor nerve is being compressed on that side",
  (93, 1): "Small, unequal and irregular; no light reaction but constricts on accommodation",
  (94, 1): "Interruption of the sympathetic supply to the eye",
- (96, 2): "Multiple sclerosis, optic neuritis and demyelinating disease",
  (98, 2): "Horner syndrome, myasthenia gravis and Graves disease",
  (99, 3): "A large slow pupil with reduced light reaction and a slow near reaction",
  (100, 1): "The parasympathetic supply traveling through the ciliary ganglion",

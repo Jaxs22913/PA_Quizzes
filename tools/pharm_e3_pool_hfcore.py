@@ -238,10 +238,10 @@ QUESTIONS = [
 {"topic": AC, "io": IO_IND, "slot": "drug choice",
  "q": "Which drug class both slows heart failure progression and decreases mortality?",
  "opts": [
-  ["Angiotensin-converting enzyme inhibitors", "Correct. These drugs slow progression and decrease mortality, which is why they are mandatory."],
+  ["Angiotensin-converting enzyme inhibitors", "Correct. In heart failure with reduced ejection fraction these drugs slow progression and decrease mortality, which is why they are mandatory there."],
   ["Loop diuretics", "Loops relieve symptoms but have no evidence of slowing progression or lowering mortality."],
   ["Thiazide diuretics", "Thiazides are not potent enough for most patients and do not lower mortality."],
-  ["Cardiac glycosides such as digoxin", "Digoxin improves symptoms but has no survival benefit, unlike the mandatory classes."]],
+  ["Cardiac glycosides such as digoxin", "Digoxin improves symptoms but has no survival benefit, unlike the classes that prolong survival."]],
  "c": 0, "cite": D + ", Slide 54"},
 
 {"topic": AC, "io": IO_MOA, "slot": "mechanism",
@@ -256,7 +256,7 @@ QUESTIONS = [
 {"topic": AC, "io": IO_IND, "slot": "indication",
  "q": "Which benefit is expected from an angiotensin-converting enzyme inhibitor in heart failure?",
  "opts": [
-  ["Better exercise tolerance", "Correct. These drugs improve exercise tolerance, with fewer admissions and longer survival."],
+  ["Better exercise tolerance", "Correct. These drugs improve exercise tolerance, and in heart failure with reduced ejection fraction they also bring fewer admissions and longer survival."],
   ["Greater force of contraction", "A direct increase in contractile force is the action of inotropes such as digoxin, not of these drugs."],
   ["A faster heart rate", "They do not speed the heart; they lower sympathetic activation."],
   ["Higher sympathetic tone", "They lower sympathetic activation, which is part of their benefit."]],
@@ -348,7 +348,7 @@ QUESTIONS = [
  "q": "A patient with class III heart failure takes a loop diuretic and an angiotensin-converting enzyme inhibitor. Which drug should be added to lower mortality?",
  "opts": [
   ["Carvedilol", "Correct. Carvedilol is one of the three beta blockers with a mortality benefit and is first-line therapy."],
-  ["Digoxin", "Digoxin improves symptoms but has no survival benefit, unlike the mandatory classes."],
+  ["Digoxin", "Digoxin improves symptoms but has no survival benefit, unlike the classes that prolong survival."],
   ["Hydrochlorothiazide", "A thiazide is not potent enough for most patients and does not lower mortality."],
   ["Atenolol", "Atenolol is not one of the beta blockers with a proven mortality benefit in heart failure."]],
  "c": 0, "cite": D + ", Slide 60"},

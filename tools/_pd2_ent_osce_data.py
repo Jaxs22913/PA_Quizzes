@@ -276,7 +276,7 @@ OSCE = {
   "Assess tongue mobility and trismus. <b>Palpate cervical nodes.</b> Examine the ear &mdash; it "
   "will be normal despite the pain.",
   [("Traumatic ulcer", "Resolves once the denture or sharp tooth is corrected"),
-   ("Aphthous ulcer", "Heals in 7 to 10 days; on non-keratinized mucosa"),
+   ("Aphthous ulcer", "A minor one heals in 7 to 10 days on non-keratinized mucosa (major ones last several weeks)"),
    ("Erythroplakia or leukoplakia", "A patch rather than an ulcer, though either may harbor carcinoma")],
   "<b>Biopsy</b> &rarr; squamous cell carcinoma. <b>p16 immunohistochemistry or in situ "
   "hybridization</b> &rarr; positive in human papillomavirus related oropharyngeal disease, which "

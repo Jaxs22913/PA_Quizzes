@@ -55,7 +55,7 @@ DECKS = [
   C(LOOP, "Which loop diuretic does not end in -ide?", "Ethacrynic acid.", 12, ["Ethacrynic acid"], tf=["just to be difficult"]),
   C(LOOP, "Besides sodium, which three minerals do loop diuretics increase the excretion of?", "Potassium, calcium and magnesium.", 13, ["Increase K excretion", "Increase Calcium and magnesium excretion"]),
   C(LOOP, "Which diuretics still work when creatinine clearance is below 30 milliliters per minute?", "Loop diuretics.", 16, ["Loops effective in patients with creatinine clearance rates below 30"]),
-  C(LOOP, "Which loop diuretic adverse effect damages the hair cells of the cochlea?", "Ototoxicity.", 18, ["Ototoxicity", "damages hair cells in cochlea"]),
+  C(LOOP, "Which loop diuretic adverse effect can damage the cochlea of the inner ear?", "Ototoxicity.", 18, ["Ototoxicity", "damages hair cells in cochlea"]),
   C(LOOP, "Which acid-base disorder do loop diuretics cause?", "Contraction alkalosis.", 18, ["Contraction alkalosis"]),
   C(LOOP, "Loop diuretics raise which blood level, risking gout?", "Uric acid.", [(15, ["Uric acid"]), (18, ["Hyperuricemia - gout"])]),
   C(LOOP, "Which sodium disturbance from loop diuretics can cause seizures?", "Hyponatremia.", 18, ["Hyponatremia - seizures"]),
@@ -65,7 +65,7 @@ DECKS = [
   C(LOOP, "Which antibiotic class potentiates loop diuretic ototoxicity?", "Aminoglycosides.", 19, ["Aminoglycosides"]),
   C(LOOP, "Which drug's clearance falls and toxicity rises with loop diuretics?", "Lithium.", 19, ["Lithium"]),
   C(LOOP, "Which anticoagulant competes with loop diuretics for plasma protein binding?", "Warfarin.", 19, ["Warfarin"]),
-  C(LOOP, "Which loop diuretic indication uses saline alongside?", "Hypercalcemia.", 17, ["Hypercalcemia (used with saline)"]),
+  C(LOOP, "Which condition can a loop diuretic be added to saline hydration to treat?", "Hypercalcemia.", 17, ["Hypercalcemia (used with saline)"]),
   C(LOOP, "Which two electrolyte losses with loops make digitalis arrhythmias more likely?", "Hypokalemia and hypomagnesemia.", 19, ["Digitalis - hypokalemic + hypomagnesemic - arrhythmias"]),
  ]),
  (THIAZ, "Thiazide Diuretics", "accent2", DROP_ICON, [

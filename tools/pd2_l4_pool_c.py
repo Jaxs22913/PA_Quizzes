@@ -305,10 +305,10 @@ POOL_C = [
    c=0, cite=c(84)),
 
  dict(topic="Thyroid exam", io=IO, slot="test finding",
-   q="A DIFFUSELY enlarged, SOFT thyroid. Which condition does that suggest?",
+   q="A DIFFUSELY enlarged, SOFT thyroid. Which condition does that most suggest?",
    opts=[
      ["Graves disease",
-      "Correct. Diffuse and soft is Graves; diffuse and firm is Hashimoto."],
+      "Correct. Texture is a first clue (blood tests then confirm): a diffusely enlarged, soft gland suggests Graves disease, and a firm one suggests Hashimoto."],
      ["Hashimoto thyroiditis",
       "Hashimoto thyroiditis gives a firm diffuse enlargement; a soft, diffusely enlarged gland suggests Graves disease."],
      ["Thyroiditis",
@@ -318,10 +318,10 @@ POOL_C = [
    c=0, cite=c(88)),
 
  dict(topic="Thyroid exam", io=IO, slot="test finding",
-   q="A diffusely enlarged, FIRM thyroid points to what?",
+   q="A diffusely enlarged, FIRM thyroid most suggests what?",
    opts=[
      ["Hashimoto thyroiditis",
-      "Correct. Firmness is the feature that separates it from Graves, where the gland is soft."],
+      "Correct. Firmness is the first clue that separates it from Graves, where the gland is soft; blood tests then confirm the cause."],
      ["Graves disease",
       "Graves disease gives a soft diffuse enlargement; a firm, diffusely enlarged gland points to Hashimoto thyroiditis."],
      ["A multinodular goiter",
@@ -331,10 +331,10 @@ POOL_C = [
    c=0, cite=c(88)),
 
  dict(topic="Thyroid exam", io=IO, slot="test finding",
-   q="A TENDER thyroid suggests what?",
+   q="A TENDER thyroid most suggests what?",
    opts=[
      ["Thyroiditis",
-      "Correct. Diffuse enlargement splits three ways on texture alone: soft is Graves, firm is Hashimoto, and tender is thyroiditis."],
+      "Correct. Texture and tenderness give a first clue to the cause (blood tests then confirm): soft suggests Graves, firm suggests Hashimoto, and tender suggests thyroiditis."],
      ["Graves disease",
       "Graves disease makes the gland soft rather than tender; a tender thyroid suggests thyroiditis."],
      ["Endemic goiter",

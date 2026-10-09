@@ -149,8 +149,8 @@
   #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
   @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
 </style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--paper:#0f1115;--line:#2a2e37;--soft:#9aa1ac;--muted:#9aa1ac;--card:#191c22;--soft-bg:#112917;--accent-l:#1f4d2b;--accent:#679771;--accent-soft:#112917;--accent2-l:#c2903a;--accent2:#b38229;--accent2-soft:#2f2006;--accent3-l:#3f8a55;--accent3:#509b65;--accent3-soft:#112917;}:root[data-theme="light"] body[data-dark="tokens"]{--accent-t:#1f4d2b;--accent2-t:#89621a;--accent3-t:#2a7743;}:root[data-theme="light"] body[data-dark="tokens"] .test-yourself-btn[style*="--acc:#3f8a55"]{--acc:#38844f!important}</style><!--DARK-TOKENS:END-->
   <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="micro-exam-2-study-guide.docx" title="Editable Word copy">
-<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--paper:#0f1115;--line:#2a2e37;--soft:#9aa1ac;--muted:#9aa1ac;--card:#191c22;--soft-bg:#112917;--accent-l:#1f4d2b;--accent:#679771;--accent-soft:#112917;--accent2-l:#c2903a;--accent2:#b38229;--accent2-soft:#2f2006;--accent3-l:#3f8a55;--accent3:#509b65;--accent3-soft:#112917;}:root[data-theme="light"] body[data-dark="tokens"]{--accent-t:#1f4d2b;--accent2-t:#89621a;--accent3-t:#2a7743;}</style><!--DARK-TOKENS:END-->
 </head>
 <body data-dark="tokens" data-dark-kind="guide">
 <style>
@@ -333,8 +333,9 @@
     <li>The tuberculin skin test is read at <b>48 to 72 hours</b>, and once positive it stays positive
     because of memory cells. [part 2, 4:19]</li>
     <li>Poison ivy oil binds the skin within about <b>15 minutes</b> (wash it off before then), and the
-    first exposure takes <b>7 to 10 days</b> to make effector T cells &mdash; by which time the
-    exposed skin has shed, so the first contact produces no rash. [part 2, 5:32&ndash;6:22]</li>
+    first exposure takes <b>7 to 10 days</b> to make effector T cells or more &mdash; so the first contact causes no quick rash (at most a delayed one) and later
+    contacts react much faster. The recording explains the missing first rash by the skin having shed; that explanation
+    is not established. [part 2, 5:32&ndash;6:22]</li>
     <li>Blood type <b>O</b> is the universal donor (no A or B antigen on the cell); <b>AB</b> is the
     universal recipient (no anti-A or anti-B antibody in the serum). [part 1, 38:19&ndash;39:20]</li>
     <li>Bone marrow donors are matched on <b>at least 10</b> human leukocyte antigen markers, and even
@@ -380,11 +381,11 @@
   <div class="pearl"><strong>The hygiene hypothesis.</strong> Many allergens resemble parasitic antigens,
   and helminth infection (about 1 billion people heavily and persistently infected) produces exactly the
   allergic profile &mdash; CD4 type 2 helper T responses, high immunoglobulin E, more eosinophils and
-  mast cells &mdash; yet no allergic disease. Why: <strong>nonspecific immunoglobulin E competes</strong>
+  mast cells &mdash; yet people with chronic worm infections tend to have less allergic disease, for two proposed reasons: <strong>nonspecific immunoglobulin E competes</strong>
   for the Fc receptors on mast cells, basophils and activated eosinophils, and <strong>regulatory T
-  cells suppress</strong> T cell responses in chronic parasitic infection. Where helminths were eradicated
-  (Western Europe, North America) by better hygiene, vaccination and antibiotics, the immune system is
-  underused and less successfully regulated.</div>
+  cells suppress</strong> T cell responses in chronic parasitic infection. Where helminths were removed
+  (Western Europe, North America) by better sanitation and treatment, the idea is that this arm of the immune system is
+  underused and less successfully regulated, so it may overreact to harmless things.</div>
   <p><strong>Predisposition.</strong> A generalized predisposition to allergy is familial &mdash; not a
   predisposition to a specific allergy. Allergy is affected by age, infection and geographic area; atopic
   allergies may be lifelong, outgrown, or develop later in life. The four groups are defined by the
@@ -481,7 +482,7 @@
   <table>
     <tr><th>Test</th><th>Use</th></tr>
     <tr><td>Skin testing &mdash; skin prick, intradermal</td><td>Reads wheal and flare reactions</td></tr>
-    <tr><td>Blood tests</td><td>Specific immunoglobulin E; increased basophils</td></tr>
+    <tr><td>Blood tests</td><td>Specific immunoglobulin E to the suspected allergen (the slide lists increased basophils, but a raised basophil count is not a reliable allergy marker)</td></tr>
     <tr><td>Physician-supervised challenge</td><td>Food allergy when other tests are inconclusive</td></tr>
     <tr><td>Patch test</td><td>Contact dermatitis (type IV)</td></tr>
   </table>
@@ -492,7 +493,7 @@
     <tr><th>Drug</th><th>Action</th></tr>
     <tr><td>Corticosteroids</td><td>Inhibit lymphocytes to reduce immunoglobulin E</td></tr>
     <tr><td>Cromolyn sodium</td><td>Blocks mast cell degranulation</td></tr>
-    <tr><td>Montelukast sodium</td><td>Blocks leukotriene synthesis</td></tr>
+    <tr><td>Montelukast sodium</td><td>Blocks the action of leukotrienes (the freshly made products behind the late phase reaction); the slide says it blocks their synthesis, but montelukast is a receptor blocker</td></tr>
     <tr><td>Omalizumab</td><td>Monoclonal antibody against immunoglobulin E</td></tr>
     <tr><td>Antihistamines</td><td>Bind histamine receptors on target organs</td></tr>
     <tr><td>Epinephrine</td><td>Reverses airway constriction; re-establishes endothelial tight junctions</td></tr>
@@ -511,7 +512,8 @@
   trial of a peanut dose equal to 1/75 of a kernel was effective and safe, protecting against accidental
   exposure; it has also worked for kiwi, hazelnut, milk and peach.</p>
 
-  <h3 class="sub" id="di-transfusion">7.4 &middot; Objective 4 &mdash; The mechanism of transfusion reactions</h3>
+  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-rp07"><b>Familial allergy.</b> Families inherit a generalized predisposition, the tendency rather than the particular allergen, which is why relatives may react to entirely different things. The specific allergy is not inherited.</li></ul></div>
+<h3 class="sub" id="di-transfusion">7.4 &middot; Objective 4 &mdash; The mechanism of transfusion reactions</h3>
   <p>A transfusion reaction is <strong>type II</strong>. Donor and recipient are matched for the ABO
   blood group antigens because <strong>red blood cells carry no major histocompatibility complex
   molecules</strong> &mdash; ABO is what the immune system sees. You carry antibodies in your serum
@@ -654,7 +656,7 @@
   molecule then binds the lymphocytes&rsquo; receptor, and the tumor cell escapes killing. Tumors also
   secrete <strong>transforming growth factor beta</strong>, suppressing immunity and recruiting
   <strong>regulatory T cells</strong>, which make more of it plus interleukin 10 and suppress the CD8 and CD4
-  type 1 helper cells specific for tumor antigens. <strong>The more regulatory T cells in a tumor, the
+  type 1 helper cells specific for tumor antigens. <strong>In many cancers, the more regulatory T cells in a tumor, the
   worse the prognosis.</strong></div>
 
   <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b007"><b>Tumor escape from natural killer cells.</b> When tumor cells cleave a stress molecule that natural killer cells recognize and release it in soluble form, the tumor cell escapes being killed: the soluble molecule binds the killing receptor on natural killer and gamma-delta T cells.</li></ul></div>
@@ -665,7 +667,7 @@
     preventing the &ldquo;off&rdquo; signal so T cells keep killing. Do <em>not</em> kill cancer cells directly</td>
     <td>Melanoma, some lung cancers</td></tr>
     <tr><td><strong>Adoptive cell therapy</strong></td><td>Patient&rsquo;s own cells engineered outside the body and
-    returned</td><td>Tumor infiltrating lymphocytes: in development, not approved. CAR-T (chimeric antigen
+    returned</td><td>Tumor infiltrating lymphocytes: approved for advanced melanoma (lifileucel, 2024) and still being studied in other solid tumors (the slide says in development, not yet approved). CAR-T (chimeric antigen
     receptor T cells): <strong>approved for blood cancers</strong>. Chimeric antigen receptor natural killer cells: mostly in
     trials, including solid tumors</td></tr>
     <tr><td><strong>Monoclonal antibodies</strong></td><td>Diagnosis <em>and</em> elimination of cancer cells;
@@ -694,7 +696,7 @@
   <button type="button" class="test-yourself-btn" onclick="window.openTestYourself('Test yourself &mdash; Disorders in Immunity', TEST_YOURSELF.disordersImmunity)">Test yourself! &rarr;</button>
   <p class="src">Source: <em>Lecture 7 &mdash; Disorders in Immunity</em> (Dr. Webster), Slides 1&ndash;81,
   and the PAJ 5200 syllabus instructional objectives.</p>
-<div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b008"><b>Tumor infiltrating lymphocyte therapy.</b> It is in development, not yet approved; these are cytotoxic T cells expanded to a therapeutic amount.</li><li id="ga-microbiology-exam-2-b009"><b>Oncolytic viral therapy.</b> The main challenge is that immunity may clear the virus first; only a few are approved, just one in the United States, for melanoma.</li></ul></div>
+<div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b008"><b>Tumor infiltrating lymphocyte therapy.</b> It is approved for advanced melanoma (lifileucel, 2024) and still being studied in other solid tumors; these are cytotoxic T cells expanded to a therapeutic amount.</li><li id="ga-microbiology-exam-2-b009"><b>Oncolytic viral therapy.</b> The main challenge is that immunity may clear the virus first; only a few are approved, just one in the United States, for melanoma.</li></ul></div>
 </section>
 
 
@@ -810,7 +812,7 @@
   </table>
   <figure class="fig"><img width="581" height="600" loading="lazy" src="micro-exam-2-study-guide-images/l8-s14-specimen-scheme.jpg" alt="Flow chart: a specimen goes either to direct testing (microscopic stains, direct antigen, gene probes) or to culture and isolation (biochemical tests, serotyping, antimicrobial sensitivity, gene probes, phage typing, animal inoculation); the patient supplies serological tests, in vivo tests and clinical signs."><figcaption>The two routes a specimen can take. <b>Direct testing</b> (left) looks at the specimen itself &mdash; stains, direct antigen, gene probes &mdash; and is fast. <b>Culture and isolation</b> (right) grows the organism first and then tests the isolate, which is slower but opens biochemical tests, serotyping and sensitivity testing. Notice gene probes appear on <em>both</em> sides, and that the patient contributes too: antibody titers, in vivo tests and the clinical picture. <span class="src">Copyright &copy; The McGraw-Hill Companies. Source: PAJ5200.Diagnosing Infections-2.pptx, Slide 14.</span></figcaption></figure>
   <p>Results come in two categories, <strong>presumptive</strong> or <strong>confirmatory</strong>. Immune
-  tests are generally easier (and more accurate) than testing for the microbe itself: the rapid strep
+  tests are generally easier and faster than hunting for the microbe itself (the slide also says more accurate, but a negative rapid test can still miss infection): the rapid strep
   test takes <strong>10&ndash;15 minutes</strong> &mdash; but you need a hypothesis first to choose the
   test (fever, sore throat and pus pockets on the tonsils suggest strep throat).</p>
 
@@ -835,8 +837,8 @@
 
   <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-002"><b>Genotypic methods.</b> Their major practical advantage is that culture is not necessary. This matters most for slow-growing organisms such as Mycobacterium and difficult ones such as Legionella, since the delay of culture is avoided entirely.</li></ul></div>
 <h3 class="sub" id="dx-serology">8.3 &middot; Objective 1 &mdash; Serology, agglutination and precipitation</h3>
-  <p><strong>Serology</strong> is in vitro diagnostic testing of serum. Antibodies are extremely specific,
-  so the methods are very sensitive. Visible results: precipitates, color changes, or released
+  <p><strong>Serology</strong> is in vitro diagnostic testing of serum. Antibodies are extremely specific for their antigens,
+  so these methods can tell close relatives apart, and they are also very sensitive, able to detect small amounts. Visible results: precipitates, color changes, or released
   radioactivity. Tests identify antibody and measure how much is present &mdash; the
   <strong>titer</strong>, often reported in binding antibody units. A known antigen can test a
   patient&rsquo;s serum (serological diagnosis), or known antibody can identify an unknown microbe
@@ -853,13 +855,13 @@
     class (immunoglobulin G, M and so on) binds antigen in serum</td></tr>
   </table>
 
-  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b004"><b>Serological test reactions.</b> They can produce precipitates, color change, radioactivity, and report not only presence but amount, the titre, often given in binding antibody units.</li><li id="ga-microbiology-exam-2-b006"><b>Agglutination tests.</b> The Weil-Felix test for rickettsial diseases uses agglutination, alongside blood typing, rapid syphilis diagnosis, cold agglutinin for mycoplasmas and the latex-agglutination pregnancy test.</li><li id="ga-microbiology-exam-2-c000"><b>Serology.</b> Serology is in vitro diagnostic testing of serum samples. Because antibodies have extreme specificity for antigens, these are very sensitive methods.</li><li id="ga-microbiology-exam-2-s002"><b>Agglutination testing.</b> It detects whole-cell or insoluble antigens, which antibody cross-links into complexes that settle out as large visible clumps, generally sinking to the bottom of the container.</li><li id="ga-microbiology-exam-2-s003"><b>Agglutination clumps.</b> They settle to the bottom of the container, which makes the result visible without instrumentation and lets the test run on a card or slide.</li></ul></div>
+  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b004"><b>Serological test reactions.</b> They can produce precipitates, color change, radioactivity, and report not only presence but amount, the titre, often given in binding antibody units.</li><li id="ga-microbiology-exam-2-b006"><b>Agglutination tests.</b> The Weil-Felix test for rickettsial diseases uses agglutination, alongside blood typing, rapid syphilis diagnosis, cold agglutinin for mycoplasmas and the latex-agglutination pregnancy test.</li><li id="ga-microbiology-exam-2-c000"><b>Serology.</b> Serology is in vitro diagnostic testing of serum samples. Because antibodies have extreme specificity for antigens, these methods can tell close relatives apart, and they are also very sensitive, able to detect small amounts.</li><li id="ga-microbiology-exam-2-s002"><b>Agglutination testing.</b> It detects whole-cell or insoluble antigens, which antibody cross-links into complexes that settle out as large visible clumps, generally sinking to the bottom of the container.</li><li id="ga-microbiology-exam-2-s003"><b>Agglutination clumps.</b> They settle to the bottom of the container, which makes the result visible without instrumentation and lets the test run on a card or slide.</li></ul></div>
 <h3 class="sub" id="dx-immunoassays">8.4 &middot; Objective 1 &mdash; Blots, complement fixation, fluorescence, immunoassays, in vivo tests and viruses</h3>
   <table>
     <tr><th>Blot</th><th>Detects</th><th>Notes</th></tr>
     <tr><td>Southern (about 1975)</td><td>Specific <strong>deoxyribonucleic acid</strong> sequences</td><td>The original, invented by Edwin Southern</td></tr>
     <tr><td>Northern (about 1977)</td><td><strong>ribonucleic acid</strong> (gene expression)</td><td>Oncogenes; transplant rejection</td></tr>
-    <tr><td><strong>Western</strong> (about 1981)</td><td><strong>Proteins</strong></td><td>Electrophoresis then an immunoassay; bands where antibody binds. <strong>Second test used to verify human immunodeficiency virus status</strong>; also bovine spongiform encephalopathy, Lyme disease, hepatitis B</td></tr>
+    <tr><td><strong>Western</strong> (about 1981)</td><td><strong>Proteins</strong></td><td>Electrophoresis then an immunoassay; bands where antibody binds. Long used as the <strong>second test to confirm human immunodeficiency virus status</strong>, though current United States guidance has replaced it with a second immunoassay and nucleic acid testing; also used in testing for bovine spongiform encephalopathy and Lyme disease</td></tr>
     <tr><td>Eastern (about 1982)</td><td>Proteins, lipids, carbohydrate epitopes</td><td>Post-translational products</td></tr>
   </table>
   <figure class="fig"><img width="800" height="578" loading="lazy" src="micro-exam-2-study-guide-images/l8-s46-complement-fixation.jpg" alt="Two-row diagram of the complement fixation test. Top row: antibody in the patient's serum binds antigen and fixes complement, so sheep red cells with lysins do not lyse, a positive result. Bottom row: no antibody, complement stays free, is fixed by the lysins on the sheep cells and they hemolyze, a negative result."><figcaption>The counter-intuitive test, drawn so the logic shows. In the <b>top row</b> the patient&rsquo;s antibody meets antigen and uses up (&ldquo;fixes&rdquo;) the complement, so none is left to burst the sheep red cells: an intact red tube means antibody is <b>present</b>. In the <b>bottom row</b> there is no antibody, the complement stays free, the lysins on the sheep cells use it, and the tube turns clear with hemolysis: <b>negative</b>. Lysis is the negative result. <span class="src">Copyright &copy; The McGraw-Hill Companies. Source: PAJ5200.Diagnosing Infections-2.pptx, Slide 46.</span></figcaption></figure>
@@ -882,7 +884,7 @@
   </table>
   <figure class="fig"><img width="773" height="900" loading="lazy" src="micro-exam-2-study-guide-images/l8-s51-elisa.jpg" alt="Diagrams of indirect and capture (sandwich) enzyme-linked immunosorbent assays, with a photograph of a 96-well microtiter plate screening for antibodies to the human immunodeficiency virus, yellow wells positive."><figcaption>Two designs, one readout. The <b>indirect</b> assay (left) coats the well with known antigen to catch a patient&rsquo;s <em>antibody</em> &mdash; the basis of human immunodeficiency virus screening, and the yellow wells in the plate are the positives. The <b>capture or sandwich</b> assay (right) coats the well with antibody to catch an <em>antigen</em> between two antibodies, used here for measles virus. In both, color appears only where the enzyme-linked antibody stayed bound. <span class="src">Copyright &copy; The McGraw-Hill Companies. Source: PAJ5200.Diagnosing Infections-2.pptx, Slide 51.</span></figcaption></figure>
 
-  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-000"><b>Northern blot.</b> It is used to study gene expression by detecting RNA, and is useful in the study of oncogenes and in rejection of transplanted organs.</li><li id="ga-microbiology-exam-2-003"><b>Western blot.</b> It is used to verify HIV status as a second test, and has also been used definitively for bovine spongiform encephalopathy, Lyme disease and hepatitis B.</li><li id="ga-microbiology-exam-2-b000"><b>Original electrophoretic blotting.</b> It was invented by Edwin Southern, around 1975, to detect specific DNA sequences in DNA samples; the Northern, Western and Eastern blots all take their names from his.</li><li id="ga-microbiology-exam-2-b002"><b>In vivo testing.</b> Unlike serology, antigen is introduced directly into the body to determine the presence or absence of antibodies; the tuberculin skin test and allergy testing are the named examples.</li></ul></div>
+  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-000"><b>Northern blot.</b> It is used to study gene expression by detecting RNA, and is useful in the study of oncogenes and in rejection of transplanted organs.</li><li id="ga-microbiology-exam-2-003"><b>Western blot.</b> It was long used as the second test to confirm human immunodeficiency virus (HIV) status, though current United States guidance has replaced it with a second immunoassay and nucleic acid testing; it is also used in testing for bovine spongiform encephalopathy and Lyme disease.</li><li id="ga-microbiology-exam-2-b000"><b>Original electrophoretic blotting.</b> It was invented by Edwin Southern, around 1975, to detect specific DNA sequences in DNA samples; the Northern, Western and Eastern blots all take their names from his.</li><li id="ga-microbiology-exam-2-b002"><b>In vivo testing.</b> Unlike serology, antigen is introduced directly into the body to determine the presence or absence of antibodies; the tuberculin skin test and allergy testing are the named examples.</li></ul></div>
 <h3 class="sub" id="dx-physiology">8.5 &middot; Objective 2 &mdash; Microbial physiology in the laboratory</h3>
   <p>Phenotypic identification reads the organism&rsquo;s physiology and metabolism.</p>
   <table>
@@ -931,14 +933,14 @@
 
   <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-s001"><b>Phenotypic methods.</b> They may take longer to reach a diagnosis because the microbes must be cultured: observable characteristics, biochemical reactions and sensitivity testing all depend on having grown the organism first.</li></ul></div>
 <h3 class="sub" id="dx-sensitivity">8.8 &middot; Objectives 5 &amp; 6 &mdash; Antimicrobial sensitivity testing and treatment strategy</h3>
-  <p>The Kirby-Bauer <strong>disk-diffusion</strong> test gives <strong>which drug is effective and at what
-  dose</strong>, and may indicate which combinations can be used. <strong>Larger zones of inhibition</strong>
-  mean a more effective agent. <strong>Minimum inhibitory concentration</strong> strips add the concentration
+  <p>The Kirby-Bauer <strong>disk-diffusion</strong> test shows <strong>which drugs the microbe is
+  susceptible or resistant to</strong> (the slide also says it gives the dose and usable combinations, but the dose comes from pharmacology and, for a dilution test, the minimum inhibitory concentration). For a given drug, <strong>a larger zone of inhibition</strong>
+  means the microbe is more susceptible to it; zones of different drugs cannot be ranked against each other. <strong>Minimum inhibitory concentration (MIC)</strong> strips add the concentration
   needed. For treatment strategy the deck&rsquo;s point is speed: faster, more accurate (genotypic)
   diagnosis means <strong>proper treatment can begin in a timely manner</strong>. Mechanisms of action and
   resistance themselves were Lecture 2&rsquo;s subject.</p>
 
-  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b001"><b>Zone of inhibition.</b> A larger zone indicates a more effective agent; minimum inhibitory concentration strips give the same information as a concentration, the lowest level that stops growth.</li></ul></div>
+  <div class="qa-also" data-gen="1"><p class="qa-also-label">Also tested</p><ul><li id="ga-microbiology-exam-2-b001"><b>Zone of inhibition.</b> For a given drug, a larger zone means the microbe is more susceptible to it (zones of different drugs cannot be ranked against each other); minimum inhibitory concentration strips give the same information as a concentration, the lowest level that stops growth.</li></ul></div>
 <h3 class="sub" id="dx-prevention">8.9 &middot; Objective 7 &mdash; Preventative interventions</h3>
   <p>The deck offers one: <strong>aseptic procedure and universal precautions</strong> during specimen
   collection and handling, which mitigate but do not eliminate transmission (slide 10). Vaccination and
@@ -1060,7 +1062,7 @@
     <tr><td>Hemolysins (alpha, beta, gamma, delta)</td><td>Lyse red blood cells &mdash; visible on blood agar</td></tr>
     <tr><td><strong>Leukocidin</strong></td><td>Lyses leukocytes, especially <strong>neutrophils and macrophages</strong></td></tr>
     <tr><td><strong>Enterotoxin</strong></td><td>Induces gastrointestinal distress (food intoxication)</td></tr>
-    <tr><td><strong>Exfoliative toxin</strong></td><td><strong>Separates the epidermis from the dermis</strong> (scalded skin syndrome)</td></tr>
+    <tr><td><strong>Exfoliative toxin</strong></td><td><strong>Splits the upper layers of the epidermis apart</strong> (scalded skin syndrome); the slide says it separates the epidermis from the dermis</td></tr>
     <tr><td>Toxic shock syndrome toxin</td><td>Induces <strong>fever, vomiting, shock</strong> and systemic organ damage</td></tr>
   </table>
   <p><strong>Epidemiology.</strong> Present in most environments frequented by humans and readily isolated from
@@ -1084,7 +1086,7 @@
   <figure class="fig"><img width="569" height="600" loading="lazy" src="micro-exam-2-study-guide-images/l9-s11-furuncle-carbuncle.jpg" alt="A cutaway drawing of a boil around a hair follicle walled off by fibrin, with photographs of a furuncle on the back of a hand and a carbuncle on the back of the neck."><figcaption>Furuncle against carbuncle, the pair most easily confused. The drawing is a single <b>furuncle</b>: one follicle, staphylococci and phagocytes walled off by fibrin into a core of pus. The photograph at lower right is a <b>carbuncle</b>: several furuncles joined into one deep, swollen lesion on the back of the neck. <span class="src">Copyright &copy; The McGraw-Hill Companies. Source: PAJ5200.Cocci of Med importance.pptx, Slide 11.</span></figcaption></figure>
   <p><strong>Treatment.</strong> <strong>95% of staphylococci produce penicillinase</strong> and are resistant to
   penicillin and ampicillin. Methicillin-resistant <em>Staphylococcus aureus</em> carries multiple
-  resistance, and <strong>some strains resist all major drug groups except vancomycin</strong>. Abscesses
+  resistance; older teaching (and the slide) describes <strong>some strains as resisting all major drug groups except vancomycin</strong>, but vancomycin and several newer drugs still work against most strains. Abscesses
   have to be <strong>surgically perforated</strong>, and the wounds kept thoroughly clean and covered.
   Systemic infections may need intensive, lengthy antimicrobial therapy.</p>
   <p><strong>Prevention.</strong> <strong>Universal precautions</strong> by healthcare providers prevent, or at
@@ -1147,7 +1149,7 @@
     <tr><td>C-carbohydrates</td><td><strong>Protect it against lysozyme</strong>; the basis of the Lancefield group</td></tr>
     <tr><td>Fimbriae</td><td>Short protein fibers for <strong>adherence</strong></td></tr>
     <tr><td><strong>&#9733; M-protein</strong></td><td><mark class="prof-highlight">Contributes to its resistance to phagocytosis</mark></td></tr>
-    <tr><td>Hyaluronic acid capsule</td><td><strong>Provokes no immune response</strong></td></tr>
+    <tr><td>Hyaluronic acid capsule</td><td><strong>Provokes little immune response</strong>, because it looks like the body&rsquo;s own hyaluronic acid (the slide says none)</td></tr>
     <tr><td>C5a protease</td><td>Hinders the complement and neutrophil response</td></tr>
     <tr><td>Streptolysins O and S</td><td><strong>Hemolysins</strong>; both cause cell and tissue injury</td></tr>
     <tr><td><strong>Erythrogenic (pyrogenic) toxin</strong></td><td>Induces <strong>fever and the typical red rash</strong></td></tr>
@@ -1278,7 +1280,7 @@
     tetracycline-resistant strains. <strong>No long-term immunity</strong> is acquired, so infections recur. A
     <strong>reportable disease</strong>. Newborn eyes: <strong>topical antibiotic prophylaxis immediately after
     birth</strong></td><td><strong>Intravenous penicillin G or a cephalosporin</strong>; <strong>prophylaxis for close
-    contacts</strong> (family, medical personnel, children nearby); the primary vaccine contains <strong>purified
+    contacts</strong> (family and children nearby, and medical personnel only after direct exposure to the patient&rsquo;s secretions); the primary vaccine contains <strong>purified
     capsular antigens</strong></td></tr>
   </table>
   <figure class="fig"><img width="788" height="600" loading="lazy" src="micro-exam-2-study-guide-images/l9-s72-gonococci.jpg" alt="Gram stain of urethral pus with pink neutrophils, labeled, and small paired cocci, labeled gonococci, inside and between them."><figcaption>The presumptive picture of gonorrhea: Gram-negative (pink) <b>diplococci inside neutrophils</b> in urethral pus. <span class="src">Copyright &copy; The McGraw-Hill Companies. Source: PAJ5200.Cocci of Med importance.pptx, Slide 72.</span></figcaption></figure>
@@ -1614,7 +1616,7 @@
     <tr><td>Entry</td><td>Spores usually enter through <strong>accidental puncture wounds</strong>, also burns, <strong>umbilical stumps</strong> (neonatal tetanus), frostbite and crushed body parts</td></tr>
     <tr><td>Incubation</td><td>4&ndash;10 days; <strong>the shorter the incubation, the more serious the disease</strong>. Delayed care, short incubation and head wounds worsen the outlook</td></tr>
     <tr><td>Mechanism</td><td><strong>Tetanospasmin</strong>, a neurotoxin, enters at motor nerve endings and acts on the spinal inhibitory neurons, <strong>blocking release of the inhibitory transmitters gamma-aminobutyric acid and glycine</strong>, so <strong>muscles contract uncontrollably</strong> (risus sardonicus, arching spasms)</td></tr>
-    <tr><td>Death</td><td>Most often from <strong>paralysis of the respiratory muscles</strong></td></tr>
+    <tr><td>Death</td><td>Most often from <strong>respiratory failure</strong>, as spasm of the breathing muscles and larynx stops effective breathing (the slide calls the toxin&rsquo;s effect paralysis; tetanus causes spasm, not flaccid paralysis)</td></tr>
     <tr><td>Treatment</td><td>Aimed at the toxemia and the infection and at maintaining homeostasis: <strong>antitoxin (human tetanus immune globulin) inactivates circulating toxin but does not counteract toxin already bound</strong>; antibiotics for the infection; muscle relaxants</td></tr>
     <tr><td>Prevention</td><td>A vaccine; <strong>a booster every 10 years</strong></td></tr>
   </table>
@@ -1751,7 +1753,7 @@
     <tr><td>Transmission</td><td><strong>The mechanism is not fully verified</strong>; <strong>zoonotic transmission from armadillos is possible</strong>. Not highly virulent: health, living conditions and possibly a genetic marker influence susceptibility. Most Florida cases are in Central Florida (the I-4 corridor)</td></tr>
     <tr><td>Course</td><td>Macrophages phagocytize the bacilli but a weakened macrophage or slow T cell response may not kill them. Incubation 2&ndash;5 years; untreated, the bacilli <strong>grow slowly in skin macrophages and the Schwann cells of peripheral nerves</strong></td></tr>
     <tr><td>Diagnosis</td><td>Symptoms, microscopy of lesions and history: <strong>numbness in hands and feet</strong>, loss of heat and cold sensitivity, muscle weakness, thickened earlobes, chronic stuffy nose; <strong>acid-fast bacilli in skin lesions</strong>, nasal discharge and tissue. Where care is scarce, the <strong>feather test</strong> checks skin sensation</td></tr>
-    <tr><td>Treatment</td><td>Long-term combined therapy: about <strong>6 months for tuberculoid</strong> leprosy, <strong>up to 2 years for lepromatous</strong>, followed by extended single-drug treatment</td></tr>
+    <tr><td>Treatment</td><td>Long-term combined therapy. The slide gives about <strong>6 months for tuberculoid</strong> leprosy and <strong>up to 2 years for lepromatous</strong>, followed by extended single-drug treatment; that is older United States practice. The current United States program uses about 12 months for tuberculoid and about 2 years for lepromatous disease, and the World Health Organization gives all three drugs for both forms (6 and 12 months)</td></tr>
     <tr><td>Prevention</td><td>Constant surveillance of high-risk populations; bacille Calmette-Guérin has limited efficacy; a subunit vaccine is in trials</td></tr>
   </table>
   <table>
@@ -1828,7 +1830,7 @@
     rifamycin-based courses, with nine months of isoniazid an alternative. Only &ldquo;two or more drugs for
     months&rdquo; is keyed.</li>
     <li><strong>Leprosy (slide 89).</strong> The two-drug tuberculoid and three-drug lepromatous regimens
-    match United States practice; the World Health Organization now gives all three drugs for both forms
+    match older United States practice; the current United States program uses about 12 months and about 2 years, and the World Health Organization now gives all three drugs for both forms
     (6 and 12 months). Only &ldquo;lepromatous is treated far longer&rdquo; is keyed. The 2017 subunit
     vaccine step was clearance to begin clinical trials, not licensure.</li>
     <li><strong>Honey.</strong> The recording advised no honey &ldquo;to any child under about four, just to
@@ -1882,15 +1884,15 @@
       {q:"In the complement fixation test, the sheep red cells hemolyze. What does that mean?",
        choices:["The patient's serum is positive","The complement was inactive","The antigen was absent","The patient's serum is negative"],correct:3,
        explain:"Hemolysis means complement stayed free because no antibody-antigen complex fixed it, so the serum is negative. Fixed complement leaves the cells intact, a positive result."},
-      {q:"Which blot detects proteins and is used as a second test for human immunodeficiency virus status?",
+      {q:"Which blot detects proteins and was long used as a second test for human immunodeficiency virus status?",
        choices:["Southern","Northern","Western","Eastern"],correct:2,
        explain:"The Western blot separates proteins by electrophoresis and then detects them with antibody. Southern detects DNA and Northern detects RNA."},
       {q:"Agglutination tests detect which kind of antigen?",
        choices:["Whole-cell or insoluble antigen","Soluble antigen","Only viral antigen","Only carbohydrate antigen"],correct:0,
        explain:"Agglutination crosslinks whole-cell or insoluble antigen into visible clumps. Precipitation is the test for soluble antigen, and it needs a gel or liquid matrix."},
-      {q:"On a disk-diffusion plate, what does a larger zone of inhibition indicate?",
-       choices:["A resistant organism","A contaminated plate","A slower-growing organism","A more effective agent"],correct:3,
-       explain:"A larger clear zone means the agent inhibited growth over a wider area, so it is more effective against that organism."}
+      {q:"On a disk-diffusion plate, what does a larger zone of inhibition around one drug indicate?",
+       choices:["A resistant organism","A contaminated plate","A slower-growing organism","A more susceptible organism"],correct:3,
+       explain:"A larger clear zone means the drug inhibited growth over a wider area, so the microbe is more susceptible to that drug. Zones of different drugs cannot be ranked against each other."}
     ],
     cocciMedicalImportance: [
       {q:"Which test separates staphylococci from streptococci and enterococci?",

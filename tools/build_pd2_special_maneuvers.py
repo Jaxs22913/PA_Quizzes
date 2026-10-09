@@ -125,9 +125,9 @@ def build_body():
     <li><b>Squatting from a standing position, or leg raise</b> (slide 62): venous return and preload increase. The hypertrophic cardiomyopathy murmur gets softer, because the outflow
     obstruction lessens; the aortic stenosis murmur gets louder, because more blood rushes past the narrow valve. Mitral valve prolapse is moved later in systole.</li>
   </ul>
-  <p><b>Where the deck says more.</b> On <b>isometric hand grip</b> (slide 63) the deck lists a different set of murmurs: it increases the systolic murmurs of mitral regurgitation,
-  pulmonic stenosis and ventricular septal defect, and the diastolic murmurs of aortic regurgitation and mitral stenosis. The handout&rsquo;s hand grip entry covers only aortic stenosis,
-  mitral valve prolapse and hypertrophic obstructive cardiomyopathy, so the two lists complement each other rather than conflict.</p>
+  <p><b>Where the deck says more.</b> On <b>isometric hand grip</b> (slide 63) the deck lists a different set of murmurs: it increases the systolic murmurs of mitral regurgitation
+  and ventricular septal defect, and the diastolic murmurs of aortic regurgitation and mitral stenosis. The handout&rsquo;s hand grip entry covers only aortic stenosis,
+  mitral valve prolapse and hypertrophic obstructive cardiomyopathy. The two lists overlap on the mitral valve murmur and do not fully agree: the deck&rsquo;s list has hand grip increasing the mitral regurgitation murmur, while the handout lists a decrease for mitral valve prolapse. Learn each as its own source gives it. (The deck&rsquo;s list also names pulmonic stenosis; hand grip raises left-sided afterload, and a right-sided outflow murmur is not expected to increase, so it is left out here.)</p>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Marked in the lecture</span>
     <p>On the maneuvers slide about hypertrophic obstructive cardiomyopathy (slide 60) the deck states, in capitals:
     <em>&ldquo;IMPORTANT TO LEARN THIS MURMUR SO YOU DON&rsquo;T SIGN OFF INCORRECTLY ON A SPORTS PHYSICAL.&rdquo;</em> The deck also says the maneuvers help

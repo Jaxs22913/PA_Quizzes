@@ -198,9 +198,9 @@ BODY += '''
   <table>
     <tr><th>Topic</th><th>What the slides give for loop diuretics</th></tr>
     <tr><td><strong>Major actions</strong> [slide 13]</td><td>Inhibit sodium chloride reabsorption by <strong>20 to 25 percent</strong>; increase urine output by <strong>up to 4 liters a day</strong>; <strong>increase potassium excretion</strong>; <strong>increase calcium and magnesium excretion</strong></td></tr>
-    <tr><td><strong>3 &middot; Indications</strong> [slide 17]</td><td><strong>Pulmonary edema</strong> (lowers pulmonary pressure); <strong>nephrotic syndrome</strong> (protein loss, so the plasma cannot hold its fluid); <strong>cirrhosis of the liver</strong> (ascites); <strong>hypercalcemia</strong> (used with saline); <strong>heart failure</strong>; <strong>renal failure or insufficiency</strong>; <strong>hypertension</strong></td></tr>
+    <tr><td><strong>3 &middot; Indications</strong> [slide 17]</td><td><strong>Pulmonary edema</strong> (lowers pulmonary pressure); <strong>nephrotic syndrome</strong> (protein loss, so the plasma cannot hold its fluid); <strong>cirrhosis of the liver</strong> (ascites); <strong>hypercalcemia</strong> (an add-on to saline hydration, which is the main treatment); <strong>heart failure</strong>; <strong>renal failure or insufficiency</strong>; <strong>hypertension</strong></td></tr>
     <tr><td><strong>Kidney function</strong> [slide 16]</td><td><strong>Loops are effective in patients whose creatinine clearance is below 30 milliliters per minute</strong></td></tr>
-    <tr><td><strong>5&ndash;6 &middot; Adverse effects</strong> [slide 18]</td><td><strong>Volume depletion</strong> (reflex mechanisms); <strong>hypokalemia</strong> (cardiac arrhythmias); <strong>hyperglycemia</strong> (diabetogenic); <strong>contraction alkalosis</strong>; <strong>hyperuricemia</strong> (gout); <strong>ototoxicity</strong> (damages hair cells in the cochlea); <strong>hyponatremia</strong> (seizures); <strong>allergic reactions</strong> (rash, photosensitivity); <strong>azotemia</strong> (raised blood urea nitrogen)</td></tr>
+    <tr><td><strong>5&ndash;6 &middot; Adverse effects</strong> [slide 18]</td><td><strong>Volume depletion</strong> (reflex mechanisms); <strong>hypokalemia</strong> (cardiac arrhythmias); <strong>hyperglycemia</strong> (diabetogenic); <strong>contraction alkalosis</strong>; <strong>hyperuricemia</strong> (gout); <strong>ototoxicity</strong> (damages the cochlea, the hearing organ of the inner ear; classically described as hair-cell damage, though the effect is often reversible); <strong>hyponatremia</strong> (seizures); <strong>allergic reactions</strong> (rash, photosensitivity); <strong>azotemia</strong> (raised blood urea nitrogen)</td></tr>
     <tr><td><strong>8 &middot; Interactions</strong> [slide 19]</td><td><strong>Nonsteroidal anti-inflammatory drugs</strong> blunt the natriuretic and blood pressure response; <strong>aminoglycosides</strong> potentiate ototoxicity; <strong>warfarin</strong> competes for plasma protein binding; <strong>lithium</strong> clearance falls and toxicity rises; <strong>digitalis</strong>: the hypokalemia and hypomagnesemia of a loop diuretic bring arrhythmias</td></tr>
   </table>
 
@@ -230,7 +230,7 @@ BODY += '''
     <p><mark class="prof-highlight">Loop diuretics lower potassium</mark> (hypokalemia), with hypocalcemia and hypomagnesemia, because they increase potassium, calcium and magnesium excretion [slides 13 and 18].</p>
   </div>
 
-  <p><strong>Contraindications (Objective 7).</strong> The slides give no separate contraindication list for the loop diuretics; the
+  <p><strong>Contraindications (Objective 7).</strong> Apart from anuria (no urine output) and known allergy to the drug, the slides give no separate contraindication list for the loop diuretics; the
   adverse-effect list is the working guide: volume depletion, gout, uncontrolled diabetes (hyperglycemia), and
   hypokalemia with a digitalis drug (see 1.11) are the situations to avoid or monitor.</p>
 
@@ -301,12 +301,12 @@ BODY += '''
   carbonic anhydrase and phosphodiesterase side actions (slide 21) are not for the exam, as Dr. Wood said.
   (5) <strong>Hypercalcemia:</strong> slide 24 lists &ldquo;hypercalcemia/renal calcium stones&rdquo; as an indication, yet slide 27 lists
   hypercalcemia as an adverse effect, and Dr. Wood said at 17:35 that patients are hypercalcemic to begin with. The truth: <strong>thiazides raise serum
-  calcium and are not used to treat hypercalcemia</strong> (loops with saline are, 1.2); the real use is calcium oxalate stones in patients who lose too much calcium in the urine.
+  calcium and are not used to treat hypercalcemia</strong> (loops can be added to saline hydration, the main treatment, 1.2); the real use is calcium oxalate stones in patients who lose too much calcium in the urine.
   (6) <strong>First line:</strong> Dr. Wood said at 16:43 that thiazides are no longer first line but a second or third line add-on (his wording, not on a slide). Current US
   hypertension guidelines still list thiazide-type diuretics among the first-line drug classes, with ACE inhibitors, angiotensin receptor blockers and calcium channel blockers, so do not memorize &ldquo;second or third line&rdquo;.</div>
 
   <div class="pearl"><strong>Thiazide against loop, in one line each.</strong> Both lower potassium and magnesium and raise
-  uric acid and glucose. The <strong>loop wastes calcium</strong> (and treats hypercalcemia); the <strong>thiazide keeps
+  uric acid and glucose. The <strong>loop wastes calcium</strong> (and can be added to saline in hypercalcemia); the <strong>thiazide keeps
   calcium</strong> (and treats calcium stones). The loop works at a very low clearance; the thiazide does not, except
   <strong>metolazone</strong>. The thiazide is the chronic hypertension drug; the loop is the volume-removal drug.</div>
 '''
@@ -334,7 +334,7 @@ BODY += '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 23:26 of the recording: <em>&ldquo;A little tip here, if you ever see someone on a salt substitute, so maybe they need to be on a low sodium diet, so they get a salt substitute for their food, that&rsquo;s usually potassium chloride. The tongue can&rsquo;t tell the difference between sodium and potassium, so it tastes salty but it cuts down the actual sodium intake they have. That can also contribute, though, to their potassium intake. They&rsquo;ve got to be cautious there.&rdquo;</em></p>
-    <p>Patient education: <mark class="prof-highlight">salt substitutes are potassium chloride</mark>, so they add to the hyperkalemia risk with a potassium-sparing diuretic, an ACE inhibitor or an angiotensin receptor blocker [slide 33; the salt-substitute point itself comes from the recording, not the slide].</p>
+    <p>Patient education: <mark class="prof-highlight">salt substitutes are potassium chloride</mark>, so they add to the hyperkalemia risk with a potassium-sparing diuretic, an ACE inhibitor or an angiotensin receptor blocker [slide 33; the salt-substitute point itself comes from the recording, not the slide]. In truth, potassium chloride tastes salty enough, with a slightly bitter edge, to stand in for salt, so a salt substitute cuts the sodium a patient eats (the recording says the tongue cannot tell the difference).</p>
   </div>
 
   <div class="callout"><strong>Deck versus truth &mdash; mechanism and boxed warning.</strong> Slide 30 lists three mechanisms
@@ -464,7 +464,7 @@ BODY += '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 42:08 of the recording: <em>&ldquo;The ACEs and/or ARBs absolutely require. These work on all aspects to decrease preload and afterload, and they decrease that sympathetic activation. Biggest thing here too, they decrease left ventricular remodeling, dilation, hypertrophy&hellip; mandatory for these patients, because we know through these big huge heart studies that we see not only hemodynamic improvements, they&rsquo;re better exercise tolerance, fewer admissions, less progression of disease, and they live longer&hellip; so ACEs or ARBs have to be mandatory for these patients.&rdquo;</em> And at 42:58: <em>&ldquo;You may see some risk for hypotension depending what their other meds look like, and elevation&hellip; in potassium&hellip; potentially the decreased potassium, now we got ACEs which we&rsquo;re going to increase it, so we got&hellip; monitor for this.&rdquo;</em></p>
-    <p><mark class="prof-highlight">An ACE inhibitor or an angiotensin receptor blocker is mandatory in heart failure</mark> because it prolongs survival [slides 54 and 55]; monitor kidney function and potassium [slide 56].</p>
+    <p><mark class="prof-highlight">An ACE inhibitor or an angiotensin receptor blocker is mandatory in heart failure with reduced ejection fraction (a weak pumping heart)</mark> because it prolongs survival [slides 54 and 55; the slides do not name the type of heart failure, and in preserved ejection fraction these drugs have not shown a survival benefit]; monitor kidney function and potassium [slide 56].</p>
   </div>
 
   <h3 class="sub" id="dh-hfbb">1.9 &middot; Objectives 1&ndash;7 &mdash; Heart failure: beta blockers</h3>
@@ -542,7 +542,7 @@ BODY += '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 50:05 of the recording: <em>&ldquo;These can be clues&hellip; you can start to see things like xanthopsia&hellip; xanth as a prefix means yellow, so they get this kind of yellow greenish sort of color discoloration, and they start to see halos around lights&hellip; that clues me in, that&rsquo;s like pathognomonic for digoxin, like there&rsquo;s nothing else that does that, and so that should really clue you in&hellip; we need to check a level right away.&rdquo;</em> At 51:00 of the recording: <em>&ldquo;The other big toxicity will be cardiac in nature, so bradycardia is most common, but you can see just about any arrhythmia can be caused by too much digoxin&hellip; PVCs kind of give you a clue&hellip; ventricles are a little more sensitive, and they&rsquo;re more twitchy.&rdquo;</em></p>
-    <p><mark class="prof-highlight">Yellow-green halos and xanthopsia point to digoxin toxicity</mark>; the next step is a digoxin level [slide 68]. Bradycardia is the commonest cardiac toxicity, and any arrhythmia can occur [slide 70].</p>
+    <p><mark class="prof-highlight">Yellow-green halos and xanthopsia point to digoxin toxicity</mark>; the next step is a digoxin level [slide 68]. Bradycardia is classically listed as the most common cardiac toxicity, and premature ventricular beats are also very common, but just about any arrhythmia can occur; the ventricles become more sensitive, which is why premature ventricular beats are a clue [slide 70].</p>
   </div>
 
   <div class="callout"><strong>Deck versus truth &mdash; &ldquo;pathognomonic&rdquo;, and the two kinds of halos.</strong> Dr. Wood called yellow-green halos with xanthopsia
@@ -579,7 +579,7 @@ BODY += '''
   <h4 class="subsub">Aldosterone antagonists in heart failure [slide 73]</h4>
   <ul>
     <li><strong>Spironolactone:</strong> <strong>mortality reduction in grade III or IV heart failure</strong> (slide 37 says class IV and slide 73 says grade III or IV for the same functional scale; learn it as advanced heart failure, see the box in 1.5); patients are <strong>not eligible if the potassium is above 5 or the serum creatinine above 2.5</strong>; gynecomastia in about 10 percent of men (it may respond to a lower dose).</li>
-    <li><strong>Eplerenone:</strong> <strong>no gynecomastia</strong>.</li>
+    <li><strong>Eplerenone:</strong> <strong>gynecomastia is rare</strong> (the slide says &ldquo;no gynecomastia&rdquo;; spironolactone causes it in about 10 percent of men).</li>
     <li><strong>Mechanism in heart failure:</strong> neurohormonal inhibition, slowed remodeling of the left ventricle, slowed progression of heart failure.</li>
   </ul>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
@@ -589,7 +589,7 @@ BODY += '''
 
   <div class="callout"><strong>Deck versus truth &mdash; why spironolactone causes the breast and menstrual effects.</strong> Slide 38 calls spironolactone a &ldquo;partial agonist at testosterone receptors&rdquo;, and Dr. Wood used that wording (25:39).
   In truth, spironolactone is an <strong>androgen receptor antagonist</strong>: it blocks testosterone&rsquo;s action (and has some progesterone-like activity), which gives gynecomastia in men and menstrual irregularity in women. The same antiandrogen action is why it is used for
-  hirsutism and acne (not on the slides). Eplerenone binds the aldosterone receptor far more selectively, so it has no such effect. What to learn is unchanged: <strong>breast enlargement or menstrual irregularity on spironolactone means switch to eplerenone</strong>; do not learn &ldquo;partial agonist&rdquo; as the mechanism (the full discussion is in the box in 1.5).</div>
+  hirsutism and acne (not on the slides). Eplerenone binds the aldosterone receptor far more selectively, so it rarely has such an effect. What to learn is unchanged: <strong>breast enlargement or menstrual irregularity on spironolactone means switch to eplerenone</strong>; do not learn &ldquo;partial agonist&rdquo; as the mechanism (the full discussion is in the box in 1.5).</div>
 
   <h4 class="subsub">Milrinone and inamrinone [slides 74 to 76]</h4>
   <ul>
@@ -606,7 +606,7 @@ BODY += '''
 
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
     <p style="margin-top:2px">At 55:32 of the recording: <em>&ldquo;Your main question will be, what&rsquo;s the patient hypo or hypertensive? If they&rsquo;re hypertensive, then milrinone works better. If they&rsquo;re going to be hypotensive, then something like&hellip; dobutamine or dopamine tends to make more sense from that standpoint.&rdquo;</em> And at 54:42: <em>&ldquo;You really just want to use it for short term, because if you leave them on it for too long you can see risk for arrhythmia start to go up.&rdquo;</em></p>
-    <p><mark class="prof-highlight">Pick milrinone (vasodilator) for a decompensated patient with high blood pressure and dobutamine or dopamine for low blood pressure</mark>; all are short-term, started in hospital [slides 75 to 77]. Why: milrinone&rsquo;s balanced vasodilation lowers blood pressure (hypotension is a known adverse effect, not on the slide), so it suits the high-pressure patient, while dobutamine and dopamine raise the force of contraction without vasodilating (the recording, 55:22).</p>
+    <p><mark class="prof-highlight">Pick milrinone (vasodilator) for a decompensated patient with high blood pressure and dobutamine or dopamine for low blood pressure</mark>; all are short-term, started in hospital [slides 75 to 77]. Why: milrinone&rsquo;s balanced vasodilation lowers blood pressure (hypotension is a known adverse effect, not on the slide), so it suits the high-pressure patient, while dobutamine and dopamine raise the force of contraction with much less vasodilation than milrinone (the recording, 55:22; dobutamine can still lower systemic vascular resistance modestly, and dopamine at higher doses constricts vessels).</p>
   </div>
 
   <div class="callout"><strong>Deck versus truth &mdash; dopamine.</strong> Slide 77 says dopamine infusions &ldquo;maintain renal function&rdquo;. Low-dose

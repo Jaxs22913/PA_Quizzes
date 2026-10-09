@@ -127,7 +127,7 @@ BATCH = {
   "too</b> &mdash; children rarely stop at one. Identify a <b>button battery, which is an "
   "emergency</b>.",
   [("Unilateral sinusitis", "Discharge without an object; far less common at this age"),
-   ("Choanal atresia", "Congenital, present from birth, with clear rather than foul discharge"),
+   ("Choanal atresia", "Congenital, present from birth, with a blocked side and mucus-like rather than foul discharge"),
    ("Rhinolith", "A calcified mass around a long-retained object")],
   "<b>Anterior rhinoscopy</b> &rarr; direct visualization of the object. <b>Imaging</b> only if a "
   "battery or magnet is suspected and not seen &rarr; the object with its characteristic outline.",

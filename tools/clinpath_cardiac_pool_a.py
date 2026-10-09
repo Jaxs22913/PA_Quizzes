@@ -226,12 +226,12 @@ QUESTIONS = [
  "c": 0, "cite": D + ", Slide 13"},
 
 {"topic": "Familial hypercholesterolemia", "io": IO_MOLEC, "slot": "classification",
- "q": "How is familial hypercholesterolemia characterized among the genetic hyperlipidemias?",
+ "q": "How is familial hypercholesterolemia classically characterized among the genetic hyperlipidemias?",
  "opts": [
-  ["It is the most common form",
-   "Correct, which matters because a defect in a single receptor accounts for more inherited hyperlipidemia than any other mechanism."],
+  ["It is taught as the most common form",
+   "Correct, which matters because a defect in a single receptor is the classic example of inherited hyperlipidemia, although familial combined hyperlipidemia is now thought to be at least as common."],
   ["It is the rarest form",
-   "It is described as the most common form of genetic hyperlipidemia."],
+   "It is a common single-gene form, classically taught as the most common genetic hyperlipidemia, rather than the rarest."],
   ["It is acquired rather than genetic",
    "It is genetic, and it is described among the genetic hyperlipidemias."],
   ["It affects triglyceride handling rather than cholesterol",

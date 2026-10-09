@@ -329,7 +329,7 @@ POOL = [
   ["A narrative summary of a field written by an expert",
    "An expert narrative is neither systematic in its identification of studies nor tied to one focused question."],
   ["A single large study with a greater number of participants",
-   "Pooling data to produce what amounts to a single large study describes a meta-analysis."],
+   "Statistically pooling data from several studies describes a meta-analysis, which works like one larger study with more power but is not literally a single study."],
   ["A study that follows one group forward over time",
    "That describes a cohort study, which is primary research rather than a synthesis of existing studies."]],
  "c": 0, "cite": c(14)},
@@ -337,8 +337,8 @@ POOL = [
 {"topic": "Meta-analysis", "io": IOA, "slot": "definition",
  "q": "What does a meta-analysis do?",
  "opts": [
-  ["Pools data from multiple studies to produce a single large study",
-   "Correct, and the reason it is worth doing is power: a greater number of participants usually means a greater ability to detect a real effect."],
+  ["Statistically combines data from multiple studies",
+   "Correct: it statistically pools the data from the studies, weighting each by its precision, so the combined result has more power than any one study; a greater number of participants usually means a greater ability to detect a real effect."],
   ["Identifies and evaluates studies to answer a focused question",
    "That describes a systematic review. A meta-analysis goes further by combining the data quantitatively."],
   ["Follows a single cohort forward to observe outcomes",
@@ -676,7 +676,7 @@ POOL = [
  "q": "What distinguishes a meta-analysis from a systematic review?",
  "opts": [
   ["It combines the data rather than only appraising the studies",
-   "Correct: the review identifies and evaluates the studies, and the meta-analysis pools their data to produce what functions as one larger study."],
+   "Correct: the review identifies and evaluates the studies, and the meta-analysis statistically pools their data, which gives the combined result more power than any one study."],
   ["It asks a broader question",
    "A systematic review already answers a specific, focused question, and a meta-analysis built on one is no broader in scope."],
   ["It includes only randomized controlled trials",

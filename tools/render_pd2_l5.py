@@ -25,7 +25,7 @@ INTRO = (
   "<b>Bell for low, diaphragm for high</b> &mdash; S3, S4 and mitral stenosis on the bell, "
   "applied lightly; S1, S2, rubs and the regurgitant murmurs on the diaphragm, pressed firmly. "
   "<b>One radiation is a discriminator</b>: mitral regurgitation goes to the axilla, tricuspid "
-  "regurgitation specifically does NOT, and hypertrophic cardiomyopathy never goes to the neck. "
+  "regurgitation specifically does NOT, and hypertrophic cardiomyopathy usually does not go to the neck. "
   "Covers the cardiac history through chest pain, palpitations, orthopnea, paroxysmal nocturnal "
   "dyspnea, edema and syncope; the cardiac cycle and what makes each sound; the apical impulse "
   "and the hyperkinetic, sustained and diffuse patterns; auscultation technique; the extra "

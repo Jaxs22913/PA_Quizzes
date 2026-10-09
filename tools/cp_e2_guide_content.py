@@ -150,8 +150,7 @@ CARDIAC = '''
     <tr><td>High-density lipoprotein (HDL)</td><td>&mdash;</td><td><b>Decreases</b> risk: carries
     cholesterol <b>back to the liver</b>, clearing it away from plaque</td></tr>
   </table>
-  <p><b>Familial hypercholesterolemia</b> (slide 13) is the most common form of genetic
-  hyperlipidemia. The defect is in the <b>low-density lipoprotein receptor on liver cells</b>, so the
+  <p><b>Familial hypercholesterolemia</b> (slide 13) is a common single-gene form of genetic hyperlipidemia (too much fat in the blood), classically taught as the most common form. The defect is in the <b>low-density lipoprotein receptor on liver cells</b>, so the
   liver cannot remove cholesterol from the bloodstream. <b>High-fat diets</b> are the acquired
   counterpart listed on the same slide.</p>
   <p>Lecture 7 adds a fourth name: <b>lipoprotein(a)</b>, an altered form of low-density lipoprotein
@@ -181,9 +180,7 @@ CARDIAC = '''
   ''' + fig(D6 + "atherosclerosis-initiation.jpg", 400, 846,
             "Three-panel diagram: initiation of atherosclerosis, early lesion, and vulnerable plaque, with labeled cells and mediators.",
             "Read top to bottom. <b>(a) Initiation:</b> atherogenic factors (low-density lipoprotein "
-            "cholesterol, diabetes, hypertension, smoking) cause endothelial dysfunction; adhesion "
-            "molecules (MCP-1, monocyte chemoattractant protein 1; VCAM, vascular cell adhesion "
-            "molecule) recruit monocytes, and vascular smooth muscle cells activate. <b>(b) Early "
+            "cholesterol, diabetes, hypertension, smoking) cause endothelial dysfunction; signals such as monocyte chemoattractant protein 1 (MCP-1, a chemical that attracts monocytes) and vascular cell adhesion molecule (VCAM, which lets monocytes stick to the lining) recruit monocytes, and vascular smooth muscle cells activate. <b>(b) Early "
             "lesion:</b> foam cells form the fatty streak, and growth factors such as PDGF "
             "(platelet-derived growth factor) drive smooth muscle migration and proliferation. <b>(c) "
             "Vulnerable plaque:</b> a thin fibrous cap (smooth muscle cells dying by apoptosis), a lipid "
@@ -216,8 +213,7 @@ CARDIAC = '''
     hypertension &middot; diabetes mellitus &middot; obesity</td><td>Male sex &middot; homocysteine
     &middot; high-sensitivity C-reactive protein</td></tr>
   </table>
-  <div class="pearl">Lecture 7 lists the atherosclerosis risk factors again and adds that <b>family
-  history is the most important</b> of them (slide 24), and that C-reactive protein is now used in
+  <div class="pearl">Lecture 7 lists the atherosclerosis risk factors again and adds that <b>family history is a strong risk factor</b>, classically taught as the most important of them (slide 24), and that C-reactive protein is now used in
   cardiovascular risk stratification. See section 7.7.</div>
 
   <h3 class="sub" id="l6-plaque">6.5 &middot; Objective f &mdash; Formation of coronary atherosclerosis and plaques</h3>
@@ -325,8 +321,7 @@ CARDIAC = '''
     reduce flow to a critical level</td><td>Increased cardiac workload: perfusion is adequate at rest
     and inadequate under load</td></tr>
     <tr><td><b>Prinzmetal (variant)</b></td><td><b>Vasospasm</b> is the probable mechanism; its cause
-    is unknown</td><td>Unpredictable; <b>no relation to physical or emotional stress</b>, even though
-    plaques are present</td></tr>
+    is unknown</td><td>Unpredictable; typically happens <b>at rest rather than with exertion</b> (emotional stress, cold, cocaine or hyperventilation can still trigger it), even though plaques are present</td></tr>
     <tr><td><b>Unstable (crescendo)</b></td><td>May progress to acute ischemia</td><td>Classed with the
     acute coronary syndromes for that reason</td></tr>
   </table>
@@ -362,7 +357,7 @@ CARDIAC = '''
   <p><b>How the infarcted area changes (slide 40):</b></p>
   <table>
     <tr><th>Time</th><th>Gross change</th></tr>
-    <tr><td>6 hours</td><td>Gross examination first becomes positive</td></tr>
+    <tr><td>First several hours</td><td>Hard to see with the naked eye (the slide puts the first visible change at about 6 hours)</td></tr>
     <tr><td>18&ndash;24 hours</td><td>Area becomes paler</td></tr>
     <tr><td>Then</td><td>Yellowish and soft, with a border of red vascular connective tissue</td></tr>
     <tr><td>1&ndash;2 weeks</td><td>Necrotic tissue is taken away</td></tr>
@@ -383,9 +378,7 @@ CARDIAC = '''
     <tr><td>Threshold / tempo</td><td>Hemodynamics affected at <b>50% closure</b>; progresses slowly,
     so the heart compensates by <b>myocardial cell hypertrophy</b></td><td>Acute regurgitation comes
     from <b>infection or papillary muscle rupture</b></td></tr>
-    <tr><td>Primary causes</td><td>Post-inflammatory scarring from <b>rheumatic fever</b>; aging
-    valvular <b>calcification</b></td><td><b>Rheumatic heart disease</b>; <b>infective
-    endocarditis</b></td></tr>
+    <tr><td>Important causes</td><td>Post-inflammatory scarring from <b>rheumatic fever</b>; aging valvular <b>calcification</b></td><td>Important causes include <b>rheumatic heart disease</b> and <b>infective endocarditis</b>, as well as degenerative valve changes and aortic root dilation</td></tr>
   </table>
   <table>
     <tr><th>Lesion</th><th>Mechanism</th><th>Consequences</th></tr>
@@ -404,15 +397,14 @@ CARDIAC = '''
     into the left atrium during systole</td><td>Usually no symptoms; in a few cases enough to cause
     some mitral regurgitation</td></tr>
     <tr><td><b>Aortic stenosis</b> (slides 50&ndash;51)</td><td>Most commonly <b>age-related
-    calcification</b>, common with a <b>bicuspid aortic valve</b>; rheumatic disease is uncommon and
-    affects children and young adults. Obstruction to outflow during systole creates a left ventricular
+    calcification</b>, common with a <b>bicuspid aortic valve</b>; rheumatic disease is an uncommon cause, and it usually shows up years after the original rheumatic fever. Obstruction to outflow during systole creates a left ventricular
     to aortic gradient</td><td>The ventricle generates high systolic pressures and slowly
     <b>hypertrophies</b>; hypertrophy plus high pressure predispose to <b>ischemia and angina</b>; may
     lead to left heart failure</td></tr>
     <tr><td><b>Aortic regurgitation</b> (slide 53)</td><td>Incompetent valve leaks from aorta back into
     the left ventricle <b>during diastole</b>; causes similar to mitral regurgitation, with <b>aortic
     root dilation</b> (from aging or connective tissue disease) a common one</td><td>Left ventricle
-    <b>hypertrophies and dilates</b>; <b>diastolic pressures fall</b>; high workload can lead to
+    <b>hypertrophies and dilates</b>; the <b>aortic diastolic pressure falls</b> because blood leaks back into the ventricle; high workload can lead to
     left-sided heart failure</td></tr>
   </table>
   <div class="pearl"><b>Timing is the whole trick.</b> Mitral stenosis and aortic regurgitation are
@@ -453,8 +445,7 @@ CARDIAC = '''
     <i>Streptococcus</i>) and are <b>not virulent enough to attack a healthy endocardium</b>; the damaged
     valve is what lets them in. The slide also lists <i>S. aureus</i> and <i>Candida</i>; <i>S.
     aureus</i> belongs with the acute form (see the note below).</td></tr>
-    <tr><td><b>Myocarditis</b> (slide 59)</td><td>Etiologies include microbes, immune-related disease and
-    physical agents; <b><i>Coxsackievirus</i> is the most common cause in North America</b>. Mechanism
+    <tr><td><b>Myocarditis</b> (slide 59)</td><td>Etiologies include microbes (most often viruses, classically <b><i>Coxsackievirus</i></b>), immune-related disease and physical agents. The slide calls Coxsackievirus the most common cause in North America, but biopsy series now find other viruses about as often. Mechanism
     in section 6.14.</td></tr>
     <tr><td><b>Acute pericarditis</b> (slide 70)</td><td>Most cases are idiopathic, and most of those
     are <b>viral</b>; the inflammation damages the pericardium. Section 6.14.</td></tr>
@@ -473,7 +464,7 @@ CARDIAC = '''
   response. The full treatment is in <a href="#l7-bp">section 7.5</a>.</p>
   <p>Where pressure appears in this deck, it is as <b>load on the heart</b>: afterload is one of the
   four determinants of oxygen demand (slide 31); a <b>high afterload increases mitral
-  regurgitation</b> (slide 48); in aortic regurgitation <b>diastolic pressures fall</b> (slide 53); and
+  regurgitation</b> (slide 48); in aortic regurgitation the <b>aortic diastolic pressure falls</b> (slide 53); and
   poor perfusion pressure is one cause of ischemia (slide 30).</p>
 
   <h3 class="sub" id="l6-conduction">6.13 &middot; Objective n &mdash; The cardiac conduction system</h3>
@@ -491,7 +482,7 @@ CARDIAC = '''
   <h3 class="sub" id="l6-structural">6.14 &middot; Objective o &mdash; Structural cardiac pathologies</h3>
   <h4 class="subsub">Myocarditis (slides 59&ndash;60)</h4>
   <p>Characterized by <b>inflammation, leukocyte infiltration and necrosis</b> of the myocardium. The
-  picture: <b>left ventricular dysfunction</b>, general <b>dilation of all four chambers</b>, patchy or
+  picture: <b>left ventricular dysfunction</b>, sometimes <b>dilation of the chambers</b> (the slide says all four; acute disease often has a normal-sized or only mildly dilated heart), patchy or
   diffuse necrotic lesions, inflamed and edematous muscle with leukocyte infiltrates, and
   <b>endocardial structures that are usually normal</b>.</p>
   <h4 class="subsub">Cardiomyopathy (slides 61&ndash;65)</h4>
@@ -510,8 +501,7 @@ CARDIAC = '''
   <div class="pearl">Two of the three fail in <b>filling</b> (hypertrophic, restrictive); one fails in
   <b>emptying</b> (dilated). The Frank&ndash;Starling slide explains why dilation helps only so far.</div>
   <h4 class="subsub">Pericardial disease (slides 66&ndash;72)</h4>
-  <p>Rarely primary; usually <b>secondary to another cause</b>. Whatever the cause, fluid accumulates
-  in the pericardial sac and the pericardial structures become painfully inflamed.</p>
+  <p>Rarely primary; usually <b>secondary to another cause</b>. Whatever the cause, fluid accumulates in the pericardial sac (the sac around the heart), and when the cause is inflammatory the pericardial structures can become painfully inflamed.</p>
   <table>
     <tr><th>Pericardial effusion type</th><th>What it is and why</th></tr>
     <tr><td><b>Serous</b></td><td>A transudate, secondary to <b>heart failure</b> or
@@ -521,8 +511,7 @@ CARDIAC = '''
     <tr><td><b>Chylous</b></td><td>Lymph, from <b>obstruction to lymph drainage</b></td></tr>
     <tr><td><b>Blood</b> (hemopericardium)</td><td><b>Penetrating</b> cardiac trauma</td></tr>
   </table>
-  <p>An effusion is by definition <b>non-inflammatory</b> fluid. <b>Cardiac tamponade</b> occurs when
-  a large amount of pericardial fluid <b>compresses the heart chambers from outside</b> so that filling
+  <p>An effusion is simply a collection of fluid; it is often <b>non-inflammatory</b>, watery fluid, but it can also be an inflammatory exudate when infection or inflammation is the cause. <b>Cardiac tamponade</b> is what happens when pericardial fluid, especially if it collects quickly, <b>compresses the heart chambers from outside</b> so that filling
   is impaired; it is life-threatening (slide 69).</p>
   <table>
     <tr><th>Pericarditis</th><th>Mechanism</th></tr>
@@ -742,8 +731,7 @@ VASCULAR = '''
   <p>The principal mechanisms of vascular disease (slide 16): <b>narrowing</b> &mdash; stenosis or
   obstruction of the lumen, either <b>progressive</b> (atherosclerosis) or <b>precipitous</b>
   (thrombosis, embolism) &mdash; and <b>weakening</b>, which leads to <b>dilation</b> or
-  <b>rupture</b>. Each vessel type has its own structure for its own physiologic needs, so disease has
-  <b>distinct anatomic distributions</b> (slide 17):</p>
+  <b>rupture</b>. Each vessel type has its own structure for its own physiologic needs, so each size of artery tends to be tied to one <b>typical pattern of disease</b> (slide 17; the patterns overlap, for example atherosclerosis also affects the aorta):</p>
   <table>
     <tr><th>Artery type (slide 18)</th><th>Examples</th><th>Typical disease and why</th></tr>
     <tr><td><b>Large (elastic)</b> &mdash; aorta about 2&ndash;3.5 cm</td><td>Aorta and its major
@@ -769,8 +757,7 @@ VASCULAR = '''
     as a balance of vasoconstrictors (such as angiotensin) and vasodilators (such as nitric oxide).</li>
     <li><b>Cardiac output</b> is heart rate times stroke volume, and stroke volume depends on
     <b>blood volume</b>, which is regulated by <b>sodium excretion or resorption</b>. Water follows
-    sodium: more sodium in the blood pulls in water, raising volume and so pressure &mdash; why chronic
-    high sodium intake leads to hypertension.</li>
+    sodium: more sodium in the blood pulls in water, raising volume and so pressure &mdash; one reason chronic high sodium intake contributes to hypertension.</li>
   </ul>
   ''' + fig(D7 + "blood-pressure-regulation.jpg", 1100, 409,
             "Diagram: blood pressure equals cardiac output times peripheral resistance, with the factors acting on each.",
@@ -831,8 +818,7 @@ VASCULAR = '''
 
   <h3 class="sub" id="l7-athero">7.7 &middot; Objective c &mdash; Atherosclerosis, from the vessel wall</h3>
   <p>The major pathogenesis of <b>coronary, cerebral and peripheral vascular disease</b>, and the cause of
-  more morbidity and mortality in the Western world than any other disorder &mdash; about half of all
-  deaths (slide 24). Risk comes from acquired, inherited, sex- and age-related factors:</p>
+  more morbidity and mortality in the Western world than any other disorder &mdash; slide 24 says about half of all deaths, an older figure; cardiovascular disease accounts for roughly a third of deaths in the United States today. Risk comes from acquired, inherited, sex- and age-related factors:</p>
   <table>
     <tr><th>Risk factor (slide 24)</th><th>What the lecture adds</th></tr>
     <tr><td>Hyperlipidemia</td><td>&mdash;</td></tr>
@@ -843,8 +829,7 @@ VASCULAR = '''
     dyslipidemia; induces a <b>hypercoagulable and proinflammatory</b> state</td></tr>
     <tr><td><b>Inflammation</b> (C-reactive protein)</td><td>Now included in cardiovascular risk
     stratification</td></tr>
-    <tr><td><b>Genetics</b></td><td><b>Family history is the most important risk factor</b> (on the
-    slide)</td></tr>
+    <tr><td><b>Genetics</b></td><td><b>Family history is a strong risk factor</b>, classically taught (on the slide) as the most important one</td></tr>
     <tr><td>Increasing age</td><td>Progressive; manifests in the 40s to 60s and rises by decade</td></tr>
     <tr><td>Men and postmenopausal women</td><td>Likely a protective effect of estrogen</td></tr>
   </table>
@@ -1006,8 +991,7 @@ VASCULAR = '''
     <tr><td>Increased coagulation (genetic or acquired)</td><td>Cancer, sepsis, systemic lupus
     erythematosus, oral estrogen</td></tr>
   </table>
-  <p><b>Virchow triad (slide 38):</b> (1) <b>damage to the vessel wall</b>, (2) <b>blood flow
-  turbulence</b>, (3) <b>hypercoagulability</b>. Triggers are multifactorial, with the three involved in
+  <p><b>Virchow triad (slide 38):</b> (1) <b>damage to the vessel wall</b>, (2) <b>abnormal blood flow</b>, meaning turbulence or stasis (pooling), (3) <b>hypercoagulability</b> (blood that clots too easily). The slide names turbulence; stasis, as in deep vein thrombosis, counts as well. Triggers are multifactorial, with the three involved in
   varying degrees.</p>
   <p><b>What happens to the clot.</b> Over weeks, <b>neutrophils and macrophages infiltrate the fibrin
   clot</b>, and <b>collagen gradually replaces the fibrin</b>; that remodeling and fibrosis
@@ -1044,13 +1028,13 @@ TEST_YOURSELF = {
      "After about 30 minutes",
      "Within a few minutes, as contraction stops",
      "Only after 6 hours"], 1,
-    "ATP is depleted immediately and contraction fails within a few minutes, but necrosis becomes irreversible after about 30 minutes. Six hours is when gross examination first turns positive."),
-  Q("Which angina has no relation to physical or emotional stress?",
+    "ATP is depleted immediately and contraction fails within a few minutes, but necrosis becomes irreversible after about 30 minutes. Classic teaching puts the first visible gross change at about 6 hours, but an infarct is hard to see with the naked eye for the first several hours."),
+  Q("Which angina is unpredictable, typically occurs at rest, and is probably caused by vasospasm?",
     ["Stable angina, from a fixed stenosis",
      "Unstable angina, from plaque rupture",
      "Prinzmetal angina, from vasospasm",
      "Crescendo angina, from rising demand"], 2,
-    "Prinzmetal (variant) angina is unpredictable and probably caused by vasospasm. Stable angina appears when workload rises across a fixed stenosis; unstable (crescendo) angina is an acute coronary syndrome."),
+    "Prinzmetal (variant) angina is unpredictable, typically happens at rest, and is probably caused by vasospasm. Stable angina appears when workload rises across a fixed stenosis; unstable (crescendo) angina is an acute coronary syndrome."),
   Q("In mitral stenosis, when is the abnormal left atrial to left ventricular pressure gradient present?",
     ["During systole, as the ventricle ejects",
      "During isovolumetric contraction only",
@@ -1122,9 +1106,9 @@ TEST_YOURSELF = {
   Q("Which triad underlies deep vein thrombosis?",
     ["Stasis, low sodium, and high renin",
      "Hypertension, smoking, and lipoprotein(a)",
-     "Vessel wall damage, flow turbulence, hypercoagulability",
+     "Vessel wall damage, abnormal blood flow, hypercoagulability",
      "Valve insufficiency, dilation, and tortuosity"], 2,
-    "Virchow triad: damage to the vessel wall, blood flow turbulence, and hypercoagulability. Valve insufficiency with dilated, tortuous veins describes varicose veins."),
+    "Virchow triad: damage to the vessel wall, abnormal blood flow (turbulence or stasis), and hypercoagulability. Valve insufficiency with dilated, tortuous veins describes varicose veins."),
   Q("What produces the red phase of Raynaud phenomenon?",
     ["Tissue anoxia during vasospasm",
      "Deoxygenated blood pooling in veins",

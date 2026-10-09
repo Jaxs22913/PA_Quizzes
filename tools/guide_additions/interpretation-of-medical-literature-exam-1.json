@@ -78,17 +78,17 @@
    "id": "interpretation-of-medical-literature-exam-1-004",
    "section_id": "gh-likelihood-ratios",
    "section_title": "Likelihood ratios",
-   "html": "<b>Positive likelihood ratio of 4.</b> A positive result makes the disease four times more likely, relative to the pre-test probability; the ratio is a multiplier rather than a probability in its own right.",
+   "html": "<b>Positive likelihood ratio of 4.</b> A positive result multiplies the pre-test odds of the disease by four, so the odds are four times what they were before the test; the ratio is a multiplier of the odds rather than a probability in its own right.",
    "keys": [
-    "3vw0gw"
+    "19ahaw8"
    ],
    "cites": [
     "4 PAJ5512 Tests MBF 2026sc.pptx, Slide 30"
    ],
    "src": {
     "question": "A test has a positive likelihood ratio of 4. What does that mean?",
-    "key": "A positive result makes it four times more likely",
-    "explanation": "relative to the pre-test probability, which is what makes the ratio a multiplier rather than a probability in its own right.",
+    "key": "The odds of the condition are multiplied by four",
+    "explanation": "a likelihood ratio multiplies the odds of the condition rather than its probability, so a ratio of 4 makes the odds four times what they were before the test.",
     "also": []
    }
   },
@@ -571,7 +571,7 @@
    "id": "interpretation-of-medical-literature-exam-1-034",
    "section_id": "gh-synthesis",
    "section_title": "Synthesis",
-   "html": "<b>Meta-analysis versus systematic review.</b> A meta-analysis combines the data rather than only appraising the studies: the review identifies and evaluates the studies, and the meta-analysis pools their data to function as one larger study.",
+   "html": "<b>Meta-analysis versus systematic review.</b> A meta-analysis combines the data rather than only appraising the studies: the review identifies and evaluates the studies, and the meta-analysis statistically pools their data, so the combination works like one larger study with more power.",
    "keys": [
     "1bzycxa"
    ],
@@ -581,7 +581,7 @@
    "src": {
     "question": "What distinguishes a meta-analysis from a systematic review?",
     "key": "It combines the data rather than only appraising the studies",
-    "explanation": "the review identifies and evaluates the studies, and the meta-analysis pools their data to produce what functions as one larger study.",
+    "explanation": "the review identifies and evaluates the studies, and the meta-analysis statistically pools their data, which gives the combined result more power than any one study.",
     "also": []
    }
   },
@@ -1759,17 +1759,17 @@
    "id": "interpretation-of-medical-literature-exam-1-b037",
    "section_id": "gh-synthesis",
    "section_title": "Synthesis",
-   "html": "<b>Meta-analysis.</b> Pooling data produces what amounts to a single large study; a greater number of participants usually means greater power, but pooling weak studies gives a larger weak study.",
+   "html": "<b>Meta-analysis.</b> Statistically pooling data produces what works like one larger study; a greater number of participants usually means greater power, but pooling weak studies gives a larger weak study.",
    "keys": [
-    "cdtkdz"
+    "1ivyk1l"
    ],
    "cites": [
     "2 PAJ5512 Study Design and Research Methods MBF_2026sc.pptx, Slide 32"
    ],
    "src": {
     "question": "What does pooling data in a meta-analysis achieve?",
-    "key": "It produces what amounts to a single large study",
-    "explanation": "and a greater number of participants usually means greater power, though the qualifier matters: pooling weak studies gives a larger weak study.",
+    "key": "It gives more power than any one study",
+    "explanation": "pooling statistically combines the participants of several studies, and a greater number of participants usually means greater power, though pooling weak studies gives a larger but still weak result.",
     "also": []
    }
   },
@@ -2256,6 +2256,42 @@
     "question": "Which designs are given as examples of analytic work?",
     "key": "Randomized trials, cohort and case-control studies",
     "explanation": "and what unites them is comparison: each sets one group against another, which is what supports an inference about a population.",
+    "also": []
+   }
+  },
+  {
+   "id": "interpretation-of-medical-literature-exam-1-fix01",
+   "section_id": "gh-synthesis",
+   "section_title": "Synthesis",
+   "html": "<b>What a meta-analysis does.</b> It statistically combines data from multiple studies, pooling the data and weighting each study by its precision, so the combined result has more power than any one study; a greater number of participants usually means a greater ability to detect a real effect.",
+   "keys": [
+    "11fvwsa"
+   ],
+   "cites": [
+    "2 PAJ5512 Evidence MBF_2026sc.pptx, Slide 14"
+   ],
+   "src": {
+    "question": "What does a meta-analysis do?",
+    "key": "Statistically combines data from multiple studies",
+    "explanation": "it statistically pools the data from the studies, weighting each by its precision, so the combined result has more power than any one study; a greater number of participants usually means a greater ability to detect a real effect.",
+    "also": []
+   }
+  },
+  {
+   "id": "interpretation-of-medical-literature-exam-1-fix02",
+   "section_id": "gh-risk-io-4-advantages-and-limitations-of-cohort-studies",
+   "section_title": "IO 4 — Advantages and limitations of cohort studies",
+   "html": "<b>Prospective cohort studies and rare diseases.</b> A prospective cohort study is impractical for rare diseases because enrollment must far exceed the few events: many more subjects must be enrolled than experience the event of interest, and it is also expensive and slow.",
+   "keys": [
+    "o03qgg"
+   ],
+   "cites": [
+    "7 PAJ5512 Risk MBF 2026sc.pptx, Slide 16"
+   ],
+   "src": {
+    "question": "Why is a prospective cohort study impractical for rare diseases?",
+    "key": "Enrollment must far exceed the few events",
+    "explanation": "it is impractical because many more subjects must be enrolled than experience the event of interest, and it is also expensive and slow.",
     "also": []
    }
   }

@@ -111,7 +111,7 @@ FIGURES = [
 
  ("s055_1.jpg", "diascopy", 55,
   "A clear glass slide pressed against skin by a thumb and finger; small red spots remain visible through the glass in the compressed area and continue outside it.",
-  "<b>Diascopy.</b> Press clear glass or plastic against the lesion and look at it under pressure. Here the spots persist under the glass &mdash; <b>no blanching, so this is hemorrhage in the skin</b>. Had the color faded, it would be vascular engorgement instead. One maneuver, and it splits the whole vascular differential."),
+  "<b>Diascopy.</b> Press clear glass or plastic against the lesion and look at it under pressure. Here the spots persist under the glass &mdash; <b>no blanching, so this is hemorrhage in the skin</b>. Had the color faded, it would be vascular engorgement instead. One maneuver separates blanching lesions (engorged vessels) from non-blanching ones (blood leaked out of the vessels)."),
 
  ("s056_1.png", "petechiae-purpura", 56,
   "Lower leg scattered with small red spots, with two labeled circles marking a cluster of pinpoint spots as petechiae and a single larger spot as purpura.",
@@ -119,7 +119,7 @@ FIGURES = [
 
  ("s057_1.png", "ecchymosis", 57,
   "Forearm with a large irregular purple-blue discolored area above the wrist, flat and blending into surrounding skin.",
-  "<b>Ecchymosis</b> &mdash; over one centimeter, purple to purplish-blue, non-blanching, and it <b>fades over time</b> as the extravasated blood breaks down. That evolution is what the other two do not do."),
+  "<b>Ecchymosis</b> &mdash; over one centimeter, purple to purplish-blue, non-blanching, and it <b>fades over time</b> as the extravasated blood breaks down. Petechiae and purpura fade the same way as the leaked blood is reabsorbed."),
 
  ("s058_1.jpg", "cherry-angioma", 58,
   "Close view of pale skin with two small bright red dome-shaped raised lesions, the larger one lobulated.",
@@ -135,11 +135,11 @@ FIGURES = [
 
  ("s061_1.png", "pressure-ulcer-stage-3", 61,
   "A deep crater-like open wound labeled Stage 3, with a dark red base, thickened yellow-tan margins and surrounding reddened skin.",
-  "<b>Stage III</b>. Full thickness skin loss with necrosis of subcutaneous tissue. It may extend down to underlying muscle but <b>not through</b> it &mdash; reaching muscle without destroying it is still stage III."),
+  "<b>Stage III</b>. Full thickness skin loss with necrosis of subcutaneous tissue. It may extend to, but <b>not through</b>, the underlying fascia (the tough sheet over the muscle). The slide says muscle; once muscle, bone or supporting structures are involved, it is stage IV."),
 
  ("s062_1.png", "pressure-ulcer-stage-4", 62,
   "A large deep wound on darkly pigmented skin with an open red cavity, extensive yellow-gray necrotic tissue and undermined blackened edges.",
-  "<b>Stage IV</b>. Full thickness loss with destruction of tissue, muscle and/or bone. Involvement of muscle and bone is the line between this and stage III."),
+  "<b>Stage IV</b>. Full thickness loss with destruction of tissue, muscle and/or bone. Involvement of muscle, bone or supporting structures is the line between this and stage III."),
 
  ("s064_1.jpg", "tinea-capitis", 64,
   "Scalp with a well-defined round area of hair loss covered in fine gray scale, the remaining hairs within it short and broken.",

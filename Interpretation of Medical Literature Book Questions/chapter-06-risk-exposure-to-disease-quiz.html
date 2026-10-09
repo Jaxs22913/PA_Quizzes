@@ -108,6 +108,15 @@
   .mitem .qfig{text-align:left;margin:6px 0 8px}
   .mitem .qfig img{max-height:150px;margin:0}
   .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
   .opts{display:flex;flex-direction:column;gap:11px}
   .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
     border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
@@ -738,7 +747,14 @@ function resumeQuiz(){
 /* Markup for a question's picture, or '' when it has none. Kept in one place
    because the same figure has to appear in three renderers: the live question
    card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
 function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
   if(!q || !q.img) return '';
   var alt = String(q.alt || '').replace(/"/g,'&quot;');
   var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
@@ -768,7 +784,11 @@ function renderQ(){
     // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
     // <img> for click-to-enlarge; swapping src on a live node fires nothing.
     _fig.innerHTML = '';
-    if(q.img){
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
       var _im = document.createElement('img');
       _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
       _fig.appendChild(_im);

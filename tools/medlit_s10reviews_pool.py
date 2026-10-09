@@ -394,10 +394,10 @@ POOL = [
  "c": 0, "cite": c(21)},
 
 {"topic": "Steps of a review", "io": IO4, "slot": "principle",
- "q": "Which two statistical tests are named for assessing heterogeneity?",
+ "q": "Which two statistics are named for assessing heterogeneity?",
  "opts": [
   ["Cochran's Q and the I-squared statistic",
-   "Correct, and both quantify how much study results differ, which guides whether and how the results can be pooled."],
+   "Correct: Cochran's Q is the test, with a null hypothesis of no difference between the study results, and the I-squared statistic describes how much the results differ; both guide whether and how the results can be pooled."],
   ["Kaplan-Meier and log-rank tests",
    "These are used to analyze time to an event, not to measure how much results differ among studies."],
   ["Pearson and Spearman correlation",
@@ -543,7 +543,7 @@ POOL = [
  "q": "What does the fixed effect model assume?",
  "opts": [
   ["One fixed effect size, with variation due to chance",
-   "Correct, and it is used when there is no significant heterogeneity, which means the studies appear similar enough to share one effect."],
+   "Correct, and it is traditionally used when there is no significant heterogeneity, which means the studies appear similar enough to share one effect."],
   ["Effect sizes that vary for reasons beyond chance",
    "Allowing variation not due to chance is the assumption of the random effects model, used when heterogeneity is present."],
   ["An effect that differs in every study",
@@ -558,7 +558,7 @@ POOL = [
   ["Random effects model",
    "Correct, because it is used when heterogeneity is present, allowing variation that is not due to chance; judging similarity then rests on value judgment."],
   ["Fixed effect model",
-   "A fixed effect model is appropriate when there is no significant heterogeneity, so a significant test argues against it."],
+   "A fixed effect model is traditionally used when there is no significant heterogeneity, so a significant test argues against it."],
   ["Neither, because pooling never uses a model",
    "Pooling calculates the summary effect and confidence interval using either a fixed effect or a random effects model."],
   ["No model, only vote counting",

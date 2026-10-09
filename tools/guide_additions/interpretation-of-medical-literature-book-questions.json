@@ -502,7 +502,7 @@
    "id": "book-025",
    "section_id": "gh-risk-io-3-predicting-risk-from-groups",
    "section_title": "IO 3 — Predicting risk from groups",
-   "html": "<b>Calibration plot.</b> Calibration compares the predicted probability with the observed proportion. Points lying consistently above the line of perfect agreement mean predicted rates are consistently higher than observed rates, so calibration is poor.",
+   "html": "<b>Calibration plot.</b> Calibration compares the predicted probability with the observed proportion. With the predicted probability on the vertical axis and the observed proportion on the horizontal axis, points lying consistently above the line of perfect agreement mean the predicted rates are consistently higher than the observed rates, so the model overestimates risk and calibration is poor; points consistently below it mean the reverse.",
    "keys": [
     "1e7i1d5"
    ],
@@ -510,7 +510,7 @@
    "src": {
     "question": "Figure 5.4C shows:",
     "key": "The calibration is poor, with predicted rates consistently higher than observed rates.",
-    "explanation": "Calibration compares the predicted probability with the observed proportion. Every point in the plot lies above the dotted line of perfect agreement, meaning the model predicted higher rates than actually occurred. It consistently overestimates risk. On a calibration plot, points lying consistently above the line of perfect agreement mean the predicted rates are consistently higher than the observed rates, so calibration is poor.",
+    "explanation": "Calibration compares the predicted probability with the observed proportion. Every point in the plot lies above the dotted line of perfect agreement, meaning the model predicted higher rates than actually occurred. In this plot the predicted probability is on the vertical axis and the observed proportion on the horizontal axis, so points above the line mean predicted rates are higher than observed. It consistently overestimates risk. On a calibration plot with the predicted probability on the vertical axis and the observed proportion on the horizontal axis, points lying consistently above the line of perfect agreement mean the predicted rates are consistently higher than the observed rates, so the model overestimates risk and calibration is poor; points consistently below it mean the reverse.",
     "also": []
    }
   },
@@ -1718,7 +1718,7 @@
    "id": "book-088",
    "section_id": "gh-distribution-of-disease-person-place-time",
    "section_title": "Distribution of disease — person, place, time",
-   "html": "<b>Endemic disease.</b> Endemic refers to disease limited by geographic location; coccidioidomycosis is confined to the deserts of the southwestern United States and Mexico.",
+   "html": "<b>Endemic disease.</b> Endemic refers to disease limited by geographic location; coccidioidomycosis is found mainly in the deserts of the southwestern United States and Mexico.",
    "keys": [
     "vyu2rv"
    ],
@@ -1845,7 +1845,7 @@
    "id": "book-095",
    "section_id": "gh-sampling",
    "section_title": "Sampling",
-   "html": "<b>Convenience sample.</b> A sample chosen by a convenient rule with no random element, such as enrolling every 10th admitted patient, is a convenience sample; because selection is not by chance, it may misrepresent the population.",
+   "html": "<b>Convenience sample.</b> A non-random sample chosen because it is easy to reach, such as enrolling whoever happens to be available on the ward, is a convenience sample; because selection is not by chance, it may misrepresent the population. A fixed rule such as every 10th admitted patient is often given as a convenience example in teaching, though strictly it is systematic sampling.",
    "keys": [
     "6sy5ig"
    ],
@@ -1855,7 +1855,7 @@
    "src": {
     "question": "A sample for a study of incidence of medication errors is obtained by enrolling every 10th patient admitted to a hospital. What kind of sample is this?",
     "key": "Convenience sample",
-    "explanation": "Enrolling every 10th admission is a convenient rule with no stated random element; it might produce a representative sample, but because selection is not by chance it could misrepresent the hospital's patients. A sample chosen by a convenient rule with no random element, such as enrolling every 10th admitted patient with no random start, is a convenience sample and may misrepresent the population.",
+    "explanation": "Enrolling every 10th admission is a convenient rule with no stated random element or random start (strictly this is systematic sampling, which counts as a probability sample only when the starting point is chosen at random); it might produce a representative sample, but because selection is not by chance it could misrepresent the hospital's patients. A sample chosen by a convenient rule with no random element, such as enrolling every 10th admitted patient with no random start, is a convenience sample and may misrepresent the population.",
     "also": []
    }
   },

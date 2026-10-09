@@ -121,9 +121,7 @@ BODY = """
     <tr><td><b>Worse</b> in noisy environments</td><td><b>Sensorineural</b></td></tr>
     <tr><td>Noisy environments <b>may help</b></td><td><b>Conductive</b></td></tr>
   </table>
-  <p><b>Why noise helps in conductive loss</b> is worth understanding rather than memorizing: the
-  block attenuates the background along with everything else, while everyone around the patient
-  raises their voice over that background. The speech-to-noise ratio actually improves.</p>
+  <p><b>Why noise helps in conductive loss</b> is worth understanding rather than memorizing: the block does not change the balance of speech and noise, but everyone raises their voice over the background, so the louder speech gets through even though the noise is also turned down.</p>
   <p><b>Ask about medications</b>: <b>aminoglycosides, aspirin, non-steroidal
   anti-inflammatories, quinine and furosemide</b>. All five are common, and none of them will be
   volunteered.</p>
@@ -145,16 +143,15 @@ BODY = """
   </div>
 
   <h3 class="sub" id="l4-vertigo-table">4.3 &middot; The vertigo comparison</h3>
-  <p>Read this table <b>down the duration column first</b>, then check hearing and tinnitus. The
-  two columns together separate all six.</p>
+  <p>Read this table <b>down the duration column first</b>, then check hearing and tinnitus. The two together narrow the list a lot, and neurologic signs then separate central vertigo.</p>
   <table class="tbl">
     <tr><th>Type</th><th>Onset</th><th>Duration and course</th><th>Hearing</th><th>Tinnitus</th><th>Other</th></tr>
     <tr><td><b>Benign positional vertigo</b><br><span class="muted">peripheral</span></td><td>Sudden, on <b>rolling onto the affected side</b> or tilting the head up</td><td><b>Seconds to under a minute.</b> Lasts a few weeks; may recur</td><td><b>Not affected</b></td><td><b>Absent</b></td><td>Sometimes nausea, vomiting, nystagmus</td></tr>
-    <tr><td><b>Vestibular neuronitis</b> (acute labyrinthitis)<br><span class="muted">peripheral</span></td><td>Sudden</td><td><b>Hours to two weeks.</b> May recur over 12&ndash;18 months</td><td><b>Not affected</b></td><td><b>Absent</b></td><td>Nausea, vomiting, nystagmus</td></tr>
+    <tr><td><b>Vestibular neuronitis</b> (the slide adds &ldquo;acute labyrinthitis&rdquo;, but labyrinthitis proper also brings hearing loss and tinnitus)<br><span class="muted">peripheral</span></td><td>Sudden</td><td><b>Hours to two weeks.</b> May recur over 12&ndash;18 months</td><td><b>Not affected</b></td><td><b>Absent</b></td><td>Nausea, vomiting, nystagmus</td></tr>
     <tr><td><b>M&eacute;ni&egrave;re disease</b><br><span class="muted">peripheral</span></td><td>Sudden</td><td><b>Several hours to a day or more.</b> Recurrent</td><td><b>Sensorineural</b> &mdash; recurs, eventually progresses</td><td><b>Present, fluctuating</b></td><td><b>Pressure or fullness</b> in the affected ear; nausea, vomiting, nystagmus</td></tr>
     <tr><td><b>Drug toxicity</b><br><span class="muted">peripheral</span></td><td>Insidious or acute &mdash; <b>loop diuretics, aminoglycosides, salicylates, alcohol</b></td><td>May or may not be reversible; partial adaptation occurs</td><td><b>May be impaired</b></td><td>May be present</td><td>Nausea, vomiting</td></tr>
     <tr><td><b>Acoustic neuroma</b><br><span class="muted">peripheral</span></td><td>Insidious, from <b>cranial nerve VIII</b> compression</td><td>Variable</td><td><b>Impaired, ONE side</b></td><td><b>Present</b></td><td>May involve <b>cranial nerves V and VII</b></td></tr>
-    <tr><td><b>Central vertigo</b></td><td>Often sudden &mdash; <b>brainstem lesion, atherosclerosis, multiple sclerosis, vertebrobasilar migraine, transient ischemic attack</b></td><td>Variable but <b>rarely continuous</b></td><td><b>Not affected</b></td><td><b>Absent</b></td><td><b>Other brainstem deficits</b> &mdash; dysarthria, ataxia, crossed motor and sensory deficits</td></tr>
+    <tr><td><b>Central vertigo</b></td><td>Often sudden &mdash; <b>brainstem lesion, atherosclerosis, multiple sclerosis, vertebrobasilar migraine, transient ischemic attack</b></td><td>Variable, from <b>brief spells</b> (as in a transient ischemic attack) to <b>constant vertigo lasting days</b> (as in a stroke)</td><td><b>Not affected</b></td><td><b>Absent</b></td><td><b>Other brainstem deficits</b> &mdash; dysarthria, ataxia, crossed motor and sensory deficits</td></tr>
   </table>
   <p><b>Three things to take from the table.</b> First, <b>hearing is the great divider</b>: of the
   six, only M&eacute;ni&egrave;re, drug toxicity and acoustic neuroma touch it. Second,
@@ -249,12 +246,8 @@ BODY = """
   <h3 class="sub" id="l4-nose">4.7 &middot; The nose and sinuses</h3>
   <p><b>Anatomy first</b>, because the drainage explains the disease [0:16]. Three turbinates
   &mdash; <b>superior, middle and inferior</b> &mdash; and the <b>maxillary sinus drains at the
-  middle turbinate</b>. The Eustachian tube opens into the same space, which is why
-  <em>&ldquo;everything comes together, ear, nose and throat &hellip; that&rsquo;s why when you
-  cry you get congestion.&rdquo;</em></p>
-  <p>And the warning that goes with it [0:46]: <em>&ldquo;the roof of the mouth is the floor of
-  your brain &hellip; anything that happened there can go up. So you have to be careful.
-  <b>Any infection in this area, you have to be a little more aggressive.</b>&rdquo;</em></p>
+  middle turbinate</b>. The Eustachian tube opens into the back of the nose (the nasopharynx), which is why <em>&ldquo;everything comes together, ear, nose and throat&rdquo;</em>; tears also drain into the nose through the nasolacrimal duct, which is why you get congestion when you cry.</p>
+  <p>And the warning that goes with it [0:46]: the sinuses and the top of the nose sit just beneath the base of the skull, so infection there can spread upward toward the brain. <em>&ldquo;So you have to be careful. <b>Any infection in this area, you have to be a little more aggressive.</b>&rdquo;</em> (The lecturer put it as &ldquo;the roof of the mouth is the floor of your brain&rdquo;; anatomically the roof of the mouth is the floor of the nose.)</p>
   <p><b>History:</b> onset and duration, <b>sick contacts and recent travel</b>, <b>recent dental
   work</b> &mdash; because dental work can affect the <b>maxillary sinuses</b> sitting directly
   above the upper tooth roots &mdash; and <b>seasonal or environmental triggers</b> pointing to
@@ -405,8 +398,7 @@ BODY = """
 
   <p><b>The trachea</b> is checked for <b>deviation</b> &mdash; masses, atelectasis, or a large
   pneumothorax.</p>
-  <p><b>The thyroid</b>, found from the <b>cricoid cartilage</b> as the landmark [26:43], and the
-  three-way split on diffuse enlargement turns on <b>texture alone</b>:</p>
+  <p><b>The thyroid</b>, found from the <b>cricoid cartilage</b> as the landmark [26:43], and for diffuse enlargement, <b>texture and tenderness</b> give a first clue to which of three causes it is (blood tests then confirm it):</p>
   <table class="tbl">
     <tr><th>Finding</th><th>Suggests</th></tr>
     <tr><td>Diffuse and <b>SOFT</b></td><td><b>Graves disease</b></td></tr>
@@ -517,7 +509,7 @@ TESTS = """    ent: [
        why:"It drains territory a long way from the neck, so finding one there redirects the whole search."},
       {q:"A diffusely enlarged thyroid that is FIRM. Which condition?",
        o:["Hashimoto thyroiditis","Graves disease","Thyroiditis","Multinodular goiter"],a:0,
-       why:"Diffuse enlargement splits on texture alone: soft is Graves, firm is Hashimoto, tender is thyroiditis."},
+       why:"Texture and tenderness give a first clue: soft suggests Graves, firm suggests Hashimoto, tender suggests thyroiditis (blood tests then confirm)."},
       {q:"Under what symptom duration is acute BACTERIAL sinusitis unlikely?",
        o:["Less than seven days","Less than three days","Less than four weeks","Less than twelve weeks"],a:0,
        why:"Acute bacterial sinusitis is unlikely with symptoms under seven days, and the COLOR of the discharge is not diagnostic either."},
@@ -548,8 +540,9 @@ FIGS = {
         "of it. Conductive loss blocks one route; sensorineural loss degrades what lies beyond "
         "both.", 5),
     "@@POLYP@@": ("polyp", "png",
-        "A nasal polyp (<b>P</b>) between the septum (<b>S</b>) and an allergic-looking inferior "
-        "turbinate (<b>T</b>). Seeing the two side by side is the point &mdash; a boggy turbinate "
+        "A nasal polyp (<b>P</b>) seen between the septum (<b>S</b>) and an allergic-looking inferior "
+        "turbinate (<b>T</b>); polyps usually arise higher in the nose and hang down, while the "
+        "swollen, boggy turbinate is fixed to the side wall. Seeing the two side by side is the point &mdash; a boggy turbinate "
         "mistaken for a polyp is the common error.", 59),
     "@@SEPTUM@@": ("septum", "png",
         "Basal view of a caudal septal deviation. The external appearance can be striking with "
