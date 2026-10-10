@@ -160,7 +160,7 @@ def family_report(F, docs, weeks, lines):
     busiest = max(days, key=lambda d: docs[d].get(F["base"]["d"], 0))
     top = docs[busiest].get(F["base"]["d"], 0)
     lines.append("Daily: %d days with data; %s per day on average: %s; busiest day %s: %s." % (
-        len(days), F["base_label"].lower(), shown(avg, avg), busiest, shown(top, top)))
+        len(days), F["base_label"][0].lower() + F["base_label"][1:], shown(avg, avg), busiest, shown(top, top)))
     lines.append("")
 
 
