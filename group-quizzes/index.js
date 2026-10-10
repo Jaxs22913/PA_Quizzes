@@ -372,6 +372,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-2-diagnosing-infections-quiz-version-2":{"title":"Diagnosing Infections — Quiz 2","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-disorders-in-immunity-quiz":{"title":"Disorders in Immunity — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-disorders-in-immunity-quiz-version-2":{"title":"Disorders in Immunity — Quiz 2","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
+"microbiology-exam-2-novel-antimicrobial-therapy-quiz":{"title":"Novel Antimicrobial Therapy — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "nutrition-class-nutrition-ppt-1-2-review-qs":{"title":"Nutrition PPT 1-2 Review Qs","category":"Nutrition","exam":"General","sem":"summer-1-2026","n":25},
 "pharmacodynamics-exam-2-antimicrobials-quiz-1":{"title":"Antimicrobials Quiz — Set 1","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},
 "pharmacodynamics-exam-2-antimicrobials-quiz-2":{"title":"Antimicrobials Quiz — Set 2","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 study guide (Lectures 7-10 so far).
+"""Build the Microbiology Exam 2 study guide (Lectures 7-11 so far).
 
 Skeleton lifted from the Microbiology Exam 1 guide -- head, styles, back bar,
 pull-to-refresh, footer and scripts -- so the class reads as one thing; only
@@ -32,8 +32,9 @@ import _micro_e2_guide_l7 as L7
 import _micro_e2_guide_l8 as L8
 import _micro_e2_guide_l9 as L9
 import _micro_e2_guide_l10 as L10
+import _micro_e2_guide_l11 as L11
 
-SECTIONS = [L7, L8, L9, L10]
+SECTIONS = [L7, L8, L9, L10, L11]
 DONOR = os.path.join(ROOT, "Microbiology Exam 1", "micro-exam-1-study-guide.html")
 OUTDIR = os.path.join(ROOT, "Microbiology Exam 2")
 OUT = os.path.join(OUTDIR, "micro-exam-2-study-guide.html")
@@ -86,7 +87,10 @@ def extract_images():
     for name in L9_FIGURES:
         assert os.path.exists(os.path.join(IMGDIR, name)), \
             name + " missing: run tools/extract_micro_l9_figures.py"
-    return len(IMAGES) + len(L9_FIGURES)
+    # Lecture 11's pictures sit in content placeholders, which the loop above does not see; its module
+    # extracts them itself
+    n11 = L11.extract(IMGDIR)
+    return len(IMAGES) + len(L9_FIGURES) + n11
 
 
 def main():
@@ -105,8 +109,8 @@ def main():
     head = re.sub(r"<header class=\"top\">.*?</header>",
         '<header class="top">\n  <h1>Microbiology &middot; Exam 2 &mdash; Study Guide</h1>\n'
         '  <p>PAJ 5200 Microbiology &middot; Class of 2028</p>\n'
-        '  <p>Covers Lectures 7&ndash;10 so far &mdash; Disorders in Immunity, Diagnosing Infections, Cocci of '
-        'Medical Importance and Gram-Positive Bacilli &middot; '
+        '  <p>Covers Lectures 7&ndash;11 so far &mdash; Disorders in Immunity, Diagnosing Infections, Cocci of '
+        'Medical Importance, Gram-Positive Bacilli and Novel Antimicrobial Therapy &middot; '
         'Exam 2 (Lectures 7&ndash;13) is on Friday 23 October 2026; further sections are added as each '
         'lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n</header>',
         head, count=1, flags=re.S)

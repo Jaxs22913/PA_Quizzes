@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Microbiology Exam 2 Arcade decks -- Lectures 7 to 10.
+"""Add the Microbiology Exam 2 Arcade decks -- Lectures 7 to 11.
 
 Cards derived from the question pools (see add_pdm_e2_arcade.py for why, and
 for the check that derivation makes possible). Microbiology had no Exam 2
@@ -26,8 +26,12 @@ DISH_ICON = ('<circle cx="12" cy="12" r="8.5"/><path d="M6 9h12"/>'
              '<circle cx="9.5" cy="13" r="1"/><circle cx="14" cy="14.5" r="1"/>'
              '<circle cx="13" cy="11" r="1"/>')
 
+# a tailed bacteriophage: head, tail, two tail fibers
+PHAGE_ICON = ('<path d="M12 3l4 2.5v4L12 12l-4-2.5v-4z"/><path d="M12 12v6"/>'
+              '<path d="M12 18l-4 3M12 18l4 3"/>')
+
 C = json.load(open(os.path.join(HERE, "micro_e2_cards.json"), encoding="utf-8"))
-for frag in ("l9_cards.json", "l10_cards.json"):
+for frag in ("l9_cards.json", "l10_cards.json", "l11_cards.json"):
     C.update(json.load(open(os.path.join(HERE, "micro_e2", frag), encoding="utf-8")))
 DECKS = [
  ("micro-immunity-disorders", "Disorders in Immunity", "accent2", SHIELD_ICON,
@@ -38,6 +42,8 @@ DECKS = [
   [tuple(x) for x in C["micro-cocci"]]),
  ("micro-gram-positive-bacilli", "Gram-Positive Bacilli", "accent3", ROD_ICON,
   [tuple(x) for x in C["micro-gram-positive-bacilli"]]),
+ ("micro-novel-antimicrobial", "Novel Antimicrobial Therapy", "accent2", PHAGE_ICON,
+  [tuple(x) for x in C["micro-novel-antimicrobial"]]),
 ]
 if __name__ == "__main__":
     apply("MICROE2", DECKS, "microbiology", "Microbiology", "exam2", "Exam 2")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 cram sheet (Lectures 7-10 so far).
+"""Build the Microbiology Exam 2 cram sheet (Lectures 7-11 so far).
 
 Condensed ONLY from the Exam 2 study guide (tools/_micro_e2_guide_l7.py,
 _l8.py and tools/micro_e2/), which is itself built from the decks. Lectures 9
@@ -117,7 +117,7 @@ topics = [
  ]},
 ]
 
-for frag in ("l9_cram.json", "l10_cram.json"):
+for frag in ("l9_cram.json", "l10_cram.json", "l11_cram.json"):
     topics += json.load(io.open(os.path.join(HERE, "micro_e2", frag), encoding="utf-8"))
 ids = [t["id"] for t in topics]
 assert len(ids) == len(set(ids)), "duplicate topic id"
@@ -126,7 +126,7 @@ html = render(
     title="Cram Sheet — Microbiology Exam 2",
     kicker="Microbiology · Exam 2 · Class of 2028",
     h1="Microbiology Exam 2 Cram Sheet",
-    sub="Lectures 7–10 so far — Disorders in Immunity, Diagnosing Infections, Cocci of Medical Importance and Gram-Positive Bacilli. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.",
+    sub="Lectures 7–11 so far — Disorders in Immunity, Diagnosing Infections, Cocci of Medical Importance, Gram-Positive Bacilli and Novel Antimicrobial Therapy. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.",
     topics=topics,
     guide_href="micro-exam-2-study-guide.html",
     footer_note="Condensed from the Microbiology Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",
