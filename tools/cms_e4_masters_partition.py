@@ -7,6 +7,12 @@
 
 Then tools/render_cms_e4_masters.py renders the five pages from the JSON.
 
+NOTE (2026-10-10): the committed master-exams.json is the shipped selection, and a
+fresh run of this script does NOT reproduce it (a run on the committed pools differs
+in all 300 slots). To pick up corrected pool text, keep each form's questions and
+positions and swap in the corrected pool question (matched by its pool source in
+cms_e4_masters_report.json), then re-render; only run this script for a new selection.
+
 Size: 5 x 60, Jaxon's choice on 2026-09-25 (Exam 1 shipped 60 and 65, Exam 2
 65, Exam 3 50 -- see [[cms_exam_spec]]).
 

@@ -102,7 +102,7 @@ Q("Renovascular disease", IO,
   "A 71-year-old woman with resistant hypertension is started on lisinopril. Her creatinine rises "
   "markedly within a week. What does this suggest?",
   [["Bilateral renal artery stenosis",
-    "Correct. Where perfusion depends on angiotensin-mediated efferent arteriolar tone, blocking it drops the filtration pressure sharply. This is one of the recognized clues to renovascular disease, and it is why the agent is contraindicated in bilateral stenosis. A hemodynamically significant unilateral stenosis does the same."],
+    "Correct. Where perfusion depends on angiotensin-mediated efferent arteriolar tone, blocking it drops the filtration pressure sharply. This is one of the recognized clues to renovascular disease, and it is why the agent is contraindicated in bilateral stenosis. A hemodynamically significant stenosis in a solitary functioning kidney does the same, because nothing else compensates."],
    ["Expected drug effect requiring no change in approach",
     "A small early creatinine rise can be acceptable, but a MARKED rise specifically points toward "
     "renovascular disease rather than being dismissed."],

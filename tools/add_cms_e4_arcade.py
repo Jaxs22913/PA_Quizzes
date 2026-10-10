@@ -36,7 +36,7 @@ DECKS = [
   ("How does chronic kidney disease raise pressure?", "Impaired sodium excretion expands extracellular volume, with renin-angiotensin-aldosterone and sympathetic activation."),
   ("What is needed to diagnose chronic kidney disease?", "A kidney abnormality persisting at least three months."),
   ("Which renal artery stenosis predominates in older vascular patients?", "Atherosclerotic, often bilateral and progressive."),
-  ("Creatinine rises sharply after starting an ACE inhibitor &mdash; suspect?", "Bilateral or hemodynamically significant renal artery stenosis."),
+  ("Creatinine rises sharply after starting an ACE inhibitor &mdash; suspect?", "Bilateral renal artery stenosis, or hemodynamically significant stenosis in a solitary functioning kidney."),
   ("Warning features for renovascular disease?", "Resistant or abrupt elevation, abdominal bruit, asymmetric kidneys, recurrent flash pulmonary edema."),
   ("When is renovascular disease referred early?", "Recurrent flash pulmonary edema, progressive renal decline despite optimal therapy, truly refractory control."),
   ("Underlying abnormality in primary aldosteronism?", "Autonomous aldosterone production independent of renin."),
