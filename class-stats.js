@@ -52,6 +52,17 @@
   var ready = false;
   var pending = 0; // increments queued before Firebase is ready
 
+  // Anonymous usage counts (metrics.js, 2026-10-10). A student who turned counting off in Settings, a
+  // developer device or account (Jaxon's testing), an automated browser and a local preview add nothing
+  // to the class total, its log or the class picks either: "off" means all counting. Checked when a count
+  // is made AND when it is sent, so turning it off drops anything still waiting.
+  function counting() {
+    try { return !window.PAMetrics || !window.PAMetrics.allowed || window.PAMetrics.allowed(); } catch (e) { return true; }
+  }
+  function metric(field, n) {
+    try { if (window.PAMetrics) window.PAMetrics.add(field, n); } catch (e) {}
+  }
+
   function statRef() { return db.collection("stats").doc("global"); }
 
   // Random per-tab id so a burst of completions from a single session is
@@ -91,6 +102,7 @@
   var pendingKind = null;
 
   function flush() {
+    if (!counting()) { pending = 0; pendingKind = null; return; }
     if (!ready || pending <= 0) return;
     var n = pending, kind = pendingKind;
     pending = 0; pendingKind = null;
@@ -175,6 +187,7 @@
   }
 
   function writePick(qid, oi, nOpts) {
+    if (!counting()) return;
     if (!db) { if (pickQueue.length < 200) pickQueue.push([qid, oi, nOpts]); return; }
     try {
       var patch = {
@@ -193,12 +206,15 @@
     // Record n newly-completed questions toward the class total.
     record: function (n) {
       n = Math.max(0, Math.floor(+n || 0));
-      if (!n) return;
+      if (!n || !counting()) return;
+      metric("q_answered", n);
       pending += n;
       flush();
     },
     // Record a single answered question, batched. `kind` tags the log row.
     recordAnswer: function (kind) {
+      if (!counting()) return;
+      metric("q_answered", 1);
       pending += 1;
       pendingKind = kind || "practicum-answer";
       flushSoon();
@@ -209,6 +225,8 @@
     // waiting for the write to land.
     recordPick: function (qid, oi, nOpts) {
       if (!qid || typeof oi !== "number" || oi < 0) return false;
+      // not counted: nothing is written, so the caller must not add this answer to the bars it draws
+      if (!counting()) return false;
       var key = "ap:" + qid, fresh = true;
       try {
         fresh = !localStorage.getItem(key);
@@ -280,6 +298,7 @@
       // Pages that count per answer (the practicums) opt out of the lump sum
       // here, otherwise every attempt would be counted twice.
       try {
+        if (counting()) metric("quiz_done", 1);
         if (!window.CLASS_STATS_PER_ANSWER) window.ClassStats.record(total);
         else flush();
       } catch (e) {}

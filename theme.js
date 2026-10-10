@@ -1,3 +1,14 @@
+/* Anonymous usage counts (metrics.js, added 2026-10-10). Pages and features call
+   PAMetrics.add("field") / .mark("name") / .family(name, spec) whenever something happens; until
+   metrics.js has loaded, those calls wait in this queue and metrics.js replays them. The note text
+   lives here too because the Settings panel (built before metrics.js loads) shows it as well. */
+if (!window.PAMetrics) window.PAMetrics = (function () {
+  var q = [];
+  function later(name) { return function () { q.push([name, [].slice.call(arguments)]); }; }
+  return { _q: q, add: later("add"), mark: later("mark"), family: later("family"),
+           note: "PA Quizzes counts anonymous totals, like how many questions are answered and how often each study tool is used, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
+})();
+
 /* ============================================================
    Site icon set (design review item 14, 2026-09-25). ONE source for UI
    chrome icons, drawn for this site: 24px grid, 2px round-capped stroke,
@@ -803,6 +814,25 @@ window.SitePrompts = {
       }
     );
     panel.appendChild(classStatsToggle.row);
+
+    // Anonymous usage counts (metrics.js, 2026-10-10): the permanent home of the one-time note, on every
+    // page, with the same switch. Turning it off is a stored flag ("metrics:off") that metrics.js and
+    // class-stats.js check before counting anything; it follows the account through cloud sync.
+    var usageToggle = makeToggleRow(
+      "Count my use in anonymous totals",
+      localStorage.getItem("metrics:off") !== "1",
+      function (checked) {
+        if (window.PAMetrics && window.PAMetrics.setOff) window.PAMetrics.setOff(!checked);
+        else { try { localStorage.setItem("metrics:off", checked ? "0" : "1"); } catch (e) {} }
+      }
+    );
+    usageToggle.row.classList.add("has-note");
+    panel.appendChild(usageToggle.row);
+    var usageNote = document.createElement("p");
+    usageNote.className = "settings-note";
+    usageNote.textContent = (window.PAMetrics && window.PAMetrics.note) || "";
+    if (localStorage.getItem("metrics:dev") === "1") usageNote.textContent += " This is a developer device: nothing here is counted.";
+    panel.appendChild(usageNote);
 
     if (document.getElementById("shuffle-toggle")) {
       var shuffleToggle = makeToggleRow(
@@ -1745,6 +1775,9 @@ window.SitePrompts = {
   // keeps six-plus network requests from competing with the page's own
   // critical-path rendering, which matters most on a guide with a lot of
   // embedded content still settling right after load.
+  // metrics.js (anonymous usage counts, 2026-10-10) loads straight away rather than with the idle
+  // Firebase chain: it only buffers counts on the device, and waits for firebaseReady itself to send them
+  loadScript(base + "metrics.js");
   var deferIdle = window.requestIdleCallback || function (fn) { setTimeout(fn, 300); };
   deferIdle(startFirebaseChain, { timeout: 2000 });
 })();

@@ -506,6 +506,7 @@
   var drill = null;
 
   function startDrill(recs) {
+    if (window.PAMetrics) window.PAMetrics.add("review_drill");   // anonymous usage count (metrics.js)
     var slugs = recs.map(function (r) { return r.slug; });
     var loaded = 0;
     $("list-view").style.display = "none";

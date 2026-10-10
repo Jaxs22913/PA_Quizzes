@@ -37,6 +37,10 @@
   // cost no Firestore reads or writes.
   var LOCAL_PREFIX = "local:";
   function isLocalOnly(key) { return typeof key === "string" && key.indexOf(LOCAL_PREFIX) === 0; }
+  // metrics.js's synced keys (metrics:seen, metrics:off, metrics:dev, metrics:notice) are read at the moment
+  // they matter, so a newer copy pulled from another device needs no page reload (metrics:seen changes
+  // once a day, and reloading a student's second device for it every morning would be pointless)
+  function isQuiet(key) { return key.indexOf("metrics:") === 0; }
 
   var realSetItem = Storage.prototype.setItem;
   var realGetItem = Storage.prototype.getItem;
@@ -184,7 +188,7 @@
           var localVal = realGetItem.call(localStorage, key);
           if (localVal !== data.value) {
             realSetItem.call(localStorage, key, data.value);
-            changed = true;
+            if (!isQuiet(key)) changed = true;
           }
           meta[key] = cloudTs;
         }
@@ -257,6 +261,8 @@
       hydrateFromCloud(user.uid).then(function (res) {
         pushPending(res);
         var changed = res.changed;
+        // metrics.js waits for this before deciding whether today is already counted for this account
+        if (!changed) { window.__cloudSyncHydrated = true; window.dispatchEvent(new Event("cloudSyncHydrated")); }
         // No extra loop guard needed: hydrateFromCloud() already writes the
         // updated timestamp into META_KEY before we get here, so the very
         // next hydrate (on the page this reload lands on) sees
