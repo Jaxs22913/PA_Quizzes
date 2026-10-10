@@ -43,7 +43,8 @@ await t("other collection name refused", setDoc(doc(anon, "metrics_weekly", T), 
 // the blocks that were already there still behave
 await t("stats/global open write still ok", setDoc(doc(nobody, "stats", "global"), { questionsCompleted: increment(10) }, { merge: true }), true);
 await t("stats/global open read still ok", getDoc(doc(nobody, "stats", "global")), true);
-await t("stats_events create still ok", addDoc(collection(nobody, "stats_events"), { n: 10, kind: "quiz-complete", path: "/x.html", session: "abc", at: new Date() }), true);
+await t("stats_events create refused (retired)", addDoc(collection(nobody, "stats_events"), { n: 10, kind: "quiz-complete", path: "/x.html", session: "abc", at: new Date() }), false);
+await t("stats_events read refused (retired)", getDoc(doc(nobody, "stats_events", "any")), false);
 await t("answer_picks create still ok", setDoc(doc(nobody, "answer_picks", "q1"), { total: 1, opts: 4, c0: 1 }), true);
 await t("own kv still ok", setDoc(doc(google, "users", "g1", "kv", "k"), { value: "v", updatedAt: 1 }), true);
 await t("other kv refused", setDoc(doc(google, "users", "g2", "kv", "k"), { value: "v", updatedAt: 1 }), false);

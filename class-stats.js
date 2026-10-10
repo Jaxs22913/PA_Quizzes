@@ -26,25 +26,12 @@
 // value without signing in.
 // Until such a rule is published, writes/reads fail silently (counter stays 0).
 //
-// EVENT LOG (added 2026-07-27). The running total is a single integer with no
-// history, so when it jumped ~18k in a day there was no way to attribute the
-// delta after the fact -- only to confirm the increment path was sound. Every
-// increment now also appends one immutable row to stats_events, which makes a
-// future jump traceable to when it happened, which quiz produced it, and
-// whether it came from one browser session or many. Needs its own rule, and
-// it must be append-only -- a log anything can rewrite is not evidence.
-// `create: if true` deliberately matches the counter's own open rule: gating
-// the log on auth while the total stays open would log only the signed-in
-// minority, so the log and the total would disagree by design and the
-// reconciliation check below would be worthless. The bounds on `n` stop the
-// log being poisoned with absurd values even though it is open:
-// The rule lives in firestore.rules in this repo (match /stats_events), which
-// is the source of truth -- but that file is NOT auto-deployed; it has to be
-// published in the Firebase console or via the Firebase CLI before the log
-// records anything.
-// The session id is a random per-tab value; it is NOT tied to any account and
-// identifies nobody. Its only job is to show that N completions shared one
-// origin, which is exactly the shape automated or inflated traffic has.
+// EVENT LOG, RETIRED 2026-10-10. From 2026-07-27 every increment also appended a row to stats_events
+// (n, quiz path, a random per-tab id, a server timestamp) so a jump in the total could be traced. Jaxon's
+// privacy rules for usage numbers (day-level granularity at most, never a per-event time) rule that out,
+// and the collection was readable by anyone. The anonymous daily totals in metrics.js (metrics_daily,
+// q_answered per day) now do the reconciling: summing them from a known day reproduces the growth of
+// questionsCompleted. firestore.rules now refuses new rows and all reads of the old ones.
 (function () {
   "use strict";
 
@@ -65,60 +52,22 @@
 
   function statRef() { return db.collection("stats").doc("global"); }
 
-  // Random per-tab id so a burst of completions from a single session is
-  // visible as such in the log. Regenerated every tab; not linked to any user.
-  var sessionId = (function () {
-    try {
-      var k = "__statsSession";
-      var v = sessionStorage.getItem(k);
-      if (!v) {
-        v = Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
-        sessionStorage.setItem(k, v);
-      }
-      return v;
-    } catch (e) {
-      return "nostore";
-    }
-  })();
-
-  // One immutable row per increment. Written alongside the running total, not
-  // derived from it, so the two can be reconciled: summing the log's n values
-  // from a known baseline should reproduce questionsCompleted. A divergence is
-  // itself the signal that something wrote the total directly.
-  function logEvent(n, kind) {
-    if (!db) return;
-    try {
-      db.collection("stats_events").add({
-        n: n,
-        kind: kind || "quiz-complete",
-        // pathname only -- which quiz, never anything about who.
-        path: (location.pathname || "").slice(-120),
-        session: sessionId,
-        at: firebase.firestore.FieldValue.serverTimestamp()
-      }).catch(function () { /* rule not published yet -- total still works */ });
-    } catch (e) { /* never let logging break the counter */ }
-  }
-
-  var pendingKind = null;
-
   function flush() {
-    if (!counting()) { pending = 0; pendingKind = null; return; }
+    if (!counting()) { pending = 0; return; }
     if (!ready || pending <= 0) return;
-    var n = pending, kind = pendingKind;
-    pending = 0; pendingKind = null;
+    var n = pending;
+    pending = 0;
     if (flushTimer) { clearTimeout(flushTimer); flushTimer = null; }
     statRef().set({
       questionsCompleted: firebase.firestore.FieldValue.increment(n),
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-    }, { merge: true }).then(function () {
-      logEvent(n, kind);
-    }).catch(function () { /* permission-denied / offline -- drop silently */ });
+    }, { merge: true }).catch(function () { /* permission-denied / offline -- drop silently */ });
   }
 
   // The practicums count one question per answer rather than a lump at the
   // finish, so a page can produce 30+ increments instead of one. Coalescing
   // them over a few seconds keeps that from becoming 30 Firestore writes and
-  // 30 log rows, and a pagehide flush means a half-finished attempt still
+  // 30 counter writes, and a pagehide flush means a half-finished attempt still
   // counts.
   var flushTimer = null;
   var COALESCE_MS = 4000;
@@ -211,12 +160,12 @@
       pending += n;
       flush();
     },
-    // Record a single answered question, batched. `kind` tags the log row.
+    // Record a single answered question, batched. (`kind` used to tag the retired log row; callers
+    // still pass it, so the argument stays.)
     recordAnswer: function (kind) {
       if (!counting()) return;
       metric("q_answered", 1);
       pending += 1;
-      pendingKind = kind || "practicum-answer";
       flushSoon();
     },
 

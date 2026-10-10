@@ -45,8 +45,8 @@ so nothing is lost while the rules wait. Writes start only on a live page, never
 Checked before a count is buffered and again before it is sent:
 
 - a student who turned it off: the note's **Turn off** button or Settings, "Count my use in anonymous
-  totals" (synced `metrics:off`, so that device and that account). It also stops the class counter,
-  its `stats_events` row and the class picks for them: off means all counting;
+  totals" (synced `metrics:off`, so that device and that account). It also stops the class counter
+  and the class picks for them: off means all counting;
 - a developer device or account: visit any page with `?metrics=dev` (`?metrics=on` clears it). The
   flag is the synced key `metrics:dev`, so it follows the account to every device it signs in on;
 - automated browsers (`navigator.webdriver`), `localhost` previews and `file://` pages.
@@ -60,6 +60,11 @@ Shown once (bottom left, not on quiz pages), and kept permanently under the Sett
 > No names or answers are recorded. [Got it] [Turn off]
 
 The wording lives once, in theme.js (`PAMetrics.note`).
+
+**The old `stats_events` log is retired (2026-10-10).** From July it stored one row per finished quiz with
+the quiz path, a random per-tab id and a server timestamp, readable by anyone, which breaks the day-level
+rule above. The site no longer writes it and the rules refuse new rows and all reads. The daily
+`q_answered` totals now reconcile the homepage counter instead.
 
 ## Rules
 

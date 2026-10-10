@@ -101,7 +101,7 @@ with sync_playwright() as p:
     check('S1 buffer empty after leaving', lsget(pg, 'local:metrics:buf') is None, str(lsget(pg, 'local:metrics:buf')))
     check('S1 one anonymous sign-in', pg.evaluate('() => +sessionStorage.getItem("__fakeanon")') == 1)
     check('S1 class counter still +25', (s.get('stats/global') or {}).get('questionsCompleted') == 25, str(s.get('stats/global')))
-    check('S1 stats_events row still written', sum(1 for k in s if k.startswith('stats_events/')) == 1)
+    check('S1 no stats_events row (log retired)', not any(k.startswith('stats_events/') for k in s))
     check('S1 doc has only integer fields', all(isinstance(v, int) for v in doc.values()))
     check('S1 no page errors', not pg.errs, str(pg.errs[:2]))
     S1_TALLY = t
