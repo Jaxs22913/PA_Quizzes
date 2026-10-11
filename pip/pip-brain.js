@@ -1,7 +1,7 @@
 /* Pip's brain on this laptop. Loaded by pip/pip-window.js only when it is needed.
 
    What it is: a small open model (Qwen3, Apache-2.0) that runs inside the browser on the
-   laptop's own graphics chip through WebLLM (Apache-2.0). It downloads once (about 1 GB),
+   laptop's own graphics chip through WebLLM (Apache-2.0). It downloads once (about 2.3 GB),
    then works offline. Nothing the student types leaves the computer.
 
    What it may do: put the study-guide passages Pip already found into a few plain
@@ -32,11 +32,15 @@
                 model: "https://huggingface.co/mlc-ai/Qwen3-4B-q4f16_1-MLC/resolve/a5c9fab855e3ccbdfed2e7e69683d75f30332161/",
                 lib: LIBS + "Qwen3-4B-q4f16_1_cs1k-webgpu.wasm", vram: 3432 }
   };
+  // K_NO was the 14-day "Not now" of the old after-a-question offer. Since 2026-10-10 Pip asks at the
+  // start of every open instead and "Not now" lasts for that open only (pip/pip-window.js), so nothing
+  // reads it any more; a download that works still clears an old one.
   var K_TIER = "local:pip:brain", K_NO = "local:pip:brain:no";
   // WebLLM 0.2.83-0.2.85 can fail with "Object has already been disposed" and leave the graphics device
   // hung (mlc-ai/web-llm, fix merged upstream 2026-10-02, not yet released). A failed or stalled model
-  // marks this computer's brain as broken for three days, so Pip does not retry it on every question;
-  // setting it up again from Settings clears the mark.
+  // (a download, a first load or a summary) marks this computer's brain as broken for three days, so
+  // Pip does not retry it on every question and does not ask to download it again; after that the
+  // download card comes back, and a download that works clears the mark.
   var K_BROKE = "local:pip:brain:broke";
   var HOSTS = /^(pa-quizzes\.com|www\.pa-quizzes\.com|localhost|127\.0\.0\.1)$/;
   var me = document.currentScript;
@@ -86,6 +90,7 @@
     return capCache;
   }
   function tier() { var t = get(K_TIER); return TIERS[t] ? t : null; }
+  // kept only so a window script cached before 2026-10-10 still works (see K_NO above)
   function declinedRecently() { var t = +get(K_NO) || 0; return Date.now() - t < 14 * 864e5; }
   function broken() { var t = +get(K_BROKE) || 0; return Date.now() - t < 3 * 864e5; }
   function markBroken() { set(K_BROKE, String(Date.now())); }

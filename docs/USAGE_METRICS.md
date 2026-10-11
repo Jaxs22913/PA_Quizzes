@@ -41,7 +41,7 @@ Pip has his own day documents, `metrics_pip/{YYYY-MM-DD}` (registered by `pip/pi
 | `followup` | "I still don't get it" / "why?" right after an answer (Pip's version of "coach me"; he has no hint button) |
 | `claude_ask` | Pip checked with Claude |
 | `practice`, `rescue` | practice sets (including topic and "more like this") and rescue drills started |
-| `brain_yes`, `brain_no` | "Want me to explain things in my own words?" answered Set it up / Not now |
+| `brain_yes`, `brain_no` | the brain card that opens the window on a computer that can run the brain and has none: "Download my brain" / "Not now" (since 2026-10-10 it asks on every open, so one student can add several "Not now"s a day; before that it was a one-time offer after a question) |
 | `brain_ok`, `brain_fail` | the laptop model loaded, or failed to load |
 | `thumb_up`, `thumb_down` | the "Helpful?" row under an explanation or a Claude assist |
 | `fallback` | nothing found, Claude unreachable or capped for a follow-up, or the laptop summary rejected by its guard |

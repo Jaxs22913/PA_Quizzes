@@ -22,7 +22,10 @@
    - Key presses inside the window never reach the quiz underneath. The quiz's keyboard
      shortcuts listen on the whole page, so typing "a" would otherwise answer it.
    - Pip reacts only to what the student does here: opening the window, answering a
-     drill question, finishing a set. */
+     drill question, finishing a set.
+   - On a laptop or desktop that can run his brain (pip/pip-brain.js) and has none yet, every
+     open of the window starts with the brain card, and typed questions wait for the student's
+     pick ("the brain card, first thing on every open", below). */
 (function () {
   "use strict";
   if (window.PipWindow) return;
@@ -461,6 +464,17 @@
     "#pip-win .pw-prog{height:6px;border-radius:3px;background:#EEF2FA;overflow:hidden;margin-top:10px}",
     "#pip-win .pw-prog i{display:block;height:100%;width:0;background:#6E96E6;transition:width .3s}",
     "html[data-theme=dark] #pip-win .pw-brain .pw-lbl{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-prog{background:#1c2a52}",
+    // the brain card that opens the window on a computer that can run his brain and has none yet
+    "#pip-win .pw-card.pw-brainask{border:1.5px solid #6E96E6;padding:14px 14px 12px}",
+    "#pip-win .pw-brainask h4{font-size:15px;margin-bottom:6px}#pip-win .pw-brainask p+p{margin-top:6px}",
+    "#pip-win .pw-big{display:block;width:100%;margin-top:12px;padding:12px 16px;border:0;border-radius:12px;background:#1E3974;color:#fff;",
+    " font-family:inherit;font-size:16px;font-weight:700;cursor:pointer}",
+    "#pip-win .pw-big:hover,#pip-win .pw-big:focus-visible{background:#2a4d96}",
+    "#pip-win .pw-later{display:block;margin:6px auto 0;min-height:32px;padding:6px 12px;border:0;background:transparent;color:#3d4a6b;",
+    " font-family:inherit;font-size:13px;font-weight:600;text-decoration:underline;cursor:pointer}",
+    "#pip-win .pw-brainask .pw-src{margin:8px 0 0;text-align:center}#pip-win .pw-brainask .pw-prog+.pw-src{text-align:left}",
+    "html[data-theme=dark] #pip-win .pw-card.pw-brainask{border-color:#6E96E6}html[data-theme=dark] #pip-win .pw-big{background:#3d63c4}",
+    "html[data-theme=dark] #pip-win .pw-big:hover{background:#4d73d4}html[data-theme=dark] #pip-win .pw-later{color:#C9D8FA}",
     "#pip-win .pw-claude{border-color:rgba(217,119,87,.45);background:#FFF8F4}",
     "#pip-win .pw-chead{display:flex;align-items:center;gap:8px;margin-bottom:4px}#pip-win .pw-chead b{color:#B4532F;font-size:13px}",
     "#pip-win .pw-badge{font-size:11.5px;font-weight:600;color:#7a4a12;background:#FDEBC8;border-radius:999px;padding:2px 8px}",
@@ -557,7 +571,7 @@
     input.setAttribute("aria-label", "Ask Pip"); input.autocomplete = "off"; input.setAttribute("enterkeyhint", "send");
     var send = el("button", "pw-send", "Ask"); send.type = "submit";
     form.appendChild(input); form.appendChild(send);
-    form.addEventListener("submit", function (e) { e.preventDefault(); var t = input.value.trim(); if (!t) return; input.value = ""; ask(t); });
+    form.addEventListener("submit", function (e) { e.preventDefault(); var t = input.value.trim(); if (!t || held(t)) return; input.value = ""; ask(t); });
     win.appendChild(head); win.appendChild(log); win.appendChild(chipsBox); win.appendChild(form);
     // nothing typed or pressed in here reaches the quiz's page-wide keyboard shortcuts
     win.addEventListener("keydown", function (e) {
@@ -619,8 +633,8 @@
       P.react("wave", 1);                       // the student tapped him: say hi
       log.textContent = ""; chips([]);
       notesCard = null; notesBtn.setAttribute("aria-expanded", "false");
-      greet(intent);
-    } else if (intent) greet(intent);
+      openGate(intent);                           // the brain card first, when this computer should get one
+    } else if (intent) { if (gate.state === "off") greet(intent); else gate.intent = intent; }
     if (window.matchMedia && window.matchMedia("(pointer:fine)").matches && !(intent && intent.drill)) setTimeout(function () { input.focus(); }, 60);
   }
   // full screen on or off; the page underneath is never touched, only its scrolling is paused
@@ -653,6 +667,7 @@
     if (!win || !isOpen) return;
     setFull(false);                             // closing always lands back on the page as it was
     isOpen = false; drillActive = null;
+    gate = { state: "off", closed: true };      // the next open asks again; questions waiting on a download are dropped
     if (P.duet && P.duet.active()) P.duet.cancel();   // the answer still lands in the window for next time
     win.style.display = "none";
     P.dock.style.bottom = ""; P.dock.style.right = ""; P.dock.style.visibility = "";
@@ -995,8 +1010,8 @@
   }
 
   // ------------------------------------------------------------------ asking
-  function ask(text) {
-    me(text);
+  function ask(text, quiet) {                    // quiet: the question is already on screen (it waited for the brain)
+    if (!quiet) me(text);
     count("pip_ask");
     var t = norm(text).trim();
     if (quizInProgress()) {                       // small talk is fine; anything that searches or quizzes waits
@@ -1380,14 +1395,19 @@
     }).then(function (c) { return c ? explainBubble(c, f, into, before) : null; });
   }
 
-  // ------------------------------------------------------------------ Pip's brain (optional, on this laptop)
-  var brainP = null, offered = false, brokeSaid = false;
+  // ------------------------------------------------------------------ Pip's brain (on this laptop)
+  var brainP = null, brokeSaid = false;
   // a model that stops answering (no progress and no reply for this long) counts as failed
   var BRAIN_STALL_MS = window.__PIP_BRAIN_STALL_MS || 45000;
   function brain() {
     if (!brainP) brainP = window.PipBrain ? Promise.resolve(window.PipBrain)
       : loadScript(ROOT + "pip/pip-brain.js").then(function () { return window.PipBrain || null; });
     return brainP;
+  }
+  function sayBroke() {                           // said once per page, however the brain failed
+    if (brokeSaid) return;
+    brokeSaid = true;
+    say("My laptop brain had trouble on this computer, so I'll stick to your guide's own words for now.");
   }
   function brainAfter(question, passages, lead, of) {   // resolves "summary" when a checked summary was shown
     return brain().then(function (B) {
@@ -1419,44 +1439,164 @@
         }).catch(function () {
           settled = true; count("error"); b.remove();
           if (B.markBroken) B.markBroken();
-          if (!brokeSaid) { brokeSaid = true; say("My laptop brain had trouble on this computer, so I'll stick to your guide's own words for now."); }
+          sayBroke();
           return "failed";
         });
-      } else if (!B.tier() && !offered && !B.declinedRecently()) {
-        B.capable().then(function (c) { if (c.ok && !offered) { offered = true; offerBrain(B, c); } });
       }
       return "none";
     }).catch(function () { return "none"; });
   }
-  function offerBrain(B, c) {
-    var cd = card(), T = B.tiers;
-    cd.appendChild(el("h4", null, "Want me to explain things in my own words?"));
-    var T0 = T[c.tiers[0]];
-    cd.appendChild(el("p", null, "I can learn to on this laptop. It's a one-time " + T0.gb.toFixed(1) +
-      " GB download, then it works offline, and nothing you type leaves your computer. I only ever summarize your guide's own passages, and I check every word against them."));
-    var row = el("div", "pw-row");
-    var go = el("button", "pw-next", "Set it up (" + T0.gb.toFixed(1) + " GB)"); go.type = "button";
-    var no = el("button", "pw-chip", "Not now"); no.type = "button";
-    row.appendChild(go); row.appendChild(no);
-    cd.appendChild(row);
-    no.addEventListener("click", function () { count("brain_no"); B.decline(); cd.remove(); say("No problem. You can turn it on later from Settings."); });
-    function start(t) {
-      row.remove();
-      var note = el("p", "pw-src", "Downloading… keep this tab open. It picks up where it left off if you leave.");
-      var bar = el("div", "pw-prog"), fill = el("i"); bar.appendChild(fill);
-      cd.appendChild(bar); cd.appendChild(note);
-      P.react("think", 1);
-      B.install(t, function (p, txt) {
-        fill.style.width = Math.round(p * 100) + "%";
-        note.textContent = /fetch|download|loading model from cache/i.test(txt) ? "Downloading… " + Math.round(p * 100) + "%" : "Getting ready… " + Math.round(p * 100) + "%";
-      }).then(function () {
-        cd.remove(); P.react("celebrate_small", 1);
-        say("All set! Ask me something and I'll explain it from your guide.");
-      }).catch(function (e) {
-        note.textContent = "That didn't work this time (" + String(e && e.message || e).slice(0, 80) + "). You can try again later.";
-      });
+
+  // ------------------------------------------------------------------ the brain card, first thing on every open
+  // Jaxon, 2026-10-10: "Pip should prompt people when they open the chat to download his brain before
+  // he will answer questions". On a laptop or desktop that can run his brain (PipBrain.capable()) and
+  // has none yet, EVERY open of the window starts with one card asking to download it, and typed
+  // questions wait until the student picks (Pip says so once). "Not now" is for this open only: the
+  // next open asks again (this replaced the after-a-question offer and its 14-day "no").
+  // Going full screen and back is not a new open. During the download and first load questions wait
+  // and are answered once it is ready; a failed or stalled download marks the brain broken for three
+  // days (pip-brain.js) and Pip answers without it, with no card while it is broken. Phones,
+  // tablets, computers that can't run it and computers that already have it never see the card.
+  // gate.state: "checking" (asking the computer), "ask" (card up), "loading" (downloading), "off"
+  var gate = { state: "off" }, installing = null, brainNews = null;
+  function openGate(intent) {
+    var g = gate = { state: "checking", intent: intent, told: false, queue: [], card: null };
+    // a check that hangs (a graphics adapter that never answers) must never keep Pip silent: after
+    // four seconds this open goes ahead without the card
+    var slow = new Promise(function (res) { setTimeout(function () { res("off"); }, 4000); });
+    g.ready = Promise.race([brainGate(), slow]).then(function (how) {
+      if (g !== gate) return;                     // the window was closed (and maybe opened again) meanwhile
+      if (how === "loading" && installing) { g.state = "loading"; progressCard(g); }
+      else if (how && how.ask) brainCard(g, how.ask);
+      else ungate(g);
+    });
+  }
+  function brainGate() {                          // {ask: PipBrain}, "loading" or "off"
+    if (installing) return Promise.resolve("loading");
+    return brain().then(function (B) {
+      if (!B || B.tier() || (B.broken && B.broken())) return "off";
+      return B.capable().then(function (c) { return c && c.ok ? { ask: B } : "off"; });
+    }).catch(function () { return "off"; });
+  }
+  function ungate(g) {                            // the student picked (or no card was needed): Pip is himself
+    g.state = "off";
+    if (brainNews === "broken") sayBroke();
+    else if (brainNews === "ready") say("My brain finished downloading while you were away. It's ready.");
+    brainNews = null;
+    greet(g.intent);
+    var q = g.queue; g.queue = [];
+    if (!q.length) return;
+    say("Now your question: “" + q[0] + "”");
+    ask(q[0], true);
+    if (q.length > 1) say("You asked me " + (q.length - 1) + " more " + (q.length === 2 ? "thing" : "things") +
+      " while I was downloading. Ask me again and I'll answer " + (q.length === 2 ? "it" : "them") + " too.");
+  }
+  // a question typed while the card is up or the brain is downloading: true when it is held here
+  function held(text) {
+    var g = gate;
+    if (g.state === "off") return false;
+    if (g.state === "checking") {                 // a moment's wait while Pip asks the computer
+      input.value = "";
+      g.ready.then(function () { if (g === gate && isOpen && !held(text)) ask(text); });
+      return true;
     }
-    go.addEventListener("click", function () { count("brain_yes"); start(c.tiers[0]); });
+    if (g.state === "ask") {
+      if (g.told) { flash(g.card); return true; }  // said once already: the question stays in the box for later
+      g.told = true; input.value = "";
+      me(text);
+      say("I'd love to help with that! First I need your answer to the card above: tap “Download my brain” or “Not now”, then ask me again.");
+      return true;
+    }
+    input.value = "";                             // "loading"
+    me(text);
+    say("I'm still downloading my brain, nearly there. I'll answer that as soon as it's ready.");
+    g.queue.push(text);
+    return true;
+  }
+  function flash(node) {
+    if (!node || !node.isConnected) return;
+    scrollTo(node);
+    node.classList.remove("pip-flash", "pip-flash-off"); void node.offsetWidth; node.classList.add("pip-flash");
+    setTimeout(function () { node.classList.add("pip-flash-off"); }, 50);
+    setTimeout(function () { node.classList.remove("pip-flash", "pip-flash-off"); }, 2800);
+  }
+  function brainCard(g, B) {
+    g.state = "ask";
+    var T = (B.tiers && (B.tiers.standard || B.tiers[Object.keys(B.tiers)[0]])) || { gb: 2.3 };
+    var cd = card(); cd.classList.add("pw-brainask"); g.card = cd;
+    cd.appendChild(el("h4", null, "First, can I download my brain?"));
+    cd.appendChild(el("p", null, "My brain lets me put your study guide into a few plain sentences of my own, and I check every word against your guide."));
+    cd.appendChild(el("p", null, "It's a one-time download of " + (+T.gb).toFixed(1) + " gigabytes. It stays on this computer and works offline after that, and nothing you ask it leaves this computer."));
+    var go = el("button", "pw-big", "Download my brain"); go.type = "button";
+    var no = el("button", "pw-later", "Not now"); no.type = "button";
+    cd.appendChild(go); cd.appendChild(no);
+    cd.appendChild(el("p", "pw-src", "Not now: I'll use your guide's own words this time and ask again the next time you open me."));
+    go.addEventListener("click", function () {
+      if (g !== gate || g.state !== "ask") return;
+      count("brain_yes");
+      startInstall(B, g);
+    });
+    no.addEventListener("click", function () {
+      if (g !== gate || g.state !== "ask") return;
+      count("brain_no");
+      cd.remove(); g.card = null;
+      say("No problem. This time I'll use your guide's own words. I'll ask again the next time you open me.");
+      ungate(g);
+    });
+    scrollDown();
+  }
+  function startInstall(B, g) {
+    g.state = "loading";
+    var job = installing = { pct: 0, txt: "", view: null };
+    var last = Date.now(), settled = false;
+    // the same watchdog as a summary: no progress for BRAIN_STALL_MS is a failure, never a spinner forever
+    var stall = new Promise(function (res, rej) {
+      var iv = setInterval(function () {
+        if (settled) return clearInterval(iv);
+        if (Date.now() - last > BRAIN_STALL_MS) { clearInterval(iv); rej(new Error("stalled")); }
+      }, 1000);
+    });
+    progressCard(g);
+    P.react("think", 1);
+    Promise.race([B.install("standard", function (p, txt) { last = Date.now(); job.pct = p || 0; job.txt = txt || ""; paint(job); }), stall])
+      .then(function () {
+        settled = true; installing = null;
+        var g2 = gate;
+        if (g2.state !== "loading") { brainNews = "ready"; return; }   // the window was closed meanwhile
+        if (g2.card) g2.card.remove(); g2.card = null;
+        P.react("celebrate_small", 1);
+        say("All set! My brain is ready, and it stays on this computer.");
+        ungate(g2);
+      }, function () {
+        settled = true; installing = null;
+        count("error");
+        if (B.markBroken) B.markBroken();
+        var g2 = gate;
+        if (g2.state !== "loading") { brainNews = "broken"; return; }
+        if (g2.card) g2.card.remove(); g2.card = null;
+        sayBroke();
+        ungate(g2);
+      });
+  }
+  function progressCard(g) {                      // the card while the brain downloads (on reopening, a new one)
+    var cd = g.card && g.card.isConnected ? g.card : card();
+    g.card = cd; cd.textContent = ""; cd.classList.add("pw-brainask");
+    cd.appendChild(el("h4", null, "Downloading my brain…"));
+    var bar = el("div", "pw-prog"), fill = el("i"); bar.appendChild(fill);
+    bar.setAttribute("role", "progressbar"); bar.setAttribute("aria-label", "Downloading Pip's brain");
+    bar.setAttribute("aria-valuemin", "0"); bar.setAttribute("aria-valuemax", "100");
+    var note = el("p", "pw-src");
+    cd.appendChild(bar); cd.appendChild(note);
+    cd.appendChild(el("p", "pw-src", "I'll answer your questions as soon as it's ready. Keep this tab open; if you leave, it picks up where it left off."));
+    if (installing) { installing.view = { bar: bar, fill: fill, note: note }; paint(installing); }
+    scrollDown();
+  }
+  function paint(job) {
+    var v = job.view;
+    if (!v || !v.fill.isConnected) return;
+    var pc = Math.max(0, Math.min(100, Math.round(job.pct * 100)));
+    v.fill.style.width = pc + "%"; v.bar.setAttribute("aria-valuenow", String(pc));
+    v.note.textContent = (!job.txt || /fetch|download|loading model from cache/i.test(job.txt) ? "Downloading… " : "Getting ready… ") + pc + "%";
   }
 
   // ------------------------------------------------------------------ Superbrain: asking Claude (opt-in, signed in)

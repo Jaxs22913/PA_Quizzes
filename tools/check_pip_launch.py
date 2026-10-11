@@ -12,7 +12,9 @@ What it checks (one PASS/FAIL line each; exit 1 on any FAIL):
   - dist/ has Pip's code, sprites and generated data, and no Worker source, docs or tools;
   - every "Pip explains" card source passes tools/pip_explain.py check and ships in pip/data/explain/;
   - on pa-quizzes.com: Pip appears on the homepage, a Semester 2 guide and a quiz, the
-    window opens, a guide search answers from pip/data, the hide button hides him (and
+    window opens (on a computer that can run his brain, on the brain card: a question waits,
+    "Not now" lets him answer; the brain is never downloaded and no model file is requested),
+    a guide search answers from pip/data, the hide button hides him (and
     it sticks across a reload) and the tab brings him back; the helper address is
     https://helper.pa-quizzes.com; no page errors;
   - on a frozen Semester 1 page: no Pip;
@@ -35,6 +37,7 @@ except ImportError:
 
 SITE_HOSTS = {"pa-quizzes.com": "https://pa-quizzes.com", "jaxs22913.github.io": "https://jaxs22913.github.io"}
 HELPER = "https://helper.pa-quizzes.com"
+MODEL_HOSTS = ("huggingface.co", "@mlc-ai/web-llm", "binary-mlc-llm-libs")   # where pip/pip-brain.js would fetch the model
 TOURS = "try{['tourSeen:quiz','tourSeen:exammode','tourSeen:home'].forEach(k=>localStorage.setItem(k,'1'))}catch(e){}"
 
 fails = 0
@@ -146,6 +149,36 @@ def main():
         check("tapping Pip opens his window", opened)
         if opened:
             pg.wait_for_timeout(1200)
+            # On a computer that can run Pip's brain and has none (headless Chrome on a Mac with WebGPU
+            # can), the window opens on the brain card and typed questions wait for the student's pick.
+            # This check never downloads it: a question is turned away, then "Not now", then the search.
+            # (Every request off the site is aborted by serve() anyway; the model check below proves none
+            # was even tried.)
+            card = pg.locator("#pip-win .pw-brainask")
+            for _ in range(24):
+                if card.count() or pg.evaluate("() => document.querySelectorAll('#pip-win .pw-msg.pw-pip').length"):
+                    break
+                pg.wait_for_timeout(250)
+            can = pg.evaluate("() => window.PipBrain ? PipBrain.capable().then(c => !!c.ok) : null")
+            check("opening the window asks pip/pip-brain.js whether this computer can run the brain", can is not None, can)
+            if card.count():
+                t = card.inner_text()
+                gb = pg.evaluate("() => PipBrain.tiers.standard.gb")
+                first = pg.evaluate("() => { const l = document.querySelector('#pip-win .pw-log'); return !!(l.firstElementChild && l.firstElementChild.classList.contains('pw-brainask')); }")
+                check("a computer that can run the brain: the window opens on the brain card (%.1f gigabytes, Download my brain, Not now)" % gb,
+                      first and ("%.1f gigabytes" % gb) in t and "Download my brain" in t and "Not now" in t, t)
+                pg.fill('#pip-win input[aria-label="Ask Pip"]', a.ask)
+                pg.press('#pip-win input[aria-label="Ask Pip"]', "Enter")
+                pg.wait_for_timeout(1500)
+                guide_cards = "() => document.querySelectorAll('#pip-win .pw-card:not(.pw-brainask) .pw-src').length"
+                said = pg.evaluate("() => Array.from(document.querySelectorAll('#pip-win .pw-msg.pw-pip')).map(e => e.textContent).join(' | ')")
+                check("a question before the pick is not answered (Pip asks for an answer to the card)",
+                      pg.evaluate(guide_cards) == 0 and "answer to the card" in said, said)
+                pg.locator("#pip-win .pw-brainask .pw-later").click()
+                pg.wait_for_timeout(1200)
+                check("Not now takes the card away for this open", card.count() == 0)
+            else:
+                check("no brain card on a computer that cannot run the brain", can is not True, can)
             before = pg.evaluate("() => document.querySelectorAll('#pip-win .pw-src').length")
             pg.fill("#pip-win .pw-in", a.ask)
             pg.press("#pip-win .pw-in", "Enter")
@@ -179,6 +212,8 @@ def main():
         check("the Pip tab brings him back", back)
         helper_calls = [r for r in pg._reqs if r.startswith(HELPER)]
         check("signed out, nothing was sent to the helper", not helper_calls, helper_calls[:3])
+        model = [r for r in pg._reqs if any(h in r for h in MODEL_HOSTS)]
+        check("no part of the brain's model was requested (it is never downloaded here)", not model, model[:3])
         check("no page errors on pa-quizzes.com", not pg._errs, pg._errs[:2])
         c.close()
 
