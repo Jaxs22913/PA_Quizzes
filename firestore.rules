@@ -155,5 +155,26 @@ service cloud.firestore {
         && metricsBump('active_d', 1) && metricsBump('active_w', 1)
         && metricsBump('active_m', 1);
     }
+    // Pip's anonymous counts (pip/pip.js registers them with metrics.js): the same shape and the
+    // same guarantees as metrics_daily, in their own day documents.
+    match /metrics_pip/{day} {
+      allow read, delete: if false;
+      allow create, update: if request.auth != null
+        && metricsDayOk(day)
+        && request.resource.data.keys().hasOnly(['pip_open', 'pip_ask', 'explain_card',
+             'explain_tap', 'followup', 'claude_ask', 'practice', 'rescue', 'brain_yes',
+             'brain_no', 'brain_ok', 'brain_fail', 'thumb_up', 'thumb_down', 'fallback', 'error',
+             'pip_users_d', 'pip_users_w', 'pip_users_m'])
+        && metricsBump('pip_open', 50) && metricsBump('pip_ask', 200)
+        && metricsBump('explain_card', 200) && metricsBump('explain_tap', 100)
+        && metricsBump('followup', 50) && metricsBump('claude_ask', 50)
+        && metricsBump('practice', 50) && metricsBump('rescue', 50)
+        && metricsBump('brain_yes', 10) && metricsBump('brain_no', 10)
+        && metricsBump('brain_ok', 20) && metricsBump('brain_fail', 20)
+        && metricsBump('thumb_up', 100) && metricsBump('thumb_down', 100)
+        && metricsBump('fallback', 100) && metricsBump('error', 100)
+        && metricsBump('pip_users_d', 1) && metricsBump('pip_users_w', 1)
+        && metricsBump('pip_users_m', 1);
+    }
   }
 }

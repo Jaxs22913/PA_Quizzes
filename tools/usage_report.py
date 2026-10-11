@@ -51,6 +51,30 @@ FAMILIES = [
         "rate": None,
         "columns": ["q_answered", "quiz_done"],
     },
+    {
+        "coll": "metrics_pip",
+        "title": "Pip",
+        "base": {"d": "pip_users_d", "w": "pip_users_w", "m": "pip_users_m"},
+        "base_label": "Students using Pip",
+        "fields": [
+            ("pip_open", "Pip opened"),
+            ("pip_ask", "Messages to Pip"),
+            ("explain_card", "Answered with one of Pip's explanations"),
+            ("explain_tap", "\"Explain the idea\" taps in drills"),
+            ("followup", "\"I still don't get it\" / \"why?\" follow-ups"),
+            ("claude_ask", "Checked with Claude"),
+            ("practice", "Practice sets started"),
+            ("rescue", "Rescue drills started"),
+            ("brain_yes", "Laptop brain offer: set it up"),
+            ("brain_no", "Laptop brain offer: not now"),
+            ("brain_ok", "Laptop model loaded"),
+            ("brain_fail", "Laptop model failed to load"),
+            ("fallback", "Fallbacks (nothing found, Claude capped or unreachable, summary rejected)"),
+            ("error", "Errors"),
+        ],
+        "rate": ("thumb_up", "thumb_down", "Helpful rate (thumbs)"),
+        "columns": ["pip_open", "explain_card"],
+    },
 ]
 
 

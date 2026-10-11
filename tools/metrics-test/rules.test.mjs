@@ -3,7 +3,7 @@
 import { initializeTestEnvironment, assertSucceeds, assertFails } from "@firebase/rules-unit-testing";
 import { doc, setDoc, getDoc, deleteDoc, increment, collection, addDoc } from "firebase/firestore";
 import fs from "fs";
-const RULES = process.argv[2];
+const RULES = process.argv[2], PIP = process.argv[3] === "pip";
 const env = await initializeTestEnvironment({ projectId: "demo-pa", firestore: { rules: fs.readFileSync(RULES, "utf8"), host: "127.0.0.1", port: 8085 } });
 const anon = env.authenticatedContext("anon1", { firebase: { sign_in_provider: "anonymous" } }).firestore();
 const google = env.authenticatedContext("g1", { email: "x@example.com", firebase: { sign_in_provider: "google.com" } }).firestore();
@@ -40,6 +40,16 @@ await t("3 days ahead refused", setDoc(doc(anon, M, day(3)), { q_answered: incre
 await t("garbage day id refused", setDoc(doc(anon, M, "hello"), { q_answered: increment(1) }, { merge: true }), false);
 await t("month 13 refused", setDoc(doc(anon, M, "2026-13-01"), { q_answered: increment(1) }, { merge: true }), false);
 await t("other collection name refused", setDoc(doc(anon, "metrics_weekly", T), { q_answered: increment(1) }, { merge: true }), false);
+if (PIP) {
+  const P = "metrics_pip";
+  await t("pip: anon creates today", setDoc(doc(anon, P, T), { pip_open: increment(2), explain_card: increment(3), pip_users_d: increment(1), pip_users_w: increment(1), pip_users_m: increment(1) }, { merge: true }), true);
+  await t("pip: thumbs + more", setDoc(doc(anon, P, T), { thumb_up: increment(2), thumb_down: increment(1), practice: increment(1), rescue: increment(1), fallback: increment(4), error: increment(1), brain_ok: increment(1), brain_fail: increment(1), explain_tap: increment(1), followup: increment(1), claude_ask: increment(2), pip_ask: increment(5), brain_yes: increment(1), brain_no: increment(1) }, { merge: true }), true);
+  await t("pip: site field refused in pip doc", setDoc(doc(anon, P, T), { q_answered: increment(1) }, { merge: true }), false);
+  await t("pip: pip field refused in site doc", setDoc(doc(anon, M, T), { pip_open: increment(1) }, { merge: true }), false);
+  await t("pip: users +2 refused", setDoc(doc(anon, P, T), { pip_users_d: increment(2) }, { merge: true }), false);
+  await t("pip: read refused", getDoc(doc(anon, P, T)), false);
+  await t("pip: signed-out refused", setDoc(doc(nobody, P, T), { pip_open: increment(1) }, { merge: true }), false);
+}
 // the blocks that were already there still behave
 await t("stats/global open write still ok", setDoc(doc(nobody, "stats", "global"), { questionsCompleted: increment(10) }, { merge: true }), true);
 await t("stats/global open read still ok", getDoc(doc(nobody, "stats", "global")), true);

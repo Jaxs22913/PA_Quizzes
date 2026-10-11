@@ -11,6 +11,11 @@
 // 404.html go to the dist root, where Workers Static Assets reads them;
 // cloudflare/import.html (the cutover hand-off receiver) goes to /PA_Quizzes/.
 //
+// One generated folder is copied although git ignores it: pip/data/ (Pip's question
+// banks and guide index), written by tools/build_pip_data.py, which the deploy workflow
+// runs just before this script. A tree that ships pip/pip.js without that data stops
+// the build, so Pip is never deployed with nothing to search.
+//
 //   node cloudflare/build.mjs        (.github/workflows/cloudflare.yml runs this on every push)
 
 import { execFileSync } from 'node:child_process'
@@ -28,6 +33,7 @@ const EXCLUDE_TOP = new Set([
   '.github', 'tools', 'cloudflare', 'docs', 'dist', 'node_modules', '.wrangler',
   'wrangler.jsonc', 'package.json', 'package-lock.json',
   'CLAUDE.md', 'firestore.rules', '.gitignore', '.nojekyll',
+  'superbrain',   // the helper Worker's source; deployed on its own, never served as site files
 ])
 const FILE_LIMIT = 20000          // Workers Free: files per version
 const SIZE_LIMIT = 25 * 1024 * 1024  // per file
@@ -56,16 +62,44 @@ mkdirSync(SITE, { recursive: true })
 
 let count = 0, bytes = 0
 const tooBig = []
-for (const rel of trackedFiles()) {
-  if (EXCLUDE_TOP.has(rel.split('/')[0])) continue
+const published = new Set()
+function publish(rel) {
+  if (published.has(rel)) return            // the no-git fallback already walked it
   const src = join(ROOT, rel)
-  if (!existsSync(src)) continue            // deleted in the working tree
+  if (!existsSync(src)) return              // deleted in the working tree
   const size = statSync(src).size
-  if (size > SIZE_LIMIT) { tooBig.push(rel); continue }
+  if (size > SIZE_LIMIT) { tooBig.push(rel); return }
   const dst = join(SITE, rel)
   mkdirSync(dirname(dst), { recursive: true })
   copyFileSync(src, dst, constants.COPYFILE_FICLONE)   // instant clone on APFS, plain copy elsewhere
+  published.add(rel)
   count++; bytes += size
+}
+const tracked = trackedFiles()
+for (const rel of tracked) {
+  if (EXCLUDE_TOP.has(rel.split('/')[0])) continue
+  if (rel.startsWith('pip/explain/')) continue   // Pip's explanation sources; pip/data/explain/ is what ships
+  publish(rel)
+}
+
+// Pip's generated data (git-ignored; see the header).
+if (tracked.includes('pip/pip.js')) {
+  const DATA = 'pip/data'
+  if (!existsSync(join(ROOT, DATA, 'index.json'))) {
+    console.error(`ERROR: pip/pip.js is published but ${DATA}/index.json is missing. Run python3 tools/build_pip_data.py first.`)
+    process.exit(1)
+  }
+  let pipFiles = 0
+  const walk = d => {
+    for (const name of readdirSync(join(ROOT, d)).sort()) {
+      if (name === '.DS_Store') continue
+      const rel = `${d}/${name}`
+      if (statSync(join(ROOT, rel)).isDirectory()) walk(rel)
+      else { publish(rel); if (published.has(rel)) pipFiles++ }
+    }
+  }
+  walk(DATA)
+  console.log(`${DATA}/: ${pipFiles} generated files`)
 }
 
 for (const name of ['_redirects', '_headers', '404.html']) {

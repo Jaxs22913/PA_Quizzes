@@ -6,7 +6,7 @@ if (!window.PAMetrics) window.PAMetrics = (function () {
   var q = [];
   function later(name) { return function () { q.push([name, [].slice.call(arguments)]); }; }
   return { _q: q, add: later("add"), mark: later("mark"), family: later("family"),
-           note: "PA Quizzes counts anonymous totals, like how many questions are answered and how often each study tool is used, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
+           note: "PA Quizzes counts anonymous totals, like how many questions are answered and how often Pip is used, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
 })();
 
 /* ============================================================
@@ -6545,4 +6545,24 @@ window.__themeKit.fireworks = function (cfg) {
 
   function go() { try { setupReveal(); } catch (e) { revealAll(); } try { setupMarker(); } catch (e) {} }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();
+
+/* Pip, the study companion (pip/pip.js). Only on Semester 2+ study pages (their <body>
+   carries data-dark-kind) and the homepage; never on frozen Semester 1 pages. Loaded
+   after the page is up so it can never slow first paint.
+   Only on pa-quizzes.com (and a local preview): GitHub Pages serves this same theme.js
+   but does not get Pip until Jaxon decides otherwise. Same host list as pip-brain.js. */
+(function () {
+  if (!/^(pa-quizzes\.com|www\.pa-quizzes\.com|localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+  var thisScript = document.querySelector('script[src$="theme.js"]');
+  var base = thisScript ? thisScript.getAttribute("src").replace(/theme\.js$/, "") : "";
+  function go() {
+    var b = document.body;
+    var home = base === "" && /(^|\/)(index\.html)?$/.test(location.pathname.split("/").pop() || "");
+    if (!b || (!b.hasAttribute("data-dark-kind") && !home)) return;
+    var s = document.createElement("script"); s.src = base + "pip/pip.js"; s.async = true;
+    document.head.appendChild(s);
+  }
+  if (document.readyState === "complete") setTimeout(go, 0);
+  else window.addEventListener("load", function () { setTimeout(go, 0); });
 })();

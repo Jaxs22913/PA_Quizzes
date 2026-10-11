@@ -27,6 +27,29 @@ newest day, week and month already counted). A signed-in student's devices share
 cloud sync, so they count once; a student who never signs in and uses two devices counts twice. The
 weekly number is the sum of `active_w` over that week's seven day documents.
 
+## Pip's counts
+
+Pip has his own day documents, `metrics_pip/{YYYY-MM-DD}` (registered by `pip/pip.js` through
+`PAMetrics.family`), with the same rules shape. Counts only, never what anyone typed or what Pip said:
+
+| Field | Counts |
+|---|---|
+| `pip_open` | Pip's window opened |
+| `pip_ask` | messages typed to Pip |
+| `explain_card` | answered with one of Pip's own checked explanations |
+| `explain_tap` | "Explain the idea" tapped after a drill question |
+| `followup` | "I still don't get it" / "why?" right after an answer (Pip's version of "coach me"; he has no hint button) |
+| `claude_ask` | Pip checked with Claude |
+| `practice`, `rescue` | practice sets (including topic and "more like this") and rescue drills started |
+| `brain_yes`, `brain_no` | "Want me to explain things in my own words?" answered Set it up / Not now |
+| `brain_ok`, `brain_fail` | the laptop model loaded, or failed to load |
+| `thumb_up`, `thumb_down` | the "Helpful?" row under an explanation or a Claude assist |
+| `fallback` | nothing found, Claude unreachable or capped for a follow-up, or the laptop summary rejected by its guard |
+| `error` | Claude or the laptop model failed |
+| `pip_users_d`, `pip_users_w`, `pip_users_m` | distinct students who opened Pip that day, ISO week and month |
+
+The report adds a Pip section with the helpful rate and its denominator.
+
 ## How it is sent (the Firestore budget)
 
 Counts go into a device-only buffer (`local:metrics:buf`, never uploaded by cloud sync) and are sent
@@ -55,8 +78,8 @@ Checked before a count is buffered and again before it is sent:
 
 Shown once (bottom left, not on quiz pages), and kept permanently under the Settings switch:
 
-> PA Quizzes counts anonymous totals, like how many questions are answered and how often each study
-> tool is used, to improve the site and to support a future free version for students everywhere.
+> PA Quizzes counts anonymous totals, like how many questions are answered and how often Pip is
+> used, to improve the site and to support a future free version for students everywhere.
 > No names or answers are recorded. [Got it] [Turn off]
 
 The wording lives once, in theme.js (`PAMetrics.note`).

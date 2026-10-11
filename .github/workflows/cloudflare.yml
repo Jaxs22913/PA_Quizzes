@@ -29,6 +29,11 @@ jobs:
         with:
           node-version: "22"
 
+      # Pip's question banks and guide index (pip/data/) are generated, not in git.
+      # stdlib Python + node (semesters.js); any parse problem fails the deploy.
+      - name: Build pip/data/
+        run: python3 --version && python3 tools/build_pip_data.py
+
       - name: Build dist/ (site under /PA_Quizzes/)
         run: node cloudflare/build.mjs
 
