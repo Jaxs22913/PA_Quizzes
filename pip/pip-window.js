@@ -553,6 +553,23 @@
     "html[data-theme=dark] #pip-win .pw-help{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-thumb{background:#121a33;border-color:#5b6fa8;color:#C9D8FA}",
     "#pip-win .pw-card .pw-explain{max-width:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:#F1F4FB}",
     "#pip-win .pw-guidehd{font-size:12px;color:#5b6687;margin:2px 2px -4px}#pip-win .pw-slot{display:contents}",
+    // comparisons: the side-by-side dissection, the guide links under it, the folded full cards
+    "#pip-win .pw-cmp{align-self:stretch;max-width:none;white-space:normal}",
+    "#pip-win .pw-cmp p{margin:0}#pip-win .pw-cmp p+p{margin-top:8px}",
+    "#pip-win .pw-cmpgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 8px;margin-top:8px}",
+    "#pip-win .pw-cmpgrid.pw-cmp1{grid-template-columns:minmax(0,1fr)}",
+    "#pip-win .pw-cmphd{font-size:13px;color:#1E3974;padding:0 2px}",
+    "#pip-win .pw-cmprow{grid-column:1/-1;margin-top:6px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5b6687}",
+    "#pip-win .pw-cmpcell{background:#fff;border:1px solid rgba(30,57,116,.14);border-radius:10px;padding:7px 9px;font-size:13.5px;line-height:1.4;overflow-wrap:anywhere}",
+    "#pip-win .pw-cmpnone{color:#5b6687;font-style:italic;background:transparent;border-style:dashed}",
+    "#pip-win .pw-cmpbottom{margin-top:10px!important;padding-top:8px;border-top:1px solid rgba(30,57,116,.14)}",
+    "#pip-win .pw-cmplinks{display:flex;flex-direction:column;gap:2px;max-width:none}",
+    "#pip-win .pw-cmplinks a{color:#1E3974;font-weight:600;font-size:13px;text-decoration:none;padding:4px 0}#pip-win .pw-cmplinks a:hover{text-decoration:underline}",
+    "#pip-win .pw-more{align-self:stretch;font-size:13px}#pip-win .pw-more>summary{cursor:pointer;color:#1E3974;font-weight:600;padding:4px 2px}",
+    "#pip-win .pw-more>.pw-msg{margin-top:8px}",
+    "html[data-theme=dark] #pip-win .pw-cmpcell{background:#121a33;border-color:#2b3f78}html[data-theme=dark] #pip-win .pw-cmpnone{background:transparent}",
+    "html[data-theme=dark] #pip-win .pw-cmphd,html[data-theme=dark] #pip-win .pw-cmplinks a,html[data-theme=dark] #pip-win .pw-more>summary{color:#C9D8FA}",
+    "html[data-theme=dark] #pip-win .pw-cmprow,html[data-theme=dark] #pip-win .pw-cmpnone{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-cmpbottom{border-color:#2b3f78}",
     "#pip-win .pw-xbtn{margin-top:10px;margin-left:8px}",
     "html[data-theme=dark] #pip-win .pw-explain .pw-xh{color:#9fb8f5}html[data-theme=dark] #pip-win .pw-explain a{color:#C9D8FA}",
     "html[data-theme=dark] #pip-win .pw-guidehd{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-card .pw-explain{background:#1c2a52}",
@@ -1209,7 +1226,25 @@
       }
       // Pip has his own checked explanation: it leads, then the single best line from the guide (its
       // exact words), then notes. Claude is not called; "I still don't get it" or "why?" can call him.
+      // A question that asks how things differ, compares them or what makes one stand out gets a dissection
+      // first (Jaxon, 2026-10-11): see explainedCompare
       function explained(out, mine, ex) {
+        if (ex.cmp) return explainedOne(out, mine, ex);
+        if (ex.length >= 2) return explainedCompare(out, mine, ex, false);
+        if (!STAND.test(norm(text))) return explainedOne(out, mine, ex);
+        // "what makes X stand out": X against the other cards of its own section
+        explainOf(f).then(function (e) {
+          // look-alikes: other cards of its section whose titles share a specific word with it ("type II" / "type III" / "type IV")
+          var mine0 = toks(numbered(ex[0].t)).filter(function (w) { return !GENERIC[w]; });
+          var share = function (c) { return toks(numbered(c.t)).filter(function (w) { return mine0.indexOf(w) >= 0; }).length; };
+          var sib = e ? e.cards.filter(function (c) { return c.u === ex[0].u && c.id !== ex[0].id && share(c); })
+            .sort(function (a, b) { return share(b) - share(a); }).slice(0, 2) : [];
+          if (!sib.length) return explainedOne(out, mine, ex);
+          var ex2 = [ex[0]].concat(sib); ex2.m = ex.m;
+          explainedCompare(out, mine, ex2, true);
+        });
+      }
+      function explainedOne(out, mine, ex) {
         count("explain_card");
         var lead = explainBubble(ex[0], f);
         helpful(lead);
@@ -1238,7 +1273,163 @@
         input.placeholder = "Still fuzzy? Say which part, or ask \u201cwhy?\u201d";
         scrollTo(lead);
       }
+      // The comparison: the dissection comes FIRST (Claude, else the laptop brain, else the cards' own sentences),
+      // then a guide link for each side, then the full cards folded away, then the guide's exact words.
+      function explainedCompare(out, mine, ex0, look) {
+        count("explain_card");
+        var sides = (look ? ex0 : orderSides(ex0, text)).slice(0, 3); sides.m = ex0.m;
+        var names = sides.map(shortT);
+        var links = el("div", "pw-msg pw-pip pw-cmplinks");
+        sides.forEach(function (c) { links.appendChild(linkTo(f.f, c.doc, c.a, "Read " + names[sides.indexOf(c)] + " in your guide →")); });
+        log.appendChild(links);
+        var more = el("details", "pw-more");
+        more.appendChild(el("summary", null, "Full explanations: " + names.join(" and ")));
+        sides.forEach(function (c) { explainBubble(c, f, more); });
+        log.appendChild(more);
+        var slot = el("div", "pw-slot"); log.appendChild(slot);
+        mine.forEach(noteCard);
+        scrollTo(links);
+        input.placeholder = "Still fuzzy? Say which part, or ask “why?”";
+        Promise.all(sides.map(function (c) { return guideLine(f, c, ex0.m, text); })).then(function (lines) {
+          var seen = {}, passages = sides.map(function (c) { return { title: c.t, text: c.x }; });
+          lines.forEach(function (r, i) {
+            if (!r || seen[r.b[1] + r.b[3]]) return;
+            seen[r.b[1] + r.b[3]] = 1;
+            if (!slot.firstChild) slot.appendChild(el("div", "pw-guidehd", "Your guide's exact words:"));
+            var c2 = el("div", "pw-card"); slot.appendChild(c2);
+            c2.appendChild(el("h4", null, r.b[2] || r.doc.title));
+            c2.appendChild(el("div", "pw-src", f.t + " · Study guide"));
+            c2.appendChild(snippet(r.b[3], sides[i].t + " " + text));
+            c2.appendChild(linkTo(f.f, r.doc.file, r.b[1]));
+            if (passages.length < 4) passages.push({ title: r.b[2] || r.doc.title, text: r.b[3] });
+          });
+          var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
+          chips(base);
+          lastAsk = { q: text, passages: passages, f: f, t: Date.now(), expl: sides[0] };
+          var noModel = function () { var t = cmpTable(sides, look); log.insertBefore(t, links); helpful(t); scrollTo(t); };
+          var viaBrain = function () {
+            var qb = text.slice(0, 300) + (look ? " Say what sets the first one apart from the others, in a few short sentences." : " Say how they differ, in a few short sentences.");
+            brainAfter(qb, passages, links, "your guide", null).then(function (got) { if (got !== "summary") noModel(); });
+          };
+          // Claude only for a student who can already use him, inside the usual limits; anything else falls through
+          var qc = text.slice(0, 270) + CMP_ASK;
+          claudeUsable(qc, f).then(function (ok) {
+            if (!ok) return viaBrain();
+            var priv = false, k = cacheKey("explain", qc, f, priv), hit = cached(k, priv);
+            passages.place = { before: links, note: null }; passages.onFail = viaBrain;
+            if (hit) { claudeCard({ answer: hit.answer }, hit.mode, passages, "I asked Claude to compare them. (I'd asked before.)"); return; }
+            if (!claudeRoom()) return viaBrain();
+            askClaude(qc, "explain", passages, f, "I asked Claude to compare them side by side.", k);
+          });
+        });
+      }
     });
+  }
+
+  // ------------------------------------------------------------------ comparisons: a dissection, not a stack of cards
+  // Jaxon, 2026-10-11: "Can we have PIP give a nuanced dissection when asked how things differ, or compare,
+  // or what makes something stand out". For "primary vs secondary hypertension" Pip used to stack his two
+  // cards. Now the dissection leads: a short lead line, a side-by-side of only the rows the sources say
+  // something about, and one "Quick way to tell them apart" line, then a guide link for each side, then
+  // the full cards (folded away) and the guide's exact words. Source, in order: Claude (invited students,
+  // the usual limits and answer cache), Pip's laptop brain (the usual word guard), else NO model: the
+  // cards' own sentences, sorted into rows by cue words, never a fact that is not in a card.
+  var STAND = /\b(stand(s)? out|unique|special|sets? (it|them|this|that) apart|what makes .{1,60}\bdifferent)\b/;
+  var CMP_ASK = "\nCompare them side by side in short plain lines, one per row (what it is, cause, how common, who gets it, clues, tests, treatment; " +
+    "only rows the passages cover), then a last line starting \"Quick way to tell them apart:\". No tables.";
+  var CMP_ROWS = [
+    ["What it is", null, 1],
+    ["Cause or mechanism", /\b(causes?|caused|due to|mechanisms?|driven|susceptibility|arises?|results? from|comes? from)\b/, 1],
+    ["How common", /\d\s*%|\bpercent\b|\b(prevalence|makes? up|most common|uncommon|rare)\b/, 1],
+    ["Who gets it", /\b(risk factors?|family history|older adults|advancing age|inherit\w*)\b/, 1],
+    ["Telling clues", /\b(go looking|look for|clues?|suspect\w*|signs?|symptoms?|features?|onset|resistant|unexplained)\b/, 2],
+    ["Workup", /\b(tests?|testing|imaging|screen\w*|work-?up|diagnos\w*|biops\w*|labs?)\b/, 1],
+    ["Treatment", /\b(treat\w*|therapy|drugs?|medications?|surgery|surgical|first-line|manag\w*)\b/, 1],
+    ["How it stands apart", /\b(unlike|whereas|while|in contrast|rather than|versus|vs|instead|but)\b/, 1]];
+  function shortT(c) { return String(c.t).split(":")[0].trim(); }
+  function cmpSentences(x) {                       // one card's text as sentences (bullets and blank lines dropped)
+    var out = [];
+    String(x).split(/\n+/).forEach(function (line) {
+      line = line.replace(/^[-•]\s+/, "").trim();
+      if (line) line.replace(/([.!?])\s+(?=[A-Z0-9(])/g, "$1\u0001").split("\u0001").forEach(function (t) { if (t.trim()) out.push(t.trim()); });
+    });
+    return out;
+  }
+  // the question's order decides the sides' order ("primary vs secondary" puts primary first)
+  function orderSides(ex, text) {
+    var n = " " + norm(text).replace(/[^a-z0-9]+/g, " ") + " ";
+    var words = ex.map(function (c) { return norm(c.t).split(/[^a-z0-9]+/).filter(function (w) { return w.length >= 4; }); });
+    var pos = ex.map(function (c, i) {
+      var best = 1e9;
+      words[i].forEach(function (w) {
+        var elsewhere = words.some(function (o, j) { return j !== i && o.indexOf(w) >= 0; });
+        var at = elsewhere ? -1 : n.indexOf(" " + w.slice(0, 5));
+        if (at >= 0 && at < best) best = at;
+      });
+      return best;
+    });
+    var idx = ex.map(function (c, i) { return i; }).sort(function (a, b) { return pos[a] - pos[b] || a - b; });
+    var out = idx.map(function (i) { return ex[i]; }); out.m = ex.m;
+    return out;
+  }
+  // Rows from the cards' own sentences, with no model. Each sentence is used once, in the first row whose cue it
+  // holds; the "quick way to tell" block of a card is the bottom line. Returns {rows: [[label, [cell...]]], bottom}.
+  function cmpFromCards(sides) {
+    var bottom = "", rowsBy = {};
+    var per = sides.map(function (c) {
+      var ss = cmpSentences(c.x), qi = -1;
+      ss.forEach(function (t, i) { if (qi < 0 && /quick way to (tell|tell them|distinguish)/i.test(t)) qi = i; });
+      if (qi >= 0 && !bottom) {
+        bottom = ss.slice(qi).join(" ").replace(/^[^:]*quick way to[^:]*:\s*/i, "");
+        bottom = bottom.charAt(0).toUpperCase() + bottom.slice(1);
+      }
+      return qi >= 0 ? ss.slice(0, qi) : ss;
+    });
+    per.forEach(function (ss, si) {
+      ss.forEach(function (t, i) {
+        var ri = i === 0 ? 0 : -1;
+        for (var r = 1; ri < 0 && r < CMP_ROWS.length; r++) if (CMP_ROWS[r][1].test(t)) ri = r;
+        if (ri < 0) return;
+        var cell = rowsBy[ri] = rowsBy[ri] || [];
+        var mine = cell[si] = cell[si] || [];
+        if (mine.length < CMP_ROWS[ri][2]) mine.push(t);
+      });
+    });
+    var rows = [];
+    CMP_ROWS.forEach(function (r, ri) {
+      var cell = rowsBy[ri];
+      if (!cell) return;
+      rows.push([r[0], sides.map(function (c, si) { return cell[si] ? cell[si].join(" ") : ""; })]);
+    });
+    return { rows: rows, bottom: bottom };
+  }
+  function cmpTable(sides, look) {
+    var d = cmpFromCards(sides), n = sides.length, box = el("div", "pw-msg pw-pip pw-cmp");
+    var names = sides.map(shortT);
+    box.appendChild(el("p", "pw-cmplead", look
+      ? "Here is what sets " + names[0] + " apart from the other topics in its section, using only what your guide says about each:"
+      : "Here is how " + names.slice(0, -1).join(", ") + " and " + names[n - 1] + " differ, using only what your guide says about each:"));
+    if (!d.rows.length) {                          // cards with nothing to line up: say so rather than guess
+      box.appendChild(el("p", null, "Your guide's cards below say more about each one."));
+      return box;
+    }
+    var grid = el("div", "pw-cmpgrid" + (n > 2 ? " pw-cmp1" : ""));
+    if (n === 2) names.forEach(function (nm) { grid.appendChild(el("b", "pw-cmphd", nm)); });
+    d.rows.forEach(function (r) {
+      grid.appendChild(el("div", "pw-cmprow", r[0]));
+      r[1].forEach(function (t, i) {
+        var cell = el("div", "pw-cmpcell" + (t ? "" : " pw-cmpnone"));
+        if (n > 2) cell.appendChild(el("b", null, names[i] + ": "));
+        cell.appendChild(document.createTextNode(t || "Not covered here"));
+        grid.appendChild(cell);
+      });
+    });
+    box.appendChild(grid);
+    if (d.bottom) {
+      var q = el("p", "pw-cmpbottom"); q.appendChild(el("b", null, "Quick way to tell them apart: ")); q.appendChild(document.createTextNode(d.bottom));
+      box.appendChild(q);
+    }
+    return box;
   }
 
   // ------------------------------------------------------------------ Pip explains: his own checked explanations
@@ -1286,7 +1477,7 @@
     why: /\b(why|how|mechanism|works|happens|develops)\b/, define: /\b(what it is|what they are|definition|defined)\b/ };
   function wants(text) { var n = norm(text).replace(/[’']/g, "'"), o = {}; WANTS.forEach(function (w) { if (w[1].test(n)) o[w[0]] = 1; }); return o; }
   function kinds(title) { var n = norm(title), o = {}; for (var k in KIND) if (KIND[k].test(n)) o[k] = 1; return o; }
-  var COMPARE = /\b(difference|differences|differ|differs|distinguish|versus|vs|compare|compared|comparing|tell apart)\b/;
+  var COMPARE = /\b(difference|differences|different|differ|differs|distinguish|versus|vs|compare|compared|comparing|comparison|contrast|contrasts|contrasting|tell apart|tell the difference|similar|similarities|similarity|alike)\b|\btell\b.{1,60}\bfrom\b/;
   // the card that answers this question: it must match most of the question's words (rank() asks for
   // 60%) AND be about something the question names (a word of its title or other names), so a passing
   // mention in some other card's text never answers for it. A comparison may bring a second card.
@@ -1338,7 +1529,8 @@
       if (!hits.length) return [];
       var out = [e.cards[hits[0][1]]];
       out.m = e.m;                                // anchor -> section, to pick the guide line from the same section
-      if (COMPARE.test(norm(text)) && !hits.cmp) {
+      out.cmp = hits.cmp ? 1 : 0;                  // a side-by-side card already answers it
+      if ((COMPARE.test(norm(text)) || /\b[a-z]{3,} or [a-z]{3,}\b/.test(norm(text))) && !hits.cmp) {
         var first = e._names[hits[0][1]];
         for (var i = 1; i < hits.length; i++) {
           // a different concept, named by a question word the first card's names don't have
@@ -1751,6 +1943,26 @@
   }
   var CANT_CLAUDE = "I can't check with Claude right now. Tell me which part is fuzzy, a word or a step, and I'll explain that piece.";
   function cantClaude() { count("fallback"); say(CANT_CLAUDE); }
+  // A comparison may ask Claude unprompted only for a student who can already use him (signed in, invited,
+  // consented), outside a past exam and a quiz in progress, inside the usual limits. Anything else is "no".
+  function claudeRoom() {
+    if (!ownerKnown) {
+      if (deviceBudget().n >= 12) return false;
+      if (Date.now() - lastClaudeAt < 20000) return false;
+    }
+    return !(+get(K_CNO) && Date.now() - +get(K_CNO) < 14 * 864e5);
+  }
+  function claudeUsable(question, f) {
+    if (quizInProgress() || (P.kind === "quiz" && looksLikeOpenQuestion(question))) return Promise.resolve(false);
+    return isOwner().then(function () {
+      if (herePast && f && where.folder === f && !ownerKnown) return false;
+      return superbrain().then(function (S) {
+        if (!S || S.state() !== "ready" || !S.consented()) return false;
+        if (invitedOk) return true;
+        return S.status().then(function (st) { if (st && st.ok !== false && st.invited) { invitedOk = true; return true; } return false; });
+      });
+    }).catch(function () { return false; });
+  }
   function maybeClaude(question, mode, passages, f, why, fromFollowUp) {
     if (quizInProgress() || (P.kind === "quiz" && looksLikeOpenQuestion(question))) return;
     if (herePast && f && where.folder === f && !ownerKnown) { if (fromFollowUp) cantClaude(); return; }   // forward-moving: no Claude spend on a past exam unless the owner asks
@@ -1822,6 +2034,7 @@
           wait.remove();
           // a daily or monthly cap is Pip falling back to the guide; anything else is an error
           if (!r.ok) { count(/^(user_|day_|month_)/.test(r.code || "") ? "fallback" : "error");
+                       if (passages && passages.onFail) { passages.onFail(); return; }     // a comparison: the brain or the cards take over
                        say(CLAUDE_SAYS[r.code] || "Claude couldn't answer just now. Your guide's passages are above."); return; }
           if (cacheK) remember(cacheK, r, priv);
           claudeCard(r, mode, passages, why);

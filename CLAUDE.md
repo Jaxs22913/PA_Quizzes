@@ -82,7 +82,7 @@ of `theme.js`, on pa-quizzes.com only, on every page that loads `theme.js` (Seme
 included, since 2026-10-11) plus the five self-contained Semester 2 pages that carry their own
 small loader (never the 11 frozen self-contained Semester 1 files). He stays paused on a quiz
 question that is still open (an older page he cannot read: until the results), and answers
-in his own words first, with a guide link under it. His question banks and guide index (`pip/data/`) are generated, never
+in his own words first, with a guide link under it. A "how do these differ / compare / what makes X stand out" question gets a side-by-side dissection first (Claude when the student can use him, else his laptop brain, else the cards' own sentences), then a guide link per side, then the folded cards. His question banks and guide index (`pip/data/`) are generated, never
 committed: the Cloudflare deploy runs `tools/build_pip_data.py`, which fails the
 deploy loudly on a page it cannot parse (fix the page, never skip the step). His
 plain-language explanation cards live in `pip/explain/<exam>.json`
