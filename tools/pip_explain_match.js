@@ -15,12 +15,13 @@ function grab(name) {           // "function name(...) { ... }" with brace match
 }
 function grabVar(re) { const m = src.match(re); if (!m) throw new Error('no ' + re); return m[0]; }
 const stopBlock = src.slice(src.indexOf('var STOP = {};'), src.indexOf('function norm('));
-const code = [stopBlock, grabVar(/var CAPS = \{[^}]*\};/), grabVar(/var SYN = \{[^}]*\};/), grabVar(/var CASUAL = \[[\s\S]*?\]\];/), grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/), grabVar(/var COMPARE = \/.*\/;/),
-  ...['norm', 'stem', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank', 'numbered', 'wants', 'kinds', 'explainHits', 'guideHits', 'guideLine'].map(grab),
+const code = [stopBlock, grabVar(/var CAPS = \{[^}]*\};/), grabVar(/var SYN = \{[^}]*\};/), grabVar(/var CASUAL = \[[\s\S]*?\]\];/), grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/), grabVar(/var COMPARE = \/.*\/;/), grabVar(/var CMPW = \{\};\n.*\n.*forEach\(function \(w\) \{ CMPW\[w\] = 1; \}\);/),
+  ...['norm', 'stem', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank', 'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'guideLine'].map(grab),
   grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/)].join('\n');
 const gcache = {};
 function guideIndex(f) { return Promise.resolve(gcache[f.s] || (gcache[f.s] = JSON.parse(fs.readFileSync(REPO + 'pip/data/guide/' + f.s + '.json', 'utf8')))); }
 function decodedPath(p) { return p; }
+function abAll() { return Promise.resolve(JSON.parse(fs.readFileSync(REPO + 'pip/data/ab.json', 'utf8'))); }
 const location = { pathname: '/x/none.html' };
 const IX = JSON.parse(fs.readFileSync(REPO + 'pip/data/index.json', 'utf8'));
 const cache = {};
@@ -32,7 +33,7 @@ function explainOf(f) {
   new Function('e', 'makeIndex', 'numbered', 'toks', 'kinds', prep)(e, M.makeIndex, M.numbered, M.toks, M.kinds);
   return Promise.resolve(cache[f.s] = e);
 }
-const M = new Function('IX', 'explainOf', 'guideIndex', 'decodedPath', 'location', code + '\nreturn {norm, toks, casual, makeIndex, numbered, rank, expandFor, explainHits, guideHits, guideLine, kinds, wants};')(IX, explainOf, guideIndex, decodedPath, location);
+const M = new Function('IX', 'explainOf', 'guideIndex', 'decodedPath', 'location', 'abAll', code + '\nreturn {norm, toks, casual, makeIndex, numbered, rank, expandFor, explainHits, guideHits, guideLine, kinds, wants};')(IX, explainOf, guideIndex, decodedPath, location, abAll);
 if (process.argv[2] === '--debug') {
   (async () => {
     const f = IX.folders.find(x => x.s === process.argv[4]); const e = await explainOf(f);

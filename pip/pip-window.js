@@ -279,6 +279,7 @@
     });
   }
   var herePast = false;
+  var PAST = {};                                  // exam slug -> its exam day is behind us (filled when Pip looks across exams)
   function nextExam(ix) {
     return calendar().then(function (cal) {
       if (!cal || !cal.graded) return null;
@@ -538,6 +539,7 @@
     // Pip explains: his plain-language explanation leads an answer; the guide's own words follow it
     "#pip-win .pw-explain{max-width:94%;white-space:normal}",
     "#pip-win .pw-explain .pw-xh{display:block;font-size:12.5px;font-weight:700;color:#2f55b8;margin-bottom:4px}",
+    "#pip-win .pw-explain .pw-xl{display:block;font-size:12px;color:#5b6687;margin:-2px 0 6px}html[data-theme=dark] #pip-win .pw-explain .pw-xl{color:#9fb0d6}",
     "#pip-win .pw-explain p{margin:0}#pip-win .pw-explain p+p{margin-top:8px}",
     "#pip-win .pw-explain ul{margin:6px 0 0;padding-left:20px}#pip-win .pw-explain li{margin-top:3px}",
     "#pip-win .pw-explain a{display:inline-block;margin-top:8px;color:#1E3974;font-weight:600;font-size:13px;text-decoration:none}",
@@ -1164,10 +1166,11 @@
       // the active exam's guides AND the student's own notes for that exam (never another exam's),
       // and Pip's own plain-language explanation of the concept when he has one
       var qx = casual(text);
-      Promise.all([hasGuides(f) ? guideHits([f], qx, c.here) : Promise.resolve([]), noteHits(f, text, 2), explainHits(f, qx)])
+      Promise.all([hasGuides(f) ? guideHits([f], qx, c.here) : Promise.resolve([]), noteHits(f, text, 2), explainWide(f, qx, text)])
         .then(function (r) { show(r[0], r[1], r[2]); });
       function show(out, mine, ex) {
         input.placeholder = ASK_HINT;
+        if (ex.cross) { out = []; mine = []; }        // another exam's answer: this exam's passages and notes are not about it
         if (ex.length) return explained(out, mine, ex);
         if (!out.length && !mine.length) {
           count("fallback");
@@ -1231,7 +1234,7 @@
       function explained(out, mine, ex) {
         if (ex.cmp) return explainedOne(out, mine, ex);
         if (ex.length >= 2) return explainedCompare(out, mine, ex, false);
-        if (!STAND.test(norm(text))) return explainedOne(out, mine, ex);
+        if (!STAND.test(norm(text)) || ex.cross) return explainedOne(out, mine, ex);
         // "what makes X stand out": X against the other cards of its own section
         explainOf(f).then(function (e) {
           // look-alikes: other cards of its section whose titles share a specific word with it ("type II" / "type III" / "type IV")
@@ -1246,6 +1249,7 @@
       }
       function explainedOne(out, mine, ex) {
         count("explain_card");
+        var cf = ex[0]._f || f;                       // the exam this card comes from (another exam's card says so)
         var lead = explainBubble(ex[0], f);
         helpful(lead);
         if (ex[1]) explainBubble(ex[1], f);
@@ -1257,19 +1261,19 @@
           slot.appendChild(el("div", "pw-guidehd", "Your guide's exact words:"));
           var c2 = el("div", "pw-card"); slot.appendChild(c2);
           c2.appendChild(el("h4", null, r.b[2] || r.doc.title));
-          c2.appendChild(el("div", "pw-src", f.t + " · Study guide"));
+          c2.appendChild(el("div", "pw-src", cf.t + " · Study guide"));
           c2.appendChild(snippet(r.b[3], ex[0].t + " " + text));
-          c2.appendChild(linkTo(f.f, r.doc.file, r.b[1]));
+          c2.appendChild(linkTo(cf.f, r.doc.file, r.b[1]));
         });
         mine.forEach(noteCard);
         var guideP = out.map(function (r) { return { title: r.b[2] || "", text: r.b[3] }; }), noteP = mine.map(notePassage);
         var passages = guideP.slice(0, 2).concat(noteP.slice(0, 1));
-        passages.link = { folder: f.f, file: ex[0].doc, a: ex[0].a };
-        var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
+        passages.link = { folder: cf.f, file: ex[0].doc, a: ex[0].a };
+        var base = PAST[cf.s] && cf !== f ? [] : [["Quiz me on this", function () { topicPractice(cf, text); }]];
         chips(base);
-        ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, f, "You asked me to check with Claude."); }],
-                          ["Go deeper with Claude", function () { askClaude(text, "deeper", passages, f, "You asked Claude to go deeper."); }]]);
-        lastAsk = { q: text, passages: passages, f: f, t: Date.now(), expl: ex[0] };
+        ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, cf, "You asked me to check with Claude."); }],
+                          ["Go deeper with Claude", function () { askClaude(text, "deeper", passages, cf, "You asked Claude to go deeper."); }]]);
+        lastAsk = { q: text, passages: passages, f: cf, t: Date.now(), expl: ex[0] };
         input.placeholder = "Still fuzzy? Say which part, or ask \u201cwhy?\u201d";
         scrollTo(lead);
       }
@@ -1280,7 +1284,11 @@
         var sides = (look ? ex0 : orderSides(ex0, text)).slice(0, 3); sides.m = ex0.m;
         var names = sides.map(shortT);
         var links = el("div", "pw-msg pw-pip pw-cmplinks");
-        sides.forEach(function (c) { links.appendChild(linkTo(f.f, c.doc, c.a, "Read " + names[sides.indexOf(c)] + " in your guide →")); });
+        // a side from another exam names that exam, and its link goes to THAT exam's guide
+        sides.forEach(function (c) {
+          var cf = c._f || f;
+          links.appendChild(linkTo(cf.f, c.doc, c.a, "Read " + names[sides.indexOf(c)] + (cf !== f ? " (" + cf.t + ")" : "") + " in your guide →"));
+        });
         log.appendChild(links);
         var more = el("details", "pw-more");
         more.appendChild(el("summary", null, "Full explanations: " + names.join(" and ")));
@@ -1298,28 +1306,32 @@
             if (!slot.firstChild) slot.appendChild(el("div", "pw-guidehd", "Your guide's exact words:"));
             var c2 = el("div", "pw-card"); slot.appendChild(c2);
             c2.appendChild(el("h4", null, r.b[2] || r.doc.title));
-            c2.appendChild(el("div", "pw-src", f.t + " · Study guide"));
+            var sf = sides[i]._f || f;
+            c2.appendChild(el("div", "pw-src", sf.t + " · Study guide"));
             c2.appendChild(snippet(r.b[3], sides[i].t + " " + text));
-            c2.appendChild(linkTo(f.f, r.doc.file, r.b[1]));
+            c2.appendChild(linkTo(sf.f, r.doc.file, r.b[1]));
             if (passages.length < 4) passages.push({ title: r.b[2] || r.doc.title, text: r.b[3] });
           });
-          var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
+          var fromTxt = otherExams(sides, f);
+          var f0 = sides[0]._f || f, anyPast = sides.some(function (c) { return PAST[(c._f || f).s]; });
+          var base = anyPast ? [] : [["Quiz me on this", function () { topicPractice(f0, text); }]];
           chips(base);
-          lastAsk = { q: text, passages: passages, f: f, t: Date.now(), expl: sides[0] };
-          var noModel = function () { var t = cmpTable(sides, look); log.insertBefore(t, links); helpful(t); scrollTo(t); };
+          lastAsk = { q: text, passages: passages, f: f0, t: Date.now(), expl: sides[0] };
+          var noModel = function () { var t = cmpTable(sides, look, f); log.insertBefore(t, links); helpful(t); scrollTo(t); };
           var viaBrain = function () {
             var qb = text.slice(0, 300) + (look ? " Say what sets the first one apart from the others, in a few short sentences." : " Say how they differ, in a few short sentences.");
-            brainAfter(qb, passages, links, "your guide", null).then(function (got) { if (got !== "summary") noModel(); });
+            brainAfter(qb, passages, links, fromTxt ? fromTxt + " guide" : "your guide", null).then(function (got) { if (got !== "summary") noModel(); });
           };
           // Claude only for a student who can already use him, inside the usual limits; anything else falls through
           var qc = text.slice(0, 270) + CMP_ASK;
-          claudeUsable(qc, f).then(function (ok) {
-            if (!ok) return viaBrain();
-            var priv = false, k = cacheKey("explain", qc, f, priv), hit = cached(k, priv);
+          // never about a past exam: a side from a past exam (another exam's card) keeps Claude out of it
+          claudeUsable(qc, f0).then(function (ok) {
+            if (!ok || anyPast) return viaBrain();
+            var priv = false, k = cacheKey("explain", qc, f0, priv), hit = cached(k, priv);
             passages.place = { before: links, note: null }; passages.onFail = viaBrain;
             if (hit) { claudeCard({ answer: hit.answer }, hit.mode, passages, "I asked Claude to compare them. (I'd asked before.)"); return; }
             if (!claudeRoom()) return viaBrain();
-            askClaude(qc, "explain", passages, f, "I asked Claude to compare them side by side.", k);
+            askClaude(qc, "explain", passages, f0, "I asked Claude to compare them side by side.", k);
           });
         });
       }
@@ -1403,9 +1415,15 @@
     });
     return { rows: rows, bottom: bottom };
   }
-  function cmpTable(sides, look) {
+  function otherExams(sides, f) {                 // "Exam A and Exam B": the exams other than this one the sides come from
+    var seen = {}, out = [];
+    sides.forEach(function (c) { var cf = c._f; if (cf && cf !== f && !seen[cf.s]) { seen[cf.s] = 1; out.push(cf.t); } });
+    return out.join(" and ");
+  }
+  function cmpTable(sides, look, f) {
     var d = cmpFromCards(sides), n = sides.length, box = el("div", "pw-msg pw-pip pw-cmp");
-    var names = sides.map(shortT);
+    var names = sides.map(shortT), from = otherExams(sides, f);
+    if (from) box.appendChild(el("p", "pw-cmplead", "From " + from + ":"));
     box.appendChild(el("p", "pw-cmplead", look
       ? "Here is what sets " + names[0] + " apart from the other topics in its section, using only what your guide says about each:"
       : "Here is how " + names.slice(0, -1).join(", ") + " and " + names[n - 1] + " differ, using only what your guide says about each:"));
@@ -1447,6 +1465,7 @@
   function explainOf(f) {
     if (!f || !f.ex) return Promise.resolve(null);
     return getJSON("explain/" + f.s + ".json").then(function (e) {
+      e.cards.forEach(function (c) { c._f = f; c._m = e.m; });         // each card knows its own exam and anchor map
       if (!e._ix) {
         e._texts = e.cards.map(function (c) { return numbered([c.t, c.t, c.k.join(" ; "), c.q.join(" ; ")].join(" ; ")); });
         e._ix = makeIndex(e._texts, e.cards.map(function (c) { return numbered(c.x); }));
@@ -1481,11 +1500,12 @@
   // the card that answers this question: it must match most of the question's words (rank() asks for
   // 60%) AND be about something the question names (a word of its title or other names), so a passing
   // mention in some other card's text never answers for it. A comparison may bring a second card.
-  function explainHits(f, text) {
-    return Promise.all([explainOf(f), guideIndex(f).catch(function () { return null; })]).then(function (r0) {
+  // lite: another exam's cards, searched with ITS OWN abbreviations (pip/data/ab.json) and without loading its guide
+  function explainHits(f, text, lite) {
+    return Promise.all([explainOf(f), lite ? null : guideIndex(f).catch(function () { return null; }), lite ? abAll() : null]).then(function (r0) {
       var e = r0[0], g = r0[1];
       if (!e || !e.cards.length) return [];
-      if (g && g.ab) e._ix.ab2 = g.ab;
+      if (g && g.ab) e._ix.ab2 = g.ab; else if (r0[2] && r0[2][f.s]) e._ix.ab2 = r0[2][f.s];
       if (g && !g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
       var ab = abFor(e._ix);
       var q = numbered(String(text).replace(/\b[A-Za-z][A-Za-z0-9]{1,7}\b/g, function (w) { var x = ab[w.toLowerCase()]; return !x ? w : e._ix.df[stem(w.toLowerCase())] ? w + " " + x : x; }));
@@ -1530,6 +1550,7 @@
       var out = [e.cards[hits[0][1]]];
       out.m = e.m;                                // anchor -> section, to pick the guide line from the same section
       out.cmp = hits.cmp ? 1 : 0;                  // a side-by-side card already answers it
+      out.sc = hits[0][0];
       if ((COMPARE.test(norm(text)) || /\b[a-z]{3,} or [a-z]{3,}\b/.test(norm(text))) && !hits.cmp) {
         var first = e._names[hits[0][1]];
         for (var i = 1; i < hits.length; i++) {
@@ -1538,12 +1559,100 @@
           if (own.length && hits[i][0] >= hits[0][0] * 0.4) { out.push(e.cards[hits[i][1]]); break; }
         }
       }
+      out.cov = coverOf(e, out, text, ab);
       return out;
+    }).catch(function () { return []; });
+  }
+  // ------------------------------------------------------------------ one question, every exam of the semester
+  // Jaxon, 2026-10-11: "PVC vs SVT" on the Clinical Medicine and Surgery I Exam 4 guide got one card that only
+  // lists them, because Pip searched only that exam; the real cards are in Principles of Diagnostic Medicine I
+  // Exam 3. The page's own exam (or the active one) still wins when its best card really covers the question
+  // (the question's specific words are in the card's title, other names or lead); otherwise a clearly stronger
+  // card from another exam of the semester wins, a current or upcoming exam before a past one. Each exam is
+  // searched with its own abbreviations; another exam's guide loads only for the answer that comes from it.
+  var COVER = 0.75, abP = null;
+  function abAll() {                              // slug -> that exam's own abbreviations (small; loaded on first need)
+    if (!abP) abP = index().then(function () { return getJSON("ab.json"); }).catch(function () { return {}; });
+    return abP;
+  }
+  var CMPW = {};
+  ("vs versus difference differences differ differs different differently compare compared comparing comparison contrast " +
+   "distinguish apart similar similarity similarities alike between tell").split(" ").forEach(function (w) { CMPW[w] = 1; });
+  // the share of the question's specific words (an abbreviation counts through its long form) that the best
+  // cards' title, other names or first sentence hold
+  function coverOf(e, cards, text, ab) {
+    var have = {};
+    cards.slice(0, 2).forEach(function (c) {
+      var lead = String(c.x).split(/\n/)[0].split(/[.!?]\s/)[0];
+      toks(numbered(c.t + " " + c.k.join(" ") + " " + lead)).forEach(function (w) { have[w] = 1; });
+    });
+    var n = 0, ok = 0, seen = {};
+    numbered(String(text)).replace(/[A-Za-z][A-Za-z0-9]*/g, function (w) {
+      var lw = w.toLowerCase(), t = toks(lw)[0];
+      if (!t || CMPW[lw] || GENERIC[t] || seen[t]) return w;
+      seen[t] = 1; n++;
+      var long = ab[lw], sp = toks(spell(lw, e._ix));
+      if (have[t] || sp.some(function (x) { return have[x]; }) || (long && toks(long).length && toks(long).every(function (x) { return have[x]; }))) ok++;
+      return w;
+    });
+    return n ? ok / n : 0;
+  }
+  // "PVC vs SVT", "difference between X and Y", "how do X and Y differ" -> ["pvc", "svt"]; null if it has no clear sides
+  function sidesOf(text) {
+    var n = norm(text).replace(/[’]/g, "'").replace(/[?!.]+\s*$/, "").trim();
+    n = n.replace(/\b(differ|differs|different|differently|compare|compared|alike|similar|apart)\b.*$/, "")
+      .replace(/^(?:(?:what(?:'s| is| are)?|how (?:do|does|can|is|are)|can you|please|tell me|i|you|we)\s+)*(?:the )?(?:difference|differences|similarit(?:y|ies)|comparison)\s+(?:between|of|in)\s+/, "")
+      .replace(/^(?:(?:how (?:do|can) (?:i|you|we) )?tell|compare|contrast|distinguish|differentiate)\s+/, "")
+      .replace(/^(?:how (?:do|does|are|is)\s+)/, "").trim();
+    var parts = n.split(/\s+(?:vs\.?|versus|and|or|from|with|against)\s+/).map(function (x) { return x.replace(/^(?:a|an|the|between)\s+/, "").trim(); }).filter(Boolean);
+    if (parts.length < 2 || parts.length > 3) return null;
+    for (var i = 0; i < parts.length; i++) if (parts[i].length > 60 || !toks(parts[i]).length) return null;
+    return parts;
+  }
+  // the best exam for this wording: home if it really covers, else a clearly stronger exam (current or upcoming before past)
+  function pickBest(f, text, others) {
+    return Promise.all([f].concat(others).map(function (x) {
+      return Promise.all([explainHits(x, text, x !== f), examDate(x)]).then(function (r) {
+        PAST[x.s] = !!(r[1] && daysUntil(r[1]) < 0);
+        return { f: x, h: r[0], cov: r[0].length ? (r[0].cov || 0) : 0, past: PAST[x.s] };
+      });
+    })).then(function (rs) {
+      var home = rs[0];
+      if (home.cov >= COVER) return home;
+      var ok = rs.slice(1).filter(function (r) { return r.cov >= COVER && r.cov >= home.cov + 0.2; });
+      var now = ok.filter(function (r) { return !r.past; }), pool = now.length ? now : ok;
+      pool.sort(function (a, b) { return b.cov - a.cov || (b.h.sc || 0) - (a.h.sc || 0); });
+      return pool[0] || null;
+    });
+  }
+  function explainWide(f, qx, text) {
+    return explainHits(f, qx).then(function (home) {
+      if (!IX || (home.length && home.cov >= COVER)) return home;
+      var others = IX.folders.filter(function (x) { return x !== f && x.ex && x.sem === f.sem; });
+      if (!others.length) return home;
+      var sides = COMPARE.test(norm(text)) ? sidesOf(text) : null;
+      return Promise.all([pickBest(f, qx, others),
+        sides ? Promise.all(sides.map(function (sd) { return pickBest(f, casual(sd), others); })) : null]).then(function (r) {
+        var rs = r[1];
+        // each side found on its own (maybe in different exams): one card per side, at least one from another exam
+        if (rs && rs.every(function (x) { return x && x.h.length; })) {
+          var cards = [], seen = {};
+          rs.forEach(function (x) { var c = x.h[0], k = c._f.s + "|" + c.id; if (!seen[k]) { seen[k] = 1; cards.push(c); } });
+          if (cards.length >= 2 && cards.some(function (c) { return c._f !== f; })) {
+            cards.m = cards[0]._m; cards.cmp = 0; cards.cross = 1; cards.cov = 1;
+            return cards;
+          }
+        }
+        var w = r[0];
+        if (w && w.f !== f && w.h.length) { var o = w.h.slice(); o.m = w.h.m; o.cmp = w.h.cmp; o.cross = 1; o.cov = w.cov; return o; }
+        return home;
+      });
     }).catch(function () { return []; });
   }
   // the line of the explained section that is most about this concept: the card's own names and the
   // question's words, weighted by how rare they are in the guide
   function guideLine(f, c, amap, question) {
+    f = c._f || f; amap = c._m || amap;           // a card from another exam reads THAT exam's guide
     if (!amap) return Promise.resolve(null);
     return guideIndex(f).then(function (g) {
       if (!g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
@@ -1596,6 +1705,8 @@
   function explainBubble(c, f, into, before) {
     var m = el("div", "pw-msg pw-pip pw-explain");
     m.appendChild(el("span", "pw-xh", c.t));
+    var cf = c._f || f;
+    if (cf !== f) m.appendChild(el("span", "pw-xl", "From " + cf.t));       // a card from another exam says so
     var list = null;
     String(c.x).split(/\n+/).forEach(function (line) {
       line = line.trim(); if (!line) return;
@@ -1603,7 +1714,7 @@
       if (b) { if (!list) { list = el("ul"); m.appendChild(list); } list.appendChild(el("li", null, b[1])); }
       else { list = null; m.appendChild(el("p", null, line)); }
     });
-    m.appendChild(linkTo(f.f, c.doc, c.a, "Read it in your guide →"));
+    m.appendChild(linkTo(cf.f, c.doc, c.a, "Read it in your guide →"));
     if (into) into.insertBefore(m, before || null); else { log.appendChild(m); scrollDown(); }
     return m;
   }
@@ -1955,7 +2066,7 @@
   function claudeUsable(question, f) {
     if (quizInProgress() || (P.kind === "quiz" && looksLikeOpenQuestion(question))) return Promise.resolve(false);
     return isOwner().then(function () {
-      if (herePast && f && where.folder === f && !ownerKnown) return false;
+      if (((herePast && f && where.folder === f) || (f && PAST[f.s])) && !ownerKnown) return false;
       return superbrain().then(function (S) {
         if (!S || S.state() !== "ready" || !S.consented()) return false;
         if (invitedOk) return true;
@@ -1965,7 +2076,7 @@
   }
   function maybeClaude(question, mode, passages, f, why, fromFollowUp) {
     if (quizInProgress() || (P.kind === "quiz" && looksLikeOpenQuestion(question))) return;
-    if (herePast && f && where.folder === f && !ownerKnown) { if (fromFollowUp) cantClaude(); return; }   // forward-moving: no Claude spend on a past exam unless the owner asks
+    if (((herePast && f && where.folder === f) || (f && PAST[f.s])) && !ownerKnown) { if (fromFollowUp) cantClaude(); return; }   // forward-moving: no Claude spend on a past exam unless the owner asks
     var priv = isPrivate(passages), k = cacheKey(mode, question, f, priv), hit = cached(k, priv);
     if (hit) { claudeCard({ answer: hit.answer }, hit.mode, passages, why + " (I'd asked before.)"); return; }
     var db = deviceBudget();

@@ -520,6 +520,7 @@ def main():
     ab_texts = []                     # every guide block and question, for the site-wide abbreviation list
     stats, misses = [], []
     explain_stats = []                # (folder, cards shipped, stale, dropped) per exam
+    ab_by_exam = {}                   # slug -> that guide's own abbreviations, for exams with cards (cross-exam search)
     all_ids = {}
 
     for folder in folders:
@@ -661,6 +662,8 @@ def main():
         guide_kb = dump(os.path.join(OUT, "guide", fslug + ".json"), gidx)
         ex_n, ex_stale, ex_drop = ship_explain(fslug, gidx)
         explain_stats.append((folder, ex_n, ex_stale, ex_drop))
+        if ex_n and gidx.get("ab"):
+            ab_by_exam[fslug] = gidx["ab"]
         ab_texts.extend(x[3] for x in gidx["b"])
         for q in qlist:
             ab_texts.append(q["q"]); ab_texts.extend(o[0] + " " + o[1] for o in q["o"])
@@ -676,6 +679,8 @@ def main():
     # one list for the whole site: a guide that never writes "(PCR)" still answers "PCR"
     index["ab"] = abbreviations(ab_texts)
     index_size = dump(os.path.join(OUT, "index.json"), index)
+    ab_kb = dump(os.path.join(OUT, "ab.json"), ab_by_exam) / 1024
+    print("per-exam abbreviations (%d exams with cards): %.1f KB" % (len(ab_by_exam), ab_kb))
     print("abbreviations (site-wide): %d" % len(index["ab"]))
 
     # ---- report
