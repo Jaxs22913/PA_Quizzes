@@ -1,5 +1,6 @@
-/* Pip, the study companion. Loaded by theme.js on Semester 2+ study pages (their <body>
-   carries data-dark-kind) and the homepage. Never on frozen Semester 1 pages.
+/* Pip, the study companion. Loaded by theme.js on every page that loads it (since 2026-10-11),
+   and by a small loader on the self-contained Semester 2 pages that omit theme.js. The 11
+   frozen self-contained Semester 1 files never load him.
 
    The rule (Jaxon, 2026-10-08): Pip reacts to things that actually happened (an answer
    submitted, a guide opened, a pack finished). It never animates for decoration, never
@@ -24,8 +25,12 @@
   var ROOT = new URL("../", me ? me.src : location.href).href;        // site root (pip/ is one folder down)
   var ASSETS = ROOT + "immutable/pip/v1/";
   var K_HIDDEN = "local:pip:hidden", K_HIDE_QUIZ = "local:pip:hidden:quiz", K_STILL = "local:pip:still";
-  var kind = (document.body && document.body.getAttribute("data-dark-kind")) || (isHome() ? "home" : null);
-  if (!kind) return;
+  // What kind of page this is: the page's own data-dark-kind, else the homepage, else an older quiz page
+  // (it has the quiz, start and results blocks), else a plain page. Pages with no exam of their own act as
+  // the homepage does. A live group game page is "gated": Pip stays paused there for the whole game.
+  var kind = (document.body && document.body.getAttribute("data-dark-kind")) ||
+    (isHome() ? "home" : (document.getElementById("quiz") && document.getElementById("results")) ? "quiz" : "page");
+  var gated = /(^|\/)group-(host|join)\.html$/.test(location.pathname);
 
   function isHome() {
     var p = location.pathname.replace(/\/index\.html$/, "/");
@@ -404,7 +409,7 @@
               thumb_up: 100, thumb_down: 100, fallback: 100, error: 100, pip_users_d: 1, pip_users_w: 1, pip_users_m: 1 },
     marks: { pip_users: { d: "pip_users_d", w: "pip_users_w", m: "pip_users_m" } }
   });
-  window.__pip = { react: react, ROOT: ROOT, kind: kind, dock: dock, setOpen: setOpen, now: function () { return current; },
+  window.__pip = { react: react, ROOT: ROOT, kind: kind, gated: gated, dock: dock, setOpen: setOpen, now: function () { return current; },
                    duet: { start: duetStart, finish: duetFinish, cancel: duetCancel, active: function () { return dock.classList.contains("duet"); } },
                    hide: function () { set(K_HIDDEN, "1"); applyHidden(); },
                    scale: function () { return cssK; }, get frameH() { return H; }, get frameW() { return W; }, clawdDX: CLAWD_DX,

@@ -17,7 +17,7 @@ What it checks (one PASS/FAIL line each; exit 1 on any FAIL):
     a guide search answers from pip/data, the hide button hides him (and
     it sticks across a reload) and the tab brings him back; the helper address is
     https://helper.pa-quizzes.com; no page errors;
-  - on a frozen Semester 1 page: no Pip;
+  - on a Semester 1 page (Pip is on every page since 2026-10-11): Pip loads, with no page errors;
   - on jaxs22913.github.io (GitHub Pages): Pip's code is never even requested.
 
 Pages are fixed Microbiology Exam 2 picks (the Pip tests used them since stage 4);
@@ -219,8 +219,8 @@ def main():
 
         if s1:
             c, pg = page("pa-quizzes.com")
-            shown = go(pg, s1, want_pip=False)
-            check("Semester 1 page (%s): no Pip" % s1, not shown and not pip_requests(pg), pip_requests(pg)[:2])
+            shown = go(pg, s1)
+            check("Semester 1 page (%s): Pip loads, no page errors" % s1, shown and not pg._errs, pg._errs[:2])
             c.close()
 
         # ------------------------------------------------------------------ GitHub Pages

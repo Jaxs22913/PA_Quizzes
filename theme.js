@@ -6547,19 +6547,20 @@ window.__themeKit.fireworks = function (cfg) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
 })();
 
-/* Pip, the study companion (pip/pip.js). Only on Semester 2+ study pages (their <body>
-   carries data-dark-kind) and the homepage; never on frozen Semester 1 pages. Loaded
-   after the page is up so it can never slow first paint.
+/* Pip, the study companion (pip/pip.js). On every page that loads theme.js, Semester 1 pages
+   included (Jaxon, 2026-10-11); the few self-contained pages that omit theme.js carry their own
+   small copy of this loader. Pip works out for himself what kind of page he is on, and on an older
+   quiz page he cannot read he stays paused (pip/pip-window.js). Loaded after the page is up so it
+   can never slow first paint.
    Only on pa-quizzes.com (and a local preview): GitHub Pages serves this same theme.js
    but does not get Pip until Jaxon decides otherwise. Same host list as pip-brain.js. */
 (function () {
   if (!/^(pa-quizzes\.com|www\.pa-quizzes\.com|localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+  if (window.top !== window) return;                     // never inside a frame
   var thisScript = document.querySelector('script[src$="theme.js"]');
   var base = thisScript ? thisScript.getAttribute("src").replace(/theme\.js$/, "") : "";
   function go() {
-    var b = document.body;
-    var home = base === "" && /(^|\/)(index\.html)?$/.test(location.pathname.split("/").pop() || "");
-    if (!b || (!b.hasAttribute("data-dark-kind") && !home)) return;
+    if (!document.body || window.__pip) return;
     var s = document.createElement("script"); s.src = base + "pip/pip.js"; s.async = true;
     document.head.appendChild(s);
   }

@@ -741,5 +741,14 @@ window.reportMistake = function(){
   });
 })();
 </script>
+<script>
+/* Pip, the study companion. This page omits theme.js, so it loads Pip itself: only on pa-quizzes.com and a
+   local preview, never in a frame, and Pip works here without Firebase (guide search and his cards). */
+(function () {
+  if (!/^(pa-quizzes\.com|www\.pa-quizzes\.com|localhost|127\.0\.0\.1)$/.test(location.hostname) || window.top !== window) return;
+  function go() { if (window.__pip) return; var s = document.createElement("script"); s.src = new URL("../pip/pip.js", location.href).href; s.async = true; document.head.appendChild(s); }
+  if (document.readyState === "complete") setTimeout(go, 0); else window.addEventListener("load", function () { setTimeout(go, 0); });
+})();
+</script>
 </body>
 </html>
