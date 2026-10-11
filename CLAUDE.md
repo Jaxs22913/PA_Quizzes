@@ -1,6 +1,6 @@
 # PA_Quizzes — orientation for a new session
 
-**Written 2026-09-22, last updated 2026-10-08.** Claude Code reads this file automatically at the start
+**Written 2026-09-22, last updated 2026-10-10.** Claude Code reads this file automatically at the start
 of every session in this repo. It is the map, not the territory: it tells you
 what exists and where the real detail lives, so read the things it points at
 rather than trusting the summary.
@@ -61,16 +61,33 @@ it still exists before relying on it.
   (It was moved out of `~/Documents` in July 2026 — iCloud sync was spawning
   conflict copies mid-build and twice a wrong copy nearly shipped. Do not move
   it back.)
-- Live: `https://jaxs22913.github.io/PA_Quizzes/`
-- Every push to `main` fires a GitHub Actions workflow that deploys in ~50s.
+- Live: `https://pa-quizzes.com/PA_Quizzes/` (Cloudflare Workers Static Assets,
+  `cloudflare/build.mjs`, `docs/HOSTING_CLOUDFLARE.md`). Since the 2026-10-10
+  cutover, every `https://jaxs22913.github.io/PA_Quizzes/` address shows only the
+  "PA Quizzes has moved" page (`.github/pages-moved/`), which hands a student's
+  saved progress over to the same page on pa-quizzes.com.
+- Every push to `main` fires two GitHub Actions workflows (`cloudflare.yml` for
+  pa-quizzes.com, `pages.yml` for the moved page) that deploy in about a minute.
 
 **A successful push is not a deploy.** During a GitHub outage three pushes
 landed with no workflow run created at all, and the live site served the old
 build for hours while the push output looked fine. After pushing, check the live
-URL — `curl` the changed file and grep for a string only the new version has.
+URL (pa-quizzes.com) — `curl` the changed file and grep for a string only the new
+version has.
 
-Pages serves with a **10-minute cache**, so "I pushed but don't see it" is
-usually that window. Hard refresh or a private window confirms it.
+### Pip, the study companion
+
+Pip (`pip/*.js`, sprites in `immutable/pip/v1/`) is loaded by the block at the end
+of `theme.js`, on pa-quizzes.com only, and only on Semester 2+ study pages and the
+homepage. His question banks and guide index (`pip/data/`) are generated, never
+committed: the Cloudflare deploy runs `tools/build_pip_data.py`, which fails the
+deploy loudly on a page it cannot parse (fix the page, never skip the step). His
+plain-language explanation cards live in `pip/explain/<exam>.json`
+(`python3 tools/pip_explain.py check`); after a guide edit, cards whose section
+changed show as stale until re-checked and re-stamped (`pip_explain.py rehash`).
+`tools/check_pip_launch.py` is the end-to-end check of a built `dist/`. The
+helper service Pip asks for Claude explanations is a separate, private Worker;
+its source is not in this repo.
 
 ---
 
