@@ -5976,13 +5976,14 @@ window.__themeKit.fireworks = function (cfg) {
     doc.documentElement.setAttribute("data-theme", document.documentElement.getAttribute("data-theme") || "light");
     var st = doc.createElement("style"); st.textContent = CHROME_CSS; doc.head.appendChild(st);
     frame._glStyle = st;
-    var target = doc.getElementById(L[1]);
+    var target = L[1] ? doc.getElementById(L[1]) : doc.body;
     if (!target) { panel.querySelector(".gl-load").textContent = "That part of the guide moved. Use “Open full guide”."; return; }
     for (var p = target; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
     var hit = L[3] ? findBlock(doc, target, L[3]) : null;
+    if (!hit && L[5] && L[3] && L[3].length > 90) hit = findBlock(doc, target, L[3].slice(0, 90));   // Pip's longer passages: match their opening
     if (hit) for (var d = hit; d; d = d.parentElement) if (d.tagName === "DETAILS") d.open = true;
     var mark = hit || target;
-    if (hit) hit.classList.add("gl-mark"); else target.classList.add("gl-head-mark");
+    if (hit) hit.classList.add("gl-mark"); else if (L[1]) target.classList.add("gl-head-mark");
     // Images above the passage load late and push it down, so keep it pinned
     // to the same spot until the student takes over (any scroll gesture / key)
     // or a few seconds pass. Eager loading so the shifts happen now, not as
@@ -6028,9 +6029,21 @@ window.__themeKit.fireworks = function (cfg) {
   function openPanel(key, trigger) {
     var L = links && links.l[key];
     if (!L) return;
+    showPanel(L, new URL(links.g[L[0]], location.href).href, trigger, "Back to question", null);
+  }
+  /* The generic opener (2026-10-11): any page that loads theme.js can open a guide passage in this same
+     panel, for Pip's guide links. o = {url (the guide, with or without #anchor), anchor, title, label, passage}.
+     Escape, x, tapping outside or the phone's Back closes it and the page is exactly as it was. */
+  window.openGuidePanel = function (o) {
+    if (!o || !o.url) return false;
+    var u = String(o.url), anchor = o.anchor || (u.indexOf("#") >= 0 ? decodeURIComponent(u.split("#")[1]) : "");
+    var L = [0, anchor, o.title || "", o.passage || "", 0, 1];
+    showPanel(L, new URL(u, location.href).href.split("#")[0], document.activeElement, "Back to page", o.label || "Study guide");
+    return true;
+  };
+  function showPanel(L, url, trigger, backLabel, kicker) {
     if (root) closePanel(true);
     lastTrigger = trigger;
-    var url = new URL(links.g[L[0]], location.href).href;
     root = document.createElement("div");
     root.className = "gl-root";
     root.setAttribute("role", "dialog");
@@ -6049,15 +6062,15 @@ window.__themeKit.fireworks = function (cfg) {
           '<iframe class="gl-frame" title="Study guide passage"></iframe></div>' +
       '</div>';
     var panel = root.querySelector(".gl-panel");
-    root.querySelector(".gl-hk").textContent = L[4] ? "Study guide · closest section"
-      : (L[3] ? "Study guide" : "Study guide · this section");
+    root.querySelector(".gl-hk").textContent = kicker || (L[4] ? "Study guide · closest section"
+      : (L[3] ? "Study guide" : "Study guide · this section"));
     root.querySelector(".gl-hn").textContent = L[2];
     // "Full guide" expands THIS panel (no new window, so there is always a way back
     // to the question); the same button then reads "Back to question".
     var full = root.querySelector(".gl-full");
     function setFull(on) {
       panel.classList.toggle("is-full", on);
-      full.innerHTML = on ? window.SiteIcon("arrowLeft", 14) + '<span>Back to question</span>'
+      full.innerHTML = on ? window.SiteIcon("arrowLeft", 14) + '<span>' + backLabel + '</span>'
                           : '<span>Full guide</span>' + window.SiteIcon("layers", 14);
       var f = root.querySelector(".gl-frame");
       if (f && f._glStyle) { f._glStyle.textContent = on ? FULL_CSS : CHROME_CSS; if (f._glRealign) setTimeout(f._glRealign, 60); }
