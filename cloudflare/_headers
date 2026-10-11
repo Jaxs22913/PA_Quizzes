@@ -7,13 +7,9 @@
 # every file (the site is public; this keeps cross-origin fetches of site JSON
 # working the same on both hosts).
 #
-# UNTIL CUTOVER ONLY: keep pa-quizzes.com out of search results while GitHub Pages
-# is still the address students use (a student who found it early would start
-# with an empty local profile on a new origin). At cutover delete the
-# X-Robots-Tag line below; the workers.dev rule after it stays for good.
+# Since the cutover (2026-10-10) pa-quizzes.com is the site, so it may be indexed.
 /*
   Access-Control-Allow-Origin: *
-  X-Robots-Tag: noindex
 
 # Keep the preview hosts out of search results for good (the real site is pa-quizzes.com).
 https://:worker.:subdomain.workers.dev/*
