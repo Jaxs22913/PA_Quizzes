@@ -354,19 +354,37 @@
     } catch (e) {}
     return st;
   }
-  // A quiz is IN PROGRESS from Start until the results screen (normal, exam mode or all-on-a-page).
+  // Pip is PAUSED (quizInProgress() is true) while a quiz question is still open. Jaxon, 2026-10-11:
+  // once the CURRENT question is answered and its feedback is on screen, the student may ask Pip anything
+  // until they move to the next question. So Pip stays paused: from Start until the current question is
+  // answered; for the whole quiz when feedback waits until Submit ("No feedback until you submit");
+  // and on a page whose quiz he cannot read (an older page): from Start until the results screen.
+  // In the "All on a page" view he is not paused, but refuses anything that matches a question still
+  // open (looksLikeOpenQuestion, and every pool he draws from leaves out the open questions: openSet()).
   // Stage-5 found the window could serve, and reveal the key of, questions still open on the page:
   // "quiz me on <two words of a stem>" drew that very question from the bank (the bank is made of the
-  // same questions). So while a quiz is in progress Pip's search and drills pause, and every pool
-  // Pip draws from leaves out the questions still open on this page (by id and by stem).
+  // same questions), which is why every pool leaves the open questions out.
+  var pauseWhy = "open";
   function quizInProgress() {
+    pauseWhy = "open";
+    if (P.gated) { pauseWhy = "group"; return true; }                // a live group game: paused the whole time
     if (P.kind !== "quiz") return false;
     try {
-      var st = document.getElementById("start"), res = document.getElementById("results");
+      var st = document.getElementById("start"), res = document.getElementById("results"), qz = document.getElementById("quiz");
       if (res && res.style.display === "block") return false;
       if (st && st.style.display !== "none") return false;
-      return typeof order !== "undefined" && order.length > 0;
-    } catch (e) { return false; }
+      if (typeof order === "undefined" || typeof answers === "undefined" || typeof QUESTIONS === "undefined" || typeof idx === "undefined") {
+        // cannot tell which question is open (an older page): paused while the quiz is showing
+        pauseWhy = "unknown";
+        return !qz || getComputedStyle(qz).display !== "none";
+      }
+      if (!order.length) return false;
+      var defer = typeof deferFeedback !== "undefined" && deferFeedback;
+      if (defer) { pauseWhy = "submit"; return true; }
+      if (typeof viewMode !== "undefined" && viewMode === "scroll") return false;     // refused per question instead
+      var q = quizState();
+      return !(q.current && q.answered);
+    } catch (e) { pauseWhy = "unknown"; return true; }
   }
   function openSet() {
     var ids = {}, stems = {};
@@ -377,7 +395,13 @@
     var o = openSet();
     return list.filter(function (q) { return !o.ids[q.id] && !o.ids[String(q.id).replace(/~\d+$/, "")] && !o.stems[norm(q.q).replace(/\s+/g, " ").trim()]; });
   }
-  var PAUSED = "I'm on pause while your quiz is open, so I can't give anything away. Once you answer a question I can show you where your guide covers it, or give you more like it; when you finish, ask me anything.";
+  function pausedText() {
+    quizInProgress();
+    if (pauseWhy === "group") return "I stay quiet during a live group quiz so it stays fair. Ask me anything on a study page.";
+    if (pauseWhy === "submit") return "You chose no feedback until you submit, so I'm on pause until you submit. After that, ask me anything.";
+    if (pauseWhy === "unknown") return "I'm on pause while this quiz is open, so I can't give anything away. When you finish, ask me anything.";
+    return "I'm on pause until you answer this question, so I can't give anything away. Once you've answered it and seen the feedback, ask me anything until you move on to the next question.";
+  }
   function looksLikeOpenQuestion(text) {
     var qt = uniq(toks(text));
     var st = quizState(), nt = norm(text);
@@ -518,6 +542,9 @@
     "#pip-win .pw-explain ul{margin:6px 0 0;padding-left:20px}#pip-win .pw-explain li{margin-top:3px}",
     "#pip-win .pw-explain a{display:inline-block;margin-top:8px;color:#1E3974;font-weight:600;font-size:13px;text-decoration:none}",
     "#pip-win .pw-explain a:hover{text-decoration:underline}",
+    "#pip-win .pw-glink a,#pip-win .pw-brain a{display:inline-block;margin-top:8px;color:#1E3974;font-weight:600;font-size:13px;text-decoration:none}",
+    "#pip-win .pw-glink a:hover,#pip-win .pw-brain a:hover{text-decoration:underline}",
+    "html[data-theme=dark] #pip-win .pw-glink a,html[data-theme=dark] #pip-win .pw-brain a{color:#C9D8FA}",
     "#pip-win .pw-help{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px;color:#5b6687}",
     "#pip-win .pw-help.pw-thanked{display:block}",
     "#pip-win .pw-thumb{display:inline-flex;align-items:center;justify-content:center;width:40px;height:34px;padding:0;border:1px solid #c9d1e6;border-radius:999px;background:#fff;color:#1E3974;cursor:pointer}",
@@ -990,7 +1017,7 @@
         if (here) list.push(["Practice 10 from " + here.t, function () { startPractice(here, 10); }]);
         if (missCount()) list.push(["Review all my misses", function () { location.href = ROOT + "review.html"; }]);
       } else if (st.onQuiz && st.current && !st.answered) {
-        say("I'll stay out of the way while you answer. Once you lock in an answer, I can show you where your guide covers it or give you more like it.");
+        say("I'll stay out of the way while you answer. Once you lock in an answer and see the feedback, ask me anything until you move on to the next question.");
         // nothing that searches while the quiz is open (it could surface an open question's answer)
       } else if (st.onQuiz && st.current && st.answered) {
         say("Want more on this one?");
@@ -1027,7 +1054,7 @@
         context().then(function (c) { say(c.next ? examLine(c.next) : "I don't see an exam coming up on the calendar."); });
         return;
       }
-      say(PAUSED); return;
+      say(pausedText()); return;
     }
     if (P.kind === "quiz" && looksLikeOpenQuestion(text)) {
       say("That looks like a question you haven't answered yet. Give it your best shot first, then I'll show you where your guide covers it.");
@@ -1061,6 +1088,7 @@
       var fq = la.expl ? (simp ? "I still don't get this. Explain it again, more simply: " : "Go one level deeper on this: why and how does it work? ") + la.expl.t
         : la.q + "\nFollow-up from the student: " + text;
       var fp = la.expl ? [{ title: "Pip's plain-language explanation of " + la.expl.t, text: la.expl.x }] : la.passages;
+      if (la.expl) fp.link = { folder: la.f.f, file: la.expl.doc, a: la.expl.a };
       maybeClaude(fq, simp ? "simpler" : "deeper", fp, la.f,
                   simp ? "You said it wasn't clicking yet, so I asked Claude to put it more simply." : "You wanted more on that, so I asked Claude to go a level deeper.", true);
       return;
@@ -1164,11 +1192,19 @@
         chips(base);
         ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, f, "You asked me to check with Claude."); }],
                           ["Go deeper with Claude", function () { askClaude(text, "deeper", passages, f, "You asked Claude to go deeper."); }]]);
+        // Own words first (Jaxon, 2026-10-11): Pip's summary or Claude's answer goes ABOVE the guide's exact
+        // words, with a "Read it in your guide" link under it to the top passage it was built from
+        var topLink = out.length ? { folder: out[0].f.f, file: out[0].g.docs[out[0].b[0]].file, a: out[0].b[1] } : null;
+        var place = { before: lead, note: null };
+        passages.link = topLink; passages.place = place;
         lastAsk = { q: text, passages: passages, f: f, t: Date.now() };
-        brainAfter(text, guideP.concat(noteP), lead, !noteP.length ? "your guide" : !guideP.length ? "your notes" : "your guide and notes").then(function (got) {
+        brainAfter(text, guideP.concat(noteP), lead, !noteP.length ? "your guide" : !guideP.length ? "your notes" : "your guide and notes", topLink).then(function (got) {
           // Pip decides: his own checked summary is enough; otherwise a real question (not a lookup)
           // goes to Claude for a plain-language explanation
-          if (got !== "summary" && wantsExplanation(text)) maybeClaude(text, "explain", passages, f, "I asked Claude to explain this in plain words.");
+          if (got === "summary" || !wantsExplanation(text)) return;
+          // no own words yet: say so, and the note goes when Claude's answer lands above the guide's words
+          if (lead && lead.parentNode === log) { place.note = el("div", "pw-msg pw-pip", "I can't put this in my own words right now, so here is the exact wording from your guide."); log.insertBefore(place.note, lead); }
+          maybeClaude(text, "explain", passages, f, "I asked Claude to explain this in plain words.");
         });
       }
       // Pip has his own checked explanation: it leads, then the single best line from the guide (its
@@ -1193,6 +1229,7 @@
         mine.forEach(noteCard);
         var guideP = out.map(function (r) { return { title: r.b[2] || "", text: r.b[3] }; }), noteP = mine.map(notePassage);
         var passages = guideP.slice(0, 2).concat(noteP.slice(0, 1));
+        passages.link = { folder: f.f, file: ex[0].doc, a: ex[0].a };
         var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
         chips(base);
         ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, f, "You asked me to check with Claude."); }],
@@ -1415,7 +1452,7 @@
     brokeSaid = true;
     say("My laptop brain had trouble on this computer, so I'll stick to your guide's own words for now.");
   }
-  function brainAfter(question, passages, lead, of) {   // resolves "summary" when a checked summary was shown
+  function brainAfter(question, passages, lead, of, link) {   // resolves "summary" when a checked summary was shown
     return brain().then(function (B) {
       if (!B) return "none";
       if (B.tier() && !(B.broken && B.broken())) {
@@ -1440,6 +1477,7 @@
           if (!r.ok) { count("fallback"); b.remove(); return "failed"; }
           b.textContent = r.text;
           b.appendChild(el("span", "pw-lbl", "Pip's summary of " + (of || "your guide") + " · checked against the passages below"));
+          if (link) b.appendChild(linkTo(link.folder, link.file, link.a, "Read it in your guide →"));
           scrollDown();
           return "summary";
         }).catch(function () {
@@ -1732,7 +1770,7 @@
   }
 
   function askClaude(question, mode, passages, f, why, cacheK, fu) {
-    if (quizInProgress()) { say(PAUSED); return; }
+    if (quizInProgress()) { say(pausedText()); return; }
     if (P.kind === "quiz" && looksLikeOpenQuestion(question)) {
       say("That looks like a question you haven't answered yet. Give it your best shot first, then Claude and I can help.");
       return;
@@ -1793,7 +1831,14 @@
     });
   }
   function claudeCard(r, mode, passages, why) {
+    // Claude's answer is Pip's "own words" for a guide question: it goes above the guide's exact words
+    // (once), with a "Read it in your guide" link under it
+    var pl = passages && passages.place; if (pl) delete passages.place;
     var cd = card(); cd.classList.add("pw-claude");
+    if (pl) {
+      if (pl.note) pl.note.remove();
+      if (pl.before && pl.before.parentNode === log) log.insertBefore(cd, pl.before);
+    }
     var head = el("div", "pw-chead");
     head.appendChild(el("b", null, "Claude assist"));
     if (mode === "beyond") head.appendChild(el("span", "pw-badge", "Beyond your guide"));
@@ -1806,6 +1851,8 @@
       if (m) { if (!list) { list = el("ul"); cd.appendChild(list); } list.appendChild(el("li", null, m[1])); }
       else { list = null; cd.appendChild(el("p", null, line)); }
     });
+    var gl = passages && passages.link;
+    if (gl) { var gw = el("div", "pw-glink"); gw.appendChild(linkTo(gl.folder, gl.file, gl.a, "Read it in your guide →")); cd.appendChild(gw); }
     if (why) cd.insertBefore(el("div", "pw-src", why + (r.cached ? " (Claude answered this one before.)" : "")), cd.children[1] || null);
     var foot = el("div", "pw-src");
     foot.appendChild(document.createTextNode("Claude can make mistakes. For your exam, your guide is the source." +
@@ -1817,7 +1864,7 @@
     }
     cd.appendChild(foot);
     helpful(cd);
-    scrollDown();
+    if (pl) scrollTo(cd); else scrollDown();
   }
 
   // ------------------------------------------------------------------ "about this question" (only once it is answered)
@@ -1830,7 +1877,7 @@
       bankOf(c.here).then(function (b) {
         var hit = b.q.filter(function (x) { return x.id === q.qid; })[0];
         if (!hit || !hit.g) {
-          if (quizInProgress()) return say("This one doesn't have a matching passage in your guide. Ask me again when you've finished the quiz.");
+          if (quizInProgress()) return say("This one doesn't have a matching passage in your guide. Ask me again once you've answered the question.");
           say("This one doesn't have a matching passage. Here's what I found by searching instead:"); return searchGuides(q.q + " " + q.opts[q.c][0]);
         }
         var cd = card();
@@ -1872,7 +1919,7 @@
     }).slice(0, n);
   }
   function startPractice(folder, n) {
-    if (quizInProgress()) return say(PAUSED);
+    if (quizInProgress()) return say(pausedText());
     bankOf(folder).then(function (b) {
       b = { q: notOpen(b.q), pages: b.pages };
       var h = hist(), missed = missedIds(folder, b), byId = {};
@@ -1905,7 +1952,7 @@
     return rank(b._ix, b._texts, expandFor(text, b._ix), 10).map(function (r) { return b.q[r[1]]; });
   }
   function topicPractice(folder, text) {
-    if (quizInProgress()) return say(PAUSED);
+    if (quizInProgress()) return say(pausedText());
     bankOf(folder).then(function (b) {
       var hits = notOpen(topicHits(b, text));
       if (!hits.length) return say("I couldn't find questions about that in " + folder.t + ". Try the name of a condition, drug or test.");
