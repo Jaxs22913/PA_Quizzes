@@ -160,28 +160,30 @@ _UK = re.compile(r"\b\w*(?:aemi|(?<!angi)oedem|oesoph|oestr|paediat|orthopaed|is
 SET1_LEAD_NOTE = None
 
 # ---------------------------------------------------------------------------
-# WRITER RULES (tools/question_writing/WRITER.md v1, Jaxon 2026-10-15), applied to
-# the lectures written after that date: 29-32. Lectures 26-28 keep the exact old
-# path (same random calls), so their shipped sets reproduce byte for byte.
+# WRITER RULES (tools/question_writing/WRITER.md v1, Jaxon 2026-10-15).
+#   ordered  EVERY Exam 5 set: numeric option sets (tools/_option_order.py decides:
+#            values, ages, durations, counts, stages, grades of one unit) are shown
+#            ASCENDING and not shuffled, the key sitting where its value falls. A
+#            non-numeric ordered set (degrees of block, ordinal words) is marked
+#            q["ordered"] = True with q["asc"] = the authored indices in ascending order.
+#            Lectures 26-28 keep their old random calls and are re-sorted after the
+#            rotation, so only their numeric questions move; Lectures 29-32 place
+#            ordered questions first and balance the rest of the cycle around them.
+# and for Lectures 29-32, written after that date:
 #   mis      every distractor carries its misconception as a THIRD element of the
-#            option, [text, explanation, "<category>"]; the category is from MIS.
-#            load_guarded moves it to q["mis"] (distractors in authored order) and
-#            the sets/pages never carry it.
-#   ordered  numeric or ordered option sets (values, ages, durations, counts,
-#            stages, grades) are shown ASCENDING and not shuffled: q["ordered"] =
-#            True, with q["asc"] = the authored indices in ascending order when the
-#            first number in each option cannot sort them. Four options that all
-#            open on a number must be marked.
-#   absolutes  "always", "never", "only", "all" in a distractor's text but not
-#            in the key's is a clue (WRITER.md writing rule 7).
+#            option, [text, explanation, "<category>"], the category from MIS. It
+#            stays on the option in the sets JSON (tools/blind_review.py reads it
+#            there) and render_cms_e5.py strips it from the pages.
+#   absolutes  "always", "never", "only", "all", "none" in a distractor's text but
+#            not in the key's is a clue (WRITER.md writing rule 7).
 # ---------------------------------------------------------------------------
+from _option_order import option_values, order_options
+
 WRITER_RULES = {"l29", "l30", "l31", "l32"}
 MIS = ("competing diagnosis", "wrong stage or severity", "ruled out by a stated finding",
        "confused mechanism or drug class", "adjacent fact", "reversed direction or value",
        "common lay belief")
-_ABSOL = re.compile(r"\b(always|never|only|all)\b", re.I)
-_NUMOPT = re.compile(r"^[<>\u2264\u2265~]?\s*\d")
-_FIRSTNUM = re.compile(r"(\d+(?:\.\d+)?)")
+_ABSOL = re.compile(r"\b(always|never|only|all|none)\b", re.I)
 
 
 def _lec_of(mod):
@@ -189,19 +191,19 @@ def _lec_of(mod):
     return m.group(1) if m else None
 
 
+def is_ordered(q):
+    return bool(q.get("ordered")) or option_values([o[0] for o in q["opts"]]) is not None
+
+
 def ascending(q):
-    """Authored option indices in display order (ascending) for an ordered question."""
+    """Option indices (as the options stand in q) in ascending display order."""
     if q.get("asc"):
         a = list(q["asc"])
         assert sorted(a) == [0, 1, 2, 3], "asc must be a permutation of 0-3: %r" % q["q"][:60]
         return a
-    vals = []
-    for o in q["opts"]:
-        m = _FIRSTNUM.search(o[0])
-        assert m, "ordered option without a number (give asc): %r" % o[0]
-        vals.append(float(m.group(1)))
-    assert len(set(vals)) == 4, "ordered options share a value (give asc): %r" % q["q"][:60]
-    return sorted(range(4), key=lambda j: vals[j])
+    vals = option_values([o[0] for o in q["opts"]])
+    assert vals is not None, "ordered question needs asc (options are not one numeric unit): %r" % q["q"][:60]
+    return sorted(range(4), key=lambda j: (vals[j], j))
 
 
 def _texts(q):
@@ -231,9 +233,6 @@ def load_guarded(lec, vig):
         for i, q in enumerate(qs):
             q = json.loads(json.dumps(q))          # never mutate the module's list
             q.setdefault("c", 0)
-            if any(len(o) > 2 for o in q["opts"]):
-                q["mis"] = [o[2] if len(o) > 2 else None for o in q["opts"][1:]]
-                q["opts"] = [o[:2] for o in q["opts"]]
             pt = patches.get(q["q"])
             if pt:
                 used.add(q["q"])
@@ -309,21 +308,21 @@ def guard_all(scope, pool, origin, vig):
         if _MOA.search(q["q"]): errs.append((where(i), "mechanism-of-action stem"))
         if _DEP.search(q["q"]): errs.append((where(i), "stem refers to another question"))
         if not q["q"].rstrip().endswith("?"): errs.append((where(i), "stem does not end on a question"))
+        if q.get("ordered"):
+            try:
+                ascending(q)
+            except AssertionError as e:
+                errs.append((where(i), str(e)))
         if _lec_of(origin[i][0]) in WRITER_RULES:
-            mis = q.get("mis") or []
-            if len(mis) != 3 or any(t not in MIS for t in mis):
+            if len(q["opts"][0]) != 2:
+                errs.append((where(i), "the key carries no misconception tag"))
+            mis = [o[2] if len(o) > 2 else None for o in q["opts"][1:]]
+            if any(t not in MIS for t in mis):
                 errs.append((where(i), "every distractor needs a misconception tag from MIS, got %r" % (mis,)))
             if not _ABSOL.search(q["opts"][0][0]):
                 for j, o in enumerate(q["opts"][1:], 1):
                     if _ABSOL.search(o[0]):
                         errs.append((where(i), "absolute %r only in distractor %d" % (_ABSOL.search(o[0]).group(0), j)))
-            if q.get("ordered"):
-                try:
-                    ascending(q)
-                except AssertionError as e:
-                    errs.append((where(i), str(e)))
-            elif all(_NUMOPT.match(o[0].strip()) for o in q["opts"]):
-                errs.append((where(i), "four numeric options must be marked ordered (shown ascending)"))
         if vig:
             if not _VIG.match(q["q"].strip()): errs.append((where(i), "vignette stem does not open on a patient"))
             lead = q.get("lead")
@@ -464,8 +463,8 @@ def guarded_main():
             # positions so the form stays as even as the cycle allows
             fixed = {}
             for n, q in enumerate(qs):
-                if q.get("ordered"):
-                    fixed[n] = ascending(q).index(0)
+                if is_ordered(q):
+                    fixed[n] = ascending(q).index(q["c"])
             want = [len(qs) // 4 + (1 if k < len(qs) % 4 else 0) for k in range(4)]
             random.shuffle(want)
             for t in fixed.values():
@@ -479,19 +478,21 @@ def guarded_main():
             free = free[:len(qs) - len(fixed)]
             it = iter(free)
             targets = [fixed[n] if n in fixed else next(it) for n in range(len(qs))]
-        for i, q, t in zip(part, qs, targets):
-            if lec in WRITER_RULES and q.get("ordered"):
+        for n, (i, q, t) in enumerate(zip(part, qs, targets)):
+            if is_ordered(q) and (lec in WRITER_RULES or q.get("ordered")):
                 order = ascending(q)
                 q["opts"] = [q["opts"][j] for j in order]
-                q["c"] = order.index(0)
-                assert q["c"] == t
+                q["c"] = order.index(q["c"])
+                assert q["c"] == t or lec not in WRITER_RULES
             else:
                 k = (t - q["c"]) % 4
                 q["opts"] = q["opts"][-k:] + q["opts"][:-k] if k else q["opts"]
                 q["c"] = t
+                if is_ordered(q):                   # Lectures 26-28: re-sort after the old rotation
+                    qs[n] = q = order_options(q)
             assert q["opts"][q["c"]][0] == answer_text[i], "rotation moved an answer!"
             assert re.match(r"correct\b", q["opts"][q["c"]][1], re.I)
-            for f in ("mis", "ordered", "asc"):     # authoring fields stay out of the pages
+            for f in ("ordered", "asc"):            # authoring fields stay out of the sets
                 q.pop(f, None)
         sets.append(qs)
     print("rotation check: every correct answer still points at its own text\n")

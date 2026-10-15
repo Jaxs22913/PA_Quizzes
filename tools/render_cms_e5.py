@@ -118,7 +118,10 @@ SPEC = {
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
 for n, (key, fname) in enumerate(zip(("set1", "set2"), SPEC["files"]), start=1):
-    qs = S[key]
+    # the sets keep each distractor's misconception tag as a third option element
+    # (WRITER.md; tools/blind_review.py reads it there); the pages carry text + explanation only
+    qs = [dict({k: v for k, v in q.items() if k not in ("mis", "ordered", "asc")},
+               opts=[o[:2] for o in q["opts"]]) for q in S[key]]
     html = R.render(title=SPEC["title"] % n, h1=SPEC["h1"] % n, sub=SPEC["sub"],
                     pill="%d questions" % len(qs), chips=SPEC["chips"], intro="",
                     questions=qs, already_converted=True, **PAL)
