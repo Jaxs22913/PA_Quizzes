@@ -1441,6 +1441,13 @@
           for (var i = 0; i < g.b.length; i++) if (g.b[i][1] === c.a && g.docs[g.b[i][0]].file === c.doc) { hs.push(i); break; }
         });
         out.forEach(function (r) { if (r.f === gf) { var i = r.g.b.indexOf(r.b); if (i >= 0) hs.push(i); } });
+        // then that guide's own best lines for the question: Claude reads a guide Pip's answer may not have come from, and
+        // without pointers it missed the Exam 5 lines on pulmonary embolism (inside deep vein thrombosis), 2026-10-15
+        prepGuide(g);
+        if (g.ab && !g._ix.ab2) g._ix.ab2 = g.ab;
+        rank(g._ix, g._texts, expandFor(casual(text), g._ix), 12).forEach(function (r) {
+          if (g.docs[g.b[r[1]][0]].kind !== "cram") hs.push(r[1]);
+        });
         return uniq(hs).slice(0, 12);
       }
       function askGuide(q, out, mine, ex, dd, defn, fallback) {
