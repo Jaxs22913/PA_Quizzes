@@ -1545,7 +1545,7 @@
           o.quotes.forEach(function (q, i) {
             var a = linkTo(gf.f, c.doc, c.a, "", c.t, q);
             a.className = "pw-cq"; a.textContent = "";
-            a.appendChild(el("q", null, q.length > 220 ? q.slice(0, q.lastIndexOf(" ", 210)) + "\u2026" : q));
+            a.appendChild(el("q", null, q.length > 220 ? cutAt(q, 210, true) + "\u2026" : q));
             if (i === o.quotes.length - 1) a.appendChild(el("span", "pw-cqsrc", "Your guide: " + (long ? c.h : head) + " \u2192"));
             box.appendChild(a);
           });
@@ -2903,9 +2903,21 @@
   function rememberTurn(q, a, gf, sq) {
     q = String(q || "").trim(); a = String(a || "").trim();
     if (!q || !a || !gf) return;
-    if (convoNow() === null) convo.turns = [];
-    convo.turns.push({ q: q.slice(0, 500), a: a.slice(0, 1200), gf: gf, sq: sq || q });
-    convo.turns = convo.turns.slice(-2); convo.t = Date.now(); convo.page = pageKey();
+    var cv = convoNow(), last = cv && cv.turns[cv.turns.length - 1];
+    convo.t = Date.now(); convo.page = pageKey();
+    // the same question again (a cached answer shown twice) is one turn, not two
+    if (last && norm(last.q).trim() === norm(q).trim()) return;
+    convo.turns.push({ q: cutAt(q, 500), a: cutAt(a, 1200), gf: gf, sq: sq || q });
+    convo.turns = convo.turns.slice(-2);
+  }
+  // the first n characters of s, at the last space before n when word is set (unless that is far back), never inside a
+  // surrogate pair (half an emoji is a broken character)
+  function cutAt(s, n, word) {
+    s = String(s);
+    if (s.length <= n) return s;
+    var k = word ? s.lastIndexOf(" ", n) : -1;
+    var out = s.slice(0, k > n * 0.6 ? k : n);
+    return /[\ud800-\udbff]$/.test(out) ? out.slice(0, -1) : out;
   }
   // words that refer back to the conversation: "it", "they", "those", "what about ...", "and ...", "why ..."
   var REFER = /\b(it|its|they|them|their|theirs|those|these)\b|\b(this|that)\s*($|[?.!,]|\b(is|was|does|do|mean|means|happen|happens|work|works|cause|causes|look|looks|show|shows|present|presents|differ|compare|change|treated|diagnosed|managed)\b)|^\s*(what|how)\s+about\b|^\s*(and|but|so|then|also|plus)\b|^\s*why\b/;

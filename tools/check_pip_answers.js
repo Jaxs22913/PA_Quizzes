@@ -28,7 +28,7 @@ const code = [
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
       'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining', 'wordCount', 'examByWords',
-      'pageKey', 'convoNow', 'rememberTurn', 'followUp'].map(grab),
+      'pageKey', 'convoNow', 'rememberTurn', 'cutAt', 'followUp'].map(grab),
   grabVar(/var EXPLAIN = [^\n]*/), grabVar(/var convo = \{[^}]*\};/), grabVar(/var REFER = [^\n]*/)
 ].join('\n');
 const IX = JSON.parse(fs.readFileSync(DATA + 'index.json', 'utf8'));
