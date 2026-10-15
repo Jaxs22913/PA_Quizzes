@@ -74,7 +74,7 @@
   .bit{margin:0 0 12px;padding:0}
   .bit blockquote{margin:0;padding:8px 12px;border-left:4px solid var(--primary);background:#f3f6fe;border-radius:0 8px 8px 0;
     color:var(--ink);overflow-wrap:anywhere}
-  .bit .mynote{margin:6px 0 0;font-size:14px;color:var(--body)}
+  .bit .mynote{margin:6px 0 0;font-size:14px;color:var(--body);white-space:pre-wrap;overflow-wrap:anywhere}
   .bit .mynote b{color:var(--ink)}
   .bit .meta{margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted)}
   .bit .meta .btn{padding:6px 11px;min-height:32px;box-shadow:none}
@@ -93,6 +93,7 @@
   .empty a{color:var(--primary);font-weight:700}
   footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 
+  @media (pointer:coarse){ .btn,.bit .meta .btn,.picker button{min-height:44px} }
   @media print{
     @page{margin:12mm}
     body{background:#fff;font-size:11px}
@@ -109,8 +110,9 @@
   <header>
     <div class="kicker">Built from what you saved</div>
     <h1>My Review Guide</h1>
-    <p class="sub">The passages you added with &ldquo;Add to Pip notes&rdquo;, in the order they appear in the guide,
-      with your own notes and Pip&rsquo;s plain-words explanation of each part. Your words and the guide&rsquo;s words, nothing else.</p>
+    <p class="sub">The passages and notes you added with &ldquo;Add to Pip&rdquo;, in the order they appear in the guide:
+      the guide&rsquo;s own words and your own notes. Where Pip has a checked plain-words explanation of a section,
+      it is folded underneath (&ldquo;Pip&rsquo;s take&rdquo;).</p>
     <p class="when" id="when"></p>
   </header>
 
@@ -125,8 +127,8 @@
   <div id="guide"></div>
 
   <footer>
-    Kept on this device and in your account if you are signed in. Select text in any study guide or cram sheet and tap
-    &ldquo;Add to Pip notes&rdquo; to add more.
+    Kept on this device and in your account if you are signed in. To add more, select text in any study guide or
+    cram sheet and tap &ldquo;Add to Pip&rdquo;, or open a highlight or a note box and tap &ldquo;Add to Pip&rdquo;.
   </footer>
 </div>
 
@@ -211,27 +213,35 @@
     var t = ""; ((G && G.docs) || []).forEach(function (d) { if (d.file === file) t = d.title; });
     return t || "Study guide";
   }
+  function num(x) { return typeof x === "number" && isFinite(x) ? x : 1e9; }
   function groups(list) {
     var sorted = list.slice().sort(function (a, b) {
-      return docIdx(a.d) - docIdx(b.d) || (a.u - b.u) || (a.at < b.at ? -1 : 1);
+      return docIdx(a.d) - docIdx(b.d) || (num(a.u) - num(b.u)) || (num(a.o) - num(b.o)) || (a.at < b.at ? -1 : 1);
     });
+    // a page's part (its section[id], or the page), then the section heading the passage sits under;
+    // `a` stays per item (the exact spot, for "Open in the guide" and the quiz), so one heading is one card
     var decks = [], byDeck = {};
     sorted.forEach(function (it) {
       var dk = it.d + "|" + (it.k || ""), g = byDeck[dk];
       if (!g) { g = byDeck[dk] = { title: it.kt || docTitle(it.d), secs: [], by: {}, count: 0 }; decks.push(g); }
-      var sk = it.a || "", sc = g.by[sk];
-      if (!sc) { sc = g.by[sk] = { d: it.d, a: it.a, st: it.st, items: [] }; g.secs.push(sc); }
+      var sk = it.st || it.a || "", sc = g.by[sk];
+      if (!sc) { sc = g.by[sk] = { d: it.d, st: it.st, items: [] }; g.secs.push(sc); }
       sc.items.push(it); g.count++;
     });
     return decks;
   }
+  function spots(items) {               // the distinct guide spots {d, a} of some items
+    var seen = {}, out = [];
+    items.forEach(function (it) { if (it.a && !seen[it.d + "#" + it.a]) { seen[it.d + "#" + it.a] = 1; out.push({ d: it.d, a: it.a }); } });
+    return out;
+  }
 
   // ---- Pip's checked card(s) for a section ----
   function cardsFor(sec) {
-    if (!E || !sec.a) return [];
-    var unit = (E.m || {})[sec.d + "#" + sec.a], cards = (E.cards || []).filter(function (c) {
-      return (unit && c.u === unit) || (c.doc === sec.d && c.a === sec.a);
-    });
+    if (!E) return [];
+    var units = {}, at = {};
+    spots(sec.items).forEach(function (s) { var u = (E.m || {})[s.d + "#" + s.a]; if (u) units[u] = 1; at[s.d + "#" + s.a] = 1; });
+    var cards = (E.cards || []).filter(function (c) { return units[c.u] || at[c.doc + "#" + c.a]; });
     if (cards.length <= 2) return cards;
     var mine = words(sec.items.map(function (i) { return i.t + " " + (i.n || ""); }).join(" "));
     return cards.map(function (c) {
@@ -275,7 +285,7 @@
     if (!n) {
       var e = el("div", "empty");
       e.appendChild(el("h3", null, "Nothing saved for " + folder.t + " yet"));
-      e.appendChild(el("p", null, "Open a study guide or cram sheet, select a sentence or a few words, and tap “Add to Pip notes”. Everything you add shows up here, in guide order, ready to review before the exam."));
+      e.appendChild(el("p", null, "Open a study guide or cram sheet, select a sentence or a few words, and tap “Add to Pip”. Everything you add shows up here, in guide order, ready to review before the exam."));
       var p = el("p"); var a = el("a", null, "Go to the study guides"); a.href = "guides.html"; p.appendChild(a); e.appendChild(p);
       box.appendChild(e); return;
     }
@@ -315,9 +325,9 @@
           });
           card.appendChild(d);
         }
-        if (sc.a) {
+        if (spots(sc.items).length) {
           var ft = el("div", "secfoot");
-          ft.appendChild(btn("Quiz me on this section", null, function () { quiz([{ d: sc.d, a: sc.a }]); }));
+          ft.appendChild(btn("Quiz me on this section", null, function () { quiz(spots(sc.items)); }));
           card.appendChild(ft);
         }
         sec.appendChild(card);
@@ -327,11 +337,7 @@
     $("summary").textContent = n + (n === 1 ? " passage" : " passages") + " from " + secCount + (secCount === 1 ? " section" : " sections");
   }
 
-  function sectionsOf() {
-    var seen = {}, out = [];
-    items.forEach(function (it) { if (it.a && !seen[it.d + "#" + it.a]) { seen[it.d + "#" + it.a] = 1; out.push({ d: it.d, a: it.a }); } });
-    return out;
-  }
+  function sectionsOf() { return spots(items); }
 
   // ---- load one exam ----
   function show(s, pushUrl) {
