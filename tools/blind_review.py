@@ -86,6 +86,8 @@ import check_exam_standard as X  # noqa: E402  (load, is_frozen: the same questi
 RECORDS = os.path.join(HERE, "blind_review.json")
 SCOPE = os.path.join(HERE, "question_writing", "scope.json")
 CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides")
+TEXT_VERSION = "ph1"                        # bump when extract_deck changes, so cached slide text is re-read
+                                            # (ph1: a picture placeholder holding a picture is flagged too)
 IMG_CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides-img")
 MANIFESTS = os.path.expanduser("~/.cache/pa-quizzes/review-manifests")
 MIN_IMG_BYTES = 8 * 1024                    # smaller pictures are decorative (bullets, logos, rules)
@@ -338,6 +340,17 @@ def file_hash(path):
     return h.hexdigest()
 
 
+def _holds_picture(sh):
+    """A picture PLACEHOLDER filled with a picture (python-pptx PlaceholderPicture) is not shape_type PICTURE, but
+    it can hold a slide's whole content (an infographic, a labelled figure) with no text at all.
+    extract_images already reads it through `.image`; the text must flag it too, or evidence_for never
+    lists that slide's pictures."""
+    try:
+        return bool(sh.image.blob)
+    except Exception:
+        return False
+
+
 def extract_deck(path):
     """{slide number: text with its '=== SLIDE N ===' marker}. Text frames, tables and groups; pictures
     and charts are flagged because their content is NOT in this text. Speaker notes are not included
@@ -355,7 +368,7 @@ def extract_deck(path):
                 if st == T.GROUP:
                     walk(sh.shapes)
                     continue
-                if st == T.PICTURE:
+                if st == T.PICTURE or (st == T.PLACEHOLDER and _holds_picture(sh)):
                     flags["picture"] += 1
                 if getattr(sh, "has_chart", False) and sh.has_chart:
                     flags["chart"] += 1
@@ -380,7 +393,7 @@ def extract_deck(path):
 def deck_slides(path):
     """Cached extraction, keyed by the deck's CONTENT hash, kept outside the repo (private)."""
     os.makedirs(CACHE, mode=0o700, exist_ok=True)
-    cp = os.path.join(CACHE, file_hash(path) + ".json")
+    cp = os.path.join(CACHE, "%s-%s.json" % (file_hash(path), TEXT_VERSION))
     if os.path.exists(cp):
         return {int(k): v for k, v in json.load(open(cp, encoding="utf-8")).items()}
     slides = extract_deck(path)
@@ -938,7 +951,9 @@ def gather(folders, scope_only=False, files_glob=None):
     globs = load_scope() if scope_only else None
     allq, unparse = [], []
     for f in folders:
-        for q in load_folder(f, files_glob, unparse):
+        # join `mis` from the sources exactly as export does: the audit hash covers it, and without the join
+        # every question whose distractors carry `mis` looked STALE in report/check (fixed 2026-10-15)
+        for q in attach_sources(load_folder(f, files_glob, unparse)):
             if scope_only and not in_scope(q.file, globs):
                 continue
             allq.append(q)
@@ -1025,7 +1040,7 @@ def cmd_check(a):
     rec = load_records(a.records)
     globs = load_scope()
     unparse = []
-    qs = load_folder(a.folder, None, unparse)
+    qs = attach_sources(load_folder(a.folder, None, unparse))   # same `mis` join as export (see gather)
     scoped = qs if a.all else [q for q in qs if in_scope(q.file, globs)]
     bad = []
     reused = 0

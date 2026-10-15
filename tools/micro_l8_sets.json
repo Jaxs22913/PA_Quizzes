@@ -281,12 +281,12 @@
    "q": "What does the Kirby-Bauer disk-diffusion test give you?",
    "opts": [
     [
-     "The antibody titre in the patient's serum",
-     "Antibody titre in the patient's serum is measured by serological testing rather than by susceptibility testing."
+     "The antibody titer in the patient's serum",
+     "Antibody titer in the patient's serum is measured by serological testing rather than by susceptibility testing."
     ],
     [
      "Which drugs the microbe is susceptible to",
-     "Correct: each disk reports whether the microbe is susceptible or resistant to that drug. The dose comes from pharmacology and dilution testing rather than from this plate."
+     "Correct: the disk-diffusion test shows which antimicrobial drugs are effective against the microbe, larger zones of inhibition marking the more effective disks."
     ],
     [
      "The identity of the organism",
@@ -298,7 +298,12 @@
     ]
    ],
    "c": 1,
-   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 24"
+   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slides 5, 24, 25 and 30",
+   "mis": {
+    "The identity of the organism": "identification confused with susceptibility testing",
+    "The genetic basis of any resistance": "genotype confused with the phenotype the plate shows",
+    "The antibody titer in the patient's serum": "serology confused with susceptibility testing"
+   }
   },
   {
    "topic": "Culture media",
@@ -426,29 +431,34 @@
    "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 3"
   },
   {
-   "topic": "Immunological methods",
+   "topic": "Genotypic methods",
    "io": "1 — Recall common infectious agents and the diseases that they cause",
-   "q": "Why is testing for antibodies often preferred to testing for the microbe itself?",
+   "q": "What is restriction fragment length polymorphism analysis often called?",
    "opts": [
     [
-     "It does not require a specimen",
-     "A specimen is still needed; the advantage is in ease and speed."
+     "Phage typing",
+     "Phage typing, bacteriophage typing, is a phenotypic method; restriction fragment length polymorphism analysis is a genotypic method known as DNA fingerprinting."
     ],
     [
-     "It identifies antimicrobial susceptibility at the same time",
-     "Antimicrobial susceptibility requires separate testing, by disk diffusion or by an MIC strip."
+     "Serotyping",
+     "Serotyping, mixing an unknown microbe with antibodies of known specificity, is immunological; restriction fragment length polymorphism analysis is DNA fingerprinting."
     ],
     [
-     "It works without knowing what is suspected",
-     "You must have a general idea in advance in order to target the rapid test."
+     "Gram staining",
+     "A Gram stain shows a cell's stain reaction, a microscopic phenotypic method; restriction fragment length polymorphism analysis is genotypic, known as DNA fingerprinting."
     ],
     [
-     "It is generally easier and faster",
-     "Correct — the rapid strep test takes ten to fifteen minutes, against the far longer wait for a culture to grow, though a negative rapid test can still miss infection."
+     "DNA fingerprinting",
+     "Correct: restriction fragment length polymorphism analysis, a genotypic method in which DNA probes bind a microbe's specific sequences, is known as DNA fingerprinting."
     ]
    ],
    "c": 3,
-   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 9"
+   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slides 26, 24 and 6 and image on Slide 31",
+   "mis": {
+    "Phage typing": "a phenotypic typing method taken for a genotypic one",
+    "Serotyping": "an immunological typing method taken for a genotypic one",
+    "Gram staining": "a microscopic phenotypic method taken for a genotypic one"
+   }
   },
   {
    "topic": "Culture media",
@@ -855,27 +865,32 @@
   {
    "topic": "Laboratory routes",
    "io": "1 — Recall common infectious agents and the diseases that they cause",
-   "q": "Into which two categories do results fall?",
+   "q": "Into which two categories do the results of specimen analysis fall?",
    "opts": [
     [
      "Positive or negative",
-     "The categories named concern the strength of the identification rather than the direction of the result."
+     "Positive or negative describes what a single test shows; the two categories of results are presumptive and confirmatory."
     ],
     [
      "Direct or indirect",
-     "Those describe fluorescent antibody methods rather than result categories."
+     "Direct and indirect describe fluorescent antibody methods; the two categories of results are presumptive and confirmatory."
     ],
     [
      "Sensitive or specific",
-     "Those are properties of a test rather than categories of result."
+     "Sensitivity and specificity are properties of a test; the two categories of results are presumptive and confirmatory."
     ],
     [
      "Presumptive or confirmatory",
-     "Correct, and the distinction matters clinically because a presumptive result may be enough to start treatment while confirmation follows."
+     "Correct: the two categories of results in specimen analysis are presumptive and confirmatory."
     ]
    ],
    "c": 3,
-   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 13"
+   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slides 13, 32 and 47",
+   "mis": {
+    "Positive or negative": "direction of a single result confused with the result category",
+    "Direct or indirect": "names of fluorescent antibody methods",
+    "Sensitive or specific": "properties of a test confused with result categories"
+   }
   },
   {
    "topic": "Phenotypic methods",
@@ -1080,27 +1095,32 @@
   {
    "topic": "Phenotypic methods",
    "io": "1 — Recall common infectious agents and the diseases that they cause",
-   "q": "Which of these is a named common laboratory test?",
+   "q": "Which of these is a common biochemical test run on a cultivated specimen?",
    "opts": [
     [
      "Coagulase",
-     "Correct, alongside catalase, oxidase, the hemolysins, carbohydrate fermentation, amino acid utilization, and hydrolysis of gelatin, starch or lipids."
+     "Correct: coagulase is one of the common biochemical tests, alongside catalase, oxidase, the hemolysins, carbohydrate fermentation, amino acid utilization and hydrolysis of gelatin, starch or lipids."
     ],
     [
      "Polymerase chain reaction",
-     "That is a genotypic method, amplifying specific stretches of nucleic acid."
+     "Polymerase chain reaction is a genotypic method, a thermal cycler amplifying specific bits of DNA or RNA, not a biochemical test."
     ],
     [
      "Western blot",
-     "That is an immunological technique for detecting proteins after electrophoretic separation."
+     "Western blot is an immunological technique: proteins are separated by electrophoresis, then detected by an immunoassay."
     ],
     [
      "Ouchterlony double-diffusion",
-     "That is a precipitation test, an immunological rather than biochemical method."
+     "Ouchterlony double-diffusion is an immunological precipitation test run in agar gel, not a biochemical test."
     ]
    ],
    "c": 0,
-   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 17"
+   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slides 16, 17, 27, 36 and 39",
+   "mis": {
+    "Polymerase chain reaction": "genotypic method mistaken for a biochemical test",
+    "Western blot": "immunological method mistaken for a biochemical test",
+    "Ouchterlony double-diffusion": "immunological precipitation method mistaken for a biochemical test"
+   }
   },
   {
    "topic": "In vivo testing",
@@ -1159,23 +1179,28 @@
    "opts": [
     [
      "Detect only large amounts",
-     "These methods are also very sensitive and can detect small amounts; specificity concerns which antigen is recognized, not how much is present."
+     "These methods are very sensitive and detect small amounts; specificity concerns which antigen an antibody binds, not how much is present."
     ],
     [
      "Amplify the signal enzymatically",
-     "Enzymatic amplification is specific to the enzyme-linked immunosorbent assay rather than to serology generally, and it is not what specificity means."
+     "An enzyme producing a colored product is how the enzyme-linked immunosorbent assay reads out; it is not what antibody specificity gives serology."
     ],
     [
      "Run in duplicate every time",
-     "Replication improves reliability, but specificity is the ability of antibodies to bind their own antigen and so separate look-alikes."
+     "Running tests in duplicate is not what specificity provides; specificity means an antibody binds its own antigen, so known antibodies can identify a microbe."
     ],
     [
-     "Tell close relatives apart",
-     "Correct, because each antibody binds its own antigen, so look-alike organisms can be separated. Sensitivity, the detection of small amounts, is a different property."
+     "Identify an unknown microbe",
+     "Correct: in serotyping, an unknown microbe is mixed with antibodies of known specificity, and a reaction shows a match between antibody and antigen that identifies the microbe."
     ]
    ],
    "c": 3,
-   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 30"
+   "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slides 30, 32, 50 and image on Slide 31",
+   "mis": {
+    "Detect only large amounts": "reversed: these methods are very sensitive",
+    "Amplify the signal enzymatically": "one assay's readout mistaken for what specificity provides",
+    "Run in duplicate every time": "laboratory procedure confused with an antibody property"
+   }
   },
   {
    "topic": "Viral diagnosis",

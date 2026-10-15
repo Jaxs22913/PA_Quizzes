@@ -49,13 +49,21 @@ def image_unit_tests(tmp):
     s2.shapes.add_picture(noise(8, 8, "PNG"), Inches(5), Inches(1))               # tiny: decorative, skipped
     s3 = prs.slides.add_slide(prs.slide_layouts[5])
     s3.shapes.add_picture(noise(100, 100, "TIFF"), Inches(1), Inches(1))
+    # slide 4: the whole content is a picture inserted into a picture PLACEHOLDER (no picture shape, no text)
+    from pptx.enum.shapes import PP_PLACEHOLDER
+    s4 = prs.slides.add_slide(prs.slide_layouts[8])
+    ph = [p for p in s4.placeholders if p.placeholder_format.type == PP_PLACEHOLDER.PICTURE][0]
+    ph.insert_picture(noise(160, 120, "PNG"))
     deck = os.path.join(tmp, "synthetic deck.pptx")
     prs.save(deck)
     old = R.IMG_CACHE
     R.IMG_CACHE = os.path.join(tmp, "slides-img")
     try:
         got = R.deck_images(deck)
-        assert sorted(got) == [2, 3] and len(got[2]) == 1 and len(got[3]) == 1, got
+        assert sorted(got) == [2, 3, 4] and len(got[2]) == 1 and len(got[3]) == 1 and len(got[4]) == 1, got
+        txt = R.extract_deck(deck)
+        assert R.has_pictures(txt[4]), "a filled picture placeholder must be flagged in the slide text: %r" % txt[4]
+        assert R.has_pictures(txt[2]) and not R.has_pictures(txt[1])
         assert got[2][0].endswith(".png") and got[3][0].endswith(".png"), got              # TIFF converted by sips
         assert all(os.path.getsize(x) > 0 and x.startswith(R.IMG_CACHE) for v in got.values() for x in v)
         assert not any(x.startswith(R.ROOT) for v in got.values() for x in v)               # never in the repo
@@ -85,6 +93,23 @@ def image_unit_tests(tmp):
     assert R.check_audit(a, dict(m, evidence_images={}))[0] is None
 
 
+def mis_join_unit_test():
+    """report/check must join `mis` from the sources like export does, or the audit hash export recorded
+    never matches and every question with `mis` shows as STALE (the 2026-10-15 Microbiology Exam 2 case)."""
+    page_q = {"q": "Stem?", "opts": [["k", "ek"], ["x", "ex"], ["y", "ey"], ["z", "ez"]], "c": 0, "cite": ""}
+    src = dict(page_q, mis={"x": "mx", "y": "my", "z": "mz"})
+    saved_src, saved_load = R._SRC, R.load_folder
+    try:
+        R._SRC = ({R.norm(src["q"]): src}, {})
+        R.load_folder = lambda f, g=None, u=None: [R.Q(f, "f.html", 0, page_q)]
+        exported = R.attach_sources([R.Q("F", "f.html", 0, page_q)])[0].ah
+        reported = R.gather(["F"])[0][0].ah
+        assert exported == reported, "report computes a different audit hash than export"
+        assert exported != R.Q("F", "f.html", 0, page_q).ah, "the source `mis` was not joined"
+    finally:
+        R._SRC, R.load_folder = saved_src, saved_load
+
+
 def run(*args):
     p = subprocess.run([sys.executable, os.path.join(HERE, "blind_review.py"), "--records", REC] + list(args),
                        capture_output=True, text=True)
@@ -109,6 +134,7 @@ def main():
     made = [d1, d2]                                          # export dirs whose cached manifests are removed at the end
     try:
         image_unit_tests(tmp)
+        mis_join_unit_test()
         # 1. the audit pass is refused before any blind record exists
         rc, out = run("export", "--pass", "audit", "--folder", FOLDER, "--files", FILES, "--sample", "3", "--out", d2)
         assert rc == 1 and "REFUSED" in out, (rc, out)

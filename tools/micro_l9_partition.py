@@ -68,7 +68,7 @@ DUPS = {
     "tsst": ["What does toxic shock syndrome toxin induce", "In females, staphylococcal toxic shock"],
     "mprotein": ["What does M-protein contribute", "Which Streptococcus pyogenes surface antigen contributes most"],
     "gbsscreen": ["What is the preventive step against group B", "A pregnant woman is expected to deliver vaginally"],
-    "humanonly": ["What is the reservoir of Streptococcus pyogenes", "Which streptococcus is strictly a human parasite"],
+    "humanonly": ["What is the reservoir of Streptococcus pyogenes", "Which of these organisms has humans as its only reservoir"],
     "candle": ["How are the pathogenic Neisseria cultured", "What does a candle jar provide"],
     "military": ["Where has Acinetobacter baumannii become", "A 26-year-old soldier evacuated"],
     "viridansentry": ["How do viridans streptococci usually gain entrance", "A 62-year-old with pre-existing heart valve disease"],
@@ -78,8 +78,7 @@ DUPS = {
 # lecturer HIGHLIGHTED in yellow on the slides (slides 3, 6, 17-18, 21, 23, 27/32, 38, 45, 57,
 # 79) plus the one she flagged aloud ("this M protein, which you might also want to highlight").
 MUST = {
-    "gram (slide 3)": ["Why do staphylococci stain Gram-positive", "Gram-positive cells are described as physically strong",
-                       "Which feature is true of every staphylococcus"],
+    "gram (slide 3)": ["Why do staphylococci stain Gram-positive", "Gram-positive cells are described as physically strong"],
     "catalase (slides 17-18, 21)": DUPS["catalase"],
     "hemolysis (slides 6, 23)": DUPS["beta"] + DUPS["alpha"] + ["Colonies of Staphylococcus aureus are grown on blood agar",
                                                                "Which of these is alpha hemolytic"],
@@ -300,7 +299,7 @@ if __name__ == "__main__":
         out = []
         for q in qs:
             d = {k: q[k] for k in ("topic", "io", "q", "opts", "c", "cite")}
-            for k in ("img", "alt", "slide"):
+            for k in ("img", "alt", "slide", "mis"):
                 if k in q: d[k] = q[k]
             out.append(d)
         return out

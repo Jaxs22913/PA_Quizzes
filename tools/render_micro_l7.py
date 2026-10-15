@@ -42,6 +42,9 @@ INTRO = ("Lecture 7 of Microbiology &mdash; Disorders in Immunity. Thirty questi
          "immunotherapies from checkpoint inhibitors to cancer vaccines.")
 
 sets = json.load(io.open(os.path.join(HERE, "micro_l7_sets.json"), encoding="utf-8"))
+# `mis` (the misconception each distractor stands for) is review metadata for tools/blind_review.py;
+# it stays in the sets file and never reaches the page.
+sets = {k: [{f: v for f, v in q.items() if f != "mis"} for q in qs] for k, qs in sets.items()}
 for n, key, fname in ((1, "set1", "disorders-in-immunity-quiz.html"),
                       (2, "set2", "disorders-in-immunity-quiz-version-2.html")):
     html = render(
