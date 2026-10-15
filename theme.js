@@ -2491,13 +2491,15 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
   }
   // "Note deleted" with Undo for about 6 seconds. From the keyboard, focus goes to Undo (the control that
   // was used has just gone) and, when the toast leaves, back to the paragraph the note was in.
-  function noteDeletedToast(snap) {
+  // noFocus: the delete came from committing an emptied note (clicking or tabbing away), so the student
+  // is already moving on; focus stays where they took it
+  function noteDeletedToast(snap, noFocus) {
     if (!window.showToast) return;
     if (!snap || !snap.rec) { window.showToast("Note deleted", 2500); return; }
     var spotEl = snap.spot && snap.spot.u;
     window.showToast("Note deleted", 6000, {
       label: "Undo",
-      focus: lastInput === "key",
+      focus: !noFocus && lastInput === "key",
       returnFocus: function () {
         var c = hlPanelOverlay && hlPanelOverlay.querySelector(".hl-panel-close");
         if (c) { try { c.focus({ preventScroll: true }); } catch (e) {} } else focusSpot(spotEl);
@@ -2838,7 +2840,7 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
       var v = textarea.value.trim();
       if (!v) {
         if (isNew) { var hh = hostOf(id); if (hh) hh.remove(); }
-        else noteDeletedToast(deleteNote(id));
+        else noteDeletedToast(deleteNote(id), true);
         return;
       }
       if (v === saved && !isNew) return;
@@ -3073,9 +3075,13 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
   // Shift after them, or select-all (quiet: a whole-page select-all is too long and that is fine)
   var keySel = false;
   document.addEventListener("keydown", function (e) {
-    if (e.shiftKey && /^(Arrow|Home|End|Page)/.test(e.key)) keySel = true;
+    if (!e.shiftKey || !/^(Arrow|Home|End|Page)/.test(e.key)) return;
+    var t = e.target;      // Shift + arrows inside a text field selects in the field, not the guide
+    keySel = !(t && t.nodeType === 1 && (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable));
   }, true);
   document.addEventListener("keyup", function (e) {
+    var sel = keySel;
+    if (e.key === "Shift") keySel = false;          // letting go of Shift ends the gesture, whatever returns below
     var a = document.activeElement;
     if (a && (/^(input|textarea|select)$/i.test(a.tagName) || a.isContentEditable)) return;
     if (toolbar && toolbar.contains(a)) return;
@@ -3087,8 +3093,7 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
       return;
     }
     var all = (e.ctrlKey || e.metaKey) && (e.key === "a" || e.key === "A");
-    if (!all && !(keySel && ((e.shiftKey && nav) || e.key === "Shift"))) return;
-    if (e.key === "Shift") keySel = false;
+    if (!all && !(sel && ((e.shiftKey && nav) || e.key === "Shift"))) return;
     onSelectionDone(null, { key: true, quiet: all });
   });
   document.addEventListener("mousedown", function (e) {
@@ -3867,15 +3872,22 @@ window.openQuestionNav = (function () {
 // it. Hovering or focusing the toast holds it open. Callers with two arguments get exactly what they did.
 window.showToast = function (message, duration, action) {
   duration = duration || 3000;
-  var toast = document.getElementById("site-toast");
+  // The live region must exist (role and aria-live set, in the page) BEFORE its text changes, or some
+  // screen readers skip the first message: when it is new here, the text goes in on the next frame.
+  var toast = document.getElementById("site-toast"), fresh = false;
   if (!toast) {
     toast = document.createElement("div");
     toast.id = "site-toast";
-    document.body.appendChild(toast);
-  }
-  if (!toast.hasAttribute("role")) {
     toast.setAttribute("role", "status");
     toast.setAttribute("aria-live", "polite");
+    toast.setAttribute("aria-atomic", "true");
+    document.body.appendChild(toast);
+    fresh = true;
+  }
+  if (!toast._live) {                 // first use here (home.js may have made the element without these)
+    toast._live = true;
+    if (!toast.hasAttribute("role")) { toast.setAttribute("role", "status"); fresh = true; }
+    if (!toast.hasAttribute("aria-live")) { toast.setAttribute("aria-live", "polite"); fresh = true; }
     toast.setAttribute("aria-atomic", "true");
     toast.addEventListener("mouseenter", function () { if (toast._act) clearTimeout(toast._hideTimer); });
     toast.addEventListener("focusin", function () { if (toast._act && !toast._auto) clearTimeout(toast._hideTimer); });
@@ -3908,36 +3920,44 @@ window.showToast = function (message, duration, action) {
     }
   }
   toast._arm = function (ms) { clearTimeout(toast._hideTimer); toast._hideTimer = setTimeout(hide, ms); };
-  if (!act) {
-    // a toast replacing one that had focus on its button: do not leave focus on a vanishing button
-    var prev = toast.querySelector(".site-toast-btn");
-    if (prev && document.activeElement === prev && old) { try { if (typeof old.returnFocus === "function") old.returnFocus(); else prev.blur(); } catch (e) {} }
-    toast.textContent = message;
-    toast.classList.remove("has-action");
-    toast.style.pointerEvents = "";
-  } else {
-    toast.textContent = "";
-    var msg = document.createElement("span");
-    msg.className = "site-toast-msg";
-    msg.textContent = message;
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "site-toast-btn";
-    b.textContent = act.label;
-    b.addEventListener("click", function (e) {
-      if (toast._act !== act) return;
-      hide();
-      try { act.onClick(e); } catch (x) {}
-    });
-    b.addEventListener("keydown", function (e) { if (e.key === "Escape" || e.key === "Esc") { e.stopPropagation(); hide(); } });
-    toast.appendChild(msg);
-    toast.appendChild(b);
-    toast.classList.add("has-action");
-    toast.style.pointerEvents = "";
-    // moved there by us, not by the student: the toast still leaves on time (their own focus holds it)
-    if (act.focus) { toast._auto = true; try { b.focus({ preventScroll: true }); } catch (e) {} toast._auto = false; }
+  var seq = toast._seq = (toast._seq || 0) + 1;
+  function fill() {
+    if (!act) {
+      // a toast replacing one that had focus on its button: do not leave focus on a vanishing button
+      var prev = toast.querySelector(".site-toast-btn");
+      if (prev && document.activeElement === prev && old) { try { if (typeof old.returnFocus === "function") old.returnFocus(); else prev.blur(); } catch (e) {} }
+      toast.textContent = message;
+      toast.classList.remove("has-action");
+      toast.style.pointerEvents = "";
+    } else {
+      toast.textContent = "";
+      var msg = document.createElement("span");
+      msg.className = "site-toast-msg";
+      msg.textContent = message;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "site-toast-btn";
+      b.textContent = act.label;
+      b.addEventListener("click", function (e) {
+        if (toast._act !== act) return;
+        hide();
+        try { act.onClick(e); } catch (x) {}
+      });
+      b.addEventListener("keydown", function (e) { if (e.key === "Escape" || e.key === "Esc") { e.stopPropagation(); hide(); } });
+      toast.appendChild(msg);
+      toast.appendChild(b);
+      toast.classList.add("has-action");
+      toast.style.pointerEvents = "";
+      // moved there by us, not by the student: the toast still leaves on time (their own focus holds it)
+      if (act.focus) { toast._auto = true; try { b.focus({ preventScroll: true }); } catch (e) {} toast._auto = false; }
+    }
   }
-  requestAnimationFrame(function () { toast.style.opacity = "1"; });
+  if (fresh) {
+    requestAnimationFrame(function () { if (toast._seq !== seq) return; fill(); toast.style.opacity = "1"; });
+  } else {
+    fill();
+    requestAnimationFrame(function () { toast.style.opacity = "1"; });
+  }
   toast._hideTimer = setTimeout(hide, duration);
 };
 

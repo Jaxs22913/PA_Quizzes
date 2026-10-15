@@ -577,6 +577,24 @@ def main():
                 pg.wait_for_timeout(200)
                 check("keyboard Undo: the note is back and has focus",
                       pg.evaluate(NEAR) == near and pg.evaluate("document.activeElement && document.activeElement.classList.contains('gnote')"))
+                # an emptied note committed from the keyboard (here: Enter on the highlights button) is deleted
+                # with Undo offered, but focus stays where the student took it
+                pg.focus(".gnote")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(100)
+                pg.fill(".gnote-editor textarea", "")
+                pg.focus("#hl-panel-btn")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(200)
+                st1 = pg.evaluate("""() => ({ undo: !!document.querySelector('#site-toast .site-toast-btn'), note: !!document.querySelector('.gnote'),
+                    onUndo: !!(document.activeElement && document.activeElement.classList.contains('site-toast-btn')),
+                    inPanel: !!(document.activeElement && document.activeElement.closest('.hl-panel')) })""")
+                check("emptied note committed from the keyboard: deleted with Undo, focus not moved to Undo",
+                      st1["undo"] and not st1["note"] and not st1["onUndo"] and st1["inPanel"], st1)
+                pg.keyboard.press("Escape")
+                pg.click("#site-toast .site-toast-btn")
+                pg.wait_for_timeout(200)
+                check("...and its Undo still restores it", pg.evaluate(NEAR) == near)
                 # removing the item from the review list never deletes the note
                 pg.evaluate("(id) => window.PipReview.remove(%s, 'n:' + id)" % json.dumps(slug), near[2])
                 reload(pg)
@@ -660,12 +678,40 @@ def main():
             pg.wait_for_timeout(80)
             check("Escape from that note box puts focus on the new highlight",
                   pg.evaluate("document.activeElement && document.activeElement.matches('mark.user-hl')"))
+            # Shift + arrows inside the search box, then a mouse selection: a bare Shift tap must not reopen
+            # the toolbar as a keyboard one (no announcement)
+            pg.keyboard.press("Escape")
+            pg.evaluate("getSelection().removeAllRanges()")
+            pg.keyboard.press("/")
+            pg.keyboard.type("blood")
+            pg.keyboard.press("Shift+ArrowLeft")
+            pg.keyboard.press("Escape")
+            pg.evaluate(r"""(id) => { var u = document.getElementById(id); var t = __t.flat(u).text;
+                __t.select(__t.at(u, t.slice(30, 40), 0), __t.at(u, t.slice(30, 40), 8)); __t.mouseup(u);
+                document.querySelectorAll('.sr-only[aria-live=polite]').forEach(function (x) { x.textContent = ''; }); }""", start)
+            pg.wait_for_timeout(150)
+            pg.keyboard.press("Shift")
+            pg.wait_for_timeout(250)
+            st2 = pg.evaluate("""() => ({ bar: !!document.querySelector('.hl-toolbar'), kbd: !!(document.querySelector('.hl-toolbar') || {}).__kbd,
+                live: Array.from(document.querySelectorAll('.sr-only[aria-live=polite]')).map(function (x) { return x.textContent; }).join('') })""")
+            check("Shift + arrows in the search box leave no keyboard-selection state behind", st2["bar"] and not st2["kbd"] and st2["live"] == "", st2)
+            pg.keyboard.press("Escape")
             pg.evaluate("getSelection().removeAllRanges()")
             pg.keyboard.press("ControlOrMeta+a")
             pg.wait_for_timeout(250)
             check("select-all on a long guide shows no 'too long' message",
                   pg.evaluate("getSelection().toString().length > 1000") and
                   not pg.evaluate("(function(){var t=document.getElementById('site-toast');return !!t && t.style.opacity==='1' && /too long/.test(t.textContent);})()"))
+            c.close()
+
+            c = ctx()
+            pg = open_page(c, guide_url)
+            ft = pg.evaluate("""() => new Promise(function (res) { var old = document.getElementById('site-toast'); if (old) old.remove();
+                window.showToast('First message here', 3000); var t = document.getElementById('site-toast');
+                var first = { inPage: !!t && document.body.contains(t), role: t && t.getAttribute('role'), live: t && t.getAttribute('aria-live'), text: t ? t.textContent : null };
+                requestAnimationFrame(function () { requestAnimationFrame(function () { res({ first: first, later: t.textContent }); }); }); })""")
+            check("a page's first toast: a polite status region already in the page, its text set a frame later",
+                  ft["first"] == {"inPage": True, "role": "status", "live": "polite", "text": ""} and ft["later"] == "First message here", ft)
             c.close()
 
             # ------------------------------------------------------------------ 12. openGuidePanel({quote}) marks the cited sentence (2026-10-15)
