@@ -555,6 +555,13 @@
     "html[data-theme=dark] #pip-win .pw-help{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-thumb{background:#121a33;border-color:#5b6fa8;color:#C9D8FA}",
     "#pip-win .pw-card .pw-explain{max-width:none;margin-top:10px;padding:10px 12px;border-radius:12px;background:#F1F4FB}",
     "#pip-win .pw-guidehd{font-size:12px;color:#5b6687;margin:2px 2px -4px}#pip-win .pw-slot{display:contents}",
+    // the two labelled parts of an answer (2026-10-15): "From your class" and "From general knowledge"
+    "#pip-win .pw-part{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5b6687;margin:12px 2px -2px}",
+    "#pip-win .pw-fixed{display:block;font-weight:400;letter-spacing:0;text-transform:none;font-size:12px;margin-top:2px}",
+    "#pip-win .pw-deflead{font-weight:700}#pip-win .pw-explain li a{display:inline;margin-top:0;font-weight:500}",
+    "#pip-win .pw-explain .pw-lbl{display:block;margin-top:6px;font-size:11.5px;color:#5b6687}html[data-theme=dark] #pip-win .pw-explain .pw-lbl{color:#9fb0d6}",
+    "#pip-win .pw-explain .pw-quote{border-left:3px solid rgba(30,57,116,.25);padding-left:9px;margin-top:6px;color:#33405f}",
+    "html[data-theme=dark] #pip-win .pw-part{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-explain .pw-quote{color:#d3ddf5;border-left-color:rgba(201,216,250,.35)}",
     // comparisons: the side-by-side dissection, the guide links under it, the folded full cards
     "#pip-win .pw-cmp{align-self:stretch;max-width:none;white-space:normal}",
     "#pip-win .pw-cmp p{margin:0}#pip-win .pw-cmp p+p{margin-top:8px}",
@@ -1141,7 +1148,7 @@
     var curFile = decodedPath(location.pathname).split("/").pop();
     return Promise.all(scope.map(function (f) {
       return guideIndex(f).then(function (g) {
-        if (!g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
+        prepGuide(g);
         g._ix.ab2 = g.ab;
         var q2 = spell(expandFor(text, g._ix), g._ix);
         if (offGuide(q2, g._ix)) return [];
@@ -1172,32 +1179,58 @@
         if (!c.here) chips([["Switch exam", function () { switchExam(); }]]);
         return;
       }
-      // the active exam's guides AND the student's own notes for that exam (never another exam's),
-      // and Pip's own plain-language explanation of the concept when he has one
-      var qx = casual(text);
-      Promise.all([hasGuides(f) ? guideHits([f], qx, c.here) : Promise.resolve([]), noteHits(f, text, 2), explainWide(f, qx, text)])
-        .then(function (r) { show(r[0], r[1], r[2]); });
-      function show(out, mine, ex) {
+      // Jaxon, 2026-10-15: every question gets an answer in two labelled parts. "From your class": Pip's cards
+      // and the guides' passages, from whichever exams of the semester hold the question's words (the active
+      // exam leads on a tie), misspellings fixed first. "From general knowledge": Claude, clearly labelled,
+      // only when the class materials fall short (they never define the word, or cover only part of the
+      // question). Never "not in your guide" as the whole answer.
+      var FX = null, D = null, L = null, here = c.here || f, text0 = text;
+      fixSpelling(text0).then(function (fx) {
+        FX = fx; text = fx.text;
+        var qx = casual(text);
+        D = defineTerm(text); L = listAsk(text);
+        examsFor(qx, f).then(function (scope) {
+          if (scope.indexOf(f) < 0 && hasGuides(f)) scope = scope.slice(0, 3).concat([f]);   // the active exam is always searched
+          (L ? gatherList(L, scope, here) : Promise.resolve(null)).then(function (lst) {
+            if (lst) return showList(lst);
+            // the guides of those exams AND the student's own notes for the active exam (never another exam's),
+            // Pip's own plain-language explanation of the concept when he has one, and for "what does X mean"
+            // the sentence that defines X
+            Promise.all([guideHits(scope.filter(hasGuides), qx, c.here), noteHits(f, text, 2), explainWide(f, qx, text),
+                         D ? findDefinition(D.t, scope.filter(hasGuides), here) : null])
+              .then(function (r) { show(r[0], r[1], r[2], r[3]); });
+          });
+        });
+      });
+      function show(out, mine, ex, dd) {
         input.placeholder = ASK_HINT;
-        if (ex.cross) { out = []; mine = []; }        // another exam's answer: this exam's passages and notes are not about it
+        // "what does X mean": a card leads only when its title names X; a bare word ("iatrogenic") keeps
+        // the usual answer when no guide defines it
+        if (D && ex.length && !titleNames(ex[0], D.t) && (!D.bare || (dd && dd.def))) ex = [];
+        if (D && !ex.length && dd && (dd.def || !D.bare)) return showDefinition(dd, mine);
+        // a card that holds under half of the question's naming words doesn't answer it
+        if (ex.length && !ex.cmp && fullCover(ex, text, true) < 0.5) ex = [];
+        if (ex.cross) {                                 // another exam's answer: only that exam's passages, no notes
+          var xf = ex.map(function (x) { return x._f; });
+          out = out.filter(function (r) { return xf.indexOf(r.f) >= 0; }); mine = [];
+        }
         if (ex.length) return explained(out, mine, ex);
         if (!out.length && !mine.length) {
           count("fallback");
-          if (!hasGuides(f)) say(f.t + " doesn't have a study guide yet.");
-          else say("I couldn't find that in " + f.t + "'s guides. Try other words, like the name of the condition, drug or test.");
+          classHead();
+          if (!hasGuides(f) && !out.length) say(f.t + " doesn't have a study guide yet, and I didn't find this in your other guides.");
+          else say("I didn't find this in your guides. If I missed it, try other words, like the name of the condition, drug or test.");
           var none = c.here ? [] : [["Switch exam", function () { switchExam(); }]];
           chips(none);
-          if (!hasGuides(f)) return;
           ownerChips(none, [["Ask Claude (beyond your guide)", function () { askClaude(text, "beyond", [], f, "You asked me to check with Claude."); }]]);
           // a real question only: a lookup ("where is ...", "find ...") wants a place, never Claude
-          relatedToExam(text, f).then(function (rel) {
-            if (rel && wantsExplanation(text)) maybeClaude(text, "beyond", [], f, "Your guide doesn't cover this, so I checked with Claude.");
-          });
+          if (wantsExplanation(text) || D) general(text, [], f, "Your class materials don't cover this, so I asked Claude.");
           return;
         }
         var lead = null;
         if (out.length) {
-          whereLine([f]);
+          classHead();
+          whereLine(uniq(out.map(function (r) { return r.f; })));
           lead = say("Your guide's exact words:");
           out.forEach(function (r) {
             var doc = r.g.docs[r.b[0]], c2 = card();
@@ -1208,7 +1241,8 @@
           });
         }
         if (mine.length) {
-          var nl = out.length ? null : say("I couldn't find that in " + f.t + "'s guides, but your notes mention it:");
+          if (!out.length) classHead();
+          var nl = out.length ? null : say("I didn't find that in your guides, but your notes mention it:");
           if (!lead) lead = nl;
           mine.forEach(noteCard);
         }
@@ -1233,6 +1267,8 @@
           // goes to Claude for a plain-language explanation
           if (got === "summary" || !wantsExplanation(text)) return;
           // no own words yet: say so, and the note goes when Claude's answer lands above the guide's words
+          // the passages cover only part of the question: general knowledge fills the gap (one Claude ask, not two)
+          if (passCover(out, text) < SHORT_OF) { general(text, passages, f, "Your guide covers only part of this, so I asked Claude."); return; }
           if (lead && lead.parentNode === log) { place.note = el("div", "pw-msg pw-pip", "I can't put this in my own words right now, so here is the exact wording from your guide."); log.insertBefore(place.note, lead); }
           maybeClaude(text, "explain", passages, f, "I asked Claude to explain this in plain words.");
         });
@@ -1260,6 +1296,7 @@
       function explainedOne(out, mine, ex) {
         count("explain_card");
         var cf = ex[0]._f || f;                       // the exam this card comes from
+        classHead();
         whereLine([cf]);
         var lead = explainBubble(ex[0], f);
         helpful(lead);
@@ -1287,6 +1324,65 @@
         lastAsk = { q: text, passages: passages, f: cf, t: Date.now(), expl: ex[0] };
         input.placeholder = "Still fuzzy? Say which part, or ask \u201cwhy?\u201d";
         scrollTo(lead);
+        if (fullCover(ex, text) < SHORT_OF && wantsExplanation(text))
+          general(text, [{ title: ex[0].t, text: ex[0].x }], cf, "Pip's explanation covers only part of this, so I asked Claude.");
+      }
+      // "From your class", with "I read X as Y" when a misspelling was fixed
+      function classHead() {
+        var h = el("div", "pw-part", "From your class");
+        if (FX && FX.fixed.length) h.appendChild(el("span", "pw-fixed", "I read " + FX.fixed.map(function (p) { return "\u201c" + p[0] + "\u201d as \u201c" + p[1] + "\u201d"; }).join(", ")));
+        log.appendChild(h); scrollDown();
+        return h;
+      }
+      // "what does X mean": the defining sentence (with its meaning up front when it is a "X (meaning)" gloss),
+      // then where else it comes up; general knowledge only when no class sentence really defines it
+      function showDefinition(dd, mine) {
+        count("explain_card");
+        var d = dd.def, term = D.t, top = classHead();
+        if (d) {
+          whereLine([d.src.f]);
+          var m = el("div", "pw-msg pw-pip pw-explain");
+          if (d.gloss) m.appendChild(el("p", "pw-deflead", term.charAt(0).toUpperCase() + term.slice(1) + ": " + d.gloss.replace(/[.]$/, "") + "."));
+          m.appendChild(el("p", "pw-quote", d.s));
+          m.appendChild(el("span", "pw-lbl", (d.src.card ? "Pip's explanation: " : "Your guide: ") + d.src.head));
+          m.appendChild(linkTo(d.src.f.f, d.src.file, d.src.a, "Read it in your guide \u2192", d.src.text || ""));
+          log.appendChild(m); helpful(m);
+        } else say(dd.total ? "Your guides use \u201c" + term + "\u201d but never say what it means." : "I didn't find \u201c" + term + "\u201d in your guides.");
+        if (dd.mentions.length) {
+          var box = el("div", "pw-msg pw-pip pw-explain"), ul = el("ul");
+          box.appendChild(el("p", null, d ? "It also comes up in:" : "It comes up in:"));
+          dd.mentions.forEach(function (x) {
+            var li = el("li"); li.appendChild(linkTo(x.f.f, x.file, x.a, x.head + (x.f !== f ? " (" + x.f.t + ")" : ""), x.text)); ul.appendChild(li);
+          });
+          box.appendChild(ul); log.appendChild(box);
+        }
+        mine.forEach(noteCard);
+        var passages = d ? [{ title: d.src.head, text: d.s }] : dd.mentions.map(function (x) { return { title: x.head, text: x.text }; });
+        lastAsk = { q: text, passages: passages, f: f, t: Date.now() };
+        chips([]);
+        scrollLead(top);
+        if (!d || !d.strong) general(D.bare ? "What does \u201c" + term + "\u201d mean?" : text, passages, f,
+                                     d ? "Your class materials only hint at what it means, so I asked Claude."
+                                       : dd.total ? "Your class materials don't define it, so I asked Claude." : "Your class materials don't mention it, so I asked Claude.");
+      }
+      // "the X of each Y": one line per item of the section the group names
+      function showList(lst) {
+        count("explain_card");
+        var top = classHead();
+        whereLine([lst.f]);
+        var m = el("div", "pw-msg pw-pip pw-explain"), ul = el("ul"), N = 15;
+        m.appendChild(el("p", null, (L.attr ? "The " + L.attr + " of each, from " : "Each one, from ") + (lst.part ? "\u201c" + lst.part + "\u201d" : "your guide") + ":"));
+        lst.items.slice(0, N).forEach(function (it) {
+          var li = el("li"); li.appendChild(el("b", null, it.name)); if (it.text) li.appendChild(document.createTextNode(": " + it.text)); ul.appendChild(li);
+        });
+        m.appendChild(ul);
+        if (lst.items.length > N) m.appendChild(el("span", "pw-lbl", "And " + (lst.items.length - N) + " more in your guide."));
+        m.appendChild(linkTo(lst.f.f, lst.items[0].file, lst.items[0].a, "Read them in your guide \u2192"));
+        log.appendChild(m); helpful(m);
+        var passages = [{ title: lst.part || L.group, text: lst.items.slice(0, 12).map(function (it) { return it.name + (it.text ? ": " + it.text : ""); }).join("\n").slice(0, 1200) }];
+        lastAsk = { q: text, passages: passages, f: lst.f, t: Date.now() };
+        chips(PAST[lst.f.s] && lst.f !== f ? [] : [["Quiz me on this", function () { topicPractice(lst.f, L.group); }]]);
+        scrollLead(top);
       }
       // The comparison: the dissection comes FIRST (Claude, else the laptop brain, else the cards' own sentences),
       // then a guide link for each side, then the full cards folded away, then the guide's exact words.
@@ -1294,6 +1390,7 @@
         count("explain_card");
         var sides = (look ? ex0 : orderSides(ex0, text)).slice(0, 3); sides.m = ex0.m;
         var names = sides.map(shortT);
+        classHead();
         whereLine(sides.map(function (c) { return c._f || f; }));
         var links = el("div", "pw-msg pw-pip pw-cmplinks");
         // a side from another exam names that exam, and its link goes to THAT exam's guide
@@ -1486,6 +1583,7 @@
         e._title = e.cards.map(function (c) { var o = {}; toks(numbered(c.t)).forEach(function (w) { o[w] = 1; }); return o; });
         e._kind = e.cards.map(function (c) { return kinds(c.t); });
       }
+      e.cards.forEach(function (c) { c._ix = e._ix; });                // and its exam's card index (fullCover)
       return e;
     }).catch(function () { return null; });
   }
@@ -1519,10 +1617,14 @@
       var e = r0[0], g = r0[1];
       if (!e || !e.cards.length) return [];
       if (g && g.ab) e._ix.ab2 = g.ab; else if (r0[2] && r0[2][f.s]) e._ix.ab2 = r0[2][f.s];
-      if (g && !g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
+      if (g) prepGuide(g);
       var ab = abFor(e._ix);
-      var q = numbered(String(text).replace(/\b[A-Za-z][A-Za-z0-9]{1,7}\b/g, function (w) { var x = ab[w.toLowerCase()]; return !x ? w : e._ix.df[stem(w.toLowerCase())] ? w + " " + x : x; }));
-      q = spell(q, e._ix);
+      var expandAb = function (s) { return numbered(String(s).replace(/\b[A-Za-z][A-Za-z0-9]{1,7}\b/g, function (w) { var x = ab[w.toLowerCase()]; return !x ? w : e._ix.df[stem(w.toLowerCase())] ? w + " " + x : x; })); };
+      var q = spell(expandAb(text), e._ix);
+      // a comparison's sides ("PVC vs SVT"): a side-by-side card earns its bonus only when it names every side
+      // (Jaxon's PVC vs SVT on the electrocardiography exam led with "Sinus tachycardia versus supraventricular tachycardia")
+      var sd = COMPARE.test(norm(text)) ? sidesOf(text) : null;
+      var sideT = sd && sd.map(function (x) { return uniq(toks(spell(expandAb(casual(x)), e._ix))).filter(function (w) { return !GENERIC[w]; }); });
       if (g && g._ix && offGuide(spell(q, g._ix), g._ix)) return [];
       var qt = uniq(toks(q));
       // generic words ("risk factors", "signs", "treatment") never name a concept on their own: "thrush risk
@@ -1531,13 +1633,24 @@
       // a card whose TITLE holds the question's words is about that thing; one that only mentions them is not
       var idf = function (w) { var df = e._ix.df[w] || 0; return Math.log(1 + (e._ix.N - df + 0.5) / (df + 0.5)); };
       var cands = rank(e._ix, e._texts, q, 14).filter(function (r) { return named(r[1]); });
+      // a card about one side holds only that side's words, so a two-sided question never ranks it: each side is
+      // searched on its own too ("PVC vs SVT" found no premature ventricular complex card)
+      if (sideT) sideT.forEach(function (st) {
+        if (st.length) rank(e._ix, e._texts, st.join(" "), 6).forEach(function (r) {
+          if (named(r[1]) && !cands.some(function (c) { return c[1] === r[1]; })) cands.push(r);
+        });
+      });
       // "mastoiditis signs": every word is needed for a short question, but a generic one may be left out
       if (!cands.length) { var core = qt.filter(function (w) { return !GENERIC[w]; }); if (core.length && core.length < qt.length) cands = rank(e._ix, e._texts, core.join(" "), 14).filter(function (r) { return named(r[1]); }); }
       var want = wants(text), asks = Object.keys(want).length, bare = !asks && qt.length <= 3;
       var hits = cands.map(function (r) {
         var tt = e._title[r[1]], bonus = 0, kd = e._kind[r[1]];
         qt.forEach(function (w) { if (tt[w]) bonus += idf(w) * 1.3; else if (e._names[r[1]][w]) bonus += idf(w) * 0.3; });
-        for (var k in want) if (kd[k]) bonus += k === "compare" ? 4 : 2.5;
+        for (var k in want) if (kd[k]) {
+          if (k === "compare" && sideT && !sideT.every(function (st) {       // half or more of each side's words
+            return st.filter(function (w) { return e._names[r[1]][w]; }).length * 2 >= st.length && st.length; })) continue;
+          bonus += k === "compare" ? 4 : 2.5;
+        }
         // a bare topic ("varicose veins") or "what is X" wants the card that says what it is, not its
         // treatment, tests or comparison with something else
         if ((bare || (want.define && asks === 1)) && (kd.treat || kd.diagnose || kd.compare)) bonus -= 2;
@@ -1553,6 +1666,15 @@
           // primary-versus-secondary-research card), and name at least two of them
           if (e._kind[i2].compare && both >= 2 && core2.every(function (w) { return tf2[w]; })) { if (ci) hits.unshift(hits.splice(ci, 1)[0]); hits.cmp = 1; break; }
         }
+      }
+      // no single card compares them: each side's best card leads, in the question's order
+      if (sideT && !hits.cmp && hits.length > 1) {
+        var sideOf = function (st) {
+          for (var i = 0; i < hits.length; i++) if (st.length && st.filter(function (w) { return e._names[hits[i][1]][w]; }).length * 2 >= st.length) return hits[i];
+          return null;
+        };
+        var picks = sideT.map(sideOf);
+        if (picks.length >= 2 && picks.every(Boolean) && picks[0][1] !== picks[1][1]) hits = picks.slice(0, 2).concat(hits.filter(function (h) { return picks.indexOf(h) < 0; }));
       }
       if (!hits.length) {
         // no card names it, but one holds every word of a two-or-more-word question ("gonorrhoeae vs meningitidis")
@@ -1661,13 +1783,275 @@
       });
     }).catch(function () { return []; });
   }
+  // ------------------------------------------------------------------ every word of every exam (pip/data/words.json)
+  // Jaxon, 2026-10-15: "junctional rythm?" found nothing, because a misspelled word under 6 letters was never
+  // corrected. words.json lists every word the guides and cards use, commonest first, with a bit per exam
+  // (index.json folder order). A word some guide uses is never "corrected" (so no exam's word is turned into
+  // another's); an unknown word becomes the commonest completion of a cut-off word, else the commonest known
+  // word one edit away (two for 9+ letters) with the same first letter. The bits send a question to the
+  // exams that hold its words.
+  var wordsP = null;
+  function words() {
+    if (!wordsP) wordsP = index().then(function () { return getJSON("words.json"); }).then(function (d) {
+      var w = d.w.split(" "), at = Object.create(null);
+      for (var i = 0; i < w.length; i++) at[w[i]] = i;
+      return { w: w, m: d.m.split(" ").map(function (x) { return parseInt(x, 16); }), at: at };
+    }).catch(function () { wordsP = null; return null; });
+    return wordsP;
+  }
+  function wordAt(W, w) {                         // a word (or its singular / plural) in some guide: its index, else -1
+    var c = [w, w + "s", w + "es", w.replace(/ies$/, "y"), w.replace(/es$/, ""), w.replace(/s$/, "")];
+    for (var i = 0; i < c.length; i++) if (c[i].length >= 3 && W.at[c[i]] !== undefined) return W.at[c[i]];
+    return -1;
+  }
+  // the student's words, misspellings fixed (case and punctuation kept); fx.fixed lists [typed, read as]
+  function fixSpelling(text) {
+    return words().then(function (W) {
+      var fixed = [];
+      if (!W) return { text: text, fixed: fixed };
+      var ab = (IX && IX.ab) || {};
+      var out = String(text).replace(/[A-Za-z]{4,}/g, function (raw) {
+        var w = raw.toLowerCase();
+        if (STOP[w] || ab[w] || wordAt(W, w) >= 0) return raw;
+        var best = null, i, v, max = w.length >= 9 ? 2 : 1;
+        if (w.length >= 5) for (i = 0; i < W.w.length && !best; i++) { v = W.w[i]; if (v.length > w.length && v.indexOf(w) === 0) best = v; }
+        for (var d = 1; d <= max && !best; d++)
+          for (i = 0; i < W.w.length; i++) {
+            v = W.w[i];
+            if (v[0] === w[0] && Math.abs(v.length - w.length) <= d && v.length >= 3 && near(w, v, d)) { best = v; break; }
+          }
+        if (!best) return raw;
+        fixed.push([raw, best]);
+        return raw[0] === raw[0].toUpperCase() ? best[0].toUpperCase() + best.slice(1) : best;
+      });
+      return { text: out, fixed: fixed };
+    });
+  }
+  // words that ask rather than name ("can you give me the one ... of each"): never a topic
+  var FILL = {};
+  ("give tell show list name explain describe define definition meaning mean means each every all one single main key " +
+   "can could would you please need want get just again different kind kinds sort sorts " +
+   // words that frame a question ("where are they found", "what does X stand for", "how big", "how long", "how does it work")
+   "found stand stands fail fails big bigger small smaller feel feels look looks looking work works working place places " +
+   "cutoff cutoffs much many long often usually happen happens mechanism mechanisms calculate calculating calculation " +
+   "step steps formation classification classify").split(" ").forEach(function (w) { FILL[w] = 1; });
+  function specific(text) {                       // the question's naming words, raw (as words.json holds them)
+    return uniq(norm(text).split(/[^a-z0-9]+/).filter(function (w) {
+      return w.length >= 3 && !STOP[w] && !FILL[w] && !GENERIC[stem(w)] && !CMPW[w] && !/^\d+$/.test(w);
+    }));
+  }
+  // the semester's exams whose guides or cards hold the question's words, best first (a word few exams use
+  // counts more); the active exam leads on a tie. At most four.
+  function examsFor(text, f) {
+    return words().then(function (W) {
+      if (!W || !IX) return [f];
+      var ws = specific(text).map(function (w) { var i = wordAt(W, w); return i < 0 ? 0 : W.m[i]; }).filter(Boolean);
+      if (!ws.length) return [f];
+      var pop = function (m) { var n = 0; while (m) { n += m & 1; m >>>= 1; } return n; };
+      var rs = IX.folders.map(function (x, i) {
+        if (x.sem !== f.sem || !hasGuides(x)) return null;
+        var sc = 0; ws.forEach(function (m) { if (m & (1 << i)) sc += 1 / pop(m); });
+        return sc ? { f: x, sc: sc * (x === f ? 1.1 : 1) } : null;
+      }).filter(Boolean).sort(function (a, b) { return b.sc - a.sc; });
+      if (!rs.length) return [f];
+      return rs.filter(function (r) { return r.sc >= rs[0].sc * 0.5; }).slice(0, 4).map(function (r) { return r.f; });
+    });
+  }
+  function prepGuide(g) {
+    if (!g._ix) {
+      g._texts = g.b.map(function (b) { return b[3]; });
+      // a line's own heading and its item heading ("Aortic stenosis", for "Defining feature: ...") count as weaker
+      // words of it (its lecture would not: every line of a lecture would then hold its title's words)
+      g._ix = makeIndex(g._texts, g.b.map(function (b) { return (b[2] || "") + (b[5] ? " " + b[5] : ""); }));
+    }
+    return g;
+  }
+
+  // ------------------------------------------------------------------ "what does X mean": the defining sentence
+  // Jaxon, 2026-10-15: "What does iatrogenic mean" got a long pulmonic regurgitation card (the word is in its
+  // other names). A short "what is X" / "what does X mean" / bare "X" is answered with the sentence of the
+  // guides or cards that DEFINES X; a card leads only when its title names X. When the class materials only
+  // use the word, Pip shows where it comes up and general knowledge (Claude, labelled) gives the meaning.
+  var DEFQ = /^(?:so |ok |okay |and )?(?:what(?:'s| is| are| was| were)|whats|what does|what do|define|definition of|meaning of|what(?:'s| is) the (?:meaning|definition) of|what is meant by|what does the (?:word|term))\s+(?:the (?:word|term) )?(?:an? |the )?(.+?)(?:\s+(?:mean|means|stand for|stands for|refer to|refers to))?(?:\s+again)?$/;
+  function defineTerm(text) {
+    var n = norm(text).replace(/[’]/g, "'").replace(/[?!.\s]+$/, "").trim(), m = n.match(DEFQ), t = m ? m[1] : null;
+    if (!t) { m = n.match(/^(.+?)\s+(?:meaning|definition|defined|means)$/); t = m ? m[1] : null; }
+    var bare = !t;
+    if (bare) {                                   // a bare term ("iatrogenic", "junctional rythm?"): up to three naming words
+      if (Object.keys(wants(text)).length || COMPARE.test(n) || n.split(/\s+/).length > 3) return null;
+      t = n;
+    }
+    t = t.replace(/^["“'‘]+|["”'’]+$/g, "").trim();
+    if (!t || t.split(/\s+/).length > 4) return null;
+    if (/\b(for|of|in|with|between|to|vs|versus|and|or|from|on|when|how|why|that|which|most|best|first|cause|causes|treat|treatment|happen|happens|do|does|is|are|you|i|me|my)\b/.test(t)) return null;
+    var tt = toks(t);
+    if (!tt.length || tt.some(function (x) { return GENERIC[x]; })) return null;
+    return { t: t, bare: bare };
+  }
+  function ciRe(s) {                              // a term as a case-blind pattern, so the rest of a pattern can care about case
+    return escRe(s).replace(/[a-z]/gi, function (c) { return "[" + c.toLowerCase() + c.toUpperCase() + "]"; }).replace(/\s+/g, "[\\s-]+");
+  }
+  function defPatterns(term) {
+    var t = ciRe(term);
+    return [
+      // "Pulmonic regurgitation is incomplete closing of ...": not "X is the most common cause"
+      [3, new RegExp("(?:^|[.;!?]\\s+|^[-•]\\s*)(" + t + ")\\s+(?:is|are|means|refers to|describes|denotes)\\s+(?!(?:the |a |an )?(?:most|more|less|least|usually|often|common|commonest|rare|rarely|always|never|not|also|seen|found|associated|caused|treated|diagnosed|managed|best|first|second|third|key|main|important|present|absent|increased|decreased|elevated|low|high|higher|lower|typically|classically|called)\\b)")],
+      [3, new RegExp("\\b(" + t + ")\\s*\\(([a-z][^()]{5,120})\\)")],                 // "Iatrogenic (caused by treatment)"
+      [2, new RegExp("\\b(" + t + ")\\s*(?:=|—|:)\\s*(?:a |an |the )?([a-z][^.;()]{8,140})")],  // "Iatrogenic = medical toxin use"
+      [2, new RegExp("([^.;:()]{8,140})\\((" + t + ")\\)")]                           // "from a medical procedure (iatrogenic)"
+    ];
+  }
+  function sentencesOf(x) {
+    return String(x).split(/\n+/).map(function (l) { return l.replace(/^[-•]\s+/, "").trim(); }).filter(Boolean)
+      .reduce(function (a, l) { return a.concat(l.replace(/([.!?])\s+(?=[A-Z★])/g, "$1\u0001").split("\u0001")); }, []);
+  }
+  function headOf(b, g) {                          // a block's place, short: its item heading, else its section without badges
+    var h = b[5] || String(b[2] || "").split(" \u203a ").pop() || g.docs[b[0]].title;
+    h = h.split("\u2605")[0].replace(/\s+(Routine|Urgent|Emergent|Emergency|Slides? [\d,–-]+)$/i, "").trim() || h;
+    return h.length > 80 ? h.slice(0, h.lastIndexOf(" ", 77)) + "\u2026" : h;
+  }
+  function findDefinition(term, scope, here) {
+    var pats = defPatterns(term), tt = uniq(toks(term));
+    var best = null, mentions = [];
+    function consider(s, sc, src) {
+      if (s.length > 320) return;
+      for (var i = 0; i < pats.length; i++) {
+        var m = s.match(pats[i][1]);
+        if (!m) continue;
+        var score = pats[i][0] * (src.f === here ? 1.2 : 1) * (src.card ? 1.1 : 1) - s.length / 400;
+        // [3] "X (gloss)" and [2] "X = gloss" give the meaning in their own words: "Iatrogenic: caused by treatment."
+        var gloss = i === 1 || i === 2 ? m[2].trim().replace(/[\s,:;—-]+$/, "") : null;
+        if (!best || score > best.sc) best = { sc: score, strong: pats[i][0] >= 3, s: s, gloss: gloss, src: src };
+        return;
+      }
+    }
+    return Promise.all(scope.map(function (f) {
+      return Promise.all([f.ex ? explainOf(f) : null, guideIndex(f).then(prepGuide).catch(function () { return null; })]).then(function (r) {
+        var e = r[0], g = r[1];
+        if (e) e.cards.forEach(function (c) {
+          if (!tt.every(function (w) { return toks(c.x).indexOf(w) >= 0; })) return;
+          sentencesOf(c.x).forEach(function (s) { consider(s, 0, { f: f, card: c, file: c.doc, a: c.a, head: c.t }); });
+        });
+        if (!g) return;
+        g.b.forEach(function (b, i) {
+          var tf = g._ix.docs[i].tf;
+          if (!tt.every(function (w) { return tf[w]; }) || g.docs[b[0]].kind === "cram") return;
+          var src = { f: f, file: g.docs[b[0]].file, a: b[1], head: headOf(b, g), text: b[3] };
+          sentencesOf(b[3]).forEach(function (s) { consider(s, 0, src); });
+          mentions.push(src);
+        });
+      });
+    })).then(function () {
+      // where the word comes up: one line per section, this exam first, short lines first
+      var seen = {}, ms = mentions.sort(function (a, b) { return (b.f === here) - (a.f === here) || a.text.length - b.text.length; })
+        .filter(function (m) { var k = m.f.s + "|" + m.head; if (seen[k] || (best && best.src.head === m.head)) return false; seen[k] = 1; return true; });
+      return { def: best, mentions: ms.slice(0, 3), total: mentions.length };
+    });
+  }
+  // the card whose TITLE names the term (not one that only lists it among its other names)
+  function titleNames(c, term) {
+    var tt = toks(numbered(term)), title = toks(numbered(c.t));
+    return tt.length && tt.every(function (w) { return title.indexOf(w) >= 0; }) ||
+      c.k.some(function (k) { return norm(k) === norm(term); });
+  }
+
+  // ------------------------------------------------------------------ "the X of each Y": one line per item
+  // Jaxon, 2026-10-15: "Can you give me the one defining feature of each valvular disease" got one card about
+  // something else. The guide has the answer as one "Defining feature:" line per condition (section 4.13, one
+  // h4 per condition), so Pip gathers it: the lecture or section the group names, then from each item in it
+  // the line that carries the asked-for label.
+  function listAsk(text) {
+    var n = norm(text).replace(/[’]/g, "'").replace(/[?!.\s]+$/, "").trim(), m, attr = "", group = "";
+    if ((m = n.match(/^(.*?)\b(?:of|for|in|on|from|about)\s+(?:each|every|all)(?:\s+of)?(?:\s+the)?\s+(.+)$/))) { attr = m[1]; group = m[2]; }
+    else if ((m = n.match(/\b(?:each|every)\s+(.+?)'s?\s+(.+)$/))) { group = m[1]; attr = m[2]; }
+    else if ((m = n.match(/^(?:(?:can|could|would) you |please )*(?:list|name)\s+(?:all\s+)?(?:of\s+)?(?:the\s+)?(.+)$/))) group = m[1];
+    else if ((m = n.match(/^what are all(?: of)?(?: the)? (.+)$/))) group = m[1];
+    else return null;
+    var strip = function (s) { var w = s.split(/\s+/); while (w.length && (FILL[w[0]] || STOP[w[0]] || /^(what'?s?|whats|is|are)$/.test(w[0]))) w.shift(); return w.join(" "); };
+    attr = strip(attr); group = strip(group.replace(/\s+(please|again)$/, ""));
+    var gt = toks(group).filter(function (w) { return !GENERIC[w] && !FILL[w]; });
+    if (!gt.length) return null;
+    return { attr: attr, at: uniq(toks(attr)).filter(function (w) { return !FILL[w]; }), group: group, gt: uniq(gt) };
+  }
+  function gatherList(L, scope, here) {
+    return Promise.all(scope.map(function (f) {
+      return guideIndex(f).then(prepGuide).then(function (g) {
+        var hasAll = function (s) { var t = toks(s); return L.gt.every(function (w) { return t.indexOf(w) >= 0; }); };
+        var parts = (g.p || []).map(hasAll), heads = {};
+        var inScope = function (b) { return (b[4] >= 0 && parts[b[4]]) || (heads[b[2]] !== undefined ? heads[b[2]] : (heads[b[2]] = hasAll(b[2] || ""))); };
+        var items = [], by = {}, label = new RegExp("^([^:—]{2,40})[:—]");
+        g.b.forEach(function (b, i) {
+          if (g.docs[b[0]].kind === "cram" || !inScope(b)) return;
+          var name = b[5] || "", text = b[3], tf = g._ix.docs[i].tf;
+          if (L.at.length) {
+            // the asked-for label at the start of the line ("Defining feature: ...") or, failing that, all its words in it
+            var lm = text.match(label), lab = lm ? toks(lm[1]) : [];
+            var atStart = L.at.every(function (w) { return lab.indexOf(w) >= 0; });
+            if (!atStart && !L.at.every(function (w) { return tf[w]; })) return;
+            if (!name) { var row = text.split(" — "); if (row.length > 1 && row[0].length <= 50 && !atStart) name = row[0]; }
+            if (!name) return;
+            var k = norm(name);
+            if (by[k] && (by[k].atStart || !atStart)) return;
+            var it = { name: name, text: atStart ? text.slice(lm[0].length).trim() : text, atStart: atStart, f: f, file: g.docs[b[0]].file, a: b[1] };
+            if (by[k]) items[items.indexOf(by[k])] = it; else items.push(it);
+            by[k] = it;
+          } else if (name && !by[norm(name)]) {   // "list all the X": the item headings themselves
+            by[norm(name)] = 1; items.push({ name: name, text: "", f: f, file: g.docs[b[0]].file, a: b[1] });
+          }
+        });
+        return { f: f, items: items, part: (g.p || []).filter(function (p, i) { return parts[i]; })[0] || "" };
+      }).catch(function () { return { f: f, items: [] }; });
+    })).then(function (rs) {
+      rs = rs.filter(function (r) { return r.items.length >= 2; })
+        .sort(function (a, b) { return (b.items.length + (b.f === here ? 1 : 0)) - (a.items.length + (a.f === here ? 1 : 0)); });
+      return rs[0] || null;
+    });
+  }
+
+  // the share of the question's naming words that Pip's cards (title, other names, whole text) or the shown
+  // passages hold: under COVER, the class materials answer only part of it
+  // How much of the question the shown cards or passages hold: its naming words (shorthand and abbreviations
+  // expanded), each weighted by how rare it is in that exam's own cards or guide, so a missing everyday word
+  // ("looks", "rate") barely counts and a missing word they never use ("why does aortic stenosis cause syncope
+  // during pregnancy") counts a lot. Under SHORT_OF the class materials answer only part of it.
+  var SHORT_OF = 0.8;
+  function shareIn(text, have, ix) {
+    var ab = (IX && IX.ab) || {}, tot = 0, got = 0;
+    specific(casual(text)).forEach(function (w) {
+      var t = toks(numbered(w))[0]; if (!t) return;
+      var df = (ix && ix.df[t]) || 0, wt = ix ? Math.log(1 + (ix.N - df + 0.5) / (df + 0.5)) : 1;
+      var long = ab[w] ? toks(ab[w]) : null;
+      tot += wt;
+      if (have[t] || (long && long.length && long.every(function (x) { return have[x]; }))) got += wt;
+    });
+    return tot ? got / tot : 1;
+  }
+  function fullCover(cards, text, plain) {       // plain: every word counts the same (is the card about this at all?)
+    var have = {};
+    cards.slice(0, 2).forEach(function (c) { toks(numbered(c.t + " " + c.k.join(" ") + " " + c.x)).forEach(function (w) { have[w] = 1; }); });
+    return shareIn(text, have, plain ? null : cards[0] && cards[0]._ix);
+  }
+  function passCover(out, text) {
+    var have = {};
+    out.forEach(function (r) { toks(numbered((r.b[2] || "") + " " + (r.b[5] || "") + " " + r.b[3])).forEach(function (w) { have[w] = 1; }); });
+    return shareIn(text, have, out[0] && out[0].g._ix);
+  }
+  // "From general knowledge" (Jaxon, 2026-10-15): Claude, labelled "not from your class materials", only when the
+  // class materials fall short; the passages Pip did find go along so Claude fills the gap instead of repeating
+  // them. Lookups never; every usual limit applies (maybeClaude).
+  function general(question, passages, f, why) {
+    if (LOOKUP.test(norm(question).trim())) return;
+    var ps = (passages || []).slice(0, 3);
+    maybeClaude(question, "general", ps, f, why);
+  }
+
   // the line of the explained section that is most about this concept: the card's own names and the
   // question's words, weighted by how rare they are in the guide
   function guideLine(f, c, amap, question) {
     f = c._f || f; amap = c._m || amap;           // a card from another exam reads THAT exam's guide
     if (!amap) return Promise.resolve(null);
     return guideIndex(f).then(function (g) {
-      if (!g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
+      prepGuide(g);
       // the question's own words decide (weight 1); the card's names only break ties (weight 0.35)
       var qw = uniq(toks(spell(numbered(casual(question)), g._ix))), cw = uniq(toks(numbered(c.t + " " + c.k.join(" ")))).filter(function (w) { return qw.indexOf(w) < 0; });
       var key = qw.filter(function (w) { return !GENERIC[w] && g._ix.df[w]; });
@@ -2001,7 +2385,7 @@
   function wantsExplanation(q) { var n = norm(q).trim(); return !LOOKUP.test(n) && toks(q).length >= 1 && (n.split(/\s+/).length >= 2 || needsExplaining(q)); }
   function relatedToExam(q, f) {                 // does the question use this exam's own vocabulary?
     return guideIndex(f).then(function (g) {
-      if (!g._ix) { g._texts = g.b.map(function (b) { return b[3]; }); g._ix = makeIndex(g._texts, g.b.map(function (b) { return b[2] || ""; })); }
+      prepGuide(g);
       var hits = toks(expandFor(q, g._ix)).filter(function (w) { return w.length >= 4 && g._ix.df[w]; });
       return hits.length >= 1 && norm(q).split(/\s+/).length >= 3;
     }).catch(function () { return false; });
@@ -2143,7 +2527,8 @@
         r2.appendChild(yes); r2.appendChild(no); cc.appendChild(r2);
         return;
       }
-      var wait = say(mode === "beyond" ? "Your guide doesn't cover that. Let me check with Claude…" : mode === "simpler" ? "Let me ask Claude to put it another way…" : "Let me check with Claude…");
+      var wait = say(mode === "beyond" ? "Your guide doesn't cover that. Let me check with Claude…" : mode === "general" ? "Let me check general knowledge with Claude…"
+                     : mode === "simpler" ? "Let me ask Claude to put it another way…" : "Let me check with Claude…");
       var db = deviceBudget(); db.n++; set(K_CDAY, JSON.stringify(db)); lastClaudeAt = Date.now();
       count("claude_ask");
       var duet = P.duet && P.duet.start();
@@ -2153,6 +2538,8 @@
         var show = function () {
           wait.remove();
           // a daily or monthly cap is Pip falling back to the guide; anything else is an error
+          // a helper deployed before the "general" mode existed answers it as "beyond" (one retry)
+          if (!r.ok && r.code === "bad_mode" && mode === "general") { wait.remove(); lastClaudeAt = 0; return askClaude(question, "beyond", passages, f, why, cacheK, fu); }
           if (!r.ok) { count(/^(user_|day_|month_)/.test(r.code || "") ? "fallback" : "error");
                        if (passages && passages.onFail) { passages.onFail(); return; }     // a comparison: the brain or the cards take over
                        say(CLAUDE_SAYS[r.code] || "Claude couldn't answer just now. Your guide's passages are above."); return; }
@@ -2173,7 +2560,12 @@
       if (pl.before && pl.before.parentNode === log) log.insertBefore(cd, pl.before);
     }
     var head = el("div", "pw-chead");
-    head.appendChild(el("b", null, "Claude assist"));
+    if (mode === "general") {
+      cd.classList.add("pw-general");
+      var gh = el("div", "pw-part", "From general knowledge"); log.insertBefore(gh, cd);
+      head.appendChild(el("b", null, "Claude"));
+      head.appendChild(el("span", "pw-badge", "Not from your class materials"));
+    } else head.appendChild(el("b", null, "Claude assist"));
     if (mode === "beyond") head.appendChild(el("span", "pw-badge", "Beyond your guide"));
     else if (mode === "deeper") head.appendChild(el("span", "pw-badge", "Deeper than your guide"));
     cd.appendChild(head);
@@ -2184,7 +2576,7 @@
       if (m) { if (!list) { list = el("ul"); cd.appendChild(list); } list.appendChild(el("li", null, m[1])); }
       else { list = null; cd.appendChild(el("p", null, line)); }
     });
-    var gl = passages && passages.link;
+    var gl = mode !== "general" && passages && passages.link;
     if (gl) { var gw = el("div", "pw-glink"); gw.appendChild(linkTo(gl.folder, gl.file, gl.a, "Read it in your guide →")); cd.appendChild(gw); }
     if (why) cd.insertBefore(el("div", "pw-src", why + (r.cached ? " (Claude answered this one before.)" : "")), cd.children[1] || null);
     var foot = el("div", "pw-src");
@@ -2427,6 +2819,9 @@
     var api = { key: key };
     chips([]);
     show();
+  }
+  function scrollLead(node) {                     // an answer's first line at the top of the conversation
+    log.scrollTop = node.getBoundingClientRect().top - log.getBoundingClientRect().top + log.scrollTop - 8;
   }
   function scrollTo(node) {
     // measured against the conversation itself (offsetTop counts from the window, header included)

@@ -296,7 +296,21 @@ def page_title(root, src):
 def extract_blocks(root):
     """[(anchorId|None, sectionTitle, text)] in document order."""
     blocks = []
-    state = {"last_id": None, "sec": "", "h3": ""}
+    # part: the page's current h2 (a lecture, "4 · Valvular Heart Disease"); sub: an h4-h6 item heading
+    # ("Aortic stenosis") for the blocks inside the same container as it, so "the defining feature of
+    # each valvular disease" can gather one line per condition
+    state = {"last_id": None, "sec": "", "h3": "", "part": "", "sub": None}
+
+    def sub_of(n):
+        sb = state["sub"]
+        if not sb or n is sb[1]:
+            return ""
+        x = n.parent
+        while x is not None:
+            if x is sb[2]:
+                return sb[0]
+            x = x.parent
+        return ""
 
     def emit(n, text, sec_suffix=""):
         if not text:
@@ -307,9 +321,10 @@ def extract_blocks(root):
             return
         anchor = n.attrs.get("id") or state["last_id"]
         sec = state["sec"] + sec_suffix
+        sub = sub_of(n)
         for piece in split_long(text):
             if len(piece) >= MIN_BLOCK:
-                blocks.append((anchor, sec, piece))
+                blocks.append((anchor, sec, piece, state["part"], sub))
 
     def details_label(n):
         x = n.parent
@@ -349,7 +364,12 @@ def extract_blocks(root):
             t = own_text(n, True)
             if tag in ("h2", "h3") and t:
                 state["sec"] = t
+                state["sub"] = None
+                if tag == "h2":
+                    state["part"] = t
             emit(n, t)
+            if tag in ("h4", "h5", "h6") and t and n.parent is not None:
+                state["sub"] = (t, n, n.parent)
             return
         if tag == "h1":
             return
@@ -410,7 +430,7 @@ def abbreviations(texts):
 
 
 def build_guide_index(folder, files):
-    docs, blocks, idsets = [], [], {}
+    docs, blocks, idsets, parts, pidx = [], [], {}, [], {}
     for f in files:
         src = read(os.path.join(ROOT, folder, f))
         m = re.search(r"<body[^>]*data-dark-kind=\"([^\"]*)\"", src)
@@ -426,13 +446,22 @@ def build_guide_index(folder, files):
         di = len(docs)
         docs.append({"file": f, "title": title, "kind": kind})
         seen = set()
-        for anchor, sec, text in bl:
+        for anchor, sec, text, part, sub in bl:
             if text in seen:
                 continue
             seen.add(text)
-            blocks.append([di, anchor or None, sec, text])
+            b = [di, anchor or None, sec, text]
+            # [4] the h2 part (an index into "p"), [5] the item heading: only when there is one
+            if part or sub:
+                if part and part not in pidx:
+                    pidx[part] = len(parts)
+                    parts.append(part)
+                b.append(pidx[part] if part else -1)
+                if sub:
+                    b.append(sub)
+            blocks.append(b)
         idsets[f] = set(re.findall(r"""\sid=["']([^"']+)["']""", src))
-    return {"v": 1, "docs": docs, "b": blocks, "ab": abbreviations([x[3] for x in blocks])}, idsets
+    return {"v": 1, "docs": docs, "b": blocks, "p": parts, "ab": abbreviations([x[3] for x in blocks])}, idsets
 
 
 # ------------------------------------------------------------------ main
@@ -521,6 +550,7 @@ def main():
     stats, misses = [], []
     explain_stats = []                # (folder, cards shipped, stale, dropped) per exam
     ab_by_exam = {}                   # slug -> that guide's own abbreviations, for exams with cards (cross-exam search)
+    words = {}                        # word -> [count, exam bit mask], for pip/data/words.json
     all_ids = {}
 
     for folder in folders:
@@ -652,7 +682,7 @@ def main():
             if not re.search(r"""\sid=["']%s["']""" % re.escape(el), gsrc):
                 gmiss.append((b["id"], gf, el))
         imiss = []
-        for di, anchor, sec, text in gidx["b"]:
+        for di, anchor, sec, text, *_ in gidx["b"]:
             if anchor is not None and anchor not in idsets[gidx["docs"][di]["file"]]:
                 imiss.append((gidx["docs"][di]["file"], anchor))
         misses.append((folder, gmiss, imiss))
@@ -662,6 +692,18 @@ def main():
         guide_kb = dump(os.path.join(OUT, "guide", fslug + ".json"), gidx)
         ex_n, ex_stale, ex_drop = ship_explain(fslug, gidx)
         explain_stats.append((folder, ex_n, ex_stale, ex_drop))
+        # every word this exam's guides and cards use (pip/data/words.json, below)
+        fi = len(index["folders"])
+        wtexts = [x[3] for x in gidx["b"]] + [x[2] for x in gidx["b"]] + gidx["p"]
+        if ex_n:
+            with open(os.path.join(OUT, "explain", fslug + ".json"), encoding="utf-8") as fh:
+                for c in json.load(fh)["cards"]:
+                    wtexts += [c["t"], c["x"]] + c["k"]
+        for t in wtexts:
+            for w in re.findall(r"[a-z][a-z0-9]{2,}", t.lower()):
+                e = words.setdefault(w, [0, 0])
+                e[0] += 1
+                e[1] |= 1 << fi
         if ex_n and gidx.get("ab"):
             ab_by_exam[fslug] = gidx["ab"]
         ab_texts.extend(x[3] for x in gidx["b"])
@@ -679,6 +721,16 @@ def main():
     # one list for the whole site: a guide that never writes "(PCR)" still answers "PCR"
     index["ab"] = abbreviations(ab_texts)
     index_size = dump(os.path.join(OUT, "index.json"), index)
+    # Pip's spelling and routing list: every word of every exam's guides and cards, commonest first, with a
+    # bit per exam (index.json folder order) saying where it occurs. A word known ANYWHERE is never
+    # "corrected" (rythm -> rhythm, but never one exam's word into another's), and a question only loads
+    # the exams that hold its words
+    if len(index["folders"]) > 30:
+        die("words.json masks assume at most 30 exam folders; there are %d" % len(index["folders"]))
+    wl = sorted(words.items(), key=lambda kv: (-kv[1][0], kv[0]))
+    words_kb = dump(os.path.join(OUT, "words.json"), {"v": 1, "w": " ".join(w for w, _ in wl),
+                                                      "m": " ".join(format(e[1], "x") for _, e in wl)}) / 1024
+    print("words.json: %d words, %.0f KB" % (len(wl), words_kb))
     ab_kb = dump(os.path.join(OUT, "ab.json"), ab_by_exam) / 1024
     print("per-exam abbreviations (%d exams with cards): %.1f KB" % (len(ab_by_exam), ab_kb))
     print("abbreviations (site-wide): %d" % len(index["ab"]))
