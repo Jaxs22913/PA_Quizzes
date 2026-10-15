@@ -44,17 +44,18 @@ CONTESTED on the slides, or slide vs audio, and how each is handled (truth wins)
       macular": truth is flat (macular) and painless -- "raised" is never keyed. Osler "palms, soles,
       distal phalanges": truth is the pads of the fingers and toes -- Osler nodes are keyed on the
       finger and toe pads, never on the palms. Osler mechanism "septic emboli vs. immune complexes":
-      keyed as IMMUNOLOGIC (slide 22's Duke table and slide 13's note); Janeway as vascular/embolic.
+      keyed as IMMUNOLOGIC (slide 22's Duke table); Janeway as vascular/embolic (slide 22, slide 13).
       Audio: "they both are related to septic emboli" -- not keyed.
   s12 splinter hemorrhages "can be painful": not keyed.
   s23 mnemonic says fever "> 38 C" and blood culture "positive > 2 times 12 hrs apart"; slide 22's
       table says ">= 38.0 C" and lists the full persistence rules. Stems use 38.6 C and above, never
       38.0; the major blood-culture criterion is keyed as the table gives it.
-  s23 note: the 2023 Duke-ISCVID update (molecular, PET-CT, intraoperative findings). Not keyed: the
-      slides teach the modified Duke criteria.
-  s25 "Blood cultures x 3 sets ... within 24 h" vs its note (2023 criteria dropped the strict timing).
-      Keyed: three sets from separate sites, drawn BEFORE antibiotics; the 24-hour window is never
-      keyed as a diagnostic requirement.
+  SPEAKER NOTES ARE NOT SLIDE CONTENT (Jaxon, 2026-10-15): only visible slide text and pictures are
+      keyed or taught. Nothing here rests on a note: no rejection rules or "possible is treated" rule
+      (s24), no 2023 Duke-ISCVID update (s23, s25), no pleuritic pain, nodular infiltrates or empyema
+      (s11), no low-income rheumatic claim (s6).
+  s25 "Blood cultures x 3 sets ... within 24 h": keyed as three sets from separate sites, drawn BEFORE
+      antibiotics; the 24-hour window is never keyed as a diagnostic requirement.
   s37 mortality figures (Staphylococcus aureus 30% / 50% prosthetic / 5% injection drug use): keyed
       only qualitatively (most lethal organism; worst with a prosthetic valve; lower in people who
       inject drugs).

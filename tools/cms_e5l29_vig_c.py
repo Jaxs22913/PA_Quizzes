@@ -331,7 +331,7 @@ V(JUN, IO_L30,
    ["Adenosine",
     "Adenosine blocks the atrioventricular node further and would worsen the high-grade block causing his rhythm.", "confused mechanism or drug class"],
    ["Catheter ablation",
-    "Ablation treats tachycardias; a junctional escape from high-grade block needs pacing.", "confused mechanism or drug class"]],
+    "Ablation treats tachycardias; a junctional rhythm from high-grade block needs a permanent pacemaker.", "confused mechanism or drug class"]],
   C(64), "escalation", "treatment"),
 
 V(JUN, IO_L30,

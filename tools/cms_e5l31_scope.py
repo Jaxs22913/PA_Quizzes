@@ -29,7 +29,13 @@ EMPHASIS (minutes, Notability segment timing): definitions/epidemiology ~12, eti
   aVR depression), acute treatment/recurrence/counseling ~12 (aspirin not other NSAIDs after myocardial
   infarction; heart rate under 100; GI protection; anti-interleukin-1 earlier), populations and consults ~6,
   constrictive ~15 (calcification "slam dunk" but absence does not exclude), effusion and tamponade ~22
-  (emergency, Beck triad "classic" but rarely complete, clinical diagnosis confirmed by drainage).
+  (emergency, Beck triad "classic", clinical diagnosis confirmed by drainage).
+
+SPEAKER NOTES ARE NOT SLIDE CONTENT (Jaxon, 2026-10-15): only visible slide text and pictures count. Notes-only
+  facts removed from every pool: s54 "complete Beck triad present in only a minority"; s59 ">10 mmHg fall in
+  systolic pressure" (the visible s71 infographic says "10 mm Hg drop in BP with inspiration", which is keyed);
+  s29 "preferred over corticosteroids"; s31 "managed with medical therapy alone"; s24 "PET/CT uptake higher
+  with tuberculosis or malignancy".
 
 IOS are the SYLLABUS objectives, verbatim (CMS syllabus.pdf p. 17, "Pericardial Disease", read with PyMuPDF on
 2026-10-15), the syllabus's own broken numbering kept and only the leading "1." / "8." dropped, as L26-L28 do.
@@ -53,9 +59,9 @@ CONTESTED or WRONG on the slides, so NEVER KEYED the contested way (truth wins; 
       discriminator; the Kussmaul sign is.
   s72 (excluded) lists the Kussmaul sign under tamponade -- it belongs to constriction. Never keyed.
   s29 "fourth-line" anakinra/rilonacept -- the lecturer struck it; s35's 2025 guidance is keyed:
-      anti-interleukin-1 therapy preferred over corticosteroids for recurrent, colchicine-resistant or
-      steroid-dependent disease with an inflammatory phenotype (C-reactive protein over 10 mg/L, fever,
-      pericardial inflammation on imaging).
+      anti-interleukin-1 therapy used earlier with an inflammatory phenotype (C-reactive protein over
+      10 mg/L, fever, pericardial inflammation) and preferred for recurrent, colchicine-resistant or
+      steroid-dependent disease. "Preferred over corticosteroids" is in the speaker notes only, so never used.
   ECG stage DURATIONS: s22 says stage 1 lasts "the first two weeks", the s23 picture says "< 1 week". Stage
       ORDER is keyed; no stage duration ever is.
   s71 calls echocardiography the "gold standard" for tamponade; s57 (and the lecturer: "your treatment confirms
@@ -103,7 +109,7 @@ SCOPE_BANNED = [
 NAMED = {
     "friction rub": "scratch",                 # s17: superficial scratchy or squeaking
     "kussmaul": "inspiration",                 # s39: rises during inspiration rather than falling
-    "pulsus paradoxus": "systolic",            # s59 notes: >10 mmHg fall in systolic pressure on inspiration
+    "pulsus paradoxus": "drop",                # s71 infographic: 10 mmHg drop in BP with inspiration
     "pericardial knock": "earlier",            # s39: slightly earlier than a third heart sound
     "electrical alternans": "alternat",        # s60: QRS amplitude alternates
     "beck": "muffled",                         # s54

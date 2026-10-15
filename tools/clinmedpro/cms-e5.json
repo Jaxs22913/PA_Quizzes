@@ -672,7 +672,7 @@
    "title": "Arrhythmias I: Supraventricular",
    "lecturer": "Ayelet Elwaya, MSHS, PA-C, CAQ-EM",
    "deck": "arrhythmias I - Elwaya-2.pptx",
-   "note": "Built from the slides only (recording of Monday 12 October 2026 not yet used for emphasis, so no stars). Junctional rhythm is listed by the syllabus under Lecture 30 but is taught on this deck (slides 59-64), so it is here. Slides 27 (narrow-complex tachycardia algorithm) and 51 (CHA2DS2-VASc and HAS-BLED calculator screenshots) are third-party images and are not reproduced. Slide conflicts are marked 'Contested on the slides' in the field concerned: HAS-BLED 3 and up 'no anticoagulation' (slide 50) and 'anticoagulation for all' (slide 49); the accessory pathway circuit wording (slide 33); 'never adenosine' for any known Wolff-Parkinson-White (slide 37); regular versus irregular supraventricular tachycardias (slides 24, 28); constant PR for multifocal tachycardia and flutter (slides 28, 42). The rate bands also overlap (supraventricular tachycardia over 160, nodal reentry 140 to 180, accessory pathway reentry 200 to 300, atrial tachycardia 150 to 250), so name the rhythm from the strip, not the rate.",
+   "note": "Built from the slides plus Elwaya's lecture recording of Monday 12 October 2026 (our own transcription, cross-checked against Notability's): the recording only chooses which facts to star (recording times are given in each card's note and in the study guide), it adds no content. She said medications are tested but doses are not (1:22, 1:32), and asked the class not to memorize the narrow-complex algorithm (slide 27) or the two score tables (slide 51; 1:33:24). On the recording she said a CHA2DS2-VASc score of 0 (men) or 1 (women) should be anticoagulated (1:34:02); slide 50 (low risk, may not need it) is right and is keyed. Junctional rhythm is listed by the syllabus under Lecture 30 but is taught on this deck (slides 59-64), so it is here. Slides 27 (narrow-complex tachycardia algorithm) and 51 (CHA2DS2-VASc and HAS-BLED calculator screenshots) are third-party images and are not reproduced. Slide conflicts are marked 'Contested on the slides' in the field concerned: HAS-BLED 3 and up 'no anticoagulation' (slide 50) and 'anticoagulation for all' (slide 49); the accessory pathway circuit wording (slide 33); 'never adenosine' for any known Wolff-Parkinson-White (slide 37); regular versus irregular supraventricular tachycardias (slides 24, 28); constant PR for multifocal tachycardia and flutter (slides 28, 42). The rate bands also overlap (supraventricular tachycardia over 160, nodal reentry 140 to 180, accessory pathway reentry 200 to 300, atrial tachycardia 150 to 250), so name the rhythm from the strip, not the rate.",
    "conditions": [
     {
      "id": "l29-sinus-arrhythmia",
@@ -706,7 +706,8 @@
     {
      "id": "l29-sinus-brady",
      "name": "Sinus bradycardia",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): asymptomatic patients are left alone (9:18); common in adults over 65 (7:33); a new slow rate often follows a newly started beta blocker (8:10); instability is defined by four signs (37:24); atropine is first line (10:22), then a temporary pacemaker (15:14), then a permanent pacemaker if the cause will not go away (15:21).",
      "fields": {
       "name": "Sinus bradycardia",
       "definition": "A regular sinus rhythm under 60 beats per minute; can be pathological or a normal variant",
@@ -716,7 +717,7 @@
       "pathology": "Slow firing of the sinoatrial node with normal conduction",
       "clinical": "Most people are asymptomatic",
       "diagnosis": "ECG (electrocardiogram): regular, rate under 60, uniform P wave for every QRS, PR 0.12 to 0.20 seconds, narrow QRS",
-      "treatment": "No treatment if asymptomatic. Acute, symptomatic and hemodynamically unstable: atropine first line, then a temporary pacemaker. Chronic and symptomatic: permanent pacemaker",
+      "treatment": "[[★ No treatment if asymptomatic]]. [[★ Acute, symptomatic and hemodynamically unstable: atropine first line, then a temporary pacemaker]]. Chronic and symptomatic: permanent pacemaker",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -735,17 +736,18 @@
     {
      "id": "l29-sinus-tachy",
      "name": "Sinus tachycardia (appropriate and inappropriate)",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): the definition runs up to 160 (17:02); inappropriate sinus tachycardia is a diagnosis of exclusion (20:20); young people on beta blockers do poorly and get dizzy (23:07); usually a benign prognosis, so it is left alone (23:30).",
      "fields": {
       "name": "Sinus tachycardia",
-      "definition": "A regular sinus rhythm above 100, up to 160 beats per minute. Appropriate: a response to physiologic stress, an underlying pathologic condition or medication effects. Inappropriate: an elevated heart rate unexplained after secondary causes have been excluded",
+      "definition": "A regular sinus rhythm above 100, [[★ up to 160 beats per minute]]. Appropriate: a response to physiologic stress, an underlying pathologic condition or medication effects. Inappropriate: an elevated heart rate unexplained after secondary causes have been excluded",
       "etiology": "Physiologic (exercise, pain, anxiety, enhanced catecholamine release); pathologic (hypovolemia, hypotension or shock, anemia, hypoxia, PE (pulmonary embolism), MI (myocardial infarction), hyperthyroidism); drugs (stimulants, anticholinergics); abrupt withdrawal of beta blockers or nondihydropyridine calcium channel blockers",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Stimulants, anticholinergics, abrupt withdrawal of rate-slowing drugs; night shifts and illicit drugs in inappropriate sinus tachycardia",
       "pathology": "Sinus node firing faster as a response to stress, illness or drugs",
       "clinical": "Physiologic sinus tachycardia usually has no associated symptoms such as dizziness or nausea",
-      "diagnosis": "ECG (electrocardiogram): regular, above 100 up to 160, uniform P wave for every QRS, PR 0.12 to 0.20, narrow QRS. Inappropriate sinus tachycardia is a diagnosis of exclusion",
-      "treatment": "Appropriate: treat the underlying cause. Inappropriate: eliminate influencing factors (lifestyle such as night shifts, illicit drugs, medications), behavioral therapy; beta blockers are not well tolerated; generally left untreated because patients tolerate the symptoms better than the treatment",
+      "diagnosis": "ECG (electrocardiogram): regular, above 100 up to 160, uniform P wave for every QRS, PR 0.12 to 0.20, narrow QRS. [[★ Inappropriate sinus tachycardia is a diagnosis of exclusion]]",
+      "treatment": "Appropriate: treat the underlying cause. Inappropriate: eliminate influencing factors (lifestyle such as night shifts, illicit drugs, medications), behavioral therapy; [[★ beta blockers are not well tolerated]]; [[★ generally left untreated]] because patients tolerate the symptoms better than the treatment",
       "mortality": "Inappropriate sinus tachycardia usually has a benign prognosis"
      },
      "slides": {
@@ -764,17 +766,18 @@
     {
      "id": "l29-sss",
      "name": "Sick sinus syndrome (sinus node dysfunction), including tachy-brady syndrome",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): in tachy-brady syndrome the fast rhythm is usually atrial fibrillation; she repeated it and asked it as a question (27:17, 31:09, 31:25). Pauses are left alone unless symptomatic, long or frequent, then a permanent pacemaker (33:03); add a defibrillator if the fast rhythm is ventricular tachycardia (33:23).",
      "fields": {
       "name": "Sick sinus syndrome (SSS), also called sinus node dysfunction",
-      "definition": "The sinus node cannot reliably maintain an appropriate rhythm: sinus node exit block (the impulse is generated but does not exit the sinoatrial node), sinus arrest (the impulse is not generated, leading to a junctional rhythm), or tachy-brady syndrome (a tachyarrhythmia alternating with symptomatic bradycardia or offset pauses)",
+      "definition": "The sinus node cannot reliably maintain an appropriate rhythm: sinus node exit block (the impulse is generated but does not exit the sinoatrial node), sinus arrest (the impulse is not generated, leading to a junctional rhythm), or tachy-brady syndrome (a tachyarrhythmia, [[★ most commonly atrial fibrillation]], alternating with symptomatic bradycardia or offset pauses)",
       "etiology": "Sinoatrial node ischemia, injury to the sinoatrial node from cardiac surgery, electrolyte abnormalities, hypothyroidism, medications (beta blockers, nondihydropyridine calcium channel blockers, digoxin)",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Cardiac surgery, rate-slowing medications, electrolyte abnormalities, hypothyroidism",
-      "pathology": "Exit block pauses can be an exact multiple of the P-P interval; sinus arrest pauses are not, and a junctional escape rhythm with inverted (retrograde) P waves may take over. In tachy-brady syndrome the tachyarrhythmia is most commonly atrial fibrillation; when it stops, the sinus node may take seconds to fire (offset pause)",
-      "clinical": "Symptomatic bradycardia; offset pauses causing dizziness or syncope",
+      "pathology": "Exit block: the impulse is generated but cannot get out of the sinoatrial node. Sinus arrest: the impulse is not generated, leading to a junctional rhythm. Tachy-brady syndrome: fast atrial rhythms (the tachyarrhythmia most commonly atrial fibrillation) alternate with slow rhythms or pauses",
+      "clinical": "Symptomatic bradycardia, alternating with a tachyarrhythmia in tachy-brady syndrome",
       "diagnosis": "ECG (electrocardiogram) or 24-hour ambulatory monitor: irregular; variable rate (bradycardia, normal sinus and tachycardia up to 160); P waves variable if present; PR variable; narrow QRS. Confirm whether symptoms correlate with the bradycardia",
-      "treatment": "Treat the underlying cause. No correlation between symptoms and bradycardia: observation. Symptomatic bradycardia: PPM (permanent pacemaker). Tachy-brady syndrome often needs a permanent pacemaker; if the tachyarrhythmia is ventricular tachycardia, a permanent pacemaker with an AICD (automatic implantable cardioverter defibrillator)",
+      "treatment": "Treat the underlying cause. No correlation between symptoms and bradycardia: observation. Symptomatic bradycardia: PPM (permanent pacemaker). Tachy-brady syndrome often needs a permanent pacemaker; [[★ if the tachyarrhythmia is ventricular tachycardia, a permanent pacemaker with an AICD (automatic implantable cardioverter defibrillator)]]",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -783,7 +786,7 @@
       "etiology": "22",
       "epidemiology": "",
       "risk_factors": "22",
-      "pathology": "18, 19, 20, 21",
+      "pathology": "18",
       "clinical": "18",
       "diagnosis": "18, 21, 22",
       "treatment": "22",
@@ -793,7 +796,8 @@
     {
      "id": "l29-svt",
      "name": "Supraventricular tachycardia (paroxysmal supraventricular tachycardia, the umbrella)",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): vagal maneuver first, then adenosine, which can be tried twice (38:44 to 38:54, 40:38); unstable gets synchronized cardioversion (40:44), a lower-voltage shock synchronized with the heart (44:12); collapse usually needs a rate above 200 (38:09).",
      "fields": {
       "name": "Supraventricular tachycardia (SVT)",
       "definition": "A blanket term for any tachydysrhythmia arising above the level of the bundle of His (atrioventricular bundle): sinus tachycardia, atrial tachycardia (focal, multifocal), reentry tachycardias (atrioventricular nodal and atrioventricular reentry), atrial flutter, atrial fibrillation. By definition narrow QRS complex tachycardias",
@@ -803,7 +807,7 @@
       "pathology": "Contested on the slides: slide 24 says all are regular except atrial fibrillation and variable flutter, but multifocal atrial tachycardia is irregular too (slide 28). Classic strip: regular, above 160, P waves and PR hidden, narrow QRS under 0.12 except antidromic atrioventricular reentrant tachycardia",
       "clinical": "May be asymptomatic, or transient if paroxysmal; palpitations, lightheadedness, fatigue, dyspnea, chest pain, vague chest discomfort, nausea, vomiting. Usually no syncope or hemodynamic collapse unless the rate goes above 200 (atrioventricular reentry, nodal reentry, atrial fibrillation with an accessory pathway)",
       "diagnosis": "ECG (electrocardiogram): regular narrow complex tachycardia above 160 with hidden P waves; adenosine may convert it or slow the rate so P waves can be seen",
-      "treatment": "Stable: vagal maneuver first line, then adenosine (may be given twice). Hemodynamically unstable (less common): immediate synchronized cardioversion (a timed shock with decreased voltage)",
+      "treatment": "[[★ Stable: vagal maneuver first line, then adenosine (may be given twice)]]. [[★ Hemodynamically unstable (less common): immediate synchronized cardioversion]] (a timed shock with decreased voltage)",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -822,7 +826,8 @@
     {
      "id": "l29-fat",
      "name": "Focal atrial tachycardia",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): tell focal from multifocal by whether the P-wave shape stays the same (49:24); abrupt-onset palpitations and a usually benign arrhythmia (53:10); adenosine does not work well, which is why it is diagnostic (54:24).",
      "fields": {
       "name": "Focal atrial tachycardia (FAT)",
       "definition": "A tachycardia from a single ectopic focus within the atria but outside the sinoatrial node; typically paroxysmal",
@@ -830,8 +835,8 @@
       "epidemiology": "Commonly seen in the absence of heart disease",
       "risk_factors": "Increased metabolic demand",
       "pathology": "One ectopic focus: every P wave has the same abnormal shape",
-      "clinical": "Most people report abrupt-onset palpitations",
-      "diagnosis": "ECG (electrocardiogram): regular; above 100, usually 150 to 250; consistent abnormal P-wave shape, one P wave for every QRS; PR 0.12 to 0.20; narrow QRS. Adenosine is an important diagnostic tool because it is usually less effective at terminating focal atrial tachycardia than atrioventricular-node-dependent reentry",
+      "clinical": "[[★ Most people report abrupt-onset palpitations]]",
+      "diagnosis": "ECG (electrocardiogram): regular; above 100, usually 150 to 250; [[★ consistent abnormal P-wave shape]], one P wave for every QRS; PR 0.12 to 0.20; narrow QRS. [[★ Adenosine is an important diagnostic tool because it is usually less effective at terminating focal atrial tachycardia]] than atrioventricular-node-dependent reentry",
       "treatment": "Unstable: synchronized cardioversion; chemical cardioversion may be tried with amiodarone. Stable and symptomatic: IV (intravenous) beta blocker or nondihydropyridine calcium channel blocker. Identify and treat the underlying cause. Chronic: oral beta blocker or nondihydropyridine calcium channel blocker as initial therapy; catheter ablation usually curative (90%)",
       "mortality": "Generally a benign arrhythmia"
      },
@@ -851,10 +856,11 @@
     {
      "id": "l29-mat",
      "name": "Multifocal atrial tachycardia",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): changing P-wave shapes separate it from focal atrial tachycardia (49:24); multifocal is the one tied to long-standing disease that turns unstable first (56:33).",
      "fields": {
       "name": "Multifocal atrial tachycardia (MAT)",
-      "definition": "An atrial tachycardia from multiple foci: at least 3 distinct P-wave morphologies in the same lead; irregular",
+      "definition": "An atrial tachycardia from multiple foci: [[★ at least 3 distinct P-wave morphologies in the same lead]]; irregular",
       "etiology": "Usually severe COPD (chronic obstructive pulmonary disease) or CHF (congestive heart failure), with or without respiratory failure; typically when these patients are acutely ill, causing right heart stress or pulmonary hypertension",
       "epidemiology": "Acutely ill patients with severe lung disease or heart failure",
       "risk_factors": "Severe chronic obstructive pulmonary disease, heart failure, respiratory failure",
@@ -862,7 +868,7 @@
       "clinical": "Most people do not have symptoms directly attributable to it",
       "diagnosis": "ECG (electrocardiogram): irregular; above 100, usually 150 to 250; abnormal, changing P-wave shapes (at least 3 in one lead), one P wave for every QRS; narrow QRS",
       "treatment": "Treat the underlying condition. In hospital, may also get a beta blocker or nondihydropyridine calcium channel blocker, not suitable for long term",
-      "mortality": "A poor prognostic sign"
+      "mortality": "[[★ A poor prognostic sign]]"
      },
      "slides": {
       "name": "28",
@@ -880,18 +886,19 @@
     {
      "id": "l29-avrt",
      "name": "Atrioventricular reentrant tachycardia and Wolff-Parkinson-White syndrome",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged Wolff-Parkinson-White as her very important point (1:08:52, 1:17:34) and tied it to last year's exam (1:13:15): the accessory pathway is the bundle of Kent (59:55); the delta wave is seen only in sinus rhythm, not during the tachycardia (1:10:18); a pathway not yet known is treated as supraventricular tachycardia, vagal maneuver then adenosine (1:12:48); a known pathway means no adenosine (1:13:06) and intravenous procainamide (slide 37); the definitive treatment is ablating the pathway (1:14:47); atrial fibrillation with Wolff-Parkinson-White is the worst combination (1:35:50).",
      "fields": {
       "name": "Atrioventricular reentrant tachycardia (AVRT); Wolff-Parkinson-White (WPW) syndrome",
       "definition": "Reentry tachycardia in a patient with an accessory pathway (bundle of Kent), orthodromic or antidromic; orthodromic is more common. Contested on the slides: slide 33 calls it a circuit 'within the AV [atrioventricular] node through an accessory pathway'; the loop uses the atrioventricular node and the pathway (a circuit within the node is nodal reentry)",
-      "etiology": "Accessory pathway (bundle of Kent)",
+      "etiology": "[[★ Accessory pathway (bundle of Kent)]]",
       "epidemiology": "Orthodromic is more common than antidromic",
-      "risk_factors": "Pre-excitation (short PR interval and delta wave) on prior electrocardiograms in normal sinus rhythm",
+      "risk_factors": "[[★ Pre-excitation (short PR interval and delta wave) on prior electrocardiograms in normal sinus rhythm]]",
       "pathology": "Orthodromic: antegrade down the atrioventricular node and back up the pathway; normal QRS, no delta wave, retrograde P wave after the QRS. Antidromic: down the pathway and back through the node; wide QRS with a delta wave, P wave rarely seen. Pre-excitation: short PR, slurred QRS upstroke (delta wave)",
       "clinical": "Most commonly palpitations; collapse when the rate exceeds 200",
       "diagnosis": "Sinus rhythm ECG (electrocardiogram): short PR under 0.12 seconds, widened QRS (slide 35 says over 0.1 seconds, a loose cut-off), delta wave. Tachycardia: regular, above 100 but usually 200 to 300, P waves hidden or retrograde, PR hidden or short, QRS narrow with or without delta wave. Atrial fibrillation with Wolff-Parkinson-White: irregular, some rates approaching 300 (ventricular tachycardia is regular at 150 to 200)",
-      "treatment": "Orthodromic: adenosine first line. If adenosine slowing reveals atrial fibrillation with Wolff-Parkinson-White: IV (intravenous) procainamide, never adenosine. Contested on the slides: slide 37 says procainamide, never adenosine, whenever Wolff-Parkinson-White is known; the guideline allows adenosine for regular orthodromic reentry and contraindicates all nodal blockers in pre-excited atrial fibrillation. Chronic Wolff-Parkinson-White: catheter ablation of the accessory pathway is first line",
-      "mortality": "Atrial fibrillation conducting down the pathway can approach 300 and cause collapse"
+      "treatment": "Orthodromic: adenosine first line. [[★ If adenosine slowing reveals atrial fibrillation with Wolff-Parkinson-White: IV (intravenous) procainamide, never adenosine]]. Contested on the slides: slide 37 says procainamide, never adenosine, whenever Wolff-Parkinson-White is known; the guideline allows adenosine for regular orthodromic reentry and contraindicates all nodal blockers in pre-excited atrial fibrillation. [[★ Chronic Wolff-Parkinson-White: catheter ablation of the accessory pathway is first line]]",
+      "mortality": "[[★ Atrial fibrillation conducting down the pathway can approach 300 and cause collapse]]"
      },
      "slides": {
       "name": "33, 35, 36",
@@ -909,17 +916,18 @@
     {
      "id": "l29-avnrt",
      "name": "Atrioventricular nodal reentrant tachycardia",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): a circuit within the atrioventricular node (1:17:49); far more common in women (1:18:09); palpitations felt in the neck (1:18:17); almost always ends with a vagal maneuver, then adenosine (1:18:40); patients can be taught to do the vagal maneuver at home (1:19:34); ablation succeeds in about 95% (1:20:12).",
      "fields": {
       "name": "Atrioventricular nodal reentrant tachycardia (AVNRT)",
       "definition": "A reentry circuit within the atrioventricular node; typically paroxysmal; slow-fast (typical) is the most common type",
       "etiology": "Spontaneous, or exertion, caffeine, alcohol, beta-agonists, sympathomimetics",
-      "epidemiology": "Women far more than men; commonly in the absence of heart disease",
+      "epidemiology": "[[★ Women far more than men]]; commonly in the absence of heart disease",
       "risk_factors": "Exertion, caffeine, alcohol, beta-agonists, sympathomimetics",
       "pathology": "Reentry within the node: P waves hidden in a regular narrow tachycardia",
-      "clinical": "Sudden-onset palpitations; 'neck pulsations' (frog sign on exam)",
+      "clinical": "Sudden-onset palpitations; [[★ 'neck pulsations' (frog sign on exam)]]",
       "diagnosis": "ECG (electrocardiogram): regular, usually 140 to 180, P waves hidden, PR hidden, narrow QRS",
-      "treatment": "Almost always terminates with vagal maneuvers or adenosine; synchronized cardioversion rarely required. An educated patient who ends an episode with a vagal maneuver at home usually needs no urgent attention. 'Pill in pocket' option (beta blocker or nondihydropyridine calcium channel blocker). Catheter ablation for a select subset: definitive cure (over 95%)",
+      "treatment": "[[★ Almost always terminates with vagal maneuvers or adenosine]]; synchronized cardioversion rarely required. An educated patient who ends an episode with a vagal maneuver at home usually needs no urgent attention. 'Pill in pocket' option (beta blocker or nondihydropyridine calcium channel blocker). Catheter ablation for a select subset: definitive cure (over 95%)",
       "mortality": "Episodes usually well tolerated"
      },
      "slides": {
@@ -967,7 +975,8 @@
     {
      "id": "l29-afib",
      "name": "Atrial fibrillation (with anticoagulation)",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): goal number one is rate control, not converting the rhythm (1:30:24, 1:30:46, 1:30:59); rapid ventricular response is dangerous and gets intravenous rate control (1:30:16, 1:30:27); stable without it gets rate control by mouth (1:31:39); cardioversion only after 21 days of anticoagulation (1:33:00); do not memorize the score tables, know what each score means (1:33:24, 1:33:31). On the recording she said a CHA2DS2-VASc of 0 (men) or 1 (women) should be anticoagulated (1:34:02); slide 50 (low risk, may not need it) is right and is keyed.",
      "fields": {
       "name": "Atrial fibrillation (AF)",
       "definition": "An irregularly irregular rhythm with absent P waves and PR. Paroxysmal: under 1 week, usually terminates without treatment. Persistent: continuous for more than 7 days but less than 1 year, needs treatment. Long-standing persistent: continuous for more than 1 year. Permanent: patient and clinician jointly decide to stop attempts to restore or maintain sinus rhythm",
@@ -977,7 +986,7 @@
       "pathology": "Disorganized atrial activity: no P waves; ventricular rate usually 110 to 160 (can be under 80 or over 200)",
       "clinical": "Rapid heart rate, palpitations, chest pain, dyspnea, dizziness, fatigue; usually not directly life-threatening",
       "diagnosis": "ECG (electrocardiogram): irregularly irregular, absent P waves and PR, narrow QRS. CHA2DS2-VASc score for stroke risk; HAS-BLED score for the risk of major bleeding on anticoagulation",
-      "treatment": "Unstable: synchronized cardioversion. Stable with RVR (rapid ventricular response): IV (intravenous) rate control. Stable without rapid ventricular response: rate control. Outpatient cardioversion after 21 days of anticoagulation; mapping and ablation. Anticoagulation: CHA2DS2-VASc 0 for men or 1 for women = low risk, may not require it; patients typically require it unless bleeding risk is high. DOACs (direct oral anticoagulants) preferred in nonvalvular atrial fibrillation: dabigatran, apixaban, edoxaban, rivaroxaban; warfarin target INR (international normalized ratio) 2 to 3. Contested on the slides: slide 49 says anticoagulation for all (slide 50's low-risk line is right), and slide 50 says HAS-BLED 3 and up means no anticoagulation, whereas a high score flags bleeding risk to address and review, not on its own a reason to withhold",
+      "treatment": "Unstable: synchronized cardioversion. [[★ Stable with RVR (rapid ventricular response): IV (intravenous) rate control]]. [[★ Stable without rapid ventricular response: rate control]]. [[★ Outpatient cardioversion after 21 days of anticoagulation]]; mapping and ablation. Anticoagulation: CHA2DS2-VASc 0 for men or 1 for women = low risk, may not require it; patients typically require it unless bleeding risk is high. DOACs (direct oral anticoagulants) preferred in nonvalvular atrial fibrillation: dabigatran, apixaban, edoxaban, rivaroxaban; warfarin target INR (international normalized ratio) 2 to 3. Contested on the slides: slide 49 says anticoagulation for all (slide 50's low-risk line is right), and slide 50 says HAS-BLED 3 and up means no anticoagulation, whereas a high score flags bleeding risk to address and review, not on its own a reason to withhold",
       "mortality": "Medical emergencies: severe heart failure (pulmonary edema, hypotension), or atrial fibrillation with an acute MI (myocardial infarction); stroke from a clot, which anticoagulation prevents"
      },
      "slides": {
@@ -996,7 +1005,8 @@
     {
      "id": "l29-pac",
      "name": "Premature atrial contractions (atrial premature beats)",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): usually nothing is done (1:39:07); tell the patient to avoid the trigger (1:39:28); atrial bigeminy and trigeminy are usually asymptomatic and left alone (1:38:37).",
      "fields": {
       "name": "Premature atrial contraction (PAC)",
       "definition": "An early beat from the atria (not the sinoatrial node): an early, abnormally shaped P wave",
@@ -1006,7 +1016,7 @@
       "pathology": "An ectopic atrial focus fires early; every other beat ectopic = bigeminy, every third = trigeminy",
       "clinical": "Most people are asymptomatic",
       "diagnosis": "ECG (electrocardiogram): regular with an early beat, rate 60 to 100, P wave of different morphology, one P wave for each QRS, PR 0.12 to 0.20, narrow QRS. If frequent, look for underlying structural heart disease",
-      "treatment": "No treatment if asymptomatic; counsel to avoid potential precipitants and reassure about the benign nature of the rhythm. Persistent and symptomatic: beta blocker if not contraindicated (metoprolol), or catheter ablation if frequent or triggering atrial fibrillation",
+      "treatment": "[[★ No treatment if asymptomatic; counsel to avoid potential precipitants]] and reassure about the benign nature of the rhythm. Persistent and symptomatic: beta blocker if not contraindicated (metoprolol), or catheter ablation if frequent or triggering atrial fibrillation",
       "mortality": "Benign; in patients with heart disease may precede PSVT (paroxysmal supraventricular tachycardia), atrial fibrillation or atrial flutter"
      },
      "slides": {
@@ -1025,17 +1035,18 @@
     {
      "id": "l29-junctional",
      "name": "Premature junctional contractions and junctional rhythm",
-     "prof": false,
+     "prof": true,
+     "prof_note": "Elwaya flagged (recording times): healthy people with too much vagal tone are left alone if asymptomatic (1:42:17, 1:42:25); with high-grade atrioventricular block, a permanent pacemaker, because a junctional rhythm cannot be trusted as the perfusing rhythm (1:42:47, 1:42:51); premature junctional contractions are mostly asymptomatic (1:40:45). Not examined: which part of the node gives which P-wave position (1:40:13). The digoxin toxicity rhythm she deferred to the emergency medicine session (1:43:10).",
      "fields": {
       "name": "Premature junctional contraction (PJC); junctional rhythm",
       "definition": "Beats from the atrioventricular junction: an early narrow QRS (usually 0.10 seconds or less) with an inverted, buried or following P wave (premature junctional contraction), or a regular junctional rhythm usually at 40 to 60. The syllabus lists junctional rhythm under Lecture 30, but this deck teaches it",
-      "etiology": "Junctional rhythm: SA (sinoatrial) node dysfunction such as sick sinus syndrome, or significant bradycardia; inferior MI (myocardial infarction); acute period after cardiac surgery; digoxin toxicity; increased vagal tone in healthy people (well-conditioned athletes)",
+      "etiology": "Junctional rhythm: SA (sinoatrial) node dysfunction such as sick sinus syndrome, or significant bradycardia; inferior MI (myocardial infarction); acute period after cardiac surgery; digoxin toxicity; [[★ increased vagal tone in healthy people (well-conditioned athletes)]]",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Sick sinus syndrome, inferior myocardial infarction, recent cardiac surgery, digoxin toxicity, high vagal tone",
       "pathology": "Origin in the node decides the P wave: top of the node, atria first (short PR); middle, simultaneous (P buried in the QRS); bottom, ventricles first (retrograde P after the QRS). P waves inverted in II, III and aVF",
-      "clinical": "Most people with premature junctional contractions are not symptomatic; junctional rhythm is generally well tolerated",
+      "clinical": "[[★ Most people with premature junctional contractions are not symptomatic]]; junctional rhythm is generally well tolerated",
       "diagnosis": "ECG (electrocardiogram): narrow QRS; P inverted in II, III, aVF (before, buried in or after the QRS); PR short (under 0.12) or nonexistent; junctional rhythm regular at 40 to 60. Frequent premature junctional contractions (over 10 per minute, or multifocal): look for underlying structural heart disease",
-      "treatment": "Premature junctional contractions: none if asymptomatic and infrequent; reassurance often adequate; frequent: treat with a beta blocker; persistent symptoms: beta blocker if not contraindicated (metoprolol). Junctional rhythm: none if asymptomatic in a healthy person; complete or high-grade AV (atrioventricular) block or sick sinus syndrome: PPM (permanent pacemaker); digitalis toxicity: atropine and/or digoxin immune Fab",
+      "treatment": "Premature junctional contractions: none if asymptomatic and infrequent; reassurance often adequate; frequent: treat with a beta blocker; persistent symptoms: beta blocker if not contraindicated (metoprolol). Junctional rhythm: [[★ none if asymptomatic in a healthy person]]; [[★ complete or high-grade AV (atrioventricular) block or sick sinus syndrome: PPM (permanent pacemaker)]]; digitalis toxicity: atropine and/or digoxin immune Fab",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -1058,20 +1069,20 @@
    "title": "Arrhythmias II: Blocks and Ventriculars",
    "lecturer": "Ayelet Elwaya, MSHS, PA-C, CAQ-EM",
    "deck": "Arrhythmias II - Elwaya  (1).pptx",
-   "note": "Built from the slides only (the recording of 12 October will choose what to star later; it adds no content). Slide conflicts, keyed as the truth: the bundle branch block QRS is 0.12 seconds or more (slide 21's 'greater than 0.20' is wrong); lead II is inferior, not lateral (slide 23); a new LBBB (left bundle branch block) is a sign of pathology, no longer by itself a 'STEMI (ST-elevation myocardial infarction) equivalent' (slide 27); atropine and epinephrine for Mobitz type II and complete block are 'highly controversial' and not keyed; the first-degree block pacemaker is for symptomatic patients; Mobitz type I is usually asymptomatic and typically improves with exertion. Idioventricular rhythm (a syllabus objective) is on no slide; junctional rhythm is taught on the Arrhythmias I deck. The cardiac arrest algorithm picture (slide 51) and the unlabeled practice strips (slides 34, 54) are not reproduced.",
+   "note": "Built from the slides plus Notability's automatic transcript of Elwaya's 12 October recording, in two parts; the times in each card's note are estimates placed by where the words fall in each part ('part 2 ~6 min' = about six minutes into part 2). The recording only chooses which facts to star; it adds no content. She said doses need not be memorized, and that she will not ask about atropine and epinephrine for the blocks, the QT-prolonging drug list or the cardiac arrest algorithm picture. Slide conflicts, keyed as the truth: the bundle branch block QRS is 0.12 seconds or more (slide 21's 'greater than 0.20' is wrong); lead II is inferior, not lateral (slide 23); a new LBBB (left bundle branch block) is a sign of pathology, no longer by itself a 'STEMI (ST-elevation myocardial infarction) equivalent' (slide 27; Elwaya said on the recording that the guideline changed); atropine and epinephrine for Mobitz type II and complete block are 'highly controversial' and not keyed; the first-degree block pacemaker is for symptomatic patients; Mobitz type I is usually asymptomatic and typically improves with exertion. Idioventricular rhythm (a syllabus objective) is on no slide; junctional rhythm is taught on the Arrhythmias I deck. The cardiac arrest algorithm picture (slide 51) and the unlabeled practice strips (slides 34, 54) are not reproduced.",
    "conditions": [
     {
      "id": "l30-av1",
      "name": "First-degree atrioventricular block",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "First-degree atrioventricular (AV) block",
       "definition": "Prolonged PR interval: greater than 0.20 seconds and constant, with one P wave for every QRS complex; regular rhythm at 60-100 beats per minute; narrow QRS (below 0.12 seconds). Can occur along with an underlying rhythm",
-      "etiology": "Age-related degenerative changes of the conduction system (most common); increased vagal tone from an overreactive vagus nerve; medications (beta blockers, non-dihydropyridine calcium channel blockers, digoxin); hypokalemia; AV (atrioventricular) node ischemia, usually after myocardial infarction; chronic hypertension; Lyme disease",
+      "etiology": "[[★ Age-related degenerative changes of the conduction system (most common)]]; increased vagal tone from an overreactive vagus nerve; medications (beta blockers, non-dihydropyridine calcium channel blockers, digoxin); hypokalemia; AV (atrioventricular) node ischemia, usually after myocardial infarction; chronic hypertension; Lyme disease",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Older age (degeneration of the conduction system), AV nodal blocking drugs, chronic hypertension, recent myocardial infarction, Lyme disease",
       "pathology": "Every atrial impulse reaches the ventricles, but conduction through the AV node is slowed, lengthening the PR interval",
-      "clinical": "Vast majority asymptomatic. Symptoms usually appear when the PR interval is greater than 0.3 seconds: fatigue, shortness of breath, palpitations, chest pain",
+      "clinical": "[[★ Vast majority asymptomatic]]. Symptoms usually appear when the PR interval is greater than 0.3 seconds: fatigue, shortness of breath, palpitations, chest pain",
       "diagnosis": "ECG (electrocardiogram): constant PR interval over 0.20 seconds, one P wave for every QRS, narrow QRS",
       "treatment": "Contested on the slides: slide 6 says consider a permanent pacemaker 'for symptomatic patients or patients with PR interval greater than 0.3 sec'; a long PR alone without symptoms is not a reason to pace, so learn symptomatic patients. No treatment needed unless debilitating symptoms or heart failure symptoms",
       "mortality": "Not covered in the lecture"
@@ -1087,7 +1098,8 @@
       "diagnosis": "4-5",
       "treatment": "6",
       "mortality": ""
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): the most common cause is the conduction pathway wearing out with age (part 1 ~2 min); the majority are asymptomatic (part 1 ~1 min) and there is usually nothing to do (part 1 ~2 min)."
     },
     {
      "id": "l30-mobitz1",
@@ -1121,17 +1133,17 @@
     {
      "id": "l30-mobitz2",
      "name": "Second-degree atrioventricular block, Mobitz type II",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Second-degree AV (atrioventricular) block, Mobitz type II",
-      "definition": "Appears regular apart from random missing QRS complexes; constant PR interval of 0.12-0.20 seconds with no lengthening before a dropped beat; uniform P waves outnumber QRS complexes; rate 60-100; narrow QRS. Conduction ratios such as 4:3 and 2:1",
+      "definition": "Appears regular apart from random missing QRS complexes; constant PR interval of 0.12-0.20 seconds with no lengthening before a dropped beat; uniform P waves outnumber QRS complexes; rate 60-100; narrow QRS",
       "etiology": "Acquired disease of the His-Purkinje system (most common), especially degenerative changes from old age, chronic hypertension and diabetes; Lyme carditis; inflammatory disease (myocarditis, reactive arthritis); ischemic heart disease, especially myocardial infarction; ablation",
       "epidemiology": "Elderly patients: degenerative His-Purkinje disease of old age is the most common cause",
       "risk_factors": "Old age, chronic hypertension, diabetes, Lyme disease, myocarditis, reactive arthritis, myocardial infarction, prior ablation",
       "pathology": "Usually originates at the bundle of His, so the escape rhythm is weak and unreliable",
       "clinical": "Symptoms of bradycardia and reduced cardiac output: exertional intolerance, fatigue, dizziness, presyncope, syncope. Can lead to a Stokes-Adams attack: a sudden fainting spell or seizure from a rapid temporary drop in blood flow to the brain",
-      "diagnosis": "ECG (electrocardiogram): constant PR interval with random dropped QRS complexes",
-      "treatment": "Contested on the slides: atropine and epinephrine are listed as emergent options 'no longer contraindicated but highly controversial' and the slide notes argue both ways; they are not keyed. Emergent: TCP (transcutaneous pacing). Definitive: permanent pacemaker, even without symptoms, because the ACC/AHA (American College of Cardiology and American Heart Association) guidelines consider Mobitz type II dangerous even in the absence of symptoms",
+      "diagnosis": "ECG (electrocardiogram): [[★ constant PR interval with random dropped QRS complexes]]",
+      "treatment": "Contested on the slides: atropine and epinephrine are listed as emergent options 'no longer contraindicated but highly controversial'; they are not keyed. [[★ Emergent: TCP (transcutaneous pacing)]]. [[★ Definitive: permanent pacemaker, even without symptoms]], because the ACC/AHA (American College of Cardiology and American Heart Association) guidelines consider Mobitz type II dangerous even in the absence of symptoms",
       "mortality": "Higher risk of progression to complete (third-degree) heart block and sudden cardiac death; unpredictable progression and poor prognosis"
      },
      "slides": {
@@ -1145,23 +1157,24 @@
       "diagnosis": "10-12",
       "treatment": "14",
       "mortality": "14"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): what to know is to pace emergently with transcutaneous pacing (part 1 ~15 min) and then place a permanent pacemaker (part 1 ~15 min); she will not ask about atropine or epinephrine (part 1 ~15 min); it differs from type I because the PR interval does not change (part 1 ~16 min)."
     },
     {
      "id": "l30-complete",
      "name": "Third-degree (complete) atrioventricular block",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Third-degree (complete) AV (atrioventricular) block",
-      "definition": "No P waves are conducted to the ventricles: complete dissociation of the atria from the ventricles, with two separate regular rhythms. Ventricular rate usually below 40; uniform P waves with no association with the QRS complexes, which may be buried in the QRS complex, ST segment or T wave; random PR interval; QRS narrow or wide",
-      "etiology": "Acquired disease of the cardiac conduction system (most common), especially degenerative changes from old age, chronic hypertension and diabetes; Lyme carditis; Chagas disease; bacterial endocarditis with an associated abscess; inflammatory and infiltrative disease (myocarditis, amyloidosis, sarcoidosis); ischemic heart disease, especially myocardial infarction; ablation",
+      "definition": "No P waves are conducted to the ventricles: [[★ complete dissociation of the atria from the ventricles]], with two separate regular rhythms. Ventricular rate usually below 40; uniform P waves with no association with the QRS complexes, which may be buried in the QRS complex, ST segment or T wave; random PR interval; QRS narrow or wide",
+      "etiology": "[[★ Acquired disease of the cardiac conduction system (most common)]], especially degenerative changes from old age, chronic hypertension and diabetes; Lyme carditis; Chagas disease; bacterial endocarditis with an associated abscess; inflammatory and infiltrative disease (myocarditis, amyloidosis, sarcoidosis); ischemic heart disease, especially myocardial infarction; ablation",
       "epidemiology": "Elderly patients: degenerative conduction system disease of old age is the most common cause",
       "risk_factors": "Old age, chronic hypertension, diabetes, Lyme disease, Chagas disease, endocarditis, myocarditis, amyloidosis, sarcoidosis, myocardial infarction, prior ablation",
       "pathology": "The ventricles are driven by an escape rhythm independent of the atria",
       "clinical": "Symptoms range from none to severe and depend on the ventricular escape rate, the site of the escape rhythm and underlying heart disease: presyncope, syncope, dizziness, exertional intolerance, heart failure symptoms, AMS (altered mental status), sudden cardiac arrest",
       "diagnosis": "ECG (electrocardiogram): P waves and QRS complexes at two unrelated rates; ventricular rate usually below 40",
-      "treatment": "Contested on the slides: atropine and epinephrine are listed as emergent options 'no longer contraindicated but highly controversial'; they are not keyed. Emergent: TCP (transcutaneous pacing). Definitive: permanent pacemaker",
-      "mortality": "Syncope is a particularly important symptom, associated with an increased risk of sudden death"
+      "treatment": "Contested on the slides: atropine and epinephrine are listed as emergent options 'no longer contraindicated but highly controversial'; they are not keyed. [[★ Emergent: TCP (transcutaneous pacing)]]. [[★ Definitive: permanent pacemaker]]",
+      "mortality": "[[★ Syncope is a particularly important symptom, associated with an increased risk of sudden death]]"
      },
      "slides": {
       "name": "15",
@@ -1174,12 +1187,13 @@
       "diagnosis": "15-16",
       "treatment": "18",
       "mortality": "17"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): by definition a complete dissociation of the atria and ventricles (part 1 ~17 min); syncope means a really bad prognosis (part 1 ~22 min); the most common cause is acquired disease (part 1 ~22 min); definitive treatment is emergently a permanent pacemaker (part 1 ~23 min)."
     },
     {
      "id": "l30-lbbb",
      "name": "Left bundle branch block",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Left bundle branch block (LBBB)",
       "definition": "Conduction delay through the left bundle: the left ventricle is activated by electricity crossing the septum from the right side of the heart. QRS over 0.12 seconds",
@@ -1187,9 +1201,9 @@
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Chronic hypertension, coronary artery disease, cardiomyopathy, aortic stenosis",
       "pathology": "The depolarization vector is directed toward the lateral leads; the left ventricle depolarizes late, across the septum",
-      "clinical": "Usually asymptomatic. Patients who develop symptoms usually have severe underlying heart disease and do not tolerate the block well; symptoms resemble a CHF (congestive heart failure) exacerbation: dizziness, shortness of breath, dyspnea on exertion",
-      "diagnosis": "Contested on the slides: slide 21 gives the bundle branch block QRS as wider than 0.20 seconds; slide 24 says more than 0.12, which is true (0.12 seconds or more). Criteria: QRS over 0.12 seconds; dominant S wave in V1 (rS pattern); prolonged R wave peak over 0.06; monophasic R in the lateral leads; absent Q waves in I, V5, V6",
-      "treatment": "Contested on the slides: slide 27 calls a new LBBB a 'STEMI equivalent'; current guidance no longer treats a new LBBB by itself as equal to an ST-elevation myocardial infarction, but it should always be considered a sign of pathology and evaluated. Usually left untreated, except symptomatic LBBB with HFrEF (heart failure with reduced ejection fraction), which gets a biventricular pacemaker",
+      "clinical": "Usually asymptomatic. [[★ Patients who develop symptoms usually have severe underlying heart disease]] and do not tolerate the block well; [[★ symptoms resemble a CHF (congestive heart failure) exacerbation]]: dizziness, shortness of breath, dyspnea on exertion",
+      "diagnosis": "Contested on the slides: slide 21 gives the bundle branch block QRS as wider than 0.20 seconds; slide 24 says more than 0.12, which is true (0.12 seconds or more). Criteria: QRS over 0.12 seconds; [[★ dominant S wave in V1 (rS pattern)]]; prolonged R wave peak over 0.06; monophasic R in the lateral leads; absent Q waves in I, V5, V6",
+      "treatment": "Contested on the slides: slide 27 calls a new LBBB a 'STEMI equivalent'; current guidance no longer treats a new LBBB by itself as equal to an ST-elevation myocardial infarction, but [[★ it should always be considered a sign of pathology and evaluated]]. Usually left untreated, except symptomatic LBBB with HFrEF (heart failure with reduced ejection fraction), which gets a biventricular pacemaker",
       "mortality": "Prognosis depends on the type and severity of the underlying heart disease and whether there are other conduction disturbances"
      },
      "slides": {
@@ -1203,22 +1217,23 @@
       "diagnosis": "21, 24-25",
       "treatment": "27",
       "mortality": "27"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): symptoms mean severe underlying heart disease (part 1 ~31 min) and look like heart failure (part 1 ~32 min); V1 is the best lead to look at (part 1 ~29 min); a known, unchanged block is not alarming (part 1 ~33 min); she said the guideline changed (part 1 ~32 min), so a new block is worked up as a sign of pathology rather than treated by itself as an ST-elevation infarction."
     },
     {
      "id": "l30-rbbb",
      "name": "Right bundle branch block",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Right bundle branch block (RBBB)",
       "definition": "Normal left ventricular activation via the left bundle; the septum is unaffected and depolarizes normally; the right ventricle is activated across the septum, which takes longer and widens the QRS (over 0.12 seconds)",
-      "etiology": "Age-related degenerative changes of the conduction system; chronic ischemic heart disease; pulmonary hypertension; sudden increase of right ventricular pressure (PE (pulmonary embolism)); cardiac ischemia; dilated or hypertrophic cardiomyopathies; inflammatory or infiltrative heart disease (myocarditis, amyloidosis)",
+      "etiology": "Age-related degenerative changes of the conduction system; chronic ischemic heart disease; [[★ pulmonary hypertension]]; [[★ sudden increase of right ventricular pressure (PE (pulmonary embolism))]]; cardiac ischemia; dilated or hypertrophic cardiomyopathies; inflammatory or infiltrative heart disease (myocarditis, amyloidosis)",
       "epidemiology": "May occur in patients with no apparent underlying heart disease",
       "risk_factors": "Older age, ischemic heart disease, pulmonary hypertension, pulmonary embolism, cardiomyopathy",
       "pathology": "Delayed right ventricular depolarization, seen best in the right-sided precordial leads V1, V2 and V3",
       "clinical": "Usually asymptomatic. Patients who develop symptoms usually have severe underlying heart disease; symptoms resemble a CHF (congestive heart failure) exacerbation (dizziness, shortness of breath, dyspnea on exertion) or worsening cardiomyopathy",
       "diagnosis": "ECG (electrocardiogram): QRS over 0.12 seconds; rsR' (bunny ears) in V1, V2, V3; slurred S wave in I and aVL",
-      "treatment": "Treatment depends on the underlying condition. A new RBBB is not always pathological",
+      "treatment": "Treatment depends on the underlying condition. [[★ A new RBBB is not always pathological]]",
       "mortality": "Prognosis depends on the presence and type of underlying heart disease"
      },
      "slides": {
@@ -1232,22 +1247,23 @@
       "diagnosis": "29-30",
       "treatment": "32",
       "mortality": "32"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): pulmonary embolism acutely and pulmonary hypertension chronically (part 1 ~44 min); a new right block is not always pathological, whereas a left block is almost always cardiac (part 1 ~45 min)."
     },
     {
      "id": "l30-pvc",
      "name": "Premature ventricular contractions",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Premature ventricular contraction (PVC), a ventricular premature beat",
       "definition": "Early beat originating in the ventricles: early, wide (over 0.12 seconds) and bizarre QRS complex with no P wave. Every other beat ectopic = bigeminy; every third beat = trigeminy",
-      "etiology": "Hypoxemia or electrolyte imbalances (hypokalemia, hypomagnesemia, hypercalcemia); alcohol, caffeine, stimulants. Seen with or without structural heart disease",
+      "etiology": "[[★ Hypoxemia or electrolyte imbalances (hypokalemia, hypomagnesemia, hypercalcemia)]]; alcohol, caffeine, stimulants. Seen with or without structural heart disease",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Hypoxemia, low potassium, low magnesium, high calcium, alcohol, caffeine, stimulants",
       "pathology": "Depolarizing potential from a ventricular site that is not the SA (sinoatrial) node",
       "clinical": "Most patients asymptomatic; may cause palpitations, often felt in the neck",
       "diagnosis": "ECG (electrocardiogram) or monitor; PVC burden as a share of beats: high over 15% (15,000 a day), low under 1% (1,000 a day)",
-      "treatment": "High-risk patients (burden over 15%, PVC-induced cardiomyopathy, pre-existing structural or conduction disease, history of syncope): isolated PVC-induced cardiomyopathy with heart failure symptoms gets catheter ablation; otherwise first step is a beta blocker and optimized treatment of the underlying heart disease. Low-risk with symptoms: beta blocker first-line; catheter ablation if refractory or drug therapy not tolerated. Low-risk, low burden, no structural disease, no symptoms: reassurance and eliminate triggers",
+      "treatment": "High-risk patients (burden over 15%, PVC-induced cardiomyopathy, pre-existing structural or conduction disease, history of syncope): isolated PVC-induced cardiomyopathy with heart failure symptoms gets catheter ablation; otherwise first step is a beta blocker and optimized treatment of the underlying heart disease. [[★ Low-risk with symptoms: beta blocker first-line]]; catheter ablation if refractory or drug therapy not tolerated. Low-risk, low burden, no structural disease, no symptoms: reassurance and eliminate triggers",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -1261,22 +1277,23 @@
       "diagnosis": "35-36",
       "treatment": "36",
       "mortality": ""
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times), her top point of the lecture: the main causes are hypoxia and electrolytes, so check oxygen and electrolytes (part 2 ~6 min); a burden over 15% of beats is high (part 2 ~7 min), and with cardiomyopathy it needs intervention (part 2 ~8 min); a symptomatic low-risk patient starts a beta blocker (part 2 ~8 min)."
     },
     {
      "id": "l30-vt",
      "name": "Ventricular tachycardia",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Ventricular tachycardia (VT)",
-      "definition": "Three or more consecutive PVCs (premature ventricular contractions); regular, 100-250 beats per minute, wide QRS (over 0.12 seconds), no PR interval. NSVT (non-sustained ventricular tachycardia) lasts under 30 seconds; sustained lasts 30 seconds or more or causes hemodynamic collapse in under 30 seconds. Monomorphic: same QRS morphology; polymorphic: QRS morphology varies",
-      "etiology": "Monomorphic: often with heart disease (CHF (congestive heart failure), cardiomyopathy, history of myocardial infarction). Polymorphic without prolonged QT: most commonly acute myocardial ischemia, also cardiomyopathy. Polymorphic with prolonged QT: torsades de pointes",
+      "definition": "Three or more consecutive PVCs (premature ventricular contractions); regular, 100-250 beats per minute, wide QRS (over 0.12 seconds), no PR interval. NSVT (non-sustained ventricular tachycardia) lasts under 30 seconds; [[★ sustained lasts 30 seconds or more or causes hemodynamic collapse in under 30 seconds]]. Monomorphic: same QRS morphology; polymorphic: QRS morphology varies",
+      "etiology": "Monomorphic: often with heart disease (CHF (congestive heart failure), cardiomyopathy, history of myocardial infarction). [[★ Polymorphic without prolonged QT: most commonly acute myocardial ischemia]], also cardiomyopathy. Polymorphic with prolonged QT: torsades de pointes",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Heart failure, cardiomyopathy, prior myocardial infarction, acute myocardial ischemia, long QT",
       "pathology": "Contested on the slides: slide 39 lists P waves as 'None'; P waves are often present but dissociated from the QRS and hard to see. Rapid ventricular rhythm with no conducted atrial activity",
       "clinical": "Palpitations, chest pain, dyspnea, syncope or presyncope. Instability = chest pain, AMS (altered mental status), shortness of breath or hypotension",
       "diagnosis": "Cardiac monitor, IV (intravenous) access, 12-lead ECG (electrocardiogram), supplemental oxygen, appropriate labs",
-      "treatment": "Symptomatic NSVT: beta blocker (metoprolol, carvedilol); if not effective or tolerated, catheter ablation; if ablation not an option, amiodarone, lidocaine or procainamide. Asymptomatic NSVT: optimize treatment of cardiac comorbidities; NSVT alone is not an indication for an ICD (implantable cardioverter defibrillator). Stable sustained monomorphic: IV lidocaine, amiodarone or procainamide (avoid procainamide with prolonged QT or CHF). Unstable monomorphic with a pulse: synchronized cardioversion; pulseless: defibrillation. Polymorphic: never truly stable, defibrillate, then urgent coronary angiography with possible revascularization; may add IV metoprolol or amiodarone",
+      "treatment": "[[★ Symptomatic NSVT: beta blocker (metoprolol, carvedilol)]]; if not effective or tolerated, catheter ablation; if ablation not an option, amiodarone, lidocaine or procainamide. Asymptomatic NSVT: optimize treatment of cardiac comorbidities; NSVT alone is not an indication for an ICD (implantable cardioverter defibrillator). Stable sustained monomorphic: IV lidocaine, amiodarone or procainamide (avoid procainamide with prolonged QT or CHF). [[★ Unstable monomorphic with a pulse: synchronized cardioversion; pulseless: defibrillation]]. [[★ Polymorphic: never truly stable, defibrillate, then urgent coronary angiography]] with possible revascularization; may add IV metoprolol or amiodarone",
       "mortality": "Once stabilized after unstable VT, most patients need an ICD for secondary prevention of sudden cardiac death"
      },
      "slides": {
@@ -1290,12 +1307,13 @@
       "diagnosis": "44",
       "treatment": "43-46",
       "mortality": "45"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): the 30-second rule applies only while the patient is stable (part 2 ~19 min); unstable with a pulse gets synchronized cardioversion (part 2 ~32 min) and a lost pulse gets defibrillation (part 2 ~32 min); polymorphic, the point she said she kept beating to death (part 2 ~33 min): defibrillate whether or not there is a pulse (part 2 ~33 min); non-sustained starts with a beta blocker (part 2 ~27 min); polymorphic with a normal QT is most often ischemic (part 2 ~24 min)."
     },
     {
      "id": "l30-torsades",
      "name": "Torsades de pointes and QT prolongation",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Torsades de pointes (polymorphic ventricular tachycardia with QT prolongation)",
       "definition": "A type of polymorphic ventricular tachycardia in which the QRS complexes appear to twist around the baseline (axis), in the setting of QT prolongation",
@@ -1305,7 +1323,7 @@
       "pathology": "Polymorphic ventricular tachycardia arising from a prolonged QT interval",
       "clinical": "Palpitations, chest pain, dyspnea, syncope or presyncope",
       "diagnosis": "ECG (electrocardiogram): polymorphic ventricular tachycardia twisting around the baseline, with a prolonged QT",
-      "treatment": "Contested on the slides: slide 47 says do not use beta blockers (bradycardia and R-to-R prolongation lengthen the QT); that holds for acquired, drug-induced torsades, whereas beta blockers are a mainstay of long-term prevention in congenital long QT syndrome. Conscious patient: IV (intravenous) magnesium to break the torsades, then more magnesium as an infusion; do not use amiodarone or procainamide (QT prolongation); IV lidocaine can be used (little evidence). Hemodynamically unstable: defibrillation (unsynchronized cardioversion)",
+      "treatment": "Contested on the slides: slide 47 says do not use beta blockers (bradycardia and R-to-R prolongation lengthen the QT); that holds for acquired, drug-induced torsades, whereas beta blockers are a mainstay of long-term prevention in congenital long QT syndrome. Conscious patient: [[★ IV (intravenous) magnesium to break the torsades, then more magnesium as an infusion]]; do not use amiodarone or procainamide (QT prolongation); [[★ IV lidocaine can be used]] (little evidence). Hemodynamically unstable: defibrillation (unsynchronized cardioversion)",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -1319,23 +1337,24 @@
       "diagnosis": "40-41",
       "treatment": "47",
       "mortality": ""
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): magnesium, and when you think it is enough, more magnesium (part 2 ~33 min); amiodarone and procainamide prolong the QT, and intravenous lidocaine does not (part 2 ~34 min)."
     },
     {
      "id": "l30-vf",
      "name": "Ventricular fibrillation and pulseless ventricular tachycardia",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Ventricular fibrillation (VF), with pulseless ventricular tachycardia",
-      "definition": "No pulse and no perfusion: rate 0, no rhythm, P waves, PR interval or QRS; uncoordinated activity only; coarse or fine",
-      "etiology": "Sudden cardiac death (unexpected natural death from cardiac causes within 1 hour of collapse) results from VF, pulseless ventricular tachycardia, PEA (pulseless electrical activity) or asystole; the most common predisposing condition is CAD (coronary artery disease), even without a history of myocardial infarction",
+      "definition": "[[★ No pulse and no perfusion]]: rate 0, no rhythm, P waves, PR interval or QRS; uncoordinated activity only; coarse or fine",
+      "etiology": "Sudden cardiac death (unexpected natural death from cardiac causes within 1 hour of collapse) results from VF, pulseless ventricular tachycardia, PEA (pulseless electrical activity) or asystole; [[★ the most common predisposing condition is CAD (coronary artery disease), even without a history of myocardial infarction]]",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Coronary artery disease, even without a prior myocardial infarction",
       "pathology": "Chaotic, uncoordinated ventricular electrical activity with no effective contraction",
       "clinical": "Cardiac arrest: pulseless, no perfusion",
       "diagnosis": "Monitor/defibrillator rhythm",
-      "treatment": "Contested on the slides: slide 50 says consider calcium gluconate and sodium bicarbonate, which are not routine in cardiac arrest, and its shock count differs from the slide 51 algorithm. Start CPR (cardiopulmonary resuscitation), oxygen, monitor/defibrillator; defibrillate as soon as possible; CPR 2 minutes; epinephrine every 3-5 minutes; second shock; consider intubating, then continuous compressions with 1 breath every 6 seconds; amiodarone if still in VF or pulseless ventricular tachycardia; consider lidocaine if refractory after the antiarrhythmic. Prevention: ICD (implantable cardioverter defibrillator), which detects fatal arrhythmias and shocks (newer ones also pace), or a wearable external defibrillator (LifeVest)",
-      "mortality": "VF and ventricular tachycardia are the arrest rhythms with the best prognosis"
+      "treatment": "Contested on the slides: slide 50 says consider calcium gluconate and sodium bicarbonate, which are not routine in cardiac arrest, and its shock count differs from the slide 51 algorithm. Start CPR (cardiopulmonary resuscitation), oxygen, monitor/defibrillator; [[★ defibrillate as soon as possible]]; CPR 2 minutes; epinephrine every 3-5 minutes; second shock; consider intubating, then continuous compressions with 1 breath every 6 seconds; amiodarone if still in VF or pulseless ventricular tachycardia; consider lidocaine if refractory after the antiarrhythmic. Prevention: ICD (implantable cardioverter defibrillator), which detects fatal arrhythmias and shocks (newer ones also pace), or a wearable external defibrillator (LifeVest)",
+      "mortality": "[[★ VF and ventricular tachycardia are the arrest rhythms with the best prognosis]]"
      },
      "slides": {
       "name": "48",
@@ -1348,23 +1367,24 @@
       "diagnosis": "48-49",
       "treatment": "38, 50",
       "mortality": "55"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): there is no ventricular fibrillation with a pulse (part 2 ~35 min); defibrillate as soon as possible (part 2 ~40 min); only two of the four sudden-death rhythms are shockable (part 2 ~12 min); coronary artery disease raises the risk of sudden cardiac death (part 2 ~12 min); fibrillation is a better arrest rhythm because the heart is still trying to beat (part 2 ~43 min)."
     },
     {
      "id": "l30-asystole",
      "name": "Asystole and pulseless electrical activity",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Asystole (ventricular standstill) and PEA (pulseless electrical activity)",
-      "definition": "Asystole: rate 0, no rhythm, P waves, PR interval or QRS. PEA is not the same as asystole: an ECG (electrocardiogram) with which you would expect a pulse (for example normal sinus rhythm) but no perfusing beats",
-      "etiology": "Two leading causes of PEA in adults: hypovolemia and hypoxia",
+      "definition": "Asystole: rate 0, no rhythm, P waves, PR interval or QRS. PEA is not the same as asystole: [[★ an ECG (electrocardiogram) with which you would expect a pulse]] (for example normal sinus rhythm) but no perfusing beats",
+      "etiology": "Two leading causes of PEA in adults: [[★ hypovolemia and hypoxia]]",
       "epidemiology": "Not covered in the lecture",
       "risk_factors": "Hypovolemia, hypoxia",
       "pathology": "Asystole: no electrical activity. PEA: organized electrical activity without mechanical, perfusing contraction",
       "clinical": "Cardiac arrest: no pulse",
       "diagnosis": "Monitor: flat line (asystole) or an organized rhythm without a pulse (PEA)",
       "treatment": "Unshockable: start chest compressions immediately; consider intubating early; CPR (cardiopulmonary resuscitation) with high-quality chest compressions and epinephrine every 3-5 minutes are the mainstays of treatment",
-      "mortality": "Poor prognosis; usually end-of-life rhythms (the best-prognosis arrest rhythms are ventricular tachycardia and ventricular fibrillation)"
+      "mortality": "[[★ Poor prognosis]]; usually end-of-life rhythms (the best-prognosis arrest rhythms are ventricular tachycardia and ventricular fibrillation)"
      },
      "slides": {
       "name": "52",
@@ -1377,7 +1397,8 @@
       "diagnosis": "52-53",
       "treatment": "55",
       "mortality": "55"
-     }
+     },
+     "prof_note": "Elwaya flagged (estimated times): asystole is a true flat line (part 2 ~44 min); pulseless electrical activity is organized activity that should give a pulse, so find out why it does not (part 2 ~45 min); hypovolemia (bleeding) and hypoxia (part 2 ~47 min); a very poor prognosis (part 2 ~48 min)."
     }
    ]
   },
@@ -1386,23 +1407,23 @@
    "title": "Pericardial Disease",
    "lecturer": "Lauren Reynolds, MSPA, PA-C",
    "deck": "31. Pericardial Disease 2026.pptx",
-   "note": "Built from the slides only; lecture audio emphasis to be added later. Slide conflicts, keyed as what is true: 'HIB' is listed among the viral causes (slide 11) but Haemophilus influenzae type b is a bacterium; the pericardial knock is called 'mid-frequency' (slide 39) but is a high-pitched early diastolic sound; pulsus paradoxus is listed under constriction (slide 44) and the Kussmaul sign under tamponade (slide 72), the reverse of their usual homes; anakinra and rilonacept are 'fourth line' in the slide 29 table, but the newer guidance on slide 35 prefers anti-interleukin-1 therapy over corticosteroids for recurrent, colchicine-resistant inflammatory disease; electrocardiogram stage 1 lasts 'the first two weeks' (slide 22) or '< 1 week' (slide 23), so only the order of the stages is kept; echocardiography is the tamponade 'gold standard' on the slide 71 infographic, but slide 57 says tamponade is a clinical diagnosis confirmed only by the response to drainage. Third-party figures (UpToDate, McGraw Hill, JAMA, Wiley) and the embedded video (slide 18) are not reproduced here; slides 14 and 30 are SmartArt graphics whose text is included.",
+   "note": "Built from the slides plus Reynolds' Notability recording of 14 October (Notability's automatic transcript; our own transcription is pending, and Notability's text has no timestamps, so the times in each card's note are estimates and can be off by a minute or two): the recording only chooses which facts to star, it adds no content. Her scope remarks: doses are not examined, drug names are; cross off 'fourth line' on the slide 29 table (anti-interleukin-1 therapy now comes earlier, slide 35); no pressor names or fluid bolus rates for tamponade. Slide conflicts, keyed as what is true: 'HIB' is listed among the viral causes (slide 11) but Haemophilus influenzae type b is a bacterium; the pericardial knock is called 'mid-frequency' (slide 39) but is a high-pitched early diastolic sound; pulsus paradoxus is listed under constriction (slide 44) and the Kussmaul sign under tamponade (slide 72), the reverse of their usual homes; anakinra and rilonacept are 'fourth line' in the slide 29 table, but the newer guidance on slide 35 moves anti-interleukin-1 therapy earlier and calls it preferred for recurrent or colchicine-resistant disease; electrocardiogram stage 1 lasts 'the first two weeks' (slide 22) or '< 1 week' (slide 23), so only the order of the stages is kept; echocardiography is the tamponade 'gold standard' on the slide 71 infographic, but slide 57 says tamponade is a clinical diagnosis confirmed only by the response to drainage. Third-party figures (UpToDate, McGraw Hill, JAMA, Wiley) and the embedded video (slide 18) are not reproduced here; slides 14 and 30 are SmartArt graphics whose text is included.",
    "conditions": [
     {
      "id": "l31-acute",
      "name": "Acute pericarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Acute pericarditis",
       "definition": "The most common disorder involving the pericardium. Inflammation of the pericardial sac lasting less than 4 to 6 weeks. Incessant pericarditis: symptoms for more than 4 to 6 weeks, up to 3 months, without sustained remission; chronic pericarditis: more than 3 months",
-      "etiology": "Contested on the slides: 'HIB' is listed among the viral causes (slide 11), but Haemophilus influenzae type b is a bacterium (the same slide lists Haemophilus under bacteria). Most often idiopathic, and most idiopathic cases are likely viral: coxsackievirus and echovirus (grouped under children on slide 8, though coxsackievirus is also a leading viral cause in adults), CMV (cytomegalovirus) and HIV (human immunodeficiency virus) in adults; often after an upper respiratory infection; also Epstein-Barr virus, influenza, hepatitis A and B. Bacterial: Staphylococcus, Pneumococcus, Streptococcus (rheumatic pancarditis), Haemophilus, Mycoplasma, Mycobacterium tuberculosis. Fungal: Histoplasma, Aspergillus, Blastomyces, Coccidioides, Candida. Parasitic: Echinococcus, amebic, Toxoplasma. Post-MI (myocardial infarction): peri-infarction pericarditis and Dressler syndrome (also after cardiac surgery). Autoimmune: SLE (systemic lupus erythematosus), rheumatoid arthritis. Neoplasm: metastatic, primary, paraneoplastic. Uremia: BUN (blood urea nitrogen) above 60 mg/dL. Iatrogenic: trauma, radiation therapy, drug-induced lupus (procainamide, hydralazine)",
+      "etiology": "Contested on the slides: 'HIB' is listed among the viral causes (slide 11), but Haemophilus influenzae type b is a bacterium (the same slide lists Haemophilus under bacteria). [[★ Most often idiopathic, and most idiopathic cases are likely viral]]: coxsackievirus and echovirus (grouped under children on slide 8, though coxsackievirus is also a leading viral cause in adults), CMV (cytomegalovirus) and HIV (human immunodeficiency virus) in adults; often after an upper respiratory infection; also Epstein-Barr virus, influenza, hepatitis A and B. Bacterial: Staphylococcus, Pneumococcus, Streptococcus (rheumatic pancarditis), Haemophilus, Mycoplasma, Mycobacterium tuberculosis. Fungal: Histoplasma, Aspergillus, Blastomyces, Coccidioides, Candida. Parasitic: Echinococcus, amebic, Toxoplasma. Post-MI (myocardial infarction): peri-infarction pericarditis and [[★ Dressler syndrome (also after cardiac surgery)]]. Autoimmune: SLE (systemic lupus erythematosus), rheumatoid arthritis. Neoplasm: metastatic, primary, paraneoplastic. Uremia: BUN (blood urea nitrogen) above 60 mg/dL. Iatrogenic: trauma, radiation therapy, drug-induced lupus (procainamide, hydralazine)",
       "epidemiology": "About 27.7 per 100,000 a year; about 5% of emergency department admissions for nonischemic chest pain. Idiopathic 55% and tuberculosis under 1% in a Western European series; tuberculosis about 69.5% (idiopathic 13.7%) in an African series",
       "risk_factors": "Recent viral (upper respiratory) infection; myocardial infarction or cardiac surgery; chest radiation; autoimmune disease; renal failure with uremia; malignancy; tuberculosis exposure in endemic regions; procainamide or hydralazine",
       "pathology": "Inflammation of the pericardial sac; troponin rises when the myocardium is also inflamed (myopericarditis)",
-      "clinical": "Pleuritic (sharp) substernal chest pain, worse supine and during inspiration, relieved by leaning forward; may have fever. Pericardial friction rub: highly specific; triphasic, superficial scratchy or squeaking; loudest at the left sternal border with the diaphragm; louder leaning forward, holding a breath and with firm pressure. A pleural rub stops when the breath is held, the pericardial rub persists",
-      "diagnosis": "Contested on the slides: stage 1 of the ECG (electrocardiogram) lasts 'the first two weeks' (slide 22) or '< 1 week' (slide 23); learn only the order of the stages. Usually a clinical diagnosis: two of four criteria (sharp substernal chest pain; pericardial friction rub; suggestive ECG changes with widespread ST elevation; new or worsening pericardial effusion). Workup: history and examination, ECG, chest X-ray (typically normal), CBC (complete blood count), troponins, ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein), TTE (transthoracic echocardiogram; often normal unless there is an effusion). ECG: widespread concave ST elevation and PR depression, reciprocal ST depression and PR elevation in aVR, sinus tachycardia; stages: (1) ST elevation and PR depression, (2) ST normalizes with T-wave flattening, (3) T waves invert, (4) normal. Invasive workup (pericardiocentesis, biopsy) only for tamponade, refractory moderate-large effusions, or suspected bacterial or neoplastic disease. Differential: angina, myocardial ischemia or infarction, pleuritis, pneumonia, GERD (gastroesophageal reflux disease), peptic ulcer disease, esophageal spasm, pulmonary embolism, tension pneumothorax, esophageal rupture, aortic dissection",
-      "treatment": "High-risk features favor admission: fever above 38 degrees Celsius, subacute course, signs of tamponade, moderate-large effusion, immunosuppression, oral anticoagulants, acute trauma, no improvement after 7 days of therapy, raised troponin. First line: an NSAID (nonsteroidal anti-inflammatory drug: aspirin, ibuprofen or indomethacin) plus colchicine (about 3 months), with gastrointestinal protection; prednisone if NSAIDs cannot be taken; after a myocardial infarction, aspirin plus colchicine (avoid other NSAIDs and glucocorticoids). No strenuous activity for at least 1 month, maximal heart rate under 100. Taper once symptom-free for 24 hours, or when C-reactive protein (checked weekly) normalizes. Failure to respond within 1 week suggests another cause (persistent fever, pleuritic pain, new effusion, worsening illness). Treat the cause: dialysis for uremic, steroids for autoimmune. Counseling: head of bed elevated, finish the full course, activity limits, red flags to the emergency department; refer to cardiology for no response, recurrence or constriction. Older adults: NSAIDs on the Beers list, colchicine dose reduction, steroid osteoporosis",
-      "mortality": "The poorest prognosis is in about 15% with at least one of: fever above 38 degrees Celsius, subacute onset, large effusion, no response after 1 week, myopericarditis, trauma, oral anticoagulation. Recurrence in 15 to 30%; constriction is a late, uncommon complication"
+      "clinical": "[[★ Pleuritic (sharp) substernal chest pain, worse supine and during inspiration, relieved by leaning forward]]; may have fever. Pericardial friction rub: highly specific; triphasic, superficial scratchy or squeaking; loudest at the left sternal border with the diaphragm; louder leaning forward, holding a breath and with firm pressure. [[★ A pleural rub stops when the breath is held, the pericardial rub persists]]",
+      "diagnosis": "Contested on the slides: stage 1 of the ECG (electrocardiogram) lasts 'the first two weeks' (slide 22) or '< 1 week' (slide 23); learn only the order of the stages. Usually a clinical diagnosis: [[★ two of four criteria]] (sharp substernal chest pain; pericardial friction rub; suggestive ECG changes with widespread ST elevation; new or worsening pericardial effusion). Workup: history and examination, ECG, chest X-ray (typically normal), CBC (complete blood count), troponins, ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein), TTE (transthoracic echocardiogram; often normal unless there is an effusion). ECG: [[★ widespread concave ST elevation and PR depression, reciprocal ST depression and PR elevation in aVR]], sinus tachycardia; stages: (1) ST elevation and PR depression, (2) ST normalizes with T-wave flattening, (3) T waves invert, (4) normal. Invasive workup (pericardiocentesis, biopsy) only for tamponade, refractory moderate-large effusions, or suspected bacterial or neoplastic disease. Differential: angina, myocardial ischemia or infarction, pleuritis, pneumonia, GERD (gastroesophageal reflux disease), peptic ulcer disease, esophageal spasm, pulmonary embolism, tension pneumothorax, esophageal rupture, aortic dissection",
+      "treatment": "High-risk features favor admission: fever above 38 degrees Celsius, subacute course, signs of tamponade, moderate-large effusion, immunosuppression, oral anticoagulants, acute trauma, no improvement after 7 days of therapy, raised troponin. First line: an NSAID (nonsteroidal anti-inflammatory drug: aspirin, ibuprofen or indomethacin) plus colchicine (about 3 months), with gastrointestinal protection; prednisone if NSAIDs cannot be taken; [[★ after a myocardial infarction, aspirin plus colchicine (avoid other NSAIDs and glucocorticoids)]]. No strenuous activity for at least 1 month, [[★ maximal heart rate under 100]]. Taper once symptom-free for 24 hours, or when C-reactive protein (checked weekly) normalizes. Failure to respond within 1 week suggests another cause (persistent fever, pleuritic pain, new effusion, worsening illness). Treat the cause: dialysis for uremic, steroids for autoimmune. Counseling: head of bed elevated, [[★ finish the full course]], activity limits, red flags to the emergency department; refer to cardiology for no response, recurrence or constriction. Older adults: NSAIDs on the Beers list, colchicine dose reduction, steroid osteoporosis",
+      "mortality": "The poorest prognosis is in about 15% with at least one of: fever above 38 degrees Celsius, subacute onset, large effusion, no response after 1 week, myopericarditis, trauma, oral anticoagulation. [[★ Recurrence in 15 to 30%]]; constriction is a late, uncommon complication"
      },
      "slides": {
       "name": "5",
@@ -1415,22 +1436,23 @@
       "diagnosis": "14, 15, 16, 20, 21, 22, 23, 24, 25, 26",
       "treatment": "27, 28, 29, 30, 33, 34, 36",
       "mortality": "7, 32"
-     }
+     },
+     "prof_note": "Reynolds flagged (Notability recording; times are estimated, as Notability's text has no timestamps): the friction rub, heard with the patient leaning forward and holding a breath, is the “big uh oh” (~2:09), and she came back to it (~39:31); sharp substernal pain worse lying down, better leaning forward (~31:51); two of four criteria make a clinical diagnosis (~33:53); ST elevation everywhere with depression in aVR, and the tracing changes over weeks (~40:47, ~43:45); after a myocardial infarction aspirin plus colchicine (~54:44); heart rate under 100 (~55:46); finish the course, and breathlessness or lightheadedness means the emergency room (~1:04:08, ~1:05:19); 15 to 30% recur, “almost a third” (~11:57)."
     },
     {
      "id": "l31-recurrent",
      "name": "Recurrent pericarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Recurrent pericarditis",
       "definition": "Symptoms of acute pericarditis return after a symptom-free interval of 4 to 6 weeks or longer",
       "etiology": "The same causes as acute pericarditis; an autoimmune etiology raises the risk of multiple recurrences",
-      "epidemiology": "About 15 to 30% of patients with acute pericarditis",
+      "epidemiology": "[[★ About 15 to 30% of patients with acute pericarditis]]",
       "risk_factors": "For multiple recurrences: the magnitude of CRP (C-reactive protein) elevation, the severity of pericardial late gadolinium enhancement, an autoimmune etiology",
       "pathology": "Inflammatory phenotype: CRP above 10 mg/L, fever and evidence of pericardial inflammation on imaging",
       "clinical": "Return of sharp, positional pericardial chest pain after a symptom-free gap",
-      "diagnosis": "CRP; cardiac MRI (magnetic resonance imaging) is recommended to risk-stratify complicated or recurrent pericarditis and shows pericardial inflammation",
-      "treatment": "Contested on the slides: anakinra and rilonacept are 'fourth line' in the slide 29 table, but the newer guidance (slide 35) prefers anti-interleukin-1 therapy over corticosteroids for recurrent, colchicine-resistant or steroid-dependent disease with an inflammatory phenotype. First recurrence: NSAID (nonsteroidal anti-inflammatory drug) until pain resolves and markers normalize, plus colchicine for 6 months or more. Second recurrence: add an interleukin-1 blocker for idiopathic or post-cardiac injury disease that is colchicine-resistant with prior CRP elevation; low-to-moderate prednisone for systemic autoimmune disease. Azathioprine and IVIG (intravenous immunoglobulin) are later-line options. Refer to cardiology; frequent, highly symptomatic recurrences with effusion may need pericardiectomy",
+      "diagnosis": "CRP; [[★ cardiac MRI (magnetic resonance imaging) is recommended to risk-stratify complicated or recurrent pericarditis]] and shows pericardial inflammation",
+      "treatment": "Contested on the slides: anakinra and rilonacept are 'fourth line' in the slide 29 table, but [[★ the newer guidance (slide 35) moves anti-interleukin-1 therapy earlier for an inflammatory phenotype and calls it preferred for recurrent or colchicine-resistant disease, or steroid-dependent disease]]. First recurrence: NSAID (nonsteroidal anti-inflammatory drug) until pain resolves and markers normalize, plus colchicine for 6 months or more. Second recurrence: add an interleukin-1 blocker for idiopathic or post-cardiac injury disease that is colchicine-resistant with prior CRP elevation; low-to-moderate prednisone for systemic autoimmune disease. Azathioprine and IVIG (intravenous immunoglobulin) are later-line options. Refer to cardiology; frequent, highly symptomatic recurrences with effusion may need pericardiectomy",
       "mortality": "Not covered in the lecture"
      },
      "slides": {
@@ -1444,12 +1466,13 @@
       "diagnosis": "31, 35",
       "treatment": "29, 31, 33, 35",
       "mortality": ""
-     }
+     },
+     "prof_note": "Reynolds flagged: cross off “fourth line” on the drug table (~58:20); with a high C-reactive protein and inflammation on imaging, anti-interleukin-1 therapy comes early (~58:42); cardiac magnetic resonance imaging at recurrence (~45:16). Doses are not examined; drug names are (~58:06)."
     },
     {
      "id": "l31-constrictive",
      "name": "Constrictive pericarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Constrictive pericarditis",
       "definition": "Fibrous scarring of the pericardium with loss of elasticity of the pericardial sac (pericardial noncompliance), limiting filling of the heart. Effusive-constrictive pericarditis: constriction with a coexisting effusion, usually with tamponade, that persists after drainage",
@@ -1457,10 +1480,10 @@
       "epidemiology": "Contested on the slides: the risk of constriction after viral pericarditis is given as '<0.05%' (slide 7); learn only that it is uncommon after viral pericarditis. True population prevalence unknown",
       "risk_factors": "Prior pericarditis, cardiac surgery, chest radiation, tuberculosis",
       "pathology": "A scarred, inelastic pericardium; pericardial calcification in some; constriction can be inflammatory and potentially reversible (edema or late gadolinium enhancement on cardiac MRI (magnetic resonance imaging))",
-      "clinical": "Contested on the slides: the knock is called 'mid-frequency' (slide 39) and pulsus paradoxus is listed under constriction (slide 44); learn the knock's timing, and the Kussmaul sign as the finding of constriction (pulsus paradoxus is the hallmark of tamponade). Fluid overload (peripheral edema, anasarca) and/or low output (fatigue, dyspnea on exertion). Elevated JVP (jugular venous pressure) in most; Kussmaul sign (JVP rises on inspiration); pericardial knock slightly earlier than an S3 (third heart sound), pathognomonic when present but rare; severe disease: ascites, pleural effusion, pulsatile hepatomegaly, cachexia",
-      "diagnosis": "Usually clinical with typical echocardiogram features: increased pericardial thickness, abnormal septal motion or bounce toward the left ventricle, respiratory variation in filling, biatrial enlargement. ECG (electrocardiogram): nonspecific ST-T changes, tachycardia, low voltage, atrial fibrillation in advanced cases. Chest X-ray: calcification is highly specific, but most patients have none. Cardiac MRI or CT (computed tomography) for thickness; right heart catheterization with coronary angiography occasionally needed. ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein) often raised; no BNP (B-type natriuretic peptide) threshold confirms it, but BNP is likely lower than in restrictive cardiomyopathy. Differential: restrictive cardiomyopathy, cirrhosis, subacute tamponade",
-      "treatment": "Often a surgical disease: pericardiectomy (cardiothoracic surgery with cardiology); diuretics used sparingly before surgery. Early, hemodynamically stable constriction: a 2-to-3-month trial of NSAIDs (nonsteroidal anti-inflammatory drugs), colchicine and diuretics. Treating tuberculosis may significantly reduce progression to constriction",
-      "mortality": "Low survival untreated; earlier surgery improves outcomes. After pericardiectomy: 5-year survival nearly 80%, 10-year nearly 60%. Prior ionizing radiation carries the worst survival; older age, worse functional class, renal dysfunction, pulmonary hypertension, ventricular dysfunction, coronary artery disease, COPD (chronic obstructive pulmonary disease) and hyponatremia predict a poor outcome"
+      "clinical": "Contested on the slides: the knock is called 'mid-frequency' (slide 39) and pulsus paradoxus is listed under constriction (slide 44); learn the knock's timing, and the Kussmaul sign as the finding of constriction (pulsus paradoxus is the hallmark of tamponade). [[★ Fluid overload (peripheral edema, anasarca) and/or low output (fatigue, dyspnea on exertion)]]. Elevated JVP (jugular venous pressure) in most; Kussmaul sign (JVP rises on inspiration); pericardial knock slightly earlier than an S3 (third heart sound), pathognomonic when present but rare; severe disease: ascites, pleural effusion, pulsatile hepatomegaly, cachexia",
+      "diagnosis": "Usually clinical with typical echocardiogram features: increased pericardial thickness, abnormal septal motion or bounce toward the left ventricle, respiratory variation in filling, biatrial enlargement. ECG (electrocardiogram): nonspecific ST-T changes, tachycardia, low voltage, atrial fibrillation in advanced cases. Chest X-ray: [[★ calcification is highly specific, but most patients have none]]. Cardiac MRI or CT (computed tomography) for thickness; right heart catheterization with coronary angiography occasionally needed. ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein) often raised; no BNP (B-type natriuretic peptide) threshold confirms it, but BNP is likely lower than in restrictive cardiomyopathy. Differential: restrictive cardiomyopathy, cirrhosis, subacute tamponade",
+      "treatment": "[[★ Often a surgical disease: pericardiectomy]] (cardiothoracic surgery with cardiology); diuretics used sparingly before surgery. Early, hemodynamically stable constriction: a 2-to-3-month trial of NSAIDs (nonsteroidal anti-inflammatory drugs), colchicine and diuretics. Treating tuberculosis may significantly reduce progression to constriction",
+      "mortality": "Low survival untreated; earlier surgery improves outcomes. [[★ After pericardiectomy: 5-year survival nearly 80%, 10-year nearly 60%]]. [[★ Prior ionizing radiation carries the worst survival]]; older age, worse functional class, renal dysfunction, pulmonary hypertension, ventricular dysfunction, coronary artery disease, COPD (chronic obstructive pulmonary disease) and hyponatremia predict a poor outcome"
      },
      "slides": {
       "name": "6",
@@ -1473,22 +1496,23 @@
       "diagnosis": "41, 42, 43, 44, 45, 46, 47, 48",
       "treatment": "36, 49",
       "mortality": "50"
-     }
+     },
+     "prof_note": "Reynolds flagged: it looks like heart failure (~1:11:21); calcification, when present, is a “slam dunk” (~1:20:17), but its absence does not rule it out (~1:20:11); natriuretic peptide is not very helpful (~1:21:07); often a surgical disease (~1:21:35); 80% alive at five years and 60% at ten after pericardiectomy (~1:23:12); radiation damage is hard to reverse (~1:23:44)."
     },
     {
      "id": "l31-effusion",
      "name": "Pericardial effusion",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Pericardial effusion",
       "definition": "Accumulation of extra fluid in the pericardial space around the heart",
       "etiology": "Idiopathic; malignancy (an important cause of effusion and tamponade); infection (HIV (human immunodeficiency virus), Lyme disease, coxsackievirus, tuberculosis); cardiac (after myocardial infarction, Dressler syndrome, after cardiac surgery); metabolic (uremia, hypothyroidism with myxedema); SLE (systemic lupus erythematosus); trauma; medications (doxorubicin, minoxidil, phenytoin; hydralazine and procainamide through drug-induced lupus)",
       "epidemiology": "Up to 6.5% of the general adult population (Framingham cohort)",
-      "risk_factors": "Malignancy (higher suspicion in the elderly), renal failure, hypothyroidism, autoimmune disease, recent cardiac surgery or myocardial infarction",
-      "pathology": "Rapid accumulation causes tamponade with small amounts (under 200 mL) because the pericardium cannot stretch; chronic effusions can grow large without tamponade because it stretches over time",
+      "risk_factors": "[[★ Malignancy (higher suspicion in the elderly)]], renal failure, hypothyroidism, autoimmune disease, recent cardiac surgery or myocardial infarction",
+      "pathology": "[[★ Rapid accumulation causes tamponade with small amounts (under 200 mL) because the pericardium cannot stretch]]; chronic effusions can grow large without tamponade because it stretches over time",
       "clinical": "Small: asymptomatic or vague (dull chest ache, fatigue, decreased exercise tolerance, dyspnea). Large: dysphagia, nausea, hiccups, cough, hoarseness (recurrent laryngeal nerve impingement)",
-      "diagnosis": "An echocardiogram is required to confirm (the heart may 'swing' in a large effusion); ECG (electrocardiogram) and chest X-ray may suggest it. Labs: CBC (complete blood count), BMP (basic metabolic panel), TSH (thyroid-stimulating hormone), troponins; ANA (antinuclear antibody) in a young woman; HIV and Lyme serology, tuberculin skin test, albumin and urine protein; malignancy evaluation (breast or lung cancer). Diagnostic pericardiocentesis: with drainage for tamponade, suspected neoplastic, purulent or tuberculous disease, or a moderate-to-large effusion of unknown cause; fluid cell count (rarely helpful), Gram stain, cultures, AFB (acid-fast bacilli) stain and mycobacterial culture, cytology",
-      "treatment": "Treat the underlying cause; pericardiectomy or pericardial window for recurrent or loculated (especially posterior) effusions; serial TTE (transthoracic echocardiogram) for all large effusions; follow-up with the specialty matching the cause (cardiology, infectious disease, nephrology, oncology, rheumatology); palliative care for a symptomatic malignant effusion",
+      "diagnosis": "[[★ An echocardiogram is required to confirm]] (the heart may 'swing' in a large effusion); ECG (electrocardiogram) and chest X-ray may suggest it. Labs: CBC (complete blood count), BMP (basic metabolic panel), TSH (thyroid-stimulating hormone), troponins; [[★ ANA (antinuclear antibody) in a young woman]]; HIV and Lyme serology, tuberculin skin test, albumin and urine protein; malignancy evaluation (breast or lung cancer). Diagnostic pericardiocentesis: with drainage for tamponade, suspected neoplastic, purulent or tuberculous disease, or a moderate-to-large effusion of unknown cause; fluid cell count (rarely helpful), Gram stain, cultures, AFB (acid-fast bacilli) stain and mycobacterial culture, cytology",
+      "treatment": "Treat the underlying cause; pericardiectomy or pericardial window for recurrent or loculated (especially posterior) effusions; serial TTE (transthoracic echocardiogram) for all large effusions; [[★ follow-up with the specialty matching the cause (cardiology, infectious disease, nephrology, oncology, rheumatology)]]; palliative care for a symptomatic malignant effusion",
       "mortality": "Depends on the underlying cause; a symptomatic malignant effusion carries a median life expectancy of 2 to 4 months and often recurs"
      },
      "slides": {
@@ -1502,12 +1526,13 @@
       "diagnosis": "57, 58, 63, 66, 67",
       "treatment": "68, 69, 70",
       "mortality": "69"
-     }
+     },
+     "prof_note": "Reynolds flagged: fast fluid compresses the heart at smaller volumes (~1:26:23); an echocardiogram is needed to confirm (~1:30:29); send the fluid for everything (~30:41, ~1:41:35); antinuclear antibody in a young woman (~1:36:30); cytology for malignancy (~1:43:56); follow-up by cause and repeated echocardiograms (~1:47:42, ~1:47:57); higher suspicion of malignancy in older adults (~1:08:07)."
     },
     {
      "id": "l31-tamponade",
      "name": "Cardiac tamponade",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Cardiac tamponade",
       "definition": "Accumulation of pericardial fluid under pressure, compressing the heart and impairing diastolic filling and cardiac output",
@@ -1515,10 +1540,10 @@
       "epidemiology": "About 0.05% of hospital admissions",
       "risk_factors": "Rapidly accumulating effusion; malignancy; trauma; recent cardiac procedure or myocardial infarction",
       "pathology": "Fluid under pressure compresses the heart (right ventricular diastolic collapse); preload-dependent filling; equalization of diastolic pressures in all chambers",
-      "clinical": "Contested on the slides: the scanned textbook page (slide 72) lists the Kussmaul sign under tamponade; it belongs to constrictive pericarditis. Beck triad: distant (muffled) heart sounds, distended jugular veins, hypotension, complete in only a minority. Elevated JVP (jugular venous pressure); pulsus paradoxus (systolic fall of more than 10 mmHg on inspiration); chest pain, dyspnea or tachypnea, syncope or presyncope, tachycardia, edema. Sinus tachycardia may indicate significant compromise and is an indication for immediate pericardiocentesis",
-      "diagnosis": "Contested on the slides: echocardiography is called the 'gold standard' (slide 71), but tamponade is a clinical diagnosis confirmed only by the hemodynamic and clinical response to drainage (slide 57). Echocardiogram: effusion with right ventricular diastolic collapse. ECG (electrocardiogram): low-voltage QRS, tachycardia, electrical alternans (fairly specific). Chest X-ray: water-bottle (globular) heart, clear lungs. Catheterization: equalization of pressures in all chambers; prominent x and absent y descent. Differential: acute (right ventricular myocardial infarction, aortic dissection, massive pulmonary embolism); subacute (constrictive pericarditis, heart failure, cirrhosis)",
-      "treatment": "Expedient pericardiocentesis is definitive; IV (intravenous) fluids to increase preload and prevent right ventricular collapse until drainage (diuretics avoided); hemorrhagic tamponade from trauma: emergent surgery. Suspected tamponade outside the hospital: emergency department",
-      "mortality": "Short-term outcome often good with prompt recognition and treatment; long-term prognosis depends on the underlying cause"
+      "clinical": "Contested on the slides: the scanned textbook page (slide 72) lists the Kussmaul sign under tamponade; it belongs to constrictive pericarditis. [[★ Beck triad: distant (muffled) heart sounds, distended jugular veins, hypotension]]. Elevated JVP (jugular venous pressure); pulsus paradoxus (a 10 mmHg drop in blood pressure with inspiration); chest pain, dyspnea or tachypnea, syncope or presyncope, tachycardia, edema. Sinus tachycardia may indicate significant compromise and is an indication for immediate pericardiocentesis",
+      "diagnosis": "Contested on the slides: echocardiography is called the 'gold standard' (slide 71), but [[★ tamponade is a clinical diagnosis confirmed only by the hemodynamic and clinical response to drainage (slide 57)]]. Echocardiogram: effusion with [[★ right ventricular diastolic collapse]]. ECG (electrocardiogram): low-voltage QRS, tachycardia, electrical alternans (fairly specific). Chest X-ray: water-bottle (globular) heart, clear lungs. Catheterization: equalization of pressures in all chambers; prominent x and absent y descent. Differential: acute (right ventricular myocardial infarction, aortic dissection, massive pulmonary embolism); subacute (constrictive pericarditis, heart failure, cirrhosis)",
+      "treatment": "[[★ Expedient pericardiocentesis is definitive]]; IV (intravenous) fluids to increase preload and prevent right ventricular collapse until drainage (diuretics avoided); hemorrhagic tamponade from trauma: emergent surgery. [[★ Suspected tamponade outside the hospital: emergency department]]",
+      "mortality": "[[★ Short-term outcome often good with prompt recognition and treatment; long-term prognosis depends on the underlying cause]]"
      },
      "slides": {
       "name": "6",
@@ -1531,7 +1556,8 @@
       "diagnosis": "56, 57, 60, 61, 62, 64, 65, 71",
       "treatment": "27, 68, 71",
       "mortality": "69"
-     }
+     },
+     "prof_note": "Reynolds flagged: an emergency, so an office patient goes to the emergency room (~1:45:58, ~49:37); the Beck triad (~1:27:04); a clinical diagnosis that drainage confirms (~1:31:14, ~1:33:48); right ventricular collapse on the echocardiogram (~1:39:32); stabilize until pericardiocentesis, no pressor names or fluid rates examined (~1:46:07); good short-term outcome if treated promptly, long term set by the cause (~1:47:06, ~1:47:20). Recording vs truth: she called alternans, pulsus paradoxus and the Kussmaul sign “the triad” (~1:16:16); the Beck triad is hypotension, distended jugular veins and muffled heart sounds (slide 54)."
     }
    ]
   },
@@ -1540,23 +1566,23 @@
    "title": "Infective Endocarditis",
    "lecturer": "L. Reynolds, MSPA, PA-C",
    "deck": "32. Infective Endocarditis FALL 2026 SV.pptx",
-   "note": "Built from the slides only (Wednesday 14 October lecture). Slide conflicts: slide 13's text boxes put 'palms, soles' under Osler nodes and 'raised or macular' under Janeway lesions; the truth, and the slide's own note, is that Osler nodes are painful immunologic nodules on the finger and toe pads and Janeway lesions are painless, flat, vascular (embolic) macules on the palms and soles. Fever in the Duke criteria is 38.0 degrees Celsius or more (slide 22) versus above 38 (slide 23). Slide 38 (a textbook summary page whose organism shares and 'high risk' valve list disagree with slides 18-20 and the prophylaxis list) is not used. The 2023 Duke update in the slide notes is not what the slides teach. Doses on slides 35-36 and 42 are not reproduced. The journal photographs on slide 14 are described in words, not reproduced.",
+   "note": "Built from the slides plus Notability's transcript of Reynolds's recording of Wednesday 14 October: the recording only chooses which facts to star (approximate times are in each card's note and in the study guide); it adds no content. Recording versus slides: she called vancomycin, rifampin and gentamicin the empiric regimen (that is slide 27's regimen for Staphylococcus aureus on a prosthetic valve; the slide's empiric regimens are kept), said intramuscular amoxicillin for a patient who cannot take pills (the slides give ampicillin, kept), and said she would give prophylaxis before any bronchoscopy (the slide's biopsy-only rule is kept). Slide conflicts: slide 13's text boxes put 'palms, soles' under Osler nodes and 'raised or macular' under Janeway lesions; the truth (slide 13's PAINFUL and NONTENDER labels, slide 22's Duke table) is that Osler nodes are painful immunologic nodules on the finger and toe pads and Janeway lesions are painless, flat, vascular (embolic) macules on the palms and soles. Fever in the Duke criteria is 38.0 degrees Celsius or more (slide 22) versus above 38 (slide 23). Slide 38 (a textbook summary page whose organism shares and 'high risk' valve list disagree with slides 18-20 and the prophylaxis list) is not used. Doses on slides 35-36 and 42 are not reproduced. The journal photographs on slide 14 are described in words, not reproduced.",
    "conditions": [
     {
      "id": "l32-acute",
      "name": "Acute infective endocarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Acute infective endocarditis (IE)",
       "definition": "A hectically febrile illness caused by a virulent, invasive organism: rapid onset, typically over 3-10 days, high fevers and systemic toxicity; it rapidly damages cardiac structures, seeds extracardiac sites and, if untreated, progresses to death within weeks",
-      "etiology": "Beta-hemolytic streptococci, Staphylococcus aureus (MSSA (methicillin-susceptible Staphylococcus aureus) or MRSA (methicillin-resistant Staphylococcus aureus)), sometimes Staphylococcus lugdunensis (a coagulase-negative staphylococcus), enterococci. Skin is the source of staphylococci; in people who inject drugs Staphylococcus aureus causes more than 60% of all endocarditis and 80-90% of tricuspid valve cases. Staphylococcus aureus causes about 52% of health care-associated native valve endocarditis",
-      "epidemiology": "Patients over 60 make up more than 50% of cases; men more than women. About 25-35% of native valve endocarditis is health care-associated. Degenerative valve disease and intracardiac devices are the leading predisposing conditions in high-income countries; rheumatic heart disease predominates only in low-income settings. Pediatric: low incidence (about 0.05-0.12 per 1000 admissions), mortality 5-16%",
-      "risk_factors": "Injection drug use, immunocompromised status, poor dentition or dental infections, HIV (human immunodeficiency virus); congenital heart disease, rheumatic heart disease, degenerative valve disease, intracardiac devices, prosthetic valves",
+      "etiology": "Beta-hemolytic streptococci, Staphylococcus aureus (MSSA (methicillin-susceptible Staphylococcus aureus) or MRSA (methicillin-resistant Staphylococcus aureus)), sometimes Staphylococcus lugdunensis (a coagulase-negative staphylococcus), enterococci. Skin is the source of staphylococci; [[★ in people who inject drugs Staphylococcus aureus causes more than 60% of all endocarditis and 80-90% of tricuspid valve cases]]. Staphylococcus aureus causes about 52% of health care-associated native valve endocarditis",
+      "epidemiology": "Patients over 60 make up more than 50% of cases; men more than women. About 25-35% of native valve endocarditis is health care-associated. [[★ Degenerative valve disease and intracardiac devices are the leading predisposing conditions in high-income countries]]. Pediatric: low incidence (about 0.05-0.12 per 1000 admissions), mortality 5-16%",
+      "risk_factors": "[[★ Injection drug use]], immunocompromised status, [[★ poor dentition or dental infections]], HIV (human immunodeficiency virus); congenital heart disease, rheumatic heart disease, degenerative valve disease, intracardiac devices, prosthetic valves",
       "pathology": "Invasion and colonization of endocardial structures by microorganisms with inflammation; the infective vegetation is a mass of platelets, fibrin, micro-colonies of micro-organisms and inflammatory cells. Valves are the most common site; also the low-pressure side of a VSD (ventricular septal defect), endocardium damaged by aberrant jets or foreign bodies, and intracardiac devices. New murmur from valve damage or chordae tendineae rupture; heart failure from valvular dysfunction; perivalvular abscess extending into the myocardium, to the epicardium (pericarditis) or the upper ventricular septum (conduction block). Septic emboli to brain, lungs, kidneys, spleen and liver",
-      "clinical": "Fever (most common), chills, sweats, myalgias, headache, malaise, neurologic deficits from septic emboli to the brain; cough and pleuritic chest pain in people who inject drugs (tricuspid vegetation throwing septic emboli to the lungs, nodular infiltrates). Exam: new regurgitant murmur; Janeway lesions (painless, flat hemorrhagic macules on palms and soles; vascular, embolic; associated with acute IE); splinter hemorrhages, conjunctival petechiae, Osler nodes, Roth spots",
-      "diagnosis": "Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics. TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. If the presentation suggests acute endocarditis, two cultures within the first 1-2 hours, then empiric antibiotics. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor; rejected = alternative diagnosis or resolution with 4 days or less of antibiotics. Possible and definite are both treated as infective endocarditis",
-      "treatment": "Kill all bacteria in the vegetation: bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture), parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus ceftriaxone; vancomycin plus gentamicin plus cefepime if a prosthetic valve has been in place 1 year or less. Directed: MSSA nafcillin or oxacillin, or cefazolin; MRSA vancomycin or daptomycin. Consults: infectious disease (antibiotics, outpatient monitoring), cardiothoracic surgery (surgery and anticoagulation needs), addiction medicine (harm reduction for people who inject drugs); disposition: rehabilitation, palliative care. Surgery: heart failure from valvular dysfunction (most common indication), infection not resolving on appropriate antibiotics, abscess, fungal infection. Anticoagulation: not beneficial for native valve infection, controversial with prosthetic valves. Education: prophylaxis only for high-risk cardiac conditions before dental procedures that manipulate the gums or periapical region or perforate the oral mucosa, or respiratory procedures that incise or biopsy the mucosa (tonsillectomy, adenoidectomy); not for bronchoscopy without biopsy, GI (gastrointestinal) or GU (genitourinary) procedures, dental radiographs, orthodontic adjustments or lip trauma. A single dose 30-60 minutes before: oral amoxicillin; no oral route: ampicillin IM (intramuscular) or IV (intravenous), or cefazolin or ceftriaxone; penicillin-allergic, oral: azithromycin or clarithromycin, doxycycline, cephalexin; penicillin-allergic, no oral route: cefazolin or ceftriaxone. Clindamycin no longer recommended (Clostridioides difficile); no cephalosporins after anaphylaxis, angioedema or urticaria to penicillin",
-      "mortality": "If untreated, death within weeks. Staphylococcus aureus is the most lethal organism: mortality about 50% in prosthetic valve endocarditis, about 30% in people who do not inject drugs, about 5% in people who inject drugs"
+      "clinical": "Fever (most common), chills, sweats, myalgias, headache, malaise, neurologic deficits from septic emboli to the brain; [[★ cough in people who inject drugs (the tricuspid valve is the valve named for them; the lung is a listed embolic site)]]. Exam: new regurgitant murmur; [[★ Janeway lesions (painless, flat hemorrhagic macules on palms and soles; vascular, embolic; associated with acute IE)]]; splinter hemorrhages, conjunctival petechiae, Osler nodes, Roth spots",
+      "diagnosis": "[[★ Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics.]] TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. If the presentation suggests acute endocarditis, two cultures within the first 1-2 hours, then empiric antibiotics. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). [[★ Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor]]",
+      "treatment": "Kill all bacteria in the vegetation: [[★ bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture)]], parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus ceftriaxone; vancomycin plus gentamicin plus cefepime if a prosthetic valve has been in place 1 year or less. Directed: MSSA nafcillin or oxacillin, or cefazolin; MRSA vancomycin or daptomycin. Consults: infectious disease (antibiotics, outpatient monitoring), cardiothoracic surgery (surgery and anticoagulation needs), addiction medicine (harm reduction for people who inject drugs); disposition: rehabilitation, palliative care. Surgery: heart failure from valvular dysfunction (most common indication), infection not resolving on appropriate antibiotics, abscess, fungal infection. [[★ Anticoagulation: not beneficial for native valve infection]], controversial with prosthetic valves. Education: prophylaxis only for high-risk cardiac conditions before dental procedures that manipulate the gums or periapical region or perforate the oral mucosa, or respiratory procedures that incise or biopsy the mucosa (tonsillectomy, adenoidectomy); not for bronchoscopy without biopsy, GI (gastrointestinal) or GU (genitourinary) procedures, dental radiographs, orthodontic adjustments or lip trauma. A single dose 30-60 minutes before: oral amoxicillin; no oral route: ampicillin IM (intramuscular) or IV (intravenous), or cefazolin or ceftriaxone; penicillin-allergic, oral: azithromycin or clarithromycin, doxycycline, cephalexin; penicillin-allergic, no oral route: cefazolin or ceftriaxone. [[★ Clindamycin no longer recommended (Clostridioides difficile)]]; no cephalosporins after anaphylaxis, angioedema or urticaria to penicillin",
+      "mortality": "If untreated, death within weeks. [[★ Staphylococcus aureus is the most lethal organism]]: mortality about 50% in prosthetic valve endocarditis, about 30% in people who do not inject drugs, about 5% in people who inject drugs"
      },
      "slides": {
       "name": "10",
@@ -1569,23 +1595,24 @@
       "diagnosis": "22-25",
       "treatment": "26-27, 30, 32-36",
       "mortality": "10, 37"
-     }
+     },
+     "prof_note": "Reynolds flagged (Notability transcript; times approximate, running clock): injection drug use is a huge risk factor (13:10), with the tricuspid valve and the lungs (25:50); devices and degenerative valve disease now lead the predisposing conditions (17:22); think Staphylococcus aureus and methicillin resistance first (38:41, 40:36); blood cultures before antibiotics, said as strongly as she could (59:17); bactericidal therapy for weeks from the first negative culture (1:03:06, 1:03:42); suspected endocarditis is a hospital problem (1:07:31); infectious disease for every patient (1:08:07); no anticoagulation for native valves (1:28:16); Staphylococcus aureus is the deadly one (1:36:02)."
     },
     {
      "id": "l32-subacute",
      "name": "Subacute infective endocarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Subacute infective endocarditis (SBE (subacute bacterial endocarditis))",
       "definition": "Infective endocarditis with an indolent course: lower fevers, generalized malaise and weight loss over weeks or months; slow to cause structural cardiac damage, if at all; rarely metastasizes; gradually progressive unless complicated by a major embolic event or a ruptured mycotic (infected) aneurysm",
       "etiology": "Viridans streptococci (oral cavity; late prosthetic valve infection), enterococci (genitourinary tract), coagulase-negative staphylococci, the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group (upper respiratory tract; gram-negative). Streptococcus gallolyticus comes from the gastrointestinal tract. Fungal endocarditis: Candida. Children over 1 year with congenital heart disease: viridans group streptococci most common, then Staphylococcus aureus",
-      "epidemiology": "Patients over 60 make up more than 50% of cases; men more than women. About 25-35% of native valve endocarditis is health care-associated. Degenerative valve disease and intracardiac devices are the leading predisposing conditions in high-income countries; rheumatic heart disease predominates only in low-income settings. Pediatric: low incidence (about 0.05-0.12 per 1000 admissions), mortality 5-16%",
+      "epidemiology": "Patients over 60 make up more than 50% of cases; men more than women. About 25-35% of native valve endocarditis is health care-associated. [[★ Degenerative valve disease and intracardiac devices are the leading predisposing conditions in high-income countries]]. Pediatric: low incidence (about 0.05-0.12 per 1000 admissions), mortality 5-16%",
       "risk_factors": "Injection drug use, immunocompromised status, poor dentition or dental infections, HIV (human immunodeficiency virus); congenital heart disease, rheumatic heart disease, degenerative valve disease, intracardiac devices, prosthetic valves. Dental procedures and poor dentition (viridans streptococci)",
       "pathology": "Invasion and colonization of endocardial structures by microorganisms with inflammation; the infective vegetation is a mass of platelets, fibrin, micro-colonies of micro-organisms and inflammatory cells. Valves are the most common site; also the low-pressure side of a VSD (ventricular septal defect), endocardium damaged by aberrant jets or foreign bodies, and intracardiac devices. Slow valve damage; new murmur from valve damage or chordae tendineae rupture",
-      "clinical": "Lower fevers, generalized malaise and weight loss over weeks or months. Exam: new murmur; splinter hemorrhages (under the finger and toenails; embolic); Osler nodes (painful nodules on the finger and toe pads that appear in crops and fade in 2-3 days; immunologic); Roth spots (white-centered retinal hemorrhages from vasculitis of small retinal arteries); petechiae (palate, conjunctiva, extremities)",
-      "diagnosis": "Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics. TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor; rejected = alternative diagnosis or resolution with 4 days or less of antibiotics. Possible and definite are both treated as infective endocarditis. Differential: SLE (systemic lupus erythematosus; Libman-Sacks non-infective endocarditis), antiphospholipid syndrome, vasculitis, polymyalgia rheumatica, reactive arthritis, Lyme disease, meningitis, tuberculosis, atrial myxoma (fever, new murmur, tumor plop)",
-      "treatment": "Kill all bacteria in the vegetation: bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture), parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus ceftriaxone. Directed: viridans streptococci penicillin G or ceftriaxone with or without gentamicin, or vancomycin (2-week regimen with gentamicin only for uncomplicated IE with rapid response and no CKD (chronic kidney disease)); enterococci ampicillin (or penicillin G) plus gentamicin, ampicillin plus ceftriaxone, or vancomycin plus gentamicin; HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms ceftriaxone or ampicillin-sulbactam. Consults: infectious disease (antibiotics, outpatient monitoring), cardiothoracic surgery (surgery and anticoagulation needs), addiction medicine (harm reduction for people who inject drugs); disposition: rehabilitation, palliative care. Surgery: heart failure from valvular dysfunction (most common indication), infection not resolving on appropriate antibiotics, abscess, fungal infection. Anticoagulation: not beneficial for native valve infection, controversial with prosthetic valves. Education: prophylaxis only for high-risk cardiac conditions before dental procedures that manipulate the gums or periapical region or perforate the oral mucosa, or respiratory procedures that incise or biopsy the mucosa (tonsillectomy, adenoidectomy); not for bronchoscopy without biopsy, GI (gastrointestinal) or GU (genitourinary) procedures, dental radiographs, orthodontic adjustments or lip trauma. A single dose 30-60 minutes before: oral amoxicillin; no oral route: ampicillin IM (intramuscular) or IV (intravenous), or cefazolin or ceftriaxone; penicillin-allergic, oral: azithromycin or clarithromycin, doxycycline, cephalexin; penicillin-allergic, no oral route: cefazolin or ceftriaxone. Clindamycin no longer recommended (Clostridioides difficile); no cephalosporins after anaphylaxis, angioedema or urticaria to penicillin",
-      "mortality": "Viridans streptococci: relatively good prognosis if antibiotic treatment is started before complications occur. Enterococci: difficult to treat because of antibiotic resistance; major complications and need for valve replacement in about 30-40%. Fungi: the most likely complication is embolism and occlusion of larger peripheral arteries"
+      "clinical": "Lower fevers, generalized malaise and weight loss over weeks or months. Exam: new murmur; splinter hemorrhages (under the finger and toenails; embolic); [[★ Osler nodes (painful nodules on the finger and toe pads that appear in crops and fade in 2-3 days; immunologic)]]; Roth spots (white-centered retinal hemorrhages from vasculitis of small retinal arteries); petechiae (palate, conjunctiva, extremities)",
+      "diagnosis": "[[★ Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics.]] TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). [[★ Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor]]. Differential: SLE (systemic lupus erythematosus; Libman-Sacks non-infective endocarditis), antiphospholipid syndrome, vasculitis, polymyalgia rheumatica, reactive arthritis, Lyme disease, meningitis, tuberculosis, atrial myxoma (fever, new murmur, tumor plop)",
+      "treatment": "Kill all bacteria in the vegetation: [[★ bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture)]], parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus ceftriaxone. Directed: viridans streptococci penicillin G or ceftriaxone with or without gentamicin, or vancomycin (2-week regimen with gentamicin only for uncomplicated IE with rapid response and no CKD (chronic kidney disease)); enterococci ampicillin (or penicillin G) plus gentamicin, ampicillin plus ceftriaxone, or vancomycin plus gentamicin; HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms ceftriaxone or ampicillin-sulbactam. Consults: infectious disease (antibiotics, outpatient monitoring), cardiothoracic surgery (surgery and anticoagulation needs), addiction medicine (harm reduction for people who inject drugs); disposition: rehabilitation, palliative care. Surgery: heart failure from valvular dysfunction (most common indication), infection not resolving on appropriate antibiotics, abscess, fungal infection. Anticoagulation: not beneficial for native valve infection, controversial with prosthetic valves. Education: prophylaxis only for high-risk cardiac conditions before dental procedures that manipulate the gums or periapical region or perforate the oral mucosa, or respiratory procedures that incise or biopsy the mucosa (tonsillectomy, adenoidectomy); not for bronchoscopy without biopsy, GI (gastrointestinal) or GU (genitourinary) procedures, dental radiographs, orthodontic adjustments or lip trauma. A single dose 30-60 minutes before: oral amoxicillin; no oral route: ampicillin IM (intramuscular) or IV (intravenous), or cefazolin or ceftriaxone; penicillin-allergic, oral: azithromycin or clarithromycin, doxycycline, cephalexin; penicillin-allergic, no oral route: cefazolin or ceftriaxone. [[★ Clindamycin no longer recommended (Clostridioides difficile)]]; no cephalosporins after anaphylaxis, angioedema or urticaria to penicillin",
+      "mortality": "[[★ Viridans streptococci: relatively good prognosis if antibiotic treatment is started before complications occur]]. Enterococci: difficult to treat because of antibiotic resistance; major complications and [[★ need for valve replacement in about 30-40%]]. Fungi: the most likely complication is embolism and occlusion of larger peripheral arteries"
      },
      "slides": {
       "name": "10",
@@ -1598,23 +1625,24 @@
       "diagnosis": "21-25",
       "treatment": "26-27, 31-36",
       "mortality": "37"
-     }
+     },
+     "prof_note": "Reynolds flagged (Notability transcript; times approximate): the slow, creeping course (21:31); Osler nodes are the painful lesion, Janeway lesions the painless one (28:38, 29:15); viridans streptococci do well if treated before valve destruction (1:36:15); enterococci often end in valve replacement (1:37:20); prophylaxis is the part she said you need to know (1:43, 1:30:45), with clindamycin dropped because of Clostridioides difficile (1:34:29)."
     },
     {
      "id": "l32-pve",
      "name": "Prosthetic valve and device endocarditis",
-     "prof": false,
+     "prof": true,
      "fields": {
       "name": "Prosthetic valve endocarditis (PVE) and cardiovascular implantable electronic device (CIED) endocarditis",
       "definition": "PVE: vegetation on artificial cardiac valves. CIED endocarditis: vegetation on pacemakers and implantable cardioverter defibrillators",
       "etiology": "Early prosthetic valve infection: coagulase-negative staphylococci (Staphylococcus epidermidis) and Staphylococcus aureus; late: viridans streptococci. Prosthetic valve under 2 months: coagulase-negative staphylococci about 33%, Staphylococcus aureus about 22%; over 12 months: streptococci about 31%. Devices: coagulase-negative staphylococci about 41%, Staphylococcus aureus about 36%",
-      "epidemiology": "Prosthetic valve infections are 16-35% of cases; the greatest risk is within the first year after valve replacement, then it declines to a native-valve level. Device endocarditis can occur within weeks of implantation or a generator change",
+      "epidemiology": "Prosthetic valve infections are 16-35% of cases; [[★ the greatest risk is within the first year after valve replacement]], then it declines to a native-valve level. Device endocarditis can occur within weeks of implantation or a generator change",
       "risk_factors": "The prosthesis or device itself, especially early after implantation or a generator change",
       "pathology": "Vegetation on the prosthesis or lead; new partial dehiscence of a prosthetic valve on echocardiogram is a major Duke criterion",
       "clinical": "Not covered in the lecture",
-      "diagnosis": "Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics. TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor; rejected = alternative diagnosis or resolution with 4 days or less of antibiotics. Possible and definite are both treated as infective endocarditis",
-      "treatment": "Kill all bacteria in the vegetation: bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture), parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus gentamicin plus cefepime if the valve has been in place 1 year or less; vancomycin plus ceftriaxone if more than 1 year. Staphylococcus aureus prosthetic valve infection: vancomycin plus rifampin plus gentamicin, switching vancomycin to nafcillin or oxacillin if MSSA (methicillin-susceptible Staphylococcus aureus) grows. Anticoagulation is controversial with prosthetic valves. Prosthetic valves (including transcatheter-implanted prostheses and homografts) and prosthetic valve-repair material are high-risk conditions for prophylaxis",
-      "mortality": "Staphylococcus aureus prosthetic valve endocarditis has the highest mortality, about 50%"
+      "diagnosis": "[[★ Blood cultures x 3 sets from separate sites within 24 hours, always before antibiotics.]] TEE (transesophageal echocardiogram): highly sensitive and specific, defines the extent of disease, detects leaflet vegetations; a normal TEE does not necessarily rule endocarditis out. CBC (complete blood count) with differential: leukocytosis, anemia of chronic disease with normal MCV (mean corpuscular volume). Urinalysis: hematuria, proteinuria, pyuria. Modified Duke criteria. Major: typical organism in two separate blood cultures (viridans streptococci, Streptococcus gallolyticus, HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, Staphylococcus aureus, community-acquired enterococci without a primary focus) or persistently positive cultures (more than 12 hours apart, or all of 3 or most of 4 or more with first and last at least 1 hour apart); endocardial involvement (oscillating intracardiac mass, abscess or new partial dehiscence of a prosthetic valve on echocardiogram, or new valvular regurgitation; a change in a preexisting murmur is not sufficient). Minor: predisposing heart condition or IDU (injection drug use); fever 38.0 degrees Celsius or more; vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions); immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor); microbiologic evidence (single cultures of coagulase-negative staphylococci or diphtheroids excluded as contaminants). [[★ Definite = 2 major, 1 major + 3 minor, or 5 minor; possible = 1 major + 1 minor or 3 minor]]",
+      "treatment": "Kill all bacteria in the vegetation: [[★ bactericidal, prolonged (typically 4-6 weeks from the first NEGATIVE culture)]], parenteral antibiotics with hospital admission and close monitoring of labs, renal function and cardiovascular status by a multidisciplinary team; empiric therapy ONLY after blood cultures, with an ID (infectious disease) consult. Empiric therapy covers staphylococci, streptococci and enterococci. Empiric: vancomycin plus gentamicin plus cefepime if the valve has been in place 1 year or less; vancomycin plus ceftriaxone if more than 1 year. Staphylococcus aureus prosthetic valve infection: vancomycin plus rifampin plus gentamicin, switching vancomycin to nafcillin or oxacillin if MSSA (methicillin-susceptible Staphylococcus aureus) grows. [[★ Anticoagulation is controversial with prosthetic valves]]. Prosthetic valves (including transcatheter-implanted prostheses and homografts) and prosthetic valve-repair material are high-risk conditions for prophylaxis",
+      "mortality": "[[★ Staphylococcus aureus prosthetic valve endocarditis has the highest mortality, about 50%]]"
      },
      "slides": {
       "name": "5",
@@ -1627,7 +1655,8 @@
       "diagnosis": "22-25",
       "treatment": "27-28, 33, 36",
       "mortality": "37"
-     }
+     },
+     "prof_note": "Reynolds flagged (Notability transcript; times approximate): anything foreign is much more likely to become infected than native tissue (8:56); devices now outrank injection drug use as a predisposing condition (17:22); for Staphylococcus aureus the only change between susceptible and resistant strains is a penicillin or vancomycin (1:25:33); anticoagulation is controversial with prosthetic valves (1:28:41)."
     }
    ]
   }

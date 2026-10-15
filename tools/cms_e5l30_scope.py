@@ -84,8 +84,8 @@ CONTESTED on the slides, or wrong, so handled as noted (truth wins):
       branch block alone is no longer a ST-elevation equivalent. Keyed only as
       "a sign of pathology that needs a workup"; "equivalent" is banned.
   Atropine and epinephrine for Mobitz II and complete block (s14, s18): "no
-      longer contraindicated but highly controversial"; the s14 notes argue both
-      ways. She will not test them. Never keyed either way; transcutaneous
+      longer contraindicated but highly controversial". She will not test
+      them. Never keyed either way; transcutaneous
       pacing (emergent) and a permanent pacemaker (definitive) are keyed.
   First-degree block pacing (s6): "Consider permanent pacemaker for symptomatic
       patients or patients with PR interval greater than 0.3 sec". Truth: pacing
