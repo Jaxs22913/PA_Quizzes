@@ -1036,7 +1036,8 @@
   // synced like the highlights, under "pipReview:<exam slug>" (theme.js, window.PipReview).
   function reviewCount(f) {
     if (!f) return 0;
-    try { return window.PipReview ? window.PipReview.count(f.s) : (jget("pipReview:" + f.s, []) || []).length; } catch (e) { return 0; }
+    // without theme.js, count only real items: the list may hold deletion markers (no text) since 2026-10-15
+    try { return window.PipReview ? window.PipReview.count(f.s) : ((jget("pipReview:" + f.s, []) || []).filter(function (x) { return x && x.t; })).length; } catch (e) { return 0; }
   }
   function reviewChip(f) {
     var n = reviewCount(f);
