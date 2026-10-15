@@ -17,7 +17,7 @@ gold), the contents sidebar generated from the fragments' own headings, a
 "How this exam is written" box, a Test-yourself bank per lecture, and a source
 footer for the sections whose fragment carries none.
 
-After building: tools/apply_guide_additions.py (the "Also tested" blocks),
+After building: tools/apply_guide_additions.py (the added lines, written into their sections),
 tools/build_guide_docx.py "pdm-exam-3-study-guide.html", then the guide-link
 procedure (CLAUDE.md section 7).
 """

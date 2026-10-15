@@ -173,9 +173,16 @@ def parse_guide(path):
 BLOCK = re.compile(r"</(?:li|p|tr|dd|dt|blockquote|figcaption|summary)>|<br\s*/?>|</h[1-6]>", re.I)
 
 
+# a line apply_guide_additions.py wrote into the section (<li>/<p id="ga-..." data-gen="1">)
+GEN_LINE = re.compile(r'<(li|p) id="ga-[^"]*" data-gen="1">(.*?)</\1>', re.S)
+
+
 def blocks_of(sc):
+    """The section's paragraphs: the guide's own first (split exactly as if no line had been
+    added, so a block -- and the audit record that quotes it -- does not change when an added
+    line lands next to it), then each added line as its own paragraph."""
     out = []
-    for p in BLOCK.split(sc["html"]):
+    for p in BLOCK.split(GEN_LINE.sub("", sc["html"])) + [m.group(2) for m in GEN_LINE.finditer(sc["html"])]:
         t = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", p))).strip()
         if len(t) >= 25:
             out.append(t)

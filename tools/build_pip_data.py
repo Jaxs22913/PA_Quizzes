@@ -343,7 +343,9 @@ def extract_blocks(root):
             return
         if skipped(n):
             return
-        if n.attrs.get("id"):
+        if n.attrs.get("id") and not n.attrs.get("data-gen"):
+            # a line written into a section by apply_guide_additions.py (data-gen) anchors only
+            # itself: the guide's own lines after it keep pointing at their section
             state["last_id"] = n.attrs["id"]
         tag = n.tag
         if tag == "tr":
