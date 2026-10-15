@@ -363,24 +363,6 @@
    }
   },
   {
-   "id": "clinical-medicine-and-surgery-i-exam-4-027",
-   "section_id": "l25-dx",
-   "section_title": "6.6 · Diagnosis and natriuretic peptides",
-   "html": "<b>High-output heart failure treatment.</b> It is treated by correcting the underlying cause of increased demand, such as hyperthyroidism, with a diuretic for congestion.",
-   "keys": [
-    "1tbcayn"
-   ],
-   "cites": [
-    "HEART FAILURE Carter 2026 PP.pptx, Slide 54"
-   ],
-   "src": {
-    "question": "A 46-year-old woman with high-output heart failure from untreated hyperthyroidism has leg edema and breathlessness. Which treatment approach is most appropriate?",
-    "key": "Treat the thyroid disease and add a diuretic",
-    "explanation": "High-output failure is treated by correcting the underlying cause of increased demand, here hyperthyroidism, with a diuretic for congestion.",
-    "also": []
-   }
-  },
-  {
    "id": "clinical-medicine-and-surgery-i-exam-4-028",
    "section_id": "l24-risk",
    "section_title": "5.2 · Atherosclerosis and risk factors",
@@ -429,8 +411,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-030",
-   "section_id": "l25-sysdia",
-   "section_title": "6.2 · Systolic vs diastolic heart failure",
+   "section_id": "l25-tx",
+   "section_title": "6.7 · Treatment",
    "html": "<b>Titrating therapy in reduced ejection fraction.</b> Guideline-directed therapy is prioritized for the patient's comorbidities and optimized as hemodynamically stable, so each class is increased as blood pressure and tolerance allow.",
    "keys": [
     "1txxr08",
@@ -529,7 +511,8 @@
    "section_title": "6.1 · Definition, epidemiology and causes",
    "html": "<b>Modifiable heart failure risk factors.</b> Tobacco, excessive alcohol and obesity are modifiable, whereas family history cannot be changed, so counseling targets the modifiable ones.",
    "keys": [
-    "5oekjz"
+    "5oekjz",
+    "1aao24"
    ],
    "cites": [
     "HEART FAILURE Carter 2026 PP.pptx, Slide 18"
@@ -538,7 +521,12 @@
     "question": "A 45-year-old woman with a family history of heart failure smokes, drinks heavily and is obese. Her heart is structurally normal. Which counseling point best lowers her heart failure risk?",
     "key": "Quit tobacco, cut alcohol, lose weight",
     "explanation": "Tobacco, excessive alcohol and obesity are modifiable risk factors for heart failure. Her family history is a risk factor she cannot change, so counseling targets the ones she can.",
-    "also": []
+    "also": [
+     {
+      "key": "Tobacco, excess alcohol and obesity",
+      "explanation": "These are modifiable, so they are the targets of prevention counseling. Age, family history and genetic abnormality are risk factors a patient cannot change."
+     }
+    ]
    }
   },
   {
@@ -723,8 +711,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-051",
-   "section_id": "l20-organ",
-   "section_title": "1.5 · Target organ damage",
+   "section_id": "l20-primary",
+   "section_title": "1.3 · Primary (essential) hypertension",
    "html": "<b>Alcohol and blood pressure.</b> Excess alcohol raises blood pressure chronically, and withdrawal from it can produce acute severe hypertension.",
    "keys": [
     "nj0h2f"
@@ -746,10 +734,13 @@
    "html": "<b>Right ventricular infarct and nitroglycerin.</b> The infarcted right ventricle is preload dependent; nitroglycerin decreases preload, reducing the Frank-Starling effect, so it fails into right-sided heart failure, output drops and shock follows.",
    "keys": [
     "1ionakh",
-    "q0zkp4"
+    "q0zkp4",
+    "h28h8g",
+    "2o5koj"
    ],
    "cites": [
-    "Coronary Artery Disease Carter 2026.pptx, Slide 63"
+    "Coronary Artery Disease Carter 2026.pptx, Slide 63",
+    "Coronary Artery Disease Carter 2026.pptx, Slides 62, 63"
    ],
    "src": {
     "question": "Nitroglycerin is withheld in a right ventricular infarct because the injured right ventricle depends on what?",
@@ -759,6 +750,14 @@
      {
       "key": "Lost preload drops output",
       "explanation": "The infarcted right ventricle is preload dependent; decreasing preload reduces the Frank-Starling effect, the ventricle fails into right-sided heart failure, output falls and shock follows."
+     },
+     {
+      "key": "It would lower his preload",
+      "explanation": "In a right ventricular infarct, nitroglycerin is not given: decreasing the preload reduces the Frank-Starling effect on the right ventricle, which can fail into right-sided heart failure, dropping output and precipitating shock."
+     },
+     {
+      "key": "Nitroglycerin",
+      "explanation": "In a right ventricular infarct, do not give nitroglycerin: it lowers preload, the failing right ventricle loses its Frank-Starling support, output falls further and the patient can go into shock."
      }
     ]
    }
@@ -783,8 +782,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-054",
-   "section_id": "l24-anat",
-   "section_title": "5.1 · Ischemia and the coronary arteries",
+   "section_id": "l24-post",
+   "section_title": "5.11 · After the infarct: complications, secondary prevention, sudden cardiac death",
    "html": "<b>Cardiogenic shock after infarction.</b> It is more common in left-sided myocardial infarctions, and left ventricular involvement carries a higher mortality.",
    "keys": [
     "16z5bv1"
@@ -861,8 +860,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-058",
-   "section_id": "l24-cond",
-   "section_title": "5.14 · The conditions, point by point",
+   "section_id": "l24-workup",
+   "section_title": "5.4 · The chest pain workup and risk scores",
    "html": "<b>Nuclear stress test defects.</b> A reversible perfusion defect indicates ischemia, while a non-reversible (fixed) defect indicates infarction.",
    "keys": [
     "1vf87y7"
@@ -874,24 +873,6 @@
     "question": "A 66-year-old man with chest pain has a nuclear stress test showing a perfusion defect that does not reverse at rest. What does this fixed defect indicate?",
     "key": "Prior infarction",
     "explanation": "On a nuclear stress test, a reversible perfusion defect indicates ischemia, while a non-reversible (fixed) defect indicates infarction.",
-    "also": []
-   }
-  },
-  {
-   "id": "clinical-medicine-and-surgery-i-exam-4-059",
-   "section_id": "l24-risk",
-   "section_title": "5.2 · Atherosclerosis and risk factors",
-   "html": "<b>Age as a coronary risk factor.</b> Age becomes a nonmodifiable coronary risk factor at 45 or older for men and 55 or older for women.",
-   "keys": [
-    "1h1lwr1"
-   ],
-   "cites": [
-    "Coronary Artery Disease Carter 2026.pptx, Slide 22"
-   ],
-   "src": {
-    "question": "A 52-year-old woman and her 52-year-old husband ask at a wellness visit whether their age already counts as a coronary risk factor. Which answer is accurate?",
-    "key": "Only for her husband",
-    "explanation": "Age becomes a nonmodifiable coronary risk factor at 45 or older for men and 55 or older for women. At 52 he has crossed his threshold and she has not.",
     "also": []
    }
   },
@@ -1035,8 +1016,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-071",
-   "section_id": "l24-workup",
-   "section_title": "5.4 · The chest pain workup and risk scores",
+   "section_id": "l24-trop",
+   "section_title": "5.5 · Troponin — the numbers you need to know",
    "html": "<b>Serial troponin I.</b> Troponin is drawn serially: when one is drawn, a second follows, because the change over time is what matters; a rising troponin I together with an ischemic picture (symptoms or electrocardiogram changes) means an infarction, while a rise alone means injury to the heart muscle, which has other causes too.",
    "keys": [
     "1qi6kiq"
@@ -1113,8 +1094,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-078",
-   "section_id": "l24-anat",
-   "section_title": "5.1 · Ischemia and the coronary arteries",
+   "section_id": "l24-angina",
+   "section_title": "5.3 · Angina pectoris: the pain, silent ischemia and referred pain",
    "html": "<b>Angina and exertion.</b> Exercise and emotional stress raise myocardial oxygen demand; a narrowed artery cannot raise supply to match, and the mismatch produces pain.",
    "keys": [
     "ie9cy4"
@@ -1293,8 +1274,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-090",
-   "section_id": "l25-sysdia",
-   "section_title": "6.2 · Systolic vs diastolic heart failure",
+   "section_id": "l25-tx",
+   "section_title": "6.7 · Treatment",
    "html": "<b>Reduced ejection fraction therapy.</b> Core therapy is a beta blocker, a renin-angiotensin blocker such as lisinopril, a mineralocorticoid receptor antagonist such as spironolactone and a sodium-glucose cotransporter 2 inhibitor such as dapagliflozin, with diuretics as needed.",
    "keys": [
     "zsv0bj"
@@ -1315,7 +1296,8 @@
    "section_title": "6.6 · Diagnosis and natriuretic peptides",
    "html": "<b>High-output heart failure treatment.</b> It is driven by peripheral demand, so treatment targets the cause, such as anemia, hyperthyroidism or an arteriovenous fistula, with a diuretic for congestion.",
    "keys": [
-    "1wgzgck"
+    "1wgzgck",
+    "1tbcayn"
    ],
    "cites": [
     "HEART FAILURE Carter 2026 PP.pptx, Slide 54"
@@ -1324,7 +1306,12 @@
     "question": "How is high-output heart failure treated?",
     "key": "Treat the underlying cause and add a diuretic",
     "explanation": "High-output failure is driven by peripheral demand, so treatment targets the cause, such as anemia, hyperthyroidism or an arteriovenous fistula, with a diuretic for congestion.",
-    "also": []
+    "also": [
+     {
+      "key": "Treat the thyroid disease and add a diuretic",
+      "explanation": "High-output failure is treated by correcting the underlying cause of increased demand, here hyperthyroidism, with a diuretic for congestion."
+     }
+    ]
    }
   },
   {
@@ -1497,8 +1484,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-104",
-   "section_id": "l20-treat",
-   "section_title": "1.7 · Treatment",
+   "section_id": "l20-primary",
+   "section_title": "1.3 · Primary (essential) hypertension",
    "html": "<b>Modifiable risk factors for hypertension.</b> These are excess weight, high sodium, inactivity and alcohol, with low potassium intake and poor sleep also on the list; each maps onto a lifestyle intervention, recommended at every blood pressure category.",
    "keys": [
     "1h0i9fq"
@@ -1791,8 +1778,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-121",
-   "section_id": "l22-pop",
-   "section_title": "3.9 · Populations",
+   "section_id": "l23-prosthetic",
+   "section_title": "4.11 · Prosthetic valves and anticoagulation",
    "html": "<b>Mechanical heart valve.</b> It needs lifelong anticoagulation with a vitamin K antagonist, most commonly warfarin, monitored against an international normalized ratio target.",
    "keys": [
     "16dz25o"
@@ -2432,24 +2419,6 @@
    }
   },
   {
-   "id": "clinical-medicine-and-surgery-i-exam-4-b026",
-   "section_id": "l25-def",
-   "section_title": "6.1 · Definition, epidemiology and causes",
-   "html": "<b>Modifiable heart failure risk factors.</b> Tobacco, excess alcohol and obesity can be changed; age, family history and genetic abnormality cannot.",
-   "keys": [
-    "1aao24"
-   ],
-   "cites": [
-    "HEART FAILURE Carter 2026 PP.pptx, Slide 18"
-   ],
-   "src": {
-    "question": "Which heart failure risk factors can a patient change?",
-    "key": "Tobacco, excess alcohol and obesity",
-    "explanation": "These are modifiable, so they are the targets of prevention counseling. Age, family history and genetic abnormality are risk factors a patient cannot change.",
-    "also": []
-   }
-  },
-  {
    "id": "clinical-medicine-and-surgery-i-exam-4-b027",
    "section_id": "l25-dx",
    "section_title": "6.6 · Diagnosis and natriuretic peptides",
@@ -2487,8 +2456,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-b029",
-   "section_id": "l25-dx",
-   "section_title": "6.6 · Diagnosis and natriuretic peptides",
+   "section_id": "l25-tx",
+   "section_title": "6.7 · Treatment",
    "html": "<b>Monitoring on a loop diuretic.</b> Potassium and kidney function are followed on the metabolic panel, because loop diuretics waste potassium.",
    "keys": [
     "12mr3tm"
@@ -2685,8 +2654,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-b040",
-   "section_id": "l21-def",
-   "section_title": "2.1 · Definitions and the three syncope groups",
+   "section_id": "l21-pop",
+   "section_title": "2.11 · Populations",
    "html": "<b>Blood pressure and age.</b> Normal values change with age, so a reading that is normal for an adult may be abnormal for an infant or child, and the reverse.",
    "keys": [
     "4wplwk"
@@ -2901,8 +2870,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-r000",
-   "section_id": "l22-cond",
-   "section_title": "3.5 · The conditions, one by one",
+   "section_id": "l22-manage",
+   "section_title": "3.8 · Management",
    "html": "<b>Raising low high-density lipoprotein.</b> It is best improved by lifestyle modification: smoking cessation (up to 10%), weight loss (about 1 mg/dL per 6 pounds) and frequent aerobic exercise (about 5%).",
    "keys": [
     "d1bt9h"
@@ -3139,7 +3108,8 @@
    "section_title": "5.2 · Atherosclerosis and risk factors",
    "html": "<b>Age as a coronary risk factor.</b> Age is a nonmodifiable risk factor from 45 years in men and from 55 years in women; men carry more risk than premenopausal women, a gap that narrows with age.",
    "keys": [
-    "1yxjro1"
+    "1yxjro1",
+    "1h1lwr1"
    ],
    "cites": [
     "Coronary Artery Disease Carter 2026.pptx, Slide 22"
@@ -3148,7 +3118,12 @@
     "question": "From what age is age itself a coronary risk factor in men?",
     "key": "45 years",
     "explanation": "Age is a nonmodifiable risk factor from 45 years in men and from 55 years in women; men carry more risk than premenopausal women, a gap that narrows with age.",
-    "also": []
+    "also": [
+     {
+      "key": "Only for her husband",
+      "explanation": "Age becomes a nonmodifiable coronary risk factor at 45 or older for men and 55 or older for women. At 52 he has crossed his threshold and she has not."
+     }
+    ]
    }
   },
   {
@@ -3471,8 +3446,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-s005",
-   "section_id": "l23-murmurs",
-   "section_title": "4.1 · Anatomy, heart sounds and the murmur words",
+   "section_id": "l23-ps",
+   "section_title": "4.7 · Pulmonic stenosis",
    "html": "<b>Pulmonic stenosis murmur and breathing.</b> The murmur gets louder with inspiration, which raises venous return to the right heart, and it comes with a split second heart sound.",
    "keys": [
     "1d4kslk"
@@ -3522,24 +3497,6 @@
    }
   },
   {
-   "id": "clinical-medicine-and-surgery-i-exam-4-s007",
-   "section_id": "l24-ecg",
-   "section_title": "5.8 · The electrocardiogram: ischemia, infarction and where the lesion is",
-   "html": "<b>Right ventricular infarct and nitroglycerin.</b> Nitroglycerin is not given because it lowers preload, reducing the Frank-Starling effect on the right ventricle, which can fail into right-sided heart failure, dropping output and precipitating shock.",
-   "keys": [
-    "h28h8g"
-   ],
-   "cites": [
-    "Coronary Artery Disease Carter 2026.pptx, Slides 62, 63"
-   ],
-   "src": {
-    "question": "A 66-year-old man is admitted with an inferior ST-elevation myocardial infarction that extends into the right ventricle, with ST elevation in the right-sided lead V4R. His daughter asks why he is not being given nitroglycerin for his chest pain. What should she be told?",
-    "key": "It would lower his preload",
-    "explanation": "In a right ventricular infarct, nitroglycerin is not given: decreasing the preload reduces the Frank-Starling effect on the right ventricle, which can fail into right-sided heart failure, dropping output and precipitating shock.",
-    "also": []
-   }
-  },
-  {
    "id": "clinical-medicine-and-surgery-i-exam-4-s008",
    "section_id": "l25-tx",
    "section_title": "6.7 · Treatment",
@@ -3584,8 +3541,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-s010",
-   "section_id": "l25-stage",
-   "section_title": "6.4 · NYHA classes and ACC/AHA stages",
+   "section_id": "l25-tx",
+   "section_title": "6.7 · Treatment",
    "html": "<b>Fluid overload in heart failure.</b> Diuretics are used as needed for congestion in every ejection fraction group; a loop diuretic such as furosemide or bumetanide is the potassium-wasting diuretic that clears fluid.",
    "keys": [
     "12so84o"
@@ -3710,8 +3667,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-s017",
-   "section_id": "l24-vsa",
-   "section_title": "5.12 · Vasospastic (Prinzmetal) angina",
+   "section_id": "l24-risk",
+   "section_title": "5.2 · Atherosclerosis and risk factors",
    "html": "<b>Modifiable coronary risk factors.</b> These are obesity, dyslipidemia, diabetes, smoking, hypertension, excessive alcohol, sedentary lifestyle and ineffective management of stress.",
    "keys": [
     "dwx2ql"
@@ -3728,8 +3685,8 @@
   },
   {
    "id": "clinical-medicine-and-surgery-i-exam-4-s018",
-   "section_id": "l24-anat",
-   "section_title": "5.1 · Ischemia and the coronary arteries",
+   "section_id": "l24-ecg",
+   "section_title": "5.8 · The electrocardiogram: ischemia, infarction and where the lesion is",
    "html": "<b>ST elevation in V1 through V4.</b> Leads V1-V4 are the anterior and septal leads, supplied by the anterior interventricular artery, formerly the left anterior descending artery, the most common culprit in acute infarction.",
    "keys": [
     "nt80f3"
@@ -3741,24 +3698,6 @@
     "question": "A 61-year-old man has chest pain with ST elevation in V1 through V4. Which artery is the most likely culprit?",
     "key": "Anterior interventricular artery",
     "explanation": "V1-V4 are the anterior and septal leads, supplied by the anterior interventricular artery, formerly the left anterior descending artery, the most common culprit in acute infarction.",
-    "also": []
-   }
-  },
-  {
-   "id": "clinical-medicine-and-surgery-i-exam-4-s019",
-   "section_id": "l24-ecg",
-   "section_title": "5.8 · The electrocardiogram: ischemia, infarction and where the lesion is",
-   "html": "<b>Right ventricular infarct and nitroglycerin.</b> Avoid nitroglycerin in a right ventricular infarct (ST elevation in the right-sided lead V4R): it lowers preload, the failing right ventricle loses its Frank-Starling support, output falls further and the patient can go into shock.",
-   "keys": [
-    "2o5koj"
-   ],
-   "cites": [
-    "Coronary Artery Disease Carter 2026.pptx, Slides 62, 63"
-   ],
-   "src": {
-    "question": "A 63-year-old man has ST elevation in leads II, III and aVF and in the right-sided lead V4R, consistent with right ventricular infarction. His blood pressure is 104/66 mmHg. Which medication should be avoided?",
-    "key": "Nitroglycerin",
-    "explanation": "In a right ventricular infarct, do not give nitroglycerin: it lowers preload, the failing right ventricle loses its Frank-Starling support, output falls further and the patient can go into shock.",
     "also": []
    }
   },
