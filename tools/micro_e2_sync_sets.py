@@ -102,6 +102,8 @@ MOVED = {
     "therapy is established for preventing further recurrence?":
         "A patient has had three recurrences of Clostridioides difficile infection despite treatment. Which "
         "novel therapy has been specifically researched as a treatment for this infection?",
+    "What kind of genome can a bacteriophage carry?":                 # its "never both" was notes-only
+        "Which is a potential benefit of phage therapy?",
     "Why is fecal microbiota transplant an alternative to another antibiotic course in recurrent "
     "Clostridioides difficile infection?":
         "Why is fecal microbiota transplant researched as a treatment for Clostridioides difficile infection, "
