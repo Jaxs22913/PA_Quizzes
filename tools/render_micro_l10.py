@@ -40,6 +40,9 @@ INTRO = ("Lecture 10 of Microbiology &mdash; Gram-Positive Bacilli of Medical Im
          "actinomycosis and nocardiosis.")
 
 sets = json.load(io.open(os.path.join(HERE, "micro_l10_sets.json"), encoding="utf-8"))
+# `mis` (the misconception each distractor stands for) is review metadata for tools/blind_review.py;
+# it stays in the sets file and never reaches the page.
+sets = {k: [{f: v for f, v in q.items() if f != "mis"} for q in qs] for k, qs in sets.items()}
 for n, key, fname in ((1, "set1", "gram-positive-bacilli-quiz.html"),
                       (2, "set2", "gram-positive-bacilli-quiz-version-2.html")):
     html = render(

@@ -17,6 +17,9 @@ CHIPS = ["Resistance &amp; stewardship", "Antibiograms", "Empiric therapy", "Pro
          "Plant essential oils"]
 
 sets = json.load(io.open(os.path.join(HERE, "micro_l11_sets.json"), encoding="utf-8"))
+# `mis` (the misconception each distractor stands for) is review metadata for tools/blind_review.py;
+# it stays in the sets file and never reaches the page.
+sets = {k: [{f: v for f, v in q.items() if f != "mis"} for q in qs] for k, qs in sets.items()}
 from micro_l11_intro import INTRO
 for n, key, fname in ((1, "set1", "novel-antimicrobial-therapy-quiz.html"),
                       (2, "set2", "novel-antimicrobial-therapy-quiz-version-2.html")):

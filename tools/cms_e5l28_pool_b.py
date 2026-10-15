@@ -19,6 +19,11 @@ from cms_e5l28_scope import *
 def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 HCM = "Hypertrophic cardiomyopathy"
 
@@ -252,17 +257,20 @@ S(HCM, IO_A,
     "Handgrip raises afterload, which reduces the outflow gradient and decreases the obstructive murmur."]],
   C(69), "differential"),
 
-S(HCM, IO_A,
+M(S(HCM, IO_A,
   "Why does squatting soften the murmur of obstructive hypertrophic cardiomyopathy?",
   [["More filling reduces obstruction",
-    "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; squatting and passive leg raising increase preload."],
+    "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; rapid squatting and passive leg raising increase preload, so the murmur decreases."],
    ["Less filling increases obstruction",
-    "Less filling makes the murmur louder, as with Valsalva or standing. Squatting does the opposite by increasing preload."],
+    "Less filling makes the murmur louder, as with Valsalva or standing, which decrease preload. Squatting does the opposite by increasing preload."],
    ["It slows the heart to a stop",
-    "Squatting does not act through heart rate here. It increases venous return and preload, widening the outflow tract."],
+    "Squatting does not soften the murmur by slowing the heart. Rapid squatting increases preload, and anything that increases blood flow in the heart reduces the outflow obstruction."],
    ["It closes the mitral valve early",
-    "Early mitral closure is not the mechanism. The larger ventricular volume on squatting reduces the obstruction."]],
-  C(69), "manifestation"),
+    "Squatting does not act by closing the mitral valve early. It increases preload, and more blood flow in the heart reduces outflow obstruction and softens the murmur."]],
+  DECK + ", Slide 69 (table and pictures)", "manifestation"),
+  {"Less filling increases obstruction": "reversed direction: the effect of decreased preload",
+   "It slows the heart to a stop": "confused mechanism: a heart rate change credited for a preload effect",
+   "It closes the mitral valve early": "confused mechanism: a valve-timing explanation"}),
 
 S(HCM, IO_A,
   "What effect does respiration have on the murmur of obstructive hypertrophic cardiomyopathy?",
@@ -417,7 +425,7 @@ S(HCM, IO_A,
    ["Verapamil",
     "Verapamil is a nondihydropyridine calcium channel blocker used for outflow obstruction, not a drug to avoid."],
    ["Amiodarone",
-    "Amiodarone is proven to reduce the risk of sudden cardiac death here and converts atrial fibrillation, so it is used."]],
+    "Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence here, so it is used rather than avoided."]],
   C(77), "avoid"),
 
 S(HCM, IO_A,
@@ -432,17 +440,20 @@ S(HCM, IO_A,
     "They are not absolutely banned; they may be necessary and are used with caution to avoid dehydration."]],
   C(77), "avoid"),
 
-S(HCM, IO_A,
-  "Which antiarrhythmic is proven to reduce the risk of sudden cardiac death in hypertrophic cardiomyopathy?",
+M(S(HCM, IO_A,
+  "In hypertrophic cardiomyopathy, which antiarrhythmic converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence?",
   [["Amiodarone",
-    "Correct. Amiodarone is proven to reduce the incidence and risk of sudden cardiac death, with or without outflow obstruction, and converts atrial fibrillation and flutter to sinus rhythm."],
+    "Correct. Amiodarone is very effective at converting atrial fibrillation and flutter to sinus rhythm and at suppressing recurrence of these arrhythmias in hypertrophic cardiomyopathy."],
    ["Adenosine",
-    "Adenosine briefly blocks the atrioventricular node for acute supraventricular rhythms; it is not the drug proven to reduce sudden death here."],
+    "Adenosine only briefly blocks the atrioventricular node, so it cannot hold the heart in sinus rhythm. Amiodarone converts atrial fibrillation and flutter and suppresses their recurrence."],
    ["Lidocaine",
-    "Lidocaine is not the antiarrhythmic taught for this disease. Amiodarone is proven to reduce sudden cardiac death risk."],
+    "Lidocaine is used for ventricular arrhythmias and does not convert atrial rhythms. Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence."],
    ["Digoxin",
-    "Digoxin is a positive inotrope to be avoided in hypertrophic cardiomyopathy, not a sudden-death preventive."]],
+    "Digoxin is a positive inotrope, avoided in hypertrophic cardiomyopathy because it raises contractility and may induce arrhythmias. Amiodarone converts atrial fibrillation and flutter to sinus rhythm."]],
   C(78), "agent/regimen"),
+  {"Adenosine": "adjacent fact: a drug for brief supraventricular rhythms taken as rhythm control",
+   "Lidocaine": "confused role: a ventricular antiarrhythmic applied to atrial rhythms",
+   "Digoxin": "adjacent fact: an atrial fibrillation rate drug that is avoided in this disease"}),
 
 S(HCM, IO_A,
   "Why is anticoagulation given for atrial fibrillation in hypertrophic cardiomyopathy?",

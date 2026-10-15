@@ -57,7 +57,7 @@
    "opts": [
     [
      "Mumps virus and the measles virus",
-     "Mumps appears only as a naturally oncolytic virus; the diabetes triggers are coxsackie, echovirus and rubella."
+     "Mumps and measles are not among the viruses linked to type 1 diabetes; those are coxsackie viruses A and B, echovirus and rubella."
     ],
     [
      "Coxsackie virus, echovirus and rubella",
@@ -65,15 +65,20 @@
     ],
     [
      "Hepatitis B virus and papillomavirus",
-     "These are oncogenic viruses, linked to liver cancer and cervical carcinoma, not to type 1 diabetes."
+     "Hepatitis B virus and papillomavirus are oncogenic viruses, linked to liver cancer and cervical carcinoma, not to type 1 diabetes."
     ],
     [
      "Human herpesvirus 8 and Epstein-Barr virus",
-     "These are oncogenic viruses, linked to Kaposi's sarcoma and Burkitt's lymphoma, rather than to autoimmune diabetes."
+     "Human herpesvirus 8 and Epstein-Barr virus are oncogenic viruses, linked to Kaposi's sarcoma and Burkitt's lymphoma, rather than to autoimmune diabetes."
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 54"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 54 and image on Slide 68",
+   "mis": {
+    "Hepatitis B virus and papillomavirus": "oncogenic viruses confused with autoimmune triggers",
+    "Human herpesvirus 8 and Epstein-Barr virus": "oncogenic viruses confused with autoimmune triggers",
+    "Mumps virus and the measles virus": "other familiar childhood viruses"
+   }
   },
   {
    "topic": "Type IV",
@@ -457,23 +462,28 @@
    "opts": [
     [
      "Taking antihistamines daily regardless of exposure",
-     "Taking antihistamines regardless of exposure is pharmacological control rather than prevention."
+     "Antihistamines bind histamine receptors on target organs; that is pharmacological control, not prevention."
     ],
     [
      "Injecting small amounts of the allergen",
-     "Injecting small amounts of allergen is desensitization, the third of the three approaches."
+     "Injecting small amounts of allergen is desensitization, the third management approach, not prevention."
     ],
     [
      "Administering epinephrine prophylactically",
-     "Epinephrine is used to reverse an acute reaction rather than to prevent exposure."
+     "Epinephrine reverses airway constriction in a reaction; prevention avoids exposure to the allergen in the first place."
     ],
     [
      "Modifying environment and behavior",
-     "Correct, and it is listed first because removing the trigger is the only approach that does not depend on blunting a normal mechanism. The aim is to avoid the allergen entirely."
+     "Correct: prevention means modifying the environment and behaviors so as to avoid exposure to the allergen."
     ]
    ],
    "c": 3,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 27"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 26, 27, 28 and 29",
+   "mis": {
+    "Taking antihistamines daily regardless of exposure": "pharmacological control mistaken for prevention",
+    "Injecting small amounts of the allergen": "desensitization mistaken for prevention",
+    "Administering epinephrine prophylactically": "acute treatment mistaken for prevention"
+   }
   },
   {
    "topic": "Oncogenic viruses",
@@ -507,7 +517,7 @@
    "opts": [
     [
      "Inhaled allergen challenge",
-     "Inhaled challenge is not among the described desensitization routes."
+     "An inhaled challenge is not a desensitization route; allergen is given by subcutaneous injection or under the tongue."
     ],
     [
      "Subcutaneous immunotherapy",
@@ -515,15 +525,20 @@
     ],
     [
      "Sublingual immunotherapy",
-     "Sublingual immunotherapy is used more in other parts of the world than in the United States."
+     "Sublingual immunotherapy is another desensitization method, used more in other parts of the world than in the United States; the most common form is subcutaneous."
     ],
     [
      "Intravenous allergen infusion",
-     "The named routes are subcutaneous injection and sublingual administration."
+     "Intravenous infusion is not a desensitization route; allergen is given by subcutaneous injection or under the tongue."
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 29"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 29 and 31",
+   "mis": {
+    "Sublingual immunotherapy": "the other, less common desensitization route",
+    "Intravenous allergen infusion": "wrong route of administration",
+    "Inhaled allergen challenge": "a challenge confused with a therapy"
+   }
   },
   {
    "topic": "Primary immunodeficiency",
@@ -884,7 +899,7 @@
    "opts": [
     [
      "It removes the T cell off signal",
-     "Removing the off signal is how checkpoint inhibitors work, not radionuclide conjugates."
+     "Removing the off signal is how checkpoint inhibitors work, letting T cells kill cancer cells, not how a radionuclide conjugate kills."
     ],
     [
      "It replicates inside the tumor",
@@ -896,36 +911,46 @@
     ],
     [
      "It blocks their mitotic spindle",
-     "Blocking the mitotic spindle is how the anti-CD30 conjugate works, releasing auristatin inside lymphoma cells."
+     "Blocking the mitotic spindle is how the anti-CD30 drug conjugate works: auristatin binds microtubules, so lymphoma cells cannot divide."
     ]
    ],
    "c": 2,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 77"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 74, 80 and image on Slide 77",
+   "mis": {
+    "It blocks their mitotic spindle": "the drug-conjugate mechanism shown beside it",
+    "It removes the T cell off signal": "checkpoint inhibitor mechanism",
+    "It replicates inside the tumor": "oncolytic virus mechanism"
+   }
   },
   {
    "topic": "Adoptive cell therapy",
    "io": "9 — Compare and contrast immunotherapy strategies",
-   "q": "What is the current status of tumor infiltrating lymphocyte therapy?",
+   "q": "Tumor infiltrating lymphocyte therapy activates which cells and expands them to a therapeutic amount?",
    "opts": [
     [
-     "Abandoned after the 1890s",
-     "Falling from favor after the 1890s describes Coley's toxins, displaced by radiation and chemotherapy."
+     "Dendritic cells",
+     "Dendritic cells are activated by interferon alpha therapy; tumor infiltrating lymphocyte therapy activates and expands cytotoxic T cells."
     ],
     [
-     "Approved for advanced melanoma",
-     "Correct. Tumor infiltrating lymphocytes, cytotoxic T cells expanded to a therapeutic amount, were approved for advanced melanoma in 2024 (lifileucel) and are still being studied in other solid tumors."
+     "Cytotoxic T cells",
+     "Correct: tumor infiltrating lymphocytes are cytotoxic T cells, activated and proliferated to a therapeutic amount. Update: it is no longer only in development and not yet approved; lifileucel gained Food and Drug Administration accelerated approval for advanced melanoma on 16 February 2024."
     ],
     [
-     "Approved for different blood cancers",
-     "Approval for blood cancers belongs to chimeric antigen receptor T cells; tumor infiltrating lymphocytes are approved for a solid tumor, advanced melanoma."
+     "Natural killer cells",
+     "Natural killer cells are what chimeric antigen receptor natural killer therapy engineers; tumor infiltrating lymphocyte therapy expands cytotoxic T cells."
     ],
     [
-     "Approved for all solid tumors",
-     "Approval so far covers advanced melanoma alone; use in other solid tumors is still being studied."
+     "Regulatory T cells",
+     "Regulatory T cells suppress the T cells specific for tumor antigens, and more of them in a tumor means a worse prognosis, so they are not what this therapy expands."
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 75"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 72, 75 and 78",
+   "mis": {
+    "Natural killer cells": "the cell used by a different adoptive therapy",
+    "Regulatory T cells": "suppressive T cells confused with killer T cells",
+    "Dendritic cells": "cells activated by a different immunotherapy"
+   }
   },
   {
    "topic": "Pharmacological control",
@@ -955,27 +980,32 @@
   {
    "topic": "Allergic asthma",
    "io": "2 — Compare and contrast the types of hypersensitivities and diseases caused by hypersensitivity conditions",
-   "q": "Which hypersensitivity type is chronic asthma?",
+   "q": "Allergic asthma begins with an immediate, IgE-mediated response. When it becomes chronic, the airway inflammation is mediated by T cells, their cytokines and eosinophil granules. Which hypersensitivity type is this chronic phase?",
    "opts": [
     [
      "Type III",
-     "Type III is immune complex mediated, as in serum sickness, rather than the chronic asthma mechanism."
+     "Type III is immune complexes of IgG or IgM lodging in basement membranes, as in serum sickness, not T cell driven airway inflammation."
     ],
     [
      "Type IV",
-     "Correct, mediated by cytokines and eosinophil granules — so a single disease can begin as type I and become type IV as it becomes chronic."
+     "Correct: chronic asthma is type IV, delayed and T cell mediated, sustained by cytokines and eosinophil granules; the acute, IgE-mediated phase of allergic asthma is type I."
     ],
     [
      "Type I",
-     "Type I is the ACUTE asthmatic response; chronic asthma is type IV, cytokine and eosinophil driven."
+     "Type I, immediate and IgE mediated, is the ACUTE phase of allergic asthma; the chronic phase, mediated by T cells and cytokines, is type IV."
     ],
     [
      "Type II",
-     "Type II involves antibody against cell surface antigens, as in transfusion reactions."
+     "Type II is free IgG or IgM binding cell surface antigens with complement lysis, as in transfusion reactions, not chronic airway inflammation."
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 19"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 9, 19 and 40",
+   "mis": {
+    "Type I": "the acute IgE phase of the same disease taken for the chronic phase",
+    "Type II": "antibody-mediated cell lysis",
+    "Type III": "immune complex disease"
+   }
   },
   {
    "topic": "Immunopathologies",
@@ -1034,7 +1064,7 @@
    "opts": [
     [
      "The renal pelvis",
-     "The renal pelvis is part of the graft's collecting system; the dendritic cells leave the kidney for the spleen."
+     "The renal pelvis is part of the graft itself; the dendritic cells leave the kidney through its blood vessels and migrate to the spleen."
     ],
     [
      "The spleen",
@@ -1042,15 +1072,20 @@
     ],
     [
      "The thymus",
-     "The thymus is where T cells mature, not where graft dendritic cells activate effector T cells during acute rejection."
+     "The thymus is not the destination; the graft's dendritic cells reach the spleen, and the effector T cells they activate travel back through the blood."
     ],
     [
      "The bone marrow",
-     "Bone marrow produces blood cell precursors; the dendritic cells from the graft travel to the spleen instead."
+     "The bone marrow is not where they go; graft dendritic cells migrate to the spleen, where they activate the effector T cells that destroy the graft."
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 46"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 45 and image on Slide 46",
+   "mis": {
+    "The thymus": "the T cell maturation organ confused with the site of activation",
+    "The bone marrow": "the blood-forming organ confused with the site of activation",
+    "The renal pelvis": "assumes activation happens inside the graft"
+   }
   },
   {
    "topic": "Graft types",
@@ -1280,27 +1315,32 @@
   {
    "topic": "Primary immunodeficiency",
    "io": "7 — Differentiate between primary and secondary immunodeficiency conditions",
-   "q": "Adenosine deaminase deficiency causes which kind of immunodeficiency?",
+   "q": "A child is born with both limbs of the lymphocyte system defective and has no adaptive immune response. Which condition is this?",
    "opts": [
     [
      "Severe combined immunodeficiency",
-     "Correct. Adenosine deaminase deficiency causes some types of severe combined immunodeficiency, a congenital, primary defect."
+     "Correct: when both limbs of the lymphocyte system are missing or defective and there is no adaptive immune response, the condition is severe combined immunodeficiency."
     ],
     [
-     "A secondary immunodeficiency",
-     "Adenosine deaminase deficiency is congenital, which makes it PRIMARY rather than acquired after birth."
+     "DiGeorge syndrome",
+     "DiGeorge syndrome is a T cell defect in which the thymus is missing or abnormal, not a failure of both lymphocyte limbs."
     ],
     [
-     "An isolated complement defect",
-     "Adenosine deaminase deficiency damages lymphocytes, producing combined immunodeficiency rather than a complement defect."
+     "Agammaglobulinemia",
+     "Agammaglobulinemia is a B cell defect in which the patient lacks antibodies, not a failure of both lymphocyte limbs."
     ],
     [
-     "An autoimmune thyroid disease",
-     "Adenosine deaminase deficiency is an immunodeficiency, an underreaction, not an autoimmune overreaction."
+     "A complement deficiency",
+     "A complement deficiency is a primary immunodeficiency of the complement proteins, listed apart from the lymphocyte defects; it is not a failure of both lymphocyte limbs."
     ]
    ],
    "c": 0,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 64"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slides 62 and 63",
+   "mis": {
+    "DiGeorge syndrome": "a single-limb (T cell) defect taken for a combined one",
+    "Agammaglobulinemia": "a single-limb (B cell) defect taken for a combined one",
+    "A complement deficiency": "a non-lymphocyte primary immunodeficiency taken for a lymphocyte one"
+   }
   },
   {
    "topic": "Pharmacological control",
@@ -1367,7 +1407,7 @@
     ],
     [
      "The virus destroys normal cells",
-     "Oncolytic viruses infect normal cells but cannot replicate in them, so normal cells are left largely undamaged."
+     "Damage to normal cells is not the main challenge: the virus attacks them but has little effect, infecting them without replicating, so they stay undamaged."
     ],
     [
      "The virus cannot infect tumor cells",
@@ -1375,7 +1415,12 @@
     ]
    ],
    "c": 1,
-   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 80"
+   "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 80 (text and image)",
+   "mis": {
+    "The virus destroys normal cells": "assumes the virus is not selective",
+    "The virus cannot infect tumor cells": "reverses the tumor targeting",
+    "No virus is naturally oncolytic": "denies the naturally oncolytic viruses"
+   }
   },
   {
    "topic": "Carcinogenesis",

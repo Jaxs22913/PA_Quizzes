@@ -22,6 +22,11 @@ def S(topic, io, q, opts, cite, slot):
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 AAA = "Abdominal aortic aneurysm"
 TAA = "Thoracic aortic aneurysm"
@@ -345,29 +350,35 @@ V(PSA, IO_A,
   C(113), "manifestation", "complication"),
 
 # ---------------------------------------------------------------- aortic dissection
-V(DIS, IO_A,
-  "A 64-year-old man with long-standing hypertension has sudden, severe, tearing chest pain radiating to his back. Blood pressure is 184/106. Imaging confirms an aortic dissection. Which blood pressure goal applies first?",
+M(V(DIS, IO_A,
+  "A 64-year-old man with long-standing hypertension has sudden, severe, tearing chest pain radiating to his back. Blood pressure is 184/106. Imaging confirms an aortic dissection. Which blood pressure goal applies?",
   [["Systolic 100 to 120 mmHg",
-    "Correct. Management stops progression by reducing blood pressure, bringing systolic pressure to 100 to 120 mmHg with a beta blocker such as esmolol first, adding a vasodilator such as nitroprusside only if pressure stays high."],
+    "Correct. Management stops progression by reducing blood pressure, bringing systolic pressure to 100 to 120 mmHg with a beta blocker such as esmolol or a vasodilator such as nitroprusside."],
    ["Systolic above 140 mmHg",
-    "Keeping systolic pressure above 140 mmHg leaves the dissection free to propagate. The goal is to lower it to 100 to 120 mmHg."],
+    "Keeping systolic pressure above 140 mmHg does not stop progression of the dissection. Management lowers systolic pressure to 100 to 120 mmHg."],
    ["Systolic below 80 mmHg",
-    "Driving pressure below 80 mmHg risks shock and organ hypoperfusion. The goal is systolic 100 to 120 mmHg."],
+    "A systolic pressure below 80 mmHg is far under the target range. Management reduces systolic pressure to 100 to 120 mmHg to stop progression of the dissection."],
    ["No change until surgery",
-    "Waiting for surgery without lowering pressure allows the tear to extend. Pressure reduction to systolic 100 to 120 mmHg comes first."]],
+    "Leaving pressure untouched until surgery does not stop progression. Management reduces systolic pressure to 100 to 120 mmHg, with pain management, alongside surgical grafting."]],
   C(118), "first-line", "treatment"),
+  {"Systolic above 140 mmHg": "right action at the wrong value: a target set too high",
+   "Systolic below 80 mmHg": "right action at the wrong value: a target set too low",
+   "No change until surgery": "right action at the wrong stage: deferring pressure control to the operation"}),
 
-V(DIS, IO_A,
-  "A 67-year-old woman with hypertension has an acute aortic dissection with severe tearing chest pain and a blood pressure of 176/100. Which intravenous medication should be started first to lower her pressure?",
+M(V(DIS, IO_A,
+  "A 67-year-old woman with hypertension has an acute aortic dissection with severe tearing chest pain and a blood pressure of 176/100. Which intravenous medication should be started to lower her pressure?",
   [["Esmolol",
-    "Correct. A beta blocker such as esmolol is given first, lowering heart rate and shear force to bring systolic pressure to 100 to 120 mmHg; a vasodilator such as nitroprusside is added only if pressure stays high."],
+    "Correct. Stopping progression of the dissection means reducing blood pressure, with systolic pressure brought to 100 to 120 mmHg using a beta blocker such as esmolol or a vasodilator such as nitroprusside."],
    ["Alteplase",
-    "Alteplase is the thrombolytic for catheter-directed treatment of acute limb ischemia. Dissection needs pressure reduction, starting with a beta blocker such as esmolol."],
+    "Alteplase is the thrombolytic drug for catheter-directed treatment of acute limb ischemia. A dissection needs its pressure lowered, with a beta blocker such as esmolol or a vasodilator."],
    ["Heparin",
-    "Heparin anticoagulates acute limb ischemia. The dissection needs its blood pressure and heart rate lowered, starting with a beta blocker such as esmolol."],
+    "Intravenous heparin is the medical therapy for acute limb ischemia. A dissection needs its systolic pressure reduced to 100 to 120 mmHg, for example with intravenous esmolol."],
    ["Cilostazol",
-    "Cilostazol is an oral antiplatelet for claudication. Acute dissection is treated by lowering pressure and heart rate, starting with a beta blocker such as esmolol."]],
-  C(118), "agent/regimen", "treatment"),
+    "Cilostazol is an oral drug that suppresses platelet aggregation in peripheral artery disease. An acute dissection is treated by lowering blood pressure, for example with intravenous esmolol."]],
+  DECK + ", Slides 51, 66, 67, 118", "agent/regimen", "treatment"),
+  {"Alteplase": "confused treatment: a clot-dissolving drug for a torn aortic wall",
+   "Heparin": "adjacent fact: the acute limb ischemia therapy",
+   "Cilostazol": "adjacent fact: an oral claudication drug"}),
 
 V(DIS, IO_A,
   "A 66-year-old man with hypertension has sudden, severe, ripping chest pain. His electrocardiogram is normal. Which is the most appropriate next step?",

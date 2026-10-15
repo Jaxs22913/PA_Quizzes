@@ -23,6 +23,18 @@ A positive (one FAIL line each, exit 1):
   - at 390 px the page scrolls sideways, a note box overflows, or a toolbar button is under 44 px;
   - dark mode does not give the note box its dark colors;
   - "Add to Pip" does not land in pipReview:<exam>, or my-review-guide.html does not show it;
+  - a new note (the tool, or "Note" on the selection toolbar) is not pinned at the end of the sentence
+    that holds the spot ("e.g.", "E. coli", "37.5" and "vs." are not ends), or its b/a context is not;
+  - deleting a note shows no polite toast with a real Undo button, or Undo does not put the note back
+    at its exact spot together with its review item (text, note, position); from the keyboard, focus
+    does not go to Undo and then to the restored note; removing the review item deletes the note;
+  - window.SyncList.merge does not join two devices' lists by id, keep the newer change, honor and
+    expire tombstones, or settle (merging the result again changes nothing);
+  - after a keyboard selection the toolbar takes focus by itself, no polite hint names the key, Tab
+    does not enter it as one tab stop, the arrow keys / Home / End do not move between buttons, or
+    Escape does not close it and put focus and the selection back;
+  - openGuidePanel({quote}) does not mark and show the cited sentence (light and dark), or a quote
+    that is not in the guide changes what the panel did before;
   - any page error (on a guide, a Semester 1 guide, the homepage, a quiz or the review guide page).
 """
 import argparse, json, mimetypes, os, re, sys
@@ -234,8 +246,8 @@ def main():
                   sorted(pg.evaluate("__t.marks()")) == snapshot, set(map(tuple, snapshot)) ^ set(map(tuple, pg.evaluate("__t.marks()"))))
 
             # ------------------------------------------------------------------ 2. text-box notes
-            def note_count():
-                return pg.evaluate("(JSON.parse(localStorage.getItem(%s) || '[]')).length" % json.dumps("guideNote:" + guide_path))
+            def note_count():       # notes only: a deleted note leaves a tombstone {id, x} (no text) since 2026-10-15
+                return pg.evaluate("(JSON.parse(localStorage.getItem(%s) || '[]')).filter(function (n) { return n && n.t; }).length" % json.dumps("guideNote:" + guide_path))
 
             # an ordinary click in the text never makes a note
             pos = pg.evaluate(r"""() => { var u = Array.from(document.querySelectorAll('dd')).find(function (x) { return x.textContent.length > 80 && !x.querySelector('mark'); });
@@ -449,6 +461,299 @@ def main():
             bg = pg.evaluate("getComputedStyle(document.querySelector('.gnote')).backgroundColor")
             check("dark mode: note box uses its dark colors", bg == "rgb(46, 39, 18)", bg)
             c.close()
+
+            # ------------------------------------------------------------------ 8. where a new note goes (2026-10-15)
+            # the end of the sentence that holds the spot; "e.g.", initials, decimals and "vs." are not ends
+            c = ctx()
+            c.add_init_script(r"""(function () {
+              var T = 'Gram-negative rods, e.g. E. coli and K. pneumoniae, grow at 37.5 degrees vs. 30 in the lab. Second part here; third part follows. Last words without an end';
+              new MutationObserver(function (ms, mo) {
+                var q = document.querySelector('body > .wrap main p, body > .wrap p');      // beside the guide's first paragraph
+                if (!q || document.getElementById('t-sent')) return;
+                var p = document.createElement('p'); p.id = 't-sent'; p.textContent = T; q.parentNode.insertBefore(p, q); mo.disconnect();
+              }).observe(document, { childList: true, subtree: true });
+            })();""")
+            pg = open_page(c, guide_url)
+            WORD_XY = r"""(w) => { var p = document.getElementById('t-sent'); p.scrollIntoView({block: 'center', behavior: 'instant'});
+                var a = __t.at(p, w, 1), r = document.createRange(); r.setStart(a[0], a[1]); r.setEnd(a[0], a[1] + 1);
+                var b = r.getBoundingClientRect(); return [b.left + 1, b.top + b.height / 2]; }"""
+            AROUND = r"""() => { var p = document.getElementById('t-sent'), h = p.querySelector('.gnote'); if (!h) return null;
+                var r = document.createRange(); r.setStart(p, 0); r.setEndBefore(h); var r2 = document.createRange(); r2.setStartAfter(h); r2.setEnd(p, p.childNodes.length);
+                return [r.toString(), r2.toString()]; }"""
+            for word, before, after in (("coli", "vs. 30 in the lab.", " Second part"), ("Second", "Second part here;", " third part"),
+                                        ("without", "without an end", "")):
+                clear_ui(pg)
+                pg.click("#gnote-btn")
+                xy = pg.evaluate(WORD_XY, word)
+                pg.mouse.click(xy[0], xy[1])
+                pg.wait_for_timeout(150)
+                got = pg.evaluate(AROUND)
+                check("note placed from inside %r goes to the end of its sentence" % word,
+                      bool(got) and got[0].endswith(before) and got[1].startswith(after) and (after or got[1] == ""), got)
+                if word == "coli":
+                    pg.fill(".gnote-editor textarea", "end of sentence")
+                    pg.keyboard.press("Control+Enter")
+                    pg.wait_for_timeout(120)
+                    rec = pg.evaluate("(JSON.parse(localStorage.getItem(%s) || '[]')).filter(function (n) { return n.t; })[0]" % json.dumps("guideNote:" + guide_path))
+                    check("the saved note's before/after context is that of the sentence end", bool(rec) and rec.get("b", "").endswith("in the lab.") and rec.get("a", "").startswith(" Second"), rec)
+                    pg.evaluate("document.querySelectorAll('#t-sent .gnote').forEach(function (h) { h.remove(); })")
+                else:
+                    pg.keyboard.press("Escape")
+                    pg.wait_for_timeout(80)
+            clear_ui(pg)
+            pg.evaluate(r"""() => { var p = document.getElementById('t-sent'); __t.select(__t.at(p, 'third', 0), __t.at(p, 'third', 5)); __t.mouseup(p); }""")
+            pg.wait_for_timeout(120)
+            if pg.query_selector(".hl-toolbar .hl-tbtext"):
+                pg.click(".hl-toolbar .hl-tbtext")
+                pg.wait_for_timeout(120)
+            got = pg.evaluate(AROUND)
+            check("Note on the selection toolbar pins at the end of the sentence the selection ends in",
+                  bool(got) and got[0].endswith("third part follows.") and got[1].startswith(" Last"), got)
+            pg.keyboard.press("Escape")
+            c.close()
+
+            # ------------------------------------------------------------------ 9. Undo after deleting a note (2026-10-15)
+            if slug:
+                c = ctx()
+                pg = open_page(c, guide_url)
+                NOTES = "(JSON.parse(localStorage.getItem(%s) || '[]'))" % json.dumps("guideNote:" + guide_path)
+                REVIEW = "(JSON.parse(localStorage.getItem('pipReview:%s') || '[]'))" % slug
+                NEAR = r"""() => { var h = document.querySelector('.gnote'); if (!h) return null; var u = h.parentElement.closest('[data-hl-idx], [data-hl-x]');
+                    var r = document.createRange(); r.setStart(u, 0); r.setEndBefore(h); var r2 = document.createRange(); r2.setStartAfter(h); r2.setEnd(u, u.childNodes.length);
+                    return [r.toString().slice(-30), r2.toString().slice(0, 30), h.getAttribute('data-gnote')]; }"""
+                xy = pg.evaluate(r"""() => { var u = Array.from(document.querySelectorAll('p[data-hl-idx]')).find(function (x) { return x.textContent.length > 80 && !x.querySelector('mark, .gnote') && x.getClientRects().length; });
+                    u.scrollIntoView({block: 'center', behavior: 'instant'}); var a = __t.at(u, __t.flat(u).text.slice(10, 20), 2), r = document.createRange();
+                    r.setStart(a[0], a[1]); r.setEnd(a[0], a[1] + 1); var b = r.getBoundingClientRect(); return [b.left + 1, b.top + b.height / 2]; }""")
+                pg.click("#gnote-btn")
+                pg.mouse.click(xy[0], xy[1])
+                pg.wait_for_timeout(150)
+                pg.fill(".gnote-editor textarea", "Undo me")
+                pg.click(".gnote-editor .hl-note-save")
+                pg.wait_for_timeout(120)
+                near = pg.evaluate(NEAR)
+                pg.click(".gnote")
+                try:
+                    pg.wait_for_selector(".gnote-editor .hl-note-pip:not([hidden])", timeout=5000)
+                    pg.click(".gnote-editor .hl-note-pip")
+                    pg.wait_for_timeout(200)
+                except Exception:
+                    pass
+                item = pg.evaluate("(id) => %s.filter(function (x) { return x.id === 'n:' + id; })[0] || null" % REVIEW, near[2] if near else "")
+                check("undo setup: the note is in the review list", bool(item) and item.get("n") == "Undo me", item)
+                clear_ui(pg)
+                pg.click(".gnote")
+                pg.click(".gnote-editor .hl-note-remove")
+                pg.wait_for_timeout(150)
+                t = pg.evaluate("""() => { var t = document.getElementById('site-toast'), b = t && t.querySelector('.site-toast-btn');
+                    return t ? { text: t.textContent, role: t.getAttribute('role'), live: t.getAttribute('aria-live'), btn: b ? b.textContent : null,
+                                 tag: b ? b.tagName : null, focused: document.activeElement === b } : null; }""")
+                check("deleting a note shows 'Note deleted' with a real Undo button in a polite status toast",
+                      bool(t) and "Note deleted" in t["text"] and t["btn"] == "Undo" and t["tag"] == "BUTTON" and t["role"] == "status" and t["live"] == "polite", t)
+                check("a mouse delete leaves focus alone (Undo not focused)", bool(t) and not t["focused"], t)
+                gone = pg.evaluate("(id) => ({ note: !!document.querySelector('.gnote'), rec: %s.some(function (n) { return n.id === id && n.t; }),"
+                                   " tomb: %s.some(function (n) { return n.id === id && typeof n.x === 'number' && !n.t; }),"
+                                   " item: %s.some(function (x) { return x.id === 'n:' + id && x.t; }) })" % (NOTES, NOTES, REVIEW), near[2])
+                check("the delete removes the note and its review item and keeps a tombstone", gone == {"note": False, "rec": False, "tomb": True, "item": False}, gone)
+                pg.click("#site-toast .site-toast-btn")
+                pg.wait_for_timeout(200)
+                back = pg.evaluate(NEAR)
+                item2 = pg.evaluate("(id) => %s.filter(function (x) { return x.id === 'n:' + id; })[0] || null" % REVIEW, near[2])
+                check("Undo puts the note back at its exact spot", back == near, (near, back))
+                check("Undo puts the review item back with its text, note and position",
+                      bool(item2) and all(item2.get(k) == item.get(k) for k in ("t", "n", "u", "o", "a", "d")), (item, item2))
+                check("Undo leaves no tombstone for the restored note",
+                      pg.evaluate("(id) => !%s.some(function (n) { return n.id === id && !n.t; })" % NOTES, near[2]))
+                reload(pg)
+                check("the restored note survives a reload", pg.evaluate(NEAR) == near)
+                # keyboard: Delete note from the keyboard puts focus on Undo; Enter restores and focuses the note
+                pg.focus(".gnote")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(100)
+                pg.focus(".gnote-editor .hl-note-remove")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(150)
+                check("keyboard delete: focus goes to Undo", pg.evaluate("document.activeElement && document.activeElement.classList.contains('site-toast-btn')"))
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(200)
+                check("keyboard Undo: the note is back and has focus",
+                      pg.evaluate(NEAR) == near and pg.evaluate("document.activeElement && document.activeElement.classList.contains('gnote')"))
+                # an emptied note committed from the keyboard (here: Enter on the highlights button) is deleted
+                # with Undo offered, but focus stays where the student took it
+                pg.focus(".gnote")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(100)
+                pg.fill(".gnote-editor textarea", "")
+                pg.focus("#hl-panel-btn")
+                pg.keyboard.press("Enter")
+                pg.wait_for_timeout(200)
+                st1 = pg.evaluate("""() => ({ undo: !!document.querySelector('#site-toast .site-toast-btn'), note: !!document.querySelector('.gnote'),
+                    onUndo: !!(document.activeElement && document.activeElement.classList.contains('site-toast-btn')),
+                    inPanel: !!(document.activeElement && document.activeElement.closest('.hl-panel')) })""")
+                check("emptied note committed from the keyboard: deleted with Undo, focus not moved to Undo",
+                      st1["undo"] and not st1["note"] and not st1["onUndo"] and st1["inPanel"], st1)
+                pg.keyboard.press("Escape")
+                pg.click("#site-toast .site-toast-btn")
+                pg.wait_for_timeout(200)
+                check("...and its Undo still restores it", pg.evaluate(NEAR) == near)
+                # removing the item from the review list never deletes the note
+                pg.evaluate("(id) => window.PipReview.remove(%s, 'n:' + id)" % json.dumps(slug), near[2])
+                reload(pg)
+                check("removing the review item keeps the note", pg.evaluate(NEAR) == near)
+                c.close()
+
+            # ------------------------------------------------------------------ 10. synced lists merge per item (2026-10-15)
+            c = ctx()
+            pg = open_page(c, guide_url)
+            res = pg.evaluate(r"""() => {
+              var M = window.SyncList.merge, out = {}, D = 86400000, now = Date.now();
+              function iso(ms) { return new Date(ms).toISOString(); }
+              function ids(v) { return JSON.parse(v).filter(function (x) { return x.t; }).map(function (x) { return x.id; }).sort().join(","); }
+              var a1 = { id: 'a', t: 'A', at: iso(now - 5 * D) }, a2 = { id: 'a', t: 'A', n: 'edited', at: iso(now - 5 * D), m: iso(now - D) };
+              var b = { id: 'b', t: 'B', at: iso(now - 4 * D) }, c2 = { id: 'c', t: 'C', at: iso(now - 2 * D) };
+              var L = JSON.stringify([a1, b]), C = JSON.stringify([a2, c2]);
+              var r = M(L, C), r2 = M(C, L);
+              out.union = ids(r.value) === 'a,b,c' && r.local && r.cloud;
+              out.newest = JSON.parse(r.value).filter(function (x) { return x.id === 'a'; })[0].n === 'edited';
+              out.symmetric = ids(r2.value) === ids(r.value) && JSON.parse(r2.value).filter(function (x) { return x.id === 'a'; })[0].n === 'edited';
+              var again = M(r.value, r2.value); out.settled = !again.local && !again.cloud;
+              var del = M(JSON.stringify([a1, b]), JSON.stringify([a1, { id: 'b', x: now - 3600000 }]));
+              out.tombstone = ids(del.value) === 'a' && del.local && !del.cloud;
+              var readd = M(JSON.stringify([a1, { id: 'b', t: 'B', at: iso(now - 4 * D), m: iso(now) }]), JSON.stringify([a1, { id: 'b', x: now - 3600000 }]));
+              out.readd = ids(readd.value) === 'a,b' && !readd.local && readd.cloud;
+              var old = M(JSON.stringify([a1]), JSON.stringify([a1, { id: 'z', x: now - 31 * D }]));
+              out.prune = !old.local && !old.cloud && JSON.parse(old.value).length === 1;
+              out.garbage = M('not json', '[]') === null && M('{}', '[]') === null;
+              var s = 'x-test-merge'; localStorage.removeItem('pipReview:' + s);
+              var it = { id: 'r1', t: 'a passage', f: 'F', d: 'd.html', at: iso(now) };
+              window.PipReview.add(s, it); window.PipReview.remove(s, 'r1');
+              var raw = JSON.parse(localStorage.getItem('pipReview:' + s));
+              out.removeTomb = window.PipReview.count(s) === 0 && raw.length === 1 && raw[0].id === 'r1' && typeof raw[0].x === 'number' && window.PipReview.slugs().indexOf(s) < 0;
+              window.PipReview.add(s, { id: 'r1', t: 'a passage', f: 'F', d: 'd.html', at: iso(now) });
+              raw = JSON.parse(localStorage.getItem('pipReview:' + s));
+              out.readdClears = window.PipReview.count(s) === 1 && raw.length === 1 && !!raw[0].m;
+              localStorage.removeItem('pipReview:' + s);
+              out.hooks = typeof window.CloudSyncMerge['pipReview:'] === 'function' && typeof window.CloudSyncMerge['guideNote:'] === 'function';
+              return out; }""")
+            for k in ("union", "newest", "symmetric", "settled", "tombstone", "readd", "prune", "garbage", "removeTomb", "readdClears", "hooks"):
+                check("synced list merge: %s" % k, res.get(k) is True, res)
+            c.close()
+
+            # ------------------------------------------------------------------ 11. the selection toolbar from the keyboard (2026-10-15)
+            c = ctx()
+            pg = open_page(c, guide_url)
+            start = pg.evaluate(r"""() => { var u = Array.from(document.querySelectorAll('p[data-hl-idx]')).find(function (x) { return x.textContent.length > 80 && !x.querySelector('mark, .gnote, a') && x.getClientRects().length; });
+                u.scrollIntoView({block: 'center', behavior: 'instant'}); u.id = u.id || 'kb-unit'; var t = __t.flat(u).text;
+                __t.select(__t.at(u, t.slice(10, 20), 0), __t.at(u, t.slice(10, 20), 6)); return u.id; }""")
+            pg.keyboard.press("Shift+ArrowRight")
+            pg.wait_for_timeout(250)
+            st = pg.evaluate("""() => ({ bar: !!document.querySelector('.hl-toolbar[role=toolbar]'), inBar: !!(document.querySelector('.hl-toolbar') && document.querySelector('.hl-toolbar').contains(document.activeElement)),
+                live: Array.from(document.querySelectorAll('.sr-only[aria-live=polite]')).map(function (x) { return x.textContent; }).join(' '), sel: getSelection().toString() })""")
+            check("keyboard selection shows the toolbar without taking focus", st["bar"] and not st["inBar"], st)
+            check("keyboard selection: a polite live region says how to reach the toolbar", "Tab" in st["live"], st)
+            pg.keyboard.press("Tab")
+            pg.wait_for_timeout(80)
+            f1 = pg.evaluate("""() => { var b = Array.from(document.querySelectorAll('.hl-toolbar button')); return { i: b.indexOf(document.activeElement),
+                stops: b.filter(function (x) { return x.tabIndex === 0; }).length }; }""")
+            check("Tab moves into the toolbar (first button, one tab stop)", f1 == {"i": 0, "stops": 1}, f1)
+            pg.keyboard.press("ArrowRight"); pg.keyboard.press("ArrowRight")
+            i2 = pg.evaluate("Array.from(document.querySelectorAll('.hl-toolbar button')).indexOf(document.activeElement)")
+            pg.keyboard.press("End")
+            iend = pg.evaluate("(function(){var b=Array.from(document.querySelectorAll('.hl-toolbar button'));return [b.indexOf(document.activeElement), b.length];})()")
+            pg.keyboard.press("Home")
+            ihome = pg.evaluate("Array.from(document.querySelectorAll('.hl-toolbar button')).indexOf(document.activeElement)")
+            check("arrow keys, End and Home move between the toolbar's buttons", i2 == 2 and iend[0] == iend[1] - 1 and ihome == 0, (i2, iend, ihome))
+            pg.keyboard.press("Escape")
+            pg.wait_for_timeout(80)
+            esc = pg.evaluate("""(id) => ({ bar: !!document.querySelector('.hl-toolbar'), sel: getSelection().toString(), focus: document.activeElement && document.activeElement.id === id })""", start)
+            check("Escape closes the toolbar and returns focus and the selection to where they were",
+                  not esc["bar"] and esc["focus"] and esc["sel"].strip() == st["sel"].strip() and bool(esc["sel"].strip()), esc)
+            pg.keyboard.press("Shift+ArrowRight")
+            pg.wait_for_timeout(250)
+            pg.keyboard.press("Tab")
+            pg.keyboard.press("Enter")
+            pg.wait_for_timeout(200)
+            made = pg.evaluate("""() => ({ marks: document.querySelectorAll('mark.user-hl').length, ta: !!(document.activeElement && document.activeElement.classList.contains('hl-note-textarea')) })""")
+            check("Enter on a color in the toolbar highlights and opens the note box", made["marks"] >= 1 and made["ta"], made)
+            pg.keyboard.press("Escape")
+            pg.wait_for_timeout(80)
+            check("Escape from that note box puts focus on the new highlight",
+                  pg.evaluate("document.activeElement && document.activeElement.matches('mark.user-hl')"))
+            # Shift + arrows inside the search box, then a mouse selection: a bare Shift tap must not reopen
+            # the toolbar as a keyboard one (no announcement)
+            pg.keyboard.press("Escape")
+            pg.evaluate("getSelection().removeAllRanges()")
+            pg.keyboard.press("/")
+            pg.keyboard.type("blood")
+            pg.keyboard.press("Shift+ArrowLeft")
+            pg.keyboard.press("Escape")
+            pg.evaluate(r"""(id) => { var u = document.getElementById(id); var t = __t.flat(u).text;
+                __t.select(__t.at(u, t.slice(30, 40), 0), __t.at(u, t.slice(30, 40), 8)); __t.mouseup(u);
+                document.querySelectorAll('.sr-only[aria-live=polite]').forEach(function (x) { x.textContent = ''; }); }""", start)
+            pg.wait_for_timeout(150)
+            pg.keyboard.press("Shift")
+            pg.wait_for_timeout(250)
+            st2 = pg.evaluate("""() => ({ bar: !!document.querySelector('.hl-toolbar'), kbd: !!(document.querySelector('.hl-toolbar') || {}).__kbd,
+                live: Array.from(document.querySelectorAll('.sr-only[aria-live=polite]')).map(function (x) { return x.textContent; }).join('') })""")
+            check("Shift + arrows in the search box leave no keyboard-selection state behind", st2["bar"] and not st2["kbd"] and st2["live"] == "", st2)
+            pg.keyboard.press("Escape")
+            pg.evaluate("getSelection().removeAllRanges()")
+            pg.keyboard.press("ControlOrMeta+a")
+            pg.wait_for_timeout(250)
+            check("select-all on a long guide shows no 'too long' message",
+                  pg.evaluate("getSelection().toString().length > 1000") and
+                  not pg.evaluate("(function(){var t=document.getElementById('site-toast');return !!t && t.style.opacity==='1' && /too long/.test(t.textContent);})()"))
+            c.close()
+
+            c = ctx()
+            pg = open_page(c, guide_url)
+            ft = pg.evaluate("""() => new Promise(function (res) { var old = document.getElementById('site-toast'); if (old) old.remove();
+                window.showToast('First message here', 3000); var t = document.getElementById('site-toast');
+                var first = { inPage: !!t && document.body.contains(t), role: t && t.getAttribute('role'), live: t && t.getAttribute('aria-live'), text: t ? t.textContent : null };
+                requestAnimationFrame(function () { requestAnimationFrame(function () { res({ first: first, later: t.textContent }); }); }); })""")
+            check("a page's first toast: a polite status region already in the page, its text set a frame later",
+                  ft["first"] == {"inPage": True, "role": "status", "live": "polite", "text": ""} and ft["later"] == "First message here", ft)
+            c.close()
+
+            # ------------------------------------------------------------------ 12. openGuidePanel({quote}) marks the cited sentence (2026-10-15)
+            for dark in (False, True):
+                c = ctx()
+                if dark:
+                    c.add_init_script("try{localStorage.setItem('siteTheme','dark')}catch(e){}")
+                pg = open_page(c, guide_url)
+                pick = pg.evaluate(r"""() => { var hs = Array.from(document.querySelectorAll('h2[id], h3[id]'));
+                    for (var i = 0; i < hs.length; i++) { var n = hs[i].nextElementSibling;
+                      for (var k = 0; n && k < 6; k++, n = n.nextElementSibling) {
+                        if (/^H[1-3]$/.test(n.tagName)) break;
+                        var p = n.matches('p') ? n : n.querySelector('p, li');
+                        if (!p) continue; var t = p.textContent.replace(/\s+/g, ' ').trim(), m = t.match(/[A-Z][^.!?]{40,160}[.!?]/);
+                        if (m) return { id: hs[i].id, s: m[0] }; } }
+                    return null; }""")
+                if not pick:
+                    check("guide panel quote: found a sentence to test with", False)
+                    c.close()
+                    continue
+                quote = "  " + pick["s"].upper().replace(" ", "  ").replace("'", "’") + " "
+                rel = a.guide.split("/")[-1]
+                def open_q(q):
+                    pg.evaluate("(o) => { window.openGuidePanel(o); }",       # an open panel is replaced, as when Pip opens another
+                                {"url": rel + "#" + pick["id"], "anchor": pick["id"], "title": "t", "quote": q})
+                    pg.wait_for_function("() => { var f = document.querySelector('.gl-frame'); return f && f.closest('.gl-panel').classList.contains('is-ready'); }", timeout=8000)
+                    pg.wait_for_timeout(200)
+                    return pg.evaluate("""() => { var d = document.querySelector('.gl-frame').contentDocument, ms = Array.from(d.querySelectorAll('mark.gl-quote'));
+                        var cs = ms[0] ? d.defaultView.getComputedStyle(ms[0]) : null, r = ms[0] ? ms[0].getBoundingClientRect() : null;
+                        return { n: ms.length, text: ms.map(function (m) { return m.textContent; }).join('').replace(/\\s+/g, ' ').trim(),
+                                 bg: cs ? cs.backgroundColor : '', shadow: cs ? cs.boxShadow : '', seen: !!r && r.top >= 0 && r.bottom <= d.defaultView.innerHeight,
+                                 old: d.querySelectorAll('.gl-mark, .gl-head-mark').length }; }""")
+                got = open_q(quote)
+                tag = " (dark)" if dark else ""
+                qn = lambda x: re.sub(r"\s+", " ", x.replace("\u2019", "'")).strip().lower()
+                check("openGuidePanel quote: the cited sentence is marked (case, spaces, curly quotes ignored)%s" % tag,
+                      got["n"] >= 1 and qn(got["text"]) == qn(pick["s"]), (got, pick))
+                check("openGuidePanel quote: the mark is visible, scrolled into view, not color alone%s" % tag,
+                      got["seen"] and got["bg"] not in ("", "rgba(0, 0, 0, 0)", "transparent") and "inset" in got["shadow"], got)
+                miss = open_q("this sentence is nowhere in the guide at all, qqq")
+                check("openGuidePanel quote not found: no quote mark, the old passage/heading mark as before%s" % tag, miss["n"] == 0 and miss["old"] >= 1, miss)
+                c.close()
 
             # ------------------------------------------------------------------ 7. other pages: no errors, nothing added
             c = ctx()

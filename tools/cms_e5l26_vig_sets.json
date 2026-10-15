@@ -7,25 +7,30 @@
    "opts": [
     [
      "Surgical valvuloplasty",
-     "Valvuloplasty is a surgical option for chronic venous insufficiency and carries a high risk of postoperative clot. Varicose veins with reflux are treated with ablation."
+     "Valvuloplasty is a chronic venous insufficiency operation that is only occasionally successful and carries a high incidence of postoperative deep vein thrombosis. Her reflux is treated by ablation."
     ],
     [
      "Venous ablation therapy",
-     "Correct. Stockings are tried for weeks to months before venous ablation is offered, and the goal is to improve symptoms and appearance. She has now failed that trial, with reflux confirmed."
+     "Correct. A trial of conservative therapy with stockings is generally done for weeks to months before venous ablation is offered. She has finished that trial with persistent aching, and duplex confirms reflux; the goal is better symptoms and appearance."
     ],
     [
      "Lifelong observation only",
-     "Observation is reasonable for mild disease, but she has persistent symptoms after a full conservative trial. Ablation is offered once stockings fail."
+     "Observation alone leaves her persistent aching untreated after a full trial of stockings and exercise. Once that conservative trial has failed, venous ablation therapy is offered."
     ],
     [
      "Oral flavonoid therapy",
-     "Flavonoids are used to increase venous tone, but at most they are an add-on and leave the reflux untreated. Persistent symptoms with confirmed reflux call for venous ablation."
+     "Flavonoids are used to increase venous tone, but no oral medication has yet been proven useful for venous disease. With reflux confirmed after failed stockings, ablation is offered."
     ]
    ],
    "c": 1,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 43",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 35, 36, 41, 43",
    "slot": "escalation",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "Lifelong observation only": "common lay belief: varicose veins need only be watched",
+    "Oral flavonoid therapy": "confused treatment: an oral venous-tone drug in place of treating reflux",
+    "Surgical valvuloplasty": "adjacent fact: a chronic venous insufficiency operation"
+   }
   },
   {
    "topic": "Anticoagulation choices",
@@ -169,7 +174,7 @@
    "opts": [
     [
      "Protamine sulfate",
-     "Correct. Protamine sulfate is the reversal agent for unfractionated heparin and low molecular weight heparin when bleeding is life-threatening. Each anticoagulant has its own specific reversal agent."
+     "Correct. Protamine sulfate is the reversal agent for unfractionated and low molecular weight heparin in life-threatening or intracranial hemorrhage; dabigatran, the factor Xa inhibitors and warfarin have other reversal options."
     ],
     [
      "Idarucizumab",
@@ -181,13 +186,18 @@
     ],
     [
      "Vitamin K by mouth",
-     "Oral vitamin K is a warfarin reversal option and works slowly. Heparin has its own reversal agent, protamine sulfate, which acts on the drug directly."
+     "Oral vitamin K is one of the warfarin reversal options. Heparin has its own reversal agent, protamine sulfate, used for life-threatening bleeding."
     ]
    ],
    "c": 0,
    "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 68",
    "slot": "complication",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "Andexanet alfa": "adjacent fact: the factor Xa inhibitor reversal agent",
+    "Idarucizumab": "adjacent fact: the dabigatran reversal agent",
+    "Vitamin K by mouth": "adjacent fact: a warfarin reversal option"
+   }
   },
   {
    "topic": "Chronic venous insufficiency",
@@ -420,7 +430,7 @@
     ],
     [
      "D-dimer assay first",
-     "A D-dimer is the first test for low or moderate Wells scores, where a negative result rules out clot. At a score of 3 or higher the probability is high, so ultrasound is ordered directly."
+     "A D-dimer is the first test in the low likelihood pathway, where a negative result ends the work-up. At a score of 3 or higher the likelihood is high, so ultrasound is ordered directly."
     ],
     [
      "Contrast ascending venography",
@@ -430,7 +440,12 @@
    "c": 1,
    "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56",
    "slot": "initial test",
-   "lead": "next step"
+   "lead": "next step",
+   "mis": {
+    "Ankle-brachial index": "confused test: an arterial test for a venous clot",
+    "Contrast ascending venography": "adjacent fact: the historic gold standard taken as the routine test",
+    "D-dimer assay first": "right test, wrong pathway: the low likelihood first step applied to a high score"
+   }
   },
   {
    "topic": "Wells criteria",
@@ -551,7 +566,7 @@
     ],
     [
      "High (score of 3 or more)",
-     "High likelihood requires 3 or more points. She has only two positive items, so she falls in the moderate band and receives a D-dimer rather than going straight to ultrasound."
+     "High likelihood requires 3 or more points. She has only two positive items, a prior deep vein thrombosis and entire leg swelling, so she falls in the moderate band."
     ],
     [
      "Moderate (score of 3 to 4)",
@@ -559,13 +574,18 @@
     ],
     [
      "Moderate (score of 1 to 2)",
-     "Correct. A previously documented deep vein thrombosis adds 1 point and swelling of the entire leg adds 1 point, for 2 in total, the moderate band of 1 to 2. Moderate likelihood leads to a D-dimer next."
+     "Correct. A previously documented deep vein thrombosis adds 1 point and swelling of the entire leg adds 1 point, for 2 in total, which falls in the moderate likelihood band of 1 to 2."
     ]
    ],
    "c": 3,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55 (Wells table pictures)",
    "slot": "risk factors",
-   "lead": "test"
+   "lead": "test",
+   "mis": {
+    "High (score of 3 or more)": "reversed value: two points counted as high",
+    "Low (score below 1)": "right band misread: a score of 2 placed in the low band",
+    "Moderate (score of 3 to 4)": "confused range: the moderate label with the wrong numbers"
+   }
   },
   {
    "topic": "D-dimer and ultrasound",
@@ -927,7 +947,7 @@
    "opts": [
     [
      "Recurrence is rare after treatment",
-     "Recurrence is common, and patients should be told this in advance. Treatment improves symptoms and appearance without preventing new veins."
+     "Recurrence is not rare: varicose veins often recur after treatment. The goal of intervention is improvement in symptoms and appearance."
     ],
     [
      "Only appearance improves, not symptoms",
@@ -935,17 +955,22 @@
     ],
     [
      "One treatment is permanently curative",
-     "Varicose veins often recur, so one session is not permanently curative. Ongoing conservative measures and follow-up are still expected."
+     "Varicose veins often recur, so no single treatment is permanently curative. Intervention aims to improve symptoms and appearance."
     ],
     [
-     "New varicose veins often recur",
-     "Correct. Varicose veins often recur after treatment, and the goal of intervention is to improve symptoms and appearance, so he should expect to follow up over the long term."
+     "Varicose veins often recur",
+     "Correct. Varicose veins often recur, and the goal of intervention is improvement in symptoms and appearance rather than a permanent cure, so he should be told to expect recurrence."
     ]
    ],
    "c": 3,
    "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 43",
    "slot": "prognosis",
-   "lead": "education"
+   "lead": "education",
+   "mis": {
+    "One treatment is permanently curative": "common lay belief: one procedure cures for good",
+    "Only appearance improves, not symptoms": "common lay belief: vein treatment is only cosmetic",
+    "Recurrence is rare after treatment": "reversed value: recurrence underestimated"
+   }
   },
   {
    "topic": "Superficial phlebitis and thrombophlebitis",
@@ -981,7 +1006,7 @@
    "opts": [
     [
      "D-dimer testing first",
-     "Starting with a D-dimer is the path for low or moderate scores. With a high Wells score the D-dimer is skipped, because even a negative result would not exclude deep vein thrombosis and ultrasound is needed."
+     "Starting with a D-dimer is the low likelihood path. With a high Wells score the D-dimer is skipped, because even a negative result would not exclude deep vein thrombosis and ultrasound is needed."
     ],
     [
      "Contrast ascending venography",
@@ -999,7 +1024,12 @@
    "c": 3,
    "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55",
    "slot": "initial test",
-   "lead": "next step"
+   "lead": "next step",
+   "mis": {
+    "Ankle-brachial index": "confused test: an arterial test for a venous clot",
+    "Contrast ascending venography": "adjacent fact: the historic gold standard taken as the routine test",
+    "D-dimer testing first": "right test, wrong pathway: the low likelihood first step applied to a high score"
+   }
   },
   {
    "topic": "Wells criteria",
@@ -1120,7 +1150,7 @@
     ],
     [
      "Graduated compression",
-     "Correct. Compression is standard treatment for venous insufficiency but is contraindicated in peripheral artery disease, so the ankle-brachial index must be checked first. An index of 0.9 or less indicates disease."
+     "Correct. Compression is the standard treatment for venous insufficiency, but peripheral artery disease must be ruled out before it is initiated; her weak pulses and low ankle-brachial index point to arterial disease, so compression waits."
     ],
     [
      "Gentle skin cleansing",
@@ -1132,36 +1162,46 @@
     ]
    ],
    "c": 1,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 32",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 28, 31, 32",
    "slot": "avoid",
-   "lead": "avoid"
+   "lead": "avoid",
+   "mis": {
+    "Daily walking with ankle flexion": "ruled out by the question: exercise that puts no pressure on the limb",
+    "Gentle skin cleansing": "ruled out by the question: a skin measure that puts no pressure on the limb",
+    "Skin emollients": "ruled out by the question: a skin-barrier measure that puts no pressure on the limb"
+   }
   },
   {
    "topic": "Arteriovenous fistula of the extremity",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins",
-   "q": "A 62-year-old man on hemodialysis has a left forearm arteriovenous fistula that was created four months ago. Last month it had a palpable thrill (a vibration felt over the access) and a soft bruit. At today's visit no thrill can be felt and no bruit is heard over the access. Which is the most appropriate next step?",
+   "q": "A 58-year-old woman has a left forearm arteriovenous fistula created three months ago for hemodialysis. To check that it is healthy, her clinician raises the arm above the level of her heart. Which response is expected from a healthy fistula?",
    "opts": [
     [
-     "Repeat examination in 7 to 10 days",
-     "The 7 to 10 day recheck belongs to superficial thrombophlebitis. Dialysis access that has lost its thrill and bruit should not wait, because the fistula is no longer functioning."
+     "Its bruit turns systolic only",
+     "A healthy fistula has a soft bruit with both systolic and diastolic components, so a systolic-only bruit is not the healthy pattern. With elevation it collapses completely."
     ],
     [
-     "Urgent referral for access evaluation",
-     "Correct. A healthy fistula has a diffuse thrill and a soft bruit with systolic and diastolic components. Loss of both means the access is no longer working, so it needs prompt referral to the specialist."
+     "It collapses completely",
+     "Correct. A healthy arteriovenous fistula collapses completely with arm elevation, and it is generally characterized by a diffuse thrill and a soft bruit with both systolic and diastolic components."
     ],
     [
-     "Reassurance with routine follow-up",
-     "Reassurance would miss a failing access. A working fistula carries a thrill and a soft bruit, so absence of both is abnormal and warrants prompt specialist evaluation."
+     "It stays distended and tense",
+     "Staying distended is not the healthy response. A healthy fistula collapses completely when the arm is elevated, alongside a diffuse thrill and a soft bruit."
     ],
     [
-     "Warm compresses and an anti-inflammatory drug",
-     "That regimen treats superficial thrombophlebitis of a vein. A fistula without thrill or bruit has a flow problem that needs specialist evaluation, not symptomatic care."
+     "Her heart rate slows",
+     "Slowing of the heart rate is the Nicoladoni-Branham sign, a reflex to compression of a large fistula, not a response to arm elevation. A healthy fistula collapses completely."
     ]
    ],
    "c": 1,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 83",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 83, 85",
    "slot": "referral",
-   "lead": "referral"
+   "lead": "referral",
+   "mis": {
+    "Her heart rate slows": "adjacent fact: the compression reflex of a large fistula",
+    "It stays distended and tense": "reversed value: the opposite of the healthy collapse",
+    "Its bruit turns systolic only": "confused finding: a bruit missing its diastolic component"
+   }
   },
   {
    "topic": "Duration and setting of treatment",
@@ -1490,29 +1530,34 @@
   {
    "topic": "Venous disorders, mixed cases",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins",
-   "q": "A 44-year-old man seen in an outpatient clinic has had left calf pain and swelling for three days. A plaster cast was removed from his left leg yesterday after four weeks for a tibial fracture. Examination shows pitting edema confined to the left leg. He meets no other Wells criteria, and no alternative diagnosis is judged as likely as deep vein thrombosis. Which is the most appropriate next test?",
+   "q": "A 61-year-old man receiving chemotherapy for lung cancer has had swelling of his whole left leg for four days, with pitting edema in that leg and a calf 4 cm larger than the right. An ultrasound of the thigh veins shows no clot. Which is the most appropriate next step?",
    "opts": [
     [
-     "D-dimer assay",
-     "Correct. Recent plaster immobilization and pitting edema in the symptomatic leg give a Wells score of 2, a moderate pretest probability. Patients scoring 1 to 2 need a D-dimer, and a negative result rules out the diagnosis."
+     "Repeat the thigh scan in a week",
+     "Correct. Active cancer, entire leg swelling, calf swelling over 3 cm and pitting edema give a high Wells score of 4. In the high-likelihood pathway a negative thigh ultrasound is followed by lower-leg ultrasound, phlebography or a repeat thigh ultrasound in 1 week."
     ],
     [
-     "Venous duplex ultrasound",
-     "Ultrasound is ordered first when the Wells score is 3 or higher and thrombosis is likely. At a score of 2 the D-dimer comes first, and ultrasound follows only if it is positive."
+     "Stop the work-up; clot excluded",
+     "Stopping after a negative thigh ultrasound is the low-likelihood pathway. With a high score of 4, a negative thigh study is followed by lower-leg ultrasound, phlebography or a repeat thigh scan in 1 week."
     ],
     [
-     "Contrast ascending venography",
-     "Venography is invasive and has been replaced by duplex ultrasound for confirming deep vein thrombosis. It is not the next test at a moderate Wells score."
+     "Start anticoagulation for life",
+     "Anticoagulation is the mainstay of treatment once a deep vein thrombosis is found, and none has been shown yet. A high-likelihood patient with a negative thigh ultrasound needs further imaging first."
     ],
     [
      "Ankle-brachial index",
-     "The ankle-brachial index screens for peripheral artery disease and does not evaluate for venous clot. At a Wells score of 2 the next test is a D-dimer."
+     "The ankle-brachial index assesses arterial disease, as before compression therapy, and does not look for a venous clot. After a negative thigh study in a high-likelihood patient, imaging continues."
     ]
    ],
    "c": 0,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 55-56, 61 (Wells table and flowchart pictures)",
    "slot": "initial test",
-   "lead": "next step"
+   "lead": "next step",
+   "mis": {
+    "Ankle-brachial index": "confused test: an arterial test for a venous question",
+    "Start anticoagulation for life": "right action at the wrong stage: treatment before a clot is shown",
+    "Stop the work-up; clot excluded": "right action in the wrong pathway: the low-likelihood stop"
+   }
   },
   {
    "topic": "D-dimer and ultrasound",
@@ -1521,11 +1566,11 @@
    "opts": [
     [
      "Venous duplex ultrasound",
-     "Correct. In a low-likelihood patient a positive D-dimer cannot exclude deep vein thrombosis, so venous duplex ultrasound follows. A positive ultrasound makes the diagnosis; a negative one rules it out."
+     "Correct. In the low-likelihood pathway a positive D-dimer leads on to ultrasound. The D-dimer is sensitive but not specific, so it cannot confirm a clot, and venous duplex ultrasound has replaced venography for diagnosis."
     ],
     [
      "Empiric anticoagulation alone",
-     "Treating without imaging exposes her to bleeding risk on an unconfirmed diagnosis, and a positive D-dimer is nonspecific. Ultrasound confirms or excludes the clot before anticoagulation is committed."
+     "Anticoagulating on a positive D-dimer treats a clot that has not been shown, and the test is not specific. In the low-likelihood pathway a positive result leads to ultrasound."
     ],
     [
      "Reassurance and discharge",
@@ -1533,13 +1578,18 @@
     ],
     [
      "Repeat D-dimer tomorrow",
-     "Repeating a nonspecific test does not clarify anything. A positive D-dimer moves the patient on to venous duplex ultrasound, which can actually visualize a clot."
+     "Repeating a test that is sensitive but not specific cannot show whether a clot is present. In the low-likelihood pathway a positive D-dimer leads on to ultrasound."
     ]
    ],
    "c": 0,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 56, 57 (slide 56 flowchart picture)",
    "slot": "initial test",
-   "lead": "next step"
+   "lead": "next step",
+   "mis": {
+    "Empiric anticoagulation alone": "right action at the wrong stage: treatment before imaging",
+    "Reassurance and discharge": "reversed value: a positive result handled as negative",
+    "Repeat D-dimer tomorrow": "confused test role: repeating a rule-out test instead of imaging"
+   }
   },
   {
    "topic": "Venous disorders, mixed cases",

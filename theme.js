@@ -1805,17 +1805,91 @@ window.SitePrompts = {
    shows a chip with the count. Nothing here writes any text of its own: an item is the guide's own
    words, trimmed (t), plus the student's own note (n) when there is one.
    Item: {id, f (folder), d (page file), a (anchor id), st (section title), k / kt (deck id / title),
-   u (position in the page), t, n, at, nid (the note box it came from, if any)}.
+   u (position in the page), t, n, at, m (last change), nid (the note box it came from, if any)}.
+   A removed item leaves a tombstone {id, x} (see SYNCED LISTS below).
    ============================================================ */
+/* ============================================================
+   SYNCED LISTS (2026-10-15). "pipReview:<exam>" and "guideNote:<page>" are arrays of records with an
+   id, and cloud-sync.js used to upload and download each one whole: two devices used before either
+   reloaded lost each other's additions (the last upload won). Now, when cloud-sync.js reads one of
+   these keys from the cloud, it calls window.CloudSyncMerge[prefix](local, cloud): the records are
+   joined by id, the newer change of each wins (m, else at), and a deletion is kept as a tombstone
+   {id, x (ms)} for 30 days, so the other device's copy cannot bring it back. A tombstone has no text
+   (t), so every reader that keeps only records with text (PipReview.load, home.js, loadNotes, and
+   the copies of this file already on students' devices) skips it.
+   No extra Firestore traffic: the merge runs on documents cloud-sync already read, and uploads that
+   one key only when the cloud copy lacks something.
+   ============================================================ */
+window.SyncList = (function () {
+  var KEEP_MS = 30 * 86400000;
+  function isTomb(x) { return !!x && typeof x === "object" && typeof x.id === "string" && typeof x.x === "number" && !x.t; }
+  function isRec(x) { return !!x && typeof x === "object" && typeof x.id === "string" && !isTomb(x); }
+  function when(x) { return Math.max(Date.parse(x.m || "") || 0, Date.parse(x.at || "") || 0); }
+  // live records + tombstones -> the array to store: one tombstone per id (the newest), none for an id
+  // that is live again, none older than 30 days
+  function pack(recs, tombs, now) {
+    var live = {}, best = {}, out = recs.slice();
+    recs.forEach(function (r) { if (r && typeof r.id === "string") live[r.id] = 1; });
+    (tombs || []).forEach(function (t) {
+      if (!isTomb(t) || live[t.id] || (now || Date.now()) - t.x > KEEP_MS) return;
+      if (!best[t.id] || t.x > best[t.id].x) best[t.id] = { id: t.id, x: t.x };
+    });
+    Object.keys(best).sort().forEach(function (id) { out.push(best[id]); });
+    return out;
+  }
+  function combine(sides, now) {
+    var rec = {}, order = [], tomb = {};
+    sides.forEach(function (arr) {
+      arr.forEach(function (x) {
+        if (isTomb(x)) { if (!tomb[x.id] || x.x > tomb[x.id].x) tomb[x.id] = x; return; }
+        if (!isRec(x)) return;
+        var cur = rec[x.id];
+        if (!cur) { rec[x.id] = x; order.push(x.id); return; }
+        var a = when(x), b = when(cur);
+        // the newer change wins; a tie is broken the same way on every device
+        if (a > b || (a === b && JSON.stringify(x) > JSON.stringify(cur))) rec[x.id] = x;
+      });
+    });
+    var recs = [], tombs = [];
+    order.forEach(function (id) {
+      var r = rec[id], t = tomb[id];
+      if (t && t.x >= when(r)) return;            // deleted after its last change
+      recs.push(r);
+    });
+    Object.keys(tomb).forEach(function (id) { tombs.push(tomb[id]); });
+    return pack(recs, tombs, now);
+  }
+  function canon(arr) {
+    return JSON.stringify(arr.slice().sort(function (a, b) {
+      var ka = (isTomb(a) ? "~" : "") + a.id, kb = (isTomb(b) ? "~" : "") + b.id;
+      return ka < kb ? -1 : ka > kb ? 1 : 0;
+    }));
+  }
+  // (local, cloud) JSON strings -> {value, local, cloud}: the merged JSON, and whether it differs (beyond
+  // order or expired tombstones) from each side. null = not two arrays: cloud-sync keeps its old rule.
+  function merge(localStr, cloudStr) {
+    var L, C;
+    try { L = JSON.parse(localStr); C = JSON.parse(cloudStr); } catch (e) { return null; }
+    if (!Array.isArray(L) || !Array.isArray(C)) return null;
+    var now = Date.now(), out = combine([C, L], now), key = canon(out);
+    return { value: JSON.stringify(out), local: canon(combine([L], now)) !== key, cloud: canon(combine([C], now)) !== key };
+  }
+  return { isTomb: isTomb, isRec: isRec, when: when, pack: pack, merge: merge };
+})();
+window.CloudSyncMerge = window.CloudSyncMerge || {};
+window.CloudSyncMerge["pipReview:"] = window.SyncList.merge;
+window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
+
 (function () {
   var PFX = "pipReview:", CAP = 600;
   function slugify(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""); }
+  function raw(slug) {
+    try { var v = JSON.parse(localStorage.getItem(PFX + slug)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
   // Only well-formed items come back (the key is synced, so it may hold anything): id, t, f and d must be
   // strings; the optional text fields are made strings, so no page reading the list can trip on one.
   function load(slug) {
-    var v;
-    try { v = JSON.parse(localStorage.getItem(PFX + slug)); } catch (e) { return []; }
-    if (!Array.isArray(v)) return [];
+    var v = raw(slug);
     return v.filter(function (x) {
       return x && typeof x === "object" && typeof x.id === "string" && typeof x.t === "string" && x.t &&
              typeof x.f === "string" && typeof x.d === "string";
@@ -1824,7 +1898,12 @@ window.SitePrompts = {
       return x;
     });
   }
-  function save(slug, list) { try { localStorage.setItem(PFX + slug, JSON.stringify(list)); return true; } catch (e) { return false; } }
+  // `gone`: ids removed just now, kept as tombstones (with the ones already stored) so a sync cannot bring them back
+  function save(slug, list, gone) {
+    var now = Date.now(), tombs = raw(slug).filter(window.SyncList.isTomb);
+    (gone || []).forEach(function (id) { tombs.push({ id: id, x: now }); });
+    try { localStorage.setItem(PFX + slug, JSON.stringify(window.SyncList.pack(list, tombs, now))); return true; } catch (e) { return false; }
+  }
   function norm(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
   function idOf(text, file) {
     var s = norm(text).toLowerCase() + "|" + file, h = 5381;
@@ -1855,13 +1934,17 @@ window.SitePrompts = {
     add: function (slug, item) {          // "added", "exists" or "failed"
       var list = load(slug);
       if (list.some(function (x) { return x.id === item.id; })) return "exists";
+      item.m = new Date().toISOString();  // newer than any earlier removal of the same id, on any device
       list.push(item);
       return save(slug, list) ? "added" : "failed";
     },
-    remove: function (slug, id) { save(slug, load(slug).filter(function (x) { return x.id !== id; })); },
+    remove: function (slug, id) {
+      var list = load(slug), had = list.some(function (x) { return x.id === id; });
+      save(slug, list.filter(function (x) { return x.id !== id; }), had ? [id] : null);
+    },
     setNote: function (slug, id, note) {
-      var list = load(slug), hit = false;
-      list.forEach(function (x) { if (x.id === id && (x.n || "") !== note) { x.n = note; hit = true; } });
+      var list = load(slug), hit = false, now = new Date().toISOString();
+      list.forEach(function (x) { if (x.id === id && (x.n || "") !== note) { x.n = note; x.m = now; hit = true; } });
       if (hit) save(slug, list);
     }
   };
@@ -2252,10 +2335,16 @@ window.SitePrompts = {
      width, accordions opening and closing). Shown when printing, in plain ink.
      ------------------------------------------------------------------------------------------------ */
   var NOTE_MAX = 2000, NOTE_CTX = 24;
-  function loadNotes() {
+  function rawNotes() {
     try { var v = JSON.parse(localStorage.getItem(NOTE_KEY)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
   }
-  function saveNotes(list) {
+  // the notes themselves; a deleted note's tombstone {id, x} stays in storage only (window.SyncList)
+  function loadNotes() { return rawNotes().filter(function (n) { return !window.SyncList.isTomb(n); }); }
+  // `gone`: ids deleted just now, kept as tombstones so a sync from another device cannot bring them back
+  function saveNotes(list, gone) {
+    var now = Date.now(), tombs = rawNotes().filter(window.SyncList.isTomb);
+    (gone || []).forEach(function (id) { tombs.push({ id: id, x: now }); });
+    list = window.SyncList.pack(list, tombs, now);
     try {
       if (list.length) localStorage.setItem(NOTE_KEY, JSON.stringify(list));
       else localStorage.removeItem(NOTE_KEY);
@@ -2363,13 +2452,86 @@ window.SitePrompts = {
     pipNoteChanged(id, text);
     return ok;
   }
+  // Deletes a note and its review item. Returns what Undo needs: the stored record, the exact spot the
+  // box sat at (unit + offset, read from the page before it goes), and a promise of the removed review
+  // item ({slug, item} or null).
   function deleteNote(id) {
-    var h = hostOf(id);
-    if (h) h.remove();
-    var list = loadNotes(), had = list.some(function (n) { return n.id === id; });
-    if (had) saveNotes(list.filter(function (n) { return n.id !== id; }));
-    pipNoteChanged(id, null);
+    var h = hostOf(id), spot = null;
+    if (h) {
+      var u = findUnit(h.parentNode);
+      if (u) { var r = document.createRange(); r.setStartBefore(h); spot = { u: u, o: offsetIn(u, r.startContainer, r.startOffset) }; }
+      h.remove();
+    }
+    var list = loadNotes(), rec = null;
+    list.forEach(function (n) { if (n.id === id) rec = n; });
+    if (rec) saveNotes(list.filter(function (n) { return n.id !== id; }), [id]);
+    return { rec: rec, spot: spot, item: pipNoteChanged(id, null) };
   }
+  // Undo (2026-10-15): the note back at its exact spot with its stored anchor unchanged, stamped as the
+  // newest change (so it outranks its own tombstone on every device), and its review item back with its
+  // text, note and position. Returns the restored box (or null when the note had no spot on the page).
+  function restoreNote(snap) {
+    if (!snap || !snap.rec) return null;
+    var rec = JSON.parse(JSON.stringify(snap.rec));
+    rec.m = new Date().toISOString();
+    var list = loadNotes().filter(function (n) { return n.id !== rec.id; });
+    list.push(rec);
+    if (!saveNotes(list)) return null;
+    var h = null;
+    if (!hostOf(rec.id)) {
+      if (snap.spot && snap.spot.u.isConnected) {
+        h = makeHost(rec);
+        insertAt(snap.spot.u, Math.min(snap.spot.o, unitText(snap.spot.u).length), h);
+      } else {
+        orphanNotes = orphanNotes.filter(function (n) { return n.id !== rec.id; }).concat([rec]);
+      }
+    }
+    if (snap.item && snap.item.then) snap.item.then(function (it) { if (it && window.PipReview) window.PipReview.add(it.slug, it.item); });
+    return h;
+  }
+  // "Note deleted" with Undo for about 6 seconds. From the keyboard, focus goes to Undo (the control that
+  // was used has just gone) and, when the toast leaves, back to the paragraph the note was in.
+  // noFocus: the delete came from committing an emptied note (clicking or tabbing away), so the student
+  // is already moving on; focus stays where they took it
+  function noteDeletedToast(snap, noFocus) {
+    if (!window.showToast) return;
+    if (!snap || !snap.rec) { window.showToast("Note deleted", 2500); return; }
+    var spotEl = snap.spot && snap.spot.u;
+    window.showToast("Note deleted", 6000, {
+      label: "Undo",
+      focus: !noFocus && lastInput === "key",
+      returnFocus: function () {
+        var c = hlPanelOverlay && hlPanelOverlay.querySelector(".hl-panel-close");
+        if (c) { try { c.focus({ preventScroll: true }); } catch (e) {} } else focusSpot(spotEl);
+      },
+      onClick: function (e) {
+        var h = restoreNote(snap);
+        if (hlPanelOverlay) openHlPanel();
+        else if (h) {
+          revealEl(h);
+          if (e && e.detail === 0) { try { h.focus({ preventScroll: true }); } catch (x) {} }
+        }
+        window.showToast(h || !snap.spot ? "Note restored" : "Note restored to your notes list", 2500);
+      }
+    });
+  }
+  // Focus a spot in the text that is not normally focusable (a paragraph, a mark) for a keyboard user,
+  // so Tab carries on from there; the temporary tabindex goes again when focus leaves.
+  function focusSpot(el) {
+    if (!el || !el.isConnected) return;
+    if (!el.hasAttribute("tabindex")) {
+      el.setAttribute("tabindex", "-1");
+      el.setAttribute("data-hl-tmpfocus", "");
+      el.addEventListener("blur", function off() {
+        el.removeEventListener("blur", off);
+        if (el.hasAttribute("data-hl-tmpfocus")) { el.removeAttribute("data-hl-tmpfocus"); el.removeAttribute("tabindex"); }
+      });
+    }
+    try { el.focus({ preventScroll: true }); } catch (e) {}
+  }
+  // the last input was a key (Undo and the selection toolbar move focus only for keyboard users)
+  var lastInput = "pointer";
+  document.addEventListener("keydown", function () { lastInput = "key"; }, true);
   function revealEl(el) {
     for (var d = el.closest("details"); d; d = d.parentElement && d.parentElement.closest("details")) d.open = true;
     var panel = el.closest(".subj-panel");
@@ -2379,10 +2541,33 @@ window.SitePrompts = {
       if (tab) tab.click();
     }
   }
+  // Where a new note goes (2026-10-15): the END OF THE SENTENCE that holds the spot, because a box pinned
+  // at the clicked word broke the sentence for reading. A sentence ends at . ! ? or ; (plus any closing
+  // quote or bracket) followed by a space or the end of the unit's text. A period is not an end after
+  // "e.g.", "i.e.", "vs." and the like, inside a decimal (1.5), after an initial (E. coli, J. R.), or
+  // when the next word starts with a small letter. No end after the spot: the end of the unit's text.
+  // Notes saved before this keep their stored spot.
+  var NOT_END = /(?:^|[\s(\[{“‘"'\/-])(?:[Ee]\.[Gg]|[Ii]\.[Ee]|[Vv]s|[Cc]f|[Ee]tc|[Aa]pprox|[Ee]sp|[Ii]ncl|Dr|Drs|Mr|Mrs|Ms|Prof|Sr|Jr|Fig|Figs|[Aa]l|U\.S|[ap]\.m|[A-Z]\.\s?[A-Z])$/;
+  function sentenceEnd(t, o) {
+    for (var i = Math.max(0, o - 1); i < t.length; i++) {
+      var ch = t[i];
+      if (ch !== "." && ch !== "!" && ch !== "?" && ch !== ";") continue;
+      var j = i + 1;
+      while (j < t.length && /["'”’»)\]}]/.test(t[j])) j++;
+      if (j < t.length && !/\s/.test(t[j])) continue;               // 1.5, U.S, "e.g.,"
+      if (ch === ".") {
+        if (NOT_END.test(t.slice(Math.max(0, i - 12), i))) continue;
+        var nx = t.slice(j, j + 8);
+        if (/^\s*[a-z]/.test(nx)) continue;                          // E. coli, "approx. the"
+        if (/(?:^|\s)[A-Z]$/.test(t.slice(Math.max(0, i - 2), i)) && /^\s*[A-Z]\.(?:\s|$)/.test(nx)) continue;   // J. R. Smith
+      }
+      return j;
+    }
+    return t.replace(/\s+$/, "").length;
+  }
   function startNote(u, o) {
     var t = unitText(u);
-    // never split a word: move to the end of the word the spot is in
-    if (o > 0 && isWordChar(t[o - 1])) while (o < t.length && isWordChar(t[o])) o++;
+    o = sentenceEnd(t, Math.min(Math.max(0, o), t.length));
     var n = anchorFor(u, o);
     n.id = newId("n"); n.t = ""; n.at = new Date().toISOString();
     var h = makeHost(n);
@@ -2504,15 +2689,21 @@ window.SitePrompts = {
     it.id = "n:" + id;
     return it;
   }
+  // A note's text changed (text) or the note was deleted (null): keep its review item in step. Returns a
+  // promise of the removed item {slug, item} on a delete (for Undo), else of null.
   function pipNoteChanged(id, text) {
-    if (!window.PipReview || pipExam === null || !pipExam) {
-      if (window.PipReview && pipExam === null) pipExamP().then(function (ex) { if (ex) pipNoteChanged(id, text); });
-      return;
+    function apply(ex) {
+      if (!ex || !window.PipReview) return null;
+      var s = ex.s, rid = "n:" + id, it = null;
+      window.PipReview.load(s).forEach(function (x) { if (x.id === rid) it = x; });
+      if (!it) return null;
+      if (text === null) { window.PipReview.remove(s, rid); return { slug: s, item: it }; }
+      window.PipReview.setNote(s, rid, text);
+      return null;
     }
-    var s = pipExam.s, rid = "n:" + id;
-    if (!window.PipReview.has(s, rid)) return;
-    if (text === null) { window.PipReview.remove(s, rid); return; }
-    window.PipReview.setNote(s, rid, text);
+    if (!window.PipReview) return Promise.resolve(null);
+    if (pipExam !== null) return Promise.resolve(apply(pipExam));     // known: change it now
+    return pipExamP().then(apply);
   }
 
   /* ------------------------------------------------------------------------------------------------
@@ -2524,7 +2715,10 @@ window.SitePrompts = {
     var p = pop; pop = null;
     try { if (how === "cancel") { if (p.cancel) p.cancel(); } else if (how !== "silent" && p.commit) p.commit(); } catch (e) {}
     p.el.remove();
-    if ((how === "cancel" || how === "done") && p.back && p.back.isConnected) { try { p.back.focus({ preventScroll: true }); } catch (e) {} }
+    if ((how === "cancel" || how === "done") && p.back) {
+      if (typeof p.back === "function") { try { p.back(); } catch (e) {} }
+      else if (p.back.isConnected) { try { p.back.focus({ preventScroll: true }); } catch (e) {} }
+    }
   }
   function placePopover(el, anchor) {
     var rect = anchor.getBoundingClientRect();
@@ -2553,7 +2747,7 @@ window.SitePrompts = {
     return b;
   }
 
-  function openHlPopover(key, anchor) {
+  function openHlPopover(key, anchor, back) {
     hideToolbar();
     closePopover("commit");
     var recs = recsOf(key);
@@ -2616,7 +2810,7 @@ window.SitePrompts = {
     // "Add to Pip" (a toggle: "Remove from Pip" once the passage is in the review guide)
     pipToggle(el, function () { return hlPipId(key); }, function () { return hlItem(key, textarea.value.trim()); });
 
-    pop = { el: el, commit: commit, flush: commit, back: null };
+    pop = { el: el, commit: commit, flush: commit, back: back || null };
     placePopover(el, anchor);
     textarea.focus({ preventScroll: true });
   }
@@ -2646,7 +2840,7 @@ window.SitePrompts = {
       var v = textarea.value.trim();
       if (!v) {
         if (isNew) { var hh = hostOf(id); if (hh) hh.remove(); }
-        else { deleteNote(id); if (window.showToast) window.showToast("Note deleted", 2500); }
+        else noteDeletedToast(deleteNote(id), true);
         return;
       }
       if (v === saved && !isNew) return;
@@ -2660,9 +2854,9 @@ window.SitePrompts = {
     row.appendChild(popBtn("hl-note-remove", isNew ? "Cancel" : "Delete note", function () {
       if (isNew) { closePopover("cancel"); return; }
       pop.commit = null; pop.back = null;
-      deleteNote(id);
+      var snap = deleteNote(id);
       closePopover("silent");
-      if (window.showToast) window.showToast("Note deleted", 2500);
+      noteDeletedToast(snap);
     }));
     row.appendChild(popBtn("hl-note-save", "Save note", function () { closePopover("done"); }));
     el.appendChild(row);
@@ -2687,21 +2881,62 @@ window.SitePrompts = {
 
   /* ------------------------------------------------------------------------------------------------
      SELECTION TOOLBAR: color swatches, "Note" and (on a Semester 2 exam's pages) "Add to Pip".
+     Keyboard (2026-10-15), the WAI-ARIA toolbar pattern: after a selection made with the keyboard
+     (Shift + arrows with caret browsing, or select-all), a polite live region says how to reach it;
+     nothing takes focus by itself, so someone just reading is never pulled away. Tab, while the
+     selection is there, moves into the toolbar (one tab stop); the arrow keys, Home and End move
+     between its buttons; Escape closes it and puts focus and the selection back where they were; Tab
+     again leaves it and carries on from the selection.
      ------------------------------------------------------------------------------------------------ */
-  var toolbar = null, lastPointer = "mouse";
+  var toolbar = null, lastPointer = "mouse", tbBack = null, liveEl = null;
   function hideToolbar() { if (toolbar) { toolbar.remove(); toolbar = null; } }
+  function announce(msg) {
+    if (!liveEl) {
+      liveEl = document.createElement("div");
+      liveEl.className = "sr-only";
+      liveEl.setAttribute("role", "status");
+      liveEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(liveEl);
+    }
+    liveEl.textContent = "";
+    setTimeout(function () { if (liveEl) liveEl.textContent = msg; }, 60);
+  }
+  function tbButtons(bar) { return Array.prototype.slice.call(bar.querySelectorAll("button")); }
+  function tbFocus(bar, i) {
+    var bs = tbButtons(bar);
+    if (!bs.length) return;
+    i = (i + bs.length) % bs.length;
+    bs.forEach(function (b, k) { b.tabIndex = k === i ? 0 : -1; });
+    try { bs[i].focus({ preventScroll: true }); } catch (e) {}
+  }
+  // where focus goes when the toolbar is left from the keyboard: the element that had it, else the
+  // unit the selection ended in (made focusable for the moment, see focusSpot)
+  function tbReturn(reselect) {
+    var back = tbBack;
+    tbBack = null;
+    if (!back) return;
+    var el = back.el;
+    if (el && el !== document.body && el !== document.documentElement && el.isConnected && !(toolbar && toolbar.contains(el))) {
+      try { el.focus({ preventScroll: true }); } catch (e) {}
+    } else {
+      focusSpot(findUnit(back.range.endContainer) || findUnit(back.range.startContainer));
+    }
+    if (reselect) { try { var s = window.getSelection(); s.removeAllRanges(); s.addRange(back.range); } catch (e) {} }
+  }
   function tbBtn(cls, text, label, fn) {
     var b = document.createElement("button");
     b.type = "button"; b.className = cls;
     if (text) b.textContent = text;
     b.setAttribute("aria-label", label); b.title = label;
+    b.tabIndex = -1;
     // mousedown is swallowed so the text selection survives the click; the action runs on click,
     // which a keyboard (Enter / Space) also fires
     b.addEventListener("mousedown", function (e) { e.preventDefault(); e.stopPropagation(); });
-    b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); fn(); });
+    b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); fn(e); });
     return b;
   }
-  function showToolbar(range) {
+  function showToolbar(range, viaKey) {
+    var again = !!(toolbar && toolbar.__kbd && viaKey);   // the same keyboard selection growing: say it once
     hideToolbar();
     var saved = range.cloneRange(), rect = range.getBoundingClientRect();
     var touch = lastPointer === "touch" || lastPointer === "pen";
@@ -2709,26 +2944,46 @@ window.SitePrompts = {
     bar.className = "hl-toolbar";
     bar.setAttribute("role", "toolbar");
     bar.setAttribute("aria-label", "Highlight tools");
+    bar.__kbd = !!viaKey;
+    function fromKeys() { return toolbar === bar && bar.contains(document.activeElement); }
     COLORS.forEach(function (color) {
       bar.appendChild(tbBtn("hl-swatch hl-swatch-" + color, "", "Highlight " + color, function () {
+        var kb = fromKeys(), back = tbBack;
+        tbBack = null;
         var key = createHighlight(saved, color);
         window.getSelection().removeAllRanges();
         hideToolbar();
-        if (!key) { if (window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000); return; }
+        if (!key) {
+          if (kb) { tbBack = back; tbReturn(true); }
+          if (window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000);
+          return;
+        }
         // Prompt for an optional note right away -- annotating is meant to feel like one motion with
         // highlighting. Clicking away keeps the highlight (and anything typed).
         var ms = marksOf(key);
-        if (ms.length) openHlPopover(key, ms[ms.length - 1]);
+        if (ms.length) openHlPopover(key, ms[ms.length - 1], kb ? function () { focusSpot(marksOf(key).pop()); } : null);
       }));
     });
     bar.appendChild(tbBtn("hl-tbtext", "Note", "Add a note box here", function () {
       var runs = snapRuns(runsFrom(saved).filter(Boolean));
+      tbBack = null;
       window.getSelection().removeAllRanges();
       hideToolbar();
       if (!runs.length) return;
       var last = runs[runs.length - 1];
       startNote(last.u, last.end);
     }));
+    bar.firstChild.tabIndex = 0;
+    bar.addEventListener("keydown", function (e) {
+      var bs = tbButtons(bar), i = bs.indexOf(document.activeElement);
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); tbFocus(bar, i + 1); }
+      else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); tbFocus(bar, i - 1); }
+      else if (e.key === "Home") { e.preventDefault(); tbFocus(bar, 0); }
+      else if (e.key === "End") { e.preventDefault(); tbFocus(bar, bs.length - 1); }
+      else if (e.key === "Escape" || e.key === "Esc") { e.preventDefault(); e.stopPropagation(); hideToolbar(); tbReturn(true); }
+      // Tab leaves the toolbar: focus goes back to the selection and the browser moves on from there
+      else if (e.key === "Tab") { e.stopPropagation(); hideToolbar(); tbReturn(false); }
+    });
     // If the drag ends below the toolbar's spot, a phone's own copy/paste menu sits above the
     // selection, so on touch the toolbar goes underneath instead.
     bar.style.top = (touch ? rect.bottom + window.scrollY + 12 : rect.top + window.scrollY - 46) + "px";
@@ -2736,20 +2991,39 @@ window.SitePrompts = {
     document.body.appendChild(bar);
     clampToViewport(bar);
     toolbar = bar;
+    if (viaKey && !again) announce("Highlight tools are open for your selection. Press Tab to use them, or Escape to close them.");
     pipExamP().then(function (ex) {
       if (!ex || toolbar !== bar) return;
       bar.appendChild(tbBtn("hl-tbtext hl-pipbtn", "Add to Pip", "Add to Pip: save this to your review guide", function () {
+        var kb = fromKeys();
         var runs = snapRuns(runsFrom(saved).filter(Boolean));
-        window.getSelection().removeAllRanges();
         hideToolbar();
+        if (kb) tbReturn(false); else tbBack = null;
+        window.getSelection().removeAllRanges();
         if (!runs.length) return;
         pipAdd(pipItem(runs[0].u, runsText(runs), "", { o: runs[0].start }));
       }));
       clampToViewport(bar);
     });
   }
+  // Tab with a live selection and the toolbar showing: into the toolbar (never from a form field or an
+  // open note box, and not once the selection has collapsed, e.g. after a plain arrow key)
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || e.shiftKey || e.altKey || e.ctrlKey || e.metaKey || !toolbar) return;
+    var a = document.activeElement;
+    if (toolbar.contains(a) || (pop && pop.el.contains(a))) return;
+    if (a && (/^(input|textarea|select)$/i.test(a.tagName) || a.isContentEditable)) return;
+    var s = window.getSelection();
+    if (!s || s.isCollapsed || !s.rangeCount || !s.toString().trim()) return;
+    e.preventDefault();
+    tbBack = { el: a, range: s.getRangeAt(0).cloneRange() };
+    var bs = tbButtons(toolbar), cur = 0;
+    bs.forEach(function (b, k) { if (b.tabIndex === 0) cur = k; });
+    tbFocus(toolbar, cur);
+  });
 
-  function onSelectionDone(e) {
+  function onSelectionDone(e, how) {
+    how = how || {};
     if (e && e.target && e.target.closest) {
       if (toolbar && toolbar.contains(e.target)) return;
       if (pop && pop.el.contains(e.target)) return;
@@ -2765,7 +3039,7 @@ window.SitePrompts = {
     var runs = runsFrom(range);
     if (runs.length && runs[runs.length - 1] === null) {
       hideToolbar();
-      if (window.showToast) window.showToast("That selection is too long to highlight. Select a smaller passage.", 3000);
+      if (!how.quiet && window.showToast) window.showToast("That selection is too long to highlight. Select a smaller passage.", 3000);
       return;
     }
     if (!runs.length) {
@@ -2775,12 +3049,12 @@ window.SitePrompts = {
       var hl = root.closest("mark.user-hl") || Array.prototype.some.call(wrap.querySelectorAll("mark.user-hl"), function (m) {
         try { return range.intersectsNode(m); } catch (x) { return false; }
       });
-      if (!hl && window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000);
+      if (!hl && !how.quiet && window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000);
       return;
     }
-    showToolbar(range);
+    showToolbar(range, !!how.key);
   }
-  document.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType || "mouse"; }, true);
+  document.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType || "mouse"; lastInput = "pointer"; }, true);
   document.addEventListener("mouseup", function (e) {
     if (lastPointer === "touch" || lastPointer === "pen") return;   // touch: selectionchange below
     onSelectionDone(e);
@@ -2797,12 +3071,30 @@ window.SitePrompts = {
       onSelectionDone(null);
     }, 500);
   });
-  // keyboard selection (Shift + arrows, with caret browsing)
-  document.addEventListener("keyup", function (e) {
+  // keyboard selection: Shift + arrows / Home / End / Page keys (with caret browsing), letting go of
+  // Shift after them, or select-all (quiet: a whole-page select-all is too long and that is fine)
+  var keySel = false;
+  document.addEventListener("keydown", function (e) {
     if (!e.shiftKey || !/^(Arrow|Home|End|Page)/.test(e.key)) return;
+    var t = e.target;      // Shift + arrows inside a text field selects in the field, not the guide
+    keySel = !(t && t.nodeType === 1 && (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable));
+  }, true);
+  document.addEventListener("keyup", function (e) {
+    var sel = keySel;
+    if (e.key === "Shift") keySel = false;          // letting go of Shift ends the gesture, whatever returns below
     var a = document.activeElement;
-    if (a && /^(input|textarea|select)$/i.test(a.tagName)) return;
-    onSelectionDone(null);
+    if (a && (/^(input|textarea|select)$/i.test(a.tagName) || a.isContentEditable)) return;
+    if (toolbar && toolbar.contains(a)) return;
+    if (pop && pop.el.contains(a)) return;
+    var nav = /^(Arrow|Home|End|Page)/.test(e.key);
+    if (nav && !e.shiftKey) {                       // the caret moved on: a collapsed selection has no tools
+      var s = window.getSelection();
+      if (toolbar && (!s || s.isCollapsed)) hideToolbar();
+      return;
+    }
+    var all = (e.ctrlKey || e.metaKey) && (e.key === "a" || e.key === "A");
+    if (!all && !(sel && ((e.shiftKey && nav) || e.key === "Shift"))) return;
+    onSelectionDone(null, { key: true, quiet: all });
   });
   document.addEventListener("mousedown", function (e) {
     if (toolbar && !toolbar.contains(e.target)) hideToolbar();
@@ -2999,11 +3291,15 @@ window.SitePrompts = {
       var id = h.getAttribute("data-gnote");
       list.appendChild(item("gnote-swatch", "", h.getAttribute("data-text"),
         function () { jumpTo(h); setTimeout(function () { try { h.focus({ preventScroll: true }); } catch (e) {} }, 400); },
-        function () { deleteNote(id); openHlPanel(); }, "Delete this note"));
+        function () { var snap = deleteNote(id); openHlPanel(); noteDeletedToast(snap); }, "Delete this note"));
     });
     orphanNotes.forEach(function (n) {
       list.appendChild(item("gnote-swatch", "", n.t + "  (its spot in the guide has changed)", null,
-        function () { deleteNote(n.id); orphanNotes = orphanNotes.filter(function (x) { return x !== n; }); openHlPanel(); }, "Delete this note"));
+        function () {
+          var snap = deleteNote(n.id);
+          orphanNotes = orphanNotes.filter(function (x) { return x !== n; });
+          openHlPanel(); noteDeletedToast(snap);
+        }, "Delete this note"));
     });
     panel.appendChild(list);
 
@@ -3259,13 +3555,51 @@ window.SitePrompts = {
       }, function () { /* permission-denied before Firestore rules are published, or offline -- just stay empty, same as presence.js */ });
     }
 
+    // both resolve to true when the write landed, false when it did not (never reject)
     function pushDoc(db, uid, idx, start, end) {
-      db.collection("sharedHighlights").doc(guideId).collection("marks").doc(markId(uid, idx, start, end))
-        .set({ idx: idx, start: start, end: end, uid: uid, updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
-        .catch(function () {});
+      try {
+        return db.collection("sharedHighlights").doc(guideId).collection("marks").doc(markId(uid, idx, start, end))
+          .set({ idx: idx, start: start, end: end, uid: uid, updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+          .then(function () { return true; }, function () { return false; });
+      } catch (e) { return Promise.resolve(false); }
     }
     function deleteDoc(db, uid, idx, start, end) {
-      db.collection("sharedHighlights").doc(guideId).collection("marks").doc(markId(uid, idx, start, end)).delete().catch(function () {});
+      try {
+        return db.collection("sharedHighlights").doc(guideId).collection("marks").doc(markId(uid, idx, start, end)).delete()
+          .then(function () { return true; }, function () { return false; });
+      } catch (e) { return Promise.resolve(false); }
+    }
+
+    // Backfill bookkeeping (2026-10-15). The backfill used to run on EVERY auth callback, which fires on
+    // every page load (and again on any later auth change), so each guide visit by a sharing student
+    // re-wrote one Firestore document per highlight. Now it runs at most once per signed-in account
+    // per page load, and not at all when the set of highlight positions is the one this device last
+    // sent completely: a device-only marker ("local:" keys are never synced) holds a hash of the
+    // account and the positions. A new or removed highlight updates the marker once its own write
+    // lands, so the next visit costs nothing.
+    var SENT_KEY = "local:sharedHlSent:" + location.pathname;
+    var backfilled = {}, inSync = false;
+    function posList() {
+      return loadHighlights().filter(function (h) {
+        return h && (typeof h.idx === "number" || typeof h.idx === "string") && typeof h.start === "number" && typeof h.end === "number";
+      });
+    }
+    function sig(uid) {
+      var s = uid + "|" + posList().map(function (h) { return h.idx + "_" + h.start + "_" + h.end; }).sort().join(","), x = 0x811c9dc5;
+      for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 0x01000193); }
+      return (x >>> 0).toString(36) + "." + s.length;
+    }
+    function markSent(uid) { try { localStorage.setItem(SENT_KEY, sig(uid)); } catch (e) {} }
+    function backfill(db, uid) {
+      if (backfilled[uid]) return;
+      backfilled[uid] = true;
+      var have = null;
+      try { have = localStorage.getItem(SENT_KEY); } catch (e) {}
+      if (have && have === sig(uid)) { inSync = true; return; }     // nothing changed since the last full send
+      inSync = false;
+      Promise.all(posList().map(function (h) { return pushDoc(db, uid, h.idx, h.start, h.end); })).then(function (r) {
+        if (r.every(Boolean)) { inSync = true; markSent(uid); }
+      });
     }
 
     function applyState(db, user) {
@@ -3277,15 +3611,14 @@ window.SitePrompts = {
         var uid = user.uid;
         sharedHl.enabled = true;
         sharedHl.uid = uid;
-        sharedHl.pushDoc = function (idx, start, end) { pushDoc(db, uid, idx, start, end); };
-        sharedHl.deleteDoc = function (idx, start, end) { deleteDoc(db, uid, idx, start, end); };
+        sharedHl.pushDoc = function (idx, start, end) { pushDoc(db, uid, idx, start, end).then(function (ok) { if (ok && inSync) markSent(uid); }); };
+        sharedHl.deleteDoc = function (idx, start, end) { deleteDoc(db, uid, idx, start, end).then(function (ok) { if (ok && inSync) markSent(uid); }); };
         // Backfill: push every highlight already saved locally, so turning
         // the toggle on (or signing in while it's already on) shares
         // everything made before this exact moment too, not just future
-        // ones. Cheap even for a guide with many highlights -- one small
-        // write per highlight, throttled by nothing since this only runs
-        // on an actual state transition, not on every page load.
-        loadHighlights().forEach(function (h) { pushDoc(db, uid, h.idx, h.start, h.end); });
+        // ones -- once per account per page load, and only when something
+        // changed since the last complete send (see backfill() above).
+        backfill(db, uid);
         subscribe(db, uid);
       } else {
         sharedHl.enabled = false;
@@ -3299,7 +3632,8 @@ window.SitePrompts = {
       var auth = firebase.auth();
       var db = firebase.firestore();
       auth.onAuthStateChanged(function (user) { applyState(db, user); });
-      window.addEventListener("shareHighlightsChanged", function () { applyState(db, auth.currentUser); });
+      // turning sharing on is a deliberate act: it may backfill again (still skipped if nothing changed)
+      window.addEventListener("shareHighlightsChanged", function () { backfilled = {}; applyState(db, auth.currentUser); });
     }
 
     if (window.__firebaseReady) boot();
@@ -3531,18 +3865,100 @@ window.openQuestionNav = (function () {
 // Shared toast (added 2026-07-10) -- generalizes the page-local
 // showToast() index.html already had (mailto/install-prompt confirmations)
 // so any page, quiz or otherwise, can call window.showToast() the same way.
-window.showToast = function (message, duration) {
+// An optional action (2026-10-15): showToast(message, duration, {label, onClick, focus, returnFocus}) adds
+// one real button (Undo, for instance). The toast is a polite live region, so the message is announced
+// without moving focus; `focus: true` moves focus to the button (for a keyboard user whose control has
+// just gone), and when the toast leaves while its button has focus, returnFocus() (or the element) gets
+// it. Hovering or focusing the toast holds it open. Callers with two arguments get exactly what they did.
+window.showToast = function (message, duration, action) {
   duration = duration || 3000;
-  var toast = document.getElementById("site-toast");
+  // The live region must exist (role and aria-live set, in the page) BEFORE its text changes, or some
+  // screen readers skip the first message: when it is new here, the text goes in on the next frame.
+  var toast = document.getElementById("site-toast"), fresh = false;
   if (!toast) {
     toast = document.createElement("div");
     toast.id = "site-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    toast.setAttribute("aria-atomic", "true");
     document.body.appendChild(toast);
+    fresh = true;
   }
-  toast.textContent = message;
-  requestAnimationFrame(function () { toast.style.opacity = "1"; });
+  if (!toast._live) {                 // first use here (home.js may have made the element without these)
+    toast._live = true;
+    if (!toast.hasAttribute("role")) { toast.setAttribute("role", "status"); fresh = true; }
+    if (!toast.hasAttribute("aria-live")) { toast.setAttribute("aria-live", "polite"); fresh = true; }
+    toast.setAttribute("aria-atomic", "true");
+    toast.addEventListener("mouseenter", function () { if (toast._act) clearTimeout(toast._hideTimer); });
+    toast.addEventListener("focusin", function () { if (toast._act && !toast._auto) clearTimeout(toast._hideTimer); });
+    toast.addEventListener("mouseleave", function () { if (toast._act && !toast.contains(document.activeElement)) toast._arm(2500); });
+    toast.addEventListener("focusout", function (e) { if (toast._act && !toast.contains(e.relatedTarget)) toast._arm(2500); });
+  }
   clearTimeout(toast._hideTimer);
-  toast._hideTimer = setTimeout(function () { toast.style.opacity = "0"; }, duration);
+  clearTimeout(toast._clearTimer);
+  var act = action && action.label && typeof action.onClick === "function" ? action : null;
+  var old = toast._act;
+  toast._act = act;
+  function hide() {
+    var btn = toast.querySelector(".site-toast-btn"), had = btn && document.activeElement === btn, a = toast._act;
+    toast.style.opacity = "0";
+    toast._act = null;
+    if (had && a) {
+      try { if (typeof a.returnFocus === "function") a.returnFocus(); else if (a.returnFocus && a.returnFocus.focus) a.returnFocus.focus({ preventScroll: true }); } catch (e) {}
+      if (document.activeElement === btn) btn.blur();
+    }
+    if (btn) {
+      // unreachable at once (not clickable, not in the Tab order); removed when the fade is over
+      btn.disabled = true; btn.tabIndex = -1;
+      toast.style.pointerEvents = "none";
+      toast._clearTimer = setTimeout(function () {
+        if (toast._act) return;
+        if (btn.parentNode) btn.remove();
+        toast.classList.remove("has-action");
+        toast.style.pointerEvents = "";
+      }, 260);
+    }
+  }
+  toast._arm = function (ms) { clearTimeout(toast._hideTimer); toast._hideTimer = setTimeout(hide, ms); };
+  var seq = toast._seq = (toast._seq || 0) + 1;
+  function fill() {
+    if (!act) {
+      // a toast replacing one that had focus on its button: do not leave focus on a vanishing button
+      var prev = toast.querySelector(".site-toast-btn");
+      if (prev && document.activeElement === prev && old) { try { if (typeof old.returnFocus === "function") old.returnFocus(); else prev.blur(); } catch (e) {} }
+      toast.textContent = message;
+      toast.classList.remove("has-action");
+      toast.style.pointerEvents = "";
+    } else {
+      toast.textContent = "";
+      var msg = document.createElement("span");
+      msg.className = "site-toast-msg";
+      msg.textContent = message;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "site-toast-btn";
+      b.textContent = act.label;
+      b.addEventListener("click", function (e) {
+        if (toast._act !== act) return;
+        hide();
+        try { act.onClick(e); } catch (x) {}
+      });
+      b.addEventListener("keydown", function (e) { if (e.key === "Escape" || e.key === "Esc") { e.stopPropagation(); hide(); } });
+      toast.appendChild(msg);
+      toast.appendChild(b);
+      toast.classList.add("has-action");
+      toast.style.pointerEvents = "";
+      // moved there by us, not by the student: the toast still leaves on time (their own focus holds it)
+      if (act.focus) { toast._auto = true; try { b.focus({ preventScroll: true }); } catch (e) {} toast._auto = false; }
+    }
+  }
+  if (fresh) {
+    requestAnimationFrame(function () { if (toast._seq !== seq) return; fill(); toast.style.opacity = "1"; });
+  } else {
+    fill();
+    requestAnimationFrame(function () { toast.style.opacity = "1"; });
+  }
+  toast._hideTimer = setTimeout(hide, duration);
 };
 
 // In-quiz answer-streak feedback (added 2026-07-10). Each MCQ quiz family
@@ -6676,7 +7092,14 @@ window.__themeKit.fireworks = function (cfg) {
   var MARK_CSS =
     ".gl-mark{background:#fef3d4!important;color:#3a2c05!important;box-shadow:0 0 0 4px #fef3d4,0 0 0 5px #e8c766;border-radius:4px}" +
     ":root[data-theme='dark'] .gl-mark{background:#4a3a12!important;color:#f7ecc8!important;box-shadow:0 0 0 4px #4a3a12,0 0 0 5px #7a6220}" +
-    ".gl-head-mark{scroll-margin-top:10px;border-left:4px solid #e8c766;padding-left:10px!important}";
+    ".gl-head-mark{scroll-margin-top:10px;border-left:4px solid #e8c766;padding-left:10px!important}" +
+    // the sentence Pip quoted (o.quote): the Guides amber, derived from the site tokens, plus an underline
+    // so it never rests on color alone; authored light under the older invert-filter dark mode
+    ".gl-quote{background:var(--a-amber-soft,#fff2e8)!important;background:color-mix(in oklab,var(--a-amber,#ad631e) 22%,transparent)!important;" +
+    "color:inherit!important;border-radius:3px;box-shadow:inset 0 -2px 0 var(--a-amber,#ad631e);padding:1px 0;" +
+    "-webkit-box-decoration-break:clone;box-decoration-break:clone}" +
+    ":root[data-theme='dark'] body:not([data-dark='tokens']) .gl-quote{background:#eddcce!important;box-shadow:inset 0 -2px 0 #ad631e}" +
+    "@media (forced-colors:active){.gl-quote{forced-color-adjust:none;background:Mark!important;color:MarkText!important;box-shadow:none;outline:1px solid CanvasText}}";
   var CHROME_CSS =
     ".guide-back-bar,header.top,nav.toc,#quiz-footer-logo,#pull-refresh,.guide-foot,.word-btn," +
     ".corner-btn,[class*='floating'],.toc-fab{display:none!important}" +
@@ -6710,6 +7133,103 @@ window.__themeKit.fireworks = function (cfg) {
     return best;
   }
 
+  /* The exact sentence Claude cited (o.quote, 2026-10-15): found in the anchored section first, then
+     anywhere in the guide, comparing text with whitespace collapsed, curly quotes and dashes made plain
+     and case ignored; wrapped in <mark class="gl-quote"> pieces (one per text node, so no element is
+     ever split). Returns the marks, or null when the words are not there. */
+  var Q_SKIP = "script, style, noscript, template, svg, nav, .guide-back-bar, header.top";   // hidden in the panel or not text
+  // one-for-one character folding (so offsets carry over): quotes, dashes, case; whitespace is collapsed separately
+  function qFold(s) {
+    var l = s.toLowerCase();
+    if (l.length !== s.length) l = s;      // a character whose lower case is longer (rare): compare it as written
+    return l.replace(/[‘’‚‛′`]/g, "'").replace(/[“”„‟″]/g, '"').replace(/[‐‑‒–—―−]/g, "-").replace(/…/g, ".");
+  }
+  function qNorm(s) { return qFold(String(s)).replace(/\s+/g, " ").trim(); }
+  function sectionEnd(target) {        // a heading's section runs to the next heading of its rank or higher
+    var m = /^H([1-6])$/.exec(target.tagName);
+    if (!m) return null;
+    var all = target.ownerDocument.querySelectorAll("h1,h2,h3,h4,h5,h6"), seen = false;
+    for (var i = 0; i < all.length; i++) {
+      if (all[i] === target) { seen = true; continue; }
+      if (seen && Number(all[i].tagName.slice(1)) <= Number(m[1])) return all[i];
+    }
+    return null;
+  }
+  function markQuote(doc, target, quote) {
+    var want = qNorm(String(quote || "")), body = doc.body;
+    if (want.replace(/[^a-z0-9]/g, "").length < 4 || !body) return null;
+    // the guide's text, folded and with whitespace collapsed, built a text node at a time; seg* record where
+    // each copied run starts in `text` and which node / offset it came from, so a match maps back exactly
+    var text = "", segAt = [], segNode = [], segOff = [], w = doc.createTreeWalker(body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.parentElement && n.parentElement.closest(Q_SKIP) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    }), n, ws = /\s+/g, m0, last, endsSpace = true;    // (never read text[i] while building: that flattens it every time)
+    while ((n = w.nextNode())) {
+      var f = qFold(n.data);
+      ws.lastIndex = 0; last = 0;
+      while (true) {
+        m0 = ws.exec(f);
+        var stop = m0 ? m0.index : f.length;
+        if (stop > last) { segAt.push(text.length); segNode.push(n); segOff.push(last); text += f.slice(last, stop); endsSpace = false; }
+        if (!m0) break;
+        if (!endsSpace) { segAt.push(text.length); segNode.push(n); segOff.push(m0.index); text += " "; endsSpace = true; }
+        last = m0.index + m0[0].length;
+      }
+    }
+    function at(i) {                    // text index -> [node, offset]
+      var lo = 0, hi = segAt.length - 1;
+      while (lo < hi) { var mid = (lo + hi + 1) >> 1; if (segAt[mid] <= i) lo = mid; else hi = mid - 1; }
+      return [segNode[lo], segOff[lo] + (i - segAt[lo])];
+    }
+    function find(q) {
+      var hits = [], k = text.indexOf(q);
+      while (k >= 0 && hits.length < 50) { hits.push(k); k = text.indexOf(q, k + 1); }
+      return hits;
+    }
+    var hits = find(want);
+    if (!hits.length) {                // the sentence without its outer quotes or closing punctuation
+      want = want.replace(/^["'(\[ ]+|["')\]., ;:!?]+$/g, "");
+      if (want.replace(/[^a-z0-9]/g, "").length < 4) return null;
+      hits = find(want);
+    }
+    if (!hits.length) return null;
+    // in the anchored section (inside it, or under its heading), else the first one after it, else the first
+    var pick = -1, after = -1;
+    if (target && target !== body) {
+      var end = sectionEnd(target), head = /^H[1-6]$/.test(target.tagName);
+      for (var h = 0; h < hits.length && pick < 0; h++) {
+        var node = at(hits[h])[0], follows = !!(target.compareDocumentPosition(node) & 4);
+        if (target.contains(node) || (head && follows && (!end || (end.compareDocumentPosition(node) & 2)))) pick = hits[h];
+        else if (follows && after < 0) after = hits[h];
+      }
+    }
+    if (pick < 0) pick = after >= 0 ? after : hits[0];
+    var a = at(pick), b = at(pick + want.length - 1), r = doc.createRange();
+    r.setStart(a[0], a[1]); r.setEnd(b[0], b[1] + 1);
+    var pieces = [], tw = doc.createTreeWalker(r.commonAncestorContainer.nodeType === 3 ? r.commonAncestorContainer.parentNode : r.commonAncestorContainer, NodeFilter.SHOW_TEXT, null), t;
+    while ((t = tw.nextNode())) {
+      if (!r.intersectsNode(t)) continue;
+      var s0 = t === a[0] ? a[1] : 0, e0 = t === b[0] ? b[1] + 1 : t.data.length;
+      if (e0 > s0) pieces.push([t, s0, e0]);
+    }
+    var marks = [];
+    pieces.forEach(function (p) {
+      var node = p[0], par = node.parentNode, txt = node.data.slice(p[1], p[2]);
+      if (!par || (!/\S/.test(txt) && /^(TABLE|THEAD|TBODY|TFOOT|TR|UL|OL|DL|SELECT)$/.test(par.nodeName))) return;
+      var mid = p[1] > 0 ? node.splitText(p[1]) : node;
+      if (p[2] - p[1] < mid.data.length) mid.splitText(p[2] - p[1]);
+      var m = doc.createElement("mark");
+      m.className = "gl-quote";
+      mid.parentNode.insertBefore(m, mid);
+      m.appendChild(mid);
+      marks.push(m);
+    });
+    if (!marks.length) return null;
+    marks[0].title = "The sentence Pip quoted";
+    return marks;
+  }
+
   function arrive(frame, L, panel) {
     var doc = frame.contentDocument, win = frame.contentWindow;
     if (!doc || !win) return;
@@ -6719,11 +7239,14 @@ window.__themeKit.fireworks = function (cfg) {
     var target = L[1] ? doc.getElementById(L[1]) : doc.body;
     if (!target) { panel.querySelector(".gl-load").textContent = "That part of the guide moved. Use “Open full guide”."; return; }
     for (var p = target; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
-    var hit = L[3] ? findBlock(doc, target, L[3]) : null;
+    var quoted = null;
+    if (L[6]) { try { quoted = markQuote(doc, target, L[6]); } catch (e) { quoted = null; } }
+    var hit = quoted ? quoted[0] : (L[3] ? findBlock(doc, target, L[3]) : null);
     if (!hit && L[5] && L[3] && L[3].length > 90) hit = findBlock(doc, target, L[3].slice(0, 90));   // Pip's longer passages: match their opening
     if (hit) for (var d = hit; d; d = d.parentElement) if (d.tagName === "DETAILS") d.open = true;
     var mark = hit || target;
-    if (hit) hit.classList.add("gl-mark"); else if (L[1]) target.classList.add("gl-head-mark");
+    if (quoted) { /* the cited words carry their own mark */ }
+    else if (hit) hit.classList.add("gl-mark"); else if (L[1]) target.classList.add("gl-head-mark");
     // Images above the passage load late and push it down, so keep it pinned
     // to the same spot until the student takes over (any scroll gesture / key)
     // or a few seconds pass. Eager loading so the shifts happen now, not as
@@ -6772,12 +7295,15 @@ window.__themeKit.fireworks = function (cfg) {
     showPanel(L, new URL(links.g[L[0]], location.href).href, trigger, "Back to question", null);
   }
   /* The generic opener (2026-10-11): any page that loads theme.js can open a guide passage in this same
-     panel, for Pip's guide links. o = {url (the guide, with or without #anchor), anchor, title, label, passage}.
-     Escape, x, tapping outside or the phone's Back closes it and the page is exactly as it was. */
+     panel, for Pip's guide links. o = {url (the guide, with or without #anchor), anchor, title, label, passage,
+     quote}. quote (2026-10-15, optional): the exact sentence Claude cited; when it is found it is marked
+     (gl-quote) and scrolled to instead of the passage's block, and when it is not the panel behaves as
+     before. Escape, x, tapping outside or the phone's Back closes it and the page is exactly as it was. */
   window.openGuidePanel = function (o) {
     if (!o || !o.url) return false;
-    var u = String(o.url), anchor = o.anchor || (u.indexOf("#") >= 0 ? decodeURIComponent(u.split("#")[1]) : "");
-    var L = [0, anchor, o.title || "", o.passage || "", 0, 1];
+    var u = String(o.url), anchor = o.anchor || "";
+    if (!anchor && u.indexOf("#") >= 0) { try { anchor = decodeURIComponent(u.split("#")[1]); } catch (e) { anchor = u.split("#")[1]; } }
+    var L = [0, anchor, o.title || "", o.passage || "", 0, 1, typeof o.quote === "string" ? o.quote.slice(0, 1200) : ""];
     showPanel(L, new URL(u, location.href).href.split("#")[0], document.activeElement, "Back to page", o.label || "Study guide");
     return true;
   };

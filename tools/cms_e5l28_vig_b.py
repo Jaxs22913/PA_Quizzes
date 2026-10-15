@@ -6,8 +6,11 @@ KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
 
 Patient vignettes with a varied lead-in (the lead-in decides the answer).
 Slides only; no recording exists yet (lecture 2026-10-01). Amiodarone is keyed
-from slide 78 ("proven to reduce ... sudden cardiac death"), never from the
-mislabelled heading on slide 76. The octopus-trap picture's "X-ray" is not
+only for converting atrial fibrillation and flutter (slide 78), never for sudden
+death: slide 78's "proven to reduce ... sudden cardiac death" conflicts with
+current guidelines, which find no antiarrhythmic proven for that (the
+implantable cardioverter-defibrillator is), so truth wins (owner, 2026-10-15).
+Never from the mislabelled heading on slide 76. The octopus-trap picture's "X-ray" is not
 used; Takotsubo is confirmed by catheterization (slide 103).
 """
 import os, sys
@@ -22,6 +25,11 @@ def S(topic, io, q, opts, cite, slot):
 
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
 
 
 HCM = "Hypertrophic cardiomyopathy"
@@ -134,7 +142,7 @@ V(HCM, IO_A,
    ["Verapamil",
     "Verapamil is a nondihydropyridine calcium channel blocker used to treat outflow tract obstruction. The drug to avoid is a nitrate such as nitroglycerin."],
    ["Amiodarone",
-    "Amiodarone is used in hypertrophic cardiomyopathy to reduce the risk of sudden cardiac death and to control atrial fibrillation. It is not the drug to avoid."]],
+    "Amiodarone is used in hypertrophic cardiomyopathy to convert atrial fibrillation and flutter to sinus rhythm and suppress their recurrence. It is not the drug to avoid."]],
   C(77), "avoid", "avoid"),
 
 V(HCM, IO_A,
@@ -144,7 +152,7 @@ V(HCM, IO_A,
    ["Beta blockers such as metoprolol",
     "Beta blockers are the initial medication for outflow tract obstruction, reducing contractility and improving filling. They are not the class to avoid."],
    ["Antiarrhythmics such as amiodarone",
-    "Amiodarone reduces the risk of sudden cardiac death and converts atrial fibrillation in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."],
+    "Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."],
    ["Calcium channel blockers like verapamil",
     "Verapamil and diltiazem treat outflow obstruction by slowing the heart and reducing contractility. Drugs that increase contractility are the ones avoided."]],
   C(77), "avoid", "avoid"),
@@ -161,17 +169,20 @@ V(HCM, IO_A,
     "Patients with hypertrophic cardiomyopathy are taught to avoid excess alcohol consumption, alongside keeping well hydrated and avoiding competitive exertion."]],
   C(82), "education", "education"),
 
-V(HCM, IO_A,
-  "A 30-year-old man with hypertrophic cardiomyopathy and no high-risk features wants to stay active. He used to run marathons competitively and asks what level of exercise he should aim for. Which counseling point is most appropriate?",
-  [["Regular exercise; shared decision on sport",
-    "Correct. Current guidance encourages regular mild to moderate exercise, and strenuous or competitive sport, such as his former marathons, is decided jointly with a specialist center; classic teaching limited patients to mild to moderate, noncompetitive recreation because sudden death relates to extreme exertion."],
-   ["Unrestricted competitive team sports",
-    "Competitive sport is not simply unrestricted: sudden cardiac death in hypertrophic cardiomyopathy relates to extreme exertion, so strenuous or competitive activity needs a shared decision with a specialist center."],
-   ["Strict bed rest for the rest of life",
-    "Complete rest is not the recommendation. Regular mild to moderate exercise is encouraged, with strenuous or competitive sport decided jointly with a specialist center."],
-   ["Heavy lifting to build heart strength",
-    "Strenuous exertion is what drives sudden death risk in hypertrophic cardiomyopathy, so it is not advised routinely. Regular mild to moderate exercise is encouraged, with specialist input on strenuous sport."]],
-  C(82), "education", "education"),
+M(V(HCM, IO_A,
+  "A 30-year-old man with obstructive hypertrophic cardiomyopathy is stable on a beta blocker. He drinks six to eight beers on most weekend nights and asks whether he needs to change anything. Which counseling point is most appropriate?",
+  [["Avoid drinking alcohol to excess",
+    "Correct. Patient education in hypertrophic cardiomyopathy includes avoiding excess alcohol consumption and maintaining hydration while avoiding dehydration; his weekend drinking is excess and should be cut back."],
+   ["No limit while on his beta blocker",
+    "A beta blocker is the initial medication for outflow obstruction, but it does not make heavy drinking safe. Avoiding excess alcohol is part of patient education in this disease."],
+   ["Restrict his daily fluid intake",
+    "Fluid restriction risks dehydration, which patients with hypertrophic cardiomyopathy are taught to avoid by maintaining hydration. The change he needs is to avoid excess alcohol."],
+   ["Restrict salt; alcohol is fine",
+    "Sodium restriction is patient education for dilated cardiomyopathy. In hypertrophic cardiomyopathy the advice includes avoiding excess alcohol, so his drinking is not fine."]],
+  DECK + ", Slides 45, 76, 82", "education", "education"),
+  {"No limit while on his beta blocker": "common lay belief: medication makes heavy drinking safe",
+   "Restrict his daily fluid intake": "reversed value: fluid restriction where hydration is advised",
+   "Restrict salt; alcohol is fine": "adjacent fact: the dilated cardiomyopathy education point"}),
 
 V(HCM, IO_A,
   "A 52-year-old woman with hypertrophic cardiomyopathy has new palpitations. Her pulse is irregularly irregular and the electrocardiogram shows atrial fibrillation. Echocardiogram shows left atrial enlargement. Which treatment prevents embolic stroke in her?",
@@ -185,17 +196,20 @@ V(HCM, IO_A,
     "Diuretics are used only with caution in hypertrophic cardiomyopathy and do not prevent thromboembolism. Anticoagulation is the stroke-prevention step."]],
   C(78), "agent/regimen", "treatment"),
 
-V(HCM, IO_A,
-  "A 28-year-old man with hypertrophic cardiomyopathy without obstruction has brief runs of ventricular tachycardia on ambulatory monitoring. A defibrillator is being arranged. Which antiarrhythmic has been shown to reduce his risk of sudden cardiac death?",
+M(V(HCM, IO_A,
+  "A 46-year-old woman with obstructive hypertrophic cardiomyopathy has recurrent palpitations from atrial fibrillation and atrial flutter. She already takes anticoagulation to prevent embolic stroke. Which medication is used to convert her rhythm to sinus and suppress recurrence?",
   [["Amiodarone",
-    "Correct. Amiodarone is proven to reduce the incidence and risk of sudden cardiac death in hypertrophic cardiomyopathy, with or without outflow obstruction, and it also converts and suppresses atrial fibrillation and flutter."],
+    "Correct. Amiodarone is very effective at converting atrial fibrillation and flutter to sinus rhythm and suppressing recurrence of these arrhythmias in hypertrophic cardiomyopathy, while anticoagulation prevents embolic stroke."],
    ["Digoxin",
-    "Digoxin is a positive inotrope avoided in hypertrophic cardiomyopathy because it raises contractility and may induce arrhythmias. Amiodarone reduces sudden death risk."],
+    "Digoxin is a positive inotrope avoided in hypertrophic cardiomyopathy because it raises contractility and may induce arrhythmias. Amiodarone converts and suppresses atrial fibrillation."],
    ["Nitroglycerin",
-    "Nitroglycerin is avoided in hypertrophic cardiomyopathy because it reduces preload and afterload. It has no role in preventing sudden cardiac death; amiodarone does."],
+    "Nitrates are avoided in hypertrophic cardiomyopathy because reducing preload or afterload aggravates outflow obstruction, and they do not convert the rhythm. Amiodarone does."],
    ["Epinephrine",
-    "Epinephrine is a positive inotrope that increases contractility and may induce arrhythmias, so it is avoided. Amiodarone is the antiarrhythmic shown to reduce sudden death."]],
-  C(78), "agent/regimen", "treatment"),
+    "Epinephrine is a positive inotrope that increases contractility and may induce arrhythmias, so it is avoided. Amiodarone converts atrial fibrillation and flutter to sinus rhythm."]],
+  DECK + ", Slides 77, 78", "agent/regimen", "treatment"),
+  {"Digoxin": "adjacent fact: a drug that is avoided in this disease",
+   "Nitroglycerin": "confused drug class: a vasodilator for chest pain",
+   "Epinephrine": "confused drug class: a positive inotrope"}),
 
 V(HCM, IO_A,
   "A 38-year-old woman with obstructive hypertrophic cardiomyopathy still has disabling breathlessness despite a beta blocker and later verapamil. Echocardiogram shows systolic anterior motion (the anterior mitral leaflet pulled into the outflow tract) with mitral regurgitation. Which is the most appropriate next step?",
@@ -209,17 +223,20 @@ V(HCM, IO_A,
     "Diuretics lower preload and can worsen obstruction; they are used only with caution. Symptoms refractory to medication are treated with septal myectomy."]],
   C(79), "escalation", "next step"),
 
-V(HCM, IO_A,
-  "A 59-year-old man with obstructive hypertrophic cardiomyopathy has just undergone alcohol septal ablation, in which alcohol is injected through a catheter into a septal branch of the coronary artery. He asks when he can expect his symptoms to improve. Which answer is most accurate?",
-  [["Over months as the septum thins",
-    "Correct. Alcohol septal ablation induces a therapeutic infarction of the proximal septum, and it takes months for the septum to thin and the outflow obstruction to ease."],
-   ["Within minutes of the injection",
-    "The ablation creates a controlled infarction of septal muscle, and the benefit comes as the septum thins, which takes months rather than minutes."],
-   ["Only after a repeat injection",
-    "A repeat procedure is not routine; the effect develops over months as the infarcted septal muscle thins. Reintervention is needed in a minority of patients."],
-   ["Never; it is a diagnostic test",
-    "Alcohol septal ablation is a treatment for outflow obstruction, not a diagnostic test. The septum thins over months after the therapeutic infarction."]],
-  C(81), "prognosis", "education"),
+M(V(HCM, IO_A,
+  "A 49-year-old woman with hypertrophic cardiomyopathy has heart failure symptoms that have gradually progressed over several years despite treatment. She asks what option exists if her disease stops responding to conventional therapy. Which answer is most accurate?",
+  [["Cardiac transplantation",
+    "Correct. In hypertrophic cardiomyopathy heart failure symptoms gradually progress, and cardiac transplantation is the option when the disease is unresponsive to conventional therapy."],
+   ["Digoxin to boost contraction",
+    "Digoxin is a positive inotrope, and these drugs are avoided in hypertrophic cardiomyopathy because they raise contractility, risk myocardial ischemia and may induce arrhythmias. Transplantation is the option for refractory disease."],
+   ["Daily nitrates for comfort",
+    "Nitrates reduce preload and are avoided where possible in hypertrophic cardiomyopathy because they aggravate outflow tract obstruction and worsen symptoms. Transplantation is the option for refractory disease."],
+   ["Genetic testing to guide therapy",
+    "Genetic testing is available in hypertrophic cardiomyopathy but does not influence treatment, so it adds no therapy. Cardiac transplantation is the option for disease unresponsive to conventional therapy."]],
+  DECK + ", Slides 75, 77, 82", "prognosis", "education"),
+  {"Digoxin to boost contraction": "confused role: a positive inotrope taken as help for a failing heart",
+   "Daily nitrates for comfort": "adjacent fact: chest pain relief from coronary disease applied to outflow obstruction",
+   "Genetic testing to guide therapy": "common lay belief: a gene result changes treatment"}),
 
 V(HCM, IO_A,
   "A 20-year-old man has just been diagnosed with hypertrophic cardiomyopathy on echocardiography. He has two younger sisters and a brother. His mother had unexplained sudden death at 44. Which step for his family is most appropriate?",
@@ -367,15 +384,18 @@ V(TAK, IO_A,
     "Myectomy relieves septal obstruction in hypertrophic cardiomyopathy. A thrombus in the akinetic apex is treated with anticoagulation."]],
   C(104), "agent/regimen", "treatment"),
 
-V(TAK, IO_A,
-  "A 66-year-old woman with stress cardiomyopathy confirmed by normal coronary arteries at catheterization is stable, with no ventricular thrombus and no signs of heart failure. Which medication is described as helpful in her supportive treatment?",
+M(V(TAK, IO_A,
+  "A 66-year-old woman with stress cardiomyopathy confirmed by normal coronary arteries at catheterization is stable, with no ventricular thrombus and no signs of heart failure. Which medication is helpful in her supportive treatment?",
   [["A beta blocker",
-    "Correct. Treatment of Takotsubo is empiric and supportive and depends on the presentation; beta blockers are described as helpful, with anticoagulation only for a thrombus and diuretics only for heart failure."],
+    "Correct. Treatment of Takotsubo is empiric and supportive and depends on the presentation: beta blockers are helpful, anticoagulation is for a left ventricular thrombus and diuretics are for heart failure."],
    ["An inotrope infusion",
-    "Nothing in her stable presentation calls for an inotrope. Supportive treatment in stress cardiomyopathy lists beta blockers as helpful."],
+    "She is stable with no heart failure, so nothing in her presentation calls for an inotrope. In the supportive treatment of stress cardiomyopathy, beta blockers are helpful."],
    ["A thrombolytic drug",
     "Her coronary arteries are normal and there is no clot to dissolve. Beta blockers are the helpful supportive medication in Takotsubo."],
    ["Amyl nitrite by inhalation",
-    "Amyl nitrite is a bedside maneuver agent that lowers afterload to change a murmur. It is not a treatment for stress cardiomyopathy; beta blockers are."]],
-  C(104), "first-line", "treatment"),
+    "Amyl nitrite lowers afterload and is used to change the murmur of obstructive hypertrophic cardiomyopathy, not to treat stress cardiomyopathy. Beta blockers are the helpful supportive medication."]],
+  DECK + ", Slides 69, 103, 104 (slide 69 picture)", "first-line", "treatment"),
+  {"An inotrope infusion": "ruled out by a stated finding: she is stable with no heart failure",
+   "A thrombolytic drug": "competing diagnosis: treated as a coronary occlusion despite normal arteries",
+   "Amyl nitrite by inhalation": "adjacent fact: a murmur maneuver agent from another cardiomyopathy"}),
 ]

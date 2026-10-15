@@ -15,7 +15,8 @@ is written and checked. It never overrides:
 1. **Blueprint.** List the syllabus objectives (verbatim) and the deck's fact slots (`cms_fact_slots`,
    `tools/check_slot_coverage.py`). Give every item ONE objective and ONE decision. Spread items across objectives so
    no objective is crowded while another gets nothing.
-2. **Evidence.** For each item, find the slide(s) stating the decisive fact AND the facts each option explanation will
+2. **Evidence.** Only what is VISIBLE on a slide counts (its text and pictures); speaker notes do not (Jaxon,
+   2026-10-15). For each item, find the slide(s) stating the decisive fact AND the facts each option explanation will
    use. Read the neighbouring slides too: a nearby exception, threshold or population can reverse the answer. View
    every image; never write an image-dependent item from a text summary of a picture.
 

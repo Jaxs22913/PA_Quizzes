@@ -24,6 +24,11 @@ def S(topic, io, q, opts, cite, slot):
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 ALI = "Acute limb ischemia"
 ATH = "Atheroembolism"
@@ -91,17 +96,20 @@ V(ALI, IO_A,
     "Exercise therapy is for chronic claudication. A new arterial thrombus under 14 days old is treated with catheter-directed thrombolysis."]],
   C(67), "agent/regimen", "treatment"),
 
-V(ALI, IO_A,
+M(V(ALI, IO_A,
   "A 71-year-old man has had progressive ischemic pain in his right leg for three weeks and is found to have an arterial occlusion. Which intervention falls outside its indication for him?",
   [["Catheter-directed thrombolysis",
     "Correct. Intra-arterial catheter-directed thrombolysis is indicated only for acute limb ischemia of less than 14 days' duration; at three weeks he is outside that window."],
    ["Surgical thromboembolectomy",
-    "Thromboembolectomy, by catheter or open surgery, is a listed therapy for acute peripheral arterial occlusion and carries no 14-day limit. Thrombolysis is the time-limited option."],
+    "Thromboembolectomy, by catheter or open surgery, is a surgical therapy for acute peripheral arterial occlusion with no 14-day indication attached. Thrombolysis is the time-limited option."],
    ["Arterial bypass procedure",
-    "Arterial bypass is a listed surgical therapy for acute occlusion without a time limit. Catheter-directed thrombolysis is the option restricted to under 14 days."],
+    "An arterial bypass procedure is a surgical therapy for acute peripheral arterial occlusion with no 14-day indication attached. Catheter-directed thrombolysis is the option limited to under 14 days."],
    ["Intravenous heparin",
     "Anticoagulation with intravenous heparin is the medical therapy for acute occlusion. The intervention limited to under 14 days is catheter-directed thrombolysis."]],
-  C(67), "avoid", "avoid"),
+  DECK + ", Slides 66, 67", "avoid", "avoid"),
+  {"Surgical thromboembolectomy": "adjacent fact: another surgical therapy that has no 14-day limit",
+   "Arterial bypass procedure": "adjacent fact: another surgical therapy that has no 14-day limit",
+   "Intravenous heparin": "adjacent fact: the medical therapy given for acute occlusion"}),
 
 V(ALI, IO_A,
   "An 80-year-old man is found on the floor two days after collapsing. His right leg has profound sensory loss, paralysis with rigid muscles, and no arterial or venous Doppler signal. Which is the most appropriate next step?",
@@ -151,17 +159,20 @@ V(ALI, IO_A,
     "Hair loss is a chronic peripheral artery disease finding from long-standing poor flow. In acute ischemia the earliest neurologic sign is dorsal foot sensory loss."]],
   C(61), "manifestation", "test"),
 
-V(ALI, IO_A,
+M(V(ALI, IO_A,
   "A 71-year-old woman has sudden coolness of her left foot with minimal pain in the toes only. She has no sensory loss and no muscle weakness. Which prognosis applies to this limb?",
   [["Salvageable if promptly treated",
     "Correct. A marginally threatened limb, with minimal toe pain and no sensory loss or weakness, is salvageable if treated promptly, and there is time for vascular imaging first."],
-   ["Not immediately threatened",
-    "A viable limb has no toe pain at all and is under no immediate threat. Minimal toe pain makes this limb marginally threatened: salvageable only if treated promptly."],
+   ["Full recovery without treatment",
+    "Acute limb ischemia is a vascular emergency, not a self-limited problem. With minimal toe pain and no sensory loss or weakness, this limb is marginally threatened: salvageable if treated promptly."],
    ["Salvageable only with immediate revascularization",
     "That prognosis belongs to the immediately threatened limb, with sensory loss beyond the toes and weakness. Her limb has neither, so prompt treatment suffices."],
    ["Major tissue loss is inevitable",
     "Inevitable tissue loss or permanent nerve damage marks an irreversible limb with profound sensory loss and paralysis. This limb is still salvageable with prompt care."]],
-  C(62), "prognosis", "complication"),
+  DECK + ", Slides 59, 62, 64", "prognosis", "complication"),
+  {"Full recovery without treatment": "common lay belief: mild symptoms mean the limb will recover on its own",
+   "Salvageable only with immediate revascularization": "right action at the wrong severity: the immediately threatened category",
+   "Major tissue loss is inevitable": "right finding at the wrong severity: the irreversibly ischemic category"}),
 
 V(ALI, IO_A,
   "A 67-year-old man with atrial fibrillation is being discharged after treatment of an embolic leg occlusion. Which warning symptoms should prompt him to return immediately?",
@@ -333,17 +344,20 @@ V(CAR, IO_A,
     "Smoking drives atherosclerosis throughout the body and nearly doubles stroke risk. Cessation is central to managing carotid disease."]],
   C(76), "education", "education"),
 
-V(CAR, IO_A,
-  "A 58-year-old woman with no neurologic symptoms and no bruit asks her clinician to order a carotid ultrasound to screen for blockage. Which response is most appropriate?",
-  [["Screening is not recommended",
-    "Correct. The preventive services task force recommended in 2014, and reaffirmed in 2021, against screening for asymptomatic carotid artery stenosis in the general adult population, as the harms of screening outweigh the benefits."],
-   ["Screen with duplex every year",
-    "Serial duplex monitoring is for patients with known disease or after intervention. Routine screening of asymptomatic adults is recommended against."],
-   ["Screen with angiography instead",
-    "Digital subtraction angiography is invasive and never used for screening; it guides interventions. Asymptomatic adults should not be screened at all."],
-   ["Screen only if she smokes",
-    "Smoking raises stroke risk, but the recommendation is against screening the general asymptomatic adult population. Screening is not recommended for her."]],
-  C(76), "avoid", "education"),
+M(V(CAR, IO_A,
+  "A 70-year-old man had 20 minutes of weakness and numbness in his right hand four months ago that fully resolved. Duplex ultrasonography shows 75% stenosis of the left internal carotid artery. A friend with no symptoms was told surgery waits until stenosis passes 80%, and he asks whether the same applies to him. Which response is accurate?",
+  [["No; over 70% already qualifies him",
+    "Correct. A transient ischemic attack (focal loss of neurologic function lasting under 24 hours) within the last six months makes him symptomatic, and surgery is advised for symptomatic stenosis over 70%; the over-80% rule is for asymptomatic patients."],
+   ["Yes; surgery waits until over 80%",
+    "Over 80%, with a life expectancy over 5 years, is the surgical threshold for asymptomatic stenosis like his friend's. His attack within six months makes him symptomatic, so over 70% applies and 75% qualifies."],
+   ["No; he needs medical therapy only",
+    "Medical management alone is advised for low-grade stenosis under 50%. At 75% with a transient ischemic attack four months ago, he meets the over-70% threshold for surgery in symptomatic patients."],
+   ["Yes; resolved symptoms do not count",
+    "A transient ischemic attack lasts under 24 hours by definition, and one within the last six months still makes him symptomatic. Asymptomatic means no stroke or attack in the last six months."]],
+  DECK + ", Slides 72, 75", "avoid", "education"),
+  {"Yes; surgery waits until over 80%": "adjacent fact: the asymptomatic threshold applied to a symptomatic patient",
+   "No; he needs medical therapy only": "ruled out by a stated finding: the under-50% medical rule applied to a 75% stenosis",
+   "Yes; resolved symptoms do not count": "common lay belief: symptoms that resolved no longer count"}),
 
 V(CAR, IO_A,
   "A 69-year-old man is recovering from a carotid endarterectomy for high-grade symptomatic stenosis. Which complications of the procedure should be monitored for?",

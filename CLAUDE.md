@@ -43,7 +43,11 @@ self-contained Semester 1 files). Behaviour rules: memory `pip_behavior_rule.md`
 question gets a short answer Claude writes after reading the WHOLE study guide of the exam it is about (helper
 mode "guide", Haiku 5.5; the helper fetches the public pip/data/guide/<slug>.json, numbers its lines, caches it
 for an hour; "Used: [n]" names the lines, sent back as cites that Pip links; the search's picks go along as
-candidates and hints; the usual answer is the fallback, mode "answer" when guide mode isn't there); answers come in two
+candidates and hints; the usual answer is the fallback, mode "answer" when guide mode isn't there). Follow-ups: the
+last 2 Claude exchanges stay in memory only (dropped after 15 min idle or a page change) and go as `prior` when a
+question refers back (`followUp()`: it keeps the earlier exam and searches with the earlier question's words too).
+Guide answers stream into the bubble, and with the Citations API each cite carries `q`, the exact guide sentence,
+shown under the answer and passed to `openGuidePanel({..., quote})`. Answers come in two
 labelled parts, "From your
 class" (his checked cards in `pip/explain/<exam>.json`, guide passages from every exam that holds the
 question's words, misspellings fixed, definitions, "the X of each Y" lists, compare dissections) and "From
@@ -51,7 +55,7 @@ general knowledge" (Claude, labelled, only when the class materials fall short);
 `window.openGuidePanel`. Generated data `pip/data/` is never committed: the deploy runs
 `tools/build_pip_data.py`, which fails loudly on a page it cannot parse (fix the page, never skip it).
 After a guide edit, cards whose section changed show as stale (`python3 tools/pip_explain.py check`, then
-`rehash` once re-checked). Checks: `node tools/check_pip_answers.js` (answer kinds, no browser),
+`rehash` once re-checked). Checks: `node tools/check_pip_answers.js` (answer kinds, guide exam, follow-ups; no browser),
 `node tools/pip_explain_match.js` (card matching), `tools/check_pip_launch.py` (built `dist/`). Never run real
 models in tests or send question sets through any model (memory `no_bulk_model_runs.md`). The Claude helper is
 a private Worker; its source is not in this repo.
@@ -77,14 +81,19 @@ Partition scripts are seeded. One-off quizzes skip partitioning (example: `tools
 `tools/render_micro_e1_hours.py`). The `/new-exam-build` skill is the compact runbook.
 
 Quizzes:
-1. Read `quiz_build_prompt.md` and the class spec memory.
+1. Read `quiz_build_prompt.md`, the class spec memory (it decides question TYPES and counts) and
+   `tools/question_writing/WRITER.md` (how each item is written and checked).
 2. Ground every question in the deck (`python-pptx`, `=== SLIDE N ===` markers, cite exact filename + slide).
 3. Use the mandatory engine `tools/quiz-template/render.py` (`quiz_engine_standardization`).
 4. Register in `index.html` under the right class/exam with a self-expiring New tag (`new_exam_tag`).
 5. After any render, BEFORE committing: `python3 tools/add_stable_qids.py`, `tools/build_group_quizzes.py`
    (never hand-edit the Group Study bank), and for Semester 2 `tools/build_guide_links.py "<folder>"` then
    `tools/check_guide_links.py --strict` (links are keyed to the exact question text).
-6. Run the checkers (§6), then commit and push: for quiz builds pushing is part of the spec.
+6. **Blind review** every new or changed question before it ships (`tools/blind_review.py`, Sonnet judges per
+   `tools/question_writing/REVIEW_BLIND.md` then `REVIEW_AUDIT.md`; judges never see the key or a manifest before
+   their blind verdicts are imported). One Opus repair per flagged item, re-review with `export --ids`, else
+   drop and replace. A blind pick that differs from the key is a possible wrong key.
+7. Run the checkers (§6), then commit and push: for quiz builds pushing is part of the spec.
 
 Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box quotes the syllabus verbatim and
 answers each objective in order). Cram sheets: `tools/cram-sheet-template/` (`cram_sheets_feature`). Arcade:
@@ -114,7 +123,7 @@ Each has a memory with the full story.
 - **Every option gets its own explanation** that refutes AND supplies the replacing fact (60+ characters).
 - **Distractors match the key's length and style**; shorten the key, never pad distractors.
 - **Permute answer positions** before shipping. **No abbreviations**, or `ABBREV (full term)`.
-- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks. **Truth wins on conflict**.
+- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks, and speaker notes do not count. **Truth wins on conflict**.
 - **Every Semester 2 question links to a passage in its own class's guide that STATES the fact, and a
   separate reader verified it** (word overlap is not enough). For a new or changed question:
   1. write a missing fact into the guide via `tools/guide_additions/` + `tools/apply_guide_additions.py` (text only

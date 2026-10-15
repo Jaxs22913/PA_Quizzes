@@ -72,8 +72,9 @@ CLUSTERS = [
     (1, stem("Which regulatory hurdle") + stem("Which pathway can allow phage therapy")),
     (1, stem("How long has fecal therapy") + stem("'Yellow soup' from old Chinese")),
     (1, stem("Which infection is a stool donor screened") + stem("Which intestinal parasites are stool")),
-    (1, stem("A patient has had three recurrences") + stem("Why is fecal microbiota transplant an alternative")),
+    (1, stem("A patient has had three recurrences") + stem("Why is fecal microbiota transplant researched")),
     (1, stem("Penicillin, vancomycin and azithromycin") + stem("Roughly how many antibiotics")),
+    (1, stem("Which organism is listed among the drug-resistant") + stem("Klebsiella pneumoniae is counted among")),
 ]
 
 # what the recording flagged: EACH = every set carries one of the group; ANY = the pair carries it
@@ -82,7 +83,7 @@ MUST_EACH = [
     # bacteria, they die off" [22:11]
     stem("What property makes bacteriophages a possible option") + stem("Why could phage therapy be more efficient"),
     # fecal transplant for (recurrent) Clostridioides difficile: her study, "recurring C diff" [34:09]
-    stem("A patient has had three recurrences") + stem("Why is fecal microbiota transplant an alternative"),
+    stem("A patient has had three recurrences") + stem("Why is fecal microbiota transplant researched"),
 ]
 MUST_ANY = [
     stem("What property makes bacteriophages a possible option"),

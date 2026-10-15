@@ -273,29 +273,34 @@
   {
    "topic": "Hypertrophic cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 28-year-old man with hypertrophic cardiomyopathy without obstruction has brief runs of ventricular tachycardia on ambulatory monitoring. A defibrillator is being arranged. Which antiarrhythmic has been shown to reduce his risk of sudden cardiac death?",
+   "q": "A 46-year-old woman with obstructive hypertrophic cardiomyopathy has recurrent palpitations from atrial fibrillation and atrial flutter. She already takes anticoagulation to prevent embolic stroke. Which medication is used to convert her rhythm to sinus and suppress recurrence?",
    "opts": [
     [
      "Nitroglycerin",
-     "Nitroglycerin is avoided in hypertrophic cardiomyopathy because it reduces preload and afterload. It has no role in preventing sudden cardiac death; amiodarone does."
+     "Nitrates are avoided in hypertrophic cardiomyopathy because reducing preload or afterload aggravates outflow obstruction, and they do not convert the rhythm. Amiodarone does."
     ],
     [
      "Epinephrine",
-     "Epinephrine is a positive inotrope that increases contractility and may induce arrhythmias, so it is avoided. Amiodarone is the antiarrhythmic shown to reduce sudden death."
+     "Epinephrine is a positive inotrope that increases contractility and may induce arrhythmias, so it is avoided. Amiodarone converts atrial fibrillation and flutter to sinus rhythm."
     ],
     [
      "Amiodarone",
-     "Correct. Amiodarone is proven to reduce the incidence and risk of sudden cardiac death in hypertrophic cardiomyopathy, with or without outflow obstruction, and it also converts and suppresses atrial fibrillation and flutter."
+     "Correct. Amiodarone is very effective at converting atrial fibrillation and flutter to sinus rhythm and suppressing recurrence of these arrhythmias in hypertrophic cardiomyopathy, while anticoagulation prevents embolic stroke."
     ],
     [
      "Digoxin",
-     "Digoxin is a positive inotrope avoided in hypertrophic cardiomyopathy because it raises contractility and may induce arrhythmias. Amiodarone reduces sudden death risk."
+     "Digoxin is a positive inotrope avoided in hypertrophic cardiomyopathy because it raises contractility and may induce arrhythmias. Amiodarone converts and suppresses atrial fibrillation."
     ]
    ],
    "c": 2,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 78",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 77, 78",
    "slot": "agent/regimen",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "Digoxin": "adjacent fact: a drug that is avoided in this disease",
+    "Nitroglycerin": "confused drug class: a vasodilator for chest pain",
+    "Epinephrine": "confused drug class: a positive inotrope"
+   }
   },
   {
    "topic": "Takotsubo cardiomyopathy",
@@ -424,7 +429,7 @@
     ],
     [
      "Amiodarone",
-     "Amiodarone is used in hypertrophic cardiomyopathy to reduce the risk of sudden cardiac death and to control atrial fibrillation. It is not the drug to avoid."
+     "Amiodarone is used in hypertrophic cardiomyopathy to convert atrial fibrillation and flutter to sinus rhythm and suppress their recurrence. It is not the drug to avoid."
     ]
    ],
    "c": 0,
@@ -570,11 +575,11 @@
   {
    "topic": "Dilated cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after a viral illness. He is in sinus rhythm, blood pressure is 118/72, and his ejection fraction is 30%. No thrombus is seen on echocardiogram. Which pair of drug classes should he receive whatever the cause of his disease?",
+   "q": "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after a viral illness. He is in sinus rhythm, blood pressure is 118/72, and his ejection fraction is 30%. No thrombus is seen on echocardiogram. Which pair of drug classes belongs to his guideline-directed medical therapy?",
    "opts": [
     [
      "Anticoagulant and antiarrhythmic started for everyone",
-     "Anticoagulation is kept for atrial fibrillation, artificial valves or a known mural thrombus, and antiarrhythmics such as amiodarone for specific rhythms. Neither is started routinely."
+     "Anticoagulants and antiarrhythmics are on the dilated cardiomyopathy drug list but are not part of adult guideline-directed therapy, which is built on angiotensin-converting enzyme inhibitors and beta blockers."
     ],
     [
      "Verapamil and a nitrate to relax the thick ventricle",
@@ -582,53 +587,63 @@
     ],
     [
      "A diuretic alone, until symptoms settle to baseline",
-     "Diuretics relieve sodium and water retention as an adjunct, but they are not the mortality-reducing backbone. That is the beta blocker plus angiotensin-converting enzyme inhibitor pair."
+     "A diuretic alone leaves out the beta blocker and angiotensin-converting enzyme inhibitor that guideline-directed therapy includes, and no fluid retention is described for him."
     ],
     [
      "Beta blocker and angiotensin-converting enzyme inhibitor",
-     "Correct. Treatment of dilated cardiomyopathy is essentially that of chronic heart failure, and every patient, regardless of cause, should receive a beta blocker and an angiotensin-converting enzyme inhibitor, both of which reduce mortality."
+     "Correct. Guideline-directed medical therapy for an adult with cardiomyopathy includes angiotensin-converting enzyme inhibitors and beta blockers, with angiotensin receptor blockers and diuretics, and both classes are on the dilated cardiomyopathy drug list."
     ]
    ],
    "c": 3,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 42",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 42, 76, 98, 105",
    "slot": "first-line",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "Anticoagulant and antiarrhythmic started for everyone": "right drug for the wrong patient: started without a rhythm or clot reason",
+    "Verapamil and a nitrate to relax the thick ventricle": "confused disease: therapy for a stiff or thick ventricle",
+    "A diuretic alone, until symptoms settle to baseline": "right drug in the wrong role: a symptom adjunct used alone"
+   }
   },
   {
    "topic": "Hypertrophic cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 30-year-old man with hypertrophic cardiomyopathy and no high-risk features wants to stay active. He used to run marathons competitively and asks what level of exercise he should aim for. Which counseling point is most appropriate?",
+   "q": "A 30-year-old man with obstructive hypertrophic cardiomyopathy is stable on a beta blocker. He drinks six to eight beers on most weekend nights and asks whether he needs to change anything. Which counseling point is most appropriate?",
    "opts": [
     [
-     "Unrestricted competitive team sports",
-     "Competitive sport is not simply unrestricted: sudden cardiac death in hypertrophic cardiomyopathy relates to extreme exertion, so strenuous or competitive activity needs a shared decision with a specialist center."
+     "No limit while on his beta blocker",
+     "A beta blocker is the initial medication for outflow obstruction, but it does not make heavy drinking safe. Avoiding excess alcohol is part of patient education in this disease."
     ],
     [
-     "Strict bed rest for the rest of life",
-     "Complete rest is not the recommendation. Regular mild to moderate exercise is encouraged, with strenuous or competitive sport decided jointly with a specialist center."
+     "Restrict his daily fluid intake",
+     "Fluid restriction risks dehydration, which patients with hypertrophic cardiomyopathy are taught to avoid by maintaining hydration. The change he needs is to avoid excess alcohol."
     ],
     [
-     "Heavy lifting to build heart strength",
-     "Strenuous exertion is what drives sudden death risk in hypertrophic cardiomyopathy, so it is not advised routinely. Regular mild to moderate exercise is encouraged, with specialist input on strenuous sport."
+     "Restrict salt; alcohol is fine",
+     "Sodium restriction is patient education for dilated cardiomyopathy. In hypertrophic cardiomyopathy the advice includes avoiding excess alcohol, so his drinking is not fine."
     ],
     [
-     "Regular exercise; shared decision on sport",
-     "Correct. Current guidance encourages regular mild to moderate exercise, and strenuous or competitive sport, such as his former marathons, is decided jointly with a specialist center; classic teaching limited patients to mild to moderate, noncompetitive recreation because sudden death relates to extreme exertion."
+     "Avoid drinking alcohol to excess",
+     "Correct. Patient education in hypertrophic cardiomyopathy includes avoiding excess alcohol consumption and maintaining hydration while avoiding dehydration; his weekend drinking is excess and should be cut back."
     ]
    ],
    "c": 3,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 82",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 45, 76, 82",
    "slot": "education",
-   "lead": "education"
+   "lead": "education",
+   "mis": {
+    "No limit while on his beta blocker": "common lay belief: medication makes heavy drinking safe",
+    "Restrict his daily fluid intake": "reversed value: fluid restriction where hydration is advised",
+    "Restrict salt; alcohol is fine": "adjacent fact: the dilated cardiomyopathy education point"
+   }
   },
   {
    "topic": "Takotsubo cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 66-year-old woman with stress cardiomyopathy confirmed by normal coronary arteries at catheterization is stable, with no ventricular thrombus and no signs of heart failure. Which medication is described as helpful in her supportive treatment?",
+   "q": "A 66-year-old woman with stress cardiomyopathy confirmed by normal coronary arteries at catheterization is stable, with no ventricular thrombus and no signs of heart failure. Which medication is helpful in her supportive treatment?",
    "opts": [
     [
      "An inotrope infusion",
-     "Nothing in her stable presentation calls for an inotrope. Supportive treatment in stress cardiomyopathy lists beta blockers as helpful."
+     "She is stable with no heart failure, so nothing in her presentation calls for an inotrope. In the supportive treatment of stress cardiomyopathy, beta blockers are helpful."
     ],
     [
      "A thrombolytic drug",
@@ -636,17 +651,22 @@
     ],
     [
      "Amyl nitrite by inhalation",
-     "Amyl nitrite is a bedside maneuver agent that lowers afterload to change a murmur. It is not a treatment for stress cardiomyopathy; beta blockers are."
+     "Amyl nitrite lowers afterload and is used to change the murmur of obstructive hypertrophic cardiomyopathy, not to treat stress cardiomyopathy. Beta blockers are the helpful supportive medication."
     ],
     [
      "A beta blocker",
-     "Correct. Treatment of Takotsubo is empiric and supportive and depends on the presentation; beta blockers are described as helpful, with anticoagulation only for a thrombus and diuretics only for heart failure."
+     "Correct. Treatment of Takotsubo is empiric and supportive and depends on the presentation: beta blockers are helpful, anticoagulation is for a left ventricular thrombus and diuretics are for heart failure."
     ]
    ],
    "c": 3,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 104",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 69, 103, 104 (slide 69 picture)",
    "slot": "first-line",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "An inotrope infusion": "ruled out by a stated finding: she is stable with no heart failure",
+    "A thrombolytic drug": "competing diagnosis: treated as a coronary occlusion despite normal arteries",
+    "Amyl nitrite by inhalation": "adjacent fact: a murmur maneuver agent from another cardiomyopathy"
+   }
   },
   {
    "topic": "Restrictive cardiomyopathy",
@@ -759,29 +779,34 @@
   {
    "topic": "Dilated cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 59-year-old man with dilated cardiomyopathy, sinus rhythm and an ejection fraction of 20% has a follow-up echocardiogram that shows a thrombus layered against the wall of the left ventricle. Which additional treatment is now indicated?",
+   "q": "A 64-year-old man with dilated cardiomyopathy takes a beta blocker, an angiotensin-converting enzyme inhibitor and a diuretic. His clinician mentions that digoxin may be added later. Which statement describes the place of digoxin in his treatment?",
    "opts": [
     [
-     "Stop the beta blocker",
-     "A beta blocker is kept in every patient with dilated cardiomyopathy because it lowers mortality. The new thrombus calls for anticoagulation, not withdrawal of therapy."
+     "The first-line drug to start now",
+     "Digoxin is not first-line: it is considered a second-line drug in dilated cardiomyopathy, behind core therapy such as his beta blocker and angiotensin-converting enzyme inhibitor."
     ],
     [
-     "Alcohol septal ablation",
-     "Alcohol septal ablation treats septal outflow obstruction in hypertrophic cardiomyopathy. A mural thrombus in a dilated ventricle is treated with anticoagulation."
+     "A drug to avoid in this disease",
+     "Digoxin is avoided in hypertrophic cardiomyopathy, where it raises contractility, but in dilated cardiomyopathy it is on the management list as a second-line drug."
     ],
     [
-     "Surgical myectomy now",
-     "Myectomy removes obstructing septal muscle in hypertrophic cardiomyopathy and does not address a mural thrombus, which needs anticoagulation to prevent embolism."
+     "A replacement for his diuretic",
+     "Digoxin does not replace a diuretic; diuretics are their own class on the dilated cardiomyopathy drug list, and digoxin is a second-line addition."
     ],
     [
-     "Start anticoagulation",
-     "Correct. Dilated ventricles carry a risk of thromboembolic complications, and a known mural thrombus is one of the three indications for anticoagulation in dilated cardiomyopathy, with atrial fibrillation and an artificial valve."
+     "A second-line drug, not first-line",
+     "Correct. Digoxin is on the list of drugs used to manage dilated cardiomyopathy, but it is considered a second-line drug, added after core therapy such as a beta blocker and an angiotensin-converting enzyme inhibitor."
     ]
    ],
    "c": 3,
    "cite": "Cardiomyopathy - Carter.pptx, Slide 42",
    "slot": "agent/regimen",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "The first-line drug to start now": "reversed value: a second-line drug taken as first-line",
+    "A drug to avoid in this disease": "confused condition: the hypertrophic avoid-list applied to dilated disease",
+    "A replacement for his diuretic": "confused role: an add-on drug taken as a substitute"
+   }
   },
   {
    "topic": "Populations and care",
@@ -790,7 +815,7 @@
    "opts": [
     [
      "Activity restriction given her high risk",
-     "Correct. Activity restriction for high-risk individuals is an adolescent strategy, and sudden death in hypertrophic cardiomyopathy is highest in preadolescents and adolescents and is related to extreme exertion."
+     "Correct. Activity restriction for high-risk individuals is an adolescent strategy; her exertional syncope marks high risk of sudden death, which in hypertrophic cardiomyopathy is highest in preadolescents and adolescents and related to extreme exertion."
     ],
     [
      "Unrestricted play with extra fluids",
@@ -798,7 +823,7 @@
     ],
     [
      "Clearance once the murmur softens",
-     "The murmur varies with preload and position and says nothing about her sudden death risk. Exertional syncope and ventricular tachycardia call for activity restriction."
+     "The outflow murmur changes with blood flow in the heart, so a softer murmur does not mean lower risk. Her syncope on exertion identifies high risk of sudden death and calls for activity restriction."
     ],
     [
      "Competitive play on a beta blocker",
@@ -806,9 +831,14 @@
     ]
    ],
    "c": 0,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 105",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 65, 66, 69, 76, 82, 105",
    "slot": "education",
-   "lead": "education"
+   "lead": "education",
+   "mis": {
+    "Unrestricted play with extra fluids": "common lay belief: hydration alone makes competitive play safe",
+    "Clearance once the murmur softens": "confused finding: murmur loudness taken as a measure of risk",
+    "Competitive play on a beta blocker": "right drug in the wrong role: symptom therapy treated as clearance for sport"
+   }
   }
  ],
  "set2": [
@@ -1012,7 +1042,7 @@
     ],
     [
      "Antiarrhythmics such as amiodarone",
-     "Amiodarone reduces the risk of sudden cardiac death and converts atrial fibrillation in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."
+     "Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."
     ],
     [
      "Calcium channel blockers like verapamil",
@@ -1132,9 +1162,14 @@
     ]
    ],
    "c": 3,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 45",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 45, 99, 104",
    "slot": "prognosis",
-   "lead": "complication"
+   "lead": "complication",
+   "mis": {
+    "Nearly all recover fully in weeks": "adjacent fact: the full-recovery prognosis of stress cardiomyopathy",
+    "Worst outlook of any heart muscle disease": "adjacent fact: the worst prognosis, which belongs to restrictive cardiomyopathy",
+    "A normal life span without therapy": "reversed value: a progressive disease treated as benign"
+   }
   },
   {
    "topic": "Populations and care",
@@ -1463,29 +1498,34 @@
   {
    "topic": "Hypertrophic cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 59-year-old man with obstructive hypertrophic cardiomyopathy has just undergone alcohol septal ablation, in which alcohol is injected through a catheter into a septal branch of the coronary artery. He asks when he can expect his symptoms to improve. Which answer is most accurate?",
+   "q": "A 49-year-old woman with hypertrophic cardiomyopathy has heart failure symptoms that have gradually progressed over several years despite treatment. She asks what option exists if her disease stops responding to conventional therapy. Which answer is most accurate?",
    "opts": [
     [
-     "Never; it is a diagnostic test",
-     "Alcohol septal ablation is a treatment for outflow obstruction, not a diagnostic test. The septum thins over months after the therapeutic infarction."
+     "Genetic testing to guide therapy",
+     "Genetic testing is available in hypertrophic cardiomyopathy but does not influence treatment, so it adds no therapy. Cardiac transplantation is the option for disease unresponsive to conventional therapy."
     ],
     [
-     "Over months as the septum thins",
-     "Correct. Alcohol septal ablation induces a therapeutic infarction of the proximal septum, and it takes months for the septum to thin and the outflow obstruction to ease."
+     "Cardiac transplantation",
+     "Correct. In hypertrophic cardiomyopathy heart failure symptoms gradually progress, and cardiac transplantation is the option when the disease is unresponsive to conventional therapy."
     ],
     [
-     "Within minutes of the injection",
-     "The ablation creates a controlled infarction of septal muscle, and the benefit comes as the septum thins, which takes months rather than minutes."
+     "Digoxin to boost contraction",
+     "Digoxin is a positive inotrope, and these drugs are avoided in hypertrophic cardiomyopathy because they raise contractility, risk myocardial ischemia and may induce arrhythmias. Transplantation is the option for refractory disease."
     ],
     [
-     "Only after a repeat injection",
-     "A repeat procedure is not routine; the effect develops over months as the infarcted septal muscle thins. Reintervention is needed in a minority of patients."
+     "Daily nitrates for comfort",
+     "Nitrates reduce preload and are avoided where possible in hypertrophic cardiomyopathy because they aggravate outflow tract obstruction and worsen symptoms. Transplantation is the option for refractory disease."
     ]
    ],
    "c": 1,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 81",
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 75, 77, 82",
    "slot": "prognosis",
-   "lead": "education"
+   "lead": "education",
+   "mis": {
+    "Digoxin to boost contraction": "confused role: a positive inotrope taken as help for a failing heart",
+    "Daily nitrates for comfort": "adjacent fact: chest pain relief from coronary disease applied to outflow obstruction",
+    "Genetic testing to guide therapy": "common lay belief: a gene result changes treatment"
+   }
   },
   {
    "topic": "Hypertrophic cardiomyopathy",

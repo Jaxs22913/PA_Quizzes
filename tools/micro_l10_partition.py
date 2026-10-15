@@ -66,7 +66,7 @@ CLUSTERS = [
     (1, stem("Which is a cause of a false-positive") + stem("Why can a patient with acquired immunodeficiency")),
     (1, stem("Abdominal actinomycosis") + stem("Cervicofacial actinomycosis") + stem("Uterine actinomycosis")),
     (2, stem("How does infant botulism arise") + stem("Which food is a classic source of infant")
-        + stem("What syndrome does the infant shown")),
+        + stem("An infant who has been fed honey")),
     (2, stem("What does protective antigen") + stem("At high levels, what does anthrax lethal")
         + stem("How does anthrax toxin produce")),
     (1, stem("How is cutaneous anthrax acquired") + stem("What is the lesion shown on this man's jaw")),
@@ -97,7 +97,7 @@ MUST_ANY = [
     stem("How does botulinum toxin cause paralysis"),
     stem("Which organism most commonly causes gas gangrene"),       # "the one I would want you to know"
     stem("How does a mixed infection help myonecrosis"),           # "underline this"
-    stem("What syndrome does the infant shown"),                    # "remember floppy baby syndrome"
+    stem("An infant who has been fed honey"),                    # "remember floppy baby syndrome"
     stem("Into which three divisions is clinical tuberculosis"),    # "three different stages that you need to know"
     stem("What is the current name of Propionibacterium"),          # "you need to know the new name"
     stem("When does Actinomyces israelii cause disease"),           # "this is one that you should know"
