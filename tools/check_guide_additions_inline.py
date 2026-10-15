@@ -18,6 +18,11 @@ working copy with the same file at a git ref (default HEAD) and fail on:
               <ol>, another generated line, or an <li> outside a <ul>
   box         an "Also tested" box is still on the page
 
+A line removed on purpose because another line states the same fact is listed in
+tools/guide_additions_merged.json ({removed id: {"into": surviving id, "keys": the
+question keys that moved onto it}}); the check then requires the surviving line to be
+on the page and to carry those keys, and prints the removal as a note.
+
 A positive looks like: "pharm-exam-1-study-guide.html: lost/dup ga-...-012".
 Run it after apply_guide_additions.py and before committing; with no
 differences from the ref (nothing re-applied) it passes trivially.
@@ -84,6 +89,14 @@ def main():
         for it in d["items"]:
             if it.get("html") not in (None, "SKIP"):
                 guides.setdefault(g, {})["ga-" + it["id"]] = it["section_id"]
+    merged = {}
+    mp = os.path.join(ROOT, "tools", "guide_additions_merged.json")
+    if os.path.exists(mp):
+        merged = {"ga-" + k: v for k, v in json.load(open(mp, encoding="utf-8")).items()}
+    keys_of = {}
+    for f in glob.glob(os.path.join(ROOT, "tools", "guide_additions", "*.json")):
+        for it in json.load(open(f, encoding="utf-8"))["items"]:
+            keys_of["ga-" + it["id"]] = it["keys"]
     fails, fixed, moved_total, n_total = [], [], 0, 0
     for g, sids in guides.items():
         name = os.path.basename(g)
@@ -95,6 +108,16 @@ def main():
         before = r.stdout.decode("utf-8")
         la, lb = lines(after), lines(before)
         for (i, t), c in (lb - la).items():
+            m = merged.get(i)
+            if m:
+                into = "ga-" + m["into"]
+                if not any(j == into for j, _ in la):
+                    fails.append("%s: merged %s but its survivor %s is not on the page" % (name, i, into))
+                elif not set(m["keys"]) <= set(keys_of.get(into, [])):
+                    fails.append("%s: merged %s but %s does not carry its question keys" % (name, i, into))
+                else:
+                    fixed.append("%s: %s removed as a duplicate of %s (same fact; its question keys moved onto it)" % (name, i, into))
+                continue
             fails.append("%s: lost/dup %s (%r)" % (name, i, t[:60]))
         for (i, t), c in (la - lb).items():
             fails.append("%s: lost/dup %s appeared or changed (%r)" % (name, i, t[:60]))
@@ -120,7 +143,7 @@ def main():
         moved_total += moved
         n_total += sum(la.values())
         print("%-38s %4d lines before, %4d after, %4d inline" % (name, sum(lb.values()), sum(la.values()), moved))
-    print("TOTAL %d lines, %d written inline; %d problem(s); %d line(s) returned to their own section"
+    print("TOTAL %d lines, %d written inline; %d problem(s); %d line(s) moved or merged"
           % (n_total, moved_total, len(fails), len(fixed)))
     for x in fixed:
         print("  note " + x)
