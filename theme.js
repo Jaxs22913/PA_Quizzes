@@ -1797,6 +1797,76 @@ window.SitePrompts = {
 // .wrap[data-readable], since that attribute is opt-in per guide (the
 // Hormones reference guide deliberately doesn't have it, being a table
 // guide with nothing to narrate) and highlighting has no such prerequisite.
+/* ============================================================
+   Pip review list (2026-10-11, finished 2026-10-15). A student selects something in a Semester 2
+   study guide or cram sheet (or opens a highlight or a note box) and taps "Add to Pip"; it is kept per
+   exam under the key "pipReview:<exam slug>" (an ordinary synced key: cloud-sync.js uploads only the
+   one key that changed). my-review-guide.html turns the list into a personal guide; Pip's window
+   shows a chip with the count. Nothing here writes any text of its own: an item is the guide's own
+   words, trimmed (t), plus the student's own note (n) when there is one.
+   Item: {id, f (folder), d (page file), a (anchor id), st (section title), k / kt (deck id / title),
+   u (position in the page), t, n, at, nid (the note box it came from, if any)}.
+   ============================================================ */
+(function () {
+  var PFX = "pipReview:", CAP = 600;
+  function slugify(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""); }
+  // Only well-formed items come back (the key is synced, so it may hold anything): id, t, f and d must be
+  // strings; the optional text fields are made strings, so no page reading the list can trip on one.
+  function load(slug) {
+    var v;
+    try { v = JSON.parse(localStorage.getItem(PFX + slug)); } catch (e) { return []; }
+    if (!Array.isArray(v)) return [];
+    return v.filter(function (x) {
+      return x && typeof x === "object" && typeof x.id === "string" && typeof x.t === "string" && x.t &&
+             typeof x.f === "string" && typeof x.d === "string";
+    }).map(function (x) {
+      ["a", "st", "k", "kt", "n", "at"].forEach(function (f) { if (typeof x[f] !== "string") x[f] = ""; });
+      return x;
+    });
+  }
+  function save(slug, list) { try { localStorage.setItem(PFX + slug, JSON.stringify(list)); return true; } catch (e) { return false; } }
+  function norm(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
+  function idOf(text, file) {
+    var s = norm(text).toLowerCase() + "|" + file, h = 5381;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return "r" + (h >>> 0).toString(36);
+  }
+  function trimText(t) {
+    t = norm(t);
+    if (t.length <= CAP) return t;
+    var c = t.slice(0, CAP), sp = c.lastIndexOf(" ");
+    return (sp > CAP * 0.6 ? c.slice(0, sp) : c).replace(/[\s,;:.-]+$/, "") + "…";
+  }
+  function slugs() {
+    var out = [];
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(PFX) === 0 && load(k.slice(PFX.length)).length) out.push(k.slice(PFX.length));
+      }
+    } catch (e) {}
+    return out;
+  }
+  window.PipReview = {
+    slugify: slugify, load: load, slugs: slugs, trim: trimText,
+    count: function (slug) { return load(slug).length; },
+    idOf: idOf,
+    has: function (slug, id) { return load(slug).some(function (x) { return x.id === id; }); },
+    add: function (slug, item) {          // "added", "exists" or "failed"
+      var list = load(slug);
+      if (list.some(function (x) { return x.id === item.id; })) return "exists";
+      list.push(item);
+      return save(slug, list) ? "added" : "failed";
+    },
+    remove: function (slug, id) { save(slug, load(slug).filter(function (x) { return x.id !== id; })); },
+    setNote: function (slug, id, note) {
+      var list = load(slug), hit = false;
+      list.forEach(function (x) { if (x.id === id && (x.n || "") !== note) { x.n = note; hit = true; } });
+      if (hit) save(slug, list);
+    }
+  };
+})();
+
 (function () {
   if (!document.querySelector(".guide-back-bar")) return;
   // `document.querySelector(".wrap")` (no scoping) grabs the FIRST match
@@ -1805,122 +1875,666 @@ window.SitePrompts = {
   // masthead header (a coincidental class-name collision, see
   // feedback_guide_highlighting_ux memory), not the real content container.
   // That silently scoped the entire highlighting feature to a tiny header
-  // div with almost no text in it -- selecting real guide content then
-  // found no unit at all (`findUnit` walks up looking for `data-hl-idx`
-  // until it hits `wrap`, but real content isn't even a descendant of the
-  // wrong `wrap`), so highlighting looked completely broken with zero
-  // feedback. Every guide's real content wrap is a direct child of <body>
-  // by convention (same assumption theme.css's dark-mode invert rule makes
-  // via `body > .wrap`) -- match that specifically, falling back to the
-  // old unscoped lookup only if no guide follows that convention.
+  // div with almost no text in it. Every guide's real content wrap is a
+  // direct child of <body> by convention (same assumption theme.css's
+  // dark-mode invert rule makes via `body > .wrap`) -- match that
+  // specifically, falling back to the old unscoped lookup only if no guide
+  // follows that convention.
   var wrap = document.querySelector("body > .wrap") || document.querySelector(".wrap");
   if (!wrap) return;
 
+  /* ------------------------------------------------------------------------------------------------
+     UNITS. A saved highlight is {idx, start, end, color, note} plus, since 2026-10-15, optional
+     q (the highlighted words, to find it again after a guide edit) and g (a group id shared by the
+     pieces of one highlight that crosses paragraphs, list items or table cells). start/end are
+     character offsets into the text of ONE unit element.
+
+     LEGACY units: HL_UNIT_SELECTOR plus the containment filter below, numbered 0..n. Every highlight
+     saved before 2026-10-15 points into exactly this numbering, so NEITHER may ever change. (Some
+     guides reuse `.io` as a wrapper around their own <p>/<li>; the filter keeps only the innermost
+     match, the same fix the read-aloud engine's buildQueue() makes.)
+
+     EXTRA units (2026-10-15), idx "x0", "x1", ...: everything else that holds text. Before this, the
+     highlighter could not touch about 23% of the text in the 119 guides (measured), because only the
+     legacy elements were units: every <dt>/<dd> of the CMS eight-point frameworks, every table
+     header, figure captions, headings, pearls, and with them about 3,400 bold phrases. A selection
+     there, or one that ended in the next paragraph (a triple-click, or a drag that runs past a bold
+     phrase at the end of a list item), found "no unit" or "two units" and was refused.
+     An extra unit is any element below that is not inside a legacy unit and owns text directly (text
+     whose nearest unit-ish ancestor is that element). Numbered at load, in the order of their first
+     own text, so the numbering only changes when the guide's own markup changes, like the legacy one.
+     Old copies of this script simply skip "x" highlights (units["x3"] is undefined), so the format
+     stays backward compatible in both directions.
+     ------------------------------------------------------------------------------------------------ */
   var HL_UNIT_SELECTOR = "p, li, .cap, .figcap, .callout, td, .io, .io-head, .io-h";
+  // <summary> is left out on purpose: a drag or a click on a highlight there would open or close its
+  // accordion. (A legacy unit that holds a summary keeps that text, as it did before.)
+  var HL_EXTRA_SELECTOR = "dt, dd, th, caption, figcaption, h1, h2, h3, h4, h5, h6, blockquote, pre, label, " +
+    "div, section, article, aside, figure, details, ul, ol, dl, table, thead, tbody, tfoot, tr, main";
+  var NO_EXTRA = "nav, header, footer, .guide-back-bar, summary, script, style, noscript, template, svg, button, select, textarea, input, [data-no-hl], .gnote";
+  var NO_TEXT = "script, style, noscript, template, svg, button, select, textarea, input, option, [data-no-hl], .gnote";
+  var NO_X_TEXT = NO_TEXT + ", summary";   // text no EXTRA unit owns
   var HL_KEY = "guideHl:" + location.pathname;
+  var NOTE_KEY = "guideNote:" + location.pathname;
   var COLORS = ["yellow", "green", "pink", "blue"];
 
-  // Same containment fix as the read-aloud engine's buildQueue() above --
-  // some guides reuse `.io` as a wrapping box around its own `<p>`/`<li>`
-  // children (see the read-aloud comment for the full story). Without this,
-  // a selection landing on the wrapper itself (rather than its more-specific
-  // child) would try to store an offset against the WRONG unit -- the
-  // wrapper's un-spaced, concatenated textContent -- silently producing a
-  // highlight in the wrong place or none at all.
-  var allMatches = Array.prototype.slice.call(wrap.querySelectorAll(HL_UNIT_SELECTOR));
-  var units = allMatches.filter(function (el) {
-    for (var i = 0; i < allMatches.length; i++) {
-      if (allMatches[i] !== el && el.contains(allMatches[i])) return false;
-    }
-    return true;
+  // (keep only matches that contain no other match: the same set as the July 2026 pairwise
+  // contains() loop, which took 70-130 ms on the largest guides, by a native descendant query)
+  var units = Array.prototype.slice.call(wrap.querySelectorAll(HL_UNIT_SELECTOR)).filter(function (el) {
+    return !el.querySelector(HL_UNIT_SELECTOR);
   });
   units.forEach(function (u, i) { u.setAttribute("data-hl-idx", i); });
 
-  // Character offset of (node, offset) relative to the full plain text of
-  // `unit`. A Range boundary point isn't always (textNode, charIndex) --
-  // triple-click-to-select-a-paragraph and selections starting/ending
-  // exactly at an element edge (e.g. right before an <em>) instead give
-  // (elementNode, childIndex). Manually walking text nodes and comparing
-  // node identity misses that second case entirely (silently returns the
-  // unit's full length instead of the intended position -- confirmed via a
-  // real selectNodeContents()-based test producing a zero-width "highlight"
-  // at the very end of the text instead of spanning it). Building a
-  // measuring range from the unit's start to this exact boundary point and
-  // reading its resolved .toString().length sidesteps the whole problem --
-  // Range already knows how to turn either representation into text
-  // correctly, so this function doesn't need its own case-handling for it.
-  function textOffset(unit, node, offset) {
-    var measuring = document.createRange();
-    measuring.setStart(unit, 0);
-    measuring.setEnd(node, offset);
-    return measuring.toString().length;
-  }
-
-  // Inverse of textOffset: build a Range for [start, end) plain-text
-  // offsets within `unit`. Returns null if the offsets no longer fit inside
-  // the unit's current text (e.g. the guide's own content was edited since
-  // this highlight was saved) -- callers must skip gracefully, not throw.
-  function rangeFromOffsets(unit, start, end) {
-    var walker = document.createTreeWalker(unit, NodeFilter.SHOW_TEXT, null);
-    var total = 0, n, range = document.createRange();
-    var startSet = false, endSet = false;
-    while ((n = walker.nextNode())) {
-      var len = n.textContent.length;
-      if (!startSet && total + len >= start) { range.setStart(n, start - total); startSet = true; }
-      if (!endSet && total + len >= end) { range.setEnd(n, end - total); endSet = true; break; }
-      total += len;
+  var xunits = [];
+  (function () {
+    var cands = wrap.querySelectorAll(HL_EXTRA_SELECTOR + ", " + HL_UNIT_SELECTOR), i, el;
+    for (i = 0; i < cands.length; i++) {
+      el = cands[i];
+      if (el.closest("[data-hl-idx]") || el.closest(NO_EXTRA)) continue;
+      el.__hlc = 1;
     }
-    return (startSet && endSet) ? range : null;
-  }
+    wrap.__hlc = 1;                    // text sitting directly in the content wrap
+    var w = document.createTreeWalker(wrap, NodeFilter.SHOW_TEXT, null), n, skip;
+    while ((n = w.nextNode())) {
+      if (!/\S/.test(n.data)) continue;
+      for (el = n.parentElement, skip = false; el; el = el.parentElement) {
+        if (el.hasAttribute("data-hl-idx")) break;
+        if (el.__hlc) {
+          if (!skip && !el.hasAttribute("data-hl-x")) { el.setAttribute("data-hl-x", xunits.length); xunits.push(el); }
+          break;
+        }
+        if (!skip && el.matches(NO_X_TEXT)) skip = true;
+        if (el === wrap) break;
+      }
+    }
+  })();
 
+  // The unit that owns this node's text: the nearest legacy unit, or the nearest unit-ish element if
+  // it is a numbered extra unit. Text inside a button, svg, form control or note box belongs to no
+  // extra unit (it still counts inside a legacy unit, where the July 2026 offsets included it).
   function findUnit(node) {
-    var el = node.nodeType === 3 ? node.parentElement : node;
-    while (el && el !== wrap) {
-      if (el.hasAttribute && el.hasAttribute("data-hl-idx")) return el;
-      el = el.parentElement;
+    var el = node && (node.nodeType === 3 ? node.parentElement : node), skip = false;
+    for (; el; el = el.parentElement) {
+      if (el.hasAttribute("data-hl-idx")) return el;
+      if (el.__hlc) return (!skip && el.hasAttribute("data-hl-x")) ? el : null;
+      if (!skip && el.matches(NO_X_TEXT)) skip = true;
+      if (el === wrap) return null;
     }
     return null;
   }
-
-  function loadHighlights() {
-    try { return JSON.parse(localStorage.getItem(HL_KEY)) || []; } catch (e) { return []; }
+  function unitKey(u) {
+    return u.hasAttribute("data-hl-idx") ? Number(u.getAttribute("data-hl-idx")) : "x" + u.getAttribute("data-hl-x");
   }
-  function saveHighlights(list) { localStorage.setItem(HL_KEY, JSON.stringify(list)); }
+  function unitByKey(k) {
+    if (typeof k === "number") return units[k] || null;
+    if (typeof k === "string" && /^x\d+$/.test(k)) return xunits[Number(k.slice(1))] || null;
+    if (typeof k === "string" && /^\d+$/.test(k)) return units[Number(k)] || null;
+    return null;
+  }
+  var orderedCache = null;
+  function ordered() {               // every unit, in document order (built on first use)
+    if (!orderedCache) {
+      orderedCache = units.concat(xunits).sort(function (a, b) {
+        return a === b ? 0 : (a.compareDocumentPosition(b) & 4 ? -1 : 1);
+      });
+    }
+    return orderedCache;
+  }
 
-  function removeHighlight(mark, idx, start, end) {
-    var parent = mark.parentNode;
-    while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
-    parent.removeChild(mark);
+  // A unit's own text nodes, in order. For a legacy unit that is every text node inside it, so its
+  // text is exactly its textContent, as in July 2026.
+  function ownTexts(u) {
+    var out = [], legacy = u.hasAttribute("data-hl-idx");
+    var w = document.createTreeWalker(u, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) if (legacy || findUnit(n) === u) out.push(n);
+    return out;
+  }
+  function unitText(u) {
+    var t = ownTexts(u), s = "";
+    for (var i = 0; i < t.length; i++) s += t[i].data;
+    return s;
+  }
+
+  // Character offset, in u's own text, of the boundary point (node, off). A boundary point is not
+  // always (textNode, charIndex): triple-click and selections that start or end exactly at an
+  // element edge give (element, childIndex), so text nodes are compared by position, not identity.
+  function offsetIn(u, node, off) {
+    var ts = ownTexts(u), total = 0, r = document.createRange();
+    for (var i = 0; i < ts.length; i++) {
+      var t = ts[i];
+      if (t === node) return total + Math.min(off, t.data.length);
+      r.setStart(t, 0); r.collapse(true);
+      try { if (r.comparePoint(node, off) <= 0) return total; } catch (e) { return total; }
+      total += t.data.length;
+    }
+    return total;
+  }
+
+  // The own text nodes (and the slice of each) that cover [start, end) of u's text.
+  function piecesOf(u, start, end) {
+    var ts = ownTexts(u), total = 0, out = [];
+    for (var i = 0; i < ts.length && total < end; i++) {
+      var len = ts[i].data.length, a = Math.max(start, total), b = Math.min(end, total + len);
+      if (b > a) out.push({ node: ts[i], s: a - total, e: b - total });
+      total += len;
+    }
+    return out;
+  }
+
+  // Wrap [start, end) of u's text in marks made by make(), one per text node it touches, and return
+  // them. Never moves or splits an element (the old extractContents() approach cut <strong>, <a>
+  // and <mark class="prof-highlight"> in two and could not cross a table cell); only text nodes are
+  // split, so every other saved offset stays valid. `skipInside` keeps a new mark from nesting
+  // inside an existing one; whitespace between blocks (table rows, list items) is left alone.
+  var BLOCKISH_PARENT = "table, thead, tbody, tfoot, tr, ul, ol, dl, select";
+  function wrapText(u, start, end, make, skipInside) {
+    var out = [];
+    piecesOf(u, start, end).forEach(function (p) {
+      var parent = p.node.parentElement, txt = p.node.data.slice(p.s, p.e);
+      if (!parent || parent.closest(NO_TEXT)) return;
+      if (skipInside && parent.closest(skipInside)) return;
+      if (!/\S/.test(txt) && (/[\n\r\t]/.test(txt) || parent.matches(BLOCKISH_PARENT))) return;
+      var mid = p.s > 0 ? p.node.splitText(p.s) : p.node;
+      if (p.e - p.s < mid.data.length) mid.splitText(p.e - p.s);
+      var m = make();
+      mid.parentNode.insertBefore(m, mid);
+      m.appendChild(mid);
+      out.push(m);
+    });
+    return out;
+  }
+  function unwrap(m) {
+    var parent = m.parentNode;
+    if (!parent) return;
+    while (m.firstChild) parent.insertBefore(m.firstChild, m);
+    parent.removeChild(m);
     parent.normalize();
+  }
+
+  // A drag-selection landing mid-word used to save exactly that partial-word range, and the mark's
+  // padding then drew a color-block edge in the middle of the word. Widen each end to the word
+  // boundary, only when that end actually lands mid-word.
+  function isWordChar(ch) { return !!ch && /[A-Za-z0-9'’-]/.test(ch); }
+  function snapStart(text, start) {
+    if (isWordChar(text[start])) while (start > 0 && isWordChar(text[start - 1])) start--;
+    return start;
+  }
+  function snapEnd(text, end) {
+    if (isWordChar(text[end - 1])) while (end < text.length && isWordChar(text[end])) end++;
+    return end;
+  }
+  function norm0(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
+  function newId(p) { return p + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  // the occurrence of `q` in `text` nearest to `near`, or -1
+  function nearestIndex(text, q, near) {
+    if (!q) return -1;
+    var best = -1, i = text.indexOf(q);
+    while (i >= 0) {
+      if (best < 0 || Math.abs(i - near) < Math.abs(best - near)) best = i;
+      i = text.indexOf(q, i + 1);
+    }
+    return best;
+  }
+
+  // A selection (any Range) as runs of not-yet-highlighted text, one or more per unit, in document
+  // order: [{u, start, end}]. Works whatever the range's boundary points are, across units.
+  var MAX_SEL_UNITS = 60;
+  function runsFrom(range) {
+    var root = range.commonAncestorContainer;
+    if (root.nodeType !== 1) root = root.parentNode;
+    if (!root || !(wrap.contains(root) || root.contains(wrap))) return [];
+    if (root.contains(wrap) && root !== wrap) root = wrap;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, runs = [], seen = [], cur = null;
+    var starts = {}, inside = false;
+    while ((n = w.nextNode())) {
+      if (!range.intersectsNode(n)) { if (inside) break; continue; }    // past the end of the selection
+      inside = true;
+      var s = n === range.startContainer ? range.startOffset : 0;
+      var e = n === range.endContainer ? range.endOffset : n.data.length;
+      if (e <= s) continue;
+      var u = findUnit(n);
+      if (!u) { cur = null; continue; }
+      if (n.parentElement && n.parentElement.closest("mark.user-hl")) { cur = null; continue; }
+      var ui = seen.indexOf(u);
+      if (ui < 0) { seen.push(u); ui = seen.length - 1; starts[ui] = ownTexts(u); }
+      // own-text offset of this node inside u
+      var ts = starts[ui], base = 0;
+      for (var k = 0; k < ts.length && ts[k] !== n; k++) base += ts[k].data.length;
+      var a = base + s, b = base + e;
+      if (cur && cur.u === u && cur.end === a) cur.end = b;
+      else { cur = { u: u, start: a, end: b }; runs.push(cur); }
+      if (seen.length > MAX_SEL_UNITS) return runs.concat([null]);    // too big: the caller says so
+    }
+    return runs;
+  }
+  function snapRuns(runs) {
+    if (!runs.length) return runs;
+    var f = runs[0], l = runs[runs.length - 1];
+    f.start = snapStart(unitText(f.u), f.start);
+    l.end = snapEnd(unitText(l.u), l.end);
+    return runs.filter(function (r) { return /\S/.test(unitText(r.u).slice(r.start, r.end)); });
+  }
+  function runsText(runs) {
+    return norm0(runs.map(function (r) { return unitText(r.u).slice(r.start, r.end); }).join(" "));
+  }
+
+  /* ------------------------------------------------------------------------------------------------
+     HIGHLIGHTS: storage and marks
+     ------------------------------------------------------------------------------------------------ */
+  function loadHighlights() {
+    try { var v = JSON.parse(localStorage.getItem(HL_KEY)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
+  function saveHighlights(list) {
+    try { localStorage.setItem(HL_KEY, JSON.stringify(list)); return true; }
+    catch (e) { if (window.showToast) window.showToast("Could not save your highlight. Check that this browser allows site storage.", 4000); return false; }
+  }
+  // one highlight = every record sharing this key (a group, or one legacy record)
+  function recKey(h) { return h.g ? "g:" + h.g : h.idx + ":" + h.start + ":" + h.end; }
+  function recsOf(key) { return loadHighlights().filter(function (h) { return recKey(h) === key; }); }
+  function marksOf(key) {
+    return Array.prototype.slice.call(wrap.querySelectorAll('mark.user-hl[data-hlk="' + key + '"]'));
+  }
+  function makeHlMark(color, key) {
+    var m = document.createElement("mark");
+    m.className = "user-hl user-hl-" + color;
+    m.setAttribute("data-hlk", key);
+    m.addEventListener("click", function (e) {
+      e.stopPropagation(); // don't also trigger the unit's click-to-jump handler
+      if (placing) return;
+      // a highlight inside a link or an accordion's title: the click opens its options, not the link/accordion
+      if (m.closest("a[href], summary")) e.preventDefault();
+      var s = window.getSelection();
+      if (s && !s.isCollapsed && s.toString().trim()) return;   // the end of a drag, not a click
+      openHlPopover(key, m);
+    });
+    return m;
+  }
+  // note indicator is CSS-only (mark.has-note::after, see theme.css) rather than an inserted child
+  // node: a real node would become part of the unit's text and shift every offset after it.
+  function setMarksNote(key, note) {
+    var ms = marksOf(key);
+    ms.forEach(function (m, i) {
+      m.dataset.note = note || "";
+      m.classList.toggle("has-note", !!note && i === ms.length - 1);
+      m.title = note ? note : "Click to add a note or remove this highlight";
+    });
+  }
+  function applyRec(u, h, key) {
+    var ms = wrapText(u, h.start, h.end, function () { return makeHlMark(h.color || "yellow", key); }, "mark.user-hl");
+    return ms;
+  }
+  // Where a saved record sits in the guide as it is now: {u, start, end}, or null when it can't be shown.
+  // A record that carries its words (q) and no longer matches them (the guide was edited) is looked for
+  // in the same unit and moved, IN MEMORY ONLY: the stored offsets are never rewritten on load (a write
+  // before cloud-sync has pulled would stamp this device's copy newer than the cloud's), so the record
+  // keeps its key and every later change still finds it. A record without q (saved before 2026-10-15)
+  // is applied as it always was, and skipped, as the old engine did, when it no longer fits its unit.
+  function placeRec(h) {
+    var u = unitByKey(h.idx);
+    if (!u || typeof h.start !== "number" || typeof h.end !== "number" || h.start < 0 || h.end <= h.start) return null;
+    var txt = unitText(u);
+    if (h.q && typeof h.q === "string") {
+      if (txt.substr(h.start, h.q.length) === h.q) return { u: u, start: h.start, end: Math.min(h.end, txt.length) };
+      var at = nearestIndex(txt, h.q, h.start);
+      return at < 0 ? null : { u: u, start: at, end: Math.min(at + (h.end - h.start), txt.length) };
+    }
+    return h.end > txt.length ? null : { u: u, start: h.start, end: h.end };
+  }
+  function textOfRecs(recs) {
+    return norm0(recs.map(function (h) {
+      var pl = placeRec(h);
+      return pl ? unitText(pl.u).slice(pl.start, pl.end) : (h.q || "");
+    }).join(" "));
+  }
+
+  // Restore. Wrapping only splits text nodes, so the order of restoring no longer matters. Nothing is
+  // written here.
+  (function () {
+    var keys = {};
+    loadHighlights().forEach(function (h) {
+      var pl = placeRec(h);
+      if (!pl) return;                 // its words are gone, or it no longer fits: keep the record, show nothing
+      var key = recKey(h);
+      applyRec(pl.u, { start: pl.start, end: pl.end, color: h.color }, key);
+      keys[key] = h.note || "";
+    });
+    Object.keys(keys).forEach(function (k) { setMarksNote(k, keys[k]); });
+  })();
+
+  function createHighlight(range, color) {
+    var runs = runsFrom(range);
+    if (runs.length && runs[runs.length - 1] === null) return null;
+    runs = snapRuns(runs);
+    if (!runs.length) return null;
+    var g = runs.length > 1 ? newId("g") : null, recs = [];
+    runs.forEach(function (r) {
+      var rec = { idx: unitKey(r.u), start: r.start, end: r.end, color: color, note: "",
+                  q: unitText(r.u).slice(r.start, r.end).slice(0, 200) };
+      if (g) rec.g = g;
+      recs.push(rec);
+    });
+    var key = recKey(recs[0]);
+    recs.forEach(function (rec, i) { applyRec(runs[i].u, rec, key); });
+    setMarksNote(key, "");
+    var list = loadHighlights().concat(recs);
+    saveHighlights(list);
+    // Only a genuinely new highlight is pushed out, never the replay on load. Position only
+    // (idx/start/end); color and note never leave this device -- see sharedHl below and firestore.rules.
+    if (sharedHl.enabled && sharedHl.uid) recs.forEach(function (h) { sharedHl.pushDoc(h.idx, h.start, h.end); });
+    return key;
+  }
+  function removeHighlight(key) {
+    marksOf(key).forEach(unwrap);
+    var gone = [];
     saveHighlights(loadHighlights().filter(function (h) {
-      return !(h.idx === idx && h.start === start && h.end === end);
+      if (recKey(h) === key) { gone.push(h); return false; }
+      return true;
     }));
-    if (sharedHl.enabled && sharedHl.uid) sharedHl.deleteDoc(idx, start, end);
+    if (sharedHl.enabled && sharedHl.uid) gone.forEach(function (h) { sharedHl.deleteDoc(h.idx, h.start, h.end); });
   }
-
-  function updateHighlightNote(idx, start, end, note) {
+  function updateRecs(key, fields) {
     var list = loadHighlights();
-    list.forEach(function (h) {
-      if (h.idx === idx && h.start === start && h.end === end) h.note = note;
-    });
+    list.forEach(function (h) { if (recKey(h) === key) for (var f in fields) h[f] = fields[f]; });
     saveHighlights(list);
   }
 
-  function updateHighlightColor(idx, start, end, color) {
-    var list = loadHighlights();
-    list.forEach(function (h) {
-      if (h.idx === idx && h.start === start && h.end === end) h.color = color;
+  /* ------------------------------------------------------------------------------------------------
+     TEXT-BOX NOTES (2026-10-15). A typed note pinned at one spot in the guide. Made only on purpose:
+     the "Add a note" tool in the guide toolbar (then click the spot), or "Note" on the selection
+     toolbar (pinned where the selection ends). Never from an ordinary click or selection.
+     Stored per page under "guideNote:" + location.pathname, an ordinary synced key (cloud-sync.js
+     uploads it like the highlights). Written only when a note is saved or deleted, never per keystroke.
+     Record: {id, u (unit key), o (offset in that unit's text), b / a (up to 24 characters of guide
+     text before / after the spot, to find it again after a guide edit), t (the note), at, m}.
+     The box is an empty <span class="gnote"> whose words are drawn by CSS (::after, attr(data-text)):
+     it holds no text node, so it never shifts a highlight offset, never shows up in the guide's search,
+     read-aloud, copy and paste or Pip's passage matching, and reflows with the text it sits in (phone
+     width, accordions opening and closing). Shown when printing, in plain ink.
+     ------------------------------------------------------------------------------------------------ */
+  var NOTE_MAX = 2000, NOTE_CTX = 24;
+  function loadNotes() {
+    try { var v = JSON.parse(localStorage.getItem(NOTE_KEY)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
+  function saveNotes(list) {
+    try {
+      if (list.length) localStorage.setItem(NOTE_KEY, JSON.stringify(list));
+      else localStorage.removeItem(NOTE_KEY);
+      return true;
+    } catch (e) {
+      if (window.showToast) window.showToast("Could not save your note. Check that this browser allows site storage.", 4000);
+      return false;
+    }
+  }
+  function noteRec(id) { return loadNotes().filter(function (n) { return n.id === id; })[0] || null; }
+  function hostOf(id) { return wrap.querySelector('.gnote[data-gnote="' + id + '"]'); }
+  function setHostText(h, t) {
+    h.setAttribute("data-text", t || "");
+    h.setAttribute("aria-label", t ? "Your note: " + t + ". Press Enter to edit it." : "New note");
+    h.title = t ? "Your note (click to edit)" : "New note";
+  }
+  function makeHost(n) {
+    var h = document.createElement("span");
+    h.className = "gnote";
+    h.setAttribute("data-gnote", n.id);
+    h.setAttribute("role", "button");
+    h.tabIndex = 0;
+    setHostText(h, n.t);
+    h.addEventListener("click", function (e) {
+      e.preventDefault(); e.stopPropagation();       // not the link, accordion or highlight it sits in
+      if (placing) return;
+      openNoteEditor(n.id, null);
     });
-    saveHighlights(list);
+    h.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); openNoteEditor(n.id, null); }
+    });
+    return h;
+  }
+  // put a node at offset o of u's text (between characters, never inside a word unless o is)
+  function insertAt(u, o, node) {
+    var ts = ownTexts(u), total = 0;
+    for (var i = 0; i < ts.length; i++) {
+      var t = ts[i], len = t.data.length;
+      if (o <= total + len) {
+        var k = o - total, ref;
+        if (k <= 0) { t.parentNode.insertBefore(node, t); return; }
+        if (k >= len) {
+          ref = t;
+          // at the end of a highlight or search mark: sit after the mark, not inside its color
+          while (!ref.nextSibling && ref.parentNode && ref.parentNode.matches && ref.parentNode.matches("mark.user-hl, mark.search-hit, mark.shared-hl")) ref = ref.parentNode;
+          ref.parentNode.insertBefore(node, ref.nextSibling);
+          return;
+        }
+        var rest = t.splitText(k);
+        rest.parentNode.insertBefore(node, rest);
+        return;
+      }
+      total += len;
+    }
+    u.appendChild(node);
+  }
+  function anchorFor(u, o) {
+    var t = unitText(u);
+    return { u: unitKey(u), o: o, b: t.slice(Math.max(0, o - NOTE_CTX), o), a: t.slice(o, o + NOTE_CTX) };
+  }
+  // where a saved note goes now: its unit and offset if the words around it still match, else the
+  // same words elsewhere in that unit, else anywhere in the guide (if they occur exactly once), else
+  // its old unit and offset. Null only when its unit is gone and its words are nowhere.
+  function resolveNote(n) {
+    var u = unitByKey(n.u), b = n.b || "", a = n.a || "", ctx = b + a;
+    if (u) {
+      var t = unitText(u), o = Math.min(Math.max(0, n.o || 0), t.length);
+      if (t.slice(o - b.length, o) === b && t.slice(o, o + a.length) === a) return { u: u, o: o };
+      if (ctx.replace(/\s+/g, "").length >= 4) {
+        var at = nearestIndex(t, ctx, o - b.length);
+        if (at >= 0) return { u: u, o: at + b.length };
+      }
+    }
+    if (ctx.replace(/\s+/g, "").length >= 8) {
+      var hit = null, count = 0;
+      ordered().forEach(function (x) {
+        if (count > 1) return;
+        var tx = unitText(x), i = tx.indexOf(ctx);
+        while (i >= 0 && count < 2) { count++; hit = { u: x, o: i + b.length }; i = tx.indexOf(ctx, i + 1); }
+      });
+      if (count === 1) return hit;
+    }
+    if (u) return { u: u, o: Math.min(Math.max(0, n.o || 0), unitText(u).length) };
+    return null;
+  }
+  var orphanNotes = [];
+  (function () {
+    var list = loadNotes();
+    list.forEach(function (n) {
+      if (!n || !n.id || !n.t) return;
+      var pos = resolveNote(n);
+      if (!pos) { orphanNotes.push(n); return; }
+      insertAt(pos.u, pos.o, makeHost(n));
+    });
+  })();
+
+  function saveNoteText(id, text, pending) {
+    var list = loadNotes(), now = new Date().toISOString(), hit = false;
+    list.forEach(function (n) { if (n.id === id) { n.t = text; n.m = now; hit = true; } });
+    if (!hit && pending) { pending.t = text; pending.m = now; list.push(pending); hit = true; }
+    if (!hit) return false;
+    var ok = saveNotes(list);
+    var h = hostOf(id);
+    if (h) setHostText(h, text);
+    pipNoteChanged(id, text);
+    return ok;
+  }
+  function deleteNote(id) {
+    var h = hostOf(id);
+    if (h) h.remove();
+    var list = loadNotes(), had = list.some(function (n) { return n.id === id; });
+    if (had) saveNotes(list.filter(function (n) { return n.id !== id; }));
+    pipNoteChanged(id, null);
+  }
+  function revealEl(el) {
+    for (var d = el.closest("details"); d; d = d.parentElement && d.parentElement.closest("details")) d.open = true;
+    var panel = el.closest(".subj-panel");
+    if (panel && !panel.classList.contains("active")) {
+      var subj = panel.getAttribute("data-subj");
+      var tab = Array.prototype.filter.call(document.querySelectorAll(".subj-tab"), function (t) { return t.dataset.subj === subj; })[0];
+      if (tab) tab.click();
+    }
+  }
+  function startNote(u, o) {
+    var t = unitText(u);
+    // never split a word: move to the end of the word the spot is in
+    if (o > 0 && isWordChar(t[o - 1])) while (o < t.length && isWordChar(t[o])) o++;
+    var n = anchorFor(u, o);
+    n.id = newId("n"); n.t = ""; n.at = new Date().toISOString();
+    var h = makeHost(n);
+    insertAt(u, o, h);
+    revealEl(h);
+    openNoteEditor(n.id, n);
   }
 
-  // Keep a floating panel/popover inside the viewport rather than letting it
-  // render partly (or entirely) off-screen -- the previous left-only clamp
-  // (Math.max(8, ...)) never handled the right/top/bottom edges, which a
-  // selection near any of those edges would hit. Called after the element
-  // is appended (so its real rendered size via getBoundingClientRect is
-  // known) with the *desired* top/left already set; nudges them back into
-  // bounds if needed.
+  /* ------------------------------------------------------------------------------------------------
+     Add to Pip (2026-10-11, finished 2026-10-15). See window.PipReview above. The saved bit is the
+     guide's own words; the only other text is the student's own note.
+     ------------------------------------------------------------------------------------------------ */
+  var PIP_BASE = (function () {
+    var sc = document.querySelector('script[src$="theme.js"]');
+    return sc && sc.src ? sc.src.replace(/theme\.js(\?.*)?$/, "") : "";
+  })();
+  var PIP_PATH = (function () { try { return decodeURIComponent(location.pathname); } catch (e) { return location.pathname; } })().split("/").filter(Boolean);
+  var PIP_FILE = PIP_PATH[PIP_PATH.length - 1] || "", PIP_FOLDER = PIP_PATH[PIP_PATH.length - 2] || "";
+  var pipExam = null, pipExamPending = null;  // the Semester 2 exam this page belongs to ({s, f, t}), or false
+  function pipExamP() {
+    if (pipExam !== null) return Promise.resolve(pipExam);
+    if (!window.PipReview || !PIP_BASE || !window.fetch || !PIP_FOLDER) return Promise.resolve((pipExam = false));
+    if (pipExamPending) return pipExamPending;
+    pipExamPending = fetch(PIP_BASE + "pip/data/index.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (ix) {
+      var hit = null;
+      ((ix && ix.folders) || []).forEach(function (f) { if (f.f === PIP_FOLDER) hit = f; });
+      pipExamPending = null;
+      return (pipExam = hit ? { s: hit.s, f: hit.f, t: hit.t } : false);
+    }).catch(function () { pipExamPending = null; return false; });   // not cached: a failed fetch may work next time
+    return pipExamPending;
+  }
+  // Where a passage sits, the way tools/build_pip_data.py indexes the guide: `a` is the last element
+  // with an id at or before it (so Pip's explanation cards and the quiz questions linked to that spot
+  // line up), `st` the last h2/h3 before it, `k`/`kt` the enclosing section[id] and its heading.
+  function sectionInfo(u) {
+    var a = "", st = "", w = document.createTreeWalker(wrap, NodeFilter.SHOW_ELEMENT, null);
+    w.currentNode = u;
+    for (var el = u; el; el = w.previousNode()) {
+      if (!a && el.id) a = el.id;
+      if (!st && /^H[23]$/.test(el.tagName)) st = norm0(el.textContent);
+      if (a && st) break;
+    }
+    var deck = u.closest("section[id]"), dh = deck && deck.querySelector("h1, h2, h3");
+    return { a: a, st: st, k: deck ? deck.id : "", kt: dh ? norm0(dh.textContent) : "" };
+  }
+  function pipItem(u, text, note, extra) {
+    var sec = sectionInfo(u), t = window.PipReview.trim(text);
+    var it = { id: window.PipReview.idOf(t, PIP_FILE), f: PIP_FOLDER, d: PIP_FILE, a: sec.a, st: sec.st, k: sec.k, kt: sec.kt,
+               u: ordered().indexOf(u), t: t, n: String(note || "").trim().slice(0, NOTE_MAX), at: new Date().toISOString() };
+    if (extra) for (var f in extra) it[f] = extra[f];
+    return it;
+  }
+  function pipToast(r, n) {
+    if (!window.showToast) return;
+    window.showToast(r === "added" ? "Added to your review guide (" + n + " saved). Find it from Pip or the home page."
+      : r === "exists" ? "Already in your review guide (" + n + " saved)"
+      : r === "removed" ? "Removed from your review guide (" + n + " saved)"
+      : "Could not save here. Check that this browser allows site storage.", 3500);
+  }
+  function pipAdd(item) {
+    return pipExamP().then(function (ex) {
+      if (!ex || !item || !item.t) return null;
+      var r = window.PipReview.add(ex.s, item);
+      pipToast(r, window.PipReview.count(ex.s));
+      return r;
+    });
+  }
+  // a Pip toggle button for a popover: label follows whether `idFn()` is in the list
+  function pipToggle(parent, idFn, makeItem) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "hl-note-btn hl-note-pip"; b.hidden = true;
+    parent.appendChild(b);
+    pipExamP().then(function (ex) {
+      if (!ex || !b.isConnected) return;
+      function label() {
+        var on = window.PipReview.has(ex.s, idFn());
+        b.textContent = on ? "Remove from Pip" : "Add to Pip";
+        b.title = on ? "Take this out of your review guide" : "Save this to your review guide (My Review Guide)";
+      }
+      label(); b.hidden = false;
+      b.addEventListener("click", function () {
+        var id = idFn();
+        if (window.PipReview.has(ex.s, id)) {
+          window.PipReview.remove(ex.s, id);
+          pipToast("removed", window.PipReview.count(ex.s));
+          label();
+        } else {
+          var it = makeItem();
+          if (!it) return;
+          pipAdd(it).then(label);
+        }
+      });
+    });
+    return b;
+  }
+  function hlItem(key, note) {
+    var recs = recsOf(key);
+    if (!recs.length) return null;
+    var pl = placeRec(recs[0]);
+    return pl ? pipItem(pl.u, textOfRecs(recs), note, { o: pl.start }) : null;
+  }
+  function hlPipId(key) { return window.PipReview.idOf(window.PipReview.trim(textOfRecs(recsOf(key))), PIP_FILE); }
+  // A text-box note in the review guide: the guide's own sentence around the spot, plus the note.
+  function noteContext(u, o) {
+    var t = unitText(u), s = o, e = o;
+    while (s > 0 && !/[.!?;:]\s/.test(t.slice(s - 2, s))) s--;
+    while (e < t.length && !/[.!?;:](\s|$)/.test(t.slice(e - 1, e + 1))) e++;
+    var c = norm0(t.slice(s, Math.min(t.length, e + 1)));
+    return c || norm0(t);
+  }
+  function noteItem(id, text) {
+    var h = hostOf(id);
+    if (!h || !text) return null;
+    var u = findUnit(h.parentNode) || null;
+    if (!u) return null;
+    var r = document.createRange(); r.setStartBefore(h);
+    var o = offsetIn(u, r.startContainer, r.startOffset);
+    var it = pipItem(u, noteContext(u, o), text, { nid: id, o: o });
+    it.id = "n:" + id;
+    return it;
+  }
+  function pipNoteChanged(id, text) {
+    if (!window.PipReview || pipExam === null || !pipExam) {
+      if (window.PipReview && pipExam === null) pipExamP().then(function (ex) { if (ex) pipNoteChanged(id, text); });
+      return;
+    }
+    var s = pipExam.s, rid = "n:" + id;
+    if (!window.PipReview.has(s, rid)) return;
+    if (text === null) { window.PipReview.remove(s, rid); return; }
+    window.PipReview.setNote(s, rid, text);
+  }
+
+  /* ------------------------------------------------------------------------------------------------
+     POPOVERS: one at a time. "commit" (clicking elsewhere) keeps what was typed; Escape cancels.
+     ------------------------------------------------------------------------------------------------ */
+  var pop = null;
+  function closePopover(how) {
+    if (!pop) return;
+    var p = pop; pop = null;
+    try { if (how === "cancel") { if (p.cancel) p.cancel(); } else if (how !== "silent" && p.commit) p.commit(); } catch (e) {}
+    p.el.remove();
+    if ((how === "cancel" || how === "done") && p.back && p.back.isConnected) { try { p.back.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  function placePopover(el, anchor) {
+    var rect = anchor.getBoundingClientRect();
+    el.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    el.style.left = Math.max(8, rect.left + window.scrollX) + "px";
+    document.body.appendChild(el);
+    clampToViewport(el);
+  }
+  // Keep a floating panel inside the viewport. Called after the element is appended (so its real
+  // size is known) with the desired top/left already set; nudges them back into bounds if needed.
   function clampToViewport(el) {
     var pad = 8;
     var rect = el.getBoundingClientRect();
@@ -1932,257 +2546,363 @@ window.SitePrompts = {
     el.style.left = (left + window.scrollX) + "px";
     el.style.top = (top + window.scrollY) + "px";
   }
-
-  // note indicator is CSS-only (mark.has-note::after, see theme.css) rather
-  // than an inserted child node -- an inserted node would become part of
-  // the mark's textContent, which would then get re-extracted into the
-  // highlight itself on any future edit and permanently bake the indicator
-  // glyph into the "highlighted text," plus it'd shift every future
-  // textOffset() computation inside this unit. Setting a class + native
-  // title tooltip touches neither.
-  // A drag-selection landing mid-word (e.g. dragging from the middle of
-  // "hepatocyte" to the middle of the next word) used to save exactly that
-  // partial-word range. mark.user-hl's own padding/border-radius (theme.css)
-  // then puts a visible color-block edge right in the middle of the word --
-  // reads as if the word had been split into two separate words with a gap
-  // between them, even though no actual space character is there. Widening
-  // the saved range out to the nearest non-word character on each side
-  // (only when that side actually starts/ends mid-word -- a selection that
-  // already lands on a real boundary is left untouched) makes that
-  // particular visual glitch impossible instead of just narrower.
-  function isWordChar(ch) { return !!ch && /[A-Za-z0-9'’-]/.test(ch); }
-  function snapToWordBoundaries(unit, start, end) {
-    var text = unit.textContent;
-    if (isWordChar(text[start])) {
-      while (start > 0 && isWordChar(text[start - 1])) start--;
-    }
-    if (isWordChar(text[end - 1])) {
-      while (end < text.length && isWordChar(text[end])) end++;
-    }
-    return { start: start, end: end };
+  function popBtn(cls, text, fn) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "hl-note-btn " + cls; b.textContent = text;
+    b.addEventListener("click", fn);
+    return b;
   }
 
-  function applyHighlight(unit, start, end, color, persist, note) {
-    note = note || "";
-    var range = rangeFromOffsets(unit, start, end);
-    if (!range) return null;
-    var mark = document.createElement("mark");
-    mark.className = "user-hl user-hl-" + color;
-    var idx = Number(unit.getAttribute("data-hl-idx"));
-    try {
-      var content = range.extractContents();
-      mark.appendChild(content);
-      range.insertNode(mark);
-    } catch (e) { return null; }
-    setMarkNote(mark, note);
-    mark.addEventListener("click", function (e) {
-      e.stopPropagation(); // don't also trigger the unit's click-to-jump handler
-      openNotePopover(mark, idx, start, end);
-    });
-    if (persist) {
-      var list = loadHighlights();
-      list.push({ idx: idx, start: start, end: end, color: color, note: note });
-      saveHighlights(list);
-      // Only a genuinely new, user-just-made highlight (persist=true) is
-      // pushed out -- NOT the persist=false calls that replay already-saved
-      // highlights back onto the page on load, which would otherwise
-      // re-write every single one to Firestore on every page view for no
-      // reason. Position only (idx/start/end); color and note never leave
-      // this device -- see sharedHl below and firestore.rules.
-      if (sharedHl.enabled && sharedHl.uid) sharedHl.pushDoc(idx, start, end);
-    }
-    return mark;
-  }
-
-  function setMarkNote(mark, note) {
-    mark.dataset.note = note;
-    mark.classList.toggle("has-note", !!note);
-    mark.title = note ? note : "Click to add a note or remove this highlight";
-  }
-
-  // Restore saved highlights. Grouped by unit and applied in descending
-  // start-offset order within each unit, so applying an earlier highlight
-  // never shifts the DOM structure a later-in-list (but earlier-in-text)
-  // one still needs to walk to compute its own range.
-  var byUnit = {};
-  loadHighlights().forEach(function (h) { (byUnit[h.idx] = byUnit[h.idx] || []).push(h); });
-  Object.keys(byUnit).forEach(function (idxStr) {
-    var unit = units[Number(idxStr)];
-    if (!unit) return; // guide content changed since this was saved -- skip, don't crash
-    byUnit[idxStr]
-      .slice()
-      .sort(function (a, b) { return b.start - a.start; })
-      .forEach(function (h) { applyHighlight(unit, h.start, h.end, h.color, false, h.note); });
-  });
-
-  var notePopover = null;
-  function hideNotePopover() { if (notePopover) { notePopover.remove(); notePopover = null; } }
-  function openNotePopover(mark, idx, start, end) {
+  function openHlPopover(key, anchor) {
     hideToolbar();
-    hideNotePopover();
-    var rect = mark.getBoundingClientRect();
-    notePopover = document.createElement("div");
-    notePopover.className = "hl-note-popover";
-    notePopover.style.top = (rect.bottom + window.scrollY + 6) + "px";
-    notePopover.style.left = Math.max(8, rect.left + window.scrollX) + "px";
+    closePopover("commit");
+    var recs = recsOf(key);
+    if (!recs.length) return;
+    var el = document.createElement("div");
+    el.className = "hl-note-popover";
+    el.setAttribute("role", "dialog");
+    el.setAttribute("aria-label", "Highlight options");
+    var current = recs[0].color || "yellow", saved = recs[0].note || "";
 
-    // Recolor without deleting and reapplying -- swap the mark's own
-    // user-hl-COLOR class and persist it. The currently-applied color gets
-    // a visible ring so it reads as "this one's already selected."
+    // Recolor without deleting and reapplying; the current color gets a ring.
     var colorRow = document.createElement("div");
     colorRow.className = "hl-note-colors";
     COLORS.forEach(function (color) {
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "hl-swatch hl-swatch-" + color;
+      b.className = "hl-swatch hl-swatch-" + color + (color === current ? " hl-swatch-current" : "");
       b.setAttribute("aria-label", "Change to " + color);
-      var currentColor = (mark.className.match(/user-hl-(\w+)/) || [])[1];
-      if (color === currentColor) b.classList.add("hl-swatch-current");
-      b.addEventListener("mousedown", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        mark.className = "user-hl user-hl-" + color + (mark.classList.contains("has-note") ? " has-note" : "");
-        updateHighlightColor(idx, start, end, color);
-        colorRow.querySelectorAll(".hl-swatch").forEach(function (sw) { sw.classList.remove("hl-swatch-current"); });
-        b.classList.add("hl-swatch-current");
+      b.setAttribute("aria-pressed", color === current ? "true" : "false");
+      b.addEventListener("click", function () {
+        marksOf(key).forEach(function (m) {
+          COLORS.forEach(function (c) { m.classList.remove("user-hl-" + c); });
+          m.classList.add("user-hl-" + color);
+        });
+        updateRecs(key, { color: color });
+        colorRow.querySelectorAll(".hl-swatch").forEach(function (sw) { sw.classList.remove("hl-swatch-current"); sw.setAttribute("aria-pressed", "false"); });
+        b.classList.add("hl-swatch-current"); b.setAttribute("aria-pressed", "true");
       });
       colorRow.appendChild(b);
     });
-    notePopover.appendChild(colorRow);
+    el.appendChild(colorRow);
 
     var textarea = document.createElement("textarea");
     textarea.className = "hl-note-textarea";
     textarea.placeholder = "Add a note about this passage… (⌘/Ctrl+Enter to save)";
-    textarea.value = mark.dataset.note || "";
-    notePopover.appendChild(textarea);
+    textarea.setAttribute("aria-label", "Note about this highlight");
+    textarea.maxLength = NOTE_MAX;
+    textarea.value = saved;
+    el.appendChild(textarea);
 
+    function commit() {
+      var note = textarea.value.trim();
+      if (note === saved) return;
+      saved = note;
+      setMarksNote(key, note);
+      updateRecs(key, { note: note });
+      pipExamP().then(function (ex) { if (ex) window.PipReview.setNote(ex.s, hlPipId(key), note); });
+    }
     var row = document.createElement("div");
     row.className = "hl-note-row";
-
-    var removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "hl-note-btn hl-note-remove";
-    removeBtn.textContent = "Remove highlight";
-    removeBtn.addEventListener("click", function () {
-      removeHighlight(mark, idx, start, end);
-      hideNotePopover();
-    });
-
-    function save() {
-      var note = textarea.value.trim();
-      setMarkNote(mark, note);
-      updateHighlightNote(idx, start, end, note);
-      hideNotePopover();
-    }
-    var saveBtn = document.createElement("button");
-    saveBtn.type = "button";
-    saveBtn.className = "hl-note-btn hl-note-save";
-    saveBtn.textContent = "Save note";
-    saveBtn.addEventListener("click", save);
+    row.appendChild(popBtn("hl-note-remove", "Remove highlight", function () {
+      removeHighlight(key);
+      closePopover("silent");
+    }));
+    row.appendChild(popBtn("hl-note-save", "Save note", function () { closePopover("done"); }));
+    el.appendChild(row);
     textarea.addEventListener("keydown", function (e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); save(); }
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); closePopover("done"); }
     });
+    // "Add to Pip" (a toggle: "Remove from Pip" once the passage is in the review guide)
+    pipToggle(el, function () { return hlPipId(key); }, function () { return hlItem(key, textarea.value.trim()); });
 
-    row.appendChild(removeBtn);
-    row.appendChild(saveBtn);
-    notePopover.appendChild(row);
-    document.body.appendChild(notePopover);
-    clampToViewport(notePopover);
-    textarea.focus();
+    pop = { el: el, commit: commit, flush: commit, back: null };
+    placePopover(el, anchor);
+    textarea.focus({ preventScroll: true });
   }
 
-  var toolbar = null;
-  function hideToolbar() { if (toolbar) { toolbar.remove(); toolbar = null; } }
-  function showToolbar(range, unit) {
+  function openNoteEditor(id, pending) {
     hideToolbar();
-    var rect = range.getBoundingClientRect();
-    toolbar = document.createElement("div");
-    toolbar.className = "hl-toolbar";
-    toolbar.style.top = (rect.top + window.scrollY - 40) + "px";
-    toolbar.style.left = Math.max(8, rect.left + window.scrollX) + "px";
+    closePopover("commit");
+    var h = hostOf(id), rec = pending || noteRec(id);
+    if (!h || !rec) return;
+    var el = document.createElement("div");
+    el.className = "hl-note-popover gnote-editor";
+    el.setAttribute("role", "dialog");
+    el.setAttribute("aria-label", pending ? "New note" : "Edit your note");
+    var head = document.createElement("div");
+    head.className = "gnote-editor-head";
+    head.textContent = pending ? "New note" : "Your note";
+    el.appendChild(head);
+    var textarea = document.createElement("textarea");
+    textarea.className = "hl-note-textarea";
+    textarea.placeholder = "Type your note… (⌘/Ctrl+Enter to save)";
+    textarea.setAttribute("aria-label", "Your note");
+    textarea.maxLength = NOTE_MAX;
+    textarea.value = rec.t || "";
+    el.appendChild(textarea);
+    var saved = rec.t || "", isNew = !!pending;
+    function commit() {
+      var v = textarea.value.trim();
+      if (!v) {
+        if (isNew) { var hh = hostOf(id); if (hh) hh.remove(); }
+        else { deleteNote(id); if (window.showToast) window.showToast("Note deleted", 2500); }
+        return;
+      }
+      if (v === saved && !isNew) return;
+      if (saveNoteText(id, v, isNew ? pending : null)) { saved = v; isNew = false; }
+    }
+    function cancel() {
+      if (isNew) { var hh = hostOf(id); if (hh) hh.remove(); }
+    }
+    var row = document.createElement("div");
+    row.className = "hl-note-row";
+    row.appendChild(popBtn("hl-note-remove", isNew ? "Cancel" : "Delete note", function () {
+      if (isNew) { closePopover("cancel"); return; }
+      pop.commit = null; pop.back = null;
+      deleteNote(id);
+      closePopover("silent");
+      if (window.showToast) window.showToast("Note deleted", 2500);
+    }));
+    row.appendChild(popBtn("hl-note-save", "Save note", function () { closePopover("done"); }));
+    el.appendChild(row);
+    textarea.addEventListener("keydown", function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); closePopover("done"); }
+    });
+    // Add to Pip: the guide's sentence around the note, with the note as "your note"
+    pipToggle(el, function () { return "n:" + id; }, function () {
+      var v = textarea.value.trim();
+      if (!v) { if (window.showToast) window.showToast("Type your note first", 2500); return null; }
+      if (v !== saved || isNew) { if (saveNoteText(id, v, isNew ? pending : null)) { saved = v; isNew = false; } }
+      return noteItem(id, v);
+    });
+    function flush() {
+      var v = textarea.value.trim();
+      if (v && (v !== saved || isNew) && saveNoteText(id, v, isNew ? pending : null)) { saved = v; isNew = false; }
+    }
+    pop = { el: el, commit: commit, cancel: cancel, flush: flush, back: h };
+    placePopover(el, h);
+    textarea.focus({ preventScroll: true });
+  }
+
+  /* ------------------------------------------------------------------------------------------------
+     SELECTION TOOLBAR: color swatches, "Note" and (on a Semester 2 exam's pages) "Add to Pip".
+     ------------------------------------------------------------------------------------------------ */
+  var toolbar = null, lastPointer = "mouse";
+  function hideToolbar() { if (toolbar) { toolbar.remove(); toolbar = null; } }
+  function tbBtn(cls, text, label, fn) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = cls;
+    if (text) b.textContent = text;
+    b.setAttribute("aria-label", label); b.title = label;
+    // mousedown is swallowed so the text selection survives the click; the action runs on click,
+    // which a keyboard (Enter / Space) also fires
+    b.addEventListener("mousedown", function (e) { e.preventDefault(); e.stopPropagation(); });
+    b.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); fn(); });
+    return b;
+  }
+  function showToolbar(range) {
+    hideToolbar();
+    var saved = range.cloneRange(), rect = range.getBoundingClientRect();
+    var touch = lastPointer === "touch" || lastPointer === "pen";
+    var bar = document.createElement("div");
+    bar.className = "hl-toolbar";
+    bar.setAttribute("role", "toolbar");
+    bar.setAttribute("aria-label", "Highlight tools");
     COLORS.forEach(function (color) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "hl-swatch hl-swatch-" + color;
-      b.setAttribute("aria-label", "Highlight " + color);
-      b.addEventListener("mousedown", function (e) {
-        e.preventDefault(); // keep the text selection alive through this click
-        // Also stop this mousedown from reaching the document-level listener
-        // below -- that listener closes notePopover on any outside click,
-        // and without this it would fire (bubbled from this very click)
-        // immediately after openNotePopover() runs a few lines down,
-        // destroying the popover in the same gesture that created it.
-        e.stopPropagation();
-        var start = textOffset(unit, range.startContainer, range.startOffset);
-        var end = textOffset(unit, range.endContainer, range.endOffset);
-        var snapped = snapToWordBoundaries(unit, start, end);
-        start = snapped.start;
-        end = snapped.end;
-        var idx = Number(unit.getAttribute("data-hl-idx"));
-        var mark = applyHighlight(unit, start, end, color, true);
+      bar.appendChild(tbBtn("hl-swatch hl-swatch-" + color, "", "Highlight " + color, function () {
+        var key = createHighlight(saved, color);
         window.getSelection().removeAllRanges();
         hideToolbar();
-        // Prompt for an optional note right away -- annotating is meant to
-        // feel like one continuous motion with highlighting, not a separate
-        // step you have to remember to come back for. Clicking away (the
-        // existing document-level mousedown handler below) leaves the
-        // highlight in place with no note, same as always.
-        if (mark) openNotePopover(mark, idx, start, end);
-      });
-      toolbar.appendChild(b);
+        if (!key) { if (window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000); return; }
+        // Prompt for an optional note right away -- annotating is meant to feel like one motion with
+        // highlighting. Clicking away keeps the highlight (and anything typed).
+        var ms = marksOf(key);
+        if (ms.length) openHlPopover(key, ms[ms.length - 1]);
+      }));
     });
-    document.body.appendChild(toolbar);
-    clampToViewport(toolbar);
+    bar.appendChild(tbBtn("hl-tbtext", "Note", "Add a note box here", function () {
+      var runs = snapRuns(runsFrom(saved).filter(Boolean));
+      window.getSelection().removeAllRanges();
+      hideToolbar();
+      if (!runs.length) return;
+      var last = runs[runs.length - 1];
+      startNote(last.u, last.end);
+    }));
+    // If the drag ends below the toolbar's spot, a phone's own copy/paste menu sits above the
+    // selection, so on touch the toolbar goes underneath instead.
+    bar.style.top = (touch ? rect.bottom + window.scrollY + 12 : rect.top + window.scrollY - 46) + "px";
+    bar.style.left = Math.max(8, rect.left + window.scrollX) + "px";
+    document.body.appendChild(bar);
+    clampToViewport(bar);
+    toolbar = bar;
+    pipExamP().then(function (ex) {
+      if (!ex || toolbar !== bar) return;
+      bar.appendChild(tbBtn("hl-tbtext hl-pipbtn", "Add to Pip", "Add to Pip: save this to your review guide", function () {
+        var runs = snapRuns(runsFrom(saved).filter(Boolean));
+        window.getSelection().removeAllRanges();
+        hideToolbar();
+        if (!runs.length) return;
+        pipAdd(pipItem(runs[0].u, runsText(runs), "", { o: runs[0].start }));
+      }));
+      clampToViewport(bar);
+    });
   }
 
-  document.addEventListener("mouseup", function (e) {
-    if (toolbar && toolbar.contains(e.target)) return;
+  function onSelectionDone(e) {
+    if (e && e.target && e.target.closest) {
+      if (toolbar && toolbar.contains(e.target)) return;
+      if (pop && pop.el.contains(e.target)) return;
+      if (e.target.closest(".gnote, input, textarea, select, .hl-panel-overlay")) return;
+    }
+    if (placing) return;
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed || sel.rangeCount === 0) { hideToolbar(); return; }
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0 || !sel.toString().trim()) { hideToolbar(); return; }
     var range = sel.getRangeAt(0);
-    if (!wrap.contains(range.commonAncestorContainer)) { hideToolbar(); return; }
-    var startUnit = findUnit(range.startContainer);
-    var endUnit = findUnit(range.endContainer);
-    if (!startUnit || startUnit !== endUnit) {
-      // Highlights are stored as a single unit + character offsets, so a
-      // selection spanning two different paragraphs/list items has nowhere
-      // valid to be saved -- this used to fail completely silently, which
-      // in a guide with lots of short adjacent <li>s (easy to accidentally
-      // drag a selection across one without meaning to) reads as
-      // "highlighting is just broken" rather than "select within one
-      // paragraph at a time." A real selection attempt (non-empty, inside
-      // the guide) always deserves feedback even when nothing can be saved.
+    var root = range.commonAncestorContainer;
+    if (root.nodeType !== 1) root = root.parentNode;
+    if (!root || !(wrap.contains(root) || root.contains(wrap))) { hideToolbar(); return; }
+    var runs = runsFrom(range);
+    if (runs.length && runs[runs.length - 1] === null) {
       hideToolbar();
-      if (window.showToast) window.showToast("Select text within a single paragraph or list item to highlight it");
+      if (window.showToast) window.showToast("That selection is too long to highlight. Select a smaller passage.", 3000);
       return;
     }
-    var commonEl = range.commonAncestorContainer.nodeType === 3
-      ? range.commonAncestorContainer.parentElement
-      : range.commonAncestorContainer;
-    if (commonEl.closest && commonEl.closest("mark.user-hl")) { hideToolbar(); return; } // avoid nested highlights
-    showToolbar(range, startUnit);
+    if (!runs.length) {
+      hideToolbar();
+      // Nothing new to mark: either it is all highlighted already (click the highlight to change it;
+      // no message) or it is text no highlight can hold (a button label, a picture's text).
+      var hl = root.closest("mark.user-hl") || Array.prototype.some.call(wrap.querySelectorAll("mark.user-hl"), function (m) {
+        try { return range.intersectsNode(m); } catch (x) { return false; }
+      });
+      if (!hl && window.showToast) window.showToast("That part of the guide can't be highlighted.", 3000);
+      return;
+    }
+    showToolbar(range);
+  }
+  document.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType || "mouse"; }, true);
+  document.addEventListener("mouseup", function (e) {
+    if (lastPointer === "touch" || lastPointer === "pen") return;   // touch: selectionchange below
+    onSelectionDone(e);
+  });
+  // Phones and tablets fire no mouseup after a long-press selection, so the toolbar used to never
+  // appear there. Wait for the selection handles to settle instead.
+  var selTimer = null;
+  document.addEventListener("selectionchange", function () {
+    if (lastPointer !== "touch" && lastPointer !== "pen") return;
+    clearTimeout(selTimer);
+    selTimer = setTimeout(function () {
+      var a = document.activeElement;
+      if (a && /^(input|textarea|select)$/i.test(a.tagName)) return;
+      onSelectionDone(null);
+    }, 500);
+  });
+  // keyboard selection (Shift + arrows, with caret browsing)
+  document.addEventListener("keyup", function (e) {
+    if (!e.shiftKey || !/^(Arrow|Home|End|Page)/.test(e.key)) return;
+    var a = document.activeElement;
+    if (a && /^(input|textarea|select)$/i.test(a.tagName)) return;
+    onSelectionDone(null);
   });
   document.addEventListener("mousedown", function (e) {
     if (toolbar && !toolbar.contains(e.target)) hideToolbar();
-    if (notePopover && !notePopover.contains(e.target)) hideNotePopover();
+    if (pop && !pop.el.contains(e.target)) closePopover("commit");
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { hideToolbar(); hideNotePopover(); closeHlPanel(); }
+    if (e.key !== "Escape") return;
+    hideToolbar();
+    if (pop) closePopover("cancel");
+    else if (placing) setPlacing(false);
+    closeHlPanel();
   });
+  window.addEventListener("pagehide", function () { if (pop) closePopover("commit"); });
+  // An iPhone that sends the tab to the background fires no pagehide: keep what has been typed so far
+  // (the editor stays open; an emptied box is not taken as "delete" here).
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden" && pop && pop.flush) { try { pop.flush(); } catch (e) {} }
+  });
+  // Selecting words in an accordion's title by dragging ends in a click on the <summary>, which the
+  // browser treats as "open/close": a drag that leaves a selection is not a toggle.
+  document.addEventListener("click", function (e) {
+    var sm = e.target && e.target.closest && e.target.closest("summary");
+    if (!sm || !wrap.contains(sm)) return;
+    var s = window.getSelection();
+    if (s && !s.isCollapsed && s.toString().trim() && s.rangeCount && s.getRangeAt(0).intersectsNode(sm)) e.preventDefault();
+  }, true);
+
+  /* ------------------------------------------------------------------------------------------------
+     "Add a note" tool: click it, then click the spot. Keyboard: Enter on the tool pins a note at the
+     end of the paragraph you are reading (the first one fully below the toolbar).
+     ------------------------------------------------------------------------------------------------ */
+  var placing = false, noteBtn = null;
+  function setPlacing(on) {
+    placing = on;
+    document.documentElement.classList.toggle("gnote-placing", on);
+    if (noteBtn) noteBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    if (on && window.showToast) {
+      var touch = lastPointer === "touch" || lastPointer === "pen";
+      window.showToast((touch ? "Tap" : "Click") + " the spot in the guide where your note should go. Press Esc to cancel.", 4000);
+    }
+  }
+  function caretAt(x, y) {
+    var node = null, off = 0, p;
+    try {
+      if (document.caretPositionFromPoint) { p = document.caretPositionFromPoint(x, y); if (p) { node = p.offsetNode; off = p.offset; } }
+      else if (document.caretRangeFromPoint) { p = document.caretRangeFromPoint(x, y); if (p) { node = p.startContainer; off = p.startOffset; } }
+    } catch (e) {}
+    return node ? { node: node, off: off } : null;
+  }
+  document.addEventListener("click", function (e) {
+    if (!placing) return;
+    if (noteBtn && noteBtn.contains(e.target)) return;
+    if (!wrap.contains(e.target) || (e.target.closest && e.target.closest(".gnote"))) { setPlacing(false); return; }
+    e.preventDefault(); e.stopPropagation();
+    var c = caretAt(e.clientX, e.clientY), u = c && wrap.contains(c.node) ? findUnit(c.node) : null;
+    if (!u) {
+      if (window.showToast) window.showToast("Pick a spot in the text (not a picture or button). Press Esc to cancel.", 3500);
+      return;
+    }
+    setPlacing(false);
+    startNote(u, offsetIn(u, c.node, c.off));
+  }, true);
+  function noteAtReadingSpot() {
+    var top = 60, list = ordered(), u = null;
+    for (var i = 0; i < list.length; i++) {
+      var r = list[i].getBoundingClientRect();
+      if (!r.height || !list[i].getClientRects().length) continue;
+      if (r.top >= top && r.bottom <= window.innerHeight) { u = list[i]; break; }
+    }
+    if (!u) { if (window.showToast) window.showToast("Scroll to the part of the guide you want, then try again.", 3000); return; }
+    startNote(u, unitText(u).length);
+  }
 
   // "Your highlights" review panel -- without this, a highlight/note is
   // effectively write-only: the only way to ever see it again is to
   // scroll back through the whole guide looking for colored marks. Reads
-  // straight from the live <mark> elements in the DOM (not a separately
-  // maintained list) so it can never drift out of sync with what's
-  // actually on the page.
+  // straight from the live <mark> elements and note boxes in the DOM so it
+  // can never drift out of sync with what's actually on the page.
   var hlPanelOverlay = null;
   function closeHlPanel() { if (hlPanelOverlay) { hlPanelOverlay.remove(); hlPanelOverlay = null; } }
+  function jumpTo(el) {
+    closeHlPanel();
+    revealEl(el);
+    setTimeout(function () {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("hl-flash");
+      setTimeout(function () { el.classList.remove("hl-flash"); }, 1600);
+    }, 30);
+  }
   function openHlPanel() {
     closeHlPanel();
     hideToolbar();
-    hideNotePopover();
-    var marks = Array.prototype.slice.call(wrap.querySelectorAll("mark.user-hl"));
+    closePopover("commit");
+    var keys = [], byKey = {};
+    Array.prototype.forEach.call(wrap.querySelectorAll("mark.user-hl"), function (m) {
+      var k = m.getAttribute("data-hlk");
+      if (!byKey[k]) { byKey[k] = []; keys.push(k); }
+      byKey[k].push(m);
+    });
+    var hosts = Array.prototype.slice.call(wrap.querySelectorAll(".gnote[data-gnote]")).filter(function (h) { return h.getAttribute("data-text"); });
 
     hlPanelOverlay = document.createElement("div");
     hlPanelOverlay.className = "hl-panel-overlay open";
@@ -2192,6 +2912,8 @@ window.SitePrompts = {
 
     var panel = document.createElement("div");
     panel.className = "hl-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", "Your highlights and notes");
 
     var closeBtn = document.createElement("button");
     closeBtn.type = "button";
@@ -2201,85 +2923,93 @@ window.SitePrompts = {
     closeBtn.addEventListener("click", closeHlPanel);
     panel.appendChild(closeBtn);
 
-    var heading = document.createElement("h3");
-    heading.textContent = "Your highlights" + (marks.length ? " (" + marks.length + ")" : "");
-    panel.appendChild(heading);
-
-    if (marks.length === 0) {
-      var empty = document.createElement("p");
-      empty.className = "hl-panel-empty";
-      empty.textContent = "No highlights yet — select any text in this guide to add one.";
-      panel.appendChild(empty);
-    } else {
-      var list = document.createElement("div");
-      list.className = "hl-panel-list";
-      marks.forEach(function (mark) {
-        var item = document.createElement("div");
-        item.className = "hl-panel-item";
-
-        var color = (mark.className.match(/user-hl-(\w+)/) || [])[1] || "yellow";
-        var swatch = document.createElement("span");
-        swatch.className = "hl-panel-swatch hl-swatch-" + color;
-        item.appendChild(swatch);
-
-        var textWrap = document.createElement("div");
-        textWrap.className = "hl-panel-text";
+    function item(swatchCls, excerptText, noteText, onJump, onDelete, delLabel) {
+      var it = document.createElement("div");
+      it.className = "hl-panel-item";
+      var swatch = document.createElement("span");
+      swatch.className = "hl-panel-swatch " + swatchCls;
+      it.appendChild(swatch);
+      var textWrap = document.createElement("div");
+      textWrap.className = "hl-panel-text";
+      if (excerptText) {
         var excerpt = document.createElement("p");
         excerpt.className = "hl-panel-excerpt";
-        excerpt.textContent = "“" + mark.textContent.trim() + "”";
+        excerpt.textContent = "“" + excerptText + "”";
         textWrap.appendChild(excerpt);
-        if (mark.dataset.note) {
-          var note = document.createElement("p");
-          note.className = "hl-panel-note";
-          note.textContent = mark.dataset.note;
-          textWrap.appendChild(note);
-        }
-        item.appendChild(textWrap);
-
-        var actions = document.createElement("div");
-        actions.className = "hl-panel-actions";
-
+      }
+      if (noteText) {
+        var note = document.createElement("p");
+        note.className = "hl-panel-note";
+        note.textContent = noteText;
+        textWrap.appendChild(note);
+      }
+      it.appendChild(textWrap);
+      var actions = document.createElement("div");
+      actions.className = "hl-panel-actions";
+      if (onJump) {
         var jumpBtn = document.createElement("button");
         jumpBtn.type = "button";
         jumpBtn.className = "hl-panel-jump";
         jumpBtn.textContent = "Jump to";
-        jumpBtn.addEventListener("click", function () {
-          closeHlPanel();
-          mark.scrollIntoView({ behavior: "smooth", block: "center" });
-          mark.classList.add("hl-flash");
-          setTimeout(function () { mark.classList.remove("hl-flash"); }, 1600);
-        });
-
-        var delBtn = document.createElement("button");
-        delBtn.type = "button";
-        delBtn.className = "hl-panel-delete";
-        delBtn.setAttribute("aria-label", "Delete this highlight");
-        delBtn.innerHTML = "&times;";
-        delBtn.addEventListener("click", function () {
-          // Recompute (idx, start, end) fresh from the mark's own current
-          // DOM position rather than needing a closure carried from
-          // creation time -- self-verifying against actual state, and
-          // works identically whether the mark was just created or
-          // restored from localStorage on page load.
-          var unit = findUnit(mark);
-          if (!unit) return;
-          var idx = Number(unit.getAttribute("data-hl-idx"));
-          var start = textOffset(unit, mark, 0);
-          var end = start + mark.textContent.length;
-          removeHighlight(mark, idx, start, end);
-          openHlPanel(); // simplest correct way to reflect the removal + updated count
-        });
-
+        jumpBtn.addEventListener("click", onJump);
         actions.appendChild(jumpBtn);
-        actions.appendChild(delBtn);
-        item.appendChild(actions);
-        list.appendChild(item);
-      });
-      panel.appendChild(list);
+      }
+      var delBtn = document.createElement("button");
+      delBtn.type = "button";
+      delBtn.className = "hl-panel-delete";
+      delBtn.setAttribute("aria-label", delLabel);
+      delBtn.innerHTML = "&times;";
+      delBtn.addEventListener("click", onDelete);
+      actions.appendChild(delBtn);
+      it.appendChild(actions);
+      return it;
     }
+
+    var heading = document.createElement("h3");
+    heading.textContent = "Your highlights" + (keys.length ? " (" + keys.length + ")" : "");
+    panel.appendChild(heading);
+    var list = document.createElement("div");          // one scroll area for highlights and notes
+    list.className = "hl-panel-list";
+    if (keys.length === 0) {
+      var empty = document.createElement("p");
+      empty.className = "hl-panel-empty";
+      empty.textContent = "No highlights yet — select any text in this guide to add one.";
+      list.appendChild(empty);
+    }
+    keys.forEach(function (k) {
+      var ms = byKey[k], first = ms[0];
+      var color = (first.className.match(/user-hl-(\w+)/) || [])[1] || "yellow";
+      var text = norm0(ms.map(function (m) { return m.textContent; }).join(" "));
+      list.appendChild(item("hl-swatch-" + color, text, first.dataset.note || "",
+        function () { jumpTo(first); },
+        function () { removeHighlight(k); openHlPanel(); }, "Delete this highlight"));
+    });
+    var nNotes = hosts.length + orphanNotes.length;
+    var nh = document.createElement("h3");
+    nh.className = "hl-panel-subhead";
+    nh.textContent = "Your notes" + (nNotes ? " (" + nNotes + ")" : "");
+    list.appendChild(nh);
+    if (!nNotes) {
+      var none = document.createElement("p");
+      none.className = "hl-panel-empty";
+      none.textContent = "No notes yet — use “Add a note” in the toolbar, then click the spot.";
+      list.appendChild(none);
+    }
+    hosts.forEach(function (h) {
+      var id = h.getAttribute("data-gnote");
+      list.appendChild(item("gnote-swatch", "", h.getAttribute("data-text"),
+        function () { jumpTo(h); setTimeout(function () { try { h.focus({ preventScroll: true }); } catch (e) {} }, 400); },
+        function () { deleteNote(id); openHlPanel(); }, "Delete this note"));
+    });
+    orphanNotes.forEach(function (n) {
+      list.appendChild(item("gnote-swatch", "", n.t + "  (its spot in the guide has changed)", null,
+        function () { deleteNote(n.id); orphanNotes = orphanNotes.filter(function (x) { return x !== n; }); openHlPanel(); }, "Delete this note"));
+    });
+    panel.appendChild(list);
 
     hlPanelOverlay.appendChild(panel);
     document.body.appendChild(hlPanelOverlay);
+    closeBtn.focus({ preventScroll: true });
   }
 
   // In-guide search. Lives in this same closure (rather than a separate
@@ -2492,30 +3222,23 @@ window.SitePrompts = {
 
     function clearSharedMarks() {
       Object.keys(sharedMarksByDocId).forEach(function (id) {
-        var mark = sharedMarksByDocId[id];
-        if (!mark.parentNode) return;
-        var parent = mark.parentNode;
-        while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
-        parent.removeChild(mark);
-        parent.normalize();
+        sharedMarksByDocId[id].forEach(unwrap);
       });
       sharedMarksByDocId = {};
     }
 
+    // Same text-node wrapping as the student's own highlights (one mark per text node), so a shared
+    // mark never splits a <strong> or a table cell either. idx may be an extra unit ("x12").
     function renderSharedDoc(doc, data) {
-      var unit = units[data.idx];
-      if (!unit) return; // guide content changed since this was shared -- skip, don't crash
-      var range = rangeFromOffsets(unit, data.start, data.end);
-      if (!range) return;
-      var mark = document.createElement("mark");
-      mark.className = "shared-hl";
-      mark.title = "Also highlighted by another student";
-      try {
-        var content = range.extractContents();
-        mark.appendChild(content);
-        range.insertNode(mark);
-      } catch (e) { return; }
-      sharedMarksByDocId[doc.id] = mark;
+      var unit = unitByKey(data.idx);
+      if (!unit || typeof data.start !== "number" || typeof data.end !== "number") return; // guide changed since -- skip
+      var marks = wrapText(unit, data.start, data.end, function () {
+        var mark = document.createElement("mark");
+        mark.className = "shared-hl";
+        mark.title = "Also highlighted by another student";
+        return mark;
+      }, "mark.shared-hl");
+      if (marks.length) sharedMarksByDocId[doc.id] = marks;
     }
 
     function subscribe(db, uid) {
@@ -2605,11 +3328,28 @@ window.SitePrompts = {
     hlPanelBtn.type = "button";
     hlPanelBtn.id = "hl-panel-btn";
     hlPanelBtn.className = "corner-btn";
-    hlPanelBtn.setAttribute("aria-label", "Your highlights");
-    hlPanelBtn.title = "Your highlights";
+    hlPanelBtn.setAttribute("aria-label", "Your highlights and notes");
+    hlPanelBtn.title = "Your highlights and notes";
     hlPanelBtn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
     hlPanelBtn.addEventListener("click", openHlPanel);
     cornerGroup.appendChild(hlPanelBtn);
+
+    // "Add a note" (2026-10-15): click it, then click the spot (see setPlacing above). On a phone it
+    // sits in the More menu like the other tools. Enter on it pins a note where you are reading.
+    noteBtn = document.createElement("button");
+    noteBtn.type = "button";
+    noteBtn.id = "gnote-btn";
+    noteBtn.className = "corner-btn";
+    noteBtn.setAttribute("aria-label", "Add a note");
+    noteBtn.setAttribute("aria-pressed", "false");
+    noteBtn.title = "Add a note: click this, then click the spot in the guide";
+    noteBtn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M15 3v6h6"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>';
+    noteBtn.addEventListener("click", function (e) {
+      if (placing) { setPlacing(false); return; }
+      if (e.detail === 0) { noteAtReadingSpot(); return; }    // keyboard
+      setPlacing(true);
+    });
+    cornerGroup.appendChild(noteBtn);
   }
 })();
 

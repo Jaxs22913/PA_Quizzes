@@ -1015,11 +1015,64 @@
       });
     });
   }
+  // The student's own saved bits (select text in a study guide, "Add to Pip notes"): kept in this browser and
+  // synced like the highlights, under "pipReview:<exam slug>" (theme.js, window.PipReview).
+  function reviewCount(f) {
+    if (!f) return 0;
+    try { return window.PipReview ? window.PipReview.count(f.s) : (jget("pipReview:" + f.s, []) || []).length; } catch (e) { return 0; }
+  }
+  function reviewChip(f) {
+    var n = reviewCount(f);
+    return n ? ["Your review guide (" + n + ")", function () { location.href = ROOT + "my-review-guide.html?exam=" + encodeURIComponent(f.s); }] : null;
+  }
+  function addReviewChip(list, f) {
+    var rc = reviewChip(f);
+    if (rc && !list.some(function (c) { return c[0].indexOf("Your review guide") === 0; })) list.push(rc);
+    return list;
+  }
+  function openReviewGuide() {
+    context().then(function (c) {
+      var f = c.active, slugs = [];
+      try { slugs = window.PipReview ? window.PipReview.slugs() : []; } catch (e) {}
+      if (!reviewCount(f) && slugs.length && c.ix) {              // nothing saved for this exam: open the one that has something
+        c.ix.folders.forEach(function (x) { if (!reviewCount(f) && slugs.indexOf(x.s) >= 0) f = x; });
+      }
+      if (!f) { say("Which exam? Pick one and ask me again."); chips([["Switch exam", function () { switchExam(); }]]); return; }
+      var n = reviewCount(f);
+      if (!n) {
+        say("You haven't added anything for " + f.t + " yet. In a study guide or cram sheet, select a sentence and tap \"Add to Pip\". I'll gather what you save into your own review guide.");
+        return;
+      }
+      say("Opening your review guide for " + f.t + " (" + n + " saved).");
+      setTimeout(function () { location.href = ROOT + "my-review-guide.html?exam=" + encodeURIComponent(f.s); }, 450);
+    });
+  }
+  // "Quiz me on these" from the review guide page: the exam's questions whose guide link lands in one of the
+  // sections the student saved from. No model writes anything; it is the same drill as every other set.
+  function startReviewPractice(spec) {
+    context().then(function (c) {
+      var f = c.ix && c.ix.folders.filter(function (x) { return x.s === spec.s; })[0];
+      if (!f) return say("I couldn't find that exam.");
+      Promise.all([bankOf(f), explainOf(f)]).then(function (r) {
+        var b = r[0], m = (r[1] && r[1].m) || {};
+        function unitOf(d, a) { return m[d + "#" + a] || (d + "#" + a); }
+        var want = {};
+        (spec.sections || []).forEach(function (x) { if (x.a) want[unitOf(x.d, x.a)] = 1; });
+        var pool = notOpen(b.q.filter(function (q) { return q.g && want[unitOf(q.g[0], q.g[1])]; }));
+        if (!pool.length) return say("I don't have practice questions linked to those parts of the guide yet. Your saved passages are still the best review.");
+        var set = pickFresh(pool, 10);
+        say("Here " + (set.length === 1 ? "is 1 question" : "are " + set.length + " questions") + " from the parts of the guide you saved. It's just for you: it doesn't count toward the class stats.");
+        count("practice");
+        drill("Your review guide", shuffle(set), f);
+      }).catch(function () { say("I couldn't load the questions for " + f.t + "."); });
+    });
+  }
   function examChips(f, onHome) {
     var list = [];
     if (!f) return list;
     list.push(["Practice 10 for " + f.t, function () { startPractice(f, 10); }]);
     if (f.guides && f.guides.length) list.push(["Open the study guide", function () { location.href = pageURL(f.f, f.guides[0]); }]);
+    addReviewChip(list, f);
     if (onHome !== false || !where.folder) list.push(["Switch exam", function () { switchExam(); }]);
     return list;
   }
@@ -1035,6 +1088,7 @@
     context().then(function (c) {
       if (!c.ix) { say("Hi! My search index for this site isn't built yet, so I can't search or quiz you here."); return; }
       if (intent && intent.rescue) { startRescue(intent.rescue); return; }
+      if (intent && intent.review) { startReviewPractice(intent.review); return; }
       var st = quizState(), here = c.here, n = c.next, list = [];
       sub.textContent = here ? here.t : "Your study buddy";
       var ahead = n && n.folder && n.folder !== here ? n.folder : null;
@@ -1076,6 +1130,7 @@
         if (plan && plan.day === ymd(new Date()) && plan.planned) list.push(["Today's plan", function () { location.href = ROOT + "calendar.html"; }]);
       }
       if (here && !list.length && !c.herePast) list.push(["Practice 10 from " + here.t, function () { startPractice(here, 10); }]);
+      if (!(st.onQuiz && st.current && !st.answered)) addReviewChip(list, here || c.active);
       chips(list);
     });
   }
@@ -1109,6 +1164,7 @@
       context().then(function (c) { say(c.next ? examLine(c.next) : "I don't see an exam coming up on the calendar."); });
       return;
     }
+    if (/\b(my review guide|review guide|my pip notes|my notes for this exam|my saved (notes|bits|passages)|what (have )?i (saved|added))\b/.test(t)) { openReviewGuide(); return; }
     if (/\b(missed|mistakes|my misses)\b/.test(t)) {
       var n = missCount();
       say(n ? "You have " + n + " missed questions saved from your quizzes." : "No missed questions saved on this device yet.");

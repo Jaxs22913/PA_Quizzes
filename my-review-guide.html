@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Review Guide — PA Quizzes</title>
+<link rel="stylesheet" href="theme.css">
+<script src="calendar-data.js"></script>
+<script src="theme.js" defer></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<style>
+  /* LIGHT PALETTE ONLY, deliberately -- the same rule my-cram-sheet.html and review.html document.
+     theme.css does dark mode by inverting body > .wrap, so a page that also declares its own dark
+     colours gets inverted twice and ends up dark-on-dark. Author light; let the filter flip it. */
+  :root{
+    --ink:#161a24; --body:#2b3140; --muted:#5b6475; --line:#e4e7ef;
+    --paper:#f6f7fb; --card:#fff; --primary:var(--a-blue-hover,#185bdf);
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:6px 16px 70px}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#5b6475;text-decoration:none;
+    font-size:13.5px;font-weight:700;margin:30px 0 14px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;
+    color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .when{margin:6px 0 0;color:var(--muted);font-size:14px}
+  button,a.btn{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+  :focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+
+  .picker{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+  .picker button{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:9px 15px;box-shadow:var(--shadow);cursor:pointer;transition:border-color .15s,transform .15s}
+  .picker button:hover{border-color:var(--primary);transform:translateY(-1px)}
+  .picker button[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:#fff}
+  .picker button .n{opacity:.8;font-weight:600}
+  .picker button .n::before{content:"\00b7";margin:0 5px;opacity:.6}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 22px;font-size:13.5px;color:var(--muted)}
+  .btn{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:9px;
+    padding:9px 14px;box-shadow:var(--shadow);cursor:pointer;min-height:38px}
+  .btn:hover{border-color:var(--primary)}
+  .btn.main{background:var(--primary);border-color:var(--primary);color:#fff}
+  .btn.main:hover{filter:brightness(1.08)}
+  .btn.quiet{box-shadow:none;background:transparent;color:var(--muted)}
+
+  .status{min-height:22px;margin:0 0 10px;font-size:13.5px;color:var(--body)}
+  .status button{background:none;border:0;padding:0 0 0 6px;color:var(--primary);font-weight:700;text-decoration:underline;cursor:pointer;font-size:13.5px}
+
+  section.deck{margin:34px 0 8px}
+  h2{font:800 21px/1.25 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);margin:0 0 12px;
+    overflow-wrap:anywhere}
+  h2 .cnt{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--muted);margin-left:8px;white-space:nowrap}
+  .sec{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:14px 16px 12px;margin:0 0 14px}
+  .sec h3{margin:0 0 8px;font:800 16px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);overflow-wrap:anywhere}
+  .bit{margin:0 0 12px;padding:0}
+  .bit blockquote{margin:0;padding:8px 12px;border-left:4px solid var(--primary);background:#f3f6fe;border-radius:0 8px 8px 0;
+    color:var(--ink);overflow-wrap:anywhere}
+  .bit .mynote{margin:6px 0 0;font-size:14px;color:var(--body);white-space:pre-wrap;overflow-wrap:anywhere}
+  .bit .mynote b{color:var(--ink)}
+  .bit .meta{margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted)}
+  .bit .meta .btn{padding:6px 11px;min-height:32px;box-shadow:none}
+  .take{margin:4px 0 8px;border:1px solid var(--line);border-radius:10px;background:#fbfcff}
+  .take summary{cursor:pointer;padding:9px 12px;font-weight:700;color:var(--ink);font-size:14px}
+  .take .card{padding:2px 14px 12px}
+  .take .card h4{margin:10px 0 4px;font-size:14px;color:var(--ink)}
+  .take .card p{margin:0 0 8px;font-size:14.5px}
+  .take .src{font-size:12.5px;color:var(--muted)}
+  .secfoot{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+
+  .empty{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 22px;
+    text-align:center;box-shadow:var(--shadow);margin-top:22px}
+  .empty h3{margin:0 0 8px;font:800 18px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink)}
+  .empty p{margin:0 auto 8px;max-width:56ch;color:var(--body);font-size:14.5px}
+  .empty a{color:var(--primary);font-weight:700}
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media (pointer:coarse){ .btn,.bit .meta .btn,.picker button{min-height:44px} }
+  @media print{
+    @page{margin:12mm}
+    body{background:#fff;font-size:11px}
+    .wrap{padding:0;max-width:none}
+    .back,.picker,.toolbar,.status,footer,.bit .meta .btn,.secfoot,.take{display:none}
+    .sec{box-shadow:none;border:1px solid #bbb;break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back back-link" href="index.html">&larr; Back to home</a>
+
+  <header>
+    <div class="kicker">Built from what you saved</div>
+    <h1>My Review Guide</h1>
+    <p class="sub">The passages and notes you added with &ldquo;Add to Pip&rdquo;, in the order they appear in the guide:
+      the guide&rsquo;s own words and your own notes. Where Pip has a checked plain-words explanation of a section,
+      it is folded underneath (&ldquo;Pip&rsquo;s take&rdquo;).</p>
+    <p class="when" id="when"></p>
+  </header>
+
+  <div class="picker" id="picker" role="group" aria-label="Choose an exam"></div>
+  <div class="toolbar" id="toolbar" hidden>
+    <button type="button" class="btn main" id="quizAll">Quiz me on these</button>
+    <button type="button" class="btn" id="printBtn">Print this</button>
+    <span id="summary"></span>
+  </div>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+
+  <div id="guide"></div>
+
+  <footer>
+    Kept on this device and in your account if you are signed in. To add more, select text in any study guide or
+    cram sheet and tap &ldquo;Add to Pip&rdquo;, or open a highlight or a note box and tap &ldquo;Add to Pip&rdquo;.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var DATA = "pip/data/";
+  var IX = null, slug = "", items = [], folder = null, G = null, E = null, lastRemoved = null;
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function btn(label, cls, fn) { var b = el("button", "btn" + (cls ? " " + cls : ""), label); b.type = "button"; b.addEventListener("click", fn); return b; }
+  function getJSON(path) {
+    return fetch(DATA + path + (path === "index.json" ? "" : "?v=" + encodeURIComponent((IX && IX.built) || "")),
+      path === "index.json" ? { cache: "no-cache" } : undefined).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+  }
+  function ymd(d) { return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  function daysUntil(s) { var p = String(s).split("-"); return Math.round((new Date(+p[0], +p[1] - 1, +p[2]) - new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate())) / 86400000); }
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function niceDate(s) { var p = String(s).split("-"); return MONTHS[+p[1] - 1] + " " + (+p[2]); }
+  function say(msg, undo) {
+    var s = $("status"); s.textContent = msg || "";
+    if (undo) { var u = el("button", null, "Undo"); u.type = "button"; u.addEventListener("click", undo); s.appendChild(u); }
+  }
+  function words(t) { var o = {}; String(t).toLowerCase().split(/[^a-z0-9]+/).forEach(function (w) { if (w.length >= 4) o[w] = 1; }); return o; }
+
+  // ---- which exams, and which one first ----
+  function folderBySlug(s) { var r = null; (IX.folders || []).forEach(function (f) { if (f.s === s) r = f; }); return r; }
+  function upcomingFolders() {            // folders of exams still ahead, soonest first (the same pairing Pip uses)
+    var out = [], cal = window.CalendarData;
+    if (!cal || !cal.graded) return out;
+    cal.graded().filter(function (e) { return e.k === "exam" && daysUntil(e.d) >= 0; })
+      .sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : 0; }).forEach(function (ev) {
+        var m = String(ev.t).match(/EXAM\s*#?\s*(\d+)/i), want = m ? +m[1] : null, best = null;
+        IX.folders.forEach(function (f) {
+          if (f.c !== ev.c || (want !== null && f.x !== null && f.x !== want)) return;
+          if (!best || f.quizzes.length > best.quizzes.length) best = f;
+        });
+        if (best) out.push({ f: best, d: ev.d });
+      });
+    return out;
+  }
+  function examDay(f) {
+    var cal = window.CalendarData, best = null;
+    if (!cal || !cal.graded || !f) return null;
+    cal.graded().forEach(function (ev) {
+      if (ev.k !== "exam" || ev.c !== f.c) return;
+      var m = String(ev.t).match(/EXAM\s*#?\s*(\d+)/i), want = m ? +m[1] : null;
+      if (want !== null && f.x !== null && f.x !== want) return;
+      if (!best || ev.d > best) best = ev.d;
+    });
+    return best;
+  }
+  function newest(s) { var t = ""; window.PipReview.load(s).forEach(function (x) { if (x.at > t) t = x.at; }); return t; }
+  function pickDefault(have) {
+    var up = upcomingFolders();
+    for (var i = 0; i < up.length; i++) if (have.indexOf(up[i].f.s) >= 0) return up[i].f.s;
+    if (have.length) return have.slice().sort(function (a, b) { return newest(b) < newest(a) ? -1 : 1; })[0];
+    return up.length ? up[0].f.s : "";
+  }
+
+  function renderPicker(have) {
+    var box = $("picker"); box.textContent = "";
+    var list = have.slice();
+    if (slug && list.indexOf(slug) < 0) list.push(slug);
+    if (list.length < 2) return;            // a single exam needs no picker
+    list.forEach(function (s) {
+      var f = folderBySlug(s); if (!f) return;
+      var b = el("button", null, f.t); b.type = "button"; b.setAttribute("aria-pressed", s === slug ? "true" : "false");
+      b.appendChild(el("span", "n", String(window.PipReview.count(s))));
+      b.addEventListener("click", function () { show(s, true); });
+      box.appendChild(b);
+    });
+  }
+
+  // ---- ordering and grouping: guide order, then lecture / section ----
+  function docIdx(file) {
+    var i = -1; ((G && G.docs) || []).forEach(function (d, k) { if (d.file === file) i = k; });
+    return i < 0 ? 99 : i;
+  }
+  function docTitle(file) {
+    var t = ""; ((G && G.docs) || []).forEach(function (d) { if (d.file === file) t = d.title; });
+    return t || "Study guide";
+  }
+  function num(x) { return typeof x === "number" && isFinite(x) ? x : 1e9; }
+  function groups(list) {
+    var sorted = list.slice().sort(function (a, b) {
+      return docIdx(a.d) - docIdx(b.d) || (num(a.u) - num(b.u)) || (num(a.o) - num(b.o)) || (a.at < b.at ? -1 : 1);
+    });
+    // a page's part (its section[id], or the page), then the section heading the passage sits under;
+    // `a` stays per item (the exact spot, for "Open in the guide" and the quiz), so one heading is one card
+    var decks = [], byDeck = {};
+    sorted.forEach(function (it) {
+      var dk = it.d + "|" + (it.k || ""), g = byDeck[dk];
+      if (!g) { g = byDeck[dk] = { title: it.kt || docTitle(it.d), secs: [], by: {}, count: 0 }; decks.push(g); }
+      var sk = it.st || it.a || "", sc = g.by[sk];
+      if (!sc) { sc = g.by[sk] = { d: it.d, st: it.st, items: [] }; g.secs.push(sc); }
+      sc.items.push(it); g.count++;
+    });
+    return decks;
+  }
+  function spots(items) {               // the distinct guide spots {d, a} of some items
+    var seen = {}, out = [];
+    items.forEach(function (it) { if (it.a && !seen[it.d + "#" + it.a]) { seen[it.d + "#" + it.a] = 1; out.push({ d: it.d, a: it.a }); } });
+    return out;
+  }
+
+  // ---- Pip's checked card(s) for a section ----
+  function cardsFor(sec) {
+    if (!E) return [];
+    var units = {}, at = {};
+    spots(sec.items).forEach(function (s) { var u = (E.m || {})[s.d + "#" + s.a]; if (u) units[u] = 1; at[s.d + "#" + s.a] = 1; });
+    var cards = (E.cards || []).filter(function (c) { return units[c.u] || at[c.doc + "#" + c.a]; });
+    if (cards.length <= 2) return cards;
+    var mine = words(sec.items.map(function (i) { return i.t + " " + (i.n || ""); }).join(" "));
+    return cards.map(function (c) {
+      var cw = words(c.t + " " + c.k.join(" ") + " " + c.x), n = 0;
+      Object.keys(mine).forEach(function (w) { if (cw[w]) n++; });
+      return [n, c];
+    }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, 2).map(function (p) { return p[1]; });
+  }
+
+  function guideUrl(it) { return encodeURIComponent(it.f) + "/" + encodeURIComponent(it.d) + (it.a ? "#" + encodeURIComponent(it.a) : ""); }
+  function openInGuide(it, trigger) {
+    var url = guideUrl(it);
+    if (typeof window.openGuidePanel === "function") {
+      window.openGuidePanel({ url: url, anchor: it.a, title: it.st || it.kt || "Study guide", label: "Study guide", passage: it.t.slice(0, 220) });
+    } else { location.href = url; }
+  }
+  function quiz(sections) {
+    var pip = window.__pip;
+    if (pip && pip.withWindow) pip.withWindow(function (w) { w.open({ review: { s: slug, sections: sections } }); });
+    else say("Pip is not loaded on this page yet. Give it a moment and tap again.");
+  }
+  function removeItem(it) {
+    window.PipReview.remove(slug, it.id);
+    lastRemoved = it;
+    show(slug, false);
+    say("Removed from your review guide.", function () {
+      var r = lastRemoved; lastRemoved = null;
+      if (r) { window.PipReview.add(slug, r); show(slug, false); say("Put back."); }
+    });
+  }
+
+  function render() {
+    var box = $("guide"); box.textContent = "";
+    var n = items.length;
+    $("toolbar").hidden = !n;
+    if (!folder) {
+      var e0 = el("div", "empty"); e0.appendChild(el("h3", null, "Pick an exam"));
+      e0.appendChild(el("p", null, "I could not find that exam. Go back home and open a study guide."));
+      box.appendChild(e0); return;
+    }
+    if (!n) {
+      var e = el("div", "empty");
+      e.appendChild(el("h3", null, "Nothing saved for " + folder.t + " yet"));
+      e.appendChild(el("p", null, "Open a study guide or cram sheet, select a sentence or a few words, and tap “Add to Pip”. Everything you add shows up here, in guide order, ready to review before the exam."));
+      var p = el("p"); var a = el("a", null, "Go to the study guides"); a.href = "guides.html"; p.appendChild(a); e.appendChild(p);
+      box.appendChild(e); return;
+    }
+    var gs = groups(items), secCount = 0;
+    gs.forEach(function (g) {
+      var sec = el("section", "deck"), h = el("h2", null, g.title);
+      h.appendChild(el("span", "cnt", g.count + " saved"));
+      sec.appendChild(h);
+      g.secs.forEach(function (sc) {
+        secCount++;
+        var card = el("div", "sec");
+        if (sc.st && sc.st !== g.title) card.appendChild(el("h3", null, sc.st));
+        sc.items.forEach(function (it) {
+          var bit = el("div", "bit");
+          bit.appendChild(el("blockquote", null, it.t));
+          if (it.n) { var mn = el("p", "mynote"); mn.appendChild(el("b", null, "Your note: ")); mn.appendChild(document.createTextNode(it.n)); bit.appendChild(mn); }
+          var meta = el("div", "meta");
+          var o = btn("Open in the guide", null, function () { openInGuide(it, o); });
+          o.setAttribute("aria-label", "Open in the guide: " + it.t.slice(0, 60));
+          var r = btn("Remove", "quiet", function () { removeItem(it); });
+          r.setAttribute("aria-label", "Remove from your review guide: " + it.t.slice(0, 60));
+          meta.appendChild(o); meta.appendChild(r);
+          if (/^\d{4}-\d{2}-\d{2}/.test(it.at)) meta.appendChild(el("span", null, "Added " + niceDate(it.at.slice(0, 10))));
+          bit.appendChild(meta);
+          card.appendChild(bit);
+        });
+        var cs = cardsFor(sc);
+        if (cs.length) {
+          var d = el("details", "take");
+          d.appendChild(el("summary", null, "Pip’s take"));
+          cs.forEach(function (c) {
+            var cd = el("div", "card");
+            cd.appendChild(el("h4", null, c.t));
+            String(c.x).split(/\n{2,}/).forEach(function (para) { cd.appendChild(el("p", null, para)); });
+            cd.appendChild(el("div", "src", "A plain-words explanation written from your study guide and checked by a second reader."));
+            d.appendChild(cd);
+          });
+          card.appendChild(d);
+        }
+        if (spots(sc.items).length) {
+          var ft = el("div", "secfoot");
+          ft.appendChild(btn("Quiz me on this section", null, function () { quiz(spots(sc.items)); }));
+          card.appendChild(ft);
+        }
+        sec.appendChild(card);
+      });
+      box.appendChild(sec);
+    });
+    $("summary").textContent = n + (n === 1 ? " passage" : " passages") + " from " + secCount + (secCount === 1 ? " section" : " sections");
+  }
+
+  function sectionsOf() { return spots(items); }
+
+  // ---- load one exam ----
+  function show(s, pushUrl) {
+    slug = s; folder = folderBySlug(s);
+    items = window.PipReview.load(s);
+    if (pushUrl) { try { history.replaceState(null, "", "?exam=" + encodeURIComponent(s)); } catch (e) {} say(""); }
+    var have = window.PipReview.slugs();
+    renderPicker(have);
+    var day = examDay(folder);
+    $("when").textContent = folder ? folder.t + (day ? " · exam " + (daysUntil(day) < 0 ? "was " : "") + niceDate(day) : "") : "";
+    if (!folder) { G = E = null; render(); return; }
+    Promise.all([
+      getJSON("guide/" + s + ".json").catch(function () { return null; }),
+      folder.ex ? getJSON("explain/" + s + ".json").catch(function () { return null; }) : null
+    ]).then(function (r) { if (slug !== s) return; G = r[0]; E = r[1]; render(); });
+  }
+
+  function start() {
+    if (!window.PipReview) { $("guide").textContent = "This page needs the site script (theme.js) to load."; return; }
+    $("printBtn").addEventListener("click", function () { window.print(); });
+    $("quizAll").addEventListener("click", function () { quiz(sectionsOf()); });
+    getJSON("index.json").then(function (ix) {
+      IX = ix;
+      var want = new URLSearchParams(location.search).get("exam");
+      var have = window.PipReview.slugs();
+      var s = want && folderBySlug(want) ? want : pickDefault(have);
+      if (!s) { render(); renderPicker(have); return; }
+      show(s, false);
+    }).catch(function () {
+      $("guide").textContent = "I could not load the exam list. Check your connection and reload.";
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+})();
+</script>
+</body>
+</html>
