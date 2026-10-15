@@ -341,32 +341,32 @@
   {
    "topic": "D-dimer and imaging",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins",
-   "q": "Which patients need no D-dimer and go straight to ultrasound under the Wells criteria?",
+   "q": "In the low likelihood Wells category, a patient's D-dimer is positive and the thigh ultrasound that follows shows no clot. What is the next step?",
    "opts": [
     [
-     "Those with a score of 3 or more",
-     "Correct. A Wells score of 3 or more is high likelihood, and in the high-likelihood pathway ultrasound is ordered directly, with a D-dimer optional; either D-dimer result still leads to ultrasound."
+     "End the work-up there",
+     "Correct. In the low likelihood pathway a positive D-dimer leads to ultrasound of the thigh, and a negative ultrasound ends the work-up; the repeat and extra imaging options belong to the high likelihood pathway."
     ],
     [
-     "Those in the low likelihood group",
-     "Low likelihood patients get a D-dimer first, because a negative result stops the work-up and only a positive one leads to ultrasound. The high group goes straight to ultrasound."
+     "Rescan the thigh in a week",
+     "Rescanning the thigh in a week is one option after a negative thigh ultrasound in the high likelihood pathway. In the low likelihood pathway, a negative thigh ultrasound ends the work-up."
     ],
     [
-     "Those with a score of 1 to 2",
-     "A score of 1 to 2 is the moderate likelihood band, not high. Only a score of 3 or more, the high likelihood band, goes straight to ultrasound."
+     "Contrast venography",
+     "Contrast venography, also called phlebography, is one option after a negative thigh ultrasound in the high likelihood pathway. In the low likelihood pathway, a negative ultrasound ends the work-up."
     ],
     [
-     "Those with an alternative diagnosis",
-     "An alternative diagnosis at least as likely as deep vein thrombosis subtracts 2 points, lowering the score. Only a score of 3 or more goes straight to ultrasound."
+     "Start anticoagulation",
+     "Anticoagulation treats a confirmed deep vein thrombosis, but no clot has been shown here. In the low likelihood pathway, a negative thigh ultrasound after a positive D-dimer ends the work-up."
     ]
    ],
    "c": 0,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 55-56 (Wells table and flowchart pictures)",
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 56, 57 (flowchart picture)",
    "slot": "initial test",
    "mis": {
-    "Those in the low likelihood group": "reversed value: the low group's D-dimer-first path",
-    "Those with a score of 1 to 2": "right band at the wrong level: moderate taken as high",
-    "Those with an alternative diagnosis": "reversed direction: a score-lowering item taken as raising"
+    "Contrast venography": "adjacent fact: the high likelihood pathway's invasive option applied to low likelihood",
+    "Rescan the thigh in a week": "adjacent fact: the high likelihood pathway's follow-up applied to low likelihood",
+    "Start anticoagulation": "confused role: treatment started without a demonstrated clot"
    }
   },
   {
