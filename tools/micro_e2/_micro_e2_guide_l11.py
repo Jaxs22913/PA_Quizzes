@@ -291,7 +291,7 @@ BODY = """
 
   <h3 class="sub" id="nat-phage">11.5 &middot; Objective 3 &mdash; Phage therapy</h3>
   <p><strong>Bacteriophages</strong> (&ldquo;phages&rdquo;) are very small viruses that specifically attack
-  <strong>bacteria and no other types of cells</strong>. Like all viruses they carry DNA or RNA, never both,
+  <strong>bacteria and no other types of cells</strong>. Like all viruses they carry DNA or RNA,
   and they replicate by a <strong>lytic</strong> or a <strong>lysogenic</strong> life cycle. For therapy you
   need <strong>lytic phages with DNA</strong>: phages that destroy the bacterium rather than settling into its
   genome. &ldquo;The enemy of my enemy is my friend&rdquo;: the bacteria&rsquo;s own enemies, put to work for
