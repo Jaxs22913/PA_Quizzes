@@ -8,6 +8,12 @@ Patient vignettes with a varied lead-in (the lead-in decides the answer).
 Slides only; no recording exists yet (lecture given 2026-10-01). Ankle-brachial
 index values in stems sit well inside a band (never 0.4, 0.9 or 1.3), and the
 slide-43 worked example is not reused. Scope caps live in cms_e5l27_scope.py.
+
+DO NOT RE-RUN `cms_e5_partition.py l27vig` (2026-10-15): the pool-only Buerger
+dependent-rubor vignette replaced a notes-only one and its key was shortened, which
+changes the seeded search, so a re-run reshuffles 58 of the 60 shipped vignettes.
+cms_e5l27_vig_sets.json is now the source of truth; fix a shipped vignette in that
+file (as Lecture 26 does with its patch), then re-render.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +27,11 @@ def S(topic, io, q, opts, cite, slot):
 
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
+
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
 
 
 PAD = "Peripheral artery disease"
@@ -52,10 +63,10 @@ V(PAD, IO_A,
     "Magnetic resonance angiography is an alternative for patients with contrast allergy when an intervention is planned. The initial study is the ankle-brachial index at the bedside."]],
   C(42), "initial test", "test"),
 
-V(PAD, IO_A,
+M(V(PAD, IO_A,
   "A 70-year-old man with hypertension reports calf pain after walking about two blocks that resolves with rest. His ankle-brachial index is 0.62 on the left and normal on the right. Which interpretation fits the left-sided value?",
   [["Claudication range",
-    "Correct. An ankle-brachial index between 0.4 and 0.9 is the claudication band, matching exertional calf pain relieved by rest. The lower of the two legs is taken as the overall index."],
+    "Correct. An ankle-brachial index between 0.4 and 0.9 is the claudication band, matching his exertional calf pain that resolves with rest."],
    ["Normal range",
     "A normal ankle-brachial index lies above 0.9 up to 1.3. A value of 0.62 is reduced and falls in the claudication band of 0.4 to 0.9."],
    ["Rest pain and tissue loss range",
@@ -63,6 +74,9 @@ V(PAD, IO_A,
    ["Noncompressible artery range",
     "A falsely high reading above 1.3 signals calcified, noncompressible arteries, as in diabetes. A value of 0.62 is genuinely reduced and lies in the claudication band."]],
   C(42), "test finding", "test"),
+  {"Normal range": "reversed value: a reduced index read as normal",
+   "Rest pain and tissue loss range": "right finding at the wrong severity: the 0 to 0.4 band",
+   "Noncompressible artery range": "adjacent fact: the falsely high reading above 1.3"}),
 
 V(PAD, IO_A,
   "A 72-year-old man with long-standing diabetes has calf pain with walking. His foot pulses are faint, but his ankle-brachial index is 1.45 in both legs. Which explains this reading?",
@@ -124,29 +138,35 @@ V(PAD, IO_A,
     "Magnetic resonance angiography is reserved for planning an intervention, often in contrast allergy. Duplex ultrasound is the mainstay initial imaging and is simpler."]],
   C(46), "initial test", "test"),
 
-V(PAD, IO_A,
+M(V(PAD, IO_A,
   "A 58-year-old man who smokes a pack a day has calf claudication and an ankle-brachial index of 0.7. He asks what matters most for his legs. Which counseling point is most important?",
   [["Stop smoking completely",
-    "Correct. Cigarette smoking triples the risk of peripheral artery disease compared with nonsmokers, and smoking cessation heads the list of risk-factor reduction measures for every patient with the disease."],
+    "Correct. Cigarette smoking carries three times the risk of peripheral artery disease compared with nonsmokers, and smoking cessation comes first among the risk-factor reduction measures of medical management."],
    ["Limit walking to avoid pain",
     "Consistent moderate exercise improves walking distance, so avoiding walking works against him. Exercise therapy, at least 30 to 45 minutes three times a week, is part of management."],
    ["Elevate the legs when painful",
-    "Elevation removes gravity's help to arterial flow and worsens ischemic pain. The priority for this smoker is complete smoking cessation, which heads risk-factor reduction."],
+    "Elevating the leg removes gravity's help to arterial flow and worsens ischemic pain. For this smoker, complete smoking cessation is the counseling priority within risk-factor reduction."],
    ["Switch to occasional cigars",
-    "Any continued tobacco use keeps driving atherosclerosis; smoking triples the risk of peripheral artery disease. The counseling goal is complete cessation, not a change of product."]],
-  C(50), "education", "education"),
+    "Cigars are still tobacco, and smoking carries three times the risk of peripheral artery disease. The counseling goal is complete cessation, not a change of tobacco product."]],
+  DECK + ", Slides 11, 21, 50", "education", "education"),
+  {"Limit walking to avoid pain": "common lay belief: pain on walking means walking should be avoided",
+   "Elevate the legs when painful": "confused finding: elevation, which worsens arterial pain, offered as relief",
+   "Switch to occasional cigars": "common lay belief: switching tobacco products lowers the harm"}),
 
-V(PAD, IO_A,
+M(V(PAD, IO_A,
   "A 67-year-old woman with stable calf claudication is starting exercise therapy. She asks whether walking on her own at home is as good as a formal program. Which is the most appropriate recommendation?",
   [["Refer to supervised exercise rehabilitation",
     "Correct. Patients should be referred to an exercise rehabilitation program; a supervised program is more successful than a home-based one, and consistent moderate exercise improves walking distance."],
    ["Walk at home; supervision adds nothing",
     "Home walking helps, but a supervised program is more successful than a home-based one. The recommendation is referral to supervised exercise rehabilitation."],
    ["Refer for bypass graft surgery now",
-    "Revascularization is for claudication with severe functional disability after an inadequate response to exercise or drugs. She has not yet had a trial of supervised exercise."],
+    "Bypass grafting is principally used for severe critical leg ischemia, and revascularization for claudication is for severe disability after an inadequate response to exercise or drugs. She has not had that trial."],
    ["Avoid exercise until pain resolves",
     "Waiting for pain to resolve before exercising delays the therapy that improves walking distance. Supervised exercise rehabilitation is the recommended referral."]],
-  C(50), "referral", "referral"),
+  DECK + ", Slides 50, 53, 57", "referral", "referral"),
+  {"Walk at home; supervision adds nothing": "common lay belief: unsupervised home walking is just as effective",
+   "Refer for bypass graft surgery now": "right action at the wrong stage: revascularization before a trial of exercise therapy",
+   "Avoid exercise until pain resolves": "common lay belief: claudication pain means exercise should stop"}),
 
 V(PAD, IO_A,
   "A 62-year-old man with newly diagnosed peripheral artery disease is enrolling in exercise therapy for claudication. Which schedule should he be taught as the minimum?",
@@ -220,17 +240,20 @@ V(PAD, IO_A,
     "Below 160/100 mmHg would leave him hypertensive. Diabetic patients with peripheral artery disease aim for below 130/80 mmHg."]],
   C(50), "agent/regimen", "treatment"),
 
-V(PAD, IO_A,
+M(V(PAD, IO_A,
   "A 69-year-old man has pain in both legs when walking, with numbness and weakness. Standing still does not help; the pain eases only when he sits down or leans forward over a shopping cart. His pedal pulses are normal. Which is the most likely diagnosis?",
   [["Spinal stenosis",
-    "Correct. Spinal stenosis gives claudication-like symptoms with numbness and weakness, relieved by rest and also by sitting down or leaning forward to straighten the lumbar spine. Normal pulses argue against arterial disease."],
+    "Correct. Spinal stenosis gives claudication-like symptoms with numbness and weakness, relieved by rest and by sitting down or leaning forward to straighten out the lumbar spine. Normal pulses argue against arterial disease."],
    ["Peripheral artery disease",
-    "Arterial claudication is relieved by rest alone, usually within 10 minutes, and brings diminished pulses below the stenosis. Needing to sit or lean forward points to spinal stenosis."],
+    "Arterial claudication is relieved by rest, usually within 10 minutes, so standing still would ease it, and pulses are diminished below the stenosis. His normal pulses and relief on leaning forward point to spinal stenosis."],
    ["Peripheral neuropathy",
-    "Peripheral neuropathy causes continuous burning in the feet that is unaffected by exercise. His pain is triggered by walking and relieved by sitting or leaning forward."],
+    "Peripheral neuropathy causes a continuous burning sensation in the foot that is unaffected by exercise. His pain is triggered by walking and relieved by leaning forward."],
    ["Venous insufficiency",
-    "Venous insufficiency causes calf swelling and discomfort with standing, worse with prolonged walking. Numbness, weakness and relief with forward flexion fit spinal stenosis."]],
-  C(41), "differential", "diagnosis"),
+    "Venous insufficiency causes calf swelling and discomfort with standing, with swelling made worse by prolonged walking. Numbness, weakness and relief with forward flexion fit spinal stenosis."]],
+  DECK + ", Slides 19, 34, 40, 41", "differential", "diagnosis"),
+  {"Peripheral artery disease": "competing diagnosis: exertional leg pain assumed arterial despite normal pulses",
+   "Peripheral neuropathy": "competing diagnosis: numbness read as neuropathy without its continuous pattern",
+   "Venous insufficiency": "competing diagnosis: leg discomfort on standing read as venous"}),
 
 V(PAD, IO_A,
   "A 61-year-old woman with long-standing diabetes describes a continuous burning sensation in both feet that is the same at rest and during exercise. Her pedal pulses are easily palpable. Which is the most likely diagnosis?",
@@ -244,17 +267,20 @@ V(PAD, IO_A,
     "Spinal stenosis gives claudication-like pain with walking, relieved by sitting or leaning forward. Burning that is constant and unaffected by exercise is neuropathy."]],
   C(40), "differential", "diagnosis"),
 
-V(PAD, IO_A,
-  "A 60-year-old man with darker skin undergoes a Buerger test for suspected arterial disease: his leg is elevated to 45 degrees for one minute, then lowered over the bed edge. The color change is hard to judge. Which findings should be assessed in addition?",
-  [["Temperature, texture and capillary refill",
-    "Correct. On darker skin pallor and redness are harder to assess, so temperature, texture (rough, scaly, dry or atrophic skin, hair loss) and capillary refill time serve as additional indicators of blood flow."],
-   ["Pupil size and reactivity",
-    "Pupil findings have no bearing on limb perfusion. When color change is hard to read on darker skin, examine skin temperature, texture and capillary refill instead."],
-   ["Deep tendon reflexes only",
-    "Reflexes test nerves, not blood flow. The substitute indicators of perfusion on darker skin are temperature, skin texture and capillary refill time."],
-   ["Carotid pulse character",
-    "The carotid pulse does not show leg perfusion. For an equivocal Buerger test on darker skin, assess the leg's temperature, texture and capillary refill."]],
+M(V(PAD, IO_A,
+  "A 68-year-old man with calf claudication lies supine while his right leg is raised to 45 degrees for one minute, and the foot turns pale. He then sits up with both legs hanging over the side of the bed. Which finding in this position indicates compromised arterial supply?",
+  [["Foot turns deep red",
+    "Correct. In the dependent position a leg with compromised arterial supply turns deep red, dependent rubor, from post-hypoxic vasodilation (reactive hyperemia); in severe cases cyanosis may come first."],
+   ["Normal color at once",
+    "A prompt return to normal color is the expected response of a healthy leg. With compromised arterial supply the dependent foot turns deep red, called dependent rubor."],
+   ["Pallor that persists",
+    "Pallor belongs to the elevation phase, when arterial flow cannot overcome gravity. On hanging the legs down, compromised supply shows as a deep red dependent rubor."],
+   ["A warm, swollen calf",
+    "A warm, swollen calf points toward deep vein thrombosis, not arterial insufficiency. The dependent-phase sign of compromised arterial supply is a deep red rubor."]],
   C(30), "manifestation", "test"),
+  {"Normal color at once": "reversed value: the normal response taken as the abnormal sign",
+   "Pallor that persists": "adjacent fact: the elevation-phase sign carried into the dependent phase",
+   "A warm, swollen calf": "confused condition: a venous sign taken for an arterial one"}),
 
 V(PAD, IO_A,
   "A 66-year-old man is newly diagnosed with peripheral artery disease after an abnormal ankle-brachial index. He has no chest symptoms. Because half of such patients share it, which associated condition should be evaluated next?",
@@ -317,17 +343,20 @@ V(CLI, IO_A,
     "Above 1.3 reflects calcified, noncompressible arteries and gives a falsely high value. The expected band for true ischemic rest pain is 0 to 0.4."]],
   C(42), "test finding", "test"),
 
-V(CLI, IO_A,
+M(V(CLI, IO_A,
   "A 76-year-old woman has constant throbbing, burning pain in her toes and forefoot that is worse lying flat, not relieved by narcotic pain medicine, and eased by dangling her leg or walking around. Her feet are cool. Which is the most likely diagnosis?",
   [["Critical limb ischemia",
     "Correct. Ischemic rest pain of critical limb ischemia is constant, distal, worse with elevation or reclining, poorly controlled even by narcotics, and relieved by dependency or walking, which use gravity to aid perfusion."],
    ["Intermittent claudication",
-    "Claudication is pain with activity relieved by rest, usually in about 10 minutes. Constant pain relieved by walking or dangling is ischemic rest pain."],
+    "Claudication is activity-related muscle pain relieved by rest, usually in about 10 minutes. Her pain is constant and eased by walking or dangling, which is ischemic rest pain."],
    ["Peripheral neuropathy",
-    "Neuropathic burning is continuous and unaffected by exercise or position. Pain relieved by dependency and worse on elevation is arterial rest pain."],
+    "Peripheral neuropathy gives a continuous burning sensation in the foot that is unaffected by exercise. Her pain changes with position, worse lying flat and eased by dangling, which is arterial rest pain."],
    ["Acute limb ischemia",
-    "Acute limb ischemia is a sudden occlusion with abrupt severe pain and absent pulses. Her pain is long-standing and position-dependent, the pattern of critical limb ischemia."]],
-  C(21), "differential", "diagnosis"),
+    "Acute limb ischemia is a sudden occlusion with abrupt onset of severe pain and absent pulses. Her constant pain that worsens lying flat and eases with dangling is the pattern of critical limb ischemia."]],
+  DECK + ", Slides 19, 21, 23, 40, 59", "differential", "diagnosis"),
+  {"Intermittent claudication": "adjacent fact: arterial pain assumed to be exertional claudication rather than rest pain",
+   "Peripheral neuropathy": "competing diagnosis: burning foot pain read as neuropathy",
+   "Acute limb ischemia": "competing diagnosis: severe ischemic pain taken for a sudden occlusion"}),
 
 V(CLI, IO_A,
   "A 73-year-old man with ischemic rest pain notices that walking around the room eases his foot pain, although walking used to cause calf pain. Which explanation should he be given?",

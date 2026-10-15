@@ -292,25 +292,30 @@
    "q": "Why is a high degree of suspicion needed to identify acute myocarditis?",
    "opts": [
     [
-     "It only affects older adults",
-     "Myocarditis usually affects otherwise healthy people, especially young males. Suspicion is needed because cases are often not obvious."
+     "It mainly affects older adults",
+     "Myocarditis usually manifests in an otherwise healthy person, and young males are particularly susceptible. Suspicion is needed because many cases are not clinically obvious."
     ],
     [
-     "Biopsy is never diagnostic",
-     "Endomyocardial biopsy is the gold standard. A high index of suspicion is needed because many cases are clinically subtle."
+     "Biopsy cannot confirm the diagnosis",
+     "Endomyocardial biopsy is the gold standard, used to establish the diagnosis once other causes of heart failure are excluded. Suspicion is needed because many cases are clinically subtle."
     ],
     [
      "Many cases are not clinically obvious",
-     "Correct. Because many cases of myocarditis are not clinically obvious, a high degree of suspicion is required to identify it."
+     "Correct. Because many cases of myocarditis are not clinically obvious, with presentations ranging from subtle to devastating, a high degree of suspicion is required to identify acute myocarditis."
     ],
     [
-     "Troponin is always normal in it",
-     "Troponin indicates myonecrosis and can be elevated. Suspicion matters because many cases are not clinically obvious."
+     "Troponin stays normal throughout",
+     "Serum troponin is an indicator of cardiac myonecrosis and is among the tests for myocarditis, so it need not stay normal. Suspicion is needed because many cases are not clinically obvious."
     ]
    ],
    "c": 2,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 56",
-   "slot": "manifestation"
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 47, 50, 54, 56",
+   "slot": "manifestation",
+   "mis": {
+    "Troponin stays normal throughout": "confused test role: a myonecrosis marker assumed to stay normal",
+    "It mainly affects older adults": "reversed value: the age pattern flipped",
+    "Biopsy cannot confirm the diagnosis": "reversed value: the gold-standard test dismissed"
+   }
   },
   {
    "topic": "Acute myocarditis",
@@ -523,54 +528,64 @@
   {
    "topic": "Dilated cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "In dilated cardiomyopathy, which patients receive anticoagulation?",
+   "q": "Which drug is the aldosterone receptor blocker used to manage dilated cardiomyopathy?",
    "opts": [
     [
-     "Only patients whose cause is viral infection",
-     "The cause of the cardiomyopathy does not decide anticoagulation. Atrial fibrillation, artificial valves or mural thrombus do."
+     "Amiodarone",
+     "Amiodarone is an antiarrhythmic, not an aldosterone receptor blocker. Spironolactone is the aldosterone receptor blocker on the dilated cardiomyopathy drug list."
     ],
     [
-     "Atrial fibrillation, prosthetic valve or clot",
-     "Correct. Anticoagulants should be restricted to patients in atrial fibrillation, with artificial valves or with a known mural thrombus."
+     "Spironolactone",
+     "Correct. Spironolactone is the aldosterone receptor blocker on the drug list for dilated cardiomyopathy, alongside angiotensin-converting enzyme inhibitors, beta blockers, angiotensin receptor blockers and diuretics."
     ],
     [
-     "Every patient from diagnosis, lifelong use",
-     "Anticoagulation is not universal. It is restricted to atrial fibrillation, artificial valves or a known mural thrombus."
+     "Metoprolol",
+     "Metoprolol is a beta blocker, a different class on the dilated cardiomyopathy drug list. The aldosterone receptor blocker named for this disease is spironolactone."
     ],
     [
-     "Any patient with a reduced ejection fraction",
-     "A reduced ejection fraction alone is not an indication. Anticoagulation is kept for atrial fibrillation, artificial valves or mural thrombus."
+     "Verapamil",
+     "Verapamil is a nondihydropyridine calcium channel blocker used for outflow obstruction in hypertrophic cardiomyopathy. The aldosterone receptor blocker for dilated cardiomyopathy is spironolactone."
     ]
    ],
    "c": 1,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 42",
-   "slot": "agent/regimen"
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 42, 76, 78",
+   "slot": "agent/regimen",
+   "mis": {
+    "Metoprolol": "confused drug class: a beta blocker",
+    "Verapamil": "confused drug class: a calcium channel blocker from another cardiomyopathy",
+    "Amiodarone": "confused drug class: an antiarrhythmic"
+   }
   },
   {
    "topic": "Restrictive cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "Which drugs are sometimes tried cautiously in patients with restrictive cardiomyopathy?",
+   "q": "Which drugs may benefit restrictive cardiomyopathy by lengthening left ventricular filling time?",
    "opts": [
     [
      "Antibiotics, steroids or antivirals",
-     "These do not relax the stiff ventricle; treatment targets the underlying disorder. The drugs sometimes tried, with caution, to lengthen filling time are beta blockers, verapamil or diltiazem."
+     "These do not lengthen filling time or relax the stiff ventricle; management treats the underlying disorder. Beta blockers, verapamil or diltiazem are the drugs that may increase filling time."
     ],
     [
      "Beta blockers, verapamil or diltiazem",
-     "Correct. Beta blockers and the calcium channel blockers verapamil or diltiazem are sometimes tried to lengthen filling time and improve relaxation, but they are used cautiously because these stiff hearts depend on a fast heart rate for output, and verapamil and diltiazem are avoided in cardiac amyloidosis."
+     "Correct. Beta blockers and the calcium channel blockers verapamil or diltiazem may be of benefit by increasing left ventricular filling time, improving ventricular relaxation and decreasing compensatory sympathetic stimulation."
     ],
     [
-     "Digoxin, epinephrine or dopamine",
-     "Positive inotropes do not relieve a stiff, poorly filling ventricle. The drugs sometimes tried, with caution, are beta blockers or the calcium channel blockers verapamil or diltiazem."
+     "Digoxin, epinephrine or norepinephrine",
+     "Digoxin, epinephrine and norepinephrine are positive inotropes that increase contractility; they do not lengthen filling time. Beta blockers, verapamil or diltiazem may do so."
     ],
     [
      "Nifedipine, nitrates or hydralazine",
-     "These vasodilators lower preload or afterload, which stiff ventricles tolerate poorly. The drugs sometimes tried, with caution, are beta blockers and the calcium channel blockers verapamil or diltiazem."
+     "These drugs lower preload or afterload rather than lengthen filling time, and noncompliant ventricles depend on preload to maintain cardiac output. Beta blockers, verapamil or diltiazem may benefit."
     ]
    ],
    "c": 1,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 98",
-   "slot": "agent/regimen"
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 77, 98",
+   "slot": "agent/regimen",
+   "mis": {
+    "Digoxin, epinephrine or norepinephrine": "confused drug class: positive inotropes",
+    "Nifedipine, nitrates or hydralazine": "confused drug class: vasodilators that drop preload",
+    "Antibiotics, steroids or antivirals": "confused treatment: therapy for an underlying cause, not for filling"
+   }
   },
   {
    "topic": "Restrictive cardiomyopathy",
@@ -631,24 +646,29 @@
    "opts": [
     [
      "Toxoplasma gondii",
-     "Toxoplasma does not cause Chagas disease. Chagas disease is caused by Trypanosoma cruzi, transmitted by triatomine bugs in Central and South America and Mexico."
+     "Toxoplasma gondii is not the cause of Chagas disease. Chagas disease is caused by Trypanosoma cruzi, the parasitic cause of dilated cardiomyopathy."
     ],
     [
      "Plasmodium falciparum",
-     "Plasmodium causes malaria, not Chagas disease. The parasitic cause of dilated cardiomyopathy is Trypanosoma cruzi."
+     "Plasmodium falciparum is not the Chagas parasite. The parasitic infection that leads to dilated cardiomyopathy through Chagas disease is Trypanosoma cruzi."
     ],
     [
      "Giardia lamblia",
-     "Giardia is an intestinal parasite with no link to Chagas disease, which is caused by Trypanosoma cruzi and can end in dilated cardiomyopathy."
+     "Giardia lamblia is not the Chagas parasite. Chagas disease, which can end in dilated cardiomyopathy, is caused by Trypanosoma cruzi."
     ],
     [
      "Trypanosoma cruzi",
-     "Correct. Trypanosoma cruzi causes Chagas disease, a parasitic infectious myocarditis that leads to dilated cardiomyopathy; it is spread by triatomine (kissing) bugs."
+     "Correct. Trypanosoma cruzi causes Chagas disease, a parasitic infectious cause of dilated cardiomyopathy, and it also appears among the parasitic causes of acute myocarditis."
     ]
    ],
    "c": 3,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 22",
-   "slot": "etiology"
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 22, 48",
+   "slot": "etiology",
+   "mis": {
+    "Toxoplasma gondii": "competing organism: another protozoan parasite",
+    "Plasmodium falciparum": "competing organism: a blood-borne protozoan of another disease",
+    "Giardia lamblia": "competing organism: an intestinal protozoan"
+   }
   },
   {
    "topic": "Takotsubo cardiomyopathy",
@@ -841,24 +861,29 @@
    "opts": [
     [
      "It slows the heart to a stop",
-     "Squatting does not act through heart rate here. It increases venous return and preload, widening the outflow tract."
+     "Squatting does not soften the murmur by slowing the heart. Rapid squatting increases preload, and anything that increases blood flow in the heart reduces the outflow obstruction."
     ],
     [
      "It closes the mitral valve early",
-     "Early mitral closure is not the mechanism. The larger ventricular volume on squatting reduces the obstruction."
+     "Squatting does not act by closing the mitral valve early. It increases preload, and more blood flow in the heart reduces outflow obstruction and softens the murmur."
     ],
     [
      "More filling reduces obstruction",
-     "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; squatting and passive leg raising increase preload."
+     "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; rapid squatting and passive leg raising increase preload, so the murmur decreases."
     ],
     [
      "Less filling increases obstruction",
-     "Less filling makes the murmur louder, as with Valsalva or standing. Squatting does the opposite by increasing preload."
+     "Less filling makes the murmur louder, as with Valsalva or standing, which decrease preload. Squatting does the opposite by increasing preload."
     ]
    ],
    "c": 2,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 69",
-   "slot": "manifestation"
+   "cite": "Cardiomyopathy - Carter.pptx, Slide 69 (table and pictures)",
+   "slot": "manifestation",
+   "mis": {
+    "Less filling increases obstruction": "reversed direction: the effect of decreased preload",
+    "It slows the heart to a stop": "confused mechanism: a heart rate change credited for a preload effect",
+    "It closes the mitral valve early": "confused mechanism: a valve-timing explanation"
+   }
   },
   {
    "topic": "Restrictive cardiomyopathy",
@@ -1097,28 +1122,33 @@
   {
    "topic": "Dilated cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "Which drug pair should every patient with dilated cardiomyopathy receive, whatever the cause?",
+   "q": "Which drug pair is part of guideline-directed medical therapy for an adult with dilated cardiomyopathy?",
    "opts": [
     [
      "Beta blocker and angiotensin-converting enzyme inhibitor",
-     "Correct. Treatment of dilated cardiomyopathy is essentially that of chronic heart failure, and all patients, regardless of etiology, should get a beta blocker and an angiotensin-converting enzyme inhibitor."
+     "Correct. Guideline-directed medical therapy for adults with cardiomyopathy includes angiotensin-converting enzyme inhibitors and beta blockers, with angiotensin receptor blockers and diuretics, and both classes are on the drug list for dilated cardiomyopathy."
     ],
     [
      "Calcium channel blocker and long-acting nitrate agent",
-     "Neither is the core pair. Nitrates treat pulmonary edema in selected patients; the pair every patient receives is a beta blocker with an angiotensin-converting enzyme inhibitor."
+     "Neither is part of adult guideline-directed therapy. Nitrates are on the dilated cardiomyopathy drug list, but the guideline-directed pair is a beta blocker with an angiotensin-converting enzyme inhibitor."
     ],
     [
      "Anticoagulant and antiplatelet agent for every patient",
-     "Anticoagulation is restricted to atrial fibrillation, artificial valves or mural thrombus. The universal pair is a beta blocker with an angiotensin-converting enzyme inhibitor."
+     "Anticoagulants are on the drug list but are not part of adult guideline-directed therapy, and antiplatelet agents are not on it at all. The guideline-directed pair is a beta blocker with an angiotensin-converting enzyme inhibitor."
     ],
     [
-     "Thiazide diuretic and oral potassium supplementation",
-     "Diuretics are adjuncts for sodium and water retention, and loop diuretics are the mainstay. The universal pair is a beta blocker with an angiotensin-converting enzyme inhibitor."
+     "Digoxin with an antiarrhythmic such as amiodarone",
+     "Digoxin is considered a second-line drug for dilated cardiomyopathy, and antiarrhythmics are not part of adult guideline-directed therapy, which pairs a beta blocker with an angiotensin-converting enzyme inhibitor."
     ]
    ],
    "c": 0,
-   "cite": "Cardiomyopathy - Carter.pptx, Slide 42",
-   "slot": "first-line"
+   "cite": "Cardiomyopathy - Carter.pptx, Slides 42, 105",
+   "slot": "first-line",
+   "mis": {
+    "Calcium channel blocker and long-acting nitrate agent": "confused drug class: drugs for a stiff or hypertrophied ventricle",
+    "Anticoagulant and antiplatelet agent for every patient": "right drug for the wrong patient: anticoagulation given to everyone",
+    "Digoxin with an antiarrhythmic such as amiodarone": "adjacent fact: a second-line drug offered as core therapy"
+   }
   },
   {
    "topic": "Hypertrophic cardiomyopathy",

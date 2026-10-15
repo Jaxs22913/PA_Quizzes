@@ -18,6 +18,11 @@ from cms_e5l27_scope import *
 def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 AAA = "Abdominal aortic aneurysm"
 TAA = "Thoracic aortic aneurysm"
@@ -363,17 +368,20 @@ S(AAA, IO_A,
     "Non-Caucasian race is protective against aneurysm. Continued smoking raises rupture risk."]],
   C(99), "prognosis"),
 
-S(AAA, IO_A,
+M(S(AAA, IO_A,
   "What is true of aneurysms in women despite their lower incidence?",
   [["They rupture more often",
-    "Correct. Female sex is associated with a decreased risk of aneurysm, although women with aneurysms rupture more often, which is why their repair threshold is lower at 5.0 cm."],
+    "Correct. Female sex is associated with a decreased risk of abdominal aortic aneurysm, although women with aneurysms rupture more often; elective repair in women is advised at 5.0 cm or larger."],
    ["They never need repair",
-    "Women's aneurysms are repaired, at 5.0 cm or larger. They also rupture more often."],
+    "Women's aneurysms are not left alone: elective repair is advised at 5.0 cm or larger, and women with aneurysms rupture more often."],
    ["They grow only in the chest",
     "Location is not the difference. Women's aneurysms rupture more often despite lower incidence."],
    ["They rupture less often",
     "The opposite is true. Female sex lowers aneurysm risk, but women with aneurysms rupture more often."]],
-  C(88), "prognosis"),
+  DECK + ", Slides 88, 95", "prognosis"),
+  {"They never need repair": "common lay belief: lower incidence means aneurysms in women can be left alone",
+   "They grow only in the chest": "confused location: a site difference invented for the sex difference",
+   "They rupture less often": "reversed direction: lower incidence taken to mean lower rupture risk"}),
 
 S(AAA, IO_A,
   "At what size is an abdominal aortic aneurysm referred for vascular specialty care and observation?",
@@ -544,17 +552,20 @@ S(TAA, IO_A,
     "Free air under the diaphragm is a different emergency. Thoracic aneurysm widens the mediastinal shadow."]],
   C(105), "test finding"),
 
-S(TAA, IO_A,
+M(S(TAA, IO_A,
   "Which imaging is most widely used for thoracic aortic aneurysm?",
   [["Computed tomography angiography",
     "Correct. Computed tomography angiography is the most widely used study, visualizing the entire thoracic and abdominal aorta; magnetic resonance angiography is time consuming."],
    ["Abdominal ultrasound",
-    "Abdominal ultrasound screens abdominal aneurysms. Thoracic aneurysm is imaged most widely with computed tomography angiography."],
+    "Abdominal ultrasound is the study of choice for initial screening for an abdominal aortic aneurysm. Thoracic aneurysm is imaged most widely with computed tomography angiography."],
    ["Magnetic resonance angiography",
     "Magnetic resonance angiography shows location, extent and size but is time consuming. Computed tomography angiography is most widely used."],
    ["Duplex ultrasonography",
-    "Duplex ultrasonography screens carotid and leg arteries. Thoracic aneurysm is imaged with computed tomography angiography."]],
-  C(106), "initial test"),
+    "Duplex ultrasonography is the most widely used initial screening tool for carotid artery disease, not the thoracic aorta. Thoracic aneurysm is imaged most widely with computed tomography angiography."]],
+  DECK + ", Slides 74, 94, 106", "initial test"),
+  {"Abdominal ultrasound": "adjacent fact: the abdominal aneurysm screening study applied to the chest",
+   "Magnetic resonance angiography": "adjacent fact: an accurate thoracic study that is time consuming, not the most used",
+   "Duplex ultrasonography": "adjacent fact: the carotid screening tool applied to the thoracic aorta"}),
 
 S(TAA, IO_A,
   "What does transesophageal echocardiography evaluate in thoracic aortic aneurysm?",
@@ -738,17 +749,20 @@ S(DIS, IO_A,
     "Plaque narrowing is atherosclerotic stenosis. Dissection is an intimal tear creating a false lumen."]],
   C(114), "etiology"),
 
-S(DIS, IO_A,
-  "What is the most common predisposing factor for aortic dissection?",
-  [["Long-standing hypertension",
-    "Correct. The most common predisposing factor is long-standing hypertension, which strains a medial layer weakened by collagen and elastin degeneration; Marfan syndrome is the classic medial degeneration in younger patients."],
-   ["Laceration by an access needle",
-    "Needle laceration causes a femoral pseudoaneurysm. Aortic dissection is most commonly predisposed by long-standing hypertension, which strains a degenerated medial layer."],
-   ["Embolism from atrial fibrillation",
-    "Cardiac emboli cause acute limb ischemia, not dissection. Dissection is most often predisposed by long-standing hypertension acting on a degenerated aortic media."],
-   ["Destruction of the carotid bulb",
-    "The carotid bulb is not involved in aortic dissection. The most common predisposing factor is long-standing hypertension, working on a weakened medial layer."]],
-  C(115), "etiology"),
+M(S(DIS, IO_A,
+  "Within which layer of the aortic wall does the false lumen of an aortic dissection form?",
+  [["The tunica media",
+    "Correct. A dissection forms from an intimal tear and is typically contained by the media layer: the vessel wall layers separate, and a false lumen forms within the media, where blood can pool."],
+   ["Outside the wall entirely",
+    "A blood-filled cavity outside the vessel wall describes a pseudoaneurysm, which follows arterial rupture. The false lumen of a dissection lies within the media layer."],
+   ["The tunica intima",
+    "The intima is where the tear begins, but the blood tracks deeper: a dissection is typically contained by the media layer, and the false lumen forms within the media."],
+   ["The tunica adventitia",
+    "The adventitia is the fibrous outer coat of the artery. In a dissection the layers separate and the false lumen forms within the media, which typically contains it."]],
+  DECK + ", Slides 3, 112, 114", "etiology"),
+  {"Outside the wall entirely": "competing diagnosis: the extravascular cavity of a pseudoaneurysm",
+   "The tunica intima": "adjacent fact: the layer where the tear starts",
+   "The tunica adventitia": "confused anatomy: the fibrous outer coat"}),
 
 S(DIS, IO_POP,
   "At what age does aortic dissection usually occur outside Marfan syndrome?",
