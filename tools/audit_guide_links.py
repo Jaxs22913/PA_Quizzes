@@ -104,8 +104,9 @@ class Folder:
         """Paragraph texts of the section (or added line) the link points at."""
         secs, html = self.guide(guide)
         if anchor.startswith("ga-"):
-            m = re.search(r'<li id="%s">(.*?)</li>' % re.escape(anchor), html, re.S)
-            return [norm(re.sub(r"<[^>]+>", " ", B.html.unescape(m.group(1))))] if m else []
+            # an added line: <li>/<p id="ga-..." data-gen="1"> inside its section (apply_guide_additions.py)
+            m = re.search(r'<(li|p) id="%s"[^>]*>(.*?)</\1>' % re.escape(anchor), html, re.S)
+            return [norm(re.sub(r"<[^>]+>", " ", B.html.unescape(m.group(2))))] if m else []
         sc = secs.get(anchor)
         return B.blocks_of(sc) if sc else []
 

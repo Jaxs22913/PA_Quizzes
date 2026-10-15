@@ -3374,6 +3374,10 @@ html.gl-open { overflow: hidden; }
   text-transform: uppercase; opacity: .8; }
 .qa-also ul { margin: 0; padding-left: 1.25em; }
 .qa-also li { margin: .35em 0; }
+/* Since 2026-10-15 the lines are written INTO the section's own text instead (an <li> or <p>
+   with data-gen="1", no box), so they take their neighbors' style; .qa-also stays for any
+   copy still carrying a box. Inside a condition card the card's own lines are .9rem. */
+.cond > p[data-gen="1"] { font-size: .9rem; line-height: 1.55; }
 
 
 /* ============================================================
