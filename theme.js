@@ -1797,6 +1797,63 @@ window.SitePrompts = {
 // .wrap[data-readable], since that attribute is opt-in per guide (the
 // Hormones reference guide deliberately doesn't have it, being a table
 // guide with nothing to narrate) and highlighting has no such prerequisite.
+/* ============================================================
+   Pip review list (2026-10-11). A student selects something in a Semester 2 study guide or cram
+   sheet, taps "Add to Pip notes", and it is kept per exam under the key "pipReview:<exam slug>"
+   (an ordinary synced key: cloud-sync.js uploads only the one key that changed). my-review-guide.html
+   turns the list into a personal guide; Pip's window shows a chip with the count. Nothing here
+   writes any text of its own: the saved bit is the guide's own words, trimmed.
+   ============================================================ */
+(function () {
+  var PFX = "pipReview:", CAP = 600;
+  function slugify(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""); }
+  function dec(p) { try { return decodeURIComponent(p); } catch (e) { return p; } }
+  function load(slug) {
+    try { var v = JSON.parse(localStorage.getItem(PFX + slug)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
+  function save(slug, list) { try { localStorage.setItem(PFX + slug, JSON.stringify(list)); return true; } catch (e) { return false; } }
+  function norm(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
+  function idOf(text, file) {
+    var s = norm(text).toLowerCase() + "|" + file, h = 5381;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return "r" + (h >>> 0).toString(36);
+  }
+  function trimText(t) {
+    t = norm(t);
+    if (t.length <= CAP) return t;
+    var c = t.slice(0, CAP), sp = c.lastIndexOf(" ");
+    return (sp > CAP * 0.6 ? c.slice(0, sp) : c).replace(/[\s,;:.-]+$/, "") + "…";
+  }
+  function slugs() {
+    var out = [];
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(PFX) === 0 && load(k.slice(PFX.length)).length) out.push(k.slice(PFX.length));
+      }
+    } catch (e) {}
+    return out;
+  }
+  window.PipReview = {
+    slugify: slugify, load: load, slugs: slugs, trim: trimText,
+    count: function (slug) { return load(slug).length; },
+    idOf: idOf,
+    has: function (slug, id) { return load(slug).some(function (x) { return x.id === id; }); },
+    add: function (slug, item) {          // "added", "exists" or "failed"
+      var list = load(slug);
+      if (list.some(function (x) { return x.id === item.id; })) return "exists";
+      list.push(item);
+      return save(slug, list) ? "added" : "failed";
+    },
+    remove: function (slug, id) { save(slug, load(slug).filter(function (x) { return x.id !== id; })); },
+    setNote: function (slug, id, note) {
+      var list = load(slug), hit = false;
+      list.forEach(function (x) { if (x.id === id && (x.n || "") !== note) { x.n = note; hit = true; } });
+      if (hit) save(slug, list);
+    }
+  };
+})();
+
 (function () {
   if (!document.querySelector(".guide-back-bar")) return;
   // `document.querySelector(".wrap")` (no scoping) grabs the FIRST match
@@ -1886,6 +1943,58 @@ window.SitePrompts = {
     try { return JSON.parse(localStorage.getItem(HL_KEY)) || []; } catch (e) { return []; }
   }
   function saveHighlights(list) { localStorage.setItem(HL_KEY, JSON.stringify(list)); }
+
+  // ---- Add to Pip notes (see window.PipReview above) ----------------------------------------------
+  var PIP_BASE = (function () {
+    var sc = document.querySelector('script[src$="theme.js"]');
+    return sc && sc.src ? sc.src.replace(/theme\.js(\?.*)?$/, "") : "";
+  })();
+  var PIP_PATH = decodeURIComponent(location.pathname).split("/").filter(Boolean);
+  var PIP_FILE = PIP_PATH[PIP_PATH.length - 1] || "", PIP_FOLDER = PIP_PATH[PIP_PATH.length - 2] || "";
+  var pipExam = null;      // the Semester 2 exam this page belongs to ({s, f, t}), or false when it is not one
+  function pipExamP() {
+    if (pipExam !== null) return Promise.resolve(pipExam);
+    if (!window.PipReview || !PIP_BASE || !window.fetch) return Promise.resolve((pipExam = false));
+    return fetch(PIP_BASE + "pip/data/index.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (ix) {
+      var hit = null;
+      ((ix && ix.folders) || []).forEach(function (f) { if (f.f === PIP_FOLDER) hit = f; });
+      return (pipExam = hit ? { s: hit.s, f: hit.f, t: hit.t } : false);
+    }).catch(function () { return false; });       // not cached as false: a failed fetch may work next time
+  }
+  // The section a passage sits in: the nearest heading that has an id, else the nearest enclosing
+  // element that has one. Its text is shown as the section title.
+  function pipSection(unit) {
+    var found = null;
+    for (var n = unit; n && n !== document.body && !found; n = n.parentElement) {
+      for (var sb = n.previousElementSibling; sb; sb = sb.previousElementSibling) {
+        if (/^H[1-6]$/.test(sb.tagName) && sb.id) { found = sb; break; }
+      }
+      if (!found && n !== unit && n.id) found = n;
+    }
+    var deck = unit.closest("section[id]"), dh = deck && deck.querySelector("h1, h2, h3");
+    var dk = { k: deck ? deck.id : "", kt: dh ? norm0(dh.textContent) : "" };
+    if (!found) return { a: "", st: "", k: dk.k, kt: dk.kt };
+    var h = /^H[1-6]$/.test(found.tagName) ? found : found.querySelector("h1, h2, h3, h4, summary");
+    return { a: found.id, st: norm0(h ? h.textContent : ""), k: dk.k, kt: dk.kt };
+  }
+  function norm0(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
+  function pipItem(unit, text, note) {
+    var sec = pipSection(unit), t = window.PipReview.trim(text);
+    return {
+      id: window.PipReview.idOf(t, PIP_FILE), f: PIP_FOLDER, d: PIP_FILE, a: sec.a, st: sec.st, k: sec.k, kt: sec.kt,
+      u: Number(unit.getAttribute("data-hl-idx")), t: t, n: norm0(note).slice(0, 400), at: new Date().toISOString()
+    };
+  }
+  function pipAdd(unit, text, note) {
+    return pipExamP().then(function (ex) {
+      if (!ex || !norm0(text)) return null;
+      var item = pipItem(unit, text, note), r = window.PipReview.add(ex.s, item);
+      var n = window.PipReview.count(ex.s);
+      if (window.showToast) window.showToast(r === "added" ? "Added to your review guide (" + n + " saved)"
+        : r === "exists" ? "Already in your review guide (" + n + " saved)" : "Could not save here. Check that this browser allows site storage.", 3500);
+      return r;
+    });
+  }
 
   function removeHighlight(mark, idx, start, end) {
     var parent = mark.parentNode;
@@ -2072,6 +2181,9 @@ window.SitePrompts = {
       var note = textarea.value.trim();
       setMarkNote(mark, note);
       updateHighlightNote(idx, start, end, note);
+      pipExamP().then(function (ex) {
+        if (ex) window.PipReview.setNote(ex.s, window.PipReview.idOf(window.PipReview.trim(mark.textContent), PIP_FILE), note);
+      });
       hideNotePopover();
     }
     var saveBtn = document.createElement("button");
@@ -2086,6 +2198,25 @@ window.SitePrompts = {
     row.appendChild(removeBtn);
     row.appendChild(saveBtn);
     notePopover.appendChild(row);
+    // "Add to Pip notes" (a toggle: it reads "Remove from Pip notes" once the passage is in the list)
+    var pipUnit = findUnit(mark), pipBtn = document.createElement("button");
+    pipBtn.type = "button"; pipBtn.className = "hl-note-btn hl-note-pip"; pipBtn.hidden = true;
+    notePopover.appendChild(pipBtn);
+    pipExamP().then(function (ex) {
+      if (!ex || !pipUnit || !pipBtn.isConnected) return;
+      var pid = window.PipReview.idOf(window.PipReview.trim(mark.textContent), PIP_FILE);
+      function label() { pipBtn.textContent = window.PipReview.has(ex.s, pid) ? "Remove from Pip notes" : "Add to Pip notes"; }
+      label(); pipBtn.hidden = false;
+      pipBtn.addEventListener("click", function () {
+        if (window.PipReview.has(ex.s, pid)) {
+          window.PipReview.remove(ex.s, pid);
+          if (window.showToast) window.showToast("Removed from your review guide (" + window.PipReview.count(ex.s) + " saved)", 3000);
+          label();
+        } else {
+          pipAdd(pipUnit, mark.textContent, textarea.value || mark.dataset.note || "").then(label);
+        }
+      });
+    });
     document.body.appendChild(notePopover);
     clampToViewport(notePopover);
     textarea.focus();
@@ -2133,6 +2264,21 @@ window.SitePrompts = {
     });
     document.body.appendChild(toolbar);
     clampToViewport(toolbar);
+    var thisBar = toolbar;
+    pipExamP().then(function (ex) {
+      if (!ex || toolbar !== thisBar) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "hl-pipbtn"; b.textContent = "Add to Pip notes";
+      b.addEventListener("mousedown", function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var text = range.toString();
+        window.getSelection().removeAllRanges();
+        hideToolbar();
+        pipAdd(unit, text, "");
+      });
+      thisBar.appendChild(b);
+      clampToViewport(thisBar);
+    });
   }
 
   document.addEventListener("mouseup", function (e) {

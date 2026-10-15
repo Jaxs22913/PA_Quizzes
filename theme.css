@@ -1683,6 +1683,18 @@ mark.user-hl.has-note::after {
 .hl-note-colors .hl-swatch { width: 18px; height: 18px; }
 .hl-swatch-current { box-shadow: 0 0 0 2px #1f2937, 0 0 0 4px #fff; }
 
+/* "Add to Pip notes" (2026-10-11): a text button on the selection toolbar and under the note box. */
+.hl-pipbtn {
+  font: 700 12px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #fff; background: #2563eb; border: 0; border-radius: 6px; padding: 0 10px; min-height: 24px; cursor: pointer;
+  white-space: nowrap;
+}
+.hl-pipbtn:hover { background: #1d4ed8; }
+.hl-note-pip { display: block; width: 100%; margin-top: 8px; background: #1e3a8a; color: #fff; text-align: center; }
+.hl-note-pip[hidden] { display: none; }
+.hl-note-pip:hover { background: #1d4ed8; }
+.hl-pipbtn:focus-visible, .hl-note-pip:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 /* "Your highlights" review panel (added 2026-07-13) -- same overlay+
    centered-card treatment as .shortcuts-panel/.settings-panel, just
    wider and scrollable since its content is a variable-length list

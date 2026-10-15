@@ -409,7 +409,7 @@
               thumb_up: 100, thumb_down: 100, fallback: 100, error: 100, pip_users_d: 1, pip_users_w: 1, pip_users_m: 1 },
     marks: { pip_users: { d: "pip_users_d", w: "pip_users_w", m: "pip_users_m" } }
   });
-  window.__pip = { react: react, ROOT: ROOT, kind: kind, gated: gated, dock: dock, setOpen: setOpen, now: function () { return current; },
+  window.__pip = { react: react, ROOT: ROOT, kind: kind, gated: gated, dock: dock, setOpen: setOpen, withWindow: withWindow, now: function () { return current; },
                    duet: { start: duetStart, finish: duetFinish, cancel: duetCancel, active: function () { return dock.classList.contains("duet"); } },
                    hide: function () { set(K_HIDDEN, "1"); applyHidden(); },
                    scale: function () { return cssK; }, get frameH() { return H; }, get frameW() { return W; }, clawdDX: CLAWD_DX,

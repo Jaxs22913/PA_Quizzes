@@ -1475,6 +1475,20 @@ function buildHomeTourSteps() {
       });
     })();
 
+/* ---- My Review Guide link: reveal once the student has added something with "Add to Pip notes" ---- */
+(function () {
+  var link = document.getElementById("myreview-link");
+  if (!link) return;
+  try {
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf("pipReview:") !== 0) continue;
+      var v = JSON.parse(localStorage.getItem(k));
+      if (v && v.length) { link.hidden = false; return; }
+    }
+  } catch (e) {}
+})();
+
 /* ---- Review link: reveal only when there is something to review ---- */
 (function () {
   var link = document.getElementById("review-link");
