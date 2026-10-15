@@ -5,7 +5,9 @@
     python3 tools/check_all.py "Pharmacology I Exam 3" --fast   # skip the slow guide-link pair
 
 Runs, in order: answer-key consistency, exam standard (scoped to the folder), self-contained,
-lead-in present, length bias (fast, node), pool cites, US spelling, spelling vs
+lead-in present, length bias (fast, node), item quality (check_item_quality.py: FAIL only for files in
+tools/question_writing/scope.json), blind review (blind_review.py check: scoped questions need a current blind
+review + audit PASS), pool cites, US spelling, spelling vs
 the inbox (advisory, only if the inbox folder exists), accordions closed, then
 build_guide_links + check_guide_links --strict LAST (rewrites guide-links.json;
 skipped by --fast).
@@ -73,6 +75,10 @@ def main(argv):
         ("self-contained", ["tools/check_self_contained.py", folder], False),
         ("lead-in present", ["tools/check_leadin_present.py", folder], False),
         ("length bias (fast)", ["tools/check_length_bias_fast.py", folder], False),
+        # question-quality stage (WRITER.md): FAIL only for files listed in tools/question_writing/scope.json
+        # (empty until the first v1 build), WARN counts for everything else are in the reason line
+        ("item quality", ["tools/check_item_quality.py", "--folder", folder], False),
+        ("blind review", ["tools/blind_review.py", "check", "--folder", folder], False),
         ("pool cites", ["tools/check_pool_cites.py"], False),
         ("US spelling", ["tools/check_us_spelling.py"] + sorted(
             os.path.join(folder, f) for f in os.listdir(os.path.join(ROOT, folder))
