@@ -17,6 +17,11 @@ from cms_e5l27_scope import *
 def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 CLI = "Critical limb ischemia"
 ALI = "Acute limb ischemia"
@@ -473,17 +478,20 @@ S(CAR, IO_A,
     "Headache alone without focal loss is not the definition. It is a focal deficit lasting under 24 hours."]],
   C(72), "manifestation"),
 
-S(CAR, IO_A,
-  "What is amaurosis fugax?",
-  [["Transient loss of vision in one eye",
-    "Correct. Amaurosis fugax is interrupted blood flow to the retina causing transient monocular blindness, a rapid fading of vision like a curtain descending, a focal symptom of carotid disease."],
-   ["Permanent loss of vision in both eyes",
-    "The loss is transient and in one eye. Amaurosis fugax is temporary monocular blindness like a descending curtain."],
-   ["Double vision on looking sideways",
-    "Double vision is not the symptom. Amaurosis fugax is transient loss of vision in one eye."],
-   ["Flashing lights before a headache",
-    "That describes a visual aura. Amaurosis fugax is a curtain-like transient loss of vision in one eye."]],
-  C(72), "manifestation"),
+M(S(CAR, IO_A,
+  "What is the patient asked to do while the carotid arteries are auscultated?",
+  [["Hold the breath",
+    "Correct. In the carotid examination the patient is asked to hold the breath while each carotid artery is auscultated, one at a time, with the diaphragm and then the bell, listening for a bruit."],
+   ["Breathe deeply and quickly",
+    "Deep, quick breathing is not the instruction for carotid auscultation. The patient holds the breath while each carotid is heard, one at a time, with the diaphragm and then the bell."],
+   ["Bear down as if straining",
+    "Bearing down is not part of the carotid examination. The patient holds the breath while the examiner listens over each carotid artery in turn for a bruit."],
+   ["Turn the head to one side",
+    "Turning the head is not the instruction given. Each carotid artery is auscultated and palpated one at a time, with the patient holding the breath during listening."]],
+  C(73), "manifestation"),
+  {"Breathe deeply and quickly": "confused exam: the breathing instruction of a lung examination",
+   "Bear down as if straining": "confused maneuver: a straining maneuver borrowed from other bedside tests",
+   "Turn the head to one side": "common lay belief: positioning the head is the key step"}),
 
 S(CAR, IO_A,
   "What makes a patient with carotid stenosis asymptomatic?",

@@ -375,7 +375,7 @@
     ],
     [
      "Duplex ultrasonography",
-     "Duplex ultrasonography screens carotid and leg arteries. Thoracic aneurysm is imaged with computed tomography angiography."
+     "Duplex ultrasonography is the most widely used initial screening tool for carotid artery disease, not the thoracic aorta. Thoracic aneurysm is imaged most widely with computed tomography angiography."
     ],
     [
      "Computed tomography angiography",
@@ -383,12 +383,17 @@
     ],
     [
      "Abdominal ultrasound",
-     "Abdominal ultrasound screens abdominal aneurysms. Thoracic aneurysm is imaged most widely with computed tomography angiography."
+     "Abdominal ultrasound is the study of choice for initial screening for an abdominal aortic aneurysm. Thoracic aneurysm is imaged most widely with computed tomography angiography."
     ]
    ],
    "c": 2,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 106",
-   "slot": "initial test"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 74, 94, 106",
+   "slot": "initial test",
+   "mis": {
+    "Abdominal ultrasound": "adjacent fact: the abdominal aneurysm screening study applied to the chest",
+    "Magnetic resonance angiography": "adjacent fact: an accurate thoracic study that is time consuming, not the most used",
+    "Duplex ultrasonography": "adjacent fact: the carotid screening tool applied to the thoracic aorta"
+   }
   },
   {
    "topic": "Carotid artery disease",
@@ -523,28 +528,33 @@
   {
    "topic": "Peripheral artery disease",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection",
-   "q": "In darker skin, which signs help replace color change when judging blood flow?",
+   "q": "When palpating an ischemic leg, what does a line where the skin temperature changes indicate?",
    "opts": [
     [
-     "Temperature, texture, capillary refill",
-     "Correct. Pallor and redness can be harder to see in darker skin, so temperature, texture (rough, scaly, dry or atrophic skin, hair loss) and capillary refill time serve as additional indicators."
+     "The rough level of the occlusion",
+     "Correct. Skin temperature is used as a marker of perfusion: the ischemic limb is cool, and a demarcation of temperature gives a rough indication of the level of the occlusion."
     ],
     [
-     "Pulse rate, blood pressure, weight",
-     "These are vital signs, not skin indicators of limb perfusion. Temperature, texture and capillary refill are the added signs."
+     "How far an infection has spread",
+     "Infection of a wound or ulcer is suggested by fever, tachycardia and tachypnea, not by a temperature line. A demarcation of skin temperature roughly marks the level of arterial occlusion."
     ],
     [
-     "Sweating, nail color, hair color",
-     "Nail and hair color are not the named markers. The substitutes are skin temperature, skin texture and capillary refill time."
+     "The point where venous reflux begins",
+     "Skin temperature reflects the blood flow rate in dermal vessels, so in an ischemic leg a temperature demarcation points to the arterial occlusion, not to where venous reflux begins."
     ],
     [
-     "Itch, bruising, swelling",
-     "None of these is named as a perfusion sign. In darker skin, look at temperature, texture and capillary refill."
+     "The exact degree of narrowing",
+     "Palpation gives only a rough indication of where the occlusion lies, not how tight it is. The ankle-brachial index is the simple bedside test whose value bands grade the disease."
     ]
    ],
    "c": 0,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 30",
-   "slot": "manifestation"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 27, 33, 42",
+   "slot": "manifestation",
+   "mis": {
+    "How far an infection has spread": "adjacent fact: the signs of infection confused with a perfusion finding",
+    "The point where venous reflux begins": "confused system: a venous problem read into an arterial examination",
+    "The exact degree of narrowing": "reversed value: a rough sign treated as a precise measurement"
+   }
   },
   {
    "topic": "Abdominal aortic aneurysm",
@@ -605,11 +615,11 @@
    "opts": [
     [
      "Calcified core, thick media layer",
-     "Calcification of the media belongs to medial calcific sclerosis. The unstable plaque of atherosclerosis has a fatty core and a thin fibrous shell."
+     "Medial calcific sclerosis is a separate process of arteriosclerosis, not the unstable plaque. The vulnerable plaque of atherosclerosis has a fatty core and a thin fibrous shell."
     ],
     [
      "Fatty core, thin fibrous shell",
-     "Correct. A vulnerable plaque has a fatty core under a thin fibrous outer shell and can rupture into the bloodstream; clotting then begins at the rupture site and can go on to occlude the artery."
+     "Correct. A vulnerable, unstable plaque develops with a fatty core and a thin fibrous outer shell and can rupture into the bloodstream; clotting then begins at the rupture site and can go on to occlude the artery."
     ],
     [
      "Small core, thick fibrous shell",
@@ -621,8 +631,13 @@
     ]
    ],
    "c": 1,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 6",
-   "slot": "etiology"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 4, 5, 6 (slide 6 pictures)",
+   "slot": "etiology",
+   "mis": {
+    "Small core, thick fibrous shell": "reversed value: the thick-shelled stable plaque taken for the unstable one",
+    "Fatty streak, no fibrous shell": "adjacent fact: the earliest lesion confused with the rupture-prone plaque",
+    "Calcified core, thick media layer": "confused process: medial calcific sclerosis mistaken for atherosclerotic plaque"
+   }
   },
   {
    "topic": "Atheroembolism",
@@ -679,28 +694,33 @@
   {
    "topic": "Aortic dissection",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection",
-   "q": "What is the most common predisposing factor for aortic dissection?",
+   "q": "Within which layer of the aortic wall does the false lumen of an aortic dissection form?",
    "opts": [
     [
-     "Embolism from atrial fibrillation",
-     "Cardiac emboli cause acute limb ischemia, not dissection. Dissection is most often predisposed by long-standing hypertension acting on a degenerated aortic media."
+     "The tunica intima",
+     "The intima is where the tear begins, but the blood tracks deeper: a dissection is typically contained by the media layer, and the false lumen forms within the media."
     ],
     [
-     "Destruction of the carotid bulb",
-     "The carotid bulb is not involved in aortic dissection. The most common predisposing factor is long-standing hypertension, working on a weakened medial layer."
+     "The tunica adventitia",
+     "The adventitia is the fibrous outer coat of the artery. In a dissection the layers separate and the false lumen forms within the media, which typically contains it."
     ],
     [
-     "Long-standing hypertension",
-     "Correct. The most common predisposing factor is long-standing hypertension, which strains a medial layer weakened by collagen and elastin degeneration; Marfan syndrome is the classic medial degeneration in younger patients."
+     "The tunica media",
+     "Correct. A dissection forms from an intimal tear and is typically contained by the media layer: the vessel wall layers separate, and a false lumen forms within the media, where blood can pool."
     ],
     [
-     "Laceration by an access needle",
-     "Needle laceration causes a femoral pseudoaneurysm. Aortic dissection is most commonly predisposed by long-standing hypertension, which strains a degenerated medial layer."
+     "Outside the wall entirely",
+     "A blood-filled cavity outside the vessel wall describes a pseudoaneurysm, which follows arterial rupture. The false lumen of a dissection lies within the media layer."
     ]
    ],
    "c": 2,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 115",
-   "slot": "etiology"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 3, 112, 114",
+   "slot": "etiology",
+   "mis": {
+    "Outside the wall entirely": "competing diagnosis: the extravascular cavity of a pseudoaneurysm",
+    "The tunica intima": "adjacent fact: the layer where the tear starts",
+    "The tunica adventitia": "confused anatomy: the fibrous outer coat"
+   }
   },
   {
    "topic": "Acute limb ischemia",
@@ -757,28 +777,33 @@
   {
    "topic": "Peripheral artery disease",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection",
-   "q": "What relieves spinal stenosis pain but not claudication?",
+   "q": "Which feature of exertional leg pain points to spinal stenosis rather than arterial claudication?",
    "opts": [
     [
-     "Slowing the walking pace",
-     "Slowing down lessens muscle demand in claudication. The discriminator for spinal stenosis is relief by sitting or leaning forward."
+     "Eased by slowing the pace",
+     "Claudication severity depends on the vigor of exercise, so slowing down eases arterial pain too. The stenosis clue is relief from leaning forward to straighten out the lumbar spine."
     ],
     [
-     "Sitting or leaning forward",
-     "Correct. Spinal stenosis gives claudication-like symptoms with numbness and weakness, relieved by rest and by sitting down or leaning forward to straighten the lumbar spine."
+     "Eased by leaning forward",
+     "Correct. Spinal stenosis gives claudication-like symptoms with numbness and weakness, relieved by rest and by sitting down or leaning forward to straighten out the lumbar spine; arterial claudication needs rest alone."
     ],
     [
-     "Standing still briefly",
-     "Standing still relieves arterial claudication within minutes. Spinal stenosis needs sitting or leaning forward."
+     "Eased by standing still",
+     "Relief with rest, usually in 10 minutes, is the pattern of arterial claudication, and standing still is rest. Spinal stenosis needs sitting down or leaning forward to straighten the lumbar spine."
     ],
     [
-     "Raising the legs",
-     "Raising the legs worsens arterial rest pain and does not define spinal stenosis. Sitting or leaning forward eases it."
+     "Worse when legs are raised",
+     "Pain worsened by elevating the leg is the ischemic rest pain of critical limb ischemia, because elevation removes gravity's help. Spinal stenosis is instead eased by sitting down or leaning forward."
     ]
    ],
    "c": 1,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 41",
-   "slot": "differential"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 19, 20, 21, 41",
+   "slot": "differential",
+   "mis": {
+    "Eased by standing still": "competing diagnosis: the rest relief of arterial claudication",
+    "Worse when legs are raised": "competing diagnosis: the elevation pain of critical limb ischemia",
+    "Eased by slowing the pace": "adjacent fact: exercise vigor, which changes claudication severity"
+   }
   }
  ],
  "set2": [
@@ -993,28 +1018,33 @@
   {
    "topic": "Carotid artery disease",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection",
-   "q": "What is amaurosis fugax?",
+   "q": "What is the patient asked to do while the carotid arteries are auscultated?",
    "opts": [
     [
-     "Transient loss of vision in one eye",
-     "Correct. Amaurosis fugax is interrupted blood flow to the retina causing transient monocular blindness, a rapid fading of vision like a curtain descending, a focal symptom of carotid disease."
+     "Hold the breath",
+     "Correct. In the carotid examination the patient is asked to hold the breath while each carotid artery is auscultated, one at a time, with the diaphragm and then the bell, listening for a bruit."
     ],
     [
-     "Permanent loss of vision in both eyes",
-     "The loss is transient and in one eye. Amaurosis fugax is temporary monocular blindness like a descending curtain."
+     "Breathe deeply and quickly",
+     "Deep, quick breathing is not the instruction for carotid auscultation. The patient holds the breath while each carotid is heard, one at a time, with the diaphragm and then the bell."
     ],
     [
-     "Double vision on looking sideways",
-     "Double vision is not the symptom. Amaurosis fugax is transient loss of vision in one eye."
+     "Bear down as if straining",
+     "Bearing down is not part of the carotid examination. The patient holds the breath while the examiner listens over each carotid artery in turn for a bruit."
     ],
     [
-     "Flashing lights before a headache",
-     "That describes a visual aura. Amaurosis fugax is a curtain-like transient loss of vision in one eye."
+     "Turn the head to one side",
+     "Turning the head is not the instruction given. Each carotid artery is auscultated and palpated one at a time, with the patient holding the breath during listening."
     ]
    ],
    "c": 0,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 72",
-   "slot": "manifestation"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 73",
+   "slot": "manifestation",
+   "mis": {
+    "Breathe deeply and quickly": "confused exam: the breathing instruction of a lung examination",
+    "Bear down as if straining": "confused maneuver: a straining maneuver borrowed from other bedside tests",
+    "Turn the head to one side": "common lay belief: positioning the head is the key step"
+   }
   },
   {
    "topic": "Peripheral artery disease",
@@ -1317,7 +1347,7 @@
     ],
     [
      "Only in the arms",
-     "The arms are checked mainly for pressure, not because disease shows there. Pulse loss in leg disease is below the level of stenosis."
+     "Pulses are assessed from the brachial and radial arteries down to the dorsalis pedis and posterior tibial, and in leg disease they are diminished or absent below the level of the stenosis."
     ],
     [
      "Only at the stenosis",
@@ -1326,7 +1356,12 @@
    ],
    "c": 0,
    "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 34",
-   "slot": "manifestation"
+   "slot": "manifestation",
+   "mis": {
+    "Above the stenosis": "reversed direction: pulse loss placed above the narrowing",
+    "Only in the arms": "adjacent fact: the arm pulses that are checked mistaken for the site of loss",
+    "Only at the stenosis": "confused location: the narrowed segment taken as the site of pulse loss"
+   }
   },
   {
    "topic": "Abdominal aortic aneurysm",
@@ -1335,11 +1370,11 @@
    "opts": [
     [
      "They rupture more often",
-     "Correct. Female sex is associated with a decreased risk of aneurysm, although women with aneurysms rupture more often, which is why their repair threshold is lower at 5.0 cm."
+     "Correct. Female sex is associated with a decreased risk of abdominal aortic aneurysm, although women with aneurysms rupture more often; elective repair in women is advised at 5.0 cm or larger."
     ],
     [
      "They never need repair",
-     "Women's aneurysms are repaired, at 5.0 cm or larger. They also rupture more often."
+     "Women's aneurysms are not left alone: elective repair is advised at 5.0 cm or larger, and women with aneurysms rupture more often."
     ],
     [
      "They grow only in the chest",
@@ -1351,8 +1386,13 @@
     ]
    ],
    "c": 0,
-   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 88",
-   "slot": "prognosis"
+   "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slides 88, 95",
+   "slot": "prognosis",
+   "mis": {
+    "They never need repair": "common lay belief: lower incidence means aneurysms in women can be left alone",
+    "They grow only in the chest": "confused location: a site difference invented for the sex difference",
+    "They rupture less often": "reversed direction: lower incidence taken to mean lower rupture risk"
+   }
   },
   {
    "topic": "Critical limb ischemia",

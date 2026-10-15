@@ -20,6 +20,11 @@ from cms_e5l28_scope import *
 def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 MYO = "Acute myocarditis"
 RCM = "Restrictive cardiomyopathy"
@@ -209,17 +214,20 @@ S(MYO, IO_A,
     "Most myocarditis is viral, and antibiotics are not the mainstay. Treatment is supportive, directed at the clinical scenario."]],
   C(56), "first-line"),
 
-S(MYO, IO_A,
+M(S(MYO, IO_A,
   "Why is a high degree of suspicion needed to identify acute myocarditis?",
   [["Many cases are not clinically obvious",
-    "Correct. Because many cases of myocarditis are not clinically obvious, a high degree of suspicion is required to identify it."],
-   ["Troponin is always normal in it",
-    "Troponin indicates myonecrosis and can be elevated. Suspicion matters because many cases are not clinically obvious."],
-   ["It only affects older adults",
-    "Myocarditis usually affects otherwise healthy people, especially young males. Suspicion is needed because cases are often not obvious."],
-   ["Biopsy is never diagnostic",
-    "Endomyocardial biopsy is the gold standard. A high index of suspicion is needed because many cases are clinically subtle."]],
-  C(56), "manifestation"),
+    "Correct. Because many cases of myocarditis are not clinically obvious, with presentations ranging from subtle to devastating, a high degree of suspicion is required to identify acute myocarditis."],
+   ["Troponin stays normal throughout",
+    "Serum troponin is an indicator of cardiac myonecrosis and is among the tests for myocarditis, so it need not stay normal. Suspicion is needed because many cases are not clinically obvious."],
+   ["It mainly affects older adults",
+    "Myocarditis usually manifests in an otherwise healthy person, and young males are particularly susceptible. Suspicion is needed because many cases are not clinically obvious."],
+   ["Biopsy cannot confirm the diagnosis",
+    "Endomyocardial biopsy is the gold standard, used to establish the diagnosis once other causes of heart failure are excluded. Suspicion is needed because many cases are clinically subtle."]],
+  DECK + ", Slides 47, 50, 54, 56", "manifestation"),
+  {"Troponin stays normal throughout": "confused test role: a myonecrosis marker assumed to stay normal",
+   "It mainly affects older adults": "reversed value: the age pattern flipped",
+   "Biopsy cannot confirm the diagnosis": "reversed value: the gold-standard test dismissed"}),
 
 S(MYO, IO_A,
   "What proportion of patients with mild myocarditis later develop dilated cardiomyopathy?",
@@ -403,17 +411,20 @@ S(RCM, IO_A,
     "Diuretics do not change wall thickness. They must be used carefully because lowering preload drops cardiac output."]],
   C(98), "avoid"),
 
-S(RCM, IO_A,
-  "Which drugs are sometimes tried cautiously in patients with restrictive cardiomyopathy?",
+M(S(RCM, IO_A,
+  "Which drugs may benefit restrictive cardiomyopathy by lengthening left ventricular filling time?",
   [["Beta blockers, verapamil or diltiazem",
-    "Correct. Beta blockers and the calcium channel blockers verapamil or diltiazem are sometimes tried to lengthen filling time and improve relaxation, but they are used cautiously because these stiff hearts depend on a fast heart rate for output, and verapamil and diltiazem are avoided in cardiac amyloidosis."],
-   ["Digoxin, epinephrine or dopamine",
-    "Positive inotropes do not relieve a stiff, poorly filling ventricle. The drugs sometimes tried, with caution, are beta blockers or the calcium channel blockers verapamil or diltiazem."],
+    "Correct. Beta blockers and the calcium channel blockers verapamil or diltiazem may be of benefit by increasing left ventricular filling time, improving ventricular relaxation and decreasing compensatory sympathetic stimulation."],
+   ["Digoxin, epinephrine or norepinephrine",
+    "Digoxin, epinephrine and norepinephrine are positive inotropes that increase contractility; they do not lengthen filling time. Beta blockers, verapamil or diltiazem may do so."],
    ["Nifedipine, nitrates or hydralazine",
-    "These vasodilators lower preload or afterload, which stiff ventricles tolerate poorly. The drugs sometimes tried, with caution, are beta blockers and the calcium channel blockers verapamil or diltiazem."],
+    "These drugs lower preload or afterload rather than lengthen filling time, and noncompliant ventricles depend on preload to maintain cardiac output. Beta blockers, verapamil or diltiazem may benefit."],
    ["Antibiotics, steroids or antivirals",
-    "These do not relax the stiff ventricle; treatment targets the underlying disorder. The drugs sometimes tried, with caution, to lengthen filling time are beta blockers, verapamil or diltiazem."]],
-  C(98), "agent/regimen"),
+    "These do not lengthen filling time or relax the stiff ventricle; management treats the underlying disorder. Beta blockers, verapamil or diltiazem are the drugs that may increase filling time."]],
+  DECK + ", Slides 77, 98", "agent/regimen"),
+  {"Digoxin, epinephrine or norepinephrine": "confused drug class: positive inotropes",
+   "Nifedipine, nitrates or hydralazine": "confused drug class: vasodilators that drop preload",
+   "Antibiotics, steroids or antivirals": "confused treatment: therapy for an underlying cause, not for filling"}),
 
 S(RCM, IO_A,
   "What is the first principle of managing restrictive cardiomyopathy?",

@@ -345,24 +345,29 @@
    "opts": [
     [
      "Those with a score of 3 or more",
-     "Correct. With a Wells score of 3 or more, deep vein thrombosis is likely, so a D-dimer is not needed first and venous duplex ultrasound is ordered directly."
+     "Correct. A Wells score of 3 or more is high likelihood, and in the high-likelihood pathway ultrasound is ordered directly, with a D-dimer optional; either D-dimer result still leads to ultrasound."
     ],
     [
      "Those in the low likelihood group",
-     "Low likelihood patients get a D-dimer first, because a negative result can end the work-up. Only the high group goes straight to ultrasound."
+     "Low likelihood patients get a D-dimer first, because a negative result stops the work-up and only a positive one leads to ultrasound. The high group goes straight to ultrasound."
     ],
     [
      "Those with a score of 1 to 2",
-     "Moderate likelihood patients, whose pretest probability is about 17%, need a D-dimer. Only a score of 3 or more goes straight to ultrasound."
+     "A score of 1 to 2 is the moderate likelihood band, not high. Only a score of 3 or more, the high likelihood band, goes straight to ultrasound."
     ],
     [
      "Those with an alternative diagnosis",
-     "An alternative diagnosis lowers the score by two, moving patients toward D-dimer testing. Only a score of 3 or more goes straight to ultrasound."
+     "An alternative diagnosis at least as likely as deep vein thrombosis subtracts 2 points, lowering the score. Only a score of 3 or more goes straight to ultrasound."
     ]
    ],
    "c": 0,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 55",
-   "slot": "initial test"
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 55-56 (Wells table and flowchart pictures)",
+   "slot": "initial test",
+   "mis": {
+    "Those in the low likelihood group": "reversed value: the low group's D-dimer-first path",
+    "Those with a score of 1 to 2": "right band at the wrong level: moderate taken as high",
+    "Those with an alternative diagnosis": "reversed direction: a score-lowering item taken as raising"
+   }
   },
   {
    "topic": "Septic thrombophlebitis",
@@ -397,24 +402,29 @@
    "opts": [
     [
      "Furosemide",
-     "A loop diuretic does not improve venous ulcer healing, and venous edema is controlled with compression. Aspirin may help accelerate healing."
+     "Furosemide is not the agent that may speed healing: venous ulcers heal only once edema is controlled and compression is applied, and aspirin may help accelerate healing."
     ],
     [
      "Warfarin",
-     "Anticoagulation treats and prevents clots but does not speed venous ulcer healing. Aspirin is the oral agent that may help accelerate healing."
+     "Warfarin is an anticoagulant for venous thromboembolism, not an ulcer-healing agent. Aspirin is the oral agent that may help accelerate healing of venous ulcers."
     ],
     [
      "Aspirin",
-     "Correct. Aspirin may help accelerate venous ulcer healing; classically no oral medication is considered proven for venous disease, and current guidelines suggest pentoxifylline or flavonoids only as add-ons to compression."
+     "Correct. Aspirin may help to accelerate healing of venous ulcers, although no oral medication has yet been proven useful for the treatment of venous disease; flavonoids are used to increase venous tone."
     ],
     [
      "Prednisone",
-     "Oral corticosteroids are not used to heal venous ulcers and can impair wound healing. Aspirin may help, and flavonoids increase venous tone."
+     "Corticosteroids appear in venous disease as mid-potency topical creams for the symptoms of stasis dermatitis, not as oral ulcer healers. Aspirin may help accelerate healing."
     ]
    ],
    "c": 2,
-   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 35",
-   "slot": "agent/regimen"
+   "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slides 34-35, 66",
+   "slot": "agent/regimen",
+   "mis": {
+    "Furosemide": "confused role: an edema drug in place of compression",
+    "Prednisone": "confused route: topical steroids for stasis dermatitis taken as oral therapy",
+    "Warfarin": "adjacent fact: an anticoagulant from the thrombosis section"
+   }
   },
   {
    "topic": "Anticoagulation",
@@ -967,28 +977,33 @@
   {
    "topic": "Deep vein thrombosis risk factors",
    "io": "Identify medical care strategies for venous disorders in the lecture topic list for the following populations.",
-   "q": "Which age group is listed among the risk factors for deep vein thrombosis?",
+   "q": "Which age group carries a higher risk of deep vein thrombosis?",
    "opts": [
     [
      "Older than 60 years",
-     "Correct. Age above 60 years is listed among the other risk factors for deep vein thrombosis, alongside overweight, heart failure, cancer, chronic kidney disease and a sedentary lifestyle."
+     "Correct. Age over 60 years is a risk factor for deep vein thrombosis, alongside being overweight or obese, heart failure, cancer, chronic kidney disease and a sedentary lifestyle."
     ],
     [
      "Younger than 20 years",
-     "Deep vein thrombosis is uncommon in the young, and the age group listed as a risk factor is older than 60 years."
+     "Youth is not the higher-risk age group for deep vein thrombosis. The age-related risk factor is being older than 60 years, alongside obesity, cancer and heart failure."
     ],
     [
      "Younger than 30 years",
-     "Young adults are not the listed age group for deep vein thrombosis risk. Age is listed as a risk factor above 60 years."
+     "Young adulthood is not the higher-risk age group. For deep vein thrombosis, age becomes a risk factor above 60 years, alongside obesity, heart failure and cancer."
     ],
     [
      "Aged 20 to 40 years",
-     "Early adulthood is not the listed age group. Age is listed as a risk factor for deep vein thrombosis above 60 years."
+     "Early adulthood does not carry the age-related risk. The age group at higher risk of deep vein thrombosis is people older than 60 years."
     ]
    ],
    "c": 0,
    "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 50",
-   "slot": "risk factors"
+   "slot": "risk factors",
+   "mis": {
+    "Aged 20 to 40 years": "adjacent fact: the years of pregnancy and estrogen risk taken as an age risk",
+    "Younger than 20 years": "reversed value: youth taken as the risk group",
+    "Younger than 30 years": "reversed value: young adulthood taken as the risk group"
+   }
   },
   {
    "topic": "Anticoagulation",

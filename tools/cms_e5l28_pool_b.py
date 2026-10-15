@@ -19,6 +19,11 @@ from cms_e5l28_scope import *
 def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 HCM = "Hypertrophic cardiomyopathy"
 
@@ -252,17 +257,20 @@ S(HCM, IO_A,
     "Handgrip raises afterload, which reduces the outflow gradient and decreases the obstructive murmur."]],
   C(69), "differential"),
 
-S(HCM, IO_A,
+M(S(HCM, IO_A,
   "Why does squatting soften the murmur of obstructive hypertrophic cardiomyopathy?",
   [["More filling reduces obstruction",
-    "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; squatting and passive leg raising increase preload."],
+    "Correct. Anything that increases blood flow in the heart reduces the murmur by reducing outflow obstruction; rapid squatting and passive leg raising increase preload, so the murmur decreases."],
    ["Less filling increases obstruction",
-    "Less filling makes the murmur louder, as with Valsalva or standing. Squatting does the opposite by increasing preload."],
+    "Less filling makes the murmur louder, as with Valsalva or standing, which decrease preload. Squatting does the opposite by increasing preload."],
    ["It slows the heart to a stop",
-    "Squatting does not act through heart rate here. It increases venous return and preload, widening the outflow tract."],
+    "Squatting does not soften the murmur by slowing the heart. Rapid squatting increases preload, and anything that increases blood flow in the heart reduces the outflow obstruction."],
    ["It closes the mitral valve early",
-    "Early mitral closure is not the mechanism. The larger ventricular volume on squatting reduces the obstruction."]],
-  C(69), "manifestation"),
+    "Squatting does not act by closing the mitral valve early. It increases preload, and more blood flow in the heart reduces outflow obstruction and softens the murmur."]],
+  DECK + ", Slide 69 (table and pictures)", "manifestation"),
+  {"Less filling increases obstruction": "reversed direction: the effect of decreased preload",
+   "It slows the heart to a stop": "confused mechanism: a heart rate change credited for a preload effect",
+   "It closes the mitral valve early": "confused mechanism: a valve-timing explanation"}),
 
 S(HCM, IO_A,
   "What effect does respiration have on the murmur of obstructive hypertrophic cardiomyopathy?",

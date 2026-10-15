@@ -24,6 +24,11 @@ def S(topic, io, q, opts, cite, slot):
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
 
 DCM = "Dilated cardiomyopathy"
 POP = "Populations and care"
@@ -66,17 +71,20 @@ V(DCM, IO_A,
     "All patients with dilated cardiomyopathy should stay on a beta blocker and an angiotensin-converting enzyme inhibitor; beta blockers reduce mortality, so stopping it would remove a proven therapy."]],
   C(43), "escalation", "next step"),
 
-V(DCM, IO_A,
-  "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after a viral illness. He is in sinus rhythm, blood pressure is 118/72, and his ejection fraction is 30%. No thrombus is seen on echocardiogram. Which pair of drug classes should he receive whatever the cause of his disease?",
+M(V(DCM, IO_A,
+  "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after a viral illness. He is in sinus rhythm, blood pressure is 118/72, and his ejection fraction is 30%. No thrombus is seen on echocardiogram. Which pair of drug classes belongs to his guideline-directed medical therapy?",
   [["Beta blocker and angiotensin-converting enzyme inhibitor",
-    "Correct. Treatment of dilated cardiomyopathy is essentially that of chronic heart failure, and every patient, regardless of cause, should receive a beta blocker and an angiotensin-converting enzyme inhibitor, both of which reduce mortality."],
+    "Correct. Guideline-directed medical therapy for an adult with cardiomyopathy includes angiotensin-converting enzyme inhibitors and beta blockers, with angiotensin receptor blockers and diuretics, and both classes are on the dilated cardiomyopathy drug list."],
    ["Anticoagulant and antiarrhythmic started for everyone",
-    "Anticoagulation is kept for atrial fibrillation, artificial valves or a known mural thrombus, and antiarrhythmics such as amiodarone for specific rhythms. Neither is started routinely."],
+    "Anticoagulants and antiarrhythmics are on the dilated cardiomyopathy drug list but are not part of adult guideline-directed therapy, which is built on angiotensin-converting enzyme inhibitors and beta blockers."],
    ["Verapamil and a nitrate to relax the thick ventricle",
     "Verapamil suits the stiff or hypertrophied ventricle of restrictive or hypertrophic disease. A dilated, weak ventricle is treated with a beta blocker and an angiotensin-converting enzyme inhibitor."],
    ["A diuretic alone, until symptoms settle to baseline",
-    "Diuretics relieve sodium and water retention as an adjunct, but they are not the mortality-reducing backbone. That is the beta blocker plus angiotensin-converting enzyme inhibitor pair."]],
-  C(42), "first-line", "treatment"),
+    "A diuretic alone leaves out the beta blocker and angiotensin-converting enzyme inhibitor that guideline-directed therapy includes, and no fluid retention is described for him."]],
+  DECK + ", Slides 42, 76, 98, 105", "first-line", "treatment"),
+  {"Anticoagulant and antiarrhythmic started for everyone": "right drug for the wrong patient: started without a rhythm or clot reason",
+   "Verapamil and a nitrate to relax the thick ventricle": "confused disease: therapy for a stiff or thick ventricle",
+   "A diuretic alone, until symptoms settle to baseline": "right drug in the wrong role: a symptom adjunct used alone"}),
 
 V(DCM, IO_A,
   "A 62-year-old man with dilated cardiomyopathy and an ejection fraction of 30% is in sinus rhythm, has native heart valves and has no thrombus on echocardiogram. His neighbor with heart failure takes a blood thinner, and he asks whether he should too. Which response about anticoagulation is most accurate?",
@@ -234,7 +242,7 @@ V(DCM, IO_A,
     "Restrictive cardiomyopathy has stiff walls, a near-normal cavity and big atria, often after radiation or infiltrative disease. A newly dilated, weak ventricle after delivery is peripartum cardiomyopathy."]],
   C(24), "differential", "diagnosis"),
 
-V(DCM, IO_A,
+M(V(DCM, IO_A,
   "A 60-year-old man has just been diagnosed with symptomatic idiopathic dilated cardiomyopathy and an ejection fraction of 25%. He asks what his long-term outlook is. Which statement about his prognosis is most accurate?",
   [["About half die within five years",
     "Correct. Once symptoms emerge, prognosis is poor overall, with 50% mortality at five years, largely from progressive disease and sudden cardiac death due to arrhythmia. The course depends on response to therapy."],
@@ -244,7 +252,10 @@ V(DCM, IO_A,
     "The poorest prognosis among heart muscle diseases belongs to restrictive cardiomyopathy. Dilated cardiomyopathy is poor too, with 50% mortality at five years."],
    ["A normal life span without therapy",
     "Dilated cardiomyopathy is progressive, with 50% mortality at five years once symptomatic, and outcome depends on response to medical therapy."]],
-  C(45), "prognosis", "complication"),
+  DECK + ", Slides 45, 99, 104", "prognosis", "complication"),
+  {"Nearly all recover fully in weeks": "adjacent fact: the full-recovery prognosis of stress cardiomyopathy",
+   "Worst outlook of any heart muscle disease": "adjacent fact: the worst prognosis, which belongs to restrictive cardiomyopathy",
+   "A normal life span without therapy": "reversed value: a progressive disease treated as benign"}),
 
 V(DCM, IO_A,
   "A 66-year-old woman with dilated cardiomyopathy develops a new holosystolic murmur heard best at the apex that radiates to the left axilla. Her ventricle has continued to enlarge on serial echocardiograms. Which complication best accounts for the new murmur?",
@@ -356,15 +367,18 @@ V(POP, IO_POP,
     "Biopsy has no role in screening relatives. The adolescent strategy for a family history of hypertrophic cardiomyopathy is genetic screening."]],
   C(105), "referral", "next step"),
 
-V(POP, IO_POP,
+M(V(POP, IO_POP,
   "A 16-year-old girl with hypertrophic cardiomyopathy has had an episode of fainting during basketball practice and brief runs of ventricular tachycardia on monitoring. She wants to keep playing on her competitive school team. Which counseling point is most appropriate?",
   [["Activity restriction given her high risk",
-    "Correct. Activity restriction for high-risk individuals is an adolescent strategy, and sudden death in hypertrophic cardiomyopathy is highest in preadolescents and adolescents and is related to extreme exertion."],
+    "Correct. Activity restriction for high-risk individuals is an adolescent strategy; her exertional syncope marks high risk of sudden death, which in hypertrophic cardiomyopathy is highest in preadolescents and adolescents and related to extreme exertion."],
    ["Unrestricted play with extra fluids",
     "Hydration is advised in hypertrophic cardiomyopathy, but it does not make competitive play safe for a high-risk adolescent. Activity restriction is the strategy."],
    ["Clearance once the murmur softens",
-    "The murmur varies with preload and position and says nothing about her sudden death risk. Exertional syncope and ventricular tachycardia call for activity restriction."],
+    "The outflow murmur changes with blood flow in the heart, so a softer murmur does not mean lower risk. Her syncope on exertion identifies high risk of sudden death and calls for activity restriction."],
    ["Competitive play on a beta blocker",
     "A beta blocker treats outflow obstruction but does not license competitive sport in a high-risk patient. Sudden death relates to extreme exertion, so activity is restricted."]],
-  C(105), "education", "education"),
+  DECK + ", Slides 65, 66, 69, 76, 82, 105", "education", "education"),
+  {"Unrestricted play with extra fluids": "common lay belief: hydration alone makes competitive play safe",
+   "Clearance once the murmur softens": "confused finding: murmur loudness taken as a measure of risk",
+   "Competitive play on a beta blocker": "right drug in the wrong role: symptom therapy treated as clearance for sport"}),
 ]
