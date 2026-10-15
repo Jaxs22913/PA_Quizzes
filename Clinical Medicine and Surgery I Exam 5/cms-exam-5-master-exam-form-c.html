@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b4538c; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS I Exam 5 Master Exam &mdash; Form C</title>
+<style>
+  :root{
+    --navy:#7a2d5a; --indigo:#b4538c; --gold:#c08a2e; --ice:#faeef4;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d5a;--gold-l:#c08a2e;--indigo-l:#b4538c;--navy:#e790be;--indigo:#cb67a1;--gold:#c08a2e;--ice:#321927;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#cb67a1;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d5a;--indigo-t:#b4538c;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Clinical Medicine and Surgery I &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 5 &middot; Cardiology block II, Lectures 26&ndash;32 &middot; Form C</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all seven lectures of the second cardiology block, <b>weighted by scheduled lecture hours</b>: every lecture was two hours, so each gives eight or nine questions per form (the extra slots rotate from form to form). <b>Forty-eight are patient vignettes</b> and twelve are direct recall, with the lead-in spread across diagnosis, testing, treatment, next step, patient education and what to avoid.<br><br>Many of the questions are not in the topic quizzes, so these forms are worth working even after those. <b>Four options, A&ndash;D</b>, and every wrong choice gets its own explanation saying why it is wrong.<br><br><b>No question appears in more than one form</b>, so working through all five gives you 300 distinct questions. Every question cites the slide it came from.</p>
+    <div class="chips"><span class="chip">Venous disorders</span><span class="chip">Arterial occlusive disease &amp; aneurysm</span><span class="chip">Cardiomyopathy</span><span class="chip">Supraventricular arrhythmias</span><span class="chip">Blocks &amp; ventricular arrhythmias</span><span class="chip">Pericardial disease</span><span class="chip">Infective endocarditis</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "Adverse ventricular remodeling in dilated cardiomyopathy gives the heart which shape?", "opts": [["Thick septal bulge", "A bulging, thick septum is the classic pattern of hypertrophic cardiomyopathy, not the globular remodeling that dilated cardiomyopathy produces."], ["Narrow and tubular", "A narrow tubular heart is not the remodeling pattern. Dilated cardiomyopathy produces the opposite: a globular, round heart with enlarged chambers."], ["Globular, or round", "Correct. Adverse ventricular remodeling leads to a globular (globe or round) shaped heart, with an increase in total cardiac mass and dilated chambers."], ["Normal-sized, big atria", "Normal ventricles with large atria belong to restrictive cardiomyopathy, where stiff ventricles make both atria enlarge from impaired filling."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 18", "qid": "xdat29"}, {"topic": "Anticoagulation choices", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 52-year-old man starts outpatient treatment for deep vein thrombosis with low molecular weight heparin injections overlapped with warfarin. The injections continue for at least five days and until his international normalized ratio is above which value?", "opts": [["Above 1", "An international normalized ratio just above 1 is barely different from normal, so warfarin has not yet taken effect. The overlap continues until the value is above 2."], ["Above 2", "Correct. Parenteral therapy overlaps with warfarin for at least five days and until the international normalized ratio is above 2, when warfarin has reached its therapeutic effect and the heparin can stop."], ["Above 3", "The overlap ends once the international normalized ratio is above 2, the therapeutic threshold for this indication. Waiting for a value above 3 would prolong the injections without benefit."], ["Above 4", "An international normalized ratio above 4 is over-anticoagulated and raises the bleeding risk. The heparin overlap stops once warfarin is therapeutic, at a value above 2."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 66", "qid": "1asprdi"}, {"topic": "Complications", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis", "q": "A 64-year-old woman with mitral valve endocarditis has 2 days of worsening breathlessness and orthopnea (breathlessness when lying flat). A new, loud regurgitant murmur is heard and crackles fill both lung bases. Which mechanism explains her heart failure?", "opts": [["Valvular dysfunction from infection", "Correct. Congestive heart failure in infective endocarditis is due to valvular dysfunction, here from leaflet damage or chordal rupture, and it is the most common indication for surgery."], ["A toxic myocarditis from fever", "Fever does not cause the heart failure described. Destroyed valve function, with a new regurgitant murmur, is the mechanism."], ["Constriction from the pericardium", "Pericardial constriction is a separate disease. Endocarditis causes heart failure through valvular dysfunction."], ["Fluid overload from antibiotics", "Intravenous antibiotics are not the mechanism given; the new regurgitant murmur points to valvular dysfunction."]], "c": 0, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 15", "qid": "1m4hlfi"}, {"topic": "Wells criteria", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 62-year-old woman on chemotherapy for breast cancer comes to the emergency department with a calf 4 cm larger than the other, tenderness along the deep veins and no better explanation, so her Wells score is high. Her D-dimer, drawn at triage, is negative. Which action should be avoided?", "opts": [["Ordering a venous duplex ultrasound", "Ultrasound is exactly what a high Wells score calls for, whatever the D-dimer shows. It is the appropriate next test, so ordering it is the right action, not one to avoid."], ["Ending the work-up at the D-dimer", "Correct. With a high Wells score the D-dimer is skipped, or if it was drawn, a negative result does not end the evaluation: she still goes to venous duplex ultrasound. Stopping here risks missing a clot with high pretest probability."], ["Measuring both calf circumferences", "Comparing the calves at a set point below the tibial tuberosity is how the Wells item for swelling over 3 cm is scored. It is a useful step, not an error."], ["Asking about shortness of breath", "Pointed questions about breathing are part of the evaluation, because the lower-extremity clot can send an embolus to the lungs. This is good practice rather than a mistake to avoid."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 56", "qid": "36eyby"}, {"topic": "Atrial flutter", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A 64-year-old man in atrial flutter has a heart rate of 150, a blood pressure of 70/40, and is confused. Which is the next step?", "opts": [["Oral rate control", "Oral rate control is for the stable patient; hypotension and confusion call for synchronized cardioversion."], ["Vagal maneuver", "Vagal maneuvers are first line for stable supraventricular tachycardia; unstable flutter needs synchronized cardioversion."], ["Anticoagulate for 21 days", "Three weeks of anticoagulation precedes elective outpatient cardioversion; an unstable patient is cardioverted now."], ["Synchronized cardioversion", "Correct. Hemodynamically unstable atrial flutter (hypotension with confusion) is treated with synchronized cardioversion."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 45", "qid": "18w09w5"}, {"topic": "Upper-extremity disease and complications", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 62-year-old woman receiving chemotherapy through a central venous catheter has two days of right arm swelling and aching. The catheter injuring the vein wall is the endothelial trauma component of the Virchow triad. Which is the best diagnostic test?", "opts": [["D-dimer alone", "D-dimer is nonspecific and is often elevated in cancer, so a positive result cannot confirm a clot and cannot replace imaging. Venous duplex ultrasound is the test that shows the thrombus."], ["Ankle-brachial index", "The ankle-brachial index compares ankle and arm pressures to detect peripheral artery disease in the legs. It does not evaluate a swollen arm for a venous clot."], ["Contrast ascending venography", "Contrast ascending venography was the gold standard but is invasive and has been replaced by venous duplex ultrasound. It is not the first test for a catheter-related arm clot."], ["Venous duplex ultrasound", "Correct. Venous duplex ultrasound of the involved extremity is the diagnostic test for deep vein thrombosis, including arm clots from central venous catheters. It has replaced venography, the old invasive gold standard."]], "c": 3, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 57", "qid": "tzqzl3"}, {"topic": "Injection drug use", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis", "q": "A 34-year-old man who injects heroin has 4 days of fever to 39.6 °C (103.3 °F), rigors and a cough. A new holosystolic murmur is heard at the left lower sternal border, and he looks toxic. Which is the most likely diagnosis?", "opts": [["Community-acquired pneumonia", "Pneumonia would not explain a new holosystolic murmur in a person who injects drugs; fever, rigors, cough and that murmur point to tricuspid valve endocarditis."], ["Acute viral pericarditis", "Pericarditis brings positional chest pain and a friction rub, not a new holosystolic murmur with rigors in a person who injects drugs."], ["Tricuspid valve endocarditis", "Correct. In people who inject drugs the tricuspid valve is the valve singled out (Staphylococcus aureus causes 80-90% of those infections); cough is linked to this group, and a holosystolic murmur at the left lower sternal border fits the tricuspid valve."], ["Mitral valve endocarditis", "A mitral murmur is loudest at the apex, not the left lower sternal border, and in people who inject drugs the valve singled out is the tricuspid."]], "c": 2, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 11", "qid": "u3u47m"}, {"topic": "Supraventricular tachycardia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A 27-year-old woman has had 20 minutes of sudden palpitations. Her heart rate is 188, blood pressure 122/76, and she is alert with no chest pain or breathlessness. The electrocardiogram shows a regular narrow complex tachycardia with no visible P waves. Which is the most appropriate first step?", "opts": [["Adenosine", "Adenosine is the second step for stable supraventricular tachycardia, given if a vagal maneuver fails."], ["Vagal maneuver", "Correct. A stable, regular narrow complex tachycardia above 160 with hidden P waves is supraventricular tachycardia, and the first-line treatment when stable is a vagal maneuver, then adenosine."], ["Synchronized cardioversion", "Immediate synchronized cardioversion is for the hemodynamically unstable patient; she is alert with a normal blood pressure."], ["Intravenous procainamide", "Procainamide is reserved for atrial fibrillation with Wolff-Parkinson-White; a stable narrow complex tachycardia starts with a vagal maneuver."]], "c": 1, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 26", "qid": "1501qfe"}, {"topic": "Aortic dissection", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 70-year-old woman being treated for an acute aortic dissection develops a new diastolic murmur and worsening breathlessness. Which complication explains these findings?", "opts": [["Aortic regurgitation", "Correct. Aortic dissection can cause aortic regurgitation through dilatation of the aortic root, producing a diastolic murmur and breathlessness."], ["Pseudoaneurysm", "A pseudoaneurysm follows arterial puncture and causes local swelling and pain. The new diastolic murmur here is aortic regurgitation from root dilatation."], ["Mitral stenosis", "Mitral stenosis is not a listed consequence of dissection. Root dilatation in dissection causes aortic regurgitation."], ["Carotid stenosis", "Carotid stenosis is an atherosclerotic narrowing that produces neurologic symptoms, not a diastolic murmur. Root dilatation causes aortic regurgitation."]], "c": 0, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 116", "qid": "j4k6zv"}, {"topic": "Restrictive cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 71-year-old woman with restrictive cardiomyopathy and marked biatrial enlargement has had palpitations for a week, and the electrocardiogram now shows atrial fibrillation. Which treatment reduces her risk of embolism?", "opts": [["Aggressive diuresis", "Diuretics treat congestion and must be used cautiously in restrictive disease; they do nothing to prevent emboli. Anticoagulation prevents embolism from atrial thrombi."], ["Anticoagulation", "Correct. Atrial fibrillation is common in restrictive cardiomyopathy because of atrial enlargement, it raises the risk of atrial thrombus, and anticoagulants may be needed to prevent embolism from atrial thrombi."], ["A positive inotrope", "Inotropes do not prevent thromboembolism. With atrial fibrillation and big atria, anticoagulation is used to prevent embolism."], ["Surgical myectomy", "Myectomy removes obstructing septal muscle in hypertrophic cardiomyopathy. Embolism from atrial thrombi in restrictive disease is prevented with anticoagulation."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 99", "qid": "1812osk"}, {"topic": "Sinus tachycardia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A 45-year-old man has a heart rate of 122 with a normal P wave before every narrow QRS. His temperature is 39.2°C and he has a productive cough and crackles at the right base. He is alert with a blood pressure of 126/78. Which is the best treatment for his heart rate?", "opts": [["Treat the infection and fever", "Correct. A sinus tachycardia from fever and infection is an appropriate response to a pathologic process, and appropriate sinus tachycardia is managed by treating the underlying cause."], ["Vagal maneuver", "Vagal maneuvers are first line for reentrant supraventricular tachycardia; a fever-driven sinus tachycardia settles when the infection is treated."], ["Adenosine", "Adenosine stops reentrant supraventricular tachycardia through the atrioventricular node; it has no role in a sinus tachycardia from fever."], ["Synchronized cardioversion", "Cardioversion is for unstable reentrant or fibrillatory rhythms; this stable sinus tachycardia needs its cause treated."]], "c": 0, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 17", "qid": "1vnn3l6"}, {"topic": "Sinus bradycardia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A slow sinus rhythm that is causing hypotension and confusion is treated first with which drug?", "opts": [["Digoxin", "Digoxin is a listed drug cause of sinus bradycardia and sick sinus syndrome, so it would slow the heart further rather than rescue it."], ["Metoprolol", "Metoprolol is a beta blocker, and beta blockers are a listed cause of sinus bradycardia; giving one would worsen the problem."], ["Adenosine", "Adenosine blocks the atrioventricular node to stop supraventricular tachycardia; in a slow, unstable rhythm it would deepen the bradycardia."], ["Atropine", "Correct. Acute, symptomatic, hemodynamically unstable bradycardia is treated first with atropine, then a temporary pacemaker if it fails; chronic symptomatic disease needs a permanent pacemaker."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13", "qid": "1mv4qrg"}, {"topic": "Pseudoaneurysm", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "What is the common site of a pseudoaneurysm?", "opts": [["Popliteal artery after bypass", "Bypass complications are listed separately. Pseudoaneurysm is typically femoral after cardiac catheterization."], ["Infrarenal aorta in smokers", "The infrarenal aorta is the site of true abdominal aneurysms. Pseudoaneurysm typically affects the femoral artery after catheterization."], ["Carotid bulb after endarterectomy", "Endarterectomy's complications are stroke or nerve damage. Pseudoaneurysm typically follows femoral catheterization."], ["Femoral artery after catheterization", "Correct. The common site is the femoral artery after cardiac catheterization, caused by laceration of the artery by the access needle."]], "c": 3, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 112", "qid": "12kgvmr"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 22-year-old man has recovered from mild viral myocarditis and feels well at discharge. He asks whether he needs any long-term follow-up with a cardiologist. Which later complication does follow-up watch for?", "opts": [["Restrictive cardiomyopathy", "Restrictive cardiomyopathy follows infiltration, storage disease, sarcoidosis or radiation and chemotherapy. After myocarditis, the late risk is dilated cardiomyopathy."], ["Dilated cardiomyopathy", "Correct. Most patients with mild myocarditis recover completely, but one third subsequently develop dilated cardiomyopathy, and viral myocarditis accounts for about 20% of dilated cardiomyopathy cases."], ["Hypertrophic cardiomyopathy", "Hypertrophic cardiomyopathy is mostly inherited through sarcomere gene mutations and is not a consequence of myocarditis. One third of patients later develop dilated cardiomyopathy."], ["Takotsubo cardiomyopathy", "Takotsubo cardiomyopathy is a transient response to emotional or physical stress, mostly in postmenopausal women. Myocarditis leads on to dilated cardiomyopathy in one third."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 50", "qid": "1ygj92z"}, {"topic": "Pericardial effusion", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 66-year-old woman with ovarian cancer has had three drainages for a recurrent pericardial effusion, and the latest echocardiogram shows a loculated collection behind the heart. Which procedure is most appropriate?", "opts": [["Diuretic therapy", "Diuretics do not drain a malignant loculated effusion. A pericardial window does."], ["Fourth needle tap", "A posterior loculated collection cannot be reached percutaneously, and repeat taps fail with recurrence; a window is needed."], ["Thoracentesis", "Thoracentesis drains the pleural space, not the pericardium. A pericardial window is the procedure."], ["Pericardial window", "Correct. A pericardiectomy or pericardial window is performed for recurrent effusions and for loculated effusions, especially posterior ones that cannot be approached percutaneously."]], "c": 3, "cite": "31. Pericardial Disease 2026.pptx, Slide 68", "qid": "166zsd5"}, {"topic": "Superficial phlebitis and thrombophlebitis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 29-year-old woman has superficial thrombophlebitis of the forearm after an intravenous catheter and asks whether the clot can travel to her lungs. Which statement about her outlook is accurate?", "opts": [["Pulmonary embolism is the usual outcome", "Pulmonary embolism is the feared complication of deep vein thrombosis. Superficial thrombophlebitis rarely embolizes, so this outcome is the exception rather than the rule."], ["Serious complications are rare", "Correct. Superficial phlebitis and thrombophlebitis rarely cause serious complications and rarely embolize, which distinguishes them from deep vein thrombosis, where pulmonary embolism is the major complication."], ["Chronic venous insufficiency follows in most", "Chronic venous insufficiency is a late result of deep vein thrombosis that scars the valves. It is not the expected outcome of an uncomplicated superficial thrombophlebitis."], ["Fatal embolism is likely without treatment", "Even untreated deep vein thrombosis carries a small rate of fatal embolism. A superficial clot rarely embolizes at all, so a fatal event is not expected."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 78", "qid": "8cjxbw"}, {"topic": "Atrial fibrillation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A 68-year-old woman has atrial fibrillation found at a routine visit. Her heart rate is 84, she has no symptoms of instability, and her blood pressure is 128/76. Which is the most appropriate rate management?", "opts": [["Oral rate control", "Correct. A hemodynamically stable patient in atrial fibrillation without rapid ventricular response is managed with rate control by mouth, with anticoagulation guided by stroke risk."], ["Intravenous rate control", "Intravenous rate control is for rapid ventricular response; her rate of 84 is already controlled."], ["Atropine", "Atropine speeds the heart and is used for unstable bradycardia; it has no role in rate-controlled atrial fibrillation."], ["Synchronized cardioversion", "Cardioversion is for instability or elective rhythm control after anticoagulation; she is stable."]], "c": 0, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 49", "qid": "1q7m90k"}, {"topic": "Mobitz type I block", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 30-year-old cyclist with no symptoms has a rhythm in which the PR interval lengthens beat by beat until a QRS complex is dropped, after which the cycle starts again. Echocardiogram is normal. Which is the most appropriate management?", "opts": [["Transcutaneous pacing", "Transcutaneous pacing is an emergency bridge for unstable high-grade block. Stable, silent Mobitz type I needs no treatment."], ["Catheter ablation", "Ablation destroys conduction tissue and is itself a named cause of Mobitz type I. A silent block needs no treatment."], ["Permanent pacemaker", "A pacemaker is for symptomatic Mobitz type I, or for Mobitz type II even without symptoms. A symptom-free cyclist needs no treatment."], ["No treatment needed", "Correct. Asymptomatic Mobitz type I block needs no treatment; a permanent pacemaker is considered only for debilitating symptoms or heart failure symptoms."]], "c": 3, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 9", "qid": "pgkuzw"}, {"topic": "Antibiotic management", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis", "q": "A 78-year-old man with recurrent urinary tract infections has aortic valve endocarditis, and his blood cultures grow Enterococcus faecalis. Which regimen is most appropriate?", "opts": [["Nafcillin plus rifampin", "Nafcillin plus rifampin belongs to staphylococcal prosthetic valve therapy, not enterococcal disease."], ["Cefazolin alone", "Cefazolin is a methicillin-susceptible staphylococcal option, not an enterococcal regimen."], ["Oral amoxicillin once", "A single oral amoxicillin dose is dental prophylaxis, not treatment of established endocarditis."], ["Ampicillin plus gentamicin", "Correct. Enterococcal endocarditis is treated with ampicillin (or penicillin G) plus gentamicin, ampicillin plus ceftriaxone, or vancomycin plus gentamicin."]], "c": 3, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 30", "qid": "4enrgp"}, {"topic": "Junctional beats and rhythm", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "An 82-year-old woman taking digoxin for heart failure has nausea and fatigue. Her heart rate is 48 and regular, with narrow QRS complexes and retrograde P waves (inverted) just after each QRS in II, III and aVF. Which is the most likely cause of this rhythm?", "opts": [["Hyperthyroidism", "Hyperthyroidism speeds the sinus node; it does not produce a slow junctional rhythm."], ["Missed digoxin doses", "Missing doses lowers the digoxin effect rather than slowing the heart further; nausea and fatigue with a slow junctional rhythm point to digoxin toxicity, a listed cause."], ["An accessory pathway", "An accessory pathway causes pre-excitation and fast reentry, not a slow junctional rhythm."], ["Digoxin toxicity", "Correct. A slow regular narrow rhythm with inverted P waves after the QRS is a junctional rhythm, and digoxin toxicity is a listed cause."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64", "qid": "13qx1tg"}, {"topic": "Acute pericarditis diagnosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 35-year-old woman has 3 days of sharp substernal chest pain that improves when she sits forward. Her vital signs are normal, and no rub is heard on careful auscultation. Which additional finding would complete the clinical diagnosis of acute pericarditis?", "opts": [["Widespread ST elevation on electrocardiogram", "Correct. The diagnosis needs two of four criteria: sharp substernal chest pain, a friction rub, suggestive electrocardiogram changes (widespread ST elevation) and a new or worsening effusion. Her pain plus the electrocardiogram would make two."], ["An elevated B-type natriuretic peptide", "The natriuretic peptide belongs to the constriction workup and is not a pericarditis criterion. Widespread ST elevation would complete the diagnosis."], ["A troponin above the reference range", "Troponin is not a diagnostic criterion; an elevated value would suggest myocardial involvement (myopericarditis) and higher risk."], ["Pericardial calcification on radiograph", "Calcification points to long-standing constriction, not acute pericarditis, and is not one of the four criteria."]], "c": 0, "cite": "31. Pericardial Disease 2026.pptx, Slide 14", "qid": "d33bu8"}, {"topic": "Virchow triad", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "Which Virchow triad component can be inherited or acquired?", "opts": [["Endothelial trauma", "Endothelial trauma is acquired, from surgery, injury, burns or injected drug use. The hypercoagulable state is the component with inherited forms too."], ["Hypercoagulable state", "Correct. A hypercoagulable state can be inherited (factor V Leiden, prothrombin gene mutation, protein C or S or antithrombin deficiency) or acquired (cancer, estrogen, pregnancy)."], ["All three equally", "Only one component has inherited forms: the hypercoagulable state. Stasis and endothelial trauma are acquired."], ["Venous stasis", "Stasis is acquired, arising from immobilization, venous insufficiency or heart failure. The component with inherited and acquired forms is the hypercoagulable state."]], "c": 1, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 49", "qid": "1sbnomy"}, {"topic": "Third-degree (complete) block", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 45-year-old man who grew up in rural Bolivia has months of fatigue and exertional breathlessness. His heart rate is 38 and the electrocardiogram shows P waves completely dissociated from slow, wide QRS complexes. Which infection is a named cause of his conduction disease?", "opts": [["Tuberculosis", "Tuberculosis is not on the list of causes of complete block. Chagas disease, endemic in Latin America, is."], ["Lyme disease", "Lyme carditis is a named cause of block, but it follows a tick bite in endemic areas such as New England. His background points to Chagas disease."], ["Chagas disease", "Correct. Chagas disease is a named cause of complete heart block; it is a parasitic infection endemic in parts of Latin America such as rural Bolivia."], ["Malaria", "Malaria is not a named cause of complete block. A man from rural Bolivia with complete block suggests Chagas disease."]], "c": 2, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 18", "qid": "cb76fu"}, {"topic": "Peripheral artery disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 64-year-old man with claudication, diabetes and continued smoking is taking a statin. Which low-density lipoprotein target applies to him?", "opts": [["Below 70 mg/dL", "Correct. Lipid-lowering therapy in peripheral artery disease targets a low-density lipoprotein below 100 mg/dL, and below 70 mg/dL for high-risk patients such as those with diabetes or continued smoking."], ["Below 100 mg/dL", "Below 100 mg/dL is the standard target in peripheral artery disease. Diabetes and continued smoking make him high risk, which lowers the target to below 70 mg/dL."], ["Below 130 mg/dL", "Below 130 mg/dL is looser than any target given for peripheral artery disease. The standard target is below 100 mg/dL and below 70 mg/dL for high risk."], ["Below 160 mg/dL", "Below 160 mg/dL would leave him far above goal. High-risk peripheral artery disease with diabetes or smoking targets a low-density lipoprotein below 70 mg/dL."]], "c": 0, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 52", "qid": "bhh3ed"}, {"topic": "Varicose veins", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 42-year-old woman has symptomatic varicose veins that did not improve with stockings. She prefers a nonsurgical procedure in which a solution is injected to scar and close the veins. Which procedure fits?", "opts": [["Sclerotherapy", "Correct. Sclerotherapy is the injection of a sclerosing agent to fibrose and obliterate the veins, one of the interventions for varicose veins along with stripping and catheter-based ablation."], ["Venous bypass", "Bypass is successful in select patients with chronic venous insufficiency and is a major surgery. It does not close veins, which sclerotherapy does by injection."], ["Radiofrequency ablation", "Radiofrequency uses a catheter to treat reflux with heat, and nothing is injected. The injection of a solution to scar the vein is sclerotherapy."], ["Vein stripping", "Stripping is a surgical procedure that removes the vein rather than an injection that closes it. It is a surgical reflux treatment, not the injection she prefers."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 44", "qid": "1w4gylj"}, {"topic": "Abdominal aortic aneurysm", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 69-year-old man has an asymptomatic abdominal aortic aneurysm measuring 4.7 cm on his latest ultrasound. Which referral is appropriate?", "opts": [["Emergency surgery this evening", "Emergency surgery is for rupture, not a painless 4.7 cm aneurysm. The appropriate step is referral to a vascular team for observation and assessment."], ["None until it reaches 5.5 cm", "Waiting for a repair threshold is too late for referral. From 4.5 cm a vascular team should observe and assess the aneurysm."], ["Vascular referral, for observation", "Correct. Aneurysms of 4.5 cm or larger warrant referral to a vascular team for observation and assessment, with urgent referral whenever the patient has aneurysmal pain, whatever the size."], ["Cardiology, for echocardiography", "Echocardiography does not assess an abdominal aneurysm. From 4.5 cm the referral is to a vascular team for observation and assessment."]], "c": 2, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 100", "qid": "18a0wfn"}, {"topic": "Diagnostic testing", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis", "q": "A 62-year-old man with fever, a new murmur and positive blood cultures is stable. A transthoracic study is limited by his body habitus. Which imaging test best detects vegetations and defines the extent of disease?", "opts": [["Repeat transthoracic study", "Repeating a limited transthoracic study adds little; the transesophageal study is the highly sensitive and specific one."], ["Chest radiograph", "A chest radiograph cannot show valve vegetations; the transesophageal echocardiogram detects them and defines extent."], ["Transesophageal echocardiogram", "Correct. Transesophageal echocardiography is highly sensitive and specific, detects vegetations on the valve leaflets and defines the extent of disease."], ["Coronary angiography", "Angiography images the coronary arteries, not valve vegetations; transesophageal echocardiography shows them."]], "c": 2, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 25", "qid": "97q4vl"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 16-year-old boy collapses briefly during a basketball game and recovers within a minute. Blood pressure and heart rate are normal. There is a crescendo-decrescendo systolic murmur at the left sternal border in the fourth intercostal space that does not radiate to the carotids; it grows louder when he stands and softer when he squats. Which is the most likely diagnosis?", "opts": [["Restrictive cardiomyopathy", "Restrictive cardiomyopathy is rare, presents late with right-sided congestion and big atria, and does not produce an outflow murmur that changes with standing and squatting."], ["Acute myocarditis", "Myocarditis follows a flulike illness with acute heart failure and elevated troponin. A posture-sensitive outflow murmur in an athlete points to hypertrophic cardiomyopathy."], ["Hypertrophic cardiomyopathy", "Correct. Exertional syncope in an adolescent with an outflow murmur at the left sternal border that does not reach the carotids, louder with standing and softer with squatting, is obstructive hypertrophic cardiomyopathy."], ["Dilated cardiomyopathy", "Dilated cardiomyopathy gives heart failure symptoms with a displaced apical impulse, a third heart sound and regurgitant murmurs, not a dynamic outflow murmur that changes with posture."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 68", "qid": "1w3h9pv"}, {"topic": "Recurrent pericarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "Which patient with recurrent pericarditis is described as a candidate for anti-interleukin-1 therapy?", "opts": [["One in tamponade right now", "Tamponade needs expedient pericardiocentesis, not a biologic. Anti-interleukin-1 therapy targets steroid-dependent or colchicine-resistant recurrence."], ["One who is steroid-dependent", "Correct. Recurrent or colchicine-resistant disease, or steroid-dependent disease, with an inflammatory phenotype makes anakinra or rilonacept the preferred option."], ["One with a first, mild episode", "A first episode is treated with an anti-inflammatory plus colchicine for about 3 months. Anti-interleukin-1 therapy is for recurrent, resistant or steroid-dependent disease."], ["One with a normal C-reactive protein", "A normal C-reactive protein argues against the inflammatory phenotype that anti-interleukin-1 therapy targets."]], "c": 1, "cite": "31. Pericardial Disease 2026.pptx, Slide 35", "qid": "27mvdx"}, {"topic": "Prophylaxis", "io": "Discuss indications and antibiotic regimens for subacute bacterial endocarditis prophylaxis.", "q": "Which oral prophylaxis fits a patient with a penicillin allergy?", "opts": [["Azithromycin", "Correct. Penicillin-allergic patients who can take oral medication receive azithromycin or clarithromycin, cephalexin (if no anaphylaxis, angioedema or urticaria) or doxycycline."], ["Amoxicillin", "Amoxicillin is a penicillin, so it is avoided in penicillin allergy. Azithromycin or clarithromycin is an option."], ["Ampicillin", "Ampicillin is a penicillin and is avoided in penicillin allergy; macrolides such as azithromycin are an option."], ["Clindamycin", "Clindamycin is no longer recommended because of the risk of Clostridioides difficile infection."]], "c": 0, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 35", "qid": "8liuua"}, {"topic": "Ventricular tachycardia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "How is polymorphic ventricular tachycardia treated, even when the patient has a pulse?", "opts": [["Intravenous lidocaine alone", "Drug therapy alone is for stable monomorphic ventricular tachycardia. Polymorphic ventricular tachycardia is never stable and is defibrillated."], ["Observation on a monitor", "Watching is unsafe: polymorphic ventricular tachycardia is a transitional state that needs defibrillation."], ["Defibrillation", "Correct. Polymorphic ventricular tachycardia is never truly stable, only a short-lived transitional state, so it is defibrillated even if the patient looks well."], ["Synchronized cardioversion", "Synchronized shocks need a consistent QRS to time against. Polymorphic ventricular tachycardia is defibrillated, even with a pulse."]], "c": 2, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 46", "qid": "1oev52x"}, {"topic": "Accessory pathway reentry and Wolff-Parkinson-White", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "Adenosine slows a tachycardia and reveals atrial fibrillation with Wolff-Parkinson-White. Which drug is used?", "opts": [["Intravenous magnesium", "Magnesium is for torsades de pointes; pre-excited atrial fibrillation is treated with procainamide."], ["Intravenous atropine", "Atropine speeds the heart and treats unstable bradycardia; it would worsen a pre-excited tachycardia, which needs procainamide."], ["A second dose of adenosine", "More adenosine blocks only the normal atrioventricular node and leaves the accessory pathway to carry the fibrillation; procainamide is used."], ["Intravenous procainamide", "Correct. When slowing from adenosine reveals atrial fibrillation with Wolff-Parkinson-White, intravenous procainamide is used and adenosine is not repeated; adenosine and the other nodal blockers leave the accessory pathway unopposed."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37", "qid": "1rxzog3"}, {"topic": "Surgery, anticoagulation and referrals", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis", "q": "A 66-year-old woman with aortic valve endocarditis has a transesophageal echocardiogram that shows an abscess around the valve ring. Which is the most appropriate next step?", "opts": [["Surgical evaluation", "Correct. Abscess is an indication for surgery, alongside heart failure from valve dysfunction, infection not resolving on appropriate antibiotics and fungal infection, so cardiothoracic surgery evaluates her."], ["Repeat echo in 6 months", "Waiting months allows the abscess to destroy tissue around the valve; abscess is an indication for surgery now."], ["Oral step-down now", "Oral therapy is not appropriate; an abscess calls for surgical evaluation with continued parenteral antibiotics."], ["Shorten antibiotics", "An abscess makes the infection complicated; shortening therapy is never appropriate here."]], "c": 0, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 33", "qid": "72majt"}, {"topic": "Carotid artery disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 64-year-old woman with hypertension has a carotid bruit found on routine examination. She has never had neurologic symptoms. Duplex shows 35% stenosis. Which is the most appropriate management?", "opts": [["Medical management", "Correct. Medical management is advised for symptomatic and asymptomatic patients with low-grade stenosis under 50%: antiplatelet therapy, control of hypertension, diabetes and lipids, smoking cessation, diet, exercise and weight reduction."], ["Carotid endarterectomy", "Endarterectomy is reserved for symptomatic stenosis over 70% or asymptomatic stenosis over 80% with a life expectancy over five years. A 35% stenosis is managed medically."], ["Carotid stenting", "Stenting is an alternative revascularization for poor surgical candidates who meet surgical thresholds. A 35% asymptomatic stenosis needs medical management."], ["Digital subtraction angiography", "Digital subtraction angiography is used to guide interventions, and none is indicated here. Low-grade stenosis under 50% is managed medically."]], "c": 0, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 75", "qid": "18tj9jo"}, {"topic": "Atheroembolism", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "Which aortic condition can also shed emboli that cause blue toe syndrome?", "opts": [["Pseudoaneurysm of the femoral", "A femoral pseudoaneurysm presents with pain from swelling or nerve compression. Abdominal aortic aneurysm is the listed embolic source."], ["Abdominal aortic aneurysm", "Correct. A symptomatic, unruptured abdominal aortic aneurysm can produce embolic phenomena leading to blue toe syndrome, besides pain, early satiety and groin pain."], ["Carotid stenosis", "Carotid emboli go to the brain and eye. Abdominal aortic aneurysm can shed emboli to the toes."], ["Aortic regurgitation", "Regurgitation is a valve leak, not an embolic source here. Abdominal aortic aneurysm can cause embolic blue toe."]], "c": 1, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 89", "qid": "1fb32m0"}, {"topic": "Hypertrophic cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 38-year-old woman with obstructive hypertrophic cardiomyopathy still has disabling breathlessness despite a beta blocker and later verapamil. Echocardiogram shows systolic anterior motion (the anterior mitral leaflet pulled into the outflow tract) with mitral regurgitation. Which is the most appropriate next step?", "opts": [["Escalating loop diuretics", "Diuretics lower preload and can worsen obstruction; they are used only with caution. Symptoms refractory to medication are treated with septal myectomy."], ["Surgical septal myectomy", "Correct. Surgical myectomy excises part of the septal myocardium causing outflow obstruction, and the mitral regurgitation from systolic anterior motion may resolve with myectomy alone, without valve replacement."], ["Permanent pacemaker alone", "A permanent pacemaker treats conduction disease such as heart block. Refractory outflow obstruction is relieved by removing septal muscle with myectomy or alcohol septal ablation."], ["Long-term nitrate therapy", "Nitrates reduce preload and afterload and aggravate outflow tract obstruction, so they are avoided. Refractory obstruction goes on to septal reduction by myectomy."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 79", "qid": "1ws45ln"}, {"topic": "Premature ventricular contractions", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 66-year-old woman with chronic obstructive lung disease is admitted with an exacerbation. She is confused, and the monitor shows runs of skipped beats from frequent early, wide QRS complexes without P waves. Her arterial oxygen tension is low. Which underlying problem should be corrected first?", "opts": [["Her hypoxemia", "Correct. Hypoxemia is a main cause of premature ventricular contractions, along with electrolyte imbalance, so her low oxygen should be corrected first."], ["Her blood pressure", "Blood pressure is not the named trigger. Hypoxemia and electrolyte imbalance are the main causes of premature ventricular contractions."], ["Her body temperature", "Temperature is not the named trigger. Hypoxemia, with electrolyte imbalance, drives premature ventricular contractions."], ["Her blood glucose", "Blood glucose is not a named trigger. Her low oxygen tension is the cause to correct first."]], "c": 0, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36", "qid": "8rbgnb"}, {"topic": "Definitions and epidemiology", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 44-year-old man began having pleuritic (worse with a deep breath) pericardial pain 8 weeks ago. Despite treatment the symptoms have never fully gone away, with no symptom-free interval. Which term best describes his course?", "opts": [["Recurrent pericarditis", "Recurrence needs a symptom-free interval of 4 to 6 weeks or longer before symptoms return; he has had no such interval."], ["Incessant pericarditis", "Correct. Symptoms persisting beyond 4 to 6 weeks and up to 3 months without a sustained remission define incessant pericarditis; past 3 months the label becomes chronic."], ["Chronic pericarditis", "Chronic pericarditis requires symptoms for more than 3 months. At 8 weeks without remission the course is incessant."], ["Effusive-constrictive disease", "Effusive-constrictive pericarditis is persistent constriction after an effusion is drained, a structural diagnosis, not a time label."]], "c": 1, "cite": "31. Pericardial Disease 2026.pptx, Slide 5", "qid": "j2hufk"}, {"topic": "Acute pericarditis management", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 45-year-old woman taking warfarin for a mechanical valve presents with 2 days of sharp chest pain eased by leaning forward, widespread ST elevation and a small effusion. She is afebrile and her blood pressure is 128/78. Which is the most appropriate disposition?", "opts": [["Discharge with clinic follow-up", "Oral anticoagulation is one of the features associated with higher risk and a potential need for hospitalization, so clinic follow-up alone is not enough here."], ["Outpatient cardiac imaging next week", "Delaying evaluation is unsafe for a high-risk patient; anticoagulant use favors hospital admission now."], ["Admit her to the hospital", "Correct. Patients on oral anticoagulants are among the higher-risk groups for acute pericarditis (with fever, subacute course, tamponade signs, large effusion, immunosuppression, trauma, raised troponin) and potentially need hospitalization."], ["Discharge after one dose of ibuprofen", "A single dose and discharge ignores her high-risk status on anticoagulation, which raises the danger of bleeding into the pericardium."]], "c": 2, "cite": "31. Pericardial Disease 2026.pptx, Slide 27", "qid": "160rz1z"}, {"topic": "Focal and multifocal atrial tachycardia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "A 71-year-old man with severe chronic obstructive pulmonary disease is admitted with an exacerbation and respiratory failure. His pulse is 128 and irregular. The electrocardiogram shows a P wave before every QRS, with at least three different P-wave shapes in lead II. Which is the most likely diagnosis?", "opts": [["Atrial fibrillation", "Atrial fibrillation is irregularly irregular with no P waves at all; his rhythm has a P wave before every QRS, in three shapes."], ["Atrial flutter, variable block", "Flutter shows uniform sawtooth waves at 250 or more; his discrete P waves in three different shapes point to multifocal atrial tachycardia."], ["Focal atrial tachycardia", "Focal atrial tachycardia is regular, with one consistent abnormal P wave from a single focus, not three shapes."], ["Multifocal atrial tachycardia", "Correct. An irregular tachycardia with a P wave for every QRS and at least three distinct P-wave shapes in one lead is multifocal atrial tachycardia, usually from severe lung disease or heart failure in an acutely ill patient."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 28", "qid": "mkp50v"}, {"topic": "Critical limb ischemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 75-year-old man with peripheral artery disease has a hard, dry, black distal toe with a clear line between healthy and dead tissue. There is no swelling, moisture or fever. Which is the most likely diagnosis?", "opts": [["Wet gangrene", "Wet gangrene is moist and edematous with blistering and bacterial infection, and is a surgical emergency. This toe is hard, dry and clearly demarcated."], ["Gas gangrene", "Gas gangrene is a wet gangrene from spore-forming clostridial species releasing toxins and gas. A dry, demarcated toe without fever is dry gangrene."], ["Dry gangrene", "Correct. Dry gangrene has a hard, dry texture, usually involves the distal toes, shows clear demarcation between healthy and necrotic tissue, and is common in patients with peripheral artery disease."], ["Atheroembolism", "Atheroembolism causes painful blue toes with palpable pulses from cholesterol debris. A hard, black, mummified toe with clear demarcation is dry gangrene."]], "c": 2, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 38", "qid": "1ij8ptz"}, {"topic": "Mobitz type II block", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "In unstable Mobitz type II block, when medications are not used or do not work, which is the emergent measure?", "opts": [["Synchronized cardioversion", "Synchronized cardioversion treats unstable tachycardias with a pulse. A failing conduction system with a slow rate needs pacing, not a shock."], ["Defibrillation", "Defibrillation is for ventricular fibrillation and pulseless ventricular tachycardia. Unstable Mobitz type II block is paced transcutaneously."], ["Vagal maneuvers", "Vagal maneuvers slow atrioventricular conduction and would worsen a block. The emergent measure is transcutaneous pacing."], ["Transcutaneous pacing", "Correct. Transcutaneous pacing, with pads on the chest, is the emergent measure for unstable Mobitz type II block; it bridges the patient to a permanent pacemaker."]], "c": 3, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 14", "qid": "1xw8x1y"}, {"topic": "Dilated cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 38-year-old woman has three months of worsening breathlessness on exertion and ankle swelling. Dilated cardiomyopathy is suspected, but her 12-lead electrocardiogram is completely normal. Which interpretation of the normal tracing is most accurate?", "opts": [["It is what most dilated cardiomyopathy shows", "The opposite holds: the electrocardiogram is usually abnormal in dilated cardiomyopathy, with arrhythmias or conduction delay such as left bundle branch block."], ["It excludes every cause of heart failure", "A normal electrocardiogram cannot exclude heart failure in general. The test that excludes heart failure is a B-type natriuretic peptide below 100 pg/mL."], ["It makes dilated cardiomyopathy very unlikely", "Correct. The electrocardiogram is usually abnormal in dilated cardiomyopathy, showing atrial fibrillation, premature ventricular contractions or left bundle branch block, so a normal tracing almost rules the diagnosis out."], ["It points to restrictive disease instead", "Restrictive cardiomyopathy commonly shows atrial fibrillation, bundle branch blocks or low voltage in amyloidosis, so a normal tracing does not point toward it."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 37", "qid": "1axekr5"}, {"topic": "Populations and care", "io": "Identify medical care strategies for cardiomyopathies for the following populations. 8. adolescent 9. adult 10. elderly", "q": "An 86-year-old woman with end-stage cardiomyopathy has breathlessness at rest, edema and fatigue despite maximal tolerated therapy. She is not a transplant or device candidate and says she wants comfort at home. Which is the most appropriate next step?", "opts": [["Add an assist device urgently", "She is not a device candidate, and her stated goal is comfort at home. Advance care planning and hospice referral match end-stage disease here."], ["Refer for heart transplant listing", "She is not a transplant candidate and has asked for comfort at home. End-stage cardiomyopathy in this setting calls for goals-of-care discussion and hospice referral."], ["Discuss goals of care and hospice", "Correct. Palliative care in cardiomyopathy covers symptom management of dyspnea, fatigue and edema, advance care planning and goals-of-care discussions, support for caregivers, and hospice referral in end-stage disease."], ["Stop all of her symptom medicines", "Palliative care actively manages dyspnea, fatigue and edema; it does not withdraw symptom relief. The step now is goals-of-care discussion and hospice referral."]], "c": 2, "cite": "Cardiomyopathy - Carter.pptx, Slide 107", "qid": "5hcdif"}, {"topic": "Sick sinus syndrome", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia", "q": "An 81-year-old man has known tachy-brady syndrome (a fast rhythm alternating with slow rates and pauses) and asks which fast rhythm is behind his palpitations. An ambulatory monitor is arranged. Which rhythm is it most likely to record during the fast episodes?", "opts": [["Ventricular tachycardia", "Ventricular tachycardia can occur in some patients, who then need a defibrillator with the pacemaker, but atrial fibrillation is the most common."], ["Junctional rhythm", "A junctional rhythm is slow and regular, usually 40 to 60, not the fast phase of tachy-brady syndrome."], ["Atrial flutter", "Flutter is an organized atrial circuit with sawtooth waves; it is not the usual fast rhythm of tachy-brady syndrome."], ["Atrial fibrillation", "Correct. In tachy-brady syndrome the tachyarrhythmia that alternates with bradycardia or pauses is most commonly atrial fibrillation."]], "c": 3, "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18", "qid": "12azkhr"}, {"topic": "Cardiac tamponade", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 53-year-old man on the cardiology ward develops jugular venous distension and a blood pressure of 88/60 a day after a catheter procedure. Before drainage, which bedside triad should be specifically checked for?", "opts": [["Hypotension, neck veins, muffled sounds", "Correct. The Beck triad is decreased arterial pressure, distended jugular veins and distant (muffled) heart sounds, the three bedside signs of cardiac tamponade to check before drainage."], ["Alternans, Kussmaul sign, a knock", "The Kussmaul sign and the knock belong to constriction, so this mixture is not the tamponade triad."], ["Hypertension, bradycardia, apnea", "Hypertension, bradycardia and irregular breathing are the Cushing reflex of raised intracranial pressure."], ["Fever, a new murmur and splinters", "Fever, a new murmur and splinter hemorrhages suggest infective endocarditis, not tamponade."]], "c": 0, "cite": "31. Pericardial Disease 2026.pptx, Slide 54", "qid": "1akxfaj"}, {"topic": "Acute myocarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "A 26-year-old man with suspected viral myocarditis has an elevated troponin and normal coronary arteries. His cardiologist wants to see how much of the heart muscle is inflamed without an invasive procedure. Which test shows the extent of inflammation?", "opts": [["Right heart catheterization with pressure tracings", "Pressure tracings help evaluate restrictive physiology. Inflammation is shown noninvasively by gadolinium-enhanced magnetic resonance imaging."], ["Gadolinium-enhanced cardiac magnetic resonance imaging", "Correct. Gadolinium-enhanced magnetic resonance imaging is part of the myocarditis work-up because the gadolinium improves visibility of the inflammation and shows its extent."], ["Exercise echocardiography with treadmill testing", "Exercise echocardiography assesses functional capacity, ischemia and obstruction in hypertrophic cardiomyopathy. It does not show the extent of inflammation."], ["Ambulatory rhythm monitoring for forty-eight hours", "Ambulatory monitoring detects arrhythmias and grades sudden death risk, most notably in hypertrophic cardiomyopathy. It cannot show inflamed heart muscle."]], "c": 1, "cite": "Cardiomyopathy - Carter.pptx, Slide 54", "qid": "135wup3"}, {"topic": "Chronic venous insufficiency", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 34-year-old woman without diabetes has ulcers on the posterior aspect of both lower legs. Her pedal pulses are strong, and there are no varicose veins, brown pigmentation or leg swelling. Which is the most likely diagnosis?", "opts": [["Arterial ulcer", "Arterial ulcers are painful, usually lateral at the ankle, and come with weak pulses. Her strong pulses and posterior, bilateral distribution point to erythema induratum."], ["Venous ulcer", "Venous ulcers sit above the medial or anterior ankle with edema, brown pigmentation and varicosities. Bilateral posterior lower leg ulcers without these changes suggest erythema induratum."], ["Erythema induratum", "Correct. Bilateral ulcers on the posterior aspect of the lower leg, with intact pulses and no venous skin changes, is the pattern listed for erythema induratum in the differential of leg ulcers."], ["Diabetic neuropathic ulcer", "Neuropathic ulcers follow diabetic nerve damage and she has no diabetes. Bilateral ulcers on the back of the lower legs are the pattern of erythema induratum."]], "c": 2, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 27", "qid": "1l1xifm"}, {"topic": "Right bundle branch block", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 61-year-old woman with long-standing pulmonary hypertension from scleroderma has a right bundle branch block on her electrocardiogram. Which of her conditions is a named cause of this block?", "opts": [["Acid reflux", "Reflux disease is not a cause of bundle branch block. Pulmonary hypertension is."], ["Osteoporosis", "Osteoporosis has no link to cardiac conduction. Pulmonary hypertension is the named cause of right bundle branch block."], ["Pulmonary hypertension", "Correct. Pulmonary hypertension is a named cause of right bundle branch block, by chronically straining the right ventricle and its conduction system."], ["Raynaud phenomenon", "Raynaud phenomenon affects digital vessels, not cardiac conduction. Pulmonary hypertension is the named cause."]], "c": 2, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 31", "qid": "1y88194"}, {"topic": "Asystole and pulseless electrical activity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 28-year-old woman with a stab wound to the abdomen arrives pulseless after losing a large amount of blood. The monitor shows an organized narrow rhythm. Compressions are underway. Besides compressions and epinephrine, which problem must be addressed urgently?", "opts": [["Hypothermia", "Hypothermia is a reversible cause, but nothing points to it. Hypovolemia from bleeding is the urgent problem."], ["Hypovolemia", "Correct. The two leading causes of pulseless electrical activity in adults are hypovolemia and hypoxia; her massive blood loss is hypovolemia that must be corrected."], ["Toxin ingestion", "Nothing suggests a toxin. Her massive blood loss means hypovolemia, a leading cause of pulseless electrical activity."], ["Hyperkalemia", "Hyperkalemia is a reversible cause of arrest, but her picture is hemorrhage. Hypovolemia is the leading cause to address."]], "c": 1, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 55", "qid": "1yzqs3p"}, {"topic": "Acute limb ischemia", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 67-year-old man with atrial fibrillation is being discharged after treatment of an embolic leg occlusion. Which warning symptoms should prompt him to return immediately?", "opts": [["Dry, shiny skin on the shins", "Dry, shiny, hairless skin is a chronic sign of diminished flow in peripheral artery disease. Recurrent embolism announces itself with sudden pain, pallor, coldness and numbness."], ["Mild ankle swelling in the evening", "Evening ankle swelling suggests venous insufficiency, not arterial occlusion. The return warnings are the six P's: pain, pallor, pulselessness, paresthesia, paralysis, poikilothermia."], ["Sudden pain, pallor, coldness, numbness", "Correct. The six P's of arterial assessment (pain, pallor, pulselessness, paresthesia, paralysis and poikilothermia) mark acute limb ischemia, a vascular emergency that needs immediate care."], ["Calf cramps after long walks", "Exertional calf cramping relieved by rest is intermittent claudication, a chronic symptom. A recurrent embolus presents with sudden pain, pallor, coldness and numbness."]], "c": 2, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 61", "qid": "1enf8ee"}, {"topic": "Arteriovenous fistula of the extremity", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following venous disorders: 2. Deep vein thrombosis 3. Phlebitis a. Thrombophlebitis Septic thrombophlebitis 4. Arteriovenous fistula of the extremity a. Acquired (e.g. trauma, iatrogenic) b. Created (i.e. for hemodialysis) 5. Chronic venous insufficiency 6. Varicose veins", "q": "A 66-year-old man has a continuous bruit and a palpable thrill (a vibration felt over the skin) over the left femoral region, with mild leg swelling. He has not had dialysis and has no trauma history. His only recent procedure was an endovascular repair of an iliac artery performed through the left groin. Which is the most likely cause?", "opts": [["Groin access for the procedure", "Correct. Lower extremity arteriovenous fistulas are most commonly iatrogenic, caused by use of the groin femoral vessels for percutaneous arterial and venous access during endovascular procedures."], ["Congenital vascular malformation", "Congenital fistulas exist from birth and often have numerous communications. A new bruit after groin access in an adult points to an acquired, iatrogenic origin."], ["Progressive superficial venous reflux", "Superficial reflux causes varicose veins and chronic venous insufficiency, not a continuous bruit with thrill. A new artery to vein communication follows the groin puncture."], ["Surgical creation for dialysis access", "Created fistulas are made for hemodialysis and are usually in the upper arm or forearm. This man has no dialysis history and the fistula sits at the femoral puncture."]], "c": 0, "cite": "CMS I - Venous Disorders - Shah Fallsv UPDATED.pptx, Slide 82", "qid": "blhm3f"}, {"topic": "Takotsubo cardiomyopathy", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis", "q": "Which electrocardiogram changes occur in Takotsubo (stress) cardiomyopathy?", "opts": [["Left bundle branch block only", "Left bundle branch block is the conduction delay described in dilated cardiomyopathy."], ["Low QRS voltage in all leads", "Low QRS voltage suggests amyloid infiltration in restrictive cardiomyopathy, not stress cardiomyopathy."], ["Inferior and lateral Q waves", "Prominent inferior and lateral Q waves reflect septal hypertrophy in hypertrophic cardiomyopathy."], ["ST elevation and T wave inversion", "Correct. The electrocardiogram shows ST segment elevation and T wave inversion, which is why the syndrome is managed like acute coronary syndrome until catheterization."]], "c": 3, "cite": "Cardiomyopathy - Carter.pptx, Slide 103", "qid": "1d20cla"}, {"topic": "Thoracic aortic aneurysm", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following arterial occlusive disease and aortic aneurysm: 2. Arterial thrombosis/embolism 3. Peripheral artery disease 4. Carotid artery disease 5. Aortic aneurysms 6. Aortic dissection", "q": "A 63-year-old man has an incidental 4.0 cm ascending thoracic aortic aneurysm on a chest radiograph and follow-up imaging. He has no symptoms. Which surveillance plan is appropriate?", "opts": [["Abdominal ultrasound every three years with no other imaging", "Three-yearly ultrasound is the plan for small abdominal aneurysms and cannot see the thoracic aorta. His surveillance is computed tomography or magnetic resonance."], ["Computed tomography or magnetic resonance every 3 to 5 years", "Correct. Thoracic aneurysms under 4.5 cm are followed with computed tomography or magnetic resonance imaging every three to five years; 4.5 to 5.4 cm moves to every six to 12 months."], ["Computed tomography or magnetic resonance every 6 to 12 months", "Six-to-12-monthly imaging applies to thoracic aneurysms of 4.5 to 5.4 cm. At 4.0 cm the interval is every three to five years."], ["Open repair with aortic root replacement within the month", "Asymptomatic ascending repair is generally indicated above 5.5 cm or with growth over 0.5 cm per year. At 4.0 cm he needs surveillance, not surgery."]], "c": 1, "cite": "Arterial Occlusive Diseaase and Aneurysms - Carter.pptx, Slide 109", "qid": "qmsrtf"}, {"topic": "Sudden cardiac death and defibrillators", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 57-year-old man survives an out-of-hospital cardiac arrest from pulseless ventricular tachycardia. After stabilization no reversible cause is found. Which device is most appropriate before discharge?", "opts": [["Permanent pacemaker", "A pacemaker treats slow, blocked rhythms. Survivors of ventricular tachycardia arrest need a defibrillator."], ["Biventricular pacemaker", "A biventricular pacer treats symptomatic left bundle branch block with reduced ejection fraction. Arrest survivors need a defibrillator."], ["Implantable defibrillator", "Correct. Once stabilized after life-threatening ventricular tachycardia or fibrillation, most patients need an implantable cardioverter defibrillator for secondary prevention of sudden cardiac death."], ["Implantable loop recorder", "A loop recorder only records the rhythm. He needs a device that detects and shocks lethal rhythms."]], "c": 2, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 45", "qid": "1pvajdy"}, {"topic": "Populations and care", "io": "Identify medical care strategies for pericardial disease in the lecture topic list for the following populations. 9. adult 10. elderly", "q": "Why is a nonsteroidal anti-inflammatory drug approached with caution in older adults with pericarditis?", "opts": [["It appears on the Beers list", "Correct. In older adults, nonsteroidal anti-inflammatory drugs appear on the Beers list of potentially inappropriate medications and call for caution; colchicine may need a dose reduction."], ["It causes drug-induced lupus", "Drug-induced lupus comes from procainamide and hydralazine, not from these drugs. The caution in older adults is their place on the Beers list."], ["It raises the risk of tamponade", "Anti-inflammatory therapy treats the inflammation rather than causing tamponade. The caution in older adults is the Beers list."], ["It prolongs the QT interval", "QT prolongation is not the concern named for these drugs. Their place on the Beers list, for bleeding and kidney risk in older adults, is."]], "c": 0, "cite": "31. Pericardial Disease 2026.pptx, Slide 36", "qid": "1thhblq"}, {"topic": "Modified Duke criteria", "io": "Demonstrate understanding of modified Duke diagnostic criteria.", "q": "A 69-year-old woman being evaluated for endocarditis had a soft systolic murmur documented for 10 years. Today the murmur sounds a little louder. How does this change count under the modified Duke criteria?", "opts": [["It meets the major criterion", "Only new valvular regurgitation meets the criterion; a louder preexisting murmur is specifically not sufficient."], ["It confirms definite endocarditis", "A louder old murmur adds nothing toward the major criterion and cannot confirm the diagnosis."], ["It is an immunologic phenomenon", "Immunologic phenomena are glomerulonephritis, Osler nodes, Roth spots and rheumatoid factor, not murmur changes."], ["It does not meet the major criterion", "Correct. New valvular regurgitation counts as endocardial involvement, but an increase or change in a preexisting murmur is not sufficient."]], "c": 3, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 22", "qid": "1pxeor0"}, {"topic": "Constrictive pericarditis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pericardial disease: 2. Pericarditis 3. Acute 4. Recurrent 5. Constrictive pericarditis 6. Pericardial effusion 7. Cardiac tamponade", "q": "A 63-year-old woman is diagnosed with constrictive pericarditis. She had mantle-field radiotherapy for Hodgkin lymphoma 25 years ago and is otherwise well. Which feature of her history most worsens her long-term prognosis?", "opts": [["Her female sex", "Sex is not named as a determinant of survival. Prior ionizing radiation carries the worst prognosis."], ["Her lack of other illness", "Comorbidities worsen the outlook, so their absence helps. Her prior radiation is what worsens it."], ["Her cured lymphoma", "The lymphoma itself is cured; it is the radiation used to treat it that predicts the worst survival."], ["Her prior chest radiation", "Correct. Etiology is an important determinant of survival in constrictive pericarditis, and prior ionizing radiation is associated with the worst survival rates."]], "c": 3, "cite": "31. Pericardial Disease 2026.pptx, Slide 50", "qid": "11iri99"}, {"topic": "Torsades and QT prolongation", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation", "q": "A 54-year-old woman who started a new antibiotic three days ago faints briefly. Her electrocardiogram before the event showed a markedly prolonged QT. The monitor now shows a wide QRS tachycardia whose peaks rise and fall so that the complexes seem to twist around the baseline. Which is the most likely diagnosis?", "opts": [["Torsades de pointes", "Correct. Polymorphic ventricular tachycardia whose QRS complexes appear to twist around the baseline, on a background of a long QT, is torsades de pointes; most cases come from acquired long QT, often drug-induced."], ["Atrial flutter", "Atrial flutter has sawtooth atrial waves and narrow QRS complexes. A wide twisting rhythm with a long QT is torsades."], ["Monomorphic ventricular tachycardia", "Monomorphic ventricular tachycardia keeps one QRS shape. Complexes that twist around the baseline with a long QT are torsades."], ["Coarse ventricular fibrillation", "Fibrillation is chaotic, uncoordinated activity with no organized QRS. Twisting, rising and falling complexes are torsades."]], "c": 0, "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 40", "qid": "vygwnt"}, {"topic": "Pediatric and older patients", "io": "Identify medical care strategies for infective endocarditis for the following populations. 8. infant 9. child 10. adolescent 11. adult 12. elderly", "q": "A 6-year-old with repaired congenital heart disease has 3 weeks of low-grade fever, fatigue, joint aches and weight loss. A new murmur is heard. Which organism most commonly causes endocarditis in this age group?", "opts": [["Enterococci", "Enterococci are less common in children than in adults; viridans streptococci lead after age 1 with congenital heart disease."], ["Viridans group streptococci", "Correct. Children over 1 year with congenital heart disease develop indolent viridans group streptococcal disease; Staphylococcus aureus comes next."], ["Group B streptococci", "Group B streptococci are a less common neonatal organism, not the leading organism after age 1."], ["Candida species", "Candida is tied to neonatal central lines and hyperalimentation, not indolent disease in older children."]], "c": 1, "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 40", "qid": "1yatrc4"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = true;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
