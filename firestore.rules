@@ -155,6 +155,23 @@ service cloud.firestore {
         && metricsBump('active_d', 1) && metricsBump('active_w', 1)
         && metricsBump('active_m', 1);
     }
+    // Pip "Not helpful" reports a student CHOSE to send (2026-10-15): their question, Pip's answer, an
+    // optional comment, the exam, the kind of answer and the day. No name, email or account id is stored.
+    // Create only; nobody can read, change or delete them from the site (tools/pip_feedback_report.py reads
+    // them with the read-only service account). Size caps keep one write small.
+    match /pip_feedback/{id} {
+      allow read, update, delete: if false;
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['v', 'day', 'exam', 'kind', 'q', 'a', 'c'])
+        && request.resource.data.keys().hasAll(['v', 'day', 'exam', 'kind', 'q', 'a'])
+        && request.resource.data.v == 1
+        && request.resource.data.day is string && metricsDayOk(request.resource.data.day)
+        && request.resource.data.exam is string && request.resource.data.exam.size() <= 100
+        && request.resource.data.kind in ['pip', 'claude', 'general']
+        && request.resource.data.q is string && request.resource.data.q.size() > 0 && request.resource.data.q.size() <= 500
+        && request.resource.data.a is string && request.resource.data.a.size() <= 3000
+        && (!('c' in request.resource.data) || (request.resource.data.c is string && request.resource.data.c.size() <= 500));
+    }
     // Pip's anonymous counts (pip/pip.js registers them with metrics.js): the same shape and the
     // same guarantees as metrics_daily, in their own day documents.
     match /metrics_pip/{day} {

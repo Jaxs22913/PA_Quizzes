@@ -549,6 +549,9 @@
     "html[data-theme=dark] #pip-win .pw-glink a,html[data-theme=dark] #pip-win .pw-brain a{color:#C9D8FA}",
     "#pip-win .pw-help{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px;color:#5b6687}",
     "#pip-win .pw-help.pw-thanked{display:block}",
+    "#pip-win .pw-fb{margin-top:8px;font-size:13px}#pip-win .pw-fb p{margin:0 0 6px}#pip-win .pw-fb .pw-row{margin-top:6px}",
+    "#pip-win .pw-fbc{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:8px 10px;border-radius:10px;border:1px solid rgba(30,57,116,.25);background:#fff;color:#1d2433;resize:vertical}",
+    "html[data-theme=dark] #pip-win .pw-fbc{background:#16213f;color:#e6ecfa;border-color:rgba(201,216,250,.3)}",
     "#pip-win .pw-thumb{display:inline-flex;align-items:center;justify-content:center;width:40px;height:34px;padding:0;border:1px solid #c9d1e6;border-radius:999px;background:#fff;color:#1E3974;cursor:pointer}",
     "#pip-win .pw-thumb:hover,#pip-win .pw-thumb:focus-visible{background:#EEF2FA}",
     "#pip-win .pw-down svg{transform:rotate(180deg)}",
@@ -2092,11 +2095,64 @@
         count(t[0]);
         row.textContent = t[0] === "thumb_up" ? "Glad it helped." : "Thanks for telling me. Say which part is fuzzy, or ask \u201cwhy?\u201d, and I'll try again.";
         row.classList.add("pw-thanked");
-        if (t[0] === "thumb_down") input.focus();
+        if (t[0] === "thumb_down" && !offerSend(into, row)) input.focus();
       });
       row.appendChild(b);
     });
     into.appendChild(row);
+  }
+  // Jaxon, 2026-10-15: "Helpful?" should tell him how to improve Pip's answers. After a thumbs-down the student
+  // may CHOOSE to send the question and Pip's answer, with an optional comment. Only that, the exam, the kind of
+  // answer and the day go: no name, email or account id. Never an answer that used the student's own notes
+  // (note cards, or a summary or Claude answer built from them): those are not offered at all. At most 5 a day
+  // on a device. Create-only Firestore collection pip_feedback (firestore.rules); nobody can read it from the
+  // site; Jaxon reads it with tools/pip_feedback_report.py.
+  var K_FB = "local:pip:fb:day";
+  function exchangeOf(into) {
+    var top = into; while (top && top.parentNode !== log) top = top.parentNode;
+    var me = top; while (me && !me.classList.contains("pw-me")) me = me.previousElementSibling;
+    if (!me) return null;
+    var parts = [], kind = "pip";
+    for (var n = me.nextElementSibling; n; n = n.nextElementSibling) {
+      if (n.classList.contains("pw-me")) break;
+      if (n.classList.contains("pw-note") || n.classList.contains("pw-private") || n.querySelector(".pw-note, .pw-private")) return null;
+      if (n.classList.contains("pw-general")) kind = "general"; else if (n.classList.contains("pw-claude") && kind === "pip") kind = "claude";
+      var c = n.cloneNode(true);
+      Array.prototype.forEach.call(c.querySelectorAll(".pw-help, .pw-fb, button, form, textarea"), function (x) { x.remove(); });
+      var t = c.textContent.replace(/\s+/g, " ").trim(); if (t) parts.push(t);
+    }
+    return { q: me.textContent.trim(), a: parts.join("\n"), kind: kind };
+  }
+  function offerSend(into, row) {
+    var fb = null; try { fb = window.firebase && firebase.firestore && firebase.auth ? firebase : null; } catch (e) {}
+    var ex = fb && exchangeOf(into), today = ymd(new Date()), d = jget(K_FB, null);
+    if (!ex || (d && d.d === today && d.n >= 5)) return false;
+    var box = el("div", "pw-fb");
+    box.appendChild(el("p", null, "Want to send this question and my answer so I can get better? Only the question, my answer, the exam and today's date are sent. No name or account."));
+    var ta = el("textarea", "pw-fbc"); ta.rows = 2; ta.maxLength = 500;
+    ta.placeholder = "What was wrong or missing? (optional)"; ta.setAttribute("aria-label", "What was wrong or missing? (optional)");
+    var r = el("div", "pw-row"), go = el("button", "pw-next", "Send"), no = el("button", "pw-chip", "No thanks");
+    go.type = no.type = "button";
+    r.appendChild(go); r.appendChild(no); box.appendChild(ta); box.appendChild(r);
+    row.parentNode.insertBefore(box, row.nextSibling);
+    no.addEventListener("click", function () { box.remove(); input.focus(); });
+    go.addEventListener("click", function () {
+      go.disabled = no.disabled = true; go.textContent = "Sending\u2026";
+      var doc = { v: 1, day: today, exam: (lastAsk && lastAsk.f && lastAsk.f.s) || "", kind: ex.kind, q: ex.q.slice(0, 500), a: ex.a.slice(0, 3000) };
+      if (ta.value.trim()) doc.c = ta.value.trim().slice(0, 500);
+      var auth = fb.auth();
+      new Promise(function (res) { var off = auth.onAuthStateChanged(function (u) { off(); res(u); }); })
+        // never signed in: a silent anonymous session (as Group Study and the usage counts do), so the rule can ask for one
+        .then(function (u) { return u || auth.signInAnonymously(); })
+        .then(function () { return fb.firestore().collection("pip_feedback").add(doc); })
+        .then(function () {
+          var dd = jget(K_FB, null); dd = dd && dd.d === today ? dd : { d: today, n: 0 }; dd.n++; set(K_FB, JSON.stringify(dd));
+          box.textContent = "Sent. Thank you, this helps me get better.";
+        }, function () { box.textContent = "I couldn't send it just now. \u201cReport a mistake\u201d on the page works too."; });
+    });
+    setTimeout(function () { ta.focus(); }, 30);
+    scrollDown();
+    return true;
   }
   function explainBubble(c, f, into, before) {
     var m = el("div", "pw-msg pw-pip pw-explain");
@@ -2174,6 +2230,7 @@
           settled = true;
           if (!r.ok) { count("fallback"); b.remove(); return "failed"; }
           b.textContent = r.text;
+          if (/notes/.test(of || "")) b.classList.add("pw-private");
           b.appendChild(el("span", "pw-lbl", "Pip's summary of " + (of || "your guide") + " · checked against the passages below"));
           if (link) b.appendChild(linkTo(link.folder, link.file, link.a, "Read it in your guide →"));
           scrollDown();
@@ -2555,6 +2612,7 @@
     // (once), with a "Read it in your guide" link under it
     var pl = passages && passages.place; if (pl) delete passages.place;
     var cd = card(); cd.classList.add("pw-claude");
+    if (isPrivate(passages)) cd.classList.add("pw-private");        // built from the student's notes: never sent anywhere
     if (pl) {
       if (pl.note) pl.note.remove();
       if (pl.before && pl.before.parentNode === log) log.insertBefore(cd, pl.before);
