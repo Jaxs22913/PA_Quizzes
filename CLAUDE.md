@@ -81,14 +81,19 @@ Partition scripts are seeded. One-off quizzes skip partitioning (example: `tools
 `tools/render_micro_e1_hours.py`). The `/new-exam-build` skill is the compact runbook.
 
 Quizzes:
-1. Read `quiz_build_prompt.md` and the class spec memory.
+1. Read `quiz_build_prompt.md`, the class spec memory (it decides question TYPES and counts) and
+   `tools/question_writing/WRITER.md` (how each item is written and checked).
 2. Ground every question in the deck (`python-pptx`, `=== SLIDE N ===` markers, cite exact filename + slide).
 3. Use the mandatory engine `tools/quiz-template/render.py` (`quiz_engine_standardization`).
 4. Register in `index.html` under the right class/exam with a self-expiring New tag (`new_exam_tag`).
 5. After any render, BEFORE committing: `python3 tools/add_stable_qids.py`, `tools/build_group_quizzes.py`
    (never hand-edit the Group Study bank), and for Semester 2 `tools/build_guide_links.py "<folder>"` then
    `tools/check_guide_links.py --strict` (links are keyed to the exact question text).
-6. Run the checkers (§6), then commit and push: for quiz builds pushing is part of the spec.
+6. **Blind review** every new or changed question before it ships (`tools/blind_review.py`, Sonnet judges per
+   `tools/question_writing/REVIEW_BLIND.md` then `REVIEW_AUDIT.md`; judges never see the key or a manifest before
+   their blind verdicts are imported). One Opus repair per flagged item, re-review with `export --ids`, else
+   drop and replace. A blind pick that differs from the key is a possible wrong key.
+7. Run the checkers (§6), then commit and push: for quiz builds pushing is part of the spec.
 
 Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box quotes the syllabus verbatim and
 answers each objective in order). Cram sheets: `tools/cram-sheet-template/` (`cram_sheets_feature`). Arcade:
