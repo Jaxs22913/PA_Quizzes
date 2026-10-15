@@ -27,8 +27,9 @@ const code = [
   ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
-      'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining', 'wordCount', 'examByWords'].map(grab),
-  grabVar(/var EXPLAIN = [^\n]*/)
+      'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining', 'wordCount', 'examByWords',
+      'pageKey', 'convoNow', 'rememberTurn', 'followUp'].map(grab),
+  grabVar(/var EXPLAIN = [^\n]*/), grabVar(/var convo = \{[^}]*\};/), grabVar(/var REFER = [^\n]*/)
 ].join('\n');
 const IX = JSON.parse(fs.readFileSync(DATA + 'index.json', 'utf8'));
 const J = {};
@@ -55,7 +56,8 @@ function explainOf(f) {
 }
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
-  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND, examByWords};')(...names.map(k => stubs[k]), explainOf);
+  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND, examByWords, ' +
+  'rememberTurn, followUp, convo, rank, prepGuide, expandFor};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
@@ -111,6 +113,33 @@ const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the diffe
   ['what does a pulmonary embolism look like on an ECG', CMS4, PDM3], ['why does aortic stenosis cause syncope', PDM3, CMS4],
   ['what is selective toxicity', CMS4, 'microbiology-exam-1'], ['wells score for DVT', PDM3, CMS5],
   ['what is sensitivity', CMS4, 'interpretation-of-medical-literature-exam-1']];
+// Follow-ups (Jaxon 2026-10-15): [first question, page exam, next question, the exam whose guide Claude should read for
+// the next one, is it a follow-up (earlier turns sent, search reads the first question's words too)?, a regex one of the
+// next question's top 12 guide lines must match (the hints), or null]. Mirrors searchGuides(): the first answer is
+// remembered with the exam its guide came from (examByWords), then followUp() decides for the next question. A follow-up's
+// top lines must also be mostly about the first question's topic (measured 2026-10-15: "what about treatment?" alone
+// ranks 0 of 12 pulmonary embolism lines in the Exam 5 guide; with the first question's words, 11 of 12).
+const FOLLOW = [
+  ['What is a pulmonary embolism?', PDM3, 'what about treatment?', CMS5, true, /anticoag|heparin|thromboly|warfarin|DOAC/i],
+  ['What is a pulmonary embolism?', PDM3, 'how is it diagnosed?', CMS5, true, /CT|angiogra|D-dimer|Wells/i],
+  ['What is a pulmonary embolism?', PDM3, 'what are the risk factors', CMS5, true, null],
+  // a fresh topic: naming words with nothing that refers back, or a word the earlier exam never uses
+  ['What is a pulmonary embolism?', PDM3, 'What is selective toxicity', 'microbiology-exam-1', false, null],
+  ['What is a pulmonary embolism?', PDM3, 'junctional rhythm', PDM3, false, null],
+  ['What is a pulmonary embolism?', PDM3, 'What is atrial fibrillation?', null, false, null],
+];
+async function followPlan(q1, slug, q2) {
+  const f = IX.folders.find(x => x.s === slug);
+  M.convo.turns = []; M.convo.t = 0;
+  const w1 = await M.examByWords(M.casual(q1), f), g1 = w1 ? w1.f : f;
+  M.rememberTurn(q1, 'An earlier answer.', g1, q1);
+  const fu = await M.followUp(q2, f);
+  const w2 = fu ? null : await M.examByWords(M.casual(q2), f), gf = fu ? fu.gf : w2 ? w2.f : f;
+  // the hints: the chosen guide's best lines for the search text (the earlier question's words too on a follow-up)
+  const g = await getJSON('guide/' + gf.s + '.json'); M.prepGuide(g);
+  const sq = fu ? fu.sq : q2, top = M.rank(g._ix, g._texts, M.expandFor(M.casual(sq), g._ix), 12).map(r => g.b[r[1]][3]);
+  return { fu: !!fu, exam: gf.s, sq, top };
+}
 (async () => {
   if (process.argv[2] === '--rate') {             // how often each kind of answer and the general part come up
     const qs = JSON.parse(fs.readFileSync(process.argv[3] || REPO + 'tools/pip_explain_questions.json', 'utf8')).questions;
@@ -123,6 +152,8 @@ const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the diffe
   if (process.argv[2] === '--exam') {           // which exam's guide mode "guide" reads (examByWords)
     for (const [q, slug] of EXAMQ) { const f = IX.folders.find(x => x.s === slug); const w = await M.examByWords(M.casual(q), f);
       console.log((w ? w.f.s : 'none').padEnd(46), (w ? String(w.n) : '').padStart(4), ' <- ' + slug.slice(0, 30) + ' | ' + q); }
+    for (const [q1, slug, q2] of FOLLOW) { const p = await followPlan(q1, slug, q2);
+      console.log(p.exam.padEnd(46), (p.fu ? 'follow' : 'fresh').padStart(6), ' <- after "' + q1 + '": ' + q2 + (p.fu ? '  [search: ' + p.sq + ']' : '')); }
     return;
   }
   if (process.argv[2]) { console.log(await plan(process.argv[2], process.argv[3] || CMS4)); return; }
@@ -140,6 +171,15 @@ const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the diffe
     if (!ok) bad++;
     console.log((ok ? 'ok   ' : 'FAIL ') + 'guide for "' + q + '" -> ' + got + (ok ? '' : '  (want ' + want + ')'));
   }
-  console.log(bad ? bad + ' of ' + (CASES.length + EXAMQ.length) + ' failed' : 'all ' + (CASES.length + EXAMQ.length) + ' passed');
+  for (const [q1, slug, q2, want, wantFu, re] of FOLLOW) {
+    const p = await followPlan(q1, slug, q2);
+    const topic = p.top.filter(t => /embol/i.test(t)).length;
+    const ok = p.fu === wantFu && (want === null || p.exam === want) && (want !== null || p.exam !== CMS5) && (!re || p.top.some(t => re.test(t))) && (!wantFu || topic >= 6);
+    if (!ok) bad++;
+    console.log((ok ? 'ok   ' : 'FAIL ') + 'after "' + q1 + '": "' + q2 + '" -> ' + (p.fu ? 'follow-up (' + topic + '/12 top lines on its topic)' : 'fresh') + ', guide ' + p.exam +
+      (ok ? '' : '  (want ' + (wantFu ? 'follow-up' : 'fresh') + ', ' + (want || 'not ' + CMS5) + (re ? ', a top line matching ' + re : '') + ')'));
+  }
+  const total = CASES.length + EXAMQ.length + FOLLOW.length;
+  console.log(bad ? bad + ' of ' + total + ' failed' : 'all ' + total + ' passed');
   process.exit(bad ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(2); });

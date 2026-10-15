@@ -570,6 +570,16 @@
     "#pip-win .pw-explain .pw-lbl{display:block;margin-top:6px;font-size:11.5px;color:#5b6687}html[data-theme=dark] #pip-win .pw-explain .pw-lbl{color:#9fb0d6}",
     "#pip-win .pw-explain .pw-quote{border-left:3px solid rgba(30,57,116,.25);padding-left:9px;margin-top:6px;color:#33405f}",
     "html[data-theme=dark] #pip-win .pw-part{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-explain .pw-quote{color:#d3ddf5;border-left-color:rgba(201,216,250,.35)}",
+    // the answer as Claude writes it (2026-10-15): plain text growing in one bubble, no effects; then the full answer
+    "#pip-win .pw-live p{margin:0;white-space:pre-line}#pip-win .pw-live p+p{margin-top:8px}",
+    "#pip-win .pw-live .pw-livegen{margin-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5b6687}",
+    "html[data-theme=dark] #pip-win .pw-live .pw-livegen{color:#9fb0d6}",
+    // the exact guide sentence an answer used (Citations API), shown as the link into the guide
+    "#pip-win .pw-alinks a.pw-cq{display:block;margin-top:8px;padding:2px 0 2px 9px;border-left:3px solid rgba(30,57,116,.25);color:#33405f;font-weight:400;text-decoration:none}",
+    "#pip-win .pw-alinks a.pw-cq q{display:block;font-style:italic;overflow-wrap:anywhere}",
+    "#pip-win .pw-alinks a.pw-cq .pw-cqsrc{display:block;margin-top:3px;font-size:12px;font-weight:600;color:#1E3974}",
+    "#pip-win .pw-alinks a.pw-cq:hover .pw-cqsrc,#pip-win .pw-alinks a.pw-cq:focus-visible .pw-cqsrc{text-decoration:underline}",
+    "html[data-theme=dark] #pip-win .pw-alinks a.pw-cq{color:#d3ddf5;border-left-color:rgba(201,216,250,.35)}html[data-theme=dark] #pip-win .pw-alinks a.pw-cq .pw-cqsrc{color:#C9D8FA}",
     // comparisons: the side-by-side dissection, the guide links under it, the folded full cards
     "#pip-win .pw-cmp{align-self:stretch;max-width:none;white-space:normal}",
     "#pip-win .pw-cmp p{margin:0}#pip-win .pw-cmp p+p{margin-top:8px}",
@@ -759,7 +769,9 @@
   // window.openGuidePanel, the same one a quiz's "Find it in the study guide" uses), scrolled to the passage and
   // highlighted, so the student never loses the page they are on. On the guide itself it just scrolls there;
   // a page without theme.js (no panel) opens the guide in a new tab.
-  function linkTo(folder, file, anchor, label, passage) {
+  // quote (2026-10-15): the exact sentence Claude cited, for the panel to highlight and scroll to (a theme.js
+  // without it just ignores it)
+  function linkTo(folder, file, anchor, label, passage, quote) {
     var a = el("a", null, label || "Open in the guide →");
     a.href = pageURL(folder, file, anchor);
     var here = decodedPath(new URL(a.href).pathname) === decodedPath(location.pathname);
@@ -768,7 +780,7 @@
     else a.addEventListener("click", function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;     // a new-tab click still opens a tab
       var fo = IX && IX.folders.filter(function (x) { return x.f === folder; })[0];
-      if (window.openGuidePanel({ url: a.href, anchor: anchor, title: fo ? fo.t : "", label: "Study guide", passage: passage || "" })) e.preventDefault();
+      if (window.openGuidePanel({ url: a.href, anchor: anchor, title: fo ? fo.t : "", label: "Study guide", passage: passage || "", quote: quote || "" })) e.preventDefault();
     });
     return a;
   }
@@ -1248,11 +1260,18 @@
       // exam leads on a tie), misspellings fixed first. "From general knowledge": Claude, clearly labelled,
       // only when the class materials fall short (they never define the word, or cover only part of the
       // question). Never "not in your guide" as the whole answer.
-      var FX = null, D = null, L = null, SCOPE = null, here = c.here || f, text0 = text;
+      var FX = null, D = null, L = null, SCOPE = null, here = c.here || f, text0 = text, ASKQ = text, FU = null;
       fixSpelling(text0).then(function (fx) {
-        FX = fx; text = fx.text;
+        FX = fx; text = ASKQ = fx.text;
+        return followUp(text, f);
+      }).then(function (fu) {
+        // a follow-up ("what about treatment?" after a question on pulmonary embolism): the search reads the earlier
+        // question's naming words too, the exam stays the earlier one, and Claude gets the earlier turns; ASKQ stays
+        // the student's own words (what Claude answers and what is remembered)
+        FU = fu;
+        if (fu) text = fu.sq;
         var qx = casual(text);
-        D = defineTerm(text); L = listAsk(text);
+        D = defineTerm(ASKQ); L = fu ? null : listAsk(ASKQ);
         examsFor(qx, f).then(function (scope) {
           if (scope.indexOf(f) < 0 && hasGuides(f)) scope = scope.slice(0, 3).concat([f]);   // the active exam is always searched
           SCOPE = scope;
@@ -1297,7 +1316,7 @@
         // Jaxon, 2026-10-15 ("do whatever to actually make pip useful"): every real question goes to Claude WITH THE
         // WHOLE STUDY GUIDE of the exam it is about, so a wrong pick by the word search can't sink the answer (his
         // "difference between a T and P wave" got an infarct card). Pip's picks go along as candidates and hints.
-        if (wantsExplanation(text) || D) return askGuide(text, out, mine, ex, dd, defn, classic);
+        if (wantsExplanation(text) || D) return askGuide(ASKQ, out, mine, ex, dd, defn, classic);
         classic(false);
         function rest() {
           if (ex.length) return explained(out, mine, ex);
@@ -1419,6 +1438,8 @@
       // was "Pulmonary embolism on the ECG"; the Exam 5 guide teaches it). The page's exam keeps it when it says at
       // least 60% as much; a strong defining sentence keeps its own exam; else the best card's, passage's, page's.
       function guideExam(out, ex, dd, defn) {
+        // a follow-up has no naming words of its own (or only ones the earlier exam uses): the earlier turn's exam
+        if (FU && hasGuides(FU.gf)) return Promise.resolve(FU.gf);
         if (defn && dd.def && dd.def.strong && hasGuides(dd.def.src.f)) return Promise.resolve(dd.def.src.f);
         var pick = defn && dd.def ? dd.def.src.f : ex.length ? (ex[0]._f || f) : out.length ? out[0].f : (SCOPE || []).filter(hasGuides)[0];
         return examByWords(casual(text), f).then(function (w) {
@@ -1463,21 +1484,28 @@
               link: function () { return linkTo(dd.def.src.f.f, dd.def.src.file, dd.def.src.a, "Read it in your guide: " + dd.def.src.head + " \u2192", dd.def.src.text || ""); },
               full: function (into) { var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, dd.def.src.head)); c2.appendChild(el("p", "pw-quote", dd.def.s)); into.appendChild(c2); } });
             var ps = cands.map(function (c) { return { title: c.title, text: c.text, note: !!c.note }; });
-            var priv = isPrivate(ps), k = cacheKey("guide", q + "|" + cands.map(function (c) { return c.title; }).join("|"), gf, priv), hit = cached(k, priv);
+            // a follow-up's answer depends on the earlier turns: its cache key holds their fingerprint, and it is kept
+            // in memory only (like a notes answer), so the earlier turns never reach localStorage
+            var priv = isPrivate(ps), mem = priv || !!FU;
+            var k = cacheKey("guide", q + "|" + (FU ? "after " + hashOf(JSON.stringify(FU.prior)) + "|" : "") + cands.map(function (c) { return c.title; }).join("|"), gf, mem), hit = cached(k, mem);
             if (hit) return renderGuide(hit, cands, gf, null, fallback);
             var wait = el("div", "pw-msg pw-pip pw-brain", "Let me read your guide\u2026"); log.appendChild(wait); scrollDown();
             var db = deviceBudget(); db.n++; set(K_CDAY, JSON.stringify(db)); lastClaudeAt = Date.now();
             count("claude_ask");
             var duet = P.duet && P.duet.start();
-            S.ask({ question: q, mode: "guide", passages: ps, exam: { title: gf.t, folder: gf.f, slug: gf.s }, hints: g ? hintsFor(g, gf, out, ex) : [], private: priv }).then(function (r) {
+            // the answer appears in the bubble as Claude writes it (plain text, no "Used:" line), then the full answer
+            // with its links takes its place
+            var live = liveAnswer(wait);
+            S.ask({ question: q, mode: "guide", passages: ps, exam: { title: gf.t, folder: gf.f, slug: gf.s }, hints: g ? hintsFor(g, gf, out, ex) : [], private: priv,
+                    prior: FU ? FU.prior : undefined, onDelta: live.add }).then(function (r) {
               var go = function () {
-                wait.remove();
+                live.stop(); wait.remove();
                 if (!r.ok) {
                   count(/^(user_|day_|month_)/.test(r.code || "") ? "fallback" : "error");
                   // a helper without guide mode yet, or an exam it has no guide for: the usual answer may still ask Claude
                   return fallback(!/^(bad_mode|bad_exam|bad_hints|unknown_field|no_guide)$/.test(r.code || ""));
                 }
-                remember(k, r, priv);
+                remember(k, r, mem);
                 renderGuide(r, cands, gf, r, fallback);
               };
               if (duet) P.duet.finish(!!r.ok, go); else go();
@@ -1487,15 +1515,19 @@
       }
       // Claude's answer in mode "guide": "Used:" names guide lines ([n], sent back by the helper as cites: doc, anchor,
       // heading, text) and Pip's candidates (plain numbers), in its order; lines of one section share one link
+      // With the Citations API (2026-10-15) a cite also carries q, the exact words of the guide line Claude used: they
+      // show under the answer as its links (three at most), and the guide panel highlights them
       function renderGuide(r, cands, gf, rr, fallback) {
-        var a = parseAnswer(r.answer, cands.length), byN = {}, all = [], seen = {};
+        var a = parseAnswer(r.answer, cands.length), byN = {}, all = [], seen = {}, nq = 0;
         (r.cites || []).forEach(function (c) { byN[c.n] = c; });
         (a.refs || []).forEach(function (t) {
           if (t.cand) { var c0 = cands[t.cand - 1]; if (c0 && all.indexOf(c0) < 0) all.push(c0); return; }
           var c = byN[t.line]; if (!c) return;
-          var key = c.doc + "#" + c.a;
-          if (seen[key]) { seen[key].text += " \u2026 " + c.t; return; }
+          var key = c.doc + "#" + c.a, q = typeof c.q === "string" && c.q.trim() && nq < 3 ? c.q.trim() : "";
+          if (q) nq++;
+          if (seen[key]) { seen[key].text += " \u2026 " + c.t; if (q) seen[key].quotes.push(q); return; }
           all.push(seen[key] = citeCand(c, gf));
+          if (q) seen[key].quotes.push(q);
         });
         if (a.used === null && !all.length) all = cands.slice(0, 1);
         if (!all.length && !a.general) return fallback(true);
@@ -1504,8 +1536,21 @@
       function citeCand(c, gf) {
         var head = c.i || String(c.h || "").split(" \u203a ").pop().split("\u2605")[0].replace(/^[\d.]+\s*\u00b7\s*/, "").replace(/^objectives?\s+[a-z\d&,\s\u2013-]+\s*\u2014\s*/i, "").trim() || gf.t;
         if (head.length > 80) head = head.slice(0, head.lastIndexOf(" ", 77)) + "\u2026";
-        var o = { title: c.h, text: c.t, f: gf, short: head };
-        o.link = function (long) { return linkTo(gf.f, c.doc, c.a, "Read it in your guide: " + (long ? c.h : head) + " \u2192", c.t); };
+        var o = { title: c.h, text: c.t, f: gf, short: head, quotes: [] };
+        o.link = function (long) {
+          var label = "Read it in your guide: " + (long ? c.h : head) + " \u2192";
+          if (!o.quotes.length) return linkTo(gf.f, c.doc, c.a, label, c.t);
+          // the exact sentence(s) Claude used ARE the link: quoted, then where they are; the panel highlights the first
+          var box = document.createDocumentFragment();
+          o.quotes.forEach(function (q, i) {
+            var a = linkTo(gf.f, c.doc, c.a, "", c.t, q);
+            a.className = "pw-cq"; a.textContent = "";
+            a.appendChild(el("q", null, q.length > 220 ? q.slice(0, q.lastIndexOf(" ", 210)) + "\u2026" : q));
+            if (i === o.quotes.length - 1) a.appendChild(el("span", "pw-cqsrc", "Your guide: " + (long ? c.h : head) + " \u2192"));
+            box.appendChild(a);
+          });
+          return box;
+        };
         o.full = function (into) {
           var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, c.h));
           c2.appendChild(el("div", "pw-src", gf.t + " \u00b7 Study guide"));
@@ -1608,6 +1653,8 @@
         }
         if (r && typeof r.remainingToday === "number") log.appendChild(el("div", "pw-src pw-left", r.remainingToday + " Claude question" + (r.remainingToday === 1 ? "" : "s") + " left today."));
         var c0 = used.filter(function (c) { return !c.note; })[0];
+        // this exchange is what a follow-up may refer back to (memory only): the student's words, Claude's plain answer
+        rememberTurn(ASKQ, (a.body + (a.general ? "\nGeneral: " + a.general : "")).trim(), c0 ? c0.f : f, text);
         lastAsk = { q: text, passages: used.map(function (c) { return { title: c.title, text: c.text, note: c.note }; }), f: c0 ? c0.f : f, t: Date.now() };
         var base = c0 && !(PAST[c0.f.s] && c0.f !== f) ? [["Quiz me on this", function () { topicPractice(c0.f, text); }]] : [];
         chips(base);
@@ -2843,6 +2890,77 @@
   // Never for lookups, chit-chat, repeats (answers are remembered), or other classes; at most
   // 40 a day on this device (the helper allows 40 per student since 2026-10-15, when every question got a short answer
   // written with Claude) and one every 3 seconds (20 for the costlier "deeper" and "beyond"), on top of the server's caps.
+  // Follow-ups (Jaxon 2026-10-15). Each question used to stand alone: after "what is a pulmonary embolism", "what about
+  // treatment?" searched just "treatment" and Claude never saw the first question. Pip now keeps the last 2 Claude
+  // exchanges of this window IN MEMORY ONLY (never localStorage, never synced); they go with a follow-up as `prior`
+  // and are dropped after 15 minutes without a new one, or when the page changes.
+  var convo = { turns: [], t: 0, page: "" };
+  function pageKey() { return location.pathname + location.search; }
+  function convoNow() {
+    if (convo.turns.length && (Date.now() - convo.t > 15 * 60000 || convo.page !== pageKey())) convo.turns = [];
+    return convo.turns.length ? convo : null;
+  }
+  function rememberTurn(q, a, gf, sq) {
+    q = String(q || "").trim(); a = String(a || "").trim();
+    if (!q || !a || !gf) return;
+    if (convoNow() === null) convo.turns = [];
+    convo.turns.push({ q: q.slice(0, 500), a: a.slice(0, 1200), gf: gf, sq: sq || q });
+    convo.turns = convo.turns.slice(-2); convo.t = Date.now(); convo.page = pageKey();
+  }
+  // words that refer back to the conversation: "it", "they", "those", "what about ...", "and ...", "why ..."
+  var REFER = /\b(it|its|they|them|their|theirs|those|these)\b|\b(this|that)\s*($|[?.!,]|\b(is|was|does|do|mean|means|happen|happens|work|works|cause|causes|look|looks|show|shows|present|presents|differ|compare|change|treated|diagnosed|managed)\b)|^\s*(what|how)\s+about\b|^\s*(and|but|so|then|also|plus)\b|^\s*why\b/;
+  // Is this question a follow-up of the last exchange? A naming word the earlier exam's guides never use, or naming
+  // words with nothing that refers back ("What is atrial fibrillation?"), make it a fresh topic: its own exam, no
+  // earlier turns. Otherwise it keeps the earlier exam, its search also reads the earlier question's naming words, and
+  // the earlier turns go to Claude. -> null or {gf, prior, sq}
+  function followUp(text, f) {
+    var cv = convoNow();
+    if (!cv) return Promise.resolve(null);
+    var prev = cv.turns[cv.turns.length - 1], n = norm(text).trim();
+    return words().then(function (W) {
+      var pron = REFER.test(n);
+      var naming = W ? specific(casual(text)).filter(function (w) { return wordAt(W, w) >= 0; }) : [];
+      var pi = IX ? IX.folders.indexOf(prev.gf) : -1;
+      var own = naming.filter(function (w) { return pi < 0 || !wordCount(W, wordAt(W, w), pi); });
+      if (own.length || (naming.length && !pron)) return null;
+      var before = specific(casual(prev.sq)).filter(function (w) { return naming.indexOf(w) < 0; }).slice(0, 6);
+      return { gf: prev.gf, prior: cv.turns.map(function (t) { return { q: t.q, a: t.a }; }), sq: (before.join(" ") + " " + text).trim() };
+    }).catch(function () { return null; });
+  }
+  function hashOf(s) {                            // FNV-1a, a short fingerprint (a cache key, never a secret)
+    var h = 0x811c9dc5; s = String(s);
+    for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h.toString(16);
+  }
+  // Streaming (Jaxon 2026-10-15): the answer grows in Pip's bubble as Claude writes it. Plain text only: the "Used:"
+  // line is held back (it names lines, not words for the student), a "General:" part gets its small label. Calm: no
+  // cursor or animation, the log follows the text only when the student is already at the bottom, and screen
+  // readers wait for the full answer (aria-busy).
+  function liveText(s) {
+    s = String(s).replace(/^\s+/, "");
+    if (/^\**(u|us|use|used)\**$/i.test(s)) return "";             // may still become "Used:"
+    if (/^\**used\**:/i.test(s)) { var nl = s.indexOf("\n"); if (nl < 0) return ""; s = s.slice(nl + 1); }
+    return s;
+  }
+  function liveAnswer(box) {
+    var acc = "", raf = 0, on = true;
+    function draw() {
+      raf = 0;
+      if (!on) return;
+      var s = liveText(acc), gi = s.search(/(^|\n)\s*\**general\**:/i);
+      var body = (gi >= 0 ? s.slice(0, gi) : s).trim(), gen = gi >= 0 ? s.slice(gi).replace(/^\s*\**general\**:\s*/i, "").trim() : "";
+      if (!body && !gen) return;
+      var atEnd = log.scrollHeight - log.scrollTop - log.clientHeight < 48;
+      box.className = "pw-msg pw-pip pw-explain pw-live"; box.setAttribute("aria-busy", "true"); box.textContent = "";
+      if (body) box.appendChild(el("p", null, body));
+      if (gen) { box.appendChild(el("div", "pw-livegen", "From general knowledge")); box.appendChild(el("p", null, gen)); }
+      if (atEnd) scrollDown();
+    }
+    return {
+      add: function (t) { if (!on) return; acc += t; if (!raf) raf = window.requestAnimationFrame ? requestAnimationFrame(draw) : setTimeout(draw, 16); },
+      stop: function () { on = false; }
+    };
+  }
   var followFrom = null;                         // the answer a follow-up is about (kept for a retry after the cooldown)
   var lastAsk = null, K_CDAY = "local:pip:claude:day", K_CCACHE = "local:pip:claude:cache", K_CNO = "local:pip:claude:no";
   // a follow-up is a short reply to the last answer ("why?", "I still don't get it"), never a new
