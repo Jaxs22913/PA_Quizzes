@@ -24,23 +24,36 @@ Prompt (prompt version v1):
 {"pass": "blind", "prompt_version": "v1",
  "evidence": {"<deck file>": "=== SLIDE 12 ===\ntext...\n=== SLIDE 13 ===\n..."},
  "items": [{"id": "490660d133b3b0b4", "stem": "...", "options": {"A": "...", "B": "...", "C": "...", "D": "..."},
-            "evidence_slides": {"<deck file>": [11, 12, 13]}}]}
+            "evidence_slides": {"<deck file>": [11, 12, 13]},
+            "evidence_images": {"<deck file>|12": ["/abs/path/s012-1.jpg"]}}]}
 ```
 An item's evidence is ONLY the slides listed in its `evidence_slides` (the cited slide plus one either side).
-There is no key, no explanation and no misconception note for any option. Do not look for them.
+There is no key, no explanation and no misconception note for any option. Do not look for them, and do not
+browse the export directory or `~/.cache/pa-quizzes` for anything but the pictures listed in `evidence_images`.
+
+`evidence_images` (present only when an evidence slide has pictures worth reading) maps `"<deck file>|<slide>"` to
+absolute image paths. Open them with the Read tool; each is one picture from that slide. Pictures under ~8 KB
+or 64x64 pixels (decorative) are not listed, and a few formats (some WMF/EMF) cannot be converted and are not
+listed either: for those the slide text still carries the "[this slide has N picture(s) ...]" note.
 
 ## What to do for every item
 1. Cover the options. From the stem alone, write the answer you would give (`cover_answer`, a few words).
 2. Read the item's evidence slides. Uncover the options and choose: `pick` = `"A"`-`"D"` for the single best
    option, `"ambiguous"` if two or more options are defensible from the evidence, or `"insufficient"` if the
-   evidence does not contain what is needed to decide (including when the decisive content is in a picture:
-   a note "[this slide has N picture(s) ...]" means that content is NOT in your text; do not guess from it).
+   evidence does not contain what is needed to decide. A note "[this slide has N picture(s) ...]" means that
+   content is NOT in your text. When the decision depends on the picture (a plate, a stain, a table shown as a
+   picture) and the slide is listed in `evidence_images`, open those images with the Read tool and treat what is
+   CLEARLY visible as evidence (labels, a printed table, an unmistakable appearance). Do not infer from a
+   picture what it does not plainly show. If the decisive picture is not listed, or not clear, answer
+   `"insufficient"`; do not guess from it.
 3. Use ONLY the evidence plus established medical fact. If the slides and established medical fact disagree,
    say so in `conflict`; do not silently pick one.
 4. `quote`: a contiguous excerpt COPIED EXACTLY from the item's evidence that supports your pick (5+ words, or a
    whole short line). It is machine-checked (case, curly quotes, dashes and whitespace are ignored); an altered
    or invented quote rejects the item. Required for a letter pick; for ambiguous/insufficient give the closest
-   relevant excerpt or null.
+   relevant excerpt or null. When the justification rests on a picture, the quote is `"[image] <deck>|<slide>"`
+   exactly as the key appears in `evidence_images` (e.g. `"[image] PAJ5200.Cocci of Med importance.pptx|34"`);
+   the importer accepts that form only for a slide that has listed images, and `why` must say what you saw.
 5. Fill the flags, each a short string or null:
    - `alt`: a SECOND defensible letter (A-D, not your pick) or null.
    - `missing`: the decisive detail the stem or the slides lack, if it would change the decision.
