@@ -41,6 +41,15 @@
   // they matter, so a newer copy pulled from another device needs no page reload (metrics:seen changes
   // once a day, and reloading a student's second device for it every morning would be pointless)
   function isQuiet(key) { return key.indexOf("metrics:") === 0; }
+  // Keys whose value is a list merged item by item rather than replaced whole (2026-10-15): theme.js
+  // registers window.CloudSyncMerge[prefix] = function (local, cloud) -> {value, local, cloud} | null
+  // (see "SYNCED LISTS" there). It only ever runs on a document this file has already read.
+  function mergerFor(key) {
+    var M = window.CloudSyncMerge;
+    if (!M || typeof key !== "string") return null;
+    for (var p in M) if (Object.prototype.hasOwnProperty.call(M, p) && key.indexOf(p) === 0 && typeof M[p] === "function") return M[p];
+    return null;
+  }
 
   var realSetItem = Storage.prototype.setItem;
   var realGetItem = Storage.prototype.getItem;
@@ -184,6 +193,27 @@
         var localTs = meta[key] || 0;
         cloud[key] = cloudTs;
         if (cloudTs > max) max = cloudTs;
+        // A merged list: whichever side is newer, keep what each side has. The result is written here if
+        // this device lacked something, and marked for upload (one write, as any changed key) only if the
+        // cloud copy lacks something.
+        var mg = mergerFor(key), localNow = mg ? realGetItem.call(localStorage, key) : null, r = null;
+        if (mg && localNow !== null && typeof data.value === "string" && localNow !== data.value) {
+          try { r = mg(localNow, data.value); } catch (e) { r = null; }
+        }
+        if (r) {
+          if (r.local) {
+            realSetItem.call(localStorage, key, r.value);
+            if (!isQuiet(key)) changed = true;
+          }
+          if (r.cloud) {
+            meta[key] = Math.max(Date.now(), cloudTs + 1, localTs);
+            meta.__u = meta.__u || {}; meta.__u[key] = 1;
+          } else {
+            meta[key] = cloudTs;
+            if (meta.__u) delete meta.__u[key];
+          }
+          return;
+        }
         if (cloudTs > localTs) {
           var localVal = realGetItem.call(localStorage, key);
           if (localVal !== data.value) {
