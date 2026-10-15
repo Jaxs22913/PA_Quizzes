@@ -27,20 +27,30 @@ EVIDENCE. Decks stay OUT of the repo (the repo is public): slide text comes from
 ~/Desktop/PA Quizzes/Semester 2/<Class> Inbox/, extracted with python-pptx ("=== SLIDE N ===" markers) and
 cached per deck content hash in ~/.cache/pa-quizzes/slides/. Export directories hold slide text, so --out
 inside the repo is refused. Records (tools/blind_review.json) hold judge verdicts and quotes <= 200 chars.
-A slide's pictures are not readable here; the evidence says so, and the judge must answer "insufficient"
-rather than guess from a picture.
+A slide's pictures are not in the text; the evidence says so. Every evidence slide whose deck slide has
+pictures gets them extracted once (python-pptx; EMF/WMF/TIFF converted to PNG with sips; pictures under
+~8 KB or 64x64 skipped) into ~/.cache/pa-quizzes/slides-img/<deck content hash>/ -- never into the repo -- and
+each batch item lists them: "evidence_images": {"<deck>|<slide>": ["/abs/path.png", ...]}. The judge opens
+them with the Read tool; a justification that rests on a picture may quote "[image] <deck>|<slide>", which
+import accepts only when that slide has listed images.
 
 Usage:
   blind_review.py export --pass blind --folder "<folder>" [--files GLOB] [--sample N --seed S] [--size 25]
-                         [--include-reviewed] --out DIR
+                         [--ids FILE] [--include-reviewed] --out DIR
   blind_review.py import --pass blind DIR --judge MODEL_ID
   blind_review.py export --pass audit --folder "<folder>" [--files GLOB] [--from BLIND_DIR] --out DIR
   blind_review.py import --pass audit DIR --judge MODEL_ID
   blind_review.py report [--folder "<folder>" ...]
   blind_review.py check  --folder "<folder>" [--all]
 
-Files in an export directory: judge-NNN.json (the batch), manifest.json (what import needs; slide text),
-unresolved.json (questions with no usable cite/deck: not reviewable, listed so nothing is skipped silently).
+--ids FILE (both passes): export only the item ids in FILE (one per line, or a JSON list); an unknown id is
+reported, not fatal. Combine with --include-reviewed to re-read an id that already has a record.
+
+Files in an export directory (judge-visible, so NO KEYS): judge-NNN.json (the batch; the audit batch carries the
+key by design), unresolved.json (id, file, stem, reason: questions with no usable cite/deck, listed so nothing is
+skipped silently). The manifest (keys, explanations, slide text: what import needs) is written OUTSIDE it, to
+~/.cache/pa-quizzes/review-manifests/<sha1 of the absolute --out path>.json. import and `export --pass audit
+--from DIR` look it up there and fall back to DIR/manifest.json for directories exported before this change.
 The judge writes verdict-NNN.json next to each judge-NNN.json. `import` writes repair.json (rejected items
 and why) and records only the accepted ones.
 
@@ -76,6 +86,11 @@ import check_exam_standard as X  # noqa: E402  (load, is_frozen: the same questi
 RECORDS = os.path.join(HERE, "blind_review.json")
 SCOPE = os.path.join(HERE, "question_writing", "scope.json")
 CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides")
+IMG_CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides-img")
+MANIFESTS = os.path.expanduser("~/.cache/pa-quizzes/review-manifests")
+MIN_IMG_BYTES = 8 * 1024                    # smaller pictures are decorative (bullets, logos, rules)
+MIN_IMG_PX = 64                             # ... and so is anything under 64x64 pixels
+IMAGE_QUOTE = "[image] "
 INBOX = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2")
 PROMPT_VERSION = "v1"
 LETTERS = "ABCD"
@@ -373,6 +388,106 @@ def deck_slides(path):
     return slides
 
 
+_HASHES = {}
+
+
+def deck_hash(path):
+    if path not in _HASHES:
+        _HASHES[path] = file_hash(path)
+    return _HASHES[path]
+
+
+_UNCONVERTED = []                                           # pictures sips could not convert (e.g. some WMF/EMF)
+
+
+def _to_png(src, dst):
+    """EMF/WMF/TIFF/GIF/BMP -> PNG with the macOS `sips`. True on success. (qlmanage was tried for the formats
+    sips rejects and hangs on large WMF, so it is not used: those pictures are skipped and counted.)"""
+    import subprocess
+    try:
+        r = subprocess.run(["sips", "-s", "format", "png", src, "--out", dst], capture_output=True, timeout=30)
+        return r.returncode == 0 and os.path.exists(dst) and os.path.getsize(dst) > 0
+    except Exception:
+        return False
+
+
+def extract_images(path, outdir):
+    """{slide number: [absolute png/jpg paths]} for every slide picture that is not decorative. Pictures under
+    ~8 KB or under 64x64 pixels are skipped; EMF/WMF/TIFF and other formats are converted to PNG."""
+    from pptx import Presentation
+    from pptx.enum.shapes import MSO_SHAPE_TYPE as T
+    prs = Presentation(path)
+    out = {}
+    for n, slide in enumerate(prs.slides, 1):
+        found, seen = [], set()
+
+        def walk(shapes):
+            for sh in shapes:
+                if getattr(sh, "shape_type", None) == T.GROUP:
+                    walk(sh.shapes)
+                    continue
+                try:
+                    img = sh.image
+                    blob, ext = img.blob, (img.ext or "").lower().lstrip(".")
+                except Exception:
+                    continue
+                if len(blob) < MIN_IMG_BYTES:
+                    continue
+                try:
+                    w, h = img.size
+                    if w < MIN_IMG_PX and h < MIN_IMG_PX:
+                        continue
+                except Exception:
+                    pass                                    # EMF/WMF: size unknown, keep (the byte floor passed)
+                d = hashlib.sha1(blob).hexdigest()
+                if d in seen:
+                    continue
+                seen.add(d)
+                found.append((blob, ext))
+        walk(slide.shapes)
+        paths = []
+        for k, (blob, ext) in enumerate(found, 1):
+            base = os.path.join(outdir, "s%03d-%d" % (n, k))
+            if ext in ("png", "jpg", "jpeg"):
+                with open(base + "." + ext, "wb") as fh:
+                    fh.write(blob)
+                paths.append(base + "." + ext)
+            else:
+                raw = base + ".orig." + (ext or "bin")
+                with open(raw, "wb") as fh:
+                    fh.write(blob)
+                ok = _to_png(raw, base + ".png")
+                os.remove(raw)
+                if ok:
+                    paths.append(base + ".png")
+                else:
+                    _UNCONVERTED.append("%s slide %d (.%s)" % (os.path.basename(path)[:40], n, ext))
+        if paths:
+            out[n] = paths
+    return out
+
+
+def deck_images(path):
+    """Cached per deck CONTENT hash under ~/.cache/pa-quizzes/slides-img/ (outside the repo, never copied into it)."""
+    outdir = os.path.join(IMG_CACHE, deck_hash(path))
+    idx = os.path.join(outdir, "index.json")
+    if os.path.exists(idx):
+        return {int(k): [os.path.join(outdir, f) for f in v] for k, v in json.load(open(idx, encoding="utf-8")).items()}
+    os.makedirs(outdir, mode=0o700, exist_ok=True)
+    got = extract_images(path, outdir)
+    tmp = idx + ".tmp"
+    json.dump({str(k): [os.path.basename(p) for p in v] for k, v in got.items()}, open(tmp, "w", encoding="utf-8"))
+    os.replace(tmp, idx)                                    # the index appears only when extraction finished
+    return got
+
+
+def has_pictures(text):
+    return "picture(s)" in text and not re.search(r"has 0 picture\(s\)", text)
+
+
+_IMGS = {}                                                  # "<deck>|<slide>" -> [paths] for slides evidence_for resolved
+
+
 def parse_cite(cite):
     """'Deck.pptx, Slide 12; Other, Slides 3-4' -> [(deck name, [slide numbers])]. The deck name may
     omit its extension; a segment with only 'Slide 5' inherits the previous deck."""
@@ -416,6 +531,15 @@ def evidence_for(q, cache):
         for s_ in slides:
             want.update((s_ - 1, s_, s_ + 1))
         window = sorted(s_ for s_ in want if s_ in allslides)
+        if any(has_pictures(allslides[s_]) for s_ in window):
+            try:
+                imgs = deck_images(path)
+            except Exception as e:                           # a broken picture must not stop the text review
+                print("   (could not extract pictures of %s: %s)" % (os.path.basename(path)[:50], str(e)[:80]))
+                imgs = {}
+            for s_ in window:
+                if imgs.get(s_):
+                    _IMGS["%s|%d" % (os.path.basename(path), s_)] = imgs[s_]
         out.append((os.path.basename(path), window, {s_: allslides[s_] for s_ in window}))
     return out, None
 
@@ -425,6 +549,16 @@ def window_lines(texts):
     joined = qnorm(" ".join(texts))
     lines = {qnorm(l) for t in texts for l in t.split("\n")}
     return joined, lines
+
+
+def image_quote_ok(quote, m):
+    """'[image] <deck>|<slide>' stands for what is clearly visible in that slide's picture. Accepted only when
+    that slide has listed images in the item's manifest entry."""
+    qn = qnorm(quote)
+    if not qn.startswith("[image]"):
+        return False
+    ref = qn[len("[image]"):].strip()
+    return any(qnorm(k) == ref and v for k, v in (m.get("evidence_images") or {}).items())
 
 
 def quote_ok(quote, joined, lines):
@@ -507,9 +641,23 @@ def refuse_inside_repo(out):
                  "Use a directory outside it (e.g. ~/.cache/pa-quizzes/review/<name>).")
 
 
+def ev_images(ev):
+    """{"<deck>|<slide>": [absolute image paths]} for the evidence slides that have extracted pictures."""
+    out = {}
+    for deck, window, _ in ev:
+        for s_ in window:
+            k = "%s|%d" % (deck, s_)
+            if _IMGS.get(k):
+                out[k] = list(_IMGS[k])
+    return out
+
+
 def item_payload(q, ev, pass_, rec):
     d = {"id": q.h, "stem": q.stem, "options": {LETTERS[i]: o[0] for i, o in enumerate(q.opts)},
          "evidence_slides": {deck: window for deck, window, _ in ev}}
+    imgs = ev_images(ev)
+    if imgs:
+        d["evidence_images"] = imgs
     if pass_ == "audit":
         b = blind_of(rec, q.h)
         d["key"] = LETTERS[q.key]
@@ -524,6 +672,34 @@ def item_payload(q, ev, pass_, rec):
     return d
 
 
+def read_ids(path):
+    """Item ids from FILE: a JSON list (strings, or objects with "id") or one id per line (# comments ok)."""
+    txt = open(os.path.expanduser(path), encoding="utf-8").read()
+    try:
+        data = json.loads(txt)
+    except ValueError:
+        data = None
+    if isinstance(data, dict):
+        data = data.get("ids") or list(data)
+    if isinstance(data, list):
+        return [str(x.get("id") if isinstance(x, dict) else x).strip() for x in data if x]
+    return [l.split("#")[0].strip() for l in txt.splitlines() if l.split("#")[0].strip()]    # one id per line
+
+
+def manifest_path(d):
+    """The manifest holds the writer's keys and the slide text, so it lives OUTSIDE the judge-visible export
+    directory: ~/.cache/pa-quizzes/review-manifests/<sha1 of the absolute export path>.json."""
+    return os.path.join(MANIFESTS, hashlib.sha1(os.path.abspath(os.path.expanduser(d)).encode("utf-8")).hexdigest() + ".json")
+
+
+def load_manifest(d):
+    """Cache lookup first; DIR/manifest.json only for directories exported before the move."""
+    for p in (manifest_path(d), os.path.join(d, "manifest.json")):
+        if os.path.exists(p):
+            return json.load(open(p, encoding="utf-8"))
+    sys.exit("no manifest for %s (looked in %s and %s)" % (d, manifest_path(d), os.path.join(d, "manifest.json")))
+
+
 def cmd_export(a):
     refuse_inside_repo(a.out)
     rec = load_records(a.records)
@@ -533,10 +709,20 @@ def cmd_export(a):
         print("UNPARSEABLE (not exported): %s: %s" % (rel, err))
     total = len(qs)
     qs, dup = dedupe(qs)
+    if a.ids:
+        want = read_ids(a.ids)
+        have = {q.h for q in qs}
+        unknown = [i for i in want if i not in have]
+        qs = [q for q in qs if q.h in set(want)]
+        print("--ids: %d id(s) listed, %d found in %s%s" % (len(set(want)), len(qs), a.folder, (" (--files %s)" % a.files) if a.files else ""))
+        if unknown:
+            print("   UNKNOWN id(s), not exported: %s" % ", ".join(unknown[:20]) + (" ..." if len(unknown) > 20 else ""))
+    skipped_nb = 0
     if a.pass_ == "blind":
         pending = [q for q in qs if a.include_reviewed or not blind_of(rec, q.h)]
     else:
         nob = [q for q in qs if not blind_of(rec, q.h)]
+        skipped_nb = len(nob) if a.only_reviewed else 0
         if nob:
             print("REFUSED: %d of %d item(s) have no blind record; the audit pass needs the blind pass first "
                   "(run export/import --pass blind). First few:" % (len(nob), len(qs)))
@@ -545,7 +731,7 @@ def cmd_export(a):
             if not a.only_reviewed:
                 return 1
         pending = [q for q in qs if blind_of(rec, q.h) and (a.include_reviewed or not audit_current(rec, q))]
-    already = len(qs) - len(pending)
+    already = len(qs) - len(pending) - skipped_nb
     if a.sample is not None and len(pending) > a.sample:
         pending = random.Random(a.seed).sample(sorted(pending, key=lambda q: q.h), a.sample)
 
@@ -593,6 +779,7 @@ def cmd_export(a):
                 "key": LETTERS[q.key], "key_text": q.key_text, "ah": q.ah,
                 "item_text": [q.stem] + [o[0] for o in q.opts] + [o[1] for o in q.opts],
                 "evidence": {"%s|%d" % (deck, s): texts[s] for deck, window, texts in ev for s in window},
+                "evidence_images": ev_images(ev),
                 "batch": name}
         batch = {"pass": a.pass_, "prompt_version": PROMPT_VERSION,
                  "instructions": "tools/question_writing/REVIEW_%s.md" % a.pass_.upper(),
@@ -602,13 +789,26 @@ def cmd_export(a):
         json.dump(batch, open(os.path.join(a.out, out_name), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         for it in items:
             manifest["items"][it["id"]]["batch"] = out_name
-    json.dump(manifest, open(os.path.join(a.out, "manifest.json"), "w", encoding="utf-8"), ensure_ascii=False)
-    json.dump(unresolved, open(os.path.join(a.out, "unresolved.json"), "w", encoding="utf-8"), indent=1)
-    os.chmod(os.path.join(a.out, "manifest.json"), 0o600)
+    os.makedirs(MANIFESTS, mode=0o700, exist_ok=True)
+    mp = manifest_path(a.out)
+    json.dump(manifest, open(mp, "w", encoding="utf-8"), ensure_ascii=False)
+    os.chmod(mp, 0o600)
+    legacy = os.path.join(a.out, "manifest.json")
+    if os.path.exists(legacy):
+        os.remove(legacy)                                   # an older export left keys in the judge-visible folder
+    # unresolved.json is judge-visible: id, file, stem and the reason only -- never a key or an explanation
+    json.dump([{k: u[k] for k in ("id", "file", "stem", "why")} for u in unresolved],
+              open(os.path.join(a.out, "unresolved.json"), "w", encoding="utf-8"), indent=1)
     print("scope: %d question(s) read, %d duplicate copy(ies) folded (master reuse), %d unique item(s)"
           % (total, dup, len(qs)))
-    print("exported %d item(s) in %d batch(es) -> %s   (%d already have a current %s record; %d not reviewable: see unresolved.json)"
-          % (len(ready), len(batches), a.out, already, a.pass_, len(unresolved)))
+    skip_note = ("; %d skipped for having no blind record (--only-reviewed)" % skipped_nb) if skipped_nb else ""
+    print("exported %d item(s) in %d batch(es) -> %s   (%d already have a current %s record%s; %d not reviewable: see unresolved.json)"
+          % (len(ready), len(batches), a.out, already, a.pass_, skip_note, len(unresolved)))
+    if _UNCONVERTED:
+        print("   (%d picture(s) could not be converted by sips and are NOT listed, e.g. %s)" % (len(_UNCONVERTED), _UNCONVERTED[0]))
+    nimg = sum(len(v) for q, ev in ready for v in ev_images(ev).values())
+    if nimg:
+        print("pictures: %d image file(s) listed as evidence_images (cached under %s; open them with Read)" % (nimg, IMG_CACHE))
     for u in unresolved[:10]:
         print("   unresolved: %s | %s | %s" % (u["file"], u["stem"][:50], u["why"]))
     return 0
@@ -642,7 +842,9 @@ def check_blind(e, m):
     quote = e.get("quote")
     if pick in tuple(LETTERS) and not norm(quote or ""):
         return None, "a letter pick needs a verbatim quote from the evidence"
-    if norm(quote or "") and not quote_ok(quote, joined, lines):
+    if norm(quote or "") and not quote_ok(quote, joined, lines) and not image_quote_ok(quote, m):
+        if qnorm(quote).startswith("[image]"):
+            return None, "image quote %r: that slide has no listed evidence_images (use '[image] <deck>|<slide>' for a listed slide)" % norm(quote)[:80]
         return None, "quote is not verbatim in the evidence (or under 5 words and not a whole line)"
     r = {"pick": pick, "pick_text": m["letters"].get(pick) if pick in tuple(LETTERS) else None,
          "cover_answer": norm(e["cover_answer"]), "why": why, "quote": norm(quote or "")[:QUOTE_KEEP] or None,
@@ -676,6 +878,8 @@ def check_audit(e, m):
             return None, "every defect needs a verbatim quote (slide text, or the item's own text for an unsupported claim)"
         if quote_ok(d["quote"], joined, lines):
             src = "slide"
+        elif image_quote_ok(d["quote"], m):
+            src = "image"
         elif quote_ok(d["quote"], ijoined, ilines):
             src = "item"
         else:
@@ -685,7 +889,7 @@ def check_audit(e, m):
 
 
 def cmd_import(a):
-    manifest = json.load(open(os.path.join(a.dir, "manifest.json"), encoding="utf-8"))
+    manifest = load_manifest(a.dir)
     if manifest["pass"] != a.pass_:
         sys.exit("manifest in %s is a %s export, not %s" % (a.dir, manifest["pass"], a.pass_))
     if manifest["prompt_version"] != PROMPT_VERSION:
@@ -753,6 +957,7 @@ def cmd_report(a):
     n = len(uq)
     have_b = [q for q in uq if blind_of(rec, q.h)]
     wrong, amb, ins, alts, revise, hold, passed, stale, disagree_pass = [], [], [], [], [], [], [], [], []
+    conflicts, missings = [], []
     for q in have_b:
         b = blind_of(rec, q.h)
         if b["pick"] in LETTERS and norm(b["pick_text"]) != norm(q.key_text):
@@ -763,6 +968,10 @@ def cmd_report(a):
             ins.append(q)
         if b.get("alt"):
             alts.append(q)
+        if b.get("conflict"):
+            conflicts.append(q)
+        if b.get("missing"):
+            missings.append(q)
     for q in have_b:
         a_ = (rec[q.h]["passes"].get("audit"))
         if not a_:
@@ -797,6 +1006,8 @@ def cmd_report(a):
     show("AMBIGUOUS", amb, lambda q: blind_of(rec, q.h)["why"][:90])
     show("INSUFFICIENT", ins, lambda q: (blind_of(rec, q.h).get("missing") or blind_of(rec, q.h)["why"])[:90])
     show("second defensible answer named (alt)", alts, lambda q: "alt %s" % q.letter_of(blind_of(rec, q.h)["alt_text"]))
+    show("blind CONFLICT flagged (slide vs slide, or slide vs established fact)", conflicts, lambda q: blind_of(rec, q.h)["conflict"][:90])
+    show("blind MISSING detail flagged (stem or slides lack something decisive)", missings, lambda q: blind_of(rec, q.h)["missing"][:90])
     show("AUDIT REVISE", revise, lambda q: "; ".join(d["reason"][:50] for d in rec[q.h]["passes"]["audit"]["defects"][:2]))
     show("AUDIT HOLD", hold, lambda q: "; ".join(d["reason"][:50] for d in rec[q.h]["passes"]["audit"]["defects"][:2]))
     show("audit PASS although the blind judge disagreed with the key (read these; agreement/pass is not proof)", disagree_pass)
@@ -804,8 +1015,9 @@ def cmd_report(a):
     print("\nrecords for items no longer on any page: %d" % len(orphans))
     for rel, err in unparse:
         print("UNPARSEABLE %s: %s" % (rel, err))
-    print("report: %d wrong-key suspect(s), %d ambiguous, %d insufficient, %d revise, %d hold of %d unique items "
-          "(%d blind-reviewed)  (exit 0)" % (len(wrong), len(amb), len(ins), len(revise), len(hold), n, len(have_b)))
+    print("report: %d wrong-key suspect(s), %d ambiguous, %d insufficient, %d revise, %d hold, "
+          "%d conflict flag(s), %d missing flag(s) of %d unique items (%d blind-reviewed)  (exit 0)"
+          % (len(wrong), len(amb), len(ins), len(revise), len(hold), len(conflicts), len(missings), n, len(have_b)))
     return 0
 
 
@@ -861,6 +1073,7 @@ def main(argv=None):
     e.add_argument("--seed", type=int, default=1)
     e.add_argument("--size", type=int, default=BATCH)
     e.add_argument("--include-reviewed", action="store_true")
+    e.add_argument("--ids", default=None, help="FILE with item ids (one per line, or a JSON list): export only these; unknown ids are reported")
     e.add_argument("--from", dest="from_dir", default=None, help="audit: reuse the batching/evidence of this blind export dir")
     e.add_argument("--only-reviewed", action="store_true", help="audit: export the items that have a blind record, skip the rest")
     e.add_argument("--out", required=True)
