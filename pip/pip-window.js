@@ -1248,13 +1248,14 @@
       // exam leads on a tie), misspellings fixed first. "From general knowledge": Claude, clearly labelled,
       // only when the class materials fall short (they never define the word, or cover only part of the
       // question). Never "not in your guide" as the whole answer.
-      var FX = null, D = null, L = null, here = c.here || f, text0 = text;
+      var FX = null, D = null, L = null, SCOPE = null, here = c.here || f, text0 = text;
       fixSpelling(text0).then(function (fx) {
         FX = fx; text = fx.text;
         var qx = casual(text);
         D = defineTerm(text); L = listAsk(text);
         examsFor(qx, f).then(function (scope) {
           if (scope.indexOf(f) < 0 && hasGuides(f)) scope = scope.slice(0, 3).concat([f]);   // the active exam is always searched
+          SCOPE = scope;
           (L ? gatherList(L, scope, here) : Promise.resolve(null)).then(function (lst) {
             if (lst) return showList(lst);
             // the guides of those exams AND the student's own notes for the active exam (never another exam's),
@@ -1273,10 +1274,10 @@
         if (D && ex.length && !titleNames(ex[0], D.t) && (!D.bare || (dd && dd.def))) ex = [];
         // a term a guide TEACHES (a heading is about it) gets the usual explanation from its passages; the defining
         // sentence is for words the guides only use ("iatrogenic")
-        if (D && !ex.length && dd && ((dd.def && dd.def.strong) || (!dd.taught && (dd.def || !D.bare)))) return showDefinition(dd, mine);
+        var defn = D && !ex.length && dd && ((dd.def && dd.def.strong) || (!dd.taught && (dd.def || !D.bare)));
         // a card that holds under half of the question's naming words doesn't answer it
-        if (ex.length && !ex.cmp && fullCover(ex, text, true) < 0.5) ex = [];
-        if (ex.cross) {                                 // another exam's answer: only that exam's passages, no notes
+        if (!defn && ex.length && !ex.cmp && fullCover(ex, text, true) < 0.5) ex = [];
+        if (!defn && ex.cross) {                        // another exam's answer: only that exam's passages, no notes
           var xf = ex.map(function (x) { return x._f; });
           out = out.filter(function (r) { return xf.indexOf(r.f) >= 0; }); mine = [];
         }
@@ -1286,9 +1287,18 @@
         // keeps its side-by-side dissection (Claude writes that one too); a comparison with one card or none gets the
         // short answer (Jaxon, 2026-10-15: "difference between a T and P wave" got one infarct card and no Claude)
         var dissect = !ex.cmp && (ex.length >= 2 || (ex.length && !ex.cross && STAND.test(norm(text))));
-        if (!dissect && (ex.length || out.length || mine.length) && (wantsExplanation(text) || D))
-          return askAnswer(text, candidates(out, mine, ex), rest);
-        rest();
+        // the usual answer; tried: Claude already had this question with the whole guide, so no second ask
+        var classic = function (tried) {
+          if (defn) return showDefinition(dd, mine);
+          if (!tried && !dissect && (ex.length || out.length || mine.length) && (wantsExplanation(text) || D))
+            return askAnswer(text, candidates(out, mine, ex), rest);
+          rest();
+        };
+        // Jaxon, 2026-10-15 ("do whatever to actually make pip useful"): every real question goes to Claude WITH THE
+        // WHOLE STUDY GUIDE of the exam it is about, so a wrong pick by the word search can't sink the answer (his
+        // "difference between a T and P wave" got an infarct card). Pip's picks go along as candidates and hints.
+        if (wantsExplanation(text) || D) return askGuide(text, out, mine, ex, dd, defn, classic);
+        classic(false);
         function rest() {
           if (ex.length) return explained(out, mine, ex);
           if (!out.length && !mine.length) {
@@ -1403,6 +1413,85 @@
         scrollTo(lead);
         if (fullCover(ex, text) < SHORT_OF && wantsExplanation(text))
           general(text, [{ title: ex[0].t, text: ex[0].x }], cf, "Pip's explanation covers only part of this, so I asked Claude.");
+      }
+      // the exam whose guide Claude reads: the definition's, else the best card's, else the best passage's, else the exam
+      // whose guide holds the question's words, else this page's
+      function guideExam(out, ex, dd, defn) {
+        var pick = defn && dd.def ? dd.def.src.f : ex.length ? (ex[0]._f || f) : out.length ? out[0].f : (SCOPE || []).filter(hasGuides)[0];
+        return pick && hasGuides(pick) ? pick : hasGuides(f) ? f : null;
+      }
+      // Pip's best guide lines in that exam (their numbers in its guide data): a card's section, then the passages found
+      function hintsFor(g, gf, out, ex) {
+        var hs = [];
+        ex.forEach(function (c) {
+          if ((c._f || f) !== gf || !c.a) return;
+          for (var i = 0; i < g.b.length; i++) if (g.b[i][1] === c.a && g.docs[g.b[i][0]].file === c.doc) { hs.push(i); break; }
+        });
+        out.forEach(function (r) { if (r.f === gf) { var i = r.g.b.indexOf(r.b); if (i >= 0) hs.push(i); } });
+        return uniq(hs).slice(0, 12);
+      }
+      function askGuide(q, out, mine, ex, dd, defn, fallback) {
+        var gf = guideExam(out, ex, dd, defn);
+        if (!gf) return fallback(false);
+        claudeUsable(q, f).then(function (ok) {
+          if (!ok || !claudeRoom("answer")) return fallback(false);
+          Promise.all([superbrain(), guideIndex(gf).catch(function () { return null; })]).then(function (r0) {
+            var S = r0[0], g = r0[1];
+            if (!S) return fallback(false);
+            var cands = candidates(out, mine, ex);
+            if (defn && dd.def && cands.length < 6) cands.push({ title: dd.def.src.head, text: dd.def.s, f: dd.def.src.f, short: dd.def.src.head,
+              link: function () { return linkTo(dd.def.src.f.f, dd.def.src.file, dd.def.src.a, "Read it in your guide: " + dd.def.src.head + " \u2192", dd.def.src.text || ""); },
+              full: function (into) { var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, dd.def.src.head)); c2.appendChild(el("p", "pw-quote", dd.def.s)); into.appendChild(c2); } });
+            var ps = cands.map(function (c) { return { title: c.title, text: c.text, note: !!c.note }; });
+            var priv = isPrivate(ps), k = cacheKey("guide", q + "|" + cands.map(function (c) { return c.title; }).join("|"), gf, priv), hit = cached(k, priv);
+            if (hit) return renderGuide(hit, cands, gf, null, fallback);
+            var wait = el("div", "pw-msg pw-pip pw-brain", "Let me read your guide\u2026"); log.appendChild(wait); scrollDown();
+            var db = deviceBudget(); db.n++; set(K_CDAY, JSON.stringify(db)); lastClaudeAt = Date.now();
+            count("claude_ask");
+            var duet = P.duet && P.duet.start();
+            S.ask({ question: q, mode: "guide", passages: ps, exam: { title: gf.t, folder: gf.f, slug: gf.s }, hints: g ? hintsFor(g, gf, out, ex) : [], private: priv }).then(function (r) {
+              var go = function () {
+                wait.remove();
+                if (!r.ok) {
+                  count(/^(user_|day_|month_)/.test(r.code || "") ? "fallback" : "error");
+                  // a helper without guide mode yet, or an exam it has no guide for: the usual answer may still ask Claude
+                  return fallback(!/^(bad_mode|bad_exam|bad_hints|unknown_field|no_guide)$/.test(r.code || ""));
+                }
+                remember(k, r, priv);
+                renderGuide(r, cands, gf, r, fallback);
+              };
+              if (duet) P.duet.finish(!!r.ok, go); else go();
+            });
+          });
+        });
+      }
+      // Claude's answer in mode "guide": "Used:" names guide lines ([n], sent back by the helper as cites: doc, anchor,
+      // heading, text) and Pip's candidates (plain numbers), in its order; lines of one section share one link
+      function renderGuide(r, cands, gf, rr, fallback) {
+        var a = parseAnswer(r.answer, cands.length), byN = {}, all = [], seen = {};
+        (r.cites || []).forEach(function (c) { byN[c.n] = c; });
+        (a.refs || []).forEach(function (t) {
+          if (t.cand) { var c0 = cands[t.cand - 1]; if (c0 && all.indexOf(c0) < 0) all.push(c0); return; }
+          var c = byN[t.line]; if (!c) return;
+          var key = c.doc + "#" + c.a;
+          if (seen[key]) { seen[key].text += " \u2026 " + c.t; return; }
+          all.push(seen[key] = citeCand(c, gf));
+        });
+        if (a.used === null && !all.length) all = cands.slice(0, 1);
+        if (!all.length && !a.general) return fallback(true);
+        renderAnswer({ used: all.map(function (x, i) { return i + 1; }), body: a.body, general: a.general }, all, rr, function () { fallback(true); });
+      }
+      function citeCand(c, gf) {
+        var head = c.i || String(c.h || "").split(" \u203a ").pop().split("\u2605")[0].replace(/^[\d.]+\s*\u00b7\s*/, "").replace(/^objectives?\s+[a-z\d&,\s\u2013-]+\s*\u2014\s*/i, "").trim() || gf.t;
+        if (head.length > 80) head = head.slice(0, head.lastIndexOf(" ", 77)) + "\u2026";
+        var o = { title: c.h, text: c.t, f: gf, short: head };
+        o.link = function (long) { return linkTo(gf.f, c.doc, c.a, "Read it in your guide: " + (long ? c.h : head) + " \u2192", c.t); };
+        o.full = function (into) {
+          var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, c.h));
+          c2.appendChild(el("div", "pw-src", gf.t + " \u00b7 Study guide"));
+          c2.appendChild(snippet(o.text, text)); c2.appendChild(linkTo(gf.f, c.doc, c.a, null, c.t)); into.appendChild(c2);
+        };
+        return o;
       }
       // the search's candidates for Claude to choose from: Pip's cards (the match and the next best), then guide
       // lines, then at most one of the student's own note passages (private: never cached for the class); six at most
@@ -2291,13 +2380,20 @@
     var lines = String(raw || "").replace(/\r/g, "").split("\n"), used = null;
     while (lines.length && !lines[0].trim()) lines.shift();
     var m = lines.length && lines[0].match(/^\s*\**used\**:\s*(.*)$/i);
+    var refs = [];
     if (m) {
       lines.shift();
-      used = /none/i.test(m[1]) ? [] : uniq((m[1].match(/\d+/g) || []).map(Number).filter(function (x) { return x >= 1 && x <= n; }));
+      // mode "guide": "[123]" is a line of the study guide, a plain number one of Pip's candidates (in the order written)
+      m[1].replace(/\[\s*(\d+)\s*\]|(\d+)/g, function (all, ln, cn) {
+        if (ln) refs.push({ line: +ln }); else if (+cn >= 1 && +cn <= n) refs.push({ cand: +cn });
+        return all;
+      });
+      used = /none/i.test(m[1]) ? [] : uniq(refs.filter(function (t) { return t.cand; }).map(function (t) { return t.cand; }));
+      if (/none/i.test(m[1])) refs = [];
     }
     var body = lines.join("\n").trim(), gen = "", gi = body.search(/(^|\n)\s*\**general\**:/i);
     if (gi >= 0) { gen = body.slice(gi).replace(/^\s*\**general\**:\s*/i, "").trim(); body = body.slice(0, gi).trim(); }
-    return { used: used, body: body, general: gen };
+    return { used: used, body: body, general: gen, refs: refs };
   }
   function paras(into, text) {                     // plain lines as paragraphs, "- " lines as a list (text only, never HTML)
     var list = null;
@@ -2729,8 +2825,10 @@
     return e && Date.now() - e.t < 14 * 864e5 ? e : null;
   }
   function remember(k, r, priv) {
-    if (priv) { privCache[k] = { t: Date.now(), answer: r.answer, mode: r.mode }; return; }
-    var c = jget(K_CCACHE, {}); c[k] = { t: Date.now(), answer: r.answer, mode: r.mode };
+    var e = { t: Date.now(), answer: r.answer, mode: r.mode };
+    if (r.cites && r.cites.length) e.cites = r.cites;   // mode "guide": where the lines it used are
+    if (priv) { privCache[k] = e; return; }
+    var c = jget(K_CCACHE, {}); c[k] = e;
     var ks = Object.keys(c).sort(function (a, b) { return c[b].t - c[a].t; }); ks.slice(40).forEach(function (x) { delete c[x]; });
     set(K_CCACHE, JSON.stringify(c));
   }

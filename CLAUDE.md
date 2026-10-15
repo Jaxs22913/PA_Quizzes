@@ -40,8 +40,10 @@ Session state (in-progress work, decisions, exam dates) is in the newest folder 
 theme.js page, plus five self-contained Semester 2 pages with their own loader; never the 11 frozen
 self-contained Semester 1 files). Behaviour rules: memory `pip_behavior_rule.md`; current work:
 `pip_overhaul_next.md`. In short: paused on an open quiz question; for a student who can use Claude, every real
-question gets a 2-4 sentence answer Claude writes from the search's candidates (helper mode "answer", Haiku,
-"Used:" names the cards/lines it drew on, which Pip links; the usual answer is the fallback); answers come in two
+question gets a short answer Claude writes after reading the WHOLE study guide of the exam it is about (helper
+mode "guide", Haiku 5.5; the helper fetches the public pip/data/guide/<slug>.json, numbers its lines, caches it
+for an hour; "Used: [n]" names the lines, sent back as cites that Pip links; the search's picks go along as
+candidates and hints; the usual answer is the fallback, mode "answer" when guide mode isn't there); answers come in two
 labelled parts, "From your
 class" (his checked cards in `pip/explain/<exam>.json`, guide passages from every exam that holds the
 question's words, misspellings fixed, definitions, "the X of each Y" lists, compare dissections) and "From

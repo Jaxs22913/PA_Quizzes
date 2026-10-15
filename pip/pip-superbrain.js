@@ -66,13 +66,21 @@
   }
   function ask(q) {
     // the server enforces the same limits; trimming here keeps a long passage from failing the request
-    var ps = (q.passages || []).slice(0, q.mode === "answer" ? 6 : 4);   // "answer": the search's candidates, for Claude to choose from
+    var many = q.mode === "answer" || q.mode === "guide";
+    var ps = (q.passages || []).slice(0, many ? 6 : 4);   // "answer"/"guide": the search's candidates, for Claude to choose from
     var body = {
       question: clip(q.question, 500),
       exam: { title: clip(q.exam && q.exam.title, 120), folder: clip(q.exam && q.exam.folder, 120) },
       passages: ps.map(function (p) { return { title: clip(p.title, 200), text: clip(p.text, 1200) }; }),
       mode: q.mode
     };
+    // "guide": the helper reads that exam's whole study guide (public, from this site); hints are the guide lines
+    // Pip's search ranked highest (they pick the volume of a big guide)
+    if (q.mode === "guide") {
+      body.exam.slug = String(q.exam && q.exam.slug || "").slice(0, 100);
+      var hs = (q.hints || []).filter(function (n) { return n === (n | 0) && n >= 0 && n < 100000; }).slice(0, 12);
+      if (hs.length) body.hints = hs;
+    }
     // Teach Pip: when any passage comes from the student's own notes the ask is private, and
     // the server keeps it out of the answer cache it shares with the class
     if (q.private === true || ps.some(function (p) { return p && p.note; })) body.private = true;
