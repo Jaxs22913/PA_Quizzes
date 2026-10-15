@@ -1764,6 +1764,9 @@ html.gnote-placing body > .wrap, html.gnote-placing body > .wrap * { cursor: cro
   .hl-panel-jump, .hl-panel-delete { min-height: 44px; min-width: 44px; }
 }
 @media print {
+  /* 2026-10-15: browsers print with "background graphics" off by default, which dropped every highlight
+     from the paper (checked in a Chrome PDF); a highlight is the student's own mark, so its color prints */
+  mark.user-hl { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .gnote { background: #fff !important; color: #000 !important; border: 1px solid #555 !important; border-left: 3px solid #000 !important; box-shadow: none !important; }
   .gnote::before { background: #000 !important; }
   .hl-toolbar, .hl-note-popover { display: none !important; }
@@ -1970,6 +1973,31 @@ mark.user-hl.hl-flash {
   text-align: center;
   pointer-events: none;
 }
+/* A toast with one action button, e.g. "Note deleted · Undo" (2026-10-15, window.showToast's third
+   argument). Clickable only while it shows; theme.js takes the button out of reach as it fades. */
+#site-toast.has-action {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 6px 18px;
+  text-align: left;
+}
+#site-toast .site-toast-btn {
+  font: inherit;
+  color: #fff;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 999px;
+  padding: 5px 14px;
+  min-height: 32px;
+  cursor: pointer;
+  flex: none;
+}
+#site-toast .site-toast-btn:hover { background: rgba(255, 255, 255, .24); }
+#site-toast .site-toast-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (pointer: coarse) { #site-toast .site-toast-btn { min-height: 44px; padding: 0 16px; } }
+@media print { #site-toast { display: none !important; } }
 
 /* Freehand stylus/Apple Pencil drawing layer (guide-ink.js, added
    2026-07-14). #guide-ink-svg spans the guide's full scroll height (set/
