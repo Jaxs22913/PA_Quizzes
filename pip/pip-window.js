@@ -562,6 +562,7 @@
     "#pip-win .pw-part{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5b6687;margin:12px 2px -2px}",
     "#pip-win .pw-fixed{display:block;font-weight:400;letter-spacing:0;text-transform:none;font-size:12px;margin-top:2px}",
     "#pip-win .pw-deflead{font-weight:700}#pip-win .pw-explain li a{display:inline;margin-top:0;font-weight:500}",
+    "#pip-win .pw-alinks{margin-top:4px}#pip-win .pw-alinks a,#pip-win .pw-alinks span{display:block;margin-top:6px}#pip-win .pw-left{margin:2px 4px 0;text-align:right}",
     "#pip-win .pw-explain .pw-lbl{display:block;margin-top:6px;font-size:11.5px;color:#5b6687}html[data-theme=dark] #pip-win .pw-explain .pw-lbl{color:#9fb0d6}",
     "#pip-win .pw-explain .pw-quote{border-left:3px solid rgba(30,57,116,.25);padding-left:9px;margin-top:6px;color:#33405f}",
     "html[data-theme=dark] #pip-win .pw-part{color:#9fb0d6}html[data-theme=dark] #pip-win .pw-explain .pw-quote{color:#d3ddf5;border-left-color:rgba(201,216,250,.35)}",
@@ -1275,64 +1276,74 @@
           var xf = ex.map(function (x) { return x._f; });
           out = out.filter(function (r) { return xf.indexOf(r.f) >= 0; }); mine = [];
         }
-        if (ex.length) return explained(out, mine, ex);
-        if (!out.length && !mine.length) {
-          count("fallback");
-          classHead();
-          if (!hasGuides(f) && !out.length) say(f.t + " doesn't have a study guide yet, and I didn't find this in your other guides.");
-          else say("I didn't find this in your guides. If I missed it, try other words, like the name of the condition, drug or test.");
-          var none = c.here ? [] : [["Switch exam", function () { switchExam(); }]];
-          chips(none);
-          ownerChips(none, [["Ask Claude (beyond your guide)", function () { askClaude(text, "beyond", [], f, "You asked me to check with Claude."); }]]);
-          // a real question only: a lookup ("where is ...", "find ...") wants a place, never Claude
-          if (wantsExplanation(text) || D) general(text, [], f, "Your class materials don't cover this, so I asked Claude.");
-          return;
-        }
-        var lead = null;
-        if (out.length) {
-          classHead();
-          whereLine(uniq(out.map(function (r) { return r.f; })));
-          lead = say("Your guide's exact words:");
-          out.forEach(function (r) {
-            var doc = r.g.docs[r.b[0]], c2 = card();
-            c2.appendChild(el("h4", null, r.b[2] || doc.title));
-            c2.appendChild(el("div", "pw-src", r.f.t + " · " + (doc.kind === "cram" ? "Cram sheet" : "Study guide")));
-            c2.appendChild(snippet(r.b[3], r.q2 || text));
-            c2.appendChild(linkTo(r.f.f, doc.file, r.b[1], null, r.b[3]));
+        // Pip's own short answer to THIS question, written with Claude from the candidates the search found (Jaxon,
+        // 2026-10-15: "reword and give a short run down to answer the students question"). The usual answer is the
+        // fallback (no Claude for this student, out of asks, the helper down) and stays the answer for lookups and
+        // comparisons (they get their side-by-side dissection)
+        var cmpQ = (ex.length >= 2 && !ex.cmp) || COMPARE.test(norm(text)) || STAND.test(norm(text));
+        if (!cmpQ && (ex.length || out.length || mine.length) && (wantsExplanation(text) || D))
+          return askAnswer(text, candidates(out, mine, ex), rest);
+        rest();
+        function rest() {
+          if (ex.length) return explained(out, mine, ex);
+          if (!out.length && !mine.length) {
+            count("fallback");
+            classHead();
+            if (!hasGuides(f) && !out.length) say(f.t + " doesn't have a study guide yet, and I didn't find this in your other guides.");
+            else say("I didn't find this in your guides. If I missed it, try other words, like the name of the condition, drug or test.");
+            var none = c.here ? [] : [["Switch exam", function () { switchExam(); }]];
+            chips(none);
+            ownerChips(none, [["Ask Claude (beyond your guide)", function () { askClaude(text, "beyond", [], f, "You asked me to check with Claude."); }]]);
+            // a real question only: a lookup ("where is ...", "find ...") wants a place, never Claude
+            if (wantsExplanation(text) || D) general(text, [], f, "Your class materials don't cover this, so I asked Claude.");
+            return;
+          }
+          var lead = null;
+          if (out.length) {
+            classHead();
+            whereLine(uniq(out.map(function (r) { return r.f; })));
+            lead = say("Your guide's exact words:");
+            out.forEach(function (r) {
+              var doc = r.g.docs[r.b[0]], c2 = card();
+              c2.appendChild(el("h4", null, r.b[2] || doc.title));
+              c2.appendChild(el("div", "pw-src", r.f.t + " · " + (doc.kind === "cram" ? "Cram sheet" : "Study guide")));
+              c2.appendChild(snippet(r.b[3], r.q2 || text));
+              c2.appendChild(linkTo(r.f.f, doc.file, r.b[1], null, r.b[3]));
+            });
+          }
+          if (mine.length) {
+            if (!out.length) classHead();
+            var nl = out.length ? null : say("I didn't find that in your guides, but your notes mention it:");
+            if (!lead) lead = nl;
+            mine.forEach(noteCard);
+          }
+          var guideP = out.map(function (r) { return { title: r.b[2] || "", text: r.b[3] }; });
+          var noteP = mine.map(notePassage);
+          // what may go to Claude: the guide's passages first, then at most two note passages,
+          // within the server's limit of four (a private ask the server never shares)
+          var passages = guideP.slice(0, 3).concat(noteP.slice(0, Math.min(2, 4 - Math.min(3, guideP.length))));
+          var from = !noteP.length ? "Your guide's passages don't" : !guideP.length ? "Your notes don't" : "Your guide and notes don't";
+          var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
+          chips(base);
+          ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, f, "You asked me to check with Claude."); }],
+                            ["Go deeper with Claude", function () { askClaude(text, "deeper", passages, f, "You asked Claude to go deeper."); }]]);
+          // Own words first (Jaxon, 2026-10-11): Pip's summary or Claude's answer goes ABOVE the guide's exact
+          // words, with a "Read it in your guide" link under it to the top passage it was built from
+          var topLink = out.length ? { folder: out[0].f.f, file: out[0].g.docs[out[0].b[0]].file, a: out[0].b[1] } : null;
+          var place = { before: lead, note: null };
+          passages.link = topLink; passages.place = place;
+          lastAsk = { q: text, passages: passages, f: f, t: Date.now() };
+          brainAfter(text, guideP.concat(noteP), lead, !noteP.length ? "your guide" : !guideP.length ? "your notes" : "your guide and notes", topLink).then(function (got) {
+            // Pip decides: his own checked summary is enough; otherwise a real question (not a lookup)
+            // goes to Claude for a plain-language explanation
+            if (got === "summary" || !wantsExplanation(text)) return;
+            // no own words yet: say so, and the note goes when Claude's answer lands above the guide's words
+            // the passages cover only part of the question: general knowledge fills the gap (one Claude ask, not two)
+            if (passCover(out, text) < SHORT_OF) { general(text, passages, f, "Your guide covers only part of this, so I asked Claude."); return; }
+            if (lead && lead.parentNode === log) { place.note = el("div", "pw-msg pw-pip", "I can't put this in my own words right now, so here is the exact wording from your guide."); log.insertBefore(place.note, lead); }
+            maybeClaude(text, "explain", passages, f, "I asked Claude to explain this in plain words.");
           });
         }
-        if (mine.length) {
-          if (!out.length) classHead();
-          var nl = out.length ? null : say("I didn't find that in your guides, but your notes mention it:");
-          if (!lead) lead = nl;
-          mine.forEach(noteCard);
-        }
-        var guideP = out.map(function (r) { return { title: r.b[2] || "", text: r.b[3] }; });
-        var noteP = mine.map(notePassage);
-        // what may go to Claude: the guide's passages first, then at most two note passages,
-        // within the server's limit of four (a private ask the server never shares)
-        var passages = guideP.slice(0, 3).concat(noteP.slice(0, Math.min(2, 4 - Math.min(3, guideP.length))));
-        var from = !noteP.length ? "Your guide's passages don't" : !guideP.length ? "Your notes don't" : "Your guide and notes don't";
-        var base = [["Quiz me on this", function () { topicPractice(f, text); }]];
-        chips(base);
-        ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", passages, f, "You asked me to check with Claude."); }],
-                          ["Go deeper with Claude", function () { askClaude(text, "deeper", passages, f, "You asked Claude to go deeper."); }]]);
-        // Own words first (Jaxon, 2026-10-11): Pip's summary or Claude's answer goes ABOVE the guide's exact
-        // words, with a "Read it in your guide" link under it to the top passage it was built from
-        var topLink = out.length ? { folder: out[0].f.f, file: out[0].g.docs[out[0].b[0]].file, a: out[0].b[1] } : null;
-        var place = { before: lead, note: null };
-        passages.link = topLink; passages.place = place;
-        lastAsk = { q: text, passages: passages, f: f, t: Date.now() };
-        brainAfter(text, guideP.concat(noteP), lead, !noteP.length ? "your guide" : !guideP.length ? "your notes" : "your guide and notes", topLink).then(function (got) {
-          // Pip decides: his own checked summary is enough; otherwise a real question (not a lookup)
-          // goes to Claude for a plain-language explanation
-          if (got === "summary" || !wantsExplanation(text)) return;
-          // no own words yet: say so, and the note goes when Claude's answer lands above the guide's words
-          // the passages cover only part of the question: general knowledge fills the gap (one Claude ask, not two)
-          if (passCover(out, text) < SHORT_OF) { general(text, passages, f, "Your guide covers only part of this, so I asked Claude."); return; }
-          if (lead && lead.parentNode === log) { place.note = el("div", "pw-msg pw-pip", "I can't put this in my own words right now, so here is the exact wording from your guide."); log.insertBefore(place.note, lead); }
-          maybeClaude(text, "explain", passages, f, "I asked Claude to explain this in plain words.");
-        });
       }
       // Pip has his own checked explanation: it leads, then the single best line from the guide (its
       // exact words), then notes. Claude is not called; "I still don't get it" or "why?" can call him.
@@ -1387,6 +1398,110 @@
         scrollTo(lead);
         if (fullCover(ex, text) < SHORT_OF && wantsExplanation(text))
           general(text, [{ title: ex[0].t, text: ex[0].x }], cf, "Pip's explanation covers only part of this, so I asked Claude.");
+      }
+      // the search's candidates for Claude to choose from: Pip's cards (the match and the next best), then guide
+      // lines, then at most one of the student's own note passages (private: never cached for the class); six at most
+      function candidates(out, mine, ex) {
+        var cs = [], seen = {};
+        ex.concat(ex.alt || []).forEach(function (c) {
+          var cf = c._f || f, k = cf.s + "|" + c.id;
+          if (seen[k] || cs.length >= 3) return; seen[k] = 1;
+          cs.push({ title: c.t, text: c.x, f: cf,
+            link: function (long) { return linkTo(cf.f, c.doc, c.a, "Read " + (long ? c.t : shortT(c)) + " in your guide \u2192"); }, short: shortT(c),
+            full: function (into) { explainBubble(c, f, into); } });
+        });
+        out.forEach(function (r) {
+          if (cs.length >= 5) return;
+          var doc = r.g.docs[r.b[0]], head = (r.b[2] || doc.title) + (r.b[5] ? " \u203a " + r.b[5] : "");
+          cs.push({ title: head, text: r.b[3], f: r.f,
+            link: function () { return linkTo(r.f.f, doc.file, r.b[1], "Read it in your guide: " + headOf(r.b, r.g) + " \u2192", r.b[3]); },
+            full: function (into) {
+              var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, r.b[2] || doc.title));
+              c2.appendChild(el("div", "pw-src", r.f.t + " \u00b7 " + (doc.kind === "cram" ? "Cram sheet" : "Study guide")));
+              c2.appendChild(snippet(r.b[3], r.q2 || text)); c2.appendChild(linkTo(r.f.f, doc.file, r.b[1], null, r.b[3])); into.appendChild(c2);
+            } });
+        });
+        mine.slice(0, 1).forEach(function (r) {
+          var np = notePassage(r);
+          cs.push({ title: np.title, text: np.text, note: true, f: f,
+            link: function () { return el("span", "pw-src", "From your notes: " + r.it.name); },
+            full: function (into) { var c2 = el("div", "pw-card pw-note"); c2.appendChild(el("h4", null, "From your notes"));
+                                    c2.appendChild(snippet(r.it.text, r.q2)); into.appendChild(c2); } });
+        });
+        return cs.slice(0, 6);
+      }
+      // ask Claude (mode "answer") once the student can use him and has asks left; else the usual answer (fallback)
+      function askAnswer(q, cands, fallback) {
+        if (!cands.length) return fallback();
+        claudeUsable(q, f).then(function (ok) {
+          if (!ok || !claudeRoom("answer")) return fallback();
+          var ps = cands.map(function (c) { return { title: c.title, text: c.text, note: !!c.note }; });
+          var priv = isPrivate(ps), k = cacheKey("answer", q + "|" + cands.map(function (c) { return c.title; }).join("|"), f, priv), hit = cached(k, priv);
+          if (hit) return renderAnswer(parseAnswer(hit.answer, cands.length), cands, null, fallback);
+          superbrain().then(function (S) {
+            if (!S) return fallback();
+            var wait = el("div", "pw-msg pw-pip pw-brain", "Let me think about that\u2026"); log.appendChild(wait); scrollDown();
+            var db = deviceBudget(); db.n++; set(K_CDAY, JSON.stringify(db)); lastClaudeAt = Date.now();
+            count("claude_ask");
+            var duet = P.duet && P.duet.start();
+            S.ask({ question: q, mode: "answer", passages: ps.map(function (p) { return { title: p.title, text: p.text, note: p.note || undefined }; }),
+                    exam: { title: f.t, folder: f.f }, private: priv }).then(function (r) {
+              var go = function () {
+                wait.remove();
+                var a = r.ok ? parseAnswer(r.answer, cands.length) : null;
+                if (!a || (!a.body && !a.general)) {
+                  if (!r.ok) count(/^(user_|day_|month_)/.test(r.code || "") ? "fallback" : "error");
+                  return fallback();
+                }
+                remember(k, r, priv);
+                renderAnswer(a, cands, r, fallback);
+              };
+              if (duet) P.duet.finish(!!r.ok, go); else go();
+            });
+          });
+        });
+      }
+      function renderAnswer(a, cands, r, fallback) {
+        // "Used: none" with nothing general to say is no answer: the usual one instead
+        var used = a.used === null ? [cands[0]] : a.used.map(function (i) { return cands[i - 1]; }).filter(Boolean);
+        if (!used.length && !a.general) return fallback();
+        count("explain_card");
+        var top = classHead(), lead = null;
+        if (used.length && a.body) {
+          whereLine(uniq(used.map(function (c) { return c.f; })));
+          lead = el("div", "pw-msg pw-pip pw-explain pw-answer");
+          if (used.some(function (c) { return c.note; })) lead.classList.add("pw-private");
+          paras(lead, a.body);
+          lead.appendChild(el("span", "pw-lbl", "Pip's answer from your class materials, put into words with Claude. The guide is the source."));
+          var links = el("div", "pw-alinks");
+          used.forEach(function (c) {                  // two cards with one short name ("Aortic stenosis") get their full titles
+            links.appendChild(c.link(c.short && used.filter(function (o) { return o.short === c.short; }).length > 1));
+          });
+          lead.appendChild(links);
+          log.appendChild(lead); helpful(lead);
+          var more = el("details", "pw-more");
+          more.appendChild(el("summary", null, "Full explanation and your guide's exact words"));
+          used.forEach(function (c) { c.full(more); });
+          log.appendChild(more);
+        } else say("Your guides don't answer this directly.");
+        if (a.general) {
+          log.appendChild(el("div", "pw-part", "From general knowledge"));
+          var g = card(); g.classList.add("pw-claude", "pw-general");
+          var head = el("div", "pw-chead"); head.appendChild(el("b", null, "Claude")); head.appendChild(el("span", "pw-badge", "Not from your class materials"));
+          g.appendChild(head); paras(g, a.general);
+          g.appendChild(el("div", "pw-src", "Claude can make mistakes. For your exam, your guide is the source."));
+          if (!lead) helpful(g);
+        }
+        if (r && typeof r.remainingToday === "number") log.appendChild(el("div", "pw-src pw-left", r.remainingToday + " Claude question" + (r.remainingToday === 1 ? "" : "s") + " left today."));
+        var c0 = used.filter(function (c) { return !c.note; })[0];
+        lastAsk = { q: text, passages: used.map(function (c) { return { title: c.title, text: c.text, note: c.note }; }), f: c0 ? c0.f : f, t: Date.now() };
+        var base = c0 && !(PAST[c0.f.s] && c0.f !== f) ? [["Quiz me on this", function () { topicPractice(c0.f, text); }]] : [];
+        chips(base);
+        var ps0 = lastAsk.passages.slice(0, 4);
+        ownerChips(base, [["Ask Claude to explain", function () { askClaude(text, "explain", ps0, lastAsk.f, "You asked me to check with Claude."); }],
+                          ["Go deeper with Claude", function () { askClaude(text, "deeper", ps0, lastAsk.f, "You asked Claude to go deeper."); }]]);
+        input.placeholder = "Still fuzzy? Say which part, or ask \u201cwhy?\u201d";
+        scrollLead(top);
       }
       // "From your class", with "I read X as Y" when a misspelling was fixed
       function classHead() {
@@ -1756,6 +1871,8 @@
         }
       }
       out.cov = coverOf(e, out, text, ab);
+      // the next best cards about something the question names: candidates for Claude's short answer to choose from
+      out.alt = hits.slice(1, 5).map(function (h) { return e.cards[h[1]]; }).filter(function (c) { return out.indexOf(c) < 0; }).slice(0, 2);
       return out;
     }).catch(function () { return []; });
   }
@@ -1839,7 +1956,7 @@
           }
         }
         var w = r[0];
-        if (w && w.f !== f && w.h.length) { var o = w.h.slice(); o.m = w.h.m; o.cmp = w.h.cmp; o.cross = 1; o.cov = w.cov; return o; }
+        if (w && w.f !== f && w.h.length) { var o = w.h.slice(); o.m = w.h.m; o.cmp = w.h.cmp; o.cross = 1; o.cov = w.cov; o.alt = w.h.alt; return o; }
         return home;
       });
     }).catch(function () { return []; });
@@ -2134,6 +2251,29 @@
       });
     });
   }
+  // Claude's "answer" reply: "Used: 2, 1" (the candidates it answered from; null when the line is missing), the answer,
+  // and an optional "General:" paragraph for what the candidates don't cover
+  function parseAnswer(raw, n) {
+    var lines = String(raw || "").replace(/\r/g, "").split("\n"), used = null;
+    while (lines.length && !lines[0].trim()) lines.shift();
+    var m = lines.length && lines[0].match(/^\s*\**used\**:\s*(.*)$/i);
+    if (m) {
+      lines.shift();
+      used = /none/i.test(m[1]) ? [] : uniq((m[1].match(/\d+/g) || []).map(Number).filter(function (x) { return x >= 1 && x <= n; }));
+    }
+    var body = lines.join("\n").trim(), gen = "", gi = body.search(/(^|\n)\s*\**general\**:/i);
+    if (gi >= 0) { gen = body.slice(gi).replace(/^\s*\**general\**:\s*/i, "").trim(); body = body.slice(0, gi).trim(); }
+    return { used: used, body: body, general: gen };
+  }
+  function paras(into, text) {                     // plain lines as paragraphs, "- " lines as a list (text only, never HTML)
+    var list = null;
+    String(text || "").split(/\n+/).forEach(function (line) {
+      line = line.trim(); if (!line) return;
+      var m = line.match(/^(?:[-\u2022*]|\d+[.)])\s+(.*)$/);
+      if (m) { if (!list) { list = el("ul"); into.appendChild(list); } list.appendChild(el("li", null, m[1])); }
+      else { list = null; into.appendChild(el("p", null, line)); }
+    });
+  }
   // "From general knowledge" (Jaxon, 2026-10-15): Claude, labelled "not from your class materials", only when the
   // class materials fall short; the passages Pip did find go along so Claude fills the gap instead of repeating
   // them. Lookups never; every usual limit applies (maybeClaude).
@@ -2211,7 +2351,8 @@
     for (var n = me.nextElementSibling; n; n = n.nextElementSibling) {
       if (n.classList.contains("pw-me")) break;
       if (n.classList.contains("pw-note") || n.classList.contains("pw-private") || n.querySelector(".pw-note, .pw-private")) return null;
-      if (n.classList.contains("pw-general")) kind = "general"; else if (n.classList.contains("pw-claude") && kind === "pip") kind = "claude";
+      if (n.classList.contains("pw-general")) kind = "general";
+      else if ((n.classList.contains("pw-claude") || n.classList.contains("pw-answer")) && kind === "pip") kind = "claude";
       var c = n.cloneNode(true);
       Array.prototype.forEach.call(c.querySelectorAll(".pw-help, .pw-fb, button, form, textarea"), function (x) { x.remove(); });
       var t = c.textContent.replace(/\s+/g, " ").trim(); if (t) parts.push(t);
@@ -2522,7 +2663,8 @@
   //     right after an answer;
   //   - the guide has nothing, but the question uses this exam's own words ("beyond").
   // Never for lookups, chit-chat, repeats (answers are remembered), or other classes; at most
-  // 12 a day on this device and one every 20 seconds, on top of the server's caps.
+  // 40 a day on this device (the helper allows 40 per student since 2026-10-15, when every question got a short answer
+  // written with Claude) and one every 3 seconds (20 for the costlier "deeper" and "beyond"), on top of the server's caps.
   var followFrom = null;                         // the answer a follow-up is about (kept for a retry after the cooldown)
   var lastAsk = null, K_CDAY = "local:pip:claude:day", K_CCACHE = "local:pip:claude:cache", K_CNO = "local:pip:claude:no";
   // a follow-up is a short reply to the last answer ("why?", "I still don't get it"), never a new
@@ -2603,10 +2745,12 @@
   function cantClaude() { count("fallback"); say(CANT_CLAUDE); }
   // A comparison may ask Claude unprompted only for a student who can already use him (signed in, invited,
   // consented), outside a quiz in progress (a past exam is fair game since 2026-10-11), inside the usual limits. Anything else is "no".
-  function claudeRoom() {
+  var DEVICE_DAY = 40;
+  function gapFor(mode) { return mode === "deeper" || mode === "beyond" ? 20000 : 3000; }
+  function claudeRoom(mode) {
     if (!ownerKnown) {
-      if (deviceBudget().n >= 12) return false;
-      if (Date.now() - lastClaudeAt < 20000) return false;
+      if (deviceBudget().n >= DEVICE_DAY) return false;
+      if (Date.now() - lastClaudeAt < gapFor(mode)) return false;
     }
     return !(+get(K_CNO) && Date.now() - +get(K_CNO) < 14 * 864e5);
   }
@@ -2625,8 +2769,8 @@
     var priv = isPrivate(passages), k = cacheKey(mode, question, f, priv), hit = cached(k, priv);
     if (hit) { claudeCard({ answer: hit.answer }, hit.mode, passages, why + " (I'd asked before.)"); return; }
     var db = deviceBudget();
-    if (db.n >= 12 && !ownerKnown) { if (fromFollowUp) say("I've checked with Claude a lot today, so let's stick with your guide until tomorrow."); return; }
-    if (Date.now() - lastClaudeAt < 20000 && !ownerKnown) {
+    if (db.n >= DEVICE_DAY && !ownerKnown) { if (fromFollowUp) say("I've checked with Claude a lot today, so let's stick with your guide until tomorrow."); return; }
+    if (Date.now() - lastClaudeAt < gapFor(mode) && !ownerKnown) {
       // a follow-up is the student asking for help, so say why nothing happened (and keep it for a retry)
       if (fromFollowUp) { lastAsk = followFrom ? { q: followFrom.q, passages: followFrom.passages, f: f, t: Date.now(), expl: followFrom.expl }
                                        : { q: question.split("\nFollow-up")[0], passages: passages, f: f, t: Date.now() };

@@ -39,7 +39,10 @@ Session state (in-progress work, decisions, exam dates) is in the newest folder 
 `pip/*.js` (sprites `immutable/pip/v1/`), loaded by the end of `theme.js` on pa-quizzes.com only (every
 theme.js page, plus five self-contained Semester 2 pages with their own loader; never the 11 frozen
 self-contained Semester 1 files). Behaviour rules: memory `pip_behavior_rule.md`; current work:
-`pip_overhaul_next.md`. In short: paused on an open quiz question; answers in two labelled parts, "From your
+`pip_overhaul_next.md`. In short: paused on an open quiz question; for a student who can use Claude, every real
+question gets a 2-4 sentence answer Claude writes from the search's candidates (helper mode "answer", Haiku,
+"Used:" names the cards/lines it drew on, which Pip links; the usual answer is the fallback); answers come in two
+labelled parts, "From your
 class" (his checked cards in `pip/explain/<exam>.json`, guide passages from every exam that holds the
 question's words, misspellings fixed, definitions, "the X of each Y" lists, compare dissections) and "From
 general knowledge" (Claude, labelled, only when the class materials fall short); guide links open

@@ -66,7 +66,7 @@
   }
   function ask(q) {
     // the server enforces the same limits; trimming here keeps a long passage from failing the request
-    var ps = (q.passages || []).slice(0, 4);
+    var ps = (q.passages || []).slice(0, q.mode === "answer" ? 6 : 4);   // "answer": the search's candidates, for Claude to choose from
     var body = {
       question: clip(q.question, 500),
       exam: { title: clip(q.exam && q.exam.title, 120), folder: clip(q.exam && q.exam.folder, 120) },
