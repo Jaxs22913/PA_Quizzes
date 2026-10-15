@@ -8,6 +8,12 @@ Patient vignettes with a varied lead-in (the lead-in decides the answer).
 Slides only; no recording exists yet (lecture given 2026-10-01). Ankle-brachial
 index values in stems sit well inside a band (never 0.4, 0.9 or 1.3), and the
 slide-43 worked example is not reused. Scope caps live in cms_e5l27_scope.py.
+
+DO NOT RE-RUN `cms_e5_partition.py l27vig` (2026-10-15): the pool-only Buerger
+dependent-rubor vignette replaced a notes-only one and its key was shortened, which
+changes the seeded search, so a re-run reshuffles 58 of the 60 shipped vignettes.
+cms_e5l27_vig_sets.json is now the source of truth; fix a shipped vignette in that
+file (as Lecture 26 does with its patch), then re-render.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -263,7 +269,7 @@ V(PAD, IO_A,
 
 M(V(PAD, IO_A,
   "A 68-year-old man with calf claudication lies supine while his right leg is raised to 45 degrees for one minute, and the foot turns pale. He then sits up with both legs hanging over the side of the bed. Which finding in this position indicates compromised arterial supply?",
-  [["Deep red color (dependent rubor)",
+  [["Foot turns deep red",
     "Correct. In the dependent position a leg with compromised arterial supply turns deep red, dependent rubor, from post-hypoxic vasodilation (reactive hyperemia); in severe cases cyanosis may come first."],
    ["Normal color at once",
     "A prompt return to normal color is the expected response of a healthy leg. With compromised arterial supply the dependent foot turns deep red, called dependent rubor."],
