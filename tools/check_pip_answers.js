@@ -9,7 +9,7 @@
 const fs = require('fs'), path = require('path');
 const REPO = path.join(__dirname, '..') + '/';
 const DATA = REPO + 'pip/data/';
-const src = fs.readFileSync(REPO + 'pip/pip-window.js', 'utf8');
+const src = fs.readFileSync(process.env.PIP_SRC || REPO + 'pip/pip-window.js', 'utf8');
 function grab(name) {
   const i = src.indexOf('function ' + name + '(');
   if (i < 0) throw new Error('no function ' + name);
@@ -21,10 +21,10 @@ const code = [
   src.slice(src.indexOf('var STOP = {};'), src.indexOf('function norm(')),
   grabVar(/var CAPS = \{[^}]*\};/), grabVar(/var SYN = \{[^}]*\};/), grabVar(/var CASUAL = \[[\s\S]*?\]\];/),
   grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/),
-  grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/), grabVar(/var COMPARE = [^\n]*/), grabVar(/var COVER = [^;]*;/),
+  grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/), grabVar(/var COMPARE = [^\n]*/), grabVar(/var STAND = [^\n]*/), grabVar(/var COVER = [^;]*;/),
   grabVar(/var CMPW = \{\};[\s\S]*?CMPW\[w\] = 1; \}\);/), grabVar(/var FILL = \{\};[\s\S]*?FILL\[w\] = 1; \}\);/),
   grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/),
-  ...['norm', 'stem', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
+  ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
       'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining'].map(grab),
@@ -55,7 +55,7 @@ function explainOf(f) {
 }
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
-  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF};')(...names.map(k => stubs[k]), explainOf);
+  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
@@ -73,6 +73,9 @@ async function plan(q, slug) {
     return Object.assign(r, { kind: 'definition', def: dd.def ? (dd.def.strong ? 'strong' : 'weak') + ': ' + (dd.def.gloss || dd.def.s).slice(0, 80) : 'none', mentions: dd.mentions.length, general: !dd.def || !dd.def.strong });
   if (ex.length && !ex.cmp && M.fullCover(ex, text, true) < 0.5) ex = [];
   if (ex.cross) { const xf = ex.map(x => x._f); out = out.filter(o => xf.indexOf(o.f) >= 0); }
+  // Claude writes the short answer (mode "answer") unless a comparison has a card per side (its dissection)
+  const dissect = !ex.cmp && (ex.length >= 2 || (ex.length && !ex.cross && M.STAND.test(M.norm(text))));
+  r.claude = !dissect && !!(ex.length || out.length) && !!(M.wantsExplanation(text) || D);
   if (ex.length) return Object.assign(r, { kind: 'card', card: ex.map(c => c.t).join(' | '), from: ex[0]._f.s, general: M.fullCover(ex, text) < M.SHORT_OF && M.wantsExplanation(text) });
   if (out.length) return Object.assign(r, { kind: 'passages', top: (out[0].b[2] || '') + ': ' + out[0].b[3].slice(0, 60), cov: +M.passCover(out, text).toFixed(2), general: M.passCover(out, text) < M.SHORT_OF && M.wantsExplanation(text) });
   return Object.assign(r, { kind: 'none', general: !!(M.wantsExplanation(text) || D) });
@@ -95,6 +98,11 @@ const CASES = [
   ['iatrogenic', CMS4, 'definition', /caused by treatment/i, false],
   ['where is the murmur chart', CMS4, null, /./, false],
   ['what is selective toxicity', 'microbiology-exam-1', 'definition', /kills harmful microbes/i, false],
+  // Jaxon 2026-10-15 (his thumbs-down): one-letter waves were dropped, so "wave" alone found an infarct card
+  ["What's the difference between a T and P wave?", CMS4, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval/, false],
+  ["What's the difference between a T and P wave?", PDM3, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval/, false],
+  ['difference between aortic and mitral stenosis', CMS4, 'card', /^Aortic stenosis.*\| Mitral stenosis/, false],
+  ['what is a P wave', CMS4, 'card', /^The P wave and the PR interval$/, false],
 ];
 (async () => {
   if (process.argv[2] === '--rate') {             // how often each kind of answer and the general part come up

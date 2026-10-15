@@ -118,9 +118,13 @@
     if (w.length > 6 && /ing$/.test(w)) return w.slice(0, -3);
     return w;
   }
+  // "P wave", "T-waves", "J point": one word each ("pwave"), plus the plain word, so a question about the P wave is not
+  // about every wave (Jaxon, 2026-10-15: "What's the difference between a T and P wave?" got an infarct card).
+  // tools/build_pip_data.py makes the same words for pip/data/words.json
+  function letterTerms(n) { return n.replace(/\b([pqrstuj])[\s-]+(waves?|points?)\b/g, "$1$2 $2"); }
   function toks(s) {
     var out = [];
-    norm(s).split(/[^a-z0-9]+/).forEach(function (w) { if (w.length >= 2 && !STOP[w]) { var t = stem(w); if (!STOP[t]) out.push(t); } });
+    letterTerms(norm(s)).split(/[^a-z0-9]+/).forEach(function (w) { if (w.length >= 2 && !STOP[w]) { var t = stem(w); if (!STOP[t]) out.push(t); } });
     return out;
   }
   // the shorthand students type that the guides never use (real abbreviations such as NNT or PVC are
@@ -193,10 +197,10 @@
     // result again, and stemming a stem twice broke words such as "hypertension" (hypertens ->
     // hyperten, which no passage holds), so Pip said they were not in the guide
     var words = [];
-    norm(q).split(/[^a-z0-9]+/).forEach(function (raw) { if (raw.length >= 2 && !STOP[raw]) { var t = stem(raw); if (!STOP[t]) words.push([raw, t]); } });
+    letterTerms(norm(q)).split(/[^a-z0-9]+/).forEach(function (raw) { if (raw.length >= 2 && !STOP[raw]) { var t = stem(raw); if (!STOP[t]) words.push([raw, t]); } });
     return words.map(function (p) {
       var w = p[1];
-      if (w.length < 5 || ix.df[w] || /\d/.test(w)) return p[0];
+      if (w.length < 5 || ix.df[w] || /\d/.test(w) || /^[pqrstuj](?:wave|point)$/.test(w)) return p[0];
       var best = null, max = w.length >= 9 ? 2 : 1;
       ix._vocab.forEach(function (v) { if (v.length > w.length && v.indexOf(w) === 0 && (!best || ix.df[v] > ix.df[best])) best = v; });
       if (best || w.length < 6) return best || w;
@@ -1278,10 +1282,11 @@
         }
         // Pip's own short answer to THIS question, written with Claude from the candidates the search found (Jaxon,
         // 2026-10-15: "reword and give a short run down to answer the students question"). The usual answer is the
-        // fallback (no Claude for this student, out of asks, the helper down) and stays the answer for lookups and
-        // comparisons (they get their side-by-side dissection)
-        var cmpQ = (ex.length >= 2 && !ex.cmp) || COMPARE.test(norm(text)) || STAND.test(norm(text));
-        if (!cmpQ && (ex.length || out.length || mine.length) && (wantsExplanation(text) || D))
+        // fallback (no Claude for this student, out of asks, the helper down). A comparison with a card for each side
+        // keeps its side-by-side dissection (Claude writes that one too); a comparison with one card or none gets the
+        // short answer (Jaxon, 2026-10-15: "difference between a T and P wave" got one infarct card and no Claude)
+        var dissect = !ex.cmp && (ex.length >= 2 || (ex.length && !ex.cross && STAND.test(norm(text))));
+        if (!dissect && (ex.length || out.length || mine.length) && (wantsExplanation(text) || D))
           return askAnswer(text, candidates(out, mine, ex), rest);
         rest();
         function rest() {
@@ -1801,6 +1806,9 @@
       // (Jaxon's PVC vs SVT on the electrocardiography exam led with "Sinus tachycardia versus supraventricular tachycardia")
       var sd = COMPARE.test(norm(text)) ? sidesOf(text) : null;
       var sideT = sd && sd.map(function (x) { return uniq(toks(spell(expandAb(casual(x)), e._ix))).filter(function (w) { return !GENERIC[w]; }); });
+      // a word every side holds ("wave" in "T wave vs P wave") tells neither side apart
+      if (sideT) { var shared = sideT[0].filter(function (w) { return sideT.every(function (st) { return st.indexOf(w) >= 0; }); });
+        if (shared.length && sideT.every(function (st) { return st.length > shared.length; })) sideT = sideT.map(function (st) { return st.filter(function (w) { return shared.indexOf(w) < 0; }); }); }
       if (g && g._ix && offGuide(spell(q, g._ix), g._ix)) return [];
       var qt = uniq(toks(q));
       // generic words ("risk factors", "signs", "treatment") never name a concept on their own: "thrush risk
@@ -1819,8 +1827,12 @@
       // "mastoiditis signs": every word is needed for a short question, but a generic one may be left out
       if (!cands.length) { var core = qt.filter(function (w) { return !GENERIC[w]; }); if (core.length && core.length < qt.length) cands = rank(e._ix, e._texts, core.join(" "), 14).filter(function (r) { return named(r[1]); }); }
       var want = wants(text), asks = Object.keys(want).length, bare = !asks && qt.length <= 3;
+      var exact = norm(text).replace(/[’]/g, "'").replace(/[?!.\s]+$/, "")          // "what is a P wave" -> "p wave"
+        .replace(/^(?:what(?:'s|s| is| are| does| do)|define|explain|describe|tell me about)\s+(?:an? |the )?/, "").replace(/\s+(?:mean|means)$/, "").trim();
       var hits = cands.map(function (r) {
-        var tt = e._title[r[1]], bonus = 0, kd = e._kind[r[1]];
+        var tt = e._title[r[1]], bonus = 0, kd = e._kind[r[1]], cd = e.cards[r[1]];
+        // the question IS one of the card's names ("t wave" is the J point, ST segment and T wave card's other name)
+        if (norm(cd.t) === exact || cd.k.some(function (k) { return norm(k) === exact; })) bonus += 3;
         qt.forEach(function (w) { if (tt[w]) bonus += idf(w) * 1.3; else if (e._names[r[1]][w]) bonus += idf(w) * 0.3; });
         for (var k in want) if (kd[k]) {
           if (k === "compare" && sideT && !sideT.every(function (st) {       // half or more of each side's words
@@ -1840,17 +1852,27 @@
           var both = core2.filter(function (w) { return e._names[i2][w]; }).length;
           // it must hold EVERY specific word of the question ("primary vs secondary prevention" is not the
           // primary-versus-secondary-research card), and name at least two of them
-          if (e._kind[i2].compare && both >= 2 && core2.every(function (w) { return tf2[w]; })) { if (ci) hits.unshift(hits.splice(ci, 1)[0]); hits.cmp = 1; break; }
+          var miss = core2.filter(function (w) { return !tf2[w]; }).length;
+          if (e._kind[i2].compare && both >= 2 && miss <= (sideT && core2.length >= 4 ? 1 : 0) &&
+              (!sideT || sideT.every(function (st) { return st.some(function (w) { return e._names[i2][w]; }); }))) { if (ci) hits.unshift(hits.splice(ci, 1)[0]); hits.cmp = 1; break; }
         }
       }
       // no single card compares them: each side's best card leads, in the question's order
       if (sideT && !hits.cmp && hits.length > 1) {
-        var sideOf = function (st) {
-          for (var i = 0; i < hits.length; i++) if (st.length && st.filter(function (w) { return e._names[hits[i][1]][w]; }).length * 2 >= st.length) return hits[i];
+        var isSide = function (c, si) { var x = norm(sd[si]); return norm(c.t) === x || c.k.some(function (k) { return norm(k) === x; }); };
+        var sideOf = function (st, si) {
+          var i;
+          for (i = 0; i < hits.length; i++) if (isSide(e.cards[hits[i][1]], si)) return hits[i];        // the side is one of its names
+          for (i = 0; i < hits.length; i++) if (titleNames(e.cards[hits[i][1]], sd[si])) return hits[i];   // then a card ABOUT that side
+          for (i = 0; i < hits.length; i++) if (st.length && st.filter(function (w) { return e._names[hits[i][1]][w]; }).length * 2 >= st.length) return hits[i];
           return null;
         };
-        var picks = sideT.map(sideOf);
-        if (picks.length >= 2 && picks.every(Boolean) && picks[0][1] !== picks[1][1]) hits = picks.slice(0, 2).concat(hits.filter(function (h) { return picks.indexOf(h) < 0; }));
+        // one of the best cards has every side in its title ("Weber and Rinne patterns"): it leads alone
+        var half = function (h, st) { return st.length && st.filter(function (w) { return e._title[h[1]][w]; }).length * 2 >= st.length; };
+        var whole = hits.slice(0, 3).filter(function (h) { return sideT.every(function (st) { return half(h, st); }); })[0];
+        var picks = whole ? [] : sideT.map(sideOf);
+        if (whole) hits = [whole].concat(hits.filter(function (h) { return h !== whole; }));
+        else if (picks.length >= 2 && picks.every(Boolean) && picks[0][1] !== picks[1][1]) hits = picks.slice(0, 2).concat(hits.filter(function (h) { return picks.indexOf(h) < 0; }));
       }
       if (!hits.length) {
         // no card names it, but one holds every word of a two-or-more-word question ("gonorrhoeae vs meningitidis")
@@ -1900,7 +1922,7 @@
       toks(numbered(c.t + " " + c.k.join(" ") + " " + lead)).forEach(function (w) { have[w] = 1; });
     });
     var n = 0, ok = 0, seen = {};
-    numbered(String(text)).replace(/[A-Za-z][A-Za-z0-9]*/g, function (w) {
+    letterTerms(norm(numbered(String(text)))).replace(/[A-Za-z][A-Za-z0-9]*/g, function (w) {
       var lw = w.toLowerCase(), t = toks(lw)[0];
       if (!t || CMPW[lw] || GENERIC[t] || seen[t]) return w;
       seen[t] = 1; n++;
@@ -1914,16 +1936,24 @@
   function sidesOf(text) {
     var n = norm(text).replace(/[’]/g, "'").replace(/[?!.]+\s*$/, "").trim();
     n = n.replace(/\b(differ|differs|different|differently|compare|compared|alike|similar|apart)\b.*$/, "")
-      .replace(/^(?:(?:what(?:'s| is| are)?|how (?:do|does|can|is|are)|can you|please|tell me|i|you|we)\s+)*(?:the )?(?:difference|differences|similarit(?:y|ies)|comparison)\s+(?:between|of|in)\s+/, "")
+      .replace(/^(?:(?:what(?:'s|s| is| are)?|how (?:do|does|can|is|are)|can you|please|tell me|i|you|we)\s+)*(?:the )?(?:difference|differences|diff|similarit(?:y|ies)|comparison)\s+(?:between|of|in)\s+/, "")
       .replace(/^(?:(?:how (?:do|can) (?:i|you|we) )?tell|compare|contrast|distinguish|differentiate)\s+/, "")
       .replace(/^(?:how (?:do|does|are|is)\s+)/, "").trim();
-    var parts = n.split(/\s+(?:vs\.?|versus|and|or|from|with|against)\s+/).map(function (x) { return x.replace(/^(?:a|an|the|between)\s+/, "").trim(); }).filter(Boolean);
+    var parts = n.split(/\b(?:vs|versus)\b/.test(n) ? /\s+(?:vs\.?|versus)\s+/ : /\s+(?:vs\.?|versus|and|or|from|with|against)\s+/).map(function (x) { return x.replace(/^(?:a|an|the|between)\s+/, "").trim(); }).filter(Boolean);
     if (parts.length < 2 || parts.length > 3) return null;
+    // one noun shared by every side: "T and P wave" is the T wave and the P wave, "aortic and mitral stenosis" is
+    // aortic stenosis and mitral stenosis (a lone side that only modifies: a letter, -ic/-al/-ar/-ous/-ive, left/right ...)
+    var MOD = /^(?:[a-z]|[a-z]+(?:ic|al|ar|ary|ous|ive|ile)|primary|secondary|tertiary|first|second|third|left|right|upper|lower|acute|chronic|early|late)$/;
+    var last = parts[parts.length - 1].split(/\s+/);
+    if (last.length >= 2 && MOD.test(last[0]) && parts.slice(0, -1).every(function (x) { return MOD.test(x); }))
+      parts = parts.slice(0, -1).map(function (x) { return x + " " + last.slice(1).join(" "); }).concat([parts[parts.length - 1]]);
     for (var i = 0; i < parts.length; i++) if (parts[i].length > 60 || !toks(parts[i]).length) return null;
     return parts;
   }
   // the best exam for this wording: home if it really covers, else a clearly stronger exam (past or upcoming alike)
-  function pickBest(f, text, others) {
+  // about: one side of a comparison ("t wave"): a card whose title or other name IS that side wins over a card that only
+  // mentions it (the infarction exam's ST-elevation card lists "hyperacute T waves"), the page's exam first
+  function pickBest(f, text, others, about) {
     return Promise.all([f].concat(others).map(function (x) {
       return Promise.all([explainHits(x, text, x !== f), examDate(x)]).then(function (r) {
         PAST[x.s] = !!(r[1] && daysUntil(r[1]) < 0);
@@ -1931,6 +1961,10 @@
       });
     })).then(function (rs) {
       var home = rs[0];
+      if (about) {
+        var named = rs.filter(function (r) { return r.h.length && titleNames(r.h[0], about); });
+        if (named.length) return named.indexOf(home) >= 0 ? home : named.sort(function (a, b) { return b.cov - a.cov || (b.h.sc || 0) - (a.h.sc || 0); })[0];
+      }
       if (home.cov >= COVER) return home;
       var ok = rs.slice(1).filter(function (r) { return r.cov >= COVER && r.cov >= home.cov + 0.2; });
       ok.sort(function (a, b) { return b.cov - a.cov || (b.h.sc || 0) - (a.h.sc || 0); });   // any exam, past or upcoming: best match
@@ -1944,7 +1978,7 @@
       if (!others.length) return home;
       var sides = COMPARE.test(norm(text)) ? sidesOf(text) : null;
       return Promise.all([pickBest(f, qx, others),
-        sides ? Promise.all(sides.map(function (sd) { return pickBest(f, casual(sd), others); })) : null]).then(function (r) {
+        sides ? Promise.all(sides.map(function (sd) { return pickBest(f, casual(sd), others, sd); })) : null]).then(function (r) {
         var rs = r[1];
         // each side found on its own (maybe in different exams): one card per side, at least one from another exam
         if (rs && rs.every(function (x) { return x && x.h.length; })) {
@@ -2014,7 +2048,7 @@
    "cutoff cutoffs much many long often usually happen happens mechanism mechanisms calculate calculating calculation " +
    "step steps formation classification classify").split(" ").forEach(function (w) { FILL[w] = 1; });
   function specific(text) {                       // the question's naming words, raw (as words.json holds them)
-    return uniq(norm(text).split(/[^a-z0-9]+/).filter(function (w) {
+    return uniq(letterTerms(norm(text)).split(/[^a-z0-9]+/).filter(function (w) {
       return w.length >= 3 && !STOP[w] && !FILL[w] && !GENERIC[stem(w)] && !CMPW[w] && !/^\d+$/.test(w);
     }));
   }
@@ -2355,6 +2389,7 @@
       else if ((n.classList.contains("pw-claude") || n.classList.contains("pw-answer")) && kind === "pip") kind = "claude";
       var c = n.cloneNode(true);
       Array.prototype.forEach.call(c.querySelectorAll(".pw-help, .pw-fb, button, form, textarea"), function (x) { x.remove(); });
+      Array.prototype.forEach.call(c.querySelectorAll("h4, p, div, li, dt, dd, summary, tr, span.pw-lbl"), function (x) { x.appendChild(document.createTextNode(" ")); });
       var t = c.textContent.replace(/\s+/g, " ").trim(); if (t) parts.push(t);
     }
     return { q: me.textContent.trim(), a: parts.join("\n"), kind: kind };

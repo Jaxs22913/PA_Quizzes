@@ -702,7 +702,8 @@ def main():
                 for c in json.load(fh)["cards"]:
                     wtexts += [c["t"], c["x"]] + c["k"]
         for t in wtexts:
-            for w in re.findall(r"[a-z][a-z0-9]{2,}", t.lower()):
+            # "P wave" -> "pwave wave", as letterTerms() in pip/pip-window.js reads it
+            for w in re.findall(r"[a-z][a-z0-9]{2,}", re.sub(r"\b([pqrstuj])[\s-]+(waves?|points?)\b", r"\1\2 \2", t.lower())):
                 e = words.setdefault(w, [0, 0])
                 e[0] += 1
                 e[1] |= 1 << fi

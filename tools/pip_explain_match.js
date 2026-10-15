@@ -6,7 +6,7 @@
 // (judged, 392 with targets) 86.9% first card = target, 79/80 no card when none fits.
 const fs = require('fs'), path = require('path');
 const REPO = path.join(__dirname, '..') + '/';
-const src = fs.readFileSync(REPO + 'pip/pip-window.js', 'utf8');
+const src = fs.readFileSync(process.env.PIP_SRC || REPO + 'pip/pip-window.js', 'utf8');
 function grab(name) {           // "function name(...) { ... }" with brace matching
   const i = src.indexOf('function ' + name + '(');
   if (i < 0) throw new Error('no function ' + name);
@@ -16,7 +16,7 @@ function grab(name) {           // "function name(...) { ... }" with brace match
 function grabVar(re) { const m = src.match(re); if (!m) throw new Error('no ' + re); return m[0]; }
 const stopBlock = src.slice(src.indexOf('var STOP = {};'), src.indexOf('function norm('));
 const code = [stopBlock, grabVar(/var CAPS = \{[^}]*\};/), grabVar(/var SYN = \{[^}]*\};/), grabVar(/var CASUAL = \[[\s\S]*?\]\];/), grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/), grabVar(/var COMPARE = \/.*\/;/), grabVar(/var CMPW = \{\};\n.*\n.*forEach\(function \(w\) \{ CMPW\[w\] = 1; \}\);/),
-  ...['norm', 'stem', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank', 'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'guideLine', 'prepGuide', 'sidesOf'].map(grab),
+  ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank', 'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'guideLine', 'prepGuide', 'sidesOf', 'titleNames'].map(grab),
   grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/)].join('\n');
 const gcache = {};
 function guideIndex(f) { return Promise.resolve(gcache[f.s] || (gcache[f.s] = JSON.parse(fs.readFileSync(REPO + 'pip/data/guide/' + f.s + '.json', 'utf8')))); }
