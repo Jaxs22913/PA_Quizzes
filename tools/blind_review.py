@@ -445,13 +445,26 @@ def load_records(path=None):
 
 def save_records(rec, path=None):
     p = path or RECORDS
-    with open(p, "w", encoding="utf-8") as fh:               # one line per item keeps diffs reviewable
+    tmp = p + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:             # one line per item keeps diffs reviewable
         fh.write("{\n")
         keys = sorted(rec)
         for i, k in enumerate(keys):
             fh.write(" %s: %s%s\n" % (json.dumps(k), json.dumps(rec[k], ensure_ascii=False, sort_keys=True),
                                       "," if i < len(keys) - 1 else ""))
         fh.write("}\n")
+    os.replace(tmp, p)                                      # never a half-written records file
+
+
+def records_lock():
+    """Several judges import at once (2026-10-15: six in parallel): hold an exclusive lock from load to save so no
+    import overwrites another's records. The lock file lives outside the repo; it is released when the process ends."""
+    import fcntl
+    d = os.path.expanduser("~/.cache/pa-quizzes")
+    os.makedirs(d, exist_ok=True)
+    fh = open(os.path.join(d, "blind_review.lock"), "w")
+    fcntl.flock(fh, fcntl.LOCK_EX)
+    return fh
 
 
 def blind_of(rec, h):
@@ -677,6 +690,7 @@ def cmd_import(a):
         sys.exit("manifest in %s is a %s export, not %s" % (a.dir, manifest["pass"], a.pass_))
     if manifest["prompt_version"] != PROMPT_VERSION:
         sys.exit("export was prompt %s, this tool is %s" % (manifest["prompt_version"], PROMPT_VERSION))
+    lock = records_lock()                                   # noqa: F841 (held until the process exits)
     rec = load_records(a.records)
     res = {"accepted": 0, "rejected": 0, "missing": 0}
     repair, seen = [], set()
