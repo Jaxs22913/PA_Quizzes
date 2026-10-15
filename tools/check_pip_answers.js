@@ -27,7 +27,7 @@ const code = [
   ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
-      'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining'].map(grab),
+      'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining', 'wordCount', 'examByWords'].map(grab),
   grabVar(/var EXPLAIN = [^\n]*/)
 ].join('\n');
 const IX = JSON.parse(fs.readFileSync(DATA + 'index.json', 'utf8'));
@@ -40,7 +40,7 @@ const stubs = {
   words: () => getJSON('words.json').then(d => {
     if (d._W) return d._W;
     const w = d.w.split(' '), at = Object.create(null); w.forEach((x, i) => { at[x] = i; });
-    return (d._W = { w, m: d.m.split(' ').map(x => parseInt(x, 16)), at });
+    return (d._W = { w, m: d.m.split(' ').map(x => parseInt(x, 16)), at, c: d.c ? d.c.split(' ') : null });
   })
 };
 let M;
@@ -55,7 +55,7 @@ function explainOf(f) {
 }
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
-  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND};')(...names.map(k => stubs[k]), explainOf);
+  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND, examByWords};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
@@ -104,6 +104,13 @@ const CASES = [
   ['difference between aortic and mitral stenosis', CMS4, 'card', /^Aortic stenosis.*\| Mitral stenosis/, false],
   ['what is a P wave', CMS4, 'card', /^The P wave and the PR interval$/, false],
 ];
+// [question, page exam, the exam whose WHOLE guide Claude should read (mode "guide"; examByWords)]
+// Jaxon 2026-10-15: "What is a pulmonary embolism?" read the electrocardiography exam's guide (7 lines) not Exam 5's (26)
+const CMS5 = 'clinical-medicine-and-surgery-i-exam-5';
+const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the difference between a T and P wave?", CMS4, PDM3],
+  ['what does a pulmonary embolism look like on an ECG', CMS4, PDM3], ['why does aortic stenosis cause syncope', PDM3, CMS4],
+  ['what is selective toxicity', CMS4, 'microbiology-exam-1'], ['wells score for DVT', PDM3, CMS5],
+  ['what is sensitivity', CMS4, 'interpretation-of-medical-literature-exam-1']];
 (async () => {
   if (process.argv[2] === '--rate') {             // how often each kind of answer and the general part come up
     const qs = JSON.parse(fs.readFileSync(process.argv[3] || REPO + 'tools/pip_explain_questions.json', 'utf8')).questions;
@@ -111,6 +118,11 @@ const CASES = [
     for (const x of qs) { const p = await plan(x.q, x.slug); n[p.kind] = (n[p.kind] || 0) + 1; if (p.general) gen++;
       if (process.argv.includes('--show') && (p.general || p.kind === 'definition' || p.kind === 'list')) console.log('  ' + p.kind + (p.general ? '+general' : '') + ': ' + x.q + ' -> ' + (p.card || p.top || p.def || p.first || '').slice(0, 90)); }
     console.log(qs.length + ' questions:', JSON.stringify(n), '| general part:', gen, '(' + Math.round(100 * gen / qs.length) + '%)');
+    return;
+  }
+  if (process.argv[2] === '--exam') {           // which exam's guide mode "guide" reads (examByWords)
+    for (const [q, slug] of EXAMQ) { const f = IX.folders.find(x => x.s === slug); const w = await M.examByWords(M.casual(q), f);
+      console.log((w ? w.f.s : 'none').padEnd(46), (w ? String(w.n) : '').padStart(4), ' <- ' + slug.slice(0, 30) + ' | ' + q); }
     return;
   }
   if (process.argv[2]) { console.log(await plan(process.argv[2], process.argv[3] || CMS4)); return; }
@@ -123,6 +135,11 @@ const CASES = [
     console.log((ok ? 'ok   ' : 'FAIL ') + q + ' -> ' + p.kind + (p.fixed ? ' [' + p.fixed + ']' : '') + ' | ' + (txt || '').slice(0, 110) + (p.general ? ' | +general' : '') +
       (ok ? '' : '  (want ' + kind + ' ' + re + (gen === null ? '' : ' general=' + gen) + ')'));
   }
-  console.log(bad ? bad + ' of ' + CASES.length + ' failed' : 'all ' + CASES.length + ' passed');
+  for (const [q, slug, want] of EXAMQ) {
+    const w = await M.examByWords(M.casual(q), IX.folders.find(x => x.s === slug)), got = w ? w.f.s : 'none', ok = got === want;
+    if (!ok) bad++;
+    console.log((ok ? 'ok   ' : 'FAIL ') + 'guide for "' + q + '" -> ' + got + (ok ? '' : '  (want ' + want + ')'));
+  }
+  console.log(bad ? bad + ' of ' + (CASES.length + EXAMQ.length) + ' failed' : 'all ' + (CASES.length + EXAMQ.length) + ' passed');
   process.exit(bad ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(2); });

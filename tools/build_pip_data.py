@@ -704,9 +704,10 @@ def main():
         for t in wtexts:
             # "P wave" -> "pwave wave", as letterTerms() in pip/pip-window.js reads it
             for w in re.findall(r"[a-z][a-z0-9]{2,}", re.sub(r"\b([pqrstuj])[\s-]+(waves?|points?)\b", r"\1\2 \2", t.lower())):
-                e = words.setdefault(w, [0, 0])
+                e = words.setdefault(w, [0, 0, {}])
                 e[0] += 1
                 e[1] |= 1 << fi
+                e[2][fi] = e[2].get(fi, 0) + 1
         if ex_n and gidx.get("ab"):
             ab_by_exam[fslug] = gidx["ab"]
         ab_texts.extend(x[3] for x in gidx["b"])
@@ -731,8 +732,14 @@ def main():
     if len(index["folders"]) > 30:
         die("words.json masks assume at most 30 exam folders; there are %d" % len(index["folders"]))
     wl = sorted(words.items(), key=lambda kv: (-kv[1][0], kv[0]))
+    # "c": for a word in two or more exams, how often each one uses it ("26.7.1", its exams in bit order; empty for a
+    # one-exam word), so Pip reads the guide of the exam that says the MOST about a question, not just one that
+    # mentions it (Jaxon 2026-10-15: "What is a pulmonary embolism?" read the ECG exam's guide, 7 lines, not the
+    # one with 26)
     words_kb = dump(os.path.join(OUT, "words.json"), {"v": 1, "w": " ".join(w for w, _ in wl),
-                                                      "m": " ".join(format(e[1], "x") for _, e in wl)}) / 1024
+                                                      "m": " ".join(format(e[1], "x") for _, e in wl),
+                                                      "c": " ".join(".".join(str(e[2][k]) for k in sorted(e[2])) if len(e[2]) > 1 else ""
+                                                                    for _, e in wl)}) / 1024
     print("words.json: %d words, %.0f KB" % (len(wl), words_kb))
     ab_kb = dump(os.path.join(OUT, "ab.json"), ab_by_exam) / 1024
     print("per-exam abbreviations (%d exams with cards): %.1f KB" % (len(ab_by_exam), ab_kb))

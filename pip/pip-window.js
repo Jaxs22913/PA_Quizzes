@@ -1414,11 +1414,24 @@
         if (fullCover(ex, text) < SHORT_OF && wantsExplanation(text))
           general(text, [{ title: ex[0].t, text: ex[0].x }], cf, "Pip's explanation covers only part of this, so I asked Claude.");
       }
-      // the exam whose guide Claude reads: the definition's, else the best card's, else the best passage's, else the exam
-      // whose guide holds the question's words, else this page's
+      // the exam whose guide Claude reads: the one whose guides say the most about the question's naming words (Jaxon
+      // 2026-10-15: "What is a pulmonary embolism?" read the electrocardiography exam's guide because its best card
+      // was "Pulmonary embolism on the ECG"; the Exam 5 guide teaches it). The page's exam keeps it when it says at
+      // least 60% as much; a strong defining sentence keeps its own exam; else the best card's, passage's, page's.
       function guideExam(out, ex, dd, defn) {
+        if (defn && dd.def && dd.def.strong && hasGuides(dd.def.src.f)) return Promise.resolve(dd.def.src.f);
         var pick = defn && dd.def ? dd.def.src.f : ex.length ? (ex[0]._f || f) : out.length ? out[0].f : (SCOPE || []).filter(hasGuides)[0];
-        return pick && hasGuides(pick) ? pick : hasGuides(f) ? f : null;
+        return examByWords(casual(text), f).then(function (w) {
+          if (w && hasGuides(f) && w.f !== f) {
+            var fi = IX.folders.indexOf(f);
+            return words().then(function (W) {
+              var own = Math.min.apply(null, specific(casual(text)).map(function (x) { var i = wordAt(W, x); return i < 0 ? 0 : wordCount(W, i, fi); }));
+              return own >= 0.6 * w.n ? f : w.f;
+            });
+          }
+          if (w) return w.f;
+          return pick && hasGuides(pick) ? pick : hasGuides(f) ? f : null;
+        });
       }
       // Pip's best guide lines in that exam (their numbers in its guide data): a card's section, then the passages found
       function hintsFor(g, gf, out, ex) {
@@ -1431,9 +1444,9 @@
         return uniq(hs).slice(0, 12);
       }
       function askGuide(q, out, mine, ex, dd, defn, fallback) {
-        var gf = guideExam(out, ex, dd, defn);
-        if (!gf) return fallback(false);
-        claudeUsable(q, f).then(function (ok) {
+        Promise.all([guideExam(out, ex, dd, defn), claudeUsable(q, f)]).then(function (r1) {
+          var gf = r1[0], ok = r1[1];
+          if (!gf) return fallback(false);
           if (!ok || !claudeRoom("answer")) return fallback(false);
           Promise.all([superbrain(), guideIndex(gf).catch(function () { return null; })]).then(function (r0) {
             var S = r0[0], g = r0[1];
@@ -2096,9 +2109,35 @@
     if (!wordsP) wordsP = index().then(function () { return getJSON("words.json"); }).then(function (d) {
       var w = d.w.split(" "), at = Object.create(null);
       for (var i = 0; i < w.length; i++) at[w[i]] = i;
-      return { w: w, m: d.m.split(" ").map(function (x) { return parseInt(x, 16); }), at: at };
+      return { w: w, m: d.m.split(" ").map(function (x) { return parseInt(x, 16); }), at: at, c: d.c ? d.c.split(" ") : null };
     }).catch(function () { wordsP = null; return null; });
     return wordsP;
+  }
+  // how often exam number fi (index.json order) uses word i: from words.json "c" (its exams in bit order), 1 for a
+  // word only one exam uses, 0 when the exam never does
+  function wordCount(W, i, fi) {
+    var m = W.m[i];
+    if (!(m & (1 << fi))) return 0;
+    if (!W.c || !W.c[i]) return 1;
+    var k = 0; for (var b = 0; b < fi; b++) if (m & (1 << b)) k++;
+    return +(W.c[i].split(".")[k] || 1);
+  }
+  // the exam of this semester whose guides say the most about the question: its LEAST used naming word counts (an
+  // exam that never says "embolism" knows nothing about "pulmonary embolism"); null when no exam holds them all
+  function examByWords(text, f) {
+    return words().then(function (W) {
+      if (!W || !IX) return null;
+      var ix = specific(text).map(function (w) { return wordAt(W, w); });
+      if (!ix.length || ix.some(function (i) { return i < 0; })) ix = ix.filter(function (i) { return i >= 0; });
+      if (!ix.length) return null;
+      var best = null, bs = 0;
+      IX.folders.forEach(function (x, fi) {
+        if (x.sem !== f.sem || !hasGuides(x)) return;
+        var s = Math.min.apply(null, ix.map(function (i) { return wordCount(W, i, fi); }));
+        if (s > bs || (s === bs && s > 0 && x === f)) { bs = s; best = x; }
+      });
+      return best ? { f: best, n: bs } : null;
+    });
   }
   function wordAt(W, w) {                         // a word (or its singular / plural) in some guide: its index, else -1
     var c = [w, w + "s", w + "es", w.replace(/ies$/, "y"), w.replace(/es$/, ""), w.replace(/s$/, "")];
