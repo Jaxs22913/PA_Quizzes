@@ -9842,7 +9842,7 @@ var DEMO_DECKS = [
       ["What is 'yellow soup' in old Chinese texts?", "An early fecal transplant"],
       ["What is a bacteriophage?", "A virus that infects bacteria"],
       ["Which cells do phages attack?", "Only bacteria"],
-      ["What kind of genome can a phage carry?", "DNA or RNA, never both"],
+      ["What kind of genome can a phage carry?", "DNA or RNA"],
       ["Which phage life cycle is needed for therapy?", "Lytic"],
       ["Which part of a tailed phage holds the genome?", "The head"],
       ["Which phage property makes it useful against resistant bacteria?", "High host specificity"],
