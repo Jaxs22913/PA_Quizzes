@@ -43,7 +43,11 @@ self-contained Semester 1 files). Behaviour rules: memory `pip_behavior_rule.md`
 question gets a short answer Claude writes after reading the WHOLE study guide of the exam it is about (helper
 mode "guide", Haiku 5.5; the helper fetches the public pip/data/guide/<slug>.json, numbers its lines, caches it
 for an hour; "Used: [n]" names the lines, sent back as cites that Pip links; the search's picks go along as
-candidates and hints; the usual answer is the fallback, mode "answer" when guide mode isn't there); answers come in two
+candidates and hints; the usual answer is the fallback, mode "answer" when guide mode isn't there). Follow-ups: the
+last 2 Claude exchanges stay in memory only (dropped after 15 min idle or a page change) and go as `prior` when a
+question refers back (`followUp()`: it keeps the earlier exam and searches with the earlier question's words too).
+Guide answers stream into the bubble, and with the Citations API each cite carries `q`, the exact guide sentence,
+shown under the answer and passed to `openGuidePanel({..., quote})`. Answers come in two
 labelled parts, "From your
 class" (his checked cards in `pip/explain/<exam>.json`, guide passages from every exam that holds the
 question's words, misspellings fixed, definitions, "the X of each Y" lists, compare dissections) and "From
@@ -51,7 +55,7 @@ general knowledge" (Claude, labelled, only when the class materials fall short);
 `window.openGuidePanel`. Generated data `pip/data/` is never committed: the deploy runs
 `tools/build_pip_data.py`, which fails loudly on a page it cannot parse (fix the page, never skip it).
 After a guide edit, cards whose section changed show as stale (`python3 tools/pip_explain.py check`, then
-`rehash` once re-checked). Checks: `node tools/check_pip_answers.js` (answer kinds, no browser),
+`rehash` once re-checked). Checks: `node tools/check_pip_answers.js` (answer kinds, guide exam, follow-ups; no browser),
 `node tools/pip_explain_match.js` (card matching), `tools/check_pip_launch.py` (built `dist/`). Never run real
 models in tests or send question sets through any model (memory `no_bulk_model_runs.md`). The Claude helper is
 a private Worker; its source is not in this repo.
