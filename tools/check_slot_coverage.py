@@ -113,6 +113,10 @@ TITLES = {
  "e5l26": "Exam 5 Lecture 26 - Venous Disorders",
  "e5l27": "Exam 5 Lecture 27 - Arterial Occlusive Disease and Aortic Aneurysm",
  "e5l28": "Exam 5 Lecture 28 - Cardiomyopathy",
+ "e5l29": "Exam 5 Lecture 29 - Arrhythmias I: Supraventricular",
+ "e5l30": "Exam 5 Lecture 30 - Arrhythmias II: Blocks and Ventriculars",
+ "e5l31": "Exam 5 Lecture 31 - Pericardial Disease",
+ "e5l32": "Exam 5 Lecture 32 - Infective Endocarditis",
 }
 
 

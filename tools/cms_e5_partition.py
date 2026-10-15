@@ -3,6 +3,10 @@
 
     python3 cms_e5_partition.py l27io | l27vig   # Lecture 27 Arterial Occlusive Disease and Aortic Aneurysm
     python3 cms_e5_partition.py l28io | l28vig   # Lecture 28 Cardiomyopathy
+    python3 cms_e5_partition.py l29io | l29vig   # Lecture 29 Arrhythmias I: Supraventricular (Elwaya)
+    python3 cms_e5_partition.py l30io | l30vig   # Lecture 30 Arrhythmias II: Blocks and Ventriculars (Elwaya)
+    python3 cms_e5_partition.py l31io | l31vig   # Lecture 31 Pericardial Disease (Reynolds)
+    python3 cms_e5_partition.py l32io | l32vig   # Lecture 32 Infective Endocarditis (Reynolds)
 
 Copied from the GUARDED path of cms_e4_partition.py (2026-09-24), which is the
 Carter build for Exam 4; the Hypertension LEGACY path is not carried over. The
@@ -47,6 +51,14 @@ GUARDED = {
  "l28vig": ("l28", True, 20260925 + 282),
  "l26io": ("l26", False, 20260929 + 261),
  "l26vig": ("l26", True, 20260929 + 262),
+ "l29io": ("l29", False, 20261015 + 291),
+ "l29vig": ("l29", True, 20261015 + 292),
+ "l30io": ("l30", False, 20261015 + 301),
+ "l30vig": ("l30", True, 20261015 + 302),
+ "l31io": ("l31", False, 20261015 + 311),
+ "l31vig": ("l31", True, 20261015 + 312),
+ "l32io": ("l32", False, 20261015 + 321),
+ "l32vig": ("l32", True, 20261015 + 322),
 }
 if WHICH not in GUARDED:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(GUARDED)))
@@ -107,7 +119,13 @@ _BRAND = re.compile(r"\b(Lipitor|Crestor|Zocor|Pravachol|Livalo|Zetia|Vytorin|Re
                     r"Zestril|Cozaar|Diovan|Norvasc|Tenormin|Inderal|LifeVest|Tryngolza|"
                     r"Plavix|Pletal|Trental|Activase|Cordarone|Pacerone|Norpace|Brevibloc|Nipride|"
                     r"Coumadin|Eliquis|Xarelto|Calan|Cardizem|Pradaxa|Arixtra|Atrixtra|Praxibind|Andexxa|K-?centra|Kcentra|"
-                    r"Keflex|Cleocin|Lovenox|Motrin|Advil|Savaysa|Retavase|Brevibloc)\b")
+                    r"Keflex|Cleocin|Lovenox|Motrin|Advil|Savaysa|Retavase|Brevibloc|"
+                    # Lectures 29-32 (2026-10-15): antiarrhythmics, rate control, reversal,
+                    # pericarditis and endocarditis agents
+                    r"Digibind|DigiFab|Adenocard|Tikosyn|Multaq|Betapace|Rythmol|Tambocor|Procanbid|"
+                    r"Xylocaine|Isuprel|Kineret|Arcalyst|Colcrys|Mitigare|Vancocin|Cubicin|Rocephin|"
+                    r"Zithromax|Biaxin|Vibramycin|Ancef|Maxipime|Rifadin|Bactrim|Zofran|Haldol|Celexa|"
+                    r"Lexapro|Seroquel|Zyprexa|Geodon|Risperdal|Clozaril|Dolophine|Diprivan)\b")
 
 # Mechanism-of-action STEMS (Carter: "no mechanism of action questions").
 # Disease pathophysiology is not banned -- drug mechanism is.
@@ -121,10 +139,13 @@ _MOA = re.compile(r"mechanism of action|by what mechanism does|how does (?:the d
 _ACRO = re.compile(r"(?<![\w-])([A-Za-z0-9-]*[A-Z]{2,}[A-Za-z0-9-]*)(?![\w-])")
 # Exam 5 adds ST (the ST segment) and the augmented limb leads: conventional ECG
 # labels like QRS, not abbreviations of a phrase (no_abbreviations_content_policy).
-_ACRO_OK = re.compile(r"^(?:I{1,3}|IV|VI{0,3}|IX|X|S[1-4]|mmHg|QRS|ST|aV[FLR])$")
+_ACRO_OK = re.compile(r"^(?:I{1,3}|IV|VI{0,3}|IX|X|S[1-4]|mmHg|QRS|ST|aV[FLR]|PR|QT|QTc|RR|rSR'?|rsR'?|RS|QS)$")
+# Lectures 29-30 (2026-10-15) add the interval and complex labels PR, QT, QTc, RR and the
+# bundle branch block morphologies (rsR', rSR', RS, QS): electrocardiogram labels like QRS,
+# not abbreviations of a phrase.
 
 # US spelling (2026-09-23). Verbatim io/cite fields are exempt.
-_UK = re.compile(r"\b\w*(?:aemi|oedem|oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
+_UK = re.compile(r"\b\w*(?:aemi|(?<!angi)oedem|oesoph|oestr|paediat|orthopaed|ischaem|haemo(?!philus)|haema|haemorrh|"
                  r"anaesth|foet)\w*\b|\b(?:tumour|colour|behaviour|favour|centre|litre|fibre|"
                  r"counsell\w*|labell\w*|modell\w*|travell\w*|ageing|programme|manoeuvres?|grey(?! turner)|"
                  r"whilst|amongst|analy[s]e[ds]?|paraly[s]e[ds]?|licen[c]e|defen[c]e|practi[s]e[ds]?|"
@@ -137,6 +158,50 @@ _UK = re.compile(r"\b\w*(?:aemi|oedem|oesoph|oestr|paediat|orthopaed|ischaem|hae
 # stems now only match the -ise/-ised/-ising/-isation endings.
 
 SET1_LEAD_NOTE = None
+
+# ---------------------------------------------------------------------------
+# WRITER RULES (tools/question_writing/WRITER.md v1, Jaxon 2026-10-15), applied to
+# the lectures written after that date: 29-32. Lectures 26-28 keep the exact old
+# path (same random calls), so their shipped sets reproduce byte for byte.
+#   mis      every distractor carries its misconception as a THIRD element of the
+#            option, [text, explanation, "<category>"]; the category is from MIS.
+#            load_guarded moves it to q["mis"] (distractors in authored order) and
+#            the sets/pages never carry it.
+#   ordered  numeric or ordered option sets (values, ages, durations, counts,
+#            stages, grades) are shown ASCENDING and not shuffled: q["ordered"] =
+#            True, with q["asc"] = the authored indices in ascending order when the
+#            first number in each option cannot sort them. Four options that all
+#            open on a number must be marked.
+#   absolutes  "always", "never", "only", "all" in a distractor's text but not
+#            in the key's is a clue (WRITER.md writing rule 7).
+# ---------------------------------------------------------------------------
+WRITER_RULES = {"l29", "l30", "l31", "l32"}
+MIS = ("competing diagnosis", "wrong stage or severity", "ruled out by a stated finding",
+       "confused mechanism or drug class", "adjacent fact", "reversed direction or value",
+       "common lay belief")
+_ABSOL = re.compile(r"\b(always|never|only|all)\b", re.I)
+_NUMOPT = re.compile(r"^[<>\u2264\u2265~]?\s*\d")
+_FIRSTNUM = re.compile(r"(\d+(?:\.\d+)?)")
+
+
+def _lec_of(mod):
+    m = re.match(r"cms_e5(l\d+)_", mod)
+    return m.group(1) if m else None
+
+
+def ascending(q):
+    """Authored option indices in display order (ascending) for an ordered question."""
+    if q.get("asc"):
+        a = list(q["asc"])
+        assert sorted(a) == [0, 1, 2, 3], "asc must be a permutation of 0-3: %r" % q["q"][:60]
+        return a
+    vals = []
+    for o in q["opts"]:
+        m = _FIRSTNUM.search(o[0])
+        assert m, "ordered option without a number (give asc): %r" % o[0]
+        vals.append(float(m.group(1)))
+    assert len(set(vals)) == 4, "ordered options share a value (give asc): %r" % q["q"][:60]
+    return sorted(range(4), key=lambda j: vals[j])
 
 
 def _texts(q):
@@ -166,6 +231,9 @@ def load_guarded(lec, vig):
         for i, q in enumerate(qs):
             q = json.loads(json.dumps(q))          # never mutate the module's list
             q.setdefault("c", 0)
+            if any(len(o) > 2 for o in q["opts"]):
+                q["mis"] = [o[2] if len(o) > 2 else None for o in q["opts"][1:]]
+                q["opts"] = [o[:2] for o in q["opts"]]
             pt = patches.get(q["q"])
             if pt:
                 used.add(q["q"])
@@ -241,6 +309,21 @@ def guard_all(scope, pool, origin, vig):
         if _MOA.search(q["q"]): errs.append((where(i), "mechanism-of-action stem"))
         if _DEP.search(q["q"]): errs.append((where(i), "stem refers to another question"))
         if not q["q"].rstrip().endswith("?"): errs.append((where(i), "stem does not end on a question"))
+        if _lec_of(origin[i][0]) in WRITER_RULES:
+            mis = q.get("mis") or []
+            if len(mis) != 3 or any(t not in MIS for t in mis):
+                errs.append((where(i), "every distractor needs a misconception tag from MIS, got %r" % (mis,)))
+            if not _ABSOL.search(q["opts"][0][0]):
+                for j, o in enumerate(q["opts"][1:], 1):
+                    if _ABSOL.search(o[0]):
+                        errs.append((where(i), "absolute %r only in distractor %d" % (_ABSOL.search(o[0]).group(0), j)))
+            if q.get("ordered"):
+                try:
+                    ascending(q)
+                except AssertionError as e:
+                    errs.append((where(i), str(e)))
+            elif all(_NUMOPT.match(o[0].strip()) for o in q["opts"]):
+                errs.append((where(i), "four numeric options must be marked ordered (shown ascending)"))
         if vig:
             if not _VIG.match(q["q"].strip()): errs.append((where(i), "vignette stem does not open on a patient"))
             lead = q.get("lead")
@@ -373,14 +456,43 @@ def guarded_main():
     sets = []
     for part in (cur[:PER_SET], cur[PER_SET:]):
         qs = [json.loads(json.dumps(POOL[i])) for i in part]
-        targets = [i % 4 for i in range(len(qs))]
-        random.shuffle(targets)
+        if lec not in WRITER_RULES:                 # Lectures 26-28: the shipped path, unchanged
+            targets = [i % 4 for i in range(len(qs))]
+            random.shuffle(targets)
+        else:
+            # ordered questions sit where their key's value falls; the rest fill the
+            # positions so the form stays as even as the cycle allows
+            fixed = {}
+            for n, q in enumerate(qs):
+                if q.get("ordered"):
+                    fixed[n] = ascending(q).index(0)
+            want = [len(qs) // 4 + (1 if k < len(qs) % 4 else 0) for k in range(4)]
+            random.shuffle(want)
+            for t in fixed.values():
+                want[t] -= 1
+            free = []
+            for k in range(4):
+                free += [k] * max(0, want[k])
+            short = len(qs) - len(fixed) - len(free)
+            free += [min(range(4), key=lambda k: want[k] + free.count(k)) for _ in range(max(0, short))]
+            random.shuffle(free)
+            free = free[:len(qs) - len(fixed)]
+            it = iter(free)
+            targets = [fixed[n] if n in fixed else next(it) for n in range(len(qs))]
         for i, q, t in zip(part, qs, targets):
-            k = (t - q["c"]) % 4
-            q["opts"] = q["opts"][-k:] + q["opts"][:-k] if k else q["opts"]
-            q["c"] = t
+            if lec in WRITER_RULES and q.get("ordered"):
+                order = ascending(q)
+                q["opts"] = [q["opts"][j] for j in order]
+                q["c"] = order.index(0)
+                assert q["c"] == t
+            else:
+                k = (t - q["c"]) % 4
+                q["opts"] = q["opts"][-k:] + q["opts"][:-k] if k else q["opts"]
+                q["c"] = t
             assert q["opts"][q["c"]][0] == answer_text[i], "rotation moved an answer!"
             assert re.match(r"correct\b", q["opts"][q["c"]][1], re.I)
+            for f in ("mis", "ordered", "asc"):     # authoring fields stay out of the pages
+                q.pop(f, None)
         sets.append(qs)
     print("rotation check: every correct answer still points at its own text\n")
 
