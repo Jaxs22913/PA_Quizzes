@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the CMS I Exam 5 Arcade decks -- Lecture 27 (Arterial Occlusive Disease
-and Aortic Aneurysm) and Lecture 28 (Cardiomyopathy), both Carter.
+"""Add the CMS I Exam 5 Arcade decks -- Lecture 26 (Venous Disorders, Shah),
+27 (Arterial Occlusive Disease and Aortic Aneurysm) and 28 (Cardiomyopathy),
+both Carter, 29-30 (Arrhythmias I and II, Elwaya), 31 (Pericardial Disease) and
+32 (Infective Endocarditis), both Reynolds.
 
 Deck content lives in cms_e5_arcade_decks.json (a list of
 {"id","name","color","icon","cards":[[prompt, answer], ...]}), authored from
-the slides only, ATOMIC FACTS ONLY per [[arcade_content_policy]]. Five decks:
-three for Lecture 27, two for Lecture 28.
+the slides only, ATOMIC FACTS ONLY per [[arcade_content_policy]]. 21 decks:
+four for Lecture 26, three for 27, two for 28 and three for each of 29-32.
 
 Modeled on add_cms_e4_arcade.py. Idempotent: fenced between markers and
 re-runnable; registers an "Exam 5" entry (id exam5) after Exam 4 INSIDE the CMS
