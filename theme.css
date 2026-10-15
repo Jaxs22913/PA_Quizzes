@@ -1764,6 +1764,9 @@ html.gnote-placing body > .wrap, html.gnote-placing body > .wrap * { cursor: cro
   .hl-panel-jump, .hl-panel-delete { min-height: 44px; min-width: 44px; }
 }
 @media print {
+  /* 2026-10-15: browsers print with "background graphics" off by default, which dropped every highlight
+     from the paper (checked in a Chrome PDF); a highlight is the student's own mark, so its color prints */
+  mark.user-hl { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .gnote { background: #fff !important; color: #000 !important; border: 1px solid #555 !important; border-left: 3px solid #000 !important; box-shadow: none !important; }
   .gnote::before { background: #000 !important; }
   .hl-toolbar, .hl-note-popover { display: none !important; }
