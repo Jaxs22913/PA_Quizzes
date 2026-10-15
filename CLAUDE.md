@@ -123,7 +123,7 @@ Each has a memory with the full story.
 - **Every option gets its own explanation** that refutes AND supplies the replacing fact (60+ characters).
 - **Distractors match the key's length and style**; shorten the key, never pad distractors.
 - **Permute answer positions** before shipping. **No abbreviations**, or `ABBREV (full term)`.
-- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks. **Truth wins on conflict**.
+- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks, and speaker notes do not count. **Truth wins on conflict**.
 - **Every Semester 2 question links to a passage in its own class's guide that STATES the fact, and a
   separate reader verified it** (word overlap is not enough). For a new or changed question:
   1. write a missing fact into the guide via `tools/guide_additions/` + `tools/apply_guide_additions.py` (text only
