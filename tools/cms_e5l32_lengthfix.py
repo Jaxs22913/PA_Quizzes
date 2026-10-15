@@ -29,12 +29,11 @@ FIXES = {
  ("cms_e5l32_pool_c", 11, 0): "Uncomplicated with rapid response",
  ("cms_e5l32_pool_c", 26, 0): "Ampicillin by injection",
  ("cms_e5l32_pool_c", 27, 0): "Azithromycin",
- ("cms_e5l32_pool_c", 31, 0): "Prior endocarditis",
+ ("cms_e5l32_pool_c", 31, 0): "Prior valve infection",
  ("cms_e5l32_pool_c", 38, 0): "Large peripheral artery emboli",
  ("cms_e5l32_pool_c", 42, 0): "Pneumococcus or Staphylococcus aureus",
  ("cms_e5l32_pool_c", 47, 0): "Central lines and prematurity",
  # Set 2 pools
- ("cms_e5l32_vig_a", 10, 0): "Health care-associated infection",
  ("cms_e5l32_vig_a", 11, 0): "Septal perivalvular abscess",
  ("cms_e5l32_vig_a", 16, 0): "Libman-Sacks endocarditis",
  ("cms_e5l32_vig_c", 20, 0): "Cefazolin by injection",

@@ -11,15 +11,18 @@
     ],
     [
      "Ambulatory Holter monitor",
-     "A Holter monitor only records the rhythm; it cannot shock. The wearable defibrillator vest can."
+     "A Holter monitor only records the rhythm; it cannot shock. The wearable defibrillator vest can.",
+     "adjacent fact"
     ],
     [
      "Implantable loop recorder",
-     "A loop recorder only stores the rhythm. A wearable defibrillator vest detects and shocks lethal rhythms."
+     "A loop recorder only stores the rhythm. A wearable defibrillator vest detects and shocks lethal rhythms.",
+     "adjacent fact"
     ],
     [
      "Transcutaneous pacing pads",
-     "Pacing pads treat slow rhythms in an emergency. The wearable defibrillator vest is the device that shocks lethal rhythms."
+     "Pacing pads treat slow rhythms in an emergency. The wearable defibrillator vest is the device that shocks lethal rhythms.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 0,
@@ -33,8 +36,14 @@
    "q": "A 38-year-old woman has bothersome palpitations. Her echocardiogram is normal, a 24-hour monitor shows premature ventricular contractions in 3% of beats, she has never fainted, and her electrolytes and oxygen saturation are normal. She has already stopped caffeine. Which is the first-line treatment?",
    "opts": [
     [
+     "Implantable defibrillator",
+     "A defibrillator prevents sudden death from lethal rhythms. Symptomatic benign premature beats start with a beta blocker.",
+     "wrong stage or severity"
+    ],
+    [
      "Amiodarone",
-     "Amiodarone is an antiarrhythmic for ventricular tachycardia and fibrillation. A beta blocker is first-line here."
+     "Amiodarone is an antiarrhythmic for ventricular tachycardia and fibrillation. A beta blocker is first-line here.",
+     "confused mechanism or drug class"
     ],
     [
      "Beta blocker",
@@ -42,14 +51,11 @@
     ],
     [
      "Catheter ablation",
-     "Ablation is second-line in low-risk patients, used when a beta blocker fails or is not tolerated."
-    ],
-    [
-     "Implantable defibrillator",
-     "A defibrillator prevents sudden death from lethal rhythms. Symptomatic benign premature beats start with a beta blocker."
+     "Ablation is second-line in low-risk patients, used when a beta blocker fails or is not tolerated.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36",
    "slot": "first-line",
    "lead": "treatment"
@@ -60,23 +66,26 @@
    "q": "A 66-year-old woman collapses in a hospital hallway. The monitor shows chaotic, uncoordinated activity, and she has no pulse. Compressions have started and defibrillator pads are attached. Which is the most appropriate next step?",
    "opts": [
     [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion needs a QRS to time against. Fibrillation has none, so the shock is unsynchronized."
-    ],
-    [
      "Amiodarone before any shock",
-     "Amiodarone is added when fibrillation persists after shocks. The first step is defibrillation as soon as possible."
+     "Amiodarone is added when fibrillation persists after shocks. The first step is defibrillation as soon as possible.",
+     "wrong stage or severity"
     ],
     [
      "Check electrolytes first",
-     "Delaying the shock for labs costs her chance of survival. Defibrillate as soon as possible."
+     "Delaying the shock for labs costs her chance of survival. Defibrillate as soon as possible.",
+     "wrong stage or severity"
     ],
     [
      "Defibrillate now",
      "Correct. Ventricular fibrillation is treated as cardiac arrest with cardiopulmonary resuscitation, oxygen and defibrillation (unsynchronized cardioversion) as soon as possible."
+    ],
+    [
+     "Synchronized cardioversion",
+     "Synchronized cardioversion needs a QRS to time against. Fibrillation has none, so the shock is unsynchronized.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 50",
    "slot": "first-line",
    "lead": "next step"
@@ -88,11 +97,13 @@
    "opts": [
     [
      "Asystole",
-     "Asystole is a flat line with no electrical activity. Chaotic waves mean ventricular fibrillation."
+     "Asystole is a flat line with no electrical activity. Chaotic waves mean ventricular fibrillation.",
+     "competing diagnosis"
     ],
     [
      "Pulseless electrical activity",
-     "Pulseless electrical activity shows an organized rhythm without a pulse. This rhythm is chaotic."
+     "Pulseless electrical activity shows an organized rhythm without a pulse. This rhythm is chaotic.",
+     "competing diagnosis"
     ],
     [
      "Ventricular fibrillation",
@@ -100,7 +111,8 @@
     ],
     [
      "Polymorphic ventricular tachycardia",
-     "Polymorphic ventricular tachycardia still has identifiable, if varying, QRS complexes. Chaotic waves without any QRS are fibrillation."
+     "Polymorphic ventricular tachycardia still has identifiable, if varying, QRS complexes. Chaotic waves without any QRS are fibrillation.",
+     "competing diagnosis"
     ]
    ],
    "c": 2,
@@ -111,26 +123,29 @@
   {
    "topic": "Asystole and pulseless electrical activity",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 71-year-old woman in cardiac arrest has an organized sinus rhythm on the monitor but no pulse. A team member begins to charge the defibrillator. Which statement is accurate?",
+   "q": "A 71-year-old woman in cardiac arrest has an organized sinus rhythm on the monitor but no pulse. A team member begins to charge the defibrillator. Which statement about treating this rhythm is accurate?",
    "opts": [
     [
-     "Defibrillate now",
-     "Defibrillation is for ventricular fibrillation and pulseless ventricular tachycardia. An organized pulseless rhythm is unshockable."
+     "It needs a synchronized shock",
+     "Shocking an already organized rhythm achieves nothing. Pulseless electrical activity is unshockable.",
+     "confused mechanism or drug class"
     ],
     [
-     "Use a synchronized shock",
-     "Shocking an already organized rhythm achieves nothing. Pulseless electrical activity is unshockable."
+     "It needs transcutaneous pacing",
+     "Pacing is for slow rhythms with a pulse. She is pulseless and needs compressions and epinephrine.",
+     "confused mechanism or drug class"
     ],
     [
-     "Start transcutaneous pacing",
-     "Pacing is for slow rhythms with a pulse. She is pulseless and needs compressions and epinephrine."
-    ],
-    [
-     "The rhythm is unshockable",
+     "It should not be shocked",
      "Correct. Pulseless electrical activity and asystole are unshockable; chest compressions start immediately, with epinephrine and early intubation."
+    ],
+    [
+     "It needs defibrillation now",
+     "Defibrillation is for ventricular fibrillation and pulseless ventricular tachycardia. An organized pulseless rhythm is unshockable.",
+     "reversed direction or value"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 55",
    "slot": "avoid",
    "lead": "avoid"
@@ -141,23 +156,26 @@
    "q": "A 55-year-old man is cardioverted from unstable sustained ventricular tachycardia. He is now stable in sinus rhythm, and no reversible cause is found. Which is the most appropriate plan before discharge?",
    "opts": [
     [
+     "Lifelong oral magnesium",
+     "Magnesium treats torsades acutely and does not prevent sudden death. He needs an implantable defibrillator.",
+     "confused mechanism or drug class"
+    ],
+    [
      "Implantable defibrillator",
      "Correct. Once stabilized, most patients need an implantable cardioverter defibrillator for secondary prevention of sudden cardiac death from ventricular tachycardia or fibrillation."
     ],
     [
      "Permanent pacemaker",
-     "A pacemaker treats slow conduction. After unstable ventricular tachycardia, the device needed is a defibrillator."
+     "A pacemaker treats slow conduction. After unstable ventricular tachycardia, the device needed is a defibrillator.",
+     "confused mechanism or drug class"
     ],
     [
      "No further therapy",
-     "He remains at risk of sudden death; most survivors need a defibrillator for secondary prevention."
-    ],
-    [
-     "Lifelong oral magnesium",
-     "Magnesium treats torsades acutely and does not prevent sudden death. He needs an implantable defibrillator."
+     "He remains at risk of sudden death; most survivors need a defibrillator for secondary prevention.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 45",
    "slot": "referral",
    "lead": "referral"
@@ -169,7 +187,8 @@
    "opts": [
     [
      "Complete heart block",
-     "In complete block no P wave conducts and the P waves and QRS complexes are unrelated. Here most P waves conduct at a fixed PR."
+     "In complete block no P wave conducts and the P waves and QRS complexes are unrelated. Here most P waves conduct at a fixed PR.",
+     "competing diagnosis"
     ],
     [
      "Mobitz type II block",
@@ -177,11 +196,13 @@
     ],
     [
      "Mobitz type I block",
-     "Mobitz type I lengthens the PR before each dropped beat. Here the PR stays constant, which marks Mobitz type II."
+     "Mobitz type I lengthens the PR before each dropped beat. Here the PR stays constant, which marks Mobitz type II.",
+     "competing diagnosis"
     ],
     [
      "First-degree block",
-     "First-degree block has a long PR and never drops a beat. Here the PR is normal and some P waves fail to conduct."
+     "First-degree block has a long PR and never drops a beat. Here the PR is normal and some P waves fail to conduct.",
+     "competing diagnosis"
     ]
    ],
    "c": 1,
@@ -200,15 +221,18 @@
     ],
     [
      "Outpatient stress test",
-     "A stress test weeks later delays treatment of acute ischemia. Urgent coronary angiography is the next step."
+     "A stress test weeks later delays treatment of acute ischemia. Urgent coronary angiography is the next step.",
+     "wrong stage or severity"
     ],
     [
      "Pericardiocentesis",
-     "Pericardiocentesis drains a tamponade, which nothing here suggests. Urgent coronary angiography is next."
+     "Pericardiocentesis drains a tamponade, which nothing here suggests. Urgent coronary angiography is next.",
+     "confused mechanism or drug class"
     ],
     [
      "Catheter ablation",
-     "Ablation is not the urgent step. Ischemia-driven polymorphic ventricular tachycardia needs coronary angiography."
+     "Ablation is not the urgent step. Ischemia-driven polymorphic ventricular tachycardia needs coronary angiography.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
@@ -223,11 +247,13 @@
    "opts": [
     [
      "Accessory pathway",
-     "An accessory pathway gives a short PR and a slurred QRS upstroke (a delta wave), not rsR' in the right precordial leads."
+     "An accessory pathway gives a short PR and a slurred QRS upstroke (a delta wave), not rsR' in the right precordial leads.",
+     "competing diagnosis"
     ],
     [
      "Ventricular tachycardia",
-     "Ventricular tachycardia is a fast wide rhythm without P waves. A routine tracing with rsR' in V1 is right bundle branch block."
+     "Ventricular tachycardia is a fast wide rhythm without P waves. A routine tracing with rsR' in V1 is right bundle branch block.",
+     "competing diagnosis"
     ],
     [
      "Right bundle branch block",
@@ -235,7 +261,8 @@
     ],
     [
      "Left bundle branch block",
-     "Left bundle branch block gives a dominant S wave in V1 and absent Q waves in the lateral leads, not rsR' in V1."
+     "Left bundle branch block gives a dominant S wave in V1 and absent Q waves in the lateral leads, not rsR' in V1.",
+     "competing diagnosis"
     ]
    ],
    "c": 2,
@@ -249,23 +276,26 @@
    "q": "A 24-year-old marathon runner has an electrocardiogram at a sports physical. He has no symptoms. The PR interval grows longer with each beat until one P wave is not followed by a QRS complex, and then the cycle repeats. The QRS complexes are narrow. Which is the most likely diagnosis?",
    "opts": [
     [
-     "First-degree block",
-     "First-degree block has a long but constant PR and never drops a beat. Here a P wave fails to conduct after the PR lengthens."
-    ],
-    [
-     "Complete heart block",
-     "Complete block has no relationship between P waves and QRS complexes. Here the PR changes in an orderly pattern tied to the drop."
-    ],
-    [
      "Mobitz type I block",
      "Correct. A PR interval that progressively lengthens until a QRS drops, in a repeating pattern, is Mobitz type I (Wenckebach) block; increased vagal tone is a named cause in well-conditioned people."
     ],
     [
      "Mobitz type II block",
-     "Mobitz type II drops beats without warning while the PR interval stays constant. Here the PR lengthens before each drop."
+     "Mobitz type II drops beats without warning while the PR interval stays constant. Here the PR lengthens before each drop.",
+     "competing diagnosis"
+    ],
+    [
+     "First-degree block",
+     "First-degree block has a long but constant PR and never drops a beat. Here a P wave fails to conduct after the PR lengthens.",
+     "competing diagnosis"
+    ],
+    [
+     "Complete heart block",
+     "Complete block has no relationship between P waves and QRS complexes. Here the PR changes in an orderly pattern tied to the drop.",
+     "competing diagnosis"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 7",
    "slot": "test finding",
    "lead": "diagnosis"
@@ -276,23 +306,26 @@
    "q": "A 66-year-old woman learns her electrocardiogram shows a constant PR interval of 0.22 seconds with every beat conducted. She feels well and asks at what point this kind of delay usually starts to cause symptoms. Which answer is most accurate?",
    "opts": [
     [
-     "Once the PR exceeds 0.20 seconds",
-     "A PR over 0.20 seconds defines first-degree block, which she already has, yet most such patients feel nothing. Symptoms usually begin above 0.3 seconds."
-    ],
-    [
      "Once the PR exceeds 0.12 seconds",
-     "A PR of 0.12 to 0.20 seconds is normal. Symptoms of first-degree block usually begin when the PR is over 0.3 seconds."
+     "A PR of 0.12 to 0.20 seconds is normal. Symptoms of first-degree block usually begin when the PR is over 0.3 seconds.",
+     "reversed direction or value"
     ],
     [
-     "Only if a QRS starts dropping",
-     "Dropped beats would mean second-degree block, a different rhythm. Symptoms of first-degree block usually appear once the PR exceeds 0.3 seconds."
+     "When a QRS starts dropping",
+     "Dropped beats would mean second-degree block, a different rhythm. Symptoms of first-degree block usually appear once the PR exceeds 0.3 seconds.",
+     "competing diagnosis"
     ],
     [
      "Once the PR exceeds 0.3 seconds",
      "Correct. The vast majority of first-degree blocks are asymptomatic; symptoms such as fatigue, dyspnea, palpitations and chest pain usually appear once the PR interval is greater than 0.3 seconds."
+    ],
+    [
+     "Once the PR exceeds 0.20 seconds",
+     "A PR over 0.20 seconds defines first-degree block, which she already has, yet most such patients feel nothing. Symptoms usually begin above 0.3 seconds.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 6",
    "slot": "manifestation",
    "lead": "education"
@@ -300,26 +333,29 @@
   {
    "topic": "Torsades and QT prolongation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 65-year-old man with a heart rate of 48 on metoprolol develops torsades de pointes (QRS complexes that twist around the baseline) from a drug-induced long QT. Which of his medications worsens this rhythm through an indirect effect on the QT?",
+   "q": "A 65-year-old man who takes metoprolol, atorvastatin, aspirin and lisinopril has a heart rate of 48 and develops torsades de pointes (QRS complexes that twist around the baseline) from a drug-induced long QT. Which of his medications worsens this rhythm through an indirect effect on the QT?",
    "opts": [
-    [
-     "Aspirin",
-     "Aspirin has no named effect on the QT. Metoprolol indirectly prolongs it through bradycardia."
-    ],
-    [
-     "Lisinopril",
-     "Angiotensin-converting enzyme inhibitors are not named. Metoprolol worsens torsades by slowing the rate."
-    ],
     [
      "Metoprolol",
      "Correct. Beta blockers are avoided in torsades because the bradycardia they cause lengthens the R to R interval and so indirectly prolongs the QT."
     ],
     [
      "Atorvastatin",
-     "Statins are not named for this. The beta blocker, by slowing the rate, indirectly prolongs the QT."
+     "Statins are not named for this. The beta blocker, by slowing the rate, indirectly prolongs the QT.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Aspirin",
+     "Aspirin has no named effect on the QT. Metoprolol indirectly prolongs it through bradycardia.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Lisinopril",
+     "Angiotensin-converting enzyme inhibitors are not named. Metoprolol worsens torsades by slowing the rate.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 47",
    "slot": "avoid",
    "lead": "avoid"
@@ -331,15 +367,18 @@
    "opts": [
     [
      "Intravenous amiodarone",
-     "An antiarrhythmic is for the stable patient. Chest pain alone makes her unstable, which calls for synchronized cardioversion."
+     "An antiarrhythmic is for the stable patient. Chest pain alone makes her unstable, which calls for synchronized cardioversion.",
+     "wrong stage or severity"
     ],
     [
      "Defibrillation",
-     "Defibrillation is for the pulseless patient or polymorphic rhythm. She has a pulse and a monomorphic rhythm."
+     "Defibrillation is for the pulseless patient or polymorphic rhythm. She has a pulse and a monomorphic rhythm.",
+     "ruled out by a stated finding"
     ],
     [
      "Observation and labs",
-     "Chest pain makes her unstable; waiting is unsafe. She needs synchronized cardioversion."
+     "Chest pain makes her unstable; waiting is unsafe. She needs synchronized cardioversion.",
+     "wrong stage or severity"
     ],
     [
      "Synchronized cardioversion",
@@ -357,23 +396,26 @@
    "q": "A 45-year-old man has a 24-hour monitor for an unrelated reason. It shows premature ventricular contractions in under 1% of beats. He has no symptoms, and his echocardiogram is normal. Which plan is most appropriate?",
    "opts": [
     [
-     "Reassurance, remove triggers",
-     "Correct. Low-risk adults with a low burden (under 1% or 1,000 a day), no structural heart disease and no symptoms need reassurance and elimination of triggers."
-    ],
-    [
      "Daily beta blocker",
-     "A beta blocker is first-line only for symptomatic low-risk patients. He has no symptoms, so reassurance is enough."
+     "A beta blocker is first-line only for symptomatic low-risk patients. He has no symptoms, so reassurance is enough.",
+     "wrong stage or severity"
     ],
     [
      "Catheter ablation",
-     "Ablation is kept for refractory symptoms or beat-induced cardiomyopathy, not a silent low burden."
+     "Ablation is kept for refractory symptoms or beat-induced cardiomyopathy, not a silent low burden.",
+     "wrong stage or severity"
     ],
     [
      "Implantable defibrillator",
-     "A defibrillator prevents sudden death from lethal rhythms; rare benign premature beats need only reassurance."
+     "A defibrillator prevents sudden death from lethal rhythms; rare benign premature beats need only reassurance.",
+     "wrong stage or severity"
+    ],
+    [
+     "Reassurance, remove triggers",
+     "Correct. Low-risk adults with a low burden (under 1% or 1,000 a day), no structural heart disease and no symptoms need reassurance and elimination of triggers."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36",
    "slot": "education",
    "lead": "education"
@@ -384,23 +426,26 @@
    "q": "A 70-year-old woman with known complete heart block awaiting device placement reports two fainting episodes this week. Why is this symptom especially concerning?",
    "opts": [
     [
+     "It means the block is resolving",
+     "Fainting does not mean recovery. In complete block, syncope is associated with an increased risk of sudden death.",
+     "reversed direction or value"
+    ],
+    [
+     "It points to a seizure disorder",
+     "Her collapse is explained by the slow escape rhythm. Syncope in complete block signals an increased risk of sudden death.",
+     "competing diagnosis"
+    ],
+    [
      "It suggests low blood glucose",
-     "Nothing points to hypoglycemia. Syncope in complete heart block is associated with an increased risk of sudden death."
+     "Nothing points to hypoglycemia. Syncope in complete heart block is associated with an increased risk of sudden death.",
+     "competing diagnosis"
     ],
     [
      "It signals higher sudden death risk",
      "Correct. Syncope is a particularly important symptom in complete heart block because it is associated with an increased risk of sudden death."
-    ],
-    [
-     "It means the block is resolving",
-     "Fainting does not mean recovery. In complete block, syncope is associated with an increased risk of sudden death."
-    ],
-    [
-     "It points to a seizure disorder",
-     "Her collapse is explained by the slow escape rhythm. Syncope in complete block signals an increased risk of sudden death."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 17",
    "slot": "prognosis",
    "lead": "complication"
@@ -411,12 +456,9 @@
    "q": "A 69-year-old woman in a regular wide QRS tachycardia with identical complexes suddenly becomes unresponsive, and no pulse can be felt. Which is the most appropriate next step?",
    "opts": [
     [
-     "Intravenous lidocaine",
-     "A drug alone is for the stable patient. Pulseless ventricular tachycardia is defibrillated."
-    ],
-    [
      "Vagal maneuvers",
-     "Vagal maneuvers act on the atrioventricular node in supraventricular rhythms; they have no role in pulseless ventricular tachycardia."
+     "Vagal maneuvers act on the atrioventricular node in supraventricular rhythms; they have no role in pulseless ventricular tachycardia.",
+     "confused mechanism or drug class"
     ],
     [
      "Defibrillation",
@@ -424,10 +466,16 @@
     ],
     [
      "Synchronized cardioversion",
-     "Synchronized cardioversion is for unstable ventricular tachycardia with a pulse. Without a pulse, defibrillate."
+     "Synchronized cardioversion is for unstable ventricular tachycardia with a pulse. Without a pulse, defibrillate.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Intravenous lidocaine",
+     "A drug alone is for the stable patient. Pulseless ventricular tachycardia is defibrillated.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 2,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 45",
    "slot": "escalation",
    "lead": "next step"
@@ -438,23 +486,26 @@
    "q": "A 74-year-old woman with no symptoms and normal exercise tolerance has a routine electrocardiogram showing a constant PR interval of 0.24 seconds, with every P wave conducted to a narrow QRS complex. Which is the most appropriate management?",
    "opts": [
     [
+     "Permanent pacemaker",
+     "A pacemaker is considered for symptomatic first-degree block. A symptom-free older adult with a PR of 0.24 seconds needs no treatment.",
+     "wrong stage or severity"
+    ],
+    [
      "Transcutaneous pacing",
-     "Transcutaneous pacing is the emergency bridge for unstable Mobitz type II or complete block, not for a stable, silent first-degree block."
+     "Transcutaneous pacing is the emergency bridge for unstable Mobitz type II or complete block, not for a stable, silent first-degree block.",
+     "wrong stage or severity"
     ],
     [
      "Oral beta blocker",
-     "A beta blocker slows atrioventricular conduction and is itself a named cause of first-degree block; it would not treat it."
+     "A beta blocker slows atrioventricular conduction and is itself a named cause of first-degree block; it would not treat it.",
+     "confused mechanism or drug class"
     ],
     [
      "No treatment needed",
      "Correct. Asymptomatic first-degree atrioventricular block needs no treatment; a permanent pacemaker is considered only if debilitating symptoms or heart failure symptoms develop."
-    ],
-    [
-     "Permanent pacemaker",
-     "A pacemaker is considered for symptomatic first-degree block. A symptom-free older adult with a PR of 0.24 seconds needs no treatment."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 6",
    "slot": "first-line",
    "lead": "treatment"
@@ -466,15 +517,18 @@
    "opts": [
     [
      "Intravenous amiodarone",
-     "Amiodarone prolongs the QT and is avoided in torsades. Intravenous magnesium comes first."
+     "Amiodarone prolongs the QT and is avoided in torsades. Intravenous magnesium comes first.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous procainamide",
-     "Procainamide prolongs the QT and is avoided in torsades. Magnesium is the first treatment."
+     "Procainamide prolongs the QT and is avoided in torsades. Magnesium is the first treatment.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous metoprolol",
-     "Beta blockers are avoided because the slower rate indirectly lengthens the QT. Magnesium is given first."
+     "Beta blockers are avoided because the slower rate indirectly lengthens the QT. Magnesium is given first.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous magnesium",
@@ -492,23 +546,26 @@
    "q": "A 38-year-old man who injects drugs is being treated for aortic valve endocarditis. On day 4 his heart rate falls to 38, and the electrocardiogram shows P waves with no relationship to wide QRS complexes. Which complication of his infection explains the new rhythm?",
    "opts": [
     [
+     "Septic emboli to the lungs",
+     "Septic pulmonary emboli cause cough and lung lesions, not heart block. An abscess near the conduction system does.",
+     "adjacent fact"
+    ],
+    [
+     "Splinter hemorrhages",
+     "Splinter hemorrhages are nail-bed signs of endocarditis and do not affect conduction. An abscess is the cause of the block.",
+     "adjacent fact"
+    ],
+    [
      "Drug-induced vagal tone",
-     "Increased vagal tone causes milder nodal blocks. Complete block during endocarditis points to an abscess."
+     "Increased vagal tone causes milder nodal blocks. Complete block during endocarditis points to an abscess.",
+     "confused mechanism or drug class"
     ],
     [
      "A perivalvular abscess",
      "Correct. Bacterial endocarditis with an associated abscess is a named cause of complete heart block, because the infection extends into the conduction tissue."
-    ],
-    [
-     "Septic emboli to the lungs",
-     "Septic pulmonary emboli cause cough and lung lesions, not heart block. An abscess near the conduction system does."
-    ],
-    [
-     "Splinter hemorrhages",
-     "Splinter hemorrhages are nail-bed signs of endocarditis and do not affect conduction. An abscess is the cause of the block."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 18",
    "slot": "complication",
    "lead": "complication"
@@ -519,23 +576,26 @@
    "q": "An 84-year-old woman with no heart symptoms has a right bundle branch block on a routine electrocardiogram. She has no lung disease, no recent immobility and a normal echocardiogram. Which named cause best fits her?",
    "opts": [
     [
-     "Pulmonary hypertension",
-     "Pulmonary hypertension is a named cause, but she has no lung disease and a normal echocardiogram. Age-related degeneration fits."
-    ],
-    [
      "Age-related degeneration",
      "Correct. Age-related degenerative change of the conduction system heads the list of causes of right bundle branch block and best fits an elderly patient with no other disease."
     ],
     [
      "Pulmonary embolism",
-     "A pulmonary embolism causes an acute right bundle branch block with sudden dyspnea. She has no symptoms or risk factors for it."
+     "A pulmonary embolism causes an acute right bundle branch block with sudden dyspnea. She has no symptoms or risk factors for it.",
+     "ruled out by a stated finding"
     ],
     [
      "Myocarditis",
-     "Myocarditis is an inflammatory cause with symptoms and an abnormal heart. Her silent block fits age-related degeneration."
+     "Myocarditis is an inflammatory cause with symptoms and an abnormal heart. Her silent block fits age-related degeneration.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Pulmonary hypertension",
+     "Pulmonary hypertension is a named cause, but she has no lung disease and a normal echocardiogram. Age-related degeneration fits.",
+     "ruled out by a stated finding"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 31",
    "slot": "epidemiology",
    "lead": "complication"
@@ -546,8 +606,14 @@
    "q": "A 52-year-old man has a cardiac arrest after choking on food at a restaurant. The obstruction is removed, but he remains pulseless with an organized rhythm on the monitor. Compressions are underway. Which airway step should be considered early?",
    "opts": [
     [
+     "Wait for a pulse first",
+     "Airway support is not delayed until a pulse returns; intubation is considered early.",
+     "wrong stage or severity"
+    ],
+    [
      "A nebulized bronchodilator",
-     "A bronchodilator does not secure the airway. Early intubation addresses his hypoxia."
+     "A bronchodilator does not secure the airway. Early intubation addresses his hypoxia.",
+     "confused mechanism or drug class"
     ],
     [
      "Intubation",
@@ -555,14 +621,11 @@
     ],
     [
      "Defibrillation first",
-     "An organized pulseless rhythm is unshockable. Early intubation addresses the hypoxia that caused it."
-    ],
-    [
-     "Wait for a pulse first",
-     "Airway support is not delayed until a pulse returns; intubation is considered early."
+     "An organized pulseless rhythm is unshockable. Early intubation addresses the hypoxia that caused it.",
+     "ruled out by a stated finding"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 55",
    "slot": "escalation",
    "lead": "next step"
@@ -573,23 +636,26 @@
    "q": "A 66-year-old woman with chronic obstructive lung disease is admitted with an exacerbation. She is confused, and the monitor shows runs of skipped beats from frequent early, wide QRS complexes without P waves. Her arterial oxygen tension is low. Which underlying problem should be corrected first?",
    "opts": [
     [
+     "Her hypoxemia",
+     "Correct. Hypoxemia is a main cause of premature ventricular contractions, along with electrolyte imbalance, so her low oxygen should be corrected first."
+    ],
+    [
      "Her blood pressure",
-     "Blood pressure is not the named trigger. Hypoxemia and electrolyte imbalance are the main causes of premature ventricular contractions."
+     "Blood pressure is not the named trigger. Hypoxemia and electrolyte imbalance are the main causes of premature ventricular contractions.",
+     "common lay belief"
     ],
     [
      "Her blood glucose",
-     "Blood glucose is not a named trigger. Her low oxygen tension is the cause to correct first."
+     "Blood glucose is not a named trigger. Her low oxygen tension is the cause to correct first.",
+     "common lay belief"
     ],
     [
      "Her body temperature",
-     "Temperature is not the named trigger. Hypoxemia, with electrolyte imbalance, drives premature ventricular contractions."
-    ],
-    [
-     "Her hypoxemia",
-     "Correct. Hypoxemia is a main cause of premature ventricular contractions, along with electrolyte imbalance, so her low oxygen should be corrected first."
+     "Temperature is not the named trigger. Hypoxemia, with electrolyte imbalance, drives premature ventricular contractions.",
+     "common lay belief"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36",
    "slot": "etiology",
    "lead": "next step"
@@ -600,23 +666,26 @@
    "q": "A 78-year-old woman has a harsh crescendo-decrescendo systolic murmur at the right upper sternal border radiating to the carotids, and her electrocardiogram shows a left bundle branch block. Which of her conditions is singled out as a cause of this block?",
    "opts": [
     [
+     "Aortic stenosis",
+     "Correct. Valvular heart disease, especially aortic stenosis, is a named cause of left bundle branch block, and her murmur is the classic aortic stenosis murmur."
+    ],
+    [
      "Mitral stenosis",
-     "Mitral stenosis gives a diastolic rumble at the apex, not this murmur, and is not singled out. Aortic stenosis is."
+     "Mitral stenosis gives a diastolic rumble at the apex, not this murmur, and is not singled out. Aortic stenosis is.",
+     "ruled out by a stated finding"
     ],
     [
      "Pulmonic stenosis",
-     "Pulmonic stenosis loads the right ventricle and is heard at the left upper sternal border. Aortic stenosis is the lesion named."
+     "Pulmonic stenosis loads the right ventricle and is heard at the left upper sternal border. Aortic stenosis is the lesion named.",
+     "ruled out by a stated finding"
     ],
     [
      "Tricuspid regurgitation",
-     "Tricuspid regurgitation is a right-sided holosystolic murmur. The valve lesion singled out for left bundle branch block is aortic stenosis."
-    ],
-    [
-     "Aortic stenosis",
-     "Correct. Valvular heart disease, especially aortic stenosis, is a named cause of left bundle branch block, and her murmur is the classic aortic stenosis murmur."
+     "Tricuspid regurgitation is a right-sided holosystolic murmur. The valve lesion singled out for left bundle branch block is aortic stenosis.",
+     "ruled out by a stated finding"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 26",
    "slot": "etiology",
    "lead": "complication"
@@ -628,7 +697,8 @@
    "opts": [
     [
      "Oral beta blocker",
-     "A beta blocker slows conduction further. Complete block is treated definitively with a permanent pacemaker."
+     "A beta blocker slows conduction further. Complete block is treated definitively with a permanent pacemaker.",
+     "confused mechanism or drug class"
     ],
     [
      "Permanent pacemaker",
@@ -636,11 +706,13 @@
     ],
     [
      "Implantable defibrillator",
-     "An implantable cardioverter defibrillator shocks lethal ventricular rhythms. Complete block needs a permanent pacemaker."
+     "An implantable cardioverter defibrillator shocks lethal ventricular rhythms. Complete block needs a permanent pacemaker.",
+     "confused mechanism or drug class"
     ],
     [
      "Catheter ablation",
-     "Ablation destroys conduction tissue and is itself a named cause of complete block. The definitive treatment is a permanent pacemaker."
+     "Ablation destroys conduction tissue and is itself a named cause of complete block. The definitive treatment is a permanent pacemaker.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 1,
@@ -654,23 +726,26 @@
    "q": "A 34-year-old man is brought in after a motorcycle crash with a large thigh wound and heavy blood loss. He has no pulse. The monitor shows a regular narrow-complex rhythm at 110 per minute. Which is the most likely diagnosis?",
    "opts": [
     [
+     "Ventricular fibrillation",
+     "Fibrillation is chaotic with no organized complexes. A regular narrow rhythm without a pulse is pulseless electrical activity.",
+     "competing diagnosis"
+    ],
+    [
+     "Asystole",
+     "Asystole is a flat line. This monitor shows an organized rhythm, so it is pulseless electrical activity.",
+     "competing diagnosis"
+    ],
+    [
      "Sinus tachycardia",
-     "Sinus tachycardia has a pulse. Without a pulse, the same organized rhythm is pulseless electrical activity."
+     "Sinus tachycardia has a pulse. Without a pulse, the same organized rhythm is pulseless electrical activity.",
+     "ruled out by a stated finding"
     ],
     [
      "Pulseless electrical activity",
      "Correct. An organized rhythm on which a pulse would be expected, but with no pulse, is pulseless electrical activity; hypovolemia is one of its two leading causes in adults."
-    ],
-    [
-     "Ventricular fibrillation",
-     "Fibrillation is chaotic with no organized complexes. A regular narrow rhythm without a pulse is pulseless electrical activity."
-    ],
-    [
-     "Asystole",
-     "Asystole is a flat line. This monitor shows an organized rhythm, so it is pulseless electrical activity."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 52",
    "slot": "test finding",
    "lead": "diagnosis"
@@ -681,12 +756,9 @@
    "q": "A 41-year-old woman with symptomatic premature ventricular contractions and a structurally normal heart stopped her beta blocker after two weeks because of fatigue and dizziness. Her symptoms persist. Which is the most appropriate next option?",
    "opts": [
     [
-     "Permanent pacemaker",
-     "A pacemaker treats slow conduction. Drug-intolerant symptomatic premature beats are treated with catheter ablation."
-    ],
-    [
-     "Reassurance only",
-     "Reassurance alone fits silent, low-burden beats. She has persistent symptoms and cannot take a beta blocker, so ablation is next."
+     "Reassurance and follow-up",
+     "Reassurance alone fits silent, low-burden beats. She has persistent symptoms and cannot take a beta blocker, so ablation is next.",
+     "wrong stage or severity"
     ],
     [
      "Catheter ablation",
@@ -694,10 +766,16 @@
     ],
     [
      "Implantable defibrillator",
-     "A defibrillator prevents sudden death from lethal rhythms; it does not treat premature beats. Ablation is the next option."
+     "A defibrillator prevents sudden death from lethal rhythms; it does not treat premature beats. Ablation is the next option.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Permanent pacemaker",
+     "A pacemaker treats slow conduction. Drug-intolerant symptomatic premature beats are treated with catheter ablation.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 2,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36",
    "slot": "escalation",
    "lead": "next step"
@@ -713,15 +791,18 @@
     ],
     [
      "It proves a past heart attack",
-     "A right bundle branch block does not prove an old infarction. It may occur with no apparent underlying heart disease."
+     "A right bundle branch block does not prove an old infarction. It may occur with no apparent underlying heart disease.",
+     "common lay belief"
     ],
     [
      "It requires a pacemaker",
-     "An isolated right bundle branch block does not need pacing; treatment depends on the underlying condition."
+     "An isolated right bundle branch block does not need pacing; treatment depends on the underlying condition.",
+     "wrong stage or severity"
     ],
     [
-     "It always becomes complete block",
-     "Isolated right bundle branch block does not inevitably progress to complete block. It may occur with no apparent heart disease."
+     "It will become complete block",
+     "Isolated right bundle branch block does not inevitably progress to complete block. It may occur with no apparent heart disease.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
@@ -735,23 +816,26 @@
    "q": "A 77-year-old woman with known Mobitz type II block suddenly collapses while gardening and regains consciousness within a minute; her husband saw brief jerking of her arms. Her heart rate is 36. Which term describes this event?",
    "opts": [
     [
+     "Transient ischemic attack",
+     "A transient ischemic attack causes focal neurologic deficits, not a sudden faint with a slow rate. This is a Stokes-Adams attack.",
+     "competing diagnosis"
+    ],
+    [
      "Stokes-Adams attack",
      "Correct. A Stokes-Adams attack is a sudden fainting spell or seizure from a rapid, temporary drop in blood flow to the brain, a recognized complication of Mobitz type II block."
     ],
     [
      "Vasovagal syncope",
-     "Vasovagal syncope follows a trigger such as pain or standing, with a prodrome. A sudden faint from a blocked rhythm with a rate of 36 is a Stokes-Adams attack."
+     "Vasovagal syncope follows a trigger such as pain or standing, with a prodrome. A sudden faint from a blocked rhythm with a rate of 36 is a Stokes-Adams attack.",
+     "competing diagnosis"
     ],
     [
      "Absence seizure",
-     "An absence seizure is a brief staring spell without collapse. Her collapse came from low cerebral blood flow during heart block."
-    ],
-    [
-     "Transient ischemic attack",
-     "A transient ischemic attack causes focal neurologic deficits, not a sudden faint with a slow rate. This is a Stokes-Adams attack."
+     "An absence seizure is a brief staring spell without collapse. Her collapse came from low cerebral blood flow during heart block.",
+     "competing diagnosis"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 13",
    "slot": "complication",
    "lead": "complication"
@@ -762,23 +846,26 @@
    "q": "A 64-year-old man with crushing chest pain develops a wide QRS tachycardia whose complexes vary in shape from beat to beat; his QT before the episode was normal. He is still talking and has a pulse. Which is the most appropriate treatment?",
    "opts": [
     [
+     "Intravenous amiodarone alone",
+     "Drug therapy alone is for stable monomorphic ventricular tachycardia. Polymorphic ventricular tachycardia needs defibrillation.",
+     "wrong stage or severity"
+    ],
+    [
+     "Observation on the monitor",
+     "Watching is unsafe: polymorphic ventricular tachycardia is never stable and is defibrillated.",
+     "wrong stage or severity"
+    ],
+    [
      "Defibrillation",
      "Correct. Polymorphic ventricular tachycardia is never truly stable, only a short-lived transitional state, so it is defibrillated even when the patient has a pulse and looks well."
     ],
     [
      "Synchronized cardioversion",
-     "Synchronized cardioversion needs a consistent QRS; it suits unstable monomorphic rhythm. Polymorphic ventricular tachycardia is defibrillated."
-    ],
-    [
-     "Intravenous amiodarone alone",
-     "Drug therapy alone is for stable monomorphic ventricular tachycardia. Polymorphic ventricular tachycardia needs defibrillation."
-    ],
-    [
-     "Observation on the monitor",
-     "Watching is unsafe: polymorphic ventricular tachycardia is never stable and is defibrillated."
+     "Synchronized cardioversion needs a consistent QRS; it suits unstable monomorphic rhythm. Polymorphic ventricular tachycardia is defibrillated.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 46",
    "slot": "first-line",
    "lead": "treatment"
@@ -786,26 +873,29 @@
   {
    "topic": "Mobitz type I block",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 52-year-old man had catheter ablation for a supraventricular tachycardia last week. A follow-up electrocardiogram shows a PR interval that lengthens with each beat until a QRS complex is dropped, in a repeating pattern. Which statement about this finding is accurate?",
+   "q": "A 52-year-old man had catheter ablation for a supraventricular tachycardia last week. He has had no tick bites and has never had a heart attack. A follow-up electrocardiogram shows a PR interval that lengthens with each beat until a QRS complex is dropped, in a repeating pattern. Which named cause of this rhythm fits him best?",
    "opts": [
     [
-     "Ablation is a named cause of it",
-     "Correct. Cardiac ablation is listed among the causes of Mobitz type I block, along with increased vagal tone, nodal blocking drugs, Lyme carditis and ischemia after infarction."
+     "Atrioventricular node ischemia",
+     "Atrioventricular node ischemia usually follows a myocardial infarction, which he has never had. His recent cardiac ablation is the named cause that explains the new block.",
+     "ruled out by a stated finding"
     ],
     [
-     "It proves the ablation failed",
-     "A new conduction delay does not mean the original tachycardia remains. Ablation itself is a named cause of Mobitz type I block."
+     "His procedure last week",
+     "Correct. Cardiac ablation is a named cause of Mobitz type I block, along with increased vagal tone, nodal blocking drugs, Lyme carditis and atrioventricular node ischemia after infarction; the procedure last week is the clear trigger."
     ],
     [
-     "It signals acute Lyme carditis",
-     "Lyme carditis is a cause, but nothing here suggests tick exposure. The recent ablation is the named cause that fits."
+     "Acute Lyme carditis",
+     "Lyme carditis is a named cause of every degree of block, but he has had no tick bites. His cardiac ablation last week is the named cause that fits the new rhythm.",
+     "ruled out by a stated finding"
     ],
     [
-     "It must progress to complete block",
-     "Mobitz type I is usually benign; it is Mobitz type II that carries a high risk of complete block. Ablation is a named cause."
+     "Increased vagal tone",
+     "Increased vagal tone is a named cause of Mobitz type I, but nothing here points to it; the new rhythm followed his cardiac ablation, which is itself a named cause.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 9",
    "slot": "etiology",
    "lead": "complication"
@@ -818,23 +908,26 @@
    "q": "A 72-year-old man with congestive heart failure and an ejection fraction of 20% is in stable, sustained monomorphic ventricular tachycardia with a pulse. Which intravenous antiarrhythmic should be avoided?",
    "opts": [
     [
-     "Amiodarone",
-     "Amiodarone is a named option for stable monomorphic ventricular tachycardia. The drug to avoid in heart failure is procainamide."
-    ],
-    [
-     "Magnesium",
-     "Magnesium is the drug for torsades rather than a cardioversion drug here, but it is not the one to avoid. Procainamide is."
-    ],
-    [
      "Procainamide",
      "Correct. Procainamide should be avoided in a prolonged QT or congestive heart failure; lidocaine or amiodarone are the other named options for stable monomorphic ventricular tachycardia."
     ],
     [
      "Lidocaine",
-     "Lidocaine is one of the named drugs for stable monomorphic ventricular tachycardia and carries no heart failure caution here. Procainamide does."
+     "Lidocaine is one of the named drugs for stable monomorphic ventricular tachycardia and carries no heart failure caution here. Procainamide does.",
+     "adjacent fact"
+    ],
+    [
+     "Amiodarone",
+     "Amiodarone is a named option for stable monomorphic ventricular tachycardia. The drug to avoid in heart failure is procainamide.",
+     "adjacent fact"
+    ],
+    [
+     "Magnesium",
+     "Magnesium is the drug for torsades rather than a cardioversion drug here, but it is not the one to avoid. Procainamide is.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 44",
    "slot": "avoid",
    "lead": "avoid"
@@ -845,23 +938,26 @@
    "q": "An 81-year-old man takes no medications and has never had a heart attack. A routine electrocardiogram shows a constant PR interval of 0.25 seconds with every beat conducted, and he asks why his heart is doing this. Which explanation is most accurate?",
    "opts": [
     [
+     "A silent tick-borne infection",
+     "Lyme carditis is a named cause, but without exposure or a rash the leading explanation in an older man is degeneration of the conduction system.",
+     "adjacent fact"
+    ],
+    [
+     "Hidden damage from a heart attack",
+     "Atrioventricular node ischemia usually follows a myocardial infarction, which he has never had. Age-related degeneration is the most common cause.",
+     "ruled out by a stated finding"
+    ],
+    [
      "An overactive vagus nerve",
-     "Increased vagal tone is a named cause, typically in young, well-conditioned people. In an 81-year-old, age-related degeneration is the usual cause."
+     "Increased vagal tone is a named cause, typically in young, well-conditioned people. In an 81-year-old, age-related degeneration is the usual cause.",
+     "adjacent fact"
     ],
     [
      "Age-related wear of the pathway",
      "Correct. The most common cause of first-degree atrioventricular block is age-related degenerative change of the conduction system, so the impulse takes longer to cross the atrioventricular node."
-    ],
-    [
-     "A silent tick-borne infection",
-     "Lyme carditis is a named cause, but without exposure or a rash the leading explanation in an older man is degeneration of the conduction system."
-    ],
-    [
-     "Hidden damage from a heart attack",
-     "Atrioventricular node ischemia usually follows a myocardial infarction, which he has never had. Age-related degeneration is the most common cause."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 6",
    "slot": "etiology",
    "lead": "education"
@@ -872,23 +968,26 @@
    "q": "A 59-year-old man with stable coronary artery disease, who has never had a heart attack, asks whether he is at any risk of sudden cardiac death. Which statement is accurate?",
    "opts": [
     [
-     "Coronary disease is the top risk",
+     "Risk rises mainly after age 80",
+     "No age cutoff is stated. Coronary artery disease is the most common predisposing condition for sudden cardiac death, even without a prior infarction.",
+     "common lay belief"
+    ],
+    [
+     "His disease is the top risk",
      "Correct. Coronary artery disease is the most common predisposing condition for sudden cardiac death, even in adults without a history of myocardial infarction."
     ],
     [
-     "Risk starts only after an infarction",
-     "Coronary artery disease predisposes to sudden death even without a prior myocardial infarction."
+     "Risk begins after an infarction",
+     "Coronary artery disease predisposes to sudden cardiac death even without a history of myocardial infarction, so his risk does not wait for a heart attack.",
+     "common lay belief"
     ],
     [
-     "Only inherited rhythms raise risk",
-     "Inherited conditions such as long QT syndrome exist, but coronary artery disease is the most common predisposing condition."
-    ],
-    [
-     "Risk applies only after age 80",
-     "No age cutoff is stated. Coronary artery disease is the most common predisposing condition for sudden cardiac death."
+     "Inherited rhythms are the main risk",
+     "Inherited conditions such as long QT syndrome exist, but coronary artery disease is the most common predisposing condition for sudden cardiac death.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 37",
    "slot": "risk factors",
    "lead": "education"
@@ -900,19 +999,22 @@
    "opts": [
     [
      "Start lifelong amiodarone",
-     "Amiodarone is for ventricular tachycardia and fibrillation and has many side effects. Removing caffeine and stimulants is the advice here."
+     "Amiodarone is for ventricular tachycardia and fibrillation and has many side effects. Removing caffeine and stimulants is the advice here.",
+     "wrong stage or severity"
     ],
     [
      "Cut caffeine and stimulants",
      "Correct. Alcohol, caffeine and stimulants are named triggers of premature ventricular contractions, and low-risk patients are reassured and helped to eliminate triggers."
     ],
     [
-     "Avoid all exercise",
-     "Exercise is not a named trigger to remove. Caffeine and stimulants, such as energy drinks, are."
+     "Stop exercising",
+     "Exercise is not a named trigger to remove. Caffeine and stimulants, such as energy drinks, are.",
+     "common lay belief"
     ],
     [
      "Avoid dairy products",
-     "Dairy foods are not a named trigger of premature beats. Caffeine, stimulants and alcohol are the named triggers."
+     "Dairy foods are not a named trigger of premature beats. Caffeine, stimulants and alcohol are the named triggers.",
+     "common lay belief"
     ]
    ],
    "c": 1,
@@ -926,23 +1028,26 @@
    "q": "A 72-year-old man has fatigue, shortness of breath on exertion and palpitations. His electrocardiogram shows every P wave conducted to a narrow QRS with a constant PR interval of 0.34 seconds. No offending drug or reversible cause is found. Which is the most appropriate next step?",
    "opts": [
     [
+     "Reassurance and follow-up",
+     "Reassurance fits the asymptomatic patient. Symptoms with a PR above 0.3 seconds make him a candidate for a permanent pacemaker.",
+     "wrong stage or severity"
+    ],
+    [
+     "Synchronized cardioversion",
+     "Cardioversion terminates tachycardias. A long PR interval with a normal rate is a conduction delay, which is paced, not shocked.",
+     "confused mechanism or drug class"
+    ],
+    [
      "Intravenous magnesium",
-     "Magnesium is the treatment for torsades de pointes. Symptomatic first-degree block with a PR over 0.3 seconds is managed with a pacemaker."
+     "Magnesium is the treatment for torsades de pointes. Symptomatic first-degree block with a PR over 0.3 seconds is managed with a pacemaker.",
+     "confused mechanism or drug class"
     ],
     [
      "Permanent pacemaker",
      "Correct. First-degree block causes symptoms once the PR interval exceeds 0.3 seconds, and a permanent pacemaker is considered for symptomatic patients when no reversible cause is found."
-    ],
-    [
-     "Reassurance only",
-     "Reassurance fits the asymptomatic patient. Symptoms with a PR above 0.3 seconds make him a candidate for a permanent pacemaker."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Cardioversion terminates tachycardias. A long PR interval with a normal rate is a conduction delay, which is paced, not shocked."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 6",
    "slot": "escalation",
    "lead": "next step"
@@ -953,23 +1058,26 @@
    "q": "A 29-year-old man returns from a camping trip in Connecticut with fatigue and an expanding red rash around a tick bite on his thigh. His electrocardiogram shows a constant PR interval of 0.30 seconds with every P wave conducted. Which infection should be suspected as the cause of his conduction delay?",
    "opts": [
     [
-     "Viral pharyngitis",
-     "A sore-throat virus is not a named cause of atrioventricular block. The tick bite and rash point to Lyme carditis."
-    ],
-    [
      "Lyme disease",
      "Correct. Lyme disease (Lyme carditis) is a named infectious cause of atrioventricular block at every degree, and a tick bite with an expanding rash points to it."
     ],
     [
      "Infective endocarditis",
-     "Endocarditis causes block through an abscess near the conduction system, usually with fever and a murmur. A tick bite with an expanding rash points to Lyme disease."
+     "Endocarditis causes block through an abscess near the conduction system, usually with fever and a murmur. A tick bite with an expanding rash points to Lyme disease.",
+     "competing diagnosis"
     ],
     [
      "Chagas disease",
-     "Chagas disease causes complete block in people from areas where it is endemic. A tick bite in New England with an expanding rash points to Lyme disease."
+     "Chagas disease causes complete block in people from areas where it is endemic. A tick bite in New England with an expanding rash points to Lyme disease.",
+     "competing diagnosis"
+    ],
+    [
+     "Viral pharyngitis",
+     "A sore-throat virus is not a named cause of atrioventricular block. The tick bite and rash point to Lyme carditis.",
+     "competing diagnosis"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 6",
    "slot": "etiology",
    "lead": "diagnosis"
@@ -980,23 +1088,26 @@
    "q": "A 63-year-old man has a regular wide QRS tachycardia at 190 per minute with identical complexes. He is confused, his blood pressure is 72/40, and a carotid pulse is palpable. Which is the most appropriate next step?",
    "opts": [
     [
+     "Synchronized cardioversion",
+     "Correct. Altered mental status and hypotension define instability; with a pulse still present, unstable monomorphic ventricular tachycardia is treated with synchronized cardioversion."
+    ],
+    [
      "Defibrillation",
-     "Defibrillation is for the pulseless patient. He still has a pulse, so the shock is synchronized."
+     "Defibrillation is for the pulseless patient. He still has a pulse, so the shock is synchronized.",
+     "ruled out by a stated finding"
     ],
     [
      "Intravenous amiodarone",
-     "Drugs alone are for the stable patient. Confusion and hypotension call for synchronized cardioversion."
+     "Drugs alone are for the stable patient. Confusion and hypotension call for synchronized cardioversion.",
+     "wrong stage or severity"
     ],
     [
      "Transcutaneous pacing",
-     "Pacing treats slow, blocked rhythms. A fast, unstable ventricular tachycardia with a pulse is cardioverted."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Correct. Altered mental status and hypotension define instability; with a pulse still present, unstable monomorphic ventricular tachycardia is treated with synchronized cardioversion."
+     "Pacing treats slow, blocked rhythms. A fast, unstable ventricular tachycardia with a pulse is cardioverted.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 45",
    "slot": "escalation",
    "lead": "next step"
@@ -1007,23 +1118,26 @@
    "q": "A 55-year-old woman taking a loop diuretic for heart failure has new palpitations felt in her neck. Telemetry shows frequent premature ventricular contractions. Which laboratory values should be checked first?",
    "opts": [
     [
+     "Glucose and lactate",
+     "Glucose and lactate are not the named triggers. Low potassium and low magnesium are.",
+     "common lay belief"
+    ],
+    [
      "Potassium and magnesium",
      "Correct. Electrolyte imbalances, especially hypokalemia and hypomagnesemia (with hypercalcemia), are main causes of premature ventricular contractions, and a loop diuretic can lower both."
     ],
     [
-     "Thyroid hormone, cortisol",
-     "Thyroid and adrenal tests are not the first step. Premature ventricular contractions call for potassium and magnesium levels."
+     "Thyroid hormone and cortisol",
+     "Thyroid and adrenal tests are not the first step. Premature ventricular contractions call for potassium and magnesium levels.",
+     "competing diagnosis"
     ],
     [
      "Troponin and lipase",
-     "These look for infarction and pancreatitis. Frequent premature beats on a diuretic call for potassium and magnesium."
-    ],
-    [
-     "Glucose and lactate",
-     "Glucose and lactate are not the named triggers. Low potassium and low magnesium are."
+     "These look for infarction and pancreatitis. Frequent premature beats on a diuretic call for potassium and magnesium.",
+     "competing diagnosis"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 36",
    "slot": "initial test",
    "lead": "test"
@@ -1034,23 +1148,26 @@
    "q": "An 80-year-old man is found unresponsive and pulseless. The monitor shows a flat line in two leads with no P waves or QRS complexes. Compressions are underway. Which drug is a mainstay of treatment?",
    "opts": [
     [
-     "Magnesium",
-     "Magnesium treats torsades de pointes. Asystole is treated with compressions and epinephrine."
-    ],
-    [
      "Epinephrine",
      "Correct. High-quality chest compressions and epinephrine by intravenous or intraosseous push at intervals are the mainstays of treatment for asystole."
     ],
     [
      "Amiodarone",
-     "Amiodarone is for shock-refractory ventricular fibrillation or tachycardia. Asystole relies on compressions and epinephrine."
+     "Amiodarone is for shock-refractory ventricular fibrillation or tachycardia. Asystole relies on compressions and epinephrine.",
+     "adjacent fact"
     ],
     [
      "Lidocaine",
-     "Lidocaine is considered in shock-refractory fibrillation. Asystole is treated with compressions and epinephrine."
+     "Lidocaine is considered in shock-refractory fibrillation. Asystole is treated with compressions and epinephrine.",
+     "adjacent fact"
+    ],
+    [
+     "Magnesium",
+     "Magnesium treats torsades de pointes. Asystole is treated with compressions and epinephrine.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 55",
    "slot": "first-line",
    "lead": "treatment"
@@ -1061,23 +1178,26 @@
    "q": "A 79-year-old woman has a week of fatigue and dizziness. Her heart rate is 36. The electrocardiogram shows regular P waves at 80 per minute and regular wide QRS complexes at 36 per minute, with no consistent relationship between them; some P waves sit inside T waves. Which is the most likely diagnosis?",
    "opts": [
     [
-     "Complete heart block",
-     "Correct. Two separate regular rhythms, with atria faster than the ventricles and P waves falling anywhere (even within T waves), is third-degree (complete) atrioventricular block."
-    ],
-    [
      "Mobitz type II block",
-     "Mobitz type II conducts most P waves at a constant PR and drops some. Here no P wave relates to any QRS."
+     "Mobitz type II conducts most P waves at a constant PR and drops some. Here no P wave relates to any QRS.",
+     "competing diagnosis"
     ],
     [
      "Mobitz type I block",
-     "Mobitz type I shows a PR that lengthens until a drop. Here there is no consistent PR at all."
+     "Mobitz type I shows a PR that lengthens until a drop. Here there is no consistent PR at all.",
+     "competing diagnosis"
     ],
     [
      "Ventricular tachycardia",
-     "Ventricular tachycardia is a fast wide rhythm of 100 to 250 per minute. A wide rhythm at 36 with dissociated P waves is complete block."
+     "Ventricular tachycardia is a fast wide rhythm of 100 to 250 per minute. A wide rhythm at 36 with dissociated P waves is complete block.",
+     "competing diagnosis"
+    ],
+    [
+     "Complete heart block",
+     "Correct. Two separate regular rhythms, with atria faster than the ventricles and P waves falling anywhere (even within T waves), is third-degree (complete) atrioventricular block."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 15",
    "slot": "test finding",
    "lead": "diagnosis"
@@ -1089,11 +1209,13 @@
    "opts": [
     [
      "Implantable loop recorder",
-     "A loop recorder only records the rhythm. He needs a device that detects and shocks lethal rhythms."
+     "A loop recorder only records the rhythm. He needs a device that detects and shocks lethal rhythms.",
+     "adjacent fact"
     ],
     [
      "Biventricular pacemaker",
-     "A biventricular pacer treats symptomatic left bundle branch block with reduced ejection fraction. Arrest survivors need a defibrillator."
+     "A biventricular pacer treats symptomatic left bundle branch block with reduced ejection fraction. Arrest survivors need a defibrillator.",
+     "adjacent fact"
     ],
     [
      "Implantable defibrillator",
@@ -1101,7 +1223,8 @@
     ],
     [
      "Permanent pacemaker",
-     "A pacemaker treats slow, blocked rhythms. Survivors of ventricular tachycardia arrest need a defibrillator."
+     "A pacemaker treats slow, blocked rhythms. Survivors of ventricular tachycardia arrest need a defibrillator.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
@@ -1115,23 +1238,26 @@
    "q": "A 66-year-old man has a right bundle branch block found on routine testing. He has no symptoms, and his examination is normal. Which approach to treatment is correct?",
    "opts": [
     [
-     "Treat any underlying condition",
-     "Correct. Right bundle branch block is usually asymptomatic, and its treatment depends on the underlying condition; prognosis depends on the presence and type of heart disease."
-    ],
-    [
      "Permanent pacemaker",
-     "A pacemaker is not indicated for an isolated, silent right bundle branch block. Treatment targets any underlying condition."
+     "A pacemaker is not indicated for an isolated, silent right bundle branch block. Treatment targets any underlying condition.",
+     "wrong stage or severity"
     ],
     [
      "Biventricular pacemaker",
-     "A biventricular pacer is used for symptomatic left bundle branch block with reduced ejection fraction, not a silent right bundle branch block."
+     "A biventricular pacer is used for symptomatic left bundle branch block with reduced ejection fraction, not a silent right bundle branch block.",
+     "adjacent fact"
     ],
     [
      "Catheter ablation",
-     "Ablation cannot fix a bundle branch block. Treatment depends on the underlying condition."
+     "Ablation cannot fix a bundle branch block. Treatment depends on the underlying condition.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Treat any underlying condition",
+     "Correct. Right bundle branch block is usually asymptomatic, and its treatment depends on the underlying condition; prognosis depends on the presence and type of heart disease."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 32",
    "slot": "first-line",
    "lead": "treatment"
@@ -1142,23 +1268,26 @@
    "q": "A 76-year-old woman is in asystolic cardiac arrest, and resuscitation continues. Her family asks about her chances. Which statement about this rhythm is most accurate?",
    "opts": [
     [
+     "A shock should restore it",
+     "Asystole is unshockable; there is no electrical activity to reset. Its prognosis is poor.",
+     "common lay belief"
+    ],
+    [
      "Better than fibrillation",
-     "Ventricular fibrillation has a better prognosis than asystole. Asystole is usually an end-of-life rhythm."
+     "Ventricular fibrillation has a better prognosis than asystole. Asystole is usually an end-of-life rhythm.",
+     "reversed direction or value"
     ],
     [
      "Recovery is expected",
-     "Recovery is not expected; asystole carries a poor prognosis and is usually an end-of-life rhythm."
+     "Recovery is not expected; asystole carries a poor prognosis and is usually an end-of-life rhythm.",
+     "common lay belief"
     ],
     [
      "Prognosis is poor",
      "Correct. Asystole and pulseless electrical activity carry a poor prognosis and are usually end-of-life rhythms; ventricular tachycardia and fibrillation have the best prognosis."
-    ],
-    [
-     "A shock should restore it",
-     "Asystole is unshockable; there is no electrical activity to reset. Its prognosis is poor."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 55",
    "slot": "prognosis",
    "lead": "education"
@@ -1173,16 +1302,19 @@
      "Correct. Isolated premature ventricular contraction-induced cardiomyopathy with heart failure signs and symptoms, in a high-risk patient with a burden over 15%, is treated with catheter ablation."
     ],
     [
-     "Reassurance only",
-     "Reassurance is for low-burden, symptom-free patients with normal hearts. His beats have caused a cardiomyopathy."
+     "Reassurance and follow-up",
+     "Reassurance is for low-burden, symptom-free patients with normal hearts. His beats have caused a cardiomyopathy.",
+     "wrong stage or severity"
     ],
     [
      "Digoxin",
-     "Digoxin is not named for this. Premature ventricular contraction-induced cardiomyopathy is treated with catheter ablation."
+     "Digoxin is not named for this. Premature ventricular contraction-induced cardiomyopathy is treated with catheter ablation.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous magnesium",
-     "Magnesium is the treatment for torsades de pointes. Beat-induced cardiomyopathy is treated with catheter ablation."
+     "Magnesium is the treatment for torsades de pointes. Beat-induced cardiomyopathy is treated with catheter ablation.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 0,
@@ -1196,23 +1328,26 @@
    "q": "A 63-year-old woman is scheduled for an implantable cardioverter defibrillator. She asks what the device will do inside her chest. Which explanation is most accurate?",
    "opts": [
     [
+     "Release antiarrhythmic drugs",
+     "The device does not infuse drugs. Its sensing electrodes detect fatal arrhythmias, and it delivers a shock to prevent sudden cardiac death.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Replace her heart medications",
+     "The device does not replace medical therapy. It detects fatal arrhythmias and delivers a shock.",
+     "common lay belief"
+    ],
+    [
      "Detect and shock fatal rhythms",
      "Correct. The implantable cardioverter defibrillator prevents sudden cardiac death: sensing electrodes detect fatal arrhythmias and the device delivers a shock, and newer models can also pace."
     ],
     [
      "Slowly dissolve artery plaque",
-     "No device dissolves plaque. The defibrillator senses fatal arrhythmias and delivers a shock."
-    ],
-    [
-     "Only record her rhythm",
-     "A recorder only stores the rhythm. The defibrillator detects fatal arrhythmias and treats them with a shock."
-    ],
-    [
-     "Replace her heart medications",
-     "The device does not replace medical therapy. It detects fatal arrhythmias and delivers a shock."
+     "No device dissolves plaque. The defibrillator senses fatal arrhythmias and delivers a shock.",
+     "common lay belief"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 38",
    "slot": "agent/regimen",
    "lead": "education"
@@ -1223,23 +1358,26 @@
    "q": "A 74-year-old man with hypertension and diabetes for 20 years is found to have Mobitz type II block. He takes no rate-slowing drugs and has had no infections. He asks what caused it. Which explanation is most accurate?",
    "opts": [
     [
+     "His blood pressure tablets",
+     "He takes no rate-slowing drugs. His long-standing hypertension and diabetes drive degenerative His-Purkinje disease, the most common cause.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "A recent viral illness",
+     "He has had no infections. The leading cause of Mobitz type II is degenerative His-Purkinje disease, driven by age, hypertension and diabetes.",
+     "ruled out by a stated finding"
+    ],
+    [
      "Conduction system wear",
      "Correct. The most common cause of Mobitz type II is acquired disease of the His-Purkinje system, especially degenerative change from old age, chronic hypertension and diabetes."
     ],
     [
      "An overactive vagus nerve",
-     "Increased vagal tone causes first-degree and Mobitz type I block, usually in younger, fit people. Mobitz type II comes from His-Purkinje disease."
-    ],
-    [
-     "His blood pressure tablets",
-     "He takes no rate-slowing drugs. His long-standing hypertension and diabetes drive degenerative His-Purkinje disease, the most common cause."
-    ],
-    [
-     "A recent viral illness",
-     "He has had no infections. The leading cause of Mobitz type II is degenerative His-Purkinje disease, driven by age, hypertension and diabetes."
+     "Increased vagal tone causes first-degree and Mobitz type I block, usually in younger, fit people. Mobitz type II comes from His-Purkinje disease.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 13",
    "slot": "risk factors",
    "lead": "education"
@@ -1247,26 +1385,29 @@
   {
    "topic": "Third-degree (complete) block",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 48-year-old woman with known pulmonary sarcoidosis faints at work. Her heart rate is 35, and the electrocardiogram shows P waves at a regular rate with no relationship to slow QRS complexes. Which statement about her block is accurate?",
+   "q": "A 48-year-old woman with known pulmonary sarcoidosis faints at work. She takes no medications. Her heart rate is 35, and the electrocardiogram shows P waves at a regular rate with no relationship to slow QRS complexes. Which named cause of her block fits her best?",
    "opts": [
     [
-     "It is caused by vagal tone",
-     "Increased vagal tone causes milder blocks at the node, not complete block with syncope. Infiltrative sarcoidosis is a named cause."
+     "Granulomatous infiltration",
+     "Correct. Inflammatory and infiltrative disease (myocarditis, amyloidosis, sarcoidosis) is a named cause of complete heart block; at 48, infiltration of the heart by her known sarcoidosis, a granulomatous disease, is the explanation that fits."
     ],
     [
-     "It will resolve without treatment",
-     "Complete block with syncope carries an increased risk of sudden death and needs pacing; it should not be expected to resolve."
+     "Increased vagal tone",
+     "Increased vagal tone causes first-degree and Mobitz type I block at the node, not complete block with fainting. Her known sarcoidosis, an infiltrative disease, is a named cause of complete block.",
+     "adjacent fact"
     ],
     [
-     "It is a drug side effect",
-     "Nothing in her history points to a drug. Sarcoidosis, an infiltrative disease, is a named cause of complete block."
+     "Age-related degeneration",
+     "Degeneration of the conduction system is the most common cause overall, especially in old age, but at 48 with known sarcoidosis the infiltrative disease is the more likely cause.",
+     "adjacent fact"
     ],
     [
-     "Sarcoidosis is a named cause",
-     "Correct. Inflammatory and infiltrative disease, namely myocarditis, amyloidosis and sarcoidosis, is a named cause of complete heart block."
+     "A medication side effect",
+     "She takes no medications, so a drug effect is ruled out. Sarcoidosis, an infiltrative disease, is a named cause of complete heart block.",
+     "ruled out by a stated finding"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 18",
    "slot": "etiology",
    "lead": "complication"
@@ -1277,23 +1418,26 @@
    "q": "A 71-year-old woman is brought in after fainting at home. She is confused, her heart rate is 34 and her blood pressure is 78/40. The electrocardiogram shows regular P waves, a constant PR interval in the conducted beats and many P waves with no QRS after them. Medications given so far have not raised her rate. Which is the most appropriate next step?",
    "opts": [
     [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion treats unstable tachycardias with a pulse. A slow rate from a failing conduction system needs pacing."
-    ],
-    [
-     "Defibrillation",
-     "Defibrillation is for ventricular fibrillation or pulseless ventricular tachycardia. She has a pulse and a slow, blocked rhythm."
-    ],
-    [
      "Observation on a monitor",
-     "Observation is unsafe with hypotension and confusion. Unstable Mobitz type II block is paced transcutaneously."
+     "Observation is unsafe with hypotension and confusion. Unstable Mobitz type II block is paced transcutaneously.",
+     "wrong stage or severity"
     ],
     [
      "Transcutaneous pacing",
      "Correct. When medications are not used or do not work in unstable Mobitz type II block, the emergent measure is transcutaneous pacing, which bridges her to a permanent pacemaker."
+    ],
+    [
+     "Synchronized cardioversion",
+     "Synchronized cardioversion treats unstable tachycardias with a pulse. A slow rate from a failing conduction system needs pacing.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Defibrillation",
+     "Defibrillation is for ventricular fibrillation or pulseless ventricular tachycardia. She has a pulse and a slow, blocked rhythm.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 14",
    "slot": "escalation",
    "lead": "next step"
@@ -1305,11 +1449,13 @@
    "opts": [
     [
      "Metoprolol",
-     "Metoprolol is not the next step in refractory arrest. Lidocaine may be considered."
+     "Metoprolol is not the next step in refractory arrest. Lidocaine may be considered.",
+     "confused mechanism or drug class"
     ],
     [
      "Adenosine",
-     "Adenosine is for narrow-complex supraventricular tachycardia. Lidocaine is considered here."
+     "Adenosine is for narrow-complex supraventricular tachycardia. Lidocaine is considered here.",
+     "confused mechanism or drug class"
     ],
     [
      "Lidocaine",
@@ -1317,7 +1463,8 @@
     ],
     [
      "Verapamil",
-     "Verapamil is a nondihydropyridine calcium channel blocker for atrial rhythms. Lidocaine may be considered in shock-refractory arrest."
+     "Verapamil is a nondihydropyridine calcium channel blocker for atrial rhythms. Lidocaine may be considered in shock-refractory arrest.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
@@ -1331,23 +1478,26 @@
    "q": "A 45-year-old man who grew up in rural Bolivia has months of fatigue and exertional breathlessness. His heart rate is 38 and the electrocardiogram shows P waves completely dissociated from slow, wide QRS complexes. Which infection is a named cause of his conduction disease?",
    "opts": [
     [
+     "Lyme disease",
+     "Lyme carditis is a named cause of block, but it follows a tick bite in endemic areas such as New England. His background points to Chagas disease.",
+     "competing diagnosis"
+    ],
+    [
+     "Malaria",
+     "Malaria is not a named cause of complete block. A man from rural Bolivia with complete block suggests Chagas disease.",
+     "competing diagnosis"
+    ],
+    [
      "Tuberculosis",
-     "Tuberculosis is not on the list of causes of complete block. Chagas disease, endemic in Latin America, is."
+     "Tuberculosis is not on the list of causes of complete block. Chagas disease, endemic in Latin America, is.",
+     "competing diagnosis"
     ],
     [
      "Chagas disease",
      "Correct. Chagas disease is a named cause of complete heart block; it is a parasitic infection endemic in parts of Latin America such as rural Bolivia."
-    ],
-    [
-     "Lyme disease",
-     "Lyme carditis is a named cause of block, but it follows a tick bite in endemic areas such as New England. His background points to Chagas disease."
-    ],
-    [
-     "Malaria",
-     "Malaria is not a named cause of complete block. A man from rural Bolivia with complete block suggests Chagas disease."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 18",
    "slot": "etiology",
    "lead": "diagnosis"
@@ -1359,7 +1509,8 @@
    "opts": [
     [
      "Digoxin",
-     "Digoxin has no role in cardiac arrest. Amiodarone is the antiarrhythmic for shock-refractory fibrillation."
+     "Digoxin has no role in cardiac arrest. Amiodarone is the antiarrhythmic for shock-refractory fibrillation.",
+     "confused mechanism or drug class"
     ],
     [
      "Amiodarone",
@@ -1367,11 +1518,13 @@
     ],
     [
      "Adenosine",
-     "Adenosine is for narrow-complex supraventricular tachycardia. Shock-refractory fibrillation gets amiodarone."
+     "Adenosine is for narrow-complex supraventricular tachycardia. Shock-refractory fibrillation gets amiodarone.",
+     "confused mechanism or drug class"
     ],
     [
      "Diltiazem",
-     "Diltiazem slows atrioventricular conduction in atrial rhythms. Shock-refractory fibrillation gets amiodarone."
+     "Diltiazem slows atrioventricular conduction in atrial rhythms. Shock-refractory fibrillation gets amiodarone.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 1,
@@ -1385,8 +1538,14 @@
    "q": "A 69-year-old woman with a long-standing left bundle branch block now has dizziness, shortness of breath and dyspnea on exertion that resemble a heart failure flare. What does the onset of symptoms from the block usually indicate?",
    "opts": [
     [
-     "Accessory pathway",
-     "An accessory pathway causes pre-excitation. Symptoms in left bundle branch block point to severe underlying heart disease."
+     "A drug side effect",
+     "Nothing suggests a drug cause. Symptoms from the block usually mean severe underlying cardiac disease.",
+     "common lay belief"
+    ],
+    [
+     "An accessory pathway",
+     "An accessory pathway causes pre-excitation. Symptoms in left bundle branch block point to severe underlying heart disease.",
+     "competing diagnosis"
     ],
     [
      "Severe heart disease",
@@ -1394,14 +1553,11 @@
     ],
     [
      "A harmless variant",
-     "A harmless variant would not cause these symptoms. Symptomatic left bundle branch block points to severe underlying heart disease."
-    ],
-    [
-     "A drug side effect",
-     "Nothing suggests a drug cause. Symptoms from the block usually mean severe underlying cardiac disease."
+     "A harmless variant would not cause these symptoms. Symptomatic left bundle branch block points to severe underlying heart disease.",
+     "adjacent fact"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 26",
    "slot": "prognosis",
    "lead": "complication"
@@ -1409,15 +1565,17 @@
   {
    "topic": "Ventricular tachycardia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 58-year-old man on telemetry has an 18-second run of identical wide QRS complexes at 180 per minute. During the run his blood pressure falls to 70/40 and he nearly faints; the run then stops on its own. How should this episode be classified?",
+   "q": "A 58-year-old man on telemetry develops a run of identical wide QRS complexes at 180 per minute. Within 18 seconds his blood pressure falls to 70/40 and he loses consciousness, and the team shocks him back to sinus rhythm. How should this episode be classified?",
    "opts": [
     [
      "Ventricular fibrillation",
-     "Fibrillation is disorganized activity with no pulse. Identical wide complexes at a regular rate are ventricular tachycardia."
+     "Fibrillation is disorganized activity with no pulse. Identical wide complexes at a regular rate are ventricular tachycardia.",
+     "competing diagnosis"
     ],
     [
      "Ventricular bigeminy",
-     "Bigeminy alternates normal and ectopic beats. A continuous run of wide complexes is ventricular tachycardia."
+     "Bigeminy alternates normal and ectopic beats. A continuous run of wide complexes is ventricular tachycardia.",
+     "competing diagnosis"
     ],
     [
      "Sustained ventricular tachycardia",
@@ -1425,7 +1583,8 @@
     ],
     [
      "Non-sustained ventricular tachycardia",
-     "Under 30 seconds is non-sustained only if the patient stays stable. Hypotension and near-fainting make this run sustained."
+     "Under 30 seconds counts as non-sustained only when the patient stays stable. A run that causes hemodynamic collapse in under 30 seconds, as his did, is sustained.",
+     "ruled out by a stated finding"
     ]
    ],
    "c": 2,
@@ -1439,23 +1598,26 @@
    "q": "A 70-year-old woman with ischemic cardiomyopathy has had a regular wide QRS tachycardia at 160 per minute, with identical complexes, for 10 minutes. She is alert and talking, her blood pressure is 118/74, and she has no chest pain or shortness of breath. Which is the most appropriate treatment?",
    "opts": [
     [
-     "Immediate defibrillation",
-     "Defibrillation is for pulseless or polymorphic ventricular tachycardia. A stable monomorphic rhythm with a pulse is treated with drugs first."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion is for instability: chest pain, altered mental status, dyspnea or hypotension. She has none of these."
-    ],
-    [
      "Intravenous adenosine",
-     "Adenosine acts on the atrioventricular node in supraventricular rhythms. Stable monomorphic ventricular tachycardia gets an intravenous antiarrhythmic."
+     "Adenosine acts on the atrioventricular node in supraventricular rhythms. Stable monomorphic ventricular tachycardia gets an intravenous antiarrhythmic.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous antiarrhythmic",
      "Correct. Hemodynamically stable, monomorphic sustained ventricular tachycardia is pharmacologically cardioverted with intravenous lidocaine, amiodarone or procainamide, with monitoring, intravenous access, a 12-lead electrocardiogram, oxygen and labs."
+    ],
+    [
+     "Immediate defibrillation",
+     "Defibrillation is for pulseless or polymorphic ventricular tachycardia. A stable monomorphic rhythm with a pulse is treated with drugs first.",
+     "wrong stage or severity"
+    ],
+    [
+     "Synchronized cardioversion",
+     "Synchronized cardioversion is for instability: chest pain, altered mental status, dyspnea or hypotension. She has none of these.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 44",
    "slot": "first-line",
    "lead": "treatment"
@@ -1463,26 +1625,29 @@
   {
    "topic": "Torsades and QT prolongation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "A 70-year-old woman on telemetry has torsades de pointes (QRS complexes that twist around the baseline). An intravenous push of magnesium broke the first run, but short runs keep recurring. She is alert with a pulse and a normal blood pressure. Which is the most appropriate next step?",
+   "q": "A 70-year-old woman on telemetry has torsades de pointes (QRS complexes that twist around the baseline). The first-line intravenous push broke the first run, but short runs keep recurring. She is alert with a pulse and a normal blood pressure. Which is the most appropriate next step?",
    "opts": [
-    [
-     "Intravenous procainamide",
-     "Procainamide prolongs the QT and is avoided in torsades. A magnesium infusion follows the first push."
-    ],
-    [
-     "Synchronized cardioversion",
-     "She is stable, and a polymorphic rhythm cannot be synchronized. Recurrent runs get a magnesium infusion."
-    ],
     [
      "Magnesium infusion",
      "Correct. Torsades in a conscious patient is broken with intravenous magnesium and then treated with more magnesium as an infusion: magnesium, and more magnesium."
     ],
     [
      "Intravenous amiodarone",
-     "Amiodarone prolongs the QT and is avoided in torsades. Recurrent runs are treated with a magnesium infusion."
+     "Amiodarone prolongs the QT and is avoided in torsades. Recurrent runs are treated with a magnesium infusion.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Intravenous procainamide",
+     "Procainamide prolongs the QT and is avoided in torsades. A magnesium infusion follows the first push.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Synchronized cardioversion",
+     "She is stable, and a polymorphic rhythm cannot be synchronized. Recurrent runs get a magnesium infusion.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 47",
    "slot": "first-line",
    "lead": "next step"
@@ -1493,23 +1658,26 @@
    "q": "A 52-year-old man on telemetry has a prolonged QT after starting a new medication and then develops polymorphic ventricular tachycardia (QRS complexes that vary in shape and twist around the baseline). He becomes unresponsive and pulseless. Which is the most appropriate next step?",
    "opts": [
     [
-     "Synchronized cardioversion",
-     "Synchronized shocks need a consistent QRS and a pulse. Pulseless polymorphic tachycardia is defibrillated."
-    ],
-    [
-     "Intravenous magnesium only",
-     "Magnesium breaks torsades in a conscious patient; a pulseless patient needs defibrillation first."
-    ],
-    [
      "Transcutaneous pacing",
-     "Pacing treats slow, blocked rhythms. A pulseless polymorphic tachycardia is defibrillated."
+     "Pacing treats slow, blocked rhythms. A pulseless polymorphic tachycardia is defibrillated.",
+     "confused mechanism or drug class"
     ],
     [
      "Defibrillation",
      "Correct. Pulseless polymorphic ventricular tachycardia, including torsades, is treated as cardiac arrest with defibrillation and cardiopulmonary resuscitation; magnesium follows."
+    ],
+    [
+     "Synchronized cardioversion",
+     "Synchronized shocks need a consistent QRS and a pulse. Pulseless polymorphic tachycardia is defibrillated.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Intravenous magnesium first",
+     "Magnesium breaks torsades in a conscious patient; a pulseless patient needs defibrillation first.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 47",
    "slot": "escalation",
    "lead": "next step"
@@ -1521,18 +1689,21 @@
    "opts": [
     [
      "He needs a pacemaker now",
-     "A pacemaker is not indicated for a stable, silent left bundle branch block with a normal ejection fraction."
+     "A pacemaker is not indicated for a stable, silent left bundle branch block with a normal ejection fraction.",
+     "wrong stage or severity"
     ],
     [
      "He needs a defibrillator",
-     "A defibrillator prevents sudden death from lethal ventricular rhythms; it is not a treatment for a silent bundle branch block."
+     "A defibrillator prevents sudden death from lethal ventricular rhythms; it is not a treatment for a silent bundle branch block.",
+     "confused mechanism or drug class"
     ],
     [
      "He needs catheter ablation",
-     "Ablation cannot fix a bundle branch block. A silent, long-standing left bundle branch block is usually left untreated."
+     "Ablation cannot fix a bundle branch block. A silent, long-standing left bundle branch block is usually left untreated.",
+     "confused mechanism or drug class"
     ],
     [
-     "It is usually left untreated",
+     "He needs no therapy for it",
      "Correct. Left bundle branch block is usually left untreated; the exception is symptomatic left bundle branch block with heart failure with reduced ejection fraction, which gets a biventricular pacer."
     ]
    ],
@@ -1547,23 +1718,26 @@
    "q": "A 47-year-old woman with five days of vomiting and diarrhea has a prolonged QT and brief runs of torsades de pointes (QRS complexes that twist around the baseline). Which electrolyte disturbances should be sought as causes of her long QT?",
    "opts": [
     [
+     "Low potassium, low calcium",
+     "Correct. Besides drugs, hypokalemia and hypocalcemia are named causes of acquired long QT syndrome, which underlies most torsades de pointes."
+    ],
+    [
      "High potassium, high calcium",
-     "High potassium and high calcium are not named; hypercalcemia actually shortens the QT. Low potassium and low calcium prolong it."
+     "High potassium and high calcium are not named; hypercalcemia actually shortens the QT. Low potassium and low calcium prolong it.",
+     "reversed direction or value"
     ],
     [
      "Low sodium, high chloride",
-     "Sodium and chloride are not the named disturbances. Hypokalemia and hypocalcemia are."
+     "Sodium and chloride are not the named disturbances. Hypokalemia and hypocalcemia are.",
+     "confused mechanism or drug class"
     ],
     [
      "High sodium, low phosphate",
-     "These are not the named causes of a long QT. Low potassium and low calcium prolong it."
-    ],
-    [
-     "Low potassium, low calcium",
-     "Correct. Besides drugs, hypokalemia and hypocalcemia are named causes of acquired long QT syndrome, which underlies most torsades de pointes."
+     "These are not the named causes of a long QT. Low potassium and low calcium prolong it.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 42",
    "slot": "initial test",
    "lead": "test"
@@ -1575,11 +1749,13 @@
    "opts": [
     [
      "Her mild fatigue",
-     "Fatigue is a possible symptom of the block, not its cause. Her rate-slowing medications are the named cause."
+     "Fatigue is a possible symptom of the block, not its cause. Her rate-slowing medications are the named cause.",
+     "reversed direction or value"
     ],
     [
      "Her female sex",
-     "Sex is not a named cause. Beta blockers and nondihydropyridine calcium channel blockers are listed causes of Mobitz type I."
+     "Sex is not a named cause. Beta blockers and nondihydropyridine calcium channel blockers are listed causes of Mobitz type I.",
+     "common lay belief"
     ],
     [
      "Her rate-slowing drugs",
@@ -1587,7 +1763,8 @@
     ],
     [
      "Her history of palpitations",
-     "Palpitations are the reason for her drugs, not a cause of block. Her beta blocker and nondihydropyridine calcium channel blocker are named causes."
+     "Palpitations are the reason for her drugs, not a cause of block. Her beta blocker and nondihydropyridine calcium channel blocker are named causes.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
@@ -1601,23 +1778,26 @@
    "q": "A 58-year-old woman five days after hip replacement develops sudden breathlessness, pleuritic chest pain and a heart rate of 118. Her electrocardiogram shows a new right bundle branch block. Which acute cause of the block should be suspected?",
    "opts": [
     [
+     "Hypertensive crisis",
+     "A hypertensive crisis loads the left ventricle. A sudden right ventricular pressure rise from pulmonary embolism fits.",
+     "competing diagnosis"
+    ],
+    [
      "Pulmonary embolism",
      "Correct. A sudden increase in right ventricular pressure, as from a pulmonary embolism, is a named cause of right bundle branch block, and her postoperative setting fits."
     ],
     [
      "Aortic dissection",
-     "Aortic dissection causes tearing chest or back pain and loads the aorta, not the right ventricle. Pulmonary embolism fits her picture."
+     "Aortic dissection causes tearing chest or back pain and loads the aorta, not the right ventricle. Pulmonary embolism fits her picture.",
+     "competing diagnosis"
     ],
     [
      "Pericardial effusion",
-     "An effusion lowers voltage and can cause tamponade, but it is not the named acute cause of right bundle branch block. Pulmonary embolism is."
-    ],
-    [
-     "Hypertensive crisis",
-     "A hypertensive crisis loads the left ventricle. A sudden right ventricular pressure rise from pulmonary embolism fits."
+     "An effusion lowers voltage and can cause tamponade, but it is not the named acute cause of right bundle branch block. Pulmonary embolism is.",
+     "competing diagnosis"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "Arrhythmias II - Elwaya  (1).pptx, Slide 31",
    "slot": "etiology",
    "lead": "diagnosis"

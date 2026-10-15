@@ -3,80 +3,89 @@
   {
    "topic": "Junctional beats and rhythm",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "Which drug is used for persistent symptoms from premature junctional contractions?",
+   "q": "A junctional rhythm due to sick sinus syndrome or high-grade atrioventricular block is treated with what?",
    "opts": [
-    [
-     "Procainamide",
-     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White; a beta blocker such as metoprolol treats junctional beats."
-    ],
-    [
-     "Metoprolol",
-     "Correct. If symptoms from premature junctional contractions persist, a beta blocker such as metoprolol is used if not contraindicated; reassurance of the benign rhythm is often adequate."
-    ],
     [
      "Adenosine",
-     "Adenosine terminates reentrant supraventricular tachycardia for seconds; persistent junctional beats are suppressed with a beta blocker."
+     "Adenosine blocks the atrioventricular node further and would worsen the problem; a permanent pacemaker is needed.",
+     "confused mechanism or drug class"
     ],
-    [
-     "Atropine",
-     "Atropine speeds the sinus node in unstable bradycardia; symptomatic premature junctional beats get metoprolol."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 61",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Sinus tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What is the usual prognosis of inappropriate sinus tachycardia?",
-   "opts": [
-    [
-     "Most need a pacemaker",
-     "Pacemakers treat slow rhythms such as symptomatic sick sinus syndrome; a benign, unexplained sinus tachycardia does not need one."
-    ],
-    [
-     "Usually benign",
-     "Correct. Inappropriate sinus tachycardia usually has a benign prognosis, which is why it is generally left untreated once secondary causes are excluded."
-    ],
-    [
-     "High risk of sudden death",
-     "Sudden death is a concern in rhythms such as pre-excited atrial fibrillation or ventricular tachycardia; inappropriate sinus tachycardia is usually benign."
-    ],
-    [
-     "Progressive heart failure",
-     "Inappropriate sinus tachycardia is not described as causing heart failure; its prognosis is usually benign and it is generally left untreated."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 17",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Sick sinus syndrome with symptomatic bradycardia is treated with which?",
-   "opts": [
     [
      "Catheter ablation",
-     "Catheter ablation treats tachycardias from a focus or pathway; it cannot correct a sinus node that fails to fire, which needs pacing."
-    ],
-    [
-     "Adenosine",
-     "Adenosine blocks the atrioventricular node and would deepen any pause; symptomatic sick sinus syndrome is treated with a permanent pacemaker."
+     "Ablation treats tachycardias; a junctional escape from block or sinus failure needs a permanent pacemaker.",
+     "confused mechanism or drug class"
     ],
     [
      "Permanent pacemaker",
-     "Correct. When symptoms correlate with bradycardia in sick sinus syndrome, a permanent pacemaker is placed; tachy-brady syndrome also often needs one."
+     "Correct. If a junctional rhythm is due to complete or high-grade atrioventricular block or to sick sinus syndrome, a permanent pacemaker is placed."
     ],
     [
-     "Atropine as needed",
-     "Atropine is an acute rescue for unstable bradycardia, not long-term treatment; symptomatic sick sinus syndrome needs a permanent pacemaker."
+     "Observation alone",
+     "Observation suits an asymptomatic healthy person; junctional rhythm from high-grade block or sick sinus syndrome needs a permanent pacemaker.",
+     "wrong stage or severity"
     ]
    ],
    "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
    "slot": "escalation"
+  },
+  {
+   "topic": "Focal and multifocal atrial tachycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Why is adenosine useful when focal atrial tachycardia is suspected?",
+   "opts": [
+    [
+     "It reliably ends the focus",
+     "Adenosine is usually less effective at terminating focal atrial tachycardia than nodal or accessory pathway reentry; that relative failure, not reliable termination, is what makes it diagnostic.",
+     "reversed direction or value"
+    ],
+    [
+     "It is the long-term cure",
+     "The usual cure for focal atrial tachycardia is catheter ablation, which succeeds in about 90%; adenosine is a diagnostic tool.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It prevents recurrences",
+     "Adenosine acts for seconds and has no preventive role; chronic focal atrial tachycardia is managed with oral rate control or ablation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Its failure is diagnostic",
+     "Correct. Adenosine is an important diagnostic tool because it is usually less effective at terminating focal atrial tachycardia than the reentry tachycardias that depend on the atrioventricular node."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 31",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Atrial fibrillation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which is a listed risk factor for atrial fibrillation?",
+   "opts": [
+    [
+     "Sleep apnea",
+     "Correct. Atrial fibrillation is commonly seen with hypertension, diabetes, cardiac disease, family history of atrial fibrillation, obesity, sleep apnea, excessive alcohol and older age."
+    ],
+    [
+     "Hypothyroidism",
+     "Hypothyroidism is listed as a cause of sinus bradycardia and sick sinus syndrome, not among the atrial fibrillation risks.",
+     "adjacent fact"
+    ],
+    [
+     "Low body weight",
+     "Obesity, not low body weight, is the listed weight-related risk factor; the others are hypertension, diabetes, cardiac disease, family history, sleep apnea, excessive alcohol and older age.",
+     "reversed direction or value"
+    ],
+    [
+     "Young age",
+     "Atrial fibrillation is commonly seen in the elderly, so older age, not youth, is the listed age risk; sleep apnea, obesity, hypertension and diabetes are on the list too.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 48",
+   "slot": "risk factors"
   },
   {
    "topic": "Supraventricular tachycardia",
@@ -84,23 +93,26 @@
    "q": "What is the first-line treatment for stable supraventricular tachycardia?",
    "opts": [
     [
+     "Adenosine",
+     "Adenosine is second, given if a vagal maneuver fails in stable supraventricular tachycardia, and it may be repeated once.",
+     "wrong stage or severity"
+    ],
+    [
+     "Synchronized cardioversion",
+     "Immediate synchronized cardioversion is for hemodynamically unstable supraventricular tachycardia; a stable patient starts with a vagal maneuver.",
+     "wrong stage or severity"
+    ],
+    [
      "Intravenous procainamide",
-     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White, where adenosine must be avoided; stable supraventricular tachycardia starts with a vagal maneuver."
+     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White, where adenosine must be avoided; stable supraventricular tachycardia starts with a vagal maneuver.",
+     "confused mechanism or drug class"
     ],
     [
      "A vagal maneuver",
      "Correct. Stable supraventricular tachycardia is treated first with a vagal maneuver, then adenosine (which may be repeated once); an unstable patient gets immediate synchronized cardioversion."
-    ],
-    [
-     "Adenosine",
-     "Adenosine is second, given if a vagal maneuver fails in stable supraventricular tachycardia, and it may be repeated once."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Immediate synchronized cardioversion is for hemodynamically unstable supraventricular tachycardia; a stable patient starts with a vagal maneuver."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 26",
    "slot": "first-line"
   },
@@ -111,11 +123,13 @@
    "opts": [
     [
      "Metoprolol",
-     "Metoprolol is a beta blocker, and beta blockers are a listed cause of sinus bradycardia; giving one would worsen the problem."
+     "Metoprolol is a beta blocker, and beta blockers are a listed cause of sinus bradycardia; giving one would worsen the problem.",
+     "confused mechanism or drug class"
     ],
     [
      "Digoxin",
-     "Digoxin is a listed drug cause of sinus bradycardia and sick sinus syndrome, so it would slow the heart further rather than rescue it."
+     "Digoxin is a listed drug cause of sinus bradycardia and sick sinus syndrome, so it would slow the heart further rather than rescue it.",
+     "confused mechanism or drug class"
     ],
     [
      "Atropine",
@@ -123,7 +137,8 @@
     ],
     [
      "Adenosine",
-     "Adenosine blocks the atrioventricular node to stop supraventricular tachycardia; in a slow, unstable rhythm it would deepen the bradycardia."
+     "Adenosine blocks the atrioventricular node to stop supraventricular tachycardia; in a slow, unstable rhythm it would deepen the bradycardia.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
@@ -136,337 +151,260 @@
    "q": "In tachy-brady syndrome, which tachyarrhythmia is most common?",
    "opts": [
     [
+     "Atrial flutter",
+     "Atrial flutter is a fast atrial rhythm, but it is not the usual tachyarrhythmia of tachy-brady syndrome; atrial fibrillation is.",
+     "competing diagnosis"
+    ],
+    [
      "Ventricular tachycardia",
-     "Ventricular tachycardia can be the fast rhythm in some patients, who then need a pacemaker with a defibrillator, but atrial fibrillation is the most common."
+     "Ventricular tachycardia can be the fast rhythm in some patients, who then need a pacemaker with a defibrillator, but atrial fibrillation is the most common.",
+     "adjacent fact"
     ],
     [
      "Sinus tachycardia",
-     "In tachy-brady syndrome the fast rhythm comes from outside the failing sinus node, most commonly atrial fibrillation, not a sinus tachycardia."
+     "In tachy-brady syndrome the fast rhythm comes from outside the failing sinus node, most commonly atrial fibrillation, not a sinus tachycardia.",
+     "competing diagnosis"
     ],
     [
      "Atrial fibrillation",
      "Correct. In tachy-brady syndrome a tachyarrhythmia, most commonly atrial fibrillation, alternates with symptomatic bradycardia or with offset pauses when the fast rhythm stops."
-    ],
-    [
-     "Atrial flutter",
-     "Atrial flutter is a fast atrial rhythm, but it is not the usual tachyarrhythmia of tachy-brady syndrome; atrial fibrillation is."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
    "slot": "manifestation"
   },
   {
    "topic": "Atrial fibrillation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which drug is a direct oral anticoagulant preferred in nonvalvular atrial fibrillation?",
+   "q": "What is the usual rate of atrial fibrillation?",
    "opts": [
     [
-     "Warfarin",
-     "Warfarin is a vitamin K antagonist used as an alternative with a target international normalized ratio of 2 to 3; it is not a direct oral anticoagulant."
+     "40 to 60",
+     "40 to 60 is the usual rate of a junctional rhythm; atrial fibrillation usually runs at 110 to 160 beats per minute, irregularly irregular.",
+     "adjacent fact"
     ],
     [
-     "Aspirin",
-     "Aspirin is an antiplatelet drug, not an anticoagulant; the preferred agents are direct oral anticoagulants such as apixaban."
+     "60 to 100",
+     "A rate of 60 to 100 is the normal sinus range; atrial fibrillation usually runs faster, at 110 to 160 beats per minute, and irregularly irregular.",
+     "adjacent fact"
     ],
     [
-     "Procainamide",
-     "Procainamide is an antiarrhythmic used in atrial fibrillation with Wolff-Parkinson-White; it does not prevent clots."
+     "110 to 160",
+     "Correct. Atrial fibrillation usually runs at 110 to 160 beats per minute, although the rate can fall below 80 or rise above 200; the rhythm is irregularly irregular with absent P waves and a narrow QRS."
     ],
     [
-     "Apixaban",
-     "Correct. Apixaban is one of the direct oral anticoagulants preferred in nonvalvular atrial fibrillation, with dabigatran, edoxaban and rivaroxaban."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 50",
-   "slot": "agent/regimen"
-  },
-  {
-   "topic": "Focal and multifocal atrial tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which therapy is usually curative for focal atrial tachycardia?",
-   "opts": [
-    [
-     "Repeated adenosine",
-     "Adenosine is a diagnostic tool that usually does not terminate focal atrial tachycardia, so it cannot cure it."
-    ],
-    [
-     "A permanent pacemaker",
-     "Pacemakers treat slow rhythms; an ectopic atrial focus driving a tachycardia is cured by catheter ablation."
-    ],
-    [
-     "Atropine",
-     "Atropine speeds the heart and is used for unstable bradycardia; it has no role in curing focal atrial tachycardia."
-    ],
-    [
-     "Catheter ablation",
-     "Correct. Catheter ablation of the ectopic focus is usually curative for focal atrial tachycardia, in about 90%; oral beta blockers or calcium channel blockers are the initial chronic therapy."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 31",
-   "slot": "escalation"
-  },
-  {
-   "topic": "Atrioventricular nodal reentry",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "An educated patient stops an episode of nodal reentry at home with a vagal maneuver. What is the usual advice?",
-   "opts": [
-    [
-     "Start lifelong anticoagulation",
-     "Anticoagulation prevents stroke in atrial fibrillation and flutter; nodal reentry carries no such requirement."
-    ],
-    [
-     "Arrange a pacemaker",
-     "A pacemaker treats symptomatic slow rhythms; nodal reentry terminated at home needs no device."
-    ],
-    [
-     "Urgent care is not usually needed",
-     "Correct. If a vagal maneuver terminates nodal reentry in a patient who has been educated, urgent medical attention is usually not required; episodes are usually well tolerated."
-    ],
-    [
-     "Go to the emergency department",
-     "An emergency visit is not needed when an educated patient has already terminated the episode with a vagal maneuver."
+     "250 to 300",
+     "250 to 300 is the atrial rate of the sawtooth waves in atrial flutter; the counted rate in atrial fibrillation is usually 110 to 160.",
+     "adjacent fact"
     ]
    ],
    "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 41",
-   "slot": "education"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which is a recognized cause of sick sinus syndrome?",
-   "opts": [
-    [
-     "Surgical injury to the node",
-     "Correct. Causes of sick sinus syndrome include sinoatrial node ischemia, injury to the node from cardiac surgery, electrolyte abnormalities, medications and hypothyroidism."
-    ],
-    [
-     "Excess thyroid hormone",
-     "It is hypothyroidism that is listed as a cause of sick sinus syndrome; excess thyroid hormone speeds the sinus rate instead."
-    ],
-    [
-     "Anemia from blood loss",
-     "Anemia drives a compensatory sinus tachycardia; the listed causes of sick sinus syndrome are node ischemia or surgical injury, electrolytes, drugs and hypothyroidism."
-    ],
-    [
-     "Heavy caffeine intake",
-     "Caffeine is a trigger for atrioventricular nodal reentry and premature atrial beats; it is not a listed cause of sick sinus syndrome."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Focal and multifocal atrial tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What is the main management of multifocal atrial tachycardia?",
-   "opts": [
-    [
-     "Adenosine twice",
-     "Adenosine is used in supraventricular tachycardia through the atrioventricular node; multifocal atrial tachycardia settles with treatment of the underlying illness."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Cardioversion does not stop several independent atrial foci; treating the underlying lung disease or heart failure does."
-    ],
-    [
-     "Treat the underlying condition",
-     "Correct. Management of multifocal atrial tachycardia is treating the underlying condition, such as decompensated lung disease or heart failure; in hospital a short course of rate control may be added."
-    ],
-    [
-     "Catheter ablation",
-     "Catheter ablation is usually curative for focal atrial tachycardia (about 90%); multifocal atrial tachycardia is managed by treating the cause."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 32",
-   "slot": "first-line"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 46",
+   "slot": "test finding"
   },
   {
    "topic": "Populations",
    "io": "Identify medical care strategies for atrial and supraventricular dysrhythmias for the following populations. 3. adult 4. elderly",
-   "q": "In an older adult with new symptomatic bradycardia, which review is a key first step?",
+   "q": "In whom are the symptoms of supraventricular tachycardia more pronounced?",
    "opts": [
     [
-     "The medication list",
-     "Correct. Beta blockers, nondihydropyridine calcium channel blockers and digoxin cause sinus bradycardia and sick sinus syndrome, so the medication list is reviewed and treating the underlying cause comes first."
+     "Elderly patients or heart disease",
+     "Correct. Symptoms of supraventricular tachycardia, such as palpitations, dyspnea and chest discomfort, may be more pronounced in the elderly and in those with underlying structural heart disease."
     ],
     [
-     "A family history of fainting",
-     "Family history matters for some inherited conditions, but the drug causes of bradycardia in an older adult are found on the medication list."
+     "Young, healthy athletes",
+     "Young people without heart disease tend to tolerate supraventricular tachycardia better; symptoms are more pronounced in the elderly or with structural disease.",
+     "reversed direction or value"
     ],
     [
-     "A test for accessory pathways",
-     "Accessory pathways cause fast reentrant rhythms in Wolff-Parkinson-White; a new slow rhythm in an older adult first prompts a medication review."
+     "Those with paroxysmal episodes",
+     "Paroxysmal supraventricular tachycardia may cause only transient symptoms; it is older age and structural heart disease, not the paroxysmal pattern, that make symptoms more pronounced.",
+     "adjacent fact"
     ],
     [
-     "An exercise tolerance history",
-     "Conditioning explains adaptive bradycardia in athletes, but a new symptomatic bradycardia calls for a review of rate-slowing medications."
+     "Women more than men",
+     "Women outnumber men in atrioventricular nodal reentry, but symptom severity is linked to older age and structural heart disease, not sex.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
-   "slot": "initial test"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 25",
+   "slot": "manifestation"
   },
   {
-   "topic": "Sinus tachycardia",
+   "topic": "Atrioventricular nodal reentry",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How is inappropriate sinus tachycardia usually managed?",
+   "q": "Which physical finding fits atrioventricular nodal reentrant tachycardia?",
    "opts": [
     [
-     "Usually left untreated",
-     "Correct. Inappropriate sinus tachycardia is generally left untreated: patients tolerate the symptoms better than the treatment, beta blockers are poorly tolerated, and the prognosis is usually benign."
+     "Absent leg pulses",
+     "Absent leg pulses point to arterial occlusion; the examination clue in nodal reentry is visible neck pulsations.",
+     "adjacent fact"
     ],
     [
-     "Lifelong beta blocker",
-     "Beta blockers are listed as not well tolerated in inappropriate sinus tachycardia, which is why it is generally left untreated."
+     "Neck pulsations",
+     "Correct. Patients typically complain of sudden-onset palpitations and neck pulsations, seen on examination as the frog sign."
     ],
     [
-     "Synchronized cardioversion",
-     "Cardioversion resets reentrant or fibrillatory rhythms; inappropriate sinus tachycardia is a sinus rhythm and is generally left untreated."
+     "Kussmaul sign",
+     "Kussmaul sign, a jugular venous pressure that rises with inspiration, points to constrictive pericarditis, not a nodal reentry tachycardia.",
+     "adjacent fact"
     ],
     [
-     "Daily oral amiodarone",
-     "Amiodarone is an antiarrhythmic tried for focal atrial tachycardia; inappropriate sinus tachycardia is benign and usually left alone after causes are excluded."
+     "Pulsus paradoxus",
+     "Pulsus paradoxus, an exaggerated drop in systolic pressure on inspiration, is a feature of cardiac tamponade.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 17",
-   "slot": "first-line"
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 40",
+   "slot": "manifestation"
   },
   {
    "topic": "Atrial fibrillation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "On the CHA2DS2-VASc (stroke risk) score, which result is low risk that may not need anticoagulation?",
+   "q": "What defines long-standing persistent atrial fibrillation?",
    "opts": [
     [
-     "0 in a man or 1 in a woman",
-     "Correct. A score of 0 for men or 1 for women is low risk and may not require anticoagulation; patients above that typically need it unless bleeding risk is high."
+     "Continuous for 7 days to a year",
+     "Continuous atrial fibrillation for more than 7 days but less than one year is persistent; it becomes long-standing persistent only after more than a year.",
+     "wrong stage or severity"
     ],
     [
-     "2 in a man or 3 in a woman",
-     "Scores of 2 in a man or 3 in a woman are above the low-risk line of 0 for men and 1 for women, so anticoagulation is typically needed."
+     "Episodes lasting under a week",
+     "Episodes lasting under a week that usually end without treatment are paroxysmal atrial fibrillation, not long-standing persistent, which is continuous for over a year.",
+     "reversed direction or value"
     ],
     [
-     "3 in a man or 4 in a woman",
-     "These scores are well above low risk; the low-risk result is 0 in a man or 1 in a woman."
+     "Agreeing to stop rhythm control",
+     "A joint decision by patient and clinician to stop restoring sinus rhythm defines permanent atrial fibrillation, not long-standing persistent, which is defined by duration.",
+     "adjacent fact"
     ],
     [
-     "Any score under 5",
-     "Low risk is not 'any score under 5'; the low-risk result is a score of 0 for men or 1 for women."
+     "Continuous for over a year",
+     "Correct. Long-standing persistent atrial fibrillation is continuous for more than one year; persistent is more than 7 days but less than a year, and permanent is defined by a joint decision, not by duration."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 46",
+   "slot": "differential"
+  },
+  {
+   "topic": "Atrioventricular nodal reentry",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Atrioventricular nodal reentrant tachycardia is more common in whom?",
+   "opts": [
+    [
+     "Men",
+     "Men are less often affected; atrioventricular nodal reentry is far more common in women than in men.",
+     "reversed direction or value"
+    ],
+    [
+     "People with lung disease",
+     "Severe chronic lung disease is the setting of multifocal atrial tachycardia; nodal reentry favors women without heart disease.",
+     "adjacent fact"
+    ],
+    [
+     "People with heart surgery",
+     "Prior heart surgery and atrial scarring set up atrial flutter or sick sinus syndrome; nodal reentry favors women with normal hearts.",
+     "adjacent fact"
+    ],
+    [
+     "Women",
+     "Correct. Atrioventricular nodal reentrant tachycardia affects women far more than men, commonly without heart disease, spontaneously or with exertion, caffeine or alcohol."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 40",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "How is a junctional rhythm generally tolerated?",
+   "opts": [
+    [
+     "Well",
+     "Correct. A junctional rhythm is generally well tolerated; management depends on the cause, from no treatment in a healthy person to a pacemaker for block or sick sinus syndrome."
+    ],
+    [
+     "Poorly, with syncope",
+     "Syncope is not the usual course; a junctional rhythm is generally well tolerated at 40 to 60.",
+     "reversed direction or value"
+    ],
+    [
+     "It degenerates to fibrillation",
+     "A junctional rhythm is a stable escape rhythm, not a precursor of ventricular fibrillation; it is generally well tolerated.",
+     "common lay belief"
+    ],
+    [
+     "Usually needs a pacemaker",
+     "Only junctional rhythm from high-grade block or sick sinus syndrome needs a pacemaker; it is generally well tolerated.",
+     "wrong stage or severity"
     ]
    ],
    "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 50",
-   "slot": "test finding"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
+   "slot": "prognosis"
   },
   {
-   "topic": "Sinus arrhythmia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "On standard electrocardiogram paper, how much time does one small box represent?",
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "Which is a listed cause of junctional rhythm?",
    "opts": [
     [
-     "0.20 seconds",
-     "0.20 seconds is one large box, made of five small boxes; a single small box between the thin lines is 0.04 seconds."
+     "Anemia",
+     "Anemia causes a compensatory sinus tachycardia; junctional rhythm follows sinus node failure, inferior infarction, surgery or digoxin toxicity.",
+     "adjacent fact"
     ],
     [
-     "0.12 seconds",
-     "0.12 seconds is three small boxes, the upper limit of a normal QRS duration; one small box on its own is 0.04 seconds."
+     "Digoxin toxicity",
+     "Correct. Causes of junctional rhythm include sinus node dysfunction or marked bradycardia, inferior myocardial infarction, the acute period after cardiac surgery and digoxin toxicity."
     ],
     [
-     "1.00 second",
-     "One full second takes five large boxes, or 25 small boxes, at standard paper speed; a single small box represents only 0.04 seconds."
+     "Hyperthyroidism",
+     "Hyperthyroidism speeds the sinus node and causes sinus tachycardia; junctional rhythm appears when the sinus node fails or with digoxin toxicity.",
+     "adjacent fact"
     ],
     [
-     "0.04 seconds",
-     "Correct. Thin lines are 1 mm apart and each small box is 0.04 seconds; five small boxes make one large box of 0.20 seconds, and 25 small boxes make one second."
+     "Heavy caffeine use",
+     "Caffeine triggers nodal reentry and premature atrial beats, not a slow junctional rhythm.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 4",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Atrial flutter",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What is the definitive management of atrial flutter?",
-   "opts": [
-    [
-     "Adenosine",
-     "Adenosine may briefly slow conduction but does not cure flutter; ablation is definitive."
-    ],
-    [
-     "A pacemaker",
-     "A pacemaker treats slow rhythms such as sick sinus syndrome; the flutter circuit is cured by ablation."
-    ],
-    [
-     "Vagal maneuvers",
-     "Vagal maneuvers terminate nodal reentry, not the atrial circuit of flutter, which ablation treats definitively."
-    ],
-    [
-     "Ablation",
-     "Correct. Ablation is the definitive management of atrial flutter, which has a substantial recurrence rate and is harder to rate-control than fibrillation."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 45",
-   "slot": "escalation"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "In sinus arrest, which rhythm may take over?",
-   "opts": [
-    [
-     "Atrial flutter",
-     "Atrial flutter is a rapid atrial circuit with sawtooth waves; when the sinus node stops in sinus arrest, the backup pacemaker is junctional."
-    ],
-    [
-     "Ventricular fibrillation",
-     "Ventricular fibrillation is disorganized activity with no pulse, not the escape rhythm of sinus arrest; a junctional rhythm takes over."
-    ],
-    [
-     "Multifocal atrial tachycardia",
-     "Multifocal atrial tachycardia comes from three or more atrial foci in acutely ill lung or heart patients; it is not the escape rhythm after sinus arrest."
-    ],
-    [
-     "A junctional rhythm",
-     "Correct. In sinus arrest the sinus node does not generate an impulse, and a junctional rhythm may take over, often with inverted (retrograde) P waves or none visible."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "In sinus node exit block, what happens to the impulse?",
-   "opts": [
-    [
-     "Never generated by the node",
-     "An impulse that is never generated is sinus arrest, which can let a junctional rhythm take over; in exit block the impulse forms but cannot get out."
-    ],
-    [
-     "Blocked at the atrioventricular node",
-     "Block at the atrioventricular node is atrioventricular block, a conduction problem below the atria; exit block traps the impulse at the sinus node itself."
-    ],
-    [
-     "Replaced by a ventricular focus",
-     "A ventricular focus produces wide, bizarre complexes; exit block is a failure of the sinus impulse to leave the node, leaving a pause."
-    ],
-    [
-     "Generated, but it cannot leave the node",
-     "Correct. In sinus node exit block the sinus node generates the impulse but it does not exit to the atria, so a P wave and its beat are missing; in sinus arrest the impulse is never generated."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
    "slot": "etiology"
+  },
+  {
+   "topic": "Focal and multifocal atrial tachycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "For stable, symptomatic focal atrial tachycardia, which acute drugs are used?",
+   "opts": [
+    [
+     "Intravenous atropine",
+     "Atropine speeds the sinus node and is first line for unstable bradycardia, the opposite of what a fast atrial focus needs.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Intravenous magnesium",
+     "Intravenous magnesium is the treatment for torsades de pointes; stable focal atrial tachycardia gets a beta blocker or calcium channel blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Intravenous procainamide",
+     "Procainamide is the drug for atrial fibrillation with Wolff-Parkinson-White; focal atrial tachycardia is rate-controlled with a beta blocker or calcium channel blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Intravenous rate control",
+     "Correct. Hemodynamically stable, symptomatic focal atrial tachycardia is treated with an intravenous beta blocker or nondihydropyridine calcium channel blocker, while the precipitating cause is found and treated."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 31",
+   "slot": "agent/regimen"
   },
   {
    "topic": "Sinus bradycardia",
@@ -474,23 +412,84 @@
    "q": "Besides drugs and thyroid disease, which condition is a listed cause of sinus bradycardia?",
    "opts": [
     [
+     "Pain or anxiety",
+     "Pain and anxiety cause a physiologic sinus tachycardia, the normal response to stress, rather than bradycardia.",
+     "adjacent fact"
+    ],
+    [
+     "Hypoxia",
+     "Hypoxia is listed among the pathologic causes of sinus tachycardia; the bradycardic causes include raised intracranial pressure and sinus node ischemia.",
+     "adjacent fact"
+    ],
+    [
      "Intracranial hypertension",
      "Correct. Increased intracranial pressure is a listed cause of sinus bradycardia, together with sinus node ischemia, late-stage infection, hypothyroidism and the rate-slowing drugs."
     ],
     [
      "Pulmonary embolism",
-     "Pulmonary embolism is a pathologic cause of sinus tachycardia, along with hypoxia, shock and myocardial infarction; it does not slow the sinus node."
+     "Pulmonary embolism is a pathologic cause of sinus tachycardia, along with hypoxia, shock and myocardial infarction; it does not slow the sinus node.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "What QRS does orthodromic reentrant tachycardia produce?",
+   "opts": [
+    [
+     "Narrow, without a delta wave",
+     "Correct. In orthodromic reentry the impulse goes down the atrioventricular node and back up the accessory pathway, giving a regular narrow complex tachycardia with no delta wave and a retrograde P wave after the QRS."
     ],
     [
-     "Pain or anxiety",
-     "Pain and anxiety cause a physiologic sinus tachycardia, the normal response to stress, rather than bradycardia."
+     "Wide, with a delta wave",
+     "A wide QRS with a delta wave is antidromic reentry, where the ventricles are activated down the accessory pathway.",
+     "competing diagnosis"
     ],
     [
-     "Hypoxia",
-     "Hypoxia is listed among the pathologic causes of sinus tachycardia; the bradycardic causes include raised intracranial pressure and sinus node ischemia."
+     "Wide and bizarre, no P wave",
+     "An early wide, bizarre QRS with no P wave is a premature ventricular contraction, not orthodromic reentry.",
+     "competing diagnosis"
+    ],
+    [
+     "Narrow with sawtooth waves",
+     "A narrow QRS with sawtooth waves is atrial flutter; orthodromic reentry has no flutter waves.",
+     "competing diagnosis"
     ]
    ],
    "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 34",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Sinus bradycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which condition is a pathologic cause of sinus bradycardia?",
+   "opts": [
+    [
+     "Hypovolemia",
+     "Hypovolemia causes a pathologic sinus tachycardia as the heart compensates for a low circulating volume; it does not cause bradycardia.",
+     "adjacent fact"
+    ],
+    [
+     "Hypothyroidism",
+     "Correct. Hypothyroidism is a listed cause of sinus bradycardia, with sinus node ischemia, increased intracranial pressure, late-stage infection and drugs such as beta blockers and digoxin."
+    ],
+    [
+     "Hyperthyroidism",
+     "Hyperthyroidism is a pathologic cause of sinus tachycardia; it is the underactive thyroid that slows the sinus rate.",
+     "reversed direction or value"
+    ],
+    [
+     "Anemia",
+     "Anemia drives a compensatory sinus tachycardia, like hypovolemia and hypoxia, rather than slowing the heart.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13",
    "slot": "etiology"
   },
@@ -500,50 +499,114 @@
    "q": "Persistent, symptomatic premature atrial contractions are treated first with which?",
    "opts": [
     [
+     "Amiodarone",
+     "Amiodarone is used to cardiovert focal atrial tachycardia; persistent premature atrial contractions are treated with a beta blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
      "A beta blocker",
      "Correct. Persistent, symptomatic premature atrial contractions are treated with a beta blocker such as metoprolol if not contraindicated, or ablation when they are frequent or trigger atrial fibrillation."
     ],
     [
      "Adenosine",
-     "Adenosine terminates supraventricular tachycardia for seconds; it is not used to suppress premature atrial beats."
+     "Adenosine terminates supraventricular tachycardia for seconds; it is not used to suppress premature atrial beats.",
+     "confused mechanism or drug class"
     ],
     [
      "Procainamide",
-     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White; symptomatic premature atrial beats get a beta blocker."
-    ],
-    [
-     "Amiodarone",
-     "Amiodarone is used to cardiovert focal atrial tachycardia; persistent premature atrial contractions are treated with a beta blocker."
+     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White; symptomatic premature atrial beats get a beta blocker.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 58",
    "slot": "escalation"
   },
   {
-   "topic": "Atrial flutter",
+   "topic": "Sinus arrhythmia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Before outpatient cardioversion of atrial flutter, how long is anticoagulation given?",
+   "q": "In sinus arrhythmia, how does the heart rate change with breathing?",
    "opts": [
     [
-     "7 days",
-     "One week is too short; elective cardioversion follows 21 days of anticoagulation."
+     "Unchanged; the P-wave shape varies",
+     "A changing P-wave shape with an irregular rate suggests multifocal atrial tachycardia. Sinus arrhythmia keeps uniform P waves while the rate follows breathing.",
+     "competing diagnosis"
     ],
     [
-     "6 months",
-     "Six months is far longer than required; the outpatient cardioversion can follow 21 days of anticoagulation."
+     "Faster on inspiration, slower on expiration",
+     "Correct. Sinus arrhythmia is irregular with a pattern: the sinus rate speeds up with inspiration and slows with expiration, while every beat keeps a normal P wave and narrow QRS."
     ],
     [
-     "21 days",
-     "Correct. Outpatient cardioversion of atrial flutter (and fibrillation) is done after 21 days of anticoagulation, and anticoagulation is part of flutter management."
+     "Slower on inspiration, faster on expiration",
+     "This reverses the pattern. In sinus arrhythmia the sinus rate rises during inspiration and falls during expiration.",
+     "reversed direction or value"
     ],
     [
-     "48 hours",
-     "48 hours is not the pre-cardioversion period given; outpatient cardioversion follows 21 days of anticoagulation."
+     "Faster in both phases of the breath",
+     "The rate does not rise throughout the breath; it rises with inspiration and slows with expiration, which is what makes the rhythm irregular with a pattern.",
+     "reversed direction or value"
     ]
    ],
-   "c": 2,
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 9",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Atrial flutter",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "How is hemodynamically stable atrial flutter treated first?",
+   "opts": [
+    [
+     "Synchronized cardioversion",
+     "Synchronized cardioversion is for unstable flutter; the stable patient starts with rate control.",
+     "wrong stage or severity"
+    ],
+    [
+     "Catheter ablation",
+     "Ablation is the definitive management of flutter, chosen for recurrence rather than as the first step; a stable patient starts with rate control using a beta blocker or calcium channel blocker.",
+     "wrong stage or severity"
+    ],
+    [
+     "Repeated adenosine",
+     "Adenosine is used for supraventricular tachycardia; stable flutter is rate-controlled with a beta blocker or calcium channel blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Beta or calcium channel blocker",
+     "Correct. Stable atrial flutter is rate-controlled with a beta blocker or calcium channel blocker; an unstable patient gets synchronized cardioversion."
+    ]
+   ],
+   "c": 3,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 45",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Atrial fibrillation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which drug is a direct oral anticoagulant preferred in nonvalvular atrial fibrillation?",
+   "opts": [
+    [
+     "Procainamide",
+     "Procainamide is an antiarrhythmic used in atrial fibrillation with Wolff-Parkinson-White; it does not prevent clots.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Apixaban",
+     "Correct. Apixaban is one of the direct oral anticoagulants preferred in nonvalvular atrial fibrillation, with dabigatran, edoxaban and rivaroxaban."
+    ],
+    [
+     "Warfarin",
+     "Warfarin is a vitamin K antagonist used as an alternative with a target international normalized ratio of 2 to 3; it is not a direct oral anticoagulant.",
+     "adjacent fact"
+    ],
+    [
+     "Aspirin",
+     "Aspirin is an antiplatelet drug, not an anticoagulant; the preferred agents are direct oral anticoagulants such as apixaban.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 50",
    "slot": "agent/regimen"
   },
   {
@@ -552,103 +615,202 @@
    "q": "Adenosine slows a tachycardia and reveals atrial fibrillation with Wolff-Parkinson-White. Which drug is used?",
    "opts": [
     [
-     "A second dose of adenosine",
-     "More adenosine blocks only the normal atrioventricular node and leaves the accessory pathway to carry the fibrillation; procainamide is used."
-    ],
-    [
      "Intravenous atropine",
-     "Atropine speeds the heart and treats unstable bradycardia; it would worsen a pre-excited tachycardia, which needs procainamide."
+     "Atropine speeds the heart and treats unstable bradycardia; it would worsen a pre-excited tachycardia, which needs procainamide.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous magnesium",
-     "Magnesium is for torsades de pointes; pre-excited atrial fibrillation is treated with procainamide."
+     "Magnesium is for torsades de pointes; pre-excited atrial fibrillation is treated with procainamide.",
+     "confused mechanism or drug class"
     ],
     [
      "Intravenous procainamide",
-     "Correct. If Wolff-Parkinson-White is known, or slowing from adenosine reveals atrial fibrillation with Wolff-Parkinson-White, intravenous procainamide is used; adenosine and other nodal blockers leave the accessory pathway unopposed."
+     "Correct. When slowing from adenosine reveals atrial fibrillation with Wolff-Parkinson-White, intravenous procainamide is used and adenosine is not repeated; adenosine and the other nodal blockers leave the accessory pathway unopposed."
+    ],
+    [
+     "A second dose of adenosine",
+     "More adenosine blocks only the normal atrioventricular node and leaves the accessory pathway to carry the fibrillation; procainamide is used.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37",
    "slot": "agent/regimen"
   },
   {
-   "topic": "Sinus bradycardia",
+   "topic": "Sinus tachycardia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How do most people with sinus bradycardia present?",
+   "q": "What defines inappropriate sinus tachycardia?",
    "opts": [
     [
-     "With neck pulsations",
-     "Neck pulsations (the frog sign) belong to atrioventricular nodal reentrant tachycardia, a fast rhythm; most sinus bradycardia is silent."
+     "Tachycardia caused by fever",
+     "A fast rate from fever or infection is a response to a pathologic process, which makes it appropriate; inappropriate tachycardia has no explanation.",
+     "adjacent fact"
     ],
     [
-     "With exertional chest pain",
-     "Chest pain marks an unstable patient, which most people with sinus bradycardia are not; the usual picture is no symptoms."
+     "Tachycardia during exercise",
+     "Exercise tachycardia is a normal physiologic response; inappropriate sinus tachycardia persists with no cause found.",
+     "adjacent fact"
     ],
     [
-     "Without symptoms",
-     "Correct. Most people with sinus bradycardia are asymptomatic, and an asymptomatic sinus bradycardia is not treated."
+     "Tachycardia from a stimulant",
+     "A medication or stimulant effect is an explained, appropriate sinus tachycardia; inappropriate means no cause remains after all are excluded.",
+     "adjacent fact"
     ],
     [
-     "With syncope at rest",
-     "Syncope is a feature of unstable or symptomatic bradycardia, a minority; most people with sinus bradycardia have no symptoms at all."
+     "Unexplained once causes excluded",
+     "Correct. Inappropriate sinus tachycardia is an elevated heart rate that remains unexplained after secondary causes have been excluded, so it is a diagnosis of exclusion."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 16",
+   "slot": "differential"
+  },
+  {
+   "topic": "Sick sinus syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "What is the tachy-brady form of sick sinus syndrome?",
+   "opts": [
+    [
+     "Slowing on expiration, speeding up on inspiration",
+     "Rate change with breathing is sinus arrhythmia, a normal variant; tachy-brady syndrome alternates a tachyarrhythmia with bradycardia or pauses.",
+     "competing diagnosis"
+    ],
+    [
+     "Fast atrial rhythms alternating with slow ones",
+     "Correct. In tachy-brady syndrome a tachyarrhythmia, most commonly atrial fibrillation, alternates with symptomatic bradycardia or pauses, the offset pause coming when the fast rhythm stops."
+    ],
+    [
+     "An impulse that cannot exit the node",
+     "An impulse that forms but cannot exit the sinus node is sinus node exit block, a different form of sick sinus syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "An impulse the node fails to generate",
+     "An impulse that is never generated is sinus arrest, which may let a junctional rhythm take over; tachy-brady is fast alternating with slow.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
+   "slot": "differential"
+  },
+  {
+   "topic": "Sinus bradycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which medication class is a recognized cause of sinus bradycardia?",
+   "opts": [
+    [
+     "Stimulants",
+     "Stimulants are a drug cause of sinus tachycardia, not bradycardia; the bradycardic drugs are beta blockers, nondihydropyridine calcium channel blockers and digoxin.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Beta-agonist inhalers",
+     "Beta-agonists can precipitate atrioventricular nodal reentrant tachycardia, a fast rhythm; beta blockers, not beta-agonists, slow the sinus rate.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Beta blockers",
+     "Correct. Beta blockers, nondihydropyridine calcium channel blockers and digoxin are the medication causes of sinus bradycardia, alongside hypothyroidism, sinus node ischemia and raised intracranial pressure."
+    ],
+    [
+     "Anticholinergics",
+     "Anticholinergic drugs cause sinus tachycardia, as stimulants do; they block the vagal brake rather than slowing the sinus node.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13",
-   "slot": "manifestation"
+   "slot": "etiology"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "What is the usual rate of a junctional rhythm?",
+   "opts": [
+    [
+     "40 to 60",
+     "Correct. A junctional rhythm is regular, usually at 40 to 60 beats per minute, with a narrow QRS and P waves that are inverted, buried or after the QRS."
+    ],
+    [
+     "60 to 100",
+     "60 to 100 is the normal sinus rate; a junctional escape rhythm is slower, usually 40 to 60.",
+     "adjacent fact"
+    ],
+    [
+     "100 to 160",
+     "100 to 160 is the range of sinus tachycardia; a junctional rhythm usually runs at 40 to 60.",
+     "adjacent fact"
+    ],
+    [
+     "250 to 300",
+     "250 to 300 is the atrial rate of flutter; the junction usually paces at 40 to 60.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 62",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Premature atrial contractions",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which counseling fits benign premature atrial contractions?",
+   "opts": [
+    [
+     "Begin anticoagulation",
+     "Anticoagulation belongs to atrial fibrillation and flutter; benign premature atrial beats need reassurance and trigger avoidance.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Take a lifelong beta blocker",
+     "A beta blocker is only for persistent symptoms; benign premature atrial contractions are managed with reassurance and trigger avoidance.",
+     "wrong stage or severity"
+    ],
+    [
+     "Avoid triggers; reassure",
+     "Correct. Counsel the patient to avoid potential precipitants such as excessive alcohol, stress and caffeine, and give reassurance of the benign nature of the rhythm."
+    ],
+    [
+     "Stop exercising",
+     "Exercise restriction is not part of the counseling; the advice is to avoid precipitants like alcohol, stress and caffeine, with reassurance.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 58",
+   "slot": "education"
   },
   {
    "topic": "Focal and multifocal atrial tachycardia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How do most people with focal atrial tachycardia describe it?",
+   "q": "Which therapy is usually curative for focal atrial tachycardia?",
    "opts": [
     [
-     "Neck pulsations (frog sign)",
-     "Neck pulsations, the frog sign, belong to atrioventricular nodal reentrant tachycardia; focal atrial tachycardia presents with abrupt palpitations."
+     "A permanent pacemaker",
+     "Pacemakers treat slow rhythms; an ectopic atrial focus driving a tachycardia is cured by catheter ablation.",
+     "confused mechanism or drug class"
     ],
     [
-     "Abrupt-onset palpitations",
-     "Correct. Most people with focal atrial tachycardia report abrupt-onset palpitations, and it is generally a benign arrhythmia."
+     "Atropine",
+     "Atropine speeds the heart and is used for unstable bradycardia; it has no role in curing focal atrial tachycardia.",
+     "confused mechanism or drug class"
     ],
     [
-     "Syncope during exercise",
-     "Exertional syncope in a young person raises concern for a dangerous rhythm such as pre-excited atrial fibrillation; focal atrial tachycardia gives abrupt palpitations."
+     "Catheter ablation",
+     "Correct. Catheter ablation of the ectopic focus is usually curative for focal atrial tachycardia, in about 90%; oral beta blockers or calcium channel blockers are the initial chronic therapy."
     ],
     [
-     "Fatigue over months",
-     "A slow, months-long course is not the picture; focal atrial tachycardia is typically paroxysmal, with abrupt-onset palpitations."
+     "Repeated adenosine",
+     "Adenosine is a diagnostic tool that usually does not terminate focal atrial tachycardia, so it cannot cure it.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 30",
-   "slot": "manifestation"
-  },
-  {
-   "topic": "Atrial fibrillation",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Stable atrial fibrillation with rapid ventricular response is treated how?",
-   "opts": [
-    [
-     "Intravenous atropine",
-     "Atropine speeds the heart and treats unstable bradycardia; it would worsen rapid ventricular response."
-    ],
-    [
-     "Intravenous rate control",
-     "Correct. A hemodynamically stable patient in rapid ventricular response gets intravenous rate control; a stable patient without it gets rate control by mouth."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion is for the unstable patient; a stable patient in rapid ventricular response is rate-controlled intravenously."
-    ],
-    [
-     "Immediate ablation",
-     "Mapping and ablation is a later, elective rhythm option, not the acute treatment of rapid ventricular response."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 49",
-   "slot": "first-line"
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 31",
+   "slot": "escalation"
   },
   {
    "topic": "Atrial fibrillation",
@@ -661,15 +823,18 @@
     ],
     [
      "Regular, with sawtooth waves",
-     "A regular rhythm with sawtooth waves is atrial flutter, an organized atrial circuit."
+     "A regular rhythm with sawtooth waves is atrial flutter, an organized atrial circuit.",
+     "competing diagnosis"
     ],
     [
      "Irregular, three P-wave shapes",
-     "An irregular rhythm with at least three P-wave shapes is multifocal atrial tachycardia, which still has P waves."
+     "An irregular rhythm with at least three P-wave shapes is multifocal atrial tachycardia, which still has P waves.",
+     "competing diagnosis"
     ],
     [
      "Regular, with hidden P waves",
-     "A regular narrow rhythm with hidden P waves is supraventricular tachycardia such as nodal reentry; atrial fibrillation is irregularly irregular."
+     "A regular narrow rhythm with hidden P waves is supraventricular tachycardia such as nodal reentry; atrial fibrillation is irregularly irregular.",
+     "competing diagnosis"
     ]
    ],
    "c": 0,
@@ -677,395 +842,353 @@
    "slot": "test finding"
   },
   {
-   "topic": "Atrial fibrillation",
+   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What does the HAS-BLED (bleeding risk) score estimate?",
+   "q": "Which type of atrioventricular reentrant tachycardia is more common?",
    "opts": [
     [
-     "Need for a permanent pacemaker",
-     "Pacemaker need depends on symptomatic bradycardia; HAS-BLED (bleeding risk) estimates bleeding on anticoagulation."
+     "Orthodromic",
+     "Correct. Atrioventricular reentrant tachycardia is orthodromic or antidromic, and orthodromic is more common; it produces a regular, narrow complex tachycardia."
     ],
     [
-     "Major bleeding risk on anticoagulation",
-     "Correct. The HAS-BLED (bleeding risk) score estimates the risk of major bleeding in a patient on anticoagulation, to weigh risk against benefit in atrial fibrillation care."
+     "Antidromic",
+     "Antidromic reentry, with retrograde conduction up the node and a wide QRS, is the less common form.",
+     "reversed direction or value"
     ],
     [
-     "Stroke risk in atrial fibrillation",
-     "Stroke risk is estimated with the CHA2DS2-VASc (stroke risk) score; HAS-BLED (bleeding risk) estimates bleeding."
+     "Multifocal",
+     "Multifocal describes an atrial tachycardia from three or more foci, not a type of accessory pathway reentry.",
+     "adjacent fact"
     ],
     [
-     "Chance of returning to sinus rhythm",
-     "No listed score predicts conversion to sinus rhythm; HAS-BLED (bleeding risk) estimates major bleeding risk."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 50",
-   "slot": "complication"
-  },
-  {
-   "topic": "Premature atrial contractions",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What does a premature atrial contraction look like?",
-   "opts": [
-    [
-     "An early, abnormal P wave",
-     "Correct. A premature atrial contraction begins in the atria and shows an early, abnormally shaped P wave followed by a narrow QRS."
-    ],
-    [
-     "An early wide QRS, no P wave",
-     "An early, wide and bizarre QRS with no P wave is a premature ventricular contraction."
-    ],
-    [
-     "Inverted P, narrow QRS",
-     "An inverted, buried or following P wave with an early narrow QRS is a premature junctional contraction."
-    ],
-    [
-     "A sawtooth baseline",
-     "A sawtooth baseline is atrial flutter, a sustained rhythm, not a single early atrial beat."
+     "Slow-fast",
+     "Slow-fast is the common typical form of atrioventricular nodal reentry, not of accessory pathway reentry.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 54",
-   "slot": "test finding"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 33",
+   "slot": "epidemiology"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Atrioventricular nodal reentry",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "What is the cure rate of catheter ablation for atrioventricular nodal reentry?",
+   "opts": [
+    [
+     "About 50%",
+     "Ablation for nodal reentry is far better than a coin flip, with a definitive cure in over 95%.",
+     "reversed direction or value"
+    ],
+    [
+     "About 70%",
+     "A 70% cure would undersell it; ablation for nodal reentry offers a definitive cure in over 95% of selected patients.",
+     "reversed direction or value"
+    ],
+    [
+     "About 90%",
+     "About 90% is the cure rate quoted for catheter ablation of focal atrial tachycardia; nodal reentry ablation exceeds 95%.",
+     "adjacent fact"
+    ],
+    [
+     "Over 95%",
+     "Correct. Catheter ablation offers a select subset of patients with nodal reentry the opportunity for a definitive cure, in over 95%."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 41",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Focal and multifocal atrial tachycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "How does the rhythm of multifocal atrial tachycardia compare with focal atrial tachycardia?",
+   "opts": [
+    [
+     "Regular; focal is irregular",
+     "This reverses them: the single focus of focal atrial tachycardia gives a regular rhythm, and the several foci of multifocal give an irregular one.",
+     "reversed direction or value"
+    ],
+    [
+     "Both are regular",
+     "Only focal atrial tachycardia is regular; multifocal atrial tachycardia is irregular.",
+     "adjacent fact"
+    ],
+    [
+     "Both lack P waves",
+     "Both have one P wave for every QRS; it is atrial fibrillation that lacks P waves.",
+     "competing diagnosis"
+    ],
+    [
+     "Irregular; focal is regular",
+     "Correct. Focal atrial tachycardia is regular because one focus fires; multifocal atrial tachycardia is irregular because at least three foci fire independently."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 28",
+   "slot": "differential"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "How do most people with premature junctional contractions present?",
+   "opts": [
+    [
+     "With syncope",
+     "Syncope is not the usual picture; premature junctional contractions are mostly asymptomatic.",
+     "wrong stage or severity"
+    ],
+    [
+     "With chest pain",
+     "Chest pain is not typical; most people with premature junctional beats have no symptoms.",
+     "wrong stage or severity"
+    ],
+    [
+     "With a stroke",
+     "Stroke is the embolic risk of atrial fibrillation; premature junctional beats are mostly silent.",
+     "adjacent fact"
+    ],
+    [
+     "Without symptoms",
+     "Correct. Most people with premature junctional contractions are not symptomatic, and no treatment is needed if they are asymptomatic and infrequent; reassurance is often adequate."
+    ]
+   ],
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 61",
+   "slot": "manifestation"
   },
   {
    "topic": "Supraventricular tachycardia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which supraventricular tachycardia is irregularly irregular?",
+   "q": "Which rhythm is listed among those that can exceed 200 beats per minute and cause collapse?",
    "opts": [
     [
-     "Atrial flutter with 2:1 block",
-     "Atrial flutter with a fixed 2:1 block is regular, with two sawtooth waves per QRS; atrial fibrillation is the irregularly irregular one."
-    ],
-    [
-     "Atrial fibrillation",
-     "Correct. Atrial fibrillation is irregularly irregular with absent P waves; most other supraventricular tachycardias, such as nodal reentry and focal atrial tachycardia, are regular."
+     "Multifocal atrial tachycardia",
+     "Multifocal atrial tachycardia is an irregular rhythm of acutely ill lung or heart patients and is not among the rhythms listed for rates above 200.",
+     "competing diagnosis"
     ],
     [
      "Focal atrial tachycardia",
-     "Focal atrial tachycardia comes from one ectopic focus, so it is regular, with one consistently abnormal P wave per QRS."
+     "Focal atrial tachycardia is generally a benign arrhythmia with abrupt palpitations; it is not one of the rhythms listed as exceeding 200.",
+     "competing diagnosis"
     ],
     [
-     "Nodal reentrant tachycardia",
-     "Atrioventricular nodal reentrant tachycardia is a regular narrow complex tachycardia with hidden P waves."
+     "Physiologic sinus tachycardia",
+     "Sinus tachycardia stays at or below about 160; the rhythms that exceed 200 are the reentry tachycardias and pre-excited atrial fibrillation.",
+     "competing diagnosis"
+    ],
+    [
+     "Pre-excited atrial fibrillation",
+     "Correct. Rates above 200 with syncope or collapse are seen in accessory pathway reentry, nodal reentry and atrial fibrillation with an accessory pathway (for example Wolff-Parkinson-White)."
     ]
    ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 46",
-   "slot": "test finding"
+   "c": 3,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 25",
+   "slot": "complication"
   },
   {
-   "topic": "Atrioventricular nodal reentry",
+   "topic": "Sinus tachycardia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How does atrioventricular nodal reentrant tachycardia usually terminate?",
+   "q": "Which is a physiologic cause of sinus tachycardia?",
    "opts": [
     [
-     "Intravenous procainamide",
-     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White; nodal reentry stops with vagal maneuvers or adenosine."
+     "Pain or anxiety",
+     "Correct. Pain and anxiety are physiologic causes, as is exercise; the pathologic causes include hypovolemia, shock, anemia, hypoxia, pulmonary embolism, myocardial infarction and hyperthyroidism."
     ],
     [
-     "Vagal maneuvers or adenosine",
-     "Correct. Nodal reentry almost always terminates with vagal maneuvers or adenosine; synchronized cardioversion is rarely required, and episodes are usually well tolerated."
+     "Hypovolemia",
+     "Hypovolemia is a pathologic cause of sinus tachycardia; the physiologic causes are responses such as pain, anxiety and exercise.",
+     "adjacent fact"
     ],
     [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion is rarely required in nodal reentry; it is kept for the unstable patient."
+     "Pulmonary embolism",
+     "Pulmonary embolism is a pathologic cause of sinus tachycardia, not a physiologic one like pain or anxiety.",
+     "adjacent fact"
     ],
     [
-     "Catheter ablation",
-     "Ablation is a definitive cure for a select subset (over 95% success), not the way a single episode is terminated."
+     "Hyperthyroidism",
+     "Hyperthyroidism is a pathologic cause of sinus tachycardia; physiologic sinus tachycardia is the response to pain, anxiety or exercise.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 16",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Sinus tachycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Sinus tachycardia is defined by a sinus rate in which range?",
+   "opts": [
+    [
+     "From 60 to 100",
+     "A sinus rate of 60 to 100 is normal sinus rhythm; sinus tachycardia starts above 100.",
+     "adjacent fact"
+    ],
+    [
+     "Above 100, up to 160",
+     "Correct. Sinus tachycardia is a regular sinus rhythm above 100 up to 160 beats per minute, with a P wave for every QRS; above 160 the P waves are lost and the rhythm is called supraventricular tachycardia."
+    ],
+    [
+     "Above 160",
+     "Above 160 beats per minute the P waves are hidden and the rhythm is called supraventricular tachycardia; sinus tachycardia runs from just over 100 to 160.",
+     "adjacent fact"
+    ],
+    [
+     "From 250 to 300",
+     "An atrial rate of 250 or more, approaching 300, is atrial flutter; sinus tachycardia stays between 100 and 160.",
+     "adjacent fact"
     ]
    ],
    "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 41",
-   "slot": "first-line"
-  }
- ],
- "set2": [
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 14",
+   "slot": "test finding"
+  },
   {
    "topic": "Premature atrial contractions",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
    "q": "When is catheter ablation used for premature atrial contractions?",
    "opts": [
     [
-     "When they trigger fibrillation",
-     "Correct. Catheter ablation is used if premature atrial contractions are frequent or are triggering atrial fibrillation; otherwise a beta blocker or reassurance is used."
-    ],
-    [
      "Whenever any are found",
-     "Most premature atrial contractions are benign and asymptomatic and need no treatment, let alone ablation."
+     "Most premature atrial contractions are benign and asymptomatic and need no treatment, let alone ablation.",
+     "wrong stage or severity"
     ],
     [
      "When they cause no symptoms",
-     "Asymptomatic premature atrial contractions get no treatment; ablation is for frequent beats or those triggering fibrillation."
+     "Asymptomatic premature atrial contractions get no treatment; ablation is for frequent beats or those triggering fibrillation.",
+     "wrong stage or severity"
     ],
     [
-     "When they come with sleep",
-     "Timing with sleep is not an indication; ablation targets frequent premature atrial beats or those triggering atrial fibrillation."
+     "When caffeine triggers them",
+     "Premature atrial beats brought on by caffeine are managed by avoiding the trigger and reassurance; ablation is for frequent beats or those triggering atrial fibrillation.",
+     "wrong stage or severity"
+    ],
+    [
+     "When they trigger fibrillation",
+     "Correct. Catheter ablation is used if premature atrial contractions are frequent or are triggering atrial fibrillation; otherwise a beta blocker or reassurance is used."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 58",
    "slot": "escalation"
   },
   {
-   "topic": "Junctional beats and rhythm",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "Which cardiac event is a listed cause of junctional rhythm?",
-   "opts": [
-    [
-     "Hypovolemic shock",
-     "Hypovolemia and shock drive sinus tachycardia; junctional rhythm follows inferior infarction, surgery, sinus node failure or digoxin toxicity."
-    ],
-    [
-     "Untreated hyperthyroidism",
-     "Hyperthyroidism speeds the sinus node into tachycardia; it does not let the junction take over."
-    ],
-    [
-     "Inferior myocardial infarction",
-     "Correct. Inferior myocardial infarction is a listed cause of junctional rhythm, with sinus node dysfunction, the acute period after cardiac surgery and digoxin toxicity."
-    ],
-    [
-     "Pulmonary embolism",
-     "Pulmonary embolism is a pathologic cause of sinus tachycardia, not junctional rhythm."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
+   "topic": "Atrial fibrillation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Atrioventricular reentrant tachycardia depends on which structure?",
+   "q": "In hemodynamically stable atrial fibrillation, what is the first aim of management?",
    "opts": [
     [
-     "A damaged sinus node",
-     "A failing sinus node is sick sinus syndrome; reentrant tachycardia needs an extra connection between atria and ventricles."
+     "A permanent pacemaker",
+     "A pacemaker treats slow rhythms; stable atrial fibrillation is first rate-controlled.",
+     "confused mechanism or drug class"
     ],
     [
-     "An accessory pathway",
-     "Correct. Atrioventricular reentrant tachycardia is seen in patients with an accessory pathway, such as Wolff-Parkinson-White; the loop uses the atrioventricular node and the pathway."
+     "Rate control",
+     "Correct. Stable atrial fibrillation is managed first with rate control (intravenous if in rapid ventricular response, oral if not), with anticoagulation guided by stroke risk."
     ],
     [
-     "A circuit inside the node",
-     "A circuit confined to the atrioventricular node is atrioventricular nodal reentrant tachycardia, which needs no accessory pathway."
+     "Immediate rhythm conversion",
+     "Elective conversion comes later, as outpatient cardioversion after 21 days of anticoagulation; the first aim in a stable patient is rate control.",
+     "wrong stage or severity"
     ],
     [
-     "Three atrial foci",
-     "Three or more atrial foci make multifocal atrial tachycardia, an irregular rhythm without a reentry loop."
+     "Catheter ablation",
+     "Mapping and ablation is a later option; the first step in stable atrial fibrillation is rate control.",
+     "wrong stage or severity"
     ]
    ],
    "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37",
-   "slot": "etiology"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 49",
+   "slot": "first-line"
   },
   {
-   "topic": "Atrial flutter",
+   "topic": "Atrioventricular nodal reentry",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which atrioventricular conduction ratio is most common in atrial flutter?",
+   "q": "Which trigger can precipitate atrioventricular nodal reentrant tachycardia?",
    "opts": [
     [
-     "2:1",
-     "Correct. When the atrioventricular node blocks one of every two atrial impulses, the result is 2:1 block, the most common pattern in atrial flutter."
+     "Increased vagal tone",
+     "High vagal tone slows conduction and explains bradycardia or junctional rhythm in athletes; vagal maneuvers actually terminate nodal reentry.",
+     "reversed direction or value"
     ],
     [
-     "1:1",
-     "1:1 flutter is uncommon and dangerous, with extreme hemodynamic instability and a big risk of ventricular fibrillation; 2:1 is the common ratio."
+     "Caffeine",
+     "Correct. Nodal reentry may occur spontaneously or with exertion, caffeine, alcohol, beta-agonists or sympathomimetics, usually without heart disease."
     ],
     [
-     "3:1",
-     "3:1 block does occur in atrial flutter, but it is not the most common conduction pattern; 2:1 is."
+     "Hypothyroidism",
+     "Hypothyroidism slows the heart and causes sinus bradycardia or sick sinus syndrome; caffeine is the listed trigger for nodal reentry.",
+     "adjacent fact"
     ],
     [
-     "4:1",
-     "4:1 block slows the ventricular rate further and is seen in flutter, but the most common ratio is 2:1."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 42",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Sinus arrhythmia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "In sinus arrhythmia, how does the heart rate change with breathing?",
-   "opts": [
-    [
-     "Unchanged; only the P-wave shape varies",
-     "A changing P-wave shape with an irregular rate suggests multifocal atrial tachycardia. Sinus arrhythmia keeps uniform P waves while the rate follows breathing."
-    ],
-    [
-     "Faster on inspiration, slower on expiration",
-     "Correct. Sinus arrhythmia is irregular with a pattern: the sinus rate speeds up with inspiration and slows with expiration, while every beat keeps a normal P wave and narrow QRS."
-    ],
-    [
-     "Slower on inspiration, faster on expiration",
-     "This reverses the pattern. In sinus arrhythmia the sinus rate rises during inspiration and falls during expiration."
-    ],
-    [
-     "Faster in both phases of the breath",
-     "The rate does not rise throughout the breath; it rises with inspiration and slows with expiration, which is what makes the rhythm irregular with a pattern."
+     "Beta blockers",
+     "Beta blockers are used as a 'pill in the pocket' to stop nodal reentry; it is beta-agonists that can trigger it.",
+     "reversed direction or value"
     ]
    ],
    "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 9",
-   "slot": "manifestation"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 40",
+   "slot": "risk factors"
   },
   {
    "topic": "Populations",
    "io": "Identify medical care strategies for atrial and supraventricular dysrhythmias for the following populations. 3. adult 4. elderly",
-   "q": "How does age relate to the risk of atrial fibrillation?",
+   "q": "Besides athletes and sleepers, which adult group commonly shows sinus bradycardia?",
    "opts": [
     [
-     "Risk falls after age 65",
-     "The opposite: being elderly is a listed risk factor for atrial fibrillation, so risk rises rather than falls with age."
+     "Adults over 65",
+     "Correct. Sinus bradycardia is listed as seen in adults over 65 years, as well as in well-conditioned, active people and during sleep."
     ],
     [
-     "Age plays no part",
-     "Age matters: the elderly are among the groups in whom atrial fibrillation is commonly seen."
+     "Adults with anxiety",
+     "Anxiety causes a physiologic sinus tachycardia, not bradycardia; sinus bradycardia is listed in adults over 65.",
+     "adjacent fact"
     ],
     [
-     "Older age raises the risk",
-     "Correct. Atrial fibrillation is commonly seen in the elderly, alongside hypertension, diabetes, cardiac disease, family history, obesity, sleep apnea and excessive alcohol."
+     "Adults with hyperthyroidism",
+     "Hyperthyroidism speeds the sinus rate; sinus bradycardia is the finding in adults over 65 and in conditioned athletes.",
+     "reversed direction or value"
     ],
     [
-     "Risk peaks in adolescence",
-     "Atrial fibrillation is listed as common in the elderly, not adolescents; its other risk factors are cardiovascular and metabolic."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 48",
-   "slot": "risk factors"
-  },
-  {
-   "topic": "Focal and multifocal atrial tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "What is the prognostic meaning of multifocal atrial tachycardia?",
-   "opts": [
-    [
-     "A poor prognostic sign",
-     "Correct. Multifocal atrial tachycardia is a poor prognostic sign because it occurs in acutely ill patients with severe chronic obstructive pulmonary disease or heart failure."
-    ],
-    [
-     "A benign finding",
-     "Benign describes focal atrial tachycardia, generally a benign arrhythmia; multifocal atrial tachycardia signals serious underlying illness."
-    ],
-    [
-     "A sign of fitness",
-     "Fitness-related findings are sinus bradycardia and junctional rhythm from high vagal tone; multifocal atrial tachycardia is a poor prognostic sign."
-    ],
-    [
-     "A normal aging change",
-     "Multifocal atrial tachycardia reflects acute illness with right heart stress, not normal aging, and it carries a poor prognosis."
+     "Adults using stimulants",
+     "Stimulants cause sinus tachycardia; the adult group listed for sinus bradycardia is those over 65.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 32",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which drug is among the medication causes of sick sinus syndrome?",
-   "opts": [
-    [
-     "Digoxin",
-     "Correct. The medication causes of sick sinus syndrome are beta blockers, nondihydropyridine calcium channel blockers and digoxin, all of which slow the sinus node."
-    ],
-    [
-     "Atropine",
-     "Atropine speeds the sinus node by blocking vagal input; it is the first-line treatment for unstable bradycardia, not a cause of sick sinus syndrome."
-    ],
-    [
-     "An anticholinergic",
-     "Anticholinergic drugs speed the heart and cause sinus tachycardia; the drugs that cause sick sinus syndrome are beta blockers, calcium channel blockers and digoxin."
-    ],
-    [
-     "A beta-agonist inhaler",
-     "Beta-agonists precipitate fast rhythms such as nodal reentry; digoxin, beta blockers and nondihydropyridine calcium channel blockers are the sick sinus drugs."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
-   "slot": "etiology"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13",
+   "slot": "epidemiology"
   },
   {
    "topic": "Sinus arrhythmia",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How is sinus arrhythmia best characterized?",
+   "q": "Which electrocardiogram pattern defines sinus arrhythmia?",
    "opts": [
     [
-     "An indication for a pacemaker",
-     "Pacemakers are for symptomatic bradycardia, sick sinus syndrome or high-grade block; sinus arrhythmia is physiologic and needs no treatment."
+     "Irregularly irregular with no P waves",
+     "An irregularly irregular rhythm with absent P waves is atrial fibrillation; sinus arrhythmia keeps a normal P wave before every QRS.",
+     "competing diagnosis"
     ],
     [
-     "A normal, physiologic variant",
-     "Correct. Sinus arrhythmia is normal and physiologic: a rate of 60 to 100 that speeds with inspiration and slows with expiration, with a P wave for every QRS and nothing to treat."
+     "Regular with sawtooth baseline waves",
+     "A regular rhythm with sawtooth waves is atrial flutter, from a rapid atrial circuit; sinus arrhythmia has normal sinus P waves.",
+     "competing diagnosis"
     ],
     [
-     "A sign of sinus node disease",
-     "Sinus node disease is sick sinus syndrome, with exit block, sinus arrest or tachy-brady swings; sinus arrhythmia is a normal breathing-linked variation."
+     "Irregular with three P-wave shapes",
+     "At least three distinct P-wave shapes in one lead with an irregular rhythm is multifocal atrial tachycardia, not the breathing-linked sinus variation.",
+     "competing diagnosis"
     ],
     [
-     "A precursor of atrial fibrillation",
-     "Premature atrial contractions in a diseased heart may precede atrial fibrillation; sinus arrhythmia is a normal physiologic variant with no such role."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 9",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Supraventricular tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Besides converting the rhythm, what can adenosine show in a supraventricular tachycardia?",
-   "opts": [
-    [
-     "ST segment elevation",
-     "ST segment elevation is a sign of infarction, not something adenosine is used to uncover; slowing the rate reveals whether P waves are present."
-    ],
-    [
-     "A prolonged QT interval",
-     "A prolonged QT interval is a risk for torsades de pointes; adenosine's diagnostic value in a narrow tachycardia is revealing P waves."
-    ],
-    [
-     "A bundle branch block",
-     "Adenosine is not used to show a bundle branch block; by slowing the ventricular rate it reveals the hidden P waves of a supraventricular rhythm."
-    ],
-    [
-     "Hidden P waves",
-     "Correct. Adenosine may convert supraventricular tachycardia to normal sinus rhythm, or at least slow the rate so you can see whether P waves are there."
+     "Cyclic irregularity, normal P waves",
+     "Correct. Sinus arrhythmia is irregular with a pattern that follows breathing, at 60 to 100 beats per minute, with a uniform P wave before every narrow QRS and a normal PR interval."
     ]
    ],
    "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 26",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Atrial fibrillation",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Continuous atrial fibrillation lasting more than 7 days but less than one year is called what?",
-   "opts": [
-    [
-     "Persistent",
-     "Correct. Persistent atrial fibrillation is continuous for more than 7 days but less than one year and needs treatment; beyond one year it is long-standing persistent."
-    ],
-    [
-     "Paroxysmal",
-     "Paroxysmal atrial fibrillation lasts less than one week and usually terminates without treatment."
-    ],
-    [
-     "Long-standing persistent",
-     "Long-standing persistent atrial fibrillation is continuous for more than one year; 7 days to a year is persistent."
-    ],
-    [
-     "Permanent",
-     "Permanent is defined by a joint decision to stop attempts to restore sinus rhythm, not by a duration of 7 days to a year."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 46",
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 9",
    "slot": "differential"
   },
   {
@@ -1075,11 +1198,13 @@
    "opts": [
     [
      "Amiodarone",
-     "Amiodarone is an antiarrhythmic tried for chemical cardioversion of focal atrial tachycardia, not a drug to speed a slow heart; atropine is first line."
+     "Amiodarone is an antiarrhythmic tried for chemical cardioversion of focal atrial tachycardia, not a drug to speed a slow heart; atropine is first line.",
+     "confused mechanism or drug class"
     ],
     [
      "A permanent pacemaker",
-     "A permanent pacemaker is definitive care for chronic symptomatic bradycardia; the acute, unstable patient first gets atropine, then a temporary pacemaker."
+     "A permanent pacemaker is definitive care for chronic symptomatic bradycardia; the acute, unstable patient first gets atropine, then a temporary pacemaker.",
+     "wrong stage or severity"
     ],
     [
      "Atropine",
@@ -1087,7 +1212,8 @@
     ],
     [
      "Adenosine",
-     "Adenosine slows conduction through the atrioventricular node and is used for stable supraventricular tachycardia; it would worsen a bradycardia."
+     "Adenosine slows conduction through the atrioventricular node and is used for stable supraventricular tachycardia; it would worsen a bradycardia.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 2,
@@ -1095,29 +1221,438 @@
    "slot": "first-line"
   },
   {
-   "topic": "Atrial flutter",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "How is hemodynamically stable atrial flutter treated first?",
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "Which drug is used for persistent symptoms from premature junctional contractions?",
    "opts": [
     [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion is for unstable flutter; the stable patient starts with rate control."
+     "Metoprolol",
+     "Correct. If symptoms from premature junctional contractions persist, a beta blocker such as metoprolol is used if not contraindicated; reassurance of the benign rhythm is often adequate."
     ],
     [
-     "Immediate cardioversion",
-     "Elective cardioversion is done as an outpatient after 21 days of anticoagulation, not immediately in a stable patient."
+     "Adenosine",
+     "Adenosine terminates reentrant supraventricular tachycardia for seconds; persistent junctional beats are suppressed with a beta blocker.",
+     "confused mechanism or drug class"
     ],
     [
-     "Repeated adenosine",
-     "Adenosine is used for supraventricular tachycardia; stable flutter is rate-controlled with a beta blocker or calcium channel blocker."
+     "Atropine",
+     "Atropine speeds the sinus node in unstable bradycardia; symptomatic premature junctional beats get metoprolol.",
+     "confused mechanism or drug class"
     ],
     [
-     "Beta or calcium channel blocker",
-     "Correct. Stable atrial flutter is rate-controlled with a beta blocker or calcium channel blocker; an unstable patient gets synchronized cardioversion."
+     "Procainamide",
+     "Procainamide is for atrial fibrillation with Wolff-Parkinson-White; a beta blocker such as metoprolol treats junctional beats.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 3,
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 61",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Atrial fibrillation",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "After how much anticoagulation can stable atrial fibrillation be electively cardioverted as an outpatient?",
+   "opts": [
+    [
+     "24 hours",
+     "A single day of anticoagulation is not enough before elective outpatient cardioversion; 21 days are given.",
+     "reversed direction or value"
+    ],
+    [
+     "21 days",
+     "Correct. Outpatient cardioversion of atrial fibrillation follows 21 days of anticoagulation; anticoagulation is guided by stroke risk throughout."
+    ],
+    [
+     "3 months",
+     "Three months is longer than needed; outpatient cardioversion can follow 21 days of anticoagulation.",
+     "reversed direction or value"
+    ],
+    [
+     "1 year",
+     "A year of anticoagulation is not required first; elective cardioversion follows 21 days.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 49",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Atrioventricular reentrant tachycardia depends on which structure?",
+   "opts": [
+    [
+     "Three atrial foci",
+     "Three or more atrial foci make multifocal atrial tachycardia, an irregular rhythm without a reentry loop.",
+     "competing diagnosis"
+    ],
+    [
+     "A damaged sinus node",
+     "A failing sinus node is sick sinus syndrome; reentrant tachycardia needs an extra connection between atria and ventricles.",
+     "competing diagnosis"
+    ],
+    [
+     "An accessory pathway",
+     "Correct. Atrioventricular reentrant tachycardia is seen in patients with an accessory pathway, such as Wolff-Parkinson-White; the loop uses the atrioventricular node and the pathway."
+    ],
+    [
+     "A circuit inside the node",
+     "A circuit confined to the atrioventricular node is atrioventricular nodal reentrant tachycardia, which needs no accessory pathway.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Atrial flutter",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "What is the definitive management of atrial flutter?",
+   "opts": [
+    [
+     "Vagal maneuvers",
+     "Vagal maneuvers terminate nodal reentry, not the atrial circuit of flutter, which ablation treats definitively.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Ablation",
+     "Correct. Ablation is the definitive management of atrial flutter, which has a substantial recurrence rate and is harder to rate-control than fibrillation."
+    ],
+    [
+     "Adenosine",
+     "Adenosine may briefly slow conduction but does not cure flutter; ablation is definitive.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A pacemaker",
+     "A pacemaker treats slow rhythms such as sick sinus syndrome; the flutter circuit is cured by ablation.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 45",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "Which cardiac event is a listed cause of junctional rhythm?",
+   "opts": [
+    [
+     "Hypovolemic shock",
+     "Hypovolemia and shock drive sinus tachycardia; junctional rhythm follows inferior infarction, surgery, sinus node failure or digoxin toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Untreated hyperthyroidism",
+     "Hyperthyroidism speeds the sinus node into tachycardia; it does not let the junction take over.",
+     "adjacent fact"
+    ],
+    [
+     "Inferior myocardial infarction",
+     "Correct. Inferior myocardial infarction is a listed cause of junctional rhythm, with sinus node dysfunction, the acute period after cardiac surgery and digoxin toxicity."
+    ],
+    [
+     "Pulmonary embolism",
+     "Pulmonary embolism is a pathologic cause of sinus tachycardia, not junctional rhythm.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Sick sinus syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "In sick sinus syndrome, a fast run that is irregularly irregular with no P waves alternates with pauses. Which rhythm is the fast run?",
+   "opts": [
+    [
+     "Sinus tachycardia",
+     "Sinus tachycardia is regular, with a normal P wave before every QRS; in tachy-brady syndrome the fast rhythm comes from outside the failing sinus node, most commonly atrial fibrillation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ventricular tachycardia",
+     "Ventricular tachycardia can be the fast rhythm in a few patients, who then need a pacemaker with a defibrillator, but it is regular and wide; an irregularly irregular run without P waves is atrial fibrillation.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Atrial fibrillation",
+     "Correct. An irregularly irregular fast rhythm with no P waves is atrial fibrillation, and in tachy-brady syndrome, the form of sick sinus syndrome in which fast and slow rhythms alternate, atrial fibrillation is the most common tachyarrhythmia."
+    ],
+    [
+     "Multifocal atrial tachycardia",
+     "Multifocal atrial tachycardia is irregular too, but every QRS has a P wave, in at least three shapes; a fast run with no P waves is atrial fibrillation, the usual fast rhythm of tachy-brady syndrome.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
+   "slot": "differential"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "When premature junctional contractions are frequent (over 10 per minute), what is done?",
+   "opts": [
+    [
+     "Check for heart disease",
+     "Correct. Frequent premature junctional contractions (more than 10 per minute, or multifocal) prompt a search for structural heart disease and treatment with a beta blocker."
+    ],
+    [
+     "Reassurance alone",
+     "Reassurance alone suits infrequent, asymptomatic junctional beats; frequent ones prompt a search for structural heart disease.",
+     "wrong stage or severity"
+    ],
+    [
+     "Anticoagulation",
+     "Anticoagulation is for atrial fibrillation and flutter; frequent junctional beats lead to a search for structural heart disease.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A permanent pacemaker",
+     "A pacemaker treats slow rhythms; frequent premature junctional beats prompt a structural workup and a beta blocker.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 61",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Sick sinus syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "In sinus arrest, which rhythm may take over?",
+   "opts": [
+    [
+     "Ventricular fibrillation",
+     "Ventricular fibrillation is disorganized activity with no pulse, not the escape rhythm of sinus arrest; a junctional rhythm takes over.",
+     "competing diagnosis"
+    ],
+    [
+     "Multifocal atrial tachycardia",
+     "Multifocal atrial tachycardia comes from three or more atrial foci in acutely ill lung or heart patients; it is not the escape rhythm after sinus arrest.",
+     "competing diagnosis"
+    ],
+    [
+     "A junctional rhythm",
+     "Correct. In sinus arrest the sinus node does not generate an impulse, and a junctional rhythm may take over, often with inverted (retrograde) P waves or none visible."
+    ],
+    [
+     "Atrial flutter",
+     "Atrial flutter is a rapid atrial circuit with sawtooth waves; when the sinus node stops in sinus arrest, the backup pacemaker is junctional.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Atrial flutter",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Atrial flutter is commonly seen in which patients?",
+   "opts": [
+    [
+     "Raised intracranial pressure",
+     "Raised intracranial pressure is a cause of sinus bradycardia; flutter is linked to atrial scarring and right-sided heart disease.",
+     "adjacent fact"
+    ],
+    [
+     "Scarring after heart surgery",
+     "Correct. Atrial flutter is commonly seen with atrial scarring or damage (for example after surgery), right-sided heart failure or pulmonary vascular disease, and in atrial fibrillation patients taking an antiarrhythmic."
+    ],
+    [
+     "Young women using caffeine",
+     "Caffeine in young women is the classic setting of atrioventricular nodal reentry; flutter follows atrial scarring or right-sided disease.",
+     "adjacent fact"
+    ],
+    [
+     "Healthy, conditioned athletes",
+     "Conditioned athletes show sinus bradycardia or junctional rhythm from vagal tone; flutter needs atrial damage or right-sided disease.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 44",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Sick sinus syndrome",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which is a recognized cause of sick sinus syndrome?",
+   "opts": [
+    [
+     "Heavy caffeine intake",
+     "Caffeine is a trigger for atrioventricular nodal reentry and premature atrial beats; it is not a listed cause of sick sinus syndrome.",
+     "adjacent fact"
+    ],
+    [
+     "Surgical injury to the node",
+     "Correct. Causes of sick sinus syndrome include sinoatrial node ischemia, injury to the node from cardiac surgery, electrolyte abnormalities, medications and hypothyroidism."
+    ],
+    [
+     "Excess thyroid hormone",
+     "It is hypothyroidism that is listed as a cause of sick sinus syndrome; excess thyroid hormone speeds the sinus rate instead.",
+     "reversed direction or value"
+    ],
+    [
+     "Anemia from blood loss",
+     "Anemia drives a compensatory sinus tachycardia; the listed causes of sick sinus syndrome are node ischemia or surgical injury, electrolytes, drugs and hypothyroidism.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Sinus bradycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "What is the management of asymptomatic sinus bradycardia?",
+   "opts": [
+    [
+     "No treatment",
+     "Correct. Asymptomatic sinus bradycardia needs no treatment; atropine is for acute, symptomatic, unstable bradycardia and a permanent pacemaker for chronic symptomatic disease."
+    ],
+    [
+     "Atropine",
+     "Atropine is first line only for acute, symptomatic and hemodynamically unstable bradycardia; an asymptomatic patient is left untreated.",
+     "wrong stage or severity"
+    ],
+    [
+     "A temporary pacemaker",
+     "A temporary pacemaker follows atropine in an unstable, symptomatic patient; it has no place when the bradycardia causes no symptoms.",
+     "wrong stage or severity"
+    ],
+    [
+     "A permanent pacemaker",
+     "A permanent pacemaker is for chronic, symptomatic bradycardia; asymptomatic sinus bradycardia is not treated.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 13",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Junctional beats and rhythm",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
+   "q": "What does a premature junctional contraction look like?",
+   "opts": [
+    [
+     "Early narrow QRS, P inverted or hidden",
+     "Correct. A premature junctional contraction gives an early narrow QRS with either an inverted P wave, a P wave buried in the QRS (no P visible) or a P wave after the QRS."
+    ],
+    [
+     "Early wide QRS without a P wave",
+     "An early, wide and bizarre QRS with no P wave is a premature ventricular contraction.",
+     "competing diagnosis"
+    ],
+    [
+     "Early, abnormal upright P wave",
+     "An early, abnormally shaped P wave before a narrow QRS is a premature atrial contraction.",
+     "competing diagnosis"
+    ],
+    [
+     "Sawtooth waves before the QRS",
+     "Sawtooth waves belong to atrial flutter; a junctional beat has an inverted, buried or following P wave.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 54",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Atrioventricular nodal reentry",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "Which type of atrioventricular nodal reentrant tachycardia is most common?",
+   "opts": [
+    [
+     "Orthodromic",
+     "Orthodromic is the more common form of accessory pathway reentry, not a type of nodal reentry.",
+     "adjacent fact"
+    ],
+    [
+     "Antidromic",
+     "Antidromic is the less common, wide-complex form of accessory pathway reentry, not a nodal reentry type.",
+     "adjacent fact"
+    ],
+    [
+     "Slow-fast",
+     "Correct. Slow-fast (typical) is the most common type of atrioventricular nodal reentrant tachycardia, a regular narrow complex tachycardia with hidden P waves."
+    ],
+    [
+     "Fast-slow",
+     "Fast-slow reverses the usual direction around the node and is the less common pattern; slow-fast is the most common type of atrioventricular nodal reentry.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 38",
+   "slot": "epidemiology"
+  },
+  {
+   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "How do patients with atrioventricular reentrant tachycardia most commonly present?",
+   "opts": [
+    [
+     "Palpitations",
+     "Correct. Atrioventricular reentrant tachycardia is seen in patients with an accessory pathway, and they most commonly present with palpitations."
+    ],
+    [
+     "Stroke",
+     "Stroke is the embolic complication that anticoagulation prevents in atrial fibrillation; reentrant tachycardia most often presents with palpitations.",
+     "adjacent fact"
+    ],
+    [
+     "Heart failure",
+     "Heart failure is not the usual presentation of reentrant tachycardia; patients most commonly present with palpitations.",
+     "wrong stage or severity"
+    ],
+    [
+     "Bradycardia",
+     "Reentry through an accessory pathway produces a tachycardia, typically felt as palpitations, not a slow rhythm.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Supraventricular tachycardia",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "In a stable narrow complex tachycardia, which step comes before any drug?",
+   "opts": [
+    [
+     "A vagal maneuver",
+     "Correct. A vagal maneuver is first line for stable supraventricular (narrow complex) tachycardia, before adenosine; synchronized cardioversion is kept for instability."
+    ],
+    [
+     "An echocardiogram",
+     "Imaging does not terminate the rhythm; in a stable narrow complex tachycardia the first step is a vagal maneuver.",
+     "wrong stage or severity"
+    ],
+    [
+     "Intravenous procainamide",
+     "Procainamide is reserved for atrial fibrillation with Wolff-Parkinson-White; the first step in stable narrow complex tachycardia is a vagal maneuver.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Synchronized cardioversion",
+     "Synchronized cardioversion is immediate treatment only when the patient is unstable; a stable patient starts with a vagal maneuver.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 26",
    "slot": "first-line"
   },
   {
@@ -1126,439 +1661,84 @@
    "q": "What is a delta wave?",
    "opts": [
     [
+     "An inverted T wave",
+     "An inverted T wave is a repolarization change; the delta wave is the slurred upstroke at the beginning of the QRS complex.",
+     "adjacent fact"
+    ],
+    [
+     "A sawtooth baseline",
+     "A sawtooth baseline is the flutter wave of atrial flutter; the delta wave is a slurred QRS upstroke.",
+     "adjacent fact"
+    ],
+    [
      "A slurred upstroke of the QRS",
      "Correct. The delta wave is a slurred upstroke of the QRS complex, seen with a short PR interval and a widened QRS in Wolff-Parkinson-White."
     ],
     [
      "A notched, wide P wave",
-     "A notched or widened P wave is an atrial finding; the delta wave is a slurred start to the QRS from early ventricular activation."
-    ],
-    [
-     "An inverted T wave",
-     "An inverted T wave is a repolarization change; the delta wave is the slurred upstroke at the beginning of the QRS complex."
-    ],
-    [
-     "A sawtooth baseline",
-     "A sawtooth baseline is the flutter wave of atrial flutter; the delta wave is a slurred QRS upstroke."
+     "A notched or widened P wave is an atrial finding; the delta wave is a slurred start to the QRS from early ventricular activation.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 35",
    "slot": "test finding"
   },
   {
-   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "On a rhythm strip, how does atrial fibrillation with Wolff-Parkinson-White differ from ventricular tachycardia?",
-   "opts": [
-    [
-     "Regular sawtooth at 300",
-     "Regular sawtooth activity near 300 is the atrial rate of atrial flutter; pre-excited atrial fibrillation is irregular."
-    ],
-    [
-     "Irregular, rates under 100",
-     "An irregular rhythm under 100 is controlled atrial fibrillation without pre-excitation; with an accessory pathway the rates can approach 300."
-    ],
-    [
-     "Irregular, rates near 300",
-     "Correct. Ventricular tachycardia is regular at about 150 to 200, while atrial fibrillation with Wolff-Parkinson-White is irregular, with some rates approaching 300."
-    ],
-    [
-     "Regular, rates 150 to 200",
-     "Regular wide complexes at 150 to 200 describe ventricular tachycardia; pre-excited atrial fibrillation is irregular and can approach 300."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 53",
-   "slot": "differential"
-  },
-  {
-   "topic": "Atrioventricular nodal reentry",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Atrioventricular nodal reentrant tachycardia is more common in whom?",
-   "opts": [
-    [
-     "Men",
-     "Men are less often affected; atrioventricular nodal reentry is far more common in women than in men."
-    ],
-    [
-     "People with lung disease",
-     "Severe chronic lung disease is the setting of multifocal atrial tachycardia; nodal reentry favors women without heart disease."
-    ],
-    [
-     "People with heart surgery",
-     "Prior heart surgery and atrial scarring set up atrial flutter or sick sinus syndrome; nodal reentry favors women with normal hearts."
-    ],
-    [
-     "Women",
-     "Correct. Atrioventricular nodal reentrant tachycardia affects women far more than men, commonly without heart disease, spontaneously or with exertion, caffeine or alcohol."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 40",
-   "slot": "epidemiology"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "In sick sinus syndrome, when is observation alone appropriate?",
-   "opts": [
-    [
-     "The fast rhythm is ventricular",
-     "When the tachyarrhythmia is ventricular tachycardia, the patient needs a pacemaker with a defibrillator, not observation."
-    ],
-    [
-     "Symptoms do not match the bradycardia",
-     "Correct. Management confirms whether symptoms correlate with episodes of bradycardia; if they do not, observation is appropriate, and if the bradycardia is symptomatic, a permanent pacemaker is placed."
-    ],
-    [
-     "Pauses are causing fainting",
-     "Pauses that cause fainting are symptomatic bradycardia, which needs a permanent pacemaker rather than observation."
-    ],
-    [
-     "Bradycardia causes dizziness",
-     "Dizziness that tracks with bradycardia means the episodes are symptomatic, an indication for a permanent pacemaker."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 22",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Sick sinus syndrome",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which rhythm most often alternates with bradycardia in sick sinus syndrome?",
-   "opts": [
-    [
-     "Junctional rhythm",
-     "A junctional rhythm is a slow escape rhythm that can follow sinus arrest; the fast rhythm in tachy-brady syndrome is usually atrial fibrillation."
-    ],
-    [
-     "Atrial fibrillation",
-     "Correct. In tachy-brady syndrome, the form of sick sinus syndrome in which fast and slow rhythms alternate, the tachyarrhythmia is most commonly atrial fibrillation."
-    ],
-    [
-     "Ventricular tachycardia",
-     "Ventricular tachycardia can be the fast rhythm in some patients, who then need a defibrillator with the pacemaker, but atrial fibrillation is the usual one."
-    ],
-    [
-     "Atrial flutter",
-     "Atrial flutter is an organized atrial circuit with sawtooth waves; the tachyarrhythmia that usually alternates with bradycardia is atrial fibrillation."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 18",
-   "slot": "differential"
-  },
-  {
-   "topic": "Supraventricular tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which rhythm is listed among those that can exceed 200 beats per minute and cause collapse?",
-   "opts": [
-    [
-     "Physiologic sinus tachycardia",
-     "Sinus tachycardia stays at or below about 160; the rhythms that exceed 200 are the reentry tachycardias and pre-excited atrial fibrillation."
-    ],
-    [
-     "Pre-excited atrial fibrillation",
-     "Correct. Rates above 200 with syncope or collapse are seen in accessory pathway reentry, nodal reentry and atrial fibrillation with an accessory pathway (for example Wolff-Parkinson-White)."
-    ],
-    [
-     "Multifocal atrial tachycardia",
-     "Multifocal atrial tachycardia is an irregular rhythm of acutely ill lung or heart patients and is not among the rhythms listed for rates above 200."
-    ],
-    [
-     "Focal atrial tachycardia",
-     "Focal atrial tachycardia is generally a benign arrhythmia with abrupt palpitations; it is not one of the rhythms listed as exceeding 200."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 25",
-   "slot": "complication"
-  },
-  {
-   "topic": "Junctional beats and rhythm",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "What is the usual rate of a junctional rhythm?",
-   "opts": [
-    [
-     "100 to 160",
-     "100 to 160 is the range of sinus tachycardia; a junctional rhythm usually runs at 40 to 60."
-    ],
-    [
-     "250 to 300",
-     "250 to 300 is the atrial rate of flutter; the junction usually paces at 40 to 60."
-    ],
-    [
-     "40 to 60",
-     "Correct. A junctional rhythm is regular, usually at 40 to 60 beats per minute, with a narrow QRS and P waves that are inverted, buried or after the QRS."
-    ],
-    [
-     "60 to 100",
-     "60 to 100 is the normal sinus rate; a junctional escape rhythm is slower, usually 40 to 60."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 62",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Sinus bradycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Sinus bradycardia is a sinus rhythm at what rate?",
-   "opts": [
-    [
-     "60 to 100 beats per minute",
-     "A sinus rate of 60 to 100 beats per minute is normal sinus rhythm; bradycardia begins below 60."
-    ],
-    [
-     "Over 100 beats per minute",
-     "A sinus rate above 100 beats per minute is sinus tachycardia, the opposite problem; sinus bradycardia is under 60."
-    ],
-    [
-     "40 to 60 with inverted P waves",
-     "A rate of 40 to 60 with inverted P waves in the inferior leads describes a junctional rhythm, not sinus bradycardia, which keeps normal upright sinus P waves."
-    ],
-    [
-     "Under 60 beats per minute",
-     "Correct. Sinus bradycardia is a regular sinus rhythm under 60 beats per minute, with a uniform P wave for every QRS, a normal PR interval and a narrow QRS."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 11",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Junctional beats and rhythm",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "How is a junctional rhythm generally tolerated?",
-   "opts": [
-    [
-     "Poorly, with syncope",
-     "Syncope is not the usual course; a junctional rhythm is generally well tolerated at 40 to 60."
-    ],
-    [
-     "It degenerates to fibrillation",
-     "A junctional rhythm is a stable escape rhythm, not a precursor of ventricular fibrillation; it is generally well tolerated."
-    ],
-    [
-     "Always needs a pacemaker",
-     "Only junctional rhythm from high-grade block or sick sinus syndrome needs a pacemaker; it is generally well tolerated."
-    ],
-    [
-     "Well tolerated",
-     "Correct. A junctional rhythm is generally well tolerated; management depends on the cause, from no treatment in a healthy person to a pacemaker for block or sick sinus syndrome."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
-   "slot": "prognosis"
-  },
-  {
-   "topic": "Premature atrial contractions",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "If premature atrial contractions are frequent, what should be looked for?",
-   "opts": [
-    [
-     "An accessory pathway",
-     "An accessory pathway is sought when there is pre-excitation (short PR and delta wave), not because premature atrial beats are frequent."
-    ],
-    [
-     "Digoxin toxicity",
-     "Digitalis toxicity is a listed cause of junctional rhythm; frequent premature atrial contractions prompt a search for structural heart disease."
-    ],
-    [
-     "A long QT interval",
-     "QT prolongation is a risk factor for torsades de pointes; frequent premature atrial beats lead to a search for structural heart disease."
-    ],
-    [
-     "Structural heart disease",
-     "Correct. If premature atrial contractions are frequent, look for underlying structural heart disease; in a diseased heart they may precede supraventricular tachycardia, fibrillation or flutter."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 58",
-   "slot": "initial test"
-  },
-  {
-   "topic": "Populations",
-   "io": "Identify medical care strategies for atrial and supraventricular dysrhythmias for the following populations. 3. adult 4. elderly",
-   "q": "In whom are the symptoms of supraventricular tachycardia more pronounced?",
-   "opts": [
-    [
-     "Women more than men",
-     "Women outnumber men in atrioventricular nodal reentry, but symptom severity is linked to older age and structural heart disease, not sex."
-    ],
-    [
-     "Elderly patients or heart disease",
-     "Correct. Symptoms of supraventricular tachycardia, such as palpitations, dyspnea and chest discomfort, may be more pronounced in the elderly and in those with underlying structural heart disease."
-    ],
-    [
-     "Young, healthy athletes",
-     "Young people without heart disease tend to tolerate supraventricular tachycardia better; symptoms are more pronounced in the elderly or with structural disease."
-    ],
-    [
-     "Patients with normal hearts",
-     "A structurally normal heart tolerates the rhythm better; symptoms are worse in elderly patients and in those with structural heart disease."
-    ]
-   ],
-   "c": 1,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 25",
-   "slot": "manifestation"
-  },
-  {
    "topic": "Atrial fibrillation",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "When does atrial fibrillation become a medical emergency?",
+   "q": "Which pair are both listed risk factors for atrial fibrillation?",
    "opts": [
     [
-     "Severe heart failure or infarction",
-     "Correct. Medical emergencies from atrial fibrillation include severe heart failure (pulmonary edema, hypotension) and atrial fibrillation in the setting of an acute myocardial infarction."
+     "Young age and female sex",
+     "Older age, not youth, is the listed age risk; female sex is not on the list of atrial fibrillation risks.",
+     "reversed direction or value"
     ],
     [
-     "Whenever the rate exceeds 100",
-     "A rate above 100 is rapid ventricular response, which needs intravenous rate control, but it is not by itself the listed emergency."
+     "Low weight and anemia",
+     "Obesity, not low weight, is a listed risk; anemia drives sinus tachycardia instead.",
+     "reversed direction or value"
     ],
     [
-     "Whenever it is newly found",
-     "New atrial fibrillation in a stable patient is managed with rate control and anticoagulation, not as an emergency."
+     "Hypertension and diabetes",
+     "Correct. Hypertension and diabetes are both listed, along with cardiac disease, family history, obesity, sleep apnea, excessive alcohol and older age."
     ],
     [
-     "Whenever palpitations are felt",
-     "Palpitations are a usual symptom and atrial fibrillation is usually not directly life-threatening; the emergencies are severe heart failure or acute infarction."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 48",
-   "slot": "complication"
-  },
-  {
-   "topic": "Junctional beats and rhythm",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "In a healthy person, a junctional rhythm often reflects what?",
-   "opts": [
-    [
-     "A hidden accessory pathway",
-     "An accessory pathway causes pre-excitation and reentrant tachycardia, not a slow junctional rhythm."
-    ],
-    [
-     "An overactive sinus node",
-     "An overactive sinus node gives sinus tachycardia; a junctional rhythm takes over when the sinus node slows or fails."
-    ],
-    [
-     "Atrial scarring",
-     "Atrial scarring sets up atrial flutter; in healthy athletes a junctional rhythm reflects increased vagal tone."
-    ],
-    [
-     "Increased vagal tone",
-     "Correct. Junctional rhythm can be seen in healthy people with increased vagal tone, such as well-conditioned athletes, and it is generally well tolerated."
-    ]
-   ],
-   "c": 3,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
-   "slot": "etiology"
-  },
-  {
-   "topic": "Supraventricular tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "In a stable narrow complex tachycardia, which step comes before any drug?",
-   "opts": [
-    [
-     "Intravenous procainamide",
-     "Procainamide is reserved for atrial fibrillation with Wolff-Parkinson-White; the first step in stable narrow complex tachycardia is a vagal maneuver."
-    ],
-    [
-     "Synchronized cardioversion",
-     "Synchronized cardioversion is immediate treatment only when the patient is unstable; a stable patient starts with a vagal maneuver."
-    ],
-    [
-     "A vagal maneuver",
-     "Correct. A vagal maneuver is first line for stable supraventricular (narrow complex) tachycardia, before adenosine; synchronized cardioversion is kept for instability."
-    ],
-    [
-     "An echocardiogram",
-     "Imaging does not terminate the rhythm; in a stable narrow complex tachycardia the first step is a vagal maneuver."
+     "Hypothyroidism and hypotension",
+     "Neither is a listed risk: hypothyroidism slows the sinus rate, and it is high blood pressure (hypertension), not low, that sits on the list with diabetes.",
+     "reversed direction or value"
     ]
    ],
    "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 26",
-   "slot": "first-line"
+   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 48",
+   "slot": "risk factors"
   },
   {
-   "topic": "Junctional beats and rhythm",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following ventricular dysrhythmias: a. Atrioventricular block b. Bundle branch blocks c. Ventricular premature beats d. Ventricular tachycardia e. Ventricular fibrillation f. Torsades de Pointes g. Idioventricular rhythm h. Junctional rhythm i. QT prolongation",
-   "q": "What is the management of an asymptomatic junctional rhythm in an otherwise healthy person?",
+   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
+   "q": "An irregular, wide-complex tachycardia with some rates approaching 300 appears in someone with a known accessory pathway. Which intravenous drug is used?",
    "opts": [
     [
-     "No treatment",
-     "Correct. Management of junctional rhythm depends on the cause: no treatment if asymptomatic in an otherwise healthy person, a permanent pacemaker for complete or high-grade block or sick sinus syndrome."
-    ],
-    [
-     "A permanent pacemaker",
-     "A permanent pacemaker is for a junctional rhythm due to complete or high-grade atrioventricular block or sick sinus syndrome, not for a healthy, asymptomatic person."
+     "Adenosine",
+     "Adenosine must never be used here: it blocks only the normal node and lets the accessory pathway conduct the fibrillation at rates approaching 300.",
+     "confused mechanism or drug class"
     ],
     [
      "Atropine",
-     "Atropine is used for unstable symptomatic bradycardia; an asymptomatic healthy person with a junctional rhythm needs no treatment."
+     "Atropine speeds conduction and is used for unstable bradycardia; it would make a pre-excited tachycardia faster, not slower.",
+     "confused mechanism or drug class"
     ],
-    [
-     "Catheter ablation",
-     "Ablation destroys tissue that drives a tachycardia; it has no role in a slow, well-tolerated junctional rhythm."
-    ]
-   ],
-   "c": 0,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 64",
-   "slot": "first-line"
-  },
-  {
-   "topic": "Sinus tachycardia",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Sinus tachycardia is defined by a sinus rate in which range?",
-   "opts": [
-    [
-     "From 60 to 100",
-     "A sinus rate of 60 to 100 is normal sinus rhythm; sinus tachycardia starts above 100."
-    ],
-    [
-     "From 250 to 300",
-     "An atrial rate of 250 or more, approaching 300, is atrial flutter; sinus tachycardia stays between 100 and 160."
-    ],
-    [
-     "Above 100, up to 160",
-     "Correct. Sinus tachycardia is a regular sinus rhythm above 100 up to 160 beats per minute, with a P wave for every QRS; above 160 the P waves are lost and the rhythm is called supraventricular tachycardia."
-    ],
-    [
-     "Above 160",
-     "Above 160 beats per minute the P waves are hidden and the rhythm is called supraventricular tachycardia; sinus tachycardia runs from just over 100 to 160."
-    ]
-   ],
-   "c": 2,
-   "cite": "arrhythmias I - Elwaya-2.pptx, Slide 14",
-   "slot": "test finding"
-  },
-  {
-   "topic": "Accessory pathway reentry and Wolff-Parkinson-White",
-   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following atrial and supraventricular dysrhythmias: a. Sinus arrhythmia b. Sinus bradycardia c. Sinus tachycardia d. Sick sinus syndrome e. Atrial premature beats f. Atrial flutter g. Atrial fibrillation h. Atrial tachycardia i. Paroxysmal supraventricular tachycardia",
-   "q": "Which intravenous drug treats atrial fibrillation with Wolff-Parkinson-White?",
-   "opts": [
     [
      "Magnesium",
-     "Intravenous magnesium breaks torsades de pointes; pre-excited atrial fibrillation is treated with procainamide."
+     "Intravenous magnesium breaks torsades de pointes; pre-excited atrial fibrillation is treated with procainamide.",
+     "confused mechanism or drug class"
     ],
     [
      "Procainamide",
-     "Correct. Atrial fibrillation with Wolff-Parkinson-White is treated with intravenous procainamide, never adenosine, because blocking the normal atrioventricular node leaves the accessory pathway unopposed."
-    ],
-    [
-     "Adenosine",
-     "Adenosine must never be used here: it blocks only the normal node and lets the accessory pathway conduct the fibrillation at rates approaching 300."
-    ],
-    [
-     "Atropine",
-     "Atropine speeds conduction and is used for unstable bradycardia; it would make a pre-excited tachycardia faster, not slower."
+     "Correct. An irregular, wide-complex tachycardia approaching 300 with an accessory pathway is atrial fibrillation with Wolff-Parkinson-White (ventricular tachycardia would be regular at 150 to 200), treated with intravenous procainamide, never adenosine."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "arrhythmias I - Elwaya-2.pptx, Slide 37",
    "slot": "agent/regimen"
   }

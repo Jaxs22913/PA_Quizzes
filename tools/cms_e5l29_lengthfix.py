@@ -36,9 +36,20 @@ FIXES = {
     ("cms_e5l29_vig_a", 19, 0): "Pacemaker-defibrillator",
     ("cms_e5l29_vig_b", 21, 0): "An extra pathway causing fast rhythms",
     ("cms_e5l29_vig_b", 26, 0): "Pill-in-the-pocket beta blocker",
-    ("cms_e5l29_vig_b", 28, 0): "Limit caffeine and alcohol",
+    ("cms_e5l29_vig_b", 28, 0): "Avoid her known triggers",
     ("cms_e5l29_vig_c", 22, 0): "Atrial bigeminy",
     ("cms_e5l29_vig_c", 27, 0): "Check for heart disease",
+    ("cms_e5l29_pool_a", 20, 0): "Left untreated",
+    ("cms_e5l29_pool_b", 16, 0): "A poor outlook",
+    ("cms_e5l29_pool_c", 45, 0): "Well",
+    ("cms_e5l29_vig_a", 10, 0): "Treat the bleeding",
+    ("cms_e5l29_vig_b", 4, 0): "Hidden atrial activity",
+    ("cms_e5l29_vig_c", 14, 0): "It is the first goal",
+    ("cms_e5l29_vig_c", 16, 0): "Severe heart failure",
+    ("cms_e5l29_pool_a", 4, 0): "Cyclic irregularity, normal P waves",
+    ("cms_e5l29_pool_c", 3, 0): "Scarring after heart surgery",
+    ("cms_e5l29_vig_b", 8, 0): "Treat the lung disease",
+    ("cms_e5l29_vig_c", 10, 0): "May not be needed",
 }
 
 M_CHARS, M_FRAC = 8, 0.18

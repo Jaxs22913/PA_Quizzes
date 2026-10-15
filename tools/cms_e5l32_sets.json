@@ -6,23 +6,26 @@
    "q": "How are patients managed when they meet modified Duke criteria for possible infective endocarditis?",
    "opts": [
     [
+     "Observed without antibiotics",
+     "Watchful waiting is not the approach. Patients with possible endocarditis are treated as having it.",
+     "wrong stage or severity"
+    ],
+    [
      "Discharged with oral antibiotics",
-     "Endocarditis therapy is parenteral and prolonged. Possible cases are treated as endocarditis, not sent home on oral drugs."
+     "Endocarditis therapy is parenteral and prolonged. Possible cases are treated as endocarditis, not sent home on oral drugs.",
+     "common lay belief"
     ],
     [
      "Retested in six months",
-     "Delaying six months risks valve destruction. Possible cases are treated as infective endocarditis now."
+     "Delaying six months risks valve destruction. Possible cases are treated as infective endocarditis now.",
+     "wrong stage or severity"
     ],
     [
-     "Treated as having endocarditis",
+     "Treated like definite cases",
      "Correct. Absent extenuating circumstances, patients with definite and possible infective endocarditis are treated as having infective endocarditis."
-    ],
-    [
-     "Observed without antibiotics",
-     "Watchful waiting is not the approach. Patients with possible endocarditis are treated as having it."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 24",
    "slot": "first-line"
   },
@@ -37,15 +40,18 @@
     ],
     [
      "Vascular phenomenon",
-     "Vascular phenomena are emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages and Janeway lesions; Osler nodes are immunologic."
+     "Vascular phenomena are emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages and Janeway lesions; Osler nodes are immunologic.",
+     "adjacent fact"
     ],
     [
      "Microbiologic evidence",
-     "Microbiologic evidence is a positive culture that misses the major criterion. Osler nodes are an immunologic phenomenon."
+     "Microbiologic evidence is a positive culture that misses the major criterion. Osler nodes are an immunologic phenomenon.",
+     "adjacent fact"
     ],
     [
      "Predisposition",
-     "Predisposition means a predisposing heart condition or injection drug use. Osler nodes are an immunologic phenomenon."
+     "Predisposition means a predisposing heart condition or injection drug use. Osler nodes are an immunologic phenomenon.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
@@ -58,23 +64,26 @@
    "q": "Which organism causes the most lethal infective endocarditis?",
    "opts": [
     [
-     "Viridans streptococci",
-     "Viridans streptococcal endocarditis has a relatively good prognosis if antibiotics start before complications occur."
-    ],
-    [
      "Gram-negative coccobacilli",
-     "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are not named as the most lethal; Staphylococcus aureus is."
+     "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are not named as the most lethal; Staphylococcus aureus is.",
+     "adjacent fact"
     ],
     [
      "Enterococci",
-     "Enterococci are hard to treat because of resistance, but Staphylococcus aureus is named the most lethal organism."
+     "Enterococci are hard to treat because of resistance, but Staphylococcus aureus is named the most lethal organism.",
+     "adjacent fact"
     ],
     [
      "Staphylococcus aureus",
      "Correct. Staphylococcus aureus is the most lethal organism, with mortality highest in prosthetic valve endocarditis and lower in people who inject drugs."
+    ],
+    [
+     "Viridans streptococci",
+     "Viridans streptococcal endocarditis has a relatively good prognosis if antibiotics start before complications occur.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 37",
    "slot": "prognosis"
   },
@@ -84,8 +93,14 @@
    "q": "Which consultant manages antibiotic therapy and outpatient monitoring in infective endocarditis?",
    "opts": [
     [
+     "Addiction medicine",
+     "Addiction medicine provides harm reduction for people who inject drugs, not the antibiotic plan.",
+     "adjacent fact"
+    ],
+    [
      "Palliative care",
-     "Palliative care is part of multidisciplinary disposition planning; antibiotics and monitoring belong to infectious disease."
+     "Palliative care is part of multidisciplinary disposition planning; antibiotics and monitoring belong to infectious disease.",
+     "adjacent fact"
     ],
     [
      "Infectious disease",
@@ -93,14 +108,11 @@
     ],
     [
      "Cardiothoracic surgery",
-     "Cardiothoracic surgery evaluates the need for surgery and anticoagulation, not the antibiotic plan."
-    ],
-    [
-     "Addiction medicine",
-     "Addiction medicine provides harm reduction for people who inject drugs, not the antibiotic plan."
+     "Cardiothoracic surgery evaluates the need for surgery and anticoagulation, not the antibiotic plan.",
+     "adjacent fact"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 32",
    "slot": "referral"
   },
@@ -110,23 +122,26 @@
    "q": "Janeway lesions are particularly associated with which form of infective endocarditis?",
    "opts": [
     [
+     "Acute infective endocarditis",
+     "Correct. Janeway lesions, painless hemorrhagic macules on the palms and soles from septic emboli, are associated with acute infective endocarditis."
+    ],
+    [
      "Subacute infective endocarditis",
-     "Janeway lesions come from septic emboli, which fit the acute form that seeds extracardiac sites; subacute disease rarely metastasizes."
+     "Janeway lesions come from septic emboli, which fit the acute form that seeds extracardiac sites; subacute disease rarely metastasizes.",
+     "reversed direction or value"
     ],
     [
      "Non-infective (Libman-Sacks) disease",
-     "Libman-Sacks endocarditis in lupus is non-infective and does not produce septic emboli. Janeway lesions are associated with acute infective endocarditis."
+     "Libman-Sacks endocarditis in lupus is non-infective and does not produce septic emboli. Janeway lesions are associated with acute infective endocarditis.",
+     "competing diagnosis"
     ],
     [
-     "Device infection only, never valves",
-     "Janeway lesions are not specific to devices. They are associated with acute infective endocarditis from any site."
-    ],
-    [
-     "Acute infective endocarditis",
-     "Correct. Janeway lesions, painless hemorrhagic macules on the palms and soles from septic emboli, are associated with acute infective endocarditis."
+     "Healed, treated endocarditis",
+     "Janeway lesions mark active septic emboli, not healed disease. They are associated with acute infective endocarditis.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 13",
    "slot": "manifestation"
   },
@@ -136,20 +151,23 @@
    "q": "Roughly what share of native valve endocarditis is health care-associated?",
    "opts": [
     [
-     "Exactly half",
-     "Half overstates it. About 25-35% of native valve endocarditis is health care-associated, the rest community-acquired."
+     "Under 5%",
+     "The health care-associated share is not trivial. About a quarter to a third of native valve endocarditis is health care-associated.",
+     "reversed direction or value"
     ],
     [
      "25 to 35%",
      "Correct. About 25-35% of native valve endocarditis is health care-associated, which is why recent hospitalization and lines matter in the history."
     ],
     [
-     "Under 5%",
-     "The health care-associated share is not trivial. About a quarter to a third of native valve endocarditis is health care-associated."
+     "About 50%",
+     "Half overstates it. About 25-35% of native valve endocarditis is health care-associated, the rest community-acquired.",
+     "reversed direction or value"
     ],
     [
      "Over 80%",
-     "Most native valve endocarditis is still community-acquired. The health care-associated share is about 25-35%."
+     "Most native valve endocarditis is still community-acquired. The health care-associated share is about 25-35%.",
+     "reversed direction or value"
     ]
    ],
    "c": 1,
@@ -162,23 +180,26 @@
    "q": "Which autoimmune disease can produce a non-infective (Libman-Sacks) endocarditis that mimics infective endocarditis?",
    "opts": [
     [
-     "Polymyalgia rheumatica",
-     "Polymyalgia rheumatica mimics endocarditis with myalgia and elevated inflammatory markers, not with a valve lesion of its own."
-    ],
-    [
-     "Reactive arthritis",
-     "Reactive arthritis is in the differential for its joint symptoms, but the non-infective Libman-Sacks lesion belongs to lupus."
-    ],
-    [
      "Rheumatoid arthritis",
-     "Rheumatoid arthritis is not the disease named with Libman-Sacks endocarditis; systemic lupus erythematosus is."
+     "Rheumatoid arthritis is not the disease named with Libman-Sacks endocarditis; systemic lupus erythematosus is.",
+     "competing diagnosis"
     ],
     [
      "Systemic lupus erythematosus",
      "Correct. Systemic lupus erythematosus may present with non-infective (Libman-Sacks) endocarditis, so it sits in the autoimmune differential of infective endocarditis."
+    ],
+    [
+     "Polymyalgia rheumatica",
+     "Polymyalgia rheumatica mimics endocarditis with myalgia and elevated inflammatory markers, not with a valve lesion of its own.",
+     "competing diagnosis"
+    ],
+    [
+     "Reactive arthritis",
+     "Reactive arthritis is in the differential for its joint symptoms, but the non-infective Libman-Sacks lesion belongs to lupus.",
+     "competing diagnosis"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 21",
    "slot": "differential"
   },
@@ -188,23 +209,26 @@
    "q": "Which prophylaxis fits a penicillin-allergic patient who cannot take oral medication?",
    "opts": [
     [
-     "Cefazolin or ceftriaxone",
-     "Correct. Penicillin-allergic patients unable to take oral medication receive cefazolin or ceftriaxone intramuscularly or intravenously, provided there is no history of anaphylaxis, angioedema or urticaria to penicillin."
-    ],
-    [
      "Ampicillin injection",
-     "Ampicillin is a penicillin; it is the injectable choice only for patients without a penicillin allergy."
+     "Ampicillin is a penicillin; it is the injectable choice only for patients without a penicillin allergy.",
+     "ruled out by a stated finding"
     ],
     [
      "Oral cephalexin",
-     "Cephalexin is an oral option, and this patient cannot take oral medication; cefazolin or ceftriaxone is given by injection."
+     "Cephalexin is an oral option, and this patient cannot take oral medication; cefazolin or ceftriaxone is given by injection.",
+     "ruled out by a stated finding"
     ],
     [
      "Clindamycin injection",
-     "Clindamycin is no longer recommended because of the risk of Clostridioides difficile infection."
+     "Clindamycin is no longer recommended because of the risk of Clostridioides difficile infection.",
+     "adjacent fact"
+    ],
+    [
+     "Cefazolin or ceftriaxone",
+     "Correct. Penicillin-allergic patients unable to take oral medication receive cefazolin or ceftriaxone intramuscularly or intravenously, provided there is no history of anaphylaxis, angioedema or urticaria to penicillin."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 35",
    "slot": "agent/regimen"
   },
@@ -215,7 +239,8 @@
    "opts": [
     [
      "Narrowing of a coronary artery by plaque",
-     "Coronary narrowing does not cause a murmur. Valvular damage or rupture of the chordae tendineae does."
+     "Coronary narrowing does not cause a murmur. Valvular damage or rupture of the chordae tendineae does.",
+     "confused mechanism or drug class"
     ],
     [
      "Valve damage or chordae tendineae rupture",
@@ -223,11 +248,13 @@
     ],
     [
      "Increased flow from a high-output fever",
-     "Fever can produce a flow murmur, but the new murmur of endocarditis comes from valve damage or chordae rupture."
+     "Fever can produce a flow murmur, but the new murmur of endocarditis comes from valve damage or chordae rupture.",
+     "confused mechanism or drug class"
     ],
     [
      "Pericardial friction from inflammation",
-     "A friction rub is pericardial, not a murmur. The new murmur reflects valve damage or chordal rupture."
+     "A friction rub is pericardial, not a murmur. The new murmur reflects valve damage or chordal rupture.",
+     "competing diagnosis"
     ]
    ],
    "c": 1,
@@ -241,15 +268,18 @@
    "opts": [
     [
      "Before any cultures, to save time",
-     "Giving antibiotics before cultures can sterilize them and lose the organism. Cultures come first, then empiric therapy."
+     "Giving antibiotics before cultures can sterilize them and lose the organism. Cultures come first, then empiric therapy.",
+     "wrong stage or severity"
     ],
     [
      "Only after the echocardiogram",
-     "The echocardiogram is not the gate. Empiric antibiotics follow the blood cultures."
+     "The echocardiogram is not the gate. Empiric antibiotics follow the blood cultures.",
+     "adjacent fact"
     ],
     [
      "Only once the organism is known",
-     "Waiting for the final organism delays treatment. Empiric therapy starts after cultures are drawn and is tailored later."
+     "Waiting for the final organism delays treatment. Empiric therapy starts after cultures are drawn and is tailored later.",
+     "wrong stage or severity"
     ],
     [
      "Only after blood cultures are drawn",
@@ -266,12 +296,9 @@
    "q": "Which kind of antibiotic therapy does infective endocarditis require?",
    "opts": [
     [
-     "Bactericidal for 3 days",
-     "Three days is far too short. Endocarditis needs bactericidal therapy for typically 4-6 weeks from the first negative culture."
-    ],
-    [
      "Bacteriostatic and lifelong",
-     "Lifelong suppression is not the standard. Therapy is bactericidal, parenteral and prolonged for weeks, then stopped."
+     "Lifelong suppression is not the standard. Therapy is bactericidal, parenteral and prolonged for weeks, then stopped.",
+     "confused mechanism or drug class"
     ],
     [
      "Bactericidal and prolonged",
@@ -279,10 +306,16 @@
     ],
     [
      "Bacteriostatic and brief",
-     "Bacteriostatic drugs only halt growth, and a brief course cannot sterilize a vegetation. Therapy is bactericidal and prolonged."
+     "Bacteriostatic drugs only halt growth, and a brief course cannot sterilize a vegetation. Therapy is bactericidal and prolonged.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bactericidal for 3 days",
+     "Three days is far too short. Endocarditis needs bactericidal therapy for typically 4-6 weeks from the first negative culture.",
+     "reversed direction or value"
     ]
    ],
-   "c": 2,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 26",
    "slot": "first-line"
   },
@@ -292,8 +325,14 @@
    "q": "In a child with endocarditis, a fulminant presentation with high spiking fevers suggests which organisms?",
    "opts": [
     [
+     "Coagulase-negative staphylococci",
+     "Coagulase-negative staphylococci are tied to prosthetic material and neonatal lines, not fulminant spiking fevers in children.",
+     "adjacent fact"
+    ],
+    [
      "Candida or other fungal species",
-     "Fungal disease is linked to neonatal central lines. Fulminant high fevers suggest pneumococcus or Staphylococcus aureus."
+     "Fungal disease is linked to neonatal central lines. Fulminant high fevers suggest pneumococcus or Staphylococcus aureus.",
+     "adjacent fact"
     ],
     [
      "Pneumococcus or Staphylococcus aureus",
@@ -301,14 +340,11 @@
     ],
     [
      "Viridans streptococci or enterococci",
-     "Viridans streptococci cause the usual indolent pediatric course; a fulminant picture suggests pneumococcus or Staphylococcus aureus."
-    ],
-    [
-     "Coagulase-negative staphylococci only",
-     "Coagulase-negative staphylococci are tied to prosthetic material and neonatal lines, not fulminant spiking fevers in children."
+     "Viridans streptococci cause the usual indolent pediatric course; a fulminant picture suggests pneumococcus or Staphylococcus aureus.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 41",
    "slot": "etiology"
   },
@@ -318,8 +354,14 @@
    "q": "Why does cough feature in infective endocarditis among people who inject drugs?",
    "opts": [
     [
+     "Aspiration during drug intoxication",
+     "Aspiration is not the mechanism given. Right-sided (tricuspid) vegetations shed septic emboli into the pulmonary circulation.",
+     "common lay belief"
+    ],
+    [
      "Airway irritation from inhaled drugs",
-     "These patients inject, not inhale. Bacteria enter the venous circulation, infect the tricuspid valve and embolize to the lungs."
+     "These patients inject, not inhale. Bacteria enter the venous circulation, infect the tricuspid valve and embolize to the lungs.",
+     "common lay belief"
     ],
     [
      "Tricuspid septic emboli to the lungs",
@@ -327,14 +369,11 @@
     ],
     [
      "Mitral regurgitation with pulmonary edema",
-     "Left-sided valve failure can flood the lungs, but the cough of injection drug use comes from tricuspid septic emboli to the lungs."
-    ],
-    [
-     "Aspiration during drug intoxication",
-     "Aspiration is not the mechanism given. Right-sided (tricuspid) vegetations shed septic emboli into the pulmonary circulation."
+     "Left-sided valve failure can flood the lungs, but the cough of injection drug use comes from tricuspid septic emboli to the lungs.",
+     "confused mechanism or drug class"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 11",
    "slot": "manifestation"
   },
@@ -345,15 +384,18 @@
    "opts": [
     [
      "Kingella",
-     "Kingella is a gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) bacterium, not a fungus."
+     "Kingella is a gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) bacterium, not a fungus.",
+     "adjacent fact"
     ],
     [
      "Eikenella",
-     "Eikenella corrodens is a gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) bacterium. The fungal cause named is Candida."
+     "Eikenella corrodens is a gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) bacterium. The fungal cause named is Candida.",
+     "adjacent fact"
     ],
     [
      "Enterococcus",
-     "Enterococcus is a gram-positive bacterium from the genitourinary tract. The fungal cause of endocarditis is Candida."
+     "Enterococcus is a gram-positive bacterium from the genitourinary tract. The fungal cause of endocarditis is Candida.",
+     "adjacent fact"
     ],
     [
      "Candida",
@@ -370,23 +412,26 @@
    "q": "When is the risk of prosthetic valve endocarditis greatest?",
    "opts": [
     [
-     "Within the first year after replacement",
-     "Correct. The greatest risk is within the first year after valve replacement; it then gradually declines until it is similar to the risk for a native valve."
-    ],
-    [
      "Ten or more years after replacement",
-     "Risk does not climb with time. It is highest in the first year and gradually declines toward native-valve risk afterward."
+     "Risk does not climb with time. It is highest in the first year and gradually declines toward native-valve risk afterward.",
+     "reversed direction or value"
     ],
     [
-     "Only during the operation itself",
-     "The operation is not the only window. Risk stays highest across the whole first year after replacement, then declines."
+     "During the operation itself",
+     "The operation is not the only window. Risk stays highest across the whole first year after replacement, then declines.",
+     "wrong stage or severity"
     ],
     [
      "Equal at every point after surgery",
-     "Risk is not flat. It peaks in the first year after the replacement and then declines until it resembles native-valve risk."
+     "Risk is not flat. It peaks in the first year after the replacement and then declines until it resembles native-valve risk.",
+     "common lay belief"
+    ],
+    [
+     "Within the first year after replacement",
+     "Correct. The greatest risk is within the first year after valve replacement; it then gradually declines until it is similar to the risk for a native valve."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 6",
    "slot": "risk factors"
   },
@@ -396,23 +441,26 @@
    "q": "Which antibiotic treats infective endocarditis caused by the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group?",
    "opts": [
     [
+     "Nafcillin",
+     "Nafcillin is an antistaphylococcal penicillin; the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are treated with ceftriaxone.",
+     "confused mechanism or drug class"
+    ],
+    [
      "Vancomycin",
-     "Vancomycin covers gram-positive organisms such as methicillin-resistant Staphylococcus aureus, not the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group."
+     "Vancomycin covers gram-positive organisms such as methicillin-resistant Staphylococcus aureus, not the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group.",
+     "confused mechanism or drug class"
     ],
     [
      "Rifampin",
-     "Rifampin is an add-on for staphylococcal prosthetic valve infection, not HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) therapy, which is ceftriaxone."
+     "Rifampin is an add-on for staphylococcal prosthetic valve infection, not HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) therapy, which is ceftriaxone.",
+     "adjacent fact"
     ],
     [
      "Ceftriaxone",
      "Correct. HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) endocarditis is treated with ceftriaxone, or ampicillin-sulbactam."
-    ],
-    [
-     "Nafcillin",
-     "Nafcillin is an antistaphylococcal penicillin; the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are treated with ceftriaxone."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 31",
    "slot": "agent/regimen"
   },
@@ -422,23 +470,26 @@
    "q": "What is the role of anticoagulation in native valve infective endocarditis?",
    "opts": [
     [
+     "It dissolves vegetations",
+     "Vegetations are treated by killing the bacteria with antibiotics. Anticoagulation is not beneficial in native valve infection.",
+     "confused mechanism or drug class"
+    ],
+    [
      "It is not beneficial",
      "Correct. Anticoagulation is not beneficial in patients with native valve infection, and it is controversial in patients with prosthetic valves."
     ],
     [
-     "It prevents all emboli",
-     "Anticoagulation does not prevent septic emboli and is not beneficial in native valve endocarditis."
+     "It prevents septic emboli",
+     "Anticoagulation does not prevent septic emboli and is not beneficial in native valve endocarditis.",
+     "common lay belief"
     ],
     [
-     "It is required for all",
-     "Routine anticoagulation is not required; it is not beneficial for native valves and controversial for prosthetic ones."
-    ],
-    [
-     "It dissolves vegetations",
-     "Vegetations are treated by killing the bacteria with antibiotics. Anticoagulation is not beneficial in native valve infection."
+     "It is routinely required",
+     "Routine anticoagulation is not required; it is not beneficial for native valves and controversial for prosthetic ones.",
+     "reversed direction or value"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 33",
    "slot": "avoid"
   },
@@ -448,23 +499,26 @@
    "q": "Which sex is affected more often by infective endocarditis?",
    "opts": [
     [
-     "Only children",
-     "Sex is not limited to children here. Across ages, men are affected more often than women by infective endocarditis."
-    ],
-    [
      "Men",
      "Correct. Men are affected more often than women, one of the epidemiologic features listed with older age, injection drug use and poor dentition."
     ],
     [
      "Women",
-     "Women are not the majority. Men are affected more often than women among patients with infective endocarditis."
+     "Women are not the majority. Men are affected more often than women among patients with infective endocarditis.",
+     "reversed direction or value"
     ],
     [
      "Equal in both",
-     "The sexes are not affected equally; men outnumber women among patients with infective endocarditis."
+     "The sexes are not affected equally; men outnumber women among patients with infective endocarditis.",
+     "common lay belief"
+    ],
+    [
+     "Women after menopause",
+     "Postmenopausal women are not singled out. Men are affected more often than women among patients with infective endocarditis.",
+     "common lay belief"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 6",
    "slot": "epidemiology"
   },
@@ -474,23 +528,26 @@
    "q": "In a high-risk patient, what is recommended about prophylaxis for transesophageal echocardiography, upper endoscopy, colonoscopy or cystoscopy?",
    "opts": [
     [
-     "It is needed for colonoscopy only",
-     "Colonoscopy is on the same no-prophylaxis list as the others, absent active infection."
-    ],
-    [
-     "It is given as a 7-day course",
-     "Prophylaxis is never a week-long course, and for these procedures it is not recommended at all without infection."
-    ],
-    [
-     "It is not recommended without infection",
+     "It is not needed without infection",
      "Correct. Antibiotic prophylaxis is not recommended for nondental procedures such as transesophageal echocardiography, upper endoscopy, colonoscopy or cystoscopy in the absence of active infection."
     ],
     [
      "It is required before each one",
-     "These nondental procedures do not call for prophylaxis even in high-risk patients, absent active infection."
+     "These nondental procedures do not call for prophylaxis even in high-risk patients, absent active infection.",
+     "reversed direction or value"
+    ],
+    [
+     "It is needed for colonoscopy and cystoscopy",
+     "Colonoscopy and cystoscopy are on the same no-prophylaxis list as upper endoscopy and transesophageal echocardiography, absent active infection.",
+     "common lay belief"
+    ],
+    [
+     "It is given as a 7-day course",
+     "Prophylaxis is never a week-long course, and for these procedures it is not recommended at all without infection.",
+     "reversed direction or value"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 36",
    "slot": "avoid"
   },
@@ -505,15 +562,18 @@
     ],
     [
      "A sterile clot sitting on a prosthetic valve sewing ring",
-     "A sterile clot is a thrombus, not an abscess. A perivalvular abscess is infection extending beyond the leaflets into the myocardium."
+     "A sterile clot is a thrombus, not an abscess. A perivalvular abscess is infection extending beyond the leaflets into the myocardium.",
+     "competing diagnosis"
     ],
     [
      "Pus collecting in the pericardial sac after surgery",
-     "Pus in the pericardial sac is purulent pericarditis. A perivalvular abscess sits in the myocardium around the valve."
+     "Pus in the pericardial sac is purulent pericarditis. A perivalvular abscess sits in the myocardium around the valve.",
+     "competing diagnosis"
     ],
     [
      "A pocket infection around a pacemaker generator",
-     "A generator pocket infection is a device infection under the skin. A perivalvular abscess extends from the valve into the myocardium."
+     "A generator pocket infection is a device infection under the skin. A perivalvular abscess extends from the valve into the myocardium.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
@@ -526,23 +586,26 @@
    "q": "Which urinalysis findings are expected in infective endocarditis?",
    "opts": [
     [
-     "Glucosuria and ketonuria only",
-     "Glucose and ketones in urine point to diabetes, not to endocarditis, whose urinalysis shows hematuria, proteinuria and pyuria."
+     "Hematuria, proteinuria and pyuria",
+     "Correct. Urinalysis can show hematuria, proteinuria and pyuria, reflecting renal involvement such as glomerulonephritis or emboli."
+    ],
+    [
+     "Glucosuria and ketonuria",
+     "Glucose and ketones in urine point to diabetes, not to endocarditis, whose urinalysis shows hematuria, proteinuria and pyuria.",
+     "competing diagnosis"
     ],
     [
      "Bilirubin and urobilinogen",
-     "Urine bilirubin suggests liver disease. Endocarditis brings hematuria, proteinuria and pyuria."
+     "Urine bilirubin suggests liver disease. Endocarditis brings hematuria, proteinuria and pyuria.",
+     "competing diagnosis"
     ],
     [
      "A completely normal sample",
-     "The urine is often abnormal: hematuria, proteinuria and pyuria are listed findings."
-    ],
-    [
-     "Hematuria, proteinuria and pyuria",
-     "Correct. Urinalysis can show hematuria, proteinuria and pyuria, reflecting renal involvement such as glomerulonephritis or emboli."
+     "The urine is often abnormal: hematuria, proteinuria and pyuria are listed findings.",
+     "reversed direction or value"
     ]
    ],
-   "c": 3,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 25",
    "slot": "test finding"
   },
@@ -552,23 +615,26 @@
    "q": "How is bacteremia defined?",
    "opts": [
     [
+     "Inflammation of the inner lining of the heart",
+     "Inflammation of the inner lining of the heart is endocarditis. Bacteremia is bacteria in the bloodstream, identified by a true-positive blood culture.",
+     "adjacent fact"
+    ],
+    [
      "A vegetation seen on transesophageal imaging",
-     "A vegetation on transesophageal echocardiogram is evidence of endocardial involvement, a separate major Duke criterion. Bacteremia is defined by a true-positive blood culture."
+     "A vegetation on transesophageal echocardiogram is evidence of endocardial involvement, a separate major Duke criterion. Bacteremia is defined by a true-positive blood culture.",
+     "adjacent fact"
     ],
     [
      "A fever above 38 degrees Celsius with chills",
-     "Fever with chills is a symptom and only a minor Duke criterion. Bacteremia is the presence of bacteria in the bloodstream, shown by a true-positive blood culture."
+     "Fever with chills is a symptom and only a minor Duke criterion. Bacteremia is the presence of bacteria in the bloodstream, shown by a true-positive blood culture.",
+     "common lay belief"
     ],
     [
      "Bacteria detected on a true-positive blood culture",
      "Correct. Bacteremia is the presence of bacteria in the bloodstream, identified by detection of any true-positive blood culture. Blood should normally be sterile."
-    ],
-    [
-     "Inflammation of the inner lining of the heart",
-     "Inflammation of the inner lining of the heart is endocarditis. Bacteremia is bacteria in the bloodstream, identified by a true-positive blood culture."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 3",
    "slot": "test finding"
   },
@@ -578,23 +644,26 @@
    "q": "How long do Osler nodes typically last?",
    "opts": [
     [
+     "They last minutes, like an urticarial wheal",
+     "Osler nodes are not that fleeting. They appear in crops and fade over 2-3 days, and they are painful.",
+     "reversed direction or value"
+    ],
+    [
+     "They grow steadily until antibiotics stop",
+     "Osler nodes do not grow steadily while untreated; they come in crops and fade in 2-3 days.",
+     "confused mechanism or drug class"
+    ],
+    [
      "They appear in crops and fade in 2 to 3 days",
      "Correct. Osler nodes appear in crops and fade in 2-3 days; they are painful and reflect an immunologic phenomenon."
     ],
     [
      "They persist for months and scar the skin",
-     "Osler nodes are transient, not permanent. They appear in crops and fade within 2-3 days."
-    ],
-    [
-     "They last minutes, like an urticarial wheal",
-     "Osler nodes are not that fleeting. They appear in crops and fade over 2-3 days, and they are painful."
-    ],
-    [
-     "They grow steadily until antibiotics stop",
-     "Osler nodes do not grow steadily while untreated; they come in crops and fade in 2-3 days."
+     "Osler nodes are transient, not permanent. They appear in crops and fade within 2-3 days.",
+     "reversed direction or value"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 13",
    "slot": "manifestation"
   },
@@ -605,11 +674,13 @@
    "opts": [
     [
      "Oral doxycycline",
-     "Doxycycline is an oral option for penicillin-allergic patients; this patient cannot take oral medication and is not allergic."
+     "Doxycycline is an oral option for penicillin-allergic patients; this patient cannot take oral medication and is not allergic.",
+     "ruled out by a stated finding"
     ],
     [
      "Intravenous vancomycin",
-     "Vancomycin is not part of the standard prophylaxis table for adults. Ampicillin intramuscular or intravenous is."
+     "Vancomycin is not part of the standard prophylaxis table for adults. Ampicillin intramuscular or intravenous is.",
+     "confused mechanism or drug class"
     ],
     [
      "Ampicillin by injection",
@@ -617,7 +688,8 @@
     ],
     [
      "Clindamycin intravenous",
-     "Clindamycin is no longer recommended because of the risk of Clostridioides difficile infection."
+     "Clindamycin is no longer recommended because of the risk of Clostridioides difficile infection.",
+     "adjacent fact"
     ]
    ],
    "c": 2,
@@ -630,23 +702,26 @@
    "q": "Which cardiac condition warrants endocarditis prophylaxis before dental work?",
    "opts": [
     [
-     "Prior endocarditis",
+     "Controlled hypertension",
+     "Hypertension is not a high-risk condition for prophylaxis. Previous infective endocarditis is.",
+     "common lay belief"
+    ],
+    [
+     "Prior bypass grafting",
+     "Coronary bypass grafting is not on the high-risk list; previous infective endocarditis is.",
+     "common lay belief"
+    ],
+    [
+     "Prior valve infection",
      "Correct. Previous infective endocarditis is a high-risk condition, with prosthetic valves or valve-repair material, certain congenital heart disease, and cardiac transplant with valve regurgitation."
     ],
     [
      "Coronary artery stents",
-     "Coronary stents are not on the high-risk list. Previous infective endocarditis is."
-    ],
-    [
-     "Controlled hypertension",
-     "Hypertension is not a high-risk condition for prophylaxis. Previous infective endocarditis is."
-    ],
-    [
-     "Prior bypass grafting",
-     "Coronary bypass grafting is not on the high-risk list; previous infective endocarditis is."
+     "Coronary stents are not on the high-risk list. Previous infective endocarditis is.",
+     "common lay belief"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 36",
    "slot": "risk factors"
   },
@@ -657,7 +732,8 @@
    "opts": [
     [
      "The murmur's intensity grade",
-     "Murmur grade is an exam finding, not a classification axis. The cause of infection, such as the organism, completes the four."
+     "Murmur grade is an exam finding, not a classification axis. The cause of infection, such as the organism, completes the four.",
+     "adjacent fact"
     ],
     [
      "The cause, such as the organism",
@@ -665,11 +741,13 @@
     ],
     [
      "The size of the vegetation",
-     "Vegetation size is not one of the four axes. The axes are timing, site, cause of infection and predisposing risk factors."
+     "Vegetation size is not one of the four axes. The axes are timing, site, cause of infection and predisposing risk factors.",
+     "adjacent fact"
     ],
     [
-     "The patient's blood type",
-     "Blood type plays no part. Infective endocarditis is classified by timing, site, cause (organism) and predisposing risk factors."
+     "The degree of valve stenosis",
+     "Stenosis severity is not a classification axis. Infective endocarditis is classified by timing, site, cause (organism) and predisposing risk factors.",
+     "adjacent fact"
     ]
    ],
    "c": 1,
@@ -683,15 +761,18 @@
    "opts": [
     [
      "Viridans streptococci",
-     "Viridans streptococci come from the oral cavity, not the gastrointestinal tract, whose organism is Streptococcus gallolyticus."
+     "Viridans streptococci come from the oral cavity, not the gastrointestinal tract, whose organism is Streptococcus gallolyticus.",
+     "adjacent fact"
     ],
     [
      "Kingella species",
-     "Kingella is a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism from the upper respiratory tract. The gastrointestinal organism is Streptococcus gallolyticus."
+     "Kingella is a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism from the upper respiratory tract. The gastrointestinal organism is Streptococcus gallolyticus.",
+     "adjacent fact"
     ],
     [
      "Staphylococcus epidermidis",
-     "Staphylococcus epidermidis is a coagulase-negative skin organism tied to early prosthetic valve infection, not to a gastrointestinal source."
+     "Staphylococcus epidermidis is a coagulase-negative skin organism tied to early prosthetic valve infection, not to a gastrointestinal source.",
+     "adjacent fact"
     ],
     [
      "Streptococcus gallolyticus",
@@ -705,23 +786,26 @@
   {
    "topic": "Antibiotic management",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following: 2. Acute endocarditis 3. Subacute endocarditis",
-   "q": "Which antibiotic is used for methicillin-susceptible Staphylococcus aureus endocarditis of a native valve?",
+   "q": "Which antibiotic is preferred for methicillin-susceptible Staphylococcus aureus endocarditis of a native valve?",
    "opts": [
     [
      "Ampicillin plus gentamicin",
-     "Ampicillin plus gentamicin is an enterococcal regimen. Methicillin-susceptible Staphylococcus aureus gets nafcillin or oxacillin."
+     "Ampicillin plus gentamicin is an enterococcal regimen. Methicillin-susceptible Staphylococcus aureus gets nafcillin or oxacillin.",
+     "adjacent fact"
     ],
     [
      "Nafcillin or oxacillin",
-     "Correct. Methicillin-susceptible Staphylococcus aureus is treated with nafcillin or oxacillin, or cefazolin; vancomycin is reserved for methicillin-resistant strains."
+     "Correct. Methicillin-susceptible Staphylococcus aureus is treated with nafcillin or oxacillin, or cefazolin; vancomycin is the drug for methicillin-resistant strains and only an alternative for susceptible ones."
     ],
     [
      "Vancomycin or daptomycin",
-     "Vancomycin or daptomycin is for methicillin-resistant Staphylococcus aureus. Susceptible strains get nafcillin or oxacillin."
+     "Vancomycin or daptomycin is the regimen for methicillin-resistant strains; for susceptible strains vancomycin is only an alternative when a beta-lactam cannot be used, so nafcillin or oxacillin is preferred.",
+     "adjacent fact"
     ],
     [
      "Ceftriaxone alone",
-     "Ceftriaxone is the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) and streptococcal option. Susceptible staphylococci get nafcillin or oxacillin, or cefazolin."
+     "Ceftriaxone is the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) and streptococcal option. Susceptible staphylococci get nafcillin or oxacillin, or cefazolin.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 1,
@@ -734,23 +818,26 @@
    "q": "Which organisms cause the largest share of endocarditis on implantable electronic devices?",
    "opts": [
     [
-     "Gram-negative coccobacilli",
-     "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms are not recorded in device infection; coagulase-negative staphylococci lead."
-    ],
-    [
-     "Enterococci",
-     "Enterococci cause about 4% of device endocarditis. Coagulase-negative staphylococci cause about 41%."
-    ],
-    [
      "Coagulase-negative staphylococci",
      "Correct. Coagulase-negative staphylococci cause about 41% of device endocarditis, with Staphylococcus aureus close behind at about 36%."
     ],
     [
      "Viridans streptococci",
-     "Streptococci cause only about 2% of device endocarditis. Skin staphylococci, led by the coagulase-negative species, dominate."
+     "Streptococci cause only about 2% of device endocarditis. Skin staphylococci, led by the coagulase-negative species, dominate.",
+     "adjacent fact"
+    ],
+    [
+     "Gram-negative coccobacilli",
+     "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract and are not a leading device organism; coagulase-negative staphylococci lead at about 41%.",
+     "adjacent fact"
+    ],
+    [
+     "Enterococci",
+     "Enterococci cause about 4% of device endocarditis. Coagulase-negative staphylococci cause about 41%.",
+     "adjacent fact"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 19",
    "slot": "epidemiology"
   },
@@ -760,23 +847,26 @@
    "q": "Subacute infective endocarditis is gradually progressive unless what happens?",
    "opts": [
     [
+     "The fever rises above 38 degrees",
+     "Fever level does not define the turning point. A major embolic event or a ruptured mycotic aneurysm does.",
+     "adjacent fact"
+    ],
+    [
+     "The murmur becomes softer",
+     "A softer murmur is not the listed complication. Subacute disease turns abrupt with a major embolus or a ruptured mycotic aneurysm.",
+     "reversed direction or value"
+    ],
+    [
      "A major embolus or aneurysm rupture",
      "Correct. Subacute endocarditis is gradually progressive unless complicated by a major embolic event or a ruptured mycotic (infected) aneurysm."
     ],
     [
      "The patient starts a daily aspirin",
-     "Aspirin does not change the course described. A major embolic event or a ruptured mycotic aneurysm is what interrupts the slow progression."
-    ],
-    [
-     "The fever rises above 38 degrees",
-     "Fever level does not define the turning point. A major embolic event or a ruptured mycotic aneurysm does."
-    ],
-    [
-     "The murmur becomes softer",
-     "A softer murmur is not the listed complication. Subacute disease turns abrupt with a major embolus or a ruptured mycotic aneurysm."
+     "Aspirin does not change the course described. A major embolic event or a ruptured mycotic aneurysm is what interrupts the slow progression.",
+     "common lay belief"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 10",
    "slot": "complication"
   }
@@ -788,23 +878,26 @@
    "q": "In people who inject drugs, what share of tricuspid valve endocarditis is caused by Staphylococcus aureus?",
    "opts": [
     [
-     "About one third",
-     "One third is far too low. In people who inject drugs with tricuspid involvement, Staphylococcus aureus causes 80-90%."
+     "Under 5%",
+     "Staphylococcus aureus dominates, not the reverse: 80-90% of tricuspid valve infections in people who inject drugs.",
+     "reversed direction or value"
     ],
     [
-     "Under 5%",
-     "Staphylococcus aureus dominates, not the reverse: 80-90% of tricuspid valve infections in people who inject drugs."
+     "10 to 20%",
+     "Staphylococcus aureus is not a minor player here. It causes 80-90% of tricuspid valve infections in people who inject drugs.",
+     "reversed direction or value"
+    ],
+    [
+     "30 to 40%",
+     "30-40% is far too low. In people who inject drugs with tricuspid involvement, Staphylococcus aureus causes 80-90%.",
+     "reversed direction or value"
     ],
     [
      "80 to 90%",
      "Correct. In people who inject drugs, Staphylococcus aureus causes more than 60% of all endocarditis and 80-90% of cases where the tricuspid valve is infected."
-    ],
-    [
-     "10 to 20%",
-     "Staphylococcus aureus is not a minor player here. It causes 80-90% of tricuspid valve infections in people who inject drugs."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 18",
    "slot": "epidemiology"
   },
@@ -819,15 +912,18 @@
     ],
     [
      "Antiphospholipid syndrome",
-     "Antiphospholipid syndrome mimics endocarditis through thromboemboli and cardiac valve disease, not through myalgia."
+     "Antiphospholipid syndrome mimics endocarditis through thromboemboli and cardiac valve disease, not through myalgia.",
+     "competing diagnosis"
     ],
     [
      "Atrial myxoma",
-     "Atrial myxoma mimics endocarditis with fever and a new murmur, not with myalgia and inflammatory markers."
+     "Atrial myxoma mimics endocarditis with fever and a new murmur, not with myalgia and inflammatory markers.",
+     "competing diagnosis"
     ],
     [
      "Tuberculosis",
-     "Tuberculosis mimics endocarditis with fever, night sweats and weight loss. Myalgia with high inflammatory markers is polymyalgia rheumatica."
+     "Tuberculosis mimics endocarditis with fever, night sweats and weight loss. Myalgia with high inflammatory markers is polymyalgia rheumatica.",
+     "competing diagnosis"
     ]
    ],
    "c": 0,
@@ -841,15 +937,18 @@
    "opts": [
     [
      "Isolated first-degree heart block",
-     "Conduction block follows abscess extension into the septum. Fungal endocarditis most likely embolizes to large peripheral arteries."
+     "Conduction block follows abscess extension into the septum. Fungal endocarditis most likely embolizes to large peripheral arteries.",
+     "adjacent fact"
     ],
     [
      "Spontaneous resolution within days",
-     "Fungal endocarditis does not resolve on its own; it is hard to cure even with medication and is an indication for surgery."
+     "Fungal endocarditis does not resolve on its own; it is hard to cure even with medication and is an indication for surgery.",
+     "common lay belief"
     ],
     [
      "Painful nodules on the finger pads",
-     "Osler nodes are an immunologic sign, not the leading fungal complication, which is embolic occlusion of large peripheral arteries."
+     "Osler nodes are an immunologic sign, not the leading fungal complication, which is embolic occlusion of large peripheral arteries.",
+     "adjacent fact"
     ],
     [
      "Large peripheral artery emboli",
@@ -866,23 +965,26 @@
    "q": "In a high-risk patient, which oral event does not call for endocarditis prophylaxis?",
    "opts": [
     [
-     "A tooth extraction",
-     "Extraction manipulates the gums and root, so it calls for prophylaxis in a high-risk patient."
-    ],
-    [
-     "A gum biopsy",
-     "Biopsy perforates the oral mucosa, so it calls for prophylaxis in a high-risk patient."
-    ],
-    [
      "Bleeding from lip trauma",
      "Correct. Bleeding from trauma to the lips or oral mucosa is on the list that does not require prophylaxis, with dental radiographs and orthodontic adjustments."
     ],
     [
      "Periodontal scaling",
-     "Scaling manipulates the gingival tissue, so it calls for prophylaxis in a high-risk patient."
+     "Scaling manipulates the gingival tissue, so it calls for prophylaxis in a high-risk patient.",
+     "adjacent fact"
+    ],
+    [
+     "A tooth extraction",
+     "Extraction manipulates the gums and root, so it calls for prophylaxis in a high-risk patient.",
+     "adjacent fact"
+    ],
+    [
+     "A gum biopsy",
+     "Biopsy perforates the oral mucosa, so it calls for prophylaxis in a high-risk patient.",
+     "adjacent fact"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 34",
    "slot": "avoid"
   },
@@ -892,8 +994,14 @@
    "q": "A perivalvular abscess that extends into the upper ventricular septum causes which complication?",
    "opts": [
     [
+     "Rupture of a mycotic aneurysm",
+     "A mycotic (infected) aneurysm is an arterial complication. Septal extension of an abscess interrupts the conduction system.",
+     "adjacent fact"
+    ],
+    [
      "Septic emboli to the lungs",
-     "Septic pulmonary emboli come from right-sided vegetations. Septal abscess extension interrupts conduction."
+     "Septic pulmonary emboli come from right-sided vegetations. Septal abscess extension interrupts conduction.",
+     "adjacent fact"
     ],
     [
      "Interruption of the conduction system",
@@ -901,14 +1009,11 @@
     ],
     [
      "Pericarditis from epicardial spread",
-     "Pericarditis follows extension into the epicardium. Extension into the upper ventricular septum interrupts the conduction system."
-    ],
-    [
-     "Rupture of a mycotic aneurysm",
-     "A mycotic (infected) aneurysm is an arterial complication. Septal extension of an abscess interrupts the conduction system."
+     "Pericarditis follows extension into the epicardium. Extension into the upper ventricular septum interrupts the conduction system.",
+     "adjacent fact"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 15",
    "slot": "complication"
   },
@@ -918,23 +1023,26 @@
    "q": "The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group of endocarditis organisms comes from which source?",
    "opts": [
     [
-     "The lower bowel",
-     "The gastrointestinal tract is the source of Streptococcus gallolyticus. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group comes from the upper respiratory tract."
-    ],
-    [
      "The upper respiratory tract",
      "Correct. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract."
     ],
     [
      "The genitourinary tract",
-     "The genitourinary tract is the source of enterococci, not the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, which come from the upper respiratory tract."
+     "The genitourinary tract is the source of enterococci, not the HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms, which come from the upper respiratory tract.",
+     "adjacent fact"
     ],
     [
      "The skin surface",
-     "The skin is the source of staphylococci. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract."
+     "The skin is the source of staphylococci. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms come from the upper respiratory tract.",
+     "adjacent fact"
+    ],
+    [
+     "The lower bowel",
+     "The gastrointestinal tract is the source of Streptococcus gallolyticus. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group comes from the upper respiratory tract.",
+     "adjacent fact"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 17",
    "slot": "etiology"
   },
@@ -944,23 +1052,26 @@
    "q": "In infants, which complications are common because septic emboli are frequent?",
    "opts": [
     [
+     "Heart failure from aortic stenosis",
+     "Heart failure is less common in pediatric disease. Septic emboli cause osteomyelitis, meningitis and pneumonia.",
+     "adjacent fact"
+    ],
+    [
+     "Splinter hemorrhages and clubbing",
+     "Peripheral stigmata are less common in children. Infants' septic emboli cause osteomyelitis, meningitis and pneumonia.",
+     "adjacent fact"
+    ],
+    [
      "Osteomyelitis, meningitis and pneumonia",
      "Correct. Septic emboli are common in neonates and infants, producing osteomyelitis, meningitis or pneumonia, and neurologic signs such as seizures, hemiparesis and apnea are frequent."
     ],
     [
      "Glomerulonephritis and Roth spots",
-     "Immunologic phenomena are not the listed infant complications. Septic emboli cause osteomyelitis, meningitis and pneumonia."
-    ],
-    [
-     "Heart failure from aortic stenosis",
-     "Heart failure is less common in pediatric disease. Septic emboli cause osteomyelitis, meningitis and pneumonia."
-    ],
-    [
-     "Splinter hemorrhages and clubbing",
-     "Peripheral stigmata are less common in children. Infants' septic emboli cause osteomyelitis, meningitis and pneumonia."
+     "Immunologic phenomena are not the listed infant complications. Septic emboli cause osteomyelitis, meningitis and pneumonia.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 41",
    "slot": "complication"
   },
@@ -970,23 +1081,26 @@
    "q": "Which is the most common indication for surgery in infective endocarditis?",
    "opts": [
     [
-     "Any vegetation seen on echocardiogram",
-     "A vegetation alone is not the leading indication. Heart failure from valvular dysfunction is."
-    ],
-    [
-     "A first positive blood culture",
-     "A positive culture starts antibiotics, not surgery. Heart failure from valve dysfunction is the most common surgical indication."
-    ],
-    [
      "Fever on the third hospital day",
-     "Early persistent fever alone is not the indication. Heart failure from valvular dysfunction leads the list."
+     "Early persistent fever alone is not the indication. Heart failure from valvular dysfunction leads the list.",
+     "wrong stage or severity"
     ],
     [
      "Heart failure from valvular dysfunction",
      "Correct. Heart failure due to valvular dysfunction is the most common indication for surgery; others are failure to resolve on appropriate antibiotics, abscess and fungal infection."
+    ],
+    [
+     "Any vegetation seen on echocardiogram",
+     "A vegetation alone is not the leading indication. Heart failure from valvular dysfunction is.",
+     "common lay belief"
+    ],
+    [
+     "A first positive blood culture",
+     "A positive culture starts antibiotics, not surgery. Heart failure from valve dysfunction is the most common surgical indication.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 33",
    "slot": "escalation"
   },
@@ -996,23 +1110,26 @@
    "q": "Why is fungal infective endocarditis an indication for surgery?",
    "opts": [
     [
-     "Fungi never show up on blood cultures",
-     "Cultures can grow Candida. Surgery is indicated because fungal infection is hard to cure with drugs alone."
-    ],
-    [
      "It is hard to cure with medication alone",
      "Correct. Fungal infection is difficult to cure with medications alone, so it joins heart failure, persistent infection and abscess as an indication for surgery."
     ],
     [
-     "It always spreads to the pericardium",
-     "Pericarditis follows abscess extension into the epicardium, not fungal infection as such. Fungal infection is hard to cure medically."
+     "It spreads to the pericardium",
+     "Pericarditis follows abscess extension into the epicardium, not fungal infection as such. Fungal infection is hard to cure medically.",
+     "adjacent fact"
     ],
     [
      "Antifungals cannot be given intravenously",
-     "Intravenous antifungals exist. The reason is that fungal endocarditis is difficult to cure with medication alone."
+     "Intravenous antifungals exist. The reason is that fungal endocarditis is difficult to cure with medication alone.",
+     "common lay belief"
+    ],
+    [
+     "Fungi do not grow in blood cultures",
+     "Cultures can grow Candida. Surgery is indicated because fungal infection is hard to cure with drugs alone.",
+     "common lay belief"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 33",
    "slot": "escalation"
   },
@@ -1023,11 +1140,13 @@
    "opts": [
     [
      "White-centered hemorrhages seen in the retina",
-     "White-centered retinal hemorrhages are Roth spots. Janeway lesions are painless macules on the palms and soles."
+     "White-centered retinal hemorrhages are Roth spots. Janeway lesions are painless macules on the palms and soles.",
+     "adjacent fact"
     ],
     [
      "Thin dark lines under the proximal nail plate",
-     "Dark lines under the nails are splinter hemorrhages. Janeway lesions are painless hemorrhagic macules on palms and soles."
+     "Dark lines under the nails are splinter hemorrhages. Janeway lesions are painless hemorrhagic macules on palms and soles.",
+     "adjacent fact"
     ],
     [
      "Painless hemorrhagic macules on palms and soles",
@@ -1035,7 +1154,8 @@
     ],
     [
      "Painful nodules on the pads of fingers and toes",
-     "Painful nodules on the finger and toe pads are Osler nodes, an immunologic phenomenon, not Janeway lesions."
+     "Painful nodules on the finger and toe pads are Osler nodes, an immunologic phenomenon, not Janeway lesions.",
+     "adjacent fact"
     ]
    ],
    "c": 2,
@@ -1049,7 +1169,8 @@
    "opts": [
     [
      "No cultures until antibiotics have begun",
-     "Cultures always come before antibiotics; empiric therapy is started only after blood cultures are drawn."
+     "Cultures always come before antibiotics; empiric therapy is started only after blood cultures are drawn.",
+     "common lay belief"
     ],
     [
      "Two cultures within the first 1 to 2 hours",
@@ -1057,11 +1178,13 @@
     ],
     [
      "One culture at the end of the first day",
-     "Waiting a day is too slow for acute disease. Two cultures are drawn within the first 1-2 hours."
+     "Waiting a day is too slow for acute disease. Two cultures are drawn within the first 1-2 hours.",
+     "wrong stage or severity"
     ],
     [
      "Three cultures spread over three days",
-     "Spreading cultures over days fits neither tempo. In acute disease two cultures are drawn within 1-2 hours."
+     "Spreading cultures over days fits neither tempo. In acute disease two cultures are drawn within 1-2 hours.",
+     "wrong stage or severity"
     ]
    ],
    "c": 1,
@@ -1075,15 +1198,18 @@
    "opts": [
     [
      "Low blood flow during sleep",
-     "Slow flow during sleep does not injure the endocardium. Jets of blood striking the lining, or foreign bodies, are what damage it."
+     "Slow flow during sleep does not injure the endocardium. Jets of blood striking the lining, or foreign bodies, are what damage it.",
+     "common lay belief"
     ],
     [
      "Lipid plaque deposition",
-     "Lipid plaques build up in arterial walls in atherosclerosis. Damaged endocardium in infective endocarditis comes from aberrant jets or foreign bodies."
+     "Lipid plaques build up in arterial walls in atherosclerosis. Damaged endocardium in infective endocarditis comes from aberrant jets or foreign bodies.",
+     "confused mechanism or drug class"
     ],
     [
      "Pericardial fluid pressure",
-     "Pericardial fluid compresses the heart from outside (tamponade); it does not damage the endocardium. Aberrant jets and foreign bodies do."
+     "Pericardial fluid compresses the heart from outside (tamponade); it does not damage the endocardium. Aberrant jets and foreign bodies do.",
+     "confused mechanism or drug class"
     ],
     [
      "Blood jets or foreign bodies",
@@ -1100,23 +1226,26 @@
    "q": "In a patient at high risk, which procedure does not require endocarditis prophylaxis?",
    "opts": [
     [
-     "Tooth extraction",
-     "Extractions manipulate the gums and tooth roots, so they do call for prophylaxis in a high-risk patient."
-    ],
-    [
      "Tonsillectomy",
-     "Tonsillectomy incises respiratory mucosa, one of the invasive respiratory procedures that do call for prophylaxis."
+     "Tonsillectomy incises respiratory mucosa, one of the invasive respiratory procedures that do call for prophylaxis.",
+     "adjacent fact"
     ],
     [
      "Root canal",
-     "Root canals manipulate the periapical region of the tooth and do call for prophylaxis in a high-risk patient."
+     "Root canals manipulate the periapical region of the tooth and do call for prophylaxis in a high-risk patient.",
+     "adjacent fact"
     ],
     [
      "Colonoscopy",
      "Correct. Gastrointestinal and genitourinary procedures (cystoscopy, upper endoscopy, colonoscopy) do not require endocarditis prophylaxis."
+    ],
+    [
+     "Tooth extraction",
+     "Extractions manipulate the gums and tooth roots, so they do call for prophylaxis in a high-risk patient.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 34",
    "slot": "avoid"
   },
@@ -1127,11 +1256,13 @@
    "opts": [
     [
      "Normal white count with polycythemia",
-     "Polycythemia is not expected. Infection raises the white count, and chronic inflammation causes a normocytic anemia."
+     "Polycythemia is not expected. Infection raises the white count, and chronic inflammation causes a normocytic anemia.",
+     "reversed direction or value"
     ],
     [
      "Eosinophilia with macrocytic anemia",
-     "Eosinophilia and macrocytosis are not the pattern. Leukocytosis and normocytic anemia of chronic disease are."
+     "Eosinophilia and macrocytosis are not the pattern. Leukocytosis and normocytic anemia of chronic disease are.",
+     "confused mechanism or drug class"
     ],
     [
      "Leukocytosis with normocytic anemia",
@@ -1139,7 +1270,8 @@
     ],
     [
      "Leukopenia with microcytic anemia",
-     "A low white count with small red cells is not the expected pattern. Expect leukocytosis and normocytic anemia of chronic disease."
+     "A low white count with small red cells is not the expected pattern. Expect leukocytosis and normocytic anemia of chronic disease.",
+     "reversed direction or value"
     ]
    ],
    "c": 2,
@@ -1152,23 +1284,26 @@
    "q": "Where are splinter hemorrhages found?",
    "opts": [
     [
-     "Under the fingernails and toenails",
-     "Correct. Splinter hemorrhages are found under the fingernails and toenails, in the proximal portion of the nail plate, as an embolic phenomenon."
-    ],
-    [
      "In the retina, with a white center",
-     "White-centered retinal hemorrhages are Roth spots. Splinter hemorrhages lie under the nails."
+     "White-centered retinal hemorrhages are Roth spots. Splinter hemorrhages lie under the nails.",
+     "adjacent fact"
     ],
     [
      "On the hard palate and conjunctiva",
-     "The palate and conjunctiva are where petechiae appear. Splinter hemorrhages lie under the fingernails and toenails."
+     "The palate and conjunctiva are where petechiae appear. Splinter hemorrhages lie under the fingernails and toenails.",
+     "adjacent fact"
     ],
     [
      "On the pads of the fingers and toes",
-     "Painful nodules on the finger and toe pads are Osler nodes. Splinter hemorrhages are lines under the nails."
+     "Painful nodules on the finger and toe pads are Osler nodes. Splinter hemorrhages are lines under the nails.",
+     "adjacent fact"
+    ],
+    [
+     "Under the fingernails and toenails",
+     "Correct. Splinter hemorrhages are found under the fingernails and toenails, in the proximal portion of the nail plate, as an embolic phenomenon."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 12",
    "slot": "manifestation"
   },
@@ -1178,23 +1313,26 @@
    "q": "Which course is typical of subacute infective endocarditis?",
    "opts": [
     [
-     "Painful joints that migrate every few hours",
-     "Migratory arthritis is not the pattern described. Subacute endocarditis smolders with low fevers, malaise and weight loss over weeks or months."
-    ],
-    [
      "Low fevers, malaise and weight loss over weeks",
      "Correct. Subacute infective endocarditis has an indolent course: lower fevers, generalized malaise and weight loss over weeks or months, with slow structural damage, if any."
     ],
     [
      "High fevers and toxicity within a few days",
-     "High fevers and systemic toxicity over 3-10 days describe acute infective endocarditis, caused by a virulent, invasive organism."
+     "High fevers and systemic toxicity over 3-10 days describe acute infective endocarditis, caused by a virulent, invasive organism.",
+     "adjacent fact"
     ],
     [
      "Sudden collapse with no preceding illness",
-     "Sudden collapse is not the subacute picture. Subacute disease smolders with low fevers, malaise and weight loss."
+     "Sudden collapse is not the subacute picture. Subacute disease smolders with low fevers, malaise and weight loss.",
+     "wrong stage or severity"
+    ],
+    [
+     "Painful joints that migrate every few hours",
+     "Migratory arthritis is not the pattern described. Subacute endocarditis smolders with low fevers, malaise and weight loss over weeks or months.",
+     "competing diagnosis"
     ]
    ],
-   "c": 1,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 10",
    "slot": "manifestation"
   },
@@ -1204,23 +1342,26 @@
    "q": "On which side of a ventricular septal defect does infective endocarditis develop?",
    "opts": [
     [
-     "Neither side; only valves",
-     "Valves are the most common site, but not the only one: the low-pressure side of a ventricular septal defect is also a recognized site."
+     "The high-pressure side",
+     "The high-pressure (left) side drives the jet but is not where the lesion lands. Endocarditis develops on the low-pressure (right) side of the defect.",
+     "reversed direction or value"
+    ],
+    [
+     "Both sides equally",
+     "The defect is not involved symmetrically. Infection settles on the low-pressure side, where the aberrant jet damages the endocardium.",
+     "common lay belief"
+    ],
+    [
+     "Neither side; the valves instead",
+     "Valves are the most common site, but not the only one: the low-pressure side of a ventricular septal defect is also a recognized site.",
+     "adjacent fact"
     ],
     [
      "The low-pressure side",
      "Correct. Infective endocarditis can affect the low-pressure side of a ventricular septal defect, where the jet of blood strikes and damages the endocardium; the right side is the low-pressure side."
-    ],
-    [
-     "The high-pressure side",
-     "The high-pressure (left) side drives the jet but is not where the lesion lands. Endocarditis develops on the low-pressure (right) side of the defect."
-    ],
-    [
-     "Both sides equally",
-     "The defect is not involved symmetrically. Infection settles on the low-pressure side, where the aberrant jet damages the endocardium."
     ]
    ],
-   "c": 1,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 4",
    "slot": "etiology"
   },
@@ -1230,23 +1371,26 @@
    "q": "Which organism causes the largest share of health care-associated native valve endocarditis?",
    "opts": [
     [
-     "Staphylococcus aureus",
-     "Correct. Staphylococcus aureus causes about 52% of health care-associated native valve endocarditis, against about 28% of community-acquired cases."
-    ],
-    [
      "Viridans streptococci",
-     "Streptococci lead community-acquired native valve endocarditis (about 40%), but only about 13% of health care-associated cases."
+     "Streptococci as a group lead community-acquired native valve endocarditis (about 40%) but cause only about 13% of health care-associated cases.",
+     "adjacent fact"
     ],
     [
      "Enterococci",
-     "Enterococci cause about 16% of health care-associated native valve endocarditis; Staphylococcus aureus causes about 52%."
+     "Enterococci cause about 16% of health care-associated native valve endocarditis; Staphylococcus aureus causes about 52%.",
+     "adjacent fact"
     ],
     [
-     "Candida species",
-     "Candida causes about 1% of health care-associated native valve endocarditis; Staphylococcus aureus causes about half."
+     "Coagulase-negative staphylococci",
+     "Coagulase-negative staphylococci cause about 11% of health care-associated native valve endocarditis; Staphylococcus aureus causes about 52%.",
+     "adjacent fact"
+    ],
+    [
+     "Staphylococcus aureus",
+     "Correct. Staphylococcus aureus causes about 52% of health care-associated native valve endocarditis, against about 28% of community-acquired cases."
     ]
    ],
-   "c": 0,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 19",
    "slot": "epidemiology"
   },
@@ -1256,23 +1400,26 @@
    "q": "Why is clindamycin no longer recommended for endocarditis prophylaxis?",
    "opts": [
     [
-     "It misses all streptococci",
-     "Coverage was not the stated problem; the risk of Clostridioides difficile infection is."
-    ],
-    [
-     "It must be given for weeks",
-     "Prophylaxis is a single dose whatever the drug. Clindamycin was dropped for its Clostridioides difficile risk."
-    ],
-    [
      "Risk of Clostridioides difficile",
      "Correct. Clindamycin is no longer recommended for prophylaxis because of the risk of Clostridioides difficile infection."
     ],
     [
      "It causes QT prolongation",
-     "QT prolongation is not the stated reason. Clindamycin was dropped because of Clostridioides difficile risk."
+     "QT prolongation is not the stated reason. Clindamycin was dropped because of Clostridioides difficile risk.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It misses viridans streptococci",
+     "Coverage was not the stated problem; the risk of Clostridioides difficile infection is.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It must be given for weeks",
+     "Prophylaxis is a single dose whatever the drug. Clindamycin was dropped for its Clostridioides difficile risk.",
+     "common lay belief"
     ]
    ],
-   "c": 2,
+   "c": 0,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 35",
    "slot": "avoid"
   },
@@ -1283,19 +1430,22 @@
    "opts": [
     [
      "Native valves, non-injecting",
-     "Native valve disease in people who do not inject drugs carries about 30% mortality, lower than prosthetic valve infection."
+     "Native valve disease in people who do not inject drugs carries about 30% mortality, lower than prosthetic valve infection.",
+     "adjacent fact"
     ],
     [
      "Children with heart disease",
-     "Pediatric mortality is 5-16% overall. The highest Staphylococcus aureus mortality is in prosthetic valve endocarditis."
+     "Pediatric mortality is 5-16% overall. The highest Staphylococcus aureus mortality is in prosthetic valve endocarditis.",
+     "adjacent fact"
     ],
     [
-     "Prosthetic valve endocarditis",
+     "Prosthetic valve infection",
      "Correct. Staphylococcus aureus mortality is about 50% in prosthetic valve endocarditis, higher than in non-injecting patients (about 30%) and people who inject drugs (about 5%)."
     ],
     [
      "People who inject drugs",
-     "People who inject drugs have the lowest stated Staphylococcus aureus mortality, about 5%."
+     "People who inject drugs have the lowest stated Staphylococcus aureus mortality, about 5%.",
+     "reversed direction or value"
     ]
    ],
    "c": 2,
@@ -1308,23 +1458,26 @@
    "q": "Which organism belongs to the fastidious gram-negative group of endocarditis organisms from the upper respiratory tract?",
    "opts": [
     [
+     "Streptococcus gallolyticus",
+     "Streptococcus gallolyticus is the gastrointestinal-source streptococcus, not one of the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms.",
+     "adjacent fact"
+    ],
+    [
      "Eikenella corrodens",
      "Correct. The HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) group is Haemophilus, Aggregatibacter actinomycetemcomitans, Cardiobacterium hominis, Eikenella corrodens and Kingella species, from the upper respiratory tract."
     ],
     [
      "Enterococcus faecalis",
-     "Enterococcus faecalis is an enterococcus from the genitourinary tract, not a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism."
+     "Enterococcus faecalis is an enterococcus from the genitourinary tract, not a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism.",
+     "adjacent fact"
     ],
     [
      "Staphylococcus lugdunensis",
-     "Staphylococcus lugdunensis is a coagulase-negative staphylococcus that sometimes causes acute endocarditis; it is not a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism."
-    ],
-    [
-     "Streptococcus gallolyticus",
-     "Streptococcus gallolyticus is the gastrointestinal-source streptococcus, not one of the gram-negative HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organisms."
+     "Staphylococcus lugdunensis is a coagulase-negative staphylococcus that sometimes causes acute endocarditis; it is not a HACEK (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) organism.",
+     "adjacent fact"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 17",
    "slot": "etiology"
   },
@@ -1334,23 +1487,26 @@
    "q": "For how long after congenital heart disease repair with prosthetic material or a device is prophylaxis warranted?",
    "opts": [
     [
+     "The first 6 weeks",
+     "Six weeks is too short. The high-risk window after repair with prosthetic material is the first 6 months.",
+     "reversed direction or value"
+    ],
+    [
      "The first 6 months",
      "Correct. The first 6 months after congenital heart disease repair with prosthetic material or a device is a high-risk period that warrants prophylaxis."
     ],
     [
-     "The first 6 weeks",
-     "Six weeks is too short. The high-risk window after repair with prosthetic material is the first 6 months."
-    ],
-    [
      "The first 5 years",
-     "Five years is too long for a repair without residual defects; the window is the first 6 months."
+     "Five years is too long for a repair without residual defects; the window is the first 6 months.",
+     "reversed direction or value"
     ],
     [
-     "For life, always",
-     "Lifelong prophylaxis applies to conditions such as prior endocarditis or residual defects, not to every repair; the window here is 6 months."
+     "For life",
+     "Lifelong prophylaxis applies to conditions such as prior endocarditis or residual defects, not to every repair; the window here is 6 months.",
+     "reversed direction or value"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 42",
    "slot": "risk factors"
   },
@@ -1361,22 +1517,25 @@
    "opts": [
     [
      "Within hours",
-     "Death within hours is not the stated course. Untreated acute endocarditis progresses to death within weeks."
-    ],
-    [
-     "Over many years",
-     "A years-long course would be closer to subacute, indolent disease. Untreated acute endocarditis kills within weeks."
-    ],
-    [
-     "It never does",
-     "Acute endocarditis is not self-limited. Without treatment it progresses to death within weeks."
+     "Death within hours is not the stated course. Untreated acute endocarditis progresses to death within weeks.",
+     "reversed direction or value"
     ],
     [
      "Within weeks",
      "Correct. If untreated, acute infective endocarditis progresses to death within weeks, which is why cultures and bactericidal antibiotics cannot wait."
+    ],
+    [
+     "Over several months",
+     "Several months is the indolent pace of subacute disease. Untreated acute endocarditis progresses to death within weeks.",
+     "wrong stage or severity"
+    ],
+    [
+     "Over many years",
+     "A years-long course would be closer to subacute, indolent disease. Untreated acute endocarditis kills within weeks.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 10",
    "slot": "prognosis"
   },
@@ -1386,23 +1545,26 @@
    "q": "What are Roth spots?",
    "opts": [
     [
-     "Painful nodules on the finger pads",
-     "Painful nodules on the finger and toe pads are Osler nodes, an immunologic phenomenon, not Roth spots."
-    ],
-    [
      "Thin dark lines under the nails",
-     "Dark lines under the nails are splinter hemorrhages, an embolic phenomenon. Roth spots are in the retina."
+     "Dark lines under the nails are splinter hemorrhages, an embolic phenomenon. Roth spots are in the retina.",
+     "adjacent fact"
     ],
     [
      "Painless macules on palms and soles",
-     "Painless hemorrhagic macules on the palms and soles are Janeway lesions. Roth spots are white-centered retinal hemorrhages."
+     "Painless hemorrhagic macules on the palms and soles are Janeway lesions. Roth spots are white-centered retinal hemorrhages.",
+     "adjacent fact"
     ],
     [
      "White-centered retinal hemorrhages",
      "Correct. Roth spots are white-centered hemorrhages in the retina, from vasculitis affecting the small arteries of the retina."
+    ],
+    [
+     "Painful nodules on the finger pads",
+     "Painful nodules on the finger and toe pads are Osler nodes, an immunologic phenomenon, not Roth spots.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 12",
    "slot": "manifestation"
   },
@@ -1412,23 +1574,26 @@
    "q": "Which single positive blood culture is excluded from the microbiologic minor criterion as a common contaminant?",
    "opts": [
     [
-     "Viridans streptococci",
-     "Viridans streptococci are a typical endocarditis organism; two separate positive cultures meet the major criterion."
-    ],
-    [
-     "Staphylococcus aureus",
-     "Staphylococcus aureus is a typical organism for the major criterion, not an excluded contaminant."
-    ],
-    [
      "Streptococcus gallolyticus",
-     "Streptococcus gallolyticus is a typical endocarditis organism under the major criterion, not a contaminant."
+     "Streptococcus gallolyticus is a typical endocarditis organism under the major criterion, not a contaminant.",
+     "adjacent fact"
     ],
     [
      "Coagulase-negative staphylococci",
      "Correct. Single positive cultures for coagulase-negative staphylococci and diphtheroids are excluded because they are common culture contaminants."
+    ],
+    [
+     "Viridans streptococci",
+     "Viridans streptococci are a typical endocarditis organism; two separate positive cultures meet the major criterion.",
+     "adjacent fact"
+    ],
+    [
+     "Staphylococcus aureus",
+     "Staphylococcus aureus is a typical organism for the major criterion, not an excluded contaminant.",
+     "adjacent fact"
     ]
    ],
-   "c": 3,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 22",
    "slot": "test finding"
   },
@@ -1438,23 +1603,26 @@
    "q": "Which combination of modified Duke criteria establishes definite infective endocarditis?",
    "opts": [
     [
+     "Two minor criteria",
+     "Two minor criteria alone reach neither definite nor possible; possible needs three minor or one major plus one minor.",
+     "wrong stage or severity"
+    ],
+    [
      "One major and three minor",
      "Correct. Definite endocarditis is documented by two major criteria, one major and three minor criteria, or five minor criteria."
     ],
     [
      "One major and one minor",
-     "One major plus one minor criterion makes endocarditis possible, not definite; three minor would be needed."
+     "One major plus one minor criterion makes endocarditis possible, not definite; three minor would be needed.",
+     "wrong stage or severity"
     ],
     [
      "Three minor criteria",
-     "Three minor criteria make endocarditis possible. Definite needs five minor, one major and three minor, or two major."
-    ],
-    [
-     "Two minor criteria",
-     "Two minor criteria alone reach neither definite nor possible; possible needs three minor or one major plus one minor."
+     "Three minor criteria make endocarditis possible. Definite needs five minor, one major and three minor, or two major.",
+     "wrong stage or severity"
     ]
    ],
-   "c": 0,
+   "c": 1,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 22",
    "slot": "gold standard"
   },
@@ -1464,23 +1632,26 @@
    "q": "What causes infective endocarditis?",
    "opts": [
     [
+     "Immune complexes alone, with no organism",
+     "Immune complexes cause some peripheral signs, such as Osler nodes, but the disease itself needs microorganisms invading and colonizing the endocardium.",
+     "confused mechanism or drug class"
+    ],
+    [
      "Coronary plaque rupture with thrombosis",
-     "Plaque rupture with thrombosis causes acute coronary syndromes. Infective endocarditis is microbial invasion and colonization of the endocardium."
+     "Plaque rupture with thrombosis causes acute coronary syndromes. Infective endocarditis is microbial invasion and colonization of the endocardium.",
+     "competing diagnosis"
     ],
     [
      "Fibrous scarring of the pericardial sac",
-     "Fibrous scarring of the pericardium is constrictive pericarditis. Infective endocarditis is microbial colonization of the endocardium."
+     "Fibrous scarring of the pericardium is constrictive pericarditis. Infective endocarditis is microbial colonization of the endocardium.",
+     "competing diagnosis"
     ],
     [
      "Microbes colonizing the endocardium",
      "Correct. Infective endocarditis is caused by invasion and colonization of the endocardial structures by microorganisms, with resulting inflammation and a vegetation."
-    ],
-    [
-     "Immune complexes alone, with no organism",
-     "Immune complexes cause some peripheral signs, such as Osler nodes, but the disease itself needs microorganisms invading and colonizing the endocardium."
     ]
    ],
-   "c": 2,
+   "c": 3,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 7",
    "slot": "etiology"
   },
@@ -1491,7 +1662,8 @@
    "opts": [
     [
      "Inhaled",
-     "Inhaled antibiotics treat airway infection, not a valve vegetation. Endocarditis antibiotics are parenteral."
+     "Inhaled antibiotics treat airway infection, not a valve vegetation. Endocarditis antibiotics are parenteral.",
+     "confused mechanism or drug class"
     ],
     [
      "Parenterally",
@@ -1499,11 +1671,13 @@
     ],
     [
      "Orally",
-     "Oral therapy is not the standard. Endocarditis antibiotics are given parenterally, as intravenous therapy."
+     "Oral therapy is not the standard. Endocarditis antibiotics are given parenterally, as intravenous therapy.",
+     "common lay belief"
     ],
     [
      "Topically",
-     "Topical antibiotics cannot reach a vegetation inside the heart. Therapy is parenteral."
+     "Topical antibiotics cannot reach a vegetation inside the heart. Therapy is parenteral.",
+     "confused mechanism or drug class"
     ]
    ],
    "c": 1,
@@ -1521,15 +1695,18 @@
     ],
     [
      "Staphylococcus aureus",
-     "Staphylococcus aureus is a virulent, invasive organism that causes acute endocarditis, with high fevers and rapid valve destruction."
+     "Staphylococcus aureus is a virulent, invasive organism that causes acute endocarditis, with high fevers and rapid valve destruction.",
+     "wrong stage or severity"
     ],
     [
      "Beta-hemolytic streptococci",
-     "Beta-hemolytic streptococci are listed with Staphylococcus aureus as causes of acute, not subacute, endocarditis."
+     "Beta-hemolytic streptococci are listed with Staphylococcus aureus as causes of acute, not subacute, endocarditis.",
+     "wrong stage or severity"
     ],
     [
      "Candida species",
-     "Candida causes fungal endocarditis, a separate category. The classic bacterial cause of subacute disease is viridans streptococci."
+     "Candida causes fungal endocarditis, a separate category. The classic bacterial cause of subacute disease is viridans streptococci.",
+     "adjacent fact"
     ]
    ],
    "c": 0,
@@ -1542,8 +1719,14 @@
    "q": "When does bronchoscopy call for endocarditis prophylaxis in a high-risk patient?",
    "opts": [
     [
-     "Only when sedation is planned",
-     "Sedation is not the criterion. Incision of the respiratory mucosa, such as biopsy, is."
+     "Not even when a biopsy is taken",
+     "Invasive respiratory procedures that incise or biopsy the mucosa do call for prophylaxis.",
+     "reversed direction or value"
+    ],
+    [
+     "When sedation is planned",
+     "Sedation is not the criterion. Incision of the respiratory mucosa, such as biopsy, is.",
+     "common lay belief"
     ],
     [
      "When the mucosa is incised, as for biopsy",
@@ -1551,14 +1734,11 @@
     ],
     [
      "Every bronchoscopy, whatever is done",
-     "Plain bronchoscopy is on the no-prophylaxis list; only incision or biopsy of the mucosa changes that."
-    ],
-    [
-     "Never, even when a biopsy is taken",
-     "Invasive respiratory procedures that incise or biopsy the mucosa do call for prophylaxis."
+     "Plain bronchoscopy is on the no-prophylaxis list; only incision or biopsy of the mucosa changes that.",
+     "reversed direction or value"
     ]
    ],
-   "c": 1,
+   "c": 2,
    "cite": "32. Infective Endocarditis FALL 2026 SV.pptx, Slide 34",
    "slot": "first-line"
   }

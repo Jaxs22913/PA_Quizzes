@@ -105,6 +105,16 @@ CONTESTED on the slides, or wrong, so handled as noted (truth wins):
   The order of epinephrine and amiodarone against the shock count differs
       between s50's text and the s51 picture; no question keys a shock count.
   "Aka automated ICD (AICD)" (s38): not keyed.
+  Mobitz type I and exertion (s9): "Symptoms usually appear in individual with
+      exertion inducing heart block". Truth: exertion speeds atrioventricular
+      nodal conduction, so typical Mobitz type I improves with exercise; a block
+      that appears with exertion suggests disease below the node. Exertion is
+      not keyed as the trigger (2026-10-15 fact-check): the two items now key
+      "usually asymptomatic" (pool A) and "symptoms make her a pacemaker
+      candidate" (vignettes A).
+  P waves in ventricular tachycardia (s39 table "None"): P waves are often
+      present but dissociated from the QRS and hard to see. No key turns on it;
+      explanations say P waves are "not tied to the QRS".
 """
 
 DECK = "Arrhythmias II - Elwaya  (1).pptx"     # two spaces, as the filename has
