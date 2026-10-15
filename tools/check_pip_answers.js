@@ -26,8 +26,8 @@ const code = [
   grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/),
   ...['norm', 'stem', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
-      'specific', 'examsFor', 'prepGuide', 'headOf', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
-      'listAsk', 'gatherList', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining'].map(grab),
+      'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
+      'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining'].map(grab),
   grabVar(/var EXPLAIN = [^\n]*/)
 ].join('\n');
 const IX = JSON.parse(fs.readFileSync(DATA + 'index.json', 'utf8'));
@@ -55,7 +55,7 @@ function explainOf(f) {
 }
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
-  'listAsk, gatherList, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF};')(...names.map(k => stubs[k]), explainOf);
+  'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
@@ -67,9 +67,9 @@ async function plan(q, slug) {
   const r = { q, fixed: fx.fixed.map(p => p.join('->')).join(','), scope: scope.map(x => x.s) };
   if (L) { const lst = await M.gatherList(L, scope, f); if (lst) return Object.assign(r, { kind: 'list', n: lst.items.length, from: lst.f.s, first: lst.items[0].name + ': ' + lst.items[0].text.slice(0, 60), general: false }); }
   const sc = scope.filter(M.hasGuides);
-  let [out, ex, dd] = await Promise.all([M.guideHits(sc, qx, f), M.explainWide(f, qx, text), D ? M.findDefinition(D.t, sc, f) : null]);
+  let [out, ex, dd] = await Promise.all([M.wideHits(f, scope, qx, f, text), M.explainWide(f, qx, text), D ? M.findDefinition(D.t, sc, f) : null]);
   if (D && ex.length && !M.titleNames(ex[0], D.t) && (!D.bare || (dd && dd.def))) ex = [];
-  if (D && !ex.length && dd && (dd.def || !D.bare))
+  if (D && !ex.length && dd && ((dd.def && dd.def.strong) || (!dd.taught && (dd.def || !D.bare))))
     return Object.assign(r, { kind: 'definition', def: dd.def ? (dd.def.strong ? 'strong' : 'weak') + ': ' + (dd.def.gloss || dd.def.s).slice(0, 80) : 'none', mentions: dd.mentions.length, general: !dd.def || !dd.def.strong });
   if (ex.length && !ex.cmp && M.fullCover(ex, text, true) < 0.5) ex = [];
   if (ex.cross) { const xf = ex.map(x => x._f); out = out.filter(o => xf.indexOf(o.f) >= 0); }
@@ -94,12 +94,14 @@ const CASES = [
   ['why does aortic stenosis cause syncope during pregnancy', CMS4, 'card', /aortic stenosis/i, true],
   ['iatrogenic', CMS4, 'definition', /caused by treatment/i, false],
   ['where is the murmur chart', CMS4, null, /./, false],
+  ['what is selective toxicity', 'microbiology-exam-1', 'definition', /kills harmful microbes/i, false],
 ];
 (async () => {
   if (process.argv[2] === '--rate') {             // how often each kind of answer and the general part come up
     const qs = JSON.parse(fs.readFileSync(process.argv[3] || REPO + 'tools/pip_explain_questions.json', 'utf8')).questions;
     const n = {}; let gen = 0;
-    for (const x of qs) { const p = await plan(x.q, x.slug); n[p.kind] = (n[p.kind] || 0) + 1; if (p.general) { gen++; if (process.argv.includes('--show')) console.log('  +general: ' + x.q + ' -> ' + (p.card || p.top || '').slice(0, 70)); } }
+    for (const x of qs) { const p = await plan(x.q, x.slug); n[p.kind] = (n[p.kind] || 0) + 1; if (p.general) gen++;
+      if (process.argv.includes('--show') && (p.general || p.kind === 'definition' || p.kind === 'list')) console.log('  ' + p.kind + (p.general ? '+general' : '') + ': ' + x.q + ' -> ' + (p.card || p.top || p.def || p.first || '').slice(0, 90)); }
     console.log(qs.length + ' questions:', JSON.stringify(n), '| general part:', gen, '(' + Math.round(100 * gen / qs.length) + '%)');
     return;
   }

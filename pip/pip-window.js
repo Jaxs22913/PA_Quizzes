@@ -1199,7 +1199,7 @@
             // the guides of those exams AND the student's own notes for the active exam (never another exam's),
             // Pip's own plain-language explanation of the concept when he has one, and for "what does X mean"
             // the sentence that defines X
-            Promise.all([guideHits(scope.filter(hasGuides), qx, c.here), noteHits(f, text, 2), explainWide(f, qx, text),
+            Promise.all([wideHits(f, scope, qx, c.here, text), noteHits(f, text, 2), explainWide(f, qx, text),
                          D ? findDefinition(D.t, scope.filter(hasGuides), here) : null])
               .then(function (r) { show(r[0], r[1], r[2], r[3]); });
           });
@@ -1210,7 +1210,9 @@
         // "what does X mean": a card leads only when its title names X; a bare word ("iatrogenic") keeps
         // the usual answer when no guide defines it
         if (D && ex.length && !titleNames(ex[0], D.t) && (!D.bare || (dd && dd.def))) ex = [];
-        if (D && !ex.length && dd && (dd.def || !D.bare)) return showDefinition(dd, mine);
+        // a term a guide TEACHES (a heading is about it) gets the usual explanation from its passages; the defining
+        // sentence is for words the guides only use ("iatrogenic")
+        if (D && !ex.length && dd && ((dd.def && dd.def.strong) || (!dd.taught && (dd.def || !D.bare)))) return showDefinition(dd, mine);
         // a card that holds under half of the question's naming words doesn't answer it
         if (ex.length && !ex.cmp && fullCover(ex, text, true) < 0.5) ex = [];
         if (ex.cross) {                                 // another exam's answer: only that exam's passages, no notes
@@ -1350,7 +1352,7 @@
           m.appendChild(el("span", "pw-lbl", (d.src.card ? "Pip's explanation: " : "Your guide: ") + d.src.head));
           m.appendChild(linkTo(d.src.f.f, d.src.file, d.src.a, "Read it in your guide \u2192", d.src.text || ""));
           log.appendChild(m); helpful(m);
-        } else say(dd.total ? "Your guides use \u201c" + term + "\u201d but never say what it means." : "I didn't find \u201c" + term + "\u201d in your guides.");
+        } else say(dd.total ? "I didn't find a line in your guides that says what \u201c" + term + "\u201d means." : "I didn't find \u201c" + term + "\u201d in your guides.");
         if (dd.mentions.length) {
           var box = el("div", "pw-msg pw-pip pw-explain"), ul = el("ul");
           box.appendChild(el("p", null, d ? "It also comes up in:" : "It comes up in:"));
@@ -1895,13 +1897,19 @@
     return escRe(s).replace(/[a-z]/gi, function (c) { return "[" + c.toLowerCase() + c.toUpperCase() + "]"; }).replace(/\s+/g, "[\\s-]+");
   }
   function defPatterns(term) {
-    var t = ciRe(term);
+    var t = ciRe(term) + "(?:e?s)?";                // "Bacteriostatic drugs. They inhibit growth ..."
     return [
-      // "Pulmonic regurgitation is incomplete closing of ...": not "X is the most common cause"
-      [3, new RegExp("(?:^|[.;!?]\\s+|^[-•]\\s*)(" + t + ")\\s+(?:is|are|means|refers to|describes|denotes)\\s+(?!(?:the |a |an )?(?:most|more|less|least|usually|often|common|commonest|rare|rarely|always|never|not|also|seen|found|associated|caused|treated|diagnosed|managed|best|first|second|third|key|main|important|present|absent|increased|decreased|elevated|low|high|higher|lower|typically|classically|called)\\b)")],
-      [3, new RegExp("\\b(" + t + ")\\s*\\(([a-z][^()]{5,120})\\)")],                 // "Iatrogenic (caused by treatment)"
-      [2, new RegExp("\\b(" + t + ")\\s*(?:=|—|:)\\s*(?:a |an |the )?([a-z][^.;()]{8,140})")],  // "Iatrogenic = medical toxin use"
-      [2, new RegExp("([^.;:()]{8,140})\\((" + t + ")\\)")]                           // "from a medical procedure (iatrogenic)"
+      // "Tachyphylaxis is the loss of effect ...", "Pulmonic regurgitation is incomplete closing of ...": not "X is the
+      // whole problem", "X is the most common cause", "X is handled by ..." (a verb ending in -ed, unless "defined as")
+      [3, new RegExp("(?:^|[.;!?]\\s+|^[-\u2022]\\s*)(?:[Aa]n? |[Tt]he )?(" + t + ")\\s+(?:is|are|means|refers to|describes|denotes)\\s+" +
+        "(?!(?:the |a |an )?(?:whole|main|key|first|best|most|same|only|big|biggest|real|problem|answer|reason|issue|point|more|less|least|" +
+        "usually|often|common|commonest|rare|rarely|always|never|not|also|second|third|important|present|absent|typically|classically|called|" +
+        "increased|decreased|elevated|low|high|higher|lower)\\b)(?!(?!(?:defined|known|termed|characterized|marked)\\b)[a-z]+ed\\b)")],
+      [3, new RegExp("\\b(" + t + ")\\s*\\(([a-z][^()]{5,120})\\)")],           // "Iatrogenic (caused by treatment)"
+      // "Opsonization — Coating the organism so ...": strong at a line's start with one dash (not a table row)
+      [2, new RegExp("\\b(" + t + ")(?:\\s*\\([^()]{1,20}\\))?\\s*(?:=|\u2014|:)\\s*(?:a |an |the )?([A-Za-z][^.;()]{8,140})")],   // "Half-life (t\u00bd) \u2014 the time ..."
+      [2, new RegExp("([^.;:()]{8,140})\\((" + t + ")\\)")],                       // "from a medical procedure (iatrogenic)"
+      [2, new RegExp("^(" + t + ")\\.\\s+((?:It|They|This|These|A|An|The)\\s[^.]{10,200})")]   // "Opsonization. It coats ..."
     ];
   }
   function sentencesOf(x) {
@@ -1913,18 +1921,33 @@
     h = h.split("\u2605")[0].replace(/\s+(Routine|Urgent|Emergent|Emergency|Slides? [\d,–-]+)$/i, "").trim() || h;
     return h.length > 80 ? h.slice(0, h.lastIndexOf(" ", 77)) + "\u2026" : h;
   }
+  // a heading ABOUT the term ("2.1 · Selective toxicity"), not one that names it among others ("acquired (traumatic or iatrogenic)")
+  function aboutTerm(head, tt) {
+    var ht = toks(String(head).replace(/^[\d.\s·]+|objectives?\s+[\d&,\s–-]+\s*—/gi, "")).filter(function (w) { return !GENERIC[w]; });
+    var n = tt.filter(function (w) { return ht.indexOf(w) >= 0; }).length;
+    return n === tt.length && n * 2 >= ht.length;
+  }
   function findDefinition(term, scope, here) {
-    var pats = defPatterns(term), tt = uniq(toks(term));
-    var best = null, mentions = [];
+    var bare = term.replace(/\s+(drugs?|agents?|medications?|therapy|tests?|signs?)$/i, "");
+    var pats = defPatterns(term).concat(bare !== term ? defPatterns(bare).map(function (p) { return [p[0] - 0.2, p[1]]; }) : []);
+    var tt = uniq(toks(bare));
+    var best = null, mentions = [], taught = false;   // taught: a heading of some guide is about the term
     function consider(s, sc, src) {
       if (s.length > 320) return;
       for (var i = 0; i < pats.length; i++) {
         var m = s.match(pats[i][1]);
         if (!m) continue;
-        var score = pats[i][0] * (src.f === here ? 1.2 : 1) * (src.card ? 1.1 : 1) - s.length / 400;
+        var k = i % 5, off = i >= 5 ? 0.2 : 0, pw = pats[i][0];   // i >= 5: the term without "drug", "test" ...
+        // "X (gloss)" and "X: gloss" define X only when nothing modifies it: "epidermal hyperplasia (active T cells
+        // drive ...)" says what drives the epidermal kind, not what hyperplasia is
+        if ((k === 1 || k === 2) && m.index > 0 && !/(?:[,;:(\u2014\u2013-]\s*|\b(?:a|an|the|of|or|and|called|termed|as)\s+)$/i.test(s.slice(0, m.index))) continue;
+        if (k === 2) pw = (m.index === 0 && s.split(" \u2014 ").length === 2 ? 3 : /^[a-z]/.test(m[2]) ? 2 : 1.5) - off;
+        if (k === 4) pw = 3 - off;
+        var score = pw * (src.f === here ? 1.2 : 1) * (src.card ? 1.1 : 1) - s.length / 400;
         // [3] "X (gloss)" and [2] "X = gloss" give the meaning in their own words: "Iatrogenic: caused by treatment."
-        var gloss = i === 1 || i === 2 ? m[2].trim().replace(/[\s,:;—-]+$/, "") : null;
-        if (!best || score > best.sc) best = { sc: score, strong: pats[i][0] >= 3, s: s, gloss: gloss, src: src };
+        var gloss = k === 1 || k === 2 ? m[2].trim().replace(/[\s,:;—-]+$/, "") : null;
+        if (gloss && /^[A-Z][a-z]/.test(gloss)) gloss = gloss.charAt(0).toLowerCase() + gloss.slice(1);
+        if (!best || score > best.sc) best = { sc: score, strong: pw >= 2.8, s: s, gloss: gloss, src: src };
         return;
       }
     }
@@ -1939,6 +1962,7 @@
         g.b.forEach(function (b, i) {
           var tf = g._ix.docs[i].tf;
           if (!tt.every(function (w) { return tf[w]; }) || g.docs[b[0]].kind === "cram") return;
+          if (!taught && aboutTerm(b[5] || String(b[2] || "").split(" \u203a ").pop(), tt)) taught = true;
           var src = { f: f, file: g.docs[b[0]].file, a: b[1], head: headOf(b, g), text: b[3] };
           sentencesOf(b[3]).forEach(function (s) { consider(s, 0, src); });
           mentions.push(src);
@@ -1948,14 +1972,17 @@
       // where the word comes up: one line per section, this exam first, short lines first
       var seen = {}, ms = mentions.sort(function (a, b) { return (b.f === here) - (a.f === here) || a.text.length - b.text.length; })
         .filter(function (m) { var k = m.f.s + "|" + m.head; if (seen[k] || (best && best.src.head === m.head)) return false; seen[k] = 1; return true; });
-      return { def: best, mentions: ms.slice(0, 3), total: mentions.length };
+      return { def: best, mentions: ms.slice(0, 3), total: mentions.length, taught: taught };
     });
   }
-  // the card whose TITLE names the term (not one that only lists it among its other names)
+  // the card whose TITLE is about the term (not one that lists it among others: "The optic disc: normal,
+  // papilledema, cupping and atrophy" does not answer "what is atrophy"), or whose other name IS the term
   function titleNames(c, term) {
-    var tt = toks(numbered(term)), title = toks(numbered(c.t));
-    return tt.length && tt.every(function (w) { return title.indexOf(w) >= 0; }) ||
-      c.k.some(function (k) { return norm(k) === norm(term); });
+    var tt = toks(numbered(term));
+    if (!tt.length) return false;
+    if (c.k.some(function (k) { return norm(k) === norm(term); })) return true;
+    var share = function (s) { var t = uniq(toks(numbered(s))).filter(function (w) { return !GENERIC[w]; }); return tt.every(function (w) { return t.indexOf(w) >= 0; }) ? tt.length / t.length : 0; };
+    return share(String(c.t).split(":")[0]) >= 0.4 || share(c.t) >= 0.5;
   }
 
   // ------------------------------------------------------------------ "the X of each Y": one line per item
@@ -2038,6 +2065,18 @@
     var have = {};
     out.forEach(function (r) { toks(numbered((r.b[2] || "") + " " + (r.b[5] || "") + " " + r.b[3])).forEach(function (w) { have[w] = 1; }); });
     return shareIn(text, have, out[0] && out[0].g._ix);
+  }
+  // guide passages: the active exam's when they cover the question, else the best of the exams that hold its words
+  // (a common word such as "pathogen" must not bring another class's table row ahead of this exam's own lines)
+  function wideHits(f, scope, qx, here, text) {
+    var others = scope.filter(function (x) { return x !== f && hasGuides(x); });
+    return (hasGuides(f) ? guideHits([f], qx, here) : Promise.resolve([])).then(function (own) {
+      if ((own.length && passCover(own, text) >= SHORT_OF) || !others.length) return own;
+      return guideHits(others, qx, here).then(function (ot) {
+        if (!own.length) return ot;
+        return ot.length && passCover(ot, text) > passCover(own, text) ? ot : own;
+      });
+    });
   }
   // "From general knowledge" (Jaxon, 2026-10-15): Claude, labelled "not from your class materials", only when the
   // class materials fall short; the passages Pip did find go along so Claude fills the gap instead of repeating
