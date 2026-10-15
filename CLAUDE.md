@@ -1,334 +1,134 @@
 # PA_Quizzes — orientation for a new session
 
-**Written 2026-09-22, last updated 2026-10-10.** Claude Code reads this file automatically at the start
-of every session in this repo. It is the map, not the territory: it tells you
-what exists and where the real detail lives, so read the things it points at
-rather than trusting the summary.
+**Written 2026-09-22, trimmed 2026-10-15.** Claude Code reads this automatically. It is the map, not the
+territory: read what it points at rather than trusting the summary. Class-specific detail lives in memories.
 
----
+## 1. What this is
 
-## 1. What this is, and who it is for
+A static study site Jaxon builds for his PA-school cohort (Class of 2028, Nova Southeastern, Jacksonville):
+quizzes, study guides, cram sheets, an Arcade, group study, a practicum atlas, the study planner, and Pip,
+the study companion. Everything is per class and per exam.
 
-A static study site Jaxon builds for his PA-school cohort (Class of 2028, Nova
-Southeastern, Jacksonville). Quizzes, study guides, cram sheets, an Arcade of
-games, group study, a practicum atlas. Everything is per-class and per-exam.
+- **Real people use it for real exams.** A wrong key is not cosmetic; run the checkers (§6) on every build.
+- **The repository is PUBLIC.** Anything committed is republished. Lecture audio, transcripts and raw decks
+  stay OUT of the repo (they live in `~/Desktop/PA Quizzes/`, §4); verify image licences from the asset's page.
 
-**Real people use it to study for real exams.** A wrong answer key is not a
-cosmetic bug. That is the reason for the checker suite in §6 and the standing
-rule that you run it on every build.
+## 2. Read first: the memory index
 
-**The repository is PUBLIC.** Anything committed is republished at the live URL.
-That governs image licensing, and it means lecture audio, transcripts and raw
-decks stay OUT of the repo — they live in `~/Desktop/PA Quizzes/` (§4).
-
----
-
-## 2. Read this first: the memory index
-
-The accumulated knowledge is **not** in this repo. It is in
-
-```
-~/.claude/projects/-Users-jaxonluke/memory/
-```
-
-`MEMORY.md` there is the index — one line per memory — and it loads into context
-automatically. **When a task touches an area, open the specific memory file
-before acting.** The index line is a pointer, not the content.
-
-The ones worth reading before almost any content work:
-
-| Memory | Why |
-|---|---|
-| `quiz_build_prompt.md` | Jaxon's verbatim standing spec for building any quiz |
-| `exam_standard.md` | the standard every exam is built to; a checker enforces it |
-| `guide_design_system.md` | the shared structural template for guides and quizzes |
-| `reference_question_style.md` | the 40 exemplars he supplied; four options site-wide |
-| `pa_quizzes_hosting.md` | deploy, and why "pushed" ≠ "live" |
-| `site_bug_sweep_tools.md` | the checkers you must run |
-
-Each class also has its own spec memory (`microbiology_exam_spec.md`,
-`cms_exam_spec.md`, `pharmacology_exam_spec.md`, …). **A class-specific spec
-overrides the general one on conflict.**
-
-Memories are point-in-time notes. If one names a file, function or flag, verify
-it still exists before relying on it.
-
----
+Knowledge lives in `~/.claude/projects/-Users-jaxonluke/memory/`; `MEMORY.md` there is the index and loads
+automatically. **Open the specific memory before acting in an area**; the index line is only a pointer.
+Before content work: `quiz_build_prompt.md`, `exam_standard.md`, `guide_design_system.md`,
+`reference_question_style.md`, `pa_quizzes_hosting.md`, `site_bug_sweep_tools.md`. Each class has its own spec
+memory (`cms_exam_spec.md`, `pharmacology_exam_spec.md`, ...), which **overrides the general one on conflict**.
+Memories are point-in-time: verify a named file, function or flag still exists before relying on it.
+Session state (in-progress work, decisions, exam dates) is in the newest folder under
+`~/Developer/PA_Quizzes-handoff/` and the START HERE / PENDING entries at the top of the index.
 
 ## 3. How the site runs
 
-- Local clone: `~/Developer/PA_Quizzes`, branch `main`.
-  (It was moved out of `~/Documents` in July 2026 — iCloud sync was spawning
-  conflict copies mid-build and twice a wrong copy nearly shipped. Do not move
-  it back.)
-- Live: `https://pa-quizzes.com/PA_Quizzes/` (Cloudflare Workers Static Assets,
-  `cloudflare/build.mjs`, `docs/HOSTING_CLOUDFLARE.md`). Since the 2026-10-10
-  cutover, every `https://jaxs22913.github.io/PA_Quizzes/` address shows only the
-  "PA Quizzes has moved" page (`.github/pages-moved/`), which hands a student's
-  saved progress over to the same page on pa-quizzes.com.
-- Every push to `main` fires two GitHub Actions workflows (`cloudflare.yml` for
-  pa-quizzes.com, `pages.yml` for the moved page) that deploy in about a minute.
+- Clone: `~/Developer/PA_Quizzes`, branch `main` (moved out of `~/Documents` in July 2026 because iCloud
+  spawned conflict copies; do not move it back).
+- Live: `https://pa-quizzes.com/PA_Quizzes/` (Cloudflare Workers Static Assets, `cloudflare/build.mjs`,
+  `docs/HOSTING_CLOUDFLARE.md`). Every `jaxs22913.github.io/PA_Quizzes/` address shows only the "moved" page
+  (`.github/pages-moved/`), which hands saved progress to pa-quizzes.com.
+- Each push to `main` runs `cloudflare.yml` and `pages.yml` (about a minute). **A push is not a deploy**: during
+  a GitHub outage pushes created no workflow run. After pushing, `curl` the changed file on pa-quizzes.com and
+  grep for a string only the new version has.
 
-**A successful push is not a deploy.** During a GitHub outage three pushes
-landed with no workflow run created at all, and the live site served the old
-build for hours while the push output looked fine. After pushing, check the live
-URL (pa-quizzes.com) — `curl` the changed file and grep for a string only the new
-version has.
-
-### Pip, the study companion
-
-Pip (`pip/*.js`, sprites in `immutable/pip/v1/`) is loaded by the block at the end
-of `theme.js`, on pa-quizzes.com only, on every page that loads `theme.js` (Semester 1
-included, since 2026-10-11) plus the five self-contained Semester 2 pages that carry their own
-small loader (never the 11 frozen self-contained Semester 1 files). He stays paused on a quiz
-question that is still open (an older page he cannot read: until the results), and answers
-in his own words first, with a guide link under it. A "how do these differ / compare / what makes X stand out" question gets a side-by-side dissection first (Claude when the student can use him, else his laptop brain, else the cards' own sentences), then a guide link per side, then the folded cards. He searches the cards of every exam in the semester, each with its own abbreviations (`pip/data/ab.json`): the page's exam wins when its card really covers the question, else a clearly stronger card from any other exam (past or upcoming); a compare question resolves each side on its own. Every answer opens with one line, "This was discussed in your <exam> guide." (two exams: "... guides."), and Claude may help with a past exam's topics too. Every Pip guide link opens the site's study-guide panel (`window.openGuidePanel` in `theme.js`, the same panel as a quiz's "Find it in the study guide") scrolled to and highlighting the passage; a page without `theme.js` opens the guide in a new tab. His question banks and guide index (`pip/data/`) are generated, never
-committed: the Cloudflare deploy runs `tools/build_pip_data.py`, which fails the
-deploy loudly on a page it cannot parse (fix the page, never skip the step). His
-plain-language explanation cards live in `pip/explain/<exam>.json`
-(`python3 tools/pip_explain.py check`); after a guide edit, cards whose section
-changed show as stale until re-checked and re-stamped (`pip_explain.py rehash`).
-`tools/check_pip_launch.py` is the end-to-end check of a built `dist/`. The
-helper service Pip asks for Claude explanations is a separate, private Worker;
-its source is not in this repo.
-
----
+### Pip
+`pip/*.js` (sprites `immutable/pip/v1/`), loaded by the end of `theme.js` on pa-quizzes.com only (every
+theme.js page, plus five self-contained Semester 2 pages with their own loader; never the 11 frozen
+self-contained Semester 1 files). Behaviour rules: memory `pip_behavior_rule.md`; current work:
+`pip_overhaul_next.md`. In short: paused on an open quiz question; answers in two labelled parts, "From your
+class" (his checked cards in `pip/explain/<exam>.json`, guide passages from every exam that holds the
+question's words, misspellings fixed, definitions, "the X of each Y" lists, compare dissections) and "From
+general knowledge" (Claude, labelled, only when the class materials fall short); guide links open
+`window.openGuidePanel`. Generated data `pip/data/` is never committed: the deploy runs
+`tools/build_pip_data.py`, which fails loudly on a page it cannot parse (fix the page, never skip it).
+After a guide edit, cards whose section changed show as stale (`python3 tools/pip_explain.py check`, then
+`rehash` once re-checked). Checks: `node tools/check_pip_answers.js` (answer kinds, no browser),
+`node tools/pip_explain_match.js` (card matching), `tools/check_pip_launch.py` (built `dist/`). Never run real
+models in tests or send question sets through any model (memory `no_bulk_model_runs.md`). The Claude helper is
+a private Worker; its source is not in this repo.
 
 ## 4. Where the inputs live (not in the repo)
 
 ```
-~/Desktop/PA Quizzes/Semester 2/<Class> Inbox/
-    Syllabus/
-    Exam N/                    ← the .pptx decks
-    Exam N/recordings/         ← lecture audio + transcripts
-~/Desktop/PA Quizzes/Calendars/<Semester>/<Month>.pdf   ← the printed academic calendar
+~/Desktop/PA Quizzes/Semester 2/<Class> Inbox/{Syllabus/, Exam N/ (.pptx), Exam N/recordings/}
+~/Desktop/PA Quizzes/Calendars/<Semester>/<Month>.pdf
 ```
-
-- `PA Quizzes` has a **space** (the repo is `PA_Quizzes`); quote it in the
-  shell. Every semester's inboxes sit under it (`Semester 1/`, `Semester 2/`, …)
-  since the Desktop was reorganised on 2026-09-23; no inbox or calendar folder
-  sits loose on the Desktop any more.
-- A new class auto-gets an Inbox folder (`class_inbox_convention`).
-- `calendar-data.js` in the repo is **generated** from those calendar PDFs by
-  `tools/gen_calendar_data.py`. Never hand-edit it. It names the **scheduled**
-  lecturer per row (the syllabus names none), but that has been wrong on at
-  least five rows (CMS L16, CMS Hypertension, Clin Path L4/L6/L7): attribute a
-  lecture from the deck's title slide and the recording, and ask Jaxon when
-  they disagree (`academic_calendar_pipeline`).
-- Lecture recordings come out of Notability; `tools/pull_notability_audio.py`
-  and the `notability_audio_pipeline` memory cover the extraction, including two
-  traps that make a recording that IS there read as absent. Transcribe with
-  `tools/pull_lecture_segments.py` (multi-clip lectures), `tools/lecture_transcript.py`
-  (one file) or `tools/transcribe_long.py`; Notability's own transcript goes next to
-  ours as `<stem>.notability.txt`, and YouTube live-stream lectures (Pharm) get
-  `<stem>.youtube-captions.txt` as their second opinion. Interpretation of Medical
-  Literature has no audio.
-
----
+`PA Quizzes` has a space; quote it. A new class auto-gets an Inbox (`class_inbox_convention`).
+`calendar-data.js` is generated from the calendar PDFs by `tools/gen_calendar_data.py` (never hand-edit); its
+lecturer names have been wrong several times, so attribute a lecture from the deck and the recording
+(`academic_calendar_pipeline`). Recordings come out of Notability (`notability_audio_pipeline`); transcribe with
+`tools/pull_lecture_segments.py`, `tools/lecture_transcript.py` or `tools/transcribe_long.py`, and keep the
+second opinion next to ours (`<stem>.notability.txt`, or `<stem>.youtube-captions.txt` for Pharm).
 
 ## 5. Building things
 
-### The layered pipeline — know which layer you are editing
+**Know which layer you edit:** `question pool -> partition script -> sets.json -> tools/quiz-template/render.py
+-> shipped HTML`. Editing a pool changes nothing until you re-render (46 pages once kept old text this way).
+Partition scripts are seeded. One-off quizzes skip partitioning (example: `tools/micro_e1_hours_pool.py` +
+`tools/render_micro_e1_hours.py`). The `/new-exam-build` skill is the compact runbook.
 
-For most exams the chain is:
+Quizzes:
+1. Read `quiz_build_prompt.md` and the class spec memory.
+2. Ground every question in the deck (`python-pptx`, `=== SLIDE N ===` markers, cite exact filename + slide).
+3. Use the mandatory engine `tools/quiz-template/render.py` (`quiz_engine_standardization`).
+4. Register in `index.html` under the right class/exam with a self-expiring New tag (`new_exam_tag`).
+5. After any render, BEFORE committing: `python3 tools/add_stable_qids.py`, `tools/build_group_quizzes.py`
+   (never hand-edit the Group Study bank), and for Semester 2 `tools/build_guide_links.py "<folder>"` then
+   `tools/check_guide_links.py --strict` (links are keyed to the exact question text).
+6. Run the checkers (§6), then commit and push: for quiz builds pushing is part of the spec.
 
-```
-question pool  →  partition script  →  sets.json  →  renderer  →  shipped HTML
-tools/*_pool*.py                                    tools/quiz-template/render.py
-```
+Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box quotes the syllabus verbatim and
+answers each objective in order). Cram sheets: `tools/cram-sheet-template/` (`cram_sheets_feature`). Arcade:
+`arcade_content_policy`, `arcade_integration`. Study planner (`calendar.html`, `planner-engine.js`,
+`planner-ui.js`): memory `study_planner.md`; `node tools/test_planner.js` must pass after any engine change.
+Med Lit Book Questions: memory `medlit_book_questions.md`. RPG mode was scrapped; do not resume it.
 
-**Editing a pool does not change the website.** The pool feeds a partition
-script that writes `sets.json`, and only re-rendering reaches the HTML. This has
-bitten before: a full cleanup of 233 question pools left 46 shipped pages still
-carrying the old text because they were never re-rendered. Partition scripts are
-seeded, so regenerating reproduces the same selection with only text changed.
-
-Simpler one-off quizzes skip the partition step: pool → renderer → HTML. The
-Micro Exam 1 timetable quiz (§8) is the clean example to copy —
-`tools/micro_e1_hours_pool.py` + `tools/render_micro_e1_hours.py`.
-
-### Quizzes
-
-1. Read `quiz_build_prompt.md` and the class's own spec memory.
-2. Ground every question in the deck. Extract slide text with `python-pptx`,
-   keep `=== SLIDE N ===` markers, and cite **exact filename + slide number**.
-3. Use the mandatory engine: `tools/quiz-template/render.py`
-   (`quiz_engine_standardization`). Do not roll a new one.
-4. Register the quiz in `index.html` under the right class/exam section, with a
-   self-expiring New tag (`new_exam_tag`).
-5. Run `python3 tools/add_stable_qids.py` after any render, BEFORE committing: render.py
-   drops the per-question `qid` that keeps a question's class-picks history attached
-   when its stem is reworded, and this puts it back from the last committed version
-   (`check_all.py` fails until it has run).
-   Re-run `tools/build_group_quizzes.py` — **required after any quiz change.**
-   The Group Study bank is generated from the quiz files; never hand-edit it.
-   Likewise re-run `tools/build_guide_links.py "<folder>"` (then `tools/check_guide_links.py --strict`)
-   after any Semester 2 quiz OR guide rebuild: it writes the per-folder
-   `guide-links.json` behind the "Find it in the study guide" panel. A link is
-   keyed to the question's exact text, so an edited question loses its link
-   until this is re-run, and a rebuilt guide can orphan an anchor.
-6. Run the checkers (§6), fix, then commit and push. For quiz builds
-   specifically, pushing is part of the spec — you do not need to wait to be
-   asked.
-
-### The study planner (calendar.html)
-
-Built 2026-09-28. `calendar.html` is now Today / Plan / Calendar / Stats / Settings.
-Logic is `planner-engine.js` (pure, browser + node), UI is `planner-ui.js`, links come from
-`planner-resources.json` (`python3 tools/build_planner_resources.py` after a new exam folder
-or study page). Tests: `node tools/test_planner.js` against the real calendar (caps, rest days,
-lecture-release constraint, ramp, streak replay); it must pass after any engine change.
-Test hook: `calendar.html?asof=2026-09-28&now=17:30` (separate `planner:v1:test` key).
-Rules worth knowing: nothing is scheduled before its lecture is delivered (release dates come
-from the `lecture` events in calendar-data.js, fallback exam minus 21 days); nothing is written
-to localStorage until the student interacts (a blank record would beat their cloud history in
-cloud-sync); the page uses its own designed dark tokens, not the invert filter; the homepage ring reads `planner:home:v1` (written by planner-ui.js); the How to use button starts a SiteTour virtual tour (the walkthrough video was removed on Jaxon's request; do not re-add one); Settings has an Automatic/Manual mode switch (manual tasks count toward the streak). Details:
-memory `study_planner.md`.
-
-### Book Questions (Med Lit)
-
-`Interpretation of Medical Literature Book Questions/` holds the 183 textbook questions Jaxon supplied
-(Clinical Epidemiology Study Questions, 14 chapters, one quiz each). Source of truth is
-`tools/medlit_book_sets.json`, written by `tools/build_medlit_book.py` from the .docx and rendered by
-`tools/render_medlit_book.py`. They keep the book's 3-7 choices, so `check_exam_standard.py` skips this
-folder on purpose (`TEXTBOOK`). The book explains only the correct answer; the per-choice explanations
-(refute + replacing fact) live in `tools/medlit_book_explanations.json`, keyed by question number and by
-choice TEXT (so answer-position balancing can move choices), written from the lecture decks and
-independently fact-checked; each carries its deck cites (which come first in `cite`) and a `support` level
-(deck / partial / book-only). The folder has no guide of its own: `tools/guide_external.json` maps it to the
-Exam 1 study guide, `guide-links.json` stores the relative path, and the facts the guide lacked were added
-through `tools/guide_additions/interpretation-of-medical-literature-book-questions.json` (its `folder` names
-the Exam 1 folder; `apply_guide_additions.py` merges every additions file targeting one guide in a single
-pass). Edit an explanation -> rerun `build_medlit_book.py`, `render_medlit_book.py`, then the section 7
-link procedure.
-
-### Guides, cram sheets, Arcade
-
-- Guides: `guide_design_system` + `guide_verbatim_io_rule` (the objectives box
-  must quote the syllabus verbatim and answer each one in order).
-- Cram sheets: `tools/cram-sheet-template/`, one per exam, GREEN badge on
-  `guides.html` (`cram_sheets_feature`).
-- Arcade: `arcade_content_policy` and `arcade_integration`.
-- RPG: **scrapped 2026-09-22** (Jaxon: "No to rpg stuff scrap it"); `rpg/` was
-  removed from the site. Do not resume, rebuild or push RPG work unless he
-  revives it.
-
----
-
-## 6. The checkers — run them, do not trust memory
-
-43 live in `tools/check_*.py` (including `check_all.py`). The standing minimum
-after any quiz build is one command:
+## 6. The checkers: run them, do not trust memory
 
 ```bash
-python3 tools/check_all.py "<Class Exam N>"   # keys, exam standard, self-contained, lead-ins,
-                                             # length bias, pool cites, US spelling, accordions,
-                                             # build_guide_links "<folder>" + check_guide_links --strict
+python3 tools/check_all.py "<Class Exam N>" [--fast]   # keys, exam standard, self-contained, lead-ins, length
+                                                      # bias, pool cites, US spelling, accordions, guide links
 ```
-
-plus a LOAD-ONLY look at the pages with `pa-shot` / `pa-sweep` (below). **Never run
-`check_console_errors.py`, `check_answer_distribution.py` or `check_dark_contrast.py`**:
-they open live pages with Firebase unblocked, so every run hits live reads and the
-presence and question counters.
-
-Others worth knowing: `check_ppt_grounding`, `check_truncated_keys`,
-`check_slot_coverage`, `check_master_pairing`, `check_index_sections`. `check_all.py`
-is the canonical list of what runs.
-
-`check_length_bias.py` drives headless Chrome and is slow and fragile; use
-`tools/check_length_bias_fast.py` (node literal extractor, identical numbers,
-~3 s site-wide).
-
-`check_self_contained` (with `tools/_lecturers.py`) catches lecturer names and
-scans TEST_YOURSELF banks; `check_pool_cites` also reads `*_sets.json` and
-`master-exams*.json` — run it BEFORE any render, because a stale sets file puts
-citations back; `check_truncated_keys` compares master keys with their
-topic/pool twins. Always read the denominator a checker prints.
-
-### One runner, a permanent test rig, a saved recipe
-
-- `python3 tools/check_all.py "<Folder Name>" [--fast]` runs the standing checks
-  for one Semester 2 exam folder and prints one PASS/FAIL table (exit 1 on any
-  FAIL). `--fast` skips the slow guide-link pair. It deliberately EXCLUDES
-  `check_console_errors.py`, `check_answer_distribution.py`, `check_dark_contrast.py`
-  (they hit live Firebase; never run them). `pool cites`, `accordions closed` and
-  `guide links --strict` are site-wide, so a failure there can belong to another
-  exam. The exam-standard check is scoped to the folder (since 2026-10-08; it used
-  to run `--new`, which checked nothing in a folder not yet New-tagged).
-- `~/Developer/pa-tools/` (outside the repo, own venv): `bin/pa-shot <page> [--dark]
-  [--mobile] [--full] [--out f.png]` screenshots with Firebase blocked and tours
-  suppressed; `bin/pa-sweep <pages>` runs the contrast + 390px overflow sweep.
-- `/new-exam-build` (user-level slash command) is the compact runbook for a new lecture/exam.
-
----
+plus a load-only look with `~/Developer/pa-tools/bin/pa-shot <page> [--dark] [--mobile]` and
+`bin/pa-sweep <pages>` (contrast + 390 px overflow). **Never run `check_console_errors.py`,
+`check_answer_distribution.py` or `check_dark_contrast.py`**: they open live pages with Firebase unblocked.
+`pool cites`, `accordions closed` and `guide links --strict` are site-wide, so a failure may be another exam's.
+Others worth knowing: `check_ppt_grounding`, `check_truncated_keys`, `check_slot_coverage`,
+`check_master_pairing`, `check_index_sections`; use `check_length_bias_fast.py`, not the slow headless one.
+Run `check_pool_cites` BEFORE any render (a stale sets file puts citations back). Always read the denominator.
 
 ## 7. Content rules that are always on
 
-These are the ones most often broken. Each has a memory with the full story.
+Each has a memory with the full story.
+- **Four options**, site-wide. **Every stem asks exactly ONE thing** and is **self-contained** (never cite the
+  lecture, deck, professor or syllabus; never build on a lecture's worked example).
+- **Every option gets its own explanation** that refutes AND supplies the replacing fact (60+ characters).
+- **Distractors match the key's length and style**; shorten the key, never pad distractors.
+- **Permute answer positions** before shipping. **No abbreviations**, or `ABBREV (full term)`.
+- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks. **Truth wins on conflict**.
+- **Every Semester 2 question links to a passage in its own class's guide that STATES the fact, and a
+  separate reader verified it** (word overlap is not enough). For a new or changed question:
+  1. write a missing fact into the guide via `tools/guide_additions/` + `tools/apply_guide_additions.py` (text only
+     from the question's vetted explanation; `tools/verify_guide_additions.py`);
+  2. `python3 tools/build_guide_links.py`;
+  3. `python3 tools/audit_guide_links.py authored`, then `export --set new --out DIR`, judges read the batches
+     under `tools/audit_guide_links_JUDGE.md` (each PASS needs a machine-checked verbatim quote), `import DIR`;
+  4. PARTIAL/FAIL: write the fact into the guide and repeat;
+  5. `python3 tools/check_guide_links.py --strict` must pass.
+  A judge finding that the guide CONTRADICTS the key is a possible wrong key: check the slides and the truth first.
+- **Semester 1 exams are frozen.** **US spelling** in Semester 2+ (keep taxonomic names such as *Haemophilus*).
 
-- **Four options.** Site-wide, no exceptions.
-- **Every stem asks exactly ONE thing.** Stacked stems test three things at once
-  and tell the student nothing about which part they missed.
-- **Every stem is self-contained.** Never cite the lecture, the deck, the
-  professor or the syllabus; never build a question on a lecture's worked
-  example. A question that stops making sense without the deck open is broken.
-- **Every option gets its own explanation** that refutes AND supplies the
-  replacing fact, ≥60 characters.
-- **Distractors match the key's length and style.** When the key is too long,
-  **shorten the key** — never pad the distractors.
-- **Permute answer positions** before shipping. Authoring every key in position
-  A and shipping it has happened more than once.
-- **No abbreviations**, or write them as `ABBREV (full term)`.
-- **Slides-only grounding.** Content comes from the deck. A lecturer's aside
-  does not add content the deck lacks.
-- **Every question links back to where its concept is explained, and that link is
-  independently VERIFIED** (Jaxon, 2026-09-28, standing for all future work). Each
-  Semester 2 question must have a passage in its OWN class's study guide that STATES
-  the fact behind the correct answer, and a separate reader must have confirmed it.
-  A word-overlap match is not enough (about 1 in 4 section-level matches turned out
-  to be on-topic but not stating the fact). Procedure for any new or changed
-  Semester 2 question:
-    1. write the fact into the guide if it is missing (`tools/guide_additions/`, then
-       `tools/apply_guide_additions.py`; text only from the question's own vetted
-       explanation, checked by `tools/verify_guide_additions.py`);
-    2. `python3 tools/build_guide_links.py`;
-    3. `python3 tools/audit_guide_links.py authored` (records lines written for a
-       question), then `... export --set new --out DIR`, have judges read the
-       batches under `tools/audit_guide_links_JUDGE.md` (each PASS needs a verbatim
-       quote from the guide, machine-checked), `... import DIR`;
-    4. anything PARTIAL/FAIL: write the fact into the guide and repeat;
-    5. `python3 tools/check_guide_links.py --strict` must pass (it fails on any link
-       without a current audit record).
-  If a judge finds the guide CONTRADICTS the answer key, that is a possible wrong
-  key: check it against the slides and the truth (see `truth_wins_on_conflict`)
-  before anything else.
-- **Semester 1 exams are frozen** — never modify them.
-- **US spelling** in Semester 2+ content (hemoconcentration, tumor, edema); keep
-  taxonomic names such as *Haemophilus*.
+## 8. How to work here
 
----
-
-## 8. Current state and open work
-
-Session state (what is in progress, decisions Jaxon has already made, exam
-dates to plan around, open questions) lives outside this file, in the newest
-dated folder under `~/Developer/PA_Quizzes-handoff/` and the PENDING entries at
-the top of the memory index. Read those before starting work; this file holds
-only what stays true between sessions.
-
----
-
-## 9. How to work here
-
-- **Verify empirically.** Measure rather than assert; when you report a number,
-  have run the thing that produced it.
-- **Match the existing pattern before inventing one.** Nearly everything has a
-  precedent in `tools/`.
-- **Flag rather than silently resolve.** When a source contradicts itself or the
-  arithmetic does not close, say so in the output and the commit message. A
-  recent example: an exam's scheduled hours predicted 70 questions but the exam
-  had 65, and the honest move was to apportion the real 65 and name the gap.
-- **Diff after every rule change** when doing bulk rewrites. Regenerating and
-  diffing against the previous run is what catches the defect classes that
-  reading the rule never will.
-- Standing push permission since 2026-07-16 — but say what you pushed.
+- **Verify empirically**: when you report a number, have run the thing that produced it.
+- **Match the existing pattern** before inventing one; nearly everything has a precedent in `tools/`.
+- **Flag rather than silently resolve** contradictions (say so in the output and the commit message).
+- **Diff after every rule change** in bulk rewrites.
+- **Saving tokens (Jaxon, 2026-10-15)**: one owner per change; an independent review only for risky changes
+  (theme.js runs on every page; exam days); quick checks then push; scripts report exit status + failing tail.
+  Never hotfix a file another running agent is editing: `git log -3` + `git status` right before every commit.
+- Standing push permission since 2026-07-16, but say what you pushed.
