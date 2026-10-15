@@ -429,7 +429,7 @@
     ],
     [
      "Amiodarone",
-     "Amiodarone is used in hypertrophic cardiomyopathy to reduce the risk of sudden cardiac death and to control atrial fibrillation. It is not the drug to avoid."
+     "Amiodarone is used in hypertrophic cardiomyopathy to convert atrial fibrillation and flutter to sinus rhythm and suppress their recurrence. It is not the drug to avoid."
     ]
    ],
    "c": 0,
@@ -779,29 +779,34 @@
   {
    "topic": "Dilated cardiomyopathy",
    "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following cardiomyopathies: 2. Restrictive cardiomyopathy 3. Hypertrophic cardiomyopathy 4. Dilated cardiomyopathy 5. Stress cardiomyopathy 6. Myocarditis",
-   "q": "A 59-year-old man with dilated cardiomyopathy, sinus rhythm and an ejection fraction of 20% has a follow-up echocardiogram that shows a thrombus layered against the wall of the left ventricle. Which additional treatment is now indicated?",
+   "q": "A 64-year-old man with dilated cardiomyopathy takes a beta blocker, an angiotensin-converting enzyme inhibitor and a diuretic. His clinician mentions that digoxin may be added later. Which statement describes the place of digoxin in his treatment?",
    "opts": [
     [
-     "Stop the beta blocker",
-     "A beta blocker is kept in every patient with dilated cardiomyopathy because it lowers mortality. The new thrombus calls for anticoagulation, not withdrawal of therapy."
+     "The first-line drug to start now",
+     "Digoxin is not first-line: it is considered a second-line drug in dilated cardiomyopathy, behind core therapy such as his beta blocker and angiotensin-converting enzyme inhibitor."
     ],
     [
-     "Alcohol septal ablation",
-     "Alcohol septal ablation treats septal outflow obstruction in hypertrophic cardiomyopathy. A mural thrombus in a dilated ventricle is treated with anticoagulation."
+     "A drug to avoid in this disease",
+     "Digoxin is avoided in hypertrophic cardiomyopathy, where it raises contractility, but in dilated cardiomyopathy it is on the management list as a second-line drug."
     ],
     [
-     "Surgical myectomy now",
-     "Myectomy removes obstructing septal muscle in hypertrophic cardiomyopathy and does not address a mural thrombus, which needs anticoagulation to prevent embolism."
+     "A replacement for his diuretic",
+     "Digoxin does not replace a diuretic; diuretics are their own class on the dilated cardiomyopathy drug list, and digoxin is a second-line addition."
     ],
     [
-     "Start anticoagulation",
-     "Correct. Dilated ventricles carry a risk of thromboembolic complications, and a known mural thrombus is one of the three indications for anticoagulation in dilated cardiomyopathy, with atrial fibrillation and an artificial valve."
+     "A second-line drug, not first-line",
+     "Correct. Digoxin is on the list of drugs used to manage dilated cardiomyopathy, but it is considered a second-line drug, added after core therapy such as a beta blocker and an angiotensin-converting enzyme inhibitor."
     ]
    ],
    "c": 3,
    "cite": "Cardiomyopathy - Carter.pptx, Slide 42",
    "slot": "agent/regimen",
-   "lead": "treatment"
+   "lead": "treatment",
+   "mis": {
+    "The first-line drug to start now": "reversed value: a second-line drug taken as first-line",
+    "A drug to avoid in this disease": "confused condition: the hypertrophic avoid-list applied to dilated disease",
+    "A replacement for his diuretic": "confused role: an add-on drug taken as a substitute"
+   }
   },
   {
    "topic": "Populations and care",
@@ -1037,7 +1042,7 @@
     ],
     [
      "Antiarrhythmics such as amiodarone",
-     "Amiodarone reduces the risk of sudden cardiac death and converts atrial fibrillation in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."
+     "Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."
     ],
     [
      "Calcium channel blockers like verapamil",
