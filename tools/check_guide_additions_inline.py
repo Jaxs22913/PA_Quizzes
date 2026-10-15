@@ -18,6 +18,12 @@ working copy with the same file at a git ref (default HEAD) and fail on:
               <ol>, another generated line, or an <li> outside a <ul>
   box         an "Also tested" box is still on the page
 
+A line whose text now differs from the ref, or that is new, is NOT a failure when it
+is exactly the html its item in tools/guide_additions/*.json holds today and its id is
+on the page once: that is the additions file being edited on purpose (a repaired
+question's line rewritten, a new question's line added), and it is printed as a note.
+A lost line, a duplicated id, or text that matches no additions item still fails.
+
 A line removed on purpose because another line states the same fact is listed in
 tools/guide_additions_merged.json ({removed id: {"into": surviving id, "keys": the
 question keys that moved onto it}}); the check then requires the surviving line to be
@@ -93,10 +99,12 @@ def main():
     mp = os.path.join(ROOT, "tools", "guide_additions_merged.json")
     if os.path.exists(mp):
         merged = {"ga-" + k: v for k, v in json.load(open(mp, encoding="utf-8")).items()}
-    keys_of = {}
+    keys_of, html_of = {}, {}
     for f in glob.glob(os.path.join(ROOT, "tools", "guide_additions", "*.json")):
         for it in json.load(open(f, encoding="utf-8"))["items"]:
             keys_of["ga-" + it["id"]] = it["keys"]
+            if it.get("html") not in (None, "SKIP"):
+                html_of["ga-" + it["id"]] = norm(it["html"])
     fails, fixed, moved_total, n_total = [], [], 0, 0
     for g, sids in guides.items():
         name = os.path.basename(g)
@@ -107,7 +115,17 @@ def main():
             continue
         before = r.stdout.decode("utf-8")
         la, lb = lines(after), lines(before)
+        ids_after = collections.Counter(i for (i, _), c in la.items() for _ in range(c))
+        ids_before = collections.Counter(i for (i, _), c in lb.items() for _ in range(c))
+
+        def from_file(i, t):
+            """The line is exactly what its additions item holds now, once on the page (an edit or a new line)."""
+            return i in html_of and t == html_of[i] and ids_after[i] == 1 and ids_before[i] <= 1
+
         for (i, t), c in (lb - la).items():
+            if c == 1 and ids_after[i] == 1 and from_file(i, html_of.get(i)) and la.get((i, html_of[i])) == 1:
+                fixed.append("%s: %s rewritten from its additions item (was %r)" % (name, i, t[:60]))
+                continue
             m = merged.get(i)
             if m:
                 into = "ga-" + m["into"]
@@ -120,6 +138,10 @@ def main():
                 continue
             fails.append("%s: lost/dup %s (%r)" % (name, i, t[:60]))
         for (i, t), c in (la - lb).items():
+            if c == 1 and from_file(i, t):
+                fixed.append("%s: %s %s, as its additions item says (%r)"
+                             % (name, i, "rewritten" if ids_before[i] else "added", t[:60]))
+                continue
             fails.append("%s: lost/dup %s appeared or changed (%r)" % (name, i, t[:60]))
         if A.strip_generated(after) != A.strip_generated(before):
             a, b = A.strip_generated(after), A.strip_generated(before)
