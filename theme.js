@@ -1810,8 +1810,19 @@ window.SitePrompts = {
 (function () {
   var PFX = "pipReview:", CAP = 600;
   function slugify(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, ""); }
+  // Only well-formed items come back (the key is synced, so it may hold anything): id, t, f and d must be
+  // strings; the optional text fields are made strings, so no page reading the list can trip on one.
   function load(slug) {
-    try { var v = JSON.parse(localStorage.getItem(PFX + slug)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+    var v;
+    try { v = JSON.parse(localStorage.getItem(PFX + slug)); } catch (e) { return []; }
+    if (!Array.isArray(v)) return [];
+    return v.filter(function (x) {
+      return x && typeof x === "object" && typeof x.id === "string" && typeof x.t === "string" && x.t &&
+             typeof x.f === "string" && typeof x.d === "string";
+    }).map(function (x) {
+      ["a", "st", "k", "kt", "n", "at"].forEach(function (f) { if (typeof x[f] !== "string") x[f] = ""; });
+      return x;
+    });
   }
   function save(slug, list) { try { localStorage.setItem(PFX + slug, JSON.stringify(list)); return true; } catch (e) { return false; } }
   function norm(t) { return String(t || "").replace(/\s+/g, " ").trim(); }
@@ -1896,10 +1907,13 @@ window.SitePrompts = {
      stays backward compatible in both directions.
      ------------------------------------------------------------------------------------------------ */
   var HL_UNIT_SELECTOR = "p, li, .cap, .figcap, .callout, td, .io, .io-head, .io-h";
-  var HL_EXTRA_SELECTOR = "dt, dd, th, caption, figcaption, h1, h2, h3, h4, h5, h6, summary, blockquote, pre, label, " +
+  // <summary> is left out on purpose: a drag or a click on a highlight there would open or close its
+  // accordion. (A legacy unit that holds a summary keeps that text, as it did before.)
+  var HL_EXTRA_SELECTOR = "dt, dd, th, caption, figcaption, h1, h2, h3, h4, h5, h6, blockquote, pre, label, " +
     "div, section, article, aside, figure, details, ul, ol, dl, table, thead, tbody, tfoot, tr, main";
-  var NO_EXTRA = "nav, header, footer, .guide-back-bar, script, style, noscript, template, svg, button, select, textarea, input, [data-no-hl], .gnote";
+  var NO_EXTRA = "nav, header, footer, .guide-back-bar, summary, script, style, noscript, template, svg, button, select, textarea, input, [data-no-hl], .gnote";
   var NO_TEXT = "script, style, noscript, template, svg, button, select, textarea, input, option, [data-no-hl], .gnote";
+  var NO_X_TEXT = NO_TEXT + ", summary";   // text no EXTRA unit owns
   var HL_KEY = "guideHl:" + location.pathname;
   var NOTE_KEY = "guideNote:" + location.pathname;
   var COLORS = ["yellow", "green", "pink", "blue"];
@@ -1929,7 +1943,7 @@ window.SitePrompts = {
           if (!skip && !el.hasAttribute("data-hl-x")) { el.setAttribute("data-hl-x", xunits.length); xunits.push(el); }
           break;
         }
-        if (!skip && el.matches(NO_TEXT)) skip = true;
+        if (!skip && el.matches(NO_X_TEXT)) skip = true;
         if (el === wrap) break;
       }
     }
@@ -1943,7 +1957,7 @@ window.SitePrompts = {
     for (; el; el = el.parentElement) {
       if (el.hasAttribute("data-hl-idx")) return el;
       if (el.__hlc) return (!skip && el.hasAttribute("data-hl-x")) ? el : null;
-      if (!skip && el.matches(NO_TEXT)) skip = true;
+      if (!skip && el.matches(NO_X_TEXT)) skip = true;
       if (el === wrap) return null;
     }
     return null;
@@ -2127,6 +2141,8 @@ window.SitePrompts = {
     m.addEventListener("click", function (e) {
       e.stopPropagation(); // don't also trigger the unit's click-to-jump handler
       if (placing) return;
+      // a highlight inside a link or an accordion's title: the click opens its options, not the link/accordion
+      if (m.closest("a[href], summary")) e.preventDefault();
       var s = window.getSelection();
       if (s && !s.isCollapsed && s.toString().trim()) return;   // the end of a drag, not a click
       openHlPopover(key, m);
@@ -2147,35 +2163,42 @@ window.SitePrompts = {
     var ms = wrapText(u, h.start, h.end, function () { return makeHlMark(h.color || "yellow", key); }, "mark.user-hl");
     return ms;
   }
+  // Where a saved record sits in the guide as it is now: {u, start, end}, or null when it can't be shown.
+  // A record that carries its words (q) and no longer matches them (the guide was edited) is looked for
+  // in the same unit and moved, IN MEMORY ONLY: the stored offsets are never rewritten on load (a write
+  // before cloud-sync has pulled would stamp this device's copy newer than the cloud's), so the record
+  // keeps its key and every later change still finds it. A record without q (saved before 2026-10-15)
+  // is applied as it always was, and skipped, as the old engine did, when it no longer fits its unit.
+  function placeRec(h) {
+    var u = unitByKey(h.idx);
+    if (!u || typeof h.start !== "number" || typeof h.end !== "number" || h.start < 0 || h.end <= h.start) return null;
+    var txt = unitText(u);
+    if (h.q && typeof h.q === "string") {
+      if (txt.substr(h.start, h.q.length) === h.q) return { u: u, start: h.start, end: Math.min(h.end, txt.length) };
+      var at = nearestIndex(txt, h.q, h.start);
+      return at < 0 ? null : { u: u, start: at, end: Math.min(at + (h.end - h.start), txt.length) };
+    }
+    return h.end > txt.length ? null : { u: u, start: h.start, end: h.end };
+  }
   function textOfRecs(recs) {
     return norm0(recs.map(function (h) {
-      var u = unitByKey(h.idx);
-      return u ? unitText(u).slice(h.start, h.end) : (h.q || "");
+      var pl = placeRec(h);
+      return pl ? unitText(pl.u).slice(pl.start, pl.end) : (h.q || "");
     }).join(" "));
   }
 
-  // Restore. Wrapping only splits text nodes, so the order of restoring no longer matters. A record
-  // that carries its words (q) and no longer matches them (the guide was edited) is looked for in the
-  // same unit and moved; a record without q (saved before 2026-10-15) is applied as it always was.
+  // Restore. Wrapping only splits text nodes, so the order of restoring no longer matters. Nothing is
+  // written here.
   (function () {
-    var list = loadHighlights(), moved = false, keys = {};
-    list.forEach(function (h) {
-      var u = unitByKey(h.idx);
-      if (!u || typeof h.start !== "number" || typeof h.end !== "number" || h.end <= h.start) return;
-      if (h.q) {
-        var txt = unitText(u);
-        if (txt.substr(h.start, h.q.length) !== h.q) {
-          var at = nearestIndex(txt, h.q, h.start);
-          if (at < 0) return;                       // its words are gone: keep the record, show nothing
-          h.end = at + (h.end - h.start); h.start = at; moved = true;
-        }
-      }
+    var keys = {};
+    loadHighlights().forEach(function (h) {
+      var pl = placeRec(h);
+      if (!pl) return;                 // its words are gone, or it no longer fits: keep the record, show nothing
       var key = recKey(h);
-      applyRec(u, h, key);
+      applyRec(pl.u, { start: pl.start, end: pl.end, color: h.color }, key);
       keys[key] = h.note || "";
     });
-    Object.keys(keys).forEach(function (k) { if (keys[k]) setMarksNote(k, keys[k]); else setMarksNote(k, ""); });
-    if (moved) saveHighlights(list);
+    Object.keys(keys).forEach(function (k) { setMarksNote(k, keys[k]); });
   })();
 
   function createHighlight(range, color) {
@@ -2458,8 +2481,8 @@ window.SitePrompts = {
   function hlItem(key, note) {
     var recs = recsOf(key);
     if (!recs.length) return null;
-    var u = unitByKey(recs[0].idx);
-    return u ? pipItem(u, textOfRecs(recs), note, { o: recs[0].start }) : null;
+    var pl = placeRec(recs[0]);
+    return pl ? pipItem(pl.u, textOfRecs(recs), note, { o: pl.start }) : null;
   }
   function hlPipId(key) { return window.PipReview.idOf(window.PipReview.trim(textOfRecs(recsOf(key))), PIP_FILE); }
   // A text-box note in the review guide: the guide's own sentence around the spot, plus the note.
@@ -2593,7 +2616,7 @@ window.SitePrompts = {
     // "Add to Pip" (a toggle: "Remove from Pip" once the passage is in the review guide)
     pipToggle(el, function () { return hlPipId(key); }, function () { return hlItem(key, textarea.value.trim()); });
 
-    pop = { el: el, commit: commit, back: null };
+    pop = { el: el, commit: commit, flush: commit, back: null };
     placePopover(el, anchor);
     textarea.focus({ preventScroll: true });
   }
@@ -2653,7 +2676,11 @@ window.SitePrompts = {
       if (v !== saved || isNew) { if (saveNoteText(id, v, isNew ? pending : null)) { saved = v; isNew = false; } }
       return noteItem(id, v);
     });
-    pop = { el: el, commit: commit, cancel: cancel, back: h };
+    function flush() {
+      var v = textarea.value.trim();
+      if (v && (v !== saved || isNew) && saveNoteText(id, v, isNew ? pending : null)) { saved = v; isNew = false; }
+    }
+    pop = { el: el, commit: commit, cancel: cancel, flush: flush, back: h };
     placePopover(el, h);
     textarea.focus({ preventScroll: true });
   }
@@ -2789,6 +2816,19 @@ window.SitePrompts = {
     closeHlPanel();
   });
   window.addEventListener("pagehide", function () { if (pop) closePopover("commit"); });
+  // An iPhone that sends the tab to the background fires no pagehide: keep what has been typed so far
+  // (the editor stays open; an emptied box is not taken as "delete" here).
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden" && pop && pop.flush) { try { pop.flush(); } catch (e) {} }
+  });
+  // Selecting words in an accordion's title by dragging ends in a click on the <summary>, which the
+  // browser treats as "open/close": a drag that leaves a selection is not a toggle.
+  document.addEventListener("click", function (e) {
+    var sm = e.target && e.target.closest && e.target.closest("summary");
+    if (!sm || !wrap.contains(sm)) return;
+    var s = window.getSelection();
+    if (s && !s.isCollapsed && s.toString().trim() && s.rangeCount && s.getRangeAt(0).intersectsNode(sm)) e.preventDefault();
+  }, true);
 
   /* ------------------------------------------------------------------------------------------------
      "Add a note" tool: click it, then click the spot. Keyboard: Enter on the tool pins a note at the

@@ -1030,7 +1030,7 @@
       if (!f) { say("Which exam? Pick one and ask me again."); chips([["Switch exam", function () { switchExam(); }]]); return; }
       var n = reviewCount(f);
       if (!n) {
-        say("You haven't added anything for " + f.t + " yet. In a study guide or cram sheet, select a sentence and tap \"Add to Pip notes\". I'll gather what you save into your own review guide.");
+        say("You haven't added anything for " + f.t + " yet. In a study guide or cram sheet, select a sentence and tap \"Add to Pip\". I'll gather what you save into your own review guide.");
         return;
       }
       say("Opening your review guide for " + f.t + " (" + n + " saved).");

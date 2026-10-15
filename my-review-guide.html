@@ -308,7 +308,7 @@
           var r = btn("Remove", "quiet", function () { removeItem(it); });
           r.setAttribute("aria-label", "Remove from your review guide: " + it.t.slice(0, 60));
           meta.appendChild(o); meta.appendChild(r);
-          if (it.at) meta.appendChild(el("span", null, "Added " + niceDate(it.at.slice(0, 10))));
+          if (/^\d{4}-\d{2}-\d{2}/.test(it.at)) meta.appendChild(el("span", null, "Added " + niceDate(it.at.slice(0, 10))));
           bit.appendChild(meta);
           card.appendChild(bit);
         });

@@ -851,6 +851,8 @@
     .mycram-link:hover { border-color: var(--a-green, #218640); box-shadow: 0 4px 12px rgba(33,134,64,.16); }
     .myreview-link { background: var(--a-blue-soft, #eff5ff); color: var(--a-blue-hover, #185bdf); }
     .myreview-link:hover { border-color: var(--a-blue, #2a6df2); box-shadow: 0 4px 12px rgba(42,109,242,.16); }
+    /* .my-progress-link's display:flex beats the browser's [hidden] rule; home.js reveals this one */
+    .myreview-link[hidden] { display: none; }
     .my-progress-link:hover { border-color: var(--accent, #2a6df2); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.14); }
     /* Playful icon hovers -------------------------------------------------- */
     /* Cap tips its hat when you hover the counter */

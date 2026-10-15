@@ -1475,7 +1475,7 @@ function buildHomeTourSteps() {
       });
     })();
 
-/* ---- My Review Guide link: reveal once the student has added something with "Add to Pip notes" ---- */
+/* ---- My Review Guide link: reveal once the student has added something with "Add to Pip" ---- */
 (function () {
   var link = document.getElementById("myreview-link");
   if (!link) return;
@@ -1484,7 +1484,8 @@ function buildHomeTourSteps() {
       var k = localStorage.key(i);
       if (!k || k.indexOf("pipReview:") !== 0) continue;
       var v = JSON.parse(localStorage.getItem(k));
-      if (v && v.length) { link.hidden = false; return; }
+      // (home.js runs before theme.js, so window.PipReview is not here yet: the same "real item" test)
+      if (Array.isArray(v) && v.some(function (x) { return x && typeof x.t === "string" && x.t && typeof x.id === "string"; })) { link.hidden = false; return; }
     }
   } catch (e) {}
 })();

@@ -153,16 +153,36 @@ def main():
               var s = u.querySelector('strong, b'), t = u.textContent, j = t.indexOf(s.textContent);
               var start = Math.max(0, t.lastIndexOf(' ', j - 6) + 1), end = j + Math.min(s.textContent.length, 8);
               while (end < t.length && /[A-Za-z0-9]/.test(t[end])) end++;
-              return { idx: Number(u.getAttribute('data-hl-idx')), start: start, end: end, words: t.slice(start, end) };
+              return { idx: Number(u.getAttribute('data-hl-idx')), start: start, end: end, words: t.slice(start, end), len: t.length };
             }""")
-            pg.evaluate("([k, v]) => localStorage.setItem(k, v)", ["guideHl:" + guide_path, json.dumps([
-                {"idx": legacy["idx"], "start": legacy["start"], "end": legacy["end"], "color": "green", "note": "old note"}])])
+            # a second unit whose words are stored with offsets that no longer match (as after a guide edit)
+            moved = pg.evaluate(r"""(skip) => { var u = Array.from(document.querySelectorAll('[data-hl-idx]')).find(function (x) {
+                return Number(x.getAttribute('data-hl-idx')) !== skip && x.textContent.length > 80 && !x.querySelector('a'); });
+              var t = u.textContent, q = t.slice(30, 60);
+              return { idx: Number(u.getAttribute('data-hl-idx')), q: q, len: t.length, unique: t.indexOf(q) === t.lastIndexOf(q) }; }""", legacy["idx"])
+            seed = json.dumps([
+                {"idx": legacy["idx"], "start": legacy["start"], "end": legacy["end"], "color": "green", "note": "old note"},
+                {"idx": legacy["idx"], "start": legacy["len"] - 3, "end": legacy["len"] + 5, "color": "pink", "note": ""},
+                {"idx": moved["idx"], "start": 2, "end": 32, "color": "blue", "note": "", "q": moved["q"]}])
+            pg.evaluate("([k, v]) => localStorage.setItem(k, v)", ["guideHl:" + guide_path, seed])
             reload(pg)
             got = pg.evaluate("__t.marks()")
+            old = [g for g in got if g[0].startswith("%d:" % legacy["idx"])]
             check("old-format saved highlight restores to the same words",
-                  len(got) == 1 and re.sub(r"\s+", "", got[0][1]) == re.sub(r"\s+", "", legacy["words"]), (got, legacy["words"]))
+                  len(old) == 1 and re.sub(r"\s+", "", old[0][1]) == re.sub(r"\s+", "", legacy["words"]), (got, legacy["words"]))
+            check("old-format record that no longer fits its unit is skipped, not clipped",
+                  not pg.query_selector("mark.user-hl-pink"), got)
             check("old-format highlight keeps its note indicator",
-                  pg.evaluate("!!document.querySelector('mark.user-hl.has-note') && document.querySelector('mark.user-hl').dataset.note === 'old note'"))
+                  pg.evaluate("!!document.querySelector('mark.user-hl.has-note') && document.querySelector('mark.user-hl.has-note').dataset.note === 'old note'"))
+            mv = [g for g in got if g[0].startswith("%d:" % moved["idx"])]
+            check("a highlight whose words moved shows on its words", moved["unique"] and len(mv) == 1 and re.sub(r"\s+", "", mv[0][1]) == re.sub(r"\s+", "", moved["q"]), (mv, moved["q"]))
+            check("restoring writes nothing on page load (even after moving one)",
+                  pg.evaluate("localStorage.getItem(%s)" % json.dumps("guideHl:" + guide_path)) == seed)
+            pg.click("mark.user-hl-blue")
+            pg.click(".hl-note-popover .hl-note-remove")
+            pg.wait_for_timeout(100)
+            left = json.loads(pg.evaluate("localStorage.getItem(%s)" % json.dumps("guideHl:" + guide_path)))
+            check("the moved highlight can still be removed", len(left) == 2 and not pg.query_selector("mark.user-hl-blue"), left)
 
             cases = [
                 ("plain text into <strong> (p)", r"""() => { var u = Array.from(document.querySelectorAll('p')).find(function (x) {
@@ -287,6 +307,15 @@ def main():
             pg.wait_for_timeout(100)
             check("keyboard: Enter on Add a note opens a new note's editor, Escape leaves nothing behind",
                   kb and note_count() == 1 and len(pg.query_selector_all(".gnote")) == 1)
+            # an iPhone backgrounding the tab (visibilitychange, no pagehide) keeps what was typed
+            pg.click(".gnote")
+            pg.fill(".gnote-editor textarea", "Typed then the phone locked")
+            pg.evaluate("Object.defineProperty(document, 'visibilityState', { configurable: true, get: function () { return 'hidden'; } }); document.dispatchEvent(new Event('visibilitychange'))")
+            kept = pg.evaluate("localStorage.getItem(%s)" % json.dumps("guideNote:" + guide_path)) or ""
+            check("typed note text is saved when the tab goes to the background (editor still open)",
+                  "Typed then the phone locked" in kept and bool(pg.query_selector(".gnote-editor")))
+            pg.evaluate("delete document.visibilityState")
+            pg.keyboard.press("Escape")
             notes_json = pg.evaluate("localStorage.getItem(%s)" % json.dumps("guideNote:" + guide_path))
             hl_json = pg.evaluate("localStorage.getItem(%s)" % json.dumps("guideHl:" + guide_path))
 
@@ -305,6 +334,7 @@ def main():
                 items = pg.evaluate("JSON.parse(localStorage.getItem('pipReview:%s') || '[]')" % slug)
                 check("Add to Pip (selection) saves to pipReview:%s" % slug, len(items) == 1 and items[0].get("t") and items[0].get("a"), items)
                 # from a note's editor
+                ntext = pg.get_attribute(".gnote", "data-text")
                 pg.click(".gnote")
                 try:
                     pg.wait_for_selector(".gnote-editor .hl-note-pip:not([hidden])", timeout=5000)
@@ -313,13 +343,15 @@ def main():
                 except Exception:
                     pass
                 items = pg.evaluate("JSON.parse(localStorage.getItem('pipReview:%s') || '[]')" % slug)
-                check("Add to Pip (note) saves the guide sentence plus the note", len(items) == 2 and items[1].get("n") == "Check orthostatic vitals first" and items[1].get("t"), items[-1:])
+                check("Add to Pip (note) saves the guide sentence plus the note", len(items) == 2 and items[1].get("n") == ntext and items[1].get("t"), items[-1:])
                 clear_ui(pg)
+                pg.evaluate("""(k) => { var v = JSON.parse(localStorage.getItem(k)); v.unshift({ id: 'bad', t: 5, f: 1 }, null, 'x');
+                    localStorage.setItem(k, JSON.stringify(v)); }""", "pipReview:" + slug)
                 rv = open_page(c, BASE + "my-review-guide.html?exam=" + slug)
                 rv.wait_for_timeout(800)
                 body = rv.inner_text("#guide")
                 check("my-review-guide.html shows both saved passages", items and all(re.sub(r"\s+", " ", it["t"])[:40] in re.sub(r"\s+", " ", body) for it in items), body[:300])
-                check("my-review-guide.html shows the note", "Check orthostatic vitals first" in body)
+                check("my-review-guide.html shows the note", ntext in body)
                 check("my-review-guide.html has Open in the guide, Quiz me and Print",
                       rv.evaluate("document.querySelectorAll('#guide .bit .btn').length >= 2 && !!document.getElementById('quizAll') && !!document.getElementById('printBtn')"))
                 rv.click("#guide .bit .btn")
@@ -334,6 +366,18 @@ def main():
             c = ctx()
             acc_url = BASE + a.accordion_guide.replace(" ", "%20")
             pg = open_page(c, acc_url)
+            check("accordion titles (<summary>) are not highlight units", pg.evaluate("document.querySelectorAll('summary[data-hl-x], summary [data-hl-x]').length") == 0)
+            dr = pg.evaluate(r"""() => { var sm = Array.from(document.querySelectorAll('details > summary')).find(function (x) { return x.textContent.trim().length > 14; });
+                sm.scrollIntoView({block: 'center', behavior: 'instant'}); var t = __t.flat(sm).text, i = t.search(/\S/);
+                var a = __t.at(sm, t.slice(i, i + 12), 0), r = document.createRange(); r.setStart(a[0], a[1]); r.setEnd(a[0], a[1] + 1);
+                var b = __t.at(sm, t.slice(i, i + 12), 10), r2 = document.createRange(); r2.setStart(b[0], b[1]); r2.setEnd(b[0], b[1] + 1);
+                var p = r.getBoundingClientRect(), q = r2.getBoundingClientRect(); sm.id = sm.id || 'dragsum';
+                return [p.left + 1, p.top + p.height / 2, q.right - 1, q.top + q.height / 2, sm.id]; }""")
+            pg.mouse.move(dr[0], dr[1]); pg.mouse.down(); pg.mouse.move((dr[0] + dr[2]) / 2, dr[3], steps=4); pg.mouse.move(dr[2], dr[3], steps=4); pg.mouse.up()
+            pg.wait_for_timeout(200)
+            check("a drag that selects words in an accordion title does not open it",
+                  pg.evaluate("(id) => !document.getElementById(id).parentElement.open && !!getSelection().toString().trim()", dr[4]))
+            clear_ui(pg)
             pg.evaluate("document.querySelector('details > summary').scrollIntoView({block: 'center', behavior: 'instant'})")
             pg.click("details > summary")
             pg.wait_for_timeout(200)
@@ -422,9 +466,14 @@ def main():
                     check("Semester 1 guide: highlighting still works", bool(sw) and len(pg.evaluate("__t.marks()")) == 1)
                 pg.close()
             c.close()
-            # the homepage's My Review Guide link appears once something is saved
+            # the homepage's My Review Guide link: hidden in a fresh browser, shown once something is saved
             c = ctx()
-            c.add_init_script("try{localStorage.setItem('pipReview:x-test', JSON.stringify([{id:'r1', t:'a passage'}]))}catch(e){}")
+            pg = open_page(c, BASE + "index.html")
+            check("homepage: My Review Guide link hidden with nothing saved",
+                  pg.evaluate("(function(){var l=document.getElementById('myreview-link');return !!l && l.getClientRects().length===0;})()"))
+            c.close()
+            c = ctx()
+            c.add_init_script("try{localStorage.setItem('pipReview:x-test', JSON.stringify([{id:'r1', t:'a passage', f:'F', d:'d.html'}]))}catch(e){}")
             pg = open_page(c, BASE + "index.html")
             check("homepage: My Review Guide link shows once something is saved",
                   pg.evaluate("(function(){var l=document.getElementById('myreview-link');return !!l && !l.hidden && l.getClientRects().length>0;})()"))
