@@ -2431,7 +2431,8 @@
       lines.shift();
       // mode "guide": "[123]" is a line of the study guide, a plain number one of Pip's candidates (in the order written)
       m[1].replace(/\[\s*(\d+)\s*\]|(\d+)/g, function (all, ln, cn) {
-        if (ln) refs.push({ line: +ln }); else if (+cn >= 1 && +cn <= n) refs.push({ cand: +cn });
+        // a bare number above the candidates' count can only be a guide line (Claude sometimes drops the brackets)
+        if (ln) refs.push({ line: +ln }); else if (+cn >= 1 && +cn <= n) refs.push({ cand: +cn }); else if (+cn > n) refs.push({ line: +cn });
         return all;
       });
       used = /none/i.test(m[1]) ? [] : uniq(refs.filter(function (t) { return t.cand; }).map(function (t) { return t.cand; }));
