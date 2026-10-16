@@ -51,6 +51,8 @@ key by design), unresolved.json (id, file, stem, reason: questions with no usabl
 skipped silently). The manifest (keys, explanations, slide text: what import needs) is written OUTSIDE it, to
 ~/.cache/pa-quizzes/review-manifests/<sha1 of the absolute --out path>.json. import and `export --pass audit
 --from DIR` look it up there and fall back to DIR/manifest.json for directories exported before this change.
+`export --pass audit --from DIR` without --ids exports only the items in DIR's judge batches (before 2026-10-15 it
+pulled every reviewed item in --folder/--files scope).
 The judge writes verdict-NNN.json next to each judge-NNN.json. `import` writes repair.json (rejected items
 and why) and records only the accepted ones.
 
@@ -754,6 +756,17 @@ def cmd_export(a):
         print("--ids: %d id(s) listed, %d found in %s%s" % (len(set(want)), len(qs), a.folder, (" (--files %s)" % a.files) if a.files else ""))
         if unknown:
             print("   UNKNOWN id(s), not exported: %s" % ", ".join(unknown[:20]) + (" ..." if len(unknown) > 20 else ""))
+    old, place = {}, {}
+    if a.pass_ == "audit" and a.from_dir:
+        for f in sorted(glob.glob(os.path.join(a.from_dir, "judge-*.json"))):
+            old[os.path.basename(f)] = json.load(open(f, encoding="utf-8"))
+        for name, b in old.items():
+            for it in b["items"]:
+                place[it["id"]] = name
+        if not a.ids:                                       # --from alone = that blind export's items, not every reviewed item in scope
+            n0 = len(qs)
+            qs = [q for q in qs if q.h in place]
+            print("--from: %d of %d item(s) in scope were in %s's blind batches" % (len(qs), n0, a.from_dir))
     skipped_nb = 0
     if a.pass_ == "blind":
         pending = [q for q in qs if a.include_reviewed or not blind_of(rec, q.h)]
@@ -785,13 +798,6 @@ def cmd_export(a):
     os.chmod(a.out, 0o700)
     batches = []
     if a.pass_ == "audit" and a.from_dir:
-        old = {}
-        for f in sorted(glob.glob(os.path.join(a.from_dir, "judge-*.json"))):
-            old[os.path.basename(f)] = json.load(open(f, encoding="utf-8"))
-        place = {}
-        for name, b in old.items():
-            for it in b["items"]:
-                place[it["id"]] = name
         groups = {}
         for q, ev in ready:
             groups.setdefault(place.get(q.h, "~rest"), []).append((q, ev))

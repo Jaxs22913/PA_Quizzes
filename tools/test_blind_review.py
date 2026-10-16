@@ -207,7 +207,9 @@ def main():
         rc, out = run("export", "--pass", "audit", "--folder", FOLDER, "--files", FILES, "--sample", "3", "--seed", "4",
                       "--only-reviewed", "--from", d1, "--out", d2)
         assert rc == 0, out
-        assert "29 skipped for having no blind record" in out and "(0 already have a current audit record" in out, out
+        # --from limits the scope to d1's 3 items (not all 30); 2 of them were rejected at import, so have no blind record
+        assert "--from: 3 of 30 item(s)" in out, out
+        assert "2 skipped for having no blind record" in out and "(0 already have a current audit record" in out, out
         assert not os.path.exists(os.path.join(d2, "manifest.json")) and os.path.exists(R.manifest_path(d2))
         assert "explanations" not in open(os.path.join(d2, "unresolved.json")).read()
         ab = json.load(open(os.path.join(d2, "judge-001.json")))
