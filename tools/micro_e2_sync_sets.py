@@ -24,7 +24,7 @@ sys.path.insert(0, HERE)
 
 POOLS = {7: ["micro_l7_pool_a", "micro_l7_pool_b"], 8: ["micro_l8_pool_a"],
          9: ["micro_l9_pool_a", "micro_l9_pool_b", "micro_l9_pool_c"],
-         10: ["micro_l10_pool_a", "micro_l10_pool_b"], 11: ["micro_l11_pool"],
+         10: ["micro_l10_pool_a", "micro_l10_pool_b", "micro_l10_pool_m"], 11: ["micro_l11_pool"],
          12: ["micro_l12_pool"], 13: ["micro_l13_pool"]}
 KEYS = ("topic", "io", "q", "opts", "c", "cite", "img", "alt", "slide", "mis")
 

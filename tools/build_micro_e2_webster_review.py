@@ -1303,7 +1303,10 @@ slide.</p>
   <strong>Lecture 9</strong> (Cocci of Medical Importance), <strong>Lecture 11</strong> (Novel
   Antimicrobial Therapy) and <strong>Lecture 13</strong> (Miscellaneous Bacterial Agents of
   Disease). Use the full <a href="micro-exam-2-study-guide.html">Exam 2 study guide</a> and the
-  <a href="micro-exam-2-cram-sheet.html">cram sheet</a> for those.</p>
+  <a href="micro-exam-2-cram-sheet.html">cram sheet</a> for those. The five
+  <a href="micro-exam-2-master-exam-form-a.html">master exam forms</a> draw from all seven lectures
+  by class time, and every form carries at least one question on each of her &ldquo;know cold&rdquo;
+  items.</p>
   <p><strong>She also skipped parts of her own lectures, and they are still objectives:</strong>
   in Lecture 7, the mechanisms of carcinogenesis (Objective 8) and how allergy is diagnosed; in
   Lecture 10, <em>Nocardia</em> and the modes of transmission (Objective 2); in Lecture 12, the uses
@@ -1567,7 +1570,9 @@ def build():
     for lec, k, s in FLAGS:
         print("    [%s] %s" % (k, s))
 
-    for probe in ("data-audio-dir", "<script>alert", "master-exam", "Lecture 9, Slide",
+    # the masters link must point at a page that exists (it was held out until the forms were built)
+    assert os.path.exists(os.path.join(os.path.dirname(OUT), "micro-exam-2-master-exam-form-a.html")), "masters not built"
+    for probe in ("data-audio-dir", "<script>alert", "Lecture 9, Slide",
                   'rel="alternate"', "Study Guide</title>"):
         assert probe not in html, "unexpected %r in output" % probe
     assert html.count("<main>") == 1 and html.count("</main>") == 1

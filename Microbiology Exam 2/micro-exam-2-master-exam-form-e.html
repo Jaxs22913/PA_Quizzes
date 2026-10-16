@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #3f8a55; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c2903a; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microbiology Exam 2 Master Exam &mdash; Form E</title>
+<style>
+  :root{
+    --navy:#1f4d2b; --indigo:#3f8a55; --gold:#c2903a; --ice:#e8f4ea;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#1f4d2b;--gold-l:#c2903a;--indigo-l:#1f4d2b;--navy:#89ba92;--indigo:#509b65;--gold:#c2903a;--ice:#112917;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#509b65;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#1f4d2b;--indigo-t:#38844f;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Microbiology &mdash; Comprehensive Master Exam</h1>
+    <div class="sub">Exam 2 &middot; Lectures 7&ndash;13 &middot; Form E</div>
+    <span class="pill">60 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px">Sixty questions drawn from all seven lectures of the Exam 2 block, in proportion to class time rather than at random. <b>Every lecture had two hours on the timetable, so each one gives eight or nine questions to every form</b>; which four lectures get the ninth question rotates from form to form. <b>Every form also carries at least one question on each item Dr. Webster put at &ldquo;know cold&rdquo; in her Exam 2 review</b>: the four types of hypersensitivity, allergy, ABO and Rh, primary versus secondary immunodeficiency and immunotherapy; <i>Bacillus anthracis</i>, where the spore sits, <i>Clostridium perfringens</i>, <i>Clostridium botulinum</i>, <i>Clostridioides difficile</i>, <i>Listeria</i>, diphtheria and leprosy; and descriptive versus analytic studies, the history of epidemiology, morbidity and mortality, association versus causation, and endemic, epidemic and herd immunity. Her &ldquo;know it&rdquo; material fills the rest of her lectures, and Dr. Fair&rsquo;s four lectures are weighted by time alone. <b>No question appears in more than one form</b>, so the five forms give you 300 distinct questions. Most are the topic quizzes&rsquo; questions word for word; a few come from the same question pools and appear only here. Every question cites its slide.</p>
+    <div class="chips"><span class="chip">Disorders in immunity</span><span class="chip">Diagnosing infections</span><span class="chip">Cocci</span><span class="chip">Gram-positive bacilli</span><span class="chip">Novel antimicrobial therapy</span><span class="chip">Epidemiology</span><span class="chip">Miscellaneous bacterial agents</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Graft types", "io": "5 — Explain the immunology of transplantations and tissue histocompatibility", "q": "What is a graft taken from a genetically identical twin called?", "opts": [["An autograft", "An autograft is taken from the patient's own body, such as a skin, gum or vein graft, rather than from a twin."], ["An isograft", "Correct. An isograft comes from a genetically identical twin, so donor and recipient share the same histocompatibility antigens."], ["An allograft", "An allograft comes from a genetically different member of the same species, so it carries foreign histocompatibility antigens."], ["A xenograft", "A xenograft comes from another species entirely, which is the least compatible source of the four graft types."]], "c": 1, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 43", "qid": "1clm0o0"}, {"topic": "Corynebacterium", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "Most cases of diphtheria occur in which group?", "opts": [["Non-immunized children", "Correct: most cases occur in non-immunized children living in crowded, unsanitary conditions."], ["Fully vaccinated adults with implants", "Implants are the risk for Cutibacterium acnes biofilm infection; diphtheria strikes the non-immunized."], ["Older adults on gastric acid inhibitors", "Gastric acid inhibitors raise the risk of Clostridioides difficile infection, not diphtheria."], ["Pig farmers with abraded hands", "Abraded hands on pig farms are the route of Erysipelothrix rhusiopathiae."]], "c": 0, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 61", "qid": "4r9jp4"}, {"topic": "Bacillus anthracis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "Besides antibiotics, what is pulmonary anthrax treated with?", "opts": [["Neutralizing antitoxin", "Correct: pulmonary anthrax is also treated with antitoxin, aimed at the toxins that drive its shock."], ["Hyperbaric oxygen therapy", "Hyperbaric oxygen floods tissue with oxygen to inhibit the anaerobe of gas gangrene rather than treating anthrax."], ["Fecal microbiota transplant", "Fecal microbiota transplant restores colonic flora in Clostridioides difficile infection."], ["Surgical removal of the lung", "Surgery is not the added treatment; pulmonary anthrax is given antitoxin to neutralize the toxins."]], "c": 0, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 16", "qid": "14pr984"}, {"topic": "Complement fixation", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "Which four components does the complement fixation test use?", "opts": [["Antigen, antibody, enzyme and chromogenic substrate", "Those are the components of an enzyme-linked immunosorbent assay."], ["Primers, nucleotides, polymerase and template", "Primers, nucleotides, polymerase and template are the components of a polymerase chain reaction."], ["Agar, antigen, antibody and a gel matrix", "That describes the Ouchterlony double-diffusion precipitation method."], ["Antigen, antibody, complement and sensitized sheep red cells", "Correct. The antibody is referred to as lysin, and the technique is described as lysin-mediated hemolysis."]], "c": 3, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 45", "qid": "170txpg"}, {"topic": "Staphylococcal disease", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["aureus"], "q": "What is a carbuncle?", "opts": [["An inflamed single follicle", "Superficial inflammation of a single hair follicle is folliculitis, which usually resolves without complications."], ["A cluster of joined furuncles", "Correct: a carbuncle is a larger, deeper lesion formed by the aggregation and interconnection of a cluster of furuncles."], ["One boil in a single gland", "A boil in one follicle or sebaceous gland that becomes an abscess is a furuncle; a carbuncle is a cluster of them."], ["Bubble-like peeling blisters", "Bubble-like swellings that break and peel away describe impetigo, most common in newborns."]], "c": 1, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 10", "qid": "1uprybi"}, {"topic": "Phage biology", "io": "3 — Describe phage therapy", "q": "What is a bacteriophage?", "opts": [["A white blood cell that eats bacteria", "A phagocyte eats bacteria; a bacteriophage is a virus that infects bacteria."], ["A bacterium that infects viruses", "It is the other way round: a bacteriophage is a virus that infects bacteria."], ["An antibiotic made by fungi", "Fungal products such as penicillin are antibiotics; a bacteriophage is a virus that attacks bacteria."], ["A virus that infects bacteria", "Correct: bacteriophages, or phages, are very small viruses that specifically attack bacteria and no other types of cells."]], "c": 3, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 17 and 20", "qid": "17lj4kj"}, {"topic": "Listeria", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "How does Listeria monocytogenes avoid the humoral immune system?", "opts": [["It is coated in a thick capsule", "Listeria has no capsule; its protection is replicating inside the cytoplasm of host cells."], ["It replicates inside host cells", "Correct: it induces phagocytosis and then replicates in the cytoplasm of cells, out of reach of antibody."], ["It hides as dormant spores in tissue", "Listeria forms no spores; it avoids antibody by living inside host cells."], ["It secretes a toxin that destroys antibody", "Listeria's virulence is intracellular replication after inducing phagocytosis, not an antibody-destroying toxin."]], "c": 1, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 53", "qid": "1agm7km"}, {"topic": "Susceptibility testing", "io": "1 — Compare and contrast current antibiotic use related to novel antimicrobial therapy", "img": "micro-exam-2-quiz-images/l11-s09-disk-diffusion.jpg", "alt": "Two agar plates side by side, each with several white antibiotic disks; the right plate shows wide clear rings around its disks while the left plate shows growth close to its disks.", "slide": "Disk diffusion plates, Escherichia coli (left) and Staphylococcus aureus (right).", "q": "In these disk diffusion plates, what do the wide clear rings around the disks on the right-hand plate indicate?", "opts": [["That organism is inhibited by those antibiotics", "Correct: wide zones of inhibition mean the antibiotics stopped that organism growing around the disks; growth close to the disks means little effect."], ["That organism is resistant to those antibiotics", "Resistance shows as growth up to the disk; wide clear rings mean the organism was inhibited."], ["The plate was not inoculated with bacteria", "The plate is covered in growth outside the rings; the clear rings are zones of inhibition around the disks."], ["The disks carried no antibiotic", "Blank disks would leave no rings; the clear zones show the antibiotic diffusing out and inhibiting growth."]], "c": 0, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 9", "qid": "1jbfptb"}, {"topic": "Surveillance", "io": "5 — Define the primary components of public health surveillance", "q": "Which type of surveillance uses staff members to contact health care providers regularly for data?", "opts": [["Passive surveillance", "Passive surveillance waits for reports submitted by facilities and providers; regularly contacting providers is active surveillance."], ["Active surveillance", "Correct: active surveillance uses staff to regularly contact providers; it is the most accurate but the most expensive, and often used during outbreaks or seasonal events."], ["Syndromic surveillance", "Syndromic surveillance is defined by case definitions based on clinical features alone; staff contacting providers is active surveillance."], ["Sentinel surveillance", "Sentinel surveillance relies on a prearranged group that agrees to report all cases; staff phoning providers regularly is active surveillance."]], "c": 1, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 19 and 20", "qid": "17w9dla"}, {"topic": "Streptococcus pneumoniae", "io": "2 — Describe the modes of transmission by which humans acquire cocci of medical importance", "org": ["pneumoniae"], "q": "Pneumococcal infections are usually endogenous. What does that mean?", "opts": [["From contaminated surfaces", "It is a very delicate bacterium that does not survive long outside its habitat, so surfaces are not the usual source."], ["From an animal reservoir", "No animal reservoir is described; the source is the person's own nasopharyngeal flora."], ["From the person's own flora", "Correct: 5 to 50% of people carry it in the nasopharynx, and infection usually comes from that carriage, especially if the host is immunocompromised."], ["From another patient's blood", "Blood exposure is not the route; endogenous means the infection comes from the host's own flora."]], "c": 2, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 51", "qid": "kdu8di"}, {"topic": "Immunoassays", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "What labels the antigen or antibody in a radioimmunoassay?", "opts": [["A fluorescent dye", "Fluorescent dye labeling is used in fluorescent antibody testing."], ["An enzyme producing a chromogen", "An enzyme producing a chromogen is the label used in an enzyme-linked immunosorbent assay."], ["Radioactive isotopes", "Correct, and the alternative is the enzyme-linked immunosorbent assay, where an enzyme-antibody complex produces a colored chromogen instead."], ["A restriction enzyme", "Restriction enzymes cut DNA and are used in RFLP analysis rather than labeling an immunoassay."]], "c": 2, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 50", "qid": "emmpjk"}, {"topic": "Applications", "io": "10 — Compare and contrast applications of epidemiology, including policy development, outbreak investigation, social and behavioral issues, the environment and occupational health", "q": "What is the first step in investigating a communicable disease outbreak?", "opts": [["Verify the diagnosis", "Verifying the diagnosis comes third, after establishing the outbreak and preparing for field work."], ["Develop a focused hypothesis", "A focused hypothesis comes after cases are defined and described with descriptive epidemiology."], ["Implement control measures", "Control and prevention measures come near the end, after the hypothesis is evaluated and refined."], ["Establish its existence", "Correct: the investigation begins by establishing the existence of an outbreak, then preparing for field work and verifying the diagnosis."]], "c": 3, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 62", "qid": "2r54gj"}, {"topic": "Diet & plant oils", "io": "4 — Describe other alternative therapies to antibiotic use", "q": "What is still needed before plant essential oils can be judged as antibacterial treatments?", "opts": [["Nothing; they are already standard care", "They are not standard care; their activity is in vitro, and better-designed experiments are needed."], ["Better experimental design", "Correct: the hypotheses about herbs and spices need better experimental design to test them; in vitro activity alone does not show clinical benefit."], ["Only a lower price", "Cost is not the gap; the hypotheses need better experimental design to be tested."], ["Regulatory approval as antibiotics alone", "Approval would follow evidence; what is missing first is better experimental design."]], "c": 1, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 31", "qid": "yrs96i"}, {"topic": "Fecal microbiota transplant", "io": "2 — Describe fecal microbiota transplant (FMT)", "q": "Why is fecal microbiota transplant researched as a treatment for Clostridioides difficile infection, an indirect adverse effect of antibiotics?", "opts": [["It is a stronger antibiotic", "Fecal microbiota transplant is screened donor stool, not an antibiotic; it realigns the gut microflora that antibiotics disturbed."], ["It kills the patient's remaining gut bacteria", "It does the opposite: it gives the patient screened donor stool to realign the gut microflora rather than killing what remains."], ["It vaccinates the gut against the toxin", "It is not a vaccine; it realigns the commensal gut microflora that antibiotics disturbed, using screened donor stool."], ["It restores the disturbed gut flora", "Correct: the infection is an indirect effect of antibiotics on the commensal microflora, and fecal microbiota transplant realigns that gut microflora using screened donor stool."]], "c": 3, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 14, 24 and 26", "qid": "3jqyi6"}, {"topic": "Helicobacter", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "How does Helicobacter pylori survive in the stomach?", "opts": [["It forms acid-proof spores", "Helicobacter forms no spores (an endospore is the Coxiella feature); it survives the stomach by making urease, which raises its local pH."], ["Urease raises its local pH", "Correct: Helicobacter pylori produces urease, which converts urea into ammonium and bicarbonate, raising its local pH so the bacterium can survive."], ["It hides inside host cells", "Living inside host cells is the obligate intracellular habit of rickettsias and chlamydias; Helicobacter survives by raising its local pH with urease."], ["It lacks a cell wall", "Lacking a cell wall is the Mycoplasma feature; Helicobacter survives in the stomach by raising its local pH with urease."]], "c": 1, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 39", "qid": "1coxuns"}, {"topic": "Precipitation", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "What does a precipitation test require?", "opts": [["A gel or liquid matrix", "Correct — soluble antigen is made insoluble by antibody, and a visible precipitate forms. Tube precipitation and Ouchterlony double-diffusion are the named forms. The precipitate forms within it."], ["A plastic card or glass slide", "Those are used for agglutination reactions, which need no gel matrix."], ["A thermal cycler", "A thermal cycler is used for the polymerase chain reaction rather than for a precipitation reaction."], ["Sensitized sheep red blood cells", "Sensitized sheep red blood cells are a component of the complement fixation test rather than of precipitation."]], "c": 0, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 36", "qid": "1kx3j7c"}, {"topic": "Checkpoint inhibitors", "io": "9 — Compare and contrast immunotherapy strategies", "q": "Immune checkpoint inhibitors are currently used for which cancers?", "opts": [["Bladder cancer only", "Bladder cancer is treated with bacillus Calmette-Guérin (BCG), a therapeutic vaccine, not named for checkpoint inhibitors."], ["Melanoma and lung cancer", "Correct. Some checkpoint inhibitors are currently used for melanoma and some lung cancers."], ["Prostate cancer only", "Sipuleucel-T, a therapeutic vaccine, is the agent approved for metastatic castration-resistant prostate cancer."], ["Blood cancers only", "Chimeric antigen receptor T cells are the therapy approved for different blood cancers."]], "c": 1, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 74", "qid": "10uil2u"}, {"topic": "Association & causation", "io": "8 — Distinguish between the terms association and causation", "q": "A single survey finds that people who report a certain exposure have more of a disease than people who do not, and nothing more is known. How is this relationship best classed?", "opts": [["Causation", "Causation implies a true mechanism that leads from exposure to disease; one survey showing a relationship is an association, and finding an association does not make it causal."], ["A biological gradient", "A biological gradient is a dose-response relationship, where changes in exposure track a trend in risk; a plain exposed-versus-unexposed comparison shows no such trend."], ["A temporal sequence", "Temporal sequence means the exposure is shown to come before the disease; nothing here shows which came first, so the finding is an association."], ["An association", "Correct: an identifiable relationship between an exposure and a disease is an association; it implies the exposure might cause the disease, but finding an association does not make it causal."]], "c": 3, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 43 and 46", "qid": "ehpfez"}, {"topic": "Association & causation", "io": "8 — Distinguish between the terms association and causation", "q": "Three studies each find that lung cancer mortality rises steadily from fewer than 10 to more than 40 cigarettes a day. Which of Hill's criteria does this rising trend most directly support?", "opts": [["Specificity", "Specificity is an exposure leading to a single or characteristic effect; a risk that climbs with dose is the biological gradient."], ["Biological gradient", "Correct: a trend in risk with increasing dose, here more cigarettes per day, is a dose-response relationship, the biological gradient."], ["Temporal sequence", "Temporal sequence asks whether exposure came first; a risk rising with each step in dose is the biological gradient."], ["Plausibility", "Plausibility asks whether the mechanism makes biological sense; a stepwise rise with dose is the biological gradient."]], "c": 1, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 49 and image on Slide 49", "qid": "n5ow7w"}, {"topic": "Immunopathologies", "io": "1 — Describe the types of immunopathologies", "q": "Which four categories of immunopathology are described?", "opts": [["Infection, inflammation, necrosis and repair", "These are general tissue responses rather than the four categories of immune system malfunction named."], ["Bacterial, viral, fungal and parasitic disease", "These classify pathogens rather than describing ways the immune system itself goes wrong."], ["Allergy, autoimmunity, immunodeficiency and cancer", "Correct, and they sort neatly by direction: allergy and autoimmunity are overreactions, while immunodeficiency and cancer are underreactions."], ["Innate, adaptive, humoral and cellular", "These are divisions of normal immune function rather than categories of immunopathology."]], "c": 2, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 3", "qid": "o4sy77"}, {"topic": "Clostridioides difficile", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "Which complication belongs to Clostridioides difficile disease?", "opts": [["Myocarditis", "Myocarditis with an abnormal electrocardiogram is a target-organ effect of diphtheria toxin."], ["Meningitis", "Meningitis can complicate any form of anthrax and is a risk of listeriosis in vulnerable patients."], ["Descending paralysis", "Descending paralysis is the pattern of botulism, from blocked acetylcholine release."], ["Toxic megacolon", "Correct: it causes antibiotic-associated (pseudomembranous) colitis, toxic megacolon and perforation of the colon."]], "c": 3, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 43", "qid": "1d1dnp0"}, {"topic": "Resistance & superbugs", "io": "1 — Compare and contrast current antibiotic use related to novel antimicrobial therapy", "q": "Klebsiella pneumoniae is counted among the drug-resistant superbugs in which form?", "opts": [["Vancomycin-resistant", "Vancomycin resistance is the form in which Enterococcus and Staphylococcus aureus count as superbugs; Klebsiella pneumoniae counts as carbapenem resistant."], ["Methicillin-resistant", "Methicillin resistance is the form in which Staphylococcus aureus counts as a superbug; Klebsiella pneumoniae counts as carbapenem resistant."], ["Carbapenem-resistant", "Correct: carbapenem-resistant Klebsiella pneumoniae is counted among the superbugs, alongside vancomycin-resistant Enterococcus and Pseudomonas."], ["Toxigenic strains", "Toxigenic strains are the form in which Escherichia coli counts among the superbugs; Klebsiella pneumoniae counts as carbapenem resistant."]], "c": 2, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 16", "qid": "1s95zge"}, {"topic": "Phage therapy", "io": "3 — Describe phage therapy", "q": "What still has to be precisely defined before phage therapy is used routinely?", "opts": [["The color of the phage preparation", "Color is not an issue; dose, route, frequency and duration must be defined."], ["The dose, route, frequency and duration", "Correct: phage therapy is not a magic bullet: the optimal dose, administration route, frequency and duration of treatment still need to be precisely defined."], ["Whether phages infect bacteria", "That is settled: phages infect bacteria. The open questions are dose, route, frequency and duration."], ["Which patients prefer phages to pills", "Preference is not the open question; optimal dose, route, frequency and duration are."]], "c": 1, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 21", "qid": "znujn0"}, {"topic": "Rickettsias", "io": "2 — Describe the modes of transmission by which humans acquire miscellaneous bacterial agents of human diseases", "q": "Which vector carries Rickettsia prowazekii, the cause of epidemic typhus?", "opts": [["Fleas", "Fleas carry Rickettsia typhi, the cause of endemic (murine) typhus; epidemic typhus is carried by body lice."], ["Ticks", "Ticks carry Rickettsia rickettsii (Rocky Mountain spotted fever) and Ehrlichia; epidemic typhus is carried by body lice."], ["Mites", "Mites carry rickettsialpox and scrub typhus; epidemic typhus is carried by body lice."], ["Body lice", "Correct: epidemic typhus is caused by Rickettsia prowazekii, carried by lice; louse feces are rubbed into the bite, and humans are the primary reservoir."]], "c": 3, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 45 and image on Slide 47", "qid": "1eklxql"}, {"topic": "Hemolytic disease", "io": "4 — Describe the mechanism of transfusion reactions", "q": "How is hemolytic disease of the newborn prevented?", "opts": [["Active immunization of the mother against Rh", "The approach is PASSIVE immunization, giving preformed antibody rather than provoking her own."], ["Transfusing the mother with Rh positive blood", "Transfusing the mother with Rh positive blood would sensitize her rather than protect her."], ["Passive immunization with anti-Rh antibody", "Correct — Rhogam prevents sensitization of the mother, which is why it must be given before her own response can develop."], ["Cross-matching the fetus against the mother", "Cross-matching is a transfusion compatibility test rather than a preventive measure here."]], "c": 2, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 36", "qid": "1v12nn8"}, {"topic": "Epidemic terms & herd immunity", "io": "9 — Define the terms endemic, epidemic, pandemic, sporadic, and herd immunity", "img": "micro-exam-2-quiz-images/l12-s56-hepatitis-a-curve.png", "alt": "A bar chart of hepatitis A cases by date of onset in November and December: one food handler case marked as the presumed index case in early November, then a single tall, sharp cluster of cases in late November with a smooth curve over it, and a few secondary cases afterward.", "slide": "Epidemic curve: hepatitis A cases by date of onset.", "q": "This epidemic curve shows hepatitis A cases after one food handler fell ill, rising to a single sharp peak. Which type of epidemic does it show?", "opts": [["Common source, point", "Correct: the cases share one source and the exposure was brief, so they cluster into one sharp peak within about one incubation period: a point common source."], ["Common source, continuous", "A continuous common source keeps exposing people over a longer time, giving a long, flat spread of cases; one sharp peak means a brief, point exposure."], ["Propagated", "Propagated spread builds in successive waves from person to person; one sharp peak after a single source is a point common source."], ["Other, zoonotic", "Zoonotic and vector-borne epidemics fall under 'other'; a single sharp peak traced to one food handler is a point common source."]], "c": 0, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 55 and image on Slide 56", "qid": "10vglxm"}, {"topic": "Coagulase-negative staphylococci", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["hominis"], "q": "Where does Staphylococcus hominis live?", "opts": [["On the scalp and external ear", "The scalp, face and external ear are the home of Staphylococcus capitis."], ["In the anterior nares", "The anterior nares are where humans mostly carry Staphylococcus aureus."], ["In the vagina and intestine", "Skin, intestine and vagina are where Staphylococcus saprophyticus infrequently lives."], ["Around apocrine sweat glands", "Correct: it lives around the apocrine sweat glands of the armpits and groin, which produce sweat with a higher lipid content."]], "c": 3, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 16", "qid": "6pb23j"}, {"topic": "Thymic senescence", "io": "6 — Describe etiology autoimmune conditions", "q": "Premature aging of the thymus is characteristic of which group?", "opts": [["Adults who received bone marrow grafts", "Marrow recipients are at risk of graft versus host disease; premature thymic aging is described in young people with autoimmunity."], ["Children with helminth infections", "Helminth infection is discussed in the hygiene hypothesis, not as a cause of premature thymic aging."], ["Mothers sensitized to the Rh antigen", "Rh sensitization concerns hemolytic disease of the newborn, not thymic aging."], ["Young people with autoimmune disorders", "Correct. Premature thymic aging is characteristic of young people with autoimmune disorders, and chronic inflammation may hasten it."]], "c": 3, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 57", "qid": "1qon41v"}, {"topic": "Agglutination", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "Which of these uses agglutination?", "opts": [["The Ouchterlony double-diffusion method", "The Ouchterlony double-diffusion method is a precipitation test performed in agar gel rather than agglutination."], ["The Weil-Felix test for rickettsial diseases", "Correct, alongside blood typing, rapid syphilis diagnosis, cold agglutinin for mycoplasmas and the latex-agglutination pregnancy test."], ["The complement fixation test", "That uses lysin-mediated hemolysis of sensitized sheep red cells."], ["The enzyme-linked immunosorbent assay", "The enzyme-linked immunosorbent assay is an immunoassay producing a colored chromogen."]], "c": 1, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 34", "qid": "17b86rj"}, {"topic": "Classification", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "Judging by where the spores sit in the chained, block-shaped rods shown, which genus are they?", "img": "micro-exam-2-quiz-images/l10-s008.jpg", "alt": "Gram-stained chains of rods containing spores, high magnification.", "slide": "Slide 8", "opts": [["Clostridium", "A terminal clostridial spore, as in Clostridium tetani, swells one end of the rod rather than sitting in the middle of the cell as these do."], ["Listeria", "Listeria forms no spores at all; it appears as coccobacilli to long filaments with no unstained ovals."], ["Bacillus", "Correct: the unstained spores sit in the middle of each cell, the central spores of Bacillus anthracis, here in chains of block-shaped rods."], ["Mycobacterium", "Mycobacteria form no spores and are acid-fast rather than staining well with the Gram stain shown."]], "c": 2, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 8", "qid": "sv28tq"}, {"topic": "In vivo testing", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "Which two in vivo tests are named?", "opts": [["Blood typing and cross-matching", "Blood typing and cross-matching are in vitro agglutination-based procedures rather than in vivo tests."], ["The Western blot and complement fixation", "The Western blot and complement fixation are in vitro serological techniques performed on serum."], ["The tuberculin skin test and allergy testing", "Correct, both introducing antigen into the body to determine whether antibodies are present rather than testing serum in a tube."], ["The Kirby-Bauer test and MIC strips", "The Kirby-Bauer test and MIC strips are in vitro antimicrobial susceptibility methods."]], "c": 2, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 52", "qid": "t72x2i"}, {"topic": "Streptococcus pyogenes", "io": "2 — Describe the modes of transmission by which humans acquire cocci of medical importance", "org": ["pyogenes"], "q": "Which of these organisms has humans as its only reservoir?", "opts": [["Streptococcus pyogenes", "Correct: Streptococcus pyogenes is strictly a human parasite, and humans are its only reservoir; other streptococci may be zoonotic in origin."], ["Groups C and G streptococci", "Groups C and G streptococci are common animal flora, the kind of streptococci that may be zoonotic in origin, so humans are not their only reservoir."], ["Moraxella catarrhalis", "Moraxella (Branhamella) catarrhalis diplococci are found on the mucous membranes of humans and other primates, so humans are not their only reservoir."], ["Acinetobacter baumannii", "Acinetobacter baumannii is found in many arid soil environments, so its reservoir is not humans alone."]], "c": 0, "cite": "PAJ5200.Cocci of Med importance.pptx, Slides 27, 39, 78, 79 and 32", "qid": "1evazfh"}, {"topic": "Type III examples", "io": "2 — Compare and contrast the types of hypersensitivities and diseases caused by hypersensitivity conditions", "q": "What is the Arthus reaction?", "opts": [["Localized dermal injury from inflamed blood vessels", "Correct — a vasculitis, typically following a second injection of vaccine at a site, and normally self limiting."], ["A systemic reaction to foreign animal protein", "That is serum sickness, which deposits complexes in heart, kidneys, skin and joints."], ["A delayed T cell response to an injected antigen", "The Arthus reaction is immune complex mediated, type III, rather than T cell mediated."], ["An immediate wheal and flare", "An immediate wheal and flare is the type I reaction from mast cell degranulation."]], "c": 0, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 39", "qid": "1vjx60h"}, {"topic": "Descriptive vs analytic", "io": "1 — Distinguish between descriptive and analytic epidemiology", "q": "What is a map marking where each person with a disease lived and worked called?", "opts": [["A spot map", "Correct: marking where persons with cholera lived and worked, as John Snow did, makes what is now called a spot map."], ["An epidemic curve", "An epidemic curve plots cases by date of onset; a map of where cases lived and worked is a spot map."], ["A surveillance indicator", "An indicator is a measurable factor that estimates the size of a health problem; marking each case's home and workplace is a spot map."], ["An attack-rate table", "An attack-rate table tabulates the ill among the exposed; marking cases on a map is a spot map."]], "c": 0, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 41", "qid": "131z8uq"}, {"topic": "Streptococcus agalactiae", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["agalactiae"], "q": "What is the preventive step against group B streptococcal infection of newborns?", "opts": [["Vaccinating infants at birth", "No group B vaccine is listed; the measure is screening pregnant women and treating those who are positive."], ["Screening and treating mothers", "Correct: pregnant women should be screened and treated for group B Streptococcus, with intravenous antibiotics during vaginal delivery."], ["Antibiotic eye ointment", "Topical antibiotic prophylaxis at birth prevents GONOCOCCAL conjunctivitis rather than group B infection."], ["Long-term oral penicillin", "Long-term penicillin prophylaxis is for people with a history of rheumatic fever or recurrent strep throat."]], "c": 1, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 38", "qid": "aru0np"}, {"topic": "Three categories", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "What does phenotype mean in this context?", "opts": [["The complete genetic makeup of the organism", "That is the genotype, which genotypic methods assess directly."], ["The antibody response the organism provokes", "That is what immunological methods measure rather than what phenotype means."], ["The organism's position on a phylogenetic tree", "Phylogeny is constructed from gene sequences, which is a genotypic approach."], ["The physical expression of genes", "Correct, which is why phenotypic methods rest on what can be observed — cell shape, colony appearance, enzyme activity — rather than on the genes themselves."]], "c": 3, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 5", "qid": "1p4yln8"}, {"topic": "Genotypic methods", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "What does RFLP stand for?", "opts": [["Restriction fragment length polymorphism", "Correct, and it is produced by hybridizing DNA probes complementary to sequences specific to a particular microbe — also called DNA fingerprinting."], ["Ribosomal fragment linkage pattern", "The abbreviation refers to restriction fragment length polymorphism."], ["Rapid fluorescent labeled probe", "Fluorescent labeling belongs to fluorescent antibody methods rather than to RFLP."], ["Recombinant fragment ligation product", "RFLP concerns polymorphism in fragment lengths after restriction digestion."]], "c": 0, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 26", "qid": "1m7ok18"}, {"topic": "Pharmacological control", "io": "3 — Describe the primary methods of diagnosing, treating, and preventing allergies", "q": "How do corticosteroids act in allergy?", "opts": [["They inhibit lymphocytes to reduce IgE", "Correct, acting upstream on the production of the antibody rather than on the mediators it releases."], ["They block mast cell degranulation", "Blocking mast cell degranulation is what cromolyn sodium does rather than a corticosteroid."], ["They bind histamine receptors on target organs", "Binding histamine receptors on target organs is the antihistamine mechanism."], ["They block leukotriene receptors", "Blocking leukotriene receptors is montelukast sodium rather than a corticosteroid, which acts upstream by inhibiting lymphocytes to reduce IgE."]], "c": 0, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 28", "qid": "1ndq6q"}, {"topic": "History", "io": "3 — Describe key events in the history and development of epidemiology, including genomic epidemiology", "q": "Pathogens from cases in two different cities turn out to be closely related genetically. What does genomic epidemiology suggest?", "opts": [["The cases may belong to one outbreak", "Correct: if pathogens in different cases are closely related, they may be part of the same outbreak; genomic epidemiology links cases in different locations."], ["The cases must be unrelated", "Close genetic relatedness points toward a link, not away from it; it suggests the cases may be part of the same outbreak."], ["The disease must be inherited", "The genes compared are the pathogen's, not the patients'; closely related pathogens suggest the cases may share one outbreak."], ["The pathogen must be a new species", "Relatedness says nothing about a new species; it suggests the cases in different places may belong to the same outbreak."]], "c": 0, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 12 and 69", "qid": "1fw3t2v"}, {"topic": "Mycoplasma", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "What do mycoplasmas require from host cell membranes?", "opts": [["Adenosine triphosphate", "Needing the host's adenosine triphosphate describes the chlamydial reticulate body; mycoplasmas require special lipids from host membranes."], ["Urea for urease", "Urea is what Helicobacter pylori's urease converts to raise its local pH; mycoplasmas need special host lipids."], ["Special lipids", "Correct: mycoplasmas naturally lack cell walls, are highly pleomorphic and require special lipids from host membranes."], ["Peptidoglycan", "Mycoplasmas have no peptidoglycan and take none from the host; what they require is special lipids from host membranes."]], "c": 2, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 62", "qid": "1buxozl"}, {"topic": "Enterococci", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["enterococcus"], "q": "Which genus was separated from Streptococcus using 16S ribosomal RNA gene analysis?", "opts": [["Enterococcus", "Correct: Enterococcus, along with Lactococcus, was separated from Streptococcus in 1984 using 16S ribosomal RNA gene analysis."], ["Neisseria", "Neisseria is a Gram-negative genus that was never part of Streptococcus."], ["Staphylococcus", "Staphylococcus is a separate catalase-positive genus that was never part of Streptococcus."], ["Branhamella", "Branhamella was reclassified into Moraxella by 16S analysis; it was never part of Streptococcus."]], "c": 0, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 25", "qid": "1201ozq"}, {"topic": "Clostridium perfringens", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "How does a mixed infection help myonecrosis develop?", "opts": [["Aerobes supply toxins the anaerobe lacks", "Clostridium perfringens makes its own toxins; the aerobic partners matter because they use up oxygen."], ["Aerobes digest tissue so spores can enter", "The partners' role is to consume oxygen; Clostridium perfringens spreads through tissue with its own enzymes."], ["Two organisms are needed to form the gas", "The gas comes from Clostridium perfringens fermenting muscle carbohydrate; the aerobes lower the oxygen tension."], ["Aerobes use up the oxygen", "Correct: aerobic bacteria in the wound consume the oxygen, producing the low oxygen tension the anaerobic spores need to germinate and grow."]], "c": 3, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 22", "qid": "1w6k077"}, {"topic": "Drivers & stewardship", "io": "1 — Compare and contrast current antibiotic use related to novel antimicrobial therapy", "q": "A patient stops a prescribed antibiotic course as soon as they feel better. Which driver of resistance does this illustrate?", "opts": [["Patient non-compliance", "Correct: patient non-compliance, such as leaving off treatment early or against medical advice, is listed among the drivers of resistance."], ["Agricultural overuse", "Agricultural overuse is antibiotics used in crops and livestock; stopping one's own course early is patient non-compliance."], ["Inappropriate prescribing", "Inappropriate prescribing is the clinician's choice to give an antibiotic that is not needed; here the patient is not following the course."], ["Surgical prophylaxis", "Surgical prophylaxis is a planned preventive dose before an operation; stopping a treatment course early is non-compliance."]], "c": 0, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 3", "qid": "6wkdee"}, {"topic": "Clostridium tetani", "io": "2 — Describe the modes of transmission by which humans acquire Gram-positive bacilli of medical importance", "q": "How do newborns in developing countries acquire tetanus?", "opts": [["Their mother's milk", "Tetanus is not carried in breast milk; neonates are infected through the umbilical stump."], ["The umbilical stump", "Correct: spores entering the umbilical stump cause neonatal tetanus, which is why it is seen in developing countries."], ["Honey in their feeds", "Honey is associated with infant botulism, the flaccid floppy baby syndrome, rather than tetanus."], ["The placenta", "The organism does not cross the placenta; neonatal tetanus enters through the umbilical stump."]], "c": 1, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 29", "qid": "1rcnzq7"}, {"topic": "Primary immunodeficiency", "io": "7 — Differentiate between primary and secondary immunodeficiency conditions", "q": "An infant with an absent thymus has recurrent fungal and viral infections. Which condition fits?", "opts": [["Agammaglobulinemia", "Agammaglobulinemia is a B cell defect with absent antibodies and recurrent BACTERIAL infections."], ["Graft versus host disease", "Graft versus host disease follows transplantation, when donor T cells attack the host."], ["Hashimoto's thyroiditis", "Hashimoto's thyroiditis is an autoimmune disease of the thyroid, not a congenital absence of the thymus."], ["DiGeorge syndrome", "Correct. DiGeorge syndrome is a T cell defect with a missing or abnormal thymus, and it brings fungal, protozoan, helminth and viral infections."]], "c": 3, "cite": "Lecture 7  Dr. Webster  Disorders in Immunity.pptx, Slide 63", "qid": "f4m7ml"}, {"topic": "Prophylaxis", "io": "1 — Compare and contrast current antibiotic use related to novel antimicrobial therapy", "q": "Antimicrobial prophylaxis for close contacts is used to prevent the spread of which group of infections?", "opts": [["Influenza, measles and mumps", "These viral illnesses are not what antibacterial contact prophylaxis targets; the examples are tuberculosis, meningitis and pertussis."], ["Tetanus, botulism and gas gangrene", "These are not spread from person to person, so contacts need no prophylaxis; the examples are tuberculosis, meningitis and pertussis."], ["Tuberculosis, meningitis and pertussis", "Correct: prophylaxis to prevent transmission of pathogens to susceptible contacts is used, for example, for tuberculosis, meningitis or pertussis."], ["Acne, cellulitis and impetigo", "Skin infections are not the examples given; contact prophylaxis is used for tuberculosis, meningitis and pertussis."]], "c": 2, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 13", "qid": "qnwxwt"}, {"topic": "Morbidity & mortality", "io": "7 — Describe selected measures of morbidity and mortality", "q": "Which measure counts only the new cases that arise during a given time period?", "opts": [["Prevalence", "The numerator of prevalence is all cases present during the period, old and new; only new cases is incidence."], ["Case fatality rate", "The case fatality rate is deaths divided by total cases; counting new cases is incidence."], ["Incidence", "Correct: the numerator of incidence is the new cases that occurred during the time period; incidence is likened to a speedometer."], ["Crude mortality rate", "The crude mortality rate counts deaths from all causes; counting new cases is incidence."]], "c": 2, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 27", "qid": "1gcpqxp"}, {"topic": "Spirochete features", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "Which Gram reaction and shape do the spirochetes share?", "opts": [["Gram-positive and spiral", "Spirochetes are spiral but Gram-negative, not Gram-positive; the whole group shares a Gram-negative wall and a spiral shape."], ["Gram-negative and comma-shaped", "Comma-shaped Gram-negative rods are Vibrio, a curviform bacterium; spirochetes are Gram-negative and spiral."], ["Gram-negative coccobacilli", "Gram-negative coccobacilli describes the rickettsias and chlamydias; spirochetes are Gram-negative and spiral shaped."], ["Gram-negative and spiral", "Correct: spirochetes are Gram-negative and spiral shaped, and they move by endoflagella inside the cell."]], "c": 3, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 3", "qid": "1vnfgyn"}, {"topic": "Lyme disease", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "What is the bull's-eye rash at the site of the tick bite in Lyme disease called?", "opts": [["A gumma", "A gumma is a lesion of tertiary syphilis that forms in organs years after infection, not a rash at a tick bite."], ["A hard chancre", "A hard chancre is the lesion of primary syphilis at the site of inoculation, not the Lyme tick-bite rash."], ["Erythema migrans", "Correct: erythema migrans is the bull's-eye rash at the initial tick-bite location in Lyme disease."], ["Bacillary angiomatosis", "Bacillary angiomatosis is a Bartonella infection in patients with acquired immunodeficiency syndrome, not the Lyme tick-bite rash."]], "c": 2, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 26 and 30", "qid": "qb7a13"}, {"topic": "Leprosy", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of Gram-positive bacilli of medical importance", "q": "Which form of leprosy produces shallow, asymmetrical lesions with local loss of pain sensation?", "opts": [["Lepromatous", "Lepromatous leprosy is deeply nodular and disfiguring, with widespread dissemination."], ["Disseminated", "Disseminated is a division of tuberculosis; leprosy's two polar forms are tuberculoid and lepromatous."], ["Tuberculoid", "Correct: tuberculoid leprosy damages nerves in shallow, asymmetrical lesions, so pain reception is lost locally."], ["Secondary", "Secondary is a division of tuberculosis; the shallow, nerve-damaging leprosy form is tuberculoid."]], "c": 2, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 83", "qid": "y5r532"}, {"topic": "Blots", "io": "1 — Recall common infectious agents and the diseases that they cause", "q": "What is the Northern blot used to study?", "opts": [["Specific DNA sequences", "Detecting specific DNA sequences is the Southern blot, the original technique of the family."], ["Gene expression, by detecting RNA", "Correct, and it is useful in the study of oncogenes and in rejection of transplanted organs."], ["Specific proteins in tissue extracts", "Detecting specific proteins in tissue extracts is the Western blot, from around 1981."], ["Post-translational products such as lipids", "Post-translational products such as lipids are analyzed by the Eastern blot rather than the Northern."]], "c": 1, "cite": "PAJ5200.Diagnosing Infections-2.pptx, Slide 42", "qid": "1fu42hr"}, {"topic": "Syphilis", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "A patient has this rash on both palms, with fever and a sore throat, a few weeks after a genital sore healed by itself. Which organism is the cause?", "opts": [["Rickettsia rickettsii", "Rocky Mountain spotted fever gives a spotted rash after a tick bite, with no preceding sore that healed; this history is secondary syphilis."], ["Treponema pallidum", "Correct: a red or brown rash on the palms and soles with an upper respiratory-like illness, after a chancre that healed on its own, is secondary syphilis, caused by Treponema pallidum."], ["Borrelia burgdorferi", "Lyme disease gives a bull's-eye rash at the tick-bite site, not a palm rash after a healed genital sore."], ["Chlamydia trachomatis", "Chlamydia trachomatis causes urethritis, cervicitis and lymphogranuloma venereum, not a palm and sole rash with fever."]], "c": 1, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 9 and image on Slide 13", "img": "micro-exam-2-quiz-images/l13-s13-palm-rash.jpg", "alt": "Both palms covered in scattered red-brown spots.", "slide": "Slide 13", "qid": "1cmwyre"}, {"topic": "Neisseria", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["neisseria"], "q": "How are the pathogenic Neisseria cultured?", "opts": [["Mannitol salts agar in air", "Mannitol salts agar selects for salt tolerance, a staphylococcal trait; Neisseria need enriched media and carbon dioxide."], ["Plain broth in room air", "Pathogenic Neisseria need enriched complex media and a carbon dioxide-enhanced chamber."], ["Chocolate agar in a candle jar", "Correct: they need enriched complex media and carbon dioxide-enhanced chambers, such as chocolate agar in a candle jar."], ["Blood agar with optochin", "Optochin discs are used to separate alpha-hemolytic streptococci, not to culture Neisseria."]], "c": 2, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 57", "qid": "14wj7g6"}, {"topic": "Seafood vibrios", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "What is the best treatment option for seafood vibrio gastroenteritis?", "opts": [["Fluid and electrolyte replacement", "Correct: for the seafood vibrios, fluid and electrolyte replacement is the best option; antimicrobial drugs are used only occasionally."], ["Penicillin G or doxycycline", "Penicillin G or doxycycline is the syphilis treatment; seafood vibrio gastroenteritis is best treated with fluid and electrolyte replacement."], ["Tetracycline or amoxicillin", "Tetracycline or amoxicillin is the Lyme disease treatment; seafood vibrios are best treated with fluid and electrolyte replacement."], ["Rifampin or erythromycin", "Rifampin and erythromycin are Bartonella options; the best option for seafood vibrios is fluid and electrolyte replacement."]], "c": 0, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 34", "qid": "1na5xb6"}, {"topic": "Staphylococci", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["staph", "neisseria"], "q": "Gram-positive cells are described as physically strong. How are Gram-negative cells described?", "opts": [["Physically strong", "Physical strength is the Gram-positive description, from the thick peptidoglycan; Gram-negative cells are chemically strong."], ["Heat resistant", "Heat resistance is not the contrast drawn; the pairing is physically strong Gram-positives against chemically strong Gram-negatives."], ["Chemically strong", "Correct: Gram-positive cells are physically strong from thick peptidoglycan, whereas Gram-negative cells are chemically strong."], ["Spore protected", "Neither group of medically important cocci forms spores; Gram-negative cells are described as chemically strong."]], "c": 2, "cite": "PAJ5200.Cocci of Med importance.pptx, Slide 3", "qid": "kzag35"}, {"topic": "Clostridium botulinum", "io": "2 — Describe the modes of transmission by which humans acquire Gram-positive bacilli of medical importance", "q": "Which food is a classic source of infant botulism?", "opts": [["Breast milk", "Breast milk is not a described source; honey and homemade baby food are."], ["Fresh fruit", "Fresh fruit is not a described source; infant botulism is linked to honey and homemade baby food."], ["Cooked rice", "Cooked, reheated rice is linked to Bacillus cereus food poisoning rather than infant botulism."], ["Honey", "Correct: infant botulism may be associated with honey or homemade baby food; honey pacifiers caused cases in 2018."]], "c": 3, "cite": "Lecture 9 Dr. Webster Gram positive Bacilli.pptx, Slide 38", "qid": "1x9b0jt"}, {"topic": "Data sources", "io": "4 — Identify common sources of epidemiologic data", "q": "Water is collected from local streams to check for chemical pollutants. Which source of epidemiologic data is this?", "opts": [["Individual persons", "Individual persons supply data through questionnaires and surveys; stream samples are environmental data."], ["Health care providers", "Providers notify the health department of certain diseases; stream water samples come from the environment."], ["The environment", "Correct: environmental data come from samples (river water, soil) and sensors, such as checking stream water for chemical pollutants or air-quality ratings."], ["Nonhealth-related sources", "Nonhealth-related sources are sales and court records; water samples are environmental data."]], "c": 2, "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 18", "qid": "12l6xk3"}, {"topic": "Streptococci", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, and methods of treatment, and prevention of cocci of medical importance", "org": ["strep"], "img": "micro-exam-2-quiz-images/l9-s24a-blood-agar.jpg", "slide": "Slide 24", "alt": "Blood agar plate with bacterial colonies", "q": "What type of hemolysis surrounds the colonies on this blood agar plate, each colony sitting in a sharp, clear, colorless halo?", "opts": [["Partial (alpha) hemolysis", "Partial, alpha, hemolysis turns the medium greenish around the colonies; these halos are clear, so the red cells are fully lysed."], ["No hemolysis at all", "With no hemolysis the medium around the colonies would look unchanged; clear halos mean the red cells have been lysed."], ["A positive CAMP test", "A positive CAMP test is a flame or arrow shape where a streak meets a Staphylococcus aureus streak, not a halo around each colony."], ["Complete (beta) hemolysis", "Correct: a clear zone around the colonies is complete, beta, hemolysis, the reaction of groups A, B, C, G and some D strains."]], "c": 3, "cite": "PAJ5200.Cocci of Med importance.pptx, Slides 23, 43, 45 and image on Slide 24", "qid": "vcdx1i"}, {"topic": "Dental disease", "io": "1 — Compare and contrast the morphology, medium, laboratory tests, biochemical reactions, diseases, clinical manifestations, methods of treatment, and prevention of miscellaneous bacterial agents of human diseases", "q": "Which bacterium is commonly found as dental plaque begins to form?", "opts": [["Streptococcus mutans", "Correct: caries begins with colonization by slime-forming species of Streptococcus, with cross adherence with Actinomyces in the biofilm; Streptococcus mutans is commonly found."], ["Lactobacillus", "Lactobacillus is a secondary invader that appears if plaque is left on the teeth; the early colonizer commonly found is Streptococcus mutans."], ["Fusobacterium", "Fusobacterium is a secondary invader of plaque left on the teeth; the early colonizer commonly found is Streptococcus mutans."], ["Helicobacter pylori", "Helicobacter pylori lives in the stomach and causes ulcers; the plaque-forming streptococcus is Streptococcus mutans."]], "c": 0, "cite": "PAJ5200.Misc inf agents-2.pptx, Slide 64", "qid": "13xf7ea"}, {"topic": "Non-antibiotic options", "io": "4 — Describe other alternative therapies to antibiotic use", "q": "Which foods are a common natural source of probiotics?", "opts": [["Canned vegetables", "Canning heats food to kill microbes; the natural probiotic source is fermented foods."], ["Fermented foods", "Correct: probiotics such as Lactobacillus and Saccharomyces are often found in fermented foods."], ["Refined sugar", "Sugar carries no beneficial microbes; probiotics are often found in fermented foods."], ["Pasteurized juice", "Pasteurization kills microbes; probiotics come from fermented foods."]], "c": 1, "cite": "PAJ5200.Novel Antimicrobial Therapies-2.pptx, Slide 15", "qid": "1sz4tlz"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
