@@ -87,7 +87,7 @@ def units(slug):
 # ------------------------------------------------------------------ checks
 BANNED = re.compile(r"\b(lectures?|lecturers?|slides?|professors?|instructors?|Dr\.|recordings?|transcripts?|syllabus|"
                     r"instructional objectives?|decks?|timestamps?|in class)\b", re.I)
-BRITISH = re.compile(r"\b(\w*(haem(?!ophil)|tumour|colour|behaviour|favour|labour|centre|fibre|litre|metre|anaem|leukaem|"
+BRITISH = re.compile(r"\b(\w*(haem(?!ophil|olyticus)|tumour|colour|behaviour|favour|labour|centre|fibre|litre|metre|anaem|leukaem|"
                      r"paediatr|oesophag|orthopaed|foetal|foetus|oestrogen|diarrhoea|haemorrhag|ischaem|analys(e|ed|ing)\b)\w*|"
                      r"oedem\w*|(recogn|organ|minim|maxim|real|util|stabil|immun|sensit|neutral|character)is(e|ed|es|ing|ation)\b)", re.I)
 ABBR = re.compile(r"(?<![\w])([A-Z][A-Z0-9]{1,5})s?(?![\w])")
