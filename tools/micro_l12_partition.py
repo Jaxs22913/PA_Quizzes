@@ -100,7 +100,6 @@ CLUSTERS = [
     (1, stem("What is herd immunity") + stem("Besides vaccination, what else")),
     (1, stem("Guests at one banquet") + stem("This epidemic curve shows hepatitis A")),
     (1, stem("An infection spreads from person to person") + stem("This epidemic curve shows measles")),
-    (1, stem("An outbreak begins when food handlers") + stem("This epidemic curve shows Shigella")),
     (1, stem("A single survey finds") + stem("What does causation imply")),
     (1, stem("Across many studies in different populations") + stem("Three studies each find")),
     (1, stem("Policy development rests on values") + stem("Epidemiological studies can bring about")),
@@ -141,11 +140,15 @@ MUST_EACH = [
     # epidemic curves "you should be able to identify" (3, 13:47): a single-source and a spreading pattern
     stem("Guests at one banquet") + stem("This epidemic curve shows hepatitis A") + stem("This epidemic curve follows diarrheal"),
     stem("An infection spreads from person to person") + stem("An outbreak begins when food handlers")
-        + stem("This epidemic curve shows measles") + stem("This epidemic curve shows Shigella"),
+        + stem("This epidemic curve shows measles"),
     # "epidemiology gives us the evidence for policy development" (4, 19:52)
     stem("Policy development rests on values") + stem("Epidemiological studies can bring about"),
 ]
 MUST_ANY = []
+# AFTER THE BLIND REVIEW (16 October 2026) the shipped sets were patched, not re-partitioned: two items were
+# dropped from the pool and replaced in place through tools/micro_e2_sync_sets.py MOVED (Set 1: the pyramid
+# base item -> the strength-of-association item; Set 2: the Shigella curve -> the diarrheal-illness curve).
+# Re-running this script would reshuffle reviewed sets; use micro_e2_sync_sets.py for pool edits instead.
 
 PCT = re.compile(r"\d+\s*(%|percent)", re.I)
 YEAR = re.compile(r"\b(19|20)\d\d\b")

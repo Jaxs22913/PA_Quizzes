@@ -273,32 +273,32 @@
   {
    "topic": "Association & causation",
    "io": "8 — Distinguish between the terms association and causation",
-   "q": "In the pyramid of associations, which explanation sits at the base?",
+   "q": "A relative risk that is either very high or very low is less likely to be due to chance or bias. Which of Hill's criteria is this?",
    "opts": [
     [
-     "Chance",
-     "Correct: from base to apex the pyramid runs chance, spurious or artifact, confounded, non-causal, and causal at the top."
+     "Strength of association",
+     "Correct: a strong association is one in which the relative risk is either very high or very low, and it is less likely to be caused by chance or bias."
     ],
     [
-     "Confounded",
-     "Confounded sits in the middle of the pyramid, above chance and spurious associations; chance is the base."
+     "Consistency of findings",
+     "Consistency is the same result across multiple studies and populations; a very high or very low relative risk is strength."
     ],
     [
-     "Non-causal",
-     "Non-causal sits just below the apex; the base of the pyramid is chance."
+     "Biological gradient",
+     "Biological gradient is a trend in relative risk across doses; a single very high or very low relative risk is strength of association."
     ],
     [
-     "Causal",
-     "Causal is the apex, the narrowest level; chance forms the base."
+     "Temporal sequence",
+     "Temporal sequence is exposure preceding disease; a very high or very low relative risk is strength of association."
     ]
    ],
    "mis": {
-    "Confounded": "adjacent level",
-    "Non-causal": "adjacent level",
-    "Causal": "reversed order"
+    "Consistency of findings": "adjacent criterion",
+    "Biological gradient": "adjacent criterion",
+    "Temporal sequence": "adjacent criterion"
    },
    "c": 0,
-   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 44"
+   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 46 and 48"
   },
   {
    "topic": "Descriptive vs analytic",
@@ -341,7 +341,7 @@
     ],
     [
      "Prove what causes each disease",
-     "Reports monitor disease and warn of outbreaks; inferring causation needs analytic studies and criteria such as Hill's."
+     "Reports monitor disease and warn of outbreaks; epidemiology infers causation from association and other factors, and does not prove the cause of each disease."
     ],
     [
      "Bill patients for public testing",
@@ -358,7 +358,7 @@
     "Replace physicians' diagnoses": "reversed relationship"
    },
    "c": 0,
-   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 21"
+   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 21 and 43"
   },
   {
    "topic": "Applications",
@@ -367,7 +367,7 @@
    "opts": [
     [
      "A doctor isolated it on the first weekend",
-     "Nothing was isolated that weekend, when the health department was closed; the bacterium was found months later by persistent testing of specimens thought dead."
+     "The health department was closed that weekend; the bacterium was located in December 1976 by persistent testing of specimens thought to be dead."
     ],
     [
      "A survey of residents identified it",
@@ -375,7 +375,7 @@
     ],
     [
      "Genomic sequencing matched the cases",
-     "Genomic epidemiology came much later; the bacterium was found by persistent laboratory testing of specimens thought to be dead."
+     "Genomic epidemiology monitors the genetic makeup of pathogens; this bacterium was found by persistent laboratory testing of specimens thought to be dead."
     ],
     [
      "Testing of specimens thought dead",
@@ -385,10 +385,10 @@
    "mis": {
     "A doctor isolated it on the first weekend": "reversed timeline",
     "A survey of residents identified it": "descriptive tool confused with laboratory method",
-    "Genomic sequencing matched the cases": "anachronism"
+    "Genomic sequencing matched the cases": "method confused"
    },
    "c": 3,
-   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 64 and 68"
+   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 64, 68 and 69"
   },
   {
    "topic": "History",
@@ -885,7 +885,7 @@
     ],
     [
      "William Farr",
-     "William Farr worked in the 1800s, building on such counts to analyze Britain's mortality statistics; the 17th-century pioneer of tabulation was John Graunt."
+     "William Farr worked in the 1800s, analyzing Britain's mortality statistics; the 17th-century pioneer of tabulation was John Graunt."
     ],
     [
      "Hippocrates",
@@ -1029,15 +1029,15 @@
    "opts": [
     [
      "Chance alone",
-     "Chance sits at the base of the pyramid of associations; findings repeated across many studies, with a dose-response trend, meet Hill's criteria for inferring causation."
+     "Chance is one level of the pyramid of associations, apart from a causal one; findings repeated across many studies, with a dose-response trend, meet Hill's criteria for inferring causation."
     ],
     [
      "A spurious association",
-     "Spurious (artifact) associations sit low in the pyramid of associations; consistent, dose-related, plausible findings that follow the exposure meet Hill's criteria for causation."
+     "A spurious (artifact) association is another level of the pyramid of associations, apart from a causal one; consistent, dose-related, plausible findings that follow the exposure meet Hill's criteria for causation."
     ],
     [
      "A confounded association",
-     "Confounded associations sit below causal ones in the pyramid of associations; consistency, dose-response, temporal sequence and plausibility are the criteria for inferring causation."
+     "A confounded association is another level of the pyramid of associations, apart from a causal one; consistency, dose-response, temporal sequence and plausibility are the criteria for inferring causation."
     ],
     [
      "Inferring causation",
@@ -1391,35 +1391,35 @@
   {
    "topic": "Epidemic terms & herd immunity",
    "io": "9 — Define the terms endemic, epidemic, pandemic, sporadic, and herd immunity",
-   "img": "micro-exam-2-quiz-images/l12-s57-shigella-curve.png",
-   "alt": "A bar chart of Shigella cases at a music festival by day of onset in August, attendees and staff shown separately: a few staff cases over the days before the festival, then a tall cluster of attendee cases peaking a few days after the festival, with scattered cases afterward.",
-   "slide": "Epidemic curve: Shigella cases at a music festival by day of onset.",
-   "q": "This epidemic curve shows Shigella cases among staff and attendees at a music festival by day of onset. Which type of epidemic does it show?",
+   "img": "micro-exam-2-quiz-images/l12-s56-diarrheal-illness-curve.png",
+   "alt": "A bar chart of diarrheal illness in city residents by date of onset from mid-December to mid-January, bloody and nonbloody cases stacked; arrows mark water main breaks in late December, a boil-water order in early January and chlorination later; cases rise over about two weeks and fall away after the boil-water order.",
+   "slide": "Epidemic curve: diarrheal illness in city residents by date of onset.",
+   "q": "This epidemic curve follows diarrheal illness in city residents for several weeks after water main breaks, falling away after a boil-water order. Which type of epidemic does it show?",
    "opts": [
     [
      "Common source, point",
-     "A point source gives one sharp peak within a single incubation period; this festival curve, cases over many days among staff and then attendees, is the mixed pattern."
+     "A point source is a brief exposure within one incubation period, giving one sharp peak; weeks of exposure to the water supply make it continuous."
+    ],
+    [
+     "Propagated",
+     "Propagated spread is person to person in successive waves; cases tied to the water supply over weeks are a continuous common source."
+    ],
+    [
+     "Sporadic",
+     "Sporadic describes isolated incidents at irregular intervals, not an epidemic curve of many linked cases; this is a continuous common source."
     ],
     [
      "Common source, continuous",
-     "A continuous common source exposes people over a longer time until the source is removed; this festival curve is the mixed pattern, common source then person to person."
-    ],
-    [
-     "Other, vector-borne",
-     "Vector-borne epidemics such as West Nile or Lyme disease fall under 'other'; Shigella spreading among festival staff and attendees is the mixed pattern."
-    ],
-    [
-     "Mixed",
-     "Correct: a mixed epidemic may start from a common source and then be propagated from person to person; this Shigella festival curve is the example of the mixed pattern."
+     "Correct: the residents shared one source, the water supply, over a longer time than one incubation period, so cases kept coming until the source was dealt with: a continuous common source."
     ]
    ],
    "mis": {
-    "Common source, point": "adjacent type",
-    "Common source, continuous": "adjacent type",
-    "Other, vector-borne": "adjacent type"
+    "Common source, point": "duration of exposure confused",
+    "Propagated": "transmission route confused",
+    "Sporadic": "adjacent term"
    },
    "c": 3,
-   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 55 and image on Slide 57"
+   "cite": "Lecture 12 Dr. Webster - Epidemiology.pptx, Slide 55 and image on Slide 56"
   },
   {
    "topic": "Morbidity & mortality",

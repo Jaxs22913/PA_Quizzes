@@ -109,6 +109,13 @@ MOVED = {
     "Clostridioides difficile infection?":
         "Why is fecal microbiota transplant researched as a treatment for Clostridioides difficile infection, "
         "an indirect adverse effect of antibiotics?",
+    # Lecture 12 (blind review 2026-10-16): dropped and replaced by an unused pool question
+    "In the pyramid of associations, which explanation sits at the base?":       # level order not in slide text
+        "A relative risk that is either very high or very low is less likely to be due to chance or bias. Which of Hill's criteria is this?",
+    "This epidemic curve shows Shigella cases among staff and attendees at a music festival by day of onset. "
+    "Which type of epidemic does it show?":                                       # no slide label ties it to Mixed
+        "This epidemic curve follows diarrheal illness in city residents for several weeks after water main "
+        "breaks, falling away after a boil-water order. Which type of epidemic does it show?",
 }
 
 
