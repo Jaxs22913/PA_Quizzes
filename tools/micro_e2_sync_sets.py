@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Carry pool edits onto the SHIPPED Microbiology Exam 2 sets, without re-partitioning.
 
-    python3 tools/micro_e2_sync_sets.py          # rewrite tools/micro_l{7..11}_sets.json from the pools
+    python3 tools/micro_e2_sync_sets.py          # rewrite tools/micro_l{7..13}_sets.json from the pools
     python3 tools/micro_e2_sync_sets.py --check  # exit 1 if any sets file is out of step with its pool
 
 Why not just re-run the partitions: a partition is a seeded search scored on option LENGTHS, so editing one
@@ -24,7 +24,8 @@ sys.path.insert(0, HERE)
 
 POOLS = {7: ["micro_l7_pool_a", "micro_l7_pool_b"], 8: ["micro_l8_pool_a"],
          9: ["micro_l9_pool_a", "micro_l9_pool_b", "micro_l9_pool_c"],
-         10: ["micro_l10_pool_a", "micro_l10_pool_b"], 11: ["micro_l11_pool"]}
+         10: ["micro_l10_pool_a", "micro_l10_pool_b"], 11: ["micro_l11_pool"],
+         12: ["micro_l12_pool"], 13: ["micro_l13_pool"]}
 KEYS = ("topic", "io", "q", "opts", "c", "cite", "img", "alt", "slide", "mis")
 
 # Shipped stem -> pool stem, for the blind-review repairs of 2026-10-15 (reworded or replaced questions).
