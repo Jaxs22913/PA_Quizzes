@@ -69,6 +69,9 @@ SCOPE_BANNED = [
     r"bruit[^?.;]{0,40}\bmurmur|\bmurmur[^?.;]{0,40}bruit",
     r"drug-eluting|drug-coated|covered stent|self-expanding|balloon-expandable",
     r"foam cell",
+    # s72 shows only "Focal neurologic symptoms (see comment box)": amaurosis fugax and the focal-symptom
+    # list are speaker notes, never slide content (Jaxon, 2026-10-15)
+    r"amaurosis|monocular|curtain descending",
 ]
 
 # Named findings in vignette stems carry their description in parentheses,
@@ -76,7 +79,6 @@ SCOPE_BANNED = [
 NAMED = {
     "dependent rubor": "red",                 # s29/s30: deep red when hanging down
     "grey turner": "flank",                   # s91: flank ecchymosis
-    "amaurosis fugax": "curtain",             # s72 notes: like a curtain descending
     "leriche": "femoral pulses",              # s14 triad -- only if the stem names it
     "poikilothermia": "temperature",          # s34: difficulty regulating body temperature
     "livedo reticularis": "mottl",            # s68 names it but never describes it: keep it OUT of stems

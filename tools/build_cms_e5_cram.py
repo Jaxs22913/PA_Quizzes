@@ -115,7 +115,7 @@ topics = [
 ]},
 {"id": "l27-carotid", "label": "Carotid Artery Disease", "color": "#2f5d6b", "rows": [
  ["Why it matters", "<b>Roughly 10&ndash;20% of ischemic strokes</b> (the slide&rsquo;s 80% of noncardioembolic strokes is overstated); strokes mostly from <b>plaque rupture</b>. Asymptomatic outnumber symptomatic <b>4:1</b>."],
- ["Symptoms", "Transient ischemic attack (classically &lt; 24 h; defined by no tissue injury), stroke, <b>amaurosis fugax</b> (monocular blindness like a curtain descending). Auscultate each carotid separately, breath held."],
+ ["Symptoms", "Transient ischemic attack (classically &lt; 24 h; defined by no tissue injury), stroke. Auscultate each carotid separately, breath held."],
  ["Tests", "<b>Duplex ultrasonography</b> = initial screening and follow-up. Computed tomography / magnetic resonance angiography. <b>Digital subtraction angiography = gold standard</b>, not for screening."],
  ["Treat", "&lt; 50%: medical (antiplatelets, blood pressure, glucose, statins, <b>stop smoking &mdash; nearly doubles stroke risk</b>). Surgery: <b>symptomatic &gt; 70%</b> or <b>asymptomatic &gt; 80% with life expectancy &gt; 5 years</b>. <b>Endarterectomy = gold standard</b> (stroke or nerve damage); stenting for poor surgical candidates."],
 ]},

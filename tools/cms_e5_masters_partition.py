@@ -110,7 +110,7 @@ HELD_FACTCHECK = [
     "What is the mainstay of treatment for deep vein thrombosis?",   # rests on a speaker note
     "For which clot may thrombolysis be considered in deep vein thrombosis?",   # rests on a speaker note
     "A 68-year-old woman with active pancreatic cancer, which supplies the ",   # rests on a speaker note
-    "A 66-year-old man who smokes and has hypertension had an episode of am",   # rests on a speaker note
+    "A 66-year-old man who smokes and has hypertension had a transient isch",   # was the amaurosis fugax vignette (notes only); rewritten 2026-10-15 on slide 72, kept held so the seeded forms do not move
     "Which parasite causes dilated cardiomyopathy through Chagas disease?",   # rests on a speaker note
     "A 58-year-old woman with idiopathic dilated cardiomyopathy has taken a",   # rests on a speaker note
     "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after",   # rests on a speaker note

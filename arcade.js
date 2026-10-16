@@ -10254,7 +10254,6 @@ var DEMO_DECKS = [
       ["Share of ischemic strokes caused by carotid disease?", "Roughly 10 to 20%."],
       ["Commonest mechanism of carotid stroke?", "Plaque rupture rather than occlusion with thrombosis."],
       ["Define transient ischemic attack.", "Brief focal loss of neurologic function with no lasting damage; classically under 24 hours."],
-      ["Define amaurosis fugax.", "Transient monocular blindness, like a curtain descending."],
       ["Asymptomatic carotid disease definition window?", "No stroke or transient ischemic attack in the last six months."],
       ["Most widely used initial carotid screening test?", "Duplex ultrasonography."],
       ["Gold standard carotid imaging?", "Digital subtraction angiography."],

@@ -401,7 +401,7 @@ V(DIS, IO_POP,
    ["Pseudoaneurysm",
     "A pseudoaneurysm follows arterial puncture such as catheterization. Tearing chest pain in a patient with Marfan syndrome points to aortic dissection."],
    ["Carotid artery disease",
-    "Carotid disease presents with transient ischemic attack, stroke or monocular vision loss. Tearing chest pain in Marfan syndrome signals aortic dissection."]],
+    "Carotid disease presents with focal neurologic symptoms: a transient ischemic attack or a stroke. Tearing chest pain in Marfan syndrome signals aortic dissection."]],
   C(115), "epidemiology", "diagnosis"),
 
 V(DIS, IO_A,
