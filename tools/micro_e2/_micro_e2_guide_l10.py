@@ -208,26 +208,28 @@ SECTION = """
     <td>She reviewed organism by organism, 10.1&ndash;10.13, not by objective. Objective 2 (modes of
     transmission, 10.14) still stands.</td></tr>
     <tr><td><em>Bacillus</em>: the spore is &ldquo;in the middle, it&rsquo;s centrally located.&rdquo; [part 4,
-    12:47] <em>Clostridium</em>: &ldquo;it&rsquo;s not centrally located like bacillus&rdquo;, it is terminal.
-    [part 4, 13:38]</td>
-    <td>10.1: central spores (aerobic <em>Bacillus</em>) versus terminal spores (anaerobic
-    <em>Clostridium</em>).</td></tr>
+    12:47] <em>Clostridium</em>: &ldquo;it&rsquo;s not centrally located like bacillus.&rdquo; [part 4, 13:38]</td>
+    <td>10.1: the central spore of aerobic <em>Bacillus</em>; for anaerobic <em>Clostridium</em> the deck&rsquo;s
+    picture (<em>Clostridium tetani</em>) shows the terminal spore.</td></tr>
     <tr><td>Anthrax: cutaneous &ldquo;is the most common&rdquo;; pulmonary, woolsorters&rsquo; disease, &ldquo;is
     the one which is most deadly.&rdquo; [part 4, 12:59&ndash;13:21]</td>
-    <td>10.2, the three forms of anthrax.</td></tr>
+    <td>10.2, the forms of anthrax: cutaneous the most common, pulmonary the most deadly (the slides add
+    gastrointestinal and injection anthrax).</td></tr>
     <tr><td>Gas gangrene: <em>&ldquo;we have to have what&rsquo;s called a mixed infection. What did we mean
-    by a mixed infection?&rdquo;</em> [part 4, 14:00&ndash;14:04]; tetanus is &ldquo;also needing that mixed
-    infection to use up that oxygen.&rdquo; [part 4, 14:45]</td>
-    <td>10.4 and 10.5: aerobes in the wound use up the oxygen so the anaerobic spores can germinate.</td></tr>
+    by a mixed infection?&rdquo;</em> [part 4, 14:00&ndash;14:04]</td>
+    <td>10.4: aerobes in the wound use up the oxygen so the anaerobic spores can germinate. She said tetanus
+    needs it too [part 4, 14:45]; the tetanus slides (10.5) say only that the organism is a strict anaerobe
+    needing low oxygen tension, so go by those.</td></tr>
     <tr><td>Botulism: improperly home-canned foods, and <em>&ldquo;remember honey has the spores in
     it&rdquo;</em> &rarr; floppy baby syndrome. [part 4, 15:00&ndash;15:24]</td>
     <td>10.6: food-borne and infant botulism.</td></tr>
     <tr><td><em>Clostridioides difficile</em>: people on long-term antibiotics, which wipe out the normal
     flora; fecal transplant as the alternative therapy. [part 4, 15:30&ndash;16:06]</td>
-    <td>10.7.</td></tr>
+    <td>10.7 (the slide&rsquo;s wording is broad-spectrum antibiotics).</td></tr>
     <tr><td><em>Listeria</em>: <em>&ldquo;This is the one that needs cold&hellip; it needs cold enrichment in
     order to grow.&rdquo;</em> [part 4, 16:34&ndash;16:41]</td>
-    <td>10.8: grows during refrigeration; cultured by cold enrichment.</td></tr>
+    <td>10.8: resistant to cold, so it grows during refrigeration; the laboratory cultures it by cold
+    enrichment.</td></tr>
     <tr><td>Diphtheria, asked as a question: <em>&ldquo;What is characteristic for diphtheria? The
     pseudomembrane.&rdquo;</em> [part 4, 17:16&ndash;17:20]</td>
     <td>10.9: the pseudomembrane, and antitoxin in treatment.</td></tr>
@@ -241,7 +243,8 @@ SECTION = """
     <tr><td>Leprosy: armadillos; <em>&ldquo;remember it comes in two different forms&rdquo;</em>, tuberculoid
     (less serious) and lepromatous (the major disfigurement); diagnosis where care is scarce: the feather
     test. [part 4, 18:24&ndash;18:53]</td>
-    <td>10.12: the two polar forms and the feather test.</td></tr>
+    <td>10.12: the two polar forms and the feather test; armadillos are used to grow it and are a possible
+    source, though transmission is not fully verified.</td></tr>
     <tr><td><em>Actinomyces israelii</em>: normally harmless in the oral cavity, serious when a penetrating
     wound puts it where it should not be. [part 4, 18:56&ndash;19:26]</td>
     <td>10.13.</td></tr>
