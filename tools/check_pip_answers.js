@@ -101,16 +101,19 @@ const CASES = [
   ['where is the murmur chart', CMS4, null, /./, false],
   ['what is selective toxicity', 'microbiology-exam-1', 'definition', /kills harmful microbes/i, false],
   // Jaxon 2026-10-15 (his thumbs-down): one-letter waves were dropped, so "wave" alone found an infarct card
-  ["What's the difference between a T and P wave?", CMS4, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval/, false],
+  // since CMS Exam 5 L29-30 (arrhythmias, 2026-10-15) its waves card may answer instead of the electrocardiography exam's pair
+  ["What's the difference between a T and P wave?", CMS4, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval|^Normal electrocardiogram waves and intervals \(P wave, PR, QRS, T wave\)$/, false],
   ["What's the difference between a T and P wave?", PDM3, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval/, false],
   ['difference between aortic and mitral stenosis', CMS4, 'card', /^Aortic stenosis.*\| Mitral stenosis/, false],
-  ['what is a P wave', CMS4, 'card', /^The P wave and the PR interval$/, false],
+  ['what is a P wave', CMS4, 'card', /^(The P wave and the PR interval|Normal electrocardiogram waves and intervals \(P wave, PR, QRS, T wave\))$/, false],
 ];
 // [question, page exam, the exam whose WHOLE guide Claude should read (mode "guide"; examByWords)]
 // Jaxon 2026-10-15: "What is a pulmonary embolism?" read the electrocardiography exam's guide (7 lines) not Exam 5's (26)
 const CMS5 = 'clinical-medicine-and-surgery-i-exam-5';
-const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the difference between a T and P wave?", CMS4, PDM3],
-  ['what does a pulmonary embolism look like on an ECG', CMS4, PDM3], ['why does aortic stenosis cause syncope', PDM3, CMS4],
+// Electrocardiogram questions go to CMS Exam 5 since its L29-30 arrhythmia lectures (2026-10-15): it now holds the most
+// electrocardiogram lines, and it is the upcoming exam (Principles of Diagnostic Medicine Exam 3 was 2026-10-14).
+const EXAMQ = [['What is a pulmonary embolism?', PDM3, CMS5], ["What's the difference between a T and P wave?", CMS4, CMS5],
+  ['what does a pulmonary embolism look like on an ECG', CMS4, CMS5], ['why does aortic stenosis cause syncope', PDM3, CMS4],
   ['what is selective toxicity', CMS4, 'microbiology-exam-1'], ['wells score for DVT', PDM3, CMS5],
   ['what is sensitivity', CMS4, 'interpretation-of-medical-literature-exam-1']];
 // Follow-ups (Jaxon 2026-10-15): [first question, page exam, next question, the exam whose guide Claude should read for
@@ -125,8 +128,9 @@ const FOLLOW = [
   ['What is a pulmonary embolism?', PDM3, 'what are the risk factors', CMS5, true, null],
   // a fresh topic: naming words with nothing that refers back, or a word the earlier exam never uses
   ['What is a pulmonary embolism?', PDM3, 'What is selective toxicity', 'microbiology-exam-1', false, null],
-  ['What is a pulmonary embolism?', PDM3, 'junctional rhythm', PDM3, false, null],
-  ['What is a pulmonary embolism?', PDM3, 'What is atrial fibrillation?', null, false, null],
+  ['What is a pulmonary embolism?', PDM3, 'junctional rhythm', CMS5, false, null],
+  ['What is a pulmonary embolism?', PDM3, 'What is atrial fibrillation?', CMS5, false, null],
+  ['What is a pulmonary embolism?', PDM3, 'What is a beta blocker?', null, false, null],   // fresh, and not kept on the earlier exam
 ];
 async function followPlan(q1, slug, q2) {
   const f = IX.folders.find(x => x.s === slug);
