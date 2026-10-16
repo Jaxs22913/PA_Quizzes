@@ -230,7 +230,7 @@ def main():
         base = os.path.basename(f)
         if base in SKIP_BASENAMES or any(x in base for x in SKIP_SUBSTR):
             continue
-        if f.startswith("tools" + os.sep) or f.startswith("group-quizzes" + os.sep):
+        if f.startswith(("tools" + os.sep, "group-quizzes" + os.sep, "dist" + os.sep)):   # dist/ = Cloudflare build copy
             continue
         src = open(f, encoding="utf-8", errors="ignore").read()
         qs = extract_questions(src)

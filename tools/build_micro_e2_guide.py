@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 study guide (Lectures 7-11 so far).
+"""Build the Microbiology Exam 2 study guide (Lectures 7-13, the whole Exam 2 block).
 
 Skeleton lifted from the Microbiology Exam 1 guide -- head, styles, back bar,
 pull-to-refresh, footer and scripts -- so the class reads as one thing; only
@@ -33,8 +33,10 @@ import _micro_e2_guide_l8 as L8
 import _micro_e2_guide_l9 as L9
 import _micro_e2_guide_l10 as L10
 import _micro_e2_guide_l11 as L11
+import _micro_e2_guide_l12 as L12
+import _micro_e2_guide_l13 as L13
 
-SECTIONS = [L7, L8, L9, L10, L11]
+SECTIONS = [L7, L8, L9, L10, L11, L12, L13]
 DONOR = os.path.join(ROOT, "Microbiology Exam 1", "micro-exam-1-study-guide.html")
 OUTDIR = os.path.join(ROOT, "Microbiology Exam 2")
 OUT = os.path.join(OUTDIR, "micro-exam-2-study-guide.html")
@@ -90,7 +92,10 @@ def extract_images():
     # Lecture 11's pictures sit in content placeholders, which the loop above does not see; its module
     # extracts them itself
     n11 = L11.extract(IMGDIR)
-    return len(IMAGES) + len(L9_FIGURES) + n11
+    # Lectures 12 and 13 extract their own figures too (pictures, placeholders and grouped pictures alike)
+    n12 = L12.extract(IMGDIR)
+    n13 = L13.extract(IMGDIR)
+    return len(IMAGES) + len(L9_FIGURES) + n11 + n12 + n13
 
 
 def main():
@@ -109,10 +114,10 @@ def main():
     head = re.sub(r"<header class=\"top\">.*?</header>",
         '<header class="top">\n  <h1>Microbiology &middot; Exam 2 &mdash; Study Guide</h1>\n'
         '  <p>PAJ 5200 Microbiology &middot; Class of 2028</p>\n'
-        '  <p>Covers Lectures 7&ndash;11 so far &mdash; Disorders in Immunity, Diagnosing Infections, Cocci of '
-        'Medical Importance, Gram-Positive Bacilli and Novel Antimicrobial Therapy &middot; '
-        'Exam 2 (Lectures 7&ndash;13) is on Friday 23 October 2026; further sections are added as each '
-        'lecture is posted &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n</header>',
+        '  <p>Covers Lectures 7&ndash;13, the whole Exam 2 block &mdash; Disorders in Immunity, Diagnosing '
+        'Infections, Cocci of Medical Importance, Gram-Positive Bacilli, Novel Antimicrobial Therapy, '
+        'Epidemiology and Miscellaneous Bacterial Agents of Disease &middot; Exam 2 is on Friday 23 October '
+        '2026 &middot; Instructional Objectives (IOs) taken verbatim from the syllabus</p>\n</header>',
         head, count=1, flags=re.S)
     # the Word-export link is re-added by tools/build_guide_docx.py for THIS page
     head = re.sub(r'\n?\s*<link rel="alternate" type="application/vnd\.openxmlformats[^>]*>', "", head)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Carry pool edits onto the SHIPPED Microbiology Exam 2 sets, without re-partitioning.
 
-    python3 tools/micro_e2_sync_sets.py          # rewrite tools/micro_l{7..11}_sets.json from the pools
+    python3 tools/micro_e2_sync_sets.py          # rewrite tools/micro_l{7..13}_sets.json from the pools
     python3 tools/micro_e2_sync_sets.py --check  # exit 1 if any sets file is out of step with its pool
 
 Why not just re-run the partitions: a partition is a seeded search scored on option LENGTHS, so editing one
@@ -24,7 +24,8 @@ sys.path.insert(0, HERE)
 
 POOLS = {7: ["micro_l7_pool_a", "micro_l7_pool_b"], 8: ["micro_l8_pool_a"],
          9: ["micro_l9_pool_a", "micro_l9_pool_b", "micro_l9_pool_c"],
-         10: ["micro_l10_pool_a", "micro_l10_pool_b"], 11: ["micro_l11_pool"]}
+         10: ["micro_l10_pool_a", "micro_l10_pool_b", "micro_l10_pool_m"], 11: ["micro_l11_pool"],
+         12: ["micro_l12_pool"], 13: ["micro_l13_pool"]}
 KEYS = ("topic", "io", "q", "opts", "c", "cite", "img", "alt", "slide", "mis")
 
 # Shipped stem -> pool stem, for the blind-review repairs of 2026-10-15 (reworded or replaced questions).
@@ -108,6 +109,16 @@ MOVED = {
     "Clostridioides difficile infection?":
         "Why is fecal microbiota transplant researched as a treatment for Clostridioides difficile infection, "
         "an indirect adverse effect of antibiotics?",
+    # Lecture 12 (blind review 2026-10-16): dropped and replaced by an unused pool question
+    "In the pyramid of associations, which explanation sits at the base?":       # level order not in slide text
+        "A relative risk that is either very high or very low is less likely to be due to chance or bias. Which of Hill's criteria is this?",
+    "This epidemic curve shows Shigella cases among staff and attendees at a music festival by day of onset. "
+    "Which type of epidemic does it show?":                                       # no slide label ties it to Mixed
+        "This epidemic curve follows diarrheal illness in city residents for several weeks after water main "
+        "breaks, falling away after a boil-water order. Which type of epidemic does it show?",
+    # Lecture 13 (blind review 2026-10-16): stem reworded so only the key fits
+    "Which drug is named alongside doxycycline as the treatment for syphilis?":
+        "Which drug is named with doxycycline as the treatment for syphilis, not as a less effective fallback?",
 }
 
 

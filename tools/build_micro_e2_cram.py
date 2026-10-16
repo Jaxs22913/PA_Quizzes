@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Microbiology Exam 2 cram sheet (Lectures 7-11 so far).
+"""Build the Microbiology Exam 2 cram sheet (Lectures 7-13, the whole Exam 2 block).
 
 Condensed ONLY from the Exam 2 study guide (tools/_micro_e2_guide_l7.py,
 _l8.py and tools/micro_e2/), which is itself built from the decks. Lectures 9
@@ -29,6 +29,7 @@ topics = [
    ["★ Learn this table", "The four-hypersensitivity summary table (slide 9): “a chart you should pay attention to.”"],
    ["★ The one mechanism", "Desensitization works by raising allergen-specific immunoglobulin G that BLOCKS the allergen from the immunoglobulin E on mast cells."],
    ["★ No type I", "Type I plays NO part in graft rejection or in autoimmunity. Both use II, III and IV."],
+   ["★ Exam 2 review (16 Oct)", "“You need to be able to identify their MECHANISMS and EXAMPLE DISEASES” (the four types) · ABO donor/recipient COMPATIBILITY · Rh disease and its prevention (Rhogam) · “go back and look over those REJECTION TYPES”: hyperacute II, acute IV, chronic III."],
    ["★ B cell vs T cell defect", "B cell defect (agammaglobulinemia) → recurrent BACTERIAL infections. T cell defect → fungal, viral, protozoan."],
    ["Not to memorize", "Helminth-allergen pairings (slide 6) · graft versus host grades (slide 50) · autoimmune disease charts (slides 58–60) · the order of the transformation sequence (slide 67). Oncogenic virus table (slide 68) deferred to the virus lectures."],
  ]},
@@ -117,7 +118,7 @@ topics = [
  ]},
 ]
 
-for frag in ("l9_cram.json", "l10_cram.json", "l11_cram.json"):
+for frag in ("l9_cram.json", "l10_cram.json", "l11_cram.json", "l12_cram.json", "l13_cram.json"):
     topics += json.load(io.open(os.path.join(HERE, "micro_e2", frag), encoding="utf-8"))
 ids = [t["id"] for t in topics]
 assert len(ids) == len(set(ids)), "duplicate topic id"
@@ -126,7 +127,7 @@ html = render(
     title="Cram Sheet — Microbiology Exam 2",
     kicker="Microbiology · Exam 2 · Class of 2028",
     h1="Microbiology Exam 2 Cram Sheet",
-    sub="Lectures 7–11 so far — Disorders in Immunity, Diagnosing Infections, Cocci of Medical Importance, Gram-Positive Bacilli and Novel Antimicrobial Therapy. ★ = emphasized in the lecture recording. Exam 2 (Lectures 7–13) is Friday 23 October 2026.",
+    sub="Lectures 7–13, the whole Exam 2 block — Disorders in Immunity, Diagnosing Infections, Cocci of Medical Importance, Gram-Positive Bacilli, Novel Antimicrobial Therapy, Epidemiology and Miscellaneous Bacterial Agents of Disease. ★ = emphasized in the lecture recording. Exam 2 is Friday 23 October 2026.",
     topics=topics,
     guide_href="micro-exam-2-study-guide.html",
     footer_note="Condensed from the Microbiology Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",

@@ -44,7 +44,7 @@ ROOT = os.path.dirname(HERE)
 
 EXCEPT_WORDS = {
     # taxonomic names (genus or species epithet) -- the Latin is the name
-    "haemophilus", "haemolyticus", "haemolytica", "haemolyticum", "haematobium",
+    "haemophilus", "haemolyticus", "parahaemolyticus", "haemolytica", "haemolyticum", "haematobium",
     "haemonchus", "haemaphysalis", "haemofelis", "haemulonii", "haemoproteus",
     "haemagogus", "haemadipsa", "haemosporida", "faecalis", "faecium", "gonorrhoeae",
     "leuconostoc", "leucovorin", "oesophagostomum", "aegyptius", "caesalpinia",

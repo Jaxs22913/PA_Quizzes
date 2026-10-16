@@ -25,6 +25,7 @@ def fig(name, w, h, alt, cap, slide):
 TOC = """
   <a class="top-link" href="#disorders-immunity">7 &middot; Disorders in Immunity</a>
   <a class="sub-link" href="#di-audio">&#9733; What the recording adds</a>
+  <a class="sub-link" href="#di-review">&#9733; What her Exam 2 review stressed</a>
   <a class="sub-link" href="#di-immunopathologies">7.1 Objective 1 &mdash; The four immunopathologies</a>
   <a class="sub-link" href="#di-hypersensitivities">7.2 Objective 2 &mdash; The four hypersensitivities</a>
   <a class="sub-link" href="#di-allergy">7.3 Objective 3 &mdash; Diagnosing, treating &amp; preventing allergy</a>
@@ -141,6 +142,47 @@ SECTION = """
   shared mishearing cannot be ruled out; either way the answer is IgE.) Go by the slides.</p>
   </div>
 <!--/MICROL7AUDIO-->
+<!--MICROL7REVIEW-->
+  <div class="prof-flag" id="di-review"><span class="prof-flag-label">&#9733; From her Exam 2 review &mdash; 16 October 2026</span>
+  <p>At the end of the Epidemiology lecture Dr. Webster reviewed her Exam 2 lectures for the class
+  (&ldquo;This is for the exam&rdquo; [part 4, 0:00]). She started with this lecture, objective by objective. Both transcripts read; <b>every quote below
+  appears in both</b>. The recording weights; the slides still decide every fact. Her whole review, item by
+  item, is on <a href="micro-exam-2-webster-review.html">her review page</a>.</p>
+  <table>
+    <tr><th>What she said</th><th>Where it is in this section</th></tr>
+    <tr><td><em>&ldquo;Remember, we have four different hypersensitivity types. <mark class="prof-highlight">You
+    need to be able to identify their mechanisms and example diseases</mark>.&rdquo;</em> [part 4, 0:18]</td>
+    <td>7.2, the four-types table: the mechanism and the example diseases of each type.</td></tr>
+    <tr><td><em>&ldquo;And so <mark class="prof-highlight">you should know</mark>, you know, <mark
+    class="prof-highlight">what is compatible for donor and recipient</mark>.&rdquo;</em> [part 4, 2:08]</td>
+    <td>7.4: a recipient carries antibodies against the ABO antigens they lack, so blood carrying those
+    antigens is incompatible.</td></tr>
+    <tr><td>Rh incompatibility, asked as a question: when does it occur, and how is it prevented? [part 4,
+    2:24&ndash;3:33]</td>
+    <td>7.4: an Rh-negative mother sensitized by an Rh-positive pregnancy; a later Rh-positive fetus is at
+    risk; anti-Rh immunoglobulin (Rhogam) prevents the sensitization.</td></tr>
+    <tr><td>Allergy shots: <em>&ldquo;you&rsquo;re trying to train your body to produce&hellip; defensive IgG
+    antibodies against the allergen.&rdquo;</em> [part 4, 4:18&ndash;4:47]</td>
+    <td>7.3, desensitization: blocking immunoglobulin G (her headline in the lecture too).</td></tr>
+    <tr><td><em>&ldquo;So <mark class="prof-highlight">go back and look over those rejection
+    types</mark>.&rdquo;</em> [part 4, 7:40] Then: hyperacute is type II, acute type IV, chronic type III.
+    [part 4, 7:44&ndash;7:54]</td>
+    <td>7.5, the three speeds of rejection and their hypersensitivity types.</td></tr>
+    <tr><td>Autoimmunity: <em>&ldquo;all of the different hypersensitivity types except one&hellip; type two,
+    three, and four.&rdquo;</em> [part 4, 8:24&ndash;8:31] Then the causes: sequestered antigen, rheumatic
+    fever, thymus senescence. [part 4, 8:47&ndash;9:35]</td>
+    <td>7.6: no type I in autoimmunity; the table of causes.</td></tr>
+    <tr><td>Primary versus secondary immunodeficiency, asked as a question. [part 4, 9:49&ndash;10:44]</td>
+    <td>7.7: primary = congenital, usually genetic (severe combined immunodeficiency); secondary = acquired
+    after birth (the human immunodeficiency virus, chemotherapy or radiation, blood cell cancers). She also
+    named cannabis exposure; that is not on a slide.</td></tr>
+    <tr><td>Cancer immunotherapy: checkpoint therapy, adoptive cell therapy (engineered T cells and natural killer cells),
+    monoclonal antibodies alone or linked to a chemotherapy drug or radionuclide so they hit only the tumor,
+    and cytokines such as interferon. [part 4, 11:01&ndash;12:07]</td>
+    <td>7.9, the immunotherapy strategies.</td></tr>
+  </table>
+  </div>
+<!--/MICROL7REVIEW-->
 
   <h3 class="sub" id="di-immunopathologies">7.1 &middot; Objective 1 &mdash; The four immunopathologies</h3>
   <table>
