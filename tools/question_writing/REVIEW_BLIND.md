@@ -47,7 +47,7 @@ listed either: for those the slide text still carries the "[this slide has N pic
    picture what it does not plainly show. If the decisive picture is not listed, or not clear, answer
    `"insufficient"`; do not guess from it.
 3. Use ONLY the evidence plus established medical fact. If the slides and established medical fact disagree,
-   say so in `conflict`; do not silently pick one.
+   pick what the SLIDES say (students are tested from the slides) and describe the disagreement in `conflict`.
 4. `quote`: a contiguous excerpt COPIED EXACTLY from the item's evidence that supports your pick (5+ words, or a
    whole short line). It is machine-checked (case, curly quotes, dashes and whitespace are ignored); an altered
    or invented quote rejects the item. Required for a letter pick; for ambiguous/insufficient give the closest

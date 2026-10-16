@@ -8,7 +8,7 @@ is written and checked. It never overrides:
   vignette sets per topic; Clinical Pathophysiology: mechanism only, no vignettes, never management; Pharmacology:
   the 6-point drug frame, no dosages; Microbiology / PDM: 2 x 30 per topic; masters per `master_exam_sizing`);
 - **the standing content rules** in CLAUDE.md section 7 (four options, one ask, self-contained, refute + replacing
-  fact, length and style match, no abbreviations, slides-only grounding, truth wins on conflict, US spelling).
+  fact, length and style match, no abbreviations, slides-only grounding, slides win on conflict unless the lecturer corrected them in the recording, US spelling).
 
 ## Before drafting (once per lecture)
 
@@ -37,7 +37,7 @@ is written and checked. It never overrides:
    meaning the same thing; no option containing another; no "all of the above", "none of the above" or "both A and B".
 6. **Explanations.** The key's explanation connects the decisive findings to the answer. Each distractor's
    explanation says why it is wrong IN THIS CASE (not "always wrong") and supplies the replacing fact. Every medical
-   claim in every explanation is on a slide (or is a truth-wins correction you flagged).
+   claim in every explanation is on a slide (or is the lecturer's recorded correction of a slide, which you flag).
 7. **Remove clues**: "a"/"an" or singular/plural that fit only the key; the key repeating a distinctive stem word no
    distractor shares; absolutes (always, never, only, all) only in distractors; the most detailed or most hedged
    option being the key; position patterns.
@@ -46,7 +46,7 @@ is written and checked. It never overrides:
 9. **Patients** are described respectfully; age, sex, race or ethnicity appear only when the deck ties them to the
    disease or the decision.
 10. **Hold, don't force.** If the deck cannot support one defensible best answer (two defensible answers, missing
-    evidence, a slide-versus-truth conflict you cannot settle), drop the item and write a different one from another
+    evidence, slides that contradict each other), drop the item and write a different one from another
     fact. If the deck runs out of supportable facts before the count, ship fewer and tell Jaxon the shortfall. Never pad.
 
 ## After writing: the checks, in order
@@ -59,7 +59,8 @@ is written and checked. It never overrides:
    hold, each defect with a verbatim slide quote.
 4. **One repair**: the writer (Opus) fixes the named defects from the same evidence; the changed item goes through
    steps 2 and 3 again. Still failing: hold it (drop and replace). A judge picking a different answer than the key is
-   a possible WRONG KEY: check the slide and the truth first (`truth_wins_on_conflict`).
+   a possible WRONG KEY: check the slides first. Where the slide and current guidelines differ, the SLIDE is keyed (we are tested from the
+   slides) and the guide gets one short note (`truth_wins_on_conflict`, rule replaced 2026-10-15).
 5. **Guide links** as before (CLAUDE.md section 7).
 
 Agreement between writer and judge is a signal, not proof. Never call an item "clinically reviewed": nobody in this

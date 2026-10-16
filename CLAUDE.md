@@ -123,7 +123,8 @@ Each has a memory with the full story.
 - **Every option gets its own explanation** that refutes AND supplies the replacing fact (60+ characters).
 - **Distractors match the key's length and style**; shorten the key, never pad distractors.
 - **Permute answer positions** before shipping. **No abbreviations**, or `ABBREV (full term)`.
-- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks, and speaker notes do not count. **Truth wins on conflict**.
+- **Slides-only grounding**: a lecturer's aside does not add content the deck lacks, and speaker notes do not count. **Slides win on conflict** (Jaxon, 2026-10-15: "we are tested from the slides"),
+  unless the lecturer corrected the slide in the recording; add one short guide note where current guidelines differ.
 - **Every Semester 2 question links to a passage in its own class's guide that STATES the fact, and a
   separate reader verified it** (word overlap is not enough). For a new or changed question:
   1. write a missing fact into the guide via `tools/guide_additions/` + `tools/apply_guide_additions.py` (text only
@@ -133,7 +134,7 @@ Each has a memory with the full story.
      under `tools/audit_guide_links_JUDGE.md` (each PASS needs a machine-checked verbatim quote), `import DIR`;
   4. PARTIAL/FAIL: write the fact into the guide and repeat;
   5. `python3 tools/check_guide_links.py --strict` must pass.
-  A judge finding that the guide CONTRADICTS the key is a possible wrong key: check the slides and the truth first.
+  A judge finding that the guide CONTRADICTS the key is a possible wrong key: check the slides (and the recording, for a correction) first.
 - **Semester 1 exams are frozen.** **US spelling** in Semester 2+ (keep taxonomic names such as *Haemophilus*).
 
 ## 8. How to work here
