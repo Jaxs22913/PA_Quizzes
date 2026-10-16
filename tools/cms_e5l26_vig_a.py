@@ -20,6 +20,12 @@ def S(topic, io, q, opts, cite, slot):
     d = Q(topic, io, q, opts, cite); d["slot"] = slot; return d
 
 
+def M(d, mis):
+    """Attach the misconception each distractor stands for (WRITER.md rule 5), keyed by option text."""
+    d["mis"] = mis
+    return d
+
+
 def V(topic, io, q, opts, cite, slot, lead):
     d = S(topic, io, q, opts, cite, slot); d["lead"] = lead; return d
 
@@ -293,17 +299,19 @@ V(CVI, IO_A,
     "Lymphatic obstruction causes lymphedema, a different disorder. A healed venous ulcer reopens because its scar is thin and fragile."]],
   C(15), "prognosis", "complication"),
 
-V(CVI, IO_A,
-  "A 70-year-old woman with a medial ankle venous ulcer has used compression, elevation and wound care for five months and the ulcer has not healed. Which referral is most appropriate?",
+M(V(CVI, IO_A,
+  "A 70-year-old woman with a medial ankle venous ulcer has used compression, elevation and wound care for seven months and the ulcer has not healed. Which referral is most appropriate?",
   [["Vascular specialist",
-    "Correct. Nonhealing ulcers are referred to a vascular specialist, and an ulcer that has not healed in four to six months needs further workup for infection or other causes."],
+    "Correct. Nonhealing ulcers are on the list for referral to a vascular specialist; healing can take 4 to 6 months, and an ulcer still open after that needs further workup for infection or other causes."],
    ["Infectious disease specialist",
     "Infection is one cause to consider, but a nonhealing venous ulcer is referred to a vascular specialist, who can assess the underlying venous and arterial problem."],
    ["Dermatologist",
     "Skin disease can be reviewed, but the referral triggers for venous disease name the vascular specialist for nonhealing ulcers. Vascular evaluation looks for the underlying cause."],
    ["Physical therapist",
     "Exercise supports the calf muscle pump, but it cannot resolve an ulcer that failed months of care. Nonhealing ulcers go to a vascular specialist."]],
-  C(37), "referral", "referral"),
+  DECK + ", Slides 35, 37", "referral", "referral"),
+  {"Infectious disease specialist": "adjacent fact", "Dermatologist": "adjacent fact",
+   "Physical therapist": "common lay belief"}),
 
 V(VV, IO_A,
   "A 55-year-old man with symptomatic varicose veins has a duplex ultrasound showing significant saphenous vein reflux. Which referral is most appropriate?",

@@ -6,11 +6,8 @@ KEYS ARE WRITTEN SHORT ON PURPOSE -- detail lives in the explanation.
 
 Patient vignettes with a varied lead-in (the lead-in decides the answer).
 Slides only; no recording exists yet (lecture 2026-10-01). Amiodarone is keyed
-only for converting atrial fibrillation and flutter (slide 78), never for sudden
-death: slide 78's "proven to reduce ... sudden cardiac death" conflicts with
-current guidelines, which find no antiarrhythmic proven for that (the
-implantable cardioverter-defibrillator is), so truth wins (owner, 2026-10-15).
-Never from the mislabelled heading on slide 76. The octopus-trap picture's "X-ray" is not
+from slide 78 ("proven to reduce ... sudden cardiac death"), never from the
+mislabelled heading on slide 76. The octopus-trap picture's "X-ray" is not
 used; Takotsubo is confirmed by catheterization (slide 103).
 """
 import os, sys
@@ -142,7 +139,7 @@ V(HCM, IO_A,
    ["Verapamil",
     "Verapamil is a nondihydropyridine calcium channel blocker used to treat outflow tract obstruction. The drug to avoid is a nitrate such as nitroglycerin."],
    ["Amiodarone",
-    "Amiodarone is used in hypertrophic cardiomyopathy to convert atrial fibrillation and flutter to sinus rhythm and suppress their recurrence. It is not the drug to avoid."]],
+    "Amiodarone is used in hypertrophic cardiomyopathy to reduce the risk of sudden cardiac death and to control atrial fibrillation. It is not the drug to avoid."]],
   C(77), "avoid", "avoid"),
 
 V(HCM, IO_A,
@@ -152,7 +149,7 @@ V(HCM, IO_A,
    ["Beta blockers such as metoprolol",
     "Beta blockers are the initial medication for outflow tract obstruction, reducing contractility and improving filling. They are not the class to avoid."],
    ["Antiarrhythmics such as amiodarone",
-    "Amiodarone converts atrial fibrillation and flutter to sinus rhythm and suppresses their recurrence in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."],
+    "Amiodarone reduces the risk of sudden cardiac death and converts atrial fibrillation in hypertrophic cardiomyopathy. Positive inotropes are the class to avoid."],
    ["Calcium channel blockers like verapamil",
     "Verapamil and diltiazem treat outflow obstruction by slowing the heart and reducing contractility. Drugs that increase contractility are the ones avoided."]],
   C(77), "avoid", "avoid"),

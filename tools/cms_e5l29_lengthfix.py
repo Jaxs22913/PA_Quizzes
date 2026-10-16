@@ -44,7 +44,7 @@ FIXES = {
     ("cms_e5l29_pool_c", 45, 0): "Well",
     ("cms_e5l29_vig_a", 10, 0): "Treat the bleeding",
     ("cms_e5l29_vig_b", 4, 0): "Hidden atrial activity",
-    ("cms_e5l29_vig_c", 14, 0): "It is the first goal",
+    ("cms_e5l29_vig_c", 14, 0): "Cardioversion follows anticoagulation",
     ("cms_e5l29_vig_c", 16, 0): "Severe heart failure",
     ("cms_e5l29_pool_a", 4, 0): "Cyclic irregularity, normal P waves",
     ("cms_e5l29_pool_c", 3, 0): "Scarring after heart surgery",

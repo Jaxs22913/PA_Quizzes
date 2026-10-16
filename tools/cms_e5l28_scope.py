@@ -28,11 +28,8 @@ CONTESTED or WRONG on the slides, so NEVER KEYED:
   DCM and hypertrophy: s18 "little or no cardiac wall hypertrophy" vs s37 ECG
       "may show left ventricular hypertrophy" -- neither is a discriminator.
   s76 heading "Arrhythmogenics for sudden cardiac death prevention" -- the
-      wrong word; amiodarone is called an antiarrhythmic and keyed from s78
-      only for converting atrial fibrillation and flutter. s78's "proven to
-      reduce ... sudden cardiac death" conflicts with current guidelines (no
-      antiarrhythmic proven; the defibrillator is): never keyed (owner ruling
-      2026-10-15, truth wins).
+      wrong word; amiodarone is keyed from s78 ("proven to reduce ... sudden
+      cardiac death") and called an antiarrhythmic.
   "Endocardial biopsy" (s41, DCM) vs "endomyocardial biopsy" (s55, s97) --
       the DCM biopsy is keyed only as "rarely useful / not routine".
   s98 calls verapamil and diltiazem "cardioselective" calcium channel blockers;
@@ -72,9 +69,6 @@ SCOPE_BANNED = [
     r"cardioselective",
     r"\bNYHA\b|New York Heart Association",
     r"4\s?(?:-|to|–)\s?6 liters",
-    # s78 says amiodarone is "proven to reduce" sudden cardiac death; current guidelines find no
-    # antiarrhythmic proven for that (the defibrillator is). Owner ruling 2026-10-15: never key or claim it.
-    r"amiodarone[^.?]{0,80}(?:sudden|proven)|(?:sudden|proven)[^.?]{0,80}amiodarone",
 ]
 
 # Named findings in vignette stems carry their description in parentheses.

@@ -496,7 +496,7 @@ S(VF, IO_A,
     "Pulseless electrical activity and asystole are both unshockable and are treated with compressions and epinephrine.", "reversed direction or value"],
    ["Tachycardia, pulseless electrical",
     "Pulseless electrical activity is unshockable. The shockable pair is ventricular fibrillation and pulseless ventricular tachycardia.", "adjacent fact"]],
-  C(55), "first-line"),
+  DECK + ", Slides 50, 55", "first-line"),
 
 # ---------------------------------------------------------------- asystole and pulseless electrical activity
 S(ASY, IO_A,

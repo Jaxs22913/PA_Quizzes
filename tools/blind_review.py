@@ -86,8 +86,9 @@ import check_exam_standard as X  # noqa: E402  (load, is_frozen: the same questi
 RECORDS = os.path.join(HERE, "blind_review.json")
 SCOPE = os.path.join(HERE, "question_writing", "scope.json")
 CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides")
-TEXT_VERSION = "ph1"                        # bump when extract_deck changes, so cached slide text is re-read
-                                            # (ph1: a picture placeholder holding a picture is flagged too)
+TEXT_VERSION = "sa1"                        # bump when extract_deck changes, so cached slide text is re-read
+                                            # (ph1: a picture placeholder holding a picture is flagged too;
+                                            #  sa1: SmartArt text is read too)
 IMG_CACHE = os.path.expanduser("~/.cache/pa-quizzes/slides-img")
 MANIFESTS = os.path.expanduser("~/.cache/pa-quizzes/review-manifests")
 MIN_IMG_BYTES = 8 * 1024                    # smaller pictures are decorative (bullets, logos, rules)
@@ -351,6 +352,28 @@ def _holds_picture(sh):
         return False
 
 
+def _smartart_lines(slide):
+    """Text of the slide's SmartArt diagrams, in the diagram's own order. A SmartArt graphic frame is not a text
+    frame, so python-pptx returns nothing for it, yet its text is on the slide for everyone to see (CMS Exam 5:
+    Pericardial Disease slides 14 and 30 carry the two-of-four criteria and the treatment-failure definition
+    only as SmartArt, 2026-10-15). Read from the diagram's data part, one line per paragraph."""
+    from lxml import etree
+    A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+    out = []
+    for rel in slide.part.rels.values():
+        if not rel.reltype.endswith("/diagramData"):
+            continue
+        try:
+            root = etree.fromstring(rel.target_part.blob)
+        except Exception:
+            continue
+        for p in root.iter(A + "p"):
+            t = norm("".join(x.text or "" for x in p.iter(A + "t")))
+            if t:
+                out.append(t)
+    return out
+
+
 def extract_deck(path):
     """{slide number: text with its '=== SLIDE N ===' marker}. Text frames, tables and groups; pictures
     and charts are flagged because their content is NOT in this text. Speaker notes are not included
@@ -383,6 +406,7 @@ def extract_deck(path):
                         if t:
                             lines.append(t)
         walk(slide.shapes)
+        lines += _smartart_lines(slide)
         if flags["picture"] or flags["chart"]:
             lines.append("[this slide has %d picture(s) and %d chart(s); their content is NOT in this text]"
                          % (flags["picture"], flags["chart"]))
