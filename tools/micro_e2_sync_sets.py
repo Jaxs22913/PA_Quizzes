@@ -116,6 +116,9 @@ MOVED = {
     "Which type of epidemic does it show?":                                       # no slide label ties it to Mixed
         "This epidemic curve follows diarrheal illness in city residents for several weeks after water main "
         "breaks, falling away after a boil-water order. Which type of epidemic does it show?",
+    # Lecture 13 (blind review 2026-10-16): stem reworded so only the key fits
+    "Which drug is named alongside doxycycline as the treatment for syphilis?":
+        "Which drug is named with doxycycline as the treatment for syphilis, not as a less effective fallback?",
 }
 
 

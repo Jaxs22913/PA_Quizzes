@@ -65,7 +65,7 @@ CLUSTERS = [
         + stem("This lesion appeared on the face")),
     (1, stem("Which pair of signs is classic for congenital") + stem("Teeth like these in a child")),
     (1, stem("How does a fetus acquire syphilis") + stem("By which routes is Treponema pallidum")),
-    (1, stem("Which drug is named alongside doxycycline") + stem("Why might erythromycin or tetracycline")),
+    (1, stem("Which drug is named with doxycycline") + stem("Why might erythromycin or tetracycline")),
     (1, stem("Why is Treponema pallidum hard to culture") + stem("What do rickettsias need in order")),
     (1, stem("Weeks after a genital sore healed") + stem("A patient has this rash on both palms")),
     (1, stem("Which nonsyphilitic treponematosis is a superficial") + stem("Which treponematosis starts as")
@@ -136,6 +136,9 @@ MUST_EACH = [
         + stem("Which vector transmits scrub typhus"),
 ]
 MUST_ANY = [stem("The early rash of Rocky Mountain spotted fever")]
+# AFTER THE BLIND REVIEW (16 October 2026) five items were repaired in the pool and carried onto the shipped
+# sets by tools/micro_e2_sync_sets.py (one reworded stem through MOVED); re-running this script would reshuffle
+# reviewed sets.
 
 
 def lens(q): return [len(o[0]) for o in q["opts"]]

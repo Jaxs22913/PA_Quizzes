@@ -350,7 +350,7 @@ Q("Syphilis", IO1,
   c(8)),
 
 Q("Syphilis", IO1,
-  "Which drug is named alongside doxycycline as the treatment for syphilis?",
+  "Which drug is named with doxycycline as the treatment for syphilis, not as a less effective fallback?",
   ("Penicillin G",
    "Correct: syphilis is treated with penicillin G or doxycycline; erythromycin and tetracycline are less effective "
    "and used when penicillin is contraindicated, for example by allergy."),
@@ -363,7 +363,7 @@ Q("Syphilis", IO1,
    ("Amoxicillin",
     "Amoxicillin is named with tetracycline for Lyme disease; syphilis is treated with penicillin G or "
     "doxycycline.", "adjacent fact from the same lecture (Lyme)")],
-  c(16)),
+  c(16, 53, 26)),
 
 Q("Syphilis", IO1,
   "Why might erythromycin or tetracycline be used to treat syphilis?",
@@ -580,19 +580,19 @@ Q("Nonsyphilitic treponematoses", IO1,
 
 Q("Nonsyphilitic treponematoses", IO2,
   "How does the transmission of the nonsyphilitic treponematoses differ from that of syphilis?",
-  ("Rarely sexual or congenital",
-   "Correct: the nonsyphilitic treponematoses resemble syphilis but are rarely transmitted sexually or "
-   "congenitally; they are cutaneous and bone diseases endemic to particular regions."),
+  ("Mostly by nonsexual routes",
+   "Correct: the nonsyphilitic (non-venereal) treponematoses resemble syphilis but are rarely transmitted "
+   "sexually or congenitally; they are cutaneous and bone diseases endemic to particular regions."),
   [("Mostly by tick bites",
-    "Ticks carry Borrelia and the spotted-fever rickettsias; the nonsyphilitic treponematoses are simply rarely "
-    "sexual or congenital.", "wrong vector"),
-   ("Mostly through urine",
-    "Urine spread belongs to Leptospira; the nonsyphilitic treponematoses differ from syphilis by being rarely "
-    "sexual or congenital.", "competing organism (Leptospira)"),
+    "Ticks carry Borrelia and the spotted-fever rickettsias; the nonsyphilitic treponematoses are non-venereal, "
+    "rarely transmitted sexually or congenitally.", "wrong vector"),
+   ("Mostly through animal urine",
+    "Spread through animal urine belongs to Leptospira; the nonsyphilitic treponematoses differ from syphilis by "
+    "being rarely transmitted sexually or congenitally.", "competing organism (Leptospira)"),
    ("Mostly by inhalation",
     "Inhalation is how Q fever is usually acquired; the nonsyphilitic treponematoses are rarely transmitted sexually "
     "or congenitally.", "competing organism (Coxiella)")],
-  c(19)),
+  c(19, 22, 52)),
 
 Q("Nonsyphilitic treponematoses", IO1,
   "Where are the nonsyphilitic treponematoses endemic?",
@@ -1058,7 +1058,7 @@ Q("Vibrio cholerae", IO1,
   "In cholera, which way do water and electrolytes move across the intestinal cell?",
   ("Out of the cell into the lumen",
    "Correct: normally water and electrolytes are absorbed from the lumen into the blood; cholera toxin reverses "
-   "this, so chloride, bicarbonate, sodium, potassium and water are lost into the lumen."),
+   "this, so water and electrolytes (chloride and potassium among them) are lost into the lumen."),
   [("From the lumen into the blood",
     "Lumen-to-blood movement is normal intestinal absorption; cholera toxin causes loss of water and electrolytes "
     "into the lumen.", "reversed direction"),
@@ -1196,7 +1196,7 @@ Q("Campylobacter", IO1,
    ("Wall-less, highly variable cells",
     "Lacking a wall and highly pleomorphic describes Mycoplasma; Campylobacter is a curved rod in gull-winged "
     "pairs.", "wrong group")],
-  c(36)),
+  c(36, 21, 62)),
 
 Q("Campylobacter", IO2,
   "How is Campylobacter jejuni enteritis transmitted?",
@@ -1814,7 +1814,7 @@ Q("Coxiella & Bartonella", IO1,
    ("Replacement of lost electrolytes",
     "Electrolyte replacement is rehydration therapy, as in cholera; tetracycline is an antibiotic targeting the "
     "prokaryotic 30S ribosomal subunit.", "treatment category confused")],
-  c(53)),
+  c(53, 24, 26, 32, 52, 62)),
 
 # ============================================================== CHLAMYDIAS incl. Chlamydophila (slides 56-61)
 Q("Chlamydias", IO1,

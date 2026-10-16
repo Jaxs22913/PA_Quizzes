@@ -624,6 +624,8 @@ BODY = """
     <li><strong><em>Coxiella</em>&rsquo;s &ldquo;endospore&rdquo; (slide 52).</strong> Current texts describe a
     resistant, spore-like small-cell form rather than a true endospore like those of <em>Bacillus</em> and
     <em>Clostridium</em>.</li>
+    <li><strong>Syphilis treatment (slide 16).</strong> Current guidance no longer recommends erythromycin, which
+    the slide lists as a less effective fallback; the quizzes key the slide.</li>
     <li><strong>Spellings</strong>: the test is the rapid plasma <em>reagin</em> (slide 16 writes
     &ldquo;reagent&rdquo;); <em>Ureaplasma</em> (slide 62, &ldquo;Ureplasma&rdquo;); bacillary
     angiomatosis (slide 53, &ldquo;angiomatosus&rdquo;); <em>Coxiella burnetii</em> (slides 51&ndash;52,
