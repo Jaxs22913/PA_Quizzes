@@ -10,8 +10,16 @@ prevention") is nearly the whole deck. So, as in Lectures 9 and 10, the objectiv
 coverage axis is the ORGANISM GROUP, carried in each question's topic field. Every set carries both objectives
 (objective 2 = transmission, at least MIN_IO2 per set) and every organism group.
 
-ORGANISM WEIGHTS ARE SLIDE COUNTS for now (TARGET below; the recording is still to come and may re-weight
-them by minutes spoken, as Lectures 10 and 11 were). The syllabus appendix names Treponema pallidum, Borrelia,
+ORGANISM WEIGHTS ARE MINUTES SPOKEN (the 16 October 2026 recording, two parts, 49 + 10 minutes; Whisper and
+Notability transcripts read), as Lectures 10 and 11 were. Dr. Fair signposts almost nothing, so time on
+topic is the signal (transcript_emphasis_measurement): syphilis ~9.5 min, rickettsias ~6, dental disease ~6,
+Lyme ~5, Vibrio cholerae ~4, seafood vibrios ~4, Helicobacter ~4, Campylobacter ~3, chlamydias ~3,
+Coxiella/Bartonella ~2.5, relapsing fever ~2, spirochete features ~1.5, Leptospira ~1.2, mycoplasma ~1,
+nonsyphilitic treponematoses ~0.8; his stories (Komodo dragons, about 5 minutes; the marriage-licence
+blood test; the Weil-Felix trick) are not counted toward anything the slides lack. Scaled to 60, with
+chlamydias held at 4 (the syllabus names Chlamydia and Chlamydophila). His two cues that point at slide
+facts are carried by MUST_EACH / MUST_ANY below; "So remember that." (part 1, 43:40) is about who may name
+a bacterium, not a slide fact, so it is not used. The syllabus appendix names Treponema pallidum, Borrelia,
 Rickettsia, Ehrlichia, Anaplasma, Chlamydia, Chlamydophila, Helicobacter and the mycoplasmas; the deck
 never names Anaplasma.
 
@@ -34,10 +42,10 @@ N_IMG = 3          # picture questions in Set 2 (Set 1 has none)
 
 # SLIDE COUNTS per organism group, scaled to 60 questions (both sets together)
 TARGET = {
-    "Spirochete features": 3, "Syphilis": 9, "Nonsyphilitic treponematoses": 2, "Leptospira": 3,
-    "Relapsing fever": 3, "Lyme disease": 6, "Vibrio cholerae": 4, "Seafood vibrios": 2,
+    "Spirochete features": 2, "Syphilis": 10, "Nonsyphilitic treponematoses": 1, "Leptospira": 2,
+    "Relapsing fever": 2, "Lyme disease": 6, "Vibrio cholerae": 4, "Seafood vibrios": 4,
     "Campylobacter": 3, "Helicobacter": 4, "Rickettsias": 7, "Coxiella & Bartonella": 3,
-    "Chlamydias": 6, "Mycoplasma": 2, "Dental disease": 3,
+    "Chlamydias": 4, "Mycoplasma": 2, "Dental disease": 6,
 }
 assert sum(TARGET.values()) == 60, sum(TARGET.values())
 
@@ -115,6 +123,21 @@ for q in POOL:
     assert not ordered_kind([o[0] for o in q["opts"]]), ("numeric option set would be rotated", q["q"])
 
 
+# His two cues that point at slide facts (16 October 2026, part 1; both in both transcripts):
+#   "the Rickettsia take-home message is that they're very small, obligate intracellular parasites, and
+#    they're primarily transmitted through arthropod bite." (41:53)  -> slides 43-44; every set carries a
+#    rickettsia-feature item and a rickettsial arthropod-vector item
+#   "The main thing, though, is that Rocky Mountain spotted fever looks exactly like measles." (42:54)
+#    -> slide 50; the one measles item goes into one of the two sets
+MUST_EACH = [
+    stem("Which description fits Rickettsia") + stem("What do rickettsias need in order to be cultivated"),
+    stem("Which vector carries Rickettsia prowazekii") + stem("How is endemic typhus spread")
+        + stem("Which vectors carry Rocky Mountain") + stem("How is human ehrlichiosis transmitted")
+        + stem("Which vector transmits scrub typhus"),
+]
+MUST_ANY = [stem("The early rash of Rocky Mountain spotted fever")]
+
+
 def lens(q): return [len(o[0]) for o in q["opts"]]
 
 
@@ -162,6 +185,9 @@ def score(idx, set_no):
     ids = set(idx)
     for n, cl in CLUSTERS:
         s += max(0, len(ids & set(cl)) - n) * 30
+    for g in MUST_EACH:
+        if not ids & set(g):
+            s += 50
     return s
 
 
@@ -224,7 +250,7 @@ if __name__ == "__main__":
           % (gameable_pct(POOL), 100.0 * sum(map(uniquely_longest, POOL)) / len(POOL)))
 
     def total(ch):
-        return score(ch[:30], 1) + score(ch[30:], 2)
+        return score(ch[:30], 1) + score(ch[30:], 2) + sum(50 for g in MUST_ANY if not set(ch) & set(g))
 
     best, idx = None, list(range(len(POOL)))
     for _ in range(400):
@@ -259,6 +285,10 @@ if __name__ == "__main__":
 
     assert not set(ch[:30]) & set(ch[30:]), "a question landed in both sets"
     assert not any(q.get("img") for q in s1), "a picture question reached Set 1"
+    for g in MUST_EACH:
+        assert set(ch[:30]) & set(g) and set(ch[30:]) & set(g), "a set misses: " + POOL[g[0]]["q"]
+    for g in MUST_ANY:
+        assert set(ch) & set(g), "a flagged item is in neither set: " + POOL[g[0]]["q"]
     for name, s, part in (("SET 1", s1, ch[:30]), ("SET 2", s2, ch[30:])):
         assert set(q["io"] for q in s) == ALL_IOS, "%s misses an objective" % name
         assert sum(1 for q in s if q["io"] == IO2_KEY) >= MIN_IO2, "%s has too few objective-2 items" % name

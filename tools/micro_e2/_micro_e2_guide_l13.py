@@ -19,7 +19,11 @@ relapsing-fever graph), slide 28 (the Lyme two-year cycle), slide 33 (the choler
 (the urease gel), slide 47 (the rickettsia table), slide 49 (the spotted-fever cycle), slide 57 (the
 chlamydia life cycle), slides 65-66 and 68-70 (the dental diagrams).
 
-AUDIO: not yet folded in (the recording is pending); phase 2 adds the recording box.
+AUDIO: both parts of the 16 October 2026 recording (49 + 10 minutes; class ended early), read in BOTH
+transcripts (Notability's own and the local faster-whisper medium.en run) and compared 2026-10-16. Every quote
+in the box appears in both; timestamps are the local transcript's. Dr. Fair signposts little: two remarks
+point at slide facts (41:53 rickettsias, 42:54 measles look-alike) and are starred; "So remember that."
+(43:40) is about naming bacteria and is not used. Weights are minutes spoken (micro_l13_partition.py).
 """
 import os
 
@@ -84,6 +88,7 @@ def fig(name, w, h, alt, cap, slide, mh=True):
 
 TOC = """
   <a class="top-link" href="#misc-bacteria">13 &middot; Miscellaneous Bacterial Agents of Disease</a>
+  <a class="sub-link" href="#mba-audio">&#9733; What the recording adds</a>
   <a class="sub-link" href="#mba-spirochetes">13.1 Objective 1 &mdash; The spirochetes</a>
   <a class="sub-link" href="#mba-syphilis">13.2 Objective 1 &mdash; <em>Treponema pallidum</em> and syphilis</a>
   <a class="sub-link" href="#mba-treponematoses">13.3 Objective 1 &mdash; Nonsyphilitic treponematoses</a>
@@ -129,6 +134,36 @@ SECTION_HEAD = """
   bacteria of dental disease, and never names <em>Anaplasma</em> (13.17). One drug recurs:
   <strong>tetracycline</strong>, a very broad-spectrum antibiotic that targets the prokaryotic ribosome
   (<strong>30S subunit</strong>) (slide 53).</div>
+
+<!--MICROL13AUDIO-->
+  <div class="prof-flag" id="mba-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 16 October 2026</span>
+  <p>About 59 minutes with Dr. Fair, in two parts (49 + 10; class ended early). <b>Both transcripts read and
+  compared</b> (Notability&rsquo;s own and an independent local transcription); every quote below appears in
+  both. The lecture signposts little, so the quizzes are weighted by time spent on each organism group, and two
+  remarks that point at slide facts are starred.</p>
+  <table>
+    <tr><th>What was said</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;The <mark class="prof-highlight">Rickettsia take-home message</mark> is that they&rsquo;re
+    very small, obligate intracellular parasites, and they&rsquo;re primarily transmitted through arthropod
+    bite.&rdquo;</em> [part 1, 41:53]</td>
+    <td>13.11: among the smallest bacteria, obligate intracellular parasites that need live cells, with ticks,
+    fleas and lice in their life cycle (slides 43&ndash;44).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">The main thing</mark>, though, is that Rocky Mountain spotted
+    fever looks exactly like measles. And because measles is a viral disease, diagnosis and treatment are gonna
+    be completely different.&rdquo;</em> [part 1, 42:54&ndash;43:03]</td>
+    <td>13.11: the early spotted rash may be misdiagnosed as measles, a viral disease treated very differently
+    (slide 50).</td></tr>
+  </table>
+  <p><b>Where the time went</b> (minutes spoken, both parts): syphilis about 9&frac12;; rickettsias and dental
+  disease about 6 each; Lyme disease about 5; <em>Vibrio cholerae</em>, the seafood vibrios and
+  <em>Helicobacter</em> about 4 each; <em>Campylobacter</em> and the chlamydias about 3 each; everything else
+  2&frac12; or less. The two topic quizzes follow these weights.</p>
+  <p class="muted">The stories (Komodo dragon saliva research, the marriage-license blood test, the doctors who
+  used the Weil-Felix cross-reaction to keep an occupying army out of their towns) add nothing to learn beyond
+  the slides; the Weil-Felix test itself is on slide 45 (13.11). <em>Coxiella</em>&rsquo;s
+  &ldquo;endospore&rdquo; was repeated as the slide has it [part 1, 44:16]; see 13.17.</p>
+  </div>
+<!--/MICROL13AUDIO-->
 """
 
 BODY = """
@@ -394,6 +429,10 @@ BODY = """
       "negative (pH 5.2&ndash;5.8) to positive (pH 6.5 and up).", 41) + """
 
   <h3 class="sub" id="mba-rickettsia">13.11 &middot; Objective 1 &mdash; Rickettsias and <em>Ehrlichia</em></h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Lecturer emphasized &mdash; &ldquo;the Rickettsia take-home message&rdquo;</span>
+  <p>Very small, obligate intracellular parasites, transmitted through arthropods. And &ldquo;the main
+  thing&rdquo; about Rocky Mountain spotted fever: its rash looks like measles, a viral disease with very
+  different treatment.</p></div>
   <p>The bacteria of <strong>unique morphology and biology</strong> (slide 42): the rickettsias and the
   chlamydias are <strong>Gram-negative coccobacilli</strong>; the mycoplasmas are unique among all bacteria in
   <strong>lacking a cell wall</strong>, and therefore peptidoglycan.</p>
