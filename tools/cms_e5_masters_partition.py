@@ -78,31 +78,16 @@ PER_FORM = 60
 N_REG = 12
 DX_RANGE = (10, 13)
 SKEW_CAP = 0.40
-SEED = int(os.environ.get("CMS_E5_MASTERS_SEED", "20261012"))
+SEED = int(os.environ.get("CMS_E5_MASTERS_SEED", "20261018"))   # best of 9 seeds after the L26-28 repair merge
 EXTRA_ORDER = LECS                                 # the cycle the leftover slots follow
 UNCHECKED_LECS = ("l26", "l27", "l28")             # pools whose never-shown questions need the master-only check
 
-# Held out of the masters: the 15 Lecture 26-28 questions the first blind-review pilot
-# (2026-10-15) flagged for revision or hold. They are being repaired on their own branch;
-# a master form must not carry the unrepaired wording. Matched on the stem's first 70
-# characters; each must still match exactly one pool question (asserted in build()).
-HELD_FOR_REPAIR = [
-    "A 76-year-old woman has constant throbbing, burning pain in her toes a",
-    "A 69-year-old man has pain in both legs when walking, with numbness an",
-    "A 67-year-old woman with stable calf claudication is starting exercise",
-    "A 58-year-old woman with no neurologic symptoms and no bruit asks her ",
-    "Which imaging is most widely used for thoracic aortic aneurysm?",
-    "What is the most common predisposing factor for aortic dissection?",
-    "A 68-year-old man with hypertension and an acute dissection has had hi",
-    "A 50-year-old woman with symptomatic varicose veins has worn stockings",
-    "Which age group is listed among the risk factors for deep vein thrombo",
-    "A 36-year-old woman who smokes and takes an oral contraceptive has mil",
-    "In dilated cardiomyopathy, which patients receive anticoagulation?",
-    "A 60-year-old man has just been diagnosed with symptomatic idiopathic ",
-    "Why is a high degree of suspicion needed to identify acute myocarditis",
-    "A 66-year-old woman with stress cardiomyopathy confirmed by normal cor",
-    "A 16-year-old girl with hypertrophic cardiomyopathy has had an episode",
-]
+# Held out of the masters until repaired: questions a blind review flagged for revision or
+# hold. Empty since the Lecture 26-28 repair merged (main a14caca4, 2026-10-15): the 15
+# pilot-flagged stems are repaired or replaced, and every Lecture 26-28 topic-quiz question
+# (360 of 360) carries a current PASS blind-review record (tools/blind_review.json).
+# Matched on the stem's first 70 characters; each must match exactly one pool question.
+HELD_FOR_REPAIR = []
 
 # Held out after the master-only fact-check (2026-10-15): every Lecture 26-28 question these
 # forms drew that no topic quiz shows was read against its deck by an independent checker;
@@ -110,7 +95,9 @@ HELD_FOR_REPAIR = [
 # explanation that is medically wrong, a key the guide corrects). The rest rest on a speaker
 # note (Jaxon, 2026-10-15: notes do not count as slide content); live ones among them are the
 # Lecture 26-28 repair's to fix, and are kept out of the masters until then. Left out here
-# rather than rewritten, so this file never forks the Lecture 26-28 pools.
+# rather than rewritten, so this file never forks the Lecture 26-28 pools. Four stems the
+# repair rewrote (main c1117deb/70f4bc6b) are no longer listed: their new versions are either
+# on a topic quiz (blind-reviewed) or never shown and so not on the fact-checked list.
 HELD_FACTCHECK = [
     "How much higher is the risk of recurrent deep vein thrombosis or pulmon",   # keys the slide's "30 times"; the guide teaches several-fold
     "A 68-year-old woman with chronic venous insufficiency has an itchy, re",   # rests on a speaker note (notes do not count, Jaxon 2026-10-15)
@@ -123,14 +110,10 @@ HELD_FACTCHECK = [
     "What is the mainstay of treatment for deep vein thrombosis?",   # rests on a speaker note
     "For which clot may thrombolysis be considered in deep vein thrombosis?",   # rests on a speaker note
     "A 68-year-old woman with active pancreatic cancer, which supplies the ",   # rests on a speaker note
-    "In darker skin, which signs help replace color change when judging blo",   # rests on a speaker note
-    "What is amaurosis fugax?",   # rests on a speaker note
     "A 66-year-old man who smokes and has hypertension had an episode of am",   # rests on a speaker note
     "Which parasite causes dilated cardiomyopathy through Chagas disease?",   # rests on a speaker note
-    "Which drug pair should every patient with dilated cardiomyopathy recei",   # rests on a speaker note
     "A 58-year-old woman with idiopathic dilated cardiomyopathy has taken a",   # rests on a speaker note
     "A 50-year-old man is newly diagnosed with dilated cardiomyopathy after",   # rests on a speaker note
-    "A 59-year-old man with dilated cardiomyopathy, sinus rhythm and an eje",   # rests on a speaker note
     "A 41-year-old woman returns from a 14-hour flight and reports two days",
     "Which features separate a pseudoaneurysm from a true aneurysm?",
     "A 31-year-old tall man with Marfan syndrome develops sudden, severe, t",
