@@ -16,6 +16,7 @@ BASE = os.path.expanduser("~/Desktop/PA Quizzes/Semester 2/Pharmacology I Inbox/
 
 LECTURES = {
     "L9": {"n": 9, "title": "Diuretics and Heart Failure Drugs", "deck": "Diuretics and Heart Failure Drugs.pptx"},
+    "L10": {"n": 10, "title": "Antiarrhythmic Drugs", "deck": "Antiarrhythmics.pptx"},
 }
 KINDS = ("indications", "sideeffects", "contra")
 _cache = {}

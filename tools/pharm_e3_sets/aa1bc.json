@@ -1,0 +1,789 @@
+{
+ "aa1bc1": [
+  {
+   "topic": "Propafenone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which drug lists agranulocytosis among its toxicities?",
+   "opts": [
+    [
+     "Propafenone",
+     "Correct. Propafenone's toxicity list includes agranulocytosis, anemia and thrombocytopenia."
+    ],
+    [
+     "Flecainide",
+     "Flecainide's blood toxicity is thrombocytopenia, not agranulocytosis; propafenone lists agranulocytosis.",
+     "adjacent fact"
+    ],
+    [
+     "Lidocaine",
+     "Lidocaine's toxicity is in the central nervous system, with hypersensitivity; propafenone lists agranulocytosis.",
+     "adjacent fact"
+    ],
+    [
+     "Disopyramide",
+     "Disopyramide's toxicity is hypotension, antimuscarinic effects, conduction disturbances, heart failure and torsades; propafenone lists agranulocytosis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 24"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antiarrhythmic drugs",
+   "slot": "monitoring",
+   "q": "Why is lidocaine given intravenously?",
+   "opts": [
+    [
+     "Extensive first-pass metabolism",
+     "Correct. Lidocaine undergoes extensive first-pass metabolism, so it is given intravenously rather than by mouth."
+    ],
+    [
+     "A half-life of about 40 days",
+     "A 40-day half-life belongs to amiodarone, which needs loading doses; lidocaine is intravenous because of extensive first-pass metabolism.",
+     "adjacent fact"
+    ],
+    [
+     "Elimination unchanged by the kidneys",
+     "Elimination unchanged by the kidneys is listed for dofetilide; lidocaine is given intravenously because of extensive first-pass metabolism.",
+     "adjacent fact"
+    ],
+    [
+     "A duration of action of 3 to 4 hours",
+     "A 3 to 4 hour duration is procainamide's, solved with a slow-release preparation; lidocaine is intravenous because of first-pass metabolism.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 18"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which arrhythmia can flecainide cause that resists treatment?",
+   "opts": [
+    [
+     "Atrial flutter",
+     "Supraventricular arrhythmias are among flecainide's indications; the arrhythmia it can cause that resists treatment is ventricular tachycardia.",
+     "reversed direction or value"
+    ],
+    [
+     "Sinus bradycardia",
+     "Bradycardia is listed for propafenone, through its beta-blocking activity; flecainide's treatment-resistant arrhythmia is ventricular tachycardia.",
+     "adjacent fact"
+    ],
+    [
+     "Ventricular tachycardia",
+     "Correct. Flecainide's toxicity list includes ventricular tachycardia resistant to treatment, a form of the proarrhythmia every antiarrhythmic can cause."
+    ],
+    [
+     "Complete heart block",
+     "Heart block is listed for propranolol and digoxin; flecainide's treatment-resistant arrhythmia is ventricular tachycardia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 23"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Describe adverse effects of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which respiratory effect of flecainide matters in a patient with asthma?",
+   "opts": [
+    [
+     "Pneumonitis",
+     "Pneumonitis, with pulmonary fibrosis, is amiodarone's lung toxicity; flecainide's respiratory effect is bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Respiratory paralysis",
+     "Respiratory paralysis is listed for magnesium sulfate; flecainide's respiratory effect is bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Pulmonary fibrosis",
+     "Pulmonary fibrosis (potentially fatal) is amiodarone's; flecainide's respiratory effect is bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Bronchospasm",
+     "Correct. Bronchospasm is on flecainide's toxicity list (and propafenone's), a concern in asthma."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 23"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which cardiac effect is on lidocaine's toxicity list?",
+   "opts": [
+    [
+     "Slower atrioventricular conduction",
+     "Slowing of atrioventricular conduction (up to heart block) belongs to beta blockers, class IV and digoxin; lidocaine's list says it increases atrioventricular conduction.",
+     "reversed direction or value"
+    ],
+    [
+     "Faster atrioventricular conduction",
+     "Correct. Lidocaine's toxicity list includes increased atrioventricular conduction, along with hypersensitivity and its central nervous system effects."
+    ],
+    [
+     "Torsades de pointes",
+     "Torsades de pointes belongs to class IA, dofetilide and sotalol; lidocaine's cardiac toxicity is increased atrioventricular conduction.",
+     "adjacent fact"
+    ],
+    [
+     "Decreased contractility",
+     "Decreased contractility is disopyramide's (heart failure); lidocaine's listed cardiac toxicity is increased atrioventricular conduction.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 19"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Identify antiarrhythmic drug classes and commonly prescribed antiarrhythmic drugs",
+   "slot": "class",
+   "q": "Which drug is a class IC antiarrhythmic?",
+   "opts": [
+    [
+     "Flecainide",
+     "Correct. Flecainide is class IC (propafenone is the other); it blocks sodium and potassium channels in the ventricles."
+    ],
+    [
+     "Lidocaine",
+     "Lidocaine is the class IB drug, working mainly in ischemic tissue; flecainide is class IC.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Quinidine",
+     "Quinidine is class IA, the D-isomer of quinine; flecainide is class IC.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Sotalol",
+     "Sotalol is a beta blocker with class III potassium channel action; flecainide is class IC.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 21"
+  },
+  {
+   "topic": "Propafenone",
+   "io": "Identify contraindications for antiarrhythmic drugs",
+   "slot": "contraindication",
+   "q": "Why is propafenone a concern in a patient with heart failure?",
+   "opts": [
+    [
+     "It raises digoxin levels",
+     "Raising digoxin levels is amiodarone's listed interaction; propafenone's concern in heart failure is that it can worsen it.",
+     "adjacent fact"
+    ],
+    [
+     "It can worsen heart failure",
+     "Correct. Propafenone can worsen congestive heart failure, an effect of its beta-blocking activity."
+    ],
+    [
+     "It increases atrioventricular conduction",
+     "Increased atrioventricular conduction is on lidocaine's toxicity list; propafenone's concern in heart failure is that it can worsen it.",
+     "adjacent fact"
+    ],
+    [
+     "It causes a lupus-like syndrome",
+     "A lupus-like syndrome is procainamide's effect; propafenone's concern in heart failure is that it can worsen it.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 24"
+  },
+  {
+   "topic": "Class IB actions",
+   "io": "Identify antiarrhythmic drug classes and commonly prescribed antiarrhythmic drugs",
+   "slot": "class",
+   "q": "Which drug is the class IB antiarrhythmic?",
+   "opts": [
+    [
+     "Flecainide",
+     "Flecainide is class IC, which affects the normal heart and markedly slows phase 0; the class IB drug is lidocaine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Procainamide",
+     "Procainamide is class IA, with an active metabolite that has class III activity; the class IB drug is lidocaine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Propafenone",
+     "Propafenone is class IC with added beta-blocking activity; the class IB drug is lidocaine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Lidocaine",
+     "Correct. Lidocaine is the class IB sodium channel blocker; it works mainly on sodium channels in ischemic tissue."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 16"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Which setting is a listed indication for lidocaine?",
+   "opts": [
+    [
+     "Atrial fibrillation",
+     "Lidocaine is not effective against atrial arrhythmias; its listed settings are ventricular arrhythmias and acute myocardial infarction.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Torsades de pointes",
+     "Torsades de pointes is treated with intravenous magnesium sulfate; lidocaine is listed for ventricular arrhythmias and acute myocardial infarction.",
+     "adjacent fact"
+    ],
+    [
+     "Acute myocardial infarction",
+     "Correct. Lidocaine is listed for ventricular tachycardia and premature beats, ventricular fibrillation and acute myocardial infarction, where ischemic tissue is its target."
+    ],
+    [
+     "Paroxysmal supraventricular tachycardia",
+     "Paroxysmal supraventricular tachycardia is the indication for adenosine and for verapamil or diltiazem; lidocaine's are ventricular arrhythmias and acute myocardial infarction.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 17"
+  },
+  {
+   "topic": "Class IB actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Where do class IB drugs have their greatest effect?",
+   "opts": [
+    [
+     "Normal ventricular tissue",
+     "Affecting the normal heart is the class IC feature; class IB has little effect in normal tissue and works mainly in ischemic tissue.",
+     "reversed direction or value"
+    ],
+    [
+     "The atria",
+     "Lidocaine is not effective against atrial arrhythmias; class IB works mainly in ischemic tissue.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ischemic tissue",
+     "Correct. Class IB drugs have a higher affinity in ischemic tissue and little effect in normal tissue; lidocaine is most effective on sodium channels in ischemic tissue."
+    ],
+    [
+     "The sinoatrial node",
+     "Suppressing the sinoatrial node is a class IV action (verapamil, diltiazem); class IB works mainly in ischemic tissue.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 16"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Which arrhythmia is a listed indication for flecainide?",
+   "opts": [
+    [
+     "Torsades de pointes",
+     "Torsades de pointes is treated with intravenous magnesium sulfate; flecainide is listed for life-threatening sustained ventricular arrhythmias.",
+     "adjacent fact"
+    ],
+    [
+     "Life-threatening ventricular arrhythmia",
+     "Correct. Flecainide is listed for life-threatening sustained ventricular arrhythmias and supraventricular arrhythmias, in patients without significant structural heart damage."
+    ],
+    [
+     "Ventricular arrhythmia after infarction",
+     "Flecainide increases mortality in myocardial infarction; lidocaine is the drug listed for acute myocardial infarction.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Rate slowing in atrial fibrillation",
+     "Slowing the ventricular rate is digoxin's listed indication; flecainide is listed for life-threatening sustained ventricular arrhythmias.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 22"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Lidocaine is ineffective against which type of arrhythmia?",
+   "opts": [
+    [
+     "Ventricular tachycardia",
+     "Ventricular tachycardia and premature beats are listed indications for lidocaine; it is atrial arrhythmias that it does not treat.",
+     "reversed direction or value"
+    ],
+    [
+     "Ventricular fibrillation",
+     "Ventricular fibrillation is a listed indication for lidocaine; it is not effective against atrial arrhythmias.",
+     "reversed direction or value"
+    ],
+    [
+     "Premature ventricular beats",
+     "Premature beats are listed with ventricular tachycardia among lidocaine's indications; lidocaine is not effective against atrial arrhythmias.",
+     "reversed direction or value"
+    ],
+    [
+     "Atrial arrhythmias",
+     "Correct. Lidocaine works on sodium channels in ischemic tissue, has less effect on normal tissue, and is not effective against atrial arrhythmias."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 18"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antiarrhythmic drugs",
+   "slot": "monitoring",
+   "q": "Which pharmacokinetic feature is listed for flecainide?",
+   "opts": [
+    [
+     "Extensive first-pass metabolism",
+     "Extensive first-pass metabolism is why lidocaine must be given intravenously; flecainide has a long 14-hour half-life and is also oral.",
+     "adjacent fact"
+    ],
+    [
+     "A long half-life of 14 hours",
+     "Correct. Flecainide has a long half-life (14 hours) and can be given by mouth or intravenously."
+    ],
+    [
+     "A half-life of about 10 seconds",
+     "A 10-second half-life belongs to adenosine; flecainide's half-life is a long 14 hours.",
+     "reversed direction or value"
+    ],
+    [
+     "Elimination unchanged by the kidneys",
+     "Elimination unchanged by the kidneys is listed for dofetilide; flecainide's listed feature is a long 14-hour half-life.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 21"
+  },
+  {
+   "topic": "Class IC actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which feature separates class IC from class IB?",
+   "opts": [
+    [
+     "IC works mainly in ischemic tissue",
+     "Working mainly in ischemic tissue is the class IB feature, the reverse of class IC, which affects the normal heart.",
+     "reversed direction or value"
+    ],
+    [
+     "IC shortens phase 3",
+     "Shortening phase 3 is the class IB action; class IC slows phase 0 and prolongs the refractory period.",
+     "reversed direction or value"
+    ],
+    [
+     "IC affects the normal heart",
+     "Correct. Class IC slows phase 0 and conduction, prolongs the refractory period and affects the normal heart; class IB has little effect on normal tissue."
+    ],
+    [
+     "IC blocks L-type calcium channels",
+     "Blocking L-type calcium channels is the class IV mechanism; class IC drugs are sodium channel blockers that affect the normal heart.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 20"
+  }
+ ],
+ "aa1bc2": [
+  {
+   "topic": "Lidocaine",
+   "io": "Identify contraindications for antiarrhythmic drugs",
+   "slot": "contraindication",
+   "q": "Which history is a listed contraindication to lidocaine?",
+   "opts": [
+    [
+     "Glaucoma",
+     "Glaucoma contraindicates disopyramide because of its anticholinergic action; lidocaine's listed contraindication is seizures.",
+     "adjacent fact"
+    ],
+    [
+     "Heart block",
+     "Heart block contraindicates disopyramide and is a toxicity of propranolol and digoxin; lidocaine's listed contraindication is seizures.",
+     "adjacent fact"
+    ],
+    [
+     "Seizures",
+     "Correct. Seizures are a listed contraindication to lidocaine, whose own central nervous system toxicity can end in seizures."
+    ],
+    [
+     "Asthma",
+     "Asthma matters for bronchospasm with propranolol, sotalol and the class IC drugs; lidocaine's listed contraindication is seizures.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 19"
+  },
+  {
+   "topic": "Class IB actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which automaticity do class IB drugs decrease?",
+   "opts": [
+    [
+     "That of ectopic foci",
+     "Correct. Class IB drugs shorten phase 3 and decrease ectopic foci automaticity."
+    ],
+    [
+     "That of the sinoatrial node",
+     "Suppressing the sinoatrial node is listed for verapamil and diltiazem (class IV); class IB decreases ectopic foci automaticity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "That of atrial pacemakers",
+     "Lidocaine is not effective against atrial arrhythmias; class IB decreases the automaticity of ectopic foci.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "That of the atrioventricular node",
+     "Slowing the atrioventricular node is what class II and class IV drugs do; class IB decreases ectopic foci automaticity.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 16"
+  },
+  {
+   "topic": "Class IC actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which change in the action potential is most marked with class IC drugs?",
+   "opts": [
+    [
+     "A shortened phase 3",
+     "A shortened phase 3 is the class IB picture; class IC markedly slows phase 0.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A prolonged phase 3 alone",
+     "A prolonged phase 3 with an unchanged upstroke is the class III picture; class IC markedly slows phase 0.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A much slower phase 0",
+     "Correct. The class IC tracing shows a markedly slower phase 0 upstroke; class IC slows phase 0 and conduction and prolongs the refractory period."
+    ],
+    [
+     "A flatter phase 4",
+     "A flatter phase 4 in pacemaker cells is the class II and class IV picture; class IC markedly slows phase 0.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 20"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which serious risk is listed for flecainide after a myocardial infarction?",
+   "opts": [
+    [
+     "Pulmonary fibrosis",
+     "Pneumonitis and pulmonary fibrosis (potentially fatal) belong to amiodarone; flecainide's listed risk after infarction is increased mortality.",
+     "adjacent fact"
+    ],
+    [
+     "Increased mortality",
+     "Correct. Flecainide's toxicity list includes increased mortality in myocardial infarction, which is why it is kept for hearts without significant structural damage."
+    ],
+    [
+     "Lupus-like syndrome",
+     "A lupus-like syndrome is procainamide's effect, more often in slow acetylators; flecainide's risk after infarction is increased mortality.",
+     "adjacent fact"
+    ],
+    [
+     "Cinchonism",
+     "Cinchonism is quinidine's tinnitus, dizziness and blurred vision; flecainide's risk after infarction is increased mortality.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 23"
+  },
+  {
+   "topic": "Propafenone",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Propafenone shares flecainide's mechanism and adds which activity?",
+   "opts": [
+    [
+     "Alpha-blocking activity",
+     "Alpha blockade at higher doses is quinidine's indirect action; propafenone adds beta-blocking activity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Potassium channel activation",
+     "Activating atrial potassium channels is adenosine's action; propafenone adds beta-blocking activity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Calcium channel blocking activity",
+     "Calcium channel blockade is the class IV mechanism (amiodarone also has it); propafenone adds beta-blocking activity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Beta-blocking activity",
+     "Correct. Propafenone has the same mechanism as flecainide plus beta-blocking activity, which brings bradycardia, bronchospasm and worse heart failure."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 24"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which electrocardiogram intervals does flecainide prolong?",
+   "opts": [
+    [
+     "PR and QRS",
+     "Flecainide prolongs the PR and QRS intervals but also the QT interval; all three lengthen.",
+     "wrong stage or severity"
+    ],
+    [
+     "PR, QRS and QT",
+     "Correct. Flecainide prolongs the PR, QRS and QT intervals; it blocks both sodium and potassium channels in the ventricles."
+    ],
+    [
+     "QRS and QT",
+     "Flecainide prolongs the QRS and QT intervals but also the PR interval; all three lengthen.",
+     "wrong stage or severity"
+    ],
+    [
+     "PR and QT",
+     "Flecainide prolongs the PR and QT intervals but also the QRS interval; all three lengthen.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 21"
+  },
+  {
+   "topic": "Class IB actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which effect on the cardiac action potential defines class IB?",
+   "opts": [
+    [
+     "Markedly slowed phase 0",
+     "A markedly slowed phase 0 is the class IC picture; class IB leaves the upstroke alone and shortens phase 3.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Prolonged phase 3",
+     "A prolonged phase 3 is the class III action (potassium channel block), the reverse of class IB, which shortens phase 3.",
+     "reversed direction or value"
+    ],
+    [
+     "Flattened phase 4",
+     "A flatter phase 4 in pacemaker cells is the class II and class IV picture; class IB shortens phase 3 in working muscle.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Shortened phase 3",
+     "Correct. Class IB shortens phase 3, so the action potential ends sooner, with an unchanged upstroke; it also decreases ectopic foci automaticity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 16"
+  },
+  {
+   "topic": "Propafenone",
+   "io": "Describe adverse effects of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect of propafenone comes from its beta-blocking activity?",
+   "opts": [
+    [
+     "Agranulocytosis",
+     "Agranulocytosis, with anemia and thrombocytopenia, is on propafenone's list but is not a beta-blocking effect; bronchospasm is.",
+     "adjacent fact"
+    ],
+    [
+     "Blurred vision",
+     "Blurred vision and dizziness are on propafenone's list but do not come from beta blockade; bronchospasm does.",
+     "adjacent fact"
+    ],
+    [
+     "Bronchospasm",
+     "Correct. Propafenone's toxicity list pairs bronchospasm with beta-adrenergic blockade; bradycardia and worsening heart failure come from the same activity."
+    ],
+    [
+     "Proarrhythmia",
+     "Propafenone is proarrhythmic like every antiarrhythmic, but that is not a beta-blocking effect; bronchospasm is.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 24"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Lidocaine toxicity shows mainly in which system?",
+   "opts": [
+    [
+     "Central nervous system",
+     "Correct. Lidocaine's toxicity is central nervous system toxicity: drowsiness, confusion, restlessness, muscle twitches, seizures, and nystagmus as the early sign."
+    ],
+    [
+     "Pulmonary system",
+     "Pneumonitis and pulmonary fibrosis are amiodarone's lung toxicity; lidocaine's toxicity is in the central nervous system.",
+     "adjacent fact"
+    ],
+    [
+     "Thyroid gland",
+     "Thyroid abnormalities belong to amiodarone, an analog of thyroid hormone; lidocaine's toxicity is in the central nervous system.",
+     "adjacent fact"
+    ],
+    [
+     "Hematologic system",
+     "Bone marrow suppression is listed for procainamide; lidocaine's toxicity is in the central nervous system.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 19"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Identify contraindications for antiarrhythmic drugs",
+   "slot": "contraindication",
+   "q": "Flecainide is to be used only in which patients?",
+   "opts": [
+    [
+     "Those without structural heart damage",
+     "Correct. Flecainide is to be used only in patients without significant structural damage to the heart, and it increases mortality after myocardial infarction."
+    ],
+    [
+     "Those with a prior myocardial infarction",
+     "Flecainide increases mortality after myocardial infarction, so this is the reverse of who should get it.",
+     "reversed direction or value"
+    ],
+    [
+     "Those with depressed cardiac function",
+     "Depressed function is a damaged heart, and flecainide is limited to hearts without significant structural damage.",
+     "reversed direction or value"
+    ],
+    [
+     "Those who are slow acetylators",
+     "Acetylator status matters for procainamide's lupus-like syndrome; flecainide's restriction is no significant structural heart damage.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 22"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which nervous system effects are listed for flecainide?",
+   "opts": [
+    [
+     "Tinnitus and dizziness",
+     "Tinnitus and dizziness with blurred vision make up quinidine's cinchonism; flecainide's listed effects are blurred vision and tremor.",
+     "adjacent fact"
+    ],
+    [
+     "Nystagmus and muscle twitches",
+     "Nystagmus and muscle twitches are lidocaine's central nervous system toxicity; flecainide's are blurred vision and tremor.",
+     "adjacent fact"
+    ],
+    [
+     "Neuropathy and ataxia",
+     "Neuropathy, muscle weakness and ataxia belong to amiodarone; flecainide's listed effects are blurred vision and tremor.",
+     "adjacent fact"
+    ],
+    [
+     "Blurred vision and tremor",
+     "Correct. Flecainide's toxicity list starts with blurred vision and tremor, and also includes seizures."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 23"
+  },
+  {
+   "topic": "Flecainide",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Besides sodium channels, which channels does flecainide block in the ventricles?",
+   "opts": [
+    [
+     "L-type calcium channels",
+     "L-type calcium channels are blocked by the class IV drugs verapamil and diltiazem; flecainide adds potassium channel block.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Beta receptors",
+     "Beta-blocking activity is what propafenone adds to the shared class IC mechanism; flecainide's second target is the potassium channel.",
+     "adjacent fact"
+    ],
+    [
+     "Alpha receptors",
+     "Alpha blockade at higher doses is quinidine's indirect action; flecainide's second target is the potassium channel.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Potassium channels",
+     "Correct. Flecainide blocks sodium and potassium channels in the ventricles and slows recovery of the sodium channel."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 21"
+  },
+  {
+   "topic": "Lidocaine",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which finding is an early sign of lidocaine toxicity?",
+   "opts": [
+    [
+     "Seizures",
+     "Seizures are part of lidocaine's central nervous system toxicity, but the finding listed as the early sign is nystagmus.",
+     "wrong stage or severity"
+    ],
+    [
+     "Nystagmus",
+     "Correct. Nystagmus is listed as the early sign of lidocaine toxicity, within its central nervous system toxicity."
+    ],
+    [
+     "Tinnitus",
+     "Tinnitus, with dizziness and blurred vision, is quinidine's cinchonism; the early sign of lidocaine toxicity is nystagmus.",
+     "adjacent fact"
+    ],
+    [
+     "Corneal deposits",
+     "Corneal deposits are an adverse effect of amiodarone; the early sign of lidocaine toxicity is nystagmus.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 19"
+  }
+ ]
+}

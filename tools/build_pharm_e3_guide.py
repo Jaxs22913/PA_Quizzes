@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Pharmacology I Exam 3 study guide (Lectures 9 to 13; only Lecture 9 is built so far).
+"""Build the Pharmacology I Exam 3 study guide (Lectures 9 to 13; Lectures 9 and 10 are built so far).
 
 Same skeleton-lift as build_pharm_e2_guide.py: take the Exam 1 guide's head and tail so the chrome, design
 system (the Pharmacology brown palette, dark tokens) and theme wiring come for free, and splice in a fresh
@@ -8,7 +8,8 @@ table of contents and body.
 
 BUILT INCREMENTALLY, AND THE PAGE SAYS SO. The syllabus puts LECTURES 9 TO 13 in Exam 3 (Thursday 2026-12-03).
 Section 1 (Lecture 9, diuretics and heart failure drugs) lives in _pharm_e3_guide_l9.py. Each later lecture is one
-more module (_pharm_e3_guide_l10.py ...) added to SECTIONS below, exactly as the Exam 2 guide grew.
+more module added to SECTIONS below, exactly as the Exam 2 guide grew. Section 2 (Lecture 10, antiarrhythmic
+drugs) lives in _pharm_e3_guide_l10.py.
 
 Objectives are VERBATIM from the syllabus, not from the deck (the deck's slide 2 drops "molecular" from
 objective 2; [[guide_verbatim_io_rule]] says the syllabus wins).
@@ -19,8 +20,9 @@ _REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pharm_e3_guide_l9 as L9
+import _pharm_e3_guide_l10 as L10
 
-SECTIONS = [L9]          # append _pharm_e3_guide_l10 ... as those lectures are built
+SECTIONS = [L9, L10]     # append _pharm_e3_guide_l11 ... as those lectures are built
 ROOT = _REPO
 DONOR = os.path.join(ROOT, "Pharmacology I Exam 1/pharm-exam-1-study-guide.html")
 OUT = os.path.join(ROOT, "Pharmacology I Exam 3/pharm-exam-3-study-guide.html")
@@ -33,8 +35,8 @@ TOC = '''<nav class="toc">
 INTRO = '''<main>
 
 <div class="callout" id="built-incrementally"><strong>This guide is built as the lectures are delivered.</strong> The syllabus puts Lectures 9 to 13
-in Exam 3, which is on Thursday, December 3, 2026. <strong>Lecture 9 (diuretics and heart failure drugs) is in</strong>; Lectures 10 to 13
-(antiarrhythmic drugs; pulmonary infections, asthma and COPD; hematological drugs; oncology drugs) are added as they are delivered.
+in Exam 3, which is on Thursday, December 3, 2026. <strong>Lectures 9 (diuretics and heart failure drugs) and 10 (antiarrhythmic drugs) are in</strong>;
+Lectures 11 to 13 (pulmonary infections, asthma and chronic obstructive pulmonary disease; hematological drugs; oncology drugs) are added as they are delivered.
 Master exams are held until the whole block is in.</div>
 @@MORE_BODY@@
 </main>'''
@@ -57,7 +59,7 @@ def main():
     head = re.sub(r"<title>.*?</title>", "<title>Pharmacology I Exam 3 Study Guide &mdash; Lectures 9 to 13</title>", head, count=1, flags=re.S)
     head = re.sub(r'<header class="top">.*?</header>',
                   '<header class="top">\n  <h1>Pharmacology I Exam 3 Study Guide</h1>\n'
-                  '  <p>Lectures 9 to 13 &middot; Diuretics and Heart Failure Drugs (built so far) &middot; Class of 2028</p>\n'
+                  '  <p>Lectures 9 to 13 &middot; Diuretics and Heart Failure Drugs; Antiarrhythmic Drugs (built so far) &middot; Class of 2028</p>\n'
                   '  <p>Adam Wood, Pharm.D., DABAT</p>\n</header>', head, count=1, flags=re.S)
     head = re.sub(r'\s*data-audio-dir="[^"]*"', "", head)
     head = alt.sub("", head)
@@ -75,6 +77,7 @@ def main():
     assert html.count('class="io-box"') == len(SECTIONS), "objective box count"
     assert "@@" not in html, "placeholder survived"
     assert '<section class="deck" id="diuretics-hf">' in html
+    assert '<section class="deck" id="antiarrhythmics">' in html
     # every TOC link must hit an id
     for m in re.finditer(r'<a (?:class="top-link" )?href="#([^"]+)"', toc):
         assert 'id="%s"' % m.group(1) in html, "TOC target missing: " + m.group(1)

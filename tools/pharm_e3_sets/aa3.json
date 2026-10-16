@@ -1,0 +1,702 @@
+{
+ "aa31": [
+  {
+   "topic": "Amiodarone",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which drug blocks potassium, sodium and calcium channels as well as alpha and beta receptors?",
+   "opts": [
+    [
+     "Amiodarone",
+     "Correct. Amiodarone blocks potassium channels, inactivated sodium channels, calcium channels and alpha and beta receptors."
+    ],
+    [
+     "Dofetilide",
+     "Dofetilide is a potent pure potassium channel blocker; the drug that blocks all of these is amiodarone.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Sotalol",
+     "Sotalol combines beta-blocking activity with potassium channel block only; amiodarone blocks all four targets.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Propafenone",
+     "Propafenone is a class IC sodium channel blocker with beta-blocking activity; amiodarone blocks all four targets.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 32"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antiarrhythmic drugs",
+   "slot": "interaction",
+   "q": "Which antiarrhythmic's level rises when amiodarone is added?",
+   "opts": [
+    [
+     "Adenosine",
+     "Adenosine is outside amiodarone's interaction list; amiodarone raises flecainide, procainamide, digoxin, warfarin and phenytoin.",
+     "adjacent fact"
+    ],
+    [
+     "Esmolol",
+     "Esmolol is outside amiodarone's interaction list; amiodarone raises flecainide, procainamide, digoxin, warfarin and phenytoin.",
+     "adjacent fact"
+    ],
+    [
+     "Flecainide",
+     "Correct. Amiodarone increases flecainide and procainamide, as well as digoxin, warfarin and phenytoin."
+    ],
+    [
+     "Magnesium sulfate",
+     "Magnesium sulfate is outside amiodarone's interaction list; amiodarone raises flecainide, procainamide, digoxin, warfarin and phenytoin.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Dofetilide",
+   "io": "List commonly used protocols and patient monitoring for antiarrhythmic drugs",
+   "slot": "monitoring",
+   "q": "Which restriction applies to prescribing dofetilide?",
+   "opts": [
+    [
+     "Prescribers need special training",
+     "Correct. Dofetilide has limited availability, restricted to those with special training."
+    ],
+    [
+     "It must be given intravenously",
+     "Intravenous-only use describes lidocaine, because of extensive first-pass metabolism; dofetilide needs special training.",
+     "adjacent fact"
+    ],
+    [
+     "It needs loading doses",
+     "Loading doses are for amiodarone, with its 40-day half-life; dofetilide's restriction is special prescriber training.",
+     "adjacent fact"
+    ],
+    [
+     "It is avoided with beta blockers",
+     "Avoiding beta blockers and calcium channel blockers is a digoxin caution; dofetilide's restriction is special prescriber training.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 34"
+  },
+  {
+   "topic": "Class III actions",
+   "io": "Identify antiarrhythmic drug classes and commonly prescribed antiarrhythmic drugs",
+   "slot": "class",
+   "q": "Which antiarrhythmic class prolongs repolarization by blocking potassium channels?",
+   "opts": [
+    [
+     "Class I",
+     "Class I drugs block sodium channels and act on phase 0; the potassium channel blockers that prolong repolarization are class III.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Class II",
+     "Class II drugs are the beta receptor antagonists, which flatten phase 4; potassium channel blockers are class III.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Class III",
+     "Correct. Class 3 drugs are the potassium channel blockers that prolong repolarization: amiodarone, dofetilide and sotalol."
+    ],
+    [
+     "Class IV",
+     "Class IV drugs block L-type calcium channels in the nodes; the potassium channel blockers are class III.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 5"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antiarrhythmic drugs",
+   "slot": "protocol",
+   "q": "Why may amiodarone require loading doses?",
+   "opts": [
+    [
+     "Its half-life is very short",
+     "A very short half-life (about 10 seconds) describes adenosine; amiodarone's half-life is very long.",
+     "reversed direction or value"
+    ],
+    [
+     "It has extensive first-pass metabolism",
+     "Extensive first-pass metabolism is why lidocaine is given intravenously; amiodarone needs loading because of its long half-life.",
+     "adjacent fact"
+    ],
+    [
+     "It is eliminated unchanged by the kidneys",
+     "Elimination unchanged by the kidneys is dofetilide's; amiodarone needs loading because of its long half-life.",
+     "adjacent fact"
+    ],
+    [
+     "Its half-life is very long",
+     "Correct. Amiodarone's half-life averages about 40 days, with slow onset and slow elimination, so loading doses may be needed."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 31"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which amiodarone toxicity is listed as potentially fatal?",
+   "opts": [
+    [
+     "Corneal deposits",
+     "Corneal deposits are an amiodarone eye toxicity, but the one listed as potentially fatal is pulmonary fibrosis.",
+     "wrong stage or severity"
+    ],
+    [
+     "Photosensitivity",
+     "Photosensitivity is an amiodarone skin effect, but the toxicity listed as potentially fatal is pulmonary fibrosis.",
+     "wrong stage or severity"
+    ],
+    [
+     "Blue-gray skin",
+     "Blue-gray skin color is a visible amiodarone effect, but the toxicity listed as potentially fatal is pulmonary fibrosis.",
+     "wrong stage or severity"
+    ],
+    [
+     "Pulmonary fibrosis",
+     "Correct. Pneumonitis and pulmonary fibrosis are amiodarone's potentially fatal toxicity."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which neurologic effects are listed for amiodarone?",
+   "opts": [
+    [
+     "Seizures and nystagmus",
+     "Seizures and nystagmus are part of lidocaine's central nervous system toxicity; amiodarone causes neuropathy and ataxia.",
+     "adjacent fact"
+    ],
+    [
+     "Neuropathy and ataxia",
+     "Correct. Amiodarone's neurotoxicity includes neuropathy, muscle weakness and ataxia."
+    ],
+    [
+     "Tinnitus and dizziness",
+     "Tinnitus, dizziness and blurred vision are quinidine's cinchonism; amiodarone causes neuropathy and ataxia.",
+     "adjacent fact"
+    ],
+    [
+     "Sedation and fatigue",
+     "Sedation and fatigue are listed for metoprolol and acebutolol; amiodarone causes neuropathy and ataxia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Sotalol",
+   "io": "Identify antiarrhythmic drug classes and commonly prescribed antiarrhythmic drugs",
+   "slot": "class",
+   "q": "Sotalol combines the actions of which two antiarrhythmic classes?",
+   "opts": [
+    [
+     "Classes I and II",
+     "Sodium channel block with beta-blocking activity is propafenone, a class IC drug; sotalol is classes II and III.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Classes II and III",
+     "Correct. Sotalol has beta-blocking (class II) activity and inhibits potassium channels (class III)."
+    ],
+    [
+     "Classes I and III",
+     "Blocking sodium and potassium channels describes flecainide, a class IC drug; sotalol is classes II and III.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Classes II and IV",
+     "Classes II and IV are separate drug groups (beta blockers and calcium channel blockers) that act on the nodes; sotalol is classes II and III.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 35"
+  },
+  {
+   "topic": "Class III actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which change in the cardiac action potential is the signature of class III drugs?",
+   "opts": [
+    [
+     "Slower phase 0 upstroke",
+     "A slower, lower phase 0 upstroke is the class IA and IC picture; class III leaves the upstroke and delays phase 3.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Delayed phase 3 repolarization",
+     "Correct. Class III drugs prolong phase 3, so the action potential and the refractory period both last longer."
+    ],
+    [
+     "Earlier phase 3 repolarization",
+     "Earlier repolarization (a shortened phase 3) is the class IB picture; class III delays phase 3.",
+     "reversed direction or value"
+    ],
+    [
+     "Flatter phase 4 depolarization",
+     "A flatter phase 4 in pacemaker cells is the class II and class IV picture; class III delays phase 3.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 30"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Why can amiodarone cause hyperthyroidism or hypothyroidism?",
+   "opts": [
+    [
+     "It is a thyroid hormone analog",
+     "Correct. Amiodarone is an analog of thyroid hormone, and both hyperthyroidism and hypothyroidism are on its toxicity list."
+    ],
+    [
+     "It blocks alpha and beta receptors",
+     "Amiodarone does block alpha and beta receptors, but its thyroid effects come from being an analog of thyroid hormone.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It is cleared unchanged by the kidneys",
+     "Elimination unchanged by the kidneys describes dofetilide; amiodarone's thyroid effects come from its thyroid hormone structure.",
+     "adjacent fact"
+    ],
+    [
+     "It inhibits the sodium-potassium pump",
+     "Sodium-potassium ATPase inhibition is digoxin's mechanism; amiodarone affects the thyroid because it is a thyroid hormone analog.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 31"
+  },
+  {
+   "topic": "Sotalol",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which pair of toxicities is listed for sotalol?",
+   "opts": [
+    [
+     "Lupus and marrow suppression",
+     "Lupus-like syndrome and bone marrow suppression are procainamide's; sotalol causes torsades and bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Cinchonism and thrombocytopenia",
+     "Cinchonism and thrombocytopenia are quinidine's; sotalol causes torsades and bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Hypotension and edema",
+     "Hypotension and edema are listed for verapamil and diltiazem; sotalol causes torsades and bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Torsades and bronchospasm",
+     "Correct. Sotalol's toxicities are torsades de pointes (from potassium channel block) and bronchospasm (from beta blockade)."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 36"
+  },
+  {
+   "topic": "Dofetilide",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Dofetilide is listed for which use?",
+   "opts": [
+    [
+     "Slowing the ventricular rate",
+     "Slowing the ventricular rate in atrial flutter or fibrillation is digoxin's listed use; dofetilide is for normal rhythm.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Terminating torsades de pointes",
+     "Torsades de pointes is treated with intravenous magnesium sulfate, and dofetilide can cause it.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal rhythm in atrial fibrillation",
+     "Correct. Dofetilide's listed indication is normal rhythm in atrial fibrillation."
+    ],
+    [
+     "Paroxysmal supraventricular tachycardia",
+     "Paroxysmal supraventricular tachycardia is listed for adenosine; dofetilide is for normal rhythm in atrial fibrillation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 34"
+  }
+ ],
+ "aa32": [
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which antiarrhythmic can turn the skin blue-gray?",
+   "opts": [
+    [
+     "Dofetilide",
+     "Dofetilide's listed adverse effects are torsades de pointes and marked QT prolongation; blue-gray skin is amiodarone's.",
+     "adjacent fact"
+    ],
+    [
+     "Sotalol",
+     "Sotalol's listed toxicities are torsades de pointes and bronchospasm; blue-gray skin is amiodarone's.",
+     "adjacent fact"
+    ],
+    [
+     "Amiodarone",
+     "Correct. Blue-gray skin color, with photosensitivity, is on amiodarone's toxicity list."
+    ],
+    [
+     "Quinidine",
+     "Quinidine's listed toxicities include cinchonism and thrombocytopenia; blue-gray skin is amiodarone's.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Discuss potential drug-drug, drug-food, and drug-herb interactions with antiarrhythmic drugs",
+   "slot": "interaction",
+   "q": "Amiodarone raises the levels of which pair of drugs?",
+   "opts": [
+    [
+     "Codeine and morphine",
+     "Codeine and morphine are the opioids named for quinidine's cytochrome P450 2D6 inhibition; amiodarone raises digoxin and warfarin.",
+     "adjacent fact"
+    ],
+    [
+     "Verapamil and diltiazem",
+     "Verapamil and diltiazem are calcium channel blockers to avoid alongside digoxin; amiodarone raises digoxin and warfarin.",
+     "adjacent fact"
+    ],
+    [
+     "Lidocaine and esmolol",
+     "Lidocaine and esmolol are intravenous agents outside amiodarone's list, which is digoxin, warfarin, flecainide, phenytoin and procainamide.",
+     "adjacent fact"
+    ],
+    [
+     "Digoxin and warfarin",
+     "Correct. Amiodarone increases digoxin, warfarin, flecainide, phenytoin and procainamide."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Outline appropriate patient education for antiarrhythmic drugs",
+   "slot": "education",
+   "q": "A patient starting long-term amiodarone should be told to protect the skin from sunlight because of which effect?",
+   "opts": [
+    [
+     "Photosensitivity",
+     "Correct. Photosensitivity is on amiodarone's toxicity list, along with a blue-gray skin color."
+    ],
+    [
+     "Flushing",
+     "Flushing is listed for adenosine and magnesium sulfate, and sunlight does not trigger it; amiodarone causes photosensitivity.",
+     "adjacent fact"
+    ],
+    [
+     "Hypersensitivity",
+     "Hypersensitivity is listed for lidocaine; the sun-related amiodarone effect is photosensitivity.",
+     "adjacent fact"
+    ],
+    [
+     "Lupus-like rash",
+     "A lupus-like syndrome is procainamide's, more often in slow acetylators; amiodarone's sun-related effect is photosensitivity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Dofetilide",
+   "io": "Describe absorption, distribution, metabolism, and excretion of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "How is dofetilide mainly eliminated?",
+   "opts": [
+    [
+     "Unchanged by the kidneys",
+     "Correct. Dofetilide is mainly eliminated unchanged in the kidneys."
+    ],
+    [
+     "By hepatic metabolism",
+     "Hepatic metabolism describes verapamil and diltiazem, hence caution in liver damage; dofetilide leaves unchanged by the kidneys.",
+     "adjacent fact"
+    ],
+    [
+     "By first-pass metabolism",
+     "Extensive first-pass metabolism describes lidocaine, which is why it is given intravenously; dofetilide leaves by the kidneys.",
+     "adjacent fact"
+    ],
+    [
+     "By hepatic acetylation",
+     "Acetylation describes procainamide, whose fast acetylators make more of its active metabolite; dofetilide leaves by the kidneys.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 34"
+  },
+  {
+   "topic": "Sotalol",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Which is a listed indication for sotalol?",
+   "opts": [
+    [
+     "Torsades de pointes",
+     "Torsades de pointes is on sotalol's toxicity list; it is treated with magnesium sulfate.",
+     "reversed direction or value"
+    ],
+    [
+     "Atrial flutter and fibrillation",
+     "Correct. Sotalol is listed for atrial flutter and fibrillation and for ventricular tachyarrhythmia."
+    ],
+    [
+     "Wolff-Parkinson-White syndrome",
+     "Wolff-Parkinson-White syndrome is listed for lidocaine and adenosine; sotalol is for atrial flutter and fibrillation.",
+     "adjacent fact"
+    ],
+    [
+     "Sick sinus syndrome",
+     "Sick sinus syndrome is on the avoid list for verapamil and diltiazem; sotalol is for atrial flutter and fibrillation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 35"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Identify indications for commonly used antiarrhythmic drugs",
+   "slot": "indication",
+   "q": "Which ventricular arrhythmia is a listed indication for amiodarone?",
+   "opts": [
+    [
+     "Refractory ventricular tachycardia",
+     "Correct. Amiodarone is listed for recurrent ventricular tachycardia or fibrillation resistant to other drugs."
+    ],
+    [
+     "Ventricular ectopic beats",
+     "Ventricular ectopic beats are listed for propranolol; amiodarone is for ventricular tachycardia resistant to other drugs.",
+     "adjacent fact"
+    ],
+    [
+     "Wolff-Parkinson-White syndrome",
+     "Wolff-Parkinson-White syndrome is listed for lidocaine and adenosine, and it is not a ventricular arrhythmia; amiodarone is for refractory ventricular tachycardia.",
+     "adjacent fact"
+    ],
+    [
+     "Torsades de pointes",
+     "Torsades de pointes is treated with magnesium sulfate, and prolonging repolarization can provoke it; amiodarone is for refractory ventricular tachycardia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Antiarrhythmics.pptx, Slide 31"
+  },
+  {
+   "topic": "Sotalol",
+   "io": "Identify contraindications for antiarrhythmic drugs",
+   "slot": "drug choice",
+   "q": "A patient with asthma needs a drug for atrial fibrillation. Which listed drug carries a bronchospasm risk?",
+   "opts": [
+    [
+     "Dofetilide",
+     "Dofetilide is a pure potassium channel blocker whose danger is torsades de pointes, not bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "Amiodarone",
+     "Amiodarone's lung toxicity is pneumonitis and pulmonary fibrosis over time; bronchospasm is listed for sotalol.",
+     "adjacent fact"
+    ],
+    [
+     "Sotalol",
+     "Correct. Sotalol has beta-blocking activity, and bronchospasm is on its toxicity list."
+    ],
+    [
+     "Digoxin",
+     "Digoxin's listed toxicities are gastrointestinal and central nervous system effects; bronchospasm is listed for sotalol.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 36"
+  },
+  {
+   "topic": "Class III actions",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Class III antiarrhythmics prolong repolarization through which ion effect?",
+   "opts": [
+    [
+     "Increased potassium efflux",
+     "More potassium leaving the cell would speed repolarization; class III drugs reduce potassium efflux to prolong it.",
+     "reversed direction or value"
+    ],
+    [
+     "Reduced potassium efflux",
+     "Correct. Class III drugs reduce potassium efflux, which prolongs phase 3 repolarization and the refractory period."
+    ],
+    [
+     "Reduced sodium influx",
+     "Reducing sodium influx in phase 0 is the class I mechanism; class III drugs reduce potassium efflux.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Reduced calcium influx",
+     "Blocking calcium influx through the L-type channel is the class IV mechanism; class III drugs reduce potassium efflux.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 30"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Besides the lungs, thyroid, skin and eyes, which organ's dysfunction is listed for amiodarone?",
+   "opts": [
+    [
+     "Kidney",
+     "The kidneys are where dofetilide is mainly eliminated unchanged; amiodarone's listed organ dysfunction is hepatic.",
+     "adjacent fact"
+    ],
+    [
+     "Pancreas",
+     "Pancreatic injury is not on amiodarone's list; its organ toxicities are lung, thyroid, skin, eye, nerve and liver.",
+     "common lay belief"
+    ],
+    [
+     "Liver",
+     "Correct. Hepatic dysfunction is on amiodarone's toxicity list."
+    ],
+    [
+     "Bone marrow",
+     "Bone marrow suppression is listed for procainamide; amiodarone's listed organ dysfunction is hepatic.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  },
+  {
+   "topic": "Dofetilide",
+   "io": "Describe adverse effects of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is the main danger of dofetilide?",
+   "opts": [
+    [
+     "Pulmonary fibrosis",
+     "Pulmonary fibrosis is amiodarone's potentially fatal toxicity; dofetilide's danger is torsades de pointes.",
+     "adjacent fact"
+    ],
+    [
+     "Agranulocytosis",
+     "Agranulocytosis is listed for propafenone; dofetilide's danger is torsades de pointes.",
+     "adjacent fact"
+    ],
+    [
+     "Lupus-like syndrome",
+     "A lupus-like syndrome is procainamide's, more often in slow acetylators; dofetilide's danger is torsades de pointes.",
+     "adjacent fact"
+    ],
+    [
+     "Torsades de pointes",
+     "Correct. Dofetilide's listed adverse effects are torsades de pointes and marked QT prolongation."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 34"
+  },
+  {
+   "topic": "Dofetilide",
+   "io": "Describe the molecular mechanism of action of antiarrhythmic drugs",
+   "slot": "mechanism",
+   "q": "Which antiarrhythmic is a potent pure potassium channel blocker?",
+   "opts": [
+    [
+     "Amiodarone",
+     "Amiodarone blocks potassium, sodium and calcium channels and alpha and beta receptors, so it is not a pure blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Sotalol",
+     "Sotalol adds beta-blocking activity to its potassium channel block; the pure potassium channel blocker is dofetilide.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Flecainide",
+     "Flecainide blocks sodium and potassium channels in the ventricles and is class IC; the pure potassium channel blocker is dofetilide.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Dofetilide",
+     "Correct. Dofetilide is a potent pure potassium channel blocker, used for normal rhythm in atrial fibrillation."
+    ]
+   ],
+   "c": 3,
+   "cite": "Antiarrhythmics.pptx, Slide 34"
+  },
+  {
+   "topic": "Amiodarone",
+   "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
+   "slot": "adverse effect",
+   "q": "Which eye finding is listed among amiodarone's toxicities?",
+   "opts": [
+    [
+     "Nystagmus",
+     "Nystagmus is the early sign of lidocaine toxicity; amiodarone's listed eye finding is corneal deposits.",
+     "adjacent fact"
+    ],
+    [
+     "Corneal deposits",
+     "Correct. Corneal deposits are on amiodarone's toxicity list."
+    ],
+    [
+     "Glaucoma",
+     "Glaucoma is a contraindication to disopyramide because of its anticholinergic action; amiodarone causes corneal deposits.",
+     "adjacent fact"
+    ],
+    [
+     "Blurred vision with tinnitus",
+     "Blurred vision with tinnitus and dizziness is cinchonism from quinidine; amiodarone's listed eye finding is corneal deposits.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Antiarrhythmics.pptx, Slide 33"
+  }
+ ]
+}

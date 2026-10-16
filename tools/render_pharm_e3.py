@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Render the Pharmacology I Exam 3 topic quizzes (Lecture 9, Diuretics and Heart Failure Drugs) and the
-vignette pair. Topic sets come from tools/pharm_e3_sets/<key>.json (pharm_e3_partition.py), the vignettes from
-tools/pharm_e3_vignette_sets.json (pharm_e3_vignette_partition.py). Rendering skips whatever is not built yet.
+"""Render the Pharmacology I Exam 3 topic quizzes and vignette pairs: Lecture 9 (Diuretics and Heart Failure Drugs)
+and Lecture 10 (Antiarrhythmic Drugs). Topic sets come from tools/pharm_e3_sets/<key>.json (pharm_e3_partition.py),
+the vignettes from tools/pharm_e3_vignette_sets.json (Lecture 9) and tools/pharm_e3_l10_vignette_sets.json (Lecture 10).
+Rendering skips whatever is not built yet.
+
+    python3 tools/render_pharm_e3.py                         # everything
+    python3 tools/render_pharm_e3.py aa1a aa1bc v10          # only these topic keys / vignette pairs (v9, v10)
+
+Options may carry a third element (`mis`, the WRITER.md misconception tag) and questions a `lead`; both are
+bookkeeping for the blind review and are stripped before render.
 
 Topic quizzes use the slate-blue Exam 2 topic palette and the vignettes the brown palette, as in Exam 2 (the Pharmacology
 palettes are shared across exams; no new accent hex).
@@ -57,6 +64,52 @@ TOPICS = [
   "inhibitor) and the <b>SGLT2 inhibitors</b>."),
 ]
 
+SUB10 = "Pharmacology I &middot; Exam 3 &middot; Antiarrhythmic Drugs"
+NOTE10 = ("<b>What these do and do not ask.</b> <b>Classes, indications, adverse effects, contraindications and patient "
+          "education are in</b>, weighted above mechanism. <b>Doses are out</b>, and so are channel-binding affinity and "
+          "dissociation rates and the few slide points that current guidelines no longer follow, which is why the sets run "
+          "shorter than the usual 30. Every option carries its own reason, correct and incorrect alike.")
+
+# Lecture 10 topics: key, heading, file stem, chips, blurb
+TOPICS10 = [
+ ("aa1a", "Antiarrhythmic Classes &amp; Class IA Drugs", "antiarrhythmic-classes-1a-quiz",
+  ["Classification", "Indication trends", "Quinidine", "Procainamide", "Disopyramide"],
+  "Antiarrhythmics fall into <b>four classes plus a few others</b>, and the class predicts where a drug works: "
+  "classes II and IV act above the ventricles, classes I and III on both. The <b>class IA</b> drugs (quinidine, "
+  "procainamide, disopyramide) slow phase 0 and lengthen the action potential, and each has a signature toxicity: "
+  "<b>cinchonism</b>, a <b>lupus-like syndrome</b>, <b>anticholinergic</b> effects."),
+ ("aa1bc", "Class IB &amp; IC Antiarrhythmics", "antiarrhythmic-1b-1c-quiz",
+  ["Lidocaine", "Ischemic tissue", "Flecainide", "Propafenone", "Toxicity"],
+  "<b>Lidocaine</b> (class IB) is given intravenously, works best in <b>ischemic</b> tissue and shows toxicity in the "
+  "brain first (nystagmus, then seizures). <b>Flecainide</b> and <b>propafenone</b> (class IC) slow conduction even in "
+  "the normal heart, prolong the PR, QRS and QT intervals and can provoke arrhythmias; flecainide raises mortality after "
+  "a myocardial infarction."),
+ ("aa24", "Class II &amp; IV: Beta Blockers &amp; Calcium Channel Blockers", "antiarrhythmic-beta-calcium-blockers-quiz",
+  ["Phase 4", "Propranolol", "Beta-1 selective", "Esmolol", "Verapamil and diltiazem"],
+  "Both classes act on the <b>nodes</b>: they flatten phase 4 and slow atrioventricular conduction, so they control "
+  "<b>supraventricular</b> rhythms. Know why <b>propranolol</b> is a problem in asthma and what replaces it, which "
+  "beta blocker is the short-acting intravenous one, and when <b>verapamil and diltiazem</b> must be avoided."),
+ ("aa3", "Class III: Potassium Channel Blockers", "antiarrhythmic-class-3-quiz",
+  ["Phase 3", "Amiodarone", "Dofetilide", "Sotalol", "Interactions"],
+  "Class III drugs <b>reduce potassium efflux</b> and prolong repolarization. <b>Amiodarone</b> blocks almost "
+  "everything, has a very long half-life and a long list of organ toxicities and interactions; <b>dofetilide</b> is "
+  "the pure potassium blocker with a torsades risk; <b>sotalol</b> adds beta blockade."),
+ ("aamisc", "Adenosine, Digoxin &amp; Magnesium Sulfate", "antiarrhythmic-misc-agents-quiz",
+  ["Adenosine", "Digoxin", "Magnesium sulfate", "Toxicity"],
+  "The agents outside the four classes: <b>adenosine</b> hyperpolarizes and briefly stops the heart to end "
+  "paroxysmal supraventricular tachycardia, <b>digoxin</b> slows the ventricular rate in atrial fibrillation and "
+  "flutter, and <b>magnesium sulfate</b> treats torsades de pointes."),
+]
+
+VCHIPS10 = ["Class IA", "Class IB and IC", "Beta blockers", "Calcium channel blockers", "Class III", "Adenosine and digoxin"]
+VINTRO10 = ("Clinical vignettes that open with a patient rather than a fact. The topic quizzes test the drugs one at a time; "
+            "these ask what you would <b>choose</b>, what you would <b>avoid</b>, which toxicity explains a new symptom "
+            "and what to <b>watch for</b>. The last sentence decides the answer, so read it twice. Expect the classic "
+            "contrasts: a nonselective against a beta-1 selective blocker, which drug belongs in ischemic tissue, the "
+            "signature toxicities of quinidine, procainamide, lidocaine and amiodarone, and what treats torsades de "
+            "pointes. <b>No doses</b> are asked. Every option carries its own reason, correct and incorrect alike, and "
+            "every question cites its slide.")
+
 VCHIPS = ["Loop diuretics", "Thiazides", "Potassium-sparing", "Heart failure", "Digoxin", "Newer agents"]
 VINTRO = ("Clinical vignettes that open with a patient rather than a fact. The topic quizzes test the drugs one at a time; "
           "these ask what you would <b>choose</b>, what you would <b>avoid</b>, what you would <b>warn the patient about</b> "
@@ -67,32 +120,65 @@ VINTRO = ("Clinical vignettes that open with a patient rather than a fact. The t
           "question cites its slide.")
 
 
-def main():
-    for key, label, stem, chips, blurb in TOPICS:
+def clean(qs):
+    """Drop review bookkeeping (option `mis`, question `lead`) so the page carries only text and explanation."""
+    out = []
+    for q in qs:
+        q = {k: v for k, v in q.items() if k != "lead"}
+        q["opts"] = [list(o[:2]) for o in q["opts"]]
+        out.append(q)
+    return out
+
+
+def topics(table, sub, note, want):
+    for key, label, stem, chips, blurb in table:
+        if want and key not in want:
+            continue
         p = os.path.join(HERE, "pharm_e3_sets", key + ".json")
         if not os.path.exists(p):
             print("skip (no sets yet): " + key); continue
         S = json.load(open(p, encoding="utf-8"))
         for n in (1, 2):
-            qs = S["%s%d" % (key, n)]
+            qs = clean(S["%s%d" % (key, n)])
             fn = "%s.html" % stem if n == 1 else "%s-version-2.html" % stem
-            html = render(title="%s Quiz %d &mdash; Pharmacology I Exam 3" % (label, n), h1=label, sub=SUB,
-                          pill="%d questions" % len(qs), chips=chips, intro=blurb + " " + NOTE,
+            html = render(title="%s Quiz %d &mdash; Pharmacology I Exam 3" % (label, n), h1=label, sub=sub,
+                          pill="%d questions" % len(qs), chips=chips, intro=blurb + " " + note,
                           questions=qs, already_converted=True, **PALETTE)
             open(os.path.join(OUT, fn), "w", encoding="utf-8").write(html)
             print("wrote %-52s %d questions" % (fn, len(qs)))
-    p = os.path.join(HERE, "pharm_e3_vignette_sets.json")
-    if os.path.exists(p):
-        V = json.load(open(p, encoding="utf-8"))
-        for n, key in ((1, "set1"), (2, "set2")):
-            fn = "pharm-e3-vignettes.html" if n == 1 else "pharm-e3-vignettes-version-2.html"
-            html = render(title="Diuretics and Heart Failure Drugs &mdash; Clinical Vignettes %d | Pharmacology I Exam 3" % n,
-                          h1="Diuretics &amp; Heart Failure Drugs &mdash; Clinical Vignettes %d" % n,
-                          sub="Pharmacology I &middot; Exam 3 &middot; apply it to a patient",
-                          pill="%d questions" % len(V[key]), chips=VCHIPS, intro=VINTRO,
-                          questions=V[key], already_converted=True, **PAL_V)
-            open(os.path.join(OUT, fn), "w", encoding="utf-8").write(html)
-            print("wrote %-52s %d questions" % (fn, len(V[key])))
+
+
+def vignettes(setfile, stem, topic_title, topic_h1, chips, intro):
+    p = os.path.join(HERE, setfile)
+    if not os.path.exists(p):
+        print("skip (no sets yet): " + setfile); return
+    V = json.load(open(p, encoding="utf-8"))
+    for n, key in ((1, "set1"), (2, "set2")):
+        fn = "%s.html" % stem if n == 1 else "%s-version-2.html" % stem
+        qs = clean(V[key])
+        html = render(title="%s &mdash; Clinical Vignettes %d | Pharmacology I Exam 3" % (topic_title, n),
+                      h1="%s &mdash; Clinical Vignettes %d" % (topic_h1, n),
+                      sub="Pharmacology I &middot; Exam 3 &middot; apply it to a patient",
+                      pill="%d questions" % len(qs), chips=chips, intro=intro,
+                      questions=qs, already_converted=True, **PAL_V)
+        open(os.path.join(OUT, fn), "w", encoding="utf-8").write(html)
+        print("wrote %-52s %d questions" % (fn, len(qs)))
+
+
+def main():
+    want = set(a for a in sys.argv[1:] if not a.startswith("-"))
+    known = {t[0] for t in TOPICS + TOPICS10} | {"v9", "v10"}
+    bad = want - known
+    if bad:
+        sys.exit("unknown key(s): %s (known: %s)" % (", ".join(sorted(bad)), ", ".join(sorted(known))))
+    topics(TOPICS, SUB, NOTE, want)
+    topics(TOPICS10, SUB10, NOTE10, want)
+    if not want or "v9" in want:
+        vignettes("pharm_e3_vignette_sets.json", "pharm-e3-vignettes", "Diuretics and Heart Failure Drugs",
+                  "Diuretics &amp; Heart Failure Drugs", VCHIPS, VINTRO)
+    if not want or "v10" in want:
+        vignettes("pharm_e3_l10_vignette_sets.json", "pharm-e3-antiarrhythmic-vignettes", "Antiarrhythmic Drugs",
+                  "Antiarrhythmic Drugs", VCHIPS10, VINTRO10)
 
 
 if __name__ == "__main__":

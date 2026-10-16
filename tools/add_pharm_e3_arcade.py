@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Pharmacology I Exam 3 Arcade decks (Lecture 9, Diuretics and Heart Failure Drugs).
+"""Add the Pharmacology I Exam 3 Arcade decks (Lecture 9, Diuretics and Heart Failure Drugs; Lecture 10, Antiarrhythmics).
 
-Six decks, one per Exam 3 topic quiz, authored in _pharm_e3_arcade_l9.py. ATOMIC FACTS ONLY per
+Six Lecture 9 decks (_pharm_e3_arcade_l9.py) and five Lecture 10 decks (_pharm_e3_arcade_l10.py). Each card is
+proved against its OWN lecture's deck and recording. ATOMIC FACTS ONLY per
 [[arcade_content_policy]]. NOTHING HERE IS A DOSE: the assertions below refuse one.
 
 REFUSES TO WRITE unless every card proves itself: each `verify` substring must be on the slide the card cites
@@ -22,11 +23,13 @@ sys.path.insert(0, HERE)
 import pharm_e3_lib as L
 import check_pharm_e3_wood as W
 import _pharm_e3_arcade_l9 as A
+import _pharm_e3_arcade_l10 as A10
 
-DECKS = A.DECKS
+MODULES = [("L9", A), ("L10", A10)]     # (lecture whose slides and transcript prove the cards, deck module)
+DECKS = A.DECKS + A10.DECKS
 ROOT = os.path.dirname(HERE)
 ARCADE = os.path.join(ROOT, "arcade.js")
-SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/8c127d8b-c2b9-43bc-94a9-c4dfe0f6e46d/scratchpad/arcade_e3_dryrun.js"
+SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/2ff21160-23d6-4725-b9aa-d32e3abf4f08/scratchpad/arcade_e3_dryrun.js"
 OPEN, CLOSE = "  // <!--PHARME3-DECKS-->", "  // <!--/PHARME3-DECKS-->"
 
 
@@ -48,11 +51,14 @@ def prove():
     bad = re.compile(r"(?i)\b\d+\s*(mg(?!/dL)|milligram|microgram|mcg|unit)\b")
     fails = []
     byq = {}
-    for deck, q, pairs, quotes in A.REG:
-        byq[(deck, q)] = (pairs, quotes)
+    order = []
+    for lec, mod in MODULES:
+        for deck, q, pairs, quotes in mod.REG:
+            byq[(deck, q)] = (lec, pairs, quotes)
+        order += [(lec, d) for d in mod.DECKS]
     seen = set()
     nsub = nq = 0
-    for did, _n, _c, _i, cards in DECKS:
+    for lec, (did, _n, _c, _i, cards) in order:
         answers = {}
         for q, a in cards:
             if (did, q) not in byq:
@@ -67,9 +73,9 @@ def prove():
             if not q.rstrip().endswith(("?", ".")):
                 fails.append("%s: question is not a sentence %r" % (did, q))
             answers.setdefault(a, 0); answers[a] += 1
-            pairs, quotes = byq[(did, q)]
+            _lec, pairs, quotes = byq[(did, q)]
             for slide, subs in pairs:
-                body = L.slide_text("L9", slide)
+                body = L.slide_text(lec, slide)
                 if not body:
                     fails.append("%s: slide %d has no text" % (did, slide))
                 for v in subs:
@@ -78,7 +84,7 @@ def prove():
                         fails.append("%s: NOT ON SLIDE %d: %r (card %r)" % (did, slide, v, q))
             for qt in quotes:
                 nq += 1
-                if W.norm(qt) not in W.transcript("L9"):
+                if W.norm(qt) not in W.transcript(lec):
                     fails.append("%s: NOT IN TRANSCRIPT: %r (card %r)" % (did, qt, q))
         dup = {a: n for a, n in answers.items() if n > 1}
         if dup:

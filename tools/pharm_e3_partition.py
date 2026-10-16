@@ -19,6 +19,13 @@ the guards (imported by the vignette partition too) and writes ONE sets file per
 
 Each pool is split in half rather than padded to the house 30: the pool is as large as the slides support.
 
+WRITER RULES (tools/question_writing/WRITER.md v1, 2026-10-15) apply to the pools written after that date (WRITER_RULES
+below; Lecture 10 onward): every distractor carries its misconception as a THIRD element of the option,
+[text, explanation, "<category from MIS>"], kept in the sets JSON (blind_review.py reads it) and stripped from the
+pages by render_pharm_e3.py; numeric option sets (tools/_option_order.py) are shown ASCENDING and not shuffled, the
+key sitting where its value falls, and the other questions' positions are balanced around them. Lecture 9 pools are
+untouched by this (their sets are never re-partitioned).
+
     python3 tools/pharm_e3_partition.py <key> [<key> ...]
 """
 import importlib, json, os, random, re, sys
@@ -39,7 +46,7 @@ BAD_KEY = re.compile(r"^\s*(about |up to |roughly )?[\d.,]+\s*(-|to)?\s*[\d.,]*\
 BREADTH = ("indication", "education", "adverse effect", "contraindication", "drug choice")
 BACKGROUND = ("mechanism", "physiology")
 SLOTS = set(BREADTH) | set(BACKGROUND) | {"class", "interaction", "monitoring", "protocol"}
-CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, Slide \d+$")   # a cross-lecture fact cites the deck that states it
+CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antiarrhythmics|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, Slide \d+$")   # a cross-lecture fact cites the deck that states it
 
 
 def hard_cites(text):
@@ -70,10 +77,59 @@ def check(pool, label):
         seen.add(q["q"])
         texts = [o[0] for o in q["opts"]]
         assert len(set(texts)) == NOPT, "%s: duplicate option text" % w
-        for k, (t, e) in enumerate(q["opts"]):
+        for k, o in enumerate(q["opts"]):
+            t, e = o[0], o[1]
             assert len(e) >= 60, "%s: explanation too thin: %r" % (w, e[:60])
             assert e.startswith("Correct") == (k == 0), "%s: 'Correct' marks the wrong option" % w
+            if len(o) > 2:
+                assert k > 0 and o[2] in MIS, "%s: misconception tag %r (key carries none; distractors one of MIS)" % (w, o[2])
+            assert len(o) <= 3, "%s: option has %d fields" % (w, len(o))
         assert CITE_RX.match(q["cite"]), "%s: cite %r" % (w, q["cite"])
+
+
+MIS = ("competing diagnosis", "wrong stage or severity", "ruled out by a stated finding",
+       "confused mechanism or drug class", "adjacent fact", "reversed direction or value", "common lay belief")
+WRITER_RULES = {"aa1a", "aa1bc", "aa24", "aa3", "aamisc"}      # Lecture 10 pools (WRITER.md v1)
+_ABSOL = re.compile(r"\b(always|never|only|all|none)\b", re.I)
+
+
+def writer_check(pool, label):
+    """WRITER.md v1 extras: every distractor tagged, no absolute word only in distractors."""
+    for i, q in enumerate(pool):
+        w = "%s[%d]" % (label, i)
+        assert all(len(o) == 3 for o in q["opts"][1:]), "%s: every distractor needs a misconception tag" % w
+        assert len(q["opts"][0]) == 2, "%s: the key carries no misconception tag" % w
+        key_abs = bool(_ABSOL.search(q["opts"][0][0]))
+        for o in q["opts"][1:]:
+            assert key_abs or not _ABSOL.search(o[0]), "%s: absolute word only in a distractor: %r" % (w, o[0])
+
+
+def rotate_balanced(qs, rng):
+    """Like rotate(), but numeric option sets are sorted ascending (tools/_option_order.py) and keep the key where
+    its value falls; the remaining questions are placed so the four positions stay within one of each other."""
+    from _option_order import order_options, option_values
+    fixed = {}
+    for n, q in enumerate(qs):
+        if option_values([o[0] for o in q["opts"]]) is not None:
+            fixed[n] = order_options(q)
+    want = [len(qs) // NOPT + (1 if k < len(qs) % NOPT else 0) for k in range(NOPT)]
+    rng.shuffle(want)
+    for q in fixed.values():
+        want[q["c"]] -= 1
+    free = [k for k in range(NOPT) for _ in range(max(0, want[k]))]
+    while len(free) < len(qs) - len(fixed):
+        free.append(min(range(NOPT), key=lambda k: want[k] + free.count(k)))
+    rng.shuffle(free)
+    it = iter(free)
+    out = []
+    for n, q in enumerate(qs):
+        if n in fixed:
+            out.append(fixed[n]); continue
+        tgt = next(it)
+        o = list(q["opts"]); key = o.pop(0); o.insert(tgt, key)
+        r = dict(q); r["opts"] = o; r["c"] = tgt
+        out.append(r)
+    return out
 
 
 def split(pool, rng):
@@ -113,10 +169,12 @@ def main():
         rng = random.Random(SEED + sum(map(ord, key)))     # own stream per topic: editing one pool never moves another
         pool = importlib.import_module("pharm_e3_pool_" + key.replace("-", "_")).QUESTIONS
         check(pool, key)
+        if key in WRITER_RULES:
+            writer_check(pool, key)
         a, b = split(pool, rng)
         sets = {}
         for n, part in ((1, a), (2, b)):
-            rot = rotate(part, rng)
+            rot = rotate_balanced(part, rng) if key in WRITER_RULES else rotate(part, rng)
             pos = {}
             for q in rot:
                 pos[q["c"]] = pos.get(q["c"], 0) + 1
