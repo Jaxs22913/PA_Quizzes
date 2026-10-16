@@ -34,7 +34,8 @@ Compact JSON only, no long reasoning, no rewriting of whole items. Do not re-rea
 1. Compare `your_blind_result` with `key`. A different pick, `ambiguous` or `insufficient`, an `alt`, a
    `missing` detail or a `conflict` from pass 1 are NOT settled by the writer having a key: re-check the
    evidence. A key that follows the slides where current guidelines differ is CORRECT (students are tested from
-   the slides): not a defect, but name the difference in a defect-free note so the guide gets a line. Agreement between you and the writer is a signal, not proof.
+   the slides): not a defect: return `pass` with empty `defects` and put `NOTE: <the guideline difference>` in `fix`, so the guide
+   gets a one-line note. Agreement between you and the writer is a signal, not proof.
 2. Slide pictures: when the slide text says it has pictures and the key or an explanation depends on them, and
    the slide is listed in `evidence_images`, open the listed images with the Read tool (skip any you already
    opened in pass 1) and treat what is CLEARLY visible as evidence. A claim that rests on a picture that is not
