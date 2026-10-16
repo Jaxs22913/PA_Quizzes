@@ -92,7 +92,7 @@ QUESTIONS = [
          ["Metoprolol",
           "Metoprolol's listed concerns are heart failure, sedation and fatigue; the twisting rhythm with a long QT is quinidine's torsades.", RULED],
          ["Warfarin",
-          "Warfarin is an anticoagulant, not an antiarrhythmic, and amiodarone is what raises its level; torsades is listed for quinidine.", RULED],
+          "Warfarin is an anticoagulant, not an antiarrhythmic, and torsades de pointes is not on its list; torsades is listed for quinidine.", RULED],
          ["Digoxin",
           "Digoxin slows atrioventricular conduction and can induce heart block; torsades with a long QT is listed for quinidine.", RULED]],
    c=0, cite=c(11)),
@@ -324,8 +324,8 @@ QUESTIONS = [
           "Verapamil undergoes hepatic metabolism, so its caution is liver damage; dofetilide is eliminated unchanged by the kidneys.", ADJ],
          ["Lidocaine",
           "Lidocaine has extensive first-pass metabolism, which is why it is given intravenously; dofetilide leaves by the kidneys.", ADJ],
-         ["Procainamide",
-          "Procainamide is acetylated to an active metabolite with class III activity; dofetilide is eliminated unchanged by the kidneys.", ADJ]],
+         ["Amiodarone",
+          "Amiodarone's listed kinetics are slow onset and slow elimination over a 40-day half-life; dofetilide is the one eliminated unchanged by the kidneys.", ADJ]],
    c=0, cite=c(34)),
 
  dict(topic=T_3, io=IO["ind"], slot="indication", lead="first-line treatment",
@@ -398,7 +398,7 @@ QUESTIONS = [
          ["Agranulocytosis",
           "Agranulocytosis is listed for propafenone; with magnesium sulfate the serious risk is respiratory paralysis.", ADJ],
          ["Flushing",
-          "Flushing is on magnesium sulfate's list but is not dangerous; the most serious listed toxicity is respiratory paralysis.", STAGE]],
+          "Flushing is on magnesium sulfate's list but is the milder effect; respiratory paralysis is the most serious listed toxicity.", STAGE]],
    c=0, cite=c(45)),
 ]
 

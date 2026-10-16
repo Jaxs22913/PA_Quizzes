@@ -265,26 +265,26 @@
    "topic": "Amiodarone",
    "io": "Summarize side effects and toxic manifestations of antiarrhythmic drugs",
    "slot": "adverse effect",
-   "q": "Why can amiodarone cause hyperthyroidism or hypothyroidism?",
+   "q": "Amiodarone is an analog of which hormone?",
    "opts": [
     [
-     "It is a thyroid hormone analog",
-     "Correct. Amiodarone is an analog of thyroid hormone, and both hyperthyroidism and hypothyroidism are on its toxicity list."
+     "Thyroid hormone",
+     "Correct. Amiodarone (oral and intravenous) is an analog of thyroid hormone, and thyroid abnormalities, both hyper and hypo, are on its toxicity list."
     ],
     [
-     "It blocks alpha and beta receptors",
-     "Amiodarone does block alpha and beta receptors, but its thyroid effects come from being an analog of thyroid hormone.",
+     "Aldosterone",
+     "Aldosterone is the hormone that spironolactone and eplerenone block; amiodarone is an analog of thyroid hormone.",
      "confused mechanism or drug class"
     ],
     [
-     "It is cleared unchanged by the kidneys",
-     "Elimination unchanged by the kidneys describes dofetilide; amiodarone's thyroid effects come from its thyroid hormone structure.",
+     "Epinephrine",
+     "Epinephrine acts on the beta receptors that class II drugs block; amiodarone is an analog of thyroid hormone.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Antidiuretic hormone",
+     "Antidiuretic hormone controls water reabsorption in the collecting duct; amiodarone is an analog of thyroid hormone.",
      "adjacent fact"
-    ],
-    [
-     "It inhibits the sodium-potassium pump",
-     "Sodium-potassium ATPase inhibition is digoxin's mechanism; amiodarone affects the thyroid because it is a thyroid hormone analog.",
-     "confused mechanism or drug class"
     ]
    ],
    "c": 0,
@@ -473,8 +473,8 @@
    "q": "Which is a listed indication for sotalol?",
    "opts": [
     [
-     "Torsades de pointes",
-     "Torsades de pointes is on sotalol's toxicity list; it is treated with magnesium sulfate.",
+     "Torsades de pointes with a long QT",
+     "Torsades de pointes is on sotalol's toxicity list, not its indications; it is treated with magnesium sulfate.",
      "reversed direction or value"
     ],
     [
@@ -482,9 +482,9 @@
      "Correct. Sotalol is listed for atrial flutter and fibrillation and for ventricular tachyarrhythmia."
     ],
     [
-     "Wolff-Parkinson-White syndrome",
-     "Wolff-Parkinson-White syndrome is listed for lidocaine and adenosine; sotalol is for atrial flutter and fibrillation.",
-     "adjacent fact"
+     "Heart block",
+     "Heart block is a toxicity of beta blockade on propranolol's list, not an indication; sotalol is for atrial flutter and fibrillation.",
+     "reversed direction or value"
     ],
     [
      "Sick sinus syndrome",
@@ -511,12 +511,12 @@
      "adjacent fact"
     ],
     [
-     "Wolff-Parkinson-White syndrome",
-     "Wolff-Parkinson-White syndrome is listed for lidocaine and adenosine, and it is not a ventricular arrhythmia; amiodarone is for refractory ventricular tachycardia.",
+     "Sick sinus syndrome",
+     "Sick sinus syndrome is not a ventricular arrhythmia, and it is on the avoid list for verapamil and diltiazem; amiodarone is for refractory ventricular tachycardia.",
      "adjacent fact"
     ],
     [
-     "Torsades de pointes",
+     "Torsades de pointes with a long QT",
      "Torsades de pointes is treated with magnesium sulfate, and prolonging repolarization can provoke it; amiodarone is for refractory ventricular tachycardia.",
      "reversed direction or value"
     ]

@@ -278,6 +278,7 @@ BODY += '''
     <tr><td><strong>5&ndash;6 &middot; Toxicity</strong> [slide 19]</td><td><strong>Central nervous system toxicity: drowsiness, confusion, restlessness, muscle twitches, seizures; nystagmus is an early sign of toxicity</strong>; hypersensitivity; increases atrioventricular conduction</td></tr>
     <tr><td><strong>7 &middot; Contraindications</strong> [slide 19]</td><td><strong>Seizures, age</strong></td></tr>
   </table>
+  <div class="callout"><strong>In practice:</strong> lidocaine can speed the ventricular response in atrial flutter or fibrillation (the slide&rsquo;s &ldquo;increases atrioventricular conduction&rdquo;), while at toxic levels it can also slow the heart and cause heart block.</div>
   <div class="callout"><strong>Current guidelines differ:</strong> lidocaine is not a recommended treatment for Wolff-Parkinson-White syndrome. The slide lists it, so know that it is on the slide; no question here turns on it.</div>
 ''' + star("21:16", "Because it has higher affinity in ischemic tissue&hellip; When would I see myocardial ischemic tissue? Probably during a heart attack&hellip; the action potentials in that ischemic tissue, they get longer on their own. So if we could use something like lidocaine to shorten that up, it would help to restore more normal-ish sort of function there.",
            "Lidocaine <mark class=\"prof-highlight\">works where the tissue is ischemic (acute myocardial infarction) and shortens the action potential</mark> [slides 16 to 18].") + star("23:02", "This one has to be given IV because it has really extensive first pass&hellip; also not effective for atrial arrhythmias. This would be relegated to specifically ventricular arrhythmias.",
@@ -305,6 +306,7 @@ BODY += '''
     <tr><td><strong>7 &middot; Restriction</strong> [slide 22]</td><td><strong>Use only in patients without significant structural damage to the heart</strong></td></tr>
     <tr><td><strong>5&ndash;6 &middot; Toxicity</strong> [slide 23]</td><td>Blurred vision, tremor; <strong>ventricular tachycardia resistant to treatment</strong>; bronchospasm; seizures; thrombocytopenia; <strong>increased mortality in myocardial infarction</strong></td></tr>
   </table>
+  <div class="callout"><strong>Current references differ:</strong> drug references give flecainide a half-life of about 20 hours (roughly 12 to 27); the slide gives 14 hours.</div>
   <p>The restriction and the mortality line belong together: a drug that <strong>raises mortality after a myocardial infarction</strong> is kept
   for hearts <strong>without significant structural damage</strong> [slides 22 and 23]. <em>Added background (not on the slides): this is
   flecainide&rsquo;s Food and Drug Administration (FDA) boxed warning, from the Cardiac Arrhythmia Suppression Trial.</em></p>
@@ -445,6 +447,7 @@ BODY += '''
     <tr><td><strong>5&ndash;6 &middot; Toxicity</strong> [slide 44]</td><td>Nausea, vomiting, diarrhea, anorexia; central nervous system: confusion, delirium, headache, seizures, visual disturbances</td></tr>
     <tr><td><strong>8 &middot; Avoid</strong> [slide 44]</td><td><strong>Calcium channel blockers and beta blockers</strong></td></tr>
   </table>
+  <div class="callout"><strong>In practice:</strong> &ldquo;induce heart block&rdquo; means the partial atrioventricular block that slows the ventricular rate; complete heart block can be a sign of digoxin toxicity.</div>
   <div class="callout"><strong>Current guidelines differ:</strong> digoxin is often combined with a beta blocker or a nondihydropyridine calcium channel blocker for rate control in atrial fibrillation, with the heart rate watched for excessive slowing.</div>
 ''' + star("51:30", "Then of course we avoid calcium channel blockers and beta blockers at the same time, just because they would both synergize in terms of decreasing heart rate, which may be causing greater degrees of heart block. Not recommended.",
            "<mark class=\"prof-highlight\">Digoxin plus a beta blocker or calcium channel blocker: additive slowing and heart block</mark> [slides 43 and 44]. He reminded the class that digoxin needs drug level monitoring and that its visual clue is yellow-green halos (at 51:15; both from Lecture 9, see section 1).") + '''

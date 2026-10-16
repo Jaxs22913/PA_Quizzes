@@ -56,12 +56,12 @@ Q("Class II actions", IO_MOA, "mechanism",
    ["Prolonging phase 3 repolarization", "Prolonging phase 3 is the class III potassium channel blocker effect; class II decreases phase 4 depolarization.", MECH],
    ["Shortening phase 3 repolarization", "Shortening phase 3 is the class IB (lidocaine) effect; class II decreases phase 4 depolarization.", MECH]], 25),
 
-Q("Class II and IV together", IO_MOA, "mechanism",
-  "Which two antiarrhythmic classes flatten phase 4 in the slow-response pacemaker cells of the nodes?",
-  [["Classes II and IV", "Correct. Beta blockers (class II) and calcium channel blockers (class IV) share the same picture: a flatter phase 4 in pacemaker cells, so the next beat comes later."],
-   ["Classes IA and IC", "Classes IA and IC slow phase 0 in fast-response working cells; the classes that flatten phase 4 in pacemaker cells are II and IV.", MECH],
-   ["Classes IB and III", "Class IB shortens and class III prolongs phase 3; the classes that flatten phase 4 in pacemaker cells are II and IV.", MECH],
-   ["Classes I and III", "Classes I and III act on the working-cell action potential (phase 0 and phase 3); classes II and IV flatten phase 4 in pacemaker cells.", MECH]], 37),
+Q("Class IV actions", IO_MOA, "mechanism",
+  "Besides slowing atrioventricular node conduction, what do class IV calcium channel blockers do to automaticity?",
+  [["They decrease it", "Correct. Class IV drugs decrease automaticity, block the L-type channel, slow atrioventricular node conduction and are negative inotropes."],
+   ["They increase it", "Class IV drugs lower automaticity rather than raising it, along with slowing atrioventricular node conduction.", REV],
+   ["They leave it unchanged", "Decreased automaticity is a listed class IV action, alongside slowed atrioventricular node conduction.", REV],
+   ["They raise it in ischemic tissue", "Acting mainly in ischemic tissue is the class IB (lidocaine) feature, and it lowers ectopic automaticity there; class IV drugs decrease automaticity.", MECH]], 37),
 
 # ---- propranolol (slides 26-28) ----------------------------------------------------------------------
 Q("Propranolol", IO_CLASS, "class",

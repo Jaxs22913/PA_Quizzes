@@ -45,7 +45,7 @@ QUESTIONS = [
 
 Q("Other agents", IO_CLASS, "class",
   "Outside classes I to IV, which two drugs make up the antiarrhythmic \"others\" group?",
-  [["Adenosine and digitalis", "Correct. The classification lists adenosine and digitalis (digoxin) as the others; magnesium sulfate joins them as a miscellaneous agent."],
+  [["Adenosine and digitalis", "Correct. The classification lists adenosine and digitalis (digoxin) as the others, outside classes I to IV."],
    ["Amiodarone and sotalol", "Amiodarone and sotalol are class III drugs (sotalol adds class II activity); the others are adenosine and digitalis.", MECH],
    ["Esmolol and verapamil", "Esmolol is a class II beta blocker and verapamil a class IV calcium channel blocker; the others are adenosine and digitalis.", MECH],
    ["Lidocaine and flecainide", "Lidocaine is class IB and flecainide class IC, both sodium channel blockers; the others are adenosine and digitalis.", MECH]], 5),
@@ -144,11 +144,11 @@ Q("Digoxin", IO_TOX, "adverse effect",
    ["Nystagmus and muscle twitches", "Nystagmus and muscle twitches belong to lidocaine's toxicity; digoxin causes confusion and visual disturbances.", ADJ]], 44),
 
 Q("Digoxin", IO_TOX, "adverse effect",
-  "Anorexia, nausea and vomiting with confusion and delirium point to toxicity from which drug?",
+  "Anorexia, nausea and vomiting with delirium and visual disturbances point to toxicity from which drug?",
   [["Digoxin", "Correct. Digoxin toxicity lists nausea, vomiting, diarrhea and anorexia with confusion, delirium, headache, seizures and visual disturbances."],
-   ["Quinidine", "Quinidine also causes nausea, vomiting and diarrhea, but its central effects are cinchonism (tinnitus, dizziness, blurred vision), not delirium.", RULED],
-   ["Amiodarone", "Amiodarone's nervous system toxicity is neuropathy, muscle weakness and ataxia; the delirium picture is digoxin's.", RULED],
-   ["Magnesium sulfate", "Magnesium sulfate's listed effects are bradycardia, flushing, headache and respiratory paralysis; the delirium picture is digoxin's.", RULED]], 44),
+   ["Dofetilide", "Dofetilide's listed adverse effects are torsades de pointes and marked QT prolongation; this gastrointestinal and visual picture is digoxin's.", RULED],
+   ["Esmolol", "Esmolol is the intravenous, short-acting beta blocker, with no gastrointestinal or visual toxicity listed; this picture is digoxin's.", RULED],
+   ["Magnesium sulfate", "Magnesium sulfate's listed effects are bradycardia, flushing, headache and respiratory paralysis; this picture is digoxin's.", RULED]], 44),
 
 # ---- magnesium sulfate (slide 45) --------------------------------------------------------------------
 Q("Magnesium sulfate", IO_IND, "indication",
