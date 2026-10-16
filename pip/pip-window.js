@@ -137,7 +137,10 @@
     [/\bbrady\b/g, "bradycardia"], [/\btachy?\b/g, "tachycardia"], [/\bdiff\b/g, "difference"], [/\bpvcs?\b/g, "premature ventricular complex"],
     [/\bpacs?\b/g, "premature atrial complex"], [/\bpjcs?\b/g, "premature junctional complex"], [/\blafb\b/g, "left anterior fascicular block"],
     [/\blpfb\b/g, "left posterior fascicular block"], [/\bavnrt\b/g, "atrioventricular nodal reentrant tachycardia"],
-    [/\b1st\b/g, "first"], [/\b2nd\b/g, "second"], [/\b3rd\b/g, "third"], [/\b4th\b/g, "fourth"]];
+    [/\b1st\b/g, "first"], [/\b2nd\b/g, "second"], [/\b3rd\b/g, "third"], [/\b4th\b/g, "fourth"],
+    // "where does lead V4 go?" asks where it is placed: "go" alone left "lead v4", which ranked a card that only
+    // mentions moving V4 to the back (2026-10-16)
+    [/\bwhere (?:does|do|should|would|will) (?=[a-z0-9 ]*\b(?:leads?|electrodes?|v[1-9]|stethoscope|probe|transducer|cuff|pads?|needle|tube|catheter)\b)([a-z0-9 ]{1,40}?) (?:go|sit|attach|get placed|get put|be placed)\b/g, "where $1 placed"]];
   var SYN = { strep: "streptococcus", staph: "staphylococcus" };
   // abbreviations that are also everyday words count only when typed in capitals ("why does AS cause angina")
   var CAPS = { AS: "aortic stenosis", AR: "aortic regurgitation", MS: "mitral stenosis", MR: "mitral regurgitation", US: "ultrasound", ID: "infectious disease" };
@@ -1277,7 +1280,8 @@
           if (scope.indexOf(f) < 0 && hasGuides(f)) scope = scope.slice(0, 3).concat([f]);   // the active exam is always searched
           SCOPE = scope;
           (L ? gatherList(L, scope, here) : Promise.resolve(null)).then(function (lst) {
-            if (lst) return showList(lst);
+            // "the X of each Y": Claude answers it from the whole guide too; the guide's own list is the fallback
+            if (lst) return wantsExplanation(ASKQ) ? askGuide(ASKQ, [], [], [], null, null, function () { showList(lst); }) : showList(lst);
             // the guides of those exams AND the student's own notes for the active exam (never another exam's),
             // Pip's own plain-language explanation of the concept when he has one, and for "what does X mean"
             // the sentence that defines X
@@ -2983,8 +2987,10 @@
   var DEEPER = /^(why|why is that|why does that happen|how come|how so|explain more|more detail|more details|go deeper|deeper|tell me more)[\s.!?]*$/;
   var EXPLAIN = /\b(why|how|explain|mechanism|causes?|caused|happens?|difference|differ|compare|versus|vs|relationship|leads? to|results? in|works?|role of|purpose of)\b/;
   function needsExplaining(q) { return EXPLAIN.test(norm(q)) && norm(q).split(/\s+/).length >= 4; }
-  // a lookup ("where is ...", "open the cram sheet") wants a place, not an explanation
-  var LOOKUP = /^(where|find|open|show me|take me|go to|link|page)\b/;
+  // a lookup ("where is the murmur chart", "open the cram sheet") wants a place on the site, not an explanation; a
+  // question about the body or a procedure ("where does lead V4 go?") is a real question and goes to Claude (Jaxon,
+  // 2026-10-16: every "where" question used to count as a lookup, so V4 got a wrong card and no Claude)
+  var LOOKUP = /^(?:where|find|open|show me|take me|go to|link|page)\b(?=.*\b(?:charts?|pages?|guides?|quiz|quizzes|cram|sheets?|links?|notes?|flashcards?|arcade|decks?|slides?|sections?|tables?|videos?|recordings?|planner|calendar|lectures?|review|games?)\b)/;
   function wantsExplanation(q) { var n = norm(q).trim(); return !LOOKUP.test(n) && toks(q).length >= 1 && (n.split(/\s+/).length >= 2 || needsExplaining(q)); }
   function relatedToExam(q, f) {                 // does the question use this exam's own vocabulary?
     return guideIndex(f).then(function (g) {

@@ -66,7 +66,7 @@ async function plan(q, slug) {
   const D = M.defineTerm(text), L = M.listAsk(text);
   let scope = await M.examsFor(qx, f);
   if (scope.indexOf(f) < 0 && M.hasGuides(f)) scope = scope.slice(0, 3).concat([f]);
-  const r = { q, fixed: fx.fixed.map(p => p.join('->')).join(','), scope: scope.map(x => x.s) };
+  const r = { q, fixed: fx.fixed.map(p => p.join('->')).join(','), scope: scope.map(x => x.s), guide: !!(M.wantsExplanation(text) || D) };
   if (L) { const lst = await M.gatherList(L, scope, f); if (lst) return Object.assign(r, { kind: 'list', n: lst.items.length, from: lst.f.s, first: lst.items[0].name + ': ' + lst.items[0].text.slice(0, 60), general: false }); }
   const sc = scope.filter(M.hasGuides);
   let [out, ex, dd] = await Promise.all([M.wideHits(f, scope, qx, f, text), M.explainWide(f, qx, text), D ? M.findDefinition(D.t, sc, f) : null]);
@@ -106,7 +106,14 @@ const CASES = [
   ["What's the difference between a T and P wave?", PDM3, 'card', /^The J point, ST segment, T wave.*\| The P wave and the PR interval/, false],
   ['difference between aortic and mitral stenosis', CMS4, 'card', /^Aortic stenosis.*\| Mitral stenosis/, false],
   ['what is a P wave', CMS4, 'card', /^(The P wave and the PR interval|Normal electrocardiogram waves and intervals \(P wave, PR, QRS, T wave\))$/, false],
+  // Jaxon 2026-10-16: "where does lead V4 go?" got the posterior infarction card (it mentions moving V4 to the back)
+  ['where does lead V4 go?', PDM3, 'card', /^Chest \(precordial\) lead placement/, null],
 ];
+// [question, page exam, does it go to Claude with the whole guide (mode "guide")?] Jaxon 2026-10-16: "all questions
+// should fed to claude right?" Every real question does; only a lookup of a place on the site doesn't
+const GUIDEQ = [['where does lead V4 go?', PDM3, true], ["Where's lead V2", PDM3, true], ['where is the murmur heard best in aortic stenosis', CMS4, true],
+  ['show me how to calculate the number needed to treat', CMS4, true], ['Can you give me the one defining feature of each valvular disease', CMS4, true],
+  ['where is the murmur chart', CMS4, false], ["where's the cram sheet", CMS4, false], ['open the study guide', CMS4, false], ['find the heart failure quiz', CMS4, false]];
 // [question, page exam, the exam whose WHOLE guide Claude should read (mode "guide"; examByWords)]
 // Jaxon 2026-10-15: "What is a pulmonary embolism?" read the electrocardiography exam's guide (7 lines) not Exam 5's (26)
 const CMS5 = 'clinical-medicine-and-surgery-i-exam-5';
@@ -170,6 +177,11 @@ async function followPlan(q1, slug, q2) {
     console.log((ok ? 'ok   ' : 'FAIL ') + q + ' -> ' + p.kind + (p.fixed ? ' [' + p.fixed + ']' : '') + ' | ' + (txt || '').slice(0, 110) + (p.general ? ' | +general' : '') +
       (ok ? '' : '  (want ' + kind + ' ' + re + (gen === null ? '' : ' general=' + gen) + ')'));
   }
+  for (const [q, slug, want] of GUIDEQ) {
+    const p = await plan(q, slug), ok = p.guide === want;
+    if (!ok) bad++;
+    console.log((ok ? 'ok   ' : 'FAIL ') + 'to Claude? "' + q + '" -> ' + p.guide + (ok ? '' : '  (want ' + want + ')'));
+  }
   for (const [q, slug, want] of EXAMQ) {
     const w = await M.examByWords(M.casual(q), IX.folders.find(x => x.s === slug)), got = w ? w.f.s : 'none', ok = got === want;
     if (!ok) bad++;
@@ -183,7 +195,7 @@ async function followPlan(q1, slug, q2) {
     console.log((ok ? 'ok   ' : 'FAIL ') + 'after "' + q1 + '": "' + q2 + '" -> ' + (p.fu ? 'follow-up (' + topic + '/12 top lines on its topic)' : 'fresh') + ', guide ' + p.exam +
       (ok ? '' : '  (want ' + (wantFu ? 'follow-up' : 'fresh') + ', ' + (want || 'not ' + CMS5) + (re ? ', a top line matching ' + re : '') + ')'));
   }
-  const total = CASES.length + EXAMQ.length + FOLLOW.length;
+  const total = CASES.length + GUIDEQ.length + EXAMQ.length + FOLLOW.length;
   console.log(bad ? bad + ' of ' + total + ' failed' : 'all ' + total + ' passed');
   process.exit(bad ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(2); });
