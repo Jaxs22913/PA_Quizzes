@@ -25,6 +25,11 @@
 #     attack rates (slides 64-66), not the numbers in Snow's tables (slide 42; one reads "1300,149");
 #   - the faucet and air-conditioner picture on slide 68 (what it stands for is never stated);
 #   - incidence and prevalence are applied in NEW scenarios, never slide 28's own example.
+#   - DROPPED after the recording (16 October 2026, part 1): slide 23's notifiable-disease list ("Here's a
+#     list I'm absolutely not requiring you to pay attention to", 27:48) and slide 25's uses-of-surveillance-
+#     data table ("I don't want you to memorize this list", 29:10); the two items that rested on them
+#     (elevated blood lead on the list; stored data describing natural history) are gone. Slide 13's
+#     life-course cancer graph was also called not-to-memorize (11:26); nothing was asked from it.
 SRC = "Lecture 12 Dr. Webster - Epidemiology.pptx"
 def c(*n): return f"{SRC}, Slide " + (str(n[0]) if len(n) == 1 else ", ".join(map(str, n[:-1])) + " and " + str(n[-1]))
 def ci(*n): return f"{SRC}, Slides " + ", ".join(map(str, n[:-1])) + " and " + str(n[-1])
@@ -702,21 +707,6 @@ dict(topic="Surveillance", io=IO5,
        "Hospital billing offices": "administrative data", "Community health surveys": "adjacent data source"},
   c=0, cite=c(19)),
 
-dict(topic="Surveillance", io=IO5,
-  q="Surveillance data are used both for immediate detection and for periodic dissemination. What is stored surveillance information used for?",
-  opts=[["Describing the natural history of diseases",
-         "Correct: stored information is used for describing the natural history of diseases, facilitating research, validating preliminary data, setting research priorities and documenting spread."],
-        ["Detecting epidemics as they begin",
-         "Detecting epidemics is a use of immediate detection, not of stored information, which describes diseases' natural history."],
-        ["Spotting newly emerging problems",
-         "Newly emerging health problems are caught by immediate detection; stored information describes the natural history of diseases."],
-        ["Spotting changes in antibiotic resistance",
-         "Changes in antibiotic resistance are caught by immediate detection; stored information is used to describe natural history and support research."]],
-  mis={"Detecting epidemics as they begin": "adjacent use (immediate detection)",
-       "Spotting newly emerging problems": "adjacent use (immediate detection)",
-       "Spotting changes in antibiotic resistance": "adjacent use (immediate detection)"},
-  c=0, cite=f"{SRC}, image on Slide 25"),
-
 dict(topic="Reportable diseases", io=IO6,
   q="What makes a disease reportable (notifiable)?",
   opts=[["Law requires its reporting",
@@ -802,21 +792,6 @@ dict(topic="Reportable diseases", io=IO6,
   mis={"By telephone to the state": "adjacent reporting group", "As a yearly total of cases": "adjacent reporting group",
        "It is not reportable": "infectious-only misconception"},
   c=0, cite=c(22, 23)),
-
-dict(topic="Reportable diseases", io=IO6,
-  q="Which noninfectious condition appears on the list of notifiable diseases?",
-  opts=[["Elevated blood lead levels",
-         "Correct: the notifiable list includes noninfectious conditions such as elevated blood lead levels, carbon monoxide poisoning, silicosis and acute pesticide-related illness."],
-        ["Essential hypertension",
-         "Hypertension is not on the notifiable list; noninfectious entries include elevated blood lead levels, carbon monoxide poisoning and silicosis."],
-        ["Seasonal allergic rhinitis",
-         "Allergic rhinitis is not on the notifiable list; its noninfectious entries include elevated blood lead levels and silicosis."],
-        ["Migraine headache",
-         "Migraine is not notifiable; noninfectious notifiable conditions include elevated blood lead levels and carbon monoxide poisoning."]],
-  mis={"Essential hypertension": "common chronic disease assumed reportable",
-       "Seasonal allergic rhinitis": "common condition assumed reportable",
-       "Migraine headache": "common condition assumed reportable"},
-  c=0, cite=c(21, 23)),
 
 dict(topic="Reportable diseases", io=IO6,
   q="What does collecting reportable disease data allow authorities to do?",
@@ -1186,6 +1161,36 @@ dict(topic="Association & causation", io=IO8,
        "They rest on association alone": "association equated with causation"},
   c=0, cite=c(43, 53)),
 
+# Recording (16 October 2026, part 3, 11:11): "if I were to ... give you a scenario ... you should be able to
+# tell me whether something is going to be more of an association or a causation." Two scenario items.
+dict(topic="Association & causation", io=IO8,
+  q="A single survey finds that people who report a certain exposure have more of a disease than people who do not, and nothing more is known. How is this relationship best classed?",
+  opts=[["An association",
+         "Correct: an identifiable relationship between an exposure and a disease is an association; it implies the exposure might cause the disease, but finding an association does not make it causal."],
+        ["Causation",
+         "Causation implies a true mechanism that leads from exposure to disease; one survey showing a relationship is an association, and finding an association does not make it causal."],
+        ["A biological gradient",
+         "A biological gradient is a dose-response relationship, where changes in exposure track a trend in risk; a plain exposed-versus-unexposed comparison shows no such trend."],
+        ["A temporal sequence",
+         "Temporal sequence means the exposure is shown to come before the disease; nothing here shows which came first, so the finding is an association."]],
+  mis={"Causation": "association equated with causation", "A biological gradient": "Hill criterion confused with the finding",
+       "A temporal sequence": "Hill criterion confused with the finding"},
+  c=0, cite=c(43, 46)),
+
+dict(topic="Association & causation", io=IO8,
+  q="Across many studies in different populations, an exposure comes before a disease, risk rises steadily with the amount of exposure, and the mechanism fits what is known about the disease. What do these findings support?",
+  opts=[["Inferring causation",
+         "Correct: causation is inferred from an association plus other factors; consistency, a biological gradient, temporal sequence and plausibility are Hill's criteria for causal inference."],
+        ["Chance alone",
+         "Chance sits at the base of the pyramid of associations; findings repeated across many studies, with a dose-response trend, meet Hill's criteria for inferring causation."],
+        ["A spurious association",
+         "Spurious (artifact) associations sit low in the pyramid of associations; consistent, dose-related, plausible findings that follow the exposure meet Hill's criteria for causation."],
+        ["A confounded association",
+         "Confounded associations sit below causal ones in the pyramid of associations; consistency, dose-response, temporal sequence and plausibility are the criteria for inferring causation."]],
+  mis={"Chance alone": "pyramid level confused", "A spurious association": "pyramid level confused",
+       "A confounded association": "pyramid level confused"},
+  c=0, cite=ci(43, 44, 46, 49)),
+
 # ================================================================ OBJECTIVE 9: endemic, epidemic, pandemic, sporadic, herd immunity
 dict(topic="Epidemic terms & herd immunity", io=IO9,
   q="Which term describes a disease found at chronically low levels in a population?",
@@ -1388,6 +1393,24 @@ dict(topic="Epidemic terms & herd immunity", io=IO9, img=IMG + "/l12-s56-hepatit
        "Other, zoonotic": "adjacent type"},
   c=0, cite=f"{SRC}, Slide 55 and image on Slide 56"),
 
+# Recording (part 3, 13:47): the epidemic types "will be graphed and show different patterns, which you
+# should be able to identify." Slide 57's right-hand curve is labelled Mixed.
+dict(topic="Epidemic terms & herd immunity", io=IO9, img=IMG + "/l12-s57-shigella-curve.png",
+  alt="A bar chart of Shigella cases at a music festival by day of onset in August, attendees and staff shown separately: a few staff cases over the days before the festival, then a tall cluster of attendee cases peaking a few days after the festival, with scattered cases afterward.",
+  slide="Epidemic curve: Shigella cases at a music festival by day of onset.",
+  q="This epidemic curve shows Shigella cases among staff and attendees at a music festival by day of onset. Which type of epidemic does it show?",
+  opts=[["Mixed",
+         "Correct: a mixed epidemic may start from a common source and then be propagated from person to person; this Shigella festival curve is the example of the mixed pattern."],
+        ["Common source, point",
+         "A point source gives one sharp peak within a single incubation period; this festival curve, cases over many days among staff and then attendees, is the mixed pattern."],
+        ["Common source, continuous",
+         "A continuous common source exposes people over a longer time until the source is removed; this festival curve is the mixed pattern, common source then person to person."],
+        ["Other, vector-borne",
+         "Vector-borne epidemics such as West Nile or Lyme disease fall under 'other'; Shigella spreading among festival staff and attendees is the mixed pattern."]],
+  mis={"Common source, point": "adjacent type", "Common source, continuous": "adjacent type",
+       "Other, vector-borne": "adjacent type"},
+  c=0, cite=f"{SRC}, Slide 55 and image on Slide 57"),
+
 # ================================================================ OBJECTIVE 10: applications
 dict(topic="Applications", io=IO10,
   q="What is the first step in investigating a communicable disease outbreak?",
@@ -1501,6 +1524,23 @@ dict(topic="Applications", io=IO10,
         ["Politics",
          "Politics is one basis of policy development; epidemiology's main contribution is evidence."]],
   mis={"Values": "adjacent basis", "Ideology": "adjacent basis", "Politics": "adjacent basis"},
+  c=0, cite=c(72)),
+
+# Recording (part 4, 19:52, closing list): "the fact that epidemiology gives us the evidence for policy
+# development." A second policy item so each set carries one.
+dict(topic="Applications", io=IO10,
+  q="Epidemiological studies can bring about major health policy changes when they meet which condition?",
+  opts=[["Rigorously done, reported and communicated",
+         "Correct: epidemiological studies can result in major health policy changes if they are rigorously conducted, reported and communicated; the evidence they supply is epidemiology's main contribution to policy."],
+        ["Large enough to include every resident",
+         "Studies sample the population rather than count everyone; what lets a study change policy is being rigorously conducted, reported and communicated."],
+        ["Approved by the affected communities",
+         "Community approval is not the condition; studies change policy when rigorously conducted, reported and communicated, adding evidence to the values, ideology and politics behind policy."],
+        ["Paired with matching political support",
+         "Politics is one basis of policy alongside values, ideology and evidence; a study's own route to policy change is being rigorously conducted, reported and communicated."]],
+  mis={"Large enough to include every resident": "census confused with sampling",
+       "Approved by the affected communities": "consent confused with rigor",
+       "Paired with matching political support": "policy bases confused"},
   c=0, cite=c(72)),
 
 dict(topic="Applications", io=IO10,

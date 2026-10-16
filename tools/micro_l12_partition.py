@@ -7,9 +7,15 @@ the title slide names no lecturer). One pool, tools/micro_l12_pool.py, written f
 The syllabus gives TEN numbered objectives and every set carries all ten. The topic field follows the
 objectives (one topic per objective), so TARGET is the per-objective weight.
 
-TOPIC WEIGHTS ARE SLIDE COUNTS for now (the recording arrives after the build; re-weight TARGET by minutes
-spoken then, and add MUST_EACH / MUST_ANY for what the lecturer flagged). Scaled to 60, split evenly across
-the two sets.
+TOPIC WEIGHTS FROM THE RECORDING (16 October 2026: parts 1-3, about 74 minutes, are the lecture; part 4 is
+her review for Exam 2, and only its closing minute, on this lecture, is used). Minutes on each objective (both transcripts): history and genomic epidemiology ~10, descriptive vs analytic with Snow ~9,
+surveillance ~10, applications (Legionnaires', policy, social, environment, occupational) ~10, epidemic
+terms, curves, R0 and herd immunity ~8, association and causation ~7, morbidity and mortality ~6, data
+sources ~2.5, reportable diseases ~2.5, definition and uses ~3 (the recording starts after the opening
+slides). Her closing list (part 4, 19:38-20:26) names: descriptive vs analytic, the history and its people,
+the kinds of surveillance, the measures of morbidity and mortality, association and causation with Hill's
+criteria, endemic/epidemic/pandemic/sporadic/herd immunity, and epidemiology as the evidence for policy.
+Scaled to 60, split evenly across the two sets; MUST_EACH carries every item of that list into each set.
 
 Four options. Length bias by selection; answer position by ROTATION (numeric option sets would be put back
 in ascending order by tools/_option_order.py; this pool has none). Carries the house 60-character
@@ -26,20 +32,20 @@ from _option_order import order_options
 
 random.seed(20261016)
 NOPT = 4
-N_IMG = 2          # picture questions in Set 2 (Set 1 has none)
+N_IMG = 3          # picture questions in Set 2 (Set 1 has none): epidemic curves, flagged in the recording
 
-# SLIDE COUNTS per objective (deck slides 4-76), scaled to 60 and rounded; re-weight from the recording.
+# MINUTES SPOKEN per objective, scaled to 60 and nudged by her closing list (see the docstring).
 TARGET = {
-    "Definition & uses": 5,             # objective 2, slides 4-8
-    "History": 5,                       # objective 3, slides 9-12 and 69 (genomic epidemiology)
-    "Descriptive vs analytic": 8,       # objective 1, slides 31-42 and 70
-    "Data sources": 3,                  # objective 4, slide 18
-    "Surveillance": 7,                  # objective 5, slides 14-17, 19-20, 25
-    "Reportable diseases": 4,           # objective 6, slides 21-24
-    "Morbidity & mortality": 7,         # objective 7, slides 26-29 and 59
-    "Association & causation": 8,       # objective 8, slides 43-53
-    "Epidemic terms & herd immunity": 6, # objective 9, slides 54-60
-    "Applications": 7,                  # objective 10, slides 61-68 and 71-76
+    "Definition & uses": 4,             # objective 2, slides 4-8 (~3 min; recording starts late)
+    "History": 7,                       # objective 3, slides 9-12 and 69; "the people who are important"
+    "Descriptive vs analytic": 8,       # objective 1, slides 31-42 and 70; "you need to know the basic components"
+    "Data sources": 2,                  # objective 4, slide 18 (~2.5 min)
+    "Surveillance": 7,                  # objective 5, slides 14-17, 19-20 (slide 25's list: not to memorize)
+    "Reportable diseases": 3,           # objective 6, slides 21-22 (slide 23's list: "absolutely not")
+    "Morbidity & mortality": 7,         # objective 7, slides 26-29 and 59; "know the difference" (incidence/prevalence)
+    "Association & causation": 8,       # objective 8, slides 43-53; scenario association vs causation
+    "Epidemic terms & herd immunity": 7, # objective 9, slides 54-60; curves "you should be able to identify"
+    "Applications": 7,                  # objective 10, slides 61-68 and 71-76; evidence for policy
 }
 assert sum(TARGET.values()) == 60, sum(TARGET.values())
 
@@ -73,7 +79,7 @@ CLUSTERS = [
         + stem("Why does timeliness matter")),
     (1, stem("Which type of surveillance uses staff") + stem("Which type of surveillance is the most common")),
     (1, stem("A prearranged group of providers") + stem("A surveillance system counts cases of diarrhea")),
-    (1, stem("Surveillance data are used both for immediate") + stem("Public health surveillance systematically")),
+
     (1, stem("Which notifiable disease is reported by telephone") + stem("Which notifiable disease is reported as a total")
         + stem("Where is cancer reported")),
     (1, stem("What makes a disease reportable") + stem("Diseases are made notifiable because")),
@@ -94,6 +100,10 @@ CLUSTERS = [
     (1, stem("What is herd immunity") + stem("Besides vaccination, what else")),
     (1, stem("Guests at one banquet") + stem("This epidemic curve shows hepatitis A")),
     (1, stem("An infection spreads from person to person") + stem("This epidemic curve shows measles")),
+    (1, stem("An outbreak begins when food handlers") + stem("This epidemic curve shows Shigella")),
+    (1, stem("A single survey finds") + stem("What does causation imply")),
+    (1, stem("Across many studies in different populations") + stem("Three studies each find")),
+    (1, stem("Policy development rests on values") + stem("Epidemiological studies can bring about")),
     (1, stem("What is the first step in investigating") + stem("In an outbreak investigation, which step comes right after")),
     (2, stem("In the investigation of the 1976 Legionnaires'") + stem("Why did the health department's response")
         + stem("How was the bacterium behind")),
@@ -102,9 +112,39 @@ CLUSTERS = [
         + stem("Monitoring how often workers")),
 ]
 
-# what the recording flags goes here after the transcript arrives (L11 shape):
-# EACH = every set carries one of the group; ANY = the pair carries it
-MUST_EACH = []
+# what the recording flags (L11 shape): EACH = every set carries one of the group; ANY = the pair carries it.
+# Quotes are from the 16 October 2026 recording (part, m:ss); every one is in both transcripts.
+MUST_EACH = [
+    # "you need to know the basic components of descriptive epidemiology versus analytic" (2, 6:51)
+    stem("Which three elements form the basic triad") + stem("Which three phenomena are assessed"),
+    stem("In the person-place-time triad") + stem("In the host-agent-environment triad"),
+    # "the history and the people who are important in history" (4, 19:44)
+    stem("Who first attempted to explain disease") + stem("Which 17th-century figure")
+        + stem("Who is called the father of modern vital") + stem("Who is called the father of field"),
+    # "You need to know genomic epidemiology." (3, 24:46)
+    stem("What is genomic epidemiology") + stem("Pathogens from cases in two different cities"),
+    # "the different kinds of surveillances" (4, 19:52): two types in each set (the clusters cap each pair at one)
+    stem("Which type of surveillance uses staff") + stem("Which type of surveillance is the most common"),
+    stem("A prearranged group of providers") + stem("A surveillance system counts cases of diarrhea"),
+    # "You should know the difference between incidence and prevalence." (1, 30:33)
+    stem("Which measure counts only the new cases") + stem("A county counts residents newly diagnosed")
+        + stem("A survey asks every adult"),
+    stem("A new therapy keeps people") + stem("For a chronic disease such as osteoarthritis"),
+    # association vs causation from a scenario (3, 11:10) and Hill's criteria (4, 19:52)
+    stem("A single survey finds") + stem("Across many studies in different populations"),
+    stem("Which of Hill's criteria is a dose-response") + stem("Three studies each find")
+        + stem("A relative risk that is either") + stem("Across many studies in different populations"),
+    # endemic, epidemic, pandemic, sporadic, herd immunity (4, 19:52)
+    stem("Which term describes a disease found at chronically") + stem("Which term describes a disease that occurs at irregular")
+        + stem("A county usually sees a few cases") + stem("What is a pandemic"),
+    stem("What is herd immunity") + stem("Besides vaccination, what else"),
+    # epidemic curves "you should be able to identify" (3, 13:47): a single-source and a spreading pattern
+    stem("Guests at one banquet") + stem("This epidemic curve shows hepatitis A") + stem("This epidemic curve follows diarrheal"),
+    stem("An infection spreads from person to person") + stem("An outbreak begins when food handlers")
+        + stem("This epidemic curve shows measles") + stem("This epidemic curve shows Shigella"),
+    # "epidemiology gives us the evidence for policy development" (4, 19:52)
+    stem("Policy development rests on values") + stem("Epidemiological studies can bring about"),
+]
 MUST_ANY = []
 
 PCT = re.compile(r"\d+\s*(%|percent)", re.I)

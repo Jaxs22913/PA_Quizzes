@@ -20,7 +20,11 @@ LEFT picture, hepatitis A, is labeled Point and the RIGHT, diarrheal illness, Co
 LEFT, measles, is Propagated and the RIGHT, Shigella at a festival, Mixed; slide 58's two are Other), slide
 71 (the public health approach).
 
-AUDIO: not yet folded in (the recording is pending); phase 2 adds the recording box and the stars.
+AUDIO: parts 1-3 of the 16 October 2026 recording (34 + 10 + 29 minutes) are the lecture; part 4 (21 minutes)
+is her review for Exam 2 (Lectures 7 and 10, then this lecture's objectives from 19:38). All four read in
+BOTH transcripts (Notability's own and the local faster-whisper medium.en run) and compared 2026-10-16. Every
+quote in the box and the stars appears in both; timestamps are the local transcript's. The recording supplies
+emphasis only (the slide wins).
 """
 import os
 
@@ -78,6 +82,7 @@ def fig(name, w, h, alt, cap, slide):
 
 TOC = """
   <a class="top-link" href="#epidemiology">12 &middot; Epidemiology</a>
+  <a class="sub-link" href="#epi-audio">&#9733; What the recording adds</a>
   <a class="sub-link" href="#epi-descriptive">12.1 Objective 1 &mdash; Descriptive and analytic epidemiology</a>
   <a class="sub-link" href="#epi-uses">12.2 Objective 2 &mdash; What epidemiology is, and the uses of epidemiologic training</a>
   <a class="sub-link" href="#epi-history">12.3 Objective 3 &mdash; Key events in its history, including genomic epidemiology</a>
@@ -121,10 +126,87 @@ SECTION_HEAD = """
   prevalence and mortality rates</strong> measure the burden; <strong>Hill&rsquo;s criteria</strong> decide
   whether an association is causal; and the applications (outbreaks, policy, social and behavioral factors,
   the environment, the workplace) are where it is used. Ten objectives, answered in order below.</div>
+
+<!--MICROL12AUDIO-->
+  <div class="prof-flag" id="epi-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 16 October 2026</span>
+  <p>About 74 minutes of lecture with Dr. Webster, in three parts (the recording starts a few slides in, at
+  the uses of epidemiology), then a fourth part that is her <b>review for Exam 2</b>: Lectures 7 and 10, and
+  at the end this lecture&rsquo;s objectives [part 4, 19:38]. <b>Both transcripts read and compared</b>
+  (Notability&rsquo;s own and an independent local transcription); <b>every quote below appears in both</b>.
+  Every factual claim was checked against the deck, and where the two differ the slide is what this guide
+  teaches.</p>
+  <p><b>Like Lecture 7, this lecture signposts</b>, in her soft wording (&ldquo;you should know&rdquo;,
+  &ldquo;you need to know&rdquo;, &ldquo;you should be able to&rdquo;), and it ends with her own list of
+  what to study.</p>
+  <table>
+    <tr><th>What was said</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;You need to know the basic components of descriptive epidemiology versus analytic
+    epidemiology.&rdquo;</em> [part 2, 6:51]</td>
+    <td>12.1: descriptive = <b>person, place, time</b>; analytic = <b>host, agent, environment</b>, and what
+    sits under each.</td></tr>
+    <tr><td><em>&ldquo;Go back and look at the history and <mark class="prof-highlight">the people who are
+    important in history</mark>.&rdquo;</em> [part 4, 19:44]</td>
+    <td>12.3: Hippocrates, John Graunt, William Farr (father of modern vital statistics), John Snow (father of
+    field epidemiology), and what each did.</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">You need to know genomic epidemiology.</mark>&rdquo;</em>
+    [part 3, 24:46]</td>
+    <td>12.3 and 12.10: sequencing pathogens to link cases to one outbreak, find transmission links and
+    sources, and map spread.</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">You should know the difference between incidence and
+    prevalence.</mark>&rdquo;</em> [part 1, 30:33]</td>
+    <td>12.7: incidence counts <b>new</b> cases in a period (the speedometer); prevalence counts <b>all</b>
+    cases present (the odometer), and depends on incidence and how long the disease lasts.</td></tr>
+    <tr><td><em>&ldquo;If I were to&hellip; give you a scenario that gave you some information, <mark
+    class="prof-highlight">you should be able to tell me whether something is going to be more of an
+    association or a causation</mark>.&rdquo;</em> [part 3, 11:10]</td>
+    <td>12.8: be ready to class a described study. A relationship alone is an association; causation is
+    inferred when Hill&rsquo;s criteria are met.</td></tr>
+    <tr><td><em>&ldquo;These different kinds of epidemics can be graphed and show different patterns,
+    <mark class="prof-highlight">which you should be able to identify</mark>.&rdquo;</em> [part 3, 13:47]</td>
+    <td>12.9: read an epidemic curve as point, continuous, propagated, mixed or other (the five curves are
+    reproduced there).</td></tr>
+    <tr><td>Her closing list: <em>&ldquo;public health surveillance, the different kinds of surveillances&hellip;
+    the different measures of morbidity and mortality, association and causation, the Hill&rsquo;s criteria,
+    and then know that endemic, epidemic, pandemic, sporadic, herd immunity, and then the fact that
+    epidemiology gives us the evidence for policy development.&rdquo;</em> [part 4, 19:52]</td>
+    <td>Seven of the ten objectives are on it by name (not the uses of training, data sources or reportable
+    diseases); epidemiology&rsquo;s
+    main contribution to policy is <b>evidence</b> (12.10).</td></tr>
+    <tr><td><em>&ldquo;This particular graph, which I&rsquo;m not asking you to memorize&rdquo;</em> [part 1,
+    11:25]</td>
+    <td>Slide 13&rsquo;s life-course picture of factors behind long-term health. Not asked.</td></tr>
+    <tr><td><em>&ldquo;Here&rsquo;s a list I&rsquo;m absolutely not requiring you to pay attention
+    to&rdquo;</em> [part 1, 27:48]</td>
+    <td>Slide 23, the full list of notifiable diseases. Know what makes a disease reportable and how the
+    groups are reported (slides 21&ndash;22), not the list.</td></tr>
+    <tr><td><em>&ldquo;I don&rsquo;t want you to memorize this list.&rdquo;</em> [part 1, 29:10]</td>
+    <td>Slide 25, the uses of surveillance data. Know that surveillance data are used; the list itself is
+    not asked.</td></tr>
+  </table>
+  <p><b>Things said that are not on a slide</b> &mdash; consistent with the deck, useful as hooks, and each
+  present in both transcripts:</p>
+  <ul>
+    <li>Passive versus sentinel: in passive surveillance anyone may send reports, with no instruction on
+    how to collect or submit them; sentinel providers are chosen to represent the population and told
+    exactly how to collect and send the data, so the data are more accurate. [part 1, 24:07&ndash;24:58]</li>
+    <li>Syndromic surveillance (counting diarrhea rather than confirmed cholera) is &ldquo;maybe the best
+    that they can do&rdquo; in developing countries; a cluster of a syndrome then prompts targeted testing to
+    find the actual agent. [part 1, 21:35&ndash;23:41]</li>
+    <li>Herd immunity protects people who cannot be vaccinated (a young child, an older person, someone with
+    an immune disorder); her current example is measles, as vaccination falls. [part 3, 18:04&ndash;18:47]</li>
+    <li>Legionnaires&rsquo; disease: the organism was traced to the hotel&rsquo;s air-conditioning system, so
+    walking through the lobby meant breathing it in; the attendees, mostly older smokers, were especially
+    susceptible. [part 3, 23:13&ndash;23:37] (Slide 68&rsquo;s faucet and air-conditioner picture is
+    otherwise unexplained in the deck.)</li>
+  </ul>
+  </div>
+<!--/MICROL12AUDIO-->
 """
 
 BODY = """
   <h3 class="sub" id="epi-descriptive">12.1 &middot; Objective 1 &mdash; Descriptive and analytic epidemiology</h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; &ldquo;you need to know the basic components of descriptive epidemiology versus analytic epidemiology&rdquo;</span>
+  <p>The two triads and what sits under each: person, place and time for descriptive; host, agent and environment for analytic.</p></div>
   <table>
     <tr><th></th><th>Descriptive epidemiology</th><th>Analytic epidemiology</th></tr>
     <tr><td>What it does</td><td>Examines the <strong>distribution</strong> of a disease in a population and
@@ -234,6 +316,8 @@ BODY = """
   </ul>
 
   <h3 class="sub" id="epi-history">12.3 &middot; Objective 3 &mdash; Key events in its history, including genomic epidemiology</h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; &ldquo;you need to know genomic epidemiology&rdquo;</span>
+  <p>Also on her closing list: &ldquo;the people who are important in history&rdquo; &mdash; know who did what.</p></div>
   <p>Epidemiology is <strong>relatively new as a formal scientific discipline</strong>, but
   &ldquo;counting&rdquo; health and disease goes back centuries; many of today&rsquo;s design and analytic
   techniques arose in response to health concerns of the 19th and 20th centuries.</p>
@@ -296,6 +380,9 @@ BODY = """
   </table>
 
   <h3 class="sub" id="epi-surveillance">12.5 &middot; Objective 5 &mdash; Public health surveillance</h3>
+  <p class="muted">Recording: the uses-of-surveillance-data table (slide 25) is not to be memorized (&ldquo;I
+  don&rsquo;t want you to memorize this list&rdquo;); her closing list asks for &ldquo;the different kinds of
+  surveillances&rdquo; &mdash; passive, active, sentinel and syndromic.</p>
   <p><strong>Public health surveillance</strong> is a tool that <strong>systematically collects, analyzes and
   interprets data</strong> to facilitate the prevention and control of disease. It measures what is going on
   in the population, the need for interventions and the effects of interventions; it informs decision
@@ -362,6 +449,8 @@ BODY = """
   </table>
 
   <h3 class="sub" id="epi-reportable">12.6 &middot; Objective 6 &mdash; Reportable (notifiable) diseases</h3>
+  <p class="muted">Recording: the full notifiable-disease list (slide 23) is &ldquo;a list I&rsquo;m absolutely not
+  requiring you to pay attention to.&rdquo; The definition and the reporting groups below are what count.</p>
   <p>A <strong>reportable (notifiable) disease</strong> is any disease that is <strong>required by law to be
   reported to government authorities</strong>. Diseases are made reportable because they are of public
   interest by reason of their <strong>contagiousness, severity or frequency</strong>. They include
@@ -386,6 +475,8 @@ BODY = """
   of notifiable disease cases by reporting area (slide 24).</p>
 
   <h3 class="sub" id="epi-measures">12.7 &middot; Objective 7 &mdash; Measures of morbidity and mortality</h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; &ldquo;you should know the difference between incidence and prevalence&rdquo;</span>
+  <p>Incidence counts new cases during a period; prevalence counts all cases present. Prevalence rises with incidence and with how long the disease lasts.</p></div>
   <p>Both are <strong>measures of the disease burden</strong> in a population.
   <strong>Morbidity</strong> is having a disease or a symptom of disease: the level of disease in a
   population, sometimes used to determine the risk of a disease. It is measured by
@@ -430,6 +521,8 @@ BODY = """
   time to resolution can make it look better than it is.</p>
 
   <h3 class="sub" id="epi-causation">12.8 &middot; Objective 8 &mdash; Association and causation</h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; &ldquo;you should be able to tell me whether something is going to be more of an association or a causation&rdquo;</span>
+  <p>Expect a described study to classify. A relationship between an exposure and a disease is an association; causation is inferred from association plus Hill&rsquo;s criteria (also on her closing list).</p></div>
   <ul>
     <li>Epidemiology <strong>does not determine the cause of a disease in a given individual</strong>. It
     determines the relationship, or <strong>association</strong>, between an exposure and the frequency of
@@ -486,6 +579,8 @@ BODY = """
   <strong>tentative, and open to change with new evidence</strong>.</p>
 
   <h3 class="sub" id="epi-terms">12.9 &middot; Objective 9 &mdash; Endemic, epidemic, pandemic, sporadic, herd immunity</h3>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; &ldquo;these different kinds of epidemics can be graphed and show different patterns, which you should be able to identify&rdquo;</span>
+  <p>Read each curve below by its shape: one sharp peak (point), cases over the exposure period (continuous), successive waves (propagated), a common source then person to person (mixed).</p></div>
   <table>
     <tr><th>Term</th><th>Definition</th></tr>
     <tr><td><strong>Endemic</strong></td><td>Diseases found at <strong>chronically low levels</strong> in a

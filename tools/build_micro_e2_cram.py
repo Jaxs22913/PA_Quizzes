@@ -29,6 +29,7 @@ topics = [
    ["★ Learn this table", "The four-hypersensitivity summary table (slide 9): “a chart you should pay attention to.”"],
    ["★ The one mechanism", "Desensitization works by raising allergen-specific immunoglobulin G that BLOCKS the allergen from the immunoglobulin E on mast cells."],
    ["★ No type I", "Type I plays NO part in graft rejection or in autoimmunity. Both use II, III and IV."],
+   ["★ Exam 2 review (16 Oct)", "“You need to be able to identify their MECHANISMS and EXAMPLE DISEASES” (the four types) · ABO donor/recipient COMPATIBILITY · Rh disease and its prevention (Rhogam) · “go back and look over those REJECTION TYPES”: hyperacute II, acute IV, chronic III."],
    ["★ B cell vs T cell defect", "B cell defect (agammaglobulinemia) → recurrent BACTERIAL infections. T cell defect → fungal, viral, protozoan."],
    ["Not to memorize", "Helminth-allergen pairings (slide 6) · graft versus host grades (slide 50) · autoimmune disease charts (slides 58–60) · the order of the transformation sequence (slide 67). Oncogenic virus table (slide 68) deferred to the virus lectures."],
  ]},
