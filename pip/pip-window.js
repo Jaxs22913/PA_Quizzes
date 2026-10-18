@@ -2756,7 +2756,9 @@
     greet(g.intent);
     var q = g.queue; g.queue = [];
     if (!q.length) return;
-    say("Now your question: “" + q[0] + "”");
+    // a question that carries its own quotation marks ("Ask Pip" sends 'What does “S3” mean?') is not wrapped in
+    // more of them: 'Now your question: “What does “S3” mean?”' read as a typo
+    say("Now your question: " + (/["“”]/.test(q[0]) ? q[0] : "“" + q[0] + "”"));
     ask(q[0], true);
     if (q.length > 1) say("You asked me " + (q.length - 1) + " more " + (q.length === 2 ? "thing" : "things") +
       " while I was downloading. Ask me again and I'll answer " + (q.length === 2 ? "it" : "them") + " too.");

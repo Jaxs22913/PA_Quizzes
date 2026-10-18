@@ -43,6 +43,25 @@ TOURS = "try{['tourSeen:quiz','tourSeen:exammode','tourSeen:home'].forEach(k=>lo
 fails = 0
 
 
+# select a term in the guide (opening its accordions) and let go of the mouse, as a student would
+SELECT_TERM = """(term) => {
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = w.nextNode())) {
+        const p = n.parentElement, i = n.data.toLowerCase().indexOf(term);
+        if (i < 0 || !p || p.closest('script,style,nav,button,summary,a,#pip-dock,#pip-win,.hl-toolbar')) continue;
+        for (let d = p.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+        p.scrollIntoView({block: 'center'});
+        const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + term.length);
+        if (!r.getBoundingClientRect().width) continue;
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        p.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
+        return n.data.substr(i, term.length);
+    }
+    return null;
+}"""
+
+
 def check(name, ok, detail=""):
     global fails
     if not ok:
@@ -194,22 +213,7 @@ def main():
         # window opens on 'What does "<term>" mean?' (shown once, even behind the brain card) and answers from pip/data.
         c2, pg2 = page("pa-quizzes.com")
         if go(pg2, a.guide):
-            placed = pg2.evaluate("""(term) => {
-                const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-                let n;
-                while ((n = w.nextNode())) {
-                    const p = n.parentElement, i = n.data.toLowerCase().indexOf(term);
-                    if (i < 0 || !p || p.closest('script,style,nav,button,summary,a,#pip-dock,#pip-win,.hl-toolbar')) continue;
-                    for (let d = p.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
-                    p.scrollIntoView({block: 'center'});
-                    const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + term.length);
-                    if (!r.getBoundingClientRect().width) continue;
-                    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-                    p.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
-                    return n.data.substr(i, term.length);
-                }
-                return null;
-            }""", a.ask)
+            placed = pg2.evaluate(SELECT_TERM, a.ask)
             btn = pg2.locator('.hl-toolbar button[aria-label="Ask Pip what this means"]')
             try:
                 btn.wait_for(state="visible", timeout=8000)
@@ -243,6 +247,33 @@ def main():
                 check("Ask Pip opens his window on %r, asked once, and answers from the guide" % want,
                       won and pg2.evaluate(mine) == [want] and answered,
                       "window: %s, asked: %s, answered: %s" % (won, pg2.evaluate(mine), answered))
+            # the window already open on the brain card, then Ask Pip: the question queues, shows at once, and
+            # after "Not now" is answered with its quotation marks not doubled ('“What does “X” mean?”')
+            pg2.evaluate("() => window.PipWindow.close()")
+            pg2.evaluate("() => document.getElementById('pip-dock').classList.remove('away')")
+            pg2.locator("#pip-dock .pip-open").click(force=True)
+            card3 = pg2.locator("#pip-win .pw-brainask")
+            for _ in range(24):
+                if card3.count() or pg2.evaluate("() => document.querySelectorAll('#pip-win .pw-msg.pw-pip').length"):
+                    break
+                pg2.wait_for_timeout(250)
+            if card3.count() and placed and pg2.evaluate(SELECT_TERM, a.ask):
+                btn.wait_for(state="visible", timeout=8000)
+                btn.click()
+                pg2.wait_for_timeout(600)
+                check("Ask Pip with the window on the brain card: the question shows at once",
+                      pg2.evaluate(mine) == [want], pg2.evaluate(mine))
+                card3.locator(".pw-later").click()
+                answered = False
+                for _ in range(40):
+                    if pg2.evaluate("() => document.querySelectorAll('#pip-win .pw-src').length"):
+                        answered = True
+                        break
+                    pg2.wait_for_timeout(250)
+                said = pg2.evaluate("() => Array.from(document.querySelectorAll('#pip-win .pw-msg.pw-pip')).map(e => e.textContent)")
+                doubled = [s for s in said if s.count("“") > 1 and "Now your question" in s]
+                check("...and after Not now it is answered, its quotation marks not doubled",
+                      answered and not doubled and any(want in s for s in said), doubled or said[:4])
             check("no page errors after Ask Pip", not pg2._errs, pg2._errs[:2])
         else:
             check("a guide selection's highlight tools offer Ask Pip", False, "Pip did not load on the guide")
