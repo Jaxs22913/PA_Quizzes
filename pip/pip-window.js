@@ -3027,7 +3027,9 @@
       return hits.length >= 1 && norm(q).split(/\s+/).length >= 3;
     }).catch(function () { return false; });
   }
-  function cacheKey(mode, q, f, priv) { return (priv ? "notes|" : "") + mode + "|" + (f ? f.s : "") + "|" + norm(q).replace(/[^a-z0-9]+/g, " ").trim(); }
+  // "2|" (2026-10-18): every guide and answer reply now ends with a general-knowledge rundown; answers kept from
+  // before have none, so they are not reused
+  function cacheKey(mode, q, f, priv) { return "2|" + (priv ? "notes|" : "") + mode + "|" + (f ? f.s : "") + "|" + norm(q).replace(/[^a-z0-9]+/g, " ").trim(); }
   // An answer built from the student's own notes is never written to localStorage (cloud-sync
   // copies every key there, and "local:" keys would still hold note-derived text): it is kept
   // in memory for this page only.
@@ -3090,7 +3092,7 @@
   function cantClaude() { count("fallback"); say(CANT_CLAUDE); }
   // A comparison may ask Claude unprompted only for a student who can already use him (signed in, invited,
   // consented), outside a quiz in progress (a past exam is fair game since 2026-10-11), inside the usual limits. Anything else is "no".
-  var DEVICE_DAY = 40;
+  var DEVICE_DAY = 60;                            // the helper's own per-student day limit (USER_DAY_CALLS); it was 40 here
   function gapFor(mode) { return mode === "deeper" || mode === "beyond" ? 20000 : 3000; }
   function claudeRoom(mode) {
     if (!ownerKnown) {
@@ -3141,7 +3143,7 @@
         signInNudged = true;
         var cd = card();
         cd.appendChild(el("h4", null, "I could check this one with Claude"));
-        cd.appendChild(el("p", null, "Sign in and I'll ask Claude when your guide isn't enough. Everyone in the class gets a fair share each day."));
+        cd.appendChild(el("p", null, "Sign in and every answer gets Claude's general-knowledge rundown under your guide's. Everyone in the class gets a fair share each day."));
         var row = el("div", "pw-row"), go = el("button", "pw-next", "Sign in with Google"); go.type = "button";
         go.addEventListener("click", function () {
           S.signIn().then(function () { setTimeout(function () { cd.remove(); if (S.state() === "ready") askClaude(question, mode, passages, f); }, 400); });
