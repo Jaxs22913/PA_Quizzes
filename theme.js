@@ -2635,6 +2635,34 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
       return r;
     });
   }
+  // "Ask Pip" (Jaxon, 2026-10-18: "Ask Pip about that..."): Pip's window opens on the question of what the
+  // selected words mean. A few words become "What does “X” mean?", which is his definition path; a longer passage
+  // becomes "Explain this: “…”". He answers the way he answers a typed question (the guides, and Claude reading
+  // this exam's whole guide for a student who can use it). Pip lives on pa-quizzes.com only, and the group-study
+  // pages keep him out, so the button shows only where window.__pip can take the question.
+  function pipCanAsk() { return !!(window.__pip && window.__pip.ask && !window.__pip.gated); }
+  function pipQuestion(t) {
+    t = norm0(t).replace(/^[\s"“”'‘’(\[]+|[\s"“”'‘’)\],;:]+$/g, "");
+    if (t.length > 400) t = t.slice(0, 400).replace(/\s+\S*$/, "") + "…";   // the helper takes 500 characters
+    var term = t.replace(/[.!?]+$/, "");
+    if (!term) return "";
+    return term.split(" ").length <= 4 ? "What does “" + term + "” mean?" : "Explain this: “" + t + "”";
+  }
+  function pipAsk(text) { var q = pipQuestion(text); if (q && pipCanAsk()) window.__pip.ask(q); }
+  // the same button inside a highlight's popover: the highlight's words
+  function pipAskBtn(parent, textFn) {
+    if (!pipCanAsk()) return;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "hl-note-btn hl-note-pip"; b.hidden = true;
+    b.textContent = "Ask Pip"; b.title = "Ask Pip what this means";
+    parent.appendChild(b);
+    pipExamP().then(function (ex) {
+      if (!ex || !b.isConnected) return;
+      b.hidden = false;
+      clampToViewport(parent);                    // one more button: keep the popover on screen
+      b.addEventListener("click", function () { var t = textFn(); closePopover("done"); pipAsk(t); });
+    });
+  }
   // a Pip toggle button for a popover: label follows whether `idFn()` is in the list
   function pipToggle(parent, idFn, makeItem) {
     var b = document.createElement("button");
@@ -2809,6 +2837,7 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
     });
     // "Add to Pip" (a toggle: "Remove from Pip" once the passage is in the review guide)
     pipToggle(el, function () { return hlPipId(key); }, function () { return hlItem(key, textarea.value.trim()); });
+    pipAskBtn(el, function () { return textOfRecs(recsOf(key)); });
 
     pop = { el: el, commit: commit, flush: commit, back: back || null };
     placePopover(el, anchor);
@@ -3002,6 +3031,14 @@ window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
         window.getSelection().removeAllRanges();
         if (!runs.length) return;
         pipAdd(pipItem(runs[0].u, runsText(runs), "", { o: runs[0].start }));
+      }));
+      if (pipCanAsk()) bar.appendChild(tbBtn("hl-tbtext hl-pipbtn", "Ask Pip", "Ask Pip what this means", function () {
+        // whole words, the way Add to Pip takes them (a drag from mid-word must not ask about "ypertension")
+        var kb = fromKeys(), runs = snapRuns(runsFrom(saved).filter(Boolean));
+        hideToolbar();
+        if (kb) tbReturn(false); else tbBack = null;
+        window.getSelection().removeAllRanges();
+        if (runs.length) pipAsk(runsText(runs));
       }));
       clampToViewport(bar);
     });

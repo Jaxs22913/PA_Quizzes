@@ -714,7 +714,11 @@
       log.textContent = ""; chips([]);
       notesCard = null; notesBtn.setAttribute("aria-expanded", "false");
       openGate(intent);                           // the brain card first, when this computer should get one
-    } else if (intent) { if (gate.state === "off") greet(intent); else gate.intent = intent; }
+    } else if (intent) {
+      if (gate.state === "off") greet(intent);
+      else if (intent.ask) holdAsk(intent.ask);   // keep the intent already waiting; this question waits its turn
+      else gate.intent = intent;
+    }
     if (window.matchMedia && window.matchMedia("(pointer:fine)").matches && !(intent && intent.drill)) setTimeout(function () { input.focus(); }, 60);
   }
   // full screen on or off; the page underneath is never touched, only its scrolling is paused
@@ -1112,6 +1116,7 @@
       if (intent && intent.review) { startReviewPractice(intent.review); return; }
       var st = quizState(), here = c.here, n = c.next, list = [];
       sub.textContent = here ? here.t : "Your study buddy";
+      if (intent && intent.ask) { ask(intent.ask, !!intent.shown); return; }   // "Ask Pip" on a guide's highlight: the question, no greeting
       var ahead = n && n.folder && n.folder !== here ? n.folder : null;
       if (here && c.herePast && !(st.onQuiz && st.current)) {
         say(here.t + " is behind you." + (n ? " " + examLine(n) : "") + (P.kind === "guide" || P.kind === "cram" ? " I can still find things in this guide if you ask." : ""));
@@ -2731,7 +2736,7 @@
     var slow = new Promise(function (res) { setTimeout(function () { res("off"); }, 4000); });
     g.ready = Promise.race([brainGate(), slow]).then(function (how) {
       if (g !== gate) return;                     // the window was closed (and maybe opened again) meanwhile
-      if (how === "loading" && installing) { g.state = "loading"; progressCard(g); }
+      if (how === "loading" && installing) { g.state = "loading"; progressCard(g); waitShown(g); }
       else if (how && how.ask) brainCard(g, how.ask);
       else ungate(g);
     });
@@ -2808,7 +2813,28 @@
       say("No problem. This time I'll use your guide's own words. I'll ask again the next time you open me.");
       ungate(g);
     });
+    waitShown(g);
     scrollDown();
+  }
+  // "Ask Pip" on a guide's highlight opened the window onto the brain card or the download: the question shows now
+  // and greet() answers it once the gate lifts (quietly, as it is already on screen)
+  function waitShown(g) {
+    if (!g.intent || !g.intent.ask || g.intent.shown) return;
+    g.intent.shown = true;
+    me(g.intent.ask);
+    say(waitLine(g));
+  }
+  function waitLine(g) { return g.state === "loading" ? "I'll answer that as soon as my brain is ready." : "I'll answer that as soon as you pick above."; }
+  // ... and with the window already open behind the card or the download: shown now, queued for ungate()
+  function holdAsk(q) {
+    var g = gate;
+    if (g.state === "checking") {
+      g.ready.then(function () { if (g === gate && isOpen) { if (gate.state === "off") ask(q); else holdAsk(q); } });
+      return;
+    }
+    me(q);
+    say(waitLine(g));
+    g.queue.push(q);
   }
   function startInstall(B, g) {
     g.state = "loading";

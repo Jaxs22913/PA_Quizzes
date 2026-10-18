@@ -412,6 +412,12 @@
   window.__pip = { react: react, ROOT: ROOT, kind: kind, gated: gated, dock: dock, setOpen: setOpen, withWindow: withWindow, now: function () { return current; },
                    duet: { start: duetStart, finish: duetFinish, cancel: duetCancel, active: function () { return dock.classList.contains("duet"); } },
                    hide: function () { set(K_HIDDEN, "1"); applyHidden(); },
+                   // "Ask Pip" from a guide's highlight tools (theme.js): his window opens on that question. Asking
+                   // him is a deliberate tap, so a hidden Pip comes back, as his tab would bring him.
+                   ask: function (q) {
+                     if (isHidden()) { set(K_HIDDEN, null); if (kind === "quiz") set(K_HIDE_QUIZ, null); applyHidden(); }
+                     withWindow(function (w) { w.open({ ask: q }); });
+                   },
                    scale: function () { return cssK; }, get frameH() { return H; }, get frameW() { return W; }, clawdDX: CLAWD_DX,
                    get ground() { return (man && man.ground) || 104; } };
 

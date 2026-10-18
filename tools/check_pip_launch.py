@@ -190,6 +190,63 @@ def main():
                 pg.wait_for_timeout(250)
             data_ok = any("/PA_Quizzes/pip/data/guide/" in r for r in pg._reqs)
             check("a guide search answers from pip/data (%r)" % a.ask, found and data_ok, "passage shown: %s, guide data fetched: %s" % (found, data_ok))
+        # "Ask Pip" on a guide's highlight tools (2026-10-18): select the term in the guide, tap Ask Pip; his
+        # window opens on 'What does "<term>" mean?' (shown once, even behind the brain card) and answers from pip/data.
+        c2, pg2 = page("pa-quizzes.com")
+        if go(pg2, a.guide):
+            placed = pg2.evaluate("""(term) => {
+                const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+                let n;
+                while ((n = w.nextNode())) {
+                    const p = n.parentElement, i = n.data.toLowerCase().indexOf(term);
+                    if (i < 0 || !p || p.closest('script,style,nav,button,summary,a,#pip-dock,#pip-win,.hl-toolbar')) continue;
+                    for (let d = p.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+                    p.scrollIntoView({block: 'center'});
+                    const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + term.length);
+                    if (!r.getBoundingClientRect().width) continue;
+                    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+                    p.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
+                    return n.data.substr(i, term.length);
+                }
+                return null;
+            }""", a.ask)
+            btn = pg2.locator('.hl-toolbar button[aria-label="Ask Pip what this means"]')
+            try:
+                btn.wait_for(state="visible", timeout=8000)
+                shown = True
+            except Exception:
+                shown = False
+            check("a guide selection's highlight tools offer Ask Pip", bool(placed) and shown, "term placed: %r, button: %s" % (placed, shown))
+            if placed and shown:
+                want = "What does “%s” mean?" % placed
+                btn.click()
+                try:
+                    pg2.wait_for_selector("#pip-win", state="visible", timeout=8000)
+                    won = True
+                except Exception:
+                    won = False
+                mine = "() => Array.from(document.querySelectorAll('#pip-win .pw-msg.pw-me')).map(e => e.textContent)"
+                card2 = pg2.locator("#pip-win .pw-brainask")
+                for _ in range(24):
+                    if card2.count() or pg2.evaluate("() => document.querySelectorAll('#pip-win .pw-src').length"):
+                        break
+                    pg2.wait_for_timeout(250)
+                if card2.count():
+                    check("Ask Pip behind the brain card: the question shows and waits", pg2.evaluate(mine) == [want], pg2.evaluate(mine))
+                    pg2.locator("#pip-win .pw-brainask .pw-later").click()
+                answered = False
+                for _ in range(40):
+                    if pg2.evaluate("() => document.querySelectorAll('#pip-win .pw-src').length"):
+                        answered = True
+                        break
+                    pg2.wait_for_timeout(250)
+                check("Ask Pip opens his window on %r, asked once, and answers from the guide" % want,
+                      won and pg2.evaluate(mine) == [want] and answered,
+                      "window: %s, asked: %s, answered: %s" % (won, pg2.evaluate(mine), answered))
+            check("no page errors after Ask Pip", not pg2._errs, pg2._errs[:2])
+        else:
+            check("a guide selection's highlight tools offer Ask Pip", False, "Pip did not load on the guide")
+        c2.close()
         pg.add_script_tag(url=pg._base + "pip/pip-superbrain.js")
         ep = pg.evaluate("() => window.PipSuperbrain && PipSuperbrain.endpoint()")
         check("the helper address on pa-quizzes.com is %s" % HELPER, ep == HELPER, ep)
