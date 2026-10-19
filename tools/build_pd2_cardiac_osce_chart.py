@@ -18,6 +18,10 @@ least urgent first). Two differences, both because of how this station runs:
    the rows that present with chest pain.
 
 Rows live in _pd2_cardiac_osce_data (merged from four batch modules).
+
+Jaxon, 2026-10-19, added a real 12-lead electrocardiogram under every row whose
+work-up calls for one (_pd2_cardiac_osce_ecgs): a full-width second row that
+carries the same chief complaints, so the filter keeps it with its condition.
 """
 _REPO = __import__("os").path.dirname(__import__("os").path.dirname(__import__("os").path.abspath(__file__)))  # this checkout, never a hard-coded path
 import os, re, sys, html as H
@@ -26,8 +30,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_pd2_ent_osce_chart as ENT          # donor head and petrol palette, shared
 import build_cms_ent_chart as C
 from _pd2_cardiac_osce_data import ROWS, TOP10, NONEMERGENT5, EMERGENT5
+from _pd2_cardiac_osce_ecgs import ECGS, IMAGES
 
 OUT = os.path.join(_REPO, "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-chart.html")
+ECG_DIR = "pd2-cardiac-osce-chart-images"
+# The two rows whose work-up has no electrocardiogram: duplex ultrasound does it.
+NO_ECG = {"Chronic venous insufficiency and varicose veins", "Deep vein thrombosis"}
 
 LISTS = [("top10", "Top 10 most common", TOP10),
          ("nonemerg", "Top 5 non-emergent", NONEMERGENT5),
@@ -126,7 +134,43 @@ def build_row(name):
             '<td>%s</td></tr>'
             % (slug(name), H.escape("|".join(CC[name])), name, key, badge, o["why"], o["source"],
                o["says"], o["findings"], o["exam"], ddx, o["rule_in"], o["rule_out"],
-               o["tx"], urg_cls, o["urgency"], o["edu"]))
+               o["tx"], urg_cls, o["urgency"], o["edu"])) + ecg_row(name)
+
+
+def _a(href, text):
+    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (H.escape(href), text)
+
+
+def ecg_row(name):
+    """The row's 12-lead, full width under it. Same data-c as the row, so the
+    chief-complaint filter hides and shows the pair together."""
+    e = ECGS.get(name)
+    if not e:
+        return ""
+    fn = e["file"]
+    src, boxes = IMAGES[fn]
+    assert os.path.exists(os.path.join(os.path.dirname(OUT), ECG_DIR, fn)), "missing ECG picture %s" % fn
+    assert e["boxed"].startswith("Yellow box" if boxes else "Nothing is boxed"), \
+        "%s: the caption's box line disagrees with the picture's %d boxes" % (name, len(boxes))
+    if src["kind"] == "deck":
+        credit = "Source: %s, Slide %d" % (H.escape(src["deck"]), src["slide"])
+        if boxes:
+            credit += "; yellow boxes added"
+    else:
+        assert src["lic"] and src["author"] and src["page"], "%s: Commons credit incomplete" % name
+        lic = _a(src["licurl"], src["lic"]) if src["licurl"] else src["lic"]
+        credit = "Image: %s%s, %s, %s; %s" % (
+            H.escape(src["author"]), "; " + H.escape(src["extra"]) if src["extra"] else "",
+            _a(src["page"], "Wikimedia Commons"), lic,
+            "resized, yellow boxes added" if boxes else "resized")
+    return ('\n<tr class="ecg" id="%s-ecg" data-c="%s"><td colspan="8"><figure class="ecg">'
+            '<img src="%s/%s" loading="lazy" alt="12-lead electrocardiogram: %s">'
+            '<figcaption><span class="et">What the 12-lead electrocardiogram shows</span>'
+            '<b>%s</b><span class="es">%s</span><span class="eb%s">%s</span>'
+            '<span class="ec">%s</span></figcaption></figure></td></tr>'
+            % (slug(name), H.escape("|".join(CC[name])), ECG_DIR, fn, H.escape(e["title"]),
+               H.escape(e["title"], quote=False), H.escape(e["shows"], quote=False),
+               "" if boxes else " none", H.escape(e["boxed"], quote=False), credit))
 
 
 HEADCOLS = """<colgroup>
@@ -204,6 +248,12 @@ order of the station; this tells you what to do once you have a diagnosis in min
 comes from the two Clinical Medicine and Surgery I cardiology blocks (Exam 4, Lectures 20&ndash;25,
 and Exam 5, Lectures 26&ndash;32), with the examination technique from the Physical Diagnosis 2
 cardiovascular lecture. Each row cites its lecture and slides in the first column.<br><br>
+<b>Every condition whose work-up includes an electrocardiogram has a real 12-lead under its
+row</b>, eighteen of the twenty. Each tracing is labelled as that finding by its source: a slide
+from the Principles of Diagnostic Medicine I electrocardiogram lectures, or a Wikimedia Commons
+file whose description names it.
+<b>Yellow boxes mark the leads where the change shows</b>, and the line under each caption says
+what to look for in them. The credit sits under each picture; click a tracing to enlarge it.<br><br>
 <b>Three lists, twenty conditions, no repeats.</b> The ten most common cardiology diagnoses, then
 five more that are managed in clinic, then the five emergencies that must never be missed.<br><br>
 <b>Filter by the chief complaint</b> on the form you are handed before you walk in. Chest pain
@@ -328,6 +378,39 @@ __EMROWS__
   td .u.emerg{color:#8c1d12;} td .u.urg{color:#7a5a08;}
   td .u.rout{color:#3f5c46;font-weight:600;}
   .lede a{color:var(--acc);}
+  /* The 12-lead under its row. Zebra stripes would land on alternate ECG rows
+     now that most conditions take two rows, so the stripes go and the
+     tinted ECG row itself separates one condition from the next. */
+  .tblwrap tbody tr:nth-child(n) td{background:var(--c-tbl);}
+  .tblwrap tbody tr:nth-child(n) td.says, .tblwrap tbody tr:nth-child(n) td.exam{background:var(--c-panel);}
+  .tblwrap tbody tr.ecg:nth-child(n) td{background:var(--c-zebra);border-top:1px dashed var(--c-line);
+    padding:12px 14px 16px;}
+  figure.ecg{display:flex;gap:18px;align-items:flex-start;margin:0;}
+  figure.ecg img{flex:0 1 760px;width:100%;max-width:760px;min-width:0;height:auto;display:block;
+    border-radius:6px;border:1px solid var(--c-line);background:#fff;cursor:zoom-in;}
+  figure.ecg figcaption{flex:1 1 240px;max-width:56ch;font-size:.84rem;line-height:1.5;}
+  figure.ecg .et{display:block;font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;
+    font-weight:700;color:var(--acc);margin-bottom:3px;}
+  figure.ecg b{display:block;margin-bottom:4px;}
+  figure.ecg .es{display:block;}
+  figure.ecg .eb{display:block;margin-top:7px;padding:5px 9px;border-left:4px solid #f5be00;
+    background:rgba(255,221,0,.16);border-radius:0 6px 6px 0;font-size:.8rem;}
+  figure.ecg .eb.none{border-left-color:var(--c-line);background:transparent;color:var(--c-mute);}
+  figure.ecg .ec{display:block;margin-top:8px;font-size:.7rem;color:var(--c-mute);line-height:1.4;}
+  figure.ecg .ec a{color:inherit;text-decoration:underline;}
+  /* Narrow screens: theme.css makes the table swipe sideways and pins each
+     row's first cell. The ECG row's one cell spans the table, so it is
+     unpinned, and the figure itself is pinned at the screen's width instead:
+     the tracing stays in view while the columns scroll past. */
+  @media screen and (max-width:900px){
+    .wrap .tblwrap tbody tr:nth-child(n) td:first-child{background:var(--c-tbl);}
+    .wrap .tblwrap tbody tr.ecg:nth-child(n) td:first-child{background:var(--c-zebra);position:static;
+      box-shadow:none;}
+    figure.ecg{position:sticky;left:12px;width:min(760px,calc(100vw - 80px));flex-direction:column;}
+    figure.ecg img{flex:none;}
+    figure.ecg figcaption{max-width:none;flex:none;}
+  }
+  @media print{figure.ecg img{max-width:170mm !important;} figure.ecg figcaption{font-size:7pt !important;}}
 </style>
 </body></html>"""
 
@@ -346,7 +429,12 @@ __EMROWS__
         c = html.count('<td class="nm"><b>%s</b>' % n)
         assert c == 1, "row %r emitted %d times, expected once" % (n, c)
         assert html.count('href="#%s"' % slug(n)) == 1, "list link for %r missing" % n
-    for tag in ("table", "thead", "tbody", "tr", "td", "th", "div", "p", "ol", "li", "header", "h3", "b", "i"):
+    assert set(ECGS) <= set(names), "an ECG for a row not on the chart: %r" % (set(ECGS) - set(names))
+    assert set(names) - set(ECGS) == NO_ECG, \
+        "rows without an ECG should be exactly %r, got %r" % (NO_ECG, set(names) - set(ECGS))
+    assert html.count('<tr class="ecg" id=') == len(ECGS), "an ECG row went missing"
+    for tag in ("table", "thead", "tbody", "tr", "td", "th", "div", "p", "ol", "li", "header", "h3", "b", "i",
+                "figure", "figcaption", "a"):
         o = len(re.findall(r"<%s[ >]" % tag, html)); c = html.count("</%s>" % tag)
         assert o == c, "%s unbalanced: %d open, %d close" % (tag, o, c)
     assert C.ACCENT not in html, "the CMS violet survived substitution"

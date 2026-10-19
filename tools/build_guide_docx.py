@@ -366,7 +366,12 @@ class Builder:
         for ri, tr in enumerate(rows):
             cells = tr.find_all(["td", "th"])
             row = t.add_row()
+            skip = 0
             for ci in range(ncol):
+                # A colspan merged this column into the cell before it; asking
+                # row.cells for it returns that merged cell, and the line below
+                # would wipe its first paragraph (where a picture sits).
+                if ci < skip: continue
                 cell = row.cells[ci]
                 cell.paragraphs[0].text = ""
                 if ci < len(cells):
@@ -378,13 +383,18 @@ class Builder:
                     # the word-coverage gate passed at 100%, because an image is
                     # not a word. Handle the picture first, then the text.
                     pics = src.find_all("img")
+                    # A picture in a cell spanning most of the table (the cardiac
+                    # chart's full-width 12-lead rows) gets the page's width, not
+                    # a one-column thumbnail.
+                    wide = (src.get("colspan") or "1").isdigit() and int(src.get("colspan") or 1) >= 4
                     if pics:
                         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                         for im in pics:
                             path = self.resolve(im.get("src") or "")
                             if not path: continue
                             try:
-                                p.add_run().add_picture(path, **fit(path, 1.35, 1.15))
+                                p.add_run().add_picture(path, **(fit(path, 6.4, 3.9) if wide
+                                                                 else fit(path, 1.35, 1.15)))
                             except Exception:
                                 pass
                         for im in pics: im.extract()
@@ -405,6 +415,7 @@ class Builder:
                     if span and span.isdigit() and ci + int(span) <= ncol:
                         for k in range(1, int(span)):
                             cell.merge(row.cells[ci + k])
+                        skip = ci + int(span)
         self.doc.add_paragraph().paragraph_format.space_after = Pt(4)
 
     # -- boxes ------------------------------------------------------
