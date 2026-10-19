@@ -134,7 +134,7 @@ ECGS = {
         boxed=NORMAL_BOXED),
     "Atrial fibrillation": dict(
         file="ecg-atrial-fibrillation.jpg",
-        title="Atrial fibrillation, rate controlled",
+        title="Rate controlled, at about 90 a minute",
         shows="Irregularly irregular narrow QRS complexes with no P waves and no PR interval: the "
               "gaps between beats never repeat. This 54-year-old man's ventricular rate is "
               "controlled, at about 90 a minute.",
@@ -149,7 +149,7 @@ ECGS = {
         boxed=LVH_BOXED),
     "Premature ventricular contractions": dict(
         file="ecg-pvc-bigeminy.jpg",
-        title="Premature ventricular contractions in bigeminy",
+        title="Bigeminy: every other beat is premature",
         shows="Every other beat comes early, wide and bizarre, with its T wave pointing the "
               "opposite way, and each one alternates with a narrow normal beat. A premature "
               "ventricular beat has no P wave of its own. Every third beat would be trigeminy.",
@@ -164,7 +164,7 @@ ECGS = {
         boxed=NORMAL_BOXED),
     "Aortic stenosis": dict(
         file="ecg-lvh-aortic-stenosis.jpg",
-        title="Extreme left ventricular hypertrophy from severe aortic stenosis",
+        title="Extreme left ventricular hypertrophy from severe stenosis",
         shows="Very large QRS voltages, and the strain pattern in the lateral leads: ST depression "
               "and inverted T waves in V5 and V6. The ventricle thickened against the narrowed "
               "valve. A tracing this extreme usually means severe, long-standing disease; many "
@@ -172,7 +172,7 @@ ECGS = {
         boxed="Yellow boxes: V2 to V4, the huge QRS complexes; V5 and V6, the strain pattern."),
     "Acute pericarditis": dict(
         file="ecg-pericarditis.jpg",
-        title="Pericarditis: diffuse ST elevation with PR depression",
+        title="Diffuse ST elevation with PR depression",
         shows="Concave (smiling) ST elevation across many leads with the PR segment pushed below "
               "the baseline, and the mirror image in aVR: PR elevation with ST depression. No "
               "regional pattern, which is what separates it from an infarction.",
@@ -203,7 +203,7 @@ ECGS = {
         boxed=NORMAL_BOXED),
     "Hypertrophic cardiomyopathy": dict(
         file="ecg-hypertrophic-cardiomyopathy.jpg",
-        title="Hypertrophic cardiomyopathy (a woman with the obstructive form)",
+        title="A woman with the obstructive form",
         shows="Left ventricular hypertrophy by voltage (R wave in V5 and S wave in V2 each over "
               "30 mm, R wave in II over 20 mm) with diffuse ST and T-wave changes, and a P wave "
               "ending negative in V1 (left atrial abnormality). Deep, narrow Q waves in the "
@@ -213,7 +213,7 @@ ECGS = {
               "the deep S wave of V2; V4 to V6, the tall R wave of V5 and the ST and T-wave changes."),
     "Acute coronary syndrome": dict(
         file="ecg-stemi-anteroseptal.jpg",
-        title="ST-elevation myocardial infarction, anteroseptal",
+        title="Anteroseptal ST-elevation myocardial infarction",
         shows="ST elevation in V1, V2 and V3, contiguous leads facing the septal and anterior walls "
               "(the course slide's label); on this tracing it carries on into V4, with reciprocal "
               "ST depression in III and aVF. Elevation in two or more contiguous leads means "
@@ -230,7 +230,7 @@ ECGS = {
         boxed=NORMAL_BOXED),
     "Cardiac tamponade": dict(
         file="ecg-tamponade-alternans.jpg",
-        title="Tamponade: low voltage and electrical alternans",
+        title="Low voltage and electrical alternans",
         shows="A 40-year-old man with multiple myeloma and tamponade: tiny QRS complexes in the "
               "limb leads, and in the chest leads the QRS height alternates beat to beat as the "
               "heart swings in the fluid (electrical alternans).",
@@ -238,7 +238,7 @@ ECGS = {
               "taking turns."),
     "Ventricular tachycardia": dict(
         file="ecg-ventricular-tachycardia.jpg",
-        title="Monomorphic ventricular tachycardia",
+        title="Monomorphic: every beat the same shape",
         shows="A fast, regular, wide-complex rhythm (QRS over 0.12 seconds), every beat the same "
               "shape. Treat a wide, regular tachycardia as ventricular until proven otherwise.",
         boxed="Yellow box: the lead II rhythm strip, every beat wide and identical."),

@@ -164,12 +164,13 @@ def ecg_row(name):
             _a(src["page"], "Wikimedia Commons"), lic,
             "resized, yellow boxes added" if boxes else "resized")
     return ('\n<tr class="ecg" id="%s-ecg" data-c="%s"><td colspan="8"><figure class="ecg">'
-            '<img src="%s/%s" loading="lazy" alt="12-lead electrocardiogram: %s">'
-            '<figcaption><span class="et">What the 12-lead electrocardiogram shows</span>'
+            '<img src="%s/%s" loading="lazy" alt="12-lead electrocardiogram for %s: %s">'
+            '<figcaption><span class="et">12-lead electrocardiogram</span>'
+            '<span class="en">%s</span>'
             '<b>%s</b><span class="es">%s</span><span class="eb%s">%s</span>'
             '<span class="ec">%s</span></figcaption></figure></td></tr>'
-            % (slug(name), H.escape("|".join(CC[name])), ECG_DIR, fn, H.escape(e["title"]),
-               H.escape(e["title"], quote=False), H.escape(e["shows"], quote=False),
+            % (slug(name), H.escape("|".join(CC[name])), ECG_DIR, fn, H.escape(name.lower()),
+               H.escape(e["title"]), H.escape(name, quote=False), H.escape(e["title"], quote=False), H.escape(e["shows"], quote=False),
                "" if boxes else " none", H.escape(e["boxed"], quote=False), credit))
 
 
@@ -391,7 +392,9 @@ __EMROWS__
   figure.ecg figcaption{flex:1 1 240px;max-width:56ch;font-size:.84rem;line-height:1.5;}
   figure.ecg .et{display:block;font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;
     font-weight:700;color:var(--acc);margin-bottom:3px;}
-  figure.ecg b{display:block;margin-bottom:4px;}
+  figure.ecg .en{display:block;font-size:1.08rem;font-weight:800;line-height:1.3;margin-bottom:2px;
+    color:var(--c-fg);}
+  figure.ecg b{display:block;margin-bottom:4px;color:var(--acc);}
   figure.ecg .es{display:block;}
   figure.ecg .eb{display:block;margin-top:7px;padding:5px 9px;border-left:4px solid #f5be00;
     background:rgba(255,221,0,.16);border-radius:0 6px 6px 0;font-size:.8rem;}
