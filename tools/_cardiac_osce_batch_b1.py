@@ -83,7 +83,7 @@ BATCH = {
   "lower leg, use phlebography, or repeat the thigh scan in 1 week; a nondiagnostic scan goes to "
   "magnetic resonance imaging or phlebography. A clot confined to a superficial vein is "
   "thrombophlebitis; fever with erythema and a clear scan is cellulitis.",
-  "<b>Anticoagulation is the mainstay</b>: rivaroxaban or apixaban alone, or low molecular weight heparin "
+  "<b>Anticoagulation is the mainstay</b>: rivaroxaban or apixaban alone, or low molecular weight heparin (enoxaparin) "
   "or fondaparinux followed by dabigatran or edoxaban, or overlapped with warfarin. At least 3 months "
   "for a first clot (3 if provoked by a major transient factor, 3 to 6 if minor, indefinite if "
   "unprovoked). Outpatient if stable, low bleeding risk, normal kidneys and reliable; <b>admit</b> an "
@@ -137,7 +137,7 @@ BATCH = {
   "neuropathy; swelling with normal pulses to venous disease.",
   "<b>Risk-factor reduction</b>: stop smoking; control blood pressure, diabetes and weight; and a "
   "<b>supervised exercise program</b> (30 to 45 minutes, three times a week). Antiplatelet therapy "
-  "(aspirin or clopidogrel) and cilostazol; a statin. Revascularization (angioplasty with or without a "
+  "(aspirin or clopidogrel) and cilostazol; a statin (simvastatin or pravastatin). Revascularization (angioplasty with or without a "
   "stent, atherectomy, bypass, endarterectomy) when claudication stays disabling despite exercise and "
   "drugs. Rest pain, a nonhealing ulcer or gangrene &rarr; vascular surgery.",
   "ROUTINE &mdash; clinic work-up and vascular referral; URGENT vascular surgery for rest pain, a "

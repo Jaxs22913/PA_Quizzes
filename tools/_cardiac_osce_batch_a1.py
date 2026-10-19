@@ -40,7 +40,7 @@ BATCH = {
   "alcohol, no smoking. Goal <b>below 130/80</b>. Stage 1: one first-line drug if cardiovascular disease, "
   "diabetes, chronic kidney disease or a 10-year risk &ge;7.5%; stage 2: <b>two complementary first-line "
   "drugs</b>, ideally in one pill &mdash; a thiazide-type diuretic (chlorthalidone preferred), an "
-  "angiotensin-converting enzyme inhibitor or angiotensin receptor blocker (never both), or a dihydropyridine "
+  "angiotensin-converting enzyme inhibitor (lisinopril) or angiotensin receptor blocker (losartan), never both, or a dihydropyridine "
   "calcium channel blocker (amlodipine).",
   "ROUTINE &mdash; primary care clinic; confirm with a week of home readings, recheck about 4 weeks after "
   "starting drugs; hypertension specialist only if truly resistant.",
@@ -54,7 +54,7 @@ BATCH = {
   "emergent",
   "CMS L20 Hypertension (Jaquith) &middot; slides 5, 20, 27, 29, 37, 39, 40, 42, 44, 49, 59, 69, 75, 76 "
   "&middot; CMS L27 Arterial Occlusive Disease and Aneurysm (Carter) &middot; slides 116, 118 &middot; PD2 "
-  "Cardiovascular slides 40, 77, 86, 102",
+  "Cardiovascular slides 40, 77, 86, 102 &middot; Pharm ANS Pharmacology slide 122 &middot; Pharm Diuretics slide 12",
   "Lethal through acute organ injury &mdash; encephalopathy, pulmonary edema, acute kidney injury, aortic "
   "dissection, acute coronary syndrome &mdash; and lowering the pressure too fast itself causes stroke, "
   "myocardial injury or renal failure (slides 5, 69).",
@@ -87,11 +87,11 @@ BATCH = {
   "dissection; <b>computed tomography angiography</b> does. A focal deficit with an infarct or bleed on "
   "imaging is a stroke and follows its own protocol.",
   "<b>Airway, breathing, circulation</b>; intravenous access, continuous cardiac monitoring, an arterial "
-  "line, and a <b>titratable intravenous drug matched to the organ syndrome</b>. Lower mean arterial pressure "
+  "line, and a <b>titratable intravenous drug matched to the organ syndrome</b> (for example labetalol). Lower mean arterial pressure "
   "<b>no more than 20&ndash;25% in the first hour</b>, toward about 160/100&ndash;110 over 2&ndash;6 hours, "
   "then normal over 24&ndash;48 hours (dissection and some strokes excepted). Pulmonary edema: intravenous "
   "nitroglycerin or nitroprusside, oxygen, continuous or bilevel positive airway pressure, and a loop "
-  "diuretic if overloaded.",
+  "diuretic (furosemide) if overloaded.",
   "EMERGENT &mdash; emergency department now; call 911; continuous monitoring with titratable intravenous "
   "therapy.",
   "Once stable: take the pressure pills every day and <b>never stop them suddenly</b> &mdash; clonidine in "
@@ -190,7 +190,7 @@ BATCH = {
   "routine",
   "CMS L25 Heart Failure (Carter) &middot; slides 5, 6, 8&ndash;10, 18, 24, 26, 29, 30, 32&ndash;34, "
   "38&ndash;40, 52&ndash;54, 56 &middot; CMS L20 Hypertension slides 20, 57 &middot; CMS L26 Venous "
-  "Disorders (Shah) slides 14, 26&ndash;29 &middot; PD2 Cardiovascular slides 7, 8, 20, 23, 40, 42, 88, 89",
+  "Disorders (Shah) slides 14, 26&ndash;29 &middot; PD2 Cardiovascular slides 7, 8, 20, 23, 40, 42, 88, 89 &middot; Pharm Antihypertensives slide 70",
   "6.7 million Americans have heart failure, lifetime risk is 1 in 4, and it causes 45% of cardiovascular "
   "deaths (slide 6); left-sided failure is the most common by far, 70&ndash;80% (slide 8).",
   "&ldquo;I get winded walking to the mailbox, I sleep on three pillows, and my shoes are tight by "
@@ -224,8 +224,8 @@ BATCH = {
   "duplex ultrasound</b> &rarr; reflux) or to a drug. A complete blood count looks for anemia, a "
   "high-output cause.",
   "<b>Guideline-directed medical therapy by ejection fraction (2022)</b>. Reduced (&le;40%): an angiotensin "
-  "receptor-neprilysin inhibitor (sacubitril-valsartan) or an angiotensin-converting enzyme inhibitor or "
-  "angiotensin receptor blocker, a <b>beta blocker</b>, a mineralocorticoid receptor antagonist "
+  "receptor-neprilysin inhibitor (sacubitril-valsartan) or an angiotensin-converting enzyme inhibitor (lisinopril) or "
+  "angiotensin receptor blocker (losartan), a <b>beta blocker</b> (carvedilol, metoprolol succinate or bisoprolol), a mineralocorticoid receptor antagonist "
   "(spironolactone), a sodium-glucose cotransporter 2 inhibitor (dapagliflozin) and a loop diuretic "
   "(furosemide) as needed; hydralazine with isosorbide dinitrate for African American patients in New York "
   "Heart Association class III&ndash;IV; <b>avoid calcium channel blockers</b>, above all verapamil and diltiazem. Mildly reduced or "

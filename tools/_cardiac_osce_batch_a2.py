@@ -5,7 +5,7 @@ BATCH = {
 "Stable angina": R(
   "urgent",
   "CMS L24 Coronary Artery Disease &middot; slides 22&ndash;23, 27&ndash;32, 35, 37&ndash;41, 45&ndash;46, 72a, 79 "
-  "&middot; CMS L23 Valvular Heart Disease slides 16&ndash;17 &middot; PD2 Cardiovascular slides 5, 42, 67, 96&ndash;97",
+  "&middot; CMS L23 Valvular Heart Disease slides 16&ndash;17 &middot; PD2 Cardiovascular slides 5, 42, 67, 96&ndash;97 &middot; CMS L22 slide 79 &middot; Pharm Myocardial Ischemia Drugs slide 17 &middot; Pharm Antihypertensives slide 49",
   "The <b>most common form of angina pectoris</b> (CMS L24 slide 37), and chest pain is the most common symptom "
   "of coronary artery disease (PD2 slide 5).",
   "&ldquo;When I walk up the stairs or hurry to the car I get a pressure in the middle of my chest, like "
@@ -33,8 +33,8 @@ BATCH = {
   "escalating means unstable angina, not stable (slide 45). A normal stress test with post-meal burning "
   "relieved by antacids &rarr; reflux; pain reproduced by chest-wall pressure &rarr; costochondritis. A "
   "calcium score stratifies risk only (slide 35).",
-  "<b>Sublingual nitroglycerin</b> for attacks &mdash; the cornerstone (slide 40). <b>Beta blocker</b> (a calcium "
-  "channel blocker if a beta blocker is contraindicated), <b>statin</b> and <b>aspirin</b> (slides 39, 41). "
+  "<b>Sublingual nitroglycerin</b> for attacks &mdash; the cornerstone (slide 40). <b>Beta blocker</b> (metoprolol; a calcium "
+  "channel blocker such as amlodipine if a beta blocker is contraindicated), <b>statin</b> (atorvastatin) and <b>aspirin</b> (slides 39, 41). "
   "Risk-factor control: blood pressure, lipids, glucose, weight, alcohol, exercise, smoking cessation, stress "
   "(slide 79). Refer to cardiology for stress testing and, if positive, catheterization (slide 35).",
   "URGENT &mdash; a stable, predictable pattern (same effort brings it on, rest relieves it, no recent "
@@ -50,7 +50,7 @@ BATCH = {
   "emergent",
   "CMS L24 Coronary Artery Disease &middot; slides 11, 20, 28&ndash;32, 45&ndash;53, 63, 65&ndash;68, 71&ndash;74, "
   "78, 81&ndash;85, supplement slide 72a &middot; CMS L27 Arterial Occlusive and Aneurysm slides 114&ndash;117 "
-  "&middot; CMS L31 Pericardial Disease slides 13, 17, 19 &middot; PD2 Cardiovascular slides 5, 42, 59",
+  "&middot; CMS L31 Pericardial Disease slides 13, 17, 19 &middot; PD2 Cardiovascular slides 5, 42, 59 &middot; Pharm Myocardial Ischemia Drugs slide 17",
   "Lethal: plaque rupture with thrombus (slide 20). <b>Sudden cardiac death, mostly ventricular fibrillation, is "
   "the first sign of coronary disease in over 20%</b> (slide 85); cardiogenic shock, myocardial rupture and "
   "arrhythmias follow (slide 78) &mdash; &ldquo;time is muscle&rdquo; (slide 68).",
@@ -87,12 +87,12 @@ BATCH = {
   "<b>D-dimer</b> (slide 32), then computed tomography pulmonary angiography &rarr; a filling defect = "
   "pulmonary embolism.",
   "Call 911. <b>Chewable aspirin</b> now; oxygen only if saturation is under 91%; nitroglycerin, but "
-  "<b>never in a right ventricular infarct</b> or after a phosphodiesterase inhibitor; beta blocker if no "
+  "<b>never in a right ventricular infarct</b> or after a phosphodiesterase inhibitor; beta blocker (metoprolol) if no "
   "bradycardia; clopidogrel, ticagrelor or prasugrel plus heparin (slides 49, 63, 66&ndash;67). ST elevation: "
   "catheterization team, <b>door-to-balloon under 90 minutes</b>, or thrombolytics (tenecteplase) within 30 "
   "minutes of arrival if intervention is 2 or more hours away (slides 68, 74). Non-ST elevation: stabilize, "
   "then catheterization, early if the Thrombolysis in Myocardial Infarction score is 3 or more (slide 72). "
-  "Discharge on a high-intensity statin and aspirin (slides 81, 83).",
+  "Discharge on a high-intensity statin (atorvastatin or rosuvastatin) and aspirin (slides 81, 83).",
   "EMERGENT &mdash; call 911; emergency department now (electrocardiogram within 10 minutes, door-to-balloon "
   "under 90 minutes).",
   "Chest pain like this again, or pain not better 5 minutes after one nitroglycerin: <b>call 911 and do not "

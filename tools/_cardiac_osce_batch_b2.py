@@ -5,7 +5,7 @@ BATCH = {
 "Atrial fibrillation": R(
   "urgent",
   "CMS L29 Arrhythmias I: Supraventricular (Elwaya) &middot; slides 24, 28, 32, 42, 46&ndash;50, 56, 58 "
-  "&middot; PD2 Cardiovascular slides 6, 30, 99",
+  "&middot; PD2 Cardiovascular slides 6, 30, 99 &middot; Pharm Antiarrhythmics slides 29, 39",
   "Commonly seen in older patients with hypertension, diabetes, heart disease, obesity, sleep apnea or "
   "heavy alcohol use (slide 48), and the most common sustained arrhythmia; its danger is <b>stroke from "
   "atrial clot</b>, which anticoagulation prevents (slide 50).",
@@ -29,8 +29,8 @@ BATCH = {
   "more P-wave shapes to multifocal atrial tachycardia, isolated early P waves on a regular rhythm to "
   "premature atrial contractions. A low thyroid-stimulating hormone makes hyperthyroidism the driver to treat.",
   "<b>Unstable &rarr; synchronized cardioversion.</b> Stable with rapid ventricular response &rarr; "
-  "intravenous rate control; stable without it &rarr; <b>oral rate control</b> (a beta blocker or a "
-  "nondihydropyridine calcium channel blocker) &mdash; rate, not rhythm, is goal one. Anticoagulate by "
+  "intravenous rate control (diltiazem or metoprolol); stable without it &rarr; <b>oral rate control</b> (a beta blocker such as metoprolol, or a "
+  "nondihydropyridine calcium channel blocker, diltiazem or verapamil) &mdash; rate, not rhythm, is goal one. Anticoagulate by "
   "stroke risk: direct oral anticoagulants preferred if nonvalvular (dabigatran, apixaban, edoxaban, "
   "rivaroxaban), or warfarin to an international normalized ratio of 2 to 3; the slide says a HAS-BLED of "
   "3 or more means no anticoagulation (guidelines treat it as bleeding risk to fix, not a bar). Outpatient "
@@ -47,7 +47,7 @@ BATCH = {
 "Premature ventricular contractions": R(
   "routine",
   "CMS L30 Arrhythmias II: Blocks and Ventriculars (Elwaya) &middot; slides 33, 35, 36, 40 &middot; "
-  "CMS L29 slides 46, 54, 56 &middot; PD2 Cardiovascular slides 6, 30, 99",
+  "CMS L29 slides 46, 54, 56 &middot; PD2 Cardiovascular slides 6, 30, 99 &middot; Pharm Antiarrhythmics slides 27, 29",
   "Elwaya&rsquo;s top point of the lecture: the main causes are <b>hypoxemia and electrolyte imbalance</b>, "
   "so check oxygen saturation and electrolytes (slide 36). They occur with or without structural heart "
   "disease and most patients are asymptomatic; they are the commonest ventricular ectopic beat.",
@@ -71,7 +71,7 @@ BATCH = {
   "wide beats mean ventricular tachycardia; no P waves anywhere means atrial fibrillation. An "
   "echocardiogram showing a structurally normal heart keeps the patient low-risk.",
   "Correct hypoxemia and electrolytes; cut alcohol, caffeine and stimulants. <b>Low-risk, low burden, no "
-  "symptoms &rarr; reassurance.</b> Low-risk with symptoms &rarr; a <b>beta blocker first</b>, catheter "
+  "symptoms &rarr; reassurance.</b> Low-risk with symptoms &rarr; a <b>beta blocker first</b> (metoprolol), catheter "
   "ablation if refractory or not tolerated. High-risk (burden over 15%, induced cardiomyopathy, structural "
   "or conduction disease, past syncope) &rarr; beta blocker and optimized treatment of the heart disease, "
   "or ablation for an isolated induced cardiomyopathy with heart failure; refer to cardiology.",
