@@ -31,7 +31,12 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((k) => k.indexOf("pa-quizzes-") === 0 && k !== CACHE_NAME).map((k) => caches.delete(k)))
-    ).then(() => self.clients.claim())
+    )
+      // error pings (/_e/) cached by the previous version of this file before it learned to skip them
+      .then(() => caches.open(CACHE_NAME))
+      .then((c) => c.keys().then((reqs) => Promise.all(reqs.filter((r) => r.url.includes("/_e/")).map((r) => c.delete(r)))))
+      .catch(() => {})
+      .then(() => self.clients.claim())
   );
 });
 
@@ -45,6 +50,9 @@ self.addEventListener("fetch", (event) => {
   /* Video is left to the browser: Range requests and 206 responses do not belong in the
      cache, and Safari is fussy about video served through a service worker. */
   if (/\.(mp4|webm|mov)$/i.test(url.pathname)) return;
+
+  /* Error pings (theme.js, 2026-10-19) are deliberate 404s that Cloudflare counts: never cache them. */
+  if (url.pathname.includes("/_e/")) return;
 
   /* Anything under an immutable/ folder is cache-FIRST: those files are never edited
      in place (a changed file gets a new name), so the copy on disk is always right and

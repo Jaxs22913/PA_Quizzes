@@ -1,0 +1,24 @@
+# Daily site error report (2026-10-19). Reads the error pings theme.js sends (counted by Cloudflare's request
+# analytics) and opens an issue when yesterday had any, marking errors not seen in the week before as NEW.
+# Needs the repo secret CF_ANALYTICS_TOKEN (a Cloudflare API token with Zone > Analytics > Read on
+# pa-quizzes.com); until it exists the job prints a note and succeeds. See tools/error_report.py.
+name: Site error report
+
+on:
+  schedule:
+    - cron: "30 11 * * *"      # 07:30 Eastern (EDT), after the UTC day closes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/error_report.py --issue
+        env:
+          CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

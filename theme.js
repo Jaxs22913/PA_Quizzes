@@ -6,7 +6,82 @@ if (!window.PAMetrics) window.PAMetrics = (function () {
   var q = [];
   function later(name) { return function () { q.push([name, [].slice.call(arguments)]); }; }
   return { _q: q, add: later("add"), mark: later("mark"), family: later("family"),
-           note: "PA Quizzes counts anonymous totals, like how many questions are answered and how often Pip is used, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
+           note: "PA Quizzes counts anonymous totals, like how many questions are answered, how often Pip is used and which pages run into errors, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
+})();
+
+/* Error pings (2026-10-19). A script error used to be invisible until a classmate texted Jaxon ("I press
+   start the quiz and nothing happens"). Now each distinct error on a page view sends ONE request for
+     <site>/_e/v1/<page kind>/<folder~page>/<file-line>/<message>
+   -- a path that does not exist (a 404), so nothing is stored by the site: Cloudflare's own request analytics
+   count the paths, and tools/error_report.py (daily, .github/workflows/site-errors.yml) reads them back.
+   Never sent: names, ids, answers, query strings or page text (URLs and numbers in a message are blanked).
+   At most 5 per page view. Same exclusions as metrics.js: usage counts turned off (metrics:off), a developer
+   device (metrics:dev), automated browsers, and anywhere but pa-quizzes.com; ?errtest=1 lifts the last two for
+   a live self-test. Errors from browser extensions and other sites' scripts (Firebase, analytics) and plain
+   network failures are ignored. Quiz pages queue errors from before this file runs in window.__paErrQ
+   (template.html <head>), which is drained here. */
+(function () {
+  var MAX = 5, n = 0, sent = {};
+  var me = document.currentScript, base = me && me.src ? me.src.replace(/theme\.js(\?.*)?$/, "") : "";
+  var test = /[?&]errtest=1(&|$)/.test(location.search);
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function off() {
+    if (!base || get("metrics:off") === "1" || get("metrics:dev") === "1") return true;
+    if (test) return false;
+    if (navigator.webdriver || !/^https:$/.test(location.protocol)) return true;
+    return !/(^|\.)pa-quizzes\.com$/.test(location.hostname);
+  }
+  var NOISE = /^(Script error\.?)$|ResizeObserver loop|Failed to fetch|NetworkError|Load failed|network ?error|AbortError|aborted|offline|firebase|firestore|auth\/|Quota|QuotaExceeded/i;
+  function clean(s, max, keepDigits) {
+    s = String(s || "").replace(/https?:\/\/\S+/g, "url");
+    // Quoted text can carry what a student typed (a JSON.parse or selector error): keep a short code name
+    // like 'length' or 'startExamModeTour', blank everything else in quotes.
+    s = s.replace(/(["'`])([^"'`]*)\1/g, function (m, q, t) { return /^[A-Za-z_$][\w$.]{0,40}$/.test(t) ? m : q + q; });
+    if (!keepDigits) s = s.replace(/\d+/g, "N");
+    return s.replace(/[^A-Za-z0-9 _.$'()-]+/g, " ").trim().replace(/\s+/g, "-").slice(0, max) || "none";
+  }
+  function pageSeg() {
+    var p = decodeURIComponent(location.pathname).replace(/^\/(PA_Quizzes\/)?/, "").replace(/\.html$/, "");
+    var parts = p.split("/"), file = parts.pop() || "index";
+    return (parts.length ? clean(parts.join("-"), 45, true).toLowerCase() + "~" : "") + clean(file, 55, true).toLowerCase();
+  }
+  function kind() {
+    var b = document.body;
+    if (!b) return "early";
+    return b.getAttribute("data-dark-kind") || (b.classList.contains("homepage") ? "home" : document.getElementById("quiz") ? "quiz" : "page");
+  }
+  function report(msg, file, line) {
+    try {
+      if (n >= MAX || off() || NOISE.test(msg || "")) return;
+      var here = location.origin + location.pathname;
+      if (file && file.split(/[?#]/)[0] !== here && file.indexOf(location.origin + "/") !== 0) return;   // extension / another site
+      var where = !file || file.split(/[?#]/)[0] === here ? "page" : file.split(/[?#]/)[0].split("/").pop();
+      var segs = [kind(), pageSeg(), clean(where, 40, true) + "-" + (line | 0), clean(String(msg).replace(/^Uncaught\s+/, ""), 100)];
+      var key = segs.join("|");
+      if (sent[key]) return;
+      sent[key] = 1; n++;
+      new Image().src = base + "_e/v1/" + segs.map(encodeURIComponent).join("/");
+    } catch (e) {}
+  }
+  function onError(e) {
+    try {
+      if (e && e.target && e.target !== window) return;   // a failed <img>/<script> load, not a script error
+      report(e && (e.message || (e.error && e.error.message)), e && e.filename, e && e.lineno);
+    } catch (x) {}
+  }
+  function onReject(e) {
+    try {                                                  // a reason can be anything, even an object String() throws on
+      var r = e && e.reason;
+      report("promise: " + (r && r.message ? r.message : String(r)), r && r.fileName, r && r.lineNumber);
+    } catch (x) {}
+  }
+  try {
+    var q = window.__paErrQ;
+    if (q && q.length) q.forEach(function (e) { e.type === "unhandledrejection" ? onReject(e) : onError(e); });
+    if (q) q.done = true;
+  } catch (x) {}
+  window.addEventListener("error", onError);
+  window.addEventListener("unhandledrejection", onReject);
 })();
 
 /* ============================================================

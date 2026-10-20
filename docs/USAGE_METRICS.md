@@ -126,3 +126,20 @@ exported copy (`tools/metrics-test/report_fixture.json` is a synthetic one for t
   `npx firebase emulators:exec --only firestore --project demo-pa "node rules.test.mjs firestore.rules"`).
 - `tools/metrics-test/sweep.py`: a load-only console sweep of every top-level page and a sample of each
   exam folder with the fake Firestore.
+
+## Error pings (added 2026-10-19)
+
+Separate from the counters above and never written to Firestore. When a script error happens on a page, theme.js
+requests `/_e/v1/<page kind>/<folder~page>/<file-line>/<message>` once per distinct error (at most 5 per page view).
+The path does not exist; Cloudflare's request analytics count it, and `tools/error_report.py` reads those counts
+(daily via `.github/workflows/site-errors.yml`, which opens an issue when an error not seen in the previous 7 days
+appears; it needs the repo secret `CF_ANALYTICS_TOKEN`, a token with Zone > Analytics > Read).
+
+- Sent: the page kind (quiz, guide, home ...), the page's folder and file name, the script file and line, and the
+  error message with URLs and numbers blanked and any quoted text blanked unless it is a short code name.
+- Never sent: names, ids, answers, query strings, page text.
+- Same exclusions as the counters: `metrics:off`, `metrics:dev`, automated browsers, anywhere but pa-quizzes.com.
+  Errors from browser extensions and other sites' scripts, and plain network failures, are ignored.
+- Live self-test: open any page with `?errtest=1` and run `setTimeout(() => { throw new Error("pa-error-selftest x") })`
+  in the console; self-test pings are listed separately and never open an issue.
+- Quiz pages queue errors from before theme.js runs (`window.__paErrQ`, set in the quiz template's `<head>`).
