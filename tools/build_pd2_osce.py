@@ -297,6 +297,9 @@ ENT_EXAM = dict(id="s5", title="Focused Physical Examination &mdash; Ear, Nose &
   ])
 
 ENT = dict(
+  companion=("Once you have a diagnosis in mind, the <a href=\"pd2-ent-osce-chart.html\">ENT OSCE Disease Chart</a> "
+             "carries all 127 conditions &mdash; what the patient says, what you see, the exams that rule it in or out, "
+             "the top three differentials, the tests <i>and what a positive looks like</i>, treatment and patient education."),
   slug="pd2-ent-osce", key="pd2EntOsce",
   h1="ENT OSCE &mdash; Focused Encounter Run-Sheet",
   eyebrow="PAJ 5310 &middot; Physical Diagnosis II &middot; Fall 2026",
@@ -695,6 +698,38 @@ assert donor.count('<div id="quiz-footer-logo"') == 1
 assert 'pd1HeadToToe:ticks' in TAIL
 
 
+# ------------------------------------------------------------ site mode (2026-10-20)
+# Jaxon: "Why cant I highlight in the OSCE sheets ... I should be able to do that in all guide pages for ask pip or
+# add to notes or hightlight". The sheets used to omit theme.js to keep their own look; now they load it the way the
+# OSCE disease charts do: theme.css UNDER the page's own <style>, data-dark="tokens" (the page has its own dark
+# palette, so no invert), the guide back bar, and the sheet as body > .wrap. theme.js then gives them what every
+# guide has: highlight / Ask Pip / Add to notes, text-box notes, Pencil ink, sync, settings, report link and Pip.
+SITE_HEAD = ('<link rel="stylesheet" href="../theme.css">\n<script src="../theme.js" defer></script>\n')
+SITE_CHROME = '''<body data-dark="tokens">
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="sheet wrap">
+
+'''
+assert '<div class="sheet">' in CHROME and 'id="h2t-settings"' in CHROME     # what SITE_CHROME replaces
+
+
+COMPANION_CSS = (".mast .companion{margin:10px 0 0;font-size:13.5px;line-height:1.55;color:var(--ink2)}\n"
+                 ".mast .companion a{color:var(--petrol);font-weight:600;text-decoration-thickness:1px;\n"
+                 "  text-underline-offset:2px}\n")
+
+
+def site_tail(key):
+    """The donor tail minus everything theme.js now provides: keep the footer mark and the tick/filter script."""
+    foot = TAIL[:TAIL.index("<script>")]
+    a = TAIL.index("(function(){\n  var boxes")
+    b = TAIL.index("  restore();\n  tally();\n})();", a) + len("  restore();\n  tally();\n})();")
+    ticks = TAIL[a:b].replace("pd1HeadToToe:ticks", "%s:ticks" % key)
+    assert "%s:ticks" % key in ticks
+    return foot + "<script>\n// Ticks and the spoken / hands-on filters. Everything else comes from theme.js.\n" + ticks + "\n</script>\n</body>\n</html>\n"
+
+
 PIP_LOADER = """<script>
 /* Pip, the study companion. This page omits theme.js, so it loads Pip itself: only on pa-quizzes.com and a
    local preview, never in a frame. Claude help brings in its own sign-in here (pip/pip-superbrain.js ready()). */
@@ -715,16 +750,18 @@ def build(spec):
     head = re.sub(r"<title>.*?</title>",
                   "<title>%s</title>" % re.sub(r"&mdash;", "—", spec["h1"]),
                   HEAD, count=1, flags=re.S)
+    assert head.count("<style>") == 1
+    head = head.replace("<style>", SITE_HEAD + "<style>")
+    if spec.get("companion"):
+        head = head.replace("</style>", COMPANION_CSS + "</style>", 1)
 
     nav = "\n".join('    <li><a href="#s%d">%s</a></li>' % (i + 1, lbl)
                     for i, lbl in enumerate(spec["navlabels"]))
 
-    page = head + CHROME + '''<p class="sitebar"><a href="../index.html">&larr; Back to Homepage</a></p>
-
-<header class="mast">
+    page = head + SITE_CHROME + '''<header class="mast">
   <p class="eyebrow">%(eyebrow)s</p>
   <h1>%(h1)s</h1>
-  <p class="sub">%(sub)s</p>
+  <p class="sub">%(sub)s</p>%(companion)s
 </header>
 
 <div class="legend">
@@ -756,19 +793,14 @@ testing has started.</div>
 </div>
 
 ''' % dict(eyebrow=spec["eyebrow"], h1=spec["h1"], sub=spec["sub"],
-           date=spec["date"], nav=nav, sections=body_sections)
+           date=spec["date"], nav=nav, sections=body_sections,
+           companion=('\n  <p class="companion">%s</p>' % spec["companion"]) if spec.get("companion") else "")
 
-    tail = TAIL.replace("pd1HeadToToe:ticks", "%s:ticks" % spec["key"])
-    page += tail
-    # Fixes the shipped run-sheets got after they were built, carried here so a rebuild keeps them
-    # (2026-10-20): the teal that passes contrast, the report link's dark-mode color, and Pip's loader
-    # (this page omits theme.js, so it loads Pip itself; pip-superbrain.js brings in sign-in for Claude).
-    for old_s, new_s in (("--teal:#4f8f8b;", "--teal:#3f807c;"),
-                         ('a.style.cssText = "color:#6b7280;', 'a.style.cssText = "color:var(--ink2);')):
-        assert page.count(old_s) == 1, old_s
-        page = page.replace(old_s, new_s)
-    assert page.count("</body>") == 1 and "pip/pip.js" not in page
-    page = page.replace("</body>", PIP_LOADER + "</body>")
+    page += site_tail(spec["key"])
+    assert page.count("--teal:#4f8f8b;") == 1           # the teal that passes contrast (the shipped sheets' hand fix)
+    page = page.replace("--teal:#4f8f8b;", "--teal:#3f807c;")
+    for gone in ("h2t-settings", "pip/pip.js", "formspree", "pd1HeadToToe"):
+        assert gone not in page.split("<style>", 1)[0] + page.split("</style>", 1)[1], gone
 
     path = os.path.join(OUTDIR, spec["slug"] + ".html")
     open(path, "w", encoding="utf-8").write(page)
