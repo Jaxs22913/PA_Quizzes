@@ -75,7 +75,7 @@
     "#pip-peek{position:fixed;right:0;bottom:84px;z-index:900;width:14px;height:58px;padding:0;border:0;border-radius:10px 0 0 10px;",
     " background:#3d63c4;cursor:pointer;box-shadow:-1px 1px 4px rgba(20,30,70,.25);display:none}",
     "#pip-peek::before{content:'';position:absolute;left:4px;top:9px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 9px 0 -1px rgba(255,255,255,.75),0 17px 0 -2px rgba(255,255,255,.5)}",
-    "#pip-peek::after{content:'';position:absolute;inset:-4px 0 -4px -10px}",       // a 24-px-wide tap area, still in the gutter
+    "#pip-peek::after{content:'';position:absolute;inset:-8px 0 -8px -30px}",       // a 24-px-wide tap area, still in the gutter
     "#pip-peek:focus-visible{outline:2px solid #1E3974;outline-offset:2px}",
     "html[data-theme=dark] #pip-peek{background:#6E96E6}html[data-theme=dark] #pip-peek::before{background:#0d1530;box-shadow:0 9px 0 -1px rgba(13,21,48,.75),0 17px 0 -2px rgba(13,21,48,.5)}",
     "html[data-theme=dark] #pip-dock .pip-hide,html[data-theme=dark] #pip-tab{background:#17264f;color:#E6EDFB;border-color:#6a7fb8}",

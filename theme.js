@@ -223,8 +223,9 @@ window.SitePrompts = {
     return steps.filter(function (s) { return !s.selector || document.querySelector(s.selector); });
   }
 
-  // Neither the "want a tour?" prompt nor the running spotlight/tooltip
-  // blocks clicks to the rest of the page, so two tours can otherwise be
+  // The running spotlight/tooltip does not block clicks to the rest of the
+  // page (the "want a tour?" prompt does, until it is answered or tapped
+  // away), so two tours can otherwise be
   // triggered back to back (e.g. the page-load quiz tour is still up when
   // Exam Mode's own tour fires moments later) and stack visually on top of
   // each other. One flag, shared across every start()/run() call site,
@@ -267,13 +268,22 @@ window.SitePrompts = {
     overlay.appendChild(card);
     document.body.appendChild(overlay);
 
-    skipBtn.addEventListener("click", function () {
-      localStorage.setItem(storageKey, "1");
+    // Close first, then remember: a save that fails (a full device) must
+    // never leave the prompt covering the page.
+    function skip() {
       overlay.remove();
+      document.removeEventListener("keydown", onKey);
       active = false;
-    });
+      try { localStorage.setItem(storageKey, "1"); } catch (e) {}
+    }
+    function onKey(e) { if (e.key === "Escape") skip(); }
+    skipBtn.addEventListener("click", skip);
+    // A tap on the dimmed page around the card counts as Skip.
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) skip(); });
+    document.addEventListener("keydown", onKey);
     goBtn.addEventListener("click", function () {
       overlay.remove();
+      document.removeEventListener("keydown", onKey);
       runSteps(steps, storageKey);
     });
   }
@@ -286,11 +296,11 @@ window.SitePrompts = {
     document.body.appendChild(tooltip);
 
     function finish() {
-      localStorage.setItem(storageKey, "1");
       spotlight.remove();
       tooltip.remove();
       window.removeEventListener("resize", place);
       active = false;
+      try { localStorage.setItem(storageKey, "1"); } catch (e) {}
       if (onDone) { try { onDone(); } catch (e) {} }
     }
 
@@ -1778,6 +1788,9 @@ window.SitePrompts = {
           if (!hasProgress) shuffleCb.checked = true;
         }
         setTimeout(function () {
+          // Started within the delay: the tour's targets are gone, so offer it next time.
+          var startCard = document.getElementById("start");
+          if (startCard && getComputedStyle(startCard).display === "none") return;
           window.SiteTour.start(QUIZ_TOUR_STEPS, "tourSeen:quiz");
         }, 700);
       }
