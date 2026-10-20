@@ -54,6 +54,9 @@
   var realSetItem = Storage.prototype.setItem;
   var realGetItem = Storage.prototype.getItem;
   var realRemoveItem = Storage.prototype.removeItem;
+  // theme.js's setItem (2026-10-20) skips a write that does not fit on a full device instead of throwing,
+  // and flags it; a skipped write must not be marked changed, pushed, or reloaded for.
+  function lastWriteSkipped() { return !!realSetItem.failed; }
 
   function getMeta() {
     try { return JSON.parse(realGetItem.call(localStorage, META_KEY)) || {}; }
@@ -144,6 +147,7 @@
   // touched or synced.
   Storage.prototype.setItem = function (key, value) {
     realSetItem.call(this, key, value);
+    if (lastWriteSkipped()) return;   // never landed: pushing would send the OLD value (or a delete) up
     if (this === localStorage && key !== META_KEY && !isLocalOnly(key)) {
       touchMeta(key, Date.now(), true);
       schedulePush(key);
@@ -203,6 +207,7 @@
         if (r) {
           if (r.local) {
             realSetItem.call(localStorage, key, r.value);
+            if (lastWriteSkipped()) return;   // device full: leave this key for a later load
             if (!isQuiet(key)) changed = true;
           }
           if (r.cloud) {
@@ -218,6 +223,7 @@
           var localVal = realGetItem.call(localStorage, key);
           if (localVal !== data.value) {
             realSetItem.call(localStorage, key, data.value);
+            if (lastWriteSkipped()) return;   // device full: not changed, meta untouched, so no reload loop
             if (!isQuiet(key)) changed = true;
           }
           meta[key] = cloudTs;
@@ -301,7 +307,15 @@
         // here whenever a *later* change shows up -- e.g. syncing a theme
         // toggle made on another device a few minutes into this same tab's
         // session -- instead of only ever reloading once per session.
-        if (changed) location.reload();
+        // Backstop (2026-10-20): never reload twice within 20 seconds, whatever the cause.
+        if (changed) {
+          var lastReload = 0;
+          try { lastReload = +sessionStorage.getItem("cloudSyncReloadAt") || 0; } catch (e) {}
+          if (Date.now() - lastReload > 20000) {
+            try { sessionStorage.setItem("cloudSyncReloadAt", String(Date.now())); } catch (e) {}
+            location.reload();
+          } else { window.__cloudSyncHydrated = true; window.dispatchEvent(new Event("cloudSyncHydrated")); }
+        }
       }).catch(reportWriteError);
     }
   });

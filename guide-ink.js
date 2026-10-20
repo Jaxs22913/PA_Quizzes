@@ -142,11 +142,28 @@
     return el;
   }
 
+  var rawInk = null;
   function loadStrokes() {
-    try { return JSON.parse(localStorage.getItem(INK_KEY)) || []; } catch (e) { return []; }
+    try { rawInk = localStorage.getItem(INK_KEY); return JSON.parse(rawInk) || []; } catch (e) { return []; }
+  }
+  // Saved points keep 2 decimals (2026-10-20). matrixTransform returns ~16 significant digits, about 46
+  // characters a point, and a few pages of Pencil notes filled Safari's ~5 MB for the WHOLE site on a
+  // classmate's iPad (see STORAGE FULL in theme.js). y spans the guide's full height (up to ~27,000 px
+  // mapped onto 0-1000), so 0.01 is still under 0.3 px. Same {x, y} shape, so older copies read it as is.
+  function r2(n) { return Math.round(n * 100) / 100; }
+  function compact(points) {
+    var out = [], last = null;
+    for (var i = 0; i < points.length; i++) {
+      var q = { x: r2(points[i].x), y: r2(points[i].y) };
+      if (last && q.x === last.x && q.y === last.y) continue;   // the Pencil reports many points per pixel
+      out.push(q);
+      last = q;
+    }
+    if (out.length === 1 && points.length > 1) out.push({ x: out[0].x, y: out[0].y });   // a dot keeps two points so it still draws
+    return out;
   }
   function saveStrokes() {
-    var plain = strokes.map(function (s) { return { tool: s.tool, color: s.color, width: s.width, points: s.points }; });
+    var plain = strokes.map(function (s) { return { tool: s.tool, color: s.color, width: s.width, points: compact(s.points) }; });
     localStorage.setItem(INK_KEY, JSON.stringify(plain));
   }
 
@@ -156,6 +173,9 @@
     svg.appendChild(s.el);
     strokes.push(s);
   });
+  // Drawings saved before the 2-decimal rule shrink to about half the first time their guide is opened
+  // (a smaller value always fits, even on a full device, so this is also what frees the space).
+  if (strokes.length && rawInk && /\.\d{3}/.test(rawInk)) { try { saveStrokes(); } catch (e) {} }
 
   var currentTool = "pen";
   var currentColor = PEN_COLORS[0].value;

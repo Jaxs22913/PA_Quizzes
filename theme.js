@@ -82,6 +82,56 @@ if (!window.PAMetrics) window.PAMetrics = (function () {
   } catch (x) {}
   window.addEventListener("error", onError);
   window.addEventListener("unhandledrejection", onReject);
+  /* One ping when this device's storage is full (see STORAGE FULL below): sizes per key family only --
+     "guideInk-1800k~qp-60k" -- never a key's text, so it says WHAT fills a student's iPad and nothing else. */
+  window.__paStorageFullPing = function () {
+    try {
+      if (off()) return;
+      var fam = {}, total = 0;
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i) || "", v = localStorage.getItem(k) || "";
+        // the family is the site's own prefix before the first ":"; a key without one is never sent by name
+        var f = k.indexOf(":") > 0 ? k.slice(0, k.indexOf(":")).replace(/[^A-Za-z0-9_]/g, "").slice(0, 20) || "other" : "other";
+        fam[f] = (fam[f] || 0) + k.length + v.length; total += k.length + v.length;
+      }
+      var top = Object.keys(fam).sort(function (a, b) { return fam[b] - fam[a]; }).slice(0, 6)
+        .map(function (f) { return f + "-" + Math.round(fam[f] / 1000) + "k"; }).join("~");
+      new Image().src = base + "_e/v1/" + ["storagefull", pageSeg(), "total-" + Math.round(total / 1000) + "k", top].map(encodeURIComponent).join("/");
+    } catch (e) {}
+  };
+})();
+
+/* STORAGE FULL (2026-10-20). Safari keeps about 5 MB (2.5 million characters) of localStorage per site. A
+   classmate's iPad filled it, and from then on every save threw QuotaExceededError -- including the one
+   cloud-sync.js makes when "Start the quiz" clears the old progress, so Start did nothing (it worked in a
+   private window, which starts empty). A full device now keeps working: a save that does not fit is skipped,
+   the student is told once per page, and one anonymous ping says which kind of data filled it. Installed here,
+   before cloud-sync.js loads, so its own patch builds on this one and none of its writes can throw either. */
+(function () {
+  var S, real;
+  try { S = Storage.prototype; real = S.setItem; } catch (e) { return; }
+  if (!real || real.__paSafe) return;
+  var told = false;
+  function isQuota(e) {
+    return !!e && (e.name === "QuotaExceededError" || e.name === "NS_ERROR_DOM_QUOTA_REACHED" || e.code === 22 || e.code === 1014);
+  }
+  function full() {
+    if (told) return;
+    told = true;
+    setTimeout(function () {
+      try { if (window.showToast) window.showToast("This device’s storage for PA Quizzes is full, so new progress and notes are not being saved here right now. Everything else still works.", 9000); } catch (e) {}
+      try { if (window.__paStorageFullPing) window.__paStorageFullPing(); } catch (e) {}
+    }, 0);
+  }
+  // safeSetItem.failed says whether the LAST call was skipped: cloud-sync.js checks it so a value that never
+  // landed is not marked as changed, pushed over the cloud copy, or reloaded for.
+  function safeSetItem(key, value) {
+    safeSetItem.failed = false;
+    try { return real.call(this, key, value); }
+    catch (e) { if (!isQuota(e)) throw e; safeSetItem.failed = true; full(); }
+  }
+  safeSetItem.__paSafe = true;
+  S.setItem = safeSetItem;
 })();
 
 /* ============================================================

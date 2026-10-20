@@ -142,4 +142,9 @@ appears; it needs the repo secret `CF_ANALYTICS_TOKEN`, a token with Zone > Anal
   Errors from browser extensions and other sites' scripts, and plain network failures, are ignored.
 - Live self-test: open any page with `?errtest=1` and run `setTimeout(() => { throw new Error("pa-error-selftest x") })`
   in the console; self-test pings are listed separately and never open an issue.
+- Storage full (added 2026-10-20): when a save does not fit (Safari keeps about 5 MB per site), theme.js skips it
+  instead of throwing, tells the student once per page, and sends ONE
+  `/_e/v1/storagefull/<folder~page>/total-<N>k/<family>-<N>k~...` ping: the total stored and the six largest key
+  families by size (the site's own prefix before the first ":", e.g. `guideInk`, `qp`; a key without a ":" is
+  counted as `other`). Sizes only, never a key's text. Quota errors themselves stay filtered out of the error pings.
 - Quiz pages queue errors from before theme.js runs (`window.__paErrQ`, set in the quiz template's `<head>`).
