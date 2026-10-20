@@ -13,7 +13,7 @@ issue is opened only when there is a NEW one).
 
 The token needs only Zone > Analytics > Read on pa-quizzes.com. Without it the script says so and exits 0,
 so the daily workflow (.github/workflows/site-errors.yml) is harmless until the secret is added.
-Self-test pings (message starting "pa-error-selftest") are listed separately and never open an issue.
+Self-test pings (message containing "pa-error-selftest") are listed separately and never open an issue.
 """
 import argparse, datetime as dt, json, os, re, sys, urllib.parse, urllib.request
 
@@ -73,7 +73,8 @@ def main():
             today[sig] = today.get(sig, 0) + c
         else:
             before.add(known(sig))
-    real = {s: c for s, c in today.items() if not s[3].startswith("pa error selftest")}
+    # "in", not startswith: a browser self-test arrives as "Error pa error selftest ..." (the error's type comes first)
+    real = {s: c for s, c in today.items() if "pa error selftest" not in s[3]}
     tests = {s: c for s, c in today.items() if s not in real}
     new = [s for s in real if known(s) not in before]
 
