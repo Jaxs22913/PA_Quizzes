@@ -32,6 +32,7 @@ import build_cms_ent_chart as C
 from _pd2_cardiac_osce_data import ROWS, TOP10, NONEMERGENT5, EMERGENT5
 from _pd2_cardiac_osce_ecgs import ECGS, IMAGES
 from _pd2_cardiac_osce_ages import AGES
+from _pd2_cardiac_osce_telltale import TELLTALE
 
 OUT = os.path.join(_REPO, "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-chart.html")
 ECG_DIR = "pd2-cardiac-osce-chart-images"
@@ -112,7 +113,7 @@ def uncite(text):
 
 def age_line(name):
     """The 'Typical age' line under the condition name. A textbook age (used only
-    where no deck gives one) is labelled so it is never read as course content."""
+    where no deck gives one) is labeled so it is never read as course content."""
     slides, cite_, book = AGES[name]
     parts = []
     if slides:
@@ -122,6 +123,12 @@ def age_line(name):
     return '<span class="age"><b>Typical age</b> %s</span>' % ' '.join(parts)
 
 
+def telltale_line(name):
+    """The 'Tell-tale sign' box under the condition name: the clue that makes it the most likely diagnosis."""
+    sign, cite_ = TELLTALE[name]
+    return '<span class="tt"><b>Tell-tale sign</b>%s <span class="asrc">%s</span></span>' % (sign, cite(cite_))
+
+
 def build_row(name):
     o = {k: (cite(uncite(v)) if isinstance(v, str) and k != "source" else v)
          for k, v in ROWS[name].items()}
@@ -129,7 +136,7 @@ def build_row(name):
     o["source"] = cite(o["source"])
     key, label, rank = list_of(name)
     badge = "%s &middot; #%d" % (label, rank)
-    age = age_line(name)
+    age = telltale_line(name) + age_line(name)
     ddx = "".join('<li><b>%s</b><span class="dd">%s</span></li>' % (d, why) for d, why in o["ddx"])
     u = o["urgency"].upper()
     urg_cls = "emerg" if u.startswith("EMERGENT") else "urg" if u.startswith("URGENT") else "rout"
@@ -220,6 +227,7 @@ def main():
     assert not missing, "no row written for %r" % missing
     extra = set(ROWS) - set(names)
     assert not extra, "rows not on any list: %r" % extra
+    assert set(TELLTALE) == set(names), "tell-tale signs out of step: %r" % (set(TELLTALE) ^ set(names))
     assert set(CC) == set(names), "chief-complaint map out of step: %r" % (set(CC) ^ set(names))
     assert all(c in COMPLAINTS for v in CC.values() for c in v)
     assert all(ROWS[n]["tier"] == "emergent" for n in EMERGENT5), "an emergent-list row is not tiered emergent"
@@ -263,8 +271,11 @@ order of the station; this tells you what to do once you have a diagnosis in min
 comes from the two Clinical Medicine and Surgery I cardiology blocks (Exam 4, Lectures 20&ndash;25,
 and Exam 5, Lectures 26&ndash;32), with the examination technique from the Physical Diagnosis 2
 cardiovascular lecture. Each row cites its lecture and slides in the first column.<br><br>
+<b>Under each condition&rsquo;s name, a yellow <i>Tell-tale sign</i> box gives the one clue that makes it the most
+likely diagnosis</b>, with its slides. How to do each maneuver, and where its result points, is on the
+<a href="pd2-cardiac-osce-maneuvers.html">Cardiac OSCE Special Maneuvers</a> guide.<br><br>
 <b>Every condition whose work-up includes an electrocardiogram has a real 12-lead under its
-row</b>, eighteen of the twenty. Each tracing is labelled as that finding by its source: a slide
+row</b>, eighteen of the twenty. Each tracing is labeled as that finding by its source: a slide
 from the Principles of Diagnostic Medicine I electrocardiogram lectures, or a Wikimedia Commons
 file whose description names it.
 <b>Yellow boxes mark the leads where the change shows</b>, and the line under each caption says
@@ -372,6 +383,12 @@ __EMROWS__
   p.sectnote{margin:0 0 10px;font-size:.82rem;color:var(--c-mute);max-width:62ch;line-height:1.5;}
   td.nm{white-space:normal;}
   td.nm .why{display:block;margin-top:6px;font-size:.74rem;line-height:1.4;}
+  td.nm .tt{display:block;margin-top:7px;padding:6px 8px;background:#fff6d6;border-left:3px solid #c99a1e;
+          border-radius:4px;font-size:.78rem;line-height:1.42;}
+  td.nm .tt > b:first-child{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;color:#7a5a08;}
+  td.nm .tt .asrc{display:block;margin-top:2px;font-size:.66rem;color:var(--c-mute);}
+  :root[data-theme="dark"] td.nm .tt{background:#2b2410;border-left-color:#c99a1e;}
+  :root[data-theme="dark"] td.nm .tt > b:first-child{color:#e0b84a;}
   td.nm .age{display:block;margin-top:6px;font-size:.74rem;line-height:1.4;}
   td.nm .age > b{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;}
   td.nm .age .asrc{display:block;font-size:.66rem;color:var(--c-mute);}

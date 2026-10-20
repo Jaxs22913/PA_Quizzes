@@ -120,7 +120,7 @@ ECGS = {
         title="The pattern of ischemia: ST depression",
         shows="The course's picture of subendocardial ischemia: the ST segment sits below the "
               "baseline, measured at the J point, across many leads, with the mirror-image "
-              "elevation in aVR. It shows the pattern, not a patient labelled with angina. In "
+              "elevation in aVR. It shows the pattern, not a patient labeled with angina. In "
               "stable angina this appears during exertion or a stress test and settles with rest; "
               "the resting tracing is often normal.",
         boxed=ISCH_BOXED),

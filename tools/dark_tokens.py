@@ -55,7 +55,8 @@ EXCLUDE = set()
 # Pages on the shared template's palette that also carry their OWN hard-coded
 # light components (cards, tables, chips set in the page CSS). They get the
 # generic light-surface pass in light_surface_rules() on top of their kind.
-BESPOKE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html"}
+BESPOKE = {"Physical Diagnosis 2 Exam 1/pd2-ent-osce-study-guide.html",
+           "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-maneuvers.html"}
 SKIP_DIRS = {".git", "tools", "group-quizzes", "cram-personal", "icons", "audio",
              "class-traps", "Remediation"}
 
