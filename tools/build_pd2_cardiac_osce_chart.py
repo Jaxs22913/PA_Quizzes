@@ -31,6 +31,7 @@ import build_pd2_ent_osce_chart as ENT          # donor head and petrol palette,
 import build_cms_ent_chart as C
 from _pd2_cardiac_osce_data import ROWS, TOP10, NONEMERGENT5, EMERGENT5
 from _pd2_cardiac_osce_ecgs import ECGS, IMAGES
+from _pd2_cardiac_osce_ages import AGES
 
 OUT = os.path.join(_REPO, "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-chart.html")
 ECG_DIR = "pd2-cardiac-osce-chart-images"
@@ -109,6 +110,18 @@ def uncite(text):
     return _PAREN.sub(fix, text)
 
 
+def age_line(name):
+    """The 'Typical age' line under the condition name. A textbook age (used only
+    where no deck gives one) is labelled so it is never read as course content."""
+    slides, cite_, book = AGES[name]
+    parts = []
+    if slides:
+        parts.append('%s <span class="asrc">%s</span>' % (slides, cite(cite_)))
+    if book:
+        parts.append('<span class="bk"><span class="ext">Textbook, not on the slides:</span> %s</span>' % book)
+    return '<span class="age"><b>Typical age</b> %s</span>' % ' '.join(parts)
+
+
 def build_row(name):
     o = {k: (cite(uncite(v)) if isinstance(v, str) and k != "source" else v)
          for k, v in ROWS[name].items()}
@@ -116,12 +129,13 @@ def build_row(name):
     o["source"] = cite(o["source"])
     key, label, rank = list_of(name)
     badge = "%s &middot; #%d" % (label, rank)
+    age = age_line(name)
     ddx = "".join('<li><b>%s</b><span class="dd">%s</span></li>' % (d, why) for d, why in o["ddx"])
     u = o["urgency"].upper()
     urg_cls = "emerg" if u.startswith("EMERGENT") else "urg" if u.startswith("URGENT") else "rout"
     return ('<tr id="%s" data-c="%s">'
             '<td class="nm"><b>%s</b>'
-            '<span class="grp %s">%s</span>'
+            '<span class="grp %s">%s</span>%s'
             '<span class="why">%s</span>'
             '<span class="sl">%s</span></td>'
             '<td class="says">%s</td>'
@@ -132,7 +146,7 @@ def build_row(name):
             '<span class="tl out">Rules the differentials OUT</span>%s</td>'
             '<td>%s<span class="u %s">%s</span></td>'
             '<td>%s</td></tr>'
-            % (slug(name), H.escape("|".join(CC[name])), name, key, badge, o["why"], o["source"],
+            % (slug(name), H.escape("|".join(CC[name])), name, key, badge, age, o["why"], o["source"],
                o["says"], o["findings"], o["exam"], ddx, o["rule_in"], o["rule_out"],
                o["tx"], urg_cls, o["urgency"], o["edu"])) + ecg_row(name)
 
@@ -358,6 +372,11 @@ __EMROWS__
   p.sectnote{margin:0 0 10px;font-size:.82rem;color:var(--c-mute);max-width:62ch;line-height:1.5;}
   td.nm{white-space:normal;}
   td.nm .why{display:block;margin-top:6px;font-size:.74rem;line-height:1.4;}
+  td.nm .age{display:block;margin-top:6px;font-size:.74rem;line-height:1.4;}
+  td.nm .age > b{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;}
+  td.nm .age .asrc{display:block;font-size:.66rem;color:var(--c-mute);}
+  td.nm .age .bk{display:block;margin-top:2px;}
+  td.nm .age .ext{font-style:italic;color:var(--c-mute);}
   td.nm .sl{display:block;margin-top:5px;font-size:.66rem;color:var(--c-mute);
             font-variant-numeric:tabular-nums;line-height:1.35;}
   td.nm .grp{display:block;margin-top:4px;font-size:.66rem;color:#fff;padding:1px 7px;
