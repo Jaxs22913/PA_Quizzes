@@ -80,8 +80,13 @@ self.addEventListener("fetch", (event) => {
   // Everything else: network-first, falling back to cache when offline. Every
   // successful online fetch refreshes the cache, so previously-visited
   // pages/images stay usable offline without a big upfront precache list.
+  // "no-cache", not "no-store" (2026-10-19): both always ask the server, so a new
+  // deploy is seen on the very next load, but "no-cache" lets an unchanged file
+  // come back as a tiny 304 instead of a full re-download. With "no-store" every
+  // page re-downloaded theme.js (119 KB) and Pip in full, which on slow Wi-Fi
+  // left the Start button on screen for seconds before theme.js had run.
   event.respondWith(
-    fetch(req, { cache: "no-store" })
+    fetch(req, { cache: "no-cache" })
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(req, copy)).catch(() => {});
