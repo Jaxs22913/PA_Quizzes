@@ -13,8 +13,8 @@ Sources (PAJ 5300 Physical Diagnosis I, Summer 2026; kept out of the repo in
 Item text, quoted scripts and "Indication" lines are copied exactly, typos included (the run-sheet,
 pd2-cardiac-osce.html, is the reworded whole-station version). The only additions are marked as ours:
 "also <sheet>" tags where two sheets grade the same step, one source line per section, and the
-abbreviation key at the end. Order: the General Survey sheet first (every station opens with it),
-then Jaxon's order: Cardiac, Respiratory, Peripheral Vascular, Skin.
+abbreviation key at the end. Order (Jaxon, 2026-10-20): "Intro, then General and Vitals, then skin hair and
+nails, then PV, then Cardiac, then respiratory".
 
 Rendering reuses tools/build_pd2_osce.py (the PD1 head-to-toe skeleton: ticks, filters, print, dark mode).
 """
@@ -99,7 +99,81 @@ SECTIONS = [
             "lecture and lab. For the purposes of the vital signs, students must be able to locate the radial and "
             "brachial pulses."),
   ]),
-  dict(id="s4", title="Cardiovascular", src="Original: " + CV_SRC + ", items 1&ndash;26.", blocks=[
+  dict(id="s4", title="Skin, Hair &amp; Nails", src="Original: " + SK_SRC + ".", blocks=[
+    ("ref", "&bull; Skin should be inspected for: Color, uniformity, thickness, symmetry, hygiene, lesions, rashes, "
+            "dryness, odors<br>&nbsp;&nbsp;o Inspection of body hair distribution may be performed with skin "
+            "inspection<br>&bull; Skin should be palpated for: Moisture, temperature, texture, turgor, mobility<br>"
+            "&bull; Nails should be inspected for: Color, condition, cleanliness, length, lesions, redness/swelling "
+            "of nail folds, nail base angle<br>&bull; Nails should be palpated for: Texture, firmness, thickness, "
+            "uniformity, adherence to nail bed<br>&bull; Hair should be inspected for: Color, distribution, quantity"
+            "<br>&bull; Hair Should be palpated for: Texture"),
+    ("banner", "<b>SKIN AND NAILS &ndash; Verbalize Procedure While Performing All Techniques</b><br>"
+               "Steps 1-11 performed with patient sitting<br>Steps 12-15 performed with patient standing"),
+    ("items", [
+      do("Inspect and palpate the hair and scalp – must part hair in multiple locations",
+         script="“I am inspecting the hair for color, distribution and quantity.  I am inspecting the scalp for "
+                "hygiene, lesions, dandruff, nits or lice. I am palpating…”"),
+      do("Inspect the head, face, and neck",
+         script="“I am inspecting the eyebrows and eyelashes for color, distribution and quantity”<br>"
+                "“I am inspecting the skin of the head, face and neck for….”"),
+      do("Inspect the upper back", script="“I am inspecting the skin for….”"),
+      do("Inspect the shoulders, axillae, and upper extremities"),
+      do("Inspect the hands and fingers (all surfaces and between digits)"),
+      do("Inspect and palpate fingernails", also="also Lungs &middot; PV",
+         script="“I am inspecting the fingernails for…”<br>“I am palpating the fingernails for…”"),
+      do("Inspect the chest"),
+      do("Inspect the abdomen"),
+      do("Inspect the anterior/medial/lateral thighs and lower legs"),
+      do("Inspect the feet and toes (all surfaces and between digits)"),
+      do("Inspect and palpate toenails"),
+      do("Inspect the lower back and posterior legs"),
+      say("Verbalize examination of the buttocks, breasts, and genitalia",
+          script="“For a full-body examination, the buttocks, breasts, and genitalia would also be assessed”"),
+      do("Palpate skin temperature using dorsal surface of hands, bilaterally over upper and lower extremities "
+         "(anterior &amp; posterior)",
+         script="“I am palpating the skin for temperature and evaluating for symmetry in the extremities”"),
+      do("Palpate skin for texture, mobility &amp; turgor, bilaterally over upper and lower extremities "
+         "(anterior &amp; posterior)",
+         script="“I am palpating the skin to assess texture, mobility and turgor”"),
+    ]),
+  ]),  dict(id="s5", title="Peripheral Vascular",
+       src=("Original: " + PV_SRC + ". The original numbers it 1&ndash;18 with no items 8 or 13; "
+            "nothing is missing."), blocks=[
+    ("h4", "Inspection"),
+    ("ref", "Indication: Note for size, symmetry, any swelling, venous pattern, color of skin, texture of skin, "
+            "temperature of feet and legs, hair growth, ulcerations, and nail beds of the upper and lower extremities."),
+    ("items", [
+      do("Inspect for size, symmetry, and edema of the extremities."),
+      do("Inspect for venous pattern and hair growth."),
+      do("Inspect skin color for erythema, cyanosis, and jaundice."),
+      do("Inspect for pigmentation changes and ulcerations."),
+      do("Inspect the nail beds.", also="also Lungs &middot; Skin"),
+    ]),
+    ("h4", "Palpation of pulses bilaterally"),
+    ("ref", "Indication: Assess the amplitude, rate, rhythm, and quality"),
+    ("items", [
+      do("Brachial", also="also Vitals"),
+      do("Radial", also="also Vitals"),
+      do("Femoral"),
+      do("Popliteal"),
+      do("Posterior tibialis"),
+      do("Dorsalis pedis"),
+    ]),
+    ("h4", "Palpation of lymph nodes bilaterally"),
+    ("ref", "Indication: note the presence of nodes, discreteness, note size, consistency, and tenderness"),
+    ("items", [
+      do("Epitrochlear"),
+      do("Vertical inguinal"),
+      do("Horizontal inguinal"),
+    ]),
+    ("h4", "Palpation checking for capillary refill bilaterally"),
+    ("ref", "Indication: Note color typically returns within 2-3 seconds."),
+    ("items", [
+      do("Palpate the nailbeds upper extremities for capillary refill"),
+      do("Palpate the nailbeds lower extremities for capillary refill"),
+    ]),
+  ]),
+  dict(id="s6", title="Cardiovascular", src="Original: " + CV_SRC + ", items 1&ndash;26.", blocks=[
     ("h4", "Preparation"),
     ("items", [
       do("Place the patient in the supine position for the cardiac examination with the head elevated 30 degrees"),
@@ -155,7 +229,7 @@ SECTIONS = [
       do("5th intercostal space, left mid-clavicular line - Mitral Area"),
     ]),
   ]),
-  dict(id="s5", title="Thorax &amp; Lungs (Respiratory)", src="Original: " + LU_SRC + ".", blocks=[
+  dict(id="s7", title="Thorax &amp; Lungs (Respiratory)", src="Original: " + LU_SRC + ".", blocks=[
     ("h4", "Inspection"),
     ("items", [
       do("Inspects for the shape and movement of the thorax and any unilateral lag in movement."),
@@ -197,81 +271,6 @@ SECTIONS = [
       say("Verbalizes if adventitious sounds are present, student states, “I will perform one of three tests, "
           "egophony, bronchophony, and /or whispered pectoriloquy.”"),
     ]),
-  ]),
-  dict(id="s6", title="Peripheral Vascular",
-       src=("Original: " + PV_SRC + ". The original numbers it 1&ndash;18 with no items 8 or 13; "
-            "nothing is missing."), blocks=[
-    ("h4", "Inspection"),
-    ("ref", "Indication: Note for size, symmetry, any swelling, venous pattern, color of skin, texture of skin, "
-            "temperature of feet and legs, hair growth, ulcerations, and nail beds of the upper and lower extremities."),
-    ("items", [
-      do("Inspect for size, symmetry, and edema of the extremities."),
-      do("Inspect for venous pattern and hair growth."),
-      do("Inspect skin color for erythema, cyanosis, and jaundice."),
-      do("Inspect for pigmentation changes and ulcerations."),
-      do("Inspect the nail beds.", also="also Lungs &middot; Skin"),
-    ]),
-    ("h4", "Palpation of pulses bilaterally"),
-    ("ref", "Indication: Assess the amplitude, rate, rhythm, and quality"),
-    ("items", [
-      do("Brachial", also="also Vitals"),
-      do("Radial", also="also Vitals"),
-      do("Femoral"),
-      do("Popliteal"),
-      do("Posterior tibialis"),
-      do("Dorsalis pedis"),
-    ]),
-    ("h4", "Palpation of lymph nodes bilaterally"),
-    ("ref", "Indication: note the presence of nodes, discreteness, note size, consistency, and tenderness"),
-    ("items", [
-      do("Epitrochlear"),
-      do("Vertical inguinal"),
-      do("Horizontal inguinal"),
-    ]),
-    ("h4", "Palpation checking for capillary refill bilaterally"),
-    ("ref", "Indication: Note color typically returns within 2-3 seconds."),
-    ("items", [
-      do("Palpate the nailbeds upper extremities for capillary refill"),
-      do("Palpate the nailbeds lower extremities for capillary refill"),
-    ]),
-  ]),
-  dict(id="s7", title="Skin, Hair &amp; Nails", src="Original: " + SK_SRC + ".", blocks=[
-    ("ref", "&bull; Skin should be inspected for: Color, uniformity, thickness, symmetry, hygiene, lesions, rashes, "
-            "dryness, odors<br>&nbsp;&nbsp;o Inspection of body hair distribution may be performed with skin "
-            "inspection<br>&bull; Skin should be palpated for: Moisture, temperature, texture, turgor, mobility<br>"
-            "&bull; Nails should be inspected for: Color, condition, cleanliness, length, lesions, redness/swelling "
-            "of nail folds, nail base angle<br>&bull; Nails should be palpated for: Texture, firmness, thickness, "
-            "uniformity, adherence to nail bed<br>&bull; Hair should be inspected for: Color, distribution, quantity"
-            "<br>&bull; Hair Should be palpated for: Texture"),
-    ("banner", "<b>SKIN AND NAILS &ndash; Verbalize Procedure While Performing All Techniques</b><br>"
-               "Steps 1-11 performed with patient sitting<br>Steps 12-15 performed with patient standing"),
-    ("items", [
-      do("Inspect and palpate the hair and scalp – must part hair in multiple locations",
-         script="“I am inspecting the hair for color, distribution and quantity.  I am inspecting the scalp for "
-                "hygiene, lesions, dandruff, nits or lice. I am palpating…”"),
-      do("Inspect the head, face, and neck",
-         script="“I am inspecting the eyebrows and eyelashes for color, distribution and quantity”<br>"
-                "“I am inspecting the skin of the head, face and neck for….”"),
-      do("Inspect the upper back", script="“I am inspecting the skin for….”"),
-      do("Inspect the shoulders, axillae, and upper extremities"),
-      do("Inspect the hands and fingers (all surfaces and between digits)"),
-      do("Inspect and palpate fingernails", also="also Lungs &middot; PV",
-         script="“I am inspecting the fingernails for…”<br>“I am palpating the fingernails for…”"),
-      do("Inspect the chest"),
-      do("Inspect the abdomen"),
-      do("Inspect the anterior/medial/lateral thighs and lower legs"),
-      do("Inspect the feet and toes (all surfaces and between digits)"),
-      do("Inspect and palpate toenails"),
-      do("Inspect the lower back and posterior legs"),
-      say("Verbalize examination of the buttocks, breasts, and genitalia",
-          script="“For a full-body examination, the buttocks, breasts, and genitalia would also be assessed”"),
-      do("Palpate skin temperature using dorsal surface of hands, bilaterally over upper and lower extremities "
-         "(anterior &amp; posterior)",
-         script="“I am palpating the skin for temperature and evaluating for symmetry in the extremities”"),
-      do("Palpate skin for texture, mobility &amp; turgor, bilaterally over upper and lower extremities "
-         "(anterior &amp; posterior)",
-         script="“I am palpating the skin to assess texture, mobility and turgor”"),
-    ]),
     ("ref", "<b>Abbreviations on the original sheets</b> (key added here, not on the sheets): AP, anterior-posterior; "
             "BMI, body mass index; BP, blood pressure; DOB, date of birth; LOC, level of consciousness; "
             "PMI, point of maximal impulse; S1&ndash;S4, first to fourth heart sounds; PV, peripheral vascular."),
@@ -279,17 +278,17 @@ SECTIONS = [
 ]
 
 SPEC = dict(
-  slug="pd2-cardiac-osce-rubrics", key="pd2CardiacOsceRubrics",
+  slug="pd2-cardiac-osce-rubrics", key="pd2CardiacOsceRubrics2",   # "2": the 10-20 reorder (ticks are saved by position)
   h1="Cardiac OSCE &mdash; Original Rubrics, Combined",
   eyebrow="PAJ 5310 &middot; Physical Diagnosis II &middot; Fall 2026",
   date="Wednesday 21 October 2026",
   sub=("The five PD1 lab sheets this station draws on, word for word, on one page: General Survey "
-       "(with the introduction and vital signs), Cardiovascular, Thorax &amp; Lungs, Peripheral Vascular, and "
-       "Skin, Hair &amp; Nails. Nothing is reworded. A <span class=\"tag dup\">also &hellip;</span> tag marks a step "
+       "(with the introduction and vital signs), Skin, Hair &amp; Nails, Peripheral Vascular, "
+       "Cardiovascular, and Thorax &amp; Lungs, in the order you perform them. Nothing is reworded. A <span class=\"tag dup\">also &hellip;</span> tag marks a step "
        "two sheets both grade: do it once, out loud. For the whole station in order see the "
        "<a href=\"pd2-cardiac-osce.html\">run-sheet</a>; for what each special maneuver finds, the "
        "<a href=\"pd2-cardiac-osce-maneuvers.html\">special maneuvers guide</a>."),
-  navlabels=["1 Intro", "2 General Survey", "3 Vitals", "4 Cardiac", "5 Lungs", "6 Peripheral Vascular", "7 Skin"],
+  navlabels=["1 Intro", "2 General Survey", "3 Vitals", "4 Skin", "5 Peripheral Vascular", "6 Cardiac", "7 Lungs"],
   sections=SECTIONS,
 )
 

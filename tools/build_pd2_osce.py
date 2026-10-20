@@ -695,6 +695,18 @@ assert donor.count('<div id="quiz-footer-logo"') == 1
 assert 'pd1HeadToToe:ticks' in TAIL
 
 
+PIP_LOADER = """<script>
+/* Pip, the study companion. This page omits theme.js, so it loads Pip itself: only on pa-quizzes.com and a
+   local preview, never in a frame. Claude help brings in its own sign-in here (pip/pip-superbrain.js ready()). */
+(function () {
+  if (!/^(pa-quizzes\\.com|www\\.pa-quizzes\\.com|localhost|127\\.0\\.0\\.1)$/.test(location.hostname) || window.top !== window) return;
+  function go() { if (window.__pip) return; var s = document.createElement("script"); s.src = new URL("../pip/pip.js", location.href).href; s.async = true; document.head.appendChild(s); }
+  if (document.readyState === "complete") setTimeout(go, 0); else window.addEventListener("load", function () { setTimeout(go, 0); });
+})();
+</script>
+"""
+
+
 def build(spec):
     counter = [0]
     body_sections = "\n\n".join(
@@ -748,6 +760,15 @@ testing has started.</div>
 
     tail = TAIL.replace("pd1HeadToToe:ticks", "%s:ticks" % spec["key"])
     page += tail
+    # Fixes the shipped run-sheets got after they were built, carried here so a rebuild keeps them
+    # (2026-10-20): the teal that passes contrast, the report link's dark-mode color, and Pip's loader
+    # (this page omits theme.js, so it loads Pip itself; pip-superbrain.js brings in sign-in for Claude).
+    for old_s, new_s in (("--teal:#4f8f8b;", "--teal:#3f807c;"),
+                         ('a.style.cssText = "color:#6b7280;', 'a.style.cssText = "color:var(--ink2);')):
+        assert page.count(old_s) == 1, old_s
+        page = page.replace(old_s, new_s)
+    assert page.count("</body>") == 1 and "pip/pip.js" not in page
+    page = page.replace("</body>", PIP_LOADER + "</body>")
 
     path = os.path.join(OUTDIR, spec["slug"] + ".html")
     open(path, "w", encoding="utf-8").write(page)

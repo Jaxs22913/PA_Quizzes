@@ -2895,8 +2895,10 @@
   // ------------------------------------------------------------------ Superbrain: asking Claude (opt-in, signed in)
   var sbP = null;
   function superbrain() {
-    if (!sbP) sbP = window.PipSuperbrain ? Promise.resolve(window.PipSuperbrain)
-      : loadScript(ROOT + "pip/pip-superbrain.js").then(function () { return window.PipSuperbrain || null; });
+    if (!sbP) sbP = (window.PipSuperbrain ? Promise.resolve(window.PipSuperbrain)
+      : loadScript(ROOT + "pip/pip-superbrain.js").then(function () { return window.PipSuperbrain || null; }))
+      // a page without theme.js: the sign-in part comes in first, so Claude works there too (pip-superbrain.js ready())
+      .then(function (S) { return S && S.ready ? S.ready().then(function () { return S; }) : S; });
     return sbP;
   }
   var CLAUDE_SAYS = {

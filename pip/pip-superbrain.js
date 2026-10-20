@@ -17,6 +17,8 @@
   "use strict";
   if (window.PipSuperbrain) return;
   var K_OK = "local:pip:claude:ok";
+  var ME = (document.currentScript && document.currentScript.src) || "";
+  var ROOT = ME.replace(/pip\/pip-superbrain\.js(\?.*)?$/, "");
 
   function endpoint() {
     if (window.PIP_SUPERBRAIN_URL) return window.PIP_SUPERBRAIN_URL;
@@ -129,12 +131,52 @@
     if (onDelta) body.stream = true;
     return call("/v1/ask", body, onDelta);
   }
-  function signIn() { return window.cloudSignIn ? Promise.resolve(window.cloudSignIn()) : Promise.resolve(); }
+  function signIn() {
+    if (window.cloudSignIn) return Promise.resolve(window.cloudSignIn());
+    // a page without theme.js has no cloud-sync.js: the same Google popup, through the auth ready() brought in
+    try { return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(function () {}); }
+    catch (e) { return Promise.resolve(); }
+  }
+
+  /* Pages that skip theme.js (the OSCE run-sheets, relax.html, the Pharmacology game plan ...) never load
+     Firebase, so Pip saw "no-sync" there and quietly kept Claude out (Jaxon, 2026-10-20: "its just not
+     letting me ask claude stuff"). There, ready() brings in ONLY the sign-in part: Firebase keeps the
+     session in this browser, so a student signed in anywhere on the site is signed in here too. No
+     Firestore, no cloud sync. Pages with theme.js are left to their own chain (cloud-sync.js initialises
+     the app, and a second initializeApp would break it). Resolves once the first auth answer is in; never
+     rejects (offline or blocked: state() stays "no-sync", as before). */
+  var FB = "https://www.gstatic.com/firebasejs/10.14.1/";   // the version theme.js loads
+  var readyP = null;
+  function addScript(src) {
+    return new Promise(function (res, rej) {
+      var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s);
+    });
+  }
+  function firstAuth() {                                // the stored session restored, or nobody
+    return new Promise(function (res) {
+      var done = false, off = null, t = setTimeout(fin, 5000);
+      function fin() { if (done) return; done = true; clearTimeout(t); try { if (off) off(); } catch (e) {} res(); }
+      try { off = firebase.auth().onAuthStateChanged(fin); } catch (e) { fin(); }
+    });
+  }
+  function ready() {
+    if (readyP) return readyP;
+    if (!endpoint() || window.__PIP_DEMO_USER || document.querySelector('script[src$="theme.js"]')) return (readyP = Promise.resolve());
+    readyP = (window.firebase && firebase.auth && firebase.apps && firebase.apps.length ? Promise.resolve()
+      : addScript(FB + "firebase-app-compat.js").then(function () {
+          return Promise.all([addScript(FB + "firebase-auth-compat.js"), window.FIREBASE_CONFIG ? null : addScript(ROOT + "firebase-config.js")]);
+        }).then(function () {
+          if (!firebase.apps.length) firebase.initializeApp(window.FIREBASE_CONFIG);
+          try { firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(function () {}); } catch (e) {}
+        })
+    ).then(firstAuth).catch(function () {});
+    return readyP;
+  }
 
   var statusP = null;                                  // one status check per page (owner flag, remaining today)
   function status() { if (!statusP) statusP = call("/v1/status").then(function (r) { if (!r || r.ok === false && r.code === "network") statusP = null; return r; }); return statusP; }
   // invite-only: a classmate enters the class code once and the server adds their account
   function join(code) { return call("/v1/join", { code: clip(String(code || "").trim(), 64) }).then(function (r) { statusP = null; return r; }); }
   window.PipSuperbrain = { state: state, consented: consented, setConsent: setConsent, ask: ask, signIn: signIn,
-                           status: status, join: join, endpoint: endpoint };
+                           status: status, join: join, endpoint: endpoint, ready: ready };
 })();
