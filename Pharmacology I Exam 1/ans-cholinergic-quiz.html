@@ -1180,7 +1180,7 @@ function applyExamModeUI(){
   document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
   document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
   document.getElementById('timerpill').classList.add('examctl-timer');
-  if (flagNav && viewMode !== "scroll") window.startExamModeTour();
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
 }
 
 const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
