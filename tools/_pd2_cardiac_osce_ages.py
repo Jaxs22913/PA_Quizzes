@@ -62,6 +62,10 @@ AGES = {
         "Any age, but it is the leading cause of sudden death in preadolescents and adolescents, usually "
         "during extreme exertion.",
         "CMS L28 slides 58, 66", ""),
+    "Dilated cardiomyopathy": (
+        "Most present between 20 and 60, though it occurs in children and older adults too; men more than "
+        "women, and a high rate in African Americans.",
+        "CMS L28 slide 20", ""),
     "Atrial fibrillation": (
         "Older adults (&ldquo;elderly&rdquo; is on its risk list).",
         "CMS L29 slide 48",

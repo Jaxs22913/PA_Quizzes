@@ -40,7 +40,7 @@ ECG_DIR = "pd2-cardiac-osce-chart-images"
 NO_ECG = {"Chronic venous insufficiency and varicose veins", "Deep vein thrombosis"}
 
 LISTS = [("top10", "Top 10 most common", TOP10),
-         ("nonemerg", "Top 5 non-emergent", NONEMERGENT5),
+         ("nonemerg", "Top non-emergent", NONEMERGENT5),
          ("emerg", "Top 5 emergent", EMERGENT5)]
 
 # The OSCE's chief-complaint stems (the run-sheet: chest pain is the commonest,
@@ -64,6 +64,7 @@ CC = {
     "Mitral valve prolapse":       ["Palpitations", "Chest pain"],
     "Orthostatic hypotension":     ["Syncope or dizziness"],
     "Hypertrophic cardiomyopathy": ["Syncope or dizziness", "Chest pain", "Shortness of breath", "Palpitations"],
+    "Dilated cardiomyopathy":      ["Shortness of breath", "Leg pain or swelling", "Palpitations"],
     "Acute coronary syndrome":     ["Chest pain", "Shortness of breath"],
     "Aortic dissection":           ["Chest pain", "High blood pressure"],
     "Cardiac tamponade":           ["Shortness of breath", "Chest pain"],
@@ -222,7 +223,7 @@ def lists_html():
 
 def main():
     names = TOP10 + NONEMERGENT5 + EMERGENT5
-    assert len(names) == len(set(names)) == 20, "the three lists must be disjoint, 20 names"
+    assert len(names) == len(set(names)) == 21, "the three lists must be disjoint, 21 names"
     missing = [n for n in names if n not in ROWS]
     assert not missing, "no row written for %r" % missing
     extra = set(ROWS) - set(names)
@@ -275,13 +276,13 @@ cardiovascular lecture. Each row cites its lecture and slides in the first colum
 likely diagnosis</b>, with its slides. How to do each maneuver, and where its result points, is on the
 <a href="pd2-cardiac-osce-maneuvers.html">Cardiac OSCE Special Maneuvers</a> guide.<br><br>
 <b>Every condition whose work-up includes an electrocardiogram has a real 12-lead under its
-row</b>, eighteen of the twenty. Each tracing is labeled as that finding by its source: a slide
+row</b>, nineteen of the twenty-one. Each tracing is labeled as that finding by its source: a slide
 from the Principles of Diagnostic Medicine I electrocardiogram lectures, or a Wikimedia Commons
 file whose description names it.
 <b>Yellow boxes mark the leads where the change shows</b>, and the line under each caption says
 what to look for in them. The credit sits under each picture; click a tracing to enlarge it.<br><br>
-<b>Three lists, twenty conditions, no repeats.</b> The ten most common cardiology diagnoses, then
-five more that are managed in clinic, then the five emergencies that must never be missed.<br><br>
+<b>Three lists, twenty-one conditions, no repeats.</b> The ten most common cardiology diagnoses, then
+six more that are managed in clinic, then the five emergencies that must never be missed.<br><br>
 <b>Filter by the chief complaint</b> on the form you are handed before you walk in. Chest pain
 leaves only the rows that present with chest pain.<br><br>
 <b>Ordered least urgent first</b>, like the ENT chart: <span class="tierkey"><span class="dot routine"></span>Routine</span>,

@@ -68,6 +68,10 @@ TELLTALE = {
         "A young person who <b>faints or nearly faints with exertion</b>, with a systolic murmur that gets "
         "<b>LOUDER with Valsalva or standing</b>.",
         "CMS L28 slides 65, 66; PD2 slides 61, 62"),
+    "Dilated cardiomyopathy": (
+        "Heart failure symptoms in a 20- to 60-year-old with a <b>laterally displaced point of maximal impulse and an "
+        "S3</b>, often with a mitral regurgitation murmur, and no coronary or valve disease to explain it.",
+        "CMS L28 slides 17, 19, 20, 26, 30"),
     "Atrial fibrillation": (
         "An <b>irregular pulse with no steady beat</b>; on the electrocardiogram, an irregular rhythm with no clear "
         "P waves.",

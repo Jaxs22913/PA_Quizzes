@@ -242,4 +242,66 @@ BATCH = {
   "usually inherited, so your parents, brothers, sisters and children should be checked. Call 911 for "
   "fainting, chest pain or a racing heartbeat."),
 
+# Added 2026-10-21 (Jaxon: "Add dilated cardiomyopathy to the osce list"), from the same lecture as
+# hypertrophic cardiomyopathy: CMS L28 slides 15-45; examination technique from PD2 slides 20 and 40.
+"Dilated cardiomyopathy": R(
+  "urgent",
+  "CMS L28 Cardiomyopathy (Carter) &middot; slides 15, 17&ndash;45 &middot; PD2 Cardiovascular slides 20, 40",
+  "<b>The most common type of cardiomyopathy</b> (slide 17): 10,000 deaths and 46,000 hospitalizations a year "
+  "in the United States, and idiopathic dilated cardiomyopathy is the <b>primary reason for heart "
+  "transplantation</b> (slide 20).",
+  "&ldquo;Three months ago I could walk a mile; now one flight of stairs leaves me out of breath. I&rsquo;m "
+  "tired all the time, I sleep propped up, I wake up gasping, and my ankles and belly keep swelling.&rdquo; "
+  "Sometimes: &ldquo;My heart skips and races.&rdquo; Ask for the cause: alcohol, chemotherapy, a recent "
+  "viral illness, the last months of pregnancy, or a relative with cardiomyopathy or sudden death "
+  "(slides 22&ndash;28).",
+  "Heart failure signs, <b>left-sided before right</b> (slide 29). Vitals: tachypnea, tachycardia, high or "
+  "low pressure, an <b>irregular pulse</b> (premature beats, atrial fibrillation) and a <b>narrow pulse "
+  "pressure</b> (low stroke volume). Lungs: crackles, diminished breath sounds over an effusion, cyanosis. "
+  "Heart: a <b>laterally displaced point of maximal impulse</b>, an <b>S3 gallop</b>, the holosystolic "
+  "murmurs of <b>mitral and tricuspid regurgitation</b>, jugular venous distension, cool extremities and "
+  "peripheral edema (slides 30&ndash;32). Abdomen: congestive hepatomegaly, ascites (slide 33).",
+  "<b>Palpate the point of maximal impulse</b> and document where it is: in a dilated heart it shifts "
+  "laterally, even to the sixth intercostal space at the anterior axillary line (PD2 slide 20). <b>Left "
+  "lateral decubitus, bell at the apex</b> for the S3 (PD2 slide 40). <b>Handgrip or squatting</b> &rarr; "
+  "the mitral regurgitation murmur gets LOUDER (slide 31); <b>inspiration</b> &rarr; the tricuspid "
+  "murmur may get slightly louder (slide 32). <b>Hepatojugular reflux</b>: firm pressure over the liver "
+  "&rarr; the neck veins distend (slide 33). Count an irregular pulse, note the pulse pressure, listen at "
+  "the lung bases and check for pitting edema.",
+  [("Acute coronary syndrome", "Chest pain with ST changes and a rising troponin; dilated cardiomyopathy is "
+    "by definition dysfunction WITHOUT severe occlusive coronary disease (slide 17)"),
+   ("Valvular heart disease (mitral regurgitation or aortic stenosis)", "The valve lesion is the cause and "
+    "the ventricle has pressure or volume overload; in dilated cardiomyopathy the muscle fails first and "
+    "the regurgitation follows as the ventricle stretches (slides 17, 19)"),
+   ("Cardiac tamponade", "Beck triad, pulsus paradoxus and usually clear lungs; the echocardiogram shows an "
+    "effusion with right ventricular diastolic collapse, not dilated, thin-walled chambers")],
+  "<b>Echocardiogram</b> &rarr; <b>dilated, thin walls</b> (the prominent feature), an <b>ejection "
+  "fraction under 40%</b>, hypokinetic chambers (all four may be dilated), mitral or tricuspid "
+  "regurgitation, sometimes a thrombus (slide 38). <b>Electrocardiogram</b> &rarr; <b>usually abnormal</b>: "
+  "left ventricular hypertrophy, atrial fibrillation, premature ventricular contractions or a conduction "
+  "delay such as left bundle branch block (slide 37). <b>Chest radiograph</b> &rarr; cardiomegaly, pleural "
+  "effusions, pulmonary edema, Kerley B lines (slide 39). <b>B-type natriuretic peptide</b> &rarr; "
+  "elevated (slide 40). Labs for a cause: complete blood count (anemia), metabolic panel, liver tests "
+  "(alcohol, hemochromatosis), thyroid function (slide 36); cardiac magnetic resonance imaging with "
+  "gadolinium for inflammation, ischemia or infiltration (slide 41).",
+  "A <b>normal electrocardiogram almost rules it out</b> (slide 37), and a <b>B-type natriuretic peptide "
+  "below 100 pg/mL</b> excludes heart failure (slide 40). ST changes with a rising troponin send you to acute "
+  "coronary syndrome; a primary valve lesion on echocardiography makes the dilation secondary to the "
+  "valve; a pericardial effusion with chamber collapse is tamponade.",
+  "<b>Cardiology referral</b> to establish care, consider genetic testing and plan medicines or devices "
+  "(slide 15). Medicines (slide 42): an angiotensin-converting enzyme inhibitor (lisinopril) or "
+  "angiotensin receptor blocker (losartan), or sacubitril-valsartan; a <b>beta blocker</b> (carvedilol, "
+  "metoprolol succinate or bisoprolol); an aldosterone blocker (spironolactone); a diuretic (furosemide); "
+  "nitrates; digoxin second line; antiarrhythmics; anticoagulants. Devices (slides 43&ndash;44): "
+  "a biventricular pacemaker for moderately severe left ventricular dysfunction, an <b>implantable "
+  "cardioverter-defibrillator if the ejection fraction stays under 35%</b> on maximum medical therapy, a "
+  "left ventricular assist device as a bridge or destination therapy, and transplantation.",
+  "URGENT &mdash; cardiology and an echocardiogram within days; emergency department now for breathlessness "
+  "at rest, chest pain, fainting or a sustained racing heartbeat.",
+  "Take every medicine and keep every follow-up: the outlook depends on how well the treatment works; "
+  "overall about half die within 5 years of symptoms, from progression or a sudden arrhythmia (slide 45). "
+  "<b>Remove the cause</b> if one is found: stop alcohol, correct a nutritional deficiency, avoid "
+  "cardiotoxic drugs. <b>Sodium under 2 grams a day.</b> Genetic counseling if it runs in the family. "
+  "Call 911 for fainting, chest pain, breathlessness at rest or a racing heartbeat."),
+
 }

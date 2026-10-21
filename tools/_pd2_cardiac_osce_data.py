@@ -5,7 +5,7 @@ Jaxon, 2026-10-17: "For PD cardiac Osce can you make a list (from the CMS
 Cardio block 1 and 2) top 10 most common diagnoses, top 5 most non emergent,
 top 5 most emergent and give everything like the ENT OSCE disease chart."
 
-Twenty conditions, drawn only from the two Clinical Medicine and Surgery I
+Twenty-one conditions (dilated cardiomyopathy added 2026-10-21), drawn only from the two Clinical Medicine and Surgery I
 cardiology blocks (Exam 4, Lectures 20-25; Exam 5, Lectures 26-32). Each row
 carries the ENT chart's columns in the station's own order. Rows are written in
 four batch modules (_cardiac_osce_batch_*.py), merged here; the builder asserts
@@ -56,6 +56,7 @@ NONEMERGENT5 = [
     "Mitral valve prolapse",
     "Orthostatic hypotension",
     "Hypertrophic cardiomyopathy",
+    "Dilated cardiomyopathy",       # added 2026-10-21 at Jaxon's request
 ]
 EMERGENT5 = [
     "Acute coronary syndrome",

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """One real 12-lead electrocardiogram for every Cardiac OSCE chart row whose
-work-up includes one (18 of the 20; chronic venous insufficiency and deep vein
+work-up includes one (19 of the 21; chronic venous insufficiency and deep vein
 thrombosis do not).
 
 Jaxon, 2026-10-19: "find 12 lead EKG that match all the disease/disorders that
@@ -84,6 +84,12 @@ IMAGES = {
         (190, 225, 490, 365),           # II: tall R
         (790, 95, 1092, 525),           # V1-V3
         (1098, 95, 1388, 525)]),        # V4-V6
+    # 2026-10-21: the course's 12-lead on the slide titled LBBB (717 x 315), enlarged 2x for the chart.
+    "ecg-left-bundle-branch-block.jpg": (deck(PDM14, 13), [
+        (5, 15, 312, 190),              # I: broad R, no Q
+        (318, 205, 655, 375),           # aVL: broad R, no Q
+        (662, 15, 1018, 615),           # V1-V3: wide, mainly negative
+        (1022, 205, 1430, 500)]),       # V5, V6: broad R, no Q
     "ecg-stemi-anteroseptal.jpg": (deck(PDM15, 18), [
         (602, 15, 898, 485),            # V1-V3
         (902, 15, 1198, 135),           # V4
@@ -147,6 +153,18 @@ ECGS = {
               "cutoff (the same course tracing as primary hypertension). In heart failure the "
               "tracing looks for the cause: hypertrophy, as here, or ischemic changes.",
         boxed=LVH_BOXED),
+    "Dilated cardiomyopathy": dict(
+        file="ecg-left-bundle-branch-block.jpg",
+        title="Left bundle branch block, one of the changes it can show",
+        shows="The course’s left bundle branch block tracing: it shows the pattern, not a patient "
+              "labeled with dilated cardiomyopathy. The QRS is wider than 0.12 seconds (3 small boxes), V1 "
+              "starts with a negative deflection and V1 to V3 are wide and mainly negative, and the lateral "
+              "leads (I, aVL, V5, V6) have broad upright R waves with no Q waves. In dilated cardiomyopathy the "
+              "tracing is usually abnormal: left ventricular hypertrophy, atrial fibrillation, premature "
+              "ventricular contractions or a conduction delay like this one; a normal tracing almost rules it "
+              "out (Clinical Medicine and Surgery lecture 28, slide 37).",
+        boxed="Yellow boxes: V1 to V3, the wide, mainly negative complexes; I, aVL, V5 and V6, the broad R "
+              "waves with no Q waves."),
     "Premature ventricular contractions": dict(
         file="ecg-pvc-bigeminy.jpg",
         title="Bigeminy: every other beat is premature",
