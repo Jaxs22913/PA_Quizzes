@@ -349,6 +349,56 @@ __EMROWS__
   document.querySelectorAll('.lists a').forEach(function(a){
     a.addEventListener('click', function(){ if (cur !== '__all__') pick('__all__'); });
   });
+
+  // The column names stay in view (Jaxon, 2026-10-21: "Make it so the header with what each column is for
+  // stays in view"). Wide screens: the header row is sticky just under the guide back bar (its height is
+  // measured into --barH). Narrow screens (<= 900px, where theme.css makes each table swipe sideways): a
+  // sticky header inside a sideways scroller sticks to that box, not the screen, so a copy of the header row
+  // rides fixed under the bar while its table is on screen, follows the table's sideways scroll, and keeps
+  // the first column pinned like the rows.
+  (function(){
+    var bar = document.querySelector('.guide-back-bar');
+    var narrow = window.matchMedia('screen and (max-width:900px)');
+    var wraps = Array.prototype.slice.call(document.querySelectorAll('.tblwrap'));
+    var fl = document.createElement('div'); fl.className = 'thfloat'; fl.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(fl);
+    var on = null, copy = null, first = null;
+    function barBottom(){ return bar ? Math.max(0, bar.getBoundingClientRect().bottom) : 0; }
+    function setBar(){ document.documentElement.style.setProperty('--barH', (bar ? bar.offsetHeight : 0) + 'px'); }
+    function build(w){
+      var t = w.querySelector('table'), src = t.querySelectorAll('thead th');
+      copy = document.createElement('table');
+      copy.appendChild(t.querySelector('thead').cloneNode(true));
+      copy.style.width = t.offsetWidth + 'px';
+      Array.prototype.forEach.call(copy.querySelectorAll('th'), function(th, i){
+        th.style.width = src[i].offsetWidth + 'px'; th.style.boxSizing = 'border-box';
+      });
+      first = copy.querySelector('th');
+      fl.innerHTML = ''; fl.appendChild(copy); on = w;
+    }
+    function update(){
+      if (!narrow.matches){ fl.style.display = 'none'; on = null; return; }
+      var top = barBottom(), hit = null;
+      wraps.forEach(function(w){
+        if (!w.offsetParent) return;                    // a table the filter emptied
+        var head = w.querySelector('thead').getBoundingClientRect(), r = w.getBoundingClientRect();
+        if (head.top < top && r.bottom > top + head.height) hit = w;
+      });
+      if (!hit){ fl.style.display = 'none'; return; }
+      if (hit !== on) build(hit);
+      var r = hit.getBoundingClientRect(), x = hit.scrollLeft;
+      fl.style.display = 'block'; fl.style.top = top + 'px';
+      fl.style.left = (r.left + hit.clientLeft) + 'px'; fl.style.width = hit.clientWidth + 'px';
+      copy.style.transform = 'translateX(' + (-x) + 'px)';
+      if (first) first.style.transform = 'translateX(' + x + 'px)';
+    }
+    setBar();
+    window.addEventListener('scroll', update, {passive: true});
+    window.addEventListener('resize', function(){ setBar(); on = null; update(); });
+    wraps.forEach(function(w){ w.addEventListener('scroll', update, {passive: true}); });
+    document.querySelectorAll('.filt').forEach(function(b){ b.addEventListener('click', function(){ on = null; update(); }); });
+    update();
+  })();
 </script>
 <style>
   .lists{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 6px;}
@@ -451,6 +501,14 @@ __EMROWS__
     figure.ecg figcaption{max-width:none;flex:none;}
   }
   @media print{figure.ecg img{max-width:170mm !important;} figure.ecg figcaption{font-size:7pt !important;}}
+  /* Column names in view: under the sticky guide back bar, not behind it (see the script above). */
+  thead th{top:var(--barH,38px);}
+  .thfloat{display:none;position:fixed;z-index:540;overflow:hidden;pointer-events:none;
+    box-shadow:0 2px 4px rgba(0,0,0,.12);}
+  .thfloat table{border-collapse:collapse;table-layout:fixed;}
+  .thfloat th{position:static;top:auto;}
+  .thfloat th:first-child{position:relative;top:0;z-index:2;}
+  @media print{.thfloat{display:none !important;}}
 </style>
 </body></html>"""
 
