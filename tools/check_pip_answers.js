@@ -23,7 +23,7 @@ const code = [
   grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/),
   grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/), grabVar(/var COMPARE = [^\n]*/), grabVar(/var STAND = [^\n]*/), grabVar(/var COVER = [^;]*;/),
   grabVar(/var CMPW = \{\};[\s\S]*?CMPW\[w\] = 1; \}\);/), grabVar(/var FILL = \{\};[\s\S]*?FILL\[w\] = 1; \}\);/),
-  grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/), grabVar(/var ADDRESS = [^\n]*/), grabVar(/var SOURCE = [^\n]*/),
+  grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/), grabVar(/var ADDRESS = [^\n]*/), grabVar(/var SOURCE = [^\n]*/), grabVar(/var SECTION_CAP = [^;]*;/),
   ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
@@ -60,7 +60,7 @@ function explainOf(f) {
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
   'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND, examByWords, ' +
-  'rememberTurn, followUp, convo, rank, prepGuide, expandFor, plainAsk, mkElsewhere, mkHints};')(...names.map(k => stubs[k]), explainOf);
+  'rememberTurn, followUp, convo, rank, prepGuide, expandFor, plainAsk, mkElsewhere, mkHints, SECTION_CAP};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
@@ -152,6 +152,10 @@ const FOLLOW = [
 // [question, page exam, a regex the guide's exam must match, a regex some candidate "<exam>: <line>" must match]
 const CROSS = [
   ['Which valvular issues are best for a TEE vs TTE', PD2, /clinical-medicine-and-surgery-i-exam-5|principles-of-diagnostic-medicine-i-exam-2/, /^principles-of-diagnostic-medicine-i-exam-2: .*transesophageal/i],
+  // coordinator review of 3f2edbb3: the line that ANSWERS it (its uses) and the comparison table's "Use" row, not just
+  // lines that name both tests
+  ['Which valvular issues are best for a TEE vs TTE', PD2, /./, /^principles-of-diagnostic-medicine-i-exam-2: .*When to use it: aortic and great-vessel disease.*prosthetic valve function, valve vegetations/],
+  ['Which valvular issues are best for a TEE vs TTE', PD2, /./, /^principles-of-diagnostic-medicine-i-exam-2: .*Use — Most common; bedside and noninvasive — When more structural detail/],
   ['Which valvular issues are best for a TEE vs TTE', PD2, /./, /^clinical-medicine-and-surgery-i-exam-4: .*(TTE|transthoracic)/],
 ];
 async function crossPlan(q, slug) {
@@ -223,7 +227,8 @@ async function followPlan(q1, slug, q2) {
   }
   for (const [q, slug, gre, cre] of CROSS) {
     const p = await crossPlan(q, slug), hit = p.cands.filter(c => cre.test(c));
-    const ok = gre.test(p.gf) && hit.length > 0 && !/clause/.test(p.fixed);
+    const long = p.cands.filter(c => c.length - c.indexOf(': ') - 2 > M.SECTION_CAP);   // each extra is one passage, capped
+    const ok = gre.test(p.gf) && hit.length > 0 && !/clause/.test(p.fixed) && !long.length;
     if (!ok) bad++;
     console.log((ok ? 'ok   ' : 'FAIL ') + 'guide mode for "' + q + '" -> reads ' + p.gf + ', other-exam candidates: ' + p.cands.map(c => c.split(':')[0].replace(/-i?-?exam-/, ' E')).join(', ') +
       (ok ? '' : '  (want the guide ' + gre + ' and a candidate ' + cre + ')'));

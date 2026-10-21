@@ -139,6 +139,8 @@
     [/\bbrady\b/g, "bradycardia"], [/\btachy?\b/g, "tachycardia"], [/\bdiff\b/g, "difference"], [/\bpvcs?\b/g, "premature ventricular complex"],
     [/\bpacs?\b/g, "premature atrial complex"], [/\bpjcs?\b/g, "premature junctional complex"], [/\blafb\b/g, "left anterior fascicular block"],
     [/\blpfb\b/g, "left posterior fascicular block"], [/\bavnrt\b/g, "atrioventricular nodal reentrant tachycardia"],
+    // the adjective never stems to its noun: "valvular issues ... TEE" must find "prosthetic valve function, valve vegetations"
+    [/\bvalvular\b/g, "valvular valve"],
     [/\b1st\b/g, "first"], [/\b2nd\b/g, "second"], [/\b3rd\b/g, "third"], [/\b4th\b/g, "fourth"],
     // "where does lead V4 go?" asks where it is placed: "go" alone left "lead v4", which ranked a card that only
     // mentions moving V4 to the back (2026-10-16)
@@ -1478,10 +1480,12 @@
           return pick && hasGuides(pick) ? pick : hasGuides(f) ? f : null;
         });
       }
-      // the best two guide lines of each exam searched other than gf whose guide holds at least half of the question's naming
-      // words. Looser than the usual search (one naming word in a line is enough, the lines holding the most come first)
-      // because Claude judges them: "valvular ... TEE vs TTE" needed four of its words in one line, and Principles of
-      // Diagnostic Medicine Exam 2 writes "the transesophageal study"
+      // For each exam searched other than gf whose guide holds at least half of the question's naming words: the guide
+      // SECTION that says the most about the question (the summed scores of its lines), sent as up to two candidates of at
+      // most SECTION_CAP characters each (the helper's limit for one passage), in guide order. Coordinator review of
+      // 3f2edbb3: lines naming both "TEE" and "TTE" outranked the one that answers ("When to use it: ... prosthetic valve
+      // function, valve vegetations ..."), and the comparison table's rows name neither. Inside the cap: the section's best
+      // line, then the section from its start (guides teach in order: what it is, the comparison, then the details)
       function elsewhere(gf) {
         var others = (SCOPE || []).filter(function (x) { return x !== gf && hasGuides(x); });
         return Promise.all(others.map(function (x) {
@@ -1492,14 +1496,41 @@
             var named = uniq(toks(q2)).filter(function (w) { return !GENERIC[w] && !FILL[w] && w.length >= 3; });
             var core = named.filter(function (w) { return g._ix.df[w]; });
             if (!core.length || core.length * 2 < named.length) return [];
-            // a heading alone ("Pulmonary embolism") says nothing Claude can use, and a line must hold two of the naming
-            // words when the question has two ("pulmonary embolism" is not any line that says "pulmonary")
-            var two = Math.min(2, core.length);
-            return rank(g._ix, g._texts, core.join(" "), 10, 0.01).filter(function (r) {
-              var b = g.b[r[1]], d = g._ix.docs[r[1]];
-              return g.docs[b[0]].kind !== "cram" && b[3].length >= 40 && core.filter(function (w) { return d.tf[w]; }).length >= two;
-            })
-              .slice(0, 2).map(function (r) { return { s: r[0], f: x, g: g, b: g.b[r[1]], q2: q2 }; });
+            var ok = function (i) { var b = g.b[i]; return g.docs[b[0]].kind !== "cram" && b[3].length >= 20 && b[3] !== String(b[2] || "").split(" \u203a ").pop(); };
+            // a line counts toward its section when it holds two naming words (the question has two or more), so
+            // "pulmonary embolism" is not any line that says "pulmonary"
+            var two = Math.min(2, core.length), ranked = rank(g._ix, g._texts, core.join(" "), 40, 0.01).filter(function (r) { return ok(r[1]); });
+            // a section's score: its three best lines (a long section of weak mentions doesn't win on size)
+            var secOf = function (i) { return g.b[i][0] + "|" + g.b[i][2]; }, sum = {}, cnt = {}, best = null;
+            ranked.forEach(function (r) {
+              var d = g._ix.docs[r[1]], k = secOf(r[1]);
+              if (core.filter(function (w) { return d.tf[w]; }).length < two || (cnt[k] || 0) >= 3) return;
+              cnt[k] = (cnt[k] || 0) + 1; sum[k] = (sum[k] || 0) + r[0];
+              if (!best || sum[k] > sum[secOf(best[1])]) best = r;
+            });
+            if (best) best = ranked.filter(function (r) { return secOf(r[1]) === secOf(best[1]); })[0];
+            if (!best) return [];
+            var t0 = g.b[best[1]], k0 = secOf(best[1]), lo = best[1], hi = best[1];
+            while (lo > 0 && secOf(lo - 1) === k0) lo--;
+            while (g.b[hi + 1] && secOf(hi + 1) === k0) hi++;
+            var pick = {}, len = 0, add = function (i) { var n = g.b[i][3].length + 1; if (!pick[i] && ok(i) && n <= SECTION_CAP && len + n <= 2 * SECTION_CAP - 200) { pick[i] = 1; len += n; } };
+            add(best[1]);
+            // the rest of the section only when it is ABOUT the question (three of its lines hold the naming words); else
+            // just its lines that do ("beta blockers" once in a psoriasis section brings that line, not the section)
+            if (cnt[k0] >= 3) for (var i = lo; i <= hi; i++) add(i);
+            else ranked.forEach(function (r) { var d = g._ix.docs[r[1]]; if (secOf(r[1]) === k0 && core.filter(function (w) { return d.tf[w]; }).length >= two) add(r[1]); });
+            // guide order, packed into at most two passages
+            var parts = [[]], plen = 0;
+            Object.keys(pick).map(Number).sort(function (a, b) { return a - b; }).forEach(function (i) {
+              var n = g.b[i][3].length + 1;
+              if (plen + n > SECTION_CAP) { if (parts.length === 2) return; parts.push([]); plen = 0; }
+              parts[parts.length - 1].push(i); plen += n;
+            });
+            // the passage holding the section's best line first: with Pip's cards ahead of it, only one may fit
+            return parts.filter(function (p) { return p.length; }).sort(function (a, b) { return (b.indexOf(best[1]) >= 0) - (a.indexOf(best[1]) >= 0); }).map(function (p) {
+              var sb = g.b[p[0]].slice(0, 5); sb[2] = t0[2]; sb[3] = p.map(function (i) { return g.b[i][3]; }).join(" ");
+              return { s: best[0], f: x, g: g, b: sb, q2: q2, lt: g.b[p[0]][3], sec: p.map(function (i) { return g.b[i][3]; }) };
+            });
           }).catch(function () { return []; });
         })).then(function (lists) { return [].concat.apply([], lists); });
       }
@@ -1542,7 +1573,8 @@
             // CMS Exam 4 guide; the comparison and its uses are in PDM Exam 2 and CMS Exam 5
             // (taken in turn, one exam's best then the next exam's, so one exam can't fill the list)
             var seenB = {}, byF = [], outG = [];
-            out.filter(function (x) { return x.f !== gf; }).concat(r0[2]).forEach(function (x) {
+            var secs = r0[2], inSec = function (x) { return secs.some(function (y) { return y.f === x.f && y.sec.indexOf(x.b[3]) >= 0; }); };
+            secs.concat(out.filter(function (x) { return x.f !== gf && !inSec(x); })).forEach(function (x) {
               var key = x.f.s + "|" + x.b[0] + "|" + x.b[1] + "|" + x.b[3].slice(0, 40); if (seenB[key]) return; seenB[key] = 1;
               var row = byF.filter(function (y) { return y.f === x.f; })[0];
               if (!row) byF.push(row = { f: x.f, l: [] });
@@ -1650,11 +1682,11 @@
           if (cs.length >= 5) return;
           var doc = r.g.docs[r.b[0]], head = (r.b[2] || doc.title) + (r.b[5] ? " \u203a " + r.b[5] : "");
           cs.push({ title: head, text: r.b[3], f: r.f,
-            link: function () { return linkTo(r.f.f, doc.file, r.b[1], "Read it in your guide: " + headOf(r.b, r.g) + " \u2192", r.b[3]); },
+            link: function () { return linkTo(r.f.f, doc.file, r.b[1], "Read it in your guide: " + headOf(r.b, r.g) + " \u2192", r.lt || r.b[3]); },
             full: function (into) {
               var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, r.b[2] || doc.title));
               c2.appendChild(el("div", "pw-src", r.f.t + " \u00b7 " + (doc.kind === "cram" ? "Cram sheet" : "Study guide")));
-              c2.appendChild(snippet(r.b[3], r.q2 || text)); c2.appendChild(linkTo(r.f.f, doc.file, r.b[1], null, r.b[3])); into.appendChild(c2);
+              c2.appendChild(snippet(r.b[3], r.q2 || text)); c2.appendChild(linkTo(r.f.f, doc.file, r.b[1], null, r.lt || r.b[3])); into.appendChild(c2);
             } });
         });
         mine.slice(0, 1).forEach(function (r) {
@@ -3176,6 +3208,7 @@
   function cantClaude() { count("fallback"); say(CANT_CLAUDE); }
   // A comparison may ask Claude unprompted only for a student who can already use him (signed in, invited,
   // consented), outside a quiz in progress (a past exam is fair game since 2026-10-11), inside the usual limits. Anything else is "no".
+  var SECTION_CAP = 1200;                         // one passage of another exam's section in a guide-mode ask (the helper's limit); two at most per exam
   var DEVICE_DAY = 60;                            // the helper's own per-student day limit (USER_DAY_CALLS); it was 40 here
   function gapFor(mode) { return mode === "deeper" || mode === "beyond" ? 20000 : 3000; }
   function claudeRoom(mode) {
