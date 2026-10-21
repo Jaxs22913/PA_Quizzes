@@ -23,12 +23,15 @@ const code = [
   grabVar(/var ROMAN = \{[^}]*\};/), grabVar(/var WANTS = \[[\s\S]*?\]\];/), grabVar(/var KIND = \{[\s\S]*?\};/),
   grabVar(/var GENERIC = \{\};[\s\S]*?GENERIC\[w\] = 1; \}\);/), grabVar(/var COMPARE = [^\n]*/), grabVar(/var STAND = [^\n]*/), grabVar(/var COVER = [^;]*;/),
   grabVar(/var CMPW = \{\};[\s\S]*?CMPW\[w\] = 1; \}\);/), grabVar(/var FILL = \{\};[\s\S]*?FILL\[w\] = 1; \}\);/),
-  grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/),
+  grabVar(/var DEFQ = [^\n]*/), grabVar(/var SHORT_OF = [^;]*;/), grabVar(/var LOOKUP = [^\n]*/), grabVar(/var ADDRESS = [^\n]*/), grabVar(/var SOURCE = [^\n]*/),
   ...['norm', 'stem', 'letterTerms', 'toks', 'casual', 'uniq', 'escRe', 'makeIndex', 'expandFor', 'abFor', 'near', 'spell', 'offGuide', 'rank',
       'numbered', 'wants', 'kinds', 'coverOf', 'explainHits', 'guideHits', 'sidesOf', 'pickBest', 'explainWide', 'wordAt', 'fixSpelling',
       'specific', 'examsFor', 'prepGuide', 'headOf', 'aboutTerm', 'defineTerm', 'ciRe', 'defPatterns', 'sentencesOf', 'findDefinition', 'titleNames',
       'listAsk', 'gatherList', 'wideHits', 'shareIn', 'fullCover', 'passCover', 'hasGuides', 'wantsExplanation', 'needsExplaining', 'wordCount', 'examByWords',
-      'pageKey', 'convoNow', 'rememberTurn', 'cutAt', 'followUp'].map(grab),
+      'pageKey', 'convoNow', 'rememberTurn', 'cutAt', 'followUp', 'plainAsk'].map(grab),
+  // askGuide's other-exam candidates: elsewhere() reads searchGuides()' SCOPE, text and here
+  'function mkElsewhere(SCOPE, text, here) {\n' + grab('elsewhere') + '\nreturn elsewhere; }',
+  'function mkHints(text, f) {\n' + grab('hintsFor') + '\nreturn hintsFor; }',
   grabVar(/var EXPLAIN = [^\n]*/), grabVar(/var convo = \{[^}]*\};/), grabVar(/var REFER = [^\n]*/)
 ].join('\n');
 const IX = JSON.parse(fs.readFileSync(DATA + 'index.json', 'utf8'));
@@ -57,12 +60,12 @@ function explainOf(f) {
 const names = Object.keys(stubs);
 M = new Function(...names, 'explainOf', code + '\nreturn {norm, toks, casual, makeIndex, numbered, kinds, fixSpelling, examsFor, defineTerm, findDefinition, ' +
   'listAsk, gatherList, wideHits, explainWide, guideHits, titleNames, fullCover, passCover, hasGuides, wantsExplanation, SHORT_OF, STAND, examByWords, ' +
-  'rememberTurn, followUp, convo, rank, prepGuide, expandFor};')(...names.map(k => stubs[k]), explainOf);
+  'rememberTurn, followUp, convo, rank, prepGuide, expandFor, plainAsk, mkElsewhere, mkHints};')(...names.map(k => stubs[k]), explainOf);
 
 // mirrors searchGuides()/show() in pip-window.js: the kind of answer and whether Claude's general part runs
 async function plan(q, slug) {
   const f = IX.folders.find(x => x.s === slug); if (!f) throw new Error('no exam ' + slug);
-  const fx = await M.fixSpelling(q), text = fx.text, qx = M.casual(text);
+  const fx = await M.fixSpelling(M.plainAsk(q)), text = fx.text, qx = M.casual(text);
   const D = M.defineTerm(text), L = M.listAsk(text);
   let scope = await M.examsFor(qx, f);
   if (scope.indexOf(f) < 0 && M.hasGuides(f)) scope = scope.slice(0, 3).concat([f]);
@@ -83,7 +86,7 @@ async function plan(q, slug) {
   return Object.assign(r, { kind: 'none', general: !!(M.wantsExplanation(text) || D) });
 }
 
-const PDM3 = 'principles-of-diagnostic-medicine-i-exam-3', CMS4 = 'clinical-medicine-and-surgery-i-exam-4';
+const PDM3 = 'principles-of-diagnostic-medicine-i-exam-3', CMS4 = 'clinical-medicine-and-surgery-i-exam-4', PD2 = 'physical-diagnosis-2-exam-1';
 // [question, page exam, want kind, a regex the answer must match (card title, list item, definition), want general?]
 const CASES = [
   ['junctional rythm?', PDM3, 'card', /junctional/i, false],
@@ -113,6 +116,7 @@ const CASES = [
 // should fed to claude right?" Every real question does; only a lookup of a place on the site doesn't
 const GUIDEQ = [['where does lead V4 go?', PDM3, true], ["Where's lead V2", PDM3, true], ['where is the murmur heard best in aortic stenosis', CMS4, true],
   ['show me how to calculate the number needed to treat', CMS4, true], ['Can you give me the one defining feature of each valvular disease', CMS4, true],
+  ['Claude explain from my guides which is best for each', PD2, true], ['where in my guide is the murmur chart', CMS4, false],
   ['where is the murmur chart', CMS4, false], ["where's the cram sheet", CMS4, false], ['open the study guide', CMS4, false], ['find the heart failure quiz', CMS4, false]];
 // [question, page exam, the exam whose WHOLE guide Claude should read (mode "guide"; examByWords)]
 // Jaxon 2026-10-15: "What is a pulmonary embolism?" read the electrocardiography exam's guide (7 lines) not Exam 5's (26)
@@ -138,17 +142,39 @@ const FOLLOW = [
   ['What is a pulmonary embolism?', PDM3, 'junctional rhythm', CMS5, false, null],
   ['What is a pulmonary embolism?', PDM3, 'What is atrial fibrillation?', CMS5, false, null],
   ['What is a pulmonary embolism?', PDM3, 'What is a beta blocker?', null, false, null],   // fresh, and not kept on the earlier exam
+  // Jaxon 2026-10-21: "Claude" was read as "clause" and "from my guides" as a topic, so this got confrontation visual fields
+  ['Which valvular issues are best for a TEE vs TTE', PD2, 'Claude explain from my guides which is best for each', CMS5, true, /transesophageal|transthoracic/i, /transesophageal|transthoracic|\bTEE\b|\bTTE\b/i],
+  ['Which valvular issues are best for a TEE vs TTE', PD2, 'Pip, which is best for each?', CMS5, true, null, /transesophageal|transthoracic|\bTEE\b|\bTTE\b/i],
 ];
+// Guide mode reads ONE exam's whole guide; the other exams' best lines go along as candidates (askGuide + elsewhere()).
+// Jaxon 2026-10-21: "Which valvular issues are best for a TEE vs TTE" read only CMS Exam 4 (it says "TEE ... useful for
+// congenital"); the TTE-vs-TEE comparison and its uses are in PDM Exam 2, endocarditis and the aorta in CMS Exam 5.
+// [question, page exam, a regex the guide's exam must match, a regex some candidate "<exam>: <line>" must match]
+const CROSS = [
+  ['Which valvular issues are best for a TEE vs TTE', PD2, /clinical-medicine-and-surgery-i-exam-5|principles-of-diagnostic-medicine-i-exam-2/, /^principles-of-diagnostic-medicine-i-exam-2: .*transesophageal/i],
+  ['Which valvular issues are best for a TEE vs TTE', PD2, /./, /^clinical-medicine-and-surgery-i-exam-4: .*(TTE|transthoracic)/],
+];
+async function crossPlan(q, slug) {
+  const f = IX.folders.find(x => x.s === slug);
+  const fx = await M.fixSpelling(M.plainAsk(q)), text = fx.text, qx = M.casual(text);
+  let scope = await M.examsFor(qx, f);
+  if (scope.indexOf(f) < 0 && M.hasGuides(f)) scope = scope.slice(0, 3).concat([f]);
+  const w = await M.examByWords(qx, f), gf = w ? w.f : f;
+  const more = await M.mkElsewhere(scope, text, f)(gf);
+  return { gf: gf.s, cands: more.map(r => r.f.s + ': ' + r.b[3]), fixed: fx.fixed.map(p => p.join('->')).join(',') };
+}
 async function followPlan(q1, slug, q2) {
   const f = IX.folders.find(x => x.s === slug);
   M.convo.turns = []; M.convo.t = 0;
+  q1 = M.plainAsk(q1);
   const w1 = await M.examByWords(M.casual(q1), f), g1 = w1 ? w1.f : f;
   M.rememberTurn(q1, 'An earlier answer.', g1, q1);
+  q2 = M.plainAsk(q2);
   const fu = await M.followUp(q2, f);
   const w2 = fu ? null : await M.examByWords(M.casual(q2), f), gf = fu ? fu.gf : w2 ? w2.f : f;
   // the hints: the chosen guide's best lines for the search text (the earlier question's words too on a follow-up)
   const g = await getJSON('guide/' + gf.s + '.json'); M.prepGuide(g);
-  const sq = fu ? fu.sq : q2, top = M.rank(g._ix, g._texts, M.expandFor(M.casual(sq), g._ix), 12).map(r => g.b[r[1]][3]);
+  const sq = fu ? fu.sq : q2, top = M.mkHints(sq, f)(g, gf, [], []).map(i => g.b[i][3]);
   return { fu: !!fu, exam: gf.s, sq, top };
 }
 (async () => {
@@ -187,15 +213,22 @@ async function followPlan(q1, slug, q2) {
     if (!ok) bad++;
     console.log((ok ? 'ok   ' : 'FAIL ') + 'guide for "' + q + '" -> ' + got + (ok ? '' : '  (want ' + want + ')'));
   }
-  for (const [q1, slug, q2, want, wantFu, re] of FOLLOW) {
+  for (const [q1, slug, q2, want, wantFu, re, about] of FOLLOW) {
     const p = await followPlan(q1, slug, q2);
-    const topic = p.top.filter(t => /embol/i.test(t)).length;
+    const topic = p.top.filter(t => (about || /embol/i).test(t)).length;
     const ok = p.fu === wantFu && (want === null || p.exam === want) && (want !== null || p.exam !== CMS5) && (!re || p.top.some(t => re.test(t))) && (!wantFu || topic >= 6);
     if (!ok) bad++;
     console.log((ok ? 'ok   ' : 'FAIL ') + 'after "' + q1 + '": "' + q2 + '" -> ' + (p.fu ? 'follow-up (' + topic + '/12 top lines on its topic)' : 'fresh') + ', guide ' + p.exam +
       (ok ? '' : '  (want ' + (wantFu ? 'follow-up' : 'fresh') + ', ' + (want || 'not ' + CMS5) + (re ? ', a top line matching ' + re : '') + ')'));
   }
-  const total = CASES.length + GUIDEQ.length + EXAMQ.length + FOLLOW.length;
+  for (const [q, slug, gre, cre] of CROSS) {
+    const p = await crossPlan(q, slug), hit = p.cands.filter(c => cre.test(c));
+    const ok = gre.test(p.gf) && hit.length > 0 && !/clause/.test(p.fixed);
+    if (!ok) bad++;
+    console.log((ok ? 'ok   ' : 'FAIL ') + 'guide mode for "' + q + '" -> reads ' + p.gf + ', other-exam candidates: ' + p.cands.map(c => c.split(':')[0].replace(/-i?-?exam-/, ' E')).join(', ') +
+      (ok ? '' : '  (want the guide ' + gre + ' and a candidate ' + cre + ')'));
+  }
+  const total = CASES.length + GUIDEQ.length + EXAMQ.length + FOLLOW.length + CROSS.length;
   console.log(bad ? bad + ' of ' + total + ' failed' : 'all ' + total + ' passed');
   process.exit(bad ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(2); });

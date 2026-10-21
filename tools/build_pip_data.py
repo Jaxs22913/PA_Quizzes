@@ -181,7 +181,9 @@ class Tree(HTMLParser):
 SKIP_TAGS = {"script", "style", "template", "svg", "nav", "button", "select", "option",
              "noscript", "textarea", "input", "audio", "video", "iframe", "canvas", "head", "title"}
 SKIP_IDS = {"quiz-footer-logo", "pull-refresh"}
-SKIP_CLASSES = {"guide-back-bar", "toc", "hdr-links", "hdr-save", "cmp-tools", "tbl-tools"}
+# cmp-nc: the Clin Med Pro guides' "1 not covered" count badge on a condition's summary (Pip linked
+# "Orthostatic syncope: neurogenic1 not covered", 2026-10-21)
+SKIP_CLASSES = {"guide-back-bar", "toc", "hdr-links", "hdr-save", "cmp-tools", "tbl-tools", "cmp-nc"}
 EMIT_TAGS = {"p", "li", "dd", "dt", "h2", "h3", "h4", "h5", "h6", "blockquote", "figcaption",
              "summary", "caption"}
 # elements that hold their own block-level content: their *own* text (outside any of
@@ -552,6 +554,7 @@ def main():
     stats, misses = [], []
     explain_stats = []                # (folder, cards shipped, stale, dropped) per exam
     ab_by_exam = {}                   # slug -> that guide's own abbreviations, for exams with cards (cross-exam search)
+    ab_means = {}                     # abbreviation -> every meaning any exam's guide gives it (index "abq")
     words = {}                        # word -> [count, exam bit mask], for pip/data/words.json
     all_ids = {}
 
@@ -710,6 +713,8 @@ def main():
                 e[2][fi] = e[2].get(fi, 0) + 1
         if ex_n and gidx.get("ab"):
             ab_by_exam[fslug] = gidx["ab"]
+        for k, v in (gidx.get("ab") or {}).items():
+            ab_means.setdefault(k, set()).add(v.lower())
         ab_texts.extend(x[3] for x in gidx["b"])
         for q in qlist:
             ab_texts.append(q["q"]); ab_texts.extend(o[0] + " " + o[1] for o in q["o"])
@@ -724,6 +729,18 @@ def main():
 
     # one list for the whole site: a guide that never writes "(PCR)" still answers "PCR"
     index["ab"] = abbreviations(ab_texts)
+    # "abq": abbreviations two exams' guides spell out differently (PTA: peritonsillar abscess in the ear-nose-throat guide,
+    # percutaneous transluminal angioplasty in another). Pip reads a capitalized abbreviation as its site-wide meaning only
+    # when it is not one of these (casual() in pip/pip-window.js); each guide still reads its own meaning
+    # (two spellings of one meaning are not two meanings: "echocardiogram"/"echocardiography", "blocker"/"blockers")
+    def ab_key(v):
+        return tuple(w[:6] for w in re.findall(r"[a-z0-9]+", v))
+
+    def ab_same(a, b):
+        a, b = sorted((ab_key(a), ab_key(b)), key=len)
+        return any(b[i:i + len(a)] == a for i in range(len(b) - len(a) + 1))
+    index["abq"] = sorted(k for k, v in ab_means.items()
+                          if any(not ab_same(a, b) for a in v for b in v if a < b))
     index_size = dump(os.path.join(OUT, "index.json"), index)
     # Pip's spelling and routing list: every word of every exam's guides and cards, commonest first, with a
     # bit per exam (index.json folder order) saying where it occurs. A word known ANYWHERE is never

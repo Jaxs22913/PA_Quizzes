@@ -96,7 +96,9 @@
    "gotta wanna gonna kinda sorta idk lol hmm um uh guess think thought feel sure bit little question questions asking ask " +
    "answer matter whole lot lots way ways something anything everything someone somebody keep keeps kept mixing mix mixed " +
    "remember forget real deal thru through dr she he they them their his her we our us made make makes making " +
-   "but totally literally seriously honestly super pretty even still ever anyway also too very").split(" ").forEach(function (w) { STOP[w] = 1; });
+   "but totally literally seriously honestly super pretty even still ever anyway also too very " +
+   // who the question is for is not its topic (Jaxon 2026-10-21: "Claude explain ..." was read as "clause")
+   "claude").split(" ").forEach(function (w) { STOP[w] = 1; });
   function norm(s) { return String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, ""); }
   function stem(w) {
     if (w.length > 4 && /ies$/.test(w)) return w.slice(0, -3) + "y";
@@ -146,6 +148,16 @@
   var CAPS = { AS: "aortic stenosis", AR: "aortic regurgitation", MS: "mitral stenosis", MR: "mitral regurgitation", US: "ultrasound", ID: "infectious disease" };
   function casual(q) {
     var caps = []; String(q).replace(/\b(AS|AR|MS|MR|US|ID)\b/g, function (m) { caps.push(CAPS[m]); return m; });
+    // any other abbreviation typed in capitals that the guides spell out also reads as its words (Jaxon 2026-10-21: "TEE vs
+    // TTE" never reached the Principles of Diagnostic Medicine Exam 2 guide, which writes "transesophageal echocardiogram"),
+    // unless two exams' guides spell it out differently (index "abq": PTA is peritonsillar abscess in one, angioplasty in
+    // another); each guide's search still reads its own meaning (expandFor)
+    var ab = (IX && IX.ab) || {}, abq = (IX && IX.abq) || [];
+    String(q).replace(/\b([A-Z]{2,5})s?\b/g, function (m, k) {
+      var e = !CAPS[k] && abq.indexOf(k.toLowerCase()) < 0 && ab[k.toLowerCase()];
+      if (e && /^[a-z][a-z -]*$/i.test(e) && caps.indexOf(e) < 0) caps.push(e.toLowerCase());
+      return m;
+    });
     var s = norm(q); CASUAL.forEach(function (r) { s = s.replace(r[0], r[1]); });
     return caps.length ? s + " " + caps.join(" ") : s;
   }
@@ -238,7 +250,8 @@
     for (var a in SYN) if (qt.indexOf(a) >= 0 && qt.indexOf(SYN[a]) >= 0) pairs.push([a, SYN[a]]);
     var nw = qt.length - pairs.length;
     // a long question names its topic among many other words: it needs fewer of them to match
-    var need = nw <= 2 ? nw : Math.ceil(nw * (share || (nw >= 7 ? 0.4 : 0.6)));
+    // share: the part of the question's words a line must hold (one word at least), set by a looser search
+    var need = share ? Math.max(1, Math.ceil(nw * share)) : nw <= 2 ? nw : Math.ceil(nw * (nw >= 7 ? 0.4 : 0.6));
     for (var i = 0; i < ix.N; i++) {
       var d = ix.docs[i], s = 0, hit = 0;
       for (var j = 0; j < qt.length; j++) {
@@ -1165,6 +1178,7 @@
   function ask(text, quiet) {                    // quiet: the question is already on screen (it waited for the brain)
     if (!quiet) me(text);
     count("pip_ask");
+    text = plainAsk(text);
     var t = norm(text).trim();
     if (quizInProgress()) {                       // small talk is fine; anything that searches or quizzes waits
       if (/^(hi|hey|hello|yo|sup|hiya)\b/.test(t)) { say("Hey! I'm here when you finish."); return; }
@@ -1464,6 +1478,31 @@
           return pick && hasGuides(pick) ? pick : hasGuides(f) ? f : null;
         });
       }
+      // the best two guide lines of each exam searched other than gf whose guide holds at least half of the question's naming
+      // words. Looser than the usual search (one naming word in a line is enough, the lines holding the most come first)
+      // because Claude judges them: "valvular ... TEE vs TTE" needed four of its words in one line, and Principles of
+      // Diagnostic Medicine Exam 2 writes "the transesophageal study"
+      function elsewhere(gf) {
+        var others = (SCOPE || []).filter(function (x) { return x !== gf && hasGuides(x); });
+        return Promise.all(others.map(function (x) {
+          return guideIndex(x).then(function (g) {
+            prepGuide(g);
+            g._ix.ab2 = g.ab;
+            var q2 = spell(expandFor(casual(text), g._ix), g._ix);
+            var named = uniq(toks(q2)).filter(function (w) { return !GENERIC[w] && !FILL[w] && w.length >= 3; });
+            var core = named.filter(function (w) { return g._ix.df[w]; });
+            if (!core.length || core.length * 2 < named.length) return [];
+            // a heading alone ("Pulmonary embolism") says nothing Claude can use, and a line must hold two of the naming
+            // words when the question has two ("pulmonary embolism" is not any line that says "pulmonary")
+            var two = Math.min(2, core.length);
+            return rank(g._ix, g._texts, core.join(" "), 10, 0.01).filter(function (r) {
+              var b = g.b[r[1]], d = g._ix.docs[r[1]];
+              return g.docs[b[0]].kind !== "cram" && b[3].length >= 40 && core.filter(function (w) { return d.tf[w]; }).length >= two;
+            })
+              .slice(0, 2).map(function (r) { return { s: r[0], f: x, g: g, b: g.b[r[1]], q2: q2 }; });
+          }).catch(function () { return []; });
+        })).then(function (lists) { return [].concat.apply([], lists); });
+      }
       // Pip's best guide lines in that exam (their numbers in its guide data): a card's section, then the passages found
       function hintsFor(g, gf, out, ex) {
         var hs = [];
@@ -1476,7 +1515,14 @@
         // without pointers it missed the Exam 5 lines on pulmonary embolism (inside deep vein thrombosis), 2026-10-15
         prepGuide(g);
         if (g.ab && !g._ix.ab2) g._ix.ab2 = g.ab;
-        rank(g._ix, g._texts, expandFor(casual(text), g._ix), 12).forEach(function (r) {
+        var hq = expandFor(casual(text), g._ix), top = rank(g._ix, g._texts, hq, 12);
+        // filler words ("explain which is best for each" after a TEE question) can leave no line holding enough of the
+        // question: then its naming words alone, the lines holding the most of them first (Jaxon 2026-10-21)
+        if (top.length < 12) {
+          var core = uniq(toks(hq)).filter(function (w) { return !GENERIC[w] && !FILL[w] && g._ix.df[w]; });
+          if (core.length) top = top.concat(rank(g._ix, g._texts, core.join(" "), 12, 0.01));
+        }
+        top.forEach(function (r) {
           if (g.docs[g.b[r[1]][0]].kind !== "cram") hs.push(r[1]);
         });
         return uniq(hs).slice(0, 12);
@@ -1486,10 +1532,25 @@
           var gf = r1[0], ok = r1[1];
           if (!gf) return fallback(false);
           if (!ok || !claudeRoom("answer")) return fallback(false);
-          Promise.all([superbrain(), guideIndex(gf).catch(function () { return null; })]).then(function (r0) {
+          // (the other exams' lines wait at most 2.5 s: a slow guide download never holds the answer up)
+          var more = Promise.race([elsewhere(gf), new Promise(function (res) { setTimeout(function () { res([]); }, 2500); })]);
+          Promise.all([superbrain(), guideIndex(gf).catch(function () { return null; }), more]).then(function (r0) {
             var S = r0[0], g = r0[1];
             if (!S) return fallback(false);
-            var cands = candidates(out, mine, ex);
+            // Claude reads ONE exam's whole guide, so the candidates lead with the best passages of the semester's other
+            // exams (the chosen guide's own lines are in front of him already). Jaxon 2026-10-21: "TEE vs TTE" read only the
+            // CMS Exam 4 guide; the comparison and its uses are in PDM Exam 2 and CMS Exam 5
+            // (taken in turn, one exam's best then the next exam's, so one exam can't fill the list)
+            var seenB = {}, byF = [], outG = [];
+            out.filter(function (x) { return x.f !== gf; }).concat(r0[2]).forEach(function (x) {
+              var key = x.f.s + "|" + x.b[0] + "|" + x.b[1] + "|" + x.b[3].slice(0, 40); if (seenB[key]) return; seenB[key] = 1;
+              var row = byF.filter(function (y) { return y.f === x.f; })[0];
+              if (!row) byF.push(row = { f: x.f, l: [] });
+              row.l.push(x);
+            });
+            for (var i = 0; byF.some(function (y) { return y.l.length > i; }); i++) byF.forEach(function (y) { if (y.l[i]) outG.push(y.l[i]); });
+            outG = outG.concat(out.filter(function (x) { return x.f === gf; }));
+            var cands = candidates(outG, mine, ex);
             if (defn && dd.def && cands.length < 6) cands.push({ title: dd.def.src.head, text: dd.def.s, f: dd.def.src.f, short: dd.def.src.head,
               link: function () { return linkTo(dd.def.src.f.f, dd.def.src.file, dd.def.src.a, "Read it in your guide: " + dd.def.src.head + " \u2192", dd.def.src.text || ""); },
               full: function (into) { var c2 = el("div", "pw-card"); c2.appendChild(el("h4", null, dd.def.src.head)); c2.appendChild(el("p", "pw-quote", dd.def.s)); into.appendChild(c2); } });
@@ -1539,6 +1600,12 @@
           all.push(seen[key] = citeCand(c, gf));
           if (q) seen[key].quotes.push(q);
         });
+        // a line the "Used:" line names but the answer never quotes must share a naming word with the question or the
+        // answer: a stray number linked "Orthostatic syncope" under a TEE answer (Jaxon 2026-10-21)
+        var bag = {};
+        toks(ASKQ + " " + text + " " + a.body).forEach(function (w) { if (!GENERIC[w] && w.length >= 4) bag[w] = 1; });
+        var kept = all.filter(function (o) { return !o.quotes || o.quotes.length || toks(o.text + " " + o.title).some(function (w) { return bag[w]; }); });
+        if (kept.length) all = kept;
         if (a.used === null && !all.length) all = cands.slice(0, 1);
         if (!all.length && !a.general) return fallback(true);
         renderAnswer({ used: all.map(function (x, i) { return i + 1; }), body: a.body, general: a.general }, all, rr, function () { fallback(true); });
@@ -1938,7 +2005,9 @@
   toks("risk risks factor factors cause causes sign signs symptom symptoms treatment treat treating treated management manage managing " +
        "diagnosis diagnose diagnosing diagnosed test tests " +
        "type types feature features common normal side effect effects finding findings exam examination patient patients when " +
-       "first best most use used uses change changes").forEach(function (w) { GENERIC[w] = 1; });
+       "first best most use used uses change changes " +
+       // vague nouns that never name a topic ("which valvular issues are best for a TEE": no exam's guide says "issues")
+       "issue issues problem problems").forEach(function (w) { GENERIC[w] = 1; });
   // what KIND of answer a question wants, and what kind each card is (read from its title): among cards
   // about the same thing, "first line med for HCM" wants the drugs card, "what does takotsubo mean" the
   // what-it-is card, "PAC vs PVC" the side-by-side card, "how do i remember weber" the memory-aid card
@@ -3021,6 +3090,19 @@
   // question about the body or a procedure ("where does lead V4 go?") is a real question and goes to Claude (Jaxon,
   // 2026-10-16: every "where" question used to count as a lookup, so V4 got a wrong card and no Claude)
   var LOOKUP = /^(?:where|find|open|show me|take me|go to|link|page)\b(?=.*\b(?:charts?|pages?|guides?|quiz|quizzes|cram|sheets?|links?|notes?|flashcards?|arcade|decks?|slides?|sections?|tables?|videos?|recordings?|planner|calendar|lectures?|review|games?)\b)/;
+  // Who a question is addressed to and where to answer it from are not its topic (Jaxon 2026-10-21: "Claude explain from
+  // my guides which is best for each" read "Claude" as "clause", searched "guides", and lost the earlier question). A
+  // leading "Claude" or "Pip," goes ("PIP joint" stays: Pip needs a comma or a request word after him), and so does "from
+  // my guides" / "according to my notes" unless the question is a lookup of that page. Every real question already goes to
+  // Claude with the guide, so nothing is lost.
+  var ADDRESS = /^\s*(?:(?:hey|hi|ok|okay|yo)\s+)?(?:claude(?=[\s,:;!.-]|$)[\s,:;!.-]*|pip(?:\s*[,:;!-]+\s*|\s+(?=(?:explain|tell|what|whats|what's|how|why|can|could|would|please|give|show|quiz|help|describe|define|is|are|do|does|which|where|when|who)\b)))/i;
+  var SOURCE = /[\s,]*\b(?:from|in|using|according to|based on|off)\s+(?:my|the|our)\s+(?:own\s+)?(?:study\s+)?(?:guides?|notes?|slides?|class\s+materials?|materials?|lectures?|cram\s+sheets?)\b/gi;
+  function plainAsk(text) {
+    var s = String(text).replace(ADDRESS, "");
+    if (!LOOKUP.test(norm(s).trim())) s = s.replace(SOURCE, " ");
+    s = s.replace(/\s{2,}/g, " ").trim();
+    return /[a-z0-9]/i.test(s) ? s : String(text).trim();
+  }
   function wantsExplanation(q) { var n = norm(q).trim(); return !LOOKUP.test(n) && toks(q).length >= 1 && (n.split(/\s+/).length >= 2 || needsExplaining(q)); }
   function relatedToExam(q, f) {                 // does the question use this exam's own vocabulary?
     return guideIndex(f).then(function (g) {
