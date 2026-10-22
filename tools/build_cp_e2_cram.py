@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Build the Clinical Pathophysiology I Exam 2 cram sheet (Lectures 6 and 7 so far).
+"""Build the Clinical Pathophysiology I Exam 2 cram sheet (Lectures 6 to 9 so far).
 
 Condensed ONLY from cp-exam-2-study-guide.html (cram_sheets_feature): nothing
 here that the guide does not say, numbers kept verbatim. Rendered with the
-shared tools/cram-sheet-template/render.py, never hand-edited. Lectures 8-10
-append as further topics when their guide sections exist.
+shared tools/cram-sheet-template/render.py, never hand-edited. Lecture 10
+appends as further topics when its guide section exists.
 
 Mechanism only (clin_path_exam_spec) -- asserted. The one Lecture 7 row marked
 with a star is the one thing the presenter said "do know".
@@ -140,6 +140,102 @@ T = [
   ("Virchow triad", "VESSEL WALL DAMAGE · ABNORMAL BLOOD FLOW (turbulence or stasis) · HYPERCOAGULABILITY."),
   ("Clot fate", "Neutrophils + macrophages infiltrate fibrin; COLLAGEN replaces fibrin over weeks → less flow. Dislodges → EMBOLUS → PULMONARY ARTERY = pulmonary embolus."),
  ]},
+ {"id": "l8-basics", "label": "L8 · Immunity Basics & Blood Cells", "color": "#4a2f6e", "rows": [
+  ("Immunity: 3 functions", "DEFENSE (resistance to invaders) · SURVEILLANCE (of self, for mutant or cancerous cells) · HOMEOSTASIS (removing cellular debris)."),
+  ("Memory & specificity", "Memory = faster, stronger adaptive response on RE-EXPOSURE. B- and T-cell receptors recognize particular EPITOPES; innate receptors recognize patterns shared by groups of organisms."),
+  ("Active vs passive", "ACTIVE: the body's own response after antigen exposure (natural = met naturally; artificial = VACCINATION). PASSIVE: PREFORMED antibodies transferred; immediate protection that declines."),
+  ("Passive examples", "Natural: maternal IgG through the PLACENTA, IgA in BREAST MILK. Artificial: tetanus and rabies immune globulin."),
+  ("Innate immunity", "Acts WITHOUT prior sensitization: skin and mucosal barriers, phagocytes, complement, interferons. Natural killer cells ≈ 5–15% of circulating lymphocytes."),
+  ("Granulocytes", "NEUTROPHIL: phagocytosis, first responders, most numerous. EOSINOPHIL: allergy and parasites. BASOPHIL: like tissue mast cells (★ 'Baso B blood', mast cells in tissue)."),
+  ("Monocyte → macrophage", "Monocytes enter tissues during inflammation and become macrophages (tissue macrophage = HISTIOCYTE); they remove material and coordinate inflammation."),
+  ("Lymphocytes", "B: humoral, matures in BONE MARROW, becomes the plasma cell. T: cellular, matures in the THYMUS (★ 'T cells, thymus'). Natural killer: needs NO specific antigen; kills tumor and infected cells."),
+  ("Markers", "T: CD3 (CD4 or CD8). B: CD19, CD20; surface immunoglobulin LOST as a plasma cell. Natural killer: CD56, CD16."),
+  ("Phagocytosis", "Adhere → pseudopods engulf (PHAGOSOME) → fuse with lysosome (PHAGOLYSOSOME) → acid hydrolases digest → residual body → EXOCYTOSIS."),
+  ("Lymph flow", "No pump: SKELETAL MUSCLE movement, THORACIC pressure changes in breathing, pulsing ARTERIES; valves keep it one-way."),
+ ]},
+ {"id": "l8-antibodies", "label": "L8 · B Cells & Antibodies", "color": "#6a4fa3", "rows": [
+  ("B cell → plasma cell", "Antigen-INDEPENDENT phase: surface IgM. Antigen-DEPENDENT phase (started by antigen exposure): becomes a PLASMA CELL secreting specific antibody. Antigen SELECTS the matching B cell → clonal expansion → plasma + memory cells."),
+  ("Primary response", "After FIRST exposure; develops over days; IgM rises first; memory cells form."),
+  ("Secondary response", "After RE-EXPOSURE; memory cells → FASTER, STRONGER (★); class-switched antibody, often IgG, higher and longer. ★ High IgM = first exposure; low IgM + high IgG = earlier exposure."),
+  ("Antibody unit", "2 HEAVY + 2 LIGHT chains (light = KAPPA or LAMBDA). Heavy + light VARIABLE regions = antigen-binding site. Heavy-chain CONSTANT region decides the CLASS."),
+  ("Fab vs Fc", "Fab = antigen-binding arms. Fc = constant stem → EFFECTOR functions (complement-binding site on CH2). Papain cuts IgG into 2 Fab + Fc."),
+  ("IgM", "5–10%. PENTAMER (J chain) when secreted. Often FIRST in a new response; AGGLUTINATION; efficient classical complement."),
+  ("IgG", "75–80%, the largest share. Monomer, 4 subclasses. CROSSES THE PLACENTA (★ how maternal immunity reaches the baby); prominent in secondary responses."),
+  ("IgA · IgD · IgE", "IgA 10–15%: secretory DIMER (saliva, tears, colostrum), blocks microbial attachment. IgD <1%: B-cell receptor with IgM. IgE <1%: on MAST CELLS and BASOPHILS → allergy, anaphylaxis, parasites."),
+  ("Antibody functions", "AGGLUTINATION (clumps cells) · NEUTRALIZATION (blocks without destroying ★) · LYSIS (with complement) · PRECIPITATION (cross-links soluble antigen) · OPSONIZATION (coats for phagocytes)."),
+  ("ABO", "O red cells carry neither A nor B → O is the universal red-cell donor (★); AB recipients have neither antibody → take O, A, B, AB."),
+ ]},
+ {"id": "l8-tcells", "label": "L8 · T Cells & Hypersensitivity", "color": "#7a2f5a", "rows": [
+  ("★ CD4 vs CD8", "'Four letters in HELP': CD4 = HELPER, reads MHC (major histocompatibility complex) CLASS II. CD8 = CYTOTOXIC, reads CLASS I."),
+  ("Helper T cell", "COORDINATES cellular and humoral responses by cytokines and contact; supports B-cell antibody production; IFN-γ (interferon gamma) activates macrophages."),
+  ("Cytotoxic T cell", "Kills virus-infected, tumor and transplanted cells: PERFORIN + GRANZYMES → target-cell APOPTOSIS."),
+  ("Regulatory T cell", "LIMITS immune activation, maintains SELF-TOLERANCE; many are CD4 expressing FOXP3."),
+  ("ADCC", "Antibody-dependent cellular cytotoxicity: the natural killer cell's CD16 binds the Fc of IgG coating a target."),
+  ("Hypersensitivity", "Humoral or cellular immune reactions that INJURE the body. Numbered by MECHANISM, not severity (★)."),
+  ("Type I", "IgE fixed on MAST CELLS/basophils after a sensitizing exposure; re-exposure → HISTAMINE release. Local allergy or ANAPHYLAXIS (bronchospasm, laryngeal edema, hypotension)."),
+  ("Type II", "IgG or IgM binds antigen ON cells or tissue → phagocytosis, complement, ADCC; can STIMULATE or BLOCK receptors. ABO incompatibility, anti-glomerular basement membrane disease."),
+  ("Type III", "Antigen–antibody COMPLEXES deposit in tissue or vessel walls. Arthus (local), serum sickness (systemic), LUPUS."),
+  ("Type IV", "Sensitized CD4 or CD8 T CELLS; delayed 24–72 h; granulomas. Contact dermatitis, tuberculosis reactions, transplant rejection."),
+ ]},
+ {"id": "l8-complement", "label": "L8 · Complement, Immunodeficiency & Age", "color": "#2f4f6e", "rows": [
+  ("Complement", "Proteins made mostly by the LIVER, circulating as INACTIVE precursors; activation = a regulated CASCADE."),
+  ("3 pathways (★)", "CLASSICAL: C1 binds antigen-bound IgM or IgG. LECTIN: mannose-binding lectin binds microbial carbohydrate. ALTERNATIVE: C3 on permissive surfaces (factor B, factor D, properdin). All CONVERGE ON C3."),
+  ("3 outcomes", "OPSONIZATION (C3b coat) · INFLAMMATION (C3a, C4a, C5a: vasodilation, attraction of phagocytes) · MEMBRANE ATTACK COMPLEX (C5b + C6–C9 pore → lysis). ★ Lysis is only ONE outcome."),
+  ("Autoimmunity (deck)", "No slide of its own: regulatory T cells keep self-tolerance; anti-self antibody can destroy or stimulate/block (type II); lupus is type III; autoantibodies rise with age."),
+  ("Primary immunodeficiency", "INTRINSIC, often GENETIC. X-linked agammaglobulinemia: no B-cell maturation → recurrent PYOGENIC infections. DiGeorge: thymic/T-cell development. Severe combined: T AND B."),
+  ("Secondary immunodeficiency", "From disease, medications, malignancy or poor nutrition."),
+  ("Age", "Neonates: protected by maternal IgG and milk IgA, which wane. Older adults: weaker responses to NEW antigens; more autoantibodies."),
+ ]},
+ {"id": "l9-arf", "label": "L9 · Respiratory Failure, Pulmonary Hypertension & Cancer", "color": "#1f5a73", "rows": [
+  ("Hypoxemia vs hypoxia", "Hypoxemia = low BLOOD oxygen (PaO2, arterial oxygen tension; saturation). Hypoxia = low TISSUE oxygenation."),
+  ("Acute respiratory failure", "On room air: PaO2 < 60 mmHg · PaCO2 (arterial carbon dioxide tension) > 50 mmHg · pH < 7.30."),
+  ("Hypoxic failure", "Low oxygen, NORMAL or LOW carbon dioxide: V/Q (ventilation/perfusion) mismatch · SHUNT · decreased diffusion · alveolar hypoventilation · altitude."),
+  ("Hypercapnic failure", "Carbon dioxide not removed: low ventilation or rate · cannot signal (Guillain-Barré, cord injury) · DEAD SPACE (pulmonary embolism, low output) · more carbon dioxide made (fever, burns) · cannot sense it (drugs)."),
+  ("★ Dead space vs shunt", "Dead space = ventilation without perfusion. Shunt = perfusion without ventilation."),
+  ("Pulmonary circulation", "HIGH FLOW, LOW PRESSURE: 22/8–25/8 mmHg, mean 15. Pulmonary arteries carry DEOXYGENATED blood (★ names = direction, not oxygen)."),
+  ("Pulmonary hypertension ⚠", "Slide: sustained > 30 mmHg. Recording: resting MEAN > 20 mmHg by right heart catheterization. Know both."),
+  ("Routes to it", "More FLOW (left-to-right shunt, polycythemia) · more RESISTANCE (hypoxic vasoconstriction, EMBOLISM, fibrosis) · higher LEFT ATRIAL pressure (mitral stenosis)."),
+  ("Vessel changes", "MEDIA thickens (more muscle), INTIMA fibroses, PLEXIFORM lesions."),
+  ("Lung cancers", "SQUAMOUS 20–30%, central, sputum cytology. ADENO 35–40% (largest), peripheral. LARGE CELL 5–10%, peripheral. SMALL CELL 15–20%, central, doubles in ~33 days, PARANEOPLASTIC."),
+ ]},
+ {"id": "l9-obstructive", "label": "L9 · Obstructive Disease & Asthma", "color": "#2e6b4f", "rows": [
+  ("Obstructive disease", "Increased airflow RESISTANCE: in the WALL (asthma, bronchitis) · LOST PARENCHYMA (emphysema) · in the LUMEN (bronchiectasis, cystic fibrosis, foreign body)."),
+  ("Test pattern", "Low FEV1/FVC (forced expiratory volume in 1 second / forced vital capacity) = airflow limitation · high RESIDUAL VOLUME = incomplete emptying · low DLCO (diffusing capacity for carbon monoxide) = a separate gas-transfer question."),
+  ("Asthma", "REVERSIBLE obstruction + airway inflammation + HYPER-RESPONSIVENESS."),
+  ("Allergic (extrinsic)", "IgE on MAST CELLS → histamine, LEUKOTRIENES (slow-reacting substances of anaphylaxis), prostaglandins, bradykinins, eosinophil chemotactic factor, serotonin."),
+  ("Non-allergic (intrinsic)", "Exercise, stress, irritants, aspirin; NEGATIVE skin tests, NORMAL IgE; middle age; worse prognosis."),
+  ("Asthma airway", "Epithelium DENUDED → goblet cells · COLLAGEN under basement membrane · edema · mucus plugs · VAGAL → mucus + bronchoconstriction · REMODELING."),
+  ("Acute bronchitis", "Inflamed trachea/bronchi, mostly VIRAL; more mucus, lost cilia; lasting HYPERIRRITABILITY explains the lingering cough."),
+  ("Chronic bronchitis (type B)", "Productive cough > 3 months a year for 2+ years; smoking 90%; gland + GOBLET hypertrophy; cilia → SQUAMOUS; plugs → V/Q mismatch. BLUE BLOATER = cyanosis + right-heart edema."),
+  ("Emphysema (type A)", "Alveolar wall DESTRUCTION WITHOUT FIBROSIS. PROTEASES from neutrophils/macrophages; smoking inactivates ALPHA-1 ANTITRYPSIN. Lost RADIAL TRACTION → more resistance, less airflow; air trapped → BULLAE. PINK PUFFER."),
+  ("Emphysema types", "CENTRIACINAR: respiratory bronchioles (with chronic bronchitis). PANACINAR: alveoli. PARASEPTAL: peripheral lobules."),
+  ("Bronchiectasis", "Wall DESTRUCTION → DILATED bronchi; congenital (50% related to cystic fibrosis) or acquired; children at risk (soft bronchi). Dilations = infection POCKETS → foul purulent sputum. Shapes: cylindrical, saccular, fusiform."),
+  ("Cor pulmonale", "Hypoxia → pulmonary VASOCONSTRICTION → pulmonary hypertension → RIGHT VENTRICULAR DILATION → right heart failure."),
+ ]},
+ {"id": "l9-restrictive", "label": "L9 · Restrictive Disease & Acute Respiratory Distress Syndrome", "color": "#7a4a1f", "rows": [
+  ("Restrictive = expansion", "DECREASED EXPANSION from parenchyma, pleura, chest wall or neuromuscular disease. LOW TOTAL LUNG CAPACITY confirms it (low FVC alone does not)."),
+  ("Interstitial lung disease", "Starts with INJURY to alveolar epithelium or capillary endothelium → immune reaction → thick interstitium, COLLAGEN."),
+  ("3 alveolar patterns", "INFLAMMATION (early, REVERSIBLE) → FIBROSIS (fibroblasts, collagen) → DESTRUCTION (end stage: STIFF, NONCOMPLIANT lungs)."),
+  ("Sarcoidosis", "ALVEOLAR MACROPHAGES activated by an unknown trigger; NONCASEATING epithelioid GRANULOMAS (lymph nodes, lung); ASTEROID BODIES; abnormal T cells."),
+  ("Hypersensitivity pneumonitis", "Inhaled ORGANIC agents (birds, fungi, wheat weevil); TYPE III immune complexes; nonsmokers. 'Extrinsic allergic alveolitis'."),
+  ("Pneumoconiosis", "Inhaled INORGANIC dust (coal, silica, asbestos); macrophages cannot clear it → FIBROSIS. Smoking depresses ciliary clearance."),
+  ("ARDS (acute respiratory distress syndrome)", "ATELECTATIC disorder. Alveolar-capillary membrane DAMAGE → LEAKY capillaries → protein-rich NONCARDIOGENIC edema; complement + neutrophil sequestration."),
+  ("ARDS: 3 processes", "Noncardiogenic EDEMA (leaky capillaries) · ATELECTASIS (no SURFACTANT) · HYALINE MEMBRANES (protein deposits)."),
+  ("Pulmonary edema (gathered)", "Starling: hydrostatic OUT vs oncotic IN. More capillary pressure or less oncotic pressure → more filtration. Leaky capillaries → noncardiogenic edema."),
+ ]},
+ {"id": "l9-pleura", "label": "L9 · Pleura, Sleep Apnea & Pneumonia", "color": "#3d4f7a", "rows": [
+  ("Primary pneumothorax", "TALL, THIN MEN 20–40; SUBPLEURAL BLEBS at the apices rupture; smoking raises risk."),
+  ("Secondary pneumothorax", "Complication of lung disease: asthma, emphysema, cystic fibrosis, pneumonia, tuberculosis."),
+  ("Tension pneumothorax", "Trauma; air ENTERS but cannot LEAVE → lung collapses, mediastinum shifts AWAY → less VENOUS RETURN and CARDIAC OUTPUT."),
+  ("Pleural effusion causes", "Raised HYDROSTATIC pressure (heart failure) · lowered ONCOTIC pressure (nephrotic syndrome, cirrhosis) · lowered pleural pressure (lung collapse). Normal 5–15 mL."),
+  ("Transudate", "Protein ratio < 0.5 · LDH (lactate dehydrogenase) ratio < 0.6 · specific gravity < 1.016. PRESSURE problem: heart failure, cirrhosis, nephrotic syndrome."),
+  ("Exudate", "Protein ratio > 0.5 or LDH ratio > 0.6 (ONE criterion is enough). PERMEABILITY or LYMPHATIC problem: cancer, infection, PULMONARY EMBOLISM, sarcoidosis."),
+  ("Chylothorax", "CHYLE leaking from the THORACIC DUCT (trauma, lymphoma)."),
+  ("Obstructive sleep apnea", "≥ 5 events/hour; collapsible PHARYNX closes. APNEA: no airflow ≥ 10 s WITH effort. HYPOPNEA: reduced flow + desaturation or arousal. No flow + NO effort = CENTRAL."),
+  ("Pneumonia sources", "ASPIRATION (gross aspiration → ANAEROBES, abscess) · inhalation (virus, Mycoplasma) · BLOOD-BORNE (right-sided endocarditis, intravenous drug use)."),
+  ("Community vs hospital", "Community: at home, or hospitalized < 48 h. Hospital: early (≤ 4 days) susceptible bacteria; LATE = MULTIDRUG-RESISTANT."),
+  ("Pulmonary embolism (gathered)", "Raises DEAD SPACE (hypercapnia) · causes pulmonary hypertension by OBSTRUCTION · causes ARDS and acute respiratory failure · EXUDATIVE effusion."),
+ ]},
 ]
 
 BANNED = ["first-line", "drug of choice", "treatment of choice", "next step", "surgically repaired"]
@@ -157,7 +253,7 @@ def main():
         title="Cram Sheet — Clinical Pathophysiology I Exam 2",
         kicker="Clinical Pathophysiology I · Exam 2 · Class of 2028",
         h1="Clinical Pathophysiology I Exam 2 Cram Sheet",
-        sub="Lecture 6 Cardiac and Lecture 7 Vascular, condensed. Lectures 8–10 are added as each is posted. Mechanism only, never management.",
+        sub="Lectures 6 Cardiac, 7 Vascular, 8 Immunity and 9 Pulmonary, condensed. Lecture 10 is added when it is posted. Mechanism only, never management.",
         topics=T,
         guide_href="cp-exam-2-study-guide.html",
         footer_note="Condensed from the Clinical Pathophysiology I Exam 2 Study Guide (Class of 2028). For the full explanation and figures behind any of these, see the full guide.",

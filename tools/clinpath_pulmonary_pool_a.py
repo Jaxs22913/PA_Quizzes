@@ -113,7 +113,7 @@ Q(ANA, IO_B, "function",
    ["Low flow, high pressure",
     "That reverses both: the lungs take high flow at low pressure.", RV],
    ["High flow, high pressure",
-    "Flow is high but pressure stays low; a sustained pressure above 30 mmHg is pulmonary hypertension.", WS],
+    "Flow is high but pressure stays low: the normal mean pulmonary arterial pressure is only about 15 mmHg.", WS],
    ["Low flow, low pressure",
     "Pressure is low, but flow is high: the lungs receive high flow at low pressure.", RV]],
   c(20), core=True),
@@ -235,11 +235,15 @@ Q(PHT, IO_PH, "threshold",
    ["15 mmHg",
     "Correct. Normal pulmonary arterial pressure is about 22/8 to 25/8 mmHg, with a mean of 15 mmHg."],
    ["30 mmHg",
-    "A sustained pressure above 30 mmHg is the definition of pulmonary hypertension, not the normal mean.", WS],
+    "Thirty mmHg is twice the normal mean and lies in the pulmonary hypertension range, not the healthy one.", WS],
    ["45 mmHg",
     "Far above normal; the healthy mean is about 15 mmHg in this low-pressure system.", RV]],
   c(20), key=1, ordered=True, core=True),
 
+# HELD from every set and from the masters: the slide defines pulmonary hypertension as a sustained
+# pressure above 30 mmHg, but in the recording the lecturer gives the current hemodynamic definition
+# (resting MEAN pressure above 20 mmHg by right heart catheterization). The guide (9.4) shows both;
+# do not ship a question that keys either threshold until Jaxon decides.
 Q(PHT, IO_PH, "threshold",
   "Pulmonary hypertension is a sustained pulmonary arterial pressure above which value?",
   [["8 mmHg",
@@ -312,6 +316,7 @@ Q(PHT, IO_C, "mechanism",
     "No calcification is described; the change is medial muscle mass with intimal fibrosis.", CM]],
   c(23), core=True),
 
+# Not in either set; the stem quotes the slide's 30 mmHg figure (see the HELD note above).
 Q(PHT, IO_C, "mechanism",
   "Which lesions follow sustained pulmonary hypertension with a mean above 30 mmHg?",
   [["Plexiform lesions",
