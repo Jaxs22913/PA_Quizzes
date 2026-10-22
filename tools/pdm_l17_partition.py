@@ -198,7 +198,7 @@ def check(pool):
             if j != k:
                 assert not e.startswith("Correct"), "%s: distractor explanation opens Correct" % w
                 assert t in q.get("mis", {}), "%s: no mis label for %r" % (w, t)
-        assert q.get("cite", "").startswith(SRC + ", Slide "), w
+        assert re.match(re.escape(SRC) + r", Slides? \d", q.get("cite", "")), w
         for where, txt in [("stem", q["q"])] + [("option", o[0]) for o in q["opts"]] + [("explanation", o[1]) for o in q["opts"]]:
             bad = [a for a in _ACRO.findall(txt) if a not in _ACRO_OK]
             assert not bad, "%s: acronym %r in %s" % (w, bad, where)
