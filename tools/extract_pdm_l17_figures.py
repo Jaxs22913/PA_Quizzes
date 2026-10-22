@@ -94,7 +94,6 @@ FIGS = [
  (41, 462, "l17-cxr-labeled", "G", {}),
  (42, 471, "l17-hila", "G", {}),
  # ---- ultrasound
- (46, 501, "l17-lung-ultrasound", "G", {"crop": (150, 40, 786, 506)}),
  (47, 508, "l17-lung-ultrasound-labeled", "G", {}),
  # ---- computed tomography, nuclear medicine, magnetic resonance
  (48, 515, "l17-ct-planes", "G", {}),
@@ -124,7 +123,7 @@ FIGS = [
  # ---- the five patterns
  (78, 723, "l17-pneumonia-cxr-panel", "G", {}),
  (78, 723, "l17-pneumonia-cxr", "Q", {"crop": (703, 40, 1246, 516)}),
- (79, 729, "l17-pneumonia-ct", "QG", {"crop": (0, 0, 405, 290)}),
+ (79, 729, "l17-pneumonia-ct", "Q", {"crop": (0, 0, 405, 290)}),
  (79, 729, "l17-pneumonia-ct-panel", "G", {}),
  (80, 740, "l17-effusion-cxr-pair", "G", {}),
  (80, 740, "l17-effusion-cxr", "Q", {"crop": (326, 133, 573, 371)}),
