@@ -193,9 +193,9 @@ T = [
   ("Hypercapnic failure", "Carbon dioxide not removed: low ventilation or rate · cannot signal (Guillain-Barré, cord injury) · DEAD SPACE (pulmonary embolism, low output) · more carbon dioxide made (fever, burns) · cannot sense it (drugs)."),
   ("★ Dead space vs shunt", "Dead space = ventilation without perfusion. Shunt = perfusion without ventilation."),
   ("Pulmonary circulation", "HIGH FLOW, LOW PRESSURE: 22/8–25/8 mmHg, mean 15. Pulmonary arteries carry DEOXYGENATED blood (★ names = direction, not oxygen)."),
-  ("Pulmonary hypertension ⚠", "Slide: sustained > 30 mmHg. Recording: resting MEAN > 20 mmHg by right heart catheterization. Know both."),
+  ("Pulmonary hypertension", "Mean pulmonary arterial pressure AT REST > 20 mmHg (normal mean ≈ 15)."),
   ("Routes to it", "More FLOW (left-to-right shunt, polycythemia) · more RESISTANCE (hypoxic vasoconstriction, EMBOLISM, fibrosis) · higher LEFT ATRIAL pressure (mitral stenosis)."),
-  ("Vessel changes", "MEDIA thickens (more muscle), INTIMA fibroses, PLEXIFORM lesions."),
+  ("Vessel changes", "MEDIA thickens (more muscle), INTIMA fibroses."),
   ("Lung cancers", "SQUAMOUS 20–30%, central, sputum cytology. ADENO 35–40% (largest), peripheral. LARGE CELL 5–10%, peripheral. SMALL CELL 15–20%, central, doubles in ~33 days, PARANEOPLASTIC."),
  ]},
  {"id": "l9-obstructive", "label": "L9 · Obstructive Disease & Asthma", "color": "#2e6b4f", "rows": [
@@ -226,7 +226,7 @@ T = [
  {"id": "l9-pleura", "label": "L9 · Pleura, Sleep Apnea & Pneumonia", "color": "#3d4f7a", "rows": [
   ("Primary pneumothorax", "TALL, THIN MEN 20–40; SUBPLEURAL BLEBS at the apices rupture; smoking raises risk."),
   ("Secondary pneumothorax", "Complication of lung disease: asthma, emphysema, cystic fibrosis, pneumonia, tuberculosis."),
-  ("Tension pneumothorax", "Usually trauma (can arise without it); air ENTERS but cannot LEAVE → lung collapses, mediastinum shifts AWAY → less VENOUS RETURN and CARDIAC OUTPUT."),
+  ("Tension pneumothorax", "Pneumothorax that TRAPS AIR and builds pressure (penetrating or nonpenetrating injury); air ENTERS but cannot LEAVE → lung collapses, mediastinum shifts AWAY → less VENOUS RETURN and CARDIAC OUTPUT."),
   ("Pleural effusion causes", "Raised HYDROSTATIC pressure (heart failure) · lowered ONCOTIC pressure (nephrotic syndrome, cirrhosis) · lowered pleural pressure (lung collapse). Normal 5–15 mL."),
   ("Transudate", "Protein ratio < 0.5 · LDH (lactate dehydrogenase) ratio < 0.6 · specific gravity < 1.016. PRESSURE problem: heart failure, cirrhosis, nephrotic syndrome."),
   ("Exudate", "Protein ratio > 0.5 or LDH ratio > 0.6 (ONE criterion is enough). PERMEABILITY or LYMPHATIC problem: cancer, infection, PULMONARY EMBOLISM, sarcoidosis."),

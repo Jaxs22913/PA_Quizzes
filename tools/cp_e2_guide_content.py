@@ -24,8 +24,7 @@ SOURCES
   Lecture 9: no deck was posted. "9. Pulmonary Pathophysiology - Ward 2026
     (rebuilt from recording).pptx" (109 slides) is Jaxon's rebuild from the
     two-part lecture video of 20 October 2026; the transcript decides emphasis.
-    The slide's pulmonary hypertension definition (sustained > 30 mmHg) conflicts
-    with the recording (resting mean > 20 mmHg); both are shown, no question keys it.
+    Ward revised slides 20, 21, 23, 89 and 109 to match the video (22 October 2026).
 
 US spelling throughout (us_spelling); the io-box is the syllabus verbatim.
 """
@@ -1664,13 +1663,6 @@ PULMONARY = '''
     rises, the mediastinum shifts and venous return and cardiac output fall (section 9.7).</td></tr>
   </table>
   </div>
-  <div class="callout"><strong>&#9888; One conflict between the slides and the recording: the definition of
-  pulmonary hypertension.</strong> Slide 20 defines it as a <b>sustained pulmonary arterial pressure above
-  30 mmHg</b>, and slide 23 links a sustained mean above 30 mmHg to plexiform lesions. In the recording the
-  lecturer gives the current definition instead: <em>&ldquo;Pulmonary hypertension is defined
-  hemodynamically as a resting mean pulmonary arterial pressure greater than 20 mmHg. It has to be
-  measured by right heart catheterization.&rdquo;</em> [part 1, 33:14] (current guidelines also use a mean
-  above 20 mmHg). Because the two disagree, no question on this site asks for the threshold; know both.</div>
   <div class="callout"><strong>Caveats the lecturer added to the slides.</strong> Of asthma: <em>&ldquo;The
   word reversible is useful but needs context. Many patients have a strong reversible component while
   persistent inflammation and remodeling can produce less completely reversible limitation in some
@@ -1681,9 +1673,7 @@ PULMONARY = '''
   patient&rdquo;</em>. The slides&rsquo; figures and labels are still what the questions use.
   <strong>Slide slips:</strong> slide 95 prints the exudate protein cut-off as &ldquo;&gt;0.5mg/dl&rdquo;; the lecturer corrected it
   in the recording: it is the pleural-to-serum protein <b>ratio</b> above one half, <em>&ldquo;not simply a
-  protein one half milligram per deciliter&rdquo;</em> [part 2, 48:59]. And slide 109 prints
-  &ldquo;Staph pneumoniae (MRSA)&rdquo;, which the lecturer read as <i>Staphylococcus aureus</i>, including MRSA
-  (methicillin-resistant <i>Staphylococcus aureus</i>) [part 2, 69:07]; no question uses that line.</div>
+  protein one half milligram per deciliter&rdquo;</em> [part 2, 48:59].</div>
 
   <h3 class="sub" id="l9-anatomy">9.1 &middot; Objectives a &amp; b &mdash; Anatomy and function of the pulmonary system</h3>
   <p><b>Pulmonary circulation</b> (slide 3): <b>deoxygenated blood</b> leaves the right ventricle by the
@@ -1791,10 +1781,10 @@ PULMONARY = '''
             "Lecture 9 &middot; Slide 12") + '''
 
   <h3 class="sub" id="l9-ph">9.4 &middot; Objective d.2 &mdash; Pulmonary hypertension</h3>
-  <p>The normal pulmonary circulation is high flow at low pressure (mean about 15 mmHg). The slide
-  defines pulmonary hypertension as a <b>sustained pulmonary arterial pressure &gt; 30 mmHg</b> (slide 20;
-  see the conflict note in section 9.0: the lecturer gave the current definition, a resting mean
-  &gt; 20 mmHg measured by right heart catheterization).</p>
+  <p>The normal pulmonary circulation is high flow at low pressure (mean about 15 mmHg). Pulmonary
+  hypertension is a <b>mean pulmonary arterial pressure at rest &gt; 20 mmHg</b> (slide 20). The lecturer
+  added that it <em>&ldquo;has to be measured by right heart catheterization&rdquo;</em> [part 1, 33:14]
+  (said in the recording, not on a slide).</p>
   <table>
     <tr><th>Type (slide 21)</th><th>Features</th></tr>
     <tr><td><b>Idiopathic</b></td><td>Cause unknown; <b>rapidly progressive</b>; more common in
@@ -1812,8 +1802,7 @@ PULMONARY = '''
   </table>
   <p><b>Pathogenesis</b> (slide 23): chronic exposure to the disease process changes the arterial lumen.
   The walls of the small pulmonary vessels thicken from <b>more muscle mass in the media</b> (local tissue
-  hypoxia, acidosis); the <b>intima becomes fibrotic</b>; and sustained pulmonary hypertension (mean
-  &gt; 30 mmHg) produces <b>plexiform lesions</b> (a network of blood vessels).</p>
+  hypoxia, acidosis); and the <b>intima becomes fibrotic</b>.</p>
   ''' + fig(D9 + "pulmonary-hypertension.jpg", 800, 948,
             "Normal and narrow pulmonary artery above a heart with an enlarged right ventricle.",
             "A normal against a <b>narrow pulmonary artery</b>; the right ventricle pumping into it is "
@@ -2015,9 +2004,8 @@ PULMONARY = '''
     enters, the lung collapses and the rib cage springs out</td></tr>
     <tr><td><b>Secondary</b></td><td>Preexisting lung disease: asthma, emphysema, cystic fibrosis,
     pneumonia, tuberculosis</td><td>A complication of the disease, perhaps rupture of a cyst or bleb</td></tr>
-    <tr><td><b>Tension</b></td><td>Traumatic, penetrating or nonpenetrating (slide 89). The lecturer added
-    that it can also arise without trauma: a spontaneous or procedure-related pneumothorax becomes tension
-    if air enters and cannot leave [part 2, 38:51]</td><td>Air <b>enters but cannot
+    <tr><td><b>Tension</b></td><td>A pneumothorax leading to <b>trapped air and increased pressure</b>;
+    results from penetrating or nonpenetrating injury (slide 89)</td><td>Air <b>enters but cannot
     escape during expiration</b>, so pressure builds; the same-side lung collapses and the mediastinum is
     forced to the opposite side, <b>reducing venous return and cardiac output</b></td></tr>
   </table>
@@ -2093,8 +2081,7 @@ PULMONARY = '''
     <li><b>Hospital-acquired</b> (and ventilator-associated): early onset (first 4 hospital days) tends to be
     antibiotic-susceptible bacteria; <b>late onset is more often multidrug-resistant</b>, with greater
     morbidity and mortality; aerobic gram-negative bacilli (<i>Pseudomonas aeruginosa</i>, <i>E. coli</i>,
-    <i>K. pneumoniae</i>, <i>Acinetobacter</i>), MRSA (methicillin-resistant <i>Staphylococcus aureus</i>;
-    see the slip noted in section 9.0), <i>H. influenzae</i>.</li>
+    <i>K. pneumoniae</i>, <i>Acinetobacter</i>), <i>S. aureus</i>, <i>H. influenzae</i>.</li>
   </ul>
 
   <h3 class="sub" id="l9-asthma">9.8 &middot; Objective d.6 &mdash; Asthma</h3>

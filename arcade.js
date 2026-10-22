@@ -10156,7 +10156,7 @@ var DEMO_DECKS = [
       ["What is the normal mean pulmonary arterial pressure?", "About 15 mmHg"],
       ["How does chronic hypoxic lung disease raise pulmonary resistance?", "Hypoxic vasoconstriction of the pulmonary arteries"],
       ["How does mitral stenosis cause pulmonary hypertension?", "It raises left atrial pressure"],
-      ["Which lesions follow sustained pulmonary hypertension?", "Plexiform lesions"],
+      ["What defines pulmonary hypertension?", "Mean pulmonary arterial pressure at rest above 20 mmHg"],
       ["Which lung cancer doubles fastest?", "Small cell carcinoma, in about 33 days"],
       ["Which lung cancer is most common?", "Adenocarcinoma, 35 to 40% of cases"],
       ["Why is squamous cell lung cancer found earlier?", "It is central, so sputum cytology can show it"],
