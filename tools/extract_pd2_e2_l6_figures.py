@@ -23,7 +23,8 @@ LEFT OUT, and why:
       individual account; every fact on it is in the slide's own text
   45  (second picture) a small labeled waveform key that repeats the table beside it
 
-QUIZ PICTURES (pd2-exam-2-quiz-images/l6-*.jpg) are cropped so the printed name and
+QUIZ PICTURES (pd2-exam-2-quiz-images/l6-fig-NN.jpg, numbered in the fixed order of QUIZ
+below; a quiz picture's file name never states its answer) are cropped so the printed name and
 caption do not answer the question: the "Normal"/"Clubbed" titles (slide 26), the panel
 title and definition (slide 32), the deformity names and definitions (slides 36-38). They
 are enlarged 2x because the deck's copies are small.
@@ -118,13 +119,13 @@ FIGURES = [
 
 # (slide, md5 prefix, quiz file, crop box in source pixels)
 QUIZ = [
- (26, "b71115", "l6-clubbing.jpg", (0, 22, 354, 218)),
- (32, "5637f3", "l6-cheyne-stokes.jpg", (20, 590, 412, 760)),
- (36, "2ad61a", "l6-barrel-chest.jpg", (0, 0, 282, 185)),
- (37, "d9e80c", "l6-funnel-chest.jpg", (0, 0, 244, 128)),
- (37, "0b6a0f", "l6-pigeon-chest.jpg", (0, 0, 245, 156)),
- (38, "b01ff7", "l6-flail-chest.jpg", (0, 0, 282, 122)),
- (43, "b86d8d", "l6-excursion.jpg", None),
+ (26, "b71115", "l6-fig-01.jpg", (0, 22, 354, 218)),
+ (32, "5637f3", "l6-fig-02.jpg", (20, 590, 412, 760)),
+ (36, "2ad61a", "l6-fig-03.jpg", (0, 0, 282, 185)),
+ (37, "d9e80c", "l6-fig-04.jpg", (0, 0, 244, 128)),
+ (37, "0b6a0f", "l6-fig-05.jpg", (0, 0, 245, 156)),
+ (38, "b01ff7", "l6-fig-06.jpg", (0, 0, 282, 122)),
+ (43, "b86d8d", "l6-fig-07.jpg", None),
 ]
 
 MAX_W = 760

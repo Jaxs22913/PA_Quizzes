@@ -44,13 +44,13 @@ IO_G = "Demonstrate proper clinical skills for a complete and focused pulmonary 
 IMG = "pd2-exam-2-quiz-images/"
 # picture -> the slide it was cropped from (tools/extract_pd2_e2_l6_figures.py)
 IMG_SLIDE = {
-    "l6-clubbing.jpg": 26,
-    "l6-cheyne-stokes.jpg": 32,
-    "l6-barrel-chest.jpg": 36,
-    "l6-funnel-chest.jpg": 37,
-    "l6-pigeon-chest.jpg": 37,
-    "l6-flail-chest.jpg": 38,
-    "l6-excursion.jpg": 43,
+    "l6-fig-01.jpg": 26,
+    "l6-fig-02.jpg": 32,
+    "l6-fig-03.jpg": 36,
+    "l6-fig-04.jpg": 37,
+    "l6-fig-05.jpg": 37,
+    "l6-fig-06.jpg": 38,
+    "l6-fig-07.jpg": 43,
 }
 
 
@@ -685,7 +685,7 @@ Q("Clubbing", IO_C, "etiology",
    ("Pleural effusion",
     "A pleural effusion alters percussion and breath sounds, not the nails; clubbing is linked to lung cancer among others.",
     "competing diagnosis")],
-  c(26), img="l6-clubbing.jpg",
+  c(26), img="l6-fig-01.jpg",
   alt="Two fingertips side by side in profile, each crossed by two measurement lines; the fingertip on the right has a bulbous, swollen nail base."),
 
 # ======================================================== d. dyspnea: sudden against gradual or intermittent (slides 16-17)
