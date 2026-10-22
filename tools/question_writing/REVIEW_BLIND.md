@@ -31,6 +31,10 @@ An item's evidence is ONLY the slides listed in its `evidence_slides` (the cited
 There is no key, no explanation and no misconception note for any option. Do not look for them, and do not
 browse the export directory or `~/.cache/pa-quizzes` for anything but the pictures listed in `evidence_images`.
 
+`stem_image` (present only when the page shows a picture above the stem, e.g. "this chest film") is the absolute
+path of that picture, copied under a neutral name. Open it with the Read tool FIRST: it is part of the question,
+not evidence, and an item that refers to a picture cannot be answered without it.
+
 `evidence_images` (present only when an evidence slide has pictures worth reading) maps `"<deck file>|<slide>"` to
 absolute image paths. Open them with the Read tool; each is one picture from that slide. Pictures under ~8 KB
 or 64x64 pixels (decorative) are not listed, and a few formats (some WMF/EMF) cannot be converted and are not

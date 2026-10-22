@@ -150,6 +150,10 @@ def check_file(slug, strict_stale=False, data=None):
         ids.add(c["id"])
         if c["u"] not in us:
             errs.append(w + ": unknown unit " + c["u"])
+        elif us[c["u"]]["doc"] != c["doc"] or c["a"] not in us[c["u"]]["anchors"]:
+            # unit numbers run across every page of the exam: a page added earlier in the order shifts them all
+            errs.append(w + ": unit %s is %s, not this card's section %s#%s (re-attach by page + anchor)"
+                        % (c["u"], us[c["u"]]["doc"], c["doc"], c["a"]))
         elif c.get("h") != us[c["u"]]["h"]:
             (errs if strict_stale else warns).append(w + ": stale (its guide section changed since it was written)")
         if c["doc"] not in anchors:
