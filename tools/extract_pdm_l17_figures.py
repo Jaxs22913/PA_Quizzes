@@ -111,7 +111,7 @@ FIGS = [
  (57, 583, "l17-sagittal-cta-mri", "G", {}),
  (58, 591, "l17-ct-anatomy-key", "G", {}),
  (59, 596, "l17-ct-apices", "G", {}),
- (61, 608, "l17-vq-ventilation-perfusion", "QG", {"stack": [(0, 0, 492, 351), (113, 363, 492, 739)]}),
+ (61, 608, "l17-vq-ventilation-perfusion", "G", {"stack": [(0, 0, 492, 351), (113, 363, 492, 739)]}),
  (61, 608, "l17-cta-clot", "QG", {"crop": (0, 752, 492, 1090)}),
  (63, 626, "l17-vq-normal", "G", {}),
  (67, 650, "l17-mri-lung-mass", "G", {}),
@@ -132,7 +132,7 @@ FIGS = [
  (82, 754, "l17-edema-cxr-unlabeled", "Q", {"masks": [
      ((28, 195, 145, 265), "blur"), ((198, 215, 390, 280), "blur"), ((222, 290, 412, 320), "blur"),
      ((108, 436, 530, 470), "blur")]}),
- (83, 762, "l17-edema-ct", "QG", {}),
+ (83, 762, "l17-edema-ct", "G", {}),
  (84, 769, "l17-pneumothorax-cxr", "G", {}),
  (84, 769, "l17-pneumothorax-cxr-outlined", "Q", {"masks": [((55, 28, 410, 118), "sample")]}),
  (85, 776, "l17-pneumothorax-ct", "G", {}),

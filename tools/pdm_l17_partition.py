@@ -30,7 +30,7 @@ posteroanterior view; the one-third/two-thirds rule; the costophrenic angles; th
 inferior to the angiogram; Kerley B lines; recognizing interstitial lung disease. Each cue group is
 carried by EACH set where the pool has two or more items for it, otherwise by one of the sets.
 De-emphasis: reading a ventilation/perfusion scan ("Are you going to be reading that? No.") -> the
-mismatch picture is banned; the order a scan is read in ("Are you gonna get that deep into this? No.")
+mismatch-reading item was removed; the order a scan is read in ("Are you gonna get that deep into this? No.")
 and the kinds of pneumonia ("I don't want you to get into the minutia") were never written.
 
 Selection is swap-based local search, as on the Exam 3 builds. Target under 10% gameable per set.
@@ -46,9 +46,7 @@ from pdm_l17_pool_a import POOL_A, SRC, IOA, IOB, IOC, IOD, IOE
 from pdm_l17_pool_b import POOL_B
 from _option_order import ordered_kind
 
-BAN_STEMS = [
-    "A 59-year-old has this nuclear study: panel A",   # reading a ventilation/perfusion scan: "No."
-]
+BAN_STEMS = []   # the ventilation/perfusion mismatch-reading item was removed from pool B instead
 POOL = [q for q in POOL_A + POOL_B if not any(q["q"].startswith(b) for b in BAN_STEMS)]
 assert len(POOL) == len(POOL_A) + len(POOL_B) - len(BAN_STEMS), "a banned stem was not found"
 SEED, NOPT, BAR, TARGET, PER_SET = 20261020, 4, 0.35, 0.10, 30
@@ -93,7 +91,7 @@ GROUPS = [
     ("computed tomography basics", _tp("Computed tomography basics"), 1, 2),
     ("contrast", _tp("Contrast"), 1, 2),
     ("nuclear scans", _tp("Positron emission and single-photon scans"), 1, 1),
-    ("ventilation/perfusion", _tp("Ventilation/perfusion scan"), 1, 1),
+    ("ventilation/perfusion", _tp("Ventilation/perfusion scan"), 1, 2),
     ("angiogram", _tp("Computed tomography angiogram"), 1, 2),
     ("magnetic resonance", _tp("Magnetic resonance imaging"), 1, 2),
     ("pneumonia", _tp("Pneumonia"), 1, 1),
@@ -117,6 +115,7 @@ CLUSTERS = [
               "A 49-year-old man asks how a ventilation/perfusion")),
     (1, stems("A 48-year-old woman has sudden pleuritic", "A 49-year-old man asks how a ventilation/perfusion")),
     (1, stems("A 66-year-old man asks about the risks", "A 58-year-old woman needs a procedure guided")),
+    (1, stems("A 57-year-old woman is having a ventilation/perfusion", "A 54-year-old woman is having the ventilation half")),
     (1, stems("A 66-year-old man asks about the risks", "A 26-year-old woman needs a chest radiograph")),
     (1, stems("A 51-year-old's chest computed tomography report uses", "A 60-year-old's transverse computed",
               "A 30-year-old has chest trauma")),
@@ -134,7 +133,7 @@ CLUSTERS = [
     (1, stems("A 25-year-old with suspected sinusitis", "A 35-year-old woman probably has a sinus")),
     (1, stems("A 66-year-old with worsening shortness of breath", "A 61-year-old woman may have interstitial")),
     (1, stems("A 58-year-old woman needs a procedure guided", "A 55-year-old man is screened before chest magnetic")),
-    (1, stems("A 47-year-old has had anaphylaxis to shellfish", "A 55-year-old man is screened before chest magnetic")),
+    (1, stems("A 47-year-old had anaphylaxis to shellfish", "A 55-year-old man is screened before chest magnetic")),
     (1, stems("A 52-year-old woman is scheduled for contrast", "A 55-year-old man is screened before chest magnetic")),
     (1, stems("A 26-year-old woman needs a chest radiograph", "A 30-year-old pregnant woman")),
 ]
@@ -161,7 +160,7 @@ ANY = [
     ("rotation, never the tracheal shadow", stems("A 76-year-old woman's posteroanterior film is checked for rotation")),
     ("trachea midline", stems("A 45-year-old's posteroanterior film shows the trachea")),
     ("left hilum higher", stems("A 45-year-old woman's posteroanterior film shows the left hilum")),
-    ("shellfish", stems("A 47-year-old has had anaphylaxis to shellfish")),
+    ("shellfish", stems("A 47-year-old had anaphylaxis to shellfish")),
 ]
 
 
