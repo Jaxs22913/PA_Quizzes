@@ -63,9 +63,11 @@ BODY = '''<!--PD2E2L6-->
   </div>
 
   <h3 class="sub" id="th-signposting">How this lecture signposts</h3>
-  <div class="callout"><p><b>One remark in 90 minutes pointed at a test question</b>, and it was about sputum:
-  copious, foul-smelling sputum goes with cystic fibrosis and bronchiectasis (section 2.2, ★). Nothing was named
-  as off the exam. Both transcripts of the recording were read end to end.</p>
+  <div class="callout"><p><b>Nothing in 90 minutes was named as on, or off, this exam.</b> Both transcripts of the
+  recording were read end to end. The one remark about a question was about her OWN board exam: copious, foul-smelling
+  sputum with cystic fibrosis and bronchiectasis, <em>&ldquo;I&rsquo;ve had that as a board question&rdquo;</em> (section
+  2.2, ★). Treat the seven objectives as evenly weighted, and use the two signals the lecture does give: what she
+  repeated (marked &#9733;) and where the time went (below).</p>
   <p><b>What she skipped, and why.</b> The second half opened with <em>&ldquo;my understanding is that you guys have
   already done &hellip; the lung exam &hellip; So I&rsquo;m not gonna go into like how you set up the patient, maybe
   prep the patient. I have that in here, but I want to get more into like the lung sounds&rdquo;</em> (part 2, 0:00).
@@ -130,9 +132,9 @@ BODY = '''<!--PD2E2L6-->
   [[GRID:lobes-anterior,lobes-right-lateral,lobes-left-lateral,lobes-posterior]]
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Said in lecture &mdash; not on a slide</span>
     <p><b>There is no left middle lobe</b> &mdash; and she told the story of a resident who reported hearing lung
-    sounds there (part 1, 2:50): <em>&ldquo;Your left lung does not have that middle lobe &hellip; a resident one time
-    telling [the] attending that he heard lung sounds in the left middle lobe. How embarrassing, right? Like there is no
-    middle lobe.&rdquo;</em></p>
+    sounds there (part 1, 2:50, both transcripts): <em>&ldquo;Your left lung does not have that middle lobe &hellip; there
+    was a resident one time telling me, [the] attending, that he heard lung sounds in the left middle lobe. How
+    embarrassing, right? Like there is no middle lobe.&rdquo;</em></p>
   </div>
   <h4 class="subsub">The tracheobronchial tree</h4>
   <ul>
@@ -247,12 +249,13 @@ BODY = '''<!--PD2E2L6-->
     <tr><td><b>Copious foul-smelling</b></td><td>Large amounts, with odor</td><td><b>Cystic fibrosis, bronchiectasis</b></td></tr>
   </table>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
-    <p><b>Copious, foul-smelling sputum: cystic fibrosis and bronchiectasis.</b> This is the one line in the lecture she
-    tied to a test question. After pairing the two (&ldquo;they put those two things hand in hand&rdquo;), she
-    added that every patient with cystic fibrosis goes on to bronchiectasis, but not every bronchiectasis is cystic
-    fibrosis, and: <em>&ldquo;I&rsquo;m almost positive I&rsquo;ve had that as a test question&rdquo;</em> (part 1,
-    36:32&ndash;36:40). She had spent several minutes before it on how much sputum her cystic fibrosis patients
-    brought up.</p>
+    <p><b>Copious, foul-smelling sputum: cystic fibrosis and bronchiectasis.</b> The one line in the lecture she tied
+    to an exam question &mdash; her own board exam. She paired the two (&ldquo;they&rsquo;re one and the same&rdquo;),
+    added that <em>&ldquo;all patients with cystic fibrosis&rdquo;</em> go on to bronchiectasis <em>&ldquo;but not all
+    bronchiectasis is cystic fibrosis&rdquo;</em>, and then: <em>&ldquo;I&rsquo;m almost [positive] I&rsquo;ve had that as
+    a board question&rdquo;</em> (part 1, 36:26&ndash;36:41; our transcript has &ldquo;board&rdquo;, Notability&rsquo;s
+    mishears it as &ldquo;fourth&rdquo;). She had spent several minutes before it on how much sputum her cystic fibrosis
+    patients brought up.</p>
   </div>
   <h4 class="subsub">Daytime sleepiness, snoring and disordered sleep</h4>
   <ul>
@@ -281,11 +284,10 @@ BODY = '''<!--PD2E2L6-->
   <p><b>Causes of hemoptysis:</b> <b>bacterial pneumonias, chronic bronchitis, bronchiectasis, pulmonary tuberculosis,
   lung abscess, lung cancer, pulmonary embolism</b>. Asthma, atelectasis and pneumothorax are not on the list.</p>
   <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized</span>
-    <p><b>The 600 mL is a definition, not a waiting period.</b> (part 1, 39:53) <em>&ldquo;It&rsquo;s quantified as over
-    600 mLs in 24 hours. However, if you have a patient and you&rsquo;re in the room and they&rsquo;re just spewing up
-    blood out of their mouth, that&rsquo;s also an emergency. I don&rsquo;t have to wait for 600 mLs to come out,
-    right?&rdquo;</em> She called hemoptysis <em>&ldquo;probably one of the scariest things I&rsquo;ve seen in my
-    life.&rdquo;</em></p>
+    <p><b>The 600 mL is a definition, not a waiting period.</b> (part 1, 39:53, both transcripts) <em>&ldquo;It&rsquo;s
+    quantified as over 600 mLs in 24 hours. However, if you have a patient and you&rsquo;re in the room and they&rsquo;re
+    &hellip; spewing &hellip; blood out of their mouth, that&rsquo;s also an emergency.&rdquo;</em> You do not wait for the
+    600 mL. She called hemoptysis <em>&ldquo;probably one of the scariest things I&rsquo;ve seen in my life.&rdquo;</em></p>
   </div>
   <h4 class="subsub">Clubbing</h4>
   <ul>
@@ -341,6 +343,11 @@ BODY = '''<!--PD2E2L6-->
     sighing, lightheadedness, perioral or extremity tingling</b></td><td>Anxiety may contribute, but <b>medical causes
     must be considered first</b></td></tr>
   </table>
+  <p><b>Pulmonary embolism</b> is sudden, unexplained dyspnea. The history that raises suspicion: prior venous
+  thromboembolism, surgery, <b>recent immobility</b>, cancer, <b>estrogen use</b>, and pregnancy or the postpartum
+  period.</p>
+  <p><b>Hyperventilation</b> &mdash; episodes of air hunger, sighing, lightheadedness and perioral or extremity tingling,
+  at rest or with emotional distress: anxiety may contribute, but <b>consider medical causes first</b>.</p>
   <p><b>What the examination adds</b> for the sudden pair is in sections 2.6 and 2.7: a pneumothorax is hyperresonant
   with decreased or absent fremitus and breath sounds on one side, and the trachea moves only in a tension pneumothorax.
   The gradual group shows up in the chest wall and the sounds: the barrel chest of obstructive disease, the fine crackles
@@ -356,6 +363,11 @@ BODY = '''<!--PD2E2L6-->
   </div>
 
   <h3 class="sub" id="th-adventitious">2.5 &middot; Objective e &mdash; Crackles, wheezes and rhonchi compared</h3>
+  <p><b>Crackles</b> (formerly called rales) are non-musical, discontinuous sounds produced by <b>small airways snapping
+  open on inspiration</b>: deflated small airways abruptly snap open during inspiration. <b>Wheezes</b> are continuous,
+  musical sounds from rapid airflow through bronchial airways narrowed almost to the point of closure. <b>Rhonchi</b>
+  differ from wheezes in two ways: they are <b>lower in pitch</b>, and they <b>may clear with coughing</b> (disappear
+  with a cough), so secretions may be involved.</p>
   <table>
     <tr><th></th><th>Fine crackles</th><th>Coarse crackles</th><th>Wheezes</th><th>Rhonchi</th></tr>
     <tr><td>Character</td><td colspan="2"><b>Non-musical, discontinuous.</b> Formerly called <b>rales</b>. Deflated small
@@ -564,7 +576,8 @@ BODY = '''<!--PD2E2L6-->
   </div>
   <h4 class="subsub">Percussion</h4>
   <p>Percussion establishes whether the underlying tissue is <b>air-filled, fluid-filled or consolidated</b>. <b>It cannot
-  help with deep-seated lesions.</b></p>
+  help with deep-seated lesions.</b> Dullness to percussion over the lung means <b>fluid or solid tissue has replaced the
+  air</b>; healthy lung is resonant.</p>
   <table>
     <tr><th>Note</th><th>Means</th></tr>
     <tr><td><b>Resonant</b></td><td><b>Healthy lung</b></td></tr>
@@ -611,7 +624,8 @@ BODY = '''<!--PD2E2L6-->
   </div>
   <h4 class="subsub">Special techniques: transmitted voice sounds</h4>
   <p>Used when breath sounds are abnormal (bronchovesicular or bronchial where they should not be), over the same locations
-  as palpation, percussion and auscultation.</p>
+  as palpation, percussion and auscultation. When egophony is present, the patient&rsquo;s spoken &ldquo;ee&rdquo;
+  sounds like &ldquo;a&rdquo; through the stethoscope; when it is not, you hear a muffled long E.</p>
   <table>
     <tr><th>Test</th><th>The patient says</th><th>Normal (not present)</th><th>Present (positive)</th></tr>
     <tr><td><b>Egophony</b></td><td>&ldquo;ee&rdquo;</td><td>A <b>muffled long E</b></td><td><b>&ldquo;ee&rdquo; sounds like

@@ -174,7 +174,7 @@ topics = [
  # Condensed from guide section 2 (tools/add_pd2_e2_guide_l6.py) and nothing else.
  {"id": "l6-emphasis", "label": "★ Thorax & Lungs: what the lecture kept coming back to", "color": "#b8860b",
   "rows": [
-    ["★ Copious foul sputum", "Cystic fibrosis or bronchiectasis. The one line tied to a test question ('almost positive I've had that as a test question'). Foul-smelling alone = anaerobic lung abscess."],
+    ["★ Copious foul sputum", "Cystic fibrosis or bronchiectasis. The one line she tied to an exam question, her own board exam ('I've had that as a board question'). Foul-smelling alone = anaerobic lung abscess."],
     ["★ Which way the trachea goes", "Atelectasis PULLS it to the same side (shrinkage). Tension pneumothorax and a large effusion PUSH it to the unaffected side. Pneumonia: midline."],
     ["★ Silent chest", "In asthma, wheezing fades as airways narrow further; minimal air movement. Needs immediate intervention. Quiet is not better."],
     ["★ Stridor is an emergency", "High-pitched, inspiratory, over the neck = upper airway obstruction (larynx, trachea). Immediate intervention."],
@@ -182,7 +182,7 @@ topics = [
     ["★ Aspiration goes right", "Right main bronchus is wider, shorter, more vertical. Said twice, with two cases."],
     ["★ Location makes the breath sound", "Bronchial sounds out at the bases or periphery = consolidation (pneumonia). Same logic as increased fremitus."],
     ["★ Onset narrows the differential", "Sudden vs gradual first. Dyspnea at rest is more worrying. Hyperventilation: anxiety is the last thing you call it."],
-    ["Time on topic", "One test-question remark in 90 minutes, nothing ruled out. About half the time went to the examination itself, the sounds most of all. Patient setup and prep skipped ('you've done the lung exam')."],
+    ["Time on topic", "Nothing named as on or off this exam in 90 minutes. About half the time went to the examination itself, the sounds most of all. Patient setup and prep skipped ('you've done the lung exam')."],
   ]},
 
  {"id": "l6-landmarks", "label": "Thorax Landmarks & Procedures", "color": "#3a5a40",
