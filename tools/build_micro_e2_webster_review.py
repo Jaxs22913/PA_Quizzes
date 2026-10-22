@@ -1365,7 +1365,10 @@ exam &mdash; she was not the one who taught them.</p>
 <div class="callout">
   <p><strong>Next steps:</strong> the <a href="micro-exam-2-study-guide.html">full Exam 2 study
   guide</a> covers all seven lectures, and the <a href="micro-exam-2-cram-sheet.html">cram
-  sheet</a> condenses them.</p>
+  sheet</a> condenses them. To test yourself on exactly this review, the two
+  <a href="micro-exam-2-webster-review-quiz.html">Webster Review quizzes</a>
+  (<a href="micro-exam-2-webster-review-quiz-version-2.html">Set 2</a>) give every item above a question
+  in each set, with extra ones on the Know cold items.</p>
 </div>"""
 
 EXTRA_CSS = """
