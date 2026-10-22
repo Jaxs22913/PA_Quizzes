@@ -18,12 +18,21 @@ SOURCES
     51-minute recording of 2026-09-15, read in TWO transcriptions (ours and
     Notability's) and cross-examined. Slide wins on facts; the recording
     decides emphasis and supplies the explanations the slides only assert.
+  Lecture 8: "Immunity_Lecture_Recorded.pptx" (77 slides), a narrated deck by
+    Matthew Ward (19 October 2026); every slide carries its own clip, transcribed
+    slide by slide (118 minutes). The narration decides emphasis only.
+  Lecture 9: no deck was posted. "9. Pulmonary Pathophysiology - Ward 2026
+    (rebuilt from recording).pptx" (109 slides) is Jaxon's rebuild from the
+    two-part lecture video of 20 October 2026; the transcript decides emphasis.
+    Ward revised slides 20, 21, 23, 89 and 109 to match the video (22 October 2026).
 
 US spelling throughout (us_spelling); the io-box is the syllabus verbatim.
 """
 
 L6 = "6. Cardiac Pathophysiology for posting.pptx"
 L7 = "SV Vascular Pathophys I Fall 2026.pptx"
+L8 = "Immunity_Lecture_Recorded.pptx"
+L9 = "9. Pulmonary Pathophysiology - Ward 2026 (rebuilt from recording).pptx"
 
 
 def fig(src, w, h, alt, cap, cite):
@@ -63,8 +72,42 @@ TOC = '''<nav class="toc">
   <a href="#l7-veins">7.10 Objective c &mdash; Veins and thrombosis</a>
 </nav>'''
 
+# Lectures 8-9 are spliced into the live guide by add_cp_e2_guide_l8_l9.py (the HTML now carries
+# site-wide edits made after build_cp_e2_guide.py ran, so it is never rebuilt from scratch).
+TOC_L8_L9 = '''  <a class="top-link" href="#immunity">8 &middot; Immunity</a>
+  <a href="#l8-narration">8.0 What the narration adds</a>
+  <a href="#l8-processes">8.1 Objectives a &amp; b &mdash; Machinery and processes</a>
+  <a href="#l8-categories">8.2 Objectives c &amp; d &mdash; Acquired, innate, natural, artificial</a>
+  <a href="#l8-cells">8.3 Objective e &mdash; Blood cells in immunity</a>
+  <a href="#l8-antigens">8.4 Objectives f &amp; g &mdash; Antigens</a>
+  <a href="#l8-response">8.5 Objective h &mdash; Primary and secondary response</a>
+  <a href="#l8-bcells">8.6 Objective i &mdash; B cells and plasma cells</a>
+  <a href="#l8-antibodies">8.7 Objectives j &amp; k &mdash; Antibodies and their structure</a>
+  <a href="#l8-functions">8.8 Objective l &mdash; Antibody functions</a>
+  <a href="#l8-tcells">8.9 Objectives m&ndash;p &mdash; T cells and cellular immunity</a>
+  <a href="#l8-hypersensitivity">8.10 Objectives q &amp; r &mdash; Hypersensitivity</a>
+  <a href="#l8-complement">8.11 Objective s &mdash; Complement</a>
+  <a href="#l8-autoimmunity">8.12 Objectives t &amp; u &mdash; Autoimmunity</a>
+  <a href="#l8-immunodeficiency">8.13 Objectives v &amp; w &mdash; Immunodeficiency and age</a>
+  <a class="top-link" href="#pulmonary">9 &middot; Pulmonary Pathophysiology</a>
+  <a href="#l9-recording">9.0 What the lecture adds</a>
+  <a href="#l9-anatomy">9.1 Objectives a &amp; b &mdash; Anatomy and function</a>
+  <a href="#l9-molecular">9.2 Objective c &mdash; Molecular mechanisms</a>
+  <a href="#l9-arf">9.3 Objective d.1 &mdash; Acute respiratory failure</a>
+  <a href="#l9-ph">9.4 Objective d.2 &mdash; Pulmonary hypertension</a>
+  <a href="#l9-malignancy">9.5 Objective d.3 &mdash; Pulmonary malignancies</a>
+  <a href="#l9-obstructive">9.6 Objective d.4 &mdash; Obstructive diseases</a>
+  <a href="#l9-restrictive">9.7 Objective d.5 &mdash; Restrictive diseases</a>
+  <a href="#l9-asthma">9.8 Objective d.6 &mdash; Asthma</a>
+  <a href="#l9-edema">9.9 Objective d.7 &mdash; Pulmonary edema</a>
+  <a href="#l9-pe">9.10 Objective d.8 &mdash; Pulmonary embolism</a>
+  <a href="#l9-cor">9.11 Objective d.9 &mdash; Cor pulmonale</a>
+'''
+
 D6 = "cp-exam-2-l6-images/"
 D7 = "cp-exam-2-l7-images/"
+D8 = "cp-exam-2-l8-images/"
+D9 = "cp-exam-2-l9-images/"
 
 CARDIAC = '''
 <section class="deck" id="cardiac">
@@ -1011,6 +1054,1112 @@ VASCULAR = '''
 '''
 
 
+IMMUNITY = '''
+<section class="deck" id="immunity">
+  <h2 class="deck-title">8 &middot; Immunity</h2>
+  <p class="lecturer">Lecture 8 &middot; 19 October 2026 &middot; a narrated deck (one recorded clip per slide)
+  by Matthew Ward, DMSc, MBA, PA-C (deck title slide: &ldquo;Lectured Prepared by: Matthew Ward, DMSc,
+  MBA, PA-C&rdquo;).</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol type="a">
+      <li>Describe the molecular mechanisms involved in immune processes</li>
+      <li>Compare and contrast the various types of immunological processes</li>
+      <li>Compare and contrast acquired and innate immunity</li>
+      <li>Compare and contrast natural and artificial immunity</li>
+      <li>Compare and contrast the various types of blood cells and their roles in immunity</li>
+      <li>Define the function and specific types of antigens</li>
+      <li>Describe the antigens&rsquo; ability to promote an immune response</li>
+      <li>Compare and contrast primary and secondary immune response by the body</li>
+      <li>Describe B lymphocyte and its metamorphosis into plasma cells</li>
+      <li>Define antibodies (immunoglobulins)</li>
+      <li>Compare and contrast the morphology of the various types of antibodies</li>
+      <li>Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens</li>
+      <li>Describe the process known as cellular immunity</li>
+      <li>Describe T-lymphocytes</li>
+      <li>Compare and contrast the various subtypes and various functions of T lymphocytes</li>
+      <li>Compare and contrast the various mechanisms that T lymphocytes destroy antigens</li>
+      <li>Define the concept of hypersensitivity</li>
+      <li>Compare and contrast the types of hypersensitivity reactions</li>
+      <li>Describe the function of the complement system</li>
+      <li>Define autoimmunity</li>
+      <li>Compare and contrast examples of autoimmune diseases</li>
+      <li>Compare and contrast primary and secondary immunodeficiency including the genetic basis</li>
+      <li>Describe the effect of aging on the immune system</li>
+    </ol>
+  </div>
+  <div class="callout"><strong>The deck and the syllabus list the objectives differently.</strong> The
+  deck&rsquo;s own objectives slides (2&ndash;3) number them 1&ndash;24 with no 8 or 13, and word several
+  differently (&ldquo;acquired and artificially immunity&rdquo;, &ldquo;age affect on the immune
+  system&rdquo;). The list above is the syllabus verbatim. Two syllabus objectives have no slide of their
+  own: <b>(t) define autoimmunity</b> and <b>(u) examples of autoimmune diseases</b>. Section 8.12
+  collects everything the deck does say about them.</div>
+
+  <h3 class="sub" id="l8-narration">8.0 &middot; What the narration adds</h3>
+  <p>Every slide carries its own recorded narration (118 minutes in all, transcribed slide by slide).
+  There was no second recording to cross-check against. The narration sets two things here: which
+  topics get the most questions (by the minutes spent on each slide) and the stars below. Every fact in
+  this section comes from the slides themselves.</p>
+  <table>
+    <tr><th>Where the minutes went</th><th>Min</th></tr>
+    <tr><td>Blood cells in immunity (slides 14&ndash;21)</td><td>16.2</td></tr>
+    <tr><td>Antibody functions, agglutination to opsonization (slides 47&ndash;59)</td><td>14.4</td></tr>
+    <tr><td>Hypersensitivity (slides 60&ndash;65)</td><td>12.2</td></tr>
+    <tr><td>Complement (slides 66&ndash;75)</td><td>11.2</td></tr>
+    <tr><td>T cells and cellular immunity (slides 24&ndash;25, 30&ndash;34)</td><td>10.9</td></tr>
+    <tr><td>Antibody classes (slides 44&ndash;46; slide 44 alone was 4.3 minutes, the longest slide)</td><td>7.9</td></tr>
+    <tr><td>Antibody structure (slides 39&ndash;43)</td><td>7.6</td></tr>
+    <tr><td>Immunodeficiency and aging (slides 76&ndash;77)</td><td>6.7</td></tr>
+  </table>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; said in the narration</span>
+  <table>
+    <tr><th>Said</th><th>What it points at</th></tr>
+    <tr><td><em>&ldquo;To help remember CD4 versus CD8, CD4, <mark class="prof-highlight">there&rsquo;s four
+    letters in help. So CD4 is our helper cells</mark> and cytotoxic would then be CD8.&rdquo;</em>
+    (slide 25); <em>&ldquo;When you mentioned CD4, think helper T cells.&rdquo;</em> (slide 30)</td>
+    <td>The CD4 helper / CD8 cytotoxic split, and which presenting molecule each reads (section 8.9).</td></tr>
+    <tr><td><em>&ldquo;The thymus starts with a T, so think <mark class="prof-highlight">T cells,
+    thymus</mark>.&rdquo;</em> (slide 19); <em>&ldquo;Baso B blood and mast cells are in
+    tissue.&rdquo;</em> (slide 15)</td><td>Two memory hooks for section 8.3.</td></tr>
+    <tr><td><em>&ldquo;So <mark class="prof-highlight">secondary response is usually faster, larger</mark>,
+    quicker response than primary&hellip; IgM is primary and usually the first one. And IgG commonly
+    dominates the systemic secondary response.&rdquo;</em> (slide 36)</td><td>Section 8.5 and the graph on slide 37.</td></tr>
+    <tr><td><em>&ldquo;So <mark class="prof-highlight">IgG is how maternal immunity is passed to babies in
+    the womb</mark>.&rdquo;</em> (slide 44)</td><td>IgG crosses the placenta: natural passive immunity
+    (sections 8.2 and 8.7).</td></tr>
+    <tr><td><em>&ldquo;If you&rsquo;re measuring immunoglobulin levels and there&rsquo;s a high IgM present,
+    what does that suggest? <mark class="prof-highlight">This is the first time that that person&rsquo;s
+    ever been exposed</mark> to that illness. Whereas if IgM is low and IgG is high, it could suggest that
+    they&rsquo;ve already been exposed prior.&rdquo;</em> (slide 46)</td><td>Reading the primary/secondary pattern from the classes
+    (section 8.5).</td></tr>
+    <tr><td><em>&ldquo;It also makes sense why <mark class="prof-highlight">O is the universal
+    donor</mark>.&rdquo;</em> (slide 49)</td><td>Group O red cells carry neither A nor B antigen
+    (section 8.8).</td></tr>
+    <tr><td><em>&ldquo;Just keep in mind, <mark class="prof-highlight">neutralization does not mean
+    necessarily the particle is being destroyed</mark>.&rdquo;</em> (slide 52)</td><td>Neutralization blocks
+    without destroying (section 8.8).</td></tr>
+    <tr><td><em>&ldquo;They&rsquo;re organized by the immune mechanism that is responsible rather than by how
+    severe the reaction is&hellip; <mark class="prof-highlight">The numbers identify these mechanisms, so
+    it&rsquo;s not a scale</mark>, it&rsquo;s not the severity&hellip; those are the main things you
+    should be keeping in mind between the types.&rdquo;</em> (slide 60)</td><td>Hypersensitivity types I&ndash;IV (section 8.10).</td></tr>
+    <tr><td><em>&ldquo;One small signal could cause a major response&hellip; So <mark class="prof-highlight">that&rsquo;s
+    why it&rsquo;s important to know the pathways</mark>.&rdquo;</em> (slide 66)</td><td>The three complement
+    pathways converging on C3 (section 8.11).</td></tr>
+    <tr><td><em>&ldquo;Just remember, <mark class="prof-highlight">cell lysis is one possible
+    outcome</mark>&hellip; just because you&rsquo;re not seeing lysis does not mean complement has not been
+    activated.&rdquo;</em> (slide 74)</td><td>Complement also opsonizes and inflames (section 8.11).</td></tr>
+  </table>
+  </div>
+  <div class="callout"><strong>Left out on purpose.</strong> The last line of slide 62 is about treating
+  anaphylaxis; this course is mechanism, not management, so it is not taught here. The narration also
+  names a few specific genes and associated infections that no slide shows; under the slides-only rule
+  they are not used. <strong>Two transcription slips, corrected by the slides:</strong>
+  the transcript of slide 44 writes &ldquo;IgG&rdquo; where the slide (and the lecturer&rsquo;s meaning)
+  is <b>IgE</b> binding mast cells and causing anaphylaxis, and on slide 60 the lecturer corrects himself
+  from &ldquo;IgG or IgE&rdquo; to <b>IgE</b> for type I.</div>
+
+  <h3 class="sub" id="l8-processes">8.1 &middot; Objectives a &amp; b &mdash; The machinery and the processes of immunity</h3>
+  <h4 class="subsub">The lymphatic system (slides 4&ndash;8)</h4>
+  <p>The labeled lymphatic system: <b>tonsils, thymus gland, spleen, appendix</b>, lymph vessels of the
+  chest and abdomen, the <b>thoracic duct</b> and the <b>right lymphatic duct</b>, and lymph nodes of the
+  neck, axilla, groin and behind the knee. T lymphocytes are processed in the thymus (slide 19).</p>
+  ''' + fig(D8 + "lymphatic-capillary.jpg", 586, 433,
+            "Lymphatic capillary with overlapping endothelial cells, interstitial fluid entering between them, open and closed valves, anchoring fibers and the direction of flow.",
+            "The lymphatic capillary. <b>Overlapping endothelial cells</b> act as one-way valves: "
+            "interstitial fluid enters where their edges part (<b>valve open</b>) and cannot leave (<b>valve "
+            "closed</b>). Anchoring fibers tether the wall to the tissue.",
+            "Lecture 8 &middot; Slide 7") + '''
+  <p>Larger lymphatic vessels have <b>smooth muscle and internal valves</b>. There is no central pump:
+  <b>skeletal muscle movement, pressure changes in the thorax during breathing and the pulsations of
+  adjacent arteries</b> propel lymph, and physical activity or passive movement keeps it flowing
+  (slide 8).</p>
+  <h4 class="subsub">Immune response, immunity and its three functions (slide 9)</h4>
+  <p>The <b>immune response</b> is the cellular defense reactions of the body that protect against threats.
+  <b>Immunity</b> is a state of protection, with three functions:</p>
+  <table>
+    <tr><th>Function</th><th>Meaning</th></tr>
+    <tr><td><b>Defense</b></td><td>Resistance to invaders</td></tr>
+    <tr><td><b>Surveillance</b></td><td>Of self, for mutant or cancerous cells</td></tr>
+    <tr><td><b>Homeostasis</b></td><td>Removing cellular debris</td></tr>
+  </table>
+  <h4 class="subsub">Memory and specificity (slide 10)</h4>
+  <ul>
+    <li><b>Memory:</b> a faster, stronger adaptive response on re-exposure to an antigen.</li>
+    <li><b>Adaptive specificity:</b> B-cell and T-cell receptors recognize particular <b>epitopes</b>.</li>
+    <li><b>Innate receptors</b> recognize patterns shared by groups of organisms.</li>
+  </ul>
+  <h4 class="subsub">Two kinds of immune response (slides 22, 25)</h4>
+  <table>
+    <tr><th></th><th>Humoral immunity</th><th>Cellular (cell-mediated) immunity</th></tr>
+    <tr><td>Works through</td><td>Antibodies (immunoglobulins)</td><td>T cells</td></tr>
+    <tr><td>Effector</td><td>Plasma cells, transformed from B cells, are the actual antibody-producing
+    cells</td><td>Killer T cells (CD8, cytotoxic) destroy virus-infected, tumor and transplanted cells;
+    perforin release is important</td></tr>
+  </table>
+  <h4 class="subsub">Phagocytosis, step by step (slides 26&ndash;28)</h4>
+  <ol>
+    <li>The microbe <b>adheres</b> to the phagocyte.</li>
+    <li><b>Pseudopods engulf</b> the particle into a phagocytic vesicle, the <b>phagosome</b>.</li>
+    <li>The phagosome <b>fuses with a lysosome</b>: the <b>phagolysosome</b>.</li>
+    <li><b>Acid hydrolase</b> enzymes kill and digest the microbe, leaving a residual body.</li>
+    <li>Indigestible residual material is removed by <b>exocytosis</b>.</li>
+  </ol>
+  ''' + fig(D8 + "phagocytosis.jpg", 800, 528,
+            "A macrophage engulfing bacteria beside a numbered diagram of phagocytosis from adherence to exocytosis.",
+            "<b>1</b> Microbe adheres to the phagocyte. <b>2</b> Pseudopods engulf it into a phagocytic vesicle "
+            "(<b>phagosome</b>). <b>3</b> The vesicle fuses with a lysosome: the <b>phagolysosome</b>. <b>4</b> "
+            "Lysosomal enzymes (acid hydrolases) kill and digest the microbe, leaving a <b>residual body</b>. "
+            "<b>5</b> Indigestible material is removed by <b>exocytosis</b>.",
+            "Lecture 8 &middot; Slide 26") + '''
+
+  <h3 class="sub" id="l8-categories">8.2 &middot; Objectives c &amp; d &mdash; Acquired and innate; natural and artificial</h3>
+  <table>
+    <tr><th>Category (slides 11&ndash;13)</th><th>What it is</th><th>Natural</th><th>Artificial</th></tr>
+    <tr><td><b>Active</b> (acquired)</td><td>Acquired by the body&rsquo;s own processes after exposure to the
+    antigen</td><td>The body comes in contact with the antigen naturally</td><td>Antigen exposure done on
+    purpose: <b>vaccination</b></td></tr>
+    <tr><td><b>Passive</b> (acquired)</td><td>Transfer of <b>preformed antibodies</b> from another source;
+    <b>immediate</b> protection that <b>declines as the transferred antibodies are lost</b></td><td>Maternal
+    <b>IgG through the placenta</b>, <b>IgA in breast milk</b></td><td><b>Tetanus</b> immune globulin,
+    <b>rabies</b> immune globulin</td></tr>
+  </table>
+  <p><b>Innate immunity</b> (slide 13) is the set of defenses that act <b>without prior sensitization</b> to a
+  particular antigen. It recognizes conserved microbial patterns and signs of cell injury, and includes
+  <b>skin and mucosal barriers, phagocytes, complement and interferons</b>. <b>Natural killer cells</b>
+  provide its cytotoxic defense and are approximately <b>5&ndash;15% of circulating lymphocytes</b>. Host
+  characteristics contribute to species-specific resistance.</p>
+  <div class="pearl"><b>Two questions sort every example.</b> Did the person&rsquo;s own body make the
+  response (active) or receive antibodies ready-made (passive)? And did the exposure happen in the course
+  of life (natural) or on purpose (artificial)? A vaccine is active-artificial; maternal IgG is
+  passive-natural; immune globulin is passive-artificial.</div>
+
+  <h3 class="sub" id="l8-cells">8.3 &middot; Objective e &mdash; The blood cells and their roles in immunity</h3>
+  ''' + fig(D8 + "blood-cell-formation.jpg", 400, 300,
+            "Hematopoiesis tree from the hematopoietic stem cell through progenitors to lymphocyte, monocyte, granulocytes, erythrocyte and platelets.",
+            "Formation of blood cells. From the <b>hematopoietic stem cell</b> (HSC) through progenitors: "
+            "the lymphoblast to the <b>lymphocyte</b>, the monoblast to the <b>monocyte</b>, the myeloblast to "
+            "the eosinophil and basophil, the promyelocyte line to the neutrophil, the erythroid line to the erythrocyte, and the megakaryocyte to <b>platelets</b>.",
+            "Lecture 8 &middot; Slide 14") + '''
+  <p><b>The neutrophil line</b> (slide 14): promyelocyte &rarr; myelocyte &rarr;
+  metamyelocyte &rarr; <b>band form</b> &rarr; <b>segmented neutrophil</b>. The band form immediately precedes
+  the segmented neutrophil. On the slide the promyelocyte comes straight from the progenitor, and the myeloblast gives the eosinophil and the basophil. <i>Standard texts start the neutrophil line at the myeloblast too; the exam follows the slide.</i></p>
+  <table>
+    <tr><th>Cell (slides 15&ndash;19)</th><th>Role</th></tr>
+    <tr><td><b>Neutrophil</b> (granulocyte; &ldquo;poly&rdquo;, PMN (polymorphonuclear leukocyte))</td>
+    <td><b>Phagocytosis</b>; the <b>first responders, most numerous</b></td></tr>
+    <tr><td><b>Eosinophil</b> (granulocyte)</td><td><b>Allergic reactions</b> and <b>parasitic
+    invasion</b></td></tr>
+    <tr><td><b>Basophil</b> (granulocyte)</td><td><b>Similar to tissue mast cells</b></td></tr>
+    <tr><td><b>Monocyte / macrophage</b> (agranulocyte)</td><td>Monocytes circulate in blood and enter
+    tissues during inflammation, where tissue signals turn them into <b>macrophages</b>. Some resident
+    macrophages develop before birth and renew locally. Macrophages remove material and coordinate
+    inflammatory responses. A <b>histiocyte</b> is a tissue macrophage.</td></tr>
+    <tr><td><b>B lymphocyte</b> (agranulocyte)</td><td><b>Humoral</b> immunity; becomes the plasma
+    cell</td></tr>
+    <tr><td><b>T lymphocyte</b> (agranulocyte)</td><td><b>Cellular</b> immunity; processed in the
+    <b>thymus</b></td></tr>
+    <tr><td><b>Natural killer cell</b></td><td>Unlike cytotoxic T cells, does <b>not need to recognize a
+    specific antigen</b>; targets tumor cells and protects against a wide variety of infectious
+    microbes</td></tr>
+  </table>
+  ''' + fig(D8 + "granulocytes-agranulocytes.jpg", 800, 510,
+            "Five stained leukocytes around a diagram dividing them into granulocytes and agranulocytes.",
+            "<b>Granulocytes</b> (neutrophil, eosinophil, basophil) above the line; <b>agranulocytes</b> "
+            "(lymphocyte, monocyte) below. On the smear comparison of slide 16, the <b>plasma cell</b> is not a "
+            "normal constituent of peripheral blood and is shown only for comparison.",
+            "Lecture 8 &middot; Slide 17") + '''
+  <h4 class="subsub">Telling the lymphocytes apart (slides 21 and 34)</h4>
+  <table>
+    <tr><th></th><th>T cells</th><th>B cells</th><th>Natural killer cells</th></tr>
+    <tr><td>Origin</td><td colspan="3">All from hematopoietic stem cells</td></tr>
+    <tr><td>Maturation</td><td><b>Thymus</b></td><td><b>Bone marrow</b></td><td>Bone marrow and other
+    tissues</td></tr>
+    <tr><td>Peripheral sites</td><td>Lymph-node paracortex, splenic white pulp, mucosal lymphoid
+    tissue</td><td>Lymph-node follicles, spleen, mucosal lymphoid tissue</td><td>Blood and tissues</td></tr>
+    <tr><td>Immune role</td><td>Adaptive cellular</td><td>Adaptive humoral</td><td>Innate
+    cytotoxic</td></tr>
+    <tr><td>Populations</td><td>CD4 helper, CD8 cytotoxic, regulatory, memory</td><td>Plasma cells, memory
+    B cells</td><td>CD56 bright and CD56 dim</td></tr>
+    <tr><td>Products</td><td>Cytokines such as IL-2 (interleukin-2) and IFN-&gamma; (interferon gamma);
+    cytotoxic granules</td><td>Immunoglobulins from plasma cells; cytokines</td><td>Perforin, granzymes,
+    cytokines</td></tr>
+    <tr><td>Antigen receptor</td><td>T-cell receptor</td><td>Surface immunoglobulin</td><td>Activating and
+    inhibitory innate receptors</td></tr>
+    <tr><td>Memory</td><td>Memory T cells</td><td>Memory B cells</td><td>No conventional B- or T-cell-type
+    memory</td></tr>
+    <tr><td>Markers</td><td><b>CD3</b>; CD4 or CD8 on the major subsets</td><td><b>CD19 and CD20</b> on
+    many B cells</td><td><b>CD56</b>; CD16 on many</td></tr>
+    <tr><td>Surface immunoglobulin</td><td>Absent</td><td>Present; <b>lost with plasma-cell
+    differentiation</b></td><td>Absent</td></tr>
+  </table>
+
+  <h3 class="sub" id="l8-antigens">8.4 &middot; Objectives f &amp; g &mdash; Antigens, and how they start a response</h3>
+  <p>There is no antigen slide as such; these are the deck&rsquo;s antigen facts, gathered.</p>
+  <ul>
+    <li><b>What is recognized:</b> adaptive B-cell and T-cell receptors recognize particular
+    <b>epitopes</b>; innate receptors recognize patterns shared by groups of organisms (slide 10). Each
+    antibody pairs with a compatible antigen shape (slide 40).</li>
+    <li><b>Types of antigen</b> on the antibody-effects diagram (slide 58): <b>soluble toxin molecules</b>,
+    <b>viruses</b> and <b>bacteria</b>; the virus and bacterium carry <b>antigenic determinants</b> on their
+    surface. The type decides what antibody binding achieves (section 8.8).</li>
+    <li><b>Starting a response:</b> exposure to the antigen initiates the <b>antigen-dependent phase</b> of
+    B-cell maturation, in which the B cell differentiates into a plasma cell producing specific antibody
+    (slide 22); the antigen <b>selects</b> the matching B cell from the repertoire and drives its clonal
+    expansion (slide 23).</li>
+    <li><b>Presentation to T cells:</b> helper T cells recognize antigenic peptides presented by major
+    histocompatibility complex <b>class II</b>; cytotoxic T cells recognize peptides on <b>class I</b>
+    (slides 30&ndash;31).</li>
+  </ul>
+
+  <h3 class="sub" id="l8-response">8.5 &middot; Objective h &mdash; Primary and secondary response</h3>
+  <table>
+    <tr><th></th><th>Primary response (slide 35)</th><th>Secondary response (slide 36)</th></tr>
+    <tr><td>When</td><td>After the <b>first</b> exposure to an antigen</td><td>After <b>re-exposure</b></td></tr>
+    <tr><td>Speed and size</td><td>Antibody production develops over days; timing and magnitude depend on
+    the antigen and host</td><td>Memory cells support a generally <b>faster and stronger</b> response</td></tr>
+    <tr><td>Antibody class</td><td>IgM rises first; IgG later and lower</td><td>Class-switched antibodies,
+    <b>often IgG</b>, may reach higher levels and persist longer</td></tr>
+    <tr><td>Memory</td><td><b>Memory cells develop</b> during this response</td><td>Memory cells drive
+    it</td></tr>
+  </table>
+  ''' + fig(D8 + "primary-secondary-response.jpg", 1100, 597,
+            "Two graphs of antibody amount against days after first and second antigen exposure, with IgM and IgG curves.",
+            "First exposure: <b>IgM</b> peaks first (around day 10), IgG follows lower. Second exposure: "
+            "<b>IgG</b> rises fast and high and stays up; IgM is a small bump. "
+            "&#9733; <mark class=\"prof-highlight\">High IgM suggests a first exposure; low IgM with high IgG "
+            "suggests an earlier one.</mark>",
+            "Lecture 8 &middot; Slide 37") + '''
+
+  <h3 class="sub" id="l8-bcells">8.6 &middot; Objective i &mdash; The B lymphocyte and its metamorphosis into the plasma cell</h3>
+  <p><b>Humoral immunity</b> uses antibodies; <b>B cells are transformed into plasma cells, the actual
+  antibody-producing cells</b> (slide 22). B-cell maturation has two phases:</p>
+  <ol>
+    <li><b>Antigen-independent phase:</b> expression of <b>surface IgM</b>.</li>
+    <li><b>Antigen-dependent phase:</b> differentiation of the B cell into a plasma cell producing specific
+    antibodies. <b>Exposure to the antigen initiates this phase.</b></li>
+  </ol>
+  <p><b>Helper (CD4) T cells</b> support it: helper signals support B-cell differentiation and antibody
+  production, while plasma cells do the secreting (slide 24). B cells mature in the <b>bone marrow</b> and
+  <b>lose surface immunoglobulin</b> when they become plasma cells (slide 34).</p>
+  ''' + fig(D8 + "clonal-selection.jpg", 524, 374,
+            "Antigen selecting one B cell from a repertoire, which divides by clonal expansion into plasma cells secreting antibody and memory cells.",
+            "The antigen <b>selects</b> the one B cell in the repertoire whose receptor fits; it becomes a B "
+            "lymphoblast and divides (<b>clonal expansion</b>) into <b>plasma cells</b> secreting antibody "
+            "molecules and <b>memory cells</b>.",
+            "Lecture 8 &middot; Slide 23") + '''
+
+  <h3 class="sub" id="l8-antibodies">8.7 &middot; Objectives j &amp; k &mdash; Antibodies (immunoglobulins) and their morphology</h3>
+  <p><b>Electrophoresis</b> (slide 38) separates serum proteins in an electric field into <b>albumin</b>
+  (nearest the positive pole) and the <b>alpha, beta and gamma globulin</b> fractions (gamma nearest the
+  negative pole). <b>Immunofixation</b> characterizes immunoglobulin <b>heavy- and light-chain
+  types</b>.</p>
+  <p><b>Immunoglobulins</b> (slide 39) contribute to plasma proteins in variable proportions and are present
+  in <b>blood, tissue fluid and secretions</b>. A basic antibody unit has <b>two heavy chains and two light
+  chains</b>. Light chains are either <b>kappa or lambda</b>; each light chain has a variable and a constant
+  region. The <b>heavy- and light-chain variable regions jointly form the antigen-binding site</b>.</p>
+  <table>
+    <tr><th>Part (slides 41&ndash;43)</th><th>What it is</th></tr>
+    <tr><td>Heavy-chain constant region</td><td><b>Determines the immunoglobulin class</b> (heavy chain
+    &mu;, &delta;, &gamma;, &epsilon; or &alpha;). <b>IgG heavy chains have three constant
+    domains</b>; the number varies by class.</td></tr>
+    <tr><td>Disulfide bonds</td><td>Connect the chains and support the structure</td></tr>
+    <tr><td><b>Fab</b></td><td>The antigen-binding regions and the adjacent constant domains</td></tr>
+    <tr><td><b>Fc</b></td><td>Heavy-chain constant regions involved in <b>effector functions</b>; the
+    complement-binding site sits on CH2</td></tr>
+    <tr><td>Papain cleavage</td><td>Cuts IgG at the hinge into <b>two Fab fragments and the Fc</b></td></tr>
+  </table>
+  ''' + fig(D8 + "antibody-structure.jpg", 985, 750,
+            "Labeled diagram of an antibody: heavy and light chains with variable and constant domains, Fab and Fc fragments, hinge region, disulfide bonds and complement-binding site.",
+            "Two heavy chains (VH, CH1, CH2, CH3) and two light chains (VL, CL) joined by disulfide (SS) "
+            "bonds. The <b>antigen-binding site</b> is where VH meets VL; the <b>Fab fragment</b> is the arm, "
+            "the <b>Fc fragment</b> the stem, joined at the <b>hinge</b>; the <b>complement-binding site</b> "
+            "lies on CH2.",
+            "Lecture 8 &middot; Slide 42") + '''
+  <h4 class="subsub">The five classes (slides 44&ndash;46)</h4>
+  <table>
+    <tr><th>Class</th><th>Approx. share of serum</th><th>Structure</th><th>Where and what</th></tr>
+    <tr><td><b>IgM</b></td><td>5&ndash;10% (80&ndash;170 mg/dL)</td><td>Secreted as a <b>pentamer</b> with a J
+    chain; a monomer on the B-cell surface</td><td>Often the <b>first class secreted</b> in a new response;
+    <b>agglutination</b> (the pentamer places many binding sites on one molecule, linking antigen-bearing
+    particles into clumps) and efficient <b>classical complement activation</b>; B-cell antigen
+    receptor</td></tr>
+    <tr><td><b>IgG</b></td><td><b>75&ndash;80%</b> (700&ndash;1700 mg/dL)</td><td>Monomer; four
+    subclasses</td><td>Serum and tissue fluid; <b>crosses the placenta</b>; prominent in secondary
+    responses; neutralization, opsonization, maternal protection; complement activation varies by
+    subclass</td></tr>
+    <tr><td><b>IgA</b></td><td>10&ndash;15% (170&ndash;280 mg/dL)</td><td>Mainly monomeric in serum;
+    <b>secretory IgA usually a dimer</b> with a J chain and secretory component</td><td>Saliva, tears,
+    colostrum; neutralization and <b>prevention of microbial attachment</b> at mucosal surfaces</td></tr>
+    <tr><td><b>IgD</b></td><td>Less than 1%</td><td>Monomer</td><td>With IgM on many mature naive B cells;
+    part of the B-cell antigen-receptor system</td></tr>
+    <tr><td><b>IgE</b></td><td>Less than 1%</td><td>Monomer binding high-affinity cell receptors</td><td>Bound
+    to <b>mast cells and basophils</b>; immediate allergic reactions including IgE-mediated anaphylaxis;
+    defense against some parasites</td></tr>
+  </table>
+  <p>The serum values are approximate adult comparisons; reference intervals vary by laboratory and
+  method (slide 46).</p>
+  ''' + fig(D8 + "antibody-classes.jpg", 1087, 1234,
+            "Drawings of IgE, IgG and IgD monomers, secretory IgA dimer with J chain and secretory piece, and IgM pentamer with J chain.",
+            "IgE, IgG and IgD are <b>monomers</b>; secretory IgA is a <b>dimer</b> with J chain and secretory "
+            "piece; secreted IgM is a <b>pentamer</b> with a J chain.",
+            "Lecture 8 &middot; Slide 45") + '''
+
+  <h3 class="sub" id="l8-functions">8.8 &middot; Objective l &mdash; What antibodies do, and how they destroy antigens</h3>
+  <table>
+    <tr><th>Function (slides 47&ndash;59)</th><th>Mechanism</th></tr>
+    <tr><td><b>Agglutination</b></td><td>Clumping: varying amounts of immunoglobulin join varying amounts of
+    antigen; <b>if the antigens are on a cell&rsquo;s surface, agglutination occurs</b>. Agglutination is
+    listed as a main function of <b>IgM</b> (slide 46).</td></tr>
+    <tr><td><b>Neutralization</b></td><td>Antibody binding <b>blocks an essential interaction</b> with a host
+    cell: it can prevent viral attachment or entry, or stop a toxin reaching or acting on its target.
+    It limits activity <b>without requiring physical destruction</b>. &#9733;</td></tr>
+    <tr><td><b>Lysis</b></td><td>Destruction of the cell, by incorporation with the <b>complement
+    system</b></td></tr>
+    <tr><td><b>Precipitation</b></td><td>Antibodies <b>cross-link soluble antigens</b> into larger complexes
+    that can become insoluble and precipitate; complex formation may help phagocytes clear them</td></tr>
+    <tr><td><b>Opsonization</b></td><td>Antibody joins antigen on a cell&rsquo;s surface, and this
+    <b>coating facilitates ingestion</b> by a phagocyte</td></tr>
+  </table>
+  <p><b>Orientation matters</b> (slide 56): on an antibody-coated infected cell, the antigen-binding ends
+  hold the cell and the <b>Fc region faces outward</b> to the responding cell. <b>Natural killer cells
+  perform antibody-dependent cellular cytotoxicity</b>: their <b>CD16 binds the Fc region of IgG</b> coating a
+  target cell (slide 32).</p>
+  ''' + fig(D8 + "antibody-functions.jpg", 800, 538,
+            "Six panels: bacterial cell tagged with antibodies, opsonization, neutralization, agglutination, complement fixation and precipitation.",
+            "&ldquo;Produced antibodies bind antigens and stop their destructive behavior in one of several "
+            "ways&rdquo;: tagging, <b>opsonization</b>, <b>neutralization</b>, <b>agglutination</b>, complement "
+            "fixation (lysis) and <b>precipitation</b>. On slide 58 the antigen type decides the effect: a "
+            "soluble <b>toxin</b> is neutralized and precipitated, a <b>virus</b> neutralized and "
+            "agglutinated, a <b>bacterium</b> opsonized.",
+            "Lecture 8 &middot; Slide 59") + '''
+  <h4 class="subsub">ABO red-cell compatibility (slide 49)</h4>
+  <table>
+    <tr><th>Recipient</th><th>Red-cell antigens</th><th>Usual plasma antibodies</th><th>Compatible donor
+    red cells</th></tr>
+    <tr><td>O</td><td>Neither A nor B</td><td>Anti-A and anti-B</td><td>O only</td></tr>
+    <tr><td>A</td><td>A</td><td>Anti-B</td><td>O, A</td></tr>
+    <tr><td>B</td><td>B</td><td>Anti-A</td><td>O, B</td></tr>
+    <tr><td>AB</td><td>A and B</td><td>Neither</td><td>O, A, B, AB</td></tr>
+  </table>
+  <p>Every other pairing agglutinates. This is the ABO red-cell comparison only: Rh status, other antibodies
+  and compatibility testing also matter, and plasma compatibility differs. &#9733; Group O red cells
+  carry neither antigen, which is why the narration calls O the universal donor.</p>
+
+  <h3 class="sub" id="l8-tcells">8.9 &middot; Objectives m&ndash;p &mdash; Cellular immunity and the T lymphocytes</h3>
+  <table>
+    <tr><th>T cell</th><th>Recognizes</th><th>Function</th></tr>
+    <tr><td><b>Helper T cell (CD4)</b> (slides 24, 30)</td><td>Antigenic peptides presented by major
+    histocompatibility complex <b>class II</b>; activation needs appropriate recognition and additional
+    signals</td><td><b>Coordinates</b> cell-mediated and humoral responses through cytokines and cell
+    contact; helper signals support <b>B-cell differentiation and antibody production</b>;
+    <b>IFN-&gamma; (interferon gamma) promotes macrophage activation</b> and antimicrobial activity</td></tr>
+    <tr><td><b>Cytotoxic T cell (CD8)</b> (slides 25, 31)</td><td>Antigenic peptides presented by major
+    histocompatibility complex <b>class I</b></td><td><b>Kills infected or malignant host cells</b>:
+    virus-infected, tumor and transplanted cells; <b>perforin and granzymes trigger target-cell
+    apoptosis</b></td></tr>
+    <tr><td><b>Regulatory T cell</b> (slide 32)</td><td>&mdash;</td><td><b>Limits immune activation and
+    maintains self-tolerance</b>; many are CD4 cells expressing <b>FOXP3</b></td></tr>
+    <tr><td>Memory T cell (slide 34)</td><td>&mdash;</td><td>Carries memory forward</td></tr>
+  </table>
+  <div class="pearl"><b>&#9733; &ldquo;Four letters in help.&rdquo;</b> CD<b>4</b> = <b>help</b>er, reading
+  class II; CD8 = cytotoxic, reading class I (4 &times; 2 = 8 &times; 1). Natural killer cells, the third
+  lymphocyte, need no specific antigen at all, and type IV hypersensitivity can use either CD4 or CD8 T
+  cells (slide 31).</div>
+
+  <h3 class="sub" id="l8-hypersensitivity">8.10 &middot; Objectives q &amp; r &mdash; Hypersensitivity and its four types</h3>
+  <p><b>Hypersensitivity</b> is when immune reactions, either humoral or cellular, <b>result in injury to the
+  body</b> (slide 60). Four types are seen &mdash; and &#9733; <mark class="prof-highlight">the number names a
+  mechanism, not a severity</mark>.</p>
+  <table>
+    <tr><th>Type</th><th>Mechanism</th><th>Examples on the slides</th></tr>
+    <tr><td><b>I</b> &mdash; anaphylactic, immediate (slides 61&ndash;62)</td><td>A previous exposure
+    sensitizes: <b>IgE</b> is produced and becomes <b>fixed on mast cells and basophils</b>. On re-exposure
+    the antigen joins that surface antibody and mediators such as <b>histamine</b> are released.</td>
+    <td>Local allergy (swelling, vasodilation); <b>anaphylaxis</b>, a rapid systemic reaction in which
+    small exposures can cause severe disease: bronchospasm, laryngeal edema, hypotension; shock and skin
+    findings are not required in every case. Triggers: drugs, insect venoms, other allergens.</td></tr>
+    <tr><td><b>II</b> &mdash; cytotoxic, antibody-mediated (slide 63)</td><td><b>IgG or IgM binds antigens
+    on cells or within tissues</b>; injury through phagocytosis, complement or antibody-dependent
+    cellular cytotoxicity. Antibodies can also <b>stimulate or block receptor function</b>.</td>
+    <td><b>ABO incompatibility</b>; anti-GBM (anti-glomerular basement membrane) disease, which can cause
+    glomerulonephritis and pulmonary hemorrhage</td></tr>
+    <tr><td><b>III</b> &mdash; immune complex (slide 64)</td><td>Antigen&ndash;antibody <b>complexes deposit
+    in tissues or vessel walls</b>; complement and recruited inflammatory cells cause the injury</td>
+    <td><b>Arthus reaction</b> (local, previously sensitized person); <b>serum sickness</b> (systemic, circulating
+    complexes); triggers include foreign proteins, drugs, biologic therapies; <b>lupus</b>, immune-complex
+    glomerulonephritis or arthritis</td></tr>
+    <tr><td><b>IV</b> &mdash; cell-mediated, delayed (slide 65)</td><td><b>Sensitized CD4 or CD8 T
+    cells</b>; common delayed reactions develop over <b>24&ndash;72 hours</b>; cytokines recruit and
+    activate inflammatory cells, cytotoxic T cells injure targets directly; persistent stimulation can
+    produce <b>granulomas</b> in particular settings</td><td><b>Contact dermatitis</b>, tuberculosis-related
+    reactions, T-cell-mediated <b>transplant rejection</b></td></tr>
+  </table>
+  <div class="pearl"><b>II versus III is where the binding happens.</b> In type II the antibody binds an
+  antigen that is part of a cell or tissue; in type III antibody and antigen first form a complex, and the
+  complex lodges somewhere to cause the damage.</div>
+
+  <h3 class="sub" id="l8-complement">8.11 &middot; Objective s &mdash; The complement system</h3>
+  <p><b>Complement</b> (slide 66) is a network of circulating and cell-associated proteins and regulators.
+  The <b>liver</b> produces many of the circulating components, many circulate as <b>inactive
+  precursors</b>, and activation starts a <b>regulated cascade</b>. Its major functions (slide 67):</p>
+  <ul>
+    <li><b>Opsonization</b>: particulate antigens are coated with complement proteins (C3b) so phagocytosis
+    happens easily and rapidly.</li>
+    <li><b>Inflammation</b>: complement proteins cause <b>vasodilation</b>, letting more immune cells in, and
+    some are <b>chemotactic</b> for neutrophils and macrophages (slide 69); C3a, C4a and C5a promote the
+    inflammatory response (slide 75).</li>
+    <li><b>The membrane attack complex</b> (slide 68): <b>C5b</b> initiates assembly of the terminal
+    components <b>C6&ndash;C9</b>; the complex forms <b>pores</b> in a susceptible membrane (multiple C9
+    subunits make the channel, slide 73), disrupting <b>ionic and osmotic balance</b>; severe disruption
+    causes <b>lysis</b>.</li>
+  </ul>
+  <table>
+    <tr><th>&#9733; Pathway (slide 70)</th><th>Starts when</th></tr>
+    <tr><td><b>Classical</b></td><td>Commonly, <b>C1 recognizes antigen-bound IgM or IgG</b> (some activation
+    is antibody-independent)</td></tr>
+    <tr><td><b>Lectin</b></td><td>Recognition proteins (mannose-binding lectin) <b>bind microbial
+    carbohydrates</b> and activate associated proteases</td></tr>
+    <tr><td><b>Alternative</b></td><td><b>C3 activation and amplification on permissive surfaces</b>, using
+    factor B, factor D and properdin (slide 71)</td></tr>
+  </table>
+  <p><b>All three pathways converge on C3 activation</b>, then on C5, and C5b leads into the membrane attack
+  complex.</p>
+  ''' + fig(D8 + "complement-pathways.png", 453, 507,
+            "Flow diagram of the lectin, classical and alternative complement pathways converging on C3b, then C5 and the membrane attack complex.",
+            "Lectin (MBL, mannose-binding lectin, with its proteases), classical (C1 &rarr; C4, C2) and "
+            "alternative (C3, factor B, factor D, properdin) each build a <b>C3 convertase</b>; C3b then "
+            "forms the C5 convertase, C5a is released, and <b>C5b + C6&ndash;C9</b> make the membrane attack "
+            "complex.",
+            "Lecture 8 &middot; Slide 71") + '''
+  ''' + fig(D8 + "complement-overview.png", 386, 480,
+            "Overview of complement: classical and alternative pathways cleaving C3 into C3a and C3b, leading to inflammation, opsonization by macrophages and the lytic pathway C5 to C9.",
+            "The three outcomes on one page: <b>promotion of the inflammatory response</b> (C4a, C3a, C5a: "
+            "histamine release, attraction of phagocytes), <b>opsonization</b> (C3b coating for the "
+            "macrophage) and the <b>lytic pathway</b> (C5&ndash;C9). &#9733; Lysis is only one of them.",
+            "Lecture 8 &middot; Slide 75") + '''
+
+  <h3 class="sub" id="l8-autoimmunity">8.12 &middot; Objectives t &amp; u &mdash; Autoimmunity and autoimmune examples</h3>
+  <p>No slide defines autoimmunity or is given to autoimmune disease. What the deck does say:</p>
+  <ul>
+    <li><b>Self-tolerance is actively maintained</b>: regulatory T cells limit immune activation and
+    maintain self-tolerance (slide 32).</li>
+    <li><b>Antibody against self can act two ways</b> in type II hypersensitivity: destroying the cell it
+    binds, or <b>stimulating or blocking a receptor</b> without destroying it (slide 63).</li>
+    <li><b>Examples the deck names by mechanism:</b> anti-GBM (anti-glomerular basement membrane) disease
+    (type II, slide 63); <b>lupus</b> and immune-complex glomerulonephritis or arthritis (type III,
+    slide 64).</li>
+    <li><b>Autoantibodies become more common with age</b>, and clinical findings determine their
+    significance (slide 77).</li>
+  </ul>
+
+  <h3 class="sub" id="l8-immunodeficiency">8.13 &middot; Objectives v &amp; w &mdash; Immunodeficiency, and the effect of age</h3>
+  <table>
+    <tr><th></th><th>Primary immunodeficiency (slide 76)</th><th>Secondary immunodeficiency (slide 77)</th></tr>
+    <tr><td>What</td><td><b>Intrinsic</b> defects in immune development or function, often with a
+    <b>genetic basis</b></td><td><b>Reduced function from disease, medications, malignancy or inadequate
+    nutrition</b></td></tr>
+  </table>
+  <table>
+    <tr><th>Primary disorder (slide 76)</th><th>Defect</th><th>Consequence</th></tr>
+    <tr><td><b>X-linked agammaglobulinemia</b></td><td>Impaired <b>B-cell maturation</b>, very low
+    antibodies</td><td>Recurrent <b>pyogenic bacterial</b> infections</td></tr>
+    <tr><td><b>DiGeorge syndrome</b></td><td>Variable impairment of <b>thymic and T-cell
+    development</b></td><td>&mdash;</td></tr>
+    <tr><td><b>Severe combined immunodeficiency</b></td><td>Profound <b>T-cell dysfunction with impaired
+    B-cell immunity</b></td><td>May present in early infancy or be found by newborn screening</td></tr>
+  </table>
+  <h4 class="subsub">Age (slide 77)</h4>
+  <ul>
+    <li><b>Neonates</b>: immunity still developing, protected by <b>maternal IgG</b> and
+    <b>milk-associated IgA</b>; maternal antibody protection declines at rates that vary by antibody and
+    exposure.</li>
+    <li><b>Older adults</b>: changes in lymphocyte function and repertoire can <b>reduce responses to new
+    antigens</b>; <b>autoantibodies become more common</b>, and clinical findings determine their
+    significance.</li>
+  </ul>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#6e1f2f" onclick="window.openTestYourself('Test yourself — Immunity', TEST_YOURSELF.immunity)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>Immunity_Lecture_Recorded.pptx</em> (narrated deck by Matthew Ward,
+  DMSc, MBA, PA-C, 19 October 2026) and its per-slide narration. Figures are reproduced from the lecture
+  slides and each is cited to its slide.</footer>
+</section>
+'''
+
+PULMONARY = '''
+<section class="deck" id="pulmonary">
+  <h2 class="deck-title">9 &middot; Pulmonary Pathophysiology</h2>
+  <p class="lecturer">Lecture 9 &middot; 20 October 2026 &middot; Matthew Ward, DMSc, MBA, PA-C (title slide:
+  &ldquo;Lecture modified &amp; presented by&rdquo;). No deck was posted. The 109 slides cited here are a
+  rebuild from the two-part lecture video: last year&rsquo;s deck in the order shown, plus the seven
+  slides added this year (44, 51, 59, 64, 82, 98 and 103).</p>
+  <div class="io-box">
+    <h3>Instructional Objectives</h3>
+    <ol type="a">
+      <li>Review the anatomy of the pulmonary system</li>
+      <li>Review the functions of the pulmonary system</li>
+      <li>Describe the molecular mechanisms of pulmonary pathologies</li>
+      <li>Compare and contrast the etiologies and pathophysiological processes of different pulmonary diseases,
+      including:
+        <ol type="1">
+          <li>Acute respiratory failure</li>
+          <li>Pulmonary hypertension</li>
+          <li>Pulmonary malignancies</li>
+          <li>Obstructive pulmonary diseases</li>
+          <li>Restrictive pulmonary diseases</li>
+          <li>Asthma</li>
+          <li>Pulmonary edema</li>
+          <li>Pulmonary embolism</li>
+          <li>Cor pulmonale</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div class="callout"><strong>The deck and the syllabus list the objectives differently.</strong> The
+  deck&rsquo;s objectives slide (slide 2) names five diseases (acute respiratory failure, pulmonary
+  hypertension, malignancies, obstructive and restrictive disease) and adds &ldquo;Briefly describe the PFT
+  changes associated with varies type of obstructive and restrictive pulmonary diseases&rdquo;. The list
+  above is the syllabus verbatim. Three of its diseases have no section of their own in the deck:
+  <b>pulmonary edema</b>, <b>pulmonary embolism</b> and <b>cor pulmonale</b>. Sections 9.9&ndash;9.11
+  gather what the slides say about each.</div>
+
+  <h3 class="sub" id="l9-recording">9.0 &middot; What the lecture adds</h3>
+  <p>The lecture ran 177 minutes in two video parts (1 hour 45 minutes and 1 hour 12 minutes), both
+  transcribed in full and aligned to the slides; no second transcription exists for this video. The
+  questions follow the minutes each slide was on screen:</p>
+  <table>
+    <tr><th>Where the minutes went</th><th>Min</th></tr>
+    <tr><td>Acute respiratory failure (slides 6&ndash;14)</td><td>19.7</td></tr>
+    <tr><td>Asthma (slides 35&ndash;44)</td><td>14.6</td></tr>
+    <tr><td>Pleural effusion (slides 92&ndash;98)</td><td>12.8</td></tr>
+    <tr><td>Emphysema and the obstructive pattern (slides 52&ndash;59)</td><td>12.6</td></tr>
+    <tr><td>Pulmonary hypertension (slides 15&ndash;16, 20&ndash;23)</td><td>11.3</td></tr>
+    <tr><td>Sarcoidosis, hypersensitivity pneumonitis, occupational disease (slides 75&ndash;81)</td><td>9.1</td></tr>
+    <tr><td>Pneumonia (slides 104&ndash;109)</td><td>9.1</td></tr>
+    <tr><td>Pneumothorax; chronic bronchitis</td><td>9.0 each</td></tr>
+    <tr><td>Acute respiratory distress syndrome (slides 83&ndash;85)</td><td>8.7</td></tr>
+  </table>
+  <p>The lecturer narrates in full sentences and rarely flags a point. The few places he did:</p>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Professor emphasized &mdash; stated in the lecture</span>
+  <table>
+    <tr><th>Said</th><th>What it points at</th></tr>
+    <tr><td><em>&ldquo;So, <mark class="prof-highlight">remember the names artery and vein are describing the
+    direction of flow relative to the heart</mark>, not necessarily whether the blood is oxygenated or
+    deoxygenated.&rdquo;</em> [part 1, 1:43]</td><td>Slide 3: the pulmonary trunk and arteries carry
+    deoxygenated blood to the alveoli (section 9.1).</td></tr>
+    <tr><td><em>&ldquo;So <mark class="prof-highlight">the important clinical distinction is whether air,
+    blood, or the membrane or the oxygen source is responsible</mark>.&rdquo;</em> [part 1, 19:21]</td>
+    <td>The five mechanisms of hypoxic respiratory failure on slide 9 (section 9.3).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">The distinction between dead space and shunting is also
+    important</mark> because dead space is ventilation with inadequate perfusion, while shunt is perfusion
+    with inadequate ventilation.&rdquo;</em> [part 1, 23:11]</td><td>Shunt sits under hypoxic failure
+    (slide 9); increased dead space, &ldquo;wasted ventilation&rdquo;, under hypercapnic failure (slide 10).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">The key point is that a larger bronchial lumen is not
+    automatically a healthier bronchus.</mark>&rdquo;</em> [part 1, 1:38:55]</td><td>Bronchiectasis: the
+    dilation comes from destroyed walls, and recovery from a flare does not restore the architecture
+    (section 9.6).</td></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">I&rsquo;ll repeat, a tension pneumothorax is progressively
+    getting worse</mark> that it not only affects our ventilation system but also our circulatory
+    system.&rdquo;</em> [part 2, 39:11]</td><td>Tension pneumothorax: air enters and cannot leave, pressure
+    rises, the mediastinum shifts and venous return and cardiac output fall (section 9.7).</td></tr>
+  </table>
+  </div>
+  <div class="callout"><strong>Caveats the lecturer added to the slides.</strong> Of asthma: <em>&ldquo;The
+  word reversible is useful but needs context. Many patients have a strong reversible component while
+  persistent inflammation and remodeling can produce less completely reversible limitation in some
+  individuals.&rdquo;</em> [part 1, 57:33] (remodeling is on slide 43). Of the cancer doubling times: <em>&ldquo;The
+  listed doubling time is approximate teaching figure, not reliable.&rdquo;</em> [part 1, 44:29]. Of the
+  labels: <em>&ldquo;This slide uses the historical label blue bloater. It&rsquo;s just
+  shorthand&rdquo;</em> [part 1, 1:16:37], and pink puffer is <em>&ldquo;not a clinical description of every
+  patient&rdquo;</em>. The slides&rsquo; figures and labels are still what the questions use.
+  <strong>Slide slips:</strong> slide 95 prints the exudate protein cut-off as &ldquo;&gt;0.5mg/dl&rdquo;; the lecturer corrected it
+  in the recording: it is the pleural-to-serum protein <b>ratio</b> above one half, <em>&ldquo;not simply a
+  protein one half milligram per deciliter&rdquo;</em> [part 2, 48:59].</div>
+
+  <h3 class="sub" id="l9-anatomy">9.1 &middot; Objectives a &amp; b &mdash; Anatomy and function of the pulmonary system</h3>
+  <p><b>Pulmonary circulation</b> (slide 3): <b>deoxygenated blood</b> leaves the right ventricle by the
+  <b>pulmonary trunk</b> and <b>pulmonary arteries</b> to the capillaries around the alveoli. The normal
+  pulmonary circulation is a <b>high-flow, low-pressure system</b>: about <b>22/8 to 25/8 mmHg</b>, with a
+  <b>mean of 15 mmHg</b> (slide 20).</p>
+  ''' + fig(D9 + "respiratory-membrane.jpg", 923, 949,
+            "Section of an alveolus with type I and type II pneumocytes, macrophage and capillaries, and an enlargement of the layers of the respiratory membrane.",
+            "The alveolus and the <b>respiratory membrane</b>. <b>Type I pneumocytes</b> form the thin alveolar "
+            "wall; <b>type II pneumocytes</b> secrete surfactant; an alveolar macrophage sits in the air space. "
+            "Oxygen and carbon dioxide diffuse across <b>six thin layers</b>: alveolar fluid with surfactant, "
+            "alveolar epithelium, its basement membrane, the <b>interstitial space</b>, the capillary basement "
+            "membrane and the capillary endothelium.",
+            "Lecture 9 &middot; Slide 4") + '''
+  <h4 class="subsub">Moving fluid across the capillary (slides 17&ndash;19)</h4>
+  <p>Net filtration out of a capillary follows the Starling relation on slide 17:
+  <b>J<sub>v</sub> = K<sub>f</sub>[(P<sub>c</sub> &minus; P<sub>if</sub>) &minus; (&pi;<sub>c</sub> &minus;
+  &pi;<sub>if</sub>)]</b>. Capillary hydrostatic pressure (P<sub>c</sub>) and interstitial colloid osmotic
+  pressure (&pi;<sub>if</sub>) push fluid out; interstitial fluid pressure (P<sub>if</sub>) and plasma colloid
+  osmotic pressure (&pi;<sub>c</sub>) hold it in.</p>
+  <table>
+    <tr><th>Slide 18&rsquo;s example</th><th>Hydrostatic pressure</th><th>Osmotic pressure</th><th>Net</th></tr>
+    <tr><td>Arterial end</td><td>35 mm (larger)</td><td>25 mm (smaller)</td><td>10 mm <b>out</b> of the
+    capillary into the tissues</td></tr>
+    <tr><td>Venous end</td><td>15 mm (smaller)</td><td>25 mm (larger)</td><td>10 mm <b>into</b> the
+    capillary</td></tr>
+  </table>
+  <p>Hydrostatic pressure <b>falls along the capillary</b> while osmotic pressure stays about the same, so
+  fluid filters out at one end and returns at the other. Lymphatic capillaries take up what is left.</p>
+  ''' + fig(D9 + "capillary-forces.jpg", 400, 193,
+            "Capillary from arteriole to venule with arrows for outward hydrostatic and inward osmotic forces at each end.",
+            "The same balance with a second set of numbers: at the arteriolar end an outward force of "
+            "41.3 mmHg against an inward osmotic 28 mmHg (net 13.3 mmHg out); at the venular end 21.3 mmHg out "
+            "against 28 mmHg in (net 6.7 mmHg in).",
+            "Lecture 9 &middot; Slide 19") + '''
+
+  <h3 class="sub" id="l9-molecular">9.2 &middot; Objective c &mdash; Molecular mechanisms of pulmonary pathologies</h3>
+  <p>No slide is titled &ldquo;molecular mechanisms&rdquo;; these are the molecular steps the deck gives,
+  disease by disease.</p>
+  <table>
+    <tr><th>Disease</th><th>Molecular mechanism</th></tr>
+    <tr><td>Allergic asthma (slide 39)</td><td><b>IgE</b> binds mast cells, which release histamine,
+    <b>leukotrienes</b> (slow-reacting substances of anaphylaxis), prostaglandins, bradykinins, eosinophilic
+    chemotactic factor and serotonin in response to antigen</td></tr>
+    <tr><td>Emphysema (slides 53&ndash;54)</td><td><b>Proteolytic enzymes</b> from neutrophils and macrophages
+    destroy alveolar walls; smoking causes the inflammation that releases them and <b>inactivates alpha-1
+    antitrypsin</b>, the protective enzyme that inhibits proteolytic breakdown of alveolar tissue</td></tr>
+    <tr><td>Acute respiratory distress syndrome (slides 84&ndash;85)</td><td>Acute lung injury activates the
+    <b>complement system</b> and starts <b>neutrophil sequestration</b> in the lung; inflammatory deposition of
+    proteins forms <b>hyaline membranes</b>; lack of <b>surfactant</b> lets alveoli collapse</td></tr>
+    <tr><td>Hypersensitivity pneumonitis (slide 79)</td><td>Antibodies to inhaled particles form
+    antigen&ndash;antibody complexes that deposit in the lung: a <b>type III</b> hypersensitivity reaction
+    (cell-mediated immunity also contributes, per the lecturer)</td></tr>
+    <tr><td>Diffuse interstitial lung disease (slides 70, 73)</td><td>An immune reaction to an initial injury
+    of alveolar epithelial or capillary endothelial cells; fibroblasts lay down <b>collagen</b></td></tr>
+    <tr><td>Sarcoidosis (slides 75&ndash;76)</td><td><b>Alveolar macrophages</b> activated by an unknown
+    trigger; abnormal <b>T-cell</b> function</td></tr>
+  </table>
+
+  <h3 class="sub" id="l9-arf">9.3 &middot; Objective d.1 &mdash; Acute respiratory failure</h3>
+  <table>
+    <tr><th>Term (slide 7)</th><th>Meaning</th></tr>
+    <tr><td><b>Hypoxemia</b></td><td>Decreased blood oxygen: low arterial oxygen (PaO2) and low hemoglobin
+    saturation, by arterial blood gas or pulse oximetry</td></tr>
+    <tr><td><b>Hypoxia</b></td><td>Decreased <b>tissue</b> oxygenation</td></tr>
+    <tr><td><b>Acute respiratory failure</b></td><td>Disturbed gas exchange with abnormal arterial blood gas
+    values on room air (FiO2, fraction of inspired oxygen, 21%): <b>PaO2 &lt; 60 mmHg</b> (hypoxemia),
+    <b>PaCO2 &gt; 50 mmHg</b>, <b>pH &lt; 7.30</b></td></tr>
+  </table>
+  <table>
+    <tr><th>Category (slides 8&ndash;10)</th><th>What fails</th><th>Mechanisms</th></tr>
+    <tr><td><b>Hypoxic respiratory failure</b></td><td>Respiration or oxygenation: hypoxemia with
+    <b>normal or low</b> carbon dioxide</td><td>Ventilation/perfusion mismatch; <b>shunt</b>; decreased
+    diffusion; alveolar hypoventilation; high altitude</td></tr>
+    <tr><td><b>Hypercapnic (hypercarbic) ventilatory failure</b></td><td>Ventilation: carbon dioxide is not
+    removed, so it rises (hypercapnia); alveolar ventilation is inadequate for the carbon dioxide
+    produced</td><td>Reduced alveolar ventilation or respiratory rate; inability to signal effector
+    mechanisms (Guillain-Barr&eacute;, spinal cord injury); <b>increased dead space</b> (wasted
+    ventilation: hypovolemia, low cardiac output, <b>pulmonary embolism</b>); <b>increased carbon dioxide
+    production</b> (fever, infection, trauma or burns); inability to sense a raised PaCO2 (drugs,
+    alkalosis)</td></tr>
+    <tr><td>Combined</td><td>Both respiratory and ventilatory failure</td><td>&mdash;</td></tr>
+  </table>
+  <p>&#9733; <b>Dead space against shunt</b> (section 9.0): dead space is ventilation with inadequate
+  perfusion (wasted ventilation, a hypercapnic mechanism); shunt is perfusion with inadequate ventilation
+  (a hypoxic mechanism).</p>
+  <table>
+    <tr><th>Causes of acute respiratory failure (slide 14)</th><th>Examples</th></tr>
+    <tr><td>Central nervous system</td><td>Sedatives, stroke, brain trauma or tumor</td></tr>
+    <tr><td>Neuromuscular disease</td><td>Multiple sclerosis, <b>myasthenia gravis</b>, polio, Guillain-Barr&eacute;
+    syndrome, quadriplegia</td></tr>
+    <tr><td>Chest skeletal system</td><td>Kyphoscoliosis, chest trauma, pleural effusion, massive ascites</td></tr>
+    <tr><td>Airway</td><td>Laryngospasm, foreign-body aspiration</td></tr>
+    <tr><td>Pulmonary parenchyma</td><td>Shock, pulmonary embolism, pulmonary edema, advanced emphysema,
+    pneumonia, acute respiratory distress syndrome</td></tr>
+  </table>
+  <p>Shown inside this section (slides 11&ndash;13): in acute lung injury, <b>water, cells and protein leak
+  into the tissue around the alveoli and cause large areas of alveoli to collapse</b>, reducing the oxygen
+  that reaches the blood (section 9.7 has the syndrome itself).</p>
+  ''' + fig(D9 + "ards-alveolus.jpg", 550, 558,
+            "Normal alveolus beside an injured alveolus in the acute phase, with protein-rich edema fluid, hyaline membrane, neutrophils and a denuded basement membrane.",
+            "Normal alveolus (left) against the <b>injured alveolus in the acute phase</b> (right): "
+            "protein-rich edema fluid, sloughed bronchial epithelium, necrotic type I cells, a denuded "
+            "basement membrane, a <b>hyaline membrane</b>, inactivated surfactant and migrating neutrophils.",
+            "Lecture 9 &middot; Slide 12") + '''
+
+  <h3 class="sub" id="l9-ph">9.4 &middot; Objective d.2 &mdash; Pulmonary hypertension</h3>
+  <p>The normal pulmonary circulation is high flow at low pressure (mean about 15 mmHg). Pulmonary
+  hypertension is a <b>mean pulmonary arterial pressure at rest &gt; 20 mmHg</b> (slide 20). The lecturer
+  added that it <em>&ldquo;has to be measured by right heart catheterization&rdquo;</em> [part 1, 33:14]
+  (said in the recording, not on a slide).</p>
+  <table>
+    <tr><th>Type (slide 21)</th><th>Features</th></tr>
+    <tr><td><b>Idiopathic</b></td><td>Cause unknown; <b>rapidly progressive</b>; more common in
+    <b>women</b>; third to fourth decade</td></tr>
+    <tr><td><b>Secondary</b></td><td>Results from a known disease process</td></tr>
+  </table>
+  <table>
+    <tr><th>Route to pulmonary hypertension (slide 22)</th><th>Examples</th></tr>
+    <tr><td>Increased pulmonary blood flow or viscosity</td><td>Left-to-right shunt (atrial septal defect,
+    patent ductus arteriosus); polycythemia</td></tr>
+    <tr><td>Increased resistance to blood flow</td><td><b>Hypoxic vasoconstriction</b> (chronic bronchitis,
+    advanced emphysema); obstruction from <b>embolism</b>; pulmonary fibrosis</td></tr>
+    <tr><td>Increased left atrial pressure</td><td><b>Mitral stenosis</b>, mitral regurgitation, left
+    ventricular failure</td></tr>
+  </table>
+  <p><b>Pathogenesis</b> (slide 23): chronic exposure to the disease process changes the arterial lumen.
+  The walls of the small pulmonary vessels thicken from <b>more muscle mass in the media</b> (local tissue
+  hypoxia, acidosis); and the <b>intima becomes fibrotic</b>.</p>
+  ''' + fig(D9 + "pulmonary-hypertension.jpg", 800, 948,
+            "Normal and narrow pulmonary artery above a heart with an enlarged right ventricle.",
+            "A normal against a <b>narrow pulmonary artery</b>; the right ventricle pumping into it is "
+            "<b>enlarged</b> (section 9.11).",
+            "Lecture 9 &middot; Slide 16") + '''
+
+  <h3 class="sub" id="l9-malignancy">9.5 &middot; Objective d.3 &mdash; Pulmonary malignancies</h3>
+  <table>
+    <tr><th>Carcinoma (slides 25&ndash;27)</th><th>Share</th><th>Where</th><th>Doubling</th><th>Character</th></tr>
+    <tr><td><b>Squamous cell</b> (non-small cell)</td><td>20&ndash;30%</td><td><b>Central</b>: two-thirds
+    arise in central bronchi near the hilus, as intraluminal growth</td><td>Volume in 100 days</td>
+    <td><b>Sputum cytology</b> can show it, so it is detected earlier than other lung cancers; spreads to
+    regional lymph nodes</td></tr>
+    <tr><td><b>Adenocarcinoma</b></td><td><b>35&ndash;40%</b> (the largest share)</td><td>Periphery; not as
+    amenable to early detection</td><td>180 days</td><td>Acinar, bronchoalveolar and papillary tumors;
+    metastasizes to distant organs</td></tr>
+    <tr><td><b>Large cell</b></td><td>5&ndash;10%</td><td>Periphery, like adenocarcinoma</td><td>About 100
+    days</td><td>Large cells in nests or clusters; distant metastasis</td></tr>
+    <tr><td><b>Small cell (oat cell)</b></td><td>15&ndash;20%</td><td>Central bronchi, compressing and
+    narrowing them</td><td><b>About 33 days</b> (fastest)</td><td>Widespread metastasis common; the most
+    resistant to therapy; <b>paraneoplastic syndrome</b></td></tr>
+  </table>
+  <p>The doubling times and shares are approximate teaching figures, not predictions for one patient
+  (the lecturer&rsquo;s caveat, section 9.0); the ranking is what to know.</p>
+
+  <h3 class="sub" id="l9-obstructive">9.6 &middot; Objective d.4 &mdash; Obstructive pulmonary diseases</h3>
+  <p>Obstructive diseases are <b>manifested by increased airflow resistance</b> (slide 33), from one of
+  three places (slides 33&ndash;34):</p>
+  <table>
+    <tr><th>Where the obstruction is</th><th>Diseases</th></tr>
+    <tr><td>Conditions <b>in the wall</b> of the lumen</td><td>Asthma, acute bronchitis, chronic
+    bronchitis</td></tr>
+    <tr><td><b>Loss of lung parenchyma</b>, or pressure around the outside of the airway</td><td>Emphysema;
+    lymphadenopathy; tumor</td></tr>
+    <tr><td>Material <b>in the airway lumen</b></td><td>Bronchiectasis, bronchiolitis, <b>cystic
+    fibrosis</b>, acute tracheobronchial obstruction, epiglottitis, croup, foreign body</td></tr>
+  </table>
+  <p>In chronic obstructive lung disease (slides 30&ndash;32), bronchioles narrow and block with mucus,
+  alveoli are destroyed, and the lungs <b>do not deflate like normal lungs because air is trapped in
+  damaged air sacs</b>.</p>
+  <h4 class="subsub">Acute bronchitis (slides 45&ndash;47)</h4>
+  <p>Acute inflammation of the trachea and bronchi. Causes: <b>viral</b> (influenza A or B, parainfluenza,
+  respiratory syncytial virus, coronavirus, rhinovirus, coxsackievirus, adenovirus) or nonviral
+  (<i>Streptococcus pneumoniae</i>, <i>Haemophilus influenzae</i>, <i>Mycoplasma</i>, <i>Moraxella</i>,
+  <i>Chlamydia pneumoniae</i>; heat, smoke, irritant chemicals, allergy). The airways become <b>inflamed and
+  narrow</b> with <b>more mucus</b>, <b>loss of ciliary function</b> and loss of parts of the ciliated
+  epithelium. Microorganisms may leave a <b>long-lasting hyperirritability</b> with bronchospasm, so an
+  improving cough can outlast the illness (slide 51).</p>
+  <h4 class="subsub">Chronic bronchitis &mdash; type B, the &ldquo;blue bloater&rdquo; (slides 48&ndash;51)</h4>
+  <ul>
+    <li><b>Definition:</b> hypersecretion of bronchial mucus with a chronic or recurrent productive cough
+    <b>for more than 3 months a year for 2 or more successive years</b>; the obstruction is <b>persistent
+    and irreversible</b>; age over 30&ndash;40.</li>
+    <li><b>Causes:</b> cigarette smoking (90%), repeated airway infections, genetic predisposition, inhaled
+    irritants.</li>
+    <li><b>Pathogenesis:</b> chronic inflammation; mucosal swelling and fibrosis; <b>hypertrophy of bronchial
+    glands and goblet cells</b>; thicker bronchial walls; neutrophil inflammation; mucus plus purulent
+    exudate forms <b>bronchial plugs</b>; mucociliary clearance fails as <b>ciliated columnar epithelium is
+    replaced by squamous cells</b>.</li>
+    <li><b>Consequences:</b> high airflow resistance raises the work of breathing and oxygen demand;
+    narrowing and plugs worsen <b>V/Q (ventilation/perfusion) mismatch</b>, giving hypoxemia and
+    hypercarbia. &ldquo;Blue bloater&rdquo; reflects <b>cyanosis</b> and the <b>edema of right-sided heart
+    failure</b>. Hypoxic vasoconstriction &rarr; pulmonary hypertension &rarr; right ventricular dilation
+    (<b>cor pulmonale</b>) &rarr; right-sided failure.</li>
+    <li>A persistent productive cough describes a <b>symptom pattern</b>; airflow measurements establish
+    whether obstruction goes with it (slide 51).</li>
+  </ul>
+  <h4 class="subsub">Emphysema &mdash; type A, the &ldquo;pink puffer&rdquo; (slides 53&ndash;59)</h4>
+  <ul>
+    <li><b>Definition:</b> <b>destruction of alveolar walls without fibrosis</b> and abnormal enlargement of
+    the distal air sacs; the slide states it is always associated with chronic bronchitis.</li>
+    <li><b>Causes:</b> smoking (more than 70 pack-years is highly predictive), air pollution, <b>alpha-1
+    antitrypsin deficiency</b> (1%, hereditary).</li>
+    <li><b>Pathogenesis:</b> proteolytic enzymes from neutrophils and macrophages destroy alveoli; smoking
+    adds inflammation and inactivates alpha-1 antitrypsin. Lost elastic tissue narrows the smaller
+    bronchioles; lost lung tissue removes the <b>radial traction that holds the airways open</b>, raising
+    resistance and cutting airflow. Air is trapped, air sacs distend and <b>bullae</b> form.</li>
+  </ul>
+  ''' + fig(D9 + "emphysema.jpg", 800, 360,
+            "Normal alveoli tightly packed around a bronchiole beside enlarged emphysematous air sacs around a narrowed, mucus-containing bronchiole.",
+            "Normal (A) against <b>emphysema</b> (B): enlarged air sacs with lost walls, and a narrowed "
+            "bronchiole with mucus that no longer has surrounding tissue pulling it open.",
+            "Lecture 9 &middot; Slide 56") + '''
+  <table>
+    <tr><th>Emphysema type (slides 57&ndash;58)</th><th>What it destroys</th></tr>
+    <tr><td><b>Centriacinar</b> (centrilobular)</td><td>The <b>respiratory bronchioles</b>; associated with
+    chronic bronchitis</td></tr>
+    <tr><td><b>Panacinar</b> (panlobular)</td><td>The <b>alveoli</b></td></tr>
+    <tr><td><b>Paraseptal</b></td><td>The peripheral lobules (alveolar ducts and sacs)</td></tr>
+  </table>
+  ''' + fig(D9 + "emphysema-types.jpg", 321, 792,
+            "Normal acinus, centriacinar emphysema with distended respiratory bronchioles, and panacinar emphysema with enlarged alveoli.",
+            "Normal lung, <b>centriacinar</b> emphysema (distended respiratory bronchioles) and "
+            "<b>panacinar</b> emphysema (the whole acinus, alveoli included, enlarged).",
+            "Lecture 9 &middot; Slide 58") + '''
+  <h4 class="subsub">The obstructive pattern on testing (slide 59)</h4>
+  <ul>
+    <li>A <b>low FEV1/FVC</b> (forced expiratory volume in 1 second to forced vital capacity) ratio identifies
+    expiratory airflow limitation.</li>
+    <li>A <b>high residual volume</b> supports incomplete emptying.</li>
+    <li>A <b>reduced DLCO</b> (diffusing capacity for carbon monoxide) raises a <b>separate gas-transfer
+    question</b>.</li>
+  </ul>
+  <p>Restriction looks different: its confirming finding is a <b>low total lung capacity</b> (section 9.7).</p>
+  <h4 class="subsub">Bronchiectasis (slides 60&ndash;64)</h4>
+  <ul>
+    <li><b>Destruction of bronchial walls dilates the bronchi</b>: an obstructive, suppurative disorder.
+    Congenital (50% related to cystic fibrosis) or acquired. <b>Children</b> are at higher risk: their soft,
+    elastic bronchi are easily damaged by overinflation and by distention from inflammation or
+    infection.</li>
+    <li><b>Pathogenesis:</b> recurrent infection and inflammation of the bronchial walls; persistent
+    dilation of medium-sized bronchi and bronchioles; destruction of central bronchial walls and
+    obliteration of peripheral bronchi; <i>H. influenzae</i> is the most common bacterial cause; ciliated
+    columnar epithelium turns squamous, pus forms. The <b>dilated airways become pockets of infection</b>,
+    producing purulent, foul-smelling sputum.</li>
+    <li>Improvement in a flare <b>does not restore the airway architecture</b> (slide 64). &#9733; A larger
+    bronchial lumen is not a healthier bronchus.</li>
+  </ul>
+  ''' + fig(D9 + "bronchiectasis-types.jpg", 631, 775,
+            "Bronchial tree with cylindrical, fusiform (varicose) and saccular dilatations, one containing mucus.",
+            "By shape (slide 62): <b>cylindrical</b>; <b>saccular</b> (cavity-like dilatations); and "
+            "<b>fusiform</b> (varicose), a combination of saccular and cylindrical.",
+            "Lecture 9 &middot; Slide 63") + '''
+
+  <h3 class="sub" id="l9-restrictive">9.7 &middot; Objective d.5 &mdash; Restrictive pulmonary diseases</h3>
+  <p>Restrictive diseases are <b>manifested by decreased expansion of the lungs</b> from changes in the
+  <b>parenchyma, pleura, chest wall or neuromuscular function</b> (slide 66).</p>
+  <table>
+    <tr><th>Group (slides 67&ndash;68)</th><th>Disorders</th></tr>
+    <tr><td>Parenchyma: fibrotic interstitial</td><td>Diffuse interstitial lung disease, sarcoidosis,
+    hypersensitivity pneumonitis, occupational lung disease</td></tr>
+    <tr><td>Parenchyma: <b>atelectatic</b></td><td><b>Acute (adult) respiratory distress syndrome</b>; infant
+    respiratory distress syndrome</td></tr>
+    <tr><td>Pleural space</td><td>Pneumothorax, pleural effusion</td></tr>
+    <tr><td>Neuromuscular, chest wall, obesity</td><td>Guillain-Barr&eacute;, myasthenia gravis,
+    kyphoscoliosis, flail chest, <b>obstructive sleep apnea</b></td></tr>
+    <tr><td>Infection or inflammation</td><td>Pneumonia, pulmonary tuberculosis, severe acute respiratory
+    syndrome</td></tr>
+  </table>
+  <p><b>On testing</b> (slide 82): a low FVC alone does not establish restriction; a <b>low total lung
+  capacity confirms the restrictive pattern</b>. Then separate stiff tissue from an external load or muscle
+  weakness, using gas transfer, imaging and history.</p>
+  <h4 class="subsub">Fibrotic interstitial lung diseases (slides 69&ndash;74)</h4>
+  <p>Acute, subacute or chronic <b>infiltration of alveolar walls</b> by cells, fluid and connective tissue;
+  untreated, the inflammation may progress to irreversible fibrosis. <b>Diffuse interstitial lung disease</b>
+  is an immune-mediated disorder after an initial lung injury: it <b>begins with injury to alveolar
+  epithelial or capillary endothelial cells</b>, thickens the interstitium and alveolar walls and adds
+  collagen. Persistent alveolitis obliterates alveolar capillaries and ends in irreversible fibrosis, with
+  large air-filled cysts.</p>
+  <table>
+    <tr><th>Pattern in the alveoli (slides 72&ndash;74)</th><th>What happens</th></tr>
+    <tr><td><b>1. Inflammation</b></td><td>Early and <b>reversible</b>; more inflammatory cells, leakier
+    membranes, fluid and debris in the alveoli</td></tr>
+    <tr><td><b>2. Fibrosis</b></td><td>Fibroblasts proliferate and lay down large amounts of collagen;
+    alveolar walls thicken</td></tr>
+    <tr><td><b>3. Destruction</b></td><td>End stage: alveolar walls lost; excess fibrin deposition (slide 74)
+    leaves <b>stiff, noncompliant lungs</b>. The lecturer added that established scar is excess fibrous
+    matrix, collagen included, rather than fibrin alone; fibrin matters most in acute injury.</td></tr>
+  </table>
+  <table>
+    <tr><th></th><th>Sarcoidosis (slides 75&ndash;77)</th><th>Hypersensitivity pneumonitis (slides 78&ndash;79)</th><th>Occupational lung disease (slides 80&ndash;81)</th></tr>
+    <tr><td>Cause</td><td>Unknown; <b>alveolar macrophages activated</b> by an unknown trigger; abnormal
+    T-cell function. Acute form in the 20s&ndash;30s (women more than men); chronic form in the third to
+    fourth decade</td><td>Inhaled <b>organic</b> agents (wheat weevil, fungi, parakeet, pigeon, chicken);
+    more common in nonsmokers; also called extrinsic allergic alveolitis (bird fancier&rsquo;s, farmer&rsquo;s,
+    mushroom, cheese maker&rsquo;s, fish-meat worker&rsquo;s lung)</td><td>Chronic inhalation of toxic gases or
+    <b>inert particles</b> (coal, silica, asbestos; the lecturer added that the gases do not share one
+    fibrotic pathway &mdash; carbon monoxide mainly impairs oxygen transport); <b>pneumoconiosis</b> = parenchymal disease from inhaled
+    <b>inorganic dust</b></td></tr>
+    <tr><td>Lesion</td><td>Multiple uniform <b>noncaseating epithelioid granulomas</b> (lymph nodes and lung
+    most often; also skin, eyes, spleen, liver, kidney, bone marrow); <b>asteroid bodies</b></td><td>Antibodies to the inhaled particles form <b>type III</b> immune complexes that deposit, causing
+    inflammation and granulomas (slide 79; the lecturer added that cell-mediated immunity also plays an
+    important role); thick alveolar walls, exudate,
+    lymphocytes, plasma cells and eosinophils; fibrosis when advanced</td><td>Ciliary clearance fails;
+    <b>alveolar macrophages try to engulf the particles but fail</b>; alveolar walls are damaged and the lung
+    becomes fibrotic. Smoking and pollutants contribute by depressing ciliary function</td></tr>
+  </table>
+  <h4 class="subsub">Acute respiratory distress syndrome (slides 83&ndash;85)</h4>
+  <p>An <b>atelectatic</b> parenchymal disorder that occurs with other processes: shock, trauma (lung
+  contusion, inhaled toxin), embolism, aspiration, drug overdose, radiation, disseminated intravascular
+  coagulation; mortality 30&ndash;60%. The starting injury is <b>damage to the alveolar-capillary
+  membrane</b>: permeability rises, the alveoli flood with proteinaceous fluid, and a <b>protein-rich,
+  noncardiogenic pulmonary edema</b> develops; the injury activates <b>complement</b> and <b>neutrophil
+  sequestration</b>. Three processes follow:</p>
+  <ul>
+    <li><b>Noncardiogenic pulmonary edema</b> from leaky pulmonary capillaries.</li>
+    <li><b>Atelectasis</b> from lack of surfactant.</li>
+    <li><b>Hyaline membranes</b> from inflammatory deposition of proteins. The slide files them under
+    &ldquo;fibrosis&rdquo;; the lecturer stressed they are part of acute alveolar damage and should not
+    simply be equated with mature chronic fibrosis [part 2, 31:30].</li>
+  </ul>
+  <h4 class="subsub">Pleural space: pneumothorax (slides 87&ndash;91)</h4>
+  <p>The pleural space is a potential space holding only a little lubricating fluid; <b>pneumothorax</b> is air
+  in it.</p>
+  <table>
+    <tr><th>Type</th><th>Who and why</th><th>Mechanism</th></tr>
+    <tr><td><b>Primary</b> (spontaneous)</td><td><b>Tall, thin men aged 20&ndash;40</b>, no underlying
+    disease; smoking raises the risk</td><td>Rupture of small <b>subpleural blebs at the apices</b>; air
+    enters, the lung collapses and the rib cage springs out</td></tr>
+    <tr><td><b>Secondary</b></td><td>Preexisting lung disease: asthma, emphysema, cystic fibrosis,
+    pneumonia, tuberculosis</td><td>A complication of the disease, perhaps rupture of a cyst or bleb</td></tr>
+    <tr><td><b>Tension</b></td><td>A pneumothorax leading to <b>trapped air and increased pressure</b>;
+    results from penetrating or nonpenetrating injury (slide 89)</td><td>Air <b>enters but cannot
+    escape during expiration</b>, so pressure builds; the same-side lung collapses and the mediastinum is
+    forced to the opposite side, <b>reducing venous return and cardiac output</b></td></tr>
+  </table>
+  ''' + fig(D9 + "pneumothorax.jpg", 754, 775,
+            "Spontaneous pneumothorax with a collapsed lung, and tension pneumothorax on inspiration and expiration with the mediastinum pushed across.",
+            "<b>Spontaneous</b> pneumothorax (top). <b>Tension</b> pneumothorax (bottom): air enters on "
+            "inspiration and is held on expiration, so pressure builds and pushes the mediastinum across.",
+            "Lecture 9 &middot; Slide 91") + '''
+  <h4 class="subsub">Pleural space: pleural effusion (slides 92&ndash;98)</h4>
+  <p>Not a disease but a collection of fluid or pus from another process; the normal pleural space holds
+  <b>5&ndash;15 mL</b> of serous fluid, made by parietal pleural capillaries and reabsorbed by parietal
+  lymphatics. It forms from (slide 93) <b>raised hydrostatic pressure</b> (heart failure, portal
+  hypertension), <b>lowered plasma oncotic pressure</b> (severe hypoalbuminemia, <b>nephrotic
+  syndrome</b>, cirrhosis), or <b>lowered pleural pressure</b> (lung collapse).</p>
+  <p><em>Said in the recording, not on a slide (no question uses it): an effusion develops when
+  fluid entry increases, removal decreases, or both [part 2, 43:47].</em></p>
+  <table>
+    <tr><th></th><th>Transudate (slide 94)</th><th>Exudate (slide 95)</th></tr>
+    <tr><td>Protein</td><td>Low: pleural/serum ratio &lt; 0.5</td><td>High: ratio &gt; 0.5</td></tr>
+    <tr><td>LDH (lactate dehydrogenase)</td><td>Pleural/serum ratio &lt; 0.6</td><td>Ratio &gt; 0.6</td></tr>
+    <tr><td>Specific gravity</td><td>&lt; 1.016 (the lecturer called specific gravity an older approach, not
+    the main basis of classification today)</td><td>&mdash;</td></tr>
+    <tr><td>Mechanism</td><td><b>Increased hydrostatic or decreased oncotic pressure</b></td><td>More fluid
+    from <b>increased pleural permeability</b> (inflammation) or <b>impaired lymphatic drainage</b></td></tr>
+    <tr><td>Associated with</td><td>Severe heart failure, cirrhosis with ascites, nephrotic syndrome,
+    myxedema</td><td>Malignancy, infection, <b>pulmonary embolism</b>, sarcoidosis, post-myocardial
+    infarction syndrome, pancreatic disease</td></tr>
+  </table>
+  <p><b>One positive criterion supports an exudate</b> (Light&rsquo;s criteria, as the lecturer named them; slide 98, worked through: a protein ratio of
+  0.42 is transudate-range, but an LDH ratio of 0.75 meets the exudate criterion, so the fluid is an
+  exudate; pleural LDH above two-thirds of the serum upper limit of normal is the third criterion).</p>
+  <ul>
+    <li><b>Hemothorax:</b> blood mixed with pleural fluid (slide 96).</li>
+    <li><b>Chylothorax:</b> a chylous exudate from <b>leakage of chyle from the thoracic duct</b>, after
+    trauma or mediastinal malignancy such as lymphoma (slide 96).</li>
+  </ul>
+  ''' + fig(D9 + "pleural-fluids.jpg", 734, 431,
+            "Three tubes of pleural fluid: blood-stained, milky chylous, and pale yellow transudate.",
+            "<b>A</b> Blood-stained aspirate (pleural metastases from breast carcinoma). <b>B</b> Chylous "
+            "effusion (bronchial carcinoma invading and obstructing the thoracic duct). <b>C</b> Pale "
+            "<b>transudate</b>, typical of heart failure or generalized edema.",
+            "Lecture 9 &middot; Slide 97") + '''
+  <h4 class="subsub">Obstructive sleep apnea-hypopnea syndrome (slides 99&ndash;103)</h4>
+  <p>Listed under the neuromuscular, chest wall and obesity disorders. A chronic condition of <b>cyclic
+  upper-airway obstruction during sleep</b> with symptoms or signs of disturbed sleep; <b>at least 5
+  obstructive events per hour</b> is the minimal criterion. The <b>collapsible segments of the pharynx</b>
+  close completely or partly.</p>
+  <table>
+    <tr><th>Event</th><th>Airflow</th><th>Effort</th></tr>
+    <tr><td><b>Obstructive apnea</b></td><td>Absent for at least 10 seconds</td><td>Continues</td></tr>
+    <tr><td><b>Hypopnea</b></td><td>A discrete <b>decrease</b> (not cessation) for at least 10 seconds,
+    with oxygen desaturation or an abrupt arousal</td><td>&mdash;</td></tr>
+    <tr><td><b>Central event</b> (slide 103)</td><td>Absent</td><td><b>Absent</b></td></tr>
+  </table>
+  <p>Each obstruction combines progressive asphyxia (too little oxygen, too much carbon dioxide) with
+  sudden autonomic and behavioral arousal, causing acute cardiac and cerebrovascular disturbances.</p>
+  <p><em>Said in the recording, not on a slide (no question uses it): the return of airflow can
+  bring a burst of sympathetic activity, with abrupt changes in heart rate, vascular tone and blood pressure
+  [part 2, 61:07].</em></p>
+  <h4 class="subsub">Pneumonia (slides 105&ndash;109)</h4>
+  <ul>
+    <li>An inflammatory reaction in the alveoli and interstitium caused by an infectious agent. Sources:
+    aspiration of oropharyngeal secretions or gastric contents (<b>gross aspiration delivers large numbers
+    of anaerobic bacteria</b>, a major factor in anaerobic infection and abscess); inhalation (virus,
+    <i>Mycoplasma</i>); <b>contamination from the systemic circulation</b> (staphylococcal sepsis,
+    right-sided endocarditis, intravenous drug use, gram-negative bacteremia).</li>
+    <li>Normal defenses are immune responses, cough, sneezing and mucociliary clearance; <b>community-acquired
+    pneumonia occurs when they are compromised</b>. Organisms multiply, alveolar spaces fill with exudate,
+    and the exudate <b>consolidates</b>, becoming hard to expectorate.</li>
+    <li><b>Community-acquired</b>: a person living independently, or hospitalized for another reason for
+    <b>under 48 hours</b> before respiratory symptoms; commonest typical pathogens <i>S. pneumoniae</i>,
+    <i>H. influenzae</i>, <i>Moraxella catarrhalis</i>.</li>
+    <li><b>Hospital-acquired</b> (and ventilator-associated): early onset (first 4 hospital days) tends to be
+    antibiotic-susceptible bacteria; <b>late onset is more often multidrug-resistant</b>, with greater
+    morbidity and mortality; aerobic gram-negative bacilli (<i>Pseudomonas aeruginosa</i>, <i>E. coli</i>,
+    <i>K. pneumoniae</i>, <i>Acinetobacter</i>), <i>S. aureus</i>, <i>H. influenzae</i>.</li>
+  </ul>
+
+  <h3 class="sub" id="l9-asthma">9.8 &middot; Objective d.6 &mdash; Asthma</h3>
+  <p>Asthma is the obstructive airway disease that is <b>reversible</b>, with airway inflammation and
+  <b>increased airway responsiveness</b> to a variety of stimuli (slide 35). The lecturer&rsquo;s caveat
+  (section 9.0): many patients have a strong reversible component, but persistent inflammation and
+  <b>remodeling</b> can leave limitation that is less completely reversible.</p>
+  <table>
+    <tr><th></th><th>Allergic (extrinsic) asthma (slide 39)</th><th>Non-allergic (intrinsic) asthma (slide 37)</th></tr>
+    <tr><td>Trigger</td><td>Specific antigens</td><td>Exercise, stress, pulmonary irritants; aspirin and
+    occupational allergens; no specific allergen identified</td></tr>
+    <tr><td>Mechanism</td><td>Immediate phase <b>mediated by IgE</b>: IgE on mast cells releases chemical
+    mediators (histamine, leukotrienes &mdash; the slow-reacting substances of anaphylaxis &mdash; prostaglandins, bradykinins, eosinophilic chemotactic factor,
+    serotonin)</td><td><b>Negative skin tests</b> to common inhalant allergens, <b>normal serum
+    IgE</b></td></tr>
+    <tr><td>Course</td><td>&mdash;</td><td>Often develops in middle age; less favorable prognosis</td></tr>
+  </table>
+  <p><b>What happens to the airway</b> (slides 40, 43): normal respiratory epithelium is <b>denuded and
+  replaced by goblet cells</b>; microvascular permeability rises (mucosal edema, inflammatory exudate,
+  bronchoconstriction); recruited leukocytes release more mediators that damage the epithelium; <b>vagal
+  stimulation adds mucus hypersecretion and bronchoconstriction</b>. Immunohistopathology: denuded
+  epithelium, <b>collagen deposition beneath the basement membrane</b>, edema, mast cell activation,
+  infiltration by neutrophils, eosinophils and lymphocytes. The inflammation drives bronchospasm, mucosal
+  edema, <b>mucous plugs and airway wall remodeling</b>.</p>
+  ''' + fig(D9 + "asthma-airway.jpg", 800, 326,
+            "Cross-sections of a normal airway and an asthmatic airway with thick mucus, mucosal edema, more mucous glands, hypertrophied muscle and a narrowed lumen.",
+            "Normal against <b>asthmatic</b> airway: thick mucus in the airway, <b>mucosal edema</b>, more "
+            "mucous glands, <b>hypertrophied smooth muscle</b> and a narrowed lumen.",
+            "Lecture 9 &middot; Slide 41") + '''
+  <p><b>Over time</b> (slide 44): symptoms fluctuate and testing may be normal between episodes; muscle
+  contraction and inflammation change at different speeds, so early improvement may leave inflammation
+  behind.</p>
+
+  <h3 class="sub" id="l9-edema">9.9 &middot; Objective d.7 &mdash; Pulmonary edema</h3>
+  <p>No section of the deck is given to pulmonary edema; the pieces are:</p>
+  <ul>
+    <li><b>The forces</b> (slides 17&ndash;19, section 9.1): fluid leaves a capillary when hydrostatic
+    pressure exceeds the osmotic pull; a rise in capillary hydrostatic pressure, or a fall in plasma oncotic
+    pressure, increases filtration (the same two mechanisms make a transudative pleural effusion,
+    slide 93).</li>
+    <li><b>Leaky capillaries</b> (slides 84&ndash;85): in acute respiratory distress syndrome the injured
+    alveolar-capillary membrane floods the alveoli with protein-rich fluid, a <b>noncardiogenic</b> pulmonary
+    edema; in acute lung injury, leaked water, cells and protein collapse alveoli (slide 11).</li>
+    <li>Pulmonary edema is listed among the parenchymal causes of acute respiratory failure (slide 14).</li>
+  </ul>
+
+  <h3 class="sub" id="l9-pe">9.10 &middot; Objective d.8 &mdash; Pulmonary embolism</h3>
+  <p>No section of the deck is given to pulmonary embolism; the slides use it as a cause in five places:</p>
+  <ul>
+    <li><b>Dead space</b> (slide 10): embolism increases dead space (wasted ventilation), one route to
+    hypercapnic ventilatory failure.</li>
+    <li><b>Acute respiratory failure</b> (slide 14): a parenchymal cause.</li>
+    <li><b>Pulmonary hypertension</b> (slide 22): obstruction from embolism increases resistance to blood
+    flow.</li>
+    <li><b>Acute respiratory distress syndrome</b> (slide 83): embolism is among its causes.</li>
+    <li><b>Pleural effusion</b> (slide 95): pulmonary embolism is associated with an <b>exudate</b>.</li>
+  </ul>
+
+  <h3 class="sub" id="l9-cor">9.11 &middot; Objective d.9 &mdash; Cor pulmonale</h3>
+  <p><b>Cor pulmonale is right ventricular dilation from lung disease</b> (slide 50). The chain, from chronic
+  bronchitis: hypoxia &rarr; <b>pulmonary artery vasoconstriction</b> &rarr; <b>pulmonary hypertension</b>
+  &rarr; <b>right ventricular dilation (cor pulmonale)</b> &rarr; <b>right-sided heart failure</b>, whose
+  edema is part of the &ldquo;blue bloater&rdquo; picture. The same hypoxic vasoconstriction in advanced
+  emphysema is a route to pulmonary hypertension (slide 22), and the narrowed pulmonary arteries leave an
+  <b>enlarged right ventricle</b> (slide 16).</p>
+  <div class="pearl"><b>One chain links three objectives.</b> Hypoxic lung disease (d.4) &rarr; hypoxic
+  vasoconstriction &rarr; pulmonary hypertension (d.2) &rarr; right ventricular dilation, cor pulmonale
+  (d.9). Pulmonary embolism (d.8) reaches pulmonary hypertension by a different route: obstruction, not
+  vasoconstriction.</div>
+
+  <button type="button" class="test-yourself-btn" style="--acc:#2f5f7a" onclick="window.openTestYourself('Test yourself — Pulmonary Pathophysiology', TEST_YOURSELF.pulmonary)">Test yourself! &rarr;</button>
+  <footer class="guide-foot">Source: <em>9. Pulmonary Pathophysiology &mdash; Ward 2026</em>, rebuilt from the
+  lecture video of 20 October 2026 (no deck was posted), and that recording. Figures are reproduced from
+  the lecture slides and each is cited to its slide.</footer>
+</section>
+'''
+
+
 def Q(q, choices, correct, explain):
     return {"q": q, "choices": choices, "correct": correct, "explain": explain}
 
@@ -1115,5 +2264,96 @@ TEST_YOURSELF = {
      "Calcification of digital arteries",
      "Return of oxygenated blood after the spasm"], 3,
     "The sequence is vasoconstriction (white), tissue anoxia (blue), then return of oxygenated blood (red). The return is painful because of rapid vessel dilation."),
+ ],
+ "immunity": [
+  Q("Which immunoglobulin crosses the placenta?",
+    ["IgM", "IgG", "IgA", "IgE"], 1,
+    "IgG crosses the placenta, which is how maternal immunity reaches the baby (natural passive immunity). Secreted IgM is a pentamer, IgA guards mucosal surfaces and IgE binds mast cells."),
+  Q("What sorts hypersensitivity reactions into types I to IV?",
+    ["The severity of the reaction",
+     "The organ that is injured",
+     "The immune mechanism responsible",
+     "How quickly symptoms resolve"], 2,
+    "The types are organized by the immune mechanism, not by severity: IgE on mast cells (I), antibody bound to cell or tissue antigens (II), deposited immune complexes (III) and sensitized T cells (IV)."),
+  Q("Which T cell recognizes peptides presented by major histocompatibility complex class II?",
+    ["CD4 helper T cell",
+     "CD8 cytotoxic T cell",
+     "Natural killer cell",
+     "Plasma cell"], 0,
+    "Helper (CD4) T cells read class II; cytotoxic (CD8) T cells read class I. Natural killer cells need no specific antigen, and plasma cells secrete antibody."),
+  Q("Where do the classical, lectin and alternative complement pathways converge?",
+    ["C1 binding to antibody",
+     "Mannose-binding lectin",
+     "Factor B and properdin",
+     "C3 activation"], 3,
+    "All three pathways converge on C3 activation, then C5; C5b starts the membrane attack complex (C6 to C9). C1 starts the classical pathway, mannose-binding lectin the lectin pathway, and factor B with properdin the alternative one."),
+  Q("What does antibody neutralization do to a virus?",
+    ["Blocks its attachment without destroying it",
+     "Lyses it through the complement system",
+     "Clumps it with other particles on cells",
+     "Coats it so a phagocyte ingests it"], 0,
+    "Neutralization blocks an essential interaction with the host cell, such as viral attachment or entry, without requiring physical destruction. Lysis, agglutination and opsonization are separate antibody functions."),
+  Q("Which is an example of natural passive immunity?",
+    ["A vaccination",
+     "Tetanus immune globulin",
+     "Recovery from an infection",
+     "Maternal IgG across the placenta"], 3,
+    "Passive immunity is the transfer of preformed antibodies; maternal IgG through the placenta and IgA in breast milk are the natural forms. Immune globulin is passive artificial; vaccination is active artificial; recovery from infection is active natural."),
+  Q("Which antibody class rises first after a first exposure to an antigen?",
+    ["IgG", "IgE", "IgM", "IgD"], 2,
+    "IgM is often the first class secreted in a new response; IgG follows lower in the primary response and dominates the faster, larger secondary response."),
+  Q("How does type III hypersensitivity injure tissue?",
+    ["IgE fixed on mast cells releases histamine",
+     "Antigen-antibody complexes deposit in tissue",
+     "Sensitized T cells release cytokines",
+     "Antibody binds an antigen on the cell itself"], 1,
+    "Type III is immune-complex disease: complexes deposit in tissues or vessel walls and complement and inflammatory cells cause the injury (Arthus reaction, serum sickness, lupus). IgE on mast cells is type I, antibody on the cell is type II, T cells are type IV."),
+ ],
+ "pulmonary": [
+  Q("On room air, which arterial oxygen tension (PaO2) marks the hypoxemia of acute respiratory failure?",
+    ["Below 40 mmHg", "Below 50 mmHg", "Below 60 mmHg", "Below 80 mmHg"], 2,
+    "Acute respiratory failure is a PaO2 below 60 mmHg, a PaCO2 (arterial carbon dioxide tension) above 50 mmHg and a pH below 7.30 while breathing room air (21% oxygen)."),
+  Q("Which mechanism produces HYPOXIC, rather than hypercapnic, respiratory failure?",
+    ["Shunt",
+     "Increased carbon dioxide production",
+     "Failure to sense a raised carbon dioxide",
+     "Decreased respiratory rate"], 0,
+    "Hypoxic failure comes from ventilation/perfusion mismatch, shunt, decreased diffusion, alveolar hypoventilation and high altitude. Raised carbon dioxide production, failure to sense it and a low respiratory rate cause hypercapnic ventilatory failure."),
+  Q("In emphysema, what removes the radial traction that holds small airways open?",
+    ["Hypertrophy of the bronchial glands",
+     "Plugs of mucus in the bronchi",
+     "Contraction of airway smooth muscle",
+     "Loss of the surrounding lung tissue"], 3,
+    "Loss of lung tissue removes the radial traction that holds airways open, raising resistance and trapping air. Gland hypertrophy and mucus plugs belong to chronic bronchitis; smooth muscle contraction to asthma."),
+  Q("Which finding fits non-allergic (intrinsic) asthma?",
+    ["A raised serum IgE",
+     "Negative skin tests and a normal serum IgE",
+     "An identifiable specific allergen",
+     "Mast cells armed with allergen-specific IgE"], 1,
+    "Intrinsic asthma follows exercise, stress or irritants with no specific allergen: skin tests to common inhalant allergens are negative and serum IgE is normal. IgE on mast cells is the mechanism of allergic (extrinsic) asthma."),
+  Q("Why is the pulmonary edema of acute respiratory distress syndrome called noncardiogenic?",
+    ["Left atrial pressure is raised",
+     "It comes from leaky pulmonary capillaries",
+     "Plasma oncotic pressure has fallen",
+     "Lymphatic drainage is obstructed"], 1,
+    "Damage to the alveolar-capillary membrane makes the pulmonary capillaries leak, flooding the alveoli with protein-rich fluid; the heart is not the cause. Lack of surfactant adds atelectasis, and protein deposition forms hyaline membranes."),
+  Q("Which pleural fluid finding marks an exudate?",
+    ["Pleural/serum protein ratio below 0.5",
+     "Specific gravity below 1.016",
+     "Low lactate dehydrogenase in the fluid",
+     "Pleural/serum lactate dehydrogenase ratio above 0.6"], 3,
+    "An exudate has a lactate dehydrogenase ratio above 0.6 or a protein ratio above 0.5, and one positive criterion is enough. Low protein, low lactate dehydrogenase and specific gravity below 1.016 describe a transudate."),
+  Q("Through which chain does chronic bronchitis lead to cor pulmonale?",
+    ["Hypoxic vasoconstriction, pulmonary hypertension, right ventricular dilation",
+     "Left ventricular failure, raised left atrial pressure, pulmonary edema",
+     "Alveolar wall destruction, bullae, rupture into the pleura",
+     "Bronchial wall destruction, dilated bronchi, infection pockets"], 0,
+    "Hypoxia constricts the pulmonary arteries, causing pulmonary hypertension; the right ventricle dilates (cor pulmonale) and fails. The other chains describe left heart failure, emphysema with pneumothorax and bronchiectasis."),
+  Q("What ruptures in a primary spontaneous pneumothorax?",
+    ["A penetrating wound of the chest wall",
+     "A cyst from underlying lung disease",
+     "Small subpleural blebs at the apices",
+     "The visceral pleura over a tumor"], 2,
+    "Primary spontaneous pneumothorax, typically in tall, thin men aged 20 to 40, comes from rupture of small subpleural apical blebs. Underlying lung disease defines secondary pneumothorax, and air that enters but cannot leave defines tension pneumothorax."),
  ],
 }
