@@ -1238,11 +1238,11 @@ IMMUNITY = '''
             "Hematopoiesis tree from the hematopoietic stem cell through progenitors to lymphocyte, monocyte, granulocytes, erythrocyte and platelets.",
             "Formation of blood cells. From the <b>hematopoietic stem cell</b> (HSC) through progenitors: "
             "the lymphoblast to the <b>lymphocyte</b>, the monoblast to the <b>monocyte</b>, the myeloblast to "
-            "the granulocytes, the erythroid line to the erythrocyte, and the megakaryocyte to <b>platelets</b>.",
+            "the eosinophil and basophil, the promyelocyte line to the neutrophil, the erythroid line to the erythrocyte, and the megakaryocyte to <b>platelets</b>.",
             "Lecture 8 &middot; Slide 14") + '''
-  <p><b>The neutrophil line</b> (slide 14): myeloblast &rarr; promyelocyte &rarr; myelocyte &rarr;
+  <p><b>The neutrophil line</b> (slide 14): promyelocyte &rarr; myelocyte &rarr;
   metamyelocyte &rarr; <b>band form</b> &rarr; <b>segmented neutrophil</b>. The band form immediately precedes
-  the segmented neutrophil. The myeloblast also gives the eosinophil and the basophil.</p>
+  the segmented neutrophil. On the slide the promyelocyte comes straight from the progenitor, and the myeloblast gives the eosinophil and the basophil. <i>Standard texts start the neutrophil line at the myeloblast too; the exam follows the slide.</i></p>
   <table>
     <tr><th>Cell (slides 15&ndash;19)</th><th>Role</th></tr>
     <tr><td><b>Neutrophil</b> (granulocyte; &ldquo;poly&rdquo;, PMN (polymorphonuclear leukocyte))</td>

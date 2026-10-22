@@ -342,7 +342,7 @@ Q(CMP, IO_S, "mechanism",
     "C3a and C5a are released fragments that promote inflammation.", AF],
    ["Factor B and factor D",
     "Factor B and factor D act in the alternative pathway to form a C3 convertase.", AF]],
-  c(68), core=True),
+  c(68, 71), core=True),
 
 Q(CMP, IO_S, "structure",
   "Which component forms the channel of the membrane attack complex?",
