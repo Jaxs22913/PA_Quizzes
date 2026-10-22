@@ -7,8 +7,8 @@ else -- no row here says anything the guide does not ([[cram_sheets_feature]]).
 Numbers are kept exactly as the slides give them: 0.90-1.40, 2-3 seconds,
 10% of body weight, the 2/4/6/8 mm pitting depths, grade 4 = first thrill.
 
-Lecture 5 only so far; Pulmonary (6) and Hematology (7) topics get appended
-when those decks land.
+Lectures 5 and 6 so far (Lecture 6 condensed from guide section 2,
+tools/add_pd2_e2_guide_l6.py); Hematology (7) topics get appended when that deck lands.
 
 The first topic carries the lecturer's emphasis (the rows marked with a star),
 the same convention the Exam 1 sheet uses for its Lecture 3 and 4 marks. The
@@ -169,6 +169,124 @@ topics = [
     ["The patient", "In a gown; never examine over clothing. Positioning: 30-45 degrees, left lateral decubitus, seated leaning forward."],
     ["Cardiac OSCE (objective structured clinical examination)", "21 October. The whole station is on the Cardiac OSCE run-sheet."],
   ]},
+
+ # ---------------------------------------------------------------- Lecture 6
+ # Condensed from guide section 2 (tools/add_pd2_e2_guide_l6.py) and nothing else.
+ {"id": "l6-emphasis", "label": "★ Thorax & Lungs: what the lecture kept coming back to", "color": "#b8860b",
+  "rows": [
+    ["★ Copious foul sputum", "Cystic fibrosis or bronchiectasis. The one line she tied to an exam question, her own board exam ('I've had that as a board question'). Foul-smelling alone = anaerobic lung abscess."],
+    ["★ Which way the trachea goes", "Atelectasis PULLS it to the same side (shrinkage). Tension pneumothorax and a large effusion PUSH it to the unaffected side. Pneumonia: midline."],
+    ["★ Silent chest", "In asthma, wheezing fades as airways narrow further; minimal air movement. Needs immediate intervention. Quiet is not better."],
+    ["★ Stridor is an emergency", "High-pitched, inspiratory, over the neck = upper airway obstruction (larynx, trachea). Immediate intervention."],
+    ["★ Pleural vs pericardial rub", "Ask for a breath hold: the pleural rub disappears, the pericardial friction rub keeps going with the heart."],
+    ["★ Aspiration goes right", "Right main bronchus is wider, shorter, more vertical. Said twice, with two cases."],
+    ["★ Location makes the breath sound", "Bronchial sounds out at the bases or periphery = consolidation (pneumonia). Same logic as increased fremitus."],
+    ["★ Onset narrows the differential", "Sudden vs gradual first. Dyspnea at rest is more worrying. Hyperventilation: anxiety is the last thing you call it."],
+    ["Time on topic", "Nothing named as on or off this exam in 90 minutes. About half the time went to the examination itself, the sounds most of all. Patient setup and prep skipped ('you've done the lung exam')."],
+  ]},
+
+ {"id": "l6-landmarks", "label": "Thorax Landmarks & Procedures", "color": "#3a5a40",
+  "rows": [
+    ["Counting", "Sternal angle (angle of Louis) = 2nd rib, lines up with T4. Each space takes the number of the rib above. Scapular tip = about 7th rib."],
+    ["2nd intercostal space", "Needle decompression of a tension pneumothorax (anterior)."],
+    ["Between 4th and 5th ribs", "Chest tube. Triangle of safety, midaxillary line: pectoralis major (front), latissimus dorsi (back), nipple line, 4th or 5th space (below)."],
+    ["T7-T8, posterior", "Thoracentesis: 7th intercostal space, needle just ABOVE the 8th rib."],
+    ["Always above a rib", "Neurovascular structures run along each rib's INFERIOR margin."],
+    ["T4", "Lower margin of the endotracheal tube on a chest x-ray."],
+    ["Lung borders", "Apices 2-4 cm above the medial third of the clavicle. Inferior: 6th rib midclavicular, 8th rib midaxillary, T10 posterior."],
+    ["Lobes and fissures", "Right: upper, middle, lower. Left: upper and lower only. Oblique: T3 behind to 6th rib in front. Right horizontal: follows the 4th rib to the 5th at the midaxillary line."],
+    ["Airways", "Carina at the sternal angle / T4-T5. Right main bronchus wider, shorter, more vertical; left longer, horizontal, under the aortic arch. Alveoli = gas exchange."],
+    ["Pleurae", "Visceral: no sensory nerves. Parietal: intercostal and phrenic nerves, so pleuritic pain on deep inspiration. Pleural fluid surface tension holds lung to chest wall."],
+    ["Effusion types", "Transudative: heart failure, cirrhosis, nephrotic syndrome. Exudative: pneumonia, malignancy, pulmonary embolism, tuberculosis, pancreatitis."],
+  ]},
+
+ {"id": "l6-history", "label": "The Respiratory History", "color": "#46704f",
+  "rows": [
+    ["Open", "Open-ended question first; the patient's own words. Then onset, timing, triggers, position, exposures, impact on daily life."],
+    ["Exposures", "Tobacco and nicotine; marijuana (smoked, vaped, ingested); recreational drugs incl. inhaled or intranasal; occupation and environment; recent travel."],
+    ["Chest pain patterns", "Pressure = angina or infarction. Sudden tearing to the back = aortic dissection. Sharp pleuritic (inspiration, cough) = pulmonary embolism, pneumothorax, pneumonia, pleuritis. Sharp positional, better sitting forward = pericarditis. Burning postprandial = reflux. Reproducible = chest wall, costochondritis."],
+    ["Dyspnea", "Painless but uncomfortable awareness of breathing, inappropriate to exertion. Severity: distance, flights of stairs, groceries, making the bed, change from baseline."],
+    ["Wheezing", "Musical, audible to the patient and others. Partial LOWER airway obstruction: asthma secretions and inflammation, or a foreign body."],
+    ["Cough", "Reflex from receptors in the larynx, trachea, large bronchi. Acute under 3 weeks; subacute 3-8; chronic over 8. Slide 19's second line was corrected aloud to 'related to medication'."],
+    ["Sputum", "Mucoid (translucent, white, gray) = viral, postnasal drip. Purulent (yellow, green) = bacterial pneumonia. Foul = anaerobic lung abscess. Copious foul = cystic fibrosis, bronchiectasis."],
+    ["Sleep", "Loud persistent snoring = hallmark of obstructive sleep apnea. Witnessed apneas (10 seconds or more), choking on waking, morning headache, daytime sleepiness. Others: restless legs, narcolepsy, insomnia."],
+  ]},
+
+ {"id": "l6-clubbing", "label": "Clubbing & Hemoptysis", "color": "#7a3b3b",
+  "rows": [
+    ["Hemoptysis", "Blood coughed up from the LOWER respiratory tract, streaks to frank blood. Rare in infants, children, adolescents. Confirm the source before using the word."],
+    ["Stomach or lung?", "Vomited = likely gastrointestinal. Stomach blood is darker, with food particles. Nasopharyngeal or gastric blood can be aspirated and coughed out."],
+    ["Massive", "More than 600 mL in 24 hours: life threatening, urgent intervention (and a patient pouring blood is an emergency before you reach 600)."],
+    ["Causes", "Bacterial pneumonias, chronic bronchitis, bronchiectasis, pulmonary tuberculosis, lung abscess, lung cancer, pulmonary embolism."],
+    ["Clubbing", "Bulbous swelling at the nail base; loss of the nail-to-proximal-fold angle; nail bed spongy or floating."],
+    ["Clubbing seen in", "Interstitial lung disease, pulmonary fibrosis, lung cancer, bronchiectasis, cystic fibrosis, lung abscess; congenital heart disease, inflammatory bowel disease, malignancy."],
+  ]},
+
+ {"id": "l6-dyspnea", "label": "Dyspnea: Sudden vs Gradual vs Episodic", "color": "#2f6b5e",
+  "rows": [
+    ["SUDDEN: pneumothorax", "Abrupt unilateral pleuritic pain, cough. Trauma, recent procedure, emphysema, prior pneumothorax."],
+    ["SUDDEN: pulmonary embolism", "Unexplained dyspnea; pleuritic pain, hemoptysis, syncope, one-sided leg symptoms. Prior clot, surgery, immobility, cancer, estrogen, pregnancy or postpartum."],
+    ["ACUTE: pneumonia", "Fever, chills, cough, sputum, pleuritic pain. Recent illness, aspiration risk, immunosuppression."],
+    ["Left-sided heart failure", "Gradual or sudden; worse on exertion or lying flat. Orthopnea, paroxysmal nocturnal dyspnea, cough, edema, weight gain. Hypertension, prior infarction."],
+    ["GRADUAL: chronic bronchitis", "Chronic PRODUCTIVE cough, then progressive dyspnea; recurrent infections, wheeze. Smoking, air pollutants."],
+    ["GRADUAL: obstructive disease", "Slowly progressive exertional dyspnea, cough later, scant sputum. Smoking, inhalational exposures, alpha-1 antitrypsin deficiency."],
+    ["GRADUAL: interstitial lung disease", "Gradually progressive exertional dyspnea, DRY cough, fatigue, weakness. Autoimmune disease, medications, occupation."],
+    ["EPISODIC: asthma", "Symptom-free intervals, often worse at night; wheeze, cough, tightness. Allergens, infections, exercise, cold air, irritants."],
+    ["EPISODIC: hyperventilation", "At rest or with distress; air hunger, sighing, lightheadedness, perioral or extremity tingling. Medical causes first; anxiety last."],
+  ]},
+
+ {"id": "l6-inspect", "label": "Survey, Inspection & Palpation", "color": "#5f8a68",
+  "rows": [
+    ["Order and position", "Inspection, palpation, percussion, auscultation. Back: sitting, arms folded; too weak to sit = roll to one side, then the other."],
+    ["Survey", "Rate, rhythm, depth, effort; is expiration prolonged? Normal rate is given two ways (12-18 on slide 31, about 14-20 on slide 32); not tested."],
+    ["Patterns", "Tachypnea = rapid shallow. Hyperpnea = rapid deep. Cheyne-Stokes = deep breathing alternating with apnea. Ataxic (Biot) = irregular, deep breaths that stop suddenly. Obstructive = prolonged expiration."],
+    ["Color", "Central cyanosis (lips, tongue, mucosa) = hypoxia. Pallor and diaphoresis = heart failure, acute coronary syndrome."],
+    ["Neck", "Inspiration: sternocleidomastoid and scalene. Expiration: intercostals and abdominal obliques. Trachea midline?"],
+    ["Chest size", "Anteroposterior to lateral ratio 0.7-0.9, rising with age; over 0.9 in obstructive disease = barrel chest."],
+    ["Movement", "Asymmetric expansion = large effusion. Inspiratory retraction = severe asthma, obstructive disease, upper airway obstruction. One-sided lag = pleural disease or phrenic nerve injury."],
+    ["Deformities", "Pigeon (carinatum): sternum forward. Funnel (excavatum): lower sternum sunk, may cause murmurs. Flail: rib fractures, segment caves IN on inspiration. Kyphoscoliosis: findings hard to interpret."],
+    ["Palpation", "Crepitus = air in subcutaneous tissue (with chest wall edema: mediastinitis). Tenderness, bruising, step-off = rib fracture. Sinus tracts = pleural or lung infection."],
+    ["Expansion", "One-sided decrease or delay: fibrosis, effusion, lobar pneumonia, splinting, bronchial obstruction, hemidiaphragm paralysis."],
+    ["Fremitus", "UP = unilateral pneumonia (consolidation). DOWN = thick wall, obstructed bronchus, obstructive disease, effusion, fibrosis, pneumothorax, tumor."],
+  ]},
+
+ {"id": "l6-sounds", "label": "Percussion & Breath Sounds", "color": "#c08a2e",
+  "rows": [
+    ["Percussion", "Resonant = healthy. Dull = fluid or solid replacing air. Generalized hyperresonance = obstructive disease or asthma. One-sided hyperresonance = large pneumothorax or bulla. Cannot reach deep lesions."],
+    ["Diaphragmatic excursion", "Dullness marked at full expiration and full inspiration. HIGH level = effusion, or raised hemidiaphragm (atelectasis, phrenic nerve). Normal range given as 3-5.5 cm and 3-5 cm."],
+    ["Before listening", "Cough once or twice; patient de-robed (gowns and chest hair make sounds)."],
+    ["Vesicular", "Inspiration longer; soft, low. Most of both lungs."],
+    ["Bronchovesicular", "About equal; intermediate. 1st and 2nd interspaces in front, between the scapulae."],
+    ["Bronchial", "Expiration longer; loud, high. Over the manubrium. A silent gap between phases suggests bronchial."],
+    ["Tracheal", "About equal; very loud, high. Over the trachea in the neck."],
+    ["In the wrong place", "Bronchial or bronchovesicular where vesicular belongs = air replaced by fluid or consolidation."],
+  ]},
+
+ {"id": "l6-adventitious", "label": "Adventitious Sounds", "color": "#5b4a8a",
+  "rows": [
+    ["Crackles (rales)", "Non-musical, discontinuous; deflated small airways snapping open on inspiration."],
+    ["Fine crackles", "Soft, high, brief; mid-to-late inspiration, dependent lung; CHANGE with position. Pulmonary fibrosis, interstitial fibrosis, interstitial pneumonitis."],
+    ["Coarse crackles", "Loud, low, popping; early inspiration through expiration; do NOT change with position. Obstructive disease, asthma, bronchiectasis, pneumonia, heart failure."],
+    ["Wheezes", "Continuous, musical; rapid airflow through bronchi narrowed almost shut. Typical of asthma. Localized = foreign body, mucous plug, tumor."],
+    ["Rhonchi", "Variant of wheezes, LOWER pitch; may clear with coughing (secretions)."],
+    ["Stridor", "Continuous, high-pitched; upper airway narrowing; over the neck on inspiration. Intubation stenosis, edema after device removal, epiglottitis, foreign body, anaphylaxis."],
+    ["Pleural rub", "Grating, creaking, biphasic; axilla and lower bases; not changed by coughing; louder with firm pressure; gone with a breath hold."],
+    ["Mediastinal crunch (Hamman sign)", "Precordial crackles in time with the HEARTBEAT; air in the mediastinum; left lateral decubitus. Trauma, drugs, childbirth, rapid scuba ascent."],
+  ]},
+
+ {"id": "l6-five", "label": "The Five Conditions & Voice Sounds", "color": "#3f5b6b",
+  "rows": [
+    ["Asthma", "Tachypnea, retractions. Diminished fremitus. Resonant to diffusely hyperresonant. Wheezes, prolonged expiration."],
+    ["Atelectasis", "Narrowed spaces, trachea TOWARD the side. Diminished fremitus (may rise in right upper lobe). Dull. Sounds absent while the plug persists; crackles. Commonest respiratory problem after surgery."],
+    ["Pneumonia", "Trachea midline. INCREASED fremitus. Dull over the airless area. Bronchial sounds, late inspiratory crackles, egophony, bronchophony, whispered pectoriloquy."],
+    ["Pneumothorax", "Trachea to the unaffected side only if tension. Decreased or absent fremitus. Hyperresonant or tympanic. Decreased or absent sounds; possible rub."],
+    ["Pleural effusion", "Large: asymmetric expansion, trachea to unaffected side. Fremitus down (up toward the top). Dull, high diaphragm. Sounds down; bronchial near the top; possible rub."],
+    ["Egophony", "Say 'ee'. Normal: muffled long E. Positive: 'ee' heard as 'a'."],
+    ["Bronchophony", "Say 'ninety-nine'. Normal: muffled. Positive: louder."],
+    ["Whispered pectoriloquy", "Whisper 'ninety-nine'. Normal: faint, indistinct. Positive: louder, clearer."],
+    ["Pneumonia odds", "Fever and cough plus bronchial breath sounds and egophony: more than triples the likelihood of pneumonia."],
+    ["Pulmonary OSCE (objective structured clinical examination)", "10 November. The whole station is on the Pulmonary OSCE run-sheet."],
+  ]},
 ]
 
 for t in topics:
@@ -181,10 +299,10 @@ html = render(
     title="Cram Sheet — Physical Diagnosis 2 Exam 2",
     kicker="Physical Diagnosis 2 Exam 2 · Class of 2028",
     h1="Physical Diagnosis 2 Exam 2 Cram Sheet",
-    sub="Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Pulmonary and hematology are added when those lectures are posted.",
+    sub="Lecture 5, the advanced cardiovascular and peripheral vascular examination: the history, the cardiac cycle and every extra sound, the apical impulse, the listening areas and which end of the stethoscope, how to describe and grade a murmur, all eleven lesions side by side, the maneuvers, and the peripheral vascular examination with edema, the Allen test, the ankle brachial index and Homans sign. Lecture 6, the thorax and lungs: the landmarks and procedures, the respiratory history, clubbing and hemoptysis, dyspnea by onset, the breathing patterns and deformities, percussion and the breath sounds, every adventitious sound, and the five conditions side by side. Hematology is added when that lecture is posted.",
     topics=topics,
     guide_href="pd2-exam-2-study-guide.html",
-    footer_note="Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lecture 5 so far; Exam 2 (Friday 20 November) covers Lectures 5 to 7. Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.",
+    footer_note="Condensed from the Physical Diagnosis 2 Exam 2 Study Guide (Class of 2028). Covers Lectures 5 and 6 so far; Exam 2 (Friday 20 November) covers Lectures 5 to 7. Rows marked with a star are what the lecturer repeated, not a statement of what is on the exam. For the full explanation and the figures behind any row, see the full guide.",
 )
 open(OUT, "w", encoding="utf-8").write(html)
 rows = sum(len([r for r in t["rows"] if not isinstance(r, dict)]) for t in topics)
