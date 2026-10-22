@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Physical Diagnosis 2 Exam 2 Arcade deck -- Lecture 5.
+"""Add the Physical Diagnosis 2 Exam 2 Arcade decks -- Lectures 5 and 6.
 
 PHYSICAL DIAGNOSIS ONLY: what you find and how you find it. Clin Path I owns
 the mechanism of these diseases and CMS I owns their management, and the pool
@@ -16,8 +16,14 @@ STETH_ICON = ('<path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M10 12v3a5 5 0 0 0 5 5
               '<circle cx="18" cy="18" r="2.5"/><circle cx="6" cy="3" r="1"/>'
               '<circle cx="14" cy="3" r="1"/>')
 
+LUNG_ICON = ('<path d="M12 3v8"/><path d="M12 11c-1.5 0-3-1-3-1"/><path d="M12 11c1.5 0 3-1 3-1"/>'
+             '<path d="M9 7.5C6 8 4 12 4 16c0 2 1 4 3 4s3-1.5 3-3.5V10"/>'
+             '<path d="M15 7.5c3 .5 5 4.5 5 8.5 0 2-1 4-3 4s-3-1.5-3-3.5V10"/>')
+
 C = json.load(open(os.path.join(HERE, "pd2_e2_cards.json"), encoding="utf-8"))
 DECKS = [("pd2-cardiovascular-exam", "Cardiovascular &amp; Peripheral Vascular Exam",
-          "accent2", STETH_ICON, [tuple(x) for x in C["pd2-cardiovascular-exam"]])]
+          "accent2", STETH_ICON, [tuple(x) for x in C["pd2-cardiovascular-exam"]]),
+         ("pd2-thorax-lung-exam", "Thorax &amp; Lung Exam",
+          "accent3", LUNG_ICON, [tuple(x) for x in C["pd2-thorax-lung-exam"]])]
 if __name__ == "__main__":
     apply("PD2E2", DECKS, "physical-diagnosis-2", "Physical Diagnosis 2", "exam2", "Exam 2")

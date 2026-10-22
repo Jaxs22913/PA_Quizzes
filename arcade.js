@@ -10140,6 +10140,47 @@ var DEMO_DECKS = [
       ["Which words describe the quality of a murmur?", "Blowing, harsh, rumbling, musical"],
       ["What does the radiation of a murmur help establish?", "Site of origin, intensity, flow direction"],
     ]},
+
+  { id: "pd2-thorax-lung-exam", name: "Thorax &amp; Lung Exam", color: "accent3",
+    icon: '<path d="M12 3v8"/><path d="M12 11c-1.5 0-3-1-3-1"/><path d="M12 11c1.5 0 3-1 3-1"/><path d="M9 7.5C6 8 4 12 4 16c0 2 1 4 3 4s3-1.5 3-3.5V10"/><path d="M15 7.5c3 .5 5 4.5 5 8.5 0 2-1 4-3 4s-3-1.5-3-3.5V10"/>',
+    cards: [
+      ["Where is a needle inserted to decompress a tension pneumothorax?", "2nd intercostal space, anteriorly"],
+      ["Between which ribs is a chest tube inserted?", "Between the 4th and 5th ribs"],
+      ["Where is the needle inserted for thoracentesis?", "7th intercostal space, just above the 8th rib"],
+      ["Why do needles and tubes go just above a rib?", "Neurovascular structures run along each rib's lower edge"],
+      ["What borders the triangle of safety posteriorly?", "Lateral border of the latissimus dorsi"],
+      ["Which lobes make up the left lung?", "Upper and lower lobes only"],
+      ["Where does the lung's inferior border cross the midaxillary line?", "At the 8th rib"],
+      ["Which rib does the right horizontal fissure follow?", "The 4th rib"],
+      ["Why does aspirated material favor the right lung?", "The right main bronchus is more vertical"],
+      ["Which pleural layer produces pleuritic pain?", "The parietal pleura"],
+      ["How should the respiratory history begin?", "With an open-ended question"],
+      ["Sharp chest pain, worse with inspiration or cough: which pattern?", "Pleuritic"],
+      ["Which duration makes a cough chronic?", "More than 8 weeks"],
+      ["Copious foul-smelling sputum suggests what?", "Cystic fibrosis or bronchiectasis"],
+      ["Foul-smelling sputum alone suggests what?", "An anaerobic lung abscess"],
+      ["What is the hallmark symptom of obstructive sleep apnea?", "Loud, persistent snoring at night"],
+      ["What volume defines massive hemoptysis?", "More than 600 mL in 24 hours"],
+      ["How does stomach blood differ from coughed-up blood?", "Darker, with food particles"],
+      ["How does a clubbed nail bed feel?", "Spongy or floating"],
+      ["Which two causes of dyspnea are sudden in onset?", "Pneumothorax and pulmonary embolism"],
+      ["Episodic dyspnea with symptom-free intervals suggests what?", "Asthma"],
+      ["Gradual exertional dyspnea with a dry cough suggests what?", "Interstitial lung disease"],
+      ["What produces crackles?", "Small airways snapping open on inspiration"],
+      ["Which crackles change with body position?", "Fine crackles"],
+      ["How do rhonchi differ from wheezes?", "Lower pitched; may clear with coughing"],
+      ["What does fading wheeze with minimal air movement in asthma mean?", "A silent chest needing immediate intervention"],
+      ["Where and when is stridor best heard?", "Over the neck during inspiration"],
+      ["What makes a pleural rub disappear?", "A breath hold"],
+      ["Precordial crackles in time with the heartbeat are called what?", "Mediastinal crunch (Hamman sign)"],
+      ["Which breath sound has expiration longer than inspiration?", "Bronchial"],
+      ["Bronchial sounds at the lung bases suggest what?", "Consolidated or fluid-filled lung"],
+      ["Positive egophony: how does a spoken 'ee' sound?", "Like 'a'"],
+      ["Which condition pulls the trachea toward the affected side?", "Atelectasis"],
+      ["Which condition increases tactile fremitus?", "Pneumonia (consolidation)"],
+      ["What percussion note fits pneumothorax?", "Hyperresonant or tympanic"],
+      ["Where may fremitus rise in a large pleural effusion?", "Toward the top of the effusion"],
+    ]},
   // <!--/PD2E2-DECKS-->
 
   // <!--CMSE5-DECKS-->
@@ -11730,7 +11771,7 @@ var DEMO_CLASSES = [
   { id: "physical-diagnosis-2", name: "Physical Diagnosis 2", exams: [
     { id: "exam1", name: "Exam 1", deckIds: ["pd2-clinical-reasoning", "pd2-derm-morphology", "pd2-derm-exam", "pd2-ocular-exam", "pd2-ent-exam"] },
     { id: "exam2", name: "Exam 2", deckIds: [
-      "pd2-cardiovascular-exam"
+      "pd2-cardiovascular-exam", "pd2-thorax-lung-exam"
     ] }
   ]},
 
