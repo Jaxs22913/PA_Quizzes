@@ -1,0 +1,1878 @@
+{
+ "set1": [
+  {
+   "topic": "Clubbing",
+   "io": "Identify disease processes that may be associated with clubbing and hemoptysis",
+   "slot": "manifestation",
+   "q": "How does the nail bed feel when the fingers are clubbed?",
+   "opts": [
+    [
+     "Tender and swollen",
+     "Clubbing is a bulbous swelling at the nail base, but its nail bed is described as spongy or floating, not tender."
+    ],
+    [
+     "Spongy or floating",
+     "Correct: in clubbing the nail bed feels spongy or floating, and the normal angle between the nail and proximal fold is lost."
+    ],
+    [
+     "Hard and fixed",
+     "That is the reverse of the clubbing finding; the clubbed nail bed feels spongy or floating."
+    ],
+    [
+     "Cold and pale",
+     "Coldness and pallor are color and temperature findings; clubbing is a spongy, floating nail bed with a lost nail angle."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 26",
+   "mis": {
+    "Hard and fixed": "reversed direction or value",
+    "Cold and pale": "competing diagnosis",
+    "Tender and swollen": "confused mechanism or drug class"
+   }
+  },
+  {
+   "topic": "Asthma",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "Which inspection findings fit asthma?",
+   "opts": [
+    [
+     "Trachea midline, one side lagging",
+     "A midline trachea with unilateral decrease or delay in expansion fits pneumonia rather than asthma."
+    ],
+    [
+     "Tachypnea, dyspnea and retractions",
+     "Correct: asthma on inspection shows tachypnea or dyspnea and retractions, the visible work of breathing."
+    ],
+    [
+     "Narrowed intercostal spaces, trachea toward lesion",
+     "Narrowed intercostal spaces with ipsilateral tracheal deviation are the ATELECTASIS findings."
+    ],
+    [
+     "Asymmetric expansion, trachea pushed away",
+     "Asymmetric expansion with the trachea shifted to the unaffected side is a LARGE pleural effusion."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 58",
+   "mis": {
+    "Narrowed intercostal spaces, trachea toward lesion": "competing diagnosis",
+    "Asymmetric expansion, trachea pushed away": "competing diagnosis",
+    "Trachea midline, one side lagging": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Clubbing",
+   "io": "Identify disease processes that may be associated with clubbing and hemoptysis",
+   "slot": "etiology",
+   "q": "The finger on the right is shown beside a normal finger. Which condition is associated with the change it shows?",
+   "opts": [
+    [
+     "Lung cancer",
+     "Correct: the right finger shows clubbing, a bulbous swelling of the soft tissue at the nail base, and clubbing is associated with lung cancer."
+    ],
+    [
+     "Asthma",
+     "Asthma is not associated with clubbing; the clubbing list includes lung cancer, interstitial lung disease and bronchiectasis."
+    ],
+    [
+     "Pneumothorax",
+     "Pneumothorax is an acute air leak with no link to clubbing, which reflects longer-standing disease such as lung cancer."
+    ],
+    [
+     "Pleural effusion",
+     "A pleural effusion alters percussion and breath sounds, not the nails; clubbing is linked to lung cancer among others."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 26",
+   "mis": {
+    "Asthma": "competing diagnosis",
+    "Pneumothorax": "competing diagnosis",
+    "Pleural effusion": "competing diagnosis"
+   },
+   "img": "pd2-exam-2-quiz-images/l6-clubbing.jpg",
+   "alt": "Two fingertips side by side in profile, each crossed by two measurement lines; the fingertip on the right has a bulbous, swollen nail base.",
+   "slide": "Slide 26"
+  },
+  {
+   "topic": "Wheezes and rhonchi",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "test finding",
+   "q": "How do rhonchi differ from wheezes?",
+   "opts": [
+    [
+     "Grating; vanish when the breath is held",
+     "A grating sound that vanishes with a breath hold is a pleural rub, not rhonchi."
+    ],
+    [
+     "Lower in pitch; may clear with coughing",
+     "Correct: rhonchi are a variant of wheezes, lower in pitch, and may disappear with coughing, so secretions may be involved."
+    ],
+    [
+     "Higher in pitch; heard on inspiration",
+     "Rhonchi are LOWER in pitch than wheezes, and wheezes themselves can be inspiratory, expiratory or biphasic."
+    ],
+    [
+     "Discontinuous; from airways snapping open",
+     "Discontinuous sounds from small airways snapping open are crackles; rhonchi are continuous, like wheezes."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 48",
+   "mis": {
+    "Higher in pitch; heard on inspiration": "reversed direction or value",
+    "Discontinuous; from airways snapping open": "competing diagnosis",
+    "Grating; vanish when the breath is held": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Chest wall deformities",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "After multiple rib fractures, one area of the chest wall moves inward on inspiration and outward on expiration. What is this?",
+   "opts": [
+    [
+     "Unilateral respiratory lag",
+     "A lag is a delay in movement on one side (pleural disease, phrenic nerve injury), not inward motion on inspiration after fractures."
+    ],
+    [
+     "Traumatic flail chest",
+     "Correct: multiple rib fractures can cause paradoxical movement: as the diaphragm descends and intrathoracic pressure falls on inspiration, the injured area caves inward, and on expiration it moves outward."
+    ],
+    [
+     "Thoracic kyphoscoliosis",
+     "Kyphoscoliosis is a spinal curvature with vertebral rotation that deforms the chest; it does not move paradoxically with breathing."
+    ],
+    [
+     "Funnel chest (pectus excavatum)",
+     "Funnel chest is a fixed depression of the lower sternum, present at rest, not a segment that moves the wrong way with each breath."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 38",
+   "mis": {
+    "Thoracic kyphoscoliosis": "competing diagnosis",
+    "Funnel chest (pectus excavatum)": "competing diagnosis",
+    "Unilateral respiratory lag": "competing diagnosis"
+   },
+   "img": "pd2-exam-2-quiz-images/l6-flail-chest.jpg",
+   "alt": "Outline of a chest cross-section with a solid line for expiration and a dashed line for inspiration; on inspiration one side of the chest wall bulges inward.",
+   "slide": "Slide 38"
+  },
+  {
+   "topic": "Chest pain",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "differential",
+   "q": "Sharp chest pain is worse lying supine and with inspiration, and improves when the patient sits forward. Which diagnosis does this suggest?",
+   "opts": [
+    [
+     "Costochondritis",
+     "Costochondritis is localized and reproducible by palpation; position and leaning forward are not what define it."
+    ],
+    [
+     "Gastroesophageal reflux disease",
+     "Reflux pain is burning and postprandial; it worsens lying down but is not sharp and is not relieved by sitting forward."
+    ],
+    [
+     "Pericarditis",
+     "Correct: sharp, positional pain that is worse supine or with inspiration and improved by sitting forward points to pericarditis."
+    ],
+    [
+     "Pleuritis",
+     "Pleuritis gives sharp pain with inspiration or cough, but relief on sitting forward is the positional pattern of pericarditis."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 14",
+   "mis": {
+    "Pleuritis": "competing diagnosis",
+    "Costochondritis": "competing diagnosis",
+    "Gastroesophageal reflux disease": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Chest pain",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "differential",
+   "q": "Chest pain began abruptly, was at its worst from the start, and radiates to the back. Which diagnosis does this pattern suggest?",
+   "opts": [
+    [
+     "Aortic dissection",
+     "Correct: sudden, tearing pain that is maximal early and radiates to the back is the pattern listed for aortic dissection."
+    ],
+    [
+     "Pneumothorax",
+     "Pneumothorax is sudden too, but its pain is sharp and pleuritic, worse with inspiration or cough, rather than tearing to the back."
+    ],
+    [
+     "Myocardial infarction",
+     "Infarction gives retrosternal pressure or squeezing, often exertional, radiating to the arm, neck, jaw or back, not maximal at onset."
+    ],
+    [
+     "Pericarditis",
+     "Pericarditis is sharp and positional, worse supine and improved sitting forward, not abrupt tearing pain."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 14",
+   "mis": {
+    "Pneumothorax": "competing diagnosis",
+    "Myocardial infarction": "competing diagnosis",
+    "Pericarditis": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Landmarks",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Where is the needle inserted for a thoracentesis?",
+   "opts": [
+    [
+     "Anteriorly, in the 2nd intercostal space",
+     "The 2nd intercostal space anteriorly is for needle decompression of a tension pneumothorax, not for draining fluid."
+    ],
+    [
+     "Laterally, between the 4th and 5th ribs",
+     "The space between the 4th and 5th ribs, in the triangle of safety, is the chest tube site rather than the thoracentesis site."
+    ],
+    [
+     "Posteriorly, just below the 8th rib",
+     "Entry just BELOW a rib meets the neurovascular structures that run along its inferior margin; the needle goes just above the 8th rib."
+    ],
+    [
+     "Posteriorly, just above the 8th rib",
+     "Correct: thoracentesis is done at T7-T8, the 7th intercostal space, with the needle immediately superior to the 8th rib, to drain a pleural effusion."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 4, 5",
+   "mis": {
+    "Anteriorly, in the 2nd intercostal space": "adjacent fact",
+    "Laterally, between the 4th and 5th ribs": "adjacent fact",
+    "Posteriorly, just below the 8th rib": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Wheezes and rhonchi",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "complication",
+   "q": "During a severe asthma attack, the wheezing becomes quieter while air movement is minimal. What does this indicate?",
+   "opts": [
+    [
+     "Secretions cleared by coughing",
+     "Sounds that clear with coughing are rhonchi from secretions; fading wheeze with minimal air movement is the silent chest."
+    ],
+    [
+     "Air leaking into the pleural space",
+     "A pneumothorax gives absent sounds on one side with hyperresonance; diffusely fading wheeze in asthma is the silent chest."
+    ],
+    [
+     "A silent chest needing immediate action",
+     "Correct: wheezing becomes less audible as the airways narrow further; this silent chest of asthma means minimal air movement and needs immediate intervention."
+    ],
+    [
+     "The attack is beginning to resolve",
+     "Quieter wheezing here is not improvement: with minimal air movement it is the silent chest, which needs immediate intervention."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 48",
+   "mis": {
+    "The attack is beginning to resolve": "common lay belief",
+    "Secretions cleared by coughing": "confused mechanism or drug class",
+    "Air leaking into the pleural space": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Pleural effusion",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "Where may tactile fremitus be INCREASED in a large pleural effusion?",
+   "opts": [
+    [
+     "Over the whole affected side",
+     "Over the effusion as a whole fremitus is decreased or absent; only toward its top may it rise."
+    ],
+    [
+     "Over the opposite lung",
+     "The effusion changes findings on its own side; the increase in fremitus is toward the top of the effusion."
+    ],
+    [
+     "Toward the top of the effusion",
+     "Correct: fremitus is decreased or absent over a large effusion but may be increased toward its top, where bronchial breath sounds may also be heard."
+    ],
+    [
+     "At the base of the effusion",
+     "Over the bulk of the fluid at the base fremitus is decreased or absent; the increase is toward the TOP."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 62",
+   "mis": {
+    "At the base of the effusion": "reversed direction or value",
+    "Over the whole affected side": "reversed direction or value",
+    "Over the opposite lung": "adjacent fact"
+   }
+  },
+  {
+   "topic": "History",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "risk factors",
+   "q": "Which item belongs to the detailed exposure history?",
+   "opts": [
+    [
+     "Sputum color",
+     "Sputum color belongs to characterizing a productive cough (amount, color, consistency, odor, blood), not to the exposure history."
+    ],
+    [
+     "Morning headaches",
+     "Morning headache is one of the sleep questions asked about snoring and disordered sleep, not part of the exposure history."
+    ],
+    [
+     "Flights of stairs climbed",
+     "Flights of stairs measure the functional severity of dyspnea; the exposure history covers substances, occupation and travel."
+    ],
+    [
+     "Recent travel",
+     "Correct: the exposure history covers tobacco and nicotine, marijuana (smoked, vaped or ingested), recreational drugs, occupational and environmental exposures, and recent travel."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 12",
+   "mis": {
+    "Sputum color": "adjacent fact",
+    "Morning headaches": "adjacent fact",
+    "Flights of stairs climbed": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "An immunosuppressed patient has acute dyspnea with fever, chills, a productive cough and pleuritic pain. Which diagnosis fits?",
+   "opts": [
+    [
+     "Interstitial lung disease",
+     "Interstitial lung disease is gradually progressive with a dry cough, not acute with fever and sputum."
+    ],
+    [
+     "Pneumonia",
+     "Correct: pneumonia is acute onset with fever, chills, cough, sputum and pleuritic pain, after recent illness, aspiration risk or immunosuppression."
+    ],
+    [
+     "Pulmonary embolism",
+     "Pulmonary embolism is sudden unexplained dyspnea with hemoptysis, syncope or leg symptoms; fever, chills and sputum point to pneumonia."
+    ],
+    [
+     "Pneumothorax",
+     "Pneumothorax gives sudden unilateral pleuritic pain without fever, chills or sputum."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 17",
+   "mis": {
+    "Pulmonary embolism": "competing diagnosis",
+    "Pneumothorax": "competing diagnosis",
+    "Interstitial lung disease": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "risk factors",
+   "q": "Which history raises suspicion for pulmonary embolism in a patient with sudden dyspnea?",
+   "opts": [
+    [
+     "Cold air and exercise as triggers",
+     "Cold air, exercise and allergens are asthma triggers; asthma is episodic rather than sudden and unexplained."
+    ],
+    [
+     "Estrogen use and recent immobility",
+     "Correct: the relevant history for pulmonary embolism is prior venous thromboembolism, surgery, immobility, cancer, estrogen and pregnancy or the postpartum period."
+    ],
+    [
+     "Alpha-1 antitrypsin deficiency",
+     "Alpha-1 antitrypsin deficiency is relevant history for chronic obstructive pulmonary disease, which is slowly progressive."
+    ],
+    [
+     "Autoimmune disease on new medication",
+     "Autoimmune disease and medications are the history for interstitial lung disease, which is gradually progressive."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 17",
+   "mis": {
+    "Alpha-1 antitrypsin deficiency": "competing diagnosis",
+    "Autoimmune disease on new medication": "competing diagnosis",
+    "Cold air and exercise as triggers": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Mediastinal crunch",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "test finding",
+   "q": "In which position is the mediastinal crunch (Hamman sign) best heard?",
+   "opts": [
+    [
+     "Sitting, leaning forward",
+     "Sitting forward is what relieves pericarditis pain; the mediastinal crunch is best heard in the left lateral decubitus position."
+    ],
+    [
+     "Sitting, arms folded",
+     "Sitting with arms folded is the position for the posterior lung examination, not for hearing the crunch."
+    ],
+    [
+     "Supine",
+     "Supine is used for the anterior chest examination; the crunch is best heard in the left lateral decubitus position."
+    ],
+    [
+     "Left lateral decubitus",
+     "Correct: the mediastinal crunch, precordial crackles in time with the heartbeat, is best heard with the patient in the left lateral decubitus position."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 51",
+   "mis": {
+    "Sitting, leaning forward": "adjacent fact",
+    "Sitting, arms folded": "adjacent fact",
+    "Supine": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Pleural rub",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "differential",
+   "q": "A grating, creaking sound over the lower lateral chest is heard in both phases of breathing and disappears when the patient holds their breath. Which sound is it?",
+   "opts": [
+    [
+     "Mediastinal crunch",
+     "The mediastinal crunch is crackles synchronized with the heartbeat, not with respiration, so it would persist during a breath hold."
+    ],
+    [
+     "Coarse crackles",
+     "Coarse crackles are popping sounds from secretions or fluid that do not depend on the pleura and are not described as grating."
+    ],
+    [
+     "Pleural rub",
+     "Correct: a pleural rub is discontinuous, low-frequency and grating, usually biphasic, and disappears with a breath hold, which separates it from a pericardial friction rub."
+    ],
+    [
+     "Pericardial friction rub",
+     "A pericardial friction rub follows the heart, so it does NOT disappear when the breath is held; that is the distinguishing test."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 50, 51",
+   "mis": {
+    "Pericardial friction rub": "ruled out by a stated finding",
+    "Mediastinal crunch": "ruled out by a stated finding",
+    "Coarse crackles": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Pleurae",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Pain on deep inspiration comes from irritation of which layer?",
+   "opts": [
+    [
+     "Parietal pleura",
+     "Correct: the parietal pleura is highly innervated by intercostal and phrenic nerves, so irritating it produces pleuritic pain with deep inspiration."
+    ],
+    [
+     "Visceral pleura",
+     "The visceral pleura covers the lung surface and lacks sensory nerves, so irritation of it is not the source of pleuritic pain."
+    ],
+    [
+     "Alveolar walls",
+     "The alveoli are the site of gas exchange; pleuritic pain comes from the parietal pleura with its intercostal and phrenic nerve supply."
+    ],
+    [
+     "Bronchial lining",
+     "The bronchi carry air to the alveoli; pain with deep inspiration comes from irritation of the parietal pleura."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 10",
+   "mis": {
+    "Visceral pleura": "reversed direction or value",
+    "Alveolar walls": "confused mechanism or drug class",
+    "Bronchial lining": "confused mechanism or drug class"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "risk factors",
+   "q": "A patient with sudden dyspnea has a history of emphysema and a recent procedure, and reports abrupt pain on one side of the chest. Which diagnosis fits?",
+   "opts": [
+    [
+     "Pulmonary embolism",
+     "Pulmonary embolism is also sudden, but its history is prior clots, surgery, immobility, cancer, estrogen or pregnancy rather than emphysema."
+    ],
+    [
+     "Pneumonia",
+     "Pneumonia is acute with fever, chills, cough and sputum after illness or aspiration, not abrupt one-sided pain after a procedure."
+    ],
+    [
+     "Asthma",
+     "Asthma is episodic wheezing with allergen and exercise triggers, not abrupt unilateral pain after a procedure."
+    ],
+    [
+     "Pneumothorax",
+     "Correct: pneumothorax is sudden dyspnea with abrupt unilateral pleuritic pain, after trauma, a recent procedure, emphysema or a prior pneumothorax."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 17",
+   "mis": {
+    "Pulmonary embolism": "competing diagnosis",
+    "Pneumonia": "competing diagnosis",
+    "Asthma": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Pneumonia",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "differential",
+   "q": "Over the right lower chest there is dullness, increased tactile fremitus, bronchial breath sounds and egophony, and the trachea is midline. Which condition fits?",
+   "opts": [
+    [
+     "Pneumothorax",
+     "Pneumothorax is hyperresonant or tympanic with decreased or absent fremitus, not dull with increased fremitus."
+    ],
+    [
+     "Pneumonia",
+     "Correct: pneumonia gives dullness over the airless area, increased fremitus, bronchial sounds, late inspiratory crackles and positive transmitted voice sounds, with a midline trachea."
+    ],
+    [
+     "Pleural effusion",
+     "An effusion is dull too, but it DECREASES fremitus and breath sounds over the fluid."
+    ],
+    [
+     "Atelectasis",
+     "Atelectasis is dull with DIMINISHED fremitus and pulls the trachea toward the affected side."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 60",
+   "mis": {
+    "Pleural effusion": "ruled out by a stated finding",
+    "Atelectasis": "ruled out by a stated finding",
+    "Pneumothorax": "ruled out by a stated finding"
+   }
+  },
+  {
+   "topic": "Transmitted voice sounds",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "When egophony is present, how does the patient's spoken \"ee\" sound through the stethoscope?",
+   "opts": [
+    [
+     "Like a louder \"ninety-nine\"",
+     "A louder \"ninety-nine\" is a positive BRONCHOPHONY result; egophony uses \"ee\"."
+    ],
+    [
+     "Like a clear whisper",
+     "Louder, clearer whispered sounds are positive whispered pectoriloquy, a different test."
+    ],
+    [
+     "Like \"a\"",
+     "Correct: with egophony the spoken \"ee\" sounds like \"a\" (or \"ay\"); over normal lung it is heard as a muffled long E."
+    ],
+    [
+     "Like a muffled long \"ee\"",
+     "A muffled long E is what you hear when egophony is NOT present, over normal air-filled lung."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 53, 56",
+   "mis": {
+    "Like a muffled long \"ee\"": "reversed direction or value",
+    "Like a louder \"ninety-nine\"": "adjacent fact",
+    "Like a clear whisper": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Breath sounds",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "A silent gap between inspiration and expiration suggests which breath sound?",
+   "opts": [
+    [
+     "Bronchial",
+     "Correct: a silent gap between inspiration and expiration suggests bronchial breath sounds, which out at the bases mean consolidated or fluid-filled lung."
+    ],
+    [
+     "Vesicular",
+     "Vesicular sounds are the normal sounds over most of the lung, soft and low-pitched, not marked by a silent gap."
+    ],
+    [
+     "Bronchovesicular",
+     "Bronchovesicular sounds have inspiration and expiration about equal with intermediate pitch; the gap points to bronchial sounds."
+    ],
+    [
+     "Tracheal",
+     "Tracheal sounds are heard over the neck and are very loud; the silent gap is the clue named for bronchial sounds."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 44",
+   "mis": {
+    "Vesicular": "competing diagnosis",
+    "Bronchovesicular": "competing diagnosis",
+    "Tracheal": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Atelectasis",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "differential",
+   "q": "Diminished chest wall motion, narrowed intercostal spaces and a trachea deviated toward the same side suggest which condition?",
+   "opts": [
+    [
+     "Large pleural effusion",
+     "A large effusion shifts the trachea to the UNAFFECTED side and causes asymmetric expansion."
+    ],
+    [
+     "Tension pneumothorax",
+     "A tension pneumothorax shifts the trachea toward the UNAFFECTED side, the opposite of this patient."
+    ],
+    [
+     "Lobar pneumonia",
+     "In pneumonia the trachea stays midline, with increased fremitus and bronchial sounds over the involved area."
+    ],
+    [
+     "Atelectasis",
+     "Correct: atelectasis shows diminished chest wall motion, narrowed intercostal spaces and ipsilateral tracheal deviation, with dullness over the affected side."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 59",
+   "mis": {
+    "Large pleural effusion": "reversed direction or value",
+    "Tension pneumothorax": "reversed direction or value",
+    "Lobar pneumonia": "ruled out by a stated finding"
+   }
+  },
+  {
+   "topic": "Pneumothorax",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "Which percussion note over the affected side fits a pneumothorax?",
+   "opts": [
+    [
+     "Hyperresonant or tympanic",
+     "Correct: a pneumothorax is hyperresonant or tympanic over the affected side, with decreased or absent fremitus and breath sounds."
+    ],
+    [
+     "Dull",
+     "Dullness means fluid or solid tissue, as in pleural effusion, pneumonia or atelectasis, not air in the pleural space."
+    ],
+    [
+     "Resonant and symmetric",
+     "Resonant, symmetric notes are the NORMAL finding; a pneumothorax is hyperresonant on one side."
+    ],
+    [
+     "Dull with a high diaphragm",
+     "Dullness with high diaphragmatic excursion is the pleural effusion pattern."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 61",
+   "mis": {
+    "Dull": "reversed direction or value",
+    "Resonant and symmetric": "reversed direction or value",
+    "Dull with a high diaphragm": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Transmitted voice sounds",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "Over normal air-filled lung, how do the patient's whispered words come through?",
+   "opts": [
+    [
+     "Changed from \"ee\" to \"ay\"",
+     "\"Ee\" heard as \"ay\" is egophony, a sign of consolidation, and uses the spoken voice rather than a whisper."
+    ],
+    [
+     "Muffled but louder than speech",
+     "Over normal lung both spoken and whispered words are muffled and indistinct; a whisper is fainter, not louder."
+    ],
+    [
+     "Faint and indistinct, if heard at all",
+     "Correct: over normal lung whispered words are faint and indistinct, if heard at all; over consolidated lung they are louder and clearer."
+    ],
+    [
+     "Louder and clearer than expected",
+     "Louder, clearer whispered sounds are POSITIVE whispered pectoriloquy, a sign of consolidation."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 55, 56",
+   "mis": {
+    "Louder and clearer than expected": "reversed direction or value",
+    "Changed from \"ee\" to \"ay\"": "adjacent fact",
+    "Muffled but louder than speech": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Chest wall deformities",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "complication",
+   "q": "Which chest wall deformity may compress the heart and great vessels and cause murmurs?",
+   "opts": [
+    [
+     "Funnel chest (pectus excavatum)",
+     "Correct: in funnel chest the lower sternum is depressed, and compression of the heart and great vessels may cause murmurs."
+    ],
+    [
+     "Pigeon chest (pectus carinatum)",
+     "Pigeon chest pushes the sternum forward, away from the heart, so it is not the deformity linked to murmurs."
+    ],
+    [
+     "Barrel chest",
+     "Barrel chest is an increased anteroposterior diameter, normal in infancy and common with aging and obstructive lung disease."
+    ],
+    [
+     "Traumatic flail chest",
+     "Flail chest is paradoxical movement of a fractured rib segment, not compression of the heart."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 37",
+   "mis": {
+    "Pigeon chest (pectus carinatum)": "reversed direction or value",
+    "Barrel chest": "competing diagnosis",
+    "Traumatic flail chest": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Sputum",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "differential",
+   "q": "A patient coughs up large amounts of foul-smelling sputum every day. Which conditions does this suggest?",
+   "opts": [
+    [
+     "Cystic fibrosis or bronchiectasis",
+     "Correct: COPIOUS foul-smelling sputum is the pattern for cystic fibrosis and bronchiectasis; foul smell alone suggests an anaerobic lung abscess."
+    ],
+    [
+     "Viral infection or postnasal drip",
+     "Viral infection and postnasal drip give mucoid sputum: translucent, white or gray, and not foul-smelling."
+    ],
+    [
+     "Bacterial pneumonia or bronchitis",
+     "Bacterial pneumonia is the purulent pattern, yellow or green; copious and foul-smelling points elsewhere."
+    ],
+    [
+     "Asthma or chronic obstructive pulmonary disease",
+     "Asthma brings wheezing, cough and chest tightness, and the obstructive disease scant sputum, not a daily copious foul load."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 22, 16",
+   "mis": {
+    "Viral infection or postnasal drip": "competing diagnosis",
+    "Bacterial pneumonia or bronchitis": "competing diagnosis",
+    "Asthma or chronic obstructive pulmonary disease": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Cough",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "manifestation",
+   "q": "Which duration defines a chronic cough?",
+   "opts": [
+    [
+     "More than 2 weeks",
+     "Two weeks is still acute; acute cough runs up to 3 weeks and chronic begins beyond 8 weeks."
+    ],
+    [
+     "More than 3 weeks",
+     "Beyond 3 weeks a cough is SUBACUTE; chronic begins only after 8 weeks."
+    ],
+    [
+     "More than 8 weeks",
+     "Correct: cough is acute under 3 weeks, subacute at 3-8 weeks and chronic beyond 8 weeks."
+    ],
+    [
+     "More than 12 weeks",
+     "The threshold is lower: a cough lasting more than 8 weeks is already chronic."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 20",
+   "mis": {
+    "More than 2 weeks": "reversed direction or value",
+    "More than 3 weeks": "adjacent fact",
+    "More than 12 weeks": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Hemoptysis",
+   "io": "Identify disease processes that may be associated with clubbing and hemoptysis",
+   "slot": "differential",
+   "q": "Which feature suggests that blood brought up by a patient came from the stomach rather than the respiratory tract?",
+   "opts": [
+    [
+     "Blood streaks after throat clearing",
+     "Blood streaks can come from the nose, mouth or pharynx; darker blood with food particles is what points to the stomach."
+    ],
+    [
+     "Bright red blood after a coughing fit",
+     "Blood coughed up from the chest points to the lower respiratory tract; stomach blood is darker and mixed with food."
+    ],
+    [
+     "Blood following a nosebleed",
+     "Nasopharyngeal blood can be aspirated and then coughed out; it is not darker or mixed with food the way gastric blood is."
+    ],
+    [
+     "Darker blood mixed with food particles",
+     "Correct: blood from the stomach is darker than respiratory blood and comes with food particles, and vomited blood is likely gastrointestinal."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 23",
+   "mis": {
+    "Blood streaks after throat clearing": "competing diagnosis",
+    "Bright red blood after a coughing fit": "reversed direction or value",
+    "Blood following a nosebleed": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "Dyspnea comes in episodes with symptom-free intervals, is often worse at night, and is triggered by cold air and exercise. Which diagnosis fits?",
+   "opts": [
+    [
+     "Pulmonary embolism",
+     "Pulmonary embolism is sudden, unexplained dyspnea, not a recurring episodic pattern triggered by cold air and exercise."
+    ],
+    [
+     "Asthma",
+     "Correct: asthma is episodic with symptom-free intervals, often worse at night, with wheezing, cough and chest tightness and triggers such as allergens, exercise and cold air."
+    ],
+    [
+     "Chronic obstructive pulmonary disease",
+     "This disease is slowly progressive exertional dyspnea without symptom-free intervals; episodic dyspnea with clear gaps is asthma."
+    ],
+    [
+     "Interstitial lung disease",
+     "Interstitial lung disease is gradually progressive exertional dyspnea with a dry cough, not episodes separated by normal intervals."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16",
+   "mis": {
+    "Chronic obstructive pulmonary disease": "competing diagnosis",
+    "Interstitial lung disease": "competing diagnosis",
+    "Pulmonary embolism": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Landmarks",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Why are needles and tubes placed just over the superior margin of a rib?",
+   "opts": [
+    [
+     "Neurovascular structures run along each rib's upper edge",
+     "That reverses it: the neurovascular structures run along the INFERIOR margin, which is why entry is at the superior margin of the rib below."
+    ],
+    [
+     "The parietal pleura is absent just below each rib",
+     "The parietal pleura lines the whole inner rib cage and the upper diaphragm; the rule exists to avoid the neurovascular structures under each rib."
+    ],
+    [
+     "The costal cartilage blocks access below each rib",
+     "Costal cartilage joins ribs to the sternum anteriorly; the reason for the superior-margin rule is the neurovascular bundle on each rib's lower edge."
+    ],
+    [
+     "Neurovascular structures run along each rib's lower edge",
+     "Correct: the neurovascular structures run along the inferior margin of each rib, so going in just above the rib below avoids them."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 4",
+   "mis": {
+    "Neurovascular structures run along each rib's upper edge": "reversed direction or value",
+    "The parietal pleura is absent just below each rib": "confused mechanism or drug class",
+    "The costal cartilage blocks access below each rib": "confused mechanism or drug class"
+   }
+  },
+  {
+   "topic": "Breath sounds",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "Bronchial breath sounds are heard over the lung bases, where vesicular sounds are expected. What does this suggest?",
+   "opts": [
+    [
+     "Hyperinflated lung",
+     "Hyperinflated lung, as in obstructive disease, gives decreased or distant breath sounds, not bronchial sounds."
+    ],
+    [
+     "A pneumothorax",
+     "A pneumothorax gives decreased or absent breath sounds with hyperresonance, not bronchial sounds at the bases."
+    ],
+    [
+     "Consolidated or fluid-filled lung",
+     "Correct: bronchovesicular or bronchial sounds in unexpected places mean air-filled lung has been replaced by fluid-filled or consolidated tissue, as in lobar pneumonia."
+    ],
+    [
+     "A normal variant at the bases",
+     "Bronchial sounds are normal only over the manubrium; at the bases they are abnormal and suggest consolidation."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 44, 56",
+   "mis": {
+    "A normal variant at the bases": "common lay belief",
+    "Hyperinflated lung": "reversed direction or value",
+    "A pneumothorax": "reversed direction or value"
+   }
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Airways",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "etiology",
+   "q": "Aspirated material most often enters the right bronchial tree. Which feature of the right main bronchus explains this?",
+   "opts": [
+    [
+     "It is narrower",
+     "The right main bronchus is WIDER, not narrower, and more vertical, which is why aspirated material favors it."
+    ],
+    [
+     "It passes under the aortic arch",
+     "The LEFT main bronchus passes beneath the aortic arch before entering the left hilum; the right is the more vertical one."
+    ],
+    [
+     "It is more vertical",
+     "Correct: the right main bronchus is wider, shorter and more vertical, so aspirated material more commonly enters the right bronchial tree."
+    ],
+    [
+     "It is longer",
+     "Length belongs to the LEFT main bronchus, which is longer and more horizontal; the right is shorter and more vertical."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 9",
+   "mis": {
+    "It is longer": "reversed direction or value",
+    "It is narrower": "reversed direction or value",
+    "It passes under the aortic arch": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Crackles",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "test finding",
+   "q": "How do coarse crackles differ from fine crackles?",
+   "opts": [
+    [
+     "They disappear when the breath is held",
+     "Disappearing with a breath hold separates a pleural RUB from a pericardial friction rub; it does not separate crackles."
+    ],
+    [
+     "They are higher pitched and softer",
+     "That reverses them: coarse crackles are LOUDER and LOWER in pitch; fine crackles are the soft, high-pitched ones."
+    ],
+    [
+     "They are continuous and musical",
+     "Both kinds of crackle are non-musical and discontinuous; continuous musical sounds are wheezes."
+    ],
+    [
+     "They do not change with body position",
+     "Correct: coarse crackles are louder, lower in pitch, start early in inspiration and last through expiration, and do not change with position (larger airway secretions or fluid)."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 47",
+   "mis": {
+    "They disappear when the breath is held": "adjacent fact",
+    "They are higher pitched and softer": "reversed direction or value",
+    "They are continuous and musical": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Pneumonia",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "Which palpation finding fits lobar pneumonia?",
+   "opts": [
+    [
+     "Absent tactile fremitus",
+     "Decreased or absent fremitus fits pneumothorax and pleural effusion, where air or fluid separates lung from chest wall."
+    ],
+    [
+     "Trachea pushed to the other side",
+     "A trachea shifted toward the unaffected side fits a tension pneumothorax or a large effusion; in pneumonia it is midline."
+    ],
+    [
+     "Trachea pulled toward the lesion",
+     "Ipsilateral tracheal deviation is the atelectasis finding; in pneumonia the trachea stays midline."
+    ],
+    [
+     "Increased tactile fremitus",
+     "Correct: pneumonia increases tactile fremitus over the consolidation, with a unilateral decrease or delay in chest expansion."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 60",
+   "mis": {
+    "Absent tactile fremitus": "reversed direction or value",
+    "Trachea pushed to the other side": "competing diagnosis",
+    "Trachea pulled toward the lesion": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Clubbing",
+   "io": "Identify disease processes that may be associated with clubbing and hemoptysis",
+   "slot": "etiology",
+   "q": "Which non-pulmonary condition is associated with clubbing?",
+   "opts": [
+    [
+     "Inflammatory bowel disease",
+     "Correct: beyond the lung diseases, clubbing is seen in inflammatory bowel disease, congenital heart disease and malignancy."
+    ],
+    [
+     "Gastroesophageal reflux disease",
+     "Reflux is a cause of burning chest pain and of cough, not of clubbing; inflammatory bowel disease is the bowel condition linked to it."
+    ],
+    [
+     "Hypertension",
+     "Hypertension is relevant history for left-sided heart failure, not a cause of clubbing."
+    ],
+    [
+     "Nephrotic syndrome",
+     "Nephrotic syndrome is a transudative cause of pleural effusion, not a disease associated with clubbing."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 26",
+   "mis": {
+    "Gastroesophageal reflux disease": "adjacent fact",
+    "Hypertension": "adjacent fact",
+    "Nephrotic syndrome": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Inspection",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Cyanosis of the lips, tongue and oral mucosa signals what?",
+   "opts": [
+    [
+     "Hypoxia",
+     "Correct: cyanosis in the lips, tongue and oral mucosa signals hypoxia, and is looked for with skin and nail color during the survey."
+    ],
+    [
+     "Acute coronary syndrome",
+     "Pallor and diaphoresis are the color changes common in acute coronary syndrome and heart failure; central cyanosis signals hypoxia."
+    ],
+    [
+     "Upper airway obstruction",
+     "Upper airway obstruction is signaled by stridor, a high-pitched inspiratory whistle over the neck, not by cyanosis as such."
+    ],
+    [
+     "Bronchiectasis",
+     "Bronchiectasis is associated with clubbing of the nails, not defined by cyanosis of the lips and tongue, which signals hypoxia."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 33",
+   "mis": {
+    "Acute coronary syndrome": "adjacent fact",
+    "Upper airway obstruction": "adjacent fact",
+    "Bronchiectasis": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "Episodes of air hunger, sighing, lightheadedness and tingling around the mouth occur at rest during emotional distress. What should be done before attributing them to anxiety?",
+   "opts": [
+    [
+     "Confirm symptoms occur at rest",
+     "Hyperventilation can occur at rest or with distress either way; medical causes still have to be considered first."
+    ],
+    [
+     "Confirm a history of distress",
+     "Emotional distress may contribute, but it does not make anxiety the cause until medical causes have been considered."
+    ],
+    [
+     "Consider medical causes first",
+     "Correct: this is hyperventilation, and although anxiety may contribute, medical causes must be considered first."
+    ],
+    [
+     "Confirm tingling is present",
+     "Perioral and extremity tingling is part of hyperventilation itself and does not exclude a medical cause."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 17",
+   "mis": {
+    "Confirm tingling is present": "ruled out by a stated finding",
+    "Confirm symptoms occur at rest": "ruled out by a stated finding",
+    "Confirm a history of distress": "common lay belief"
+   }
+  },
+  {
+   "topic": "Percussion",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "What is the main limitation of chest percussion?",
+   "opts": [
+    [
+     "It cannot detect a pleural effusion",
+     "A pleural effusion is detected as dullness over the fluid, with a high level of diaphragmatic excursion."
+    ],
+    [
+     "It cannot detect deep-seated lesions",
+     "Correct: percussion shows whether underlying tissue is air-filled, fluid-filled or consolidated, but it cannot help with deep-seated lesions."
+    ],
+    [
+     "It cannot tell air from fluid",
+     "Telling air-filled from fluid-filled or consolidated tissue is exactly what percussion does; its limit is deep-seated lesions."
+    ],
+    [
+     "It cannot detect a pneumothorax",
+     "A large pneumothorax is detected as unilateral hyperresonance or a tympanic note on the affected side."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 41, 42, 62",
+   "mis": {
+    "It cannot tell air from fluid": "reversed direction or value",
+    "It cannot detect a pneumothorax": "reversed direction or value",
+    "It cannot detect a pleural effusion": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Triangle of safety",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Which structure forms the posterior border of the triangle of safety?",
+   "opts": [
+    [
+     "The scapular line",
+     "The scapular line is a posterior vertical reference line on the back, not a border of the triangle, which lies in the midaxillary line."
+    ],
+    [
+     "Lateral border of the latissimus dorsi",
+     "Correct: the triangle is bounded by the latissimus dorsi posteriorly, the pectoralis major anteriorly and the nipple line (4th or 5th intercostal space) below."
+    ],
+    [
+     "Lateral border of the pectoralis major",
+     "The pectoralis major forms the ANTERIOR border of the triangle; the posterior border is the lateral edge of the latissimus dorsi."
+    ],
+    [
+     "The nipple line",
+     "The nipple line, at the 4th or 5th intercostal space, is the INFERIOR boundary; the posterior border is the latissimus dorsi."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 7",
+   "mis": {
+    "Lateral border of the pectoralis major": "adjacent fact",
+    "The nipple line": "adjacent fact",
+    "The scapular line": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Positioning",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "education",
+   "q": "A hospitalized patient is too weak to sit up for the posterior chest examination. How should the back be examined?",
+   "opts": [
+    [
+     "Examine the anterior chest and skip the back",
+     "The posterior chest is not skipped; rolling the patient to each side lets you percuss and auscultate the back in turn."
+    ],
+    [
+     "Auscultate the back through the gown",
+     "Clothes and paper gowns produce sounds, so the patient is de-robed; rolling to each side gives access to the back."
+    ],
+    [
+     "Wait until the patient can sit upright",
+     "There is no need to defer: rolling the patient to one side, then the other, completes the posterior examination."
+    ],
+    [
+     "Roll the patient to one side, then the other",
+     "Correct: the posterior chest is ideally examined sitting, arms folded; if that cannot be done, roll the patient to one side and then the other, percussing and auscultating in each position."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 30, 44",
+   "mis": {
+    "Examine the anterior chest and skip the back": "wrong stage or severity",
+    "Auscultate the back through the gown": "common lay belief",
+    "Wait until the patient can sit upright": "wrong stage or severity"
+   }
+  },
+  {
+   "topic": "Sputum",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "differential",
+   "q": "Translucent, white or gray sputum is seen more in which setting?",
+   "opts": [
+    [
+     "Bacterial pneumonia",
+     "Bacterial pneumonia gives purulent sputum, yellow or green, rather than translucent white or gray mucoid sputum."
+    ],
+    [
+     "Anaerobic lung abscess",
+     "An anaerobic lung abscess gives foul-smelling sputum; translucent white or gray sputum is mucoid."
+    ],
+    [
+     "Cystic fibrosis or bronchiectasis",
+     "Cystic fibrosis and bronchiectasis produce copious foul-smelling sputum, not translucent white or gray mucoid sputum."
+    ],
+    [
+     "Viral infection or postnasal drip",
+     "Correct: translucent, white or gray sputum is mucoid sputum, seen more in viral infections and postnasal drip."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 22",
+   "mis": {
+    "Bacterial pneumonia": "competing diagnosis",
+    "Anaerobic lung abscess": "competing diagnosis",
+    "Cystic fibrosis or bronchiectasis": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Sputum",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "differential",
+   "q": "A patient's sputum has a foul smell. Which condition does foul-smelling sputum suggest?",
+   "opts": [
+    [
+     "Postnasal drip",
+     "Postnasal drip produces mucoid, translucent sputum, not foul-smelling sputum."
+    ],
+    [
+     "Anaerobic lung abscess",
+     "Correct: foul-smelling sputum suggests an anaerobic lung abscess; when it is also copious, think cystic fibrosis or bronchiectasis."
+    ],
+    [
+     "Viral bronchitis",
+     "Viral infections give mucoid sputum, translucent white or gray, without the foul smell."
+    ],
+    [
+     "Bacterial pneumonia",
+     "Bacterial pneumonia is signaled by purulent yellow or green sputum, not by a foul odor."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 22",
+   "mis": {
+    "Viral bronchitis": "competing diagnosis",
+    "Bacterial pneumonia": "competing diagnosis",
+    "Postnasal drip": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Dyspnea",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "manifestation",
+   "q": "Which question assesses the functional severity of dyspnea?",
+   "opts": [
+    [
+     "What makes it better or worse?",
+     "Triggers and relievers characterize dyspnea; functional severity asks about stairs, distance and daily tasks."
+    ],
+    [
+     "How many flights of stairs can you climb?",
+     "Correct: functional severity is graded by walking distance, flights of stairs without stopping, everyday tasks and change from baseline."
+    ],
+    [
+     "Did it start suddenly or gradually?",
+     "Sudden or gradual is the ONSET of the symptom, which characterizes dyspnea rather than measuring its functional severity."
+    ],
+    [
+     "Is it worse when you lie flat?",
+     "Body position is part of characterizing the symptom; severity is measured by what the patient can still do."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 15",
+   "mis": {
+    "Did it start suddenly or gradually?": "adjacent fact",
+    "Is it worse when you lie flat?": "adjacent fact",
+    "What makes it better or worse?": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "A patient with an autoimmune condition has gradually progressive exertional dyspnea, a dry cough, fatigue and weakness. Which diagnosis fits?",
+   "opts": [
+    [
+     "Asthma",
+     "Asthma is episodic with symptom-free intervals and wheezing, not steadily progressive with a dry cough."
+    ],
+    [
+     "Pneumothorax",
+     "Pneumothorax is sudden, with abrupt unilateral pleuritic pain, not gradually progressive."
+    ],
+    [
+     "Interstitial lung disease",
+     "Correct: gradually progressive exertional dyspnea with dry cough, fatigue and weakness, in autoimmune disease or after medication or occupational exposure, is interstitial lung disease."
+    ],
+    [
+     "Chronic bronchitis",
+     "Chronic bronchitis starts with a chronic PRODUCTIVE cough and sputum; this cough is dry."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16",
+   "mis": {
+    "Chronic bronchitis": "ruled out by a stated finding",
+    "Asthma": "competing diagnosis",
+    "Pneumothorax": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Chest wall deformities",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Which chest shape is shown?",
+   "opts": [
+    [
+     "Funnel chest (pectus excavatum)",
+     "Funnel chest is a depression of the lower sternum, not an evenly rounded chest with a wide anteroposterior diameter."
+    ],
+    [
+     "Thoracic kyphoscoliosis",
+     "Kyphoscoliosis is an abnormal spinal curvature with vertebral rotation that deforms the chest asymmetrically."
+    ],
+    [
+     "Barrel chest",
+     "Correct: the cross-section is nearly round, with an increased anteroposterior diameter; normal in infancy, and it often accompanies aging and chronic obstructive pulmonary disease."
+    ],
+    [
+     "Pigeon chest (pectus carinatum)",
+     "Pigeon chest has the sternum displaced forward with the adjacent costal cartilages depressed, a pointed rather than rounded profile."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 36",
+   "mis": {
+    "Pigeon chest (pectus carinatum)": "competing diagnosis",
+    "Funnel chest (pectus excavatum)": "competing diagnosis",
+    "Thoracic kyphoscoliosis": "competing diagnosis"
+   },
+   "img": "pd2-exam-2-quiz-images/l6-barrel-chest.jpg",
+   "alt": "Outline of a chest cross-section that is almost round, beside a side view of a man whose chest is deep from front to back.",
+   "slide": "Slide 36"
+  },
+  {
+   "topic": "Inspection",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Which muscles contract during INSPIRATION when accessory muscles are being used?",
+   "opts": [
+    [
+     "Intercostals and abdominal obliques",
+     "Those contract during EXPIRATION; the inspiratory accessory muscles are the sternocleidomastoid and scalene."
+    ],
+    [
+     "Pectoralis major and latissimus dorsi",
+     "Those two muscles border the triangle of safety for chest tubes; the inspiratory accessory muscles are the sternocleidomastoid and scalene."
+    ],
+    [
+     "Scalenes and abdominal obliques",
+     "The abdominal obliques work in expiration; inspiration recruits the sternocleidomastoid together with the scalenes."
+    ],
+    [
+     "Sternocleidomastoid and scalenes",
+     "Correct: the sternocleidomastoid and scalene contract during inspiration; the intercostals and abdominal obliques contract during expiration."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 34",
+   "mis": {
+    "Intercostals and abdominal obliques": "reversed direction or value",
+    "Pectoralis major and latissimus dorsi": "adjacent fact",
+    "Scalenes and abdominal obliques": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "A patient with hypertension and a prior myocardial infarction has dyspnea that is worse lying flat, with paroxysmal nocturnal dyspnea, edema and weight gain. Which diagnosis fits?",
+   "opts": [
+    [
+     "Pneumonia",
+     "Pneumonia is acute with fever, chills, sputum and pleuritic pain, not edema and weight gain after a myocardial infarction."
+    ],
+    [
+     "Left-sided heart failure",
+     "Correct: left-sided heart failure can be gradual or sudden, worse with exertion or lying flat, with orthopnea, paroxysmal nocturnal dyspnea, cough, edema and weight gain."
+    ],
+    [
+     "Asthma",
+     "Asthma is episodic wheezing, worse at night but with symptom-free intervals, and does not bring edema and weight gain."
+    ],
+    [
+     "Chronic obstructive pulmonary disease",
+     "This disease is slowly progressive exertional dyspnea after smoking or exposures; orthopnea, edema and weight gain point to the heart."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16",
+   "mis": {
+    "Asthma": "competing diagnosis",
+    "Chronic obstructive pulmonary disease": "competing diagnosis",
+    "Pneumonia": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Mediastinal crunch",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "differential",
+   "q": "A series of precordial crackles keeps time with the heartbeat rather than with breathing, in a patient with severe central chest pain. What does this suggest?",
+   "opts": [
+    [
+     "Air in the mediastinum",
+     "Correct: this is the mediastinal crunch (Hamman sign), from air entering the mediastinum (pneumomediastinum)."
+    ],
+    [
+     "Inflamed pleura",
+     "Inflamed pleura give a pleural rub, which follows respiration and disappears with a breath hold, not the heartbeat."
+    ],
+    [
+     "Interstitial fibrosis",
+     "Fibrosis gives fine inspiratory crackles over the lung that follow breathing and change with body position."
+    ],
+    [
+     "Air in the pleural space",
+     "A pneumothorax gives decreased or absent breath sounds and hyperresonance, not crackles in time with the heart."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 51",
+   "mis": {
+    "Inflamed pleura": "competing diagnosis",
+    "Interstitial fibrosis": "competing diagnosis",
+    "Air in the pleural space": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Clubbing",
+   "io": "Identify disease processes that may be associated with clubbing and hemoptysis",
+   "slot": "manifestation",
+   "q": "Which nail finding defines clubbing?",
+   "opts": [
+    [
+     "Loss of the nail-to-fold angle",
+     "Correct: clubbing is a bulbous swelling at the nail base with loss of the normal angle between the nail and the proximal nail fold."
+    ],
+    [
+     "Blue color of the nail beds",
+     "Blue color is cyanosis, judged at the lips, tongue and oral mucosa as a sign of hypoxia; clubbing is a change in shape."
+    ],
+    [
+     "Pallor of the nail beds",
+     "Pallor, with diaphoresis, is common in heart failure and acute coronary syndrome; clubbing is loss of the nail angle."
+    ],
+    [
+     "A hard, fixed nail bed",
+     "The clubbed nail bed is the opposite: it feels spongy or floating, with loss of the nail-to-fold angle."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 26",
+   "mis": {
+    "Blue color of the nail beds": "competing diagnosis",
+    "Pallor of the nail beds": "competing diagnosis",
+    "A hard, fixed nail bed": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Chest wall deformities",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Which chest wall deformity do these two views show?",
+   "opts": [
+    [
+     "Pigeon chest (pectus carinatum)",
+     "Correct: the sternum is displaced anteriorly, increasing the anteroposterior diameter, and the costal cartilages next to it are depressed."
+    ],
+    [
+     "Funnel chest (pectus excavatum)",
+     "Funnel chest is the reverse: a depression in the lower sternum rather than a sternum pushed forward."
+    ],
+    [
+     "Barrel chest",
+     "Barrel chest raises the anteroposterior diameter evenly with a rounded outline, without a forward-pointing sternum."
+    ],
+    [
+     "Thoracic kyphoscoliosis",
+     "Kyphoscoliosis is a curvature and rotation of the spine that deforms the chest; the sternum is not pushed forward."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 37",
+   "mis": {
+    "Funnel chest (pectus excavatum)": "reversed direction or value",
+    "Barrel chest": "competing diagnosis",
+    "Thoracic kyphoscoliosis": "competing diagnosis"
+   },
+   "img": "pd2-exam-2-quiz-images/l6-pigeon-chest.jpg",
+   "alt": "Outline of a chest cross-section that comes to a point at the front, with the sternum pushed forward and the cartilages beside it pressed in, beside a side view of a boy's chest.",
+   "slide": "Slide 37"
+  },
+  {
+   "topic": "Stridor",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "complication",
+   "q": "A high-pitched inspiratory whistling is heard over the neck without a stethoscope. What does it signal?",
+   "opts": [
+    [
+     "Secretions in large airways",
+     "Secretions give rhonchi, which may clear with coughing; whistling over the neck on inspiration is stridor."
+    ],
+    [
+     "Upper airway obstruction",
+     "Correct: high-pitched inspiratory whistling is stridor, from obstruction in the larynx or trachea, and it needs urgent evaluation and immediate intervention."
+    ],
+    [
+     "Lower airway narrowing",
+     "Lower airway narrowing produces wheezes, expiratory or continuous, over the lung; stridor is upper airway obstruction."
+    ],
+    [
+     "Inflamed pleural surfaces",
+     "Inflamed pleura give a grating pleural rub over the axilla and bases, not inspiratory whistling over the neck."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 33, 49",
+   "mis": {
+    "Lower airway narrowing": "competing diagnosis",
+    "Inflamed pleural surfaces": "competing diagnosis",
+    "Secretions in large airways": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Percussion",
+   "io": "Demonstrate proper clinical skills for a complete and focused pulmonary physical examination",
+   "slot": "test finding",
+   "q": "Dullness to percussion over the lung means what?",
+   "opts": [
+    [
+     "Air has entered the pleural space",
+     "Air in the pleural space (a large pneumothorax) gives UNILATERAL hyperresonance, the opposite of dullness."
+    ],
+    [
+     "A large air-filled bulla is present",
+     "An air-filled bulla gives unilateral hyperresonance; dullness means air has been replaced by fluid or solid tissue."
+    ],
+    [
+     "Fluid or solid tissue has replaced air",
+     "Correct: dullness means fluid or solid tissue has replaced the air, as in lobar pneumonia, pleural effusion, hemothorax, empyema, fibrous tissue or tumor."
+    ],
+    [
+     "The lung is hyperinflated",
+     "Hyperinflated lung, as in asthma or obstructive lung disease, gives generalized HYPERRESONANCE, not dullness."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 42",
+   "mis": {
+    "The lung is hyperinflated": "reversed direction or value",
+    "Air has entered the pleural space": "reversed direction or value",
+    "A large air-filled bulla is present": "reversed direction or value"
+   }
+  },
+  {
+   "topic": "Atelectasis",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "In which type of atelectasis may fremitus be increased and adjacent tracheal sounds be transmitted?",
+   "opts": [
+    [
+     "Left upper lobe atelectasis",
+     "The exception named is on the RIGHT, in the upper lobe next to the trachea; the left upper lobe is not singled out."
+    ],
+    [
+     "Right upper lobe atelectasis",
+     "Correct: atelectasis usually diminishes fremitus and abolishes breath sounds, except in right upper lobe atelectasis, where fremitus may be increased and adjacent tracheal sounds transmitted."
+    ],
+    [
+     "Right lower lobe atelectasis",
+     "The exception is the right UPPER lobe, beside the trachea; lower lobe atelectasis follows the usual pattern of diminished fremitus."
+    ],
+    [
+     "Left lower lobe atelectasis",
+     "Left lower lobe atelectasis follows the usual rule: diminished fremitus and absent sounds while the plug persists."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 59",
+   "mis": {
+    "Right lower lobe atelectasis": "adjacent fact",
+    "Left lower lobe atelectasis": "adjacent fact",
+    "Left upper lobe atelectasis": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Pleural effusion",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "differential",
+   "q": "Over the left lower chest there is dullness, decreased fremitus and absent breath sounds, with bronchial sounds near the top of the dull area, and the trachea is shifted to the right. Which condition fits?",
+   "opts": [
+    [
+     "Large left pleural effusion",
+     "Correct: a large effusion is dull over the fluid with decreased or absent fremitus and breath sounds, bronchial sounds near its top, and the trachea shifted to the unaffected side."
+    ],
+    [
+     "Left lower lobe pneumonia",
+     "Pneumonia is dull too, but it INCREASES fremitus over the area and leaves the trachea midline."
+    ],
+    [
+     "Left lower lobe atelectasis",
+     "Atelectasis pulls the trachea toward the LEFT, the affected side, not to the right."
+    ],
+    [
+     "Left tension pneumothorax",
+     "A tension pneumothorax shifts the trachea away too, but it is hyperresonant, not dull."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 62",
+   "mis": {
+    "Left lower lobe pneumonia": "ruled out by a stated finding",
+    "Left lower lobe atelectasis": "ruled out by a stated finding",
+    "Left tension pneumothorax": "ruled out by a stated finding"
+   }
+  },
+  {
+   "topic": "Pneumothorax",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "differential",
+   "q": "After a recent procedure, a patient with emphysema has decreased tactile fremitus, hyperresonance and absent breath sounds on one side, and the trachea is midline. Which condition fits?",
+   "opts": [
+    [
+     "Pneumothorax",
+     "Correct: decreased or absent fremitus, a hyperresonant or tympanic note and decreased or absent breath sounds on one side are the pneumothorax findings; the trachea shifts only with tension."
+    ],
+    [
+     "Pleural effusion",
+     "An effusion also lowers fremitus and breath sounds, but it is DULL to percussion, not hyperresonant."
+    ],
+    [
+     "Atelectasis",
+     "Atelectasis is dull with ipsilateral tracheal deviation, not hyperresonant."
+    ],
+    [
+     "Pneumonia",
+     "Pneumonia is dull with INCREASED fremitus and bronchial breath sounds."
+    ]
+   ],
+   "c": 0,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slides 61, 17",
+   "mis": {
+    "Pleural effusion": "ruled out by a stated finding",
+    "Atelectasis": "ruled out by a stated finding",
+    "Pneumonia": "ruled out by a stated finding"
+   }
+  },
+  {
+   "topic": "Crackles",
+   "io": "Compare and contrast the auscultatory findings of crackles, wheezes, and rhonchi",
+   "slot": "etiology",
+   "q": "What produces crackles?",
+   "opts": [
+    [
+     "Airflow through a narrowed upper airway",
+     "Airflow through a narrowing in the upper respiratory tract produces STRIDOR, best heard over the neck on inspiration."
+    ],
+    [
+     "Roughened pleural layers sliding together",
+     "Inflamed visceral and parietal pleura sliding against each other produce a pleural RUB, grating and biphasic."
+    ],
+    [
+     "Small airways snapping open on inspiration",
+     "Correct: crackles are non-musical, discontinuous sounds made when deflated small airways abruptly snap open during inspiration."
+    ],
+    [
+     "Rapid airflow through nearly closed bronchi",
+     "Rapid airflow through bronchi narrowed almost to closure produces WHEEZES, which are continuous and musical."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 47",
+   "mis": {
+    "Rapid airflow through nearly closed bronchi": "competing diagnosis",
+    "Airflow through a narrowed upper airway": "competing diagnosis",
+    "Roughened pleural layers sliding together": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Asthma",
+   "io": "Compare and contrast the physical examination findings of the following: asthma, atelectasis, pneumonia, pneumothorax and pleural effusion",
+   "slot": "test finding",
+   "q": "Which auscultatory findings fit asthma?",
+   "opts": [
+    [
+     "Absent sounds over a bronchial plug",
+     "Absent sounds while a bronchial plug persists are the atelectasis finding."
+    ],
+    [
+     "Wheezes and a prolonged expiratory phase",
+     "Correct: asthma gives wheezes, possibly crackles, and a prolonged expiratory phase."
+    ],
+    [
+     "Bronchial sounds with egophony",
+     "Bronchial sounds with egophony over an involved area are the pneumonia (consolidation) findings."
+    ],
+    [
+     "Absent breath sounds with a pleural rub",
+     "Decreased or absent sounds with a possible pleural rub are the pneumothorax or effusion findings."
+    ]
+   ],
+   "c": 1,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 58",
+   "mis": {
+    "Bronchial sounds with egophony": "competing diagnosis",
+    "Absent breath sounds with a pleural rub": "competing diagnosis",
+    "Absent sounds over a bronchial plug": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Wheezing",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "etiology",
+   "q": "A patient reports musical breathing sounds that others can hear. What produces this symptom?",
+   "opts": [
+    [
+     "Small airways snapping open",
+     "Deflated small airways snapping open on inspiration produce crackles, which are NON-musical and discontinuous."
+    ],
+    [
+     "Inflamed pleura rubbing together",
+     "Roughened pleural surfaces sliding together produce a grating pleural rub, not a musical sound."
+    ],
+    [
+     "Partial lower airway obstruction",
+     "Correct: wheezing comes from partial lower airway obstruction, by secretions and tissue inflammation in asthma or by a foreign body."
+    ],
+    [
+     "Narrowing in the larynx or trachea",
+     "Narrowing of the upper airway in the larynx or trachea produces stridor, a high-pitched inspiratory whistle over the neck."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 18",
+   "mis": {
+    "Narrowing in the larynx or trachea": "competing diagnosis",
+    "Small airways snapping open": "confused mechanism or drug class",
+    "Inflamed pleura rubbing together": "confused mechanism or drug class"
+   }
+  },
+  {
+   "topic": "Landmarks",
+   "io": "Review the anatomical landmarks for a pulmonary physical examination",
+   "slot": "manifestation",
+   "q": "Which procedure is performed through the intercostal space between the 4th and 5th ribs?",
+   "opts": [
+    [
+     "Needle decompression of tension pneumothorax",
+     "Needle decompression goes in at the 2nd intercostal space anteriorly, well above the 4th to 5th rib space used for chest tubes."
+    ],
+    [
+     "Thoracentesis",
+     "Thoracentesis is a posterior procedure: the needle enters the 7th intercostal space, immediately above the 8th rib."
+    ],
+    [
+     "Checking endotracheal tube depth",
+     "Endotracheal tube depth is read against T4, the lower margin for the tube on a chest x-ray, not against a rib space."
+    ],
+    [
+     "Chest tube insertion",
+     "Correct: the space between the 4th and 5th ribs is the chest tube site, and the triangle of safety in the midaxillary line puts it at the nipple line."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 4",
+   "mis": {
+    "Needle decompression of tension pneumothorax": "adjacent fact",
+    "Thoracentesis": "adjacent fact",
+    "Checking endotracheal tube depth": "adjacent fact"
+   }
+  },
+  {
+   "topic": "Dyspnea onset",
+   "io": "Compare and contrast the physical examination findings of sudden-onset shortness of breath with those of gradual or intermittent presentations",
+   "slot": "differential",
+   "q": "A long-time smoker has had a productive cough with sputum for years, now followed by progressive dyspnea and recurrent chest infections. Which diagnosis fits?",
+   "opts": [
+    [
+     "Asthma",
+     "Asthma is episodic with symptom-free intervals, not a continuous productive cough for years."
+    ],
+    [
+     "Hyperventilation",
+     "Hyperventilation is episodic air hunger and sighing at rest or with distress, not a years-long productive cough."
+    ],
+    [
+     "Chronic bronchitis",
+     "Correct: chronic bronchitis is a chronic productive cough followed by progressive dyspnea, with sputum, recurrent respiratory infections and wheezing in a smoker."
+    ],
+    [
+     "Interstitial lung disease",
+     "Interstitial lung disease has a DRY cough with fatigue and weakness; years of sputum point to chronic bronchitis."
+    ]
+   ],
+   "c": 2,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 16",
+   "mis": {
+    "Interstitial lung disease": "ruled out by a stated finding",
+    "Asthma": "competing diagnosis",
+    "Hyperventilation": "competing diagnosis"
+   }
+  },
+  {
+   "topic": "Cough",
+   "io": "Describe the elements related to interviewing and eliciting a medical history that aid in identifying pulmonary disorders",
+   "slot": "manifestation",
+   "q": "A cough has lasted 5 weeks. How is it classified?",
+   "opts": [
+    [
+     "Acute",
+     "Acute cough lasts less than 3 weeks; at 5 weeks this cough has moved into the subacute range of 3-8 weeks."
+    ],
+    [
+     "Chronic",
+     "Chronic means more than 8 weeks; 5 weeks falls within the subacute range of 3-8 weeks."
+    ],
+    [
+     "Episodic",
+     "Episodic describes the timing of dyspnea (as in asthma), not a duration class of cough; 5 weeks is subacute."
+    ],
+    [
+     "Subacute",
+     "Correct: acute is under 3 weeks, subacute 3-8 weeks and chronic more than 8 weeks, so 5 weeks is subacute."
+    ]
+   ],
+   "c": 3,
+   "cite": "6. Thorax - Dr. Crowe.pptx, Slide 20",
+   "mis": {
+    "Acute": "reversed direction or value",
+    "Chronic": "reversed direction or value",
+    "Episodic": "adjacent fact"
+   }
+  }
+ ]
+}
