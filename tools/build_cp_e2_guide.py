@@ -15,6 +15,10 @@ title, header, TOC, body and TEST_YOURSELF change. Palette: cardiovascular
 crimson (accent) with the class's warm gold (accent2) and a lighter crimson
 (accent3) -- distinct from Exam 1's plum.
 
+DO NOT RE-RUN (2026-10-22): the page has since been edited in place by site-wide
+tools (guide additions, the truth pass, the "Also tested" fold); a rebuild would
+discard those edits. Lectures 8-9 were spliced in by add_cp_e2_guide_l8_l9.py.
+
 Content lives in cp_e2_guide_content.py. Mechanism throughout, never
 management (clin_path_exam_spec) -- asserted below.
 """

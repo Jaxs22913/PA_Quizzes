@@ -1,0 +1,1752 @@
+{
+ "set1": [
+  {
+   "topic": "B cells and plasma cells",
+   "io": "Describe the antigens’ ability to promote an immune response",
+   "slot": "sequence",
+   "q": "What starts the antigen-dependent phase of B-cell maturation?",
+   "opts": [
+    [
+     "Exposure to the antigen",
+     "Correct. The antigen-dependent phase, in which the B cell differentiates into a plasma cell making specific antibody, is initiated by exposure to the antigen."
+    ],
+    [
+     "Expression of surface IgM",
+     "Surface IgM is expressed in the earlier, antigen-INDEPENDENT phase of maturation.",
+     "wrong stage or severity"
+    ],
+    [
+     "Release of perforin",
+     "Perforin release belongs to cytotoxic T cells killing their targets, not to B-cell maturation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Processing in the thymus",
+     "Thymic processing is how T lymphocytes mature; B cells mature in the bone marrow.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 22"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "marker",
+   "q": "Which surface marker identifies natural killer cells?",
+   "opts": [
+    [
+     "CD3",
+     "CD3 marks T cells, with CD4 or CD8 on the major subsets; natural killer cells carry CD56 instead.",
+     "adjacent fact"
+    ],
+    [
+     "CD4",
+     "CD4 marks helper T cells, which recognize peptides on major histocompatibility complex class II molecules.",
+     "adjacent fact"
+    ],
+    [
+     "CD19",
+     "CD19 and CD20 are found on many B cells, so this marker points to a B lymphocyte rather than the cell asked about.",
+     "adjacent fact"
+    ],
+    [
+     "CD56",
+     "Correct. Natural killer cells carry CD56, and many also carry CD16, which binds the Fc region of IgG."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 21, 34",
+   "ordered": true
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "development",
+   "q": "Which form immediately precedes the segmented neutrophil?",
+   "opts": [
+    [
+     "Metamyelocyte",
+     "The metamyelocyte comes one step earlier; it matures into the band form, which then becomes the segmented neutrophil.",
+     "wrong stage or severity"
+    ],
+    [
+     "Myelocyte",
+     "The myelocyte is two steps earlier: myelocyte, metamyelocyte, band, then segmented neutrophil.",
+     "wrong stage or severity"
+    ],
+    [
+     "Monoblast",
+     "The monoblast belongs to a different line, ending in the monocyte rather than the neutrophil.",
+     "adjacent fact"
+    ],
+    [
+     "Band form",
+     "Correct. The neutrophil line runs promyelocyte, myelocyte, metamyelocyte, then the band form, then the segmented neutrophil."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 14"
+  },
+  {
+   "topic": "Antibody classes",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "class",
+   "q": "Which immunoglobulin binds mast cells and basophils?",
+   "opts": [
+    [
+     "IgD",
+     "IgD is part of the receptor system on many mature naive B cells.",
+     "adjacent fact"
+    ],
+    [
+     "IgA",
+     "IgA works at mucosal surfaces, preventing microbial attachment.",
+     "adjacent fact"
+    ],
+    [
+     "IgM",
+     "IgM agglutinates and efficiently activates classical complement.",
+     "adjacent fact"
+    ],
+    [
+     "IgE",
+     "Correct. IgE binds mast cells and basophils through high-affinity receptors and contributes to allergy and parasite defense."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 44, 46"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Compare and contrast the various mechanisms that T lymphocytes destroy antigens",
+   "slot": "mechanism",
+   "q": "How do cytotoxic T cells kill infected cells?",
+   "opts": [
+    [
+     "Perforin and granzymes trigger apoptosis",
+     "Correct. Perforin release is important to the effector function, and perforin with granzymes helps trigger target-cell apoptosis."
+    ],
+    [
+     "Complement pores cause osmotic lysis",
+     "Osmotic lysis through assembled pores is the complement membrane attack complex, not T-cell killing.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Antibody coating speeds their ingestion",
+     "Coating a target for ingestion is opsonization by antibody or complement.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Blocking the virus from attaching",
+     "Blocking attachment or entry is antibody neutralization, which works outside the cell.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 25, 31"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "mechanism",
+   "q": "How do antibodies bring about lysis of a target cell?",
+   "opts": [
+    [
+     "By recruiting the complement system",
+     "Correct. Lysis, destruction of the cell, happens through incorporation with the complement system."
+    ],
+    [
+     "By releasing perforin themselves",
+     "Perforin is released by cytotoxic T cells and natural killer cells, not by antibodies.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "By cross-linking soluble antigen",
+     "Cross-linking soluble antigen produces precipitation, not lysis.",
+     "adjacent fact"
+    ],
+    [
+     "By coating the cell for phagocytes",
+     "Coating for phagocytes is opsonization, which leads to ingestion rather than lysis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 53"
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "function",
+   "q": "Which complement fragment coats targets as an opsonin?",
+   "opts": [
+    [
+     "C5a",
+     "C5a promotes the inflammatory response, attracting phagocytes; it does not coat targets.",
+     "adjacent fact"
+    ],
+    [
+     "C3b",
+     "Correct. C3b coats the target for opsonization by macrophages, while C3a, C4a and C5a promote the inflammatory response."
+    ],
+    [
+     "C3a",
+     "C3a is the small fragment that promotes inflammation, such as histamine release.",
+     "adjacent fact"
+    ],
+    [
+     "C9",
+     "C9 subunits form the membrane attack complex channel, causing lysis.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 75"
+  },
+  {
+   "topic": "Immunity and specificity",
+   "io": "Define the function and specific types of antigens",
+   "slot": "definition",
+   "q": "What does an adaptive B-cell or T-cell receptor recognize?",
+   "opts": [
+    [
+     "Patterns shared by groups of organisms",
+     "That describes innate receptors, which recognize patterns shared by groups of organisms rather than one epitope.",
+     "adjacent fact"
+    ],
+    [
+     "A particular epitope",
+     "Correct. Adaptive specificity means B-cell and T-cell receptors recognize particular epitopes, the specific regions of an antigen."
+    ],
+    [
+     "Any foreign protein, whatever its shape",
+     "Adaptive receptors are specific: each recognizes a particular epitope, not any foreign protein.",
+     "reversed direction or value"
+    ],
+    [
+     "Antigens met in a previous exposure",
+     "Recognition does not require prior exposure; memory only makes the response faster and stronger on re-exposure.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 10"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Describe T-lymphocytes",
+   "slot": "marker",
+   "q": "Which surface marker is found on T cells as a group?",
+   "opts": [
+    [
+     "CD3",
+     "Correct. T cells carry CD3, with CD4 or CD8 on the major subsets."
+    ],
+    [
+     "CD4",
+     "CD4 marks helper T cells and many regulatory T cells, not all T cells; CD3 is the marker across T cells.",
+     "wrong stage or severity"
+    ],
+    [
+     "CD8",
+     "CD8 marks only the cytotoxic subset; CD3 is the marker across T cells.",
+     "wrong stage or severity"
+    ],
+    [
+     "CD19",
+     "CD19 and CD20 are found on many B cells, so this marker points to a B lymphocyte rather than the cell asked about.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 34",
+   "ordered": true
+  },
+  {
+   "topic": "Immunodeficiency and aging",
+   "io": "Describe the effect of aging on the immune system",
+   "slot": "aging",
+   "q": "How do changes in older adults affect immune responses?",
+   "opts": [
+    [
+     "Stronger responses to new antigens",
+     "That reverses it: lymphocyte changes with age reduce responses to new antigens.",
+     "reversed direction or value"
+    ],
+    [
+     "Weaker responses to new antigens",
+     "Correct. In older adults, changes in lymphocyte function and repertoire can reduce responses to new antigens, and autoantibodies become more common."
+    ],
+    [
+     "Disappearance of autoantibodies",
+     "Autoantibodies become MORE common with age; clinical findings determine their significance.",
+     "reversed direction or value"
+    ],
+    [
+     "Return of maternal IgG protection",
+     "Maternal IgG protects neonates and declines in infancy; it has no role in old age.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 77"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Compare and contrast examples of autoimmune diseases",
+   "slot": "classification",
+   "q": "Lupus is an example of which hypersensitivity type?",
+   "opts": [
+    [
+     "Type I",
+     "Type I is IgE- and mast cell-mediated allergy and anaphylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Type II",
+     "Type II examples are ABO incompatibility and anti-glomerular basement membrane disease.",
+     "adjacent fact"
+    ],
+    [
+     "Type III",
+     "Correct. Lupus is a type III immune-complex example, alongside immune-complex glomerulonephritis or arthritis."
+    ],
+    [
+     "Type IV",
+     "Type IV examples are contact dermatitis, tuberculosis-related reactions and transplant rejection.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 64",
+   "ordered": true
+  },
+  {
+   "topic": "Immunodeficiency and aging",
+   "io": "Compare and contrast primary and secondary immunodeficiency including the genetic basis",
+   "slot": "comparison",
+   "q": "What distinguishes primary from secondary immunodeficiency?",
+   "opts": [
+    [
+     "Primary is caused by medication",
+     "Medications cause SECONDARY immunodeficiency, an acquired defect.",
+     "reversed direction or value"
+    ],
+    [
+     "Primary follows a malignancy",
+     "Malignancy is a cause of secondary immunodeficiency; primary defects are intrinsic.",
+     "reversed direction or value"
+    ],
+    [
+     "Primary arises from poor nutrition",
+     "Inadequate nutrition is an acquired, secondary cause; primary defects are intrinsic and often genetic.",
+     "reversed direction or value"
+    ],
+    [
+     "Primary is intrinsic, often genetic",
+     "Correct. Primary immunodeficiency is an intrinsic defect in immune development or function, often with a genetic basis; secondary immunodeficiency is reduced function from disease, medications, malignancy or inadequate nutrition."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 76, 77"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "function",
+   "q": "Why is IgM especially effective at agglutination?",
+   "opts": [
+    [
+     "It crosses the placenta",
+     "Crossing the placenta is an IgG property and has nothing to do with clumping particles.",
+     "adjacent fact"
+    ],
+    [
+     "It has many binding sites",
+     "Correct. Secreted IgM is usually a pentamer that places many binding sites around one molecule, so it links antigen-bearing particles into clumps; agglutination is one of its main functions."
+    ],
+    [
+     "It binds mast-cell receptors",
+     "Binding high-affinity receptors on mast cells and basophils is IgE.",
+     "adjacent fact"
+    ],
+    [
+     "It has a secretory component",
+     "The secretory component belongs to secretory IgA, a dimer, which works at mucosal surfaces.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 45, 46, 47"
+  },
+  {
+   "topic": "Antibody classes",
+   "io": "Compare and contrast the morphology of the various types of antibodies",
+   "slot": "quantity",
+   "q": "Approximately what share of serum immunoglobulin is IgG?",
+   "opts": [
+    [
+     "Less than 1%",
+     "Less than 1% is the share of IgD and of IgE; IgG is the most abundant class, at 75–80%.",
+     "adjacent fact"
+    ],
+    [
+     "5–10%",
+     "5–10% is the approximate share of IgM; IgG makes up about 75–80% of serum immunoglobulin.",
+     "adjacent fact"
+    ],
+    [
+     "10–15%",
+     "10–15% is the approximate share of IgA; IgG makes up about 75–80% of serum immunoglobulin.",
+     "adjacent fact"
+    ],
+    [
+     "75–80%",
+     "Correct. IgG is the most abundant class, approximately 75–80% of serum immunoglobulin (700–1700 mg/dL); reference intervals vary by laboratory."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 46",
+   "ordered": true
+  },
+  {
+   "topic": "Primary and secondary response",
+   "io": "Compare and contrast primary and secondary immune response by the body",
+   "slot": "comparison",
+   "q": "How does the secondary response differ from the primary response?",
+   "opts": [
+    [
+     "Faster and stronger, often IgG",
+     "Correct. Memory cells support a generally faster and stronger response on re-exposure, and class-switched antibodies, often IgG, may reach higher levels and persist longer."
+    ],
+    [
+     "Slower, and dominated by IgM",
+     "That reverses it: IgM leads the primary response, and the secondary response is faster.",
+     "reversed direction or value"
+    ],
+    [
+     "Same speed but with more IgE",
+     "The secondary response is faster, and the class that rises is often IgG.",
+     "reversed direction or value"
+    ],
+    [
+     "It needs no memory cells",
+     "Memory cells formed in the primary response are exactly what make the secondary response faster.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 36, 37"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Compare and contrast the types of hypersensitivity reactions",
+   "slot": "classification",
+   "q": "Which of these is a T-cell-mediated hypersensitivity reaction?",
+   "opts": [
+    [
+     "Anaphylaxis to insect venom",
+     "Anaphylaxis is type I, mediated by IgE on mast cells; insect venoms are one trigger.",
+     "competing diagnosis"
+    ],
+    [
+     "ABO transfusion incompatibility",
+     "ABO incompatibility is type II, antibody against red-cell antigens.",
+     "competing diagnosis"
+    ],
+    [
+     "Serum sickness",
+     "Serum sickness is type III, a systemic reaction to circulating immune complexes.",
+     "competing diagnosis"
+    ],
+    [
+     "Contact dermatitis",
+     "Correct. Contact dermatitis is type IV, mediated by sensitized CD4 or CD8 T cells, along with tuberculosis-related reactions and T-cell-mediated transplant rejection."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 65"
+  },
+  {
+   "topic": "Antibody structure",
+   "io": "Compare and contrast the morphology of the various types of antibodies",
+   "slot": "structure",
+   "q": "What forms the antigen-binding site of an antibody?",
+   "opts": [
+    [
+     "The light-chain constant region alone",
+     "The light-chain constant region sits in the arm but does not form the binding site.",
+     "adjacent fact"
+    ],
+    [
+     "The heavy-chain constant region",
+     "The heavy-chain constant region determines class and, in the Fc, effector functions.",
+     "adjacent fact"
+    ],
+    [
+     "Heavy and light variable regions together",
+     "Correct. Heavy- and light-chain variable regions jointly form the antigen-binding site at the tip of each arm."
+    ],
+    [
+     "The hinge region",
+     "The hinge lies where the arms meet the stem; binding happens at the variable regions at the arm tips.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 39, 41, 42"
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "mechanism",
+   "q": "How does the membrane attack complex kill a target cell?",
+   "opts": [
+    [
+     "It triggers apoptosis with granzymes",
+     "Granzyme-triggered apoptosis is the cytotoxic T cell's mechanism.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It disrupts ionic and osmotic balance",
+     "Correct. The pores damage the membrane and disrupt ionic and osmotic balance; ions and water move abnormally, and severe disruption leads to cell lysis."
+    ],
+    [
+     "It coats the cell for phagocytes",
+     "Coating for phagocytes is opsonization, done by C3b rather than the terminal complex.",
+     "adjacent fact"
+    ],
+    [
+     "It blocks the cell's receptor binding",
+     "Blocking an essential interaction is antibody neutralization.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 68, 74"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Describe T-lymphocytes",
+   "slot": "mechanism",
+   "q": "Helper T cells recognize antigenic peptides presented on which molecules?",
+   "opts": [
+    [
+     "Major histocompatibility complex class II",
+     "Correct. Helper (CD4) T cells recognize antigenic peptides presented by major histocompatibility complex class II molecules."
+    ],
+    [
+     "Major histocompatibility complex class I",
+     "Class I presents peptides to CD8 cytotoxic T cells; helper (CD4) T cells need class II.",
+     "adjacent fact"
+    ],
+    [
+     "Surface immunoglobulin on B cells",
+     "Surface immunoglobulin is the B cell's own antigen receptor, not the molecule that presents peptide to helper T cells.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "CD16 on natural killer cells",
+     "CD16 on natural killer cells binds the Fc region of IgG; it does not present peptide.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 30"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "mechanism",
+   "q": "How does neutralization protect without destroying the target?",
+   "opts": [
+    [
+     "It clumps the targets into lattices",
+     "Clumping antigen-bearing particles is agglutination; neutralization blocks an interaction and leaves the target intact.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It coats the targets for phagocytes",
+     "Coating to ease ingestion is opsonization, which leads to the target being engulfed.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It blocks an essential host interaction",
+     "Correct. Antibody binding blocks an essential interaction with a host cell, preventing viral attachment or entry or a toxin reaching its target, and limits activity without physical destruction."
+    ],
+    [
+     "It assembles pores in their membranes",
+     "Pore assembly is the complement membrane attack complex, which does destroy the target by lysis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 50"
+  },
+  {
+   "topic": "Active, passive and innate immunity",
+   "io": "Compare and contrast natural and artificial immunity",
+   "slot": "classification",
+   "q": "What makes vaccination a form of ARTIFICIAL active immunity?",
+   "opts": [
+    [
+     "Antibodies come from another source",
+     "Receiving preformed antibodies from another source is passive immunity, such as tetanus or rabies immune globulin.",
+     "competing diagnosis"
+    ],
+    [
+     "The antigen is met through ordinary contact",
+     "Contact with the antigen in the ordinary course of life makes active immunity natural rather than artificial.",
+     "adjacent fact"
+    ],
+    [
+     "Antigen exposure is done on purpose",
+     "Correct. Active immunity is acquired by the body's own processes after exposure to the antigen; it is artificial when the exposure is deliberate, as with vaccination."
+    ],
+    [
+     "It acts with no prior sensitization",
+     "Defenses that act without prior sensitization are innate. Vaccination works by sensitizing the body to the antigen.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 11"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "mechanism",
+   "q": "What is precipitation, as an antibody function?",
+   "opts": [
+    [
+     "Clumping antigen-bearing cells",
+     "Clumping cells or particles that carry surface antigen is agglutination.",
+     "adjacent fact"
+    ],
+    [
+     "Coating a cell for ingestion",
+     "A coating that eases ingestion by phagocytes is opsonization, not precipitation of soluble antigen.",
+     "adjacent fact"
+    ],
+    [
+     "Cross-linking soluble antigens",
+     "Correct. Antibodies cross-link soluble antigens into larger complexes that can become insoluble and precipitate, which may help phagocytes clear them."
+    ],
+    [
+     "Blocking a virus's attachment",
+     "Blocking viral attachment or entry is neutralization; precipitation cross-links soluble antigen.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 54"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "role",
+   "q": "Which leukocyte is the most numerous first responder, acting by phagocytosis?",
+   "opts": [
+    [
+     "Eosinophil",
+     "Eosinophils are linked with allergic reactions and parasitic invasion, not the first-responder role.",
+     "adjacent fact"
+    ],
+    [
+     "Basophil",
+     "Basophils are similar to tissue mast cells and much less numerous than neutrophils.",
+     "adjacent fact"
+    ],
+    [
+     "Neutrophil",
+     "Correct. Neutrophils, the “poly” or PMN (polymorphonuclear leukocyte), are the most numerous first responders and act by phagocytosis."
+    ],
+    [
+     "Monocyte",
+     "Monocytes are agranulocytes that enter tissue and become macrophages; the most numerous first responder is the neutrophil.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 15"
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "source",
+   "q": "Which organ produces many of the circulating complement components?",
+   "opts": [
+    [
+     "Bone marrow",
+     "Bone marrow produces blood cells and is where B cells mature, not the main source of complement proteins.",
+     "adjacent fact"
+    ],
+    [
+     "Thymus",
+     "The thymus is where T lymphocytes are processed, not the main source of complement proteins (the liver).",
+     "adjacent fact"
+    ],
+    [
+     "Spleen",
+     "The spleen is a peripheral lymphoid organ; the complement proteins come mainly from the liver.",
+     "adjacent fact"
+    ],
+    [
+     "Liver",
+     "Correct. The liver produces many circulating complement components, and many circulate as inactive precursors until activation starts a regulated cascade."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 66"
+  },
+  {
+   "topic": "Lymphatic system",
+   "io": "Describe the molecular mechanisms involved in immune processes",
+   "slot": "mechanism",
+   "q": "How does interstitial fluid enter a lymphatic capillary?",
+   "opts": [
+    [
+     "Between overlapping endothelial cells",
+     "Correct. The capillary wall is built of overlapping endothelial cells whose edges act as valves: they open to let interstitial fluid in and close behind it, so flow runs one way."
+    ],
+    [
+     "Through smooth muscle pores in the wall",
+     "Fluid does not pass through pores in a muscle layer; it enters between overlapping endothelial cells, whose edges open like one-way valves.",
+     "adjacent fact"
+    ],
+    [
+     "By active pumping across a basement membrane",
+     "No pump moves fluid in. Interstitial fluid flows in passively where the overlapping endothelial edges part, which work like one-way valves.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Driven in by the heart's systolic pressure",
+     "The heart does not drive lymph. Fluid enters between overlapping endothelial cells, and outside forces such as muscle movement keep lymph moving.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 7"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "role",
+   "q": "What does a monocyte become once it enters tissue during inflammation?",
+   "opts": [
+    [
+     "A plasma cell",
+     "Plasma cells come from B lymphocytes and produce antibodies; monocytes become macrophages.",
+     "adjacent fact"
+    ],
+    [
+     "A macrophage",
+     "Correct. Monocytes circulate in blood and enter tissues during inflammation, where tissue signals promote differentiation into macrophages."
+    ],
+    [
+     "A mast cell",
+     "Mast cells are the tissue cells basophils resemble; a monocyte entering tissue becomes a macrophage.",
+     "adjacent fact"
+    ],
+    [
+     "A neutrophil",
+     "Neutrophils are granulocytes that mature through the band form; a monocyte that enters tissue becomes a macrophage.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 18"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Compare and contrast the types of hypersensitivity reactions",
+   "slot": "classification",
+   "q": "The Arthus reaction and serum sickness are examples of which hypersensitivity type?",
+   "opts": [
+    [
+     "Type I",
+     "Type I is IgE-mediated immediate hypersensitivity, as in anaphylaxis.",
+     "adjacent fact"
+    ],
+    [
+     "Type II",
+     "Type II is antibody bound to fixed cell or tissue antigens, as in ABO incompatibility.",
+     "adjacent fact"
+    ],
+    [
+     "Type III",
+     "Correct. Both are type III immune-complex reactions: the Arthus reaction is a local response in a previously sensitized person, and serum sickness is a systemic reaction to circulating immune complexes."
+    ],
+    [
+     "Type IV",
+     "Type IV is T-cell-mediated, as in contact dermatitis; the Arthus reaction and serum sickness are type III.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 64",
+   "ordered": true
+  },
+  {
+   "topic": "Antibody structure",
+   "io": "Compare and contrast the morphology of the various types of antibodies",
+   "slot": "structure",
+   "q": "What determines an immunoglobulin's class?",
+   "opts": [
+    [
+     "Whether the light chain is kappa or lambda",
+     "Every class can carry kappa or lambda light chains; class is set by the heavy chain.",
+     "adjacent fact"
+    ],
+    [
+     "The heavy-chain constant region",
+     "Correct. The heavy-chain constant region determines immunoglobulin class (heavy chain mu, delta, gamma, epsilon or alpha)."
+    ],
+    [
+     "The variable-region sequence",
+     "Variable regions decide WHAT the antibody binds, not its class.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "The number of disulfide bonds",
+     "Disulfide bonds connect chains and support structure; they do not define class.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 41"
+  },
+  {
+   "topic": "Phagocytosis",
+   "io": "Describe the molecular mechanisms involved in immune processes",
+   "slot": "sequence",
+   "q": "Which step follows adherence of the microbe to the phagocyte?",
+   "opts": [
+    [
+     "Pseudopods engulf the particle",
+     "Correct. The sequence is: the microbe adheres; pseudopods engulf it into a phagosome; the phagosome fuses with a lysosome; enzymes digest it; residual material leaves by exocytosis."
+    ],
+    [
+     "Lysosome fuses with the vesicle",
+     "Fusion with a lysosome comes after engulfment, once a phagosome has formed.",
+     "wrong stage or severity"
+    ],
+    [
+     "Residual material is exocytosed",
+     "Exocytosis of indigestible residue is the final step, after digestion in the phagolysosome.",
+     "wrong stage or severity"
+    ],
+    [
+     "Acid hydrolases digest the microbe",
+     "Digestion by lysosomal acid hydrolases happens later, inside the phagolysosome.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 26"
+  },
+  {
+   "topic": "Active, passive and innate immunity",
+   "io": "Compare and contrast natural and artificial immunity",
+   "slot": "classification",
+   "q": "Which is an example of NATURAL passive immunity?",
+   "opts": [
+    [
+     "Rabies immune globulin given after exposure",
+     "Rabies and tetanus immune globulin are ARTIFICIAL passive immunity: preformed antibodies given on purpose.",
+     "adjacent fact"
+    ],
+    [
+     "Maternal IgG crossing the placenta",
+     "Correct. Natural passive immunity is maternal IgG through the placenta and IgA in breast milk: preformed antibodies from another source, transferred naturally."
+    ],
+    [
+     "Antibodies made after a natural infection",
+     "Making your own antibodies after contact with the antigen is natural ACTIVE immunity, not passive.",
+     "competing diagnosis"
+    ],
+    [
+     "A vaccine series that builds antibody",
+     "A vaccine is artificial active immunity: the body makes its own response to an antigen given on purpose.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 12"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "application",
+   "q": "Which antibodies are usually present in the plasma of a group O person?",
+   "opts": [
+    [
+     "Anti-A without anti-B",
+     "Anti-A without anti-B is the usual plasma pattern of group B, whose red cells carry B.",
+     "adjacent fact"
+    ],
+    [
+     "Anti-B without anti-A",
+     "Anti-B without anti-A is the usual plasma pattern of group A, whose red cells carry A.",
+     "adjacent fact"
+    ],
+    [
+     "Neither anti-A nor anti-B",
+     "Lacking both antibodies is group AB, whose red cells carry both A and B.",
+     "reversed direction or value"
+    ],
+    [
+     "Anti-A and anti-B",
+     "Correct. Group O red cells carry neither A nor B antigen, and group O plasma usually carries both anti-A and anti-B."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 49"
+  },
+  {
+   "topic": "Immunity and specificity",
+   "io": "Describe the molecular mechanisms involved in immune processes",
+   "slot": "definition",
+   "q": "Which function of immunity removes cellular debris?",
+   "opts": [
+    [
+     "Homeostasis",
+     "Correct. Immunity is a state of protection with three functions: defense (resistance to invaders), surveillance (of self for mutant or cancerous cells) and homeostasis (removing cellular debris)."
+    ],
+    [
+     "Defense",
+     "Defense is resistance to invaders. Clearing cellular debris is the homeostasis function of immunity.",
+     "adjacent fact"
+    ],
+    [
+     "Surveillance",
+     "Surveillance watches the body's own cells for mutant or cancerous change. Removing cellular debris is homeostasis.",
+     "adjacent fact"
+    ],
+    [
+     "Memory",
+     "Memory is a faster, stronger adaptive response on re-exposure to an antigen, not one of the three functions; debris removal is homeostasis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 9"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Compare and contrast the types of hypersensitivity reactions",
+   "slot": "mechanism",
+   "q": "Which mechanism defines type II hypersensitivity?",
+   "opts": [
+    [
+     "IgE cross-linked on mast cells",
+     "IgE fixed on mast cells defines type I; type II is IgG or IgM bound to cell or tissue antigen.",
+     "competing diagnosis"
+    ],
+    [
+     "Circulating complexes depositing in vessels",
+     "Antigen–antibody complexes depositing in tissues or vessel walls define type III.",
+     "competing diagnosis"
+    ],
+    [
+     "IgG or IgM binding cell or tissue antigens",
+     "Correct. In type II hypersensitivity IgG or IgM binds antigens on cells or within tissues, and injury follows through phagocytosis, complement or antibody-dependent cellular cytotoxicity."
+    ],
+    [
+     "Sensitized T cells releasing cytokines",
+     "Sensitized T cells mediate type IV; type II is antibody (IgG or IgM) bound to cell or tissue antigen.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 63"
+  },
+  {
+   "topic": "Lymphatic system",
+   "io": "Describe the molecular mechanisms involved in immune processes",
+   "slot": "mechanism",
+   "q": "What keeps lymph moving along the larger lymphatic vessels?",
+   "opts": [
+    [
+     "Contraction of the heart alone",
+     "Lymph has no central pump. It is propelled by skeletal muscle movement, breathing-related pressure changes and the pulsation of nearby arteries.",
+     "common lay belief"
+    ],
+    [
+     "Gravity draining it down toward the feet",
+     "That reverses the direction: lymph returns toward the circulation, and physical activity or passive movement keeps it flowing at a decent pace.",
+     "reversed direction or value"
+    ],
+    [
+     "Muscle movement, breathing and arterial pulsation",
+     "Correct. Skeletal muscle movement, pressure changes in the thorax during breathing and the pulsations of adjacent arteries help propel lymph, while the vessel's valves keep it moving forward."
+    ],
+    [
+     "Cilia beating along the lymphatic lumen",
+     "No cilia line the lymphatic vessel. Its internal valves keep lymph moving forward, and outside forces such as muscle movement push it along.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 8"
+  },
+  {
+   "topic": "Phagocytosis",
+   "io": "Describe the molecular mechanisms involved in immune processes",
+   "slot": "sequence",
+   "q": "What forms when the vesicle holding an engulfed microbe fuses with a lysosome?",
+   "opts": [
+    [
+     "A phagolysosome",
+     "Correct. The phagocytic vesicle (phagosome) fuses with a lysosome to form the phagolysosome, where lysosomal enzymes kill and digest the microbe."
+    ],
+    [
+     "A residual body",
+     "The residual body is what is left AFTER digestion in the phagolysosome; it is removed by exocytosis.",
+     "wrong stage or severity"
+    ],
+    [
+     "A pseudopod",
+     "Pseudopods are the extensions that engulf the particle at the start, before any fusion.",
+     "wrong stage or severity"
+    ],
+    [
+     "A membrane attack complex",
+     "The membrane attack complex is a complement pore in a target membrane, not a phagocytic compartment.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 26"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "development",
+   "q": "From which precursor do lymphocytes arise?",
+   "opts": [
+    [
+     "Myeloblast",
+     "The myeloblast is a granulocyte precursor, giving the eosinophil and the basophil; lymphocytes come from the lymphoblast.",
+     "adjacent fact"
+    ],
+    [
+     "Monoblast",
+     "The monoblast gives rise to the monocyte, the other agranulocyte, not the lymphocyte.",
+     "adjacent fact"
+    ],
+    [
+     "Lymphoblast",
+     "Correct. In blood cell formation the hematopoietic stem cell gives rise to the lymphoblast, which becomes the lymphocyte."
+    ],
+    [
+     "Megakaryocyte",
+     "The megakaryocyte, from the promegakaryocyte, sheds platelets; it plays no part in making lymphocytes.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 14"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Define the concept of hypersensitivity",
+   "slot": "definition",
+   "q": "What defines hypersensitivity?",
+   "opts": [
+    [
+     "Any immune response to a foreign antigen",
+     "Most immune responses protect without injury; hypersensitivity is the subset that harms the body.",
+     "wrong stage or severity"
+    ],
+    [
+     "Failure to produce enough antibody",
+     "Too little immune function is immunodeficiency, such as X-linked agammaglobulinemia.",
+     "competing diagnosis"
+    ],
+    [
+     "Immune reactions that injure the body",
+     "Correct. Hypersensitivity is when immune reactions, either humoral or cellular, result in injury to the body; four types are seen."
+    ],
+    [
+     "Infection with a pyogenic organism",
+     "Infection is the threat itself; hypersensitivity is injury caused by the immune reaction.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 60"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "morphology",
+   "q": "Which cell, when seen on a stained smear, is NOT a normal constituent of peripheral blood?",
+   "opts": [
+    [
+     "Monocyte",
+     "Monocytes circulate normally in blood before entering tissue as macrophages.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Small lymphocyte",
+     "Small lymphocytes are normal circulating agranulocytes, shown alongside medium lymphocytes on the smear.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Plasma cell",
+     "Correct. A plasma cell is not a normal constituent of peripheral blood; it is shown beside the nongranular leukocytes for comparison."
+    ],
+    [
+     "Eosinophil",
+     "Eosinophils are normal circulating granulocytes, shown on the smear beside neutrophils and basophils.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 16"
+  },
+  {
+   "topic": "Antibody classes",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "class",
+   "q": "Which immunoglobulin crosses the placenta?",
+   "opts": [
+    [
+     "IgM",
+     "IgM is usually secreted as a pentamer and is often the first class in a new response; it does not cross the placenta.",
+     "adjacent fact"
+    ],
+    [
+     "IgG",
+     "Correct. IgG crosses the placenta and provides maternal protection; it is also the most abundant serum class."
+    ],
+    [
+     "IgA",
+     "IgA protects mucosal surfaces and reaches the infant in breast milk, not across the placenta.",
+     "adjacent fact"
+    ],
+    [
+     "IgE",
+     "IgE binds mast cells and basophils in allergy and parasite defense.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 44, 46"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "comparison",
+   "q": "Which pair of antibody effects acts on a soluble toxin?",
+   "opts": [
+    [
+     "Opsonization and lysis",
+     "Opsonization and lysis act on cells such as bacteria, whose surfaces carry antigenic determinants.",
+     "adjacent fact"
+    ],
+    [
+     "Agglutination and opsonization",
+     "Agglutination needs antigen on particles or cells; a soluble toxin has no surface to clump.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Agglutination and lysis",
+     "Both need a cell or particle surface; a soluble toxin is neutralized and precipitated instead.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Neutralization and precipitation",
+     "Correct. A toxin is soluble, so antibodies neutralize its action and cross-link toxin molecules into precipitating complexes; viruses are neutralized and agglutinated, bacteria opsonized."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 54, 58"
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "mechanism",
+   "q": "Which components assemble the membrane attack complex?",
+   "opts": [
+    [
+     "C5b with C6–C9",
+     "Correct. C5b initiates assembly of the terminal components C6–C9, and the assembled complex forms pores in a susceptible target membrane."
+    ],
+    [
+     "C1 with C4 and C2",
+     "C1, C4 and C2 begin the classical pathway, far upstream of the attack complex.",
+     "wrong stage or severity"
+    ],
+    [
+     "C3a and C5a",
+     "C3a and C5a are released fragments that promote inflammation.",
+     "adjacent fact"
+    ],
+    [
+     "Factor B and factor D",
+     "Factor B and factor D act in the alternative pathway to form a C3 convertase.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 68, 71"
+  },
+  {
+   "topic": "Immunodeficiency and aging",
+   "io": "Compare and contrast primary and secondary immunodeficiency including the genetic basis",
+   "slot": "mechanism",
+   "q": "Which defect underlies X-linked agammaglobulinemia?",
+   "opts": [
+    [
+     "Abnormal thymic development",
+     "Variable impairment of thymic and T-cell development is DiGeorge syndrome.",
+     "competing diagnosis"
+    ],
+    [
+     "Profound T-cell dysfunction",
+     "Profound T-cell dysfunction with impaired B-cell immunity is severe combined immunodeficiency.",
+     "competing diagnosis"
+    ],
+    [
+     "Medication-induced loss of function",
+     "Reduced function from medications is secondary immunodeficiency; X-linked agammaglobulinemia is primary, with a genetic basis.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Impaired B-cell maturation",
+     "Correct. X-linked agammaglobulinemia is impaired B-cell maturation with very low antibodies, and is associated with recurrent pyogenic bacterial infections."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 76"
+  },
+  {
+   "topic": "Lymphatic system",
+   "io": "Compare and contrast the various types of immunological processes",
+   "slot": "anatomy",
+   "q": "Which of these organs belongs to the lymphatic system?",
+   "opts": [
+    [
+     "Thyroid gland",
+     "The thyroid sits in the neck near the thymus but is not among the lymphatic structures labeled; the thymus is the lymphoid organ there, where T cells are processed.",
+     "adjacent fact"
+    ],
+    [
+     "Thymus gland",
+     "Correct. The labeled lymphatic system includes the thymus gland together with the tonsils, spleen, appendix, lymph vessels and the lymph nodes of the neck, axilla, groin and knee."
+    ],
+    [
+     "Adrenal gland",
+     "The adrenal gland is not part of the lymphatic network. The lymphoid organs labeled in the abdomen are the spleen and the appendix.",
+     "competing diagnosis"
+    ],
+    [
+     "Pancreas",
+     "The pancreas is not a lymphoid organ. The lymphatic system's organs are the tonsils, thymus, spleen and appendix, joined by vessels and nodes.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 4"
+  },
+  {
+   "topic": "Hypersensitivity",
+   "io": "Compare and contrast the types of hypersensitivity reactions",
+   "slot": "classification",
+   "q": "Which hypersensitivity type is mediated by IgE fixed on mast cells?",
+   "opts": [
+    [
+     "Type I",
+     "Correct. Type I (anaphylactic, immediate) hypersensitivity: IgE made at a first exposure becomes fixed on mast cells and basophils, and re-exposure releases histamine and other substances."
+    ],
+    [
+     "Type II",
+     "Type II is antibody-mediated through IgG or IgM binding antigens on cells or within tissues.",
+     "adjacent fact"
+    ],
+    [
+     "Type III",
+     "Type III is immune-complex hypersensitivity: antigen–antibody complexes deposit in tissues or vessel walls.",
+     "adjacent fact"
+    ],
+    [
+     "Type IV",
+     "Type IV is mediated by sensitized CD4 or CD8 T cells, not by antibody.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 60, 61",
+   "ordered": true
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "mechanism",
+   "q": "What commonly starts the classical complement pathway?",
+   "opts": [
+    [
+     "Lectins binding microbial sugars",
+     "Recognition proteins binding microbial carbohydrates start the lectin pathway.",
+     "adjacent fact"
+    ],
+    [
+     "C1 binding antigen-bound IgM or IgG",
+     "Correct. The classical pathway commonly begins when C1 recognizes antigen-bound IgM or IgG, though some activation occurs without antibody."
+    ],
+    [
+     "C3 activating on permissive surfaces",
+     "C3 activation and amplification on permissive surfaces is the alternative pathway.",
+     "adjacent fact"
+    ],
+    [
+     "C5b inserting into a membrane",
+     "C5b starts the terminal membrane attack complex, the shared END of the pathways.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 70"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Define autoimmunity",
+   "slot": "function",
+   "q": "Which T cells limit immune activation and maintain self-tolerance?",
+   "opts": [
+    [
+     "Cytotoxic T cells",
+     "Cytotoxic T cells kill infected or malignant host cells; they do not restrain the response.",
+     "adjacent fact"
+    ],
+    [
+     "Helper T cells",
+     "Helper T cells coordinate and support responses; the restraining population is the regulatory T cell.",
+     "adjacent fact"
+    ],
+    [
+     "Memory T cells",
+     "Memory T cells carry forward a faster response on re-exposure; they do not maintain self-tolerance.",
+     "adjacent fact"
+    ],
+    [
+     "Regulatory T cells",
+     "Correct. Regulatory T cells limit immune activation and maintain self-tolerance; many are CD4 cells expressing FOXP3."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 32"
+  },
+  {
+   "topic": "Primary and secondary response",
+   "io": "Compare and contrast primary and secondary immune response by the body",
+   "slot": "comparison",
+   "q": "After a FIRST exposure to an antigen, which antibody class rises first?",
+   "opts": [
+    [
+     "IgG",
+     "IgG starts rising later than IgM in the primary response; it dominates the secondary response.",
+     "wrong stage or severity"
+    ],
+    [
+     "IgA",
+     "IgA is the mucosal class; the first class to rise after a first exposure is IgM.",
+     "adjacent fact"
+    ],
+    [
+     "IgM",
+     "Correct. On the primary response time course IgM rises and peaks first, and IgG starts later; on second exposure IgG dominates."
+    ],
+    [
+     "IgE",
+     "IgE binds mast cells and basophils in allergy; it is not the early class of the primary response.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 37, 46"
+  },
+  {
+   "topic": "Antibody structure",
+   "io": "Compare and contrast the morphology of the various types of antibodies",
+   "slot": "structure",
+   "q": "What makes up a basic antibody unit?",
+   "opts": [
+    [
+     "One heavy and one light chain",
+     "That is only half a unit, the pairing found within one arm of the Y.",
+     "wrong stage or severity"
+    ],
+    [
+     "Four identical heavy chains",
+     "The unit has two heavy chains and two light chains, not four heavy chains.",
+     "reversed direction or value"
+    ],
+    [
+     "Two heavy chains alone",
+     "Light chains are part of every basic unit; each arm pairs a light chain with a heavy chain.",
+     "adjacent fact"
+    ],
+    [
+     "Two heavy and two light chains",
+     "Correct. A basic antibody unit has two heavy chains and two light chains, connected by disulfide bonds."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 39"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Compare and contrast the various subtypes and various functions of T lymphocytes",
+   "slot": "function",
+   "q": "What is the main role of CD4 helper T cells?",
+   "opts": [
+    [
+     "Killing infected cells with perforin",
+     "Perforin killing is the work of CD8 cytotoxic T cells; helpers coordinate rather than kill.",
+     "adjacent fact"
+    ],
+    [
+     "Coordinating humoral and cellular responses",
+     "Correct. CD4 helper T cells coordinate cell-mediated and humoral responses, using cytokines and cell contact to regulate other immune populations."
+    ],
+    [
+     "Secreting antibodies into plasma",
+     "Plasma cells secrete antibodies; helper signals support their differentiation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Limiting activation to keep self-tolerance",
+     "Limiting immune activation and maintaining self-tolerance is the role of regulatory T cells.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 24, 30"
+  },
+  {
+   "topic": "Antibody classes",
+   "io": "Compare and contrast the morphology of the various types of antibodies",
+   "slot": "structure",
+   "q": "Which immunoglobulin is usually secreted as a pentamer?",
+   "opts": [
+    [
+     "IgA",
+     "Secretory IgA is usually a dimer with a J chain and secretory component.",
+     "adjacent fact"
+    ],
+    [
+     "IgM",
+     "Correct. IgM is usually secreted as a pentamer with a J chain, and is a monomer on the B-cell surface."
+    ],
+    [
+     "IgG",
+     "IgG is a monomer with four subclasses; the pentamer secreted in a new response is IgM.",
+     "adjacent fact"
+    ],
+    [
+     "IgD",
+     "IgD is a monomer found with IgM on many mature naive B cells.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 44, 45"
+  },
+  {
+   "topic": "B cells and plasma cells",
+   "io": "Describe B lymphocyte and its metamorphosis into plasma cells",
+   "slot": "mechanism",
+   "q": "Which cells actually produce antibodies?",
+   "opts": [
+    [
+     "Plasma cells",
+     "Correct. In humoral immunity B cells are transformed into plasma cells, which are the actual antibody-producing cells."
+    ],
+    [
+     "Naive B cells",
+     "Naive B cells carry antibody on their surface as a receptor but must become plasma cells to secrete it.",
+     "wrong stage or severity"
+    ],
+    [
+     "Helper T cells",
+     "Helper T cells support B-cell differentiation and antibody production, but plasma cells do the secreting.",
+     "adjacent fact"
+    ],
+    [
+     "Memory B cells",
+     "Memory B cells wait to respond to a later exposure; the antibody-secreting cell is the plasma cell.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 22, 24"
+  },
+  {
+   "topic": "Active, passive and innate immunity",
+   "io": "Compare and contrast acquired and innate immunity",
+   "slot": "classification",
+   "q": "Which defenses belong to innate immunity?",
+   "opts": [
+    [
+     "Complement and interferons",
+     "Correct. Innate immunity acts without prior sensitization and includes skin and mucosal barriers, phagocytes, complement and interferons, with natural killer cells as its cytotoxic defense."
+    ],
+    [
+     "Memory B cells from a past exposure",
+     "Memory cells are adaptive: they exist only because of an earlier exposure, the opposite of innate defense.",
+     "competing diagnosis"
+    ],
+    [
+     "Antibodies left by a past vaccine",
+     "Antibodies made after a vaccine are artificial active immunity, which is adaptive and needs sensitization.",
+     "competing diagnosis"
+    ],
+    [
+     "Cytotoxic T cells with specific receptors",
+     "Antigen-specific T-cell receptors are adaptive. The innate cytotoxic defense is the natural killer cell.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 13"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various types of blood cells and their roles in immunity",
+   "slot": "development",
+   "q": "Besides circulating monocytes, what is another origin of resident tissue macrophages?",
+   "opts": [
+    [
+     "Neutrophils settling in inflamed tissue",
+     "Neutrophils are the first-responder granulocytes that act by phagocytosis; they never become macrophages, which come from monocytes or develop before birth.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Lymphoblasts maturing in the thymus",
+     "The thymus processes T lymphocytes; macrophages come from monocytes, or develop before birth and renew locally.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Development before birth, then local renewal",
+     "Correct. Monocytes enter tissue during inflammation and become macrophages, but some resident macrophages develop before birth and renew locally."
+    ],
+    [
+     "B cells changing after antigen exposure",
+     "B cells become plasma cells and memory cells after antigen exposure, never macrophages.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 18"
+  },
+  {
+   "topic": "Blood cells in immunity",
+   "io": "Compare and contrast the various subtypes and various functions of T lymphocytes",
+   "slot": "comparison",
+   "q": "How do natural killer cells differ from cytotoxic T cells?",
+   "opts": [
+    [
+     "They mature in the thymus",
+     "Thymic processing is the T-cell route. Natural killer cells mature in bone marrow and other tissues.",
+     "adjacent fact"
+    ],
+    [
+     "They secrete antibodies",
+     "Antibodies come from plasma cells. Natural killer cells kill with perforin and granzymes.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They need no specific antigen",
+     "Correct. Unlike cytotoxic T cells, natural killer cells do not need to recognize a specific antigen; they target tumor cells and protect against many infectious microbes."
+    ],
+    [
+     "They need a prior exposure first",
+     "Natural killer cells are innate and act without prior sensitization; they keep no conventional memory.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 19"
+  },
+  {
+   "topic": "Immunodeficiency and aging",
+   "io": "Compare and contrast primary and secondary immunodeficiency including the genetic basis",
+   "slot": "mechanism",
+   "q": "Why is severe combined immunodeficiency called combined?",
+   "opts": [
+    [
+     "T-cell and B-cell immunity both fail",
+     "Correct. Severe combined immunodeficiency is profound T-cell dysfunction with impaired B-cell immunity; it may present in early infancy or be found by newborn screening."
+    ],
+    [
+     "It combines primary and secondary causes",
+     "It is a primary immunodeficiency; secondary causes are acquired from disease, medications, malignancy or nutrition.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It affects both complement and antibody",
+     "The combination is cellular and humoral: profound T-cell dysfunction plus impaired B-cell immunity.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "It joins allergy with immune deficiency",
+     "Allergy is type I hypersensitivity; this disorder is a combined T-cell and B-cell deficiency.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 76"
+  },
+  {
+   "topic": "Antibody functions",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "mechanism",
+   "q": "What is opsonization?",
+   "opts": [
+    [
+     "Clumping of particles into a lattice",
+     "Clumping particles together is agglutination; opsonization coats a target so a phagocyte ingests it.",
+     "adjacent fact"
+    ],
+    [
+     "Pore formation in a target membrane",
+     "Pore formation is the complement membrane attack complex leading to lysis.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Blocking a toxin from its target",
+     "Blocking a toxin's action is neutralization; opsonization is a coating that eases phagocyte ingestion.",
+     "adjacent fact"
+    ],
+    [
+     "Coating that eases ingestion by phagocytes",
+     "Correct. In opsonization antibody joins antigen on the cell's surface, and this coating facilitates ingestion of the antigen by a phagocyte."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 55"
+  },
+  {
+   "topic": "Electrophoresis",
+   "io": "Define antibodies (immunoglobulins)",
+   "slot": "method",
+   "q": "What does immunofixation add to serum protein electrophoresis?",
+   "opts": [
+    [
+     "The heavy- and light-chain types",
+     "Correct. Electrophoresis separates serum proteins into albumin and globulin fractions by migration in an electric field; immunofixation characterizes the immunoglobulin heavy- and light-chain types."
+    ],
+    [
+     "Separation of albumin from globulins",
+     "Separating albumin and globulin fractions is what electrophoresis itself does.",
+     "adjacent fact"
+    ],
+    [
+     "A measure of complement activity",
+     "Immunofixation characterizes immunoglobulins, not the complement cascade.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A count of CD4 helper T cells",
+     "Lymphocyte populations are counted by their surface markers, not by protein electrophoresis.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 38"
+  },
+  {
+   "topic": "T cells and cellular immunity",
+   "io": "Describe the process known as cellular immunity",
+   "slot": "mechanism",
+   "q": "Why does impaired helper T-cell function weaken antibody responses?",
+   "opts": [
+    [
+     "Helper T cells secrete the antibodies",
+     "Plasma cells secrete antibodies; the helper cell's contribution is the supporting signal.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Helper T cells form the B-cell receptor",
+     "The B-cell antigen receptor is surface immunoglobulin made by the B cell itself.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Helper T cells carry antibody to tissue",
+     "Antibodies travel in blood, tissue fluid and secretions on their own; helper cells act through cytokines and contact.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Helper signals drive B-cell differentiation",
+     "Correct. Helper signals support B-cell differentiation and antibody production, so losing them weakens the antibody response even though plasma cells do the secreting."
+    ]
+   ],
+   "c": 3,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slide 24"
+  },
+  {
+   "topic": "Antibody structure",
+   "io": "Compare and contrast the functions of the various types of antibodies and the various mechanisms by which antibodies destroy antigens",
+   "slot": "structure",
+   "q": "Which antibody fragment carries the effector functions?",
+   "opts": [
+    [
+     "Fab",
+     "Fab contains the antigen-binding regions and adjacent constant domains, not the effector region.",
+     "adjacent fact"
+    ],
+    [
+     "Fc",
+     "Correct. Fc contains the heavy-chain constant regions involved in effector functions; the complement-binding site lies on its CH2 domain."
+    ],
+    [
+     "Light-chain variable region",
+     "The light-chain variable region helps form the antigen-binding site, which is binding, not effector function.",
+     "adjacent fact"
+    ],
+    [
+     "Hinge region",
+     "The hinge joins the arms to the stem; the effector functions sit in the Fc.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 41, 42"
+  },
+  {
+   "topic": "Complement",
+   "io": "Describe the function of the complement system",
+   "slot": "function",
+   "q": "Which three main functions does complement serve?",
+   "opts": [
+    [
+     "Antibody secretion, memory, opsonization",
+     "Antibody secretion is the plasma cell's work and memory belongs to lymphocytes; only opsonization is a complement function.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Opsonization, inflammation, membrane attack",
+     "Correct. Complement opsonizes targets for phagocytes, generates inflammatory mediators that recruit and activate immune cells, and forms the membrane attack complex that damages susceptible membranes."
+    ],
+    [
+     "Antigen presentation, lysis, memory",
+     "Antigen presentation and memory are lymphocyte and antigen-presenting cell functions.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Neutralization, agglutination, precipitation",
+     "These are antibody functions; complement adds opsonization, inflammation and membrane attack.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Immunity_Lecture_Recorded.pptx, Slides 67, 75"
+  }
+ ]
+}
