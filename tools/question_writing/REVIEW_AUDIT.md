@@ -36,7 +36,8 @@ Compact JSON only, no long reasoning, no rewriting of whole items. Do not re-rea
    evidence. A key that follows the slides where current guidelines differ is CORRECT (students are tested from
    the slides): not a defect: return `pass` with empty `defects` and put `NOTE: <the guideline difference>` in `fix`, so the guide
    gets a one-line note. Agreement between you and the writer is a signal, not proof.
-2. Slide pictures: when the slide text says it has pictures and the key or an explanation depends on them, and
+2. Slide pictures: when the item has a `stem_image` (the picture the stem shows), open it first; it is part of the
+   question. When the slide text says it has pictures and the key or an explanation depends on them, and
    the slide is listed in `evidence_images`, open the listed images with the Read tool (skip any you already
    opened in pass 1) and treat what is CLEARLY visible as evidence. A claim that rests on a picture that is not
    listed, or not clearly visible, is an unsupported claim.

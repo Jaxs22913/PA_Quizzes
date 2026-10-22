@@ -73,6 +73,7 @@ import fnmatch
 import glob
 import hashlib
 import json
+import shutil
 import os
 import random
 import re
@@ -160,6 +161,9 @@ class Q:
             self._apply_mis(q["mis"])
         self.h = item_hash(self.stem, [o[0] for o in self.opts])
         self.sourced = False
+        # the picture the stem refers to ("this chest film"), when the page shows one above the stem
+        img = q.get("img") or ""
+        self.img = os.path.join(ROOT, os.path.dirname(rel), img) if img and not img.startswith("http") else ""
 
     def _apply_mis(self, m):
         new = []
@@ -815,6 +819,13 @@ def cmd_export(a):
                 for s in window:
                     evid.setdefault(deck, {})[s] = texts[s]
             items.append(item_payload(q, ev, a.pass_, rec))
+            if q.img and os.path.exists(q.img):
+                # copied under a neutral name: a page's image filename can name the answer
+                sd = os.path.join(a.out, "stem-images")
+                os.makedirs(sd, exist_ok=True)
+                dst = os.path.join(sd, q.h + os.path.splitext(q.img)[1])
+                shutil.copyfile(q.img, dst)
+                items[-1]["stem_image"] = dst
             manifest["items"][q.h] = {
                 "folder": q.folder, "file": q.file, "stem": q.stem,
                 "evidence_slides": {deck: window for deck, window, _ in ev},

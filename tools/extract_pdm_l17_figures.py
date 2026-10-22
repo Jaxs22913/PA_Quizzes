@@ -239,6 +239,10 @@ def main():
     os.makedirs(QUIZ, exist_ok=True)
     os.makedirs(GUIDE, exist_ok=True)
     B = blobs()
+    # A quiz picture's file name must not name its answer ("l17-film-overexposed" did, 2026-10-22): quiz copies
+    # are numbered in the order of their descriptive stems; the guide keeps the descriptive names.
+    QUIZ_NAME = {st: "l17-fig-%02d" % i
+                 for i, st in enumerate(sorted(st for _, _, st, d, _ in FIGS if "Q" in d), 1)}
     for slide, sid, stem, dest, ops in FIGS:
         assert (slide, sid) in B, "slide %d has no picture %d" % (slide, sid)
         im = Image.open(io.BytesIO(B[(slide, sid)]))
@@ -258,7 +262,7 @@ def main():
         if im.width > MAXW:
             im = im.resize((MAXW, round(im.height * MAXW / im.width)), Image.LANCZOS)
         for dd in ([QUIZ] if "Q" in dest else []) + ([GUIDE] if "G" in dest else []):
-            p = os.path.join(dd, stem + ".jpg")
+            p = os.path.join(dd, (QUIZ_NAME[stem] if dd == QUIZ else stem) + ".jpg")
             im.save(p, quality=88)
             print("%-5s slide %2d  %-44s %4dx%-4d %3d KB" % ("quiz" if dd == QUIZ else "guide", slide,
                   os.path.basename(p), im.width, im.height, os.path.getsize(p) // 1024))
