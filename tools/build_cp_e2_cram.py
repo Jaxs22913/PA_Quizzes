@@ -217,7 +217,7 @@ T = [
   ("Interstitial lung disease", "Starts with INJURY to alveolar epithelium or capillary endothelium → immune reaction → thick interstitium, COLLAGEN."),
   ("3 alveolar patterns", "INFLAMMATION (early, REVERSIBLE) → FIBROSIS (fibroblasts, collagen) → DESTRUCTION (end stage: STIFF, NONCOMPLIANT lungs)."),
   ("Sarcoidosis", "ALVEOLAR MACROPHAGES activated by an unknown trigger; NONCASEATING epithelioid GRANULOMAS (lymph nodes, lung); ASTEROID BODIES; abnormal T cells."),
-  ("Hypersensitivity pneumonitis", "Inhaled ORGANIC agents (birds, fungi, wheat weevil); TYPE III immune complexes; nonsmokers. 'Extrinsic allergic alveolitis'."),
+  ("Hypersensitivity pneumonitis", "Inhaled ORGANIC agents (birds, fungi, wheat weevil); antibodies → TYPE III immune complexes (cell-mediated immunity also contributes); nonsmokers. 'Extrinsic allergic alveolitis'."),
   ("Pneumoconiosis", "Inhaled INORGANIC dust (coal, silica, asbestos); macrophages cannot clear it → FIBROSIS. Smoking depresses ciliary clearance."),
   ("ARDS (acute respiratory distress syndrome)", "ATELECTATIC disorder. Alveolar-capillary membrane DAMAGE → LEAKY capillaries → protein-rich NONCARDIOGENIC edema; complement + neutrophil sequestration."),
   ("ARDS: 3 processes", "Noncardiogenic EDEMA (leaky capillaries) · ATELECTASIS (no SURFACTANT) · HYALINE MEMBRANES (protein deposits)."),
@@ -226,7 +226,7 @@ T = [
  {"id": "l9-pleura", "label": "L9 · Pleura, Sleep Apnea & Pneumonia", "color": "#3d4f7a", "rows": [
   ("Primary pneumothorax", "TALL, THIN MEN 20–40; SUBPLEURAL BLEBS at the apices rupture; smoking raises risk."),
   ("Secondary pneumothorax", "Complication of lung disease: asthma, emphysema, cystic fibrosis, pneumonia, tuberculosis."),
-  ("Tension pneumothorax", "Trauma; air ENTERS but cannot LEAVE → lung collapses, mediastinum shifts AWAY → less VENOUS RETURN and CARDIAC OUTPUT."),
+  ("Tension pneumothorax", "Usually trauma (can arise without it); air ENTERS but cannot LEAVE → lung collapses, mediastinum shifts AWAY → less VENOUS RETURN and CARDIAC OUTPUT."),
   ("Pleural effusion causes", "Raised HYDROSTATIC pressure (heart failure) · lowered ONCOTIC pressure (nephrotic syndrome, cirrhosis) · lowered pleural pressure (lung collapse). Normal 5–15 mL."),
   ("Transudate", "Protein ratio < 0.5 · LDH (lactate dehydrogenase) ratio < 0.6 · specific gravity < 1.016. PRESSURE problem: heart failure, cirrhosis, nephrotic syndrome."),
   ("Exudate", "Protein ratio > 0.5 or LDH ratio > 0.6 (ONE criterion is enough). PERMEABILITY or LYMPHATIC problem: cancer, infection, PULMONARY EMBOLISM, sarcoidosis."),

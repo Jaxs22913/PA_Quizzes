@@ -10180,7 +10180,7 @@ var DEMO_DECKS = [
       ["Which finding confirms a restrictive pattern?", "Low total lung capacity"],
       ["Which alveolar pattern of interstitial lung disease is reversible?", "Inflammation, the early pattern"],
       ["What is the characteristic lesion of sarcoidosis?", "Noncaseating epithelioid granulomas"],
-      ["Which hypersensitivity type causes hypersensitivity pneumonitis?", "Type III"],
+      ["Antibodies to inhaled particles in hypersensitivity pneumonitis cause which hypersensitivity type?", "Type III"],
       ["What is a pneumoconiosis?", "Lung disease from inhaled inorganic dust"],
       ["What starts acute respiratory distress syndrome?", "Damage to the alveolar-capillary membrane"],
       ["Why do alveoli collapse in acute respiratory distress syndrome?", "Lack of surfactant"],
