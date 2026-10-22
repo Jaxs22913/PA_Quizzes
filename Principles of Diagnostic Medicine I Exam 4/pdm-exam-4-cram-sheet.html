@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cram Sheet — Principles of Diagnostic Medicine I Exam 4</title>
+<style>
+  :root{
+    --ink:#161a24;--body:#2b3140;--muted:#6b7280;--line:#e4e7ef;--paper:#f6f7fb;--card:#fff;
+    --primary:#26384a;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 10px 30px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font:400 15.5px/1.55 ui-sans-serif,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:6px 20px 70px}
+  header.hero{margin-bottom:8px}
+  .kicker{font:700 12px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--primary)}
+  h1{font:700 clamp(27px,4.5vw,38px)/1.12 ui-serif,"Iowan Old Style","Charter",Georgia,"Times New Roman",serif;color:var(--ink);letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--body);max-width:72ch}
+  .note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:12px 15px;margin:16px 0 26px;font-size:13.8px;color:#495064;box-shadow:var(--shadow)}
+  .note b{color:var(--ink)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+  .toc a{font:700 13px ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:7px 14px;box-shadow:var(--shadow)}
+  .toc a:hover{border-color:currentColor}
+  .toc .dot{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+
+  section.topic{margin:36px 0;scroll-margin-top:16px}
+  .shead{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+  h2{font:800 21px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0}
+  h2 .tag{font:600 12.5px/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--muted);margin-left:8px}
+  .shead .dot{width:12px;height:12px;border-radius:3px;flex:none}
+
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.8px}
+  thead th{position:sticky;top:0;text-align:left;font:700 12px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.03em;
+    text-transform:uppercase;color:#374151;padding:11px 13px;border-bottom:2px solid var(--line);z-index:1;
+    background:var(--acc-bg)}
+  th.term{width:28%}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  td.h{font-weight:700;color:var(--acc-ink,var(--ink))}
+  tbody tr:nth-child(even){background:var(--acc-zebra)}
+  td.grp{background:var(--acc-bg);font:700 11.5px/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--acc-ink,var(--ink))}
+  tbody tr:has(td.grp){background:none}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+  @media print{
+    @page{size:landscape;margin:12mm}
+    body{background:#fff;font-size:10.5px}
+    .wrap{padding:0;max-width:none}
+    .scroll{overflow:visible;box-shadow:none;border:1px solid #bbb;break-inside:auto}
+    table{min-width:0}
+    thead th{position:static}
+    section.topic{break-inside:avoid}
+    .note{box-shadow:none}
+  }
+  @media (max-width:560px){.wrap{padding:6px 12px 60px}}
+
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .logo-mark-ink { stroke: #1f2937; }
+  .logo-mark-accent { stroke: var(--primary); }
+  @media (prefers-color-scheme: dark) {
+    .logo-mark-ink { stroke: #e5e7eb; }
+    .logo-mark-accent { stroke: var(--primary); }
+  }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--ink:#e5e7eb;--body:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--paper:#0f1115;--card:#191c22;--primary-l:#26384a;--primary:#788da2;}:root[data-theme="dark"] body[data-dark="tokens"] #scope{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#scope"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-landmarks{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-landmarks"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-normal-film{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-normal-film"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-airway{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-airway"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-technique{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-technique"]{color:#5e8c92!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-modalities{--acc-bg:#102438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#798ea3!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-modalities"]{color:#72879c!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-safety{--acc-bg:#112438!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#618fc2!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-safety"]{color:#5a88ba!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-ct{--acc-bg:#311e08!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#b48247!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-ct"]{color:#ad7b40!important}:root[data-theme="dark"] body[data-dark="tokens"] #l17-patterns{--acc-bg:#05282c!important;--acc-zebra:rgba(255,255,255,.035)!important;--acc-ink:#659399!important}:root[data-theme="dark"] body[data-dark="tokens"] .toc a[href="#l17-patterns"]{color:#5e8c92!important}:root[data-theme="light"] body[data-dark="tokens"]{--primary-t:#26384a;}</style><!--DARK-TOKENS:END-->
+  <link rel="alternate" type="application/vnd.openxmlformats-officedocument.wordprocessingml.document" href="pdm-exam-4-cram-sheet.docx" title="Editable Word copy">
+</head>
+<body data-dark="tokens" data-dark-kind="cram">
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="logo-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="logo-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="logo-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div class="guide-back-bar">
+  <a href="#" class="guide-back-link" onclick="event.preventDefault(); window.guideGoBack();">&larr; Back</a>
+</div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Principles of Diagnostic Medicine I Exam 4 · Class of 2028</div>
+    <h1>Principles of Diagnostic Medicine I Exam 4 Cram Sheet</h1>
+    <p class="sub">Lectures 17 to 21, the pulmonary block, built lecture by lecture. So far: pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns). Opens with how the exam is written.</p>
+    <div class="toc">
+      <a href="#scope" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>How This Exam Is Written</a>
+      <a href="#l17-landmarks" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Landmarks You Can Feel (Lecture 17)</a>
+      <a href="#l17-normal-film" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>The Normal Chest Film</a>
+      <a href="#l17-airway" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Upper Airway Films</a>
+      <a href="#l17-technique" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>Is It the Film or the Patient?</a>
+      <a href="#l17-modalities" style="color:#1e2c3a"><span class="dot" style="background:#26384a"></span>Choosing the Study</a>
+      <a href="#l17-safety" style="color:#2d5076"><span class="dot" style="background:#3a6797"></span>Contraindications and Cautions</a>
+      <a href="#l17-ct" style="color:#6c4616"><span class="dot" style="background:#8a5a1c"></span>Reading Computed Tomography</a>
+      <a href="#l17-patterns" style="color:#25494c"><span class="dot" style="background:#2f5d62"></span>The Five Patterns</a>
+    </div>
+    <div class="note"><b>How to use this:</b> this is a condensed, night-before-the-exam reference, not a
+      replacement for the full study guide — it assumes you've already learned the material and just need
+      the highest-yield facts at a glance. If a term feels unfamiliar, go back to the
+      <a href="pdm-exam-4-study-guide.html" style="color:inherit">full guide</a> for the explanation.</div>
+  </header>
+
+  <section class="topic" id="scope" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>How This Exam Is Written</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Reference ranges are GIVEN</td><td>“I'm not going to just throw a random number at you” — a creatinine or any value in a stem comes with the range that reads it.</td></tr>
+          <tr><td class="h">Tests over diagnoses</td><td>“More related to the tests themselves”: which study, why, its cautions, and what normal looks like on it.</td></tr>
+          <tr><td class="h">Next-best-test</td><td>In imaging it is a study: radiograph first; angiogram first for a suspected pulmonary embolism; computed tomography when the radiograph is inconclusive; ventilation/perfusion when contrast can't be given.</td></tr>
+          <tr><td class="h">Images in play</td><td>Expect a film or a slice with the vignette. Technique first, then structures, then the pattern.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-landmarks" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Landmarks You Can Feel (Lecture 17)</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Sternal angle</td><td>The manubriosternal joint communicates with the SECOND rib: find the second rib for procedures, then palpate down and count.</td></tr>
+          <tr><td class="h">★ Nipple line</td><td>Corresponds to the FIFTH intercostal space.</td></tr>
+          <tr><td class="h">Fifth rib</td><td>Below the base of the fifth rib are the INFERIOR lobes; above it, the SUPERIOR lobes.</td></tr>
+          <tr><td class="h">Jugular notch</td><td>Deep to it is the TRACHEA.</td></tr>
+          <tr><td class="h">Larynx</td><td>C3 to C6 (the slide; the recording's "C9" does not exist). Cricothyroid ligament about 1 centimeter below the laryngeal prominence.</td></tr>
+          <tr><td class="h">Neck triangles</td><td>POSTERIOR triangle: subclavian vein and lung apices. CAROTID triangle: bifurcation of the common carotid. The sternocleidomastoid divides anterior from posterior.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-normal-film" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>The Normal Chest Film</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">First line</td><td>Chest radiographs are the most common radiologic study (radiographs = 75% of images ordered) and almost always FIRST for a pulmonary or cardiac complaint; pain and shortness of breath.</td></tr>
+          <tr><td class="h">★ Posteroanterior vs anteroposterior</td><td>POSTEROANTERIOR = ambulatory, standing. ANTEROPOSTERIOR = supine, HEART MAGNIFIED: do not call it enlarged on that view alone.</td></tr>
+          <tr><td class="h">★ Aortic knob</td><td>The rounded bulge at the top of the left mediastinal border (the aortic arch); pulmonary artery just below, then the left hilum.</td></tr>
+          <tr><td class="h">★ Costophrenic angles</td><td>Sharp Vs where each hemidiaphragm meets the chest wall: "nice and sharp" is normal. Gastric bubble under the left hemidiaphragm.</td></tr>
+          <tr><td class="h">★ Heart size</td><td>No more than HALF the posteroanterior span of the chest; one third right of the midline, two thirds left.</td></tr>
+          <tr><td class="h">★ Hila</td><td>Bisect the chest; mostly pulmonary arteries and veins (plus fat, nodes, bronchial walls); LEFT slightly HIGHER; concave, similar size and density.</td></tr>
+          <tr><td class="h">★ Trachea</td><td>Smooth radiopaque border, radiolucent inside, MIDLINE.</td></tr>
+          <tr><td class="h">The rest of the read</td><td>Lungs radiolucent; retrosternal and retrocardiac spaces; only pulmonary arteries and veins as vascular markings; each rib one at a time, both sides; spinous processes midline. Lateral film: thoracic spine has a posterior arch.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-airway" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Upper Airway Films</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Indications</td><td>Muffled voice; stridor (wheeze heard from the mouth without a stethoscope); suspected sinus infection; anterior neck pain.</td></tr>
+          <tr><td class="h">Water's view</td><td>Maxillary and frontal sinuses, 45 degrees to the orbitomeatal line. For sinusitis: not really needed, but can confirm it and possibly REDUCE ANTIBIOTIC use.</td></tr>
+          <tr><td class="h">★ Lateral soft-tissue neck</td><td>Trachea = the dark, patent, radiolucent air column. The esophagus sits in the RETROTRACHEAL space and shows NO air: collapsed = NORMAL when not eating.</td></tr>
+          <tr><td class="h">Bones on the neck film</td><td>Slight ANTERIOR curve (cervical lordosis). The body below C7 is partly hidden by the FIRST RIB.</td></tr>
+          <tr><td class="h">How to read it</td><td>Superior to inferior, left to right; airways dark; sinuses air-filled; bones continuous; always symmetry.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-technique" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>Is It the Film or the Patient?</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Good exposure</td><td>Vessels to at least the PERIPHERAL THIRD; paraspinous margins; left hemidiaphragm visible behind the heart.</td></tr>
+          <tr><td class="h">Overexposed</td><td>DARK: thoracic spine, mediastinum, retrocardiac areas and nasogastric/endotracheal tubes show through.</td></tr>
+          <tr><td class="h">Underexposed</td><td>WHITE: small vessels, NO spine and NO mediastinal anatomy.</td></tr>
+          <tr><td class="h">Inspiration</td><td>Domes to the TENTH posterior rib standing (eighth to tenth seated or lying). Few ribs above the diaphragm = poor effort.</td></tr>
+          <tr><td class="h">★ Rotation</td><td>Spinous processes to the clavicle borders. Do NOT use the tracheal shadow (a tube looks the same rotated).</td></tr>
+          <tr><td class="h">The checklist</td><td>Trachea midline or deviated; lungs shadowing or lucency; vessels enlarged; HILA masses or lymphadenopathy; mediastinum width or mass; PLEURA effusion, thickening, calcification; BONES lesions or fractures; soft tissues: don't miss a mastectomy.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-modalities" style="--acc:#26384a;--acc-bg:#e1e3e6;--acc-zebra:#f0f1f2;--acc-ink:#1e2c3a">
+    <div class="shead"><span class="dot" style="background:#26384a"></span><h2>Choosing the Study</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Computed tomography first?</td><td>ONLY for a suspected pulmonary embolism: the computed tomography ANGIOGRAM. Everything else starts with the radiograph.</td></tr>
+          <tr><td class="h">Radiograph indications</td><td>Chest pain, dyspnea, cough over 6 WEEKS unexplained, unexplained weight loss in any chronic SMOKER, hemoptysis, adventitious sounds, support hardware (lines, tubes, pacemaker).</td></tr>
+          <tr><td class="h">Computed tomography</td><td>Most common reason: an INCONCLUSIVE radiograph with a continuing problem. Also embolism, trauma, chronic obstructive pulmonary and interstitial lung disease, BONE (rib and spine fractures), cancer screening. Head and neck: retropharyngeal abscess or foreign body the radiograph missed.</td></tr>
+          <tr><td class="h">Contrast is for</td><td>VASCULAR pathology (embolism, dissection, aneurysm), focal lesions, the -itis conditions (magnetic resonance superior for vasculitis), METASTASES to lymph nodes.</td></tr>
+          <tr><td class="h">Ultrasound</td><td>Almost exclusively TRAUMA: collapsed lung or fluid (extended focused assessment with sonography for trauma); procedures; NO contraindications. Ribs cast shadows.</td></tr>
+          <tr><td class="h">★ Ventilation/perfusion</td><td>For pulmonary embolism when the angiogram can't be done (CONTRAST ALLERGY); INFERIOR to the angiogram. Ventilation: INHALED technetium-99m. Perfusion: INJECTED technetium-99m macroaggregated albumin. Result: low, medium or high probability.</td></tr>
+          <tr><td class="h">Positron emission tomography</td><td>Higher resolution and sensitivity than single-photon, more cost; usually secondary to the radiograph; mostly for METASTASES; now done with computed tomography for a much CLEARER image.</td></tr>
+          <tr><td class="h">Magnetic resonance</td><td>King of soft tissue, but the lungs' anatomy makes computed tomography first. Used for a mass INCONCLUSIVE on computed tomography, patients who can't have it, vasculopathy (second choice); SUPERIOR to the angiogram for INTRAMURAL HEMATOMA. Inflammation: dark T1, bright T2.</td></tr>
+          <tr><td class="h">Who reads it</td><td>The radiologist gives the official read; the clinician's read is often just for the answer.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-safety" style="--acc:#3a6797;--acc-bg:#e3eaf0;--acc-zebra:#f1f4f8;--acc-ink:#2d5076">
+    <div class="shead"><span class="dot" style="background:#3a6797"></span><h2>Contraindications and Cautions</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">★ Radiographs</td><td>NO true contraindications. Lifetime limit 100 millisieverts = about 10,000 chest radiographs or 25 chest computed tomography scans.</td></tr>
+          <tr><td class="h">★ Pregnancy test</td><td>"Always, always, always": beta human chorionic gonadotropin (urine or blood) on every female of childbearing age. Pregnancy is NOT an absolute contraindication; emergent imaging is done, even with contrast.</td></tr>
+          <tr><td class="h">Lead shielding</td><td>Everything not being filmed, especially thyroid, ovaries, testes, breasts, fetus.</td></tr>
+          <tr><td class="h">★ Contrast cautions</td><td>Anaphylaxis to medicines; ★ SHELLFISH anaphylaxis not yet tested for iodine allergy; iodine anaphylaxis or angioedema; HIGH CREATININE or blood urea nitrogen (renally cleared, NEPHROTOXIC); suspected THYROID dysfunction.</td></tr>
+          <tr><td class="h">Magnetic resonance precautions</td><td>Metal implants that are NOT titanium; gadolinium allergy (rare); claustrophobia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-ct" style="--acc:#8a5a1c;--acc-bg:#efe8df;--acc-zebra:#f7f3ef;--acc-ink:#6c4616">
+    <div class="shead"><span class="dot" style="background:#8a5a1c"></span><h2>Reading Computed Tomography</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Planes</td><td>TRANSVERSE (axial) = cross-section; FRONTAL (coronal) = both lungs, apex to base; SAGITTAL = one side in profile. A slice, not a stacked shadow.</td></tr>
+          <tr><td class="h">Attenuation</td><td>HIGH (bright): bone (very high), FRESH blood, contrast. LOW (dark): air and gas, fluid, coagulated blood. NORMAL: heart and muscle.</td></tr>
+          <tr><td class="h">Angiogram pearls</td><td>DESCENDING AORTA always on the LEFT of the patient's vertebral column; patient's left = YOUR right; RIGHT ventricle nearest the sternum; LEFT ventricle has the thickest wall; for an embolism the PULMONARY ARTERIES matter most.</td></tr>
+          <tr><td class="h">Clot</td><td>A dark filling defect inside a bright, contrast-filled pulmonary artery.</td></tr>
+          <tr><td class="h">Vasculogram</td><td>Almost always a computed tomography angiogram: embolism, pulmonary hypertension, vasculitis, scleroderma.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="topic" id="l17-patterns" style="--acc:#2f5d62;--acc-bg:#e2e8e9;--acc-zebra:#f0f4f4;--acc-ink:#25494c">
+    <div class="shead"><span class="dot" style="background:#2f5d62"></span><h2>The Five Patterns</h2></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="term">Term</th><th>What you need to know</th></tr></thead>
+        <tbody>
+          <tr><td class="h">Pneumonia</td><td>CONSOLIDATION (infiltrate): white, filled-in lung where it should be dark. Don't sort bacterial from viral on the film.</td></tr>
+          <tr><td class="h">★ Pleural effusion</td><td>BLUNTED costophrenic angles; on computed tomography a gray collection compressing the lung.</td></tr>
+          <tr><td class="h">★ Pulmonary edema</td><td>CEPHALIZATION of vessels, KERLEY B LINES (short horizontal lines at the outer lower lungs from thickened INTERLOBULAR SEPTA), pleural effusion, INCREASED cardiothoracic ratio.</td></tr>
+          <tr><td class="h">Pneumothorax</td><td>JET BLACK air with the COMPRESSED lung beside it.</td></tr>
+          <tr><td class="h">★ Interstitial lung disease</td><td>Diffuse abnormal patterns in the INTERSTITIUM, not the air sacs. Computed tomography: reticular (net-like), nodular (dots), HONEYCOMBING (cysts 3 to 10 millimeters), volume loss, traction bronchiectasis, GROUND-GLASS (hazy, pale), Kerley B lines.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lecture 17 so far (lecture content). Emphasis rows quote the 20 October 2026 recording; ★ = emphasized in a recording.
+    <p style="text-align:center;margin-top:26px;"><a href="../index.html" style="color:inherit;font-weight:700;text-decoration:none;">&larr; Back to Homepage</a></p>
+    <p style="text-align:center;font-size:13px;font-style:italic;">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </footer>
+
+</div>
+<script>
+(function () {
+  const indicator = document.getElementById("pull-refresh");
+  const path = indicator.querySelector("path");
+  const pathLength = 420, threshold = 70, maxPull = 90;
+  let startY = 0, pulling = false, refreshing = false;
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) { startY = e.touches[0].clientY; pulling = true; }
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
