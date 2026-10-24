@@ -2017,6 +2017,7 @@ window.SyncList = (function () {
 window.CloudSyncMerge = window.CloudSyncMerge || {};
 window.CloudSyncMerge["pipReview:"] = window.SyncList.merge;
 window.CloudSyncMerge["guideNote:"] = window.SyncList.merge;
+window.CloudSyncMerge["qa:"] = window.SyncList.merge;   // quiz attempt history (ATTEMPT HISTORY below)
 
 (function () {
   var PFX = "pipReview:", CAP = 600;
@@ -3842,12 +3843,9 @@ window.__themeSeason = (function () {
     return null;
   }
 
-  var written = false;
   function record() {
-    if (written) return;
     var data = collect();
     if (!data) return;
-    written = true;
     try {
       localStorage.setItem("qm:" + location.pathname, JSON.stringify({
         t: Date.now(),
@@ -3866,11 +3864,375 @@ window.__themeSeason = (function () {
   function visible() {
     return !!(results.offsetWidth || results.offsetHeight || results.getClientRects().length);
   }
-  function check() { if (visible()) record(); }
+  /* Once per finish. A finished run is told apart by its answers array: startExam()
+     makes a new one, so a retake in the same page load records too (a one-shot flag
+     used to keep the first run's misses), while #results being hidden and shown again
+     (the attempt viewer below does that) records nothing new. */
+  var lastRef = null;
+  function check() {
+    if (!visible()) return;
+    var ref = globalOf("answers") || globalOf("responses");
+    if (ref && ref === lastRef) return;
+    lastRef = ref;
+    record();
+  }
   new MutationObserver(check).observe(results, {
     childList: true, attributes: true, attributeFilter: ["class", "style", "hidden"]
   });
   check();
+})();
+
+/* ============================================================
+   ATTEMPT HISTORY (2026-10-23)
+   ------------------------------------------------------------
+   A classmate asked to keep every finished attempt so they can go back and
+   review each one later: the questions they got right as well as the ones they
+   missed. Until now a finish kept only the latest score (qc:) and the misses
+   (qm:), and the next finish overwrote both.
+
+     qa:<pathname> = [ {id, at, n, s, ms, ex, g, q, a, k}, ... ]   oldest first
+
+   n questions in that attempt, s correct, ms time taken, ex 1 = no-feedback
+   (exam) mode, g = hash of the bank's stems; per question IN THE ORDER SEEN:
+   q its stable qid (or its bank index on pages without qids), a the choice
+   ("0".."9", "-" = skipped), k the key at the time, p a 3-character hash of the
+   picked option's text ("---" when skipped). k and p are stored so an attempt is
+   never shown against a question whose options have since moved: positions are
+   permuted on rebuilds, and the key can stay put while the picked option changes.
+   About 0.7 KB for 60 questions; the newest CAP are kept.
+
+   The key syncs like every other key, merged record by record through
+   window.SyncList (see SYNCED LISTS), so attempts made on two devices before
+   either reloaded are both kept, and a trimmed one leaves a tombstone.
+
+   The viewer is a card inside .wrap (not a fixed overlay), so the dark-mode
+   invert, high contrast and large text all apply to it as they do to the quiz.
+   Current engine only (QUESTIONS + answers + order: 714 pages). The 9 older
+   Physiology Exam 3 pages keep their misses (above) but no history.
+   ============================================================ */
+(function () {
+  var results = document.getElementById("results"), start = document.getElementById("start");
+  if (!results || !start || typeof MutationObserver !== "function" || !window.SyncList) return;
+  var KEY = "qa:" + location.pathname, CAP = 25, LTR = "ABCDEFGH";
+
+  function globalOf(name) {
+    try { return eval("typeof " + name + " !== 'undefined' ? " + name + " : null"); }
+    catch (e) { return null; }
+  }
+  var Q = globalOf("QUESTIONS");
+  if (!Array.isArray(Q) || !Q.length || !Array.isArray(globalOf("answers"))) return;
+
+  function sig() {
+    var s = Q.map(function (q) { return q && q.q; }).join("\n"), h = 0x811c9dc5;
+    for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+    return (h >>> 0).toString(36);
+  }
+  // qids are used only when every question has one and none repeats
+  var byQid = null;
+  (function () {
+    var m = {};
+    for (var i = 0; i < Q.length; i++) {
+      var id = Q[i] && Q[i].qid;
+      if (typeof id !== "string" || !id || m[id] !== undefined) return;
+      m[id] = i;
+    }
+    byQid = m;
+  })();
+
+  function hash3(t) {   // 3 base-36 characters of FNV-1a over the option text
+    var h = 0x811c9dc5; t = String(t == null ? "" : t);
+    for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+    return ("00" + ((h >>> 0) % 46656).toString(36)).slice(-3);
+  }
+  // the key is synced, so it may hold anything: the id goes into an attribute, so it is checked too
+  function valid(x) {
+    return !!x && typeof x === "object" && typeof x.id === "string" && /^[0-9a-z]{1,32}$/.test(x.id) &&
+      !window.SyncList.isTomb(x) && typeof x.n === "number" && x.n > 0 && x.n % 1 === 0 &&
+      typeof x.s === "number" && Array.isArray(x.q) && typeof x.a === "string" && typeof x.k === "string" &&
+      typeof x.p === "string" && x.q.length === x.n && x.a.length === x.n && x.k.length === x.n && x.p.length === 3 * x.n;
+  }
+  function when(x) { return Date.parse(x.at || "") || 0; }
+  function raw() {
+    try { var v = JSON.parse(localStorage.getItem(KEY)); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+  }
+  function list() { return raw().filter(valid).sort(function (a, b) { return when(a) - when(b); }); }
+
+  function collect() {
+    var order = globalOf("order"), answers = globalOf("answers");
+    if (!order || !order.length || !answers || answers.length !== order.length) return null;
+    var ids = [], a = "", k = "", p = "", s = 0;
+    for (var i = 0; i < order.length; i++) {
+      var qi = order[i], q = Q[qi];
+      if (!q || !Array.isArray(q.opts) || typeof q.c !== "number" || q.c < 0 || q.c > 9) return null;
+      var ch = answers[i];
+      ids.push(byQid ? q.qid : qi);
+      a += (typeof ch === "number" && ch >= 0 && ch <= 9) ? String(ch) : "-";
+      k += String(q.c);
+      p += a.charAt(i) === "-" || !q.opts[ch] ? "---" : hash3(q.opts[ch][0]);
+      if (ch === q.c) s++;
+    }
+    var ms = 0;
+    try { ms = (JSON.parse(localStorage.getItem("qc:" + location.pathname)) || {}).timeMs || 0; } catch (e) {}
+    return {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+      at: new Date().toISOString(), n: order.length, s: s, ms: typeof ms === "number" ? Math.round(ms) : 0,
+      ex: globalOf("deferFeedback") ? 1 : 0, g: sig(), q: ids, a: a, k: k, p: p
+    };
+  }
+
+  var latestId = null;
+  function record() {
+    var rec = collect();
+    if (!rec) return;
+    var all = raw(), recs = all.filter(valid), tombs = all.filter(window.SyncList.isTomb);
+    recs.push(rec);
+    recs.sort(function (a, b) { return when(a) - when(b); });
+    while (recs.length > CAP) {   // never the attempt just made, even if this device's clock runs behind
+      var drop = recs[0] === rec ? 1 : 0;
+      tombs.push({ id: recs.splice(drop, 1)[0].id, x: Date.now() });
+    }
+    try {
+      localStorage.setItem(KEY, JSON.stringify(window.SyncList.pack(recs, tombs)));
+      latestId = rec.id;
+    } catch (e) { /* full or private mode: the history is optional */ }
+  }
+
+  /* ---------- formatting ---------- */
+  function pct(r) { return Math.round(100 * r.s / r.n); }
+  function grade(p) { return p >= 80 ? "qa-g" : p >= 60 ? "qa-w" : "qa-b"; }
+  function dur(ms) {
+    if (!ms || ms < 1000) return "";
+    var t = Math.round(ms / 1000), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    return (h ? h + ":" + (m < 10 ? "0" : "") : "") + m + ":" + (sec < 10 ? "0" : "") + sec;
+  }
+  function stamp(r) {
+    var d = new Date(when(r));
+    return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }) + ", " +
+      d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+  }
+
+  /* ---------- the list of attempts (start screen and results) ---------- */
+  function listHTML(recs) {
+    var best = 0;
+    recs.forEach(function (r) { best = Math.max(best, pct(r)); });
+    var rows = recs.slice().reverse().map(function (r) {
+      var p = pct(r), i = recs.indexOf(r) + 1;
+      return '<li><button type="button" class="qa-row" data-qa="' + r.id + '">' +
+        '<span class="qa-rn">Attempt ' + i + '</span>' +
+        '<span class="qa-rd">' + stamp(r) + (r.ex ? ' &middot; exam mode' : '') + '</span>' +
+        '<span class="qa-rs"><b class="' + grade(p) + '">' + p + '%</b> ' + r.s + '/' + r.n +
+          (dur(r.ms) ? ' &middot; ' + dur(r.ms) : '') + '</span>' +
+        '<span class="qa-go">Review &rarr;</span></button></li>';
+    }).join("");
+    return '<summary><span class="qa-sum-t">Your past attempts (' + recs.length + ')</span>' +
+      '<span class="qa-sum-s">Best ' + best + '% &middot; last ' + pct(recs[recs.length - 1]) + '%</span></summary>' +
+      '<ul class="qa-rows">' + rows + '</ul>' +
+      '<p class="qa-note">Every question from each attempt, right and wrong. Kept on this device (your last ' + CAP +
+      '); signed in, they follow you to your other devices.</p>';
+  }
+  function placeList(host, before) {
+    var old = host.querySelector(":scope > .qa-past");
+    var recs = list();
+    if (!recs.length) { if (old) old.remove(); return null; }
+    var d = old || document.createElement("details");
+    var open = old ? old.open : false;
+    d.className = "qa-past";
+    d.innerHTML = listHTML(recs);
+    d.open = open;
+    if (!old) { if (before && before.parentNode === host) host.insertBefore(d, before); else host.appendChild(d); }
+    return d;
+  }
+
+  /* ---------- one attempt, every question ---------- */
+  var view = null, from = null, fromY = 0, filter = "all", pushed = false;
+  function item(r, i, same) {
+    var ref = r.q[i], ch = r.a.charAt(i) === "-" ? null : +r.a.charAt(i), key = +r.k.charAt(i);
+    var st = ch === null ? "skip" : ch === key ? "ok" : "bad";
+    var qi = typeof ref === "string" ? (byQid && byQid[ref] !== undefined ? byQid[ref] : -1)
+           : (same && typeof ref === "number" ? ref : -1);
+    var q = qi >= 0 ? Q[qi] : null;
+    var tag = st === "ok" ? "&#10003; Correct" : st === "bad" ? "&#10007; Missed" : "&mdash; Skipped";
+    var out = '<div class="mitem qa-it qa-' + st + '" data-st="' + st + '">' +
+      '<div class="qa-tag">' + tag + '</div>';
+    if (!q) return out + '<div class="mq">Q' + (i + 1) + '.</div>' +
+      '<p class="qa-gone">This question has been removed from the quiz since this attempt.</p></div>';
+    var moved = q.c !== key || (ch !== null && (!q.opts[ch] || hash3(q.opts[ch][0]) !== r.p.substr(3 * i, 3)));
+    var fig = globalOf("figHTML");
+    out += '<div class="mq">Q' + (i + 1) + '. ' + q.q + '</div>' + (typeof fig === "function" ? fig(q) : "");
+    if (moved) out += '<p class="qa-gone">This question was edited after this attempt, so your original pick can&rsquo;t be shown. Here is the current version.</p>';
+    out += '<ol class="qa-opts">';
+    q.opts.forEach(function (o, j) {
+      var isKey = j === q.c, isYou = !moved && j === ch;
+      out += '<li class="qa-o' + (isKey ? ' is-key' : '') + (isYou && !isKey ? ' is-you' : '') + '">' +
+        '<span class="qa-l">' + LTR.charAt(j) + '</span><span class="qa-ot">' + o[0] + '</span>' +
+        (isKey ? '<span class="qa-m">' + (isYou ? 'Your answer &middot; correct' : 'Correct answer') + '</span>'
+               : isYou ? '<span class="qa-m">Your answer</span>' : '') + '</li>';
+    });
+    out += '</ol>';
+    out += '<div class="qa-why"><b>Why ' + LTR.charAt(q.c) + ' is right:</b> ' + (q.opts[q.c][1] || '') + '</div>';
+    if (!moved && st === "bad" && q.opts[ch][1]) out += '<div class="qa-why qa-why-x"><b>Why ' + LTR.charAt(ch) + ' is wrong:</b> ' + q.opts[ch][1] + '</div>';
+    var rest = q.opts.map(function (o, j) { return j; }).filter(function (j) { return j !== q.c && (moved || j !== ch) && q.opts[j][1]; });
+    if (rest.length) out += '<details class="qa-more"><summary>Why the other options are wrong</summary>' +
+      rest.map(function (j) { return '<p><b>' + LTR.charAt(j) + '.</b> ' + q.opts[j][1] + '</p>'; }).join("") + '</details>';
+    if (q.cite) out += '<div class="mc">' + q.cite + '</div>';
+    return out + '</div>';
+  }
+  function applyFilter() {
+    if (!view) return;
+    var its = view.querySelectorAll(".qa-it"), shownN = 0;
+    for (var i = 0; i < its.length; i++) {
+      var st = its[i].getAttribute("data-st");
+      var on = filter === "all" || (filter === "ok" ? st === "ok" : st !== "ok");
+      its[i].hidden = !on;
+      if (on) shownN++;
+    }
+    view.querySelectorAll(".qa-f").forEach(function (b) {
+      var on = b.getAttribute("data-f") === filter;
+      b.classList.toggle("is-on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    var none = view.querySelector(".qa-none");
+    if (none) none.hidden = shownN > 0;
+  }
+  function render(id) {
+    var recs = list(), at = -1;
+    for (var i = 0; i < recs.length; i++) if (recs[i].id === id) at = i;
+    if (at < 0) return false;
+    var r = recs[at], same = r.g === sig(), ok = 0, skip = 0;
+    for (var j = 0; j < r.n; j++) { if (r.a.charAt(j) === r.k.charAt(j)) ok++; else if (r.a.charAt(j) === "-") skip++; }
+    var lost = !same && r.q.some(function (x) { return typeof x === "number"; });
+    var p = pct(r);
+    var nav = '<div class="qa-nav">' +
+      '<button type="button" class="btn btn-ghost qa-back">&larr; Back</button>' +
+      '<span class="qa-step">' +
+      (at > 0 ? '<button type="button" class="qa-link" data-qa="' + recs[at - 1].id + '">&lsaquo; Earlier attempt</button>' : '') +
+      (at < recs.length - 1 ? '<button type="button" class="qa-link" data-qa="' + recs[at + 1].id + '">Later attempt &rsaquo;</button>' : '') +
+      '</span></div>';
+    var html = nav +
+      '<h2>Attempt ' + (at + 1) + ' of ' + recs.length + '</h2>' +
+      '<p class="qa-meta">' + stamp(r) + ' &middot; <b class="' + grade(p) + '">' + p + '%</b> (' + r.s + ' of ' + r.n + ' correct)' +
+        (dur(r.ms) ? ' &middot; ' + dur(r.ms) : '') + (r.ex ? ' &middot; exam mode' : '') + '</p>';
+    if (lost) {
+      html += '<p class="qa-gone">This quiz&rsquo;s questions have changed since this attempt, so they can&rsquo;t be shown again. The score above is kept.</p>';
+    } else {
+      html += '<div class="qa-filter" role="group" aria-label="Show questions">' +
+        '<button type="button" class="qa-f" data-f="all">All ' + r.n + '</button>' +
+        '<button type="button" class="qa-f" data-f="ok">Correct ' + ok + '</button>' +
+        '<button type="button" class="qa-f" data-f="bad">Missed ' + (r.n - ok) + (skip ? ' (' + skip + ' skipped)' : '') + '</button>' +
+        '</div><div class="qa-list">';
+      for (var k = 0; k < r.n; k++) html += item(r, k, same);
+      html += '<p class="qa-none" hidden>Nothing to show here.</p></div>';
+    }
+    html += nav.replace('qa-nav"', 'qa-nav qa-nav-end"');
+    view.innerHTML = html;
+    applyFilter();
+    return true;
+  }
+
+  function visibleEl(el) { return !!el && el.style.display !== "none" && !!(el.offsetWidth || el.offsetHeight); }
+  function openView(id) {
+    if (!view) {
+      view = document.createElement("div");
+      view.id = "qa-view";
+      view.className = "card res qa-view";
+      view.setAttribute("tabindex", "-1");
+      var foot = document.getElementById("resultsfoot") || results;
+      foot.parentNode.insertBefore(view, foot.nextSibling);
+    }
+    var opening = !view.style.display || view.style.display === "none";
+    if (opening) {
+      from = visibleEl(results) ? "results" : "start";
+      fromY = window.scrollY || 0;
+    }
+    filter = "all";
+    if (!render(id)) return;
+    // the phone's Back closes the viewer rather than leaving the quiz (as the study-guide panel does)
+    if (opening && !pushed) { try { history.pushState({ qaView: 1 }, ""); pushed = true; } catch (e) {} }
+    [start, results, document.getElementById("resultsfoot")].forEach(function (el) { if (el) el.style.display = "none"; });
+    view.style.display = "block";
+    window.scrollTo(0, 0);   // the page header above the card keeps the fixed corner buttons clear of its top row
+    try { view.focus({ preventScroll: true }); } catch (e) {}
+  }
+  function closeView(viaPop) {
+    if (!view || view.style.display === "none") return;
+    if (pushed) { pushed = false; if (!viaPop) { try { history.back(); } catch (e) {} } }
+    view.style.display = "none";
+    view.innerHTML = "";
+    var show = from === "results" ? [results, document.getElementById("resultsfoot")] : [start];
+    show.forEach(function (el) { if (el) el.style.display = el === start ? "" : "block"; });
+    if (from === "results") placeList(results, results.querySelector(".resbtns"));
+    else placeList(start, null);
+    window.scrollTo(0, fromY);
+  }
+
+  document.addEventListener("click", function (e) {
+    var t = e.target && e.target.closest ? e.target : null;
+    if (!t) return;
+    var b = t.closest("[data-qa]");
+    if (b && (start.contains(b) || results.contains(b) || (view && view.contains(b)))) { e.preventDefault(); openView(b.getAttribute("data-qa")); return; }
+    if (view && t.closest(".qa-back") && view.contains(t)) { e.preventDefault(); closeView(); return; }
+    var f = t.closest(".qa-f");
+    if (f && view && view.contains(f)) { filter = f.getAttribute("data-f"); applyFilter(); }
+  });
+  /* Escape closes the viewer, but not while something sits on top of it (an enlarged picture, the
+     study-guide panel, the shortcuts help, the report form) or the student is typing elsewhere (Pip).
+     Captured on window so it runs before those overlays' own handlers close them. */
+  function overlayUp() {
+    if (document.querySelector(".lb-overlay.open, .shortcuts-overlay.open, .gl-root")) return true;
+    var m = document.querySelectorAll("[aria-modal='true']");   // the picture viewer keeps the attribute while hidden
+    for (var i = 0; i < m.length; i++) if (m[i].getClientRects().length) return true;
+    return false;
+  }
+  window.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !view || view.style.display !== "block" || overlayUp()) return;
+    var tg = e.target;
+    if (tg && tg.closest && !view.contains(tg) && tg.closest("input, textarea, select, [contenteditable='true']")) return;
+    closeView();
+  }, true);
+  window.addEventListener("popstate", function (e) {
+    if (!pushed || (e.state && e.state.qaView)) return;   // landing back on the viewer's own entry keeps it open
+    closeView(true);
+  });
+
+  /* ---------- wiring ---------- */
+  function decorateResults() {
+    if (!latestId) return;
+    var big = results.querySelector(".big");
+    if (big && !results.querySelector(".qa-res")) {
+      var row = document.createElement("div");
+      row.className = "qa-res";
+      var n = 0; list().forEach(function (r) { if (r.id === latestId) n = r.n; });
+      if (!n) return;
+      row.innerHTML = '<button type="button" class="btn btn-ghost" data-qa="' + latestId + '">Review all ' + n +
+        ' questions, right and wrong &rarr;</button>';
+      big.parentNode.insertBefore(row, big.nextSibling);
+    }
+    if (!results.querySelector(".qa-past")) placeList(results, results.querySelector(".resbtns"));
+  }
+  function shownEl() { return !!(results.offsetWidth || results.offsetHeight || results.getClientRects().length); }
+  // once per finish, told apart by the engine's answers array (see the recorder above)
+  var lastRef = null;
+  function check() {
+    if (!shownEl()) return;
+    var ref = globalOf("answers");
+    if (ref && ref !== lastRef) { lastRef = ref; record(); }
+    decorateResults();
+  }
+  new MutationObserver(check).observe(results, { childList: true, attributes: true, attributeFilter: ["class", "style", "hidden"] });
+  check();
+
+  placeList(start, null);
+  // quiz.html#attempts (the link on My Progress) opens the list
+  function deepLink() {
+    var past = start.querySelector(":scope > .qa-past");
+    if (!past || location.hash !== "#attempts" || !visibleEl(start)) return;
+    past.open = true;
+    setTimeout(function () { try { past.scrollIntoView({ block: "start" }); } catch (e) {} }, 60);
+  }
+  deepLink();
+  window.addEventListener("hashchange", deepLink);
+  // a signed-in student's attempts from another device arrive after load
+  window.addEventListener("storage", function (e) { if (e.key === KEY && visibleEl(start)) placeList(start, null); });
 })();
 
 /* ============================================================
@@ -4488,8 +4850,8 @@ window.__themeSeason = (function () {
       var n = parseInt(sx[i].id.slice(6), 10);
       if (ord && !isNaN(n) && Q[ord[n]]) place(sx[i], Q[ord[n]]);
     }
-    // results review: each item carries "Q7. <stem>"
-    var items = document.querySelectorAll("#results .mitem");
+    // results review and the attempt viewer: each item carries "Q7. <stem>"
+    var items = document.querySelectorAll("#results .mitem, #qa-view .mitem");
     for (var j = 0; j < items.length; j++) {
       var mq = items[j].querySelector(".mq");
       if (!mq) continue;

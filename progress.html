@@ -107,6 +107,7 @@
   .g{color:var(--good)} .w{color:var(--warn)} .b{color:var(--bad)}
   .fill-g{background:var(--good)} .fill-w{background:var(--warn)} .fill-b{background:var(--bad)}
   a.focus{display:block;text-decoration:none;color:inherit;}
+  .row .meta.wraps{white-space:normal;}
   a.focus:hover .row{border-color:var(--acc)}
   .rec{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:7px 2px;border-bottom:1px solid var(--line);}
   .rec:last-child{border-bottom:0}
@@ -412,6 +413,41 @@
         html += '<a class="focus" href="' + w.q.href + '"><div class="row"><div class="top">' +
           '<span class="name">' + esc(w.q.name) + '</span><span class="pct ' + g + '">' + w.pct + '%</span></div>' +
           '<div class="meta">' + esc(w.q.folder) + ' · ' + w.q.score + '/' + w.q.total + ' · tap to retake</div></div></a>';
+      });
+    }
+
+    // Past attempts (2026-10-23): every quiz with a saved attempt history (theme.js "ATTEMPT
+    // HISTORY", qa:<path>), newest first. Each opens the quiz with its list of attempts open.
+    var hist = [];
+    try {
+      for (var ai = 0; ai < localStorage.length; ai++) {
+        var ak = localStorage.key(ai);
+        if (!ak || ak.indexOf("qa:") !== 0) continue;
+        var arr = JSON.parse(localStorage.getItem(ak));
+        if (!Array.isArray(arr)) continue;
+        var live = arr.filter(function (x) {
+          return x && typeof x.id === "string" && typeof x.n === "number" && x.n > 0 && typeof x.s === "number" && typeof x.at === "string";
+        });
+        if (!live.length) continue;
+        live.sort(function (a, b) { return (Date.parse(a.at) || 0) - (Date.parse(b.at) || 0); });
+        var last = live[live.length - 1], araw = ak.slice(3), adec = araw;
+        try { adec = decodeURIComponent(araw); } catch (x) {}
+        var aparts = adec.split("/").filter(Boolean);
+        if (!aparts.length) continue;
+        hist.push({ href: araw + "#attempts", name: quizName(aparts[aparts.length - 1].replace(/\.html$/, "")),
+          folder: aparts.length > 1 ? aparts[aparts.length - 2] : "", n: live.length,
+          pct: Math.round(last.s / last.n * 100), t: Date.parse(last.at) || 0 });
+      }
+    } catch (e) {}
+    if (hist.length) {
+      hist.sort(function (a, b) { return b.t - a.t; });
+      html += '<h2>Review past attempts</h2>';
+      hist.slice(0, 10).forEach(function (h) {
+        var g = grade(h.pct);
+        html += '<a class="focus" href="' + h.href.replace(/"/g, "%22").replace(/</g, "%3C") + '"><div class="row"><div class="top">' +
+          '<span class="name">' + esc(h.name) + '</span><span class="pct ' + g + '">' + h.pct + '%</span></div>' +
+          '<div class="meta wraps">' + esc(h.folder) + ' · ' + h.n + ' attempt' + (h.n === 1 ? '' : 's') +
+          ' · last ' + relDate(h.t) + ' · tap to review every question</div></div></a>';
       });
     }
 
