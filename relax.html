@@ -231,6 +231,8 @@
   .r-settings .sound-toggle{display:flex;margin:9px 0;}
   .r-set-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 4px;font-size:0.8125rem;color:var(--r-ink);}
   .r-tsize{display:inline-flex;gap:4px;flex:none;}
+  .r-set-stack{flex-direction:column;align-items:stretch;gap:6px;}
+  #r-themefx{font:inherit;font-size:0.8125rem;padding:6px 8px;border:1px solid var(--r-line);border-radius:8px;background:var(--r-card);color:var(--r-ink);cursor:pointer;}
   .r-tsize button{border:1px solid var(--r-line);background:transparent;color:var(--r-ink);border-radius:8px;
     width:30px;height:28px;cursor:pointer;line-height:1;padding:0;font-weight:700;transition:border-color .15s,color .15s,background .15s;}
   #r-theme button{width:auto;padding:0 9px;font-size:11px;font-weight:700;}
@@ -275,6 +277,15 @@
       <button type="button" data-ts="large" aria-label="Large text">A</button>
       <button type="button" data-ts="xl" aria-label="Larger text">A</button>
     </div>
+  </div>
+  <div class="r-set-row r-set-stack">
+    <label for="r-themefx">Holiday animations</label>
+    <select id="r-themefx">
+      <option value="on">On everywhere</option>
+      <option value="study">Off in quizzes and guides</option>
+      <option value="nothome">Off except the homepage</option>
+      <option value="off">Off everywhere</option>
+    </select>
   </div>
   <label class="sound-toggle"><input type="checkbox" id="sound-on" checked> Gentle sound cues</label>
   <label class="sound-toggle" id="haptics-label" style="display:none;"><input type="checkbox" id="haptics-on" checked> Vibration cues</label>
@@ -514,6 +525,13 @@
     b.addEventListener("click", function () { applyTextSize(b.dataset.ts); });
   });
   applyTextSize(localStorage.getItem("relaxTextSize") || "normal");
+
+  // Holiday animations (2026-10-25): the site-wide choice that theme.js's window.ThemeFx reads on every other page.
+  // This page runs no seasonal theme itself, but the setting belongs in every Settings panel (Jaxon: "put it in all
+  // the settings"), so it is offered here too.
+  var rFx = document.getElementById("r-themefx");
+  try { var fxv = localStorage.getItem("themeFx"); if (["on", "study", "nothome", "off"].indexOf(fxv) >= 0) rFx.value = fxv; } catch (e) {}
+  rFx.addEventListener("change", function () { try { localStorage.setItem("themeFx", rFx.value); } catch (e) {} });
 
   // appearance — writes relaxTheme, which the head bootstrap reads FIRST (ahead
   // of siteTheme and the OS), so an explicit choice here sticks for this page

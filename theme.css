@@ -772,6 +772,14 @@ a.corner-btn:hover { text-decoration: none; }
 }
 :root[data-theme="dark"] .settings-action-btn { border-color: #2a2e37; color: #60a5fa; }
 .settings-action-btn:hover { border-color: currentColor; }
+/* a choice in a Settings row (Holiday animations, 2026-10-25): sized and colored like the Open buttons */
+.settings-select {
+  font: inherit; font-size: 12.5px; font-weight: 700; color: #2563eb; background: transparent;
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 8px; max-width: 62%; cursor: pointer;
+}
+:root[data-theme="dark"] .settings-select { border-color: #2a2e37; color: #60a5fa; background: #15181e; }
+.settings-select:hover { border-color: currentColor; }
+.settings-select:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
 .settings-switch {
   position: relative;
   width: 38px;
@@ -3545,44 +3553,33 @@ html.gl-open { overflow: hidden; }
 
 
 /* ============================================================
-   HALLOWEEN (theme.js, Oct 24-31 or ?halloween=1): candle glows + pumpkin trail.
-   The bats are a canvas (theme.js). Everything is fixed, pointer-events none, outside the layout flow.
+   HALLOWEEN (theme-seasonal.js, Oct 24-31 or ?halloween=1): three glowing jack-o'-lanterns sitting in the
+   bottom-left corner (rebuilt 2026-10-25; the bats, corner candle glows and pumpkin trail are gone).
+   Fixed behind the content (z-index -1), pointer-events none, outside the layout flow. Stacked SVG layers: glow,
+   pumpkins, then one lit face each; only whole-layer opacity animates, so the flicker stays on the compositor.
    ============================================================ */
-.hw-glow {
-  position: fixed; z-index: -1; pointer-events: none; width: 460px; height: 460px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 115, 22, .26) 0%, rgba(251, 146, 60, .09) 36%, rgba(251, 146, 60, 0) 68%);
-  animation: hw-flicker 3.3s linear infinite; will-change: opacity, transform;
+.hw-pumpkins {
+  position: fixed; z-index: -1; pointer-events: none;
+  left: max(6px, env(safe-area-inset-left)); bottom: calc(2px + env(safe-area-inset-bottom));
+  width: 230px; aspect-ratio: 240 / 130;
 }
-.hw-glow-a { left: -190px; bottom: -190px; }
-.hw-glow-b { right: -200px; top: -200px; animation-duration: 4.4s; animation-delay: -1.9s; }
-:root[data-theme="dark"] .hw-glow {
-  background: radial-gradient(circle, rgba(251, 146, 60, .30) 0%, rgba(249, 115, 22, .11) 36%, rgba(249, 115, 22, 0) 68%);
+.hw-pumpkins svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hw-pumpkins .hw-night { opacity: 0; }
+:root[data-theme="dark"] .hw-pumpkins .hw-night { opacity: .2; }                 /* a little dimmer at night, so the faces glow */
+.hw-pk-glow { animation: hw-breathe 5.2s ease-in-out infinite; }
+.hw-pk-lit { animation: hw-candle 2.9s linear infinite; }
+.hw-pk-lit-2 { animation-duration: 3.4s; animation-delay: -1.7s; }
+.hw-pk-lit-3 { animation-duration: 2.5s; animation-delay: -0.9s; }
+@keyframes hw-candle {
+  0% { opacity: .9; } 9% { opacity: .72; } 15% { opacity: .95; } 24% { opacity: .8; } 33% { opacity: 1; }
+  45% { opacity: .78; } 57% { opacity: .96; } 68% { opacity: .74; } 80% { opacity: 1; } 90% { opacity: .84; } 100% { opacity: .9; }
 }
-@keyframes hw-flicker {
-  0% { opacity: .85; transform: scale(1); }
-  7% { opacity: .55; transform: scale(.96); }
-  13% { opacity: .95; transform: scale(1.03); }
-  21% { opacity: .68; transform: scale(.98); }
-  30% { opacity: 1; transform: scale(1.05); }
-  39% { opacity: .72; transform: scale(.985); }
-  51% { opacity: .93; transform: scale(1.03); }
-  62% { opacity: .6; transform: scale(.965); }
-  73% { opacity: 1; transform: scale(1.04); }
-  85% { opacity: .75; transform: scale(1); }
-  100% { opacity: .85; transform: scale(1); }
-}
-body.th-paused .hw-glow { animation-play-state: paused; }
-@media (max-width: 700px) { .hw-glow { width: 300px; height: 300px; } .hw-glow-a { left: -130px; bottom: -130px; } .hw-glow-b { right: -140px; top: -140px; } }
-.hw-pumpkin {
-  position: fixed; left: 0; top: 0; width: 20px; height: 19px; margin: -10px 0 0 -10px; z-index: 9400;
-  pointer-events: none; opacity: 0; will-change: transform, opacity;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath d='M16 9 C15.5 6 17 3.5 20 2.5' fill='none' stroke='%2365a30d' stroke-width='2.6' stroke-linecap='round'/%3E%3Cellipse cx='9' cy='18.5' rx='8' ry='10.5' fill='%23c2410c'/%3E%3Cellipse cx='23' cy='18.5' rx='8' ry='10.5' fill='%23c2410c'/%3E%3Cellipse cx='12.5' cy='18.5' rx='7' ry='10.8' fill='%23ea580c'/%3E%3Cellipse cx='19.5' cy='18.5' rx='7' ry='10.8' fill='%23ea580c'/%3E%3Cellipse cx='16' cy='18.5' rx='5' ry='11' fill='%23fb923c'/%3E%3Cpath d='M10.5 16.5 L13.5 16.5 L12 13.5 Z M18.5 16.5 L21.5 16.5 L20 13.5 Z M11.5 21.5 Q16 25.5 20.5 21.5 Q16 23 11.5 21.5 Z' fill='%23431407'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hw-glow { animation: none; opacity: .8; }
-  .hw-pumpkin { display: none; }
-}
-@media print { .hw-glow, .hw-bats, .hw-pumpkin { display: none !important; } }
+@keyframes hw-breathe { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+body.th-paused .hw-pk-glow, body.th-paused .hw-pk-lit { animation-play-state: paused; }
+@media (max-width: 700px) { .hw-pumpkins { width: 150px; } }
+@media (prefers-reduced-motion: reduce) { .hw-pk-glow, .hw-pk-lit { animation: none; opacity: .95; } }
+.th-fx-off .hw-pk-glow, .th-fx-off .hw-pk-lit { animation: none; opacity: .95; }
+@media print { .hw-pumpkins { display: none !important; } }
 
 
 /* ============================================================
@@ -3673,22 +3670,14 @@ body.th-paused .hw-glow { animation-play-state: paused; }
 /* ============================================================
    THEME KIT (theme.js, window.__themeKit): what every seasonal theme shares.
    body.th-paused is set while the tab is hidden so CSS animations stop with the canvases.
-   Theme canvases and cursor trails never print.
+   Theme canvases never print. html.th-fx-off = the Holiday animations setting is off on this page (theme.js
+   window.ThemeFx): every CSS-animated theme piece holds still, the same as under reduced motion.
    ============================================================ */
 @media print { .th-cv { display: none !important; } }
-
-
-/* ============================================================
-   THANKSGIVING (theme.js, Thanksgiving week or ?theme=thanksgiving): the acorn-spark cursor trail.
-   The drifting leaves, acorns and wheat are a canvas (theme.js); the tint is body.thanksgiving-theme.
-   ============================================================ */
-.th-acorn {
-  position: fixed; left: 0; top: 0; width: 18px; height: 21px; margin: -9px 0 0 -9px; z-index: 9400;
-  pointer-events: none; opacity: 0; will-change: transform, opacity;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 28'%3E%3Cellipse cx='12' cy='17' rx='6.5' ry='9' fill='%23a16207'/%3E%3Cpath d='M4.8 14.5 Q12 3.5 19.2 14.5 Z' fill='%235b3410'/%3E%3Cpath d='M12 7.5 L13.5 3' stroke='%235b3410' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='3' cy='6' r='1.7' fill='%23fbbf24'/%3E%3Ccircle cx='21.5' cy='10' r='1.3' fill='%23fcd34d'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-@media (prefers-reduced-motion: reduce) { .th-acorn { display: none; } }
-@media print { .th-acorn { display: none !important; } }
+.th-fx-off .th-grp { animation: none; opacity: 1; }
+.th-fx-off .vd-beat { animation: none; opacity: .7; }
+.th-fx-off .pa-splash, .th-fx-off .pa-splash.swap, .th-fx-off .th-ny-year { animation: none; }
+.th-fx-off .pa-ecg path { animation: none; stroke-dashoffset: 0; }
 
 
 /* ============================================================
@@ -3699,14 +3688,14 @@ body.th-paused .hw-glow { animation-play-state: paused; }
 .th-lights { position: absolute; top: 0; left: 0; width: 100%; height: 40px; overflow: hidden; z-index: 1; pointer-events: none; }
 .th-wire { position: absolute; left: 0; top: 0; overflow: visible; fill: none; stroke: #2f5d3a; stroke-width: 1.5; stroke-linecap: round; opacity: .8; }
 :root[data-theme="dark"] .th-wire { stroke: #5b9a6c; opacity: .7; }
-.th-grp { position: absolute; left: 0; top: 0; width: 100%; height: 0; animation: th-twinkle 3.4s ease-in-out var(--d, 0s) infinite, th-sway 5.2s ease-in-out var(--d, 0s) infinite alternate; will-change: opacity, transform; }
+.th-grp { position: absolute; left: 0; top: 0; width: 100%; height: 0; animation: th-twinkle 5s ease-in-out var(--d, 0s) infinite, th-sway 6s ease-in-out var(--d, 0s) infinite alternate; will-change: opacity, transform; }
 .th-bulb { position: absolute; width: 7px; height: 11px; margin-left: -3.5px; }
 .th-bulb::before { content: ""; position: absolute; left: 1.5px; top: -2px; width: 4px; height: 3px; border-radius: 1px; background: #3f3f46; }
 .th-bulb::after {
   content: ""; position: absolute; left: 0; top: 1px; width: 7px; height: 10px; border-radius: 50% 50% 55% 55% / 40% 40% 62% 62%;
   background: var(--c); box-shadow: 0 0 7px 2px var(--c);
 }
-@keyframes th-twinkle { 0%, 100% { opacity: .4; } 45%, 55% { opacity: 1; } }
+@keyframes th-twinkle { 0%, 100% { opacity: .68; } 45%, 55% { opacity: 1; } }   /* a soft glow wave, not a blink (2026-10-25) */
 @keyframes th-sway { from { transform: translateX(-1.8px); } to { transform: translateX(1.8px); } }
 body.th-paused .th-grp { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .th-grp { animation: none; opacity: 1; } }
@@ -3740,48 +3729,22 @@ body.th-paused .th-grp { animation-play-state: paused; }
 .vd-beat {
   position: absolute; display: none; z-index: -1; pointer-events: none; border-radius: 50%;
   background: radial-gradient(circle, rgba(244, 63, 94, .34) 0%, rgba(244, 63, 94, .14) 42%, rgba(244, 63, 94, 0) 70%);
-  animation: vd-beat 1.9s ease-in-out infinite; will-change: transform, opacity;
+  animation: vd-beat 2.6s ease-in-out infinite; will-change: transform, opacity;
 }
 .vd-beat.on { display: block; }
 .vd-beat-big { left: 50%; top: 44%; width: 250px; height: 250px; margin: -125px 0 0 -125px; }
 .vd-beat-small { left: 50%; top: 40%; width: 170px; height: 170px; margin: -85px 0 0 -85px; }
 :root[data-theme="dark"] .vd-beat { background: radial-gradient(circle, rgba(251, 113, 133, .36) 0%, rgba(251, 113, 133, .15) 42%, rgba(251, 113, 133, 0) 70%); }
 @keyframes vd-beat {
-  0%, 56%, 100% { transform: scale(.9); opacity: .55; }
-  12% { transform: scale(1.12); opacity: 1; }
-  26% { transform: scale(.96); opacity: .7; }
-  38% { transform: scale(1.07); opacity: .92; }
+  0%, 56%, 100% { transform: scale(.95); opacity: .62; }
+  12% { transform: scale(1.06); opacity: .95; }
+  26% { transform: scale(.98); opacity: .72; }
+  38% { transform: scale(1.04); opacity: .88; }
 }
 body.th-paused .vd-beat { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .vd-beat { animation: none; opacity: .7; } }
 @media print { .vd-beat { display: none !important; } }
 
-
-/* ============================================================
-   ST. PATRICK'S (theme.js, Mar 3-17 or ?theme=clovers): the lucky-sparkle cursor trail.
-   The falling clovers and their glints are a canvas (theme.js).
-   ============================================================ */
-.cl-spark {
-  position: fixed; left: 0; top: 0; width: 16px; height: 16px; margin: -8px 0 0 -8px; z-index: 9400;
-  pointer-events: none; opacity: 0; will-change: transform, opacity;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1 Q13.4 10.6 23 12 Q13.4 13.4 12 23 Q10.6 13.4 1 12 Q10.6 10.6 12 1Z' fill='%23facc15'/%3E%3Cpath d='M12 6 Q12.8 11.2 18 12 Q12.8 12.8 12 18 Q11.2 12.8 6 12 Q11.2 11.2 12 6Z' fill='%23fef9c3'/%3E%3C/svg%3E") center / contain no-repeat;
-  filter: drop-shadow(0 0 2px rgba(22, 163, 74, .65));
-}
-@media (prefers-reduced-motion: reduce) { .cl-spark { display: none; } }
-@media print { .cl-spark { display: none !important; } }
-
-
-/* ============================================================
-   PA WEEK (theme.js, Oct 5-9 2026 or ?theme=paweek): the medical-cross cursor trail.
-   The drifting hearts/stethoscopes/crosses/pills/badges are a canvas (theme.js).
-   ============================================================ */
-.pa-trail {
-  position: fixed; left: 0; top: 0; width: 16px; height: 16px; margin: -8px 0 0 -8px; z-index: 9400;
-  pointer-events: none; opacity: 0; will-change: transform, opacity;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 2h6v7h7v6h-7v7H9v-7H2V9h7z' fill='%2314b8a6'/%3E%3Cpath d='M10.6 4h2.8v7.6H20v2.8h-6.6V20h-2.8v-5.6H4v-2.8h6.6z' fill='%23ffffff'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-@media (prefers-reduced-motion: reduce) { .pa-trail { display: none; } }
-@media print { .pa-trail { display: none !important; } }
 
 @media print { .pa-toast { display: none !important; } }
 

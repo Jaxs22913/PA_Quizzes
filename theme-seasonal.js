@@ -14,12 +14,14 @@
      ?<name>=1 / ?<name>=0 (?halloween=1, ?paweek=1, ?lights=1 ...). kit.fresh(name) is true only
      when the flag is in THIS url, so one-shot things (welcome cards) replay on a preview click but
      not on every page of a sticky preview.
-   - kit.field: a canvas of drifting particles behind the UI (repel from the cursor or a finger,
-     optional spin kick, respawn, wrap, paused when the tab is hidden, reduced-motion mode).
-   - kit.canvas / kit.loop / kit.pointer / kit.repel / kit.trail / kit.card / kit.shapes / kit.colors:
-     the pieces kit.field and the bespoke themes are built from.
+   - kit.field: a canvas of drifting particles behind the UI (respawn, wrap, paused when the tab is
+     hidden, reduced-motion mode).
+   - kit.canvas / kit.loop / kit.card / kit.shapes / kit.colors: the pieces kit.field and the bespoke
+     themes are built from.
    Rules every theme keeps: behind the content or pointer-events none, no layout shift, nothing runs in
-   a hidden tab, reduced motion respected, fine-pointer-only cursor effects.
+   a hidden tab, reduced motion and the Holiday animations switch respected, calm enough to study beside.
+   NO MOUSE OR TOUCH EFFECTS (Jaxon, 2026-10-25: "remove the mouse effects I dont want them on any theme"):
+   the cursor scatter and the cursor trails were taken out of every theme; do not add them back.
    ============================================================ */
 window.__themeKit = (function () {
   var kit = {}, body = document.body;
@@ -32,51 +34,24 @@ window.__themeKit = (function () {
   kit.fresh = function (n) { return fresh.indexOf(n) >= 0; };
   kit.colors = function (arr) { window.__confettiColors = arr; };
 
-  /* ----- motion preference, pointer type, tab visibility ----- */
+  /* ----- motion preference (the system setting OR the site's Holiday animations switch), tab visibility -----
+     kit.reduced(): hold still. kit.calm(): the switch is off, so nothing moving is shown at all (a field that
+     would freeze one still frame under reduced motion is removed instead). */
   var rmq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
-  var fmq = window.matchMedia ? matchMedia("(hover: hover) and (pointer: fine)") : { matches: false };
-  kit.reduced = function () { return rmq.matches; };
-  kit.fine = function () { return fmq.matches; };
+  kit.calm = function () { return document.documentElement.classList.contains("th-fx-off"); };
+  kit.reduced = function () { return rmq.matches || kit.calm(); };
   var motionSubs = [], visSubs = [];
   kit.onMotion = function (fn) { motionSubs.push(fn); };
   kit.onVisible = function (fn) { visSubs.push(fn); };
-  function motionChanged() { motionSubs.forEach(function (f) { f(rmq.matches); }); }
+  function motionChanged() { var r = kit.reduced(); motionSubs.forEach(function (f) { f(r); }); }
   if (rmq.addEventListener) rmq.addEventListener("change", motionChanged); else if (rmq.addListener) rmq.addListener(motionChanged);
+  window.addEventListener("themefx", motionChanged);                 // theme.js window.ThemeFx: the switch flipped
   function visChanged() {
     body.classList.toggle("th-paused", document.hidden);            // CSS animations pause with it
     visSubs.forEach(function (f) { f(!document.hidden); });
   }
   document.addEventListener("visibilitychange", visChanged);
   window.addEventListener("pageshow", function (e) { if (e.persisted) visChanged(); });   // back/forward cache restore
-
-  /* ----- cursor / finger position (null when it is off the window) and the standing scatter ----- */
-  var ptr = { x: null, y: null }, ptrOn = false;
-  kit.pointer = function () {
-    if (!ptrOn) {
-      ptrOn = true;
-      window.addEventListener("mousemove", function (e) { ptr.x = e.clientX; ptr.y = e.clientY; });
-      document.documentElement.addEventListener("mouseleave", function () { ptr.x = ptr.y = null; });     // window never gets mouseleave
-      window.addEventListener("mouseout", function (e) { if (!e.relatedTarget) ptr.x = ptr.y = null; });
-      window.addEventListener("touchmove", function (e) { if (e.touches.length) { ptr.x = e.touches[0].clientX; ptr.y = e.touches[0].clientY; } }, { passive: true });
-      window.addEventListener("touchend", function () { ptr.x = ptr.y = null; });
-    }
-    return ptr;
-  };
-  // Pushes particle p (drawn at x,y; carries vx/vy) away from the pointer inside radius R. kick: also
-  // spin it (needs p.spinSpeed). The caller decays vx/vy each frame, so p settles back by itself.
-  kit.repel = function (p, x, y, R, k, kick) {
-    if (ptr.x === null) return;
-    var dx = x - ptr.x, dy = y - ptr.y, dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < R && dist > 0.01) {
-      var force = (1 - dist / R) * k;
-      p.vx += (dx / dist) * force; p.vy += (dy / dist) * force;
-      if (kick) {
-        p.spinSpeed += (dx > 0 ? 1 : -1) * force * 0.01;
-        if (p.spinSpeed > 0.12) p.spinSpeed = 0.12;
-        if (p.spinSpeed < -0.12) p.spinSpeed = -0.12;
-      }
-    }
-  };
 
   /* ----- a fixed canvas behind the UI, sized to the viewport ----- */
   kit.canvas = function (cls, dprCap) {
@@ -117,13 +92,12 @@ window.__themeKit = (function () {
 
   /* ----- particles drifting behind the UI -----
      cfg: cls, count (number or function), make(randomY), move(p), gone(p), wrap (px margin), draw(ctx, p),
-     begin(ctx) once per frame, after(ctx, still, k) once per frame after the particles, kick (spin from the cursor),
-     repelR/repelK, dprCap, fps (cap), onSize(particles, W, H), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
+     begin(ctx) once per frame, after(ctx, still, k) once per frame after the particles, dprCap, fps (cap), onSize(particles, W, H), rad(p) (bounding radius: redraw only the dirty rectangles) + strip() ->
      [y, height] of a band to clear as well + dirty() -> [[x, y, w, h], ...] more rectangles to clear,
-     reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once). */
+     reduced: "run" (ignore the preference), "still" (one frozen frame), "off" (no canvas), first (draw a frame at once).
+     The Holiday animations switch (kit.calm()) always means no canvas. */
   kit.field = function (cfg) {
-    var cv = null, ps = [], mode = cfg.reduced || "off", R = cfg.repelR || 110, K = cfg.repelK || 1.8;
-    kit.pointer();
+    var cv = null, ps = [], mode = cfg.reduced || "off";
     function frame(still, dt) {
       var ctx = cv.ctx, W = window.innerWidth, H = window.innerHeight, i, p, r;
       var k = cfg.fps && dt ? Math.max(0.5, Math.min(3, dt * 60)) : 1;      // frame-rate scale (1 at 60 fps)
@@ -136,9 +110,6 @@ window.__themeKit = (function () {
       for (i = 0; i < ps.length; i++) {
         p = ps[i];
         if (!still) {
-          kit.repel(p, p.x, p.y, R, K * k, cfg.kick);
-          var dec = k === 1 ? 0.9 : Math.pow(0.9, k);
-          p.vx *= dec; p.vy *= dec;
           cfg.move(p, k);
           if (cfg.gone(p)) { ps[i] = cfg.make(false); continue; }
           if (cfg.wrap) {
@@ -154,9 +125,9 @@ window.__themeKit = (function () {
     }
     var loop = kit.loop(function (now, dt) { frame(false, dt); }, cfg.fps);
     function apply() {
-      if (kit.reduced() && mode !== "run") {
+      if (kit.calm() || (kit.reduced() && mode !== "run")) {
         loop.stop();
-        if (mode === "off") { if (cv) { cv.remove(); cv = null; } ps = []; }
+        if (mode === "off" || kit.calm()) { if (cv) { cv.remove(); cv = null; } ps = []; }
         else { if (!cv) build(); frame(true); }
       } else { var fresh = !cv; if (fresh) build(); loop.start(); if (fresh && cfg.first) frame(false); }
     }
@@ -175,31 +146,6 @@ window.__themeKit = (function () {
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     apply();
     return { particles: function () { return ps; }, canvas: function () { return cv; } };
-  };
-
-  /* ----- a pooled cursor trail (fine pointers only, never on touch, throttled) -----
-     o: cls, pool, gap (ms), min (px between drops), dx/dy (offset from the pointer), ms, ease,
-     frames(x, y) -> Web Animations keyframes */
-  kit.trail = function (o) {
-    var pool = [], idx = 0, lastX = -999, lastY = -999, lastT = 0, N = o.pool || 16;
-    function el(i) {
-      if (pool[i]) return pool[i];
-      var d = document.createElement("div");
-      d.className = o.cls; d.setAttribute("aria-hidden", "true");
-      body.appendChild(d); pool[i] = d; return d;
-    }
-    window.addEventListener("mousemove", function (e) {
-      if (kit.reduced() || !kit.fine() || document.hidden || e.buttons) return;
-      var now = e.timeStamp || Date.now();
-      if (now - lastT < (o.gap || 55)) return;
-      var dx = e.clientX - lastX, dy = e.clientY - lastY, min = o.min || 26;
-      if (dx * dx + dy * dy < min * min) return;
-      lastT = now; lastX = e.clientX; lastY = e.clientY;
-      var d = el(idx); idx = (idx + 1) % N;
-      if (d._a) d._a.cancel();
-      d._a = d.animate(o.frames(Math.round(e.clientX) + (o.dx || 0), Math.round(e.clientY) + (o.dy || 0)),
-        { duration: o.ms || 950, easing: o.ease || "ease-out", fill: "backwards" });
-    });
   };
 
   /* ----- a welcome card, once a day per device on the app-shell pages (preview: every time) -----
@@ -278,7 +224,7 @@ window.__themeKit = (function () {
 // Dec 31 is New Year's). Lives here rather than in any one page's HTML so every current page picks it up for free and
 // every future page does too, as long as it includes theme.js. A canvas fixed to the viewport and pushed behind all real
 // content with z-index:-1 (the same technique index.html's own .edge-decor strips use), built on __themeKit.field.
-//   - The bigger flakes are six-armed crystals that spin slowly and spin away from the cursor or a finger.
+//   - The bigger flakes are six-armed crystals that spin slowly. Calmed 2026-10-25 (fewer, slower flakes).
 //   - Flakes that reach the bottom edge settle into a thin drift (a few pixels at most) that gently melts away.
 //   - Light mode draws the flakes with a faint cool outline (white on cream was nearly invisible).
 //   - Quiz-completion confetti is icy blue and silver unless the holiday lights set their own. 30 fps, dirty-rect
@@ -323,8 +269,8 @@ window.__themeKit = (function () {
     }
   }
   kit.field({
-    cls: "th-snow", dprCap: 1.5, reduced: "still", wrap: 10, kick: true, fps: 30,
-    count: window.innerWidth < 700 ? 45 : 90,                      // lighter on narrow/mobile viewports
+    cls: "th-snow", dprCap: 1.5, reduced: "still", wrap: 10, fps: 30,
+    count: window.innerWidth < 700 ? 28 : 55,                      // lighter on narrow/mobile viewports
     rad: function (f) { return f.r * 1.9 + 2; },
     strip: function () { return [window.innerHeight - MAXH - 4, MAXH + 5]; },
     make: function (randomY) {
@@ -332,14 +278,14 @@ window.__themeKit = (function () {
       return {
         x: Math.random() * window.innerWidth,
         y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
-        r: r, speed: 0.5 + r * 0.45 + Math.random() * 0.4,
-        drift: Math.random() * Math.PI * 2, driftSpeed: 0.005 + Math.random() * 0.01,
-        spin: Math.random() * Math.PI, spinSpeed: (Math.random() - 0.5) * 0.03,
-        opacity: 0.6 + Math.random() * 0.4, vx: 0, vy: 0
+        r: r, speed: (0.5 + r * 0.45 + Math.random() * 0.4) * 0.5,      // 40-95 px a second (was 75-190)
+        drift: Math.random() * Math.PI * 2, driftSpeed: 0.004 + Math.random() * 0.008,
+        spin: Math.random() * Math.PI, spinSpeed: (Math.random() - 0.5) * 0.02,
+        opacity: 0.6 + Math.random() * 0.4
       };
     },
     move: function (f, k) {
-      f.y += (f.speed + f.vy) * k; f.drift += f.driftSpeed * k; f.x += (Math.sin(f.drift) * (windStrength * 1.6) + f.vx) * k;
+      f.y += f.speed * k; f.drift += f.driftSpeed * k; f.x += Math.sin(f.drift) * (windStrength * 1.6) * k;
       f.spin += f.spinSpeed * k;
     },
     gone: function (f) {
@@ -448,7 +394,8 @@ window.__themeKit = (function () {
 /* ============================================================
    FIREWORKS ENGINE (2026-10-01) -- shared by the New Year's and July 4 themes: quiet bursts in the
    corners and along the edges, behind the UI. A rocket rises from the bottom edge, bursts into a ring
-   of sparks that drift down and fade. At most 2-3 bursts at once, 30 frames a second, one canvas behind
+   of sparks that drift down and fade. At most 1-2 bursts at once, one every 3-6 seconds (calmed
+   2026-10-25; it was 2-3 at once every 1-3 seconds), 30 frames a second, one canvas behind
    the UI, redrawn only where something moved, stopped in a hidden tab, none under reduced motion.
    kit.fireworks({ cls, palettes: function (dark) -> [[color, ...], ...], white: "colors that need an
    outline on a light page" }). A palette is one burst's colors.
@@ -461,13 +408,13 @@ window.__themeKit.fireworks = function (cfg) {
     dirty.length = 0;
     clock += dt;
     var narrow = W < 700;
-    if (clock >= next && shows.length < (narrow ? 2 : 3)) {
+    if (clock >= next && shows.length < (narrow ? 1 : 2)) {
       var band = narrow ? 0.5 : 0.26, left = Math.random() < 0.5;       // wide screens: the outer quarters only
       var x = narrow ? W * (0.1 + Math.random() * 0.8) : (left ? W * (0.03 + Math.random() * band * 0.85) : W * (1 - 0.03 - Math.random() * band * 0.85));
       var pals = cfg.palettes(dark);
       shows.push({ x: x, by: H * (0.1 + Math.random() * 0.4), y: H + 8, rise: 0, pal: pals[(Math.random() * pals.length) | 0],
         parts: null, age: 0, scale: narrow ? 0.7 : 1 });
-      next = clock + 1.1 + Math.random() * 1.8;
+      next = clock + 3 + Math.random() * 3;
     }
     for (i = shows.length - 1; i >= 0; i--) {
       var s = shows[i], x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
@@ -582,8 +529,7 @@ window.__themeKit.fireworks = function (cfg) {
 
 // Seasonal Valentine's theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Jan 31 - Feb 14.
 // Floating hearts behind all UI, plus the light-mode pink tint on the app-shell pages (body.vday-theme).
-//   - A heart pops in a tiny sparkle when the cursor lands right on it or it is clicked/tapped (another floats up
-//     from the bottom to replace it); the standing scatter-from-the-cursor still applies around it.
+//   - 2026-10-25: the cursor/tap pop and its sparkle were removed (no mouse effects on any theme) and there are fewer hearts.
 //   - On the homepage the logo gets a soft heartbeat glow behind it (CSS only, lub-dub then a rest).
 //   - Pink quiz-completion confetti. 30 fps, dirty-rect redraw, canvas capped at 2x, reduced motion: one still frame.
 (function () {
@@ -592,29 +538,10 @@ window.__themeKit.fireworks = function (cfg) {
   document.body.classList.add("vday-theme");
   var COLORS = ["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"], speedMul = 0.35;
   kit.colors(["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"]);
-  var ptr = kit.pointer(), sparks = [], rects = [], F = null;
-  function pop(h) {                                              // a heart bursts into a few sparks
-    h.dead = true;
-    for (var i = 0; i < 9; i++) {
-      var a = (i / 9) * Math.PI * 2 + Math.random() * 0.5, v = 1.1 + Math.random() * 1.5;
-      sparks.push({ x: h.x, y: h.y + h.s * 0.7, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 0.3, life: 0, max: 0.55 + Math.random() * 0.3,
-        r: 1.2 + Math.random() * 1.5, c: i % 3 === 0 ? "#fde68a" : (i % 3 === 1 ? "#ffffff" : h.color) });
-    }
-  }
-  window.addEventListener("click", function (e) {                // a click or tap on a heart pops it (the click still goes to the page)
-    if (!F || kit.reduced()) return;
-    var ps = F.particles(), best = null, bd = 1e9;
-    for (var i = 0; i < ps.length; i++) {
-      var h = ps[i], dx = e.clientX - h.x, dy = e.clientY - (h.y + h.s * 0.7), d = dx * dx + dy * dy, R = h.s * 1.3 + 10;
-      if (d < R * R && d < bd && !h.dead) { best = h; bd = d; }
-    }
-    if (best) pop(best);
-  });
-  F = kit.field({
+  kit.field({
     cls: "th-hearts", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30,
-    count: window.innerWidth < 700 ? 18 : 34,
+    count: window.innerWidth < 700 ? 12 : 24,
     rad: function (h) { return h.s * 1.9 + 3; },
-    dirty: function () { return rects; },
     make: function (randomY) {
       var s = 6 + Math.random() * 9;
       return {
@@ -622,36 +549,15 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 10 + Math.random() * 40,
         s: s, speed: (0.35 + s * 0.045) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
-        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0, dead: false
+        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0]
       };
     },
-    move: function (h, k) {
-      h.y -= h.speed * k; h.y += h.vy * k; h.drift += h.driftSpeed * k; h.x += (Math.sin(h.drift) * 0.6 + h.vx) * k;
-      if (ptr.x !== null && kit.fine()) {                          // the cursor lands right on it
-        var dx = ptr.x - h.x, dy = ptr.y - (h.y + h.s * 0.7), R = h.s * 0.9 + 5;
-        if (dx * dx + dy * dy < R * R) pop(h);
-      }
-    },
-    gone: function (h) { return h.dead || h.y < -20; },
+    move: function (h, k) { h.y -= h.speed * k; h.drift += h.driftSpeed * k; h.x += Math.sin(h.drift) * 0.6 * k; },
+    gone: function (h) { return h.y < -20; },
     draw: function (ctx, h) {
       ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(Math.sin(h.drift) * 0.25);
       ctx.globalAlpha = h.opacity; ctx.fillStyle = h.color;
       kit.shapes.heart(ctx, h.s); ctx.fill(); ctx.restore();
-    },
-    after: function (ctx, still, k) {
-      rects = [];
-      if (still) { sparks.length = 0; return; }                    // reduced motion switched on mid-pop: no frozen sparks
-      if (!sparks.length) return;
-      var dt = (k || 1) / 60;
-      for (var i = sparks.length - 1; i >= 0; i--) {
-        var p = sparks[i]; p.life += dt;
-        if (p.life >= p.max) { sparks.splice(i, 1); continue; }
-        p.x += p.vx * (k || 1); p.y += p.vy * (k || 1); p.vy += 0.03 * (k || 1);
-        ctx.globalAlpha = 1 - p.life / p.max; ctx.fillStyle = p.c;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
-        rects.push([Math.floor(p.x - p.r - 2), Math.floor(p.y - p.r - 2), Math.ceil(p.r * 2 + 5), Math.ceil(p.r * 2 + 5)]);
-      }
-      ctx.globalAlpha = 1;
     }
   });
   kit.logoMark("vd-beat", true);
@@ -661,9 +567,9 @@ window.__themeKit.fireworks = function (cfg) {
 // (Oct 24-31 is Halloween, which takes over; see __themeKit YIELDS). Autumn leaves behind all UI, plus the
 // warm light-mode tint (body.fall-theme).
 //   - Leaves rock side to side like a pendulum as they fall and flip over (a squashed width), instead of
-//     spinning flat; the cursor or a finger still scatters and spins them.
+//     spinning flat. 2026-10-25: no cursor scatter (no mouse effects on any theme) and fewer leaves.
 //   - Leaves that reach the bottom edge can land and lie there (a loose litter along the edge, never more than
-//     half of them), fade out after 20-30 seconds, and fly up again if the cursor sweeps through.
+//     half of them) and fade out after 20-30 seconds.
 //   - Quiz-completion confetti in autumn colors. 30 fps, dirty-rect redraw, reduced motion: one still frame.
 (function () {
   var kit = window.__themeKit;
@@ -671,9 +577,9 @@ window.__themeKit.fireworks = function (cfg) {
   document.body.classList.add("fall-theme");
   kit.colors(["#ea580c", "#c2410c", "#ca8a04", "#991b1b", "#b45309"]);
   var COLORS = ["#ea580c", "#c2410c", "#ca8a04", "#a16207", "#991b1b", "#b45309"], speedMul = 0.35;
-  var N = window.innerWidth < 700 ? 18 : 34, MAXPILE = Math.round(N * 0.5), resting = 0, F = null;
+  var N = window.innerWidth < 700 ? 12 : 24, MAXPILE = Math.round(N * 0.5), resting = 0, F = null;
   F = kit.field({
-    cls: "th-leaves", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30, count: N,
+    cls: "th-leaves", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30, count: N,
     rad: function (l) { return l.s * 2.2; },
     onSize: function (ps, W, H) {                                  // the window grew or shrank: lying leaves go back on the new bottom edge
       for (var i = 0; i < ps.length; i++) if (ps[i].rest) ps[i].y = H - ps[i].s * 0.45 - Math.random() * 3;
@@ -686,24 +592,21 @@ window.__themeKit.fireworks = function (cfg) {
         s: s, speed: (0.3 + s * 0.05) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
         spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.016,
-        flip: Math.random() * Math.PI * 2, flipSpeed: 0.03 + Math.random() * 0.05,
+        flip: Math.random() * Math.PI * 2, flipSpeed: 0.015 + Math.random() * 0.025,     // a slow tumble (halved 2026-10-25)
         rest: false, restT: 0, restMax: 20 + Math.random() * 10,
-        opacity: 0.5 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+        opacity: 0.5 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0]
       };
     },
     move: function (l, k) {
-      if (l.rest) {
-        if (Math.abs(l.vx) + Math.abs(l.vy) > 0.9) { l.rest = false; l.vy = -(1.6 + Math.random() * 1.6); l.restT = 0; }   // the cursor swept it up
-        else { l.restT += k / 60; l.vx = l.vy = 0; return; }
-      }
-      l.y += (l.speed + l.vy) * k; l.drift += l.driftSpeed * k; l.spin += l.spinSpeed * k; l.flip += l.flipSpeed * k;
-      l.x += (Math.sin(l.drift) * 1.1 + l.vx) * k;
+      if (l.rest) { l.restT += k / 60; return; }
+      l.y += l.speed * k; l.drift += l.driftSpeed * k; l.spin += l.spinSpeed * k; l.flip += l.flipSpeed * k;
+      l.x += Math.sin(l.drift) * 1.1 * k;
     },
     gone: function (l) {
       var H = window.innerHeight;
       if (l.rest) return l.restT > l.restMax;
       if (l.y > H - l.s * 0.5 && resting < MAXPILE && Math.random() < 0.8) {     // lands on the edge
-        l.rest = true; l.restT = 0; l.vx = l.vy = 0; l.y = H - l.s * 0.45 - Math.random() * 3; return false;
+        l.rest = true; l.restT = 0; l.y = H - l.s * 0.45 - Math.random() * 3; return false;
       }
       return l.y > H + 20;
     },
@@ -715,7 +618,7 @@ window.__themeKit.fireworks = function (cfg) {
         ctx.rotate(l.spin); ctx.scale(1, 0.42);                                  // lying flat
         a = Math.min(l.opacity + 0.1, 0.85) * Math.min(1, (l.restMax - l.restT) / 3);
       } else {
-        ctx.rotate(Math.cos(l.drift) * 0.7 + l.spin * 0.35);                     // rocks into each swing
+        ctx.rotate(Math.cos(l.drift) * 0.5 + l.spin * 0.35);                     // rocks into each swing
         ctx.scale(Math.max(0.18, Math.abs(Math.cos(l.flip))), 1);              // tumbles over
       }
       ctx.globalAlpha = a; ctx.fillStyle = l.color;
@@ -725,16 +628,18 @@ window.__themeKit.fireworks = function (cfg) {
 })();
 
 /* ============================================================
-   HALLOWEEN (2026-10-01) -- Oct 24-31 inclusive (local date), or ?theme=halloween / ?halloween=1 to
-   preview (__themeKit; the autumn leaves yield to it).
-   Three things, each cheap and each behind the content, none touching layout:
-   1. A few bats flapping across the sky (one canvas behind the UI, dirty-rect redraw, cursor/finger
-      scatters them like the other particle themes, stops when the tab is hidden).
-   2. Two candle glows in opposite corners that flicker (CSS opacity/transform only).
-   3. A pumpkin trail behind a mouse pointer (fine-pointer devices only, 16 pooled elements, Web
-      Animations, throttled; never on touch).
+   HALLOWEEN (2026-10-01; rebuilt 2026-10-25) -- Oct 24-31 inclusive (local date), or ?theme=halloween /
+   ?halloween=1 to preview (__themeKit; the autumn leaves yield to it).
+   Jaxon, 2026-10-25: the bats were "too distracting", no mouse effects on any theme, and "just put some high
+   quality cartoon pumpkins that flicker/glow in the bottom left sitting". So the bats, the two corner candle glows
+   and the pumpkin cursor trail are gone; three carved jack-o'-lanterns sit in the bottom-left corner of the
+   window, behind the content (z-index -1, pointer-events none, outside the layout flow), their faces lit from
+   inside with a gentle candle flicker and a warm glow around them.
+   Layers (each an SVG with the same viewBox, stacked): the glow, the pumpkins with unlit (dark) carved faces, then
+   one SVG per lit face. Only whole-element opacity animates (theme.css), so the flicker runs on the compositor and
+   never repaints the drawing. Reduced motion or the Holiday animations switch: lit and still.
    body.halloween-theme tints the app-shell pages in light mode (theme.css, arcade.css, guides.html,
-   group-join.html, group-host.html). prefers-reduced-motion: no bats, no trail, glows hold still.
+   group-join.html, group-host.html).
    ============================================================ */
 (function () {
   var kit = window.__themeKit;
@@ -743,123 +648,107 @@ window.__themeKit.fireworks = function (cfg) {
   body.classList.add("halloween-theme");
   kit.colors(["#f97316", "#7c3aed", "#22c55e", "#facc15", "#ea580c"]);
 
-  /* ---------- 2. candle glows (CSS does the flicker) ---------- */
-  ["a", "b"].forEach(function (k) {
-    var g = document.createElement("div");
-    g.className = "hw-glow hw-glow-" + k; g.setAttribute("aria-hidden", "true");
-    body.insertBefore(g, body.firstChild);
-  });
-
-  /* ---------- 1. bats ---------- */
-  var cv = null, ctx = null, W = 0, H = 0, bats = [];
-  var ptr = kit.pointer(), REPEL = 120;
-  var nBats = window.innerWidth < 700 ? 4 : 7;
-
-  function makeBat(first) {
-    var s = 11 + Math.random() * 11;                       // half wingspan in px
-    var dir = Math.random() < 0.5 ? 1 : -1;
-    return {
-      s: s, dir: dir, speed: 38 + Math.random() * 46,
-      x: first ? Math.random() * W : (dir > 0 ? -40 - s * 2 : W + 40 + s * 2),
-      baseY: H * (0.06 + Math.random() * 0.7), bobA: 10 + Math.random() * 26, bobF: 0.5 + Math.random() * 0.8,
-      t: Math.random() * 20, flap: Math.random() * 6, flapF: 5.5 + Math.random() * 3,
-      wait: first ? 0 : 1 + Math.random() * 6, a: 0.55 + Math.random() * 0.25,
-      ox: 0, oy: 0, vx: 0, vy: 0, bb: null, y: 0
-    };
+  // Each pumpkin is drawn in a 120 x 100 box (base at y = 100) and placed with [x, y, scale].
+  var PUMPKINS = [
+    { at: [8, 26, 1], face: "classic" },
+    { at: [146, 55, 0.72], face: "happy" },
+    { at: [104, 80, 0.46], face: "cute" }
+  ];
+  var FACES = {
+    classic: "M33 55 L50 55 L44 40 Z M70 55 L87 55 L76 40 Z M55 64 L65 64 L60 57 Z" +
+      "M28 67 Q60 100 92 67 L83 71 L80 77 L74 72 L66 74 L63 80 L57 80 L54 74 L46 72 L40 77 L37 71 Z",
+    happy: "M32 54 Q41 35 50 54 Q41 49 32 54 Z M70 54 Q79 35 88 54 Q79 49 70 54 Z" +
+      "M32 64 Q60 96 88 64 Q81 69 74 69 L71 75 L66 70 L54 70 L49 75 L46 69 Q39 69 32 64 Z",
+    cute: "M37 54 L49 54 L43 43 Z M71 54 L83 54 L77 43 Z M56 62 L64 62 L60 56 Z M45 69 Q60 84 75 69 Q60 75 45 69 Z"
+  };
+  var RIBS = '<ellipse cx="30" cy="61" rx="28" ry="36"/><ellipse cx="90" cy="61" rx="28" ry="36"/>' +
+    '<ellipse cx="44" cy="59" rx="26" ry="40"/><ellipse cx="76" cy="59" rx="26" ry="40"/><ellipse cx="60" cy="58" rx="19" ry="41"/>';
+  function place(p) { return '<g transform="translate(' + p.at[0] + " " + p.at[1] + ") scale(" + p.at[2] + ')">'; }
+  function pumpkin(p) {
+    var ribs = RIBS.split("/>").slice(0, 5), fills = ["D", "D", "", "", "L"], o = place(p), i;
+    o += '<ellipse cx="60" cy="99" rx="50" ry="5" fill="url(#hwpk-shadow)"/>';
+    o += '<g stroke="#6b2510" stroke-width="2.6" stroke-linejoin="round">';
+    for (i = 0; i < 5; i++) o += ribs[i] + ' fill="url(#hwpk-rib' + fills[i] + ')"/>';
+    o += "</g>";
+    o += '<path d="M3 66 Q4 97 30 97 L90 97 Q116 97 117 66 Q110 92 60 99 Q10 92 3 66 Z" fill="#7c2d12" opacity=".22"/>';  // shade underneath
+    o += '<g class="hw-night" fill="#140600">' + RIBS + "</g>";                                                          // dimmed in dark mode
+    o += '<path d="M66 20 C70 14 78 13 83 18 C87 23 81 28 77 24" fill="none" stroke="#4d7c0f" stroke-width="2.2" stroke-linecap="round"/>' +
+      '<path d="M60 20 C47 9 33 12 30 20 C38 17 47 22 59 22 Z" fill="url(#hwpk-leaf)" stroke="#2f4f0c" stroke-width="1.8" stroke-linejoin="round"/>' +
+      '<path d="M57 21 C49 17 41 16 35 19" fill="none" stroke="#2f4f0c" stroke-width="1.1" stroke-linecap="round" opacity=".7"/>' +
+      '<path d="M54 23 C53 15 55 8 61 3 C64 0 70 1 71 5 C66 9 64 15 66 23 Z" fill="url(#hwpk-stem)" stroke="#3b2a12" stroke-width="2.2" stroke-linejoin="round"/>';
+    o += '<ellipse cx="50" cy="33" rx="4.5" ry="9" transform="rotate(-18 50 33)" fill="#fff" opacity=".42"/><circle cx="47" cy="47" r="2" fill="#fff" opacity=".35"/>';
+    o += '<path d="' + FACES[p.face] + '" fill="#3a1205" stroke="#6b2510" stroke-width="2" stroke-linejoin="round"/>';    // the carved hollow, unlit
+    return o + "</g>";
   }
-  function onSize() { W = cv.W; H = cv.H; for (var i = 0; i < bats.length; i++) bats[i].bb = null; }
-
-  // front-facing bat silhouette: body, head with ears, two scalloped wings (flap = -1..1 lifts the tips)
-  function drawBat(b, color) {
-    var s = b.s, f = Math.sin(b.flap), tip = -f * s * 0.75;
-    ctx.save();
-    ctx.translate(b.x + b.ox, b.y + b.oy);
-    ctx.rotate(Math.max(-0.35, Math.min(0.35, (b.vyDraw || 0) * 0.004)));
-    ctx.globalAlpha = b.a; ctx.fillStyle = color;
-    for (var side = -1; side <= 1; side += 2) {
-      ctx.save(); ctx.scale(side, 1);
-      ctx.beginPath();
-      ctx.moveTo(s * 0.1, -s * 0.12);
-      ctx.quadraticCurveTo(s * 0.5, -s * 0.45 + tip * 0.45, s, tip);                     // leading edge to the tip
-      ctx.quadraticCurveTo(s * 0.86, tip * 0.7 + s * 0.2, s * 0.68, tip * 0.5 + s * 0.3);  // scallops back
-      ctx.quadraticCurveTo(s * 0.58, tip * 0.4 + s * 0.12, s * 0.45, tip * 0.3 + s * 0.36);
-      ctx.quadraticCurveTo(s * 0.3, tip * 0.15 + s * 0.16, s * 0.12, s * 0.3);
-      ctx.closePath(); ctx.fill();
-      ctx.restore();
-    }
-    ctx.beginPath(); ctx.ellipse(0, s * 0.02, s * 0.17, s * 0.3, 0, 0, Math.PI * 2); ctx.fill();   // body
-    ctx.beginPath(); ctx.arc(0, -s * 0.3, s * 0.15, 0, Math.PI * 2); ctx.fill();                  // head
-    ctx.beginPath();                                                                               // ears
-    ctx.moveTo(-s * 0.14, -s * 0.36); ctx.lineTo(-s * 0.12, -s * 0.62); ctx.lineTo(-s * 0.02, -s * 0.42);
-    ctx.moveTo(s * 0.14, -s * 0.36); ctx.lineTo(s * 0.12, -s * 0.62); ctx.lineTo(s * 0.02, -s * 0.42);
-    ctx.fill();
-    ctx.restore();
+  function litFace(p) {                                  // the candlelight in the carved face, plus a little light on the skin
+    var d = FACES[p.face];
+    return place(p) + '<path d="' + d + '" fill="#ffc94d" stroke="#ffb43a" stroke-width="5" stroke-linejoin="round" filter="url(#hwpk-blur)" opacity=".85"/>' +
+      '<path d="' + d + '" fill="url(#hwpk-flame)"/><ellipse cx="60" cy="64" rx="46" ry="30" fill="url(#hwpk-bleed)"/></g>';
   }
+  var VB = 'viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" focusable="false"';
+  var defs = "<defs>" +
+    '<radialGradient id="hwpk-rib" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#ffc48a"/><stop offset=".42" stop-color="#fb8a2e"/><stop offset="1" stop-color="#c2410c"/></radialGradient>' +
+    '<radialGradient id="hwpk-ribD" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#fb9a4b"/><stop offset=".5" stop-color="#e5600f"/><stop offset="1" stop-color="#9a3412"/></radialGradient>' +
+    '<radialGradient id="hwpk-ribL" cx=".35" cy=".28" r=".8"><stop offset="0" stop-color="#ffd8a8"/><stop offset=".4" stop-color="#fd9a45"/><stop offset="1" stop-color="#df5a10"/></radialGradient>' +
+    '<linearGradient id="hwpk-stem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3b84a"/><stop offset=".5" stop-color="#6b7d24"/><stop offset="1" stop-color="#4a3a17"/></linearGradient>' +
+    '<linearGradient id="hwpk-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3e635"/><stop offset="1" stop-color="#4d7c0f"/></linearGradient>' +
+    '<radialGradient id="hwpk-flame" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#fffdf0"/><stop offset=".35" stop-color="#fff1a8"/><stop offset=".75" stop-color="#ffd24d"/><stop offset="1" stop-color="#ffb020"/></radialGradient>' +
+    '<radialGradient id="hwpk-bleed"><stop offset="0" stop-color="#fde68a" stop-opacity=".16"/><stop offset="1" stop-color="#fde68a" stop-opacity="0"/></radialGradient>' +
+    '<radialGradient id="hwpk-halo"><stop offset="0" stop-color="#fdba74" stop-opacity=".55"/><stop offset=".55" stop-color="#fb923c" stop-opacity=".18"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>' +
+    '<radialGradient id="hwpk-shadow"><stop offset="0" stop-color="#1c0a02" stop-opacity=".35"/><stop offset="1" stop-color="#1c0a02" stop-opacity="0"/></radialGradient>' +
+    '<filter id="hwpk-blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3.2"/></filter>' +
+    "</defs>";
+  var html = '<svg class="hw-pk-glow" ' + VB + '><ellipse cx="68" cy="90" rx="78" ry="50" fill="url(#hwpk-halo)"/>' +
+    '<ellipse cx="189" cy="100" rx="58" ry="38" fill="url(#hwpk-halo)"/></svg>' +
+    '<svg class="hw-pk-base" ' + VB + ">" + defs + PUMPKINS.map(pumpkin).join("") + "</svg>" +
+    PUMPKINS.map(function (p, i) { return '<svg class="hw-pk-lit hw-pk-lit-' + (i + 1) + '" ' + VB + ">" + litFace(p) + "</svg>"; }).join("");
+  var patch = document.createElement("div");
+  patch.className = "hw-pumpkins"; patch.setAttribute("aria-hidden", "true");
+  patch.innerHTML = html;
+  body.insertBefore(patch, body.firstChild);
 
-  var loop = kit.loop(function (now, dt) {
-    var dark = document.documentElement.getAttribute("data-theme") === "dark";
-    var color = dark ? "#9d86c4" : "#2b1b3d";
-    var i, b;
-    for (i = 0; i < bats.length; i++) {                // erase where each bat was
-      b = bats[i];
-      if (b.bb) ctx.clearRect(b.bb[0], b.bb[1], b.bb[2], b.bb[3]);
-      b.bb = null;
+  // Fit the empty corner. The homepage's left column runs close to the edge and on a phone the content fills the
+  // width; a pumpkin half-hidden behind a card looks broken. So measure how wide the bottom-left corner is before
+  // the first box that paints (a background, border, shadow, picture or control; fixed chrome and
+  // pointer-events:none decoration do not count) and size the group to it, or leave it out below MIN.
+  var MIN = 96;
+  function paints(els) {
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i];
+      if (e === body || e === document.documentElement) return false;
+      if (/^(img|svg|canvas|video|input|button|select|textarea|iframe)$/i.test(e.tagName)) return true;
+      var cs = getComputedStyle(e);
+      if (cs.position === "fixed") continue;
+      if (cs.backgroundImage !== "none" || !/^(transparent|rgba\(0, 0, 0, 0\))$/.test(cs.backgroundColor) ||
+          parseFloat(cs.borderLeftWidth) > 0 || parseFloat(cs.borderTopWidth) > 0 || cs.boxShadow !== "none") return true;
     }
-    var decay = Math.pow(0.9, dt * 60);
-    for (i = 0; i < bats.length; i++) {
-      b = bats[i];
-      if (b.wait > 0) { b.wait -= dt; continue; }
-      b.t += dt; b.flap += dt * b.flapF * Math.PI * 2;
-      b.x += b.dir * b.speed * dt;
-      b.y = b.baseY + Math.sin(b.t * b.bobF * Math.PI * 2) * b.bobA;
-      kit.repel(b, b.x + b.ox, b.y + b.oy, REPEL, 2.2);   // scatter from the cursor like the other themes
-      b.vx *= decay; b.vy *= decay; b.ox += b.vx; b.oy += b.vy;
-      b.ox *= Math.pow(0.985, dt * 60); b.oy *= Math.pow(0.985, dt * 60);   // drift back to the flight line
-      b.vyDraw = Math.cos(b.t * b.bobF * Math.PI * 2) * b.bobA * b.bobF;
-      if ((b.dir > 0 && b.x > W + 50) || (b.dir < 0 && b.x < -50)) { bats[i] = makeBat(false); continue; }
-      drawBat(b, color);
-      var r = b.s * 1.4 + 4, cx = b.x + b.ox, cy = b.y + b.oy;
-      b.bb = [Math.floor(cx - r), Math.floor(cy - r), Math.ceil(r * 2), Math.ceil(r * 2)];
-    }
-    ctx.globalAlpha = 1;
-  });
-  function startBats() {
-    if (cv || kit.reduced()) return;
-    cv = kit.canvas("th-bats hw-bats", 2); ctx = cv.ctx; cv.onSize = onSize; onSize();
-    bats = []; for (var i = 0; i < nBats; i++) bats.push(makeBat(true));
-    // the first-frame bats are spread across the sky already, but leave a few outside so it opens calm
-    for (i = 0; i < bats.length; i += 2) { bats[i].wait = 0.5 + Math.random() * 4; bats[i].x = bats[i].dir > 0 ? -40 : W + 40; }
-    loop.start();
+    return false;
   }
-  function stopBats() { loop.stop(); if (cv) cv.remove(); cv = ctx = null; bats = []; }
-  kit.onMotion(function (reduced) { if (reduced) stopBats(); else startBats(); });
-  startBats();
-
-  /* ---------- 3. pumpkin trail ---------- */
-  kit.trail({
-    cls: "hw-pumpkin", pool: 16, gap: 55, min: 26, dx: -14, dy: 12, ms: 950,   // offset so the pointer never sits on one
-    frames: function (x, y) {
-      var r = Math.round((Math.random() - 0.5) * 50), sz = 0.8 + Math.random() * 0.45;
-      return [
-        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
-        { opacity: 0.8, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
-        { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 35) + "deg) scale(" + (sz * 0.55) + ")" }
-      ];
+  function fit() {
+    if (!document.elementsFromPoint) return;
+    var H = window.innerHeight, free = window.innerWidth < 700 ? 150 : 230, ys = [H - 8, H - 40, H - 75, H - 110], i, x;
+    for (i = 0; i < ys.length; i++) {
+      for (x = 4; x < free + 12; x += 8) if (paints(document.elementsFromPoint(x, ys[i]))) { free = x - 12; break; }
     }
-  });
+    patch.style.width = Math.max(0, free) + "px";
+    patch.style.display = free < MIN ? "none" : "";
+  }
+  fit();
+  window.addEventListener("load", fit);
+  var ft = 0;
+  window.addEventListener("resize", function () { clearTimeout(ft); ft = setTimeout(fit, 200); });
 })();
 
 /* ============================================================
    THANKSGIVING (2026-10-01) -- Monday to Friday of Thanksgiving week (the 4th Thursday of November;
    Nov 23-27 in 2026, computed every year by __themeKit), or ?theme=thanksgiving to preview.
    1. Autumn leaves, acorns and wheat drifting down behind the UI (kit.field; the leaf outline is the
-      same kit.shapes.leaf the October leaves use, they spin away from the cursor or a finger).
-   2. A little acorn-spark trail behind a mouse pointer (kit.trail: fine pointers only, 14 pooled
-      elements, never on touch).
-   3. Harvest confetti on quiz completion (window.__confettiColors) and the warm light-mode tint on the
+      same kit.shapes.leaf the October leaves use). 2026-10-25: fewer of them, and the cursor scatter and
+      the acorn cursor trail were removed (no mouse effects on any theme).
+   2. Harvest confetti on quiz completion (window.__confettiColors) and the warm light-mode tint on the
       app-shell pages (body.thanksgiving-theme in theme.css, arcade.css, guides.html, group-join.html,
       group-host.html).
-   prefers-reduced-motion: one still frame of the drift, no trail.
+   prefers-reduced-motion: one still frame of the drift.
    ============================================================ */
 (function () {
   var kit = window.__themeKit;
@@ -890,8 +779,8 @@ window.__themeKit.fireworks = function (cfg) {
   }
 
   kit.field({
-    cls: "th-thanks", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30, rad: function (p) { return p.s * 2.4; },
-    count: window.innerWidth < 700 ? 16 : 30,
+    cls: "th-thanks", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30, rad: function (p) { return p.s * 2.4; },
+    count: window.innerWidth < 700 ? 11 : 22,
     make: function (randomY) {
       var kind = KINDS[(Math.random() * KINDS.length) | 0], s = 6 + Math.random() * 6;
       var pal = kind === "leaf" ? LEAF : (kind === "acorn" ? NUT : GRAIN);
@@ -901,13 +790,13 @@ window.__themeKit.fireworks = function (cfg) {
         s: s, speed: (0.3 + s * 0.05) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
         spin: kind === "wheat" ? (Math.random() - 0.5) * 0.5 : Math.random() * Math.PI * 2,
-        spinSpeed: kind === "wheat" ? 0 : (Math.random() - 0.5) * 0.04,
-        opacity: 0.5 + Math.random() * 0.4, color: pal[(Math.random() * pal.length) | 0], vx: 0, vy: 0
+        spinSpeed: kind === "wheat" ? 0 : (Math.random() - 0.5) * 0.03,
+        opacity: 0.5 + Math.random() * 0.4, color: pal[(Math.random() * pal.length) | 0]
       };
     },
     move: function (p, k) {
-      p.y += (p.speed + p.vy) * k; p.drift += p.driftSpeed * k; p.x += (Math.sin(p.drift) * 1.1 + p.vx) * k;
-      if (p.kind === "wheat") p.spinSpeed = 0; else p.spin += p.spinSpeed * k;      // wheat sways instead of tumbling
+      p.y += p.speed * k; p.drift += p.driftSpeed * k; p.x += Math.sin(p.drift) * 1.1 * k;
+      if (p.kind !== "wheat") p.spin += p.spinSpeed * k;                            // wheat sways instead of tumbling
     },
     gone: function (p) { return p.y > window.innerHeight + 24; },
     draw: function (ctx, p) {
@@ -920,27 +809,15 @@ window.__themeKit.fireworks = function (cfg) {
       ctx.restore();
     }
   });
-
-  kit.trail({
-    cls: "th-acorn", pool: 14, gap: 60, min: 30, dx: -8, dy: 12, ms: 900,
-    frames: function (x, y) {
-      var r = Math.round((Math.random() - 0.5) * 60), sz = 0.8 + Math.random() * 0.4, j = Math.round((Math.random() - 0.5) * 12);
-      return [
-        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
-        { opacity: 0.9, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
-        { opacity: 0, transform: "translate(" + (x + j) + "px," + (y + 18) + "px) rotate(" + (r + 40) + "deg) scale(" + (sz * 0.5) + ")" }
-      ];
-    }
-  });
 })();
 
 // Seasonal St. Patrick's theme (added 2026-07-17, brought up to the Halloween standard 2026-10-01) -- Mar 3-17.
 // Falling four-leaf clovers behind all UI, plus the green light-mode tint (body.stpatricks-theme).
-//   - Clovers spin faster and tumble over as they fall (the width squashes and flips), and every second or so one
-//     catches the light with a little golden glint.
-//   - A lucky-sparkle trail follows a mouse pointer (kit.trail: fine pointers only, 14 pooled elements).
+//   - Clovers spin and tumble over as they fall (the width squashes and flips), and now and then one catches the
+//     light with a little golden glint. 2026-10-25: fewer and slower-spinning, and the lucky-sparkle cursor trail
+//     was removed (no mouse effects on any theme).
 //   - Green and gold quiz-completion confetti. 30 fps, dirty-rect redraw, canvas capped at 2x, reduced motion:
-//     one still frame and no trail.
+//     one still frame.
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("clovers")) return;
@@ -948,8 +825,8 @@ window.__themeKit.fireworks = function (cfg) {
   kit.colors(["#16a34a", "#22c55e", "#4ade80", "#fbbf24", "#15803d"]);
   var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35, F = null;
   F = kit.field({
-    cls: "th-clovers", dprCap: 1.5, reduced: "still", wrap: 20, kick: true, fps: 30,
-    count: window.innerWidth < 700 ? 16 : 30,
+    cls: "th-clovers", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30,
+    count: window.innerWidth < 700 ? 11 : 22,
     rad: function (c) { return c.s * 2.6; },
     make: function (randomY) {
       var s = 5 + Math.random() * 7;
@@ -958,19 +835,19 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : -10 - Math.random() * 40,
         s: s, speed: (0.3 + s * 0.05) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.008 + Math.random() * 0.014,
-        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.06,
-        flip: Math.random() * Math.PI * 2, flipSpeed: 0.025 + Math.random() * 0.04, glint: 0,
-        opacity: 0.4 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0], vx: 0, vy: 0
+        spin: Math.random() * Math.PI * 2, spinSpeed: (Math.random() - 0.5) * 0.03,
+        flip: Math.random() * Math.PI * 2, flipSpeed: 0.015 + Math.random() * 0.02, glint: 0,
+        opacity: 0.4 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0]
       };
     },
     move: function (c, k) {
-      c.y += (c.speed + c.vy) * k; c.drift += c.driftSpeed * k; c.spin += c.spinSpeed * k; c.flip += c.flipSpeed * k;
-      c.x += (Math.sin(c.drift) * 1.1 + c.vx) * k;
+      c.y += c.speed * k; c.drift += c.driftSpeed * k; c.spin += c.spinSpeed * k; c.flip += c.flipSpeed * k;
+      c.x += Math.sin(c.drift) * 1.1 * k;
       if (c.glint > 0) c.glint -= k / 60;
     },
     gone: function (c) { return c.y > window.innerHeight + 24; },
     begin: function () {                                              // now and then one clover catches the light
-      if (!F || Math.random() > 0.03) return;
+      if (!F || Math.random() > 0.012) return;
       var ps = F.particles(), c = ps[(Math.random() * ps.length) | 0];
       if (c && c.glint <= 0 && c.y > 0 && c.y < window.innerHeight) c.glint = 0.55;
     },
@@ -991,17 +868,6 @@ window.__themeKit.fireworks = function (cfg) {
       ctx.restore();
     }
   });
-  kit.trail({
-    cls: "cl-spark", pool: 14, gap: 55, min: 26, dx: -9, dy: 8, ms: 850,
-    frames: function (x, y) {
-      var r = Math.round((Math.random() - 0.5) * 80), sz = 0.7 + Math.random() * 0.6, j = Math.round((Math.random() - 0.5) * 14);
-      return [
-        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.3) + ")" },
-        { opacity: 0.95, offset: 0.2, transform: "translate(" + x + "px," + y + "px) rotate(" + (r + 20) + "deg) scale(" + sz + ")" },
-        { opacity: 0, transform: "translate(" + (x + j) + "px," + (y - 14) + "px) rotate(" + (r + 90) + "deg) scale(" + (sz * 0.4) + ")" }
-      ];
-    }
-  });
 })();
 
 /* ============================================================
@@ -1012,8 +878,8 @@ window.__themeKit.fireworks = function (cfg) {
    year), or on any page loaded with ?paweek=1 so it can be previewed outside the window.
    Same architecture as the other seasonal themes: lives here so every page gets it.
    1. A canvas of PA-themed things drifting UP like balloons behind the UI (hearts,
-      stethoscopes, medical crosses, pills, little "PA" badges) that scatter from the
-      cursor or a finger (the standing repel default for particle themes).
+      stethoscopes, medical crosses, pills, little "PA" badges). 2026-10-25: fewer, and the
+      cursor scatter and the medical-cross cursor trail were removed (no mouse effects).
    2. body.paweek-theme, which the app-shell pages tint and drift (theme.css, arcade.css,
       guides.html, group-join.html, group-host.html).
    3. A welcome card on the app-shell pages, once a day per device: a heartbeat line that
@@ -1030,7 +896,7 @@ window.__themeKit.fireworks = function (cfg) {
   var PALETTE = ["#2563eb", "#14b8a6", "#f43f5e", "#f59e0b", "#8b5cf6"];
   kit.colors(PALETTE);
 
-  /* ---------- 1. the drifting shapes (kit.field: one canvas behind the UI, repel, hidden-tab pause) ---------- */
+  /* ---------- 1. the drifting shapes (kit.field: one canvas behind the UI, hidden-tab pause) ---------- */
   // heart (the same two-lobe bezier the Valentine's theme uses), stethoscope, cross, pill, PA badge
   var KINDS = ["heart", "heart", "steth", "steth", "cross", "cross", "pill", "badge"];
   function drawShape(ctx, p) {
@@ -1063,15 +929,15 @@ window.__themeKit.fireworks = function (cfg) {
       s: 8 + Math.random() * 7, x: Math.random() * window.innerWidth,
       y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 30 + Math.random() * 60,
       speed: 0.28 + Math.random() * 0.4, drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
-      tilt: Math.random() * 6, opacity: 0.5 + Math.random() * 0.35, vx: 0, vy: 0
+      tilt: Math.random() * 6, opacity: 0.5 + Math.random() * 0.35
     };
   }
   kit.field({
     cls: "th-paweek", dprCap: 1.5, reduced: "still", wrap: 40, first: true, fps: 30,
-    count: window.innerWidth < 700 ? 14 : 28,
+    count: window.innerWidth < 700 ? 10 : 20,
     rad: function (p) { return p.s * 2.6; },
     make: make,
-    move: function (p, k) { p.y -= p.speed * k; p.y += p.vy * k; p.drift += p.driftSpeed * k; p.x += (Math.sin(p.drift) * 0.9 + p.vx) * k; p.tilt += 0.012 * k; },
+    move: function (p, k) { p.y -= p.speed * k; p.drift += p.driftSpeed * k; p.x += Math.sin(p.drift) * 0.9 * k; p.tilt += 0.012 * k; },
     gone: function (p) { return p.y < -60; },
     draw: function (ctx, p) {
       ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(Math.sin(p.tilt) * 0.4);
@@ -1096,19 +962,6 @@ window.__themeKit.fireworks = function (cfg) {
     var run = function (on) { clearInterval(timer); timer = on ? setInterval(cycle, 3800) : 0; };
     run(!document.hidden); kit.onVisible(run);                      // nothing cycles in a hidden tab
   }
-
-  /* ---------- 2c. a tiny medical-cross trail behind a mouse pointer (kit.trail: fine pointers only) ---------- */
-  kit.trail({
-    cls: "pa-trail", pool: 14, gap: 60, min: 30, dx: -8, dy: 10, ms: 900,
-    frames: function (x, y) {
-      var r = Math.round((Math.random() - 0.5) * 50), sz = 0.8 + Math.random() * 0.45;
-      return [
-        { opacity: 0, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + (sz * 0.4) + ")" },
-        { opacity: 0.85, offset: 0.16, transform: "translate(" + x + "px," + y + "px) rotate(" + r + "deg) scale(" + sz + ")" },
-        { opacity: 0, transform: "translate(" + x + "px," + (y + 16) + "px) rotate(" + (r + 30) + "deg) scale(" + (sz * 0.5) + ")" }
-      ];
-    }
-  });
 
   /* ---------- 3. the welcome card (app-shell pages only, once a day) ---------- */
   if (!kit.isShell()) return;

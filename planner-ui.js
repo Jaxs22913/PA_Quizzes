@@ -802,9 +802,21 @@
     var n = evs.filter(function (e) { return picked[E.examId(e)]; }).length;
     return h + '<p class="pl-fine">' + (n ? n + " selected, planned like any other exam." : "None selected, so none are planned.") + "</p>";
   }
+  // The site's Holiday animations choice (theme.js window.ThemeFx, 2026-10-25: "put it in all the settings"), first on
+  // this tab so it is easy to find. Wired straight on the select and stopped there: the document change handler
+  // below marks the planner touched (a saved record), and this is not a planner setting.
+  function fxRow() {
+    var F = window.ThemeFx; if (!F) return "";
+    return '<div class="pl-fxrow"><label for="pl-themefx"><b>Holiday animations</b><span>Snow, leaves, pumpkins and other moving holiday effects, on every page of the site.</span></label>' +
+      '<select id="pl-themefx">' + F.CHOICES.map(function (c) { return '<option value="' + c[0] + '"' + (F.mode() === c[0] ? " selected" : "") + ">" + esc(c[1]) + "</option>"; }).join("") + "</select></div>";
+  }
+  function wireFx() {
+    var sel = $("pl-themefx"); if (!sel) return;
+    sel.addEventListener("change", function (e) { e.stopPropagation(); window.ThemeFx.set(sel.value); });
+  }
   function renderSettings() {
     var host = $("pl-settings"), c = cfg(), cur = presetMatch();
-    var h = '<div class="pl-sect"><h3>' + icon("sliders", 16) + " How the plan is built</h3></div>";
+    var h = fxRow() + '<div class="pl-sect"><h3>' + icon("sliders", 16) + " How the plan is built</h3></div>";
     h += '<div class="pl-mode" role="group" aria-label="Planning mode">' +
       '<button type="button" class="pl-modebtn' + (isManual() ? "" : " on") + '" data-act="mode" data-v="auto" aria-pressed="' + (!isManual()) + '"><b>Automatic</b><span>The planner builds every day for you from your exams and study hours.</span></button>' +
       '<button type="button" class="pl-modebtn' + (isManual() ? " on" : "") + '" data-act="mode" data-v="manual" aria-pressed="' + isManual() + '"><b>Manual</b><span>The planner is off. You add your own tasks and study time.</span></button></div>';
@@ -812,7 +824,7 @@
       h += '<div class="pl-note">' + '<b>Manual mode is on.</b> Nothing is scheduled for you. Add tasks on the Today tab, or plan ahead on the Plan tab where you can pick any day and any exam. Tasks you add count toward your streak, and your links, timer and stats work the same. The style, study-window and algorithm settings return when you switch back to Automatic.</div>';
       h += retestSection();
       h += '<div class="pl-sect"><h3>Reset</h3></div><div class="pl-rowbtns"><button class="pl-btn small ghost danger" type="button" data-act="resetall">Erase my planner history</button></div>';
-      host.innerHTML = h; return;
+      host.innerHTML = h; wireFx(); return;
     }
     h += '<p class="pl-fine top">Pick a style, then fine-tune anything. The chart at the bottom redraws with your next five weeks as you change things.</p>';
     h += '<div class="pl-presets">' + Object.keys(E.PRESETS).map(function (id) { var p = E.PRESETS[id]; return '<button type="button" class="pl-preset' + (cur === id ? " on" : "") + '" data-act="preset" data-id="' + id + '"><b>' + p.label + "</b><span>" + esc(p.note) + "</span></button>"; }).join("") + (cur === "custom" ? '<div class="pl-preset on"><b>Custom</b><span>Your own numbers.</span></div>' : "") + "</div>";
@@ -839,7 +851,7 @@
       "<li><b>Forgiving streak.</b> One missed day barely changes how a habit forms (Lally et al. 2010), and harsh streaks make people quit after a break, so freezes and rest days protect it.</li>" +
       "<li><b>Honest limits.</b> No study proves a right number of hours for a PA exam. These are defaults you can change, and when the hours do not fit the plan says so instead of hiding it.</li></ul></div>";
     h += '<div class="pl-sect"><h3>Reset</h3></div><div class="pl-rowbtns"><button class="pl-btn small ghost" type="button" data-act="resetset">Reset settings to defaults</button><button class="pl-btn small ghost danger" type="button" data-act="resetall">Erase my planner history</button></div>';
-    host.innerHTML = h;
+    host.innerHTML = h; wireFx();
     renderPreview();
   }
 

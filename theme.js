@@ -9,6 +9,40 @@ if (!window.PAMetrics) window.PAMetrics = (function () {
            note: "PA Quizzes counts anonymous totals, like how many questions are answered, how often Pip is used and which pages run into errors, to improve the site and to support a future free version for students everywhere. No names or answers are recorded." };
 })();
 
+// Holiday animations (2026-10-25; the choice under Dark mode in Settings, and in the planner's and the relax page's
+// settings). Jaxon: "turn off the stuff flying around in the themes", then "make a choose (Turn off Everywhere,
+// Everywhere but homepage, or Turn off Just in Quizzes/guides)". localStorage "themeFx" holds the choice:
+//   "on" (default) | "study" = off on quiz, guide, cram-sheet and other study pages (the app pages keep them: home,
+//   Study Guides list, Arcade, planner, My Progress, group study) | "nothome" = off everywhere but the homepage | "off".
+// Off stops everything in a seasonal theme that moves (falling and floating particles, fireworks, flicker, twinkle,
+// pulse) and keeps the holiday tint and still decorations. The live state is the class th-fx-off on <html>, set here
+// before any theme starts: theme-seasonal.js (kit.reduced()) and theme.css read it, so a change applies at once
+// ("themefx" event on this page, the storage event in other tabs). Defined first in this file because the Settings
+// panel is built during init(), which runs partway through it; the SEASON GATE further down needs it too.
+window.ThemeFx = (function () {
+  var root = document.documentElement;
+  var CHOICES = [["on", "On everywhere"], ["study", "Off in quizzes and guides"], ["nothome", "Off except the homepage"], ["off", "Off everywhere"]];
+  function valid(m) { for (var i = 0; i < CHOICES.length; i++) if (CHOICES[i][0] === m) return true; return false; }
+  function mode() { var m = null; try { m = localStorage.getItem("themeFx"); } catch (e) {} return valid(m) ? m : "on"; }
+  function isHome() { return (document.body && document.body.classList.contains("homepage")) || /\/(index\.html)?$/.test(location.pathname); }
+  function isApp() { return isHome() || /\/(guides|calendar|progress|group-(join|host)|arcade[\w-]*)\.html$/.test(location.pathname); }
+  function offHere(m) { return m === "off" || (m === "nothome" && !isHome()) || (m === "study" && !isApp()); }
+  function paint() { root.classList.toggle("th-fx-off", offHere(mode())); }
+  function fire() { try { window.dispatchEvent(new Event("themefx")); } catch (e) {} }
+  paint();
+  window.addEventListener("storage", function (e) { if (e.key === "themeFx" || e.key === null) { paint(); fire(); } });
+  return {
+    CHOICES: CHOICES,
+    mode: mode,
+    off: function () { return root.classList.contains("th-fx-off"); },
+    set: function (m) {
+      if (!valid(m)) m = "on";
+      try { localStorage.setItem("themeFx", m); } catch (e) {}
+      paint(); fire();
+    }
+  };
+})();
+
 /* Error pings (2026-10-19). A script error used to be invisible until a classmate texted Jaxon ("I press
    start the quiz and nothing happens"). Now each distinct error on a page view sends ONE request for
      <site>/_e/v1/<page kind>/<folder~page>/<file-line>/<message>
@@ -862,6 +896,36 @@ window.SitePrompts = {
     );
     darkModeToggle.row.classList.add("quick-action");
     panel.appendChild(darkModeToggle.row);
+
+    // Holiday animations (2026-10-25, Jaxon: "turn off the stuff flying around in the themes ... put it in all the
+    // settings and make it easy to find", then a choice of where): second row, right under Dark mode, on every page
+    // and every day, not only while a theme runs (a setting you can reach only during Halloween week is one nobody
+    // finds). window.ThemeFx (top of this file) applies it at once on this page and in other open tabs.
+    if (window.ThemeFx) {
+      var fxRow = document.createElement("div");
+      fxRow.className = "settings-row quick-action has-note";
+      var fxLabel = document.createElement("label");
+      fxLabel.textContent = "Holiday animations";
+      fxLabel.htmlFor = "settings-themefx";
+      var fxSelect = document.createElement("select");
+      fxSelect.id = "settings-themefx";
+      fxSelect.className = "settings-select";
+      window.ThemeFx.CHOICES.forEach(function (c) {
+        var o = document.createElement("option");
+        o.value = c[0]; o.textContent = c[1];
+        fxSelect.appendChild(o);
+      });
+      fxSelect.value = window.ThemeFx.mode();
+      fxSelect.addEventListener("change", function () { window.ThemeFx.set(fxSelect.value); });
+      window.addEventListener("themefx", function () { fxSelect.value = window.ThemeFx.mode(); });
+      fxRow.appendChild(fxLabel);
+      fxRow.appendChild(fxSelect);
+      panel.appendChild(fxRow);
+      var fxNote = document.createElement("p");
+      fxNote.className = "settings-note";
+      fxNote.textContent = "Snow, falling leaves, floating hearts, fireworks, flickering pumpkins and other moving holiday effects. Off keeps the holiday colors.";
+      panel.appendChild(fxNote);
+    }
 
     if (isArcade) {
       var soundToggle = makeToggleRow(
