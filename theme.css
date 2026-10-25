@@ -3545,8 +3545,8 @@ html.gl-open { overflow: hidden; }
 .pa-splash.on { display: block; }
 .pa-splash-big { left: 87%; top: 30%; }
 .pa-splash-small { left: calc(50% + 140px); top: 34%; font-size: 12px; }
-.pa-splash.swap { animation: pa-pulse .9s ease-in-out infinite, pa-swap .35s ease-out 1; }
-@keyframes pa-pulse { 0%, 100% { transform: translate(-50%, -50%) rotate(14deg) scale(1); } 50% { transform: translate(-50%, -50%) rotate(14deg) scale(1.13); } }
+.pa-splash.swap { animation: pa-pulse 2s ease-in-out infinite, pa-swap .35s ease-out 1; }   /* slowed 2026-10-25 (was .9 s, scale 1.13) */
+@keyframes pa-pulse { 0%, 100% { transform: translate(-50%, -50%) rotate(14deg) scale(1); } 50% { transform: translate(-50%, -50%) rotate(14deg) scale(1.06); } }
 @keyframes pa-swap { from { opacity: 0; } to { opacity: 1; } }
 :root[data-theme="light"] .pa-splash { color: #f5c400; text-shadow: 2px 2px 0 #5c4a00, 0 0 8px rgba(245, 196, 0, .4); }
 @media (prefers-reduced-motion: reduce) { .pa-splash, .pa-splash.swap { animation: none; } }

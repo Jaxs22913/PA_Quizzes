@@ -540,7 +540,7 @@ window.__themeKit.fireworks = function (cfg) {
   kit.colors(["#ec4899", "#f472b6", "#f43f5e", "#fb7185", "#e11d48"]);
   kit.field({
     cls: "th-hearts", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30,
-    count: window.innerWidth < 700 ? 12 : 24,
+    count: window.innerWidth < 700 ? 9 : 18,
     rad: function (h) { return h.s * 1.9 + 3; },
     make: function (randomY) {
       var s = 6 + Math.random() * 9;
@@ -549,7 +549,7 @@ window.__themeKit.fireworks = function (cfg) {
         y: randomY ? Math.random() * window.innerHeight : window.innerHeight + 10 + Math.random() * 40,
         s: s, speed: (0.35 + s * 0.045) * speedMul,
         drift: Math.random() * Math.PI * 2, driftSpeed: 0.006 + Math.random() * 0.012,
-        opacity: 0.35 + Math.random() * 0.4, color: COLORS[(Math.random() * COLORS.length) | 0]
+        opacity: 0.3 + Math.random() * 0.35, color: COLORS[(Math.random() * COLORS.length) | 0]
       };
     },
     move: function (h, k) { h.y -= h.speed * k; h.drift += h.driftSpeed * k; h.x += Math.sin(h.drift) * 0.6 * k; },
@@ -826,7 +826,7 @@ window.__themeKit.fireworks = function (cfg) {
   var COLORS = ["#16a34a", "#22c55e", "#15803d", "#4ade80", "#166534"], speedMul = 0.35, F = null;
   F = kit.field({
     cls: "th-clovers", dprCap: 1.5, reduced: "still", wrap: 20, fps: 30,
-    count: window.innerWidth < 700 ? 11 : 22,
+    count: window.innerWidth < 700 ? 9 : 18,
     rad: function (c) { return c.s * 2.6; },
     make: function (randomY) {
       var s = 5 + Math.random() * 7;
@@ -934,7 +934,7 @@ window.__themeKit.fireworks = function (cfg) {
   }
   kit.field({
     cls: "th-paweek", dprCap: 1.5, reduced: "still", wrap: 40, first: true, fps: 30,
-    count: window.innerWidth < 700 ? 10 : 20,
+    count: window.innerWidth < 700 ? 8 : 14,
     rad: function (p) { return p.s * 2.6; },
     make: make,
     move: function (p, k) { p.y -= p.speed * k; p.drift += p.driftSpeed * k; p.x += Math.sin(p.drift) * 0.9 * k; p.tilt += 0.012 * k; },
