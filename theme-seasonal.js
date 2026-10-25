@@ -637,8 +637,9 @@ window.__themeKit.fireworks = function (cfg) {
    1. A thin pile of fallen leaves along the bottom edge of the window on every page: one canvas behind the content,
       drawn once from a fixed seed (every page shows the same pile), redrawn only when the width changes. Still.
    2. Three carved jack-o'-lanterns, matte (grained skin, no gloss), faces lit from inside with a gentle candle
-      flicker. On the homepage they sit beside the big logo (or the small phone logo); elsewhere in the bottom-left
-      corner of the window on the leaves, sized to the empty corner and left out where the content fills the width.
+      flicker. On the homepage they sit on top of the search bar ("just put the pumpkins on the search bar");
+      elsewhere in the bottom-left corner of the window on the leaves, sized to the empty corner and left out where
+      the content fills the width.
    Layers (SVGs with one viewBox, stacked): glow, pumpkins with unlit carved hollows, one lit face each. Only
    whole-layer opacity animates (theme.css), so the flicker runs on the compositor. The gradients, filters and
    clip paths live once in a 0 x 0 SVG so every copy can share them. Reduced motion or the Holiday animations
@@ -774,32 +775,36 @@ window.__themeKit.fireworks = function (cfg) {
   defsEl.innerHTML = defs;
   body.insertBefore(defsEl.firstChild, body.firstChild);
 
-  /* ---------- 2a. the homepage: beside the logo that is showing (the big one on wide screens, the h1 one on phones) ---------- */
+  /* ---------- 2a. the homepage: sitting on top of the search bar, at its right end (Jaxon, 2026-10-25: "just put
+     the pumpkins on the search bar on the homepage"; the left column covers the corner there). Placed from the bar's
+     box, again whenever the page around it changes size (the widgets fill in after load). ---------- */
   if (home) {
     var hero = patch("hw-pk-hero");
     body.appendChild(hero);
     var placeHero = function () {
-      var big = document.querySelector(".brand-mark"), small = document.querySelector(".page > header h1 svg, .page > header h1 img");
-      var r, left, bottom, w;
-      if (big && big.getBoundingClientRect().height > 0) {
-        r = big.getBoundingClientRect();                     // the mark sits in the middle of a wider box: 37% from its left, the caption ends at 82%
-        left = r.left + r.width * 0.37; bottom = r.top + r.height * 0.82; w = 210;
-      } else if (small && small.getBoundingClientRect().height > 0) {
-        r = small.getBoundingClientRect();
-        left = r.left + r.width / 2 - Math.min(r.width, r.height * 1.4) / 2; bottom = r.bottom; w = 104;
-      } else { hero.style.display = "none"; return; }
-      var gap = w > 150 ? 26 : 12, x = left - gap - w;
-      if (x < 6) { w = left - gap - 6; x = 6; }
-      if (w < 70) { hero.style.display = "none"; return; }
+      var bar = document.querySelector(".search-input-box") || document.getElementById("site-search");
+      var r = bar && bar.getBoundingClientRect();
+      if (!r || !r.width) { hero.style.display = "none"; return; }
+      var w = r.width < 500 ? 96 : 130, h = w * 130 / 240, inset = r.width < 500 ? 6 : 8, top = r.top - h + 3;   // feet on the bar's top edge
+      // the right end, unless that would sit on the quotes above the bar (a narrow bar under long quotes): then the left end
+      var texts = [];                                         // the lines of text themselves, not their full-width boxes
+      [].forEach.call(document.querySelectorAll(".page > header .subtitle"), function (e) {
+        var rg = document.createRange(); rg.selectNodeContents(e); texts = texts.concat([].slice.call(rg.getClientRects()));
+      });
+      function clear(x) { return texts.every(function (t) { return !t.width || t.bottom < top + 4 || t.top > top + h || t.right < x - 4 || t.left > x + w + 4; }); }
+      var x = r.right - inset - w;
+      if (!clear(x) && clear(r.left + inset)) x = r.left + inset;
       hero.style.display = "";
-      hero.style.width = Math.round(w) + "px";
+      hero.style.width = w + "px";
       hero.style.left = Math.round(x + window.scrollX) + "px";
-      hero.style.top = Math.round(bottom + window.scrollY - w * 130 / 240) + "px";
+      hero.style.top = Math.round(top + window.scrollY) + "px";
     };
     placeHero();
     window.addEventListener("load", placeHero);
-    var ht = 0;
-    window.addEventListener("resize", function () { clearTimeout(ht); ht = setTimeout(placeHero, 150); });
+    setTimeout(placeHero, 800);
+    var ht = 0, later = function () { clearTimeout(ht); ht = setTimeout(placeHero, 100); };
+    window.addEventListener("resize", later);
+    if (window.ResizeObserver) { var ro = new ResizeObserver(later); ro.observe(body); }
     return;
   }
 

@@ -3554,8 +3554,8 @@ html.gl-open { overflow: hidden; }
 
 /* ============================================================
    HALLOWEEN (theme-seasonal.js, Oct 24-31 or ?halloween=1), rebuilt 2026-10-25: a thin pile of fallen leaves along
-   the bottom of the window (one still canvas) and three matte jack-o'-lanterns whose faces flicker -- beside the
-   logo on the homepage, in the bottom-left corner on the leaves elsewhere. Behind or beside the content,
+   the bottom of the window (one still canvas) and three matte jack-o'-lanterns whose faces flicker -- on the
+   search bar on the homepage, in the bottom-left corner on the leaves elsewhere. Behind or beside the content,
    pointer-events none, outside the layout flow. Stacked SVG layers (glow, pumpkins, one lit face each); only
    whole-layer opacity animates, so the flicker stays on the compositor.
    ============================================================ */
@@ -3569,7 +3569,7 @@ html.gl-open { overflow: hidden; }
   left: max(6px, env(safe-area-inset-left)); bottom: calc(2px + env(safe-area-inset-bottom));
   width: 230px;
 }
-.hw-pk-hero { position: absolute; z-index: 0; width: 210px; left: -9999px; top: 0; }
+.hw-pk-hero { position: absolute; z-index: 5; width: 130px; left: -9999px; top: 0; }   /* homepage: on the search bar */
 .hw-pk .hw-night { opacity: 0; }
 :root[data-theme="dark"] .hw-pk .hw-night { opacity: .2; }                 /* a little dimmer at night, so the faces glow */
 .hw-pk-glow { animation: hw-breathe 5.2s ease-in-out infinite; }
