@@ -630,25 +630,29 @@ window.__themeKit.fireworks = function (cfg) {
 /* ============================================================
    HALLOWEEN (2026-10-01; rebuilt 2026-10-25) -- Oct 24-31 inclusive (local date), or ?theme=halloween /
    ?halloween=1 to preview (__themeKit; the autumn leaves yield to it).
-   Jaxon, 2026-10-25: the bats were "too distracting", no mouse effects on any theme, and "just put some high
-   quality cartoon pumpkins that flicker/glow in the bottom left sitting". So the bats, the two corner candle glows
-   and the pumpkin cursor trail are gone; three carved jack-o'-lanterns sit in the bottom-left corner of the
-   window, behind the content (z-index -1, pointer-events none, outside the layout flow), their faces lit from
-   inside with a gentle candle flicker and a warm glow around them.
-   Layers (each an SVG with the same viewBox, stacked): the glow, the pumpkins with unlit (dark) carved faces, then
-   one SVG per lit face. Only whole-element opacity animates (theme.css), so the flicker runs on the compositor and
-   never repaints the drawing. Reduced motion or the Holiday animations switch: lit and still.
-   body.halloween-theme tints the app-shell pages in light mode (theme.css, arcade.css, guides.html,
-   group-join.html, group-host.html).
+   Jaxon, 2026-10-25: the bats were "too distracting", no mouse effects on any theme, "just put some high quality
+   cartoon pumpkins that flicker/glow in the bottom left sitting", then "those pumpkins look too good and plastic
+   what if the bottom of the screen was like a thin layer of fall leaves piled up also" and "I want something on
+   the homepage". So:
+   1. A thin pile of fallen leaves along the bottom edge of the window on every page: one canvas behind the content,
+      drawn once from a fixed seed (every page shows the same pile), redrawn only when the width changes. Still.
+   2. Three carved jack-o'-lanterns, matte (grained skin, no gloss), faces lit from inside with a gentle candle
+      flicker. On the homepage they sit beside the big logo (or the small phone logo); elsewhere in the bottom-left
+      corner of the window on the leaves, sized to the empty corner and left out where the content fills the width.
+   Layers (SVGs with one viewBox, stacked): glow, pumpkins with unlit carved hollows, one lit face each. Only
+   whole-layer opacity animates (theme.css), so the flicker runs on the compositor. The gradients, filters and
+   clip paths live once in a 0 x 0 SVG so every copy can share them. Reduced motion or the Holiday animations
+   setting: lit and still. body.halloween-theme tints the app-shell pages in light mode (theme.css, arcade.css,
+   guides.html, group-join.html, group-host.html).
    ============================================================ */
 (function () {
   var kit = window.__themeKit;
   if (!kit.on("halloween")) return;
-  var body = document.body;
+  var body = document.body, home = body.classList.contains("homepage");
   body.classList.add("halloween-theme");
   kit.colors(["#f97316", "#7c3aed", "#22c55e", "#facc15", "#ea580c"]);
 
-  // Each pumpkin is drawn in a 120 x 100 box (base at y = 100) and placed with [x, y, scale].
+  /* ---------- the pumpkins (each drawn in a 120 x 100 box, base at y = 100, placed with [x, y, scale]) ---------- */
   var PUMPKINS = [
     { at: [8, 26, 1], face: "classic" },
     { at: [146, 55, 0.72], face: "happy" },
@@ -661,57 +665,150 @@ window.__themeKit.fireworks = function (cfg) {
       "M32 64 Q60 96 88 64 Q81 69 74 69 L71 75 L66 70 L54 70 L49 75 L46 69 Q39 69 32 64 Z",
     cute: "M37 54 L49 54 L43 43 Z M71 54 L83 54 L77 43 Z M56 62 L64 62 L60 56 Z M45 69 Q60 84 75 69 Q60 75 45 69 Z"
   };
-  var RIBS = '<ellipse cx="30" cy="61" rx="28" ry="36"/><ellipse cx="90" cy="61" rx="28" ry="36"/>' +
-    '<ellipse cx="44" cy="59" rx="26" ry="40"/><ellipse cx="76" cy="59" rx="26" ry="40"/><ellipse cx="60" cy="58" rx="19" ry="41"/>';
+  var RIBS = [[30, 61, 28, 36, "o"], [90, 61, 28, 36, "o"], [44, 59, 26, 40, "m"], [76, 59, 26, 40, "m"], [60, 58, 19, 41, "c"]];   // outer ribs first
   function place(p) { return '<g transform="translate(' + p.at[0] + " " + p.at[1] + ") scale(" + p.at[2] + ')">'; }
+  function ribs(attrs) {
+    return RIBS.map(function (r) { return '<ellipse cx="' + r[0] + '" cy="' + r[1] + '" rx="' + r[2] + '" ry="' + r[3] + '"' + attrs(r) + "/>"; }).join("");
+  }
   function pumpkin(p) {
-    var ribs = RIBS.split("/>").slice(0, 5), fills = ["D", "D", "", "", "L"], o = place(p), i;
-    o += '<ellipse cx="60" cy="99" rx="50" ry="5" fill="url(#hwpk-shadow)"/>';
-    o += '<g stroke="#6b2510" stroke-width="2.6" stroke-linejoin="round">';
-    for (i = 0; i < 5; i++) o += ribs[i] + ' fill="url(#hwpk-rib' + fills[i] + ')"/>';
-    o += "</g>";
-    o += '<path d="M3 66 Q4 97 30 97 L90 97 Q116 97 117 66 Q110 92 60 99 Q10 92 3 66 Z" fill="#7c2d12" opacity=".22"/>';  // shade underneath
-    o += '<g class="hw-night" fill="#140600">' + RIBS + "</g>";                                                          // dimmed in dark mode
-    o += '<path d="M66 20 C70 14 78 13 83 18 C87 23 81 28 77 24" fill="none" stroke="#4d7c0f" stroke-width="2.2" stroke-linecap="round"/>' +
-      '<path d="M60 20 C47 9 33 12 30 20 C38 17 47 22 59 22 Z" fill="url(#hwpk-leaf)" stroke="#2f4f0c" stroke-width="1.8" stroke-linejoin="round"/>' +
-      '<path d="M57 21 C49 17 41 16 35 19" fill="none" stroke="#2f4f0c" stroke-width="1.1" stroke-linecap="round" opacity=".7"/>' +
-      '<path d="M54 23 C53 15 55 8 61 3 C64 0 70 1 71 5 C66 9 64 15 66 23 Z" fill="url(#hwpk-stem)" stroke="#3b2a12" stroke-width="2.2" stroke-linejoin="round"/>';
-    o += '<ellipse cx="50" cy="33" rx="4.5" ry="9" transform="rotate(-18 50 33)" fill="#fff" opacity=".42"/><circle cx="47" cy="47" r="2" fill="#fff" opacity=".35"/>';
-    o += '<path d="' + FACES[p.face] + '" fill="#3a1205" stroke="#6b2510" stroke-width="2" stroke-linejoin="round"/>';    // the carved hollow, unlit
+    var o = place(p) + '<ellipse cx="60" cy="99" rx="54" ry="6" fill="url(#hwpk-shadow)"/>';
+    o += '<g filter="url(#hwpk-grain)">' + ribs(function (r) { return ' fill="url(#hwpk-' + r[4] + ')" stroke="#7a3412" stroke-width="1.7"'; }) + "</g>";
+    o += '<ellipse cx="44" cy="40" rx="34" ry="24" fill="url(#hwpk-light)"/>' +                                    // soft light, no gloss
+      '<path d="M2 62 Q3 98 32 98 L88 98 Q117 98 118 62 Q112 93 60 100 Q8 93 2 62 Z" fill="#5c240a" opacity=".22"/>' +  // shade underneath
+      '<g class="hw-night" fill="#140600">' + ribs(function () { return ""; }) + "</g>";                              // dimmer at night
+    o += '<path d="M66 21 C71 15 79 15 82 20 C85 25 79 29 76 25 C74 22 77 20 79 22" fill="none" stroke="#6b5a2a" stroke-width="1.6" stroke-linecap="round"/>' +
+      '<path d="M53 23 C52 16 54 9 58 4 L66 2 C67 9 64 15 66 23 Z" fill="url(#hwpk-stem)" stroke="#3d2c12" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<path d="M57 21 C56 15 57 10 60 5 M62 21 C61 15 62 9 64 4" fill="none" stroke="#3d2c12" stroke-width=".9" opacity=".55"/>' +
+      '<ellipse cx="62" cy="3" rx="4.3" ry="1.6" fill="#a89060" stroke="#3d2c12" stroke-width="1"/>';                 // woody stem, cut top
+    o += '<path d="' + FACES[p.face] + '" fill="#2e0f04" stroke="#5a2408" stroke-width="1.5" stroke-linejoin="round"/>';   // the hollow, unlit
     return o + "</g>";
   }
-  function litFace(p) {                                  // the candlelight in the carved face, plus a little light on the skin
+  function litFace(p, i) {                                    // candlelight, the cut wall inside each hole, a little light on the skin
     var d = FACES[p.face];
-    return place(p) + '<path d="' + d + '" fill="#ffc94d" stroke="#ffb43a" stroke-width="5" stroke-linejoin="round" filter="url(#hwpk-blur)" opacity=".85"/>' +
-      '<path d="' + d + '" fill="url(#hwpk-flame)"/><ellipse cx="60" cy="64" rx="46" ry="30" fill="url(#hwpk-bleed)"/></g>';
+    return place(p) + '<path d="' + d + '" fill="#ffb84a" stroke="#ffa63a" stroke-width="5" stroke-linejoin="round" filter="url(#hwpk-blur)" opacity=".7"/>' +
+      '<path d="' + d + '" fill="url(#hwpk-flame)"/>' +
+      '<path d="' + d + '" fill="none" stroke="#e8923a" stroke-width="4.5" stroke-linejoin="round" clip-path="url(#hwpk-cut' + i + ')" opacity=".85"/>' +
+      '<path d="' + d + '" fill="none" stroke="#5a2408" stroke-width="1.3" stroke-linejoin="round"/>' +
+      '<ellipse cx="60" cy="64" rx="46" ry="30" fill="url(#hwpk-bleed)"/></g>';
+  }
+  function frontLeaves() {                                    // a few leaves lying in front of the pumpkins' feet
+    var L = [[22, 126, 7, -23, "#a8431c"], [50, 129, 6, 52, "#c8962e"], [92, 127, 6.5, -69, "#8f2f1f"], [128, 128, 5.5, 17, "#b8642a"],
+      [160, 129, 6, -46, "#7d4a22"], [196, 127, 6.5, 63, "#c9612a"], [226, 129, 5, -11, "#a8762e"]];
+    return L.map(function (l) {
+      return '<g transform="translate(' + l[0] + " " + l[1] + ") scale(1 .55) rotate(" + l[3] + ')"><path d="M0 ' + (-l[2]) + " Q" + (l[2] * 0.75) + " 0 0 " + l[2] +
+        " Q" + (-l[2] * 0.75) + " 0 0 " + (-l[2]) + 'Z" fill="' + l[4] + '"/><path d="M0 ' + (-l[2] * 0.8) + " L0 " + (l[2] * 0.85) + '" stroke="#4a2410" stroke-width=".9" opacity=".5"/></g>';
+    }).join("");
   }
   var VB = 'viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" focusable="false"';
-  var defs = "<defs>" +
-    '<radialGradient id="hwpk-rib" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="#ffc48a"/><stop offset=".42" stop-color="#fb8a2e"/><stop offset="1" stop-color="#c2410c"/></radialGradient>' +
-    '<radialGradient id="hwpk-ribD" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#fb9a4b"/><stop offset=".5" stop-color="#e5600f"/><stop offset="1" stop-color="#9a3412"/></radialGradient>' +
-    '<radialGradient id="hwpk-ribL" cx=".35" cy=".28" r=".8"><stop offset="0" stop-color="#ffd8a8"/><stop offset=".4" stop-color="#fd9a45"/><stop offset="1" stop-color="#df5a10"/></radialGradient>' +
-    '<linearGradient id="hwpk-stem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3b84a"/><stop offset=".5" stop-color="#6b7d24"/><stop offset="1" stop-color="#4a3a17"/></linearGradient>' +
-    '<linearGradient id="hwpk-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3e635"/><stop offset="1" stop-color="#4d7c0f"/></linearGradient>' +
-    '<radialGradient id="hwpk-flame" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#fffdf0"/><stop offset=".35" stop-color="#fff1a8"/><stop offset=".75" stop-color="#ffd24d"/><stop offset="1" stop-color="#ffb020"/></radialGradient>' +
-    '<radialGradient id="hwpk-bleed"><stop offset="0" stop-color="#fde68a" stop-opacity=".16"/><stop offset="1" stop-color="#fde68a" stop-opacity="0"/></radialGradient>' +
-    '<radialGradient id="hwpk-halo"><stop offset="0" stop-color="#fdba74" stop-opacity=".55"/><stop offset=".55" stop-color="#fb923c" stop-opacity=".18"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>' +
-    '<radialGradient id="hwpk-shadow"><stop offset="0" stop-color="#1c0a02" stop-opacity=".35"/><stop offset="1" stop-color="#1c0a02" stop-opacity="0"/></radialGradient>' +
-    '<filter id="hwpk-blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3.2"/></filter>' +
-    "</defs>";
-  var html = '<svg class="hw-pk-glow" ' + VB + '><ellipse cx="68" cy="90" rx="78" ry="50" fill="url(#hwpk-halo)"/>' +
-    '<ellipse cx="189" cy="100" rx="58" ry="38" fill="url(#hwpk-halo)"/></svg>' +
-    '<svg class="hw-pk-base" ' + VB + ">" + defs + PUMPKINS.map(pumpkin).join("") + "</svg>" +
-    PUMPKINS.map(function (p, i) { return '<svg class="hw-pk-lit hw-pk-lit-' + (i + 1) + '" ' + VB + ">" + litFace(p) + "</svg>"; }).join("");
-  var patch = document.createElement("div");
-  patch.className = "hw-pumpkins"; patch.setAttribute("aria-hidden", "true");
-  patch.innerHTML = html;
-  body.insertBefore(patch, body.firstChild);
+  var defs = '<svg class="hw-pk-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>' +
+    '<linearGradient id="hwpk-o" x1="0" x2="1"><stop offset="0" stop-color="#8f3a14"/><stop offset=".55" stop-color="#c4602a"/><stop offset="1" stop-color="#93401a"/></linearGradient>' +
+    '<linearGradient id="hwpk-m" x1="0" x2="1"><stop offset="0" stop-color="#a84a1c"/><stop offset=".5" stop-color="#d9772f"/><stop offset="1" stop-color="#ad4f1f"/></linearGradient>' +
+    '<linearGradient id="hwpk-c" x1="0" x2="1"><stop offset="0" stop-color="#b9581f"/><stop offset=".5" stop-color="#e58a3a"/><stop offset="1" stop-color="#bd5c22"/></linearGradient>' +
+    '<radialGradient id="hwpk-light"><stop offset="0" stop-color="#ffd8a6" stop-opacity=".22"/><stop offset="1" stop-color="#ffd8a6" stop-opacity="0"/></radialGradient>' +
+    '<linearGradient id="hwpk-stem" x1="0" x2="1"><stop offset="0" stop-color="#7c6a34"/><stop offset=".5" stop-color="#5e5024"/><stop offset="1" stop-color="#43381a"/></linearGradient>' +
+    '<radialGradient id="hwpk-flame" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#fff6d6"/><stop offset=".4" stop-color="#ffe08a"/><stop offset=".8" stop-color="#ffc04a"/><stop offset="1" stop-color="#f59e2a"/></radialGradient>' +
+    '<radialGradient id="hwpk-bleed"><stop offset="0" stop-color="#ffd27a" stop-opacity=".14"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>' +
+    '<radialGradient id="hwpk-halo"><stop offset="0" stop-color="#fdba74" stop-opacity=".45"/><stop offset=".55" stop-color="#fb923c" stop-opacity=".14"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>' +
+    '<radialGradient id="hwpk-shadow"><stop offset="0" stop-color="#1c0a02" stop-opacity=".32"/><stop offset="1" stop-color="#1c0a02" stop-opacity="0"/></radialGradient>' +
+    '<filter id="hwpk-blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>' +
+    '<filter id="hwpk-grain" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>' +
+    '<feColorMatrix in="n" type="matrix" values="0 0 0 0 .32  0 0 0 0 .14  0 0 0 0 .03  0 0 0 .7 -.2" result="s"/>' +
+    '<feComposite in="s" in2="SourceGraphic" operator="in" result="g"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="g"/></feMerge></filter>' +
+    PUMPKINS.map(function (p, i) { return '<clipPath id="hwpk-cut' + i + '">' + place(p) + '<path d="' + FACES[p.face] + '"/></g></clipPath>'; }).join("") +
+    "</defs></svg>";
+  var layers = '<svg class="hw-pk-glow" ' + VB + '><ellipse cx="68" cy="90" rx="78" ry="50" fill="url(#hwpk-halo)"/><ellipse cx="189" cy="100" rx="58" ry="38" fill="url(#hwpk-halo)"/></svg>' +
+    '<svg class="hw-pk-base" ' + VB + ">" + PUMPKINS.map(pumpkin).join("") + frontLeaves() + "</svg>" +
+    PUMPKINS.map(function (p, i) { return '<svg class="hw-pk-lit hw-pk-lit-' + (i + 1) + '" ' + VB + ">" + litFace(p, i) + "</svg>"; }).join("");
+  function patch(cls) {
+    var d = document.createElement("div");
+    d.className = "hw-pk " + cls; d.setAttribute("aria-hidden", "true"); d.innerHTML = layers;
+    return d;
+  }
 
-  // Fit the empty corner. The homepage's left column runs close to the edge and on a phone the content fills the
-  // width; a pumpkin half-hidden behind a card looks broken. So measure how wide the bottom-left corner is before
-  // the first box that paints (a background, border, shadow, picture or control; fixed chrome and
-  // pointer-events:none decoration do not count) and size the group to it, or leave it out below MIN.
-  var MIN = 96;
+  /* ---------- 1. the leaf bed ---------- */
+  var bed = document.createElement("canvas");
+  bed.className = "hw-leafbed"; bed.setAttribute("aria-hidden", "true");
+  var BED_H = 30, bedW = 0;
+  function drawBed() {
+    var W = window.innerWidth;
+    if (W === bedW) return;
+    bedW = W;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), ctx = bed.getContext("2d"), H = BED_H;
+    bed.width = Math.round(W * dpr); bed.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+    var seed = 20261031;                                     // mulberry32: the same pile on every page and every visit
+    function rnd() { seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }
+    var PAL = ["#a8431c", "#c9612a", "#c8962e", "#7d4a22", "#8f2f1f", "#d9a441", "#7a6a2a", "#b08a5a", "#b8642a", "#9c5a26"];
+    var g = ctx.createLinearGradient(0, H, 0, H - 22);       // the ground under the pile
+    g.addColorStop(0, "rgba(92, 46, 16, .16)"); g.addColorStop(1, "rgba(92, 46, 16, 0)");
+    ctx.fillStyle = g; ctx.fillRect(0, H - 22, W, 22);
+    var MAPLE = [[0, -1], [0.28, -0.42], [0.9, -0.55], [0.5, 0.05], [0.72, 0.62], [0.12, 0.38], [0, 0.95], [-0.12, 0.38], [-0.72, 0.62], [-0.5, 0.05], [-0.9, -0.55], [-0.28, -0.42]];
+    function leaf(x, y, sz, a, col, kind, shade) {
+      ctx.save(); ctx.translate(x, y); ctx.scale(1, 0.5); ctx.rotate(a);          // lying flat, seen from a low angle
+      ctx.beginPath();
+      if (kind === 0) { ctx.moveTo(0, -sz); ctx.quadraticCurveTo(sz * 0.8, -sz * 0.2, 0, sz); ctx.quadraticCurveTo(-sz * 0.8, -sz * 0.2, 0, -sz); }
+      else if (kind === 1) ctx.arc(0, 0, sz * 0.72, 0, Math.PI * 2);
+      else { ctx.moveTo(MAPLE[0][0] * sz, MAPLE[0][1] * sz); for (var k = 1; k < MAPLE.length; k++) ctx.lineTo(MAPLE[k][0] * sz, MAPLE[k][1] * sz); }
+      ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+      if (shade) { ctx.fillStyle = "rgba(40, 18, 6, " + shade + ")"; ctx.fill(); }
+      ctx.strokeStyle = "rgba(60, 28, 10, .4)"; ctx.lineWidth = 0.9;
+      ctx.beginPath(); ctx.moveTo(0, -sz * 0.85); ctx.lineTo(0, sz * 0.9); ctx.stroke();
+      ctx.restore();
+    }
+    var LAYERS = [[1.1, 0.3], [0.9, 0.15], [0.7, 0]], i, j, n, x;    // back to front: [leaves per 10 px, shade]
+    for (i = 0; i < LAYERS.length; i++) {
+      n = Math.round(W / 10 * LAYERS[i][0]);
+      for (j = 0; j < n; j++) {
+        x = (j + rnd()) * (W + 20) / n - 10;                 // spread evenly, so the pile has no bare gaps
+        var depth = Math.pow(rnd(), 0.8) * (x < 300 && !home ? 14 + 6 * (1 - x / 300) : 14);   // a little mound under the corner pumpkins
+        leaf(x, H - depth + 1, 6 + rnd() * 6, rnd() * Math.PI * 2, PAL[(rnd() * PAL.length) | 0], rnd() < 0.5 ? 0 : (rnd() < 0.7 ? 2 : 1), LAYERS[i][1]);
+      }
+    }
+  }
+  body.insertBefore(bed, body.firstChild);
+  drawBed();
+  var dt = 0;
+  window.addEventListener("resize", function () { clearTimeout(dt); dt = setTimeout(drawBed, 150); });
+
+  var defsEl = document.createElement("div");
+  defsEl.innerHTML = defs;
+  body.insertBefore(defsEl.firstChild, body.firstChild);
+
+  /* ---------- 2a. the homepage: beside the logo that is showing (the big one on wide screens, the h1 one on phones) ---------- */
+  if (home) {
+    var hero = patch("hw-pk-hero");
+    body.appendChild(hero);
+    var placeHero = function () {
+      var big = document.querySelector(".brand-mark"), small = document.querySelector(".page > header h1 svg, .page > header h1 img");
+      var r, left, bottom, w;
+      if (big && big.getBoundingClientRect().height > 0) {
+        r = big.getBoundingClientRect();                     // the mark sits in the middle of a wider box: 37% from its left, the caption ends at 82%
+        left = r.left + r.width * 0.37; bottom = r.top + r.height * 0.82; w = 210;
+      } else if (small && small.getBoundingClientRect().height > 0) {
+        r = small.getBoundingClientRect();
+        left = r.left + r.width / 2 - Math.min(r.width, r.height * 1.4) / 2; bottom = r.bottom; w = 104;
+      } else { hero.style.display = "none"; return; }
+      var gap = w > 150 ? 26 : 12, x = left - gap - w;
+      if (x < 6) { w = left - gap - 6; x = 6; }
+      if (w < 70) { hero.style.display = "none"; return; }
+      hero.style.display = "";
+      hero.style.width = Math.round(w) + "px";
+      hero.style.left = Math.round(x + window.scrollX) + "px";
+      hero.style.top = Math.round(bottom + window.scrollY - w * 130 / 240) + "px";
+    };
+    placeHero();
+    window.addEventListener("load", placeHero);
+    var ht = 0;
+    window.addEventListener("resize", function () { clearTimeout(ht); ht = setTimeout(placeHero, 150); });
+    return;
+  }
+
+  /* ---------- 2b. other pages: the bottom-left corner of the window, on the leaves ----------
+     Sized to how wide that corner is before the first box that paints (a background, border, shadow, picture or
+     control; fixed chrome and pointer-events:none decoration do not count), and left out below MIN: a pumpkin
+     half-hidden behind a card looks broken. */
+  var corner = patch("hw-pumpkins"), MIN = 96;
+  body.insertBefore(corner, bed.nextSibling);
   function paints(els) {
     for (var i = 0; i < els.length; i++) {
       var e = els[i];
@@ -730,8 +827,8 @@ window.__themeKit.fireworks = function (cfg) {
     for (i = 0; i < ys.length; i++) {
       for (x = 4; x < free + 12; x += 8) if (paints(document.elementsFromPoint(x, ys[i]))) { free = x - 12; break; }
     }
-    patch.style.width = Math.max(0, free) + "px";
-    patch.style.display = free < MIN ? "none" : "";
+    corner.style.width = Math.max(0, free) + "px";
+    corner.style.display = free < MIN ? "none" : "";
   }
   fit();
   window.addEventListener("load", fit);
