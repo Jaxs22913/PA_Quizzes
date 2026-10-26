@@ -220,7 +220,7 @@
       <h3>Voice</h3>
       <div class="choices" id="voice-choices">
         <label class="choice hidden" data-v="google"><input type="radio" name="voice" value="google"><b>Natural voice</b><span id="voice-google-note">Google's most natural voices. Free for the class each month.</span></label>
-        <label class="choice" data-v="kokoro"><input type="radio" name="voice" value="kokoro"><b>Free on-device voice</b><span>Kokoro, open source. Downloads about 90 MB once, then works offline. Best on a laptop.</span></label>
+        <label class="choice" data-v="kokoro"><input type="radio" name="voice" value="kokoro"><b>Free on-device voice</b><span id="voice-kokoro-note">Kokoro, open source. Downloads once, then works offline. Best on a laptop.</span></label>
         <label class="choice" data-v="device"><input type="radio" name="voice" value="device"><b>Device voice</b><span>Your browser's built-in voice. Instant, more robotic.</span></label>
         <label class="choice" data-v="none"><input type="radio" name="voice" value="none"><b>Captions only</b><span>No speech; read the replies.</span></label>
       </div>
@@ -347,8 +347,11 @@
   var STATION_FILE = "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json";
   var DOOR_S = 60, ROOM_S = 20 * 60;
   var K_HIST = "local:osce:history", K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
-  var KOKORO_URL = "https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/dist/kokoro.web.js";
-  var KOKORO_MODEL = "onnx-community/Kokoro-82M-v1.0-ONNX";
+  var KOKORO_WORKER = "osce-voice-worker.js";   // the free voice runs there, off this page's main thread
+  // a laptop or desktop with a graphics chip the browser can use runs the voice there (fast, a bigger download);
+  // phones and tablets never try (330 MB, and their tabs run out of memory), so they get the slower 90 MB version
+  var KOKORO_GPU = !!navigator.gpu && !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) &&
+                   !(/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
   // patient voice by the patient's sex; the facilitator in a different voice (Jaxon: "Use a male voice for male pt
   // and female voice for female pt")
   var KOKORO_VOICES = { pm: "am_michael", pf: "af_heart", fm: "bm_george", ff: "bf_emma" };
@@ -495,6 +498,9 @@
     if (p.talk) setRadio("talk", p.talk);
     if (p.pause) $("pause-len").value = p.pause;
     if (!SR) { $("no-mic").classList.remove("hidden"); }
+    $("voice-kokoro-note").textContent = KOKORO_GPU ?
+      "Kokoro, open source. Downloads about 330 MB once, then works offline. Quick on most laptops." :
+      "Kokoro, open source. Downloads about 90 MB once. Slow on phones and tablets: a few seconds before each line.";
     markChoices();
   })();
   document.addEventListener("change", function (e) {
@@ -511,33 +517,82 @@
   var kokoroP = null, kokoro = null;
   var stopAudio = function () {};   // cuts off whatever is speaking (a hold-to-talk press, the presentation)
 
+  // The free voice lives in a background worker (osce-voice-worker.js). Built and run on this page it froze
+  // everything, the clock and the microphone included, for half a second on choosing it and 4 to 7 seconds per line.
+  var kokoroW = null, kokoroJobs = {}, kokoroId = 0, kokoroEpoch = 0, SKIPPED = {};
   function loadKokoro() {
     if (kokoroP) return kokoroP;
     var box = $("kokoro-status"); box.classList.remove("hidden");
     var files = {};
-    kokoroP = import(KOKORO_URL).then(function (m) {
-      return m.KokoroTTS.from_pretrained(KOKORO_MODEL, {
-        dtype: "q8", device: "wasm",
-        progress_callback: function (p) {
-          if (!p || p.status !== "progress" || !p.total) return;
-          files[p.file] = [p.loaded, p.total];
+    kokoroP = new Promise(function (res) {
+      var w;
+      function failed() {
+        try { if (w) w.terminate(); } catch (e) {}
+        kokoroW = null; kokoroP = null; kokoro = null;
+        var jobs = kokoroJobs; kokoroJobs = {};
+        Object.keys(jobs).forEach(function (id) { jobs[id](null); });
+        $("kokoro-text").textContent = "The free voice couldn't load on this device. The device voice will read instead.";
+        res(null);
+      }
+      try { w = new Worker(KOKORO_WORKER, { type: "module" }); } catch (e) { return failed(); }
+      w.onerror = function (e) { if (e && e.preventDefault) e.preventDefault(); failed(); };
+      w.onmessage = function (e) {
+        var m = e.data || {};
+        if (m.type === "progress") {
+          files[m.file] = [m.loaded, m.total];
           var a = 0, b = 0; Object.keys(files).forEach(function (k) { a += files[k][0]; b += files[k][1]; });
           var pct = b ? Math.min(100, Math.round(a / b * 100)) : 0;
           $("kokoro-bar").style.width = pct + "%";
           $("kokoro-text").textContent = "Downloading the free voice… " + pct + "% (once; it is saved in this browser)";
+        } else if (m.type === "ready") {
+          kokoroW = w; kokoro = { say: kokoroSay };
+          $("kokoro-bar").style.width = "100%";
+          $("kokoro-text").textContent = m.fast ? "The free voice is ready." :
+            "The free voice is ready, but this device makes it slowly: a few seconds before each line. The device voice is quicker.";
+          res(kokoro);
+        } else if (m.type === "failed") {
+          failed();
+        } else if (m.type === "audio") {
+          var cb = kokoroJobs[m.id]; delete kokoroJobs[m.id];
+          if (cb) cb(m.wav ? new Blob([m.wav], { type: "audio/wav" }) : m.skipped ? SKIPPED : null);
         }
-      });
-    }).then(function (tts) {
-      kokoro = tts;
-      $("kokoro-bar").style.width = "100%";
-      $("kokoro-text").textContent = "The free voice is ready.";
-      return tts;
-    }).catch(function () {
-      kokoroP = null;
-      $("kokoro-text").textContent = "The free voice couldn't load on this device. The device voice will read instead.";
-      return null;
+      };
+      w.postMessage({ type: "load", gpu: KOKORO_GPU });
     });
     return kokoroP;
+  }
+  // one piece of a line -> its audio (a Blob), SKIPPED once the station has ended, or null if the voice failed
+  function kokoroSay(text, voice) {
+    return new Promise(function (res) {
+      if (!kokoroW) return res(null);
+      var id = ++kokoroId; kokoroJobs[id] = res;
+      kokoroW.postMessage({ type: "say", id: id, text: text, voice: voice, epoch: kokoroEpoch });
+    });
+  }
+  function kokoroCancel() { kokoroEpoch++; if (kokoroW) kokoroW.postMessage({ type: "cancel", epoch: kokoroEpoch }); }
+  // a line in sentence-sized pieces, so the first is ready to speak sooner and none is long enough for the voice to
+  // cut short; a piece under 30 characters takes the next sentence with it ("Dr. Lee", "Yes. It started Monday.")
+  function sentences(text) {
+    var out = [];
+    String(text).replace(/([.!?]["'”)]*)\s+/g, "$1\u0000").split("\u0000").forEach(function (s) {
+      s = s.trim(); if (!s) return;
+      if (out.length && out[out.length - 1].length < 30) out[out.length - 1] += " " + s; else out.push(s);
+    });
+    return out.length ? out : [String(text)];
+  }
+  // play a line's pieces in order; a stop (hold-to-talk, the presentation) ends the whole line
+  function playPieces(pieces) {
+    var stopped = false;
+    function next(i) {
+      if (stopped || i >= pieces.length) return Promise.resolve();
+      return pieces[i].then(function (b) {
+        if (stopped || !b || b === SKIPPED) return;
+        var p = playBlob(b), inner = stopAudio;
+        stopAudio = function () { stopped = true; inner(); };
+        return p.then(function () { return next(i + 1); });
+      });
+    }
+    return next(0);
   }
 
   var deviceVoices = [];
@@ -603,9 +658,13 @@
     }
     if (engine === "kokoro") {
       if (!kokoro) return Promise.resolve(function () { return speakDevice(text, who); });
-      return kokoro.generate(text, { voice: KOKORO_VOICES[voiceKey(who)] }).then(function (a) {
-        var b = a.toBlob(); return function () { return playBlob(b); };
-      }).catch(function () { return function () { return speakDevice(text, who); }; });
+      var voice = KOKORO_VOICES[voiceKey(who)];
+      var pieces = sentences(text).map(function (s) { return kokoro.say(s, voice); });   // queued in order
+      return pieces[0].then(function (first) {
+        if (first === SKIPPED) return function () { return Promise.resolve(); };
+        if (!first) return function () { return speakDevice(text, who); };
+        return function () { return playPieces(pieces); };
+      });
     }
     return Promise.resolve(function () { return speakDevice(text, who); });
   }
@@ -777,9 +836,10 @@
     function prep(i) { if (i < lines.length && !preps[i]) preps[i] = prepare(lines[i].t, lines[i].r === "P" ? "p" : "f"); return preps[i]; }
     lines.forEach(function (l, i) {
       chain = chain.then(function () {
-        if (S.over) return;
+        if (S.over || S.phase === "present") return;
         var p = prep(i); prep(i + 1);
         return p.then(function (play) {
+          if (S.over || S.phase === "present") return;
           nodes[i].classList.add("speaking");
           setMicState(l.r === "P" ? patientName() + " is speaking…" : "Facilitator…");
           return play().then(function () { nodes[i].classList.remove("speaking"); });
@@ -918,14 +978,14 @@
     if (!confirm("End this station without grading? It still counts as one of today's stations.")) return;
     endStation(); show("v-setup"); checkAccess();
   };
-  function endStation() { if (!S) return; S.over = true; clearInterval(tick); stopRec(); clearLive(); stopAudio(); try { speechSynthesis.cancel(); } catch (e) {} }
+  function endStation() { if (!S) return; S.over = true; clearInterval(tick); stopRec(); clearLive(); stopAudio(); kokoroCancel(); try { speechSynthesis.cancel(); } catch (e) {} }
 
   function toPresentation(say) {
     if (!S || S.phase === "present") return;
     S.phase = "present";
     S.roomS = Math.min(ROOM_S, elapsed());
     clearInterval(tick); stopRec(); clearLive();
-    stopAudio();
+    stopAudio(); kokoroCancel();     // the rest of a reply never plays over (or holds up) the presentation prompt
     show("v-present");
     $("present-text").value = "";
     S.presentStart = Date.now();
