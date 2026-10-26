@@ -225,6 +225,17 @@
 
   // ------------------------------------------------------------------ playing an animation
   var seqId = 0, activeId = 0;                       // a newer animation cancels an older one
+  // 2026-10-26: the art is 24 frames a second, so an animation sleeps until its next different frame
+  // instead of waking on every display frame (60-120 a second); same pictures at the same moments.
+  // Never sleeps more than 100 ms at a time, so a newer animation still cancels this one promptly,
+  // and a background tab waits for a display frame, so it stays frozen there as before.
+  function sleepUntil(at, fn) {
+    var wait = at - performance.now();
+    if (wait <= 12) { requestAnimationFrame(fn); return; }
+    setTimeout(function () {
+      if (document.hidden) requestAnimationFrame(fn); else fn(performance.now());
+    }, Math.min(wait, 100));
+  }
   function play(name, loops) {
     var a = man && man.anims[name];
     if (!a) return Promise.resolve();
@@ -245,8 +256,9 @@
           if (token !== activeId) return done();
           var i = Math.floor((now - t0) / ms);
           if (i >= seq.length) { activeId = 0; current = null; rest().then(done); return; }
-          if (i !== last) { last = i; showFrame(img, seq[i]); }
-          requestAnimationFrame(tick);
+          if (i !== last) { if (last < 0 || seq[i] !== seq[last]) showFrame(img, seq[i]); last = i; }
+          var j = i + 1; while (j < seq.length && seq[j] === seq[i]) j++;   // the next tick that looks different
+          sleepUntil(t0 + j * ms, tick);
         }
         requestAnimationFrame(tick);
       });
@@ -498,6 +510,7 @@
     return false;
   }
   function checkOverlap() {
+    lastLook = Date.now();
     if (dock.style.display === "none") {          // hidden: the small "Pip" tab gets the same courtesy
       peek.style.display = "none";
       if (tab.style.display !== "none") tab.classList.toggle("away", covers(tab.getBoundingClientRect(), 0, 1, 0, 1, 3));
@@ -515,6 +528,15 @@
     } else peek.style.display = "none";
   }
   function schedule() { cancelAnimationFrame(awayTimer); awayTimer = requestAnimationFrame(checkOverlap); }
+  // Scrolling, page changes and finished transitions: look at most every 200 ms, and always once after the
+  // last of them, so the final position is always checked (2026-10-26). Each look hit-tests up to 45
+  // points; looking on every scroll frame, and on every heading that slid in, took most of each frame while
+  // a long study guide scrolled. A student's own actions (resize, settings, closing his window) still look at once.
+  var lastLook = 0, soonT = 0;
+  function soon() {
+    if (soonT) return;
+    soonT = setTimeout(function () { soonT = 0; schedule(); }, Math.max(0, 200 - (Date.now() - lastLook)));
+  }
 
   // ------------------------------------------------------------------ settings rows
   function syncSettings() {
@@ -615,15 +637,14 @@
       schedule();
     }).catch(function () {});
     window.addEventListener("resize", function () { resize(); schedule(); });
-    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("scroll", soon, { passive: true });
     // headings and cards that slide in as you scroll land after the scroll check: look again
-    document.addEventListener("transitionend", function (e) { if (!dock.contains(e.target)) schedule(); }, true);
-    document.addEventListener("animationend", function (e) { if (!dock.contains(e.target)) schedule(); }, true);
+    document.addEventListener("transitionend", function (e) { if (!dock.contains(e.target)) soon(); }, true);
+    document.addEventListener("animationend", function (e) { if (!dock.contains(e.target)) soon(); }, true);
     if (window.MutationObserver) {
       new MutationObserver(function () { draw(); paint(CL); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-      // pages animate their own decorations many times a second: look again at most every 250 ms
-      var mt = 0;
-      new MutationObserver(function () { if (!mt) mt = setTimeout(function () { mt = 0; schedule(); }, 250); })
+      // pages animate their own decorations many times a second: soon() looks at most every 200 ms
+      new MutationObserver(soon)
         .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "style"] });
     }
     addSettings();

@@ -442,9 +442,52 @@ a.corner-btn:hover { text-decoration: none; }
   background-size: 300% 300%;
   animation: bg-drift 16s ease-in-out infinite;
 }
+/* Stepped drift (2026-10-26): the same eased path as before, moved in small steps instead of on
+   every display frame, so the whole-window background repaints 15 times a second instead of 60-120.
+   One step changes a color by about one level of 255, too small to see.
+   Made by tools/gen_bg_drift_keyframes.py (steps 6); arcade.css has the bright version. */
 @keyframes bg-drift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; animation-timing-function: steps(6, end); }
+  2.5% { background-position: 0.48% 50%; animation-timing-function: steps(6, end); }
+  5% { background-position: 1.97% 50%; animation-timing-function: steps(6, end); }
+  7.5% { background-position: 4.52% 50%; animation-timing-function: steps(6, end); }
+  10% { background-position: 8.17% 50%; animation-timing-function: steps(6, end); }
+  12.5% { background-position: 12.92% 50%; animation-timing-function: steps(6, end); }
+  15% { background-position: 18.74% 50%; animation-timing-function: steps(6, end); }
+  17.5% { background-position: 25.55% 50%; animation-timing-function: steps(6, end); }
+  20% { background-position: 33.19% 50%; animation-timing-function: steps(6, end); }
+  22.5% { background-position: 41.43% 50%; animation-timing-function: steps(6, end); }
+  25% { background-position: 50% 50%; animation-timing-function: steps(6, end); }
+  27.5% { background-position: 58.57% 50%; animation-timing-function: steps(6, end); }
+  30% { background-position: 66.81% 50%; animation-timing-function: steps(6, end); }
+  32.5% { background-position: 74.45% 50%; animation-timing-function: steps(6, end); }
+  35% { background-position: 81.26% 50%; animation-timing-function: steps(6, end); }
+  37.5% { background-position: 87.08% 50%; animation-timing-function: steps(6, end); }
+  40% { background-position: 91.83% 50%; animation-timing-function: steps(6, end); }
+  42.5% { background-position: 95.48% 50%; animation-timing-function: steps(6, end); }
+  45% { background-position: 98.03% 50%; animation-timing-function: steps(6, end); }
+  47.5% { background-position: 99.52% 50%; animation-timing-function: steps(6, end); }
+  50% { background-position: 100% 50%; animation-timing-function: steps(6, end); }
+  52.5% { background-position: 99.52% 50%; animation-timing-function: steps(6, end); }
+  55% { background-position: 98.03% 50%; animation-timing-function: steps(6, end); }
+  57.5% { background-position: 95.48% 50%; animation-timing-function: steps(6, end); }
+  60% { background-position: 91.83% 50%; animation-timing-function: steps(6, end); }
+  62.5% { background-position: 87.08% 50%; animation-timing-function: steps(6, end); }
+  65% { background-position: 81.26% 50%; animation-timing-function: steps(6, end); }
+  67.5% { background-position: 74.45% 50%; animation-timing-function: steps(6, end); }
+  70% { background-position: 66.81% 50%; animation-timing-function: steps(6, end); }
+  72.5% { background-position: 58.57% 50%; animation-timing-function: steps(6, end); }
+  75% { background-position: 50% 50%; animation-timing-function: steps(6, end); }
+  77.5% { background-position: 41.43% 50%; animation-timing-function: steps(6, end); }
+  80% { background-position: 33.19% 50%; animation-timing-function: steps(6, end); }
+  82.5% { background-position: 25.55% 50%; animation-timing-function: steps(6, end); }
+  85% { background-position: 18.74% 50%; animation-timing-function: steps(6, end); }
+  87.5% { background-position: 12.92% 50%; animation-timing-function: steps(6, end); }
+  90% { background-position: 8.17% 50%; animation-timing-function: steps(6, end); }
+  92.5% { background-position: 4.52% 50%; animation-timing-function: steps(6, end); }
+  95% { background-position: 1.97% 50%; animation-timing-function: steps(6, end); }
+  97.5% { background-position: 0.48% 50%; animation-timing-function: steps(6, end); }
+  100% { background-position: 0% 50%; }
 }
 
 /* Valentine's window (Jan 31 - Feb 14, see theme.js) -- homepage-only

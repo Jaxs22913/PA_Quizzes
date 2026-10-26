@@ -12298,13 +12298,17 @@ function initHeader() {
 // button index -> whatever action makes sense there (mirrors how each page
 // also owns its own keydown handler).
 window.addEventListener("gamepadconnected", function () { showToast("Controller connected"); });
+// Polls only while a controller is connected (2026-10-26): it used to run on every display frame for
+// everyone. Browsers show a page no controller until a button is pressed, and that press fires
+// gamepadconnected, so polling from then on still catches that first press.
 (function () {
-  var prevButtons = {};
+  var prevButtons = {}, polling = false;
   function poll() {
-    var pads = navigator.getGamepads ? navigator.getGamepads() : [];
+    var pads = navigator.getGamepads ? navigator.getGamepads() : [], any = false;
     for (var i = 0; i < pads.length; i++) {
       var pad = pads[i];
       if (!pad) continue;
+      any = true;
       var prev = prevButtons[pad.index] || [];
       pad.buttons.forEach(function (b, bi) {
         var wasPressed = prev[bi] && prev[bi].pressed;
@@ -12312,9 +12316,11 @@ window.addEventListener("gamepadconnected", function () { showToast("Controller 
       });
       prevButtons[pad.index] = pad.buttons.map(function (b) { return { pressed: b.pressed }; });
     }
-    requestAnimationFrame(poll);
+    if (any) requestAnimationFrame(poll); else polling = false;
   }
-  requestAnimationFrame(poll);
+  function begin() { if (!polling) { polling = true; requestAnimationFrame(poll); } }
+  window.addEventListener("gamepadconnected", begin);
+  begin();   // one look now, for a controller this page can already see; stops at once if there is none
 })();
 
 /* ============================================================

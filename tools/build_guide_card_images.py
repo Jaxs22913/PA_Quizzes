@@ -32,10 +32,19 @@ overrides it wherever the proposal was bad. Three kinds of bad came up:
 
 Run after adding a guide, a cram sheet or a new images folder; rewrites the
 block of <span class="gc-thumb"> elements inside guides.html in place.
+
+THUMBNAILS (2026-10-26). A card shows its picture as a 92px-tall strip, but used to load the full
+picture: 9.9 MB for the 55 cards, and a 2898 x 2321 photo decodes to 27 MB of memory. Each card now
+loads a copy in guide-card-thumbs/ cut to what a strip can ever show: the middle band of the picture
+(object-fit: cover keeps the middle, and the narrowest card, 190px in a fanned past-exam stack, shows a
+band 2 times as wide as it is tall), at most 1200px wide (a 400px card on a 3x phone), as WebP, with any
+transparency, color profile and camera rotation kept. About 2 MB for all 55. The file name carries a
+hash of the picture and these settings, so a changed picture gets a new name; thumbnails no card uses
+any more are deleted.
 """
-import glob, json, os, re, sys
+import glob, hashlib, io, json, os, re, sys
 from urllib.parse import unquote, quote
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -85,6 +94,41 @@ EXCLUDE = {
     "l6_s103_1.jpg",                       # herpes zoster ophthalmicus, crusted
     "l14-s017_pos1.jpg", "l14-s029_pos1.jpg",  # globe rupture, lid laceration
 }
+
+THUMBS = "guide-card-thumbs"
+THUMB_ASPECT, THUMB_MAX_W, THUMB_Q = 2.0, 1200, 82
+
+
+def thumb(src, card):
+    """Path (from the repo root) of the strip-sized WebP copy of `src` for `card`, made if missing."""
+    raw = open(src, "rb").read()
+    tag = hashlib.sha1(raw + repr((THUMB_ASPECT, THUMB_MAX_W, THUMB_Q)).encode()).hexdigest()[:10]
+    rel = "%s/%s-%s.webp" % (THUMBS, os.path.splitext(os.path.basename(card))[0], tag)
+    out = os.path.join(ROOT, rel)
+    if os.path.exists(out):
+        return rel
+    im = Image.open(io.BytesIO(raw))
+    icc = im.info.get("icc_profile")
+    im = ImageOps.exif_transpose(im)
+    alpha = im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info)
+    im = im.convert("RGBA" if alpha else "RGB")
+    if alpha and im.getchannel("A").getextrema()[0] == 255:
+        im = im.convert("RGB")                     # an alpha channel with nothing see-through
+    w, h = im.size
+    if w / h < THUMB_ASPECT:                       # keep the middle band, the part a strip shows
+        ch = round(w / THUMB_ASPECT)
+        top = (h - ch) // 2
+        im = im.crop((0, top, w, top + ch))
+    w, h = im.size
+    if w > THUMB_MAX_W:
+        im = im.resize((THUMB_MAX_W, round(h * THUMB_MAX_W / w)), Image.LANCZOS)
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    kw = {"quality": THUMB_Q, "method": 6}
+    if icc:
+        kw["icc_profile"] = icc
+    im.save(out, "WEBP", **kw)
+    return rel
+
 
 BLOCK = re.compile(r'<a class="guide-card([^"]*)"([^>]*)href="([^"]+)"([^>]*)>(\s*)')
 THUMB = re.compile(r'\s*<span class="gc-thumb"><img[^>]*></span>')
@@ -173,12 +217,15 @@ def main():
         else:
             skipped.append((path, "no unused image left in its folder"))
 
+    made = set()
+
     def inject(m):
         path = unquote(m.group(3))
         p = picks.get(path)
         if not p:
             return m.group(0)
-        rel = quote(os.path.relpath(p, ROOT))
+        rel = quote(thumb(p, path))
+        made.add(unquote(rel))
         return (m.group(0) + '<span class="gc-thumb"><img src="%s" alt="" '
                 'loading="lazy" decoding="async"></span>' % rel)
 
@@ -188,6 +235,10 @@ def main():
     print("%d of %d cards get a picture" % (len(picks), len(cards)))
     for path, why in skipped:
         print("   no picture: %-52s %s" % (os.path.basename(path)[:52], why))
+    for old in glob.glob(os.path.join(ROOT, THUMBS, "*.webp")):
+        if os.path.relpath(old, ROOT) not in made:
+            os.remove(old)
+            print("   removed unused thumbnail", os.path.basename(old))
     json.dump({k: os.path.relpath(v, ROOT) for k, v in picks.items()},
               open(os.path.join(ROOT, "tools", "guide_card_images.json"), "w"), indent=1)
 

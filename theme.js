@@ -5222,7 +5222,8 @@ window.__themeSeason = (function () {
   function start() {
     if (!document.body || document.body.getAttribute("data-dark-kind") !== "quiz") return;
     if (!document.getElementById("quiz")) return;
-    load();
+    // the links are first needed under an answer: fetch them once the page has settled, not while it starts up
+    (window.requestIdleCallback || function (f) { setTimeout(f, 300); })(load, { timeout: 2000 });
     new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);

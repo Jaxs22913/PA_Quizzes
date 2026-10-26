@@ -69,9 +69,95 @@
   background-attachment: fixed, scroll;
   animation: bg-drift 26s ease-in-out infinite;
 }
+/* Stepped drift (2026-10-26): the same eased path as before, moved in small steps instead of on
+   every display frame, so the whole-window background repaints about 25 times a second (bg-drift,
+   the bright 26 s drift) or 15 (bg-drift-soft, the pale seasonal tints) instead of 60-120. One step
+   changes a color by about one level of 255, too small to see. Made by tools/gen_bg_drift_keyframes.py. */
 @keyframes bg-drift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; animation-timing-function: steps(16, end); }
+  2.5% { background-position: 0.48% 50%; animation-timing-function: steps(16, end); }
+  5% { background-position: 1.97% 50%; animation-timing-function: steps(16, end); }
+  7.5% { background-position: 4.52% 50%; animation-timing-function: steps(16, end); }
+  10% { background-position: 8.17% 50%; animation-timing-function: steps(16, end); }
+  12.5% { background-position: 12.92% 50%; animation-timing-function: steps(16, end); }
+  15% { background-position: 18.74% 50%; animation-timing-function: steps(16, end); }
+  17.5% { background-position: 25.55% 50%; animation-timing-function: steps(16, end); }
+  20% { background-position: 33.19% 50%; animation-timing-function: steps(16, end); }
+  22.5% { background-position: 41.43% 50%; animation-timing-function: steps(16, end); }
+  25% { background-position: 50% 50%; animation-timing-function: steps(16, end); }
+  27.5% { background-position: 58.57% 50%; animation-timing-function: steps(16, end); }
+  30% { background-position: 66.81% 50%; animation-timing-function: steps(16, end); }
+  32.5% { background-position: 74.45% 50%; animation-timing-function: steps(16, end); }
+  35% { background-position: 81.26% 50%; animation-timing-function: steps(16, end); }
+  37.5% { background-position: 87.08% 50%; animation-timing-function: steps(16, end); }
+  40% { background-position: 91.83% 50%; animation-timing-function: steps(16, end); }
+  42.5% { background-position: 95.48% 50%; animation-timing-function: steps(16, end); }
+  45% { background-position: 98.03% 50%; animation-timing-function: steps(16, end); }
+  47.5% { background-position: 99.52% 50%; animation-timing-function: steps(16, end); }
+  50% { background-position: 100% 50%; animation-timing-function: steps(16, end); }
+  52.5% { background-position: 99.52% 50%; animation-timing-function: steps(16, end); }
+  55% { background-position: 98.03% 50%; animation-timing-function: steps(16, end); }
+  57.5% { background-position: 95.48% 50%; animation-timing-function: steps(16, end); }
+  60% { background-position: 91.83% 50%; animation-timing-function: steps(16, end); }
+  62.5% { background-position: 87.08% 50%; animation-timing-function: steps(16, end); }
+  65% { background-position: 81.26% 50%; animation-timing-function: steps(16, end); }
+  67.5% { background-position: 74.45% 50%; animation-timing-function: steps(16, end); }
+  70% { background-position: 66.81% 50%; animation-timing-function: steps(16, end); }
+  72.5% { background-position: 58.57% 50%; animation-timing-function: steps(16, end); }
+  75% { background-position: 50% 50%; animation-timing-function: steps(16, end); }
+  77.5% { background-position: 41.43% 50%; animation-timing-function: steps(16, end); }
+  80% { background-position: 33.19% 50%; animation-timing-function: steps(16, end); }
+  82.5% { background-position: 25.55% 50%; animation-timing-function: steps(16, end); }
+  85% { background-position: 18.74% 50%; animation-timing-function: steps(16, end); }
+  87.5% { background-position: 12.92% 50%; animation-timing-function: steps(16, end); }
+  90% { background-position: 8.17% 50%; animation-timing-function: steps(16, end); }
+  92.5% { background-position: 4.52% 50%; animation-timing-function: steps(16, end); }
+  95% { background-position: 1.97% 50%; animation-timing-function: steps(16, end); }
+  97.5% { background-position: 0.48% 50%; animation-timing-function: steps(16, end); }
+  100% { background-position: 0% 50%; }
+}
+@keyframes bg-drift-soft {
+  0% { background-position: 0% 50%; animation-timing-function: steps(6, end); }
+  2.5% { background-position: 0.48% 50%; animation-timing-function: steps(6, end); }
+  5% { background-position: 1.97% 50%; animation-timing-function: steps(6, end); }
+  7.5% { background-position: 4.52% 50%; animation-timing-function: steps(6, end); }
+  10% { background-position: 8.17% 50%; animation-timing-function: steps(6, end); }
+  12.5% { background-position: 12.92% 50%; animation-timing-function: steps(6, end); }
+  15% { background-position: 18.74% 50%; animation-timing-function: steps(6, end); }
+  17.5% { background-position: 25.55% 50%; animation-timing-function: steps(6, end); }
+  20% { background-position: 33.19% 50%; animation-timing-function: steps(6, end); }
+  22.5% { background-position: 41.43% 50%; animation-timing-function: steps(6, end); }
+  25% { background-position: 50% 50%; animation-timing-function: steps(6, end); }
+  27.5% { background-position: 58.57% 50%; animation-timing-function: steps(6, end); }
+  30% { background-position: 66.81% 50%; animation-timing-function: steps(6, end); }
+  32.5% { background-position: 74.45% 50%; animation-timing-function: steps(6, end); }
+  35% { background-position: 81.26% 50%; animation-timing-function: steps(6, end); }
+  37.5% { background-position: 87.08% 50%; animation-timing-function: steps(6, end); }
+  40% { background-position: 91.83% 50%; animation-timing-function: steps(6, end); }
+  42.5% { background-position: 95.48% 50%; animation-timing-function: steps(6, end); }
+  45% { background-position: 98.03% 50%; animation-timing-function: steps(6, end); }
+  47.5% { background-position: 99.52% 50%; animation-timing-function: steps(6, end); }
+  50% { background-position: 100% 50%; animation-timing-function: steps(6, end); }
+  52.5% { background-position: 99.52% 50%; animation-timing-function: steps(6, end); }
+  55% { background-position: 98.03% 50%; animation-timing-function: steps(6, end); }
+  57.5% { background-position: 95.48% 50%; animation-timing-function: steps(6, end); }
+  60% { background-position: 91.83% 50%; animation-timing-function: steps(6, end); }
+  62.5% { background-position: 87.08% 50%; animation-timing-function: steps(6, end); }
+  65% { background-position: 81.26% 50%; animation-timing-function: steps(6, end); }
+  67.5% { background-position: 74.45% 50%; animation-timing-function: steps(6, end); }
+  70% { background-position: 66.81% 50%; animation-timing-function: steps(6, end); }
+  72.5% { background-position: 58.57% 50%; animation-timing-function: steps(6, end); }
+  75% { background-position: 50% 50%; animation-timing-function: steps(6, end); }
+  77.5% { background-position: 41.43% 50%; animation-timing-function: steps(6, end); }
+  80% { background-position: 33.19% 50%; animation-timing-function: steps(6, end); }
+  82.5% { background-position: 25.55% 50%; animation-timing-function: steps(6, end); }
+  85% { background-position: 18.74% 50%; animation-timing-function: steps(6, end); }
+  87.5% { background-position: 12.92% 50%; animation-timing-function: steps(6, end); }
+  90% { background-position: 8.17% 50%; animation-timing-function: steps(6, end); }
+  92.5% { background-position: 4.52% 50%; animation-timing-function: steps(6, end); }
+  95% { background-position: 1.97% 50%; animation-timing-function: steps(6, end); }
+  97.5% { background-position: 0.48% 50%; animation-timing-function: steps(6, end); }
+  100% { background-position: 0% 50%; }
 }
 /* Seasonal light-mode tints (see theme.js for the date windows that add
    these body classes) -- explicitly scoped to [data-theme="light"] so
@@ -82,63 +168,63 @@
   background: linear-gradient(120deg, #fbe7ee, #fef0f7, #f5d3e0, #fbe7ee);
   background-color: #fbe7ee;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.fall-theme {
   --bg: #fdf1e4; --card: #fffdf8; --border: #f0dcc0;
   background: linear-gradient(120deg, #fdf1e4, #fef8ef, #f8dfc0, #fdf1e4);
   background-color: #fdf1e4;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.stpatricks-theme {
   --bg: #d7f0dd; --card: #f9fefb; --border: #a9dab8;
   background: linear-gradient(120deg, #d7f0dd, #e9f9ec, #bfe8ca, #d7f0dd);
   background-color: #d7f0dd;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.xmas-theme {
   --bg: #faf3e3; --card: #fffdf7; --border: #ece0c4;
   background: linear-gradient(120deg, #faf3e3, #fffcf3, #f3e4c4, #faf3e3);
   background-color: #faf3e3;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.paweek-theme {
   --bg: #e7f6f4; --card: #fbfffe; --border: #c7e7e1;
   background: linear-gradient(120deg, #e7f6f4, #f2fbf9, #d4edf2, #e7f6f4);
   background-color: #e7f6f4;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.halloween-theme {
   --bg: #f1e9f6; --card: #fefcff; --border: #dccbea;
   background: linear-gradient(120deg, #f1e9f6, #f8f1fb, #f6dcc6, #f1e9f6);
   background-color: #f1e9f6;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.fireworks-theme {
   --bg: #eef3fb; --card: #fbfdff; --border: #cdd9ee;
   background: linear-gradient(120deg, #eef3fb, #fbf1f1, #e0eaf9, #eef3fb);
   background-color: #eef3fb;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.newyear-theme {
   --bg: #eef0f6; --card: #fefeff; --border: #d3d8e8;
   background: linear-gradient(120deg, #eef0f6, #f8f4e8, #e2e6f2, #eef0f6);
   background-color: #eef0f6;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 :root[data-theme="light"] body.thanksgiving-theme {
   --bg: #fdf6e8; --card: #fffefa; --border: #efe0bc;
   background: linear-gradient(120deg, #fdf6e8, #fffaf0, #f8ebc9, #fdf6e8);
   background-color: #fdf6e8;
   background-size: 300% 300%;
-  animation: bg-drift 16s ease-in-out infinite;
+  animation: bg-drift-soft 16s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   /* !important needed: the :root[data-theme=...]-scoped drift rules above
