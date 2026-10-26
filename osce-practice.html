@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+<!-- Pip stays off this page: the student is talking to a patient, and Pip's own window would compete for the
+     microphone and the screen. theme.js loads Pip only when window.__pip is unset. -->
+<script>window.__pip = { gated: true, off: "osce-practice" };</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSCE Practice — PA Quizzes</title>
+<meta name="description" content="Practice a cardiac OSCE station out loud: a talking standardized patient, the real one-minute door form and twenty-minute room, and a grade against the run-sheet.">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js" defer></script>
+<script src="pip/pip-superbrain.js" defer></script>
+<style>
+  /* OSCE practice (2026-10-26). Authored in LIGHT colours only: theme.css turns dark mode on by inverting
+     body > .wrap (see review.html for why a second dark palette here would double-invert). */
+  :root{
+    --ink:#1b2030; --muted:#6b7280; --line:#e6e8ef; --paper:#f6f7fb; --card:#fff;
+    /* literal values, not theme.css's --a-violet tokens: those turn dark in dark mode, and this page is then
+       inverted a second time (light on light, 1.02:1) */
+    --acc:#9c46f3; --acc-ink:#8b30e0; --acc-soft:#f7f2ff;
+    --good:#1f7a3a; --good-soft:#e9f7ef; --part:#a15c00; --part-soft:#fff4e0; --miss:#b42335; --miss-soft:#fbeef0;
+    --pt:#1d4ed8; --pt-soft:#eef3ff; --fac:#0f766e; --fac-soft:#e7f6f4;
+    --shadow:0 1px 2px rgba(20,22,40,.05),0 8px 24px rgba(20,22,40,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 18px 72px;}
+  .back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;margin-bottom:14px;}
+  .back:hover{color:var(--acc-ink);}
+  .back svg{width:15px;height:15px;}
+  h1{font-family:var(--font-display,Georgia,serif);font-size:31px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;}
+  h2{font-size:19px;margin:0 0 10px;line-height:1.3;}
+  h3{font-size:15.5px;margin:18px 0 8px;}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 20px;max-width:64ch;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg,16px);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .muted{color:var(--muted);}
+  .small{font-size:13.5px;}
+  .hidden{display:none !important;}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-size:15px;font-weight:700;
+    border-radius:var(--r-pill,999px);padding:11px 20px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+    transition:background .15s ease,border-color .15s ease,transform .15s ease;text-decoration:none;}
+  .btn:hover{border-color:var(--acc);}
+  .btn:active{transform:translateY(1px);}
+  .btn.primary{background:var(--acc-ink);border-color:var(--acc-ink);color:#fff;}
+  .btn.primary:hover{background:var(--acc);}
+  .btn.quiet{background:transparent;border-color:transparent;color:var(--muted);padding:8px 12px;}
+  .btn.quiet:hover{color:var(--acc-ink);}
+  .btn:disabled{opacity:.5;cursor:default;transform:none;}
+  .btn svg{width:17px;height:17px;flex:none;}
+  input[type=text],textarea,select{font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%;}
+  input[type=text]:focus,textarea:focus,select:focus{outline:2px solid color-mix(in oklab,var(--acc) 45%,transparent);outline-offset:1px;border-color:var(--acc);}
+  .note{background:var(--acc-soft);border:1px solid color-mix(in oklab,var(--acc) 25%,transparent);border-radius:12px;padding:11px 14px;font-size:14px;}
+  .warn{background:var(--part-soft);border:1px solid color-mix(in oklab,var(--part) 30%,transparent);border-radius:12px;padding:11px 14px;font-size:14px;}
+
+  /* setup */
+  .choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0 4px;}
+  .choice{position:relative;display:block;border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 40px;cursor:pointer;background:var(--card);}
+  .choice:hover{border-color:var(--acc);}
+  .choice input{position:absolute;left:14px;top:15px;accent-color:var(--acc-ink);}
+  .choice b{display:block;font-size:15px;}
+  .choice span{display:block;font-size:13.5px;color:#5c6370;line-height:1.45;margin-top:2px;}   /* 5.4:1 on the violet wash */
+  .choice.on{border-color:var(--acc-ink);background:var(--acc-soft);}
+  details.pick{margin-top:10px;}
+  details.pick summary{cursor:pointer;font-size:14px;font-weight:650;color:var(--acc-ink);}
+  .case-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin-top:10px;}
+  .case-list .choice{padding:10px 12px 10px 38px;}
+  .bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:8px;}
+  .bar i{display:block;height:100%;width:0;background:var(--acc-ink);border-radius:99px;transition:width .3s ease;}
+  .history{font-size:13.5px;color:var(--muted);margin-top:8px;}
+
+  /* door form */
+  .door{max-width:560px;margin:0 auto;}
+  .door .timer{font-variant-numeric:tabular-nums;font-size:44px;font-weight:800;text-align:center;letter-spacing:.02em;margin:4px 0 2px;}
+  .door-form{border:2px solid var(--ink);border-radius:6px;padding:18px 20px;background:#fffef8;font-size:15.5px;}
+  .door-form .df-h{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12.5px;color:var(--muted);margin-bottom:10px;}
+  .door-form dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0;}
+  .door-form dt{color:var(--muted);font-size:14px;}
+  .door-form dd{margin:0;font-weight:600;}
+  .door-form .cc{font-size:18px;font-weight:750;margin:12px 0;padding:10px 12px;background:var(--paper);border-radius:6px;}
+  .door-form .vitals{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 14px;margin-top:6px;}
+  .door-form .vitals div{font-size:14.5px;}
+  .door-form .vitals b{font-variant-numeric:tabular-nums;}
+
+  /* room */
+  .roombar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+    background:color-mix(in oklab,var(--paper) 92%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:10px 0;margin-bottom:8px;border-bottom:1px solid var(--line);}
+  .clock{font-variant-numeric:tabular-nums;font-size:26px;font-weight:800;min-width:92px;}
+  .clock.low{color:var(--miss);}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:99px;padding:4px 10px;background:var(--acc-soft);color:var(--acc-ink);border:1px solid color-mix(in oklab,var(--acc) 25%,transparent);}
+  .mini-door{font-size:14px;}
+  .mini-door summary{cursor:pointer;font-weight:650;color:var(--acc-ink);}
+  .mini-door .door-form{margin-top:8px;}
+  .transcript{display:flex;flex-direction:column;gap:9px;min-height:180px;margin:12px 0 14px;}
+  /* scroll-margin: a new line scrolls into view above the sticky typing bar, below the sticky clock */
+  .line{scroll-margin:84px 0 190px;max-width:88%;padding:9px 13px;border-radius:14px;font-size:15px;line-height:1.5;border:1px solid var(--line);background:var(--card);}
+  .line .who{display:block;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;}
+  .line.s{align-self:flex-end;background:var(--acc-soft);border-color:color-mix(in oklab,var(--acc) 25%,transparent);}
+  .line.s .who{color:var(--acc-ink);}
+  .line.p{align-self:flex-start;background:var(--pt-soft);border-color:color-mix(in oklab,var(--pt) 20%,transparent);}
+  .line.p .who{color:var(--pt);}
+  .line.f,.line.x{align-self:flex-start;background:var(--fac-soft);border-color:color-mix(in oklab,var(--fac) 22%,transparent);}
+  .line.f .who,.line.x .who{color:var(--fac);}
+  .line.x .mname{font-weight:700;}
+  .line.sys{align-self:center;background:transparent;border:0;color:var(--muted);font-size:13.5px;text-align:center;padding:2px 8px;}
+  .line.err{align-self:center;background:var(--miss-soft);border-color:color-mix(in oklab,var(--miss) 25%,transparent);font-size:14px;}
+  .line.speaking{box-shadow:0 0 0 3px color-mix(in oklab,var(--pt) 30%,transparent);}
+  .line.live{opacity:.75;font-style:italic;}
+  .composer{position:sticky;bottom:0;z-index:5;background:color-mix(in oklab,var(--paper) 94%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    padding:12px 0 14px;border-top:1px solid var(--line);}
+  .mic{width:64px;height:64px;border-radius:50%;border:0;background:var(--acc-ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:none;
+    box-shadow:0 4px 14px color-mix(in oklab,var(--acc) 35%,transparent);transition:transform .15s ease,background .15s ease;touch-action:none;}
+  .mic svg{width:28px;height:28px;}
+  .mic.off{background:#8b8f9c;box-shadow:none;}
+  .mic.hot{animation:mic-pulse 1.4s ease-in-out infinite;}
+  @keyframes mic-pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in oklab,var(--acc) 45%,transparent)}50%{box-shadow:0 0 0 12px color-mix(in oklab,var(--acc) 0%,transparent)}}
+  .mic-state{font-size:14px;font-weight:650;min-height:22px;}
+  .typed{display:flex;gap:8px;flex:1 1 260px;}
+  .typed input{flex:1;}
+  .thinking{display:inline-flex;gap:4px;}
+  .thinking i{width:6px;height:6px;border-radius:50%;background:var(--pt);animation:dot 1s ease-in-out infinite;}
+  .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
+  @keyframes dot{0%,100%{opacity:.25}50%{opacity:1}}
+
+  /* report */
+  .score{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .score .big{font-size:46px;font-weight:850;line-height:1;font-variant-numeric:tabular-nums;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-size:13px;font-weight:700;border-radius:99px;padding:4px 10px;border:1px solid var(--line);}
+  .chip.met{background:var(--good-soft);color:var(--good);}
+  .chip.partial{background:var(--part-soft);color:var(--part);}
+  .chip.missed{background:var(--miss-soft);color:var(--miss);}
+  details.sec{border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:10px;}
+  details.sec > summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;font-weight:700;}
+  details.sec > summary::-webkit-details-marker{display:none;}
+  details.sec > summary .meter{font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap;}
+  details.sec > summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-left:4px;flex:none;transition:transform .15s ease;}
+  details.sec[open] > summary::after{transform:rotate(-135deg);}
+  .sec-body{padding:0 16px 14px;}
+  .grp{font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px;}
+  .item{display:flex;gap:10px;padding:7px 0;border-top:1px dashed var(--line);font-size:14.5px;}
+  .item:first-child{border-top:0;}
+  .item .ic{flex:none;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;margin-top:1px;}
+  .item.met .ic{background:var(--good-soft);color:var(--good);}
+  .item.partial .ic{background:var(--part-soft);color:var(--part);}
+  .item.missed .ic{background:var(--miss-soft);color:var(--miss);}
+  .item .q{display:block;font-size:13.5px;color:var(--muted);margin-top:2px;}
+  .item .try{display:block;font-size:13.5px;color:var(--acc-ink);margin-top:2px;}
+  .item .kind{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-left:6px;}
+  .item label{display:inline-flex;gap:6px;align-items:center;font-size:13.5px;margin-top:4px;cursor:pointer;}
+  .fb p{margin:6px 0;}
+  .fb dt{font-weight:750;margin-top:10px;}
+  .fb dd{margin:2px 0 0;}
+  ul.tight{margin:6px 0;padding-left:20px;}
+  ul.tight li{margin:3px 0;}
+  .keybox dt{font-weight:750;margin-top:12px;}
+  .keybox dd{margin:3px 0 0;}
+  .ddx{border-left:3px solid var(--line);padding:4px 0 4px 10px;margin:6px 0;}
+  .ddx b{display:block;}
+  .tx{font-size:14px;line-height:1.55;}
+  .tx p{margin:4px 0;}
+
+  @media (max-width:560px){
+    h1{font-size:26px}
+    .wrap{padding:20px 14px 60px}
+    .card{padding:15px 15px;}
+    .door .timer{font-size:38px;}
+    .line{max-width:96%;}
+    .mic{width:58px;height:58px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn,.bar i,.mic,details.sec > summary::after{transition:none;}
+    .mic.hot,.thinking i{animation:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back back-link" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to home
+  </a>
+
+  <!-- ============================================================ setup -->
+  <section id="v-setup">
+    <h1>OSCE Practice</h1>
+    <p class="sub">A practice OSCE (objective structured clinical examination) station you run out loud. Read the door
+      form for one minute, then walk in: talk to the patient, narrate your exam, and the facilitator reads you the
+      findings. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
+
+    <div class="card" id="access">
+      <div id="access-msg" class="muted">Checking your sign-in…</div>
+      <div id="access-actions" class="row" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card" id="setup-card">
+      <h2>Station</h2>
+      <div class="choices">
+        <label class="choice on"><input type="radio" name="station" value="cardiac" checked><b>Cardiac</b><span>Cardiovascular and peripheral vascular. Run-sheet from Physical Diagnosis II.</span></label>
+      </div>
+
+      <h3>Case</h3>
+      <div class="choices">
+        <label class="choice on" id="case-random-wrap"><input type="radio" name="casemode" value="random" checked><b>Surprise me</b><span>A case you have not done lately. You will not know the diagnosis, like the real station.</span></label>
+      </div>
+      <details class="pick" id="case-pick">
+        <summary>Choose a specific case (shows the diagnosis)</summary>
+        <div class="case-list" id="case-list"></div>
+      </details>
+
+      <h3>Who answers your history questions</h3>
+      <div class="choices">
+        <label class="choice on"><input type="radio" name="rules" value="patient" checked><b>The patient talks</b><span>The patient answers in their own words. Easiest way to practice the interview.</span></label>
+        <label class="choice"><input type="radio" name="rules" value="real"><b>Real station rules</b><span>The patient gives only their name and date of birth; the facilitator answers everything else.</span></label>
+      </div>
+
+      <h3>Voice</h3>
+      <div class="choices" id="voice-choices">
+        <label class="choice hidden" data-v="google"><input type="radio" name="voice" value="google"><b>Natural voice</b><span id="voice-google-note">Google's most natural voices. Free for the class each month.</span></label>
+        <label class="choice" data-v="kokoro"><input type="radio" name="voice" value="kokoro"><b>Free on-device voice</b><span>Kokoro, open source. Downloads about 90 MB once, then works offline. Best on a laptop.</span></label>
+        <label class="choice" data-v="device"><input type="radio" name="voice" value="device"><b>Device voice</b><span>Your browser's built-in voice. Instant, more robotic.</span></label>
+        <label class="choice" data-v="none"><input type="radio" name="voice" value="none"><b>Captions only</b><span>No speech; read the replies.</span></label>
+      </div>
+      <div id="kokoro-status" class="small muted hidden"><span id="kokoro-text">Downloading the free voice…</span><div class="bar"><i id="kokoro-bar"></i></div></div>
+      <p class="small muted" style="margin:8px 0 0">The patient speaks in a voice that matches their sex; the facilitator has a different voice.
+        <button type="button" class="btn quiet small" id="voice-test">Test the voices</button></p>
+
+      <h3>Talking</h3>
+      <div class="choices">
+        <label class="choice on"><input type="radio" name="talk" value="free" checked><b>Hands-free</b><span>Just talk. When you pause, your words go to the patient.</span></label>
+        <label class="choice"><input type="radio" name="talk" value="hold"><b>Hold to talk</b><span>Hold the microphone button (or the space bar) while you speak.</span></label>
+      </div>
+      <div class="row small" style="margin-top:8px">
+        <label for="pause-len" class="muted">Pause before your words are sent</label>
+        <select id="pause-len" style="width:auto">
+          <option value="1300">Short (1.3 seconds)</option>
+          <option value="1900" selected>Normal (1.9 seconds)</option>
+          <option value="2700">Long (2.7 seconds)</option>
+        </select>
+      </div>
+      <p id="no-mic" class="warn small hidden" style="margin-top:10px">This browser can't turn speech into text, so you will type instead. For talking out loud, use Chrome, Edge or Safari.</p>
+
+      <div class="row" style="margin-top:18px">
+        <button type="button" class="btn primary" id="start" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9V3z"/></svg>
+          Start the station
+        </button>
+        <span id="start-note" class="small muted"></span>
+      </div>
+      <div id="history" class="history"></div>
+    </div>
+
+    <p class="small muted">Privacy: your browser turns your speech into text (Chrome and Edge send the audio to
+      their speech service; Safari may use Apple's). Only that text goes to Claude, to play the patient and to grade
+      you. Nothing you say is kept after your grade comes back. Practice only: the grade is an estimate, not your
+      course's score.</p>
+  </section>
+
+  <!-- ============================================================ door -->
+  <section id="v-door" class="hidden">
+    <div class="door">
+      <p class="muted small" style="text-align:center;margin:0">Read the form. You have one minute before you enter.</p>
+      <div class="timer" id="door-clock">1:00</div>
+      <div id="door-form"></div>
+      <div class="row" style="justify-content:center;margin-top:16px">
+        <button type="button" class="btn primary" id="enter">Enter the room</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ room -->
+  <section id="v-room" class="hidden">
+    <div class="roombar">
+      <div class="row">
+        <div class="clock" id="room-clock" aria-label="Time left in the room">20:00</div>
+        <span class="badge" id="rules-badge">The patient talks</span>
+      </div>
+      <div class="row">
+        <button type="button" class="btn" id="to-present">Finish and present</button>
+        <button type="button" class="btn quiet" id="end-station">End without grading</button>
+      </div>
+    </div>
+    <details class="mini-door"><summary>Door form</summary><div id="door-form-mini"></div></details>
+    <div class="transcript" id="transcript" aria-live="polite"></div>
+    <div class="composer">
+      <div class="row">
+        <button type="button" class="mic" id="mic" aria-label="Microphone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg>
+        </button>
+        <div style="flex:1 1 200px;min-width:0">
+          <div class="mic-state" id="mic-state">Starting…</div>
+          <div class="small muted" id="mic-hint"></div>
+        </div>
+      </div>
+      <form class="typed" id="typed" style="margin-top:10px" autocomplete="off">
+        <input type="text" id="typed-in" placeholder="Or type what you would say…" aria-label="Type what you would say">
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================ presentation -->
+  <section id="v-present" class="hidden">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <h2 style="margin:0">One-minute presentation</h2>
+        <div class="clock" id="present-clock">0:00</div>
+      </div>
+      <p class="muted small">Present the patient as you would to your facilitator: who they are and why they came,
+        the pertinent positives and negatives, your exam, your differential, studies, diagnosis and plan. Aim for about
+        a minute. Press Finish when you are done.</p>
+      <div class="row" style="margin:6px 0 10px">
+        <button type="button" class="mic" id="pmic" aria-label="Microphone for the presentation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v5"/></svg>
+        </button>
+        <div class="mic-state" id="pmic-state"></div>
+      </div>
+      <textarea id="present-text" rows="7" placeholder="Your presentation appears here as you speak. You can also type or fix it."></textarea>
+      <div class="row" style="margin-top:12px">
+        <button type="button" class="btn primary" id="finish">Finish and grade</button>
+        <span class="small muted" id="present-note"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ grading -->
+  <section id="v-grading" class="hidden">
+    <div class="card">
+      <h2>Grading your station…</h2>
+      <p class="muted small" id="grading-note">Checking every run-sheet item against what you said. This takes about half a minute.</p>
+      <div class="bar"><i id="grade-bar"></i></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn hidden" id="regrade">Try grading again</button></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ report -->
+  <section id="v-report" class="hidden"></section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var STATION = "cardiac";
+  var STATION_FILE = "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json";
+  var DOOR_S = 60, ROOM_S = 20 * 60;
+  var K_HIST = "local:osce:history", K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
+  var KOKORO_URL = "https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/dist/kokoro.web.js";
+  var KOKORO_MODEL = "onnx-community/Kokoro-82M-v1.0-ONNX";
+  // patient voice by the patient's sex; the facilitator in a different voice (Jaxon: "Use a male voice for male pt
+  // and female voice for female pt")
+  var KOKORO_VOICES = { pm: "am_michael", pf: "af_heart", fm: "bm_george", ff: "bf_emma" };
+
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function mmss(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  function show(id) { ["v-setup", "v-door", "v-room", "v-present", "v-grading", "v-report"].forEach(function (v) { $(v).classList.toggle("hidden", v !== id); }); window.scrollTo(0, 0); }
+  function load(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function radio(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : null; }
+  function setRadio(name, v) { var el = document.querySelector('input[name="' + name + '"][value="' + v + '"]'); if (el) { el.checked = true; markChoices(); } }
+  function markChoices() { document.querySelectorAll(".choice").forEach(function (l) { var i = l.querySelector("input"); l.classList.toggle("on", !!(i && i.checked)); }); }
+  document.addEventListener("change", function (e) { if (e.target.matches(".choice input")) markChoices(); });
+
+  var SB = function () { return window.PipSuperbrain; };
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  // ---------------------------------------------------------------- state
+  var station = null, status = null;
+  var S = null;   // the running station: {c, session, rules, voice, talk, turns: [{r,t,at}], log: [...], doorS, roomStart, ...}
+
+  // ---------------------------------------------------------------- station file + access
+  function loadStation() {
+    return fetch(encodeURI(STATION_FILE), { cache: "no-cache" }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) { station = j; renderCases(); renderHistory(); return j; })
+      .catch(function () { $("access-msg").textContent = "The station couldn't be loaded. Check your connection and reload the page."; });
+  }
+
+  function authReady() {
+    return new Promise(function (res) {
+      var done = false, t = setTimeout(fin, 6000);
+      function fin() { if (!done) { done = true; clearTimeout(t); res(); } }
+      function hook() {
+        try { firebase.auth().onAuthStateChanged(function () { fin(); }); } catch (e) { fin(); }
+      }
+      if (window.__firebaseReady && window.firebase) hook();
+      else window.addEventListener("firebaseReady", hook, { once: true });
+    });
+  }
+  function sbReady() {
+    return new Promise(function (res) {
+      if (SB()) return res();
+      var n = 0, iv = setInterval(function () { if (SB() || ++n > 100) { clearInterval(iv); res(); } }, 50);
+    });
+  }
+
+  function setAccess(msg, actions) {
+    $("access-msg").innerHTML = msg;
+    var box = $("access-actions"); box.innerHTML = "";
+    (actions || []).forEach(function (a) { box.appendChild(a); });
+  }
+  function button(label, cls, fn) { var b = document.createElement("button"); b.type = "button"; b.className = "btn " + (cls || ""); b.textContent = label; b.onclick = fn; return b; }
+
+  function checkAccess() {
+    var sb = SB();
+    if (!sb) return setAccess("The practice helper couldn't load. Reload the page to try again.");
+    var st = sb.state();
+    if (st === "off") return setAccess("OSCE practice works on <b>pa-quizzes.com</b>. Open it there to practice.");
+    if (st === "no-sync" || st === "signed-out") {
+      return setAccess("Sign in with your Google account to practice. The patient and the grading run on Claude, which is invite-only for the class.",
+        [button("Sign in", "primary", function () { Promise.resolve(sb.signIn()).then(function () { setTimeout(checkAccess, 600); }); })]);
+    }
+    setAccess("Checking your access…");
+    sb.osce("status").then(function (r) {
+      status = r && r.ok ? r : null;
+      if (!r || !r.ok) {
+        if (r && r.code === "banned") return setAccess("This account can't use the practice helper.");
+        // the helper has not been updated with the practice routes yet (the page can go live first)
+        if (r && r.code === "not_found") return setAccess("OSCE practice is almost ready: it switches on as soon as the practice helper is updated. Check back soon.");
+        return setAccess(esc((r && r.message) || "The practice helper couldn't be reached. Try again in a minute."), [button("Try again", "", checkAccess)]);
+      }
+      if (!r.invited) {
+        if (!r.canJoin) return setAccess("The practice helper is invite-only for now. Ask the site admin to add your account.");
+        var inp = document.createElement("input"); inp.type = "text"; inp.placeholder = "Class code"; inp.style.maxWidth = "220px"; inp.setAttribute("aria-label", "Class code");
+        var go = button("Join", "primary", function () {
+          go.disabled = true;
+          sb.join(inp.value).then(function (j) {
+            go.disabled = false;
+            if (j && j.ok) checkAccess();
+            else setAccess(esc((j && j.message) || "That class code isn't right. Check it and try again."), [inp, go]);
+          });
+        });
+        return setAccess("Enter your class code once to use the practice helper (the same code as Pip's Claude answers).", [inp, go]);
+      }
+      if (!r.enabled) return setAccess("The practice helper is switched off right now. Try again later.");
+      setAccess("You're signed in. <b>" + r.stationsLeft + "</b> practice station" + (r.stationsLeft === 1 ? "" : "s") + " left today." +
+        (r.stationsLeft ? "" : " They reset at midnight."));
+      applyVoiceAvailability();
+      updateStart();
+    });
+  }
+
+  // ---------------------------------------------------------------- setup
+  function renderCases() {
+    var box = $("case-list"); box.innerHTML = "";
+    station.cases.forEach(function (c, i) {
+      var l = document.createElement("label"); l.className = "choice";
+      l.innerHTML = '<input type="radio" name="casemode" value="' + esc(c.id) + '"><b>' + esc(c.condition) + '</b><span>' +
+        esc(c.door.name) + ", " + esc(c.door.age) + "-year-old " + esc(c.door.sex) + "</span>";
+      box.appendChild(l);
+    });
+  }
+  function renderHistory() {
+    var h = load(K_HIST, []);
+    if (!h.length) { $("history").textContent = ""; return; }
+    var last = h.slice(-5).reverse().map(function (x) {
+      var c = station && station.cases.filter(function (k) { return k.id === x.c; })[0];
+      var d = new Date(x.d);
+      return esc(c ? c.condition : x.c) + " " + x.s + "% (" + d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ")";
+    });
+    $("history").innerHTML = "Your recent stations on this device: " + last.join(" · ");
+  }
+  function pickCase() {
+    var v = radio("casemode");
+    if (v && v !== "random") return station.cases.filter(function (c) { return c.id === v; })[0];
+    var h = load(K_HIST, []), recent = h.slice(-Math.max(0, station.cases.length - 1)).map(function (x) { return x.c; });
+    var pool = station.cases.filter(function (c) { return recent.indexOf(c.id) < 0; });
+    if (!pool.length) pool = station.cases;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function applyVoiceAvailability() {
+    var g = document.querySelector('.choice[data-v="google"]');
+    var ok = !!(status && status.tts);
+    g.classList.toggle("hidden", !ok);
+    var prefs = load(K_PREFS, {});
+    var want = prefs.voice || (ok ? "google" : "device");
+    if (want === "google" && !ok) want = "device";
+    setRadio("voice", want);
+    if (want === "kokoro") loadKokoro();
+  }
+  function updateStart() {
+    var ready = !!(station && status && status.invited && status.enabled && status.stationsLeft > 0);
+    $("start").disabled = !ready;
+    $("start-note").textContent = status && status.invited && status.enabled && !status.stationsLeft ? "No stations left today." : "";
+  }
+  function savePrefs() {
+    save(K_PREFS, { voice: radio("voice"), rules: radio("rules"), talk: radio("talk"), pause: $("pause-len").value });
+  }
+  (function restorePrefs() {
+    var p = load(K_PREFS, {});
+    if (p.rules) setRadio("rules", p.rules);
+    if (p.talk) setRadio("talk", p.talk);
+    if (p.pause) $("pause-len").value = p.pause;
+    if (!SR) { $("no-mic").classList.remove("hidden"); }
+    markChoices();
+  })();
+  document.addEventListener("change", function (e) {
+    if (!e.target.closest("#setup-card")) return;
+    if (e.target.name === "voice" && e.target.value === "kokoro") loadKokoro();
+    savePrefs();
+  });
+
+  // ---------------------------------------------------------------- voices
+  var player = new Audio();
+  player.preload = "auto";
+  var engine = "device";            // what actually speaks this station (google may fall back mid-station)
+  var sexNow = "female";            // the patient's sex: their voice, and the facilitator's (the other one)
+  var kokoroP = null, kokoro = null;
+  var stopAudio = function () {};   // cuts off whatever is speaking (a hold-to-talk press, the presentation)
+
+  function loadKokoro() {
+    if (kokoroP) return kokoroP;
+    var box = $("kokoro-status"); box.classList.remove("hidden");
+    var files = {};
+    kokoroP = import(KOKORO_URL).then(function (m) {
+      return m.KokoroTTS.from_pretrained(KOKORO_MODEL, {
+        dtype: "q8", device: "wasm",
+        progress_callback: function (p) {
+          if (!p || p.status !== "progress" || !p.total) return;
+          files[p.file] = [p.loaded, p.total];
+          var a = 0, b = 0; Object.keys(files).forEach(function (k) { a += files[k][0]; b += files[k][1]; });
+          var pct = b ? Math.min(100, Math.round(a / b * 100)) : 0;
+          $("kokoro-bar").style.width = pct + "%";
+          $("kokoro-text").textContent = "Downloading the free voice… " + pct + "% (once; it is saved in this browser)";
+        }
+      });
+    }).then(function (tts) {
+      kokoro = tts;
+      $("kokoro-bar").style.width = "100%";
+      $("kokoro-text").textContent = "The free voice is ready.";
+      return tts;
+    }).catch(function () {
+      kokoroP = null;
+      $("kokoro-text").textContent = "The free voice couldn't load on this device. The device voice will read instead.";
+      return null;
+    });
+    return kokoroP;
+  }
+
+  var deviceVoices = [];
+  function refreshVoices() { try { deviceVoices = speechSynthesis.getVoices() || []; } catch (e) { deviceVoices = []; } }
+  if (window.speechSynthesis) { refreshVoices(); try { speechSynthesis.addEventListener("voiceschanged", refreshVoices); } catch (e) {} }
+  var MALE = /\b(daniel|alex|fred|aaron|arthur|tom|rishi|gordon|oliver|thomas|guy|davis|tony|ryan|eric|christopher|andrew|brian|roger|jacques|reed|evan|nathan|male|man)\b/i;
+  var FEMALE = /\b(samantha|victoria|karen|moira|tessa|zira|aria|jenny|susan|allison|ava|serena|kate|fiona|nicky|michelle|emma|female|libby|sonia|natasha|zoe|joanna|salli|kendra|kimberly|ivy|woman)\b|google us english/i;
+  function deviceVoice(sex, avoid) {
+    var en = deviceVoices.filter(function (v) { return /^en(-|_|$)/i.test(v.lang); });
+    var want = sex === "male" ? MALE : FEMALE, not = sex === "male" ? FEMALE : MALE;
+    var c = en.filter(function (v) { return want.test(v.name) && !not.test(v.name) && v !== avoid; });
+    c.sort(function (a, b) { return rank(b) - rank(a); });
+    return c[0] || en.filter(function (v) { return v !== avoid; })[0] || null;
+    function rank(v) { return (/(natural|neural|premium|enhanced)/i.test(v.name) ? 4 : 0) + (/en-US/i.test(v.lang) ? 2 : 0) + (v.localService ? 1 : 0); }
+  }
+
+  function voiceKey(who) {   // pm/pf: the patient; fm/ff: the facilitator, in the other sex's voice
+    var male = sexNow === "male";
+    if (who === "p") return male ? "pm" : "pf";
+    return male ? "ff" : "fm";
+  }
+  function playBlob(blob) {
+    return new Promise(function (res) {
+      var url = URL.createObjectURL(blob), done = false;
+      function fin() { if (done) return; done = true; player.onended = player.onerror = null; URL.revokeObjectURL(url); res(); }
+      player.onended = fin; player.onerror = fin;
+      player.src = url;
+      var p = player.play(); if (p && p.catch) p.catch(fin);
+      stopAudio = function () { try { player.pause(); } catch (e) {} fin(); };
+    });
+  }
+  function speakDevice(text, who) {
+    return new Promise(function (res) {
+      if (!window.speechSynthesis) return res();
+      var sex = sexNow;
+      var pv = deviceVoice(sex);
+      var v = who === "p" ? pv : deviceVoice(sex === "male" ? "female" : "male", pv);
+      var u = new SpeechSynthesisUtterance(text);
+      if (v) { u.voice = v; u.lang = v.lang; }
+      u.rate = 1; u.pitch = who === "p" ? (sex === "male" ? 0.92 : 1.05) : 1;
+      var done = false, guard = setTimeout(fin, 2500 + text.length * 90);   // iOS sometimes never fires onend
+      function fin() { if (done) return; done = true; clearTimeout(guard); res(); }
+      u.onend = fin; u.onerror = fin;
+      try { speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) { fin(); }
+      stopAudio = function () { try { speechSynthesis.cancel(); } catch (e) {} fin(); };
+    });
+  }
+  // the audio for one line, prepared ahead (Google and Kokoro take a moment); resolves to a play() function
+  function prepare(text, who) {
+    text = String(text).slice(0, 690);
+    if (engine === "none" || !text) return Promise.resolve(function () { return Promise.resolve(); });
+    if (engine === "google") {
+      return SB().speech({ session: S.session, voice: voiceKey(who), text: text }).then(function (r) {
+        if (r && r.ok) return function () { return playBlob(r.blob); };
+        // the class's month or the student's day is used, or Google failed: the free voices from here on
+        if (r && (r.code === "tts_month" || r.code === "tts_day" || r.code === "tts_off")) {
+          engine = kokoro ? "kokoro" : "device";
+          sysLine(r.code === "tts_month" ? "The natural voice is used up for this month; switching to the " + (kokoro ? "free on-device" : "device") + " voice." :
+                  r.code === "tts_day" ? "You've used today's natural voice; switching to the " + (kokoro ? "free on-device" : "device") + " voice." : "Switching to the device voice.");
+        }
+        return function () { return kokoro && engine === "kokoro" ? kokoroPlay(text, who) : speakDevice(text, who); };
+      });
+    }
+    if (engine === "kokoro") {
+      if (!kokoro) return Promise.resolve(function () { return speakDevice(text, who); });
+      return kokoro.generate(text, { voice: KOKORO_VOICES[voiceKey(who)] }).then(function (a) {
+        var b = a.toBlob(); return function () { return playBlob(b); };
+      }).catch(function () { return function () { return speakDevice(text, who); }; });
+    }
+    return Promise.resolve(function () { return speakDevice(text, who); });
+  }
+  function kokoroPlay(text, who) { return prepare(text, who).then(function (play) { return play(); }); }
+
+  // the voices, before a station (Google's voice needs a started station, since every line it reads is counted)
+  $("voice-test").onclick = function () {
+    var v = radio("voice") || "device", btn = this;
+    if (v === "none") return sysToast("Captions only: nothing is spoken.");
+    if (v === "google") sysToast("The natural voice plays once a station starts. This test uses the device voice.");
+    engine = v === "google" ? "device" : v;
+    btn.disabled = true;
+    unlockAudio();
+    var say = function (sex, who, text) { return function () { sexNow = sex; return prepare(text, who).then(function (p) { return p(); }); }; };
+    (v === "kokoro" ? loadKokoro() : Promise.resolve())
+      .then(say("male", "p", "Hi. This is how a male patient sounds."))
+      .then(say("female", "p", "And this is how a female patient sounds."))
+      .then(say("male", "f", "I'm the facilitator. I read you the examination findings."))
+      .then(function () { btn.disabled = false; }, function () { btn.disabled = false; });
+  };
+  function sysToast(t) { $("start-note").textContent = t; setTimeout(function () { if ($("start-note").textContent === t) $("start-note").textContent = ""; }, 5000); }
+
+  // iOS and Safari play sound only after a tap: unlock the audio element and speech synthesis on Start
+  function unlockAudio() {
+    try { player.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA="; var p = player.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+    try { if (window.speechSynthesis) { var u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } } catch (e) {}
+  }
+
+  // ---------------------------------------------------------------- start + door
+  $("start").onclick = function () {
+    if (!station || !status) return;
+    unlockAudio();
+    savePrefs();
+    var c = pickCase();
+    var btn = $("start"); btn.disabled = true; $("start-note").textContent = "Starting…";
+    SB().osce("start", { station: STATION, case: c.id }).then(function (r) {
+      btn.disabled = false; $("start-note").textContent = "";
+      if (!r || !r.ok) { $("start-note").textContent = (r && r.message) || "The station couldn't start. Try again in a minute."; return; }
+      status.stationsLeft = r.stationsLeft;
+      var v = radio("voice") || "device";
+      engine = v === "google" && !status.tts ? "device" : v;
+      sexNow = c.door.sex;
+      S = { c: c, session: r.session, rules: radio("rules") || "patient", talk: SR ? radio("talk") || "free" : "typed",
+            pause: Number($("pause-len").value) || 1900, turns: [], log: [], doorStart: Date.now(), doorS: 0, roomStart: 0,
+            roomS: 0, timedOut: false, presentation: "", presentS: 0, busy: false, pending: "", over: false, warned5: false, warned1: false };
+      startDoor();
+    });
+  };
+
+  function doorForm(c) {
+    var d = c.door;
+    return '<div class="door-form"><div class="df-h">' + esc(d.setting || "Clinic") + ' · Patient information</div><dl>' +
+      "<dt>Name</dt><dd>" + esc(d.name) + "</dd><dt>Age</dt><dd>" + esc(d.age) + "</dd><dt>Sex</dt><dd>" + esc(d.sex) + "</dd>" +
+      "<dt>Date of birth</dt><dd>" + esc(fmtDob(d.dob)) + "</dd></dl>" +
+      '<div class="cc">Chief complaint: “' + esc(d.cc) + '”</div><div class="df-h" style="margin:0">Vital signs</div><div class="vitals">' +
+      d.vitals.map(function (v) { return "<div>" + esc(v[0]) + ": <b>" + esc(v[1]) + "</b></div>"; }).join("") + "</div></div>";
+  }
+  function fmtDob(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s)); return m ? Number(m[2]) + "/" + Number(m[3]) + "/" + m[1] : s; }
+
+  var tick = 0;
+  function startDoor() {
+    $("door-form").innerHTML = doorForm(S.c);
+    $("door-form-mini").innerHTML = doorForm(S.c);
+    show("v-door");
+    clearInterval(tick);
+    tick = setInterval(function () {
+      var left = DOOR_S - (Date.now() - S.doorStart) / 1000;
+      $("door-clock").textContent = mmss(left);
+      if (left <= 0) enterRoom();
+    }, 250);
+  }
+  $("enter").onclick = function () { enterRoom(); };
+
+  // ---------------------------------------------------------------- room
+  function enterRoom() {
+    if (!S || S.roomStart) return;
+    clearInterval(tick);
+    S.doorS = Math.min(DOOR_S, Math.round((Date.now() - S.doorStart) / 1000));
+    S.roomStart = Date.now();
+    $("rules-badge").textContent = S.rules === "real" ? "Real station rules" : "The patient talks";
+    $("transcript").innerHTML = "";
+    show("v-room");
+    sysLine("You're in the room with " + S.c.door.name + ". Introduce yourself.");
+    setupMic();
+    tick = setInterval(roomTick, 250);
+    roomTick();
+  }
+  function roomLeft() { return ROOM_S - (Date.now() - S.roomStart) / 1000; }
+  function roomTick() {
+    if (!S || S.over) return;
+    var left = roomLeft();
+    $("room-clock").textContent = mmss(left);
+    $("room-clock").classList.toggle("low", left <= 60);
+    if (!S.warned5 && left <= 300) { S.warned5 = true; facilitatorNote("Five minutes remaining."); }
+    if (!S.warned1 && left <= 60) { S.warned1 = true; facilitatorNote("One minute remaining."); }
+    if (left <= 0) { S.timedOut = true; toPresentation("Time is up. Please give your one-minute presentation."); }
+  }
+  function elapsed() { return S && S.roomStart ? Math.round((Date.now() - S.roomStart) / 1000) : 0; }
+
+  function addLine(cls, who, html) {
+    var d = document.createElement("div"); d.className = "line " + cls;
+    d.innerHTML = (who ? '<span class="who">' + esc(who) + "</span>" : "") + html;
+    $("transcript").appendChild(d);
+    d.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    return d;
+  }
+  function sysLine(t) { return addLine("sys", "", esc(t)); }
+  function facilitatorNote(t) {
+    addLine("f", "Facilitator", esc(t));
+    if (!S.busy) { pauseMic(); prepare(t, "f").then(function (p) { return p(); }).then(resumeMic); }
+  }
+  function patientName() { return S.c.door.name.split(" ")[0]; }
+
+  // the student said something: to the patient, unless a reply is still on its way (then it waits and goes next)
+  function studentSays(text) {
+    text = String(text || "").replace(/\s+/g, " ").trim();
+    if (!text || !S || S.over) return;
+    addLine("s", "You", esc(text));
+    S.turns.push({ r: "s", t: text.slice(0, 1990), at: elapsed() });
+    S.log.push({ r: "s", t: text, at: elapsed() });
+    if (S.busy) { S.pending = true; return; }
+    sendTurn();
+  }
+  function requestTurns() {
+    // the server takes up to 260 turns and 60,000 characters; keep the newest, starting with the student
+    var t = S.turns.slice(-240), total = 0, out = [];
+    for (var i = t.length - 1; i >= 0; i--) { total += t[i].t.length; if (total > 55000) break; out.unshift(t[i]); }
+    while (out.length && out[0].r !== "s") out.shift();
+    return out.map(function (x) { return { r: x.r, t: x.t, at: x.at }; });
+  }
+  function sendTurn(retry) {
+    S.busy = true; S.pending = false;
+    pauseMic();
+    setMicState('Patient is answering <span class="thinking"><i></i><i></i><i></i></span>');
+    var startedAt = S.session, sentLen = S.turns.length;
+    SB().osce("turn", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: requestTurns() }).then(function (r) {
+      if (!S || S.session !== startedAt || S.over) return;
+      if (S.phase === "present") { if (r && r.ok) S.turns.splice(sentLen, 0, { r: "a", t: r.reply, at: elapsed() }); S.busy = false; return; }
+      if (!r || !r.ok) {
+        if (r && r.code === "osce_gap" && !retry) return setTimeout(function () { sendTurn(true); }, 700);
+        S.busy = false;
+        if (r && r.code === "osce_turns") { addLine("err", "", esc(r.message || "This station has reached its limit of turns.")); return toPresentation("Please give your one-minute presentation."); }
+        if (r && r.code === "osce_session") { addLine("err", "", esc(r.message || "This station has ended.")); return toPresentation(); }
+        var e = addLine("err", "", esc((r && r.message) || "The patient didn't answer. Check your connection.") + ' <button type="button" class="btn quiet small">Ask again</button>');
+        e.querySelector("button").onclick = function () { e.remove(); sendTurn(); };
+        return resumeMic();
+      }
+      // after the words it answers: anything said while it was on its way comes next, as the student's next turn
+      S.turns.splice(sentLen, 0, { r: "a", t: r.reply, at: elapsed() });
+      playReply(r.lines || []).then(function () {
+        S.busy = false;
+        if (S.over || S.phase === "present") return;
+        if (S.pending) sendTurn(); else resumeMic();
+      });
+    });
+  }
+  // the reply's lines in order: the patient in their voice, findings and the facilitator in the facilitator's
+  function playReply(lines) {
+    var nodes = lines.map(function (l) {
+      S.log.push({ r: l.r, t: l.t, at: elapsed(), name: l.name });
+      if (l.r === "P") return addLine("p", patientName(), esc(l.t));
+      if (l.r === "X") return addLine("x", "Finding", '<span class="mname">' + esc(l.name || "") + ":</span> " + esc(l.t));
+      return addLine("f", "Facilitator", esc(l.t));
+    });
+    // prepare each line's audio as soon as the one before it starts playing
+    var chain = Promise.resolve();
+    var preps = [];
+    lines.forEach(function (l, i) { preps[i] = null; });
+    function prep(i) { if (i < lines.length && !preps[i]) preps[i] = prepare(lines[i].t, lines[i].r === "P" ? "p" : "f"); return preps[i]; }
+    lines.forEach(function (l, i) {
+      chain = chain.then(function () {
+        if (S.over) return;
+        var p = prep(i); prep(i + 1);
+        return p.then(function (play) {
+          nodes[i].classList.add("speaking");
+          setMicState(l.r === "P" ? patientName() + " is speaking…" : "Facilitator…");
+          return play().then(function () { nodes[i].classList.remove("speaking"); });
+        });
+      });
+    });
+    return chain;
+  }
+
+  // ---------------------------------------------------------------- the microphone
+  var rec = null, wantMic = false, heardFinal = "", heardInterim = "", lastHeard = 0, silence = 0, liveNode = null, holding = false;
+  function setMicState(html) { $("mic-state").innerHTML = html; }
+  function setupMic() {
+    var mic = $("mic");
+    if (S.talk === "typed") {
+      mic.classList.add("hidden");
+      setMicState("Type what you would say, then press Enter.");
+      $("mic-hint").textContent = "";
+      $("typed-in").focus();
+      return;
+    }
+    mic.classList.remove("hidden");
+    $("mic-hint").textContent = S.talk === "hold" ? "Hold the button or the space bar while you speak; let go to send." :
+      "Pause for a moment and your words go to the patient. Tap the button to mute.";
+    wantMic = S.talk === "free";
+    resumeMic();
+  }
+  function startRec() {
+    if (!SR || rec || !S || S.over) return;
+    heardFinal = ""; heardInterim = "";
+    try {
+      rec = new SR();
+      rec.lang = "en-US"; rec.continuous = true; rec.interimResults = true; rec.maxAlternatives = 1;
+      rec.onresult = function (e) {
+        var interim = "";
+        for (var i = e.resultIndex; i < e.results.length; i++) {
+          var x = e.results[i];
+          if (x.isFinal) heardFinal += " " + x[0].transcript; else interim += x[0].transcript;
+        }
+        heardInterim = interim; lastHeard = Date.now();
+        showLive();
+        if (S.talk === "free") armSilence();
+      };
+      rec.onerror = function (e) {
+        if (e.error === "not-allowed" || e.error === "service-not-allowed") {
+          wantMic = false; S.talk = "typed";
+          setMicState("The microphone is blocked for this site. Allow it in the browser's address bar, or type instead.");
+          $("mic").classList.add("off");
+        }
+      };
+      rec.onend = function () {
+        rec = null;
+        if (S && !S.over && !S.busy && (wantMic || holding) && S.phase !== "present") setTimeout(startRec, 120);
+      };
+      rec.start();
+      $("mic").classList.remove("off"); $("mic").classList.add("hot");
+      setMicState(S.talk === "hold" ? "Listening — let go to send" : "Listening…");
+    } catch (e) { rec = null; }
+  }
+  function stopRec() {
+    clearTimeout(silence);
+    if (rec) { var r = rec; rec = null; r.onend = null; try { r.abort(); } catch (e) {} }
+    $("mic").classList.remove("hot");
+  }
+  function pauseMic() { stopRec(); clearLive(); }
+  function resumeMic() {
+    if (!S || S.over || S.phase === "present") return;
+    if (S.talk === "typed") { setMicState("Type what you would say, then press Enter."); return; }
+    if (S.talk === "hold") { $("mic").classList.remove("off"); setMicState("Hold to talk"); return; }
+    if (!wantMic) { $("mic").classList.add("off"); setMicState("Microphone muted. Tap to talk again."); return; }
+    startRec();
+  }
+  function showLive() {
+    var t = (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim();
+    if (!t) return;
+    if (!liveNode) liveNode = addLine("s live", "You", "");
+    liveNode.innerHTML = '<span class="who">You</span>' + esc(t);
+  }
+  function clearLive() { if (liveNode) { liveNode.remove(); liveNode = null; } }
+  function armSilence() {
+    clearTimeout(silence);
+    silence = setTimeout(function () {
+      var quiet = Date.now() - lastHeard;
+      // an unfinished phrase (no final words yet) gets a little longer
+      if (!heardFinal.trim() && quiet < S.pause + 700) return armSilence();
+      commit();
+    }, S.pause);
+  }
+  function commit() {
+    var t = (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim();
+    stopRec(); clearLive();
+    heardFinal = ""; heardInterim = "";
+    if (t) studentSays(t); else resumeMic();
+  }
+
+  var mic = $("mic");
+  mic.addEventListener("click", function () {
+    if (!S || S.talk !== "free") return;
+    wantMic = !wantMic;
+    if (wantMic) { if (!S.busy) startRec(); } else { stopRec(); clearLive(); $("mic").classList.add("off"); setMicState("Microphone muted. Tap to talk again."); }
+  });
+  function holdStart(e) {
+    if (!S || S.talk !== "hold" || S.over || S.phase === "present") return;
+    if (e) e.preventDefault();
+    if (holding) return;
+    holding = true;
+    stopAudio();
+    startRec();
+  }
+  function holdEnd() {
+    if (!holding) return;
+    holding = false;
+    setTimeout(commit, 450);     // the last words arrive just after the button is let go
+  }
+  mic.addEventListener("pointerdown", holdStart);
+  mic.addEventListener("pointerup", holdEnd);
+  mic.addEventListener("pointerleave", holdEnd);
+  mic.addEventListener("pointercancel", holdEnd);
+  document.addEventListener("keydown", function (e) {
+    if (e.code !== "Space" || e.repeat || !S || S.talk !== "hold" || S.phase === "present") return;
+    if (/input|textarea|select|button/i.test((document.activeElement || {}).tagName || "")) return;
+    holdStart(e);
+  });
+  document.addEventListener("keyup", function (e) { if (e.code === "Space") holdEnd(); });
+
+  $("typed").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = $("typed-in").value; $("typed-in").value = "";
+    stopAudio();
+    studentSays(v);
+  });
+
+  // ---------------------------------------------------------------- presentation
+  $("to-present").onclick = function () { toPresentation(); };
+  $("end-station").onclick = function () {
+    if (!confirm("End this station without grading? It still counts as one of today's stations.")) return;
+    endStation(); show("v-setup"); checkAccess();
+  };
+  function endStation() { if (!S) return; S.over = true; clearInterval(tick); stopRec(); clearLive(); stopAudio(); try { speechSynthesis.cancel(); } catch (e) {} }
+
+  function toPresentation(say) {
+    if (!S || S.phase === "present") return;
+    S.phase = "present";
+    S.roomS = Math.min(ROOM_S, elapsed());
+    clearInterval(tick); stopRec(); clearLive();
+    stopAudio();
+    show("v-present");
+    $("present-text").value = "";
+    S.presentStart = Date.now();
+    tick = setInterval(function () {
+      var s = (Date.now() - S.presentStart) / 1000;
+      $("present-clock").textContent = mmss(s);
+      $("present-clock").classList.toggle("low", s > 90);
+      $("present-note").textContent = s > 90 ? "Over a minute and a half: wrap up." : "";
+    }, 250);
+    var prompt = say || "Please give your one-minute presentation.";
+    (engine === "none" ? Promise.resolve() : prepare(prompt, "f").then(function (p) { return p(); })).then(function () {
+      if (SR && S.talk !== "typed") { S.presentMic = true; startPresentRec(); }
+      else $("pmic-state").textContent = "Type your presentation below.";
+    });
+    if (!SR || S.talk === "typed") $("pmic").classList.add("hidden");
+  }
+  var prec = null, pBase = "";
+  function startPresentRec() {
+    if (!SR || prec || !S || S.over || !S.presentMic) return;
+    pBase = $("present-text").value.trim();
+    try {
+      prec = new SR(); prec.lang = "en-US"; prec.continuous = true; prec.interimResults = true;
+      var fin = "";
+      prec.onresult = function (e) {
+        var interim = "";
+        for (var i = e.resultIndex; i < e.results.length; i++) { var x = e.results[i]; if (x.isFinal) fin += " " + x[0].transcript; else interim += x[0].transcript; }
+        $("present-text").value = (pBase + " " + fin + " " + interim).replace(/\s+/g, " ").trim();
+      };
+      prec.onend = function () { prec = null; if (S && S.presentMic && !S.over) setTimeout(startPresentRec, 120); };
+      prec.onerror = function () {};
+      prec.start();
+      $("pmic").classList.add("hot"); $("pmic").classList.remove("off");
+      $("pmic-state").textContent = "Listening… tap the button to pause.";
+    } catch (e) { prec = null; }
+  }
+  function stopPresentRec() { if (prec) { var r = prec; prec = null; r.onend = null; try { r.stop(); } catch (e) {} } $("pmic").classList.remove("hot"); }
+  $("pmic").onclick = function () {
+    if (!S) return;
+    S.presentMic = !S.presentMic;
+    if (S.presentMic) startPresentRec(); else { stopPresentRec(); $("pmic").classList.add("off"); $("pmic-state").textContent = "Paused. Tap to keep talking."; }
+  };
+  $("present-text").addEventListener("focus", function () { if (S && S.presentMic) { S.presentMic = false; stopPresentRec(); $("pmic").classList.add("off"); $("pmic-state").textContent = "Paused while you type. Tap to keep talking."; } });
+  $("finish").onclick = function () {
+    if (!S) return;
+    S.presentMic = false; stopPresentRec();
+    clearInterval(tick);
+    S.presentS = Math.round((Date.now() - S.presentStart) / 1000);
+    S.presentation = $("present-text").value.replace(/\s+/g, " ").trim();
+    S.over = true;
+    grade();
+  };
+
+  // ---------------------------------------------------------------- grading
+  function gradeTurns() {
+    var out = S.turns.map(function (x) { return { r: x.r, t: x.t, at: x.at }; });
+    var p = S.presentation, at = S.roomS;
+    while (p) { out.push({ r: "p", t: p.slice(0, 1990), at: at }); p = p.slice(1990); }
+    var total = 0, keep = [];
+    for (var i = out.length - 1; i >= 0; i--) { total += out[i].t.length; if (total > 58000 || keep.length >= 255) break; keep.unshift(out[i]); }
+    return keep;
+  }
+  function grade() {
+    show("v-grading");
+    $("regrade").classList.add("hidden");
+    $("grade-bar").style.width = "4%";
+    $("grading-note").textContent = "Checking every run-sheet item against what you said. This takes about half a minute.";
+    var turns = gradeTurns();
+    if (!turns.some(function (t) { return t.r === "s" || t.r === "p"; })) {
+      $("grading-note").textContent = "There was nothing to grade: the station had no words from you.";
+      return;
+    }
+    SB().osce("grade", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: turns,
+      doorSeconds: S.doorS, roomSeconds: S.roomS, timedOut: S.timedOut }, function (ev, d) {
+      if (ev === "progress" && d && d.chars) $("grade-bar").style.width = Math.min(95, 4 + d.chars / 45) + "%";
+    }).then(function (r) {
+      if (!r || !r.ok) {
+        $("grading-note").textContent = (r && r.message) || "The grading didn't finish. Try again.";
+        if (!r || r.code !== "osce_graded") $("regrade").classList.remove("hidden");
+        return;
+      }
+      $("grade-bar").style.width = "100%";
+      S.grade = r.grade;
+      report();
+    });
+  }
+  $("regrade").onclick = function () { grade(); };
+
+  // ---------------------------------------------------------------- report
+  function autoStatus(item) {
+    if (item.auto === "door") return S.doorS >= 30 ? "met" : S.doorS >= 10 ? "partial" : "missed";
+    if (item.auto === "length") { var s = S.presentation ? S.presentS : 0; return s >= 40 && s <= 85 ? "met" : s >= 20 && s <= 120 ? "partial" : "missed"; }
+    if (item.auto === "self") return S.selfChecks && S.selfChecks[item.id] ? "met" : "missed";
+    return "missed";
+  }
+  function statusOf(item) {
+    if (item.auto) return { status: autoStatus(item) };
+    var g = (S.grade.items || []).filter(function (x) { return x.id === item.id; })[0];
+    return g ? { status: g.status, quote: g.quote } : { status: "missed" };
+  }
+  function tally() {
+    var t = { met: 0, partial: 0, missed: 0, n: 0, pts: 0 };
+    station.rubric.forEach(function (sec) { sec.items.forEach(function (i) { var s = statusOf(i).status; t[s]++; t.n++; t.pts += s === "met" ? 1 : s === "partial" ? 0.5 : 0; }); });
+    t.pct = t.n ? Math.round(t.pts / t.n * 100) : 0;
+    return t;
+  }
+  function list(arr) { return '<ul class="tight">' + (arr || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"; }
+  function keyValue(v) {
+    if (v == null) return "";
+    if (typeof v === "string" || typeof v === "number") return "<p>" + esc(v) + "</p>";
+    if (Array.isArray(v)) {
+      if (v.every(function (x) { return typeof x === "string"; })) return list(v);
+      return v.map(function (x) {
+        if (typeof x !== "object" || !x) return "<p>" + esc(x) + "</p>";
+        var ks = Object.keys(x), title = x.dx || x.diagnosis || x.name || x.test || x.item || x[ks[0]];
+        var rest = ks.filter(function (k) { return x[k] !== title; });
+        return '<div class="ddx"><b>' + esc(title) + "</b>" + rest.map(function (k) { return '<span class="small">' + esc(label(k)) + ": " + esc(x[k]) + "</span>"; }).join("<br>") + "</div>";
+      }).join("");
+    }
+    if (typeof v === "object") return Object.keys(v).map(function (k) { return "<p><b>" + esc(label(k)) + ":</b> " + esc(v[k]) + "</p>"; }).join("");
+    return "";
+  }
+  var LABELS = { must_not_miss: "Must not miss", ddx: "Differential diagnosis", studies: "Studies", plan: "Plan", education: "Patient education",
+    red_flags: "Red flags", follow_up: "Follow-up", presentation: "Model one-minute presentation", high_yield: "High-yield questions and maneuvers",
+    diagnosis: "Diagnosis", support: "For", against: "Against", why: "Why", expect: "Expected result", test: "Test", item: "Item" };
+  function label(k) { return LABELS[k] || String(k).replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }); }
+
+  function report() {
+    var g = S.grade, t = tally();
+    var h = load(K_HIST, []); h.push({ c: S.c.id, d: new Date().toISOString(), s: t.pct, r: S.rules }); save(K_HIST, h.slice(-50));
+    var mark = { met: "✓", partial: "◐", missed: "✗" };
+    var secs = station.rubric.map(function (sec) {
+      var got = 0, n = 0, group = null, body = "";
+      sec.items.forEach(function (i) {
+        var st = statusOf(i); n++; got += st.status === "met" ? 1 : st.status === "partial" ? 0.5 : 0;
+        if (i.group && i.group !== group) { group = i.group; body += '<div class="grp">' + esc(group) + "</div>"; }
+        body += '<div class="item ' + st.status + '" data-id="' + esc(i.id) + '"><span class="ic">' + mark[st.status] + "</span><div>" + esc(i.text) +
+          '<span class="kind">' + (i.kind === "do" ? "do" : "say") + "</span>" +
+          (st.quote ? '<span class="q">You said: “' + esc(st.quote) + "”</span>" : "") +
+          (st.status !== "met" && i.script ? '<span class="try">Try: ' + esc(i.script) + "</span>" : "") +
+          (i.auto === "self" ? '<label><input type="checkbox" data-self="' + esc(i.id) + '"' + (S.selfChecks && S.selfChecks[i.id] ? " checked" : "") + "> I did this</label>" : "") +
+          (i.auto === "door" ? '<span class="q">You read the door form for ' + S.doorS + (S.doorS === 1 ? " second" : " seconds") + ".</span>" : "") +
+          (i.auto === "length" ? '<span class="q">' + (S.presentation ? "Your presentation took " + mmss(S.presentS) + "." : "No presentation was given.") + "</span>" : "") +
+          "</div></div>";
+      });
+      return '<details class="sec"><summary><span>' + esc(sec.title) + '</span><span class="meter">' + (Math.round(got * 2) / 2) + " of " + n + "</span></summary><div class=\"sec-body\">" + body + "</div></details>";
+    }).join("");
+    var r = g.reasoning || {};
+    var key = S.c.key || {};
+    var keyHtml = '<dl class="keybox"><dt>Diagnosis</dt><dd>' + esc(key.diagnosis || S.c.condition) + "</dd>" +
+      Object.keys(key).filter(function (k) { return k !== "diagnosis"; }).map(function (k) { return "<dt>" + esc(label(k)) + "</dt><dd>" + keyValue(key[k]) + "</dd>"; }).join("") + "</dl>";
+    var tx = S.log.map(function (l) {
+      var who = l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Facilitator";
+      return "<p><b>" + mmss(l.at) + " " + esc(who) + ":</b> " + (l.name ? esc(l.name) + ": " : "") + esc(l.t) + "</p>";
+    }).join("") + (S.presentation ? "<p><b>Presentation:</b> " + esc(S.presentation) + "</p>" : "");
+
+    $("v-report").innerHTML =
+      '<h1>Your station</h1><p class="sub">' + esc(S.c.door.name) + ", " + esc(S.c.door.age) + "-year-old " + esc(S.c.door.sex) + " · “" + esc(S.c.door.cc) + "” · " +
+        (S.rules === "real" ? "real station rules" : "the patient talked") + " · " + mmss(S.roomS) + " in the room</p>" +
+      '<div class="card"><div class="score"><div class="big" id="score-pct">' + t.pct + '%</div><div><div class="chips">' +
+        '<span class="chip met" id="c-met">' + t.met + ' met</span><span class="chip partial" id="c-part">' + t.partial + ' partly</span><span class="chip missed" id="c-miss">' + t.missed + " missed</span></div>" +
+        '<div class="small muted" style="margin-top:6px">of ' + t.n + " run-sheet items. A practice estimate from what you said out loud.</div></div></div>" +
+        (g.summary ? '<p style="margin:14px 0 0">' + esc(g.summary) + "</p>" : "") + "</div>" +
+      '<div class="card fb"><h2>Feedback</h2>' +
+        (g.strengths && g.strengths.length ? "<h3>What went well</h3>" + list(g.strengths) : "") +
+        (g.improve && g.improve.length ? "<h3>What would raise your score most</h3>" + list(g.improve) : "") +
+        (g.high_yield_missed && g.high_yield_missed.length ? "<h3>High-yield things you skipped</h3><ul class=\"tight\">" + g.high_yield_missed.map(function (x) { return "<li><b>" + esc(x.item) + "</b> " + esc(x.why) + "</li>"; }).join("") + "</ul>" : "") +
+        (["differential", "studies", "diagnosis", "plan", "education"].some(function (k) { return r[k]; }) ? "<h3>Your clinical reasoning</h3><dl>" +
+          ["differential", "studies", "diagnosis", "plan", "education"].filter(function (k) { return r[k]; }).map(function (k) { return "<dt>" + esc(label(k === "differential" ? "ddx" : k)) + "</dt><dd>" + esc(r[k]) + "</dd>"; }).join("") + "</dl>" : "") +
+        (g.presentation ? "<h3>Your presentation</h3><p>" + esc(g.presentation) + "</p>" : "") +
+      "</div>" +
+      "<h2>Run-sheet, item by item</h2>" + secs +
+      '<details class="sec"><summary><span>Answer key for this case</span><span class="meter">' + esc(S.c.condition) + '</span></summary><div class="sec-body">' + keyHtml + "</div></details>" +
+      '<details class="sec"><summary><span>Transcript</span><span class="meter">' + S.log.length + ' lines</span></summary><div class="sec-body tx">' + tx +
+        '<div class="row" style="margin-top:10px"><button type="button" class="btn" id="copy-tx">Copy transcript</button></div></div></details>' +
+      '<div class="row" style="margin-top:18px"><button type="button" class="btn primary" id="again">Practice another case</button>' +
+        '<button type="button" class="btn" id="same">This case again</button></div>' +
+      '<p class="small muted" style="margin-top:14px">Something graded wrong? <a href="#" onclick="window.reportMistake && window.reportMistake(); return false;">Report it</a>.</p>';
+    show("v-report");
+    $("v-report").onchange = function (e) {
+      var id = e.target.getAttribute && e.target.getAttribute("data-self");
+      if (!id) return;
+      S.selfChecks = S.selfChecks || {}; S.selfChecks[id] = e.target.checked;
+      var item = e.target.closest(".item"); var st = e.target.checked ? "met" : "missed";
+      item.className = "item " + st; item.querySelector(".ic").textContent = mark[st];
+      var t2 = tally();
+      $("score-pct").textContent = t2.pct + "%"; $("c-met").textContent = t2.met + " met"; $("c-part").textContent = t2.partial + " partly"; $("c-miss").textContent = t2.missed + " missed";
+      var hh = load(K_HIST, []); if (hh.length) { hh[hh.length - 1].s = t2.pct; save(K_HIST, hh); }
+    };
+    $("copy-tx").onclick = function () {
+      var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Facilitator") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
+        (S.presentation ? "\n\nPresentation: " + S.presentation : "");
+      try { navigator.clipboard.writeText(text).then(function () { $("copy-tx").textContent = "Copied"; }); } catch (e) {}
+    };
+    $("again").onclick = function () { S = null; setRadio("casemode", "random"); show("v-setup"); renderHistory(); checkAccess(); };
+    $("same").onclick = function () { var c = S.c.id; S = null; setRadio("casemode", c); $("case-pick").open = true; show("v-setup"); renderHistory(); checkAccess(); };
+  }
+
+  window.addEventListener("beforeunload", function (e) { if (S && !S.over && S.roomStart) { e.preventDefault(); e.returnValue = ""; } });
+
+  // ---------------------------------------------------------------- go
+  loadStation();
+  sbReady().then(function () { return SB() && SB().ready(); }).then(authReady).then(function () {
+    checkAccess();
+    try { firebase.auth().onAuthStateChanged(function () { if (!S) checkAccess(); }); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>

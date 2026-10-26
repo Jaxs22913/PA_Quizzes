@@ -12,7 +12,9 @@
    - Follow-ups (2026-10-15): a question that refers back ("what about treatment?") also sends the last two
      exchanges of this chat window (prior), which Pip keeps in memory only; they are never stored.
    - Streaming (2026-10-15): mode "guide" asks for the answer as Claude writes it (text/event-stream); anything the
-     server says before Claude starts (limits, a cached answer, a bad request) is plain JSON, and both are read. */
+     server says before Claude starts (limits, a cached answer, a bad request) is plain JSON, and both are read.
+   - OSCE practice (2026-10-26): osce("status" | "start" | "turn" | "grade", body, onEvent) for the practice station
+     page, and speech(body) for Google's natural voice (an audio Blob). A refusal carries the server's own message. */
 (function () {
   "use strict";
   if (window.PipSuperbrain) return;
@@ -46,7 +48,7 @@
 
   // can this browser read a reply as it arrives? (old ones get the whole answer at once, as before)
   function canStream() { return !!(window.ReadableStream && window.TextDecoder && window.Response && "body" in Response.prototype); }
-  function call(path, body, onDelta) {
+  function call(path, body, onDelta, onEvent) {
     var u = user();
     if (!u) return Promise.resolve({ ok: false, code: "signed_out" });
     // give up after 30 s: Clawd waits for the answer, but not for one that is never coming
@@ -61,16 +63,20 @@
       });
     }).then(function (r) {
       clearTimeout(timer);
-      if (onDelta && r.ok && /^text\/event-stream/i.test(r.headers.get("content-type") || "") && r.body && r.body.getReader) return events(r, onDelta, ctl);
+      if ((onDelta || onEvent) && r.ok && /^text\/event-stream/i.test(r.headers.get("content-type") || "") && r.body && r.body.getReader) return events(r, onDelta, ctl, onEvent);
       return r.json().catch(function () { return {}; }).then(function (j) {
-        if (!r.ok || !j || typeof j.ok !== "boolean") return { ok: false, code: (j && j.code) || "http_" + r.status, remainingToday: j && j.remainingToday };
+        if (!r.ok || !j || typeof j.ok !== "boolean") {
+          return { ok: false, code: (j && j.code) || "http_" + r.status, remainingToday: j && j.remainingToday,
+                   message: j && typeof j.message === "string" ? j.message : undefined };
+        }
         return j;
       });
     }).catch(function () { clearTimeout(timer); return { ok: false, code: timedOut ? "timeout" : "network" }; });
   }
   // a streamed answer: "delta" {text} pieces go to onDelta as they come, then "done" is the same reply as a plain
-  // answer, or "error" {code}. Given up when nothing arrives for 30 s.
-  function events(r, onDelta, ctl) {
+  // answer, or "error" {code}. Any other named event goes to onEvent (the OSCE grading's "progress"). Given up when
+  // nothing arrives for 30 s.
+  function events(r, onDelta, ctl, onEvent) {
     var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", idle = 0, timedOut = false;
     function wait() { clearTimeout(idle); if (ctl) idle = setTimeout(function () { timedOut = true; ctl.abort(); }, 30000); }
     return new Promise(function (resolve) {
@@ -79,9 +85,10 @@
         var ev = /^event: ?(.*)$/m.exec(chunk), data = /^data: ?(.*)$/m.exec(chunk), d = null;
         try { d = data ? JSON.parse(data[1]) : null; } catch (e) { return false; }
         if (!ev || !d) return false;
-        if (ev[1] === "delta") { if (typeof d.text === "string") try { onDelta(d.text); } catch (e) {} return false; }
+        if (ev[1] === "delta") { if (onDelta && typeof d.text === "string") try { onDelta(d.text); } catch (e) {} return false; }
         if (ev[1] === "done") { end(typeof d.ok === "boolean" ? d : { ok: false, code: "bad_reply" }); return true; }
-        if (ev[1] === "error") { end({ ok: false, code: String(d.code || "stream_error"), remainingToday: d.remainingToday }); return true; }
+        if (ev[1] === "error") { end({ ok: false, code: String(d.code || "stream_error"), remainingToday: d.remainingToday, message: typeof d.message === "string" ? d.message : undefined }); return true; }
+        if (onEvent) try { onEvent(ev[1], d); } catch (e) {}
         return false;
       }
       function pump() {
@@ -177,6 +184,31 @@
   function status() { if (!statusP) statusP = call("/v1/status").then(function (r) { if (!r || r.ok === false && r.code === "network") statusP = null; return r; }); return statusP; }
   // invite-only: a classmate enters the class code once and the server adds their account
   function join(code) { return call("/v1/join", { code: clip(String(code || "").trim(), 64) }).then(function (r) { statusP = null; return r; }); }
+  // OSCE practice: the station routes only. The grading is always a stream (progress events, then done or error).
+  function osce(what, body, onEvent) {
+    if (!/^(status|start|turn|grade)$/.test(what)) return Promise.resolve({ ok: false, code: "bad_route" });
+    if (what === "grade" && !canStream()) return Promise.resolve({ ok: false, code: "old_browser", message: "This browser can't receive the grading. Try an up-to-date Chrome, Edge or Safari." });
+    return call("/v1/osce/" + what, what === "status" ? undefined : body, null, what === "grade" ? (onEvent || function () {}) : null);
+  }
+  // Google's natural voice for one line: {ok: true, blob} or {ok: false, code} (the page falls back to the free voices)
+  function speech(body) {
+    var u = user();
+    if (!u || !endpoint()) return Promise.resolve({ ok: false, code: "signed_out" });
+    var ctl = window.AbortController ? new AbortController() : null, timer = 0;
+    return u.getIdToken().then(function (tok) {
+      if (ctl) timer = setTimeout(function () { ctl.abort(); }, 15000);
+      return fetch(endpoint() + "/v1/osce/tts", {
+        method: "POST",
+        headers: { authorization: "Bearer " + tok, "content-type": "application/json" },
+        body: JSON.stringify(body),
+        signal: ctl ? ctl.signal : undefined
+      });
+    }).then(function (r) {
+      if (r.ok && /^audio\//i.test(r.headers.get("content-type") || "")) return r.blob().then(function (b) { clearTimeout(timer); return { ok: true, blob: b }; });
+      clearTimeout(timer);
+      return r.json().catch(function () { return {}; }).then(function (j) { return { ok: false, code: (j && j.code) || "http_" + r.status }; });
+    }).catch(function () { clearTimeout(timer); return { ok: false, code: "network" }; });
+  }
   window.PipSuperbrain = { state: state, consented: consented, setConsent: setConsent, ask: ask, signIn: signIn,
-                           status: status, join: join, endpoint: endpoint, ready: ready };
+                           status: status, join: join, endpoint: endpoint, ready: ready, osce: osce, speech: speech };
 })();

@@ -342,7 +342,7 @@ document.querySelectorAll(".semester").forEach(semester => {
            Each link below measures the one above, so inserting a widget means
            adding a link to this chain -- CSS alone leaves it stacked on
            whatever was there before. */
-        var issueEl = document.getElementById("question-issue-row");
+        var issueEl = document.getElementById("osce-cta-row");
         if (issueEl) {
           issueEl.style.top = btnTop + "px";
           /* Match the search input's height the way the Guides button opposite
@@ -350,7 +350,7 @@ document.querySelectorAll(".semester").forEach(semester => {
              a tall row with a short tag beside it. searchHeight is only in
              scope when the search row was measurable; when it is not, btnTop
              falls back to `offset` and the natural height is right anyway. */
-          var issueBtn = issueEl.querySelector(".question-issue-pill");
+          var issueBtn = issueEl.querySelector(".osce-cta-pill");
           if (issueBtn && searchInput && searchWrap) {
             issueBtn.style.height = Math.round(searchInput.getBoundingClientRect().height / zoom) + "px";
           }
@@ -388,7 +388,7 @@ document.querySelectorAll(".semester").forEach(semester => {
         if (window.matchMedia &&
             window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-        var order = ["question-issue-row", "relax-cta-row", "group-cta-row",
+        var order = ["osce-cta-row", "relax-cta-row", "group-cta-row",
                      "arcade-cta-row", "stats-widget", "planner-widget", "week-widget",
                      "semester-card", "continue-widget"];
         var step = 0;
