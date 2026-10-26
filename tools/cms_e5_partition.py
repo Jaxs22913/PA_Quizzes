@@ -7,6 +7,7 @@
     python3 cms_e5_partition.py l30io | l30vig   # Lecture 30 Arrhythmias II: Blocks and Ventriculars (Elwaya)
     python3 cms_e5_partition.py l31io | l31vig   # Lecture 31 Pericardial Disease (Reynolds)
     python3 cms_e5_partition.py l32io | l32vig   # Lecture 32 Infective Endocarditis (Reynolds)
+    python3 cms_e5_partition.py rhyvig           # Rhythm Strips and Rhythm Vignettes (Lectures 29-30)
 
 Copied from the GUARDED path of cms_e4_partition.py (2026-09-24), which is the
 Carter build for Exam 4; the Hypertension LEGACY path is not carried over. The
@@ -59,6 +60,8 @@ GUARDED = {
  "l31vig": ("l31", True, 20261015 + 312),
  "l32io": ("l32", False, 20261015 + 321),
  "l32vig": ("l32", True, 20261015 + 322),
+ # 2026-10-25: rhythm strips + rhythm vignettes across Lectures 29 and 30 (cms_e5rhy_scope.py)
+ "rhyvig": ("rhy", True, 20261025 + 1),
 }
 if WHICH not in GUARDED:
     sys.exit("unknown set %r -- use one of %s" % (WHICH, ", ".join(GUARDED)))
@@ -89,6 +92,12 @@ SLOTS = ("etiology", "epidemiology", "risk factors", "manifestation", "different
 LEADS = ("diagnosis", "next step", "treatment", "test", "education", "avoid",
          "complication", "referral")
 DX_CAP = int(30 * 0.20)          # 6 of 30 -- "there might be SOME" diagnosis questions
+# Rhythm set only (2026-10-25): recognizing the rhythm IS the skill the course said it tests, so
+# "rhy" gets 12 of 30 (the 40% skew cap) and two extra lead-ins, "etiology" (the underlying cause)
+# and "describe" (which description fits the strip). Every other key keeps the values above.
+_LEC = GUARDED[WHICH][0]
+LEADS = LEADS + {"rhy": ("etiology", "describe")}.get(_LEC, ())
+DX_CAP = {"rhy": 12}.get(_LEC, DX_CAP)
 SKEW_CAP = 0.40
 
 # A stem that asks for the diagnosis must be LABELED diagnosis, whatever else
@@ -179,7 +188,7 @@ SET1_LEAD_NOTE = None
 # ---------------------------------------------------------------------------
 from _option_order import option_values, order_options
 
-WRITER_RULES = {"l29", "l30", "l31", "l32"}
+WRITER_RULES = {"l29", "l30", "l31", "l32", "rhy"}
 MIS = ("competing diagnosis", "wrong stage or severity", "ruled out by a stated finding",
        "confused mechanism or drug class", "adjacent fact", "reversed direction or value",
        "common lay belief")
@@ -187,7 +196,7 @@ _ABSOL = re.compile(r"\b(always|never|only|all|none)\b", re.I)
 
 
 def _lec_of(mod):
-    m = re.match(r"cms_e5(l\d+)_", mod)
+    m = re.match(r"cms_e5(l\d+|rhy)_", mod)
     return m.group(1) if m else None
 
 
@@ -265,6 +274,8 @@ def guard_all(scope, pool, origin, vig):
     banned = [re.compile(p, re.I) for p in getattr(scope, "SCOPE_BANNED", ())]
     named = dict(getattr(scope, "NAMED", {}))
     deck = scope.DECK
+    decks = tuple(getattr(scope, "DECKS", (deck,)))      # a two-deck scope (rhy) names both
+    by_deck = getattr(scope, "EXCLUDED_BY_DECK", {})     # and each deck's own excluded slides
 
     errs = []
     seen_stems = Counter(q["q"].strip().lower() for q in pool)
@@ -283,11 +294,11 @@ def guard_all(scope, pool, origin, vig):
         if seen_stems[q["q"].strip().lower()] > 1: errs.append((where(i), "duplicate stem"))
         # citation
         m = re.match(r"^(.*), Slides? (\d+)", q.get("cite", ""))
-        if not m or m.group(1) != deck:
-            errs.append((where(i), "cite must read '%s, Slide N', got %r" % (deck, q.get("cite"))))
+        if not m or m.group(1) not in decks:
+            errs.append((where(i), "cite must read '%s, Slide N', got %r" % (" | ".join(decks), q.get("cite"))))
         else:
-            for n in re.findall(r"\d+", q["cite"][len(deck):]):
-                if int(n) in excluded:
+            for n in re.findall(r"\d+", q["cite"][len(m.group(1)):]):
+                if int(n) in by_deck.get(m.group(1), excluded):
                     errs.append((where(i), "cites excluded slide %s" % n))
         # slot and io
         if q.get("slot") not in SLOTS: errs.append((where(i), "bad slot %r" % q.get("slot")))

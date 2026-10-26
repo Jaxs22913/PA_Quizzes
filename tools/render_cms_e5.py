@@ -8,6 +8,7 @@ in hue. Four-option sets, per the exam standard.
 
     python3 render_cms_e5.py l27io | l27vig | l28io | l28vig | l26io | l26vig
     python3 render_cms_e5.py l29io | l29vig | l30io | l30vig | l31io | l31vig | l32io | l32vig
+    python3 render_cms_e5.py rhyvig      # Rhythm Strips and Rhythm Vignettes (Lectures 29-30)
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -107,6 +108,16 @@ SPEC = {
    sub="Clinical Medicine and Surgery I &middot; Exam 5 &middot; Lecture 32",
    chips=["Fever and murmur", "Peripheral signs", "Blood cultures and echo", "Empiric therapy",
           "Prophylaxis", "Surgery"]),
+ "rhyvig": dict(sets="cms_e5rhy_vig_sets.json",
+   files=["rhythm-strips-vignettes.html", "rhythm-strips-vignettes-version-2.html"],
+   title="Rhythm Strips and Rhythm Vignettes %d — CMS I Exam 5",
+   h1="Rhythm Strips &amp; Rhythm Vignettes &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 5 &middot; Lectures 29&ndash;30",
+   chips=["Rhythm strips", "Rhythms described in cases", "Bradycardias and blocks",
+          "Narrow-complex tachycardias", "Wide-complex tachycardias", "Cardiac arrest"],
+   intro="Built to match the exam's format: rhythms described in patient cases, plus real rhythm "
+         "strips to read. Cases ask for the rhythm, its cause, how to describe it, the right test, or "
+         "the next step in management."),
  "l28vig": dict(sets="cms_e5l28_vig_sets.json",
    files=["cardiomyopathy-vignettes.html", "cardiomyopathy-vignettes-version-2.html"],
    title="Cardiomyopathy Vignettes %d — CMS I Exam 5",
@@ -123,7 +134,7 @@ for n, (key, fname) in enumerate(zip(("set1", "set2"), SPEC["files"]), start=1):
     qs = [dict({k: v for k, v in q.items() if k not in ("mis", "ordered", "asc")},
                opts=[o[:2] for o in q["opts"]]) for q in S[key]]
     html = R.render(title=SPEC["title"] % n, h1=SPEC["h1"] % n, sub=SPEC["sub"],
-                    pill="%d questions" % len(qs), chips=SPEC["chips"], intro="",
+                    pill="%d questions" % len(qs), chips=SPEC["chips"], intro=SPEC.get("intro", ""),
                     questions=qs, already_converted=True, **PAL)
     open(os.path.join(OUT, fname), "w", encoding="utf-8").write(html)
     print("wrote %-52s %d questions" % (fname, len(qs)))
