@@ -236,9 +236,9 @@
       <div class="row small" style="margin-top:8px">
         <label for="pause-len" class="muted">Pause before your words are sent</label>
         <select id="pause-len" style="width:auto">
-          <option value="1300">Short (1.3 seconds)</option>
-          <option value="1900" selected>Normal (1.9 seconds)</option>
-          <option value="2700">Long (2.7 seconds)</option>
+          <option value="1300">Short</option>
+          <option value="1900" selected>Normal</option>
+          <option value="2700">Long (if it cuts you off)</option>
         </select>
       </div>
       <p id="no-mic" class="warn small hidden" style="margin-top:10px">This browser can't turn speech into text, so you will type instead. For talking out loud, use Chrome, Edge or Safari.</p>
@@ -348,10 +348,14 @@
   var DOOR_S = 60, ROOM_S = 20 * 60;
   var K_HIST = "local:osce:history", K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
   var KOKORO_WORKER = "osce-voice-worker.js";   // the free voice runs there, off this page's main thread
-  // a laptop or desktop with a graphics chip the browser can use runs the voice there (fast, a bigger download);
-  // phones and tablets never try (330 MB, and their tabs run out of memory), so they get the slower 90 MB version
-  var KOKORO_GPU = !!navigator.gpu && !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) &&
-                   !(/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  // Any device whose browser can use the graphics chip runs the voice there (fast, a 330 MB download), unless it
+  // reports under 4 GB of memory. Jaxon: iPads "are more powerful usually", "most phones have alot of memory too".
+  // If a tab dies while building it (Safari caps each tab's memory), K_GPU_TRY is still set on the next visit, and
+  // that device uses the 90 MB version from then on. Phones are told to use Wi-Fi for the download.
+  var UA = navigator.userAgent;
+  var PHONE = /iPhone|iPod/.test(UA) || (/Android/.test(UA) && /Mobile/.test(UA));
+  var KOKORO_GPU = !!navigator.gpu && !(navigator.deviceMemory && navigator.deviceMemory < 4);
+  var K_GPU_TRY = "local:osce:gpu-try", K_GPU_OFF = "local:osce:gpu-off";
   // patient voice by the patient's sex; the facilitator in a different voice (Jaxon: "Use a male voice for male pt
   // and female voice for female pt")
   var KOKORO_VOICES = { pm: "am_michael", pf: "af_heart", fm: "bm_george", ff: "bf_emma" };
@@ -498,9 +502,9 @@
     if (p.talk) setRadio("talk", p.talk);
     if (p.pause) $("pause-len").value = p.pause;
     if (!SR) { $("no-mic").classList.remove("hidden"); }
-    $("voice-kokoro-note").textContent = KOKORO_GPU ?
-      "Kokoro, open source. Downloads about 330 MB once, then works offline. Quick on most laptops." :
-      "Kokoro, open source. Downloads about 90 MB once. Slow on phones and tablets: a few seconds before each line.";
+    $("voice-kokoro-note").textContent = KOKORO_GPU && !load(K_GPU_OFF, 0) ?
+      "Kokoro, open source. Downloads about 330 MB once" + (PHONE ? " (use Wi-Fi)" : "") + ", then works offline. Quick on most devices." :
+      "Kokoro, open source. Downloads about 90 MB once. Slow on this device: a few seconds before each line.";
     markChoices();
   })();
   document.addEventListener("change", function (e) {
@@ -524,9 +528,13 @@
     if (kokoroP) return kokoroP;
     var box = $("kokoro-status"); box.classList.remove("hidden");
     var files = {};
+    if (load(K_GPU_TRY, 0)) { save(K_GPU_OFF, 1); try { localStorage.removeItem(K_GPU_TRY); } catch (e) {} }   // died last time
+    var gpu = KOKORO_GPU && !load(K_GPU_OFF, 0);
+    function tried() { try { localStorage.removeItem(K_GPU_TRY); } catch (e) {} }
     kokoroP = new Promise(function (res) {
       var w;
       function failed() {
+        tried();
         try { if (w) w.terminate(); } catch (e) {}
         kokoroW = null; kokoroP = null; kokoro = null;
         var jobs = kokoroJobs; kokoroJobs = {};
@@ -544,7 +552,10 @@
           var pct = b ? Math.min(100, Math.round(a / b * 100)) : 0;
           $("kokoro-bar").style.width = pct + "%";
           $("kokoro-text").textContent = "Downloading the free voice… " + pct + "% (once; it is saved in this browser)";
+        } else if (m.type === "building") {
+          save(K_GPU_TRY, Date.now());     // downloaded; building it on the graphics chip is where a tab can die
         } else if (m.type === "ready") {
+          tried();
           kokoroW = w; kokoro = { say: kokoroSay };
           $("kokoro-bar").style.width = "100%";
           $("kokoro-text").textContent = m.fast ? "The free voice is ready." :
@@ -557,7 +568,7 @@
           if (cb) cb(m.wav ? new Blob([m.wav], { type: "audio/wav" }) : m.skipped ? SKIPPED : null);
         }
       };
-      w.postMessage({ type: "load", gpu: KOKORO_GPU });
+      w.postMessage({ type: "load", gpu: gpu });
     });
     return kokoroP;
   }
@@ -678,12 +689,15 @@
     engine = v === "google" ? "device" : v;
     btn.disabled = true;
     unlockAudio();
-    var say = function (sex, who, text) { return function () { sexNow = sex; return prepare(text, who).then(function (p) { return p(); }); }; };
-    (v === "kokoro" ? loadKokoro() : Promise.resolve())
-      .then(say("male", "p", "Hi. This is how a male patient sounds."))
-      .then(say("female", "p", "And this is how a female patient sounds."))
-      .then(say("male", "f", "I'm the facilitator. I read you the examination findings."))
-      .then(function () { btn.disabled = false; }, function () { btn.disabled = false; });
+    var lines = [["male", "p", "Hi. This is how a male patient sounds."], ["female", "p", "And this is how a female patient sounds."],
+                 ["male", "f", "I'm the facilitator. I read you the examination findings."]];
+    (v === "kokoro" ? loadKokoro() : Promise.resolve()).then(function () {
+      // all three asked for at once, so each is being made while the one before it plays
+      var preps = lines.map(function (l) { sexNow = l[0]; return prepare(l[2], l[1]); });
+      return lines.reduce(function (chain, l, i) {
+        return chain.then(function () { return preps[i]; }).then(function (play) { sexNow = l[0]; return play(); });
+      }, Promise.resolve());
+    }).then(function () { btn.disabled = false; }, function () { btn.disabled = false; });
   };
   function sysToast(t) { $("start-note").textContent = t; setTimeout(function () { if ($("start-note").textContent === t) $("start-note").textContent = ""; }, 5000); }
 
@@ -921,12 +935,17 @@
   function clearLive() { if (liveNode) { liveNode.remove(); liveNode = null; } }
   function armSilence() {
     clearTimeout(silence);
+    // Every word settled (the recognizer is no longer guessing at any): a short wait is enough. The full pause, on
+    // top of the recognizer's own half second to a second, kept a turn waiting about 2.5 s before it was even sent
+    // (Jaxon: "takes to long to reply"). Words still being guessed at, or none settled yet, keep the full pause, so
+    // a breath mid-question doesn't cut the student off.
+    var settled = heardFinal.trim() && !heardInterim.trim();
     silence = setTimeout(function () {
       var quiet = Date.now() - lastHeard;
       // an unfinished phrase (no final words yet) gets a little longer
       if (!heardFinal.trim() && quiet < S.pause + 700) return armSilence();
       commit();
-    }, S.pause);
+    }, settled ? Math.max(450, Math.round(S.pause * 0.4)) : S.pause);
   }
   function commit() {
     var t = (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim();

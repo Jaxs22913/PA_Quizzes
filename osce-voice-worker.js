@@ -10,10 +10,12 @@
    The smaller graphics-chip versions (fp16, q4f16) are NOT used: their speech came out garbled ("I get scared of
    blood" for "I get short of breath when I walk up the stairs ...").
 
-   In:  {type: "load", gpu}                     build the voice; gpu false = the slow way only (phones, tablets)
+   In:  {type: "load", gpu}                     build the voice; gpu false = the slow way only (under 4 GB of
+                                                memory, or a device whose tab died building the fast one)
         {type: "say", id, text, voice, epoch}   make one line's audio
         {type: "cancel", epoch}                 drop every queued line from an earlier epoch (the station ended)
-   Out: {type: "progress", file, loaded, total} · {type: "ready", fast} · {type: "failed"}
+   Out: {type: "progress", file, loaded, total} · {type: "building"} (fast way: downloaded, now building)
+        {type: "ready", fast} · {type: "failed"}
         {type: "audio", id, wav}                a WAV file as an ArrayBuffer (transferred, not copied)
         {type: "audio", id, error: true} · {type: "audio", id, skipped: true} */
 import { KokoroTTS } from "https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/dist/kokoro.web.js";
@@ -28,6 +30,8 @@ function build(device, dtype) {
     dtype: dtype, device: device,
     progress_callback: function (p) {
       if (p && p.status === "progress" && p.total) self.postMessage({ type: "progress", file: p.file, loaded: p.loaded, total: p.total });
+      // the model is in hand; building it on the graphics chip is the step that can exhaust a tablet tab's memory
+      if (p && p.status === "done" && device === "webgpu" && /\.onnx$/.test(p.file || "")) self.postMessage({ type: "building" });
     }
   });
 }
