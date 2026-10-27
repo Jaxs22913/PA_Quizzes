@@ -89,6 +89,14 @@ SPEC = {
    title="Clinical Questions and Reviews Quiz %d — Interpretation of Medical Literature",
    h1="Clinical Questions and Reviews &mdash; Quiz %d",
    sub="Interpretation of Medical Literature &middot; Session 10", chips="auto"),
+ # "Reading a Study" (2026-10-27): applies sessions 1-10 to invented study descriptions (syllabus units 12-13).
+ "s11apply": dict(sets="medlit_s11apply_sets.json",
+   files=["reading-a-study-quiz.html", "reading-a-study-quiz-version-2.html"],
+   title="Reading a Study Quiz %d — Interpretation of Medical Literature",
+   h1="Reading a Study &mdash; Quiz %d",
+   sub="Interpretation of Medical Literature &middot; Applying Sessions 1&ndash;10",
+   chips=["Study design", "Bias", "Choosing the measure", "P values &amp; intervals",
+          "Clinical questions &amp; articles"]),
  "s4tests": dict(sets="medlit_s4tests_sets.json",
    files=["diagnostic-tests-quiz.html", "diagnostic-tests-quiz-version-2.html"],
    title="Diagnostic Tests Quiz %d — Interpretation of Medical Literature",
@@ -99,6 +107,9 @@ SPEC = {
 }[sys.argv[1] if len(sys.argv) > 1 else "s1"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))
+# `mis`, `skill` and `unit` are review and partition metadata (tools/blind_review.py reads `mis` from the
+# sets file); they are not rendered into the page. Older sets carry none of them, so this changes nothing there.
+S = {k: [{f: v for f, v in q.items() if f not in ("mis", "skill", "unit")} for q in qs] for k, qs in S.items()}
 if SPEC["chips"] == "auto":
     import html as _h
     from collections import Counter as _C
