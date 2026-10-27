@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Add the Pharmacology I Exam 3 Arcade decks (Lecture 9, Diuretics and Heart Failure Drugs; Lecture 10, Antiarrhythmics).
+"""Add the Pharmacology I Exam 3 Arcade decks (Lecture 9, Diuretics and Heart Failure Drugs; Lecture 10, Antiarrhythmics;
+Lecture 11, Pulmonary Infections, Asthma and Chronic Obstructive Pulmonary Disease).
 
-Six Lecture 9 decks (_pharm_e3_arcade_l9.py) and five Lecture 10 decks (_pharm_e3_arcade_l10.py). Each card is
+Six Lecture 9 decks (_pharm_e3_arcade_l9.py), five Lecture 10 decks (_pharm_e3_arcade_l10.py) and eight Lecture 11
+decks (_pharm_e3_arcade_l11.py). Each card is
 proved against its OWN lecture's deck and recording. ATOMIC FACTS ONLY per
 [[arcade_content_policy]]. NOTHING HERE IS A DOSE: the assertions below refuse one.
 
@@ -24,12 +26,13 @@ import pharm_e3_lib as L
 import check_pharm_e3_wood as W
 import _pharm_e3_arcade_l9 as A
 import _pharm_e3_arcade_l10 as A10
+import _pharm_e3_arcade_l11 as A11
 
-MODULES = [("L9", A), ("L10", A10)]     # (lecture whose slides and transcript prove the cards, deck module)
-DECKS = A.DECKS + A10.DECKS
+MODULES = [("L9", A), ("L10", A10), ("L11", A11)]     # (lecture whose slides and transcript prove the cards, deck module)
+DECKS = A.DECKS + A10.DECKS + A11.DECKS
 ROOT = os.path.dirname(HERE)
 ARCADE = os.path.join(ROOT, "arcade.js")
-SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/2ff21160-23d6-4725-b9aa-d32e3abf4f08/scratchpad/arcade_e3_dryrun.js"
+SCRATCH = "/private/tmp/claude-501/-Users-jaxonluke/b4e97bec-9eca-4a9e-a6f9-0420a51ae967/scratchpad/arcade_e3_dryrun.js"
 OPEN, CLOSE = "  // <!--PHARME3-DECKS-->", "  // <!--/PHARME3-DECKS-->"
 
 

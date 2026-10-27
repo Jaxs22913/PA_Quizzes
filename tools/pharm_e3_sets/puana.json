@@ -1,0 +1,528 @@
+{
+ "puana1": [
+  {
+   "topic": "Albuterol",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient in anaphylaxis is still wheezing after epinephrine. Which added drug relaxes bronchial smooth muscle?",
+   "opts": [
+    [
+     "Albuterol",
+     "Correct. Albuterol, a beta-2 agonist bronchodilator, relaxes bronchial smooth muscle."
+    ],
+    [
+     "Famotidine",
+     "Famotidine is the histamine H2 blocker for systemic vasodilation and gastrointestinal effects; albuterol relaxes bronchial smooth muscle.",
+     "adjacent fact"
+    ],
+    [
+     "Hydroxyzine",
+     "Hydroxyzine is a histamine H1 blocker that relieves rash, pruritus and hives; albuterol relaxes bronchial smooth muscle.",
+     "adjacent fact"
+    ],
+    [
+     "Prednisone",
+     "Prednisone blocks inflammatory mediator production but takes several hours to work; albuterol relaxes bronchial smooth muscle now.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 54"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Besides constricting vessels and relaxing bronchial muscle, which signs of anaphylaxis does epinephrine alleviate?",
+   "opts": [
+    [
+     "Tremor, anxiousness and tachycardia",
+     "Anxiousness, tremor and tachycardia are albuterol's adverse effects, and anxiety and tachycardia are epinephrine's own; it alleviates pruritus, urticaria and angioedema.",
+     "reversed direction or value"
+    ],
+    [
+     "Hypertension and diaphoresis",
+     "Hypertension and diaphoresis are adverse effects of epinephrine, not signs it relieves; it alleviates pruritus, urticaria and angioedema.",
+     "reversed direction or value"
+    ],
+    [
+     "Pruritus, urticaria and angioedema",
+     "Correct. Beyond its alpha and beta effects, epinephrine alleviates pruritus, urticaria and angioedema."
+    ],
+    [
+     "Excess gastric acid secretion",
+     "Increased gastric acid secretion is a gastrointestinal effect of histamine blocked by famotidine; epinephrine alleviates pruritus, urticaria and angioedema.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 51"
+  },
+  {
+   "topic": "Histamine blockers",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which drug is given in anaphylaxis to block the systemic vasodilation and gastrointestinal effects of histamine?",
+   "opts": [
+    [
+     "Diphenhydramine",
+     "Diphenhydramine is a histamine H1 blocker, used for the cutaneous effects (rash, pruritus, hives); famotidine blocks the systemic and gastrointestinal effects.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Hydroxyzine",
+     "Hydroxyzine is a histamine H1 blocker for the cutaneous effects; the histamine H2 blocker famotidine blocks vasodilation and gastrointestinal effects.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Albuterol",
+     "Albuterol is a beta-2 agonist that relaxes bronchial smooth muscle; the systemic and gastrointestinal effects of histamine are blocked by famotidine.",
+     "adjacent fact"
+    ],
+    [
+     "Famotidine",
+     "Correct. Famotidine, the histamine H2 blocker, blocks the systemic (vasodilation) and gastrointestinal (increased gastric acid secretion) effects of histamine."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 53"
+  },
+  {
+   "topic": "Corticosteroids",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why are corticosteroids not relied on for the immediate reversal of anaphylaxis?",
+   "opts": [
+    [
+     "They act on the skin signs alone",
+     "Corticosteroids work on all aspects of anaphylaxis, not the skin alone; the limit is that they take several hours to work.",
+     "reversed direction or value"
+    ],
+    [
+     "They cannot be given by injection",
+     "Methylprednisolone can be given intramuscularly or intravenously; the limit of corticosteroids is that they take several hours to work.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "They worsen the hypotension",
+     "Hypotension from profound vasodilation is treated with crystalloid; the limit of corticosteroids is their delay of several hours.",
+     "adjacent fact"
+    ],
+    [
+     "They take several hours to work",
+     "Correct. Corticosteroids work on all aspects of anaphylaxis but take several hours to work."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 55"
+  },
+  {
+   "topic": "Volume expansion",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Which finding in anaphylaxis is the indication for intravenous crystalloid?",
+   "opts": [
+    [
+     "Widespread hives with itching",
+     "Rash, itching and hives are the cutaneous effects relieved by histamine H1 blockers; crystalloid is for profound vasodilation and hypotension.",
+     "adjacent fact"
+    ],
+    [
+     "Profound vasodilation with hypotension",
+     "Correct. Intravenous crystalloid (normal saline) is given for profound vasodilation and hypotension, because it increases intravascular volume."
+    ],
+    [
+     "Wheezing from bronchospasm",
+     "Bronchospasm is treated with a bronchodilator such as albuterol, which relaxes bronchial smooth muscle; crystalloid is for vasodilation and hypotension.",
+     "adjacent fact"
+    ],
+    [
+     "Increased gastric acid secretion",
+     "Increased gastric acid is a gastrointestinal effect of histamine blocked by famotidine; crystalloid is given for profound vasodilation and hypotension.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 50"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which anaphylaxis drug lists hypertension and diaphoresis among its adverse effects?",
+   "opts": [
+    [
+     "Albuterol",
+     "Albuterol's listed adverse effects are anxiousness, tremor and tachycardia; hypertension and diaphoresis are on epinephrine's list.",
+     "adjacent fact"
+    ],
+    [
+     "Diphenhydramine",
+     "Diphenhydramine is the histamine H1 blocker given for rash, pruritus and hives; hypertension and diaphoresis are epinephrine's adverse effects.",
+     "adjacent fact"
+    ],
+    [
+     "Epinephrine",
+     "Correct. Epinephrine's adverse effects are anxiety, hypertension, tachycardia, nausea and vomiting, and diaphoresis."
+    ],
+    [
+     "Methylprednisolone",
+     "Methylprednisolone is the corticosteroid that blocks inflammatory mediators over hours; hypertension and diaphoresis are epinephrine's adverse effects.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 52"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Epinephrine treats anaphylaxis by acting on which receptors?",
+   "opts": [
+    [
+     "Alpha and beta receptors",
+     "Correct. Epinephrine acts on alpha receptors (vasoconstriction, decreased vascular permeability) and beta receptors (bronchial smooth muscle relaxation)."
+    ],
+    [
+     "Beta-2 receptors",
+     "Albuterol is the beta-2 agonist; epinephrine also acts on alpha receptors, which is where its vasoconstriction comes from.",
+     "wrong stage or severity"
+    ],
+    [
+     "Histamine H1 receptors",
+     "Histamine H1 receptors are blocked by diphenhydramine and hydroxyzine for rash and hives; epinephrine acts on alpha and beta receptors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Histamine H2 receptors",
+     "Histamine H2 receptors are blocked by famotidine for systemic and gastrointestinal effects; epinephrine acts on alpha and beta receptors.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 51"
+  },
+  {
+   "topic": "Anaphylaxis",
+   "io": "Summarize side effects and toxic manifestations of respiratory drugs",
+   "slot": "physiology",
+   "q": "How can a severe case of anaphylaxis end?",
+   "opts": [
+    [
+     "In airway obstruction and circulatory collapse",
+     "Correct. Severe anaphylaxis may result in complete obstruction of the airway, cardiovascular collapse and death."
+    ],
+    [
+     "In a slow, lasting decline in lung function",
+     "An accelerated decline in forced expiratory volume in 1 second (FEV1) describes chronic obstructive pulmonary disease; severe anaphylaxis ends in airway obstruction and cardiovascular collapse.",
+     "competing diagnosis"
+    ],
+    [
+     "In an empyema or a lung abscess",
+     "Empyema and lung abscess are complications of pneumonia therapy failing; severe anaphylaxis can end in complete airway obstruction and cardiovascular collapse.",
+     "competing diagnosis"
+    ],
+    [
+     "In a thickening of the bronchial mucosa",
+     "Thickening of the bronchial mucosa is a feature of asthma; severe anaphylaxis can end in complete airway obstruction, cardiovascular collapse and death.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Histamine blockers",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "In anaphylaxis, which effects do histamine H1 blockers relieve?",
+   "opts": [
+    [
+     "Vasodilation and gastric acid",
+     "Systemic vasodilation and gastrointestinal effects such as increased gastric acid are blocked by the histamine H2 blocker famotidine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Rash, pruritus and hives",
+     "Correct. The histamine H1 blockers diphenhydramine and hydroxyzine relieve the cutaneous effects: rash, pruritus and hives."
+    ],
+    [
+     "Bronchospasm and wheeze",
+     "Bronchospasm is relieved by relaxing bronchial smooth muscle with albuterol or epinephrine; histamine H1 blockers relieve rash, pruritus and hives.",
+     "adjacent fact"
+    ],
+    [
+     "Hypotension and shock",
+     "Profound vasodilation and hypotension call for intravenous crystalloid and epinephrine; histamine H1 blockers relieve the cutaneous effects.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 53"
+  }
+ ],
+ "puana2": [
+  {
+   "topic": "Anaphylaxis",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which description defines anaphylaxis?",
+   "opts": [
+    [
+     "A severe, systemic allergic reaction",
+     "Correct. Anaphylaxis is a severe, systemic allergic reaction with multisystem involvement: skin, airway, vascular system and gastrointestinal tract."
+    ],
+    [
+     "Widespread reversible airway narrowing",
+     "Widespread reversible narrowing of the bronchial airways defines asthma; anaphylaxis is a severe, systemic allergic reaction.",
+     "competing diagnosis"
+    ],
+    [
+     "Inflammation of one or more bronchi",
+     "Inflammation of one or more bronchi defines bronchitis; anaphylaxis is a severe, systemic allergic reaction involving many systems.",
+     "competing diagnosis"
+    ],
+    [
+     "An allergic reaction of the skin alone",
+     "Anaphylaxis is multisystem, involving the skin, airway, vascular system and gastrointestinal tract, and can end in airway obstruction and cardiovascular collapse.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 48"
+  },
+  {
+   "topic": "Corticosteroids",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which corticosteroid listed for anaphylaxis can be given intramuscularly or intravenously?",
+   "opts": [
+    [
+     "Prednisone",
+     "Prednisone is the other listed corticosteroid, without an injectable route given; methylprednisolone is the one given intramuscularly or intravenously.",
+     "adjacent fact"
+    ],
+    [
+     "Methylprednisolone",
+     "Correct. Methylprednisolone is the corticosteroid listed for intramuscular or intravenous use in anaphylaxis; prednisone is the other agent."
+    ],
+    [
+     "Hydroxyzine",
+     "Hydroxyzine is a histamine H1 blocker for rash and hives, not a corticosteroid; methylprednisolone is the injectable corticosteroid.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Famotidine",
+     "Famotidine is the histamine H2 blocker, not a corticosteroid; methylprednisolone is the corticosteroid given intramuscularly or intravenously.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 55"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "By which route is epinephrine generally preferred in anaphylaxis when the patient is not coding?",
+   "opts": [
+    [
+     "Intravenous",
+     "Intravenous epinephrine is the exception, kept for a patient who is coding; otherwise the intramuscular route is generally preferred.",
+     "wrong stage or severity"
+    ],
+    [
+     "Subcutaneous",
+     "Subcutaneous injection is one of the listed routes, but the intramuscular route is the one generally preferred.",
+     "adjacent fact"
+    ],
+    [
+     "Intramuscular",
+     "Correct. Epinephrine can be given intramuscularly, subcutaneously or intravenously, and the intramuscular route is generally preferred unless the patient is coding."
+    ],
+    [
+     "Inhaled",
+     "Inhalation is the route for albuterol; epinephrine is given intramuscularly, subcutaneously or intravenously, with intramuscular preferred.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 52"
+  },
+  {
+   "topic": "Histamine blockers",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which drug used in anaphylaxis is a histamine H1 blocker?",
+   "opts": [
+    [
+     "Famotidine",
+     "Famotidine is the histamine H2 blocker, which blocks systemic vasodilation and gastrointestinal effects; diphenhydramine is the H1 blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Diphenhydramine",
+     "Correct. Diphenhydramine and hydroxyzine are the histamine H1 blockers; they relieve rash, pruritus and hives."
+    ],
+    [
+     "Albuterol",
+     "Albuterol is a beta-2 agonist that relaxes bronchial smooth muscle; diphenhydramine is the histamine H1 blocker.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Prednisone",
+     "Prednisone is a corticosteroid that blocks inflammatory mediator production; diphenhydramine is the histamine H1 blocker.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 53"
+  },
+  {
+   "topic": "Corticosteroids",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "How do corticosteroids act in anaphylaxis?",
+   "opts": [
+    [
+     "They block histamine at its receptors",
+     "Blocking histamine at its receptors is the job of the histamine H1 and H2 blockers; corticosteroids block inflammatory mediator production.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They stimulate alpha and beta receptors",
+     "Stimulating alpha and beta receptors is epinephrine's action; corticosteroids block inflammatory mediator production at the cellular level.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They expand the intravascular volume",
+     "Increasing intravascular volume is the role of intravenous crystalloid; corticosteroids block inflammatory mediator production.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "They block inflammatory mediator production",
+     "Correct. Corticosteroids block production of inflammatory mediators at the cellular level and work on all aspects of anaphylaxis, though they take several hours."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 55"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Summarize side effects and toxic manifestations of respiratory drugs",
+   "slot": "adverse effect",
+   "q": "Which complication can an epinephrine overdose cause?",
+   "opts": [
+    [
+     "Cerebrovascular hemorrhage",
+     "Correct. Epinephrine overdose can lead to cerebrovascular hemorrhage, myocardial infarction and pulmonary edema."
+    ],
+    [
+     "Adrenal suppression",
+     "Adrenal suppression is a systemic corticosteroid side effect; epinephrine overdose can cause cerebrovascular hemorrhage.",
+     "adjacent fact"
+    ],
+    [
+     "Peripheral neuritis",
+     "Peripheral neuritis is isoniazid's effect from pyridoxine deficiency; epinephrine overdose can cause cerebrovascular hemorrhage.",
+     "adjacent fact"
+    ],
+    [
+     "Oral candidiasis",
+     "Oral candidiasis (thrush) is an inhaled corticosteroid adverse effect; epinephrine overdose can cause cerebrovascular hemorrhage.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 52"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Describe the molecular mechanism of action of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Which effect of epinephrine comes from its alpha receptor activity?",
+   "opts": [
+    [
+     "Bronchodilation",
+     "Bronchial smooth muscle relaxation is epinephrine's beta effect; vasoconstriction and decreased vascular permeability are its alpha effects.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Less gastric acid",
+     "Blocking the gastrointestinal effects of histamine, such as increased gastric acid, is the role of the histamine H2 blocker famotidine; the alpha effect is vasoconstriction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Less inflammation",
+     "Blocking inflammatory mediator production is how corticosteroids act, over several hours; epinephrine's alpha effect is vasoconstriction.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Vasoconstriction",
+     "Correct. Epinephrine's alpha effects are vasoconstriction and decreased vascular permeability; its beta effect is bronchial smooth muscle relaxation."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 51"
+  },
+  {
+   "topic": "Albuterol",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which adverse effect is listed for albuterol given in anaphylaxis?",
+   "opts": [
+    [
+     "Bradycardia",
+     "The heart rate goes the other way: albuterol causes tachycardia, along with anxiousness and tremor.",
+     "reversed direction or value"
+    ],
+    [
+     "Diaphoresis",
+     "Diaphoresis is on epinephrine's adverse-effect list; albuterol's listed effects are anxiousness, tremor and tachycardia.",
+     "adjacent fact"
+    ],
+    [
+     "Tremor",
+     "Correct. Albuterol's listed adverse effects are anxiousness, tremor and tachycardia."
+    ],
+    [
+     "Oral thrush",
+     "Oral candidiasis (thrush) is an inhaled corticosteroid adverse effect; albuterol causes anxiousness, tremor and tachycardia.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 54"
+  },
+  {
+   "topic": "Epinephrine",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which kind of agent is epinephrine?",
+   "opts": [
+    [
+     "A synthetic beta-2 agonist",
+     "Albuterol is the beta-2 agonist bronchodilator; epinephrine is the body's own catecholamine, acting on both alpha and beta receptors.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A systemic corticosteroid",
+     "Methylprednisolone and prednisone are the corticosteroids, which block inflammatory mediator production; epinephrine is an endogenous catecholamine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "A histamine H1 blocker",
+     "Diphenhydramine and hydroxyzine are the histamine H1 blockers for cutaneous effects; epinephrine is an endogenous catecholamine.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "An endogenous catecholamine",
+     "Correct. Epinephrine (adrenalin) is an endogenous catecholamine that acts on alpha and beta receptors."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 51"
+  }
+ ]
+}

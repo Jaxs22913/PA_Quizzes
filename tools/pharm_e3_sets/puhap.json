@@ -1,0 +1,1224 @@
+{
+ "puhap1": [
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Vancomycin is primarily used in nosocomial pneumonia to cover which pathogen?",
+   "opts": [
+    [
+     "Methicillin-resistant S. aureus",
+     "Correct. Vancomycin is primarily used for empiric coverage of methicillin-resistant Staphylococcus aureus, the most common gram-positive cause of nosocomial pneumonia."
+    ],
+    [
+     "Gram-negative bacilli such as Pseudomonas",
+     "Pseudomonas is covered by the antipseudomonal beta-lactams, fluoroquinolones and aminoglycosides; vancomycin is for methicillin-resistant Staphylococcus aureus.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Atypicals such as Legionella",
+     "The atypicals are covered by the fluoroquinolones; vancomycin is primarily for empiric methicillin-resistant Staphylococcus aureus coverage.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Fungi such as Aspergillus",
+     "Aspergillus is a fungal pathogen of nosocomial pneumonia and vancomycin is an antibacterial; its use is methicillin-resistant Staphylococcus aureus coverage.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 29"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which drug is a limited-spectrum empiric choice for nosocomial pneumonia without multidrug-resistant risk factors?",
+   "opts": [
+    [
+     "Cefepime",
+     "Cefepime is an antipseudomonal cephalosporin, part of broad-spectrum coverage for multidrug-resistant risk; ceftriaxone is the limited-spectrum cephalosporin.",
+     "wrong stage or severity"
+    ],
+    [
+     "Meropenem",
+     "Meropenem is an antipseudomonal carbapenem used for broad coverage; the limited-spectrum carbapenem is ertapenem.",
+     "wrong stage or severity"
+    ],
+    [
+     "Vancomycin",
+     "Vancomycin is the gram-positive add-on in broad-spectrum coverage; without multidrug-resistant risk factors, a limited agent such as ceftriaxone is used.",
+     "wrong stage or severity"
+    ],
+    [
+     "Ceftriaxone",
+     "Correct. Limited-spectrum coverage is ceftriaxone, or levofloxacin or moxifloxacin, or ampicillin-sulbactam, or ertapenem."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 22"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why should fluoroquinolones be used judiciously in nosocomial pneumonia?",
+   "opts": [
+    [
+     "Poor lung tissue penetration",
+     "Fluoroquinolones have good lung tissue penetration; the reason for judicious use is increasing gram-negative resistance.",
+     "reversed direction or value"
+    ],
+    [
+     "Weak activity against atypicals",
+     "Fluoroquinolones have good activity against the atypicals; the reason for judicious use is rising gram-negative resistance.",
+     "reversed direction or value"
+    ],
+    [
+     "They need no renal adjustment",
+     "The antipseudomonal fluoroquinolones do require renal adjustment; the reason for judicious use is rising gram-negative resistance.",
+     "reversed direction or value"
+    ],
+    [
+     "Rising gram-negative resistance",
+     "Correct. Increasing use of fluoroquinolones is leading to gram-negative resistance, so they should be used judiciously."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 27"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A proposed empiric regimen for nosocomial pneumonia with multidrug-resistant risk factors is cefepime, piperacillin-tazobactam and vancomycin. What makes it inappropriate?",
+   "opts": [
+    [
+     "It has no gram-positive coverage",
+     "Vancomycin is in the regimen and is the usual methicillin-resistant Staphylococcus aureus (MRSA) coverage; the flaw is two beta-lactams together.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "It has no antipseudomonal drug in it",
+     "Cefepime and piperacillin-tazobactam are both antipseudomonal; the problem is that both are beta-lactams, so a fluoroquinolone or aminoglycoside is missing.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "It pairs two beta-lactam antibiotics",
+     "Correct. Cefepime and piperacillin-tazobactam are both antipseudomonal beta-lactams; the partner must be an antipseudomonal fluoroquinolone or an aminoglycoside."
+    ],
+    [
+     "It needs linezolid in place of vancomycin",
+     "Vancomycin or linezolid is equally acceptable as the gram-positive drug; the regimen fails because it pairs two beta-lactams.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which gram-negative bacillus is the most common cause of nosocomial pneumonia?",
+   "opts": [
+    [
+     "Escherichia coli",
+     "Escherichia coli is on the gram-negative list, but Pseudomonas aeruginosa is the most common gram-negative cause.",
+     "adjacent fact"
+    ],
+    [
+     "Pseudomonas aeruginosa",
+     "Correct. Pseudomonas aeruginosa is the most common gram-negative bacillus, followed by Escherichia coli, Klebsiella pneumoniae, Acinetobacter, Enterobacter and Serratia; methicillin-resistant Staphylococcus aureus is the most common gram-positive coccus."
+    ],
+    [
+     "Klebsiella pneumoniae",
+     "Klebsiella pneumoniae is listed among the gram-negative bacilli, but Pseudomonas aeruginosa is the most common.",
+     "adjacent fact"
+    ],
+    [
+     "Acinetobacter species",
+     "Acinetobacter is a listed gram-negative bacillus, but the most common gram-negative cause is Pseudomonas aeruginosa.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 19"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "A hospitalized patient carries several risks for pneumonia. Which of them is one that cannot be changed?",
+   "opts": [
+    [
+     "Hospitalization in winter",
+     "Correct. Unmodifiable risk factors are age over 70, chronic lung disease, depressed consciousness, large-volume aspiration and hospitalization during the winter months."
+    ],
+    [
+     "Histamine H2 blocker therapy",
+     "Histamine H2 blocker or antacid therapy is a modifiable risk factor, since the therapy can be changed.",
+     "reversed direction or value"
+    ],
+    [
+     "Reintubation",
+     "Reintubation is listed among the modifiable risk factors, with mechanical ventilation and a nasogastric tube.",
+     "reversed direction or value"
+    ],
+    [
+     "An intracranial pressure monitor",
+     "An intracranial pressure monitor is a modifiable risk factor; hospitalization during the winter months is unmodifiable.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 18"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "Outline appropriate patient education for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "education",
+   "q": "Which drawback is listed for linezolid?",
+   "opts": [
+    [
+     "No oral form",
+     "Linezolid is available in both intravenous and oral forms; its listed drawback is that it is expensive.",
+     "reversed direction or value"
+    ],
+    [
+     "Poor lung penetration",
+     "Linezolid has good lung penetration; poor penetration is the aminoglycoside problem. Linezolid's drawback is cost.",
+     "reversed direction or value"
+    ],
+    [
+     "Renal dose adjustment",
+     "Linezolid needs no dose adjustment for renal function; its listed drawback is that it is expensive.",
+     "reversed direction or value"
+    ],
+    [
+     "High cost",
+     "Correct. Linezolid is expensive, though it has great methicillin-resistant Staphylococcus aureus coverage, oral and intravenous forms, good lung penetration and no renal adjustment."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Why is ceftazidime rarely used as the antipseudomonal cephalosporin for nosocomial pneumonia?",
+   "opts": [
+    [
+     "It lowers the seizure threshold",
+     "Seizure caution is stated for imipenem-cilastatin, a carbapenem; ceftazidime is set aside because resistance develops rapidly.",
+     "adjacent fact"
+    ],
+    [
+     "It lacks Pseudomonas activity",
+     "Limited Pseudomonas activity describes ertapenem; ceftazidime is antipseudomonal, but resistance to it develops rapidly.",
+     "adjacent fact"
+    ],
+    [
+     "It needs no renal adjustment",
+     "Both antipseudomonal cephalosporins require renal adjustment; ceftazidime's problem is rapid development of resistance.",
+     "reversed direction or value"
+    ],
+    [
+     "Resistance develops rapidly",
+     "Correct. Ceftazidime (Fortaz) is not recommended because of rapid development of resistance and is rarely used; cefepime is the choice."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 24"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A proposed empiric regimen for nosocomial pneumonia with multidrug-resistant risk factors is vancomycin, linezolid and tobramycin. What makes it inappropriate?",
+   "opts": [
+    [
+     "It lacks gram-positive coverage",
+     "The reverse: vancomycin and linezolid are both gram-positive coverage, one too many; the regimen needs a second gram-negative agent instead.",
+     "reversed direction or value"
+    ],
+    [
+     "It has only one gram-negative agent",
+     "Correct. Vancomycin and linezolid both cover methicillin-resistant Staphylococcus aureus (MRSA), so only tobramycin covers gram-negative organisms; two are needed."
+    ],
+    [
+     "It pairs two beta-lactam antibiotics",
+     "None of these three is a beta-lactam: vancomycin and linezolid are the two gram-positive drugs, and tobramycin is an aminoglycoside.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Tobramycin cannot cover Pseudomonas",
+     "An aminoglycoside such as tobramycin is a listed second gram-negative agent; the flaw is that only one gram-negative drug is present.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient with methicillin-resistant Staphylococcus aureus pneumonia is ready to finish therapy at home by mouth. Which drug allows this?",
+   "opts": [
+    [
+     "Linezolid",
+     "Correct. Linezolid has great methicillin-resistant Staphylococcus aureus coverage and comes in intravenous and oral forms, with good lung penetration."
+    ],
+    [
+     "Vancomycin",
+     "Vancomycin covers methicillin-resistant Staphylococcus aureus, but the agent named with both intravenous and oral forms for pneumonia is linezolid.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Tobramycin",
+     "Tobramycin is an aminoglycoside second gram-negative agent, not methicillin-resistant Staphylococcus aureus coverage; linezolid is the oral option.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cefepime",
+     "Cefepime is an antipseudomonal cephalosporin and does not cover methicillin-resistant Staphylococcus aureus; linezolid does, by mouth.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "A patient admitted for a hip fracture develops a new pneumonia on hospital day 4; it was not present on admission. How is this pneumonia classified?",
+   "opts": [
+    [
+     "Community-acquired pneumonia",
+     "Pneumonia that was not present at admission and begins more than 48 hours into the stay is nosocomial, not community-acquired.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ventilator-associated pneumonia",
+     "Ventilator-associated pneumonia is one nosocomial type, but nothing in this case involves mechanical ventilation; this is hospital-acquired pneumonia.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Hospital-acquired pneumonia",
+     "Correct. Nosocomial pneumonia is a lung infection not present at admission and occurring more than 48 hours after admission; it includes hospital-acquired pneumonia."
+    ],
+    [
+     "Acute bronchitis",
+     "Acute bronchitis is inflammation of the bronchi that spares the bronchioles and alveoli; a new pneumonia after 48 hours in hospital is nosocomial.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 16"
+  },
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "mechanism",
+   "q": "Which property of aminoglycosides is the reason for extended-interval (once daily or longer) dosing in pneumonia?",
+   "opts": [
+    [
+     "Excellent lung penetration",
+     "The reverse: aminoglycosides penetrate the lung poorly, which is why bigger doses giving higher concentrations are used.",
+     "reversed direction or value"
+    ],
+    [
+     "Minimal kidney toxicity",
+     "Aminoglycosides are nephrotoxic and ototoxic and highly dependent on renal function; extended intervals answer their poor lung penetration.",
+     "reversed direction or value"
+    ],
+    [
+     "Poor lung penetration",
+     "Correct. Aminoglycosides penetrate the lung poorly, so bigger, less frequent doses give the higher concentrations needed."
+    ],
+    [
+     "Activity against atypicals",
+     "Good activity against atypicals belongs to the fluoroquinolones; aminoglycoside dosing reflects their poor lung penetration.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 28"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which drug's use is a modifiable risk factor for nosocomial pneumonia?",
+   "opts": [
+    [
+     "Famotidine",
+     "Correct. Histamine H2 blocker or antacid therapy is a modifiable risk factor for nosocomial pneumonia, and famotidine is a histamine H2 blocker."
+    ],
+    [
+     "Albuterol",
+     "Albuterol, a beta-2 agonist bronchodilator, is not on the risk list; the drug therapies listed are histamine H2 blockers or antacids and previous antibiotics.",
+     "adjacent fact"
+    ],
+    [
+     "Montelukast",
+     "Montelukast, a leukotriene receptor antagonist, is not a listed risk factor; histamine H2 blockers such as famotidine are.",
+     "adjacent fact"
+    ],
+    [
+     "Cromolyn sodium",
+     "Cromolyn, a mast cell stabilizer, is not a listed risk factor; histamine H2 blocker or antacid therapy is.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 18"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which statement about meropenem, compared with imipenem-cilastatin, is correct?",
+   "opts": [
+    [
+     "It needs no renal adjustment",
+     "The antipseudomonal carbapenems require renal adjustment; meropenem's difference from imipenem is its lower seizure risk.",
+     "reversed direction or value"
+    ],
+    [
+     "It carries less seizure risk",
+     "Correct. Meropenem (Merrem) carries less risk for seizures than imipenem-cilastatin, which is used with caution in patients with a seizure history."
+    ],
+    [
+     "It has limited Pseudomonas activity",
+     "Limited activity against Pseudomonas aeruginosa describes ertapenem; meropenem is an antipseudomonal carbapenem with less seizure risk.",
+     "adjacent fact"
+    ],
+    [
+     "It is a fourth-generation cephalosporin",
+     "Cefepime is the fourth-generation cephalosporin; meropenem is a carbapenem, distinguished by its lower seizure risk.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 25"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient develops hospital-acquired pneumonia on hospital day 7 and has no other risk factors for multidrug-resistant pathogens. Which initial approach fits?",
+   "opts": [
+    [
+     "Limited-spectrum therapy",
+     "Limited-spectrum therapy requires both early onset and no multidrug-resistant risk factors; onset on day 7 is late.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Broad-spectrum therapy",
+     "Correct. Late onset, 5 days or more, is enough on its own to call for broad-spectrum initial antibiotic therapy for multidrug-resistant pathogens."
+    ],
+    [
+     "Await the sputum culture",
+     "Therapy starts as soon as possible without waiting on a culture, and late onset calls for broad-spectrum coverage.",
+     "wrong stage or severity"
+    ],
+    [
+     "Supportive care alone",
+     "Supportive care alone is the approach to acute bronchitis; late-onset hospital-acquired pneumonia needs broad-spectrum antibiotics.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which antipseudomonal agent is a penicillin combined with a beta-lactamase inhibitor?",
+   "opts": [
+    [
+     "Ampicillin-sulbactam",
+     "Ampicillin-sulbactam is a penicillin with a beta-lactamase inhibitor, but it is a limited-spectrum option, not an antipseudomonal agent.",
+     "adjacent fact"
+    ],
+    [
+     "Imipenem-cilastatin",
+     "Imipenem-cilastatin is an antipseudomonal carbapenem, not a penicillin with a beta-lactamase inhibitor.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Amoxicillin-clavulanate",
+     "Amoxicillin with clavulanic acid is an outpatient community-acquired pneumonia beta-lactam, not an antipseudomonal agent.",
+     "adjacent fact"
+    ],
+    [
+     "Piperacillin-tazobactam",
+     "Correct. Piperacillin-tazobactam (Zosyn) is the antipseudomonal penicillin with a beta-lactamase inhibitor, and it requires renal adjustment."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 26"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "A patient fails therapy for nosocomial pneumonia and is found to have a pulmonary embolus. Which category of treatment failure is this?",
+   "opts": [
+    [
+     "Wrong diagnosis",
+     "Correct. A pulmonary embolus or a neoplasm is a wrong-diagnosis failure; resistant pathogens are wrong therapy, and Clostridioides difficile colitis, empyema or lung abscess are complications."
+    ],
+    [
+     "Wrong therapy",
+     "Wrong therapy means resistant pathogens or inadequate antimicrobial therapy; a pulmonary embolus means the diagnosis was wrong.",
+     "competing diagnosis"
+    ],
+    [
+     "A complication",
+     "Complications are Clostridioides difficile colitis, empyema or lung abscess; a pulmonary embolus is a wrong-diagnosis failure.",
+     "competing diagnosis"
+    ],
+    [
+     "Drug toxicity",
+     "Drug toxicity is not one of the failure categories; a pulmonary embolus found on workup is a wrong diagnosis.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 31"
+  },
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "When is a vancomycin trough level drawn?",
+   "opts": [
+    [
+     "Before the first dose",
+     "There is no trough before any drug has been given; the vancomycin trough is drawn prior to the third or fourth dose, at steady state.",
+     "wrong stage or severity"
+    ],
+    [
+     "Before the third or fourth dose",
+     "Correct. The trough is drawn prior to the third to fourth dose, when vancomycin is at steady state."
+    ],
+    [
+     "Right after the first dose",
+     "A level right after the first dose is neither a trough nor at steady state; the trough is drawn before the third or fourth dose.",
+     "wrong stage or severity"
+    ],
+    [
+     "At the end of the course",
+     "Waiting until the end of therapy defeats the purpose; the trough is drawn before the third or fourth dose, at steady state.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 29"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "What should happen to empiric nosocomial pneumonia therapy once cultures and sensitivities return?",
+   "opts": [
+    [
+     "Keep the full empiric regimen",
+     "Broad empiric coverage is meant to be streamlined; once cultures and sensitivities are available, coverage is scaled back.",
+     "wrong stage or severity"
+    ],
+    [
+     "Broaden it to cover fungi",
+     "Candida and Aspergillus are listed pathogens, but the rule when cultures return is to streamline therapy, not broaden it.",
+     "reversed direction or value"
+    ],
+    [
+     "Narrow it to the culture results",
+     "Correct. Therapy is streamlined once cultures and sensitivities are available, scaling back antibiotic coverage as the cultures return."
+    ],
+    [
+     "Add a second gram-positive drug",
+     "Vancomycin or linezolid is the single gram-positive agent in broad coverage; when cultures return, therapy is streamlined.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 20"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which risk factor for nosocomial pneumonia is modifiable?",
+   "opts": [
+    [
+     "Chronic lung disease",
+     "Chronic lung disease is listed as an unmodifiable risk factor, along with age over 70 and depressed consciousness.",
+     "reversed direction or value"
+    ],
+    [
+     "Age over 70 years",
+     "Age over 70 is an unmodifiable risk factor; a nasogastric tube is one of the modifiable ones.",
+     "reversed direction or value"
+    ],
+    [
+     "A nasogastric tube",
+     "Correct. Modifiable risk factors are mechanical ventilation, a nasogastric tube, an intracranial pressure monitor, histamine H2 blocker or antacid therapy, previous antibiotics and reintubation."
+    ],
+    [
+     "Depressed consciousness",
+     "Depressed consciousness is listed as unmodifiable; the modifiable list includes devices such as a nasogastric tube.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 18"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "For broad-spectrum empiric coverage of nosocomial pneumonia, which drugs supply the gram-positive coverage added to the gram-negative combination?",
+   "opts": [
+    [
+     "Ceftriaxone or ertapenem",
+     "Ceftriaxone and ertapenem are limited-spectrum options for patients without multidrug-resistant risk; the gram-positive add-on is vancomycin or linezolid.",
+     "wrong stage or severity"
+    ],
+    [
+     "Vancomycin or linezolid",
+     "Correct. Broad coverage is gram-negative combination therapy plus gram-positive coverage with vancomycin or linezolid, for methicillin-resistant Staphylococcus aureus."
+    ],
+    [
+     "Gentamicin or tobramycin",
+     "Aminoglycosides are a second gram-negative agent in the combination, not the gram-positive coverage, which is vancomycin or linezolid.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Azithromycin or doxycycline",
+     "Azithromycin or doxycycline partners a beta-lactam in community-acquired pneumonia; the nosocomial gram-positive add-on is vancomycin or linezolid.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  }
+ ],
+ "puhap2": [
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Why is ertapenem a limited-spectrum choice rather than a broad one in nosocomial pneumonia?",
+   "opts": [
+    [
+     "Rapid development of resistance",
+     "Rapid development of resistance is the concern raised about ceftazidime, not ertapenem; ertapenem is limited by weak Pseudomonas activity.",
+     "adjacent fact"
+    ],
+    [
+     "Poor penetration into lung tissue",
+     "Poor lung penetration is the aminoglycoside problem; ertapenem is limited-spectrum because of its weak activity against Pseudomonas aeruginosa.",
+     "adjacent fact"
+    ],
+    [
+     "Limited activity against Pseudomonas",
+     "Correct. Ertapenem is a narrow-spectrum carbapenem with limited activity against Pseudomonas aeruginosa, so it belongs to limited-spectrum coverage."
+    ],
+    [
+     "A high risk of seizures",
+     "Seizure caution belongs to imipenem-cilastatin; ertapenem is limited-spectrum because of its weak activity against Pseudomonas aeruginosa.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 25"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which cephalosporin is a fourth-generation antipseudomonal agent?",
+   "opts": [
+    [
+     "Ceftriaxone",
+     "Ceftriaxone is a third-generation cephalosporin used in community-acquired pneumonia and limited-spectrum nosocomial coverage, not an antipseudomonal agent.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cefuroxime",
+     "Cefuroxime is a second- or third-generation cephalosporin for outpatient community-acquired pneumonia; cefepime is the fourth-generation antipseudomonal one.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cefotaxime",
+     "Cefotaxime is an intravenous beta-lactam for ward community-acquired pneumonia; the fourth-generation antipseudomonal cephalosporin is cefepime.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Cefepime",
+     "Correct. Cefepime (Maxipime) is a fourth-generation antipseudomonal cephalosporin, and, like ceftazidime, it requires renal adjustment."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 24"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "In broad-spectrum coverage, an antipseudomonal beta-lactam is paired with which second gram-negative agent?",
+   "opts": [
+    [
+     "Moxifloxacin",
+     "Moxifloxacin is listed in the limited-spectrum group; the antipseudomonal fluoroquinolones for the combination are levofloxacin and ciprofloxacin.",
+     "adjacent fact"
+    ],
+    [
+     "Ciprofloxacin",
+     "Correct. The antipseudomonal beta-lactam is combined with an antipseudomonal fluoroquinolone (levofloxacin or ciprofloxacin) or an aminoglycoside."
+    ],
+    [
+     "Ceftriaxone",
+     "Ceftriaxone is a limited-spectrum cephalosporin, not an antipseudomonal partner; the second gram-negative agent is an antipseudomonal fluoroquinolone or an aminoglycoside.",
+     "wrong stage or severity"
+    ],
+    [
+     "Linezolid",
+     "Linezolid is gram-positive coverage for methicillin-resistant Staphylococcus aureus, not a second gram-negative agent.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "Which regimen fits broad-spectrum empiric coverage for nosocomial pneumonia with risk factors for multidrug-resistant pathogens?",
+   "opts": [
+    [
+     "Meropenem and ciprofloxacin",
+     "This covers gram-negative organisms twice but leaves out the gram-positive agent, vancomycin or linezolid, that broad coverage requires.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ceftriaxone and azithromycin",
+     "A beta-lactam plus a macrolide is community-acquired pneumonia treatment; it lacks antipseudomonal and methicillin-resistant Staphylococcus aureus coverage.",
+     "adjacent fact"
+    ],
+    [
+     "Cefepime, tobramycin and vancomycin",
+     "Correct. Broad coverage is an antipseudomonal beta-lactam (cefepime) plus an antipseudomonal fluoroquinolone or aminoglycoside (tobramycin) plus vancomycin or linezolid."
+    ],
+    [
+     "Ertapenem, levofloxacin and linezolid",
+     "Ertapenem has limited Pseudomonas activity, so it cannot be the antipseudomonal beta-lactam of a broad regimen.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "What do cefepime and ceftazidime both require?",
+   "opts": [
+    [
+     "Seizure precautions",
+     "Seizure caution is stated for imipenem-cilastatin, not the antipseudomonal cephalosporins, which both require renal adjustment.",
+     "adjacent fact"
+    ],
+    [
+     "Trough monitoring",
+     "Trough levels belong to vancomycin, drawn before the third or fourth dose; cefepime and ceftazidime both require renal adjustment.",
+     "adjacent fact"
+    ],
+    [
+     "Renal adjustment",
+     "Correct. Both antipseudomonal cephalosporins require renal adjustment, as do the antipseudomonal carbapenems, penicillins and fluoroquinolones."
+    ],
+    [
+     "Hepatic adjustment",
+     "No hepatic adjustment is stated for the antipseudomonal cephalosporins; both require renal adjustment.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 24"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient develops hospital-acquired pneumonia on hospital day 3 and has no risk factors for multidrug-resistant pathogens. Which initial approach fits?",
+   "opts": [
+    [
+     "Broad-spectrum therapy",
+     "Broad-spectrum therapy for multidrug-resistant pathogens is for late onset (5 days or more) or multidrug-resistant risk factors, neither present here.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Limited-spectrum therapy",
+     "Correct. With early onset (under 5 days) and no multidrug-resistant risk factors, limited-spectrum initial antibiotic therapy is chosen."
+    ],
+    [
+     "Await the sputum culture",
+     "Treatment is not delayed for a culture: therapy starts as soon as possible, here with limited-spectrum antibiotics.",
+     "wrong stage or severity"
+    ],
+    [
+     "Supportive care alone",
+     "Supportive care alone is for acute bronchitis; hospital-acquired pneumonia is treated at once, here with limited-spectrum therapy.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "indication",
+   "q": "Besides Pseudomonas, the antipseudomonal fluoroquinolones have good activity against which group of pathogens?",
+   "opts": [
+    [
+     "Atypical bacteria",
+     "Correct. Ciprofloxacin and levofloxacin have good activity against the atypicals (Mycoplasma, Chlamydia, Legionella) and good lung tissue penetration."
+    ],
+    [
+     "Fungal pathogens",
+     "Candida and Aspergillus fumigatus are fungal causes of nosocomial pneumonia, not organisms the fluoroquinolones cover; their strength is the atypicals.",
+     "adjacent fact"
+    ],
+    [
+     "Resistant staphylococci",
+     "Methicillin-resistant Staphylococcus aureus is covered by vancomycin or linezolid; the fluoroquinolones have good activity against the atypicals.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Anaerobic bacteria",
+     "Anaerobes are not named for the fluoroquinolones; the stated strength is good activity against the atypicals Mycoplasma, Chlamydia and Legionella.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 27"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which history meets a listed criterion for health-care associated pneumonia?",
+   "opts": [
+    [
+     "Wound care six months ago",
+     "Wound care counts only within the previous 30 days; six months ago falls outside the criterion.",
+     "reversed direction or value"
+    ],
+    [
+     "A hospital stay last year",
+     "A hospital stay counts when it was more than 2 days in an acute care facility within the past 90 days, not a year ago.",
+     "reversed direction or value"
+    ],
+    [
+     "Outpatient hemodialysis",
+     "Correct. Health-care associated pneumonia criteria include hemodialysis, nursing home residence, recent intravenous antibiotics, chemotherapy, wound care in the previous 30 days and a recent hospital stay."
+    ],
+    [
+     "A child in day care at home",
+     "Exposure to a child in day care is a risk factor for penicillin-resistant Streptococcus pneumoniae, not a health-care associated pneumonia criterion.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 17"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "When should antibiotic therapy for suspected nosocomial pneumonia begin?",
+   "opts": [
+    [
+     "After culture results return",
+     "Waiting is exactly what is advised against: therapy starts as soon as possible, without waiting on a definitive culture.",
+     "wrong stage or severity"
+    ],
+    [
+     "After the sputum gram stain",
+     "A gram stain is not a gate to treatment; therapy for nosocomial pneumonia starts as soon as possible.",
+     "wrong stage or severity"
+    ],
+    [
+     "After 48 hours of observation",
+     "Forty-eight hours after admission defines nosocomial pneumonia; once it is suspected, therapy starts as soon as possible.",
+     "adjacent fact"
+    ],
+    [
+     "As soon as possible",
+     "Correct. Therapy starts as soon as possible, without waiting on a definitive culture, with broad-spectrum antibiotics that consider multidrug-resistant pathogens."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 20"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "Describe adverse effects of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "adverse effect",
+   "q": "Which finding is listed as a complication that causes failure of pneumonia therapy?",
+   "opts": [
+    [
+     "Neoplasm",
+     "A neoplasm is a wrong-diagnosis failure, not a complication; the complications are Clostridioides difficile colitis, empyema and lung abscess.",
+     "competing diagnosis"
+    ],
+    [
+     "Pulmonary embolus",
+     "A pulmonary embolus is a wrong-diagnosis failure; the listed complications are Clostridioides difficile colitis, empyema and lung abscess.",
+     "competing diagnosis"
+    ],
+    [
+     "Resistant pathogens",
+     "Resistant pathogens are a wrong-therapy failure; the listed complications are Clostridioides difficile colitis, empyema and lung abscess.",
+     "competing diagnosis"
+    ],
+    [
+     "Lung abscess",
+     "Correct. Complications causing failure are Clostridioides difficile colitis, empyema or lung abscess; a pulmonary embolus or neoplasm is a wrong diagnosis."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 31"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Why is a patient switched to oral antibiotics when possible during pneumonia treatment?",
+   "opts": [
+    [
+     "Better lung penetration",
+     "Lung penetration depends on the drug, not the route; the stated reason to switch to oral therapy is that it is cheaper.",
+     "common lay belief"
+    ],
+    [
+     "Broader coverage",
+     "Coverage is scaled back, not broadened, as cultures return; the reason for the oral switch is that it is cheaper.",
+     "reversed direction or value"
+    ],
+    [
+     "Lower cost",
+     "Correct. Antibiotics are switched to oral when or if possible because oral therapy is cheaper, as coverage is scaled back to the culture results."
+    ],
+    [
+     "Fewer resistant organisms",
+     "Resistance is not the stated reason; the switch to oral therapy when possible is made because it is cheaper.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 31"
+  },
+  {
+   "topic": "Nosocomial risk factors",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "protocol",
+   "q": "Which history counts as a risk factor for multidrug-resistant pathogens in hospital-acquired pneumonia?",
+   "opts": [
+    [
+     "Immunosuppressive therapy",
+     "Correct. Risk factors for multidrug-resistant pathogens are prior antibiotics, colonization, hospitalization or chronic care, and immunosuppressive disease or therapy."
+    ],
+    [
+     "Hospitalization in winter",
+     "Winter hospitalization is an unmodifiable risk factor for nosocomial pneumonia itself, not a listed risk factor for multidrug-resistant pathogens.",
+     "adjacent fact"
+    ],
+    [
+     "Depressed consciousness",
+     "Depressed consciousness raises the risk of nosocomial pneumonia, but it is not among the multidrug-resistant risk factors in the algorithm.",
+     "adjacent fact"
+    ],
+    [
+     "Large-volume aspiration",
+     "Large-volume aspiration is an unmodifiable risk factor for nosocomial pneumonia, not one of the multidrug-resistant risk factors.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 21"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "Which hospitalized group has a higher incidence of nosocomial pneumonia?",
+   "opts": [
+    [
+     "Young adults after minor surgery",
+     "Youth is not a stated risk; the groups with higher incidence are the elderly and mechanically ventilated patients.",
+     "reversed direction or value"
+    ],
+    [
+     "Patients with recent acute bronchitis",
+     "Recent bronchitis is not a listed risk; the higher incidence is in elderly and mechanically ventilated patients.",
+     "adjacent fact"
+    ],
+    [
+     "Patients discharged within one day",
+     "Nosocomial pneumonia arises more than 48 hours after admission, so a stay under a day is not a risk group; the higher incidence is in elderly and mechanically ventilated patients.",
+     "reversed direction or value"
+    ],
+    [
+     "Mechanically ventilated patients",
+     "Correct. Nosocomial pneumonia has a higher incidence in elderly and mechanically ventilated patients, with higher mortality and hospital costs."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 16"
+  },
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "Identify respiratory drug classes and commonly prescribed drugs for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "class",
+   "q": "Which drug is an aminoglycoside?",
+   "opts": [
+    [
+     "Amikacin",
+     "Correct. The aminoglycosides are gentamicin, tobramycin and amikacin, used as a second gram-negative agent in broad coverage."
+    ],
+    [
+     "Azithromycin",
+     "Azithromycin is a macrolide used in community-acquired pneumonia, not an aminoglycoside like gentamicin, tobramycin and amikacin.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Ampicillin",
+     "Ampicillin is a penicillin beta-lactam; the aminoglycosides are gentamicin, tobramycin and amikacin.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Ertapenem",
+     "Ertapenem is a narrow-spectrum carbapenem; the aminoglycosides are gentamicin, tobramycin and amikacin.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 28"
+  },
+  {
+   "topic": "Nosocomial pneumonia basics",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "physiology",
+   "q": "How does nosocomial pneumonia rank among infections in hospitalized patients?",
+   "opts": [
+    [
+     "First, ahead of urinary tract infection",
+     "Urinary tract infection is the more common one; nosocomial pneumonia ranks second, after it.",
+     "reversed direction or value"
+    ],
+    [
+     "Second, after urinary tract infection",
+     "Correct. Nosocomial pneumonia is the second most common infection in hospitalized patients, after urinary tract infection, with higher mortality and costs."
+    ],
+    [
+     "Second, after wound infection",
+     "Wound infection is not the comparison given; nosocomial pneumonia is second most common, after urinary tract infection.",
+     "adjacent fact"
+    ],
+    [
+     "Third, after urinary and wound infection",
+     "Nosocomial pneumonia ranks second, not third; the only infection more common in hospitalized patients is urinary tract infection.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 16"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "A patient on a ventilator develops pneumonia and has risk factors for multidrug-resistant pathogens. Which empiric regimen is appropriate?",
+   "opts": [
+    [
+     "Meropenem, gentamicin and linezolid",
+     "Correct. Meropenem is an antipseudomonal carbapenem, gentamicin an aminoglycoside as the second gram-negative agent, and linezolid the gram-positive coverage."
+    ],
+    [
+     "Imipenem-cilastatin, cefepime and vancomycin",
+     "Imipenem-cilastatin and cefepime are both antipseudomonal beta-lactams; the second gram-negative agent must be a fluoroquinolone or an aminoglycoside.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Vancomycin, linezolid and ciprofloxacin",
+     "Vancomycin and linezolid both cover methicillin-resistant Staphylococcus aureus (MRSA), leaving one gram-negative agent where two are needed.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Ceftriaxone, tobramycin and vancomycin",
+     "Ceftriaxone is a limited-spectrum third-generation cephalosporin, not antipseudomonal; the beta-lactam must be antipseudomonal.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 23"
+  },
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "List commonly used protocols and patient monitoring for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "On what are aminoglycoside dose and frequency adjusted?",
+   "opts": [
+    [
+     "Measured drug levels",
+     "Correct. Aminoglycoside dose and frequency are adjusted based on levels, and they are highly dependent on renal function."
+    ],
+    [
+     "Liver function tests",
+     "No hepatic basis is given; aminoglycoside dosing is adjusted on drug levels and depends heavily on renal function.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Sputum gram stain",
+     "The sputum gram stain is a controversial diagnostic test, not a dosing guide; aminoglycosides are adjusted on measured levels.",
+     "adjacent fact"
+    ],
+    [
+     "White blood cell count",
+     "The white blood cell count does not set the dose; aminoglycoside dose and frequency are adjusted on measured levels.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "Pulmonology-2.pptx, Slide 28"
+  },
+  {
+   "topic": "Antipseudomonal agents",
+   "io": "Identify contraindications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "contraindication",
+   "q": "Which antipseudomonal agent is used with caution in a patient with a seizure history?",
+   "opts": [
+    [
+     "Meropenem",
+     "Meropenem is the carbapenem with less seizure risk; the caution for a seizure history is attached to imipenem-cilastatin.",
+     "reversed direction or value"
+    ],
+    [
+     "Imipenem-cilastatin",
+     "Correct. Imipenem-cilastatin (Primaxin) is used with caution in patients with a seizure history; meropenem carries less seizure risk."
+    ],
+    [
+     "Piperacillin-tazobactam",
+     "Piperacillin-tazobactam carries a renal-adjustment note, not a seizure caution; imipenem-cilastatin is the agent used with caution in seizure history.",
+     "adjacent fact"
+    ],
+    [
+     "Tobramycin",
+     "Tobramycin's listed toxicities are ototoxicity and nephrotoxicity; the seizure caution belongs to imipenem-cilastatin.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 25"
+  },
+  {
+   "topic": "Linezolid and further therapy",
+   "io": "Describe absorption, distribution, metabolism, and excretion of drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "monitoring",
+   "q": "Which drug used for nosocomial pneumonia needs no dose adjustment for renal function?",
+   "opts": [
+    [
+     "Vancomycin",
+     "Vancomycin requires renal adjustment and is nephrotoxic with other nephrotoxins; linezolid needs no renal dose adjustment.",
+     "reversed direction or value"
+    ],
+    [
+     "Linezolid",
+     "Correct. Linezolid (Zyvox) needs no dose adjustment based on renal function; vancomycin, the aminoglycosides and the antipseudomonal beta-lactams all require renal adjustment."
+    ],
+    [
+     "Tobramycin",
+     "Tobramycin, an aminoglycoside, is highly dependent on renal function; linezolid is the drug with no renal dose adjustment.",
+     "reversed direction or value"
+    ],
+    [
+     "Cefepime",
+     "Cefepime requires renal adjustment like the other antipseudomonal cephalosporin; linezolid needs none.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "Pulmonology-2.pptx, Slide 30"
+  },
+  {
+   "topic": "Empiric coverage",
+   "io": "Identify indications for drugs used for pulmonary infections, asthma, and COPD/COLD",
+   "slot": "drug choice",
+   "q": "In limited-spectrum coverage for nosocomial pneumonia, which drug is chosen when atypical pathogens are a concern?",
+   "opts": [
+    [
+     "Ceftriaxone",
+     "Ceftriaxone is a limited-spectrum option, but the group to choose when atypical pathogens are a worry is levofloxacin or moxifloxacin.",
+     "adjacent fact"
+    ],
+    [
+     "Ampicillin-sulbactam",
+     "Ampicillin-sulbactam is a limited-spectrum option, but the fluoroquinolones are the group chosen for atypical pathogens.",
+     "adjacent fact"
+    ],
+    [
+     "Ertapenem",
+     "Ertapenem is a narrow-spectrum carbapenem option; when atypical pathogens are a worry, levofloxacin or moxifloxacin is chosen.",
+     "adjacent fact"
+    ],
+    [
+     "Levofloxacin",
+     "Correct. Levofloxacin or moxifloxacin is the limited-spectrum choice when atypical pathogens are a worry; fluoroquinolones have good activity against Mycoplasma, Chlamydia and Legionella."
+    ]
+   ],
+   "c": 3,
+   "cite": "Pulmonology-2.pptx, Slide 22"
+  },
+  {
+   "topic": "Aminoglycosides and vancomycin",
+   "io": "Summarize side effects and toxic manifestations of respiratory drugs",
+   "slot": "adverse effect",
+   "q": "Which two toxicities are listed for the aminoglycosides?",
+   "opts": [
+    [
+     "Hepatitis and hyperuricemia",
+     "Hepatitis and hyperuricemia are pyrazinamide's adverse effects; aminoglycosides cause ototoxicity and nephrotoxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Neuritis and lupus-like syndrome",
+     "Peripheral neuritis and a lupus-like syndrome are isoniazid's adverse effects; aminoglycosides cause ototoxicity and nephrotoxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Ototoxicity and nephrotoxicity",
+     "Correct. Aminoglycosides cause ototoxicity and nephrotoxicity, and their dosing is highly dependent on renal function."
+    ],
+    [
+     "Seizures and arrhythmias",
+     "Seizures and arrhythmias are the toxic effects of high theophylline levels; aminoglycosides cause ototoxicity and nephrotoxicity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "Pulmonology-2.pptx, Slide 28"
+  }
+ ]
+}

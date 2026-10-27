@@ -270,7 +270,8 @@ def build_wood():
     notes = ('<div class="note"><b>Why this page is separate.</b> The other Exam 3 charts come from the PowerPoints, which say nothing about what the lecturers weight. This one comes from the <b>recordings</b>, '
              'and every entry is a direct quote with its lecture and timestamp so you can go back and hear it.</div>'
              '<div class="note warn"><b>On the quotes.</b> They are lightly cleaned for reading, because the automatic transcript garbles drug names. Every quote is checked against the raw transcript by '
-             '<code>tools/check_pharm_e3_wood.py</code> before this page is written.</div>')
+             '<code>tools/check_pharm_e3_wood.py</code> before this page is written. '
+             '<b>Lecture 11 has one transcript only</b> (a machine transcription; the stream had no captions to compare it with), so each garbled drug name was read from the slide it belongs to, and nothing here rests on a garbled stretch alone.</div>')
     write("pharm-exam-3-what-to-star.html", page(
         title="What the Lecturers Told You to Star &mdash; Pharmacology I Exam 3 (Class of 2028)", kicker=KICK, h1="What They Told You to Star",
         sub="%d moments from the Exam 3 lecture recordings where the lecturer said what would be tested, gave a test question, or drew a scope line." % len(d),
