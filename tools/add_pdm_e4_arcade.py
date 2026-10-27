@@ -20,8 +20,12 @@ LUNGS_ICON = ('<rect x="3" y="3" width="18" height="18" rx="2"/>'
 # A volume-time curve: a steep rise to a plateau.
 SPIRO_ICON = ('<path d="M3 3v18h18"/><path d="M6 17c1.5-6 3-9 6-10s5-1 8-1"/>')
 
+# A pH scale: a bar with a marker.
+PH_ICON = ('<path d="M3 12h18"/><path d="M3 9v6M21 9v6M12 7v10"/><circle cx="15" cy="12" r="2"/>')
+
 SPEC = [
  (17, "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
+ (19, "pdm-acid-base", "Acid-Base and Blood Gases", "accent3", PH_ICON),
  (20, "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
 ]
 

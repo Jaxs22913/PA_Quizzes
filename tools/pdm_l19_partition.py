@@ -64,7 +64,7 @@ _ACRO_OK = {"NOT", "LOW", "HIGH", "RIGHT", "LEFT", "ARTERIAL", "SAMPLE", "INCREA
 _DEFINED = re.compile(r"(?:/[A-Z][A-Za-z0-9]*)* \(")
 _DURATION = re.compile(r"\b\d+ (?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\b")
 _NUM = re.compile(r"\d+(?:\.\d+)?")
-_UNIT_THEN_RANGE = re.compile(r"\s*(?:mm Hg|mEq/L|g/dL|%)?\s*\((?:venous |arterial )?normal ")
+_UNIT_THEN_RANGE = re.compile(r"\s*(?:to \d+(?:\.\d+)?\s*)?(?:mm Hg|mEq/L|g/dL|%)?\s*\((?:venous |arterial )?normal ")
 
 
 def stem(p):

@@ -123,11 +123,11 @@
   {
    "topic": "The stepwise read",
    "io": "Interpret arterial blood gas results.",
-   "q": "A 52-year-old has an arterial pH of 7.30 (normal 7.35 to 7.45) and a carbon dioxide pressure of 56 mm Hg (normal 35 to 45 mm Hg). What does the carbon dioxide tell you about the acidosis?",
+   "q": "A 52-year-old has an arterial pH of 7.30 (normal 7.35 to 7.45), a carbon dioxide pressure of 56 mm Hg (normal 35 to 45 mm Hg) and a bicarbonate of 25 mEq/L (normal 22 to 26 mEq/L). What does the carbon dioxide tell you about the acidosis?",
    "opts": [
     [
      "It shows a mixed acidosis and alkalosis",
-     "A high carbon dioxide pressure with a low pH is the straight respiratory acidosis pattern; nothing here points the other way."
+     "A high carbon dioxide pressure with a low pH and a normal bicarbonate is the plain respiratory acidosis pattern; nothing here points the other way."
     ],
     [
      "It is fully compensated",
@@ -247,7 +247,7 @@
    "opts": [
     [
      "A lipid panel and cardiac troponin",
-     "These are not the studies the blood gas is combined with; the venous analysis paired with it is the complete blood count and comprehensive metabolic panel."
+     "These are not among the studies listed with the blood gas; the venous analysis named alongside it is the complete blood count and comprehensive metabolic panel."
     ],
     [
      "A blood count and a metabolic panel",
@@ -255,11 +255,11 @@
     ],
     [
      "Blood cultures and a sputum culture",
-     "Cultures are not among the assessments paired with the blood gas; it is used with vital signs, the examination, the complete blood count and metabolic panel, intake and urine output."
+     "Cultures are not among the assessments listed alongside the blood gas: vital signs, the examination, the complete blood count and metabolic panel, intake and urine output."
     ],
     [
      "A coagulation panel and a D-dimer",
-     "Clotting studies are not the companions of the blood gas; venous blood analysis such as the complete blood count and comprehensive metabolic panel is."
+     "Clotting studies are not among the assessments listed with the blood gas; the venous blood analysis named is the complete blood count and comprehensive metabolic panel."
     ]
    ],
    "c": 1,
@@ -408,7 +408,7 @@
      "Hyperventilation is a cause of an elevated oxygen pressure; neuromuscular weakness causes hypoventilation and a low one."
     ],
     [
-     "Hypoventilation from the neuromuscular disease",
+     "Hypoventilation",
      "Correct. Causes of a low oxygen pressure include hypoventilation secondary to neuromuscular disease, with cardiac dysfunction, intracardiac shunts, chronic obstructive pulmonary disease, restrictive lung disease and insufficient inspired oxygen."
     ]
    ],
@@ -525,11 +525,11 @@
     ],
     [
      "The carbon dioxide pressure",
-     "The carbon dioxide pressure is read next, to point to a respiratory cause; the first question is: what is the pH?"
+     "The carbon dioxide pressure is among the values checked against the normal range after the pH; the first question is: what is the pH?"
     ],
     [
      "The anion gap",
-     "The anion gap is calculated from the electrolytes later in the workup; the first step is the pH."
+     "The anion gap is calculated from the electrolytes; it is not the first question of the step-wise approach, which begins with the pH."
     ]
    ],
    "c": 0,
@@ -730,11 +730,11 @@
    "opts": [
     [
      "The arm his last venous sample came from",
-     "That has no bearing on the arterial sample; record room air or the supplemental oxygen, which directly affects the oxygen pressure."
+     "That is not the detail the sample requires; record room air or the supplemental oxygen, which directly affects the oxygen pressure."
     ],
     [
      "The time of his last meal",
-     "Mealtime is not what the sample needs; it needs room air or the supplemental oxygen, because inspired oxygen directly affects the oxygen pressure."
+     "Mealtime is not the detail the sample requires; it requires room air or the supplemental oxygen, because inspired oxygen directly affects the oxygen pressure."
     ],
     [
      "Room air, or any supplemental oxygen he is on",
@@ -742,7 +742,7 @@
     ],
     [
      "His blood pressure at the draw",
-     "Blood pressure is not recorded with the sample; whether he breathed room air or supplemental oxygen is, since it drives the oxygen pressure."
+     "Blood pressure is not the detail the sample requires; whether he breathed room air or supplemental oxygen is, since it directly affects the oxygen pressure."
     ]
    ],
    "c": 2,
@@ -876,7 +876,7 @@
   {
    "topic": "Carbon dioxide pressure",
    "io": "Compare and contrast laboratory studies used to diagnose acid-base disorders.",
-   "q": "A 58-year-old man has a head injury. His carbon dioxide pressure rises from 46 mm Hg (normal 35 to 45 mm Hg) to 58 mm Hg (normal 35 to 45 mm Hg), yet his breathing rate has not risen. Why is this a concern?",
+   "q": "A 58-year-old man has a head injury. His carbon dioxide pressure rises from 46 to 58 mm Hg (normal 35 to 45 mm Hg), yet his breathing rate has not risen. Why is this a concern?",
    "opts": [
     [
      "Rising carbon dioxide should drive ventilation up",
@@ -908,7 +908,7 @@
   {
    "topic": "Respiratory acidosis",
    "io": "Describe expected findings in: Metabolic acidosis, Metabolic alkalosis, Respiratory acidosis, Respiratory alkalosis.",
-   "q": "A 57-year-old has a respiratory acidosis from an extrathoracic tumor narrowing his airway. Which group of causes is this?",
+   "q": "A 57-year-old has a respiratory acidosis from an extrathoracic tumor. Which group of causes is this?",
    "opts": [
     [
      "Chest wall dysfunction",
@@ -954,7 +954,7 @@
     ],
     [
      "Higher oxygen pressure and lower pH",
-     "The pH is right, but venous oxygen pressure is far lower, 30 to 40 mm Hg against an arterial value greater than 88."
+     "The pH is right, but venous oxygen pressure is far lower: 30 to 40 mm Hg, against an arterial normal greater than 80."
     ]
    ],
    "c": 2,
@@ -1571,7 +1571,7 @@
   {
    "topic": "Respiratory alkalosis",
    "io": "Describe expected findings in: Metabolic acidosis, Metabolic alkalosis, Respiratory acidosis, Respiratory alkalosis.",
-   "q": "A 55-year-old on a mechanical ventilator has pH 7.50 (normal 7.35 to 7.45), carbon dioxide pressure 30 mm Hg (normal 35 to 45 mm Hg) and bicarbonate 24 mEq/L (normal 22 to 26 mEq/L). What is the most likely cause?",
+   "q": "A 55-year-old is intubated after surgery, with his breathing set by the machine, and has pH 7.50 (normal 7.35 to 7.45), carbon dioxide pressure 30 mm Hg (normal 35 to 45 mm Hg) and bicarbonate 24 mEq/L (normal 22 to 26 mEq/L). What is the most likely cause?",
    "opts": [
     [
      "Renal tubular acidosis",
@@ -1691,7 +1691,7 @@
   {
    "topic": "Abnormal anion gap",
    "io": "Discuss the clinical significance of an abnormal anion gap.",
-   "q": "A 59-year-old has an elevated anion gap, and no excess of unmeasured anions is found. Which less common change can also raise the gap?",
+   "q": "A 59-year-old has an elevated anion gap, and no excess of unmeasured anions is found. Which other change can raise the gap?",
    "opts": [
     [
      "A fall in serum albumin",
