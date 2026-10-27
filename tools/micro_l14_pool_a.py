@@ -457,8 +457,8 @@ Q("Pseudomonas aeruginosa", IO1,
     "Many candidate vaccines are in development and testing, mostly built on antibodies against bacterial protein; "
     "the concern in cystic fibrosis is increased lung inflammation.", "development status reversed"),
    ("It causes the infection itself",
-    "The candidates rely on bacterial proteins, such as a porin membrane protein, rather than live infection; the "
-    "risk is increased pulmonary inflammation and tissue damage.", "vaccine confused with infection"),
+    "Most vaccines are related to antibodies against bacterial protein (one in testing uses a porin membrane "
+    "protein); the risk is increased pulmonary inflammation and tissue damage.", "vaccine confused with infection"),
    ("It is delivered through the gut",
     "Mucosal delivery by liposomes and nanoparticles is being studied as a route, not a harm; the concern in cystic "
     "fibrosis is increased pulmonary inflammation and tissue damage.", "delivery route confused with the risk")],
