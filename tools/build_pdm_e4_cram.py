@@ -49,10 +49,10 @@ def main():
         title="Cram Sheet — Principles of Diagnostic Medicine I Exam 4",
         kicker="Principles of Diagnostic Medicine I Exam 4 · Class of 2028",
         h1="Principles of Diagnostic Medicine I Exam 4 Cram Sheet",
-        sub="Lectures 17 to 21, the pulmonary block, built lecture by lecture. So far: pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns). Opens with how the exam is written.",
+        sub="Lectures 17 to 21, the pulmonary block, built lecture by lecture. So far: pulmonary imaging (the landmarks, the normal film, the upper airway films, technique, choosing the study and its cautions, reading computed tomography, and the five patterns) and pulmonary function testing (the equipment, the volumes and capacities, spirometry, indications, obstruction against restriction, reading a report, each test's role, and oxygenation). Opens with how the exam is written.",
         topics=topics,
         guide_href="pdm-exam-4-study-guide.html",
-        footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lecture%s %s so far (lecture content). Emphasis rows quote the 20 October 2026 recording; ★ = emphasized in a recording." % ("s" if len(lectures) > 1 else "", ", ".join(map(str, lectures))),
+        footer_note="Condensed from the Principles of Diagnostic Medicine I Exam 4 Study Guide (Class of 2028). Covers Lecture%s %s so far (lecture content). Emphasis rows quote the 20 and 26 October 2026 recordings; ★ = emphasized in a recording." % ("s" if len(lectures) > 1 else "", ", ".join(map(str, lectures))),
     )
     assert not re.search(r"(?i)ha[e]m|(?<!angi)o[e]dem|tumo[u]r|colo[u]r|cent[r]e|ana[e]m|o[e]soph", html)
     open(OUT, "w", encoding="utf-8").write(html)

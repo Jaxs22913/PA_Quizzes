@@ -22,12 +22,23 @@ def json_str(s):
 
 
 def js(decks):
+    """A deck is (id, name, colour, icon, cards) or, with Match pairs, (id, name, colour, icon, cards, match):
+    `match` becomes matchCards (crisp term -> short definition, used by Match; arcade_content_policy)."""
     out = []
-    for did, name, colour, icon, cards in decks:
+    for d in decks:
+        did, name, colour, icon, cards = d[:5]
+        match = d[5] if len(d) > 5 else None
         rows = "\n".join("      [%s, %s]," % (json_str(q), json_str(a)) for q, a in cards)
-        out.append('  { id: "%s", name: "%s", color: "%s",\n'
-                   "    icon: '%s',\n"
-                   "    cards: [\n%s\n    ]},\n" % (did, name, colour, icon, rows))
+        if match:
+            mrows = "\n".join("      [%s, %s]," % (json_str(t), json_str(v)) for t, v in match)
+            out.append('  { id: "%s", name: "%s", color: "%s",\n'
+                       "    icon: '%s',\n"
+                       "    cards: [\n%s\n    ],\n"
+                       "    matchCards: [\n%s\n    ]},\n" % (did, name, colour, icon, rows, mrows))
+        else:
+            out.append('  { id: "%s", name: "%s", color: "%s",\n'
+                       "    icon: '%s',\n"
+                       "    cards: [\n%s\n    ]},\n" % (did, name, colour, icon, rows))
     return "\n".join(out)
 
 
@@ -72,5 +83,7 @@ def apply(tag, decks, group_id, group_name, exam_id, exam_name):
     open(ARCADE, "w", encoding="utf-8").write(src)
     n = sum(len(d[4]) for d in decks)
     print("wrote %d deck(s), %d cards -> %s / %s" % (len(decks), n, group_name, exam_name))
-    for did, name, _c, _i, cards in decks:
-        print("   %-24s %-42s %d cards" % (did, re.sub("&[a-z]+;", "&", name), len(cards)))
+    for d in decks:
+        did, name, cards = d[0], d[1], d[4]
+        extra = ", %d Match pairs" % len(d[5]) if len(d) > 5 and d[5] else ""
+        print("   %-24s %-42s %d cards%s" % (did, re.sub("&[a-z]+;", "&", name), len(cards), extra))

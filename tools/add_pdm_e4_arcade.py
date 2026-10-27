@@ -17,8 +17,12 @@ LUNGS_ICON = ('<rect x="3" y="3" width="18" height="18" rx="2"/>'
               '<path d="M12 6v6M12 12c-1.5 0-2-1-3.5-1S6 13 6 16c0 1.5 1 2 2 2 2 0 4-2 4-6"/>'
               '<path d="M12 12c1.5 0 2-1 3.5-1S18 13 18 16c0 1.5-1 2-2 2-2 0-4-2-4-6"/>')
 
+# A volume-time curve: a steep rise to a plateau.
+SPIRO_ICON = ('<path d="M3 3v18h18"/><path d="M6 17c1.5-6 3-9 6-10s5-1 8-1"/>')
+
 SPEC = [
  (17, "pdm-pulmonary-imaging", "Pulmonary Imaging", "accent1", LUNGS_ICON),
+ (20, "pdm-pulmonary-function", "Pulmonary Function Testing", "accent2", SPIRO_ICON),
 ]
 
 
@@ -26,11 +30,16 @@ def decks():
     out = []
     for n, did, name, colour, icon in SPEC:
         cards = json.load(open(os.path.join(FRAG, "l%d_cards.json" % n), encoding="utf-8"))
-        assert list(cards) == [did], (n, list(cards))
+        # Optional Match pairs under "<deck>:match" (crisp term -> short definition); without them
+        # Match falls back to the cards.
+        assert set(cards) - {did + ":match"} == {did}, (n, list(cards))
         rows = [tuple(c) for c in cards[did]]
         assert all(len(c) == 2 and c[0].strip() and c[1].strip() for c in rows), did
         assert len({c[0] for c in rows}) == len(rows), "%s: repeated prompt" % did
-        out.append((did, name, colour, icon, rows))
+        match = [tuple(m) for m in cards.get(did + ":match", [])]
+        assert all(len(m) == 2 and m[0].strip() and m[1].strip() for m in match), did
+        assert len({m[0] for m in match}) == len(match), "%s: repeated match term" % did
+        out.append((did, name, colour, icon, rows, match) if match else (did, name, colour, icon, rows))
     return out
 
 

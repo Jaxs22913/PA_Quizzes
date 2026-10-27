@@ -1,0 +1,466 @@
+# -*- coding: utf-8 -*-
+# PDM I Lecture 20 (Pulmonary Function Testing and Oxygenation, Professor Fowler) -- pool A.
+# Objectives a and b: the pulmonary function testing parameters (equipment, the lung volumes and
+# capacities, spirometry and its values, the specialized tests) and the indications for testing.
+# Pool B carries objectives c (obstructive against restrictive), d (reading results), e (the role in
+# diagnosis and monitoring) and f (pulse oximetry and oxygenation).
+#
+# LECTURER: Professor Fowler, MMS, PA-C (title slide 1 and the 26 October recording, two segments,
+# about 62 minutes). The calendar calls this PDM Lecture 20; the syllabus numbers it Topic Outline 18
+# ("Pulmonary Function Testing and Oxygenation"). Exam 4's course director is Professor Reynolds;
+# her rules hold.
+#
+# REYNOLDS' RULES, asserted in the partition: vignette style; a value in a STEM always carries its
+# normal range or its reference (predicted) value; tests over diagnoses; nothing calculated. (The
+# lecturer said of the ratio "you need to know how to calculate that"; the questions give the ratio
+# rather than ask for it, flagged for Jaxon.)
+#
+# IMAGES. A question with "img" shows a tracing, loop, film or report taken from the deck (tools/
+# extract_pdm_l20_figures.py; every picture viewed before use). The picture never carries a label
+# that names the answer, and the alt text describes only the format.
+#
+# SLIDES ONLY. Every fact is on a visible slide (text or picture); speaker notes do not count. The
+# recording re-weights which items are selected and never adds a fact the deck lacks. The recording
+# ends as the three cases begin (slide 46): slides 46 to 57 have no audio.
+#
+# ABBREVIATIONS. None in options. In a stem or explanation an abbreviation appears only as
+# ABBREV (full term), every time (the partition asserts it).
+#
+# Correct answer is ALWAYS written first (c=0); the partition rotates.
+SRC = "Pulmonary Function Testing - Prof. Fowler.pptx"
+IMG = "pdm-exam-4-quiz-images/"
+def c(n): return f"{SRC}, Slide {n}" if isinstance(n, int) else f"{SRC}, {n}"   # "Slides 20 and 21": first = primary
+
+IOA = "Describe pulmonary function testing parameters."
+IOB = "Discuss indications for pulmonary function testing."
+IOC = "Differentiate obstructive and restrictive pulmonary patterns."
+IOD = "Interpret basic pulmonary function study results."
+IOE = "Explain the role of pulmonary function testing in diagnosis and monitoring of pulmonary disease."
+IOF = "Discuss pulse oximetry and oxygenation assessment."
+
+TRACING = "Spirometry tracing of lung volume against time with one band shaded yellow"
+
+
+def Q(topic, io, slot, q, key, dists, cite, img=None, alt=None, slide=None, mis=None):
+    """key/dists are (text, explanation)."""
+    r = {"topic": topic, "io": io, "slot": slot, "q": q, "opts": [list(key)] + [list(d) for d in dists], "c": 0,
+         "cite": c(cite)}
+    if img:
+        r["img"] = IMG + img
+        r["alt"] = alt
+        r["slide"] = "Slide %d" % (slide or cite)
+    if mis:
+        r["mis"] = mis
+    return r
+
+
+POOL_A = [
+
+# =============================================================== objective a: equipment
+Q("Equipment", IOA, "next-test",
+  "A 58-year-old man with dyspnea needs his total lung capacity and his residual volume measured. Which test measures both?",
+  ("Whole-body plethysmography",
+   "Correct. Whole-body plethysmography measures the total lung capacity, the functional residual capacity, the residual volume and airway resistance."),
+  [("A peak flow meter",
+    "A peak flow meter measures peak expiratory flow at the bedside or at home; it gives no lung volume such as the total lung capacity."),
+   ("Exercise oximetry",
+    "Exercise oximetry follows oxygenation at rest and with modest activity; it measures no lung volume at all."),
+   ("Maximal inspiratory pressure testing",
+    "Maximal inspiratory and expiratory pressures measure diaphragmatic strength and the neurologic side of breathing, not lung volumes.")],
+  "Slides 13, 15 and 19", mis={"A peak flow meter": "adjacent device (airflow, not volume)", "Exercise oximetry": "oxygenation test, not volume",
+           "Maximal inspiratory pressure testing": "adjacent specialized test"}),
+
+Q("Equipment", IOA, "fact",
+  "A 47-year-old woman sits inside a glass booth for whole-body plethysmography. Besides her lung volumes, which measure does this test report?",
+  ("Airway resistance",
+   "Correct. Whole-body plethysmography also reports airway resistance: how hard it is for air to flow through the bronchial tubes."),
+  [("Diffusing capacity for carbon monoxide",
+    "The diffusing capacity is its own standard test, of the alveolar-capillary membrane; plethysmography reports lung volumes and airway resistance."),
+   ("Oxygen saturation",
+    "Oxygen saturation comes from a pulse oximeter; plethysmography reports the lung volumes and airway resistance."),
+   ("Peak expiratory flow",
+    "Peak expiratory flow comes from a peak flow meter or spirometry; plethysmography adds airway resistance to the lung volumes.")],
+  "Slides 13, 15 and 18", mis={"Diffusing capacity for carbon monoxide": "adjacent standard test", "Oxygen saturation": "adjacent device",
+           "Peak expiratory flow": "adjacent device"}),
+
+Q("Equipment", IOA, "next-test",
+  "A 24-year-old woman with asthma wants to check her expiratory airflow each morning at home. Which device fits?",
+  ("A peak flow meter",
+   "Correct. A peak flow meter measures peak expiratory flow and is used at the bedside or at home, for example in asthma."),
+  [("A body plethysmograph",
+    "A body plethysmograph is a booth the patient sits in to measure lung volumes and airway resistance, not a device for daily home checks."),
+   ("A blood gas analyzer",
+    "A blood gas analyzer measures gas exchange from a blood sample; it does not measure expiratory airflow."),
+   ("A calibration syringe",
+    "A calibration syringe keeps the testing equipment accurate; it measures nothing about the patient's own airflow.")],
+  "Slides 15, 19 and 12", mis={"A body plethysmograph": "laboratory device, not home", "A blood gas analyzer": "wrong parameter",
+           "A calibration syringe": "equipment check, not a measurement"}),
+
+Q("Equipment", IOA, "fact",
+  "A 31-year-old man with asthma records his peak expiratory flow at home. Which spirometry value does this reading correlate with?",
+  ("Forced expiratory volume in one second",
+   "Correct. Peak expiratory flow, measured at the bedside or at home, correlates with the forced expiratory volume in one second."),
+  [("Total lung capacity",
+    "Total lung capacity is the maximum volume the lungs can hold, measured by plethysmography, not tracked by a peak flow meter."),
+   ("Residual volume",
+    "Residual volume stays in the lung after maximal expiration, so no reading of blown-out air can track it."),
+   ("Diffusing capacity for carbon monoxide",
+    "The diffusing capacity measures the integrity of the alveolar-capillary membrane, not expiratory airflow.")],
+  "Slides 15, 13, 21 and 18", mis={"Total lung capacity": "volume, not flow", "Residual volume": "volume never exhaled",
+           "Diffusing capacity for carbon monoxide": "gas transfer, not flow"}),
+
+Q("Equipment", IOA, "fact",
+  "A 40-year-old woman's spirometry gives values that do not fit her clinical picture. Besides correct patient technique and clean components, what does accurate testing depend on?",
+  ("Properly calibrated equipment",
+   "Correct. Accurate testing depends on properly calibrated equipment, clean components and correct patient technique; a calibration syringe is part of the equipment."),
+  [("Testing only after a bronchodilator",
+    "Reports can show testing before and after a bronchodilator (albuterol), but neither replaces properly calibrated equipment."),
+   ("A higher oxygen saturation first",
+    "Oxygen saturation is a separate measurement by pulse oximetry; accuracy of spirometry rests on calibration, clean parts and technique."),
+   ("Recording the lowest of the efforts",
+    "Of the three efforts the highest volumes and flows are recorded; accuracy rests on calibrated equipment, clean parts and technique.")],
+  "Slides 12, 24 and 47",
+  mis={"Testing only after a bronchodilator": "adjacent report feature", "A higher oxygen saturation first": "irrelevant parameter",
+       "Recording the lowest of the efforts": "reversed reporting rule"}),
+
+# =============================================================== objective a: lung volumes
+Q("Lung volumes", IOA, "fact",
+  "A 30-year-old man breathes quietly at rest while his breathing is recorded. What is the volume of air he moves in and out with each restful breath called?",
+  ("Tidal volume",
+   "Correct. Tidal volume is the air moved in and out with each normal restful breath, about 500 mL depending on age, sex and size."),
+  [("Inspiratory reserve volume",
+    "The inspiratory reserve volume is the extra air breathed in on top of the tidal volume, not the restful breath itself."),
+   ("Vital capacity",
+    "Vital capacity is the tidal volume plus both reserve volumes: the fullest breath in and out, not a quiet breath."),
+   ("Functional residual capacity",
+    "Functional residual capacity is the air left in the lungs at the end of a quiet breath out, not the air moved.")],
+  "Slides 21 and 23", mis={"Inspiratory reserve volume": "adjacent volume", "Vital capacity": "capacity containing it",
+           "Functional residual capacity": "adjacent capacity"}),
+
+Q("Lung volumes", IOA, "fact",
+  "A 26-year-old woman breathing quietly is told to take the deepest breath she can. Which volume is the extra air she draws in above a normal breath?",
+  ("Inspiratory reserve volume",
+   "Correct. The inspiratory reserve volume is the additional volume breathed in on top of the tidal volume."),
+  [("Expiratory reserve volume",
+    "The expiratory reserve volume is the extra air breathed OUT after a normal breath, the opposite direction."),
+   ("Inspiratory capacity",
+    "Inspiratory capacity is the tidal volume plus the inspiratory reserve volume; the extra air alone is the reserve volume."),
+   ("Total lung capacity",
+    "Total lung capacity is all four volumes together, the residual volume included, not just the extra breath in.")],
+  "Slides 21 and 23", mis={"Expiratory reserve volume": "reversed direction", "Inspiratory capacity": "capacity containing it",
+           "Total lung capacity": "whole for the part"}),
+
+Q("Lung volumes", IOA, "image",
+  "A 40-year-old has this tracing of quiet breaths, one deepest breath in and one fullest breath out. Which volume is shaded?",
+  ("Expiratory reserve volume",
+   "Correct. The shaded band runs from the end of a quiet breath out down to the lowest point of the fullest breath out: the additional volume that can be breathed out, the expiratory reserve volume."),
+  [("Residual volume",
+    "Residual volume lies below the lowest point of the tracing: the air still in the lung after maximal expiration."),
+   ("Tidal volume",
+    "Tidal volume is the small rise and fall of each quiet breath, which sits above the shaded band."),
+   ("Functional residual capacity",
+    "Functional residual capacity is the shaded band plus the residual volume beneath it: all the air left at the end of a quiet breath out.")],
+  "Slides 20, 21 and 23", img="l20-fig-16.jpg", alt=TRACING, slide=20,
+  mis={"Residual volume": "adjacent volume (below)", "Tidal volume": "adjacent volume (above)",
+       "Functional residual capacity": "capacity containing it"}),
+
+Q("Lung volumes", IOA, "image",
+  "A 55-year-old has this tracing of quiet breaths, one deepest breath in and one fullest breath out. Which volume does the shaded band represent?",
+  ("Residual volume",
+   "Correct. Below the lowest point of the fullest breath out lies the residual volume, the air still in the lung after maximal expiration; the tracing never enters it."),
+  [("Expiratory reserve volume",
+    "The expiratory reserve volume is the band the fullest breath out does reach, just above the shaded one."),
+   ("Functional residual capacity",
+    "Functional residual capacity is the residual volume plus the expiratory reserve volume above it, a taller band than this."),
+   ("Tidal volume",
+    "Tidal volume is the small rise and fall of each quiet breath, near the middle of the tracing.")],
+  "Slides 20, 21 and 23", img="l20-fig-19.jpg", alt=TRACING, slide=20,
+  mis={"Expiratory reserve volume": "adjacent volume (above)", "Functional residual capacity": "capacity containing it",
+       "Tidal volume": "wrong band"}),
+
+Q("Lung volumes", IOA, "image",
+  "A 33-year-old has this tracing of quiet breaths, one deepest breath in and one fullest breath out. Which volume is shaded?",
+  ("Inspiratory reserve volume",
+   "Correct. The band from the top of a quiet breath up to the peak of the deepest breath is the inspiratory reserve volume, breathed in on top of the tidal volume."),
+  [("Inspiratory capacity",
+    "Inspiratory capacity also includes the tidal volume, so it would start at the bottom of a quiet breath, not its top."),
+   ("Vital capacity",
+    "Vital capacity spans the deepest breath in down to the fullest breath out, far more than the upper band shaded here."),
+   ("Tidal volume",
+    "Tidal volume is the narrow band of each quiet breath, just below the shaded one.")],
+  "Slides 20, 21 and 23", img="l20-fig-18.jpg", alt=TRACING, slide=20,
+  mis={"Inspiratory capacity": "capacity containing it", "Vital capacity": "capacity containing it",
+       "Tidal volume": "adjacent volume (below)"}),
+
+# =============================================================== objective a: lung capacities
+Q("Lung capacities", IOA, "image",
+  "A 62-year-old has this tracing of quiet breaths, one deepest breath in and one fullest breath out. Which capacity is shaded?",
+  ("Functional residual capacity",
+   "Correct. The band from the end of a quiet breath out to the bottom of the lungs is the expiratory reserve volume plus the residual volume: the functional residual capacity."),
+  [("Expiratory reserve volume",
+    "The expiratory reserve volume is only the upper part of the band; the shading also takes in the residual volume below it."),
+   ("Vital capacity",
+    "Vital capacity runs from the deepest breath in to the fullest breath out and leaves out the residual volume."),
+   ("Total lung capacity",
+    "Total lung capacity is the whole height of the tracing, all four volumes, not only the lower part.")],
+  "Slides 20 and 23", img="l20-fig-17.jpg", alt=TRACING, slide=20,
+  mis={"Expiratory reserve volume": "part for the whole", "Vital capacity": "adjacent capacity",
+       "Total lung capacity": "whole for the part"}),
+
+Q("Lung capacities", IOA, "fact",
+  "A 45-year-old's report lists his inspiratory capacity. Which volumes does this capacity combine?",
+  ("Tidal volume and inspiratory reserve volume",
+   "Correct. Inspiratory capacity is the sum of the tidal volume and the inspiratory reserve volume."),
+  [("Expiratory reserve volume and residual volume",
+    "Those two make the functional residual capacity, the air left in the lungs at the end of a quiet breath out."),
+   ("Tidal volume and both reserve volumes",
+    "Tidal volume plus both reserve volumes is the vital capacity, which also includes the air breathed out."),
+   ("All four lung volumes",
+    "All four volumes together, the residual volume included, make the total lung capacity.")],
+  23, mis={"Expiratory reserve volume and residual volume": "adjacent capacity",
+           "Tidal volume and both reserve volumes": "adjacent capacity", "All four lung volumes": "adjacent capacity"}),
+
+Q("Lung capacities", IOA, "fact",
+  "A 52-year-old woman breathes out normally and pauses with all her respiratory muscles relaxed. Which capacity is the air left in her lungs?",
+  ("Functional residual capacity",
+   "Correct. Functional residual capacity (the expiratory reserve volume plus the residual volume) is the air left at the end of a quiet breath out with the respiratory muscles fully relaxed."),
+  [("Residual volume",
+    "Residual volume is what remains after a MAXIMAL breath out; after a normal breath out, the expiratory reserve volume is still there as well."),
+   ("Inspiratory capacity",
+    "Inspiratory capacity is the tidal volume plus the inspiratory reserve volume, air that can still be breathed in."),
+   ("Expiratory reserve volume",
+    "The expiratory reserve volume could still be breathed out, but the residual volume also stays in the lungs.")],
+  "Slides 23 and 21", mis={"Residual volume": "part for the whole", "Inspiratory capacity": "adjacent capacity",
+           "Expiratory reserve volume": "part for the whole"}),
+
+Q("Lung capacities", IOA, "fact",
+  "A 36-year-old man takes the deepest breath he can and then breathes out as fully as possible. Which capacity is the volume of that whole breath?",
+  ("Vital capacity",
+   "Correct. Vital capacity is the tidal volume plus the inspiratory and expiratory reserve volumes: every volume except the residual volume."),
+  [("Total lung capacity",
+    "Total lung capacity also includes the residual volume, which stays in the lungs after the fullest breath out."),
+   ("Inspiratory capacity",
+    "Inspiratory capacity is the breath in from the end of a quiet breath out; it leaves out the expiratory reserve volume."),
+   ("Functional residual capacity",
+    "Functional residual capacity is the air left at the end of a quiet breath out, not the volume of a full breath.")],
+  23, mis={"Total lung capacity": "includes the residual volume", "Inspiratory capacity": "part for the whole",
+           "Functional residual capacity": "adjacent capacity"}),
+
+Q("Lung capacities", IOA, "fact",
+  "A 60-year-old woman's report lists the maximum volume of air her lungs can hold. Which volumes add up to it?",
+  ("All four volumes, residual volume included",
+   "Correct. Total lung capacity, the maximum volume the lungs can hold, is the sum of all four volumes: tidal, inspiratory reserve, expiratory reserve and residual."),
+  [("Tidal volume and both reserve volumes",
+    "Those three make the vital capacity, which leaves out the residual volume that stays in the lungs."),
+   ("Expiratory reserve and residual volumes",
+    "Those two make the functional residual capacity, the air left at the end of a quiet breath out."),
+   ("Tidal and inspiratory reserve volumes",
+    "Those two make the inspiratory capacity, the breath that can be drawn in from the end of a quiet breath out.")],
+  "Slides 13 and 23",
+  mis={"Tidal volume and both reserve volumes": "adjacent capacity (vital)",
+       "Expiratory reserve and residual volumes": "adjacent capacity (functional residual)",
+       "Tidal and inspiratory reserve volumes": "adjacent capacity (inspiratory)"}),
+
+# =============================================================== objective a: spirometry
+Q("Spirometry technique", IOA, "fact",
+  "A 45-year-old man is coached through spirometry. After he breathes in as deeply as he can, what is he asked to do?",
+  ("Blow out as hard and fast as he can for 6 seconds or more",
+   "Correct. After a maximal breath in, the patient exhales forcefully, as fast as possible, and keeps going for at least 6 seconds."),
+  [("Breathe out slowly and gently until the breath is empty",
+    "A slow, gentle breath out cannot show how fast air leaves the lungs; spirometry needs a forceful, fast exhalation for at least 6 seconds."),
+   ("Breathe quietly through the mouthpiece for a minute",
+    "Quiet breathing shows only the tidal volume; spirometry needs the maximal breath in and then the forceful breath out."),
+   ("Blow out hard for one second, then stop",
+    "Stopping after one second captures only the first-second volume; the effort continues for at least 6 seconds so the forced vital capacity is reached.")],
+  "Slides 24, 29 and 21", mis={"Breathe out slowly and gently until the breath is empty": "unforced maneuver",
+           "Breathe quietly through the mouthpiece for a minute": "tidal breathing, not the test",
+           "Blow out hard for one second, then stop": "stops at the first second"}),
+
+Q("Spirometry technique", IOA, "fact",
+  "A 50-year-old woman completes three acceptable spirometry efforts. Which values go in her report?",
+  ("The highest volumes and flows of the three",
+   "Correct. Spirometry is repeated three times, and the highest air volumes and flows are the ones recorded."),
+  [("The average of the three efforts",
+    "The efforts are not averaged: the highest volumes and flows of the three are recorded."),
+   ("The values from the final effort",
+    "The last effort is not the one kept; of the three, the highest volumes and flows are recorded."),
+   ("The lowest values, as the safest estimate",
+    "The lowest effort underestimates the lungs; the highest volumes and flows of the three are recorded.")],
+  24, mis={"The average of the three efforts": "common belief (and a spoken slip)",
+           "The values from the final effort": "plausible rule", "The lowest values, as the safest estimate": "reversed rule"}),
+
+Q("Spirometry values", IOA, "fact",
+  "A 34-year-old man takes a maximal breath and then blows out forcefully and rapidly until he can blow out no more. What is the total volume he exhales called?",
+  ("Forced vital capacity",
+   "Correct. The forced vital capacity is the total volume a person can forcefully and rapidly exhale after a maximal deep breath, typically reached by about 6 seconds."),
+  [("Forced expiratory volume in one second",
+    "That is only the part blown out in the first second, not the total volume of the forced breath."),
+   ("Total lung capacity",
+    "Total lung capacity also includes the residual volume, which stays in the lungs after the hardest breath out."),
+   ("Peak expiratory flow rate",
+    "Peak expiratory flow rate is the maximum speed of the forced breath out, a flow rather than a volume.")],
+  "Slides 26, 29, 31 and 23",
+  mis={"Forced expiratory volume in one second": "part for the whole", "Total lung capacity": "includes the residual volume",
+       "Peak expiratory flow rate": "flow for volume"}),
+
+Q("Spirometry values", IOA, "fact",
+  "A 41-year-old woman's spirometry records how much air she forcefully blows out in the first second of a maximal breath out. Which value is this?",
+  ("Forced expiratory volume in one second",
+   "Correct. The forced expiratory volume in one second is the amount of air forcefully blown out in the first second of the breath out."),
+  [("Forced vital capacity",
+    "The forced vital capacity is the TOTAL volume of the forced breath out, typically reached by about 6 seconds."),
+   ("Peak expiratory flow rate",
+    "Peak expiratory flow rate is the maximum velocity of the forced breath out, a flow, not the volume of its first second."),
+   ("Forced expiratory volume in 6 seconds",
+    "The forced expiratory volume in 6 seconds is the volume blown out by 6 seconds, not in the first second.")],
+  "Slides 26, 29 and 31", mis={"Forced vital capacity": "whole for the part", "Peak expiratory flow rate": "flow for volume",
+           "Forced expiratory volume in 6 seconds": "adjacent term"}),
+
+Q("Spirometry values", IOA, "fact",
+  "A 29-year-old student reads a spirometry report. Besides the forced vital capacity and the forced expiratory volume in one second, which value completes the three most important for interpreting it?",
+  ("The ratio of the two",
+   "Correct. The forced vital capacity, the forced expiratory volume in one second and the ratio of the two are the three most important values in interpreting pulmonary function tests."),
+  [("Total lung capacity",
+    "Total lung capacity comes from lung volume testing and settles restriction; the three most important spirometry values end with the ratio."),
+   ("Peak expiratory flow rate",
+    "Peak expiratory flow rate is measured too, but the three most important values are the two forced values and their ratio."),
+   ("Diffusing capacity for carbon monoxide",
+    "The diffusing capacity is a separate standard test of the alveolar-capillary membrane, not one of the three spirometry values.")],
+  "Slides 28, 18 and 43", mis={"Total lung capacity": "adjacent standard value", "Peak expiratory flow rate": "adjacent spirometry value",
+           "Diffusing capacity for carbon monoxide": "adjacent standard test"}),
+
+Q("Spirometry values", IOA, "image",
+  "A 38-year-old's flow-volume loop from spirometry is shown. What does the arrowhead at the top of the loop mark?",
+  ("Peak expiratory flow",
+   "Correct. The top of the expiratory limb is the peak expiratory flow: the maximum velocity reached during the forced breath out."),
+  [("Forced expiratory volume in one second",
+    "The forced expiratory volume in one second is marked further along the expiratory limb (the vertical line), not at the loop's peak."),
+   ("Forced vital capacity",
+    "The forced vital capacity is the total volume of the forced breath out, read along the volume axis, not the flow at the loop's top."),
+   ("Tidal volume",
+    "Tidal volume is a quiet breath; this loop records a maximal forced breath, and its top is the peak expiratory flow.")],
+  "Slides 30, 31 and 21", img="l20-fig-03.jpg", alt="Flow-volume loop with an arrowhead at the top", slide=30,
+  mis={"Forced expiratory volume in one second": "adjacent point on the loop", "Forced vital capacity": "adjacent value",
+       "Tidal volume": "quiet breath for forced breath"}),
+
+Q("Spirometry values", IOA, "image",
+  "A 44-year-old's volume-time curve from spirometry is shown. What does the marked point represent?",
+  ("Forced expiratory volume in one second",
+   "Correct. The point sits at 1 second on the time axis: the volume exhaled in the first second of the forced breath, the forced expiratory volume in one second."),
+  [("Forced vital capacity",
+    "The forced vital capacity is the plateau the curve reaches, the maximum volume, typically by about 6 seconds, not the point at 1 second."),
+   ("Peak expiratory flow rate",
+    "Peak expiratory flow rate is the maximum slope of the curve, its steep first rise, not a point on it."),
+   ("Forced expiratory volume in 6 seconds",
+    "The forced expiratory volume in 6 seconds would be read at 6 seconds on the time axis; the marked point sits at 1 second.")],
+  "Slides 29 and 26", img="l20-fig-20.jpg", alt="Volume-time curve from spirometry with one point marked by an arrow", slide=29,
+  mis={"Forced vital capacity": "adjacent point on the curve", "Peak expiratory flow rate": "slope for point",
+       "Forced expiratory volume in 6 seconds": "adjacent timed volume"}),
+
+Q("Spirometry values", IOA, "fact",
+  "A 57-year-old man's spirometry report includes a graph plotting airflow against lung volume during a forced breath in and out. What is this graph called?",
+  ("A flow-volume loop",
+   "Correct. The flow-volume loop plots airflow speed against lung volume during a forced inhalation and expiration in spirometry."),
+  [("A volume-time curve",
+    "A volume-time curve plots exhaled volume against time; flow appears only as its slope, not on an axis."),
+   ("A tracing of quiet breaths",
+    "A tracing of quiet and deep breaths shows the lung volumes and capacities over time; it does not plot flow against volume."),
+   ("A peak flow meter reading",
+    "A peak flow meter gives one peak expiratory flow number, not a graph of flow across the whole breath.")],
+  "Slides 26, 30, 20 and 15",
+  mis={"A volume-time curve": "adjacent graph", "A tracing of quiet breaths": "adjacent graph",
+       "A peak flow meter reading": "single value, not a graph"}),
+
+Q("Spirometry values", IOA, "fact",
+  "A 48-year-old's report lists the average flow over the middle half of the forced vital capacity. Which value is this?",
+  ("Forced expiratory flow 25% to 75%",
+   "Correct. The forced expiratory flow 25% to 75% is the average flow from the point at which 25% of the forced vital capacity has been exhaled to the point at which 75% has."),
+  [("Peak expiratory flow rate",
+    "Peak expiratory flow rate is the single maximum velocity of the forced breath out, not an average over its middle half."),
+   ("Forced expiratory volume in one second",
+    "The forced expiratory volume in one second is a volume, blown out in the first second, not an average flow."),
+   ("Forced expiratory volume in 6 seconds",
+    "The forced expiratory volume in 6 seconds is the volume blown out by 6 seconds, not a flow.")],
+  "Slides 26 and 31", mis={"Peak expiratory flow rate": "maximum for average", "Forced expiratory volume in one second": "volume for flow",
+           "Forced expiratory volume in 6 seconds": "volume for flow"}),
+
+# =============================================================== objective a: the specialized tests
+Q("Specialized tests", IOA, "next-test",
+  "A 61-year-old man with amyotrophic lateral sclerosis has worsening dyspnea. Which specialized test assesses his diaphragmatic strength?",
+  ("Maximal inspiratory and expiratory pressures",
+   "Correct. Maximal inspiratory and expiratory pressures measure diaphragmatic strength and the neurologic side of breathing."),
+  [("Diffusing capacity for carbon monoxide",
+    "The diffusing capacity tests gas transfer across the alveolar-capillary membrane, not the strength of the diaphragm."),
+   ("Whole-body plethysmography",
+    "Plethysmography measures lung volumes and airway resistance; muscle strength is tested by the maximal pressures."),
+   ("Peak expiratory flow measurement",
+    "Peak flow measures the maximum expiratory airflow in a single breath, as in asthma, not diaphragmatic strength.")],
+  "Slides 19 and 13", mis={"Diffusing capacity for carbon monoxide": "adjacent standard test", "Whole-body plethysmography": "adjacent test",
+           "Peak expiratory flow measurement": "adjacent specialized test"}),
+
+# =============================================================== objective b: indications
+Q("Indications", IOB, "fact",
+  "A 50-year-old woman has had a chronic cough and shortness of breath for months. What is the most common reason to order pulmonary function tests in a patient like her?",
+  ("To help make a diagnosis of her symptoms",
+   "Correct. The most common reason to order pulmonary function tests is to help make a diagnosis in a patient with a pulmonary symptom such as chronic shortness of breath or cough."),
+  [("To estimate her risk before lung surgery",
+    "Surgical risk is estimated before a lung resection; she has symptoms and no planned surgery, so the reason is diagnosis."),
+   ("To screen for amiodarone lung toxicity",
+    "Screening looks for early complications in a patient WITHOUT symptoms, for example on long-term amiodarone; she is symptomatic."),
+   ("To give her a specific diagnosis",
+    "Pulmonary function tests do NOT provide a specific diagnosis; they show the derangement the disease causes and help rule out parts of the differential.")],
+  5, mis={"To estimate her risk before lung surgery": "adjacent indication", "To screen for amiodarone lung toxicity": "adjacent indication",
+          "To give her a specific diagnosis": "overstates what the tests give"}),
+
+Q("Indications", IOB, "fact",
+  "A 66-year-old man has long-standing interstitial lung disease that is already diagnosed. Which use of pulmonary function testing applies to him?",
+  ("Judging the prognosis of his known disease",
+   "Correct. Pulmonary function tests can help determine the prognosis in a patient with known disease."),
+  [("Screening for a silent complication",
+    "Screening is for early, asymptomatic complications of NON-pulmonary disease or medication; he has known lung disease."),
+   ("Making his first diagnosis",
+    "His disease is already diagnosed, so the first-diagnosis indication no longer applies; prognosis does."),
+   ("Naming the specific cause of his disease",
+    "Pulmonary function tests do not provide a specific diagnosis; they show the derangement the disease causes.")],
+  5, mis={"Screening for a silent complication": "adjacent indication", "Making his first diagnosis": "already met",
+          "Naming the specific cause of his disease": "overstates what the tests give"}),
+
+Q("Indications", IOB, "fact",
+  "A 67-year-old woman with chronic obstructive pulmonary disease is being considered for a lung resection. Why would pulmonary function tests be ordered before surgery?",
+  ("To estimate her surgical risk",
+   "Correct. Pulmonary function tests can be used to estimate surgical risk in patients facing lung resection or with chronic obstructive pulmonary disease."),
+  [("To screen for amiodarone toxicity",
+    "Screening for drug toxicity applies to a patient on a drug such as long-term amiodarone; her question is surgical risk."),
+   ("To give a specific diagnosis",
+    "Pulmonary function tests do not provide a specific diagnosis; here they estimate how much surgical risk she carries."),
+   ("To measure her oxygen saturation",
+    "Oxygen saturation is measured by pulse oximetry; pulmonary function tests before resection estimate surgical risk.")],
+  "Slides 5 and 12", mis={"To screen for amiodarone toxicity": "adjacent indication", "To give a specific diagnosis": "overstates what the tests give",
+          "To measure her oxygen saturation": "adjacent device"}),
+
+Q("Indications", IOB, "fact",
+  "A 64-year-old man has taken amiodarone for years and has no breathing symptoms. Why might pulmonary function tests be ordered?",
+  ("To screen for early pulmonary toxicity",
+   "Correct. Pulmonary function tests can screen for early, asymptomatic complications of non-pulmonary disease or medication, such as long-term amiodarone, which can cause significant pulmonary toxicity."),
+  [("To diagnose the cause of his symptoms",
+    "He has no breathing symptoms; the indication is screening for an early, asymptomatic complication of his medication."),
+   ("To estimate his risk before lung surgery",
+    "No lung surgery is planned; the reason here is screening for amiodarone pulmonary toxicity."),
+   ("To judge the prognosis of a lung disease",
+    "He has no known lung disease whose prognosis is in question; the reason is screening for drug toxicity.")],
+  5, mis={"To diagnose the cause of his symptoms": "adjacent indication (no symptoms)",
+          "To estimate his risk before lung surgery": "adjacent indication", "To judge the prognosis of a lung disease": "adjacent indication"}),
+
+Q("Indications", IOB, "fact",
+  "A 38-year-old woman with an autoimmune disease feels well and breathes normally. Which reason for pulmonary function testing applies to her?",
+  ("Screening for an early, silent complication",
+   "Correct. Pulmonary function tests can screen for early, asymptomatic complications from non-pulmonary diseases such as autoimmune diseases."),
+  [("Diagnosing a symptomatic lung disease",
+    "She has no symptoms, so the diagnostic indication does not apply; screening for an early complication does."),
+   ("Estimating risk before a lung resection",
+    "No resection is planned; the reason is screening for an asymptomatic complication of her autoimmune disease."),
+   ("Judging the prognosis of known lung disease",
+    "She has no known lung disease; the reason is screening for an early complication of her autoimmune disease.")],
+  5, mis={"Diagnosing a symptomatic lung disease": "adjacent indication (no symptoms)",
+          "Estimating risk before a lung resection": "adjacent indication", "Judging the prognosis of known lung disease": "adjacent indication"}),
+]

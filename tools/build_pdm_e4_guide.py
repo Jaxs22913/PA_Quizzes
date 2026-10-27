@@ -6,7 +6,8 @@ Exam 4 (Tuesday 1 December 2026) covers Lectures 17-21 and Labs 4-5. The guide g
 lecture: each per-lecture builder writes a fragment in tools/pdm_e4/l<N>_guide.html (verbatim syllabus
 objectives, answered in order; figures from the decks with the slide cited), and this script
 assembles whichever fragments exist. Lecture 17 (Pulmonary Imaging, Professor Fowler, guest) is the
-first. Labs: lecture content only for now (pdm_exam_spec); lab handling is decided with Jaxon.
+first; Lecture 20 (Pulmonary Function Testing and Oxygenation, Professor Fowler; syllabus Topic Outline 18)
+the second. Labs: lecture content only for now (pdm_exam_spec); lab handling is decided with Jaxon.
 
 Chrome and CSS come from the live Exam 3 guide (the class's current template) with the Exam 4
 palette swapped in (film-viewer slate, x-ray blue, dark amber; tools/pdm_e4/palette.json, the same
@@ -30,7 +31,7 @@ FRAG = os.path.join(HERE, "pdm_e4")
 IMG = "pdm-exam-4-study-guide-images"
 LECTURES = range(17, 22)
 
-TY_KEYS = {17: ("pulmonaryimaging", "Pulmonary Imaging")}
+TY_KEYS = {17: ("pulmonaryimaging", "Pulmonary Imaging"), 20: ("pulmonaryfunction", "Pulmonary Function Testing")}
 
 # Exam 3 palette -> Exam 4 palette (same roles). Quizzes use navy #1c2733, indigo #3a6797,
 # gold #c9873a; amber is too light for heading text, so the guide's third accent is the same hue,
@@ -60,13 +61,14 @@ E3_HEXES = ("#1f2024", "#faf8f8", "#33363d", "#b23a48", "#8a6420", "#e3dee0", "#
             "#f3e6e8", "#f2f0f1", "#f5eef0", "#f6f0e3", "#f8eced", "#f5f3f4", "#ebe7e8", "#e8a3ac")
 
 HOW = '''<div class="prof-flag"><span class="prof-flag-label">&#9733; How this exam is written</span>
-  <p>Exam 4 is the pulmonary block. The course rules below come from Professor Reynolds&rsquo; first lecture and hold for every exam in this class; the last rows are what they mean for imaging.</p>
+  <p>Exam 4 is the pulmonary block. The course rules below come from Professor Reynolds&rsquo; first lecture and hold for every exam in this class; the last rows are what they mean for imaging and for pulmonary function testing.</p>
   <table>
     <tr><th>The rule</th><th>What it means for you</th></tr>
     <tr><td><em>&ldquo;I&rsquo;m not going to just throw a random number at you and not give you context of whether that&rsquo;s high or low.&rdquo;</em> (Professor Reynolds, Lecture 1)</td><td><strong>Reference ranges are supplied.</strong> A creatinine or any other value in a stem comes with the range that reads it. Learn what a value <em>means</em>.</td></tr>
     <tr><td><em>&ldquo;It&rsquo;s going to likely be more related to the tests themselves rather than maybe the specific diagnosis.&rdquo;</em> (Lecture 1)</td><td>Which study, why, its cautions and what normal looks like on it carry most of the marks (17.7).</td></tr>
     <tr><td>Questions are vignette and next-best-test: <em>&ldquo;what would be the next test that you would order?&rdquo;</em></td><td>In imaging the next test is a study: the radiograph first; the angiogram first for a suspected pulmonary embolism; computed tomography when the radiograph is inconclusive; the ventilation/perfusion scan when contrast cannot be given (17.7).</td></tr>
     <tr><td>Images are in play: radiographs and scans alongside the vignette.</td><td>Expect a film or a slice. Read the technique first (17.6), then the structures (17.1&ndash;17.5), then the pattern (17.8).</td></tr>
+    <tr><td>Pulmonary function tests: a value comes with its reference (percent of predicted, or the report&rsquo;s own reference column).</td><td>Read a report in order: the ratio first, then the forced vital capacity, then the total lung capacity (20.6). Expect a tracing, a loop or a report: know the normal shapes and the scoop and the witch&rsquo;s hat (20.5). The next test: spirometry for obstruction, lung volumes for restriction, the diffusing capacity for a gas transfer problem (20.7).</td></tr>
   </table>
 </div>'''
 
@@ -89,6 +91,23 @@ TY = {
   {"q": "What is the classic radiograph sign of a pleural effusion?",
    "choices": ["Jet-black space with a compressed lung", "Blunted costophrenic angles", "Honeycombing", "Cephalization of vessels"], "correct": 1,
    "explain": "The normally sharp costophrenic angles are blunted. Jet-black space with a compressed lung is a pneumothorax; honeycombing is interstitial lung disease; cephalization is edema."},
+ ],
+ "pulmonaryfunction": [
+  {"q": "Which value is assessed first when reading spirometry?",
+   "choices": ["The forced vital capacity", "The ratio of the two forced values", "The total lung capacity", "The peak expiratory flow"], "correct": 1,
+   "explain": "Assess the ratio (forced expiratory volume in one second over forced vital capacity) first, then the forced vital capacity. A low ratio is obstruction; a normal or high ratio with a low forced vital capacity is possible restriction."},
+  {"q": "A ratio below which value indicates obstruction?",
+   "choices": ["50%", "70%", "80%", "90%"], "correct": 1,
+   "explain": "Below 70% indicates obstruction; a normal ratio is more than 80%. Restriction keeps the ratio normal or increased, 70% or more."},
+  {"q": "What shape is the restrictive flow-volume loop?",
+   "choices": ["Narrow and tall, like a witch's hat", "Scooped after the peak (coving)", "Wide with a long flat tail", "The same as normal"], "correct": 0,
+   "explain": "The restrictive loop keeps the normal shape but everything is smaller: narrow, with a sharp point. A scoop in the loop (coving) is obstruction."},
+  {"q": "Which standard test diagnoses pulmonary vascular disease?",
+   "choices": ["Spirometry", "Lung volumes", "Peak flow", "Diffusing capacity for carbon monoxide"], "correct": 3,
+   "explain": "The diffusing capacity measures the integrity of the alveolar-capillary membrane and diagnoses pulmonary vascular disease. Spirometry diagnoses obstruction and lung volumes restriction."},
+  {"q": "Which volume can never be breathed out?",
+   "choices": ["Expiratory reserve volume", "Residual volume", "Tidal volume", "Inspiratory reserve volume"], "correct": 1,
+   "explain": "The residual volume is the air still in the lung after maximal expiration. Whole-body plethysmography measures it, with the total lung capacity, the functional residual capacity and airway resistance."},
  ],
 }
 
