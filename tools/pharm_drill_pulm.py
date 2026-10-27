@@ -152,10 +152,12 @@ dict(q="Which tuberculosis drug causes peripheral neuritis from pyridoxine defic
             ("Ethambutol", "Ethambutol's signature effects are visual: decreased red-green discrimination and visual acuity."),
             ("Pyrazinamide", "Pyrazinamide's signature effects are hepatitis and hyperuricemia from blocked uric acid excretion.")]),
 
+# Repair 2026-10-27: rifampin is no longer offered (rifampin alone is a current latent-tuberculosis regimen, so it could be
+# defended); ethambutol and pyrazinamide are already choices, so doxycycline stands in, as in the vignette pool's version.
 dict(q="Which tuberculosis drug is used alone for prophylaxis?",
      ans="Isoniazid", src=("PU", 39),
      why="Isoniazid is used alone for prophylaxis and in combination for active disease.",
-     wrong=[("Rifampin", "Rifampin is rarely used alone because of rapid tolerance; its prophylactic use is for meningococcal disease."),
+     wrong=[("Doxycycline", "Doxycycline is not a tuberculosis drug; it is a second-line outpatient choice for community-acquired pneumonia, while isoniazid alone is the prophylactic drug."),
             ("Ethambutol", "Ethambutol develops resistance quickly if used alone, so it is not the drug listed for single-agent prophylaxis."),
             ("Pyrazinamide", "Pyrazinamide is given only in the first two months of combined therapy, to avoid liver toxicity.")]),
 
