@@ -543,7 +543,7 @@
 
   // The free voice lives in a background worker (osce-voice-worker.js). Built and run on this page it froze
   // everything, the clock and the microphone included, for half a second on choosing it and 4 to 7 seconds per line.
-  var kokoroW = null, kokoroJobs = {}, kokoroId = 0, kokoroEpoch = 0, SKIPPED = {};
+  var kokoroW = null, kokoroJobs = {}, kokoroId = 0, kokoroEpoch = 0, SKIPPED = {}, kokoroFast = false;
   function loadKokoro() {
     if (kokoroP) return kokoroP;
     var box = $("kokoro-status"); box.classList.remove("hidden");
@@ -576,7 +576,7 @@
           save(K_GPU_TRY, Date.now());     // downloaded; building it on the graphics chip is where a tab can die
         } else if (m.type === "ready") {
           tried();
-          kokoroW = w; kokoro = { say: kokoroSay };
+          kokoroW = w; kokoro = { say: kokoroSay }; kokoroFast = !!m.fast;
           $("kokoro-bar").style.width = "100%";
           $("kokoro-text").textContent = m.fast ? "The free voice is ready." :
             "The free voice is ready, but this device makes it slowly: a few seconds before each line. The device voice is quicker.";
@@ -593,13 +593,58 @@
     return kokoroP;
   }
   // one piece of a line -> its audio (a Blob), SKIPPED once the station has ended, or null if the voice failed
-  function kokoroSay(text, voice) {
+  function kokoroSay(text, voice, low) {
     return new Promise(function (res) {
       if (!kokoroW) return res(null);
       var id = ++kokoroId; kokoroJobs[id] = res;
-      kokoroW.postMessage({ type: "say", id: id, text: text, voice: voice, epoch: kokoroEpoch });
+      kokoroW.postMessage({ type: "say", id: id, text: text, voice: voice, epoch: kokoroEpoch, low: !!low });
     });
   }
+  // Short pieces once made are kept for the session, so a repeat ("Okay." after nearly every maneuver) plays at once.
+  var kokoroMade = {}, kokoroMadeN = 0;
+  function kokoroPiece(s, voice, low) {
+    var k = voice + "|" + sameWords(s) + "|" + (/\?\s*$/.test(s) ? "?" : "");
+    if (kokoroMade[k]) return kokoroMade[k];
+    var p = kokoroSay(s, voice, low);
+    if (s.length <= 40 && kokoroMadeN < 300) {
+      kokoroMade[k] = p; kokoroMadeN++;
+      p.then(function (b) { if (!(b instanceof Blob)) { delete kokoroMade[k]; kokoroMadeN--; } });   // never keep a failure
+    }
+    return p;
+  }
+  // The patient's commonest short replies, made while the student reads the door form (and, where the voice is quick,
+  // whenever the room is quiet), only when the voice has nothing else to do.
+  var COMMON = ["Okay.", "Sure.", "Yes.", "No.", "Nice to meet you.", "Okay, go ahead.", "Sure, go ahead.", "What's that?",
+    "Sorry, what does that mean?", "No, I haven't.", "Not that I know of.", "I don't think so.", "Thank you."];
+  function warmVoice() {
+    var st = S, i = 0;
+    (kokoroP || Promise.resolve(null)).then(function (k) {
+      if (!k) return;
+      (function next() {
+        if (S !== st || !S || S.over || engine !== "kokoro" || i >= COMMON.length) return;
+        if (S.roomStart && (!kokoroFast || S.busy || heardNow())) return setTimeout(next, 1500);   // in the room: only when quiet
+        kokoroPiece(sayAs(COMMON[i++]), KOKORO_VOICES[voiceKey("p")], true).then(next);
+      })();
+    });
+  }
+  // Words the free voice says wrong, spelled the way they sound (it reads by spelling; Jaxon: "it said vasovagal
+  // incorrectly"). Each respelling was checked twice (2026-10-26): with the voice's own pronunciation engine (eSpeak, as
+  // kokoro-js uses it), and by making the clip in both patient voices and transcribing it with Whisper. Kept only where
+  // the plain spelling came out wrong and the respelling came back as the right word: vasovagal was heard as
+  // "Vassar-Vagel" and is now heard as "vasovagal"; venous was "Venice", lisinopril "Listenoperl", codeine "coldine",
+  // Lasix "Lassics". Left alone because the plain word already came out right, or no respelling beat it: amlodipine,
+  // atorvastatin, losartan, metoprolol, apixaban, Staphylococcus and the like. Only what is spoken changes; the
+  // screen shows the real word.
+  var SAY_AS = {
+    vasovagal: "vayzo vaygle", syncope: "sinkopee", presyncope: "pree sinkopee", orthopnea: "orthopnia",
+    paroxysmal: "parrock sizzmul", edema: "eedeema", arrhythmia: "uh rithmia", arrhythmias: "uh rithmias",
+    cardiomyopathy: "cardeeoh myopathy", venous: "veenus", tricuspid: "try cuspid", diuretic: "dye uh rettic",
+    diuretics: "dye uh rettics", lisinopril: "lye sinno pril", codeine: "co deen", immunodeficiency: "immuno dee fishunsee",
+    fibroids: "fye broids", furosemide: "fyurohsemide", spironolactone: "spyrono lactone", digoxin: "dihjoxin",
+    lasix: "laysix", eliquis: "ellakwiss", whitcomb: "witkum"
+  };
+  var SAY_RE = new RegExp("\\b(" + Object.keys(SAY_AS).join("|") + ")\\b", "gi");
+  function sayAs(t) { return String(t).replace(SAY_RE, function (w) { return SAY_AS[w.toLowerCase()]; }); }
   function kokoroCancel() { kokoroEpoch++; if (kokoroW) kokoroW.postMessage({ type: "cancel", epoch: kokoroEpoch }); }
   // a line in sentence-sized pieces, so the first is ready to speak sooner and none is long enough for the voice to
   // cut short; a piece under 30 characters takes the next sentence with it ("Dr. Lee", "Yes. It started Monday.")
@@ -610,6 +655,14 @@
       if (out.length && out[out.length - 1].length < 30) out[out.length - 1] += " " + s; else out.push(s);
     });
     return out.length ? out : [String(text)];
+  }
+  // A long first sentence starts at its first comma where the voice is quick (the rest is made while that part plays):
+  // a 12-word line took 0.9 s to make, its first clause about 0.4 s (Chrome on an M4, 2026-10-26). Not on the slow
+  // voice: it makes speech slower than it plays, so a split would leave a gap mid-sentence.
+  function voicePieces(text) {
+    var p = sentences(text), f = p[0], c = f.indexOf(", ", 12);
+    if (kokoroFast && f.length > 40 && c > 0 && c < f.length - 12) p.splice(0, 1, f.slice(0, c + 1), f.slice(c + 2));
+    return p;
   }
   // play a line's pieces in order; a stop (hold-to-talk, the presentation) ends the whole line
   function playPieces(pieces) {
@@ -637,7 +690,8 @@
     var c = en.filter(function (v) { return want.test(v.name) && !not.test(v.name) && v !== avoid; });
     c.sort(function (a, b) { return rank(b) - rank(a); });
     return c[0] || en.filter(function (v) { return v !== avoid; })[0] || null;
-    function rank(v) { return (/(natural|neural|premium|enhanced)/i.test(v.name) ? 4 : 0) + (/en-US/i.test(v.lang) ? 2 : 0) + (v.localService ? 1 : 0); }
+    // on-device voices first: an online one ("Google US English", Edge's "Online (Natural)") starts noticeably later
+    function rank(v) { return (v.localService ? 4 : 0) + (/(natural|neural|premium|enhanced)/i.test(v.name) ? 2 : 0) + (/en-US/i.test(v.lang) ? 1 : 0); }
   }
 
   function voiceKey(who) {   // pm/pf: the patient; fm/ff: the facilitator, in the other sex's voice
@@ -690,7 +744,7 @@
     if (engine === "kokoro") {
       if (!kokoro) return Promise.resolve(function () { return speakDevice(text, who); });
       var voice = KOKORO_VOICES[voiceKey(who)];
-      var pieces = sentences(text).map(function (s) { return kokoro.say(s, voice); });   // queued in order
+      var pieces = voicePieces(sayAs(text)).map(function (s) { return kokoroPiece(s, voice); });   // queued in order
       return pieces[0].then(function (first) {
         if (first === SKIPPED) return function () { return Promise.resolve(); };
         if (!first) return function () { return speakDevice(text, who); };
@@ -788,6 +842,7 @@
             pause: Number($("pause-len").value) || 1900, turns: [], log: [], doorStart: Date.now(), doorS: 0, roomStart: 0,
             roomS: 0, timedOut: false, presentation: "", presentS: 0, busy: false, pending: "", over: false, warned5: false, warned1: false };
       startDoor();
+      if (engine === "kokoro") { loadKokoro(); warmVoice(); }   // the door minute: the patient's common replies, made ahead
     });
   }
 
