@@ -557,6 +557,8 @@ BODY = """
       "growth pattern.", 71) + """
 
   <h3 class="sub" id="gnb-salmonella">14.14 &middot; Objective 1 &mdash; <em>Salmonella</em>: typhoid and the salmonelloses</h3>
+  <p><em>Salmonella typhi</em> causes <strong>typhoid fever</strong> and <em>Salmonella paratyphi</em>
+  paratyphoid fever, the most serious diseases of the genus.</p>
   <table>
     <tr><th>Heading</th><th><em>Salmonella typhi</em> (<em>S. enterica</em> serotype typhi) and <em>S. paratyphi</em></th></tr>
     <tr><td>Significance</td><td>The <strong>most serious pathogens of the genus</strong>: typhoid fever and paratyphoid fever</td></tr>
