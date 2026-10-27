@@ -60,7 +60,7 @@ _CALC = re.compile(r"(?i)\bcalculat|\bcompute\b|\bwork out\b")
 _ACRO = re.compile(r"\b[A-Z]{2,}[A-Za-z0-9]*\b")
 _ACRO_OK = {"NOT", "LOW", "HIGH", "RIGHT", "LEFT", "ARTERIAL", "SAMPLE", "INCREASED", "DECREASED", "MORE", "LOSS",
             "EXCESS", "ACIDOSIS", "ALKALOSIS", "MILD", "RAISES", "RAISE", "METABOLIC", "RESPIRATORY", "POSITIVE",
-            "NEGATIVE", "ADDS", "SUM", "ACID", "HYPOKALEMIA", "DECREASE", "RADIAL", "RISEN", "CHRONIC", "OTHER"}       # capitals for emphasis, not abbreviations
+            "NEGATIVE", "ADDS", "SUM", "ACID", "HYPOKALEMIA", "DECREASE", "RADIAL", "RISEN", "CHRONIC", "OTHER", "LOWER", "HIGHER"}       # capitals for emphasis, not abbreviations
 _DEFINED = re.compile(r"(?:/[A-Z][A-Za-z0-9]*)* \(")
 _DURATION = re.compile(r"\b\d+ (?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\b")
 _NUM = re.compile(r"\d+(?:\.\d+)?")
