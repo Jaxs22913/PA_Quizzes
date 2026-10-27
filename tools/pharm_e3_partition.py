@@ -46,7 +46,7 @@ BAD_KEY = re.compile(r"^\s*(about |up to |roughly )?[\d.,]+\s*(-|to)?\s*[\d.,]*\
 BREADTH = ("indication", "education", "adverse effect", "contraindication", "drug choice")
 BACKGROUND = ("mechanism", "physiology")
 SLOTS = set(BREADTH) | set(BACKGROUND) | {"class", "interaction", "monitoring", "protocol"}
-CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antiarrhythmics|Pulmonology-2|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, Slide \d+$")   # a cross-lecture fact cites the deck that states it
+CITE_RX = re.compile(r"^(Diuretics and Heart Failure Drugs|Antiarrhythmics|Pulmonology-2|Antihypertensives|Myocardial Ischemia Drugs|Ophthalmology-2)\.pptx, (Slide \d+|Slides \d+(, \d+)+)$")   # a cross-lecture fact cites the deck that states it; "Slides 89, 71" when the deciding fact spans slides (primary first)
 
 
 def hard_cites(text):

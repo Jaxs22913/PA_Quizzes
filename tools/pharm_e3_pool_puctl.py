@@ -56,7 +56,12 @@ MECH, ADJ, REV, LAY, STAGE, RULED, COMP = ("confused mechanism or drug class", "
 
 
 def Q(topic, io, slot, q, opts, slide):
-    return {"topic": topic, "io": io, "slot": slot, "q": q, "opts": opts, "c": 0, "cite": "%s, Slide %d" % (D, slide)}
+    """`slide` is one slide number, or a tuple (primary slide first) when the deciding fact spans slides."""
+    if isinstance(slide, tuple):
+        cite = "%s, Slides %s" % (D, ", ".join(str(s) for s in slide))
+    else:
+        cite = "%s, Slide %d" % (D, slide)
+    return {"topic": topic, "io": io, "slot": slot, "q": q, "opts": opts, "c": 0, "cite": cite}
 
 
 QUESTIONS = [
@@ -186,11 +191,13 @@ Q("Mast cell stabilizers", IO_MOA, "mechanism",
 
 # ---- omalizumab and the other biologics (slides 79-81) ---------------------------------------------
 Q("Omalizumab and biologics", IO_ADME, "class",
-  "Which asthma biologic is given intravenously?",
-  [["Reslizumab", "Correct. Reslizumab (Cinqair), one of the anti-interleukin-5 biologics, is given intravenously."],
-   ["Omalizumab", "Omalizumab (Xolair) is given subcutaneously every 2 to 4 weeks; among the asthma biologics, reslizumab is the one given intravenously.", ADJ],
-   ["Mepolizumab", "Mepolizumab (Nucala) is an anti-interleukin-5 biologic, but within that group it is reslizumab that is given intravenously.", ADJ],
-   ["Dupilumab", "Dupilumab (Dupixent) is the anti-interleukin-4 biologic; the intravenous asthma biologic is reslizumab.", ADJ]], 81),
+  # Repair 2026-10-27: replaces "Which asthma biologic is given intravenously?" (slide 81 sets "Given IV" under the
+  # whole anti-interleukin-5 list, so mepolizumab was defensible from the slide). The brand is unambiguous.
+  "Which asthma biologic is sold as Cinqair?",
+  [["Reslizumab", "Correct. Reslizumab (Cinqair) is one of the anti-interleukin-5 biologics, with mepolizumab and benralizumab, used for the eosinophilic phenotype."],
+   ["Omalizumab", "Omalizumab is the anti-immunoglobulin E antibody sold as Xolair, given subcutaneously every 2 to 4 weeks; Cinqair is reslizumab.", ADJ],
+   ["Mepolizumab", "Mepolizumab is the anti-interleukin-5 biologic sold as Nucala; Cinqair is reslizumab, another anti-interleukin-5 biologic.", ADJ],
+   ["Dupilumab", "Dupilumab is the anti-interleukin-4 biologic sold as Dupixent; Cinqair is reslizumab, an anti-interleukin-5 biologic.", ADJ]], 81),
 
 Q("Omalizumab and biologics", IO_MOA, "mechanism",
   "How does omalizumab prevent mast cell degranulation?",
@@ -261,7 +268,7 @@ Q("Systemic corticosteroids", IO_AE, "adverse effect",
   [["Hyperglycemia", "Correct. Hyperglycemia is on both lists: the systemic corticosteroid side effects and the beta-2 agonist adverse effects."],
    ["Hypertension", "Hypertension is a systemic corticosteroid side effect, but the beta-2 agonist list gives hypotension instead; the shared effect is hyperglycemia.", ADJ],
    ["Hyperuricemia", "Raised uric acid is listed for ethambutol and pyrazinamide, not for corticosteroids or beta-2 agonists; both of those list hyperglycemia.", ADJ],
-   ["Hypoglycemia", "The direction is reversed: systemic corticosteroids and beta-2 agonists both raise blood sugar, which is listed as hyperglycemia.", REV]], 89),
+   ["Hypoglycemia", "The direction is reversed: systemic corticosteroids and beta-2 agonists both raise blood sugar, which is listed as hyperglycemia.", REV]], (89, 71)),   # 71: the beta-2 agonist adverse effects
 
 Q("Systemic corticosteroids", IO_AE, "adverse effect",
   "Which systemic corticosteroid side effect is the reason a longer course is tapered rather than stopped abruptly?",
@@ -285,7 +292,7 @@ Q("Systemic corticosteroids", IO_AE, "adverse effect",
   [["Growth suppression", "Correct. Growth suppression appears on both lists: high-dose inhaled corticosteroids can suppress growth in children, and it is a systemic corticosteroid side effect."],
    ["Oral candidiasis", "Oral candidiasis (thrush) is listed for inhaled corticosteroids, not among the systemic corticosteroid side effects; growth suppression is on both lists.", ADJ],
    ["Hypertension", "Hypertension is a systemic corticosteroid side effect that is not on the inhaled corticosteroid list; growth suppression appears on both.", ADJ],
-   ["Steroid myopathy", "Muscle weakness (steroid myopathy) is listed for systemic corticosteroids but not for inhaled corticosteroids; growth suppression appears on both lists.", ADJ]], 89),
+   ["Steroid myopathy", "Muscle weakness (steroid myopathy) is listed for systemic corticosteroids but not for inhaled corticosteroids; growth suppression appears on both lists.", ADJ]], (89, 73)),   # 73: the inhaled corticosteroid adverse effects
 
 Q("Systemic corticosteroids", IO_AE, "adverse effect",
   "A patient who has needed several courses of oral corticosteroids now has trouble climbing stairs because of leg weakness. Which listed side effect fits?",

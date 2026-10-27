@@ -78,7 +78,7 @@ Q("Epinephrine", IO_CLASS, "class",
 Q("Epinephrine", IO_MOA, "mechanism",
   "Epinephrine treats anaphylaxis by acting on which receptors?",
   [["Alpha and beta receptors", "Correct. Epinephrine acts on alpha receptors (vasoconstriction, decreased vascular permeability) and beta receptors (bronchial smooth muscle relaxation)."],
-   ["Beta-2 receptors", "Albuterol is the beta-2 agonist; epinephrine also acts on alpha receptors, which is where its vasoconstriction comes from.", STAGE],
+   ["Beta-2 receptors", "Albuterol is the beta-2 agonist; epinephrine also acts on alpha receptors, which is where its vasoconstriction comes from.", ADJ],
    ["Histamine H1 receptors", "Histamine H1 receptors are blocked by diphenhydramine and hydroxyzine for rash and hives; epinephrine acts on alpha and beta receptors.", MECH],
    ["Histamine H2 receptors", "Histamine H2 receptors are blocked by famotidine for systemic and gastrointestinal effects; epinephrine acts on alpha and beta receptors.", MECH]], 51),
 

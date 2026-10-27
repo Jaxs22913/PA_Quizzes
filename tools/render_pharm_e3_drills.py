@@ -46,9 +46,10 @@ def build(items, io=IO):
         opts = [[it["ans"], "Correct. " + it["why"]]] + [[w, r] for w, r in it["wrong"]]
         slot = n % 4
         opts.insert(slot, opts.pop(0))
-        lect, slide = it["src"]
-        out.append({"topic": it["ans"], "io": io, "q": it["q"], "opts": opts, "c": slot,
-                    "cite": "%s, Slide %d" % (DECK[lect], slide)})
+        lect, *slides = it["src"]      # ("PU", 27) or, when the deciding fact spans slides, ("PU", 27, 14)
+        cite = ("%s, Slide %d" % (DECK[lect], slides[0]) if len(slides) == 1 else
+                "%s, Slides %s" % (DECK[lect], ", ".join(str(s) for s in slides)))
+        out.append({"topic": it["ans"], "io": io, "q": it["q"], "opts": opts, "c": slot, "cite": cite})
     return out
 
 

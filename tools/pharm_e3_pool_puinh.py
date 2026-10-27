@@ -59,8 +59,8 @@ QUESTIONS = [
 # 1:27:49-1:29:08 -- he asks the steps as "what to start with" and "what would you want to move up to next", not by
 # step number ("I will not make you memorize the doses").
 Q("Stepwise asthma therapy", IO_PROT, "drug choice",
-  "Which of these is listed as a reliever, rather than a controller, in stepwise asthma therapy?",
-  [["As-needed low-dose inhaled corticosteroid-formoterol", "Correct. As-needed low-dose inhaled corticosteroid-formoterol is the preferred reliever at every step; an as-needed short-acting beta-2 agonist is the other reliever option."],
+  "Which of these is listed as a reliever in stepwise asthma therapy?",
+  [["As-needed low-dose inhaled corticosteroid-formoterol", "Correct. As-needed low-dose inhaled corticosteroid-formoterol is the preferred reliever at every step (at steps 1 and 2 it is also a preferred controller); an as-needed short-acting beta-2 agonist is the other reliever option."],
    ["Daily low-dose inhaled corticosteroid on its own", "Daily low-dose inhaled corticosteroid is a step 2 preferred controller, taken every day, not a reliever; the listed relievers are as-needed.", MECH],
    ["Daily leukotriene receptor antagonist by mouth", "A leukotriene receptor antagonist appears among the other controller options, not as a reliever; the preferred reliever is as-needed low-dose inhaled corticosteroid-formoterol.", MECH],
    ["Daily low-dose oral corticosteroid tablet", "Low-dose oral corticosteroid is a step 5 add-on with a warning to consider side effects, not a reliever; the relievers are taken as needed.", STAGE]], 90),
@@ -229,7 +229,7 @@ Q("Status asthmaticus", IO_PROT, "protocol",
   "Which mineral is part of the status asthmaticus algorithm, given as a bolus followed by a continuous infusion?",
   [["Magnesium", "Correct. Magnesium, a bolus followed by a continuous infusion, is part of the status asthmaticus algorithm with continuous nebulized albuterol and intravenous steroids."],
    ["Potassium", "Potassium is not on the status asthmaticus algorithm; the mineral given as a bolus and then an infusion is magnesium.", LAY],
-   ["Calcium", "Calcium is not on the status asthmaticus algorithm (cromolyn's unknown mechanism may interfere with calcium); the mineral given is magnesium.", ADJ],
+   ["Calcium", "Calcium is not on the status asthmaticus algorithm; the mineral given as a bolus followed by a continuous infusion is magnesium.", ADJ],
    ["Sodium", "Sodium chloride fluid belongs to volume expansion in anaphylaxis, not to the status asthmaticus algorithm; the mineral given is magnesium.", ADJ]], 99),
 
 Q("Status asthmaticus", IO_IND, "indication",

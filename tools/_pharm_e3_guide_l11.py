@@ -584,6 +584,7 @@ BODY += '''
     <tr><td><strong>Duration</strong></td><td>Up to 8 hours</td><td>24 hours or more</td></tr>
     <tr><td><strong>Note</strong></td><td>A quick-relief medication [slide 67]; one of the drugs that reverse bronchospasm [slide 64]</td><td>The slide says &ldquo;COPD (chronic obstructive pulmonary disease) only&rdquo; [slide 86], yet the stepwise asthma chart lists add-on tiotropium at steps 4 and 5 [slide 90]. No question here turns on &ldquo;COPD (chronic obstructive pulmonary disease) only&rdquo;.</td></tr>
   </table>
+  <div class="callout"><strong>Current guidelines differ:</strong> tiotropium (the soft-mist inhaler) is also approved as add-on maintenance treatment for asthma, which is why the stepwise chart lists it at steps 4 and 5; the slide says chronic obstructive pulmonary disease only.</div>
   <p><strong>Anticholinergic side effects, the mnemonic [slide 87].</strong></p>
   <table>
     <tr><th>Saying</th><th>Effect [slide 87]</th></tr>
@@ -671,7 +672,7 @@ BODY += '''
   </table>
 ''' + star("1:14:19", "So you can either target IL-5 or IL-4. I&rsquo;m not going to really care if you know the difference between the two, I would just recognize that these are affecting interleukin. So instead of targeting IgE, they&rsquo;re going to be targeting these interleukins here.",
            "<mark class=\"prof-highlight\">Omalizumab targets immunoglobulin E (IgE); the eosinophilic-phenotype biologics target interleukins</mark> [slides 79 and 81]. Which interleukin each one targets is not tested. All are injected proteins: hypersensitivity and anaphylaxis, neutralizing antibodies, injection site reactions (1:13:16).") + '''
-  <p>(Strictly, benralizumab binds the interleukin-5 receptor rather than interleukin-5 itself, and dupilumab the interleukin-4 receptor; the slide groups them by the interleukin.)</p>
+  <div class="callout"><strong>Current guidelines differ:</strong> dupilumab blocks the interleukin-4 receptor alpha subunit rather than interleukin-4 itself, and benralizumab binds the interleukin-5 receptor; the slide&rsquo;s grouping (anti-interleukin-4, anti-interleukin-5) is what is tested.</div>
 
   <h4 class="subsub">Oral systemic corticosteroids [slides 88 and 89]</h4>
   <ul>

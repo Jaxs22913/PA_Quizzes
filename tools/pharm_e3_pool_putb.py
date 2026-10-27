@@ -188,7 +188,7 @@ Q("Rifampin", IO_EDU, "education",
 
 Q("Rifampin", IO_IND, "indication",
   "Besides tuberculosis, rifampin is used as prophylaxis against which infection?",
-  [["Meningococcal disease", "Correct. Rifampin's primary use is tuberculosis, and it is also used prophylactically for meningococcal disease (and for endocarditis)."],
+  [["Meningococcal disease", "Correct. Rifampin's primary use is tuberculosis, and it is also used prophylactically for meningococcal disease; endocarditis is listed as a use without the prophylactic label."],
    ["Influenza", "Influenza is prevented with the annual influenza vaccine; rifampin's prophylactic use is against meningococcal disease.", ADJ],
    ["Pneumococcal pneumonia", "Pneumococcal disease is prevented with the pneumococcal vaccine; rifampin's prophylactic use is against meningococcal disease.", ADJ],
    ["Endocarditis", "Endocarditis appears among rifampin's uses without the prophylactic label; the use marked prophylactic is meningococcal disease.", ADJ]], 41),

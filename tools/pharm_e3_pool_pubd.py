@@ -60,9 +60,9 @@ QUESTIONS = [
 Q("Asthma basics", IO_MOA, "physiology",
   "Which type of inflammation of the bronchial mucosa characterizes asthma?",
   [["Eosinophilic", "Correct. Asthma is widespread, reversible narrowing of the bronchial airways with eosinophilic inflammation of the bronchial mucosa and a marked increase in bronchial responsiveness."],
-   ["Neutrophilic", "Neutrophils join the late asthmatic reaction, releasing proteases and platelet-activating factor, but the inflammation that characterizes asthma is eosinophilic.", ADJ],
+   ["Neutrophilic", "Neutrophilic inflammation is not how asthma is characterized; the inflammation of the bronchial mucosa that characterizes asthma is eosinophilic.", ADJ],
    ["Granulomatous", "Granulomatous inflammation is not how asthma is described; asthma is eosinophilic inflammation of the bronchial mucosa, with thickening of that mucosa.", COMP],
-   ["Lymphocytic", "T lymphocytes release interleukin-4 and interleukin-5 in the asthmatic reaction, but the mucosal inflammation that characterizes asthma is eosinophilic.", ADJ]], 57),
+   ["Lymphocytic", "Lymphocytic inflammation is not how asthma is characterized; the inflammation of the bronchial mucosa that characterizes asthma is eosinophilic.", ADJ]], 57),
 
 Q("Asthma basics", IO_EDU, "physiology",
   "What triggers most asthma attacks?",
@@ -87,9 +87,9 @@ Q("Asthma basics", IO_MOA, "physiology",
 
 Q("Asthma basics", IO_MOA, "physiology",
   "When allergen binds immunoglobulin E on a mast cell, which mediator is released immediately from the granules?",
-  [["Histamine", "Correct. Granule content release is immediate: histamine, proteases, heparin and tumor necrosis factor. Lipid mediators follow over minutes and cytokines over hours."],
+  [["Histamine", "Correct. Histamine is a granule content, released immediately; the membrane-derived lipid mediators follow over minutes and the cytokines over hours."],
    ["Leukotrienes", "Leukotrienes are membrane-derived lipid mediators made over minutes, along with prostaglandins and platelet-activating factor; histamine is released immediately.", STAGE],
-   ["Interleukins", "Interleukins are cytokines produced over hours; the immediate release from mast cell granules is histamine, proteases, heparin and tumor necrosis factor.", STAGE],
+   ["Interleukins", "Interleukins are cytokines produced over hours; histamine is the granule content released immediately.", STAGE],
    ["Prostaglandins", "Prostaglandins are lipid mediators made from the cell membrane over minutes; histamine comes out of the granules immediately.", STAGE]], 59),
 
 

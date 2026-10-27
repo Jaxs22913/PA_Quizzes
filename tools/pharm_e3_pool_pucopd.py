@@ -87,7 +87,7 @@ Q("Treatment groups", IO_PROT, "drug choice",
   "A patient with chronic obstructive pulmonary disease is breathless only with strenuous exercise and had no exacerbations last year. What is the suggested treatment?",
   [["A short-acting bronchodilator as needed", "Correct. Group A (mild or infrequent symptoms, 0 or 1 exacerbation without hospitalization) is treated with a short-acting bronchodilator, beta-2 agonist, antimuscarinic or both, as needed."],
    ["A regular long-acting bronchodilator", "A regular long-acting bronchodilator is for group B, the more symptomatic low-risk patient; mild symptoms with no exacerbations is group A, a short-acting bronchodilator as needed.", STAGE],
-   ["A regular long-acting muscarinic antagonist", "A regular long-acting muscarinic antagonist is for the high-risk groups C and D; this low-risk, mildly symptomatic patient is group A.", STAGE],
+   ["A regular long-acting muscarinic antagonist", "A regular long-acting muscarinic antagonist is an option for groups B, C and D; this low-risk, mildly symptomatic patient is group A, which needs only a short-acting bronchodilator as needed.", STAGE],
    ["A long-acting beta-2 agonist plus muscarinic antagonist", "The long-acting combination is reserved for group D with severe breathlessness; this patient is group A and needs only a short-acting bronchodilator as needed.", STAGE]], 102),
 
 Q("Treatment groups", IO_PROT, "drug choice",

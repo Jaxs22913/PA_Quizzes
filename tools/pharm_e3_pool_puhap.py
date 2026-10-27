@@ -86,7 +86,7 @@ Q(T_NP, IO_IND, "physiology",
 
 Q(T_NP, IO_IND, "physiology",
   "Which gram-negative bacillus is the most common cause of nosocomial pneumonia?",
-  [["Pseudomonas aeruginosa", "Correct. Pseudomonas aeruginosa is the most common gram-negative bacillus, followed by Escherichia coli, Klebsiella pneumoniae, Acinetobacter, Enterobacter and Serratia; methicillin-resistant Staphylococcus aureus is the most common gram-positive coccus."],
+  [["Pseudomonas aeruginosa", "Correct. Pseudomonas aeruginosa is the most common gram-negative bacillus, and the list also names Escherichia coli, Klebsiella pneumoniae, Acinetobacter, Enterobacter and Serratia; methicillin-resistant Staphylococcus aureus is the most common gram-positive coccus."],
    ["Escherichia coli", "Escherichia coli is on the gram-negative list, but Pseudomonas aeruginosa is the most common gram-negative cause.", ADJ],
    ["Klebsiella pneumoniae", "Klebsiella pneumoniae is listed among the gram-negative bacilli, but Pseudomonas aeruginosa is the most common.", ADJ],
    ["Acinetobacter species", "Acinetobacter is a listed gram-negative bacillus, but the most common gram-negative cause is Pseudomonas aeruginosa.", ADJ]], 19),
