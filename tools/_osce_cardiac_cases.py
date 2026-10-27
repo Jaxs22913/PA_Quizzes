@@ -31,7 +31,7 @@ CASES = [
 dict(
   id="cardiac-chronic-heart-failure",
   condition="Chronic heart failure",
-  cites=("CMS L25 Heart Failure, slides 5-10, 16, 18, 23-24, 26, 30, 32, 38-40, 56; CMS L26 Venous Disorders "
+  cites=("CMS L25 Heart Failure, slides 5-10, 16, 18, 23-24, 26, 30, 32, 38-40, 54, 56; CMS L26 Venous Disorders "
          "slide 27; PD2 Cardiovascular slides 7, 8, 20, 22-23, 42, 88-89"),
   door=dict(
     name="Lorraine Whitcomb", sex="female", age=74, dob="July 9, 1952",
@@ -162,6 +162,40 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['jvp', 'hepatojugular-reflux', 'pmi', 'left-lateral', 'edema', 'lung-bases'],
+  # Orderable tests (Jaxon, 2026-10-26): a listed test shows its result card; a listed test the setting cannot do says
+  # so; anything not listed gets "That machine is down today." The first six are the key's studies.
+  tests=[
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
+         result="Sinus rhythm at 88 with left ventricular hypertrophy: tall R waves in V5 and V6, deep S waves in V1 and V2. No ischemic changes.",
+         here=True, img="ecg-lvh-voltage.jpg",
+         cap="An example of left ventricular hypertrophy by voltage, not this patient's own tracing: deep S waves in V1 to V3 and a tall R wave in V5. This example also shows the strain pattern of hypertrophy (ST depression with inverted T waves in V5 and V6), which this patient's tracing does not have."),
+    dict(id="bnp", name="B-type natriuretic peptide (BNP)",
+         aka=["BNP", "B-type natriuretic peptide", "brain natriuretic peptide", "natriuretic peptide"],
+         result="Elevated: about 640 picograms per milliliter.", here=True),
+    dict(id="echo", name="Echocardiogram (transthoracic)",
+         aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Thick left ventricular walls with a normal chamber size. Ejection fraction about 60%.", here=True),
+    dict(id="cxr", name="Chest X-ray",
+         aka=["CXR", "chest film", "chest radiograph", "chest x ray", "chest x-ray", "chest imaging"],
+         result="Cephalization of the upper lung vessels. No infiltrate.", here=True),
+    dict(id="cmp", name="Comprehensive metabolic panel",
+         aka=["CMP", "BMP", "basic metabolic panel", "metabolic panel", "chem panel", "chemistry", "electrolytes",
+              "kidney function", "renal function", "potassium", "creatinine"],
+         result="Potassium and kidney function normal.", here=True),
+    dict(id="cbc", name="Complete blood count (CBC)",
+         aka=["CBC", "complete blood count", "blood count", "hemoglobin", "anemia check"],
+         result="No anemia: hemoglobin normal.", here=True),
+    # CMS L25 slide 32: troponin is listed "with concern for" a non-ST-elevation infarction as the cause of the failure
+    dict(id="troponin", name="Troponin",
+         aka=["troponin", "trop", "cardiac enzymes", "cardiac markers", "high-sensitivity troponin"],
+         result="Normal: no rise.", here=True),
+    # Not a listed test: CMS L25 slide 54 names hyperthyroidism as a high-output cause (slide 16 lists thyroid disease as a cause);
+    # the thyroid-stimulating hormone is the way to look for it
+    dict(id="tsh", name="Thyroid-stimulating hormone (TSH)",
+         aka=["TSH", "thyroid", "thyroid panel", "thyroid function", "thyroid test"],
+         result="Thyroid-stimulating hormone normal.", here=True),
+  ],
   key=dict(
     diagnosis=("Chronic heart failure, most likely with preserved ejection fraction from long-standing "
                "hypertension (New York Heart Association class III, with fluid overload but stable for outpatient "
@@ -412,6 +446,34 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['apical-radial', 'thyroid-palp', 'stroke-screen', 'jvp', 'lung-bases'],
+  # Orderable tests (see case 1). The ECG, thyroid-stimulating hormone, electrolytes and echocardiogram are the key's
+  # studies; the scores (CHA2DS2-VASc, HAS-BLED) are worked out by the student, not ordered.
+  tests=[
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing", "rhythm strip"],
+         result="Irregularly irregular narrow-complex rhythm at about 124 beats per minute. No P waves and no PR interval.",
+         here=True, img="ecg-atrial-fibrillation.jpg",
+         cap="An example of atrial fibrillation (irregularly irregular narrow beats, no P waves), not this patient's own tracing. The example runs at about 90 a minute; this patient's rate is about 124."),
+    dict(id="tsh", name="Thyroid-stimulating hormone (TSH)",
+         aka=["TSH", "thyroid", "thyroid panel", "thyroid function", "thyroid test"],
+         result="Thyroid-stimulating hormone normal.", here=True),
+    dict(id="bmp", name="Basic metabolic panel (electrolytes)",
+         aka=["BMP", "CMP", "comprehensive metabolic panel", "metabolic panel", "chem panel", "chemistry",
+              "electrolytes", "potassium", "kidney function"],
+         result="Electrolytes and kidney function normal.", here=True),
+    dict(id="echo", name="Echocardiogram (transthoracic)",
+         aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Normal valves and normal pumping function.", here=True),
+    # CMS L29 slide 48 names atrial fibrillation with an acute infarction as an emergency (the slide names the condition, not the
+    # test); she has no chest pain, so this is a safety check
+    dict(id="troponin", name="Troponin",
+         aka=["troponin", "trop", "cardiac enzymes", "cardiac markers", "high-sensitivity troponin"],
+         result="Normal: no rise.", here=True),
+    # CMS L29 slide 48: sleep apnea is a risk factor (she snores and seems to stop breathing)
+    dict(id="sleep-study", name="Overnight sleep study (polysomnography)",
+         aka=["sleep study", "polysomnography", "sleep apnea test"],
+         result="Not available in this office: it is done in a sleep laboratory.", here=False),
+  ],
   key=dict(
     diagnosis=("Atrial fibrillation with a rapid ventricular response, hemodynamically stable, first "
                "documented episode about 15 hours ago (one brief self-limited episode six months ago)"),
@@ -660,6 +722,31 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['ausc-aortic', 'murmur-timing', 'thrills', 'carotid-ausc', 'apex-carotid', 'dynamic'],
+  # Orderable tests (see case 1). The catheterization is the key's confirmatory study and is hospital-only.
+  tests=[
+    dict(id="tte", name="Transthoracic echocardiogram",
+         aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Thickened, calcified aortic valve leaflets with reduced opening in systole, and left ventricular hypertrophy. Aortic valve area 0.8 square centimeters, mean gradient 48 mmHg, jet velocity 4.3 meters per second. Septum normal; no regurgitant jet at the mitral valve.",
+         here=True),
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
+         result="Sinus rhythm at 72 with left ventricular hypertrophy.",
+         here=True, img="ecg-lvh-aortic-stenosis.jpg",
+         cap="An example of left ventricular hypertrophy from aortic stenosis, not this patient's own tracing: very large complexes in V2 to V4, plus strain (ST depression, inverted T waves) in V5 and V6. This patient's tracing is less extreme."),
+    dict(id="cath", name="Left heart catheterization",
+         aka=["cath", "heart cath", "cardiac cath", "cardiac catheterization", "left heart cath", "coronary angiogram",
+              "angiogram"],
+         result="Not available in this office: it is done in a hospital catheterization laboratory.", here=False),
+    # CMS L28 slide 71 (hypertrophic cardiomyopathy testing, the key's must-not-miss alternative): complete blood count and renal
+    # function. The aortic stenosis slides (CMS L23 slide 18) do not list blood tests.
+    dict(id="cbc", name="Complete blood count (CBC)",
+         aka=["CBC", "complete blood count", "blood count", "hemoglobin", "anemia check"],
+         result="No anemia: hemoglobin normal.", here=True),
+    dict(id="cmp", name="Comprehensive metabolic panel",
+         aka=["CMP", "BMP", "basic metabolic panel", "metabolic panel", "chem panel", "chemistry", "electrolytes",
+              "kidney function", "renal function", "potassium", "creatinine"],
+         result="Potassium and kidney function normal.", here=True),
+  ],
   key=dict(
     diagnosis="Symptomatic aortic stenosis, likely severe and degenerative (calcific) in a man over 70",
     must_not_miss=["Coronary artery disease causing the exertional chest tightness: the two often coexist, so "
@@ -890,6 +977,28 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['standing-inspection', 'pulses', 'cap-refill', 'edema'],
+  # Orderable tests (see case 1). The duplex, ankle-brachial index and catheter venography are the key's studies.
+  tests=[
+    dict(id="duplex", name="Venous duplex ultrasound",
+         aka=["duplex", "venous duplex", "leg ultrasound", "Doppler", "venous Doppler", "leg Doppler",
+              "lower extremity ultrasound", "vein ultrasound", "ultrasound"],
+         result="Reflux in the great saphenous vein on both sides. Scarred, incompetent deep valves in the left leg. The deep veins are open and compressible, with no thrombus.",
+         here=True),
+    dict(id="abi", name="Ankle-brachial index",
+         aka=["ABI", "ankle brachial", "ankle-brachial index", "ankle brachial index", "ankle pressures"],
+         result="1.05 on both sides: normal.", here=True),
+    dict(id="venography", name="Catheter venography",
+         aka=["venogram", "venography", "contrast venography", "catheter venogram", "ascending venography"],
+         result="Not available in this office: it is done in a hospital imaging laboratory.", here=False),
+    # CMS L26 slide 29: cross-sectional venography (computed tomography or magnetic resonance) for the deep veins
+    dict(id="ct-venography", name="Computed tomography or magnetic resonance venography",
+         aka=["CT venogram", "CT venography", "MR venography", "MRV", "MRI veins", "cross-sectional venography"],
+         result="Not available in this office: it is done in a hospital imaging department.", here=False),
+    # CMS L26 slide 57: D-dimer is sensitive but not specific, a rule-out test for deep vein thrombosis (the old clot, and the fear of a new one)
+    dict(id="d-dimer", name="D-dimer",
+         aka=["D-dimer", "d dimer", "ddimer", "clot test"],
+         result="Normal: below the cutoff.", here=True),
+  ],
   key=dict(
     diagnosis=("Chronic venous insufficiency (secondary, after her left leg deep vein thrombosis) with varicose "
                "veins, stasis dermatitis and a venous ulcer above the left medial malleolus"),
@@ -1125,6 +1234,36 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['orthostatic', 'dynamic', 'tongue-inspect', 'neuro-focused'],
+  # Orderable tests (see case 1). Orthostatic vital signs come through the exam (maneuver "orthostatic"), not here.
+  tests=[
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
+         result="Normal sinus rhythm at 66 with normal intervals.",
+         here=True, img="ecg-normal.jpg",
+         cap="An example of a normal tracing (regular rhythm, normal intervals), not this patient's own tracing. The example runs at about 80 a minute; hers is 66."),
+    dict(id="glucose", name="Fingerstick glucose",
+         aka=["glucose", "fingerstick", "finger stick", "blood sugar", "point-of-care glucose", "sugar"],
+         result="About 92 milligrams per deciliter: normal.", here=True),
+    dict(id="upt", name="Urine pregnancy test",
+         aka=["pregnancy test", "urine pregnancy", "UPT", "hCG", "urine hCG", "beta hCG"],
+         result="Negative.", here=True),
+    dict(id="tilt-table", name="Tilt-table test",
+         aka=["tilt table", "tilt-table", "tilt test", "head-up tilt"],
+         result="Not available in this office: it is done in a hospital or specialty laboratory.", here=False),
+    # CMS L21 slide 17: anemia and electrolyte imbalance are on the list of causes of syncope without low blood pressure; slide 27
+    # shows a normal blood count and metabolic panel in a syncope work-up
+    dict(id="cbc", name="Complete blood count (CBC)",
+         aka=["CBC", "complete blood count", "blood count", "hemoglobin", "anemia check"],
+         result="No anemia: hemoglobin normal.", here=True),
+    dict(id="bmp", name="Basic metabolic panel (electrolytes)",
+         aka=["BMP", "CMP", "comprehensive metabolic panel", "metabolic panel", "chem panel", "chemistry",
+              "electrolytes", "potassium", "kidney function"],
+         result="Electrolytes and kidney function normal.", here=True),
+    # CMS L21 slide 16: structural causes of cardiogenic syncope are diagnosed by echocardiogram
+    dict(id="echo", name="Echocardiogram (transthoracic)",
+         aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Normal valves, normal wall thickness and normal pumping function.", here=True),
+  ],
   key=dict(
     diagnosis="Vasovagal (reflex) syncope triggered by prolonged standing in the heat",
     must_not_miss=["Cardiogenic syncope: an arrhythmia, or an outflow obstruction such as hypertrophic "
@@ -1372,6 +1511,41 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['pmi', 'left-lateral', 'dynamic', 'pulsus-paradoxus', 'hepatojugular-reflux', 'lung-bases'],
+  # Orderable tests (see case 1). All are the key's studies except the cardiac magnetic resonance imaging.
+  tests=[
+    dict(id="echo", name="Echocardiogram (transthoracic)",
+         aka=["echo", "echocardiogram", "TTE", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Dilated, thin-walled chambers, globally hypokinetic, with an ejection fraction about 25%. Mitral and tricuspid regurgitation. No pericardial effusion and no primary valve lesion.",
+         here=True),
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
+         result="Sinus tachycardia at 108 with occasional premature ventricular contractions and left ventricular hypertrophy. No ST elevation or depression.",
+         here=True),
+    dict(id="cxr", name="Chest X-ray",
+         aka=["CXR", "chest film", "chest radiograph", "chest x ray", "chest x-ray", "chest imaging"],
+         result="Cardiomegaly, small pleural effusions and Kerley B lines.", here=True),
+    dict(id="bnp", name="B-type natriuretic peptide (BNP)",
+         aka=["BNP", "B-type natriuretic peptide", "brain natriuretic peptide", "natriuretic peptide"],
+         result="Elevated: about 820 picograms per milliliter.", here=True),
+    dict(id="troponin", name="Troponin",
+         aka=["troponin", "trop", "cardiac enzymes", "cardiac markers", "high-sensitivity troponin"],
+         result="Normal: no rise.", here=True),
+    dict(id="cbc", name="Complete blood count (CBC)",
+         aka=["CBC", "complete blood count", "blood count", "hemoglobin", "anemia check"],
+         result="No anemia: hemoglobin normal.", here=True),
+    dict(id="cmp", name="Comprehensive metabolic panel (with liver tests)",
+         aka=["CMP", "BMP", "basic metabolic panel", "metabolic panel", "chem panel", "chemistry", "electrolytes",
+              "kidney function", "renal function", "potassium", "creatinine", "liver tests", "liver function",
+              "LFTs", "hepatic panel", "AST", "ALT"],
+         result="Potassium and kidney function normal. Liver enzymes mildly raised.", here=True),
+    dict(id="tsh", name="Thyroid-stimulating hormone (TSH)",
+         aka=["TSH", "thyroid", "thyroid panel", "thyroid function", "thyroid test"],
+         result="Thyroid function normal.", here=True),
+    # CMS L28 slide 41: cardiac magnetic resonance imaging looks for inflammatory, ischemic or infiltrative causes
+    dict(id="cardiac-mri", name="Cardiac magnetic resonance imaging",
+         aka=["cardiac MRI", "MRI heart", "heart MRI", "cardiac magnetic resonance", "CMR"],
+         result="Not available in this office: it is done in a hospital imaging department.", here=False),
+  ],
   key=dict(
     diagnosis=("Dilated cardiomyopathy, most likely from long-term heavy alcohol use, presenting as heart "
                "failure with reduced ejection fraction and secondary mitral regurgitation"),
@@ -1413,7 +1587,7 @@ dict(
                    "primary valve lesion.")),
       dict(test="Electrocardiogram",
            why="Usually abnormal in dilated cardiomyopathy; a normal tracing almost rules it out.",
-           expect=("Sinus tachycardia at 108 with frequent premature ventricular contractions and left "
+           expect=("Sinus tachycardia at 108 with occasional premature ventricular contractions and left "
                    "ventricular hypertrophy; no ST elevation or depression.")),
       dict(test="Chest X-ray",
            why="Looks for cardiomegaly and congestion.",
@@ -1677,6 +1851,38 @@ dict(
   # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
   # the disease/disorder they get docked")
   must_exam=['ausc-tricuspid', 'resp-variation', 'lung-bases', 'hands-nails', 'conjunctiva-mouth', 'fundoscopy'],
+  # Orderable tests (see case 1). The blood cultures, transesophageal echocardiogram, blood count and urinalysis are the
+  # key's studies; the modified Duke criteria are worked out by the student, not ordered. The transesophageal
+  # echocardiogram is hospital-only (the key's confirmatory test). The urgent care can run the rest.
+  tests=[
+    dict(id="blood-cultures", name="Blood cultures (three sets)",
+         aka=["blood cultures", "blood culture", "cultures", "three sets of cultures", "BCx"],
+         result="Staphylococcus aureus grew in every set. Susceptibilities pending.", here=True),
+    dict(id="tee", name="Transesophageal echocardiogram (TEE)",
+         aka=["TEE", "transesophageal echo", "transesophageal echocardiogram", "trans-esophageal echo"],
+         result="Not available in this urgent care: it is done in a hospital echocardiography laboratory.", here=False),
+    # Not on the cited slides (CMS L32 slide 25 lists only the transesophageal echocardiogram): the usual first echocardiogram in
+    # suspected endocarditis. An urgent care has none on site (Jaxon: results are refused for "stuff that ... isnt in where
+    # we are"), so it is listed (an echo order is relevant) but not available here; the ED does it.
+    dict(id="tte", name="Transthoracic echocardiogram (TTE)",
+         aka=["TTE", "echo", "echocardiogram", "transthoracic echo", "heart ultrasound", "cardiac ultrasound"],
+         result="Not available in this urgent care: it is done in the hospital, after transfer to the emergency department.",
+         here=False),
+    dict(id="cbc", name="Complete blood count with differential",
+         aka=["CBC", "CBC with diff", "complete blood count", "blood count", "white count", "differential"],
+         result="Leukocytosis: white blood cell count about 17,800, mostly neutrophils. Hemoglobin normal, mean corpuscular volume normal.",
+         here=True),
+    dict(id="ua", name="Urinalysis",
+         aka=["UA", "urinalysis", "urine test", "urine dip", "dipstick"],
+         result="Normal: no blood, protein or white cells.", here=True),
+    # Not on the cited slides: standard in a febrile patient with a new murmur and a cough (flagged in the build report)
+    dict(id="ecg", name="Electrocardiogram (12-lead)",
+         aka=["EKG", "ECG", "12-lead", "12 lead", "electrocardiogram", "heart tracing"],
+         result="Sinus tachycardia at 118. Normal intervals and no ST changes.", here=True),
+    dict(id="cxr", name="Chest X-ray",
+         aka=["CXR", "chest film", "chest radiograph", "chest x ray", "chest x-ray", "chest imaging"],
+         result="Lungs clear, with no infiltrate, nodule or effusion. Heart size normal.", here=True),
+  ],
   key=dict(
     diagnosis=("Acute infective endocarditis of the native tricuspid valve from injection drug use, most likely "
                "Staphylococcus aureus (empiric vancomycin covers methicillin-resistant strains until the cultures "
@@ -1901,6 +2107,22 @@ if __name__ == "__main__":
         known = set(CATALOG) | {sp[0] for sp in c["special"]}
         assert 3 <= len(c["must_exam"]) <= 6 and len(set(c["must_exam"])) == len(c["must_exam"]), (where, "must_exam")
         assert all(m in known for m in c["must_exam"]), (where, "must_exam id not a maneuver", [m for m in c["must_exam"] if m not in known])
+        tests = c.get("tests") or []
+        assert 3 <= len(tests) <= 14, (where, "tests", len(tests))
+        tids = [t["id"] for t in tests]
+        assert len(set(tids)) == len(tids) and "other" not in tids, (where, "test ids")
+        assert not set(tids) & known, (where, "a test id is also a maneuver id", set(tids) & known)
+        for t in tests:
+            assert set(t) <= {"id", "name", "aka", "result", "here", "img", "cap"}, (where, t["id"], "unknown test field")
+            assert isinstance(t["here"], bool) and t["result"].strip(), (where, t["id"])
+            assert t.get("aka"), (where, t["id"], "a test needs the words students use for it")
+            assert bool(t.get("img")) == bool(t.get("cap")), (where, t["id"], "picture and caption go together")
+            if t.get("img"):
+                assert t["id"] == "ecg" and t["here"], (where, t["id"], "pictures are for the electrocardiogram only")
+            if not t["here"]:
+                assert t["result"].startswith("Not available") and t["result"].count(".") == 1, (where, t["id"], "one short sentence")
+        # every study the key lists that is a test (not a score or a maneuver) has a test card; the scores do not
+        assert any(t["id"] == "ecg" for t in tests) or cond == "Chronic venous insufficiency and varicose veins", (where, "ecg")
         assert "bp-both-arms" in c["exam"], where
         bp = d["vitals"][0][1].split()[0]
         assert bp in c["exam"]["bp-both-arms"], (where, "door blood pressure not in bp-both-arms")
@@ -1922,11 +2144,11 @@ if __name__ == "__main__":
         assert isinstance(k["follow_up"], str) and k["follow_up"], where
         words = len(k["presentation"].split())
         assert 120 <= words <= 170, (where, "presentation words", words)
-        for s in strings(c):
+        for s in strings(c, skip=("cites", "aka")):
             low = s.lower()
             for bad in ("slide", "lecture", "professor"):
                 assert bad not in low, (where, bad, s[:80])
-            m = ABBREV.search(s)
+            m = ABBREV.search(re.sub(r"\([A-Za-z0-9-]+\)", "", s))   # "Full term (ABBREV)" is the policy's own form
             assert not m, (where, "abbreviation", m.group(0) if m else "", s[:80])
         print("%-58s %-6s %3d  facts %2d  exam %2d  special %d  presentation %3d words  cc %s"
               % (c["id"], d["sex"], d["age"], len(c["facts"]), len(c["exam"]), len(c["special"]), words, d["cc"]))

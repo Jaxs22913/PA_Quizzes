@@ -108,7 +108,20 @@
   .line.p .who{color:var(--pt);}
   .line.f,.line.x{align-self:flex-start;background:var(--fac-soft);border-color:color-mix(in oklab,var(--fac) 22%,transparent);}
   .line.f .who,.line.x .who{color:var(--fac);}
-  .line.x .mname{font-weight:700;}
+  .line.x .mname,.line.t .mname{font-weight:700;}
+  /* a test result card: the case's result, with its picture when the station file has one */
+  .line.t{align-self:flex-start;max-width:min(88%,640px);background:var(--card);border-color:color-mix(in oklab,var(--fac) 35%,transparent);}
+  .line.t .who{color:var(--fac);}
+  .line.t.away{background:var(--fac-soft);color:var(--muted);}
+  .tfig{margin:8px 0 2px;}
+  .tzoom{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:zoom-in;overflow:hidden;}
+  .tzoom img{display:block;width:100%;height:auto;}
+  .tfig figcaption{font-size:12.5px;line-height:1.45;color:var(--muted);margin-top:5px;}
+  .tfig .credit{display:block;font-size:11.5px;margin-top:2px;}
+  .tfig .credit a{color:inherit;}
+  /* the enlarged picture: a body child, outside the dark-mode inverted .wrap, so it shows in its real colours */
+  .zoom{position:fixed;inset:0;z-index:700;background:rgba(10,12,18,.9);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;}
+  .zoom img{max-width:100%;max-height:100%;background:#fff;border-radius:6px;}
   .line.sys{align-self:center;background:transparent;border:0;color:var(--muted);font-size:13.5px;text-align:center;padding:2px 8px;}
   .line.err{align-self:center;background:var(--miss-soft);border-color:color-mix(in oklab,var(--miss) 25%,transparent);font-size:14px;}
   .line.speaking{box-shadow:0 0 0 3px color-mix(in oklab,var(--pt) 30%,transparent);}
@@ -192,8 +205,8 @@
   <section id="v-setup">
     <h1>OSCE Practice</h1>
     <p class="sub">A practice OSCE (objective structured clinical examination) station you run out loud. Read the door
-      form for one minute, then walk in: talk to the patient and narrate your exam, and each finding shows on the
-      screen. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
+      form for one minute, then walk in: talk to the patient and narrate your exam, and each finding (and any test you
+      order) shows on the screen. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
 
     <div class="card" id="access">
       <div id="access-msg" class="muted">Checking your sign-in…</div>
@@ -351,6 +364,7 @@
   "use strict";
   var STATION = "cardiac";
   var STATION_FILE = "Physical Diagnosis 2 Exam 1/pd2-cardiac-osce-practice.json";
+  var STATION_DIR = STATION_FILE.replace(/[^\/]+$/, "");
   var DOOR_S = 60, ROOM_S = 20 * 60;
   var K_HIST = "local:osce:history", K_PREFS = "local:osce:prefs";   // device-only ("local:" never syncs)
   var KOKORO_WORKER = "osce-voice-worker.js";   // the free voice runs there, off this page's main thread
@@ -835,6 +849,30 @@
     return d;
   }
   function sysLine(t) { return addLine("sys", "", esc(t)); }
+  // a test the student ordered (Jaxon: "if the student asks for stuff like EKG or Chest xray and its relevant to the
+  // case you pop it on screen"): the helper sends the case's result text; the picture comes from the station file
+  var IMG_OK = /^[a-z0-9-]+\/[a-z0-9-]+\.(jpg|jpeg|png|webp)$/;
+  function testCard(l) {
+    var t = (S.c.tests || []).filter(function (x) { return x.id === l.id; })[0];
+    var h = (l.name ? '<span class="mname">' + esc(l.name) + ":</span> " : "") + esc(l.t);
+    if (!l.here || !t || !t.img || !IMG_OK.test(t.img)) return h;
+    var cr = t.credit || {}, link = /^https:\/\/commons\.wikimedia\.org\//.test(cr.page || "");
+    return h + '<figure class="tfig"><button type="button" class="tzoom" aria-label="Enlarge the picture">' +
+      '<img src="' + esc(STATION_DIR + t.img) + '" alt="' + esc(t.name + ". " + (t.cap || "")) + '"></button>' +
+      "<figcaption>" + esc(t.cap || "") + (cr.text ? '<span class="credit">' + (link ? '<a href="' + esc(cr.page) + '" target="_blank" rel="noopener">' + esc(cr.text) + "</a>" : esc(cr.text)) + "</span>" : "") +
+      "</figcaption></figure>";
+  }
+  $("transcript").addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".tzoom");
+    if (!b) return;
+    var img = b.querySelector("img"), z = document.createElement("div");
+    z.className = "zoom"; z.setAttribute("role", "dialog"); z.setAttribute("aria-label", img.alt);
+    z.innerHTML = '<img src="' + esc(img.getAttribute("src")) + '" alt="' + esc(img.alt) + '">';
+    function key(ev) { if (ev.key === "Escape") close(); }
+    function close() { z.remove(); document.removeEventListener("keydown", key); }
+    z.onclick = close; document.addEventListener("keydown", key);
+    document.body.appendChild(z);
+  });
   function patientName() { return S.c.door.name.split(" ")[0]; }
 
   // the student said something: to the patient, unless a reply is still on its way (then it waits and goes next)
@@ -858,8 +896,8 @@
   // finished (settled, or unchanged for 0.4 s), while the page still waits out the pause. When the pause ends on the
   // same words, that answer is used at once; if the student kept talking, it is dropped (Jaxon: "I feel like after I
   // finish talking and by the time it replies takes too long"). Each early ask counts as a turn on the helper (240 a
-  // station), so at most two per question: one on words still being guessed at, then settled ones; none at all once
-  // a station has used 160 turns.
+  // station), so at most two per question, settled words or not (Safari never settles them, and gets the same two);
+  // none at all once a station has used 160 turns.
   var early = null, earlyN = 0, lastAsk = 0, earlyTimer = 0;
   function sameWords(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9' ]+/g, " ").replace(/\s+/g, " ").trim(); }
   function heardNow() { return (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim(); }
@@ -867,11 +905,11 @@
     lastAsk = Date.now(); S.asks = (S.asks || 0) + 1;
     return SB().osce("turn", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: turns });
   }
-  function askEarly(settled) {
+  function askEarly() {
     if (!S || S.over || S.busy || S.phase === "present" || S.talk === "typed") return;
     var t = heardNow(), key = sameWords(t) + "|" + S.turns.length;
     if (!sameWords(t) || (early && early.key === key)) return;
-    if (earlyN >= (settled ? 2 : 1) || S.asks >= 160 || Date.now() - lastAsk < 450) return;   // the helper: 0.4 s apart
+    if (earlyN >= 2 || S.asks >= 160 || Date.now() - lastAsk < 450) return;   // the helper: 0.4 s apart
     earlyN++;
     var e = early = { key: key };
     e.p = askHelper(requestTurns({ r: "s", t: t.slice(0, 1990), at: elapsed() })).then(function (r) {
@@ -922,6 +960,10 @@
       S.log.push({ r: l.r, t: l.t, at: elapsed(), name: l.name });
       if (l.r === "P") said.push({ t: l.t, node: addLine("p", patientName(), esc(l.t)) });
       else if (l.r === "X") addLine("x", "Finding", '<span class="mname">' + esc(l.name || "") + ":</span> " + esc(l.t));
+      else if (l.r === "T") {
+        var card = addLine(l.here ? "t" : "t away", l.here ? "Result" : "Test", testCard(l)), pic = card.querySelector("img");
+        if (pic) pic.onload = function () { card.scrollIntoView({ block: "nearest", behavior: "smooth" }); };   // taller once it loads
+      }
       else addLine("f", "Note", esc(l.t));
     });
     // prepare each line's audio as soon as the one before it starts playing
@@ -948,7 +990,32 @@
   }
 
   // ---------------------------------------------------------------- the microphone
-  var rec = null, wantMic = false, heardFinal = "", heardInterim = "", lastHeard = 0, silence = 0, liveNode = null, holding = false;
+  var rec = null, wantMic = false, heardFinal = "", heardInterim = "", lastHeard = 0, silence = 0, liveNode = null, holding = false, carry = "";
+  // What the recognizer has heard this session, rebuilt from all of its results each time. Safari repeats a phrase
+  // after the speaker stops (reported since iOS 15: "the transcript contains the short phrase that was spoken, TWICE",
+  // interim results "duplicated after voice input stops"), so a result repeating the one before it is dropped, and a
+  // phrase said twice over within one result is kept once.
+  function heardOf(e) {
+    var fin = [], interim = [], prev = "";
+    for (var i = 0; i < e.results.length; i++) {
+      var x = e.results[i], t = undouble(String((x[0] && x[0].transcript) || "").trim()), w = sameWords(t);
+      if (!w || (w === prev && w.indexOf(" ") > 0)) continue;
+      prev = w;
+      (x.isFinal ? fin : interim).push(t);
+    }
+    return { fin: fin.join(" "), interim: interim.join(" ") };
+  }
+  // a phrase of 2 or more words said 2 or more times over, back to back: kept once
+  function undouble(t) {
+    var tok = t.split(/\s+/), w = tok.map(sameWords), n = tok.length;
+    for (var p = 2; p <= n / 2; p++) {
+      if (n % p) continue;
+      for (var i = p; i < n && w[i] === w[i - p]; i++);
+      if (i === n) return tok.slice(0, p).join(" ");
+    }
+    return t;
+  }
+  function isSettled() { return !!heardFinal.trim() && !heardInterim.trim(); }
   function setMicState(html) { $("mic-state").innerHTML = html; }
   function setupMic() {
     var mic = $("mic");
@@ -965,21 +1032,21 @@
     wantMic = S.talk === "free";
     resumeMic();
   }
-  function startRec() {
+  // keep: the recognizer stopped by itself mid-question (Safari does), so the words so far carry into the new session
+  function startRec(keep) {
     if (!SR || rec || !S || S.over) return;
-    heardFinal = ""; heardInterim = "";
+    carry = keep ? heardNow() : "";
+    heardFinal = carry; heardInterim = "";
     try {
       rec = new SR();
       rec.lang = "en-US"; rec.continuous = true; rec.interimResults = true; rec.maxAlternatives = 1;
       rec.onresult = function (e) {
-        var interim = "";
-        for (var i = e.resultIndex; i < e.results.length; i++) {
-          var x = e.results[i];
-          if (x.isFinal) heardFinal += " " + x[0].transcript; else interim += x[0].transcript;
-        }
-        heardInterim = interim; lastHeard = Date.now();
-        showLive();
-        if (S.talk === "free") armSilence();
+        var h = heardOf(e), was = sameWords(heardNow()), wasSettled = isSettled();
+        heardFinal = (carry + " " + h.fin).trim(); heardInterim = h.interim;
+        // only NEW words count as talking: a repeat (Safari) never restarts the wait
+        var changed = sameWords(heardNow()) !== was;
+        if (changed) { lastHeard = Date.now(); showLive(); }
+        if (S.talk === "free" && (changed || (isSettled() && !wasSettled))) armSilence();
       };
       rec.onerror = function (e) {
         if (e.error === "not-allowed" || e.error === "service-not-allowed") {
@@ -992,7 +1059,7 @@
       };
       rec.onend = function () {
         rec = null;
-        if (S && !S.over && !S.busy && (wantMic || holding) && S.phase !== "present") setTimeout(startRec, 120);
+        if (S && !S.over && !S.busy && (wantMic || holding) && S.phase !== "present") setTimeout(function () { startRec(true); }, 120);
       };
       rec.start();
       $("mic").classList.remove("off"); $("mic").classList.add("hot");
@@ -1019,27 +1086,23 @@
     liveNode.innerHTML = '<span class="who">You</span>' + esc(t);
   }
   function clearLive() { if (liveNode) { liveNode.remove(); liveNode = null; } }
+  // When the words go to the patient: one rule for every browser (Jaxon: "Set everyone time to same response timing so
+  // its all equal and they get quickest repsonses to their questions"). Chrome and Edge settle the words a moment after
+  // the student stops, and settled words go 0.3 x the pause later. Safari (iPhone, iPad, Mac) usually never settles
+  // them, so unsettled words go 0.6 x the pause after the last NEW word. Both land about the same time after the
+  // student stops (measured with tools in the 10-26 session: see the memory). Safari used to wait the whole pause
+  // plus 0.7 s, and before that two whole pauses.
   function armSilence() {
-    clearTimeout(silence);
-    // Every word settled (the recognizer is no longer guessing at any): a short wait is enough. The full pause, on
-    // top of the recognizer's own half second to a second, kept a turn waiting about 2.5 s before it was even sent
-    // (Jaxon: "takes to long to reply"). Words still being guessed at, or none settled yet, keep the full pause, so
-    // a breath mid-question doesn't cut the student off.
-    var settled = heardFinal.trim() && !heardInterim.trim();
-    clearTimeout(earlyTimer);
-    if (settled) askEarly(true); else earlyTimer = setTimeout(askEarly, 400);
-    silence = setTimeout(function () {
-      var quiet = Date.now() - lastHeard;
-      // no settled words at all (Safari's recognizer often never settles them): 0.7 s more than the pause. This used to
-      // start the whole pause again, so a turn waited two pauses (3.8 s on Normal) before it was sent.
-      if (!heardFinal.trim() && quiet < S.pause + 700) { silence = setTimeout(commit, S.pause + 700 - quiet); return; }
-      commit();
-    }, settled ? Math.max(450, Math.round(S.pause * 0.3)) : S.pause);
+    clearTimeout(silence); clearTimeout(earlyTimer);
+    if (isSettled()) { askEarly(); silence = setTimeout(commit, Math.max(450, Math.round(S.pause * 0.3))); return; }
+    var since = Date.now() - lastHeard;
+    earlyTimer = setTimeout(askEarly, Math.max(0, 400 - since));
+    silence = setTimeout(commit, Math.max(0, Math.max(800, Math.round(S.pause * 0.6)) - since));
   }
   function commit() {
     var t = heardNow();
     stopRec(); clearLive();
-    heardFinal = ""; heardInterim = ""; earlyN = 0;
+    heardFinal = ""; heardInterim = ""; carry = ""; earlyN = 0;
     if (t) studentSays(t); else resumeMic();
   }
 
@@ -1060,7 +1123,7 @@
   function holdEnd() {
     if (!holding) return;
     holding = false;
-    askEarly(true);              // usually the words are all in: ask now, and use the answer if nothing more arrives
+    askEarly();                  // usually the words are all in: ask now, and use the answer if nothing more arrives
     setTimeout(commit, 450);     // the last words arrive just after the button is let go
   }
   mic.addEventListener("pointerdown", holdStart);
@@ -1117,11 +1180,9 @@
     pBase = $("present-text").value.trim();
     try {
       prec = new SR(); prec.lang = "en-US"; prec.continuous = true; prec.interimResults = true;
-      var fin = "";
       prec.onresult = function (e) {
-        var interim = "";
-        for (var i = e.resultIndex; i < e.results.length; i++) { var x = e.results[i]; if (x.isFinal) fin += " " + x[0].transcript; else interim += x[0].transcript; }
-        $("present-text").value = (pBase + " " + fin + " " + interim).replace(/\s+/g, " ").trim();
+        var h = heardOf(e);     // Safari's repeated phrases dropped here too
+        $("present-text").value = (pBase + " " + h.fin + " " + h.interim).replace(/\s+/g, " ").trim();
       };
       prec.onend = function () { prec = null; if (S && S.presentMic && !S.over) setTimeout(startPresentRec, 120); };
       prec.onerror = function () {};
@@ -1302,7 +1363,7 @@
     var keyHtml = '<dl class="keybox"><dt>Diagnosis</dt><dd>' + esc(key.diagnosis || S.c.condition) + "</dd>" +
       Object.keys(key).filter(function (k) { return k !== "diagnosis"; }).map(function (k) { return "<dt>" + esc(label(k)) + "</dt><dd>" + keyValue(key[k]) + "</dd>"; }).join("") + "</dl>";
     var tx = S.log.map(function (l) {
-      var who = l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Note";
+      var who = l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : l.r === "T" ? "Test" : "Note";
       return "<p><b>" + mmss(l.at) + " " + esc(who) + ":</b> " + (l.name ? esc(l.name) + ": " : "") + esc(l.t) + "</p>";
     }).join("") + (S.presentation ? "<p><b>Presentation:</b> " + esc(S.presentation) + "</p>" : "");
 
@@ -1338,7 +1399,7 @@
       var hh = load(K_HIST, []); if (hh.length) { hh[hh.length - 1].s = t2.pct; save(K_HIST, hh); }
     };
     $("copy-tx").onclick = function () {
-      var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Note") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
+      var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : l.r === "T" ? "Test" : "Note") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
         (S.presentation ? "\n\nPresentation: " + S.presentation : "");
       try { navigator.clipboard.writeText(text).then(function () { $("copy-tx").textContent = "Copied"; }); } catch (e) {}
     };

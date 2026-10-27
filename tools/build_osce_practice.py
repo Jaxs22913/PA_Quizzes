@@ -13,7 +13,10 @@ and the private helper (the patient model plays the case, the grader grades agai
              for the items only the page can judge (time at the door, the presentation's length) or the student
              (reading from notes)
     catalog  the maneuvers and their normal findings (tools/_osce_cardiac_catalog.py)
-    cases    the cases (tools/_osce_cardiac_cases.py): door form, persona, facts, exam overrides, answer key
+    cases    the cases (tools/_osce_cardiac_cases.py): door form, persona, facts, exam overrides, answer key, and
+             the tests a student can order for that case (results shown on screen; a test the setting can't do says
+             so; anything not listed gets "unlisted", Jaxon: "they will say oh that machine is down but only with
+             stuff that isnt relevant or isnt in where we are")
 
 The helper's station list (superbrain/src/osce.ts STATIONS) names this path; renaming the file means changing both.
 
@@ -33,8 +36,12 @@ sys.path.insert(0, HERE)
 import build_pd2_osce as runsheet            # noqa: E402
 from _osce_cardiac_catalog import CATALOG    # noqa: E402
 from _osce_cardiac_cases import CASES        # noqa: E402
+from _pd2_cardiac_osce_ecgs import IMAGES as ECG_IMAGES   # noqa: E402
 
 OUT = os.path.join(ROOT, "Physical Diagnosis 2 Exam 1", "pd2-cardiac-osce-practice.json")
+# test pictures: only the Cardiac OSCE chart's vetted 12-leads (sources and licences in _pd2_cardiac_osce_ecgs.py)
+IMG_DIR = "pd2-cardiac-osce-chart-images"
+UNLISTED = "That machine is down today."
 
 # Items the transcript cannot show. "door" and "length" the page measures; "self" the student ticks in the report.
 AUTO = {
@@ -88,6 +95,43 @@ def check_case(c, catalog_ids):
     known = set(catalog_ids) | {m[0] for m in c["special"]}
     must = c.get("must_exam") or []
     assert 3 <= len(must) <= 6 and all(m in known for m in must), (cid, "must_exam", must)
+    tests = c.get("tests") or []
+    assert 3 <= len(tests) <= 14, (cid, "tests", len(tests))
+    tids = [t["id"] for t in tests]
+    assert len(tids) == len(set(tids)), (cid, "duplicate test id")
+    for t in tests:
+        assert set(t) <= {"id", "name", "aka", "result", "here", "img", "cap"}, (cid, t["id"], "unknown test field", set(t))
+        assert re.match(r"^[a-z0-9][a-z0-9-]{1,30}$", t["id"]) and t["id"] != "other", (cid, "test id", t["id"])
+        assert t["id"] not in known, (cid, t["id"], "a test id is also a maneuver id")
+        assert 2 <= len(t["name"]) <= 80 and isinstance(t.get("aka", []), list), (cid, t["id"], "name/aka")
+        assert all(isinstance(a, str) and 1 <= len(a) <= 60 for a in t.get("aka", [])), (cid, t["id"], "aka")
+        assert 8 <= len(t["result"]) <= 600, (cid, t["id"], "result length")
+        assert isinstance(t["here"], bool), (cid, t["id"], "here must be true or false")
+        if t.get("img"):
+            assert t["here"], (cid, t["id"], "a picture for a test the setting can't do")
+            assert t["img"] in ECG_IMAGES, (cid, t["id"], "picture not in the chart's vetted set", t["img"])
+            assert os.path.exists(os.path.join(os.path.dirname(OUT), IMG_DIR, t["img"])), (cid, t["id"], "missing picture")
+            assert 10 <= len(t.get("cap") or "") <= 300, (cid, t["id"], "a picture needs a caption")
+        else:
+            assert not t.get("cap"), (cid, t["id"], "a caption with no picture")
+
+
+def credit(fn):
+    """The picture's credit, worded as on the Cardiac OSCE chart."""
+    src, boxes = ECG_IMAGES[fn]
+    if src["kind"] == "deck":
+        return {"text": "Source: %s, Slide %d%s" % (src["deck"], src["slide"], "; yellow boxes added" if boxes else ""), "page": ""}
+    assert src["lic"] and src["author"] and src["page"], fn
+    return {"text": "Image: %s%s, Wikimedia Commons, %s; %s" % (src["author"], "; " + src["extra"] if src["extra"] else "", src["lic"],
+                                                              "resized, yellow boxes added" if boxes else "resized"),
+            "page": src["page"]}
+
+
+def test_out(t):
+    o = {"id": t["id"], "name": t["name"], "aka": list(t.get("aka", [])), "result": t["result"], "here": t["here"]}
+    if t.get("img"):
+        o.update(img=IMG_DIR + "/" + t["img"], cap=t["cap"], credit=credit(t["img"]))
+    return o
 
 
 def build():
@@ -109,6 +153,7 @@ def build():
             "special": [list(m) for m in c["special"]],
             # the examinations specific to this condition: each one never performed costs a point (the page docks it)
             "must_exam": list(c["must_exam"]),
+            "tests": [test_out(t) for t in c["tests"]],
             "key": c["key"],
         })
     ids = [c["id"] for c in cases]
@@ -120,6 +165,7 @@ def build():
         "minutes": {"door": 1, "room": 20},
         "rubric": rubric(),
         "catalog": catalog,
+        "unlisted": UNLISTED,
         "cases": cases,
     }
 
