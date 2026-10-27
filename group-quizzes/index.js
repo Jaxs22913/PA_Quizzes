@@ -402,6 +402,7 @@ window.GROUP_INDEX = {
 "microbiology-exam-2-micro-exam-2-webster-review-quiz-version-2":{"title":"Webster Review Quiz 2 — Microbiology Exam 2","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":40},
 "microbiology-exam-2-misc-bacterial-agents-quiz":{"title":"Miscellaneous Bacterial Agents — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
 "microbiology-exam-2-novel-antimicrobial-therapy-quiz":{"title":"Novel Antimicrobial Therapy — Quiz 1","category":"Microbiology","exam":"Exam 2","sem":"fall-2026","n":30},
+"microbiology-exam-3-gram-negative-bacilli-quiz":{"title":"Gram-Negative Bacilli — Quiz 1","category":"Microbiology","exam":"Exam 3","sem":"fall-2026","n":30},
 "nutrition-class-nutrition-ppt-1-2-review-qs":{"title":"Nutrition PPT 1-2 Review Qs","category":"Nutrition","exam":"General","sem":"summer-1-2026","n":25},
 "pharmacodynamics-exam-2-antimicrobials-quiz-1":{"title":"Antimicrobials Quiz — Set 1","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},
 "pharmacodynamics-exam-2-antimicrobials-quiz-2":{"title":"Antimicrobials Quiz — Set 2","category":"Pharmacodynamics","exam":"Exam 2","sem":"summer-1-2026","n":30},
