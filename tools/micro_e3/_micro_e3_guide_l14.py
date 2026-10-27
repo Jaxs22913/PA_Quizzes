@@ -21,9 +21,13 @@ H, K and O antigens), slide 74 (the typhoid route), slide 84 (the plague cycle) 
 sign). Case-count charts, maps and outbreak tallies (slides 33-36, 42, 61-63, 75-77, 85-87, 91-93, 99) are
 summarized, not tabulated.
 
-AUDIO: PHASE 1 IS SLIDES ONLY. The recording (a classmate's Notability export, three segments, 2:03:43, no
-Notability transcript) is being transcribed; the MICROL14AUDIO block below is the placeholder the audio pass
-replaces with what was stressed, what was said to skip, and any correction of a slide, as in the Exam 2 blocks.
+AUDIO (27 October 2026): the recording is a classmate's Notability export in three parts (46:13 + 45:19 +
+32:12 = 2:03:43), with ONE transcript only (local Whisper medium.en; no Notability transcript). Read in full; the
+MICROL14AUDIO block quotes it with times from the start of the recording, and every claim was checked against the
+deck. She corrected no slide. Her one signpost is the four E. coli pathotypes [1:04:18]; she named four things not
+to memorize (slide 8's diagram, slide 19's body map, slide 45's percentages, slide 47's tree) and said she does not
+test which antibiotic [26:25]. Numbers in 14.3, 14.4, 14.6 and 14.11 now follow the slides (10%, 80%, 10%, 10%);
+none is asked.
 """
 import io, os
 
@@ -176,12 +180,84 @@ SECTION_HEAD = """
 
 <!--MICROL14AUDIO-->
   <div class="prof-flag" id="gnb-audio"><span class="prof-flag-label">&#9733; From the lecture recording &mdash; 23 October 2026</span>
-  <p><b>Not read yet.</b> A classmate&rsquo;s recording of this lecture (three parts, about 2 hours 4 minutes) has
-  arrived and is being transcribed. It came without Notability&rsquo;s own transcript, so ours will be the only
-  one, with no second opinion to compare against. Until it has been read, this section is built from the slides
-  alone: the quizzes are weighted by slide count, and the only emphasis marked is the slide&rsquo;s own (the
-  three asterisks after <em>cystic fibrosis</em> on slide 18, 14.3). When the recording has been read, this box
-  will carry what Dr. Webster stressed, what she said to skip, and any correction of a slide.</p>
+  <p>About 2 hours 4 minutes with Dr. Webster, in three parts (a classmate&rsquo;s recording; parts start at 0:00,
+  46:13 and 1:31:32, and the times below run from the start). <b>One transcript only</b>: the recording came
+  without Notability&rsquo;s own transcript, so there is no second opinion to compare against, and quotes below
+  are from a single machine transcription (organism names it misheard are written correctly here). Every
+  factual claim was checked against the deck; where the two differ, the slide is what this guide teaches. She
+  read the slides closely and <b>corrected none of them</b>.</p>
+  <p><b>She signposts little, so the quizzes are weighted by time spent</b> on each organism group, stories and
+  outbreak tallies taken out: <em>Escherichia coli</em> and its four pathotypes about 17 minutes,
+  <em>Pseudomonas aeruginosa</em> 14, <em>Yersinia pestis</em> 12 (5 of them outbreaks and history), endotoxin 10,
+  the enteric family, media and antigens 9, <em>Salmonella</em> 9, <em>Bordetella pertussis</em> 8,
+  <em>Legionella</em> 8 (mostly outbreaks), the other coliforms 7 (mostly <em>Serratia</em> stories),
+  <em>Shigella</em> 5, the <em>Pseudomonas</em> relatives and <em>Haemophilus</em> 4 each, <em>Brucella</em> and
+  <em>Proteus</em> with its relatives 3&frac12; each, the sorting scheme 3, <em>Francisella</em> 2, and the enteric
+  yersinias, <em>Pasteurella</em> and <em>Alcaligenes</em> about a minute each.</p>
+  <table>
+    <tr><th>What was said</th><th>What it means for you</th></tr>
+    <tr><td><em>&ldquo;<mark class="prof-highlight">There are four different strains of E. coli that you need to
+    know. Hint, hint, hint, hint.</mark>&rdquo;</em> [1:04:18]</td>
+    <td>The one plain signpost of the lecture. 14.11: enterotoxigenic, enteroinvasive, enteropathogenic and
+    enterohemorrhagic O157:H7, each with its mechanism, disease, source, test and prevention. Every quiz set
+    carries all four.</td></tr>
+    <tr><td><em>&ldquo;I&rsquo;m not going to be testing on which antibiotics, because that&rsquo;s where we have
+    our PDRs [Physicians&rsquo; Desk Reference].&rdquo;</em> [26:25]</td>
+    <td>Drug lists stay in the guide for completeness; no question asks which antibiotic treats what. Non-drug
+    management (fluids and electrolytes, dialysis, plasmapheresis, combination therapy for multidrug resistance,
+    vaccines, breast feeding, quarantine) is fair game.</td></tr>
+    <tr><td><em>&ldquo;Very, very, very common with cystic fibrosis patients.&rdquo;</em> [23:53]</td>
+    <td>The slide&rsquo;s own starred fact (14.3): <em>Pseudomonas aeruginosa</em> in burns, neoplastic disease and
+    <b>cystic fibrosis</b>; and <em>Burkholderia cepacia</em> with it in cystic fibrosis (14.4).</td></tr>
+    <tr><td><em>&ldquo;Endotoxin isn&rsquo;t something to be ignored. And you have to remember that any
+    gram-negative organism will have that weapon at its disposal.&rdquo;</em> [9:37]</td>
+    <td>14.1: lipid A, release on lysis, the protective low-level response and the septic-shock flood.</td></tr>
+    <tr><td><em>&ldquo;You do not have to memorize this diagram again.&rdquo;</em> [5:20]</td>
+    <td>Slide 8&rsquo;s diagram of endotoxin&rsquo;s targets (not reproduced here). The text she walked through
+    (complement, coagulation, platelets, neutrophils, macrophages; slides 9&ndash;10) is in 14.1.</td></tr>
+    <tr><td><em>&ldquo;You do not need to memorize all of this. But just know that it can basically hit you
+    pretty much anywhere.&rdquo;</em> [25:02]</td>
+    <td>Slide 19&rsquo;s body map of <em>Pseudomonas</em> infections (14.3): not asked site by site. The infections
+    of healthy people (rashes, urinary tract infection, swimmer&rsquo;s ear, corneal ulcers in contact lens
+    wearers) are on the slide&rsquo;s text and are asked.</td></tr>
+    <tr><td><em>&ldquo;You don&rsquo;t need to worry about the percentages or anything like that.&rdquo;</em>
+    [56:17]</td>
+    <td>Slide 45&rsquo;s share of nosocomial infections, and percentages generally: none is asked.</td></tr>
+    <tr><td><em>&ldquo;I&rsquo;m not asking you to memorize this chart.&rdquo;</em> [57:12]</td>
+    <td>Slide 47&rsquo;s biochemical tree (14.10). Know what it starts from (lactose fermentation on triple sugar
+    iron); the branches are not asked.</td></tr>
+    <tr><td><em>&ldquo;There seems to be a relationship, association, not causation&rdquo;</em> [1:29:03]</td>
+    <td><em>Proteus</em> and bladder and kidney stones (14.13): an association, not a proven cause.</td></tr>
+    <tr><td><em>&ldquo;You have to diagnose it quickly in order to be able to control it because you can have death
+    occurring within about two days of your first symptoms.&rdquo;</em> [1:53:30]</td>
+    <td>Plague diagnosis (14.17): history (&ldquo;where have you been? Have you been around little critters
+    lately?&rdquo;), symptoms and aspiration of the bubo.</td></tr>
+  </table>
+  <p><b>Things said that are not on a slide</b> &mdash; consistent with the deck, useful as hooks, not asked:</p>
+  <ul>
+    <li>Killing Gram-negatives with an antibiotic releases a surge of endotoxin, &ldquo;why a lot of times when
+    you&rsquo;re treating for a gram-negative, you feel a whole lot worse before you start feeling better&rdquo;
+    [1:11].</li>
+    <li><em>Pseudomonas aeruginosa</em> smells like rotten grapes [23:27]; contact lens wearers should take the lenses
+    out, clean them and store them in solution every day [25:27], which also guards against
+    <em>Stenotrophomonas</em> [31:52].</li>
+    <li>Raw milk: &ldquo;pasteurization is a good thing&rdquo; [33:34] (<em>Brucella</em>, and again for
+    enterohemorrhagic <em>Escherichia coli</em> from raw milk and cheese [1:16:58]). Hunters of wild rabbits catch
+    tularemia [36:13].</li>
+    <li>Pertussis boosters are now recommended for older adults as well [41:52].</li>
+    <li><em>Legionella</em>: &ldquo;Pontiac fever&rdquo; was the name of the illness before the 1976 outbreak, and
+    saved tissue later showed the same organism [49:24].</li>
+    <li>Breast feeding protects against enteropathogenic <em>Escherichia coli</em> because the immunoglobulin A in
+    colostrum and breast milk coats the intestinal lining and keeps the organism from adhering [1:10:16].</li>
+    <li>The <em>Klebsiella</em> capsule stain is done in India ink: the capsule does not take up the ink and shows as
+    a clear halo [1:21:43]. <em>Serratia</em> grows in bathroom grout lines (the tile photograph on slide 68)
+    [1:24:12].</li>
+    <li>Typhoid Mary (Mary Mallon), a cook in New York City, was an asymptomatic carrier [1:33:52].</li>
+    <li>Plague in the United States reaches campers in rodent country, by fleas that get into the tent; there has
+    been no human-to-human transmission in the United States since 1924 [1:47:58].</li>
+    <li>The dental-procedure endocarditis of <em>H. parainfluenzae</em> and <em>H. aphrophilus</em> is why people
+    with cardiac conditions take antibiotics before a dental cleaning [2:03:13].</li>
+  </ul>
   </div>
 <!--/MICROL14AUDIO-->
 """
@@ -264,8 +340,8 @@ BODY = """
   <table>
     <tr><th>Heading</th><th>The pseudomonads, and <em>Pseudomonas aeruginosa</em></th></tr>
     <tr><td>Morphology</td><td>Small Gram-negative rods with a <strong>single polar flagellum</strong></td></tr>
-    <tr><td>Habitat</td><td>Free living, primarily in soil, sea water and fresh water; also colonize plants and animals. Important decomposers and bioremediators (exoenzymes such as protease, amylase, pectinase and cellulase; oil-eating and pesticide-clearing strains); frequent contaminants in homes and clinical settings; food spoilage (dairy, meat, eggs). <em>P. aeruginosa</em>: soil and water, an intestinal resident in a minority of normal people, also on skin and in saliva</td></tr>
-    <tr><td>Biochemistry</td><td><strong>Aerobic respiration; do not ferment carbohydrates.</strong> Produce <strong>oxidase and catalase</strong>. Produce pseudomycins (antifungal agents). Many make <strong>water-soluble pigments</strong> (blue-green, yellow-green, brown, red)</td></tr>
+    <tr><td>Habitat</td><td>Free living, primarily in soil, sea water and fresh water; also colonize plants and animals. Important decomposers and bioremediators (exoenzymes such as protease, amylase, pectinase and cellulase; oil-eating and pesticide-clearing strains); frequent contaminants in homes and clinical settings; food spoilage (dairy, meat, eggs). <em>P. aeruginosa</em>: soil and water, an intestinal resident in 10% of normal people, also on skin and in saliva</td></tr>
+    <tr><td>Biochemistry</td><td><strong>Aerobic respiration; do not ferment carbohydrates</strong> (aerobic respiration, no fermentation). Produce <strong>oxidase and catalase</strong>. Produce pseudomycins (antifungal agents). Many make <strong>water-soluble pigments</strong> (blue-green, yellow-green, brown, red)</td></tr>
     <tr><td>Identifying signs</td><td><strong>Grapelike odor</strong>; <strong>greenish-blue pigment, pyocyanin</strong></td></tr>
     <tr><td>Hardiness</td><td>Resistant to soaps, dyes, quaternary ammonium disinfectants, drugs and drying; survives in nutrient-poor environments; a <strong>major agent of nosocomial infections</strong></td></tr>
     <tr><td>Why it contaminates equipment</td><td>Frequent contaminant of ventilators, intravenous solutions and anesthesia equipment because it <strong>produces biofilms</strong></td></tr>
@@ -309,7 +385,8 @@ BODY = """
       "Body diagram of Pseudomonas aeruginosa infections: central nervous system, eye, ear, nose and throat, respiratory infections including ventilator-associated and hospital-acquired pneumonia and chronic infection in cystic fibrosis, endocarditis, bacteremia, gastroenteritis, urinary tract infections including catheter-associated ones, osteomyelitis, burn wound and surgical site infections, hot tub folliculitis and other skin and soft tissue infections.",
       "<b>Everywhere it can reach.</b> Starred on the figure: contact lens keratitis, central line-associated "
       "bacteremia, ventilator-associated and hospital-acquired pneumonia, burn wound and surgical site infections, "
-      "and catheter-associated urinary tract infections. The ear panel carries otitis externa, swimmer&rsquo;s ear.",
+      "and catheter-associated urinary tract infections. The ear panel carries otitis externa, swimmer&rsquo;s ear. "
+      "Not to memorize site by site, the recording says; know that it can hit almost anywhere.",
       19) + """
   """ + fig("l14-s019-corneal-ulcer.jpg", 500, 393,
       "Close photograph of an eye held open by a retractor, with a large gray-white opacity over the cornea and red, inflamed conjunctiva.",
@@ -330,7 +407,7 @@ BODY = """
   opportunistic pathogens. (The slide also calls them motile and oxidase positive; see 14.21.)</p>
   <table>
     <tr><th>Organism</th><th>Where it lives and how it gets in</th><th>Disease</th><th>Notes</th></tr>
-    <tr><td><em>Burkholderia cepacia</em></td><td>Biodegrades many substances; a plant pathogen</td><td>Opportunist of the respiratory tract, urinary tract and skin</td><td><strong>Rapidly mutates; multidrug resistant; a particular problem in cystic fibrosis</strong>, as a copathogen with <em>Pseudomonas</em> (a high fatality)</td></tr>
+    <tr><td><em>Burkholderia cepacia</em></td><td>Biodegrades many substances; a plant pathogen</td><td>Opportunist of the respiratory tract, urinary tract and skin</td><td><strong>Rapidly mutates; multidrug resistant; a particular problem in cystic fibrosis</strong>, as a copathogen with <em>Pseudomonas</em> (an 80% fatality)</td></tr>
     <tr><td><em>Burkholderia pseudomallei</em></td><td><strong>Soil and water of tropical climates</strong>; acquired through a <strong>penetrating injury or inhalation</strong></td><td><strong>Melioidosis</strong>: wound infection with localized nodules, fever and muscle aches; bronchitis and pneumonia; septicemia; endotoxic shock; liver and brain abscesses</td><td>The body map adds parotitis, bone, joint, genitourinary and skeletal-muscle infection</td></tr>
     <tr><td><em>Acinetobacter baumannii</em></td><td>Nosocomial and community acquired; <strong>survives months on fomites</strong></td><td>Wounds, lungs, urinary tract, burns, blood; <strong>infections after traumatic (combat) wounds</strong>; the immunocompromised</td><td>Also listed as needing urgent research; <strong>multidrug resistant, so combination treatment</strong> (carbapenems, polymyxin B, ampicillin)</td></tr>
     <tr><td><em>Stenotrophomonas maltophilia</em></td><td>Fresh water, soil, fecal flora of humans and domestic animals; <strong>forms biofilms</strong>; contaminates disinfectants, dialysis and respiratory equipment, water dispensers and catheters</td><td>Isolated from respiratory, soft tissue, blood, cerebrospinal fluid and eye specimens</td><td>Multiple drug resistance; combination therapy (cephalosporins, tetracyclines, fluoroquinolones, penicillins)</td></tr>
@@ -351,7 +428,7 @@ BODY = """
     <tr><td>Morphology</td><td><strong>Tiny Gram-negative coccobacilli</strong></td></tr>
     <tr><td>Species</td><td><strong><em>Brucella abortus</em> (cattle)</strong> and <strong><em>Brucella suis</em> (pigs)</strong></td></tr>
     <tr><td>Disease names</td><td>Brucellosis: <strong>Malta fever, undulant fever, Bang disease</strong></td></tr>
-    <tr><td>Transmission</td><td>A <strong>zoonosis</strong> of animal handling and slaughtering: contact with the <strong>blood, urine or placentas of infected animals</strong>, or <strong>unpasteurized dairy products</strong>. <strong>Human-to-human transmission is rare</strong></td></tr>
+    <tr><td>Transmission</td><td>A <strong>zoonosis</strong> of animal handling and slaughtering: contact with the <strong>blood, urine or placentas of infected animals</strong>, or <strong>unpasteurized dairy products</strong> (raw dairy). <strong>Human-to-human transmission is rare</strong></td></tr>
     <tr><td>Pathogenesis</td><td>Enters through damaged skin or mucous membranes; phagocytes carry it to the blood, with lesions in the liver, spleen, bone marrow and kidneys</td></tr>
     <tr><td>Manifestations</td><td>A severe febrile illness with a <strong>fluctuating fever over weeks to a year (undulant fever)</strong>; chills, sweating, headache, muscle pain, weight loss</td></tr>
     <tr><td>Laboratory test</td><td>Serological: an <strong>agglutination titer test</strong></td></tr>
@@ -364,7 +441,7 @@ BODY = """
     <tr><th>Heading</th><th><em>Francisella tularensis</em></th></tr>
     <tr><td>Disease</td><td><strong>Tularemia, rabbit fever</strong>: a zoonosis of mammals endemic to the northern hemisphere, particularly rabbits</td></tr>
     <tr><td>Transmission</td><td>Contact with <strong>infected animals</strong>, <strong>water and dust</strong>, or <strong>bites by vectors</strong>. The infective dose is very small (10&ndash;50 organisms)</td></tr>
-    <tr><td>Course</td><td>Incubation of days to 3 weeks; headache, backache, fever, chills, malaise and weakness; <strong>ulcerative skin lesions and swollen lymph nodes</strong>; sore throat, intestinal involvement and respiratory infection. The systemic and pulmonic forms carry the highest death rate</td></tr>
+    <tr><td>Course</td><td>Incubation of days to 3 weeks; headache, backache, fever, chills, malaise and weakness; <strong>ulcerative skin lesions and swollen lymph nodes</strong>; sore throat, intestinal involvement and respiratory infection. A 10% death rate in the systemic and pulmonic forms</td></tr>
     <tr><td>Relapse</td><td><strong>Intracellular persistence can lead to relapse</strong></td></tr>
     <tr><td>Treatment and prevention</td><td>Gentamicin or tetracycline; an <strong>attenuated vaccine</strong>. A potential bioterrorism agent</td></tr>
   </table>
@@ -443,10 +520,8 @@ BODY = """
   """ + fig("l14-s047-enteric-biochemistry.jpg", 800, 549,
       "Flow chart: enrichment, then plating on eosin methylene blue, MacConkey or Hektoen enteric agar, then triple sugar iron. Lactose and glucose positive organisms are sorted by motility, indole, hydrogen sulfide, Voges-Proskauer, citrate and lysine decarboxylase into Escherichia, Klebsiella, Enterobacter, Citrobacter, Erwinia, Kluyvera and Moellerella; lactose negative, glucose positive organisms by phenylalanine, hydrogen sulfide, citrate, motility, a galactosidase test, gelatinase and urease into Proteus, Providencia, Morganella, Serratia, Salmonella, Hafnia, Edwardsiella, Yersinia and Shigella.",
       "<b>The biochemical tree.</b> Rapid lactose fermentation on triple sugar iron splits the enterics; then "
-      "motility, indole, hydrogen sulfide, Voges-Proskauer, phenylalanine, citrate and urease. Worth reading off: "
-      "<em>Klebsiella</em> is nonmotile and Voges-Proskauer positive; <em>Proteus</em> is phenylalanine and "
-      "hydrogen sulfide positive; <em>Yersinia</em> and <em>Shigella</em> are both phenylalanine, citrate and "
-      "motility negative, and urease splits them (<em>Yersinia</em> positive). Kits such as the Enterotube II run many of these tests at once (slide 49).", 47, MH) + """
+      "motility, indole, hydrogen sulfide, Voges-Proskauer, phenylalanine, citrate and urease. Not to memorize, the recording says: "
+      "it is here as a map of how the enterics are told apart. Kits such as the Enterotube II run many of these tests at once (slide 49).", 47, MH) + """
   <table>
     <tr><th>Isolation medium</th><th>Selective for</th><th>Differential for</th></tr>
     <tr><td><strong>Eosin methylene blue (EMB) agar</strong></td><td>Gram-negative bacteria; the selective agents are the dyes <strong>eosin and methylene blue</strong></td><td>Lactose fermenters</td></tr>
@@ -483,6 +558,9 @@ BODY = """
   not the most prevalent: the <strong>anaerobic <em>Bacteroides</em> and <em>Bifidobacterium</em></strong> are. Of
   about 150 strains, <strong>some have developed virulence through plasmid transfer</strong>; others are
   opportunists.</p>
+  <div class="prof-flag"><span class="prof-flag-label">&#9733; Lecturer emphasized &mdash; &ldquo;four different strains of E. coli that you need to know&rdquo;</span>
+  <p>&ldquo;Hint, hint, hint, hint&rdquo; [1:04:18]: the four pathotypes below, each with its mechanism, disease,
+  source, test and prevention.</p></div>
   <p>The diarrheal strains are acquired from <strong>fecally contaminated food and water</strong> (the entry-and-exit
   diagram of slide 56). Each of the four pathotypes, row by row:</p>
   <table>
@@ -493,7 +571,7 @@ BODY = """
       <td>Fecally contaminated food and water</td>
       <td><strong>Fluid and electrolyte therapy</strong>; kaolin or Lomotil slow gut motility; <strong>bismuth salicylate counteracts the enterotoxin</strong> and is antimicrobial; fluoroquinolones</td></tr>
     <tr><td><strong>Enteroinvasive <em>Escherichia coli</em> (EIEC)</strong></td>
-      <td>Enteroinvasive <em>Escherichia coli</em>: adhesin proteins bind the intestinal wall; <strong>no toxins</strong>, <strong>mechanical cell damage</strong>; an inflammatory disease of the <strong>large intestine</strong>, <strong>similar to shigellosis</strong></td>
+      <td>Enteroinvasive <em>Escherichia coli</em>: adhesin proteins bind the intestinal wall; <strong>no toxins</strong>, <strong>mechanical cell damage</strong> (it damages the wall mechanically, without toxins); an inflammatory disease of the <strong>large intestine</strong>, <strong>similar to shigellosis</strong></td>
       <td><strong>Profuse bloody diarrhea and high fever</strong>; the very young and very old most susceptible; incubation within 24 hours</td>
       <td>Fecally contaminated food and water; diagnosed by immunochemical tests, tissue culture and gene probes</td>
       <td>Fluid and electrolyte therapy; trimethoprim-sulfamethoxazole</td></tr>
@@ -504,7 +582,7 @@ BODY = """
       <td>Fluid and electrolyte therapy; mecillinam, trimethoprim-sulfamethoxazole. <strong>Prevention: breast feeding</strong></td></tr>
     <tr><td><strong>Enterohemorrhagic <em>Escherichia coli</em> (EHEC), O157:H7</strong></td>
       <td>Enterohemorrhagic <em>Escherichia coli</em>, also called Shiga toxin-producing <em>Escherichia coli</em>: a cell wall receptor fuses with the host cell membrane, a portal for toxins including <strong>Shiga toxin</strong> (from <em>Shigella</em>), which <strong>binds ribosomes and disrupts protein synthesis</strong>; endothelial cells detach, platelets meet the subendothelium and coagulation starts; stress pathways release high tumor necrosis factor and interleukin 8</td>
-      <td>Diarrhea, <strong>hemorrhagic colitis</strong> and <strong>hemolytic uremic syndrome</strong> (in a minority of cases: toxins cause apoptosis of renal tubular epithelial cells, and coagulation); gastroenteritis, dysentery, fever, acute abdominal pain</td>
+      <td>Diarrhea, <strong>hemorrhagic colitis</strong> and <strong>hemolytic uremic syndrome</strong> (in 10% of cases: toxins cause apoptosis of renal tubular epithelial cells, and coagulation); gastroenteritis, dysentery, fever, acute abdominal pain</td>
       <td>Reservoir: <strong>the intestines of cattle</strong>; contaminated <strong>beef, water and vegetables</strong>; a small infective dose (about 100 cells). Diagnosed on <strong>Rainbow agar</strong>, where O157:H7 colonies are <strong>black</strong></td>
       <td>Dialysis; corticosteroids &ldquo;if diarrhea is not involved&rdquo; (the slide&rsquo;s wording); transfusions and plasmapheresis. <strong>Antibiotic therapy may exacerbate hemolytic uremic syndrome</strong> (it may worsen it)</td></tr>
   </table>
@@ -547,7 +625,7 @@ BODY = """
   resistant to antibiotics.</p>
   <table>
     <tr><th>Organism</th><th>Features</th><th>Infections</th></tr>
-    <tr><td><em>Proteus</em></td><td><strong>Highly motile</strong>, with <strong>peritrichous flagella</strong>; diagnostic <strong>wavelike, swarming growth</strong> (<em>Proteus vulgaris</em>); most respond to ampicillin and cephalosporins</td><td>Urinary tract and wound infections, pneumonia, septicemia, infant diarrhea; nosocomial infections; related to <strong>bladder and kidney stones</strong>; associated with <strong>Crohn&rsquo;s disease</strong></td></tr>
+    <tr><td><em>Proteus</em></td><td><strong>Highly motile</strong>, with <strong>peritrichous flagella</strong>; diagnostic <strong>wavelike, swarming growth</strong> (<em>Proteus vulgaris</em>); most respond to ampicillin and cephalosporins</td><td>Urinary tract and wound infections, pneumonia, septicemia, infant diarrhea; nosocomial infections; related to <strong>bladder and kidney stones</strong> (an association, not a proven cause); associated with <strong>Crohn&rsquo;s disease</strong></td></tr>
     <tr><td><em>Providencia</em> species</td><td><strong>Multiple animal reservoirs</strong>; almost always resistant to tetracyclines, older penicillins and cephalosporins</td><td>Nosocomial infections; <strong>urinary tract infections with catheters</strong>; gastroenteritis</td></tr>
     <tr><td><em>Morganella morganii</em></td><td>Multidrug resistant, though most strains are naturally susceptible to several drug classes</td><td>Nosocomial; similar to <em>Proteus</em>: urinary tract and wound infections</td></tr>
   </table>
@@ -666,7 +744,7 @@ BODY = """
   <p><em>Haemophilus</em> means <strong>blood loving</strong>: tiny Gram-negative pleomorphic rods,
   <strong>fastidious</strong>, sensitive to drying, temperature extremes and disinfectants. <strong>None can grow on
   blood agar without special techniques: chocolate agar (cooked blood)</strong> is used, because they
-  <strong>require hemin, nicotinamide adenine dinucleotide (NAD) or its phosphate (NADP)</strong>. Some species are
+  <strong>require hemin, nicotinamide adenine dinucleotide (NAD) or its phosphate (NADP)</strong>: they need hemin from the cooked blood. Some species are
   normal colonists of the upper respiratory tract or vagina; others are virulent.</p>
   <table>
     <tr><th>Species</th><th>Disease</th><th>Spread and who</th><th>Treatment and prevention</th></tr>
@@ -713,11 +791,15 @@ BODY = """
     <li><strong><em>Serratia</em> and <em>Hafnia</em>: coliform or not?</strong> Slide 50 lists both among the
     coliforms (lactose fermenters), and slide 68 calls <em>Serratia</em> a coliform; Table 20.1 (slide 12) and the
     biochemical tree (slide 47) put both on the non-lactose-fermenting branch. (<em>Serratia</em> is in fact a slow,
-    late lactose fermenter.) No question asks their lactose status.</li>
+    late lactose fermenter.) In the recording she calls <em>Serratia</em> &ldquo;also a coliform&rdquo; [1:23:06],
+    as slides 50 and 68 do, but the scheme of slide 12 still disagrees, so no question asks their lactose status.</li>
     <li><strong>Which <em>Haemophilus</em> causes childhood meningitis?</strong> Slide 97 names <em>H.
     parainfluenzae</em> and <em>H. ducreyi</em> as the virulent species &ldquo;responsible for childhood meningitis,
     and chancroid&rdquo;; slide 98 gives meningitis to <em>H. influenzae</em>, and slide 100 calls <em>H.
-    parainfluenzae</em> normal oral flora that causes endocarditis. Go by slides 98 and 100.</li>
+    parainfluenzae</em> normal oral flora that causes endocarditis. Go by slides 98 and 100. Reading slide 97 aloud,
+    she named no species: some species are normal flora, &ldquo;and then other species are responsible for
+    childhood meningitis and chancroid&rdquo; [2:00:50], and she then gave meningitis to <em>H. influenzae</em>
+    [2:01:23].</li>
     <li><strong>&ldquo;Motile, oxidase positive&rdquo;</strong> is given to <em>Burkholderia</em>,
     <em>Acinetobacter</em> and <em>Stenotrophomonas</em> together (slide 21). In fact <em>Acinetobacter</em> is
     nonmotile and oxidase negative, and Lecture 9 taught <em>Acinetobacter baumannii</em> among the Gram-negative

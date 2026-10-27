@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # The intro paragraph shown above both Lecture 14 quizzes (tools/render_micro_l14.py).
 INTRO = ("Lecture 14 of Microbiology &mdash; Gram-Negative Bacilli of Medical Importance, the first lecture of Exam 3. "
-         "Thirty questions, every one cited to the slide it came from. "
+         "Thirty questions, every one cited to the slide it came from, weighted by the time each organism got in the lecture, and every set carries all four <i>Escherichia coli</i> pathotypes (the one thing flagged as a must-know). "
          "<b>Start with what every Gram-negative rod carries:</b> endotoxin, the lipopolysaccharide of the outer "
          "membrane, whose lipid A drives fever and, in a flood, septic shock. Then sort by <b>oxygen, lactose and "
          "oxidase</b>. "

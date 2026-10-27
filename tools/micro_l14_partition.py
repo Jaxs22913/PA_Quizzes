@@ -12,10 +12,17 @@ the ORGANISM GROUP in each question's topic field. Every set carries both object
 reservoir or source, at least MIN_IO2 per set) and every organism group weighted 2 or more. The syllabus appendix
 lists eighteen organisms for this lecture (slides 3-4 reproduce it); every one is a topic below or inside one.
 
-WEIGHTS ARE SLIDE COUNTS FOR NOW (phase 1, deck only), scaled to 60 and leaning toward the syllabus list: slides
-that are only case counts, maps and outbreak tallies (33-36, 42, 61-63, 75, 85-87, 91-93) are not counted. When
-the recording has been read, TARGET is re-weighted by minutes spoken (transcript_emphasis_measurement) and this
-script re-run BEFORE the blind review. Slide 18's own emphasis mark ("cystic fibrosis***") is carried by MUST_EACH.
+WEIGHTS ARE MINUTES SPOKEN (audio pass, 27 October 2026; transcript_emphasis_measurement). The recording is a
+classmate's Notability export, three parts (46:13 + 45:19 + 32:12 = 2:03:43), one Whisper transcript only (no
+Notability transcript to compare). Minutes per organism group, stories and outbreak tallies taken out: endotoxin 10,
+sorting 3, Pseudomonas aeruginosa 14, its relatives 4, Brucella 3.5, Francisella 2, Bordetella 8, Legionella 8 (5 of
+them outbreak stories), the enteric family, media and antigens 9, Escherichia coli and its four pathotypes 17,
+other coliforms 7 (4 of them Serratia stories), Proteus and relatives 3.5, Salmonella 9 (2 Typhoid Mary), Shigella 5
+(3 a laboratory story), enteric yersinias 1, Yersinia pestis 12 (5 outbreaks and history), Pasteurella 1,
+Haemophilus 4; scaled to 60. Her one signpost: "There are four different strains of E. coli that you need to know.
+Hint, hint, hint, hint." [1:04:18], so the four pathotypes get 14 of the 60 and EVERY set carries each pathotype
+(MUST_EACH). She said "I'm not going to be testing on which antibiotics" [26:25], matching the pool's rule. The
+slide 18 star ("cystic fibrosis***", which she repeated as "very, very, very common") stays in MUST_EACH.
 
 Four options. Length bias by selection; answer position by ROTATION per set. Set 1 is TEXT-ONLY, so it stays in
 Group Study (build_group_quizzes.py drops a quiz holding any picture); Set 2 carries N_IMG picture questions.
@@ -38,13 +45,13 @@ MIN_IO2 = 6
 N_IMG = 4          # picture questions in Set 2 (Set 1 has none)
 FOLDER = "Microbiology Exam 3"
 
-# SLIDE COUNTS per organism group, scaled to 60 questions (both sets together)
+# MINUTES SPOKEN per organism group (header), scaled to 60 questions (both sets together)
 TARGET = {
-    "Endotoxin": 3, "Classification": 2, "Pseudomonas aeruginosa": 5, "Pseudomonas relatives": 3,
-    "Brucella": 2, "Francisella": 2, "Bordetella": 4, "Legionella": 3,
-    "Enteric features": 4, "Escherichia coli": 1, "ETEC": 2, "EIEC": 2, "EPEC": 2, "EHEC": 3,
-    "Other coliforms": 2, "Proteus & relatives": 2, "Salmonella": 4, "Shigella": 2, "Enteric Yersinia": 1,
-    "Yersinia pestis": 6, "Pasteurella": 1, "Haemophilus": 4,
+    "Endotoxin": 4, "Classification": 2, "Pseudomonas aeruginosa": 5, "Pseudomonas relatives": 2,
+    "Brucella": 2, "Francisella": 1, "Bordetella": 4, "Legionella": 2,
+    "Enteric features": 3, "Escherichia coli": 2, "ETEC": 3, "EIEC": 3, "EPEC": 3, "EHEC": 5,
+    "Other coliforms": 2, "Proteus & relatives": 2, "Salmonella": 3, "Shigella": 2, "Enteric Yersinia": 1,
+    "Yersinia pestis": 5, "Pasteurella": 1, "Haemophilus": 3,
 }
 assert sum(TARGET.values()) == 60, sum(TARGET.values())
 
@@ -107,6 +114,11 @@ CLUSTERS = [
     (2, stem("What is the bubo") + stem("Which form of plague is highly contagious") + stem("Why is septicemic plague")),
     (1, stem("What distinguishes sylvatic") + stem("Where in the United States")),
     (1, stem("How is Pasteurella multocida usually acquired") + stem("Which patients are at risk of septicemia")),
+    # audio-pass pathotype items
+    (1, stem("Which Escherichia coli pathotype damages the intestine without") + stem("How does enteroinvasive Escherichia coli damage")),
+    (1, stem("Which Escherichia coli pathotype produces Shiga") + stem("How does the Shiga toxin")),
+    (1, stem("Which part of the bowel does enteroinvasive") + stem("Which infection does enteroinvasive")),
+    (1, stem("Uptake of which vitamin") + stem("How does enteropathogenic Escherichia coli damage")),
     (2, stem("Which Haemophilus species causes chancroid") + stem("How is the acute conjunctivitis")
         + stem("Which disease was Haemophilus influenzae")),
 ]
@@ -122,9 +134,11 @@ MUST_EACH = [
     # Haemophilus influenzae itself, a syllabus organism: chocolate agar, the misnomer, the Hib vaccine
     stem("Why is Haemophilus grown on chocolate agar") + stem("Which disease was Haemophilus influenzae")
     + stem("Which kind of vaccine prevents Haemophilus"),
+] + [
+    # "four different strains of E. coli that you need to know. Hint, hint, hint, hint." [1:04:18]
+    [i for i, q in enumerate(POOL) if q["topic"] == t] for t in ("ETEC", "EIEC", "EPEC", "EHEC")
 ]
-# Phase 1 has no recording, so nothing is forced in by what was said; these are the slides' core facts that a
-# random draw could leave out. The audio pass adds the lecturer's own cues here.
+# The slides' core facts that a random draw could leave out, then (audio pass) what the recording dwelt on.
 MUST_ANY = [
     stem("How does an infected flea") + stem("What makes a plague-infected flea"),        # plague's vector (IO2)
     stem("What is the bubo"),                                                          # the classic sign
@@ -134,6 +148,13 @@ MUST_ANY = [
     stem("Which extraintestinal infection does Escherichia coli") + stem("In water testing"),
     stem("How is Pasteurella multocida usually acquired"),
     stem("How is Salmonella typhi usually acquired") + stem("Who are the hosts of Salmonella typhi"),
+    # audio pass
+    stem("Why can antibiotic therapy") + stem("When is endotoxin released"),   # "you feel a whole lot worse" [1:11]
+    stem("How is legionellosis transmitted"),                                  # cooling towers, the fountain [47:29-53:27]
+    stem("How do humans usually acquire brucellosis"),                         # raw milk, "pasteurization is a good thing" [33:34]
+    stem("From which organ do some chronic carriers"),                         # Typhoid Mary [1:33:46]
+    stem("Which infection is typical of Pseudomonas"),                         # swimmer's ear, contact lens care [25:14]
+    stem("How is plague diagnosed"),                                           # "you have to diagnose it quickly" [1:53:30]
 ]
 
 # The points the pool deliberately does not test (pool A header), asserted over the whole pool.

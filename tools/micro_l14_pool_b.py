@@ -436,6 +436,73 @@ Q("EPEC", IO1,
     "breast feeding.", "adjacent fact from the same lecture (Brucella)")],
   c(58, 27, 90, 98)),
 
+# ---- audio pass (27 Oct): "There are four different strains of E. coli that you need to know. Hint, hint, hint,
+# hint." [1:04:18]. Two pathotype-versus-pathotype items and two more single-pathotype facts, so each set can carry
+# every pathotype (MUST_EACH in the partition).
+Q("EIEC", IO1,
+  "Which Escherichia coli pathotype damages the intestine without any toxin?",
+  ("Enteroinvasive Escherichia coli",
+   "Correct: enteroinvasive Escherichia coli uses adhesin proteins to bind the intestinal wall and has no toxins; it "
+   "damages the wall through mechanical cell damage."),
+  [("Enterotoxigenic Escherichia coli",
+    "Enterotoxigenic Escherichia coli acts through its heat-labile and heat-stable toxins; the toxin-free, mechanical "
+    "damage is enteroinvasive.", "adjacent pathotype (ETEC)"),
+   ("Enterohemorrhagic Escherichia coli",
+    "Enterohemorrhagic Escherichia coli carries Shiga toxin into host cells; the pathotype with no toxins is "
+    "enteroinvasive.", "adjacent pathotype (EHEC)"),
+   ("Enteropathogenic Escherichia coli",
+    "Enteropathogenic Escherichia coli adheres and destroys microvilli; the pathotype described by \"no toxins\" and "
+    "mechanical damage is enteroinvasive.", "adjacent pathotype (EPEC)")],
+  c(57, 56, 59, 58)),
+
+Q("EIEC", IO1,
+  "Which part of the bowel does enteroinvasive Escherichia coli inflame?",
+  ("The large intestine",
+   "Correct: enteroinvasive Escherichia coli causes an inflammatory disease of the large intestine, similar to "
+   "shigellosis."),
+  [("The small intestine",
+    "Adhering to the small intestine by fimbriae is enterotoxigenic Escherichia coli; the enteroinvasive strain "
+    "inflames the large intestine.", "adjacent pathotype (ETEC)"),
+   ("The gallbladder",
+    "The gallbladder is where chronic typhoid carriers shed Salmonella typhi from; enteroinvasive Escherichia coli "
+    "inflames the large intestine.", "adjacent fact from the same lecture (Salmonella)"),
+   ("The ileum",
+    "Inflammation of the ileum that mimics appendicitis is Yersinia enterocolitica; enteroinvasive Escherichia coli "
+    "inflames the large intestine.", "adjacent fact from the same lecture (Yersinia)")],
+  c(57, 56, 73, 80)),
+
+Q("EPEC", IO1,
+  "Uptake of which vitamin does enteropathogenic Escherichia coli inhibit?",
+  ("Vitamin B1 (thiamin)",
+   "Correct: enteropathogenic Escherichia coli adheres to the intestinal lining, destroys the microvilli and inhibits "
+   "the uptake of vitamin B1 (thiamin)."),
+  [("Vitamin B12 (cobalamin)",
+    "Vitamin B12 (cobalamin) is not the vitamin named for this pathotype; enteropathogenic Escherichia coli inhibits "
+    "vitamin B1 (thiamin) uptake.", "neighboring B vitamin"),
+   ("Vitamin A (retinol)",
+    "Vitamin A (retinol) is not the vitamin named for this pathotype; enteropathogenic Escherichia coli inhibits "
+    "the uptake of vitamin B1 (thiamin).", "plausible vitamin"),
+   ("Vitamin D (calciferol)",
+    "Vitamin D (calciferol) is not the vitamin named for this pathotype; enteropathogenic Escherichia coli "
+    "inhibits the uptake of vitamin B1 (thiamin).", "plausible vitamin")],
+  c(58)),
+
+Q("EHEC", IO1,
+  "Which Escherichia coli pathotype produces Shiga toxin?",
+  ("Enterohemorrhagic Escherichia coli",
+   "Correct: enterohemorrhagic Escherichia coli O157:H7, also called Shiga toxin-producing Escherichia coli, carries "
+   "Shiga toxin into host cells through a cell wall receptor that fuses with the host membrane."),
+  [("Enterotoxigenic Escherichia coli",
+    "Enterotoxigenic Escherichia coli makes heat-labile and heat-stable toxins, not Shiga toxin; Shiga toxin is the "
+    "enterohemorrhagic strain's.", "adjacent pathotype (ETEC)"),
+   ("Enteroinvasive Escherichia coli",
+    "Enteroinvasive Escherichia coli has no toxins and damages the wall mechanically; Shiga toxin belongs to the "
+    "enterohemorrhagic strain.", "adjacent pathotype (EIEC)"),
+   ("Enteropathogenic Escherichia coli",
+    "Enteropathogenic Escherichia coli destroys microvilli and blocks thiamin uptake; Shiga toxin belongs to the "
+    "enterohemorrhagic strain.", "adjacent pathotype (EPEC)")],
+  c(59, 56, 57, 58)),
+
 # ============================================================== ENTEROHEMORRHAGIC E. COLI (slides 59-64)
 Q("EHEC", IO1,
   "What do the O157 and H7 in Escherichia coli O157:H7 name?",
@@ -1178,14 +1245,14 @@ Q("Pasteurella", IO1,
 
 # ============================================================== HAEMOPHILUS (slides 97-101)
 Q("Haemophilus", IO1,
-  "Why is Haemophilus grown on chocolate agar rather than blood agar?",
+  "Why is Haemophilus grown on chocolate agar?",
   ("It needs hemin from cooked blood",
    "Correct: Haemophilus is fastidious, and none can grow on blood agar without special techniques; chocolate agar "
    "(cooked blood) supplies the hemin or nicotinamide adenine dinucleotide it requires."),
   [("It needs low oxygen to survive",
     "The requirement is for blood factors (hemin, nicotinamide adenine dinucleotide or its phosphate), not low "
     "oxygen; chocolate agar is cooked blood.", "oxygen need assumed"),
-   ("It ferments lactose only there",
+   ("It ferments the lactose in it",
     "Lactose fermentation is read on MacConkey's and eosin methylene blue agar; chocolate agar is used because "
     "Haemophilus needs hemin from cooked blood.", "differential medium confused"),
    ("It is killed by bile salts",
