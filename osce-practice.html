@@ -62,7 +62,11 @@
   .choice:hover{border-color:var(--acc);}
   .choice input{position:absolute;left:14px;top:15px;accent-color:var(--acc-ink);}
   .choice b{display:block;font-size:15px;}
-  .choice span{display:block;font-size:13.5px;color:#5c6370;line-height:1.45;margin-top:2px;}   /* 5.4:1 on the violet wash */
+  .choice span{display:block;font-size:13.5px;color:#5c6370;line-height:1.45;margin-top:2px;}
+  .where{display:inline-block;font-size:12px;font-weight:600;color:var(--acc-ink);background:var(--acc-soft);border-radius:8px;padding:1px 8px;margin-right:6px;}
+  ul.review li{margin-bottom:6px;}
+  .exam-rule{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:2px 0 10px;font-size:14px;}
+  .exam-rule .must{margin-top:6px;} .exam-rule ul{list-style:none;padding-left:2px;margin:4px 0 0;} .exam-rule li.no{color:#b42318;} .exam-rule li.ok{color:#1f7a3f;}   /* 5.4:1 on the violet wash */
   .choice.on{border-color:var(--acc-ink);background:var(--acc-soft);}
   details.pick{margin-top:10px;}
   details.pick summary{cursor:pointer;font-size:14px;font-weight:650;color:var(--acc-ink);}
@@ -1151,11 +1155,56 @@
     var g = (S.grade.items || []).filter(function (x) { return x.id === item.id; })[0];
     return g ? { status: g.status, quote: g.quote } : { status: "missed" };
   }
+  // The physical examination is scored the way the station is (Jaxon, 2026-10-26): do the majority of its items and
+  // the section earns its full points, but each examination specific to this patient's condition (the case's
+  // must_exam) that was never performed is docked a point.
+  function isExamSection(sec) { return /physical exam/i.test(sec.title); }
+  function examDone() {
+    var done = {};
+    (S.turns || []).forEach(function (t) {
+      if (t.r !== "a") return;
+      String(t.t).split(/\r?\n/).forEach(function (line) {
+        var m = /^\s*EXAM:\s*(.+)$/i.exec(line);
+        if (m) m[1].split(/[\s,;]+/).forEach(function (id) { if (id) done[id.toLowerCase()] = true; });
+      });
+    });
+    return done;
+  }
+  function maneuverName(id) {
+    var m = station.catalog[id]; if (m) return m.name;
+    var sp = (S.c.special || []).filter(function (x) { return x[0] === id; })[0];
+    return sp ? sp[1] : id;
+  }
+  function sectionScore(sec) {
+    var raw = 0, n = sec.items.length;
+    sec.items.forEach(function (i) { var st = statusOf(i).status; raw += st === "met" ? 1 : st === "partial" ? 0.5 : 0; });
+    if (!isExamSection(sec)) return { pts: raw, n: n, raw: raw };
+    var done = examDone(), must = S.c.must_exam || [];
+    var missed = must.filter(function (id) { return !done[id]; });
+    var majority = raw > n / 2;
+    return { pts: Math.max(0, (majority ? n : raw) - missed.length), n: n, raw: raw, majority: majority, must: must, missed: missed, done: done };
+  }
   function tally() {
     var t = { met: 0, partial: 0, missed: 0, n: 0, pts: 0 };
-    station.rubric.forEach(function (sec) { sec.items.forEach(function (i) { var s = statusOf(i).status; t[s]++; t.n++; t.pts += s === "met" ? 1 : s === "partial" ? 0.5 : 0; }); });
+    station.rubric.forEach(function (sec) {
+      sec.items.forEach(function (i) { t[statusOf(i).status]++; t.n++; });
+      t.pts += sectionScore(sec).pts;
+    });
     t.pct = t.n ? Math.round(t.pts / t.n * 100) : 0;
     return t;
+  }
+  // the after-run review (Jaxon: "where they did good, where they did bad, where they can save time, and how to improve
+  // and where"); each entry names its run-sheet section. An older grade without one shows its two lists instead.
+  function reviewHtml(g) {
+    var rv = g.review;
+    var where = function (w) { return w && w !== "Overall" ? '<span class="where">' + esc(w) + "</span>" : ""; };
+    var part = function (title, arr, k) {
+      return arr && arr.length ? "<h3>" + title + '</h3><ul class="tight review">' + arr.map(function (e) { return "<li>" + where(e.where) + esc(e[k]) + "</li>"; }).join("") + "</ul>" : "";
+    };
+    if (!rv) return (g.strengths && g.strengths.length ? "<h3>What went well</h3>" + list(g.strengths) : "") +
+      (g.improve && g.improve.length ? "<h3>What would raise your score most</h3>" + list(g.improve) : "");
+    return part("Where you did well", rv.did_well, "what") + part("Where you lost points", rv.lost_points, "what") +
+      part("Where you can save time", rv.save_time, "what") + part("How to improve next time", rv.improve, "how");
   }
   function list(arr) { return '<ul class="tight">' + (arr || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"; }
   function keyValue(v) {
@@ -1183,9 +1232,20 @@
     var h = load(K_HIST, []); h.push({ c: S.c.id, d: new Date().toISOString(), s: t.pct, r: S.rules }); save(K_HIST, h.slice(-50));
     var mark = { met: "✓", partial: "◐", missed: "✗" };
     var secs = station.rubric.map(function (sec) {
-      var got = 0, n = 0, group = null, body = "";
+      var sc = sectionScore(sec), n = sc.n, group = null, body = "";
+      if (isExamSection(sec)) {
+        var half = Math.floor(n / 2) + 1, did = Math.round(sc.raw * 2) / 2;
+        body += '<div class="exam-rule">' + (sc.majority ?
+            "You did " + did + " of " + n + " examination items, the majority, so this section earns its full " + n + " points." :
+            "You did " + did + " of " + n + " examination items. Doing " + half + " or more (the majority) earns the section's full " + n + " points.") +
+          (sc.must.length ? "<div class=\"must\"><b>Specific to this patient's condition</b> (each one skipped costs a point):<ul class=\"tight\">" + sc.must.map(function (id) {
+            var ok = sc.done[id];
+            return '<li class="' + (ok ? "ok" : "no") + '">' + (ok ? "✓ " : "✗ ") + esc(maneuverName(id)) + (ok ? "" : " <b>−1</b>") + "</li>";
+          }).join("") + "</ul></div>" : "") + "</div>";
+      }
+      var got = sc.pts;
       sec.items.forEach(function (i) {
-        var st = statusOf(i); n++; got += st.status === "met" ? 1 : st.status === "partial" ? 0.5 : 0;
+        var st = statusOf(i);
         if (i.group && i.group !== group) { group = i.group; body += '<div class="grp">' + esc(group) + "</div>"; }
         body += '<div class="item ' + st.status + '" data-id="' + esc(i.id) + '"><span class="ic">' + mark[st.status] + "</span><div>" + esc(i.text) +
           '<span class="kind">' + (i.kind === "do" ? "do" : "say") + "</span>" +
@@ -1214,9 +1274,7 @@
         '<span class="chip met" id="c-met">' + t.met + ' met</span><span class="chip partial" id="c-part">' + t.partial + ' partly</span><span class="chip missed" id="c-miss">' + t.missed + " missed</span></div>" +
         '<div class="small muted" style="margin-top:6px">of ' + t.n + " run-sheet items. A practice estimate from what you said out loud.</div></div></div>" +
         (g.summary ? '<p style="margin:14px 0 0">' + esc(g.summary) + "</p>" : "") + "</div>" +
-      '<div class="card fb"><h2>Feedback</h2>' +
-        (g.strengths && g.strengths.length ? "<h3>What went well</h3>" + list(g.strengths) : "") +
-        (g.improve && g.improve.length ? "<h3>What would raise your score most</h3>" + list(g.improve) : "") +
+      '<div class="card fb"><h2>Your review</h2>' + reviewHtml(g) +
         (g.high_yield_missed && g.high_yield_missed.length ? "<h3>High-yield things you skipped</h3><ul class=\"tight\">" + g.high_yield_missed.map(function (x) { return "<li><b>" + esc(x.item) + "</b> " + esc(x.why) + "</li>"; }).join("") + "</ul>" : "") +
         (["differential", "studies", "diagnosis", "plan", "education"].some(function (k) { return r[k]; }) ? "<h3>Your clinical reasoning</h3><dl>" +
           ["differential", "studies", "diagnosis", "plan", "education"].filter(function (k) { return r[k]; }).map(function (k) { return "<dt>" + esc(label(k === "differential" ? "ddx" : k)) + "</dt><dd>" + esc(r[k]) + "</dd>"; }).join("") + "</dl>" : "") +

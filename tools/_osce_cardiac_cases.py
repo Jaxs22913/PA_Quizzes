@@ -155,6 +155,10 @@ dict(
      "The liver edge is smooth and slightly tender, palpable about 2 centimeters below the right costal "
      "margin."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['jvp', 'hepatojugular-reflux', 'pmi', 'left-lateral', 'edema', 'lung-bases'],
   key=dict(
     diagnosis=("Chronic heart failure, most likely with preserved ejection fraction from long-standing "
                "hypertension (New York Heart Association class III, with fluid overload but stable for outpatient "
@@ -401,6 +405,10 @@ dict(
      "asks the patient to smile, hold both arms out with the eyes closed, and repeat a sentence",
      "Symmetric smile, no arm drift, clear and fluent speech."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['apical-radial', 'thyroid-palp', 'stroke-screen', 'jvp', 'lung-bases'],
   key=dict(
     diagnosis=("Atrial fibrillation with a rapid ventricular response, hemodynamically stable, first "
                "documented episode about 15 hours ago (one brief self-limited episode six months ago)"),
@@ -645,6 +653,10 @@ dict(
      "keeps a finger on the carotid while listening at the aortic area",
      "The murmur coincides with the carotid upstroke: it is systolic."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['ausc-aortic', 'murmur-timing', 'thrills', 'carotid-ausc', 'apex-carotid', 'dynamic'],
   key=dict(
     diagnosis="Symptomatic aortic stenosis, likely severe and degenerative (calcific) in a man over 70",
     must_not_miss=["Coronary artery disease causing the exertional chest tightness: the two often coexist, so "
@@ -871,6 +883,10 @@ dict(
      "measures both calves 10 centimeters below the tibial tuberosity",
      "Left 39 centimeters, right 38 centimeters."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['standing-inspection', 'pulses', 'cap-refill', 'edema'],
   key=dict(
     diagnosis=("Chronic venous insufficiency (secondary, after her left leg deep vein thrombosis) with varicose "
                "veins, stasis dermatitis and a venous ulcer above the left medial malleolus"),
@@ -1102,6 +1118,10 @@ dict(
      "Alert and oriented with fluent speech; cranial nerves intact; strength and sensation normal and "
      "symmetric; finger-to-nose and gait normal. No focal deficit."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['orthostatic', 'dynamic', 'tongue-inspect', 'neuro-focused'],
   key=dict(
     diagnosis="Vasovagal (reflex) syncope triggered by prolonged standing in the heat",
     must_not_miss=["Cardiogenic syncope: an arrhythmia, or an outflow obstruction such as hypertrophic "
@@ -1345,6 +1365,10 @@ dict(
     ("abdomen-fluid", "Abdominal inspection and percussion", "inspects the abdomen and percusses for fluid",
      "The abdomen is distended and full, with a fluid wave and shifting dullness; the flanks bulge."),
   ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['pmi', 'left-lateral', 'dynamic', 'pulsus-paradoxus', 'hepatojugular-reflux', 'lung-bases'],
   key=dict(
     diagnosis=("Dilated cardiomyopathy, most likely from long-term heavy alcohol use, presenting as heart "
                "failure with reduced ejection fraction and secondary mitral regurgitation"),
@@ -1534,6 +1558,9 @@ if __name__ == "__main__":
         for sp in c["special"]:
             assert len(sp) == 4 and sp[0] not in CATALOG, (where, sp[0])
         assert len(c["special"]) <= 4, where
+        known = set(CATALOG) | {sp[0] for sp in c["special"]}
+        assert 3 <= len(c["must_exam"]) <= 6 and len(set(c["must_exam"])) == len(c["must_exam"]), (where, "must_exam")
+        assert all(m in known for m in c["must_exam"]), (where, "must_exam id not a maneuver", [m for m in c["must_exam"] if m not in known])
         assert "bp-both-arms" in c["exam"], where
         bp = d["vitals"][0][1].split()[0]
         assert bp in c["exam"]["bp-both-arms"], (where, "door blood pressure not in bp-both-arms")

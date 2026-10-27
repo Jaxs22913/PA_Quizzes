@@ -85,6 +85,9 @@ def check_case(c, catalog_ids):
     assert not bad, (cid, "exam overrides for maneuvers not in the catalog", bad)
     for m in c["special"]:
         assert len(m) == 4 and m[0] not in catalog_ids, (cid, "special maneuver", m[0])
+    known = set(catalog_ids) | {m[0] for m in c["special"]}
+    must = c.get("must_exam") or []
+    assert 3 <= len(must) <= 6 and all(m in known for m in must), (cid, "must_exam", must)
 
 
 def build():
@@ -104,6 +107,8 @@ def build():
             "questions": list(c["questions"]),
             "exam": dict(c["exam"]),
             "special": [list(m) for m in c["special"]],
+            # the examinations specific to this condition: each one never performed costs a point (the page docks it)
+            "must_exam": list(c["must_exam"]),
             "key": c["key"],
         })
     ids = [c["id"] for c in cases]
