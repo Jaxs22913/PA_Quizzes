@@ -327,7 +327,8 @@ BODY = """
   <p><strong>Aerobic Gram-negative nonenteric bacilli</strong> are a large, diverse group of
   <strong>non-spore-forming</strong> bacteria, from habitats as varied as the large intestine, animals, the
   respiratory tract, soil and water. Most are not medically important; some are true pathogens and some
-  opportunists. <strong>All use endotoxin as one of their offensive weapons.</strong> The medically important
+  opportunists. <strong>All use endotoxin as one of their offensive weapons.</strong> (The third branch of the
+  scheme, the <strong>obligate anaerobes</strong>, is <em>Bacteroides</em>.) The medically important aerobic
   genera fall in three pairs:</p>
   <table>
     <tr><th>Pair</th><th>Kind of pathogen</th></tr>
@@ -468,12 +469,16 @@ BODY = """
       "complications.", 32) + """
   <div class="pearl"><strong>Why pertussis is rising again.</strong> Case charts from 1922 to 2026 show the fall
   after the whole-cell vaccine and a rise since the acellular vaccine. The deck gives three threads:
-  <strong>infants under 2 months are too young to be vaccinated</strong> (they cannot get the vaccine), so incidence is highest under 1 year old (in
-  Florida in 2023, over half of reported cases were not up to date on vaccination); the age pattern in older
-  children and adolescents <strong>reflects waning immunity from childhood vaccination and the need for booster
-  doses</strong>; and, &ldquo;another possible connection&rdquo;, <strong>pertactin</strong>, the protein that helps
-  the bacterium adhere to airway linings and a vaccine component, is missing from <strong>pertactin-negative
-  strains now developing</strong>.</div>
+  <ul>
+    <li><strong>Infants under 2 months are too young to be vaccinated</strong> (they cannot get the vaccine), so
+    incidence is highest under 1 year old (in Florida in 2023, over half of reported cases were not up to date on
+    vaccination).</li>
+    <li>The age pattern in older children and adolescents <strong>reflects waning immunity from childhood
+    vaccination and the need for booster doses</strong>.</li>
+    <li>&ldquo;Another possible connection&rdquo;: <strong>pertactin-negative strains are now developing</strong>.
+    Pertactin is the protein that helps the bacterium adhere to airway linings and a vaccine component, and these
+    strains lack it.</li>
+  </ul></div>
 
   <h3 class="sub" id="gnb-alcaligenes">14.8 &middot; Objective 1 &mdash; <em>Alcaligenes</em></h3>
   <p>An aerobe of the non-fermenting branch (14.2), not on the syllabus list. Lives primarily in soil and water and
@@ -540,6 +545,8 @@ BODY = """
     <td><em>Proteus</em>, <em>Providencia</em>, <em>Morganella</em>, <em>Edwardsiella</em></td>
     <td>Enteric: <em>Salmonella typhi</em>, <em>S. cholerae-suis</em>, <em>S. enteritidis</em>; <em>Shigella dysenteriae</em>, <em>S. flexneri</em>, <em>S. boydii</em>, <em>S. sonnei</em>; <em>Yersinia enterocolitica</em>, <em>Y. pseudotuberculosis</em>. Nonenteric: <em>Yersinia pestis</em></td></tr>
   </table>
+  <p>The <strong>true pathogens</strong> are not normal flora: <em>Salmonella typhi</em> and the other salmonellae,
+  <em>Shigella</em> and the enteric yersinias, and the nonenteric <em>Yersinia pestis</em>.</p>
   <h4 class="subsub">Antigens and virulence factors</h4>
   <p>Complex surface antigens contribute to pathogenicity and trigger the immune response:</p>
   <ul>
@@ -589,7 +596,9 @@ BODY = """
   <p><strong>Enterohemorrhagic outbreaks</strong> have come from a fast-food beef patty and slivered onions (2024),
   romaine lettuce, raw milk and cheese, and chicken wraps (2026). <strong>Rainbow agar</strong> carries chromogenic
   substrates for beta-galactosidase (blue/black) and beta-glucuronidase (red); <strong>O157:H7 is glucuronidase
-  negative</strong>, so its colonies come up black.</p>
+  negative</strong>, so its colonies come up black. Enterohemorrhagic infection is managed with dialysis,
+  transfusions and plasmapheresis, and <strong>antibiotic therapy is approached with caution because it may
+  worsen hemolytic uremic syndrome</strong>.</p>
   <p>The name <strong>O157:H7</strong> reads the antigens of 14.10: <strong>O</strong> (somatic) antigen type 157 and
   <strong>H</strong> (flagellar) antigen type 7.</p>
   """ + fig("l14-s064-rainbow-agar.jpg", 458, 435,
@@ -633,6 +642,8 @@ BODY = """
       "An agar surface covered by concentric rings of growth spreading outward from two central points.",
       "<b>Swarming</b>: <em>Proteus vulgaris</em> moves out across the plate in waves, the rings its diagnostic "
       "growth pattern.", 71) + """
+  <p><em>Proteus vulgaris</em> is diagnosed on the plate by its <strong>wavelike, swarming growth</strong>: highly
+  motile on its peritrichous flagella, it spreads across the agar in waves.</p>
 
   <h3 class="sub" id="gnb-salmonella">14.14 &middot; Objective 1 &mdash; <em>Salmonella</em>: typhoid and the salmonelloses</h3>
   <p><em>Salmonella typhi</em> causes <strong>typhoid fever</strong> and <em>Salmonella paratyphi</em>
@@ -733,10 +744,10 @@ BODY = """
   associated with increased susceptibility to autoimmune diseases</strong>.</div>
 
   <h3 class="sub" id="gnb-pasteurella">14.18 &middot; Objective 1 &mdash; <em>Pasteurella multocida</em></h3>
-  <p>With <em>Haemophilus</em>, one of the <strong>oxidase-positive nonenteric</strong> pathogens. A
-  <strong>zoonotic genus, normal flora in animals</strong>. Opportunistic infections, mostly in
-  <strong>veterinarians</strong>, but they can come from domestic animals: <strong>animal bites or scratches cause a
-  local abscess</strong> that can spread to joints, bones and lymph nodes. <strong>The immunocompromised are at risk
+  <p><em>Pasteurella multocida</em> is, with <em>Haemophilus</em>, one of the <strong>oxidase-positive
+  nonenteric</strong> pathogens: a <strong>zoonotic genus, normal flora in animals</strong>. Its opportunistic
+  infections are mostly in <strong>veterinarians</strong>, but they can come from domestic animals:
+  <em>Pasteurella</em> reaches people through <strong>animal bites or scratches, which cause a local abscess</strong> that can spread to joints, bones and lymph nodes. <strong>The immunocompromised are at risk
   of septicemia</strong> and complications of the central nervous system and heart. Treatment: penicillin and
   tetracycline.</p>
 
