@@ -192,8 +192,8 @@
   <section id="v-setup">
     <h1>OSCE Practice</h1>
     <p class="sub">A practice OSCE (objective structured clinical examination) station you run out loud. Read the door
-      form for one minute, then walk in: talk to the patient, narrate your exam, and the facilitator reads you the
-      findings. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
+      form for one minute, then walk in: talk to the patient and narrate your exam, and each finding shows on the
+      screen. After twenty minutes, give your one-minute presentation and get graded on the Cardiac OSCE run-sheet.</p>
 
     <div class="card" id="access">
       <div id="access-msg" class="muted">Checking your sign-in…</div>
@@ -218,7 +218,7 @@
       <h3>Who answers your history questions</h3>
       <div class="choices">
         <label class="choice on"><input type="radio" name="rules" value="patient" checked><b>The patient talks</b><span>The patient answers in their own words. Easiest way to practice the interview.</span></label>
-        <label class="choice"><input type="radio" name="rules" value="real"><b>Real station rules</b><span>The patient gives only their name and date of birth; the facilitator answers everything else.</span></label>
+        <label class="choice"><input type="radio" name="rules" value="real"><b>Real station rules</b><span>The patient gives only their name and date of birth; everything else shows on the screen as notes.</span></label>
       </div>
 
       <h3>Voice</h3>
@@ -229,7 +229,7 @@
         <label class="choice" data-v="none"><input type="radio" name="voice" value="none"><b>Captions only</b><span>No speech; read the replies.</span></label>
       </div>
       <div id="kokoro-status" class="small muted hidden"><span id="kokoro-text">Downloading the free voice…</span><div class="bar"><i id="kokoro-bar"></i></div></div>
-      <p class="small muted" style="margin:8px 0 0">The patient speaks in a voice that matches their sex; the facilitator has a different voice.
+      <p class="small muted" style="margin:8px 0 0">The patient speaks in a voice that matches their sex. Findings and notes show on the screen, not aloud.
         <button type="button" class="btn quiet small" id="voice-test">Test the voices</button></p>
 
       <h3>Talking</h3>
@@ -314,7 +314,8 @@
         <h2 style="margin:0">One-minute presentation</h2>
         <div class="clock" id="present-clock">0:00</div>
       </div>
-      <p class="muted small">Present the patient as you would to your facilitator: who they are and why they came,
+      <p class="small hidden" id="present-why"></p>
+      <p class="muted small">Present the patient: who they are and why they came,
         the pertinent positives and negatives, your exam, your differential, studies, diagnosis and plan. Aim for about
         a minute. Press Finish when you are done.</p>
       <div class="row" style="margin:6px 0 10px">
@@ -694,10 +695,9 @@
     engine = v === "google" ? "device" : v;
     btn.disabled = true;
     unlockAudio();
-    var lines = [["male", "p", "Hi. This is how a male patient sounds."], ["female", "p", "And this is how a female patient sounds."],
-                 ["male", "f", "I'm the facilitator. I read you the examination findings."]];
+    var lines = [["male", "p", "Hi. This is how a male patient sounds."], ["female", "p", "And this is how a female patient sounds."]];
     (v === "kokoro" ? loadKokoro() : Promise.resolve()).then(function () {
-      // all three asked for at once, so each is being made while the one before it plays
+      // both asked for at once, so the second is being made while the first plays
       var preps = lines.map(function (l) { sexNow = l[0]; return prepare(l[2], l[1]); });
       return lines.reduce(function (chain, l, i) {
         return chain.then(function () { return preps[i]; }).then(function (play) { sexNow = l[0]; return play(); });
@@ -821,8 +821,8 @@
     var left = roomLeft();
     $("room-clock").textContent = mmss(left);
     $("room-clock").classList.toggle("low", left <= 60);
-    if (!S.warned5 && left <= 300) { S.warned5 = true; facilitatorNote("Five minutes remaining."); }
-    if (!S.warned1 && left <= 60) { S.warned1 = true; facilitatorNote("One minute remaining."); }
+    if (!S.warned5 && left <= 300) { S.warned5 = true; sysLine("Five minutes remaining."); }
+    if (!S.warned1 && left <= 60) { S.warned1 = true; sysLine("One minute remaining."); }
     if (left <= 0) { S.timedOut = true; toPresentation("Time is up. Please give your one-minute presentation."); }
   }
   function elapsed() { return S && S.roomStart ? Math.round((Date.now() - S.roomStart) / 1000) : 0; }
@@ -835,10 +835,6 @@
     return d;
   }
   function sysLine(t) { return addLine("sys", "", esc(t)); }
-  function facilitatorNote(t) {
-    addLine("f", "Facilitator", esc(t));
-    if (!S.busy) { pauseMic(); prepare(t, "f").then(function (p) { return p(); }).then(resumeMic); }
-  }
   function patientName() { return S.c.door.name.split(" ")[0]; }
 
   // the student said something: to the patient, unless a reply is still on its way (then it waits and goes next)
@@ -851,19 +847,53 @@
     if (S.busy) { S.pending = true; return; }
     sendTurn();
   }
-  function requestTurns() {
+  function requestTurns(extra) {
     // the server takes up to 260 turns and 60,000 characters; keep the newest, starting with the student
-    var t = S.turns.slice(-240), total = 0, out = [];
+    var t = S.turns.slice(-240).concat(extra ? [extra] : []), total = 0, out = [];
     for (var i = t.length - 1; i >= 0; i--) { total += t[i].t.length; if (total > 55000) break; out.unshift(t[i]); }
     while (out.length && out[0].r !== "s") out.shift();
     return out.map(function (x) { return { r: x.r, t: x.t, at: x.at }; });
+  }
+  // Asking early. The helper takes about 0.8 s to answer, so the words heard so far go out as soon as they look
+  // finished (settled, or unchanged for 0.4 s), while the page still waits out the pause. When the pause ends on the
+  // same words, that answer is used at once; if the student kept talking, it is dropped (Jaxon: "I feel like after I
+  // finish talking and by the time it replies takes too long"). Each early ask counts as a turn on the helper (240 a
+  // station), so at most two per question: one on words still being guessed at, then settled ones; none at all once
+  // a station has used 160 turns.
+  var early = null, earlyN = 0, lastAsk = 0, earlyTimer = 0;
+  function sameWords(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9' ]+/g, " ").replace(/\s+/g, " ").trim(); }
+  function heardNow() { return (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim(); }
+  function askHelper(turns) {
+    lastAsk = Date.now(); S.asks = (S.asks || 0) + 1;
+    return SB().osce("turn", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: turns });
+  }
+  function askEarly(settled) {
+    if (!S || S.over || S.busy || S.phase === "present" || S.talk === "typed") return;
+    var t = heardNow(), key = sameWords(t) + "|" + S.turns.length;
+    if (!sameWords(t) || (early && early.key === key)) return;
+    if (earlyN >= (settled ? 2 : 1) || S.asks >= 160 || Date.now() - lastAsk < 450) return;   // the helper: 0.4 s apart
+    earlyN++;
+    var e = early = { key: key };
+    e.p = askHelper(requestTurns({ r: "s", t: t.slice(0, 1990), at: elapsed() })).then(function (r) {
+      // in before the pause is over: get the patient's first line ready to speak too
+      if (early === e && r && r.ok && !S.busy && !S.over) {
+        var first = (r.lines || []).filter(function (l) { return l.r === "P"; })[0];
+        if (first) S.ready = { t: first.t, p: prepare(first.t, "p") };
+      }
+      return r;
+    });
   }
   function sendTurn(retry) {
     S.busy = true; S.pending = false;
     pauseMic();
     setMicState('Patient is answering <span class="thinking"><i></i><i></i><i></i></span>');
-    var startedAt = S.session, sentLen = S.turns.length;
-    SB().osce("turn", { station: STATION, case: S.c.id, session: S.session, rules: S.rules, turns: requestTurns() }).then(function (r) {
+    var startedAt = S.session, sentLen = S.turns.length, last = S.turns[sentLen - 1];
+    var pre = !retry && early && last && last.r === "s" && early.key === sameWords(last.t) + "|" + (sentLen - 1) ? early.p : null;
+    early = null;
+    if (!pre) S.ready = null;
+    // the helper refuses a turn within 0.4 s of the one before (a dropped early ask included)
+    var wait = pre ? 0 : Math.max(0, lastAsk + 450 - Date.now());
+    (pre || new Promise(function (ok) { setTimeout(ok, wait); }).then(function () { return askHelper(requestTurns()); })).then(function (r) {
       if (!S || S.session !== startedAt || S.over) return;
       if (S.phase === "present") { if (r && r.ok) S.turns.splice(sentLen, 0, { r: "a", t: r.reply, at: elapsed() }); S.busy = false; return; }
       if (!r || !r.ok) {
@@ -884,28 +914,33 @@
       });
     });
   }
-  // the reply's lines in order: the patient in their voice, findings and the facilitator in the facilitator's
+  // the reply's lines in order. Only the patient speaks (Jaxon: "Remove the facilitaor and just do the patient"):
+  // findings and notes show on the screen at once and are never read aloud.
   function playReply(lines) {
-    var nodes = lines.map(function (l) {
+    var said = [];
+    lines.forEach(function (l) {
       S.log.push({ r: l.r, t: l.t, at: elapsed(), name: l.name });
-      if (l.r === "P") return addLine("p", patientName(), esc(l.t));
-      if (l.r === "X") return addLine("x", "Finding", '<span class="mname">' + esc(l.name || "") + ":</span> " + esc(l.t));
-      return addLine("f", "Facilitator", esc(l.t));
+      if (l.r === "P") said.push({ t: l.t, node: addLine("p", patientName(), esc(l.t)) });
+      else if (l.r === "X") addLine("x", "Finding", '<span class="mname">' + esc(l.name || "") + ":</span> " + esc(l.t));
+      else addLine("f", "Note", esc(l.t));
     });
     // prepare each line's audio as soon as the one before it starts playing
     var chain = Promise.resolve();
     var preps = [];
-    lines.forEach(function (l, i) { preps[i] = null; });
-    function prep(i) { if (i < lines.length && !preps[i]) preps[i] = prepare(lines[i].t, lines[i].r === "P" ? "p" : "f"); return preps[i]; }
-    lines.forEach(function (l, i) {
+    function prep(i) {
+      if (i < said.length && !preps[i]) preps[i] = i === 0 && S.ready && S.ready.t === said[0].t ? S.ready.p : prepare(said[i].t, "p");
+      if (i === 0) S.ready = null;
+      return preps[i];
+    }
+    said.forEach(function (l, i) {
       chain = chain.then(function () {
         if (S.over || S.phase === "present") return;
         var p = prep(i); prep(i + 1);
         return p.then(function (play) {
           if (S.over || S.phase === "present") return;
-          nodes[i].classList.add("speaking");
-          setMicState(l.r === "P" ? patientName() + " is speaking…" : "Facilitator…");
-          return play().then(function () { nodes[i].classList.remove("speaking"); });
+          l.node.classList.add("speaking");
+          setMicState(patientName() + " is speaking…");
+          return play().then(function () { l.node.classList.remove("speaking"); });
         });
       });
     });
@@ -965,7 +1000,7 @@
     } catch (e) { rec = null; }
   }
   function stopRec() {
-    clearTimeout(silence);
+    clearTimeout(silence); clearTimeout(earlyTimer);
     if (rec) { var r = rec; rec = null; r.onend = null; try { r.abort(); } catch (e) {} }
     $("mic").classList.remove("hot");
   }
@@ -991,17 +1026,20 @@
     // (Jaxon: "takes to long to reply"). Words still being guessed at, or none settled yet, keep the full pause, so
     // a breath mid-question doesn't cut the student off.
     var settled = heardFinal.trim() && !heardInterim.trim();
+    clearTimeout(earlyTimer);
+    if (settled) askEarly(true); else earlyTimer = setTimeout(askEarly, 400);
     silence = setTimeout(function () {
       var quiet = Date.now() - lastHeard;
-      // an unfinished phrase (no final words yet) gets a little longer
-      if (!heardFinal.trim() && quiet < S.pause + 700) return armSilence();
+      // no settled words at all (Safari's recognizer often never settles them): 0.7 s more than the pause. This used to
+      // start the whole pause again, so a turn waited two pauses (3.8 s on Normal) before it was sent.
+      if (!heardFinal.trim() && quiet < S.pause + 700) { silence = setTimeout(commit, S.pause + 700 - quiet); return; }
       commit();
-    }, settled ? Math.max(450, Math.round(S.pause * 0.4)) : S.pause);
+    }, settled ? Math.max(450, Math.round(S.pause * 0.3)) : S.pause);
   }
   function commit() {
-    var t = (heardFinal + " " + heardInterim).replace(/\s+/g, " ").trim();
+    var t = heardNow();
     stopRec(); clearLive();
-    heardFinal = ""; heardInterim = "";
+    heardFinal = ""; heardInterim = ""; earlyN = 0;
     if (t) studentSays(t); else resumeMic();
   }
 
@@ -1022,6 +1060,7 @@
   function holdEnd() {
     if (!holding) return;
     holding = false;
+    askEarly(true);              // usually the words are all in: ask now, and use the answer if nothing more arrives
     setTimeout(commit, 450);     // the last words arrive just after the button is let go
   }
   mic.addEventListener("pointerdown", holdStart);
@@ -1065,11 +1104,11 @@
       $("present-clock").classList.toggle("low", s > 90);
       $("present-note").textContent = s > 90 ? "Over a minute and a half: wrap up." : "";
     }, 250);
-    var prompt = say || "Please give your one-minute presentation.";
-    (engine === "none" ? Promise.resolve() : prepare(prompt, "f").then(function (p) { return p(); })).then(function () {
-      if (SR && S.talk !== "typed") { S.presentMic = true; startPresentRec(); }
-      else $("pmic-state").textContent = "Type your presentation below.";
-    });
+    // shown, not spoken: only the patient has a voice
+    $("present-why").textContent = say || "";
+    $("present-why").classList.toggle("hidden", !say);
+    if (SR && S.talk !== "typed") { S.presentMic = true; startPresentRec(); }
+    else $("pmic-state").textContent = "Type your presentation below.";
     if (!SR || S.talk === "typed") $("pmic").classList.add("hidden");
   }
   var prec = null, pBase = "";
@@ -1263,7 +1302,7 @@
     var keyHtml = '<dl class="keybox"><dt>Diagnosis</dt><dd>' + esc(key.diagnosis || S.c.condition) + "</dd>" +
       Object.keys(key).filter(function (k) { return k !== "diagnosis"; }).map(function (k) { return "<dt>" + esc(label(k)) + "</dt><dd>" + keyValue(key[k]) + "</dd>"; }).join("") + "</dl>";
     var tx = S.log.map(function (l) {
-      var who = l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Facilitator";
+      var who = l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Note";
       return "<p><b>" + mmss(l.at) + " " + esc(who) + ":</b> " + (l.name ? esc(l.name) + ": " : "") + esc(l.t) + "</p>";
     }).join("") + (S.presentation ? "<p><b>Presentation:</b> " + esc(S.presentation) + "</p>" : "");
 
@@ -1299,7 +1338,7 @@
       var hh = load(K_HIST, []); if (hh.length) { hh[hh.length - 1].s = t2.pct; save(K_HIST, hh); }
     };
     $("copy-tx").onclick = function () {
-      var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Facilitator") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
+      var text = S.log.map(function (l) { return mmss(l.at) + " " + (l.r === "s" ? "You" : l.r === "P" ? patientName() : l.r === "X" ? "Finding" : "Note") + ": " + (l.name ? l.name + ": " : "") + l.t; }).join("\n") +
         (S.presentation ? "\n\nPresentation: " + S.presentation : "");
       try { navigator.clipboard.writeText(text).then(function () { $("copy-tx").textContent = "Copied"; }); } catch (e) {}
     };

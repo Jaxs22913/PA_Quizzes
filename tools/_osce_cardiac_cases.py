@@ -16,6 +16,9 @@ disease and deep vein thrombosis, so none of those is a case diagnosis (they may
 Chronic heart failure is written as the preserved-ejection-fraction picture the chart row allows
 (hypertension, sustained apical impulse, fourth heart sound) so it stays distinct from the dilated
 cardiomyopathy case (reduced ejection fraction, displaced impulse, third heart sound, mitral regurgitation).
+Acute infective endocarditis (Jaxon, 2026-10-26: "Add Acute Infective Endocarditis to the Osce prep") is not a
+chart row: it is grounded in the CMS L32 deck and the Physical Diagnosis 2 decks on its cites line, and the
+self-check skips the chart-differential match for it (OFF_CHART).
 
 Schema of each case: see the build brief; the self-check at the bottom enforces it.
 """
@@ -1486,6 +1489,337 @@ dict(
   ),
 ),
 
+# =====================================================================================================
+# 7. ACUTE INFECTIVE ENDOCARDITIS (native tricuspid valve, injection drug use; not a chart row)
+# =====================================================================================================
+dict(
+  id="cardiac-acute-infective-endocarditis",
+  condition="Acute infective endocarditis",
+  cites=("CMS L32 Infective Endocarditis (32. Infective Endocarditis FALL 2026 SV.pptx), slides 5-6, 10-18, "
+         "21-23, 25-27, 32-37, 42; PD2 Cardiovascular slides 10, 34, 50, 56-57, 63, 73; PD2 Advanced "
+         "Exam Ocular slides 40, 99; PD2 Derm slide 89"),
+  door=dict(
+    name="Cody Brannigan", sex="male", age=33, dob="March 3, 1993",
+    setting="Urgent care clinic, walk-in visit",
+    cc="\"I've had fevers and chills for a few days.\"",
+    vitals=[("Blood pressure", "104/62 mmHg"),
+            ("Heart rate", "118 beats per minute, regular"),
+            ("Respiratory rate", "22 breaths per minute"),
+            ("Temperature", "103.1 °F (39.5 °C)"),
+            ("Oxygen saturation", "95% on room air"),
+            ("Height and weight", "5 feet 10 inches, 158 pounds (body mass index 22.7)")],
+  ),
+  persona=("A 33-year-old car wash attendant and former line cook, quiet and worn out, shivering under a hoodie "
+           "with the sleeves pulled down. He expects to be judged about his drug use, so he stays "
+           "vague ('I've just been run down') until he is asked directly and respectfully, and then he answers "
+           "honestly and in detail. He is frightened, wants to get better, and worries about losing his job."),
+  opening="I've had fevers and shaking chills for four days, and I feel like I got hit by a truck. My girlfriend "
+          "made me come in.",
+  facts=[
+    ("Full name", "Cody Brannigan."),
+    ("Date of birth", "March 3, 1993."),
+    ("Onset", "Four days ago, on Thursday. I was fine Wednesday. Thursday afternoon at work I started shaking "
+              "with chills, and by that night I was burning up. It came on fast."),
+    ("Location", "It's not one spot. My whole body aches."),
+    ("Duration", "Four days now. The fevers come and go all day and night, but they never really go away."),
+    ("Character", "Hot, then cold. I'll be sweating through my shirt, then shaking so hard my teeth chatter."),
+    ("Alleviating factors", "Tylenol and ibuprofen take the edge off for a couple of hours, then it comes right "
+                            "back."),
+    ("Aggravating factors", "Nothing in particular. Moving around makes the aching worse, and the stairs wind "
+                            "me."),
+    ("Radiation", "No pain that goes anywhere. Just aching all over."),
+    ("Severity", "An eight out of ten. I've never felt this sick. A ten was breaking my collarbone "
+                 "skateboarding when I was fifteen."),
+    ("Temporal pattern", "Worse every day since Thursday. The chills hit hardest in the evening and at night."),
+    ("Prior episodes", "Never anything like this. I get colds, but nothing like this."),
+    ("Fever", "Yes, high. My girlfriend's thermometer said 103.4 last night. I took Tylenol about three hours "
+              "ago."),
+    ("Chills and sweats", "Shaking chills, the kind you can't stop. I've soaked the sheets two nights in a row."),
+    ("Muscle and joint aches", "My muscles ache everywhere, my legs and shoulders the worst. My old back "
+                               "pain is the same as always. My joints aren't swollen or red."),
+    ("Headache", "A dull headache when the fever is up. It eases when the fever comes down. Nothing like the "
+                 "worst headache of my life."),
+    ("Neck stiffness and light sensitivity", "No, my neck moves fine, and light doesn't bother my eyes."),
+    ("Neurologic", "My head's clear. No weakness, no numbness, no trouble talking or seeing. Kayla says I'm "
+                   "acting like myself, just wiped out."),
+    ("Cough", "A dry cough the last two days. It keeps tickling and it doesn't make sense to me, because I don't "
+              "have a cold. Nothing comes up, no blood."),
+    ("Shortness of breath", "A little winded climbing the stairs to our apartment since yesterday. Sitting here "
+                            "I'm okay."),
+    ("Chest pain", "No chest pain."),
+    ("Palpitations", "My heart's been pounding with the fevers, but it's steady. No skipping."),
+    ("Fainting or near-fainting", "No. A little lightheaded if I stand up fast, but I haven't passed out."),
+    ("Orthopnea", "No, I can lie flat on one pillow."),
+    ("Waking at night short of breath", "No. I wake up with the sweats and chills, not short of breath."),
+    ("Leg swelling", "No."),
+    ("Rash or skin spots", "No rash or spots that I've noticed."),
+    ("Eyes and vision", "My vision is fine. My eyes aren't red or sore."),
+    ("Sore throat, ear or sinus symptoms", "No sore throat, no stuffy nose, no ear pain."),
+    ("Nausea, vomiting or sweating", "A little queasy, but no vomiting. And the sweats, like I said."),
+    ("Heartburn or belly pain", "No heartburn, no belly pain, no diarrhea."),
+    ("Urination", "Normal, maybe a little darker because I haven't been drinking much. No burning."),
+    ("Appetite", "I've barely eaten since Thursday. Crackers and sports drinks."),
+    ("Constitutional", "Fevers, chills, soaking sweats, aches and no energy since Thursday. Before Thursday I "
+                       "felt fine: no sweats, and no weight loss over the last few months."),
+    ("Joint swelling, facial rash or mouth sores", "No swollen joints, no rash on my face, no mouth sores. The "
+                                                   "sun doesn't bother my skin."),
+    ("Teeth and dental work", "My teeth are okay. No toothaches. I haven't been to a dentist in a few years, so "
+                              "no dental work."),
+    ("Tuberculosis exposure", "Not that I know of. Nobody around me has had it."),
+    ("Sick contacts, travel and ticks", "Nobody around me has been sick. No travel. No camping or hiking, and no "
+                                        "tick bites."),
+    ("Anything else", "No, that's it. I just feel awful."),
+    ("Chronic conditions", "None. I've always been healthy, other than my back."),
+    ("Heart murmur or heart problems", "Nobody has ever told me I had a murmur or anything wrong with my heart. I "
+                                       "had a checkup at a free clinic two years ago, and the doctor said my heart "
+                                       "sounded fine."),
+    ("Heart surgery, valves or devices", "No heart surgery, no artificial valve, no pacemaker. No heart problem "
+                                         "as a kid and no rheumatic fever that I know of."),
+    ("Prior heart infection", "No, never."),
+    ("Surgeries and procedures", "None. The collarbone healed in a sling."),
+    ("Hospitalizations", "One night last year after an overdose. Kayla gave me naloxone and called 911."),
+    ("Recent hospital or clinic procedures", "Nothing recent. I haven't been in a hospital since that night."),
+    ("Prescription medications", "None."),
+    ("Over-the-counter medicines and supplements", "Tylenol and ibuprofen for the fever since Thursday. The last "
+                                                   "Tylenol was about three hours ago. No supplements."),
+    ("Allergies", "No allergies that I know of. I had amoxicillin as a kid and it was fine."),
+    ("Tobacco", "About a pack a day since I was sixteen."),
+    ("Alcohol", "A few beers on the weekend. Not much."),
+    ("Recreational drugs", "(Looks down, then answers.) I use heroin. Really it's fentanyl now, that's what's in "
+                           "everything. I inject it, three or four times a day, for about three years."),
+    ("How the drug use started", "I hurt my back lifting at the warehouse about four years ago. I got pain "
+                                 "pills, and when those stopped I ended up buying, then injecting because it was "
+                                 "cheaper."),
+    ("Needles and injection practices", "I try to get new needles from the syringe program, but when I run out "
+                                        "I reuse mine, and a couple of times last month I shared with a friend. I "
+                                        "don't always wipe my skin first."),
+    ("Where he injects", "Mostly the inside of my elbows, sometimes my left forearm. No sores or abscesses "
+                         "lately."),
+    ("Last use", "This morning, before Kayla drove me here. Just enough so I wouldn't get sick from stopping."),
+    ("Withdrawal", "This isn't the sick I get when I run out. I know that feeling, and it never gave me a "
+                   "fever or shaking chills like this. And I used this morning."),
+    ("Other drugs", "No meth, no cocaine. Just that."),
+    ("Treatment for drug use", "I was on methadone for a few months two years ago. I stopped going when I lost "
+                               "my ride. I want to quit. I'm tired of it."),
+    ("Infection testing", "They tested me for human immunodeficiency virus at the syringe program in the "
+                          "spring. It was negative. Nobody has ever tested me for hepatitis."),
+    ("High blood pressure, cholesterol or diabetes", "No, none of those."),
+    ("Occupation and exposures", "I work part-time at a car wash. Before that I was a line cook, and before my "
+                                 "back injury I loaded trucks at a warehouse."),
+    ("Exercise and activity", "Not much lately. I walk to work."),
+    ("Diet", "Fast food, mostly. I skip a lot of meals."),
+    ("Living situation", "I rent a room with my girlfriend, Kayla. She drove me here and she's in the waiting "
+                         "room."),
+    ("Sexual history", "Just Kayla, for two years. We don't always use condoms."),
+    ("Family history, parents", "My mom has type 2 diabetes. I don't know my dad."),
+    ("Family history, siblings", "One younger brother. He's healthy."),
+    ("Family history, heart disease or sudden death", "Nobody with heart problems that I know of. Nobody died "
+                                                      "young or suddenly."),
+    ("What he thinks it is", "I figured it was the flu. Kayla thinks it might be from using."),
+    ("Concerns", "I'm scared. I don't want to lose my job, and I don't want to be treated like I'm just a drug "
+                 "user."),
+  ],
+  questions=["Is this from using?",
+             "Do I really have to go to the hospital right now?",
+             "Am I going to need heart surgery?"],
+  exam={
+    "position": "He lies back with the head of the bed at 30 degrees, shivering, and asks for a blanket.",
+    "general-survey": ("Ill-appearing young man, flushed, sweating and shivering under a hoodie with the sleeves "
+                       "pulled down. Alert, oriented and answering clearly, speaking in full "
+                       "sentences, breathing a little fast."),
+    "hands-nails": ("Hands are warm and damp. The nail beds are pink, with no lines or spots under any nail; "
+                    "the palms and finger pads have no spots and no tender nodules. No clubbing, no cyanosis."),
+    "carotid-palp": "Carotid pulses are 2+, brisk and symmetric, fast and regular. No thrill.",
+    "ausc-aortic": ("Aortic area: fast, regular rhythm at about 118; normal first and second heart sounds; no "
+                    "murmur."),
+    "ausc-pulmonic": "Pulmonic area: fast, regular rhythm; normal first and second heart sounds; no murmur.",
+    "ausc-erb": "Erb's point: a soft systolic murmur, carried up from the lower left sternal border.",
+    "ausc-tricuspid": ("Tricuspid area: a blowing, medium-pitched holosystolic murmur, grade 3 out of 6, even in "
+                       "loudness from the first heart sound to the second, loudest at the lower left sternal "
+                       "border. It carries to the right of the sternum and toward the xiphoid, not toward the "
+                       "axilla. Fast, regular rhythm at about 118."),
+    "ausc-mitral": ("Mitral area: fast, regular rhythm; normal first and second heart sounds; the systolic murmur "
+                    "is faint here and does not carry into the axilla. No third or fourth heart sound."),
+    "left-lateral": ("Left lateral decubitus, bell at the apex: no extra heart sounds; the systolic murmur is only "
+                     "faint here."),
+    "lean-forward": ("Leaning forward at end-expiration: the holosystolic murmur at the lower left sternal border "
+                     "is softer. No diastolic murmur and no rub."),
+    "dynamic": "Isometric handgrip: the murmur at the lower left sternal border does not get louder.",
+    "ext-inspect": ("Several small puncture marks with faint bruising along the veins on the inside of both "
+                    "elbows and on the left forearm, with no redness, warmth, swelling or abscess. The soles and the "
+                    "skin of the legs have no spots. No leg swelling; normal color and hair growth."),
+    "pulses": ("Brachial, radial, femoral, popliteal, posterior tibial and dorsalis pedis pulses are 2+ and "
+               "symmetric on both sides, fast and regular."),
+    "bp-both-arms": "Right arm 104/62 mmHg, left arm 106/64 mmHg: within 10 mmHg between the arms.",
+    "orthostatic": ("Lying, 104/62 mmHg with a heart rate of 116; standing, 98/60 mmHg with a heart rate of 128. "
+                    "He feels lightheaded for a moment on standing."),
+  },
+  special=[
+    ("resp-variation", "Listening through the breathing cycle at the lower left sternal border",
+     "listens at the lower left sternal border while the patient breathes slowly in and out",
+     "The holosystolic murmur gets a little louder with each breath in and a little softer as the patient "
+     "breathes out."),
+    ("conjunctiva-mouth", "Conjunctiva and mouth inspection",
+     "pulls down each lower eyelid to inspect the palpebral and bulbar conjunctiva, then looks at the palate and "
+     "inside the cheeks with a light",
+     "The palpebral and bulbar conjunctiva of both eyes are pink with no spots; the whites of the eyes are clear "
+     "and not yellow. No spots on the palate or inside the cheeks; the gums and teeth look healthy, with no "
+     "swelling or tenderness."),
+    ("fundoscopy", "Fundoscopic examination", "looks at the retina of each eye with the ophthalmoscope",
+     "Both optic discs have sharp margins. No hemorrhages, spots or exudates in either retina, and the vessels "
+     "look normal."),
+    ("spleen-palp", "Spleen palpation and percussion",
+     "palpates below the left costal margin while the patient breathes in, and percusses over the lower left ribs",
+     "The spleen is not palpable, there is no dullness over the lower left ribs, and the left upper abdomen is "
+     "not tender."),
+  ],
+  # the examinations specific to this condition, from its high-yield list: each one never done costs a point
+  # in the physical examination section (Jaxon, 2026-10-26: "if they dont say something that is specific to
+  # the disease/disorder they get docked")
+  must_exam=['ausc-tricuspid', 'resp-variation', 'lung-bases', 'hands-nails', 'conjunctiva-mouth', 'fundoscopy'],
+  key=dict(
+    diagnosis=("Acute infective endocarditis of the native tricuspid valve from injection drug use, most likely "
+               "Staphylococcus aureus (empiric vancomycin covers methicillin-resistant strains until the cultures "
+               "return), with systemic toxicity: the emergency department now"),
+    must_not_miss=["Systemic toxicity that progresses to death within weeks untreated: emergency department now, "
+                   "with blood cultures drawn before the first antibiotic",
+                   "Septic emboli from the tricuspid valve to the lungs (the cough): breathlessness at rest or a "
+                   "falling oxygen level needs urgent review"],
+    ddx=[
+      dict(name="Acute infective endocarditis (native tricuspid valve, likely Staphylococcus aureus)",
+           support=("Four days of abrupt high fevers, shaking chills, soaking sweats, aches and a dry cough in a "
+                    "man who injects drugs with reused and shared needles and unwiped skin; ill-appearing, "
+                    "temperature 103.1 and heart rate 118; a new grade 3 out of 6 blowing holosystolic murmur at "
+                    "the lower left sternal border, slightly louder on inspiration and not to the axilla, with a normal "
+                    "heart examination two years ago; and injection marks at both elbows."),
+           against=("Nothing against it. None of the embolic signs (splinter hemorrhages, Janeway lesions, "
+                    "conjunctival petechiae) or immune signs (Osler nodes, Roth spots) is present, which fits a "
+                    "short illness confined to the right side of the heart, whose emboli go to the lungs, not to "
+                    "the body. Staphylococcus aureus in separate blood cultures and a tricuspid "
+                    "vegetation make it definite by the modified Duke criteria.")),
+      dict(name="Atrial myxoma",
+           support="Fever with a new murmur.",
+           against=("A myxoma gives a tumor plop or a mid-diastolic rumble, not a holosystolic murmur that grows "
+                    "with inspiration; its cultures stay negative, and it does not explain the injection "
+                    "exposure or the rigors.")),
+      dict(name="Systemic lupus erythematosus with nonbacterial (Libman-Sacks) endocarditis",
+           support="Fever and a valve lesion.",
+           against=("No joint swelling, facial rash, mouth sores or sun sensitivity; Libman-Sacks vegetations "
+                    "are sterile, and abrupt high fevers with rigors in a man who injects drugs is infection "
+                    "until the cultures say otherwise.")),
+      dict(name="Tuberculosis",
+           support="Fever, sweats and a cough.",
+           against=("Tuberculosis smolders with night sweats and weight loss over weeks; his illness began "
+                    "abruptly four days ago with no sweats or weight loss before, and a new regurgitant murmur "
+                    "with injection drug use points to the heart.")),
+    ],
+    studies=[
+      dict(test="Blood cultures, three sets from separate sites",
+           why=("Drawn before any antibiotic: in an acute presentation two within the first 1 to 2 hours, then "
+                "empiric therapy. A typical organism in separate cultures is a major criterion, and the organism "
+                "directs treatment."),
+           expect="Staphylococcus aureus in every set; susceptibility pending."),
+      dict(test="Transesophageal echocardiogram",
+           why=("Highly sensitive and specific: detects the vegetation, defines the extent of the disease (an "
+                "abscess), and a vegetation is a major criterion. A normal study does not rule endocarditis "
+                "out."),
+           expect=("A mobile vegetation on the tricuspid valve with new tricuspid regurgitation; normal "
+                   "left-sided valves; no perivalvular abscess; normal pumping function.")),
+      dict(test="Complete blood count with differential",
+           why=("Leukocytosis, and anemia of chronic disease with a normal mean corpuscular volume, which may be "
+                "mild or absent this early."),
+           expect=("Leukocytosis, white count about 17,800 with mostly neutrophils; hemoglobin normal or mildly "
+                   "low with a normal mean corpuscular volume.")),
+      dict(test="Urinalysis",
+           why="Hematuria, proteinuria and pyuria mark kidney involvement, such as glomerulonephritis.",
+           expect="Normal: no blood, protein or white cells."),
+      dict(test="Modified Duke criteria",
+           why=("Puts it together: definite is two major, one major and three minor, or five minor criteria; "
+                "possible is one major and one minor, or three minor."),
+           expect=("Now, at the bedside: possible, on one major criterion (new valvular regurgitation, the new "
+                   "murmur) and two minor (injection drug use; fever of 38.0 °C or more). Once the cultures and "
+                   "the echocardiogram are back: definite on the two major criteria alone (Staphylococcus aureus "
+                   "in separate cultures; the tricuspid vegetation). If chest imaging were done and showed "
+                   "septic pulmonary infarcts, that would add a vascular minor criterion.")),
+    ],
+    plan=[
+      ("Emergency department now for hospital admission: endocarditis is treated with "
+       "intravenous antibiotics in the hospital, with close monitoring of labs, kidney function and "
+       "cardiovascular status by a multidisciplinary team."),
+      ("Blood cultures first (two within the first 1 to 2 hours, three sets in all), and only then empiric "
+       "intravenous vancomycin plus ceftriaxone for a native valve, covering staphylococci, streptococci and "
+       "enterococci."),
+      ("Directed by the cultures: methicillin-susceptible Staphylococcus aureus, nafcillin or oxacillin (or "
+       "cefazolin); methicillin-resistant, vancomycin or daptomycin. Bactericidal and intravenous, for 4 to 6 "
+       "weeks counted from the first negative blood culture."),
+      ("Consult infectious disease (antibiotics and outpatient monitoring) and addiction medicine (harm "
+       "reduction); cardiothoracic surgery for heart failure from valve dysfunction, an abscess or infection "
+       "that does not clear on the right antibiotics."),
+      "No anticoagulation: it is not beneficial in native valve infection.",
+    ],
+    education=[
+      ("An infection has settled on one of your heart valves, most likely from skin bacteria that got into your "
+       "blood through injecting. It is damaging the valve, which is the new murmur, and small pieces can break "
+       "off and travel to your lungs, which may explain the cough."),
+      ("It is treated in the hospital with antibiotics through a vein for 4 to 6 weeks, counted from the first "
+       "day your blood cultures come back clean. Treated promptly in the hospital, most people who inject "
+       "drugs survive this infection; untreated, it can kill within weeks."),
+      ("A team that helps people who inject drugs stay safer will see you in the hospital. New sterile needles "
+       "every time, never sharing, and cleaning the skin first lower the risk of this happening again."),
+      ("Having had endocarditis puts you in the high-risk group: you will need a single antibiotic "
+       "dose before dental work on the gums or the roots of the teeth, and every dentist needs to know."),
+      ("Tell the team at once about worsening breathlessness, chest pain, new swelling of your legs or belly, "
+       "or fainting."),
+    ],
+    red_flags=["Breathlessness at rest or a falling oxygen level",
+               "New leg or belly swelling (heart failure from the damaged valve)",
+               "Fainting, a falling blood pressure, or growing drowsy or confused as the infection worsens"],
+    follow_up=("Emergency: transfer to the emergency department now for blood cultures, intravenous antibiotics "
+               "and admission; infectious disease follows him through the 4 to 6 weeks and after discharge, with "
+               "addiction medicine, and he takes dental prophylaxis from now on."),
+    presentation=(
+      "Mr. Brannigan is a 33-year-old man who injects fentanyl, sometimes with reused or shared needles, "
+      "presenting with four days of abrupt high fevers, shaking chills, soaking sweats, aches and headache, and "
+      "two days of an unexplained dry cough. He denies chest pain, neck stiffness, confusion, dental work and "
+      "any known murmur; his heart examination two years ago was normal. Temperature is 103.1, heart rate 118, "
+      "blood pressure 104/62, respiratory rate 22. He looks ill. He has a new grade 3 out of 6 blowing "
+      "holosystolic murmur at the lower left sternal border, slightly louder on inspiration, and injection "
+      "marks at both elbows. Lungs are clear; hands, nails, conjunctivae, fundi and spleen are normal. My "
+      "differential is acute infective endocarditis, atrial myxoma, lupus endocarditis and tuberculosis. I "
+      "would order three sets of blood cultures before antibiotics, a transesophageal "
+      "echocardiogram, a blood count and a urinalysis. My working diagnosis is acute tricuspid endocarditis. "
+      "Plan: emergency department now, cultures, then vancomycin and ceftriaxone."),
+    high_yield=[
+      dict(item="Ask directly and respectfully about injection drug use: what, how often, and shared or reused needles",
+           why=("Injection drug use is a major risk factor; Staphylococcus aureus causes more than 60% of "
+                "endocarditis in people who inject drugs and 80 to 90% of tricuspid infections.")),
+      dict(item="Pin down the tempo of the fevers",
+           why=("Acute is 3 to 10 days of rapid onset, high fevers and systemic toxicity; subacute is lower "
+                "fevers, malaise and weight loss over weeks to months.")),
+      dict(item="Ask about the cough and listen to the lungs",
+           why=("In people who inject drugs the infection sits on the right side, so its fragments go to the "
+                "lungs: a dry cough that does not fit a cold is the clue, even with clear lungs.")),
+      dict(item="Ask about a known murmur, valve disease, prosthetic valves, devices, prior endocarditis and dental work",
+           why=("A murmur that is new (his heart was normal two years ago) is the clue; the predisposing "
+                "conditions and the source point to the organism.")),
+      dict(item="Listen at the lower left sternal border, describe the murmur fully, and listen through breathing",
+           why=("Holosystolic, blowing, slightly louder on inspiration and not to the axilla: tricuspid regurgitation, "
+                "the valve hit in injection drug use. New valvular regurgitation is a major criterion.")),
+      dict(item="Inspect the hands, nails, palms and soles",
+           why=("Look in any suspected endocarditis for splinter hemorrhages, painless flat Janeway lesions and "
+                "painful finger-pad Osler nodes. All are absent here: the embolic ones fit an infection whose "
+                "emboli go to the lungs, and Osler nodes are an immune sign.")),
+      dict(item="Pull down the lower eyelids, look in the mouth, and look at the fundus",
+           why=("Conjunctival and palatal petechiae (embolic; conjunctival hemorrhages are a minor criterion) "
+                "and Roth spots (an immune sign) are searched for in any suspected endocarditis; finding none "
+                "is consistent with this isolated right-sided infection.")),
+      dict(item="Say blood cultures before antibiotics, and send him to the emergency department",
+           why=("Three sets from separate sites, two within the first 1 to 2 hours when it looks acute; empiric "
+                "therapy starts only after the cultures, and treatment needs hospital admission.")),
+    ],
+  ),
+),
+
 ]
 
 
@@ -1497,13 +1831,19 @@ if __name__ == "__main__":
     from _pd2_cardiac_osce_data import ROWS
 
     ORDER = ["Chronic heart failure", "Atrial fibrillation", "Aortic stenosis",
-             "Chronic venous insufficiency and varicose veins", "Vasovagal syncope", "Dilated cardiomyopathy"]
+             "Chronic venous insufficiency and varicose veins", "Vasovagal syncope", "Dilated cardiomyopathy",
+             "Acute infective endocarditis"]
     BARRED = {"Stable angina", "Acute pericarditis", "Peripheral artery disease", "Deep vein thrombosis"}
+    # Cases that are not a row of the Cardiac OSCE Disease Chart: grounded in the decks on their cites line, so
+    # the chart-differential name match is skipped for them (every other assertion still applies).
+    OFF_CHART = {"Acute infective endocarditis"}
     TODAY = datetime.date(2026, 10, 26)
-    # Typical ages, from tools/_pd2_cardiac_osce_ages.py, as inclusive (low, high).
+    # Typical ages, from tools/_pd2_cardiac_osce_ages.py, as inclusive (low, high). Acute infective
+    # endocarditis has no chart row: an adult case (CMS L32 slide 6, "can occur at any age").
     AGE_RANGE = {"Chronic heart failure": (65, 100), "Atrial fibrillation": (55, 100),
                  "Aortic stenosis": (66, 100), "Chronic venous insufficiency and varicose veins": (40, 100),
-                 "Vasovagal syncope": (15, 39), "Dilated cardiomyopathy": (20, 60)}
+                 "Vasovagal syncope": (15, 39), "Dilated cardiomyopathy": (20, 60),
+                 "Acute infective endocarditis": (18, 100)}
     VITALS = ["Blood pressure", "Heart rate", "Respiratory rate", "Temperature", "Oxygen saturation",
               "Height and weight"]
     ABBREV = re.compile(r"\b(JVD|JVP|PMI|ECG|EKG|BNP|NT-proBNP|CRP|ESR|NSAIDs?|TAVR|DOACs?|RUSB|LUSB|LLSB|LSB|"
@@ -1525,7 +1865,7 @@ if __name__ == "__main__":
     def slug(s):
         return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
-    assert len(CASES) == 6, len(CASES)
+    assert len(CASES) == 7, len(CASES)
     assert [c["condition"] for c in CASES] == ORDER, [c["condition"] for c in CASES]
     ids = [c["id"] for c in CASES]
     assert len(set(ids)) == len(ids), "duplicate ids"
@@ -1534,7 +1874,7 @@ if __name__ == "__main__":
     for c in CASES:
         cond, d, k = c["condition"], c["door"], c["key"]
         where = c["id"]
-        assert cond in ROWS, (where, "not a chart row")
+        assert cond in ROWS or cond in OFF_CHART, (where, "not a chart row")
         assert cond not in BARRED, (where, "barred case")
         assert c["id"] == "cardiac-" + slug(cond), where
         assert d["sex"] in ("male", "female"), where
@@ -1567,9 +1907,10 @@ if __name__ == "__main__":
         assert 1 <= len(k["must_not_miss"]) <= 2, where
         assert len(k["ddx"]) == 4, where
         assert cond.lower() in k["ddx"][0]["name"].lower(), (where, "own condition not first")
-        chart_ddx = [n for n, _ in ROWS[cond]["ddx"]]
-        for mine, chart in zip(k["ddx"][1:], chart_ddx):
-            assert mine["name"].startswith(chart), (where, mine["name"], chart)
+        if cond in ROWS:
+            chart_ddx = [n for n, _ in ROWS[cond]["ddx"]]
+            for mine, chart in zip(k["ddx"][1:], chart_ddx):
+                assert mine["name"].startswith(chart), (where, mine["name"], chart)
         assert all(set(x) == {"name", "support", "against"} for x in k["ddx"]), where
         assert 3 <= len(k["studies"]) <= 5, where
         assert all(set(x) == {"test", "why", "expect"} for x in k["studies"]), where
