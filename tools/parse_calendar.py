@@ -42,6 +42,8 @@ def classify(title):
     # "OSCE Prep Session" and the independent-study blocks read as exams to a
     # naive keyword match but nothing is graded in them.
     if re.search(r"osce prep|prep session", t):           return "activity"
+    # "CMS I Exam #5 Cardio 2 Post Exam Review" (2026-10-28) goes over an exam already sat.
+    if re.search(r"exam review", t):                      return "activity"
     if re.search(r"\bretest\b", t):                       return "retest"
     if re.search(r"remediation", t):                      return "remediation"
     if re.search(r"\bexam\b|\bosce\b|block exam", t):     return "exam"

@@ -13,13 +13,24 @@ import parse_calendar_export
 # Everything BEFORE EXPORT_FROM still comes from the monthly PDFs.
 # Standing workflow (Jaxon, 2026-09-25): each update is a new
 # "Outlook export <YYYY-MM-DD>.pdf" dropped in the semester's Calendars folder.
-# The NEWEST one is used automatically, from its own first date onward.
+# Each export counts from its own first date until the next export's first date,
+# so a newer export that starts later (2026-10-27 starts Oct 26) never hands the
+# weeks before it back to the monthly print-outs.
 import glob
 _exports = sorted(glob.glob(os.path.expanduser(
     "~/Desktop/PA Quizzes/Calendars/Fall Semester - 2026/Outlook export *.pdf")))
+EXPORTS = [(p, min(e["date"] for e in parse_calendar_export.parse(p))) for p in _exports]
 EXPORT_PDF = _exports[-1] if _exports else None
-EXPORT_FROM = (min(e["date"] for e in parse_calendar_export.parse(EXPORT_PDF))
-               if EXPORT_PDF else "9999-12-31")
+EXPORT_FROM = EXPORTS[0][1] if EXPORTS else "9999-12-31"   # monthly PDFs before this
+
+
+def export_events():
+    """The exports' events, each export from its first date to the next one's."""
+    out = []
+    for i, (path, first) in enumerate(EXPORTS):
+        until = EXPORTS[i + 1][1] if i + 1 < len(EXPORTS) else "9999-12-31"
+        out += [e for e in parse_calendar_export.parse(path) if first <= e["date"] < until]
+    return out
 
 OUT = _REPO + "/calendar-data.js"
 
@@ -66,6 +77,8 @@ def tidy(title):
     title = re.sub(r"\bPMD\s+I\b", "PDM I", title)
     # Screening entries carry a full street address; keep the school name only.
     title = re.sub(r"^(Hearing and Vision Screening)\s*-\s*([^,]+),.*$", r"\1 - \2", title)
+    # A stray time typed into the title: "11f:45 CMS I Exam #5 Cardio 2 Post Exam Review".
+    title = re.sub(r"^\d{1,2}f?:\d{2}\s+", "", title)
     return title.strip()
 
 
@@ -167,7 +180,7 @@ def apply_moves(out):
 def main():
     evs = [e for e in parse() if e["date"] < EXPORT_FROM]
     seen = set()
-    for e in (parse_calendar_export.parse(EXPORT_PDF) if EXPORT_PDF else []):
+    for e in export_events():
         k = (e["date"], e["title"])   # the export lists both halves of a lunch-split session
         if k in seen:
             continue

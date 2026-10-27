@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pymupdf as fitz
 from parse_calendar import classify, course_of
 
-DAY = re.compile(r"^(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{2})$")
+DAY = re.compile(r"^(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2})$")
 TIME = re.compile(r"^(All day|(\d{1,2}:\d{2} [AP]M) - (\d{1,2}:\d{2} [AP]M))$")
 TYPES = {"EXAM", "RETEST", "REMEDIATION", "LECTURE", "LAB/SIM", "OTHER", "DEADLINE", "NO CLASS"}
 SKIP = re.compile(r"^(PA Class of 2028 Academic Calendar.*|Page \d+|Day|Date|Time|Type|Event|Week of .*)$")
