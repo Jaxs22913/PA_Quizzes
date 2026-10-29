@@ -1,0 +1,1746 @@
+{
+ "set1": [
+  {
+   "topic": "Severity and group assessment",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "In a patient with a post-bronchodilator ratio below 0.70, a forced expiratory volume in 1 second of 42% predicted corresponds to which airflow grade?",
+   "opts": [
+    [
+     "Grade 1 (mild)",
+     "Grade 1, mild, requires 80% predicted or more. At 42% this patient is far below it. Tell: grade 1 is the only grade with near-normal airflow. Mild airflow limitation means near-normal airflow.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 2 (moderate)",
+     "Grade 2, moderate, covers 50% up to 80% predicted. At 42% this patient is below the 50% line. Tell: under 50% moves the grade to severe. Grade 2 covers 50% to 79% predicted only.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 3 (severe)",
+     "Correct. Grade 3, severe, covers a post-bronchodilator 1-second volume of 30% up to 50% predicted, so 42% falls there. Grade 2 starts at 50% and grade 4 is below 30%."
+    ],
+    [
+     "Grade 4 (very severe)",
+     "Grade 4, very severe, is below 30% predicted. At 42% this patient is above that line. Tell: 30% to 49% is grade 3. Very severe means less than a third of predicted airflow.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 34",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which statement about albuterol in chronic obstructive pulmonary disease is accurate?",
+   "opts": [
+    [
+     "It replaces long-acting therapy",
+     "Albuterol is the rescue inhaler; long-acting bronchodilators treat ongoing bronchoconstriction and prevent exacerbations. Tell: groups B and E need long-acting therapy alongside it.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Every patient should have one",
+     "Correct. Every patient should have an albuterol inhaler to prevent or reduce symptoms, as needed. It should not be used excessively, because of toxicity and the risk of cardiac and psychiatric side effects."
+    ],
+    [
+     "It is reserved for severe disease",
+     "Albuterol is for every patient, from group A onward, to prevent or reduce symptoms. Tell: rescue medicine is universal; what changes with severity is the long-acting regimen.",
+     "wrong stage or severity"
+    ],
+    [
+     "Frequent use is harmless",
+     "Excessive use carries toxicity and the risk of cardiac and psychiatric side effects. Tell: heavy rescue use is a warning sign, and discharge requires needing it no more often than every 4 hours.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 49",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "An acute exacerbation is defined as worsening dyspnea, cough or sputum developing over how many days or fewer?",
+   "opts": [
+    [
+     "3 days",
+     "Three days is too narrow; the definition allows worsening over up to 14 days. Tell: a decline that builds over a week or two still counts as an exacerbation.",
+     "wrong stage or severity"
+    ],
+    [
+     "7 days",
+     "Seven days is too short a window; the definition is worsening over 14 days or less. Tell: the number is 2 weeks. Worsening across 8 to 14 days still meets the definition.",
+     "wrong stage or severity"
+    ],
+    [
+     "14 days",
+     "Correct. An acute exacerbation is an acute worsening of dyspnea, cough or sputum over 14 days or less, triggered by viral or bacterial infection or pollution. Pneumonia, pulmonary embolism, acute heart failure and pneumothorax must be excluded."
+    ],
+    [
+     "30 days",
+     "A month is longer than the definition, which is worsening over 14 days or less. Tell: slow change over a month is progression to evaluate, not the acute event defined here.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 56",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Etiology and risk factors",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What is the primary risk factor for chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Sedentary lifestyle",
+     "A sedentary lifestyle with limited activity is listed among risk factors, but it is not the primary one. Tell: the dominant risk is inhaled tobacco smoke, which is why smoking cessation can slow progression.",
+     "adjacent fact"
+    ],
+    [
+     "Tobacco smoking or smoke exposure",
+     "Correct. Tobacco smoking or exposure is the primary risk factor, behind about 90% of cases. Secondary risks are biomass burning, occupational dusts and fumes, a sedentary lifestyle and, much more rarely, alpha-1 antitrypsin deficiency."
+    ],
+    [
+     "Burning biomass for cooking",
+     "Burning wood or coal indoors for cooking and heating is a secondary risk factor, larger in developing countries. Tell: worldwide, the primary risk factor is tobacco smoking or exposure.",
+     "adjacent fact"
+    ],
+    [
+     "Alpha-1 antitrypsin deficiency",
+     "Alpha-1 antitrypsin deficiency is a genetic risk found even in nonsmokers, but it is rare, about 3 or 4 cases per 10,000. Tell: it is evaluated in young or unexposed patients, while tobacco remains the primary cause.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 12",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which adverse effect is the main one for long-acting antimuscarinic antagonists such as tiotropium?",
+   "opts": [
+    [
+     "Dry mouth",
+     "Correct. Long-acting antimuscarinics block M3 receptors to limit bronchoconstriction and help prevent exacerbations, with mild help in reducing sputum. Absorption is poor, so adverse effects are limited, mainly to dry mouth."
+    ],
+    [
+     "Tachyarrhythmias",
+     "Tachycardia and arrhythmias come from the sympathetic stimulation of long-acting beta agonists. Tell: antimuscarinics are poorly absorbed, so their main effect is local, dry mouth.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Pneumonia",
+     "Pneumonia risk rises with inhaled corticosteroids. Tell: tiotropium is a bronchodilator with limited, mostly local side effects, chiefly dry mouth. That risk belongs to the steroid, not the bronchodilator.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Weight gain and bruising",
+     "Weight gain and bruising are systemic corticosteroid effects. Tell: tiotropium's poor absorption leaves dry mouth as its main adverse effect. Those come with oral steroids, used for exacerbations only.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 38",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Diagnosis and pulmonary function tests",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "Which test result separates emphysema from chronic bronchitis and asthma?",
+   "opts": [
+    [
+     "Raised serum bicarbonate",
+     "A raised bicarbonate reflects compensation for chronic carbon dioxide retention, which comes earlier in chronic bronchitis. Tell: emphysema is singled out by a reduced diffusing capacity.",
+     "adjacent fact"
+    ],
+    [
+     "Reduced diffusing capacity",
+     "Correct. The diffusing capacity is reduced in emphysema, because destroyed alveoli and bullae limit gas transfer, separating it from chronic bronchitis (normal or near normal) and asthma. Spirometry alone cannot tell emphysema from chronic bronchitis."
+    ],
+    [
+     "Ratio below 0.70",
+     "A post-bronchodilator ratio below 0.70 confirms obstruction in both subtypes. Tell: it shows that the disease is present, not which subtype dominates.",
+     "adjacent fact"
+    ],
+    [
+     "Bronchodilator response under 12%",
+     "A small bronchodilator response marks irreversible obstruction, shared by both subtypes. Tell: the measurement that singles out alveolar destruction is diffusing capacity.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slides 14, 28",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which finding is one of the discharge criteria after an exacerbation?",
+   "opts": [
+    [
+     "Albuterol no more than every 4 hours",
+     "Correct. Discharge criteria include needing inhaled short-acting beta-2 agonist no more often than every 4 hours, using long-acting bronchodilators, walking across the room if previously ambulatory, eating and sleeping without frequent waking, and clinical stability for 12 to 24 hours."
+    ],
+    [
+     "Normal spirometry",
+     "Spirometry stays obstructed in this disease, so normal spirometry is not a discharge criterion. Tell: discharge rests on rescue use, stability, mobility and a home plan.",
+     "common lay belief"
+    ],
+    [
+     "Climbing a full flight of stairs",
+     "The criterion is walking across the room if previously ambulatory, not climbing stairs. Tell: the bar is basic mobility, eating and sleep without frequent waking.",
+     "wrong stage or severity"
+    ],
+    [
+     "Stable for at least 72 hours",
+     "Clinical stability for 12 to 24 hours is required, not 72. Tell: the stated window is 12 to 24 hours. A patient stable for a day can go home if the other criteria are met.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 60",
+   "slot": "education"
+  },
+  {
+   "topic": "Care by age and referral",
+   "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly",
+   "q": "What is noted about pulmonary rehabilitation referral for older adults?",
+   "opts": [
+    [
+     "It serves just a return to work",
+     "Return to work is the rehabilitation aim listed for working-age adults; older adults gain function and fewer admissions. Tell: for older adults the point is active referral.",
+     "adjacent fact"
+    ],
+    [
+     "They are referred less, so refer actively",
+     "Correct. Older adults are less often referred for rehabilitation, so the advice is to refer them actively. For younger adults, rehabilitation aims at a return to work and activity."
+    ],
+    [
+     "Rehabilitation is unsafe past 65",
+     "Nothing restricts rehabilitation by age; the problem is that older adults are referred less often. Tell: the advice is to refer them actively. Older adults benefit from rehabilitation as well.",
+     "common lay belief"
+    ],
+    [
+     "Older adults need no rehabilitation",
+     "Rehabilitation reduces dyspnea, improves exercise tolerance and cuts hospitalizations, benefits that matter for older adults too. Tell: the gap is under-referral, which clinicians should correct.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 53",
+   "slot": "referral"
+  },
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What is the main role of the chest x-ray in this disease?",
+   "opts": [
+    [
+     "Confirming the diagnosis",
+     "The diagnosis is confirmed only by spirometry, with a post-bronchodilator ratio below 0.70. Tell: the x-ray supports the picture and excludes mimics, but it cannot confirm obstruction.",
+     "adjacent fact"
+    ],
+    [
+     "Grading airflow obstruction",
+     "Airflow obstruction is graded from the post-bronchodilator 1-second volume as a percent of predicted. Tell: imaging cannot measure airflow. Grades come from spirometry: 80% or more is grade 1, under 30% is grade 4.",
+     "adjacent fact"
+    ],
+    [
+     "Measuring air trapping",
+     "Air trapping is measured by lung volumes, a raised residual volume. Tell: the x-ray can suggest hyperinflation, but its main job is excluding other diagnoses.",
+     "adjacent fact"
+    ],
+    [
+     "Ruling out other diagnoses",
+     "Correct. The chest x-ray is not a diagnostic standard, but it can rule out other diagnoses such as heart failure or pneumothorax and may show overinflated hyperlucent lungs, a flattened diaphragm, bullae or a narrow vertical heart."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 31",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Smoking cessation and vaccines",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "In the Five A's approach to behavior change, which step comes right after Advise?",
+   "opts": [
+    [
+     "Assist with a plan",
+     "Assist is the fourth step, helping set actionable goals and strategies, and it follows the readiness check. Tell: Assess comes between Advise and Assist.",
+     "adjacent fact"
+    ],
+    [
+     "Ask about the behavior",
+     "Ask is the first step, opening the discussion about the behavior before any advice is given. Tell: the order is Ask, Advise, Assess, Assist, Arrange. Asking opens the conversation nonjudgmentally.",
+     "adjacent fact"
+    ],
+    [
+     "Assess readiness to change",
+     "Correct. The Five A's run Ask (open a nonjudgmental conversation), Advise (clear, tailored advice), Assess (readiness and willingness to change), Assist (realistic steps and strategies) and Arrange (follow-up to monitor progress)."
+    ],
+    [
+     "Arrange follow-up",
+     "Arrange is the fifth and last step, setting up follow-up to monitor progress and keep motivation. Tell: after advising, the clinician first assesses whether the person is ready to change.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 47",
+   "slot": "education"
+  },
+  {
+   "topic": "Oxygen and survival",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Long-term supplemental oxygen is indicated when the resting arterial oxygen pressure falls below which value?",
+   "opts": [
+    [
+     "55 mmHg",
+     "Correct. Supplemental oxygen is indicated when the arterial oxygen pressure is below 55 mmHg or the saturation below 88%, and it is proven to decrease the risk of death, prolong life and improve quality of life."
+    ],
+    [
+     "65 mmHg",
+     "A threshold of 65 mmHg is too high; the indication is a pressure below 55 mmHg or saturation below 88%. Tell: oxygen treats severe resting hypoxemia, not mild lowering.",
+     "reversed direction or value"
+    ],
+    [
+     "75 mmHg",
+     "A threshold of 75 mmHg would treat many patients without severe resting hypoxemia. Tell: the line is below 55 mmHg. That value is well above the severe hypoxemia that oxygen treats.",
+     "reversed direction or value"
+    ],
+    [
+     "85 mmHg",
+     "A threshold of 85 mmHg is near normal and far above the indication. Tell: long-term oxygen starts below 55 mmHg or a saturation below 88%. Such a patient has no resting hypoxemia.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 63",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Care by age and referral",
+   "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly",
+   "q": "Which care priority is listed for adults aged about 40 to 64 rather than for older adults?",
+   "opts": [
+    [
+     "Staying in work",
+     "Correct. For adults about 40 to 64 the priorities are smoking cessation, preserving lung function, staying in work and preventing exacerbations. For adults 65 and older they shift to function, quality of life, multimorbidity and goals of care."
+    ],
+    [
+     "Goals of care",
+     "Goals of care are a priority for adults 65 and older, along with function, quality of life and multimorbidity. Tell: working-age adults focus on staying in work and preserving lung function.",
+     "adjacent fact"
+    ],
+    [
+     "Managing multimorbidity",
+     "Multimorbidity is an elderly priority, as osteoporosis, frailty, falls and cognitive decline join heart disease and depression. Tell: the working-age list includes staying in work.",
+     "adjacent fact"
+    ],
+    [
+     "Quality of life",
+     "Quality of life is listed among priorities for adults 65 and older. Tell: for the 40 to 64 group the list centers on cessation, lung function, work and exacerbation prevention.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 53",
+   "slot": "education"
+  },
+  {
+   "topic": "Prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which measurement is one of the 4 inputs of the BODE (body mass index, obstruction, dyspnea, exercise) index?",
+   "opts": [
+    [
+     "6-minute walk distance",
+     "Correct. The index scores body mass index, airflow obstruction (1-second volume, percent predicted), dyspnea (the modified Medical Research Council grade) and exercise capacity, measured as the 6-minute walk distance, to estimate 4-year survival."
+    ],
+    [
+     "Arterial carbon dioxide pressure",
+     "Arterial carbon dioxide describes gas exchange in exacerbations and is not scored in the index. Tell: the exercise input is the 6-minute walk distance.",
+     "adjacent fact"
+    ],
+    [
+     "Diffusing capacity",
+     "Diffusing capacity flags emphysema but is not one of the 4 inputs. Tell: obstruction in the index is measured by the 1-second volume, and exercise by the walk test.",
+     "adjacent fact"
+    ],
+    [
+     "Symptom assessment test score",
+     "The symptom assessment test helps set the treatment group. Tell: the dyspnea input of the survival index is the modified Medical Research Council grade, and exercise is the walk distance.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 52",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Severity and group assessment",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "Under the current three-group scheme, a patient at high exacerbation risk is placed in which group regardless of symptoms?",
+   "opts": [
+    [
+     "Group B",
+     "Group B is low risk with more symptoms. Tell: B still requires low exacerbation risk; any high-risk patient is E. Group B starts on a long-acting beta agonist plus a long-acting antimuscarinic.",
+     "wrong stage or severity"
+    ],
+    [
+     "Group D",
+     "Group D belongs to the 2020 four-group scheme (high risk, more symptoms). Tell: the current scheme merged C and D into E. A high-risk patient today is E, whatever the symptom score.",
+     "adjacent fact"
+    ],
+    [
+     "Group E",
+     "Correct. In the 2023/2026 scheme, low-risk patients are group A or B by symptoms, and any high-risk patient (2 or more moderate exacerbations or 1 hospitalization) is group E, which combines the old groups C and D."
+    ],
+    [
+     "Group A",
+     "Group A is low risk with fewer symptoms (dyspnea grade 0 to 1, assessment score under 10). Tell: high exacerbation risk overrides symptoms and means group E.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 40, 41",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Definition and subtypes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which feature belongs to the chronic bronchitis subtype rather than emphysema?",
+   "opts": [
+    [
+     "Earlier hypoxemia and hypercapnia",
+     "Correct. In the chronic bronchitis subtype, airway narrowing and mucus plugging bring earlier hypoxemia and hypercapnia, with cough, sputum, rhonchi and possible cyanosis and edema. In emphysema, gas exchange is relatively preserved until late."
+    ],
+    [
+     "Gas exchange preserved until late",
+     "Relatively preserved gas exchange until late disease is the emphysema pattern. Tell: chronic bronchitis is the subtype with early hypoxemia and hypercapnia, which fits its cyanosis and edema.",
+     "reversed direction or value"
+    ],
+    [
+     "Reduced diffusing capacity",
+     "A reduced diffusing capacity marks emphysema, from destroyed alveoli; in chronic bronchitis it is normal or near normal. Tell: the diffusing capacity is the test that separates emphysema from chronic bronchitis.",
+     "reversed direction or value"
+    ],
+    [
+     "Hyperinflation with bullae on imaging",
+     "Hyperinflation, flat diaphragms and bullae are emphysema imaging findings. Tell: imaging in chronic bronchitis shows bronchial wall thickening, the airway-centered change.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 14",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Why is a complete blood count part of the workup for this disease?",
+   "opts": [
+    [
+     "To measure alpha-1 antitrypsin",
+     "Alpha-1 antitrypsin is a separate level, diagnostic below 11 micromol/L with a deficient genotype. Tell: the blood count checks anemia and eosinophils.",
+     "adjacent fact"
+    ],
+    [
+     "To look for heart failure",
+     "Suspected heart failure is checked with B-type natriuretic peptide, not the blood count. Tell: the blood count's 2 targets are anemia and eosinophils.",
+     "adjacent fact"
+    ],
+    [
+     "To find anemia and count eosinophils",
+     "Correct. The complete blood count checks for coincident anemia and measures eosinophils; an elevated eosinophil count is when adding an inhaled corticosteroid is considered. Anemia is also on the comorbidity screening list."
+    ],
+    [
+     "To confirm the diagnosis",
+     "No blood test confirms the disease; spirometry does, with a post-bronchodilator ratio below 0.70. Tell: the blood count looks for anemia and eosinophils.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 30, 61",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Diagnosis and pulmonary function tests",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "Which test is required to establish the diagnosis of chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Arterial blood gas",
+     "An arterial blood gas is usually done only in a deteriorating or severe exacerbation, where it shows chronic carbon dioxide retention. Tell: it describes gas exchange; spirometry confirms the diagnosis.",
+     "adjacent fact"
+    ],
+    [
+     "Spirometry with a bronchodilator",
+     "Correct. Spirometry, the cornerstone test, is required to establish the diagnosis and is done before and after a bronchodilator such as albuterol. A post-bronchodilator ratio of forced expiratory volume in 1 second to forced vital capacity below 0.70 confirms it."
+    ],
+    [
+     "Chest x-ray",
+     "The chest x-ray is not a diagnostic standard; it rules out other diagnoses such as heart failure or pneumothorax and may show hyperinflation or bullae. Tell: only spirometry can show the persistent obstruction that defines the disease.",
+     "adjacent fact"
+    ],
+    [
+     "Computed tomography of the chest",
+     "Chest computed tomography can help categorize emphysema but is generally not needed. Tell: the diagnosis rests on spirometry before and after a bronchodilator, not on imaging.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slides 26, 28, 30, 31",
+   "slot": "gold standard"
+  },
+  {
+   "topic": "Pathophysiology",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "In the emphysema subtype, what causes the airways to obstruct?",
+   "opts": [
+    [
+     "Mucus plugging of narrowed airways",
+     "Airway narrowing and mucus plugging are the chronic bronchitis mechanism, from mucus gland hyperplasia and wall thickening. Tell: emphysema obstructs because the recoil that holds airways open is lost.",
+     "competing diagnosis"
+    ],
+    [
+     "Allergen-triggered reversible bronchospasm",
+     "Allergen-triggered bronchospasm that reverses is extrinsic asthma. Tell: emphysema's obstruction comes from destroyed alveoli and lost elastic recoil, so it does not reverse.",
+     "competing diagnosis"
+    ],
+    [
+     "Stiff chest wall limiting inspiration",
+     "A stiff chest wall limiting inspiration is a restrictive problem, the opposite of this disease. Tell: emphysema limits expiration as airways collapse, causing air trapping and hyperinflation.",
+     "reversed direction or value"
+    ],
+    [
+     "Lost elastic recoil collapsing airways",
+     "Correct. Emphysema destroys alveolar walls, and the loss of elastic recoil lets the airways collapse on expiration, trapping air. In chronic bronchitis, obstruction instead comes from airway narrowing and mucus plugging."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 14, 25",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which laboratory finding prompts consideration of adding an inhaled corticosteroid?",
+   "opts": [
+    [
+     "Low alpha-1 antitrypsin",
+     "A low alpha-1 antitrypsin with a deficient genotype diagnoses the deficiency behind emphysema in young patients or those with few exposures. Tell: the inhaled corticosteroid decision rests on eosinophils.",
+     "adjacent fact"
+    ],
+    [
+     "Raised natriuretic peptide",
+     "B-type natriuretic peptide is checked when heart failure is suspected. Tell: eosinophils, measured on the blood count, are what prompt an inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "Raised blood eosinophils",
+     "Correct. For group E, a long-acting beta agonist plus antimuscarinic is the start, with an inhaled corticosteroid considered when blood eosinophils are 300 or more; at discharge after an exacerbation, an inhaled corticosteroid is considered if eosinophils are elevated."
+    ],
+    [
+     "Raised serum bicarbonate",
+     "A raised bicarbonate reflects compensation for chronic carbon dioxide retention. Tell: the laboratory value that guides inhaled corticosteroid use is the blood eosinophil count.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 37, 61",
+   "slot": "escalation"
+  },
+  {
+   "topic": "Chronic management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Next to smoking cessation, which therapy tends to be the most effective management for chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Oral corticosteroids",
+     "Oral corticosteroids are for acute exacerbations only in this disease. Tell: rehabilitation is the effective long-term therapy after cessation. They are not used for long-term care.",
+     "adjacent fact"
+    ],
+    [
+     "Pulmonary rehabilitation",
+     "Correct. Next to smoking cessation, pulmonary rehabilitation tends to be the most effective therapy, reducing dyspnea, improving exercise tolerance and mobility, and reducing hospitalizations and readmissions. It needs a healthcare professional or team."
+    ],
+    [
+     "Inhaled corticosteroids",
+     "Inhaled corticosteroids are used only with a long-acting beta agonist and raise pneumonia risk. Tell: rehabilitation, which trains breathing, secretion clearance and strength, ranks just behind cessation.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Long-term azithromycin",
+     "Long-term azithromycin is used rarely and increases resistance and side effects. Tell: the second most effective management is pulmonary rehabilitation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 55",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Alpha-1 antitrypsin deficiency",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Smoking-related emphysema typically follows which pattern?",
+   "opts": [
+    [
+     "Panlobular, lower lobes",
+     "Panlobular emphysema in the lower lobes is the alpha-1 antitrypsin deficiency pattern. Tell: smoking damages the upper lobes in a centrilobular pattern.",
+     "reversed direction or value"
+    ],
+    [
+     "Bronchial wall thickening",
+     "Bronchial wall thickening is the imaging change of chronic bronchitis, an airway disease, not an emphysema pattern. Tell: smoking-related emphysema destroys centrilobular airspaces in the upper lobes.",
+     "competing diagnosis"
+    ],
+    [
+     "Diffuse fibrosis at the bases",
+     "Fibrosis is a restrictive change and, with silica or fiberglass, a different condition. Tell: smoking-related emphysema is an obstructive, upper-lobe, centrilobular destruction of airspaces.",
+     "competing diagnosis"
+    ],
+    [
+     "Centrilobular, upper lobes",
+     "Correct. Emphysema from smoking is centrilobular and predominantly in the upper lobes. The panlobular, lower-lobe pattern belongs to alpha-1 antitrypsin deficiency, which is why basilar emphysema prompts testing for it."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 14",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Smoking cessation and vaccines",
+   "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly",
+   "q": "A patient's disease is severe, with a forced expiratory volume in 1 second below 40% predicted. When should the pneumococcal vaccine be given?",
+   "opts": [
+    [
+     "Not until age 65",
+     "Age 65 is the default timing, but severe disease below 40% or cardiac comorbidity moves vaccination earlier. Tell: severity, not age, sets the timing here.",
+     "wrong stage or severity"
+    ],
+    [
+     "During the next exacerbation",
+     "Vaccination is preventive and is given when the severe disease is recognized, not deferred to an exacerbation. Tell: the earlier timing exists to reduce pneumonia before it happens.",
+     "adjacent fact"
+    ],
+    [
+     "After age 75",
+     "Delaying past 75 is later than even the default of 65. Tell: severe disease (below 40%) or cardiac comorbidity calls for vaccination as soon as that severity is recognized.",
+     "wrong stage or severity"
+    ],
+    [
+     "When the severity is recognized",
+     "Correct. Every patient should receive the pneumococcal vaccine at age 65, but those with severe disease (1-second volume below 40%) or cardiac comorbidities should get it earlier, essentially when diagnosed and recognized at that severity."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 48",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Presentation and exam",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which body habitus statement about patients with this disease is accurate?",
+   "opts": [
+    [
+     "Weight gain signals recovery",
+     "Weight gain in these patients usually reflects inactivity because breathlessness limits movement, not improving lungs. Tell: gaining weight can be a sign of worsening function.",
+     "reversed direction or value"
+    ],
+    [
+     "Many gain weight from inactivity",
+     "Correct. Patients are not always thin; they may be overweight, obese or gaining weight because breathlessness keeps them inactive. The thin pursed-lip breather is a classic emphysema picture, not a rule for everyone."
+    ],
+    [
+     "They are thin in every case",
+     "Thinness is the classic emphysema descriptor, but patients may be overweight or gaining weight from inactivity. Tell: weight does not exclude the disease.",
+     "common lay belief"
+    ],
+    [
+     "Obesity rules out emphysema",
+     "Inactivity from dyspnea can lead to weight gain even with emphysema. Tell: body habitus is a classic picture, not a diagnostic criterion; spirometry confirms the disease.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 17",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Diagnosis and pulmonary function tests",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "Which lung volume change reflects air trapping in this disease?",
+   "opts": [
+    [
+     "Reduced residual volume",
+     "Residual volume rises, not falls, as air is trapped behind narrowed and collapsing airways. Tell: trapping means more air left in the lungs after expiration.",
+     "reversed direction or value"
+    ],
+    [
+     "Reduced total lung capacity",
+     "Total lung capacity rises with hyperinflation; a reduced total lung capacity confirms restriction instead. Tell: obstruction inflates the lungs, restriction shrinks them.",
+     "reversed direction or value"
+    ],
+    [
+     "Reduced functional residual capacity",
+     "Functional residual capacity rises with hyperinflation in this disease. Tell: every volume affected by trapping goes up, not down. A reduced functional residual capacity would suggest restriction instead.",
+     "reversed direction or value"
+    ],
+    [
+     "Raised residual volume",
+     "Correct. Air trapping raises the residual volume, and hyperinflation raises total lung capacity and functional residual capacity. With exertion, dynamic hyperinflation worsens and drives dyspnea."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 25",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Diagnosis and pulmonary function tests",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "Spirometry shows obstruction and the forced vital capacity is also low, raising the possibility of a mixed disorder. Which measurement confirms it?",
+   "opts": [
+    [
+     "Diffusing capacity",
+     "Diffusing capacity is reduced in emphysema and separates it from chronic bronchitis and asthma. Tell: it does not measure lung size, so it cannot confirm restriction.",
+     "adjacent fact"
+    ],
+    [
+     "A repeat bronchodilator response",
+     "The bronchodilator response tells reversible from irreversible obstruction. Tell: the question of added restriction is answered by total lung capacity.",
+     "adjacent fact"
+    ],
+    [
+     "Arterial blood gas",
+     "An arterial blood gas measures oxygen and carbon dioxide and is usually kept for deteriorating or severe exacerbations. Tell: restriction is a volume question, answered by total lung capacity.",
+     "adjacent fact"
+    ],
+    [
+     "Total lung capacity",
+     "Correct. When an obstructed study also has a low forced vital capacity, a mixed obstructive and restrictive disorder is possible and is confirmed with total lung capacity. Lung volumes identify hyperinflation or coexisting restriction."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 27, 28",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Presentation and exam",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which statement about sputum production in this disease is accurate?",
+   "opts": [
+    [
+     "It reflects chronic bronchitis",
+     "Correct. Patients do not always produce sputum: it is seen with chronic bronchitis or a combined presentation and is typically not prevalent in emphysema-only cases. Its absence does not exclude the disease."
+    ],
+    [
+     "It is present in every patient",
+     "Sputum is not universal; emphysema-only patients typically do not produce much. Tell: sputum reflects mucus hypersecretion from the chronic bronchitis component.",
+     "common lay belief"
+    ],
+    [
+     "It is typical of pure emphysema",
+     "Emphysema-only cases typically lack prominent sputum; mucus hypersecretion is the chronic bronchitis pattern. Tell: the thin, pursed-lip breather has dyspnea more than sputum.",
+     "reversed direction or value"
+    ],
+    [
+     "Its absence rules out the disease",
+     "Patients do not always have sputum, so its absence cannot exclude the disease, especially emphysema. Tell: spirometry, not sputum, confirms the diagnosis.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 17",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Where can most exacerbations of chronic obstructive pulmonary disease be managed?",
+   "opts": [
+    [
+     "In the intensive care unit",
+     "Intensive care is for hemodynamic instability, major infection or need for invasive ventilation, a small minority. Tell: most exacerbations, more than 80%, are managed outpatient.",
+     "wrong stage or severity"
+    ],
+    [
+     "On a hospital ward",
+     "Admission follows specific criteria such as marked symptoms despite treatment or need for noninvasive ventilation. Tell: the majority of exacerbations stay outpatient.",
+     "wrong stage or severity"
+    ],
+    [
+     "In pulmonary rehabilitation",
+     "Rehabilitation is considered after an exacerbation as part of the discharge bundle, not as the place to treat one. Tell: most exacerbations are treated as outpatients.",
+     "adjacent fact"
+    ],
+    [
+     "As outpatients",
+     "Correct. More than 80% of exacerbations can be managed as outpatients after triage of severity. Admission is reserved for marked symptoms despite acute management, need for noninvasive ventilation, new signs, arrhythmia, poor secretion control, comorbidities or lack of home support."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 56",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Alpha-1 antitrypsin deficiency",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which emphysema pattern does alpha-1 antitrypsin deficiency cause?",
+   "opts": [
+    [
+     "Bronchial wall thickening",
+     "Bronchial wall thickening is the imaging change of the chronic bronchitis subtype, not an emphysema pattern. Tell: the deficiency destroys alveoli across whole lobules in the lower lobes.",
+     "competing diagnosis"
+    ],
+    [
+     "Isolated large bullae in the apex",
+     "Bullae can appear in emphysema, but an apical location is not the deficiency pattern. Tell: the deficiency is defined by panlobular emphysema concentrated at the lung bases.",
+     "reversed direction or value"
+    ],
+    [
+     "Panlobular, lower lobes",
+     "Correct. Alpha-1 antitrypsin deficiency causes panlobular emphysema predominantly in the lower lobes, which shows as basilar emphysema on the chest x-ray. Smoking causes centrilobular emphysema in the upper lobes."
+    ],
+    [
+     "Centrilobular, upper lobes",
+     "Centrilobular emphysema in the upper lobes is the smoking pattern. Tell: the deficiency is the lower-lobe, panlobular pattern, a clue that points to testing in a young or nonsmoking patient.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 14, 19",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "How do bullae differ from blebs?",
+   "opts": [
+    [
+     "Bullae occur in asthma, blebs in emphysema",
+     "Both blebs and bullae come from airspace destruction, the emphysema process. Tell: asthma does not destroy alveoli; the difference between the two is how deep and how large they are.",
+     "competing diagnosis"
+    ],
+    [
+     "Bullae lie deeper and grow larger",
+     "Correct. Blebs arise from destroyed airspaces and are not contained by the connective tissue of the visceral pleura, while bullae develop deep to the internal elastic layer, form their own sacs within connective tissue, and become significantly bigger than blebs."
+    ],
+    [
+     "Bullae lie under the pleura and stay small",
+     "That describes blebs, which form beneath the visceral pleura and stay smaller. Tell: bullae are the deeper and much larger air pockets. Bullae form their own sacs deep to the internal elastic layer.",
+     "reversed direction or value"
+    ],
+    [
+     "Bullae are filled with fluid",
+     "Both are air pockets from destroyed airspaces, also called pneumatosis, and they limit diffusing capacity. Tell: what separates them is depth and size, not contents.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slides 7, 33",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Under the current three-group scheme, which initial pharmacologic treatment fits group B?",
+   "opts": [
+    [
+     "A single bronchodilator",
+     "One bronchodilator is the start for group A, with few symptoms. Tell: group B has more symptoms, which calls for both long-acting bronchodilators. A single agent leaves a symptomatic patient undertreated.",
+     "wrong stage or severity"
+    ],
+    [
+     "An inhaled corticosteroid alone",
+     "Inhaled corticosteroids are never used alone in this disease and raise pneumonia risk. Tell: group B starts on the 2 long-acting bronchodilators. They must be paired with a long-acting beta agonist.",
+     "competing diagnosis"
+    ],
+    [
+     "Daily oral corticosteroids",
+     "Oral corticosteroids are for acute exacerbations only in this disease, not chronic treatment. Tell: group B's maintenance is a long-acting beta agonist plus antimuscarinic.",
+     "adjacent fact"
+    ],
+    [
+     "Dual long-acting bronchodilators",
+     "Correct. Group B, more symptoms (dyspnea grade 2 or more, or assessment score 10 or more) with low exacerbation risk, starts on a long-acting beta agonist plus a long-acting antimuscarinic. A single combined inhaler may be more convenient and effective."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 37, 40",
+   "slot": "first-line"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which chest x-ray finding fits chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Flattened diaphragm",
+     "Correct. The chest x-ray may show overinflated lungs with hyperlucent fields, a flattened diaphragm, bullae or blebs, and a narrow or vertical heart when heart failure is absent. The flat diaphragm reflects hyperinflation."
+    ],
+    [
+     "Elevated diaphragm",
+     "Hyperinflation pushes the diaphragm down and flattens it. Tell: an elevated diaphragm is the opposite of what overinflated lungs produce. The x-ray instead shows hyperlucent, overinflated fields.",
+     "reversed direction or value"
+    ],
+    [
+     "Small, low-volume lungs",
+     "The lungs are overinflated with hyperlucent fields, not small. Tell: low lung volumes point to restriction, the opposite of this disease's air trapping.",
+     "reversed direction or value"
+    ],
+    [
+     "Wide, horizontal heart",
+     "The heart tends to look narrow or vertical between overinflated lungs when heart failure is absent. Tell: hyperinflation stretches the chest vertically and narrows the heart shadow.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 31",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Care by age and referral",
+   "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly",
+   "q": "Which diagnostic caution applies to adults 65 and older with suspected chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "The ratio underdiagnoses them",
+     "The concern runs the other way: the fixed 0.70 ratio may overdiagnose older adults. Tell: overall the disease is underdiagnosed, but in the elderly the fixed ratio overcalls it.",
+     "reversed direction or value"
+    ],
+    [
+     "Everyone needs alpha-1 testing",
+     "Alpha-1 antitrypsin testing targets the young or those with few exposures. Tell: in older adults the caution is that the fixed ratio may overdiagnose.",
+     "reversed direction or value"
+    ],
+    [
+     "The fixed 0.70 ratio may overdiagnose",
+     "Correct. In older adults the fixed 0.70 ratio may overdiagnose, so the clinical context is weighed. In adults under 50, lower limits of normal or z-scores help, and in the young or minimally exposed, alpha-1 antitrypsin deficiency is considered."
+    ],
+    [
+     "Spirometry cannot be used past 65",
+     "Spirometry still confirms the diagnosis in older adults; the caution is about interpreting the fixed ratio. Tell: the risk in the elderly is overdiagnosis from the 0.70 cutoff.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 53",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Definition and subtypes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What is the primary site of disease in the emphysema subtype?",
+   "opts": [
+    [
+     "Alveoli and respiratory bronchioles",
+     "Correct. Emphysema involves the respiratory bronchioles and alveoli, where alveolar walls are destroyed and airspaces enlarge. The chronic bronchitis subtype instead centers on the large and small airways, with mucus gland hyperplasia, goblet cells and wall thickening."
+    ],
+    [
+     "Large and small airway glands",
+     "Mucus gland hyperplasia in the large and small airways is the chronic bronchitis subtype, which causes mucus hypersecretion. Tell: emphysema is a disease of the distal lung, the respiratory bronchioles and alveoli.",
+     "competing diagnosis"
+    ],
+    [
+     "Pleural lining of the lung",
+     "The pleura is not the primary site, although blebs can form beneath the visceral pleura. Tell: the destruction in emphysema is in the alveolar walls and respiratory bronchioles.",
+     "adjacent fact"
+    ],
+    [
+     "Pulmonary arteries",
+     "The pulmonary circulation is not the primary site; right heart strain (cor pulmonale) is a consequence, not the lesion. Tell: emphysema destroys the alveoli and respiratory bronchioles.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 14",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "When is an arterial blood gas usually obtained in chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "In a severe exacerbation",
+     "Correct. An arterial blood gas is usually done only in a deteriorating or severely exacerbated patient, where it typically shows chronic hypercapnia above 45 mmHg. Stable outpatients are diagnosed and followed with spirometry."
+    ],
+    [
+     "At every routine visit",
+     "Routine stable visits use symptoms, exacerbation history and spirometry, not arterial punctures. Tell: blood gases are for the acutely worse patient. Stable patients are followed with spirometry and symptoms.",
+     "adjacent fact"
+    ],
+    [
+     "To confirm the diagnosis",
+     "Spirometry confirms the diagnosis with a post-bronchodilator ratio below 0.70. Tell: the blood gas describes gas exchange in an acute decline, not whether the disease is present.",
+     "adjacent fact"
+    ],
+    [
+     "Before starting any inhaler",
+     "Inhaler choice comes from the patient's group, built from symptoms and exacerbation risk. Tell: an arterial blood gas is saved for deteriorating or severe exacerbations.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 30",
+   "slot": "initial test"
+  },
+  {
+   "topic": "Severity and group assessment",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "In the 2020 four-group scheme, a patient with few symptoms and high exacerbation risk belongs to which group?",
+   "opts": [
+    [
+     "Group D",
+     "Group D is high symptoms with high risk. Tell: with few symptoms, a high-risk patient is C, not D. Group D needs both more symptoms and high risk; this patient has the risk without the symptom burden.",
+     "wrong stage or severity"
+    ],
+    [
+     "Group C",
+     "Correct. In the 2020 scheme, symptoms times risk gives the group: low symptoms and low risk is A, high symptoms and low risk is B, low symptoms and high risk is C, and high symptoms and high risk is D."
+    ],
+    [
+     "Group A",
+     "Group A is low symptoms with low risk. Tell: high exacerbation risk moves a low-symptom patient up to C. Group A means few symptoms and no more than 1 exacerbation without admission.",
+     "wrong stage or severity"
+    ],
+    [
+     "Group B",
+     "Group B is high symptoms with low risk. Tell: this patient has few symptoms and high risk, the opposite corner of the grid. Group B has more symptoms (dyspnea grade 2 or more) with low risk.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slides 35, 36, 41",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Additional workup",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "A raised serum bicarbonate together with a raised arterial carbon dioxide pressure in this disease reflects what?",
+   "opts": [
+    [
+     "A sign of new kidney failure",
+     "The raised bicarbonate is explained by compensation for chronic hypercapnia, not by kidney disease. Tell: the pairing of high carbon dioxide and high bicarbonate is the expected compensated pattern.",
+     "adjacent fact"
+    ],
+    [
+     "Compensatory metabolic alkalosis",
+     "Correct. Blood gases usually show chronic hypercapnia, with arterial carbon dioxide above 45 mmHg, and the metabolic panel may show a raised bicarbonate. The combination shows a compensatory metabolic alkalosis for the chronic carbon dioxide retention."
+    ],
+    [
+     "Primary metabolic acidosis",
+     "A metabolic acidosis lowers bicarbonate; here bicarbonate is raised. Tell: a high bicarbonate with chronic carbon dioxide retention is compensation, a metabolic alkalosis.",
+     "reversed direction or value"
+    ],
+    [
+     "Acute respiratory alkalosis",
+     "A respiratory alkalosis lowers carbon dioxide; these patients retain it, above 45 mmHg. Tell: raised carbon dioxide with raised bicarbonate is chronic retention with metabolic compensation.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 30",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Etiology and risk factors",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which treatment is the only one that can slow the progression of chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Inhaled corticosteroids",
+     "Inhaled corticosteroids are used with a long-acting beta agonist to reduce exacerbations and raise pneumonia risk; they do not halt the disease. Tell: the one intervention that slows progression is removing the smoke.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Pulmonary rehabilitation",
+     "Rehabilitation is the most effective therapy after smoking cessation, reducing dyspnea and hospitalizations, but it improves function rather than slowing progression. Tell: cessation is ranked first because only it slows the disease.",
+     "adjacent fact"
+    ],
+    [
+     "Smoking cessation",
+     "Correct. Smoking cessation, with limiting exposure to triggers, is the only treatment that can slow progression; other treatments target symptom palliation and fewer hospitalizations. It is also why the disease is preventable in almost all cases."
+    ],
+    [
+     "Long-acting bronchodilators",
+     "Long-acting bronchodilators treat bronchoconstriction and help prevent exacerbations, improving the 1-second volume slightly. Tell: drug treatment palliates symptoms and cuts hospitalizations, but only stopping exposure slows decline.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 9, 55",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Presentation and exam",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which condition should patients with chronic obstructive pulmonary disease be screened for as a comorbidity?",
+   "opts": [
+    [
+     "Allergic rhinitis",
+     "Allergic rhinitis is part of the atopic picture of extrinsic asthma. Tell: the comorbidities to screen for in this disease include osteoporosis, anemia and skeletal muscle dysfunction.",
+     "competing diagnosis"
+    ],
+    [
+     "Osteoporosis",
+     "Correct. Comorbidities to screen for include cardiovascular disease, lung cancer, osteoporosis, anxiety and depression, reflux disease, anemia and skeletal muscle dysfunction. Osteoporosis matters even more in the elderly, along with frailty and falls."
+    ],
+    [
+     "Atopic dermatitis",
+     "Atopic dermatitis belongs to the atopic triad with allergic rhinitis and asthma, not to this disease's comorbidity list. Tell: the screening list here includes osteoporosis, heart disease, lung cancer, anemia and depression.",
+     "competing diagnosis"
+    ],
+    [
+     "Nasal polyps",
+     "Nasal polyps are common in intrinsic asthma, not a listed comorbidity here. Tell: patients with this disease are screened for osteoporosis, cardiovascular disease, lung cancer and mood disorders.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 18",
+   "slot": "complication"
+  },
+  {
+   "topic": "Diagnosis and pulmonary function tests",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "Which post-bronchodilator ratio of forced expiratory volume in 1 second to forced vital capacity confirms the diagnosis when the value falls below it?",
+   "opts": [
+    [
+     "0.50",
+     "A cutoff of 0.50 would miss many patients with real obstruction, since every ratio between 0.50 and 0.70 is already abnormal. Tell: the confirming threshold is below 0.70.",
+     "reversed direction or value"
+    ],
+    [
+     "0.60",
+     "A cutoff of 0.60 is too low and would miss obstruction in the 0.60 to 0.70 range. Tell: the diagnosis is confirmed by a post-bronchodilator ratio below 0.70.",
+     "reversed direction or value"
+    ],
+    [
+     "0.70",
+     "Correct. A post-bronchodilator ratio of forced expiratory volume in 1 second to forced vital capacity below 0.70 confirms the diagnosis. In older adults this fixed ratio may overdiagnose, so clinical context is weighed."
+    ],
+    [
+     "0.80",
+     "A cutoff of 0.80 would label many people without obstruction as diseased. Tell: the number to remember is 0.70, measured after the bronchodilator. A ratio between 0.70 and 0.80 is not diagnostic.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 26, 34",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which adverse effect is the main risk of long-acting beta agonists in this disease?",
+   "opts": [
+    [
+     "Arrhythmias",
+     "Correct. Long-acting beta agonists treat ongoing bronchoconstriction and help prevent exacerbations, but their sympathetic stimulation can cause tachycardia and other cardiac effects, including arrhythmias, and can make atrial fibrillation worse."
+    ],
+    [
+     "Dry mouth",
+     "Dry mouth is the main adverse effect of long-acting antimuscarinics, whose poor absorption keeps side effects limited. Tell: beta agonists stimulate the sympathetic system, so their risk is cardiac.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Pneumonia",
+     "Pneumonia risk rises with inhaled corticosteroids, which must be combined with a long-acting beta agonist. Tell: the beta agonist's own risk is sympathetic: tachycardia and arrhythmias.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Bone fractures",
+     "Fracture risk in older adults is tied to inhaled corticosteroids. Tell: long-acting beta agonists carry cardiac risk, such as worsening atrial fibrillation.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 38",
+   "slot": "avoid"
+  },
+  {
+   "topic": "Etiology and risk factors",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which occupational exposure is listed as raising the risk of chronic obstructive pulmonary disease itself, rather than of a different lung condition?",
+   "opts": [
+    [
+     "Coal dust",
+     "Correct. Occupational risk comes from coal dust, gold mining, welding and other fumes such as textiles. Silica and fiberglass also increase risk but lead to other conditions (silicosis, fibrosis and pneumoconiosis)."
+    ],
+    [
+     "Silica",
+     "Silica exposure increases risk but leads to silicosis, a different condition. Tell: coal dust, gold mining, welding and textile fumes are the exposures listed for this disease itself.",
+     "adjacent fact"
+    ],
+    [
+     "Fiberglass",
+     "Fiberglass is grouped with silica as an exposure that results in other conditions, fibrosis or pneumoconiosis. Tell: the occupational exposures tied to this disease are coal dust, gold mining, welding and fumes.",
+     "adjacent fact"
+    ],
+    [
+     "Cat dander",
+     "Cat dander is an inhaled allergen that activates mast cells in allergic asthma; it is not an occupational cause of this disease. Tell: occupational risk here comes from dusts and fumes such as coal, gold mining and welding.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 12",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What should patients be told about recovery after an exacerbation?",
+   "opts": [
+    [
+     "It takes a few days",
+     "A few days understates recovery, which can take 4 to 6 weeks. Tell: setting realistic expectations is part of discharge education. Patients told a few days may think a slower recovery means failure.",
+     "wrong stage or severity"
+    ],
+    [
+     "It takes 1 to 2 weeks",
+     "One to 2 weeks is shorter than the stated timeline of 4 to 6 weeks. Tell: patients may also not return fully to baseline. Recovery can last a month or more.",
+     "wrong stage or severity"
+    ],
+    [
+     "It can take 4 to 6 weeks",
+     "Correct. Discharge education covers the recovery timeline: recovery can take 4 to 6 weeks, and the patient may not return to baseline. The bundle also starts long-acting bronchodilators promptly, checks inhaler technique and arranges follow-up."
+    ],
+    [
+     "It takes about 6 months",
+     "Six months overstates the usual course, which is 4 to 6 weeks. Tell: the realistic expectation is about a month or more, possibly without a full return to baseline.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 61",
+   "slot": "education"
+  },
+  {
+   "topic": "Severity and group assessment",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "In a patient with a post-bronchodilator ratio below 0.70, a forced expiratory volume in 1 second of 64% predicted corresponds to which airflow grade?",
+   "opts": [
+    [
+     "Grade 1 (mild)",
+     "Grade 1, mild, needs 80% predicted or more. At 64% this patient is below it. Tell: anything from 50% to 79% is grade 2. At 64%, the limitation is moderate, not mild.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 2 (moderate)",
+     "Correct. Grade 2, moderate, covers a post-bronchodilator 1-second volume of 50% up to 80% predicted, so 64% falls there. Grade 1 needs 80% or more, and grade 3 begins below 50%."
+    ],
+    [
+     "Grade 3 (severe)",
+     "Grade 3, severe, covers 30% to 49% predicted. At 64% this patient is above the 50% line. Tell: severe starts below 50%. At 64%, this patient sits 14 points above the severe range.",
+     "wrong stage or severity"
+    ],
+    [
+     "Grade 4 (very severe)",
+     "Grade 4, very severe, is below 30% predicted, far under this patient's 64%. Tell: very severe means less than a third of predicted airflow. That cutoff is 30%, less than half of this patient's value.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 34",
+   "slot": "test finding"
+  },
+  {
+   "topic": "Alpha-1 antitrypsin deficiency",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "Which laboratory result is diagnostic of alpha-1 antitrypsin deficiency?",
+   "opts": [
+    [
+     "Raised blood eosinophils",
+     "Eosinophils are measured on the blood count and guide whether an inhaled corticosteroid is considered. Tell: they say nothing about the deficiency, which is diagnosed by a low enzyme level and genotype.",
+     "adjacent fact"
+    ],
+    [
+     "Raised B-type natriuretic peptide",
+     "B-type natriuretic peptide is checked when associated heart failure is suspected. Tell: alpha-1 antitrypsin deficiency is diagnosed by a low enzyme level with a severely deficient genotype.",
+     "adjacent fact"
+    ],
+    [
+     "Low level plus deficient genotype",
+     "Correct. An alpha-1 antitrypsin level below 11 micromol/L together with a severely deficient genotype is diagnostic. Testing is aimed at young, unexposed or basilar-emphysema patients, or those with a family history."
+    ],
+    [
+     "Raised serum bicarbonate",
+     "A raised bicarbonate on the metabolic panel reflects compensation for chronic carbon dioxide retention, not the deficiency. Tell: the diagnosis needs the enzyme level itself, below 11 micromol/L, with a deficient genotype.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 30",
+   "slot": "gold standard"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which oral antibiotic is chosen in an exacerbation when Pseudomonas is a concern?",
+   "opts": [
+    [
+     "Amoxicillin-clavulanate",
+     "Amoxicillin-clavulanate is an option for uncomplicated exacerbations. Tell: pseudomonal concern moves the choice to levofloxacin. It covers the uncomplicated organisms, not Pseudomonas.",
+     "wrong stage or severity"
+    ],
+    [
+     "Azithromycin",
+     "Azithromycin, a macrolide, is an uncomplicated-exacerbation option and is very active against atypical organisms. Tell: it is not the pseudomonal choice; levofloxacin is.",
+     "wrong stage or severity"
+    ],
+    [
+     "Levofloxacin",
+     "Correct. Uncomplicated cases use doxycycline, a macrolide, trimethoprim-sulfamethoxazole or amoxicillin-clavulanate; with resistance, a respiratory fluoroquinolone is considered, and levofloxacin is chosen for pseudomonal concern."
+    ],
+    [
+     "Doxycycline",
+     "Doxycycline is an option for uncomplicated exacerbations caused by Haemophilus influenzae, streptococci or other gram-positive organisms. Tell: it does not cover Pseudomonas; levofloxacin does.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slides 59, 62",
+   "slot": "agent/regimen"
+  },
+  {
+   "topic": "Exacerbations",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "When should antibiotics be given in an exacerbation of chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "When wheezing is present",
+     "Wheezing reflects bronchoconstriction, treated with bronchodilators. Tell: antibiotics follow increased sputum volume and purulence with breathlessness.",
+     "adjacent fact"
+    ],
+    [
+     "After a week without improvement",
+     "Antibiotic timing is set by the sputum change, not a fixed wait. Tell: shortness of breath with increased, purulent sputum is the indication from the start.",
+     "adjacent fact"
+    ],
+    [
+     "With more, and more purulent, sputum",
+     "Correct. Antibiotics are given when the patient is short of breath with increased sputum volume and purulence over baseline. Uncomplicated cases use oral doxycycline, a macrolide, trimethoprim-sulfamethoxazole or amoxicillin-clavulanate."
+    ],
+    [
+     "With every exacerbation",
+     "Exacerbations can be triggered by viruses or pollution, and antibiotics are tied to a specific sputum change. Tell: the trigger for antibiotics is more sputum that is also more purulent.",
+     "common lay belief"
+    ]
+   ],
+   "c": 2,
+   "cite": "37. svCOPD 2026.pptx, Slide 59",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Smoking cessation and vaccines",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which approach increases the efficacy of any smoking cessation attempt?",
+   "opts": [
+    [
+     "Using medicine without counseling",
+     "Medicines such as nicotine replacement, bupropion and varenicline help, but cessation attempts should all be combined with counseling. Tell: drug therapy is an add-on to behavioral support, not a substitute for it.",
+     "adjacent fact"
+    ],
+    [
+     "Waiting until symptoms worsen",
+     "Smoking cessation carries a survival benefit, so delaying it forfeits that benefit. Tell: cessation is essential for every group from the start, not when symptoms are worse.",
+     "common lay belief"
+    ],
+    [
+     "Relying on willpower alone",
+     "Unsupported attempts give up the gains of counseling, which identifies triggers and teaches coping strategies. Tell: the listed rule is that all cessation attempts are combined with counseling.",
+     "common lay belief"
+    ],
+    [
+     "Pairing it with counseling",
+     "Correct. Every smoking cessation attempt should be combined with counseling, or behavioral therapy, which looks for triggers and gives coping strategies, to increase efficacy. Nicotine replacement, bupropion or varenicline can be added to that support."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 46",
+   "slot": "education"
+  },
+  {
+   "topic": "Oxygen and survival",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which therapy is listed among those with a survival benefit in chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Inhaled corticosteroids",
+     "Inhaled corticosteroids reduce exacerbations in selected patients but raise pneumonia risk and are not on the survival list. Tell: the 3 survival therapies are cessation, long-term oxygen and noninvasive ventilation.",
+     "adjacent fact"
+    ],
+    [
+     "Long-acting antimuscarinics",
+     "Long-acting antimuscarinics limit bronchoconstriction and help prevent exacerbations, but they are not listed as improving survival. Tell: oxygen for severe resting hypoxemia is.",
+     "adjacent fact"
+    ],
+    [
+     "Pneumococcal vaccination",
+     "The pneumococcal vaccine reduces community-acquired pneumonia but overall does not reduce deaths or admissions. Tell: the survival list is cessation, oxygen and noninvasive ventilation.",
+     "adjacent fact"
+    ],
+    [
+     "Long-term oxygen",
+     "Correct. Survival benefits come from smoking cessation, long-term oxygen therapy for severe resting hypoxemia, and noninvasive ventilation for hypercapnic exacerbations. Symptoms and exacerbations guide drug therapy."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 48, 66",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Care by age and referral",
+   "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly",
+   "q": "When should palliative care be integrated for older adults with chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "When the patient asks for it",
+     "Waiting for the patient to ask delays the planning that early integration provides. Tell: for older adults clinicians bring palliative care in early, with caregivers and advance directives.",
+     "common lay belief"
+    ],
+    [
+     "Early, with caregivers involved",
+     "Correct. For older adults palliative care is integrated early, with caregiver involvement and advance directives. For working-age adults it is introduced as the disease advances."
+    ],
+    [
+     "In the final weeks of life",
+     "Waiting until the final weeks loses the chance to plan with caregivers and advance directives. Tell: for older adults palliative care starts early. Late referral leaves little time for advance directives.",
+     "wrong stage or severity"
+    ],
+    [
+     "After every medicine has failed",
+     "Palliative care is not a last resort after drug failure; for older adults it is integrated early alongside treatment. Tell: early integration with caregivers and advance directives is the listed approach.",
+     "common lay belief"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 53",
+   "slot": "referral"
+  },
+  {
+   "topic": "Definition and subtypes",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "How is emphysema defined?",
+   "opts": [
+    [
+     "Reversible bronchospasm",
+     "Reversible bronchospasm is the hallmark of asthma, whose obstruction improves after a bronchodilator. Tell: emphysema's alveolar destruction is permanent, so its obstruction does not reverse.",
+     "competing diagnosis"
+    ],
+    [
+     "Destruction and enlargement of the alveoli",
+     "Correct. Emphysema is an anatomic, pathologic definition describing destruction and permanent enlargement of the alveoli, with air trapping. That separates it from chronic bronchitis, which is defined clinically by chronic cough and sputum."
+    ],
+    [
+     "Chronic cough with sputum production",
+     "Chronic cough and sputum for at least 3 months a year over 2 years is the clinical definition of chronic bronchitis. Tell: emphysema is the one defined by pathology, the destroyed and enlarged alveoli, not by symptoms.",
+     "adjacent fact"
+    ],
+    [
+     "Narrowing of the bronchioles",
+     "Narrowing of the bronchioles is small airway disease, a third component under the umbrella term. Tell: emphysema involves the alveoli themselves, which are destroyed and permanently enlarged.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 6",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Smoking cessation and vaccines",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "In the motivational framework of feedback, responsibility, advice, menu of options, empathy and self-efficacy, which element builds the patient's confidence in their ability to change?",
+   "opts": [
+    [
+     "Self-efficacy",
+     "Correct. Self-efficacy focuses on enhancing the person's confidence in their ability to change and reinforcing belief in their own capabilities, for example by pointing to changes they have made before."
+    ],
+    [
+     "Feedback",
+     "Feedback gives specific information about how the behavior is affecting the person's health, to raise awareness. Tell: confidence-building is the job of self-efficacy, the last element.",
+     "adjacent fact"
+    ],
+    [
+     "Menu of options",
+     "A menu of options presents a range of strategies so the person can choose what fits. Tell: offering choices is not the same as building belief in one's ability, which is self-efficacy.",
+     "adjacent fact"
+    ],
+    [
+     "Empathy",
+     "Empathy acknowledges and validates the person's feelings and challenges with compassion. Tell: empathy accepts mixed feelings; self-efficacy reinforces confidence to act.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 47",
+   "slot": "education"
+  },
+  {
+   "topic": "Alpha-1 antitrypsin deficiency",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which patients with chronic obstructive pulmonary disease should be evaluated for alpha-1 antitrypsin deficiency as the cause?",
+   "opts": [
+    [
+     "Those with upper-lobe emphysema",
+     "Upper-lobe, centrilobular emphysema is the smoking pattern. Tell: the deficiency pattern is panlobular and lower-lobe, which shows as basilar emphysema on the chest x-ray.",
+     "reversed direction or value"
+    ],
+    [
+     "Under 45 or little exposure",
+     "Correct. Patients under age 45, or those without significant smoke or particle exposure, should be evaluated for alpha-1 antitrypsin deficiency. Other suggestive features are predominantly basilar emphysema and a family history of emphysema."
+    ],
+    [
+     "Over 65 with heavy smoking",
+     "Older heavy smokers fit ordinary smoking-related disease, the most common pattern. Tell: deficiency testing targets the atypical patient, one who is young (45 or under) or lacks a significant exposure.",
+     "reversed direction or value"
+    ],
+    [
+     "Any smoker with chronic bronchitis",
+     "Chronic bronchitis in a smoker is the usual exposure-driven disease and does not single out the deficiency. Tell: the deficiency causes panlobular emphysema in younger or unexposed patients.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slides 10, 19",
+   "slot": "risk factors"
+  },
+  {
+   "topic": "Presentation and exam",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which lung exam finding reflects a flattened diaphragm in this disease?",
+   "opts": [
+    [
+     "Hyperresonance confined to one apex",
+     "Hyperresonance in emphysema is generalized from hyperinflation, not limited to one apex. Tell: the sign linked to the flat diaphragm is the lower intercostal spaces pulling in during inspiration.",
+     "adjacent fact"
+    ],
+    [
+     "Loud heart sounds at the apex",
+     "Heart sounds are distant and may be heard best at the epigastrium, not loud at the apex. Tell: the flattened-diaphragm sign is paradoxical lower intercostal retraction.",
+     "reversed direction or value"
+    ],
+    [
+     "Neck veins that distend on inspiration",
+     "Jugular veins in this disease distend particularly during expiration. Tell: the flat-diaphragm sign is in the chest wall, with lower intercostal retraction on inspiration.",
+     "reversed direction or value"
+    ],
+    [
+     "Lower intercostal retraction on inspiration",
+     "Correct. Paradoxical retraction of the lower intercostal spaces during inspiration reflects a flat diaphragm from hyperinflation. Other lung findings include decreased breath sounds in some areas with wheezing or crackles."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 21",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Presentation and exam",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which symptom is an early sign of chronic obstructive pulmonary disease in most cases?",
+   "opts": [
+    [
+     "Barrel chest",
+     "A barrel chest reflects established hyperinflation and is a physical finding, not the usual first symptom. Tell: the early clue is breathlessness with exertion and poor exercise tolerance.",
+     "wrong stage or severity"
+    ],
+    [
+     "Cyanosis of the lips",
+     "Cyanosis of the lips or fingertips is an exam finding seen with poor oxygenation, more typical of advanced or bronchitic disease. Tell: the earliest sign in most patients is exertional dyspnea.",
+     "wrong stage or severity"
+    ],
+    [
+     "Clubbing of the nails",
+     "Clubbing is rare in this disease. Tell: an early sign that most patients share is breathlessness on exertion, while clubbing should prompt a look for something else.",
+     "adjacent fact"
+    ],
+    [
+     "Exertional dyspnea",
+     "Correct. Dyspnea on exertion, with exercise intolerance, is an early sign in most cases, and symptoms may be subtle at first. The disease then brings progressive dyspnea with chronic cough, wheezing and sputum production."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 16, 17, 21",
+   "slot": "manifestation"
+  },
+  {
+   "topic": "Chronic management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which is a goal of chronic management in chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Normalizing lung function",
+     "Normal pulmonary function is an asthma goal, possible because asthma's obstruction reverses. Tell: this disease's obstruction is chronic and irreversible, so the goals are fewer symptoms, slower progression and fewer exacerbations.",
+     "competing diagnosis"
+    ],
+    [
+     "Reversing alveolar destruction",
+     "Alveolar destruction in emphysema is permanent, so no therapy reverses it. Tell: smoking cessation can slow progression, but the damage already done stays.",
+     "reversed direction or value"
+    ],
+    [
+     "Removing the rescue inhaler",
+     "Every patient should keep an albuterol inhaler to prevent or reduce symptoms, so removing it is not a goal. Tell: the goal is fewer symptoms and exacerbations, with rescue medicine still on hand.",
+     "common lay belief"
+    ],
+    [
+     "Preventing exacerbations",
+     "Correct. The goals of chronic management are reducing symptoms and improving exercise tolerance and health status, preventing disease progression, preventing exacerbations, and reducing mortality. Long-acting bronchodilators and rehabilitation serve these goals."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 45",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Chronic management",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which non-pharmacologic measure is essential for groups B and E but not listed as essential for group A?",
+   "opts": [
+    [
+     "Pulmonary rehabilitation",
+     "Correct. Smoking cessation is essential for every group, and groups B and E add pulmonary rehabilitation as essential; physical activity is recommended for all, and vaccines depend on local guidelines. Nonpharmacologic care is the foundation for everyone."
+    ],
+    [
+     "Smoking cessation",
+     "Smoking cessation, which can include drug treatment, is essential for every group, A included. Tell: the measure added for groups B and E is pulmonary rehabilitation.",
+     "adjacent fact"
+    ],
+    [
+     "Physical activity",
+     "Physical activity is recommended for all groups, not essential for B and E alone. Tell: rehabilitation is the measure that becomes essential with more symptoms or high risk.",
+     "adjacent fact"
+    ],
+    [
+     "Shingles vaccination",
+     "Shingles vaccination, like pertussis and coronavirus vaccines, is listed as depending on local guidelines for every group. Tell: pulmonary rehabilitation is the essential addition for B and E.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 43",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Pathophysiology",
+   "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction",
+   "q": "Which process is listed as a contributor to airway remodeling and parenchymal destruction in this disease?",
+   "opts": [
+    [
+     "Immunoglobulin E-mediated mast cell activation",
+     "Immunoglobulin E binding to mast cells is the allergic pathway of extrinsic asthma. Tell: this disease is driven by inflammation, oxidative stress and an imbalance between proteases and antiproteases.",
+     "competing diagnosis"
+    ],
+    [
+     "Reversible smooth muscle spasm alone",
+     "Smooth muscle spasm that reverses describes asthma's bronchoconstriction. Tell: this disease causes chronic, irreversible obstruction through remodeling and destruction, not spasm alone.",
+     "competing diagnosis"
+    ],
+    [
+     "Excess surfactant production",
+     "Surfactant is not among the listed contributors. Tell: the 3 listed drivers are chronic inflammation, oxidative stress and protease-antiprotease imbalance.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Protease-antiprotease imbalance",
+     "Correct. Airway remodeling and parenchymal destruction are driven by chronic inflammation, oxidative stress and protease-antiprotease imbalance. That imbalance is also why a lack of alpha-1 antitrypsin, a protease inhibitor, destroys the lung."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slide 11",
+   "slot": "etiology"
+  },
+  {
+   "topic": "Prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What does the BODE (body mass index, obstruction, dyspnea, exercise) index estimate?",
+   "opts": [
+    [
+     "Need for home oxygen",
+     "Home oxygen is decided by resting arterial oxygen or saturation thresholds. Tell: the index estimates 4-year survival.",
+     "adjacent fact"
+    ],
+    [
+     "4-year survival",
+     "Correct. The index adds points for body mass index, the 1-second volume, the dyspnea grade and the 6-minute walk distance; totals of 0 to 2 predict about 80% 4-year survival, falling to about 18% at 7 to 10 points."
+    ],
+    [
+     "Treatment group",
+     "The treatment group comes from symptoms and exacerbation risk and guides initial medicines. Tell: the index estimates long-term survival, not the group.",
+     "adjacent fact"
+    ],
+    [
+     "Airflow obstruction grade",
+     "The airflow grade comes from the 1-second volume alone. Tell: the index combines 4 measures to predict 4-year survival. The grade is one ingredient of the index, not its output.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "37. svCOPD 2026.pptx, Slide 52",
+   "slot": "prognosis"
+  },
+  {
+   "topic": "Smoking cessation and vaccines",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "Which vaccine, given yearly, is proven to reduce hospitalizations and death in chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Influenza vaccine",
+     "Correct. Every patient should get a yearly influenza shot, which is proven to reduce hospitalizations and death. The pneumococcal vaccine reduces community-acquired pneumonia but overall does not reduce deaths or admissions."
+    ],
+    [
+     "Pneumococcal vaccine",
+     "The pneumococcal vaccine reduces the incidence of community-acquired pneumonia, but overall it does not reduce deaths or admission rates, and it is not yearly. Tell: the yearly vaccine with proven mortality benefit is influenza.",
+     "adjacent fact"
+    ],
+    [
+     "Shingles vaccine",
+     "Shingles vaccination is listed as depending on local guidelines, not as proven to cut hospitalizations and death. Tell: the vaccine every patient gets yearly is influenza.",
+     "adjacent fact"
+    ],
+    [
+     "Pertussis vaccine",
+     "Pertussis vaccination is also listed as depending on local guidelines. Tell: influenza vaccination, every year, is the one proven to reduce hospitalizations and death.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "37. svCOPD 2026.pptx, Slide 48",
+   "slot": "first-line"
+  },
+  {
+   "topic": "Inhaled medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype",
+   "q": "What is the role of oral corticosteroids in chronic obstructive pulmonary disease?",
+   "opts": [
+    [
+     "Daily maintenance for group B",
+     "Group B starts on a long-acting beta agonist plus a long-acting antimuscarinic. Tell: oral steroids are never chronic maintenance here; they are given for exacerbations.",
+     "adjacent fact"
+    ],
+    [
+     "First-line for group A",
+     "Group A starts with a single bronchodilator, short- or long-acting. Tell: oral corticosteroids are reserved for acute exacerbations. Low-burden patients never need systemic steroids for maintenance.",
+     "adjacent fact"
+    ],
+    [
+     "Long-term after any admission",
+     "After an admission the discharge bundle starts long-acting bronchodilators promptly and considers an inhaled corticosteroid if eosinophils are high. Tell: oral steroids treat the exacerbation, not the months after it.",
+     "adjacent fact"
+    ],
+    [
+     "Acute exacerbations only",
+     "Correct. Oral steroids are for acute exacerbations only in this disease, which is why they are missing from the list of common chronic therapies. Exacerbations are treated with antibiotics, bronchodilators, corticosteroids and oxygen."
+    ]
+   ],
+   "c": 3,
+   "cite": "37. svCOPD 2026.pptx, Slides 44, 49",
+   "slot": "agent/regimen"
+  }
+ ]
+}

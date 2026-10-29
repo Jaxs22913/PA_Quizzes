@@ -7,7 +7,7 @@ plum (292), Exam 5 rose (325), so Exam 6 is crimson (358): the Exam 5 rose
 colors rotated +33 degrees in hue, the gold kept. Four-option sets, per the
 exam standard.
 
-    python3 render_cms_e6.py l33io | l33vig | l34io | l34vig
+    python3 render_cms_e6.py l33io | l33vig | l34io | l34vig | l35io | l35vig | l36io | l36vig
 
 A later lecture adds its two SPEC entries here (see tools/cms_e6_README.md).
 """
@@ -51,6 +51,34 @@ SPEC = {
           "Find the cause", "Treat the cause"],
    intro="Every value comes with its normal range. Work each case the same way: the pH first, then which "
          "of the carbon dioxide or the bicarbonate matches it, then the compensation, then the patient."),
+ "l35io": dict(sets="cms_e6l35_sets.json",
+   files=["asthma-quiz.html", "asthma-quiz-version-2.html"],
+   title="Asthma Quiz %d — CMS I Exam 6",
+   h1="Asthma &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 35",
+   chips=["Definition and pathophysiology", "Etiology and triggers", "Spirometry and peak flow",
+          "Severity classification", "Medications", "Patient education"]),
+ "l35vig": dict(sets="cms_e6l35_vig_sets.json",
+   files=["asthma-vignettes.html", "asthma-vignettes-version-2.html"],
+   title="Asthma Vignettes %d — CMS I Exam 6",
+   h1="Asthma &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 35",
+   chips=["Wheeze and cough", "Classifying severity", "Controller choice", "Drugs to avoid",
+          "Aspirin and exercise", "Action plans"]),
+ "l36io": dict(sets="cms_e6l36_sets.json",
+   files=["copd-quiz.html", "copd-quiz-version-2.html"],
+   title="Chronic Obstructive Pulmonary Disease Quiz %d — CMS I Exam 6",
+   h1="Chronic Obstructive Pulmonary Disease &mdash; Quiz %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 36",
+   chips=["Chronic bronchitis and emphysema", "Alpha-1 antitrypsin", "Spirometry", "Severity grades and groups",
+          "Inhalers and oxygen", "Exacerbations"]),
+ "l36vig": dict(sets="cms_e6l36_vig_sets.json",
+   files=["copd-vignettes.html", "copd-vignettes-version-2.html"],
+   title="Chronic Obstructive Pulmonary Disease Vignettes %d — CMS I Exam 6",
+   h1="Chronic Obstructive Pulmonary Disease &mdash; Vignettes %d",
+   sub="Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 36",
+   chips=["Smokers with dyspnea", "Symptom and survival scores", "Choosing inhalers", "Comorbidities",
+          "Exacerbations", "Older adults"]),
 }[sys.argv[1] if len(sys.argv) > 1 else "l33io"]
 
 S = json.load(open(os.path.join(HERE, SPEC["sets"]), encoding="utf-8"))

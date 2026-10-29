@@ -1,0 +1,1806 @@
+{
+ "set1": [
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 26-year-old woman has asthma symptoms only 1 day a week and uses albuterol 1 day a week, but she wakes at night with cough twice a week. She has no activity limitation, and her forced expiratory volume in 1 second is 86% predicted. Which severity classification fits?",
+   "opts": [
+    [
+     "Intermittent",
+     "Her daytime symptoms, rescue use and 86% function would fit intermittent, but severity follows the worst feature, and waking twice a week exceeds the intermittent limit of 2 or fewer times a month. Tell: one moderate feature outranks several mild ones.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mild persistent",
+     "Mild persistent asthma allows night waking 3 to 4 times a month. She wakes twice a week, which is more than once a week, the moderate persistent level. Tell: twice weekly is roughly 8 times a month, past the mild limit.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Correct. Severity is assigned to the most severe category in which any feature occurs. Her daytime symptoms and lung function are intermittent-level, but night awakenings more than once a week (twice weekly) are a moderate persistent feature, so she is moderate persistent."
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma brings waking often 7 times a week with symptoms throughout the day and function under 60%. She wakes twice a week with 86% function. Tell: her worst feature reaches moderate, not severe.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 33-year-old woman with asthma wakes with cough and mild wheeze. Her peak flow is 70% of her personal best, placing her in the yellow zone of her written action plan. What does the plan direct her to do first?",
+   "opts": [
+    [
+     "Start an oral steroid right away",
+     "The oral steroid enters the yellow-zone plan second, if her symptoms and peak flow do not return to green within an hour of quick-relief treatment. Tell: the first yellow-zone step is quick-relief medicine plus her usual controller.",
+     "adjacent fact"
+    ],
+    [
+     "Go to the hospital now",
+     "Going to the hospital belongs to the red zone and the danger signs, such as trouble walking or talking from breathlessness or blue lips. At 70% with mild symptoms she is in yellow. Tell: yellow means add quick relief and keep the controller.",
+     "wrong stage or severity"
+    ],
+    [
+     "Add quick-relief medicine and keep her controller",
+     "Correct. In the yellow zone, 50% to 79% of personal best, asthma is getting worse: she adds quick-relief medicine (a short-acting beta-2 agonist) and keeps taking her green-zone controller. An oral steroid is added only if she does not return to green after an hour."
+    ],
+    [
+     "Stop her controller until she feels better",
+     "The yellow zone keeps the green-zone controller going while adding quick relief; stopping it removes her anti-inflammatory treatment as she worsens. Tell: the plan adds medicine in the yellow zone, it never subtracts.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 88",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 37-year-old woman with asthma records her peak flow at home. Over the past week her morning readings before albuterol have been about 280 L/min and her afternoon readings after albuterol about 380 L/min. What does this pattern indicate?",
+   "opts": [
+    [
+     "Poor asthma control",
+     "Correct. Peak flow is measured in the morning before and the afternoon after the bronchodilator, and a 20% change between them, or day to day, indicates poor control. A rise from 280 to 380 is about 36% of the morning value (26% of the afternoon value), well over the 20% line."
+    ],
+    [
+     "Good asthma control",
+     "Good control would keep morning-to-afternoon variation under 20%. Her readings swing by about 36%. Tell: a large morning-to-afternoon gap is the hallmark of poor control, not good control.",
+     "reversed direction or value"
+    ],
+    [
+     "A faulty peak flow meter",
+     "A consistent pattern every morning and afternoon for a week, with higher readings after albuterol, fits real airway variation, not a broken device. Tell: the readings rise exactly when the bronchodilator works.",
+     "common lay belief"
+    ],
+    [
+     "Normal circadian variation needing no action",
+     "Bronchial reactivity does vary through the day, but a swing of more than 20% between morning and afternoon is defined as poor control and needs review. Tell: the 20% threshold separates expected variation from poor control.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 60",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Medications",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 36-year-old woman with moderate persistent asthma was given salmeterol by itself at an urgent care visit and it has been her sole controller for a month. Which change does her regimen need?",
+   "opts": [
+    [
+     "Replace it with tiotropium",
+     "Tiotropium, an anticholinergic, is less effective than beta-2 agonists, slow in onset, and not an anti-inflammatory. Tell: her problem is a bronchodilator used without the inhaled corticosteroid it must be paired with.",
+     "adjacent fact"
+    ],
+    [
+     "Add an inhaled corticosteroid",
+     "Correct. A long-acting beta-2 agonist such as salmeterol has no anti-inflammatory effect and should not be used as monotherapy; it is used in combination with an inhaled corticosteroid. Adding one treats her airway inflammation and may allow control at a lower steroid dose."
+    ],
+    [
+     "Continue salmeterol alone",
+     "Salmeterol bronchodilates for up to 12 hours, but it has no anti-inflammatory effect, and monotherapy is specifically warned against. Tell: the combination with an inhaled corticosteroid is what makes a long-acting beta-2 agonist appropriate.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Switch it to cromolyn sodium",
+     "Cromolyn is a mast cell stabilizer for prevention in mild persistent or exercise-induced asthma. Swapping it in still leaves her without the preferred anti-inflammatory controller. Tell: the missing piece is the inhaled corticosteroid.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 78",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Aspirin-sensitive asthma",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 66-year-old man with asthma had facial flushing, red eyes and wheezing several hours after taking aspirin last month. He now has low back pain from lifting. Which medication should he avoid?",
+   "opts": [
+    [
+     "Ibuprofen",
+     "Correct. Flushing, conjunctival irritation and wheeze after aspirin, even when delayed up to 12 hours, mark aspirin-sensitive asthma. Ibuprofen is a non-selective anti-inflammatory drug that cross-reacts and must be avoided; selective agents may be used."
+    ],
+    [
+     "Meloxicam",
+     "Meloxicam is a selective anti-inflammatory drug, and selective agents may be used in aspirin-sensitive asthma. It is a safe pain option for this man. Tell: the agents he must avoid are the non-selective ones, such as ibuprofen and naproxen.",
+     "reversed direction or value"
+    ],
+    [
+     "Celecoxib",
+     "Celecoxib is a selective anti-inflammatory drug, which aspirin-sensitive patients may take, so it is not one he must avoid. Tell: his aspirin reaction rules out the non-selective group, of which ibuprofen is the common example.",
+     "reversed direction or value"
+    ],
+    [
+     "Albuterol",
+     "Albuterol is his short-acting rescue bronchodilator, which every patient with asthma needs; it relaxes airway smooth muscle and is not a trigger. Tell: the medications that worsen aspirin-sensitive asthma are aspirin and its non-selective relatives.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 92, 93",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 23-year-old woman with asthma has a personal best peak flow of 450 L/min. This morning she has cough and chest tightness, and her peak flow is 300 L/min (67% of her best). According to her written asthma action plan, which zone is she in?",
+   "opts": [
+    [
+     "Red zone",
+     "The red zone is below 50% of personal best, under 225 for her, with symptoms such as being very short of breath. At 300 (67%) she is above it. Tell: the red line is half of personal best.",
+     "wrong stage or severity"
+    ],
+    [
+     "Not classifiable without spirometry",
+     "Action plans are built on peak flow against personal best, not office spirometry, so her zone can be set now: 67% is yellow. Tell: home peak flow monitoring exists precisely so patients can act on their own readings.",
+     "adjacent fact"
+    ],
+    [
+     "Yellow zone",
+     "Correct. Her reading of 300 of a best 450 is 67%, inside the yellow zone of 50% to 79% of personal best, where asthma is getting worse. The plan adds quick-relief medicine (a short-acting beta-2 agonist) while she keeps taking her green-zone controller."
+    ],
+    [
+     "Green zone",
+     "The green zone, doing well, requires 80% or more of personal best, which for her is 360 or higher. At 300 she is below it and symptomatic. Tell: cough and chest tightness alone rule out the doing-well zone.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 88, 89",
+   "slot": "education",
+   "lead": "classify"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 23-year-old woman has had episodes of wheezing, chest tightness and cough for a year, worse at night and with cold air. Her lung exam is normal today. Which test best confirms the diagnosis?",
+   "opts": [
+    [
+     "Spirometry with a bronchodilator",
+     "Correct. Spirometry is the objective measurement of lung function, with best results when measured before and after a short-acting bronchodilator. Reduced values that improve 12% or more after albuterol strongly support asthma, even when the exam is normal between episodes, as hers is."
+    ],
+    [
+     "Chest x-ray",
+     "A chest x-ray in asthma is usually normal or shows only hyperinflation, so it cannot confirm the diagnosis. Tell: confirming asthma needs a measure of reversible airflow obstruction, which spirometry with a bronchodilator provides.",
+     "adjacent fact"
+    ],
+    [
+     "Allergy skin testing",
+     "Allergy testing identifies allergen triggers; it does not show airflow obstruction or reversibility. Tell: allergy testing tells you what sets her asthma off, while spirometry before and after a bronchodilator shows that the asthma is there.",
+     "adjacent fact"
+    ],
+    [
+     "Fractional exhaled nitric oxide",
+     "Fractional nitric oxide testing identifies airway inflammation, but it does not measure airflow or its reversal. Tell: the objective test of lung function, best done before and after a bronchodilator, is spirometry.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 52, 53, 59",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 32-year-old woman with long-standing asthma has had repeated exacerbations this year despite confirmed adherence and good inhaler technique. Her clinician suspects a hypersensitivity reaction to a mold. Which result supports that suspicion?",
+   "opts": [
+    [
+     "A raised exhaled nitric oxide by itself",
+     "Fractional nitric oxide identifies airway inflammation, which any active asthma can show, so on its own it does not point to a mold. Tell: the specific finding is a vigorous antibody response to Aspergillus.",
+     "adjacent fact"
+    ],
+    [
+     "Raised immunoglobulin E and G to Aspergillus",
+     "Correct. Allergic bronchopulmonary aspergillosis is a hypersensitivity reaction to Aspergillus fumigatus seen almost exclusively in asthma or cystic fibrosis. Exposure causes a vigorous immunoglobulin E and G response that leads to acute symptoms and exacerbations, as in this woman."
+    ],
+    [
+     "Negative skin tests with a normal immunoglobulin E",
+     "Negative skin tests with a normal immunoglobulin E define intrinsic asthma, the non-allergic form. Tell: an Aspergillus hypersensitivity shows the opposite, a vigorous immunoglobulin E and G response to the mold.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal antibody levels to Aspergillus",
+     "Normal antibody levels argue against a hypersensitivity to the mold. Tell: allergic bronchopulmonary aspergillosis produces a vigorous immunoglobulin E and G response to Aspergillus fumigatus.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 65",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 46-year-old woman has new-onset persistent wheezing and cough that began last year. She has nasal polyps. Allergy skin tests are negative and her serum immunoglobulin E is normal. She had a wheezing episode after taking aspirin for a headache. Which type of asthma is most likely?",
+   "opts": [
+    [
+     "Intrinsic asthma",
+     "Correct. Adult onset, persistent symptoms, nasal polyps, negative skin tests with a normal immunoglobulin E, and aspirin sensitivity all fit intrinsic asthma, the non-atopic form seen in about 10% of patients, which is usually more severe and persistent."
+    ],
+    [
+     "Extrinsic asthma",
+     "Extrinsic asthma is allergen-triggered and atopic, so skin tests would be positive and immunoglobulin E raised. Her tests are negative and immunoglobulin E normal. Tell: negative allergy testing rules out the allergic, extrinsic form.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Occupational asthma",
+     "Occupational asthma follows workplace sensitization and improves on weekends and vacations; nothing in her history points to work. Tell: polyps, aspirin sensitivity and negative allergy tests describe intrinsic asthma, while occupational asthma is defined by its work pattern.",
+     "competing diagnosis"
+    ],
+    [
+     "Catamenial asthma",
+     "Catamenial asthma is timed to predictable points of the menstrual cycle, and her history gives no cyclic pattern. Tell: her clues are polyps, adult onset and an aspirin reaction, the intrinsic profile, not a monthly rhythm.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 34, 35",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Medications",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 14-year-old girl with moderate persistent asthma comes in for her yearly influenza vaccine, and her mother asks whether she can have the nasal spray form instead of a shot. Which vaccine form calls for caution in her?",
+   "opts": [
+    [
+     "Any influenza vaccine this year",
+     "Annual influenza vaccination is recommended in asthma because influenza can trigger exacerbations, so she should be vaccinated. Tell: the caution is about one form, the intranasal vaccine, not influenza vaccination itself.",
+     "reversed direction or value"
+    ],
+    [
+     "The pneumonia vaccine",
+     "Pneumonia vaccination is recommended for adults with asthma, and it is not the form that carries a caution. Tell: the caution applies to the intranasal influenza vaccine in younger patients.",
+     "adjacent fact"
+    ],
+    [
+     "Every vaccine during asthma treatment",
+     "Vaccination is part of asthma care because vaccine-preventable illness can trigger exacerbations; being on controllers is not a reason to delay it. Tell: the one caution named is the intranasal influenza vaccine in younger patients.",
+     "common lay belief"
+    ],
+    [
+     "The intranasal influenza vaccine",
+     "Correct. Annual influenza vaccination is recommended because vaccine-preventable illness can trigger asthma exacerbations, but intranasal influenza vaccines call for caution, since they can be associated with exacerbation in younger patients such as this 14-year-old."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 86",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 34-year-old woman who works in a furniture-finishing plant has had cough and wheezing for 6 months. She notes the symptoms ease on weekends and nearly vanish during a 2-week vacation, then return within days of going back to work. She has no history of allergies. Which diagnosis best explains her pattern?",
+   "opts": [
+    [
+     "Exercise-induced bronchospasm",
+     "Exercise-induced bronchospasm is triggered by exertion and clears soon after. Her symptoms persist through the work week and clear only away from work. Tell: the trigger is a place, not an activity.",
+     "competing diagnosis"
+    ],
+    [
+     "Occupational asthma",
+     "Correct. Symptoms that improve on weekends and vacations and return at work point to occupational asthma from a workplace sensitizer, here chemicals in furniture finishing. Occupational sensitization is independent of atopy, so her lack of allergies does not argue against it."
+    ],
+    [
+     "Extrinsic allergic asthma",
+     "Extrinsic asthma is atopic and allergen-triggered, and she has no allergy history. Tell: the weekly work-linked rhythm, with improvement away from the plant, is the occupational pattern, and occupational sensitization does not require atopy.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Catamenial asthma",
+     "Catamenial asthma follows the menstrual cycle, a monthly rhythm. Her symptoms follow her work schedule, easing on weekends and vacations. Tell: a weekly on-off pattern tied to the job points to the workplace, not to hormones.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 30, 36",
+   "slot": "risk factors",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 26-year-old woman is diagnosed with asthma at an initial visit, her severity is classified as mild persistent, and an inhaled corticosteroid is started with a demonstration of its use. Which step completes the initial visit before follow-up is scheduled?",
+   "opts": [
+    [
+     "Order a chest x-ray",
+     "A chest x-ray in asthma is usually normal or shows hyperinflation, and it is not a step of the initial visit. Tell: after diagnosis, severity and medication, the remaining step is a written action plan.",
+     "adjacent fact"
+    ],
+    [
+     "Begin allergen immunotherapy",
+     "Immunotherapy may be considered for allergic triggers, in a controlled setting, but it is not a step of every initial visit. Tell: the initial-visit sequence closes with a written action plan and a follow-up appointment.",
+     "adjacent fact"
+    ],
+    [
+     "Refer her to a pulmonologist",
+     "Specialist referral fits refractory disease, not newly diagnosed mild persistent asthma. Tell: her initial visit is completed with a written asthma action plan, then a scheduled follow-up.",
+     "wrong stage or severity"
+    ],
+    [
+     "Write an asthma action plan",
+     "Correct. The initial visit runs: diagnose asthma, assess severity, initiate medication and demonstrate its use, develop a written asthma action plan, then schedule follow-up. She has had the first 3, so the action plan comes next."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 43",
+   "slot": "education",
+   "lead": "next step"
+  },
+  {
+   "topic": "Medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 29-year-old man with asthma uses his albuterol inhaler several times a day, refills it every 2 weeks, and stopped his inhaled corticosteroid months ago. Which feature of his history most raises his risk of death from asthma?",
+   "opts": [
+    [
+     "Allergy to cat dander",
+     "An allergen trigger defines extrinsic asthma, the most common form, but it is not a listed risk factor for death. Tell: the death-risk features are frequent bronchodilator use, no or poorly taken inhaled corticosteroids, and past near-fatal admissions.",
+     "adjacent fact"
+    ],
+    [
+     "Heavy rescue use without a steroid inhaler",
+     "Correct. The risk of death from asthma rises with poorly controlled asthma shown by frequent bronchodilator use, no inhaled corticosteroids, poor compliance with them, and previous admissions for near-fatal attacks. His heavy albuterol use after stopping his steroid combines the first 3."
+    ],
+    [
+     "Atopic dermatitis as a child",
+     "Childhood eczema is part of the atopic triad and raises the chance of asthma, but it is not a listed risk factor for death. Tell: death risk tracks control and treatment, frequent bronchodilator use and missing inhaled corticosteroids.",
+     "adjacent fact"
+    ],
+    [
+     "Asthma that began at 3 years of age",
+     "Asthma can present at any age, with a peak at 3 years, so early onset is common and not a listed risk factor for death. Tell: his danger comes from poor control and the inhaled corticosteroid he stopped, not when his asthma began.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 14, 71",
+   "slot": "prognosis",
+   "lead": "complication"
+  },
+  {
+   "topic": "Aspirin-sensitive asthma",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 39-year-old man with asthma took aspirin at noon for a headache and developed facial flushing, a runny nose and wheezing at about 10 that night. He asks whether the aspirin could be responsible so many hours later. Which reply is accurate?",
+   "opts": [
+    [
+     "No, aspirin sensitivity causes rash alone",
+     "Aspirin-sensitive asthma causes rhinorrhea, conjunctival irritation, facial flushing and wheezing, not a rash alone. Tell: his runny nose, flushing and wheeze match the listed reaction exactly.",
+     "adjacent fact"
+    ],
+    [
+     "Yes, but just selective agents cause it",
+     "The cross-reacting drugs are the non-selective anti-inflammatory agents, while selective ones such as celecoxib may be used. Tell: aspirin itself caused this reaction, which can be delayed up to 12 hours.",
+     "reversed direction or value"
+    ],
+    [
+     "Yes, reactions can be delayed up to 12 hours",
+     "Correct. In aspirin-sensitive asthma, symptoms may occur within minutes of aspirin ingestion or may be delayed up to 12 hours, and they include rhinorrhea, conjunctival irritation, facial flushing and wheezing. His reaction 10 hours after the dose fits."
+    ],
+    [
+     "No, reactions occur within minutes",
+     "Reactions can occur within minutes but may also be delayed up to 12 hours, so a 10-hour gap does not rule out aspirin. Tell: the window extends to 12 hours, and his flushing, rhinorrhea and wheeze are the typical features.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 92",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 24-year-old woman has spirometry for suspected asthma. Her forced expiratory volume in 1 second is reduced with a reduced ratio, and it improves 14% after albuterol. How should this response be read?",
+   "opts": [
+    [
+     "As a positive bronchodilator response",
+     "Correct. Improvement of 12% or more in the forced expiratory volume in 1 second after a bronchodilator is a positive response, and her 14% rise meets it. A positive response on top of reduced baseline values strongly supports the diagnosis of asthma."
+    ],
+    [
+     "As too small to count",
+     "The threshold for a positive response is a 12% improvement, and her 14% rise is above it. Tell: compare the change with 12%; anything at or above it counts as a positive response.",
+     "reversed direction or value"
+    ],
+    [
+     "As proof of fixed obstruction",
+     "A 14% improvement after albuterol is reversal, the opposite of fixed obstruction. Tell: fixed obstruction would change little, while a rise above 12% marks reversible airflow limitation.",
+     "reversed direction or value"
+    ],
+    [
+     "As a reason to skip spirometry next time",
+     "Spirometry is repeated annually to monitor progression, so a clear result now does not end its use. Tell: her 14% rise is a positive bronchodilator response, and spirometry stays part of follow-up.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 52, 53, 54",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 39-year-old man with asthma takes ibuprofen for a sprained ankle. Within 20 minutes he develops a runny nose, red irritated eyes, facial flushing and wheezing. Which diagnosis explains the reaction?",
+   "opts": [
+    [
+     "Exercise-induced bronchospasm",
+     "Exercise-induced bronchospasm follows exertion, and a sprained ankle is not exercise. Tell: the reaction followed a non-selective anti-inflammatory drug and included flushing, rhinorrhea and eye irritation, the aspirin-sensitive picture.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Cardiac asthma",
+     "Cardiac asthma is wheezing from decompensated heart failure, and he has no heart failure. Tell: wheeze with flushing, a runny nose and eye irritation minutes after ibuprofen is a drug reaction, not a cardiac cause.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Allergic bronchopulmonary aspergillosis",
+     "Allergic bronchopulmonary aspergillosis is a hypersensitivity to the Aspergillus mold, not to a drug. Tell: the timing after ibuprofen and the flushing and eye symptoms identify aspirin sensitivity with cross-reactivity to a non-selective agent.",
+     "competing diagnosis"
+    ],
+    [
+     "Aspirin-sensitive asthma",
+     "Correct. About 1 to 5% of asthmatics worsen with aspirin, and patients with true aspirin sensitivity cross-react with non-selective anti-inflammatory drugs such as ibuprofen. Rhinorrhea, conjunctival irritation, facial flushing and wheezing within minutes of the dose is the described reaction."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 92, 93",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Medications",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 16-year-old has asthma symptoms 3 days a week, wakes at night 3 times a month, and uses albuterol 3 days a week, with a forced expiratory volume in 1 second of 85% predicted. Which long-term control medication is preferred for him?",
+   "opts": [
+    [
+     "Leukotriene modifier",
+     "Leukotriene modifiers have modest benefit, are useful as add-on therapy, and are less effective than inhaled corticosteroids as monotherapy. Tell: for a first controller in persistent asthma, the inhaled corticosteroid is preferred.",
+     "adjacent fact"
+    ],
+    [
+     "Long-acting beta-2 agonist alone",
+     "A long-acting beta-2 agonist has no anti-inflammatory effect and should not be used as monotherapy; it is combined with an inhaled corticosteroid. Tell: alone it leaves the inflammation of persistent asthma untreated.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Theophylline",
+     "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: a teenager with mild persistent asthma starts on the preferred first-line agent, an inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "Inhaled corticosteroid",
+     "Correct. His symptoms and rescue use on more than 2 days a week, 3 night awakenings a month and 85% function make mild persistent asthma. Inhaled corticosteroids are the preferred first-line treatment for persistent asthma, and most patients respond to twice-daily dosing."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 62, 74",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Medications",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 17-year-old with exercise-induced bronchospasm takes cromolyn sodium only after her wheezing starts during a game and finds that it does not help. Which explains the lack of relief?",
+   "opts": [
+    [
+     "She has become resistant to it",
+     "Nothing suggests resistance; cromolyn simply has no relieving action once symptoms are present. Tell: relief during an episode comes from a short-acting beta-2 agonist, while cromolyn is taken beforehand to prevent symptoms.",
+     "common lay belief"
+    ],
+    [
+     "It works just for allergic triggers",
+     "Cromolyn is described as useful in exercise-induced asthma as well as mild persistent asthma, so exercise is not the problem. Tell: the issue is timing; a preventive taken after symptoms begin cannot relieve them.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "It prevents but does not relieve symptoms",
+     "Correct. Cromolyn is a mast cell stabilizer: it inhibits mast cell activation and eosinophil recruitment to prevent symptoms in mild persistent or exercise-induced asthma, but it does not relieve symptoms once present. Taking it after wheezing starts is too late."
+    ],
+    [
+     "It is a bronchodilator with slow onset",
+     "Slow onset describes tiotropium, the anticholinergic. Cromolyn is a preventive mast cell stabilizer and does not bronchodilate. Tell: cromolyn works only if taken before the trigger, never as relief.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 79",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 49-year-old woman with suspected asthma has a forced expiratory volume in 1 second of 58% predicted with a reduced ratio, and it rises only 6% after albuterol. A colleague proposes a methacholine challenge to look for airway hyper-responsiveness. Which test is inappropriate for her now?",
+   "opts": [
+    [
+     "Methacholine challenge",
+     "Correct. Bronchial provocation testing is not recommended when the forced expiratory volume in 1 second is below 65% predicted, and hers is 58%. Provoking bronchoconstriction on top of that much obstruction is unsafe, so the challenge is the test to avoid."
+    ],
+    [
+     "Allergy skin testing",
+     "Allergy skin or blood testing identifies allergen triggers, and no lung-function cutoff limits it. Tell: the test limited by low lung function is bronchial provocation, which is not recommended below 65% predicted.",
+     "adjacent fact"
+    ],
+    [
+     "Home peak flow monitoring",
+     "Home peak flow monitoring establishes a baseline and tracks control; it provokes nothing and is safe at her level. Tell: the restricted test is methacholine challenge, which deliberately causes bronchoconstriction.",
+     "adjacent fact"
+    ],
+    [
+     "Chest x-ray",
+     "A chest x-ray carries no bronchospasm risk; in asthma it is usually normal or shows hyperinflation. Tell: the 65% cutoff applies to bronchial provocation testing, not to imaging.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 58",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Course and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 26-year-old woman in a severe asthma exacerbation sits leaning forward with hunched shoulders and uses her accessory muscles. Loud wheezing earlier has faded, and now she has only decreased breath sounds with a prolonged expiration. What does the loss of wheezing most likely indicate?",
+   "opts": [
+    [
+     "Resolution of the exacerbation",
+     "Her increased work of breathing, with accessory muscle use, leaning forward and hunched shoulders, argues against recovery. Tell: in a severe exacerbation, wheeze can vanish because too little air moves to make it.",
+     "reversed direction or value"
+    ],
+    [
+     "Vocal fold dysfunction",
+     "Vocal fold dysfunction is an upper airway mimic in the differential, not an explanation for wheeze fading in a known severe exacerbation. Tell: decreased breath sounds with prolonged expiration describe severe lower airway obstruction.",
+     "competing diagnosis"
+    ],
+    [
+     "A response to her inhaler",
+     "A good response would ease her work of breathing as the wheeze faded. Her accessory muscle use and posture persist. Tell: a quiet chest plus hard work of breathing means severe obstruction.",
+     "reversed direction or value"
+    ],
+    [
+     "Severe airflow obstruction",
+     "Correct. Wheezing may not be present in severe exacerbations, which may show only decreased breath sounds with prolonged expiration. With her accessory muscle use and posture, a quiet chest signals worse obstruction, not improvement."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 50, 51",
+   "slot": "manifestation",
+   "lead": "complication"
+  },
+  {
+   "topic": "Exercise-induced bronchospasm",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 17-year-old runner with exercise-induced bronchospasm uses albuterol before every practice, yet still has frequent symptoms during training. Which change is most likely to prevent his episodes?",
+   "opts": [
+    [
+     "Regular inhaled corticosteroid use",
+     "Correct. Exercise-induced bronchospasm is treated with a short-acting beta-2 agonist before exercise but is best prevented with regular inhaled corticosteroid use. His frequent symptoms despite pre-exercise albuterol call for the regular controller."
+    ],
+    [
+     "Saving albuterol for after symptoms start",
+     "Albuterol helps most when used before exercise, and moving it to after symptoms begin gives up that protection. Tell: when pre-exercise albuterol is not enough, prevention comes from a regular inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "Cromolyn sodium taken during symptoms",
+     "Cromolyn prevents symptoms but does not relieve them once present, so taking it during an episode does not help. Tell: the agent that best prevents exercise-induced bronchospasm is a regular inhaled corticosteroid.",
+     "adjacent fact"
+    ],
+    [
+     "Stopping exercise permanently",
+     "Asthma treatment aims for no limitation on physical activity, so giving up running is not the goal. Tell: regular inhaled corticosteroid use best prevents exercise-induced bronchospasm and keeps him training.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 66, 96",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Course and prognosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 30-year-old man has had mild asthma since childhood, controlled with occasional albuterol. He asks whether his asthma is likely to become severe as he ages. Which reply is most accurate?",
+   "opts": [
+    [
+     "Mild asthma rarely becomes severe",
+     "Correct. Asthma severity rarely varies for a given patient: mild asthma rarely becomes severe, and severe asthma is usually severe at onset. His long history of mild disease predicts it will most likely stay mild."
+    ],
+    [
+     "Most mild asthma turns severe within a decade",
+     "Severity rarely changes for a patient, so mild disease does not typically progress to severe. Tell: severe asthma is usually severe from the start, not a later stage of mild asthma.",
+     "reversed direction or value"
+    ],
+    [
+     "Severity rises steadily with each decade",
+     "Asthma severity rarely varies over a patient's life. Tell: the course is stable severity, with severe asthma usually severe at onset rather than built up over decades.",
+     "common lay belief"
+    ],
+    [
+     "Severe asthma usually begins mild",
+     "Severe asthma is usually severe at onset, so it does not usually begin as mild disease. Tell: this reverses the course, in which a patient's severity stays largely the same from the start.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 13",
+   "slot": "prognosis",
+   "lead": "complication"
+  },
+  {
+   "topic": "Medications",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 52-year-old man with severe persistent asthma also has poorly controlled hypertension, osteoporosis, and a gastric ulcer last year. His asthma remains poorly controlled. Which medication's side effects most threaten his other conditions?",
+   "opts": [
+    [
+     "Short-acting beta-2 agonists",
+     "Short-acting beta-2 agonists cause muscle tremor and palpitations, not hypertension, bone loss or ulcers, and every patient with asthma needs one for rescue. Tell: his 3 comorbidities are listed side effects of systemic corticosteroids.",
+     "adjacent fact"
+    ],
+    [
+     "Leukotriene modifiers",
+     "Leukotriene modifiers are oral add-on controllers with modest benefit; nothing ties them to ulcers, bone loss or high blood pressure. Tell: hypertension, osteoporosis and gastric ulceration together point to long-term systemic corticosteroids.",
+     "adjacent fact"
+    ],
+    [
+     "Long-term oral corticosteroids",
+     "Correct. Systemic corticosteroid side effects include hypertension, osteoporosis and gastric ulceration, all 3 of his other conditions, plus truncal obesity, bruising and depression. If he needs them, the minimum dose that gives control is used."
+    ],
+    [
+     "Inhaled corticosteroids",
+     "Inhaled corticosteroids act locally; their side effects are hoarseness, cough and oral thrush, not hypertension or ulcers. They are the preferred controller for persistent asthma. Tell: the systemic form carries the risks that match his comorbidities.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 76, 77",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 19-year-old man with newly diagnosed persistent asthma starts using a peak flow meter at home. During his first weeks of readings while well, what is the main purpose of the readings?",
+   "opts": [
+    [
+     "Measuring his forced vital capacity",
+     "Forced vital capacity is a spirometry measure; a peak flow meter records only the peak expiratory flow. Tell: home readings establish a personal best baseline and then assess control.",
+     "adjacent fact"
+    ],
+    [
+     "Establishing his personal best baseline",
+     "Correct. Home peak flow monitoring first establishes a baseline for the patient, his personal best, and then assesses control against it. His action-plan zones are set as percentages of that personal best, so the early readings are the foundation."
+    ],
+    [
+     "Replacing spirometry for diagnosis",
+     "Diagnosis rests on spirometry before and after a bronchodilator; peak flow is a home monitoring tool. Tell: the early readings set his personal best, which the action-plan zones are built from.",
+     "adjacent fact"
+    ],
+    [
+     "Identifying his allergen triggers",
+     "Allergen triggers are identified by skin or blood allergy testing, not peak flow numbers. Tell: peak flow tracks airflow over time, and its first job is to establish his personal best.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 60, 88",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 20-year-old man with spirometry-confirmed asthma notices flares in spring and whenever he visits a friend with dogs. He wants to know exactly what he is reacting to. Which test identifies his triggers?",
+   "opts": [
+    [
+     "Methacholine challenge",
+     "Methacholine challenge shows airway hyper-responsiveness when spirometry is not diagnostic; his asthma is already confirmed, and the test names no allergen. Tell: to learn what he reacts to, allergy testing is the tool.",
+     "adjacent fact"
+    ],
+    [
+     "Repeat spirometry with a bronchodilator",
+     "Spirometry measures airflow and its reversibility, which already confirmed his asthma; it cannot name an allergen. Tell: identifying triggers needs skin or blood allergy testing.",
+     "adjacent fact"
+    ],
+    [
+     "Fractional exhaled nitric oxide",
+     "Fractional nitric oxide testing identifies airway inflammation, not which allergen causes it. Tell: the test that names a specific trigger, such as dog dander or pollen, is allergy testing.",
+     "adjacent fact"
+    ],
+    [
+     "Skin or blood allergy testing",
+     "Correct. Allergy testing, by skin or blood test, is useful to identify allergen triggers. His seasonal and dog-related flares suggest pollen and pet dander, the inhaled allergens that activate mast cells, and testing guides which ones to avoid."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 38, 59",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 25-year-old woman with asthma wakes most nights at about 3 in the morning with cough and wheeze, though she feels fine in the daytime. She asks why her symptoms come at night. Which explanation is accurate?",
+   "opts": [
+    [
+     "Night symptoms point to vocal fold dysfunction",
+     "Vocal fold dysfunction is an upper airway mimic; night waking with cough and wheeze is a typical asthma pattern. Tell: asthma may be worse at night because bronchial reactivity peaks at 3 to 4 in the morning.",
+     "competing diagnosis"
+    ],
+    [
+     "Bronchial reactivity peaks in the early morning hours",
+     "Correct. Asthma symptoms may be worse at night because of circadian variation in bronchomotor tone and bronchial reactivity, which peaks around 3 to 4 in the morning, the time she wakes. Night waking also counts when classifying severity."
+    ],
+    [
+     "Lying flat causes cardiac asthma",
+     "Cardiac asthma is wheezing from decompensated heart failure, and a healthy 25-year-old has no heart failure. Tell: her waking at 3 in the morning matches the circadian peak in bronchial reactivity.",
+     "competing diagnosis"
+    ],
+    [
+     "Her rescue inhaler wears off at night",
+     "Her symptoms come at a fixed early-morning hour. Tell: the nightly timing follows a circadian peak in bronchial reactivity at 3 to 4 in the morning.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 48",
+   "slot": "manifestation",
+   "lead": "education"
+  },
+  {
+   "topic": "Refractory asthma",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 40-year-old woman has persistent asthma symptoms and frequent rescue inhaler use despite a prescribed inhaled corticosteroid plus long-acting beta-2 agonist. She has not been seen since the prescription 6 months ago. Which step should come first?",
+   "opts": [
+    [
+     "Start long-term oral corticosteroids",
+     "Long-term systemic steroids are kept for refractory cases because of osteoporosis, hypertension and ulcer risk. Tell: refractory means poor control despite correct use, which has not been established in this patient.",
+     "adjacent fact"
+    ],
+    [
+     "Test for steroid-resistant asthma",
+     "Steroid-resistant asthma is very uncommon, while non-compliance is the most common reason for poor control. Tell: check the common cause, adherence and technique, before chasing a rare one.",
+     "adjacent fact"
+    ],
+    [
+     "Check adherence and inhaler technique",
+     "Correct. Non-compliance is the most common reason for poor symptom control, and follow-up visits review medications, compliance and correct use before adjusting therapy. Her increased rescue use signals poor control, so adherence and technique are checked first."
+    ],
+    [
+     "Refer for a monoclonal antibody",
+     "Monoclonal antibodies are specialist therapy for severe disease that persists despite proper treatment. Her adherence and technique have not yet been checked. Tell: non-compliance, the most common cause of poor control, is ruled out before escalating.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 43, 90, 91",
+   "slot": "escalation",
+   "lead": "next step"
+  },
+  {
+   "topic": "Differential diagnosis",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 74-year-old man with long-standing heart disease has 3 days of worsening shortness of breath, swelling of both legs, and new wheezing. He has no history of asthma or allergies, and his wheeze began as his heart failure decompensated. Which explanation for his wheezing is most likely?",
+   "opts": [
+    [
+     "Late-onset intrinsic asthma",
+     "Intrinsic asthma does start in adulthood, but it is not tied to heart failure decompensation and usually comes with nasal polyps or aspirin sensitivity. Tell: wheeze appearing with leg swelling as the heart fails points to cardiac asthma.",
+     "competing diagnosis"
+    ],
+    [
+     "Exercise-induced bronchospasm",
+     "Exercise-induced bronchospasm is common in children and adolescents and resolves within an hour of exercise. His wheeze is continuous over 3 days with edema. Tell: an older patient with edema and decompensated heart failure is the cardiac asthma setting.",
+     "competing diagnosis"
+    ],
+    [
+     "Extrinsic allergic asthma",
+     "Extrinsic asthma is atopic and allergen-triggered; he has no allergies or asthma history. Tell: the timing with his heart failure and the leg swelling identify a cardiac cause of wheezing.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Cardiac asthma",
+     "Correct. Cardiac asthma is wheezing caused by decompensated heart failure. A 74-year-old with heart disease, leg swelling and wheeze that began with the decompensation, and no asthma or atopy, fits it; the heart failure, not the airway, needs treatment."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 36",
+   "slot": "differential",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 20-year-old man has daily asthma symptoms and uses albuterol daily, but he wakes at night only once a month and has a forced expiratory volume in 1 second of 85% predicted. He has some limitation playing pickup basketball. Which severity classification fits?",
+   "opts": [
+    [
+     "Mild persistent",
+     "Mild persistent asthma allows symptoms and rescue use on more than 2 days a week but not daily. His are daily. Tell: the word daily is the line between mild and moderate persistent asthma.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Correct. Daily symptoms, daily short-acting beta-2 agonist use and some limitation of activity are moderate persistent features. Even though his night waking and 85% function are milder, severity is assigned to the most severe category in which any feature occurs."
+    ],
+    [
+     "Intermittent",
+     "His night waking and lung function look intermittent, but daily symptoms and daily rescue use far exceed the intermittent limit of 2 or fewer days a week. Tell: severity follows the worst feature, not the best ones.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma requires symptoms throughout the day, rescue use several times a day, extreme limitation or function below 60%. He uses albuterol daily with some limitation and 85% function. Tell: daily rescue use is moderate; several times a day is severe.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 55-year-old man has asthma symptoms throughout every day, uses his rescue inhaler several times a day, wakes with symptoms nearly every night, and is extremely limited in daily activities. His forced expiratory volume in 1 second is 52% predicted. Which severity classification fits?",
+   "opts": [
+    [
+     "Intermittent",
+     "Intermittent asthma allows symptoms on 2 or fewer days a week and normal function between exacerbations. He is symptomatic all day with 52% function. Tell: no feature here is near the intermittent column.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mild persistent",
+     "Mild persistent asthma means symptoms on more than 2 days a week but not daily, with a 1-second volume above 80%. Every feature he has is far worse. Tell: extreme limitation and 52% function are severe-column findings.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Moderate persistent asthma has daily but not continuous symptoms, waking more than once a week but not nightly, some limitation, and a 1-second volume of 60% to 80%. His 52% and nightly waking exceed that. Tell: under 60% is severe.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe persistent",
+     "Correct. Symptoms throughout the day, rescue use several times a day, night awakenings often 7 times a week, extreme limitation and a 1-second volume below 60% predicted define severe persistent asthma."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  }
+ ],
+ "set2": [
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 24-year-old woman has asthma symptoms 2 days a week, wakes at night with cough twice a month, uses albuterol 2 days a week, and has no limitation of activity. Her forced expiratory volume in 1 second is 88% predicted with a normal ratio, and she had no exacerbations requiring oral steroids this year. Which severity classification fits?",
+   "opts": [
+    [
+     "Intermittent",
+     "Correct. Symptoms on 2 or fewer days a week, night awakenings 2 or fewer times a month, rescue use on 2 or fewer days a week, no interference, a 1-second volume above 80% with a normal ratio, and 0 to 1 steroid-requiring exacerbations a year all sit in the intermittent column."
+    ],
+    [
+     "Mild persistent",
+     "Mild persistent asthma needs symptoms or rescue use on more than 2 days a week, or 3 to 4 night awakenings a month. She is at exactly 2 days and 2 nights. Tell: the intermittent limits are 2 or fewer, so reaching but not exceeding 2 stays intermittent.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Moderate persistent asthma means daily symptoms, daily rescue use and a 1-second volume of 60% to 80%. Her symptoms are 2 days a week and her function is 88%. Tell: nothing in her history is daily.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma brings symptoms throughout the day, near-nightly waking and a 1-second volume under 60%. Every feature she has is at the mildest level. Tell: no feature reaches even the mild persistent column.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Course and prognosis",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 22-year-old woman had asthma as a young child, then had no symptoms throughout adolescence. Over the past 2 months her episodic wheezing and night cough have returned. Which statement best explains her course?",
+   "opts": [
+    [
+     "Wheeze returning at 22 means cardiac asthma",
+     "Cardiac asthma is wheezing from decompensated heart failure, and nothing in her history suggests heart failure. Tell: in a young adult with childhood asthma, returning symptoms fit asthma coming back after a quiet adolescence.",
+     "competing diagnosis"
+    ],
+    [
+     "Asthma can return in adulthood",
+     "Correct. Asthma presents at any age, with a peak at 3 years; it may become asymptomatic during adolescence and may return in adulthood. Her childhood asthma, quiet teenage years and returning symptoms follow that pattern."
+    ],
+    [
+     "Her first diagnosis must have been wrong",
+     "A symptom-free adolescence does not disprove childhood asthma; asthma can become asymptomatic in adolescence and return later. Tell: her course, early onset then a quiet gap then return, is a known pattern.",
+     "common lay belief"
+    ],
+    [
+     "Asthma that remits in adolescence stays gone",
+     "Remission in adolescence is not permanent for every patient; asthma may return in adulthood. Tell: her returning wheeze and night cough after a quiet adolescence fit that described course.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 12",
+   "slot": "prognosis",
+   "lead": "complication"
+  },
+  {
+   "topic": "Medications",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 27-year-old man has just finished a 5-day course of oral corticosteroids for an asthma exacerbation and feels well. He asks whether he must slowly taper the medicine. Which reply is correct?",
+   "opts": [
+    [
+     "He must taper over the next 2 weeks",
+     "A taper is not required after a short exacerbation course of systemic corticosteroids. Tell: short courses for exacerbations stop without a taper, while long-term systemic use is the setting where dose minimizing matters.",
+     "reversed direction or value"
+    ],
+    [
+     "He should continue it long term",
+     "Long-term systemic corticosteroids are reserved for refractory or poorly controlled cases because of side effects such as osteoporosis and hypertension. Tell: after an exacerbation course he returns to his inhaled controller, not to oral steroids.",
+     "adjacent fact"
+    ],
+    [
+     "He should switch to an inhaled form for 5 days",
+     "Inhaled corticosteroids are long-term controllers whose maximum response may take months, not a 5-day bridge. Tell: the exacerbation course simply ends without a taper, and his regular inhaled controller continues.",
+     "adjacent fact"
+    ],
+    [
+     "No taper is needed after a short course",
+     "Correct. Systemic corticosteroids are used for control during exacerbations as a short course, and no taper is required. Long-term systemic therapy is different; it is reserved for severe or refractory cases at the minimum dose needed."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 76",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 31-year-old man reports asthma symptoms 4 days a week but not every day, wakes at night 3 times a month, uses albuterol 4 days a week but not daily, and notes minor limitation when hiking. His forced expiratory volume in 1 second is 84% predicted with a normal ratio. Which severity classification fits?",
+   "opts": [
+    [
+     "Intermittent",
+     "Intermittent asthma allows symptoms and rescue use on only 2 or fewer days a week and night waking 2 or fewer times a month. He has 4 days and 3 nights. Tell: crossing either 2-a-week line moves him into persistent asthma.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mild persistent",
+     "Correct. Symptoms and rescue use on more than 2 days a week but not daily, 3 to 4 night awakenings a month, minor limitation, and a 1-second volume above 80% with a normal ratio all fall in the mild persistent column."
+    ],
+    [
+     "Moderate persistent",
+     "Moderate persistent asthma is assigned when any feature reaches that column (daily symptoms, daily rescue use, waking more than once a week, or a 1-second volume of 60% to 80%). None of his do: his symptoms are not daily and his function is 84%. Tell: not daily keeps him below moderate.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma brings symptoms throughout the day, rescue use several times a day and a 1-second volume below 60%. His features are all mild persistent. Tell: minor limitation and 84% function are far from extremely limited and under 60%.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Medications",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 68-year-old woman taking theophylline for asthma has nausea, vomiting, headache and a rapid irregular heartbeat. Her potassium is low and her glucose high. Which explanation best fits her presentation?",
+   "opts": [
+    [
+     "Theophylline toxicity",
+     "Correct. Theophylline has a narrow toxic-therapeutic range, and its toxic effects are nausea, vomiting, tachyarrhythmias, headache, seizure, hyperglycemia and hypokalemia, matching this woman's picture. That toxicity is why it is rarely used and needs close monitoring."
+    ],
+    [
+     "Albuterol side effects",
+     "Muscle tremor and palpitations are the listed side effects of the short-acting beta-2 agonist class. Vomiting, headache and the arrhythmia with low potassium and high glucose are the listed toxic effects of theophylline, and the stem names theophylline. Tell: the whole cluster matches theophylline toxicity.",
+     "adjacent fact"
+    ],
+    [
+     "Inhaled corticosteroid side effects",
+     "Inhaled corticosteroids cause local effects: hoarseness, cough and oral thrush. Their systemic side effects are minimal, so they do not explain vomiting, arrhythmia and low potassium. Tell: her systemic toxic picture belongs to the drug with a narrow toxic-therapeutic range, theophylline.",
+     "adjacent fact"
+    ],
+    [
+     "Aspirin-sensitive reaction",
+     "An aspirin-sensitive reaction brings rhinorrhea, conjunctival irritation, flushing and wheeze after aspirin, and aspirin is not part of her story. Tell: vomiting, arrhythmia, hypokalemia and hyperglycemia in a theophylline user point to toxicity.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 71, 75, 81, 82, 92",
+   "slot": "complication",
+   "lead": "complication"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 27-year-old woman with asthma notices that her wheezing and chest tightness flare at the same predictable point in every menstrual cycle and are mild the rest of the month. Which type of asthma describes this pattern?",
+   "opts": [
+    [
+     "Intrinsic asthma",
+     "Intrinsic asthma is defined by negative allergy testing, adult onset and often nasal polyps, not by cyclic timing. Tell: the decisive clue here is the predictable menstrual timing, the definition of catamenial asthma.",
+     "competing diagnosis"
+    ],
+    [
+     "Aspirin-sensitive asthma",
+     "Aspirin-sensitive asthma flares after taking aspirin, and the stem mentions no drug. Tell: her flares are tied to the menstrual cycle, not to a medication.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Catamenial asthma",
+     "Correct. Catamenial asthma is asthma whose symptoms occur at predictable times during the menstrual cycle, as with this woman's monthly flares. It is one of the other types of asthma alongside occupational, cardiac, exercise-induced and aspirin-sensitive patterns."
+    ],
+    [
+     "Occupational asthma",
+     "Occupational asthma follows the work week, improving on weekends and vacations. Her flares follow her menstrual cycle. Tell: a monthly rhythm points to hormones, a weekly rhythm to the workplace.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 36",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Aspirin-sensitive asthma",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 58-year-old woman with asthma and nasal polyps developed wheezing, facial flushing and a runny nose within an hour of taking aspirin last year. She now has painful knee osteoarthritis and asks for an anti-inflammatory pain reliever. Which drug is the most appropriate choice?",
+   "opts": [
+    [
+     "Naproxen",
+     "Naproxen is a non-selective anti-inflammatory drug, and patients with aspirin-sensitive asthma cross-react with that group. Her past aspirin reaction rules it out. Tell: the safe choices for her are the selective agents, celecoxib and meloxicam.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Diclofenac",
+     "Diclofenac is on the list of non-selective anti-inflammatory drugs to avoid in aspirin-sensitive asthma, and her flushing and wheeze after aspirin show that sensitivity. Tell: selective agents such as celecoxib are the ones she may use.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Indomethacin",
+     "Indomethacin is a non-selective anti-inflammatory drug, the group that worsens aspirin-sensitive asthma, so her aspirin reaction rules it out. Tell: only the selective agents (celecoxib, meloxicam) are allowed in aspirin-sensitive asthma.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Celecoxib",
+     "Correct. Her wheeze, flushing and rhinorrhea after aspirin mark aspirin-sensitive asthma, so non-selective anti-inflammatory drugs must be avoided. Selective agents such as celecoxib or meloxicam may be used, which treats her knee pain without the cross-reaction."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 92, 93",
+   "slot": "avoid",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 15-year-old soccer player has cough, chest tightness and wheezing that start within 3 minutes after hard running, peak about 10 to 15 minutes later, and clear within an hour. She has no symptoms at rest or at night. Which diagnosis is most likely?",
+   "opts": [
+    [
+     "Moderate persistent asthma",
+     "Moderate persistent asthma brings daily symptoms and night awakenings more than once a week. She has none at rest or at night. Tell: symptoms tied only to exercise and gone within an hour fit exercise-induced bronchospasm.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Vocal fold dysfunction",
+     "Vocal fold dysfunction is an upper airway mimic, but the pattern of onset within 3 minutes, a 10-to-15-minute peak and resolution by an hour is the exercise-induced bronchospasm timeline. Tell: the precise post-exercise timing is the decisive clue.",
+     "competing diagnosis"
+    ],
+    [
+     "Catamenial asthma",
+     "Catamenial asthma follows the menstrual cycle. Her symptoms follow exercise, appearing within minutes and clearing within the hour. Tell: the trigger is running, not a point in a monthly cycle.",
+     "competing diagnosis"
+    ],
+    [
+     "Exercise-induced bronchospasm",
+     "Correct. Exercise-induced bronchospasm is common in children and adolescents, begins during or within 3 minutes after exercise, peaks in 10 to 15 minutes and resolves by 60 minutes, exactly this player's pattern, with no symptoms at rest or at night."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 94, 95",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Medications",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 25-year-old woman with allergic asthma triggered by cat dander is considering allergen immunotherapy against that single allergen. Which statement about this therapy applies to her?",
+   "opts": [
+    [
+     "It can be self-given safely at home",
+     "Immunotherapy carries a risk of inducing bronchoconstriction that may need urgent treatment, so it is not self-given at home. Tell: the requirement is a controlled environment able to treat complications.",
+     "adjacent fact"
+    ],
+    [
+     "It works poorly against a single allergen",
+     "Immunotherapy is most useful in the context of single-allergen therapy, so her one identified trigger makes her a good candidate. Tell: single allergen is the favorable setting, not the poor one.",
+     "reversed direction or value"
+    ],
+    [
+     "It is reserved for non-allergic asthma",
+     "Immunotherapy is considered for patients who have allergic triggers; non-allergic, intrinsic asthma lacks an allergen to target. Tell: her cat dander allergy is exactly the indication.",
+     "reversed direction or value"
+    ],
+    [
+     "It must be given in a controlled setting",
+     "Correct. Immunotherapy may be considered when there are allergic triggers and is most useful against a single allergen, as for her cat dander. It must be done in a controlled environment because it can induce bronchoconstriction and may require urgent treatment of complications."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 85",
+   "slot": "agent/regimen",
+   "lead": "education"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 35-year-old man has had stable, well-controlled asthma for 2 years. How often should his spirometry be repeated to monitor progression?",
+   "opts": [
+    [
+     "Every month",
+     "Monthly spirometry is far more often than needed for stable disease; home peak flow readings handle frequent monitoring. Tell: office spirometry for monitoring is repeated once a year.",
+     "wrong stage or severity"
+    ],
+    [
+     "Every 3 months",
+     "Repeating spirometry every 3 months is more often than recommended for monitoring stable asthma. Tell: the interval for monitoring progression with spirometry is annual, while peak flow covers day-to-day control.",
+     "wrong stage or severity"
+    ],
+    [
+     "Every year",
+     "Correct. Spirometry is best done before and after a short-acting bronchodilator and is repeated annually to monitor progression. For this man with stable, controlled disease, a yearly test tracks his lung function between routine follow-up visits."
+    ],
+    [
+     "Every 5 years",
+     "A 5-year gap is too long; spirometry is repeated annually to monitor progression. Tell: once a year is the monitoring interval, so 5 years would miss changes in his lung function.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 52",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 16-year-old basketball player has cough and wheezing starting a few minutes into every practice, gone within an hour. Resting spirometry is normal. Which test best confirms the suspected cause?",
+   "opts": [
+    [
+     "Methacholine challenge",
+     "Methacholine or histamine challenge is the general provocation test for nondiagnostic spirometry. Tell: when the suspected trigger is exercise, the matching provocation test is an exercise challenge.",
+     "adjacent fact"
+    ],
+    [
+     "Allergy skin testing",
+     "Allergy testing identifies allergen triggers, and his trigger is exercise, not an allergen. Tell: exercise-induced bronchospasm is confirmed by reproducing it with an exercise challenge.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Chest x-ray",
+     "A chest x-ray in asthma is usually normal or shows hyperinflation, and it cannot show bronchospasm that comes and goes with exercise. Tell: a symptom triggered by exercise is tested by an exercise challenge.",
+     "adjacent fact"
+    ],
+    [
+     "Exercise challenge",
+     "Correct. Symptoms starting soon after exercise and gone within the hour suggest exercise-induced bronchospasm, and normal resting spirometry is not diagnostic. Among the provocation tests, an exercise challenge is the one used when exercise-induced bronchospasm is suspected."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 58, 94",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 28-year-old pregnant woman with allergic asthma asks whether keeping her baby away from dust, pets and pollen will prevent the child from developing asthma. Which statement is accurate?",
+   "opts": [
+    [
+     "Avoidance does not lower the risk",
+     "Correct. Inhaled allergens are common triggers and are implicated in sensitization, but avoiding allergens does not reduce the risk of developing asthma, and early exposure may even be protective by building tolerance."
+    ],
+    [
+     "Strict avoidance prevents asthma",
+     "Avoiding allergens does not reduce the risk of developing asthma, so strict avoidance is not prevention. Tell: early exposure may be protective through tolerance, the opposite of what strict avoidance assumes.",
+     "reversed direction or value"
+    ],
+    [
+     "Early exposure guarantees asthma",
+     "Early exposure may be protective through tolerance, and not all atopic individuals develop asthma. Tell: exposure early in life is not a cause the evidence supports avoiding.",
+     "reversed direction or value"
+    ],
+    [
+     "Avoidance matters just for pet dander",
+     "No single allergen is singled out; allergen avoidance in general does not reduce the risk of developing asthma. Tell: avoidance controls triggers in someone who has asthma, but does not prevent it.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 29",
+   "slot": "risk factors",
+   "lead": "education"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 33-year-old man with asthma has symptoms 1 day a week, wakes at night once a month, uses albuterol 1 day a week, and has a forced expiratory volume in 1 second of 91% predicted. In the past year, however, he needed 3 separate courses of oral corticosteroids for exacerbations. How should his asthma be classified?",
+   "opts": [
+    [
+     "As intermittent asthma",
+     "His day-to-day impairment alone fits intermittent asthma, but the risk domain counts too, and intermittent allows only 0 to 1 steroid-requiring exacerbation a year. He had 3. Tell: the risk domain can move a quiet patient into persistent asthma.",
+     "wrong stage or severity"
+    ],
+    [
+     "As persistent asthma",
+     "Correct. His impairment is intermittent-level, but patients with 2 or more exacerbations requiring oral systemic corticosteroids in the past year may be considered the same as patients with persistent asthma, even without persistent-level impairment. Three steroid courses put him in the persistent risk row."
+    ],
+    [
+     "As well-controlled with no change",
+     "Three steroid-requiring exacerbations in a year are not well controlled; the risk domain treats 2 or more as persistent asthma. Tell: a good week-to-week picture does not cancel repeated exacerbations.",
+     "common lay belief"
+    ],
+    [
+     "As exercise-induced bronchospasm",
+     "Nothing ties his symptoms to exercise, and exercise-induced bronchospasm does not explain repeated steroid-requiring exacerbations. Tell: the decisive fact is the count of oral steroid courses, 3 in a year, which defines persistent risk.",
+     "competing diagnosis"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Medications",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 61-year-old man with moderate persistent asthma controlled on an inhaled corticosteroid now has hypertension and new stable angina. His cardiologist is choosing a medicine for both. Which drug class should be avoided in him?",
+   "opts": [
+    [
+     "Inhaled corticosteroids",
+     "His inhaled corticosteroid is the preferred first-line control medicine for persistent asthma and is keeping him controlled; stopping it would risk exacerbations. Tell: the drug class that worsens asthma, and could come with his heart treatment, is the beta blocker.",
+     "reversed direction or value"
+    ],
+    [
+     "Leukotriene modifiers",
+     "Leukotriene modifiers are asthma add-on medicines with modest benefit, not triggers. Tell: the two medication triggers to avoid in asthma are aspirin and beta blockers, and only the beta blocker would come with his heart treatment.",
+     "adjacent fact"
+    ],
+    [
+     "Beta blockers",
+     "Correct. Beta blockers are listed with aspirin as medications that worsen asthma and should be avoided in asthmatic patients. For this man's angina and hypertension, another drug class is needed so his airways are not provoked."
+    ],
+    [
+     "Short-acting beta-2 agonists",
+     "Short-acting beta-2 agonists are his rescue medicine, which every patient with asthma needs; they relax airway smooth muscle. Tell: the agonist opens the airway while the blocker provokes it, so the name to avoid is the beta blocker.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 40",
+   "slot": "avoid",
+   "lead": "avoid"
+  },
+  {
+   "topic": "Aspergillosis",
+   "io": "Define, describe, and discuss aspergillosis as it relates to asthma.",
+   "q": "A 29-year-old man with long-standing asthma has had several exacerbations this year despite good inhaler technique and compliance. Testing shows a strong hypersensitivity to Aspergillus fumigatus with markedly raised immunoglobulin E and immunoglobulin G antibodies to the mold. Which diagnosis explains his worsening?",
+   "opts": [
+    [
+     "Allergic bronchopulmonary aspergillosis",
+     "Correct. Allergic bronchopulmonary aspergillosis is a hypersensitivity reaction to Aspergillus fumigatus that occurs almost exclusively in asthma or cystic fibrosis; exposure causes a vigorous immunoglobulin E and G response that produces acute asthma symptoms and exacerbations, as in this patient."
+    ],
+    [
+     "Steroid-resistant asthma",
+     "Steroid-resistant asthma is very uncommon, and nothing here shows a failed steroid response. His specific antibody response to Aspergillus explains the exacerbations. Tell: a named mold with raised immunoglobulin E and G points to aspergillosis, not to drug resistance.",
+     "competing diagnosis"
+    ],
+    [
+     "Occupational asthma",
+     "Occupational asthma comes from workplace chemicals and improves away from work. His trigger is an identified mold with a vigorous antibody response. Tell: the stem names Aspergillus and the antibodies, the hallmark of allergic bronchopulmonary aspergillosis.",
+     "competing diagnosis"
+    ],
+    [
+     "Non-compliance with the controller",
+     "Non-compliance is the most common reason for poor control, but the stem states good technique and compliance. Tell: once compliance is confirmed, the antibody response to Aspergillus is the stated explanation for his exacerbations.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 65",
+   "slot": "complication",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Medications",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 63-year-old postmenopausal woman with refractory, poorly controlled asthma will need long-term oral corticosteroids to suppress her symptoms. Which addition reduces the bone loss from this therapy?",
+   "opts": [
+    [
+     "Montelukast",
+     "Montelukast is a leukotriene modifier used as add-on asthma therapy with modest benefit. It does not prevent steroid-related bone loss. Tell: the question asks about bone, and calcium and vitamin D are the supplements named for that purpose.",
+     "adjacent fact"
+    ],
+    [
+     "Cromolyn sodium",
+     "Cromolyn sodium is a mast cell stabilizer that prevents symptoms in mild persistent or exercise-induced asthma, not a bone treatment. Tell: long-term systemic corticosteroid use calls for calcium and vitamin D to reduce bone mineral loss.",
+     "adjacent fact"
+    ],
+    [
+     "Calcium and vitamin D",
+     "Correct. When long-term systemic corticosteroids are needed, calcium and vitamin D supplementation should be considered to reduce bone mineral loss, since osteoporosis is a known side effect. Her postmenopausal status adds to the bone risk, and the minimum effective steroid dose is used."
+    ],
+    [
+     "Theophylline",
+     "Theophylline gives mild bronchodilation and is rarely used because of toxicity; it does nothing to protect bone. Tell: the bone-protecting step with long-term systemic steroids is calcium and vitamin D supplementation.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 76",
+   "slot": "complication",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 17-year-old girl having spirometry for suspected asthma gives inconsistent, half-hearted blows, and her results vary widely between attempts. Which step is most appropriate before interpreting the test?",
+   "opts": [
+    [
+     "Report her best result as normal",
+     "Results from poor effort are unreliable in either direction, so the best of several weak blows is not a trustworthy normal. Tell: effort-dependent tests need coaching and repeat before any interpretation.",
+     "adjacent fact"
+    ],
+    [
+     "Move straight to a methacholine challenge",
+     "Methacholine challenge is used when good-quality spirometry is not diagnostic; hers is not yet valid. Tell: fix the effort problem with coaching first, since spirometry depends on patient effort.",
+     "adjacent fact"
+    ],
+    [
+     "Replace spirometry with a chest x-ray",
+     "A chest x-ray in asthma is usually normal or shows hyperinflation and cannot measure airflow. Tell: spirometry stays the objective test; the fix for poor effort is coaching and repeating it.",
+     "adjacent fact"
+    ],
+    [
+     "Coach and encourage her, then repeat",
+     "Correct. Spirometry results depend on patient effort, so the patient may need coaching and encouragement to achieve good results. Her inconsistent blows make the current numbers unreliable, and repeating with coaching gives a valid test."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 54",
+   "slot": "initial test",
+   "lead": "next step"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 47-year-old woman has asthma symptoms 3 days a week, wakes at night 3 times a month, and uses albuterol 3 days a week but not daily. She has minor limitation of activity. Her forced expiratory volume in 1 second is 72% predicted with a ratio reduced by 4%. Which severity classification fits?",
+   "opts": [
+    [
+     "Mild persistent",
+     "Most of her features are mild persistent, but mild persistent requires a 1-second volume above 80%; hers is 72%. Severity follows the worst feature. Tell: lung function between 60% and 80% sets her one class higher.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Correct. Her symptoms, night waking, rescue use and minor limitation fit mild persistent, but a 1-second volume between 60% and 80% predicted (72%) is a moderate persistent feature, and severity follows the most severe category in which any feature occurs."
+    ],
+    [
+     "Intermittent",
+     "Intermittent asthma allows symptoms on 2 or fewer days a week and a 1-second volume above 80%. She has 3 days a week and 72% function. Tell: both her symptoms and her spirometry exceed the intermittent column.",
+     "wrong stage or severity"
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma needs a 1-second volume below 60% or features such as symptoms throughout the day. Her worst feature, 72%, sits in the moderate band. Tell: 72% is above the 60% line that marks severe disease.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Course and prognosis",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 35-year-old man with asthma and a body mass index of 36 asks how his weight relates to his asthma. Which statement is accurate?",
+   "opts": [
+    [
+     "Obesity matters just for exercise-induced symptoms",
+     "The link between obesity and asthma is not limited to exercise; asthma is more frequent and harder to control overall above a body mass index of 30. Tell: the effect covers his asthma as a whole.",
+     "adjacent fact"
+    ],
+    [
+     "Obesity makes asthma harder to control",
+     "Correct. Asthma is more frequent in people with a body mass index above 30, and their symptoms are more difficult to control, although the mechanism is unknown. His body mass index of 36 places him in that group."
+    ],
+    [
+     "Obesity has no link to asthma",
+     "Obesity is a listed endogenous factor: asthma is more frequent in people with a body mass index above 30. Tell: weight is linked to both how often asthma occurs and how hard it is to control.",
+     "reversed direction or value"
+    ],
+    [
+     "Obesity makes asthma milder",
+     "Obesity makes asthma symptoms more difficult to control, not milder. Tell: a body mass index above 30 is linked to more frequent asthma and harder control.",
+     "reversed direction or value"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 27",
+   "slot": "risk factors",
+   "lead": "education"
+  },
+  {
+   "topic": "Exercise-induced bronchospasm",
+   "io": "Identify medical care strategies for patients with asthma in the following patient populations. 1. adolescent 2. adult 3. elderly",
+   "q": "A 15-year-old soccer player develops cough and wheezing within minutes of hard running, peaking about 10 minutes later and resolving within an hour. She is otherwise symptom-free. Which treatment should she use before exercise?",
+   "opts": [
+    [
+     "Inhaled short-acting beta-2 agonist",
+     "Correct. Her symptoms begin within minutes of exercise, peak at 10 to 15 minutes and resolve by an hour, the exercise-induced bronchospasm pattern. An inhaled short-acting beta-2 agonist used before exercise decreases the bronchoconstriction."
+    ],
+    [
+     "Long-acting beta-2 agonist alone",
+     "A long-acting beta-2 agonist has no anti-inflammatory effect and should not be used as monotherapy in asthma. Tell: the pre-exercise treatment for exercise-induced bronchospasm is the short-acting agent.",
+     "confused mechanism or drug class"
+    ],
+    [
+     "Tiotropium",
+     "Tiotropium is an anticholinergic with a slow onset of action and is less effective than beta-2 agonists, so it suits neither quick protection nor her pattern. Tell: a short-acting beta-2 agonist before exercise is the treatment for exercise-induced bronchospasm.",
+     "adjacent fact"
+    ],
+    [
+     "A short oral corticosteroid course",
+     "Short systemic corticosteroid courses control exacerbations; she has brief, predictable symptoms only with exercise. Tell: exercise-induced bronchospasm is treated with an inhaled short-acting beta-2 agonist before exercise and best prevented with a regular inhaled steroid.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 94, 96",
+   "slot": "first-line",
+   "lead": "treatment"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 21-year-old man with extrinsic asthma flares whenever he cleans his apartment, and allergy skin testing shows sensitivity to house dust mites. His controller and rescue inhalers are prescribed. Which non-drug measure should be added?",
+   "opts": [
+    [
+     "Limit his physical activity",
+     "Exercise is a listed trigger, but asthma treatment aims for no limitation on physical activity, so cutting activity is not the measure. Tell: his trigger, shown by skin testing and cleaning flares, is dust mites, so avoidance targets the home.",
+     "common lay belief"
+    ],
+    [
+     "Start allergen immunotherapy at home",
+     "Immunotherapy may be considered for allergic triggers, but it must be done in a controlled environment because it can induce bronchoconstriction. Tell: home use is unsafe, and the first non-drug step is avoiding the dust mite trigger.",
+     "adjacent fact"
+    ],
+    [
+     "Move from the city to a rural area",
+     "Moving is not a listed measure; trigger avoidance and environmental control are. Tell: his identified trigger is dust mites inside his home, so environmental control there is the measure.",
+     "common lay belief"
+    ],
+    [
+     "Reduce dust mite exposure at home",
+     "Correct. Non-pharmacological asthma treatment is trigger avoidance and environmental control. Dust mites are the most common inhaled allergen trigger, and his skin test and cleaning-related flares identify it, so reducing his exposure at home is the added measure."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 38, 67",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 27-year-old man describes cough and chest tightness with cold air and smoke over several months. His spirometry is normal, with no meaningful change after albuterol. Asthma is still suspected. Which test is most appropriate next?",
+   "opts": [
+    [
+     "Chest x-ray",
+     "The chest x-ray in asthma is usually normal or shows hyperinflation, so it adds little after normal spirometry. Tell: when spirometry fails to show asthma, the next step is to provoke airway hyper-responsiveness with methacholine.",
+     "adjacent fact"
+    ],
+    [
+     "Repeat spirometry in 1 year",
+     "Annual spirometry is for monitoring the progression of known disease, not for settling a suspected diagnosis today. Tell: when spirometry is not diagnostic, bronchial provocation testing is the next test.",
+     "adjacent fact"
+    ],
+    [
+     "Methacholine challenge",
+     "Correct. Bronchial provocation testing with methacholine or histamine is useful when spirometry is not diagnostic, as here, where a typical history meets normal spirometry. His normal lung function also clears the rule that provocation is not done below 65% predicted."
+    ],
+    [
+     "Exercise challenge",
+     "An exercise challenge is the provocation test used when exercise-induced bronchospasm is suspected. His triggers are cold air and smoke, not exercise. Tell: for a nondiagnostic spirometry with general triggers, methacholine or histamine challenge is the test.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 58",
+   "slot": "initial test",
+   "lead": "test"
+  },
+  {
+   "topic": "Diagnostic testing",
+   "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases",
+   "q": "A 31-year-old woman has spirometry for suspected asthma. Before a bronchodilator her forced expiratory volume in 1 second is 61% predicted with a ratio of 55%; after albuterol it is 94% predicted, a 54% improvement. Which interpretation fits?",
+   "opts": [
+    [
+     "Poor patient effort",
+     "Spirometry does depend on effort, and coaching helps, but poor effort would not produce a clear 54% rise after a bronchodilator. Tell: a large, consistent response to albuterol reflects reversible obstruction, not inconsistent effort.",
+     "adjacent fact"
+    ],
+    [
+     "Reversible airflow obstruction",
+     "Correct. A reduced 1-second volume and a reduced ratio before the bronchodilator show airflow limitation, and a 54% improvement after albuterol, far above the 12% threshold, shows reversibility. A positive bronchodilator response strongly supports asthma."
+    ],
+    [
+     "Fixed airflow obstruction",
+     "Fixed obstruction would barely change after a bronchodilator. Her 1-second volume rose by 54% of its starting value, from 61% to 94% predicted. Tell: a rise of 12% or more is the reversible pattern that supports asthma.",
+     "reversed direction or value"
+    ],
+    [
+     "Normal spirometry",
+     "Before the bronchodilator her 1-second volume was 61% predicted with a 55% ratio, both reduced, so the test is not normal. Tell: the pre-bronchodilator values show obstruction, and the post-bronchodilator values show it reversing.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 53, 54, 57",
+   "slot": "test finding",
+   "lead": "test"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 34-year-old man with moderate persistent asthma returns for a scheduled follow-up visit 2 months after starting an inhaled corticosteroid. He reports few symptoms. Which task belongs at this visit?",
+   "opts": [
+    [
+     "Repeat a bronchial provocation test",
+     "Provocation testing helps diagnose asthma when spirometry is not diagnostic; his diagnosis is established. Tell: follow-up visits monitor control and review medicines, compliance and the action plan.",
+     "adjacent fact"
+    ],
+    [
+     "Stop his written action plan",
+     "Few symptoms are the goal of treatment, but the action plan stays in use and is reviewed and updated at each follow-up. Tell: chronic management keeps patient education, including the red, yellow and green zones, going.",
+     "common lay belief"
+    ],
+    [
+     "Start a long-term oral corticosteroid",
+     "Long-term systemic corticosteroids are for refractory or poorly controlled cases, and he is doing well. Tell: a follow-up visit in a controlled patient reviews medicines, compliance and the action plan.",
+     "wrong stage or severity"
+    ],
+    [
+     "Review and update his action plan",
+     "Correct. Follow-up visits assess and monitor control, review medications and compliance, adjust medications as needed, and review and update the action plan, then schedule the next follow-up. Good control does not remove these tasks."
+    ]
+   ],
+   "c": 3,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 43, 90",
+   "slot": "education",
+   "lead": "next step"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 41-year-old man with asthma is reviewing his written action plan with you. Which finding is a danger sign telling him to take his quick-relief medicine and go to the hospital or call an ambulance now?",
+   "opts": [
+    [
+     "Blue lips or fingernails",
+     "Correct. The action plan's danger signs are trouble walking and talking because of shortness of breath, and lips or fingernails that are blue. Either one means take the quick-relief medicine and go to the hospital or call an ambulance now, without waiting."
+    ],
+    [
+     "Coughing at night",
+     "Night cough, like waking at night with asthma, is a yellow-zone sign that asthma is getting worse. Tell: yellow means add quick-relief medicine and keep the controller; the danger signs are blue lips or trouble walking and talking.",
+     "wrong stage or severity"
+    ],
+    [
+     "Peak flow at 75% of personal best",
+     "A reading of 75% of personal best falls in the yellow zone, 50% to 79%. Tell: the red zone starts below 50%, and the danger signs are blue lips or fingernails and trouble walking and talking from breathlessness.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mild wheeze with the first signs of a cold",
+     "The first signs of a cold and mild wheeze are caution, or yellow-zone, features. Tell: those call for adding quick-relief medicine, while blue lips or fingernails call for the hospital now.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 88, 89",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Refractory asthma",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 45-year-old woman with severe persistent asthma has needed 4 courses of oral corticosteroids this year despite confirmed adherence and good technique with her inhaled corticosteroid and long-acting beta-2 agonist. Which step is most appropriate?",
+   "opts": [
+    [
+     "Refer to a lung or allergy specialist",
+     "Correct. With adherence and technique confirmed, her repeated steroid-requiring exacerbations make her asthma refractory. Monoclonal antibody agents are used by pulmonology and allergy specialists and reduced the need for corticosteroids in trials, so referral to a specialist fits."
+    ],
+    [
+     "Add theophylline",
+     "Theophylline gives mild bronchodilation but has a narrow toxic-therapeutic range and is rarely used because of toxicity concerns. Tell: refractory disease needing repeated steroids is a specialist referral, where steroid-sparing antibody therapy is available.",
+     "adjacent fact"
+    ],
+    [
+     "Start allergen immunotherapy at home",
+     "Immunotherapy must be done in a controlled environment because it can induce bronchoconstriction, and it targets allergic triggers. Tell: her problem is refractory severe asthma, which calls for specialist care.",
+     "adjacent fact"
+    ],
+    [
+     "Stop the long-acting beta-2 agonist",
+     "Removing part of a regimen she uses correctly would not explain or fix her exacerbations. Tell: refractory, steroid-dependent asthma despite adherence calls for a specialist, who can offer agents that reduce the need for steroids.",
+     "common lay belief"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 84, 91",
+   "slot": "referral",
+   "lead": "referral"
+  },
+  {
+   "topic": "Education and action plans",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 28-year-old woman with moderate persistent asthma is given a peak flow meter to assess her control at home. When should she take her readings?",
+   "opts": [
+    [
+     "Each morning and each afternoon",
+     "Correct. Peak flow is measured in the morning before the bronchodilator and in the afternoon after it. A 20% change between those readings, or from day to day, indicates poor control, so this schedule lets her and her clinician see variation."
+    ],
+    [
+     "Just when she is wheezing",
+     "Readings taken only during symptoms cannot establish her baseline or show the morning-to-afternoon variation that marks poor control. Tell: the schedule is morning before and afternoon after the bronchodilator, every day.",
+     "common lay belief"
+    ],
+    [
+     "At bedtime after exercise",
+     "Exercise adds a separate trigger and bedtime is not the reference point. Tell: the comparison that shows control is morning before the bronchodilator against afternoon after it, with a 20% change meaning poor control.",
+     "adjacent fact"
+    ],
+    [
+     "Once a month at the clinic",
+     "Peak flow is a personal, at-home measurement; monthly office readings cannot show daily variation. Tell: the 20% day-to-day or morning-to-afternoon change can only be seen with regular home readings.",
+     "adjacent fact"
+    ]
+   ],
+   "c": 0,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 60",
+   "slot": "education",
+   "lead": "education"
+  },
+  {
+   "topic": "Severity classification",
+   "io": "Develop a treatment plan for patients with asthma based on symptoms and physical examination.",
+   "q": "A 42-year-old woman has asthma symptoms every day, uses her albuterol inhaler daily, wakes at night with symptoms twice a week, and has had to cut back some activities. Her forced expiratory volume in 1 second is 68% predicted with a reduced ratio. Which severity classification fits?",
+   "opts": [
+    [
+     "Intermittent",
+     "Intermittent asthma allows symptoms on 2 or fewer days a week and normal function between exacerbations. She is symptomatic daily with 68% function. Tell: every one of her features is above the intermittent limits.",
+     "wrong stage or severity"
+    ],
+    [
+     "Mild persistent",
+     "Mild persistent asthma has symptoms on more than 2 days a week but not daily, 3 to 4 night awakenings a month, and a 1-second volume above 80%. She has daily symptoms and 68% function. Tell: daily symptoms move her past mild.",
+     "wrong stage or severity"
+    ],
+    [
+     "Moderate persistent",
+     "Correct. Daily symptoms, daily short-acting beta-2 agonist use, night awakenings more than once a week but not nightly, some limitation of activity, and a 1-second volume between 60% and 80% predicted with a reduced ratio all fall in the moderate persistent column."
+    ],
+    [
+     "Severe persistent",
+     "Severe persistent asthma has symptoms throughout the day, waking often 7 times a week, rescue use several times a day, extreme limitation and a 1-second volume below 60%. She wakes twice a week with 68% function. Tell: 68% sits in the 60% to 80% moderate band.",
+     "wrong stage or severity"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 62",
+   "slot": "test finding",
+   "lead": "classify"
+  },
+  {
+   "topic": "Types of asthma",
+   "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), patient education, and prognosis of asthma.",
+   "q": "A 19-year-old college student has had episodes of wheezing, chest tightness and cough for 2 years, worse at night and after cleaning his dusty dorm room. He has allergic rhinitis and atopic dermatitis (eczema). Between episodes his lung exam is normal. Spirometry shows a reduced forced expiratory volume in 1 second that improves 18% after albuterol. Which diagnosis is most likely?",
+   "opts": [
+    [
+     "Chronic obstructive pulmonary disease",
+     "Chronic obstructive pulmonary disease is a lower airway mimic, but its obstruction is largely irreversible and it follows years of smoke exposure. This student's obstruction reversed by 18% after albuterol. Tell: a large bronchodilator response in a young atopic patient supports asthma.",
+     "ruled out by a stated finding"
+    ],
+    [
+     "Vocal fold dysfunction",
+     "Vocal fold dysfunction is an upper airway mimic in the differential, but it would not produce reversible lower airway obstruction on spirometry or travel with eczema and rhinitis. Tell: reversible obstruction plus atopy places the problem in the lower airways, not the larynx.",
+     "competing diagnosis"
+    ],
+    [
+     "Extrinsic asthma",
+     "Correct. Episodic wheeze, chest tightness and cough worse at night, a dust trigger, allergic rhinitis and eczema (the atopic triad), a normal exam between episodes, and an 18% rise in the 1-second volume after albuterol (12% or more is a positive response) make allergic, extrinsic asthma the diagnosis."
+    ],
+    [
+     "Intrinsic asthma",
+     "Intrinsic asthma is non-atopic and of later, adult onset, often with nasal polyps and aspirin sensitivity. This 19-year-old has rhinitis, eczema and a dust trigger, an atopic picture. Tell: the atopic triad and an allergen trigger point to extrinsic, not intrinsic, asthma.",
+     "ruled out by a stated finding"
+    ]
+   ],
+   "c": 2,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slides 25, 35, 53",
+   "slot": "manifestation",
+   "lead": "diagnosis"
+  },
+  {
+   "topic": "Medications",
+   "io": "List the components of patient education in treating asthma, including use of peak flow meters, metered-dose inhalers, nebulizers.",
+   "q": "A 44-year-old woman using an inhaled corticosteroid for moderate persistent asthma has hoarseness and white plaques on her tongue. She uses her inhaler without a spacer and does not rinse afterward. Which advice is most appropriate?",
+   "opts": [
+    [
+     "Use the inhaler just during attacks",
+     "Inhaled corticosteroids are controllers, and their maximum response may take months; they do not relieve attacks. Tell: attacks are treated with the short-acting rescue inhaler, while thrush is prevented with a spacer and rinsing.",
+     "adjacent fact"
+    ],
+    [
+     "Use a spacer and rinse the mouth after each dose",
+     "Correct. Hoarseness and oral thrush (oropharyngeal candidiasis) are local side effects of inhaled corticosteroids, and they may be decreased by using an inhalation chamber and rinsing the mouth with water after dosing. She keeps her preferred first-line controller."
+    ],
+    [
+     "Stop the inhaled corticosteroid",
+     "Stopping her preferred first-line controller would leave moderate persistent asthma untreated and risk exacerbations. Tell: local side effects such as thrush are managed with a spacer and mouth rinsing, not by stopping the drug.",
+     "common lay belief"
+    ],
+    [
+     "Switch to a long-term oral corticosteroid",
+     "Long-term systemic corticosteroids carry osteoporosis, hypertension, ulcers and weight gain, and are kept for refractory cases. Tell: a local inhaler side effect is handled with a spacer and rinsing, not a move to systemic therapy.",
+     "confused mechanism or drug class"
+    ]
+   ],
+   "c": 1,
+   "cite": "PAJ5500 CMSI Asthma MBF 2026sc.pptx, Slide 75",
+   "slot": "education",
+   "lead": "education"
+  }
+ ]
+}

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('siteTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));window.__paErrQ=[];['error','unhandledrejection'].forEach(function(t){addEventListener(t,function(e){var q=window.__paErrQ;if(q&&!q.done)q.push(e)})});</script>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+
+<style>
+  html, body { overscroll-behavior-y: contain; }
+  #pull-refresh {
+    position: fixed; top: 0; left: 0; right: 0; height: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; z-index: 1000;
+  }
+  #pull-refresh svg { width: 100%; height: 44px; }
+  #pull-refresh path {
+    fill: none; stroke: #2563eb; stroke-width: 3;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+  }
+  #pull-refresh.refreshing path { animation: ekg-sweep 0.9s linear infinite; }
+  @keyframes ekg-sweep { 0% { stroke-dashoffset: 420; } 100% { stroke-dashoffset: -420; } }
+  .footer-mark-ink { stroke: #1f2937; }
+  .footer-mark-accent { stroke: #b45357; }
+  @media (prefers-color-scheme: dark) {
+    .footer-mark-ink { stroke: #e5e7eb; }
+    .footer-mark-accent { stroke: #c08a2e; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2K06TXC2KK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2K06TXC2KK');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronic Obstructive Pulmonary Disease Vignettes 2 — CMS I Exam 6</title>
+<style>
+  :root{
+    --navy:#7a2d30; --indigo:#b45357; --gold:#c08a2e; --ice:#faefee;
+    --ink:#20233a; --muted:#5b6178; --line:#dbe7e5;
+    --ok:#1f8f52; --ok-bg:#e9f7ef; --bad:#c93a3a; --bad-bg:#fdecec;
+    --card:#ffffff; --page:#f4f6fc;
+    --exam-toolbar-accent:var(--indigo);
+  }
+  *{box-sizing:border-box}
+  .hidden{display:none}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:'Segoe UI',Calibri,system-ui,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 18px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 6px 22px rgba(30,33,80,.07)}
+  header{background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff;
+    border-radius:14px;padding:26px 28px;margin-bottom:18px}
+  header h1{margin:0 0 4px;font-size:24px;letter-spacing:.2px}
+  header .sub{opacity:.92;font-size:14.5px}
+  header .pill{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px;font-size:12.5px}
+  .start{padding:26px 28px}
+  .start h2{margin:2px 0 10px;font-size:18px;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .chip{font-size:12.5px;background:var(--ice);color:var(--navy);border:1px solid var(--line);
+    padding:6px 11px;border-radius:8px}
+  .note{font-size:13px;color:var(--muted);margin:16px 0 22px}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-size:15px;font-weight:600;
+    padding:13px 26px;transition:.15s;font-family:inherit}
+  .btn-primary{background:var(--indigo);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:#fff;color:var(--indigo);border:1.5px solid var(--indigo)}
+  .btn-ghost:hover{background:var(--ice)}
+  .topbar{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+  .bar{flex:1;height:9px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--indigo),var(--gold));width:0;transition:width .3s}
+  .score{font-weight:600;color:var(--navy)}
+  .vs{margin:18px 0 4px}
+  .vs h3{margin:0 0 9px;font-size:15px}
+  .vsrow{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .vslab{width:44px;flex:none;font-size:13px;color:var(--muted)}
+  .vsbar{flex:1;height:12px;border-radius:7px;background:rgba(127,127,127,.16);overflow:hidden}
+  .vsbar i{display:block;height:100%;border-radius:7px;width:0;
+    transition:width .7s cubic-bezier(.2,.8,.2,1)}
+  .vsbar i.you{background:var(--navy)}
+  .vsbar i.them{background:var(--gold)}
+  .vsnum{width:44px;flex:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+  .vsnote{font-size:12.5px;color:var(--muted);margin-top:7px}
+  @media (prefers-reduced-motion: reduce){.vsbar i{transition:none}}
+  .qbody{padding:24px 26px}
+  .qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+  .tag-topic{background:var(--navy);color:#fff}
+  .tag-io{background:var(--ice);color:var(--navy);border:1px solid var(--line)}
+  .qtext{font-size:17.5px;font-weight:600;margin:4px 0 18px;color:var(--ink);white-space:pre-line}
+  /* Picture-stem questions ("Guess that Disease"). The photograph IS the stem,
+     so it gets the room a stem would get; the caption carries the slide
+     citation the image is used under. theme.js arms it for click-to-enlarge
+     on its own -- the <img> is rebuilt per question, so the observer sees it. */
+  .qfig{margin:2px 0 16px;text-align:center}
+  .qfig img{max-width:100%;max-height:min(52vh,430px);width:auto;display:block;margin:0 auto;
+    border-radius:12px;border:1px solid var(--line);background:#101014;
+    box-shadow:0 6px 20px rgba(0,0,0,.14)}
+  .qfig figcaption{font-size:11.5px;color:var(--muted);margin-top:7px;letter-spacing:.02em}
+  .sq .qfig img{max-height:min(40vh,320px)}
+  .mitem .qfig{text-align:left;margin:6px 0 8px}
+  .mitem .qfig img{max-height:150px;margin:0}
+  .mitem .qfig figcaption{display:none}
+  /* Listening questions ("What is this murmur?"). The recording IS the stem, so the
+     player sits where a picture would. Native controls on purpose: they give
+     play/pause, seek and replay on every browser with no script, and preload is
+     "none" so a clip costs nothing until someone presses play. */
+  .qfig.qaudio audio{width:100%;max-width:520px;display:block;margin:0 auto;height:48px;border-radius:999px}
+  .qfig.qaudio figcaption{max-width:520px;margin-left:auto;margin-right:auto;line-height:1.45}
+  .qfig.qaudio figcaption a{color:inherit;text-decoration:underline}
+  .mitem .qfig.qaudio audio{margin:0;height:40px}
+  .mitem .qfig.qaudio figcaption{display:block}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:13px 15px;
+    font-size:15px;font-family:inherit;color:var(--ink);transition:.12s;width:100%}
+  .opt:hover:not(.locked){border-color:var(--indigo);background:var(--ice)}
+  .opt .ltr{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);
+    color:var(--navy);font-weight:700;font-size:13px;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line)}
+  .opt.locked{cursor:default}
+  .opt.selected-exam{border-color:var(--indigo);background:var(--ice)}
+  .opt.selected-exam .ltr{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+  .opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+  .opt.correct .ltr{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+  .opt.wrong .ltr{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .opt.dim{opacity:.72}
+  .optlabel{flex:1}
+  /* Share of the class that picked each option, shown only after answering.
+     Muted by default so it never competes with the right/wrong colouring; the
+     bar underneath gives the magnitude at a glance without reading the number. */
+  .opt .pct{flex:none;margin-left:10px;font-size:.78rem;font-weight:700;
+            font-variant-numeric:tabular-nums;opacity:.75;min-width:34px;text-align:right}
+  .opt .pctbar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;
+               background:currentColor;opacity:.28;transition:width .45s ease}
+  .opt{position:relative}
+  .classpicks{margin:8px 2px 0;font-size:.78rem;opacity:.7}
+  .classpicks.thin{font-style:italic}
+  .opt.crossed .optlabel{text-decoration:line-through;opacity:.55}
+  .cross-toggle{flex:0 0 22px;height:22px;border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-size:12px;color:var(--muted);border:1px solid var(--line);cursor:pointer}
+  .cross-toggle:hover{border-color:var(--bad);color:var(--bad)}
+  .opt.crossed .cross-toggle{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+  .expl{margin-top:12px;border-top:1px dashed var(--line);padding-top:14px;display:none}
+  .expl.show{display:block}
+  .verdict{font-weight:700;font-size:15px;margin-bottom:8px}
+  .verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+  .erow{font-size:13.5px;margin:9px 0;padding-left:22px;position:relative;color:#3a3f57;line-height:1.55}
+  .erow .mk{position:absolute;left:0;top:0;font-weight:700}
+  .erow.c .mk{color:var(--ok)} .erow.x .mk{color:var(--bad)}
+  .cite{font-size:12.5px;color:var(--muted);margin-top:12px;font-style:italic}
+  .nav{display:flex;justify-content:flex-end;padding:0 26px 24px}
+  .res{padding:28px}
+  .res h2{margin:0 0 4px;color:var(--navy)}
+  .big{display:flex;gap:26px;align-items:center;margin:16px 0 8px;flex-wrap:wrap}
+  .ring{--p:0;width:118px;height:118px;border-radius:50%;flex:none;
+    background:conic-gradient(var(--indigo) calc(var(--p)*1%), #e4e8f5 0);
+    display:flex;align-items:center;justify-content:center}
+  .ring i{width:88px;height:88px;background:#fff;border-radius:50%;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+  .ring b{font-size:27px;color:var(--navy);line-height:1}
+  .ring s{font-size:12px;color:var(--muted);text-decoration:none;margin-top:2px}
+  .tally{font-size:15px}
+  .tally .n{font-size:21px;font-weight:700;color:var(--navy)}
+  .breakdown{margin:20px 0 8px}
+  .breakdown h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .brow{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .brow .bname{flex:none;width:300px;color:#3a3f57;line-height:1.35}
+  .brow .bbar{flex:1;height:8px;background:#e4e8f5;border-radius:999px;overflow:hidden}
+  .brow .bbar>span{display:block;height:100%;background:var(--indigo)}
+  .brow .bpct{flex:none;width:48px;text-align:right;font-weight:600;color:var(--navy)}
+  .missed{margin-top:22px}
+  .missed h3{font-size:15px;color:var(--navy);margin:0 0 10px}
+  .mitem{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:9px;
+    padding:12px 14px;margin:10px 0;font-size:13.5px;background:#fff}
+  .mitem .mq{font-weight:600;margin-bottom:6px}
+  .mitem .ma{margin:3px 0}
+  .mitem .ma.you{color:var(--bad)} .mitem .ma.key{color:var(--ok)}
+  .mitem .mc{color:var(--muted);font-style:italic;margin-top:6px;font-size:12.5px;line-height:1.5}
+  .perfect{background:var(--ok-bg);border:1px solid #bfe6cf;color:#1a6b3e;border-radius:10px;
+    padding:14px 16px;font-size:14.5px;margin-top:16px}
+  .resbtns{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  @media(max-width:560px){.brow .bname{width:150px}}
+
+/* --- start-screen option rows: view switch and length box ---------------- */
+.startopt{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap;}
+.startopt-label{font-size:14px;color:var(--muted);min-width:52px;}
+.startopt-hint{font-size:12.5px;color:var(--muted);opacity:.85;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+.seg-btn{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  padding:7px 14px;font:600 13px/1 inherit;color:var(--muted);
+}
+.seg-btn.is-on{background:var(--navy);color:#fff;}
+.seg-btn:not(.is-on):hover{background:var(--ice);color:var(--navy);}
+.lenbox{
+  width:78px;padding:6px 9px;font:600 14px/1.2 inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--paper,#fff);
+}
+
+/* --- scroll view --------------------------------------------------------- */
+/* Two columns on a wide screen, one on a phone -- the palette moves from a
+   sticky rail to a collapsible strip above the questions, because a right-hand
+   rail has nowhere to live at 380px. */
+.scrollwrap{display:grid;grid-template-columns:minmax(0,1fr) 148px;gap:22px;align-items:start;}
+.scrollcol{min-width:0;}
+.sq{border-top:1px solid var(--line);padding:20px 0 4px;}
+.sq:first-child{border-top:0;padding-top:4px;}
+.sq-head{display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.sq-num{font:800 13px/1 inherit;color:var(--navy);letter-spacing:.02em;}
+.sq-flag{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:999px;padding:4px 10px;font:600 12px/1 inherit;color:var(--muted);
+}
+.sq-flag.flagged{background:var(--gold);border-color:var(--gold);color:#3a2c05;}
+.palette{position:sticky;top:14px;}
+.palette h4{margin:0 0 8px;font:700 12px/1 inherit;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.pal{
+  appearance:none;border:1px solid var(--line);background:transparent;cursor:pointer;
+  border-radius:7px;padding:7px 0;font:700 12.5px/1 inherit;color:var(--muted);
+}
+.pal.answered{background:var(--ice);border-color:var(--indigo);color:var(--navy);}
+.pal.flagged{border-color:var(--gold);box-shadow:inset 0 0 0 1.5px var(--gold);}
+.pal.here{outline:2px solid var(--navy);outline-offset:1px;}
+.palette-foot{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5;}
+@media (max-width:820px){
+  .scrollwrap{grid-template-columns:1fr;}
+  .palette{position:static;order:-1;}
+  .palette-grid{grid-template-columns:repeat(10,1fr);}
+}
+@media (max-width:520px){ .palette-grid{grid-template-columns:repeat(8,1fr);} }
+</style>
+<!--DARK-TOKENS:BEGIN (tools/dark_tokens.py)--><style id="dark-tokens">:root[data-theme="dark"] body[data-dark="tokens"]{--navy-l:#7a2d30;--gold-l:#c08a2e;--indigo-l:#b45357;--navy:#ec9392;--indigo:#d06c6e;--gold:#c08a2e;--ice:#36191a;--ink:#e5e7eb;--muted:#9aa1ac;--line:#2a2e37;--card:#191c22;--page:#0f1115;--paper:#191c22;--ok:#31974d;--ok-bg:#0c2a13;--bad:#f53c52;--bad-bg:#3c1718;--ok-l:#1f8f52;--bad-l:#c93a3a;--exam-toolbar-accent:#d06c6e;}:root[data-theme="light"] body[data-dark="tokens"]{--navy-t:#7a2d30;--indigo-t:#b45357;}</style><!--DARK-TOKENS:END-->
+</head>
+<body data-dark="tokens" data-dark-kind="quiz">
+<div id="pull-refresh">
+  <svg viewBox="0 0 300 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 L120,30 L135,8 L150,52 L165,30 L300,30" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+<div id="quiz-header-logo" style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 14px;">
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+  <a href="../index.html" aria-label="Back to home" style="cursor:pointer;flex-shrink:0;display:block;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" style="width:60px;height:auto;display:block;">
+    <path class="footer-mark-ink" d="M148,171 L198,88 L218,125" fill="none" stroke-width="10"/>
+    <line class="footer-mark-ink" x1="226" y1="142" x2="248" y2="172" stroke-width="10"/>
+    <path class="footer-mark-accent" d="M 173 101 L 156 72 L 216 72 C 232 72 241 86 241 102 C 241 119 229 129 217 130 L 201 130 L 180 165" fill="none" stroke-width="12"/>
+  </svg>
+  </a>
+  <span style="flex:1;max-width:420px;height:3px;border-radius:2px;background:linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));"></span>
+</div>
+<div class="wrap">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;color:#6b7280;text-decoration:none;font-size:13.5px;font-weight:700;margin:36px 0 14px">← Back to home</a>
+  <header>
+    <h1>Chronic Obstructive Pulmonary Disease &mdash; Vignettes 2</h1>
+    <div class="sub">Clinical Medicine and Surgery I &middot; Exam 6 &middot; Lecture 36</div>
+    <span class="pill">30 questions</span>
+  </header>
+
+  <div id="start" class="card start">
+    <h2>Before you begin</h2>
+    <p style="font-size:14.5px;margin:0 0 6px"></p>
+    <div class="chips"><span class="chip">Smokers with dyspnea</span><span class="chip">Symptom and survival scores</span><span class="chip">Choosing inhalers</span><span class="chip">Comorbidities</span><span class="chip">Exacerbations</span><span class="chip">Older adults</span></div>
+    <p class="note">Answers reveal only after you choose. Your score and a breakdown by objective appear at the end,
+      with a review of everything you missed.</p>
+    <p id="stale-note" class="note" style="display:none">This quiz&rsquo;s questions have changed since your last visit, so your unfinished attempt was cleared. Your earlier scores are kept.</p>
+    <div id="resume-banner" style="display:none;background:#fdf1e2;border:1px solid rgba(180,83,9,.2);border-radius:10px;padding:14px 16px;margin:0 0 18px">
+      <p style="margin:0 0 4px;font-weight:700;color:#9a5b0a;font-size:13px;text-transform:uppercase;letter-spacing:.03em">Progress saved</p>
+      <p id="resume-text" style="margin:0 0 12px;font-size:14.5px;color:var(--ink)"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="resumeQuiz()">Resume &rarr;</button>
+        <button class="btn btn-ghost" onclick="startExam()">Discard &amp; start over</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">View</span>
+      <div class="seg" id="view-seg" role="group" aria-label="Quiz view">
+        <button type="button" class="seg-btn is-on" data-view="paged" onclick="setView('paged')">One at a time</button>
+        <button type="button" class="seg-btn" data-view="scroll" onclick="setView('scroll')">All on a page</button>
+      </div>
+    </div>
+    <div class="startopt">
+      <span class="startopt-label">Length</span>
+      <input type="number" id="length-input" class="lenbox" min="1" step="1" aria-label="Number of questions">
+      <span class="startopt-hint" id="length-hint"></span>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="shuffle-toggle" style="width:16px;height:16px">
+      Shuffle question order
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 8px;cursor:pointer">
+      <input type="checkbox" id="defer-feedback-toggle" style="width:16px;height:16px">
+      No feedback until you submit (review every answer at the end)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);margin:0 0 16px;cursor:pointer">
+      <input type="checkbox" id="hard-cutoff-toggle" style="width:16px;height:16px">
+      Hard time limit (1 minute per question)
+    </label>
+    <button class="btn btn-primary" onclick="startExam()">Start the quiz &rarr;</button>
+  </div>
+
+  <div id="quiz" class="card" style="display:none">
+    <div class="qbody">
+      <div class="topbar">
+        <span id="counter">Question 1 of 65</span>
+        <div class="bar"><span id="barfill"></span></div>
+        <span class="score" id="timerpill">00:00</span>
+        <button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>
+        <span class="score" id="scoretxt">Score 0</span>
+      </div>
+      <div id="examtoolbar" class="examtoolbar hidden">
+        <button type="button" class="examctl-btn-primary" id="flagbtn" onclick="toggleFlag()">&#9873; Flag</button>
+        <button type="button" class="examctl-btn-primary" id="navbtn" onclick="openNav()">&#9776; Questions<span id="navbadge"></span></button>
+        <button type="button" class="examctl-btn-submit" onclick="submitExam()">Submit exam →</button>
+      </div>
+      <div class="qmeta">
+        <span class="tag tag-topic" id="qtopic"></span>
+        <span class="tag tag-io" id="qio"></span>
+      </div>
+      <figure class="qfig" id="qfig" hidden></figure>
+      <div class="qtext" id="qtext"></div>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl">
+        <div class="verdict" id="verdict"></div>
+        <div id="erows"></div>
+        <div class="cite" id="cite"></div>
+      </div>
+    </div>
+    <div class="nav" style="justify-content:space-between;padding:0 26px 24px">
+      <button class="btn btn-ghost" id="prevbtn" onclick="prevQ()" disabled>&larr; Back</button>
+      <button class="btn btn-primary" id="nextbtn" style="display:none" onclick="nextQ()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card res" style="display:none"></div>
+  <div id="resultsfoot" style="display:none;text-align:center;margin-top:6px">
+    <p style="color:var(--muted);font-size:12.5px;font-style:italic">&#9733; <a href="#" style="color:inherit;text-decoration:underline;cursor:pointer" onclick="event.preventDefault(); window.reportMistake()">If you see any mistakes, click here to report it</a> &#9733;</p>
+  </div>
+
+</div>
+
+<script>
+const QUESTIONS = [{"topic": "Recognizing the disease", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 61-year-old man who smokes has coughed up thick sputum most days for 4 months of each of the last 3 years. He has rhonchi, bluish lips and swelling of both ankles. His blood gas shows low oxygen and raised carbon dioxide, and his diffusing capacity is near normal. Post-bronchodilator spirometry shows a ratio of 0.64. Which subtype best describes his disease?", "opts": [["Chronic bronchitis subtype", "Correct. Productive cough for at least 3 months a year over 2 years, rhonchi, cyanosis, edema, early hypoxemia and hypercapnia, and a near-normal diffusing capacity, with confirmed obstruction (ratio 0.64), are the chronic bronchitis picture (the blue bloater)."], ["Emphysema subtype", "Emphysema brings a thin, pursed-lip breather with preserved gas exchange until late and a reduced diffusing capacity. He has early hypoxemia and hypercapnia with a near-normal diffusing capacity. Tell: sputum, cyanosis and edema point to bronchitis."], ["Chronic bronchitis without obstruction", "Chronic bronchitis without airflow obstruction is not this disease, but his ratio of 0.64 confirms obstruction. Tell: once the ratio is below 0.70, his chronic cough places him in the chronic bronchitis subtype."], ["Asthma", "Asthma does not usually bring years of daily sputum, cyanosis, edema and chronic carbon dioxide retention in a smoker. Tell: his cough history meets the chronic bronchitis definition, with persistent obstruction."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slides 6, 14, 15", "slot": "manifestation", "lead": "diagnosis", "qid": "1xkymv2"}, {"topic": "Alpha-1 antitrypsin deficiency", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 41-year-old man with minimal smoking history has emphysema with a post-bronchodilator ratio of 0.61. His chest x-ray shows the changes mainly in the lower lobes. Which test is most appropriate to find the cause?", "opts": [["B-type natriuretic peptide", "B-type natriuretic peptide is checked when associated heart failure is suspected. Tell: his age, minimal smoking and lower-lobe emphysema call for an alpha-1 antitrypsin level."], ["Alpha-1 antitrypsin level and genotype", "Correct. Patients under 45, or without significant exposure, should be evaluated for alpha-1 antitrypsin deficiency, and basilar emphysema adds to the suspicion. A level below 11 micromol/L with a severely deficient genotype is diagnostic."], ["Computed tomography of the chest", "Chest computed tomography can categorize emphysema but is generally not needed and does not identify the cause. Tell: the deficiency is diagnosed by the enzyme level and genotype."], ["Arterial blood gas", "An arterial blood gas is usually done only in a deteriorating or severe exacerbation. Tell: it describes gas exchange, not why a 41-year-old with little exposure has basal emphysema."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 10, 19, 30", "slot": "initial test", "lead": "test", "qid": "f4cbua"}, {"topic": "Admission and discharge", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 75-year-old woman with chronic obstructive pulmonary disease has a severe exacerbation. She is confused, her blood pressure is falling despite fluids, and she is tiring and may need invasive ventilation. Which level of care is most appropriate?", "opts": [["Outpatient management", "More than 80% of exacerbations are managed outpatient, but only when the patient is stable. Tell: confusion and falling blood pressure place her at the other end, in intensive care."], ["Pulmonary rehabilitation", "Rehabilitation is considered at discharge after an exacerbation, not during a critical one. Tell: her instability and tiring breathing call for intensive care."], ["Intensive care admission", "Correct. Intensive care admission is for patients who are hemodynamically unstable, have a major infection or need invasive ventilatory support, and for sepsis, altered mental status, respiratory failure or respiratory acidosis. Her confusion, falling pressure and possible need for intubation meet these."], ["Hospital ward admission", "A ward fits admission criteria such as marked symptoms despite treatment or lack of home support. Tell: hemodynamic instability, altered mental status and possible invasive ventilation call for intensive care."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 57", "slot": "escalation", "lead": "next step", "qid": "nftbds"}, {"topic": "Rehabilitation and referral", "io": "Describe how PFTs are utilized to aid in the diagnosis of pulmonary diseases and monitoring of patients with those diseases", "q": "A 52-year-old woman reports severe breathlessness, stopping after about 100 meters on level ground, but her post-bronchodilator forced expiratory volume in 1 second is 82% predicted with a ratio of 0.68. Her heart evaluation is normal. Which step is most appropriate?", "opts": [["Long-term oxygen", "Long-term oxygen is for a baseline saturation below 88%; nothing shows that here. Tell: the mismatch between symptoms and spirometry calls for referral."], ["Referral to pulmonology", "Correct. Her dyspnea grade of 3 is far worse than her near-normal airflow (grade 1, 82%) would explain. Symptoms out of proportion to pulmonary function tests, like diagnostic uncertainty, is a listed reason for pulmonology referral."], ["Triple inhaled therapy", "Triple therapy is considered for high exacerbation risk; she has no exacerbations described. Tell: when symptoms outrun the test results, the next step is a specialist's evaluation."], ["Reassurance with no follow-up", "Her symptoms are real and unexplained by her spirometry, which calls for further evaluation, not reassurance. Tell: symptoms out of proportion to testing are a referral indication."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 24, 34, 54", "slot": "referral", "lead": "referral", "qid": "86k6jr"}, {"topic": "Smoking cessation and vaccines", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 62-year-old man with chronic obstructive pulmonary disease who smokes is asked about his smoking and is clearly advised to quit, with a link to his diabetes and heart risk. Using the Five A's approach, which step should come next?", "opts": [["Assist with a quit plan", "Assist, helping set realistic steps and strategies, is the fourth step and depends on knowing his readiness. Tell: Assess comes between Advise and Assist."], ["Ask about his smoking again", "Ask has already been done; it opens a nonjudgmental conversation about the behavior. Tell: the sequence is Ask, Advise, Assess, Assist, Arrange, so Assess comes next."], ["Assess his readiness to change", "Correct. After Ask and Advise, the Five A's continue with Assess, evaluating the person's readiness and willingness to change, then Assist with actionable steps, and Arrange follow-up. Readiness shapes how the clinician helps."], ["Arrange a follow-up visit", "Arrange is the fifth and last step, setting up follow-up to monitor progress. Tell: before arranging follow-up, the clinician assesses readiness and then assists with a plan."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 47", "slot": "education", "lead": "next step", "qid": "1hxm6vs"}, {"topic": "Complications and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 73-year-old woman with severe chronic obstructive pulmonary disease has had 2 falls and a brief fainting episode this year without a cardiac rhythm problem on monitoring. Which explanation, listed among the disease's secondary effects, fits best?", "opts": [["Inhaled corticosteroid toxicity", "Inhaled corticosteroids carry pneumonia and fracture risk in older adults, not fainting. Tell: falls and syncope are listed as effects of poor perfusion in this disease."], ["Allergic reaction to her inhaler", "Nothing suggests an allergic reaction, which would bring rash, wheeze or swelling around a dose. Tell: syncope and falls in severe disease are explained by poor perfusion."], ["Exercise-induced bronchospasm", "Exercise-induced bronchospasm is an asthma pattern in children and adolescents that causes wheeze, not fainting. Tell: falls and syncope here come from poor perfusion."], ["Poor perfusion", "Correct. Patients may have symptoms secondary to the disease, including syncopal episodes or falls due to poor perfusion, as well as coronary artery disease and right heart strain. Older adults also face frailty, falls and cognitive decline."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slides 17, 53", "slot": "complication", "lead": "complication", "qid": "la9vwd"}, {"topic": "Group assignment", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "A 63-year-old woman with confirmed chronic obstructive pulmonary disease has a symptom assessment test score of 18 and a modified Medical Research Council dyspnea grade of 2. She has had no exacerbations in the past year. Under the current three-group scheme, which group is she in?", "opts": [["Group D", "Group D belongs to the 2020 scheme and needs both more symptoms and high risk. Tell: with low risk she is B in either scheme. Her low risk keeps her out of D."], ["Group B", "Correct. A symptom score of 18 (10 or more) and a dyspnea grade of 2 (2 or more) mean more symptoms, and no exacerbations means low risk. More symptoms with low risk is group B, which starts on a long-acting beta agonist plus a long-acting antimuscarinic."], ["Group A", "Group A requires fewer symptoms, a symptom score under 10 and a dyspnea grade of 0 to 1. Her 18 and grade 2 exceed both. Tell: a score of 10 or more moves her out of A."], ["Group E", "Group E needs high exacerbation risk, 2 or more moderate exacerbations or a hospitalization. She had none. Tell: symptoms alone, however heavy, cannot make a patient E."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 37, 40, 41", "slot": "test finding", "lead": "classify", "qid": "1x1j03l"}, {"topic": "Complications and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 64-year-old woman with chronic obstructive pulmonary disease is taught to breathe out slowly through pursed lips when she is short of breath. She asks why it helps. Which explanation is accurate?", "opts": [["It slows her heart rate", "Pursed-lip breathing works on airway pressure, not on the heart; heart rate is often above 100 in these patients for other reasons. Tell: the benefit is mechanical, holding airways open during expiration."], ["It increases inspiratory flow", "Pursed lips act during expiration, slowing outflow and raising airway pressure; they do not speed inspiration. Tell: the problem being treated is airway collapse while breathing out."], ["It reduces mucus production", "Mucus hypersecretion comes from gland hyperplasia in chronic bronchitis and is not changed by breathing technique. Tell: pursed-lip breathing raises airway pressure to prevent collapse."], ["It keeps her airways open", "Correct. Pursed-lip breathing increases intra-airway pressure, which keeps the airways open during expiration and allows more gas exchange. It counters the collapse of airways that loss of elastic recoil causes in emphysema."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 20", "slot": "education", "lead": "education", "qid": "17u703t"}, {"topic": "Oxygen", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 70-year-old man with chronic obstructive pulmonary disease has a resting oxygen saturation of 85% on room air on 2 visits, with no cor pulmonale (right heart failure). Which treatment is indicated?", "opts": [["Oxygen just during exercise", "Exertion-only oxygen is for patients who desaturate to 88% or less with exertion but not at rest. Tell: his saturation is 85% at rest, which qualifies him for oxygen most of the day."], ["No oxygen until saturation falls below 80%", "The threshold is a resting saturation of 88% or less (or an arterial oxygen pressure under 55 mmHg), not 80%. Tell: 85% at rest already qualifies, and waiting forfeits a survival benefit."], ["A sleep study for apnea", "Evaluation for obstructive sleep apnea is the step when desaturation happens at night only. Tell: his desaturation is at rest while awake, which calls for long-term oxygen."], ["Long-term oxygen for over 15 hours a day", "Correct. Severe resting desaturation, a saturation of 88% or less at rest, qualifies for long-term oxygen therapy for more than 15 hours a day. Oxygen for severe resting hypoxemia decreases the risk of death, prolongs life and improves quality of life."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slides 63, 64, 66", "slot": "first-line", "lead": "treatment", "qid": "7p6ulb"}, {"topic": "Exacerbations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 71-year-old man with chronic obstructive pulmonary disease develops sudden sharp chest pain and severe breathlessness while coughing. Breath sounds are absent over the right chest. Before treating this as an exacerbation, which test best excludes the diagnosis most likely here?", "opts": [["Alpha-1 antitrypsin level", "An alpha-1 antitrypsin level diagnoses the deficiency in young or unexposed patients with basal emphysema. Tell: it has no role in an acute event with absent breath sounds, where the chest x-ray is needed."], ["6-minute walk test", "The 6-minute walk measures exercise capacity for the survival index in stable disease, and walking would be unsafe in this acute event. Tell: the chest x-ray rules out pneumothorax."], ["Chest x-ray", "Correct. Pneumothorax is one of the diagnoses to exclude before calling a decline an exacerbation, and the chest x-ray, though not a diagnostic standard for the disease itself, can rule out other diagnoses such as heart failure or pneumothorax. Sudden pain with absent breath sounds points there."], ["Spirometry with a bronchodilator", "Spirometry confirms and grades the disease in stable patients; it cannot show a collapsed lung. Tell: sudden chest pain with absent breath sounds calls for the chest x-ray, which rules out pneumothorax."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slides 31, 56", "slot": "initial test", "lead": "test", "qid": "1keldsn"}, {"topic": "Treatment by group", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 69-year-old man with chronic obstructive pulmonary disease had 2 moderate exacerbations and 1 hospital admission in the past year. His blood eosinophil count is 350. He is starting maintenance therapy. Which regimen is most appropriate?", "opts": [["A single bronchodilator", "A single bronchodilator is the group A start, for few symptoms and low risk. His exacerbations and admission make him group E. Tell: high risk calls for both long-acting bronchodilators, plus a steroid with eosinophils of 300 or more."], ["An inhaled corticosteroid alone", "An inhaled corticosteroid is never used alone in this disease; it must be combined with a long-acting beta agonist. Tell: his eosinophils justify adding it to dual bronchodilators, not using it by itself."], ["Daily oral corticosteroids", "Oral corticosteroids are for acute exacerbations only, not maintenance. Tell: frequent exacerbations are prevented with inhaled long-acting therapy, here triple therapy because of his eosinophils."], ["Triple inhaled therapy", "Correct. Two moderate exacerbations and an admission make him high risk, group E. Group E starts on a long-acting beta agonist plus a long-acting antimuscarinic, and adding an inhaled corticosteroid is considered when blood eosinophils are 300 or more, as his 350 are."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slides 37, 42", "slot": "escalation", "lead": "treatment", "qid": "ad7xkb"}, {"topic": "Group assignment", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "A 73-year-old man with confirmed chronic obstructive pulmonary disease has a symptom assessment test score of 24 and a modified Medical Research Council dyspnea grade of 3. He had 3 moderate exacerbations in the past year. Using the 2020 four-group scheme, which group is he in?", "opts": [["Group E", "Group E is the current three-group label for any high-risk patient. Tell: the question asks for the 2020 scheme, where he is D. In the 2020 scheme, the high-risk row splits into C and D by symptoms."], ["Group D", "Correct. A symptom score of 24 and a dyspnea grade of 3 mean more symptoms, and 3 moderate exacerbations mean high risk. In the 2020 scheme, more symptoms with high risk is group D (group E in the current scheme)."], ["Group B", "Group B has more symptoms but low risk. With 3 exacerbations he is high risk. Tell: high risk moves a symptomatic patient from B to D. B would fit only if he had 0 or 1 exacerbation without admission."], ["Group C", "Group C is high risk with few symptoms; his score of 24 and grade 3 are heavy symptoms. Tell: high risk plus more symptoms is D. Both of his symptom measures are above the line."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 35, 36, 41", "slot": "test finding", "lead": "classify", "qid": "1cxk9s0"}, {"topic": "Symptom scores", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "A 69-year-old man with chronic obstructive pulmonary disease says that, walking on level ground, he has to stop for breath after about 100 meters or after a few minutes. Which modified Medical Research Council dyspnea grade fits?", "opts": [["Grade 1", "Grade 1 is shortness of breath when hurrying on the level or walking up a slight hill. Tell: he stops on level ground after about 100 meters, a heavier limitation."], ["Grade 2", "Grade 2 is walking slower than people of the same age on the level, or stopping for breath at one's own pace. Tell: a defined stop at about 100 meters or a few minutes is grade 3."], ["Grade 3", "Correct. Grade 3 is stopping for breath after walking about 100 meters or after a few minutes on the level. A grade of 2 or more counts as more symptoms, which places him in group B or E depending on exacerbation risk."], ["Grade 4", "Grade 4 is being too breathless to leave the house, or breathless when dressing or undressing. Tell: he still walks outside, stopping after 100 meters, which is grade 3."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 24", "slot": "test finding", "lead": "classify", "qid": "55nb5b"}, {"topic": "Prognosis", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 68-year-old man with chronic obstructive pulmonary disease has a forced expiratory volume in 1 second of 45% predicted, a 6-minute walk distance of 200 meters, a modified Medical Research Council dyspnea grade of 3, and a body mass index of 20. What is his BODE (body mass index, obstruction, dyspnea, exercise) index score?", "opts": [["5", "Five undercounts by 2, as if the walk distance were scored 0 or the dyspnea grade missed. Tell: 200 meters scores 2 and a dyspnea grade of 3 scores 2."], ["6", "Six misses 1 point, most often the body mass index: a value of 21 or less scores 1. Tell: his body mass index of 20 adds the final point to reach 7. A total of 7 predicts about 18% 4-year survival."], ["7", "Correct. 1-second volume 45% (36 to 49) = 2 + walk 200 meters (150 to 249) = 2 + dyspnea grade 3 = 2 + body mass index 20 (21 or less) = 1, for a total of 7. A score of 7 to 10 predicts about 18% 4-year survival."], ["8", "Eight overcounts by 1, as if the 1-second volume of 45% scored 3. Tell: 3 points is for 35% or less; 36% to 49% scores 2. His total stays at 7. Recount: 2 + 2 + 2 + 1."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 52", "slot": "prognosis", "lead": "classify", "qid": "1gmnrcv"}, {"topic": "Care by age", "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly", "q": "A 75-year-old man with chronic obstructive pulmonary disease is reviewed for comorbidities that become more important with age. Which condition should be added to his screening at this age?", "opts": [["Osteoporosis and falls", "Correct. Comorbidities in older adults add osteoporosis, frailty, falls and cognitive decline to cardiovascular disease, metabolic disease and depression. Inhaled corticosteroid-related fracture risk adds to the concern about bone health."], ["Allergic rhinitis", "Allergic rhinitis belongs to the atopic triad of asthma and is not on this disease's comorbidity list. Tell: the age-related additions are osteoporosis, frailty, falls and cognitive decline."], ["Exercise-induced bronchospasm", "Exercise-induced bronchospasm is common in children and adolescents with asthma. Tell: older adults with this disease are screened for osteoporosis, frailty, falls and cognitive decline."], ["Nasal polyps", "Nasal polyps are common in intrinsic asthma, not an age-related comorbidity of this disease. Tell: screening at his age adds bone health and falls. They are not part of this disease's screening list."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slides 18, 53", "slot": "complication", "lead": "next step", "qid": "1isj2tw"}, {"topic": "Reading the workup", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 68-year-old man with stable, long-standing chronic obstructive pulmonary disease has a serum bicarbonate of 33 and an arterial carbon dioxide pressure of 54 mmHg on a blood gas. Which interpretation fits?", "opts": [["Primary metabolic acidosis", "A metabolic acidosis lowers bicarbonate; his is raised at 33. Tell: a raised bicarbonate alongside chronic carbon dioxide retention is compensation. His values show the opposite pattern."], ["Acute respiratory alkalosis", "A respiratory alkalosis lowers carbon dioxide; his is raised at 54 mmHg. Tell: high carbon dioxide with high bicarbonate is chronic retention with compensation."], ["Laboratory error to be repeated", "These values are the expected pattern in long-standing disease, not an error. Tell: chronic hypercapnia above 45 mmHg with a raised bicarbonate is the compensated picture."], ["Compensated chronic hypercapnia", "Correct. Blood gases in this disease usually show chronic hypercapnia, with arterial carbon dioxide above 45 mmHg, and the metabolic panel may show a raised bicarbonate. The combination shows a compensatory metabolic alkalosis, as his 54 and 33 do."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 30", "slot": "test finding", "lead": "test", "qid": "g23a3r"}, {"topic": "Airflow grade", "io": "Describe airflow obstruction in COLD and methods for assessing the severity of the obstruction", "q": "A 67-year-old man has a post-bronchodilator ratio of 0.55 and a forced expiratory volume in 1 second of 34% predicted. Which airflow grade fits?", "opts": [["Grade 1 (mild)", "Grade 1, mild, needs 80% predicted or more; at 34% he is far below. Tell: grade 1 is near-normal airflow, and he has about a third of predicted. His ratio confirms obstruction; the grade then depends on the 1-second volume."], ["Grade 2 (moderate)", "Grade 2, moderate, covers 50% up to 80% predicted; 34% is below that range. Tell: under 50% the grade is at least severe. Moderate means at least half of predicted airflow, which he does not have."], ["Grade 3 (severe)", "Correct. With the ratio below 0.70, the grade comes from the post-bronchodilator 1-second volume: 34% sits in the 30% to 49% band, grade 3, severe. Grade 4 would need less than 30%."], ["Grade 4 (very severe)", "Grade 4, very severe, is below 30% predicted. At 34% he is just above that cutoff. Tell: 30% to 49% is grade 3, so 34% stays severe. A 4-point margin still counts; the bands do not round."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 34", "slot": "test finding", "lead": "classify", "qid": "t5eei7"}, {"topic": "Exacerbations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 67-year-old man with chronic obstructive pulmonary disease has 5 days of worsening breathlessness, and his usual white sputum has become larger in volume and yellow-green. He is alert with stable vital signs and has no history of resistant organisms or Pseudomonas. Which oral antibiotic is most appropriate?", "opts": [["Doxycycline", "Correct. Antibiotics are given when shortness of breath comes with increased sputum volume and purulence over baseline, as here. For an uncomplicated exacerbation, doxycycline, a macrolide, trimethoprim-sulfamethoxazole or amoxicillin-clavulanate is considered."], ["Levofloxacin", "Levofloxacin is chosen for pseudomonal concern, and respiratory fluoroquinolones are used when resistance is a problem. He has neither. Tell: an uncomplicated exacerbation starts with doxycycline or a similar first-line agent."], ["Intravenous vancomycin", "Intravenous antibiotics are guided by systemic or severe infection affecting oxygen saturation and vital signs, raised lactate or white count, or need for ventilatory support. He is alert and stable. Tell: an oral first-line agent fits."], ["No antibiotic", "Antibiotics are indicated when breathlessness comes with more sputum that is also more purulent, and he has both changes. Tell: the sputum change is the trigger for treatment."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slide 59", "slot": "agent/regimen", "lead": "treatment", "qid": "1bi6m61"}, {"topic": "Complications and education", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 65-year-old man with chronic obstructive pulmonary disease is starting pulmonary rehabilitation and asks what it will involve. Which description is accurate?", "opts": [["A surgical procedure on the lungs", "Possible surgical need is a reason for pulmonology referral, not rehabilitation. Tell: rehabilitation trains breathing, strength, secretion clearance and energy conservation."], ["Breathing and secretion-clearing training", "Correct. Pulmonary rehabilitation covers clearing secretions, breathing techniques, strengthening exercises, energy conservation and avoiding fatigue, and patient education. It cannot be done alone; it needs a healthcare professional or interdisciplinary team."], ["A home program done alone", "Rehabilitation is described as something that cannot be done alone; it needs a healthcare professional or interdisciplinary team. Tell: it is supervised training, not a solo home routine."], ["Weekly antibiotics to prevent infection", "Antibiotics treat exacerbations with purulent sputum, and long-term use is rare because of resistance. Tell: rehabilitation is exercise, breathing technique and education."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slide 55", "slot": "education", "lead": "education", "qid": "nd1x6t"}, {"topic": "Admission and discharge", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 71-year-old man is recovering in the hospital from an exacerbation. He has been clinically stable for 18 hours, walks across the room, eats and sleeps without waking from breathlessness, and his home oxygen is arranged, but he still needs albuterol every 2 hours. Which finding delays his discharge?", "opts": [["Stable for 18 hours", "Clinical stability for 12 to 24 hours is required, and 18 hours meets it. Tell: the criterion he fails is rescue use, needed every 2 hours rather than every 4 or less often."], ["Walking across the room", "Walking across the room, for a patient who was ambulatory, is a discharge criterion that he meets. Tell: his barrier is how often he still needs albuterol."], ["Home oxygen arranged", "Completed follow-up and home-care arrangements, such as oxygen delivery, are discharge criteria, so this supports discharge. Tell: the albuterol frequency is what holds him."], ["Albuterol needed every 2 hours", "Correct. A discharge criterion is needing inhaled short-acting beta-2 agonist no more often than every 4 hours. Every 2 hours means his airflow is not yet controlled enough for home, even though his other criteria are met."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 60", "slot": "education", "lead": "next step", "qid": "be2i09"}, {"topic": "Smoking cessation and vaccines", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 58-year-old man with chronic obstructive pulmonary disease is ready to quit smoking and asks for a medicine to help. He has tried quitting alone twice. Which plan is most appropriate?", "opts": [["Varenicline with counseling", "Correct. Every smoking cessation attempt should be combined with counseling, which looks for triggers and gives coping strategies, to increase efficacy. Varenicline, bupropion or nicotine replacement can be added; his failed solo attempts make the combined plan the better choice."], ["Varenicline without counseling", "Varenicline is a listed cessation aid, but all attempts should be combined with counseling to increase efficacy. Tell: he has already failed alone twice; behavioral support is the missing piece."], ["Tiotropium to ease cravings", "Tiotropium is a long-acting antimuscarinic bronchodilator with mainly dry mouth as a side effect; it does nothing for nicotine dependence. Tell: the medicines that aid quitting are varenicline, bupropion and nicotine replacement."], ["Cutting down without a quit date", "Smoking cessation carries a survival benefit, so cutting down is not the goal. Tell: a structured quit attempt with counseling and medicine is the listed approach."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slide 46", "slot": "agent/regimen", "lead": "treatment", "qid": "1tlra48"}, {"topic": "Oxygen", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 63-year-old man with chronic obstructive pulmonary disease has a daytime resting oxygen saturation of 94% and normal saturation while walking, but overnight oximetry shows saturations of 86% at night only. Which step is most appropriate?", "opts": [["Oxygen during exertion", "Exertional oxygen is for desaturation to 88% or less with exercise, and his saturation stays normal while walking. Tell: his only drop is overnight, which points to a sleep evaluation."], ["No further evaluation", "Nighttime desaturation is not ignored; it prompts evaluation for obstructive sleep apnea and other causes. Tell: night-only desaturation has its own branch of the oxygen pathway."], ["Evaluate for obstructive sleep apnea", "Correct. Desaturation to 88% or less at night only calls for evaluation for obstructive sleep apnea and screening for other causes, rather than long-term oxygen. His daytime resting and exertional saturations are normal."], ["Long-term oxygen over 15 hours a day", "Long-term oxygen for more than 15 hours a day is for severe resting desaturation while awake, 88% or less. His daytime resting value is 94%. Tell: night-only drops lead to a sleep evaluation first."]], "c": 2, "cite": "37. svCOPD 2026.pptx, Slide 64", "slot": "initial test", "lead": "test", "qid": "1jrefvx"}, {"topic": "Smoking cessation and vaccines", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 55-year-old woman with group B chronic obstructive pulmonary disease still smokes a pack a day. She asks what single step would do the most to slow her disease. Which intervention is most appropriate?", "opts": [["A chest computed tomography scan", "Chest computed tomography can categorize emphysema but is generally not needed, and imaging changes nothing about progression. Tell: her most powerful step is quitting smoking with counseling."], ["Smoking cessation with counseling", "Correct. Smoking cessation is the only treatment that can slow progression, and every attempt should be combined with counseling to increase efficacy; nicotine replacement, bupropion or varenicline can be added. It is essential for every group."], ["Adding an inhaled corticosteroid", "An inhaled corticosteroid adds pneumonia risk and must be combined with a long-acting beta agonist and raises pneumonia risk. Tell: no inhaler is the step that most helps survival; stopping smoking is."], ["Long-term azithromycin", "Long-term azithromycin is not among the measures listed for improving survival. Tell: the intervention with a survival benefit is smoking cessation."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 9, 43, 46", "slot": "first-line", "lead": "treatment", "qid": "8m5kfz"}, {"topic": "Treatment by group", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 56-year-old man with newly confirmed chronic obstructive pulmonary disease has a symptom assessment test score of 6, a modified Medical Research Council dyspnea grade of 1, and no exacerbations in the past year. Which initial medication is most appropriate?", "opts": [["Daily oral corticosteroids", "Oral corticosteroids are for acute exacerbations only in this disease, and he has had none. Tell: a low-symptom, low-risk patient starts on 1 bronchodilator, not systemic steroids."], ["A single bronchodilator", "Correct. A score of 6 and a dyspnea grade of 1 mean few symptoms, and no exacerbations means low risk, so he is group A, which starts with 1 bronchodilator, short- or long-acting. He still needs smoking cessation if he smokes, and physical activity."], ["Dual long-acting bronchodilators", "A long-acting beta agonist plus a long-acting antimuscarinic is the start for group B or E. His few symptoms and no exacerbations make him group A. Tell: the combination is for more symptoms or high risk."], ["An inhaled corticosteroid alone", "Inhaled corticosteroids cannot be used alone in this disease; they must be combined with a long-acting beta agonist and they raise pneumonia risk. Tell: group A starts with a single bronchodilator."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slides 37, 40, 49", "slot": "first-line", "lead": "treatment", "qid": "c2vvq3"}, {"topic": "Reading the workup", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 61-year-old man with stable chronic obstructive pulmonary disease, few symptoms and no exacerbations has a routine follow-up visit. Which test is not routinely needed for him?", "opts": [["Spirometry over time", "Spirometry is the cornerstone test and is used to monitor patients with the disease. Tell: it belongs in his care; the arterial blood gas is reserved for acute decline."], ["A symptom assessment test", "The symptom assessment test, with the dyspnea grade, places him in a group and guides treatment. Tell: it is routine; the arterial puncture is not. A score of 10 or more would move him toward group B."], ["Review of exacerbation history", "Exacerbation history sets his risk, the second axis of the group grid. Tell: it is part of routine assessment; a blood gas is not. Two moderate exacerbations or 1 admission would make him high risk."], ["Arterial blood gas", "Correct. An arterial blood gas is usually done only in a deteriorating or severely exacerbated patient. A stable, low-symptom outpatient is followed with symptoms, exacerbation history and spirometry instead."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 30", "slot": "avoid", "lead": "avoid", "qid": "10ojcpq"}, {"topic": "Drug safety and devices", "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly", "q": "A 77-year-old woman with chronic obstructive pulmonary disease and osteoporosis takes triple inhaled therapy. She has had 2 pneumonias this year and a wrist fracture after a fall. Which component of her regimen is linked to both pneumonia and fracture risk?", "opts": [["The inhaled corticosteroid", "Correct. Inhaled corticosteroids increase the risk of pneumonia, and in older adults the concerns include inhaled corticosteroid-related pneumonia and fracture risk. Her repeated pneumonias and fracture make that component the one to reassess."], ["The long-acting beta agonist", "Long-acting beta agonists carry cardiac risk, such as tachycardia, arrhythmias and worsening atrial fibrillation, not pneumonia or fractures. Tell: pneumonia and fracture together point to the steroid component."], ["The long-acting antimuscarinic", "Long-acting antimuscarinics are poorly absorbed, with mainly dry mouth. Tell: in older adults the drug tied to pneumonia and fractures is the inhaled corticosteroid."], ["Her as-needed albuterol", "Excessive albuterol risks cardiac and psychiatric side effects, not pneumonia or fractures. Tell: her 2 pneumonias and fracture fit the inhaled corticosteroid's risks."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slides 42, 53", "slot": "complication", "lead": "complication", "qid": "nc9040"}, {"topic": "Oxygen", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 67-year-old woman with chronic obstructive pulmonary disease has a resting oxygen saturation of 91% on room air, and she stays at 91% during a walking test. She asks for home oxygen. Which statement is accurate?", "opts": [["She needs a sleep study first", "A sleep apnea evaluation is for desaturation at night only. Tell: her daytime readings are moderate, and nothing suggests nocturnal-only desaturation."], ["No long-term oxygen is indicated", "Correct. A resting saturation of 89% to 93% is moderate resting desaturation, with no indication for long-term oxygen, and her saturation stays at 91% with exertion. Oxygen is indicated with severe hypoxemia, an arterial oxygen pressure under 55 mmHg or saturation of 88% or less."], ["She needs oxygen over 15 hours a day", "Long-term oxygen for more than 15 hours a day requires severe resting desaturation, 88% or less. Tell: her 91% is moderate desaturation, which does not qualify."], ["She needs oxygen during exertion", "Exertional oxygen is for desaturation to 88% or less with exertion. She stays at 91% while walking. Tell: moderate exertional desaturation, 89% to 93%, gives no indication."]], "c": 1, "cite": "37. svCOPD 2026.pptx, Slide 64", "slot": "first-line", "lead": "treatment", "qid": "o1k31u"}, {"topic": "Smoking cessation and vaccines", "io": "Identify medical care strategies for chronic obstructive lung disease (COLD)/ chronic obstructive lung disease (COLD) for the following populations. 1. adult 2. elderly", "q": "A 54-year-old man is newly diagnosed with chronic obstructive pulmonary disease, with a forced expiratory volume in 1 second of 35% predicted. He has never had a pneumococcal vaccine. When should he receive it?", "opts": [["Now, at diagnosis", "Correct. The pneumococcal vaccine is routine at 65, but patients with severe disease (1-second volume below 40%) or cardiac comorbidities should get it earlier, essentially when diagnosed and recognized at that severity. At 35% he qualifies now."], ["At age 65", "Age 65 is the default, but his 1-second volume of 35% is below the 40% severity line that moves vaccination earlier. Tell: severity overrides age here."], ["After his first exacerbation", "The vaccine is meant to prevent community-acquired pneumonia, so waiting for an exacerbation defeats its purpose. Tell: severe disease below 40% calls for vaccination at diagnosis."], ["Once heart disease develops", "Cardiac comorbidity is one reason to vaccinate early, but severe disease below 40% is a separate reason that stands on its own. Tell: his 35% already qualifies him."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slide 48", "slot": "first-line", "lead": "next step", "qid": "1twfq3c"}, {"topic": "Exacerbations", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 70-year-old woman with chronic obstructive pulmonary disease has 10 days of steadily worsening breathlessness and cough after a viral illness. Which term describes her presentation?", "opts": [["Disease progression", "Progression is the slow decline of lung function over years, while a worsening over 10 days is an acute event. Tell: the 14-day window defines an exacerbation."], ["Stable group B disease", "Group B describes a stable patient's symptoms and risk, not an acute worsening. Tell: a change within 14 days is an exacerbation, which will also count toward her risk."], ["Acute bronchitis", "Acute bronchitis is on the differential for cough with sputum alone, in a patient without chronic obstruction. Tell: in someone with known disease, a 10-day worsening of dyspnea and cough is an exacerbation."], ["Acute exacerbation", "Correct. An acute exacerbation is an acute worsening of dyspnea, cough or sputum over 14 days or less, commonly triggered by viral or bacterial infection or pollution. Her 10-day decline after a viral illness fits, once pneumonia, embolism, acute heart failure and pneumothorax are excluded."]], "c": 3, "cite": "37. svCOPD 2026.pptx, Slide 56", "slot": "manifestation", "lead": "diagnosis", "qid": "y6nrzl"}, {"topic": "Drug safety and devices", "io": "Compare and contrast the etiologies, epidemiology, risk factors, clinical manifestations, differential diagnosis, diagnostic testing (including ordering and interpretation), management (acute and chronic, including applicable rehabilitative and palliative care), appropriate referrals, patient education, and prognosis of the following pulmonary conditions: 1. Chronic obstructive pulmonary disease / chronic obstructive lung disease a. Chronic bronchitis subtype b. Emphysema subtype", "q": "A 60-year-old man with chronic obstructive pulmonary disease and few symptoms asks to be started on an inhaled corticosteroid by itself because a friend with asthma uses one. Which regimen should be avoided in him?", "opts": [["An inhaled corticosteroid alone", "Correct. In this disease, inhaled corticosteroids must be combined with a long-acting beta agonist, and then with a long-acting antimuscarinic as triple therapy, and cannot be used on their own. They also raise pneumonia risk. Alone, they are an asthma treatment."], ["A single short-acting bronchodilator", "A single bronchodilator is the appropriate start for group A, few symptoms and low risk. Tell: it suits him; the regimen to avoid is a steroid inhaler used by itself."], ["Smoking cessation with counseling", "Smoking cessation is essential for every group and carries a survival benefit. Tell: it belongs in his plan; the steroid alone does not."], ["A yearly influenza vaccine", "Every patient should get the yearly influenza vaccine, which reduces hospitalizations and death. Tell: vaccination fits him; an inhaled corticosteroid alone is the regimen to avoid."]], "c": 0, "cite": "37. svCOPD 2026.pptx, Slide 42", "slot": "avoid", "lead": "avoid", "qid": "8yqjso"}];
+const LTR = ["A","B","C","D","E","F","G","H"];   /* the book questions run to seven choices */
+/* The objective chip used to be built as ioLabel(q.io) unconditionally,
+   so any quiz whose stored io already began with "Objective" rendered as
+   "Objective Objective a - ...". 2,075 questions across Semester 2 did. The
+   data is fixed, but building the label here instead means a pool that stores
+   the prefix can never resurrect the bug -- and it handles the plural form
+   ("Objectives b, c & d") that a blind strip would have turned into
+   "Objective s b, c & d". */
+function ioLabel(io){
+  io = String(io == null ? "" : io).trim();
+  // A label that already opens with its own heading word is left alone: a
+  // picture-identification quiz groups by anatomical region or by disease
+  // category, and "Objective Region — Cornea" reads as a mistake.
+  return /^(objectives?|region|category|group|topic)\b/i.test(io) ? io : "Objective " + io;
+}
+let order=[], idx=0, score=0, answers=[];
+/* Running comparison against the class, filled in by showClassPicks. */
+var classCmp={sum:0,n:0}, classSeen={};
+let deferFeedback=false, flagNav=false, hardCutoff=false, cutoffMs=0, flagged=new Set(), autoSubmitTriggered=false;
+let crossedOut = {};
+function isCrossed(qi,ci){ return !!(crossedOut[qi] && crossedOut[qi].has(ci)); }
+function toggleCross(qi,ci){
+  if(!crossedOut[qi]) crossedOut[qi] = new Set();
+  const s = crossedOut[qi];
+  if(s.has(ci)) s.delete(ci); else s.add(ci);
+  saveProgress();
+}
+function addCrossToggle(b,i){
+  if(isCrossed(idx,i)) b.classList.add("crossed");
+  const x = document.createElement("span");
+  x.className = "cross-toggle";
+  x.title = "Cross out this choice";
+  x.innerHTML = "&#10005;";
+  x.onclick = (e)=>{ e.stopPropagation(); toggleCross(idx,i); renderQ(); };
+  b.appendChild(x);
+}
+
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let timerAccumMs=0, timerStartedAt=null, timerInterval=null;
+function currentElapsedMs(){ return timerAccumMs + (timerStartedAt ? Date.now()-timerStartedAt : 0); }
+function fmtTime(ms){
+  let s=Math.floor(ms/1000); const h=Math.floor(s/3600); s-=h*3600;
+  const m=Math.floor(s/60); s-=m*60;
+  const pad=n=>String(n).padStart(2,"0");
+  return h>0 ? (h+":"+pad(m)+":"+pad(s)) : (pad(m)+":"+pad(s));
+}
+function updateTimerDisplay(){
+  const el=document.getElementById('timerpill'); if(!el) return;
+  if(deferFeedback && hardCutoff){
+    const remain = Math.max(0, cutoffMs - currentElapsedMs());
+    el.textContent = fmtTime(remain);
+    el.classList.toggle('danger', remain <= cutoffMs*0.2);
+    if(remain <= 0 && !autoSubmitTriggered){ autoSubmitTriggered = true; submitExam(true); }
+  } else {
+    el.textContent = fmtTime(currentElapsedMs());
+  }
+}
+function startTimerInterval(){ if(timerInterval) clearInterval(timerInterval); timerInterval=setInterval(updateTimerDisplay,1000); updateTimerDisplay(); }
+function stopTimerInterval(){ if(timerInterval){clearInterval(timerInterval); timerInterval=null;} }
+function pauseQuiz(){
+  timerAccumMs = currentElapsedMs(); timerStartedAt = null; stopTimerInterval();
+  saveProgress();
+  window.openPauseOverlay({ onResume: function(){ timerStartedAt = Date.now(); startTimerInterval(); } });
+}
+function applyExamModeUI(){
+  document.getElementById('scoretxt').classList.toggle('hidden', holdFeedback());
+  document.getElementById('examtoolbar').classList.toggle('hidden', !flagNav);
+  document.getElementById('timerpill').classList.add('examctl-timer');
+  if (flagNav && viewMode !== "scroll" && window.startExamModeTour) window.startExamModeTour();
+}
+
+const PKEY = "qp:"+location.pathname, CKEY = "qc:"+location.pathname;
+/* Saved-progress signature (2026-09-27). The saved attempt stores `order`
+   (indices into QUESTIONS) and `answers`, so after a page is re-rendered with
+   different questions a resumed attempt would land on new questions carrying
+   the old answers. QSIG is a short hash of the stems; it is saved with the
+   progress, and a saved attempt whose signature differs is discarded on load.
+   A saved attempt with NO signature predates this guard: it is discarded only
+   on pages rendered with progress_sig_strict=True (render.py), so re-rendering
+   an unchanged quiz never wipes the attempts students already have in flight.
+   Only the resumable qp: state is discarded -- never qc: (completion) or the
+   qm: missed-question records theme.js writes. */
+const PROGRESS_SIG_STRICT = false;
+const QSIG = (function(){ let h = 0x811c9dc5; const s = QUESTIONS.map(q => q.q).join("\n");
+  for(let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return QUESTIONS.length + "-" + (h >>> 0).toString(36); })();
+let progressDiscarded = false;
+function saveProgress(){ const co={}; for(const k in crossedOut) co[k]=Array.from(crossedOut[k]); localStorage.setItem(PKEY, JSON.stringify({sig: QSIG, idx, score, answers, order, timerMs: currentElapsedMs(), deferFeedback, flagNav, hardCutoff, cutoffMs, viewMode, flagged: Array.from(flagged), crossedOut: co})); }
+function clearProgress(){ localStorage.removeItem(PKEY); }
+function loadProgress(){
+  let s; try { s = JSON.parse(localStorage.getItem(PKEY)); } catch(e){ s = null; }
+  if(!s || typeof s !== 'object') return null;
+  const stale = (s.sig === undefined || s.sig === null) ? PROGRESS_SIG_STRICT : s.sig !== QSIG;
+  if(stale){ try { localStorage.removeItem(PKEY); } catch(e){} progressDiscarded = true; return null; }
+  return s;
+}
+function markCompleted(score, total, timeMs){ localStorage.setItem(CKEY, JSON.stringify({score, total, timeMs, sig: QSIG})); }
+function saveReview(){ try{ const c=document.getElementById('results').cloneNode(true); c.querySelectorAll('button, a.btn, .result-actions').forEach(n=>n.remove()); const cur=JSON.parse(localStorage.getItem(CKEY)||'{}'); localStorage.setItem(CKEY, JSON.stringify(Object.assign(cur,{reviewHTML:c.innerHTML}))); }catch(e){} }
+
+var viewMode = 'paged';
+function setView(v){
+  viewMode = v;
+  document.querySelectorAll('#view-seg .seg-btn').forEach(function(b){
+    b.classList.toggle('is-on', b.getAttribute('data-view')===v);
+  });
+}
+
+/* Choose which questions this attempt uses.
+
+   NOT a slice. Every set on this site is built with deliberate objective
+   coverage and an even spread of correct answers across A-D; taking the first
+   N throws both away, and a student drilling 15 of 30 would get a quiz that
+   silently skips an objective or lands five answers on B.
+
+   Round-robin across objectives first, so coverage degrades as slowly as the
+   count allows. Then rebalance answer positions by swapping in questions with
+   under-represented letters where the objective mix permits. Below the number
+   of objectives, full coverage is arithmetically impossible and the sample just
+   spreads as widely as it can. */
+function pickOrder(n){
+  var all = QUESTIONS.map(function(_,i){ return i; });
+  if(!n || n >= all.length) return all;
+
+  var byIO = {};
+  all.forEach(function(i){ (byIO[QUESTIONS[i].io] = byIO[QUESTIONS[i].io] || []).push(i); });
+  Object.keys(byIO).forEach(function(k){ shuffleArray(byIO[k]); });
+
+  var ios = Object.keys(byIO); shuffleArray(ios);
+  var picked = [], r = 0;
+  while(picked.length < n){
+    var progressed = false;
+    for(var k=0;k<ios.length && picked.length<n;k++){
+      var bucket = byIO[ios[k]];
+      if(bucket.length > r){ picked.push(bucket[r]); progressed = true; }
+    }
+    if(!progressed) break;
+    r++;
+  }
+
+  /* Option count is derived, not assumed: five-option quizzes must have their E
+     keys counted here or the rebalance silently ignores them. */
+  var NOPTS = QUESTIONS.reduce(function(m,q){ return Math.max(m, q.opts.length); }, 4);
+
+  /* Answer-position rebalance. Count letters, then for each over-represented
+     letter try to swap a question out for an unpicked one with a scarce letter
+     from the SAME objective, so coverage is never traded away for balance. */
+  var chosen = {}; picked.forEach(function(i){ chosen[i]=true; });
+  function counts(){
+    var c=[]; for(var z=0;z<NOPTS;z++) c.push(0);
+    picked.forEach(function(i){ c[QUESTIONS[i].c]++; }); return c;
+  }
+  for(var pass=0; pass<40; pass++){
+    var c = counts(), hi=0, lo=0;
+    for(var L=1;L<NOPTS;L++){ if(c[L]>c[hi]) hi=L; if(c[L]<c[lo]) lo=L; }
+    if(c[hi]-c[lo] <= 1) break;
+    var swapped=false;
+    for(var p=0;p<picked.length && !swapped;p++){
+      var out = picked[p];
+      if(QUESTIONS[out].c !== hi) continue;
+      var pool = byIO[QUESTIONS[out].io] || [];
+      for(var q=0;q<pool.length;q++){
+        var cand = pool[q];
+        if(chosen[cand] || QUESTIONS[cand].c !== lo) continue;
+        picked[p]=cand; delete chosen[out]; chosen[cand]=true; swapped=true; break;
+      }
+    }
+    if(!swapped) break;
+  }
+  return picked;
+}
+
+function chosenLength(){
+  var el = document.getElementById('length-input');
+  if(!el) return QUESTIONS.length;
+  var v = parseInt(el.value, 10);
+  if(!v || v < 1) return QUESTIONS.length;
+  return Math.min(v, QUESTIONS.length);
+}
+
+/* ---- scroll view -------------------------------------------------------- */
+/* Shares all state with the paged view: same order, answers, flagged, timer and
+   saved progress. Only the presentation differs, so switching cannot desync
+   scoring. */
+function renderScroll(){
+  var quiz = document.getElementById('quiz');
+  var body = quiz.querySelector('.qbody');
+  body.innerHTML =
+    '<div class="topbar">' +
+      '<span id="counter"></span>' +
+      '<div class="bar"><span id="barfill"></span></div>' +
+      '<span class="score" id="timerpill">00:00</span>' +
+      '<button type="button" class="examctl-btn" id="pausebtn" onclick="pauseQuiz()">&#10074;&#10074; Pause</button>' +
+      '<span class="score" id="scoretxt">Score 0</span>' +
+    '</div>' +
+    '<div class="scrollwrap">' +
+      '<div class="scrollcol" id="scrollcol"></div>' +
+      '<aside class="palette"><h4>Questions</h4><div class="palette-grid" id="palgrid"></div>' +
+      '<p class="palette-foot" id="palfoot"></p>' +
+      '<button class="btn btn-primary" style="width:100%;margin-top:10px" onclick="submitExam()">Submit &rarr;</button></aside>' +
+    '</div>';
+
+  var col = document.getElementById('scrollcol');
+  order.forEach(function(qi, i){
+    var q = QUESTIONS[qi];
+    var d = document.createElement('div');
+    d.className = 'sq'; d.id = 'sq-'+i;
+    d.innerHTML =
+      '<div class="sq-head"><span class="sq-num">Question ' + (i+1) + ' of ' + order.length + '</span>' +
+      '<button type="button" class="sq-flag" data-i="' + i + '">&#9873; Flag</button></div>' +
+      '<div class="qmeta"><span class="tag tag-topic" data-topic="' + String(q.topic).replace(/"/g,'&quot;') + '" style="display:none"></span>' +
+      '<span class="tag tag-io">' + ioLabel(q.io) + '</span></div>' +
+      figHTML(q) + '<div class="qtext"></div><div class="opts"></div>' +
+      '<div class="expl" id="sexpl-' + i + '"></div>';
+    d.querySelector('.qtext').textContent = q.q;
+    var wrap = d.querySelector('.opts');
+    q.opts.forEach(function(o, oi){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.setAttribute('data-i', oi);
+      b.innerHTML = '<span class="ltr">' + LTR[oi] + '</span><span class="optlabel">' + o[0] + '</span>';
+      b.onclick = function(){ chooseAt(i, oi); };
+      wrap.appendChild(b);
+    });
+    d.querySelector('.sq-flag').onclick = function(){ toggleFlagAt(i); };
+    col.appendChild(d);
+  });
+  buildPalette();
+  order.forEach(function(_, i){ if(answers[i]!==null) paintScrollAnswer(i); });
+  syncScrollChrome();
+}
+
+function buildPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  g.innerHTML = '';
+  order.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'pal'; b.textContent = (i+1);
+    b.onclick = function(){
+      var el = document.getElementById('sq-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.appendChild(b);
+  });
+  paintPalette();
+}
+
+function paintPalette(){
+  var g = document.getElementById('palgrid'); if(!g) return;
+  Array.prototype.forEach.call(g.children, function(b, i){
+    b.classList.toggle('answered', answers[i]!==null);
+    b.classList.toggle('flagged', flagged.has(i));
+  });
+  var foot = document.getElementById('palfoot');
+  if(foot){
+    var left = order.length - answers.filter(function(a){ return a!==null; }).length;
+    foot.textContent = left ? left + ' unanswered' : 'All answered';
+  }
+}
+
+function syncScrollChrome(){
+  var c = document.getElementById('counter');
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(c) c.textContent = done + ' of ' + order.length + ' answered';
+  var bf = document.getElementById('barfill');
+  if(bf) bf.style.width = (100*done/order.length) + '%';
+  var st = document.getElementById('scoretxt');
+  if(st){ st.textContent = 'Score ' + score; st.classList.toggle('hidden', holdFeedback()); }
+}
+
+function toggleFlagAt(i){
+  if(flagged.has(i)) flagged.delete(i); else flagged.add(i);
+  var btn = document.querySelector('#sq-'+i+' .sq-flag');
+  if(btn){
+    btn.classList.toggle('flagged', flagged.has(i));
+    btn.innerHTML = flagged.has(i) ? '&#9873; Flagged' : '&#9873; Flag';
+  }
+  paintPalette(); saveProgress();
+}
+
+/* Answering from the scroll view. Mirrors choose() but targets a given index
+   rather than the current one, since every question is on screen at once. */
+function holdFeedback(){
+  // "All on a page" is the exam-style layout -- it has a Submit button and a
+  // question palette -- so it always holds grading until submit, whether or not
+  // Exam Mode is on. Grading live while showing a Submit button was incoherent,
+  // and locking the answer meant you could not revise before submitting.
+  return deferFeedback || viewMode === 'scroll';
+}
+
+function chooseAt(i, oi){
+  if(!holdFeedback() && answers[i]!==null) return;
+  var q = QUESTIONS[order[i]];
+  var first = answers[i]===null;
+  answers[i] = oi;
+  if(!holdFeedback() && first && oi===q.c) score++;
+  paintScrollAnswer(i);
+  paintPalette(); syncScrollChrome(); saveProgress();
+  if(!holdFeedback() && typeof recordAnswerStat === 'function'){
+    try{ recordAnswerStat(oi===q.c); }catch(e){}
+  }
+}
+
+function paintScrollAnswer(i){
+  // Scroll topic reveal. It must follow holdFeedback(), NOT merely "has been
+  // answered". In this view grading is deferred to Submit, so revealing the
+  // condition name the moment a choice is made would hand over the answer while
+  // the choice can still be changed -- the same defect one click later.
+  if(!holdFeedback() && answers[i]!==null){
+    var _c=document.getElementById('sq-'+i);
+    if(_c){ var _t=_c.querySelector('.tag-topic');
+      if(_t && _t.getAttribute('data-topic')){ _t.textContent=_t.getAttribute('data-topic');
+        _t.style.display=''; } }
+  }
+  var d = document.getElementById('sq-'+i); if(!d) return;
+  var q = QUESTIONS[order[i]], a = answers[i];
+  Array.prototype.forEach.call(d.querySelectorAll('.opt'), function(b, oi){
+    b.classList.remove('selected-exam','correct','wrong');
+    if(holdFeedback()){ if(a===oi) b.classList.add('selected-exam'); return; }
+    if(a===null) return;
+    if(oi===q.c) b.classList.add('correct');
+    else if(oi===a) b.classList.add('wrong');
+  });
+  var ex = document.getElementById('sexpl-'+i);
+  if(ex && !holdFeedback() && a!==null){
+    ex.innerHTML = '<b>' + (a===q.c ? 'Correct.' : 'Not quite.') + '</b> ' +
+                   q.opts[q.c][1] + ' <span class="cite">' + q.cite + '</span>';
+    ex.classList.add('show');
+  }
+}
+
+(function(){
+  var el = document.getElementById('length-input');
+  if(el){
+    el.value = QUESTIONS.length;
+    el.max = QUESTIONS.length;
+    var hint = document.getElementById('length-hint');
+    if(hint) hint.textContent = 'of ' + QUESTIONS.length + ' \u00b7 sampled to keep objectives covered';
+  }
+})();
+function startExam(){
+  clearProgress();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  order = pickOrder(chosenLength());
+  if(document.getElementById('shuffle-toggle') && document.getElementById('shuffle-toggle').checked) shuffleArray(order);
+  deferFeedback = !!(document.getElementById('defer-feedback-toggle') && document.getElementById('defer-feedback-toggle').checked);
+  flagNav = true;   // standard on every quiz since 2026-08-19
+  hardCutoff = deferFeedback && !!(document.getElementById('hard-cutoff-toggle') && document.getElementById('hard-cutoff-toggle').checked);
+  cutoffMs = hardCutoff ? order.length*60000 : 0;
+  idx=0; score=0; answers=new Array(order.length).fill(null);
+  flagged = new Set(); autoSubmitTriggered = false; crossedOut = {};
+  applyExamModeUI();
+  timerAccumMs=0; timerStartedAt=Date.now(); startTimerInterval();
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+}
+
+function resumeQuiz(){
+  const saved = loadProgress();
+  if(!saved) return;
+  order = (saved.order && saved.order.length) ? saved.order : QUESTIONS.map((_,i)=>i);
+  idx = saved.idx; score = saved.score; answers = saved.answers;
+  timerAccumMs = saved.timerMs || 0; timerStartedAt = Date.now(); startTimerInterval();
+  deferFeedback = !!saved.deferFeedback; flagNav = !!saved.flagNav; hardCutoff = !!saved.hardCutoff; cutoffMs = saved.cutoffMs || 0;
+  flagged = new Set(saved.flagged || []); autoSubmitTriggered = false;
+  crossedOut = {}; for(const k in (saved.crossedOut||{})) crossedOut[k] = new Set(saved.crossedOut[k]);
+  applyExamModeUI();
+  document.getElementById('resume-banner').style.display='none';
+  document.getElementById('resultsfoot').style.display='none';
+  document.getElementById('start').style.display='none';
+  document.getElementById('results').style.display='none';
+  document.getElementById('quiz').style.display='block';
+  if(saved.viewMode) setView(saved.viewMode);
+  if(viewMode==='scroll') renderScroll(); else renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+(function checkForSavedProgress(){
+  const saved = loadProgress();
+  if(progressDiscarded){ const n = document.getElementById('stale-note'); if(n) n.style.display = 'block'; }
+  if(!saved) return;
+  document.getElementById('resume-text').textContent = 'Question '+(saved.idx+1)+' of '+((saved.order && saved.order.length) || QUESTIONS.length)+' — Score: '+saved.score;
+  document.getElementById('resume-banner').style.display='block';
+})();
+
+/* Markup for a question's picture, or '' when it has none. Kept in one place
+   because the same figure has to appear in three renderers: the live question
+   card, the Exam Mode scroll column, and the end-of-quiz review. */
+function audioFigHTML(q){
+  var label = String(q.alt || 'Recording for this question').replace(/"/g,'&quot;');
+  var cap = q.credit ? '<figcaption>' + q.credit + '</figcaption>' : '';
+  return '<figure class="qfig qaudio"><audio controls preload="none" aria-label="' + label +
+         '" src="' + q.audio + '"></audio>' + cap + '</figure>';
+}
+function figHTML(q){
+  if(q && q.audio) return audioFigHTML(q);
+  if(!q || !q.img) return '';
+  var alt = String(q.alt || '').replace(/"/g,'&quot;');
+  var cap = q.slide ? '<figcaption>' + q.slide + '</figcaption>' : '';
+  return '<figure class="qfig"><img src="' + q.img + '" alt="' + alt +
+         '" loading="lazy" decoding="async">' + cap + '</figure>';
+}
+
+function renderQ(){
+  const q = QUESTIONS[order[idx]];
+  document.getElementById('counter').textContent = `Question ${idx+1} of ${order.length}`;
+  document.getElementById('barfill').style.width = (100*idx/order.length)+'%';
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  // The topic names the condition, so showing it above an unanswered stem
+  // hands over the answer. Hidden while the question is live; revealed with
+  // the explanation, where it is useful for looking the condition up.
+  var _tp = document.getElementById('qtopic');
+  _tp.textContent = ''; _tp.style.display = 'none';
+  /* The class-picks note is a sibling of #opts, so clearing #opts.innerHTML
+     below does not touch it. Without this it outlived the question it belonged
+     to and sat under later, unanswered stems. */
+  var _cp0 = document.getElementById('classpicks');
+  if(_cp0 && _cp0.parentNode) _cp0.parentNode.removeChild(_cp0);
+  document.getElementById('qio').textContent = ioLabel(q.io);
+  document.getElementById('qtext').textContent = q.q;
+  var _fig = document.getElementById('qfig');
+  if(_fig){
+    // Replaced rather than re-src'd so theme.js's MutationObserver arms the new
+    // <img> for click-to-enlarge; swapping src on a live node fires nothing.
+    _fig.innerHTML = '';
+    _fig.classList.toggle('qaudio', !!q.audio);
+    if(q.audio){
+      _fig.innerHTML = audioFigHTML(q).replace(/^<figure[^>]*>|<\/figure>$/g, '');
+      _fig.hidden = false;
+    } else if(q.img){
+      var _im = document.createElement('img');
+      _im.src = q.img; _im.alt = q.alt || ''; _im.decoding = 'async';
+      _fig.appendChild(_im);
+      if(q.slide){
+        var _cp = document.createElement('figcaption');
+        _cp.textContent = q.slide; _fig.appendChild(_cp);
+      }
+      _fig.hidden = false;
+    } else {
+      _fig.hidden = true;
+    }
+  }
+  document.getElementById('prevbtn').disabled = (idx===0);
+
+  if(flagNav){
+    document.getElementById('flagbtn').classList.toggle('flagged', flagged.has(idx));
+    document.getElementById('flagbtn').innerHTML = flagged.has(idx) ? '&#9873; Flagged' : '&#9873; Flag';
+    document.getElementById("navbadge").textContent = (order.length-answers.filter(a=>a!==null).length) > 0 ? " \u00b7 " + (order.length-answers.filter(a=>a!==null).length) + " left" : "";
+  }
+  if(deferFeedback){
+    const wrap=document.getElementById('opts'); wrap.innerHTML='';
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement('button');
+      b.className='opt'; b.setAttribute('data-i',i);
+      if(answers[idx]===i) b.classList.add('selected-exam');
+      b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+      b.onclick=()=>choose(i);
+      addCrossToggle(b,i);
+      wrap.appendChild(b);
+    });
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='inline-block';
+    document.getElementById('nextbtn').textContent = (idx===order.length-1)?'Submit exam \u2192':'Next \u2192';
+    return;
+  }
+
+  const wrap=document.getElementById('opts'); wrap.innerHTML='';
+  const isAnswered = answers[idx]!==null;
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.setAttribute('data-i',i);
+    b.innerHTML=`<span class="ltr">${LTR[i]}</span><span class="optlabel">${o[0]}</span>`;
+    b.onclick=()=>choose(i);
+    if(!isAnswered) addCrossToggle(b,i);
+    wrap.appendChild(b);
+  });
+  document.getElementById('nextbtn').textContent = (idx===order.length-1)?'See results \u2192':'Next \u2192';
+  if(isAnswered){
+    revealAnswer(answers[idx], false);
+  } else {
+    document.getElementById('expl').classList.remove('show');
+    document.getElementById('nextbtn').style.display='none';
+  }
+}
+
+/* Stable per-question id for the class response distribution. Keyed on the
+   stem, not its position, so re-rendering or reshuffling a form keeps the
+   counts attached to the right question. Scoped by quiz slug so a hash
+   collision would have to happen inside a single 65-question file. */
+function _quizSlug(){
+  var parts = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+  var rel = parts.slice(-2).join('/').replace(/\.html$/i,'');
+  return rel.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+var _SLUG = _quizSlug();
+function qidFor(q){
+  /* Prefer the id stored on the question. It IS the hash this code used to
+     compute, frozen when it was written, so every response recorded so far
+     keeps matching -- but it no longer moves when a stem is reworded. Rewriting
+     the Pharmacology stems silently orphaned 286 of the 670 live documents,
+     and those questions restarted at zero with nothing to show it. */
+  if(q && q.qid) return _SLUG + '__' + q.qid;
+  var t = q && q.q ? q.q : '', h = 2166136261;
+  for(var i=0;i<t.length;i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return _SLUG + '__' + h.toString(36);
+}
+
+/* Render "what the class picked" onto the option rows. Own answer included, so
+   the numbers move the moment you answer rather than after a refresh. */
+function showClassPicks(q, sel){
+  if(!window.ClassStats || !ClassStats.getPicks) return;
+  var qid = qidFor(q), n = q.opts.length;
+  var counted = false;
+  try{ counted = ClassStats.recordPick(qid, sel, n); }catch(e){}
+  ClassStats.getPicks(qid).then(function(d){
+    /* Async: the user may have moved on before this landed, and painting then
+       puts percentages under a stem they have not answered. */
+    if(QUESTIONS[order[idx]] !== q || answers[idx] === null) return;
+    var c=[], total=0;
+    for(var i=0;i<n;i++){ var v=(d && +d['c'+i]) || 0; c.push(v); total+=v; }
+    /* Bank how the REST of the class did on this one, before our own answer is
+       folded in below -- comparing yourself against a number you are inside of
+       flatters you on every question you got right. Counted once per question
+       even if it is revisited. */
+    if(total > 0 && !classSeen[qid]){
+      classSeen[qid] = 1;
+      classCmp.sum += (c[q.c] || 0) / total;
+      classCmp.n++;
+    }
+    if(counted){ c[sel]+=1; total+=1; }          // our own write may not have landed yet
+    if(!total) return;
+    document.querySelectorAll('#opts .opt').forEach(function(el){
+      var i=+el.getAttribute('data-i');
+      if(i<0||i>=n||el.querySelector('.pct')) return;
+      var pct = Math.round(c[i]/total*100);
+      var lab=document.createElement('span'); lab.className='pct'; lab.textContent=pct+'%';
+      el.appendChild(lab);
+      var bar=document.createElement('span'); bar.className='pctbar'; bar.style.width='0';
+      el.appendChild(bar);
+      requestAnimationFrame(function(){ bar.style.width = pct + '%'; });
+    });
+    var host=document.getElementById('opts');
+    if(host && !document.getElementById('classpicks')){
+      var note=document.createElement('div'); note.id='classpicks';
+      note.className='classpicks' + (total<5 ? ' thin' : '');
+      note.textContent = total<5
+        ? 'What the class picked \u2014 only ' + total + (total===1?' response':' responses') + ' so far.'
+        : 'What the class picked \u2014 ' + total + ' responses.';
+      host.parentNode.insertBefore(note, host.nextSibling);
+    }
+  });
+}
+
+function choose(sel){
+  const q = QUESTIONS[order[idx]];
+  if(deferFeedback){
+    answers[idx]=sel;
+    saveProgress();
+    renderQ();
+    return;
+  }
+  if(answers[idx]!==null) return;
+  answers[idx]=sel;
+  if(sel===q.c) score++;
+  if(window.trackAnswerStreak) window.trackAnswerStreak(sel===q.c);
+  saveProgress();
+  revealAnswer(sel, true);
+}
+
+function revealAnswer(sel, scroll){
+  const q = QUESTIONS[order[idx]];
+  const correct=q.c;
+  document.getElementById('scoretxt').textContent = `Score ${score}`;
+  document.querySelectorAll('#opts .opt').forEach(el=>{
+    const i=+el.getAttribute('data-i');
+    el.classList.add('locked');
+    if(i===correct) el.classList.add('correct');
+    else if(i===sel) el.classList.add('wrong');
+    else el.classList.add('dim');
+    el.onclick=null;
+    const ct=el.querySelector('.cross-toggle'); if(ct) ct.remove();
+  });
+  const v=document.getElementById('verdict');
+  if(sel===correct){ v.className='verdict ok'; v.textContent='Correct.'; }
+  else { v.className='verdict bad'; v.textContent='Not quite \u2014 the correct answer is '+LTR[correct]+'.'; }
+  const rows=document.getElementById('erows'); rows.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const r=document.createElement('div');
+    const isC=(i===correct);
+    r.className='erow '+(isC?'c':'x');
+    r.innerHTML=`<span class="mk">${isC?'\u2713':'\u2717'}</span><b>${LTR[i]}.</b> ${o[1]}`;
+    rows.appendChild(r);
+  });
+  var _tp2 = document.getElementById('qtopic');
+  if(_tp2){ _tp2.textContent = q.topic; _tp2.style.display = ''; }
+  document.getElementById('cite').textContent='Source: '+q.cite;
+  try{ showClassPicks(q, sel); }catch(e){}
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('nextbtn').style.display='inline-block';
+  if(scroll) document.getElementById('nextbtn').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function prevQ(){
+  if(idx===0) return;
+  idx--;
+  saveProgress();
+  renderQ();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFlag(){
+  if(flagged.has(idx)) flagged.delete(idx); else flagged.add(idx);
+  saveProgress();
+  renderQ();
+}
+
+function openNav(){
+  window.openQuestionNav({
+    total: order.length,
+    current: idx,
+    getStatus: function(i){ return { answered: answers[i]!==null, flagged: flagged.has(i) }; },
+    onJump: function(i){ idx = i; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); },
+    onSubmit: function(){ submitExam(); }
+  });
+}
+
+function submitExam(auto){
+  if(!auto){
+    const unanswered = order.length - answers.filter(a=>a!==null).length;
+    if(unanswered > 0){
+      if(!confirm(unanswered+" question"+(unanswered>1?"s":"")+" unanswered. Submit anyway?")) return;
+    }
+  }
+  showResults();
+}
+
+function nextQ(){
+  if(idx<order.length-1){ idx++; saveProgress(); renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else submitExam();
+}
+function examReviewHTML(){
+  let out = '';
+  order.forEach((qi, i)=>{
+    const q = QUESTIONS[qi];
+    const a = answers[i];
+    const isCorrect = (a !== null && a === q.c);
+    const you = a===null ? '\u2014 (not answered)' : LTR[a]+'. '+q.opts[a][0];
+    out += `<div class="mitem"${isCorrect?' style="border-left-color:var(--ok)"':''}>
+      <div class="mq">Q${i+1}. ${q.q}</div>
+      ${figHTML(q)}
+      <div class="ma ${isCorrect?'key':'you'}">Your answer: ${you}</div>
+      ${isCorrect ? '' : `<div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>`}
+      <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+    </div>`;
+  });
+  return `<div class="missed"><h3>Full review \u2014 every question</h3>${out}</div>`;
+}
+/* "You vs the class", shown only when enough of the questions you saw have been
+   answered by other people. Below that it is noise: one classmate's single
+   answer is not an average. */
+function classCompareHTML(pct){
+  if(classCmp.n < 5) return '';
+  var cls = Math.round(classCmp.sum / classCmp.n * 100);
+  var diff = pct - cls;
+  var verdict = diff > 4 ? 'ahead of the class' : (diff < -4 ? 'behind the class' : 'right about the class average');
+  return '<div class="vs">' +
+    '<h3>You vs the class</h3>' +
+    '<div class="vsrow"><span class="vslab">You</span>' +
+      '<span class="vsbar"><i class="you" style="width:' + pct + '%"></i></span>' +
+      '<span class="vsnum">' + pct + '%</span></div>' +
+    '<div class="vsrow"><span class="vslab">Class</span>' +
+      '<span class="vsbar"><i class="them" style="width:' + cls + '%"></i></span>' +
+      '<span class="vsnum">' + cls + '%</span></div>' +
+    '<div class="vsnote">You are <b>' + verdict + '</b> on the ' + classCmp.n +
+      ' question' + (classCmp.n===1?'':'s') + ' others have also answered.</div>' +
+  '</div>';
+}
+
+function showResults(){
+  stopTimerInterval();
+  const finalMs=currentElapsedMs();
+  if(holdFeedback()) score = answers.reduce((acc,a,i)=> acc + ((a!==null && a===QUESTIONS[order[i]].c) ? 1 : 0), 0);
+  clearProgress();
+  markCompleted(score, QUESTIONS.length, finalMs);
+  document.getElementById('quiz').style.display='none';
+  const pct=Math.round(100*score/QUESTIONS.length);
+  const stat={};
+  QUESTIONS.forEach(q=>{
+    const k=q.io; if(!stat[k]) stat[k]={c:0,n:0};
+    stat[k].n++;
+  });
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a===q.c) stat[q.io].c++;
+  });
+  let brows='';
+  Object.keys(stat).sort().forEach(k=>{
+    const s=stat[k]; const p=Math.round(100*s.c/s.n);
+    brows+=`<div class="brow"><span class="bname">${k}</span>
+      <span class="bbar"><span style="width:${p}%"></span></span>
+      <span class="bpct">${s.c}/${s.n}</span></div>`;
+  });
+  let missed='';
+  answers.forEach((a,i)=>{
+    const q=QUESTIONS[order[i]];
+    if(a!==q.c){
+      const you = a===null?'\u2014 (skipped)':LTR[a]+'. '+q.opts[a][0];
+      missed+=`<div class="mitem">
+        <div class="mq">Q${i+1}. ${q.q}</div>
+        ${figHTML(q)}
+        <div class="ma you"><b>Your answer:</b> ${you}</div>
+        <div class="ma key"><b>Correct:</b> ${LTR[q.c]}. ${q.opts[q.c][0]}</div>
+        <div class="mc">${q.opts[q.c][1]} &middot; ${q.cite}</div>
+      </div>`;
+    }
+  });
+  const missCount=QUESTIONS.length-score;
+  const missBlock = holdFeedback() ? examReviewHTML() : missCount===0
+    ? `<div class="perfect">Perfect score \u2014 every question correct.</div>`
+    : `<div class="missed"><h3>Review of missed questions (${missCount})</h3>${missed}</div>`;
+  const r=document.getElementById('results');
+  r.innerHTML=`
+    <h2>Your results</h2>
+    <div class="big">
+      <div class="ring" style="--p:${pct}"><i><b>${pct}%</b><s>${score}/${QUESTIONS.length}</s></i></div>
+      <div class="tally">
+        <div><span class="n">${score}</span> correct &nbsp;&middot;&nbsp; <span class="n">${missCount}</span> missed</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">out of ${QUESTIONS.length} questions</div>
+        <div style="color:var(--muted);font-size:13.5px;margin-top:4px">Time: ${fmtTime(finalMs)}</div>
+      </div>
+    </div>
+    ${classCompareHTML(pct)}
+    <div class="breakdown"><h3>Performance by objective</h3>${brows}</div>
+    ${missBlock}
+    <div class="resbtns">
+      <button class="btn btn-primary" onclick="startExam()">Restart quiz</button>
+      <a class="btn btn-ghost" href="../index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">\u2190 Back to Homepage</a>
+    </div>`;
+  r.style.display='block';
+  document.getElementById('resultsfoot').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  saveReview();
+}
+
+document.addEventListener('keydown', (e)=>{
+  if(e.ctrlKey || e.metaKey || e.altKey) return;
+  if(document.getElementById('quiz').style.display==='none') return;
+  const k=e.key;
+  if(k==='ArrowLeft'){ e.preventDefault(); prevQ(); return; }
+  if(flagNav && k.toLowerCase()==='f'){ e.preventDefault(); toggleFlag(); return; }
+  if(deferFeedback){
+    if(k==='ArrowRight' || k==='Enter'){ e.preventDefault(); nextQ(); return; }
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+    return;
+  }
+  if(answers[idx]===null){
+    const map={'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'a':0,'b':1,'c':2,'d':3,'e':4};
+    const i=map[k.toLowerCase()];
+    if(i!==undefined && i<QUESTIONS[order[idx]].opts.length){ e.preventDefault(); choose(i); }
+  } else if(k==='Enter' || k==='ArrowRight'){ e.preventDefault(); nextQ(); }
+});
+</script>
+<script>
+(function () {
+  var indicator = document.getElementById("pull-refresh");
+  var path = indicator.querySelector("path");
+  var pathLength = 420;
+  var threshold = 70;
+  var maxPull = 90;
+  var startY = 0;
+  var pulling = false;
+  var refreshing = false;
+
+  document.addEventListener("touchstart", function (e) {
+    if (window.scrollY === 0 && !refreshing) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (e) {
+    if (!pulling || refreshing) return;
+    var delta = e.touches[0].clientY - startY;
+    if (delta > 0) {
+      var dist = Math.min(delta * 0.5, maxPull);
+      indicator.style.height = dist + "px";
+      var progress = Math.min(dist / threshold, 1);
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (!pulling || refreshing) return;
+    pulling = false;
+    var currentHeight = parseInt(indicator.style.height || "0", 10);
+    if (currentHeight >= threshold * 0.5) {
+      refreshing = true;
+      indicator.style.height = maxPull + "px";
+      indicator.classList.add("refreshing");
+      setTimeout(function () { location.reload(); }, 500);
+    } else {
+      indicator.style.height = "0px";
+      path.style.strokeDashoffset = pathLength;
+    }
+  });
+})();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    const hadController = !!navigator.serviceWorker.controller;
+    function showSWUpdateBanner() {
+      if (document.getElementById("sw-update-banner")) return;
+      const bar = document.createElement("div");
+      bar.id = "sw-update-banner";
+      bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:4000;background:#2563eb;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:10px 16px;";
+      bar.innerHTML = "A new version of this site is available. <button style=\"margin-left:10px;background:#fff;color:#2563eb;border:none;border-radius:6px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px;\">Refresh</button>";
+      bar.querySelector("button").addEventListener("click", () => location.reload());
+      document.body.prepend(bar);
+    }
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) showSWUpdateBanner();
+    });
+    window.addEventListener("load", () => { navigator.serviceWorker.register("../sw.js").catch(() => {}); });
+  }
+</script>
+</body>
+</html>
