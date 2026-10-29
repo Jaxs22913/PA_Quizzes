@@ -2,7 +2,7 @@
 """Lecture 36 scope -- Chronic Obstructive Pulmonary Disease (Reynolds), CMS I Exam 6 (Respiratory Block
 Exam I, 2026-11-06, Lectures 33-38).
 
-Read by cms_e6l35_partition.py (guards) and imported by every Lecture 36 pool.
+Read by cms_e6_partition.py (guards) and imported by every Lecture 36 pool.
 Not a question bank: check_pool_cites does not glob it.
 
 LECTURER: Lauren Reynolds, MSPA, PA-C -- title slide, and the 2026-10-28 recording (Notability, four clips,

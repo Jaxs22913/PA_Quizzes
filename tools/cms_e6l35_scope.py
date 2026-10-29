@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Lecture 35 scope -- Asthma (Finck), CMS I Exam 6 (Respiratory Block Exam I, 2026-11-06, Lectures 33-38).
 
-Read by cms_e6l35_partition.py (guards) and imported by every Lecture 35 pool.
+Read by cms_e6_partition.py (guards) and imported by every Lecture 35 pool.
 Not a question bank: check_pool_cites does not glob it.
 
 LECTURER: Megan B. Finck, MMS, PA-C -- title slide, and the 2026-10-28 recording (Notability, two clips,

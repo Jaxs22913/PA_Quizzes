@@ -78,7 +78,10 @@ DX_CAP = int(30 * 0.20)          # 6 of 30 -- "there might be SOME" diagnosis qu
 # "l34" gets 12 of 30 (the 40% skew cap) and two extra lead-ins, "etiology" (the underlying cause)
 # and "compensation" (is the compensation appropriate). Every other key keeps the values above.
 _LEC = GUARDED[WHICH][0]
-LEADS = LEADS + {"l34": ("etiology", "compensation")}.get(_LEC, ())
+# Lectures 35-36 (2026-10-29): "classify" = which severity class, grade, group or score fits the patient
+# (asthma severity table; GOLD grade and group; CAT, mMRC and BODE). Jaxon: the real Exam 5 asked "what
+# is the score from this vignette". The 40% skew cap still applies to it.
+LEADS = LEADS + {"l34": ("etiology", "compensation"), "l35": ("classify",), "l36": ("classify",)}.get(_LEC, ())
 DX_CAP = {"l34": 12}.get(_LEC, DX_CAP)
 SKEW_CAP = 0.40
 
@@ -119,7 +122,14 @@ _BRAND = re.compile(r"\b(Lipitor|Crestor|Zocor|Pravachol|Livalo|Zetia|Vytorin|Re
                     r"Lexapro|Seroquel|Zyprexa|Geodon|Risperdal|Clozaril|Dolophine|Diprivan|"
                     # Exam 6 (2026-10-29): respiratory and acid-base brands
                     r"Ventolin|ProAir|Proventil|Xopenex|Atrovent|DuoNeb|Combivent|Spiriva|Pulmicort|"
-                    r"Diamox|Glucophage|Tums|Alka-Seltzer|Narcan|Ambu)\b")
+                    r"Diamox|Glucophage|Tums|Alka-Seltzer|Narcan|Ambu|"
+                    # Lectures 35-36: inhalers, biologics, NSAIDs, cessation aids, vaccines, antibiotics
+                    r"Singulair|Accolate|Zyflo|Serevent|Striverdi|Advair|Symbicort|Flovent|QVAR|Asmanex|"
+                    r"Alvesco|Arnuity|Breo|Trelegy|Dulera|Wixela|AirDuo|Anoro|Stiolto|Bevespi|Duaklir|Breztri|"
+                    r"Incruse|Tudorza|Yupelri|Brovana|Perforomist|Daliresp|Ohtuvayre|Respimat|Diskus|Ellipta|"
+                    r"Xolair|Nucala|Fasenra|Dupixent|Cinqair|Tezspire|Celebrex|Mobic|Zyban|Chantix|Wellbutrin|"
+                    r"Pneumovax|Prevnar|Augmentin|Levaquin|Avelox|Moxatag|Unasyn|Ceftin|Zosyn|Cipro|Theo-24|"
+                    r"Uniphyl)\b")
 
 # Mechanism-of-action STEMS (Carter: "no mechanism of action questions").
 # Disease pathophysiology is not banned -- drug mechanism is.
